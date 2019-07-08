@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -20,6 +20,7 @@
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/sqs/SQSClient.h>
 #include <aws/sqs/model/CreateQueueRequest.h>
 #include <aws/sqs/model/ListQueuesRequest.h>
@@ -51,6 +52,7 @@ using namespace Aws::Auth;
 using namespace Aws::Client;
 using namespace Aws::SQS;
 using namespace Aws::SQS::Model;
+using namespace Aws::Utils;
 using namespace Aws::Utils::Json;
 
 namespace
@@ -228,7 +230,7 @@ TEST_F(QueueOperationTest, TestSendReceiveDelete)
     ASSERT_TRUE(queueUrl.find(queueName) != Aws::String::npos);
 
     SendMessageRequest sendMessageRequest;
-    sendMessageRequest.SetMessageBody("TestMessageBody");
+    sendMessageRequest.SetMessageBody(" TestMessageBody\r\n ");
     MessageAttributeValue stringAttributeValue;
     stringAttributeValue.SetStringValue("TestString");
     stringAttributeValue.SetDataType("String");
@@ -260,7 +262,9 @@ TEST_F(QueueOperationTest, TestSendReceiveDelete)
     ASSERT_TRUE(receiveMessageOutcome.IsSuccess());
     ReceiveMessageResult receiveMessageResult = receiveMessageOutcome.GetResult();
     ASSERT_EQ(1uL, receiveMessageResult.GetMessages().size());
-    EXPECT_EQ("TestMessageBody", receiveMessageResult.GetMessages()[0].GetBody());
+    Aws::String receivedMessage = receiveMessageResult.GetMessages()[0].GetBody();
+    EXPECT_STREQ(" TestMessageBody\r\n ", receivedMessage.c_str());
+    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateMD5(receivedMessage)).c_str(), receiveMessageResult.GetMessages()[0].GetMD5OfBody().c_str());
     Aws::Map<Aws::String, MessageAttributeValue> messageAttributes = receiveMessageResult.GetMessages()[0].GetMessageAttributes();
     ASSERT_TRUE(messageAttributes.find("TestStringAttribute") != messageAttributes.end());
     EXPECT_EQ(stringAttributeValue.GetStringValue(), messageAttributes["TestStringAttribute"].GetStringValue());
@@ -392,7 +396,7 @@ TEST_F(QueueOperationTest, TestListDeadLetterSourceQueues)
         }
 
         std::this_thread::sleep_for(std::chrono::seconds(1));
-        listDeadLetterQueuesOutcome = sqsClient->ListDeadLetterSourceQueues(listDeadLetterQueuesRequest);        
+        listDeadLetterQueuesOutcome = sqsClient->ListDeadLetterSourceQueues(listDeadLetterQueuesRequest);
     }
 
     ASSERT_TRUE(found);

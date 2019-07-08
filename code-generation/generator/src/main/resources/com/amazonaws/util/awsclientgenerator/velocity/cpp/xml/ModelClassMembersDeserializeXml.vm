@@ -65,11 +65,11 @@
 
 #end##member uses location for serialization
 #else##this is not a map or a list
-#set($substituteString = "${lowerCaseVarName}Node.GetText().c_str()")
+#set($substituteString = "${lowerCaseVarName}Node.GetText()")
 #if($member.locationName)##location specified
 #if($member.xmlAttribute)
     auto ${lowerCaseVarName} = resultNode.GetAttributeValue("${member.locationName}");
-#set($substituteString = "${lowerCaseVarName}.c_str()")
+#set($substituteString = "${lowerCaseVarName}")
 #else
     XmlNode ${lowerCaseVarName}Node = resultNode.FirstChild("${member.locationName}");
 #end
@@ -103,7 +103,7 @@
 #end
 #end
 #if($member.shape.enum)
-    ${spaces}${memberVarName} = ${member.shape.name}Mapper::Get${member.shape.name}ForName(StringUtils::Trim(${substituteString}).c_str());
+    ${spaces}${memberVarName} = ${member.shape.name}Mapper::Get${member.shape.name}ForName(StringUtils::Trim(${substituteString}.c_str()).c_str());
 #elseif($member.shape.map)
     ${spaces}while(!${mapVarName}.IsNull())
     ${spaces}{
@@ -117,12 +117,12 @@
 #if($member.shape.mapKey.shape.enum)
     ${spaces}  ${memberVarName}[${member.shape.mapKey.shape.name}Mapper::Get${member.shape.mapKey.shape.name}ForName(StringUtils::Trim(keyNode.GetText().c_str()))] =
 #else
-    ${spaces}  ${memberVarName}[StringUtils::Trim(keyNode.GetText().c_str())] =
+    ${spaces}  ${memberVarName}[keyNode.GetText()] =
 #end
 #if($member.shape.mapValue.shape.structure)
     ${spaces}      valueNode;
 #elseif($member.shape.mapValue.shape.string)
-    ${spaces}      StringUtils::Trim(valueNode.GetText().c_str());
+    ${spaces}      valueNode.GetText();
 #elseif($member.shape.mapValue.shape.timeStamp)
     ${spaces}      DateTime(StringUtils::Trim(valueNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
 #elseif($member.shape.mapValue.shape.enum)
@@ -145,7 +145,7 @@
 #elseif($member.shape.listMember.shape.structure)
     ${spaces}  ${memberVarName}.push_back(${listVarName});
 #elseif($member.shape.listMember.shape.string)
-    ${spaces}  ${memberVarName}.push_back(StringUtils::Trim(${listVarName}.GetText().c_str()));
+    ${spaces}  ${memberVarName}.push_back(${listVarName}.GetText());
 #elseif($member.shape.listMember.shape.timeStamp)
     ${spaces}  ${memberVarName}.push_back(DateTime(StringUtils::Trim(${listVarName}.GetText().c_str()).c_str(), DateFormat::ISO_8601));
 #elseif($member.shape.listMember.shape.primitive)
@@ -166,15 +166,15 @@
     ${spaces}}
 
 #elseif($member.shape.blob)
-    ${spaces}${memberVarName} = HashingUtils::Base64Decode(StringUtils::Trim(${substituteString}));
+    ${spaces}${memberVarName} = HashingUtils::Base64Decode(${substituteString});
 #elseif($member.shape.primitive)
-    ${spaces}${memberVarName} = ${CppViewHelper.computeXmlConversionMethodName($member.shape)}(StringUtils::Trim(${substituteString}).c_str());
+    ${spaces}${memberVarName} = ${CppViewHelper.computeXmlConversionMethodName($member.shape)}(StringUtils::Trim(${substituteString}.c_str()).c_str());
 #elseif($member.shape.structure)
     ${spaces}${memberVarName} = ${lowerCaseVarName}Node;
 #elseif($member.shape.string)
-    ${spaces}${memberVarName} = StringUtils::Trim(${substituteString});
+    ${spaces}${memberVarName} = ${substituteString};
 #elseif($member.shape.timeStamp)
-    ${spaces}${memberVarName} = DateTime(StringUtils::Trim(${substituteString}).c_str(), DateFormat::ISO_8601);
+    ${spaces}${memberVarName} = DateTime(StringUtils::Trim(${substituteString}.c_str()).c_str(), DateFormat::ISO_8601);
 #end
 #if(!$member.required && $useRequiredField)
       $varNameHasBeenSet = true;
