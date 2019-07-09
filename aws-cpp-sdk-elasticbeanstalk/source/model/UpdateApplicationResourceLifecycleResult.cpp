@@ -51,7 +51,7 @@ UpdateApplicationResourceLifecycleResult& UpdateApplicationResourceLifecycleResu
     XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
     if(!applicationNameNode.IsNull())
     {
-      m_applicationName = StringUtils::Trim(applicationNameNode.GetText().c_str());
+      m_applicationName = applicationNameNode.GetText();
     }
     XmlNode resourceLifecycleConfigNode = resultNode.FirstChild("ResourceLifecycleConfig");
     if(!resourceLifecycleConfigNode.IsNull())

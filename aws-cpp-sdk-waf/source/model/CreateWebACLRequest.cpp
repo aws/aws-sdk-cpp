@@ -26,7 +26,8 @@ CreateWebACLRequest::CreateWebACLRequest() :
     m_nameHasBeenSet(false),
     m_metricNameHasBeenSet(false),
     m_defaultActionHasBeenSet(false),
-    m_changeTokenHasBeenSet(false)
+    m_changeTokenHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,17 @@ Aws::String CreateWebACLRequest::SerializePayload() const
   if(m_changeTokenHasBeenSet)
   {
    payload.WithString("ChangeToken", m_changeToken);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

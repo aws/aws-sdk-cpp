@@ -51,7 +51,7 @@ ExportClientVpnClientCertificateRevocationListResponse& ExportClientVpnClientCer
     XmlNode certificateRevocationListNode = resultNode.FirstChild("certificateRevocationList");
     if(!certificateRevocationListNode.IsNull())
     {
-      m_certificateRevocationList = StringUtils::Trim(certificateRevocationListNode.GetText().c_str());
+      m_certificateRevocationList = certificateRevocationListNode.GetText();
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())

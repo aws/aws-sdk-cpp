@@ -33,6 +33,7 @@ namespace Aws
         static const int INVALID_OPTION_HASH = HashingUtils::HashString("INVALID_OPTION");
         static const int ILLEGAL_COMBINATION_HASH = HashingUtils::HashString("ILLEGAL_COMBINATION");
         static const int ILLEGAL_ARGUMENT_HASH = HashingUtils::HashString("ILLEGAL_ARGUMENT");
+        static const int INVALID_TAG_KEY_HASH = HashingUtils::HashString("INVALID_TAG_KEY");
 
 
         ParameterExceptionReason GetParameterExceptionReasonForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == ILLEGAL_ARGUMENT_HASH)
           {
             return ParameterExceptionReason::ILLEGAL_ARGUMENT;
+          }
+          else if (hashCode == INVALID_TAG_KEY_HASH)
+          {
+            return ParameterExceptionReason::INVALID_TAG_KEY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "ILLEGAL_COMBINATION";
           case ParameterExceptionReason::ILLEGAL_ARGUMENT:
             return "ILLEGAL_ARGUMENT";
+          case ParameterExceptionReason::INVALID_TAG_KEY:
+            return "INVALID_TAG_KEY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

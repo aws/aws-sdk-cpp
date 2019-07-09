@@ -52,7 +52,7 @@ ListPoliciesGrantingServiceAccessEntry& ListPoliciesGrantingServiceAccessEntry::
     XmlNode serviceNamespaceNode = resultNode.FirstChild("ServiceNamespace");
     if(!serviceNamespaceNode.IsNull())
     {
-      m_serviceNamespace = StringUtils::Trim(serviceNamespaceNode.GetText().c_str());
+      m_serviceNamespace = serviceNamespaceNode.GetText();
       m_serviceNamespaceHasBeenSet = true;
     }
     XmlNode policiesNode = resultNode.FirstChild("Policies");

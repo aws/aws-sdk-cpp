@@ -62,7 +62,7 @@ DescribeImageAttributeResponse& DescribeImageAttributeResponse::operator =(const
     XmlNode imageIdNode = resultNode.FirstChild("imageId");
     if(!imageIdNode.IsNull())
     {
-      m_imageId = StringUtils::Trim(imageIdNode.GetText().c_str());
+      m_imageId = imageIdNode.GetText();
     }
     XmlNode launchPermissionsNode = resultNode.FirstChild("launchPermission");
     if(!launchPermissionsNode.IsNull())

@@ -30,6 +30,7 @@ CreateAppRequest::CreateAppRequest() :
     m_platformHasBeenSet(false),
     m_iamServiceRoleArnHasBeenSet(false),
     m_oauthTokenHasBeenSet(false),
+    m_accessTokenHasBeenSet(false),
     m_environmentVariablesHasBeenSet(false),
     m_enableBranchAutoBuild(false),
     m_enableBranchAutoBuildHasBeenSet(false),
@@ -38,7 +39,11 @@ CreateAppRequest::CreateAppRequest() :
     m_basicAuthCredentialsHasBeenSet(false),
     m_customRulesHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_buildSpecHasBeenSet(false)
+    m_buildSpecHasBeenSet(false),
+    m_enableAutoBranchCreation(false),
+    m_enableAutoBranchCreationHasBeenSet(false),
+    m_autoBranchCreationPatternsHasBeenSet(false),
+    m_autoBranchCreationConfigHasBeenSet(false)
 {
 }
 
@@ -78,6 +83,12 @@ Aws::String CreateAppRequest::SerializePayload() const
   if(m_oauthTokenHasBeenSet)
   {
    payload.WithString("oauthToken", m_oauthToken);
+
+  }
+
+  if(m_accessTokenHasBeenSet)
+  {
+   payload.WithString("accessToken", m_accessToken);
 
   }
 
@@ -135,6 +146,29 @@ Aws::String CreateAppRequest::SerializePayload() const
   if(m_buildSpecHasBeenSet)
   {
    payload.WithString("buildSpec", m_buildSpec);
+
+  }
+
+  if(m_enableAutoBranchCreationHasBeenSet)
+  {
+   payload.WithBool("enableAutoBranchCreation", m_enableAutoBranchCreation);
+
+  }
+
+  if(m_autoBranchCreationPatternsHasBeenSet)
+  {
+   Array<JsonValue> autoBranchCreationPatternsJsonList(m_autoBranchCreationPatterns.size());
+   for(unsigned autoBranchCreationPatternsIndex = 0; autoBranchCreationPatternsIndex < autoBranchCreationPatternsJsonList.GetLength(); ++autoBranchCreationPatternsIndex)
+   {
+     autoBranchCreationPatternsJsonList[autoBranchCreationPatternsIndex].AsString(m_autoBranchCreationPatterns[autoBranchCreationPatternsIndex]);
+   }
+   payload.WithArray("autoBranchCreationPatterns", std::move(autoBranchCreationPatternsJsonList));
+
+  }
+
+  if(m_autoBranchCreationConfigHasBeenSet)
+  {
+   payload.WithObject("autoBranchCreationConfig", m_autoBranchCreationConfig.Jsonize());
 
   }
 

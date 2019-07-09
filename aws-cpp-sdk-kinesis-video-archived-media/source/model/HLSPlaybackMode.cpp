@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/kinesis-video-archived-media/model/DiscontinuityMode.h>
+#include <aws/kinesis-video-archived-media/model/HLSPlaybackMode.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -27,42 +27,49 @@ namespace Aws
   {
     namespace Model
     {
-      namespace DiscontinuityModeMapper
+      namespace HLSPlaybackModeMapper
       {
 
-        static const int ALWAYS_HASH = HashingUtils::HashString("ALWAYS");
-        static const int NEVER_HASH = HashingUtils::HashString("NEVER");
+        static const int LIVE_HASH = HashingUtils::HashString("LIVE");
+        static const int LIVE_REPLAY_HASH = HashingUtils::HashString("LIVE_REPLAY");
+        static const int ON_DEMAND_HASH = HashingUtils::HashString("ON_DEMAND");
 
 
-        DiscontinuityMode GetDiscontinuityModeForName(const Aws::String& name)
+        HLSPlaybackMode GetHLSPlaybackModeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ALWAYS_HASH)
+          if (hashCode == LIVE_HASH)
           {
-            return DiscontinuityMode::ALWAYS;
+            return HLSPlaybackMode::LIVE;
           }
-          else if (hashCode == NEVER_HASH)
+          else if (hashCode == LIVE_REPLAY_HASH)
           {
-            return DiscontinuityMode::NEVER;
+            return HLSPlaybackMode::LIVE_REPLAY;
+          }
+          else if (hashCode == ON_DEMAND_HASH)
+          {
+            return HLSPlaybackMode::ON_DEMAND;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<DiscontinuityMode>(hashCode);
+            return static_cast<HLSPlaybackMode>(hashCode);
           }
 
-          return DiscontinuityMode::NOT_SET;
+          return HLSPlaybackMode::NOT_SET;
         }
 
-        Aws::String GetNameForDiscontinuityMode(DiscontinuityMode enumValue)
+        Aws::String GetNameForHLSPlaybackMode(HLSPlaybackMode enumValue)
         {
           switch(enumValue)
           {
-          case DiscontinuityMode::ALWAYS:
-            return "ALWAYS";
-          case DiscontinuityMode::NEVER:
-            return "NEVER";
+          case HLSPlaybackMode::LIVE:
+            return "LIVE";
+          case HLSPlaybackMode::LIVE_REPLAY:
+            return "LIVE_REPLAY";
+          case HLSPlaybackMode::ON_DEMAND:
+            return "ON_DEMAND";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -74,7 +81,7 @@ namespace Aws
           }
         }
 
-      } // namespace DiscontinuityModeMapper
+      } // namespace HLSPlaybackModeMapper
     } // namespace Model
   } // namespace KinesisVideoArchivedMedia
 } // namespace Aws

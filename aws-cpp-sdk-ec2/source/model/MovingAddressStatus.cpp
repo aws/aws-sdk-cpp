@@ -60,7 +60,7 @@ MovingAddressStatus& MovingAddressStatus::operator =(const XmlNode& xmlNode)
     XmlNode publicIpNode = resultNode.FirstChild("publicIp");
     if(!publicIpNode.IsNull())
     {
-      m_publicIp = StringUtils::Trim(publicIpNode.GetText().c_str());
+      m_publicIp = publicIpNode.GetText();
       m_publicIpHasBeenSet = true;
     }
   }

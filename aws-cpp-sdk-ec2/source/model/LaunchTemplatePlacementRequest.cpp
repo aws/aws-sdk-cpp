@@ -62,25 +62,25 @@ LaunchTemplatePlacementRequest& LaunchTemplatePlacementRequest::operator =(const
     XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode affinityNode = resultNode.FirstChild("Affinity");
     if(!affinityNode.IsNull())
     {
-      m_affinity = StringUtils::Trim(affinityNode.GetText().c_str());
+      m_affinity = affinityNode.GetText();
       m_affinityHasBeenSet = true;
     }
     XmlNode groupNameNode = resultNode.FirstChild("GroupName");
     if(!groupNameNode.IsNull())
     {
-      m_groupName = StringUtils::Trim(groupNameNode.GetText().c_str());
+      m_groupName = groupNameNode.GetText();
       m_groupNameHasBeenSet = true;
     }
     XmlNode hostIdNode = resultNode.FirstChild("HostId");
     if(!hostIdNode.IsNull())
     {
-      m_hostId = StringUtils::Trim(hostIdNode.GetText().c_str());
+      m_hostId = hostIdNode.GetText();
       m_hostIdHasBeenSet = true;
     }
     XmlNode tenancyNode = resultNode.FirstChild("Tenancy");
@@ -92,7 +92,7 @@ LaunchTemplatePlacementRequest& LaunchTemplatePlacementRequest::operator =(const
     XmlNode spreadDomainNode = resultNode.FirstChild("SpreadDomain");
     if(!spreadDomainNode.IsNull())
     {
-      m_spreadDomain = StringUtils::Trim(spreadDomainNode.GetText().c_str());
+      m_spreadDomain = spreadDomainNode.GetText();
       m_spreadDomainHasBeenSet = true;
     }
   }

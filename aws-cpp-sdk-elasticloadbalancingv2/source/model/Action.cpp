@@ -72,7 +72,7 @@ Action& Action::operator =(const XmlNode& xmlNode)
     XmlNode targetGroupArnNode = resultNode.FirstChild("TargetGroupArn");
     if(!targetGroupArnNode.IsNull())
     {
-      m_targetGroupArn = StringUtils::Trim(targetGroupArnNode.GetText().c_str());
+      m_targetGroupArn = targetGroupArnNode.GetText();
       m_targetGroupArnHasBeenSet = true;
     }
     XmlNode authenticateOidcConfigNode = resultNode.FirstChild("AuthenticateOidcConfig");

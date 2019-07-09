@@ -74,43 +74,43 @@ EventDescription& EventDescription::operator =(const XmlNode& xmlNode)
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
-      m_message = StringUtils::Trim(messageNode.GetText().c_str());
+      m_message = messageNode.GetText();
       m_messageHasBeenSet = true;
     }
     XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
     if(!applicationNameNode.IsNull())
     {
-      m_applicationName = StringUtils::Trim(applicationNameNode.GetText().c_str());
+      m_applicationName = applicationNameNode.GetText();
       m_applicationNameHasBeenSet = true;
     }
     XmlNode versionLabelNode = resultNode.FirstChild("VersionLabel");
     if(!versionLabelNode.IsNull())
     {
-      m_versionLabel = StringUtils::Trim(versionLabelNode.GetText().c_str());
+      m_versionLabel = versionLabelNode.GetText();
       m_versionLabelHasBeenSet = true;
     }
     XmlNode templateNameNode = resultNode.FirstChild("TemplateName");
     if(!templateNameNode.IsNull())
     {
-      m_templateName = StringUtils::Trim(templateNameNode.GetText().c_str());
+      m_templateName = templateNameNode.GetText();
       m_templateNameHasBeenSet = true;
     }
     XmlNode environmentNameNode = resultNode.FirstChild("EnvironmentName");
     if(!environmentNameNode.IsNull())
     {
-      m_environmentName = StringUtils::Trim(environmentNameNode.GetText().c_str());
+      m_environmentName = environmentNameNode.GetText();
       m_environmentNameHasBeenSet = true;
     }
     XmlNode platformArnNode = resultNode.FirstChild("PlatformArn");
     if(!platformArnNode.IsNull())
     {
-      m_platformArn = StringUtils::Trim(platformArnNode.GetText().c_str());
+      m_platformArn = platformArnNode.GetText();
       m_platformArnHasBeenSet = true;
     }
     XmlNode requestIdNode = resultNode.FirstChild("RequestId");
     if(!requestIdNode.IsNull())
     {
-      m_requestId = StringUtils::Trim(requestIdNode.GetText().c_str());
+      m_requestId = requestIdNode.GetText();
       m_requestIdHasBeenSet = true;
     }
     XmlNode severityNode = resultNode.FirstChild("Severity");

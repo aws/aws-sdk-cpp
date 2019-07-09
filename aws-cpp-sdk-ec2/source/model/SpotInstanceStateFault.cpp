@@ -52,13 +52,13 @@ SpotInstanceStateFault& SpotInstanceStateFault::operator =(const XmlNode& xmlNod
     XmlNode codeNode = resultNode.FirstChild("code");
     if(!codeNode.IsNull())
     {
-      m_code = StringUtils::Trim(codeNode.GetText().c_str());
+      m_code = codeNode.GetText();
       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("message");
     if(!messageNode.IsNull())
     {
-      m_message = StringUtils::Trim(messageNode.GetText().c_str());
+      m_message = messageNode.GetText();
       m_messageHasBeenSet = true;
     }
   }

@@ -52,13 +52,13 @@ Queue& Queue::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
     XmlNode uRLNode = resultNode.FirstChild("URL");
     if(!uRLNode.IsNull())
     {
-      m_uRL = StringUtils::Trim(uRLNode.GetText().c_str());
+      m_uRL = uRLNode.GetText();
       m_uRLHasBeenSet = true;
     }
   }

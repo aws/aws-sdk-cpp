@@ -76,13 +76,13 @@ ServiceDetail& ServiceDetail::operator =(const XmlNode& xmlNode)
     XmlNode serviceNameNode = resultNode.FirstChild("serviceName");
     if(!serviceNameNode.IsNull())
     {
-      m_serviceName = StringUtils::Trim(serviceNameNode.GetText().c_str());
+      m_serviceName = serviceNameNode.GetText();
       m_serviceNameHasBeenSet = true;
     }
     XmlNode serviceIdNode = resultNode.FirstChild("serviceId");
     if(!serviceIdNode.IsNull())
     {
-      m_serviceId = StringUtils::Trim(serviceIdNode.GetText().c_str());
+      m_serviceId = serviceIdNode.GetText();
       m_serviceIdHasBeenSet = true;
     }
     XmlNode serviceTypeNode = resultNode.FirstChild("serviceType");
@@ -103,7 +103,7 @@ ServiceDetail& ServiceDetail::operator =(const XmlNode& xmlNode)
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("item");
       while(!availabilityZonesMember.IsNull())
       {
-        m_availabilityZones.push_back(StringUtils::Trim(availabilityZonesMember.GetText().c_str()));
+        m_availabilityZones.push_back(availabilityZonesMember.GetText());
         availabilityZonesMember = availabilityZonesMember.NextNode("item");
       }
 
@@ -112,7 +112,7 @@ ServiceDetail& ServiceDetail::operator =(const XmlNode& xmlNode)
     XmlNode ownerNode = resultNode.FirstChild("owner");
     if(!ownerNode.IsNull())
     {
-      m_owner = StringUtils::Trim(ownerNode.GetText().c_str());
+      m_owner = ownerNode.GetText();
       m_ownerHasBeenSet = true;
     }
     XmlNode baseEndpointDnsNamesNode = resultNode.FirstChild("baseEndpointDnsNameSet");
@@ -121,7 +121,7 @@ ServiceDetail& ServiceDetail::operator =(const XmlNode& xmlNode)
       XmlNode baseEndpointDnsNamesMember = baseEndpointDnsNamesNode.FirstChild("item");
       while(!baseEndpointDnsNamesMember.IsNull())
       {
-        m_baseEndpointDnsNames.push_back(StringUtils::Trim(baseEndpointDnsNamesMember.GetText().c_str()));
+        m_baseEndpointDnsNames.push_back(baseEndpointDnsNamesMember.GetText());
         baseEndpointDnsNamesMember = baseEndpointDnsNamesMember.NextNode("item");
       }
 
@@ -130,7 +130,7 @@ ServiceDetail& ServiceDetail::operator =(const XmlNode& xmlNode)
     XmlNode privateDnsNameNode = resultNode.FirstChild("privateDnsName");
     if(!privateDnsNameNode.IsNull())
     {
-      m_privateDnsName = StringUtils::Trim(privateDnsNameNode.GetText().c_str());
+      m_privateDnsName = privateDnsNameNode.GetText();
       m_privateDnsNameHasBeenSet = true;
     }
     XmlNode vpcEndpointPolicySupportedNode = resultNode.FirstChild("vpcEndpointPolicySupported");

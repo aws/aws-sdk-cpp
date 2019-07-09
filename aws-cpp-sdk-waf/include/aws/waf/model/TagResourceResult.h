@@ -14,28 +14,33 @@
 */
 
 #pragma once
-#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/waf/WAF_EXPORTS.h>
 
 namespace Aws
 {
-namespace KinesisVideoArchivedMedia
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace WAF
 {
 namespace Model
 {
-  enum class DisplayFragmentTimestamp
+  class AWS_WAF_API TagResourceResult
   {
-    NOT_SET,
-    ALWAYS,
-    NEVER
+  public:
+    TagResourceResult();
+    TagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
   };
 
-namespace DisplayFragmentTimestampMapper
-{
-AWS_KINESISVIDEOARCHIVEDMEDIA_API DisplayFragmentTimestamp GetDisplayFragmentTimestampForName(const Aws::String& name);
-
-AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::String GetNameForDisplayFragmentTimestamp(DisplayFragmentTimestamp value);
-} // namespace DisplayFragmentTimestampMapper
 } // namespace Model
-} // namespace KinesisVideoArchivedMedia
+} // namespace WAF
 } // namespace Aws

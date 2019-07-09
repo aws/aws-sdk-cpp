@@ -72,7 +72,7 @@ DescribeNetworkInterfaceAttributeResponse& DescribeNetworkInterfaceAttributeResp
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
-      m_networkInterfaceId = StringUtils::Trim(networkInterfaceIdNode.GetText().c_str());
+      m_networkInterfaceId = networkInterfaceIdNode.GetText();
     }
     XmlNode sourceDestCheckNode = resultNode.FirstChild("sourceDestCheck");
     if(!sourceDestCheckNode.IsNull())

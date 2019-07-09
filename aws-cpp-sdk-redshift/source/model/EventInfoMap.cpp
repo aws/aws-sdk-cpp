@@ -56,7 +56,7 @@ EventInfoMap& EventInfoMap::operator =(const XmlNode& xmlNode)
     XmlNode eventIdNode = resultNode.FirstChild("EventId");
     if(!eventIdNode.IsNull())
     {
-      m_eventId = StringUtils::Trim(eventIdNode.GetText().c_str());
+      m_eventId = eventIdNode.GetText();
       m_eventIdHasBeenSet = true;
     }
     XmlNode eventCategoriesNode = resultNode.FirstChild("EventCategories");
@@ -65,7 +65,7 @@ EventInfoMap& EventInfoMap::operator =(const XmlNode& xmlNode)
       XmlNode eventCategoriesMember = eventCategoriesNode.FirstChild("EventCategory");
       while(!eventCategoriesMember.IsNull())
       {
-        m_eventCategories.push_back(StringUtils::Trim(eventCategoriesMember.GetText().c_str()));
+        m_eventCategories.push_back(eventCategoriesMember.GetText());
         eventCategoriesMember = eventCategoriesMember.NextNode("EventCategory");
       }
 
@@ -74,13 +74,13 @@ EventInfoMap& EventInfoMap::operator =(const XmlNode& xmlNode)
     XmlNode eventDescriptionNode = resultNode.FirstChild("EventDescription");
     if(!eventDescriptionNode.IsNull())
     {
-      m_eventDescription = StringUtils::Trim(eventDescriptionNode.GetText().c_str());
+      m_eventDescription = eventDescriptionNode.GetText();
       m_eventDescriptionHasBeenSet = true;
     }
     XmlNode severityNode = resultNode.FirstChild("Severity");
     if(!severityNode.IsNull())
     {
-      m_severity = StringUtils::Trim(severityNode.GetText().c_str());
+      m_severity = severityNode.GetText();
       m_severityHasBeenSet = true;
     }
   }

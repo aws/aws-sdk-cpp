@@ -54,7 +54,7 @@ OptionVersion& OptionVersion::operator =(const XmlNode& xmlNode)
     XmlNode versionNode = resultNode.FirstChild("Version");
     if(!versionNode.IsNull())
     {
-      m_version = StringUtils::Trim(versionNode.GetText().c_str());
+      m_version = versionNode.GetText();
       m_versionHasBeenSet = true;
     }
     XmlNode isDefaultNode = resultNode.FirstChild("IsDefault");

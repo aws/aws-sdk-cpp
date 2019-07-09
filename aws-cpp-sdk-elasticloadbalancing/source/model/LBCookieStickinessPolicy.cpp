@@ -54,7 +54,7 @@ LBCookieStickinessPolicy& LBCookieStickinessPolicy::operator =(const XmlNode& xm
     XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
     if(!policyNameNode.IsNull())
     {
-      m_policyName = StringUtils::Trim(policyNameNode.GetText().c_str());
+      m_policyName = policyNameNode.GetText();
       m_policyNameHasBeenSet = true;
     }
     XmlNode cookieExpirationPeriodNode = resultNode.FirstChild("CookieExpirationPeriod");

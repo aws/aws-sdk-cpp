@@ -120,19 +120,19 @@ Image& Image::operator =(const XmlNode& xmlNode)
     XmlNode creationDateNode = resultNode.FirstChild("creationDate");
     if(!creationDateNode.IsNull())
     {
-      m_creationDate = StringUtils::Trim(creationDateNode.GetText().c_str());
+      m_creationDate = creationDateNode.GetText();
       m_creationDateHasBeenSet = true;
     }
     XmlNode imageIdNode = resultNode.FirstChild("imageId");
     if(!imageIdNode.IsNull())
     {
-      m_imageId = StringUtils::Trim(imageIdNode.GetText().c_str());
+      m_imageId = imageIdNode.GetText();
       m_imageIdHasBeenSet = true;
     }
     XmlNode imageLocationNode = resultNode.FirstChild("imageLocation");
     if(!imageLocationNode.IsNull())
     {
-      m_imageLocation = StringUtils::Trim(imageLocationNode.GetText().c_str());
+      m_imageLocation = imageLocationNode.GetText();
       m_imageLocationHasBeenSet = true;
     }
     XmlNode imageTypeNode = resultNode.FirstChild("imageType");
@@ -150,13 +150,13 @@ Image& Image::operator =(const XmlNode& xmlNode)
     XmlNode kernelIdNode = resultNode.FirstChild("kernelId");
     if(!kernelIdNode.IsNull())
     {
-      m_kernelId = StringUtils::Trim(kernelIdNode.GetText().c_str());
+      m_kernelId = kernelIdNode.GetText();
       m_kernelIdHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("imageOwnerId");
     if(!ownerIdNode.IsNull())
     {
-      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerId = ownerIdNode.GetText();
       m_ownerIdHasBeenSet = true;
     }
     XmlNode platformNode = resultNode.FirstChild("platform");
@@ -180,7 +180,7 @@ Image& Image::operator =(const XmlNode& xmlNode)
     XmlNode ramdiskIdNode = resultNode.FirstChild("ramdiskId");
     if(!ramdiskIdNode.IsNull())
     {
-      m_ramdiskId = StringUtils::Trim(ramdiskIdNode.GetText().c_str());
+      m_ramdiskId = ramdiskIdNode.GetText();
       m_ramdiskIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("imageState");
@@ -204,7 +204,7 @@ Image& Image::operator =(const XmlNode& xmlNode)
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode enaSupportNode = resultNode.FirstChild("enaSupport");
@@ -222,19 +222,19 @@ Image& Image::operator =(const XmlNode& xmlNode)
     XmlNode imageOwnerAliasNode = resultNode.FirstChild("imageOwnerAlias");
     if(!imageOwnerAliasNode.IsNull())
     {
-      m_imageOwnerAlias = StringUtils::Trim(imageOwnerAliasNode.GetText().c_str());
+      m_imageOwnerAlias = imageOwnerAliasNode.GetText();
       m_imageOwnerAliasHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
     XmlNode rootDeviceNameNode = resultNode.FirstChild("rootDeviceName");
     if(!rootDeviceNameNode.IsNull())
     {
-      m_rootDeviceName = StringUtils::Trim(rootDeviceNameNode.GetText().c_str());
+      m_rootDeviceName = rootDeviceNameNode.GetText();
       m_rootDeviceNameHasBeenSet = true;
     }
     XmlNode rootDeviceTypeNode = resultNode.FirstChild("rootDeviceType");
@@ -246,7 +246,7 @@ Image& Image::operator =(const XmlNode& xmlNode)
     XmlNode sriovNetSupportNode = resultNode.FirstChild("sriovNetSupport");
     if(!sriovNetSupportNode.IsNull())
     {
-      m_sriovNetSupport = StringUtils::Trim(sriovNetSupportNode.GetText().c_str());
+      m_sriovNetSupport = sriovNetSupportNode.GetText();
       m_sriovNetSupportHasBeenSet = true;
     }
     XmlNode stateReasonNode = resultNode.FirstChild("stateReason");

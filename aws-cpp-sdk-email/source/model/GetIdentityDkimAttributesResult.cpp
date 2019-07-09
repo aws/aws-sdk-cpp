@@ -57,7 +57,7 @@ GetIdentityDkimAttributesResult& GetIdentityDkimAttributesResult::operator =(con
       {
         XmlNode keyNode = dkimAttributesEntry.FirstChild("key");
         XmlNode valueNode = dkimAttributesEntry.FirstChild("value");
-        m_dkimAttributes[StringUtils::Trim(keyNode.GetText().c_str())] =
+        m_dkimAttributes[keyNode.GetText()] =
             valueNode;
         dkimAttributesEntry = dkimAttributesEntry.NextNode("entry");
       }

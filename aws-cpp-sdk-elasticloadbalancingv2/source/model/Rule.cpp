@@ -60,13 +60,13 @@ Rule& Rule::operator =(const XmlNode& xmlNode)
     XmlNode ruleArnNode = resultNode.FirstChild("RuleArn");
     if(!ruleArnNode.IsNull())
     {
-      m_ruleArn = StringUtils::Trim(ruleArnNode.GetText().c_str());
+      m_ruleArn = ruleArnNode.GetText();
       m_ruleArnHasBeenSet = true;
     }
     XmlNode priorityNode = resultNode.FirstChild("Priority");
     if(!priorityNode.IsNull())
     {
-      m_priority = StringUtils::Trim(priorityNode.GetText().c_str());
+      m_priority = priorityNode.GetText();
       m_priorityHasBeenSet = true;
     }
     XmlNode conditionsNode = resultNode.FirstChild("Conditions");

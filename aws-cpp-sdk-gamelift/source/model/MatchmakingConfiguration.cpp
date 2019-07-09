@@ -45,7 +45,9 @@ MatchmakingConfiguration::MatchmakingConfiguration() :
     m_customEventDataHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_gamePropertiesHasBeenSet(false),
-    m_gameSessionDataHasBeenSet(false)
+    m_gameSessionDataHasBeenSet(false),
+    m_backfillMode(BackfillMode::NOT_SET),
+    m_backfillModeHasBeenSet(false)
 {
 }
 
@@ -66,7 +68,9 @@ MatchmakingConfiguration::MatchmakingConfiguration(JsonView jsonValue) :
     m_customEventDataHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_gamePropertiesHasBeenSet(false),
-    m_gameSessionDataHasBeenSet(false)
+    m_gameSessionDataHasBeenSet(false),
+    m_backfillMode(BackfillMode::NOT_SET),
+    m_backfillModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -170,6 +174,13 @@ MatchmakingConfiguration& MatchmakingConfiguration::operator =(JsonView jsonValu
     m_gameSessionDataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BackfillMode"))
+  {
+    m_backfillMode = BackfillModeMapper::GetBackfillModeForName(jsonValue.GetString("BackfillMode"));
+
+    m_backfillModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -262,6 +273,11 @@ JsonValue MatchmakingConfiguration::Jsonize() const
   {
    payload.WithString("GameSessionData", m_gameSessionData);
 
+  }
+
+  if(m_backfillModeHasBeenSet)
+  {
+   payload.WithString("BackfillMode", BackfillModeMapper::GetNameForBackfillMode(m_backfillMode));
   }
 
   return payload;

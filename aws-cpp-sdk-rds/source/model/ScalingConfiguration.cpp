@@ -90,7 +90,7 @@ ScalingConfiguration& ScalingConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode timeoutActionNode = resultNode.FirstChild("TimeoutAction");
     if(!timeoutActionNode.IsNull())
     {
-      m_timeoutAction = StringUtils::Trim(timeoutActionNode.GetText().c_str());
+      m_timeoutAction = timeoutActionNode.GetText();
       m_timeoutActionHasBeenSet = true;
     }
   }

@@ -60,25 +60,25 @@ Tag& Tag::operator =(const XmlNode& xmlNode)
     XmlNode resourceIdNode = resultNode.FirstChild("ResourceId");
     if(!resourceIdNode.IsNull())
     {
-      m_resourceId = StringUtils::Trim(resourceIdNode.GetText().c_str());
+      m_resourceId = resourceIdNode.GetText();
       m_resourceIdHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("ResourceType");
     if(!resourceTypeNode.IsNull())
     {
-      m_resourceType = StringUtils::Trim(resourceTypeNode.GetText().c_str());
+      m_resourceType = resourceTypeNode.GetText();
       m_resourceTypeHasBeenSet = true;
     }
     XmlNode keyNode = resultNode.FirstChild("Key");
     if(!keyNode.IsNull())
     {
-      m_key = StringUtils::Trim(keyNode.GetText().c_str());
+      m_key = keyNode.GetText();
       m_keyHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
-      m_value = StringUtils::Trim(valueNode.GetText().c_str());
+      m_value = valueNode.GetText();
       m_valueHasBeenSet = true;
     }
     XmlNode propagateAtLaunchNode = resultNode.FirstChild("PropagateAtLaunch");

@@ -62,13 +62,13 @@ ManagedAction& ManagedAction::operator =(const XmlNode& xmlNode)
     XmlNode actionIdNode = resultNode.FirstChild("ActionId");
     if(!actionIdNode.IsNull())
     {
-      m_actionId = StringUtils::Trim(actionIdNode.GetText().c_str());
+      m_actionId = actionIdNode.GetText();
       m_actionIdHasBeenSet = true;
     }
     XmlNode actionDescriptionNode = resultNode.FirstChild("ActionDescription");
     if(!actionDescriptionNode.IsNull())
     {
-      m_actionDescription = StringUtils::Trim(actionDescriptionNode.GetText().c_str());
+      m_actionDescription = actionDescriptionNode.GetText();
       m_actionDescriptionHasBeenSet = true;
     }
     XmlNode actionTypeNode = resultNode.FirstChild("ActionType");

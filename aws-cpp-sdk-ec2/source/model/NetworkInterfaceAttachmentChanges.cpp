@@ -54,7 +54,7 @@ NetworkInterfaceAttachmentChanges& NetworkInterfaceAttachmentChanges::operator =
     XmlNode attachmentIdNode = resultNode.FirstChild("attachmentId");
     if(!attachmentIdNode.IsNull())
     {
-      m_attachmentId = StringUtils::Trim(attachmentIdNode.GetText().c_str());
+      m_attachmentId = attachmentIdNode.GetText();
       m_attachmentIdHasBeenSet = true;
     }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");

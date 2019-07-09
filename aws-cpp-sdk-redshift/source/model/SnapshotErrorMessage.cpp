@@ -56,25 +56,25 @@ SnapshotErrorMessage& SnapshotErrorMessage::operator =(const XmlNode& xmlNode)
     XmlNode snapshotIdentifierNode = resultNode.FirstChild("SnapshotIdentifier");
     if(!snapshotIdentifierNode.IsNull())
     {
-      m_snapshotIdentifier = StringUtils::Trim(snapshotIdentifierNode.GetText().c_str());
+      m_snapshotIdentifier = snapshotIdentifierNode.GetText();
       m_snapshotIdentifierHasBeenSet = true;
     }
     XmlNode snapshotClusterIdentifierNode = resultNode.FirstChild("SnapshotClusterIdentifier");
     if(!snapshotClusterIdentifierNode.IsNull())
     {
-      m_snapshotClusterIdentifier = StringUtils::Trim(snapshotClusterIdentifierNode.GetText().c_str());
+      m_snapshotClusterIdentifier = snapshotClusterIdentifierNode.GetText();
       m_snapshotClusterIdentifierHasBeenSet = true;
     }
     XmlNode failureCodeNode = resultNode.FirstChild("FailureCode");
     if(!failureCodeNode.IsNull())
     {
-      m_failureCode = StringUtils::Trim(failureCodeNode.GetText().c_str());
+      m_failureCode = failureCodeNode.GetText();
       m_failureCodeHasBeenSet = true;
     }
     XmlNode failureReasonNode = resultNode.FirstChild("FailureReason");
     if(!failureReasonNode.IsNull())
     {
-      m_failureReason = StringUtils::Trim(failureReasonNode.GetText().c_str());
+      m_failureReason = failureReasonNode.GetText();
       m_failureReasonHasBeenSet = true;
     }
   }

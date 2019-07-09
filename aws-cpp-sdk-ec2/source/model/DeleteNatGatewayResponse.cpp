@@ -51,7 +51,7 @@ DeleteNatGatewayResponse& DeleteNatGatewayResponse::operator =(const Aws::Amazon
     XmlNode natGatewayIdNode = resultNode.FirstChild("natGatewayId");
     if(!natGatewayIdNode.IsNull())
     {
-      m_natGatewayId = StringUtils::Trim(natGatewayIdNode.GetText().c_str());
+      m_natGatewayId = natGatewayIdNode.GetText();
     }
   }
 

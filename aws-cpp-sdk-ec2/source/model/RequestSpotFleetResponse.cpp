@@ -51,7 +51,7 @@ RequestSpotFleetResponse& RequestSpotFleetResponse::operator =(const Aws::Amazon
     XmlNode spotFleetRequestIdNode = resultNode.FirstChild("spotFleetRequestId");
     if(!spotFleetRequestIdNode.IsNull())
     {
-      m_spotFleetRequestId = StringUtils::Trim(spotFleetRequestIdNode.GetText().c_str());
+      m_spotFleetRequestId = spotFleetRequestIdNode.GetText();
     }
   }
 

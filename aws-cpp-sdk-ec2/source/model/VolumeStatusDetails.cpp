@@ -60,7 +60,7 @@ VolumeStatusDetails& VolumeStatusDetails::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
   }

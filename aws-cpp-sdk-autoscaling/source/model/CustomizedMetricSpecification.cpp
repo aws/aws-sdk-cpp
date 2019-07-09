@@ -60,13 +60,13 @@ CustomizedMetricSpecification& CustomizedMetricSpecification::operator =(const X
     XmlNode metricNameNode = resultNode.FirstChild("MetricName");
     if(!metricNameNode.IsNull())
     {
-      m_metricName = StringUtils::Trim(metricNameNode.GetText().c_str());
+      m_metricName = metricNameNode.GetText();
       m_metricNameHasBeenSet = true;
     }
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
     if(!namespaceNode.IsNull())
     {
-      m_namespace = StringUtils::Trim(namespaceNode.GetText().c_str());
+      m_namespace = namespaceNode.GetText();
       m_namespaceHasBeenSet = true;
     }
     XmlNode dimensionsNode = resultNode.FirstChild("Dimensions");
@@ -90,7 +90,7 @@ CustomizedMetricSpecification& CustomizedMetricSpecification::operator =(const X
     XmlNode unitNode = resultNode.FirstChild("Unit");
     if(!unitNode.IsNull())
     {
-      m_unit = StringUtils::Trim(unitNode.GetText().c_str());
+      m_unit = unitNode.GetText();
       m_unitHasBeenSet = true;
     }
   }

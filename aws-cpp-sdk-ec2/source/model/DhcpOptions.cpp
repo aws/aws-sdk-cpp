@@ -68,13 +68,13 @@ DhcpOptions& DhcpOptions::operator =(const XmlNode& xmlNode)
     XmlNode dhcpOptionsIdNode = resultNode.FirstChild("dhcpOptionsId");
     if(!dhcpOptionsIdNode.IsNull())
     {
-      m_dhcpOptionsId = StringUtils::Trim(dhcpOptionsIdNode.GetText().c_str());
+      m_dhcpOptionsId = dhcpOptionsIdNode.GetText();
       m_dhcpOptionsIdHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
-      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerId = ownerIdNode.GetText();
       m_ownerIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");

@@ -84,7 +84,7 @@ ScheduledInstanceAvailability& ScheduledInstanceAvailability::operator =(const X
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode availableInstanceCountNode = resultNode.FirstChild("availableInstanceCount");
@@ -102,13 +102,13 @@ ScheduledInstanceAvailability& ScheduledInstanceAvailability::operator =(const X
     XmlNode hourlyPriceNode = resultNode.FirstChild("hourlyPrice");
     if(!hourlyPriceNode.IsNull())
     {
-      m_hourlyPrice = StringUtils::Trim(hourlyPriceNode.GetText().c_str());
+      m_hourlyPrice = hourlyPriceNode.GetText();
       m_hourlyPriceHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = StringUtils::Trim(instanceTypeNode.GetText().c_str());
+      m_instanceType = instanceTypeNode.GetText();
       m_instanceTypeHasBeenSet = true;
     }
     XmlNode maxTermDurationInDaysNode = resultNode.FirstChild("maxTermDurationInDays");
@@ -126,19 +126,19 @@ ScheduledInstanceAvailability& ScheduledInstanceAvailability::operator =(const X
     XmlNode networkPlatformNode = resultNode.FirstChild("networkPlatform");
     if(!networkPlatformNode.IsNull())
     {
-      m_networkPlatform = StringUtils::Trim(networkPlatformNode.GetText().c_str());
+      m_networkPlatform = networkPlatformNode.GetText();
       m_networkPlatformHasBeenSet = true;
     }
     XmlNode platformNode = resultNode.FirstChild("platform");
     if(!platformNode.IsNull())
     {
-      m_platform = StringUtils::Trim(platformNode.GetText().c_str());
+      m_platform = platformNode.GetText();
       m_platformHasBeenSet = true;
     }
     XmlNode purchaseTokenNode = resultNode.FirstChild("purchaseToken");
     if(!purchaseTokenNode.IsNull())
     {
-      m_purchaseToken = StringUtils::Trim(purchaseTokenNode.GetText().c_str());
+      m_purchaseToken = purchaseTokenNode.GetText();
       m_purchaseTokenHasBeenSet = true;
     }
     XmlNode recurrenceNode = resultNode.FirstChild("recurrence");

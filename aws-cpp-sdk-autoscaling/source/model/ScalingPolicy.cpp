@@ -86,31 +86,31 @@ ScalingPolicy& ScalingPolicy::operator =(const XmlNode& xmlNode)
     XmlNode autoScalingGroupNameNode = resultNode.FirstChild("AutoScalingGroupName");
     if(!autoScalingGroupNameNode.IsNull())
     {
-      m_autoScalingGroupName = StringUtils::Trim(autoScalingGroupNameNode.GetText().c_str());
+      m_autoScalingGroupName = autoScalingGroupNameNode.GetText();
       m_autoScalingGroupNameHasBeenSet = true;
     }
     XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
     if(!policyNameNode.IsNull())
     {
-      m_policyName = StringUtils::Trim(policyNameNode.GetText().c_str());
+      m_policyName = policyNameNode.GetText();
       m_policyNameHasBeenSet = true;
     }
     XmlNode policyARNNode = resultNode.FirstChild("PolicyARN");
     if(!policyARNNode.IsNull())
     {
-      m_policyARN = StringUtils::Trim(policyARNNode.GetText().c_str());
+      m_policyARN = policyARNNode.GetText();
       m_policyARNHasBeenSet = true;
     }
     XmlNode policyTypeNode = resultNode.FirstChild("PolicyType");
     if(!policyTypeNode.IsNull())
     {
-      m_policyType = StringUtils::Trim(policyTypeNode.GetText().c_str());
+      m_policyType = policyTypeNode.GetText();
       m_policyTypeHasBeenSet = true;
     }
     XmlNode adjustmentTypeNode = resultNode.FirstChild("AdjustmentType");
     if(!adjustmentTypeNode.IsNull())
     {
-      m_adjustmentType = StringUtils::Trim(adjustmentTypeNode.GetText().c_str());
+      m_adjustmentType = adjustmentTypeNode.GetText();
       m_adjustmentTypeHasBeenSet = true;
     }
     XmlNode minAdjustmentStepNode = resultNode.FirstChild("MinAdjustmentStep");
@@ -152,7 +152,7 @@ ScalingPolicy& ScalingPolicy::operator =(const XmlNode& xmlNode)
     XmlNode metricAggregationTypeNode = resultNode.FirstChild("MetricAggregationType");
     if(!metricAggregationTypeNode.IsNull())
     {
-      m_metricAggregationType = StringUtils::Trim(metricAggregationTypeNode.GetText().c_str());
+      m_metricAggregationType = metricAggregationTypeNode.GetText();
       m_metricAggregationTypeHasBeenSet = true;
     }
     XmlNode estimatedInstanceWarmupNode = resultNode.FirstChild("EstimatedInstanceWarmup");

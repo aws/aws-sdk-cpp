@@ -54,7 +54,7 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     XmlNode subnetIdentifierNode = resultNode.FirstChild("SubnetIdentifier");
     if(!subnetIdentifierNode.IsNull())
     {
-      m_subnetIdentifier = StringUtils::Trim(subnetIdentifierNode.GetText().c_str());
+      m_subnetIdentifier = subnetIdentifierNode.GetText();
       m_subnetIdentifierHasBeenSet = true;
     }
     XmlNode subnetAvailabilityZoneNode = resultNode.FirstChild("SubnetAvailabilityZone");
@@ -66,7 +66,7 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     XmlNode subnetStatusNode = resultNode.FirstChild("SubnetStatus");
     if(!subnetStatusNode.IsNull())
     {
-      m_subnetStatus = StringUtils::Trim(subnetStatusNode.GetText().c_str());
+      m_subnetStatus = subnetStatusNode.GetText();
       m_subnetStatusHasBeenSet = true;
     }
   }

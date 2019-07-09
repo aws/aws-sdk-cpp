@@ -54,7 +54,7 @@ ListAvailableSolutionStacksResult& ListAvailableSolutionStacksResult::operator =
       XmlNode solutionStacksMember = solutionStacksNode.FirstChild("member");
       while(!solutionStacksMember.IsNull())
       {
-        m_solutionStacks.push_back(StringUtils::Trim(solutionStacksMember.GetText().c_str()));
+        m_solutionStacks.push_back(solutionStacksMember.GetText());
         solutionStacksMember = solutionStacksMember.NextNode("member");
       }
 

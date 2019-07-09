@@ -18,6 +18,7 @@
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/gamelift/model/BackfillMode.h>
 #include <aws/gamelift/model/GameProperty.h>
 #include <utility>
 
@@ -135,9 +136,10 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-     * These queues are used when placing game sessions for matches that are created
-     * with this matchmaking configuration. Queues can be located in any region.</p>
+     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws
+     * account&gt;:gamesessionqueue/&lt;queue name&gt;</code>. These queues are used
+     * when placing game sessions for matches that are created with this matchmaking
+     * configuration. Queues can be located in any region.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGameSessionQueueArns() const{ return m_gameSessionQueueArns; }
 
@@ -145,9 +147,10 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-     * These queues are used when placing game sessions for matches that are created
-     * with this matchmaking configuration. Queues can be located in any region.</p>
+     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws
+     * account&gt;:gamesessionqueue/&lt;queue name&gt;</code>. These queues are used
+     * when placing game sessions for matches that are created with this matchmaking
+     * configuration. Queues can be located in any region.</p>
      */
     inline bool GameSessionQueueArnsHasBeenSet() const { return m_gameSessionQueueArnsHasBeenSet; }
 
@@ -155,9 +158,10 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-     * These queues are used when placing game sessions for matches that are created
-     * with this matchmaking configuration. Queues can be located in any region.</p>
+     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws
+     * account&gt;:gamesessionqueue/&lt;queue name&gt;</code>. These queues are used
+     * when placing game sessions for matches that are created with this matchmaking
+     * configuration. Queues can be located in any region.</p>
      */
     inline void SetGameSessionQueueArns(const Aws::Vector<Aws::String>& value) { m_gameSessionQueueArnsHasBeenSet = true; m_gameSessionQueueArns = value; }
 
@@ -165,9 +169,10 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-     * These queues are used when placing game sessions for matches that are created
-     * with this matchmaking configuration. Queues can be located in any region.</p>
+     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws
+     * account&gt;:gamesessionqueue/&lt;queue name&gt;</code>. These queues are used
+     * when placing game sessions for matches that are created with this matchmaking
+     * configuration. Queues can be located in any region.</p>
      */
     inline void SetGameSessionQueueArns(Aws::Vector<Aws::String>&& value) { m_gameSessionQueueArnsHasBeenSet = true; m_gameSessionQueueArns = std::move(value); }
 
@@ -175,9 +180,10 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-     * These queues are used when placing game sessions for matches that are created
-     * with this matchmaking configuration. Queues can be located in any region.</p>
+     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws
+     * account&gt;:gamesessionqueue/&lt;queue name&gt;</code>. These queues are used
+     * when placing game sessions for matches that are created with this matchmaking
+     * configuration. Queues can be located in any region.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithGameSessionQueueArns(const Aws::Vector<Aws::String>& value) { SetGameSessionQueueArns(value); return *this;}
 
@@ -185,9 +191,10 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-     * These queues are used when placing game sessions for matches that are created
-     * with this matchmaking configuration. Queues can be located in any region.</p>
+     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws
+     * account&gt;:gamesessionqueue/&lt;queue name&gt;</code>. These queues are used
+     * when placing game sessions for matches that are created with this matchmaking
+     * configuration. Queues can be located in any region.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithGameSessionQueueArns(Aws::Vector<Aws::String>&& value) { SetGameSessionQueueArns(std::move(value)); return *this;}
 
@@ -195,9 +202,10 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-     * These queues are used when placing game sessions for matches that are created
-     * with this matchmaking configuration. Queues can be located in any region.</p>
+     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws
+     * account&gt;:gamesessionqueue/&lt;queue name&gt;</code>. These queues are used
+     * when placing game sessions for matches that are created with this matchmaking
+     * configuration. Queues can be located in any region.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& AddGameSessionQueueArns(const Aws::String& value) { m_gameSessionQueueArnsHasBeenSet = true; m_gameSessionQueueArns.push_back(value); return *this; }
 
@@ -205,9 +213,10 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-     * These queues are used when placing game sessions for matches that are created
-     * with this matchmaking configuration. Queues can be located in any region.</p>
+     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws
+     * account&gt;:gamesessionqueue/&lt;queue name&gt;</code>. These queues are used
+     * when placing game sessions for matches that are created with this matchmaking
+     * configuration. Queues can be located in any region.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& AddGameSessionQueueArns(Aws::String&& value) { m_gameSessionQueueArnsHasBeenSet = true; m_gameSessionQueueArns.push_back(std::move(value)); return *this; }
 
@@ -215,34 +224,39 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-     * These queues are used when placing game sessions for matches that are created
-     * with this matchmaking configuration. Queues can be located in any region.</p>
+     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws
+     * account&gt;:gamesessionqueue/&lt;queue name&gt;</code>. These queues are used
+     * when placing game sessions for matches that are created with this matchmaking
+     * configuration. Queues can be located in any region.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& AddGameSessionQueueArns(const char* value) { m_gameSessionQueueArnsHasBeenSet = true; m_gameSessionQueueArns.push_back(value); return *this; }
 
 
     /**
      * <p>Maximum duration, in seconds, that a matchmaking ticket can remain in process
-     * before timing out. Requests that time out can be resubmitted as needed.</p>
+     * before timing out. Requests that fail due to timing out can be resubmitted as
+     * needed.</p>
      */
     inline int GetRequestTimeoutSeconds() const{ return m_requestTimeoutSeconds; }
 
     /**
      * <p>Maximum duration, in seconds, that a matchmaking ticket can remain in process
-     * before timing out. Requests that time out can be resubmitted as needed.</p>
+     * before timing out. Requests that fail due to timing out can be resubmitted as
+     * needed.</p>
      */
     inline bool RequestTimeoutSecondsHasBeenSet() const { return m_requestTimeoutSecondsHasBeenSet; }
 
     /**
      * <p>Maximum duration, in seconds, that a matchmaking ticket can remain in process
-     * before timing out. Requests that time out can be resubmitted as needed.</p>
+     * before timing out. Requests that fail due to timing out can be resubmitted as
+     * needed.</p>
      */
     inline void SetRequestTimeoutSeconds(int value) { m_requestTimeoutSecondsHasBeenSet = true; m_requestTimeoutSeconds = value; }
 
     /**
      * <p>Maximum duration, in seconds, that a matchmaking ticket can remain in process
-     * before timing out. Requests that time out can be resubmitted as needed.</p>
+     * before timing out. Requests that fail due to timing out can be resubmitted as
+     * needed.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithRequestTimeoutSeconds(int value) { SetRequestTimeoutSeconds(value); return *this;}
 
@@ -277,30 +291,26 @@ namespace Model
 
 
     /**
-     * <p>Flag that determines whether or not a match that was created with this
-     * configuration must be accepted by the matched players. To require acceptance,
-     * set to TRUE.</p>
+     * <p>Flag that determines whether a match that was created with this configuration
+     * must be accepted by the matched players. To require acceptance, set to TRUE.</p>
      */
     inline bool GetAcceptanceRequired() const{ return m_acceptanceRequired; }
 
     /**
-     * <p>Flag that determines whether or not a match that was created with this
-     * configuration must be accepted by the matched players. To require acceptance,
-     * set to TRUE.</p>
+     * <p>Flag that determines whether a match that was created with this configuration
+     * must be accepted by the matched players. To require acceptance, set to TRUE.</p>
      */
     inline bool AcceptanceRequiredHasBeenSet() const { return m_acceptanceRequiredHasBeenSet; }
 
     /**
-     * <p>Flag that determines whether or not a match that was created with this
-     * configuration must be accepted by the matched players. To require acceptance,
-     * set to TRUE.</p>
+     * <p>Flag that determines whether a match that was created with this configuration
+     * must be accepted by the matched players. To require acceptance, set to TRUE.</p>
      */
     inline void SetAcceptanceRequired(bool value) { m_acceptanceRequiredHasBeenSet = true; m_acceptanceRequired = value; }
 
     /**
-     * <p>Flag that determines whether or not a match that was created with this
-     * configuration must be accepted by the matched players. To require acceptance,
-     * set to TRUE.</p>
+     * <p>Flag that determines whether a match that was created with this configuration
+     * must be accepted by the matched players. To require acceptance, set to TRUE.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithAcceptanceRequired(bool value) { SetAcceptanceRequired(value); return *this;}
 
@@ -453,50 +463,50 @@ namespace Model
 
 
     /**
-     * <p>Information to attached to all events related to the matchmaking
-     * configuration. </p>
+     * <p>Information to add to all events related to the matchmaking configuration.
+     * </p>
      */
     inline const Aws::String& GetCustomEventData() const{ return m_customEventData; }
 
     /**
-     * <p>Information to attached to all events related to the matchmaking
-     * configuration. </p>
+     * <p>Information to add to all events related to the matchmaking configuration.
+     * </p>
      */
     inline bool CustomEventDataHasBeenSet() const { return m_customEventDataHasBeenSet; }
 
     /**
-     * <p>Information to attached to all events related to the matchmaking
-     * configuration. </p>
+     * <p>Information to add to all events related to the matchmaking configuration.
+     * </p>
      */
     inline void SetCustomEventData(const Aws::String& value) { m_customEventDataHasBeenSet = true; m_customEventData = value; }
 
     /**
-     * <p>Information to attached to all events related to the matchmaking
-     * configuration. </p>
+     * <p>Information to add to all events related to the matchmaking configuration.
+     * </p>
      */
     inline void SetCustomEventData(Aws::String&& value) { m_customEventDataHasBeenSet = true; m_customEventData = std::move(value); }
 
     /**
-     * <p>Information to attached to all events related to the matchmaking
-     * configuration. </p>
+     * <p>Information to add to all events related to the matchmaking configuration.
+     * </p>
      */
     inline void SetCustomEventData(const char* value) { m_customEventDataHasBeenSet = true; m_customEventData.assign(value); }
 
     /**
-     * <p>Information to attached to all events related to the matchmaking
-     * configuration. </p>
+     * <p>Information to add to all events related to the matchmaking configuration.
+     * </p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithCustomEventData(const Aws::String& value) { SetCustomEventData(value); return *this;}
 
     /**
-     * <p>Information to attached to all events related to the matchmaking
-     * configuration. </p>
+     * <p>Information to add to all events related to the matchmaking configuration.
+     * </p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithCustomEventData(Aws::String&& value) { SetCustomEventData(std::move(value)); return *this;}
 
     /**
-     * <p>Information to attached to all events related to the matchmaking
-     * configuration. </p>
+     * <p>Information to add to all events related to the matchmaking configuration.
+     * </p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithCustomEventData(const char* value) { SetCustomEventData(value); return *this;}
 
@@ -662,6 +672,73 @@ namespace Model
      */
     inline UpdateMatchmakingConfigurationRequest& WithGameSessionData(const char* value) { SetGameSessionData(value); return *this;}
 
+
+    /**
+     * <p>Method used to backfill game sessions created with this matchmaking
+     * configuration. Specify MANUAL when your game manages backfill requests manually
+     * or does not use the match backfill feature. Specify AUTOMATIC to have GameLift
+     * create a <a>StartMatchBackfill</a> request whenever a game session has one or
+     * more open slots. Learn more about manual and automatic backfill in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">Backfill
+     * Existing Games with FlexMatch</a>.</p>
+     */
+    inline const BackfillMode& GetBackfillMode() const{ return m_backfillMode; }
+
+    /**
+     * <p>Method used to backfill game sessions created with this matchmaking
+     * configuration. Specify MANUAL when your game manages backfill requests manually
+     * or does not use the match backfill feature. Specify AUTOMATIC to have GameLift
+     * create a <a>StartMatchBackfill</a> request whenever a game session has one or
+     * more open slots. Learn more about manual and automatic backfill in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">Backfill
+     * Existing Games with FlexMatch</a>.</p>
+     */
+    inline bool BackfillModeHasBeenSet() const { return m_backfillModeHasBeenSet; }
+
+    /**
+     * <p>Method used to backfill game sessions created with this matchmaking
+     * configuration. Specify MANUAL when your game manages backfill requests manually
+     * or does not use the match backfill feature. Specify AUTOMATIC to have GameLift
+     * create a <a>StartMatchBackfill</a> request whenever a game session has one or
+     * more open slots. Learn more about manual and automatic backfill in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">Backfill
+     * Existing Games with FlexMatch</a>.</p>
+     */
+    inline void SetBackfillMode(const BackfillMode& value) { m_backfillModeHasBeenSet = true; m_backfillMode = value; }
+
+    /**
+     * <p>Method used to backfill game sessions created with this matchmaking
+     * configuration. Specify MANUAL when your game manages backfill requests manually
+     * or does not use the match backfill feature. Specify AUTOMATIC to have GameLift
+     * create a <a>StartMatchBackfill</a> request whenever a game session has one or
+     * more open slots. Learn more about manual and automatic backfill in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">Backfill
+     * Existing Games with FlexMatch</a>.</p>
+     */
+    inline void SetBackfillMode(BackfillMode&& value) { m_backfillModeHasBeenSet = true; m_backfillMode = std::move(value); }
+
+    /**
+     * <p>Method used to backfill game sessions created with this matchmaking
+     * configuration. Specify MANUAL when your game manages backfill requests manually
+     * or does not use the match backfill feature. Specify AUTOMATIC to have GameLift
+     * create a <a>StartMatchBackfill</a> request whenever a game session has one or
+     * more open slots. Learn more about manual and automatic backfill in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">Backfill
+     * Existing Games with FlexMatch</a>.</p>
+     */
+    inline UpdateMatchmakingConfigurationRequest& WithBackfillMode(const BackfillMode& value) { SetBackfillMode(value); return *this;}
+
+    /**
+     * <p>Method used to backfill game sessions created with this matchmaking
+     * configuration. Specify MANUAL when your game manages backfill requests manually
+     * or does not use the match backfill feature. Specify AUTOMATIC to have GameLift
+     * create a <a>StartMatchBackfill</a> request whenever a game session has one or
+     * more open slots. Learn more about manual and automatic backfill in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">Backfill
+     * Existing Games with FlexMatch</a>.</p>
+     */
+    inline UpdateMatchmakingConfigurationRequest& WithBackfillMode(BackfillMode&& value) { SetBackfillMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -699,6 +776,9 @@ namespace Model
 
     Aws::String m_gameSessionData;
     bool m_gameSessionDataHasBeenSet;
+
+    BackfillMode m_backfillMode;
+    bool m_backfillModeHasBeenSet;
   };
 
 } // namespace Model

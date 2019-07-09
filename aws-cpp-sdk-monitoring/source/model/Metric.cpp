@@ -54,13 +54,13 @@ Metric& Metric::operator =(const XmlNode& xmlNode)
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
     if(!namespaceNode.IsNull())
     {
-      m_namespace = StringUtils::Trim(namespaceNode.GetText().c_str());
+      m_namespace = namespaceNode.GetText();
       m_namespaceHasBeenSet = true;
     }
     XmlNode metricNameNode = resultNode.FirstChild("MetricName");
     if(!metricNameNode.IsNull())
     {
-      m_metricName = StringUtils::Trim(metricNameNode.GetText().c_str());
+      m_metricName = metricNameNode.GetText();
       m_metricNameHasBeenSet = true;
     }
     XmlNode dimensionsNode = resultNode.FirstChild("Dimensions");

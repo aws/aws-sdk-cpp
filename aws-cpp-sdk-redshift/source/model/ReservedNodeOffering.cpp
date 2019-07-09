@@ -74,13 +74,13 @@ ReservedNodeOffering& ReservedNodeOffering::operator =(const XmlNode& xmlNode)
     XmlNode reservedNodeOfferingIdNode = resultNode.FirstChild("ReservedNodeOfferingId");
     if(!reservedNodeOfferingIdNode.IsNull())
     {
-      m_reservedNodeOfferingId = StringUtils::Trim(reservedNodeOfferingIdNode.GetText().c_str());
+      m_reservedNodeOfferingId = reservedNodeOfferingIdNode.GetText();
       m_reservedNodeOfferingIdHasBeenSet = true;
     }
     XmlNode nodeTypeNode = resultNode.FirstChild("NodeType");
     if(!nodeTypeNode.IsNull())
     {
-      m_nodeType = StringUtils::Trim(nodeTypeNode.GetText().c_str());
+      m_nodeType = nodeTypeNode.GetText();
       m_nodeTypeHasBeenSet = true;
     }
     XmlNode durationNode = resultNode.FirstChild("Duration");
@@ -104,13 +104,13 @@ ReservedNodeOffering& ReservedNodeOffering::operator =(const XmlNode& xmlNode)
     XmlNode currencyCodeNode = resultNode.FirstChild("CurrencyCode");
     if(!currencyCodeNode.IsNull())
     {
-      m_currencyCode = StringUtils::Trim(currencyCodeNode.GetText().c_str());
+      m_currencyCode = currencyCodeNode.GetText();
       m_currencyCodeHasBeenSet = true;
     }
     XmlNode offeringTypeNode = resultNode.FirstChild("OfferingType");
     if(!offeringTypeNode.IsNull())
     {
-      m_offeringType = StringUtils::Trim(offeringTypeNode.GetText().c_str());
+      m_offeringType = offeringTypeNode.GetText();
       m_offeringTypeHasBeenSet = true;
     }
     XmlNode recurringChargesNode = resultNode.FirstChild("RecurringCharges");

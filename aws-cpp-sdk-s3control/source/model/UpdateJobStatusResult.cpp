@@ -46,7 +46,7 @@ UpdateJobStatusResult& UpdateJobStatusResult::operator =(const Aws::AmazonWebSer
     XmlNode jobIdNode = resultNode.FirstChild("JobId");
     if(!jobIdNode.IsNull())
     {
-      m_jobId = StringUtils::Trim(jobIdNode.GetText().c_str());
+      m_jobId = jobIdNode.GetText();
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
@@ -56,7 +56,7 @@ UpdateJobStatusResult& UpdateJobStatusResult::operator =(const Aws::AmazonWebSer
     XmlNode statusUpdateReasonNode = resultNode.FirstChild("StatusUpdateReason");
     if(!statusUpdateReasonNode.IsNull())
     {
-      m_statusUpdateReason = StringUtils::Trim(statusUpdateReasonNode.GetText().c_str());
+      m_statusUpdateReason = statusUpdateReasonNode.GetText();
     }
   }
 

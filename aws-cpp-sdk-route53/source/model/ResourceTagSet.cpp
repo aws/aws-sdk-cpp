@@ -62,7 +62,7 @@ ResourceTagSet& ResourceTagSet::operator =(const XmlNode& xmlNode)
     XmlNode resourceIdNode = resultNode.FirstChild("ResourceId");
     if(!resourceIdNode.IsNull())
     {
-      m_resourceId = StringUtils::Trim(resourceIdNode.GetText().c_str());
+      m_resourceId = resourceIdNode.GetText();
       m_resourceIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");

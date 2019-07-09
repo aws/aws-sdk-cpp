@@ -57,7 +57,7 @@ DnsServersOptionsModifyStructure& DnsServersOptionsModifyStructure::operator =(c
       XmlNode customDnsServersMember = customDnsServersNode.FirstChild("item");
       while(!customDnsServersMember.IsNull())
       {
-        m_customDnsServers.push_back(StringUtils::Trim(customDnsServersMember.GetText().c_str()));
+        m_customDnsServers.push_back(customDnsServersMember.GetText());
         customDnsServersMember = customDnsServersMember.NextNode("item");
       }
 

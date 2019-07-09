@@ -51,7 +51,7 @@ SubscribeResult& SubscribeResult::operator =(const Aws::AmazonWebServiceResult<X
     XmlNode subscriptionArnNode = resultNode.FirstChild("SubscriptionArn");
     if(!subscriptionArnNode.IsNull())
     {
-      m_subscriptionArn = StringUtils::Trim(subscriptionArnNode.GetText().c_str());
+      m_subscriptionArn = subscriptionArnNode.GetText();
     }
   }
 

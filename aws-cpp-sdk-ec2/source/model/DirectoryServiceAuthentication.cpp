@@ -50,7 +50,7 @@ DirectoryServiceAuthentication& DirectoryServiceAuthentication::operator =(const
     XmlNode directoryIdNode = resultNode.FirstChild("directoryId");
     if(!directoryIdNode.IsNull())
     {
-      m_directoryId = StringUtils::Trim(directoryIdNode.GetText().c_str());
+      m_directoryId = directoryIdNode.GetText();
       m_directoryIdHasBeenSet = true;
     }
   }

@@ -70,7 +70,7 @@ StaleIpPermission& StaleIpPermission::operator =(const XmlNode& xmlNode)
     XmlNode ipProtocolNode = resultNode.FirstChild("ipProtocol");
     if(!ipProtocolNode.IsNull())
     {
-      m_ipProtocol = StringUtils::Trim(ipProtocolNode.GetText().c_str());
+      m_ipProtocol = ipProtocolNode.GetText();
       m_ipProtocolHasBeenSet = true;
     }
     XmlNode ipRangesNode = resultNode.FirstChild("ipRanges");
@@ -79,7 +79,7 @@ StaleIpPermission& StaleIpPermission::operator =(const XmlNode& xmlNode)
       XmlNode ipRangesMember = ipRangesNode.FirstChild("item");
       while(!ipRangesMember.IsNull())
       {
-        m_ipRanges.push_back(StringUtils::Trim(ipRangesMember.GetText().c_str()));
+        m_ipRanges.push_back(ipRangesMember.GetText());
         ipRangesMember = ipRangesMember.NextNode("item");
       }
 
@@ -91,7 +91,7 @@ StaleIpPermission& StaleIpPermission::operator =(const XmlNode& xmlNode)
       XmlNode prefixListIdsMember = prefixListIdsNode.FirstChild("item");
       while(!prefixListIdsMember.IsNull())
       {
-        m_prefixListIds.push_back(StringUtils::Trim(prefixListIdsMember.GetText().c_str()));
+        m_prefixListIds.push_back(prefixListIdsMember.GetText());
         prefixListIdsMember = prefixListIdsMember.NextNode("item");
       }
 

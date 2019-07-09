@@ -68,7 +68,7 @@ VpnGateway& VpnGateway::operator =(const XmlNode& xmlNode)
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
@@ -98,7 +98,7 @@ VpnGateway& VpnGateway::operator =(const XmlNode& xmlNode)
     XmlNode vpnGatewayIdNode = resultNode.FirstChild("vpnGatewayId");
     if(!vpnGatewayIdNode.IsNull())
     {
-      m_vpnGatewayId = StringUtils::Trim(vpnGatewayIdNode.GetText().c_str());
+      m_vpnGatewayId = vpnGatewayIdNode.GetText();
       m_vpnGatewayIdHasBeenSet = true;
     }
     XmlNode amazonSideAsnNode = resultNode.FirstChild("amazonSideAsn");

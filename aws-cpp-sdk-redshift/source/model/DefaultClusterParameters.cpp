@@ -54,13 +54,13 @@ DefaultClusterParameters& DefaultClusterParameters::operator =(const XmlNode& xm
     XmlNode parameterGroupFamilyNode = resultNode.FirstChild("ParameterGroupFamily");
     if(!parameterGroupFamilyNode.IsNull())
     {
-      m_parameterGroupFamily = StringUtils::Trim(parameterGroupFamilyNode.GetText().c_str());
+      m_parameterGroupFamily = parameterGroupFamilyNode.GetText();
       m_parameterGroupFamilyHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
-      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+      m_marker = markerNode.GetText();
       m_markerHasBeenSet = true;
     }
     XmlNode parametersNode = resultNode.FirstChild("Parameters");

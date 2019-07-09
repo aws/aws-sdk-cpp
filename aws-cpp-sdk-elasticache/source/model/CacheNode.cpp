@@ -62,13 +62,13 @@ CacheNode& CacheNode::operator =(const XmlNode& xmlNode)
     XmlNode cacheNodeIdNode = resultNode.FirstChild("CacheNodeId");
     if(!cacheNodeIdNode.IsNull())
     {
-      m_cacheNodeId = StringUtils::Trim(cacheNodeIdNode.GetText().c_str());
+      m_cacheNodeId = cacheNodeIdNode.GetText();
       m_cacheNodeIdHasBeenSet = true;
     }
     XmlNode cacheNodeStatusNode = resultNode.FirstChild("CacheNodeStatus");
     if(!cacheNodeStatusNode.IsNull())
     {
-      m_cacheNodeStatus = StringUtils::Trim(cacheNodeStatusNode.GetText().c_str());
+      m_cacheNodeStatus = cacheNodeStatusNode.GetText();
       m_cacheNodeStatusHasBeenSet = true;
     }
     XmlNode cacheNodeCreateTimeNode = resultNode.FirstChild("CacheNodeCreateTime");
@@ -86,19 +86,19 @@ CacheNode& CacheNode::operator =(const XmlNode& xmlNode)
     XmlNode parameterGroupStatusNode = resultNode.FirstChild("ParameterGroupStatus");
     if(!parameterGroupStatusNode.IsNull())
     {
-      m_parameterGroupStatus = StringUtils::Trim(parameterGroupStatusNode.GetText().c_str());
+      m_parameterGroupStatus = parameterGroupStatusNode.GetText();
       m_parameterGroupStatusHasBeenSet = true;
     }
     XmlNode sourceCacheNodeIdNode = resultNode.FirstChild("SourceCacheNodeId");
     if(!sourceCacheNodeIdNode.IsNull())
     {
-      m_sourceCacheNodeId = StringUtils::Trim(sourceCacheNodeIdNode.GetText().c_str());
+      m_sourceCacheNodeId = sourceCacheNodeIdNode.GetText();
       m_sourceCacheNodeIdHasBeenSet = true;
     }
     XmlNode customerAvailabilityZoneNode = resultNode.FirstChild("CustomerAvailabilityZone");
     if(!customerAvailabilityZoneNode.IsNull())
     {
-      m_customerAvailabilityZone = StringUtils::Trim(customerAvailabilityZoneNode.GetText().c_str());
+      m_customerAvailabilityZone = customerAvailabilityZoneNode.GetText();
       m_customerAvailabilityZoneHasBeenSet = true;
     }
   }

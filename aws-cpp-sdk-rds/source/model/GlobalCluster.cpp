@@ -72,43 +72,43 @@ GlobalCluster& GlobalCluster::operator =(const XmlNode& xmlNode)
     XmlNode globalClusterIdentifierNode = resultNode.FirstChild("GlobalClusterIdentifier");
     if(!globalClusterIdentifierNode.IsNull())
     {
-      m_globalClusterIdentifier = StringUtils::Trim(globalClusterIdentifierNode.GetText().c_str());
+      m_globalClusterIdentifier = globalClusterIdentifierNode.GetText();
       m_globalClusterIdentifierHasBeenSet = true;
     }
     XmlNode globalClusterResourceIdNode = resultNode.FirstChild("GlobalClusterResourceId");
     if(!globalClusterResourceIdNode.IsNull())
     {
-      m_globalClusterResourceId = StringUtils::Trim(globalClusterResourceIdNode.GetText().c_str());
+      m_globalClusterResourceId = globalClusterResourceIdNode.GetText();
       m_globalClusterResourceIdHasBeenSet = true;
     }
     XmlNode globalClusterArnNode = resultNode.FirstChild("GlobalClusterArn");
     if(!globalClusterArnNode.IsNull())
     {
-      m_globalClusterArn = StringUtils::Trim(globalClusterArnNode.GetText().c_str());
+      m_globalClusterArn = globalClusterArnNode.GetText();
       m_globalClusterArnHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
     {
-      m_engine = StringUtils::Trim(engineNode.GetText().c_str());
+      m_engine = engineNode.GetText();
       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
-      m_engineVersion = StringUtils::Trim(engineVersionNode.GetText().c_str());
+      m_engineVersion = engineVersionNode.GetText();
       m_engineVersionHasBeenSet = true;
     }
     XmlNode databaseNameNode = resultNode.FirstChild("DatabaseName");
     if(!databaseNameNode.IsNull())
     {
-      m_databaseName = StringUtils::Trim(databaseNameNode.GetText().c_str());
+      m_databaseName = databaseNameNode.GetText();
       m_databaseNameHasBeenSet = true;
     }
     XmlNode storageEncryptedNode = resultNode.FirstChild("StorageEncrypted");

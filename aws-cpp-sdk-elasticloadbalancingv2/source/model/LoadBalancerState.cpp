@@ -60,7 +60,7 @@ LoadBalancerState& LoadBalancerState::operator =(const XmlNode& xmlNode)
     XmlNode reasonNode = resultNode.FirstChild("Reason");
     if(!reasonNode.IsNull())
     {
-      m_reason = StringUtils::Trim(reasonNode.GetText().c_str());
+      m_reason = reasonNode.GetText();
       m_reasonHasBeenSet = true;
     }
   }

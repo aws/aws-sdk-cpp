@@ -56,8 +56,8 @@ ListQueueTagsResult& ListQueueTagsResult::operator =(const Aws::AmazonWebService
       {
         XmlNode keyNode = tagEntry.FirstChild("Key");
         XmlNode valueNode = tagEntry.FirstChild("Value");
-        m_tags[StringUtils::Trim(keyNode.GetText().c_str())] =
-            StringUtils::Trim(valueNode.GetText().c_str());
+        m_tags[keyNode.GetText()] =
+            valueNode.GetText();
         tagEntry = tagEntry.NextNode("Tag");
       }
 

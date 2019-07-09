@@ -54,19 +54,19 @@ SourceRegion& SourceRegion::operator =(const XmlNode& xmlNode)
     XmlNode regionNameNode = resultNode.FirstChild("RegionName");
     if(!regionNameNode.IsNull())
     {
-      m_regionName = StringUtils::Trim(regionNameNode.GetText().c_str());
+      m_regionName = regionNameNode.GetText();
       m_regionNameHasBeenSet = true;
     }
     XmlNode endpointNode = resultNode.FirstChild("Endpoint");
     if(!endpointNode.IsNull())
     {
-      m_endpoint = StringUtils::Trim(endpointNode.GetText().c_str());
+      m_endpoint = endpointNode.GetText();
       m_endpointHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
   }

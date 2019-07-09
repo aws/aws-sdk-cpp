@@ -64,13 +64,13 @@ ConversionTask& ConversionTask::operator =(const XmlNode& xmlNode)
     XmlNode conversionTaskIdNode = resultNode.FirstChild("conversionTaskId");
     if(!conversionTaskIdNode.IsNull())
     {
-      m_conversionTaskId = StringUtils::Trim(conversionTaskIdNode.GetText().c_str());
+      m_conversionTaskId = conversionTaskIdNode.GetText();
       m_conversionTaskIdHasBeenSet = true;
     }
     XmlNode expirationTimeNode = resultNode.FirstChild("expirationTime");
     if(!expirationTimeNode.IsNull())
     {
-      m_expirationTime = StringUtils::Trim(expirationTimeNode.GetText().c_str());
+      m_expirationTime = expirationTimeNode.GetText();
       m_expirationTimeHasBeenSet = true;
     }
     XmlNode importInstanceNode = resultNode.FirstChild("importInstance");
@@ -94,7 +94,7 @@ ConversionTask& ConversionTask::operator =(const XmlNode& xmlNode)
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
-      m_statusMessage = StringUtils::Trim(statusMessageNode.GetText().c_str());
+      m_statusMessage = statusMessageNode.GetText();
       m_statusMessageHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");

@@ -60,13 +60,13 @@ NodeGroupConfiguration& NodeGroupConfiguration::operator =(const XmlNode& xmlNod
     XmlNode nodeGroupIdNode = resultNode.FirstChild("NodeGroupId");
     if(!nodeGroupIdNode.IsNull())
     {
-      m_nodeGroupId = StringUtils::Trim(nodeGroupIdNode.GetText().c_str());
+      m_nodeGroupId = nodeGroupIdNode.GetText();
       m_nodeGroupIdHasBeenSet = true;
     }
     XmlNode slotsNode = resultNode.FirstChild("Slots");
     if(!slotsNode.IsNull())
     {
-      m_slots = StringUtils::Trim(slotsNode.GetText().c_str());
+      m_slots = slotsNode.GetText();
       m_slotsHasBeenSet = true;
     }
     XmlNode replicaCountNode = resultNode.FirstChild("ReplicaCount");
@@ -78,7 +78,7 @@ NodeGroupConfiguration& NodeGroupConfiguration::operator =(const XmlNode& xmlNod
     XmlNode primaryAvailabilityZoneNode = resultNode.FirstChild("PrimaryAvailabilityZone");
     if(!primaryAvailabilityZoneNode.IsNull())
     {
-      m_primaryAvailabilityZone = StringUtils::Trim(primaryAvailabilityZoneNode.GetText().c_str());
+      m_primaryAvailabilityZone = primaryAvailabilityZoneNode.GetText();
       m_primaryAvailabilityZoneHasBeenSet = true;
     }
     XmlNode replicaAvailabilityZonesNode = resultNode.FirstChild("ReplicaAvailabilityZones");
@@ -87,7 +87,7 @@ NodeGroupConfiguration& NodeGroupConfiguration::operator =(const XmlNode& xmlNod
       XmlNode replicaAvailabilityZonesMember = replicaAvailabilityZonesNode.FirstChild("AvailabilityZone");
       while(!replicaAvailabilityZonesMember.IsNull())
       {
-        m_replicaAvailabilityZones.push_back(StringUtils::Trim(replicaAvailabilityZonesMember.GetText().c_str()));
+        m_replicaAvailabilityZones.push_back(replicaAvailabilityZonesMember.GetText());
         replicaAvailabilityZonesMember = replicaAvailabilityZonesMember.NextNode("AvailabilityZone");
       }
 

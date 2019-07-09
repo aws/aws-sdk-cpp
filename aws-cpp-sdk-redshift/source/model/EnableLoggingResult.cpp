@@ -58,12 +58,12 @@ EnableLoggingResult& EnableLoggingResult::operator =(const Aws::AmazonWebService
     XmlNode bucketNameNode = resultNode.FirstChild("BucketName");
     if(!bucketNameNode.IsNull())
     {
-      m_bucketName = StringUtils::Trim(bucketNameNode.GetText().c_str());
+      m_bucketName = bucketNameNode.GetText();
     }
     XmlNode s3KeyPrefixNode = resultNode.FirstChild("S3KeyPrefix");
     if(!s3KeyPrefixNode.IsNull())
     {
-      m_s3KeyPrefix = StringUtils::Trim(s3KeyPrefixNode.GetText().c_str());
+      m_s3KeyPrefix = s3KeyPrefixNode.GetText();
     }
     XmlNode lastSuccessfulDeliveryTimeNode = resultNode.FirstChild("LastSuccessfulDeliveryTime");
     if(!lastSuccessfulDeliveryTimeNode.IsNull())
@@ -78,7 +78,7 @@ EnableLoggingResult& EnableLoggingResult::operator =(const Aws::AmazonWebService
     XmlNode lastFailureMessageNode = resultNode.FirstChild("LastFailureMessage");
     if(!lastFailureMessageNode.IsNull())
     {
-      m_lastFailureMessage = StringUtils::Trim(lastFailureMessageNode.GetText().c_str());
+      m_lastFailureMessage = lastFailureMessageNode.GetText();
     }
   }
 

@@ -62,7 +62,7 @@ ServiceSpecificCredentialMetadata& ServiceSpecificCredentialMetadata::operator =
     XmlNode userNameNode = resultNode.FirstChild("UserName");
     if(!userNameNode.IsNull())
     {
-      m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
+      m_userName = userNameNode.GetText();
       m_userNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
@@ -74,7 +74,7 @@ ServiceSpecificCredentialMetadata& ServiceSpecificCredentialMetadata::operator =
     XmlNode serviceUserNameNode = resultNode.FirstChild("ServiceUserName");
     if(!serviceUserNameNode.IsNull())
     {
-      m_serviceUserName = StringUtils::Trim(serviceUserNameNode.GetText().c_str());
+      m_serviceUserName = serviceUserNameNode.GetText();
       m_serviceUserNameHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
@@ -86,13 +86,13 @@ ServiceSpecificCredentialMetadata& ServiceSpecificCredentialMetadata::operator =
     XmlNode serviceSpecificCredentialIdNode = resultNode.FirstChild("ServiceSpecificCredentialId");
     if(!serviceSpecificCredentialIdNode.IsNull())
     {
-      m_serviceSpecificCredentialId = StringUtils::Trim(serviceSpecificCredentialIdNode.GetText().c_str());
+      m_serviceSpecificCredentialId = serviceSpecificCredentialIdNode.GetText();
       m_serviceSpecificCredentialIdHasBeenSet = true;
     }
     XmlNode serviceNameNode = resultNode.FirstChild("ServiceName");
     if(!serviceNameNode.IsNull())
     {
-      m_serviceName = StringUtils::Trim(serviceNameNode.GetText().c_str());
+      m_serviceName = serviceNameNode.GetText();
       m_serviceNameHasBeenSet = true;
     }
   }

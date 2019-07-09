@@ -55,27 +55,27 @@ DescribeChangeSetResult& DescribeChangeSetResult::operator =(const Aws::AmazonWe
     XmlNode changeSetNameNode = resultNode.FirstChild("ChangeSetName");
     if(!changeSetNameNode.IsNull())
     {
-      m_changeSetName = StringUtils::Trim(changeSetNameNode.GetText().c_str());
+      m_changeSetName = changeSetNameNode.GetText();
     }
     XmlNode changeSetIdNode = resultNode.FirstChild("ChangeSetId");
     if(!changeSetIdNode.IsNull())
     {
-      m_changeSetId = StringUtils::Trim(changeSetIdNode.GetText().c_str());
+      m_changeSetId = changeSetIdNode.GetText();
     }
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
     if(!stackIdNode.IsNull())
     {
-      m_stackId = StringUtils::Trim(stackIdNode.GetText().c_str());
+      m_stackId = stackIdNode.GetText();
     }
     XmlNode stackNameNode = resultNode.FirstChild("StackName");
     if(!stackNameNode.IsNull())
     {
-      m_stackName = StringUtils::Trim(stackNameNode.GetText().c_str());
+      m_stackName = stackNameNode.GetText();
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
     }
     XmlNode parametersNode = resultNode.FirstChild("Parameters");
     if(!parametersNode.IsNull())
@@ -106,7 +106,7 @@ DescribeChangeSetResult& DescribeChangeSetResult::operator =(const Aws::AmazonWe
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
     if(!statusReasonNode.IsNull())
     {
-      m_statusReason = StringUtils::Trim(statusReasonNode.GetText().c_str());
+      m_statusReason = statusReasonNode.GetText();
     }
     XmlNode notificationARNsNode = resultNode.FirstChild("NotificationARNs");
     if(!notificationARNsNode.IsNull())
@@ -114,7 +114,7 @@ DescribeChangeSetResult& DescribeChangeSetResult::operator =(const Aws::AmazonWe
       XmlNode notificationARNsMember = notificationARNsNode.FirstChild("member");
       while(!notificationARNsMember.IsNull())
       {
-        m_notificationARNs.push_back(StringUtils::Trim(notificationARNsMember.GetText().c_str()));
+        m_notificationARNs.push_back(notificationARNsMember.GetText());
         notificationARNsMember = notificationARNsMember.NextNode("member");
       }
 
@@ -160,7 +160,7 @@ DescribeChangeSetResult& DescribeChangeSetResult::operator =(const Aws::AmazonWe
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+      m_nextToken = nextTokenNode.GetText();
     }
   }
 

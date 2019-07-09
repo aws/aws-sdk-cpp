@@ -41,7 +41,9 @@ namespace Model
     RATE_KEY,
     RULE_TYPE,
     NEXT_MARKER,
-    RESOURCE_ARN
+    RESOURCE_ARN,
+    TAGS,
+    TAG_KEYS
   };
 
 namespace ParameterExceptionFieldMapper

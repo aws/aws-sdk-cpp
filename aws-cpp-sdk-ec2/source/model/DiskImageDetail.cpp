@@ -70,7 +70,7 @@ DiskImageDetail& DiskImageDetail::operator =(const XmlNode& xmlNode)
     XmlNode importManifestUrlNode = resultNode.FirstChild("importManifestUrl");
     if(!importManifestUrlNode.IsNull())
     {
-      m_importManifestUrl = StringUtils::Trim(importManifestUrlNode.GetText().c_str());
+      m_importManifestUrl = importManifestUrlNode.GetText();
       m_importManifestUrlHasBeenSet = true;
     }
   }

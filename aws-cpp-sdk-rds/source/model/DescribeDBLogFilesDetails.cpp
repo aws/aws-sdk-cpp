@@ -58,7 +58,7 @@ DescribeDBLogFilesDetails& DescribeDBLogFilesDetails::operator =(const XmlNode& 
     XmlNode logFileNameNode = resultNode.FirstChild("LogFileName");
     if(!logFileNameNode.IsNull())
     {
-      m_logFileName = StringUtils::Trim(logFileNameNode.GetText().c_str());
+      m_logFileName = logFileNameNode.GetText();
       m_logFileNameHasBeenSet = true;
     }
     XmlNode lastWrittenNode = resultNode.FirstChild("LastWritten");

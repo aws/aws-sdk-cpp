@@ -60,7 +60,7 @@ PrivateIpAddressSpecification& PrivateIpAddressSpecification::operator =(const X
     XmlNode privateIpAddressNode = resultNode.FirstChild("privateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
-      m_privateIpAddress = StringUtils::Trim(privateIpAddressNode.GetText().c_str());
+      m_privateIpAddress = privateIpAddressNode.GetText();
       m_privateIpAddressHasBeenSet = true;
     }
   }

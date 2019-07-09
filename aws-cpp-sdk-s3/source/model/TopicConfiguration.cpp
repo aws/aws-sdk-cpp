@@ -56,13 +56,13 @@ TopicConfiguration& TopicConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
     XmlNode topicArnNode = resultNode.FirstChild("Topic");
     if(!topicArnNode.IsNull())
     {
-      m_topicArn = StringUtils::Trim(topicArnNode.GetText().c_str());
+      m_topicArn = topicArnNode.GetText();
       m_topicArnHasBeenSet = true;
     }
     XmlNode eventsNode = resultNode.FirstChild("Event");

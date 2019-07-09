@@ -61,7 +61,7 @@ ListenerDescription& ListenerDescription::operator =(const XmlNode& xmlNode)
       XmlNode policyNamesMember = policyNamesNode.FirstChild("member");
       while(!policyNamesMember.IsNull())
       {
-        m_policyNames.push_back(StringUtils::Trim(policyNamesMember.GetText().c_str()));
+        m_policyNames.push_back(policyNamesMember.GetText());
         policyNamesMember = policyNamesMember.NextNode("member");
       }
 

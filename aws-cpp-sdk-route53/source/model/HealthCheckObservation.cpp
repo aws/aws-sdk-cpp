@@ -62,7 +62,7 @@ HealthCheckObservation& HealthCheckObservation::operator =(const XmlNode& xmlNod
     XmlNode iPAddressNode = resultNode.FirstChild("IPAddress");
     if(!iPAddressNode.IsNull())
     {
-      m_iPAddress = StringUtils::Trim(iPAddressNode.GetText().c_str());
+      m_iPAddress = iPAddressNode.GetText();
       m_iPAddressHasBeenSet = true;
     }
     XmlNode statusReportNode = resultNode.FirstChild("StatusReport");

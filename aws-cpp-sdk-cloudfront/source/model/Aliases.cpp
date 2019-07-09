@@ -63,7 +63,7 @@ Aliases& Aliases::operator =(const XmlNode& xmlNode)
       XmlNode itemsMember = itemsNode.FirstChild("CNAME");
       while(!itemsMember.IsNull())
       {
-        m_items.push_back(StringUtils::Trim(itemsMember.GetText().c_str()));
+        m_items.push_back(itemsMember.GetText());
         itemsMember = itemsMember.NextNode("CNAME");
       }
 

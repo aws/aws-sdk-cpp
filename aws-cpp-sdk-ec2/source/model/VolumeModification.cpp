@@ -88,7 +88,7 @@ VolumeModification& VolumeModification::operator =(const XmlNode& xmlNode)
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
     {
-      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
+      m_volumeId = volumeIdNode.GetText();
       m_volumeIdHasBeenSet = true;
     }
     XmlNode modificationStateNode = resultNode.FirstChild("modificationState");
@@ -100,7 +100,7 @@ VolumeModification& VolumeModification::operator =(const XmlNode& xmlNode)
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
-      m_statusMessage = StringUtils::Trim(statusMessageNode.GetText().c_str());
+      m_statusMessage = statusMessageNode.GetText();
       m_statusMessageHasBeenSet = true;
     }
     XmlNode targetSizeNode = resultNode.FirstChild("targetSize");

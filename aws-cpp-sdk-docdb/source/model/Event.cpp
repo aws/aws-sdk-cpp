@@ -62,7 +62,7 @@ Event& Event::operator =(const XmlNode& xmlNode)
     XmlNode sourceIdentifierNode = resultNode.FirstChild("SourceIdentifier");
     if(!sourceIdentifierNode.IsNull())
     {
-      m_sourceIdentifier = StringUtils::Trim(sourceIdentifierNode.GetText().c_str());
+      m_sourceIdentifier = sourceIdentifierNode.GetText();
       m_sourceIdentifierHasBeenSet = true;
     }
     XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
@@ -74,7 +74,7 @@ Event& Event::operator =(const XmlNode& xmlNode)
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
-      m_message = StringUtils::Trim(messageNode.GetText().c_str());
+      m_message = messageNode.GetText();
       m_messageHasBeenSet = true;
     }
     XmlNode eventCategoriesNode = resultNode.FirstChild("EventCategories");
@@ -83,7 +83,7 @@ Event& Event::operator =(const XmlNode& xmlNode)
       XmlNode eventCategoriesMember = eventCategoriesNode.FirstChild("EventCategory");
       while(!eventCategoriesMember.IsNull())
       {
-        m_eventCategories.push_back(StringUtils::Trim(eventCategoriesMember.GetText().c_str()));
+        m_eventCategories.push_back(eventCategoriesMember.GetText());
         eventCategoriesMember = eventCategoriesMember.NextNode("EventCategory");
       }
 
@@ -98,7 +98,7 @@ Event& Event::operator =(const XmlNode& xmlNode)
     XmlNode sourceArnNode = resultNode.FirstChild("SourceArn");
     if(!sourceArnNode.IsNull())
     {
-      m_sourceArn = StringUtils::Trim(sourceArnNode.GetText().c_str());
+      m_sourceArn = sourceArnNode.GetText();
       m_sourceArnHasBeenSet = true;
     }
   }

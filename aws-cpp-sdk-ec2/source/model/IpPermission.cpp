@@ -72,7 +72,7 @@ IpPermission& IpPermission::operator =(const XmlNode& xmlNode)
     XmlNode ipProtocolNode = resultNode.FirstChild("ipProtocol");
     if(!ipProtocolNode.IsNull())
     {
-      m_ipProtocol = StringUtils::Trim(ipProtocolNode.GetText().c_str());
+      m_ipProtocol = ipProtocolNode.GetText();
       m_ipProtocolHasBeenSet = true;
     }
     XmlNode ipRangesNode = resultNode.FirstChild("ipRanges");

@@ -50,7 +50,7 @@ Builder& Builder::operator =(const XmlNode& xmlNode)
     XmlNode aRNNode = resultNode.FirstChild("ARN");
     if(!aRNNode.IsNull())
     {
-      m_aRN = StringUtils::Trim(aRNNode.GetText().c_str());
+      m_aRN = aRNNode.GetText();
       m_aRNHasBeenSet = true;
     }
   }

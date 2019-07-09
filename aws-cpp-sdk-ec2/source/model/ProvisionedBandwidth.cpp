@@ -64,7 +64,7 @@ ProvisionedBandwidth& ProvisionedBandwidth::operator =(const XmlNode& xmlNode)
     XmlNode provisionedNode = resultNode.FirstChild("provisioned");
     if(!provisionedNode.IsNull())
     {
-      m_provisioned = StringUtils::Trim(provisionedNode.GetText().c_str());
+      m_provisioned = provisionedNode.GetText();
       m_provisionedHasBeenSet = true;
     }
     XmlNode requestTimeNode = resultNode.FirstChild("requestTime");
@@ -76,13 +76,13 @@ ProvisionedBandwidth& ProvisionedBandwidth::operator =(const XmlNode& xmlNode)
     XmlNode requestedNode = resultNode.FirstChild("requested");
     if(!requestedNode.IsNull())
     {
-      m_requested = StringUtils::Trim(requestedNode.GetText().c_str());
+      m_requested = requestedNode.GetText();
       m_requestedHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
   }

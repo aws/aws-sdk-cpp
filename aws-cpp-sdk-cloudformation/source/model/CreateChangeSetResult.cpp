@@ -51,12 +51,12 @@ CreateChangeSetResult& CreateChangeSetResult::operator =(const Aws::AmazonWebSer
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
     }
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
     if(!stackIdNode.IsNull())
     {
-      m_stackId = StringUtils::Trim(stackIdNode.GetText().c_str());
+      m_stackId = stackIdNode.GetText();
     }
   }
 

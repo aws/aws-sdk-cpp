@@ -51,7 +51,7 @@ AttachNetworkInterfaceResponse& AttachNetworkInterfaceResponse::operator =(const
     XmlNode attachmentIdNode = resultNode.FirstChild("attachmentId");
     if(!attachmentIdNode.IsNull())
     {
-      m_attachmentId = StringUtils::Trim(attachmentIdNode.GetText().c_str());
+      m_attachmentId = attachmentIdNode.GetText();
     }
   }
 

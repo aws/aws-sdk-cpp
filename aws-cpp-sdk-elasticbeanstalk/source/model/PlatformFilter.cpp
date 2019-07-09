@@ -54,13 +54,13 @@ PlatformFilter& PlatformFilter::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = StringUtils::Trim(typeNode.GetText().c_str());
+      m_type = typeNode.GetText();
       m_typeHasBeenSet = true;
     }
     XmlNode operatorNode = resultNode.FirstChild("Operator");
     if(!operatorNode.IsNull())
     {
-      m_operator = StringUtils::Trim(operatorNode.GetText().c_str());
+      m_operator = operatorNode.GetText();
       m_operatorHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("Values");
@@ -69,7 +69,7 @@ PlatformFilter& PlatformFilter::operator =(const XmlNode& xmlNode)
       XmlNode valuesMember = valuesNode.FirstChild("member");
       while(!valuesMember.IsNull())
       {
-        m_values.push_back(StringUtils::Trim(valuesMember.GetText().c_str()));
+        m_values.push_back(valuesMember.GetText());
         valuesMember = valuesMember.NextNode("member");
       }
 

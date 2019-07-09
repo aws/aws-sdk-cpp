@@ -62,19 +62,19 @@ UpgradeTarget& UpgradeTarget::operator =(const XmlNode& xmlNode)
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
     {
-      m_engine = StringUtils::Trim(engineNode.GetText().c_str());
+      m_engine = engineNode.GetText();
       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
-      m_engineVersion = StringUtils::Trim(engineVersionNode.GetText().c_str());
+      m_engineVersion = engineVersionNode.GetText();
       m_engineVersionHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode autoUpgradeNode = resultNode.FirstChild("AutoUpgrade");

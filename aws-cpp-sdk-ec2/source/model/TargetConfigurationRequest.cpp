@@ -60,7 +60,7 @@ TargetConfigurationRequest& TargetConfigurationRequest::operator =(const XmlNode
     XmlNode offeringIdNode = resultNode.FirstChild("OfferingId");
     if(!offeringIdNode.IsNull())
     {
-      m_offeringId = StringUtils::Trim(offeringIdNode.GetText().c_str());
+      m_offeringId = offeringIdNode.GetText();
       m_offeringIdHasBeenSet = true;
     }
   }

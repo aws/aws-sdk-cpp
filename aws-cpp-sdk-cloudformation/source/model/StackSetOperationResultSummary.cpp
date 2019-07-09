@@ -60,13 +60,13 @@ StackSetOperationResultSummary& StackSetOperationResultSummary::operator =(const
     XmlNode accountNode = resultNode.FirstChild("Account");
     if(!accountNode.IsNull())
     {
-      m_account = StringUtils::Trim(accountNode.GetText().c_str());
+      m_account = accountNode.GetText();
       m_accountHasBeenSet = true;
     }
     XmlNode regionNode = resultNode.FirstChild("Region");
     if(!regionNode.IsNull())
     {
-      m_region = StringUtils::Trim(regionNode.GetText().c_str());
+      m_region = regionNode.GetText();
       m_regionHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
@@ -78,7 +78,7 @@ StackSetOperationResultSummary& StackSetOperationResultSummary::operator =(const
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
     if(!statusReasonNode.IsNull())
     {
-      m_statusReason = StringUtils::Trim(statusReasonNode.GetText().c_str());
+      m_statusReason = statusReasonNode.GetText();
       m_statusReasonHasBeenSet = true;
     }
     XmlNode accountGateResultNode = resultNode.FirstChild("AccountGateResult");

@@ -57,7 +57,7 @@ ListHostedZonesResult& ListHostedZonesResult::operator =(const Aws::AmazonWebSer
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
-      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+      m_marker = markerNode.GetText();
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
@@ -67,12 +67,12 @@ ListHostedZonesResult& ListHostedZonesResult::operator =(const Aws::AmazonWebSer
     XmlNode nextMarkerNode = resultNode.FirstChild("NextMarker");
     if(!nextMarkerNode.IsNull())
     {
-      m_nextMarker = StringUtils::Trim(nextMarkerNode.GetText().c_str());
+      m_nextMarker = nextMarkerNode.GetText();
     }
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");
     if(!maxItemsNode.IsNull())
     {
-      m_maxItems = StringUtils::Trim(maxItemsNode.GetText().c_str());
+      m_maxItems = maxItemsNode.GetText();
     }
   }
 

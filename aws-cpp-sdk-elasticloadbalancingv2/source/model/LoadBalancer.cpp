@@ -78,19 +78,19 @@ LoadBalancer& LoadBalancer::operator =(const XmlNode& xmlNode)
     XmlNode loadBalancerArnNode = resultNode.FirstChild("LoadBalancerArn");
     if(!loadBalancerArnNode.IsNull())
     {
-      m_loadBalancerArn = StringUtils::Trim(loadBalancerArnNode.GetText().c_str());
+      m_loadBalancerArn = loadBalancerArnNode.GetText();
       m_loadBalancerArnHasBeenSet = true;
     }
     XmlNode dNSNameNode = resultNode.FirstChild("DNSName");
     if(!dNSNameNode.IsNull())
     {
-      m_dNSName = StringUtils::Trim(dNSNameNode.GetText().c_str());
+      m_dNSName = dNSNameNode.GetText();
       m_dNSNameHasBeenSet = true;
     }
     XmlNode canonicalHostedZoneIdNode = resultNode.FirstChild("CanonicalHostedZoneId");
     if(!canonicalHostedZoneIdNode.IsNull())
     {
-      m_canonicalHostedZoneId = StringUtils::Trim(canonicalHostedZoneIdNode.GetText().c_str());
+      m_canonicalHostedZoneId = canonicalHostedZoneIdNode.GetText();
       m_canonicalHostedZoneIdHasBeenSet = true;
     }
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
@@ -102,7 +102,7 @@ LoadBalancer& LoadBalancer::operator =(const XmlNode& xmlNode)
     XmlNode loadBalancerNameNode = resultNode.FirstChild("LoadBalancerName");
     if(!loadBalancerNameNode.IsNull())
     {
-      m_loadBalancerName = StringUtils::Trim(loadBalancerNameNode.GetText().c_str());
+      m_loadBalancerName = loadBalancerNameNode.GetText();
       m_loadBalancerNameHasBeenSet = true;
     }
     XmlNode schemeNode = resultNode.FirstChild("Scheme");
@@ -114,7 +114,7 @@ LoadBalancer& LoadBalancer::operator =(const XmlNode& xmlNode)
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
+      m_vpcId = vpcIdNode.GetText();
       m_vpcIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("State");
@@ -147,7 +147,7 @@ LoadBalancer& LoadBalancer::operator =(const XmlNode& xmlNode)
       XmlNode securityGroupsMember = securityGroupsNode.FirstChild("member");
       while(!securityGroupsMember.IsNull())
       {
-        m_securityGroups.push_back(StringUtils::Trim(securityGroupsMember.GetText().c_str()));
+        m_securityGroups.push_back(securityGroupsMember.GetText());
         securityGroupsMember = securityGroupsMember.NextNode("member");
       }
 

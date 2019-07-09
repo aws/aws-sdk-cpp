@@ -30,6 +30,7 @@
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaClient.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaEndpoint.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaErrorMarshaller.h>
+#include <aws/kinesis-video-archived-media/model/GetDASHStreamingSessionURLRequest.h>
 #include <aws/kinesis-video-archived-media/model/GetHLSStreamingSessionURLRequest.h>
 #include <aws/kinesis-video-archived-media/model/GetMediaForFragmentListRequest.h>
 #include <aws/kinesis-video-archived-media/model/ListFragmentsRequest.h>
@@ -104,6 +105,41 @@ void KinesisVideoArchivedMediaClient::OverrideEndpoint(const Aws::String& endpoi
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+GetDASHStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetDASHStreamingSessionURL(const GetDASHStreamingSessionURLRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/getDASHStreamingSessionURL";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetDASHStreamingSessionURLOutcome(GetDASHStreamingSessionURLResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetDASHStreamingSessionURLOutcome(outcome.GetError());
+  }
+}
+
+GetDASHStreamingSessionURLOutcomeCallable KinesisVideoArchivedMediaClient::GetDASHStreamingSessionURLCallable(const GetDASHStreamingSessionURLRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDASHStreamingSessionURLOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDASHStreamingSessionURL(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisVideoArchivedMediaClient::GetDASHStreamingSessionURLAsync(const GetDASHStreamingSessionURLRequest& request, const GetDASHStreamingSessionURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDASHStreamingSessionURLAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisVideoArchivedMediaClient::GetDASHStreamingSessionURLAsyncHelper(const GetDASHStreamingSessionURLRequest& request, const GetDASHStreamingSessionURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDASHStreamingSessionURL(request), context);
 }
 
 GetHLSStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetHLSStreamingSessionURL(const GetHLSStreamingSessionURLRequest& request) const

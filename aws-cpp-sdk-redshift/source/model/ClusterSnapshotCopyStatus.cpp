@@ -60,7 +60,7 @@ ClusterSnapshotCopyStatus& ClusterSnapshotCopyStatus::operator =(const XmlNode& 
     XmlNode destinationRegionNode = resultNode.FirstChild("DestinationRegion");
     if(!destinationRegionNode.IsNull())
     {
-      m_destinationRegion = StringUtils::Trim(destinationRegionNode.GetText().c_str());
+      m_destinationRegion = destinationRegionNode.GetText();
       m_destinationRegionHasBeenSet = true;
     }
     XmlNode retentionPeriodNode = resultNode.FirstChild("RetentionPeriod");
@@ -78,7 +78,7 @@ ClusterSnapshotCopyStatus& ClusterSnapshotCopyStatus::operator =(const XmlNode& 
     XmlNode snapshotCopyGrantNameNode = resultNode.FirstChild("SnapshotCopyGrantName");
     if(!snapshotCopyGrantNameNode.IsNull())
     {
-      m_snapshotCopyGrantName = StringUtils::Trim(snapshotCopyGrantNameNode.GetText().c_str());
+      m_snapshotCopyGrantName = snapshotCopyGrantNameNode.GetText();
       m_snapshotCopyGrantNameHasBeenSet = true;
     }
   }

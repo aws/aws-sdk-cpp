@@ -55,22 +55,22 @@ ListObjectVersionsResult& ListObjectVersionsResult::operator =(const Aws::Amazon
     XmlNode keyMarkerNode = resultNode.FirstChild("KeyMarker");
     if(!keyMarkerNode.IsNull())
     {
-      m_keyMarker = StringUtils::Trim(keyMarkerNode.GetText().c_str());
+      m_keyMarker = keyMarkerNode.GetText();
     }
     XmlNode versionIdMarkerNode = resultNode.FirstChild("VersionIdMarker");
     if(!versionIdMarkerNode.IsNull())
     {
-      m_versionIdMarker = StringUtils::Trim(versionIdMarkerNode.GetText().c_str());
+      m_versionIdMarker = versionIdMarkerNode.GetText();
     }
     XmlNode nextKeyMarkerNode = resultNode.FirstChild("NextKeyMarker");
     if(!nextKeyMarkerNode.IsNull())
     {
-      m_nextKeyMarker = StringUtils::Trim(nextKeyMarkerNode.GetText().c_str());
+      m_nextKeyMarker = nextKeyMarkerNode.GetText();
     }
     XmlNode nextVersionIdMarkerNode = resultNode.FirstChild("NextVersionIdMarker");
     if(!nextVersionIdMarkerNode.IsNull())
     {
-      m_nextVersionIdMarker = StringUtils::Trim(nextVersionIdMarkerNode.GetText().c_str());
+      m_nextVersionIdMarker = nextVersionIdMarkerNode.GetText();
     }
     XmlNode versionsNode = resultNode.FirstChild("Version");
     if(!versionsNode.IsNull())
@@ -97,17 +97,17 @@ ListObjectVersionsResult& ListObjectVersionsResult::operator =(const Aws::Amazon
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
     if(!prefixNode.IsNull())
     {
-      m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
+      m_prefix = prefixNode.GetText();
     }
     XmlNode delimiterNode = resultNode.FirstChild("Delimiter");
     if(!delimiterNode.IsNull())
     {
-      m_delimiter = StringUtils::Trim(delimiterNode.GetText().c_str());
+      m_delimiter = delimiterNode.GetText();
     }
     XmlNode maxKeysNode = resultNode.FirstChild("MaxKeys");
     if(!maxKeysNode.IsNull())

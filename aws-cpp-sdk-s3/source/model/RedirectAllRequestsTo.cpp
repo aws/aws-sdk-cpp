@@ -54,7 +54,7 @@ RedirectAllRequestsTo& RedirectAllRequestsTo::operator =(const XmlNode& xmlNode)
     XmlNode hostNameNode = resultNode.FirstChild("HostName");
     if(!hostNameNode.IsNull())
     {
-      m_hostName = StringUtils::Trim(hostNameNode.GetText().c_str());
+      m_hostName = hostNameNode.GetText();
       m_hostNameHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("Protocol");

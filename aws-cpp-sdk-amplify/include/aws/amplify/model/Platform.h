@@ -26,10 +26,7 @@ namespace Model
   enum class Platform
   {
     NOT_SET,
-    IOS,
-    ANDROID_,
-    WEB,
-    REACT_NATIVE
+    WEB
   };
 
 namespace PlatformMapper

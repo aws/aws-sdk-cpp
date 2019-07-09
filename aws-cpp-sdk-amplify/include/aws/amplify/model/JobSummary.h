@@ -339,32 +339,44 @@ namespace Model
 
 
     /**
-     * <p> Type for the Job. </p>
+     * <p> Type for the Job. \n "RELEASE": Manually released from source by using
+     * StartJob API. "RETRY": Manually retried by using StartJob API. "WEB_HOOK":
+     * Automatically triggered by WebHooks. </p>
      */
     inline const JobType& GetJobType() const{ return m_jobType; }
 
     /**
-     * <p> Type for the Job. </p>
+     * <p> Type for the Job. \n "RELEASE": Manually released from source by using
+     * StartJob API. "RETRY": Manually retried by using StartJob API. "WEB_HOOK":
+     * Automatically triggered by WebHooks. </p>
      */
     inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
 
     /**
-     * <p> Type for the Job. </p>
+     * <p> Type for the Job. \n "RELEASE": Manually released from source by using
+     * StartJob API. "RETRY": Manually retried by using StartJob API. "WEB_HOOK":
+     * Automatically triggered by WebHooks. </p>
      */
     inline void SetJobType(const JobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
 
     /**
-     * <p> Type for the Job. </p>
+     * <p> Type for the Job. \n "RELEASE": Manually released from source by using
+     * StartJob API. "RETRY": Manually retried by using StartJob API. "WEB_HOOK":
+     * Automatically triggered by WebHooks. </p>
      */
     inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
 
     /**
-     * <p> Type for the Job. </p>
+     * <p> Type for the Job. \n "RELEASE": Manually released from source by using
+     * StartJob API. "RETRY": Manually retried by using StartJob API. "WEB_HOOK":
+     * Automatically triggered by WebHooks. </p>
      */
     inline JobSummary& WithJobType(const JobType& value) { SetJobType(value); return *this;}
 
     /**
-     * <p> Type for the Job. </p>
+     * <p> Type for the Job. \n "RELEASE": Manually released from source by using
+     * StartJob API. "RETRY": Manually retried by using StartJob API. "WEB_HOOK":
+     * Automatically triggered by WebHooks. </p>
      */
     inline JobSummary& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
 

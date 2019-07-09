@@ -51,7 +51,7 @@ CopyFpgaImageResponse& CopyFpgaImageResponse::operator =(const Aws::AmazonWebSer
     XmlNode fpgaImageIdNode = resultNode.FirstChild("fpgaImageId");
     if(!fpgaImageIdNode.IsNull())
     {
-      m_fpgaImageId = StringUtils::Trim(fpgaImageIdNode.GetText().c_str());
+      m_fpgaImageId = fpgaImageIdNode.GetText();
     }
   }
 

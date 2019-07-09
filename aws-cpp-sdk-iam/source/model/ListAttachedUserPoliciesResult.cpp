@@ -69,7 +69,7 @@ ListAttachedUserPoliciesResult& ListAttachedUserPoliciesResult::operator =(const
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
-      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+      m_marker = markerNode.GetText();
     }
   }
 

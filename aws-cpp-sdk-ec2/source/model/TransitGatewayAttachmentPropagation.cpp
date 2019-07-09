@@ -54,7 +54,7 @@ TransitGatewayAttachmentPropagation& TransitGatewayAttachmentPropagation::operat
     XmlNode transitGatewayRouteTableIdNode = resultNode.FirstChild("transitGatewayRouteTableId");
     if(!transitGatewayRouteTableIdNode.IsNull())
     {
-      m_transitGatewayRouteTableId = StringUtils::Trim(transitGatewayRouteTableIdNode.GetText().c_str());
+      m_transitGatewayRouteTableId = transitGatewayRouteTableIdNode.GetText();
       m_transitGatewayRouteTableIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");

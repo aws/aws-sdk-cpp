@@ -69,12 +69,12 @@ GetHostReservationPurchasePreviewResponse& GetHostReservationPurchasePreviewResp
     XmlNode totalHourlyPriceNode = resultNode.FirstChild("totalHourlyPrice");
     if(!totalHourlyPriceNode.IsNull())
     {
-      m_totalHourlyPrice = StringUtils::Trim(totalHourlyPriceNode.GetText().c_str());
+      m_totalHourlyPrice = totalHourlyPriceNode.GetText();
     }
     XmlNode totalUpfrontPriceNode = resultNode.FirstChild("totalUpfrontPrice");
     if(!totalUpfrontPriceNode.IsNull())
     {
-      m_totalUpfrontPrice = StringUtils::Trim(totalUpfrontPriceNode.GetText().c_str());
+      m_totalUpfrontPrice = totalUpfrontPriceNode.GetText();
     }
   }
 

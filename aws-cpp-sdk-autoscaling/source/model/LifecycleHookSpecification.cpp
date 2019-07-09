@@ -64,19 +64,19 @@ LifecycleHookSpecification& LifecycleHookSpecification::operator =(const XmlNode
     XmlNode lifecycleHookNameNode = resultNode.FirstChild("LifecycleHookName");
     if(!lifecycleHookNameNode.IsNull())
     {
-      m_lifecycleHookName = StringUtils::Trim(lifecycleHookNameNode.GetText().c_str());
+      m_lifecycleHookName = lifecycleHookNameNode.GetText();
       m_lifecycleHookNameHasBeenSet = true;
     }
     XmlNode lifecycleTransitionNode = resultNode.FirstChild("LifecycleTransition");
     if(!lifecycleTransitionNode.IsNull())
     {
-      m_lifecycleTransition = StringUtils::Trim(lifecycleTransitionNode.GetText().c_str());
+      m_lifecycleTransition = lifecycleTransitionNode.GetText();
       m_lifecycleTransitionHasBeenSet = true;
     }
     XmlNode notificationMetadataNode = resultNode.FirstChild("NotificationMetadata");
     if(!notificationMetadataNode.IsNull())
     {
-      m_notificationMetadata = StringUtils::Trim(notificationMetadataNode.GetText().c_str());
+      m_notificationMetadata = notificationMetadataNode.GetText();
       m_notificationMetadataHasBeenSet = true;
     }
     XmlNode heartbeatTimeoutNode = resultNode.FirstChild("HeartbeatTimeout");
@@ -88,19 +88,19 @@ LifecycleHookSpecification& LifecycleHookSpecification::operator =(const XmlNode
     XmlNode defaultResultNode = resultNode.FirstChild("DefaultResult");
     if(!defaultResultNode.IsNull())
     {
-      m_defaultResult = StringUtils::Trim(defaultResultNode.GetText().c_str());
+      m_defaultResult = defaultResultNode.GetText();
       m_defaultResultHasBeenSet = true;
     }
     XmlNode notificationTargetARNNode = resultNode.FirstChild("NotificationTargetARN");
     if(!notificationTargetARNNode.IsNull())
     {
-      m_notificationTargetARN = StringUtils::Trim(notificationTargetARNNode.GetText().c_str());
+      m_notificationTargetARN = notificationTargetARNNode.GetText();
       m_notificationTargetARNHasBeenSet = true;
     }
     XmlNode roleARNNode = resultNode.FirstChild("RoleARN");
     if(!roleARNNode.IsNull())
     {
-      m_roleARN = StringUtils::Trim(roleARNNode.GetText().c_str());
+      m_roleARN = roleARNNode.GetText();
       m_roleARNHasBeenSet = true;
     }
   }

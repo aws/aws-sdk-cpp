@@ -51,12 +51,12 @@ CreateFpgaImageResponse& CreateFpgaImageResponse::operator =(const Aws::AmazonWe
     XmlNode fpgaImageIdNode = resultNode.FirstChild("fpgaImageId");
     if(!fpgaImageIdNode.IsNull())
     {
-      m_fpgaImageId = StringUtils::Trim(fpgaImageIdNode.GetText().c_str());
+      m_fpgaImageId = fpgaImageIdNode.GetText();
     }
     XmlNode fpgaImageGlobalIdNode = resultNode.FirstChild("fpgaImageGlobalId");
     if(!fpgaImageGlobalIdNode.IsNull())
     {
-      m_fpgaImageGlobalId = StringUtils::Trim(fpgaImageGlobalIdNode.GetText().c_str());
+      m_fpgaImageGlobalId = fpgaImageGlobalIdNode.GetText();
     }
   }
 

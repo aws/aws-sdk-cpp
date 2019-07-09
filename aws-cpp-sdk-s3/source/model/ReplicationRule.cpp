@@ -66,7 +66,7 @@ ReplicationRule& ReplicationRule::operator =(const XmlNode& xmlNode)
     XmlNode iDNode = resultNode.FirstChild("ID");
     if(!iDNode.IsNull())
     {
-      m_iD = StringUtils::Trim(iDNode.GetText().c_str());
+      m_iD = iDNode.GetText();
       m_iDHasBeenSet = true;
     }
     XmlNode priorityNode = resultNode.FirstChild("Priority");

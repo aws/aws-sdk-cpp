@@ -52,13 +52,13 @@ PrefixListId& PrefixListId::operator =(const XmlNode& xmlNode)
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode prefixListIdNode = resultNode.FirstChild("prefixListId");
     if(!prefixListIdNode.IsNull())
     {
-      m_prefixListId = StringUtils::Trim(prefixListIdNode.GetText().c_str());
+      m_prefixListId = prefixListIdNode.GetText();
       m_prefixListIdHasBeenSet = true;
     }
   }

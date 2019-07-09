@@ -117,7 +117,8 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws
+     * account&gt;:gamesessionqueue/&lt;queue name&gt;</code>.</p>
      */
     inline const Aws::String& GetGameSessionQueueArn() const{ return m_gameSessionQueueArn; }
 
@@ -125,7 +126,8 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws
+     * account&gt;:gamesessionqueue/&lt;queue name&gt;</code>.</p>
      */
     inline bool GameSessionQueueArnHasBeenSet() const { return m_gameSessionQueueArnHasBeenSet; }
 
@@ -133,7 +135,8 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws
+     * account&gt;:gamesessionqueue/&lt;queue name&gt;</code>.</p>
      */
     inline void SetGameSessionQueueArn(const Aws::String& value) { m_gameSessionQueueArnHasBeenSet = true; m_gameSessionQueueArn = value; }
 
@@ -141,7 +144,8 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws
+     * account&gt;:gamesessionqueue/&lt;queue name&gt;</code>.</p>
      */
     inline void SetGameSessionQueueArn(Aws::String&& value) { m_gameSessionQueueArnHasBeenSet = true; m_gameSessionQueueArn = std::move(value); }
 
@@ -149,7 +153,8 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws
+     * account&gt;:gamesessionqueue/&lt;queue name&gt;</code>.</p>
      */
     inline void SetGameSessionQueueArn(const char* value) { m_gameSessionQueueArnHasBeenSet = true; m_gameSessionQueueArn.assign(value); }
 
@@ -157,7 +162,8 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws
+     * account&gt;:gamesessionqueue/&lt;queue name&gt;</code>.</p>
      */
     inline GameSessionQueue& WithGameSessionQueueArn(const Aws::String& value) { SetGameSessionQueueArn(value); return *this;}
 
@@ -165,7 +171,8 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws
+     * account&gt;:gamesessionqueue/&lt;queue name&gt;</code>.</p>
      */
     inline GameSessionQueue& WithGameSessionQueueArn(Aws::String&& value) { SetGameSessionQueueArn(std::move(value)); return *this;}
 
@@ -173,7 +180,8 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
+     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws
+     * account&gt;:gamesessionqueue/&lt;queue name&gt;</code>.</p>
      */
     inline GameSessionQueue& WithGameSessionQueueArn(const char* value) { SetGameSessionQueueArn(value); return *this;}
 

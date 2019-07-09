@@ -54,7 +54,7 @@ AssociatedTargetNetwork& AssociatedTargetNetwork::operator =(const XmlNode& xmlN
     XmlNode networkIdNode = resultNode.FirstChild("networkId");
     if(!networkIdNode.IsNull())
     {
-      m_networkId = StringUtils::Trim(networkIdNode.GetText().c_str());
+      m_networkId = networkIdNode.GetText();
       m_networkIdHasBeenSet = true;
     }
     XmlNode networkTypeNode = resultNode.FirstChild("networkType");

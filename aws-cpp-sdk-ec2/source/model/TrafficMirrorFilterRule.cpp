@@ -78,13 +78,13 @@ TrafficMirrorFilterRule& TrafficMirrorFilterRule::operator =(const XmlNode& xmlN
     XmlNode trafficMirrorFilterRuleIdNode = resultNode.FirstChild("trafficMirrorFilterRuleId");
     if(!trafficMirrorFilterRuleIdNode.IsNull())
     {
-      m_trafficMirrorFilterRuleId = StringUtils::Trim(trafficMirrorFilterRuleIdNode.GetText().c_str());
+      m_trafficMirrorFilterRuleId = trafficMirrorFilterRuleIdNode.GetText();
       m_trafficMirrorFilterRuleIdHasBeenSet = true;
     }
     XmlNode trafficMirrorFilterIdNode = resultNode.FirstChild("trafficMirrorFilterId");
     if(!trafficMirrorFilterIdNode.IsNull())
     {
-      m_trafficMirrorFilterId = StringUtils::Trim(trafficMirrorFilterIdNode.GetText().c_str());
+      m_trafficMirrorFilterId = trafficMirrorFilterIdNode.GetText();
       m_trafficMirrorFilterIdHasBeenSet = true;
     }
     XmlNode trafficDirectionNode = resultNode.FirstChild("trafficDirection");
@@ -126,19 +126,19 @@ TrafficMirrorFilterRule& TrafficMirrorFilterRule::operator =(const XmlNode& xmlN
     XmlNode destinationCidrBlockNode = resultNode.FirstChild("destinationCidrBlock");
     if(!destinationCidrBlockNode.IsNull())
     {
-      m_destinationCidrBlock = StringUtils::Trim(destinationCidrBlockNode.GetText().c_str());
+      m_destinationCidrBlock = destinationCidrBlockNode.GetText();
       m_destinationCidrBlockHasBeenSet = true;
     }
     XmlNode sourceCidrBlockNode = resultNode.FirstChild("sourceCidrBlock");
     if(!sourceCidrBlockNode.IsNull())
     {
-      m_sourceCidrBlock = StringUtils::Trim(sourceCidrBlockNode.GetText().c_str());
+      m_sourceCidrBlock = sourceCidrBlockNode.GetText();
       m_sourceCidrBlockHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
   }

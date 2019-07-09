@@ -52,7 +52,7 @@ AccessPoliciesStatus& AccessPoliciesStatus::operator =(const XmlNode& xmlNode)
     XmlNode optionsNode = resultNode.FirstChild("Options");
     if(!optionsNode.IsNull())
     {
-      m_options = StringUtils::Trim(optionsNode.GetText().c_str());
+      m_options = optionsNode.GetText();
       m_optionsHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");

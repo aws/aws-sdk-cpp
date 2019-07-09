@@ -35,6 +35,7 @@ static const int LAST_DELIVERY_CHANNEL_DELETE_FAILED_HASH = HashingUtils::HashSt
 static const int OVERSIZED_CONFIGURATION_ITEM_HASH = HashingUtils::HashString("OversizedConfigurationItemException");
 static const int ORGANIZATION_ALL_FEATURES_NOT_ENABLED_HASH = HashingUtils::HashString("OrganizationAllFeaturesNotEnabledException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int MAX_NUMBER_OF_ORGANIZATION_CONFIG_RULES_EXCEEDED_HASH = HashingUtils::HashString("MaxNumberOfOrganizationConfigRulesExceededException");
 static const int INSUFFICIENT_PERMISSIONS_HASH = HashingUtils::HashString("InsufficientPermissionsException");
 static const int MAX_NUMBER_OF_CONFIGURATION_RECORDERS_EXCEEDED_HASH = HashingUtils::HashString("MaxNumberOfConfigurationRecordersExceededException");
 static const int INVALID_DELIVERY_CHANNEL_NAME_HASH = HashingUtils::HashString("InvalidDeliveryChannelNameException");
@@ -44,6 +45,7 @@ static const int MAX_NUMBER_OF_RETENTION_CONFIGURATIONS_EXCEEDED_HASH = HashingU
 static const int NO_AVAILABLE_DELIVERY_CHANNEL_HASH = HashingUtils::HashString("NoAvailableDeliveryChannelException");
 static const int INSUFFICIENT_DELIVERY_POLICY_HASH = HashingUtils::HashString("InsufficientDeliveryPolicyException");
 static const int NO_AVAILABLE_CONFIGURATION_RECORDER_HASH = HashingUtils::HashString("NoAvailableConfigurationRecorderException");
+static const int REMEDIATION_IN_PROGRESS_HASH = HashingUtils::HashString("RemediationInProgressException");
 static const int NO_SUCH_CONFIGURATION_AGGREGATOR_HASH = HashingUtils::HashString("NoSuchConfigurationAggregatorException");
 static const int ORGANIZATION_ACCESS_DENIED_HASH = HashingUtils::HashString("OrganizationAccessDeniedException");
 static const int NO_SUCH_BUCKET_HASH = HashingUtils::HashString("NoSuchBucketException");
@@ -56,6 +58,7 @@ static const int NO_SUCH_RETENTION_CONFIGURATION_HASH = HashingUtils::HashString
 static const int INVALID_EXPRESSION_HASH = HashingUtils::HashString("InvalidExpressionException");
 static const int NO_AVAILABLE_ORGANIZATION_HASH = HashingUtils::HashString("NoAvailableOrganizationException");
 static const int INVALID_S_N_S_TOPIC_A_R_N_HASH = HashingUtils::HashString("InvalidSNSTopicARNException");
+static const int NO_SUCH_ORGANIZATION_CONFIG_RULE_HASH = HashingUtils::HashString("NoSuchOrganizationConfigRuleException");
 static const int RESOURCE_NOT_DISCOVERED_HASH = HashingUtils::HashString("ResourceNotDiscoveredException");
 static const int INVALID_RESULT_TOKEN_HASH = HashingUtils::HashString("InvalidResultTokenException");
 static const int INVALID_RECORDING_GROUP_HASH = HashingUtils::HashString("InvalidRecordingGroupException");
@@ -98,6 +101,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::LIMIT_EXCEEDED), false);
   }
+  else if (hashCode == MAX_NUMBER_OF_ORGANIZATION_CONFIG_RULES_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::MAX_NUMBER_OF_ORGANIZATION_CONFIG_RULES_EXCEEDED), false);
+  }
   else if (hashCode == INSUFFICIENT_PERMISSIONS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::INSUFFICIENT_PERMISSIONS), false);
@@ -133,6 +140,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == NO_AVAILABLE_CONFIGURATION_RECORDER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::NO_AVAILABLE_CONFIGURATION_RECORDER), false);
+  }
+  else if (hashCode == REMEDIATION_IN_PROGRESS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::REMEDIATION_IN_PROGRESS), false);
   }
   else if (hashCode == NO_SUCH_CONFIGURATION_AGGREGATOR_HASH)
   {
@@ -181,6 +192,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_S_N_S_TOPIC_A_R_N_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::INVALID_S_N_S_TOPIC_A_R_N), false);
+  }
+  else if (hashCode == NO_SUCH_ORGANIZATION_CONFIG_RULE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::NO_SUCH_ORGANIZATION_CONFIG_RULE), false);
   }
   else if (hashCode == RESOURCE_NOT_DISCOVERED_HASH)
   {

@@ -56,25 +56,25 @@ ConfigurationOptionSetting& ConfigurationOptionSetting::operator =(const XmlNode
     XmlNode resourceNameNode = resultNode.FirstChild("ResourceName");
     if(!resourceNameNode.IsNull())
     {
-      m_resourceName = StringUtils::Trim(resourceNameNode.GetText().c_str());
+      m_resourceName = resourceNameNode.GetText();
       m_resourceNameHasBeenSet = true;
     }
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
     if(!namespaceNode.IsNull())
     {
-      m_namespace = StringUtils::Trim(namespaceNode.GetText().c_str());
+      m_namespace = namespaceNode.GetText();
       m_namespaceHasBeenSet = true;
     }
     XmlNode optionNameNode = resultNode.FirstChild("OptionName");
     if(!optionNameNode.IsNull())
     {
-      m_optionName = StringUtils::Trim(optionNameNode.GetText().c_str());
+      m_optionName = optionNameNode.GetText();
       m_optionNameHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
-      m_value = StringUtils::Trim(valueNode.GetText().c_str());
+      m_value = valueNode.GetText();
       m_valueHasBeenSet = true;
     }
   }

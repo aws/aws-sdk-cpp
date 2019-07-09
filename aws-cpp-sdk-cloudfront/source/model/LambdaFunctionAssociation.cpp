@@ -58,7 +58,7 @@ LambdaFunctionAssociation& LambdaFunctionAssociation::operator =(const XmlNode& 
     XmlNode lambdaFunctionARNNode = resultNode.FirstChild("LambdaFunctionARN");
     if(!lambdaFunctionARNNode.IsNull())
     {
-      m_lambdaFunctionARN = StringUtils::Trim(lambdaFunctionARNNode.GetText().c_str());
+      m_lambdaFunctionARN = lambdaFunctionARNNode.GetText();
       m_lambdaFunctionARNHasBeenSet = true;
     }
     XmlNode eventTypeNode = resultNode.FirstChild("EventType");

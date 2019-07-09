@@ -54,13 +54,13 @@ ImportSnapshotTask& ImportSnapshotTask::operator =(const XmlNode& xmlNode)
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode importTaskIdNode = resultNode.FirstChild("importTaskId");
     if(!importTaskIdNode.IsNull())
     {
-      m_importTaskId = StringUtils::Trim(importTaskIdNode.GetText().c_str());
+      m_importTaskId = importTaskIdNode.GetText();
       m_importTaskIdHasBeenSet = true;
     }
     XmlNode snapshotTaskDetailNode = resultNode.FirstChild("snapshotTaskDetail");

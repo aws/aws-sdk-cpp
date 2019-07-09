@@ -50,7 +50,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
   }

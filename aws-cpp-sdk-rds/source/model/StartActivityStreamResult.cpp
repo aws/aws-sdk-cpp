@@ -57,12 +57,12 @@ StartActivityStreamResult& StartActivityStreamResult::operator =(const Aws::Amaz
     XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
-      m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
+      m_kmsKeyId = kmsKeyIdNode.GetText();
     }
     XmlNode kinesisStreamNameNode = resultNode.FirstChild("KinesisStreamName");
     if(!kinesisStreamNameNode.IsNull())
     {
-      m_kinesisStreamName = StringUtils::Trim(kinesisStreamNameNode.GetText().c_str());
+      m_kinesisStreamName = kinesisStreamNameNode.GetText();
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())

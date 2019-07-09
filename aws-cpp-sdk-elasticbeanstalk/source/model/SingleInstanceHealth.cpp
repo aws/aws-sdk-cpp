@@ -68,19 +68,19 @@ SingleInstanceHealth& SingleInstanceHealth::operator =(const XmlNode& xmlNode)
     XmlNode instanceIdNode = resultNode.FirstChild("InstanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceId = instanceIdNode.GetText();
       m_instanceIdHasBeenSet = true;
     }
     XmlNode healthStatusNode = resultNode.FirstChild("HealthStatus");
     if(!healthStatusNode.IsNull())
     {
-      m_healthStatus = StringUtils::Trim(healthStatusNode.GetText().c_str());
+      m_healthStatus = healthStatusNode.GetText();
       m_healthStatusHasBeenSet = true;
     }
     XmlNode colorNode = resultNode.FirstChild("Color");
     if(!colorNode.IsNull())
     {
-      m_color = StringUtils::Trim(colorNode.GetText().c_str());
+      m_color = colorNode.GetText();
       m_colorHasBeenSet = true;
     }
     XmlNode causesNode = resultNode.FirstChild("Causes");
@@ -89,7 +89,7 @@ SingleInstanceHealth& SingleInstanceHealth::operator =(const XmlNode& xmlNode)
       XmlNode causesMember = causesNode.FirstChild("member");
       while(!causesMember.IsNull())
       {
-        m_causes.push_back(StringUtils::Trim(causesMember.GetText().c_str()));
+        m_causes.push_back(causesMember.GetText());
         causesMember = causesMember.NextNode("member");
       }
 
@@ -122,13 +122,13 @@ SingleInstanceHealth& SingleInstanceHealth::operator =(const XmlNode& xmlNode)
     XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("InstanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = StringUtils::Trim(instanceTypeNode.GetText().c_str());
+      m_instanceType = instanceTypeNode.GetText();
       m_instanceTypeHasBeenSet = true;
     }
   }

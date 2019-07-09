@@ -78,61 +78,61 @@ Route& Route::operator =(const XmlNode& xmlNode)
     XmlNode destinationCidrBlockNode = resultNode.FirstChild("destinationCidrBlock");
     if(!destinationCidrBlockNode.IsNull())
     {
-      m_destinationCidrBlock = StringUtils::Trim(destinationCidrBlockNode.GetText().c_str());
+      m_destinationCidrBlock = destinationCidrBlockNode.GetText();
       m_destinationCidrBlockHasBeenSet = true;
     }
     XmlNode destinationIpv6CidrBlockNode = resultNode.FirstChild("destinationIpv6CidrBlock");
     if(!destinationIpv6CidrBlockNode.IsNull())
     {
-      m_destinationIpv6CidrBlock = StringUtils::Trim(destinationIpv6CidrBlockNode.GetText().c_str());
+      m_destinationIpv6CidrBlock = destinationIpv6CidrBlockNode.GetText();
       m_destinationIpv6CidrBlockHasBeenSet = true;
     }
     XmlNode destinationPrefixListIdNode = resultNode.FirstChild("destinationPrefixListId");
     if(!destinationPrefixListIdNode.IsNull())
     {
-      m_destinationPrefixListId = StringUtils::Trim(destinationPrefixListIdNode.GetText().c_str());
+      m_destinationPrefixListId = destinationPrefixListIdNode.GetText();
       m_destinationPrefixListIdHasBeenSet = true;
     }
     XmlNode egressOnlyInternetGatewayIdNode = resultNode.FirstChild("egressOnlyInternetGatewayId");
     if(!egressOnlyInternetGatewayIdNode.IsNull())
     {
-      m_egressOnlyInternetGatewayId = StringUtils::Trim(egressOnlyInternetGatewayIdNode.GetText().c_str());
+      m_egressOnlyInternetGatewayId = egressOnlyInternetGatewayIdNode.GetText();
       m_egressOnlyInternetGatewayIdHasBeenSet = true;
     }
     XmlNode gatewayIdNode = resultNode.FirstChild("gatewayId");
     if(!gatewayIdNode.IsNull())
     {
-      m_gatewayId = StringUtils::Trim(gatewayIdNode.GetText().c_str());
+      m_gatewayId = gatewayIdNode.GetText();
       m_gatewayIdHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceId = instanceIdNode.GetText();
       m_instanceIdHasBeenSet = true;
     }
     XmlNode instanceOwnerIdNode = resultNode.FirstChild("instanceOwnerId");
     if(!instanceOwnerIdNode.IsNull())
     {
-      m_instanceOwnerId = StringUtils::Trim(instanceOwnerIdNode.GetText().c_str());
+      m_instanceOwnerId = instanceOwnerIdNode.GetText();
       m_instanceOwnerIdHasBeenSet = true;
     }
     XmlNode natGatewayIdNode = resultNode.FirstChild("natGatewayId");
     if(!natGatewayIdNode.IsNull())
     {
-      m_natGatewayId = StringUtils::Trim(natGatewayIdNode.GetText().c_str());
+      m_natGatewayId = natGatewayIdNode.GetText();
       m_natGatewayIdHasBeenSet = true;
     }
     XmlNode transitGatewayIdNode = resultNode.FirstChild("transitGatewayId");
     if(!transitGatewayIdNode.IsNull())
     {
-      m_transitGatewayId = StringUtils::Trim(transitGatewayIdNode.GetText().c_str());
+      m_transitGatewayId = transitGatewayIdNode.GetText();
       m_transitGatewayIdHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
-      m_networkInterfaceId = StringUtils::Trim(networkInterfaceIdNode.GetText().c_str());
+      m_networkInterfaceId = networkInterfaceIdNode.GetText();
       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode originNode = resultNode.FirstChild("origin");
@@ -150,7 +150,7 @@ Route& Route::operator =(const XmlNode& xmlNode)
     XmlNode vpcPeeringConnectionIdNode = resultNode.FirstChild("vpcPeeringConnectionId");
     if(!vpcPeeringConnectionIdNode.IsNull())
     {
-      m_vpcPeeringConnectionId = StringUtils::Trim(vpcPeeringConnectionIdNode.GetText().c_str());
+      m_vpcPeeringConnectionId = vpcPeeringConnectionIdNode.GetText();
       m_vpcPeeringConnectionIdHasBeenSet = true;
     }
   }

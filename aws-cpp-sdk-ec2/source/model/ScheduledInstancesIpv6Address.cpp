@@ -50,7 +50,7 @@ ScheduledInstancesIpv6Address& ScheduledInstancesIpv6Address::operator =(const X
     XmlNode ipv6AddressNode = resultNode.FirstChild("Ipv6Address");
     if(!ipv6AddressNode.IsNull())
     {
-      m_ipv6Address = StringUtils::Trim(ipv6AddressNode.GetText().c_str());
+      m_ipv6Address = ipv6AddressNode.GetText();
       m_ipv6AddressHasBeenSet = true;
     }
   }

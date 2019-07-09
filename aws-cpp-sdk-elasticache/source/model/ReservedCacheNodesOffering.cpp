@@ -70,13 +70,13 @@ ReservedCacheNodesOffering& ReservedCacheNodesOffering::operator =(const XmlNode
     XmlNode reservedCacheNodesOfferingIdNode = resultNode.FirstChild("ReservedCacheNodesOfferingId");
     if(!reservedCacheNodesOfferingIdNode.IsNull())
     {
-      m_reservedCacheNodesOfferingId = StringUtils::Trim(reservedCacheNodesOfferingIdNode.GetText().c_str());
+      m_reservedCacheNodesOfferingId = reservedCacheNodesOfferingIdNode.GetText();
       m_reservedCacheNodesOfferingIdHasBeenSet = true;
     }
     XmlNode cacheNodeTypeNode = resultNode.FirstChild("CacheNodeType");
     if(!cacheNodeTypeNode.IsNull())
     {
-      m_cacheNodeType = StringUtils::Trim(cacheNodeTypeNode.GetText().c_str());
+      m_cacheNodeType = cacheNodeTypeNode.GetText();
       m_cacheNodeTypeHasBeenSet = true;
     }
     XmlNode durationNode = resultNode.FirstChild("Duration");
@@ -100,13 +100,13 @@ ReservedCacheNodesOffering& ReservedCacheNodesOffering::operator =(const XmlNode
     XmlNode productDescriptionNode = resultNode.FirstChild("ProductDescription");
     if(!productDescriptionNode.IsNull())
     {
-      m_productDescription = StringUtils::Trim(productDescriptionNode.GetText().c_str());
+      m_productDescription = productDescriptionNode.GetText();
       m_productDescriptionHasBeenSet = true;
     }
     XmlNode offeringTypeNode = resultNode.FirstChild("OfferingType");
     if(!offeringTypeNode.IsNull())
     {
-      m_offeringType = StringUtils::Trim(offeringTypeNode.GetText().c_str());
+      m_offeringType = offeringTypeNode.GetText();
       m_offeringTypeHasBeenSet = true;
     }
     XmlNode recurringChargesNode = resultNode.FirstChild("RecurringCharges");

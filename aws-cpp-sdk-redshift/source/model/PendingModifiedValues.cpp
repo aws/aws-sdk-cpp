@@ -78,13 +78,13 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
     XmlNode masterUserPasswordNode = resultNode.FirstChild("MasterUserPassword");
     if(!masterUserPasswordNode.IsNull())
     {
-      m_masterUserPassword = StringUtils::Trim(masterUserPasswordNode.GetText().c_str());
+      m_masterUserPassword = masterUserPasswordNode.GetText();
       m_masterUserPasswordHasBeenSet = true;
     }
     XmlNode nodeTypeNode = resultNode.FirstChild("NodeType");
     if(!nodeTypeNode.IsNull())
     {
-      m_nodeType = StringUtils::Trim(nodeTypeNode.GetText().c_str());
+      m_nodeType = nodeTypeNode.GetText();
       m_nodeTypeHasBeenSet = true;
     }
     XmlNode numberOfNodesNode = resultNode.FirstChild("NumberOfNodes");
@@ -96,13 +96,13 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
     XmlNode clusterTypeNode = resultNode.FirstChild("ClusterType");
     if(!clusterTypeNode.IsNull())
     {
-      m_clusterType = StringUtils::Trim(clusterTypeNode.GetText().c_str());
+      m_clusterType = clusterTypeNode.GetText();
       m_clusterTypeHasBeenSet = true;
     }
     XmlNode clusterVersionNode = resultNode.FirstChild("ClusterVersion");
     if(!clusterVersionNode.IsNull())
     {
-      m_clusterVersion = StringUtils::Trim(clusterVersionNode.GetText().c_str());
+      m_clusterVersion = clusterVersionNode.GetText();
       m_clusterVersionHasBeenSet = true;
     }
     XmlNode automatedSnapshotRetentionPeriodNode = resultNode.FirstChild("AutomatedSnapshotRetentionPeriod");
@@ -114,7 +114,7 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
     XmlNode clusterIdentifierNode = resultNode.FirstChild("ClusterIdentifier");
     if(!clusterIdentifierNode.IsNull())
     {
-      m_clusterIdentifier = StringUtils::Trim(clusterIdentifierNode.GetText().c_str());
+      m_clusterIdentifier = clusterIdentifierNode.GetText();
       m_clusterIdentifierHasBeenSet = true;
     }
     XmlNode publiclyAccessibleNode = resultNode.FirstChild("PubliclyAccessible");
@@ -132,13 +132,13 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
     XmlNode maintenanceTrackNameNode = resultNode.FirstChild("MaintenanceTrackName");
     if(!maintenanceTrackNameNode.IsNull())
     {
-      m_maintenanceTrackName = StringUtils::Trim(maintenanceTrackNameNode.GetText().c_str());
+      m_maintenanceTrackName = maintenanceTrackNameNode.GetText();
       m_maintenanceTrackNameHasBeenSet = true;
     }
     XmlNode encryptionTypeNode = resultNode.FirstChild("EncryptionType");
     if(!encryptionTypeNode.IsNull())
     {
-      m_encryptionType = StringUtils::Trim(encryptionTypeNode.GetText().c_str());
+      m_encryptionType = encryptionTypeNode.GetText();
       m_encryptionTypeHasBeenSet = true;
     }
   }

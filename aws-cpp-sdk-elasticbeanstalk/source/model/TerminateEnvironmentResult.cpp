@@ -59,52 +59,52 @@ TerminateEnvironmentResult& TerminateEnvironmentResult::operator =(const Aws::Am
     XmlNode environmentNameNode = resultNode.FirstChild("EnvironmentName");
     if(!environmentNameNode.IsNull())
     {
-      m_environmentName = StringUtils::Trim(environmentNameNode.GetText().c_str());
+      m_environmentName = environmentNameNode.GetText();
     }
     XmlNode environmentIdNode = resultNode.FirstChild("EnvironmentId");
     if(!environmentIdNode.IsNull())
     {
-      m_environmentId = StringUtils::Trim(environmentIdNode.GetText().c_str());
+      m_environmentId = environmentIdNode.GetText();
     }
     XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
     if(!applicationNameNode.IsNull())
     {
-      m_applicationName = StringUtils::Trim(applicationNameNode.GetText().c_str());
+      m_applicationName = applicationNameNode.GetText();
     }
     XmlNode versionLabelNode = resultNode.FirstChild("VersionLabel");
     if(!versionLabelNode.IsNull())
     {
-      m_versionLabel = StringUtils::Trim(versionLabelNode.GetText().c_str());
+      m_versionLabel = versionLabelNode.GetText();
     }
     XmlNode solutionStackNameNode = resultNode.FirstChild("SolutionStackName");
     if(!solutionStackNameNode.IsNull())
     {
-      m_solutionStackName = StringUtils::Trim(solutionStackNameNode.GetText().c_str());
+      m_solutionStackName = solutionStackNameNode.GetText();
     }
     XmlNode platformArnNode = resultNode.FirstChild("PlatformArn");
     if(!platformArnNode.IsNull())
     {
-      m_platformArn = StringUtils::Trim(platformArnNode.GetText().c_str());
+      m_platformArn = platformArnNode.GetText();
     }
     XmlNode templateNameNode = resultNode.FirstChild("TemplateName");
     if(!templateNameNode.IsNull())
     {
-      m_templateName = StringUtils::Trim(templateNameNode.GetText().c_str());
+      m_templateName = templateNameNode.GetText();
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
     }
     XmlNode endpointURLNode = resultNode.FirstChild("EndpointURL");
     if(!endpointURLNode.IsNull())
     {
-      m_endpointURL = StringUtils::Trim(endpointURLNode.GetText().c_str());
+      m_endpointURL = endpointURLNode.GetText();
     }
     XmlNode cNAMENode = resultNode.FirstChild("CNAME");
     if(!cNAMENode.IsNull())
     {
-      m_cNAME = StringUtils::Trim(cNAMENode.GetText().c_str());
+      m_cNAME = cNAMENode.GetText();
     }
     XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
     if(!dateCreatedNode.IsNull())
@@ -160,7 +160,7 @@ TerminateEnvironmentResult& TerminateEnvironmentResult::operator =(const Aws::Am
     XmlNode environmentArnNode = resultNode.FirstChild("EnvironmentArn");
     if(!environmentArnNode.IsNull())
     {
-      m_environmentArn = StringUtils::Trim(environmentArnNode.GetText().c_str());
+      m_environmentArn = environmentArnNode.GetText();
     }
   }
 

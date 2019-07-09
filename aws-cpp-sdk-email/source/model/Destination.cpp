@@ -57,7 +57,7 @@ Destination& Destination::operator =(const XmlNode& xmlNode)
       XmlNode toAddressesMember = toAddressesNode.FirstChild("member");
       while(!toAddressesMember.IsNull())
       {
-        m_toAddresses.push_back(StringUtils::Trim(toAddressesMember.GetText().c_str()));
+        m_toAddresses.push_back(toAddressesMember.GetText());
         toAddressesMember = toAddressesMember.NextNode("member");
       }
 
@@ -69,7 +69,7 @@ Destination& Destination::operator =(const XmlNode& xmlNode)
       XmlNode ccAddressesMember = ccAddressesNode.FirstChild("member");
       while(!ccAddressesMember.IsNull())
       {
-        m_ccAddresses.push_back(StringUtils::Trim(ccAddressesMember.GetText().c_str()));
+        m_ccAddresses.push_back(ccAddressesMember.GetText());
         ccAddressesMember = ccAddressesMember.NextNode("member");
       }
 
@@ -81,7 +81,7 @@ Destination& Destination::operator =(const XmlNode& xmlNode)
       XmlNode bccAddressesMember = bccAddressesNode.FirstChild("member");
       while(!bccAddressesMember.IsNull())
       {
-        m_bccAddresses.push_back(StringUtils::Trim(bccAddressesMember.GetText().c_str()));
+        m_bccAddresses.push_back(bccAddressesMember.GetText());
         bccAddressesMember = bccAddressesMember.NextNode("member");
       }
 

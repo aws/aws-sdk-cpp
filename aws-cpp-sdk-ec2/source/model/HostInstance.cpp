@@ -52,13 +52,13 @@ HostInstance& HostInstance::operator =(const XmlNode& xmlNode)
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceId = instanceIdNode.GetText();
       m_instanceIdHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = StringUtils::Trim(instanceTypeNode.GetText().c_str());
+      m_instanceType = instanceTypeNode.GetText();
       m_instanceTypeHasBeenSet = true;
     }
   }

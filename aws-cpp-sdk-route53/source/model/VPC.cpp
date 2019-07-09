@@ -60,7 +60,7 @@ VPC& VPC::operator =(const XmlNode& xmlNode)
     XmlNode vPCIdNode = resultNode.FirstChild("VPCId");
     if(!vPCIdNode.IsNull())
     {
-      m_vPCId = StringUtils::Trim(vPCIdNode.GetText().c_str());
+      m_vPCId = vPCIdNode.GetText();
       m_vPCIdHasBeenSet = true;
     }
   }

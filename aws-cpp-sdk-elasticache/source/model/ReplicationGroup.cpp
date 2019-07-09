@@ -92,19 +92,19 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
     XmlNode replicationGroupIdNode = resultNode.FirstChild("ReplicationGroupId");
     if(!replicationGroupIdNode.IsNull())
     {
-      m_replicationGroupId = StringUtils::Trim(replicationGroupIdNode.GetText().c_str());
+      m_replicationGroupId = replicationGroupIdNode.GetText();
       m_replicationGroupIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
     XmlNode pendingModifiedValuesNode = resultNode.FirstChild("PendingModifiedValues");
@@ -119,7 +119,7 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
       XmlNode memberClustersMember = memberClustersNode.FirstChild("ClusterId");
       while(!memberClustersMember.IsNull())
       {
-        m_memberClusters.push_back(StringUtils::Trim(memberClustersMember.GetText().c_str()));
+        m_memberClusters.push_back(memberClustersMember.GetText());
         memberClustersMember = memberClustersMember.NextNode("ClusterId");
       }
 
@@ -140,7 +140,7 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
     XmlNode snapshottingClusterIdNode = resultNode.FirstChild("SnapshottingClusterId");
     if(!snapshottingClusterIdNode.IsNull())
     {
-      m_snapshottingClusterId = StringUtils::Trim(snapshottingClusterIdNode.GetText().c_str());
+      m_snapshottingClusterId = snapshottingClusterIdNode.GetText();
       m_snapshottingClusterIdHasBeenSet = true;
     }
     XmlNode automaticFailoverNode = resultNode.FirstChild("AutomaticFailover");
@@ -164,7 +164,7 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
     XmlNode snapshotWindowNode = resultNode.FirstChild("SnapshotWindow");
     if(!snapshotWindowNode.IsNull())
     {
-      m_snapshotWindow = StringUtils::Trim(snapshotWindowNode.GetText().c_str());
+      m_snapshotWindow = snapshotWindowNode.GetText();
       m_snapshotWindowHasBeenSet = true;
     }
     XmlNode clusterEnabledNode = resultNode.FirstChild("ClusterEnabled");
@@ -176,7 +176,7 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
     XmlNode cacheNodeTypeNode = resultNode.FirstChild("CacheNodeType");
     if(!cacheNodeTypeNode.IsNull())
     {
-      m_cacheNodeType = StringUtils::Trim(cacheNodeTypeNode.GetText().c_str());
+      m_cacheNodeType = cacheNodeTypeNode.GetText();
       m_cacheNodeTypeHasBeenSet = true;
     }
     XmlNode authTokenEnabledNode = resultNode.FirstChild("AuthTokenEnabled");

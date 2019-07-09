@@ -52,13 +52,13 @@ CacheNodeTypeSpecificValue& CacheNodeTypeSpecificValue::operator =(const XmlNode
     XmlNode cacheNodeTypeNode = resultNode.FirstChild("CacheNodeType");
     if(!cacheNodeTypeNode.IsNull())
     {
-      m_cacheNodeType = StringUtils::Trim(cacheNodeTypeNode.GetText().c_str());
+      m_cacheNodeType = cacheNodeTypeNode.GetText();
       m_cacheNodeTypeHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
-      m_value = StringUtils::Trim(valueNode.GetText().c_str());
+      m_value = valueNode.GetText();
       m_valueHasBeenSet = true;
     }
   }

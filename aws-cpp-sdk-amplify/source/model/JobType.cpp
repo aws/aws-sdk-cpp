@@ -32,6 +32,7 @@ namespace Aws
 
         static const int RELEASE_HASH = HashingUtils::HashString("RELEASE");
         static const int RETRY_HASH = HashingUtils::HashString("RETRY");
+        static const int MANUAL_HASH = HashingUtils::HashString("MANUAL");
         static const int WEB_HOOK_HASH = HashingUtils::HashString("WEB_HOOK");
 
 
@@ -45,6 +46,10 @@ namespace Aws
           else if (hashCode == RETRY_HASH)
           {
             return JobType::RETRY;
+          }
+          else if (hashCode == MANUAL_HASH)
+          {
+            return JobType::MANUAL;
           }
           else if (hashCode == WEB_HOOK_HASH)
           {
@@ -68,6 +73,8 @@ namespace Aws
             return "RELEASE";
           case JobType::RETRY:
             return "RETRY";
+          case JobType::MANUAL:
+            return "MANUAL";
           case JobType::WEB_HOOK:
             return "WEB_HOOK";
           default:

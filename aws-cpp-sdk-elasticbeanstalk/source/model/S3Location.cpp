@@ -52,13 +52,13 @@ S3Location& S3Location::operator =(const XmlNode& xmlNode)
     XmlNode s3BucketNode = resultNode.FirstChild("S3Bucket");
     if(!s3BucketNode.IsNull())
     {
-      m_s3Bucket = StringUtils::Trim(s3BucketNode.GetText().c_str());
+      m_s3Bucket = s3BucketNode.GetText();
       m_s3BucketHasBeenSet = true;
     }
     XmlNode s3KeyNode = resultNode.FirstChild("S3Key");
     if(!s3KeyNode.IsNull())
     {
-      m_s3Key = StringUtils::Trim(s3KeyNode.GetText().c_str());
+      m_s3Key = s3KeyNode.GetText();
       m_s3KeyHasBeenSet = true;
     }
   }

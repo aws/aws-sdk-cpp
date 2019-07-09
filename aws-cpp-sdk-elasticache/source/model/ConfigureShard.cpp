@@ -56,7 +56,7 @@ ConfigureShard& ConfigureShard::operator =(const XmlNode& xmlNode)
     XmlNode nodeGroupIdNode = resultNode.FirstChild("NodeGroupId");
     if(!nodeGroupIdNode.IsNull())
     {
-      m_nodeGroupId = StringUtils::Trim(nodeGroupIdNode.GetText().c_str());
+      m_nodeGroupId = nodeGroupIdNode.GetText();
       m_nodeGroupIdHasBeenSet = true;
     }
     XmlNode newReplicaCountNode = resultNode.FirstChild("NewReplicaCount");
@@ -71,7 +71,7 @@ ConfigureShard& ConfigureShard::operator =(const XmlNode& xmlNode)
       XmlNode preferredAvailabilityZonesMember = preferredAvailabilityZonesNode.FirstChild("PreferredAvailabilityZone");
       while(!preferredAvailabilityZonesMember.IsNull())
       {
-        m_preferredAvailabilityZones.push_back(StringUtils::Trim(preferredAvailabilityZonesMember.GetText().c_str()));
+        m_preferredAvailabilityZones.push_back(preferredAvailabilityZonesMember.GetText());
         preferredAvailabilityZonesMember = preferredAvailabilityZonesMember.NextNode("PreferredAvailabilityZone");
       }
 

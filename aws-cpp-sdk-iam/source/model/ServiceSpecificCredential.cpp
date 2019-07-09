@@ -70,31 +70,31 @@ ServiceSpecificCredential& ServiceSpecificCredential::operator =(const XmlNode& 
     XmlNode serviceNameNode = resultNode.FirstChild("ServiceName");
     if(!serviceNameNode.IsNull())
     {
-      m_serviceName = StringUtils::Trim(serviceNameNode.GetText().c_str());
+      m_serviceName = serviceNameNode.GetText();
       m_serviceNameHasBeenSet = true;
     }
     XmlNode serviceUserNameNode = resultNode.FirstChild("ServiceUserName");
     if(!serviceUserNameNode.IsNull())
     {
-      m_serviceUserName = StringUtils::Trim(serviceUserNameNode.GetText().c_str());
+      m_serviceUserName = serviceUserNameNode.GetText();
       m_serviceUserNameHasBeenSet = true;
     }
     XmlNode servicePasswordNode = resultNode.FirstChild("ServicePassword");
     if(!servicePasswordNode.IsNull())
     {
-      m_servicePassword = StringUtils::Trim(servicePasswordNode.GetText().c_str());
+      m_servicePassword = servicePasswordNode.GetText();
       m_servicePasswordHasBeenSet = true;
     }
     XmlNode serviceSpecificCredentialIdNode = resultNode.FirstChild("ServiceSpecificCredentialId");
     if(!serviceSpecificCredentialIdNode.IsNull())
     {
-      m_serviceSpecificCredentialId = StringUtils::Trim(serviceSpecificCredentialIdNode.GetText().c_str());
+      m_serviceSpecificCredentialId = serviceSpecificCredentialIdNode.GetText();
       m_serviceSpecificCredentialIdHasBeenSet = true;
     }
     XmlNode userNameNode = resultNode.FirstChild("UserName");
     if(!userNameNode.IsNull())
     {
-      m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
+      m_userName = userNameNode.GetText();
       m_userNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");

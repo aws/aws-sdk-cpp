@@ -57,7 +57,7 @@ PrefixList& PrefixList::operator =(const XmlNode& xmlNode)
       XmlNode cidrsMember = cidrsNode.FirstChild("item");
       while(!cidrsMember.IsNull())
       {
-        m_cidrs.push_back(StringUtils::Trim(cidrsMember.GetText().c_str()));
+        m_cidrs.push_back(cidrsMember.GetText());
         cidrsMember = cidrsMember.NextNode("item");
       }
 
@@ -66,13 +66,13 @@ PrefixList& PrefixList::operator =(const XmlNode& xmlNode)
     XmlNode prefixListIdNode = resultNode.FirstChild("prefixListId");
     if(!prefixListIdNode.IsNull())
     {
-      m_prefixListId = StringUtils::Trim(prefixListIdNode.GetText().c_str());
+      m_prefixListId = prefixListIdNode.GetText();
       m_prefixListIdHasBeenSet = true;
     }
     XmlNode prefixListNameNode = resultNode.FirstChild("prefixListName");
     if(!prefixListNameNode.IsNull())
     {
-      m_prefixListName = StringUtils::Trim(prefixListNameNode.GetText().c_str());
+      m_prefixListName = prefixListNameNode.GetText();
       m_prefixListNameHasBeenSet = true;
     }
   }

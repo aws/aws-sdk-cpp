@@ -54,7 +54,7 @@ InvalidationSummary& InvalidationSummary::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("CreateTime");
@@ -66,7 +66,7 @@ InvalidationSummary& InvalidationSummary::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
   }

@@ -52,13 +52,13 @@ OptionRestrictionRegex& OptionRestrictionRegex::operator =(const XmlNode& xmlNod
     XmlNode patternNode = resultNode.FirstChild("Pattern");
     if(!patternNode.IsNull())
     {
-      m_pattern = StringUtils::Trim(patternNode.GetText().c_str());
+      m_pattern = patternNode.GetText();
       m_patternHasBeenSet = true;
     }
     XmlNode labelNode = resultNode.FirstChild("Label");
     if(!labelNode.IsNull())
     {
-      m_label = StringUtils::Trim(labelNode.GetText().c_str());
+      m_label = labelNode.GetText();
       m_labelHasBeenSet = true;
     }
   }

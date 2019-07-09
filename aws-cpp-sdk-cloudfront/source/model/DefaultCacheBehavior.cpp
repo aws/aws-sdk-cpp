@@ -84,7 +84,7 @@ DefaultCacheBehavior& DefaultCacheBehavior::operator =(const XmlNode& xmlNode)
     XmlNode targetOriginIdNode = resultNode.FirstChild("TargetOriginId");
     if(!targetOriginIdNode.IsNull())
     {
-      m_targetOriginId = StringUtils::Trim(targetOriginIdNode.GetText().c_str());
+      m_targetOriginId = targetOriginIdNode.GetText();
       m_targetOriginIdHasBeenSet = true;
     }
     XmlNode forwardedValuesNode = resultNode.FirstChild("ForwardedValues");
@@ -150,7 +150,7 @@ DefaultCacheBehavior& DefaultCacheBehavior::operator =(const XmlNode& xmlNode)
     XmlNode fieldLevelEncryptionIdNode = resultNode.FirstChild("FieldLevelEncryptionId");
     if(!fieldLevelEncryptionIdNode.IsNull())
     {
-      m_fieldLevelEncryptionId = StringUtils::Trim(fieldLevelEncryptionIdNode.GetText().c_str());
+      m_fieldLevelEncryptionId = fieldLevelEncryptionIdNode.GetText();
       m_fieldLevelEncryptionIdHasBeenSet = true;
     }
   }

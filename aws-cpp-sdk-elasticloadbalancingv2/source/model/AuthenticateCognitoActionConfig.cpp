@@ -68,31 +68,31 @@ AuthenticateCognitoActionConfig& AuthenticateCognitoActionConfig::operator =(con
     XmlNode userPoolArnNode = resultNode.FirstChild("UserPoolArn");
     if(!userPoolArnNode.IsNull())
     {
-      m_userPoolArn = StringUtils::Trim(userPoolArnNode.GetText().c_str());
+      m_userPoolArn = userPoolArnNode.GetText();
       m_userPoolArnHasBeenSet = true;
     }
     XmlNode userPoolClientIdNode = resultNode.FirstChild("UserPoolClientId");
     if(!userPoolClientIdNode.IsNull())
     {
-      m_userPoolClientId = StringUtils::Trim(userPoolClientIdNode.GetText().c_str());
+      m_userPoolClientId = userPoolClientIdNode.GetText();
       m_userPoolClientIdHasBeenSet = true;
     }
     XmlNode userPoolDomainNode = resultNode.FirstChild("UserPoolDomain");
     if(!userPoolDomainNode.IsNull())
     {
-      m_userPoolDomain = StringUtils::Trim(userPoolDomainNode.GetText().c_str());
+      m_userPoolDomain = userPoolDomainNode.GetText();
       m_userPoolDomainHasBeenSet = true;
     }
     XmlNode sessionCookieNameNode = resultNode.FirstChild("SessionCookieName");
     if(!sessionCookieNameNode.IsNull())
     {
-      m_sessionCookieName = StringUtils::Trim(sessionCookieNameNode.GetText().c_str());
+      m_sessionCookieName = sessionCookieNameNode.GetText();
       m_sessionCookieNameHasBeenSet = true;
     }
     XmlNode scopeNode = resultNode.FirstChild("Scope");
     if(!scopeNode.IsNull())
     {
-      m_scope = StringUtils::Trim(scopeNode.GetText().c_str());
+      m_scope = scopeNode.GetText();
       m_scopeHasBeenSet = true;
     }
     XmlNode sessionTimeoutNode = resultNode.FirstChild("SessionTimeout");
@@ -110,8 +110,8 @@ AuthenticateCognitoActionConfig& AuthenticateCognitoActionConfig::operator =(con
       {
         XmlNode keyNode = authenticationRequestExtraParamsEntry.FirstChild("key");
         XmlNode valueNode = authenticationRequestExtraParamsEntry.FirstChild("value");
-        m_authenticationRequestExtraParams[StringUtils::Trim(keyNode.GetText().c_str())] =
-            StringUtils::Trim(valueNode.GetText().c_str());
+        m_authenticationRequestExtraParams[keyNode.GetText()] =
+            valueNode.GetText();
         authenticationRequestExtraParamsEntry = authenticationRequestExtraParamsEntry.NextNode("entry");
       }
 

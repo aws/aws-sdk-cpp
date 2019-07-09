@@ -98,13 +98,13 @@ TargetGroup& TargetGroup::operator =(const XmlNode& xmlNode)
     XmlNode targetGroupArnNode = resultNode.FirstChild("TargetGroupArn");
     if(!targetGroupArnNode.IsNull())
     {
-      m_targetGroupArn = StringUtils::Trim(targetGroupArnNode.GetText().c_str());
+      m_targetGroupArn = targetGroupArnNode.GetText();
       m_targetGroupArnHasBeenSet = true;
     }
     XmlNode targetGroupNameNode = resultNode.FirstChild("TargetGroupName");
     if(!targetGroupNameNode.IsNull())
     {
-      m_targetGroupName = StringUtils::Trim(targetGroupNameNode.GetText().c_str());
+      m_targetGroupName = targetGroupNameNode.GetText();
       m_targetGroupNameHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
@@ -122,7 +122,7 @@ TargetGroup& TargetGroup::operator =(const XmlNode& xmlNode)
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
+      m_vpcId = vpcIdNode.GetText();
       m_vpcIdHasBeenSet = true;
     }
     XmlNode healthCheckProtocolNode = resultNode.FirstChild("HealthCheckProtocol");
@@ -134,7 +134,7 @@ TargetGroup& TargetGroup::operator =(const XmlNode& xmlNode)
     XmlNode healthCheckPortNode = resultNode.FirstChild("HealthCheckPort");
     if(!healthCheckPortNode.IsNull())
     {
-      m_healthCheckPort = StringUtils::Trim(healthCheckPortNode.GetText().c_str());
+      m_healthCheckPort = healthCheckPortNode.GetText();
       m_healthCheckPortHasBeenSet = true;
     }
     XmlNode healthCheckEnabledNode = resultNode.FirstChild("HealthCheckEnabled");
@@ -170,7 +170,7 @@ TargetGroup& TargetGroup::operator =(const XmlNode& xmlNode)
     XmlNode healthCheckPathNode = resultNode.FirstChild("HealthCheckPath");
     if(!healthCheckPathNode.IsNull())
     {
-      m_healthCheckPath = StringUtils::Trim(healthCheckPathNode.GetText().c_str());
+      m_healthCheckPath = healthCheckPathNode.GetText();
       m_healthCheckPathHasBeenSet = true;
     }
     XmlNode matcherNode = resultNode.FirstChild("Matcher");
@@ -185,7 +185,7 @@ TargetGroup& TargetGroup::operator =(const XmlNode& xmlNode)
       XmlNode loadBalancerArnsMember = loadBalancerArnsNode.FirstChild("member");
       while(!loadBalancerArnsMember.IsNull())
       {
-        m_loadBalancerArns.push_back(StringUtils::Trim(loadBalancerArnsMember.GetText().c_str()));
+        m_loadBalancerArns.push_back(loadBalancerArnsMember.GetText());
         loadBalancerArnsMember = loadBalancerArnsMember.NextNode("member");
       }
 

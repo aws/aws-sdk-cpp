@@ -60,19 +60,19 @@ Certificate& Certificate::operator =(const XmlNode& xmlNode)
     XmlNode certificateIdentifierNode = resultNode.FirstChild("CertificateIdentifier");
     if(!certificateIdentifierNode.IsNull())
     {
-      m_certificateIdentifier = StringUtils::Trim(certificateIdentifierNode.GetText().c_str());
+      m_certificateIdentifier = certificateIdentifierNode.GetText();
       m_certificateIdentifierHasBeenSet = true;
     }
     XmlNode certificateTypeNode = resultNode.FirstChild("CertificateType");
     if(!certificateTypeNode.IsNull())
     {
-      m_certificateType = StringUtils::Trim(certificateTypeNode.GetText().c_str());
+      m_certificateType = certificateTypeNode.GetText();
       m_certificateTypeHasBeenSet = true;
     }
     XmlNode thumbprintNode = resultNode.FirstChild("Thumbprint");
     if(!thumbprintNode.IsNull())
     {
-      m_thumbprint = StringUtils::Trim(thumbprintNode.GetText().c_str());
+      m_thumbprint = thumbprintNode.GetText();
       m_thumbprintHasBeenSet = true;
     }
     XmlNode validFromNode = resultNode.FirstChild("ValidFrom");
@@ -90,7 +90,7 @@ Certificate& Certificate::operator =(const XmlNode& xmlNode)
     XmlNode certificateArnNode = resultNode.FirstChild("CertificateArn");
     if(!certificateArnNode.IsNull())
     {
-      m_certificateArn = StringUtils::Trim(certificateArnNode.GetText().c_str());
+      m_certificateArn = certificateArnNode.GetText();
       m_certificateArnHasBeenSet = true;
     }
   }

@@ -70,7 +70,7 @@ ReservedInstancesListing& ReservedInstancesListing::operator =(const XmlNode& xm
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
-      m_clientToken = StringUtils::Trim(clientTokenNode.GetText().c_str());
+      m_clientToken = clientTokenNode.GetText();
       m_clientTokenHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("createDate");
@@ -106,13 +106,13 @@ ReservedInstancesListing& ReservedInstancesListing::operator =(const XmlNode& xm
     XmlNode reservedInstancesIdNode = resultNode.FirstChild("reservedInstancesId");
     if(!reservedInstancesIdNode.IsNull())
     {
-      m_reservedInstancesId = StringUtils::Trim(reservedInstancesIdNode.GetText().c_str());
+      m_reservedInstancesId = reservedInstancesIdNode.GetText();
       m_reservedInstancesIdHasBeenSet = true;
     }
     XmlNode reservedInstancesListingIdNode = resultNode.FirstChild("reservedInstancesListingId");
     if(!reservedInstancesListingIdNode.IsNull())
     {
-      m_reservedInstancesListingId = StringUtils::Trim(reservedInstancesListingIdNode.GetText().c_str());
+      m_reservedInstancesListingId = reservedInstancesListingIdNode.GetText();
       m_reservedInstancesListingIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
@@ -124,7 +124,7 @@ ReservedInstancesListing& ReservedInstancesListing::operator =(const XmlNode& xm
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
-      m_statusMessage = StringUtils::Trim(statusMessageNode.GetText().c_str());
+      m_statusMessage = statusMessageNode.GetText();
       m_statusMessageHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");

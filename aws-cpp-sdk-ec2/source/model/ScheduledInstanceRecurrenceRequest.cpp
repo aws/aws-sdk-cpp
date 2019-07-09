@@ -62,7 +62,7 @@ ScheduledInstanceRecurrenceRequest& ScheduledInstanceRecurrenceRequest::operator
     XmlNode frequencyNode = resultNode.FirstChild("Frequency");
     if(!frequencyNode.IsNull())
     {
-      m_frequency = StringUtils::Trim(frequencyNode.GetText().c_str());
+      m_frequency = frequencyNode.GetText();
       m_frequencyHasBeenSet = true;
     }
     XmlNode intervalNode = resultNode.FirstChild("Interval");
@@ -92,7 +92,7 @@ ScheduledInstanceRecurrenceRequest& ScheduledInstanceRecurrenceRequest::operator
     XmlNode occurrenceUnitNode = resultNode.FirstChild("OccurrenceUnit");
     if(!occurrenceUnitNode.IsNull())
     {
-      m_occurrenceUnit = StringUtils::Trim(occurrenceUnitNode.GetText().c_str());
+      m_occurrenceUnit = occurrenceUnitNode.GetText();
       m_occurrenceUnitHasBeenSet = true;
     }
   }

@@ -96,7 +96,7 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
@@ -114,7 +114,7 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
     XmlNode kmsKeyIdNode = resultNode.FirstChild("kmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
-      m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
+      m_kmsKeyId = kmsKeyIdNode.GetText();
       m_kmsKeyIdHasBeenSet = true;
     }
     XmlNode sizeNode = resultNode.FirstChild("size");
@@ -126,7 +126,7 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
     XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
     if(!snapshotIdNode.IsNull())
     {
-      m_snapshotId = StringUtils::Trim(snapshotIdNode.GetText().c_str());
+      m_snapshotId = snapshotIdNode.GetText();
       m_snapshotIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("status");
@@ -138,7 +138,7 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
     {
-      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
+      m_volumeId = volumeIdNode.GetText();
       m_volumeIdHasBeenSet = true;
     }
     XmlNode iopsNode = resultNode.FirstChild("iops");

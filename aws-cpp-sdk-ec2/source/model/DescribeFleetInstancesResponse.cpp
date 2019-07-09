@@ -62,12 +62,12 @@ DescribeFleetInstancesResponse& DescribeFleetInstancesResponse::operator =(const
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+      m_nextToken = nextTokenNode.GetText();
     }
     XmlNode fleetIdNode = resultNode.FirstChild("fleetId");
     if(!fleetIdNode.IsNull())
     {
-      m_fleetId = StringUtils::Trim(fleetIdNode.GetText().c_str());
+      m_fleetId = fleetIdNode.GetText();
     }
   }
 

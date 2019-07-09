@@ -70,13 +70,13 @@ CreateFleetError& CreateFleetError::operator =(const XmlNode& xmlNode)
     XmlNode errorCodeNode = resultNode.FirstChild("errorCode");
     if(!errorCodeNode.IsNull())
     {
-      m_errorCode = StringUtils::Trim(errorCodeNode.GetText().c_str());
+      m_errorCode = errorCodeNode.GetText();
       m_errorCodeHasBeenSet = true;
     }
     XmlNode errorMessageNode = resultNode.FirstChild("errorMessage");
     if(!errorMessageNode.IsNull())
     {
-      m_errorMessage = StringUtils::Trim(errorMessageNode.GetText().c_str());
+      m_errorMessage = errorMessageNode.GetText();
       m_errorMessageHasBeenSet = true;
     }
   }

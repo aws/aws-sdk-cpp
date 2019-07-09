@@ -52,13 +52,13 @@ PolicyUser& PolicyUser::operator =(const XmlNode& xmlNode)
     XmlNode userNameNode = resultNode.FirstChild("UserName");
     if(!userNameNode.IsNull())
     {
-      m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
+      m_userName = userNameNode.GetText();
       m_userNameHasBeenSet = true;
     }
     XmlNode userIdNode = resultNode.FirstChild("UserId");
     if(!userIdNode.IsNull())
     {
-      m_userId = StringUtils::Trim(userIdNode.GetText().c_str());
+      m_userId = userIdNode.GetText();
       m_userIdHasBeenSet = true;
     }
   }

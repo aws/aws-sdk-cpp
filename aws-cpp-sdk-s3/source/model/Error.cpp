@@ -56,25 +56,25 @@ Error& Error::operator =(const XmlNode& xmlNode)
     XmlNode keyNode = resultNode.FirstChild("Key");
     if(!keyNode.IsNull())
     {
-      m_key = StringUtils::Trim(keyNode.GetText().c_str());
+      m_key = keyNode.GetText();
       m_keyHasBeenSet = true;
     }
     XmlNode versionIdNode = resultNode.FirstChild("VersionId");
     if(!versionIdNode.IsNull())
     {
-      m_versionId = StringUtils::Trim(versionIdNode.GetText().c_str());
+      m_versionId = versionIdNode.GetText();
       m_versionIdHasBeenSet = true;
     }
     XmlNode codeNode = resultNode.FirstChild("Code");
     if(!codeNode.IsNull())
     {
-      m_code = StringUtils::Trim(codeNode.GetText().c_str());
+      m_code = codeNode.GetText();
       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
-      m_message = StringUtils::Trim(messageNode.GetText().c_str());
+      m_message = messageNode.GetText();
       m_messageHasBeenSet = true;
     }
   }

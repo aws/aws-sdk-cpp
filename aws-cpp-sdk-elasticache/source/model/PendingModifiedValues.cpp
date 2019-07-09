@@ -67,7 +67,7 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
       XmlNode cacheNodeIdsToRemoveMember = cacheNodeIdsToRemoveNode.FirstChild("CacheNodeId");
       while(!cacheNodeIdsToRemoveMember.IsNull())
       {
-        m_cacheNodeIdsToRemove.push_back(StringUtils::Trim(cacheNodeIdsToRemoveMember.GetText().c_str()));
+        m_cacheNodeIdsToRemove.push_back(cacheNodeIdsToRemoveMember.GetText());
         cacheNodeIdsToRemoveMember = cacheNodeIdsToRemoveMember.NextNode("CacheNodeId");
       }
 
@@ -76,13 +76,13 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
-      m_engineVersion = StringUtils::Trim(engineVersionNode.GetText().c_str());
+      m_engineVersion = engineVersionNode.GetText();
       m_engineVersionHasBeenSet = true;
     }
     XmlNode cacheNodeTypeNode = resultNode.FirstChild("CacheNodeType");
     if(!cacheNodeTypeNode.IsNull())
     {
-      m_cacheNodeType = StringUtils::Trim(cacheNodeTypeNode.GetText().c_str());
+      m_cacheNodeType = cacheNodeTypeNode.GetText();
       m_cacheNodeTypeHasBeenSet = true;
     }
   }

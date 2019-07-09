@@ -56,19 +56,19 @@ ElasticInferenceAcceleratorAssociation& ElasticInferenceAcceleratorAssociation::
     XmlNode elasticInferenceAcceleratorArnNode = resultNode.FirstChild("elasticInferenceAcceleratorArn");
     if(!elasticInferenceAcceleratorArnNode.IsNull())
     {
-      m_elasticInferenceAcceleratorArn = StringUtils::Trim(elasticInferenceAcceleratorArnNode.GetText().c_str());
+      m_elasticInferenceAcceleratorArn = elasticInferenceAcceleratorArnNode.GetText();
       m_elasticInferenceAcceleratorArnHasBeenSet = true;
     }
     XmlNode elasticInferenceAcceleratorAssociationIdNode = resultNode.FirstChild("elasticInferenceAcceleratorAssociationId");
     if(!elasticInferenceAcceleratorAssociationIdNode.IsNull())
     {
-      m_elasticInferenceAcceleratorAssociationId = StringUtils::Trim(elasticInferenceAcceleratorAssociationIdNode.GetText().c_str());
+      m_elasticInferenceAcceleratorAssociationId = elasticInferenceAcceleratorAssociationIdNode.GetText();
       m_elasticInferenceAcceleratorAssociationIdHasBeenSet = true;
     }
     XmlNode elasticInferenceAcceleratorAssociationStateNode = resultNode.FirstChild("elasticInferenceAcceleratorAssociationState");
     if(!elasticInferenceAcceleratorAssociationStateNode.IsNull())
     {
-      m_elasticInferenceAcceleratorAssociationState = StringUtils::Trim(elasticInferenceAcceleratorAssociationStateNode.GetText().c_str());
+      m_elasticInferenceAcceleratorAssociationState = elasticInferenceAcceleratorAssociationStateNode.GetText();
       m_elasticInferenceAcceleratorAssociationStateHasBeenSet = true;
     }
     XmlNode elasticInferenceAcceleratorAssociationTimeNode = resultNode.FirstChild("elasticInferenceAcceleratorAssociationTime");

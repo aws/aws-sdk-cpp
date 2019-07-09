@@ -51,12 +51,12 @@ GetPasswordDataResponse& GetPasswordDataResponse::operator =(const Aws::AmazonWe
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceId = instanceIdNode.GetText();
     }
     XmlNode passwordDataNode = resultNode.FirstChild("passwordData");
     if(!passwordDataNode.IsNull())
     {
-      m_passwordData = StringUtils::Trim(passwordDataNode.GetText().c_str());
+      m_passwordData = passwordDataNode.GetText();
     }
     XmlNode timestampNode = resultNode.FirstChild("timestamp");
     if(!timestampNode.IsNull())

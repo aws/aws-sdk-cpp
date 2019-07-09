@@ -51,7 +51,7 @@ GetSAMLProviderResult& GetSAMLProviderResult::operator =(const Aws::AmazonWebSer
     XmlNode sAMLMetadataDocumentNode = resultNode.FirstChild("SAMLMetadataDocument");
     if(!sAMLMetadataDocumentNode.IsNull())
     {
-      m_sAMLMetadataDocument = StringUtils::Trim(sAMLMetadataDocumentNode.GetText().c_str());
+      m_sAMLMetadataDocument = sAMLMetadataDocumentNode.GetText();
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())

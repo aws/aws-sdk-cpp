@@ -54,7 +54,7 @@ GetContextKeysForPrincipalPolicyResult& GetContextKeysForPrincipalPolicyResult::
       XmlNode contextKeyNamesMember = contextKeyNamesNode.FirstChild("member");
       while(!contextKeyNamesMember.IsNull())
       {
-        m_contextKeyNames.push_back(StringUtils::Trim(contextKeyNamesMember.GetText().c_str()));
+        m_contextKeyNames.push_back(contextKeyNamesMember.GetText());
         contextKeyNamesMember = contextKeyNamesMember.NextNode("member");
       }
 

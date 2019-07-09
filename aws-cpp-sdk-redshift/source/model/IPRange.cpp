@@ -54,13 +54,13 @@ IPRange& IPRange::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
     XmlNode cIDRIPNode = resultNode.FirstChild("CIDRIP");
     if(!cIDRIPNode.IsNull())
     {
-      m_cIDRIP = StringUtils::Trim(cIDRIPNode.GetText().c_str());
+      m_cIDRIP = cIDRIPNode.GetText();
       m_cIDRIPHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");

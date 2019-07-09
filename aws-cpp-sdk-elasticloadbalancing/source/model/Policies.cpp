@@ -81,7 +81,7 @@ Policies& Policies::operator =(const XmlNode& xmlNode)
       XmlNode otherPoliciesMember = otherPoliciesNode.FirstChild("member");
       while(!otherPoliciesMember.IsNull())
       {
-        m_otherPolicies.push_back(StringUtils::Trim(otherPoliciesMember.GetText().c_str()));
+        m_otherPolicies.push_back(otherPoliciesMember.GetText());
         otherPoliciesMember = otherPoliciesMember.NextNode("member");
       }
 

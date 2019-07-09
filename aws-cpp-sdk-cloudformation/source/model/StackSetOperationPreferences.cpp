@@ -69,7 +69,7 @@ StackSetOperationPreferences& StackSetOperationPreferences::operator =(const Xml
       XmlNode regionOrderMember = regionOrderNode.FirstChild("member");
       while(!regionOrderMember.IsNull())
       {
-        m_regionOrder.push_back(StringUtils::Trim(regionOrderMember.GetText().c_str()));
+        m_regionOrder.push_back(regionOrderMember.GetText());
         regionOrderMember = regionOrderMember.NextNode("member");
       }
 

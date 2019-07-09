@@ -62,25 +62,25 @@ NetworkInterfacePermission& NetworkInterfacePermission::operator =(const XmlNode
     XmlNode networkInterfacePermissionIdNode = resultNode.FirstChild("networkInterfacePermissionId");
     if(!networkInterfacePermissionIdNode.IsNull())
     {
-      m_networkInterfacePermissionId = StringUtils::Trim(networkInterfacePermissionIdNode.GetText().c_str());
+      m_networkInterfacePermissionId = networkInterfacePermissionIdNode.GetText();
       m_networkInterfacePermissionIdHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
-      m_networkInterfaceId = StringUtils::Trim(networkInterfaceIdNode.GetText().c_str());
+      m_networkInterfaceId = networkInterfaceIdNode.GetText();
       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode awsAccountIdNode = resultNode.FirstChild("awsAccountId");
     if(!awsAccountIdNode.IsNull())
     {
-      m_awsAccountId = StringUtils::Trim(awsAccountIdNode.GetText().c_str());
+      m_awsAccountId = awsAccountIdNode.GetText();
       m_awsAccountIdHasBeenSet = true;
     }
     XmlNode awsServiceNode = resultNode.FirstChild("awsService");
     if(!awsServiceNode.IsNull())
     {
-      m_awsService = StringUtils::Trim(awsServiceNode.GetText().c_str());
+      m_awsService = awsServiceNode.GetText();
       m_awsServiceHasBeenSet = true;
     }
     XmlNode permissionNode = resultNode.FirstChild("permission");

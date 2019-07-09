@@ -57,8 +57,8 @@ GetPlatformApplicationAttributesResult& GetPlatformApplicationAttributesResult::
       {
         XmlNode keyNode = attributesEntry.FirstChild("key");
         XmlNode valueNode = attributesEntry.FirstChild("value");
-        m_attributes[StringUtils::Trim(keyNode.GetText().c_str())] =
-            StringUtils::Trim(valueNode.GetText().c_str());
+        m_attributes[keyNode.GetText()] =
+            valueNode.GetText();
         attributesEntry = attributesEntry.NextNode("entry");
       }
 

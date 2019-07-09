@@ -72,7 +72,7 @@ MetricStat& MetricStat::operator =(const XmlNode& xmlNode)
     XmlNode statNode = resultNode.FirstChild("Stat");
     if(!statNode.IsNull())
     {
-      m_stat = StringUtils::Trim(statNode.GetText().c_str());
+      m_stat = statNode.GetText();
       m_statHasBeenSet = true;
     }
     XmlNode unitNode = resultNode.FirstChild("Unit");

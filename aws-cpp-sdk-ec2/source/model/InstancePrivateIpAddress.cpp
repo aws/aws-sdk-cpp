@@ -70,13 +70,13 @@ InstancePrivateIpAddress& InstancePrivateIpAddress::operator =(const XmlNode& xm
     XmlNode privateDnsNameNode = resultNode.FirstChild("privateDnsName");
     if(!privateDnsNameNode.IsNull())
     {
-      m_privateDnsName = StringUtils::Trim(privateDnsNameNode.GetText().c_str());
+      m_privateDnsName = privateDnsNameNode.GetText();
       m_privateDnsNameHasBeenSet = true;
     }
     XmlNode privateIpAddressNode = resultNode.FirstChild("privateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
-      m_privateIpAddress = StringUtils::Trim(privateIpAddressNode.GetText().c_str());
+      m_privateIpAddress = privateIpAddressNode.GetText();
       m_privateIpAddressHasBeenSet = true;
     }
   }

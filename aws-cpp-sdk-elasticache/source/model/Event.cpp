@@ -58,7 +58,7 @@ Event& Event::operator =(const XmlNode& xmlNode)
     XmlNode sourceIdentifierNode = resultNode.FirstChild("SourceIdentifier");
     if(!sourceIdentifierNode.IsNull())
     {
-      m_sourceIdentifier = StringUtils::Trim(sourceIdentifierNode.GetText().c_str());
+      m_sourceIdentifier = sourceIdentifierNode.GetText();
       m_sourceIdentifierHasBeenSet = true;
     }
     XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
@@ -70,7 +70,7 @@ Event& Event::operator =(const XmlNode& xmlNode)
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
-      m_message = StringUtils::Trim(messageNode.GetText().c_str());
+      m_message = messageNode.GetText();
       m_messageHasBeenSet = true;
     }
     XmlNode dateNode = resultNode.FirstChild("Date");

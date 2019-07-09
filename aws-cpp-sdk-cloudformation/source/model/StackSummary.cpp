@@ -72,19 +72,19 @@ StackSummary& StackSummary::operator =(const XmlNode& xmlNode)
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
     if(!stackIdNode.IsNull())
     {
-      m_stackId = StringUtils::Trim(stackIdNode.GetText().c_str());
+      m_stackId = stackIdNode.GetText();
       m_stackIdHasBeenSet = true;
     }
     XmlNode stackNameNode = resultNode.FirstChild("StackName");
     if(!stackNameNode.IsNull())
     {
-      m_stackName = StringUtils::Trim(stackNameNode.GetText().c_str());
+      m_stackName = stackNameNode.GetText();
       m_stackNameHasBeenSet = true;
     }
     XmlNode templateDescriptionNode = resultNode.FirstChild("TemplateDescription");
     if(!templateDescriptionNode.IsNull())
     {
-      m_templateDescription = StringUtils::Trim(templateDescriptionNode.GetText().c_str());
+      m_templateDescription = templateDescriptionNode.GetText();
       m_templateDescriptionHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("CreationTime");
@@ -114,19 +114,19 @@ StackSummary& StackSummary::operator =(const XmlNode& xmlNode)
     XmlNode stackStatusReasonNode = resultNode.FirstChild("StackStatusReason");
     if(!stackStatusReasonNode.IsNull())
     {
-      m_stackStatusReason = StringUtils::Trim(stackStatusReasonNode.GetText().c_str());
+      m_stackStatusReason = stackStatusReasonNode.GetText();
       m_stackStatusReasonHasBeenSet = true;
     }
     XmlNode parentIdNode = resultNode.FirstChild("ParentId");
     if(!parentIdNode.IsNull())
     {
-      m_parentId = StringUtils::Trim(parentIdNode.GetText().c_str());
+      m_parentId = parentIdNode.GetText();
       m_parentIdHasBeenSet = true;
     }
     XmlNode rootIdNode = resultNode.FirstChild("RootId");
     if(!rootIdNode.IsNull())
     {
-      m_rootId = StringUtils::Trim(rootIdNode.GetText().c_str());
+      m_rootId = rootIdNode.GetText();
       m_rootIdHasBeenSet = true;
     }
     XmlNode driftInformationNode = resultNode.FirstChild("DriftInformation");

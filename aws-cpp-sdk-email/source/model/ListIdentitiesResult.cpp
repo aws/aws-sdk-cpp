@@ -54,7 +54,7 @@ ListIdentitiesResult& ListIdentitiesResult::operator =(const Aws::AmazonWebServi
       XmlNode identitiesMember = identitiesNode.FirstChild("member");
       while(!identitiesMember.IsNull())
       {
-        m_identities.push_back(StringUtils::Trim(identitiesMember.GetText().c_str()));
+        m_identities.push_back(identitiesMember.GetText());
         identitiesMember = identitiesMember.NextNode("member");
       }
 
@@ -62,7 +62,7 @@ ListIdentitiesResult& ListIdentitiesResult::operator =(const Aws::AmazonWebServi
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+      m_nextToken = nextTokenNode.GetText();
     }
   }
 

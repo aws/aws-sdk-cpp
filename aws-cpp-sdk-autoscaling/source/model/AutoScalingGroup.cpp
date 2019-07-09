@@ -110,19 +110,19 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     XmlNode autoScalingGroupNameNode = resultNode.FirstChild("AutoScalingGroupName");
     if(!autoScalingGroupNameNode.IsNull())
     {
-      m_autoScalingGroupName = StringUtils::Trim(autoScalingGroupNameNode.GetText().c_str());
+      m_autoScalingGroupName = autoScalingGroupNameNode.GetText();
       m_autoScalingGroupNameHasBeenSet = true;
     }
     XmlNode autoScalingGroupARNNode = resultNode.FirstChild("AutoScalingGroupARN");
     if(!autoScalingGroupARNNode.IsNull())
     {
-      m_autoScalingGroupARN = StringUtils::Trim(autoScalingGroupARNNode.GetText().c_str());
+      m_autoScalingGroupARN = autoScalingGroupARNNode.GetText();
       m_autoScalingGroupARNHasBeenSet = true;
     }
     XmlNode launchConfigurationNameNode = resultNode.FirstChild("LaunchConfigurationName");
     if(!launchConfigurationNameNode.IsNull())
     {
-      m_launchConfigurationName = StringUtils::Trim(launchConfigurationNameNode.GetText().c_str());
+      m_launchConfigurationName = launchConfigurationNameNode.GetText();
       m_launchConfigurationNameHasBeenSet = true;
     }
     XmlNode launchTemplateNode = resultNode.FirstChild("LaunchTemplate");
@@ -167,7 +167,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("member");
       while(!availabilityZonesMember.IsNull())
       {
-        m_availabilityZones.push_back(StringUtils::Trim(availabilityZonesMember.GetText().c_str()));
+        m_availabilityZones.push_back(availabilityZonesMember.GetText());
         availabilityZonesMember = availabilityZonesMember.NextNode("member");
       }
 
@@ -179,7 +179,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       XmlNode loadBalancerNamesMember = loadBalancerNamesNode.FirstChild("member");
       while(!loadBalancerNamesMember.IsNull())
       {
-        m_loadBalancerNames.push_back(StringUtils::Trim(loadBalancerNamesMember.GetText().c_str()));
+        m_loadBalancerNames.push_back(loadBalancerNamesMember.GetText());
         loadBalancerNamesMember = loadBalancerNamesMember.NextNode("member");
       }
 
@@ -191,7 +191,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       XmlNode targetGroupARNsMember = targetGroupARNsNode.FirstChild("member");
       while(!targetGroupARNsMember.IsNull())
       {
-        m_targetGroupARNs.push_back(StringUtils::Trim(targetGroupARNsMember.GetText().c_str()));
+        m_targetGroupARNs.push_back(targetGroupARNsMember.GetText());
         targetGroupARNsMember = targetGroupARNsMember.NextNode("member");
       }
 
@@ -200,7 +200,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     XmlNode healthCheckTypeNode = resultNode.FirstChild("HealthCheckType");
     if(!healthCheckTypeNode.IsNull())
     {
-      m_healthCheckType = StringUtils::Trim(healthCheckTypeNode.GetText().c_str());
+      m_healthCheckType = healthCheckTypeNode.GetText();
       m_healthCheckTypeHasBeenSet = true;
     }
     XmlNode healthCheckGracePeriodNode = resultNode.FirstChild("HealthCheckGracePeriod");
@@ -242,13 +242,13 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     XmlNode placementGroupNode = resultNode.FirstChild("PlacementGroup");
     if(!placementGroupNode.IsNull())
     {
-      m_placementGroup = StringUtils::Trim(placementGroupNode.GetText().c_str());
+      m_placementGroup = placementGroupNode.GetText();
       m_placementGroupHasBeenSet = true;
     }
     XmlNode vPCZoneIdentifierNode = resultNode.FirstChild("VPCZoneIdentifier");
     if(!vPCZoneIdentifierNode.IsNull())
     {
-      m_vPCZoneIdentifier = StringUtils::Trim(vPCZoneIdentifierNode.GetText().c_str());
+      m_vPCZoneIdentifier = vPCZoneIdentifierNode.GetText();
       m_vPCZoneIdentifierHasBeenSet = true;
     }
     XmlNode enabledMetricsNode = resultNode.FirstChild("EnabledMetrics");
@@ -266,7 +266,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
@@ -287,7 +287,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       XmlNode terminationPoliciesMember = terminationPoliciesNode.FirstChild("member");
       while(!terminationPoliciesMember.IsNull())
       {
-        m_terminationPolicies.push_back(StringUtils::Trim(terminationPoliciesMember.GetText().c_str()));
+        m_terminationPolicies.push_back(terminationPoliciesMember.GetText());
         terminationPoliciesMember = terminationPoliciesMember.NextNode("member");
       }
 
@@ -302,7 +302,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     XmlNode serviceLinkedRoleARNNode = resultNode.FirstChild("ServiceLinkedRoleARN");
     if(!serviceLinkedRoleARNNode.IsNull())
     {
-      m_serviceLinkedRoleARN = StringUtils::Trim(serviceLinkedRoleARNNode.GetText().c_str());
+      m_serviceLinkedRoleARN = serviceLinkedRoleARNNode.GetText();
       m_serviceLinkedRoleARNHasBeenSet = true;
     }
   }

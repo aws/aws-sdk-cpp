@@ -88,7 +88,7 @@ JobDescriptor& JobDescriptor::operator =(const XmlNode& xmlNode)
     XmlNode jobIdNode = resultNode.FirstChild("JobId");
     if(!jobIdNode.IsNull())
     {
-      m_jobId = StringUtils::Trim(jobIdNode.GetText().c_str());
+      m_jobId = jobIdNode.GetText();
       m_jobIdHasBeenSet = true;
     }
     XmlNode confirmationRequiredNode = resultNode.FirstChild("ConfirmationRequired");
@@ -100,13 +100,13 @@ JobDescriptor& JobDescriptor::operator =(const XmlNode& xmlNode)
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode jobArnNode = resultNode.FirstChild("JobArn");
     if(!jobArnNode.IsNull())
     {
-      m_jobArn = StringUtils::Trim(jobArnNode.GetText().c_str());
+      m_jobArn = jobArnNode.GetText();
       m_jobArnHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
@@ -142,7 +142,7 @@ JobDescriptor& JobDescriptor::operator =(const XmlNode& xmlNode)
     XmlNode statusUpdateReasonNode = resultNode.FirstChild("StatusUpdateReason");
     if(!statusUpdateReasonNode.IsNull())
     {
-      m_statusUpdateReason = StringUtils::Trim(statusUpdateReasonNode.GetText().c_str());
+      m_statusUpdateReason = statusUpdateReasonNode.GetText();
       m_statusUpdateReasonHasBeenSet = true;
     }
     XmlNode failureReasonsNode = resultNode.FirstChild("FailureReasons");
@@ -178,7 +178,7 @@ JobDescriptor& JobDescriptor::operator =(const XmlNode& xmlNode)
     XmlNode roleArnNode = resultNode.FirstChild("RoleArn");
     if(!roleArnNode.IsNull())
     {
-      m_roleArn = StringUtils::Trim(roleArnNode.GetText().c_str());
+      m_roleArn = roleArnNode.GetText();
       m_roleArnHasBeenSet = true;
     }
     XmlNode suspendedDateNode = resultNode.FirstChild("SuspendedDate");
@@ -190,7 +190,7 @@ JobDescriptor& JobDescriptor::operator =(const XmlNode& xmlNode)
     XmlNode suspendedCauseNode = resultNode.FirstChild("SuspendedCause");
     if(!suspendedCauseNode.IsNull())
     {
-      m_suspendedCause = StringUtils::Trim(suspendedCauseNode.GetText().c_str());
+      m_suspendedCause = suspendedCauseNode.GetText();
       m_suspendedCauseHasBeenSet = true;
     }
   }

@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/kinesis-video-archived-media/model/PlaybackMode.h>
+#include <aws/kinesis-video-archived-media/model/HLSDisplayFragmentTimestamp.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -27,42 +27,42 @@ namespace Aws
   {
     namespace Model
     {
-      namespace PlaybackModeMapper
+      namespace HLSDisplayFragmentTimestampMapper
       {
 
-        static const int LIVE_HASH = HashingUtils::HashString("LIVE");
-        static const int ON_DEMAND_HASH = HashingUtils::HashString("ON_DEMAND");
+        static const int ALWAYS_HASH = HashingUtils::HashString("ALWAYS");
+        static const int NEVER_HASH = HashingUtils::HashString("NEVER");
 
 
-        PlaybackMode GetPlaybackModeForName(const Aws::String& name)
+        HLSDisplayFragmentTimestamp GetHLSDisplayFragmentTimestampForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == LIVE_HASH)
+          if (hashCode == ALWAYS_HASH)
           {
-            return PlaybackMode::LIVE;
+            return HLSDisplayFragmentTimestamp::ALWAYS;
           }
-          else if (hashCode == ON_DEMAND_HASH)
+          else if (hashCode == NEVER_HASH)
           {
-            return PlaybackMode::ON_DEMAND;
+            return HLSDisplayFragmentTimestamp::NEVER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<PlaybackMode>(hashCode);
+            return static_cast<HLSDisplayFragmentTimestamp>(hashCode);
           }
 
-          return PlaybackMode::NOT_SET;
+          return HLSDisplayFragmentTimestamp::NOT_SET;
         }
 
-        Aws::String GetNameForPlaybackMode(PlaybackMode enumValue)
+        Aws::String GetNameForHLSDisplayFragmentTimestamp(HLSDisplayFragmentTimestamp enumValue)
         {
           switch(enumValue)
           {
-          case PlaybackMode::LIVE:
-            return "LIVE";
-          case PlaybackMode::ON_DEMAND:
-            return "ON_DEMAND";
+          case HLSDisplayFragmentTimestamp::ALWAYS:
+            return "ALWAYS";
+          case HLSDisplayFragmentTimestamp::NEVER:
+            return "NEVER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -74,7 +74,7 @@ namespace Aws
           }
         }
 
-      } // namespace PlaybackModeMapper
+      } // namespace HLSDisplayFragmentTimestampMapper
     } // namespace Model
   } // namespace KinesisVideoArchivedMedia
 } // namespace Aws

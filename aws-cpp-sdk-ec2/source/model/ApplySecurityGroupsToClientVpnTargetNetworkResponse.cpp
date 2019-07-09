@@ -54,7 +54,7 @@ ApplySecurityGroupsToClientVpnTargetNetworkResponse& ApplySecurityGroupsToClient
       XmlNode securityGroupIdsMember = securityGroupIdsNode.FirstChild("item");
       while(!securityGroupIdsMember.IsNull())
       {
-        m_securityGroupIds.push_back(StringUtils::Trim(securityGroupIdsMember.GetText().c_str()));
+        m_securityGroupIds.push_back(securityGroupIdsMember.GetText());
         securityGroupIdsMember = securityGroupIdsMember.NextNode("item");
       }
 

@@ -72,13 +72,13 @@ VolumeAttachment& VolumeAttachment::operator =(const XmlNode& xmlNode)
     XmlNode deviceNode = resultNode.FirstChild("device");
     if(!deviceNode.IsNull())
     {
-      m_device = StringUtils::Trim(deviceNode.GetText().c_str());
+      m_device = deviceNode.GetText();
       m_deviceHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceId = instanceIdNode.GetText();
       m_instanceIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("status");
@@ -90,7 +90,7 @@ VolumeAttachment& VolumeAttachment::operator =(const XmlNode& xmlNode)
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
     {
-      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
+      m_volumeId = volumeIdNode.GetText();
       m_volumeIdHasBeenSet = true;
     }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");

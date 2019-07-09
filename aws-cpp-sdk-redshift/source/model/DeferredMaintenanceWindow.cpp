@@ -54,7 +54,7 @@ DeferredMaintenanceWindow& DeferredMaintenanceWindow::operator =(const XmlNode& 
     XmlNode deferMaintenanceIdentifierNode = resultNode.FirstChild("DeferMaintenanceIdentifier");
     if(!deferMaintenanceIdentifierNode.IsNull())
     {
-      m_deferMaintenanceIdentifier = StringUtils::Trim(deferMaintenanceIdentifierNode.GetText().c_str());
+      m_deferMaintenanceIdentifier = deferMaintenanceIdentifierNode.GetText();
       m_deferMaintenanceIdentifierHasBeenSet = true;
     }
     XmlNode deferMaintenanceStartTimeNode = resultNode.FirstChild("DeferMaintenanceStartTime");

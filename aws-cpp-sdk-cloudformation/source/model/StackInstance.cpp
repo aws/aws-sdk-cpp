@@ -64,25 +64,25 @@ StackInstance& StackInstance::operator =(const XmlNode& xmlNode)
     XmlNode stackSetIdNode = resultNode.FirstChild("StackSetId");
     if(!stackSetIdNode.IsNull())
     {
-      m_stackSetId = StringUtils::Trim(stackSetIdNode.GetText().c_str());
+      m_stackSetId = stackSetIdNode.GetText();
       m_stackSetIdHasBeenSet = true;
     }
     XmlNode regionNode = resultNode.FirstChild("Region");
     if(!regionNode.IsNull())
     {
-      m_region = StringUtils::Trim(regionNode.GetText().c_str());
+      m_region = regionNode.GetText();
       m_regionHasBeenSet = true;
     }
     XmlNode accountNode = resultNode.FirstChild("Account");
     if(!accountNode.IsNull())
     {
-      m_account = StringUtils::Trim(accountNode.GetText().c_str());
+      m_account = accountNode.GetText();
       m_accountHasBeenSet = true;
     }
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
     if(!stackIdNode.IsNull())
     {
-      m_stackId = StringUtils::Trim(stackIdNode.GetText().c_str());
+      m_stackId = stackIdNode.GetText();
       m_stackIdHasBeenSet = true;
     }
     XmlNode parameterOverridesNode = resultNode.FirstChild("ParameterOverrides");
@@ -106,7 +106,7 @@ StackInstance& StackInstance::operator =(const XmlNode& xmlNode)
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
     if(!statusReasonNode.IsNull())
     {
-      m_statusReason = StringUtils::Trim(statusReasonNode.GetText().c_str());
+      m_statusReason = statusReasonNode.GetText();
       m_statusReasonHasBeenSet = true;
     }
   }

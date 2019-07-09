@@ -60,7 +60,7 @@ AttachedPermissionsBoundary& AttachedPermissionsBoundary::operator =(const XmlNo
     XmlNode permissionsBoundaryArnNode = resultNode.FirstChild("PermissionsBoundaryArn");
     if(!permissionsBoundaryArnNode.IsNull())
     {
-      m_permissionsBoundaryArn = StringUtils::Trim(permissionsBoundaryArnNode.GetText().c_str());
+      m_permissionsBoundaryArn = permissionsBoundaryArnNode.GetText();
       m_permissionsBoundaryArnHasBeenSet = true;
     }
   }

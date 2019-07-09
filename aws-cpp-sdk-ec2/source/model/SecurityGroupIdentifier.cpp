@@ -52,13 +52,13 @@ SecurityGroupIdentifier& SecurityGroupIdentifier::operator =(const XmlNode& xmlN
     XmlNode groupIdNode = resultNode.FirstChild("groupId");
     if(!groupIdNode.IsNull())
     {
-      m_groupId = StringUtils::Trim(groupIdNode.GetText().c_str());
+      m_groupId = groupIdNode.GetText();
       m_groupIdHasBeenSet = true;
     }
     XmlNode groupNameNode = resultNode.FirstChild("groupName");
     if(!groupNameNode.IsNull())
     {
-      m_groupName = StringUtils::Trim(groupNameNode.GetText().c_str());
+      m_groupName = groupNameNode.GetText();
       m_groupNameHasBeenSet = true;
     }
   }

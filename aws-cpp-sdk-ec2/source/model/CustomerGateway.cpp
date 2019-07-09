@@ -60,31 +60,31 @@ CustomerGateway& CustomerGateway::operator =(const XmlNode& xmlNode)
     XmlNode bgpAsnNode = resultNode.FirstChild("bgpAsn");
     if(!bgpAsnNode.IsNull())
     {
-      m_bgpAsn = StringUtils::Trim(bgpAsnNode.GetText().c_str());
+      m_bgpAsn = bgpAsnNode.GetText();
       m_bgpAsnHasBeenSet = true;
     }
     XmlNode customerGatewayIdNode = resultNode.FirstChild("customerGatewayId");
     if(!customerGatewayIdNode.IsNull())
     {
-      m_customerGatewayId = StringUtils::Trim(customerGatewayIdNode.GetText().c_str());
+      m_customerGatewayId = customerGatewayIdNode.GetText();
       m_customerGatewayIdHasBeenSet = true;
     }
     XmlNode ipAddressNode = resultNode.FirstChild("ipAddress");
     if(!ipAddressNode.IsNull())
     {
-      m_ipAddress = StringUtils::Trim(ipAddressNode.GetText().c_str());
+      m_ipAddress = ipAddressNode.GetText();
       m_ipAddressHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = StringUtils::Trim(stateNode.GetText().c_str());
+      m_state = stateNode.GetText();
       m_stateHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = StringUtils::Trim(typeNode.GetText().c_str());
+      m_type = typeNode.GetText();
       m_typeHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");

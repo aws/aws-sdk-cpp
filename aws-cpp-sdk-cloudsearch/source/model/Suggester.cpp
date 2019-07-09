@@ -52,7 +52,7 @@ Suggester& Suggester::operator =(const XmlNode& xmlNode)
     XmlNode suggesterNameNode = resultNode.FirstChild("SuggesterName");
     if(!suggesterNameNode.IsNull())
     {
-      m_suggesterName = StringUtils::Trim(suggesterNameNode.GetText().c_str());
+      m_suggesterName = suggesterNameNode.GetText();
       m_suggesterNameHasBeenSet = true;
     }
     XmlNode documentSuggesterOptionsNode = resultNode.FirstChild("DocumentSuggesterOptions");

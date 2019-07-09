@@ -62,31 +62,31 @@ RedirectActionConfig& RedirectActionConfig::operator =(const XmlNode& xmlNode)
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = StringUtils::Trim(protocolNode.GetText().c_str());
+      m_protocol = protocolNode.GetText();
       m_protocolHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
     if(!portNode.IsNull())
     {
-      m_port = StringUtils::Trim(portNode.GetText().c_str());
+      m_port = portNode.GetText();
       m_portHasBeenSet = true;
     }
     XmlNode hostNode = resultNode.FirstChild("Host");
     if(!hostNode.IsNull())
     {
-      m_host = StringUtils::Trim(hostNode.GetText().c_str());
+      m_host = hostNode.GetText();
       m_hostHasBeenSet = true;
     }
     XmlNode pathNode = resultNode.FirstChild("Path");
     if(!pathNode.IsNull())
     {
-      m_path = StringUtils::Trim(pathNode.GetText().c_str());
+      m_path = pathNode.GetText();
       m_pathHasBeenSet = true;
     }
     XmlNode queryNode = resultNode.FirstChild("Query");
     if(!queryNode.IsNull())
     {
-      m_query = StringUtils::Trim(queryNode.GetText().c_str());
+      m_query = queryNode.GetText();
       m_queryHasBeenSet = true;
     }
     XmlNode statusCodeNode = resultNode.FirstChild("StatusCode");

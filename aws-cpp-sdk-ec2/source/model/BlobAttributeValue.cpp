@@ -51,7 +51,7 @@ BlobAttributeValue& BlobAttributeValue::operator =(const XmlNode& xmlNode)
     XmlNode valueNode = resultNode.FirstChild("value");
     if(!valueNode.IsNull())
     {
-      m_value = HashingUtils::Base64Decode(StringUtils::Trim(valueNode.GetText().c_str()));
+      m_value = HashingUtils::Base64Decode(valueNode.GetText());
       m_valueHasBeenSet = true;
     }
   }

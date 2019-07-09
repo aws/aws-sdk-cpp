@@ -88,7 +88,7 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
     XmlNode vpcEndpointIdNode = resultNode.FirstChild("vpcEndpointId");
     if(!vpcEndpointIdNode.IsNull())
     {
-      m_vpcEndpointId = StringUtils::Trim(vpcEndpointIdNode.GetText().c_str());
+      m_vpcEndpointId = vpcEndpointIdNode.GetText();
       m_vpcEndpointIdHasBeenSet = true;
     }
     XmlNode vpcEndpointTypeNode = resultNode.FirstChild("vpcEndpointType");
@@ -100,13 +100,13 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
+      m_vpcId = vpcIdNode.GetText();
       m_vpcIdHasBeenSet = true;
     }
     XmlNode serviceNameNode = resultNode.FirstChild("serviceName");
     if(!serviceNameNode.IsNull())
     {
-      m_serviceName = StringUtils::Trim(serviceNameNode.GetText().c_str());
+      m_serviceName = serviceNameNode.GetText();
       m_serviceNameHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
@@ -118,7 +118,7 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
     XmlNode policyDocumentNode = resultNode.FirstChild("policyDocument");
     if(!policyDocumentNode.IsNull())
     {
-      m_policyDocument = StringUtils::Trim(policyDocumentNode.GetText().c_str());
+      m_policyDocument = policyDocumentNode.GetText();
       m_policyDocumentHasBeenSet = true;
     }
     XmlNode routeTableIdsNode = resultNode.FirstChild("routeTableIdSet");
@@ -127,7 +127,7 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
       XmlNode routeTableIdsMember = routeTableIdsNode.FirstChild("item");
       while(!routeTableIdsMember.IsNull())
       {
-        m_routeTableIds.push_back(StringUtils::Trim(routeTableIdsMember.GetText().c_str()));
+        m_routeTableIds.push_back(routeTableIdsMember.GetText());
         routeTableIdsMember = routeTableIdsMember.NextNode("item");
       }
 
@@ -139,7 +139,7 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
       XmlNode subnetIdsMember = subnetIdsNode.FirstChild("item");
       while(!subnetIdsMember.IsNull())
       {
-        m_subnetIds.push_back(StringUtils::Trim(subnetIdsMember.GetText().c_str()));
+        m_subnetIds.push_back(subnetIdsMember.GetText());
         subnetIdsMember = subnetIdsMember.NextNode("item");
       }
 
@@ -175,7 +175,7 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
       XmlNode networkInterfaceIdsMember = networkInterfaceIdsNode.FirstChild("item");
       while(!networkInterfaceIdsMember.IsNull())
       {
-        m_networkInterfaceIds.push_back(StringUtils::Trim(networkInterfaceIdsMember.GetText().c_str()));
+        m_networkInterfaceIds.push_back(networkInterfaceIdsMember.GetText());
         networkInterfaceIdsMember = networkInterfaceIdsMember.NextNode("item");
       }
 
@@ -214,7 +214,7 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
-      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerId = ownerIdNode.GetText();
       m_ownerIdHasBeenSet = true;
     }
   }

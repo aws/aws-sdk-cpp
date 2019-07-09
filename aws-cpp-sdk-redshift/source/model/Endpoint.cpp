@@ -54,7 +54,7 @@ Endpoint& Endpoint::operator =(const XmlNode& xmlNode)
     XmlNode addressNode = resultNode.FirstChild("Address");
     if(!addressNode.IsNull())
     {
-      m_address = StringUtils::Trim(addressNode.GetText().c_str());
+      m_address = addressNode.GetText();
       m_addressHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");

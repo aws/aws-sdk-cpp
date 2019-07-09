@@ -92,7 +92,7 @@ S3CopyObjectOperation& S3CopyObjectOperation::operator =(const XmlNode& xmlNode)
     XmlNode targetResourceNode = resultNode.FirstChild("TargetResource");
     if(!targetResourceNode.IsNull())
     {
-      m_targetResource = StringUtils::Trim(targetResourceNode.GetText().c_str());
+      m_targetResource = targetResourceNode.GetText();
       m_targetResourceHasBeenSet = true;
     }
     XmlNode cannedAccessControlListNode = resultNode.FirstChild("CannedAccessControlList");
@@ -146,7 +146,7 @@ S3CopyObjectOperation& S3CopyObjectOperation::operator =(const XmlNode& xmlNode)
     XmlNode redirectLocationNode = resultNode.FirstChild("RedirectLocation");
     if(!redirectLocationNode.IsNull())
     {
-      m_redirectLocation = StringUtils::Trim(redirectLocationNode.GetText().c_str());
+      m_redirectLocation = redirectLocationNode.GetText();
       m_redirectLocationHasBeenSet = true;
     }
     XmlNode requesterPaysNode = resultNode.FirstChild("RequesterPays");
@@ -170,13 +170,13 @@ S3CopyObjectOperation& S3CopyObjectOperation::operator =(const XmlNode& xmlNode)
     XmlNode sSEAwsKmsKeyIdNode = resultNode.FirstChild("SSEAwsKmsKeyId");
     if(!sSEAwsKmsKeyIdNode.IsNull())
     {
-      m_sSEAwsKmsKeyId = StringUtils::Trim(sSEAwsKmsKeyIdNode.GetText().c_str());
+      m_sSEAwsKmsKeyId = sSEAwsKmsKeyIdNode.GetText();
       m_sSEAwsKmsKeyIdHasBeenSet = true;
     }
     XmlNode targetKeyPrefixNode = resultNode.FirstChild("TargetKeyPrefix");
     if(!targetKeyPrefixNode.IsNull())
     {
-      m_targetKeyPrefix = StringUtils::Trim(targetKeyPrefixNode.GetText().c_str());
+      m_targetKeyPrefix = targetKeyPrefixNode.GetText();
       m_targetKeyPrefixHasBeenSet = true;
     }
     XmlNode objectLockLegalHoldStatusNode = resultNode.FirstChild("ObjectLockLegalHoldStatus");

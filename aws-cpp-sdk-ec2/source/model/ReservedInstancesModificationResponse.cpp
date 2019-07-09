@@ -52,7 +52,7 @@ ReservedInstancesModificationResponse& ReservedInstancesModificationResponse::op
     XmlNode reservedInstancesIdNode = resultNode.FirstChild("reservedInstancesId");
     if(!reservedInstancesIdNode.IsNull())
     {
-      m_reservedInstancesId = StringUtils::Trim(reservedInstancesIdNode.GetText().c_str());
+      m_reservedInstancesId = reservedInstancesIdNode.GetText();
       m_reservedInstancesIdHasBeenSet = true;
     }
     XmlNode targetConfigurationNode = resultNode.FirstChild("targetConfiguration");

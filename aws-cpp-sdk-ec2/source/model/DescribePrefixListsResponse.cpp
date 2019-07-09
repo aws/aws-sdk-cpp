@@ -51,7 +51,7 @@ DescribePrefixListsResponse& DescribePrefixListsResponse::operator =(const Aws::
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+      m_nextToken = nextTokenNode.GetText();
     }
     XmlNode prefixListsNode = resultNode.FirstChild("prefixListSet");
     if(!prefixListsNode.IsNull())

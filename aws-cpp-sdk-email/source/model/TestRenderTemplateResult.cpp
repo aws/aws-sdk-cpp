@@ -51,7 +51,7 @@ TestRenderTemplateResult& TestRenderTemplateResult::operator =(const Aws::Amazon
     XmlNode renderedTemplateNode = resultNode.FirstChild("RenderedTemplate");
     if(!renderedTemplateNode.IsNull())
     {
-      m_renderedTemplate = StringUtils::Trim(renderedTemplateNode.GetText().c_str());
+      m_renderedTemplate = renderedTemplateNode.GetText();
     }
   }
 

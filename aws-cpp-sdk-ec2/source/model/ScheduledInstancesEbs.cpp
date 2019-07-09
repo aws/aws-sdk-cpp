@@ -86,7 +86,7 @@ ScheduledInstancesEbs& ScheduledInstancesEbs::operator =(const XmlNode& xmlNode)
     XmlNode snapshotIdNode = resultNode.FirstChild("SnapshotId");
     if(!snapshotIdNode.IsNull())
     {
-      m_snapshotId = StringUtils::Trim(snapshotIdNode.GetText().c_str());
+      m_snapshotId = snapshotIdNode.GetText();
       m_snapshotIdHasBeenSet = true;
     }
     XmlNode volumeSizeNode = resultNode.FirstChild("VolumeSize");
@@ -98,7 +98,7 @@ ScheduledInstancesEbs& ScheduledInstancesEbs::operator =(const XmlNode& xmlNode)
     XmlNode volumeTypeNode = resultNode.FirstChild("VolumeType");
     if(!volumeTypeNode.IsNull())
     {
-      m_volumeType = StringUtils::Trim(volumeTypeNode.GetText().c_str());
+      m_volumeType = volumeTypeNode.GetText();
       m_volumeTypeHasBeenSet = true;
     }
   }

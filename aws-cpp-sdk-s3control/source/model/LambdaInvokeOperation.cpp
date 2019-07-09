@@ -50,7 +50,7 @@ LambdaInvokeOperation& LambdaInvokeOperation::operator =(const XmlNode& xmlNode)
     XmlNode functionArnNode = resultNode.FirstChild("FunctionArn");
     if(!functionArnNode.IsNull())
     {
-      m_functionArn = StringUtils::Trim(functionArnNode.GetText().c_str());
+      m_functionArn = functionArnNode.GetText();
       m_functionArnHasBeenSet = true;
     }
   }

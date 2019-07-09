@@ -56,25 +56,25 @@ DomainMembership& DomainMembership::operator =(const XmlNode& xmlNode)
     XmlNode domainNode = resultNode.FirstChild("Domain");
     if(!domainNode.IsNull())
     {
-      m_domain = StringUtils::Trim(domainNode.GetText().c_str());
+      m_domain = domainNode.GetText();
       m_domainHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
     XmlNode fQDNNode = resultNode.FirstChild("FQDN");
     if(!fQDNNode.IsNull())
     {
-      m_fQDN = StringUtils::Trim(fQDNNode.GetText().c_str());
+      m_fQDN = fQDNNode.GetText();
       m_fQDNHasBeenSet = true;
     }
     XmlNode iAMRoleNameNode = resultNode.FirstChild("IAMRoleName");
     if(!iAMRoleNameNode.IsNull())
     {
-      m_iAMRoleName = StringUtils::Trim(iAMRoleNameNode.GetText().c_str());
+      m_iAMRoleName = iAMRoleNameNode.GetText();
       m_iAMRoleNameHasBeenSet = true;
     }
   }

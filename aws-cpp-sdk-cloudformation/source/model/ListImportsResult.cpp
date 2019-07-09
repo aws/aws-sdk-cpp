@@ -54,7 +54,7 @@ ListImportsResult& ListImportsResult::operator =(const Aws::AmazonWebServiceResu
       XmlNode importsMember = importsNode.FirstChild("member");
       while(!importsMember.IsNull())
       {
-        m_imports.push_back(StringUtils::Trim(importsMember.GetText().c_str()));
+        m_imports.push_back(importsMember.GetText());
         importsMember = importsMember.NextNode("member");
       }
 
@@ -62,7 +62,7 @@ ListImportsResult& ListImportsResult::operator =(const Aws::AmazonWebServiceResu
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+      m_nextToken = nextTokenNode.GetText();
     }
   }
 

@@ -52,13 +52,13 @@ DBClusterRole& DBClusterRole::operator =(const XmlNode& xmlNode)
     XmlNode roleArnNode = resultNode.FirstChild("RoleArn");
     if(!roleArnNode.IsNull())
     {
-      m_roleArn = StringUtils::Trim(roleArnNode.GetText().c_str());
+      m_roleArn = roleArnNode.GetText();
       m_roleArnHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
   }

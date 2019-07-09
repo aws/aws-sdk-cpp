@@ -58,13 +58,13 @@ PolicyVersion& PolicyVersion::operator =(const XmlNode& xmlNode)
     XmlNode documentNode = resultNode.FirstChild("Document");
     if(!documentNode.IsNull())
     {
-      m_document = StringUtils::Trim(documentNode.GetText().c_str());
+      m_document = documentNode.GetText();
       m_documentHasBeenSet = true;
     }
     XmlNode versionIdNode = resultNode.FirstChild("VersionId");
     if(!versionIdNode.IsNull())
     {
-      m_versionId = StringUtils::Trim(versionIdNode.GetText().c_str());
+      m_versionId = versionIdNode.GetText();
       m_versionIdHasBeenSet = true;
     }
     XmlNode isDefaultVersionNode = resultNode.FirstChild("IsDefaultVersion");

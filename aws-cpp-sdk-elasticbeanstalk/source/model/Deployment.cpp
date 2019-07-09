@@ -58,7 +58,7 @@ Deployment& Deployment::operator =(const XmlNode& xmlNode)
     XmlNode versionLabelNode = resultNode.FirstChild("VersionLabel");
     if(!versionLabelNode.IsNull())
     {
-      m_versionLabel = StringUtils::Trim(versionLabelNode.GetText().c_str());
+      m_versionLabel = versionLabelNode.GetText();
       m_versionLabelHasBeenSet = true;
     }
     XmlNode deploymentIdNode = resultNode.FirstChild("DeploymentId");
@@ -70,7 +70,7 @@ Deployment& Deployment::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
     XmlNode deploymentTimeNode = resultNode.FirstChild("DeploymentTime");

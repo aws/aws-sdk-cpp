@@ -74,31 +74,31 @@ TrafficMirrorSession& TrafficMirrorSession::operator =(const XmlNode& xmlNode)
     XmlNode trafficMirrorSessionIdNode = resultNode.FirstChild("trafficMirrorSessionId");
     if(!trafficMirrorSessionIdNode.IsNull())
     {
-      m_trafficMirrorSessionId = StringUtils::Trim(trafficMirrorSessionIdNode.GetText().c_str());
+      m_trafficMirrorSessionId = trafficMirrorSessionIdNode.GetText();
       m_trafficMirrorSessionIdHasBeenSet = true;
     }
     XmlNode trafficMirrorTargetIdNode = resultNode.FirstChild("trafficMirrorTargetId");
     if(!trafficMirrorTargetIdNode.IsNull())
     {
-      m_trafficMirrorTargetId = StringUtils::Trim(trafficMirrorTargetIdNode.GetText().c_str());
+      m_trafficMirrorTargetId = trafficMirrorTargetIdNode.GetText();
       m_trafficMirrorTargetIdHasBeenSet = true;
     }
     XmlNode trafficMirrorFilterIdNode = resultNode.FirstChild("trafficMirrorFilterId");
     if(!trafficMirrorFilterIdNode.IsNull())
     {
-      m_trafficMirrorFilterId = StringUtils::Trim(trafficMirrorFilterIdNode.GetText().c_str());
+      m_trafficMirrorFilterId = trafficMirrorFilterIdNode.GetText();
       m_trafficMirrorFilterIdHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
-      m_networkInterfaceId = StringUtils::Trim(networkInterfaceIdNode.GetText().c_str());
+      m_networkInterfaceId = networkInterfaceIdNode.GetText();
       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
-      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerId = ownerIdNode.GetText();
       m_ownerIdHasBeenSet = true;
     }
     XmlNode packetLengthNode = resultNode.FirstChild("packetLength");
@@ -122,7 +122,7 @@ TrafficMirrorSession& TrafficMirrorSession::operator =(const XmlNode& xmlNode)
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");

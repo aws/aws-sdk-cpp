@@ -62,7 +62,7 @@ DescribeRulesResult& DescribeRulesResult::operator =(const Aws::AmazonWebService
     XmlNode nextMarkerNode = resultNode.FirstChild("NextMarker");
     if(!nextMarkerNode.IsNull())
     {
-      m_nextMarker = StringUtils::Trim(nextMarkerNode.GetText().c_str());
+      m_nextMarker = nextMarkerNode.GetText();
     }
   }
 

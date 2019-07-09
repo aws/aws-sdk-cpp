@@ -66,7 +66,7 @@ ReceiptRule& ReceiptRule::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
@@ -87,7 +87,7 @@ ReceiptRule& ReceiptRule::operator =(const XmlNode& xmlNode)
       XmlNode recipientsMember = recipientsNode.FirstChild("member");
       while(!recipientsMember.IsNull())
       {
-        m_recipients.push_back(StringUtils::Trim(recipientsMember.GetText().c_str()));
+        m_recipients.push_back(recipientsMember.GetText());
         recipientsMember = recipientsMember.NextNode("member");
       }
 

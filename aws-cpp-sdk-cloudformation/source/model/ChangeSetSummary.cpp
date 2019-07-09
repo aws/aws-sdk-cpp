@@ -70,25 +70,25 @@ ChangeSetSummary& ChangeSetSummary::operator =(const XmlNode& xmlNode)
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
     if(!stackIdNode.IsNull())
     {
-      m_stackId = StringUtils::Trim(stackIdNode.GetText().c_str());
+      m_stackId = stackIdNode.GetText();
       m_stackIdHasBeenSet = true;
     }
     XmlNode stackNameNode = resultNode.FirstChild("StackName");
     if(!stackNameNode.IsNull())
     {
-      m_stackName = StringUtils::Trim(stackNameNode.GetText().c_str());
+      m_stackName = stackNameNode.GetText();
       m_stackNameHasBeenSet = true;
     }
     XmlNode changeSetIdNode = resultNode.FirstChild("ChangeSetId");
     if(!changeSetIdNode.IsNull())
     {
-      m_changeSetId = StringUtils::Trim(changeSetIdNode.GetText().c_str());
+      m_changeSetId = changeSetIdNode.GetText();
       m_changeSetIdHasBeenSet = true;
     }
     XmlNode changeSetNameNode = resultNode.FirstChild("ChangeSetName");
     if(!changeSetNameNode.IsNull())
     {
-      m_changeSetName = StringUtils::Trim(changeSetNameNode.GetText().c_str());
+      m_changeSetName = changeSetNameNode.GetText();
       m_changeSetNameHasBeenSet = true;
     }
     XmlNode executionStatusNode = resultNode.FirstChild("ExecutionStatus");
@@ -106,7 +106,7 @@ ChangeSetSummary& ChangeSetSummary::operator =(const XmlNode& xmlNode)
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
     if(!statusReasonNode.IsNull())
     {
-      m_statusReason = StringUtils::Trim(statusReasonNode.GetText().c_str());
+      m_statusReason = statusReasonNode.GetText();
       m_statusReasonHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("CreationTime");
@@ -118,7 +118,7 @@ ChangeSetSummary& ChangeSetSummary::operator =(const XmlNode& xmlNode)
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
   }

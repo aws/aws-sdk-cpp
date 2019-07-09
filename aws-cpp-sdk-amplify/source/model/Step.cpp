@@ -36,7 +36,9 @@ Step::Step() :
     m_endTimeHasBeenSet(false),
     m_logUrlHasBeenSet(false),
     m_artifactsUrlHasBeenSet(false),
-    m_screenshotsHasBeenSet(false)
+    m_screenshotsHasBeenSet(false),
+    m_statusReasonHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ Step::Step(JsonView jsonValue) :
     m_endTimeHasBeenSet(false),
     m_logUrlHasBeenSet(false),
     m_artifactsUrlHasBeenSet(false),
-    m_screenshotsHasBeenSet(false)
+    m_screenshotsHasBeenSet(false),
+    m_statusReasonHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -107,6 +111,20 @@ Step& Step::operator =(JsonView jsonValue)
     m_screenshotsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("statusReason"))
+  {
+    m_statusReason = jsonValue.GetString("statusReason");
+
+    m_statusReasonHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("context"))
+  {
+    m_context = jsonValue.GetString("context");
+
+    m_contextHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -155,6 +173,18 @@ JsonValue Step::Jsonize() const
      screenshotsJsonMap.WithString(screenshotsItem.first, screenshotsItem.second);
    }
    payload.WithObject("screenshots", std::move(screenshotsJsonMap));
+
+  }
+
+  if(m_statusReasonHasBeenSet)
+  {
+   payload.WithString("statusReason", m_statusReason);
+
+  }
+
+  if(m_contextHasBeenSet)
+  {
+   payload.WithString("context", m_context);
 
   }
 

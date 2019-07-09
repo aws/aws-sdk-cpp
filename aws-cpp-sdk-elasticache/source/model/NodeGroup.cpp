@@ -60,13 +60,13 @@ NodeGroup& NodeGroup::operator =(const XmlNode& xmlNode)
     XmlNode nodeGroupIdNode = resultNode.FirstChild("NodeGroupId");
     if(!nodeGroupIdNode.IsNull())
     {
-      m_nodeGroupId = StringUtils::Trim(nodeGroupIdNode.GetText().c_str());
+      m_nodeGroupId = nodeGroupIdNode.GetText();
       m_nodeGroupIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
     XmlNode primaryEndpointNode = resultNode.FirstChild("PrimaryEndpoint");
@@ -84,7 +84,7 @@ NodeGroup& NodeGroup::operator =(const XmlNode& xmlNode)
     XmlNode slotsNode = resultNode.FirstChild("Slots");
     if(!slotsNode.IsNull())
     {
-      m_slots = StringUtils::Trim(slotsNode.GetText().c_str());
+      m_slots = slotsNode.GetText();
       m_slotsHasBeenSet = true;
     }
     XmlNode nodeGroupMembersNode = resultNode.FirstChild("NodeGroupMembers");

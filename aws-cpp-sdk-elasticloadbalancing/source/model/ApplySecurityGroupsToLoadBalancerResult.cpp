@@ -54,7 +54,7 @@ ApplySecurityGroupsToLoadBalancerResult& ApplySecurityGroupsToLoadBalancerResult
       XmlNode securityGroupsMember = securityGroupsNode.FirstChild("member");
       while(!securityGroupsMember.IsNull())
       {
-        m_securityGroups.push_back(StringUtils::Trim(securityGroupsMember.GetText().c_str()));
+        m_securityGroups.push_back(securityGroupsMember.GetText());
         securityGroupsMember = securityGroupsMember.NextNode("member");
       }
 

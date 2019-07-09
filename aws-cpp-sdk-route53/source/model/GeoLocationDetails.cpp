@@ -60,37 +60,37 @@ GeoLocationDetails& GeoLocationDetails::operator =(const XmlNode& xmlNode)
     XmlNode continentCodeNode = resultNode.FirstChild("ContinentCode");
     if(!continentCodeNode.IsNull())
     {
-      m_continentCode = StringUtils::Trim(continentCodeNode.GetText().c_str());
+      m_continentCode = continentCodeNode.GetText();
       m_continentCodeHasBeenSet = true;
     }
     XmlNode continentNameNode = resultNode.FirstChild("ContinentName");
     if(!continentNameNode.IsNull())
     {
-      m_continentName = StringUtils::Trim(continentNameNode.GetText().c_str());
+      m_continentName = continentNameNode.GetText();
       m_continentNameHasBeenSet = true;
     }
     XmlNode countryCodeNode = resultNode.FirstChild("CountryCode");
     if(!countryCodeNode.IsNull())
     {
-      m_countryCode = StringUtils::Trim(countryCodeNode.GetText().c_str());
+      m_countryCode = countryCodeNode.GetText();
       m_countryCodeHasBeenSet = true;
     }
     XmlNode countryNameNode = resultNode.FirstChild("CountryName");
     if(!countryNameNode.IsNull())
     {
-      m_countryName = StringUtils::Trim(countryNameNode.GetText().c_str());
+      m_countryName = countryNameNode.GetText();
       m_countryNameHasBeenSet = true;
     }
     XmlNode subdivisionCodeNode = resultNode.FirstChild("SubdivisionCode");
     if(!subdivisionCodeNode.IsNull())
     {
-      m_subdivisionCode = StringUtils::Trim(subdivisionCodeNode.GetText().c_str());
+      m_subdivisionCode = subdivisionCodeNode.GetText();
       m_subdivisionCodeHasBeenSet = true;
     }
     XmlNode subdivisionNameNode = resultNode.FirstChild("SubdivisionName");
     if(!subdivisionNameNode.IsNull())
     {
-      m_subdivisionName = StringUtils::Trim(subdivisionNameNode.GetText().c_str());
+      m_subdivisionName = subdivisionNameNode.GetText();
       m_subdivisionNameHasBeenSet = true;
     }
   }

@@ -58,7 +58,7 @@ AssumeRoleWithWebIdentityResult& AssumeRoleWithWebIdentityResult::operator =(con
     XmlNode subjectFromWebIdentityTokenNode = resultNode.FirstChild("SubjectFromWebIdentityToken");
     if(!subjectFromWebIdentityTokenNode.IsNull())
     {
-      m_subjectFromWebIdentityToken = StringUtils::Trim(subjectFromWebIdentityTokenNode.GetText().c_str());
+      m_subjectFromWebIdentityToken = subjectFromWebIdentityTokenNode.GetText();
     }
     XmlNode assumedRoleUserNode = resultNode.FirstChild("AssumedRoleUser");
     if(!assumedRoleUserNode.IsNull())
@@ -73,12 +73,12 @@ AssumeRoleWithWebIdentityResult& AssumeRoleWithWebIdentityResult::operator =(con
     XmlNode providerNode = resultNode.FirstChild("Provider");
     if(!providerNode.IsNull())
     {
-      m_provider = StringUtils::Trim(providerNode.GetText().c_str());
+      m_provider = providerNode.GetText();
     }
     XmlNode audienceNode = resultNode.FirstChild("Audience");
     if(!audienceNode.IsNull())
     {
-      m_audience = StringUtils::Trim(audienceNode.GetText().c_str());
+      m_audience = audienceNode.GetText();
     }
   }
 

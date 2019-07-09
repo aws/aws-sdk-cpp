@@ -76,7 +76,7 @@ IndexField& IndexField::operator =(const XmlNode& xmlNode)
     XmlNode indexFieldNameNode = resultNode.FirstChild("IndexFieldName");
     if(!indexFieldNameNode.IsNull())
     {
-      m_indexFieldName = StringUtils::Trim(indexFieldNameNode.GetText().c_str());
+      m_indexFieldName = indexFieldNameNode.GetText();
       m_indexFieldNameHasBeenSet = true;
     }
     XmlNode indexFieldTypeNode = resultNode.FirstChild("IndexFieldType");

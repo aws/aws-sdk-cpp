@@ -74,7 +74,7 @@ VgwTelemetry& VgwTelemetry::operator =(const XmlNode& xmlNode)
     XmlNode outsideIpAddressNode = resultNode.FirstChild("outsideIpAddress");
     if(!outsideIpAddressNode.IsNull())
     {
-      m_outsideIpAddress = StringUtils::Trim(outsideIpAddressNode.GetText().c_str());
+      m_outsideIpAddress = outsideIpAddressNode.GetText();
       m_outsideIpAddressHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
@@ -86,7 +86,7 @@ VgwTelemetry& VgwTelemetry::operator =(const XmlNode& xmlNode)
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
-      m_statusMessage = StringUtils::Trim(statusMessageNode.GetText().c_str());
+      m_statusMessage = statusMessageNode.GetText();
       m_statusMessageHasBeenSet = true;
     }
   }

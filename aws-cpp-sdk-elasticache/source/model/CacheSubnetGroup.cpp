@@ -56,19 +56,19 @@ CacheSubnetGroup& CacheSubnetGroup::operator =(const XmlNode& xmlNode)
     XmlNode cacheSubnetGroupNameNode = resultNode.FirstChild("CacheSubnetGroupName");
     if(!cacheSubnetGroupNameNode.IsNull())
     {
-      m_cacheSubnetGroupName = StringUtils::Trim(cacheSubnetGroupNameNode.GetText().c_str());
+      m_cacheSubnetGroupName = cacheSubnetGroupNameNode.GetText();
       m_cacheSubnetGroupNameHasBeenSet = true;
     }
     XmlNode cacheSubnetGroupDescriptionNode = resultNode.FirstChild("CacheSubnetGroupDescription");
     if(!cacheSubnetGroupDescriptionNode.IsNull())
     {
-      m_cacheSubnetGroupDescription = StringUtils::Trim(cacheSubnetGroupDescriptionNode.GetText().c_str());
+      m_cacheSubnetGroupDescription = cacheSubnetGroupDescriptionNode.GetText();
       m_cacheSubnetGroupDescriptionHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
+      m_vpcId = vpcIdNode.GetText();
       m_vpcIdHasBeenSet = true;
     }
     XmlNode subnetsNode = resultNode.FirstChild("Subnets");

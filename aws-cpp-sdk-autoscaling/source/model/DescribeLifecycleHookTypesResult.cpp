@@ -54,7 +54,7 @@ DescribeLifecycleHookTypesResult& DescribeLifecycleHookTypesResult::operator =(c
       XmlNode lifecycleHookTypesMember = lifecycleHookTypesNode.FirstChild("member");
       while(!lifecycleHookTypesMember.IsNull())
       {
-        m_lifecycleHookTypes.push_back(StringUtils::Trim(lifecycleHookTypesMember.GetText().c_str()));
+        m_lifecycleHookTypes.push_back(lifecycleHookTypesMember.GetText());
         lifecycleHookTypesMember = lifecycleHookTypesMember.NextNode("member");
       }
 

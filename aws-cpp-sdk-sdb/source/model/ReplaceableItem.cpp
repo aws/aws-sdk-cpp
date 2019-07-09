@@ -52,7 +52,7 @@ ReplaceableItem& ReplaceableItem::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("ItemName");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
     XmlNode attributesNode = resultNode.FirstChild("Attribute");

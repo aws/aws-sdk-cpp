@@ -51,17 +51,17 @@ GetGroupPolicyResult& GetGroupPolicyResult::operator =(const Aws::AmazonWebServi
     XmlNode groupNameNode = resultNode.FirstChild("GroupName");
     if(!groupNameNode.IsNull())
     {
-      m_groupName = StringUtils::Trim(groupNameNode.GetText().c_str());
+      m_groupName = groupNameNode.GetText();
     }
     XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
     if(!policyNameNode.IsNull())
     {
-      m_policyName = StringUtils::Trim(policyNameNode.GetText().c_str());
+      m_policyName = policyNameNode.GetText();
     }
     XmlNode policyDocumentNode = resultNode.FirstChild("PolicyDocument");
     if(!policyDocumentNode.IsNull())
     {
-      m_policyDocument = StringUtils::Trim(policyDocumentNode.GetText().c_str());
+      m_policyDocument = policyDocumentNode.GetText();
     }
   }
 

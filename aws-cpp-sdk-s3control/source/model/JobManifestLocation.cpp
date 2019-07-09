@@ -54,19 +54,19 @@ JobManifestLocation& JobManifestLocation::operator =(const XmlNode& xmlNode)
     XmlNode objectArnNode = resultNode.FirstChild("ObjectArn");
     if(!objectArnNode.IsNull())
     {
-      m_objectArn = StringUtils::Trim(objectArnNode.GetText().c_str());
+      m_objectArn = objectArnNode.GetText();
       m_objectArnHasBeenSet = true;
     }
     XmlNode objectVersionIdNode = resultNode.FirstChild("ObjectVersionId");
     if(!objectVersionIdNode.IsNull())
     {
-      m_objectVersionId = StringUtils::Trim(objectVersionIdNode.GetText().c_str());
+      m_objectVersionId = objectVersionIdNode.GetText();
       m_objectVersionIdHasBeenSet = true;
     }
     XmlNode eTagNode = resultNode.FirstChild("ETag");
     if(!eTagNode.IsNull())
     {
-      m_eTag = StringUtils::Trim(eTagNode.GetText().c_str());
+      m_eTag = eTagNode.GetText();
       m_eTagHasBeenSet = true;
     }
   }

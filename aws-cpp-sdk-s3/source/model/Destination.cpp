@@ -60,13 +60,13 @@ Destination& Destination::operator =(const XmlNode& xmlNode)
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
     if(!bucketNode.IsNull())
     {
-      m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
+      m_bucket = bucketNode.GetText();
       m_bucketHasBeenSet = true;
     }
     XmlNode accountNode = resultNode.FirstChild("Account");
     if(!accountNode.IsNull())
     {
-      m_account = StringUtils::Trim(accountNode.GetText().c_str());
+      m_account = accountNode.GetText();
       m_accountHasBeenSet = true;
     }
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");

@@ -57,7 +57,7 @@ ModifyCurrentDBClusterCapacityResult& ModifyCurrentDBClusterCapacityResult::oper
     XmlNode dBClusterIdentifierNode = resultNode.FirstChild("DBClusterIdentifier");
     if(!dBClusterIdentifierNode.IsNull())
     {
-      m_dBClusterIdentifier = StringUtils::Trim(dBClusterIdentifierNode.GetText().c_str());
+      m_dBClusterIdentifier = dBClusterIdentifierNode.GetText();
     }
     XmlNode pendingCapacityNode = resultNode.FirstChild("PendingCapacity");
     if(!pendingCapacityNode.IsNull())
@@ -77,7 +77,7 @@ ModifyCurrentDBClusterCapacityResult& ModifyCurrentDBClusterCapacityResult::oper
     XmlNode timeoutActionNode = resultNode.FirstChild("TimeoutAction");
     if(!timeoutActionNode.IsNull())
     {
-      m_timeoutAction = StringUtils::Trim(timeoutActionNode.GetText().c_str());
+      m_timeoutAction = timeoutActionNode.GetText();
     }
   }
 

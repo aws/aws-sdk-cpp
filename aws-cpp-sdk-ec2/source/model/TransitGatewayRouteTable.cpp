@@ -68,13 +68,13 @@ TransitGatewayRouteTable& TransitGatewayRouteTable::operator =(const XmlNode& xm
     XmlNode transitGatewayRouteTableIdNode = resultNode.FirstChild("transitGatewayRouteTableId");
     if(!transitGatewayRouteTableIdNode.IsNull())
     {
-      m_transitGatewayRouteTableId = StringUtils::Trim(transitGatewayRouteTableIdNode.GetText().c_str());
+      m_transitGatewayRouteTableId = transitGatewayRouteTableIdNode.GetText();
       m_transitGatewayRouteTableIdHasBeenSet = true;
     }
     XmlNode transitGatewayIdNode = resultNode.FirstChild("transitGatewayId");
     if(!transitGatewayIdNode.IsNull())
     {
-      m_transitGatewayId = StringUtils::Trim(transitGatewayIdNode.GetText().c_str());
+      m_transitGatewayId = transitGatewayIdNode.GetText();
       m_transitGatewayIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");

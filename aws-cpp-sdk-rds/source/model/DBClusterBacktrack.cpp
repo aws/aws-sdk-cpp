@@ -62,13 +62,13 @@ DBClusterBacktrack& DBClusterBacktrack::operator =(const XmlNode& xmlNode)
     XmlNode dBClusterIdentifierNode = resultNode.FirstChild("DBClusterIdentifier");
     if(!dBClusterIdentifierNode.IsNull())
     {
-      m_dBClusterIdentifier = StringUtils::Trim(dBClusterIdentifierNode.GetText().c_str());
+      m_dBClusterIdentifier = dBClusterIdentifierNode.GetText();
       m_dBClusterIdentifierHasBeenSet = true;
     }
     XmlNode backtrackIdentifierNode = resultNode.FirstChild("BacktrackIdentifier");
     if(!backtrackIdentifierNode.IsNull())
     {
-      m_backtrackIdentifier = StringUtils::Trim(backtrackIdentifierNode.GetText().c_str());
+      m_backtrackIdentifier = backtrackIdentifierNode.GetText();
       m_backtrackIdentifierHasBeenSet = true;
     }
     XmlNode backtrackToNode = resultNode.FirstChild("BacktrackTo");
@@ -92,7 +92,7 @@ DBClusterBacktrack& DBClusterBacktrack::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
   }

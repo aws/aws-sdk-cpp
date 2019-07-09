@@ -53,7 +53,7 @@ RestoreAddressToClassicResponse& RestoreAddressToClassicResponse::operator =(con
     XmlNode publicIpNode = resultNode.FirstChild("publicIp");
     if(!publicIpNode.IsNull())
     {
-      m_publicIp = StringUtils::Trim(publicIpNode.GetText().c_str());
+      m_publicIp = publicIpNode.GetText();
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())

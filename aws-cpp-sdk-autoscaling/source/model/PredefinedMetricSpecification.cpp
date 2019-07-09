@@ -60,7 +60,7 @@ PredefinedMetricSpecification& PredefinedMetricSpecification::operator =(const X
     XmlNode resourceLabelNode = resultNode.FirstChild("ResourceLabel");
     if(!resourceLabelNode.IsNull())
     {
-      m_resourceLabel = StringUtils::Trim(resourceLabelNode.GetText().c_str());
+      m_resourceLabel = resourceLabelNode.GetText();
       m_resourceLabelHasBeenSet = true;
     }
   }

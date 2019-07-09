@@ -51,7 +51,7 @@ CreatePlatformApplicationResult& CreatePlatformApplicationResult::operator =(con
     XmlNode platformApplicationArnNode = resultNode.FirstChild("PlatformApplicationArn");
     if(!platformApplicationArnNode.IsNull())
     {
-      m_platformApplicationArn = StringUtils::Trim(platformApplicationArnNode.GetText().c_str());
+      m_platformApplicationArn = platformApplicationArnNode.GetText();
     }
   }
 

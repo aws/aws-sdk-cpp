@@ -96,19 +96,19 @@ DistributionSummary& DistributionSummary::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
     XmlNode aRNNode = resultNode.FirstChild("ARN");
     if(!aRNNode.IsNull())
     {
-      m_aRN = StringUtils::Trim(aRNNode.GetText().c_str());
+      m_aRN = aRNNode.GetText();
       m_aRNHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
@@ -120,7 +120,7 @@ DistributionSummary& DistributionSummary::operator =(const XmlNode& xmlNode)
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
     if(!domainNameNode.IsNull())
     {
-      m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
+      m_domainName = domainNameNode.GetText();
       m_domainNameHasBeenSet = true;
     }
     XmlNode aliasesNode = resultNode.FirstChild("Aliases");
@@ -162,7 +162,7 @@ DistributionSummary& DistributionSummary::operator =(const XmlNode& xmlNode)
     XmlNode commentNode = resultNode.FirstChild("Comment");
     if(!commentNode.IsNull())
     {
-      m_comment = StringUtils::Trim(commentNode.GetText().c_str());
+      m_comment = commentNode.GetText();
       m_commentHasBeenSet = true;
     }
     XmlNode priceClassNode = resultNode.FirstChild("PriceClass");
@@ -192,7 +192,7 @@ DistributionSummary& DistributionSummary::operator =(const XmlNode& xmlNode)
     XmlNode webACLIdNode = resultNode.FirstChild("WebACLId");
     if(!webACLIdNode.IsNull())
     {
-      m_webACLId = StringUtils::Trim(webACLIdNode.GetText().c_str());
+      m_webACLId = webACLIdNode.GetText();
       m_webACLIdHasBeenSet = true;
     }
     XmlNode httpVersionNode = resultNode.FirstChild("HttpVersion");

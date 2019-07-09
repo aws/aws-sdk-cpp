@@ -51,12 +51,12 @@ ResetClusterParameterGroupResult& ResetClusterParameterGroupResult::operator =(c
     XmlNode parameterGroupNameNode = resultNode.FirstChild("ParameterGroupName");
     if(!parameterGroupNameNode.IsNull())
     {
-      m_parameterGroupName = StringUtils::Trim(parameterGroupNameNode.GetText().c_str());
+      m_parameterGroupName = parameterGroupNameNode.GetText();
     }
     XmlNode parameterGroupStatusNode = resultNode.FirstChild("ParameterGroupStatus");
     if(!parameterGroupStatusNode.IsNull())
     {
-      m_parameterGroupStatus = StringUtils::Trim(parameterGroupStatusNode.GetText().c_str());
+      m_parameterGroupStatus = parameterGroupStatusNode.GetText();
     }
   }
 

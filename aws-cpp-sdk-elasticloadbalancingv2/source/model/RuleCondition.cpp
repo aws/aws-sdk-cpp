@@ -64,7 +64,7 @@ RuleCondition& RuleCondition::operator =(const XmlNode& xmlNode)
     XmlNode fieldNode = resultNode.FirstChild("Field");
     if(!fieldNode.IsNull())
     {
-      m_field = StringUtils::Trim(fieldNode.GetText().c_str());
+      m_field = fieldNode.GetText();
       m_fieldHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("Values");
@@ -73,7 +73,7 @@ RuleCondition& RuleCondition::operator =(const XmlNode& xmlNode)
       XmlNode valuesMember = valuesNode.FirstChild("member");
       while(!valuesMember.IsNull())
       {
-        m_values.push_back(StringUtils::Trim(valuesMember.GetText().c_str()));
+        m_values.push_back(valuesMember.GetText());
         valuesMember = valuesMember.NextNode("member");
       }
 

@@ -54,7 +54,7 @@ AllocateHostsResponse& AllocateHostsResponse::operator =(const Aws::AmazonWebSer
       XmlNode hostIdsMember = hostIdsNode.FirstChild("item");
       while(!hostIdsMember.IsNull())
       {
-        m_hostIds.push_back(StringUtils::Trim(hostIdsMember.GetText().c_str()));
+        m_hostIds.push_back(hostIdsMember.GetText());
         hostIdsMember = hostIdsMember.NextNode("item");
       }
 

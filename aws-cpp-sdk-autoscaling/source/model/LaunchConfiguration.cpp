@@ -90,25 +90,25 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode launchConfigurationNameNode = resultNode.FirstChild("LaunchConfigurationName");
     if(!launchConfigurationNameNode.IsNull())
     {
-      m_launchConfigurationName = StringUtils::Trim(launchConfigurationNameNode.GetText().c_str());
+      m_launchConfigurationName = launchConfigurationNameNode.GetText();
       m_launchConfigurationNameHasBeenSet = true;
     }
     XmlNode launchConfigurationARNNode = resultNode.FirstChild("LaunchConfigurationARN");
     if(!launchConfigurationARNNode.IsNull())
     {
-      m_launchConfigurationARN = StringUtils::Trim(launchConfigurationARNNode.GetText().c_str());
+      m_launchConfigurationARN = launchConfigurationARNNode.GetText();
       m_launchConfigurationARNHasBeenSet = true;
     }
     XmlNode imageIdNode = resultNode.FirstChild("ImageId");
     if(!imageIdNode.IsNull())
     {
-      m_imageId = StringUtils::Trim(imageIdNode.GetText().c_str());
+      m_imageId = imageIdNode.GetText();
       m_imageIdHasBeenSet = true;
     }
     XmlNode keyNameNode = resultNode.FirstChild("KeyName");
     if(!keyNameNode.IsNull())
     {
-      m_keyName = StringUtils::Trim(keyNameNode.GetText().c_str());
+      m_keyName = keyNameNode.GetText();
       m_keyNameHasBeenSet = true;
     }
     XmlNode securityGroupsNode = resultNode.FirstChild("SecurityGroups");
@@ -117,7 +117,7 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
       XmlNode securityGroupsMember = securityGroupsNode.FirstChild("member");
       while(!securityGroupsMember.IsNull())
       {
-        m_securityGroups.push_back(StringUtils::Trim(securityGroupsMember.GetText().c_str()));
+        m_securityGroups.push_back(securityGroupsMember.GetText());
         securityGroupsMember = securityGroupsMember.NextNode("member");
       }
 
@@ -126,7 +126,7 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode classicLinkVPCIdNode = resultNode.FirstChild("ClassicLinkVPCId");
     if(!classicLinkVPCIdNode.IsNull())
     {
-      m_classicLinkVPCId = StringUtils::Trim(classicLinkVPCIdNode.GetText().c_str());
+      m_classicLinkVPCId = classicLinkVPCIdNode.GetText();
       m_classicLinkVPCIdHasBeenSet = true;
     }
     XmlNode classicLinkVPCSecurityGroupsNode = resultNode.FirstChild("ClassicLinkVPCSecurityGroups");
@@ -135,7 +135,7 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
       XmlNode classicLinkVPCSecurityGroupsMember = classicLinkVPCSecurityGroupsNode.FirstChild("member");
       while(!classicLinkVPCSecurityGroupsMember.IsNull())
       {
-        m_classicLinkVPCSecurityGroups.push_back(StringUtils::Trim(classicLinkVPCSecurityGroupsMember.GetText().c_str()));
+        m_classicLinkVPCSecurityGroups.push_back(classicLinkVPCSecurityGroupsMember.GetText());
         classicLinkVPCSecurityGroupsMember = classicLinkVPCSecurityGroupsMember.NextNode("member");
       }
 
@@ -144,25 +144,25 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode userDataNode = resultNode.FirstChild("UserData");
     if(!userDataNode.IsNull())
     {
-      m_userData = StringUtils::Trim(userDataNode.GetText().c_str());
+      m_userData = userDataNode.GetText();
       m_userDataHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("InstanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = StringUtils::Trim(instanceTypeNode.GetText().c_str());
+      m_instanceType = instanceTypeNode.GetText();
       m_instanceTypeHasBeenSet = true;
     }
     XmlNode kernelIdNode = resultNode.FirstChild("KernelId");
     if(!kernelIdNode.IsNull())
     {
-      m_kernelId = StringUtils::Trim(kernelIdNode.GetText().c_str());
+      m_kernelId = kernelIdNode.GetText();
       m_kernelIdHasBeenSet = true;
     }
     XmlNode ramdiskIdNode = resultNode.FirstChild("RamdiskId");
     if(!ramdiskIdNode.IsNull())
     {
-      m_ramdiskId = StringUtils::Trim(ramdiskIdNode.GetText().c_str());
+      m_ramdiskId = ramdiskIdNode.GetText();
       m_ramdiskIdHasBeenSet = true;
     }
     XmlNode blockDeviceMappingsNode = resultNode.FirstChild("BlockDeviceMappings");
@@ -186,13 +186,13 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode spotPriceNode = resultNode.FirstChild("SpotPrice");
     if(!spotPriceNode.IsNull())
     {
-      m_spotPrice = StringUtils::Trim(spotPriceNode.GetText().c_str());
+      m_spotPrice = spotPriceNode.GetText();
       m_spotPriceHasBeenSet = true;
     }
     XmlNode iamInstanceProfileNode = resultNode.FirstChild("IamInstanceProfile");
     if(!iamInstanceProfileNode.IsNull())
     {
-      m_iamInstanceProfile = StringUtils::Trim(iamInstanceProfileNode.GetText().c_str());
+      m_iamInstanceProfile = iamInstanceProfileNode.GetText();
       m_iamInstanceProfileHasBeenSet = true;
     }
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
@@ -216,7 +216,7 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode placementTenancyNode = resultNode.FirstChild("PlacementTenancy");
     if(!placementTenancyNode.IsNull())
     {
-      m_placementTenancy = StringUtils::Trim(placementTenancyNode.GetText().c_str());
+      m_placementTenancy = placementTenancyNode.GetText();
       m_placementTenancyHasBeenSet = true;
     }
   }

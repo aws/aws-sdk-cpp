@@ -54,13 +54,13 @@ VpcCidrBlockAssociation& VpcCidrBlockAssociation::operator =(const XmlNode& xmlN
     XmlNode associationIdNode = resultNode.FirstChild("associationId");
     if(!associationIdNode.IsNull())
     {
-      m_associationId = StringUtils::Trim(associationIdNode.GetText().c_str());
+      m_associationId = associationIdNode.GetText();
       m_associationIdHasBeenSet = true;
     }
     XmlNode cidrBlockNode = resultNode.FirstChild("cidrBlock");
     if(!cidrBlockNode.IsNull())
     {
-      m_cidrBlock = StringUtils::Trim(cidrBlockNode.GetText().c_str());
+      m_cidrBlock = cidrBlockNode.GetText();
       m_cidrBlockHasBeenSet = true;
     }
     XmlNode cidrBlockStateNode = resultNode.FirstChild("cidrBlockState");

@@ -54,7 +54,7 @@ DescribeAutoScalingNotificationTypesResult& DescribeAutoScalingNotificationTypes
       XmlNode autoScalingNotificationTypesMember = autoScalingNotificationTypesNode.FirstChild("member");
       while(!autoScalingNotificationTypesMember.IsNull())
       {
-        m_autoScalingNotificationTypes.push_back(StringUtils::Trim(autoScalingNotificationTypesMember.GetText().c_str()));
+        m_autoScalingNotificationTypes.push_back(autoScalingNotificationTypesMember.GetText());
         autoScalingNotificationTypesMember = autoScalingNotificationTypesMember.NextNode("member");
       }
 

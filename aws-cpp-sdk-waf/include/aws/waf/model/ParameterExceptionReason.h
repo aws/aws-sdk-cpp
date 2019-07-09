@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     INVALID_OPTION,
     ILLEGAL_COMBINATION,
-    ILLEGAL_ARGUMENT
+    ILLEGAL_ARGUMENT,
+    INVALID_TAG_KEY
   };
 
 namespace ParameterExceptionReasonMapper

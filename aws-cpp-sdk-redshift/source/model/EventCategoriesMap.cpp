@@ -52,7 +52,7 @@ EventCategoriesMap& EventCategoriesMap::operator =(const XmlNode& xmlNode)
     XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
     if(!sourceTypeNode.IsNull())
     {
-      m_sourceType = StringUtils::Trim(sourceTypeNode.GetText().c_str());
+      m_sourceType = sourceTypeNode.GetText();
       m_sourceTypeHasBeenSet = true;
     }
     XmlNode eventsNode = resultNode.FirstChild("Events");

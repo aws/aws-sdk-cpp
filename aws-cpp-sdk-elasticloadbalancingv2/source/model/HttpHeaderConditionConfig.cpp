@@ -52,7 +52,7 @@ HttpHeaderConditionConfig& HttpHeaderConditionConfig::operator =(const XmlNode& 
     XmlNode httpHeaderNameNode = resultNode.FirstChild("HttpHeaderName");
     if(!httpHeaderNameNode.IsNull())
     {
-      m_httpHeaderName = StringUtils::Trim(httpHeaderNameNode.GetText().c_str());
+      m_httpHeaderName = httpHeaderNameNode.GetText();
       m_httpHeaderNameHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("Values");
@@ -61,7 +61,7 @@ HttpHeaderConditionConfig& HttpHeaderConditionConfig::operator =(const XmlNode& 
       XmlNode valuesMember = valuesNode.FirstChild("member");
       while(!valuesMember.IsNull())
       {
-        m_values.push_back(StringUtils::Trim(valuesMember.GetText().c_str()));
+        m_values.push_back(valuesMember.GetText());
         valuesMember = valuesMember.NextNode("member");
       }
 

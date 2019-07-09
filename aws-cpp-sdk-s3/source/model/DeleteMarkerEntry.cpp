@@ -66,13 +66,13 @@ DeleteMarkerEntry& DeleteMarkerEntry::operator =(const XmlNode& xmlNode)
     XmlNode keyNode = resultNode.FirstChild("Key");
     if(!keyNode.IsNull())
     {
-      m_key = StringUtils::Trim(keyNode.GetText().c_str());
+      m_key = keyNode.GetText();
       m_keyHasBeenSet = true;
     }
     XmlNode versionIdNode = resultNode.FirstChild("VersionId");
     if(!versionIdNode.IsNull())
     {
-      m_versionId = StringUtils::Trim(versionIdNode.GetText().c_str());
+      m_versionId = versionIdNode.GetText();
       m_versionIdHasBeenSet = true;
     }
     XmlNode isLatestNode = resultNode.FirstChild("IsLatest");

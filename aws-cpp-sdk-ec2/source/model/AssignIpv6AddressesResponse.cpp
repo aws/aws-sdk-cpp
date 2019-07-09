@@ -54,7 +54,7 @@ AssignIpv6AddressesResponse& AssignIpv6AddressesResponse::operator =(const Aws::
       XmlNode assignedIpv6AddressesMember = assignedIpv6AddressesNode.FirstChild("item");
       while(!assignedIpv6AddressesMember.IsNull())
       {
-        m_assignedIpv6Addresses.push_back(StringUtils::Trim(assignedIpv6AddressesMember.GetText().c_str()));
+        m_assignedIpv6Addresses.push_back(assignedIpv6AddressesMember.GetText());
         assignedIpv6AddressesMember = assignedIpv6AddressesMember.NextNode("item");
       }
 
@@ -62,7 +62,7 @@ AssignIpv6AddressesResponse& AssignIpv6AddressesResponse::operator =(const Aws::
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
-      m_networkInterfaceId = StringUtils::Trim(networkInterfaceIdNode.GetText().c_str());
+      m_networkInterfaceId = networkInterfaceIdNode.GetText();
     }
   }
 

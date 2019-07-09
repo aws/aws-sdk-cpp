@@ -67,7 +67,7 @@ DescribeVolumeAttributeResponse& DescribeVolumeAttributeResponse::operator =(con
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
     {
-      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
+      m_volumeId = volumeIdNode.GetText();
     }
   }
 

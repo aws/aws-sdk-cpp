@@ -70,7 +70,7 @@ ObjectVersion& ObjectVersion::operator =(const XmlNode& xmlNode)
     XmlNode eTagNode = resultNode.FirstChild("ETag");
     if(!eTagNode.IsNull())
     {
-      m_eTag = StringUtils::Trim(eTagNode.GetText().c_str());
+      m_eTag = eTagNode.GetText();
       m_eTagHasBeenSet = true;
     }
     XmlNode sizeNode = resultNode.FirstChild("Size");
@@ -88,13 +88,13 @@ ObjectVersion& ObjectVersion::operator =(const XmlNode& xmlNode)
     XmlNode keyNode = resultNode.FirstChild("Key");
     if(!keyNode.IsNull())
     {
-      m_key = StringUtils::Trim(keyNode.GetText().c_str());
+      m_key = keyNode.GetText();
       m_keyHasBeenSet = true;
     }
     XmlNode versionIdNode = resultNode.FirstChild("VersionId");
     if(!versionIdNode.IsNull())
     {
-      m_versionId = StringUtils::Trim(versionIdNode.GetText().c_str());
+      m_versionId = versionIdNode.GetText();
       m_versionIdHasBeenSet = true;
     }
     XmlNode isLatestNode = resultNode.FirstChild("IsLatest");

@@ -68,13 +68,13 @@ S3Location& S3Location::operator =(const XmlNode& xmlNode)
     XmlNode bucketNameNode = resultNode.FirstChild("BucketName");
     if(!bucketNameNode.IsNull())
     {
-      m_bucketName = StringUtils::Trim(bucketNameNode.GetText().c_str());
+      m_bucketName = bucketNameNode.GetText();
       m_bucketNameHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
     if(!prefixNode.IsNull())
     {
-      m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
+      m_prefix = prefixNode.GetText();
       m_prefixHasBeenSet = true;
     }
     XmlNode encryptionNode = resultNode.FirstChild("Encryption");

@@ -54,19 +54,19 @@ EnvironmentTier& EnvironmentTier::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = StringUtils::Trim(typeNode.GetText().c_str());
+      m_type = typeNode.GetText();
       m_typeHasBeenSet = true;
     }
     XmlNode versionNode = resultNode.FirstChild("Version");
     if(!versionNode.IsNull())
     {
-      m_version = StringUtils::Trim(versionNode.GetText().c_str());
+      m_version = versionNode.GetText();
       m_versionHasBeenSet = true;
     }
   }

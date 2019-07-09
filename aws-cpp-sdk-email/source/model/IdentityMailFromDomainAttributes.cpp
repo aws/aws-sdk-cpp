@@ -58,7 +58,7 @@ IdentityMailFromDomainAttributes& IdentityMailFromDomainAttributes::operator =(c
     XmlNode mailFromDomainNode = resultNode.FirstChild("MailFromDomain");
     if(!mailFromDomainNode.IsNull())
     {
-      m_mailFromDomain = StringUtils::Trim(mailFromDomainNode.GetText().c_str());
+      m_mailFromDomain = mailFromDomainNode.GetText();
       m_mailFromDomainHasBeenSet = true;
     }
     XmlNode mailFromDomainStatusNode = resultNode.FirstChild("MailFromDomainStatus");

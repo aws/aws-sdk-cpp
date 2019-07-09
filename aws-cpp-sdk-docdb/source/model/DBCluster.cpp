@@ -119,7 +119,7 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("AvailabilityZone");
       while(!availabilityZonesMember.IsNull())
       {
-        m_availabilityZones.push_back(StringUtils::Trim(availabilityZonesMember.GetText().c_str()));
+        m_availabilityZones.push_back(availabilityZonesMember.GetText());
         availabilityZonesMember = availabilityZonesMember.NextNode("AvailabilityZone");
       }
 
@@ -134,31 +134,31 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     XmlNode dBClusterIdentifierNode = resultNode.FirstChild("DBClusterIdentifier");
     if(!dBClusterIdentifierNode.IsNull())
     {
-      m_dBClusterIdentifier = StringUtils::Trim(dBClusterIdentifierNode.GetText().c_str());
+      m_dBClusterIdentifier = dBClusterIdentifierNode.GetText();
       m_dBClusterIdentifierHasBeenSet = true;
     }
     XmlNode dBClusterParameterGroupNode = resultNode.FirstChild("DBClusterParameterGroup");
     if(!dBClusterParameterGroupNode.IsNull())
     {
-      m_dBClusterParameterGroup = StringUtils::Trim(dBClusterParameterGroupNode.GetText().c_str());
+      m_dBClusterParameterGroup = dBClusterParameterGroupNode.GetText();
       m_dBClusterParameterGroupHasBeenSet = true;
     }
     XmlNode dBSubnetGroupNode = resultNode.FirstChild("DBSubnetGroup");
     if(!dBSubnetGroupNode.IsNull())
     {
-      m_dBSubnetGroup = StringUtils::Trim(dBSubnetGroupNode.GetText().c_str());
+      m_dBSubnetGroup = dBSubnetGroupNode.GetText();
       m_dBSubnetGroupHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
     XmlNode percentProgressNode = resultNode.FirstChild("PercentProgress");
     if(!percentProgressNode.IsNull())
     {
-      m_percentProgress = StringUtils::Trim(percentProgressNode.GetText().c_str());
+      m_percentProgress = percentProgressNode.GetText();
       m_percentProgressHasBeenSet = true;
     }
     XmlNode earliestRestorableTimeNode = resultNode.FirstChild("EarliestRestorableTime");
@@ -170,13 +170,13 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     XmlNode endpointNode = resultNode.FirstChild("Endpoint");
     if(!endpointNode.IsNull())
     {
-      m_endpoint = StringUtils::Trim(endpointNode.GetText().c_str());
+      m_endpoint = endpointNode.GetText();
       m_endpointHasBeenSet = true;
     }
     XmlNode readerEndpointNode = resultNode.FirstChild("ReaderEndpoint");
     if(!readerEndpointNode.IsNull())
     {
-      m_readerEndpoint = StringUtils::Trim(readerEndpointNode.GetText().c_str());
+      m_readerEndpoint = readerEndpointNode.GetText();
       m_readerEndpointHasBeenSet = true;
     }
     XmlNode multiAZNode = resultNode.FirstChild("MultiAZ");
@@ -188,13 +188,13 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
     {
-      m_engine = StringUtils::Trim(engineNode.GetText().c_str());
+      m_engine = engineNode.GetText();
       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
-      m_engineVersion = StringUtils::Trim(engineVersionNode.GetText().c_str());
+      m_engineVersion = engineVersionNode.GetText();
       m_engineVersionHasBeenSet = true;
     }
     XmlNode latestRestorableTimeNode = resultNode.FirstChild("LatestRestorableTime");
@@ -212,19 +212,19 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     XmlNode masterUsernameNode = resultNode.FirstChild("MasterUsername");
     if(!masterUsernameNode.IsNull())
     {
-      m_masterUsername = StringUtils::Trim(masterUsernameNode.GetText().c_str());
+      m_masterUsername = masterUsernameNode.GetText();
       m_masterUsernameHasBeenSet = true;
     }
     XmlNode preferredBackupWindowNode = resultNode.FirstChild("PreferredBackupWindow");
     if(!preferredBackupWindowNode.IsNull())
     {
-      m_preferredBackupWindow = StringUtils::Trim(preferredBackupWindowNode.GetText().c_str());
+      m_preferredBackupWindow = preferredBackupWindowNode.GetText();
       m_preferredBackupWindowHasBeenSet = true;
     }
     XmlNode preferredMaintenanceWindowNode = resultNode.FirstChild("PreferredMaintenanceWindow");
     if(!preferredMaintenanceWindowNode.IsNull())
     {
-      m_preferredMaintenanceWindow = StringUtils::Trim(preferredMaintenanceWindowNode.GetText().c_str());
+      m_preferredMaintenanceWindow = preferredMaintenanceWindowNode.GetText();
       m_preferredMaintenanceWindowHasBeenSet = true;
     }
     XmlNode dBClusterMembersNode = resultNode.FirstChild("DBClusterMembers");
@@ -254,7 +254,7 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     XmlNode hostedZoneIdNode = resultNode.FirstChild("HostedZoneId");
     if(!hostedZoneIdNode.IsNull())
     {
-      m_hostedZoneId = StringUtils::Trim(hostedZoneIdNode.GetText().c_str());
+      m_hostedZoneId = hostedZoneIdNode.GetText();
       m_hostedZoneIdHasBeenSet = true;
     }
     XmlNode storageEncryptedNode = resultNode.FirstChild("StorageEncrypted");
@@ -266,19 +266,19 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
-      m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
+      m_kmsKeyId = kmsKeyIdNode.GetText();
       m_kmsKeyIdHasBeenSet = true;
     }
     XmlNode dbClusterResourceIdNode = resultNode.FirstChild("DbClusterResourceId");
     if(!dbClusterResourceIdNode.IsNull())
     {
-      m_dbClusterResourceId = StringUtils::Trim(dbClusterResourceIdNode.GetText().c_str());
+      m_dbClusterResourceId = dbClusterResourceIdNode.GetText();
       m_dbClusterResourceIdHasBeenSet = true;
     }
     XmlNode dBClusterArnNode = resultNode.FirstChild("DBClusterArn");
     if(!dBClusterArnNode.IsNull())
     {
-      m_dBClusterArn = StringUtils::Trim(dBClusterArnNode.GetText().c_str());
+      m_dBClusterArn = dBClusterArnNode.GetText();
       m_dBClusterArnHasBeenSet = true;
     }
     XmlNode associatedRolesNode = resultNode.FirstChild("AssociatedRoles");
@@ -305,7 +305,7 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       XmlNode enabledCloudwatchLogsExportsMember = enabledCloudwatchLogsExportsNode.FirstChild("member");
       while(!enabledCloudwatchLogsExportsMember.IsNull())
       {
-        m_enabledCloudwatchLogsExports.push_back(StringUtils::Trim(enabledCloudwatchLogsExportsMember.GetText().c_str()));
+        m_enabledCloudwatchLogsExports.push_back(enabledCloudwatchLogsExportsMember.GetText());
         enabledCloudwatchLogsExportsMember = enabledCloudwatchLogsExportsMember.NextNode("member");
       }
 

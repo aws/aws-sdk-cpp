@@ -53,7 +53,7 @@ ConfirmProductInstanceResponse& ConfirmProductInstanceResponse::operator =(const
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
-      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerId = ownerIdNode.GetText();
     }
     XmlNode returnNode = resultNode.FirstChild("return");
     if(!returnNode.IsNull())

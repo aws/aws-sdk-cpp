@@ -51,7 +51,7 @@ DescribeClusterSubnetGroupsResult& DescribeClusterSubnetGroupsResult::operator =
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
-      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+      m_marker = markerNode.GetText();
     }
     XmlNode clusterSubnetGroupsNode = resultNode.FirstChild("ClusterSubnetGroups");
     if(!clusterSubnetGroupsNode.IsNull())

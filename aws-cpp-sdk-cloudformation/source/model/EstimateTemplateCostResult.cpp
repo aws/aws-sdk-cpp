@@ -51,7 +51,7 @@ EstimateTemplateCostResult& EstimateTemplateCostResult::operator =(const Aws::Am
     XmlNode urlNode = resultNode.FirstChild("Url");
     if(!urlNode.IsNull())
     {
-      m_url = StringUtils::Trim(urlNode.GetText().c_str());
+      m_url = urlNode.GetText();
     }
   }
 

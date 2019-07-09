@@ -60,25 +60,25 @@ AnalysisOptions& AnalysisOptions::operator =(const XmlNode& xmlNode)
     XmlNode synonymsNode = resultNode.FirstChild("Synonyms");
     if(!synonymsNode.IsNull())
     {
-      m_synonyms = StringUtils::Trim(synonymsNode.GetText().c_str());
+      m_synonyms = synonymsNode.GetText();
       m_synonymsHasBeenSet = true;
     }
     XmlNode stopwordsNode = resultNode.FirstChild("Stopwords");
     if(!stopwordsNode.IsNull())
     {
-      m_stopwords = StringUtils::Trim(stopwordsNode.GetText().c_str());
+      m_stopwords = stopwordsNode.GetText();
       m_stopwordsHasBeenSet = true;
     }
     XmlNode stemmingDictionaryNode = resultNode.FirstChild("StemmingDictionary");
     if(!stemmingDictionaryNode.IsNull())
     {
-      m_stemmingDictionary = StringUtils::Trim(stemmingDictionaryNode.GetText().c_str());
+      m_stemmingDictionary = stemmingDictionaryNode.GetText();
       m_stemmingDictionaryHasBeenSet = true;
     }
     XmlNode japaneseTokenizationDictionaryNode = resultNode.FirstChild("JapaneseTokenizationDictionary");
     if(!japaneseTokenizationDictionaryNode.IsNull())
     {
-      m_japaneseTokenizationDictionary = StringUtils::Trim(japaneseTokenizationDictionaryNode.GetText().c_str());
+      m_japaneseTokenizationDictionary = japaneseTokenizationDictionaryNode.GetText();
       m_japaneseTokenizationDictionaryHasBeenSet = true;
     }
     XmlNode algorithmicStemmingNode = resultNode.FirstChild("AlgorithmicStemming");

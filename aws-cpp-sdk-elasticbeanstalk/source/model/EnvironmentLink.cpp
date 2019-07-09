@@ -52,13 +52,13 @@ EnvironmentLink& EnvironmentLink::operator =(const XmlNode& xmlNode)
     XmlNode linkNameNode = resultNode.FirstChild("LinkName");
     if(!linkNameNode.IsNull())
     {
-      m_linkName = StringUtils::Trim(linkNameNode.GetText().c_str());
+      m_linkName = linkNameNode.GetText();
       m_linkNameHasBeenSet = true;
     }
     XmlNode environmentNameNode = resultNode.FirstChild("EnvironmentName");
     if(!environmentNameNode.IsNull())
     {
-      m_environmentName = StringUtils::Trim(environmentNameNode.GetText().c_str());
+      m_environmentName = environmentNameNode.GetText();
       m_environmentNameHasBeenSet = true;
     }
   }

@@ -50,7 +50,7 @@ ErrorDocument& ErrorDocument::operator =(const XmlNode& xmlNode)
     XmlNode keyNode = resultNode.FirstChild("Key");
     if(!keyNode.IsNull())
     {
-      m_key = StringUtils::Trim(keyNode.GetText().c_str());
+      m_key = keyNode.GetText();
       m_keyHasBeenSet = true;
     }
   }

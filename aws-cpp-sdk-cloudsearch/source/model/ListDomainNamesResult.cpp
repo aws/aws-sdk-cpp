@@ -57,8 +57,8 @@ ListDomainNamesResult& ListDomainNamesResult::operator =(const Aws::AmazonWebSer
       {
         XmlNode keyNode = domainNamesEntry.FirstChild("key");
         XmlNode valueNode = domainNamesEntry.FirstChild("value");
-        m_domainNames[StringUtils::Trim(keyNode.GetText().c_str())] =
-            StringUtils::Trim(valueNode.GetText().c_str());
+        m_domainNames[keyNode.GetText()] =
+            valueNode.GetText();
         domainNamesEntry = domainNamesEntry.NextNode("entry");
       }
 

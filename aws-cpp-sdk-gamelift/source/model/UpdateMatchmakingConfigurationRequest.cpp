@@ -38,7 +38,9 @@ UpdateMatchmakingConfigurationRequest::UpdateMatchmakingConfigurationRequest() :
     m_additionalPlayerCountHasBeenSet(false),
     m_customEventDataHasBeenSet(false),
     m_gamePropertiesHasBeenSet(false),
-    m_gameSessionDataHasBeenSet(false)
+    m_gameSessionDataHasBeenSet(false),
+    m_backfillMode(BackfillMode::NOT_SET),
+    m_backfillModeHasBeenSet(false)
 {
 }
 
@@ -126,6 +128,11 @@ Aws::String UpdateMatchmakingConfigurationRequest::SerializePayload() const
   {
    payload.WithString("GameSessionData", m_gameSessionData);
 
+  }
+
+  if(m_backfillModeHasBeenSet)
+  {
+   payload.WithString("BackfillMode", BackfillModeMapper::GetNameForBackfillMode(m_backfillMode));
   }
 
   return payload.View().WriteReadable();

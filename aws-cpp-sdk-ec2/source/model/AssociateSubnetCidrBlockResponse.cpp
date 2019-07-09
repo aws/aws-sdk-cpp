@@ -56,7 +56,7 @@ AssociateSubnetCidrBlockResponse& AssociateSubnetCidrBlockResponse::operator =(c
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
-      m_subnetId = StringUtils::Trim(subnetIdNode.GetText().c_str());
+      m_subnetId = subnetIdNode.GetText();
     }
   }
 

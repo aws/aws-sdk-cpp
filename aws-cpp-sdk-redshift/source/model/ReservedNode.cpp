@@ -84,19 +84,19 @@ ReservedNode& ReservedNode::operator =(const XmlNode& xmlNode)
     XmlNode reservedNodeIdNode = resultNode.FirstChild("ReservedNodeId");
     if(!reservedNodeIdNode.IsNull())
     {
-      m_reservedNodeId = StringUtils::Trim(reservedNodeIdNode.GetText().c_str());
+      m_reservedNodeId = reservedNodeIdNode.GetText();
       m_reservedNodeIdHasBeenSet = true;
     }
     XmlNode reservedNodeOfferingIdNode = resultNode.FirstChild("ReservedNodeOfferingId");
     if(!reservedNodeOfferingIdNode.IsNull())
     {
-      m_reservedNodeOfferingId = StringUtils::Trim(reservedNodeOfferingIdNode.GetText().c_str());
+      m_reservedNodeOfferingId = reservedNodeOfferingIdNode.GetText();
       m_reservedNodeOfferingIdHasBeenSet = true;
     }
     XmlNode nodeTypeNode = resultNode.FirstChild("NodeType");
     if(!nodeTypeNode.IsNull())
     {
-      m_nodeType = StringUtils::Trim(nodeTypeNode.GetText().c_str());
+      m_nodeType = nodeTypeNode.GetText();
       m_nodeTypeHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
@@ -126,7 +126,7 @@ ReservedNode& ReservedNode::operator =(const XmlNode& xmlNode)
     XmlNode currencyCodeNode = resultNode.FirstChild("CurrencyCode");
     if(!currencyCodeNode.IsNull())
     {
-      m_currencyCode = StringUtils::Trim(currencyCodeNode.GetText().c_str());
+      m_currencyCode = currencyCodeNode.GetText();
       m_currencyCodeHasBeenSet = true;
     }
     XmlNode nodeCountNode = resultNode.FirstChild("NodeCount");
@@ -138,13 +138,13 @@ ReservedNode& ReservedNode::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("State");
     if(!stateNode.IsNull())
     {
-      m_state = StringUtils::Trim(stateNode.GetText().c_str());
+      m_state = stateNode.GetText();
       m_stateHasBeenSet = true;
     }
     XmlNode offeringTypeNode = resultNode.FirstChild("OfferingType");
     if(!offeringTypeNode.IsNull())
     {
-      m_offeringType = StringUtils::Trim(offeringTypeNode.GetText().c_str());
+      m_offeringType = offeringTypeNode.GetText();
       m_offeringTypeHasBeenSet = true;
     }
     XmlNode recurringChargesNode = resultNode.FirstChild("RecurringCharges");

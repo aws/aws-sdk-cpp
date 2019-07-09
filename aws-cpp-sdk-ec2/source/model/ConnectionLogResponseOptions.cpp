@@ -62,13 +62,13 @@ ConnectionLogResponseOptions& ConnectionLogResponseOptions::operator =(const Xml
     XmlNode cloudwatchLogGroupNode = resultNode.FirstChild("CloudwatchLogGroup");
     if(!cloudwatchLogGroupNode.IsNull())
     {
-      m_cloudwatchLogGroup = StringUtils::Trim(cloudwatchLogGroupNode.GetText().c_str());
+      m_cloudwatchLogGroup = cloudwatchLogGroupNode.GetText();
       m_cloudwatchLogGroupHasBeenSet = true;
     }
     XmlNode cloudwatchLogStreamNode = resultNode.FirstChild("CloudwatchLogStream");
     if(!cloudwatchLogStreamNode.IsNull())
     {
-      m_cloudwatchLogStream = StringUtils::Trim(cloudwatchLogStreamNode.GetText().c_str());
+      m_cloudwatchLogStream = cloudwatchLogStreamNode.GetText();
       m_cloudwatchLogStreamHasBeenSet = true;
     }
   }

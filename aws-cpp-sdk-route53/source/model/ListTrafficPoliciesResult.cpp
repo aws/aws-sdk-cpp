@@ -62,12 +62,12 @@ ListTrafficPoliciesResult& ListTrafficPoliciesResult::operator =(const Aws::Amaz
     XmlNode trafficPolicyIdMarkerNode = resultNode.FirstChild("TrafficPolicyIdMarker");
     if(!trafficPolicyIdMarkerNode.IsNull())
     {
-      m_trafficPolicyIdMarker = StringUtils::Trim(trafficPolicyIdMarkerNode.GetText().c_str());
+      m_trafficPolicyIdMarker = trafficPolicyIdMarkerNode.GetText();
     }
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");
     if(!maxItemsNode.IsNull())
     {
-      m_maxItems = StringUtils::Trim(maxItemsNode.GetText().c_str());
+      m_maxItems = maxItemsNode.GetText();
     }
   }
 

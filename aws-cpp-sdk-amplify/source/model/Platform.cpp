@@ -30,30 +30,15 @@ namespace Aws
       namespace PlatformMapper
       {
 
-        static const int IOS_HASH = HashingUtils::HashString("IOS");
-        static const int ANDROID__HASH = HashingUtils::HashString("ANDROID");
         static const int WEB_HASH = HashingUtils::HashString("WEB");
-        static const int REACT_NATIVE_HASH = HashingUtils::HashString("REACT_NATIVE");
 
 
         Platform GetPlatformForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == IOS_HASH)
-          {
-            return Platform::IOS;
-          }
-          else if (hashCode == ANDROID__HASH)
-          {
-            return Platform::ANDROID_;
-          }
-          else if (hashCode == WEB_HASH)
+          if (hashCode == WEB_HASH)
           {
             return Platform::WEB;
-          }
-          else if (hashCode == REACT_NATIVE_HASH)
-          {
-            return Platform::REACT_NATIVE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,14 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case Platform::IOS:
-            return "IOS";
-          case Platform::ANDROID_:
-            return "ANDROID";
           case Platform::WEB:
             return "WEB";
-          case Platform::REACT_NATIVE:
-            return "REACT_NATIVE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

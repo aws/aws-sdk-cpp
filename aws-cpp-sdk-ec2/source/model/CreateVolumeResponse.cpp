@@ -72,7 +72,7 @@ CreateVolumeResponse& CreateVolumeResponse::operator =(const Aws::AmazonWebServi
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
     }
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
     if(!createTimeNode.IsNull())
@@ -87,7 +87,7 @@ CreateVolumeResponse& CreateVolumeResponse::operator =(const Aws::AmazonWebServi
     XmlNode kmsKeyIdNode = resultNode.FirstChild("kmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
-      m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
+      m_kmsKeyId = kmsKeyIdNode.GetText();
     }
     XmlNode sizeNode = resultNode.FirstChild("size");
     if(!sizeNode.IsNull())
@@ -97,7 +97,7 @@ CreateVolumeResponse& CreateVolumeResponse::operator =(const Aws::AmazonWebServi
     XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
     if(!snapshotIdNode.IsNull())
     {
-      m_snapshotId = StringUtils::Trim(snapshotIdNode.GetText().c_str());
+      m_snapshotId = snapshotIdNode.GetText();
     }
     XmlNode stateNode = resultNode.FirstChild("status");
     if(!stateNode.IsNull())
@@ -107,7 +107,7 @@ CreateVolumeResponse& CreateVolumeResponse::operator =(const Aws::AmazonWebServi
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
     {
-      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
+      m_volumeId = volumeIdNode.GetText();
     }
     XmlNode iopsNode = resultNode.FirstChild("iops");
     if(!iopsNode.IsNull())

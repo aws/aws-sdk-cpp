@@ -94,31 +94,31 @@ OptionGroupOption& OptionGroupOption::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode engineNameNode = resultNode.FirstChild("EngineName");
     if(!engineNameNode.IsNull())
     {
-      m_engineName = StringUtils::Trim(engineNameNode.GetText().c_str());
+      m_engineName = engineNameNode.GetText();
       m_engineNameHasBeenSet = true;
     }
     XmlNode majorEngineVersionNode = resultNode.FirstChild("MajorEngineVersion");
     if(!majorEngineVersionNode.IsNull())
     {
-      m_majorEngineVersion = StringUtils::Trim(majorEngineVersionNode.GetText().c_str());
+      m_majorEngineVersion = majorEngineVersionNode.GetText();
       m_majorEngineVersionHasBeenSet = true;
     }
     XmlNode minimumRequiredMinorEngineVersionNode = resultNode.FirstChild("MinimumRequiredMinorEngineVersion");
     if(!minimumRequiredMinorEngineVersionNode.IsNull())
     {
-      m_minimumRequiredMinorEngineVersion = StringUtils::Trim(minimumRequiredMinorEngineVersionNode.GetText().c_str());
+      m_minimumRequiredMinorEngineVersion = minimumRequiredMinorEngineVersionNode.GetText();
       m_minimumRequiredMinorEngineVersionHasBeenSet = true;
     }
     XmlNode portRequiredNode = resultNode.FirstChild("PortRequired");
@@ -139,7 +139,7 @@ OptionGroupOption& OptionGroupOption::operator =(const XmlNode& xmlNode)
       XmlNode optionsDependedOnMember = optionsDependedOnNode.FirstChild("OptionName");
       while(!optionsDependedOnMember.IsNull())
       {
-        m_optionsDependedOn.push_back(StringUtils::Trim(optionsDependedOnMember.GetText().c_str()));
+        m_optionsDependedOn.push_back(optionsDependedOnMember.GetText());
         optionsDependedOnMember = optionsDependedOnMember.NextNode("OptionName");
       }
 
@@ -151,7 +151,7 @@ OptionGroupOption& OptionGroupOption::operator =(const XmlNode& xmlNode)
       XmlNode optionsConflictsWithMember = optionsConflictsWithNode.FirstChild("OptionConflictName");
       while(!optionsConflictsWithMember.IsNull())
       {
-        m_optionsConflictsWith.push_back(StringUtils::Trim(optionsConflictsWithMember.GetText().c_str()));
+        m_optionsConflictsWith.push_back(optionsConflictsWithMember.GetText());
         optionsConflictsWithMember = optionsConflictsWithMember.NextNode("OptionConflictName");
       }
 

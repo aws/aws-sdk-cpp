@@ -52,13 +52,13 @@ Condition& Condition::operator =(const XmlNode& xmlNode)
     XmlNode httpErrorCodeReturnedEqualsNode = resultNode.FirstChild("HttpErrorCodeReturnedEquals");
     if(!httpErrorCodeReturnedEqualsNode.IsNull())
     {
-      m_httpErrorCodeReturnedEquals = StringUtils::Trim(httpErrorCodeReturnedEqualsNode.GetText().c_str());
+      m_httpErrorCodeReturnedEquals = httpErrorCodeReturnedEqualsNode.GetText();
       m_httpErrorCodeReturnedEqualsHasBeenSet = true;
     }
     XmlNode keyPrefixEqualsNode = resultNode.FirstChild("KeyPrefixEquals");
     if(!keyPrefixEqualsNode.IsNull())
     {
-      m_keyPrefixEquals = StringUtils::Trim(keyPrefixEqualsNode.GetText().c_str());
+      m_keyPrefixEquals = keyPrefixEqualsNode.GetText();
       m_keyPrefixEqualsHasBeenSet = true;
     }
   }

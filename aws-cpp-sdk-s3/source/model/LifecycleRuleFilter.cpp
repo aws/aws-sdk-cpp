@@ -54,7 +54,7 @@ LifecycleRuleFilter& LifecycleRuleFilter::operator =(const XmlNode& xmlNode)
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
     if(!prefixNode.IsNull())
     {
-      m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
+      m_prefix = prefixNode.GetText();
       m_prefixHasBeenSet = true;
     }
     XmlNode tagNode = resultNode.FirstChild("Tag");

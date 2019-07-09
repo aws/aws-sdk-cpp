@@ -60,7 +60,7 @@ PurchaseRequest& PurchaseRequest::operator =(const XmlNode& xmlNode)
     XmlNode purchaseTokenNode = resultNode.FirstChild("PurchaseToken");
     if(!purchaseTokenNode.IsNull())
     {
-      m_purchaseToken = StringUtils::Trim(purchaseTokenNode.GetText().c_str());
+      m_purchaseToken = purchaseTokenNode.GetText();
       m_purchaseTokenHasBeenSet = true;
     }
   }

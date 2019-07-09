@@ -54,13 +54,13 @@ SnapshotCopyGrant& SnapshotCopyGrant::operator =(const XmlNode& xmlNode)
     XmlNode snapshotCopyGrantNameNode = resultNode.FirstChild("SnapshotCopyGrantName");
     if(!snapshotCopyGrantNameNode.IsNull())
     {
-      m_snapshotCopyGrantName = StringUtils::Trim(snapshotCopyGrantNameNode.GetText().c_str());
+      m_snapshotCopyGrantName = snapshotCopyGrantNameNode.GetText();
       m_snapshotCopyGrantNameHasBeenSet = true;
     }
     XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
-      m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
+      m_kmsKeyId = kmsKeyIdNode.GetText();
       m_kmsKeyIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");

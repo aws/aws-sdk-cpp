@@ -94,7 +94,7 @@ ScheduledInstancesNetworkInterface& ScheduledInstancesNetworkInterface::operator
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode deviceIndexNode = resultNode.FirstChild("DeviceIndex");
@@ -109,7 +109,7 @@ ScheduledInstancesNetworkInterface& ScheduledInstancesNetworkInterface::operator
       XmlNode groupsMember = groupsNode.FirstChild("SecurityGroupId");
       while(!groupsMember.IsNull())
       {
-        m_groups.push_back(StringUtils::Trim(groupsMember.GetText().c_str()));
+        m_groups.push_back(groupsMember.GetText());
         groupsMember = groupsMember.NextNode("SecurityGroupId");
       }
 
@@ -136,13 +136,13 @@ ScheduledInstancesNetworkInterface& ScheduledInstancesNetworkInterface::operator
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("NetworkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
-      m_networkInterfaceId = StringUtils::Trim(networkInterfaceIdNode.GetText().c_str());
+      m_networkInterfaceId = networkInterfaceIdNode.GetText();
       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode privateIpAddressNode = resultNode.FirstChild("PrivateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
-      m_privateIpAddress = StringUtils::Trim(privateIpAddressNode.GetText().c_str());
+      m_privateIpAddress = privateIpAddressNode.GetText();
       m_privateIpAddressHasBeenSet = true;
     }
     XmlNode privateIpAddressConfigsNode = resultNode.FirstChild("PrivateIpAddressConfig");
@@ -166,7 +166,7 @@ ScheduledInstancesNetworkInterface& ScheduledInstancesNetworkInterface::operator
     XmlNode subnetIdNode = resultNode.FirstChild("SubnetId");
     if(!subnetIdNode.IsNull())
     {
-      m_subnetId = StringUtils::Trim(subnetIdNode.GetText().c_str());
+      m_subnetId = subnetIdNode.GetText();
       m_subnetIdHasBeenSet = true;
     }
   }

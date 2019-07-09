@@ -90,7 +90,7 @@ OnDemandOptions& OnDemandOptions::operator =(const XmlNode& xmlNode)
     XmlNode maxTotalPriceNode = resultNode.FirstChild("maxTotalPrice");
     if(!maxTotalPriceNode.IsNull())
     {
-      m_maxTotalPrice = StringUtils::Trim(maxTotalPriceNode.GetText().c_str());
+      m_maxTotalPrice = maxTotalPriceNode.GetText();
       m_maxTotalPriceHasBeenSet = true;
     }
   }

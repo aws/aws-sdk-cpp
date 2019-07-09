@@ -56,13 +56,13 @@ ClusterDbRevision& ClusterDbRevision::operator =(const XmlNode& xmlNode)
     XmlNode clusterIdentifierNode = resultNode.FirstChild("ClusterIdentifier");
     if(!clusterIdentifierNode.IsNull())
     {
-      m_clusterIdentifier = StringUtils::Trim(clusterIdentifierNode.GetText().c_str());
+      m_clusterIdentifier = clusterIdentifierNode.GetText();
       m_clusterIdentifierHasBeenSet = true;
     }
     XmlNode currentDatabaseRevisionNode = resultNode.FirstChild("CurrentDatabaseRevision");
     if(!currentDatabaseRevisionNode.IsNull())
     {
-      m_currentDatabaseRevision = StringUtils::Trim(currentDatabaseRevisionNode.GetText().c_str());
+      m_currentDatabaseRevision = currentDatabaseRevisionNode.GetText();
       m_currentDatabaseRevisionHasBeenSet = true;
     }
     XmlNode databaseRevisionReleaseDateNode = resultNode.FirstChild("DatabaseRevisionReleaseDate");

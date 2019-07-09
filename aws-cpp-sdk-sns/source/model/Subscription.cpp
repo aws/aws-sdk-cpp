@@ -58,31 +58,31 @@ Subscription& Subscription::operator =(const XmlNode& xmlNode)
     XmlNode subscriptionArnNode = resultNode.FirstChild("SubscriptionArn");
     if(!subscriptionArnNode.IsNull())
     {
-      m_subscriptionArn = StringUtils::Trim(subscriptionArnNode.GetText().c_str());
+      m_subscriptionArn = subscriptionArnNode.GetText();
       m_subscriptionArnHasBeenSet = true;
     }
     XmlNode ownerNode = resultNode.FirstChild("Owner");
     if(!ownerNode.IsNull())
     {
-      m_owner = StringUtils::Trim(ownerNode.GetText().c_str());
+      m_owner = ownerNode.GetText();
       m_ownerHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = StringUtils::Trim(protocolNode.GetText().c_str());
+      m_protocol = protocolNode.GetText();
       m_protocolHasBeenSet = true;
     }
     XmlNode endpointNode = resultNode.FirstChild("Endpoint");
     if(!endpointNode.IsNull())
     {
-      m_endpoint = StringUtils::Trim(endpointNode.GetText().c_str());
+      m_endpoint = endpointNode.GetText();
       m_endpointHasBeenSet = true;
     }
     XmlNode topicArnNode = resultNode.FirstChild("TopicArn");
     if(!topicArnNode.IsNull())
     {
-      m_topicArn = StringUtils::Trim(topicArnNode.GetText().c_str());
+      m_topicArn = topicArnNode.GetText();
       m_topicArnHasBeenSet = true;
     }
   }

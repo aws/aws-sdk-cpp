@@ -72,25 +72,25 @@ Activity& Activity::operator =(const XmlNode& xmlNode)
     XmlNode activityIdNode = resultNode.FirstChild("ActivityId");
     if(!activityIdNode.IsNull())
     {
-      m_activityId = StringUtils::Trim(activityIdNode.GetText().c_str());
+      m_activityId = activityIdNode.GetText();
       m_activityIdHasBeenSet = true;
     }
     XmlNode autoScalingGroupNameNode = resultNode.FirstChild("AutoScalingGroupName");
     if(!autoScalingGroupNameNode.IsNull())
     {
-      m_autoScalingGroupName = StringUtils::Trim(autoScalingGroupNameNode.GetText().c_str());
+      m_autoScalingGroupName = autoScalingGroupNameNode.GetText();
       m_autoScalingGroupNameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode causeNode = resultNode.FirstChild("Cause");
     if(!causeNode.IsNull())
     {
-      m_cause = StringUtils::Trim(causeNode.GetText().c_str());
+      m_cause = causeNode.GetText();
       m_causeHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
@@ -114,7 +114,7 @@ Activity& Activity::operator =(const XmlNode& xmlNode)
     XmlNode statusMessageNode = resultNode.FirstChild("StatusMessage");
     if(!statusMessageNode.IsNull())
     {
-      m_statusMessage = StringUtils::Trim(statusMessageNode.GetText().c_str());
+      m_statusMessage = statusMessageNode.GetText();
       m_statusMessageHasBeenSet = true;
     }
     XmlNode progressNode = resultNode.FirstChild("Progress");
@@ -126,7 +126,7 @@ Activity& Activity::operator =(const XmlNode& xmlNode)
     XmlNode detailsNode = resultNode.FirstChild("Details");
     if(!detailsNode.IsNull())
     {
-      m_details = StringUtils::Trim(detailsNode.GetText().c_str());
+      m_details = detailsNode.GetText();
       m_detailsHasBeenSet = true;
     }
   }

@@ -54,7 +54,7 @@ LoadPermission& LoadPermission::operator =(const XmlNode& xmlNode)
     XmlNode userIdNode = resultNode.FirstChild("userId");
     if(!userIdNode.IsNull())
     {
-      m_userId = StringUtils::Trim(userIdNode.GetText().c_str());
+      m_userId = userIdNode.GetText();
       m_userIdHasBeenSet = true;
     }
     XmlNode groupNode = resultNode.FirstChild("group");

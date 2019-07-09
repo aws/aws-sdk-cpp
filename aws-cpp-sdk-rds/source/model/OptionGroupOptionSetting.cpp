@@ -68,31 +68,31 @@ OptionGroupOptionSetting& OptionGroupOptionSetting::operator =(const XmlNode& xm
     XmlNode settingNameNode = resultNode.FirstChild("SettingName");
     if(!settingNameNode.IsNull())
     {
-      m_settingName = StringUtils::Trim(settingNameNode.GetText().c_str());
+      m_settingName = settingNameNode.GetText();
       m_settingNameHasBeenSet = true;
     }
     XmlNode settingDescriptionNode = resultNode.FirstChild("SettingDescription");
     if(!settingDescriptionNode.IsNull())
     {
-      m_settingDescription = StringUtils::Trim(settingDescriptionNode.GetText().c_str());
+      m_settingDescription = settingDescriptionNode.GetText();
       m_settingDescriptionHasBeenSet = true;
     }
     XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
     if(!defaultValueNode.IsNull())
     {
-      m_defaultValue = StringUtils::Trim(defaultValueNode.GetText().c_str());
+      m_defaultValue = defaultValueNode.GetText();
       m_defaultValueHasBeenSet = true;
     }
     XmlNode applyTypeNode = resultNode.FirstChild("ApplyType");
     if(!applyTypeNode.IsNull())
     {
-      m_applyType = StringUtils::Trim(applyTypeNode.GetText().c_str());
+      m_applyType = applyTypeNode.GetText();
       m_applyTypeHasBeenSet = true;
     }
     XmlNode allowedValuesNode = resultNode.FirstChild("AllowedValues");
     if(!allowedValuesNode.IsNull())
     {
-      m_allowedValues = StringUtils::Trim(allowedValuesNode.GetText().c_str());
+      m_allowedValues = allowedValuesNode.GetText();
       m_allowedValuesHasBeenSet = true;
     }
     XmlNode isModifiableNode = resultNode.FirstChild("IsModifiable");

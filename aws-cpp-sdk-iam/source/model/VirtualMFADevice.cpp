@@ -59,19 +59,19 @@ VirtualMFADevice& VirtualMFADevice::operator =(const XmlNode& xmlNode)
     XmlNode serialNumberNode = resultNode.FirstChild("SerialNumber");
     if(!serialNumberNode.IsNull())
     {
-      m_serialNumber = StringUtils::Trim(serialNumberNode.GetText().c_str());
+      m_serialNumber = serialNumberNode.GetText();
       m_serialNumberHasBeenSet = true;
     }
     XmlNode base32StringSeedNode = resultNode.FirstChild("Base32StringSeed");
     if(!base32StringSeedNode.IsNull())
     {
-      m_base32StringSeed = HashingUtils::Base64Decode(StringUtils::Trim(base32StringSeedNode.GetText().c_str()));
+      m_base32StringSeed = HashingUtils::Base64Decode(base32StringSeedNode.GetText());
       m_base32StringSeedHasBeenSet = true;
     }
     XmlNode qRCodePNGNode = resultNode.FirstChild("QRCodePNG");
     if(!qRCodePNGNode.IsNull())
     {
-      m_qRCodePNG = HashingUtils::Base64Decode(StringUtils::Trim(qRCodePNGNode.GetText().c_str()));
+      m_qRCodePNG = HashingUtils::Base64Decode(qRCodePNGNode.GetText());
       m_qRCodePNGHasBeenSet = true;
     }
     XmlNode userNode = resultNode.FirstChild("User");

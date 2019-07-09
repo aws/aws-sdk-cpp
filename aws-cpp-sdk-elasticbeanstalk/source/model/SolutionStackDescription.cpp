@@ -52,7 +52,7 @@ SolutionStackDescription& SolutionStackDescription::operator =(const XmlNode& xm
     XmlNode solutionStackNameNode = resultNode.FirstChild("SolutionStackName");
     if(!solutionStackNameNode.IsNull())
     {
-      m_solutionStackName = StringUtils::Trim(solutionStackNameNode.GetText().c_str());
+      m_solutionStackName = solutionStackNameNode.GetText();
       m_solutionStackNameHasBeenSet = true;
     }
     XmlNode permittedFileTypesNode = resultNode.FirstChild("PermittedFileTypes");
@@ -61,7 +61,7 @@ SolutionStackDescription& SolutionStackDescription::operator =(const XmlNode& xm
       XmlNode permittedFileTypesMember = permittedFileTypesNode.FirstChild("member");
       while(!permittedFileTypesMember.IsNull())
       {
-        m_permittedFileTypes.push_back(StringUtils::Trim(permittedFileTypesMember.GetText().c_str()));
+        m_permittedFileTypes.push_back(permittedFileTypesMember.GetText());
         permittedFileTypesMember = permittedFileTypesMember.NextNode("member");
       }
 

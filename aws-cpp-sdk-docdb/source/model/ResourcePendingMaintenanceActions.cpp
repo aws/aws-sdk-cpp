@@ -52,7 +52,7 @@ ResourcePendingMaintenanceActions& ResourcePendingMaintenanceActions::operator =
     XmlNode resourceIdentifierNode = resultNode.FirstChild("ResourceIdentifier");
     if(!resourceIdentifierNode.IsNull())
     {
-      m_resourceIdentifier = StringUtils::Trim(resourceIdentifierNode.GetText().c_str());
+      m_resourceIdentifier = resourceIdentifierNode.GetText();
       m_resourceIdentifierHasBeenSet = true;
     }
     XmlNode pendingMaintenanceActionDetailsNode = resultNode.FirstChild("PendingMaintenanceActionDetails");

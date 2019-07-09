@@ -58,13 +58,13 @@ ImportInstanceTaskDetails& ImportInstanceTaskDetails::operator =(const XmlNode& 
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceId = instanceIdNode.GetText();
       m_instanceIdHasBeenSet = true;
     }
     XmlNode platformNode = resultNode.FirstChild("platform");

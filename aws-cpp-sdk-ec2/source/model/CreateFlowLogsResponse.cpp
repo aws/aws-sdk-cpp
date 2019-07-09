@@ -51,7 +51,7 @@ CreateFlowLogsResponse& CreateFlowLogsResponse::operator =(const Aws::AmazonWebS
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
-      m_clientToken = StringUtils::Trim(clientTokenNode.GetText().c_str());
+      m_clientToken = clientTokenNode.GetText();
     }
     XmlNode flowLogIdsNode = resultNode.FirstChild("flowLogIdSet");
     if(!flowLogIdsNode.IsNull())
@@ -59,7 +59,7 @@ CreateFlowLogsResponse& CreateFlowLogsResponse::operator =(const Aws::AmazonWebS
       XmlNode flowLogIdsMember = flowLogIdsNode.FirstChild("item");
       while(!flowLogIdsMember.IsNull())
       {
-        m_flowLogIds.push_back(StringUtils::Trim(flowLogIdsMember.GetText().c_str()));
+        m_flowLogIds.push_back(flowLogIdsMember.GetText());
         flowLogIdsMember = flowLogIdsMember.NextNode("item");
       }
 

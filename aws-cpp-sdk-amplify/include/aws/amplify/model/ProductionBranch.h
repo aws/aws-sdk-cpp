@@ -121,42 +121,42 @@ namespace Model
 
 
     /**
-     * <p> Thumbnail Url for Production Branch. </p>
+     * <p> Thumbnail URL for Production Branch. </p>
      */
     inline const Aws::String& GetThumbnailUrl() const{ return m_thumbnailUrl; }
 
     /**
-     * <p> Thumbnail Url for Production Branch. </p>
+     * <p> Thumbnail URL for Production Branch. </p>
      */
     inline bool ThumbnailUrlHasBeenSet() const { return m_thumbnailUrlHasBeenSet; }
 
     /**
-     * <p> Thumbnail Url for Production Branch. </p>
+     * <p> Thumbnail URL for Production Branch. </p>
      */
     inline void SetThumbnailUrl(const Aws::String& value) { m_thumbnailUrlHasBeenSet = true; m_thumbnailUrl = value; }
 
     /**
-     * <p> Thumbnail Url for Production Branch. </p>
+     * <p> Thumbnail URL for Production Branch. </p>
      */
     inline void SetThumbnailUrl(Aws::String&& value) { m_thumbnailUrlHasBeenSet = true; m_thumbnailUrl = std::move(value); }
 
     /**
-     * <p> Thumbnail Url for Production Branch. </p>
+     * <p> Thumbnail URL for Production Branch. </p>
      */
     inline void SetThumbnailUrl(const char* value) { m_thumbnailUrlHasBeenSet = true; m_thumbnailUrl.assign(value); }
 
     /**
-     * <p> Thumbnail Url for Production Branch. </p>
+     * <p> Thumbnail URL for Production Branch. </p>
      */
     inline ProductionBranch& WithThumbnailUrl(const Aws::String& value) { SetThumbnailUrl(value); return *this;}
 
     /**
-     * <p> Thumbnail Url for Production Branch. </p>
+     * <p> Thumbnail URL for Production Branch. </p>
      */
     inline ProductionBranch& WithThumbnailUrl(Aws::String&& value) { SetThumbnailUrl(std::move(value)); return *this;}
 
     /**
-     * <p> Thumbnail Url for Production Branch. </p>
+     * <p> Thumbnail URL for Production Branch. </p>
      */
     inline ProductionBranch& WithThumbnailUrl(const char* value) { SetThumbnailUrl(value); return *this;}
 

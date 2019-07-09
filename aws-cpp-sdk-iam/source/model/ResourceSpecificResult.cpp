@@ -60,7 +60,7 @@ ResourceSpecificResult& ResourceSpecificResult::operator =(const XmlNode& xmlNod
     XmlNode evalResourceNameNode = resultNode.FirstChild("EvalResourceName");
     if(!evalResourceNameNode.IsNull())
     {
-      m_evalResourceName = StringUtils::Trim(evalResourceNameNode.GetText().c_str());
+      m_evalResourceName = evalResourceNameNode.GetText();
       m_evalResourceNameHasBeenSet = true;
     }
     XmlNode evalResourceDecisionNode = resultNode.FirstChild("EvalResourceDecision");
@@ -87,7 +87,7 @@ ResourceSpecificResult& ResourceSpecificResult::operator =(const XmlNode& xmlNod
       XmlNode missingContextValuesMember = missingContextValuesNode.FirstChild("member");
       while(!missingContextValuesMember.IsNull())
       {
-        m_missingContextValues.push_back(StringUtils::Trim(missingContextValuesMember.GetText().c_str()));
+        m_missingContextValues.push_back(missingContextValuesMember.GetText());
         missingContextValuesMember = missingContextValuesMember.NextNode("member");
       }
 
@@ -102,7 +102,7 @@ ResourceSpecificResult& ResourceSpecificResult::operator =(const XmlNode& xmlNod
       {
         XmlNode keyNode = evalDecisionDetailsEntry.FirstChild("key");
         XmlNode valueNode = evalDecisionDetailsEntry.FirstChild("value");
-        m_evalDecisionDetails[StringUtils::Trim(keyNode.GetText().c_str())] =
+        m_evalDecisionDetails[keyNode.GetText()] =
             PolicyEvaluationDecisionTypeMapper::GetPolicyEvaluationDecisionTypeForName(StringUtils::Trim(valueNode.GetText().c_str()));
         evalDecisionDetailsEntry = evalDecisionDetailsEntry.NextNode("entry");
       }

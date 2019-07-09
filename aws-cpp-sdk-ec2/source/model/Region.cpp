@@ -52,13 +52,13 @@ Region& Region::operator =(const XmlNode& xmlNode)
     XmlNode endpointNode = resultNode.FirstChild("regionEndpoint");
     if(!endpointNode.IsNull())
     {
-      m_endpoint = StringUtils::Trim(endpointNode.GetText().c_str());
+      m_endpoint = endpointNode.GetText();
       m_endpointHasBeenSet = true;
     }
     XmlNode regionNameNode = resultNode.FirstChild("regionName");
     if(!regionNameNode.IsNull())
     {
-      m_regionName = StringUtils::Trim(regionNameNode.GetText().c_str());
+      m_regionName = regionNameNode.GetText();
       m_regionNameHasBeenSet = true;
     }
   }

@@ -58,7 +58,7 @@ ReservedInstanceReservationValue& ReservedInstanceReservationValue::operator =(c
     XmlNode reservedInstanceIdNode = resultNode.FirstChild("reservedInstanceId");
     if(!reservedInstanceIdNode.IsNull())
     {
-      m_reservedInstanceId = StringUtils::Trim(reservedInstanceIdNode.GetText().c_str());
+      m_reservedInstanceId = reservedInstanceIdNode.GetText();
       m_reservedInstanceIdHasBeenSet = true;
     }
   }

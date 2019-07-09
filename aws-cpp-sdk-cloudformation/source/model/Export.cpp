@@ -54,19 +54,19 @@ Export& Export::operator =(const XmlNode& xmlNode)
     XmlNode exportingStackIdNode = resultNode.FirstChild("ExportingStackId");
     if(!exportingStackIdNode.IsNull())
     {
-      m_exportingStackId = StringUtils::Trim(exportingStackIdNode.GetText().c_str());
+      m_exportingStackId = exportingStackIdNode.GetText();
       m_exportingStackIdHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
-      m_value = StringUtils::Trim(valueNode.GetText().c_str());
+      m_value = valueNode.GetText();
       m_valueHasBeenSet = true;
     }
   }

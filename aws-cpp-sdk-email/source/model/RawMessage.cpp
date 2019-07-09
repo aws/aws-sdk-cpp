@@ -51,7 +51,7 @@ RawMessage& RawMessage::operator =(const XmlNode& xmlNode)
     XmlNode dataNode = resultNode.FirstChild("Data");
     if(!dataNode.IsNull())
     {
-      m_data = HashingUtils::Base64Decode(StringUtils::Trim(dataNode.GetText().c_str()));
+      m_data = HashingUtils::Base64Decode(dataNode.GetText());
       m_dataHasBeenSet = true;
     }
   }

@@ -60,7 +60,7 @@ RecurringCharge& RecurringCharge::operator =(const XmlNode& xmlNode)
     XmlNode recurringChargeFrequencyNode = resultNode.FirstChild("RecurringChargeFrequency");
     if(!recurringChargeFrequencyNode.IsNull())
     {
-      m_recurringChargeFrequency = StringUtils::Trim(recurringChargeFrequencyNode.GetText().c_str());
+      m_recurringChargeFrequency = recurringChargeFrequencyNode.GetText();
       m_recurringChargeFrequencyHasBeenSet = true;
     }
   }

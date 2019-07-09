@@ -70,25 +70,25 @@ Address& Address::operator =(const XmlNode& xmlNode)
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceId = instanceIdNode.GetText();
       m_instanceIdHasBeenSet = true;
     }
     XmlNode publicIpNode = resultNode.FirstChild("publicIp");
     if(!publicIpNode.IsNull())
     {
-      m_publicIp = StringUtils::Trim(publicIpNode.GetText().c_str());
+      m_publicIp = publicIpNode.GetText();
       m_publicIpHasBeenSet = true;
     }
     XmlNode allocationIdNode = resultNode.FirstChild("allocationId");
     if(!allocationIdNode.IsNull())
     {
-      m_allocationId = StringUtils::Trim(allocationIdNode.GetText().c_str());
+      m_allocationId = allocationIdNode.GetText();
       m_allocationIdHasBeenSet = true;
     }
     XmlNode associationIdNode = resultNode.FirstChild("associationId");
     if(!associationIdNode.IsNull())
     {
-      m_associationId = StringUtils::Trim(associationIdNode.GetText().c_str());
+      m_associationId = associationIdNode.GetText();
       m_associationIdHasBeenSet = true;
     }
     XmlNode domainNode = resultNode.FirstChild("domain");
@@ -100,19 +100,19 @@ Address& Address::operator =(const XmlNode& xmlNode)
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
-      m_networkInterfaceId = StringUtils::Trim(networkInterfaceIdNode.GetText().c_str());
+      m_networkInterfaceId = networkInterfaceIdNode.GetText();
       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode networkInterfaceOwnerIdNode = resultNode.FirstChild("networkInterfaceOwnerId");
     if(!networkInterfaceOwnerIdNode.IsNull())
     {
-      m_networkInterfaceOwnerId = StringUtils::Trim(networkInterfaceOwnerIdNode.GetText().c_str());
+      m_networkInterfaceOwnerId = networkInterfaceOwnerIdNode.GetText();
       m_networkInterfaceOwnerIdHasBeenSet = true;
     }
     XmlNode privateIpAddressNode = resultNode.FirstChild("privateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
-      m_privateIpAddress = StringUtils::Trim(privateIpAddressNode.GetText().c_str());
+      m_privateIpAddress = privateIpAddressNode.GetText();
       m_privateIpAddressHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
@@ -130,7 +130,7 @@ Address& Address::operator =(const XmlNode& xmlNode)
     XmlNode publicIpv4PoolNode = resultNode.FirstChild("publicIpv4Pool");
     if(!publicIpv4PoolNode.IsNull())
     {
-      m_publicIpv4Pool = StringUtils::Trim(publicIpv4PoolNode.GetText().c_str());
+      m_publicIpv4Pool = publicIpv4PoolNode.GetText();
       m_publicIpv4PoolHasBeenSet = true;
     }
   }

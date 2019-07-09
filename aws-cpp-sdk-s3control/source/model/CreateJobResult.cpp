@@ -44,7 +44,7 @@ CreateJobResult& CreateJobResult::operator =(const Aws::AmazonWebServiceResult<X
     XmlNode jobIdNode = resultNode.FirstChild("JobId");
     if(!jobIdNode.IsNull())
     {
-      m_jobId = StringUtils::Trim(jobIdNode.GetText().c_str());
+      m_jobId = jobIdNode.GetText();
     }
   }
 

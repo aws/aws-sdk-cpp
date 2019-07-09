@@ -54,7 +54,7 @@ BuildSuggestersResult& BuildSuggestersResult::operator =(const Aws::AmazonWebSer
       XmlNode fieldNamesMember = fieldNamesNode.FirstChild("member");
       while(!fieldNamesMember.IsNull())
       {
-        m_fieldNames.push_back(StringUtils::Trim(fieldNamesMember.GetText().c_str()));
+        m_fieldNames.push_back(fieldNamesMember.GetText());
         fieldNamesMember = fieldNamesMember.NextNode("member");
       }
 

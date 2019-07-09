@@ -51,7 +51,7 @@ DeleteTrafficMirrorFilterResponse& DeleteTrafficMirrorFilterResponse::operator =
     XmlNode trafficMirrorFilterIdNode = resultNode.FirstChild("trafficMirrorFilterId");
     if(!trafficMirrorFilterIdNode.IsNull())
     {
-      m_trafficMirrorFilterId = StringUtils::Trim(trafficMirrorFilterIdNode.GetText().c_str());
+      m_trafficMirrorFilterId = trafficMirrorFilterIdNode.GetText();
     }
   }
 

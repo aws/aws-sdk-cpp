@@ -47,7 +47,7 @@ GetCheckerIpRangesResult& GetCheckerIpRangesResult::operator =(const Aws::Amazon
       XmlNode checkerIpRangesMember = checkerIpRangesNode.FirstChild("member");
       while(!checkerIpRangesMember.IsNull())
       {
-        m_checkerIpRanges.push_back(StringUtils::Trim(checkerIpRangesMember.GetText().c_str()));
+        m_checkerIpRanges.push_back(checkerIpRangesMember.GetText());
         checkerIpRangesMember = checkerIpRangesMember.NextNode("member");
       }
 

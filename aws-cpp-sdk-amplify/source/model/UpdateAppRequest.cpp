@@ -36,7 +36,11 @@ UpdateAppRequest::UpdateAppRequest() :
     m_enableBasicAuthHasBeenSet(false),
     m_basicAuthCredentialsHasBeenSet(false),
     m_customRulesHasBeenSet(false),
-    m_buildSpecHasBeenSet(false)
+    m_buildSpecHasBeenSet(false),
+    m_enableAutoBranchCreation(false),
+    m_enableAutoBranchCreationHasBeenSet(false),
+    m_autoBranchCreationPatternsHasBeenSet(false),
+    m_autoBranchCreationConfigHasBeenSet(false)
 {
 }
 
@@ -110,6 +114,29 @@ Aws::String UpdateAppRequest::SerializePayload() const
   if(m_buildSpecHasBeenSet)
   {
    payload.WithString("buildSpec", m_buildSpec);
+
+  }
+
+  if(m_enableAutoBranchCreationHasBeenSet)
+  {
+   payload.WithBool("enableAutoBranchCreation", m_enableAutoBranchCreation);
+
+  }
+
+  if(m_autoBranchCreationPatternsHasBeenSet)
+  {
+   Array<JsonValue> autoBranchCreationPatternsJsonList(m_autoBranchCreationPatterns.size());
+   for(unsigned autoBranchCreationPatternsIndex = 0; autoBranchCreationPatternsIndex < autoBranchCreationPatternsJsonList.GetLength(); ++autoBranchCreationPatternsIndex)
+   {
+     autoBranchCreationPatternsJsonList[autoBranchCreationPatternsIndex].AsString(m_autoBranchCreationPatterns[autoBranchCreationPatternsIndex]);
+   }
+   payload.WithArray("autoBranchCreationPatterns", std::move(autoBranchCreationPatternsJsonList));
+
+  }
+
+  if(m_autoBranchCreationConfigHasBeenSet)
+  {
+   payload.WithObject("autoBranchCreationConfig", m_autoBranchCreationConfig.Jsonize());
 
   }
 

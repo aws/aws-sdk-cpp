@@ -62,12 +62,12 @@ DescribeSpotFleetInstancesResponse& DescribeSpotFleetInstancesResponse::operator
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+      m_nextToken = nextTokenNode.GetText();
     }
     XmlNode spotFleetRequestIdNode = resultNode.FirstChild("spotFleetRequestId");
     if(!spotFleetRequestIdNode.IsNull())
     {
-      m_spotFleetRequestId = StringUtils::Trim(spotFleetRequestIdNode.GetText().c_str());
+      m_spotFleetRequestId = spotFleetRequestIdNode.GetText();
     }
   }
 

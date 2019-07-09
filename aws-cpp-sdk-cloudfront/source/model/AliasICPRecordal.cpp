@@ -54,7 +54,7 @@ AliasICPRecordal& AliasICPRecordal::operator =(const XmlNode& xmlNode)
     XmlNode cNAMENode = resultNode.FirstChild("CNAME");
     if(!cNAMENode.IsNull())
     {
-      m_cNAME = StringUtils::Trim(cNAMENode.GetText().c_str());
+      m_cNAME = cNAMENode.GetText();
       m_cNAMEHasBeenSet = true;
     }
     XmlNode iCPRecordalStatusNode = resultNode.FirstChild("ICPRecordalStatus");

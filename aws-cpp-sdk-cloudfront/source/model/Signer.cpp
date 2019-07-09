@@ -52,7 +52,7 @@ Signer& Signer::operator =(const XmlNode& xmlNode)
     XmlNode awsAccountNumberNode = resultNode.FirstChild("AwsAccountNumber");
     if(!awsAccountNumberNode.IsNull())
     {
-      m_awsAccountNumber = StringUtils::Trim(awsAccountNumberNode.GetText().c_str());
+      m_awsAccountNumber = awsAccountNumberNode.GetText();
       m_awsAccountNumberHasBeenSet = true;
     }
     XmlNode keyPairIdsNode = resultNode.FirstChild("KeyPairIds");

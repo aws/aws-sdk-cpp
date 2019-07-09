@@ -60,7 +60,7 @@ TransitGatewayRoute& TransitGatewayRoute::operator =(const XmlNode& xmlNode)
     XmlNode destinationCidrBlockNode = resultNode.FirstChild("destinationCidrBlock");
     if(!destinationCidrBlockNode.IsNull())
     {
-      m_destinationCidrBlock = StringUtils::Trim(destinationCidrBlockNode.GetText().c_str());
+      m_destinationCidrBlock = destinationCidrBlockNode.GetText();
       m_destinationCidrBlockHasBeenSet = true;
     }
     XmlNode transitGatewayAttachmentsNode = resultNode.FirstChild("transitGatewayAttachments");

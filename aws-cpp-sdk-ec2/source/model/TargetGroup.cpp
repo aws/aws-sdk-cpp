@@ -50,7 +50,7 @@ TargetGroup& TargetGroup::operator =(const XmlNode& xmlNode)
     XmlNode arnNode = resultNode.FirstChild("arn");
     if(!arnNode.IsNull())
     {
-      m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+      m_arn = arnNode.GetText();
       m_arnHasBeenSet = true;
     }
   }

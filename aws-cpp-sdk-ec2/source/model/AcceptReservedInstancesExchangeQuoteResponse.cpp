@@ -51,7 +51,7 @@ AcceptReservedInstancesExchangeQuoteResponse& AcceptReservedInstancesExchangeQuo
     XmlNode exchangeIdNode = resultNode.FirstChild("exchangeId");
     if(!exchangeIdNode.IsNull())
     {
-      m_exchangeId = StringUtils::Trim(exchangeIdNode.GetText().c_str());
+      m_exchangeId = exchangeIdNode.GetText();
     }
   }
 

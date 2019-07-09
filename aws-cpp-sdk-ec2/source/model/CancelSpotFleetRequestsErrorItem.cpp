@@ -58,7 +58,7 @@ CancelSpotFleetRequestsErrorItem& CancelSpotFleetRequestsErrorItem::operator =(c
     XmlNode spotFleetRequestIdNode = resultNode.FirstChild("spotFleetRequestId");
     if(!spotFleetRequestIdNode.IsNull())
     {
-      m_spotFleetRequestId = StringUtils::Trim(spotFleetRequestIdNode.GetText().c_str());
+      m_spotFleetRequestId = spotFleetRequestIdNode.GetText();
       m_spotFleetRequestIdHasBeenSet = true;
     }
   }

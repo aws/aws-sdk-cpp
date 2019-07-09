@@ -125,12 +125,15 @@ namespace Model
      * within 3 hours of the specified <code>StartTimestamp</code>, and it must be
      * later than the <code>StartTimestamp</code> value.</p> <p>If
      * <code>FragmentSelectorType</code> for the request is
-     * <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p> <p>If the
-     * <code>HLSTimestampRange</code> value is specified, the <code>EndTimestamp</code>
-     * value is required.</p> <note> <p>This value is inclusive. The
-     * <code>EndTimestamp</code> is compared to the (starting) timestamp of the
-     * fragment. Fragments that start before the <code>EndTimestamp</code> value and
-     * continue past it are included in the session.</p> </note>
+     * <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p> <p>The
+     * <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but
+     * optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is
+     * not set for <code>LIVE_REPLAY</code> mode then the session will continue to
+     * include newly ingested fragments until the session expires.</p> <note> <p>This
+     * value is inclusive. The <code>EndTimestamp</code> is compared to the (starting)
+     * timestamp of the fragment. Fragments that start before the
+     * <code>EndTimestamp</code> value and continue past it are included in the
+     * session.</p> </note>
      */
     inline const Aws::Utils::DateTime& GetEndTimestamp() const{ return m_endTimestamp; }
 
@@ -139,12 +142,15 @@ namespace Model
      * within 3 hours of the specified <code>StartTimestamp</code>, and it must be
      * later than the <code>StartTimestamp</code> value.</p> <p>If
      * <code>FragmentSelectorType</code> for the request is
-     * <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p> <p>If the
-     * <code>HLSTimestampRange</code> value is specified, the <code>EndTimestamp</code>
-     * value is required.</p> <note> <p>This value is inclusive. The
-     * <code>EndTimestamp</code> is compared to the (starting) timestamp of the
-     * fragment. Fragments that start before the <code>EndTimestamp</code> value and
-     * continue past it are included in the session.</p> </note>
+     * <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p> <p>The
+     * <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but
+     * optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is
+     * not set for <code>LIVE_REPLAY</code> mode then the session will continue to
+     * include newly ingested fragments until the session expires.</p> <note> <p>This
+     * value is inclusive. The <code>EndTimestamp</code> is compared to the (starting)
+     * timestamp of the fragment. Fragments that start before the
+     * <code>EndTimestamp</code> value and continue past it are included in the
+     * session.</p> </note>
      */
     inline bool EndTimestampHasBeenSet() const { return m_endTimestampHasBeenSet; }
 
@@ -153,12 +159,15 @@ namespace Model
      * within 3 hours of the specified <code>StartTimestamp</code>, and it must be
      * later than the <code>StartTimestamp</code> value.</p> <p>If
      * <code>FragmentSelectorType</code> for the request is
-     * <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p> <p>If the
-     * <code>HLSTimestampRange</code> value is specified, the <code>EndTimestamp</code>
-     * value is required.</p> <note> <p>This value is inclusive. The
-     * <code>EndTimestamp</code> is compared to the (starting) timestamp of the
-     * fragment. Fragments that start before the <code>EndTimestamp</code> value and
-     * continue past it are included in the session.</p> </note>
+     * <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p> <p>The
+     * <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but
+     * optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is
+     * not set for <code>LIVE_REPLAY</code> mode then the session will continue to
+     * include newly ingested fragments until the session expires.</p> <note> <p>This
+     * value is inclusive. The <code>EndTimestamp</code> is compared to the (starting)
+     * timestamp of the fragment. Fragments that start before the
+     * <code>EndTimestamp</code> value and continue past it are included in the
+     * session.</p> </note>
      */
     inline void SetEndTimestamp(const Aws::Utils::DateTime& value) { m_endTimestampHasBeenSet = true; m_endTimestamp = value; }
 
@@ -167,12 +176,15 @@ namespace Model
      * within 3 hours of the specified <code>StartTimestamp</code>, and it must be
      * later than the <code>StartTimestamp</code> value.</p> <p>If
      * <code>FragmentSelectorType</code> for the request is
-     * <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p> <p>If the
-     * <code>HLSTimestampRange</code> value is specified, the <code>EndTimestamp</code>
-     * value is required.</p> <note> <p>This value is inclusive. The
-     * <code>EndTimestamp</code> is compared to the (starting) timestamp of the
-     * fragment. Fragments that start before the <code>EndTimestamp</code> value and
-     * continue past it are included in the session.</p> </note>
+     * <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p> <p>The
+     * <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but
+     * optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is
+     * not set for <code>LIVE_REPLAY</code> mode then the session will continue to
+     * include newly ingested fragments until the session expires.</p> <note> <p>This
+     * value is inclusive. The <code>EndTimestamp</code> is compared to the (starting)
+     * timestamp of the fragment. Fragments that start before the
+     * <code>EndTimestamp</code> value and continue past it are included in the
+     * session.</p> </note>
      */
     inline void SetEndTimestamp(Aws::Utils::DateTime&& value) { m_endTimestampHasBeenSet = true; m_endTimestamp = std::move(value); }
 
@@ -181,12 +193,15 @@ namespace Model
      * within 3 hours of the specified <code>StartTimestamp</code>, and it must be
      * later than the <code>StartTimestamp</code> value.</p> <p>If
      * <code>FragmentSelectorType</code> for the request is
-     * <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p> <p>If the
-     * <code>HLSTimestampRange</code> value is specified, the <code>EndTimestamp</code>
-     * value is required.</p> <note> <p>This value is inclusive. The
-     * <code>EndTimestamp</code> is compared to the (starting) timestamp of the
-     * fragment. Fragments that start before the <code>EndTimestamp</code> value and
-     * continue past it are included in the session.</p> </note>
+     * <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p> <p>The
+     * <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but
+     * optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is
+     * not set for <code>LIVE_REPLAY</code> mode then the session will continue to
+     * include newly ingested fragments until the session expires.</p> <note> <p>This
+     * value is inclusive. The <code>EndTimestamp</code> is compared to the (starting)
+     * timestamp of the fragment. Fragments that start before the
+     * <code>EndTimestamp</code> value and continue past it are included in the
+     * session.</p> </note>
      */
     inline HLSTimestampRange& WithEndTimestamp(const Aws::Utils::DateTime& value) { SetEndTimestamp(value); return *this;}
 
@@ -195,12 +210,15 @@ namespace Model
      * within 3 hours of the specified <code>StartTimestamp</code>, and it must be
      * later than the <code>StartTimestamp</code> value.</p> <p>If
      * <code>FragmentSelectorType</code> for the request is
-     * <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p> <p>If the
-     * <code>HLSTimestampRange</code> value is specified, the <code>EndTimestamp</code>
-     * value is required.</p> <note> <p>This value is inclusive. The
-     * <code>EndTimestamp</code> is compared to the (starting) timestamp of the
-     * fragment. Fragments that start before the <code>EndTimestamp</code> value and
-     * continue past it are included in the session.</p> </note>
+     * <code>SERVER_TIMESTAMP</code>, this value must be in the past.</p> <p>The
+     * <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but
+     * optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is
+     * not set for <code>LIVE_REPLAY</code> mode then the session will continue to
+     * include newly ingested fragments until the session expires.</p> <note> <p>This
+     * value is inclusive. The <code>EndTimestamp</code> is compared to the (starting)
+     * timestamp of the fragment. Fragments that start before the
+     * <code>EndTimestamp</code> value and continue past it are included in the
+     * session.</p> </note>
      */
     inline HLSTimestampRange& WithEndTimestamp(Aws::Utils::DateTime&& value) { SetEndTimestamp(std::move(value)); return *this;}
 

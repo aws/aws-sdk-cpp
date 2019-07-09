@@ -79,7 +79,7 @@ CreateFleetInstance& CreateFleetInstance::operator =(const XmlNode& xmlNode)
       XmlNode instanceIdsMember = instanceIdsNode.FirstChild("item");
       while(!instanceIdsMember.IsNull())
       {
-        m_instanceIds.push_back(StringUtils::Trim(instanceIdsMember.GetText().c_str()));
+        m_instanceIds.push_back(instanceIdsMember.GetText());
         instanceIdsMember = instanceIdsMember.NextNode("item");
       }
 

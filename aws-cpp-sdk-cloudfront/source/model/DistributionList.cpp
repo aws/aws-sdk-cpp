@@ -66,13 +66,13 @@ DistributionList& DistributionList::operator =(const XmlNode& xmlNode)
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
-      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+      m_marker = markerNode.GetText();
       m_markerHasBeenSet = true;
     }
     XmlNode nextMarkerNode = resultNode.FirstChild("NextMarker");
     if(!nextMarkerNode.IsNull())
     {
-      m_nextMarker = StringUtils::Trim(nextMarkerNode.GetText().c_str());
+      m_nextMarker = nextMarkerNode.GetText();
       m_nextMarkerHasBeenSet = true;
     }
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");

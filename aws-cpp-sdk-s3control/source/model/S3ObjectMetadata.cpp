@@ -76,25 +76,25 @@ S3ObjectMetadata& S3ObjectMetadata::operator =(const XmlNode& xmlNode)
     XmlNode cacheControlNode = resultNode.FirstChild("CacheControl");
     if(!cacheControlNode.IsNull())
     {
-      m_cacheControl = StringUtils::Trim(cacheControlNode.GetText().c_str());
+      m_cacheControl = cacheControlNode.GetText();
       m_cacheControlHasBeenSet = true;
     }
     XmlNode contentDispositionNode = resultNode.FirstChild("ContentDisposition");
     if(!contentDispositionNode.IsNull())
     {
-      m_contentDisposition = StringUtils::Trim(contentDispositionNode.GetText().c_str());
+      m_contentDisposition = contentDispositionNode.GetText();
       m_contentDispositionHasBeenSet = true;
     }
     XmlNode contentEncodingNode = resultNode.FirstChild("ContentEncoding");
     if(!contentEncodingNode.IsNull())
     {
-      m_contentEncoding = StringUtils::Trim(contentEncodingNode.GetText().c_str());
+      m_contentEncoding = contentEncodingNode.GetText();
       m_contentEncodingHasBeenSet = true;
     }
     XmlNode contentLanguageNode = resultNode.FirstChild("ContentLanguage");
     if(!contentLanguageNode.IsNull())
     {
-      m_contentLanguage = StringUtils::Trim(contentLanguageNode.GetText().c_str());
+      m_contentLanguage = contentLanguageNode.GetText();
       m_contentLanguageHasBeenSet = true;
     }
     XmlNode userMetadataNode = resultNode.FirstChild("UserMetadata");
@@ -106,8 +106,8 @@ S3ObjectMetadata& S3ObjectMetadata::operator =(const XmlNode& xmlNode)
       {
         XmlNode keyNode = userMetadataEntry.FirstChild("key");
         XmlNode valueNode = userMetadataEntry.FirstChild("value");
-        m_userMetadata[StringUtils::Trim(keyNode.GetText().c_str())] =
-            StringUtils::Trim(valueNode.GetText().c_str());
+        m_userMetadata[keyNode.GetText()] =
+            valueNode.GetText();
         userMetadataEntry = userMetadataEntry.NextNode("entry");
       }
 
@@ -122,13 +122,13 @@ S3ObjectMetadata& S3ObjectMetadata::operator =(const XmlNode& xmlNode)
     XmlNode contentMD5Node = resultNode.FirstChild("ContentMD5");
     if(!contentMD5Node.IsNull())
     {
-      m_contentMD5 = StringUtils::Trim(contentMD5Node.GetText().c_str());
+      m_contentMD5 = contentMD5Node.GetText();
       m_contentMD5HasBeenSet = true;
     }
     XmlNode contentTypeNode = resultNode.FirstChild("ContentType");
     if(!contentTypeNode.IsNull())
     {
-      m_contentType = StringUtils::Trim(contentTypeNode.GetText().c_str());
+      m_contentType = contentTypeNode.GetText();
       m_contentTypeHasBeenSet = true;
     }
     XmlNode httpExpiresDateNode = resultNode.FirstChild("HttpExpiresDate");

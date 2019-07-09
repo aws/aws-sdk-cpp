@@ -70,7 +70,7 @@ ManagedActionHistoryItem& ManagedActionHistoryItem::operator =(const XmlNode& xm
     XmlNode actionIdNode = resultNode.FirstChild("ActionId");
     if(!actionIdNode.IsNull())
     {
-      m_actionId = StringUtils::Trim(actionIdNode.GetText().c_str());
+      m_actionId = actionIdNode.GetText();
       m_actionIdHasBeenSet = true;
     }
     XmlNode actionTypeNode = resultNode.FirstChild("ActionType");
@@ -82,7 +82,7 @@ ManagedActionHistoryItem& ManagedActionHistoryItem::operator =(const XmlNode& xm
     XmlNode actionDescriptionNode = resultNode.FirstChild("ActionDescription");
     if(!actionDescriptionNode.IsNull())
     {
-      m_actionDescription = StringUtils::Trim(actionDescriptionNode.GetText().c_str());
+      m_actionDescription = actionDescriptionNode.GetText();
       m_actionDescriptionHasBeenSet = true;
     }
     XmlNode failureTypeNode = resultNode.FirstChild("FailureType");
@@ -100,7 +100,7 @@ ManagedActionHistoryItem& ManagedActionHistoryItem::operator =(const XmlNode& xm
     XmlNode failureDescriptionNode = resultNode.FirstChild("FailureDescription");
     if(!failureDescriptionNode.IsNull())
     {
-      m_failureDescription = StringUtils::Trim(failureDescriptionNode.GetText().c_str());
+      m_failureDescription = failureDescriptionNode.GetText();
       m_failureDescriptionHasBeenSet = true;
     }
     XmlNode executedTimeNode = resultNode.FirstChild("ExecutedTime");

@@ -57,7 +57,7 @@ GetIdentityVerificationAttributesResult& GetIdentityVerificationAttributesResult
       {
         XmlNode keyNode = verificationAttributesEntry.FirstChild("key");
         XmlNode valueNode = verificationAttributesEntry.FirstChild("value");
-        m_verificationAttributes[StringUtils::Trim(keyNode.GetText().c_str())] =
+        m_verificationAttributes[keyNode.GetText()] =
             valueNode;
         verificationAttributesEntry = verificationAttributesEntry.NextNode("entry");
       }

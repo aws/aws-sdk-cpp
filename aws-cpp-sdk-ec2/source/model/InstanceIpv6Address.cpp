@@ -50,7 +50,7 @@ InstanceIpv6Address& InstanceIpv6Address::operator =(const XmlNode& xmlNode)
     XmlNode ipv6AddressNode = resultNode.FirstChild("ipv6Address");
     if(!ipv6AddressNode.IsNull())
     {
-      m_ipv6Address = StringUtils::Trim(ipv6AddressNode.GetText().c_str());
+      m_ipv6Address = ipv6AddressNode.GetText();
       m_ipv6AddressHasBeenSet = true;
     }
   }

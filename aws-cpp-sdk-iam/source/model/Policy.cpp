@@ -76,31 +76,31 @@ Policy& Policy::operator =(const XmlNode& xmlNode)
     XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
     if(!policyNameNode.IsNull())
     {
-      m_policyName = StringUtils::Trim(policyNameNode.GetText().c_str());
+      m_policyName = policyNameNode.GetText();
       m_policyNameHasBeenSet = true;
     }
     XmlNode policyIdNode = resultNode.FirstChild("PolicyId");
     if(!policyIdNode.IsNull())
     {
-      m_policyId = StringUtils::Trim(policyIdNode.GetText().c_str());
+      m_policyId = policyIdNode.GetText();
       m_policyIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
-      m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+      m_arn = arnNode.GetText();
       m_arnHasBeenSet = true;
     }
     XmlNode pathNode = resultNode.FirstChild("Path");
     if(!pathNode.IsNull())
     {
-      m_path = StringUtils::Trim(pathNode.GetText().c_str());
+      m_path = pathNode.GetText();
       m_pathHasBeenSet = true;
     }
     XmlNode defaultVersionIdNode = resultNode.FirstChild("DefaultVersionId");
     if(!defaultVersionIdNode.IsNull())
     {
-      m_defaultVersionId = StringUtils::Trim(defaultVersionIdNode.GetText().c_str());
+      m_defaultVersionId = defaultVersionIdNode.GetText();
       m_defaultVersionIdHasBeenSet = true;
     }
     XmlNode attachmentCountNode = resultNode.FirstChild("AttachmentCount");
@@ -124,7 +124,7 @@ Policy& Policy::operator =(const XmlNode& xmlNode)
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");

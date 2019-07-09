@@ -70,37 +70,37 @@ Parameter& Parameter::operator =(const XmlNode& xmlNode)
     XmlNode parameterNameNode = resultNode.FirstChild("ParameterName");
     if(!parameterNameNode.IsNull())
     {
-      m_parameterName = StringUtils::Trim(parameterNameNode.GetText().c_str());
+      m_parameterName = parameterNameNode.GetText();
       m_parameterNameHasBeenSet = true;
     }
     XmlNode parameterValueNode = resultNode.FirstChild("ParameterValue");
     if(!parameterValueNode.IsNull())
     {
-      m_parameterValue = StringUtils::Trim(parameterValueNode.GetText().c_str());
+      m_parameterValue = parameterValueNode.GetText();
       m_parameterValueHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode sourceNode = resultNode.FirstChild("Source");
     if(!sourceNode.IsNull())
     {
-      m_source = StringUtils::Trim(sourceNode.GetText().c_str());
+      m_source = sourceNode.GetText();
       m_sourceHasBeenSet = true;
     }
     XmlNode dataTypeNode = resultNode.FirstChild("DataType");
     if(!dataTypeNode.IsNull())
     {
-      m_dataType = StringUtils::Trim(dataTypeNode.GetText().c_str());
+      m_dataType = dataTypeNode.GetText();
       m_dataTypeHasBeenSet = true;
     }
     XmlNode allowedValuesNode = resultNode.FirstChild("AllowedValues");
     if(!allowedValuesNode.IsNull())
     {
-      m_allowedValues = StringUtils::Trim(allowedValuesNode.GetText().c_str());
+      m_allowedValues = allowedValuesNode.GetText();
       m_allowedValuesHasBeenSet = true;
     }
     XmlNode applyTypeNode = resultNode.FirstChild("ApplyType");
@@ -118,7 +118,7 @@ Parameter& Parameter::operator =(const XmlNode& xmlNode)
     XmlNode minimumEngineVersionNode = resultNode.FirstChild("MinimumEngineVersion");
     if(!minimumEngineVersionNode.IsNull())
     {
-      m_minimumEngineVersion = StringUtils::Trim(minimumEngineVersionNode.GetText().c_str());
+      m_minimumEngineVersion = minimumEngineVersionNode.GetText();
       m_minimumEngineVersionHasBeenSet = true;
     }
   }

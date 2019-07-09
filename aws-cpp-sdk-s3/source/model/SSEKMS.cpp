@@ -50,7 +50,7 @@ SSEKMS& SSEKMS::operator =(const XmlNode& xmlNode)
     XmlNode keyIdNode = resultNode.FirstChild("KeyId");
     if(!keyIdNode.IsNull())
     {
-      m_keyId = StringUtils::Trim(keyIdNode.GetText().c_str());
+      m_keyId = keyIdNode.GetText();
       m_keyIdHasBeenSet = true;
     }
   }

@@ -70,13 +70,13 @@ NodeGroupMemberUpdateStatus& NodeGroupMemberUpdateStatus::operator =(const XmlNo
     XmlNode cacheClusterIdNode = resultNode.FirstChild("CacheClusterId");
     if(!cacheClusterIdNode.IsNull())
     {
-      m_cacheClusterId = StringUtils::Trim(cacheClusterIdNode.GetText().c_str());
+      m_cacheClusterId = cacheClusterIdNode.GetText();
       m_cacheClusterIdHasBeenSet = true;
     }
     XmlNode cacheNodeIdNode = resultNode.FirstChild("CacheNodeId");
     if(!cacheNodeIdNode.IsNull())
     {
-      m_cacheNodeId = StringUtils::Trim(cacheNodeIdNode.GetText().c_str());
+      m_cacheNodeId = cacheNodeIdNode.GetText();
       m_cacheNodeIdHasBeenSet = true;
     }
     XmlNode nodeUpdateStatusNode = resultNode.FirstChild("NodeUpdateStatus");

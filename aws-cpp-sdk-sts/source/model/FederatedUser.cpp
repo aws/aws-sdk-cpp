@@ -52,13 +52,13 @@ FederatedUser& FederatedUser::operator =(const XmlNode& xmlNode)
     XmlNode federatedUserIdNode = resultNode.FirstChild("FederatedUserId");
     if(!federatedUserIdNode.IsNull())
     {
-      m_federatedUserId = StringUtils::Trim(federatedUserIdNode.GetText().c_str());
+      m_federatedUserId = federatedUserIdNode.GetText();
       m_federatedUserIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
-      m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+      m_arn = arnNode.GetText();
       m_arnHasBeenSet = true;
     }
   }

@@ -96,13 +96,13 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
     XmlNode capacityReservationIdNode = resultNode.FirstChild("capacityReservationId");
     if(!capacityReservationIdNode.IsNull())
     {
-      m_capacityReservationId = StringUtils::Trim(capacityReservationIdNode.GetText().c_str());
+      m_capacityReservationId = capacityReservationIdNode.GetText();
       m_capacityReservationIdHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = StringUtils::Trim(instanceTypeNode.GetText().c_str());
+      m_instanceType = instanceTypeNode.GetText();
       m_instanceTypeHasBeenSet = true;
     }
     XmlNode instancePlatformNode = resultNode.FirstChild("instancePlatform");
@@ -114,7 +114,7 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode tenancyNode = resultNode.FirstChild("tenancy");

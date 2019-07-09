@@ -52,13 +52,13 @@ CidrAuthorizationContext& CidrAuthorizationContext::operator =(const XmlNode& xm
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
-      m_message = StringUtils::Trim(messageNode.GetText().c_str());
+      m_message = messageNode.GetText();
       m_messageHasBeenSet = true;
     }
     XmlNode signatureNode = resultNode.FirstChild("Signature");
     if(!signatureNode.IsNull())
     {
-      m_signature = StringUtils::Trim(signatureNode.GetText().c_str());
+      m_signature = signatureNode.GetText();
       m_signatureHasBeenSet = true;
     }
   }

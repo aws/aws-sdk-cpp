@@ -56,19 +56,19 @@ Credentials& Credentials::operator =(const XmlNode& xmlNode)
     XmlNode accessKeyIdNode = resultNode.FirstChild("AccessKeyId");
     if(!accessKeyIdNode.IsNull())
     {
-      m_accessKeyId = StringUtils::Trim(accessKeyIdNode.GetText().c_str());
+      m_accessKeyId = accessKeyIdNode.GetText();
       m_accessKeyIdHasBeenSet = true;
     }
     XmlNode secretAccessKeyNode = resultNode.FirstChild("SecretAccessKey");
     if(!secretAccessKeyNode.IsNull())
     {
-      m_secretAccessKey = StringUtils::Trim(secretAccessKeyNode.GetText().c_str());
+      m_secretAccessKey = secretAccessKeyNode.GetText();
       m_secretAccessKeyHasBeenSet = true;
     }
     XmlNode sessionTokenNode = resultNode.FirstChild("SessionToken");
     if(!sessionTokenNode.IsNull())
     {
-      m_sessionToken = StringUtils::Trim(sessionTokenNode.GetText().c_str());
+      m_sessionToken = sessionTokenNode.GetText();
       m_sessionTokenHasBeenSet = true;
     }
     XmlNode expirationNode = resultNode.FirstChild("Expiration");

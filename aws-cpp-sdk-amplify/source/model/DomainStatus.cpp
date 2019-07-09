@@ -35,6 +35,9 @@ namespace Aws
         static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
         static const int PENDING_DEPLOYMENT_HASH = HashingUtils::HashString("PENDING_DEPLOYMENT");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
+        static const int REQUESTING_CERTIFICATE_HASH = HashingUtils::HashString("REQUESTING_CERTIFICATE");
+        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 
 
         DomainStatus GetDomainStatusForName(const Aws::String& name)
@@ -60,6 +63,18 @@ namespace Aws
           {
             return DomainStatus::FAILED;
           }
+          else if (hashCode == CREATING_HASH)
+          {
+            return DomainStatus::CREATING;
+          }
+          else if (hashCode == REQUESTING_CERTIFICATE_HASH)
+          {
+            return DomainStatus::REQUESTING_CERTIFICATE;
+          }
+          else if (hashCode == UPDATING_HASH)
+          {
+            return DomainStatus::UPDATING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +99,12 @@ namespace Aws
             return "PENDING_DEPLOYMENT";
           case DomainStatus::FAILED:
             return "FAILED";
+          case DomainStatus::CREATING:
+            return "CREATING";
+          case DomainStatus::REQUESTING_CERTIFICATE:
+            return "REQUESTING_CERTIFICATE";
+          case DomainStatus::UPDATING:
+            return "UPDATING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

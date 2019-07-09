@@ -58,7 +58,7 @@ CheckDNSAvailabilityResult& CheckDNSAvailabilityResult::operator =(const Aws::Am
     XmlNode fullyQualifiedCNAMENode = resultNode.FirstChild("FullyQualifiedCNAME");
     if(!fullyQualifiedCNAMENode.IsNull())
     {
-      m_fullyQualifiedCNAME = StringUtils::Trim(fullyQualifiedCNAMENode.GetText().c_str());
+      m_fullyQualifiedCNAME = fullyQualifiedCNAMENode.GetText();
     }
   }
 

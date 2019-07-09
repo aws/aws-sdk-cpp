@@ -72,19 +72,19 @@ StackSet& StackSet::operator =(const XmlNode& xmlNode)
     XmlNode stackSetNameNode = resultNode.FirstChild("StackSetName");
     if(!stackSetNameNode.IsNull())
     {
-      m_stackSetName = StringUtils::Trim(stackSetNameNode.GetText().c_str());
+      m_stackSetName = stackSetNameNode.GetText();
       m_stackSetNameHasBeenSet = true;
     }
     XmlNode stackSetIdNode = resultNode.FirstChild("StackSetId");
     if(!stackSetIdNode.IsNull())
     {
-      m_stackSetId = StringUtils::Trim(stackSetIdNode.GetText().c_str());
+      m_stackSetId = stackSetIdNode.GetText();
       m_stackSetIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
@@ -96,7 +96,7 @@ StackSet& StackSet::operator =(const XmlNode& xmlNode)
     XmlNode templateBodyNode = resultNode.FirstChild("TemplateBody");
     if(!templateBodyNode.IsNull())
     {
-      m_templateBody = StringUtils::Trim(templateBodyNode.GetText().c_str());
+      m_templateBody = templateBodyNode.GetText();
       m_templateBodyHasBeenSet = true;
     }
     XmlNode parametersNode = resultNode.FirstChild("Parameters");
@@ -138,19 +138,19 @@ StackSet& StackSet::operator =(const XmlNode& xmlNode)
     XmlNode stackSetARNNode = resultNode.FirstChild("StackSetARN");
     if(!stackSetARNNode.IsNull())
     {
-      m_stackSetARN = StringUtils::Trim(stackSetARNNode.GetText().c_str());
+      m_stackSetARN = stackSetARNNode.GetText();
       m_stackSetARNHasBeenSet = true;
     }
     XmlNode administrationRoleARNNode = resultNode.FirstChild("AdministrationRoleARN");
     if(!administrationRoleARNNode.IsNull())
     {
-      m_administrationRoleARN = StringUtils::Trim(administrationRoleARNNode.GetText().c_str());
+      m_administrationRoleARN = administrationRoleARNNode.GetText();
       m_administrationRoleARNHasBeenSet = true;
     }
     XmlNode executionRoleNameNode = resultNode.FirstChild("ExecutionRoleName");
     if(!executionRoleNameNode.IsNull())
     {
-      m_executionRoleName = StringUtils::Trim(executionRoleNameNode.GetText().c_str());
+      m_executionRoleName = executionRoleNameNode.GetText();
       m_executionRoleNameHasBeenSet = true;
     }
   }

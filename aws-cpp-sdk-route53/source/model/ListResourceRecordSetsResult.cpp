@@ -64,7 +64,7 @@ ListResourceRecordSetsResult& ListResourceRecordSetsResult::operator =(const Aws
     XmlNode nextRecordNameNode = resultNode.FirstChild("NextRecordName");
     if(!nextRecordNameNode.IsNull())
     {
-      m_nextRecordName = StringUtils::Trim(nextRecordNameNode.GetText().c_str());
+      m_nextRecordName = nextRecordNameNode.GetText();
     }
     XmlNode nextRecordTypeNode = resultNode.FirstChild("NextRecordType");
     if(!nextRecordTypeNode.IsNull())
@@ -74,12 +74,12 @@ ListResourceRecordSetsResult& ListResourceRecordSetsResult::operator =(const Aws
     XmlNode nextRecordIdentifierNode = resultNode.FirstChild("NextRecordIdentifier");
     if(!nextRecordIdentifierNode.IsNull())
     {
-      m_nextRecordIdentifier = StringUtils::Trim(nextRecordIdentifierNode.GetText().c_str());
+      m_nextRecordIdentifier = nextRecordIdentifierNode.GetText();
     }
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");
     if(!maxItemsNode.IsNull())
     {
-      m_maxItems = StringUtils::Trim(maxItemsNode.GetText().c_str());
+      m_maxItems = maxItemsNode.GetText();
     }
   }
 

@@ -53,7 +53,7 @@ ParameterConstraints& ParameterConstraints::operator =(const XmlNode& xmlNode)
       XmlNode allowedValuesMember = allowedValuesNode.FirstChild("member");
       while(!allowedValuesMember.IsNull())
       {
-        m_allowedValues.push_back(StringUtils::Trim(allowedValuesMember.GetText().c_str()));
+        m_allowedValues.push_back(allowedValuesMember.GetText());
         allowedValuesMember = allowedValuesMember.NextNode("member");
       }
 

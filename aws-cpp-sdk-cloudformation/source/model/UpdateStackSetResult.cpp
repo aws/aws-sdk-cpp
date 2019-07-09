@@ -51,7 +51,7 @@ UpdateStackSetResult& UpdateStackSetResult::operator =(const Aws::AmazonWebServi
     XmlNode operationIdNode = resultNode.FirstChild("OperationId");
     if(!operationIdNode.IsNull())
     {
-      m_operationId = StringUtils::Trim(operationIdNode.GetText().c_str());
+      m_operationId = operationIdNode.GetText();
     }
   }
 

@@ -52,7 +52,7 @@ Filter& Filter::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("Value");
@@ -61,7 +61,7 @@ Filter& Filter::operator =(const XmlNode& xmlNode)
       XmlNode valuesMember = valuesNode.FirstChild("item");
       while(!valuesMember.IsNull())
       {
-        m_values.push_back(StringUtils::Trim(valuesMember.GetText().c_str()));
+        m_values.push_back(valuesMember.GetText());
         valuesMember = valuesMember.NextNode("item");
       }
 

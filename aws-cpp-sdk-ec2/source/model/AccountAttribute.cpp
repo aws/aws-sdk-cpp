@@ -52,7 +52,7 @@ AccountAttribute& AccountAttribute::operator =(const XmlNode& xmlNode)
     XmlNode attributeNameNode = resultNode.FirstChild("attributeName");
     if(!attributeNameNode.IsNull())
     {
-      m_attributeName = StringUtils::Trim(attributeNameNode.GetText().c_str());
+      m_attributeName = attributeNameNode.GetText();
       m_attributeNameHasBeenSet = true;
     }
     XmlNode attributeValuesNode = resultNode.FirstChild("attributeValueSet");

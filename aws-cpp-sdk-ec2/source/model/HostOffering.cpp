@@ -80,19 +80,19 @@ HostOffering& HostOffering::operator =(const XmlNode& xmlNode)
     XmlNode hourlyPriceNode = resultNode.FirstChild("hourlyPrice");
     if(!hourlyPriceNode.IsNull())
     {
-      m_hourlyPrice = StringUtils::Trim(hourlyPriceNode.GetText().c_str());
+      m_hourlyPrice = hourlyPriceNode.GetText();
       m_hourlyPriceHasBeenSet = true;
     }
     XmlNode instanceFamilyNode = resultNode.FirstChild("instanceFamily");
     if(!instanceFamilyNode.IsNull())
     {
-      m_instanceFamily = StringUtils::Trim(instanceFamilyNode.GetText().c_str());
+      m_instanceFamily = instanceFamilyNode.GetText();
       m_instanceFamilyHasBeenSet = true;
     }
     XmlNode offeringIdNode = resultNode.FirstChild("offeringId");
     if(!offeringIdNode.IsNull())
     {
-      m_offeringId = StringUtils::Trim(offeringIdNode.GetText().c_str());
+      m_offeringId = offeringIdNode.GetText();
       m_offeringIdHasBeenSet = true;
     }
     XmlNode paymentOptionNode = resultNode.FirstChild("paymentOption");
@@ -104,7 +104,7 @@ HostOffering& HostOffering::operator =(const XmlNode& xmlNode)
     XmlNode upfrontPriceNode = resultNode.FirstChild("upfrontPrice");
     if(!upfrontPriceNode.IsNull())
     {
-      m_upfrontPrice = StringUtils::Trim(upfrontPriceNode.GetText().c_str());
+      m_upfrontPrice = upfrontPriceNode.GetText();
       m_upfrontPriceHasBeenSet = true;
     }
   }

@@ -55,7 +55,7 @@ GetStatusResult& GetStatusResult::operator =(const Aws::AmazonWebServiceResult<X
     XmlNode jobIdNode = resultNode.FirstChild("JobId");
     if(!jobIdNode.IsNull())
     {
-      m_jobId = StringUtils::Trim(jobIdNode.GetText().c_str());
+      m_jobId = jobIdNode.GetText();
     }
     XmlNode jobTypeNode = resultNode.FirstChild("JobType");
     if(!jobTypeNode.IsNull())
@@ -65,42 +65,42 @@ GetStatusResult& GetStatusResult::operator =(const Aws::AmazonWebServiceResult<X
     XmlNode locationCodeNode = resultNode.FirstChild("LocationCode");
     if(!locationCodeNode.IsNull())
     {
-      m_locationCode = StringUtils::Trim(locationCodeNode.GetText().c_str());
+      m_locationCode = locationCodeNode.GetText();
     }
     XmlNode locationMessageNode = resultNode.FirstChild("LocationMessage");
     if(!locationMessageNode.IsNull())
     {
-      m_locationMessage = StringUtils::Trim(locationMessageNode.GetText().c_str());
+      m_locationMessage = locationMessageNode.GetText();
     }
     XmlNode progressCodeNode = resultNode.FirstChild("ProgressCode");
     if(!progressCodeNode.IsNull())
     {
-      m_progressCode = StringUtils::Trim(progressCodeNode.GetText().c_str());
+      m_progressCode = progressCodeNode.GetText();
     }
     XmlNode progressMessageNode = resultNode.FirstChild("ProgressMessage");
     if(!progressMessageNode.IsNull())
     {
-      m_progressMessage = StringUtils::Trim(progressMessageNode.GetText().c_str());
+      m_progressMessage = progressMessageNode.GetText();
     }
     XmlNode carrierNode = resultNode.FirstChild("Carrier");
     if(!carrierNode.IsNull())
     {
-      m_carrier = StringUtils::Trim(carrierNode.GetText().c_str());
+      m_carrier = carrierNode.GetText();
     }
     XmlNode trackingNumberNode = resultNode.FirstChild("TrackingNumber");
     if(!trackingNumberNode.IsNull())
     {
-      m_trackingNumber = StringUtils::Trim(trackingNumberNode.GetText().c_str());
+      m_trackingNumber = trackingNumberNode.GetText();
     }
     XmlNode logBucketNode = resultNode.FirstChild("LogBucket");
     if(!logBucketNode.IsNull())
     {
-      m_logBucket = StringUtils::Trim(logBucketNode.GetText().c_str());
+      m_logBucket = logBucketNode.GetText();
     }
     XmlNode logKeyNode = resultNode.FirstChild("LogKey");
     if(!logKeyNode.IsNull())
     {
-      m_logKey = StringUtils::Trim(logKeyNode.GetText().c_str());
+      m_logKey = logKeyNode.GetText();
     }
     XmlNode errorCountNode = resultNode.FirstChild("ErrorCount");
     if(!errorCountNode.IsNull())
@@ -110,17 +110,17 @@ GetStatusResult& GetStatusResult::operator =(const Aws::AmazonWebServiceResult<X
     XmlNode signatureNode = resultNode.FirstChild("Signature");
     if(!signatureNode.IsNull())
     {
-      m_signature = StringUtils::Trim(signatureNode.GetText().c_str());
+      m_signature = signatureNode.GetText();
     }
     XmlNode signatureFileContentsNode = resultNode.FirstChild("SignatureFileContents");
     if(!signatureFileContentsNode.IsNull())
     {
-      m_signatureFileContents = StringUtils::Trim(signatureFileContentsNode.GetText().c_str());
+      m_signatureFileContents = signatureFileContentsNode.GetText();
     }
     XmlNode currentManifestNode = resultNode.FirstChild("CurrentManifest");
     if(!currentManifestNode.IsNull())
     {
-      m_currentManifest = StringUtils::Trim(currentManifestNode.GetText().c_str());
+      m_currentManifest = currentManifestNode.GetText();
     }
     XmlNode creationDateNode = resultNode.FirstChild("CreationDate");
     if(!creationDateNode.IsNull())

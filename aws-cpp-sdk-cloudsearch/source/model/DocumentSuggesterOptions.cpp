@@ -56,7 +56,7 @@ DocumentSuggesterOptions& DocumentSuggesterOptions::operator =(const XmlNode& xm
     XmlNode sourceFieldNode = resultNode.FirstChild("SourceField");
     if(!sourceFieldNode.IsNull())
     {
-      m_sourceField = StringUtils::Trim(sourceFieldNode.GetText().c_str());
+      m_sourceField = sourceFieldNode.GetText();
       m_sourceFieldHasBeenSet = true;
     }
     XmlNode fuzzyMatchingNode = resultNode.FirstChild("FuzzyMatching");
@@ -68,7 +68,7 @@ DocumentSuggesterOptions& DocumentSuggesterOptions::operator =(const XmlNode& xm
     XmlNode sortExpressionNode = resultNode.FirstChild("SortExpression");
     if(!sortExpressionNode.IsNull())
     {
-      m_sortExpression = StringUtils::Trim(sortExpressionNode.GetText().c_str());
+      m_sortExpression = sortExpressionNode.GetText();
       m_sortExpressionHasBeenSet = true;
     }
   }

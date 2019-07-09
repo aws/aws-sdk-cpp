@@ -52,7 +52,8 @@ Branch::Branch() :
     m_thumbnailUrlHasBeenSet(false),
     m_basicAuthCredentialsHasBeenSet(false),
     m_buildSpecHasBeenSet(false),
-    m_ttlHasBeenSet(false)
+    m_ttlHasBeenSet(false),
+    m_associatedResourcesHasBeenSet(false)
 {
 }
 
@@ -80,7 +81,8 @@ Branch::Branch(JsonView jsonValue) :
     m_thumbnailUrlHasBeenSet(false),
     m_basicAuthCredentialsHasBeenSet(false),
     m_buildSpecHasBeenSet(false),
-    m_ttlHasBeenSet(false)
+    m_ttlHasBeenSet(false),
+    m_associatedResourcesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -236,6 +238,16 @@ Branch& Branch::operator =(JsonView jsonValue)
     m_ttlHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("associatedResources"))
+  {
+    Array<JsonView> associatedResourcesJsonList = jsonValue.GetArray("associatedResources");
+    for(unsigned associatedResourcesIndex = 0; associatedResourcesIndex < associatedResourcesJsonList.GetLength(); ++associatedResourcesIndex)
+    {
+      m_associatedResources.push_back(associatedResourcesJsonList[associatedResourcesIndex].AsString());
+    }
+    m_associatedResourcesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -372,6 +384,17 @@ JsonValue Branch::Jsonize() const
   if(m_ttlHasBeenSet)
   {
    payload.WithString("ttl", m_ttl);
+
+  }
+
+  if(m_associatedResourcesHasBeenSet)
+  {
+   Array<JsonValue> associatedResourcesJsonList(m_associatedResources.size());
+   for(unsigned associatedResourcesIndex = 0; associatedResourcesIndex < associatedResourcesJsonList.GetLength(); ++associatedResourcesIndex)
+   {
+     associatedResourcesJsonList[associatedResourcesIndex].AsString(m_associatedResources[associatedResourcesIndex]);
+   }
+   payload.WithArray("associatedResources", std::move(associatedResourcesJsonList));
 
   }
 

@@ -51,12 +51,12 @@ BacktrackDBClusterResult& BacktrackDBClusterResult::operator =(const Aws::Amazon
     XmlNode dBClusterIdentifierNode = resultNode.FirstChild("DBClusterIdentifier");
     if(!dBClusterIdentifierNode.IsNull())
     {
-      m_dBClusterIdentifier = StringUtils::Trim(dBClusterIdentifierNode.GetText().c_str());
+      m_dBClusterIdentifier = dBClusterIdentifierNode.GetText();
     }
     XmlNode backtrackIdentifierNode = resultNode.FirstChild("BacktrackIdentifier");
     if(!backtrackIdentifierNode.IsNull())
     {
-      m_backtrackIdentifier = StringUtils::Trim(backtrackIdentifierNode.GetText().c_str());
+      m_backtrackIdentifier = backtrackIdentifierNode.GetText();
     }
     XmlNode backtrackToNode = resultNode.FirstChild("BacktrackTo");
     if(!backtrackToNode.IsNull())
@@ -76,7 +76,7 @@ BacktrackDBClusterResult& BacktrackDBClusterResult::operator =(const Aws::Amazon
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
     }
   }
 

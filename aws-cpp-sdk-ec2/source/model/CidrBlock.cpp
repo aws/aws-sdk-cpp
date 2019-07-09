@@ -50,7 +50,7 @@ CidrBlock& CidrBlock::operator =(const XmlNode& xmlNode)
     XmlNode cidrBlockNode = resultNode.FirstChild("cidrBlock");
     if(!cidrBlockNode.IsNull())
     {
-      m_cidrBlock = StringUtils::Trim(cidrBlockNode.GetText().c_str());
+      m_cidrBlock = cidrBlockNode.GetText();
       m_cidrBlockHasBeenSet = true;
     }
   }

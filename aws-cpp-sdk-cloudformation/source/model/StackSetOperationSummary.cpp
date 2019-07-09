@@ -62,7 +62,7 @@ StackSetOperationSummary& StackSetOperationSummary::operator =(const XmlNode& xm
     XmlNode operationIdNode = resultNode.FirstChild("OperationId");
     if(!operationIdNode.IsNull())
     {
-      m_operationId = StringUtils::Trim(operationIdNode.GetText().c_str());
+      m_operationId = operationIdNode.GetText();
       m_operationIdHasBeenSet = true;
     }
     XmlNode actionNode = resultNode.FirstChild("Action");

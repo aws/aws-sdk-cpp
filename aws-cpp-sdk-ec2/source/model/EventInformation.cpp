@@ -54,19 +54,19 @@ EventInformation& EventInformation::operator =(const XmlNode& xmlNode)
     XmlNode eventDescriptionNode = resultNode.FirstChild("eventDescription");
     if(!eventDescriptionNode.IsNull())
     {
-      m_eventDescription = StringUtils::Trim(eventDescriptionNode.GetText().c_str());
+      m_eventDescription = eventDescriptionNode.GetText();
       m_eventDescriptionHasBeenSet = true;
     }
     XmlNode eventSubTypeNode = resultNode.FirstChild("eventSubType");
     if(!eventSubTypeNode.IsNull())
     {
-      m_eventSubType = StringUtils::Trim(eventSubTypeNode.GetText().c_str());
+      m_eventSubType = eventSubTypeNode.GetText();
       m_eventSubTypeHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceId = instanceIdNode.GetText();
       m_instanceIdHasBeenSet = true;
     }
   }

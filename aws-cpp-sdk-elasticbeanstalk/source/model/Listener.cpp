@@ -54,7 +54,7 @@ Listener& Listener::operator =(const XmlNode& xmlNode)
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = StringUtils::Trim(protocolNode.GetText().c_str());
+      m_protocol = protocolNode.GetText();
       m_protocolHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");

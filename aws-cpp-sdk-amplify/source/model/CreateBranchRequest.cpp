@@ -39,7 +39,8 @@ CreateBranchRequest::CreateBranchRequest() :
     m_enableBasicAuthHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_buildSpecHasBeenSet(false),
-    m_ttlHasBeenSet(false)
+    m_ttlHasBeenSet(false),
+    m_displayNameHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,12 @@ Aws::String CreateBranchRequest::SerializePayload() const
   if(m_ttlHasBeenSet)
   {
    payload.WithString("ttl", m_ttl);
+
+  }
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("displayName", m_displayName);
 
   }
 

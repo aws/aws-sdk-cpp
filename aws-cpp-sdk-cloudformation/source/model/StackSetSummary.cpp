@@ -58,19 +58,19 @@ StackSetSummary& StackSetSummary::operator =(const XmlNode& xmlNode)
     XmlNode stackSetNameNode = resultNode.FirstChild("StackSetName");
     if(!stackSetNameNode.IsNull())
     {
-      m_stackSetName = StringUtils::Trim(stackSetNameNode.GetText().c_str());
+      m_stackSetName = stackSetNameNode.GetText();
       m_stackSetNameHasBeenSet = true;
     }
     XmlNode stackSetIdNode = resultNode.FirstChild("StackSetId");
     if(!stackSetIdNode.IsNull())
     {
-      m_stackSetId = StringUtils::Trim(stackSetIdNode.GetText().c_str());
+      m_stackSetId = stackSetIdNode.GetText();
       m_stackSetIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");

@@ -116,13 +116,13 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode dBSnapshotIdentifierNode = resultNode.FirstChild("DBSnapshotIdentifier");
     if(!dBSnapshotIdentifierNode.IsNull())
     {
-      m_dBSnapshotIdentifier = StringUtils::Trim(dBSnapshotIdentifierNode.GetText().c_str());
+      m_dBSnapshotIdentifier = dBSnapshotIdentifierNode.GetText();
       m_dBSnapshotIdentifierHasBeenSet = true;
     }
     XmlNode dBInstanceIdentifierNode = resultNode.FirstChild("DBInstanceIdentifier");
     if(!dBInstanceIdentifierNode.IsNull())
     {
-      m_dBInstanceIdentifier = StringUtils::Trim(dBInstanceIdentifierNode.GetText().c_str());
+      m_dBInstanceIdentifier = dBInstanceIdentifierNode.GetText();
       m_dBInstanceIdentifierHasBeenSet = true;
     }
     XmlNode snapshotCreateTimeNode = resultNode.FirstChild("SnapshotCreateTime");
@@ -134,7 +134,7 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
     {
-      m_engine = StringUtils::Trim(engineNode.GetText().c_str());
+      m_engine = engineNode.GetText();
       m_engineHasBeenSet = true;
     }
     XmlNode allocatedStorageNode = resultNode.FirstChild("AllocatedStorage");
@@ -146,7 +146,7 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
@@ -158,13 +158,13 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
+      m_vpcId = vpcIdNode.GetText();
       m_vpcIdHasBeenSet = true;
     }
     XmlNode instanceCreateTimeNode = resultNode.FirstChild("InstanceCreateTime");
@@ -176,25 +176,25 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode masterUsernameNode = resultNode.FirstChild("MasterUsername");
     if(!masterUsernameNode.IsNull())
     {
-      m_masterUsername = StringUtils::Trim(masterUsernameNode.GetText().c_str());
+      m_masterUsername = masterUsernameNode.GetText();
       m_masterUsernameHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
-      m_engineVersion = StringUtils::Trim(engineVersionNode.GetText().c_str());
+      m_engineVersion = engineVersionNode.GetText();
       m_engineVersionHasBeenSet = true;
     }
     XmlNode licenseModelNode = resultNode.FirstChild("LicenseModel");
     if(!licenseModelNode.IsNull())
     {
-      m_licenseModel = StringUtils::Trim(licenseModelNode.GetText().c_str());
+      m_licenseModel = licenseModelNode.GetText();
       m_licenseModelHasBeenSet = true;
     }
     XmlNode snapshotTypeNode = resultNode.FirstChild("SnapshotType");
     if(!snapshotTypeNode.IsNull())
     {
-      m_snapshotType = StringUtils::Trim(snapshotTypeNode.GetText().c_str());
+      m_snapshotType = snapshotTypeNode.GetText();
       m_snapshotTypeHasBeenSet = true;
     }
     XmlNode iopsNode = resultNode.FirstChild("Iops");
@@ -206,7 +206,7 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode optionGroupNameNode = resultNode.FirstChild("OptionGroupName");
     if(!optionGroupNameNode.IsNull())
     {
-      m_optionGroupName = StringUtils::Trim(optionGroupNameNode.GetText().c_str());
+      m_optionGroupName = optionGroupNameNode.GetText();
       m_optionGroupNameHasBeenSet = true;
     }
     XmlNode percentProgressNode = resultNode.FirstChild("PercentProgress");
@@ -218,25 +218,25 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode sourceRegionNode = resultNode.FirstChild("SourceRegion");
     if(!sourceRegionNode.IsNull())
     {
-      m_sourceRegion = StringUtils::Trim(sourceRegionNode.GetText().c_str());
+      m_sourceRegion = sourceRegionNode.GetText();
       m_sourceRegionHasBeenSet = true;
     }
     XmlNode sourceDBSnapshotIdentifierNode = resultNode.FirstChild("SourceDBSnapshotIdentifier");
     if(!sourceDBSnapshotIdentifierNode.IsNull())
     {
-      m_sourceDBSnapshotIdentifier = StringUtils::Trim(sourceDBSnapshotIdentifierNode.GetText().c_str());
+      m_sourceDBSnapshotIdentifier = sourceDBSnapshotIdentifierNode.GetText();
       m_sourceDBSnapshotIdentifierHasBeenSet = true;
     }
     XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
     if(!storageTypeNode.IsNull())
     {
-      m_storageType = StringUtils::Trim(storageTypeNode.GetText().c_str());
+      m_storageType = storageTypeNode.GetText();
       m_storageTypeHasBeenSet = true;
     }
     XmlNode tdeCredentialArnNode = resultNode.FirstChild("TdeCredentialArn");
     if(!tdeCredentialArnNode.IsNull())
     {
-      m_tdeCredentialArn = StringUtils::Trim(tdeCredentialArnNode.GetText().c_str());
+      m_tdeCredentialArn = tdeCredentialArnNode.GetText();
       m_tdeCredentialArnHasBeenSet = true;
     }
     XmlNode encryptedNode = resultNode.FirstChild("Encrypted");
@@ -248,19 +248,19 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
-      m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
+      m_kmsKeyId = kmsKeyIdNode.GetText();
       m_kmsKeyIdHasBeenSet = true;
     }
     XmlNode dBSnapshotArnNode = resultNode.FirstChild("DBSnapshotArn");
     if(!dBSnapshotArnNode.IsNull())
     {
-      m_dBSnapshotArn = StringUtils::Trim(dBSnapshotArnNode.GetText().c_str());
+      m_dBSnapshotArn = dBSnapshotArnNode.GetText();
       m_dBSnapshotArnHasBeenSet = true;
     }
     XmlNode timezoneNode = resultNode.FirstChild("Timezone");
     if(!timezoneNode.IsNull())
     {
-      m_timezone = StringUtils::Trim(timezoneNode.GetText().c_str());
+      m_timezone = timezoneNode.GetText();
       m_timezoneHasBeenSet = true;
     }
     XmlNode iAMDatabaseAuthenticationEnabledNode = resultNode.FirstChild("IAMDatabaseAuthenticationEnabled");
@@ -284,7 +284,7 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode dbiResourceIdNode = resultNode.FirstChild("DbiResourceId");
     if(!dbiResourceIdNode.IsNull())
     {
-      m_dbiResourceId = StringUtils::Trim(dbiResourceIdNode.GetText().c_str());
+      m_dbiResourceId = dbiResourceIdNode.GetText();
       m_dbiResourceIdHasBeenSet = true;
     }
   }

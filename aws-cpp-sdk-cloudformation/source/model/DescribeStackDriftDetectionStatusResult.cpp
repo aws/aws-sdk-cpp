@@ -57,12 +57,12 @@ DescribeStackDriftDetectionStatusResult& DescribeStackDriftDetectionStatusResult
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
     if(!stackIdNode.IsNull())
     {
-      m_stackId = StringUtils::Trim(stackIdNode.GetText().c_str());
+      m_stackId = stackIdNode.GetText();
     }
     XmlNode stackDriftDetectionIdNode = resultNode.FirstChild("StackDriftDetectionId");
     if(!stackDriftDetectionIdNode.IsNull())
     {
-      m_stackDriftDetectionId = StringUtils::Trim(stackDriftDetectionIdNode.GetText().c_str());
+      m_stackDriftDetectionId = stackDriftDetectionIdNode.GetText();
     }
     XmlNode stackDriftStatusNode = resultNode.FirstChild("StackDriftStatus");
     if(!stackDriftStatusNode.IsNull())
@@ -77,7 +77,7 @@ DescribeStackDriftDetectionStatusResult& DescribeStackDriftDetectionStatusResult
     XmlNode detectionStatusReasonNode = resultNode.FirstChild("DetectionStatusReason");
     if(!detectionStatusReasonNode.IsNull())
     {
-      m_detectionStatusReason = StringUtils::Trim(detectionStatusReasonNode.GetText().c_str());
+      m_detectionStatusReason = detectionStatusReasonNode.GetText();
     }
     XmlNode driftedStackResourceCountNode = resultNode.FirstChild("DriftedStackResourceCount");
     if(!driftedStackResourceCountNode.IsNull())

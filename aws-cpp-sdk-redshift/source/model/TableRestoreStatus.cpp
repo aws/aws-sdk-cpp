@@ -82,7 +82,7 @@ TableRestoreStatus& TableRestoreStatus::operator =(const XmlNode& xmlNode)
     XmlNode tableRestoreRequestIdNode = resultNode.FirstChild("TableRestoreRequestId");
     if(!tableRestoreRequestIdNode.IsNull())
     {
-      m_tableRestoreRequestId = StringUtils::Trim(tableRestoreRequestIdNode.GetText().c_str());
+      m_tableRestoreRequestId = tableRestoreRequestIdNode.GetText();
       m_tableRestoreRequestIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
@@ -94,7 +94,7 @@ TableRestoreStatus& TableRestoreStatus::operator =(const XmlNode& xmlNode)
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
-      m_message = StringUtils::Trim(messageNode.GetText().c_str());
+      m_message = messageNode.GetText();
       m_messageHasBeenSet = true;
     }
     XmlNode requestTimeNode = resultNode.FirstChild("RequestTime");
@@ -118,49 +118,49 @@ TableRestoreStatus& TableRestoreStatus::operator =(const XmlNode& xmlNode)
     XmlNode clusterIdentifierNode = resultNode.FirstChild("ClusterIdentifier");
     if(!clusterIdentifierNode.IsNull())
     {
-      m_clusterIdentifier = StringUtils::Trim(clusterIdentifierNode.GetText().c_str());
+      m_clusterIdentifier = clusterIdentifierNode.GetText();
       m_clusterIdentifierHasBeenSet = true;
     }
     XmlNode snapshotIdentifierNode = resultNode.FirstChild("SnapshotIdentifier");
     if(!snapshotIdentifierNode.IsNull())
     {
-      m_snapshotIdentifier = StringUtils::Trim(snapshotIdentifierNode.GetText().c_str());
+      m_snapshotIdentifier = snapshotIdentifierNode.GetText();
       m_snapshotIdentifierHasBeenSet = true;
     }
     XmlNode sourceDatabaseNameNode = resultNode.FirstChild("SourceDatabaseName");
     if(!sourceDatabaseNameNode.IsNull())
     {
-      m_sourceDatabaseName = StringUtils::Trim(sourceDatabaseNameNode.GetText().c_str());
+      m_sourceDatabaseName = sourceDatabaseNameNode.GetText();
       m_sourceDatabaseNameHasBeenSet = true;
     }
     XmlNode sourceSchemaNameNode = resultNode.FirstChild("SourceSchemaName");
     if(!sourceSchemaNameNode.IsNull())
     {
-      m_sourceSchemaName = StringUtils::Trim(sourceSchemaNameNode.GetText().c_str());
+      m_sourceSchemaName = sourceSchemaNameNode.GetText();
       m_sourceSchemaNameHasBeenSet = true;
     }
     XmlNode sourceTableNameNode = resultNode.FirstChild("SourceTableName");
     if(!sourceTableNameNode.IsNull())
     {
-      m_sourceTableName = StringUtils::Trim(sourceTableNameNode.GetText().c_str());
+      m_sourceTableName = sourceTableNameNode.GetText();
       m_sourceTableNameHasBeenSet = true;
     }
     XmlNode targetDatabaseNameNode = resultNode.FirstChild("TargetDatabaseName");
     if(!targetDatabaseNameNode.IsNull())
     {
-      m_targetDatabaseName = StringUtils::Trim(targetDatabaseNameNode.GetText().c_str());
+      m_targetDatabaseName = targetDatabaseNameNode.GetText();
       m_targetDatabaseNameHasBeenSet = true;
     }
     XmlNode targetSchemaNameNode = resultNode.FirstChild("TargetSchemaName");
     if(!targetSchemaNameNode.IsNull())
     {
-      m_targetSchemaName = StringUtils::Trim(targetSchemaNameNode.GetText().c_str());
+      m_targetSchemaName = targetSchemaNameNode.GetText();
       m_targetSchemaNameHasBeenSet = true;
     }
     XmlNode newTableNameNode = resultNode.FirstChild("NewTableName");
     if(!newTableNameNode.IsNull())
     {
-      m_newTableName = StringUtils::Trim(newTableNameNode.GetText().c_str());
+      m_newTableName = newTableNameNode.GetText();
       m_newTableNameHasBeenSet = true;
     }
   }

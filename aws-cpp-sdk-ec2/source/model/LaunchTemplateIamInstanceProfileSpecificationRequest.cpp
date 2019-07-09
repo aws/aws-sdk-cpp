@@ -52,13 +52,13 @@ LaunchTemplateIamInstanceProfileSpecificationRequest& LaunchTemplateIamInstanceP
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
-      m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+      m_arn = arnNode.GetText();
       m_arnHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
   }

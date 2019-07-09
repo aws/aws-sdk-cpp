@@ -51,7 +51,7 @@ UpdateTerminationProtectionResult& UpdateTerminationProtectionResult::operator =
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
     if(!stackIdNode.IsNull())
     {
-      m_stackId = StringUtils::Trim(stackIdNode.GetText().c_str());
+      m_stackId = stackIdNode.GetText();
     }
   }
 

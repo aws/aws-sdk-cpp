@@ -30,7 +30,10 @@ namespace Model
     IN_PROGRESS,
     AVAILABLE,
     PENDING_DEPLOYMENT,
-    FAILED
+    FAILED,
+    CREATING,
+    REQUESTING_CERTIFICATE,
+    UPDATING
   };
 
 namespace DomainStatusMapper

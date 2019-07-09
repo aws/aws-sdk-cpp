@@ -78,7 +78,7 @@ ImportInstanceLaunchSpecification& ImportInstanceLaunchSpecification::operator =
     XmlNode additionalInfoNode = resultNode.FirstChild("additionalInfo");
     if(!additionalInfoNode.IsNull())
     {
-      m_additionalInfo = StringUtils::Trim(additionalInfoNode.GetText().c_str());
+      m_additionalInfo = additionalInfoNode.GetText();
       m_additionalInfoHasBeenSet = true;
     }
     XmlNode architectureNode = resultNode.FirstChild("architecture");
@@ -93,7 +93,7 @@ ImportInstanceLaunchSpecification& ImportInstanceLaunchSpecification::operator =
       XmlNode groupIdsMember = groupIdsNode.FirstChild("SecurityGroupId");
       while(!groupIdsMember.IsNull())
       {
-        m_groupIds.push_back(StringUtils::Trim(groupIdsMember.GetText().c_str()));
+        m_groupIds.push_back(groupIdsMember.GetText());
         groupIdsMember = groupIdsMember.NextNode("SecurityGroupId");
       }
 
@@ -105,7 +105,7 @@ ImportInstanceLaunchSpecification& ImportInstanceLaunchSpecification::operator =
       XmlNode groupNamesMember = groupNamesNode.FirstChild("SecurityGroup");
       while(!groupNamesMember.IsNull())
       {
-        m_groupNames.push_back(StringUtils::Trim(groupNamesMember.GetText().c_str()));
+        m_groupNames.push_back(groupNamesMember.GetText());
         groupNamesMember = groupNamesMember.NextNode("SecurityGroup");
       }
 
@@ -138,13 +138,13 @@ ImportInstanceLaunchSpecification& ImportInstanceLaunchSpecification::operator =
     XmlNode privateIpAddressNode = resultNode.FirstChild("privateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
-      m_privateIpAddress = StringUtils::Trim(privateIpAddressNode.GetText().c_str());
+      m_privateIpAddress = privateIpAddressNode.GetText();
       m_privateIpAddressHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
-      m_subnetId = StringUtils::Trim(subnetIdNode.GetText().c_str());
+      m_subnetId = subnetIdNode.GetText();
       m_subnetIdHasBeenSet = true;
     }
     XmlNode userDataNode = resultNode.FirstChild("userData");

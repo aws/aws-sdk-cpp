@@ -84,7 +84,7 @@ ScheduledInstance& ScheduledInstance::operator =(const XmlNode& xmlNode)
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("createDate");
@@ -96,7 +96,7 @@ ScheduledInstance& ScheduledInstance::operator =(const XmlNode& xmlNode)
     XmlNode hourlyPriceNode = resultNode.FirstChild("hourlyPrice");
     if(!hourlyPriceNode.IsNull())
     {
-      m_hourlyPrice = StringUtils::Trim(hourlyPriceNode.GetText().c_str());
+      m_hourlyPrice = hourlyPriceNode.GetText();
       m_hourlyPriceHasBeenSet = true;
     }
     XmlNode instanceCountNode = resultNode.FirstChild("instanceCount");
@@ -108,13 +108,13 @@ ScheduledInstance& ScheduledInstance::operator =(const XmlNode& xmlNode)
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = StringUtils::Trim(instanceTypeNode.GetText().c_str());
+      m_instanceType = instanceTypeNode.GetText();
       m_instanceTypeHasBeenSet = true;
     }
     XmlNode networkPlatformNode = resultNode.FirstChild("networkPlatform");
     if(!networkPlatformNode.IsNull())
     {
-      m_networkPlatform = StringUtils::Trim(networkPlatformNode.GetText().c_str());
+      m_networkPlatform = networkPlatformNode.GetText();
       m_networkPlatformHasBeenSet = true;
     }
     XmlNode nextSlotStartTimeNode = resultNode.FirstChild("nextSlotStartTime");
@@ -126,7 +126,7 @@ ScheduledInstance& ScheduledInstance::operator =(const XmlNode& xmlNode)
     XmlNode platformNode = resultNode.FirstChild("platform");
     if(!platformNode.IsNull())
     {
-      m_platform = StringUtils::Trim(platformNode.GetText().c_str());
+      m_platform = platformNode.GetText();
       m_platformHasBeenSet = true;
     }
     XmlNode previousSlotEndTimeNode = resultNode.FirstChild("previousSlotEndTime");
@@ -144,7 +144,7 @@ ScheduledInstance& ScheduledInstance::operator =(const XmlNode& xmlNode)
     XmlNode scheduledInstanceIdNode = resultNode.FirstChild("scheduledInstanceId");
     if(!scheduledInstanceIdNode.IsNull())
     {
-      m_scheduledInstanceId = StringUtils::Trim(scheduledInstanceIdNode.GetText().c_str());
+      m_scheduledInstanceId = scheduledInstanceIdNode.GetText();
       m_scheduledInstanceIdHasBeenSet = true;
     }
     XmlNode slotDurationInHoursNode = resultNode.FirstChild("slotDurationInHours");

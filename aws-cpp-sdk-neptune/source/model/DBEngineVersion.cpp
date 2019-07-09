@@ -76,31 +76,31 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
     {
-      m_engine = StringUtils::Trim(engineNode.GetText().c_str());
+      m_engine = engineNode.GetText();
       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
-      m_engineVersion = StringUtils::Trim(engineVersionNode.GetText().c_str());
+      m_engineVersion = engineVersionNode.GetText();
       m_engineVersionHasBeenSet = true;
     }
     XmlNode dBParameterGroupFamilyNode = resultNode.FirstChild("DBParameterGroupFamily");
     if(!dBParameterGroupFamilyNode.IsNull())
     {
-      m_dBParameterGroupFamily = StringUtils::Trim(dBParameterGroupFamilyNode.GetText().c_str());
+      m_dBParameterGroupFamily = dBParameterGroupFamilyNode.GetText();
       m_dBParameterGroupFamilyHasBeenSet = true;
     }
     XmlNode dBEngineDescriptionNode = resultNode.FirstChild("DBEngineDescription");
     if(!dBEngineDescriptionNode.IsNull())
     {
-      m_dBEngineDescription = StringUtils::Trim(dBEngineDescriptionNode.GetText().c_str());
+      m_dBEngineDescription = dBEngineDescriptionNode.GetText();
       m_dBEngineDescriptionHasBeenSet = true;
     }
     XmlNode dBEngineVersionDescriptionNode = resultNode.FirstChild("DBEngineVersionDescription");
     if(!dBEngineVersionDescriptionNode.IsNull())
     {
-      m_dBEngineVersionDescription = StringUtils::Trim(dBEngineVersionDescriptionNode.GetText().c_str());
+      m_dBEngineVersionDescription = dBEngineVersionDescriptionNode.GetText();
       m_dBEngineVersionDescriptionHasBeenSet = true;
     }
     XmlNode defaultCharacterSetNode = resultNode.FirstChild("DefaultCharacterSet");
@@ -151,7 +151,7 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
       XmlNode exportableLogTypesMember = exportableLogTypesNode.FirstChild("member");
       while(!exportableLogTypesMember.IsNull())
       {
-        m_exportableLogTypes.push_back(StringUtils::Trim(exportableLogTypesMember.GetText().c_str()));
+        m_exportableLogTypes.push_back(exportableLogTypesMember.GetText());
         exportableLogTypesMember = exportableLogTypesMember.NextNode("member");
       }
 

@@ -52,7 +52,7 @@ InstanceMonitoring& InstanceMonitoring::operator =(const XmlNode& xmlNode)
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceId = instanceIdNode.GetText();
       m_instanceIdHasBeenSet = true;
     }
     XmlNode monitoringNode = resultNode.FirstChild("monitoring");

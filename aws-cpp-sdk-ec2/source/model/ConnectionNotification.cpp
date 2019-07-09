@@ -66,19 +66,19 @@ ConnectionNotification& ConnectionNotification::operator =(const XmlNode& xmlNod
     XmlNode connectionNotificationIdNode = resultNode.FirstChild("connectionNotificationId");
     if(!connectionNotificationIdNode.IsNull())
     {
-      m_connectionNotificationId = StringUtils::Trim(connectionNotificationIdNode.GetText().c_str());
+      m_connectionNotificationId = connectionNotificationIdNode.GetText();
       m_connectionNotificationIdHasBeenSet = true;
     }
     XmlNode serviceIdNode = resultNode.FirstChild("serviceId");
     if(!serviceIdNode.IsNull())
     {
-      m_serviceId = StringUtils::Trim(serviceIdNode.GetText().c_str());
+      m_serviceId = serviceIdNode.GetText();
       m_serviceIdHasBeenSet = true;
     }
     XmlNode vpcEndpointIdNode = resultNode.FirstChild("vpcEndpointId");
     if(!vpcEndpointIdNode.IsNull())
     {
-      m_vpcEndpointId = StringUtils::Trim(vpcEndpointIdNode.GetText().c_str());
+      m_vpcEndpointId = vpcEndpointIdNode.GetText();
       m_vpcEndpointIdHasBeenSet = true;
     }
     XmlNode connectionNotificationTypeNode = resultNode.FirstChild("connectionNotificationType");
@@ -90,7 +90,7 @@ ConnectionNotification& ConnectionNotification::operator =(const XmlNode& xmlNod
     XmlNode connectionNotificationArnNode = resultNode.FirstChild("connectionNotificationArn");
     if(!connectionNotificationArnNode.IsNull())
     {
-      m_connectionNotificationArn = StringUtils::Trim(connectionNotificationArnNode.GetText().c_str());
+      m_connectionNotificationArn = connectionNotificationArnNode.GetText();
       m_connectionNotificationArnHasBeenSet = true;
     }
     XmlNode connectionEventsNode = resultNode.FirstChild("connectionEvents");
@@ -99,7 +99,7 @@ ConnectionNotification& ConnectionNotification::operator =(const XmlNode& xmlNod
       XmlNode connectionEventsMember = connectionEventsNode.FirstChild("item");
       while(!connectionEventsMember.IsNull())
       {
-        m_connectionEvents.push_back(StringUtils::Trim(connectionEventsMember.GetText().c_str()));
+        m_connectionEvents.push_back(connectionEventsMember.GetText());
         connectionEventsMember = connectionEventsMember.NextNode("item");
       }
 

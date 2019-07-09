@@ -54,7 +54,7 @@ ListVerifiedEmailAddressesResult& ListVerifiedEmailAddressesResult::operator =(c
       XmlNode verifiedEmailAddressesMember = verifiedEmailAddressesNode.FirstChild("member");
       while(!verifiedEmailAddressesMember.IsNull())
       {
-        m_verifiedEmailAddresses.push_back(StringUtils::Trim(verifiedEmailAddressesMember.GetText().c_str()));
+        m_verifiedEmailAddresses.push_back(verifiedEmailAddressesMember.GetText());
         verifiedEmailAddressesMember = verifiedEmailAddressesMember.NextNode("member");
       }
 

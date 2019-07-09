@@ -52,13 +52,13 @@ Tag& Tag::operator =(const XmlNode& xmlNode)
     XmlNode keyNode = resultNode.FirstChild("key");
     if(!keyNode.IsNull())
     {
-      m_key = StringUtils::Trim(keyNode.GetText().c_str());
+      m_key = keyNode.GetText();
       m_keyHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("value");
     if(!valueNode.IsNull())
     {
-      m_value = StringUtils::Trim(valueNode.GetText().c_str());
+      m_value = valueNode.GetText();
       m_valueHasBeenSet = true;
     }
   }

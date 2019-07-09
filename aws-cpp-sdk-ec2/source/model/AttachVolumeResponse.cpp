@@ -60,12 +60,12 @@ AttachVolumeResponse& AttachVolumeResponse::operator =(const Aws::AmazonWebServi
     XmlNode deviceNode = resultNode.FirstChild("device");
     if(!deviceNode.IsNull())
     {
-      m_device = StringUtils::Trim(deviceNode.GetText().c_str());
+      m_device = deviceNode.GetText();
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceId = instanceIdNode.GetText();
     }
     XmlNode stateNode = resultNode.FirstChild("status");
     if(!stateNode.IsNull())
@@ -75,7 +75,7 @@ AttachVolumeResponse& AttachVolumeResponse::operator =(const Aws::AmazonWebServi
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
     {
-      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
+      m_volumeId = volumeIdNode.GetText();
     }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
     if(!deleteOnTerminationNode.IsNull())

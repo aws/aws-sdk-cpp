@@ -52,13 +52,13 @@ ClusterIamRole& ClusterIamRole::operator =(const XmlNode& xmlNode)
     XmlNode iamRoleArnNode = resultNode.FirstChild("IamRoleArn");
     if(!iamRoleArnNode.IsNull())
     {
-      m_iamRoleArn = StringUtils::Trim(iamRoleArnNode.GetText().c_str());
+      m_iamRoleArn = iamRoleArnNode.GetText();
       m_iamRoleArnHasBeenSet = true;
     }
     XmlNode applyStatusNode = resultNode.FirstChild("ApplyStatus");
     if(!applyStatusNode.IsNull())
     {
-      m_applyStatus = StringUtils::Trim(applyStatusNode.GetText().c_str());
+      m_applyStatus = applyStatusNode.GetText();
       m_applyStatusHasBeenSet = true;
     }
   }

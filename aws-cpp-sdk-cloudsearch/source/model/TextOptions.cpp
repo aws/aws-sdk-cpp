@@ -66,13 +66,13 @@ TextOptions& TextOptions::operator =(const XmlNode& xmlNode)
     XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
     if(!defaultValueNode.IsNull())
     {
-      m_defaultValue = StringUtils::Trim(defaultValueNode.GetText().c_str());
+      m_defaultValue = defaultValueNode.GetText();
       m_defaultValueHasBeenSet = true;
     }
     XmlNode sourceFieldNode = resultNode.FirstChild("SourceField");
     if(!sourceFieldNode.IsNull())
     {
-      m_sourceField = StringUtils::Trim(sourceFieldNode.GetText().c_str());
+      m_sourceField = sourceFieldNode.GetText();
       m_sourceFieldHasBeenSet = true;
     }
     XmlNode returnEnabledNode = resultNode.FirstChild("ReturnEnabled");
@@ -96,7 +96,7 @@ TextOptions& TextOptions::operator =(const XmlNode& xmlNode)
     XmlNode analysisSchemeNode = resultNode.FirstChild("AnalysisScheme");
     if(!analysisSchemeNode.IsNull())
     {
-      m_analysisScheme = StringUtils::Trim(analysisSchemeNode.GetText().c_str());
+      m_analysisScheme = analysisSchemeNode.GetText();
       m_analysisSchemeHasBeenSet = true;
     }
   }

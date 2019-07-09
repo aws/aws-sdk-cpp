@@ -56,7 +56,7 @@ CreateSnapshotScheduleResult& CreateSnapshotScheduleResult::operator =(const Aws
       XmlNode scheduleDefinitionsMember = scheduleDefinitionsNode.FirstChild("ScheduleDefinition");
       while(!scheduleDefinitionsMember.IsNull())
       {
-        m_scheduleDefinitions.push_back(StringUtils::Trim(scheduleDefinitionsMember.GetText().c_str()));
+        m_scheduleDefinitions.push_back(scheduleDefinitionsMember.GetText());
         scheduleDefinitionsMember = scheduleDefinitionsMember.NextNode("ScheduleDefinition");
       }
 
@@ -64,12 +64,12 @@ CreateSnapshotScheduleResult& CreateSnapshotScheduleResult::operator =(const Aws
     XmlNode scheduleIdentifierNode = resultNode.FirstChild("ScheduleIdentifier");
     if(!scheduleIdentifierNode.IsNull())
     {
-      m_scheduleIdentifier = StringUtils::Trim(scheduleIdentifierNode.GetText().c_str());
+      m_scheduleIdentifier = scheduleIdentifierNode.GetText();
     }
     XmlNode scheduleDescriptionNode = resultNode.FirstChild("ScheduleDescription");
     if(!scheduleDescriptionNode.IsNull())
     {
-      m_scheduleDescription = StringUtils::Trim(scheduleDescriptionNode.GetText().c_str());
+      m_scheduleDescription = scheduleDescriptionNode.GetText();
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())

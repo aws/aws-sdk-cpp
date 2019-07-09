@@ -51,7 +51,7 @@ PutScalingPolicyResult& PutScalingPolicyResult::operator =(const Aws::AmazonWebS
     XmlNode policyARNNode = resultNode.FirstChild("PolicyARN");
     if(!policyARNNode.IsNull())
     {
-      m_policyARN = StringUtils::Trim(policyARNNode.GetText().c_str());
+      m_policyARN = policyARNNode.GetText();
     }
     XmlNode alarmsNode = resultNode.FirstChild("Alarms");
     if(!alarmsNode.IsNull())

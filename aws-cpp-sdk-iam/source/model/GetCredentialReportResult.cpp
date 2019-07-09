@@ -54,7 +54,7 @@ GetCredentialReportResult& GetCredentialReportResult::operator =(const Aws::Amaz
     XmlNode contentNode = resultNode.FirstChild("Content");
     if(!contentNode.IsNull())
     {
-      m_content = HashingUtils::Base64Decode(StringUtils::Trim(contentNode.GetText().c_str()));
+      m_content = HashingUtils::Base64Decode(contentNode.GetText());
     }
     XmlNode reportFormatNode = resultNode.FirstChild("ReportFormat");
     if(!reportFormatNode.IsNull())

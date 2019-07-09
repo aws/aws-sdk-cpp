@@ -60,7 +60,7 @@ ClientVpnEndpointStatus& ClientVpnEndpointStatus::operator =(const XmlNode& xmlN
     XmlNode messageNode = resultNode.FirstChild("message");
     if(!messageNode.IsNull())
     {
-      m_message = StringUtils::Trim(messageNode.GetText().c_str());
+      m_message = messageNode.GetText();
       m_messageHasBeenSet = true;
     }
   }

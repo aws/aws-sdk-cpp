@@ -50,7 +50,7 @@ LaunchTemplateLicenseConfigurationRequest& LaunchTemplateLicenseConfigurationReq
     XmlNode licenseConfigurationArnNode = resultNode.FirstChild("LicenseConfigurationArn");
     if(!licenseConfigurationArnNode.IsNull())
     {
-      m_licenseConfigurationArn = StringUtils::Trim(licenseConfigurationArnNode.GetText().c_str());
+      m_licenseConfigurationArn = licenseConfigurationArnNode.GetText();
       m_licenseConfigurationArnHasBeenSet = true;
     }
   }

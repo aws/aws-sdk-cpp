@@ -54,7 +54,7 @@ ListQueuesResult& ListQueuesResult::operator =(const Aws::AmazonWebServiceResult
       XmlNode queueUrlMember = queueUrlsNode;
       while(!queueUrlMember.IsNull())
       {
-        m_queueUrls.push_back(StringUtils::Trim(queueUrlMember.GetText().c_str()));
+        m_queueUrls.push_back(queueUrlMember.GetText());
         queueUrlMember = queueUrlMember.NextNode("QueueUrl");
       }
 

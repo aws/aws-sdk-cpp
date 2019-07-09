@@ -56,13 +56,13 @@ BlockDeviceMapping& BlockDeviceMapping::operator =(const XmlNode& xmlNode)
     XmlNode deviceNameNode = resultNode.FirstChild("deviceName");
     if(!deviceNameNode.IsNull())
     {
-      m_deviceName = StringUtils::Trim(deviceNameNode.GetText().c_str());
+      m_deviceName = deviceNameNode.GetText();
       m_deviceNameHasBeenSet = true;
     }
     XmlNode virtualNameNode = resultNode.FirstChild("virtualName");
     if(!virtualNameNode.IsNull())
     {
-      m_virtualName = StringUtils::Trim(virtualNameNode.GetText().c_str());
+      m_virtualName = virtualNameNode.GetText();
       m_virtualNameHasBeenSet = true;
     }
     XmlNode ebsNode = resultNode.FirstChild("ebs");
@@ -74,7 +74,7 @@ BlockDeviceMapping& BlockDeviceMapping::operator =(const XmlNode& xmlNode)
     XmlNode noDeviceNode = resultNode.FirstChild("noDevice");
     if(!noDeviceNode.IsNull())
     {
-      m_noDevice = StringUtils::Trim(noDeviceNode.GetText().c_str());
+      m_noDevice = noDeviceNode.GetText();
       m_noDeviceHasBeenSet = true;
     }
   }

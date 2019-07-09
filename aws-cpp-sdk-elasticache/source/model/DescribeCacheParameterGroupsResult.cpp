@@ -51,7 +51,7 @@ DescribeCacheParameterGroupsResult& DescribeCacheParameterGroupsResult::operator
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
-      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+      m_marker = markerNode.GetText();
     }
     XmlNode cacheParameterGroupsNode = resultNode.FirstChild("CacheParameterGroups");
     if(!cacheParameterGroupsNode.IsNull())

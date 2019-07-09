@@ -51,7 +51,7 @@ SendTemplatedEmailResult& SendTemplatedEmailResult::operator =(const Aws::Amazon
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
     if(!messageIdNode.IsNull())
     {
-      m_messageId = StringUtils::Trim(messageIdNode.GetText().c_str());
+      m_messageId = messageIdNode.GetText();
     }
   }
 

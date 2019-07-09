@@ -53,12 +53,12 @@ ApplyEnvironmentManagedActionResult& ApplyEnvironmentManagedActionResult::operat
     XmlNode actionIdNode = resultNode.FirstChild("ActionId");
     if(!actionIdNode.IsNull())
     {
-      m_actionId = StringUtils::Trim(actionIdNode.GetText().c_str());
+      m_actionId = actionIdNode.GetText();
     }
     XmlNode actionDescriptionNode = resultNode.FirstChild("ActionDescription");
     if(!actionDescriptionNode.IsNull())
     {
-      m_actionDescription = StringUtils::Trim(actionDescriptionNode.GetText().c_str());
+      m_actionDescription = actionDescriptionNode.GetText();
     }
     XmlNode actionTypeNode = resultNode.FirstChild("ActionType");
     if(!actionTypeNode.IsNull())
@@ -68,7 +68,7 @@ ApplyEnvironmentManagedActionResult& ApplyEnvironmentManagedActionResult::operat
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
     }
   }
 

@@ -62,19 +62,19 @@ HostedZone& HostedZone::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
     if(!callerReferenceNode.IsNull())
     {
-      m_callerReference = StringUtils::Trim(callerReferenceNode.GetText().c_str());
+      m_callerReference = callerReferenceNode.GetText();
       m_callerReferenceHasBeenSet = true;
     }
     XmlNode configNode = resultNode.FirstChild("Config");

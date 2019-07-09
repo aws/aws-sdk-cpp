@@ -60,19 +60,19 @@ SigningCertificate& SigningCertificate::operator =(const XmlNode& xmlNode)
     XmlNode userNameNode = resultNode.FirstChild("UserName");
     if(!userNameNode.IsNull())
     {
-      m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
+      m_userName = userNameNode.GetText();
       m_userNameHasBeenSet = true;
     }
     XmlNode certificateIdNode = resultNode.FirstChild("CertificateId");
     if(!certificateIdNode.IsNull())
     {
-      m_certificateId = StringUtils::Trim(certificateIdNode.GetText().c_str());
+      m_certificateId = certificateIdNode.GetText();
       m_certificateIdHasBeenSet = true;
     }
     XmlNode certificateBodyNode = resultNode.FirstChild("CertificateBody");
     if(!certificateBodyNode.IsNull())
     {
-      m_certificateBody = StringUtils::Trim(certificateBodyNode.GetText().c_str());
+      m_certificateBody = certificateBodyNode.GetText();
       m_certificateBodyHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");

@@ -62,7 +62,7 @@ SpotPrice& SpotPrice::operator =(const XmlNode& xmlNode)
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
@@ -80,7 +80,7 @@ SpotPrice& SpotPrice::operator =(const XmlNode& xmlNode)
     XmlNode spotPriceNode = resultNode.FirstChild("spotPrice");
     if(!spotPriceNode.IsNull())
     {
-      m_spotPrice = StringUtils::Trim(spotPriceNode.GetText().c_str());
+      m_spotPrice = spotPriceNode.GetText();
       m_spotPriceHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("timestamp");

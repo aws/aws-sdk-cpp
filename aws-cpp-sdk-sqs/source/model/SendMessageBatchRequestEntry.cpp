@@ -62,13 +62,13 @@ SendMessageBatchRequestEntry& SendMessageBatchRequestEntry::operator =(const Xml
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
     XmlNode messageBodyNode = resultNode.FirstChild("MessageBody");
     if(!messageBodyNode.IsNull())
     {
-      m_messageBody = StringUtils::Trim(messageBodyNode.GetText().c_str());
+      m_messageBody = messageBodyNode.GetText();
       m_messageBodyHasBeenSet = true;
     }
     XmlNode delaySecondsNode = resultNode.FirstChild("DelaySeconds");
@@ -85,7 +85,7 @@ SendMessageBatchRequestEntry& SendMessageBatchRequestEntry::operator =(const Xml
       {
         XmlNode keyNode = messageAttributeEntry.FirstChild("Name");
         XmlNode valueNode = messageAttributeEntry.FirstChild("Value");
-        m_messageAttributes[StringUtils::Trim(keyNode.GetText().c_str())] =
+        m_messageAttributes[keyNode.GetText()] =
             valueNode;
         messageAttributeEntry = messageAttributeEntry.NextNode("MessageAttribute");
       }
@@ -95,13 +95,13 @@ SendMessageBatchRequestEntry& SendMessageBatchRequestEntry::operator =(const Xml
     XmlNode messageDeduplicationIdNode = resultNode.FirstChild("MessageDeduplicationId");
     if(!messageDeduplicationIdNode.IsNull())
     {
-      m_messageDeduplicationId = StringUtils::Trim(messageDeduplicationIdNode.GetText().c_str());
+      m_messageDeduplicationId = messageDeduplicationIdNode.GetText();
       m_messageDeduplicationIdHasBeenSet = true;
     }
     XmlNode messageGroupIdNode = resultNode.FirstChild("MessageGroupId");
     if(!messageGroupIdNode.IsNull())
     {
-      m_messageGroupId = StringUtils::Trim(messageGroupIdNode.GetText().c_str());
+      m_messageGroupId = messageGroupIdNode.GetText();
       m_messageGroupIdHasBeenSet = true;
     }
   }

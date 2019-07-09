@@ -52,13 +52,13 @@ ScheduledInstancesPlacement& ScheduledInstancesPlacement::operator =(const XmlNo
     XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode groupNameNode = resultNode.FirstChild("GroupName");
     if(!groupNameNode.IsNull())
     {
-      m_groupName = StringUtils::Trim(groupNameNode.GetText().c_str());
+      m_groupName = groupNameNode.GetText();
       m_groupNameHasBeenSet = true;
     }
   }

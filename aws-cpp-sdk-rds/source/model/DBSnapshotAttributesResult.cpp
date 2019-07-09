@@ -52,7 +52,7 @@ DBSnapshotAttributesResult& DBSnapshotAttributesResult::operator =(const XmlNode
     XmlNode dBSnapshotIdentifierNode = resultNode.FirstChild("DBSnapshotIdentifier");
     if(!dBSnapshotIdentifierNode.IsNull())
     {
-      m_dBSnapshotIdentifier = StringUtils::Trim(dBSnapshotIdentifierNode.GetText().c_str());
+      m_dBSnapshotIdentifier = dBSnapshotIdentifierNode.GetText();
       m_dBSnapshotIdentifierHasBeenSet = true;
     }
     XmlNode dBSnapshotAttributesNode = resultNode.FirstChild("DBSnapshotAttributes");

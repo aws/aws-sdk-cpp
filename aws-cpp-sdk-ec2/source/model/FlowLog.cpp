@@ -80,43 +80,43 @@ FlowLog& FlowLog::operator =(const XmlNode& xmlNode)
     XmlNode deliverLogsErrorMessageNode = resultNode.FirstChild("deliverLogsErrorMessage");
     if(!deliverLogsErrorMessageNode.IsNull())
     {
-      m_deliverLogsErrorMessage = StringUtils::Trim(deliverLogsErrorMessageNode.GetText().c_str());
+      m_deliverLogsErrorMessage = deliverLogsErrorMessageNode.GetText();
       m_deliverLogsErrorMessageHasBeenSet = true;
     }
     XmlNode deliverLogsPermissionArnNode = resultNode.FirstChild("deliverLogsPermissionArn");
     if(!deliverLogsPermissionArnNode.IsNull())
     {
-      m_deliverLogsPermissionArn = StringUtils::Trim(deliverLogsPermissionArnNode.GetText().c_str());
+      m_deliverLogsPermissionArn = deliverLogsPermissionArnNode.GetText();
       m_deliverLogsPermissionArnHasBeenSet = true;
     }
     XmlNode deliverLogsStatusNode = resultNode.FirstChild("deliverLogsStatus");
     if(!deliverLogsStatusNode.IsNull())
     {
-      m_deliverLogsStatus = StringUtils::Trim(deliverLogsStatusNode.GetText().c_str());
+      m_deliverLogsStatus = deliverLogsStatusNode.GetText();
       m_deliverLogsStatusHasBeenSet = true;
     }
     XmlNode flowLogIdNode = resultNode.FirstChild("flowLogId");
     if(!flowLogIdNode.IsNull())
     {
-      m_flowLogId = StringUtils::Trim(flowLogIdNode.GetText().c_str());
+      m_flowLogId = flowLogIdNode.GetText();
       m_flowLogIdHasBeenSet = true;
     }
     XmlNode flowLogStatusNode = resultNode.FirstChild("flowLogStatus");
     if(!flowLogStatusNode.IsNull())
     {
-      m_flowLogStatus = StringUtils::Trim(flowLogStatusNode.GetText().c_str());
+      m_flowLogStatus = flowLogStatusNode.GetText();
       m_flowLogStatusHasBeenSet = true;
     }
     XmlNode logGroupNameNode = resultNode.FirstChild("logGroupName");
     if(!logGroupNameNode.IsNull())
     {
-      m_logGroupName = StringUtils::Trim(logGroupNameNode.GetText().c_str());
+      m_logGroupName = logGroupNameNode.GetText();
       m_logGroupNameHasBeenSet = true;
     }
     XmlNode resourceIdNode = resultNode.FirstChild("resourceId");
     if(!resourceIdNode.IsNull())
     {
-      m_resourceId = StringUtils::Trim(resourceIdNode.GetText().c_str());
+      m_resourceId = resourceIdNode.GetText();
       m_resourceIdHasBeenSet = true;
     }
     XmlNode trafficTypeNode = resultNode.FirstChild("trafficType");
@@ -134,7 +134,7 @@ FlowLog& FlowLog::operator =(const XmlNode& xmlNode)
     XmlNode logDestinationNode = resultNode.FirstChild("logDestination");
     if(!logDestinationNode.IsNull())
     {
-      m_logDestination = StringUtils::Trim(logDestinationNode.GetText().c_str());
+      m_logDestination = logDestinationNode.GetText();
       m_logDestinationHasBeenSet = true;
     }
   }

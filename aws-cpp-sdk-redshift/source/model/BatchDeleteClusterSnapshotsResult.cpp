@@ -54,7 +54,7 @@ BatchDeleteClusterSnapshotsResult& BatchDeleteClusterSnapshotsResult::operator =
       XmlNode resourcesMember = resourcesNode.FirstChild("String");
       while(!resourcesMember.IsNull())
       {
-        m_resources.push_back(StringUtils::Trim(resourcesMember.GetText().c_str()));
+        m_resources.push_back(resourcesMember.GetText());
         resourcesMember = resourcesMember.NextNode("String");
       }
 

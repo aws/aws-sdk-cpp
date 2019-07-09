@@ -44,12 +44,12 @@ ListVPCAssociationAuthorizationsResult& ListVPCAssociationAuthorizationsResult::
     XmlNode hostedZoneIdNode = resultNode.FirstChild("HostedZoneId");
     if(!hostedZoneIdNode.IsNull())
     {
-      m_hostedZoneId = StringUtils::Trim(hostedZoneIdNode.GetText().c_str());
+      m_hostedZoneId = hostedZoneIdNode.GetText();
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+      m_nextToken = nextTokenNode.GetText();
     }
     XmlNode vPCsNode = resultNode.FirstChild("VPCs");
     if(!vPCsNode.IsNull())

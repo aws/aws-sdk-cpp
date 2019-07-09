@@ -70,7 +70,7 @@ SourceBuildInformation& SourceBuildInformation::operator =(const XmlNode& xmlNod
     XmlNode sourceLocationNode = resultNode.FirstChild("SourceLocation");
     if(!sourceLocationNode.IsNull())
     {
-      m_sourceLocation = StringUtils::Trim(sourceLocationNode.GetText().c_str());
+      m_sourceLocation = sourceLocationNode.GetText();
       m_sourceLocationHasBeenSet = true;
     }
   }

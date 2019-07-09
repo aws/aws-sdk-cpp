@@ -64,7 +64,7 @@ JobReport& JobReport::operator =(const XmlNode& xmlNode)
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
     if(!bucketNode.IsNull())
     {
-      m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
+      m_bucket = bucketNode.GetText();
       m_bucketHasBeenSet = true;
     }
     XmlNode formatNode = resultNode.FirstChild("Format");
@@ -82,7 +82,7 @@ JobReport& JobReport::operator =(const XmlNode& xmlNode)
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
     if(!prefixNode.IsNull())
     {
-      m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
+      m_prefix = prefixNode.GetText();
       m_prefixHasBeenSet = true;
     }
     XmlNode reportScopeNode = resultNode.FirstChild("ReportScope");

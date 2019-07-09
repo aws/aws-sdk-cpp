@@ -62,19 +62,19 @@ NodeSnapshot& NodeSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode cacheClusterIdNode = resultNode.FirstChild("CacheClusterId");
     if(!cacheClusterIdNode.IsNull())
     {
-      m_cacheClusterId = StringUtils::Trim(cacheClusterIdNode.GetText().c_str());
+      m_cacheClusterId = cacheClusterIdNode.GetText();
       m_cacheClusterIdHasBeenSet = true;
     }
     XmlNode nodeGroupIdNode = resultNode.FirstChild("NodeGroupId");
     if(!nodeGroupIdNode.IsNull())
     {
-      m_nodeGroupId = StringUtils::Trim(nodeGroupIdNode.GetText().c_str());
+      m_nodeGroupId = nodeGroupIdNode.GetText();
       m_nodeGroupIdHasBeenSet = true;
     }
     XmlNode cacheNodeIdNode = resultNode.FirstChild("CacheNodeId");
     if(!cacheNodeIdNode.IsNull())
     {
-      m_cacheNodeId = StringUtils::Trim(cacheNodeIdNode.GetText().c_str());
+      m_cacheNodeId = cacheNodeIdNode.GetText();
       m_cacheNodeIdHasBeenSet = true;
     }
     XmlNode nodeGroupConfigurationNode = resultNode.FirstChild("NodeGroupConfiguration");
@@ -86,7 +86,7 @@ NodeSnapshot& NodeSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode cacheSizeNode = resultNode.FirstChild("CacheSize");
     if(!cacheSizeNode.IsNull())
     {
-      m_cacheSize = StringUtils::Trim(cacheSizeNode.GetText().c_str());
+      m_cacheSize = cacheSizeNode.GetText();
       m_cacheSizeHasBeenSet = true;
     }
     XmlNode cacheNodeCreateTimeNode = resultNode.FirstChild("CacheNodeCreateTime");

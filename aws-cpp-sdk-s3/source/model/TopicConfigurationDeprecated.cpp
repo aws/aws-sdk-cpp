@@ -54,7 +54,7 @@ TopicConfigurationDeprecated& TopicConfigurationDeprecated::operator =(const Xml
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
     XmlNode eventsNode = resultNode.FirstChild("Event");
@@ -72,7 +72,7 @@ TopicConfigurationDeprecated& TopicConfigurationDeprecated::operator =(const Xml
     XmlNode topicNode = resultNode.FirstChild("Topic");
     if(!topicNode.IsNull())
     {
-      m_topic = StringUtils::Trim(topicNode.GetText().c_str());
+      m_topic = topicNode.GetText();
       m_topicHasBeenSet = true;
     }
   }

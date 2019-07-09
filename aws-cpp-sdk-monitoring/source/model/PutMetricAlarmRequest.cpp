@@ -49,7 +49,8 @@ PutMetricAlarmRequest::PutMetricAlarmRequest() :
     m_treatMissingDataHasBeenSet(false),
     m_evaluateLowSampleCountPercentileHasBeenSet(false),
     m_metricsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_thresholdMetricIdHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,11 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
       item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
+  }
+
+  if(m_thresholdMetricIdHasBeenSet)
+  {
+    ss << "ThresholdMetricId=" << StringUtils::URLEncode(m_thresholdMetricId.c_str()) << "&";
   }
 
   ss << "Version=2010-08-01";

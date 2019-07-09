@@ -50,7 +50,7 @@ Topic& Topic::operator =(const XmlNode& xmlNode)
     XmlNode topicArnNode = resultNode.FirstChild("TopicArn");
     if(!topicArnNode.IsNull())
     {
-      m_topicArn = StringUtils::Trim(topicArnNode.GetText().c_str());
+      m_topicArn = topicArnNode.GetText();
       m_topicArnHasBeenSet = true;
     }
   }

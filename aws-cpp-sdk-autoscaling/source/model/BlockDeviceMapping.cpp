@@ -58,13 +58,13 @@ BlockDeviceMapping& BlockDeviceMapping::operator =(const XmlNode& xmlNode)
     XmlNode virtualNameNode = resultNode.FirstChild("VirtualName");
     if(!virtualNameNode.IsNull())
     {
-      m_virtualName = StringUtils::Trim(virtualNameNode.GetText().c_str());
+      m_virtualName = virtualNameNode.GetText();
       m_virtualNameHasBeenSet = true;
     }
     XmlNode deviceNameNode = resultNode.FirstChild("DeviceName");
     if(!deviceNameNode.IsNull())
     {
-      m_deviceName = StringUtils::Trim(deviceNameNode.GetText().c_str());
+      m_deviceName = deviceNameNode.GetText();
       m_deviceNameHasBeenSet = true;
     }
     XmlNode ebsNode = resultNode.FirstChild("Ebs");

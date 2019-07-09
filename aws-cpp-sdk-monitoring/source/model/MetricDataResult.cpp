@@ -62,13 +62,13 @@ MetricDataResult& MetricDataResult::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
     XmlNode labelNode = resultNode.FirstChild("Label");
     if(!labelNode.IsNull())
     {
-      m_label = StringUtils::Trim(labelNode.GetText().c_str());
+      m_label = labelNode.GetText();
       m_labelHasBeenSet = true;
     }
     XmlNode timestampsNode = resultNode.FirstChild("Timestamps");

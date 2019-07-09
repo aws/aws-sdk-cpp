@@ -56,7 +56,7 @@ Endpoint& Endpoint::operator =(const XmlNode& xmlNode)
     XmlNode addressNode = resultNode.FirstChild("Address");
     if(!addressNode.IsNull())
     {
-      m_address = StringUtils::Trim(addressNode.GetText().c_str());
+      m_address = addressNode.GetText();
       m_addressHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
@@ -68,7 +68,7 @@ Endpoint& Endpoint::operator =(const XmlNode& xmlNode)
     XmlNode hostedZoneIdNode = resultNode.FirstChild("HostedZoneId");
     if(!hostedZoneIdNode.IsNull())
     {
-      m_hostedZoneId = StringUtils::Trim(hostedZoneIdNode.GetText().c_str());
+      m_hostedZoneId = hostedZoneIdNode.GetText();
       m_hostedZoneIdHasBeenSet = true;
     }
   }

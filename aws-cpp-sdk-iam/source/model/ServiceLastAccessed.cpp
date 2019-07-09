@@ -60,7 +60,7 @@ ServiceLastAccessed& ServiceLastAccessed::operator =(const XmlNode& xmlNode)
     XmlNode serviceNameNode = resultNode.FirstChild("ServiceName");
     if(!serviceNameNode.IsNull())
     {
-      m_serviceName = StringUtils::Trim(serviceNameNode.GetText().c_str());
+      m_serviceName = serviceNameNode.GetText();
       m_serviceNameHasBeenSet = true;
     }
     XmlNode lastAuthenticatedNode = resultNode.FirstChild("LastAuthenticated");
@@ -72,13 +72,13 @@ ServiceLastAccessed& ServiceLastAccessed::operator =(const XmlNode& xmlNode)
     XmlNode serviceNamespaceNode = resultNode.FirstChild("ServiceNamespace");
     if(!serviceNamespaceNode.IsNull())
     {
-      m_serviceNamespace = StringUtils::Trim(serviceNamespaceNode.GetText().c_str());
+      m_serviceNamespace = serviceNamespaceNode.GetText();
       m_serviceNamespaceHasBeenSet = true;
     }
     XmlNode lastAuthenticatedEntityNode = resultNode.FirstChild("LastAuthenticatedEntity");
     if(!lastAuthenticatedEntityNode.IsNull())
     {
-      m_lastAuthenticatedEntity = StringUtils::Trim(lastAuthenticatedEntityNode.GetText().c_str());
+      m_lastAuthenticatedEntity = lastAuthenticatedEntityNode.GetText();
       m_lastAuthenticatedEntityHasBeenSet = true;
     }
     XmlNode totalAuthenticatedEntitiesNode = resultNode.FirstChild("TotalAuthenticatedEntities");

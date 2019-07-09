@@ -54,13 +54,13 @@ DelegationSet& DelegationSet::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
     if(!callerReferenceNode.IsNull())
     {
-      m_callerReference = StringUtils::Trim(callerReferenceNode.GetText().c_str());
+      m_callerReference = callerReferenceNode.GetText();
       m_callerReferenceHasBeenSet = true;
     }
     XmlNode nameServersNode = resultNode.FirstChild("NameServers");
@@ -69,7 +69,7 @@ DelegationSet& DelegationSet::operator =(const XmlNode& xmlNode)
       XmlNode nameServersMember = nameServersNode.FirstChild("NameServer");
       while(!nameServersMember.IsNull())
       {
-        m_nameServers.push_back(StringUtils::Trim(nameServersMember.GetText().c_str()));
+        m_nameServers.push_back(nameServersMember.GetText());
         nameServersMember = nameServersMember.NextNode("NameServer");
       }
 

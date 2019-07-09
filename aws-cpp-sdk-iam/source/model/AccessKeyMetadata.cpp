@@ -58,13 +58,13 @@ AccessKeyMetadata& AccessKeyMetadata::operator =(const XmlNode& xmlNode)
     XmlNode userNameNode = resultNode.FirstChild("UserName");
     if(!userNameNode.IsNull())
     {
-      m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
+      m_userName = userNameNode.GetText();
       m_userNameHasBeenSet = true;
     }
     XmlNode accessKeyIdNode = resultNode.FirstChild("AccessKeyId");
     if(!accessKeyIdNode.IsNull())
     {
-      m_accessKeyId = StringUtils::Trim(accessKeyIdNode.GetText().c_str());
+      m_accessKeyId = accessKeyIdNode.GetText();
       m_accessKeyIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");

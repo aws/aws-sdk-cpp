@@ -51,7 +51,7 @@ DescribeDBClustersResult& DescribeDBClustersResult::operator =(const Aws::Amazon
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
-      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+      m_marker = markerNode.GetText();
     }
     XmlNode dBClustersNode = resultNode.FirstChild("DBClusters");
     if(!dBClustersNode.IsNull())

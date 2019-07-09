@@ -51,12 +51,12 @@ ListBucketMetricsConfigurationsResult& ListBucketMetricsConfigurationsResult::op
     XmlNode continuationTokenNode = resultNode.FirstChild("ContinuationToken");
     if(!continuationTokenNode.IsNull())
     {
-      m_continuationToken = StringUtils::Trim(continuationTokenNode.GetText().c_str());
+      m_continuationToken = continuationTokenNode.GetText();
     }
     XmlNode nextContinuationTokenNode = resultNode.FirstChild("NextContinuationToken");
     if(!nextContinuationTokenNode.IsNull())
     {
-      m_nextContinuationToken = StringUtils::Trim(nextContinuationTokenNode.GetText().c_str());
+      m_nextContinuationToken = nextContinuationTokenNode.GetText();
     }
     XmlNode metricsConfigurationListNode = resultNode.FirstChild("MetricsConfiguration");
     if(!metricsConfigurationListNode.IsNull())

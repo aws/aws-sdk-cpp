@@ -50,7 +50,7 @@ Ipv6CidrBlock& Ipv6CidrBlock::operator =(const XmlNode& xmlNode)
     XmlNode ipv6CidrBlockNode = resultNode.FirstChild("ipv6CidrBlock");
     if(!ipv6CidrBlockNode.IsNull())
     {
-      m_ipv6CidrBlock = StringUtils::Trim(ipv6CidrBlockNode.GetText().c_str());
+      m_ipv6CidrBlock = ipv6CidrBlockNode.GetText();
       m_ipv6CidrBlockHasBeenSet = true;
     }
   }

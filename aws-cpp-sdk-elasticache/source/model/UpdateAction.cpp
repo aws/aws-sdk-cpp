@@ -86,13 +86,13 @@ UpdateAction& UpdateAction::operator =(const XmlNode& xmlNode)
     XmlNode replicationGroupIdNode = resultNode.FirstChild("ReplicationGroupId");
     if(!replicationGroupIdNode.IsNull())
     {
-      m_replicationGroupId = StringUtils::Trim(replicationGroupIdNode.GetText().c_str());
+      m_replicationGroupId = replicationGroupIdNode.GetText();
       m_replicationGroupIdHasBeenSet = true;
     }
     XmlNode serviceUpdateNameNode = resultNode.FirstChild("ServiceUpdateName");
     if(!serviceUpdateNameNode.IsNull())
     {
-      m_serviceUpdateName = StringUtils::Trim(serviceUpdateNameNode.GetText().c_str());
+      m_serviceUpdateName = serviceUpdateNameNode.GetText();
       m_serviceUpdateNameHasBeenSet = true;
     }
     XmlNode serviceUpdateReleaseDateNode = resultNode.FirstChild("ServiceUpdateReleaseDate");
@@ -140,7 +140,7 @@ UpdateAction& UpdateAction::operator =(const XmlNode& xmlNode)
     XmlNode nodesUpdatedNode = resultNode.FirstChild("NodesUpdated");
     if(!nodesUpdatedNode.IsNull())
     {
-      m_nodesUpdated = StringUtils::Trim(nodesUpdatedNode.GetText().c_str());
+      m_nodesUpdated = nodesUpdatedNode.GetText();
       m_nodesUpdatedHasBeenSet = true;
     }
     XmlNode updateActionStatusModifiedDateNode = resultNode.FirstChild("UpdateActionStatusModifiedDate");
@@ -170,7 +170,7 @@ UpdateAction& UpdateAction::operator =(const XmlNode& xmlNode)
     XmlNode estimatedUpdateTimeNode = resultNode.FirstChild("EstimatedUpdateTime");
     if(!estimatedUpdateTimeNode.IsNull())
     {
-      m_estimatedUpdateTime = StringUtils::Trim(estimatedUpdateTimeNode.GetText().c_str());
+      m_estimatedUpdateTime = estimatedUpdateTimeNode.GetText();
       m_estimatedUpdateTimeHasBeenSet = true;
     }
   }

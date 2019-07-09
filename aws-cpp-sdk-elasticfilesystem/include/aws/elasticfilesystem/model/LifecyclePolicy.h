@@ -49,62 +49,44 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates how long it takes to transition files to the IA
-     * storage class. Currently, the only valid value is
-     * <code>AFTER_30_DAYS</code>.</p> <p> <code>AFTER_30_DAYS</code> indicates files
-     * that have not been read from or written to for 30 days are transitioned from the
-     * Standard storage class to the IA storage class. Metadata operations such as
-     * listing the contents of a directory don't count as a file access event.</p>
+     * <p> A value that describes the period of time that a file is not accessed, after
+     * which it transitions to the IA storage class. Metadata operations such as
+     * listing the contents of a directory don't count as file access events.</p>
      */
     inline const TransitionToIARules& GetTransitionToIA() const{ return m_transitionToIA; }
 
     /**
-     * <p>A value that indicates how long it takes to transition files to the IA
-     * storage class. Currently, the only valid value is
-     * <code>AFTER_30_DAYS</code>.</p> <p> <code>AFTER_30_DAYS</code> indicates files
-     * that have not been read from or written to for 30 days are transitioned from the
-     * Standard storage class to the IA storage class. Metadata operations such as
-     * listing the contents of a directory don't count as a file access event.</p>
+     * <p> A value that describes the period of time that a file is not accessed, after
+     * which it transitions to the IA storage class. Metadata operations such as
+     * listing the contents of a directory don't count as file access events.</p>
      */
     inline bool TransitionToIAHasBeenSet() const { return m_transitionToIAHasBeenSet; }
 
     /**
-     * <p>A value that indicates how long it takes to transition files to the IA
-     * storage class. Currently, the only valid value is
-     * <code>AFTER_30_DAYS</code>.</p> <p> <code>AFTER_30_DAYS</code> indicates files
-     * that have not been read from or written to for 30 days are transitioned from the
-     * Standard storage class to the IA storage class. Metadata operations such as
-     * listing the contents of a directory don't count as a file access event.</p>
+     * <p> A value that describes the period of time that a file is not accessed, after
+     * which it transitions to the IA storage class. Metadata operations such as
+     * listing the contents of a directory don't count as file access events.</p>
      */
     inline void SetTransitionToIA(const TransitionToIARules& value) { m_transitionToIAHasBeenSet = true; m_transitionToIA = value; }
 
     /**
-     * <p>A value that indicates how long it takes to transition files to the IA
-     * storage class. Currently, the only valid value is
-     * <code>AFTER_30_DAYS</code>.</p> <p> <code>AFTER_30_DAYS</code> indicates files
-     * that have not been read from or written to for 30 days are transitioned from the
-     * Standard storage class to the IA storage class. Metadata operations such as
-     * listing the contents of a directory don't count as a file access event.</p>
+     * <p> A value that describes the period of time that a file is not accessed, after
+     * which it transitions to the IA storage class. Metadata operations such as
+     * listing the contents of a directory don't count as file access events.</p>
      */
     inline void SetTransitionToIA(TransitionToIARules&& value) { m_transitionToIAHasBeenSet = true; m_transitionToIA = std::move(value); }
 
     /**
-     * <p>A value that indicates how long it takes to transition files to the IA
-     * storage class. Currently, the only valid value is
-     * <code>AFTER_30_DAYS</code>.</p> <p> <code>AFTER_30_DAYS</code> indicates files
-     * that have not been read from or written to for 30 days are transitioned from the
-     * Standard storage class to the IA storage class. Metadata operations such as
-     * listing the contents of a directory don't count as a file access event.</p>
+     * <p> A value that describes the period of time that a file is not accessed, after
+     * which it transitions to the IA storage class. Metadata operations such as
+     * listing the contents of a directory don't count as file access events.</p>
      */
     inline LifecyclePolicy& WithTransitionToIA(const TransitionToIARules& value) { SetTransitionToIA(value); return *this;}
 
     /**
-     * <p>A value that indicates how long it takes to transition files to the IA
-     * storage class. Currently, the only valid value is
-     * <code>AFTER_30_DAYS</code>.</p> <p> <code>AFTER_30_DAYS</code> indicates files
-     * that have not been read from or written to for 30 days are transitioned from the
-     * Standard storage class to the IA storage class. Metadata operations such as
-     * listing the contents of a directory don't count as a file access event.</p>
+     * <p> A value that describes the period of time that a file is not accessed, after
+     * which it transitions to the IA storage class. Metadata operations such as
+     * listing the contents of a directory don't count as file access events.</p>
      */
     inline LifecyclePolicy& WithTransitionToIA(TransitionToIARules&& value) { SetTransitionToIA(std::move(value)); return *this;}
 

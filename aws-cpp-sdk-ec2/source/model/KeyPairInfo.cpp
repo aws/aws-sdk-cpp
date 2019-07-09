@@ -52,13 +52,13 @@ KeyPairInfo& KeyPairInfo::operator =(const XmlNode& xmlNode)
     XmlNode keyFingerprintNode = resultNode.FirstChild("keyFingerprint");
     if(!keyFingerprintNode.IsNull())
     {
-      m_keyFingerprint = StringUtils::Trim(keyFingerprintNode.GetText().c_str());
+      m_keyFingerprint = keyFingerprintNode.GetText();
       m_keyFingerprintHasBeenSet = true;
     }
     XmlNode keyNameNode = resultNode.FirstChild("keyName");
     if(!keyNameNode.IsNull())
     {
-      m_keyName = StringUtils::Trim(keyNameNode.GetText().c_str());
+      m_keyName = keyNameNode.GetText();
       m_keyNameHasBeenSet = true;
     }
   }

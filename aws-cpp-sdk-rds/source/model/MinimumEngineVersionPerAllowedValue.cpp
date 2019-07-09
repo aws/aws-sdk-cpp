@@ -52,13 +52,13 @@ MinimumEngineVersionPerAllowedValue& MinimumEngineVersionPerAllowedValue::operat
     XmlNode allowedValueNode = resultNode.FirstChild("AllowedValue");
     if(!allowedValueNode.IsNull())
     {
-      m_allowedValue = StringUtils::Trim(allowedValueNode.GetText().c_str());
+      m_allowedValue = allowedValueNode.GetText();
       m_allowedValueHasBeenSet = true;
     }
     XmlNode minimumEngineVersionNode = resultNode.FirstChild("MinimumEngineVersion");
     if(!minimumEngineVersionNode.IsNull())
     {
-      m_minimumEngineVersion = StringUtils::Trim(minimumEngineVersionNode.GetText().c_str());
+      m_minimumEngineVersion = minimumEngineVersionNode.GetText();
       m_minimumEngineVersionHasBeenSet = true;
     }
   }

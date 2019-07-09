@@ -68,17 +68,17 @@ ListObjectsV2Result& ListObjectsV2Result::operator =(const Aws::AmazonWebService
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
     if(!prefixNode.IsNull())
     {
-      m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
+      m_prefix = prefixNode.GetText();
     }
     XmlNode delimiterNode = resultNode.FirstChild("Delimiter");
     if(!delimiterNode.IsNull())
     {
-      m_delimiter = StringUtils::Trim(delimiterNode.GetText().c_str());
+      m_delimiter = delimiterNode.GetText();
     }
     XmlNode maxKeysNode = resultNode.FirstChild("MaxKeys");
     if(!maxKeysNode.IsNull())
@@ -109,17 +109,17 @@ ListObjectsV2Result& ListObjectsV2Result::operator =(const Aws::AmazonWebService
     XmlNode continuationTokenNode = resultNode.FirstChild("ContinuationToken");
     if(!continuationTokenNode.IsNull())
     {
-      m_continuationToken = StringUtils::Trim(continuationTokenNode.GetText().c_str());
+      m_continuationToken = continuationTokenNode.GetText();
     }
     XmlNode nextContinuationTokenNode = resultNode.FirstChild("NextContinuationToken");
     if(!nextContinuationTokenNode.IsNull())
     {
-      m_nextContinuationToken = StringUtils::Trim(nextContinuationTokenNode.GetText().c_str());
+      m_nextContinuationToken = nextContinuationTokenNode.GetText();
     }
     XmlNode startAfterNode = resultNode.FirstChild("StartAfter");
     if(!startAfterNode.IsNull())
     {
-      m_startAfter = StringUtils::Trim(startAfterNode.GetText().c_str());
+      m_startAfter = startAfterNode.GetText();
     }
   }
 

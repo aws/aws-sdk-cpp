@@ -60,7 +60,7 @@ SpotDatafeedSubscription& SpotDatafeedSubscription::operator =(const XmlNode& xm
     XmlNode bucketNode = resultNode.FirstChild("bucket");
     if(!bucketNode.IsNull())
     {
-      m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
+      m_bucket = bucketNode.GetText();
       m_bucketHasBeenSet = true;
     }
     XmlNode faultNode = resultNode.FirstChild("fault");
@@ -72,13 +72,13 @@ SpotDatafeedSubscription& SpotDatafeedSubscription::operator =(const XmlNode& xm
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
-      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerId = ownerIdNode.GetText();
       m_ownerIdHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("prefix");
     if(!prefixNode.IsNull())
     {
-      m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
+      m_prefix = prefixNode.GetText();
       m_prefixHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");

@@ -66,13 +66,13 @@ Listener& Listener::operator =(const XmlNode& xmlNode)
     XmlNode listenerArnNode = resultNode.FirstChild("ListenerArn");
     if(!listenerArnNode.IsNull())
     {
-      m_listenerArn = StringUtils::Trim(listenerArnNode.GetText().c_str());
+      m_listenerArn = listenerArnNode.GetText();
       m_listenerArnHasBeenSet = true;
     }
     XmlNode loadBalancerArnNode = resultNode.FirstChild("LoadBalancerArn");
     if(!loadBalancerArnNode.IsNull())
     {
-      m_loadBalancerArn = StringUtils::Trim(loadBalancerArnNode.GetText().c_str());
+      m_loadBalancerArn = loadBalancerArnNode.GetText();
       m_loadBalancerArnHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
@@ -102,7 +102,7 @@ Listener& Listener::operator =(const XmlNode& xmlNode)
     XmlNode sslPolicyNode = resultNode.FirstChild("SslPolicy");
     if(!sslPolicyNode.IsNull())
     {
-      m_sslPolicy = StringUtils::Trim(sslPolicyNode.GetText().c_str());
+      m_sslPolicy = sslPolicyNode.GetText();
       m_sslPolicyHasBeenSet = true;
     }
     XmlNode defaultActionsNode = resultNode.FirstChild("DefaultActions");

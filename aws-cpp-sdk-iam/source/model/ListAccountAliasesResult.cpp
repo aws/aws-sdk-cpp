@@ -56,7 +56,7 @@ ListAccountAliasesResult& ListAccountAliasesResult::operator =(const Aws::Amazon
       XmlNode accountAliasesMember = accountAliasesNode.FirstChild("member");
       while(!accountAliasesMember.IsNull())
       {
-        m_accountAliases.push_back(StringUtils::Trim(accountAliasesMember.GetText().c_str()));
+        m_accountAliases.push_back(accountAliasesMember.GetText());
         accountAliasesMember = accountAliasesMember.NextNode("member");
       }
 
@@ -69,7 +69,7 @@ ListAccountAliasesResult& ListAccountAliasesResult::operator =(const Aws::Amazon
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
-      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+      m_marker = markerNode.GetText();
     }
   }
 

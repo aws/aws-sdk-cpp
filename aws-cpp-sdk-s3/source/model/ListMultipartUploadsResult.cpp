@@ -50,37 +50,37 @@ ListMultipartUploadsResult& ListMultipartUploadsResult::operator =(const Aws::Am
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
     if(!bucketNode.IsNull())
     {
-      m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
+      m_bucket = bucketNode.GetText();
     }
     XmlNode keyMarkerNode = resultNode.FirstChild("KeyMarker");
     if(!keyMarkerNode.IsNull())
     {
-      m_keyMarker = StringUtils::Trim(keyMarkerNode.GetText().c_str());
+      m_keyMarker = keyMarkerNode.GetText();
     }
     XmlNode uploadIdMarkerNode = resultNode.FirstChild("UploadIdMarker");
     if(!uploadIdMarkerNode.IsNull())
     {
-      m_uploadIdMarker = StringUtils::Trim(uploadIdMarkerNode.GetText().c_str());
+      m_uploadIdMarker = uploadIdMarkerNode.GetText();
     }
     XmlNode nextKeyMarkerNode = resultNode.FirstChild("NextKeyMarker");
     if(!nextKeyMarkerNode.IsNull())
     {
-      m_nextKeyMarker = StringUtils::Trim(nextKeyMarkerNode.GetText().c_str());
+      m_nextKeyMarker = nextKeyMarkerNode.GetText();
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
     if(!prefixNode.IsNull())
     {
-      m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
+      m_prefix = prefixNode.GetText();
     }
     XmlNode delimiterNode = resultNode.FirstChild("Delimiter");
     if(!delimiterNode.IsNull())
     {
-      m_delimiter = StringUtils::Trim(delimiterNode.GetText().c_str());
+      m_delimiter = delimiterNode.GetText();
     }
     XmlNode nextUploadIdMarkerNode = resultNode.FirstChild("NextUploadIdMarker");
     if(!nextUploadIdMarkerNode.IsNull())
     {
-      m_nextUploadIdMarker = StringUtils::Trim(nextUploadIdMarkerNode.GetText().c_str());
+      m_nextUploadIdMarker = nextUploadIdMarkerNode.GetText();
     }
     XmlNode maxUploadsNode = resultNode.FirstChild("MaxUploads");
     if(!maxUploadsNode.IsNull())

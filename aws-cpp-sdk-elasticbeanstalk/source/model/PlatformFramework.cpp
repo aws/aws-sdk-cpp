@@ -52,13 +52,13 @@ PlatformFramework& PlatformFramework::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
     XmlNode versionNode = resultNode.FirstChild("Version");
     if(!versionNode.IsNull())
     {
-      m_version = StringUtils::Trim(versionNode.GetText().c_str());
+      m_version = versionNode.GetText();
       m_versionHasBeenSet = true;
     }
   }

@@ -62,7 +62,7 @@ VpcPeeringConnectionVpcInfo& VpcPeeringConnectionVpcInfo::operator =(const XmlNo
     XmlNode cidrBlockNode = resultNode.FirstChild("cidrBlock");
     if(!cidrBlockNode.IsNull())
     {
-      m_cidrBlock = StringUtils::Trim(cidrBlockNode.GetText().c_str());
+      m_cidrBlock = cidrBlockNode.GetText();
       m_cidrBlockHasBeenSet = true;
     }
     XmlNode ipv6CidrBlockSetNode = resultNode.FirstChild("ipv6CidrBlockSet");
@@ -92,7 +92,7 @@ VpcPeeringConnectionVpcInfo& VpcPeeringConnectionVpcInfo::operator =(const XmlNo
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
-      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerId = ownerIdNode.GetText();
       m_ownerIdHasBeenSet = true;
     }
     XmlNode peeringOptionsNode = resultNode.FirstChild("peeringOptions");
@@ -104,13 +104,13 @@ VpcPeeringConnectionVpcInfo& VpcPeeringConnectionVpcInfo::operator =(const XmlNo
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
+      m_vpcId = vpcIdNode.GetText();
       m_vpcIdHasBeenSet = true;
     }
     XmlNode regionNode = resultNode.FirstChild("region");
     if(!regionNode.IsNull())
     {
-      m_region = StringUtils::Trim(regionNode.GetText().c_str());
+      m_region = regionNode.GetText();
       m_regionHasBeenSet = true;
     }
   }

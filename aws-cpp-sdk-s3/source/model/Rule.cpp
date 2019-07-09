@@ -72,13 +72,13 @@ Rule& Rule::operator =(const XmlNode& xmlNode)
     XmlNode iDNode = resultNode.FirstChild("ID");
     if(!iDNode.IsNull())
     {
-      m_iD = StringUtils::Trim(iDNode.GetText().c_str());
+      m_iD = iDNode.GetText();
       m_iDHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
     if(!prefixNode.IsNull())
     {
-      m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
+      m_prefix = prefixNode.GetText();
       m_prefixHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");

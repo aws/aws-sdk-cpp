@@ -90,7 +90,7 @@ DistributionConfig& DistributionConfig::operator =(const XmlNode& xmlNode)
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
     if(!callerReferenceNode.IsNull())
     {
-      m_callerReference = StringUtils::Trim(callerReferenceNode.GetText().c_str());
+      m_callerReference = callerReferenceNode.GetText();
       m_callerReferenceHasBeenSet = true;
     }
     XmlNode aliasesNode = resultNode.FirstChild("Aliases");
@@ -102,7 +102,7 @@ DistributionConfig& DistributionConfig::operator =(const XmlNode& xmlNode)
     XmlNode defaultRootObjectNode = resultNode.FirstChild("DefaultRootObject");
     if(!defaultRootObjectNode.IsNull())
     {
-      m_defaultRootObject = StringUtils::Trim(defaultRootObjectNode.GetText().c_str());
+      m_defaultRootObject = defaultRootObjectNode.GetText();
       m_defaultRootObjectHasBeenSet = true;
     }
     XmlNode originsNode = resultNode.FirstChild("Origins");
@@ -138,7 +138,7 @@ DistributionConfig& DistributionConfig::operator =(const XmlNode& xmlNode)
     XmlNode commentNode = resultNode.FirstChild("Comment");
     if(!commentNode.IsNull())
     {
-      m_comment = StringUtils::Trim(commentNode.GetText().c_str());
+      m_comment = commentNode.GetText();
       m_commentHasBeenSet = true;
     }
     XmlNode loggingNode = resultNode.FirstChild("Logging");
@@ -174,7 +174,7 @@ DistributionConfig& DistributionConfig::operator =(const XmlNode& xmlNode)
     XmlNode webACLIdNode = resultNode.FirstChild("WebACLId");
     if(!webACLIdNode.IsNull())
     {
-      m_webACLId = StringUtils::Trim(webACLIdNode.GetText().c_str());
+      m_webACLId = webACLIdNode.GetText();
       m_webACLIdHasBeenSet = true;
     }
     XmlNode httpVersionNode = resultNode.FirstChild("HttpVersion");

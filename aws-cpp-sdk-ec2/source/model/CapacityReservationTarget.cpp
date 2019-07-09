@@ -50,7 +50,7 @@ CapacityReservationTarget& CapacityReservationTarget::operator =(const XmlNode& 
     XmlNode capacityReservationIdNode = resultNode.FirstChild("CapacityReservationId");
     if(!capacityReservationIdNode.IsNull())
     {
-      m_capacityReservationId = StringUtils::Trim(capacityReservationIdNode.GetText().c_str());
+      m_capacityReservationId = capacityReservationIdNode.GetText();
       m_capacityReservationIdHasBeenSet = true;
     }
   }

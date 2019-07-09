@@ -50,7 +50,7 @@ TrackingOptions& TrackingOptions::operator =(const XmlNode& xmlNode)
     XmlNode customRedirectDomainNode = resultNode.FirstChild("CustomRedirectDomain");
     if(!customRedirectDomainNode.IsNull())
     {
-      m_customRedirectDomain = StringUtils::Trim(customRedirectDomainNode.GetText().c_str());
+      m_customRedirectDomain = customRedirectDomainNode.GetText();
       m_customRedirectDomainHasBeenSet = true;
     }
   }

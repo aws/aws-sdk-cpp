@@ -58,7 +58,7 @@ BatchResultErrorEntry& BatchResultErrorEntry::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
     XmlNode senderFaultNode = resultNode.FirstChild("SenderFault");
@@ -70,13 +70,13 @@ BatchResultErrorEntry& BatchResultErrorEntry::operator =(const XmlNode& xmlNode)
     XmlNode codeNode = resultNode.FirstChild("Code");
     if(!codeNode.IsNull())
     {
-      m_code = StringUtils::Trim(codeNode.GetText().c_str());
+      m_code = codeNode.GetText();
       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
-      m_message = StringUtils::Trim(messageNode.GetText().c_str());
+      m_message = messageNode.GetText();
       m_messageHasBeenSet = true;
     }
   }

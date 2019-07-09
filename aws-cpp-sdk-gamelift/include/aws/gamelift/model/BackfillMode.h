@@ -14,28 +14,28 @@
 */
 
 #pragma once
-#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
+#include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace KinesisVideoArchivedMedia
+namespace GameLift
 {
 namespace Model
 {
-  enum class PlaybackMode
+  enum class BackfillMode
   {
     NOT_SET,
-    LIVE,
-    ON_DEMAND
+    AUTOMATIC,
+    MANUAL
   };
 
-namespace PlaybackModeMapper
+namespace BackfillModeMapper
 {
-AWS_KINESISVIDEOARCHIVEDMEDIA_API PlaybackMode GetPlaybackModeForName(const Aws::String& name);
+AWS_GAMELIFT_API BackfillMode GetBackfillModeForName(const Aws::String& name);
 
-AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::String GetNameForPlaybackMode(PlaybackMode value);
-} // namespace PlaybackModeMapper
+AWS_GAMELIFT_API Aws::String GetNameForBackfillMode(BackfillMode value);
+} // namespace BackfillModeMapper
 } // namespace Model
-} // namespace KinesisVideoArchivedMedia
+} // namespace GameLift
 } // namespace Aws

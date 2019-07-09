@@ -92,7 +92,7 @@ RestoreRequest& RestoreRequest::operator =(const XmlNode& xmlNode)
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode selectParametersNode = resultNode.FirstChild("SelectParameters");

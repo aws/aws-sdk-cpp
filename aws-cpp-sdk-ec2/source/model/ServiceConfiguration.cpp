@@ -88,13 +88,13 @@ ServiceConfiguration& ServiceConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode serviceIdNode = resultNode.FirstChild("serviceId");
     if(!serviceIdNode.IsNull())
     {
-      m_serviceId = StringUtils::Trim(serviceIdNode.GetText().c_str());
+      m_serviceId = serviceIdNode.GetText();
       m_serviceIdHasBeenSet = true;
     }
     XmlNode serviceNameNode = resultNode.FirstChild("serviceName");
     if(!serviceNameNode.IsNull())
     {
-      m_serviceName = StringUtils::Trim(serviceNameNode.GetText().c_str());
+      m_serviceName = serviceNameNode.GetText();
       m_serviceNameHasBeenSet = true;
     }
     XmlNode serviceStateNode = resultNode.FirstChild("serviceState");
@@ -109,7 +109,7 @@ ServiceConfiguration& ServiceConfiguration::operator =(const XmlNode& xmlNode)
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("item");
       while(!availabilityZonesMember.IsNull())
       {
-        m_availabilityZones.push_back(StringUtils::Trim(availabilityZonesMember.GetText().c_str()));
+        m_availabilityZones.push_back(availabilityZonesMember.GetText());
         availabilityZonesMember = availabilityZonesMember.NextNode("item");
       }
 
@@ -133,7 +133,7 @@ ServiceConfiguration& ServiceConfiguration::operator =(const XmlNode& xmlNode)
       XmlNode networkLoadBalancerArnsMember = networkLoadBalancerArnsNode.FirstChild("item");
       while(!networkLoadBalancerArnsMember.IsNull())
       {
-        m_networkLoadBalancerArns.push_back(StringUtils::Trim(networkLoadBalancerArnsMember.GetText().c_str()));
+        m_networkLoadBalancerArns.push_back(networkLoadBalancerArnsMember.GetText());
         networkLoadBalancerArnsMember = networkLoadBalancerArnsMember.NextNode("item");
       }
 
@@ -145,7 +145,7 @@ ServiceConfiguration& ServiceConfiguration::operator =(const XmlNode& xmlNode)
       XmlNode baseEndpointDnsNamesMember = baseEndpointDnsNamesNode.FirstChild("item");
       while(!baseEndpointDnsNamesMember.IsNull())
       {
-        m_baseEndpointDnsNames.push_back(StringUtils::Trim(baseEndpointDnsNamesMember.GetText().c_str()));
+        m_baseEndpointDnsNames.push_back(baseEndpointDnsNamesMember.GetText());
         baseEndpointDnsNamesMember = baseEndpointDnsNamesMember.NextNode("item");
       }
 
@@ -154,7 +154,7 @@ ServiceConfiguration& ServiceConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode privateDnsNameNode = resultNode.FirstChild("privateDnsName");
     if(!privateDnsNameNode.IsNull())
     {
-      m_privateDnsName = StringUtils::Trim(privateDnsNameNode.GetText().c_str());
+      m_privateDnsName = privateDnsNameNode.GetText();
       m_privateDnsNameHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");

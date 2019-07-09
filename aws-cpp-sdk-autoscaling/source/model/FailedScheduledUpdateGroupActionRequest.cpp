@@ -54,19 +54,19 @@ FailedScheduledUpdateGroupActionRequest& FailedScheduledUpdateGroupActionRequest
     XmlNode scheduledActionNameNode = resultNode.FirstChild("ScheduledActionName");
     if(!scheduledActionNameNode.IsNull())
     {
-      m_scheduledActionName = StringUtils::Trim(scheduledActionNameNode.GetText().c_str());
+      m_scheduledActionName = scheduledActionNameNode.GetText();
       m_scheduledActionNameHasBeenSet = true;
     }
     XmlNode errorCodeNode = resultNode.FirstChild("ErrorCode");
     if(!errorCodeNode.IsNull())
     {
-      m_errorCode = StringUtils::Trim(errorCodeNode.GetText().c_str());
+      m_errorCode = errorCodeNode.GetText();
       m_errorCodeHasBeenSet = true;
     }
     XmlNode errorMessageNode = resultNode.FirstChild("ErrorMessage");
     if(!errorMessageNode.IsNull())
     {
-      m_errorMessage = StringUtils::Trim(errorMessageNode.GetText().c_str());
+      m_errorMessage = errorMessageNode.GetText();
       m_errorMessageHasBeenSet = true;
     }
   }

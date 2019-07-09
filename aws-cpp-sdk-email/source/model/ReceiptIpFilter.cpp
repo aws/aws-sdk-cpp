@@ -60,7 +60,7 @@ ReceiptIpFilter& ReceiptIpFilter::operator =(const XmlNode& xmlNode)
     XmlNode cidrNode = resultNode.FirstChild("Cidr");
     if(!cidrNode.IsNull())
     {
-      m_cidr = StringUtils::Trim(cidrNode.GetText().c_str());
+      m_cidr = cidrNode.GetText();
       m_cidrHasBeenSet = true;
     }
   }

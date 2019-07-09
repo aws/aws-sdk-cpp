@@ -62,7 +62,7 @@ PolicyGrantingServiceAccess& PolicyGrantingServiceAccess::operator =(const XmlNo
     XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
     if(!policyNameNode.IsNull())
     {
-      m_policyName = StringUtils::Trim(policyNameNode.GetText().c_str());
+      m_policyName = policyNameNode.GetText();
       m_policyNameHasBeenSet = true;
     }
     XmlNode policyTypeNode = resultNode.FirstChild("PolicyType");
@@ -74,7 +74,7 @@ PolicyGrantingServiceAccess& PolicyGrantingServiceAccess::operator =(const XmlNo
     XmlNode policyArnNode = resultNode.FirstChild("PolicyArn");
     if(!policyArnNode.IsNull())
     {
-      m_policyArn = StringUtils::Trim(policyArnNode.GetText().c_str());
+      m_policyArn = policyArnNode.GetText();
       m_policyArnHasBeenSet = true;
     }
     XmlNode entityTypeNode = resultNode.FirstChild("EntityType");
@@ -86,7 +86,7 @@ PolicyGrantingServiceAccess& PolicyGrantingServiceAccess::operator =(const XmlNo
     XmlNode entityNameNode = resultNode.FirstChild("EntityName");
     if(!entityNameNode.IsNull())
     {
-      m_entityName = StringUtils::Trim(entityNameNode.GetText().c_str());
+      m_entityName = entityNameNode.GetText();
       m_entityNameHasBeenSet = true;
     }
   }

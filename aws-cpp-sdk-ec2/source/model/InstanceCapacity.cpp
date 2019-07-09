@@ -64,7 +64,7 @@ InstanceCapacity& InstanceCapacity::operator =(const XmlNode& xmlNode)
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = StringUtils::Trim(instanceTypeNode.GetText().c_str());
+      m_instanceType = instanceTypeNode.GetText();
       m_instanceTypeHasBeenSet = true;
     }
     XmlNode totalCapacityNode = resultNode.FirstChild("totalCapacity");

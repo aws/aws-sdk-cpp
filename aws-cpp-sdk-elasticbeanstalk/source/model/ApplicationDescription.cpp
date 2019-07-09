@@ -64,19 +64,19 @@ ApplicationDescription& ApplicationDescription::operator =(const XmlNode& xmlNod
     XmlNode applicationArnNode = resultNode.FirstChild("ApplicationArn");
     if(!applicationArnNode.IsNull())
     {
-      m_applicationArn = StringUtils::Trim(applicationArnNode.GetText().c_str());
+      m_applicationArn = applicationArnNode.GetText();
       m_applicationArnHasBeenSet = true;
     }
     XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
     if(!applicationNameNode.IsNull())
     {
-      m_applicationName = StringUtils::Trim(applicationNameNode.GetText().c_str());
+      m_applicationName = applicationNameNode.GetText();
       m_applicationNameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
@@ -97,7 +97,7 @@ ApplicationDescription& ApplicationDescription::operator =(const XmlNode& xmlNod
       XmlNode versionsMember = versionsNode.FirstChild("member");
       while(!versionsMember.IsNull())
       {
-        m_versions.push_back(StringUtils::Trim(versionsMember.GetText().c_str()));
+        m_versions.push_back(versionsMember.GetText());
         versionsMember = versionsMember.NextNode("member");
       }
 
@@ -109,7 +109,7 @@ ApplicationDescription& ApplicationDescription::operator =(const XmlNode& xmlNod
       XmlNode configurationTemplatesMember = configurationTemplatesNode.FirstChild("member");
       while(!configurationTemplatesMember.IsNull())
       {
-        m_configurationTemplates.push_back(StringUtils::Trim(configurationTemplatesMember.GetText().c_str()));
+        m_configurationTemplates.push_back(configurationTemplatesMember.GetText());
         configurationTemplatesMember = configurationTemplatesMember.NextNode("member");
       }
 

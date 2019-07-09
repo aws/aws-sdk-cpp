@@ -52,7 +52,7 @@ DBClusterSnapshotAttribute& DBClusterSnapshotAttribute::operator =(const XmlNode
     XmlNode attributeNameNode = resultNode.FirstChild("AttributeName");
     if(!attributeNameNode.IsNull())
     {
-      m_attributeName = StringUtils::Trim(attributeNameNode.GetText().c_str());
+      m_attributeName = attributeNameNode.GetText();
       m_attributeNameHasBeenSet = true;
     }
     XmlNode attributeValuesNode = resultNode.FirstChild("AttributeValues");
@@ -61,7 +61,7 @@ DBClusterSnapshotAttribute& DBClusterSnapshotAttribute::operator =(const XmlNode
       XmlNode attributeValuesMember = attributeValuesNode.FirstChild("AttributeValue");
       while(!attributeValuesMember.IsNull())
       {
-        m_attributeValues.push_back(StringUtils::Trim(attributeValuesMember.GetText().c_str()));
+        m_attributeValues.push_back(attributeValuesMember.GetText());
         attributeValuesMember = attributeValuesMember.NextNode("AttributeValue");
       }
 

@@ -78,19 +78,19 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
     XmlNode regionNameNode = resultNode.FirstChild("regionName");
     if(!regionNameNode.IsNull())
     {
-      m_regionName = StringUtils::Trim(regionNameNode.GetText().c_str());
+      m_regionName = regionNameNode.GetText();
       m_regionNameHasBeenSet = true;
     }
     XmlNode zoneNameNode = resultNode.FirstChild("zoneName");
     if(!zoneNameNode.IsNull())
     {
-      m_zoneName = StringUtils::Trim(zoneNameNode.GetText().c_str());
+      m_zoneName = zoneNameNode.GetText();
       m_zoneNameHasBeenSet = true;
     }
     XmlNode zoneIdNode = resultNode.FirstChild("zoneId");
     if(!zoneIdNode.IsNull())
     {
-      m_zoneId = StringUtils::Trim(zoneIdNode.GetText().c_str());
+      m_zoneId = zoneIdNode.GetText();
       m_zoneIdHasBeenSet = true;
     }
   }

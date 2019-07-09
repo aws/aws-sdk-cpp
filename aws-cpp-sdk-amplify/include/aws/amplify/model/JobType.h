@@ -28,6 +28,7 @@ namespace Model
     NOT_SET,
     RELEASE,
     RETRY,
+    MANUAL,
     WEB_HOOK
   };
 

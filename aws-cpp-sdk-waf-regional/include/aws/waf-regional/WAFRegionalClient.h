@@ -82,10 +82,13 @@
 #include <aws/waf-regional/model/ListSizeConstraintSetsResult.h>
 #include <aws/waf-regional/model/ListSqlInjectionMatchSetsResult.h>
 #include <aws/waf-regional/model/ListSubscribedRuleGroupsResult.h>
+#include <aws/waf-regional/model/ListTagsForResourceResult.h>
 #include <aws/waf-regional/model/ListWebACLsResult.h>
 #include <aws/waf-regional/model/ListXssMatchSetsResult.h>
 #include <aws/waf-regional/model/PutLoggingConfigurationResult.h>
 #include <aws/waf-regional/model/PutPermissionPolicyResult.h>
+#include <aws/waf-regional/model/TagResourceResult.h>
+#include <aws/waf-regional/model/UntagResourceResult.h>
 #include <aws/waf-regional/model/UpdateByteMatchSetResult.h>
 #include <aws/waf-regional/model/UpdateGeoMatchSetResult.h>
 #include <aws/waf-regional/model/UpdateIPSetResult.h>
@@ -198,10 +201,13 @@ namespace Model
         class ListSizeConstraintSetsRequest;
         class ListSqlInjectionMatchSetsRequest;
         class ListSubscribedRuleGroupsRequest;
+        class ListTagsForResourceRequest;
         class ListWebACLsRequest;
         class ListXssMatchSetsRequest;
         class PutLoggingConfigurationRequest;
         class PutPermissionPolicyRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateByteMatchSetRequest;
         class UpdateGeoMatchSetRequest;
         class UpdateIPSetRequest;
@@ -276,10 +282,13 @@ namespace Model
         typedef Aws::Utils::Outcome<ListSizeConstraintSetsResult, Aws::Client::AWSError<WAFRegionalErrors>> ListSizeConstraintSetsOutcome;
         typedef Aws::Utils::Outcome<ListSqlInjectionMatchSetsResult, Aws::Client::AWSError<WAFRegionalErrors>> ListSqlInjectionMatchSetsOutcome;
         typedef Aws::Utils::Outcome<ListSubscribedRuleGroupsResult, Aws::Client::AWSError<WAFRegionalErrors>> ListSubscribedRuleGroupsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<WAFRegionalErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListWebACLsResult, Aws::Client::AWSError<WAFRegionalErrors>> ListWebACLsOutcome;
         typedef Aws::Utils::Outcome<ListXssMatchSetsResult, Aws::Client::AWSError<WAFRegionalErrors>> ListXssMatchSetsOutcome;
         typedef Aws::Utils::Outcome<PutLoggingConfigurationResult, Aws::Client::AWSError<WAFRegionalErrors>> PutLoggingConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutPermissionPolicyResult, Aws::Client::AWSError<WAFRegionalErrors>> PutPermissionPolicyOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<WAFRegionalErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<WAFRegionalErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateByteMatchSetResult, Aws::Client::AWSError<WAFRegionalErrors>> UpdateByteMatchSetOutcome;
         typedef Aws::Utils::Outcome<UpdateGeoMatchSetResult, Aws::Client::AWSError<WAFRegionalErrors>> UpdateGeoMatchSetOutcome;
         typedef Aws::Utils::Outcome<UpdateIPSetResult, Aws::Client::AWSError<WAFRegionalErrors>> UpdateIPSetOutcome;
@@ -354,10 +363,13 @@ namespace Model
         typedef std::future<ListSizeConstraintSetsOutcome> ListSizeConstraintSetsOutcomeCallable;
         typedef std::future<ListSqlInjectionMatchSetsOutcome> ListSqlInjectionMatchSetsOutcomeCallable;
         typedef std::future<ListSubscribedRuleGroupsOutcome> ListSubscribedRuleGroupsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListWebACLsOutcome> ListWebACLsOutcomeCallable;
         typedef std::future<ListXssMatchSetsOutcome> ListXssMatchSetsOutcomeCallable;
         typedef std::future<PutLoggingConfigurationOutcome> PutLoggingConfigurationOutcomeCallable;
         typedef std::future<PutPermissionPolicyOutcome> PutPermissionPolicyOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateByteMatchSetOutcome> UpdateByteMatchSetOutcomeCallable;
         typedef std::future<UpdateGeoMatchSetOutcome> UpdateGeoMatchSetOutcomeCallable;
         typedef std::future<UpdateIPSetOutcome> UpdateIPSetOutcomeCallable;
@@ -435,10 +447,13 @@ namespace Model
     typedef std::function<void(const WAFRegionalClient*, const Model::ListSizeConstraintSetsRequest&, const Model::ListSizeConstraintSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSizeConstraintSetsResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::ListSqlInjectionMatchSetsRequest&, const Model::ListSqlInjectionMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSqlInjectionMatchSetsResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::ListSubscribedRuleGroupsRequest&, const Model::ListSubscribedRuleGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscribedRuleGroupsResponseReceivedHandler;
+    typedef std::function<void(const WAFRegionalClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::ListWebACLsRequest&, const Model::ListWebACLsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWebACLsResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::ListXssMatchSetsRequest&, const Model::ListXssMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListXssMatchSetsResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::PutLoggingConfigurationRequest&, const Model::PutLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLoggingConfigurationResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::PutPermissionPolicyRequest&, const Model::PutPermissionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPermissionPolicyResponseReceivedHandler;
+    typedef std::function<void(const WAFRegionalClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const WAFRegionalClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::UpdateByteMatchSetRequest&, const Model::UpdateByteMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateByteMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::UpdateGeoMatchSetRequest&, const Model::UpdateGeoMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGeoMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFRegionalClient*, const Model::UpdateIPSetRequest&, const Model::UpdateIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIPSetResponseReceivedHandler;
@@ -3302,6 +3317,25 @@ namespace Model
         virtual void ListSubscribedRuleGroupsAsync(const Model::ListSubscribedRuleGroupsRequest& request, const ListSubscribedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * 
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns an array of <a>WebACLSummary</a> objects in the
          * response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListWebACLs">AWS
@@ -3502,6 +3536,44 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutPermissionPolicyAsync(const Model::PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Inserts or deletes <a>ByteMatchTuple</a> objects (filters) in a
@@ -4855,10 +4927,13 @@ namespace Model
         void ListSizeConstraintSetsAsyncHelper(const Model::ListSizeConstraintSetsRequest& request, const ListSizeConstraintSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSqlInjectionMatchSetsAsyncHelper(const Model::ListSqlInjectionMatchSetsRequest& request, const ListSqlInjectionMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSubscribedRuleGroupsAsyncHelper(const Model::ListSubscribedRuleGroupsRequest& request, const ListSubscribedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWebACLsAsyncHelper(const Model::ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListXssMatchSetsAsyncHelper(const Model::ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLoggingConfigurationAsyncHelper(const Model::PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutPermissionPolicyAsyncHelper(const Model::PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateByteMatchSetAsyncHelper(const Model::UpdateByteMatchSetRequest& request, const UpdateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGeoMatchSetAsyncHelper(const Model::UpdateGeoMatchSetRequest& request, const UpdateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIPSetAsyncHelper(const Model::UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

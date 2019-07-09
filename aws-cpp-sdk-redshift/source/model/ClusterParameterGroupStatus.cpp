@@ -54,13 +54,13 @@ ClusterParameterGroupStatus& ClusterParameterGroupStatus::operator =(const XmlNo
     XmlNode parameterGroupNameNode = resultNode.FirstChild("ParameterGroupName");
     if(!parameterGroupNameNode.IsNull())
     {
-      m_parameterGroupName = StringUtils::Trim(parameterGroupNameNode.GetText().c_str());
+      m_parameterGroupName = parameterGroupNameNode.GetText();
       m_parameterGroupNameHasBeenSet = true;
     }
     XmlNode parameterApplyStatusNode = resultNode.FirstChild("ParameterApplyStatus");
     if(!parameterApplyStatusNode.IsNull())
     {
-      m_parameterApplyStatus = StringUtils::Trim(parameterApplyStatusNode.GetText().c_str());
+      m_parameterApplyStatus = parameterApplyStatusNode.GetText();
       m_parameterApplyStatusHasBeenSet = true;
     }
     XmlNode clusterParameterStatusListNode = resultNode.FirstChild("ClusterParameterStatusList");

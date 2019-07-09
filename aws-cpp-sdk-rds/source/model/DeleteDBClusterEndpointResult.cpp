@@ -51,37 +51,37 @@ DeleteDBClusterEndpointResult& DeleteDBClusterEndpointResult::operator =(const A
     XmlNode dBClusterEndpointIdentifierNode = resultNode.FirstChild("DBClusterEndpointIdentifier");
     if(!dBClusterEndpointIdentifierNode.IsNull())
     {
-      m_dBClusterEndpointIdentifier = StringUtils::Trim(dBClusterEndpointIdentifierNode.GetText().c_str());
+      m_dBClusterEndpointIdentifier = dBClusterEndpointIdentifierNode.GetText();
     }
     XmlNode dBClusterIdentifierNode = resultNode.FirstChild("DBClusterIdentifier");
     if(!dBClusterIdentifierNode.IsNull())
     {
-      m_dBClusterIdentifier = StringUtils::Trim(dBClusterIdentifierNode.GetText().c_str());
+      m_dBClusterIdentifier = dBClusterIdentifierNode.GetText();
     }
     XmlNode dBClusterEndpointResourceIdentifierNode = resultNode.FirstChild("DBClusterEndpointResourceIdentifier");
     if(!dBClusterEndpointResourceIdentifierNode.IsNull())
     {
-      m_dBClusterEndpointResourceIdentifier = StringUtils::Trim(dBClusterEndpointResourceIdentifierNode.GetText().c_str());
+      m_dBClusterEndpointResourceIdentifier = dBClusterEndpointResourceIdentifierNode.GetText();
     }
     XmlNode endpointNode = resultNode.FirstChild("Endpoint");
     if(!endpointNode.IsNull())
     {
-      m_endpoint = StringUtils::Trim(endpointNode.GetText().c_str());
+      m_endpoint = endpointNode.GetText();
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
     }
     XmlNode endpointTypeNode = resultNode.FirstChild("EndpointType");
     if(!endpointTypeNode.IsNull())
     {
-      m_endpointType = StringUtils::Trim(endpointTypeNode.GetText().c_str());
+      m_endpointType = endpointTypeNode.GetText();
     }
     XmlNode customEndpointTypeNode = resultNode.FirstChild("CustomEndpointType");
     if(!customEndpointTypeNode.IsNull())
     {
-      m_customEndpointType = StringUtils::Trim(customEndpointTypeNode.GetText().c_str());
+      m_customEndpointType = customEndpointTypeNode.GetText();
     }
     XmlNode staticMembersNode = resultNode.FirstChild("StaticMembers");
     if(!staticMembersNode.IsNull())
@@ -89,7 +89,7 @@ DeleteDBClusterEndpointResult& DeleteDBClusterEndpointResult::operator =(const A
       XmlNode staticMembersMember = staticMembersNode.FirstChild("member");
       while(!staticMembersMember.IsNull())
       {
-        m_staticMembers.push_back(StringUtils::Trim(staticMembersMember.GetText().c_str()));
+        m_staticMembers.push_back(staticMembersMember.GetText());
         staticMembersMember = staticMembersMember.NextNode("member");
       }
 
@@ -100,7 +100,7 @@ DeleteDBClusterEndpointResult& DeleteDBClusterEndpointResult::operator =(const A
       XmlNode excludedMembersMember = excludedMembersNode.FirstChild("member");
       while(!excludedMembersMember.IsNull())
       {
-        m_excludedMembers.push_back(StringUtils::Trim(excludedMembersMember.GetText().c_str()));
+        m_excludedMembers.push_back(excludedMembersMember.GetText());
         excludedMembersMember = excludedMembersMember.NextNode("member");
       }
 
@@ -108,7 +108,7 @@ DeleteDBClusterEndpointResult& DeleteDBClusterEndpointResult::operator =(const A
     XmlNode dBClusterEndpointArnNode = resultNode.FirstChild("DBClusterEndpointArn");
     if(!dBClusterEndpointArnNode.IsNull())
     {
-      m_dBClusterEndpointArn = StringUtils::Trim(dBClusterEndpointArnNode.GetText().c_str());
+      m_dBClusterEndpointArn = dBClusterEndpointArnNode.GetText();
     }
   }
 

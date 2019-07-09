@@ -62,13 +62,13 @@ ExportTask& ExportTask::operator =(const XmlNode& xmlNode)
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode exportTaskIdNode = resultNode.FirstChild("exportTaskId");
     if(!exportTaskIdNode.IsNull())
     {
-      m_exportTaskId = StringUtils::Trim(exportTaskIdNode.GetText().c_str());
+      m_exportTaskId = exportTaskIdNode.GetText();
       m_exportTaskIdHasBeenSet = true;
     }
     XmlNode exportToS3TaskNode = resultNode.FirstChild("exportToS3");
@@ -92,7 +92,7 @@ ExportTask& ExportTask::operator =(const XmlNode& xmlNode)
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
-      m_statusMessage = StringUtils::Trim(statusMessageNode.GetText().c_str());
+      m_statusMessage = statusMessageNode.GetText();
       m_statusMessageHasBeenSet = true;
     }
   }

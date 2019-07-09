@@ -51,7 +51,7 @@ CopySnapshotResponse& CopySnapshotResponse::operator =(const Aws::AmazonWebServi
     XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
     if(!snapshotIdNode.IsNull())
     {
-      m_snapshotId = StringUtils::Trim(snapshotIdNode.GetText().c_str());
+      m_snapshotId = snapshotIdNode.GetText();
     }
   }
 

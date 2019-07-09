@@ -66,25 +66,25 @@ OptionGroup& OptionGroup::operator =(const XmlNode& xmlNode)
     XmlNode optionGroupNameNode = resultNode.FirstChild("OptionGroupName");
     if(!optionGroupNameNode.IsNull())
     {
-      m_optionGroupName = StringUtils::Trim(optionGroupNameNode.GetText().c_str());
+      m_optionGroupName = optionGroupNameNode.GetText();
       m_optionGroupNameHasBeenSet = true;
     }
     XmlNode optionGroupDescriptionNode = resultNode.FirstChild("OptionGroupDescription");
     if(!optionGroupDescriptionNode.IsNull())
     {
-      m_optionGroupDescription = StringUtils::Trim(optionGroupDescriptionNode.GetText().c_str());
+      m_optionGroupDescription = optionGroupDescriptionNode.GetText();
       m_optionGroupDescriptionHasBeenSet = true;
     }
     XmlNode engineNameNode = resultNode.FirstChild("EngineName");
     if(!engineNameNode.IsNull())
     {
-      m_engineName = StringUtils::Trim(engineNameNode.GetText().c_str());
+      m_engineName = engineNameNode.GetText();
       m_engineNameHasBeenSet = true;
     }
     XmlNode majorEngineVersionNode = resultNode.FirstChild("MajorEngineVersion");
     if(!majorEngineVersionNode.IsNull())
     {
-      m_majorEngineVersion = StringUtils::Trim(majorEngineVersionNode.GetText().c_str());
+      m_majorEngineVersion = majorEngineVersionNode.GetText();
       m_majorEngineVersionHasBeenSet = true;
     }
     XmlNode optionsNode = resultNode.FirstChild("Options");
@@ -108,13 +108,13 @@ OptionGroup& OptionGroup::operator =(const XmlNode& xmlNode)
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
+      m_vpcId = vpcIdNode.GetText();
       m_vpcIdHasBeenSet = true;
     }
     XmlNode optionGroupArnNode = resultNode.FirstChild("OptionGroupArn");
     if(!optionGroupArnNode.IsNull())
     {
-      m_optionGroupArn = StringUtils::Trim(optionGroupArnNode.GetText().c_str());
+      m_optionGroupArn = optionGroupArnNode.GetText();
       m_optionGroupArnHasBeenSet = true;
     }
   }

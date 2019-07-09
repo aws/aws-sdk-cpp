@@ -50,7 +50,7 @@ LaunchTemplateElasticInferenceAcceleratorResponse& LaunchTemplateElasticInferenc
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = StringUtils::Trim(typeNode.GetText().c_str());
+      m_type = typeNode.GetText();
       m_typeHasBeenSet = true;
     }
   }

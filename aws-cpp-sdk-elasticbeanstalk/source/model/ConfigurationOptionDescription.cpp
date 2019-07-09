@@ -80,25 +80,25 @@ ConfigurationOptionDescription& ConfigurationOptionDescription::operator =(const
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
     if(!namespaceNode.IsNull())
     {
-      m_namespace = StringUtils::Trim(namespaceNode.GetText().c_str());
+      m_namespace = namespaceNode.GetText();
       m_namespaceHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
     XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
     if(!defaultValueNode.IsNull())
     {
-      m_defaultValue = StringUtils::Trim(defaultValueNode.GetText().c_str());
+      m_defaultValue = defaultValueNode.GetText();
       m_defaultValueHasBeenSet = true;
     }
     XmlNode changeSeverityNode = resultNode.FirstChild("ChangeSeverity");
     if(!changeSeverityNode.IsNull())
     {
-      m_changeSeverity = StringUtils::Trim(changeSeverityNode.GetText().c_str());
+      m_changeSeverity = changeSeverityNode.GetText();
       m_changeSeverityHasBeenSet = true;
     }
     XmlNode userDefinedNode = resultNode.FirstChild("UserDefined");
@@ -119,7 +119,7 @@ ConfigurationOptionDescription& ConfigurationOptionDescription::operator =(const
       XmlNode valueOptionsMember = valueOptionsNode.FirstChild("member");
       while(!valueOptionsMember.IsNull())
       {
-        m_valueOptions.push_back(StringUtils::Trim(valueOptionsMember.GetText().c_str()));
+        m_valueOptions.push_back(valueOptionsMember.GetText());
         valueOptionsMember = valueOptionsMember.NextNode("member");
       }
 

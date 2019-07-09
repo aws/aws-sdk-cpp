@@ -38,6 +38,7 @@
 #include <aws/config/model/DeleteConfigurationRecorderRequest.h>
 #include <aws/config/model/DeleteDeliveryChannelRequest.h>
 #include <aws/config/model/DeleteEvaluationResultsRequest.h>
+#include <aws/config/model/DeleteOrganizationConfigRuleRequest.h>
 #include <aws/config/model/DeletePendingAggregationRequestRequest.h>
 #include <aws/config/model/DeleteRemediationConfigurationRequest.h>
 #include <aws/config/model/DeleteRetentionConfigurationRequest.h>
@@ -54,6 +55,8 @@
 #include <aws/config/model/DescribeConfigurationRecordersRequest.h>
 #include <aws/config/model/DescribeDeliveryChannelStatusRequest.h>
 #include <aws/config/model/DescribeDeliveryChannelsRequest.h>
+#include <aws/config/model/DescribeOrganizationConfigRuleStatusesRequest.h>
+#include <aws/config/model/DescribeOrganizationConfigRulesRequest.h>
 #include <aws/config/model/DescribePendingAggregationRequestsRequest.h>
 #include <aws/config/model/DescribeRemediationConfigurationsRequest.h>
 #include <aws/config/model/DescribeRemediationExecutionStatusRequest.h>
@@ -66,6 +69,7 @@
 #include <aws/config/model/GetComplianceDetailsByResourceRequest.h>
 #include <aws/config/model/GetComplianceSummaryByResourceTypeRequest.h>
 #include <aws/config/model/GetDiscoveredResourceCountsRequest.h>
+#include <aws/config/model/GetOrganizationConfigRuleDetailedStatusRequest.h>
 #include <aws/config/model/GetResourceConfigHistoryRequest.h>
 #include <aws/config/model/ListAggregateDiscoveredResourcesRequest.h>
 #include <aws/config/model/ListDiscoveredResourcesRequest.h>
@@ -76,6 +80,7 @@
 #include <aws/config/model/PutConfigurationRecorderRequest.h>
 #include <aws/config/model/PutDeliveryChannelRequest.h>
 #include <aws/config/model/PutEvaluationsRequest.h>
+#include <aws/config/model/PutOrganizationConfigRuleRequest.h>
 #include <aws/config/model/PutRemediationConfigurationsRequest.h>
 #include <aws/config/model/PutRetentionConfigurationRequest.h>
 #include <aws/config/model/SelectResourceConfigRequest.h>
@@ -436,6 +441,41 @@ void ConfigServiceClient::DeleteEvaluationResultsAsync(const DeleteEvaluationRes
 void ConfigServiceClient::DeleteEvaluationResultsAsyncHelper(const DeleteEvaluationResultsRequest& request, const DeleteEvaluationResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteEvaluationResults(request), context);
+}
+
+DeleteOrganizationConfigRuleOutcome ConfigServiceClient::DeleteOrganizationConfigRule(const DeleteOrganizationConfigRuleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteOrganizationConfigRuleOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteOrganizationConfigRuleOutcome(outcome.GetError());
+  }
+}
+
+DeleteOrganizationConfigRuleOutcomeCallable ConfigServiceClient::DeleteOrganizationConfigRuleCallable(const DeleteOrganizationConfigRuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteOrganizationConfigRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteOrganizationConfigRule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::DeleteOrganizationConfigRuleAsync(const DeleteOrganizationConfigRuleRequest& request, const DeleteOrganizationConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteOrganizationConfigRuleAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::DeleteOrganizationConfigRuleAsyncHelper(const DeleteOrganizationConfigRuleRequest& request, const DeleteOrganizationConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteOrganizationConfigRule(request), context);
 }
 
 DeletePendingAggregationRequestOutcome ConfigServiceClient::DeletePendingAggregationRequest(const DeletePendingAggregationRequestRequest& request) const
@@ -998,6 +1038,76 @@ void ConfigServiceClient::DescribeDeliveryChannelsAsyncHelper(const DescribeDeli
   handler(this, request, DescribeDeliveryChannels(request), context);
 }
 
+DescribeOrganizationConfigRuleStatusesOutcome ConfigServiceClient::DescribeOrganizationConfigRuleStatuses(const DescribeOrganizationConfigRuleStatusesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeOrganizationConfigRuleStatusesOutcome(DescribeOrganizationConfigRuleStatusesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeOrganizationConfigRuleStatusesOutcome(outcome.GetError());
+  }
+}
+
+DescribeOrganizationConfigRuleStatusesOutcomeCallable ConfigServiceClient::DescribeOrganizationConfigRuleStatusesCallable(const DescribeOrganizationConfigRuleStatusesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeOrganizationConfigRuleStatusesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeOrganizationConfigRuleStatuses(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::DescribeOrganizationConfigRuleStatusesAsync(const DescribeOrganizationConfigRuleStatusesRequest& request, const DescribeOrganizationConfigRuleStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationConfigRuleStatusesAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::DescribeOrganizationConfigRuleStatusesAsyncHelper(const DescribeOrganizationConfigRuleStatusesRequest& request, const DescribeOrganizationConfigRuleStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeOrganizationConfigRuleStatuses(request), context);
+}
+
+DescribeOrganizationConfigRulesOutcome ConfigServiceClient::DescribeOrganizationConfigRules(const DescribeOrganizationConfigRulesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeOrganizationConfigRulesOutcome(DescribeOrganizationConfigRulesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeOrganizationConfigRulesOutcome(outcome.GetError());
+  }
+}
+
+DescribeOrganizationConfigRulesOutcomeCallable ConfigServiceClient::DescribeOrganizationConfigRulesCallable(const DescribeOrganizationConfigRulesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeOrganizationConfigRulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeOrganizationConfigRules(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::DescribeOrganizationConfigRulesAsync(const DescribeOrganizationConfigRulesRequest& request, const DescribeOrganizationConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationConfigRulesAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::DescribeOrganizationConfigRulesAsyncHelper(const DescribeOrganizationConfigRulesRequest& request, const DescribeOrganizationConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeOrganizationConfigRules(request), context);
+}
+
 DescribePendingAggregationRequestsOutcome ConfigServiceClient::DescribePendingAggregationRequests(const DescribePendingAggregationRequestsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1451,6 +1561,41 @@ void ConfigServiceClient::GetDiscoveredResourceCountsAsyncHelper(const GetDiscov
   handler(this, request, GetDiscoveredResourceCounts(request), context);
 }
 
+GetOrganizationConfigRuleDetailedStatusOutcome ConfigServiceClient::GetOrganizationConfigRuleDetailedStatus(const GetOrganizationConfigRuleDetailedStatusRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetOrganizationConfigRuleDetailedStatusOutcome(GetOrganizationConfigRuleDetailedStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetOrganizationConfigRuleDetailedStatusOutcome(outcome.GetError());
+  }
+}
+
+GetOrganizationConfigRuleDetailedStatusOutcomeCallable ConfigServiceClient::GetOrganizationConfigRuleDetailedStatusCallable(const GetOrganizationConfigRuleDetailedStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetOrganizationConfigRuleDetailedStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetOrganizationConfigRuleDetailedStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::GetOrganizationConfigRuleDetailedStatusAsync(const GetOrganizationConfigRuleDetailedStatusRequest& request, const GetOrganizationConfigRuleDetailedStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetOrganizationConfigRuleDetailedStatusAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::GetOrganizationConfigRuleDetailedStatusAsyncHelper(const GetOrganizationConfigRuleDetailedStatusRequest& request, const GetOrganizationConfigRuleDetailedStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetOrganizationConfigRuleDetailedStatus(request), context);
+}
+
 GetResourceConfigHistoryOutcome ConfigServiceClient::GetResourceConfigHistory(const GetResourceConfigHistoryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1799,6 +1944,41 @@ void ConfigServiceClient::PutEvaluationsAsync(const PutEvaluationsRequest& reque
 void ConfigServiceClient::PutEvaluationsAsyncHelper(const PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutEvaluations(request), context);
+}
+
+PutOrganizationConfigRuleOutcome ConfigServiceClient::PutOrganizationConfigRule(const PutOrganizationConfigRuleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutOrganizationConfigRuleOutcome(PutOrganizationConfigRuleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutOrganizationConfigRuleOutcome(outcome.GetError());
+  }
+}
+
+PutOrganizationConfigRuleOutcomeCallable ConfigServiceClient::PutOrganizationConfigRuleCallable(const PutOrganizationConfigRuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutOrganizationConfigRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutOrganizationConfigRule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::PutOrganizationConfigRuleAsync(const PutOrganizationConfigRuleRequest& request, const PutOrganizationConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutOrganizationConfigRuleAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::PutOrganizationConfigRuleAsyncHelper(const PutOrganizationConfigRuleRequest& request, const PutOrganizationConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutOrganizationConfigRule(request), context);
 }
 
 PutRemediationConfigurationsOutcome ConfigServiceClient::PutRemediationConfigurations(const PutRemediationConfigurationsRequest& request) const

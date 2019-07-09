@@ -52,7 +52,7 @@ InstanceBlockDeviceMapping& InstanceBlockDeviceMapping::operator =(const XmlNode
     XmlNode deviceNameNode = resultNode.FirstChild("deviceName");
     if(!deviceNameNode.IsNull())
     {
-      m_deviceName = StringUtils::Trim(deviceNameNode.GetText().c_str());
+      m_deviceName = deviceNameNode.GetText();
       m_deviceNameHasBeenSet = true;
     }
     XmlNode ebsNode = resultNode.FirstChild("ebs");

@@ -66,7 +66,7 @@ AccessLog& AccessLog::operator =(const XmlNode& xmlNode)
     XmlNode s3BucketNameNode = resultNode.FirstChild("S3BucketName");
     if(!s3BucketNameNode.IsNull())
     {
-      m_s3BucketName = StringUtils::Trim(s3BucketNameNode.GetText().c_str());
+      m_s3BucketName = s3BucketNameNode.GetText();
       m_s3BucketNameHasBeenSet = true;
     }
     XmlNode emitIntervalNode = resultNode.FirstChild("EmitInterval");
@@ -78,7 +78,7 @@ AccessLog& AccessLog::operator =(const XmlNode& xmlNode)
     XmlNode s3BucketPrefixNode = resultNode.FirstChild("S3BucketPrefix");
     if(!s3BucketPrefixNode.IsNull())
     {
-      m_s3BucketPrefix = StringUtils::Trim(s3BucketPrefixNode.GetText().c_str());
+      m_s3BucketPrefix = s3BucketPrefixNode.GetText();
       m_s3BucketPrefixHasBeenSet = true;
     }
   }

@@ -54,7 +54,7 @@ DetachLoadBalancerFromSubnetsResult& DetachLoadBalancerFromSubnetsResult::operat
       XmlNode subnetsMember = subnetsNode.FirstChild("member");
       while(!subnetsMember.IsNull())
       {
-        m_subnets.push_back(StringUtils::Trim(subnetsMember.GetText().c_str()));
+        m_subnets.push_back(subnetsMember.GetText());
         subnetsMember = subnetsMember.NextNode("member");
       }
 

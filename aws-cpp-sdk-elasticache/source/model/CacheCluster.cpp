@@ -110,7 +110,7 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
     XmlNode cacheClusterIdNode = resultNode.FirstChild("CacheClusterId");
     if(!cacheClusterIdNode.IsNull())
     {
-      m_cacheClusterId = StringUtils::Trim(cacheClusterIdNode.GetText().c_str());
+      m_cacheClusterId = cacheClusterIdNode.GetText();
       m_cacheClusterIdHasBeenSet = true;
     }
     XmlNode configurationEndpointNode = resultNode.FirstChild("ConfigurationEndpoint");
@@ -122,31 +122,31 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
     XmlNode clientDownloadLandingPageNode = resultNode.FirstChild("ClientDownloadLandingPage");
     if(!clientDownloadLandingPageNode.IsNull())
     {
-      m_clientDownloadLandingPage = StringUtils::Trim(clientDownloadLandingPageNode.GetText().c_str());
+      m_clientDownloadLandingPage = clientDownloadLandingPageNode.GetText();
       m_clientDownloadLandingPageHasBeenSet = true;
     }
     XmlNode cacheNodeTypeNode = resultNode.FirstChild("CacheNodeType");
     if(!cacheNodeTypeNode.IsNull())
     {
-      m_cacheNodeType = StringUtils::Trim(cacheNodeTypeNode.GetText().c_str());
+      m_cacheNodeType = cacheNodeTypeNode.GetText();
       m_cacheNodeTypeHasBeenSet = true;
     }
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
     {
-      m_engine = StringUtils::Trim(engineNode.GetText().c_str());
+      m_engine = engineNode.GetText();
       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
-      m_engineVersion = StringUtils::Trim(engineVersionNode.GetText().c_str());
+      m_engineVersion = engineVersionNode.GetText();
       m_engineVersionHasBeenSet = true;
     }
     XmlNode cacheClusterStatusNode = resultNode.FirstChild("CacheClusterStatus");
     if(!cacheClusterStatusNode.IsNull())
     {
-      m_cacheClusterStatus = StringUtils::Trim(cacheClusterStatusNode.GetText().c_str());
+      m_cacheClusterStatus = cacheClusterStatusNode.GetText();
       m_cacheClusterStatusHasBeenSet = true;
     }
     XmlNode numCacheNodesNode = resultNode.FirstChild("NumCacheNodes");
@@ -158,7 +158,7 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
     XmlNode preferredAvailabilityZoneNode = resultNode.FirstChild("PreferredAvailabilityZone");
     if(!preferredAvailabilityZoneNode.IsNull())
     {
-      m_preferredAvailabilityZone = StringUtils::Trim(preferredAvailabilityZoneNode.GetText().c_str());
+      m_preferredAvailabilityZone = preferredAvailabilityZoneNode.GetText();
       m_preferredAvailabilityZoneHasBeenSet = true;
     }
     XmlNode cacheClusterCreateTimeNode = resultNode.FirstChild("CacheClusterCreateTime");
@@ -170,7 +170,7 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
     XmlNode preferredMaintenanceWindowNode = resultNode.FirstChild("PreferredMaintenanceWindow");
     if(!preferredMaintenanceWindowNode.IsNull())
     {
-      m_preferredMaintenanceWindow = StringUtils::Trim(preferredMaintenanceWindowNode.GetText().c_str());
+      m_preferredMaintenanceWindow = preferredMaintenanceWindowNode.GetText();
       m_preferredMaintenanceWindowHasBeenSet = true;
     }
     XmlNode pendingModifiedValuesNode = resultNode.FirstChild("PendingModifiedValues");
@@ -206,7 +206,7 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
     XmlNode cacheSubnetGroupNameNode = resultNode.FirstChild("CacheSubnetGroupName");
     if(!cacheSubnetGroupNameNode.IsNull())
     {
-      m_cacheSubnetGroupName = StringUtils::Trim(cacheSubnetGroupNameNode.GetText().c_str());
+      m_cacheSubnetGroupName = cacheSubnetGroupNameNode.GetText();
       m_cacheSubnetGroupNameHasBeenSet = true;
     }
     XmlNode cacheNodesNode = resultNode.FirstChild("CacheNodes");
@@ -242,7 +242,7 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
     XmlNode replicationGroupIdNode = resultNode.FirstChild("ReplicationGroupId");
     if(!replicationGroupIdNode.IsNull())
     {
-      m_replicationGroupId = StringUtils::Trim(replicationGroupIdNode.GetText().c_str());
+      m_replicationGroupId = replicationGroupIdNode.GetText();
       m_replicationGroupIdHasBeenSet = true;
     }
     XmlNode snapshotRetentionLimitNode = resultNode.FirstChild("SnapshotRetentionLimit");
@@ -254,7 +254,7 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
     XmlNode snapshotWindowNode = resultNode.FirstChild("SnapshotWindow");
     if(!snapshotWindowNode.IsNull())
     {
-      m_snapshotWindow = StringUtils::Trim(snapshotWindowNode.GetText().c_str());
+      m_snapshotWindow = snapshotWindowNode.GetText();
       m_snapshotWindowHasBeenSet = true;
     }
     XmlNode authTokenEnabledNode = resultNode.FirstChild("AuthTokenEnabled");

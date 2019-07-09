@@ -58,7 +58,7 @@ UpdateJobResult& UpdateJobResult::operator =(const Aws::AmazonWebServiceResult<X
     XmlNode warningMessageNode = resultNode.FirstChild("WarningMessage");
     if(!warningMessageNode.IsNull())
     {
-      m_warningMessage = StringUtils::Trim(warningMessageNode.GetText().c_str());
+      m_warningMessage = warningMessageNode.GetText();
     }
     XmlNode artifactListNode = resultNode.FirstChild("ArtifactList");
     if(!artifactListNode.IsNull())

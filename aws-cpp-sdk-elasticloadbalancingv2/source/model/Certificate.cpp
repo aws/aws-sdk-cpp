@@ -54,7 +54,7 @@ Certificate& Certificate::operator =(const XmlNode& xmlNode)
     XmlNode certificateArnNode = resultNode.FirstChild("CertificateArn");
     if(!certificateArnNode.IsNull())
     {
-      m_certificateArn = StringUtils::Trim(certificateArnNode.GetText().c_str());
+      m_certificateArn = certificateArnNode.GetText();
       m_certificateArnHasBeenSet = true;
     }
     XmlNode isDefaultNode = resultNode.FirstChild("IsDefault");

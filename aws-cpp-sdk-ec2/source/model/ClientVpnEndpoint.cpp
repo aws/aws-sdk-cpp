@@ -84,13 +84,13 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
     XmlNode clientVpnEndpointIdNode = resultNode.FirstChild("clientVpnEndpointId");
     if(!clientVpnEndpointIdNode.IsNull())
     {
-      m_clientVpnEndpointId = StringUtils::Trim(clientVpnEndpointIdNode.GetText().c_str());
+      m_clientVpnEndpointId = clientVpnEndpointIdNode.GetText();
       m_clientVpnEndpointIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
@@ -102,25 +102,25 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
     if(!creationTimeNode.IsNull())
     {
-      m_creationTime = StringUtils::Trim(creationTimeNode.GetText().c_str());
+      m_creationTime = creationTimeNode.GetText();
       m_creationTimeHasBeenSet = true;
     }
     XmlNode deletionTimeNode = resultNode.FirstChild("deletionTime");
     if(!deletionTimeNode.IsNull())
     {
-      m_deletionTime = StringUtils::Trim(deletionTimeNode.GetText().c_str());
+      m_deletionTime = deletionTimeNode.GetText();
       m_deletionTimeHasBeenSet = true;
     }
     XmlNode dnsNameNode = resultNode.FirstChild("dnsName");
     if(!dnsNameNode.IsNull())
     {
-      m_dnsName = StringUtils::Trim(dnsNameNode.GetText().c_str());
+      m_dnsName = dnsNameNode.GetText();
       m_dnsNameHasBeenSet = true;
     }
     XmlNode clientCidrBlockNode = resultNode.FirstChild("clientCidrBlock");
     if(!clientCidrBlockNode.IsNull())
     {
-      m_clientCidrBlock = StringUtils::Trim(clientCidrBlockNode.GetText().c_str());
+      m_clientCidrBlock = clientCidrBlockNode.GetText();
       m_clientCidrBlockHasBeenSet = true;
     }
     XmlNode dnsServersNode = resultNode.FirstChild("dnsServer");
@@ -129,7 +129,7 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
       XmlNode dnsServersMember = dnsServersNode.FirstChild("item");
       while(!dnsServersMember.IsNull())
       {
-        m_dnsServers.push_back(StringUtils::Trim(dnsServersMember.GetText().c_str()));
+        m_dnsServers.push_back(dnsServersMember.GetText());
         dnsServersMember = dnsServersMember.NextNode("item");
       }
 
@@ -156,7 +156,7 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
     XmlNode serverCertificateArnNode = resultNode.FirstChild("serverCertificateArn");
     if(!serverCertificateArnNode.IsNull())
     {
-      m_serverCertificateArn = StringUtils::Trim(serverCertificateArnNode.GetText().c_str());
+      m_serverCertificateArn = serverCertificateArnNode.GetText();
       m_serverCertificateArnHasBeenSet = true;
     }
     XmlNode authenticationOptionsNode = resultNode.FirstChild("authenticationOptions");

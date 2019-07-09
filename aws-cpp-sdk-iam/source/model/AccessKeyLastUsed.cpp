@@ -60,13 +60,13 @@ AccessKeyLastUsed& AccessKeyLastUsed::operator =(const XmlNode& xmlNode)
     XmlNode serviceNameNode = resultNode.FirstChild("ServiceName");
     if(!serviceNameNode.IsNull())
     {
-      m_serviceName = StringUtils::Trim(serviceNameNode.GetText().c_str());
+      m_serviceName = serviceNameNode.GetText();
       m_serviceNameHasBeenSet = true;
     }
     XmlNode regionNode = resultNode.FirstChild("Region");
     if(!regionNode.IsNull())
     {
-      m_region = StringUtils::Trim(regionNode.GetText().c_str());
+      m_region = regionNode.GetText();
       m_regionHasBeenSet = true;
     }
   }

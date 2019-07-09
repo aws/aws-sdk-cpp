@@ -60,7 +60,7 @@ CreateVolumePermission& CreateVolumePermission::operator =(const XmlNode& xmlNod
     XmlNode userIdNode = resultNode.FirstChild("userId");
     if(!userIdNode.IsNull())
     {
-      m_userId = StringUtils::Trim(userIdNode.GetText().c_str());
+      m_userId = userIdNode.GetText();
       m_userIdHasBeenSet = true;
     }
   }

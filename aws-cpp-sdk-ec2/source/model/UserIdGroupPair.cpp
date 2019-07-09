@@ -62,43 +62,43 @@ UserIdGroupPair& UserIdGroupPair::operator =(const XmlNode& xmlNode)
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode groupIdNode = resultNode.FirstChild("groupId");
     if(!groupIdNode.IsNull())
     {
-      m_groupId = StringUtils::Trim(groupIdNode.GetText().c_str());
+      m_groupId = groupIdNode.GetText();
       m_groupIdHasBeenSet = true;
     }
     XmlNode groupNameNode = resultNode.FirstChild("groupName");
     if(!groupNameNode.IsNull())
     {
-      m_groupName = StringUtils::Trim(groupNameNode.GetText().c_str());
+      m_groupName = groupNameNode.GetText();
       m_groupNameHasBeenSet = true;
     }
     XmlNode peeringStatusNode = resultNode.FirstChild("peeringStatus");
     if(!peeringStatusNode.IsNull())
     {
-      m_peeringStatus = StringUtils::Trim(peeringStatusNode.GetText().c_str());
+      m_peeringStatus = peeringStatusNode.GetText();
       m_peeringStatusHasBeenSet = true;
     }
     XmlNode userIdNode = resultNode.FirstChild("userId");
     if(!userIdNode.IsNull())
     {
-      m_userId = StringUtils::Trim(userIdNode.GetText().c_str());
+      m_userId = userIdNode.GetText();
       m_userIdHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
+      m_vpcId = vpcIdNode.GetText();
       m_vpcIdHasBeenSet = true;
     }
     XmlNode vpcPeeringConnectionIdNode = resultNode.FirstChild("vpcPeeringConnectionId");
     if(!vpcPeeringConnectionIdNode.IsNull())
     {
-      m_vpcPeeringConnectionId = StringUtils::Trim(vpcPeeringConnectionIdNode.GetText().c_str());
+      m_vpcPeeringConnectionId = vpcPeeringConnectionIdNode.GetText();
       m_vpcPeeringConnectionIdHasBeenSet = true;
     }
   }

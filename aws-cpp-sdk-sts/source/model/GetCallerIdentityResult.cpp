@@ -51,17 +51,17 @@ GetCallerIdentityResult& GetCallerIdentityResult::operator =(const Aws::AmazonWe
     XmlNode userIdNode = resultNode.FirstChild("UserId");
     if(!userIdNode.IsNull())
     {
-      m_userId = StringUtils::Trim(userIdNode.GetText().c_str());
+      m_userId = userIdNode.GetText();
     }
     XmlNode accountNode = resultNode.FirstChild("Account");
     if(!accountNode.IsNull())
     {
-      m_account = StringUtils::Trim(accountNode.GetText().c_str());
+      m_account = accountNode.GetText();
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
-      m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+      m_arn = arnNode.GetText();
     }
   }
 

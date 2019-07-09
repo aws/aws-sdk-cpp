@@ -50,7 +50,7 @@ ProcessType& ProcessType::operator =(const XmlNode& xmlNode)
     XmlNode processNameNode = resultNode.FirstChild("ProcessName");
     if(!processNameNode.IsNull())
     {
-      m_processName = StringUtils::Trim(processNameNode.GetText().c_str());
+      m_processName = processNameNode.GetText();
       m_processNameHasBeenSet = true;
     }
   }

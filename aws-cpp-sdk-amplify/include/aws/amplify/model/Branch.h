@@ -273,42 +273,42 @@ namespace Model
 
 
     /**
-     * <p> Display name for a branch, part of an Amplify App. </p>
+     * <p> Display name for a branch, will use as the default domain prefix. </p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p> Display name for a branch, part of an Amplify App. </p>
+     * <p> Display name for a branch, will use as the default domain prefix. </p>
      */
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
-     * <p> Display name for a branch, part of an Amplify App. </p>
+     * <p> Display name for a branch, will use as the default domain prefix. </p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p> Display name for a branch, part of an Amplify App. </p>
+     * <p> Display name for a branch, will use as the default domain prefix. </p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p> Display name for a branch, part of an Amplify App. </p>
+     * <p> Display name for a branch, will use as the default domain prefix. </p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p> Display name for a branch, part of an Amplify App. </p>
+     * <p> Display name for a branch, will use as the default domain prefix. </p>
      */
     inline Branch& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p> Display name for a branch, part of an Amplify App. </p>
+     * <p> Display name for a branch, will use as the default domain prefix. </p>
      */
     inline Branch& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p> Display name for a branch, part of an Amplify App. </p>
+     * <p> Display name for a branch, will use as the default domain prefix. </p>
      */
     inline Branch& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
@@ -674,42 +674,42 @@ namespace Model
 
 
     /**
-     * <p> Thumbnail Url for the branch. </p>
+     * <p> Thumbnail URL for the branch. </p>
      */
     inline const Aws::String& GetThumbnailUrl() const{ return m_thumbnailUrl; }
 
     /**
-     * <p> Thumbnail Url for the branch. </p>
+     * <p> Thumbnail URL for the branch. </p>
      */
     inline bool ThumbnailUrlHasBeenSet() const { return m_thumbnailUrlHasBeenSet; }
 
     /**
-     * <p> Thumbnail Url for the branch. </p>
+     * <p> Thumbnail URL for the branch. </p>
      */
     inline void SetThumbnailUrl(const Aws::String& value) { m_thumbnailUrlHasBeenSet = true; m_thumbnailUrl = value; }
 
     /**
-     * <p> Thumbnail Url for the branch. </p>
+     * <p> Thumbnail URL for the branch. </p>
      */
     inline void SetThumbnailUrl(Aws::String&& value) { m_thumbnailUrlHasBeenSet = true; m_thumbnailUrl = std::move(value); }
 
     /**
-     * <p> Thumbnail Url for the branch. </p>
+     * <p> Thumbnail URL for the branch. </p>
      */
     inline void SetThumbnailUrl(const char* value) { m_thumbnailUrlHasBeenSet = true; m_thumbnailUrl.assign(value); }
 
     /**
-     * <p> Thumbnail Url for the branch. </p>
+     * <p> Thumbnail URL for the branch. </p>
      */
     inline Branch& WithThumbnailUrl(const Aws::String& value) { SetThumbnailUrl(value); return *this;}
 
     /**
-     * <p> Thumbnail Url for the branch. </p>
+     * <p> Thumbnail URL for the branch. </p>
      */
     inline Branch& WithThumbnailUrl(Aws::String&& value) { SetThumbnailUrl(std::move(value)); return *this;}
 
     /**
-     * <p> Thumbnail Url for the branch. </p>
+     * <p> Thumbnail URL for the branch. </p>
      */
     inline Branch& WithThumbnailUrl(const char* value) { SetThumbnailUrl(value); return *this;}
 
@@ -836,6 +836,52 @@ namespace Model
      */
     inline Branch& WithTtl(const char* value) { SetTtl(value); return *this;}
 
+
+    /**
+     * <p> List of custom resources that are linked to this branch. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAssociatedResources() const{ return m_associatedResources; }
+
+    /**
+     * <p> List of custom resources that are linked to this branch. </p>
+     */
+    inline bool AssociatedResourcesHasBeenSet() const { return m_associatedResourcesHasBeenSet; }
+
+    /**
+     * <p> List of custom resources that are linked to this branch. </p>
+     */
+    inline void SetAssociatedResources(const Aws::Vector<Aws::String>& value) { m_associatedResourcesHasBeenSet = true; m_associatedResources = value; }
+
+    /**
+     * <p> List of custom resources that are linked to this branch. </p>
+     */
+    inline void SetAssociatedResources(Aws::Vector<Aws::String>&& value) { m_associatedResourcesHasBeenSet = true; m_associatedResources = std::move(value); }
+
+    /**
+     * <p> List of custom resources that are linked to this branch. </p>
+     */
+    inline Branch& WithAssociatedResources(const Aws::Vector<Aws::String>& value) { SetAssociatedResources(value); return *this;}
+
+    /**
+     * <p> List of custom resources that are linked to this branch. </p>
+     */
+    inline Branch& WithAssociatedResources(Aws::Vector<Aws::String>&& value) { SetAssociatedResources(std::move(value)); return *this;}
+
+    /**
+     * <p> List of custom resources that are linked to this branch. </p>
+     */
+    inline Branch& AddAssociatedResources(const Aws::String& value) { m_associatedResourcesHasBeenSet = true; m_associatedResources.push_back(value); return *this; }
+
+    /**
+     * <p> List of custom resources that are linked to this branch. </p>
+     */
+    inline Branch& AddAssociatedResources(Aws::String&& value) { m_associatedResourcesHasBeenSet = true; m_associatedResources.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> List of custom resources that are linked to this branch. </p>
+     */
+    inline Branch& AddAssociatedResources(const char* value) { m_associatedResourcesHasBeenSet = true; m_associatedResources.push_back(value); return *this; }
+
   private:
 
     Aws::String m_branchArn;
@@ -897,6 +943,9 @@ namespace Model
 
     Aws::String m_ttl;
     bool m_ttlHasBeenSet;
+
+    Aws::Vector<Aws::String> m_associatedResources;
+    bool m_associatedResourcesHasBeenSet;
   };
 
 } // namespace Model

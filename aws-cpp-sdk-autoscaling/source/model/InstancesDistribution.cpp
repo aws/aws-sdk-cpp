@@ -66,7 +66,7 @@ InstancesDistribution& InstancesDistribution::operator =(const XmlNode& xmlNode)
     XmlNode onDemandAllocationStrategyNode = resultNode.FirstChild("OnDemandAllocationStrategy");
     if(!onDemandAllocationStrategyNode.IsNull())
     {
-      m_onDemandAllocationStrategy = StringUtils::Trim(onDemandAllocationStrategyNode.GetText().c_str());
+      m_onDemandAllocationStrategy = onDemandAllocationStrategyNode.GetText();
       m_onDemandAllocationStrategyHasBeenSet = true;
     }
     XmlNode onDemandBaseCapacityNode = resultNode.FirstChild("OnDemandBaseCapacity");
@@ -84,7 +84,7 @@ InstancesDistribution& InstancesDistribution::operator =(const XmlNode& xmlNode)
     XmlNode spotAllocationStrategyNode = resultNode.FirstChild("SpotAllocationStrategy");
     if(!spotAllocationStrategyNode.IsNull())
     {
-      m_spotAllocationStrategy = StringUtils::Trim(spotAllocationStrategyNode.GetText().c_str());
+      m_spotAllocationStrategy = spotAllocationStrategyNode.GetText();
       m_spotAllocationStrategyHasBeenSet = true;
     }
     XmlNode spotInstancePoolsNode = resultNode.FirstChild("SpotInstancePools");
@@ -96,7 +96,7 @@ InstancesDistribution& InstancesDistribution::operator =(const XmlNode& xmlNode)
     XmlNode spotMaxPriceNode = resultNode.FirstChild("SpotMaxPrice");
     if(!spotMaxPriceNode.IsNull())
     {
-      m_spotMaxPrice = StringUtils::Trim(spotMaxPriceNode.GetText().c_str());
+      m_spotMaxPrice = spotMaxPriceNode.GetText();
       m_spotMaxPriceHasBeenSet = true;
     }
   }

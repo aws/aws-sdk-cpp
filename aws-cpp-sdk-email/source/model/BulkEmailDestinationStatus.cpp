@@ -62,13 +62,13 @@ BulkEmailDestinationStatus& BulkEmailDestinationStatus::operator =(const XmlNode
     XmlNode errorNode = resultNode.FirstChild("Error");
     if(!errorNode.IsNull())
     {
-      m_error = StringUtils::Trim(errorNode.GetText().c_str());
+      m_error = errorNode.GetText();
       m_errorHasBeenSet = true;
     }
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
     if(!messageIdNode.IsNull())
     {
-      m_messageId = StringUtils::Trim(messageIdNode.GetText().c_str());
+      m_messageId = messageIdNode.GetText();
       m_messageIdHasBeenSet = true;
     }
   }

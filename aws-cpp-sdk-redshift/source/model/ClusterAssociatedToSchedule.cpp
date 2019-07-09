@@ -54,7 +54,7 @@ ClusterAssociatedToSchedule& ClusterAssociatedToSchedule::operator =(const XmlNo
     XmlNode clusterIdentifierNode = resultNode.FirstChild("ClusterIdentifier");
     if(!clusterIdentifierNode.IsNull())
     {
-      m_clusterIdentifier = StringUtils::Trim(clusterIdentifierNode.GetText().c_str());
+      m_clusterIdentifier = clusterIdentifierNode.GetText();
       m_clusterIdentifierHasBeenSet = true;
     }
     XmlNode scheduleAssociationStateNode = resultNode.FirstChild("ScheduleAssociationState");

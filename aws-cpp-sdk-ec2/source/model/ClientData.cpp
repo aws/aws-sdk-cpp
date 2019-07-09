@@ -58,7 +58,7 @@ ClientData& ClientData::operator =(const XmlNode& xmlNode)
     XmlNode commentNode = resultNode.FirstChild("Comment");
     if(!commentNode.IsNull())
     {
-      m_comment = StringUtils::Trim(commentNode.GetText().c_str());
+      m_comment = commentNode.GetText();
       m_commentHasBeenSet = true;
     }
     XmlNode uploadEndNode = resultNode.FirstChild("UploadEnd");

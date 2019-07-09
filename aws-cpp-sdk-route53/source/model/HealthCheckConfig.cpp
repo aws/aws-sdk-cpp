@@ -102,7 +102,7 @@ HealthCheckConfig& HealthCheckConfig::operator =(const XmlNode& xmlNode)
     XmlNode iPAddressNode = resultNode.FirstChild("IPAddress");
     if(!iPAddressNode.IsNull())
     {
-      m_iPAddress = StringUtils::Trim(iPAddressNode.GetText().c_str());
+      m_iPAddress = iPAddressNode.GetText();
       m_iPAddressHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
@@ -120,19 +120,19 @@ HealthCheckConfig& HealthCheckConfig::operator =(const XmlNode& xmlNode)
     XmlNode resourcePathNode = resultNode.FirstChild("ResourcePath");
     if(!resourcePathNode.IsNull())
     {
-      m_resourcePath = StringUtils::Trim(resourcePathNode.GetText().c_str());
+      m_resourcePath = resourcePathNode.GetText();
       m_resourcePathHasBeenSet = true;
     }
     XmlNode fullyQualifiedDomainNameNode = resultNode.FirstChild("FullyQualifiedDomainName");
     if(!fullyQualifiedDomainNameNode.IsNull())
     {
-      m_fullyQualifiedDomainName = StringUtils::Trim(fullyQualifiedDomainNameNode.GetText().c_str());
+      m_fullyQualifiedDomainName = fullyQualifiedDomainNameNode.GetText();
       m_fullyQualifiedDomainNameHasBeenSet = true;
     }
     XmlNode searchStringNode = resultNode.FirstChild("SearchString");
     if(!searchStringNode.IsNull())
     {
-      m_searchString = StringUtils::Trim(searchStringNode.GetText().c_str());
+      m_searchString = searchStringNode.GetText();
       m_searchStringHasBeenSet = true;
     }
     XmlNode requestIntervalNode = resultNode.FirstChild("RequestInterval");
@@ -177,7 +177,7 @@ HealthCheckConfig& HealthCheckConfig::operator =(const XmlNode& xmlNode)
       XmlNode childHealthChecksMember = childHealthChecksNode.FirstChild("ChildHealthCheck");
       while(!childHealthChecksMember.IsNull())
       {
-        m_childHealthChecks.push_back(StringUtils::Trim(childHealthChecksMember.GetText().c_str()));
+        m_childHealthChecks.push_back(childHealthChecksMember.GetText());
         childHealthChecksMember = childHealthChecksMember.NextNode("ChildHealthCheck");
       }
 

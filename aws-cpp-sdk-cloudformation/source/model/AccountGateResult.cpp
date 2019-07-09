@@ -60,7 +60,7 @@ AccountGateResult& AccountGateResult::operator =(const XmlNode& xmlNode)
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
     if(!statusReasonNode.IsNull())
     {
-      m_statusReason = StringUtils::Trim(statusReasonNode.GetText().c_str());
+      m_statusReason = statusReasonNode.GetText();
       m_statusReasonHasBeenSet = true;
     }
   }

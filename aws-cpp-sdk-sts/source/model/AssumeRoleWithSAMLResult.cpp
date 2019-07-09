@@ -68,27 +68,27 @@ AssumeRoleWithSAMLResult& AssumeRoleWithSAMLResult::operator =(const Aws::Amazon
     XmlNode subjectNode = resultNode.FirstChild("Subject");
     if(!subjectNode.IsNull())
     {
-      m_subject = StringUtils::Trim(subjectNode.GetText().c_str());
+      m_subject = subjectNode.GetText();
     }
     XmlNode subjectTypeNode = resultNode.FirstChild("SubjectType");
     if(!subjectTypeNode.IsNull())
     {
-      m_subjectType = StringUtils::Trim(subjectTypeNode.GetText().c_str());
+      m_subjectType = subjectTypeNode.GetText();
     }
     XmlNode issuerNode = resultNode.FirstChild("Issuer");
     if(!issuerNode.IsNull())
     {
-      m_issuer = StringUtils::Trim(issuerNode.GetText().c_str());
+      m_issuer = issuerNode.GetText();
     }
     XmlNode audienceNode = resultNode.FirstChild("Audience");
     if(!audienceNode.IsNull())
     {
-      m_audience = StringUtils::Trim(audienceNode.GetText().c_str());
+      m_audience = audienceNode.GetText();
     }
     XmlNode nameQualifierNode = resultNode.FirstChild("NameQualifier");
     if(!nameQualifierNode.IsNull())
     {
-      m_nameQualifier = StringUtils::Trim(nameQualifierNode.GetText().c_str());
+      m_nameQualifier = nameQualifierNode.GetText();
     }
   }
 

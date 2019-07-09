@@ -23,19 +23,20 @@ namespace KinesisVideoArchivedMedia
 {
 namespace Model
 {
-  enum class DiscontinuityMode
+  enum class DASHPlaybackMode
   {
     NOT_SET,
-    ALWAYS,
-    NEVER
+    LIVE,
+    LIVE_REPLAY,
+    ON_DEMAND
   };
 
-namespace DiscontinuityModeMapper
+namespace DASHPlaybackModeMapper
 {
-AWS_KINESISVIDEOARCHIVEDMEDIA_API DiscontinuityMode GetDiscontinuityModeForName(const Aws::String& name);
+AWS_KINESISVIDEOARCHIVEDMEDIA_API DASHPlaybackMode GetDASHPlaybackModeForName(const Aws::String& name);
 
-AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::String GetNameForDiscontinuityMode(DiscontinuityMode value);
-} // namespace DiscontinuityModeMapper
+AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::String GetNameForDASHPlaybackMode(DASHPlaybackMode value);
+} // namespace DASHPlaybackModeMapper
 } // namespace Model
 } // namespace KinesisVideoArchivedMedia
 } // namespace Aws

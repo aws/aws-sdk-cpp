@@ -62,13 +62,13 @@ S3Grantee& S3Grantee::operator =(const XmlNode& xmlNode)
     XmlNode identifierNode = resultNode.FirstChild("Identifier");
     if(!identifierNode.IsNull())
     {
-      m_identifier = StringUtils::Trim(identifierNode.GetText().c_str());
+      m_identifier = identifierNode.GetText();
       m_identifierHasBeenSet = true;
     }
     XmlNode displayNameNode = resultNode.FirstChild("DisplayName");
     if(!displayNameNode.IsNull())
     {
-      m_displayName = StringUtils::Trim(displayNameNode.GetText().c_str());
+      m_displayName = displayNameNode.GetText();
       m_displayNameHasBeenSet = true;
     }
   }

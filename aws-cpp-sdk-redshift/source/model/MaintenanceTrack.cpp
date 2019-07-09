@@ -54,13 +54,13 @@ MaintenanceTrack& MaintenanceTrack::operator =(const XmlNode& xmlNode)
     XmlNode maintenanceTrackNameNode = resultNode.FirstChild("MaintenanceTrackName");
     if(!maintenanceTrackNameNode.IsNull())
     {
-      m_maintenanceTrackName = StringUtils::Trim(maintenanceTrackNameNode.GetText().c_str());
+      m_maintenanceTrackName = maintenanceTrackNameNode.GetText();
       m_maintenanceTrackNameHasBeenSet = true;
     }
     XmlNode databaseVersionNode = resultNode.FirstChild("DatabaseVersion");
     if(!databaseVersionNode.IsNull())
     {
-      m_databaseVersion = StringUtils::Trim(databaseVersionNode.GetText().c_str());
+      m_databaseVersion = databaseVersionNode.GetText();
       m_databaseVersionHasBeenSet = true;
     }
     XmlNode updateTargetsNode = resultNode.FirstChild("UpdateTargets");

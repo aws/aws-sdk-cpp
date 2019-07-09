@@ -52,13 +52,13 @@ JobFailure& JobFailure::operator =(const XmlNode& xmlNode)
     XmlNode failureCodeNode = resultNode.FirstChild("FailureCode");
     if(!failureCodeNode.IsNull())
     {
-      m_failureCode = StringUtils::Trim(failureCodeNode.GetText().c_str());
+      m_failureCode = failureCodeNode.GetText();
       m_failureCodeHasBeenSet = true;
     }
     XmlNode failureReasonNode = resultNode.FirstChild("FailureReason");
     if(!failureReasonNode.IsNull())
     {
-      m_failureReason = StringUtils::Trim(failureReasonNode.GetText().c_str());
+      m_failureReason = failureReasonNode.GetText();
       m_failureReasonHasBeenSet = true;
     }
   }

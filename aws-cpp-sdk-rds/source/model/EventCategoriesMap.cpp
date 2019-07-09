@@ -52,7 +52,7 @@ EventCategoriesMap& EventCategoriesMap::operator =(const XmlNode& xmlNode)
     XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
     if(!sourceTypeNode.IsNull())
     {
-      m_sourceType = StringUtils::Trim(sourceTypeNode.GetText().c_str());
+      m_sourceType = sourceTypeNode.GetText();
       m_sourceTypeHasBeenSet = true;
     }
     XmlNode eventCategoriesNode = resultNode.FirstChild("EventCategories");
@@ -61,7 +61,7 @@ EventCategoriesMap& EventCategoriesMap::operator =(const XmlNode& xmlNode)
       XmlNode eventCategoriesMember = eventCategoriesNode.FirstChild("EventCategory");
       while(!eventCategoriesMember.IsNull())
       {
-        m_eventCategories.push_back(StringUtils::Trim(eventCategoriesMember.GetText().c_str()));
+        m_eventCategories.push_back(eventCategoriesMember.GetText());
         eventCategoriesMember = eventCategoriesMember.NextNode("EventCategory");
       }
 

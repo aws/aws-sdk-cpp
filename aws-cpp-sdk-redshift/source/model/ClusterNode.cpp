@@ -54,19 +54,19 @@ ClusterNode& ClusterNode::operator =(const XmlNode& xmlNode)
     XmlNode nodeRoleNode = resultNode.FirstChild("NodeRole");
     if(!nodeRoleNode.IsNull())
     {
-      m_nodeRole = StringUtils::Trim(nodeRoleNode.GetText().c_str());
+      m_nodeRole = nodeRoleNode.GetText();
       m_nodeRoleHasBeenSet = true;
     }
     XmlNode privateIPAddressNode = resultNode.FirstChild("PrivateIPAddress");
     if(!privateIPAddressNode.IsNull())
     {
-      m_privateIPAddress = StringUtils::Trim(privateIPAddressNode.GetText().c_str());
+      m_privateIPAddress = privateIPAddressNode.GetText();
       m_privateIPAddressHasBeenSet = true;
     }
     XmlNode publicIPAddressNode = resultNode.FirstChild("PublicIPAddress");
     if(!publicIPAddressNode.IsNull())
     {
-      m_publicIPAddress = StringUtils::Trim(publicIPAddressNode.GetText().c_str());
+      m_publicIPAddress = publicIPAddressNode.GetText();
       m_publicIPAddressHasBeenSet = true;
     }
   }

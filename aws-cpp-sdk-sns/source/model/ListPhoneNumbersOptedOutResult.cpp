@@ -54,7 +54,7 @@ ListPhoneNumbersOptedOutResult& ListPhoneNumbersOptedOutResult::operator =(const
       XmlNode phoneNumbersMember = phoneNumbersNode.FirstChild("member");
       while(!phoneNumbersMember.IsNull())
       {
-        m_phoneNumbers.push_back(StringUtils::Trim(phoneNumbersMember.GetText().c_str()));
+        m_phoneNumbers.push_back(phoneNumbersMember.GetText());
         phoneNumbersMember = phoneNumbersMember.NextNode("member");
       }
 
@@ -62,7 +62,7 @@ ListPhoneNumbersOptedOutResult& ListPhoneNumbersOptedOutResult::operator =(const
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+      m_nextToken = nextTokenNode.GetText();
     }
   }
 

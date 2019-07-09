@@ -53,7 +53,7 @@ TagKeys& TagKeys::operator =(const XmlNode& xmlNode)
       XmlNode itemsMember = itemsNode.FirstChild("Key");
       while(!itemsMember.IsNull())
       {
-        m_items.push_back(StringUtils::Trim(itemsMember.GetText().c_str()));
+        m_items.push_back(itemsMember.GetText());
         itemsMember = itemsMember.NextNode("Key");
       }
 

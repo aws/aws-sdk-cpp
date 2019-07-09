@@ -68,19 +68,19 @@ Distribution& Distribution::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
     XmlNode aRNNode = resultNode.FirstChild("ARN");
     if(!aRNNode.IsNull())
     {
-      m_aRN = StringUtils::Trim(aRNNode.GetText().c_str());
+      m_aRN = aRNNode.GetText();
       m_aRNHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
@@ -98,7 +98,7 @@ Distribution& Distribution::operator =(const XmlNode& xmlNode)
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
     if(!domainNameNode.IsNull())
     {
-      m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
+      m_domainName = domainNameNode.GetText();
       m_domainNameHasBeenSet = true;
     }
     XmlNode activeTrustedSignersNode = resultNode.FirstChild("ActiveTrustedSigners");

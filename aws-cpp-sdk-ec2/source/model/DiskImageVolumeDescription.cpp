@@ -54,7 +54,7 @@ DiskImageVolumeDescription& DiskImageVolumeDescription::operator =(const XmlNode
     XmlNode idNode = resultNode.FirstChild("id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
     XmlNode sizeNode = resultNode.FirstChild("size");

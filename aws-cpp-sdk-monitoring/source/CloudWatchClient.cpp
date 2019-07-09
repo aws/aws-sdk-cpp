@@ -31,10 +31,12 @@
 #include <aws/monitoring/CloudWatchEndpoint.h>
 #include <aws/monitoring/CloudWatchErrorMarshaller.h>
 #include <aws/monitoring/model/DeleteAlarmsRequest.h>
+#include <aws/monitoring/model/DeleteAnomalyDetectorRequest.h>
 #include <aws/monitoring/model/DeleteDashboardsRequest.h>
 #include <aws/monitoring/model/DescribeAlarmHistoryRequest.h>
 #include <aws/monitoring/model/DescribeAlarmsRequest.h>
 #include <aws/monitoring/model/DescribeAlarmsForMetricRequest.h>
+#include <aws/monitoring/model/DescribeAnomalyDetectorsRequest.h>
 #include <aws/monitoring/model/DisableAlarmActionsRequest.h>
 #include <aws/monitoring/model/EnableAlarmActionsRequest.h>
 #include <aws/monitoring/model/GetDashboardRequest.h>
@@ -44,6 +46,7 @@
 #include <aws/monitoring/model/ListDashboardsRequest.h>
 #include <aws/monitoring/model/ListMetricsRequest.h>
 #include <aws/monitoring/model/ListTagsForResourceRequest.h>
+#include <aws/monitoring/model/PutAnomalyDetectorRequest.h>
 #include <aws/monitoring/model/PutDashboardRequest.h>
 #include <aws/monitoring/model/PutMetricAlarmRequest.h>
 #include <aws/monitoring/model/PutMetricDataRequest.h>
@@ -167,6 +170,41 @@ void CloudWatchClient::DeleteAlarmsAsync(const DeleteAlarmsRequest& request, con
 void CloudWatchClient::DeleteAlarmsAsyncHelper(const DeleteAlarmsRequest& request, const DeleteAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteAlarms(request), context);
+}
+
+DeleteAnomalyDetectorOutcome CloudWatchClient::DeleteAnomalyDetector(const DeleteAnomalyDetectorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteAnomalyDetectorOutcome(DeleteAnomalyDetectorResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteAnomalyDetectorOutcome(outcome.GetError());
+  }
+}
+
+DeleteAnomalyDetectorOutcomeCallable CloudWatchClient::DeleteAnomalyDetectorCallable(const DeleteAnomalyDetectorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAnomalyDetector(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchClient::DeleteAnomalyDetectorAsync(const DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAnomalyDetectorAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchClient::DeleteAnomalyDetectorAsyncHelper(const DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAnomalyDetector(request), context);
 }
 
 DeleteDashboardsOutcome CloudWatchClient::DeleteDashboards(const DeleteDashboardsRequest& request) const
@@ -307,6 +345,41 @@ void CloudWatchClient::DescribeAlarmsForMetricAsync(const DescribeAlarmsForMetri
 void CloudWatchClient::DescribeAlarmsForMetricAsyncHelper(const DescribeAlarmsForMetricRequest& request, const DescribeAlarmsForMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeAlarmsForMetric(request), context);
+}
+
+DescribeAnomalyDetectorsOutcome CloudWatchClient::DescribeAnomalyDetectors(const DescribeAnomalyDetectorsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeAnomalyDetectorsOutcome(DescribeAnomalyDetectorsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeAnomalyDetectorsOutcome(outcome.GetError());
+  }
+}
+
+DescribeAnomalyDetectorsOutcomeCallable CloudWatchClient::DescribeAnomalyDetectorsCallable(const DescribeAnomalyDetectorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAnomalyDetectorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAnomalyDetectors(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchClient::DescribeAnomalyDetectorsAsync(const DescribeAnomalyDetectorsRequest& request, const DescribeAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAnomalyDetectorsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchClient::DescribeAnomalyDetectorsAsyncHelper(const DescribeAnomalyDetectorsRequest& request, const DescribeAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAnomalyDetectors(request), context);
 }
 
 DisableAlarmActionsOutcome CloudWatchClient::DisableAlarmActions(const DisableAlarmActionsRequest& request) const
@@ -622,6 +695,41 @@ void CloudWatchClient::ListTagsForResourceAsync(const ListTagsForResourceRequest
 void CloudWatchClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+PutAnomalyDetectorOutcome CloudWatchClient::PutAnomalyDetector(const PutAnomalyDetectorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return PutAnomalyDetectorOutcome(PutAnomalyDetectorResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutAnomalyDetectorOutcome(outcome.GetError());
+  }
+}
+
+PutAnomalyDetectorOutcomeCallable CloudWatchClient::PutAnomalyDetectorCallable(const PutAnomalyDetectorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutAnomalyDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAnomalyDetector(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchClient::PutAnomalyDetectorAsync(const PutAnomalyDetectorRequest& request, const PutAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutAnomalyDetectorAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchClient::PutAnomalyDetectorAsyncHelper(const PutAnomalyDetectorRequest& request, const PutAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutAnomalyDetector(request), context);
 }
 
 PutDashboardOutcome CloudWatchClient::PutDashboard(const PutDashboardRequest& request) const

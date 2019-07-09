@@ -64,19 +64,19 @@ TrafficMirrorTarget& TrafficMirrorTarget::operator =(const XmlNode& xmlNode)
     XmlNode trafficMirrorTargetIdNode = resultNode.FirstChild("trafficMirrorTargetId");
     if(!trafficMirrorTargetIdNode.IsNull())
     {
-      m_trafficMirrorTargetId = StringUtils::Trim(trafficMirrorTargetIdNode.GetText().c_str());
+      m_trafficMirrorTargetId = trafficMirrorTargetIdNode.GetText();
       m_trafficMirrorTargetIdHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
-      m_networkInterfaceId = StringUtils::Trim(networkInterfaceIdNode.GetText().c_str());
+      m_networkInterfaceId = networkInterfaceIdNode.GetText();
       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode networkLoadBalancerArnNode = resultNode.FirstChild("networkLoadBalancerArn");
     if(!networkLoadBalancerArnNode.IsNull())
     {
-      m_networkLoadBalancerArn = StringUtils::Trim(networkLoadBalancerArnNode.GetText().c_str());
+      m_networkLoadBalancerArn = networkLoadBalancerArnNode.GetText();
       m_networkLoadBalancerArnHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");
@@ -88,13 +88,13 @@ TrafficMirrorTarget& TrafficMirrorTarget::operator =(const XmlNode& xmlNode)
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
-      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerId = ownerIdNode.GetText();
       m_ownerIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");

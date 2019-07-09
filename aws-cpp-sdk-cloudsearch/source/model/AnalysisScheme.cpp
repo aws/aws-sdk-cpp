@@ -56,7 +56,7 @@ AnalysisScheme& AnalysisScheme::operator =(const XmlNode& xmlNode)
     XmlNode analysisSchemeNameNode = resultNode.FirstChild("AnalysisSchemeName");
     if(!analysisSchemeNameNode.IsNull())
     {
-      m_analysisSchemeName = StringUtils::Trim(analysisSchemeNameNode.GetText().c_str());
+      m_analysisSchemeName = analysisSchemeNameNode.GetText();
       m_analysisSchemeNameHasBeenSet = true;
     }
     XmlNode analysisSchemeLanguageNode = resultNode.FirstChild("AnalysisSchemeLanguage");

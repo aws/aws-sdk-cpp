@@ -62,19 +62,19 @@ ElasticGpus& ElasticGpus::operator =(const XmlNode& xmlNode)
     XmlNode elasticGpuIdNode = resultNode.FirstChild("elasticGpuId");
     if(!elasticGpuIdNode.IsNull())
     {
-      m_elasticGpuId = StringUtils::Trim(elasticGpuIdNode.GetText().c_str());
+      m_elasticGpuId = elasticGpuIdNode.GetText();
       m_elasticGpuIdHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode elasticGpuTypeNode = resultNode.FirstChild("elasticGpuType");
     if(!elasticGpuTypeNode.IsNull())
     {
-      m_elasticGpuType = StringUtils::Trim(elasticGpuTypeNode.GetText().c_str());
+      m_elasticGpuType = elasticGpuTypeNode.GetText();
       m_elasticGpuTypeHasBeenSet = true;
     }
     XmlNode elasticGpuHealthNode = resultNode.FirstChild("elasticGpuHealth");
@@ -92,7 +92,7 @@ ElasticGpus& ElasticGpus::operator =(const XmlNode& xmlNode)
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceId = instanceIdNode.GetText();
       m_instanceIdHasBeenSet = true;
     }
   }

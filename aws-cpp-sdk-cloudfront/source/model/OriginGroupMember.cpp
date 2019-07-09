@@ -50,7 +50,7 @@ OriginGroupMember& OriginGroupMember::operator =(const XmlNode& xmlNode)
     XmlNode originIdNode = resultNode.FirstChild("OriginId");
     if(!originIdNode.IsNull())
     {
-      m_originId = StringUtils::Trim(originIdNode.GetText().c_str());
+      m_originId = originIdNode.GetText();
       m_originIdHasBeenSet = true;
     }
   }

@@ -55,12 +55,12 @@ ListObjectsResult& ListObjectsResult::operator =(const Aws::AmazonWebServiceResu
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
-      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+      m_marker = markerNode.GetText();
     }
     XmlNode nextMarkerNode = resultNode.FirstChild("NextMarker");
     if(!nextMarkerNode.IsNull())
     {
-      m_nextMarker = StringUtils::Trim(nextMarkerNode.GetText().c_str());
+      m_nextMarker = nextMarkerNode.GetText();
     }
     XmlNode contentsNode = resultNode.FirstChild("Contents");
     if(!contentsNode.IsNull())
@@ -76,17 +76,17 @@ ListObjectsResult& ListObjectsResult::operator =(const Aws::AmazonWebServiceResu
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
     if(!prefixNode.IsNull())
     {
-      m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
+      m_prefix = prefixNode.GetText();
     }
     XmlNode delimiterNode = resultNode.FirstChild("Delimiter");
     if(!delimiterNode.IsNull())
     {
-      m_delimiter = StringUtils::Trim(delimiterNode.GetText().c_str());
+      m_delimiter = delimiterNode.GetText();
     }
     XmlNode maxKeysNode = resultNode.FirstChild("MaxKeys");
     if(!maxKeysNode.IsNull())

@@ -56,7 +56,7 @@ CloudWatchDimensionConfiguration& CloudWatchDimensionConfiguration::operator =(c
     XmlNode dimensionNameNode = resultNode.FirstChild("DimensionName");
     if(!dimensionNameNode.IsNull())
     {
-      m_dimensionName = StringUtils::Trim(dimensionNameNode.GetText().c_str());
+      m_dimensionName = dimensionNameNode.GetText();
       m_dimensionNameHasBeenSet = true;
     }
     XmlNode dimensionValueSourceNode = resultNode.FirstChild("DimensionValueSource");
@@ -68,7 +68,7 @@ CloudWatchDimensionConfiguration& CloudWatchDimensionConfiguration::operator =(c
     XmlNode defaultDimensionValueNode = resultNode.FirstChild("DefaultDimensionValue");
     if(!defaultDimensionValueNode.IsNull())
     {
-      m_defaultDimensionValue = StringUtils::Trim(defaultDimensionValueNode.GetText().c_str());
+      m_defaultDimensionValue = defaultDimensionValueNode.GetText();
       m_defaultDimensionValueHasBeenSet = true;
     }
   }

@@ -55,7 +55,7 @@ CloudwatchLogsExportConfiguration& CloudwatchLogsExportConfiguration::operator =
       XmlNode enableLogTypesMember = enableLogTypesNode.FirstChild("member");
       while(!enableLogTypesMember.IsNull())
       {
-        m_enableLogTypes.push_back(StringUtils::Trim(enableLogTypesMember.GetText().c_str()));
+        m_enableLogTypes.push_back(enableLogTypesMember.GetText());
         enableLogTypesMember = enableLogTypesMember.NextNode("member");
       }
 
@@ -67,7 +67,7 @@ CloudwatchLogsExportConfiguration& CloudwatchLogsExportConfiguration::operator =
       XmlNode disableLogTypesMember = disableLogTypesNode.FirstChild("member");
       while(!disableLogTypesMember.IsNull())
       {
-        m_disableLogTypes.push_back(StringUtils::Trim(disableLogTypesMember.GetText().c_str()));
+        m_disableLogTypes.push_back(disableLogTypesMember.GetText());
         disableLogTypesMember = disableLogTypesMember.NextNode("member");
       }
 

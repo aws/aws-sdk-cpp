@@ -60,13 +60,13 @@ EntityInfo& EntityInfo::operator =(const XmlNode& xmlNode)
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
-      m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+      m_arn = arnNode.GetText();
       m_arnHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("Type");
@@ -78,13 +78,13 @@ EntityInfo& EntityInfo::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
     XmlNode pathNode = resultNode.FirstChild("Path");
     if(!pathNode.IsNull())
     {
-      m_path = StringUtils::Trim(pathNode.GetText().c_str());
+      m_path = pathNode.GetText();
       m_pathHasBeenSet = true;
     }
   }

@@ -62,13 +62,13 @@ ContentTypeProfile& ContentTypeProfile::operator =(const XmlNode& xmlNode)
     XmlNode profileIdNode = resultNode.FirstChild("ProfileId");
     if(!profileIdNode.IsNull())
     {
-      m_profileId = StringUtils::Trim(profileIdNode.GetText().c_str());
+      m_profileId = profileIdNode.GetText();
       m_profileIdHasBeenSet = true;
     }
     XmlNode contentTypeNode = resultNode.FirstChild("ContentType");
     if(!contentTypeNode.IsNull())
     {
-      m_contentType = StringUtils::Trim(contentTypeNode.GetText().c_str());
+      m_contentType = contentTypeNode.GetText();
       m_contentTypeHasBeenSet = true;
     }
   }

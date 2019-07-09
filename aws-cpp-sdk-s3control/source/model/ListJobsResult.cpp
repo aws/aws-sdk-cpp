@@ -44,7 +44,7 @@ ListJobsResult& ListJobsResult::operator =(const Aws::AmazonWebServiceResult<Xml
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+      m_nextToken = nextTokenNode.GetText();
     }
     XmlNode jobsNode = resultNode.FirstChild("Jobs");
     if(!jobsNode.IsNull())

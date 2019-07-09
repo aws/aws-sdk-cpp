@@ -84,13 +84,13 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     XmlNode dataEncryptionKeyIdNode = resultNode.FirstChild("dataEncryptionKeyId");
     if(!dataEncryptionKeyIdNode.IsNull())
     {
-      m_dataEncryptionKeyId = StringUtils::Trim(dataEncryptionKeyIdNode.GetText().c_str());
+      m_dataEncryptionKeyId = dataEncryptionKeyIdNode.GetText();
       m_dataEncryptionKeyIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode encryptedNode = resultNode.FirstChild("encrypted");
@@ -102,25 +102,25 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     XmlNode kmsKeyIdNode = resultNode.FirstChild("kmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
-      m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
+      m_kmsKeyId = kmsKeyIdNode.GetText();
       m_kmsKeyIdHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
-      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerId = ownerIdNode.GetText();
       m_ownerIdHasBeenSet = true;
     }
     XmlNode progressNode = resultNode.FirstChild("progress");
     if(!progressNode.IsNull())
     {
-      m_progress = StringUtils::Trim(progressNode.GetText().c_str());
+      m_progress = progressNode.GetText();
       m_progressHasBeenSet = true;
     }
     XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
     if(!snapshotIdNode.IsNull())
     {
-      m_snapshotId = StringUtils::Trim(snapshotIdNode.GetText().c_str());
+      m_snapshotId = snapshotIdNode.GetText();
       m_snapshotIdHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("startTime");
@@ -138,13 +138,13 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     XmlNode stateMessageNode = resultNode.FirstChild("statusMessage");
     if(!stateMessageNode.IsNull())
     {
-      m_stateMessage = StringUtils::Trim(stateMessageNode.GetText().c_str());
+      m_stateMessage = stateMessageNode.GetText();
       m_stateMessageHasBeenSet = true;
     }
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
     {
-      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
+      m_volumeId = volumeIdNode.GetText();
       m_volumeIdHasBeenSet = true;
     }
     XmlNode volumeSizeNode = resultNode.FirstChild("volumeSize");
@@ -156,7 +156,7 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     XmlNode ownerAliasNode = resultNode.FirstChild("ownerAlias");
     if(!ownerAliasNode.IsNull())
     {
-      m_ownerAlias = StringUtils::Trim(ownerAliasNode.GetText().c_str());
+      m_ownerAlias = ownerAliasNode.GetText();
       m_ownerAliasHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");

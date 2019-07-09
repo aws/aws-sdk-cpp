@@ -53,7 +53,7 @@ GetReservedInstancesExchangeQuoteResponse& GetReservedInstancesExchangeQuoteResp
     XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
     if(!currencyCodeNode.IsNull())
     {
-      m_currencyCode = StringUtils::Trim(currencyCodeNode.GetText().c_str());
+      m_currencyCode = currencyCodeNode.GetText();
     }
     XmlNode isValidExchangeNode = resultNode.FirstChild("isValidExchange");
     if(!isValidExchangeNode.IsNull())
@@ -68,7 +68,7 @@ GetReservedInstancesExchangeQuoteResponse& GetReservedInstancesExchangeQuoteResp
     XmlNode paymentDueNode = resultNode.FirstChild("paymentDue");
     if(!paymentDueNode.IsNull())
     {
-      m_paymentDue = StringUtils::Trim(paymentDueNode.GetText().c_str());
+      m_paymentDue = paymentDueNode.GetText();
     }
     XmlNode reservedInstanceValueRollupNode = resultNode.FirstChild("reservedInstanceValueRollup");
     if(!reservedInstanceValueRollupNode.IsNull())
@@ -105,7 +105,7 @@ GetReservedInstancesExchangeQuoteResponse& GetReservedInstancesExchangeQuoteResp
     XmlNode validationFailureReasonNode = resultNode.FirstChild("validationFailureReason");
     if(!validationFailureReasonNode.IsNull())
     {
-      m_validationFailureReason = StringUtils::Trim(validationFailureReasonNode.GetText().c_str());
+      m_validationFailureReason = validationFailureReasonNode.GetText();
     }
   }
 

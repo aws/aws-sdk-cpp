@@ -55,7 +55,7 @@ PendingCloudwatchLogsExports& PendingCloudwatchLogsExports::operator =(const Xml
       XmlNode logTypesToEnableMember = logTypesToEnableNode.FirstChild("member");
       while(!logTypesToEnableMember.IsNull())
       {
-        m_logTypesToEnable.push_back(StringUtils::Trim(logTypesToEnableMember.GetText().c_str()));
+        m_logTypesToEnable.push_back(logTypesToEnableMember.GetText());
         logTypesToEnableMember = logTypesToEnableMember.NextNode("member");
       }
 
@@ -67,7 +67,7 @@ PendingCloudwatchLogsExports& PendingCloudwatchLogsExports::operator =(const Xml
       XmlNode logTypesToDisableMember = logTypesToDisableNode.FirstChild("member");
       while(!logTypesToDisableMember.IsNull())
       {
-        m_logTypesToDisable.push_back(StringUtils::Trim(logTypesToDisableMember.GetText().c_str()));
+        m_logTypesToDisable.push_back(logTypesToDisableMember.GetText());
         logTypesToDisableMember = logTypesToDisableMember.NextNode("member");
       }
 

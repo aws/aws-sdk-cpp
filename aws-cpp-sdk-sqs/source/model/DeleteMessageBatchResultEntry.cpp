@@ -50,7 +50,7 @@ DeleteMessageBatchResultEntry& DeleteMessageBatchResultEntry::operator =(const X
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
   }

@@ -62,13 +62,13 @@ BuildConfiguration& BuildConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode artifactNameNode = resultNode.FirstChild("ArtifactName");
     if(!artifactNameNode.IsNull())
     {
-      m_artifactName = StringUtils::Trim(artifactNameNode.GetText().c_str());
+      m_artifactName = artifactNameNode.GetText();
       m_artifactNameHasBeenSet = true;
     }
     XmlNode codeBuildServiceRoleNode = resultNode.FirstChild("CodeBuildServiceRole");
     if(!codeBuildServiceRoleNode.IsNull())
     {
-      m_codeBuildServiceRole = StringUtils::Trim(codeBuildServiceRoleNode.GetText().c_str());
+      m_codeBuildServiceRole = codeBuildServiceRoleNode.GetText();
       m_codeBuildServiceRoleHasBeenSet = true;
     }
     XmlNode computeTypeNode = resultNode.FirstChild("ComputeType");
@@ -80,7 +80,7 @@ BuildConfiguration& BuildConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode imageNode = resultNode.FirstChild("Image");
     if(!imageNode.IsNull())
     {
-      m_image = StringUtils::Trim(imageNode.GetText().c_str());
+      m_image = imageNode.GetText();
       m_imageHasBeenSet = true;
     }
     XmlNode timeoutInMinutesNode = resultNode.FirstChild("TimeoutInMinutes");

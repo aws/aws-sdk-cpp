@@ -54,7 +54,7 @@ ProductCode& ProductCode::operator =(const XmlNode& xmlNode)
     XmlNode productCodeIdNode = resultNode.FirstChild("productCode");
     if(!productCodeIdNode.IsNull())
     {
-      m_productCodeId = StringUtils::Trim(productCodeIdNode.GetText().c_str());
+      m_productCodeId = productCodeIdNode.GetText();
       m_productCodeIdHasBeenSet = true;
     }
     XmlNode productCodeTypeNode = resultNode.FirstChild("type");

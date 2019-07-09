@@ -52,10 +52,10 @@ namespace Model
     /**
      * <p>The source of the timestamps for the requested media.</p> <p>When
      * <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and
-     * <a>GetHLSStreamingSessionURLInput$PlaybackMode</a> is <code>ON_DEMAND</code>,
-     * the first fragment ingested with a producer timestamp within the specified
-     * <a>FragmentSelector$TimestampRange</a> is included in the media playlist. In
-     * addition, the fragments with producer timestamps within the
+     * <a>GetHLSStreamingSessionURLInput$PlaybackMode</a> is <code>ON_DEMAND</code> or
+     * <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp
+     * within the specified <a>FragmentSelector$TimestampRange</a> is included in the
+     * media playlist. In addition, the fragments with producer timestamps within the
      * <code>TimestampRange</code> ingested immediately following the first fragment
      * (up to the <a>GetHLSStreamingSessionURLInput$MaxMediaPlaylistFragmentResults</a>
      * value) are included. </p> <p>Fragments that have duplicate producer timestamps
@@ -78,10 +78,10 @@ namespace Model
     /**
      * <p>The source of the timestamps for the requested media.</p> <p>When
      * <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and
-     * <a>GetHLSStreamingSessionURLInput$PlaybackMode</a> is <code>ON_DEMAND</code>,
-     * the first fragment ingested with a producer timestamp within the specified
-     * <a>FragmentSelector$TimestampRange</a> is included in the media playlist. In
-     * addition, the fragments with producer timestamps within the
+     * <a>GetHLSStreamingSessionURLInput$PlaybackMode</a> is <code>ON_DEMAND</code> or
+     * <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp
+     * within the specified <a>FragmentSelector$TimestampRange</a> is included in the
+     * media playlist. In addition, the fragments with producer timestamps within the
      * <code>TimestampRange</code> ingested immediately following the first fragment
      * (up to the <a>GetHLSStreamingSessionURLInput$MaxMediaPlaylistFragmentResults</a>
      * value) are included. </p> <p>Fragments that have duplicate producer timestamps
@@ -104,10 +104,10 @@ namespace Model
     /**
      * <p>The source of the timestamps for the requested media.</p> <p>When
      * <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and
-     * <a>GetHLSStreamingSessionURLInput$PlaybackMode</a> is <code>ON_DEMAND</code>,
-     * the first fragment ingested with a producer timestamp within the specified
-     * <a>FragmentSelector$TimestampRange</a> is included in the media playlist. In
-     * addition, the fragments with producer timestamps within the
+     * <a>GetHLSStreamingSessionURLInput$PlaybackMode</a> is <code>ON_DEMAND</code> or
+     * <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp
+     * within the specified <a>FragmentSelector$TimestampRange</a> is included in the
+     * media playlist. In addition, the fragments with producer timestamps within the
      * <code>TimestampRange</code> ingested immediately following the first fragment
      * (up to the <a>GetHLSStreamingSessionURLInput$MaxMediaPlaylistFragmentResults</a>
      * value) are included. </p> <p>Fragments that have duplicate producer timestamps
@@ -130,10 +130,10 @@ namespace Model
     /**
      * <p>The source of the timestamps for the requested media.</p> <p>When
      * <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and
-     * <a>GetHLSStreamingSessionURLInput$PlaybackMode</a> is <code>ON_DEMAND</code>,
-     * the first fragment ingested with a producer timestamp within the specified
-     * <a>FragmentSelector$TimestampRange</a> is included in the media playlist. In
-     * addition, the fragments with producer timestamps within the
+     * <a>GetHLSStreamingSessionURLInput$PlaybackMode</a> is <code>ON_DEMAND</code> or
+     * <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp
+     * within the specified <a>FragmentSelector$TimestampRange</a> is included in the
+     * media playlist. In addition, the fragments with producer timestamps within the
      * <code>TimestampRange</code> ingested immediately following the first fragment
      * (up to the <a>GetHLSStreamingSessionURLInput$MaxMediaPlaylistFragmentResults</a>
      * value) are included. </p> <p>Fragments that have duplicate producer timestamps
@@ -156,10 +156,10 @@ namespace Model
     /**
      * <p>The source of the timestamps for the requested media.</p> <p>When
      * <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and
-     * <a>GetHLSStreamingSessionURLInput$PlaybackMode</a> is <code>ON_DEMAND</code>,
-     * the first fragment ingested with a producer timestamp within the specified
-     * <a>FragmentSelector$TimestampRange</a> is included in the media playlist. In
-     * addition, the fragments with producer timestamps within the
+     * <a>GetHLSStreamingSessionURLInput$PlaybackMode</a> is <code>ON_DEMAND</code> or
+     * <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp
+     * within the specified <a>FragmentSelector$TimestampRange</a> is included in the
+     * media playlist. In addition, the fragments with producer timestamps within the
      * <code>TimestampRange</code> ingested immediately following the first fragment
      * (up to the <a>GetHLSStreamingSessionURLInput$MaxMediaPlaylistFragmentResults</a>
      * value) are included. </p> <p>Fragments that have duplicate producer timestamps
@@ -182,10 +182,10 @@ namespace Model
     /**
      * <p>The source of the timestamps for the requested media.</p> <p>When
      * <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and
-     * <a>GetHLSStreamingSessionURLInput$PlaybackMode</a> is <code>ON_DEMAND</code>,
-     * the first fragment ingested with a producer timestamp within the specified
-     * <a>FragmentSelector$TimestampRange</a> is included in the media playlist. In
-     * addition, the fragments with producer timestamps within the
+     * <a>GetHLSStreamingSessionURLInput$PlaybackMode</a> is <code>ON_DEMAND</code> or
+     * <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp
+     * within the specified <a>FragmentSelector$TimestampRange</a> is included in the
+     * media playlist. In addition, the fragments with producer timestamps within the
      * <code>TimestampRange</code> ingested immediately following the first fragment
      * (up to the <a>GetHLSStreamingSessionURLInput$MaxMediaPlaylistFragmentResults</a>
      * value) are included. </p> <p>Fragments that have duplicate producer timestamps

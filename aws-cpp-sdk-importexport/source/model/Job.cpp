@@ -60,7 +60,7 @@ Job& Job::operator =(const XmlNode& xmlNode)
     XmlNode jobIdNode = resultNode.FirstChild("JobId");
     if(!jobIdNode.IsNull())
     {
-      m_jobId = StringUtils::Trim(jobIdNode.GetText().c_str());
+      m_jobId = jobIdNode.GetText();
       m_jobIdHasBeenSet = true;
     }
     XmlNode creationDateNode = resultNode.FirstChild("CreationDate");

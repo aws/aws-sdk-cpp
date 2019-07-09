@@ -22,10 +22,12 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/monitoring/model/DeleteAnomalyDetectorResult.h>
 #include <aws/monitoring/model/DeleteDashboardsResult.h>
 #include <aws/monitoring/model/DescribeAlarmHistoryResult.h>
 #include <aws/monitoring/model/DescribeAlarmsResult.h>
 #include <aws/monitoring/model/DescribeAlarmsForMetricResult.h>
+#include <aws/monitoring/model/DescribeAnomalyDetectorsResult.h>
 #include <aws/monitoring/model/GetDashboardResult.h>
 #include <aws/monitoring/model/GetMetricDataResult.h>
 #include <aws/monitoring/model/GetMetricStatisticsResult.h>
@@ -33,6 +35,7 @@
 #include <aws/monitoring/model/ListDashboardsResult.h>
 #include <aws/monitoring/model/ListMetricsResult.h>
 #include <aws/monitoring/model/ListTagsForResourceResult.h>
+#include <aws/monitoring/model/PutAnomalyDetectorResult.h>
 #include <aws/monitoring/model/PutDashboardResult.h>
 #include <aws/monitoring/model/TagResourceResult.h>
 #include <aws/monitoring/model/UntagResourceResult.h>
@@ -83,10 +86,12 @@ namespace CloudWatch
 namespace Model
 {
         class DeleteAlarmsRequest;
+        class DeleteAnomalyDetectorRequest;
         class DeleteDashboardsRequest;
         class DescribeAlarmHistoryRequest;
         class DescribeAlarmsRequest;
         class DescribeAlarmsForMetricRequest;
+        class DescribeAnomalyDetectorsRequest;
         class DisableAlarmActionsRequest;
         class EnableAlarmActionsRequest;
         class GetDashboardRequest;
@@ -96,6 +101,7 @@ namespace Model
         class ListDashboardsRequest;
         class ListMetricsRequest;
         class ListTagsForResourceRequest;
+        class PutAnomalyDetectorRequest;
         class PutDashboardRequest;
         class PutMetricAlarmRequest;
         class PutMetricDataRequest;
@@ -104,10 +110,12 @@ namespace Model
         class UntagResourceRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> DeleteAlarmsOutcome;
+        typedef Aws::Utils::Outcome<DeleteAnomalyDetectorResult, Aws::Client::AWSError<CloudWatchErrors>> DeleteAnomalyDetectorOutcome;
         typedef Aws::Utils::Outcome<DeleteDashboardsResult, Aws::Client::AWSError<CloudWatchErrors>> DeleteDashboardsOutcome;
         typedef Aws::Utils::Outcome<DescribeAlarmHistoryResult, Aws::Client::AWSError<CloudWatchErrors>> DescribeAlarmHistoryOutcome;
         typedef Aws::Utils::Outcome<DescribeAlarmsResult, Aws::Client::AWSError<CloudWatchErrors>> DescribeAlarmsOutcome;
         typedef Aws::Utils::Outcome<DescribeAlarmsForMetricResult, Aws::Client::AWSError<CloudWatchErrors>> DescribeAlarmsForMetricOutcome;
+        typedef Aws::Utils::Outcome<DescribeAnomalyDetectorsResult, Aws::Client::AWSError<CloudWatchErrors>> DescribeAnomalyDetectorsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> DisableAlarmActionsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> EnableAlarmActionsOutcome;
         typedef Aws::Utils::Outcome<GetDashboardResult, Aws::Client::AWSError<CloudWatchErrors>> GetDashboardOutcome;
@@ -117,6 +125,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDashboardsResult, Aws::Client::AWSError<CloudWatchErrors>> ListDashboardsOutcome;
         typedef Aws::Utils::Outcome<ListMetricsResult, Aws::Client::AWSError<CloudWatchErrors>> ListMetricsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<CloudWatchErrors>> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<PutAnomalyDetectorResult, Aws::Client::AWSError<CloudWatchErrors>> PutAnomalyDetectorOutcome;
         typedef Aws::Utils::Outcome<PutDashboardResult, Aws::Client::AWSError<CloudWatchErrors>> PutDashboardOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> PutMetricAlarmOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> PutMetricDataOutcome;
@@ -125,10 +134,12 @@ namespace Model
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<CloudWatchErrors>> UntagResourceOutcome;
 
         typedef std::future<DeleteAlarmsOutcome> DeleteAlarmsOutcomeCallable;
+        typedef std::future<DeleteAnomalyDetectorOutcome> DeleteAnomalyDetectorOutcomeCallable;
         typedef std::future<DeleteDashboardsOutcome> DeleteDashboardsOutcomeCallable;
         typedef std::future<DescribeAlarmHistoryOutcome> DescribeAlarmHistoryOutcomeCallable;
         typedef std::future<DescribeAlarmsOutcome> DescribeAlarmsOutcomeCallable;
         typedef std::future<DescribeAlarmsForMetricOutcome> DescribeAlarmsForMetricOutcomeCallable;
+        typedef std::future<DescribeAnomalyDetectorsOutcome> DescribeAnomalyDetectorsOutcomeCallable;
         typedef std::future<DisableAlarmActionsOutcome> DisableAlarmActionsOutcomeCallable;
         typedef std::future<EnableAlarmActionsOutcome> EnableAlarmActionsOutcomeCallable;
         typedef std::future<GetDashboardOutcome> GetDashboardOutcomeCallable;
@@ -138,6 +149,7 @@ namespace Model
         typedef std::future<ListDashboardsOutcome> ListDashboardsOutcomeCallable;
         typedef std::future<ListMetricsOutcome> ListMetricsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<PutAnomalyDetectorOutcome> PutAnomalyDetectorOutcomeCallable;
         typedef std::future<PutDashboardOutcome> PutDashboardOutcomeCallable;
         typedef std::future<PutMetricAlarmOutcome> PutMetricAlarmOutcomeCallable;
         typedef std::future<PutMetricDataOutcome> PutMetricDataOutcomeCallable;
@@ -149,10 +161,12 @@ namespace Model
   class CloudWatchClient;
 
     typedef std::function<void(const CloudWatchClient*, const Model::DeleteAlarmsRequest&, const Model::DeleteAlarmsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAlarmsResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchClient*, const Model::DeleteAnomalyDetectorRequest&, const Model::DeleteAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAnomalyDetectorResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::DeleteDashboardsRequest&, const Model::DeleteDashboardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDashboardsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::DescribeAlarmHistoryRequest&, const Model::DescribeAlarmHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAlarmHistoryResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::DescribeAlarmsRequest&, const Model::DescribeAlarmsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAlarmsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::DescribeAlarmsForMetricRequest&, const Model::DescribeAlarmsForMetricOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAlarmsForMetricResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchClient*, const Model::DescribeAnomalyDetectorsRequest&, const Model::DescribeAnomalyDetectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAnomalyDetectorsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::DisableAlarmActionsRequest&, const Model::DisableAlarmActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableAlarmActionsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::EnableAlarmActionsRequest&, const Model::EnableAlarmActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableAlarmActionsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::GetDashboardRequest&, const Model::GetDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDashboardResponseReceivedHandler;
@@ -162,6 +176,7 @@ namespace Model
     typedef std::function<void(const CloudWatchClient*, const Model::ListDashboardsRequest&, const Model::ListDashboardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDashboardsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::ListMetricsRequest&, const Model::ListMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMetricsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchClient*, const Model::PutAnomalyDetectorRequest&, const Model::PutAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAnomalyDetectorResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::PutDashboardRequest&, const Model::PutDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDashboardResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::PutMetricAlarmRequest&, const Model::PutMetricAlarmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMetricAlarmResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::PutMetricDataRequest&, const Model::PutMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMetricDataResponseReceivedHandler;
@@ -245,6 +260,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAlarmsAsync(const Model::DeleteAlarmsRequest& request, const DeleteAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified anomaly detection model from your
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAnomalyDetector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAnomalyDetectorOutcome DeleteAnomalyDetector(const Model::DeleteAnomalyDetectorRequest& request) const;
+
+        /**
+         * <p>Deletes the specified anomaly detection model from your
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAnomalyDetector">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAnomalyDetectorOutcomeCallable DeleteAnomalyDetectorCallable(const Model::DeleteAnomalyDetectorRequest& request) const;
+
+        /**
+         * <p>Deletes the specified anomaly detection model from your
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAnomalyDetector">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAnomalyDetectorAsync(const Model::DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes all dashboards that you specify. You may specify up to 100 dashboards
@@ -369,6 +412,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAlarmsForMetricAsync(const Model::DescribeAlarmsForMetricRequest& request, const DescribeAlarmsForMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the anomaly detection models that you have created in your account. You
+         * can list all models in your account or filter the results to only the models
+         * that are related to a certain namespace, metric name, or metric
+         * dimension.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAnomalyDetectors">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAnomalyDetectorsOutcome DescribeAnomalyDetectors(const Model::DescribeAnomalyDetectorsRequest& request) const;
+
+        /**
+         * <p>Lists the anomaly detection models that you have created in your account. You
+         * can list all models in your account or filter the results to only the models
+         * that are related to a certain namespace, metric name, or metric
+         * dimension.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAnomalyDetectors">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAnomalyDetectorsOutcomeCallable DescribeAnomalyDetectorsCallable(const Model::DescribeAnomalyDetectorsRequest& request) const;
+
+        /**
+         * <p>Lists the anomaly detection models that you have created in your account. You
+         * can list all models in your account or filter the results to only the models
+         * that are related to a certain namespace, metric name, or metric
+         * dimension.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAnomalyDetectors">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAnomalyDetectorsAsync(const Model::DescribeAnomalyDetectorsRequest& request, const DescribeAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables the actions for the specified alarms. When an alarm's actions are
@@ -869,22 +946,59 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates an anomaly detection model for a CloudWatch metric. You can use the
+         * model to display a band of expected normal values when the metric is
+         * graphed.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html">CloudWatch
+         * Anomaly Detection</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAnomalyDetector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAnomalyDetectorOutcome PutAnomalyDetector(const Model::PutAnomalyDetectorRequest& request) const;
+
+        /**
+         * <p>Creates an anomaly detection model for a CloudWatch metric. You can use the
+         * model to display a band of expected normal values when the metric is
+         * graphed.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html">CloudWatch
+         * Anomaly Detection</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAnomalyDetector">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutAnomalyDetectorOutcomeCallable PutAnomalyDetectorCallable(const Model::PutAnomalyDetectorRequest& request) const;
+
+        /**
+         * <p>Creates an anomaly detection model for a CloudWatch metric. You can use the
+         * model to display a band of expected normal values when the metric is
+         * graphed.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html">CloudWatch
+         * Anomaly Detection</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAnomalyDetector">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutAnomalyDetectorAsync(const Model::PutAnomalyDetectorRequest& request, const PutAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a dashboard if it does not already exist, or updates an existing
          * dashboard. If you update a dashboard, the entire contents are replaced with what
-         * you specify here.</p> <p>There is no limit to the number of dashboards in your
-         * account. All dashboards in your account are global, not region-specific.</p>
-         * <p>A simple way to create a dashboard using <code>PutDashboard</code> is to copy
-         * an existing dashboard. To copy an existing dashboard using the console, you can
-         * load the dashboard and then use the View/edit source command in the Actions menu
-         * to display the JSON block for that dashboard. Another way to copy a dashboard is
-         * to use <code>GetDashboard</code>, and then use the data returned within
-         * <code>DashboardBody</code> as the template for the new dashboard when you call
-         * <code>PutDashboard</code>.</p> <p>When you create a dashboard with
-         * <code>PutDashboard</code>, a good practice is to add a text widget at the top of
-         * the dashboard with a message that the dashboard was created by script and should
-         * not be changed in the console. This message could also point console users to
-         * the location of the <code>DashboardBody</code> script or the CloudFormation
-         * template used to create the dashboard.</p><p><h3>See Also:</h3>   <a
+         * you specify here.</p> <p>All dashboards in your account are global, not
+         * region-specific.</p> <p>A simple way to create a dashboard using
+         * <code>PutDashboard</code> is to copy an existing dashboard. To copy an existing
+         * dashboard using the console, you can load the dashboard and then use the
+         * View/edit source command in the Actions menu to display the JSON block for that
+         * dashboard. Another way to copy a dashboard is to use <code>GetDashboard</code>,
+         * and then use the data returned within <code>DashboardBody</code> as the template
+         * for the new dashboard when you call <code>PutDashboard</code>.</p> <p>When you
+         * create a dashboard with <code>PutDashboard</code>, a good practice is to add a
+         * text widget at the top of the dashboard with a message that the dashboard was
+         * created by script and should not be changed in the console. This message could
+         * also point console users to the location of the <code>DashboardBody</code>
+         * script or the CloudFormation template used to create the
+         * dashboard.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard">AWS
          * API Reference</a></p>
          */
@@ -893,20 +1007,20 @@ namespace Model
         /**
          * <p>Creates a dashboard if it does not already exist, or updates an existing
          * dashboard. If you update a dashboard, the entire contents are replaced with what
-         * you specify here.</p> <p>There is no limit to the number of dashboards in your
-         * account. All dashboards in your account are global, not region-specific.</p>
-         * <p>A simple way to create a dashboard using <code>PutDashboard</code> is to copy
-         * an existing dashboard. To copy an existing dashboard using the console, you can
-         * load the dashboard and then use the View/edit source command in the Actions menu
-         * to display the JSON block for that dashboard. Another way to copy a dashboard is
-         * to use <code>GetDashboard</code>, and then use the data returned within
-         * <code>DashboardBody</code> as the template for the new dashboard when you call
-         * <code>PutDashboard</code>.</p> <p>When you create a dashboard with
-         * <code>PutDashboard</code>, a good practice is to add a text widget at the top of
-         * the dashboard with a message that the dashboard was created by script and should
-         * not be changed in the console. This message could also point console users to
-         * the location of the <code>DashboardBody</code> script or the CloudFormation
-         * template used to create the dashboard.</p><p><h3>See Also:</h3>   <a
+         * you specify here.</p> <p>All dashboards in your account are global, not
+         * region-specific.</p> <p>A simple way to create a dashboard using
+         * <code>PutDashboard</code> is to copy an existing dashboard. To copy an existing
+         * dashboard using the console, you can load the dashboard and then use the
+         * View/edit source command in the Actions menu to display the JSON block for that
+         * dashboard. Another way to copy a dashboard is to use <code>GetDashboard</code>,
+         * and then use the data returned within <code>DashboardBody</code> as the template
+         * for the new dashboard when you call <code>PutDashboard</code>.</p> <p>When you
+         * create a dashboard with <code>PutDashboard</code>, a good practice is to add a
+         * text widget at the top of the dashboard with a message that the dashboard was
+         * created by script and should not be changed in the console. This message could
+         * also point console users to the location of the <code>DashboardBody</code>
+         * script or the CloudFormation template used to create the
+         * dashboard.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard">AWS
          * API Reference</a></p>
          *
@@ -917,20 +1031,20 @@ namespace Model
         /**
          * <p>Creates a dashboard if it does not already exist, or updates an existing
          * dashboard. If you update a dashboard, the entire contents are replaced with what
-         * you specify here.</p> <p>There is no limit to the number of dashboards in your
-         * account. All dashboards in your account are global, not region-specific.</p>
-         * <p>A simple way to create a dashboard using <code>PutDashboard</code> is to copy
-         * an existing dashboard. To copy an existing dashboard using the console, you can
-         * load the dashboard and then use the View/edit source command in the Actions menu
-         * to display the JSON block for that dashboard. Another way to copy a dashboard is
-         * to use <code>GetDashboard</code>, and then use the data returned within
-         * <code>DashboardBody</code> as the template for the new dashboard when you call
-         * <code>PutDashboard</code>.</p> <p>When you create a dashboard with
-         * <code>PutDashboard</code>, a good practice is to add a text widget at the top of
-         * the dashboard with a message that the dashboard was created by script and should
-         * not be changed in the console. This message could also point console users to
-         * the location of the <code>DashboardBody</code> script or the CloudFormation
-         * template used to create the dashboard.</p><p><h3>See Also:</h3>   <a
+         * you specify here.</p> <p>All dashboards in your account are global, not
+         * region-specific.</p> <p>A simple way to create a dashboard using
+         * <code>PutDashboard</code> is to copy an existing dashboard. To copy an existing
+         * dashboard using the console, you can load the dashboard and then use the
+         * View/edit source command in the Actions menu to display the JSON block for that
+         * dashboard. Another way to copy a dashboard is to use <code>GetDashboard</code>,
+         * and then use the data returned within <code>DashboardBody</code> as the template
+         * for the new dashboard when you call <code>PutDashboard</code>.</p> <p>When you
+         * create a dashboard with <code>PutDashboard</code>, a good practice is to add a
+         * text widget at the top of the dashboard with a message that the dashboard was
+         * created by script and should not be changed in the console. This message could
+         * also point console users to the location of the <code>DashboardBody</code>
+         * script or the CloudFormation template used to create the
+         * dashboard.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard">AWS
          * API Reference</a></p>
          *
@@ -939,33 +1053,34 @@ namespace Model
         virtual void PutDashboardAsync(const Model::PutDashboardRequest& request, const PutDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates or updates an alarm and associates it with the specified metric or
-         * metric math expression.</p> <p>When this operation creates an alarm, the alarm
-         * state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then
-         * evaluated and its state is set appropriately. Any actions associated with the
-         * new state are then executed.</p> <p>When you update an existing alarm, its state
-         * is left unchanged, but the update completely overwrites the previous
-         * configuration of the alarm.</p> <p>If you are an IAM user, you must have Amazon
-         * EC2 permissions for some alarm operations:</p> <ul> <li> <p>
-         * <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions</p>
-         * </li> <li> <p> <code>ec2:DescribeInstanceStatus</code> and
-         * <code>ec2:DescribeInstances</code> for all alarms on EC2 instance status
-         * metrics</p> </li> <li> <p> <code>ec2:StopInstances</code> for alarms with stop
-         * actions</p> </li> <li> <p> <code>ec2:TerminateInstances</code> for alarms with
-         * terminate actions</p> </li> <li> <p>No specific permissions are needed for
-         * alarms with recover actions</p> </li> </ul> <p>If you have read/write
-         * permissions for Amazon CloudWatch but not for Amazon EC2, you can still create
-         * an alarm, but the stop or terminate actions are not performed. However, if you
-         * are later granted the required permissions, the alarm actions that you created
-         * earlier are performed.</p> <p>If you are using an IAM role (for example, an EC2
-         * instance profile), you cannot stop or terminate the instance using alarm
-         * actions. However, you can still see the alarm state and perform any other
-         * actions such as Amazon SNS notifications or Auto Scaling policies.</p> <p>If you
-         * are using temporary security credentials granted using AWS STS, you cannot stop
-         * or terminate an EC2 instance using alarm actions.</p> <p>The first time you
-         * create an alarm in the AWS Management Console, the CLI, or by using the
-         * PutMetricAlarm API, CloudWatch creates the necessary service-linked role for
-         * you. The service-linked role is called
+         * <p>Creates or updates an alarm and associates it with the specified metric,
+         * metric math expression, or anomaly detection model.</p> <p>Alarms based on
+         * anomaly detection models cannot have Auto Scaling actions.</p> <p>When this
+         * operation creates an alarm, the alarm state is immediately set to
+         * <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated and its state is set
+         * appropriately. Any actions associated with the new state are then executed.</p>
+         * <p>When you update an existing alarm, its state is left unchanged, but the
+         * update completely overwrites the previous configuration of the alarm.</p> <p>If
+         * you are an IAM user, you must have Amazon EC2 permissions for some alarm
+         * operations:</p> <ul> <li> <p> <code>iam:CreateServiceLinkedRole</code> for all
+         * alarms with EC2 actions</p> </li> <li> <p>
+         * <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code>
+         * for all alarms on EC2 instance status metrics</p> </li> <li> <p>
+         * <code>ec2:StopInstances</code> for alarms with stop actions</p> </li> <li> <p>
+         * <code>ec2:TerminateInstances</code> for alarms with terminate actions</p> </li>
+         * <li> <p>No specific permissions are needed for alarms with recover actions</p>
+         * </li> </ul> <p>If you have read/write permissions for Amazon CloudWatch but not
+         * for Amazon EC2, you can still create an alarm, but the stop or terminate actions
+         * are not performed. However, if you are later granted the required permissions,
+         * the alarm actions that you created earlier are performed.</p> <p>If you are
+         * using an IAM role (for example, an EC2 instance profile), you cannot stop or
+         * terminate the instance using alarm actions. However, you can still see the alarm
+         * state and perform any other actions such as Amazon SNS notifications or Auto
+         * Scaling policies.</p> <p>If you are using temporary security credentials granted
+         * using AWS STS, you cannot stop or terminate an EC2 instance using alarm
+         * actions.</p> <p>The first time you create an alarm in the AWS Management
+         * Console, the CLI, or by using the PutMetricAlarm API, CloudWatch creates the
+         * necessary service-linked role for you. The service-linked role is called
          * <code>AWSServiceRoleForCloudWatchEvents</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
          * service-linked role</a>.</p><p><h3>See Also:</h3>   <a
@@ -975,33 +1090,34 @@ namespace Model
         virtual Model::PutMetricAlarmOutcome PutMetricAlarm(const Model::PutMetricAlarmRequest& request) const;
 
         /**
-         * <p>Creates or updates an alarm and associates it with the specified metric or
-         * metric math expression.</p> <p>When this operation creates an alarm, the alarm
-         * state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then
-         * evaluated and its state is set appropriately. Any actions associated with the
-         * new state are then executed.</p> <p>When you update an existing alarm, its state
-         * is left unchanged, but the update completely overwrites the previous
-         * configuration of the alarm.</p> <p>If you are an IAM user, you must have Amazon
-         * EC2 permissions for some alarm operations:</p> <ul> <li> <p>
-         * <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions</p>
-         * </li> <li> <p> <code>ec2:DescribeInstanceStatus</code> and
-         * <code>ec2:DescribeInstances</code> for all alarms on EC2 instance status
-         * metrics</p> </li> <li> <p> <code>ec2:StopInstances</code> for alarms with stop
-         * actions</p> </li> <li> <p> <code>ec2:TerminateInstances</code> for alarms with
-         * terminate actions</p> </li> <li> <p>No specific permissions are needed for
-         * alarms with recover actions</p> </li> </ul> <p>If you have read/write
-         * permissions for Amazon CloudWatch but not for Amazon EC2, you can still create
-         * an alarm, but the stop or terminate actions are not performed. However, if you
-         * are later granted the required permissions, the alarm actions that you created
-         * earlier are performed.</p> <p>If you are using an IAM role (for example, an EC2
-         * instance profile), you cannot stop or terminate the instance using alarm
-         * actions. However, you can still see the alarm state and perform any other
-         * actions such as Amazon SNS notifications or Auto Scaling policies.</p> <p>If you
-         * are using temporary security credentials granted using AWS STS, you cannot stop
-         * or terminate an EC2 instance using alarm actions.</p> <p>The first time you
-         * create an alarm in the AWS Management Console, the CLI, or by using the
-         * PutMetricAlarm API, CloudWatch creates the necessary service-linked role for
-         * you. The service-linked role is called
+         * <p>Creates or updates an alarm and associates it with the specified metric,
+         * metric math expression, or anomaly detection model.</p> <p>Alarms based on
+         * anomaly detection models cannot have Auto Scaling actions.</p> <p>When this
+         * operation creates an alarm, the alarm state is immediately set to
+         * <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated and its state is set
+         * appropriately. Any actions associated with the new state are then executed.</p>
+         * <p>When you update an existing alarm, its state is left unchanged, but the
+         * update completely overwrites the previous configuration of the alarm.</p> <p>If
+         * you are an IAM user, you must have Amazon EC2 permissions for some alarm
+         * operations:</p> <ul> <li> <p> <code>iam:CreateServiceLinkedRole</code> for all
+         * alarms with EC2 actions</p> </li> <li> <p>
+         * <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code>
+         * for all alarms on EC2 instance status metrics</p> </li> <li> <p>
+         * <code>ec2:StopInstances</code> for alarms with stop actions</p> </li> <li> <p>
+         * <code>ec2:TerminateInstances</code> for alarms with terminate actions</p> </li>
+         * <li> <p>No specific permissions are needed for alarms with recover actions</p>
+         * </li> </ul> <p>If you have read/write permissions for Amazon CloudWatch but not
+         * for Amazon EC2, you can still create an alarm, but the stop or terminate actions
+         * are not performed. However, if you are later granted the required permissions,
+         * the alarm actions that you created earlier are performed.</p> <p>If you are
+         * using an IAM role (for example, an EC2 instance profile), you cannot stop or
+         * terminate the instance using alarm actions. However, you can still see the alarm
+         * state and perform any other actions such as Amazon SNS notifications or Auto
+         * Scaling policies.</p> <p>If you are using temporary security credentials granted
+         * using AWS STS, you cannot stop or terminate an EC2 instance using alarm
+         * actions.</p> <p>The first time you create an alarm in the AWS Management
+         * Console, the CLI, or by using the PutMetricAlarm API, CloudWatch creates the
+         * necessary service-linked role for you. The service-linked role is called
          * <code>AWSServiceRoleForCloudWatchEvents</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
          * service-linked role</a>.</p><p><h3>See Also:</h3>   <a
@@ -1013,33 +1129,34 @@ namespace Model
         virtual Model::PutMetricAlarmOutcomeCallable PutMetricAlarmCallable(const Model::PutMetricAlarmRequest& request) const;
 
         /**
-         * <p>Creates or updates an alarm and associates it with the specified metric or
-         * metric math expression.</p> <p>When this operation creates an alarm, the alarm
-         * state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then
-         * evaluated and its state is set appropriately. Any actions associated with the
-         * new state are then executed.</p> <p>When you update an existing alarm, its state
-         * is left unchanged, but the update completely overwrites the previous
-         * configuration of the alarm.</p> <p>If you are an IAM user, you must have Amazon
-         * EC2 permissions for some alarm operations:</p> <ul> <li> <p>
-         * <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions</p>
-         * </li> <li> <p> <code>ec2:DescribeInstanceStatus</code> and
-         * <code>ec2:DescribeInstances</code> for all alarms on EC2 instance status
-         * metrics</p> </li> <li> <p> <code>ec2:StopInstances</code> for alarms with stop
-         * actions</p> </li> <li> <p> <code>ec2:TerminateInstances</code> for alarms with
-         * terminate actions</p> </li> <li> <p>No specific permissions are needed for
-         * alarms with recover actions</p> </li> </ul> <p>If you have read/write
-         * permissions for Amazon CloudWatch but not for Amazon EC2, you can still create
-         * an alarm, but the stop or terminate actions are not performed. However, if you
-         * are later granted the required permissions, the alarm actions that you created
-         * earlier are performed.</p> <p>If you are using an IAM role (for example, an EC2
-         * instance profile), you cannot stop or terminate the instance using alarm
-         * actions. However, you can still see the alarm state and perform any other
-         * actions such as Amazon SNS notifications or Auto Scaling policies.</p> <p>If you
-         * are using temporary security credentials granted using AWS STS, you cannot stop
-         * or terminate an EC2 instance using alarm actions.</p> <p>The first time you
-         * create an alarm in the AWS Management Console, the CLI, or by using the
-         * PutMetricAlarm API, CloudWatch creates the necessary service-linked role for
-         * you. The service-linked role is called
+         * <p>Creates or updates an alarm and associates it with the specified metric,
+         * metric math expression, or anomaly detection model.</p> <p>Alarms based on
+         * anomaly detection models cannot have Auto Scaling actions.</p> <p>When this
+         * operation creates an alarm, the alarm state is immediately set to
+         * <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated and its state is set
+         * appropriately. Any actions associated with the new state are then executed.</p>
+         * <p>When you update an existing alarm, its state is left unchanged, but the
+         * update completely overwrites the previous configuration of the alarm.</p> <p>If
+         * you are an IAM user, you must have Amazon EC2 permissions for some alarm
+         * operations:</p> <ul> <li> <p> <code>iam:CreateServiceLinkedRole</code> for all
+         * alarms with EC2 actions</p> </li> <li> <p>
+         * <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code>
+         * for all alarms on EC2 instance status metrics</p> </li> <li> <p>
+         * <code>ec2:StopInstances</code> for alarms with stop actions</p> </li> <li> <p>
+         * <code>ec2:TerminateInstances</code> for alarms with terminate actions</p> </li>
+         * <li> <p>No specific permissions are needed for alarms with recover actions</p>
+         * </li> </ul> <p>If you have read/write permissions for Amazon CloudWatch but not
+         * for Amazon EC2, you can still create an alarm, but the stop or terminate actions
+         * are not performed. However, if you are later granted the required permissions,
+         * the alarm actions that you created earlier are performed.</p> <p>If you are
+         * using an IAM role (for example, an EC2 instance profile), you cannot stop or
+         * terminate the instance using alarm actions. However, you can still see the alarm
+         * state and perform any other actions such as Amazon SNS notifications or Auto
+         * Scaling policies.</p> <p>If you are using temporary security credentials granted
+         * using AWS STS, you cannot stop or terminate an EC2 instance using alarm
+         * actions.</p> <p>The first time you create an alarm in the AWS Management
+         * Console, the CLI, or by using the PutMetricAlarm API, CloudWatch creates the
+         * necessary service-linked role for you. The service-linked role is called
          * <code>AWSServiceRoleForCloudWatchEvents</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
          * service-linked role</a>.</p><p><h3>See Also:</h3>   <a
@@ -1311,10 +1428,12 @@ namespace Model
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void DeleteAlarmsAsyncHelper(const Model::DeleteAlarmsRequest& request, const DeleteAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAnomalyDetectorAsyncHelper(const Model::DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDashboardsAsyncHelper(const Model::DeleteDashboardsRequest& request, const DeleteDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAlarmHistoryAsyncHelper(const Model::DescribeAlarmHistoryRequest& request, const DescribeAlarmHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAlarmsAsyncHelper(const Model::DescribeAlarmsRequest& request, const DescribeAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAlarmsForMetricAsyncHelper(const Model::DescribeAlarmsForMetricRequest& request, const DescribeAlarmsForMetricResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAnomalyDetectorsAsyncHelper(const Model::DescribeAnomalyDetectorsRequest& request, const DescribeAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableAlarmActionsAsyncHelper(const Model::DisableAlarmActionsRequest& request, const DisableAlarmActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableAlarmActionsAsyncHelper(const Model::EnableAlarmActionsRequest& request, const EnableAlarmActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDashboardAsyncHelper(const Model::GetDashboardRequest& request, const GetDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1324,6 +1443,7 @@ namespace Model
         void ListDashboardsAsyncHelper(const Model::ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMetricsAsyncHelper(const Model::ListMetricsRequest& request, const ListMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutAnomalyDetectorAsyncHelper(const Model::PutAnomalyDetectorRequest& request, const PutAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDashboardAsyncHelper(const Model::PutDashboardRequest& request, const PutDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutMetricAlarmAsyncHelper(const Model::PutMetricAlarmRequest& request, const PutMetricAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutMetricDataAsyncHelper(const Model::PutMetricDataRequest& request, const PutMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

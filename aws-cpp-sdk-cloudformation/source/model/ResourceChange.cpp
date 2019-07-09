@@ -72,19 +72,19 @@ ResourceChange& ResourceChange::operator =(const XmlNode& xmlNode)
     XmlNode logicalResourceIdNode = resultNode.FirstChild("LogicalResourceId");
     if(!logicalResourceIdNode.IsNull())
     {
-      m_logicalResourceId = StringUtils::Trim(logicalResourceIdNode.GetText().c_str());
+      m_logicalResourceId = logicalResourceIdNode.GetText();
       m_logicalResourceIdHasBeenSet = true;
     }
     XmlNode physicalResourceIdNode = resultNode.FirstChild("PhysicalResourceId");
     if(!physicalResourceIdNode.IsNull())
     {
-      m_physicalResourceId = StringUtils::Trim(physicalResourceIdNode.GetText().c_str());
+      m_physicalResourceId = physicalResourceIdNode.GetText();
       m_physicalResourceIdHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("ResourceType");
     if(!resourceTypeNode.IsNull())
     {
-      m_resourceType = StringUtils::Trim(resourceTypeNode.GetText().c_str());
+      m_resourceType = resourceTypeNode.GetText();
       m_resourceTypeHasBeenSet = true;
     }
     XmlNode replacementNode = resultNode.FirstChild("Replacement");

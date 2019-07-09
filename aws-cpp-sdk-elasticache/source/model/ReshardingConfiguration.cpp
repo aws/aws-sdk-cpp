@@ -52,7 +52,7 @@ ReshardingConfiguration& ReshardingConfiguration::operator =(const XmlNode& xmlN
     XmlNode nodeGroupIdNode = resultNode.FirstChild("NodeGroupId");
     if(!nodeGroupIdNode.IsNull())
     {
-      m_nodeGroupId = StringUtils::Trim(nodeGroupIdNode.GetText().c_str());
+      m_nodeGroupId = nodeGroupIdNode.GetText();
       m_nodeGroupIdHasBeenSet = true;
     }
     XmlNode preferredAvailabilityZonesNode = resultNode.FirstChild("PreferredAvailabilityZones");
@@ -61,7 +61,7 @@ ReshardingConfiguration& ReshardingConfiguration::operator =(const XmlNode& xmlN
       XmlNode preferredAvailabilityZonesMember = preferredAvailabilityZonesNode.FirstChild("AvailabilityZone");
       while(!preferredAvailabilityZonesMember.IsNull())
       {
-        m_preferredAvailabilityZones.push_back(StringUtils::Trim(preferredAvailabilityZonesMember.GetText().c_str()));
+        m_preferredAvailabilityZones.push_back(preferredAvailabilityZonesMember.GetText());
         preferredAvailabilityZonesMember = preferredAvailabilityZonesMember.NextNode("AvailabilityZone");
       }
 

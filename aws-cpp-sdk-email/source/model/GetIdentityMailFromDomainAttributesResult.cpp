@@ -57,7 +57,7 @@ GetIdentityMailFromDomainAttributesResult& GetIdentityMailFromDomainAttributesRe
       {
         XmlNode keyNode = mailFromDomainAttributesEntry.FirstChild("key");
         XmlNode valueNode = mailFromDomainAttributesEntry.FirstChild("value");
-        m_mailFromDomainAttributes[StringUtils::Trim(keyNode.GetText().c_str())] =
+        m_mailFromDomainAttributes[keyNode.GetText()] =
             valueNode;
         mailFromDomainAttributesEntry = mailFromDomainAttributesEntry.NextNode("entry");
       }

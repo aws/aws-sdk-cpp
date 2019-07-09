@@ -51,7 +51,7 @@ DescribeDBSubnetGroupsResult& DescribeDBSubnetGroupsResult::operator =(const Aws
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
-      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+      m_marker = markerNode.GetText();
     }
     XmlNode dBSubnetGroupsNode = resultNode.FirstChild("DBSubnetGroups");
     if(!dBSubnetGroupsNode.IsNull())

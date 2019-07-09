@@ -54,13 +54,13 @@ EncryptionEntity& EncryptionEntity::operator =(const XmlNode& xmlNode)
     XmlNode publicKeyIdNode = resultNode.FirstChild("PublicKeyId");
     if(!publicKeyIdNode.IsNull())
     {
-      m_publicKeyId = StringUtils::Trim(publicKeyIdNode.GetText().c_str());
+      m_publicKeyId = publicKeyIdNode.GetText();
       m_publicKeyIdHasBeenSet = true;
     }
     XmlNode providerIdNode = resultNode.FirstChild("ProviderId");
     if(!providerIdNode.IsNull())
     {
-      m_providerId = StringUtils::Trim(providerIdNode.GetText().c_str());
+      m_providerId = providerIdNode.GetText();
       m_providerIdHasBeenSet = true;
     }
     XmlNode fieldPatternsNode = resultNode.FirstChild("FieldPatterns");

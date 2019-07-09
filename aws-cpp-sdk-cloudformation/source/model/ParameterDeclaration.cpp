@@ -62,19 +62,19 @@ ParameterDeclaration& ParameterDeclaration::operator =(const XmlNode& xmlNode)
     XmlNode parameterKeyNode = resultNode.FirstChild("ParameterKey");
     if(!parameterKeyNode.IsNull())
     {
-      m_parameterKey = StringUtils::Trim(parameterKeyNode.GetText().c_str());
+      m_parameterKey = parameterKeyNode.GetText();
       m_parameterKeyHasBeenSet = true;
     }
     XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
     if(!defaultValueNode.IsNull())
     {
-      m_defaultValue = StringUtils::Trim(defaultValueNode.GetText().c_str());
+      m_defaultValue = defaultValueNode.GetText();
       m_defaultValueHasBeenSet = true;
     }
     XmlNode parameterTypeNode = resultNode.FirstChild("ParameterType");
     if(!parameterTypeNode.IsNull())
     {
-      m_parameterType = StringUtils::Trim(parameterTypeNode.GetText().c_str());
+      m_parameterType = parameterTypeNode.GetText();
       m_parameterTypeHasBeenSet = true;
     }
     XmlNode noEchoNode = resultNode.FirstChild("NoEcho");
@@ -86,7 +86,7 @@ ParameterDeclaration& ParameterDeclaration::operator =(const XmlNode& xmlNode)
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode parameterConstraintsNode = resultNode.FirstChild("ParameterConstraints");

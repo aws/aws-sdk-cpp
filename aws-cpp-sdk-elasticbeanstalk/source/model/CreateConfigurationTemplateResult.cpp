@@ -53,32 +53,32 @@ CreateConfigurationTemplateResult& CreateConfigurationTemplateResult::operator =
     XmlNode solutionStackNameNode = resultNode.FirstChild("SolutionStackName");
     if(!solutionStackNameNode.IsNull())
     {
-      m_solutionStackName = StringUtils::Trim(solutionStackNameNode.GetText().c_str());
+      m_solutionStackName = solutionStackNameNode.GetText();
     }
     XmlNode platformArnNode = resultNode.FirstChild("PlatformArn");
     if(!platformArnNode.IsNull())
     {
-      m_platformArn = StringUtils::Trim(platformArnNode.GetText().c_str());
+      m_platformArn = platformArnNode.GetText();
     }
     XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
     if(!applicationNameNode.IsNull())
     {
-      m_applicationName = StringUtils::Trim(applicationNameNode.GetText().c_str());
+      m_applicationName = applicationNameNode.GetText();
     }
     XmlNode templateNameNode = resultNode.FirstChild("TemplateName");
     if(!templateNameNode.IsNull())
     {
-      m_templateName = StringUtils::Trim(templateNameNode.GetText().c_str());
+      m_templateName = templateNameNode.GetText();
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
     }
     XmlNode environmentNameNode = resultNode.FirstChild("EnvironmentName");
     if(!environmentNameNode.IsNull())
     {
-      m_environmentName = StringUtils::Trim(environmentNameNode.GetText().c_str());
+      m_environmentName = environmentNameNode.GetText();
     }
     XmlNode deploymentStatusNode = resultNode.FirstChild("DeploymentStatus");
     if(!deploymentStatusNode.IsNull())

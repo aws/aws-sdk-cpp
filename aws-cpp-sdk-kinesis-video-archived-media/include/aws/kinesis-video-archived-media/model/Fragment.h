@@ -50,42 +50,50 @@ namespace Model
 
 
     /**
-     * <p>The index value of the fragment.</p>
+     * <p>The unique identifier of the fragment. This value monotonically increases
+     * based on the ingestion order.</p>
      */
     inline const Aws::String& GetFragmentNumber() const{ return m_fragmentNumber; }
 
     /**
-     * <p>The index value of the fragment.</p>
+     * <p>The unique identifier of the fragment. This value monotonically increases
+     * based on the ingestion order.</p>
      */
     inline bool FragmentNumberHasBeenSet() const { return m_fragmentNumberHasBeenSet; }
 
     /**
-     * <p>The index value of the fragment.</p>
+     * <p>The unique identifier of the fragment. This value monotonically increases
+     * based on the ingestion order.</p>
      */
     inline void SetFragmentNumber(const Aws::String& value) { m_fragmentNumberHasBeenSet = true; m_fragmentNumber = value; }
 
     /**
-     * <p>The index value of the fragment.</p>
+     * <p>The unique identifier of the fragment. This value monotonically increases
+     * based on the ingestion order.</p>
      */
     inline void SetFragmentNumber(Aws::String&& value) { m_fragmentNumberHasBeenSet = true; m_fragmentNumber = std::move(value); }
 
     /**
-     * <p>The index value of the fragment.</p>
+     * <p>The unique identifier of the fragment. This value monotonically increases
+     * based on the ingestion order.</p>
      */
     inline void SetFragmentNumber(const char* value) { m_fragmentNumberHasBeenSet = true; m_fragmentNumber.assign(value); }
 
     /**
-     * <p>The index value of the fragment.</p>
+     * <p>The unique identifier of the fragment. This value monotonically increases
+     * based on the ingestion order.</p>
      */
     inline Fragment& WithFragmentNumber(const Aws::String& value) { SetFragmentNumber(value); return *this;}
 
     /**
-     * <p>The index value of the fragment.</p>
+     * <p>The unique identifier of the fragment. This value monotonically increases
+     * based on the ingestion order.</p>
      */
     inline Fragment& WithFragmentNumber(Aws::String&& value) { SetFragmentNumber(std::move(value)); return *this;}
 
     /**
-     * <p>The index value of the fragment.</p>
+     * <p>The unique identifier of the fragment. This value monotonically increases
+     * based on the ingestion order.</p>
      */
     inline Fragment& WithFragmentNumber(const char* value) { SetFragmentNumber(value); return *this;}
 

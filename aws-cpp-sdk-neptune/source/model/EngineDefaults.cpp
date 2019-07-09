@@ -54,13 +54,13 @@ EngineDefaults& EngineDefaults::operator =(const XmlNode& xmlNode)
     XmlNode dBParameterGroupFamilyNode = resultNode.FirstChild("DBParameterGroupFamily");
     if(!dBParameterGroupFamilyNode.IsNull())
     {
-      m_dBParameterGroupFamily = StringUtils::Trim(dBParameterGroupFamilyNode.GetText().c_str());
+      m_dBParameterGroupFamily = dBParameterGroupFamilyNode.GetText();
       m_dBParameterGroupFamilyHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
-      m_marker = StringUtils::Trim(markerNode.GetText().c_str());
+      m_marker = markerNode.GetText();
       m_markerHasBeenSet = true;
     }
     XmlNode parametersNode = resultNode.FirstChild("Parameters");

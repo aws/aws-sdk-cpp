@@ -50,7 +50,7 @@ UserData& UserData::operator =(const XmlNode& xmlNode)
     XmlNode dataNode = resultNode.FirstChild("data");
     if(!dataNode.IsNull())
     {
-      m_data = StringUtils::Trim(dataNode.GetText().c_str());
+      m_data = dataNode.GetText();
       m_dataHasBeenSet = true;
     }
   }

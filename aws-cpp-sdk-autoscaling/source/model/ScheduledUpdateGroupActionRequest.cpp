@@ -68,7 +68,7 @@ ScheduledUpdateGroupActionRequest& ScheduledUpdateGroupActionRequest::operator =
     XmlNode scheduledActionNameNode = resultNode.FirstChild("ScheduledActionName");
     if(!scheduledActionNameNode.IsNull())
     {
-      m_scheduledActionName = StringUtils::Trim(scheduledActionNameNode.GetText().c_str());
+      m_scheduledActionName = scheduledActionNameNode.GetText();
       m_scheduledActionNameHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
@@ -86,7 +86,7 @@ ScheduledUpdateGroupActionRequest& ScheduledUpdateGroupActionRequest::operator =
     XmlNode recurrenceNode = resultNode.FirstChild("Recurrence");
     if(!recurrenceNode.IsNull())
     {
-      m_recurrence = StringUtils::Trim(recurrenceNode.GetText().c_str());
+      m_recurrence = recurrenceNode.GetText();
       m_recurrenceHasBeenSet = true;
     }
     XmlNode minSizeNode = resultNode.FirstChild("MinSize");

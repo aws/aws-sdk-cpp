@@ -66,13 +66,13 @@ TransitGateway& TransitGateway::operator =(const XmlNode& xmlNode)
     XmlNode transitGatewayIdNode = resultNode.FirstChild("transitGatewayId");
     if(!transitGatewayIdNode.IsNull())
     {
-      m_transitGatewayId = StringUtils::Trim(transitGatewayIdNode.GetText().c_str());
+      m_transitGatewayId = transitGatewayIdNode.GetText();
       m_transitGatewayIdHasBeenSet = true;
     }
     XmlNode transitGatewayArnNode = resultNode.FirstChild("transitGatewayArn");
     if(!transitGatewayArnNode.IsNull())
     {
-      m_transitGatewayArn = StringUtils::Trim(transitGatewayArnNode.GetText().c_str());
+      m_transitGatewayArn = transitGatewayArnNode.GetText();
       m_transitGatewayArnHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
@@ -84,13 +84,13 @@ TransitGateway& TransitGateway::operator =(const XmlNode& xmlNode)
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
-      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerId = ownerIdNode.GetText();
       m_ownerIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");

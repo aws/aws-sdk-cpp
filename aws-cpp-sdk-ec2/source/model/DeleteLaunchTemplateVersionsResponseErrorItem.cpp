@@ -58,13 +58,13 @@ DeleteLaunchTemplateVersionsResponseErrorItem& DeleteLaunchTemplateVersionsRespo
     XmlNode launchTemplateIdNode = resultNode.FirstChild("launchTemplateId");
     if(!launchTemplateIdNode.IsNull())
     {
-      m_launchTemplateId = StringUtils::Trim(launchTemplateIdNode.GetText().c_str());
+      m_launchTemplateId = launchTemplateIdNode.GetText();
       m_launchTemplateIdHasBeenSet = true;
     }
     XmlNode launchTemplateNameNode = resultNode.FirstChild("launchTemplateName");
     if(!launchTemplateNameNode.IsNull())
     {
-      m_launchTemplateName = StringUtils::Trim(launchTemplateNameNode.GetText().c_str());
+      m_launchTemplateName = launchTemplateNameNode.GetText();
       m_launchTemplateNameHasBeenSet = true;
     }
     XmlNode versionNumberNode = resultNode.FirstChild("versionNumber");

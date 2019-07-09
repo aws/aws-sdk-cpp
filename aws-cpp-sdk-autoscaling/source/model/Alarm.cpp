@@ -52,13 +52,13 @@ Alarm& Alarm::operator =(const XmlNode& xmlNode)
     XmlNode alarmNameNode = resultNode.FirstChild("AlarmName");
     if(!alarmNameNode.IsNull())
     {
-      m_alarmName = StringUtils::Trim(alarmNameNode.GetText().c_str());
+      m_alarmName = alarmNameNode.GetText();
       m_alarmNameHasBeenSet = true;
     }
     XmlNode alarmARNNode = resultNode.FirstChild("AlarmARN");
     if(!alarmARNNode.IsNull())
     {
-      m_alarmARN = StringUtils::Trim(alarmARNNode.GetText().c_str());
+      m_alarmARN = alarmARNNode.GetText();
       m_alarmARNHasBeenSet = true;
     }
   }

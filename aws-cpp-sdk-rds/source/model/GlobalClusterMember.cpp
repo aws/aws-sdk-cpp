@@ -56,7 +56,7 @@ GlobalClusterMember& GlobalClusterMember::operator =(const XmlNode& xmlNode)
     XmlNode dBClusterArnNode = resultNode.FirstChild("DBClusterArn");
     if(!dBClusterArnNode.IsNull())
     {
-      m_dBClusterArn = StringUtils::Trim(dBClusterArnNode.GetText().c_str());
+      m_dBClusterArn = dBClusterArnNode.GetText();
       m_dBClusterArnHasBeenSet = true;
     }
     XmlNode readersNode = resultNode.FirstChild("Readers");
@@ -65,7 +65,7 @@ GlobalClusterMember& GlobalClusterMember::operator =(const XmlNode& xmlNode)
       XmlNode readersMember = readersNode.FirstChild("member");
       while(!readersMember.IsNull())
       {
-        m_readers.push_back(StringUtils::Trim(readersMember.GetText().c_str()));
+        m_readers.push_back(readersMember.GetText());
         readersMember = readersMember.NextNode("member");
       }
 

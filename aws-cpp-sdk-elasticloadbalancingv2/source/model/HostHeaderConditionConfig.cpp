@@ -53,7 +53,7 @@ HostHeaderConditionConfig& HostHeaderConditionConfig::operator =(const XmlNode& 
       XmlNode valuesMember = valuesNode.FirstChild("member");
       while(!valuesMember.IsNull())
       {
-        m_values.push_back(StringUtils::Trim(valuesMember.GetText().c_str()));
+        m_values.push_back(valuesMember.GetText());
         valuesMember = valuesMember.NextNode("member");
       }
 

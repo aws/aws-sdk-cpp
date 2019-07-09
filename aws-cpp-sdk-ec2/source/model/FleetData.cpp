@@ -116,7 +116,7 @@ FleetData& FleetData::operator =(const XmlNode& xmlNode)
     XmlNode fleetIdNode = resultNode.FirstChild("fleetId");
     if(!fleetIdNode.IsNull())
     {
-      m_fleetId = StringUtils::Trim(fleetIdNode.GetText().c_str());
+      m_fleetId = fleetIdNode.GetText();
       m_fleetIdHasBeenSet = true;
     }
     XmlNode fleetStateNode = resultNode.FirstChild("fleetState");
@@ -128,7 +128,7 @@ FleetData& FleetData::operator =(const XmlNode& xmlNode)
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
-      m_clientToken = StringUtils::Trim(clientTokenNode.GetText().c_str());
+      m_clientToken = clientTokenNode.GetText();
       m_clientTokenHasBeenSet = true;
     }
     XmlNode excessCapacityTerminationPolicyNode = resultNode.FirstChild("excessCapacityTerminationPolicy");

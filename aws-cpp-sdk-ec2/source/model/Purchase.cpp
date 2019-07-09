@@ -85,7 +85,7 @@ Purchase& Purchase::operator =(const XmlNode& xmlNode)
       XmlNode hostIdSetMember = hostIdSetNode.FirstChild("item");
       while(!hostIdSetMember.IsNull())
       {
-        m_hostIdSet.push_back(StringUtils::Trim(hostIdSetMember.GetText().c_str()));
+        m_hostIdSet.push_back(hostIdSetMember.GetText());
         hostIdSetMember = hostIdSetMember.NextNode("item");
       }
 
@@ -94,19 +94,19 @@ Purchase& Purchase::operator =(const XmlNode& xmlNode)
     XmlNode hostReservationIdNode = resultNode.FirstChild("hostReservationId");
     if(!hostReservationIdNode.IsNull())
     {
-      m_hostReservationId = StringUtils::Trim(hostReservationIdNode.GetText().c_str());
+      m_hostReservationId = hostReservationIdNode.GetText();
       m_hostReservationIdHasBeenSet = true;
     }
     XmlNode hourlyPriceNode = resultNode.FirstChild("hourlyPrice");
     if(!hourlyPriceNode.IsNull())
     {
-      m_hourlyPrice = StringUtils::Trim(hourlyPriceNode.GetText().c_str());
+      m_hourlyPrice = hourlyPriceNode.GetText();
       m_hourlyPriceHasBeenSet = true;
     }
     XmlNode instanceFamilyNode = resultNode.FirstChild("instanceFamily");
     if(!instanceFamilyNode.IsNull())
     {
-      m_instanceFamily = StringUtils::Trim(instanceFamilyNode.GetText().c_str());
+      m_instanceFamily = instanceFamilyNode.GetText();
       m_instanceFamilyHasBeenSet = true;
     }
     XmlNode paymentOptionNode = resultNode.FirstChild("paymentOption");
@@ -118,7 +118,7 @@ Purchase& Purchase::operator =(const XmlNode& xmlNode)
     XmlNode upfrontPriceNode = resultNode.FirstChild("upfrontPrice");
     if(!upfrontPriceNode.IsNull())
     {
-      m_upfrontPrice = StringUtils::Trim(upfrontPriceNode.GetText().c_str());
+      m_upfrontPrice = upfrontPriceNode.GetText();
       m_upfrontPriceHasBeenSet = true;
     }
   }

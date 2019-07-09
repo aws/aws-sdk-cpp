@@ -51,7 +51,7 @@ DescribeSpotPriceHistoryResponse& DescribeSpotPriceHistoryResponse::operator =(c
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+      m_nextToken = nextTokenNode.GetText();
     }
     XmlNode spotPriceHistoryNode = resultNode.FirstChild("spotPriceHistorySet");
     if(!spotPriceHistoryNode.IsNull())

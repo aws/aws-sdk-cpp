@@ -56,25 +56,25 @@ Attribute& Attribute::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
     XmlNode alternateNameEncodingNode = resultNode.FirstChild("AlternateNameEncoding");
     if(!alternateNameEncodingNode.IsNull())
     {
-      m_alternateNameEncoding = StringUtils::Trim(alternateNameEncodingNode.GetText().c_str());
+      m_alternateNameEncoding = alternateNameEncodingNode.GetText();
       m_alternateNameEncodingHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
-      m_value = StringUtils::Trim(valueNode.GetText().c_str());
+      m_value = valueNode.GetText();
       m_valueHasBeenSet = true;
     }
     XmlNode alternateValueEncodingNode = resultNode.FirstChild("AlternateValueEncoding");
     if(!alternateValueEncodingNode.IsNull())
     {
-      m_alternateValueEncoding = StringUtils::Trim(alternateValueEncodingNode.GetText().c_str());
+      m_alternateValueEncoding = alternateValueEncodingNode.GetText();
       m_alternateValueEncodingHasBeenSet = true;
     }
   }

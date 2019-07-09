@@ -56,25 +56,25 @@ InstanceState& InstanceState::operator =(const XmlNode& xmlNode)
     XmlNode instanceIdNode = resultNode.FirstChild("InstanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceId = instanceIdNode.GetText();
       m_instanceIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("State");
     if(!stateNode.IsNull())
     {
-      m_state = StringUtils::Trim(stateNode.GetText().c_str());
+      m_state = stateNode.GetText();
       m_stateHasBeenSet = true;
     }
     XmlNode reasonCodeNode = resultNode.FirstChild("ReasonCode");
     if(!reasonCodeNode.IsNull())
     {
-      m_reasonCode = StringUtils::Trim(reasonCodeNode.GetText().c_str());
+      m_reasonCode = reasonCodeNode.GetText();
       m_reasonCodeHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
   }

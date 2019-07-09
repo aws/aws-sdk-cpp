@@ -64,7 +64,7 @@ EnvironmentResourceDescription& EnvironmentResourceDescription::operator =(const
     XmlNode environmentNameNode = resultNode.FirstChild("EnvironmentName");
     if(!environmentNameNode.IsNull())
     {
-      m_environmentName = StringUtils::Trim(environmentNameNode.GetText().c_str());
+      m_environmentName = environmentNameNode.GetText();
       m_environmentNameHasBeenSet = true;
     }
     XmlNode autoScalingGroupsNode = resultNode.FirstChild("AutoScalingGroups");

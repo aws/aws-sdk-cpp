@@ -76,19 +76,19 @@ VpnConnection& VpnConnection::operator =(const XmlNode& xmlNode)
     XmlNode customerGatewayConfigurationNode = resultNode.FirstChild("customerGatewayConfiguration");
     if(!customerGatewayConfigurationNode.IsNull())
     {
-      m_customerGatewayConfiguration = StringUtils::Trim(customerGatewayConfigurationNode.GetText().c_str());
+      m_customerGatewayConfiguration = customerGatewayConfigurationNode.GetText();
       m_customerGatewayConfigurationHasBeenSet = true;
     }
     XmlNode customerGatewayIdNode = resultNode.FirstChild("customerGatewayId");
     if(!customerGatewayIdNode.IsNull())
     {
-      m_customerGatewayId = StringUtils::Trim(customerGatewayIdNode.GetText().c_str());
+      m_customerGatewayId = customerGatewayIdNode.GetText();
       m_customerGatewayIdHasBeenSet = true;
     }
     XmlNode categoryNode = resultNode.FirstChild("category");
     if(!categoryNode.IsNull())
     {
-      m_category = StringUtils::Trim(categoryNode.GetText().c_str());
+      m_category = categoryNode.GetText();
       m_categoryHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
@@ -106,19 +106,19 @@ VpnConnection& VpnConnection::operator =(const XmlNode& xmlNode)
     XmlNode vpnConnectionIdNode = resultNode.FirstChild("vpnConnectionId");
     if(!vpnConnectionIdNode.IsNull())
     {
-      m_vpnConnectionId = StringUtils::Trim(vpnConnectionIdNode.GetText().c_str());
+      m_vpnConnectionId = vpnConnectionIdNode.GetText();
       m_vpnConnectionIdHasBeenSet = true;
     }
     XmlNode vpnGatewayIdNode = resultNode.FirstChild("vpnGatewayId");
     if(!vpnGatewayIdNode.IsNull())
     {
-      m_vpnGatewayId = StringUtils::Trim(vpnGatewayIdNode.GetText().c_str());
+      m_vpnGatewayId = vpnGatewayIdNode.GetText();
       m_vpnGatewayIdHasBeenSet = true;
     }
     XmlNode transitGatewayIdNode = resultNode.FirstChild("transitGatewayId");
     if(!transitGatewayIdNode.IsNull())
     {
-      m_transitGatewayId = StringUtils::Trim(transitGatewayIdNode.GetText().c_str());
+      m_transitGatewayId = transitGatewayIdNode.GetText();
       m_transitGatewayIdHasBeenSet = true;
     }
     XmlNode optionsNode = resultNode.FirstChild("options");

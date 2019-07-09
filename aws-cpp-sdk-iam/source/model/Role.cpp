@@ -70,25 +70,25 @@ Role& Role::operator =(const XmlNode& xmlNode)
     XmlNode pathNode = resultNode.FirstChild("Path");
     if(!pathNode.IsNull())
     {
-      m_path = StringUtils::Trim(pathNode.GetText().c_str());
+      m_path = pathNode.GetText();
       m_pathHasBeenSet = true;
     }
     XmlNode roleNameNode = resultNode.FirstChild("RoleName");
     if(!roleNameNode.IsNull())
     {
-      m_roleName = StringUtils::Trim(roleNameNode.GetText().c_str());
+      m_roleName = roleNameNode.GetText();
       m_roleNameHasBeenSet = true;
     }
     XmlNode roleIdNode = resultNode.FirstChild("RoleId");
     if(!roleIdNode.IsNull())
     {
-      m_roleId = StringUtils::Trim(roleIdNode.GetText().c_str());
+      m_roleId = roleIdNode.GetText();
       m_roleIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
-      m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+      m_arn = arnNode.GetText();
       m_arnHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
@@ -100,13 +100,13 @@ Role& Role::operator =(const XmlNode& xmlNode)
     XmlNode assumeRolePolicyDocumentNode = resultNode.FirstChild("AssumeRolePolicyDocument");
     if(!assumeRolePolicyDocumentNode.IsNull())
     {
-      m_assumeRolePolicyDocument = StringUtils::Trim(assumeRolePolicyDocumentNode.GetText().c_str());
+      m_assumeRolePolicyDocument = assumeRolePolicyDocumentNode.GetText();
       m_assumeRolePolicyDocumentHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode maxSessionDurationNode = resultNode.FirstChild("MaxSessionDuration");

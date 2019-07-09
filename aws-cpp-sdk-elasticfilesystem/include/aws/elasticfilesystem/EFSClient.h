@@ -1114,20 +1114,17 @@ namespace Model
          * system, a <code>PutLifecycleConfiguration</code> call modifies the existing
          * configuration. A <code>PutLifecycleConfiguration</code> call with an empty
          * <code>LifecyclePolicies</code> array in the request body deletes any existing
-         * <code>LifecycleConfiguration</code> and disables lifecycle management.</p>
-         * <note> <p>You can enable lifecycle management only for EFS file systems created
-         * after the release of EFS infrequent access.</p> </note> <p>In the request,
-         * specify the following: </p> <ul> <li> <p>The ID for the file system for which
-         * you are creating a lifecycle management configuration.</p> </li> <li> <p>A
-         * <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects
-         * that define when files are moved to the IA storage class. The array can contain
-         * only one <code>"TransitionToIA": "AFTER_30_DAYS"</code>
-         * <code>LifecyclePolicy</code> item.</p> </li> </ul> <p>This operation requires
-         * permissions for the <code>elasticfilesystem:PutLifecycleConfiguration</code>
-         * operation.</p> <p>To apply a <code>LifecycleConfiguration</code> object to an
-         * encrypted file system, you need the same AWS Key Management Service (AWS KMS)
-         * permissions as when you created the encrypted file system. </p><p><h3>See
-         * Also:</h3>   <a
+         * <code>LifecycleConfiguration</code> and disables lifecycle management.</p> <p>In
+         * the request, specify the following: </p> <ul> <li> <p>The ID for the file system
+         * for which you are enabling, disabling, or modifying lifecycle management.</p>
+         * </li> <li> <p>A <code>LifecyclePolicies</code> array of
+         * <code>LifecyclePolicy</code> objects that define when files are moved to the IA
+         * storage class. The array can contain only one <code>LifecyclePolicy</code>
+         * item.</p> </li> </ul> <p>This operation requires permissions for the
+         * <code>elasticfilesystem:PutLifecycleConfiguration</code> operation.</p> <p>To
+         * apply a <code>LifecycleConfiguration</code> object to an encrypted file system,
+         * you need the same AWS Key Management Service (AWS KMS) permissions as when you
+         * created the encrypted file system. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutLifecycleConfiguration">AWS
          * API Reference</a></p>
          */
@@ -1145,20 +1142,17 @@ namespace Model
          * system, a <code>PutLifecycleConfiguration</code> call modifies the existing
          * configuration. A <code>PutLifecycleConfiguration</code> call with an empty
          * <code>LifecyclePolicies</code> array in the request body deletes any existing
-         * <code>LifecycleConfiguration</code> and disables lifecycle management.</p>
-         * <note> <p>You can enable lifecycle management only for EFS file systems created
-         * after the release of EFS infrequent access.</p> </note> <p>In the request,
-         * specify the following: </p> <ul> <li> <p>The ID for the file system for which
-         * you are creating a lifecycle management configuration.</p> </li> <li> <p>A
-         * <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects
-         * that define when files are moved to the IA storage class. The array can contain
-         * only one <code>"TransitionToIA": "AFTER_30_DAYS"</code>
-         * <code>LifecyclePolicy</code> item.</p> </li> </ul> <p>This operation requires
-         * permissions for the <code>elasticfilesystem:PutLifecycleConfiguration</code>
-         * operation.</p> <p>To apply a <code>LifecycleConfiguration</code> object to an
-         * encrypted file system, you need the same AWS Key Management Service (AWS KMS)
-         * permissions as when you created the encrypted file system. </p><p><h3>See
-         * Also:</h3>   <a
+         * <code>LifecycleConfiguration</code> and disables lifecycle management.</p> <p>In
+         * the request, specify the following: </p> <ul> <li> <p>The ID for the file system
+         * for which you are enabling, disabling, or modifying lifecycle management.</p>
+         * </li> <li> <p>A <code>LifecyclePolicies</code> array of
+         * <code>LifecyclePolicy</code> objects that define when files are moved to the IA
+         * storage class. The array can contain only one <code>LifecyclePolicy</code>
+         * item.</p> </li> </ul> <p>This operation requires permissions for the
+         * <code>elasticfilesystem:PutLifecycleConfiguration</code> operation.</p> <p>To
+         * apply a <code>LifecycleConfiguration</code> object to an encrypted file system,
+         * you need the same AWS Key Management Service (AWS KMS) permissions as when you
+         * created the encrypted file system. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutLifecycleConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1178,20 +1172,17 @@ namespace Model
          * system, a <code>PutLifecycleConfiguration</code> call modifies the existing
          * configuration. A <code>PutLifecycleConfiguration</code> call with an empty
          * <code>LifecyclePolicies</code> array in the request body deletes any existing
-         * <code>LifecycleConfiguration</code> and disables lifecycle management.</p>
-         * <note> <p>You can enable lifecycle management only for EFS file systems created
-         * after the release of EFS infrequent access.</p> </note> <p>In the request,
-         * specify the following: </p> <ul> <li> <p>The ID for the file system for which
-         * you are creating a lifecycle management configuration.</p> </li> <li> <p>A
-         * <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects
-         * that define when files are moved to the IA storage class. The array can contain
-         * only one <code>"TransitionToIA": "AFTER_30_DAYS"</code>
-         * <code>LifecyclePolicy</code> item.</p> </li> </ul> <p>This operation requires
-         * permissions for the <code>elasticfilesystem:PutLifecycleConfiguration</code>
-         * operation.</p> <p>To apply a <code>LifecycleConfiguration</code> object to an
-         * encrypted file system, you need the same AWS Key Management Service (AWS KMS)
-         * permissions as when you created the encrypted file system. </p><p><h3>See
-         * Also:</h3>   <a
+         * <code>LifecycleConfiguration</code> and disables lifecycle management.</p> <p>In
+         * the request, specify the following: </p> <ul> <li> <p>The ID for the file system
+         * for which you are enabling, disabling, or modifying lifecycle management.</p>
+         * </li> <li> <p>A <code>LifecyclePolicies</code> array of
+         * <code>LifecyclePolicy</code> objects that define when files are moved to the IA
+         * storage class. The array can contain only one <code>LifecyclePolicy</code>
+         * item.</p> </li> </ul> <p>This operation requires permissions for the
+         * <code>elasticfilesystem:PutLifecycleConfiguration</code> operation.</p> <p>To
+         * apply a <code>LifecycleConfiguration</code> object to an encrypted file system,
+         * you need the same AWS Key Management Service (AWS KMS) permissions as when you
+         * created the encrypted file system. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutLifecycleConfiguration">AWS
          * API Reference</a></p>
          *

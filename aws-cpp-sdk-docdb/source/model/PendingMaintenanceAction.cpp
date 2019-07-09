@@ -60,7 +60,7 @@ PendingMaintenanceAction& PendingMaintenanceAction::operator =(const XmlNode& xm
     XmlNode actionNode = resultNode.FirstChild("Action");
     if(!actionNode.IsNull())
     {
-      m_action = StringUtils::Trim(actionNode.GetText().c_str());
+      m_action = actionNode.GetText();
       m_actionHasBeenSet = true;
     }
     XmlNode autoAppliedAfterDateNode = resultNode.FirstChild("AutoAppliedAfterDate");
@@ -78,7 +78,7 @@ PendingMaintenanceAction& PendingMaintenanceAction::operator =(const XmlNode& xm
     XmlNode optInStatusNode = resultNode.FirstChild("OptInStatus");
     if(!optInStatusNode.IsNull())
     {
-      m_optInStatus = StringUtils::Trim(optInStatusNode.GetText().c_str());
+      m_optInStatus = optInStatusNode.GetText();
       m_optInStatusHasBeenSet = true;
     }
     XmlNode currentApplyDateNode = resultNode.FirstChild("CurrentApplyDate");
@@ -90,7 +90,7 @@ PendingMaintenanceAction& PendingMaintenanceAction::operator =(const XmlNode& xm
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
   }

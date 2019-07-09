@@ -54,19 +54,19 @@ AvailableProcessorFeature& AvailableProcessorFeature::operator =(const XmlNode& 
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
     XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
     if(!defaultValueNode.IsNull())
     {
-      m_defaultValue = StringUtils::Trim(defaultValueNode.GetText().c_str());
+      m_defaultValue = defaultValueNode.GetText();
       m_defaultValueHasBeenSet = true;
     }
     XmlNode allowedValuesNode = resultNode.FirstChild("AllowedValues");
     if(!allowedValuesNode.IsNull())
     {
-      m_allowedValues = StringUtils::Trim(allowedValuesNode.GetText().c_str());
+      m_allowedValues = allowedValuesNode.GetText();
       m_allowedValuesHasBeenSet = true;
     }
   }

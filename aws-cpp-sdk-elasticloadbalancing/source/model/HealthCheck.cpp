@@ -66,7 +66,7 @@ HealthCheck& HealthCheck::operator =(const XmlNode& xmlNode)
     XmlNode targetNode = resultNode.FirstChild("Target");
     if(!targetNode.IsNull())
     {
-      m_target = StringUtils::Trim(targetNode.GetText().c_str());
+      m_target = targetNode.GetText();
       m_targetHasBeenSet = true;
     }
     XmlNode intervalNode = resultNode.FirstChild("Interval");

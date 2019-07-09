@@ -60,7 +60,7 @@ IdentityVerificationAttributes& IdentityVerificationAttributes::operator =(const
     XmlNode verificationTokenNode = resultNode.FirstChild("VerificationToken");
     if(!verificationTokenNode.IsNull())
     {
-      m_verificationToken = StringUtils::Trim(verificationTokenNode.GetText().c_str());
+      m_verificationToken = verificationTokenNode.GetText();
       m_verificationTokenHasBeenSet = true;
     }
   }

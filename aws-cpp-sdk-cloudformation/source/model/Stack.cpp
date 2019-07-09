@@ -100,25 +100,25 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
     if(!stackIdNode.IsNull())
     {
-      m_stackId = StringUtils::Trim(stackIdNode.GetText().c_str());
+      m_stackId = stackIdNode.GetText();
       m_stackIdHasBeenSet = true;
     }
     XmlNode stackNameNode = resultNode.FirstChild("StackName");
     if(!stackNameNode.IsNull())
     {
-      m_stackName = StringUtils::Trim(stackNameNode.GetText().c_str());
+      m_stackName = stackNameNode.GetText();
       m_stackNameHasBeenSet = true;
     }
     XmlNode changeSetIdNode = resultNode.FirstChild("ChangeSetId");
     if(!changeSetIdNode.IsNull())
     {
-      m_changeSetId = StringUtils::Trim(changeSetIdNode.GetText().c_str());
+      m_changeSetId = changeSetIdNode.GetText();
       m_changeSetIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode parametersNode = resultNode.FirstChild("Parameters");
@@ -166,7 +166,7 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     XmlNode stackStatusReasonNode = resultNode.FirstChild("StackStatusReason");
     if(!stackStatusReasonNode.IsNull())
     {
-      m_stackStatusReason = StringUtils::Trim(stackStatusReasonNode.GetText().c_str());
+      m_stackStatusReason = stackStatusReasonNode.GetText();
       m_stackStatusReasonHasBeenSet = true;
     }
     XmlNode disableRollbackNode = resultNode.FirstChild("DisableRollback");
@@ -181,7 +181,7 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
       XmlNode notificationARNsMember = notificationARNsNode.FirstChild("member");
       while(!notificationARNsMember.IsNull())
       {
-        m_notificationARNs.push_back(StringUtils::Trim(notificationARNsMember.GetText().c_str()));
+        m_notificationARNs.push_back(notificationARNsMember.GetText());
         notificationARNsMember = notificationARNsMember.NextNode("member");
       }
 
@@ -220,7 +220,7 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     XmlNode roleARNNode = resultNode.FirstChild("RoleARN");
     if(!roleARNNode.IsNull())
     {
-      m_roleARN = StringUtils::Trim(roleARNNode.GetText().c_str());
+      m_roleARN = roleARNNode.GetText();
       m_roleARNHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
@@ -244,13 +244,13 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     XmlNode parentIdNode = resultNode.FirstChild("ParentId");
     if(!parentIdNode.IsNull())
     {
-      m_parentId = StringUtils::Trim(parentIdNode.GetText().c_str());
+      m_parentId = parentIdNode.GetText();
       m_parentIdHasBeenSet = true;
     }
     XmlNode rootIdNode = resultNode.FirstChild("RootId");
     if(!rootIdNode.IsNull())
     {
-      m_rootId = StringUtils::Trim(rootIdNode.GetText().c_str());
+      m_rootId = rootIdNode.GetText();
       m_rootIdHasBeenSet = true;
     }
     XmlNode driftInformationNode = resultNode.FirstChild("DriftInformation");

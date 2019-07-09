@@ -96,7 +96,7 @@ LaunchTemplateInstanceNetworkInterfaceSpecification& LaunchTemplateInstanceNetwo
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode deviceIndexNode = resultNode.FirstChild("deviceIndex");
@@ -111,7 +111,7 @@ LaunchTemplateInstanceNetworkInterfaceSpecification& LaunchTemplateInstanceNetwo
       XmlNode groupsMember = groupsNode.FirstChild("groupId");
       while(!groupsMember.IsNull())
       {
-        m_groups.push_back(StringUtils::Trim(groupsMember.GetText().c_str()));
+        m_groups.push_back(groupsMember.GetText());
         groupsMember = groupsMember.NextNode("groupId");
       }
 
@@ -120,7 +120,7 @@ LaunchTemplateInstanceNetworkInterfaceSpecification& LaunchTemplateInstanceNetwo
     XmlNode interfaceTypeNode = resultNode.FirstChild("interfaceType");
     if(!interfaceTypeNode.IsNull())
     {
-      m_interfaceType = StringUtils::Trim(interfaceTypeNode.GetText().c_str());
+      m_interfaceType = interfaceTypeNode.GetText();
       m_interfaceTypeHasBeenSet = true;
     }
     XmlNode ipv6AddressCountNode = resultNode.FirstChild("ipv6AddressCount");
@@ -144,13 +144,13 @@ LaunchTemplateInstanceNetworkInterfaceSpecification& LaunchTemplateInstanceNetwo
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
-      m_networkInterfaceId = StringUtils::Trim(networkInterfaceIdNode.GetText().c_str());
+      m_networkInterfaceId = networkInterfaceIdNode.GetText();
       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode privateIpAddressNode = resultNode.FirstChild("privateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
-      m_privateIpAddress = StringUtils::Trim(privateIpAddressNode.GetText().c_str());
+      m_privateIpAddress = privateIpAddressNode.GetText();
       m_privateIpAddressHasBeenSet = true;
     }
     XmlNode privateIpAddressesNode = resultNode.FirstChild("privateIpAddressesSet");
@@ -174,7 +174,7 @@ LaunchTemplateInstanceNetworkInterfaceSpecification& LaunchTemplateInstanceNetwo
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
-      m_subnetId = StringUtils::Trim(subnetIdNode.GetText().c_str());
+      m_subnetId = subnetIdNode.GetText();
       m_subnetIdHasBeenSet = true;
     }
   }

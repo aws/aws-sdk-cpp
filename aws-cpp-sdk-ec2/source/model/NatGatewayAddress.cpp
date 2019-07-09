@@ -56,25 +56,25 @@ NatGatewayAddress& NatGatewayAddress::operator =(const XmlNode& xmlNode)
     XmlNode allocationIdNode = resultNode.FirstChild("allocationId");
     if(!allocationIdNode.IsNull())
     {
-      m_allocationId = StringUtils::Trim(allocationIdNode.GetText().c_str());
+      m_allocationId = allocationIdNode.GetText();
       m_allocationIdHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
-      m_networkInterfaceId = StringUtils::Trim(networkInterfaceIdNode.GetText().c_str());
+      m_networkInterfaceId = networkInterfaceIdNode.GetText();
       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode privateIpNode = resultNode.FirstChild("privateIp");
     if(!privateIpNode.IsNull())
     {
-      m_privateIp = StringUtils::Trim(privateIpNode.GetText().c_str());
+      m_privateIp = privateIpNode.GetText();
       m_privateIpHasBeenSet = true;
     }
     XmlNode publicIpNode = resultNode.FirstChild("publicIp");
     if(!publicIpNode.IsNull())
     {
-      m_publicIp = StringUtils::Trim(publicIpNode.GetText().c_str());
+      m_publicIp = publicIpNode.GetText();
       m_publicIpHasBeenSet = true;
     }
   }

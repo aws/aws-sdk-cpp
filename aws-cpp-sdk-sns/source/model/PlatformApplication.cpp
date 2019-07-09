@@ -52,7 +52,7 @@ PlatformApplication& PlatformApplication::operator =(const XmlNode& xmlNode)
     XmlNode platformApplicationArnNode = resultNode.FirstChild("PlatformApplicationArn");
     if(!platformApplicationArnNode.IsNull())
     {
-      m_platformApplicationArn = StringUtils::Trim(platformApplicationArnNode.GetText().c_str());
+      m_platformApplicationArn = platformApplicationArnNode.GetText();
       m_platformApplicationArnHasBeenSet = true;
     }
     XmlNode attributesNode = resultNode.FirstChild("Attributes");
@@ -64,8 +64,8 @@ PlatformApplication& PlatformApplication::operator =(const XmlNode& xmlNode)
       {
         XmlNode keyNode = attributesEntry.FirstChild("key");
         XmlNode valueNode = attributesEntry.FirstChild("value");
-        m_attributes[StringUtils::Trim(keyNode.GetText().c_str())] =
-            StringUtils::Trim(valueNode.GetText().c_str());
+        m_attributes[keyNode.GetText()] =
+            valueNode.GetText();
         attributesEntry = attributesEntry.NextNode("entry");
       }
 

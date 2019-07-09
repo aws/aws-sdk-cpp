@@ -58,7 +58,7 @@ GenerateCredentialReportResult& GenerateCredentialReportResult::operator =(const
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
     }
   }
 

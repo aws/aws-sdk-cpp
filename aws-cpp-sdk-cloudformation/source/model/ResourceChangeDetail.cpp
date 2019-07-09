@@ -78,7 +78,7 @@ ResourceChangeDetail& ResourceChangeDetail::operator =(const XmlNode& xmlNode)
     XmlNode causingEntityNode = resultNode.FirstChild("CausingEntity");
     if(!causingEntityNode.IsNull())
     {
-      m_causingEntity = StringUtils::Trim(causingEntityNode.GetText().c_str());
+      m_causingEntity = causingEntityNode.GetText();
       m_causingEntityHasBeenSet = true;
     }
   }

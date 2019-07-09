@@ -52,13 +52,13 @@ IpRange& IpRange::operator =(const XmlNode& xmlNode)
     XmlNode cidrIpNode = resultNode.FirstChild("cidrIp");
     if(!cidrIpNode.IsNull())
     {
-      m_cidrIp = StringUtils::Trim(cidrIpNode.GetText().c_str());
+      m_cidrIp = cidrIpNode.GetText();
       m_cidrIpHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
   }

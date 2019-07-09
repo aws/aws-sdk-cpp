@@ -60,7 +60,7 @@ AllowedPrincipal& AllowedPrincipal::operator =(const XmlNode& xmlNode)
     XmlNode principalNode = resultNode.FirstChild("principal");
     if(!principalNode.IsNull())
     {
-      m_principal = StringUtils::Trim(principalNode.GetText().c_str());
+      m_principal = principalNode.GetText();
       m_principalHasBeenSet = true;
     }
   }

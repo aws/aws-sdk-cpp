@@ -52,13 +52,13 @@ MessageData& MessageData::operator =(const XmlNode& xmlNode)
     XmlNode codeNode = resultNode.FirstChild("Code");
     if(!codeNode.IsNull())
     {
-      m_code = StringUtils::Trim(codeNode.GetText().c_str());
+      m_code = codeNode.GetText();
       m_codeHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
-      m_value = StringUtils::Trim(valueNode.GetText().c_str());
+      m_value = valueNode.GetText();
       m_valueHasBeenSet = true;
     }
   }

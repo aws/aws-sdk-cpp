@@ -62,13 +62,13 @@ HealthCheck& HealthCheck::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
     if(!callerReferenceNode.IsNull())
     {
-      m_callerReference = StringUtils::Trim(callerReferenceNode.GetText().c_str());
+      m_callerReference = callerReferenceNode.GetText();
       m_callerReferenceHasBeenSet = true;
     }
     XmlNode linkedServiceNode = resultNode.FirstChild("LinkedService");

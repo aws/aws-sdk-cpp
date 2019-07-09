@@ -56,13 +56,13 @@ LambdaFunctionConfiguration& LambdaFunctionConfiguration::operator =(const XmlNo
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
     XmlNode lambdaFunctionArnNode = resultNode.FirstChild("CloudFunction");
     if(!lambdaFunctionArnNode.IsNull())
     {
-      m_lambdaFunctionArn = StringUtils::Trim(lambdaFunctionArnNode.GetText().c_str());
+      m_lambdaFunctionArn = lambdaFunctionArnNode.GetText();
       m_lambdaFunctionArnHasBeenSet = true;
     }
     XmlNode eventsNode = resultNode.FirstChild("Event");

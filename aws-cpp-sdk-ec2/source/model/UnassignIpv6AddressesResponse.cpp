@@ -51,7 +51,7 @@ UnassignIpv6AddressesResponse& UnassignIpv6AddressesResponse::operator =(const A
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
-      m_networkInterfaceId = StringUtils::Trim(networkInterfaceIdNode.GetText().c_str());
+      m_networkInterfaceId = networkInterfaceIdNode.GetText();
     }
     XmlNode unassignedIpv6AddressesNode = resultNode.FirstChild("unassignedIpv6Addresses");
     if(!unassignedIpv6AddressesNode.IsNull())
@@ -59,7 +59,7 @@ UnassignIpv6AddressesResponse& UnassignIpv6AddressesResponse::operator =(const A
       XmlNode unassignedIpv6AddressesMember = unassignedIpv6AddressesNode.FirstChild("item");
       while(!unassignedIpv6AddressesMember.IsNull())
       {
-        m_unassignedIpv6Addresses.push_back(StringUtils::Trim(unassignedIpv6AddressesMember.GetText().c_str()));
+        m_unassignedIpv6Addresses.push_back(unassignedIpv6AddressesMember.GetText());
         unassignedIpv6AddressesMember = unassignedIpv6AddressesMember.NextNode("item");
       }
 

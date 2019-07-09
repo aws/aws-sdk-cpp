@@ -58,19 +58,19 @@ ByoipCidr& ByoipCidr::operator =(const XmlNode& xmlNode)
     XmlNode cidrNode = resultNode.FirstChild("cidr");
     if(!cidrNode.IsNull())
     {
-      m_cidr = StringUtils::Trim(cidrNode.GetText().c_str());
+      m_cidr = cidrNode.GetText();
       m_cidrHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
-      m_statusMessage = StringUtils::Trim(statusMessageNode.GetText().c_str());
+      m_statusMessage = statusMessageNode.GetText();
       m_statusMessageHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");

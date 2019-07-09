@@ -56,13 +56,13 @@ ProcessedUpdateAction& ProcessedUpdateAction::operator =(const XmlNode& xmlNode)
     XmlNode replicationGroupIdNode = resultNode.FirstChild("ReplicationGroupId");
     if(!replicationGroupIdNode.IsNull())
     {
-      m_replicationGroupId = StringUtils::Trim(replicationGroupIdNode.GetText().c_str());
+      m_replicationGroupId = replicationGroupIdNode.GetText();
       m_replicationGroupIdHasBeenSet = true;
     }
     XmlNode serviceUpdateNameNode = resultNode.FirstChild("ServiceUpdateName");
     if(!serviceUpdateNameNode.IsNull())
     {
-      m_serviceUpdateName = StringUtils::Trim(serviceUpdateNameNode.GetText().c_str());
+      m_serviceUpdateName = serviceUpdateNameNode.GetText();
       m_serviceUpdateNameHasBeenSet = true;
     }
     XmlNode updateActionStatusNode = resultNode.FirstChild("UpdateActionStatus");

@@ -74,7 +74,7 @@ NetworkInterfaceAttachment& NetworkInterfaceAttachment::operator =(const XmlNode
     XmlNode attachmentIdNode = resultNode.FirstChild("attachmentId");
     if(!attachmentIdNode.IsNull())
     {
-      m_attachmentId = StringUtils::Trim(attachmentIdNode.GetText().c_str());
+      m_attachmentId = attachmentIdNode.GetText();
       m_attachmentIdHasBeenSet = true;
     }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
@@ -92,13 +92,13 @@ NetworkInterfaceAttachment& NetworkInterfaceAttachment::operator =(const XmlNode
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceId = instanceIdNode.GetText();
       m_instanceIdHasBeenSet = true;
     }
     XmlNode instanceOwnerIdNode = resultNode.FirstChild("instanceOwnerId");
     if(!instanceOwnerIdNode.IsNull())
     {
-      m_instanceOwnerId = StringUtils::Trim(instanceOwnerIdNode.GetText().c_str());
+      m_instanceOwnerId = instanceOwnerIdNode.GetText();
       m_instanceOwnerIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");

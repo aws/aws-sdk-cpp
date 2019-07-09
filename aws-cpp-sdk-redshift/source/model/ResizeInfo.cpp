@@ -54,7 +54,7 @@ ResizeInfo& ResizeInfo::operator =(const XmlNode& xmlNode)
     XmlNode resizeTypeNode = resultNode.FirstChild("ResizeType");
     if(!resizeTypeNode.IsNull())
     {
-      m_resizeType = StringUtils::Trim(resizeTypeNode.GetText().c_str());
+      m_resizeType = resizeTypeNode.GetText();
       m_resizeTypeHasBeenSet = true;
     }
     XmlNode allowCancelResizeNode = resultNode.FirstChild("AllowCancelResize");

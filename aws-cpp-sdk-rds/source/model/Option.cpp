@@ -72,13 +72,13 @@ Option& Option::operator =(const XmlNode& xmlNode)
     XmlNode optionNameNode = resultNode.FirstChild("OptionName");
     if(!optionNameNode.IsNull())
     {
-      m_optionName = StringUtils::Trim(optionNameNode.GetText().c_str());
+      m_optionName = optionNameNode.GetText();
       m_optionNameHasBeenSet = true;
     }
     XmlNode optionDescriptionNode = resultNode.FirstChild("OptionDescription");
     if(!optionDescriptionNode.IsNull())
     {
-      m_optionDescription = StringUtils::Trim(optionDescriptionNode.GetText().c_str());
+      m_optionDescription = optionDescriptionNode.GetText();
       m_optionDescriptionHasBeenSet = true;
     }
     XmlNode persistentNode = resultNode.FirstChild("Persistent");
@@ -102,7 +102,7 @@ Option& Option::operator =(const XmlNode& xmlNode)
     XmlNode optionVersionNode = resultNode.FirstChild("OptionVersion");
     if(!optionVersionNode.IsNull())
     {
-      m_optionVersion = StringUtils::Trim(optionVersionNode.GetText().c_str());
+      m_optionVersion = optionVersionNode.GetText();
       m_optionVersionHasBeenSet = true;
     }
     XmlNode optionSettingsNode = resultNode.FirstChild("OptionSettings");

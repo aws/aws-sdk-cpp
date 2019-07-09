@@ -86,7 +86,7 @@ ResourceRecordSet& ResourceRecordSet::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("Type");
@@ -98,7 +98,7 @@ ResourceRecordSet& ResourceRecordSet::operator =(const XmlNode& xmlNode)
     XmlNode setIdentifierNode = resultNode.FirstChild("SetIdentifier");
     if(!setIdentifierNode.IsNull())
     {
-      m_setIdentifier = StringUtils::Trim(setIdentifierNode.GetText().c_str());
+      m_setIdentifier = setIdentifierNode.GetText();
       m_setIdentifierHasBeenSet = true;
     }
     XmlNode weightNode = resultNode.FirstChild("Weight");
@@ -158,13 +158,13 @@ ResourceRecordSet& ResourceRecordSet::operator =(const XmlNode& xmlNode)
     XmlNode healthCheckIdNode = resultNode.FirstChild("HealthCheckId");
     if(!healthCheckIdNode.IsNull())
     {
-      m_healthCheckId = StringUtils::Trim(healthCheckIdNode.GetText().c_str());
+      m_healthCheckId = healthCheckIdNode.GetText();
       m_healthCheckIdHasBeenSet = true;
     }
     XmlNode trafficPolicyInstanceIdNode = resultNode.FirstChild("TrafficPolicyInstanceId");
     if(!trafficPolicyInstanceIdNode.IsNull())
     {
-      m_trafficPolicyInstanceId = StringUtils::Trim(trafficPolicyInstanceIdNode.GetText().c_str());
+      m_trafficPolicyInstanceId = trafficPolicyInstanceIdNode.GetText();
       m_trafficPolicyInstanceIdHasBeenSet = true;
     }
   }

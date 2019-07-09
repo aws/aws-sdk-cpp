@@ -124,7 +124,7 @@ Datapoint& Datapoint::operator =(const XmlNode& xmlNode)
       {
         XmlNode keyNode = extendedStatisticsEntry.FirstChild("key");
         XmlNode valueNode = extendedStatisticsEntry.FirstChild("value");
-        m_extendedStatistics[StringUtils::Trim(keyNode.GetText().c_str())] =
+        m_extendedStatistics[keyNode.GetText()] =
            StringUtils::ConvertToDouble(StringUtils::Trim(valueNode.GetText().c_str()).c_str());
         extendedStatisticsEntry = extendedStatisticsEntry.NextNode("entry");
       }

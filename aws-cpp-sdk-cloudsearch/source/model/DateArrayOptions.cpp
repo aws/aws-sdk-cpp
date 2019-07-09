@@ -64,13 +64,13 @@ DateArrayOptions& DateArrayOptions::operator =(const XmlNode& xmlNode)
     XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
     if(!defaultValueNode.IsNull())
     {
-      m_defaultValue = StringUtils::Trim(defaultValueNode.GetText().c_str());
+      m_defaultValue = defaultValueNode.GetText();
       m_defaultValueHasBeenSet = true;
     }
     XmlNode sourceFieldsNode = resultNode.FirstChild("SourceFields");
     if(!sourceFieldsNode.IsNull())
     {
-      m_sourceFields = StringUtils::Trim(sourceFieldsNode.GetText().c_str());
+      m_sourceFields = sourceFieldsNode.GetText();
       m_sourceFieldsHasBeenSet = true;
     }
     XmlNode facetEnabledNode = resultNode.FirstChild("FacetEnabled");

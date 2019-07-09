@@ -60,25 +60,25 @@ ServerCertificateMetadata& ServerCertificateMetadata::operator =(const XmlNode& 
     XmlNode pathNode = resultNode.FirstChild("Path");
     if(!pathNode.IsNull())
     {
-      m_path = StringUtils::Trim(pathNode.GetText().c_str());
+      m_path = pathNode.GetText();
       m_pathHasBeenSet = true;
     }
     XmlNode serverCertificateNameNode = resultNode.FirstChild("ServerCertificateName");
     if(!serverCertificateNameNode.IsNull())
     {
-      m_serverCertificateName = StringUtils::Trim(serverCertificateNameNode.GetText().c_str());
+      m_serverCertificateName = serverCertificateNameNode.GetText();
       m_serverCertificateNameHasBeenSet = true;
     }
     XmlNode serverCertificateIdNode = resultNode.FirstChild("ServerCertificateId");
     if(!serverCertificateIdNode.IsNull())
     {
-      m_serverCertificateId = StringUtils::Trim(serverCertificateIdNode.GetText().c_str());
+      m_serverCertificateId = serverCertificateIdNode.GetText();
       m_serverCertificateIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
-      m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+      m_arn = arnNode.GetText();
       m_arnHasBeenSet = true;
     }
     XmlNode uploadDateNode = resultNode.FirstChild("UploadDate");

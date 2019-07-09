@@ -64,7 +64,7 @@ ReservedInstancesConfiguration& ReservedInstancesConfiguration::operator =(const
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode instanceCountNode = resultNode.FirstChild("instanceCount");
@@ -82,7 +82,7 @@ ReservedInstancesConfiguration& ReservedInstancesConfiguration::operator =(const
     XmlNode platformNode = resultNode.FirstChild("platform");
     if(!platformNode.IsNull())
     {
-      m_platform = StringUtils::Trim(platformNode.GetText().c_str());
+      m_platform = platformNode.GetText();
       m_platformHasBeenSet = true;
     }
     XmlNode scopeNode = resultNode.FirstChild("scope");

@@ -66,7 +66,7 @@ BundleTask& BundleTask::operator =(const XmlNode& xmlNode)
     XmlNode bundleIdNode = resultNode.FirstChild("bundleId");
     if(!bundleIdNode.IsNull())
     {
-      m_bundleId = StringUtils::Trim(bundleIdNode.GetText().c_str());
+      m_bundleId = bundleIdNode.GetText();
       m_bundleIdHasBeenSet = true;
     }
     XmlNode bundleTaskErrorNode = resultNode.FirstChild("error");
@@ -78,13 +78,13 @@ BundleTask& BundleTask::operator =(const XmlNode& xmlNode)
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceId = instanceIdNode.GetText();
       m_instanceIdHasBeenSet = true;
     }
     XmlNode progressNode = resultNode.FirstChild("progress");
     if(!progressNode.IsNull())
     {
-      m_progress = StringUtils::Trim(progressNode.GetText().c_str());
+      m_progress = progressNode.GetText();
       m_progressHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("startTime");

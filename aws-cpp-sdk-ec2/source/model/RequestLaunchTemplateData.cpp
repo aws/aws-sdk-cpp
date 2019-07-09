@@ -106,7 +106,7 @@ RequestLaunchTemplateData& RequestLaunchTemplateData::operator =(const XmlNode& 
     XmlNode kernelIdNode = resultNode.FirstChild("KernelId");
     if(!kernelIdNode.IsNull())
     {
-      m_kernelId = StringUtils::Trim(kernelIdNode.GetText().c_str());
+      m_kernelId = kernelIdNode.GetText();
       m_kernelIdHasBeenSet = true;
     }
     XmlNode ebsOptimizedNode = resultNode.FirstChild("EbsOptimized");
@@ -148,7 +148,7 @@ RequestLaunchTemplateData& RequestLaunchTemplateData::operator =(const XmlNode& 
     XmlNode imageIdNode = resultNode.FirstChild("ImageId");
     if(!imageIdNode.IsNull())
     {
-      m_imageId = StringUtils::Trim(imageIdNode.GetText().c_str());
+      m_imageId = imageIdNode.GetText();
       m_imageIdHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("InstanceType");
@@ -160,7 +160,7 @@ RequestLaunchTemplateData& RequestLaunchTemplateData::operator =(const XmlNode& 
     XmlNode keyNameNode = resultNode.FirstChild("KeyName");
     if(!keyNameNode.IsNull())
     {
-      m_keyName = StringUtils::Trim(keyNameNode.GetText().c_str());
+      m_keyName = keyNameNode.GetText();
       m_keyNameHasBeenSet = true;
     }
     XmlNode monitoringNode = resultNode.FirstChild("Monitoring");
@@ -178,7 +178,7 @@ RequestLaunchTemplateData& RequestLaunchTemplateData::operator =(const XmlNode& 
     XmlNode ramDiskIdNode = resultNode.FirstChild("RamDiskId");
     if(!ramDiskIdNode.IsNull())
     {
-      m_ramDiskId = StringUtils::Trim(ramDiskIdNode.GetText().c_str());
+      m_ramDiskId = ramDiskIdNode.GetText();
       m_ramDiskIdHasBeenSet = true;
     }
     XmlNode disableApiTerminationNode = resultNode.FirstChild("DisableApiTermination");
@@ -196,7 +196,7 @@ RequestLaunchTemplateData& RequestLaunchTemplateData::operator =(const XmlNode& 
     XmlNode userDataNode = resultNode.FirstChild("UserData");
     if(!userDataNode.IsNull())
     {
-      m_userData = StringUtils::Trim(userDataNode.GetText().c_str());
+      m_userData = userDataNode.GetText();
       m_userDataHasBeenSet = true;
     }
     XmlNode tagSpecificationsNode = resultNode.FirstChild("TagSpecification");
@@ -241,7 +241,7 @@ RequestLaunchTemplateData& RequestLaunchTemplateData::operator =(const XmlNode& 
       XmlNode securityGroupIdsMember = securityGroupIdsNode.FirstChild("SecurityGroupId");
       while(!securityGroupIdsMember.IsNull())
       {
-        m_securityGroupIds.push_back(StringUtils::Trim(securityGroupIdsMember.GetText().c_str()));
+        m_securityGroupIds.push_back(securityGroupIdsMember.GetText());
         securityGroupIdsMember = securityGroupIdsMember.NextNode("SecurityGroupId");
       }
 
@@ -253,7 +253,7 @@ RequestLaunchTemplateData& RequestLaunchTemplateData::operator =(const XmlNode& 
       XmlNode securityGroupsMember = securityGroupsNode.FirstChild("SecurityGroup");
       while(!securityGroupsMember.IsNull())
       {
-        m_securityGroups.push_back(StringUtils::Trim(securityGroupsMember.GetText().c_str()));
+        m_securityGroups.push_back(securityGroupsMember.GetText());
         securityGroupsMember = securityGroupsMember.NextNode("SecurityGroup");
       }
 

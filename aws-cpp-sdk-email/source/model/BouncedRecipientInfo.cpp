@@ -58,13 +58,13 @@ BouncedRecipientInfo& BouncedRecipientInfo::operator =(const XmlNode& xmlNode)
     XmlNode recipientNode = resultNode.FirstChild("Recipient");
     if(!recipientNode.IsNull())
     {
-      m_recipient = StringUtils::Trim(recipientNode.GetText().c_str());
+      m_recipient = recipientNode.GetText();
       m_recipientHasBeenSet = true;
     }
     XmlNode recipientArnNode = resultNode.FirstChild("RecipientArn");
     if(!recipientArnNode.IsNull())
     {
-      m_recipientArn = StringUtils::Trim(recipientArnNode.GetText().c_str());
+      m_recipientArn = recipientArnNode.GetText();
       m_recipientArnHasBeenSet = true;
     }
     XmlNode bounceTypeNode = resultNode.FirstChild("BounceType");

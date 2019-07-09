@@ -60,7 +60,7 @@ DiskImageDescription& DiskImageDescription::operator =(const XmlNode& xmlNode)
     XmlNode checksumNode = resultNode.FirstChild("checksum");
     if(!checksumNode.IsNull())
     {
-      m_checksum = StringUtils::Trim(checksumNode.GetText().c_str());
+      m_checksum = checksumNode.GetText();
       m_checksumHasBeenSet = true;
     }
     XmlNode formatNode = resultNode.FirstChild("format");
@@ -72,7 +72,7 @@ DiskImageDescription& DiskImageDescription::operator =(const XmlNode& xmlNode)
     XmlNode importManifestUrlNode = resultNode.FirstChild("importManifestUrl");
     if(!importManifestUrlNode.IsNull())
     {
-      m_importManifestUrl = StringUtils::Trim(importManifestUrlNode.GetText().c_str());
+      m_importManifestUrl = importManifestUrlNode.GetText();
       m_importManifestUrlHasBeenSet = true;
     }
     XmlNode sizeNode = resultNode.FirstChild("size");

@@ -54,13 +54,13 @@ MFADevice& MFADevice::operator =(const XmlNode& xmlNode)
     XmlNode userNameNode = resultNode.FirstChild("UserName");
     if(!userNameNode.IsNull())
     {
-      m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
+      m_userName = userNameNode.GetText();
       m_userNameHasBeenSet = true;
     }
     XmlNode serialNumberNode = resultNode.FirstChild("SerialNumber");
     if(!serialNumberNode.IsNull())
     {
-      m_serialNumber = StringUtils::Trim(serialNumberNode.GetText().c_str());
+      m_serialNumber = serialNumberNode.GetText();
       m_serialNumberHasBeenSet = true;
     }
     XmlNode enableDateNode = resultNode.FirstChild("EnableDate");

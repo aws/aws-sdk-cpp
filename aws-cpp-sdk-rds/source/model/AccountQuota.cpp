@@ -58,7 +58,7 @@ AccountQuota& AccountQuota::operator =(const XmlNode& xmlNode)
     XmlNode accountQuotaNameNode = resultNode.FirstChild("AccountQuotaName");
     if(!accountQuotaNameNode.IsNull())
     {
-      m_accountQuotaName = StringUtils::Trim(accountQuotaNameNode.GetText().c_str());
+      m_accountQuotaName = accountQuotaNameNode.GetText();
       m_accountQuotaNameHasBeenSet = true;
     }
     XmlNode usedNode = resultNode.FirstChild("Used");

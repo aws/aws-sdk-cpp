@@ -52,13 +52,13 @@ Expression& Expression::operator =(const XmlNode& xmlNode)
     XmlNode expressionNameNode = resultNode.FirstChild("ExpressionName");
     if(!expressionNameNode.IsNull())
     {
-      m_expressionName = StringUtils::Trim(expressionNameNode.GetText().c_str());
+      m_expressionName = expressionNameNode.GetText();
       m_expressionNameHasBeenSet = true;
     }
     XmlNode expressionValueNode = resultNode.FirstChild("ExpressionValue");
     if(!expressionValueNode.IsNull())
     {
-      m_expressionValue = StringUtils::Trim(expressionValueNode.GetText().c_str());
+      m_expressionValue = expressionValueNode.GetText();
       m_expressionValueHasBeenSet = true;
     }
   }

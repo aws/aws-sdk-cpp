@@ -60,7 +60,7 @@ FieldLevelEncryptionProfileList& FieldLevelEncryptionProfileList::operator =(con
     XmlNode nextMarkerNode = resultNode.FirstChild("NextMarker");
     if(!nextMarkerNode.IsNull())
     {
-      m_nextMarker = StringUtils::Trim(nextMarkerNode.GetText().c_str());
+      m_nextMarker = nextMarkerNode.GetText();
       m_nextMarkerHasBeenSet = true;
     }
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");

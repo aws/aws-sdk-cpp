@@ -58,13 +58,13 @@ Parameter& Parameter::operator =(const XmlNode& xmlNode)
     XmlNode parameterKeyNode = resultNode.FirstChild("ParameterKey");
     if(!parameterKeyNode.IsNull())
     {
-      m_parameterKey = StringUtils::Trim(parameterKeyNode.GetText().c_str());
+      m_parameterKey = parameterKeyNode.GetText();
       m_parameterKeyHasBeenSet = true;
     }
     XmlNode parameterValueNode = resultNode.FirstChild("ParameterValue");
     if(!parameterValueNode.IsNull())
     {
-      m_parameterValue = StringUtils::Trim(parameterValueNode.GetText().c_str());
+      m_parameterValue = parameterValueNode.GetText();
       m_parameterValueHasBeenSet = true;
     }
     XmlNode usePreviousValueNode = resultNode.FirstChild("UsePreviousValue");
@@ -76,7 +76,7 @@ Parameter& Parameter::operator =(const XmlNode& xmlNode)
     XmlNode resolvedValueNode = resultNode.FirstChild("ResolvedValue");
     if(!resolvedValueNode.IsNull())
     {
-      m_resolvedValue = StringUtils::Trim(resolvedValueNode.GetText().c_str());
+      m_resolvedValue = resolvedValueNode.GetText();
       m_resolvedValueHasBeenSet = true;
     }
   }

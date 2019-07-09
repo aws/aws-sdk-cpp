@@ -62,7 +62,7 @@ GetMetricDataResult& GetMetricDataResult::operator =(const Aws::AmazonWebService
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+      m_nextToken = nextTokenNode.GetText();
     }
     XmlNode messagesNode = resultNode.FirstChild("Messages");
     if(!messagesNode.IsNull())

@@ -58,19 +58,19 @@ PropertyDifference& PropertyDifference::operator =(const XmlNode& xmlNode)
     XmlNode propertyPathNode = resultNode.FirstChild("PropertyPath");
     if(!propertyPathNode.IsNull())
     {
-      m_propertyPath = StringUtils::Trim(propertyPathNode.GetText().c_str());
+      m_propertyPath = propertyPathNode.GetText();
       m_propertyPathHasBeenSet = true;
     }
     XmlNode expectedValueNode = resultNode.FirstChild("ExpectedValue");
     if(!expectedValueNode.IsNull())
     {
-      m_expectedValue = StringUtils::Trim(expectedValueNode.GetText().c_str());
+      m_expectedValue = expectedValueNode.GetText();
       m_expectedValueHasBeenSet = true;
     }
     XmlNode actualValueNode = resultNode.FirstChild("ActualValue");
     if(!actualValueNode.IsNull())
     {
-      m_actualValue = StringUtils::Trim(actualValueNode.GetText().c_str());
+      m_actualValue = actualValueNode.GetText();
       m_actualValueHasBeenSet = true;
     }
     XmlNode differenceTypeNode = resultNode.FirstChild("DifferenceType");

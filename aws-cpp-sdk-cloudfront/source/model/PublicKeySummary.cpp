@@ -58,13 +58,13 @@ PublicKeySummary& PublicKeySummary::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
@@ -76,13 +76,13 @@ PublicKeySummary& PublicKeySummary::operator =(const XmlNode& xmlNode)
     XmlNode encodedKeyNode = resultNode.FirstChild("EncodedKey");
     if(!encodedKeyNode.IsNull())
     {
-      m_encodedKey = StringUtils::Trim(encodedKeyNode.GetText().c_str());
+      m_encodedKey = encodedKeyNode.GetText();
       m_encodedKeyHasBeenSet = true;
     }
     XmlNode commentNode = resultNode.FirstChild("Comment");
     if(!commentNode.IsNull())
     {
-      m_comment = StringUtils::Trim(commentNode.GetText().c_str());
+      m_comment = commentNode.GetText();
       m_commentHasBeenSet = true;
     }
   }

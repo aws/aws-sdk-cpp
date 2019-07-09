@@ -78,49 +78,49 @@ AuthenticateOidcActionConfig& AuthenticateOidcActionConfig::operator =(const Xml
     XmlNode issuerNode = resultNode.FirstChild("Issuer");
     if(!issuerNode.IsNull())
     {
-      m_issuer = StringUtils::Trim(issuerNode.GetText().c_str());
+      m_issuer = issuerNode.GetText();
       m_issuerHasBeenSet = true;
     }
     XmlNode authorizationEndpointNode = resultNode.FirstChild("AuthorizationEndpoint");
     if(!authorizationEndpointNode.IsNull())
     {
-      m_authorizationEndpoint = StringUtils::Trim(authorizationEndpointNode.GetText().c_str());
+      m_authorizationEndpoint = authorizationEndpointNode.GetText();
       m_authorizationEndpointHasBeenSet = true;
     }
     XmlNode tokenEndpointNode = resultNode.FirstChild("TokenEndpoint");
     if(!tokenEndpointNode.IsNull())
     {
-      m_tokenEndpoint = StringUtils::Trim(tokenEndpointNode.GetText().c_str());
+      m_tokenEndpoint = tokenEndpointNode.GetText();
       m_tokenEndpointHasBeenSet = true;
     }
     XmlNode userInfoEndpointNode = resultNode.FirstChild("UserInfoEndpoint");
     if(!userInfoEndpointNode.IsNull())
     {
-      m_userInfoEndpoint = StringUtils::Trim(userInfoEndpointNode.GetText().c_str());
+      m_userInfoEndpoint = userInfoEndpointNode.GetText();
       m_userInfoEndpointHasBeenSet = true;
     }
     XmlNode clientIdNode = resultNode.FirstChild("ClientId");
     if(!clientIdNode.IsNull())
     {
-      m_clientId = StringUtils::Trim(clientIdNode.GetText().c_str());
+      m_clientId = clientIdNode.GetText();
       m_clientIdHasBeenSet = true;
     }
     XmlNode clientSecretNode = resultNode.FirstChild("ClientSecret");
     if(!clientSecretNode.IsNull())
     {
-      m_clientSecret = StringUtils::Trim(clientSecretNode.GetText().c_str());
+      m_clientSecret = clientSecretNode.GetText();
       m_clientSecretHasBeenSet = true;
     }
     XmlNode sessionCookieNameNode = resultNode.FirstChild("SessionCookieName");
     if(!sessionCookieNameNode.IsNull())
     {
-      m_sessionCookieName = StringUtils::Trim(sessionCookieNameNode.GetText().c_str());
+      m_sessionCookieName = sessionCookieNameNode.GetText();
       m_sessionCookieNameHasBeenSet = true;
     }
     XmlNode scopeNode = resultNode.FirstChild("Scope");
     if(!scopeNode.IsNull())
     {
-      m_scope = StringUtils::Trim(scopeNode.GetText().c_str());
+      m_scope = scopeNode.GetText();
       m_scopeHasBeenSet = true;
     }
     XmlNode sessionTimeoutNode = resultNode.FirstChild("SessionTimeout");
@@ -138,8 +138,8 @@ AuthenticateOidcActionConfig& AuthenticateOidcActionConfig::operator =(const Xml
       {
         XmlNode keyNode = authenticationRequestExtraParamsEntry.FirstChild("key");
         XmlNode valueNode = authenticationRequestExtraParamsEntry.FirstChild("value");
-        m_authenticationRequestExtraParams[StringUtils::Trim(keyNode.GetText().c_str())] =
-            StringUtils::Trim(valueNode.GetText().c_str());
+        m_authenticationRequestExtraParams[keyNode.GetText()] =
+            valueNode.GetText();
         authenticationRequestExtraParamsEntry = authenticationRequestExtraParamsEntry.NextNode("entry");
       }
 

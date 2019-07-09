@@ -54,7 +54,7 @@ ModifyHostsResponse& ModifyHostsResponse::operator =(const Aws::AmazonWebService
       XmlNode successfulMember = successfulNode.FirstChild("item");
       while(!successfulMember.IsNull())
       {
-        m_successful.push_back(StringUtils::Trim(successfulMember.GetText().c_str()));
+        m_successful.push_back(successfulMember.GetText());
         successfulMember = successfulMember.NextNode("item");
       }
 

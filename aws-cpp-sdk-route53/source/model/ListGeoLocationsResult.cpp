@@ -62,22 +62,22 @@ ListGeoLocationsResult& ListGeoLocationsResult::operator =(const Aws::AmazonWebS
     XmlNode nextContinentCodeNode = resultNode.FirstChild("NextContinentCode");
     if(!nextContinentCodeNode.IsNull())
     {
-      m_nextContinentCode = StringUtils::Trim(nextContinentCodeNode.GetText().c_str());
+      m_nextContinentCode = nextContinentCodeNode.GetText();
     }
     XmlNode nextCountryCodeNode = resultNode.FirstChild("NextCountryCode");
     if(!nextCountryCodeNode.IsNull())
     {
-      m_nextCountryCode = StringUtils::Trim(nextCountryCodeNode.GetText().c_str());
+      m_nextCountryCode = nextCountryCodeNode.GetText();
     }
     XmlNode nextSubdivisionCodeNode = resultNode.FirstChild("NextSubdivisionCode");
     if(!nextSubdivisionCodeNode.IsNull())
     {
-      m_nextSubdivisionCode = StringUtils::Trim(nextSubdivisionCodeNode.GetText().c_str());
+      m_nextSubdivisionCode = nextSubdivisionCodeNode.GetText();
     }
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");
     if(!maxItemsNode.IsNull())
     {
-      m_maxItems = StringUtils::Trim(maxItemsNode.GetText().c_str());
+      m_maxItems = maxItemsNode.GetText();
     }
   }
 

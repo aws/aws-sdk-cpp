@@ -64,19 +64,19 @@ RouteTableAssociation& RouteTableAssociation::operator =(const XmlNode& xmlNode)
     XmlNode routeTableAssociationIdNode = resultNode.FirstChild("routeTableAssociationId");
     if(!routeTableAssociationIdNode.IsNull())
     {
-      m_routeTableAssociationId = StringUtils::Trim(routeTableAssociationIdNode.GetText().c_str());
+      m_routeTableAssociationId = routeTableAssociationIdNode.GetText();
       m_routeTableAssociationIdHasBeenSet = true;
     }
     XmlNode routeTableIdNode = resultNode.FirstChild("routeTableId");
     if(!routeTableIdNode.IsNull())
     {
-      m_routeTableId = StringUtils::Trim(routeTableIdNode.GetText().c_str());
+      m_routeTableId = routeTableIdNode.GetText();
       m_routeTableIdHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
-      m_subnetId = StringUtils::Trim(subnetIdNode.GetText().c_str());
+      m_subnetId = subnetIdNode.GetText();
       m_subnetIdHasBeenSet = true;
     }
   }

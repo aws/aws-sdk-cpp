@@ -50,7 +50,7 @@ ServiceEndpoint& ServiceEndpoint::operator =(const XmlNode& xmlNode)
     XmlNode endpointNode = resultNode.FirstChild("Endpoint");
     if(!endpointNode.IsNull())
     {
-      m_endpoint = StringUtils::Trim(endpointNode.GetText().c_str());
+      m_endpoint = endpointNode.GetText();
       m_endpointHasBeenSet = true;
     }
   }

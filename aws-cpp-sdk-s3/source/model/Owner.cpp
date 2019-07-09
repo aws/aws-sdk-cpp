@@ -52,13 +52,13 @@ Owner& Owner::operator =(const XmlNode& xmlNode)
     XmlNode displayNameNode = resultNode.FirstChild("DisplayName");
     if(!displayNameNode.IsNull())
     {
-      m_displayName = StringUtils::Trim(displayNameNode.GetText().c_str());
+      m_displayName = displayNameNode.GetText();
       m_displayNameHasBeenSet = true;
     }
     XmlNode iDNode = resultNode.FirstChild("ID");
     if(!iDNode.IsNull())
     {
-      m_iD = StringUtils::Trim(iDNode.GetText().c_str());
+      m_iD = iDNode.GetText();
       m_iDHasBeenSet = true;
     }
   }

@@ -63,7 +63,7 @@ CORSRule& CORSRule::operator =(const XmlNode& xmlNode)
       XmlNode allowedHeaderMember = allowedHeadersNode;
       while(!allowedHeaderMember.IsNull())
       {
-        m_allowedHeaders.push_back(StringUtils::Trim(allowedHeaderMember.GetText().c_str()));
+        m_allowedHeaders.push_back(allowedHeaderMember.GetText());
         allowedHeaderMember = allowedHeaderMember.NextNode("AllowedHeader");
       }
 
@@ -75,7 +75,7 @@ CORSRule& CORSRule::operator =(const XmlNode& xmlNode)
       XmlNode allowedMethodMember = allowedMethodsNode;
       while(!allowedMethodMember.IsNull())
       {
-        m_allowedMethods.push_back(StringUtils::Trim(allowedMethodMember.GetText().c_str()));
+        m_allowedMethods.push_back(allowedMethodMember.GetText());
         allowedMethodMember = allowedMethodMember.NextNode("AllowedMethod");
       }
 
@@ -87,7 +87,7 @@ CORSRule& CORSRule::operator =(const XmlNode& xmlNode)
       XmlNode allowedOriginMember = allowedOriginsNode;
       while(!allowedOriginMember.IsNull())
       {
-        m_allowedOrigins.push_back(StringUtils::Trim(allowedOriginMember.GetText().c_str()));
+        m_allowedOrigins.push_back(allowedOriginMember.GetText());
         allowedOriginMember = allowedOriginMember.NextNode("AllowedOrigin");
       }
 
@@ -99,7 +99,7 @@ CORSRule& CORSRule::operator =(const XmlNode& xmlNode)
       XmlNode exposeHeaderMember = exposeHeadersNode;
       while(!exposeHeaderMember.IsNull())
       {
-        m_exposeHeaders.push_back(StringUtils::Trim(exposeHeaderMember.GetText().c_str()));
+        m_exposeHeaders.push_back(exposeHeaderMember.GetText());
         exposeHeaderMember = exposeHeaderMember.NextNode("ExposeHeader");
       }
 

@@ -50,7 +50,7 @@ CertificateAuthentication& CertificateAuthentication::operator =(const XmlNode& 
     XmlNode clientRootCertificateChainNode = resultNode.FirstChild("clientRootCertificateChain");
     if(!clientRootCertificateChainNode.IsNull())
     {
-      m_clientRootCertificateChain = StringUtils::Trim(clientRootCertificateChainNode.GetText().c_str());
+      m_clientRootCertificateChain = clientRootCertificateChainNode.GetText();
       m_clientRootCertificateChainHasBeenSet = true;
     }
   }

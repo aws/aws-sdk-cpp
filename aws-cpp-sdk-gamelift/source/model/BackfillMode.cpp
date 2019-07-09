@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/kinesis-video-archived-media/model/DisplayFragmentTimestamp.h>
+#include <aws/gamelift/model/BackfillMode.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -23,46 +23,46 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace KinesisVideoArchivedMedia
+  namespace GameLift
   {
     namespace Model
     {
-      namespace DisplayFragmentTimestampMapper
+      namespace BackfillModeMapper
       {
 
-        static const int ALWAYS_HASH = HashingUtils::HashString("ALWAYS");
-        static const int NEVER_HASH = HashingUtils::HashString("NEVER");
+        static const int AUTOMATIC_HASH = HashingUtils::HashString("AUTOMATIC");
+        static const int MANUAL_HASH = HashingUtils::HashString("MANUAL");
 
 
-        DisplayFragmentTimestamp GetDisplayFragmentTimestampForName(const Aws::String& name)
+        BackfillMode GetBackfillModeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ALWAYS_HASH)
+          if (hashCode == AUTOMATIC_HASH)
           {
-            return DisplayFragmentTimestamp::ALWAYS;
+            return BackfillMode::AUTOMATIC;
           }
-          else if (hashCode == NEVER_HASH)
+          else if (hashCode == MANUAL_HASH)
           {
-            return DisplayFragmentTimestamp::NEVER;
+            return BackfillMode::MANUAL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<DisplayFragmentTimestamp>(hashCode);
+            return static_cast<BackfillMode>(hashCode);
           }
 
-          return DisplayFragmentTimestamp::NOT_SET;
+          return BackfillMode::NOT_SET;
         }
 
-        Aws::String GetNameForDisplayFragmentTimestamp(DisplayFragmentTimestamp enumValue)
+        Aws::String GetNameForBackfillMode(BackfillMode enumValue)
         {
           switch(enumValue)
           {
-          case DisplayFragmentTimestamp::ALWAYS:
-            return "ALWAYS";
-          case DisplayFragmentTimestamp::NEVER:
-            return "NEVER";
+          case BackfillMode::AUTOMATIC:
+            return "AUTOMATIC";
+          case BackfillMode::MANUAL:
+            return "MANUAL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -74,7 +74,7 @@ namespace Aws
           }
         }
 
-      } // namespace DisplayFragmentTimestampMapper
+      } // namespace BackfillModeMapper
     } // namespace Model
-  } // namespace KinesisVideoArchivedMedia
+  } // namespace GameLift
 } // namespace Aws

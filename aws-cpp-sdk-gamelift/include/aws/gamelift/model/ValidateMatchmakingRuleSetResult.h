@@ -47,17 +47,17 @@ namespace Model
 
 
     /**
-     * <p>Response indicating whether or not the rule set is valid.</p>
+     * <p>Response indicating whether the rule set is valid.</p>
      */
     inline bool GetValid() const{ return m_valid; }
 
     /**
-     * <p>Response indicating whether or not the rule set is valid.</p>
+     * <p>Response indicating whether the rule set is valid.</p>
      */
     inline void SetValid(bool value) { m_valid = value; }
 
     /**
-     * <p>Response indicating whether or not the rule set is valid.</p>
+     * <p>Response indicating whether the rule set is valid.</p>
      */
     inline ValidateMatchmakingRuleSetResult& WithValid(bool value) { SetValid(value); return *this;}
 

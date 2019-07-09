@@ -80,7 +80,7 @@ ServiceUpdate& ServiceUpdate::operator =(const XmlNode& xmlNode)
     XmlNode serviceUpdateNameNode = resultNode.FirstChild("ServiceUpdateName");
     if(!serviceUpdateNameNode.IsNull())
     {
-      m_serviceUpdateName = StringUtils::Trim(serviceUpdateNameNode.GetText().c_str());
+      m_serviceUpdateName = serviceUpdateNameNode.GetText();
       m_serviceUpdateNameHasBeenSet = true;
     }
     XmlNode serviceUpdateReleaseDateNode = resultNode.FirstChild("ServiceUpdateReleaseDate");
@@ -116,7 +116,7 @@ ServiceUpdate& ServiceUpdate::operator =(const XmlNode& xmlNode)
     XmlNode serviceUpdateDescriptionNode = resultNode.FirstChild("ServiceUpdateDescription");
     if(!serviceUpdateDescriptionNode.IsNull())
     {
-      m_serviceUpdateDescription = StringUtils::Trim(serviceUpdateDescriptionNode.GetText().c_str());
+      m_serviceUpdateDescription = serviceUpdateDescriptionNode.GetText();
       m_serviceUpdateDescriptionHasBeenSet = true;
     }
     XmlNode serviceUpdateTypeNode = resultNode.FirstChild("ServiceUpdateType");
@@ -128,13 +128,13 @@ ServiceUpdate& ServiceUpdate::operator =(const XmlNode& xmlNode)
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
     {
-      m_engine = StringUtils::Trim(engineNode.GetText().c_str());
+      m_engine = engineNode.GetText();
       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
-      m_engineVersion = StringUtils::Trim(engineVersionNode.GetText().c_str());
+      m_engineVersion = engineVersionNode.GetText();
       m_engineVersionHasBeenSet = true;
     }
     XmlNode autoUpdateAfterRecommendedApplyByDateNode = resultNode.FirstChild("AutoUpdateAfterRecommendedApplyByDate");
@@ -146,7 +146,7 @@ ServiceUpdate& ServiceUpdate::operator =(const XmlNode& xmlNode)
     XmlNode estimatedUpdateTimeNode = resultNode.FirstChild("EstimatedUpdateTime");
     if(!estimatedUpdateTimeNode.IsNull())
     {
-      m_estimatedUpdateTime = StringUtils::Trim(estimatedUpdateTimeNode.GetText().c_str());
+      m_estimatedUpdateTime = estimatedUpdateTimeNode.GetText();
       m_estimatedUpdateTimeHasBeenSet = true;
     }
   }

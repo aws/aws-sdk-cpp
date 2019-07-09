@@ -84,13 +84,13 @@ NatGateway& NatGateway::operator =(const XmlNode& xmlNode)
     XmlNode failureCodeNode = resultNode.FirstChild("failureCode");
     if(!failureCodeNode.IsNull())
     {
-      m_failureCode = StringUtils::Trim(failureCodeNode.GetText().c_str());
+      m_failureCode = failureCodeNode.GetText();
       m_failureCodeHasBeenSet = true;
     }
     XmlNode failureMessageNode = resultNode.FirstChild("failureMessage");
     if(!failureMessageNode.IsNull())
     {
-      m_failureMessage = StringUtils::Trim(failureMessageNode.GetText().c_str());
+      m_failureMessage = failureMessageNode.GetText();
       m_failureMessageHasBeenSet = true;
     }
     XmlNode natGatewayAddressesNode = resultNode.FirstChild("natGatewayAddressSet");
@@ -108,7 +108,7 @@ NatGateway& NatGateway::operator =(const XmlNode& xmlNode)
     XmlNode natGatewayIdNode = resultNode.FirstChild("natGatewayId");
     if(!natGatewayIdNode.IsNull())
     {
-      m_natGatewayId = StringUtils::Trim(natGatewayIdNode.GetText().c_str());
+      m_natGatewayId = natGatewayIdNode.GetText();
       m_natGatewayIdHasBeenSet = true;
     }
     XmlNode provisionedBandwidthNode = resultNode.FirstChild("provisionedBandwidth");
@@ -126,13 +126,13 @@ NatGateway& NatGateway::operator =(const XmlNode& xmlNode)
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
-      m_subnetId = StringUtils::Trim(subnetIdNode.GetText().c_str());
+      m_subnetId = subnetIdNode.GetText();
       m_subnetIdHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
+      m_vpcId = vpcIdNode.GetText();
       m_vpcIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");

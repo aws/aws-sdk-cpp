@@ -51,17 +51,17 @@ CancelImportTaskResponse& CancelImportTaskResponse::operator =(const Aws::Amazon
     XmlNode importTaskIdNode = resultNode.FirstChild("importTaskId");
     if(!importTaskIdNode.IsNull())
     {
-      m_importTaskId = StringUtils::Trim(importTaskIdNode.GetText().c_str());
+      m_importTaskId = importTaskIdNode.GetText();
     }
     XmlNode previousStateNode = resultNode.FirstChild("previousState");
     if(!previousStateNode.IsNull())
     {
-      m_previousState = StringUtils::Trim(previousStateNode.GetText().c_str());
+      m_previousState = previousStateNode.GetText();
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = StringUtils::Trim(stateNode.GetText().c_str());
+      m_state = stateNode.GetText();
     }
   }
 

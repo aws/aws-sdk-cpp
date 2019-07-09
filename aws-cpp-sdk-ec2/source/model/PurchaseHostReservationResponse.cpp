@@ -53,7 +53,7 @@ PurchaseHostReservationResponse& PurchaseHostReservationResponse::operator =(con
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
-      m_clientToken = StringUtils::Trim(clientTokenNode.GetText().c_str());
+      m_clientToken = clientTokenNode.GetText();
     }
     XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
     if(!currencyCodeNode.IsNull())
@@ -74,12 +74,12 @@ PurchaseHostReservationResponse& PurchaseHostReservationResponse::operator =(con
     XmlNode totalHourlyPriceNode = resultNode.FirstChild("totalHourlyPrice");
     if(!totalHourlyPriceNode.IsNull())
     {
-      m_totalHourlyPrice = StringUtils::Trim(totalHourlyPriceNode.GetText().c_str());
+      m_totalHourlyPrice = totalHourlyPriceNode.GetText();
     }
     XmlNode totalUpfrontPriceNode = resultNode.FirstChild("totalUpfrontPrice");
     if(!totalUpfrontPriceNode.IsNull())
     {
-      m_totalUpfrontPrice = StringUtils::Trim(totalUpfrontPriceNode.GetText().c_str());
+      m_totalUpfrontPrice = totalUpfrontPriceNode.GetText();
     }
   }
 

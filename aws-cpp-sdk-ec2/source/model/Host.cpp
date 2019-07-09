@@ -86,7 +86,7 @@ Host& Host::operator =(const XmlNode& xmlNode)
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode availableCapacityNode = resultNode.FirstChild("availableCapacity");
@@ -98,13 +98,13 @@ Host& Host::operator =(const XmlNode& xmlNode)
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
-      m_clientToken = StringUtils::Trim(clientTokenNode.GetText().c_str());
+      m_clientToken = clientTokenNode.GetText();
       m_clientTokenHasBeenSet = true;
     }
     XmlNode hostIdNode = resultNode.FirstChild("hostId");
     if(!hostIdNode.IsNull())
     {
-      m_hostId = StringUtils::Trim(hostIdNode.GetText().c_str());
+      m_hostId = hostIdNode.GetText();
       m_hostIdHasBeenSet = true;
     }
     XmlNode hostPropertiesNode = resultNode.FirstChild("hostProperties");
@@ -116,7 +116,7 @@ Host& Host::operator =(const XmlNode& xmlNode)
     XmlNode hostReservationIdNode = resultNode.FirstChild("hostReservationId");
     if(!hostReservationIdNode.IsNull())
     {
-      m_hostReservationId = StringUtils::Trim(hostReservationIdNode.GetText().c_str());
+      m_hostReservationId = hostReservationIdNode.GetText();
       m_hostReservationIdHasBeenSet = true;
     }
     XmlNode instancesNode = resultNode.FirstChild("instances");

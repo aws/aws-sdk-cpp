@@ -38,7 +38,7 @@ namespace Model
   /**
    * <p>Values for use in <a>Player</a> attribute key:value pairs. This object lets
    * you specify an attribute value using any of the valid data types: string,
-   * number, string array or data map. Each <code>AttributeValue</code> object can
+   * number, string array, or data map. Each <code>AttributeValue</code> object can
    * use only one of the available properties.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AttributeValue">AWS
    * API Reference</a></p>

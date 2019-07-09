@@ -62,25 +62,25 @@ Message& Message::operator =(const XmlNode& xmlNode)
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
     if(!messageIdNode.IsNull())
     {
-      m_messageId = StringUtils::Trim(messageIdNode.GetText().c_str());
+      m_messageId = messageIdNode.GetText();
       m_messageIdHasBeenSet = true;
     }
     XmlNode receiptHandleNode = resultNode.FirstChild("ReceiptHandle");
     if(!receiptHandleNode.IsNull())
     {
-      m_receiptHandle = StringUtils::Trim(receiptHandleNode.GetText().c_str());
+      m_receiptHandle = receiptHandleNode.GetText();
       m_receiptHandleHasBeenSet = true;
     }
     XmlNode mD5OfBodyNode = resultNode.FirstChild("MD5OfBody");
     if(!mD5OfBodyNode.IsNull())
     {
-      m_mD5OfBody = StringUtils::Trim(mD5OfBodyNode.GetText().c_str());
+      m_mD5OfBody = mD5OfBodyNode.GetText();
       m_mD5OfBodyHasBeenSet = true;
     }
     XmlNode bodyNode = resultNode.FirstChild("Body");
     if(!bodyNode.IsNull())
     {
-      m_body = StringUtils::Trim(bodyNode.GetText().c_str());
+      m_body = bodyNode.GetText();
       m_bodyHasBeenSet = true;
     }
     XmlNode attributesNode = resultNode.FirstChild("Attribute");
@@ -92,7 +92,7 @@ Message& Message::operator =(const XmlNode& xmlNode)
         XmlNode keyNode = attributeEntry.FirstChild("Name");
         XmlNode valueNode = attributeEntry.FirstChild("Value");
         m_attributes[MessageSystemAttributeNameMapper::GetMessageSystemAttributeNameForName(StringUtils::Trim(keyNode.GetText().c_str()))] =
-            StringUtils::Trim(valueNode.GetText().c_str());
+            valueNode.GetText();
         attributeEntry = attributeEntry.NextNode("Attribute");
       }
 
@@ -101,7 +101,7 @@ Message& Message::operator =(const XmlNode& xmlNode)
     XmlNode mD5OfMessageAttributesNode = resultNode.FirstChild("MD5OfMessageAttributes");
     if(!mD5OfMessageAttributesNode.IsNull())
     {
-      m_mD5OfMessageAttributes = StringUtils::Trim(mD5OfMessageAttributesNode.GetText().c_str());
+      m_mD5OfMessageAttributes = mD5OfMessageAttributesNode.GetText();
       m_mD5OfMessageAttributesHasBeenSet = true;
     }
     XmlNode messageAttributesNode = resultNode.FirstChild("MessageAttribute");
@@ -112,7 +112,7 @@ Message& Message::operator =(const XmlNode& xmlNode)
       {
         XmlNode keyNode = messageAttributeEntry.FirstChild("Name");
         XmlNode valueNode = messageAttributeEntry.FirstChild("Value");
-        m_messageAttributes[StringUtils::Trim(keyNode.GetText().c_str())] =
+        m_messageAttributes[keyNode.GetText()] =
             valueNode;
         messageAttributeEntry = messageAttributeEntry.NextNode("MessageAttribute");
       }

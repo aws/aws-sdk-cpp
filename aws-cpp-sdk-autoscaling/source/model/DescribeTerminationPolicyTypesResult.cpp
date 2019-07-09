@@ -54,7 +54,7 @@ DescribeTerminationPolicyTypesResult& DescribeTerminationPolicyTypesResult::oper
       XmlNode terminationPolicyTypesMember = terminationPolicyTypesNode.FirstChild("member");
       while(!terminationPolicyTypesMember.IsNull())
       {
-        m_terminationPolicyTypes.push_back(StringUtils::Trim(terminationPolicyTypesMember.GetText().c_str()));
+        m_terminationPolicyTypes.push_back(terminationPolicyTypesMember.GetText());
         terminationPolicyTypesMember = terminationPolicyTypesMember.NextNode("member");
       }
 

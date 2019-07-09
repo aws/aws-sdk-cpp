@@ -70,7 +70,7 @@ VolumeStatusItem& VolumeStatusItem::operator =(const XmlNode& xmlNode)
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode eventsNode = resultNode.FirstChild("eventsSet");
@@ -88,7 +88,7 @@ VolumeStatusItem& VolumeStatusItem::operator =(const XmlNode& xmlNode)
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
     {
-      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
+      m_volumeId = volumeIdNode.GetText();
       m_volumeIdHasBeenSet = true;
     }
     XmlNode volumeStatusNode = resultNode.FirstChild("volumeStatus");

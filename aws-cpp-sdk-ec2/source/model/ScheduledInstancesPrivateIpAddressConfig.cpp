@@ -60,7 +60,7 @@ ScheduledInstancesPrivateIpAddressConfig& ScheduledInstancesPrivateIpAddressConf
     XmlNode privateIpAddressNode = resultNode.FirstChild("PrivateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
-      m_privateIpAddress = StringUtils::Trim(privateIpAddressNode.GetText().c_str());
+      m_privateIpAddress = privateIpAddressNode.GetText();
       m_privateIpAddressHasBeenSet = true;
     }
   }

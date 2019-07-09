@@ -56,13 +56,13 @@ AliasTarget& AliasTarget::operator =(const XmlNode& xmlNode)
     XmlNode hostedZoneIdNode = resultNode.FirstChild("HostedZoneId");
     if(!hostedZoneIdNode.IsNull())
     {
-      m_hostedZoneId = StringUtils::Trim(hostedZoneIdNode.GetText().c_str());
+      m_hostedZoneId = hostedZoneIdNode.GetText();
       m_hostedZoneIdHasBeenSet = true;
     }
     XmlNode dNSNameNode = resultNode.FirstChild("DNSName");
     if(!dNSNameNode.IsNull())
     {
-      m_dNSName = StringUtils::Trim(dNSNameNode.GetText().c_str());
+      m_dNSName = dNSNameNode.GetText();
       m_dNSNameHasBeenSet = true;
     }
     XmlNode evaluateTargetHealthNode = resultNode.FirstChild("EvaluateTargetHealth");

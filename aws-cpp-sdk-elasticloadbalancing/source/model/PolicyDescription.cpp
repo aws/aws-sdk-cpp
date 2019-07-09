@@ -54,13 +54,13 @@ PolicyDescription& PolicyDescription::operator =(const XmlNode& xmlNode)
     XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
     if(!policyNameNode.IsNull())
     {
-      m_policyName = StringUtils::Trim(policyNameNode.GetText().c_str());
+      m_policyName = policyNameNode.GetText();
       m_policyNameHasBeenSet = true;
     }
     XmlNode policyTypeNameNode = resultNode.FirstChild("PolicyTypeName");
     if(!policyTypeNameNode.IsNull())
     {
-      m_policyTypeName = StringUtils::Trim(policyTypeNameNode.GetText().c_str());
+      m_policyTypeName = policyTypeNameNode.GetText();
       m_policyTypeNameHasBeenSet = true;
     }
     XmlNode policyAttributeDescriptionsNode = resultNode.FirstChild("PolicyAttributeDescriptions");

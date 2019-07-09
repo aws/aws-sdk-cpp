@@ -62,7 +62,7 @@ PlacementGroup& PlacementGroup::operator =(const XmlNode& xmlNode)
     XmlNode groupNameNode = resultNode.FirstChild("groupName");
     if(!groupNameNode.IsNull())
     {
-      m_groupName = StringUtils::Trim(groupNameNode.GetText().c_str());
+      m_groupName = groupNameNode.GetText();
       m_groupNameHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");

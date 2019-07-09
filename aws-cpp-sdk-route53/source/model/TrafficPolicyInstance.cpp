@@ -72,19 +72,19 @@ TrafficPolicyInstance& TrafficPolicyInstance::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
     XmlNode hostedZoneIdNode = resultNode.FirstChild("HostedZoneId");
     if(!hostedZoneIdNode.IsNull())
     {
-      m_hostedZoneId = StringUtils::Trim(hostedZoneIdNode.GetText().c_str());
+      m_hostedZoneId = hostedZoneIdNode.GetText();
       m_hostedZoneIdHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
     XmlNode tTLNode = resultNode.FirstChild("TTL");
@@ -96,19 +96,19 @@ TrafficPolicyInstance& TrafficPolicyInstance::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("State");
     if(!stateNode.IsNull())
     {
-      m_state = StringUtils::Trim(stateNode.GetText().c_str());
+      m_state = stateNode.GetText();
       m_stateHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
-      m_message = StringUtils::Trim(messageNode.GetText().c_str());
+      m_message = messageNode.GetText();
       m_messageHasBeenSet = true;
     }
     XmlNode trafficPolicyIdNode = resultNode.FirstChild("TrafficPolicyId");
     if(!trafficPolicyIdNode.IsNull())
     {
-      m_trafficPolicyId = StringUtils::Trim(trafficPolicyIdNode.GetText().c_str());
+      m_trafficPolicyId = trafficPolicyIdNode.GetText();
       m_trafficPolicyIdHasBeenSet = true;
     }
     XmlNode trafficPolicyVersionNode = resultNode.FirstChild("TrafficPolicyVersion");

@@ -66,13 +66,13 @@ LaunchTemplate& LaunchTemplate::operator =(const XmlNode& xmlNode)
     XmlNode launchTemplateIdNode = resultNode.FirstChild("launchTemplateId");
     if(!launchTemplateIdNode.IsNull())
     {
-      m_launchTemplateId = StringUtils::Trim(launchTemplateIdNode.GetText().c_str());
+      m_launchTemplateId = launchTemplateIdNode.GetText();
       m_launchTemplateIdHasBeenSet = true;
     }
     XmlNode launchTemplateNameNode = resultNode.FirstChild("launchTemplateName");
     if(!launchTemplateNameNode.IsNull())
     {
-      m_launchTemplateName = StringUtils::Trim(launchTemplateNameNode.GetText().c_str());
+      m_launchTemplateName = launchTemplateNameNode.GetText();
       m_launchTemplateNameHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
@@ -84,7 +84,7 @@ LaunchTemplate& LaunchTemplate::operator =(const XmlNode& xmlNode)
     XmlNode createdByNode = resultNode.FirstChild("createdBy");
     if(!createdByNode.IsNull())
     {
-      m_createdBy = StringUtils::Trim(createdByNode.GetText().c_str());
+      m_createdBy = createdByNode.GetText();
       m_createdByHasBeenSet = true;
     }
     XmlNode defaultVersionNumberNode = resultNode.FirstChild("defaultVersionNumber");

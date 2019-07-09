@@ -50,7 +50,7 @@ IndexDocument& IndexDocument::operator =(const XmlNode& xmlNode)
     XmlNode suffixNode = resultNode.FirstChild("Suffix");
     if(!suffixNode.IsNull())
     {
-      m_suffix = StringUtils::Trim(suffixNode.GetText().c_str());
+      m_suffix = suffixNode.GetText();
       m_suffixHasBeenSet = true;
     }
   }

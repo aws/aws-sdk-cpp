@@ -54,7 +54,7 @@ CancelledSpotInstanceRequest& CancelledSpotInstanceRequest::operator =(const Xml
     XmlNode spotInstanceRequestIdNode = resultNode.FirstChild("spotInstanceRequestId");
     if(!spotInstanceRequestIdNode.IsNull())
     {
-      m_spotInstanceRequestId = StringUtils::Trim(spotInstanceRequestIdNode.GetText().c_str());
+      m_spotInstanceRequestId = spotInstanceRequestIdNode.GetText();
       m_spotInstanceRequestIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");

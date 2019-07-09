@@ -72,13 +72,13 @@ ExportToS3TaskSpecification& ExportToS3TaskSpecification::operator =(const XmlNo
     XmlNode s3BucketNode = resultNode.FirstChild("s3Bucket");
     if(!s3BucketNode.IsNull())
     {
-      m_s3Bucket = StringUtils::Trim(s3BucketNode.GetText().c_str());
+      m_s3Bucket = s3BucketNode.GetText();
       m_s3BucketHasBeenSet = true;
     }
     XmlNode s3PrefixNode = resultNode.FirstChild("s3Prefix");
     if(!s3PrefixNode.IsNull())
     {
-      m_s3Prefix = StringUtils::Trim(s3PrefixNode.GetText().c_str());
+      m_s3Prefix = s3PrefixNode.GetText();
       m_s3PrefixHasBeenSet = true;
     }
   }

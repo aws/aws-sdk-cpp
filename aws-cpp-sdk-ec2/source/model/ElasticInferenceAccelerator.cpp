@@ -50,7 +50,7 @@ ElasticInferenceAccelerator& ElasticInferenceAccelerator::operator =(const XmlNo
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = StringUtils::Trim(typeNode.GetText().c_str());
+      m_type = typeNode.GetText();
       m_typeHasBeenSet = true;
     }
   }

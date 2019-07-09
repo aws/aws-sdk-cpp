@@ -57,8 +57,8 @@ GetIdentityPoliciesResult& GetIdentityPoliciesResult::operator =(const Aws::Amaz
       {
         XmlNode keyNode = policiesEntry.FirstChild("key");
         XmlNode valueNode = policiesEntry.FirstChild("value");
-        m_policies[StringUtils::Trim(keyNode.GetText().c_str())] =
-            StringUtils::Trim(valueNode.GetText().c_str());
+        m_policies[keyNode.GetText()] =
+            valueNode.GetText();
         policiesEntry = policiesEntry.NextNode("entry");
       }
 

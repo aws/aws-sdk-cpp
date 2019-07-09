@@ -62,31 +62,31 @@ ClientVpnRoute& ClientVpnRoute::operator =(const XmlNode& xmlNode)
     XmlNode clientVpnEndpointIdNode = resultNode.FirstChild("clientVpnEndpointId");
     if(!clientVpnEndpointIdNode.IsNull())
     {
-      m_clientVpnEndpointId = StringUtils::Trim(clientVpnEndpointIdNode.GetText().c_str());
+      m_clientVpnEndpointId = clientVpnEndpointIdNode.GetText();
       m_clientVpnEndpointIdHasBeenSet = true;
     }
     XmlNode destinationCidrNode = resultNode.FirstChild("destinationCidr");
     if(!destinationCidrNode.IsNull())
     {
-      m_destinationCidr = StringUtils::Trim(destinationCidrNode.GetText().c_str());
+      m_destinationCidr = destinationCidrNode.GetText();
       m_destinationCidrHasBeenSet = true;
     }
     XmlNode targetSubnetNode = resultNode.FirstChild("targetSubnet");
     if(!targetSubnetNode.IsNull())
     {
-      m_targetSubnet = StringUtils::Trim(targetSubnetNode.GetText().c_str());
+      m_targetSubnet = targetSubnetNode.GetText();
       m_targetSubnetHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = StringUtils::Trim(typeNode.GetText().c_str());
+      m_type = typeNode.GetText();
       m_typeHasBeenSet = true;
     }
     XmlNode originNode = resultNode.FirstChild("origin");
     if(!originNode.IsNull())
     {
-      m_origin = StringUtils::Trim(originNode.GetText().c_str());
+      m_origin = originNode.GetText();
       m_originHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
@@ -98,7 +98,7 @@ ClientVpnRoute& ClientVpnRoute::operator =(const XmlNode& xmlNode)
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
   }

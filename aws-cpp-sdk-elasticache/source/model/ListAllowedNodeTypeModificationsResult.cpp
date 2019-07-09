@@ -54,7 +54,7 @@ ListAllowedNodeTypeModificationsResult& ListAllowedNodeTypeModificationsResult::
       XmlNode scaleUpModificationsMember = scaleUpModificationsNode.FirstChild("member");
       while(!scaleUpModificationsMember.IsNull())
       {
-        m_scaleUpModifications.push_back(StringUtils::Trim(scaleUpModificationsMember.GetText().c_str()));
+        m_scaleUpModifications.push_back(scaleUpModificationsMember.GetText());
         scaleUpModificationsMember = scaleUpModificationsMember.NextNode("member");
       }
 

@@ -64,7 +64,7 @@ RecipientDsnFields& RecipientDsnFields::operator =(const XmlNode& xmlNode)
     XmlNode finalRecipientNode = resultNode.FirstChild("FinalRecipient");
     if(!finalRecipientNode.IsNull())
     {
-      m_finalRecipient = StringUtils::Trim(finalRecipientNode.GetText().c_str());
+      m_finalRecipient = finalRecipientNode.GetText();
       m_finalRecipientHasBeenSet = true;
     }
     XmlNode actionNode = resultNode.FirstChild("Action");
@@ -76,19 +76,19 @@ RecipientDsnFields& RecipientDsnFields::operator =(const XmlNode& xmlNode)
     XmlNode remoteMtaNode = resultNode.FirstChild("RemoteMta");
     if(!remoteMtaNode.IsNull())
     {
-      m_remoteMta = StringUtils::Trim(remoteMtaNode.GetText().c_str());
+      m_remoteMta = remoteMtaNode.GetText();
       m_remoteMtaHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
     XmlNode diagnosticCodeNode = resultNode.FirstChild("DiagnosticCode");
     if(!diagnosticCodeNode.IsNull())
     {
-      m_diagnosticCode = StringUtils::Trim(diagnosticCodeNode.GetText().c_str());
+      m_diagnosticCode = diagnosticCodeNode.GetText();
       m_diagnosticCodeHasBeenSet = true;
     }
     XmlNode lastAttemptDateNode = resultNode.FirstChild("LastAttemptDate");

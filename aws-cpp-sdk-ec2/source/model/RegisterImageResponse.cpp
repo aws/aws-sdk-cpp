@@ -51,7 +51,7 @@ RegisterImageResponse& RegisterImageResponse::operator =(const Aws::AmazonWebSer
     XmlNode imageIdNode = resultNode.FirstChild("imageId");
     if(!imageIdNode.IsNull())
     {
-      m_imageId = StringUtils::Trim(imageIdNode.GetText().c_str());
+      m_imageId = imageIdNode.GetText();
     }
   }
 

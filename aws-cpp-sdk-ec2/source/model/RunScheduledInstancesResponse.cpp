@@ -54,7 +54,7 @@ RunScheduledInstancesResponse& RunScheduledInstancesResponse::operator =(const A
       XmlNode instanceIdSetMember = instanceIdSetNode.FirstChild("item");
       while(!instanceIdSetMember.IsNull())
       {
-        m_instanceIdSet.push_back(StringUtils::Trim(instanceIdSetMember.GetText().c_str()));
+        m_instanceIdSet.push_back(instanceIdSetMember.GetText());
         instanceIdSetMember = instanceIdSetMember.NextNode("item");
       }
 

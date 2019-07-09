@@ -57,12 +57,12 @@ CreateSnapshotResponse& CreateSnapshotResponse::operator =(const Aws::AmazonWebS
     XmlNode dataEncryptionKeyIdNode = resultNode.FirstChild("dataEncryptionKeyId");
     if(!dataEncryptionKeyIdNode.IsNull())
     {
-      m_dataEncryptionKeyId = StringUtils::Trim(dataEncryptionKeyIdNode.GetText().c_str());
+      m_dataEncryptionKeyId = dataEncryptionKeyIdNode.GetText();
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
     }
     XmlNode encryptedNode = resultNode.FirstChild("encrypted");
     if(!encryptedNode.IsNull())
@@ -72,22 +72,22 @@ CreateSnapshotResponse& CreateSnapshotResponse::operator =(const Aws::AmazonWebS
     XmlNode kmsKeyIdNode = resultNode.FirstChild("kmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
-      m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
+      m_kmsKeyId = kmsKeyIdNode.GetText();
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
-      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerId = ownerIdNode.GetText();
     }
     XmlNode progressNode = resultNode.FirstChild("progress");
     if(!progressNode.IsNull())
     {
-      m_progress = StringUtils::Trim(progressNode.GetText().c_str());
+      m_progress = progressNode.GetText();
     }
     XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
     if(!snapshotIdNode.IsNull())
     {
-      m_snapshotId = StringUtils::Trim(snapshotIdNode.GetText().c_str());
+      m_snapshotId = snapshotIdNode.GetText();
     }
     XmlNode startTimeNode = resultNode.FirstChild("startTime");
     if(!startTimeNode.IsNull())
@@ -102,12 +102,12 @@ CreateSnapshotResponse& CreateSnapshotResponse::operator =(const Aws::AmazonWebS
     XmlNode stateMessageNode = resultNode.FirstChild("statusMessage");
     if(!stateMessageNode.IsNull())
     {
-      m_stateMessage = StringUtils::Trim(stateMessageNode.GetText().c_str());
+      m_stateMessage = stateMessageNode.GetText();
     }
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
     {
-      m_volumeId = StringUtils::Trim(volumeIdNode.GetText().c_str());
+      m_volumeId = volumeIdNode.GetText();
     }
     XmlNode volumeSizeNode = resultNode.FirstChild("volumeSize");
     if(!volumeSizeNode.IsNull())
@@ -117,7 +117,7 @@ CreateSnapshotResponse& CreateSnapshotResponse::operator =(const Aws::AmazonWebS
     XmlNode ownerAliasNode = resultNode.FirstChild("ownerAlias");
     if(!ownerAliasNode.IsNull())
     {
-      m_ownerAlias = StringUtils::Trim(ownerAliasNode.GetText().c_str());
+      m_ownerAlias = ownerAliasNode.GetText();
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())

@@ -54,7 +54,7 @@ EnableAvailabilityZonesForLoadBalancerResult& EnableAvailabilityZonesForLoadBala
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("member");
       while(!availabilityZonesMember.IsNull())
       {
-        m_availabilityZones.push_back(StringUtils::Trim(availabilityZonesMember.GetText().c_str()));
+        m_availabilityZones.push_back(availabilityZonesMember.GetText());
         availabilityZonesMember = availabilityZonesMember.NextNode("member");
       }
 

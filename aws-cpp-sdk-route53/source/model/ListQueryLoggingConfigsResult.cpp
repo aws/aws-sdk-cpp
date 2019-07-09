@@ -55,7 +55,7 @@ ListQueryLoggingConfigsResult& ListQueryLoggingConfigsResult::operator =(const A
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+      m_nextToken = nextTokenNode.GetText();
     }
   }
 

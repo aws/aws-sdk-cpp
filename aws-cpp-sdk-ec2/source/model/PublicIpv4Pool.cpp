@@ -62,13 +62,13 @@ PublicIpv4Pool& PublicIpv4Pool::operator =(const XmlNode& xmlNode)
     XmlNode poolIdNode = resultNode.FirstChild("poolId");
     if(!poolIdNode.IsNull())
     {
-      m_poolId = StringUtils::Trim(poolIdNode.GetText().c_str());
+      m_poolId = poolIdNode.GetText();
       m_poolIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode poolAddressRangesNode = resultNode.FirstChild("poolAddressRangeSet");

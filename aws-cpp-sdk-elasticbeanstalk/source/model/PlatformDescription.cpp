@@ -86,31 +86,31 @@ PlatformDescription& PlatformDescription::operator =(const XmlNode& xmlNode)
     XmlNode platformArnNode = resultNode.FirstChild("PlatformArn");
     if(!platformArnNode.IsNull())
     {
-      m_platformArn = StringUtils::Trim(platformArnNode.GetText().c_str());
+      m_platformArn = platformArnNode.GetText();
       m_platformArnHasBeenSet = true;
     }
     XmlNode platformOwnerNode = resultNode.FirstChild("PlatformOwner");
     if(!platformOwnerNode.IsNull())
     {
-      m_platformOwner = StringUtils::Trim(platformOwnerNode.GetText().c_str());
+      m_platformOwner = platformOwnerNode.GetText();
       m_platformOwnerHasBeenSet = true;
     }
     XmlNode platformNameNode = resultNode.FirstChild("PlatformName");
     if(!platformNameNode.IsNull())
     {
-      m_platformName = StringUtils::Trim(platformNameNode.GetText().c_str());
+      m_platformName = platformNameNode.GetText();
       m_platformNameHasBeenSet = true;
     }
     XmlNode platformVersionNode = resultNode.FirstChild("PlatformVersion");
     if(!platformVersionNode.IsNull())
     {
-      m_platformVersion = StringUtils::Trim(platformVersionNode.GetText().c_str());
+      m_platformVersion = platformVersionNode.GetText();
       m_platformVersionHasBeenSet = true;
     }
     XmlNode solutionStackNameNode = resultNode.FirstChild("SolutionStackName");
     if(!solutionStackNameNode.IsNull())
     {
-      m_solutionStackName = StringUtils::Trim(solutionStackNameNode.GetText().c_str());
+      m_solutionStackName = solutionStackNameNode.GetText();
       m_solutionStackNameHasBeenSet = true;
     }
     XmlNode platformStatusNode = resultNode.FirstChild("PlatformStatus");
@@ -134,31 +134,31 @@ PlatformDescription& PlatformDescription::operator =(const XmlNode& xmlNode)
     XmlNode platformCategoryNode = resultNode.FirstChild("PlatformCategory");
     if(!platformCategoryNode.IsNull())
     {
-      m_platformCategory = StringUtils::Trim(platformCategoryNode.GetText().c_str());
+      m_platformCategory = platformCategoryNode.GetText();
       m_platformCategoryHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode maintainerNode = resultNode.FirstChild("Maintainer");
     if(!maintainerNode.IsNull())
     {
-      m_maintainer = StringUtils::Trim(maintainerNode.GetText().c_str());
+      m_maintainer = maintainerNode.GetText();
       m_maintainerHasBeenSet = true;
     }
     XmlNode operatingSystemNameNode = resultNode.FirstChild("OperatingSystemName");
     if(!operatingSystemNameNode.IsNull())
     {
-      m_operatingSystemName = StringUtils::Trim(operatingSystemNameNode.GetText().c_str());
+      m_operatingSystemName = operatingSystemNameNode.GetText();
       m_operatingSystemNameHasBeenSet = true;
     }
     XmlNode operatingSystemVersionNode = resultNode.FirstChild("OperatingSystemVersion");
     if(!operatingSystemVersionNode.IsNull())
     {
-      m_operatingSystemVersion = StringUtils::Trim(operatingSystemVersionNode.GetText().c_str());
+      m_operatingSystemVersion = operatingSystemVersionNode.GetText();
       m_operatingSystemVersionHasBeenSet = true;
     }
     XmlNode programmingLanguagesNode = resultNode.FirstChild("ProgrammingLanguages");
@@ -203,7 +203,7 @@ PlatformDescription& PlatformDescription::operator =(const XmlNode& xmlNode)
       XmlNode supportedTierListMember = supportedTierListNode.FirstChild("member");
       while(!supportedTierListMember.IsNull())
       {
-        m_supportedTierList.push_back(StringUtils::Trim(supportedTierListMember.GetText().c_str()));
+        m_supportedTierList.push_back(supportedTierListMember.GetText());
         supportedTierListMember = supportedTierListMember.NextNode("member");
       }
 
@@ -215,7 +215,7 @@ PlatformDescription& PlatformDescription::operator =(const XmlNode& xmlNode)
       XmlNode supportedAddonListMember = supportedAddonListNode.FirstChild("member");
       while(!supportedAddonListMember.IsNull())
       {
-        m_supportedAddonList.push_back(StringUtils::Trim(supportedAddonListMember.GetText().c_str()));
+        m_supportedAddonList.push_back(supportedAddonListMember.GetText());
         supportedAddonListMember = supportedAddonListMember.NextNode("member");
       }
 

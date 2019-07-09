@@ -60,7 +60,7 @@ ServerSideEncryptionByDefault& ServerSideEncryptionByDefault::operator =(const X
     XmlNode kMSMasterKeyIDNode = resultNode.FirstChild("KMSMasterKeyID");
     if(!kMSMasterKeyIDNode.IsNull())
     {
-      m_kMSMasterKeyID = StringUtils::Trim(kMSMasterKeyIDNode.GetText().c_str());
+      m_kMSMasterKeyID = kMSMasterKeyIDNode.GetText();
       m_kMSMasterKeyIDHasBeenSet = true;
     }
   }

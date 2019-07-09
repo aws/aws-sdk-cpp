@@ -70,7 +70,7 @@ SelectParameters& SelectParameters::operator =(const XmlNode& xmlNode)
     XmlNode expressionNode = resultNode.FirstChild("Expression");
     if(!expressionNode.IsNull())
     {
-      m_expression = StringUtils::Trim(expressionNode.GetText().c_str());
+      m_expression = expressionNode.GetText();
       m_expressionHasBeenSet = true;
     }
     XmlNode outputSerializationNode = resultNode.FirstChild("OutputSerialization");

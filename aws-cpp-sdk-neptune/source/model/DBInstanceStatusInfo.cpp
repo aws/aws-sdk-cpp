@@ -58,7 +58,7 @@ DBInstanceStatusInfo& DBInstanceStatusInfo::operator =(const XmlNode& xmlNode)
     XmlNode statusTypeNode = resultNode.FirstChild("StatusType");
     if(!statusTypeNode.IsNull())
     {
-      m_statusType = StringUtils::Trim(statusTypeNode.GetText().c_str());
+      m_statusType = statusTypeNode.GetText();
       m_statusTypeHasBeenSet = true;
     }
     XmlNode normalNode = resultNode.FirstChild("Normal");
@@ -70,13 +70,13 @@ DBInstanceStatusInfo& DBInstanceStatusInfo::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
-      m_message = StringUtils::Trim(messageNode.GetText().c_str());
+      m_message = messageNode.GetText();
       m_messageHasBeenSet = true;
     }
   }

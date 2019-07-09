@@ -64,19 +64,19 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
     XmlNode serviceIdNode = resultNode.FirstChild("serviceId");
     if(!serviceIdNode.IsNull())
     {
-      m_serviceId = StringUtils::Trim(serviceIdNode.GetText().c_str());
+      m_serviceId = serviceIdNode.GetText();
       m_serviceIdHasBeenSet = true;
     }
     XmlNode vpcEndpointIdNode = resultNode.FirstChild("vpcEndpointId");
     if(!vpcEndpointIdNode.IsNull())
     {
-      m_vpcEndpointId = StringUtils::Trim(vpcEndpointIdNode.GetText().c_str());
+      m_vpcEndpointId = vpcEndpointIdNode.GetText();
       m_vpcEndpointIdHasBeenSet = true;
     }
     XmlNode vpcEndpointOwnerNode = resultNode.FirstChild("vpcEndpointOwner");
     if(!vpcEndpointOwnerNode.IsNull())
     {
-      m_vpcEndpointOwner = StringUtils::Trim(vpcEndpointOwnerNode.GetText().c_str());
+      m_vpcEndpointOwner = vpcEndpointOwnerNode.GetText();
       m_vpcEndpointOwnerHasBeenSet = true;
     }
     XmlNode vpcEndpointStateNode = resultNode.FirstChild("vpcEndpointState");
@@ -109,7 +109,7 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
       XmlNode networkLoadBalancerArnsMember = networkLoadBalancerArnsNode.FirstChild("item");
       while(!networkLoadBalancerArnsMember.IsNull())
       {
-        m_networkLoadBalancerArns.push_back(StringUtils::Trim(networkLoadBalancerArnsMember.GetText().c_str()));
+        m_networkLoadBalancerArns.push_back(networkLoadBalancerArnsMember.GetText());
         networkLoadBalancerArnsMember = networkLoadBalancerArnsMember.NextNode("item");
       }
 

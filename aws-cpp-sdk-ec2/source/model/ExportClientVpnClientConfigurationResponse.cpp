@@ -51,7 +51,7 @@ ExportClientVpnClientConfigurationResponse& ExportClientVpnClientConfigurationRe
     XmlNode clientConfigurationNode = resultNode.FirstChild("clientConfiguration");
     if(!clientConfigurationNode.IsNull())
     {
-      m_clientConfiguration = StringUtils::Trim(clientConfigurationNode.GetText().c_str());
+      m_clientConfiguration = clientConfigurationNode.GetText();
     }
   }
 

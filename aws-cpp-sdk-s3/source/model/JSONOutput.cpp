@@ -50,7 +50,7 @@ JSONOutput& JSONOutput::operator =(const XmlNode& xmlNode)
     XmlNode recordDelimiterNode = resultNode.FirstChild("RecordDelimiter");
     if(!recordDelimiterNode.IsNull())
     {
-      m_recordDelimiter = StringUtils::Trim(recordDelimiterNode.GetText().c_str());
+      m_recordDelimiter = recordDelimiterNode.GetText();
       m_recordDelimiterHasBeenSet = true;
     }
   }

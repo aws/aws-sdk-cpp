@@ -51,7 +51,7 @@ DescribeStaleSecurityGroupsResponse& DescribeStaleSecurityGroupsResponse::operat
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+      m_nextToken = nextTokenNode.GetText();
     }
     XmlNode staleSecurityGroupSetNode = resultNode.FirstChild("staleSecurityGroupSet");
     if(!staleSecurityGroupSetNode.IsNull())

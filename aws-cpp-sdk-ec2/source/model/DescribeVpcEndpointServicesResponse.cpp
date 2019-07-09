@@ -54,7 +54,7 @@ DescribeVpcEndpointServicesResponse& DescribeVpcEndpointServicesResponse::operat
       XmlNode serviceNamesMember = serviceNamesNode.FirstChild("item");
       while(!serviceNamesMember.IsNull())
       {
-        m_serviceNames.push_back(StringUtils::Trim(serviceNamesMember.GetText().c_str()));
+        m_serviceNames.push_back(serviceNamesMember.GetText());
         serviceNamesMember = serviceNamesMember.NextNode("item");
       }
 
@@ -73,7 +73,7 @@ DescribeVpcEndpointServicesResponse& DescribeVpcEndpointServicesResponse::operat
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+      m_nextToken = nextTokenNode.GetText();
     }
   }
 

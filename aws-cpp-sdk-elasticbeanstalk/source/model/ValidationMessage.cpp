@@ -58,7 +58,7 @@ ValidationMessage& ValidationMessage::operator =(const XmlNode& xmlNode)
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
-      m_message = StringUtils::Trim(messageNode.GetText().c_str());
+      m_message = messageNode.GetText();
       m_messageHasBeenSet = true;
     }
     XmlNode severityNode = resultNode.FirstChild("Severity");
@@ -70,13 +70,13 @@ ValidationMessage& ValidationMessage::operator =(const XmlNode& xmlNode)
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
     if(!namespaceNode.IsNull())
     {
-      m_namespace = StringUtils::Trim(namespaceNode.GetText().c_str());
+      m_namespace = namespaceNode.GetText();
       m_namespaceHasBeenSet = true;
     }
     XmlNode optionNameNode = resultNode.FirstChild("OptionName");
     if(!optionNameNode.IsNull())
     {
-      m_optionName = StringUtils::Trim(optionNameNode.GetText().c_str());
+      m_optionName = optionNameNode.GetText();
       m_optionNameHasBeenSet = true;
     }
   }

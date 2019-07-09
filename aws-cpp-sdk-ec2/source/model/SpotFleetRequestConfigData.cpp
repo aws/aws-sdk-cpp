@@ -128,7 +128,7 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
-      m_clientToken = StringUtils::Trim(clientTokenNode.GetText().c_str());
+      m_clientToken = clientTokenNode.GetText();
       m_clientTokenHasBeenSet = true;
     }
     XmlNode excessCapacityTerminationPolicyNode = resultNode.FirstChild("excessCapacityTerminationPolicy");
@@ -152,7 +152,7 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
     XmlNode iamFleetRoleNode = resultNode.FirstChild("iamFleetRole");
     if(!iamFleetRoleNode.IsNull())
     {
-      m_iamFleetRole = StringUtils::Trim(iamFleetRoleNode.GetText().c_str());
+      m_iamFleetRole = iamFleetRoleNode.GetText();
       m_iamFleetRoleHasBeenSet = true;
     }
     XmlNode launchSpecificationsNode = resultNode.FirstChild("launchSpecifications");
@@ -182,7 +182,7 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
     XmlNode spotPriceNode = resultNode.FirstChild("spotPrice");
     if(!spotPriceNode.IsNull())
     {
-      m_spotPrice = StringUtils::Trim(spotPriceNode.GetText().c_str());
+      m_spotPrice = spotPriceNode.GetText();
       m_spotPriceHasBeenSet = true;
     }
     XmlNode targetCapacityNode = resultNode.FirstChild("targetCapacity");
@@ -200,13 +200,13 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
     XmlNode onDemandMaxTotalPriceNode = resultNode.FirstChild("onDemandMaxTotalPrice");
     if(!onDemandMaxTotalPriceNode.IsNull())
     {
-      m_onDemandMaxTotalPrice = StringUtils::Trim(onDemandMaxTotalPriceNode.GetText().c_str());
+      m_onDemandMaxTotalPrice = onDemandMaxTotalPriceNode.GetText();
       m_onDemandMaxTotalPriceHasBeenSet = true;
     }
     XmlNode spotMaxTotalPriceNode = resultNode.FirstChild("spotMaxTotalPrice");
     if(!spotMaxTotalPriceNode.IsNull())
     {
-      m_spotMaxTotalPrice = StringUtils::Trim(spotMaxTotalPriceNode.GetText().c_str());
+      m_spotMaxTotalPrice = spotMaxTotalPriceNode.GetText();
       m_spotMaxTotalPriceHasBeenSet = true;
     }
     XmlNode terminateInstancesWithExpirationNode = resultNode.FirstChild("terminateInstancesWithExpiration");

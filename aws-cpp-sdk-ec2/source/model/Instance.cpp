@@ -166,13 +166,13 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode imageIdNode = resultNode.FirstChild("imageId");
     if(!imageIdNode.IsNull())
     {
-      m_imageId = StringUtils::Trim(imageIdNode.GetText().c_str());
+      m_imageId = imageIdNode.GetText();
       m_imageIdHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceId = instanceIdNode.GetText();
       m_instanceIdHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
@@ -184,13 +184,13 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode kernelIdNode = resultNode.FirstChild("kernelId");
     if(!kernelIdNode.IsNull())
     {
-      m_kernelId = StringUtils::Trim(kernelIdNode.GetText().c_str());
+      m_kernelId = kernelIdNode.GetText();
       m_kernelIdHasBeenSet = true;
     }
     XmlNode keyNameNode = resultNode.FirstChild("keyName");
     if(!keyNameNode.IsNull())
     {
-      m_keyName = StringUtils::Trim(keyNameNode.GetText().c_str());
+      m_keyName = keyNameNode.GetText();
       m_keyNameHasBeenSet = true;
     }
     XmlNode launchTimeNode = resultNode.FirstChild("launchTime");
@@ -220,13 +220,13 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode privateDnsNameNode = resultNode.FirstChild("privateDnsName");
     if(!privateDnsNameNode.IsNull())
     {
-      m_privateDnsName = StringUtils::Trim(privateDnsNameNode.GetText().c_str());
+      m_privateDnsName = privateDnsNameNode.GetText();
       m_privateDnsNameHasBeenSet = true;
     }
     XmlNode privateIpAddressNode = resultNode.FirstChild("privateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
-      m_privateIpAddress = StringUtils::Trim(privateIpAddressNode.GetText().c_str());
+      m_privateIpAddress = privateIpAddressNode.GetText();
       m_privateIpAddressHasBeenSet = true;
     }
     XmlNode productCodesNode = resultNode.FirstChild("productCodes");
@@ -244,19 +244,19 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode publicDnsNameNode = resultNode.FirstChild("dnsName");
     if(!publicDnsNameNode.IsNull())
     {
-      m_publicDnsName = StringUtils::Trim(publicDnsNameNode.GetText().c_str());
+      m_publicDnsName = publicDnsNameNode.GetText();
       m_publicDnsNameHasBeenSet = true;
     }
     XmlNode publicIpAddressNode = resultNode.FirstChild("ipAddress");
     if(!publicIpAddressNode.IsNull())
     {
-      m_publicIpAddress = StringUtils::Trim(publicIpAddressNode.GetText().c_str());
+      m_publicIpAddress = publicIpAddressNode.GetText();
       m_publicIpAddressHasBeenSet = true;
     }
     XmlNode ramdiskIdNode = resultNode.FirstChild("ramdiskId");
     if(!ramdiskIdNode.IsNull())
     {
-      m_ramdiskId = StringUtils::Trim(ramdiskIdNode.GetText().c_str());
+      m_ramdiskId = ramdiskIdNode.GetText();
       m_ramdiskIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("instanceState");
@@ -268,19 +268,19 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode stateTransitionReasonNode = resultNode.FirstChild("reason");
     if(!stateTransitionReasonNode.IsNull())
     {
-      m_stateTransitionReason = StringUtils::Trim(stateTransitionReasonNode.GetText().c_str());
+      m_stateTransitionReason = stateTransitionReasonNode.GetText();
       m_stateTransitionReasonHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
-      m_subnetId = StringUtils::Trim(subnetIdNode.GetText().c_str());
+      m_subnetId = subnetIdNode.GetText();
       m_subnetIdHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
+      m_vpcId = vpcIdNode.GetText();
       m_vpcIdHasBeenSet = true;
     }
     XmlNode architectureNode = resultNode.FirstChild("architecture");
@@ -304,7 +304,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
-      m_clientToken = StringUtils::Trim(clientTokenNode.GetText().c_str());
+      m_clientToken = clientTokenNode.GetText();
       m_clientTokenHasBeenSet = true;
     }
     XmlNode ebsOptimizedNode = resultNode.FirstChild("ebsOptimized");
@@ -376,7 +376,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode rootDeviceNameNode = resultNode.FirstChild("rootDeviceName");
     if(!rootDeviceNameNode.IsNull())
     {
-      m_rootDeviceName = StringUtils::Trim(rootDeviceNameNode.GetText().c_str());
+      m_rootDeviceName = rootDeviceNameNode.GetText();
       m_rootDeviceNameHasBeenSet = true;
     }
     XmlNode rootDeviceTypeNode = resultNode.FirstChild("rootDeviceType");
@@ -406,13 +406,13 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode spotInstanceRequestIdNode = resultNode.FirstChild("spotInstanceRequestId");
     if(!spotInstanceRequestIdNode.IsNull())
     {
-      m_spotInstanceRequestId = StringUtils::Trim(spotInstanceRequestIdNode.GetText().c_str());
+      m_spotInstanceRequestId = spotInstanceRequestIdNode.GetText();
       m_spotInstanceRequestIdHasBeenSet = true;
     }
     XmlNode sriovNetSupportNode = resultNode.FirstChild("sriovNetSupport");
     if(!sriovNetSupportNode.IsNull())
     {
-      m_sriovNetSupport = StringUtils::Trim(sriovNetSupportNode.GetText().c_str());
+      m_sriovNetSupport = sriovNetSupportNode.GetText();
       m_sriovNetSupportHasBeenSet = true;
     }
     XmlNode stateReasonNode = resultNode.FirstChild("stateReason");
@@ -448,7 +448,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode capacityReservationIdNode = resultNode.FirstChild("capacityReservationId");
     if(!capacityReservationIdNode.IsNull())
     {
-      m_capacityReservationId = StringUtils::Trim(capacityReservationIdNode.GetText().c_str());
+      m_capacityReservationId = capacityReservationIdNode.GetText();
       m_capacityReservationIdHasBeenSet = true;
     }
     XmlNode capacityReservationSpecificationNode = resultNode.FirstChild("capacityReservationSpecification");

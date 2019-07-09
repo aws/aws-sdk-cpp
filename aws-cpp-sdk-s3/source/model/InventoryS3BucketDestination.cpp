@@ -60,13 +60,13 @@ InventoryS3BucketDestination& InventoryS3BucketDestination::operator =(const Xml
     XmlNode accountIdNode = resultNode.FirstChild("AccountId");
     if(!accountIdNode.IsNull())
     {
-      m_accountId = StringUtils::Trim(accountIdNode.GetText().c_str());
+      m_accountId = accountIdNode.GetText();
       m_accountIdHasBeenSet = true;
     }
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
     if(!bucketNode.IsNull())
     {
-      m_bucket = StringUtils::Trim(bucketNode.GetText().c_str());
+      m_bucket = bucketNode.GetText();
       m_bucketHasBeenSet = true;
     }
     XmlNode formatNode = resultNode.FirstChild("Format");
@@ -78,7 +78,7 @@ InventoryS3BucketDestination& InventoryS3BucketDestination::operator =(const Xml
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
     if(!prefixNode.IsNull())
     {
-      m_prefix = StringUtils::Trim(prefixNode.GetText().c_str());
+      m_prefix = prefixNode.GetText();
       m_prefixHasBeenSet = true;
     }
     XmlNode encryptionNode = resultNode.FirstChild("Encryption");

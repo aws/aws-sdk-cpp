@@ -70,13 +70,13 @@ ViewerCertificate& ViewerCertificate::operator =(const XmlNode& xmlNode)
     XmlNode iAMCertificateIdNode = resultNode.FirstChild("IAMCertificateId");
     if(!iAMCertificateIdNode.IsNull())
     {
-      m_iAMCertificateId = StringUtils::Trim(iAMCertificateIdNode.GetText().c_str());
+      m_iAMCertificateId = iAMCertificateIdNode.GetText();
       m_iAMCertificateIdHasBeenSet = true;
     }
     XmlNode aCMCertificateArnNode = resultNode.FirstChild("ACMCertificateArn");
     if(!aCMCertificateArnNode.IsNull())
     {
-      m_aCMCertificateArn = StringUtils::Trim(aCMCertificateArnNode.GetText().c_str());
+      m_aCMCertificateArn = aCMCertificateArnNode.GetText();
       m_aCMCertificateArnHasBeenSet = true;
     }
     XmlNode sSLSupportMethodNode = resultNode.FirstChild("SSLSupportMethod");

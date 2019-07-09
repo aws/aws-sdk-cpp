@@ -86,7 +86,7 @@ RouteTable& RouteTable::operator =(const XmlNode& xmlNode)
     XmlNode routeTableIdNode = resultNode.FirstChild("routeTableId");
     if(!routeTableIdNode.IsNull())
     {
-      m_routeTableId = StringUtils::Trim(routeTableIdNode.GetText().c_str());
+      m_routeTableId = routeTableIdNode.GetText();
       m_routeTableIdHasBeenSet = true;
     }
     XmlNode routesNode = resultNode.FirstChild("routeSet");
@@ -116,13 +116,13 @@ RouteTable& RouteTable::operator =(const XmlNode& xmlNode)
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
+      m_vpcId = vpcIdNode.GetText();
       m_vpcIdHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
-      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerId = ownerIdNode.GetText();
       m_ownerIdHasBeenSet = true;
     }
   }

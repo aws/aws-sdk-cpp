@@ -52,7 +52,7 @@ RoleUsageType& RoleUsageType::operator =(const XmlNode& xmlNode)
     XmlNode regionNode = resultNode.FirstChild("Region");
     if(!regionNode.IsNull())
     {
-      m_region = StringUtils::Trim(regionNode.GetText().c_str());
+      m_region = regionNode.GetText();
       m_regionHasBeenSet = true;
     }
     XmlNode resourcesNode = resultNode.FirstChild("Resources");
@@ -61,7 +61,7 @@ RoleUsageType& RoleUsageType::operator =(const XmlNode& xmlNode)
       XmlNode resourcesMember = resourcesNode.FirstChild("member");
       while(!resourcesMember.IsNull())
       {
-        m_resources.push_back(StringUtils::Trim(resourcesMember.GetText().c_str()));
+        m_resources.push_back(resourcesMember.GetText());
         resourcesMember = resourcesMember.NextNode("member");
       }
 

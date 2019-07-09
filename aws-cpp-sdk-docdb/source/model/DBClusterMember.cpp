@@ -60,7 +60,7 @@ DBClusterMember& DBClusterMember::operator =(const XmlNode& xmlNode)
     XmlNode dBInstanceIdentifierNode = resultNode.FirstChild("DBInstanceIdentifier");
     if(!dBInstanceIdentifierNode.IsNull())
     {
-      m_dBInstanceIdentifier = StringUtils::Trim(dBInstanceIdentifierNode.GetText().c_str());
+      m_dBInstanceIdentifier = dBInstanceIdentifierNode.GetText();
       m_dBInstanceIdentifierHasBeenSet = true;
     }
     XmlNode isClusterWriterNode = resultNode.FirstChild("IsClusterWriter");
@@ -72,7 +72,7 @@ DBClusterMember& DBClusterMember::operator =(const XmlNode& xmlNode)
     XmlNode dBClusterParameterGroupStatusNode = resultNode.FirstChild("DBClusterParameterGroupStatus");
     if(!dBClusterParameterGroupStatusNode.IsNull())
     {
-      m_dBClusterParameterGroupStatus = StringUtils::Trim(dBClusterParameterGroupStatusNode.GetText().c_str());
+      m_dBClusterParameterGroupStatus = dBClusterParameterGroupStatusNode.GetText();
       m_dBClusterParameterGroupStatusHasBeenSet = true;
     }
     XmlNode promotionTierNode = resultNode.FirstChild("PromotionTier");

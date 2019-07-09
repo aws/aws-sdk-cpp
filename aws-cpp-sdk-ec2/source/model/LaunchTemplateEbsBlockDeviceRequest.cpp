@@ -90,13 +90,13 @@ LaunchTemplateEbsBlockDeviceRequest& LaunchTemplateEbsBlockDeviceRequest::operat
     XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
-      m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
+      m_kmsKeyId = kmsKeyIdNode.GetText();
       m_kmsKeyIdHasBeenSet = true;
     }
     XmlNode snapshotIdNode = resultNode.FirstChild("SnapshotId");
     if(!snapshotIdNode.IsNull())
     {
-      m_snapshotId = StringUtils::Trim(snapshotIdNode.GetText().c_str());
+      m_snapshotId = snapshotIdNode.GetText();
       m_snapshotIdHasBeenSet = true;
     }
     XmlNode volumeSizeNode = resultNode.FirstChild("VolumeSize");

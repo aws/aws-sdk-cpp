@@ -52,13 +52,13 @@ DnsEntry& DnsEntry::operator =(const XmlNode& xmlNode)
     XmlNode dnsNameNode = resultNode.FirstChild("dnsName");
     if(!dnsNameNode.IsNull())
     {
-      m_dnsName = StringUtils::Trim(dnsNameNode.GetText().c_str());
+      m_dnsName = dnsNameNode.GetText();
       m_dnsNameHasBeenSet = true;
     }
     XmlNode hostedZoneIdNode = resultNode.FirstChild("hostedZoneId");
     if(!hostedZoneIdNode.IsNull())
     {
-      m_hostedZoneId = StringUtils::Trim(hostedZoneIdNode.GetText().c_str());
+      m_hostedZoneId = hostedZoneIdNode.GetText();
       m_hostedZoneIdHasBeenSet = true;
     }
   }

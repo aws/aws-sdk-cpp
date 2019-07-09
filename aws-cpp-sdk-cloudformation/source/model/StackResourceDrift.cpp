@@ -70,19 +70,19 @@ StackResourceDrift& StackResourceDrift::operator =(const XmlNode& xmlNode)
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
     if(!stackIdNode.IsNull())
     {
-      m_stackId = StringUtils::Trim(stackIdNode.GetText().c_str());
+      m_stackId = stackIdNode.GetText();
       m_stackIdHasBeenSet = true;
     }
     XmlNode logicalResourceIdNode = resultNode.FirstChild("LogicalResourceId");
     if(!logicalResourceIdNode.IsNull())
     {
-      m_logicalResourceId = StringUtils::Trim(logicalResourceIdNode.GetText().c_str());
+      m_logicalResourceId = logicalResourceIdNode.GetText();
       m_logicalResourceIdHasBeenSet = true;
     }
     XmlNode physicalResourceIdNode = resultNode.FirstChild("PhysicalResourceId");
     if(!physicalResourceIdNode.IsNull())
     {
-      m_physicalResourceId = StringUtils::Trim(physicalResourceIdNode.GetText().c_str());
+      m_physicalResourceId = physicalResourceIdNode.GetText();
       m_physicalResourceIdHasBeenSet = true;
     }
     XmlNode physicalResourceIdContextNode = resultNode.FirstChild("PhysicalResourceIdContext");
@@ -100,19 +100,19 @@ StackResourceDrift& StackResourceDrift::operator =(const XmlNode& xmlNode)
     XmlNode resourceTypeNode = resultNode.FirstChild("ResourceType");
     if(!resourceTypeNode.IsNull())
     {
-      m_resourceType = StringUtils::Trim(resourceTypeNode.GetText().c_str());
+      m_resourceType = resourceTypeNode.GetText();
       m_resourceTypeHasBeenSet = true;
     }
     XmlNode expectedPropertiesNode = resultNode.FirstChild("ExpectedProperties");
     if(!expectedPropertiesNode.IsNull())
     {
-      m_expectedProperties = StringUtils::Trim(expectedPropertiesNode.GetText().c_str());
+      m_expectedProperties = expectedPropertiesNode.GetText();
       m_expectedPropertiesHasBeenSet = true;
     }
     XmlNode actualPropertiesNode = resultNode.FirstChild("ActualProperties");
     if(!actualPropertiesNode.IsNull())
     {
-      m_actualProperties = StringUtils::Trim(actualPropertiesNode.GetText().c_str());
+      m_actualProperties = actualPropertiesNode.GetText();
       m_actualPropertiesHasBeenSet = true;
     }
     XmlNode propertyDifferencesNode = resultNode.FirstChild("PropertyDifferences");

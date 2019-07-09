@@ -82,19 +82,19 @@ ReservedCacheNode& ReservedCacheNode::operator =(const XmlNode& xmlNode)
     XmlNode reservedCacheNodeIdNode = resultNode.FirstChild("ReservedCacheNodeId");
     if(!reservedCacheNodeIdNode.IsNull())
     {
-      m_reservedCacheNodeId = StringUtils::Trim(reservedCacheNodeIdNode.GetText().c_str());
+      m_reservedCacheNodeId = reservedCacheNodeIdNode.GetText();
       m_reservedCacheNodeIdHasBeenSet = true;
     }
     XmlNode reservedCacheNodesOfferingIdNode = resultNode.FirstChild("ReservedCacheNodesOfferingId");
     if(!reservedCacheNodesOfferingIdNode.IsNull())
     {
-      m_reservedCacheNodesOfferingId = StringUtils::Trim(reservedCacheNodesOfferingIdNode.GetText().c_str());
+      m_reservedCacheNodesOfferingId = reservedCacheNodesOfferingIdNode.GetText();
       m_reservedCacheNodesOfferingIdHasBeenSet = true;
     }
     XmlNode cacheNodeTypeNode = resultNode.FirstChild("CacheNodeType");
     if(!cacheNodeTypeNode.IsNull())
     {
-      m_cacheNodeType = StringUtils::Trim(cacheNodeTypeNode.GetText().c_str());
+      m_cacheNodeType = cacheNodeTypeNode.GetText();
       m_cacheNodeTypeHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
@@ -130,19 +130,19 @@ ReservedCacheNode& ReservedCacheNode::operator =(const XmlNode& xmlNode)
     XmlNode productDescriptionNode = resultNode.FirstChild("ProductDescription");
     if(!productDescriptionNode.IsNull())
     {
-      m_productDescription = StringUtils::Trim(productDescriptionNode.GetText().c_str());
+      m_productDescription = productDescriptionNode.GetText();
       m_productDescriptionHasBeenSet = true;
     }
     XmlNode offeringTypeNode = resultNode.FirstChild("OfferingType");
     if(!offeringTypeNode.IsNull())
     {
-      m_offeringType = StringUtils::Trim(offeringTypeNode.GetText().c_str());
+      m_offeringType = offeringTypeNode.GetText();
       m_offeringTypeHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("State");
     if(!stateNode.IsNull())
     {
-      m_state = StringUtils::Trim(stateNode.GetText().c_str());
+      m_state = stateNode.GetText();
       m_stateHasBeenSet = true;
     }
     XmlNode recurringChargesNode = resultNode.FirstChild("RecurringCharges");
@@ -160,7 +160,7 @@ ReservedCacheNode& ReservedCacheNode::operator =(const XmlNode& xmlNode)
     XmlNode reservationARNNode = resultNode.FirstChild("ReservationARN");
     if(!reservationARNNode.IsNull())
     {
-      m_reservationARN = StringUtils::Trim(reservationARNNode.GetText().c_str());
+      m_reservationARN = reservationARNNode.GetText();
       m_reservationARNHasBeenSet = true;
     }
   }

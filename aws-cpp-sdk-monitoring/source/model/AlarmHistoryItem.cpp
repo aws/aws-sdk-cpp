@@ -60,7 +60,7 @@ AlarmHistoryItem& AlarmHistoryItem::operator =(const XmlNode& xmlNode)
     XmlNode alarmNameNode = resultNode.FirstChild("AlarmName");
     if(!alarmNameNode.IsNull())
     {
-      m_alarmName = StringUtils::Trim(alarmNameNode.GetText().c_str());
+      m_alarmName = alarmNameNode.GetText();
       m_alarmNameHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
@@ -78,13 +78,13 @@ AlarmHistoryItem& AlarmHistoryItem::operator =(const XmlNode& xmlNode)
     XmlNode historySummaryNode = resultNode.FirstChild("HistorySummary");
     if(!historySummaryNode.IsNull())
     {
-      m_historySummary = StringUtils::Trim(historySummaryNode.GetText().c_str());
+      m_historySummary = historySummaryNode.GetText();
       m_historySummaryHasBeenSet = true;
     }
     XmlNode historyDataNode = resultNode.FirstChild("HistoryData");
     if(!historyDataNode.IsNull())
     {
-      m_historyData = StringUtils::Trim(historyDataNode.GetText().c_str());
+      m_historyData = historyDataNode.GetText();
       m_historyDataHasBeenSet = true;
     }
   }

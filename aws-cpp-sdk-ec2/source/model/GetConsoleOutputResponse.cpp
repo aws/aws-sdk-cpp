@@ -51,12 +51,12 @@ GetConsoleOutputResponse& GetConsoleOutputResponse::operator =(const Aws::Amazon
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceId = instanceIdNode.GetText();
     }
     XmlNode outputNode = resultNode.FirstChild("output");
     if(!outputNode.IsNull())
     {
-      m_output = StringUtils::Trim(outputNode.GetText().c_str());
+      m_output = outputNode.GetText();
     }
     XmlNode timestampNode = resultNode.FirstChild("timestamp");
     if(!timestampNode.IsNull())

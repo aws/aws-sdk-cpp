@@ -50,7 +50,7 @@ SupportedOperation& SupportedOperation::operator =(const XmlNode& xmlNode)
     XmlNode operationNameNode = resultNode.FirstChild("OperationName");
     if(!operationNameNode.IsNull())
     {
-      m_operationName = StringUtils::Trim(operationNameNode.GetText().c_str());
+      m_operationName = operationNameNode.GetText();
       m_operationNameHasBeenSet = true;
     }
   }

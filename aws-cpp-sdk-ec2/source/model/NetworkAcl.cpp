@@ -94,7 +94,7 @@ NetworkAcl& NetworkAcl::operator =(const XmlNode& xmlNode)
     XmlNode networkAclIdNode = resultNode.FirstChild("networkAclId");
     if(!networkAclIdNode.IsNull())
     {
-      m_networkAclId = StringUtils::Trim(networkAclIdNode.GetText().c_str());
+      m_networkAclId = networkAclIdNode.GetText();
       m_networkAclIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
@@ -112,13 +112,13 @@ NetworkAcl& NetworkAcl::operator =(const XmlNode& xmlNode)
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
+      m_vpcId = vpcIdNode.GetText();
       m_vpcIdHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
-      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerId = ownerIdNode.GetText();
       m_ownerIdHasBeenSet = true;
     }
   }

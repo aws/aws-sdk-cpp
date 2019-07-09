@@ -72,19 +72,19 @@ LaunchTemplateOverrides& LaunchTemplateOverrides::operator =(const XmlNode& xmlN
     XmlNode spotPriceNode = resultNode.FirstChild("spotPrice");
     if(!spotPriceNode.IsNull())
     {
-      m_spotPrice = StringUtils::Trim(spotPriceNode.GetText().c_str());
+      m_spotPrice = spotPriceNode.GetText();
       m_spotPriceHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
-      m_subnetId = StringUtils::Trim(subnetIdNode.GetText().c_str());
+      m_subnetId = subnetIdNode.GetText();
       m_subnetIdHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode weightedCapacityNode = resultNode.FirstChild("weightedCapacity");

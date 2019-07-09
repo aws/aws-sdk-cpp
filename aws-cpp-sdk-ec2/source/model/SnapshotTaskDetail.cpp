@@ -74,7 +74,7 @@ SnapshotTaskDetail& SnapshotTaskDetail::operator =(const XmlNode& xmlNode)
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode diskImageSizeNode = resultNode.FirstChild("diskImageSize");
@@ -92,43 +92,43 @@ SnapshotTaskDetail& SnapshotTaskDetail::operator =(const XmlNode& xmlNode)
     XmlNode formatNode = resultNode.FirstChild("format");
     if(!formatNode.IsNull())
     {
-      m_format = StringUtils::Trim(formatNode.GetText().c_str());
+      m_format = formatNode.GetText();
       m_formatHasBeenSet = true;
     }
     XmlNode kmsKeyIdNode = resultNode.FirstChild("kmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
-      m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
+      m_kmsKeyId = kmsKeyIdNode.GetText();
       m_kmsKeyIdHasBeenSet = true;
     }
     XmlNode progressNode = resultNode.FirstChild("progress");
     if(!progressNode.IsNull())
     {
-      m_progress = StringUtils::Trim(progressNode.GetText().c_str());
+      m_progress = progressNode.GetText();
       m_progressHasBeenSet = true;
     }
     XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
     if(!snapshotIdNode.IsNull())
     {
-      m_snapshotId = StringUtils::Trim(snapshotIdNode.GetText().c_str());
+      m_snapshotId = snapshotIdNode.GetText();
       m_snapshotIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
-      m_statusMessage = StringUtils::Trim(statusMessageNode.GetText().c_str());
+      m_statusMessage = statusMessageNode.GetText();
       m_statusMessageHasBeenSet = true;
     }
     XmlNode urlNode = resultNode.FirstChild("url");
     if(!urlNode.IsNull())
     {
-      m_url = StringUtils::Trim(urlNode.GetText().c_str());
+      m_url = urlNode.GetText();
       m_urlHasBeenSet = true;
     }
     XmlNode userBucketNode = resultNode.FirstChild("userBucket");

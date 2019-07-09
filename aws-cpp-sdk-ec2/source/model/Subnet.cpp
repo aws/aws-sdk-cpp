@@ -86,13 +86,13 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
     if(!availabilityZoneIdNode.IsNull())
     {
-      m_availabilityZoneId = StringUtils::Trim(availabilityZoneIdNode.GetText().c_str());
+      m_availabilityZoneId = availabilityZoneIdNode.GetText();
       m_availabilityZoneIdHasBeenSet = true;
     }
     XmlNode availableIpAddressCountNode = resultNode.FirstChild("availableIpAddressCount");
@@ -104,7 +104,7 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     XmlNode cidrBlockNode = resultNode.FirstChild("cidrBlock");
     if(!cidrBlockNode.IsNull())
     {
-      m_cidrBlock = StringUtils::Trim(cidrBlockNode.GetText().c_str());
+      m_cidrBlock = cidrBlockNode.GetText();
       m_cidrBlockHasBeenSet = true;
     }
     XmlNode defaultForAzNode = resultNode.FirstChild("defaultForAz");
@@ -128,19 +128,19 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
-      m_subnetId = StringUtils::Trim(subnetIdNode.GetText().c_str());
+      m_subnetId = subnetIdNode.GetText();
       m_subnetIdHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
+      m_vpcId = vpcIdNode.GetText();
       m_vpcIdHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
-      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerId = ownerIdNode.GetText();
       m_ownerIdHasBeenSet = true;
     }
     XmlNode assignIpv6AddressOnCreationNode = resultNode.FirstChild("assignIpv6AddressOnCreation");
@@ -176,7 +176,7 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     XmlNode subnetArnNode = resultNode.FirstChild("subnetArn");
     if(!subnetArnNode.IsNull())
     {
-      m_subnetArn = StringUtils::Trim(subnetArnNode.GetText().c_str());
+      m_subnetArn = subnetArnNode.GetText();
       m_subnetArnHasBeenSet = true;
     }
   }

@@ -102,7 +102,7 @@ SpotFleetLaunchSpecification& SpotFleetLaunchSpecification::operator =(const Xml
     XmlNode addressingTypeNode = resultNode.FirstChild("addressingType");
     if(!addressingTypeNode.IsNull())
     {
-      m_addressingType = StringUtils::Trim(addressingTypeNode.GetText().c_str());
+      m_addressingType = addressingTypeNode.GetText();
       m_addressingTypeHasBeenSet = true;
     }
     XmlNode blockDeviceMappingsNode = resultNode.FirstChild("blockDeviceMapping");
@@ -132,7 +132,7 @@ SpotFleetLaunchSpecification& SpotFleetLaunchSpecification::operator =(const Xml
     XmlNode imageIdNode = resultNode.FirstChild("imageId");
     if(!imageIdNode.IsNull())
     {
-      m_imageId = StringUtils::Trim(imageIdNode.GetText().c_str());
+      m_imageId = imageIdNode.GetText();
       m_imageIdHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
@@ -144,13 +144,13 @@ SpotFleetLaunchSpecification& SpotFleetLaunchSpecification::operator =(const Xml
     XmlNode kernelIdNode = resultNode.FirstChild("kernelId");
     if(!kernelIdNode.IsNull())
     {
-      m_kernelId = StringUtils::Trim(kernelIdNode.GetText().c_str());
+      m_kernelId = kernelIdNode.GetText();
       m_kernelIdHasBeenSet = true;
     }
     XmlNode keyNameNode = resultNode.FirstChild("keyName");
     if(!keyNameNode.IsNull())
     {
-      m_keyName = StringUtils::Trim(keyNameNode.GetText().c_str());
+      m_keyName = keyNameNode.GetText();
       m_keyNameHasBeenSet = true;
     }
     XmlNode monitoringNode = resultNode.FirstChild("monitoring");
@@ -180,25 +180,25 @@ SpotFleetLaunchSpecification& SpotFleetLaunchSpecification::operator =(const Xml
     XmlNode ramdiskIdNode = resultNode.FirstChild("ramdiskId");
     if(!ramdiskIdNode.IsNull())
     {
-      m_ramdiskId = StringUtils::Trim(ramdiskIdNode.GetText().c_str());
+      m_ramdiskId = ramdiskIdNode.GetText();
       m_ramdiskIdHasBeenSet = true;
     }
     XmlNode spotPriceNode = resultNode.FirstChild("spotPrice");
     if(!spotPriceNode.IsNull())
     {
-      m_spotPrice = StringUtils::Trim(spotPriceNode.GetText().c_str());
+      m_spotPrice = spotPriceNode.GetText();
       m_spotPriceHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
-      m_subnetId = StringUtils::Trim(subnetIdNode.GetText().c_str());
+      m_subnetId = subnetIdNode.GetText();
       m_subnetIdHasBeenSet = true;
     }
     XmlNode userDataNode = resultNode.FirstChild("userData");
     if(!userDataNode.IsNull())
     {
-      m_userData = StringUtils::Trim(userDataNode.GetText().c_str());
+      m_userData = userDataNode.GetText();
       m_userDataHasBeenSet = true;
     }
     XmlNode weightedCapacityNode = resultNode.FirstChild("weightedCapacity");

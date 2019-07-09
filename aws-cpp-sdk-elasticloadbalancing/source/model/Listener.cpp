@@ -62,7 +62,7 @@ Listener& Listener::operator =(const XmlNode& xmlNode)
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = StringUtils::Trim(protocolNode.GetText().c_str());
+      m_protocol = protocolNode.GetText();
       m_protocolHasBeenSet = true;
     }
     XmlNode loadBalancerPortNode = resultNode.FirstChild("LoadBalancerPort");
@@ -74,7 +74,7 @@ Listener& Listener::operator =(const XmlNode& xmlNode)
     XmlNode instanceProtocolNode = resultNode.FirstChild("InstanceProtocol");
     if(!instanceProtocolNode.IsNull())
     {
-      m_instanceProtocol = StringUtils::Trim(instanceProtocolNode.GetText().c_str());
+      m_instanceProtocol = instanceProtocolNode.GetText();
       m_instanceProtocolHasBeenSet = true;
     }
     XmlNode instancePortNode = resultNode.FirstChild("InstancePort");
@@ -86,7 +86,7 @@ Listener& Listener::operator =(const XmlNode& xmlNode)
     XmlNode sSLCertificateIdNode = resultNode.FirstChild("SSLCertificateId");
     if(!sSLCertificateIdNode.IsNull())
     {
-      m_sSLCertificateId = StringUtils::Trim(sSLCertificateIdNode.GetText().c_str());
+      m_sSLCertificateId = sSLCertificateIdNode.GetText();
       m_sSLCertificateIdHasBeenSet = true;
     }
   }

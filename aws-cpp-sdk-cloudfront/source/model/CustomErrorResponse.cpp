@@ -66,13 +66,13 @@ CustomErrorResponse& CustomErrorResponse::operator =(const XmlNode& xmlNode)
     XmlNode responsePagePathNode = resultNode.FirstChild("ResponsePagePath");
     if(!responsePagePathNode.IsNull())
     {
-      m_responsePagePath = StringUtils::Trim(responsePagePathNode.GetText().c_str());
+      m_responsePagePath = responsePagePathNode.GetText();
       m_responsePagePathHasBeenSet = true;
     }
     XmlNode responseCodeNode = resultNode.FirstChild("ResponseCode");
     if(!responseCodeNode.IsNull())
     {
-      m_responseCode = StringUtils::Trim(responseCodeNode.GetText().c_str());
+      m_responseCode = responseCodeNode.GetText();
       m_responseCodeHasBeenSet = true;
     }
     XmlNode errorCachingMinTTLNode = resultNode.FirstChild("ErrorCachingMinTTL");

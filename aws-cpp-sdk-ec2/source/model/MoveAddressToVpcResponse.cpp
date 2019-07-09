@@ -53,7 +53,7 @@ MoveAddressToVpcResponse& MoveAddressToVpcResponse::operator =(const Aws::Amazon
     XmlNode allocationIdNode = resultNode.FirstChild("allocationId");
     if(!allocationIdNode.IsNull())
     {
-      m_allocationId = StringUtils::Trim(allocationIdNode.GetText().c_str());
+      m_allocationId = allocationIdNode.GetText();
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())

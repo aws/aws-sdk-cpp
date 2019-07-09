@@ -52,7 +52,7 @@ NewDhcpConfiguration& NewDhcpConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode keyNode = resultNode.FirstChild("key");
     if(!keyNode.IsNull())
     {
-      m_key = StringUtils::Trim(keyNode.GetText().c_str());
+      m_key = keyNode.GetText();
       m_keyHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("Value");
@@ -61,7 +61,7 @@ NewDhcpConfiguration& NewDhcpConfiguration::operator =(const XmlNode& xmlNode)
       XmlNode valuesMember = valuesNode.FirstChild("item");
       while(!valuesMember.IsNull())
       {
-        m_values.push_back(StringUtils::Trim(valuesMember.GetText().c_str()));
+        m_values.push_back(valuesMember.GetText());
         valuesMember = valuesMember.NextNode("item");
       }
 

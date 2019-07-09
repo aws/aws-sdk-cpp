@@ -74,19 +74,19 @@ FleetLaunchTemplateOverridesRequest& FleetLaunchTemplateOverridesRequest::operat
     XmlNode maxPriceNode = resultNode.FirstChild("MaxPrice");
     if(!maxPriceNode.IsNull())
     {
-      m_maxPrice = StringUtils::Trim(maxPriceNode.GetText().c_str());
+      m_maxPrice = maxPriceNode.GetText();
       m_maxPriceHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("SubnetId");
     if(!subnetIdNode.IsNull())
     {
-      m_subnetId = StringUtils::Trim(subnetIdNode.GetText().c_str());
+      m_subnetId = subnetIdNode.GetText();
       m_subnetIdHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode weightedCapacityNode = resultNode.FirstChild("WeightedCapacity");

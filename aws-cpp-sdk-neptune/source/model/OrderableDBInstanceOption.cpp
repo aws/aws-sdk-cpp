@@ -116,25 +116,25 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
     {
-      m_engine = StringUtils::Trim(engineNode.GetText().c_str());
+      m_engine = engineNode.GetText();
       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
-      m_engineVersion = StringUtils::Trim(engineVersionNode.GetText().c_str());
+      m_engineVersion = engineVersionNode.GetText();
       m_engineVersionHasBeenSet = true;
     }
     XmlNode dBInstanceClassNode = resultNode.FirstChild("DBInstanceClass");
     if(!dBInstanceClassNode.IsNull())
     {
-      m_dBInstanceClass = StringUtils::Trim(dBInstanceClassNode.GetText().c_str());
+      m_dBInstanceClass = dBInstanceClassNode.GetText();
       m_dBInstanceClassHasBeenSet = true;
     }
     XmlNode licenseModelNode = resultNode.FirstChild("LicenseModel");
     if(!licenseModelNode.IsNull())
     {
-      m_licenseModel = StringUtils::Trim(licenseModelNode.GetText().c_str());
+      m_licenseModel = licenseModelNode.GetText();
       m_licenseModelHasBeenSet = true;
     }
     XmlNode availabilityZonesNode = resultNode.FirstChild("AvailabilityZones");
@@ -176,7 +176,7 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
     XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
     if(!storageTypeNode.IsNull())
     {
-      m_storageType = StringUtils::Trim(storageTypeNode.GetText().c_str());
+      m_storageType = storageTypeNode.GetText();
       m_storageTypeHasBeenSet = true;
     }
     XmlNode supportsIopsNode = resultNode.FirstChild("SupportsIops");

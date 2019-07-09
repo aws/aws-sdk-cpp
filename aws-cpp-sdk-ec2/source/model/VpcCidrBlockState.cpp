@@ -60,7 +60,7 @@ VpcCidrBlockState& VpcCidrBlockState::operator =(const XmlNode& xmlNode)
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
-      m_statusMessage = StringUtils::Trim(statusMessageNode.GetText().c_str());
+      m_statusMessage = statusMessageNode.GetText();
       m_statusMessageHasBeenSet = true;
     }
   }

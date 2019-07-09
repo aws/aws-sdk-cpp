@@ -58,13 +58,13 @@ DashboardEntry& DashboardEntry::operator =(const XmlNode& xmlNode)
     XmlNode dashboardNameNode = resultNode.FirstChild("DashboardName");
     if(!dashboardNameNode.IsNull())
     {
-      m_dashboardName = StringUtils::Trim(dashboardNameNode.GetText().c_str());
+      m_dashboardName = dashboardNameNode.GetText();
       m_dashboardNameHasBeenSet = true;
     }
     XmlNode dashboardArnNode = resultNode.FirstChild("DashboardArn");
     if(!dashboardArnNode.IsNull())
     {
-      m_dashboardArn = StringUtils::Trim(dashboardArnNode.GetText().c_str());
+      m_dashboardArn = dashboardArnNode.GetText();
       m_dashboardArnHasBeenSet = true;
     }
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");

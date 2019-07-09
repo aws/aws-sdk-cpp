@@ -73,7 +73,7 @@ IdentityDkimAttributes& IdentityDkimAttributes::operator =(const XmlNode& xmlNod
       XmlNode dkimTokensMember = dkimTokensNode.FirstChild("member");
       while(!dkimTokensMember.IsNull())
       {
-        m_dkimTokens.push_back(StringUtils::Trim(dkimTokensMember.GetText().c_str()));
+        m_dkimTokens.push_back(dkimTokensMember.GetText());
         dkimTokensMember = dkimTokensMember.NextNode("member");
       }
 

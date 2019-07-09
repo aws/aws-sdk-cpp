@@ -100,7 +100,7 @@ ReservedInstancesOffering& ReservedInstancesOffering::operator =(const XmlNode& 
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode durationNode = resultNode.FirstChild("duration");
@@ -130,7 +130,7 @@ ReservedInstancesOffering& ReservedInstancesOffering::operator =(const XmlNode& 
     XmlNode reservedInstancesOfferingIdNode = resultNode.FirstChild("reservedInstancesOfferingId");
     if(!reservedInstancesOfferingIdNode.IsNull())
     {
-      m_reservedInstancesOfferingId = StringUtils::Trim(reservedInstancesOfferingIdNode.GetText().c_str());
+      m_reservedInstancesOfferingId = reservedInstancesOfferingIdNode.GetText();
       m_reservedInstancesOfferingIdHasBeenSet = true;
     }
     XmlNode usagePriceNode = resultNode.FirstChild("usagePrice");

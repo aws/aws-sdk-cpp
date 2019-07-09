@@ -56,25 +56,25 @@ Template& Template::operator =(const XmlNode& xmlNode)
     XmlNode templateNameNode = resultNode.FirstChild("TemplateName");
     if(!templateNameNode.IsNull())
     {
-      m_templateName = StringUtils::Trim(templateNameNode.GetText().c_str());
+      m_templateName = templateNameNode.GetText();
       m_templateNameHasBeenSet = true;
     }
     XmlNode subjectPartNode = resultNode.FirstChild("SubjectPart");
     if(!subjectPartNode.IsNull())
     {
-      m_subjectPart = StringUtils::Trim(subjectPartNode.GetText().c_str());
+      m_subjectPart = subjectPartNode.GetText();
       m_subjectPartHasBeenSet = true;
     }
     XmlNode textPartNode = resultNode.FirstChild("TextPart");
     if(!textPartNode.IsNull())
     {
-      m_textPart = StringUtils::Trim(textPartNode.GetText().c_str());
+      m_textPart = textPartNode.GetText();
       m_textPartHasBeenSet = true;
     }
     XmlNode htmlPartNode = resultNode.FirstChild("HtmlPart");
     if(!htmlPartNode.IsNull())
     {
-      m_htmlPart = StringUtils::Trim(htmlPartNode.GetText().c_str());
+      m_htmlPart = htmlPartNode.GetText();
       m_htmlPartHasBeenSet = true;
     }
   }

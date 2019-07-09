@@ -57,7 +57,7 @@ SslPolicy& SslPolicy::operator =(const XmlNode& xmlNode)
       XmlNode sslProtocolsMember = sslProtocolsNode.FirstChild("member");
       while(!sslProtocolsMember.IsNull())
       {
-        m_sslProtocols.push_back(StringUtils::Trim(sslProtocolsMember.GetText().c_str()));
+        m_sslProtocols.push_back(sslProtocolsMember.GetText());
         sslProtocolsMember = sslProtocolsMember.NextNode("member");
       }
 
@@ -78,7 +78,7 @@ SslPolicy& SslPolicy::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
   }

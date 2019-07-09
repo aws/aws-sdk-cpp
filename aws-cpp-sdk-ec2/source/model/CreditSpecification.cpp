@@ -50,7 +50,7 @@ CreditSpecification& CreditSpecification::operator =(const XmlNode& xmlNode)
     XmlNode cpuCreditsNode = resultNode.FirstChild("cpuCredits");
     if(!cpuCreditsNode.IsNull())
     {
-      m_cpuCredits = StringUtils::Trim(cpuCreditsNode.GetText().c_str());
+      m_cpuCredits = cpuCreditsNode.GetText();
       m_cpuCreditsHasBeenSet = true;
     }
   }

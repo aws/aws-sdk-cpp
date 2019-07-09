@@ -54,7 +54,7 @@ MessageDsn& MessageDsn::operator =(const XmlNode& xmlNode)
     XmlNode reportingMtaNode = resultNode.FirstChild("ReportingMta");
     if(!reportingMtaNode.IsNull())
     {
-      m_reportingMta = StringUtils::Trim(reportingMtaNode.GetText().c_str());
+      m_reportingMta = reportingMtaNode.GetText();
       m_reportingMtaHasBeenSet = true;
     }
     XmlNode arrivalDateNode = resultNode.FirstChild("ArrivalDate");

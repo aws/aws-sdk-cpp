@@ -76,13 +76,13 @@ ReservedDBInstancesOffering& ReservedDBInstancesOffering::operator =(const XmlNo
     XmlNode reservedDBInstancesOfferingIdNode = resultNode.FirstChild("ReservedDBInstancesOfferingId");
     if(!reservedDBInstancesOfferingIdNode.IsNull())
     {
-      m_reservedDBInstancesOfferingId = StringUtils::Trim(reservedDBInstancesOfferingIdNode.GetText().c_str());
+      m_reservedDBInstancesOfferingId = reservedDBInstancesOfferingIdNode.GetText();
       m_reservedDBInstancesOfferingIdHasBeenSet = true;
     }
     XmlNode dBInstanceClassNode = resultNode.FirstChild("DBInstanceClass");
     if(!dBInstanceClassNode.IsNull())
     {
-      m_dBInstanceClass = StringUtils::Trim(dBInstanceClassNode.GetText().c_str());
+      m_dBInstanceClass = dBInstanceClassNode.GetText();
       m_dBInstanceClassHasBeenSet = true;
     }
     XmlNode durationNode = resultNode.FirstChild("Duration");
@@ -106,19 +106,19 @@ ReservedDBInstancesOffering& ReservedDBInstancesOffering::operator =(const XmlNo
     XmlNode currencyCodeNode = resultNode.FirstChild("CurrencyCode");
     if(!currencyCodeNode.IsNull())
     {
-      m_currencyCode = StringUtils::Trim(currencyCodeNode.GetText().c_str());
+      m_currencyCode = currencyCodeNode.GetText();
       m_currencyCodeHasBeenSet = true;
     }
     XmlNode productDescriptionNode = resultNode.FirstChild("ProductDescription");
     if(!productDescriptionNode.IsNull())
     {
-      m_productDescription = StringUtils::Trim(productDescriptionNode.GetText().c_str());
+      m_productDescription = productDescriptionNode.GetText();
       m_productDescriptionHasBeenSet = true;
     }
     XmlNode offeringTypeNode = resultNode.FirstChild("OfferingType");
     if(!offeringTypeNode.IsNull())
     {
-      m_offeringType = StringUtils::Trim(offeringTypeNode.GetText().c_str());
+      m_offeringType = offeringTypeNode.GetText();
       m_offeringTypeHasBeenSet = true;
     }
     XmlNode multiAZNode = resultNode.FirstChild("MultiAZ");

@@ -51,7 +51,7 @@ AssociateClientVpnTargetNetworkResponse& AssociateClientVpnTargetNetworkResponse
     XmlNode associationIdNode = resultNode.FirstChild("associationId");
     if(!associationIdNode.IsNull())
     {
-      m_associationId = StringUtils::Trim(associationIdNode.GetText().c_str());
+      m_associationId = associationIdNode.GetText();
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())

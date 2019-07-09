@@ -51,7 +51,7 @@ CreateLoadBalancerResult& CreateLoadBalancerResult::operator =(const Aws::Amazon
     XmlNode dNSNameNode = resultNode.FirstChild("DNSName");
     if(!dNSNameNode.IsNull())
     {
-      m_dNSName = StringUtils::Trim(dNSNameNode.GetText().c_str());
+      m_dNSName = dNSNameNode.GetText();
     }
   }
 

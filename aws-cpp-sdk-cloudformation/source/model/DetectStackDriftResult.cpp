@@ -51,7 +51,7 @@ DetectStackDriftResult& DetectStackDriftResult::operator =(const Aws::AmazonWebS
     XmlNode stackDriftDetectionIdNode = resultNode.FirstChild("StackDriftDetectionId");
     if(!stackDriftDetectionIdNode.IsNull())
     {
-      m_stackDriftDetectionId = StringUtils::Trim(stackDriftDetectionIdNode.GetText().c_str());
+      m_stackDriftDetectionId = stackDriftDetectionIdNode.GetText();
     }
   }
 

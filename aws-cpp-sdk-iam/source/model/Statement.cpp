@@ -58,7 +58,7 @@ Statement& Statement::operator =(const XmlNode& xmlNode)
     XmlNode sourcePolicyIdNode = resultNode.FirstChild("SourcePolicyId");
     if(!sourcePolicyIdNode.IsNull())
     {
-      m_sourcePolicyId = StringUtils::Trim(sourcePolicyIdNode.GetText().c_str());
+      m_sourcePolicyId = sourcePolicyIdNode.GetText();
       m_sourcePolicyIdHasBeenSet = true;
     }
     XmlNode sourcePolicyTypeNode = resultNode.FirstChild("SourcePolicyType");

@@ -56,25 +56,25 @@ VolumeStatusAction& VolumeStatusAction::operator =(const XmlNode& xmlNode)
     XmlNode codeNode = resultNode.FirstChild("code");
     if(!codeNode.IsNull())
     {
-      m_code = StringUtils::Trim(codeNode.GetText().c_str());
+      m_code = codeNode.GetText();
       m_codeHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode eventIdNode = resultNode.FirstChild("eventId");
     if(!eventIdNode.IsNull())
     {
-      m_eventId = StringUtils::Trim(eventIdNode.GetText().c_str());
+      m_eventId = eventIdNode.GetText();
       m_eventIdHasBeenSet = true;
     }
     XmlNode eventTypeNode = resultNode.FirstChild("eventType");
     if(!eventTypeNode.IsNull())
     {
-      m_eventType = StringUtils::Trim(eventTypeNode.GetText().c_str());
+      m_eventType = eventTypeNode.GetText();
       m_eventTypeHasBeenSet = true;
     }
   }

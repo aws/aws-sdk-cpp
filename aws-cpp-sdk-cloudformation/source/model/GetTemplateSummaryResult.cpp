@@ -62,7 +62,7 @@ GetTemplateSummaryResult& GetTemplateSummaryResult::operator =(const Aws::Amazon
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
     }
     XmlNode capabilitiesNode = resultNode.FirstChild("Capabilities");
     if(!capabilitiesNode.IsNull())
@@ -78,7 +78,7 @@ GetTemplateSummaryResult& GetTemplateSummaryResult::operator =(const Aws::Amazon
     XmlNode capabilitiesReasonNode = resultNode.FirstChild("CapabilitiesReason");
     if(!capabilitiesReasonNode.IsNull())
     {
-      m_capabilitiesReason = StringUtils::Trim(capabilitiesReasonNode.GetText().c_str());
+      m_capabilitiesReason = capabilitiesReasonNode.GetText();
     }
     XmlNode resourceTypesNode = resultNode.FirstChild("ResourceTypes");
     if(!resourceTypesNode.IsNull())
@@ -86,7 +86,7 @@ GetTemplateSummaryResult& GetTemplateSummaryResult::operator =(const Aws::Amazon
       XmlNode resourceTypesMember = resourceTypesNode.FirstChild("member");
       while(!resourceTypesMember.IsNull())
       {
-        m_resourceTypes.push_back(StringUtils::Trim(resourceTypesMember.GetText().c_str()));
+        m_resourceTypes.push_back(resourceTypesMember.GetText());
         resourceTypesMember = resourceTypesMember.NextNode("member");
       }
 
@@ -94,12 +94,12 @@ GetTemplateSummaryResult& GetTemplateSummaryResult::operator =(const Aws::Amazon
     XmlNode versionNode = resultNode.FirstChild("Version");
     if(!versionNode.IsNull())
     {
-      m_version = StringUtils::Trim(versionNode.GetText().c_str());
+      m_version = versionNode.GetText();
     }
     XmlNode metadataNode = resultNode.FirstChild("Metadata");
     if(!metadataNode.IsNull())
     {
-      m_metadata = StringUtils::Trim(metadataNode.GetText().c_str());
+      m_metadata = metadataNode.GetText();
     }
     XmlNode declaredTransformsNode = resultNode.FirstChild("DeclaredTransforms");
     if(!declaredTransformsNode.IsNull())
@@ -107,7 +107,7 @@ GetTemplateSummaryResult& GetTemplateSummaryResult::operator =(const Aws::Amazon
       XmlNode declaredTransformsMember = declaredTransformsNode.FirstChild("member");
       while(!declaredTransformsMember.IsNull())
       {
-        m_declaredTransforms.push_back(StringUtils::Trim(declaredTransformsMember.GetText().c_str()));
+        m_declaredTransforms.push_back(declaredTransformsMember.GetText());
         declaredTransformsMember = declaredTransformsMember.NextNode("member");
       }
 

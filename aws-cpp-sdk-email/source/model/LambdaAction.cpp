@@ -56,13 +56,13 @@ LambdaAction& LambdaAction::operator =(const XmlNode& xmlNode)
     XmlNode topicArnNode = resultNode.FirstChild("TopicArn");
     if(!topicArnNode.IsNull())
     {
-      m_topicArn = StringUtils::Trim(topicArnNode.GetText().c_str());
+      m_topicArn = topicArnNode.GetText();
       m_topicArnHasBeenSet = true;
     }
     XmlNode functionArnNode = resultNode.FirstChild("FunctionArn");
     if(!functionArnNode.IsNull())
     {
-      m_functionArn = StringUtils::Trim(functionArnNode.GetText().c_str());
+      m_functionArn = functionArnNode.GetText();
       m_functionArnHasBeenSet = true;
     }
     XmlNode invocationTypeNode = resultNode.FirstChild("InvocationType");

@@ -62,13 +62,13 @@ MultipartUpload& MultipartUpload::operator =(const XmlNode& xmlNode)
     XmlNode uploadIdNode = resultNode.FirstChild("UploadId");
     if(!uploadIdNode.IsNull())
     {
-      m_uploadId = StringUtils::Trim(uploadIdNode.GetText().c_str());
+      m_uploadId = uploadIdNode.GetText();
       m_uploadIdHasBeenSet = true;
     }
     XmlNode keyNode = resultNode.FirstChild("Key");
     if(!keyNode.IsNull())
     {
-      m_key = StringUtils::Trim(keyNode.GetText().c_str());
+      m_key = keyNode.GetText();
       m_keyHasBeenSet = true;
     }
     XmlNode initiatedNode = resultNode.FirstChild("Initiated");

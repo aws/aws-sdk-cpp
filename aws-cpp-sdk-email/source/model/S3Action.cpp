@@ -56,25 +56,25 @@ S3Action& S3Action::operator =(const XmlNode& xmlNode)
     XmlNode topicArnNode = resultNode.FirstChild("TopicArn");
     if(!topicArnNode.IsNull())
     {
-      m_topicArn = StringUtils::Trim(topicArnNode.GetText().c_str());
+      m_topicArn = topicArnNode.GetText();
       m_topicArnHasBeenSet = true;
     }
     XmlNode bucketNameNode = resultNode.FirstChild("BucketName");
     if(!bucketNameNode.IsNull())
     {
-      m_bucketName = StringUtils::Trim(bucketNameNode.GetText().c_str());
+      m_bucketName = bucketNameNode.GetText();
       m_bucketNameHasBeenSet = true;
     }
     XmlNode objectKeyPrefixNode = resultNode.FirstChild("ObjectKeyPrefix");
     if(!objectKeyPrefixNode.IsNull())
     {
-      m_objectKeyPrefix = StringUtils::Trim(objectKeyPrefixNode.GetText().c_str());
+      m_objectKeyPrefix = objectKeyPrefixNode.GetText();
       m_objectKeyPrefixHasBeenSet = true;
     }
     XmlNode kmsKeyArnNode = resultNode.FirstChild("KmsKeyArn");
     if(!kmsKeyArnNode.IsNull())
     {
-      m_kmsKeyArn = StringUtils::Trim(kmsKeyArnNode.GetText().c_str());
+      m_kmsKeyArn = kmsKeyArnNode.GetText();
       m_kmsKeyArnHasBeenSet = true;
     }
   }

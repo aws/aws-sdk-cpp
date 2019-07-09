@@ -68,25 +68,25 @@ UserDetail& UserDetail::operator =(const XmlNode& xmlNode)
     XmlNode pathNode = resultNode.FirstChild("Path");
     if(!pathNode.IsNull())
     {
-      m_path = StringUtils::Trim(pathNode.GetText().c_str());
+      m_path = pathNode.GetText();
       m_pathHasBeenSet = true;
     }
     XmlNode userNameNode = resultNode.FirstChild("UserName");
     if(!userNameNode.IsNull())
     {
-      m_userName = StringUtils::Trim(userNameNode.GetText().c_str());
+      m_userName = userNameNode.GetText();
       m_userNameHasBeenSet = true;
     }
     XmlNode userIdNode = resultNode.FirstChild("UserId");
     if(!userIdNode.IsNull())
     {
-      m_userId = StringUtils::Trim(userIdNode.GetText().c_str());
+      m_userId = userIdNode.GetText();
       m_userIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
-      m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+      m_arn = arnNode.GetText();
       m_arnHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
@@ -113,7 +113,7 @@ UserDetail& UserDetail::operator =(const XmlNode& xmlNode)
       XmlNode groupListMember = groupListNode.FirstChild("member");
       while(!groupListMember.IsNull())
       {
-        m_groupList.push_back(StringUtils::Trim(groupListMember.GetText().c_str()));
+        m_groupList.push_back(groupListMember.GetText());
         groupListMember = groupListMember.NextNode("member");
       }
 

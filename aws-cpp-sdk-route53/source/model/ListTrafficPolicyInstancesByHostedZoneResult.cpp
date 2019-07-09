@@ -59,7 +59,7 @@ ListTrafficPolicyInstancesByHostedZoneResult& ListTrafficPolicyInstancesByHosted
     XmlNode trafficPolicyInstanceNameMarkerNode = resultNode.FirstChild("TrafficPolicyInstanceNameMarker");
     if(!trafficPolicyInstanceNameMarkerNode.IsNull())
     {
-      m_trafficPolicyInstanceNameMarker = StringUtils::Trim(trafficPolicyInstanceNameMarkerNode.GetText().c_str());
+      m_trafficPolicyInstanceNameMarker = trafficPolicyInstanceNameMarkerNode.GetText();
     }
     XmlNode trafficPolicyInstanceTypeMarkerNode = resultNode.FirstChild("TrafficPolicyInstanceTypeMarker");
     if(!trafficPolicyInstanceTypeMarkerNode.IsNull())
@@ -74,7 +74,7 @@ ListTrafficPolicyInstancesByHostedZoneResult& ListTrafficPolicyInstancesByHosted
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");
     if(!maxItemsNode.IsNull())
     {
-      m_maxItems = StringUtils::Trim(maxItemsNode.GetText().c_str());
+      m_maxItems = maxItemsNode.GetText();
     }
   }
 

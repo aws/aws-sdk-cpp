@@ -53,17 +53,17 @@ AllocateAddressResponse& AllocateAddressResponse::operator =(const Aws::AmazonWe
     XmlNode publicIpNode = resultNode.FirstChild("publicIp");
     if(!publicIpNode.IsNull())
     {
-      m_publicIp = StringUtils::Trim(publicIpNode.GetText().c_str());
+      m_publicIp = publicIpNode.GetText();
     }
     XmlNode allocationIdNode = resultNode.FirstChild("allocationId");
     if(!allocationIdNode.IsNull())
     {
-      m_allocationId = StringUtils::Trim(allocationIdNode.GetText().c_str());
+      m_allocationId = allocationIdNode.GetText();
     }
     XmlNode publicIpv4PoolNode = resultNode.FirstChild("publicIpv4Pool");
     if(!publicIpv4PoolNode.IsNull())
     {
-      m_publicIpv4Pool = StringUtils::Trim(publicIpv4PoolNode.GetText().c_str());
+      m_publicIpv4Pool = publicIpv4PoolNode.GetText();
     }
     XmlNode domainNode = resultNode.FirstChild("domain");
     if(!domainNode.IsNull())

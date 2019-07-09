@@ -54,13 +54,13 @@ RevisionTarget& RevisionTarget::operator =(const XmlNode& xmlNode)
     XmlNode databaseRevisionNode = resultNode.FirstChild("DatabaseRevision");
     if(!databaseRevisionNode.IsNull())
     {
-      m_databaseRevision = StringUtils::Trim(databaseRevisionNode.GetText().c_str());
+      m_databaseRevision = databaseRevisionNode.GetText();
       m_databaseRevisionHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode databaseRevisionReleaseDateNode = resultNode.FirstChild("DatabaseRevisionReleaseDate");

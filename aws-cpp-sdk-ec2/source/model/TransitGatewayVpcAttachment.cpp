@@ -68,25 +68,25 @@ TransitGatewayVpcAttachment& TransitGatewayVpcAttachment::operator =(const XmlNo
     XmlNode transitGatewayAttachmentIdNode = resultNode.FirstChild("transitGatewayAttachmentId");
     if(!transitGatewayAttachmentIdNode.IsNull())
     {
-      m_transitGatewayAttachmentId = StringUtils::Trim(transitGatewayAttachmentIdNode.GetText().c_str());
+      m_transitGatewayAttachmentId = transitGatewayAttachmentIdNode.GetText();
       m_transitGatewayAttachmentIdHasBeenSet = true;
     }
     XmlNode transitGatewayIdNode = resultNode.FirstChild("transitGatewayId");
     if(!transitGatewayIdNode.IsNull())
     {
-      m_transitGatewayId = StringUtils::Trim(transitGatewayIdNode.GetText().c_str());
+      m_transitGatewayId = transitGatewayIdNode.GetText();
       m_transitGatewayIdHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
+      m_vpcId = vpcIdNode.GetText();
       m_vpcIdHasBeenSet = true;
     }
     XmlNode vpcOwnerIdNode = resultNode.FirstChild("vpcOwnerId");
     if(!vpcOwnerIdNode.IsNull())
     {
-      m_vpcOwnerId = StringUtils::Trim(vpcOwnerIdNode.GetText().c_str());
+      m_vpcOwnerId = vpcOwnerIdNode.GetText();
       m_vpcOwnerIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
@@ -101,7 +101,7 @@ TransitGatewayVpcAttachment& TransitGatewayVpcAttachment::operator =(const XmlNo
       XmlNode subnetIdsMember = subnetIdsNode.FirstChild("item");
       while(!subnetIdsMember.IsNull())
       {
-        m_subnetIds.push_back(StringUtils::Trim(subnetIdsMember.GetText().c_str()));
+        m_subnetIds.push_back(subnetIdsMember.GetText());
         subnetIdsMember = subnetIdsMember.NextNode("item");
       }
 

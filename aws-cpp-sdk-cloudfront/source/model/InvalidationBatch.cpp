@@ -58,7 +58,7 @@ InvalidationBatch& InvalidationBatch::operator =(const XmlNode& xmlNode)
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
     if(!callerReferenceNode.IsNull())
     {
-      m_callerReference = StringUtils::Trim(callerReferenceNode.GetText().c_str());
+      m_callerReference = callerReferenceNode.GetText();
       m_callerReferenceHasBeenSet = true;
     }
   }

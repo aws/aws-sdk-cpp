@@ -29,7 +29,10 @@ namespace Model
     GreaterThanOrEqualToThreshold,
     GreaterThanThreshold,
     LessThanThreshold,
-    LessThanOrEqualToThreshold
+    LessThanOrEqualToThreshold,
+    LessThanLowerOrGreaterThanUpperThreshold,
+    LessThanLowerThreshold,
+    GreaterThanUpperThreshold
   };
 
 namespace ComparisonOperatorMapper

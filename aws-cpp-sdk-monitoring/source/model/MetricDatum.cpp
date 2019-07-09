@@ -72,7 +72,7 @@ MetricDatum& MetricDatum::operator =(const XmlNode& xmlNode)
     XmlNode metricNameNode = resultNode.FirstChild("MetricName");
     if(!metricNameNode.IsNull())
     {
-      m_metricName = StringUtils::Trim(metricNameNode.GetText().c_str());
+      m_metricName = metricNameNode.GetText();
       m_metricNameHasBeenSet = true;
     }
     XmlNode dimensionsNode = resultNode.FirstChild("Dimensions");

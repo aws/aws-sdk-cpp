@@ -26,7 +26,10 @@ namespace Model
   enum class TransitionToIARules
   {
     NOT_SET,
-    AFTER_30_DAYS
+    AFTER_14_DAYS,
+    AFTER_30_DAYS,
+    AFTER_60_DAYS,
+    AFTER_90_DAYS
   };
 
 namespace TransitionToIARulesMapper

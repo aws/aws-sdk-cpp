@@ -52,7 +52,7 @@ ReplicationConfiguration& ReplicationConfiguration::operator =(const XmlNode& xm
     XmlNode roleNode = resultNode.FirstChild("Role");
     if(!roleNode.IsNull())
     {
-      m_role = StringUtils::Trim(roleNode.GetText().c_str());
+      m_role = roleNode.GetText();
       m_roleHasBeenSet = true;
     }
     XmlNode rulesNode = resultNode.FirstChild("Rule");

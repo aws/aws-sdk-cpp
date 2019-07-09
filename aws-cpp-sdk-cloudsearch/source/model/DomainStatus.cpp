@@ -86,19 +86,19 @@ DomainStatus& DomainStatus::operator =(const XmlNode& xmlNode)
     XmlNode domainIdNode = resultNode.FirstChild("DomainId");
     if(!domainIdNode.IsNull())
     {
-      m_domainId = StringUtils::Trim(domainIdNode.GetText().c_str());
+      m_domainId = domainIdNode.GetText();
       m_domainIdHasBeenSet = true;
     }
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
     if(!domainNameNode.IsNull())
     {
-      m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
+      m_domainName = domainNameNode.GetText();
       m_domainNameHasBeenSet = true;
     }
     XmlNode aRNNode = resultNode.FirstChild("ARN");
     if(!aRNNode.IsNull())
     {
-      m_aRN = StringUtils::Trim(aRNNode.GetText().c_str());
+      m_aRN = aRNNode.GetText();
       m_aRNHasBeenSet = true;
     }
     XmlNode createdNode = resultNode.FirstChild("Created");
@@ -140,7 +140,7 @@ DomainStatus& DomainStatus::operator =(const XmlNode& xmlNode)
     XmlNode searchInstanceTypeNode = resultNode.FirstChild("SearchInstanceType");
     if(!searchInstanceTypeNode.IsNull())
     {
-      m_searchInstanceType = StringUtils::Trim(searchInstanceTypeNode.GetText().c_str());
+      m_searchInstanceType = searchInstanceTypeNode.GetText();
       m_searchInstanceTypeHasBeenSet = true;
     }
     XmlNode searchPartitionCountNode = resultNode.FirstChild("SearchPartitionCount");

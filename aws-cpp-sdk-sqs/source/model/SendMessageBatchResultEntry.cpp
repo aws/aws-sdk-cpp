@@ -58,31 +58,31 @@ SendMessageBatchResultEntry& SendMessageBatchResultEntry::operator =(const XmlNo
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
     if(!messageIdNode.IsNull())
     {
-      m_messageId = StringUtils::Trim(messageIdNode.GetText().c_str());
+      m_messageId = messageIdNode.GetText();
       m_messageIdHasBeenSet = true;
     }
     XmlNode mD5OfMessageBodyNode = resultNode.FirstChild("MD5OfMessageBody");
     if(!mD5OfMessageBodyNode.IsNull())
     {
-      m_mD5OfMessageBody = StringUtils::Trim(mD5OfMessageBodyNode.GetText().c_str());
+      m_mD5OfMessageBody = mD5OfMessageBodyNode.GetText();
       m_mD5OfMessageBodyHasBeenSet = true;
     }
     XmlNode mD5OfMessageAttributesNode = resultNode.FirstChild("MD5OfMessageAttributes");
     if(!mD5OfMessageAttributesNode.IsNull())
     {
-      m_mD5OfMessageAttributes = StringUtils::Trim(mD5OfMessageAttributesNode.GetText().c_str());
+      m_mD5OfMessageAttributes = mD5OfMessageAttributesNode.GetText();
       m_mD5OfMessageAttributesHasBeenSet = true;
     }
     XmlNode sequenceNumberNode = resultNode.FirstChild("SequenceNumber");
     if(!sequenceNumberNode.IsNull())
     {
-      m_sequenceNumber = StringUtils::Trim(sequenceNumberNode.GetText().c_str());
+      m_sequenceNumber = sequenceNumberNode.GetText();
       m_sequenceNumberHasBeenSet = true;
     }
   }

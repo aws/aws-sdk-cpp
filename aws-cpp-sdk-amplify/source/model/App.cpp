@@ -49,7 +49,11 @@ App::App() :
     m_basicAuthCredentialsHasBeenSet(false),
     m_customRulesHasBeenSet(false),
     m_productionBranchHasBeenSet(false),
-    m_buildSpecHasBeenSet(false)
+    m_buildSpecHasBeenSet(false),
+    m_enableAutoBranchCreation(false),
+    m_enableAutoBranchCreationHasBeenSet(false),
+    m_autoBranchCreationPatternsHasBeenSet(false),
+    m_autoBranchCreationConfigHasBeenSet(false)
 {
 }
 
@@ -74,7 +78,11 @@ App::App(JsonView jsonValue) :
     m_basicAuthCredentialsHasBeenSet(false),
     m_customRulesHasBeenSet(false),
     m_productionBranchHasBeenSet(false),
-    m_buildSpecHasBeenSet(false)
+    m_buildSpecHasBeenSet(false),
+    m_enableAutoBranchCreation(false),
+    m_enableAutoBranchCreationHasBeenSet(false),
+    m_autoBranchCreationPatternsHasBeenSet(false),
+    m_autoBranchCreationConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -216,6 +224,30 @@ App& App::operator =(JsonView jsonValue)
     m_buildSpecHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("enableAutoBranchCreation"))
+  {
+    m_enableAutoBranchCreation = jsonValue.GetBool("enableAutoBranchCreation");
+
+    m_enableAutoBranchCreationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("autoBranchCreationPatterns"))
+  {
+    Array<JsonView> autoBranchCreationPatternsJsonList = jsonValue.GetArray("autoBranchCreationPatterns");
+    for(unsigned autoBranchCreationPatternsIndex = 0; autoBranchCreationPatternsIndex < autoBranchCreationPatternsJsonList.GetLength(); ++autoBranchCreationPatternsIndex)
+    {
+      m_autoBranchCreationPatterns.push_back(autoBranchCreationPatternsJsonList[autoBranchCreationPatternsIndex].AsString());
+    }
+    m_autoBranchCreationPatternsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("autoBranchCreationConfig"))
+  {
+    m_autoBranchCreationConfig = jsonValue.GetObject("autoBranchCreationConfig");
+
+    m_autoBranchCreationConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -340,6 +372,29 @@ JsonValue App::Jsonize() const
   if(m_buildSpecHasBeenSet)
   {
    payload.WithString("buildSpec", m_buildSpec);
+
+  }
+
+  if(m_enableAutoBranchCreationHasBeenSet)
+  {
+   payload.WithBool("enableAutoBranchCreation", m_enableAutoBranchCreation);
+
+  }
+
+  if(m_autoBranchCreationPatternsHasBeenSet)
+  {
+   Array<JsonValue> autoBranchCreationPatternsJsonList(m_autoBranchCreationPatterns.size());
+   for(unsigned autoBranchCreationPatternsIndex = 0; autoBranchCreationPatternsIndex < autoBranchCreationPatternsJsonList.GetLength(); ++autoBranchCreationPatternsIndex)
+   {
+     autoBranchCreationPatternsJsonList[autoBranchCreationPatternsIndex].AsString(m_autoBranchCreationPatterns[autoBranchCreationPatternsIndex]);
+   }
+   payload.WithArray("autoBranchCreationPatterns", std::move(autoBranchCreationPatternsJsonList));
+
+  }
+
+  if(m_autoBranchCreationConfigHasBeenSet)
+  {
+   payload.WithObject("autoBranchCreationConfig", m_autoBranchCreationConfig.Jsonize());
 
   }
 

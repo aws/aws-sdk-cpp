@@ -57,7 +57,7 @@ GetIdentityNotificationAttributesResult& GetIdentityNotificationAttributesResult
       {
         XmlNode keyNode = notificationAttributesEntry.FirstChild("key");
         XmlNode valueNode = notificationAttributesEntry.FirstChild("value");
-        m_notificationAttributes[StringUtils::Trim(keyNode.GetText().c_str())] =
+        m_notificationAttributes[keyNode.GetText()] =
             valueNode;
         notificationAttributesEntry = notificationAttributesEntry.NextNode("entry");
       }

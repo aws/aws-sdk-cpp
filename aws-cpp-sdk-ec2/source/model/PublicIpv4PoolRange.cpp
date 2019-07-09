@@ -60,13 +60,13 @@ PublicIpv4PoolRange& PublicIpv4PoolRange::operator =(const XmlNode& xmlNode)
     XmlNode firstAddressNode = resultNode.FirstChild("firstAddress");
     if(!firstAddressNode.IsNull())
     {
-      m_firstAddress = StringUtils::Trim(firstAddressNode.GetText().c_str());
+      m_firstAddress = firstAddressNode.GetText();
       m_firstAddressHasBeenSet = true;
     }
     XmlNode lastAddressNode = resultNode.FirstChild("lastAddress");
     if(!lastAddressNode.IsNull())
     {
-      m_lastAddress = StringUtils::Trim(lastAddressNode.GetText().c_str());
+      m_lastAddress = lastAddressNode.GetText();
       m_lastAddressHasBeenSet = true;
     }
     XmlNode addressCountNode = resultNode.FirstChild("addressCount");

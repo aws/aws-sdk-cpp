@@ -62,7 +62,7 @@ InstanceStatusEvent& InstanceStatusEvent::operator =(const XmlNode& xmlNode)
     XmlNode instanceEventIdNode = resultNode.FirstChild("instanceEventId");
     if(!instanceEventIdNode.IsNull())
     {
-      m_instanceEventId = StringUtils::Trim(instanceEventIdNode.GetText().c_str());
+      m_instanceEventId = instanceEventIdNode.GetText();
       m_instanceEventIdHasBeenSet = true;
     }
     XmlNode codeNode = resultNode.FirstChild("code");
@@ -74,7 +74,7 @@ InstanceStatusEvent& InstanceStatusEvent::operator =(const XmlNode& xmlNode)
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode notAfterNode = resultNode.FirstChild("notAfter");

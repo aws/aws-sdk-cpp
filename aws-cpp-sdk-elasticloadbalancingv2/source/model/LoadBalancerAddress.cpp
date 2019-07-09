@@ -52,13 +52,13 @@ LoadBalancerAddress& LoadBalancerAddress::operator =(const XmlNode& xmlNode)
     XmlNode ipAddressNode = resultNode.FirstChild("IpAddress");
     if(!ipAddressNode.IsNull())
     {
-      m_ipAddress = StringUtils::Trim(ipAddressNode.GetText().c_str());
+      m_ipAddress = ipAddressNode.GetText();
       m_ipAddressHasBeenSet = true;
     }
     XmlNode allocationIdNode = resultNode.FirstChild("AllocationId");
     if(!allocationIdNode.IsNull())
     {
-      m_allocationId = StringUtils::Trim(allocationIdNode.GetText().c_str());
+      m_allocationId = allocationIdNode.GetText();
       m_allocationIdHasBeenSet = true;
     }
   }

@@ -34,6 +34,7 @@ static const int DASHBOARD_INVALID_INPUT_HASH = HashingUtils::HashString("Invali
 static const int DASHBOARD_NOT_FOUND_HASH = HashingUtils::HashString("ResourceNotFound");
 static const int INVALID_FORMAT_FAULT_HASH = HashingUtils::HashString("InvalidFormat");
 static const int INTERNAL_SERVICE_FAULT_HASH = HashingUtils::HashString("InternalServiceError");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextToken");
 
@@ -65,6 +66,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_SERVICE_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::INTERNAL_SERVICE_FAULT), true);
+  }
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::LIMIT_EXCEEDED), false);
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {

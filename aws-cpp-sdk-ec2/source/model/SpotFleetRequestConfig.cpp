@@ -80,7 +80,7 @@ SpotFleetRequestConfig& SpotFleetRequestConfig::operator =(const XmlNode& xmlNod
     XmlNode spotFleetRequestIdNode = resultNode.FirstChild("spotFleetRequestId");
     if(!spotFleetRequestIdNode.IsNull())
     {
-      m_spotFleetRequestId = StringUtils::Trim(spotFleetRequestIdNode.GetText().c_str());
+      m_spotFleetRequestId = spotFleetRequestIdNode.GetText();
       m_spotFleetRequestIdHasBeenSet = true;
     }
     XmlNode spotFleetRequestStateNode = resultNode.FirstChild("spotFleetRequestState");

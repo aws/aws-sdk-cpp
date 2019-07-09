@@ -62,7 +62,7 @@ IdFormat& IdFormat::operator =(const XmlNode& xmlNode)
     XmlNode resourceNode = resultNode.FirstChild("resource");
     if(!resourceNode.IsNull())
     {
-      m_resource = StringUtils::Trim(resourceNode.GetText().c_str());
+      m_resource = resourceNode.GetText();
       m_resourceHasBeenSet = true;
     }
     XmlNode useLongIdsNode = resultNode.FirstChild("useLongIds");

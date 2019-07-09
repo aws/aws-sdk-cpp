@@ -96,7 +96,7 @@ VpcPeeringConnection& VpcPeeringConnection::operator =(const XmlNode& xmlNode)
     XmlNode vpcPeeringConnectionIdNode = resultNode.FirstChild("vpcPeeringConnectionId");
     if(!vpcPeeringConnectionIdNode.IsNull())
     {
-      m_vpcPeeringConnectionId = StringUtils::Trim(vpcPeeringConnectionIdNode.GetText().c_str());
+      m_vpcPeeringConnectionId = vpcPeeringConnectionIdNode.GetText();
       m_vpcPeeringConnectionIdHasBeenSet = true;
     }
   }

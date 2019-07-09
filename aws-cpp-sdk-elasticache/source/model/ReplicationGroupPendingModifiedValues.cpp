@@ -56,7 +56,7 @@ ReplicationGroupPendingModifiedValues& ReplicationGroupPendingModifiedValues::op
     XmlNode primaryClusterIdNode = resultNode.FirstChild("PrimaryClusterId");
     if(!primaryClusterIdNode.IsNull())
     {
-      m_primaryClusterId = StringUtils::Trim(primaryClusterIdNode.GetText().c_str());
+      m_primaryClusterId = primaryClusterIdNode.GetText();
       m_primaryClusterIdHasBeenSet = true;
     }
     XmlNode automaticFailoverStatusNode = resultNode.FirstChild("AutomaticFailoverStatus");

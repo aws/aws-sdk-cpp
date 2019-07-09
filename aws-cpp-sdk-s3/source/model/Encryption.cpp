@@ -62,13 +62,13 @@ Encryption& Encryption::operator =(const XmlNode& xmlNode)
     XmlNode kMSKeyIdNode = resultNode.FirstChild("KMSKeyId");
     if(!kMSKeyIdNode.IsNull())
     {
-      m_kMSKeyId = StringUtils::Trim(kMSKeyIdNode.GetText().c_str());
+      m_kMSKeyId = kMSKeyIdNode.GetText();
       m_kMSKeyIdHasBeenSet = true;
     }
     XmlNode kMSContextNode = resultNode.FirstChild("KMSContext");
     if(!kMSContextNode.IsNull())
     {
-      m_kMSContext = StringUtils::Trim(kMSContextNode.GetText().c_str());
+      m_kMSContext = kMSContextNode.GetText();
       m_kMSContextHasBeenSet = true;
     }
   }

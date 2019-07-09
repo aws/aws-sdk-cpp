@@ -96,13 +96,13 @@ SpotInstanceRequest& SpotInstanceRequest::operator =(const XmlNode& xmlNode)
     XmlNode actualBlockHourlyPriceNode = resultNode.FirstChild("actualBlockHourlyPrice");
     if(!actualBlockHourlyPriceNode.IsNull())
     {
-      m_actualBlockHourlyPrice = StringUtils::Trim(actualBlockHourlyPriceNode.GetText().c_str());
+      m_actualBlockHourlyPrice = actualBlockHourlyPriceNode.GetText();
       m_actualBlockHourlyPriceHasBeenSet = true;
     }
     XmlNode availabilityZoneGroupNode = resultNode.FirstChild("availabilityZoneGroup");
     if(!availabilityZoneGroupNode.IsNull())
     {
-      m_availabilityZoneGroup = StringUtils::Trim(availabilityZoneGroupNode.GetText().c_str());
+      m_availabilityZoneGroup = availabilityZoneGroupNode.GetText();
       m_availabilityZoneGroupHasBeenSet = true;
     }
     XmlNode blockDurationMinutesNode = resultNode.FirstChild("blockDurationMinutes");
@@ -126,13 +126,13 @@ SpotInstanceRequest& SpotInstanceRequest::operator =(const XmlNode& xmlNode)
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceId = instanceIdNode.GetText();
       m_instanceIdHasBeenSet = true;
     }
     XmlNode launchGroupNode = resultNode.FirstChild("launchGroup");
     if(!launchGroupNode.IsNull())
     {
-      m_launchGroup = StringUtils::Trim(launchGroupNode.GetText().c_str());
+      m_launchGroup = launchGroupNode.GetText();
       m_launchGroupHasBeenSet = true;
     }
     XmlNode launchSpecificationNode = resultNode.FirstChild("launchSpecification");
@@ -144,7 +144,7 @@ SpotInstanceRequest& SpotInstanceRequest::operator =(const XmlNode& xmlNode)
     XmlNode launchedAvailabilityZoneNode = resultNode.FirstChild("launchedAvailabilityZone");
     if(!launchedAvailabilityZoneNode.IsNull())
     {
-      m_launchedAvailabilityZone = StringUtils::Trim(launchedAvailabilityZoneNode.GetText().c_str());
+      m_launchedAvailabilityZone = launchedAvailabilityZoneNode.GetText();
       m_launchedAvailabilityZoneHasBeenSet = true;
     }
     XmlNode productDescriptionNode = resultNode.FirstChild("productDescription");
@@ -156,13 +156,13 @@ SpotInstanceRequest& SpotInstanceRequest::operator =(const XmlNode& xmlNode)
     XmlNode spotInstanceRequestIdNode = resultNode.FirstChild("spotInstanceRequestId");
     if(!spotInstanceRequestIdNode.IsNull())
     {
-      m_spotInstanceRequestId = StringUtils::Trim(spotInstanceRequestIdNode.GetText().c_str());
+      m_spotInstanceRequestId = spotInstanceRequestIdNode.GetText();
       m_spotInstanceRequestIdHasBeenSet = true;
     }
     XmlNode spotPriceNode = resultNode.FirstChild("spotPrice");
     if(!spotPriceNode.IsNull())
     {
-      m_spotPrice = StringUtils::Trim(spotPriceNode.GetText().c_str());
+      m_spotPrice = spotPriceNode.GetText();
       m_spotPriceHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");

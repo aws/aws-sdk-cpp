@@ -32,24 +32,34 @@
 #include <aws/amplify/AmplifyErrorMarshaller.h>
 #include <aws/amplify/model/CreateAppRequest.h>
 #include <aws/amplify/model/CreateBranchRequest.h>
+#include <aws/amplify/model/CreateDeploymentRequest.h>
 #include <aws/amplify/model/CreateDomainAssociationRequest.h>
+#include <aws/amplify/model/CreateWebhookRequest.h>
 #include <aws/amplify/model/DeleteAppRequest.h>
 #include <aws/amplify/model/DeleteBranchRequest.h>
 #include <aws/amplify/model/DeleteDomainAssociationRequest.h>
 #include <aws/amplify/model/DeleteJobRequest.h>
+#include <aws/amplify/model/DeleteWebhookRequest.h>
 #include <aws/amplify/model/GetAppRequest.h>
 #include <aws/amplify/model/GetBranchRequest.h>
 #include <aws/amplify/model/GetDomainAssociationRequest.h>
 #include <aws/amplify/model/GetJobRequest.h>
+#include <aws/amplify/model/GetWebhookRequest.h>
 #include <aws/amplify/model/ListAppsRequest.h>
 #include <aws/amplify/model/ListBranchesRequest.h>
 #include <aws/amplify/model/ListDomainAssociationsRequest.h>
 #include <aws/amplify/model/ListJobsRequest.h>
+#include <aws/amplify/model/ListTagsForResourceRequest.h>
+#include <aws/amplify/model/ListWebhooksRequest.h>
+#include <aws/amplify/model/StartDeploymentRequest.h>
 #include <aws/amplify/model/StartJobRequest.h>
 #include <aws/amplify/model/StopJobRequest.h>
+#include <aws/amplify/model/TagResourceRequest.h>
+#include <aws/amplify/model/UntagResourceRequest.h>
 #include <aws/amplify/model/UpdateAppRequest.h>
 #include <aws/amplify/model/UpdateBranchRequest.h>
 #include <aws/amplify/model/UpdateDomainAssociationRequest.h>
+#include <aws/amplify/model/UpdateWebhookRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -200,6 +210,55 @@ void AmplifyClient::CreateBranchAsyncHelper(const CreateBranchRequest& request, 
   handler(this, request, CreateBranch(request), context);
 }
 
+CreateDeploymentOutcome AmplifyClient::CreateDeployment(const CreateDeploymentRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateDeployment", "Required field: AppId, is not set");
+    return CreateDeploymentOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.BranchNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateDeployment", "Required field: BranchName, is not set");
+    return CreateDeploymentOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BranchName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/apps/";
+  ss << request.GetAppId();
+  ss << "/branches/";
+  ss << request.GetBranchName();
+  ss << "/deployments";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateDeploymentOutcome(CreateDeploymentResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateDeploymentOutcome(outcome.GetError());
+  }
+}
+
+CreateDeploymentOutcomeCallable AmplifyClient::CreateDeploymentCallable(const CreateDeploymentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDeployment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyClient::CreateDeploymentAsync(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDeploymentAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyClient::CreateDeploymentAsyncHelper(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDeployment(request), context);
+}
+
 CreateDomainAssociationOutcome AmplifyClient::CreateDomainAssociation(const CreateDomainAssociationRequest& request) const
 {
   if (!request.AppIdHasBeenSet())
@@ -240,6 +299,48 @@ void AmplifyClient::CreateDomainAssociationAsync(const CreateDomainAssociationRe
 void AmplifyClient::CreateDomainAssociationAsyncHelper(const CreateDomainAssociationRequest& request, const CreateDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateDomainAssociation(request), context);
+}
+
+CreateWebhookOutcome AmplifyClient::CreateWebhook(const CreateWebhookRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateWebhook", "Required field: AppId, is not set");
+    return CreateWebhookOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/apps/";
+  ss << request.GetAppId();
+  ss << "/webhooks";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateWebhookOutcome(CreateWebhookResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateWebhookOutcome(outcome.GetError());
+  }
+}
+
+CreateWebhookOutcomeCallable AmplifyClient::CreateWebhookCallable(const CreateWebhookRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateWebhookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWebhook(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyClient::CreateWebhookAsync(const CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateWebhookAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyClient::CreateWebhookAsyncHelper(const CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateWebhook(request), context);
 }
 
 DeleteAppOutcome AmplifyClient::DeleteApp(const DeleteAppRequest& request) const
@@ -434,6 +535,47 @@ void AmplifyClient::DeleteJobAsyncHelper(const DeleteJobRequest& request, const 
   handler(this, request, DeleteJob(request), context);
 }
 
+DeleteWebhookOutcome AmplifyClient::DeleteWebhook(const DeleteWebhookRequest& request) const
+{
+  if (!request.WebhookIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteWebhook", "Required field: WebhookId, is not set");
+    return DeleteWebhookOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WebhookId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/webhooks/";
+  ss << request.GetWebhookId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteWebhookOutcome(DeleteWebhookResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteWebhookOutcome(outcome.GetError());
+  }
+}
+
+DeleteWebhookOutcomeCallable AmplifyClient::DeleteWebhookCallable(const DeleteWebhookRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteWebhookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWebhook(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyClient::DeleteWebhookAsync(const DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteWebhookAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyClient::DeleteWebhookAsyncHelper(const DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteWebhook(request), context);
+}
+
 GetAppOutcome AmplifyClient::GetApp(const GetAppRequest& request) const
 {
   if (!request.AppIdHasBeenSet())
@@ -626,6 +768,47 @@ void AmplifyClient::GetJobAsyncHelper(const GetJobRequest& request, const GetJob
   handler(this, request, GetJob(request), context);
 }
 
+GetWebhookOutcome AmplifyClient::GetWebhook(const GetWebhookRequest& request) const
+{
+  if (!request.WebhookIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetWebhook", "Required field: WebhookId, is not set");
+    return GetWebhookOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WebhookId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/webhooks/";
+  ss << request.GetWebhookId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetWebhookOutcome(GetWebhookResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetWebhookOutcome(outcome.GetError());
+  }
+}
+
+GetWebhookOutcomeCallable AmplifyClient::GetWebhookCallable(const GetWebhookRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetWebhookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWebhook(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyClient::GetWebhookAsync(const GetWebhookRequest& request, const GetWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetWebhookAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyClient::GetWebhookAsyncHelper(const GetWebhookRequest& request, const GetWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetWebhook(request), context);
+}
+
 ListAppsOutcome AmplifyClient::ListApps(const ListAppsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -794,6 +977,138 @@ void AmplifyClient::ListJobsAsyncHelper(const ListJobsRequest& request, const Li
   handler(this, request, ListJobs(request), context);
 }
 
+ListTagsForResourceOutcome AmplifyClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTagsForResourceOutcome(outcome.GetError());
+  }
+}
+
+ListTagsForResourceOutcomeCallable AmplifyClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForResource(request), context);
+}
+
+ListWebhooksOutcome AmplifyClient::ListWebhooks(const ListWebhooksRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListWebhooks", "Required field: AppId, is not set");
+    return ListWebhooksOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/apps/";
+  ss << request.GetAppId();
+  ss << "/webhooks";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListWebhooksOutcome(ListWebhooksResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListWebhooksOutcome(outcome.GetError());
+  }
+}
+
+ListWebhooksOutcomeCallable AmplifyClient::ListWebhooksCallable(const ListWebhooksRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListWebhooksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWebhooks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyClient::ListWebhooksAsync(const ListWebhooksRequest& request, const ListWebhooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListWebhooksAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyClient::ListWebhooksAsyncHelper(const ListWebhooksRequest& request, const ListWebhooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListWebhooks(request), context);
+}
+
+StartDeploymentOutcome AmplifyClient::StartDeployment(const StartDeploymentRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartDeployment", "Required field: AppId, is not set");
+    return StartDeploymentOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.BranchNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartDeployment", "Required field: BranchName, is not set");
+    return StartDeploymentOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BranchName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/apps/";
+  ss << request.GetAppId();
+  ss << "/branches/";
+  ss << request.GetBranchName();
+  ss << "/deployments/start";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartDeploymentOutcome(StartDeploymentResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartDeploymentOutcome(outcome.GetError());
+  }
+}
+
+StartDeploymentOutcomeCallable AmplifyClient::StartDeploymentCallable(const StartDeploymentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDeployment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyClient::StartDeploymentAsync(const StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartDeploymentAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyClient::StartDeploymentAsyncHelper(const StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartDeployment(request), context);
+}
+
 StartJobOutcome AmplifyClient::StartJob(const StartJobRequest& request) const
 {
   if (!request.AppIdHasBeenSet())
@@ -897,6 +1212,93 @@ void AmplifyClient::StopJobAsync(const StopJobRequest& request, const StopJobRes
 void AmplifyClient::StopJobAsyncHelper(const StopJobRequest& request, const StopJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopJob(request), context);
+}
+
+TagResourceOutcome AmplifyClient::TagResource(const TagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
+    return TagResourceOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return TagResourceOutcome(outcome.GetError());
+  }
+}
+
+TagResourceOutcomeCallable AmplifyClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
+UntagResourceOutcome AmplifyClient::UntagResource(const UntagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  if (!request.TagKeysHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UntagResourceOutcome(outcome.GetError());
+  }
+}
+
+UntagResourceOutcomeCallable AmplifyClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
 }
 
 UpdateAppOutcome AmplifyClient::UpdateApp(const UpdateAppRequest& request) const
@@ -1034,5 +1436,46 @@ void AmplifyClient::UpdateDomainAssociationAsync(const UpdateDomainAssociationRe
 void AmplifyClient::UpdateDomainAssociationAsyncHelper(const UpdateDomainAssociationRequest& request, const UpdateDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDomainAssociation(request), context);
+}
+
+UpdateWebhookOutcome AmplifyClient::UpdateWebhook(const UpdateWebhookRequest& request) const
+{
+  if (!request.WebhookIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateWebhook", "Required field: WebhookId, is not set");
+    return UpdateWebhookOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WebhookId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/webhooks/";
+  ss << request.GetWebhookId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateWebhookOutcome(UpdateWebhookResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateWebhookOutcome(outcome.GetError());
+  }
+}
+
+UpdateWebhookOutcomeCallable AmplifyClient::UpdateWebhookCallable(const UpdateWebhookRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateWebhookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWebhook(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyClient::UpdateWebhookAsync(const UpdateWebhookRequest& request, const UpdateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateWebhookAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyClient::UpdateWebhookAsyncHelper(const UpdateWebhookRequest& request, const UpdateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateWebhook(request), context);
 }
 

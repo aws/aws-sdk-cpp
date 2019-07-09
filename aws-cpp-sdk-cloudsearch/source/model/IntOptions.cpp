@@ -76,7 +76,7 @@ IntOptions& IntOptions::operator =(const XmlNode& xmlNode)
     XmlNode sourceFieldNode = resultNode.FirstChild("SourceField");
     if(!sourceFieldNode.IsNull())
     {
-      m_sourceField = StringUtils::Trim(sourceFieldNode.GetText().c_str());
+      m_sourceField = sourceFieldNode.GetText();
       m_sourceFieldHasBeenSet = true;
     }
     XmlNode facetEnabledNode = resultNode.FirstChild("FacetEnabled");

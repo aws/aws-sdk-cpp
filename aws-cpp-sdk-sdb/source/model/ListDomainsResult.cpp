@@ -54,7 +54,7 @@ ListDomainsResult& ListDomainsResult::operator =(const Aws::AmazonWebServiceResu
       XmlNode domainNameMember = domainNamesNode;
       while(!domainNameMember.IsNull())
       {
-        m_domainNames.push_back(StringUtils::Trim(domainNameMember.GetText().c_str()));
+        m_domainNames.push_back(domainNameMember.GetText());
         domainNameMember = domainNameMember.NextNode("DomainName");
       }
 
@@ -62,7 +62,7 @@ ListDomainsResult& ListDomainsResult::operator =(const Aws::AmazonWebServiceResu
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+      m_nextToken = nextTokenNode.GetText();
     }
   }
 

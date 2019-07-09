@@ -88,7 +88,7 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
     XmlNode dBInstanceClassNode = resultNode.FirstChild("DBInstanceClass");
     if(!dBInstanceClassNode.IsNull())
     {
-      m_dBInstanceClass = StringUtils::Trim(dBInstanceClassNode.GetText().c_str());
+      m_dBInstanceClass = dBInstanceClassNode.GetText();
       m_dBInstanceClassHasBeenSet = true;
     }
     XmlNode allocatedStorageNode = resultNode.FirstChild("AllocatedStorage");
@@ -100,7 +100,7 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
     XmlNode masterUserPasswordNode = resultNode.FirstChild("MasterUserPassword");
     if(!masterUserPasswordNode.IsNull())
     {
-      m_masterUserPassword = StringUtils::Trim(masterUserPasswordNode.GetText().c_str());
+      m_masterUserPassword = masterUserPasswordNode.GetText();
       m_masterUserPasswordHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
@@ -124,13 +124,13 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
-      m_engineVersion = StringUtils::Trim(engineVersionNode.GetText().c_str());
+      m_engineVersion = engineVersionNode.GetText();
       m_engineVersionHasBeenSet = true;
     }
     XmlNode licenseModelNode = resultNode.FirstChild("LicenseModel");
     if(!licenseModelNode.IsNull())
     {
-      m_licenseModel = StringUtils::Trim(licenseModelNode.GetText().c_str());
+      m_licenseModel = licenseModelNode.GetText();
       m_licenseModelHasBeenSet = true;
     }
     XmlNode iopsNode = resultNode.FirstChild("Iops");
@@ -142,25 +142,25 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
     XmlNode dBInstanceIdentifierNode = resultNode.FirstChild("DBInstanceIdentifier");
     if(!dBInstanceIdentifierNode.IsNull())
     {
-      m_dBInstanceIdentifier = StringUtils::Trim(dBInstanceIdentifierNode.GetText().c_str());
+      m_dBInstanceIdentifier = dBInstanceIdentifierNode.GetText();
       m_dBInstanceIdentifierHasBeenSet = true;
     }
     XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
     if(!storageTypeNode.IsNull())
     {
-      m_storageType = StringUtils::Trim(storageTypeNode.GetText().c_str());
+      m_storageType = storageTypeNode.GetText();
       m_storageTypeHasBeenSet = true;
     }
     XmlNode cACertificateIdentifierNode = resultNode.FirstChild("CACertificateIdentifier");
     if(!cACertificateIdentifierNode.IsNull())
     {
-      m_cACertificateIdentifier = StringUtils::Trim(cACertificateIdentifierNode.GetText().c_str());
+      m_cACertificateIdentifier = cACertificateIdentifierNode.GetText();
       m_cACertificateIdentifierHasBeenSet = true;
     }
     XmlNode dBSubnetGroupNameNode = resultNode.FirstChild("DBSubnetGroupName");
     if(!dBSubnetGroupNameNode.IsNull())
     {
-      m_dBSubnetGroupName = StringUtils::Trim(dBSubnetGroupNameNode.GetText().c_str());
+      m_dBSubnetGroupName = dBSubnetGroupNameNode.GetText();
       m_dBSubnetGroupNameHasBeenSet = true;
     }
     XmlNode pendingCloudwatchLogsExportsNode = resultNode.FirstChild("PendingCloudwatchLogsExports");

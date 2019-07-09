@@ -64,7 +64,7 @@ ImportInstanceVolumeDetailItem& ImportInstanceVolumeDetailItem::operator =(const
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode bytesConvertedNode = resultNode.FirstChild("bytesConverted");
@@ -76,7 +76,7 @@ ImportInstanceVolumeDetailItem& ImportInstanceVolumeDetailItem::operator =(const
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode imageNode = resultNode.FirstChild("image");
@@ -88,13 +88,13 @@ ImportInstanceVolumeDetailItem& ImportInstanceVolumeDetailItem::operator =(const
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = StringUtils::Trim(statusNode.GetText().c_str());
+      m_status = statusNode.GetText();
       m_statusHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
-      m_statusMessage = StringUtils::Trim(statusMessageNode.GetText().c_str());
+      m_statusMessage = statusMessageNode.GetText();
       m_statusMessageHasBeenSet = true;
     }
     XmlNode volumeNode = resultNode.FirstChild("volume");

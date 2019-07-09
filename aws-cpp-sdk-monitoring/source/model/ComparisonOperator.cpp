@@ -34,6 +34,9 @@ namespace Aws
         static const int GreaterThanThreshold_HASH = HashingUtils::HashString("GreaterThanThreshold");
         static const int LessThanThreshold_HASH = HashingUtils::HashString("LessThanThreshold");
         static const int LessThanOrEqualToThreshold_HASH = HashingUtils::HashString("LessThanOrEqualToThreshold");
+        static const int LessThanLowerOrGreaterThanUpperThreshold_HASH = HashingUtils::HashString("LessThanLowerOrGreaterThanUpperThreshold");
+        static const int LessThanLowerThreshold_HASH = HashingUtils::HashString("LessThanLowerThreshold");
+        static const int GreaterThanUpperThreshold_HASH = HashingUtils::HashString("GreaterThanUpperThreshold");
 
 
         ComparisonOperator GetComparisonOperatorForName(const Aws::String& name)
@@ -54,6 +57,18 @@ namespace Aws
           else if (hashCode == LessThanOrEqualToThreshold_HASH)
           {
             return ComparisonOperator::LessThanOrEqualToThreshold;
+          }
+          else if (hashCode == LessThanLowerOrGreaterThanUpperThreshold_HASH)
+          {
+            return ComparisonOperator::LessThanLowerOrGreaterThanUpperThreshold;
+          }
+          else if (hashCode == LessThanLowerThreshold_HASH)
+          {
+            return ComparisonOperator::LessThanLowerThreshold;
+          }
+          else if (hashCode == GreaterThanUpperThreshold_HASH)
+          {
+            return ComparisonOperator::GreaterThanUpperThreshold;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +92,12 @@ namespace Aws
             return "LessThanThreshold";
           case ComparisonOperator::LessThanOrEqualToThreshold:
             return "LessThanOrEqualToThreshold";
+          case ComparisonOperator::LessThanLowerOrGreaterThanUpperThreshold:
+            return "LessThanLowerOrGreaterThanUpperThreshold";
+          case ComparisonOperator::LessThanLowerThreshold:
+            return "LessThanLowerThreshold";
+          case ComparisonOperator::GreaterThanUpperThreshold:
+            return "GreaterThanUpperThreshold";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

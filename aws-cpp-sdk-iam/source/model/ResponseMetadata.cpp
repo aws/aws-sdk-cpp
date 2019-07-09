@@ -50,7 +50,7 @@ ResponseMetadata& ResponseMetadata::operator =(const XmlNode& xmlNode)
     XmlNode requestIdNode = resultNode.FirstChild("RequestId");
     if(!requestIdNode.IsNull())
     {
-      m_requestId = StringUtils::Trim(requestIdNode.GetText().c_str());
+      m_requestId = requestIdNode.GetText();
       m_requestIdHasBeenSet = true;
     }
   }

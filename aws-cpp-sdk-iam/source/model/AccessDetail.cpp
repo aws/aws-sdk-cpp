@@ -62,25 +62,25 @@ AccessDetail& AccessDetail::operator =(const XmlNode& xmlNode)
     XmlNode serviceNameNode = resultNode.FirstChild("ServiceName");
     if(!serviceNameNode.IsNull())
     {
-      m_serviceName = StringUtils::Trim(serviceNameNode.GetText().c_str());
+      m_serviceName = serviceNameNode.GetText();
       m_serviceNameHasBeenSet = true;
     }
     XmlNode serviceNamespaceNode = resultNode.FirstChild("ServiceNamespace");
     if(!serviceNamespaceNode.IsNull())
     {
-      m_serviceNamespace = StringUtils::Trim(serviceNamespaceNode.GetText().c_str());
+      m_serviceNamespace = serviceNamespaceNode.GetText();
       m_serviceNamespaceHasBeenSet = true;
     }
     XmlNode regionNode = resultNode.FirstChild("Region");
     if(!regionNode.IsNull())
     {
-      m_region = StringUtils::Trim(regionNode.GetText().c_str());
+      m_region = regionNode.GetText();
       m_regionHasBeenSet = true;
     }
     XmlNode entityPathNode = resultNode.FirstChild("EntityPath");
     if(!entityPathNode.IsNull())
     {
-      m_entityPath = StringUtils::Trim(entityPathNode.GetText().c_str());
+      m_entityPath = entityPathNode.GetText();
       m_entityPathHasBeenSet = true;
     }
     XmlNode lastAuthenticatedTimeNode = resultNode.FirstChild("LastAuthenticatedTime");

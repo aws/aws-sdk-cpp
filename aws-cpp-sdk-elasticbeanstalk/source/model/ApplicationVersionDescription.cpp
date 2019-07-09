@@ -70,25 +70,25 @@ ApplicationVersionDescription& ApplicationVersionDescription::operator =(const X
     XmlNode applicationVersionArnNode = resultNode.FirstChild("ApplicationVersionArn");
     if(!applicationVersionArnNode.IsNull())
     {
-      m_applicationVersionArn = StringUtils::Trim(applicationVersionArnNode.GetText().c_str());
+      m_applicationVersionArn = applicationVersionArnNode.GetText();
       m_applicationVersionArnHasBeenSet = true;
     }
     XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
     if(!applicationNameNode.IsNull())
     {
-      m_applicationName = StringUtils::Trim(applicationNameNode.GetText().c_str());
+      m_applicationName = applicationNameNode.GetText();
       m_applicationNameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode versionLabelNode = resultNode.FirstChild("VersionLabel");
     if(!versionLabelNode.IsNull())
     {
-      m_versionLabel = StringUtils::Trim(versionLabelNode.GetText().c_str());
+      m_versionLabel = versionLabelNode.GetText();
       m_versionLabelHasBeenSet = true;
     }
     XmlNode sourceBuildInformationNode = resultNode.FirstChild("SourceBuildInformation");
@@ -100,7 +100,7 @@ ApplicationVersionDescription& ApplicationVersionDescription::operator =(const X
     XmlNode buildArnNode = resultNode.FirstChild("BuildArn");
     if(!buildArnNode.IsNull())
     {
-      m_buildArn = StringUtils::Trim(buildArnNode.GetText().c_str());
+      m_buildArn = buildArnNode.GetText();
       m_buildArnHasBeenSet = true;
     }
     XmlNode sourceBundleNode = resultNode.FirstChild("SourceBundle");

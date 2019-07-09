@@ -46,7 +46,7 @@ ListBucketInventoryConfigurationsResult& ListBucketInventoryConfigurationsResult
     XmlNode continuationTokenNode = resultNode.FirstChild("ContinuationToken");
     if(!continuationTokenNode.IsNull())
     {
-      m_continuationToken = StringUtils::Trim(continuationTokenNode.GetText().c_str());
+      m_continuationToken = continuationTokenNode.GetText();
     }
     XmlNode inventoryConfigurationListNode = resultNode.FirstChild("InventoryConfiguration");
     if(!inventoryConfigurationListNode.IsNull())
@@ -67,7 +67,7 @@ ListBucketInventoryConfigurationsResult& ListBucketInventoryConfigurationsResult
     XmlNode nextContinuationTokenNode = resultNode.FirstChild("NextContinuationToken");
     if(!nextContinuationTokenNode.IsNull())
     {
-      m_nextContinuationToken = StringUtils::Trim(nextContinuationTokenNode.GetText().c_str());
+      m_nextContinuationToken = nextContinuationTokenNode.GetText();
     }
   }
 

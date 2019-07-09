@@ -60,19 +60,19 @@ Origin& Origin::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
     if(!domainNameNode.IsNull())
     {
-      m_domainName = StringUtils::Trim(domainNameNode.GetText().c_str());
+      m_domainName = domainNameNode.GetText();
       m_domainNameHasBeenSet = true;
     }
     XmlNode originPathNode = resultNode.FirstChild("OriginPath");
     if(!originPathNode.IsNull())
     {
-      m_originPath = StringUtils::Trim(originPathNode.GetText().c_str());
+      m_originPath = originPathNode.GetText();
       m_originPathHasBeenSet = true;
     }
     XmlNode customHeadersNode = resultNode.FirstChild("CustomHeaders");

@@ -58,19 +58,19 @@ FpgaImageAttribute& FpgaImageAttribute::operator =(const XmlNode& xmlNode)
     XmlNode fpgaImageIdNode = resultNode.FirstChild("fpgaImageId");
     if(!fpgaImageIdNode.IsNull())
     {
-      m_fpgaImageId = StringUtils::Trim(fpgaImageIdNode.GetText().c_str());
+      m_fpgaImageId = fpgaImageIdNode.GetText();
       m_fpgaImageIdHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("name");
     if(!nameNode.IsNull())
     {
-      m_name = StringUtils::Trim(nameNode.GetText().c_str());
+      m_name = nameNode.GetText();
       m_nameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_description = descriptionNode.GetText();
       m_descriptionHasBeenSet = true;
     }
     XmlNode loadPermissionsNode = resultNode.FirstChild("loadPermissions");

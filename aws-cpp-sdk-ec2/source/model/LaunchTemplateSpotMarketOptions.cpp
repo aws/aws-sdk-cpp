@@ -64,7 +64,7 @@ LaunchTemplateSpotMarketOptions& LaunchTemplateSpotMarketOptions::operator =(con
     XmlNode maxPriceNode = resultNode.FirstChild("maxPrice");
     if(!maxPriceNode.IsNull())
     {
-      m_maxPrice = StringUtils::Trim(maxPriceNode.GetText().c_str());
+      m_maxPrice = maxPriceNode.GetText();
       m_maxPriceHasBeenSet = true;
     }
     XmlNode spotInstanceTypeNode = resultNode.FirstChild("spotInstanceType");

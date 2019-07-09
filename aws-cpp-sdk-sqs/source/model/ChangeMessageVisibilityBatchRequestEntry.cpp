@@ -56,13 +56,13 @@ ChangeMessageVisibilityBatchRequestEntry& ChangeMessageVisibilityBatchRequestEnt
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
     XmlNode receiptHandleNode = resultNode.FirstChild("ReceiptHandle");
     if(!receiptHandleNode.IsNull())
     {
-      m_receiptHandle = StringUtils::Trim(receiptHandleNode.GetText().c_str());
+      m_receiptHandle = receiptHandleNode.GetText();
       m_receiptHandleHasBeenSet = true;
     }
     XmlNode visibilityTimeoutNode = resultNode.FirstChild("VisibilityTimeout");

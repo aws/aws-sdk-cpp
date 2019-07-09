@@ -54,19 +54,19 @@ QueryLoggingConfig& QueryLoggingConfig::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = StringUtils::Trim(idNode.GetText().c_str());
+      m_id = idNode.GetText();
       m_idHasBeenSet = true;
     }
     XmlNode hostedZoneIdNode = resultNode.FirstChild("HostedZoneId");
     if(!hostedZoneIdNode.IsNull())
     {
-      m_hostedZoneId = StringUtils::Trim(hostedZoneIdNode.GetText().c_str());
+      m_hostedZoneId = hostedZoneIdNode.GetText();
       m_hostedZoneIdHasBeenSet = true;
     }
     XmlNode cloudWatchLogsLogGroupArnNode = resultNode.FirstChild("CloudWatchLogsLogGroupArn");
     if(!cloudWatchLogsLogGroupArnNode.IsNull())
     {
-      m_cloudWatchLogsLogGroupArn = StringUtils::Trim(cloudWatchLogsLogGroupArnNode.GetText().c_str());
+      m_cloudWatchLogsLogGroupArn = cloudWatchLogsLogGroupArnNode.GetText();
       m_cloudWatchLogsLogGroupArnHasBeenSet = true;
     }
   }

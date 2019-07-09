@@ -94,7 +94,7 @@ TransitGatewayOptions& TransitGatewayOptions::operator =(const XmlNode& xmlNode)
     XmlNode associationDefaultRouteTableIdNode = resultNode.FirstChild("associationDefaultRouteTableId");
     if(!associationDefaultRouteTableIdNode.IsNull())
     {
-      m_associationDefaultRouteTableId = StringUtils::Trim(associationDefaultRouteTableIdNode.GetText().c_str());
+      m_associationDefaultRouteTableId = associationDefaultRouteTableIdNode.GetText();
       m_associationDefaultRouteTableIdHasBeenSet = true;
     }
     XmlNode defaultRouteTablePropagationNode = resultNode.FirstChild("defaultRouteTablePropagation");
@@ -106,7 +106,7 @@ TransitGatewayOptions& TransitGatewayOptions::operator =(const XmlNode& xmlNode)
     XmlNode propagationDefaultRouteTableIdNode = resultNode.FirstChild("propagationDefaultRouteTableId");
     if(!propagationDefaultRouteTableIdNode.IsNull())
     {
-      m_propagationDefaultRouteTableId = StringUtils::Trim(propagationDefaultRouteTableIdNode.GetText().c_str());
+      m_propagationDefaultRouteTableId = propagationDefaultRouteTableIdNode.GetText();
       m_propagationDefaultRouteTableIdHasBeenSet = true;
     }
     XmlNode vpnEcmpSupportNode = resultNode.FirstChild("vpnEcmpSupport");

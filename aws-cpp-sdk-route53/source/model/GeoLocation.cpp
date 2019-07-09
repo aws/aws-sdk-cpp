@@ -54,19 +54,19 @@ GeoLocation& GeoLocation::operator =(const XmlNode& xmlNode)
     XmlNode continentCodeNode = resultNode.FirstChild("ContinentCode");
     if(!continentCodeNode.IsNull())
     {
-      m_continentCode = StringUtils::Trim(continentCodeNode.GetText().c_str());
+      m_continentCode = continentCodeNode.GetText();
       m_continentCodeHasBeenSet = true;
     }
     XmlNode countryCodeNode = resultNode.FirstChild("CountryCode");
     if(!countryCodeNode.IsNull())
     {
-      m_countryCode = StringUtils::Trim(countryCodeNode.GetText().c_str());
+      m_countryCode = countryCodeNode.GetText();
       m_countryCodeHasBeenSet = true;
     }
     XmlNode subdivisionCodeNode = resultNode.FirstChild("SubdivisionCode");
     if(!subdivisionCodeNode.IsNull())
     {
-      m_subdivisionCode = StringUtils::Trim(subdivisionCodeNode.GetText().c_str());
+      m_subdivisionCode = subdivisionCodeNode.GetText();
       m_subdivisionCodeHasBeenSet = true;
     }
   }

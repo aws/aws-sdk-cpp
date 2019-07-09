@@ -62,19 +62,19 @@ TransitGatewayAssociation& TransitGatewayAssociation::operator =(const XmlNode& 
     XmlNode transitGatewayRouteTableIdNode = resultNode.FirstChild("transitGatewayRouteTableId");
     if(!transitGatewayRouteTableIdNode.IsNull())
     {
-      m_transitGatewayRouteTableId = StringUtils::Trim(transitGatewayRouteTableIdNode.GetText().c_str());
+      m_transitGatewayRouteTableId = transitGatewayRouteTableIdNode.GetText();
       m_transitGatewayRouteTableIdHasBeenSet = true;
     }
     XmlNode transitGatewayAttachmentIdNode = resultNode.FirstChild("transitGatewayAttachmentId");
     if(!transitGatewayAttachmentIdNode.IsNull())
     {
-      m_transitGatewayAttachmentId = StringUtils::Trim(transitGatewayAttachmentIdNode.GetText().c_str());
+      m_transitGatewayAttachmentId = transitGatewayAttachmentIdNode.GetText();
       m_transitGatewayAttachmentIdHasBeenSet = true;
     }
     XmlNode resourceIdNode = resultNode.FirstChild("resourceId");
     if(!resourceIdNode.IsNull())
     {
-      m_resourceId = StringUtils::Trim(resourceIdNode.GetText().c_str());
+      m_resourceId = resourceIdNode.GetText();
       m_resourceIdHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("resourceType");

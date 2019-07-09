@@ -51,17 +51,17 @@ CreateKeyPairResponse& CreateKeyPairResponse::operator =(const Aws::AmazonWebSer
     XmlNode keyFingerprintNode = resultNode.FirstChild("keyFingerprint");
     if(!keyFingerprintNode.IsNull())
     {
-      m_keyFingerprint = StringUtils::Trim(keyFingerprintNode.GetText().c_str());
+      m_keyFingerprint = keyFingerprintNode.GetText();
     }
     XmlNode keyMaterialNode = resultNode.FirstChild("keyMaterial");
     if(!keyMaterialNode.IsNull())
     {
-      m_keyMaterial = StringUtils::Trim(keyMaterialNode.GetText().c_str());
+      m_keyMaterial = keyMaterialNode.GetText();
     }
     XmlNode keyNameNode = resultNode.FirstChild("keyName");
     if(!keyNameNode.IsNull())
     {
-      m_keyName = StringUtils::Trim(keyNameNode.GetText().c_str());
+      m_keyName = keyNameNode.GetText();
     }
   }
 

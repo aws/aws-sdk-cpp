@@ -66,25 +66,25 @@ CSVOutput& CSVOutput::operator =(const XmlNode& xmlNode)
     XmlNode quoteEscapeCharacterNode = resultNode.FirstChild("QuoteEscapeCharacter");
     if(!quoteEscapeCharacterNode.IsNull())
     {
-      m_quoteEscapeCharacter = StringUtils::Trim(quoteEscapeCharacterNode.GetText().c_str());
+      m_quoteEscapeCharacter = quoteEscapeCharacterNode.GetText();
       m_quoteEscapeCharacterHasBeenSet = true;
     }
     XmlNode recordDelimiterNode = resultNode.FirstChild("RecordDelimiter");
     if(!recordDelimiterNode.IsNull())
     {
-      m_recordDelimiter = StringUtils::Trim(recordDelimiterNode.GetText().c_str());
+      m_recordDelimiter = recordDelimiterNode.GetText();
       m_recordDelimiterHasBeenSet = true;
     }
     XmlNode fieldDelimiterNode = resultNode.FirstChild("FieldDelimiter");
     if(!fieldDelimiterNode.IsNull())
     {
-      m_fieldDelimiter = StringUtils::Trim(fieldDelimiterNode.GetText().c_str());
+      m_fieldDelimiter = fieldDelimiterNode.GetText();
       m_fieldDelimiterHasBeenSet = true;
     }
     XmlNode quoteCharacterNode = resultNode.FirstChild("QuoteCharacter");
     if(!quoteCharacterNode.IsNull())
     {
-      m_quoteCharacter = StringUtils::Trim(quoteCharacterNode.GetText().c_str());
+      m_quoteCharacter = quoteCharacterNode.GetText();
       m_quoteCharacterHasBeenSet = true;
     }
   }

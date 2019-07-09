@@ -54,7 +54,7 @@ CompletedPart& CompletedPart::operator =(const XmlNode& xmlNode)
     XmlNode eTagNode = resultNode.FirstChild("ETag");
     if(!eTagNode.IsNull())
     {
-      m_eTag = StringUtils::Trim(eTagNode.GetText().c_str());
+      m_eTag = eTagNode.GetText();
       m_eTagHasBeenSet = true;
     }
     XmlNode partNumberNode = resultNode.FirstChild("PartNumber");

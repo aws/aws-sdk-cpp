@@ -51,7 +51,7 @@ ReplaceNetworkAclAssociationResponse& ReplaceNetworkAclAssociationResponse::oper
     XmlNode newAssociationIdNode = resultNode.FirstChild("newAssociationId");
     if(!newAssociationIdNode.IsNull())
     {
-      m_newAssociationId = StringUtils::Trim(newAssociationIdNode.GetText().c_str());
+      m_newAssociationId = newAssociationIdNode.GetText();
     }
   }
 

@@ -82,7 +82,7 @@ LaunchSpecification& LaunchSpecification::operator =(const XmlNode& xmlNode)
     XmlNode userDataNode = resultNode.FirstChild("userData");
     if(!userDataNode.IsNull())
     {
-      m_userData = StringUtils::Trim(userDataNode.GetText().c_str());
+      m_userData = userDataNode.GetText();
       m_userDataHasBeenSet = true;
     }
     XmlNode securityGroupsNode = resultNode.FirstChild("groupSet");
@@ -100,7 +100,7 @@ LaunchSpecification& LaunchSpecification::operator =(const XmlNode& xmlNode)
     XmlNode addressingTypeNode = resultNode.FirstChild("addressingType");
     if(!addressingTypeNode.IsNull())
     {
-      m_addressingType = StringUtils::Trim(addressingTypeNode.GetText().c_str());
+      m_addressingType = addressingTypeNode.GetText();
       m_addressingTypeHasBeenSet = true;
     }
     XmlNode blockDeviceMappingsNode = resultNode.FirstChild("blockDeviceMapping");
@@ -130,7 +130,7 @@ LaunchSpecification& LaunchSpecification::operator =(const XmlNode& xmlNode)
     XmlNode imageIdNode = resultNode.FirstChild("imageId");
     if(!imageIdNode.IsNull())
     {
-      m_imageId = StringUtils::Trim(imageIdNode.GetText().c_str());
+      m_imageId = imageIdNode.GetText();
       m_imageIdHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
@@ -142,13 +142,13 @@ LaunchSpecification& LaunchSpecification::operator =(const XmlNode& xmlNode)
     XmlNode kernelIdNode = resultNode.FirstChild("kernelId");
     if(!kernelIdNode.IsNull())
     {
-      m_kernelId = StringUtils::Trim(kernelIdNode.GetText().c_str());
+      m_kernelId = kernelIdNode.GetText();
       m_kernelIdHasBeenSet = true;
     }
     XmlNode keyNameNode = resultNode.FirstChild("keyName");
     if(!keyNameNode.IsNull())
     {
-      m_keyName = StringUtils::Trim(keyNameNode.GetText().c_str());
+      m_keyName = keyNameNode.GetText();
       m_keyNameHasBeenSet = true;
     }
     XmlNode networkInterfacesNode = resultNode.FirstChild("networkInterfaceSet");
@@ -172,13 +172,13 @@ LaunchSpecification& LaunchSpecification::operator =(const XmlNode& xmlNode)
     XmlNode ramdiskIdNode = resultNode.FirstChild("ramdiskId");
     if(!ramdiskIdNode.IsNull())
     {
-      m_ramdiskId = StringUtils::Trim(ramdiskIdNode.GetText().c_str());
+      m_ramdiskId = ramdiskIdNode.GetText();
       m_ramdiskIdHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
-      m_subnetId = StringUtils::Trim(subnetIdNode.GetText().c_str());
+      m_subnetId = subnetIdNode.GetText();
       m_subnetIdHasBeenSet = true;
     }
     XmlNode monitoringNode = resultNode.FirstChild("monitoring");

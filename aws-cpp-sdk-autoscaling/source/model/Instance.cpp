@@ -66,13 +66,13 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode instanceIdNode = resultNode.FirstChild("InstanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = StringUtils::Trim(instanceIdNode.GetText().c_str());
+      m_instanceId = instanceIdNode.GetText();
       m_instanceIdHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
+      m_availabilityZone = availabilityZoneNode.GetText();
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode lifecycleStateNode = resultNode.FirstChild("LifecycleState");
@@ -84,13 +84,13 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode healthStatusNode = resultNode.FirstChild("HealthStatus");
     if(!healthStatusNode.IsNull())
     {
-      m_healthStatus = StringUtils::Trim(healthStatusNode.GetText().c_str());
+      m_healthStatus = healthStatusNode.GetText();
       m_healthStatusHasBeenSet = true;
     }
     XmlNode launchConfigurationNameNode = resultNode.FirstChild("LaunchConfigurationName");
     if(!launchConfigurationNameNode.IsNull())
     {
-      m_launchConfigurationName = StringUtils::Trim(launchConfigurationNameNode.GetText().c_str());
+      m_launchConfigurationName = launchConfigurationNameNode.GetText();
       m_launchConfigurationNameHasBeenSet = true;
     }
     XmlNode launchTemplateNode = resultNode.FirstChild("LaunchTemplate");

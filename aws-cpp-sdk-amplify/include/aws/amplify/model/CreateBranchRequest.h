@@ -560,6 +560,47 @@ namespace Model
      */
     inline CreateBranchRequest& WithTtl(const char* value) { SetTtl(value); return *this;}
 
+
+    /**
+     * <p> Display name for a branch, will use as the default domain prefix. </p>
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p> Display name for a branch, will use as the default domain prefix. </p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p> Display name for a branch, will use as the default domain prefix. </p>
+     */
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+
+    /**
+     * <p> Display name for a branch, will use as the default domain prefix. </p>
+     */
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+
+    /**
+     * <p> Display name for a branch, will use as the default domain prefix. </p>
+     */
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+
+    /**
+     * <p> Display name for a branch, will use as the default domain prefix. </p>
+     */
+    inline CreateBranchRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /**
+     * <p> Display name for a branch, will use as the default domain prefix. </p>
+     */
+    inline CreateBranchRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p> Display name for a branch, will use as the default domain prefix. </p>
+     */
+    inline CreateBranchRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
   private:
 
     Aws::String m_appId;
@@ -600,6 +641,9 @@ namespace Model
 
     Aws::String m_ttl;
     bool m_ttlHasBeenSet;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet;
   };
 
 } // namespace Model

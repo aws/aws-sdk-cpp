@@ -60,7 +60,7 @@ LoadPermissionRequest& LoadPermissionRequest::operator =(const XmlNode& xmlNode)
     XmlNode userIdNode = resultNode.FirstChild("UserId");
     if(!userIdNode.IsNull())
     {
-      m_userId = StringUtils::Trim(userIdNode.GetText().c_str());
+      m_userId = userIdNode.GetText();
       m_userIdHasBeenSet = true;
     }
   }

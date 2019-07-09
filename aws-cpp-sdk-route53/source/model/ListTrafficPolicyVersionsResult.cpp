@@ -62,12 +62,12 @@ ListTrafficPolicyVersionsResult& ListTrafficPolicyVersionsResult::operator =(con
     XmlNode trafficPolicyVersionMarkerNode = resultNode.FirstChild("TrafficPolicyVersionMarker");
     if(!trafficPolicyVersionMarkerNode.IsNull())
     {
-      m_trafficPolicyVersionMarker = StringUtils::Trim(trafficPolicyVersionMarkerNode.GetText().c_str());
+      m_trafficPolicyVersionMarker = trafficPolicyVersionMarkerNode.GetText();
     }
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");
     if(!maxItemsNode.IsNull())
     {
-      m_maxItems = StringUtils::Trim(maxItemsNode.GetText().c_str());
+      m_maxItems = maxItemsNode.GetText();
     }
   }
 

@@ -51,7 +51,7 @@ DeleteServiceLinkedRoleResult& DeleteServiceLinkedRoleResult::operator =(const A
     XmlNode deletionTaskIdNode = resultNode.FirstChild("DeletionTaskId");
     if(!deletionTaskIdNode.IsNull())
     {
-      m_deletionTaskId = StringUtils::Trim(deletionTaskIdNode.GetText().c_str());
+      m_deletionTaskId = deletionTaskIdNode.GetText();
     }
   }
 

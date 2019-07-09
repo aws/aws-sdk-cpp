@@ -57,7 +57,7 @@ GetQueueAttributesResult& GetQueueAttributesResult::operator =(const Aws::Amazon
         XmlNode keyNode = attributeEntry.FirstChild("Name");
         XmlNode valueNode = attributeEntry.FirstChild("Value");
         m_attributes[QueueAttributeNameMapper::GetQueueAttributeNameForName(StringUtils::Trim(keyNode.GetText().c_str()))] =
-            StringUtils::Trim(valueNode.GetText().c_str());
+            valueNode.GetText();
         attributeEntry = attributeEntry.NextNode("Attribute");
       }
 

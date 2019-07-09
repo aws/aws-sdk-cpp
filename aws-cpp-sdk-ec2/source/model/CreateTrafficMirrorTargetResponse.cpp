@@ -56,7 +56,7 @@ CreateTrafficMirrorTargetResponse& CreateTrafficMirrorTargetResponse::operator =
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
-      m_clientToken = StringUtils::Trim(clientTokenNode.GetText().c_str());
+      m_clientToken = clientTokenNode.GetText();
     }
   }
 

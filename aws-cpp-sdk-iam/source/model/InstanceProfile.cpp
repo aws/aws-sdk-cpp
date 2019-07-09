@@ -60,25 +60,25 @@ InstanceProfile& InstanceProfile::operator =(const XmlNode& xmlNode)
     XmlNode pathNode = resultNode.FirstChild("Path");
     if(!pathNode.IsNull())
     {
-      m_path = StringUtils::Trim(pathNode.GetText().c_str());
+      m_path = pathNode.GetText();
       m_pathHasBeenSet = true;
     }
     XmlNode instanceProfileNameNode = resultNode.FirstChild("InstanceProfileName");
     if(!instanceProfileNameNode.IsNull())
     {
-      m_instanceProfileName = StringUtils::Trim(instanceProfileNameNode.GetText().c_str());
+      m_instanceProfileName = instanceProfileNameNode.GetText();
       m_instanceProfileNameHasBeenSet = true;
     }
     XmlNode instanceProfileIdNode = resultNode.FirstChild("InstanceProfileId");
     if(!instanceProfileIdNode.IsNull())
     {
-      m_instanceProfileId = StringUtils::Trim(instanceProfileIdNode.GetText().c_str());
+      m_instanceProfileId = instanceProfileIdNode.GetText();
       m_instanceProfileIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
-      m_arn = StringUtils::Trim(arnNode.GetText().c_str());
+      m_arn = arnNode.GetText();
       m_arnHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");

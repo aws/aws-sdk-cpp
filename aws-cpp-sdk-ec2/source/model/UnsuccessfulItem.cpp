@@ -58,7 +58,7 @@ UnsuccessfulItem& UnsuccessfulItem::operator =(const XmlNode& xmlNode)
     XmlNode resourceIdNode = resultNode.FirstChild("resourceId");
     if(!resourceIdNode.IsNull())
     {
-      m_resourceId = StringUtils::Trim(resourceIdNode.GetText().c_str());
+      m_resourceId = resourceIdNode.GetText();
       m_resourceIdHasBeenSet = true;
     }
   }

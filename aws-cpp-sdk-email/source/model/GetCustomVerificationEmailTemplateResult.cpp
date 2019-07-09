@@ -51,32 +51,32 @@ GetCustomVerificationEmailTemplateResult& GetCustomVerificationEmailTemplateResu
     XmlNode templateNameNode = resultNode.FirstChild("TemplateName");
     if(!templateNameNode.IsNull())
     {
-      m_templateName = StringUtils::Trim(templateNameNode.GetText().c_str());
+      m_templateName = templateNameNode.GetText();
     }
     XmlNode fromEmailAddressNode = resultNode.FirstChild("FromEmailAddress");
     if(!fromEmailAddressNode.IsNull())
     {
-      m_fromEmailAddress = StringUtils::Trim(fromEmailAddressNode.GetText().c_str());
+      m_fromEmailAddress = fromEmailAddressNode.GetText();
     }
     XmlNode templateSubjectNode = resultNode.FirstChild("TemplateSubject");
     if(!templateSubjectNode.IsNull())
     {
-      m_templateSubject = StringUtils::Trim(templateSubjectNode.GetText().c_str());
+      m_templateSubject = templateSubjectNode.GetText();
     }
     XmlNode templateContentNode = resultNode.FirstChild("TemplateContent");
     if(!templateContentNode.IsNull())
     {
-      m_templateContent = StringUtils::Trim(templateContentNode.GetText().c_str());
+      m_templateContent = templateContentNode.GetText();
     }
     XmlNode successRedirectionURLNode = resultNode.FirstChild("SuccessRedirectionURL");
     if(!successRedirectionURLNode.IsNull())
     {
-      m_successRedirectionURL = StringUtils::Trim(successRedirectionURLNode.GetText().c_str());
+      m_successRedirectionURL = successRedirectionURLNode.GetText();
     }
     XmlNode failureRedirectionURLNode = resultNode.FirstChild("FailureRedirectionURL");
     if(!failureRedirectionURLNode.IsNull())
     {
-      m_failureRedirectionURL = StringUtils::Trim(failureRedirectionURLNode.GetText().c_str());
+      m_failureRedirectionURL = failureRedirectionURLNode.GetText();
     }
   }
 

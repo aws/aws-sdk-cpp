@@ -573,42 +573,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the metric associated with the alarm.</p>
+     * <p>The name of the metric associated with the alarm, if this is an alarm based
+     * on a single metric.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
 
     /**
-     * <p>The name of the metric associated with the alarm.</p>
+     * <p>The name of the metric associated with the alarm, if this is an alarm based
+     * on a single metric.</p>
      */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
-     * <p>The name of the metric associated with the alarm.</p>
+     * <p>The name of the metric associated with the alarm, if this is an alarm based
+     * on a single metric.</p>
      */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
-     * <p>The name of the metric associated with the alarm.</p>
+     * <p>The name of the metric associated with the alarm, if this is an alarm based
+     * on a single metric.</p>
      */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
-     * <p>The name of the metric associated with the alarm.</p>
+     * <p>The name of the metric associated with the alarm, if this is an alarm based
+     * on a single metric.</p>
      */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
 
     /**
-     * <p>The name of the metric associated with the alarm.</p>
+     * <p>The name of the metric associated with the alarm, if this is an alarm based
+     * on a single metric.</p>
      */
     inline MetricAlarm& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>The name of the metric associated with the alarm.</p>
+     * <p>The name of the metric associated with the alarm, if this is an alarm based
+     * on a single metric.</p>
      */
     inline MetricAlarm& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the metric associated with the alarm.</p>
+     * <p>The name of the metric associated with the alarm, if this is an alarm based
+     * on a single metric.</p>
      */
     inline MetricAlarm& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
@@ -1060,44 +1068,133 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>An array of MetricDataQuery structures, used in an alarm based on a metric
+     * math expression. Each structure either retrieves a metric or performs a math
+     * expression. One item in the Metrics array is the math expression that the alarm
+     * watches. This expression by designated by having <code>ReturnValue</code> set to
+     * true.</p>
      */
     inline const Aws::Vector<MetricDataQuery>& GetMetrics() const{ return m_metrics; }
 
     /**
-     * <p/>
+     * <p>An array of MetricDataQuery structures, used in an alarm based on a metric
+     * math expression. Each structure either retrieves a metric or performs a math
+     * expression. One item in the Metrics array is the math expression that the alarm
+     * watches. This expression by designated by having <code>ReturnValue</code> set to
+     * true.</p>
      */
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>An array of MetricDataQuery structures, used in an alarm based on a metric
+     * math expression. Each structure either retrieves a metric or performs a math
+     * expression. One item in the Metrics array is the math expression that the alarm
+     * watches. This expression by designated by having <code>ReturnValue</code> set to
+     * true.</p>
      */
     inline void SetMetrics(const Aws::Vector<MetricDataQuery>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
     /**
-     * <p/>
+     * <p>An array of MetricDataQuery structures, used in an alarm based on a metric
+     * math expression. Each structure either retrieves a metric or performs a math
+     * expression. One item in the Metrics array is the math expression that the alarm
+     * watches. This expression by designated by having <code>ReturnValue</code> set to
+     * true.</p>
      */
     inline void SetMetrics(Aws::Vector<MetricDataQuery>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
 
     /**
-     * <p/>
+     * <p>An array of MetricDataQuery structures, used in an alarm based on a metric
+     * math expression. Each structure either retrieves a metric or performs a math
+     * expression. One item in the Metrics array is the math expression that the alarm
+     * watches. This expression by designated by having <code>ReturnValue</code> set to
+     * true.</p>
      */
     inline MetricAlarm& WithMetrics(const Aws::Vector<MetricDataQuery>& value) { SetMetrics(value); return *this;}
 
     /**
-     * <p/>
+     * <p>An array of MetricDataQuery structures, used in an alarm based on a metric
+     * math expression. Each structure either retrieves a metric or performs a math
+     * expression. One item in the Metrics array is the math expression that the alarm
+     * watches. This expression by designated by having <code>ReturnValue</code> set to
+     * true.</p>
      */
     inline MetricAlarm& WithMetrics(Aws::Vector<MetricDataQuery>&& value) { SetMetrics(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>An array of MetricDataQuery structures, used in an alarm based on a metric
+     * math expression. Each structure either retrieves a metric or performs a math
+     * expression. One item in the Metrics array is the math expression that the alarm
+     * watches. This expression by designated by having <code>ReturnValue</code> set to
+     * true.</p>
      */
     inline MetricAlarm& AddMetrics(const MetricDataQuery& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>An array of MetricDataQuery structures, used in an alarm based on a metric
+     * math expression. Each structure either retrieves a metric or performs a math
+     * expression. One item in the Metrics array is the math expression that the alarm
+     * watches. This expression by designated by having <code>ReturnValue</code> set to
+     * true.</p>
      */
     inline MetricAlarm& AddMetrics(MetricDataQuery&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>In an alarm based on an anomaly detection model, this is the ID of the
+     * <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the
+     * alarm.</p>
+     */
+    inline const Aws::String& GetThresholdMetricId() const{ return m_thresholdMetricId; }
+
+    /**
+     * <p>In an alarm based on an anomaly detection model, this is the ID of the
+     * <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the
+     * alarm.</p>
+     */
+    inline bool ThresholdMetricIdHasBeenSet() const { return m_thresholdMetricIdHasBeenSet; }
+
+    /**
+     * <p>In an alarm based on an anomaly detection model, this is the ID of the
+     * <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the
+     * alarm.</p>
+     */
+    inline void SetThresholdMetricId(const Aws::String& value) { m_thresholdMetricIdHasBeenSet = true; m_thresholdMetricId = value; }
+
+    /**
+     * <p>In an alarm based on an anomaly detection model, this is the ID of the
+     * <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the
+     * alarm.</p>
+     */
+    inline void SetThresholdMetricId(Aws::String&& value) { m_thresholdMetricIdHasBeenSet = true; m_thresholdMetricId = std::move(value); }
+
+    /**
+     * <p>In an alarm based on an anomaly detection model, this is the ID of the
+     * <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the
+     * alarm.</p>
+     */
+    inline void SetThresholdMetricId(const char* value) { m_thresholdMetricIdHasBeenSet = true; m_thresholdMetricId.assign(value); }
+
+    /**
+     * <p>In an alarm based on an anomaly detection model, this is the ID of the
+     * <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the
+     * alarm.</p>
+     */
+    inline MetricAlarm& WithThresholdMetricId(const Aws::String& value) { SetThresholdMetricId(value); return *this;}
+
+    /**
+     * <p>In an alarm based on an anomaly detection model, this is the ID of the
+     * <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the
+     * alarm.</p>
+     */
+    inline MetricAlarm& WithThresholdMetricId(Aws::String&& value) { SetThresholdMetricId(std::move(value)); return *this;}
+
+    /**
+     * <p>In an alarm based on an anomaly detection model, this is the ID of the
+     * <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the
+     * alarm.</p>
+     */
+    inline MetricAlarm& WithThresholdMetricId(const char* value) { SetThresholdMetricId(value); return *this;}
 
   private:
 
@@ -1178,6 +1275,9 @@ namespace Model
 
     Aws::Vector<MetricDataQuery> m_metrics;
     bool m_metricsHasBeenSet;
+
+    Aws::String m_thresholdMetricId;
+    bool m_thresholdMetricIdHasBeenSet;
   };
 
 } // namespace Model
