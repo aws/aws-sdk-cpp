@@ -1,0 +1,22 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - export RELEASE_ID=$(cat $RELEASE_ID_FILENAME)
+      - python3 aws-sdk-cpp/CI/trebuchet-release-pipeline/UpdateStatus.py -s IntegrationTests -i "$RELEASE_ID" -m "Step 3 of 4. Running Integration Tests." -b $CODEBUILD_BUILD_SUCCEEDING
+  build:
+    commands:
+      - echo $CODEBUILD_SOURCE_VERSION
+      - mv aws-sdk-cpp build /tmp
+      - cd /tmp/build
+      - python ../aws-sdk-cpp/scripts/run_integration_tests.py --testDir .
+  post_build:
+    commands:
+      - cd /tmp
+      # - aws s3 cp ./ s3://aws-sdk-cpp-dev-pipeline/LinuxGccLog --recursive --exclude "*" --include "*.log"
+      - export BUILD_JOB_NAME=$(echo "${CODEBUILD_BUILD_ID}" | cut -f1 -d ":")
+      - export BUILD_URL="https://${AWS_REGION}.console.aws.amazon.com/codesuite/codebuild/projects/${BUILD_JOB_NAME}/build/${CODEBUILD_BUILD_ID}"
+      - |
+        if [ "${CODEBUILD_BUILD_SUCCEEDING}" = "0" ]; then
+          python3 aws-sdk-cpp/CI/trebuchet-release-pipeline/UpdateStatus.py -s IntegrationTests -e "[BUILD FAILURE](${BUILD_URL}) (${CODEBUILD_BUILD_ID})" -i $RELEASE_ID -m "Step 3 of 4. Integration Tests Failed. A technician has already been notified." -b $CODEBUILD_BUILD_SUCCEEDING;
+        fi

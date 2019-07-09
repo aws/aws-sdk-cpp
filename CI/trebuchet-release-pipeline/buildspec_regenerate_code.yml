@@ -1,0 +1,30 @@
+# This buildspec is source controlled, whenever you make any change in the AWS console, you should update it to Github.
+version: 0.2
+phases:
+  build:
+    commands:
+      - echo $CODEBUILD_SOURCE_VERSION
+      - git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GITHUB_PRIVATE_REPOSITORY}.git aws-sdk-cpp
+      - export RELEASE_ID=$(cat $RELEASE_ID_FILENAME)
+      - python3 aws-sdk-cpp/CI/trebuchet-release-pipeline/UpdateStatus.py -s RegenerateCode -i "$RELEASE_ID" -m "Step 1 of 4. Regenerating Code with New Models." -b $CODEBUILD_BUILD_SUCCEEDING
+      - cp models/*.normal.json aws-sdk-cpp/code-generation/api-descriptions/
+      - cd aws-sdk-cpp
+      - mkdir build
+      - cd build
+      - cmake .. -DREGENERATE_CLIENTS=ON
+      - cd ..
+      - rm -rf build
+  post_build:
+    commands:
+      - cd $CODEBUILD_SRC_DIR
+      - export BUILD_JOB_NAME=$(echo "${CODEBUILD_BUILD_ID}" | cut -f1 -d ":")
+      - export BUILD_URL="https://${AWS_REGION}.console.aws.amazon.com/codesuite/codebuild/projects/${BUILD_JOB_NAME}/build/${CODEBUILD_BUILD_ID}"
+      - |
+        if [ "${CODEBUILD_BUILD_SUCCEEDING}" = "1" ]; then
+          python3 aws-sdk-cpp/CI/trebuchet-release-pipeline/UpdateStatus.py -s RegenerateCode -e "[BUILD SUCCESS](${BUILD_URL}) (${CODEBUILD_BUILD_ID})" -i $RELEASE_ID -m "Step 1 of 4. Regenerated Code with New Models." -b $CODEBUILD_BUILD_SUCCEEDING;
+        else
+          python3 aws-sdk-cpp/CI/trebuchet-release-pipeline/UpdateStatus.py -s RegenerateCode -e "[BUILD FAILURE](${BUILD_URL}) (${CODEBUILD_BUILD_ID})" -i $RELEASE_ID -m "Step 1 of 4. Code Generation with New Models Failed. A technician has already been notified." -b $CODEBUILD_BUILD_SUCCEEDING;
+        fi
+artifacts:
+  files:
+    - "**/*"

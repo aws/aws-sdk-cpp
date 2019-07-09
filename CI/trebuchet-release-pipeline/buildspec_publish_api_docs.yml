@@ -1,0 +1,29 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - echo $CODEBUILD_SOURCE_VERSION
+      - rm -rf aws-sdk-cpp
+      - git clone https://github.com/${GITHUB_PUBLIC_REPOSITORY}.git
+      - cd aws-sdk-cpp
+      - export VERSION_NUM=$(grep AWS_SDK_VERSION_STRING ./aws-cpp-sdk-core/include/aws/core/VersionConfig.h | cut -d '"' -f2)
+      - sed -i "s/PROJECT_NUMBER .*/PROJECT_NUMBER         = $VERSION_NUM/" ./doxygen/doxygen.config
+      - doxygen ./doxygen/doxygen.config
+      - python doc_crosslinks/generate_cross_link_data.py --apiDefinitionsPath ./code-generation/api-descriptions/ --templatePath ./doc_crosslinks/crosslink_redirect.html --outputPath ./crosslink_redirect.html
+      - aws s3 cp ./doxygen/html s3://${DOCS_S3_BUCKET_NAME}/cpp/api/$VERSION_NUM --recursive
+      - aws s3 cp s3://${DOCS_S3_BUCKET_NAME}/cpp/api/$VERSION_NUM s3://${DOCS_S3_BUCKET_NAME}/cpp/api/LATEST --recursive
+      - aws s3 cp ./crosslink_redirect.html s3://${DOCS_S3_BUCKET_NAME}/cpp/api/crosslink_redirect.html
+      - mkdir aws_sdk_cpp
+      - cp -r ./doxygen/html aws_sdk_cpp
+      - cp -r ./crosslink_redirect.html aws_sdk_cpp
+      - zip -r documentation.zip ./aws_sdk_cpp
+      - aws s3 cp documentation.zip s3://${BINARY_S3_BUCKET_NAME}/cpp/builds/$VERSION_NUM/documentation.zip
+  post_build:
+     commands:
+      - cd $CODEBUILD_SRC_DIR
+      - export BUILD_JOB_NAME=$(echo "${CODEBUILD_BUILD_ID}" | cut -f1 -d ":")
+      - export BUILD_URL="https://${AWS_REGION}.console.aws.amazon.com/codesuite/codebuild/projects/${BUILD_JOB_NAME}/build/${CODEBUILD_BUILD_ID}"
+      - |
+        if [ "${CODEBUILD_BUILD_SUCCEEDING}" = "0" ]; then
+          python3 aws-sdk-cpp/CI/trebuchet-release-pipeline/UpdateStatus.py -s PublishAPIDocs -e "[BUILD FAILURE](${BUILD_URL}) (${CODEBUILD_BUILD_ID})" -i $RELEASE_ID -m "Publish API Docs Failed." -b $CODEBUILD_BUILD_SUCCEEDING -o;
+        fi

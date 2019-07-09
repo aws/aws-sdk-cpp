@@ -1,0 +1,71 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - echo $CODEBUILD_SOURCE_VERSION
+      - export RELEASE_ID=$(cat $RELEASE_ID_FILENAME)
+      - if [ -s $RELEASE_NOTES_FILENAME ]; then export COMMIT_MSG="$(cat $RELEASE_NOTES_FILENAME)"; fi;
+      - python3 aws-sdk-cpp/CI/trebuchet-release-pipeline/UpdateStatus.py -s PushToGithub -i "$RELEASE_ID" -m "Step 4 of 4. Pushing Code to Public Github." -b $CODEBUILD_BUILD_SUCCEEDING
+      - cd aws-sdk-cpp
+      # Verify the candidate commit, in case there is new merge without testing during release.
+      - if [ "$(git rev-parse --abbrev-ref HEAD)" != "master" ]; then exit 1; fi;
+      - git fetch --all
+      - if [ -n "$(git diff master origin/master)" ]; then exit 1; fi;
+      # Get highest tag number
+      - export VERSION=$(git describe --abbrev=0 --tags)
+      # Calculate new version
+      - export VERSION_MAJOR=$(echo $VERSION | cut -d '.' -f1)
+      - export VERSION_MINOR=$(echo $VERSION | cut -d '.' -f2)
+      - export VERSION_PATCH=$(echo $VERSION | cut -d '.' -f3)
+      - export VERSION_PATCH=$((VERSION_PATCH+1))
+      - export VERSION_BUMP=$VERSION_MAJOR.$VERSION_MINOR.$VERSION_PATCH
+      - echo "Updating $VERSION to $VERSION_BUMP"
+      # Write new version to VersionConfig.h
+      - sed -i "s/AWS_SDK_VERSION_STRING.*/AWS_SDK_VERSION_STRING \"$VERSION_BUMP\"/" aws-cpp-sdk-core/include/aws/core/VersionConfig.h
+      # git add
+      - git add --all
+      - git status
+      # Generate release notes
+      - if [ -z "$COMMIT_MSG" ]; then export COMMIT_MSG="Auto commit from CI."; fi;
+      # Commit to release candidate branch
+      - git config --global user.name "$GIT_COMMIT_AUTHOR_NAME"
+      - git config --global user.email "$GIT_COMMIT_AUTHOR_EMAIL"
+      - git commit -m "$COMMIT_MSG"
+      - git checkout release-candidate
+      - git merge master
+      - git push origin release-candidate
+      # Get current hash and see if it already has a tag
+      - export GIT_COMMIT=$(git rev-parse HEAD)
+      - export NEEDS_TAG=$(git describe --contains $GIT_COMMIT)
+      # Only tag if no tag already (would be better if the git describe command above could have a silent option)
+      - |
+        if [ -z "$NEEDS_TAG" ]; then
+            echo "Tagged with $VERSION_BUMP (Ignoring fatal:cannot describe - this means commit is untagged) "
+            git tag $VERSION_BUMP
+            git push --tags
+        else
+            echo "Already a tag on this commit"
+        fi
+      # Push code to Github
+      # - git fetch --tags
+      # - git fetch --all
+      # - git reset --hard HEAD
+      # - git checkout release-candidate
+      # - git pull
+      - git checkout master
+      - git pull
+      - git merge release-candidate
+      - git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GITHUB_PRIVATE_REPOSITORY}.git master
+      - git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GITHUB_PUBLIC_REPOSITORY}.git master
+      - git push --tags https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GITHUB_PUBLIC_REPOSITORY}.git
+  post_build:
+     commands:
+      - cd $CODEBUILD_SRC_DIR
+      - export BUILD_JOB_NAME=$(echo "${CODEBUILD_BUILD_ID}" | cut -f1 -d ":")
+      - export BUILD_URL="https://${AWS_REGION}.console.aws.amazon.com/codesuite/codebuild/projects/${BUILD_JOB_NAME}/build/${CODEBUILD_BUILD_ID}"
+      - |
+        if [ "${CODEBUILD_BUILD_SUCCEEDING}" = "1" ]; then
+          python3 aws-sdk-cpp/CI/trebuchet-release-pipeline/UpdateStatus.py -s PushToGithub -e "[BUILD SUCCESS](${BUILD_URL}) (${CODEBUILD_BUILD_ID})" -i $RELEASE_ID -m "Step 4 of 4. Code Pushed to Public Github." -b $CODEBUILD_BUILD_SUCCEEDING -c;
+        else
+          python3 aws-sdk-cpp/CI/trebuchet-release-pipeline/UpdateStatus.py -s PushToGithub -e "[BUILD FAILURE](${BUILD_URL}) (${CODEBUILD_BUILD_ID})" -i $RELEASE_ID -m "Step 4 of 4. Push to Public Github Failed. A technician has already been notified." -b $CODEBUILD_BUILD_SUCCEEDING;
+        fi

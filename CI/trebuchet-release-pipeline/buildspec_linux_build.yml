@@ -1,0 +1,26 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - echo $CODEBUILD_SOURCE_VERSION
+      - export RELEASE_ID=$(cat $RELEASE_ID_FILENAME)
+      - python3 aws-sdk-cpp/CI/trebuchet-release-pipeline/UpdateStatus.py -s Build -i "$RELEASE_ID" -m "Step 2 of 4. Verifying Build." -b $CODEBUILD_BUILD_SUCCEEDING
+      - mv * /tmp && mkdir -p /tmp/build
+      - cd /tmp/aws-sdk-cpp
+      - python ./scripts/endpoints_checker.py
+      - cd ../build
+      - cmake ../aws-sdk-cpp -DCMAKE_BUILD_TYPE=Debug -DENABLE_ADDRESS_SANITIZER=ON -DMINIMIZE_SIZE=ON
+      - make -j 3
+  post_build:
+     commands:
+      - cd /tmp
+      - export BUILD_JOB_NAME=$(echo "${CODEBUILD_BUILD_ID}" | cut -f1 -d ":")
+      - export BUILD_URL="https://${AWS_REGION}.console.aws.amazon.com/codesuite/codebuild/projects/${BUILD_JOB_NAME}/build/${CODEBUILD_BUILD_ID}"
+      - |
+        if [ "${CODEBUILD_BUILD_SUCCEEDING}" = "0" ]; then
+          python3 aws-sdk-cpp/CI/trebuchet-release-pipeline/UpdateStatus.py -s Build -e "[BUILD FAILURE](${BUILD_URL}) (${CODEBUILD_BUILD_ID})" -i $RELEASE_ID -m "Step 2 of 4. Verification of Build Failed. A technician has already been notified." -b $CODEBUILD_BUILD_SUCCEEDING;
+        fi
+artifacts:
+  files:
+    - "**/*"
+  base-directory: /tmp

@@ -1,0 +1,1003 @@
+#         +---------------------------------------+
+#         |  Trebuchet sends SNS message.         |
+#         |  The message contains an S3 presigned |
+#         |  url to the models, release notes and |
+#         |  release id updated with this release |
+#         +-------------------+-------------------+
+#                             |
+#         +-------------------v-------------------+
+#         |   Lambda reads the message from SNS,  |
+#         |   put release notes, release id and   |
+#         |   the message itself into files and   |
+#         |   upload them in zip to Amazon S3     |
+#         +-------------------+-------------------+
+#                             |
+#         +-------------------v-------------------+
+#         |       S3 triggers CodePipeline        |
+#         +-------------------+-------------------+
+#                             |
+# +---------------------------v---------------------------+
+# |================= CodePipeline Stages =================|
+# +-------------------------------------------------------+
+# |   Generate service clients for the                    |
+# |   new and existing models.                            |
+# +-------------------------------------------------------+   +----------------------------------------+
+# |   Build on Linux, MacOS, Windows, etc.                |   | The UpdateStatus Lambda talks to       |
+# |   and invoke the UpdateStatus Lambda at               |   | 1. AWS CloudWatch and reports metrics  |
+# |   the end of each if fails.                           |   | The failure metrics triggers an alarm  |
+# +-----------------------------------------------------------> which cuts a sev2 ticket               |
+# |   Run the integration tests                           |   | 2. AWS SQS to report back to Trebuchet |
+# |   and invoke the UpdateStatus Lambda at               |   | 3. Chime Bot to mention all members    |
+# |   the end of each if fails.                           |   |    when builds or tests failed         |
+# +-------------------------------------------------------+   +----------------------------------------+
+# |   Run bash scripts to do the following:               |
+# |   1. Bump the patch part of the version               |
+# |   2. Commit the changes to release-candidate branch   |
+# |   3. Tag the release candidate branch                 |
+# |   4. Merge release-candidate to master                |
+# |   5. Push the changes to private repo                 |
+# |   6. Push the changes to public repo                  |
+# +-------------------------------------------------------+
+# |   Publish the documentation                           |
+# +-------------------------------------------------------+
+
+AWSTemplateFormatVersion: 2010-09-09
+Parameters:
+  TrebuchetReleaseS3BucketName:
+    Type: String
+    Default: <TrebuchetReleaseS3BucketName>
+    Description: Bucket name used for Trebuchet release pipeline.
+  PipelineCacheS3BucketName:
+    Type: String
+    Default: <PipelineCacheS3BucketName>
+    Description: Name of the S3 Bucket used for pipeline cache.
+  PublicDocsS3BucketName:
+    Type: String
+    Default: <PublicDocsS3BucketName>
+    Description: Name of the S3 Bucket used to publish API docs.
+  BinaryReleaseS3BucketName:
+    Type: String
+    Default: <BinaryReleaseS3BucketName>
+    Description: Name of the S3 Bucket used to publish binaries.
+  TrebuchetReleaseMessageFilename:
+    Type: String
+    Default: <TrebuchetReleaseMessageFilename>
+    Description: A json file containing message received from Trebuchet.
+  TrebuchetReleaseIdFilename:
+    Type: String
+    Default: <TrebuchetReleaseIdFilename>
+    Description: A file containing release id received from Trebuchet.
+  TrebuchetReleaseNotesFilename:
+    Type: String
+    Default: <TrebuchetReleaseNotesFilename>
+    Description: A file containing release notes received from Trebuchet.
+  TrebuchetReleasePipelineSourceS3KeyName:
+    Type: String
+    Default: <TrebuchetReleasePipelineSourceS3KeyName>
+    Description: Key name of the S3 object, which will trigger the Trebuchet release pipeline.
+  TrebuchetReleasePipelineName:
+    Type: String
+    Default: <TrebuchetReleasePipelineName>
+    Description: Name of the staging build pipeline.
+  TrebuchetReleasePipelineRoleName:
+    Type: String
+    Default: <TrebuchetReleasePipelineRoleName>
+    Description: Name of the service role used by pipeline.
+  TrebuchetReleaseCodeBuildRoleName:
+    Type: String
+    Default: <TrebuchetReleaseCodeBuildRoleName>
+    Description: Name of the service role used by RegenerateCode CodeBuild project.
+  RegenerateCodeProjectName:
+    Type: String
+    Default: <RegenerateCodeProjectName>
+    Description: Name of the CodeBuild project, which will regenerate the code with new models.
+  LinuxGccBuildProjectName:
+    Type: String
+    Default: <LinuxGccBuildProjectName>
+    Description: Name of the CodeBuild project, which will build C++ SDK with Linux environment.
+  LinuxGccTestsProjectName:
+    Type: String
+    Default: <LinuxGccTestsProjectName>
+    Description: Name of the CodeBuild project, which will run integration tests with Linux environment.
+  LinuxGccImageName:
+    Type: String
+    Default: <LinuxGccImageName>
+    Description: Name of the image used in the CodeBuild Project to build SDK in Linux.
+  WindowsVS2015BuildProjectName:
+    Type: String
+    Default: <WindowsVS2015BuildProjectName>
+    Description: Name of the CodeBuild project, which will build C++ SDK with Visual Studio 2015.
+  WindowsVS2015TestsProjectName:
+    Type: String
+    Default: <WindowsVS2015TestsProjectName>
+    Description: Name of the CodeBuild project, which will run integration tests with Visual Studio 2015.
+  WindowsVS2015ImageName:
+    Type: String
+    Default: <WindowsVS2015ImageName>
+    Description: Name of the image used in the CodeBuild Project to build SDK in Linux.
+  WindowsVS2017BuildProjectName:
+    Type: String
+    Default: <WindowsVS2017BuildProjectName>
+    Description: Name of the CodeBuild project, which will build C++ SDK with Visual Studio 2017.
+  WindowsVS2017TestsProjectName:
+    Type: String
+    Default: <WindowsVS2017TestsProjectName>
+    Description: Name of the CodeBuild project, which will run integration tests with Visual Studio 2017.
+  WindowsVS2017ImageName:
+    Type: String
+    Default: <WindowsVS2017ImageName>
+    Description: Name of the image used in the CodeBuild Project to build SDK in Linux.
+  MacosxClangBuildProjectName:
+    Type: String
+    Default: <MacosxClangBuildProjectName>
+    Description: Name of the Jenkins job, which will build C++ SDK on MacOSX.
+  MacosxClangTestsProjectName:
+    Type: String
+    Default: <MacosxClangTestsProjectName>
+    Description: Name of the CodeBuild project, which will will run integration tests on MacOSX.
+  PushToGithubProjectName:
+    Type: String
+    Default: <PushToGithubProjectName>
+    Description: Name of the CodeBuild project, which will push code to Github.
+  PublishAPIDocsProjectName:
+    Type: String
+    Default: <PublishAPIDocsProjectName>
+    Description: Name of the CodeBuild project, which will publish API docs.
+  JenkinsMacOSXProvider:
+    Type: String
+    Default: <JenkinsMacOSXProvider>
+    Description: Provider name of Jenkins used to build SDK on MacOSX.
+  JenkinsMacOSXProviderVersion:
+    Type: Number
+    Default: 1
+    Description: Version of the custom provider (Jenkins) used to build SDK on MacOSX.
+  HandleTrebuchetReleaseNotificationFunctionName:
+    Type: String
+    Default: <HandleTrebuchetReleaseNotificationFunctionName>
+    Description: Name of the Lambda function, used to handle messages received from Trebuchet.
+  HandleTrebuchetReleaseNotificationFunctionRoleName:
+    Type: String
+    Default: <HandleTrebuchetReleaseNotificationFunctionRoleName>
+    Description: Name of the execution role used by HandleTrebuchetReleaseNotification Lambda function.
+  UpdateStatusFunctionName:
+    Type: String
+    Default: <UpdateStatusFunctionName>
+    Description: Name of the Lambda function, used to update Trebuchet release status.
+  UpdateStatusFunctionRoleName:
+    Type: String
+    Default: <UpdateStatusFunctionRoleName>
+    Description: Name of the execution role used by UpdateStatus Lambda function.
+  TrebuchetQueueUrl:
+    Type: String
+    Default: <TrebuchetQueueUrl>
+    Description: Url of the Trebuchet Queue to update staging build status.
+  TrebuchetSNSArn:
+    Type: String
+    Default: <TrebuchetSNSArn>
+    Description: Arn of the Trebuchet SNS topic, and our SQS should subscribe to this topic.
+  ChimeBotUrl:
+    Type: String
+    Default: <ChimeBotUrl>
+    Description: Url of the Chime Bot to send notifications.
+  ParameterStoreAwsAccessKeyId:
+    Type: String
+    Default: <ParameterStoreAwsAccessKeyId>
+    Description: Key name in Parameter Store, used for aws access key id.
+  ParameterStoreAwsSecretAccessKey:
+    Type: String
+    Default: <ParameterStoreAwsSecretAccessKey>
+    Description: Key name in Parameter Store, used for aws secret access key.
+  ParameterStoreGitUsername:
+    Type: String
+    Default: <ParameterStoreGitUsername>
+    Description: Key name in Parameter Store, used for Github username.
+  ParameterStoreGitPassword:
+    Type: String
+    Default: <ParameterStoreGitPassword>
+    Description: Key name in Parameter Store, used for Github password.
+  GithubPrivateRepository:
+    Type: String
+    Default: <GithubPrivateRepository>
+    Description: Github private repository.
+  GithubPublicRepository:
+    Type: String
+    Default: <GithubPublicRepository>
+    Description: Github private repository.
+  GitCommitAuthorName:
+    Type: String
+    Default: <GitCommitAuthorName>
+    Description: Author name when making a git commit.
+  GitCommitAuthorEmail:
+    Type: String
+    Default: <GitCommitAuthorEmail>
+    Description: Author email when making a git commit.
+Mappings:
+  PipelineArtifacts:
+    StageSource:
+      TrebuchetRelease: trebuchet-release
+    StageRegenerateCode:
+      CppSdkGeneratedSource: aws-sdk-cpp
+    StageBuild:
+      LinuxBuild: linux_build
+      VS2015Build: vs2015_build
+      VS2017Build: vs2017_build
+      MacosxBuild: macosx_build
+  ScriptLocations:
+    CodeBuild:
+      RegenerateCode: aws-sdk-cpp/CI/trebuchet-release-pipeline/buildspec_regenerate_code.yml
+      LinuxBuild: aws-sdk-cpp/CI/trebuchet-release-pipeline/buildspec_linux_build.yml
+      LinuxTests: aws-sdk-cpp/CI/trebuchet-release-pipeline/buildspec_linux_tests.yml
+      VS2015Build: aws-sdk-cpp/CI/trebuchet-release-pipeline/buildspec_vs2015_build.yml
+      VS2017Build: aws-sdk-cpp/CI/trebuchet-release-pipeline/buildspec_vs2017_build.yml
+      WindowsTests: aws-sdk-cpp/CI/trebuchet-release-pipeline/buildspec_windows_tests.yml
+      PushToGithub: aws-sdk-cpp/CI/trebuchet-release-pipeline/buildspec_push_to_github.yml
+      PublishAPIDocs: aws-sdk-cpp/CI/trebuchet-release-pipeline/buildspec_publish_api_docs.yml
+    Lambda:
+      HandleTrebuchetReleaseNotificationFunction: lambda/HandleTrebuchetReleaseNotification.zip
+      UpdateStatusFunction: lambda/UpdateTrebuchetReleaseStatus.zip
+  Scripts:
+    CodeBuildBuildSpec:
+      RegenerateCode: |
+        # This buildspec is source controlled, whenever you make any change in the AWS console, you should update it to Github.
+        version: 0.2
+        phases:
+          build:
+            commands:
+              - echo $CODEBUILD_SOURCE_VERSION
+              - git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GITHUB_PRIVATE_REPOSITORY}.git aws-sdk-cpp
+              - export RELEASE_ID=$(cat $RELEASE_ID_FILENAME)
+              - python3 aws-sdk-cpp/CI/trebuchet-release-pipeline/UpdateStatus.py -s RegenerateCode -i "$RELEASE_ID" -m "Step 1 of 4. Regenerating Code with New Models." -b $CODEBUILD_BUILD_SUCCEEDING
+              - cp models/*.normal.json aws-sdk-cpp/code-generation/api-descriptions/
+              - cd aws-sdk-cpp
+              - mkdir build
+              - cd build
+              - cmake .. -DREGENERATE_CLIENTS=ON
+              - cd ..
+              - rm -rf build
+          post_build:
+            commands:
+              - cd $CODEBUILD_SRC_DIR
+              - export BUILD_JOB_NAME=$(echo "${CODEBUILD_BUILD_ID}" | cut -f1 -d ":")
+              - export BUILD_URL="https://${AWS_REGION}.console.aws.amazon.com/codesuite/codebuild/projects/${BUILD_JOB_NAME}/build/${CODEBUILD_BUILD_ID}"
+              - |
+                if [ "${CODEBUILD_BUILD_SUCCEEDING}" = "1" ]; then
+                  python3 aws-sdk-cpp/CI/trebuchet-release-pipeline/UpdateStatus.py -s RegenerateCode -e "[BUILD SUCCESS](${BUILD_URL}) (${CODEBUILD_BUILD_ID})" -i $RELEASE_ID -m "Step 1 of 4. Regenerated Code with New Models." -b $CODEBUILD_BUILD_SUCCEEDING;
+                else
+                  python3 aws-sdk-cpp/CI/trebuchet-release-pipeline/UpdateStatus.py -s RegenerateCode -e "[BUILD FAILURE](${BUILD_URL}) (${CODEBUILD_BUILD_ID})" -i $RELEASE_ID -m "Step 1 of 4. Code Generation with New Models Failed. A technician has already been notified." -b $CODEBUILD_BUILD_SUCCEEDING;
+                fi
+        artifacts:
+          files:
+            - "**/*"
+Resources:
+  TrebuchetReleasePipelineRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      RoleName: !Ref TrebuchetReleasePipelineRoleName
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          -
+            Effect: Allow
+            Principal:
+              Service:
+                - codepipeline.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Path: /
+  HandleTrebuchetReleaseNotificationFunctionRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      RoleName: !Ref HandleTrebuchetReleaseNotificationFunctionRoleName
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          -
+            Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+                - edgelambda.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Path: /
+  UpdateStatusFunctionRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      RoleName: !Ref UpdateStatusFunctionRoleName
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          -
+            Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+                - edgelambda.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Path: /
+  TrebuchetReleaseCodeBuildRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      RoleName: !Ref TrebuchetReleaseCodeBuildRoleName
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          -
+            Effect: Allow
+            Principal:
+              Service:
+                - codebuild.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Path: /
+  TrebuchetReleaseS3Policy:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyName: TrebuchetReleaseS3Policy
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          -
+            Effect: Allow
+            Action:
+              - 's3:PutObject'
+              - 's3:GetObject'
+              - 's3:GetObjectVersion'
+              - 's3:GetBucketVersioning'
+            Resource:
+              - !Join
+                  - ''
+                  - - 'arn:aws:s3:::'
+                    - !Ref TrebuchetReleaseS3BucketName
+                    - '*'
+              - !Join
+                  - ''
+                  - - 'arn:aws:s3:::'
+                    - !Ref PipelineCacheS3BucketName
+                    - '*'
+              - !Join
+                  - ''
+                  - - 'arn:aws:s3:::'
+                    - !Ref PublicDocsS3BucketName
+                    - '*'
+      Roles:
+        - !Ref TrebuchetReleasePipelineRole
+        - !Ref HandleTrebuchetReleaseNotificationFunctionRole
+        - !Ref TrebuchetReleaseCodeBuildRole
+  TrebuchetReleaseSQSPolicy:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyName: TrebuchetReleaseSQSPolicy
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          -
+            Effect: Allow
+            Action:
+              - 'sqs:SendMessage'
+              - 'sqs:ReceiveMessage'
+              - 'sqs:DeleteMessage'
+              - 'sqs:GetQueueAttributes'
+            Resource: '*'
+      Roles:
+        - !Ref UpdateStatusFunctionRole
+  TrebuchetReleaseCodeBuildPolicy:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyName: TrebuchetReleaseCodeBuildPolicy
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          -
+            Effect: Allow
+            Action: 'codebuild:*'
+            Resource: '*'
+      Roles:
+        - !Ref TrebuchetReleasePipelineRole
+  TrebuchetReleaseLambdaPolicy:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyName: TrebuchetReleaseLambdaPolicy
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          -
+            Effect: Allow
+            Action: 'lambda:InvokeFunction'
+            Resource: '*'
+      Roles:
+        - !Ref HandleTrebuchetReleaseNotificationFunctionRole
+        - !Ref TrebuchetReleaseCodeBuildRole
+  TrebuchetReleaseCloudWatchLogsPolicy:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyName: TrebuchetReleaseCloudWatchLogsPolicy
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          -
+            Effect: Allow
+            Action:
+              - 'logs:CreateLogGroup'
+              - 'logs:CreateLogStream'
+              - 'logs:PutLogEvents'
+            Resource: '*'
+      Roles:
+        - !Ref TrebuchetReleasePipelineRole
+        - !Ref HandleTrebuchetReleaseNotificationFunctionRole
+        - !Ref UpdateStatusFunctionRole
+        - !Ref TrebuchetReleaseCodeBuildRole
+  TrebuchetReleaseCloudWatchMetricsPolicy:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyName: TrebuchetReleaseCloudWatchMetricsPolicy
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          -
+            Effect: Allow
+            Action:
+              - 'cloudwatch:PutMetricData'
+            Resource: '*'
+      Roles:
+        - !Ref UpdateStatusFunctionRole
+  TrebuchetReleaseSSMPolicy:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyName: TrebuchetReleaseSSMPolicy
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          -
+            Effect: Allow
+            Action: 'ssm:GetParameters'
+            Resource: "*"
+      Roles:
+        - !Ref TrebuchetReleaseCodeBuildRole
+  HandleTrebuchetReleaseNotificationFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Ref HandleTrebuchetReleaseNotificationFunctionName
+      Handler: lambda_handle_trebuchet_release_notification.lambda_handler
+      Role: !GetAtt HandleTrebuchetReleaseNotificationFunctionRole.Arn
+      Runtime: python3.6
+      ReservedConcurrentExecutions: 1
+      Timeout: 10
+      Code:
+      Code:
+        S3Bucket: !Ref TrebuchetReleaseS3BucketName
+        S3Key: !FindInMap [ScriptLocations, Lambda, HandleTrebuchetReleaseNotificationFunction]
+      Environment:
+        Variables:
+          S3_BUCKET_NAME: !Ref TrebuchetReleaseS3BucketName
+          RELEASE_MESSAGE_FILENAME: !Ref TrebuchetReleaseMessageFilename
+          RELEASE_ID_FILENAME: !Ref TrebuchetReleaseIdFilename
+          RELEASE_NOTES_FILENAME: !Ref TrebuchetReleaseNotesFilename
+          PIPELINE_SOURCE: !Ref TrebuchetReleasePipelineSourceS3KeyName
+          UPDATE_STATUS_LAMBDA_FUNCTION_NAME: !Ref UpdateStatusFunctionName
+  UpdateStatusFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Ref UpdateStatusFunctionName
+      Handler: lambda_update_trebuchet_release_status.lambda_handler
+      Role: !GetAtt UpdateStatusFunctionRole.Arn
+      Runtime: python3.6
+      Code:
+        S3Bucket: !Ref TrebuchetReleaseS3BucketName
+        S3Key: !FindInMap [ScriptLocations, Lambda, UpdateStatusFunction]
+      Environment:
+        Variables:
+          TREBUCHET_QUEUE_URL: !Ref TrebuchetQueueUrl
+          CHIME_BOT_URL: !Ref ChimeBotUrl
+  TrebuchetReleaseBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref TrebuchetReleaseS3BucketName
+      VersioningConfiguration:
+        Status: Enabled
+  CodePipelineCacheBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref PipelineCacheS3BucketName
+      VersioningConfiguration:
+        Status: Enabled
+  RegenerateCodeProject:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: !Ref RegenerateCodeProjectName
+      ServiceRole: !Ref TrebuchetReleaseCodeBuildRole
+      Source:
+        Type: CODEPIPELINE
+        BuildSpec: !FindInMap [Scripts, CodeBuildBuildSpec, RegenerateCode]
+      Artifacts:
+        Type: CODEPIPELINE
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_LARGE
+        Image: !Ref LinuxGccImageName
+        EnvironmentVariables:
+          - Name: S3_BUCKET_NAME
+            Type: PLAINTEXT
+            Value: !Ref TrebuchetReleaseS3BucketName
+          - Name: RELEASE_ID_FILENAME
+            Type: PLAINTEXT
+            Value: !Ref TrebuchetReleaseIdFilename
+          - Name: UPDATE_STATUS_LAMBDA_FUNCTION_NAME
+            Type: PLAINTEXT
+            Value: !Ref UpdateStatusFunctionName
+          - Name: AWS_ACCESS_KEY_ID
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsAccessKeyId
+          - Name: AWS_SECRET_ACCESS_KEY
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsSecretAccessKey
+          - Name: GITHUB_PRIVATE_REPOSITORY
+            Type: PLAINTEXT
+            Value: !Ref GithubPrivateRepository
+          - Name: GIT_USERNAME
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreGitUsername
+          - Name: GIT_PASSWORD
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreGitPassword
+      TimeoutInMinutes: 60
+  LinuxGccBuildProject:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: !Ref LinuxGccBuildProjectName
+      ServiceRole: !Ref TrebuchetReleaseCodeBuildRole
+      Source:
+        Type: CODEPIPELINE
+        BuildSpec: !FindInMap [ScriptLocations, CodeBuild, LinuxBuild]
+      Artifacts:
+        Type: CODEPIPELINE
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_LARGE
+        Image: !Ref LinuxGccImageName
+        PrivilegedMode: true
+        EnvironmentVariables:
+          - Name: S3_BUCKET_NAME
+            Type: PLAINTEXT
+            Value: !Ref TrebuchetReleaseS3BucketName
+          - Name: RELEASE_ID_FILENAME
+            Type: PLAINTEXT
+            Value: !Ref TrebuchetReleaseIdFilename
+          - Name: UPDATE_STATUS_LAMBDA_FUNCTION_NAME
+            Type: PLAINTEXT
+            Value: !Ref UpdateStatusFunctionName
+          - Name: AWS_ACCESS_KEY_ID
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsAccessKeyId
+          - Name: AWS_SECRET_ACCESS_KEY
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsSecretAccessKey
+      TimeoutInMinutes: 60
+  LinuxGccTestsProject:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: !Ref LinuxGccTestsProjectName
+      ServiceRole: !Ref TrebuchetReleaseCodeBuildRole
+      Source:
+        Type: CODEPIPELINE
+        BuildSpec: !FindInMap [ScriptLocations, CodeBuild, LinuxTests]
+      Artifacts:
+        Type: CODEPIPELINE
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_LARGE
+        Image: !Ref LinuxGccImageName
+        PrivilegedMode: true
+        EnvironmentVariables:
+          - Name: S3_BUCKET_NAME
+            Type: PLAINTEXT
+            Value: !Ref TrebuchetReleaseS3BucketName
+          - Name: RELEASE_ID_FILENAME
+            Type: PLAINTEXT
+            Value: !Ref TrebuchetReleaseIdFilename
+          - Name: UPDATE_STATUS_LAMBDA_FUNCTION_NAME
+            Type: PLAINTEXT
+            Value: !Ref UpdateStatusFunctionName
+          - Name: AWS_ACCESS_KEY_ID
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsAccessKeyId
+          - Name: AWS_SECRET_ACCESS_KEY
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsSecretAccessKey
+      TimeoutInMinutes: 60
+  WindowsVS2015BuildProject:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: !Ref WindowsVS2015BuildProjectName
+      ServiceRole: !Ref TrebuchetReleaseCodeBuildRole
+      Source:
+        Type: CODEPIPELINE
+        BuildSpec: !FindInMap [ScriptLocations, CodeBuild, VS2015Build]
+      Artifacts:
+        Type: CODEPIPELINE
+      Environment:
+        Type: WINDOWS_CONTAINER
+        ComputeType: BUILD_GENERAL1_LARGE
+        Image: !Ref WindowsVS2015ImageName
+        EnvironmentVariables:
+          - Name: S3_BUCKET_NAME
+            Type: PLAINTEXT
+            Value: !Ref TrebuchetReleaseS3BucketName
+          - Name: RELEASE_ID_FILENAME
+            Type: PLAINTEXT
+            Value: !Ref TrebuchetReleaseIdFilename
+          - Name: UPDATE_STATUS_LAMBDA_FUNCTION_NAME
+            Type: PLAINTEXT
+            Value: !Ref UpdateStatusFunctionName
+          - Name: AWS_ACCESS_KEY_ID
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsAccessKeyId
+          - Name: AWS_SECRET_ACCESS_KEY
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsSecretAccessKey
+      TimeoutInMinutes: 60
+  WindowsVS2015TestsProject:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: !Ref WindowsVS2015TestsProjectName
+      ServiceRole: !Ref TrebuchetReleaseCodeBuildRole
+      Source:
+        Type: CODEPIPELINE
+        BuildSpec: !FindInMap [ScriptLocations, CodeBuild, WindowsTests]
+      Artifacts:
+        Type: CODEPIPELINE
+      Environment:
+        Type: WINDOWS_CONTAINER
+        ComputeType: BUILD_GENERAL1_LARGE
+        Image: !Ref WindowsVS2015ImageName
+        EnvironmentVariables:
+          - Name: S3_BUCKET_NAME
+            Type: PLAINTEXT
+            Value: !Ref TrebuchetReleaseS3BucketName
+          - Name: RELEASE_ID_FILENAME
+            Type: PLAINTEXT
+            Value: !Ref TrebuchetReleaseIdFilename
+          - Name: UPDATE_STATUS_LAMBDA_FUNCTION_NAME
+            Type: PLAINTEXT
+            Value: !Ref UpdateStatusFunctionName
+          - Name: AWS_ACCESS_KEY_ID
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsAccessKeyId
+          - Name: AWS_SECRET_ACCESS_KEY
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsSecretAccessKey
+      TimeoutInMinutes: 60
+  WindowsVS2017BuildProject:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: !Ref WindowsVS2017BuildProjectName
+      ServiceRole: !Ref TrebuchetReleaseCodeBuildRole
+      Source:
+        Type: CODEPIPELINE
+        BuildSpec: !FindInMap [ScriptLocations, CodeBuild, VS2017Build]
+      Artifacts:
+        Type: CODEPIPELINE
+      Environment:
+        Type: WINDOWS_CONTAINER
+        ComputeType: BUILD_GENERAL1_LARGE
+        Image: !Ref WindowsVS2017ImageName
+        EnvironmentVariables:
+          - Name: S3_BUCKET_NAME
+            Type: PLAINTEXT
+            Value: !Ref TrebuchetReleaseS3BucketName
+          - Name: RELEASE_ID_FILENAME
+            Type: PLAINTEXT
+            Value: !Ref TrebuchetReleaseIdFilename
+          - Name: UPDATE_STATUS_LAMBDA_FUNCTION_NAME
+            Type: PLAINTEXT
+            Value: !Ref UpdateStatusFunctionName
+          - Name: AWS_ACCESS_KEY_ID
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsAccessKeyId
+          - Name: AWS_SECRET_ACCESS_KEY
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsSecretAccessKey
+      TimeoutInMinutes: 60
+  WindowsVS2017TestsProject:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: !Ref WindowsVS2017TestsProjectName
+      ServiceRole: !Ref TrebuchetReleaseCodeBuildRole
+      Source:
+        Type: CODEPIPELINE
+        BuildSpec: !FindInMap [ScriptLocations, CodeBuild, WindowsTests]
+      Artifacts:
+        Type: CODEPIPELINE
+      Environment:
+        Type: WINDOWS_CONTAINER
+        ComputeType: BUILD_GENERAL1_LARGE
+        Image: !Ref WindowsVS2017ImageName
+        EnvironmentVariables:
+          - Name: S3_BUCKET_NAME
+            Type: PLAINTEXT
+            Value: !Ref TrebuchetReleaseS3BucketName
+          - Name: RELEASE_ID_FILENAME
+            Type: PLAINTEXT
+            Value: !Ref TrebuchetReleaseIdFilename
+          - Name: UPDATE_STATUS_LAMBDA_FUNCTION_NAME
+            Type: PLAINTEXT
+            Value: !Ref UpdateStatusFunctionName
+          - Name: AWS_ACCESS_KEY_ID
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsAccessKeyId
+          - Name: AWS_SECRET_ACCESS_KEY
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsSecretAccessKey
+      TimeoutInMinutes: 60
+  PushToGithubProject:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: !Ref PushToGithubProjectName
+      ServiceRole: !Ref TrebuchetReleaseCodeBuildRole
+      Source:
+        Type: CODEPIPELINE
+        BuildSpec: !FindInMap [ScriptLocations, CodeBuild, PushToGithub]
+      Artifacts:
+        Type: CODEPIPELINE
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_LARGE
+        Image: !Ref LinuxGccImageName
+        EnvironmentVariables:
+          - Name: S3_BUCKET_NAME
+            Type: PLAINTEXT
+            Value: !Ref TrebuchetReleaseS3BucketName
+          - Name: RELEASE_ID_FILENAME
+            Type: PLAINTEXT
+            Value: !Ref TrebuchetReleaseIdFilename
+          - Name: RELEASE_NOTES_FILENAME
+            Type: PLAINTEXT
+            Value: !Ref TrebuchetReleaseNotesFilename
+          - Name: UPDATE_STATUS_LAMBDA_FUNCTION_NAME
+            Type: PLAINTEXT
+            Value: !Ref UpdateStatusFunctionName
+          - Name: AWS_ACCESS_KEY_ID
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsAccessKeyId
+          - Name: AWS_SECRET_ACCESS_KEY
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsSecretAccessKey
+          - Name: GITHUB_PRIVATE_REPOSITORY
+            Type: PLAINTEXT
+            Value: !Ref GithubPrivateRepository
+          - Name: GITHUB_PUBLIC_REPOSITORY
+            Type: PLAINTEXT
+            Value: !Ref GithubPublicRepository
+          - Name: GIT_USERNAME
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreGitUsername
+          - Name: GIT_PASSWORD
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreGitPassword
+          - Name: GIT_COMMIT_AUTHOR_NAME
+            Type: PLAINTEXT
+            Value: !Ref GitCommitAuthorName
+          - Name: GIT_COMMIT_AUTHOR_EMAIL
+            Type: PLAINTEXT
+            Value: !Ref GitCommitAuthorEmail
+      TimeoutInMinutes: 60
+  PublishAPIDocsProject:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: !Ref PublishAPIDocsProjectName
+      ServiceRole: !Ref TrebuchetReleaseCodeBuildRole
+      Source:
+        Type: CODEPIPELINE
+        BuildSpec: !FindInMap [ScriptLocations, CodeBuild, PublishAPIDocs]
+      Artifacts:
+        Type: CODEPIPELINE
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_LARGE
+        Image: !Ref LinuxGccImageName
+        EnvironmentVariables:
+          - Name: PIPELINE_S3_BUCKET_NAME
+            Type: PLAINTEXT
+            Value: !Ref TrebuchetReleaseS3BucketName
+          - Name: DOCS_S3_BUCKET_NAME
+            Type: PLAINTEXT
+            Value: !Ref PublicDocsS3BucketName
+          - Name: BINARY_S3_BUCKET_NAME
+            Type: PLAINTEXT
+            Value: !Ref BinaryReleaseS3BucketName
+          - Name: RELEASE_ID_FILENAME
+            Type: PLAINTEXT
+            Value: !Ref TrebuchetReleaseIdFilename
+          - Name: UPDATE_STATUS_LAMBDA_FUNCTION_NAME
+            Type: PLAINTEXT
+            Value: !Ref UpdateStatusFunctionName
+          - Name: AWS_ACCESS_KEY_ID
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsAccessKeyId
+          - Name: AWS_SECRET_ACCESS_KEY
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreAwsSecretAccessKey
+          - Name: GITHUB_PUBLIC_REPOSITORY
+            Type: PLAINTEXT
+            Value: !Ref GithubPublicRepository
+          - Name: GIT_USERNAME
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreGitUsername
+          - Name: GIT_PASSWORD
+            Type: PARAMETER_STORE
+            Value: !Ref ParameterStoreGitPassword
+      TimeoutInMinutes: 120
+  TrebuchetReleasePipeline:
+    Type: AWS::CodePipeline::Pipeline
+    Properties:
+      Name: !Ref TrebuchetReleasePipelineName
+      RoleArn: !GetAtt TrebuchetReleasePipelineRole.Arn
+      Stages:
+        -
+          Name: Source
+          Actions:
+            -
+              Name: TrebuchetReleaseSource
+              ActionTypeId:
+                Category: Source
+                Owner: AWS
+                Version: 1
+                Provider: S3
+              Configuration:
+                PollForSourceChanges: true
+                S3Bucket: !Ref TrebuchetReleaseBucket
+                S3ObjectKey: !Ref TrebuchetReleasePipelineSourceS3KeyName
+              OutputArtifacts:
+                - Name: !FindInMap [PipelineArtifacts, StageSource, TrebuchetRelease]
+              RunOrder: 1
+        -
+          Name: RegenerateCode
+          Actions:
+            -
+              Name: RegenerateCodeWithNewModels
+              ActionTypeId:
+                Category: Build
+                Owner: AWS
+                Version: 1
+                Provider: CodeBuild
+              InputArtifacts:
+                - Name: !FindInMap [PipelineArtifacts, StageSource, TrebuchetRelease]
+              OutputArtifacts:
+                - Name: !FindInMap [PipelineArtifacts, StageRegenerateCode, CppSdkGeneratedSource]
+              Configuration:
+                ProjectName: !Ref RegenerateCodeProject
+              RunOrder: 1
+        -
+          Name: Build
+          Actions:
+            -
+              Name: LinuxGccBuild
+              ActionTypeId:
+                Category: Build
+                Owner: AWS
+                Version: 1
+                Provider: CodeBuild
+              InputArtifacts:
+                - Name: !FindInMap [PipelineArtifacts, StageRegenerateCode, CppSdkGeneratedSource]
+              OutputArtifacts:
+                - Name: !FindInMap [PipelineArtifacts, StageBuild, LinuxBuild]
+              Configuration:
+                ProjectName: !Ref LinuxGccBuildProject
+              RunOrder: 1
+            -
+              Name: WindowsVS2015Build
+              ActionTypeId:
+                Category: Build
+                Owner: AWS
+                Version: 1
+                Provider: CodeBuild
+              InputArtifacts:
+                - Name: !FindInMap [PipelineArtifacts, StageRegenerateCode, CppSdkGeneratedSource]
+              OutputArtifacts:
+                - Name: !FindInMap [PipelineArtifacts, StageBuild, VS2015Build]
+              Configuration:
+                ProjectName: !Ref WindowsVS2015BuildProject
+              RunOrder: 1
+            -
+              Name: WindowsVS2017Build
+              ActionTypeId:
+                Category: Build
+                Owner: AWS
+                Version: 1
+                Provider: CodeBuild
+              InputArtifacts:
+                - Name: !FindInMap [PipelineArtifacts, StageRegenerateCode, CppSdkGeneratedSource]
+              OutputArtifacts:
+                - Name: !FindInMap [PipelineArtifacts, StageBuild, VS2017Build]
+              Configuration:
+                ProjectName: !Ref WindowsVS2017BuildProject
+              RunOrder: 1
+            -
+              Name: MacosxClangBuild
+              ActionTypeId:
+                Category: Build
+                Owner: Custom
+                Provider: !Ref JenkinsMacOSXProvider
+                Version: !Ref JenkinsMacOSXProviderVersion
+              InputArtifacts:
+                - Name: !FindInMap [PipelineArtifacts, StageRegenerateCode, CppSdkGeneratedSource]
+              OutputArtifacts:
+                - Name: !FindInMap [PipelineArtifacts, StageBuild, MacosxBuild]
+              Configuration:
+                ProjectName: !Ref MacosxClangBuildProjectName
+              RunOrder: 1
+        -
+          Name: IntegrationTests
+          Actions:
+            -
+              Name: LinuxGccTests
+              ActionTypeId:
+                Category: Build
+                Owner: AWS
+                Version: 1
+                Provider: CodeBuild
+              InputArtifacts:
+                - Name: !FindInMap [PipelineArtifacts, StageBuild, LinuxBuild]
+              Configuration:
+                ProjectName: !Ref LinuxGccTestsProject
+              RunOrder: 1
+            -
+              Name: WindowsVS2017Tests
+              ActionTypeId:
+                Category: Build
+                Owner: AWS
+                Version: 1
+                Provider: CodeBuild
+              InputArtifacts:
+                - Name: !FindInMap [PipelineArtifacts, StageBuild, VS2017Build]
+              Configuration:
+                ProjectName: !Ref WindowsVS2017TestsProject
+              RunOrder: 1
+            -
+              Name: MacosxClangTests
+              ActionTypeId:
+                Category: Build
+                Owner: Custom
+                Provider: !Ref JenkinsMacOSXProvider
+                Version: !Ref JenkinsMacOSXProviderVersion
+              InputArtifacts:
+                - Name: !FindInMap [PipelineArtifacts, StageBuild, MacosxBuild]
+              OutputArtifacts:
+                - Name: macosx_tests
+              Configuration:
+                ProjectName: !Ref MacosxClangTestsProjectName
+              RunOrder: 1
+        -
+          Name: Prod
+          Actions:
+            -
+              Name: PushToGithub
+              ActionTypeId:
+                Category: Build
+                Owner: AWS
+                Version: 1
+                Provider: CodeBuild
+              InputArtifacts:
+                - Name: !FindInMap [PipelineArtifacts, StageRegenerateCode, CppSdkGeneratedSource]
+              Configuration:
+                ProjectName: !Ref PushToGithubProjectName
+              RunOrder: 1
+        -
+          Name: Docs
+          Actions:
+            -
+              Name: PublishAPIDocs
+              ActionTypeId:
+                Category: Build
+                Owner: AWS
+                Version: 1
+                Provider: CodeBuild
+              InputArtifacts:
+                - Name: !FindInMap [PipelineArtifacts, StageRegenerateCode, CppSdkGeneratedSource]
+              Configuration:
+                ProjectName: !Ref PublishAPIDocsProjectName
+              RunOrder: 1
+      ArtifactStore:
+        Type: S3
+        Location: !Ref CodePipelineCacheBucket

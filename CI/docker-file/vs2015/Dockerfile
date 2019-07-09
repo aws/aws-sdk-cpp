@@ -36,7 +36,10 @@ RUN choco install python -y
 # Add Python to PATH
 RUN setx /M PATH "%PATH%;C:\Python36"
 
+# Install boto3
+RUN pip install boto3 --upgrade
+
 # Install awscli
-RUN choco install awscli -y
+RUN pip install awscli --upgrade
 
 CMD [ "cmd.exe" ]
