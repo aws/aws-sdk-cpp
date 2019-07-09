@@ -174,11 +174,14 @@ namespace Aws
             /**
              * Calls AttemptOnRequest until it either, succeeds, runs out of retries from the retry strategy,
              * or encounters and error that is not retryable. This method is for payloadless requests e.g. GET, DELETE, HEAD
+             * 
+             * requestName is used for metrics and defaults to empty string, to avoid empty names in metrics provide a valid
+             * name.
              */
             HttpResponseOutcome AttemptExhaustively(const Aws::Http::URI& uri, 
                     Http::HttpMethod httpMethod,
                     const char* signerName,
-                    const char* requestName = nullptr) const;
+                    const char* requestName = "") const;
 
             /**
              * Build an Http Request from the AmazonWebServiceRequest object. Signs the request, sends it accross the wire
@@ -191,10 +194,13 @@ namespace Aws
             /**
              * Signs an Http Request, sends it accross the wire
              * then reports the http response. This method is for payloadless requests e.g. GET, DELETE, HEAD
+             * 
+             * requestName is used for metrics and defaults to empty string, to avoid empty names in metrics provide a valid
+             * name.
              */
             HttpResponseOutcome AttemptOneRequest(const std::shared_ptr<Http::HttpRequest>& httpRequest,
                     const char* signerName,
-                    const char* requestName = nullptr) const;
+                    const char* requestName = "") const;
 
             /**
              * This is used for structureless response payloads (file streams, binary data etc...). It calls AttemptExhaustively, but upon
@@ -208,11 +214,14 @@ namespace Aws
             /**
              * This is used for structureless response payloads (file streams, binary data etc...). It calls AttemptExhaustively, but upon
              * return transfers ownership of the underlying stream for the http response to the caller.
+             * 
+             * requestName is used for metrics and defaults to empty string, to avoid empty names in metrics provide a valid
+             * name.
              */
             StreamOutcome MakeRequestWithUnparsedResponse(const Aws::Http::URI& uri,
                     Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                     const char* signerName = Aws::Auth::SIGV4_SIGNER,
-                    const char* requestName = nullptr) const;
+                    const char* requestName = "") const;
 
             /**
              * Abstract.  Subclassing clients should override this to tell the client how to marshall error payloads
@@ -327,13 +336,16 @@ namespace Aws
             /**
              * Returns a Json document or an error from the request. Does some marshalling json and raw streams,
              * then just calls AttemptExhaustively.
-             *
+             * 
+             * requestName is used for metrics and defaults to empty string, to avoid empty names in metrics provide a valid
+             * name.
+             * 
              * method defaults to POST
              */
             JsonOutcome MakeRequest(const Aws::Http::URI& uri,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                 const char* signerName = Aws::Auth::SIGV4_SIGNER,
-                const char* requestName = nullptr) const;
+                const char* requestName = "") const;
 
             JsonOutcome MakeEventStreamRequest(std::shared_ptr<Aws::Http::HttpRequest>& request) const;
         };
@@ -381,13 +393,16 @@ namespace Aws
             /**
              * Returns an xml document or an error from the request. Does some marshalling xml and raw streams,
              * then just calls AttemptExhaustively.
-             *
+             * 
+             * requestName is used for metrics and defaults to empty string, to avoid empty names in metrics provide a valid
+             * name.
+             * 
              * method defaults to POST
              */
             XmlOutcome MakeRequest(const Aws::Http::URI& uri,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                 const char* signerName = Aws::Auth::SIGV4_SIGNER,
-                const char* requesetName = nullptr) const;
+                const char* requestName = "") const;
 
             /**
             * This is used for event stream response.
@@ -399,11 +414,13 @@ namespace Aws
 
             /**
             * This is used for event stream response.
+            * requestName is used for metrics and defaults to empty string, to avoid empty names in metrics provide a valid
+            * name.
             */
             XmlOutcome MakeRequestWithEventStream(const Aws::Http::URI& uri,
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                 const char* signerName = Aws::Auth::SIGV4_SIGNER,
-                const char* requestName = nullptr) const;
+                const char* requestName = "") const;
         };
 
     } // namespace Client
