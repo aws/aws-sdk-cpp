@@ -35,12 +35,12 @@ namespace Glacier
 namespace Model
 {
   /**
-   * <p>Contains the Amazon Glacier response to your request.</p> <p>For information
-   * about the underlying REST API, see <a
-   * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload
+   * <p>Contains the Amazon S3 Glacier response to your request.</p> <p>For
+   * information about the underlying REST API, see <a
+   * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload
    * Archive</a>. For conceptual information, see <a
-   * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
-   * with Archives in Amazon Glacier</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
+   * with Archives in Amazon S3 Glacier</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ArchiveCreationOutput">AWS
    * API Reference</a></p>
    */
@@ -89,37 +89,37 @@ namespace Model
 
 
     /**
-     * <p>The checksum of the archive computed by Amazon Glacier.</p>
+     * <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
      */
     inline const Aws::String& GetChecksum() const{ return m_checksum; }
 
     /**
-     * <p>The checksum of the archive computed by Amazon Glacier.</p>
+     * <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
      */
     inline void SetChecksum(const Aws::String& value) { m_checksum = value; }
 
     /**
-     * <p>The checksum of the archive computed by Amazon Glacier.</p>
+     * <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
      */
     inline void SetChecksum(Aws::String&& value) { m_checksum = std::move(value); }
 
     /**
-     * <p>The checksum of the archive computed by Amazon Glacier.</p>
+     * <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
      */
     inline void SetChecksum(const char* value) { m_checksum.assign(value); }
 
     /**
-     * <p>The checksum of the archive computed by Amazon Glacier.</p>
+     * <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
      */
     inline UploadArchiveResult& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
 
     /**
-     * <p>The checksum of the archive computed by Amazon Glacier.</p>
+     * <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
      */
     inline UploadArchiveResult& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
 
     /**
-     * <p>The checksum of the archive computed by Amazon Glacier.</p>
+     * <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
      */
     inline UploadArchiveResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 

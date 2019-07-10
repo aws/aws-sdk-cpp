@@ -27,6 +27,9 @@ namespace Model
 {
 
   /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteUserByPrincipalIdRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_QUICKSIGHT_API DeleteUserByPrincipalIdRequest : public QuickSightRequest
   {

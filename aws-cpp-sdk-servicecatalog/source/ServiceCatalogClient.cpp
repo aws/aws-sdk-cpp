@@ -68,6 +68,7 @@
 #include <aws/servicecatalog/model/DescribeProvisioningParametersRequest.h>
 #include <aws/servicecatalog/model/DescribeRecordRequest.h>
 #include <aws/servicecatalog/model/DescribeServiceActionRequest.h>
+#include <aws/servicecatalog/model/DescribeServiceActionExecutionParametersRequest.h>
 #include <aws/servicecatalog/model/DescribeTagOptionRequest.h>
 #include <aws/servicecatalog/model/DisableAWSOrganizationsAccessRequest.h>
 #include <aws/servicecatalog/model/DisassociateBudgetFromResourceRequest.h>
@@ -1513,6 +1514,41 @@ void ServiceCatalogClient::DescribeServiceActionAsync(const DescribeServiceActio
 void ServiceCatalogClient::DescribeServiceActionAsyncHelper(const DescribeServiceActionRequest& request, const DescribeServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeServiceAction(request), context);
+}
+
+DescribeServiceActionExecutionParametersOutcome ServiceCatalogClient::DescribeServiceActionExecutionParameters(const DescribeServiceActionExecutionParametersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeServiceActionExecutionParametersOutcome(DescribeServiceActionExecutionParametersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeServiceActionExecutionParametersOutcome(outcome.GetError());
+  }
+}
+
+DescribeServiceActionExecutionParametersOutcomeCallable ServiceCatalogClient::DescribeServiceActionExecutionParametersCallable(const DescribeServiceActionExecutionParametersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeServiceActionExecutionParametersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeServiceActionExecutionParameters(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::DescribeServiceActionExecutionParametersAsync(const DescribeServiceActionExecutionParametersRequest& request, const DescribeServiceActionExecutionParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeServiceActionExecutionParametersAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::DescribeServiceActionExecutionParametersAsyncHelper(const DescribeServiceActionExecutionParametersRequest& request, const DescribeServiceActionExecutionParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeServiceActionExecutionParameters(request), context);
 }
 
 DescribeTagOptionOutcome ServiceCatalogClient::DescribeTagOption(const DescribeTagOptionRequest& request) const

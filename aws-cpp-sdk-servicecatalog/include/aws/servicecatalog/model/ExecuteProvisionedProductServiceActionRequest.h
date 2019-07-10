@@ -17,6 +17,8 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/ServiceCatalogRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -232,6 +234,43 @@ namespace Model
      */
     inline ExecuteProvisionedProductServiceActionRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
+    
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
+
+    
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+
+    
+    inline void SetParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+
+    
+    inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
+
+    
+    inline ExecuteProvisionedProductServiceActionRequest& WithParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetParameters(value); return *this;}
+
+    
+    inline ExecuteProvisionedProductServiceActionRequest& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
+
+    
+    inline ExecuteProvisionedProductServiceActionRequest& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+
+    
+    inline ExecuteProvisionedProductServiceActionRequest& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
+
+    
+    inline ExecuteProvisionedProductServiceActionRequest& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
+
+    
+    inline ExecuteProvisionedProductServiceActionRequest& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    
+    inline ExecuteProvisionedProductServiceActionRequest& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
+
+    
+    inline ExecuteProvisionedProductServiceActionRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_provisionedProductId;
@@ -245,6 +284,9 @@ namespace Model
 
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
+    bool m_parametersHasBeenSet;
   };
 
 } // namespace Model

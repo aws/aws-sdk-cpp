@@ -40,8 +40,8 @@ namespace Glacier
 namespace Model
 {
   /**
-   * <p>Contains the description of an Amazon Glacier job.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Contains the description of an Amazon S3 Glacier job.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GlacierJobDescription">AWS
    * API Reference</a></p>
    */
@@ -54,37 +54,37 @@ namespace Model
 
 
     /**
-     * <p>An opaque string that identifies an Amazon Glacier job.</p>
+     * <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
     /**
-     * <p>An opaque string that identifies an Amazon Glacier job.</p>
+     * <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
      */
     inline void SetJobId(const Aws::String& value) { m_jobId = value; }
 
     /**
-     * <p>An opaque string that identifies an Amazon Glacier job.</p>
+     * <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
      */
     inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
 
     /**
-     * <p>An opaque string that identifies an Amazon Glacier job.</p>
+     * <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
      */
     inline void SetJobId(const char* value) { m_jobId.assign(value); }
 
     /**
-     * <p>An opaque string that identifies an Amazon Glacier job.</p>
+     * <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
      */
     inline DescribeJobResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
 
     /**
-     * <p>An opaque string that identifies an Amazon Glacier job.</p>
+     * <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
      */
     inline DescribeJobResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
-     * <p>An opaque string that identifies an Amazon Glacier job.</p>
+     * <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
      */
     inline DescribeJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
 

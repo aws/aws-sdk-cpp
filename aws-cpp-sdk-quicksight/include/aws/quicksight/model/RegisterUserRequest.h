@@ -251,72 +251,96 @@ namespace Model
 
 
     /**
-     * <p>The name of the session with the assumed IAM role. By using this parameter,
-     * you can register multiple users with the same IAM role, provided that each has a
-     * different session name. For more information on assuming IAM roles, see <a
+     * <p>You need to use this parameter only when you register one or more users using
+     * an assumed IAM role. You don't need to provide the session name for other
+     * scenarios, for example when you are registering an IAM user or an Amazon
+     * QuickSight user. You can register multiple users using the same IAM role if each
+     * user has a different session name. For more information on assuming IAM roles,
+     * see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline const Aws::String& GetSessionName() const{ return m_sessionName; }
 
     /**
-     * <p>The name of the session with the assumed IAM role. By using this parameter,
-     * you can register multiple users with the same IAM role, provided that each has a
-     * different session name. For more information on assuming IAM roles, see <a
+     * <p>You need to use this parameter only when you register one or more users using
+     * an assumed IAM role. You don't need to provide the session name for other
+     * scenarios, for example when you are registering an IAM user or an Amazon
+     * QuickSight user. You can register multiple users using the same IAM role if each
+     * user has a different session name. For more information on assuming IAM roles,
+     * see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline bool SessionNameHasBeenSet() const { return m_sessionNameHasBeenSet; }
 
     /**
-     * <p>The name of the session with the assumed IAM role. By using this parameter,
-     * you can register multiple users with the same IAM role, provided that each has a
-     * different session name. For more information on assuming IAM roles, see <a
+     * <p>You need to use this parameter only when you register one or more users using
+     * an assumed IAM role. You don't need to provide the session name for other
+     * scenarios, for example when you are registering an IAM user or an Amazon
+     * QuickSight user. You can register multiple users using the same IAM role if each
+     * user has a different session name. For more information on assuming IAM roles,
+     * see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline void SetSessionName(const Aws::String& value) { m_sessionNameHasBeenSet = true; m_sessionName = value; }
 
     /**
-     * <p>The name of the session with the assumed IAM role. By using this parameter,
-     * you can register multiple users with the same IAM role, provided that each has a
-     * different session name. For more information on assuming IAM roles, see <a
+     * <p>You need to use this parameter only when you register one or more users using
+     * an assumed IAM role. You don't need to provide the session name for other
+     * scenarios, for example when you are registering an IAM user or an Amazon
+     * QuickSight user. You can register multiple users using the same IAM role if each
+     * user has a different session name. For more information on assuming IAM roles,
+     * see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline void SetSessionName(Aws::String&& value) { m_sessionNameHasBeenSet = true; m_sessionName = std::move(value); }
 
     /**
-     * <p>The name of the session with the assumed IAM role. By using this parameter,
-     * you can register multiple users with the same IAM role, provided that each has a
-     * different session name. For more information on assuming IAM roles, see <a
+     * <p>You need to use this parameter only when you register one or more users using
+     * an assumed IAM role. You don't need to provide the session name for other
+     * scenarios, for example when you are registering an IAM user or an Amazon
+     * QuickSight user. You can register multiple users using the same IAM role if each
+     * user has a different session name. For more information on assuming IAM roles,
+     * see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline void SetSessionName(const char* value) { m_sessionNameHasBeenSet = true; m_sessionName.assign(value); }
 
     /**
-     * <p>The name of the session with the assumed IAM role. By using this parameter,
-     * you can register multiple users with the same IAM role, provided that each has a
-     * different session name. For more information on assuming IAM roles, see <a
+     * <p>You need to use this parameter only when you register one or more users using
+     * an assumed IAM role. You don't need to provide the session name for other
+     * scenarios, for example when you are registering an IAM user or an Amazon
+     * QuickSight user. You can register multiple users using the same IAM role if each
+     * user has a different session name. For more information on assuming IAM roles,
+     * see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline RegisterUserRequest& WithSessionName(const Aws::String& value) { SetSessionName(value); return *this;}
 
     /**
-     * <p>The name of the session with the assumed IAM role. By using this parameter,
-     * you can register multiple users with the same IAM role, provided that each has a
-     * different session name. For more information on assuming IAM roles, see <a
+     * <p>You need to use this parameter only when you register one or more users using
+     * an assumed IAM role. You don't need to provide the session name for other
+     * scenarios, for example when you are registering an IAM user or an Amazon
+     * QuickSight user. You can register multiple users using the same IAM role if each
+     * user has a different session name. For more information on assuming IAM roles,
+     * see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline RegisterUserRequest& WithSessionName(Aws::String&& value) { SetSessionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the session with the assumed IAM role. By using this parameter,
-     * you can register multiple users with the same IAM role, provided that each has a
-     * different session name. For more information on assuming IAM roles, see <a
+     * <p>You need to use this parameter only when you register one or more users using
+     * an assumed IAM role. You don't need to provide the session name for other
+     * scenarios, for example when you are registering an IAM user or an Amazon
+     * QuickSight user. You can register multiple users using the same IAM role if each
+     * user has a different session name. For more information on assuming IAM roles,
+     * see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */

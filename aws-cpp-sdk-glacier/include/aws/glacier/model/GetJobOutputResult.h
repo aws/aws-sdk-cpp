@@ -30,7 +30,7 @@ namespace Glacier
 namespace Model
 {
   /**
-   * <p>Contains the Amazon Glacier response to your request.</p><p><h3>See
+   * <p>Contains the Amazon S3 Glacier response to your request.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetJobOutputOutput">AWS
    * API Reference</a></p>
@@ -197,50 +197,50 @@ namespace Model
 
 
     /**
-     * <p>The range of bytes returned by Amazon Glacier. If only partial output is
-     * downloaded, the response provides the range of bytes Amazon Glacier returned.
+     * <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is
+     * downloaded, the response provides the range of bytes Amazon S3 Glacier returned.
      * For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
      */
     inline const Aws::String& GetContentRange() const{ return m_contentRange; }
 
     /**
-     * <p>The range of bytes returned by Amazon Glacier. If only partial output is
-     * downloaded, the response provides the range of bytes Amazon Glacier returned.
+     * <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is
+     * downloaded, the response provides the range of bytes Amazon S3 Glacier returned.
      * For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
      */
     inline void SetContentRange(const Aws::String& value) { m_contentRange = value; }
 
     /**
-     * <p>The range of bytes returned by Amazon Glacier. If only partial output is
-     * downloaded, the response provides the range of bytes Amazon Glacier returned.
+     * <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is
+     * downloaded, the response provides the range of bytes Amazon S3 Glacier returned.
      * For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
      */
     inline void SetContentRange(Aws::String&& value) { m_contentRange = std::move(value); }
 
     /**
-     * <p>The range of bytes returned by Amazon Glacier. If only partial output is
-     * downloaded, the response provides the range of bytes Amazon Glacier returned.
+     * <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is
+     * downloaded, the response provides the range of bytes Amazon S3 Glacier returned.
      * For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
      */
     inline void SetContentRange(const char* value) { m_contentRange.assign(value); }
 
     /**
-     * <p>The range of bytes returned by Amazon Glacier. If only partial output is
-     * downloaded, the response provides the range of bytes Amazon Glacier returned.
+     * <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is
+     * downloaded, the response provides the range of bytes Amazon S3 Glacier returned.
      * For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
      */
     inline GetJobOutputResult& WithContentRange(const Aws::String& value) { SetContentRange(value); return *this;}
 
     /**
-     * <p>The range of bytes returned by Amazon Glacier. If only partial output is
-     * downloaded, the response provides the range of bytes Amazon Glacier returned.
+     * <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is
+     * downloaded, the response provides the range of bytes Amazon S3 Glacier returned.
      * For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
      */
     inline GetJobOutputResult& WithContentRange(Aws::String&& value) { SetContentRange(std::move(value)); return *this;}
 
     /**
-     * <p>The range of bytes returned by Amazon Glacier. If only partial output is
-     * downloaded, the response provides the range of bytes Amazon Glacier returned.
+     * <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is
+     * downloaded, the response provides the range of bytes Amazon S3 Glacier returned.
      * For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
      */
     inline GetJobOutputResult& WithContentRange(const char* value) { SetContentRange(value); return *this;}

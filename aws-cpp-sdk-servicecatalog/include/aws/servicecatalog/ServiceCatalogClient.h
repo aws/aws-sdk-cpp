@@ -59,6 +59,7 @@
 #include <aws/servicecatalog/model/DescribeProvisioningParametersResult.h>
 #include <aws/servicecatalog/model/DescribeRecordResult.h>
 #include <aws/servicecatalog/model/DescribeServiceActionResult.h>
+#include <aws/servicecatalog/model/DescribeServiceActionExecutionParametersResult.h>
 #include <aws/servicecatalog/model/DescribeTagOptionResult.h>
 #include <aws/servicecatalog/model/DisableAWSOrganizationsAccessResult.h>
 #include <aws/servicecatalog/model/DisassociateBudgetFromResourceResult.h>
@@ -180,6 +181,7 @@ namespace Model
         class DescribeProvisioningParametersRequest;
         class DescribeRecordRequest;
         class DescribeServiceActionRequest;
+        class DescribeServiceActionExecutionParametersRequest;
         class DescribeTagOptionRequest;
         class DisableAWSOrganizationsAccessRequest;
         class DisassociateBudgetFromResourceRequest;
@@ -263,6 +265,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeProvisioningParametersResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeProvisioningParametersOutcome;
         typedef Aws::Utils::Outcome<DescribeRecordResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeRecordOutcome;
         typedef Aws::Utils::Outcome<DescribeServiceActionResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeServiceActionOutcome;
+        typedef Aws::Utils::Outcome<DescribeServiceActionExecutionParametersResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeServiceActionExecutionParametersOutcome;
         typedef Aws::Utils::Outcome<DescribeTagOptionResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeTagOptionOutcome;
         typedef Aws::Utils::Outcome<DisableAWSOrganizationsAccessResult, Aws::Client::AWSError<ServiceCatalogErrors>> DisableAWSOrganizationsAccessOutcome;
         typedef Aws::Utils::Outcome<DisassociateBudgetFromResourceResult, Aws::Client::AWSError<ServiceCatalogErrors>> DisassociateBudgetFromResourceOutcome;
@@ -346,6 +349,7 @@ namespace Model
         typedef std::future<DescribeProvisioningParametersOutcome> DescribeProvisioningParametersOutcomeCallable;
         typedef std::future<DescribeRecordOutcome> DescribeRecordOutcomeCallable;
         typedef std::future<DescribeServiceActionOutcome> DescribeServiceActionOutcomeCallable;
+        typedef std::future<DescribeServiceActionExecutionParametersOutcome> DescribeServiceActionExecutionParametersOutcomeCallable;
         typedef std::future<DescribeTagOptionOutcome> DescribeTagOptionOutcomeCallable;
         typedef std::future<DisableAWSOrganizationsAccessOutcome> DisableAWSOrganizationsAccessOutcomeCallable;
         typedef std::future<DisassociateBudgetFromResourceOutcome> DisassociateBudgetFromResourceOutcomeCallable;
@@ -432,6 +436,7 @@ namespace Model
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeProvisioningParametersRequest&, const Model::DescribeProvisioningParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProvisioningParametersResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeRecordRequest&, const Model::DescribeRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecordResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeServiceActionRequest&, const Model::DescribeServiceActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServiceActionResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeServiceActionExecutionParametersRequest&, const Model::DescribeServiceActionExecutionParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServiceActionExecutionParametersResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeTagOptionRequest&, const Model::DescribeTagOptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagOptionResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DisableAWSOrganizationsAccessRequest&, const Model::DisableAWSOrganizationsAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableAWSOrganizationsAccessResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DisassociateBudgetFromResourceRequest&, const Model::DisassociateBudgetFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateBudgetFromResourceResponseReceivedHandler;
@@ -1641,6 +1646,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeServiceActionAsync(const Model::DescribeServiceActionRequest& request, const DescribeServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::DescribeServiceActionExecutionParametersOutcome DescribeServiceActionExecutionParameters(const Model::DescribeServiceActionExecutionParametersRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeServiceActionExecutionParametersOutcomeCallable DescribeServiceActionExecutionParametersCallable(const Model::DescribeServiceActionExecutionParametersRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeServiceActionExecutionParametersAsync(const Model::DescribeServiceActionExecutionParametersRequest& request, const DescribeServiceActionExecutionParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified TagOption.</p><p><h3>See Also:</h3>   <a
@@ -2985,6 +3009,7 @@ namespace Model
         void DescribeProvisioningParametersAsyncHelper(const Model::DescribeProvisioningParametersRequest& request, const DescribeProvisioningParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRecordAsyncHelper(const Model::DescribeRecordRequest& request, const DescribeRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeServiceActionAsyncHelper(const Model::DescribeServiceActionRequest& request, const DescribeServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeServiceActionExecutionParametersAsyncHelper(const Model::DescribeServiceActionExecutionParametersRequest& request, const DescribeServiceActionExecutionParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTagOptionAsyncHelper(const Model::DescribeTagOptionRequest& request, const DescribeTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableAWSOrganizationsAccessAsyncHelper(const Model::DisableAWSOrganizationsAccessRequest& request, const DisableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateBudgetFromResourceAsyncHelper(const Model::DisassociateBudgetFromResourceRequest& request, const DisassociateBudgetFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -35,7 +35,7 @@ namespace Glacier
 namespace Model
 {
   /**
-   * <p>Contains the Amazon Glacier response to the
+   * <p>Contains the Amazon S3 Glacier response to the
    * <code>GetDataRetrievalPolicy</code> request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetDataRetrievalPolicyOutput">AWS
    * API Reference</a></p>

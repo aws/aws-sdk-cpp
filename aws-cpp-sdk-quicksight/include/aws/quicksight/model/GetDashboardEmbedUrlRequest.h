@@ -236,6 +236,87 @@ namespace Model
      */
     inline GetDashboardEmbedUrlRequest& WithResetDisabled(bool value) { SetResetDisabled(value); return *this;}
 
+
+    /**
+     * <p>The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code>
+     * identity type. You can use this for any of the following:</p> <ul> <li>
+     * <p>Amazon QuickSight users in your account (readers, authors, or admins)</p>
+     * </li> <li> <p>AD users</p> </li> <li> <p>Invited non-federated users</p> </li>
+     * <li> <p>Federated IAM users</p> </li> <li> <p>Federated IAM role-based
+     * sessions</p> </li> </ul>
+     */
+    inline const Aws::String& GetUserArn() const{ return m_userArn; }
+
+    /**
+     * <p>The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code>
+     * identity type. You can use this for any of the following:</p> <ul> <li>
+     * <p>Amazon QuickSight users in your account (readers, authors, or admins)</p>
+     * </li> <li> <p>AD users</p> </li> <li> <p>Invited non-federated users</p> </li>
+     * <li> <p>Federated IAM users</p> </li> <li> <p>Federated IAM role-based
+     * sessions</p> </li> </ul>
+     */
+    inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code>
+     * identity type. You can use this for any of the following:</p> <ul> <li>
+     * <p>Amazon QuickSight users in your account (readers, authors, or admins)</p>
+     * </li> <li> <p>AD users</p> </li> <li> <p>Invited non-federated users</p> </li>
+     * <li> <p>Federated IAM users</p> </li> <li> <p>Federated IAM role-based
+     * sessions</p> </li> </ul>
+     */
+    inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
+
+    /**
+     * <p>The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code>
+     * identity type. You can use this for any of the following:</p> <ul> <li>
+     * <p>Amazon QuickSight users in your account (readers, authors, or admins)</p>
+     * </li> <li> <p>AD users</p> </li> <li> <p>Invited non-federated users</p> </li>
+     * <li> <p>Federated IAM users</p> </li> <li> <p>Federated IAM role-based
+     * sessions</p> </li> </ul>
+     */
+    inline void SetUserArn(Aws::String&& value) { m_userArnHasBeenSet = true; m_userArn = std::move(value); }
+
+    /**
+     * <p>The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code>
+     * identity type. You can use this for any of the following:</p> <ul> <li>
+     * <p>Amazon QuickSight users in your account (readers, authors, or admins)</p>
+     * </li> <li> <p>AD users</p> </li> <li> <p>Invited non-federated users</p> </li>
+     * <li> <p>Federated IAM users</p> </li> <li> <p>Federated IAM role-based
+     * sessions</p> </li> </ul>
+     */
+    inline void SetUserArn(const char* value) { m_userArnHasBeenSet = true; m_userArn.assign(value); }
+
+    /**
+     * <p>The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code>
+     * identity type. You can use this for any of the following:</p> <ul> <li>
+     * <p>Amazon QuickSight users in your account (readers, authors, or admins)</p>
+     * </li> <li> <p>AD users</p> </li> <li> <p>Invited non-federated users</p> </li>
+     * <li> <p>Federated IAM users</p> </li> <li> <p>Federated IAM role-based
+     * sessions</p> </li> </ul>
+     */
+    inline GetDashboardEmbedUrlRequest& WithUserArn(const Aws::String& value) { SetUserArn(value); return *this;}
+
+    /**
+     * <p>The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code>
+     * identity type. You can use this for any of the following:</p> <ul> <li>
+     * <p>Amazon QuickSight users in your account (readers, authors, or admins)</p>
+     * </li> <li> <p>AD users</p> </li> <li> <p>Invited non-federated users</p> </li>
+     * <li> <p>Federated IAM users</p> </li> <li> <p>Federated IAM role-based
+     * sessions</p> </li> </ul>
+     */
+    inline GetDashboardEmbedUrlRequest& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code>
+     * identity type. You can use this for any of the following:</p> <ul> <li>
+     * <p>Amazon QuickSight users in your account (readers, authors, or admins)</p>
+     * </li> <li> <p>AD users</p> </li> <li> <p>Invited non-federated users</p> </li>
+     * <li> <p>Federated IAM users</p> </li> <li> <p>Federated IAM role-based
+     * sessions</p> </li> </ul>
+     */
+    inline GetDashboardEmbedUrlRequest& WithUserArn(const char* value) { SetUserArn(value); return *this;}
+
   private:
 
     Aws::String m_awsAccountId;
@@ -255,6 +336,9 @@ namespace Model
 
     bool m_resetDisabled;
     bool m_resetDisabledHasBeenSet;
+
+    Aws::String m_userArn;
+    bool m_userArnHasBeenSet;
   };
 
 } // namespace Model

@@ -35,7 +35,7 @@ namespace Glacier
 namespace Model
 {
   /**
-   * <p>The Amazon Glacier response to your request.</p><p><h3>See Also:</h3>   <a
+   * <p>The Amazon S3 Glacier response to your request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateMultipartUploadOutput">AWS
    * API Reference</a></p>
    */
@@ -48,37 +48,44 @@ namespace Model
 
 
     /**
-     * <p>The relative URI path of the multipart upload ID Amazon Glacier created.</p>
+     * <p>The relative URI path of the multipart upload ID Amazon S3 Glacier
+     * created.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p>The relative URI path of the multipart upload ID Amazon Glacier created.</p>
+     * <p>The relative URI path of the multipart upload ID Amazon S3 Glacier
+     * created.</p>
      */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
 
     /**
-     * <p>The relative URI path of the multipart upload ID Amazon Glacier created.</p>
+     * <p>The relative URI path of the multipart upload ID Amazon S3 Glacier
+     * created.</p>
      */
     inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
 
     /**
-     * <p>The relative URI path of the multipart upload ID Amazon Glacier created.</p>
+     * <p>The relative URI path of the multipart upload ID Amazon S3 Glacier
+     * created.</p>
      */
     inline void SetLocation(const char* value) { m_location.assign(value); }
 
     /**
-     * <p>The relative URI path of the multipart upload ID Amazon Glacier created.</p>
+     * <p>The relative URI path of the multipart upload ID Amazon S3 Glacier
+     * created.</p>
      */
     inline InitiateMultipartUploadResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The relative URI path of the multipart upload ID Amazon Glacier created.</p>
+     * <p>The relative URI path of the multipart upload ID Amazon S3 Glacier
+     * created.</p>
      */
     inline InitiateMultipartUploadResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p>The relative URI path of the multipart upload ID Amazon Glacier created.</p>
+     * <p>The relative URI path of the multipart upload ID Amazon S3 Glacier
+     * created.</p>
      */
     inline InitiateMultipartUploadResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 

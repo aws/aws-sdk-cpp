@@ -35,7 +35,7 @@ namespace Glacier
 namespace Model
 {
   /**
-   * <p>Contains the Amazon Glacier response to your request.</p><p><h3>See
+   * <p>Contains the Amazon S3 Glacier response to your request.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CreateVaultOutput">AWS
    * API Reference</a></p>

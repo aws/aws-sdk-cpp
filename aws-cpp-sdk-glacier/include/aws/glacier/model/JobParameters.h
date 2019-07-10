@@ -295,7 +295,7 @@ namespace Model
 
 
     /**
-     * <p>The Amazon SNS topic ARN to which Amazon Glacier sends a notification when
+     * <p>The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when
      * the job is completed and the output is ready for you to download. The specified
      * topic publishes the notification to its subscribers. The SNS topic must
      * exist.</p>
@@ -303,7 +303,7 @@ namespace Model
     inline const Aws::String& GetSNSTopic() const{ return m_sNSTopic; }
 
     /**
-     * <p>The Amazon SNS topic ARN to which Amazon Glacier sends a notification when
+     * <p>The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when
      * the job is completed and the output is ready for you to download. The specified
      * topic publishes the notification to its subscribers. The SNS topic must
      * exist.</p>
@@ -311,7 +311,7 @@ namespace Model
     inline bool SNSTopicHasBeenSet() const { return m_sNSTopicHasBeenSet; }
 
     /**
-     * <p>The Amazon SNS topic ARN to which Amazon Glacier sends a notification when
+     * <p>The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when
      * the job is completed and the output is ready for you to download. The specified
      * topic publishes the notification to its subscribers. The SNS topic must
      * exist.</p>
@@ -319,7 +319,7 @@ namespace Model
     inline void SetSNSTopic(const Aws::String& value) { m_sNSTopicHasBeenSet = true; m_sNSTopic = value; }
 
     /**
-     * <p>The Amazon SNS topic ARN to which Amazon Glacier sends a notification when
+     * <p>The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when
      * the job is completed and the output is ready for you to download. The specified
      * topic publishes the notification to its subscribers. The SNS topic must
      * exist.</p>
@@ -327,7 +327,7 @@ namespace Model
     inline void SetSNSTopic(Aws::String&& value) { m_sNSTopicHasBeenSet = true; m_sNSTopic = std::move(value); }
 
     /**
-     * <p>The Amazon SNS topic ARN to which Amazon Glacier sends a notification when
+     * <p>The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when
      * the job is completed and the output is ready for you to download. The specified
      * topic publishes the notification to its subscribers. The SNS topic must
      * exist.</p>
@@ -335,7 +335,7 @@ namespace Model
     inline void SetSNSTopic(const char* value) { m_sNSTopicHasBeenSet = true; m_sNSTopic.assign(value); }
 
     /**
-     * <p>The Amazon SNS topic ARN to which Amazon Glacier sends a notification when
+     * <p>The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when
      * the job is completed and the output is ready for you to download. The specified
      * topic publishes the notification to its subscribers. The SNS topic must
      * exist.</p>
@@ -343,7 +343,7 @@ namespace Model
     inline JobParameters& WithSNSTopic(const Aws::String& value) { SetSNSTopic(value); return *this;}
 
     /**
-     * <p>The Amazon SNS topic ARN to which Amazon Glacier sends a notification when
+     * <p>The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when
      * the job is completed and the output is ready for you to download. The specified
      * topic publishes the notification to its subscribers. The SNS topic must
      * exist.</p>
@@ -351,7 +351,7 @@ namespace Model
     inline JobParameters& WithSNSTopic(Aws::String&& value) { SetSNSTopic(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon SNS topic ARN to which Amazon Glacier sends a notification when
+     * <p>The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when
      * the job is completed and the output is ready for you to download. The specified
      * topic publishes the notification to its subscribers. The SNS topic must
      * exist.</p>

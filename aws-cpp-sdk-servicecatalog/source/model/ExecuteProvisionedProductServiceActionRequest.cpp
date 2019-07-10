@@ -27,7 +27,8 @@ ExecuteProvisionedProductServiceActionRequest::ExecuteProvisionedProductServiceA
     m_serviceActionIdHasBeenSet(false),
     m_executeToken(Aws::Utils::UUID::RandomUUID()),
     m_executeTokenHasBeenSet(true),
-    m_acceptLanguageHasBeenSet(false)
+    m_acceptLanguageHasBeenSet(false),
+    m_parametersHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,22 @@ Aws::String ExecuteProvisionedProductServiceActionRequest::SerializePayload() co
   if(m_acceptLanguageHasBeenSet)
   {
    payload.WithString("AcceptLanguage", m_acceptLanguage);
+
+  }
+
+  if(m_parametersHasBeenSet)
+  {
+   JsonValue parametersJsonMap;
+   for(auto& parametersItem : m_parameters)
+   {
+     Array<JsonValue> executionParameterValueListJsonList(parametersItem.second.size());
+     for(unsigned executionParameterValueListIndex = 0; executionParameterValueListIndex < executionParameterValueListJsonList.GetLength(); ++executionParameterValueListIndex)
+     {
+       executionParameterValueListJsonList[executionParameterValueListIndex].AsString(parametersItem.second[executionParameterValueListIndex]);
+     }
+     parametersJsonMap.WithArray(parametersItem.first, std::move(executionParameterValueListJsonList));
+   }
+   payload.WithObject("Parameters", std::move(parametersJsonMap));
 
   }
 

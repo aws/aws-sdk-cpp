@@ -99,55 +99,55 @@ namespace Model
 
 
     /**
-     * <p>A list of one or more events for which Amazon Glacier will send a
+     * <p>A list of one or more events for which Amazon S3 Glacier will send a
      * notification to the specified Amazon SNS topic.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEvents() const{ return m_events; }
 
     /**
-     * <p>A list of one or more events for which Amazon Glacier will send a
+     * <p>A list of one or more events for which Amazon S3 Glacier will send a
      * notification to the specified Amazon SNS topic.</p>
      */
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
 
     /**
-     * <p>A list of one or more events for which Amazon Glacier will send a
+     * <p>A list of one or more events for which Amazon S3 Glacier will send a
      * notification to the specified Amazon SNS topic.</p>
      */
     inline void SetEvents(const Aws::Vector<Aws::String>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /**
-     * <p>A list of one or more events for which Amazon Glacier will send a
+     * <p>A list of one or more events for which Amazon S3 Glacier will send a
      * notification to the specified Amazon SNS topic.</p>
      */
     inline void SetEvents(Aws::Vector<Aws::String>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
     /**
-     * <p>A list of one or more events for which Amazon Glacier will send a
+     * <p>A list of one or more events for which Amazon S3 Glacier will send a
      * notification to the specified Amazon SNS topic.</p>
      */
     inline VaultNotificationConfig& WithEvents(const Aws::Vector<Aws::String>& value) { SetEvents(value); return *this;}
 
     /**
-     * <p>A list of one or more events for which Amazon Glacier will send a
+     * <p>A list of one or more events for which Amazon S3 Glacier will send a
      * notification to the specified Amazon SNS topic.</p>
      */
     inline VaultNotificationConfig& WithEvents(Aws::Vector<Aws::String>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
-     * <p>A list of one or more events for which Amazon Glacier will send a
+     * <p>A list of one or more events for which Amazon S3 Glacier will send a
      * notification to the specified Amazon SNS topic.</p>
      */
     inline VaultNotificationConfig& AddEvents(const Aws::String& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
     /**
-     * <p>A list of one or more events for which Amazon Glacier will send a
+     * <p>A list of one or more events for which Amazon S3 Glacier will send a
      * notification to the specified Amazon SNS topic.</p>
      */
     inline VaultNotificationConfig& AddEvents(Aws::String&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of one or more events for which Amazon Glacier will send a
+     * <p>A list of one or more events for which Amazon S3 Glacier will send a
      * notification to the specified Amazon SNS topic.</p>
      */
     inline VaultNotificationConfig& AddEvents(const char* value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }

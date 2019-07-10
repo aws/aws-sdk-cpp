@@ -29,10 +29,10 @@ namespace Model
   /**
    * <p>Provides options to abort a multipart upload identified by the upload ID.</p>
    * <p>For information about the underlying REST API, see <a
-   * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort
+   * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort
    * Multipart Upload</a>. For conceptual information, see <a
-   * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
-   * with Archives in Amazon Glacier</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
+   * with Archives in Amazon S3 Glacier</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortMultipartUploadInput">AWS
    * API Reference</a></p>
    */
@@ -53,72 +53,72 @@ namespace Model
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
-     * associated with the credentials used to sign the request. If you use an account
-     * ID, do not include any hyphens ('-') in the ID.</p>
+     * '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account
+     * ID associated with the credentials used to sign the request. If you use an
+     * account ID, do not include any hyphens ('-') in the ID.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
-     * associated with the credentials used to sign the request. If you use an account
-     * ID, do not include any hyphens ('-') in the ID.</p>
+     * '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account
+     * ID associated with the credentials used to sign the request. If you use an
+     * account ID, do not include any hyphens ('-') in the ID.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
-     * associated with the credentials used to sign the request. If you use an account
-     * ID, do not include any hyphens ('-') in the ID.</p>
+     * '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account
+     * ID associated with the credentials used to sign the request. If you use an
+     * account ID, do not include any hyphens ('-') in the ID.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
-     * associated with the credentials used to sign the request. If you use an account
-     * ID, do not include any hyphens ('-') in the ID.</p>
+     * '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account
+     * ID associated with the credentials used to sign the request. If you use an
+     * account ID, do not include any hyphens ('-') in the ID.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
-     * associated with the credentials used to sign the request. If you use an account
-     * ID, do not include any hyphens ('-') in the ID.</p>
+     * '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account
+     * ID associated with the credentials used to sign the request. If you use an
+     * account ID, do not include any hyphens ('-') in the ID.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
-     * associated with the credentials used to sign the request. If you use an account
-     * ID, do not include any hyphens ('-') in the ID.</p>
+     * '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account
+     * ID associated with the credentials used to sign the request. If you use an
+     * account ID, do not include any hyphens ('-') in the ID.</p>
      */
     inline AbortMultipartUploadRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
-     * associated with the credentials used to sign the request. If you use an account
-     * ID, do not include any hyphens ('-') in the ID.</p>
+     * '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account
+     * ID associated with the credentials used to sign the request. If you use an
+     * account ID, do not include any hyphens ('-') in the ID.</p>
      */
     inline AbortMultipartUploadRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
-     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
-     * associated with the credentials used to sign the request. If you use an account
-     * ID, do not include any hyphens ('-') in the ID.</p>
+     * '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account
+     * ID associated with the credentials used to sign the request. If you use an
+     * account ID, do not include any hyphens ('-') in the ID.</p>
      */
     inline AbortMultipartUploadRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 

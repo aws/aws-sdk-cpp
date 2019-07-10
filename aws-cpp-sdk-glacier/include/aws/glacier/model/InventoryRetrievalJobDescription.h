@@ -289,7 +289,7 @@ namespace Model
      * inventory retrieval results. You use the marker in a new <b>InitiateJob</b>
      * request to obtain additional inventory items. If there are no more inventory
      * items, this value is <code>null</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
+     * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
      * Range Inventory Retrieval</a>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
@@ -299,7 +299,7 @@ namespace Model
      * inventory retrieval results. You use the marker in a new <b>InitiateJob</b>
      * request to obtain additional inventory items. If there are no more inventory
      * items, this value is <code>null</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
+     * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
      * Range Inventory Retrieval</a>.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
@@ -309,7 +309,7 @@ namespace Model
      * inventory retrieval results. You use the marker in a new <b>InitiateJob</b>
      * request to obtain additional inventory items. If there are no more inventory
      * items, this value is <code>null</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
+     * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
      * Range Inventory Retrieval</a>.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
@@ -319,7 +319,7 @@ namespace Model
      * inventory retrieval results. You use the marker in a new <b>InitiateJob</b>
      * request to obtain additional inventory items. If there are no more inventory
      * items, this value is <code>null</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
+     * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
      * Range Inventory Retrieval</a>.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
@@ -329,7 +329,7 @@ namespace Model
      * inventory retrieval results. You use the marker in a new <b>InitiateJob</b>
      * request to obtain additional inventory items. If there are no more inventory
      * items, this value is <code>null</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
+     * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
      * Range Inventory Retrieval</a>.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
@@ -339,7 +339,7 @@ namespace Model
      * inventory retrieval results. You use the marker in a new <b>InitiateJob</b>
      * request to obtain additional inventory items. If there are no more inventory
      * items, this value is <code>null</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
+     * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
      * Range Inventory Retrieval</a>.</p>
      */
     inline InventoryRetrievalJobDescription& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
@@ -349,7 +349,7 @@ namespace Model
      * inventory retrieval results. You use the marker in a new <b>InitiateJob</b>
      * request to obtain additional inventory items. If there are no more inventory
      * items, this value is <code>null</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
+     * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
      * Range Inventory Retrieval</a>.</p>
      */
     inline InventoryRetrievalJobDescription& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
@@ -359,7 +359,7 @@ namespace Model
      * inventory retrieval results. You use the marker in a new <b>InitiateJob</b>
      * request to obtain additional inventory items. If there are no more inventory
      * items, this value is <code>null</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
+     * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
      * Range Inventory Retrieval</a>.</p>
      */
     inline InventoryRetrievalJobDescription& WithMarker(const char* value) { SetMarker(value); return *this;}
