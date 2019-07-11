@@ -23,7 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 EnableRuleRequest::EnableRuleRequest() : 
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_eventBusNameHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,12 @@ Aws::String EnableRuleRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_eventBusNameHasBeenSet)
+  {
+   payload.WithString("EventBusName", m_eventBusName);
 
   }
 

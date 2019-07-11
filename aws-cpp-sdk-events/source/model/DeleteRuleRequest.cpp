@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 DeleteRuleRequest::DeleteRuleRequest() : 
     m_nameHasBeenSet(false),
+    m_eventBusNameHasBeenSet(false),
     m_force(false),
     m_forceHasBeenSet(false)
 {
@@ -36,6 +37,12 @@ Aws::String DeleteRuleRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_eventBusNameHasBeenSet)
+  {
+   payload.WithString("EventBusName", m_eventBusName);
 
   }
 

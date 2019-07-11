@@ -37,7 +37,8 @@ Rule::Rule() :
     m_descriptionHasBeenSet(false),
     m_scheduleExpressionHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_managedByHasBeenSet(false)
+    m_managedByHasBeenSet(false),
+    m_eventBusNameHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ Rule::Rule(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_scheduleExpressionHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_managedByHasBeenSet(false)
+    m_managedByHasBeenSet(false),
+    m_eventBusNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +115,13 @@ Rule& Rule::operator =(JsonView jsonValue)
     m_managedByHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EventBusName"))
+  {
+    m_eventBusName = jsonValue.GetString("EventBusName");
+
+    m_eventBusNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -164,6 +173,12 @@ JsonValue Rule::Jsonize() const
   if(m_managedByHasBeenSet)
   {
    payload.WithString("ManagedBy", m_managedBy);
+
+  }
+
+  if(m_eventBusNameHasBeenSet)
+  {
+   payload.WithString("EventBusName", m_eventBusName);
 
   }
 

@@ -52,131 +52,131 @@ namespace Model
 
     /**
      * <p>Map of JSON paths to be extracted from the event. You can then insert these
-     * in the template in <code>InputTemplate</code> to produce the output you want to
-     * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
-     * pairs, where each value is a valid JSON path. You can have as many as 10
-     * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * in the template in <code>InputTemplate</code> to produce the output to be sent
+     * to the target.</p> <p> <code>InputPathsMap</code> is an array key-value pairs,
+     * where each value is a valid JSON path. You can have as many as 10 key-value
+     * pairs. You must use JSON dot notation, not bracket notation.</p> <p>The keys
+     * can't start with <code>"AWS"</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetInputPathsMap() const{ return m_inputPathsMap; }
 
     /**
      * <p>Map of JSON paths to be extracted from the event. You can then insert these
-     * in the template in <code>InputTemplate</code> to produce the output you want to
-     * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
-     * pairs, where each value is a valid JSON path. You can have as many as 10
-     * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * in the template in <code>InputTemplate</code> to produce the output to be sent
+     * to the target.</p> <p> <code>InputPathsMap</code> is an array key-value pairs,
+     * where each value is a valid JSON path. You can have as many as 10 key-value
+     * pairs. You must use JSON dot notation, not bracket notation.</p> <p>The keys
+     * can't start with <code>"AWS"</code>.</p>
      */
     inline bool InputPathsMapHasBeenSet() const { return m_inputPathsMapHasBeenSet; }
 
     /**
      * <p>Map of JSON paths to be extracted from the event. You can then insert these
-     * in the template in <code>InputTemplate</code> to produce the output you want to
-     * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
-     * pairs, where each value is a valid JSON path. You can have as many as 10
-     * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * in the template in <code>InputTemplate</code> to produce the output to be sent
+     * to the target.</p> <p> <code>InputPathsMap</code> is an array key-value pairs,
+     * where each value is a valid JSON path. You can have as many as 10 key-value
+     * pairs. You must use JSON dot notation, not bracket notation.</p> <p>The keys
+     * can't start with <code>"AWS"</code>.</p>
      */
     inline void SetInputPathsMap(const Aws::Map<Aws::String, Aws::String>& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap = value; }
 
     /**
      * <p>Map of JSON paths to be extracted from the event. You can then insert these
-     * in the template in <code>InputTemplate</code> to produce the output you want to
-     * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
-     * pairs, where each value is a valid JSON path. You can have as many as 10
-     * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * in the template in <code>InputTemplate</code> to produce the output to be sent
+     * to the target.</p> <p> <code>InputPathsMap</code> is an array key-value pairs,
+     * where each value is a valid JSON path. You can have as many as 10 key-value
+     * pairs. You must use JSON dot notation, not bracket notation.</p> <p>The keys
+     * can't start with <code>"AWS"</code>.</p>
      */
     inline void SetInputPathsMap(Aws::Map<Aws::String, Aws::String>&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap = std::move(value); }
 
     /**
      * <p>Map of JSON paths to be extracted from the event. You can then insert these
-     * in the template in <code>InputTemplate</code> to produce the output you want to
-     * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
-     * pairs, where each value is a valid JSON path. You can have as many as 10
-     * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * in the template in <code>InputTemplate</code> to produce the output to be sent
+     * to the target.</p> <p> <code>InputPathsMap</code> is an array key-value pairs,
+     * where each value is a valid JSON path. You can have as many as 10 key-value
+     * pairs. You must use JSON dot notation, not bracket notation.</p> <p>The keys
+     * can't start with <code>"AWS"</code>.</p>
      */
     inline InputTransformer& WithInputPathsMap(const Aws::Map<Aws::String, Aws::String>& value) { SetInputPathsMap(value); return *this;}
 
     /**
      * <p>Map of JSON paths to be extracted from the event. You can then insert these
-     * in the template in <code>InputTemplate</code> to produce the output you want to
-     * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
-     * pairs, where each value is a valid JSON path. You can have as many as 10
-     * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * in the template in <code>InputTemplate</code> to produce the output to be sent
+     * to the target.</p> <p> <code>InputPathsMap</code> is an array key-value pairs,
+     * where each value is a valid JSON path. You can have as many as 10 key-value
+     * pairs. You must use JSON dot notation, not bracket notation.</p> <p>The keys
+     * can't start with <code>"AWS"</code>.</p>
      */
     inline InputTransformer& WithInputPathsMap(Aws::Map<Aws::String, Aws::String>&& value) { SetInputPathsMap(std::move(value)); return *this;}
 
     /**
      * <p>Map of JSON paths to be extracted from the event. You can then insert these
-     * in the template in <code>InputTemplate</code> to produce the output you want to
-     * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
-     * pairs, where each value is a valid JSON path. You can have as many as 10
-     * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * in the template in <code>InputTemplate</code> to produce the output to be sent
+     * to the target.</p> <p> <code>InputPathsMap</code> is an array key-value pairs,
+     * where each value is a valid JSON path. You can have as many as 10 key-value
+     * pairs. You must use JSON dot notation, not bracket notation.</p> <p>The keys
+     * can't start with <code>"AWS"</code>.</p>
      */
     inline InputTransformer& AddInputPathsMap(const Aws::String& key, const Aws::String& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, value); return *this; }
 
     /**
      * <p>Map of JSON paths to be extracted from the event. You can then insert these
-     * in the template in <code>InputTemplate</code> to produce the output you want to
-     * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
-     * pairs, where each value is a valid JSON path. You can have as many as 10
-     * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * in the template in <code>InputTemplate</code> to produce the output to be sent
+     * to the target.</p> <p> <code>InputPathsMap</code> is an array key-value pairs,
+     * where each value is a valid JSON path. You can have as many as 10 key-value
+     * pairs. You must use JSON dot notation, not bracket notation.</p> <p>The keys
+     * can't start with <code>"AWS"</code>.</p>
      */
     inline InputTransformer& AddInputPathsMap(Aws::String&& key, const Aws::String& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Map of JSON paths to be extracted from the event. You can then insert these
-     * in the template in <code>InputTemplate</code> to produce the output you want to
-     * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
-     * pairs, where each value is a valid JSON path. You can have as many as 10
-     * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * in the template in <code>InputTemplate</code> to produce the output to be sent
+     * to the target.</p> <p> <code>InputPathsMap</code> is an array key-value pairs,
+     * where each value is a valid JSON path. You can have as many as 10 key-value
+     * pairs. You must use JSON dot notation, not bracket notation.</p> <p>The keys
+     * can't start with <code>"AWS"</code>.</p>
      */
     inline InputTransformer& AddInputPathsMap(const Aws::String& key, Aws::String&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Map of JSON paths to be extracted from the event. You can then insert these
-     * in the template in <code>InputTemplate</code> to produce the output you want to
-     * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
-     * pairs, where each value is a valid JSON path. You can have as many as 10
-     * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * in the template in <code>InputTemplate</code> to produce the output to be sent
+     * to the target.</p> <p> <code>InputPathsMap</code> is an array key-value pairs,
+     * where each value is a valid JSON path. You can have as many as 10 key-value
+     * pairs. You must use JSON dot notation, not bracket notation.</p> <p>The keys
+     * can't start with <code>"AWS"</code>.</p>
      */
     inline InputTransformer& AddInputPathsMap(Aws::String&& key, Aws::String&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Map of JSON paths to be extracted from the event. You can then insert these
-     * in the template in <code>InputTemplate</code> to produce the output you want to
-     * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
-     * pairs, where each value is a valid JSON path. You can have as many as 10
-     * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * in the template in <code>InputTemplate</code> to produce the output to be sent
+     * to the target.</p> <p> <code>InputPathsMap</code> is an array key-value pairs,
+     * where each value is a valid JSON path. You can have as many as 10 key-value
+     * pairs. You must use JSON dot notation, not bracket notation.</p> <p>The keys
+     * can't start with <code>"AWS"</code>.</p>
      */
     inline InputTransformer& AddInputPathsMap(const char* key, Aws::String&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Map of JSON paths to be extracted from the event. You can then insert these
-     * in the template in <code>InputTemplate</code> to produce the output you want to
-     * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
-     * pairs, where each value is a valid JSON path. You can have as many as 10
-     * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * in the template in <code>InputTemplate</code> to produce the output to be sent
+     * to the target.</p> <p> <code>InputPathsMap</code> is an array key-value pairs,
+     * where each value is a valid JSON path. You can have as many as 10 key-value
+     * pairs. You must use JSON dot notation, not bracket notation.</p> <p>The keys
+     * can't start with <code>"AWS"</code>.</p>
      */
     inline InputTransformer& AddInputPathsMap(Aws::String&& key, const char* value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Map of JSON paths to be extracted from the event. You can then insert these
-     * in the template in <code>InputTemplate</code> to produce the output you want to
-     * be sent to the target.</p> <p> <code>InputPathsMap</code> is an array key-value
-     * pairs, where each value is a valid JSON path. You can have as many as 10
-     * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
-     * <p>The keys cannot start with "AWS." </p>
+     * in the template in <code>InputTemplate</code> to produce the output to be sent
+     * to the target.</p> <p> <code>InputPathsMap</code> is an array key-value pairs,
+     * where each value is a valid JSON path. You can have as many as 10 key-value
+     * pairs. You must use JSON dot notation, not bracket notation.</p> <p>The keys
+     * can't start with <code>"AWS"</code>.</p>
      */
     inline InputTransformer& AddInputPathsMap(const char* key, const char* value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, value); return *this; }
 
@@ -185,10 +185,10 @@ namespace Model
      * <p>Input template where you specify placeholders that will be filled with the
      * values of the keys from <code>InputPathsMap</code> to customize the data sent to
      * the target. Enclose each <code>InputPathsMaps</code> value in brackets:
-     * &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p> <p>If
+     * &lt;<i>value</i>&gt;. The InputTemplate must be valid JSON.</p> <p>If
      * <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the
-     * following restrictions apply:</p> <ul> <li> <p>The placeholder cannot be used as
-     * an object key.</p> </li> <li> <p>Object values cannot include quote marks.</p>
+     * following restrictions apply:</p> <ul> <li> <p>The placeholder can't be used as
+     * an object key</p> </li> <li> <p>Object values can't include quote marks</p>
      * </li> </ul> <p>The following example shows the syntax for using
      * <code>InputPathsMap</code> and <code>InputTemplate</code>.</p> <p> <code>
      * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
@@ -208,10 +208,10 @@ namespace Model
      * <p>Input template where you specify placeholders that will be filled with the
      * values of the keys from <code>InputPathsMap</code> to customize the data sent to
      * the target. Enclose each <code>InputPathsMaps</code> value in brackets:
-     * &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p> <p>If
+     * &lt;<i>value</i>&gt;. The InputTemplate must be valid JSON.</p> <p>If
      * <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the
-     * following restrictions apply:</p> <ul> <li> <p>The placeholder cannot be used as
-     * an object key.</p> </li> <li> <p>Object values cannot include quote marks.</p>
+     * following restrictions apply:</p> <ul> <li> <p>The placeholder can't be used as
+     * an object key</p> </li> <li> <p>Object values can't include quote marks</p>
      * </li> </ul> <p>The following example shows the syntax for using
      * <code>InputPathsMap</code> and <code>InputTemplate</code>.</p> <p> <code>
      * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
@@ -231,10 +231,10 @@ namespace Model
      * <p>Input template where you specify placeholders that will be filled with the
      * values of the keys from <code>InputPathsMap</code> to customize the data sent to
      * the target. Enclose each <code>InputPathsMaps</code> value in brackets:
-     * &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p> <p>If
+     * &lt;<i>value</i>&gt;. The InputTemplate must be valid JSON.</p> <p>If
      * <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the
-     * following restrictions apply:</p> <ul> <li> <p>The placeholder cannot be used as
-     * an object key.</p> </li> <li> <p>Object values cannot include quote marks.</p>
+     * following restrictions apply:</p> <ul> <li> <p>The placeholder can't be used as
+     * an object key</p> </li> <li> <p>Object values can't include quote marks</p>
      * </li> </ul> <p>The following example shows the syntax for using
      * <code>InputPathsMap</code> and <code>InputTemplate</code>.</p> <p> <code>
      * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
@@ -254,10 +254,10 @@ namespace Model
      * <p>Input template where you specify placeholders that will be filled with the
      * values of the keys from <code>InputPathsMap</code> to customize the data sent to
      * the target. Enclose each <code>InputPathsMaps</code> value in brackets:
-     * &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p> <p>If
+     * &lt;<i>value</i>&gt;. The InputTemplate must be valid JSON.</p> <p>If
      * <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the
-     * following restrictions apply:</p> <ul> <li> <p>The placeholder cannot be used as
-     * an object key.</p> </li> <li> <p>Object values cannot include quote marks.</p>
+     * following restrictions apply:</p> <ul> <li> <p>The placeholder can't be used as
+     * an object key</p> </li> <li> <p>Object values can't include quote marks</p>
      * </li> </ul> <p>The following example shows the syntax for using
      * <code>InputPathsMap</code> and <code>InputTemplate</code>.</p> <p> <code>
      * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
@@ -277,10 +277,10 @@ namespace Model
      * <p>Input template where you specify placeholders that will be filled with the
      * values of the keys from <code>InputPathsMap</code> to customize the data sent to
      * the target. Enclose each <code>InputPathsMaps</code> value in brackets:
-     * &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p> <p>If
+     * &lt;<i>value</i>&gt;. The InputTemplate must be valid JSON.</p> <p>If
      * <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the
-     * following restrictions apply:</p> <ul> <li> <p>The placeholder cannot be used as
-     * an object key.</p> </li> <li> <p>Object values cannot include quote marks.</p>
+     * following restrictions apply:</p> <ul> <li> <p>The placeholder can't be used as
+     * an object key</p> </li> <li> <p>Object values can't include quote marks</p>
      * </li> </ul> <p>The following example shows the syntax for using
      * <code>InputPathsMap</code> and <code>InputTemplate</code>.</p> <p> <code>
      * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
@@ -300,10 +300,10 @@ namespace Model
      * <p>Input template where you specify placeholders that will be filled with the
      * values of the keys from <code>InputPathsMap</code> to customize the data sent to
      * the target. Enclose each <code>InputPathsMaps</code> value in brackets:
-     * &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p> <p>If
+     * &lt;<i>value</i>&gt;. The InputTemplate must be valid JSON.</p> <p>If
      * <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the
-     * following restrictions apply:</p> <ul> <li> <p>The placeholder cannot be used as
-     * an object key.</p> </li> <li> <p>Object values cannot include quote marks.</p>
+     * following restrictions apply:</p> <ul> <li> <p>The placeholder can't be used as
+     * an object key</p> </li> <li> <p>Object values can't include quote marks</p>
      * </li> </ul> <p>The following example shows the syntax for using
      * <code>InputPathsMap</code> and <code>InputTemplate</code>.</p> <p> <code>
      * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
@@ -323,10 +323,10 @@ namespace Model
      * <p>Input template where you specify placeholders that will be filled with the
      * values of the keys from <code>InputPathsMap</code> to customize the data sent to
      * the target. Enclose each <code>InputPathsMaps</code> value in brackets:
-     * &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p> <p>If
+     * &lt;<i>value</i>&gt;. The InputTemplate must be valid JSON.</p> <p>If
      * <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the
-     * following restrictions apply:</p> <ul> <li> <p>The placeholder cannot be used as
-     * an object key.</p> </li> <li> <p>Object values cannot include quote marks.</p>
+     * following restrictions apply:</p> <ul> <li> <p>The placeholder can't be used as
+     * an object key</p> </li> <li> <p>Object values can't include quote marks</p>
      * </li> </ul> <p>The following example shows the syntax for using
      * <code>InputPathsMap</code> and <code>InputTemplate</code>.</p> <p> <code>
      * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>
@@ -346,10 +346,10 @@ namespace Model
      * <p>Input template where you specify placeholders that will be filled with the
      * values of the keys from <code>InputPathsMap</code> to customize the data sent to
      * the target. Enclose each <code>InputPathsMaps</code> value in brackets:
-     * &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p> <p>If
+     * &lt;<i>value</i>&gt;. The InputTemplate must be valid JSON.</p> <p>If
      * <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the
-     * following restrictions apply:</p> <ul> <li> <p>The placeholder cannot be used as
-     * an object key.</p> </li> <li> <p>Object values cannot include quote marks.</p>
+     * following restrictions apply:</p> <ul> <li> <p>The placeholder can't be used as
+     * an object key</p> </li> <li> <p>Object values can't include quote marks</p>
      * </li> </ul> <p>The following example shows the syntax for using
      * <code>InputPathsMap</code> and <code>InputTemplate</code>.</p> <p> <code>
      * "InputTransformer":</code> </p> <p> <code>{</code> </p> <p>

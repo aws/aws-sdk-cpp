@@ -88,6 +88,55 @@ namespace Model
 
 
     /**
+     * <p>The name of the event bus associated with the rule. If you omit this, the
+     * default event bus is used.</p>
+     */
+    inline const Aws::String& GetEventBusName() const{ return m_eventBusName; }
+
+    /**
+     * <p>The name of the event bus associated with the rule. If you omit this, the
+     * default event bus is used.</p>
+     */
+    inline bool EventBusNameHasBeenSet() const { return m_eventBusNameHasBeenSet; }
+
+    /**
+     * <p>The name of the event bus associated with the rule. If you omit this, the
+     * default event bus is used.</p>
+     */
+    inline void SetEventBusName(const Aws::String& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = value; }
+
+    /**
+     * <p>The name of the event bus associated with the rule. If you omit this, the
+     * default event bus is used.</p>
+     */
+    inline void SetEventBusName(Aws::String&& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = std::move(value); }
+
+    /**
+     * <p>The name of the event bus associated with the rule. If you omit this, the
+     * default event bus is used.</p>
+     */
+    inline void SetEventBusName(const char* value) { m_eventBusNameHasBeenSet = true; m_eventBusName.assign(value); }
+
+    /**
+     * <p>The name of the event bus associated with the rule. If you omit this, the
+     * default event bus is used.</p>
+     */
+    inline PutTargetsRequest& WithEventBusName(const Aws::String& value) { SetEventBusName(value); return *this;}
+
+    /**
+     * <p>The name of the event bus associated with the rule. If you omit this, the
+     * default event bus is used.</p>
+     */
+    inline PutTargetsRequest& WithEventBusName(Aws::String&& value) { SetEventBusName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the event bus associated with the rule. If you omit this, the
+     * default event bus is used.</p>
+     */
+    inline PutTargetsRequest& WithEventBusName(const char* value) { SetEventBusName(value); return *this;}
+
+
+    /**
      * <p>The targets to update or add to the rule.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
@@ -131,6 +180,9 @@ namespace Model
 
     Aws::String m_rule;
     bool m_ruleHasBeenSet;
+
+    Aws::String m_eventBusName;
+    bool m_eventBusNameHasBeenSet;
 
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet;

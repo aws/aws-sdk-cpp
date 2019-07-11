@@ -31,9 +31,11 @@ namespace CloudWatchEventsErrorMapper
 static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
 static const int INVALID_EVENT_PATTERN_HASH = HashingUtils::HashString("InvalidEventPatternException");
 static const int MANAGED_RULE_HASH = HashingUtils::HashString("ManagedRuleException");
+static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyLengthExceededException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
+static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -52,6 +54,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::MANAGED_RULE), false);
   }
+  else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::RESOURCE_ALREADY_EXISTS), false);
+  }
   else if (hashCode == POLICY_LENGTH_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::POLICY_LENGTH_EXCEEDED), false);
@@ -63,6 +69,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::CONCURRENT_MODIFICATION), false);
+  }
+  else if (hashCode == INVALID_STATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::INVALID_STATE), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

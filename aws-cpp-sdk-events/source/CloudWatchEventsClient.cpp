@@ -30,16 +30,29 @@
 #include <aws/events/CloudWatchEventsClient.h>
 #include <aws/events/CloudWatchEventsEndpoint.h>
 #include <aws/events/CloudWatchEventsErrorMarshaller.h>
+#include <aws/events/model/ActivateEventSourceRequest.h>
+#include <aws/events/model/CreateEventBusRequest.h>
+#include <aws/events/model/CreatePartnerEventSourceRequest.h>
+#include <aws/events/model/DeactivateEventSourceRequest.h>
+#include <aws/events/model/DeleteEventBusRequest.h>
+#include <aws/events/model/DeletePartnerEventSourceRequest.h>
 #include <aws/events/model/DeleteRuleRequest.h>
 #include <aws/events/model/DescribeEventBusRequest.h>
+#include <aws/events/model/DescribeEventSourceRequest.h>
+#include <aws/events/model/DescribePartnerEventSourceRequest.h>
 #include <aws/events/model/DescribeRuleRequest.h>
 #include <aws/events/model/DisableRuleRequest.h>
 #include <aws/events/model/EnableRuleRequest.h>
+#include <aws/events/model/ListEventBusesRequest.h>
+#include <aws/events/model/ListEventSourcesRequest.h>
+#include <aws/events/model/ListPartnerEventSourceAccountsRequest.h>
+#include <aws/events/model/ListPartnerEventSourcesRequest.h>
 #include <aws/events/model/ListRuleNamesByTargetRequest.h>
 #include <aws/events/model/ListRulesRequest.h>
 #include <aws/events/model/ListTagsForResourceRequest.h>
 #include <aws/events/model/ListTargetsByRuleRequest.h>
 #include <aws/events/model/PutEventsRequest.h>
+#include <aws/events/model/PutPartnerEventsRequest.h>
 #include <aws/events/model/PutPermissionRequest.h>
 #include <aws/events/model/PutRuleRequest.h>
 #include <aws/events/model/PutTargetsRequest.h>
@@ -121,6 +134,216 @@ void CloudWatchEventsClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+ActivateEventSourceOutcome CloudWatchEventsClient::ActivateEventSource(const ActivateEventSourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ActivateEventSourceOutcome(NoResult());
+  }
+  else
+  {
+    return ActivateEventSourceOutcome(outcome.GetError());
+  }
+}
+
+ActivateEventSourceOutcomeCallable CloudWatchEventsClient::ActivateEventSourceCallable(const ActivateEventSourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ActivateEventSourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ActivateEventSource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::ActivateEventSourceAsync(const ActivateEventSourceRequest& request, const ActivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ActivateEventSourceAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::ActivateEventSourceAsyncHelper(const ActivateEventSourceRequest& request, const ActivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ActivateEventSource(request), context);
+}
+
+CreateEventBusOutcome CloudWatchEventsClient::CreateEventBus(const CreateEventBusRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateEventBusOutcome(CreateEventBusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateEventBusOutcome(outcome.GetError());
+  }
+}
+
+CreateEventBusOutcomeCallable CloudWatchEventsClient::CreateEventBusCallable(const CreateEventBusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateEventBusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEventBus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::CreateEventBusAsync(const CreateEventBusRequest& request, const CreateEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateEventBusAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::CreateEventBusAsyncHelper(const CreateEventBusRequest& request, const CreateEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateEventBus(request), context);
+}
+
+CreatePartnerEventSourceOutcome CloudWatchEventsClient::CreatePartnerEventSource(const CreatePartnerEventSourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreatePartnerEventSourceOutcome(CreatePartnerEventSourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreatePartnerEventSourceOutcome(outcome.GetError());
+  }
+}
+
+CreatePartnerEventSourceOutcomeCallable CloudWatchEventsClient::CreatePartnerEventSourceCallable(const CreatePartnerEventSourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreatePartnerEventSourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePartnerEventSource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::CreatePartnerEventSourceAsync(const CreatePartnerEventSourceRequest& request, const CreatePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreatePartnerEventSourceAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::CreatePartnerEventSourceAsyncHelper(const CreatePartnerEventSourceRequest& request, const CreatePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreatePartnerEventSource(request), context);
+}
+
+DeactivateEventSourceOutcome CloudWatchEventsClient::DeactivateEventSource(const DeactivateEventSourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeactivateEventSourceOutcome(NoResult());
+  }
+  else
+  {
+    return DeactivateEventSourceOutcome(outcome.GetError());
+  }
+}
+
+DeactivateEventSourceOutcomeCallable CloudWatchEventsClient::DeactivateEventSourceCallable(const DeactivateEventSourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeactivateEventSourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeactivateEventSource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::DeactivateEventSourceAsync(const DeactivateEventSourceRequest& request, const DeactivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeactivateEventSourceAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::DeactivateEventSourceAsyncHelper(const DeactivateEventSourceRequest& request, const DeactivateEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeactivateEventSource(request), context);
+}
+
+DeleteEventBusOutcome CloudWatchEventsClient::DeleteEventBus(const DeleteEventBusRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteEventBusOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteEventBusOutcome(outcome.GetError());
+  }
+}
+
+DeleteEventBusOutcomeCallable CloudWatchEventsClient::DeleteEventBusCallable(const DeleteEventBusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEventBusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEventBus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::DeleteEventBusAsync(const DeleteEventBusRequest& request, const DeleteEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEventBusAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::DeleteEventBusAsyncHelper(const DeleteEventBusRequest& request, const DeleteEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteEventBus(request), context);
+}
+
+DeletePartnerEventSourceOutcome CloudWatchEventsClient::DeletePartnerEventSource(const DeletePartnerEventSourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeletePartnerEventSourceOutcome(NoResult());
+  }
+  else
+  {
+    return DeletePartnerEventSourceOutcome(outcome.GetError());
+  }
+}
+
+DeletePartnerEventSourceOutcomeCallable CloudWatchEventsClient::DeletePartnerEventSourceCallable(const DeletePartnerEventSourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePartnerEventSourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePartnerEventSource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::DeletePartnerEventSourceAsync(const DeletePartnerEventSourceRequest& request, const DeletePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePartnerEventSourceAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::DeletePartnerEventSourceAsyncHelper(const DeletePartnerEventSourceRequest& request, const DeletePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePartnerEventSource(request), context);
+}
+
 DeleteRuleOutcome CloudWatchEventsClient::DeleteRule(const DeleteRuleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -189,6 +412,76 @@ void CloudWatchEventsClient::DescribeEventBusAsync(const DescribeEventBusRequest
 void CloudWatchEventsClient::DescribeEventBusAsyncHelper(const DescribeEventBusRequest& request, const DescribeEventBusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeEventBus(request), context);
+}
+
+DescribeEventSourceOutcome CloudWatchEventsClient::DescribeEventSource(const DescribeEventSourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeEventSourceOutcome(DescribeEventSourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeEventSourceOutcome(outcome.GetError());
+  }
+}
+
+DescribeEventSourceOutcomeCallable CloudWatchEventsClient::DescribeEventSourceCallable(const DescribeEventSourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEventSourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEventSource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::DescribeEventSourceAsync(const DescribeEventSourceRequest& request, const DescribeEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventSourceAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::DescribeEventSourceAsyncHelper(const DescribeEventSourceRequest& request, const DescribeEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEventSource(request), context);
+}
+
+DescribePartnerEventSourceOutcome CloudWatchEventsClient::DescribePartnerEventSource(const DescribePartnerEventSourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribePartnerEventSourceOutcome(DescribePartnerEventSourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribePartnerEventSourceOutcome(outcome.GetError());
+  }
+}
+
+DescribePartnerEventSourceOutcomeCallable CloudWatchEventsClient::DescribePartnerEventSourceCallable(const DescribePartnerEventSourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribePartnerEventSourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePartnerEventSource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::DescribePartnerEventSourceAsync(const DescribePartnerEventSourceRequest& request, const DescribePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePartnerEventSourceAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::DescribePartnerEventSourceAsyncHelper(const DescribePartnerEventSourceRequest& request, const DescribePartnerEventSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribePartnerEventSource(request), context);
 }
 
 DescribeRuleOutcome CloudWatchEventsClient::DescribeRule(const DescribeRuleRequest& request) const
@@ -294,6 +587,146 @@ void CloudWatchEventsClient::EnableRuleAsync(const EnableRuleRequest& request, c
 void CloudWatchEventsClient::EnableRuleAsyncHelper(const EnableRuleRequest& request, const EnableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, EnableRule(request), context);
+}
+
+ListEventBusesOutcome CloudWatchEventsClient::ListEventBuses(const ListEventBusesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListEventBusesOutcome(ListEventBusesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListEventBusesOutcome(outcome.GetError());
+  }
+}
+
+ListEventBusesOutcomeCallable CloudWatchEventsClient::ListEventBusesCallable(const ListEventBusesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListEventBusesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEventBuses(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::ListEventBusesAsync(const ListEventBusesRequest& request, const ListEventBusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListEventBusesAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::ListEventBusesAsyncHelper(const ListEventBusesRequest& request, const ListEventBusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListEventBuses(request), context);
+}
+
+ListEventSourcesOutcome CloudWatchEventsClient::ListEventSources(const ListEventSourcesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListEventSourcesOutcome(ListEventSourcesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListEventSourcesOutcome(outcome.GetError());
+  }
+}
+
+ListEventSourcesOutcomeCallable CloudWatchEventsClient::ListEventSourcesCallable(const ListEventSourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListEventSourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEventSources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::ListEventSourcesAsync(const ListEventSourcesRequest& request, const ListEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListEventSourcesAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::ListEventSourcesAsyncHelper(const ListEventSourcesRequest& request, const ListEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListEventSources(request), context);
+}
+
+ListPartnerEventSourceAccountsOutcome CloudWatchEventsClient::ListPartnerEventSourceAccounts(const ListPartnerEventSourceAccountsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListPartnerEventSourceAccountsOutcome(ListPartnerEventSourceAccountsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListPartnerEventSourceAccountsOutcome(outcome.GetError());
+  }
+}
+
+ListPartnerEventSourceAccountsOutcomeCallable CloudWatchEventsClient::ListPartnerEventSourceAccountsCallable(const ListPartnerEventSourceAccountsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPartnerEventSourceAccountsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPartnerEventSourceAccounts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::ListPartnerEventSourceAccountsAsync(const ListPartnerEventSourceAccountsRequest& request, const ListPartnerEventSourceAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPartnerEventSourceAccountsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::ListPartnerEventSourceAccountsAsyncHelper(const ListPartnerEventSourceAccountsRequest& request, const ListPartnerEventSourceAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPartnerEventSourceAccounts(request), context);
+}
+
+ListPartnerEventSourcesOutcome CloudWatchEventsClient::ListPartnerEventSources(const ListPartnerEventSourcesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListPartnerEventSourcesOutcome(ListPartnerEventSourcesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListPartnerEventSourcesOutcome(outcome.GetError());
+  }
+}
+
+ListPartnerEventSourcesOutcomeCallable CloudWatchEventsClient::ListPartnerEventSourcesCallable(const ListPartnerEventSourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPartnerEventSourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPartnerEventSources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::ListPartnerEventSourcesAsync(const ListPartnerEventSourcesRequest& request, const ListPartnerEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPartnerEventSourcesAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::ListPartnerEventSourcesAsyncHelper(const ListPartnerEventSourcesRequest& request, const ListPartnerEventSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPartnerEventSources(request), context);
 }
 
 ListRuleNamesByTargetOutcome CloudWatchEventsClient::ListRuleNamesByTarget(const ListRuleNamesByTargetRequest& request) const
@@ -469,6 +902,41 @@ void CloudWatchEventsClient::PutEventsAsync(const PutEventsRequest& request, con
 void CloudWatchEventsClient::PutEventsAsyncHelper(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutEvents(request), context);
+}
+
+PutPartnerEventsOutcome CloudWatchEventsClient::PutPartnerEvents(const PutPartnerEventsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutPartnerEventsOutcome(PutPartnerEventsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutPartnerEventsOutcome(outcome.GetError());
+  }
+}
+
+PutPartnerEventsOutcomeCallable CloudWatchEventsClient::PutPartnerEventsCallable(const PutPartnerEventsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutPartnerEventsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutPartnerEvents(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchEventsClient::PutPartnerEventsAsync(const PutPartnerEventsRequest& request, const PutPartnerEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutPartnerEventsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchEventsClient::PutPartnerEventsAsyncHelper(const PutPartnerEventsRequest& request, const PutPartnerEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutPartnerEvents(request), context);
 }
 
 PutPermissionOutcome CloudWatchEventsClient::PutPermission(const PutPermissionRequest& request) const

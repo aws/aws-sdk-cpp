@@ -35,9 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>This parameter contains the criteria (either InstanceIds or a tag) used to
-   * specify which EC2 instances are to be sent the command. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>This parameter contains the criteria (either <code>InstanceIds</code> or a
+   * tag) used to specify which EC2 instances are to be sent the command.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RunCommandParameters">AWS
    * API Reference</a></p>
    */
@@ -51,50 +51,50 @@ namespace Model
 
 
     /**
-     * <p>Currently, we support including only one RunCommandTarget block, which
-     * specifies either an array of InstanceIds or a tag.</p>
+     * <p>Currently, we support including only one <code>RunCommandTarget</code> block,
+     * which specifies either an array of <code>InstanceIds</code> or a tag.</p>
      */
     inline const Aws::Vector<RunCommandTarget>& GetRunCommandTargets() const{ return m_runCommandTargets; }
 
     /**
-     * <p>Currently, we support including only one RunCommandTarget block, which
-     * specifies either an array of InstanceIds or a tag.</p>
+     * <p>Currently, we support including only one <code>RunCommandTarget</code> block,
+     * which specifies either an array of <code>InstanceIds</code> or a tag.</p>
      */
     inline bool RunCommandTargetsHasBeenSet() const { return m_runCommandTargetsHasBeenSet; }
 
     /**
-     * <p>Currently, we support including only one RunCommandTarget block, which
-     * specifies either an array of InstanceIds or a tag.</p>
+     * <p>Currently, we support including only one <code>RunCommandTarget</code> block,
+     * which specifies either an array of <code>InstanceIds</code> or a tag.</p>
      */
     inline void SetRunCommandTargets(const Aws::Vector<RunCommandTarget>& value) { m_runCommandTargetsHasBeenSet = true; m_runCommandTargets = value; }
 
     /**
-     * <p>Currently, we support including only one RunCommandTarget block, which
-     * specifies either an array of InstanceIds or a tag.</p>
+     * <p>Currently, we support including only one <code>RunCommandTarget</code> block,
+     * which specifies either an array of <code>InstanceIds</code> or a tag.</p>
      */
     inline void SetRunCommandTargets(Aws::Vector<RunCommandTarget>&& value) { m_runCommandTargetsHasBeenSet = true; m_runCommandTargets = std::move(value); }
 
     /**
-     * <p>Currently, we support including only one RunCommandTarget block, which
-     * specifies either an array of InstanceIds or a tag.</p>
+     * <p>Currently, we support including only one <code>RunCommandTarget</code> block,
+     * which specifies either an array of <code>InstanceIds</code> or a tag.</p>
      */
     inline RunCommandParameters& WithRunCommandTargets(const Aws::Vector<RunCommandTarget>& value) { SetRunCommandTargets(value); return *this;}
 
     /**
-     * <p>Currently, we support including only one RunCommandTarget block, which
-     * specifies either an array of InstanceIds or a tag.</p>
+     * <p>Currently, we support including only one <code>RunCommandTarget</code> block,
+     * which specifies either an array of <code>InstanceIds</code> or a tag.</p>
      */
     inline RunCommandParameters& WithRunCommandTargets(Aws::Vector<RunCommandTarget>&& value) { SetRunCommandTargets(std::move(value)); return *this;}
 
     /**
-     * <p>Currently, we support including only one RunCommandTarget block, which
-     * specifies either an array of InstanceIds or a tag.</p>
+     * <p>Currently, we support including only one <code>RunCommandTarget</code> block,
+     * which specifies either an array of <code>InstanceIds</code> or a tag.</p>
      */
     inline RunCommandParameters& AddRunCommandTargets(const RunCommandTarget& value) { m_runCommandTargetsHasBeenSet = true; m_runCommandTargets.push_back(value); return *this; }
 
     /**
-     * <p>Currently, we support including only one RunCommandTarget block, which
-     * specifies either an array of InstanceIds or a tag.</p>
+     * <p>Currently, we support including only one <code>RunCommandTarget</code> block,
+     * which specifies either an array of <code>InstanceIds</code> or a tag.</p>
      */
     inline RunCommandParameters& AddRunCommandTargets(RunCommandTarget&& value) { m_runCommandTargetsHasBeenSet = true; m_runCommandTargets.push_back(std::move(value)); return *this; }
 

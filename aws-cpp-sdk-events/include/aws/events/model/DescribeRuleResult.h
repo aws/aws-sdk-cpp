@@ -117,93 +117,93 @@ namespace Model
 
     /**
      * <p>The event pattern. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline const Aws::String& GetEventPattern() const{ return m_eventPattern; }
 
     /**
      * <p>The event pattern. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline void SetEventPattern(const Aws::String& value) { m_eventPattern = value; }
 
     /**
      * <p>The event pattern. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline void SetEventPattern(Aws::String&& value) { m_eventPattern = std::move(value); }
 
     /**
      * <p>The event pattern. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline void SetEventPattern(const char* value) { m_eventPattern.assign(value); }
 
     /**
      * <p>The event pattern. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline DescribeRuleResult& WithEventPattern(const Aws::String& value) { SetEventPattern(value); return *this;}
 
     /**
      * <p>The event pattern. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline DescribeRuleResult& WithEventPattern(Aws::String&& value) { SetEventPattern(std::move(value)); return *this;}
 
     /**
      * <p>The event pattern. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline DescribeRuleResult& WithEventPattern(const char* value) { SetEventPattern(value); return *this;}
 
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * <p>The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
+     * <code>"rate(5 minutes)"</code>.</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * <p>The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
+     * <code>"rate(5 minutes)"</code>.</p>
      */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpression = value; }
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * <p>The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
+     * <code>"rate(5 minutes)"</code>.</p>
      */
     inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpression = std::move(value); }
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * <p>The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
+     * <code>"rate(5 minutes)"</code>.</p>
      */
     inline void SetScheduleExpression(const char* value) { m_scheduleExpression.assign(value); }
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * <p>The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
+     * <code>"rate(5 minutes)"</code>.</p>
      */
     inline DescribeRuleResult& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * <p>The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
+     * <code>"rate(5 minutes)"</code>.</p>
      */
     inline DescribeRuleResult& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * <p>The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
+     * <code>"rate(5 minutes)"</code>.</p>
      */
     inline DescribeRuleResult& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 
@@ -348,6 +348,42 @@ namespace Model
      */
     inline DescribeRuleResult& WithManagedBy(const char* value) { SetManagedBy(value); return *this;}
 
+
+    /**
+     * <p>The event bus associated with the rule.</p>
+     */
+    inline const Aws::String& GetEventBusName() const{ return m_eventBusName; }
+
+    /**
+     * <p>The event bus associated with the rule.</p>
+     */
+    inline void SetEventBusName(const Aws::String& value) { m_eventBusName = value; }
+
+    /**
+     * <p>The event bus associated with the rule.</p>
+     */
+    inline void SetEventBusName(Aws::String&& value) { m_eventBusName = std::move(value); }
+
+    /**
+     * <p>The event bus associated with the rule.</p>
+     */
+    inline void SetEventBusName(const char* value) { m_eventBusName.assign(value); }
+
+    /**
+     * <p>The event bus associated with the rule.</p>
+     */
+    inline DescribeRuleResult& WithEventBusName(const Aws::String& value) { SetEventBusName(value); return *this;}
+
+    /**
+     * <p>The event bus associated with the rule.</p>
+     */
+    inline DescribeRuleResult& WithEventBusName(Aws::String&& value) { SetEventBusName(std::move(value)); return *this;}
+
+    /**
+     * <p>The event bus associated with the rule.</p>
+     */
+    inline DescribeRuleResult& WithEventBusName(const char* value) { SetEventBusName(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -365,6 +401,8 @@ namespace Model
     Aws::String m_roleArn;
 
     Aws::String m_managedBy;
+
+    Aws::String m_eventBusName;
   };
 
 } // namespace Model

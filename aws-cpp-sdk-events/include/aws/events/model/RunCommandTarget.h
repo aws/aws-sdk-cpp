@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>Information about the EC2 instances that are to be sent the command,
    * specified as key-value pairs. Each <code>RunCommandTarget</code> block can
-   * include only one key, but this key may specify multiple values.</p><p><h3>See
+   * include only one key, but this key can specify multiple values.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RunCommandTarget">AWS
    * API Reference</a></p>

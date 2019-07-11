@@ -194,10 +194,10 @@ namespace Model
     /**
      * <p>Use this structure if the ECS task uses the <code>awsvpc</code> network mode.
      * This structure specifies the VPC subnets and security groups associated with the
-     * task, and whether a public IP address is to be used. This structure is required
+     * task and whether a public IP address is to be used. This structure is required
      * if <code>LaunchType</code> is <code>FARGATE</code> because the
      * <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you specify
-     * <code>NetworkConfiguration</code> when the target ECS task does not use the
+     * <code>NetworkConfiguration</code> when the target ECS task doesn't use the
      * <code>awsvpc</code> network mode, the task fails.</p>
      */
     inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
@@ -205,10 +205,10 @@ namespace Model
     /**
      * <p>Use this structure if the ECS task uses the <code>awsvpc</code> network mode.
      * This structure specifies the VPC subnets and security groups associated with the
-     * task, and whether a public IP address is to be used. This structure is required
+     * task and whether a public IP address is to be used. This structure is required
      * if <code>LaunchType</code> is <code>FARGATE</code> because the
      * <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you specify
-     * <code>NetworkConfiguration</code> when the target ECS task does not use the
+     * <code>NetworkConfiguration</code> when the target ECS task doesn't use the
      * <code>awsvpc</code> network mode, the task fails.</p>
      */
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
@@ -216,10 +216,10 @@ namespace Model
     /**
      * <p>Use this structure if the ECS task uses the <code>awsvpc</code> network mode.
      * This structure specifies the VPC subnets and security groups associated with the
-     * task, and whether a public IP address is to be used. This structure is required
+     * task and whether a public IP address is to be used. This structure is required
      * if <code>LaunchType</code> is <code>FARGATE</code> because the
      * <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you specify
-     * <code>NetworkConfiguration</code> when the target ECS task does not use the
+     * <code>NetworkConfiguration</code> when the target ECS task doesn't use the
      * <code>awsvpc</code> network mode, the task fails.</p>
      */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
@@ -227,10 +227,10 @@ namespace Model
     /**
      * <p>Use this structure if the ECS task uses the <code>awsvpc</code> network mode.
      * This structure specifies the VPC subnets and security groups associated with the
-     * task, and whether a public IP address is to be used. This structure is required
+     * task and whether a public IP address is to be used. This structure is required
      * if <code>LaunchType</code> is <code>FARGATE</code> because the
      * <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you specify
-     * <code>NetworkConfiguration</code> when the target ECS task does not use the
+     * <code>NetworkConfiguration</code> when the target ECS task doesn't use the
      * <code>awsvpc</code> network mode, the task fails.</p>
      */
     inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
@@ -238,10 +238,10 @@ namespace Model
     /**
      * <p>Use this structure if the ECS task uses the <code>awsvpc</code> network mode.
      * This structure specifies the VPC subnets and security groups associated with the
-     * task, and whether a public IP address is to be used. This structure is required
+     * task and whether a public IP address is to be used. This structure is required
      * if <code>LaunchType</code> is <code>FARGATE</code> because the
      * <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you specify
-     * <code>NetworkConfiguration</code> when the target ECS task does not use the
+     * <code>NetworkConfiguration</code> when the target ECS task doesn't use the
      * <code>awsvpc</code> network mode, the task fails.</p>
      */
     inline EcsParameters& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
@@ -249,10 +249,10 @@ namespace Model
     /**
      * <p>Use this structure if the ECS task uses the <code>awsvpc</code> network mode.
      * This structure specifies the VPC subnets and security groups associated with the
-     * task, and whether a public IP address is to be used. This structure is required
+     * task and whether a public IP address is to be used. This structure is required
      * if <code>LaunchType</code> is <code>FARGATE</code> because the
      * <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you specify
-     * <code>NetworkConfiguration</code> when the target ECS task does not use the
+     * <code>NetworkConfiguration</code> when the target ECS task doesn't use the
      * <code>awsvpc</code> network mode, the task fails.</p>
      */
     inline EcsParameters& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}

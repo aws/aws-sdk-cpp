@@ -22,13 +22,22 @@ using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEventBusRequest::DescribeEventBusRequest()
+DescribeEventBusRequest::DescribeEventBusRequest() : 
+    m_nameHasBeenSet(false)
 {
 }
 
 Aws::String DescribeEventBusRequest::SerializePayload() const
 {
-  return "{}";
+  JsonValue payload;
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeEventBusRequest::GetRequestSpecificHeaders() const

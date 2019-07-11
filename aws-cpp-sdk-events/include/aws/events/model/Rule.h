@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a rule in Amazon CloudWatch Events.</p><p><h3>See
+   * <p>Contains information about a rule in Amazon EventBridge.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/Rule">AWS API
    * Reference</a></p>
@@ -133,57 +133,57 @@ namespace Model
 
     /**
      * <p>The event pattern of the rule. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline const Aws::String& GetEventPattern() const{ return m_eventPattern; }
 
     /**
      * <p>The event pattern of the rule. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline bool EventPatternHasBeenSet() const { return m_eventPatternHasBeenSet; }
 
     /**
      * <p>The event pattern of the rule. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline void SetEventPattern(const Aws::String& value) { m_eventPatternHasBeenSet = true; m_eventPattern = value; }
 
     /**
      * <p>The event pattern of the rule. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline void SetEventPattern(Aws::String&& value) { m_eventPatternHasBeenSet = true; m_eventPattern = std::move(value); }
 
     /**
      * <p>The event pattern of the rule. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline void SetEventPattern(const char* value) { m_eventPatternHasBeenSet = true; m_eventPattern.assign(value); }
 
     /**
      * <p>The event pattern of the rule. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline Rule& WithEventPattern(const Aws::String& value) { SetEventPattern(value); return *this;}
 
     /**
      * <p>The event pattern of the rule. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline Rule& WithEventPattern(Aws::String&& value) { SetEventPattern(std::move(value)); return *this;}
 
     /**
      * <p>The event pattern of the rule. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline Rule& WithEventPattern(const char* value) { SetEventPattern(value); return *this;}
 
@@ -261,50 +261,50 @@ namespace Model
 
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * <p>The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
+     * <code>"rate(5 minutes)"</code>.</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * <p>The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
+     * <code>"rate(5 minutes)"</code>.</p>
      */
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * <p>The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
+     * <code>"rate(5 minutes)"</code>.</p>
      */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * <p>The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
+     * <code>"rate(5 minutes)"</code>.</p>
      */
     inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * <p>The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
+     * <code>"rate(5 minutes)"</code>.</p>
      */
     inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * <p>The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
+     * <code>"rate(5 minutes)"</code>.</p>
      */
     inline Rule& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * <p>The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
+     * <code>"rate(5 minutes)"</code>.</p>
      */
     inline Rule& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
 
     /**
-     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
-     * minutes)".</p>
+     * <p>The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
+     * <code>"rate(5 minutes)"</code>.</p>
      */
     inline Rule& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 
@@ -359,52 +359,93 @@ namespace Model
 
 
     /**
-     * <p>If the rule was created on behalf of your account by an AWS service, this
-     * field displays the principal name of the service that created the rule.</p>
+     * <p>If an AWS service created the rule on behalf of your account, this field
+     * displays the principal name of the service that created the rule.</p>
      */
     inline const Aws::String& GetManagedBy() const{ return m_managedBy; }
 
     /**
-     * <p>If the rule was created on behalf of your account by an AWS service, this
-     * field displays the principal name of the service that created the rule.</p>
+     * <p>If an AWS service created the rule on behalf of your account, this field
+     * displays the principal name of the service that created the rule.</p>
      */
     inline bool ManagedByHasBeenSet() const { return m_managedByHasBeenSet; }
 
     /**
-     * <p>If the rule was created on behalf of your account by an AWS service, this
-     * field displays the principal name of the service that created the rule.</p>
+     * <p>If an AWS service created the rule on behalf of your account, this field
+     * displays the principal name of the service that created the rule.</p>
      */
     inline void SetManagedBy(const Aws::String& value) { m_managedByHasBeenSet = true; m_managedBy = value; }
 
     /**
-     * <p>If the rule was created on behalf of your account by an AWS service, this
-     * field displays the principal name of the service that created the rule.</p>
+     * <p>If an AWS service created the rule on behalf of your account, this field
+     * displays the principal name of the service that created the rule.</p>
      */
     inline void SetManagedBy(Aws::String&& value) { m_managedByHasBeenSet = true; m_managedBy = std::move(value); }
 
     /**
-     * <p>If the rule was created on behalf of your account by an AWS service, this
-     * field displays the principal name of the service that created the rule.</p>
+     * <p>If an AWS service created the rule on behalf of your account, this field
+     * displays the principal name of the service that created the rule.</p>
      */
     inline void SetManagedBy(const char* value) { m_managedByHasBeenSet = true; m_managedBy.assign(value); }
 
     /**
-     * <p>If the rule was created on behalf of your account by an AWS service, this
-     * field displays the principal name of the service that created the rule.</p>
+     * <p>If an AWS service created the rule on behalf of your account, this field
+     * displays the principal name of the service that created the rule.</p>
      */
     inline Rule& WithManagedBy(const Aws::String& value) { SetManagedBy(value); return *this;}
 
     /**
-     * <p>If the rule was created on behalf of your account by an AWS service, this
-     * field displays the principal name of the service that created the rule.</p>
+     * <p>If an AWS service created the rule on behalf of your account, this field
+     * displays the principal name of the service that created the rule.</p>
      */
     inline Rule& WithManagedBy(Aws::String&& value) { SetManagedBy(std::move(value)); return *this;}
 
     /**
-     * <p>If the rule was created on behalf of your account by an AWS service, this
-     * field displays the principal name of the service that created the rule.</p>
+     * <p>If an AWS service created the rule on behalf of your account, this field
+     * displays the principal name of the service that created the rule.</p>
      */
     inline Rule& WithManagedBy(const char* value) { SetManagedBy(value); return *this;}
+
+
+    /**
+     * <p>The event bus associated with the rule.</p>
+     */
+    inline const Aws::String& GetEventBusName() const{ return m_eventBusName; }
+
+    /**
+     * <p>The event bus associated with the rule.</p>
+     */
+    inline bool EventBusNameHasBeenSet() const { return m_eventBusNameHasBeenSet; }
+
+    /**
+     * <p>The event bus associated with the rule.</p>
+     */
+    inline void SetEventBusName(const Aws::String& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = value; }
+
+    /**
+     * <p>The event bus associated with the rule.</p>
+     */
+    inline void SetEventBusName(Aws::String&& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = std::move(value); }
+
+    /**
+     * <p>The event bus associated with the rule.</p>
+     */
+    inline void SetEventBusName(const char* value) { m_eventBusNameHasBeenSet = true; m_eventBusName.assign(value); }
+
+    /**
+     * <p>The event bus associated with the rule.</p>
+     */
+    inline Rule& WithEventBusName(const Aws::String& value) { SetEventBusName(value); return *this;}
+
+    /**
+     * <p>The event bus associated with the rule.</p>
+     */
+    inline Rule& WithEventBusName(Aws::String&& value) { SetEventBusName(std::move(value)); return *this;}
+
+    /**
+     * <p>The event bus associated with the rule.</p>
+     */
+    inline Rule& WithEventBusName(const char* value) { SetEventBusName(value); return *this;}
 
   private:
 
@@ -431,6 +472,9 @@ namespace Model
 
     Aws::String m_managedBy;
     bool m_managedByHasBeenSet;
+
+    Aws::String m_eventBusName;
+    bool m_eventBusNameHasBeenSet;
   };
 
 } // namespace Model

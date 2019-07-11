@@ -86,6 +86,55 @@ namespace Model
 
 
     /**
+     * <p>The event bus associated with the rule. If you omit this, the default event
+     * bus is used.</p>
+     */
+    inline const Aws::String& GetEventBusName() const{ return m_eventBusName; }
+
+    /**
+     * <p>The event bus associated with the rule. If you omit this, the default event
+     * bus is used.</p>
+     */
+    inline bool EventBusNameHasBeenSet() const { return m_eventBusNameHasBeenSet; }
+
+    /**
+     * <p>The event bus associated with the rule. If you omit this, the default event
+     * bus is used.</p>
+     */
+    inline void SetEventBusName(const Aws::String& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = value; }
+
+    /**
+     * <p>The event bus associated with the rule. If you omit this, the default event
+     * bus is used.</p>
+     */
+    inline void SetEventBusName(Aws::String&& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = std::move(value); }
+
+    /**
+     * <p>The event bus associated with the rule. If you omit this, the default event
+     * bus is used.</p>
+     */
+    inline void SetEventBusName(const char* value) { m_eventBusNameHasBeenSet = true; m_eventBusName.assign(value); }
+
+    /**
+     * <p>The event bus associated with the rule. If you omit this, the default event
+     * bus is used.</p>
+     */
+    inline DeleteRuleRequest& WithEventBusName(const Aws::String& value) { SetEventBusName(value); return *this;}
+
+    /**
+     * <p>The event bus associated with the rule. If you omit this, the default event
+     * bus is used.</p>
+     */
+    inline DeleteRuleRequest& WithEventBusName(Aws::String&& value) { SetEventBusName(std::move(value)); return *this;}
+
+    /**
+     * <p>The event bus associated with the rule. If you omit this, the default event
+     * bus is used.</p>
+     */
+    inline DeleteRuleRequest& WithEventBusName(const char* value) { SetEventBusName(value); return *this;}
+
+
+    /**
      * <p>If this is a managed rule, created by an AWS service on your behalf, you must
      * specify <code>Force</code> as <code>True</code> to delete the rule. This
      * parameter is ignored for rules that are not managed rules. You can check whether
@@ -129,6 +178,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::String m_eventBusName;
+    bool m_eventBusNameHasBeenSet;
 
     bool m_force;
     bool m_forceHasBeenSet;

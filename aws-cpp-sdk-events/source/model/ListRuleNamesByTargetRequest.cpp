@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 ListRuleNamesByTargetRequest::ListRuleNamesByTargetRequest() : 
     m_targetArnHasBeenSet(false),
+    m_eventBusNameHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_limit(0),
     m_limitHasBeenSet(false)
@@ -37,6 +38,12 @@ Aws::String ListRuleNamesByTargetRequest::SerializePayload() const
   if(m_targetArnHasBeenSet)
   {
    payload.WithString("TargetArn", m_targetArn);
+
+  }
+
+  if(m_eventBusNameHasBeenSet)
+  {
+   payload.WithString("EventBusName", m_eventBusName);
 
   }
 

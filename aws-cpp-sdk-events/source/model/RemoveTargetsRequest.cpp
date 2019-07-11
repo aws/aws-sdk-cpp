@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 RemoveTargetsRequest::RemoveTargetsRequest() : 
     m_ruleHasBeenSet(false),
+    m_eventBusNameHasBeenSet(false),
     m_idsHasBeenSet(false),
     m_force(false),
     m_forceHasBeenSet(false)
@@ -37,6 +38,12 @@ Aws::String RemoveTargetsRequest::SerializePayload() const
   if(m_ruleHasBeenSet)
   {
    payload.WithString("Rule", m_rule);
+
+  }
+
+  if(m_eventBusNameHasBeenSet)
+  {
+   payload.WithString("EventBusName", m_eventBusName);
 
   }
 

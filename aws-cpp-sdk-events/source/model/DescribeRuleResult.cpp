@@ -88,6 +88,12 @@ DescribeRuleResult& DescribeRuleResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("EventBusName"))
+  {
+    m_eventBusName = jsonValue.GetString("EventBusName");
+
+  }
+
 
 
   return *this;

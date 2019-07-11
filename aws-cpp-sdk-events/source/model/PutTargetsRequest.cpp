@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 PutTargetsRequest::PutTargetsRequest() : 
     m_ruleHasBeenSet(false),
+    m_eventBusNameHasBeenSet(false),
     m_targetsHasBeenSet(false)
 {
 }
@@ -35,6 +36,12 @@ Aws::String PutTargetsRequest::SerializePayload() const
   if(m_ruleHasBeenSet)
   {
    payload.WithString("Rule", m_rule);
+
+  }
+
+  if(m_eventBusNameHasBeenSet)
+  {
+   payload.WithString("EventBusName", m_eventBusName);
 
   }
 

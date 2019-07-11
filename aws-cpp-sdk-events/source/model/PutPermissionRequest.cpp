@@ -23,6 +23,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 PutPermissionRequest::PutPermissionRequest() : 
+    m_eventBusNameHasBeenSet(false),
     m_actionHasBeenSet(false),
     m_principalHasBeenSet(false),
     m_statementIdHasBeenSet(false),
@@ -33,6 +34,12 @@ PutPermissionRequest::PutPermissionRequest() :
 Aws::String PutPermissionRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_eventBusNameHasBeenSet)
+  {
+   payload.WithString("EventBusName", m_eventBusName);
+
+  }
 
   if(m_actionHasBeenSet)
   {

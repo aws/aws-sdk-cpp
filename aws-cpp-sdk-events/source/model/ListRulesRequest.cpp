@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 ListRulesRequest::ListRulesRequest() : 
     m_namePrefixHasBeenSet(false),
+    m_eventBusNameHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_limit(0),
     m_limitHasBeenSet(false)
@@ -37,6 +38,12 @@ Aws::String ListRulesRequest::SerializePayload() const
   if(m_namePrefixHasBeenSet)
   {
    payload.WithString("NamePrefix", m_namePrefix);
+
+  }
+
+  if(m_eventBusNameHasBeenSet)
+  {
+   payload.WithString("EventBusName", m_eventBusName);
 
   }
 

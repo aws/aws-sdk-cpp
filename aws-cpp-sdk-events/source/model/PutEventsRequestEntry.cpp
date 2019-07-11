@@ -33,7 +33,8 @@ PutEventsRequestEntry::PutEventsRequestEntry() :
     m_sourceHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_detailTypeHasBeenSet(false),
-    m_detailHasBeenSet(false)
+    m_detailHasBeenSet(false),
+    m_eventBusNameHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ PutEventsRequestEntry::PutEventsRequestEntry(JsonView jsonValue) :
     m_sourceHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_detailTypeHasBeenSet(false),
-    m_detailHasBeenSet(false)
+    m_detailHasBeenSet(false),
+    m_eventBusNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -87,6 +89,13 @@ PutEventsRequestEntry& PutEventsRequestEntry::operator =(JsonView jsonValue)
     m_detailHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EventBusName"))
+  {
+    m_eventBusName = jsonValue.GetString("EventBusName");
+
+    m_eventBusNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -125,6 +134,12 @@ JsonValue PutEventsRequestEntry::Jsonize() const
   if(m_detailHasBeenSet)
   {
    payload.WithString("Detail", m_detail);
+
+  }
+
+  if(m_eventBusNameHasBeenSet)
+  {
+   payload.WithString("EventBusName", m_eventBusName);
 
   }
 

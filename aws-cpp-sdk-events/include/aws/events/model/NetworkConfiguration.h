@@ -50,42 +50,42 @@ namespace Model
 
     /**
      * <p>Use this structure to specify the VPC subnets and security groups for the
-     * task, and whether a public IP address is to be used. This structure is relevant
+     * task and whether a public IP address is to be used. This structure is relevant
      * only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
      */
     inline const AwsVpcConfiguration& GetAwsvpcConfiguration() const{ return m_awsvpcConfiguration; }
 
     /**
      * <p>Use this structure to specify the VPC subnets and security groups for the
-     * task, and whether a public IP address is to be used. This structure is relevant
+     * task and whether a public IP address is to be used. This structure is relevant
      * only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
      */
     inline bool AwsvpcConfigurationHasBeenSet() const { return m_awsvpcConfigurationHasBeenSet; }
 
     /**
      * <p>Use this structure to specify the VPC subnets and security groups for the
-     * task, and whether a public IP address is to be used. This structure is relevant
+     * task and whether a public IP address is to be used. This structure is relevant
      * only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
      */
     inline void SetAwsvpcConfiguration(const AwsVpcConfiguration& value) { m_awsvpcConfigurationHasBeenSet = true; m_awsvpcConfiguration = value; }
 
     /**
      * <p>Use this structure to specify the VPC subnets and security groups for the
-     * task, and whether a public IP address is to be used. This structure is relevant
+     * task and whether a public IP address is to be used. This structure is relevant
      * only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
      */
     inline void SetAwsvpcConfiguration(AwsVpcConfiguration&& value) { m_awsvpcConfigurationHasBeenSet = true; m_awsvpcConfiguration = std::move(value); }
 
     /**
      * <p>Use this structure to specify the VPC subnets and security groups for the
-     * task, and whether a public IP address is to be used. This structure is relevant
+     * task and whether a public IP address is to be used. This structure is relevant
      * only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
      */
     inline NetworkConfiguration& WithAwsvpcConfiguration(const AwsVpcConfiguration& value) { SetAwsvpcConfiguration(value); return *this;}
 
     /**
      * <p>Use this structure to specify the VPC subnets and security groups for the
-     * task, and whether a public IP address is to be used. This structure is relevant
+     * task and whether a public IP address is to be used. This structure is relevant
      * only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
      */
     inline NetworkConfiguration& WithAwsvpcConfiguration(AwsVpcConfiguration&& value) { SetAwsvpcConfiguration(std::move(value)); return *this;}

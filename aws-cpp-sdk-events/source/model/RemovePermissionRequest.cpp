@@ -23,7 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 RemovePermissionRequest::RemovePermissionRequest() : 
-    m_statementIdHasBeenSet(false)
+    m_statementIdHasBeenSet(false),
+    m_eventBusNameHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,12 @@ Aws::String RemovePermissionRequest::SerializePayload() const
   if(m_statementIdHasBeenSet)
   {
    payload.WithString("StatementId", m_statementId);
+
+  }
+
+  if(m_eventBusNameHasBeenSet)
+  {
+   payload.WithString("EventBusName", m_eventBusName);
 
   }
 

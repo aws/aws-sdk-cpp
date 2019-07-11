@@ -30,7 +30,8 @@ PutRuleRequest::PutRuleRequest() :
     m_stateHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_eventBusNameHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,12 @@ Aws::String PutRuleRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_eventBusNameHasBeenSet)
+  {
+   payload.WithString("EventBusName", m_eventBusName);
 
   }
 
