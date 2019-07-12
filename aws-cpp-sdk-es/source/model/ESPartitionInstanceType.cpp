@@ -39,6 +39,22 @@ namespace Aws
         static const int m4_2xlarge_elasticsearch_HASH = HashingUtils::HashString("m4.2xlarge.elasticsearch");
         static const int m4_4xlarge_elasticsearch_HASH = HashingUtils::HashString("m4.4xlarge.elasticsearch");
         static const int m4_10xlarge_elasticsearch_HASH = HashingUtils::HashString("m4.10xlarge.elasticsearch");
+        static const int m5_large_elasticsearch_HASH = HashingUtils::HashString("m5.large.elasticsearch");
+        static const int m5_xlarge_elasticsearch_HASH = HashingUtils::HashString("m5.xlarge.elasticsearch");
+        static const int m5_2xlarge_elasticsearch_HASH = HashingUtils::HashString("m5.2xlarge.elasticsearch");
+        static const int m5_4xlarge_elasticsearch_HASH = HashingUtils::HashString("m5.4xlarge.elasticsearch");
+        static const int m5_12xlarge_elasticsearch_HASH = HashingUtils::HashString("m5.12xlarge.elasticsearch");
+        static const int r5_large_elasticsearch_HASH = HashingUtils::HashString("r5.large.elasticsearch");
+        static const int r5_xlarge_elasticsearch_HASH = HashingUtils::HashString("r5.xlarge.elasticsearch");
+        static const int r5_2xlarge_elasticsearch_HASH = HashingUtils::HashString("r5.2xlarge.elasticsearch");
+        static const int r5_4xlarge_elasticsearch_HASH = HashingUtils::HashString("r5.4xlarge.elasticsearch");
+        static const int r5_12xlarge_elasticsearch_HASH = HashingUtils::HashString("r5.12xlarge.elasticsearch");
+        static const int c5_large_elasticsearch_HASH = HashingUtils::HashString("c5.large.elasticsearch");
+        static const int c5_xlarge_elasticsearch_HASH = HashingUtils::HashString("c5.xlarge.elasticsearch");
+        static const int c5_2xlarge_elasticsearch_HASH = HashingUtils::HashString("c5.2xlarge.elasticsearch");
+        static const int c5_4xlarge_elasticsearch_HASH = HashingUtils::HashString("c5.4xlarge.elasticsearch");
+        static const int c5_9xlarge_elasticsearch_HASH = HashingUtils::HashString("c5.9xlarge.elasticsearch");
+        static const int c5_18xlarge_elasticsearch_HASH = HashingUtils::HashString("c5.18xlarge.elasticsearch");
         static const int t2_micro_elasticsearch_HASH = HashingUtils::HashString("t2.micro.elasticsearch");
         static const int t2_small_elasticsearch_HASH = HashingUtils::HashString("t2.small.elasticsearch");
         static const int t2_medium_elasticsearch_HASH = HashingUtils::HashString("t2.medium.elasticsearch");
@@ -110,6 +126,70 @@ namespace Aws
           else if (hashCode == m4_10xlarge_elasticsearch_HASH)
           {
             return ESPartitionInstanceType::m4_10xlarge_elasticsearch;
+          }
+          else if (hashCode == m5_large_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::m5_large_elasticsearch;
+          }
+          else if (hashCode == m5_xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::m5_xlarge_elasticsearch;
+          }
+          else if (hashCode == m5_2xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::m5_2xlarge_elasticsearch;
+          }
+          else if (hashCode == m5_4xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::m5_4xlarge_elasticsearch;
+          }
+          else if (hashCode == m5_12xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::m5_12xlarge_elasticsearch;
+          }
+          else if (hashCode == r5_large_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::r5_large_elasticsearch;
+          }
+          else if (hashCode == r5_xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::r5_xlarge_elasticsearch;
+          }
+          else if (hashCode == r5_2xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::r5_2xlarge_elasticsearch;
+          }
+          else if (hashCode == r5_4xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::r5_4xlarge_elasticsearch;
+          }
+          else if (hashCode == r5_12xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::r5_12xlarge_elasticsearch;
+          }
+          else if (hashCode == c5_large_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::c5_large_elasticsearch;
+          }
+          else if (hashCode == c5_xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::c5_xlarge_elasticsearch;
+          }
+          else if (hashCode == c5_2xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::c5_2xlarge_elasticsearch;
+          }
+          else if (hashCode == c5_4xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::c5_4xlarge_elasticsearch;
+          }
+          else if (hashCode == c5_9xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::c5_9xlarge_elasticsearch;
+          }
+          else if (hashCode == c5_18xlarge_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::c5_18xlarge_elasticsearch;
           }
           else if (hashCode == t2_micro_elasticsearch_HASH)
           {
@@ -267,6 +347,38 @@ namespace Aws
             return "m4.4xlarge.elasticsearch";
           case ESPartitionInstanceType::m4_10xlarge_elasticsearch:
             return "m4.10xlarge.elasticsearch";
+          case ESPartitionInstanceType::m5_large_elasticsearch:
+            return "m5.large.elasticsearch";
+          case ESPartitionInstanceType::m5_xlarge_elasticsearch:
+            return "m5.xlarge.elasticsearch";
+          case ESPartitionInstanceType::m5_2xlarge_elasticsearch:
+            return "m5.2xlarge.elasticsearch";
+          case ESPartitionInstanceType::m5_4xlarge_elasticsearch:
+            return "m5.4xlarge.elasticsearch";
+          case ESPartitionInstanceType::m5_12xlarge_elasticsearch:
+            return "m5.12xlarge.elasticsearch";
+          case ESPartitionInstanceType::r5_large_elasticsearch:
+            return "r5.large.elasticsearch";
+          case ESPartitionInstanceType::r5_xlarge_elasticsearch:
+            return "r5.xlarge.elasticsearch";
+          case ESPartitionInstanceType::r5_2xlarge_elasticsearch:
+            return "r5.2xlarge.elasticsearch";
+          case ESPartitionInstanceType::r5_4xlarge_elasticsearch:
+            return "r5.4xlarge.elasticsearch";
+          case ESPartitionInstanceType::r5_12xlarge_elasticsearch:
+            return "r5.12xlarge.elasticsearch";
+          case ESPartitionInstanceType::c5_large_elasticsearch:
+            return "c5.large.elasticsearch";
+          case ESPartitionInstanceType::c5_xlarge_elasticsearch:
+            return "c5.xlarge.elasticsearch";
+          case ESPartitionInstanceType::c5_2xlarge_elasticsearch:
+            return "c5.2xlarge.elasticsearch";
+          case ESPartitionInstanceType::c5_4xlarge_elasticsearch:
+            return "c5.4xlarge.elasticsearch";
+          case ESPartitionInstanceType::c5_9xlarge_elasticsearch:
+            return "c5.9xlarge.elasticsearch";
+          case ESPartitionInstanceType::c5_18xlarge_elasticsearch:
+            return "c5.18xlarge.elasticsearch";
           case ESPartitionInstanceType::t2_micro_elasticsearch:
             return "t2.micro.elasticsearch";
           case ESPartitionInstanceType::t2_small_elasticsearch:

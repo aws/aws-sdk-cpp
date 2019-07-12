@@ -26,7 +26,8 @@ namespace Model
   enum class RobotSoftwareSuiteVersionType
   {
     NOT_SET,
-    Kinetic
+    Kinetic,
+    Melodic
   };
 
 namespace RobotSoftwareSuiteVersionTypeMapper
