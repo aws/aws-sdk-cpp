@@ -40,7 +40,9 @@ OrderableReplicationInstance::OrderableReplicationInstance() :
     m_defaultAllocatedStorageHasBeenSet(false),
     m_includedAllocatedStorage(0),
     m_includedAllocatedStorageHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false)
+    m_availabilityZonesHasBeenSet(false),
+    m_releaseStatus(ReleaseStatusValues::NOT_SET),
+    m_releaseStatusHasBeenSet(false)
 {
 }
 
@@ -56,7 +58,9 @@ OrderableReplicationInstance::OrderableReplicationInstance(JsonView jsonValue) :
     m_defaultAllocatedStorageHasBeenSet(false),
     m_includedAllocatedStorage(0),
     m_includedAllocatedStorageHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false)
+    m_availabilityZonesHasBeenSet(false),
+    m_releaseStatus(ReleaseStatusValues::NOT_SET),
+    m_releaseStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -122,6 +126,13 @@ OrderableReplicationInstance& OrderableReplicationInstance::operator =(JsonView 
     m_availabilityZonesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReleaseStatus"))
+  {
+    m_releaseStatus = ReleaseStatusValuesMapper::GetReleaseStatusValuesForName(jsonValue.GetString("ReleaseStatus"));
+
+    m_releaseStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -180,6 +191,11 @@ JsonValue OrderableReplicationInstance::Jsonize() const
    }
    payload.WithArray("AvailabilityZones", std::move(availabilityZonesJsonList));
 
+  }
+
+  if(m_releaseStatusHasBeenSet)
+  {
+   payload.WithString("ReleaseStatus", ReleaseStatusValuesMapper::GetNameForReleaseStatusValues(m_releaseStatus));
   }
 
   return payload;

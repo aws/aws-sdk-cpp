@@ -161,99 +161,105 @@ namespace Model
 
 
     /**
-     * <p>The time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT
-     * only and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).</p> <p>If
-     * you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto
-     * Scaling performs the action at this time, and then performs the action based on
-     * the specified recurrence.</p> <p>If you try to schedule your action in the past,
+     * <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in
+     * UTC/GMT only and in quotes (for example,
+     * <code>"2019-06-01T00:00:00Z"</code>).</p> <p>If you specify
+     * <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling
+     * performs the action at this time, and then performs the action based on the
+     * specified recurrence.</p> <p>If you try to schedule your action in the past,
      * Amazon EC2 Auto Scaling returns an error message.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT
-     * only and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).</p> <p>If
-     * you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto
-     * Scaling performs the action at this time, and then performs the action based on
-     * the specified recurrence.</p> <p>If you try to schedule your action in the past,
+     * <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in
+     * UTC/GMT only and in quotes (for example,
+     * <code>"2019-06-01T00:00:00Z"</code>).</p> <p>If you specify
+     * <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling
+     * performs the action at this time, and then performs the action based on the
+     * specified recurrence.</p> <p>If you try to schedule your action in the past,
      * Amazon EC2 Auto Scaling returns an error message.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>The time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT
-     * only and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).</p> <p>If
-     * you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto
-     * Scaling performs the action at this time, and then performs the action based on
-     * the specified recurrence.</p> <p>If you try to schedule your action in the past,
+     * <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in
+     * UTC/GMT only and in quotes (for example,
+     * <code>"2019-06-01T00:00:00Z"</code>).</p> <p>If you specify
+     * <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling
+     * performs the action at this time, and then performs the action based on the
+     * specified recurrence.</p> <p>If you try to schedule your action in the past,
      * Amazon EC2 Auto Scaling returns an error message.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT
-     * only and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).</p> <p>If
-     * you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto
-     * Scaling performs the action at this time, and then performs the action based on
-     * the specified recurrence.</p> <p>If you try to schedule your action in the past,
+     * <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in
+     * UTC/GMT only and in quotes (for example,
+     * <code>"2019-06-01T00:00:00Z"</code>).</p> <p>If you specify
+     * <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling
+     * performs the action at this time, and then performs the action based on the
+     * specified recurrence.</p> <p>If you try to schedule your action in the past,
      * Amazon EC2 Auto Scaling returns an error message.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT
-     * only and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).</p> <p>If
-     * you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto
-     * Scaling performs the action at this time, and then performs the action based on
-     * the specified recurrence.</p> <p>If you try to schedule your action in the past,
+     * <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in
+     * UTC/GMT only and in quotes (for example,
+     * <code>"2019-06-01T00:00:00Z"</code>).</p> <p>If you specify
+     * <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling
+     * performs the action at this time, and then performs the action based on the
+     * specified recurrence.</p> <p>If you try to schedule your action in the past,
      * Amazon EC2 Auto Scaling returns an error message.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT
-     * only and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).</p> <p>If
-     * you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto
-     * Scaling performs the action at this time, and then performs the action based on
-     * the specified recurrence.</p> <p>If you try to schedule your action in the past,
+     * <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in
+     * UTC/GMT only and in quotes (for example,
+     * <code>"2019-06-01T00:00:00Z"</code>).</p> <p>If you specify
+     * <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling
+     * performs the action at this time, and then performs the action based on the
+     * specified recurrence.</p> <p>If you try to schedule your action in the past,
      * Amazon EC2 Auto Scaling returns an error message.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time for the recurring schedule to end. Amazon EC2 Auto Scaling does not
-     * perform the action after this time.</p>
+     * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
+     * does not perform the action after this time. </p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The time for the recurring schedule to end. Amazon EC2 Auto Scaling does not
-     * perform the action after this time.</p>
+     * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
+     * does not perform the action after this time. </p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>The time for the recurring schedule to end. Amazon EC2 Auto Scaling does not
-     * perform the action after this time.</p>
+     * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
+     * does not perform the action after this time. </p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The time for the recurring schedule to end. Amazon EC2 Auto Scaling does not
-     * perform the action after this time.</p>
+     * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
+     * does not perform the action after this time. </p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The time for the recurring schedule to end. Amazon EC2 Auto Scaling does not
-     * perform the action after this time.</p>
+     * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
+     * does not perform the action after this time. </p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The time for the recurring schedule to end. Amazon EC2 Auto Scaling does not
-     * perform the action after this time.</p>
+     * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
+     * does not perform the action after this time. </p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
@@ -263,7 +269,10 @@ namespace Model
      * format consists of five fields separated by white spaces: [Minute] [Hour]
      * [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for
      * example, <code>"30 0 1 1,6,12 *"</code>). For more information about this
-     * format, see <a href="http://crontab.org">Crontab</a>.</p>
+     * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
+     * <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline const Aws::String& GetRecurrence() const{ return m_recurrence; }
 
@@ -272,7 +281,10 @@ namespace Model
      * format consists of five fields separated by white spaces: [Minute] [Hour]
      * [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for
      * example, <code>"30 0 1 1,6,12 *"</code>). For more information about this
-     * format, see <a href="http://crontab.org">Crontab</a>.</p>
+     * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
+     * <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline bool RecurrenceHasBeenSet() const { return m_recurrenceHasBeenSet; }
 
@@ -281,7 +293,10 @@ namespace Model
      * format consists of five fields separated by white spaces: [Minute] [Hour]
      * [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for
      * example, <code>"30 0 1 1,6,12 *"</code>). For more information about this
-     * format, see <a href="http://crontab.org">Crontab</a>.</p>
+     * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
+     * <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline void SetRecurrence(const Aws::String& value) { m_recurrenceHasBeenSet = true; m_recurrence = value; }
 
@@ -290,7 +305,10 @@ namespace Model
      * format consists of five fields separated by white spaces: [Minute] [Hour]
      * [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for
      * example, <code>"30 0 1 1,6,12 *"</code>). For more information about this
-     * format, see <a href="http://crontab.org">Crontab</a>.</p>
+     * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
+     * <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline void SetRecurrence(Aws::String&& value) { m_recurrenceHasBeenSet = true; m_recurrence = std::move(value); }
 
@@ -299,7 +317,10 @@ namespace Model
      * format consists of five fields separated by white spaces: [Minute] [Hour]
      * [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for
      * example, <code>"30 0 1 1,6,12 *"</code>). For more information about this
-     * format, see <a href="http://crontab.org">Crontab</a>.</p>
+     * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
+     * <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline void SetRecurrence(const char* value) { m_recurrenceHasBeenSet = true; m_recurrence.assign(value); }
 
@@ -308,7 +329,10 @@ namespace Model
      * format consists of five fields separated by white spaces: [Minute] [Hour]
      * [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for
      * example, <code>"30 0 1 1,6,12 *"</code>). For more information about this
-     * format, see <a href="http://crontab.org">Crontab</a>.</p>
+     * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
+     * <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithRecurrence(const Aws::String& value) { SetRecurrence(value); return *this;}
 
@@ -317,7 +341,10 @@ namespace Model
      * format consists of five fields separated by white spaces: [Minute] [Hour]
      * [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for
      * example, <code>"30 0 1 1,6,12 *"</code>). For more information about this
-     * format, see <a href="http://crontab.org">Crontab</a>.</p>
+     * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
+     * <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithRecurrence(Aws::String&& value) { SetRecurrence(std::move(value)); return *this;}
 
@@ -326,70 +353,77 @@ namespace Model
      * format consists of five fields separated by white spaces: [Minute] [Hour]
      * [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for
      * example, <code>"30 0 1 1,6,12 *"</code>). For more information about this
-     * format, see <a href="http://crontab.org">Crontab</a>.</p>
+     * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
+     * <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithRecurrence(const char* value) { SetRecurrence(value); return *this;}
 
 
     /**
-     * <p>The minimum size for the Auto Scaling group.</p>
+     * <p>The minimum number of instances in the Auto Scaling group.</p>
      */
     inline int GetMinSize() const{ return m_minSize; }
 
     /**
-     * <p>The minimum size for the Auto Scaling group.</p>
+     * <p>The minimum number of instances in the Auto Scaling group.</p>
      */
     inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
 
     /**
-     * <p>The minimum size for the Auto Scaling group.</p>
+     * <p>The minimum number of instances in the Auto Scaling group.</p>
      */
     inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
 
     /**
-     * <p>The minimum size for the Auto Scaling group.</p>
+     * <p>The minimum number of instances in the Auto Scaling group.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithMinSize(int value) { SetMinSize(value); return *this;}
 
 
     /**
-     * <p>The maximum size for the Auto Scaling group.</p>
+     * <p>The maximum number of instances in the Auto Scaling group.</p>
      */
     inline int GetMaxSize() const{ return m_maxSize; }
 
     /**
-     * <p>The maximum size for the Auto Scaling group.</p>
+     * <p>The maximum number of instances in the Auto Scaling group.</p>
      */
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
 
     /**
-     * <p>The maximum size for the Auto Scaling group.</p>
+     * <p>The maximum number of instances in the Auto Scaling group.</p>
      */
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
 
     /**
-     * <p>The maximum size for the Auto Scaling group.</p>
+     * <p>The maximum number of instances in the Auto Scaling group.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithMaxSize(int value) { SetMaxSize(value); return *this;}
 
 
     /**
-     * <p>The number of EC2 instances that should be running in the group.</p>
+     * <p>The number of EC2 instances that should be running in the Auto Scaling
+     * group.</p>
      */
     inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
 
     /**
-     * <p>The number of EC2 instances that should be running in the group.</p>
+     * <p>The number of EC2 instances that should be running in the Auto Scaling
+     * group.</p>
      */
     inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
 
     /**
-     * <p>The number of EC2 instances that should be running in the group.</p>
+     * <p>The number of EC2 instances that should be running in the Auto Scaling
+     * group.</p>
      */
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /**
-     * <p>The number of EC2 instances that should be running in the group.</p>
+     * <p>The number of EC2 instances that should be running in the Auto Scaling
+     * group.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 

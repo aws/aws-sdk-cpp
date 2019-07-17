@@ -37,8 +37,8 @@ namespace Model
    * <p>Describes an instances distribution for an Auto Scaling group with
    * <a>MixedInstancesPolicy</a>.</p> <p>The instances distribution specifies the
    * distribution of On-Demand Instances and Spot Instances, the maximum price to pay
-   * for Spot Instances, and how the Auto Scaling group allocates instance
-   * types.</p><p><h3>See Also:</h3>   <a
+   * for Spot Instances, and how the Auto Scaling group allocates instance types to
+   * fulfill On-Demand and Spot capacity.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstancesDistribution">AWS
    * API Reference</a></p>
    */
@@ -193,37 +193,37 @@ namespace Model
 
     /**
      * <p>Controls the percentages of On-Demand Instances and Spot Instances for your
-     * additional capacity beyond <code>OnDemandBaseCapacity</code>.</p> <p>The range
-     * is 0–100. The default value is <code>100</code>. If you leave this parameter set
-     * to <code>100</code>, the percentages are 100% for On-Demand Instances and 0% for
-     * Spot Instances. </p>
+     * additional capacity beyond <code>OnDemandBaseCapacity</code>. The range is
+     * 0–100.</p> <p>The default value is <code>100</code>. If you leave this parameter
+     * set to <code>100</code>, the percentages are 100% for On-Demand Instances and 0%
+     * for Spot Instances. </p>
      */
     inline int GetOnDemandPercentageAboveBaseCapacity() const{ return m_onDemandPercentageAboveBaseCapacity; }
 
     /**
      * <p>Controls the percentages of On-Demand Instances and Spot Instances for your
-     * additional capacity beyond <code>OnDemandBaseCapacity</code>.</p> <p>The range
-     * is 0–100. The default value is <code>100</code>. If you leave this parameter set
-     * to <code>100</code>, the percentages are 100% for On-Demand Instances and 0% for
-     * Spot Instances. </p>
+     * additional capacity beyond <code>OnDemandBaseCapacity</code>. The range is
+     * 0–100.</p> <p>The default value is <code>100</code>. If you leave this parameter
+     * set to <code>100</code>, the percentages are 100% for On-Demand Instances and 0%
+     * for Spot Instances. </p>
      */
     inline bool OnDemandPercentageAboveBaseCapacityHasBeenSet() const { return m_onDemandPercentageAboveBaseCapacityHasBeenSet; }
 
     /**
      * <p>Controls the percentages of On-Demand Instances and Spot Instances for your
-     * additional capacity beyond <code>OnDemandBaseCapacity</code>.</p> <p>The range
-     * is 0–100. The default value is <code>100</code>. If you leave this parameter set
-     * to <code>100</code>, the percentages are 100% for On-Demand Instances and 0% for
-     * Spot Instances. </p>
+     * additional capacity beyond <code>OnDemandBaseCapacity</code>. The range is
+     * 0–100.</p> <p>The default value is <code>100</code>. If you leave this parameter
+     * set to <code>100</code>, the percentages are 100% for On-Demand Instances and 0%
+     * for Spot Instances. </p>
      */
     inline void SetOnDemandPercentageAboveBaseCapacity(int value) { m_onDemandPercentageAboveBaseCapacityHasBeenSet = true; m_onDemandPercentageAboveBaseCapacity = value; }
 
     /**
      * <p>Controls the percentages of On-Demand Instances and Spot Instances for your
-     * additional capacity beyond <code>OnDemandBaseCapacity</code>.</p> <p>The range
-     * is 0–100. The default value is <code>100</code>. If you leave this parameter set
-     * to <code>100</code>, the percentages are 100% for On-Demand Instances and 0% for
-     * Spot Instances. </p>
+     * additional capacity beyond <code>OnDemandBaseCapacity</code>. The range is
+     * 0–100.</p> <p>The default value is <code>100</code>. If you leave this parameter
+     * set to <code>100</code>, the percentages are 100% for On-Demand Instances and 0%
+     * for Spot Instances. </p>
      */
     inline InstancesDistribution& WithOnDemandPercentageAboveBaseCapacity(int value) { SetOnDemandPercentageAboveBaseCapacity(value); return *this;}
 
@@ -296,28 +296,32 @@ namespace Model
     /**
      * <p>The number of Spot pools to use to allocate your Spot capacity. The Spot
      * pools are determined from the different instance types in the Overrides array of
-     * <a>LaunchTemplate</a>. </p> <p>The range is 1–20 and the default is 2. </p>
+     * <a>LaunchTemplate</a>. The range is 1–20.</p> <p>The default value is
+     * <code>2</code>.</p>
      */
     inline int GetSpotInstancePools() const{ return m_spotInstancePools; }
 
     /**
      * <p>The number of Spot pools to use to allocate your Spot capacity. The Spot
      * pools are determined from the different instance types in the Overrides array of
-     * <a>LaunchTemplate</a>. </p> <p>The range is 1–20 and the default is 2. </p>
+     * <a>LaunchTemplate</a>. The range is 1–20.</p> <p>The default value is
+     * <code>2</code>.</p>
      */
     inline bool SpotInstancePoolsHasBeenSet() const { return m_spotInstancePoolsHasBeenSet; }
 
     /**
      * <p>The number of Spot pools to use to allocate your Spot capacity. The Spot
      * pools are determined from the different instance types in the Overrides array of
-     * <a>LaunchTemplate</a>. </p> <p>The range is 1–20 and the default is 2. </p>
+     * <a>LaunchTemplate</a>. The range is 1–20.</p> <p>The default value is
+     * <code>2</code>.</p>
      */
     inline void SetSpotInstancePools(int value) { m_spotInstancePoolsHasBeenSet = true; m_spotInstancePools = value; }
 
     /**
      * <p>The number of Spot pools to use to allocate your Spot capacity. The Spot
      * pools are determined from the different instance types in the Overrides array of
-     * <a>LaunchTemplate</a>. </p> <p>The range is 1–20 and the default is 2. </p>
+     * <a>LaunchTemplate</a>. The range is 1–20.</p> <p>The default value is
+     * <code>2</code>.</p>
      */
     inline InstancesDistribution& WithSpotInstancePools(int value) { SetSpotInstancePools(value); return *this;}
 

@@ -163,97 +163,103 @@ namespace Model
 
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline const ReplicationEndpointTypeValue& GetEndpointType() const{ return m_endpointType; }
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline void SetEndpointType(const ReplicationEndpointTypeValue& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline void SetEndpointType(ReplicationEndpointTypeValue&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline ModifyEndpointRequest& WithEndpointType(const ReplicationEndpointTypeValue& value) { SetEndpointType(value); return *this;}
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline ModifyEndpointRequest& WithEndpointType(ReplicationEndpointTypeValue&& value) { SetEndpointType(std::move(value)); return *this;}
 
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include mysql, oracle, postgres, mariadb, aurora,
-     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb,
-     * mongodb, and sqlserver.</p>
+     * EndpointType, include mysql, oracle, postgres, mariadb, aurora,
+     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
+     * sqlserver.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include mysql, oracle, postgres, mariadb, aurora,
-     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb,
-     * mongodb, and sqlserver.</p>
+     * EndpointType, include mysql, oracle, postgres, mariadb, aurora,
+     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
+     * sqlserver.</p>
      */
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include mysql, oracle, postgres, mariadb, aurora,
-     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb,
-     * mongodb, and sqlserver.</p>
+     * EndpointType, include mysql, oracle, postgres, mariadb, aurora,
+     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
+     * sqlserver.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include mysql, oracle, postgres, mariadb, aurora,
-     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb,
-     * mongodb, and sqlserver.</p>
+     * EndpointType, include mysql, oracle, postgres, mariadb, aurora,
+     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
+     * sqlserver.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include mysql, oracle, postgres, mariadb, aurora,
-     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb,
-     * mongodb, and sqlserver.</p>
+     * EndpointType, include mysql, oracle, postgres, mariadb, aurora,
+     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
+     * sqlserver.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include mysql, oracle, postgres, mariadb, aurora,
-     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb,
-     * mongodb, and sqlserver.</p>
+     * EndpointType, include mysql, oracle, postgres, mariadb, aurora,
+     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
+     * sqlserver.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include mysql, oracle, postgres, mariadb, aurora,
-     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb,
-     * mongodb, and sqlserver.</p>
+     * EndpointType, include mysql, oracle, postgres, mariadb, aurora,
+     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
+     * sqlserver.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndPointType, include mysql, oracle, postgres, mariadb, aurora,
-     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb,
-     * mongodb, and sqlserver.</p>
+     * EndpointType, include mysql, oracle, postgres, mariadb, aurora,
+     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
+     * sqlserver.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
@@ -542,38 +548,38 @@ namespace Model
 
 
     /**
-     * <p>The SSL mode to be used.</p> <p>SSL mode can be one of four values: none,
-     * require, verify-ca, verify-full. </p> <p>The default value is none.</p>
+     * <p>The SSL mode used to connect to the endpoint. The default value is
+     * <code>none</code>.</p>
      */
     inline const DmsSslModeValue& GetSslMode() const{ return m_sslMode; }
 
     /**
-     * <p>The SSL mode to be used.</p> <p>SSL mode can be one of four values: none,
-     * require, verify-ca, verify-full. </p> <p>The default value is none.</p>
+     * <p>The SSL mode used to connect to the endpoint. The default value is
+     * <code>none</code>.</p>
      */
     inline bool SslModeHasBeenSet() const { return m_sslModeHasBeenSet; }
 
     /**
-     * <p>The SSL mode to be used.</p> <p>SSL mode can be one of four values: none,
-     * require, verify-ca, verify-full. </p> <p>The default value is none.</p>
+     * <p>The SSL mode used to connect to the endpoint. The default value is
+     * <code>none</code>.</p>
      */
     inline void SetSslMode(const DmsSslModeValue& value) { m_sslModeHasBeenSet = true; m_sslMode = value; }
 
     /**
-     * <p>The SSL mode to be used.</p> <p>SSL mode can be one of four values: none,
-     * require, verify-ca, verify-full. </p> <p>The default value is none.</p>
+     * <p>The SSL mode used to connect to the endpoint. The default value is
+     * <code>none</code>.</p>
      */
     inline void SetSslMode(DmsSslModeValue&& value) { m_sslModeHasBeenSet = true; m_sslMode = std::move(value); }
 
     /**
-     * <p>The SSL mode to be used.</p> <p>SSL mode can be one of four values: none,
-     * require, verify-ca, verify-full. </p> <p>The default value is none.</p>
+     * <p>The SSL mode used to connect to the endpoint. The default value is
+     * <code>none</code>.</p>
      */
     inline ModifyEndpointRequest& WithSslMode(const DmsSslModeValue& value) { SetSslMode(value); return *this;}
 
     /**
-     * <p>The SSL mode to be used.</p> <p>SSL mode can be one of four values: none,
-     * require, verify-ca, verify-full. </p> <p>The default value is none.</p>
+     * <p>The SSL mode used to connect to the endpoint. The default value is
+     * <code>none</code>.</p>
      */
     inline ModifyEndpointRequest& WithSslMode(DmsSslModeValue&& value) { SetSslMode(std::move(value)); return *this;}
 
@@ -921,54 +927,54 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
      * For more information about the available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
-     * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
-     * <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
+     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline const KinesisSettings& GetKinesisSettings() const{ return m_kinesisSettings; }
 
     /**
      * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
      * For more information about the available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
-     * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
-     * <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
+     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline bool KinesisSettingsHasBeenSet() const { return m_kinesisSettingsHasBeenSet; }
 
     /**
      * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
      * For more information about the available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
-     * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
-     * <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
+     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline void SetKinesisSettings(const KinesisSettings& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = value; }
 
     /**
      * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
      * For more information about the available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
-     * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
-     * <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
+     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline void SetKinesisSettings(KinesisSettings&& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = std::move(value); }
 
     /**
      * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
      * For more information about the available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
-     * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
-     * <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
+     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline ModifyEndpointRequest& WithKinesisSettings(const KinesisSettings& value) { SetKinesisSettings(value); return *this;}
 
     /**
      * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
      * For more information about the available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
-     * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
-     * <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
+     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline ModifyEndpointRequest& WithKinesisSettings(KinesisSettings&& value) { SetKinesisSettings(std::move(value)); return *this;}
 

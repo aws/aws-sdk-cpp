@@ -51,57 +51,73 @@ namespace Model
 
 
     /**
-     * <p>The ID of the snapshot. This parameter is optional if you specify a volume
-     * size. </p>
+     * <p>The snapshot ID of the volume to use. </p> <p>Conditional: This parameter is
+     * optional if you specify a volume size. If you specify both
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
+     * must be equal or greater than the size of the snapshot.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
 
     /**
-     * <p>The ID of the snapshot. This parameter is optional if you specify a volume
-     * size. </p>
+     * <p>The snapshot ID of the volume to use. </p> <p>Conditional: This parameter is
+     * optional if you specify a volume size. If you specify both
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
+     * must be equal or greater than the size of the snapshot.</p>
      */
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
-     * <p>The ID of the snapshot. This parameter is optional if you specify a volume
-     * size. </p>
+     * <p>The snapshot ID of the volume to use. </p> <p>Conditional: This parameter is
+     * optional if you specify a volume size. If you specify both
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
+     * must be equal or greater than the size of the snapshot.</p>
      */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
 
     /**
-     * <p>The ID of the snapshot. This parameter is optional if you specify a volume
-     * size. </p>
+     * <p>The snapshot ID of the volume to use. </p> <p>Conditional: This parameter is
+     * optional if you specify a volume size. If you specify both
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
+     * must be equal or greater than the size of the snapshot.</p>
      */
     inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
 
     /**
-     * <p>The ID of the snapshot. This parameter is optional if you specify a volume
-     * size. </p>
+     * <p>The snapshot ID of the volume to use. </p> <p>Conditional: This parameter is
+     * optional if you specify a volume size. If you specify both
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
+     * must be equal or greater than the size of the snapshot.</p>
      */
     inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
 
     /**
-     * <p>The ID of the snapshot. This parameter is optional if you specify a volume
-     * size. </p>
+     * <p>The snapshot ID of the volume to use. </p> <p>Conditional: This parameter is
+     * optional if you specify a volume size. If you specify both
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
+     * must be equal or greater than the size of the snapshot.</p>
      */
     inline Ebs& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
 
     /**
-     * <p>The ID of the snapshot. This parameter is optional if you specify a volume
-     * size. </p>
+     * <p>The snapshot ID of the volume to use. </p> <p>Conditional: This parameter is
+     * optional if you specify a volume size. If you specify both
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
+     * must be equal or greater than the size of the snapshot.</p>
      */
     inline Ebs& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the snapshot. This parameter is optional if you specify a volume
-     * size. </p>
+     * <p>The snapshot ID of the volume to use. </p> <p>Conditional: This parameter is
+     * optional if you specify a volume size. If you specify both
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
+     * must be equal or greater than the size of the snapshot.</p>
      */
     inline Ebs& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
 
     /**
-     * <p>The volume size, in GiB. </p> <p>Constraints: 1-1,024 for
-     * <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
+     * <p>The volume size, in Gibibytes (GiB). </p> <p>This can be a number from
+     * 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
      * <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If
      * you specify a snapshot, the volume size must be equal to or larger than the
      * snapshot size.</p> <p>Default: If you create a volume from a snapshot and you
@@ -111,8 +127,8 @@ namespace Model
     inline int GetVolumeSize() const{ return m_volumeSize; }
 
     /**
-     * <p>The volume size, in GiB. </p> <p>Constraints: 1-1,024 for
-     * <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
+     * <p>The volume size, in Gibibytes (GiB). </p> <p>This can be a number from
+     * 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
      * <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If
      * you specify a snapshot, the volume size must be equal to or larger than the
      * snapshot size.</p> <p>Default: If you create a volume from a snapshot and you
@@ -122,8 +138,8 @@ namespace Model
     inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
 
     /**
-     * <p>The volume size, in GiB. </p> <p>Constraints: 1-1,024 for
-     * <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
+     * <p>The volume size, in Gibibytes (GiB). </p> <p>This can be a number from
+     * 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
      * <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If
      * you specify a snapshot, the volume size must be equal to or larger than the
      * snapshot size.</p> <p>Default: If you create a volume from a snapshot and you
@@ -133,8 +149,8 @@ namespace Model
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
     /**
-     * <p>The volume size, in GiB. </p> <p>Constraints: 1-1,024 for
-     * <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
+     * <p>The volume size, in Gibibytes (GiB). </p> <p>This can be a number from
+     * 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
      * <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If
      * you specify a snapshot, the volume size must be equal to or larger than the
      * snapshot size.</p> <p>Default: If you create a volume from a snapshot and you
@@ -242,33 +258,34 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the volume is deleted on instance termination. The default
-     * value is <code>true</code>.</p>
+     * <p>Indicates whether the volume is deleted on instance termination. For Amazon
+     * EC2 Auto Scaling, the default value is <code>true</code>.</p>
      */
     inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
 
     /**
-     * <p>Indicates whether the volume is deleted on instance termination. The default
-     * value is <code>true</code>.</p>
+     * <p>Indicates whether the volume is deleted on instance termination. For Amazon
+     * EC2 Auto Scaling, the default value is <code>true</code>.</p>
      */
     inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
 
     /**
-     * <p>Indicates whether the volume is deleted on instance termination. The default
-     * value is <code>true</code>.</p>
+     * <p>Indicates whether the volume is deleted on instance termination. For Amazon
+     * EC2 Auto Scaling, the default value is <code>true</code>.</p>
      */
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
 
     /**
-     * <p>Indicates whether the volume is deleted on instance termination. The default
-     * value is <code>true</code>.</p>
+     * <p>Indicates whether the volume is deleted on instance termination. For Amazon
+     * EC2 Auto Scaling, the default value is <code>true</code>.</p>
      */
     inline Ebs& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
 
 
     /**
      * <p>The number of I/O operations per second (IOPS) to provision for the volume.
-     * For more information, see <a
+     * The maximum ratio of IOPS to volume size (in GiB) is 50:1. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>Conditional: This parameter is required when the volume
@@ -279,7 +296,8 @@ namespace Model
 
     /**
      * <p>The number of I/O operations per second (IOPS) to provision for the volume.
-     * For more information, see <a
+     * The maximum ratio of IOPS to volume size (in GiB) is 50:1. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>Conditional: This parameter is required when the volume
@@ -290,7 +308,8 @@ namespace Model
 
     /**
      * <p>The number of I/O operations per second (IOPS) to provision for the volume.
-     * For more information, see <a
+     * The maximum ratio of IOPS to volume size (in GiB) is 50:1. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>Conditional: This parameter is required when the volume
@@ -301,7 +320,8 @@ namespace Model
 
     /**
      * <p>The number of I/O operations per second (IOPS) to provision for the volume.
-     * For more information, see <a
+     * The maximum ratio of IOPS to volume size (in GiB) is 50:1. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>Conditional: This parameter is required when the volume
@@ -312,50 +332,114 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes must
-     * be attached to instances that support Amazon EBS encryption. Volumes that are
-     * created from encrypted snapshots are automatically encrypted. There is no way to
-     * create an encrypted volume from an unencrypted snapshot or an unencrypted volume
-     * from an encrypted snapshot. If your AMI uses encrypted volumes, you can only
-     * launch it on supported instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can
+     * only be attached to instances that support Amazon EBS encryption. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+     * Instance Types</a>. If your AMI uses encrypted volumes, you can also only launch
+     * it on supported instance types.</p> <note> <p>If you are creating a volume from
+     * a snapshot, you cannot specify an encryption value. Volumes that are created
+     * from encrypted snapshots are automatically encrypted, and volumes that are
+     * created from unencrypted snapshots are automatically unencrypted. By default,
+     * encrypted snapshots use the AWS managed CMK that is used for EBS encryption, but
+     * you can specify a custom CMK when you create the snapshot. The ability to
+     * encrypt a snapshot during copying also allows you to apply a new CMK to an
+     * already-encrypted snapshot. Volumes restored from the resulting copy are only
+     * accessible using the new CMK. </p> <p>Enabling <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption
+     * by default</a> results in all EBS volumes being encrypted with the AWS managed
+     * CMK or a customer managed CMK, whether or not the snapshot was encrypted.</p>
+     * </note> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
+     * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html">Required
+     * CMK Key Policy for Use with Encrypted Volumes</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
     /**
-     * <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes must
-     * be attached to instances that support Amazon EBS encryption. Volumes that are
-     * created from encrypted snapshots are automatically encrypted. There is no way to
-     * create an encrypted volume from an unencrypted snapshot or an unencrypted volume
-     * from an encrypted snapshot. If your AMI uses encrypted volumes, you can only
-     * launch it on supported instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can
+     * only be attached to instances that support Amazon EBS encryption. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+     * Instance Types</a>. If your AMI uses encrypted volumes, you can also only launch
+     * it on supported instance types.</p> <note> <p>If you are creating a volume from
+     * a snapshot, you cannot specify an encryption value. Volumes that are created
+     * from encrypted snapshots are automatically encrypted, and volumes that are
+     * created from unencrypted snapshots are automatically unencrypted. By default,
+     * encrypted snapshots use the AWS managed CMK that is used for EBS encryption, but
+     * you can specify a custom CMK when you create the snapshot. The ability to
+     * encrypt a snapshot during copying also allows you to apply a new CMK to an
+     * already-encrypted snapshot. Volumes restored from the resulting copy are only
+     * accessible using the new CMK. </p> <p>Enabling <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption
+     * by default</a> results in all EBS volumes being encrypted with the AWS managed
+     * CMK or a customer managed CMK, whether or not the snapshot was encrypted.</p>
+     * </note> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
+     * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html">Required
+     * CMK Key Policy for Use with Encrypted Volumes</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
     /**
-     * <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes must
-     * be attached to instances that support Amazon EBS encryption. Volumes that are
-     * created from encrypted snapshots are automatically encrypted. There is no way to
-     * create an encrypted volume from an unencrypted snapshot or an unencrypted volume
-     * from an encrypted snapshot. If your AMI uses encrypted volumes, you can only
-     * launch it on supported instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can
+     * only be attached to instances that support Amazon EBS encryption. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+     * Instance Types</a>. If your AMI uses encrypted volumes, you can also only launch
+     * it on supported instance types.</p> <note> <p>If you are creating a volume from
+     * a snapshot, you cannot specify an encryption value. Volumes that are created
+     * from encrypted snapshots are automatically encrypted, and volumes that are
+     * created from unencrypted snapshots are automatically unencrypted. By default,
+     * encrypted snapshots use the AWS managed CMK that is used for EBS encryption, but
+     * you can specify a custom CMK when you create the snapshot. The ability to
+     * encrypt a snapshot during copying also allows you to apply a new CMK to an
+     * already-encrypted snapshot. Volumes restored from the resulting copy are only
+     * accessible using the new CMK. </p> <p>Enabling <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption
+     * by default</a> results in all EBS volumes being encrypted with the AWS managed
+     * CMK or a customer managed CMK, whether or not the snapshot was encrypted.</p>
+     * </note> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
+     * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html">Required
+     * CMK Key Policy for Use with Encrypted Volumes</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
-     * <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes must
-     * be attached to instances that support Amazon EBS encryption. Volumes that are
-     * created from encrypted snapshots are automatically encrypted. There is no way to
-     * create an encrypted volume from an unencrypted snapshot or an unencrypted volume
-     * from an encrypted snapshot. If your AMI uses encrypted volumes, you can only
-     * launch it on supported instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can
+     * only be attached to instances that support Amazon EBS encryption. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+     * Instance Types</a>. If your AMI uses encrypted volumes, you can also only launch
+     * it on supported instance types.</p> <note> <p>If you are creating a volume from
+     * a snapshot, you cannot specify an encryption value. Volumes that are created
+     * from encrypted snapshots are automatically encrypted, and volumes that are
+     * created from unencrypted snapshots are automatically unencrypted. By default,
+     * encrypted snapshots use the AWS managed CMK that is used for EBS encryption, but
+     * you can specify a custom CMK when you create the snapshot. The ability to
+     * encrypt a snapshot during copying also allows you to apply a new CMK to an
+     * already-encrypted snapshot. Volumes restored from the resulting copy are only
+     * accessible using the new CMK. </p> <p>Enabling <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption
+     * by default</a> results in all EBS volumes being encrypted with the AWS managed
+     * CMK or a customer managed CMK, whether or not the snapshot was encrypted.</p>
+     * </note> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
+     * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html">Required
+     * CMK Key Policy for Use with Encrypted Volumes</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p>
      */
     inline Ebs& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 

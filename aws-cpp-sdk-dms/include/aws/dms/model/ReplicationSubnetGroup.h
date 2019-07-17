@@ -91,42 +91,42 @@ namespace Model
 
 
     /**
-     * <p>The description of the replication subnet group.</p>
+     * <p>A description for the replication subnet group.</p>
      */
     inline const Aws::String& GetReplicationSubnetGroupDescription() const{ return m_replicationSubnetGroupDescription; }
 
     /**
-     * <p>The description of the replication subnet group.</p>
+     * <p>A description for the replication subnet group.</p>
      */
     inline bool ReplicationSubnetGroupDescriptionHasBeenSet() const { return m_replicationSubnetGroupDescriptionHasBeenSet; }
 
     /**
-     * <p>The description of the replication subnet group.</p>
+     * <p>A description for the replication subnet group.</p>
      */
     inline void SetReplicationSubnetGroupDescription(const Aws::String& value) { m_replicationSubnetGroupDescriptionHasBeenSet = true; m_replicationSubnetGroupDescription = value; }
 
     /**
-     * <p>The description of the replication subnet group.</p>
+     * <p>A description for the replication subnet group.</p>
      */
     inline void SetReplicationSubnetGroupDescription(Aws::String&& value) { m_replicationSubnetGroupDescriptionHasBeenSet = true; m_replicationSubnetGroupDescription = std::move(value); }
 
     /**
-     * <p>The description of the replication subnet group.</p>
+     * <p>A description for the replication subnet group.</p>
      */
     inline void SetReplicationSubnetGroupDescription(const char* value) { m_replicationSubnetGroupDescriptionHasBeenSet = true; m_replicationSubnetGroupDescription.assign(value); }
 
     /**
-     * <p>The description of the replication subnet group.</p>
+     * <p>A description for the replication subnet group.</p>
      */
     inline ReplicationSubnetGroup& WithReplicationSubnetGroupDescription(const Aws::String& value) { SetReplicationSubnetGroupDescription(value); return *this;}
 
     /**
-     * <p>The description of the replication subnet group.</p>
+     * <p>A description for the replication subnet group.</p>
      */
     inline ReplicationSubnetGroup& WithReplicationSubnetGroupDescription(Aws::String&& value) { SetReplicationSubnetGroupDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the replication subnet group.</p>
+     * <p>A description for the replication subnet group.</p>
      */
     inline ReplicationSubnetGroup& WithReplicationSubnetGroupDescription(const char* value) { SetReplicationSubnetGroupDescription(value); return *this;}
 

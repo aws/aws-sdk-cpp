@@ -206,164 +206,182 @@ namespace Model
 
 
     /**
-     * <p>The date and time that the action is scheduled to begin. </p> <p>When
-     * <code>StartTime</code> and <code>EndTime</code> are specified with
-     * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * <p>The date and time in UTC for this action to start. For example,
+     * <code>"2019-06-01T00:00:00Z"</code>. </p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The date and time that the action is scheduled to begin. </p> <p>When
-     * <code>StartTime</code> and <code>EndTime</code> are specified with
-     * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * <p>The date and time in UTC for this action to start. For example,
+     * <code>"2019-06-01T00:00:00Z"</code>. </p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>The date and time that the action is scheduled to begin. </p> <p>When
-     * <code>StartTime</code> and <code>EndTime</code> are specified with
-     * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * <p>The date and time in UTC for this action to start. For example,
+     * <code>"2019-06-01T00:00:00Z"</code>. </p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The date and time that the action is scheduled to begin. </p> <p>When
-     * <code>StartTime</code> and <code>EndTime</code> are specified with
-     * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * <p>The date and time in UTC for this action to start. For example,
+     * <code>"2019-06-01T00:00:00Z"</code>. </p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The date and time that the action is scheduled to begin. </p> <p>When
-     * <code>StartTime</code> and <code>EndTime</code> are specified with
-     * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * <p>The date and time in UTC for this action to start. For example,
+     * <code>"2019-06-01T00:00:00Z"</code>. </p>
      */
     inline ScheduledUpdateGroupAction& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The date and time that the action is scheduled to begin. </p> <p>When
-     * <code>StartTime</code> and <code>EndTime</code> are specified with
-     * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * <p>The date and time in UTC for this action to start. For example,
+     * <code>"2019-06-01T00:00:00Z"</code>. </p>
      */
     inline ScheduledUpdateGroupAction& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time that the action is scheduled to end. </p>
+     * <p>The date and time in UTC for the recurring schedule to end. For example,
+     * <code>"2019-06-01T00:00:00Z"</code>. </p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The date and time that the action is scheduled to end. </p>
+     * <p>The date and time in UTC for the recurring schedule to end. For example,
+     * <code>"2019-06-01T00:00:00Z"</code>. </p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>The date and time that the action is scheduled to end. </p>
+     * <p>The date and time in UTC for the recurring schedule to end. For example,
+     * <code>"2019-06-01T00:00:00Z"</code>. </p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The date and time that the action is scheduled to end. </p>
+     * <p>The date and time in UTC for the recurring schedule to end. For example,
+     * <code>"2019-06-01T00:00:00Z"</code>. </p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The date and time that the action is scheduled to end. </p>
+     * <p>The date and time in UTC for the recurring schedule to end. For example,
+     * <code>"2019-06-01T00:00:00Z"</code>. </p>
      */
     inline ScheduledUpdateGroupAction& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The date and time that the action is scheduled to end. </p>
+     * <p>The date and time in UTC for the recurring schedule to end. For example,
+     * <code>"2019-06-01T00:00:00Z"</code>. </p>
      */
     inline ScheduledUpdateGroupAction& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The recurring schedule for the action.</p>
+     * <p>The recurring schedule for the action, in Unix cron syntax format. </p>
+     * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline const Aws::String& GetRecurrence() const{ return m_recurrence; }
 
     /**
-     * <p>The recurring schedule for the action.</p>
+     * <p>The recurring schedule for the action, in Unix cron syntax format. </p>
+     * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline bool RecurrenceHasBeenSet() const { return m_recurrenceHasBeenSet; }
 
     /**
-     * <p>The recurring schedule for the action.</p>
+     * <p>The recurring schedule for the action, in Unix cron syntax format. </p>
+     * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline void SetRecurrence(const Aws::String& value) { m_recurrenceHasBeenSet = true; m_recurrence = value; }
 
     /**
-     * <p>The recurring schedule for the action.</p>
+     * <p>The recurring schedule for the action, in Unix cron syntax format. </p>
+     * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline void SetRecurrence(Aws::String&& value) { m_recurrenceHasBeenSet = true; m_recurrence = std::move(value); }
 
     /**
-     * <p>The recurring schedule for the action.</p>
+     * <p>The recurring schedule for the action, in Unix cron syntax format. </p>
+     * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline void SetRecurrence(const char* value) { m_recurrenceHasBeenSet = true; m_recurrence.assign(value); }
 
     /**
-     * <p>The recurring schedule for the action.</p>
+     * <p>The recurring schedule for the action, in Unix cron syntax format. </p>
+     * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline ScheduledUpdateGroupAction& WithRecurrence(const Aws::String& value) { SetRecurrence(value); return *this;}
 
     /**
-     * <p>The recurring schedule for the action.</p>
+     * <p>The recurring schedule for the action, in Unix cron syntax format. </p>
+     * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline ScheduledUpdateGroupAction& WithRecurrence(Aws::String&& value) { SetRecurrence(std::move(value)); return *this;}
 
     /**
-     * <p>The recurring schedule for the action.</p>
+     * <p>The recurring schedule for the action, in Unix cron syntax format. </p>
+     * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline ScheduledUpdateGroupAction& WithRecurrence(const char* value) { SetRecurrence(value); return *this;}
 
 
     /**
-     * <p>The minimum size of the group.</p>
+     * <p>The minimum number of instances in the Auto Scaling group.</p>
      */
     inline int GetMinSize() const{ return m_minSize; }
 
     /**
-     * <p>The minimum size of the group.</p>
+     * <p>The minimum number of instances in the Auto Scaling group.</p>
      */
     inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
 
     /**
-     * <p>The minimum size of the group.</p>
+     * <p>The minimum number of instances in the Auto Scaling group.</p>
      */
     inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
 
     /**
-     * <p>The minimum size of the group.</p>
+     * <p>The minimum number of instances in the Auto Scaling group.</p>
      */
     inline ScheduledUpdateGroupAction& WithMinSize(int value) { SetMinSize(value); return *this;}
 
 
     /**
-     * <p>The maximum size of the group.</p>
+     * <p>The maximum number of instances in the Auto Scaling group.</p>
      */
     inline int GetMaxSize() const{ return m_maxSize; }
 
     /**
-     * <p>The maximum size of the group.</p>
+     * <p>The maximum number of instances in the Auto Scaling group.</p>
      */
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
 
     /**
-     * <p>The maximum size of the group.</p>
+     * <p>The maximum number of instances in the Auto Scaling group.</p>
      */
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
 
     /**
-     * <p>The maximum size of the group.</p>
+     * <p>The maximum number of instances in the Auto Scaling group.</p>
      */
     inline ScheduledUpdateGroupAction& WithMaxSize(int value) { SetMaxSize(value); return *this;}
 

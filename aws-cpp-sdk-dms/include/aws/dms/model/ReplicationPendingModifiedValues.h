@@ -130,30 +130,30 @@ namespace Model
 
 
     /**
-     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
-     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
-     * to <code>true</code>. </p>
+     * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * is set to <code>true</code>. </p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
-     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
-     * to <code>true</code>. </p>
+     * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * is set to <code>true</code>. </p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
-     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
-     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
-     * to <code>true</code>. </p>
+     * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * is set to <code>true</code>. </p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
-     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
-     * to <code>true</code>. </p>
+     * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * is set to <code>true</code>. </p>
      */
     inline ReplicationPendingModifiedValues& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 

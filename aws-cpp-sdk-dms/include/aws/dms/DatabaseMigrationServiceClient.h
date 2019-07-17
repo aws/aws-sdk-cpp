@@ -749,22 +749,28 @@ namespace Model
         virtual void DeleteReplicationTaskAsync(const Model::DeleteReplicationTaskRequest& request, const DeleteReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all of the AWS DMS attributes for a customer account. The attributes
-         * include AWS DMS quotas for the account, such as the number of replication
-         * instances allowed. The description for a quota includes the quota name, current
-         * usage toward that quota, and the quota's maximum value.</p> <p>This command does
-         * not take any parameters.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of the AWS DMS attributes for a customer account. These attributes
+         * include AWS DMS quotas for the account and a unique account identifier in a
+         * particular DMS region. DMS quotas include a list of resource quotas supported by
+         * the account, such as the number of replication instances allowed. The
+         * description for each resource quota, includes the quota name, current usage
+         * toward that quota, and the quota's maximum value. DMS uses the unique account
+         * identifier to name each artifact used by DMS in the given region.</p> <p>This
+         * command does not take any parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeAccountAttributes">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeAccountAttributesOutcome DescribeAccountAttributes(const Model::DescribeAccountAttributesRequest& request) const;
 
         /**
-         * <p>Lists all of the AWS DMS attributes for a customer account. The attributes
-         * include AWS DMS quotas for the account, such as the number of replication
-         * instances allowed. The description for a quota includes the quota name, current
-         * usage toward that quota, and the quota's maximum value.</p> <p>This command does
-         * not take any parameters.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of the AWS DMS attributes for a customer account. These attributes
+         * include AWS DMS quotas for the account and a unique account identifier in a
+         * particular DMS region. DMS quotas include a list of resource quotas supported by
+         * the account, such as the number of replication instances allowed. The
+         * description for each resource quota, includes the quota name, current usage
+         * toward that quota, and the quota's maximum value. DMS uses the unique account
+         * identifier to name each artifact used by DMS in the given region.</p> <p>This
+         * command does not take any parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeAccountAttributes">AWS
          * API Reference</a></p>
          *
@@ -773,11 +779,14 @@ namespace Model
         virtual Model::DescribeAccountAttributesOutcomeCallable DescribeAccountAttributesCallable(const Model::DescribeAccountAttributesRequest& request) const;
 
         /**
-         * <p>Lists all of the AWS DMS attributes for a customer account. The attributes
-         * include AWS DMS quotas for the account, such as the number of replication
-         * instances allowed. The description for a quota includes the quota name, current
-         * usage toward that quota, and the quota's maximum value.</p> <p>This command does
-         * not take any parameters.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of the AWS DMS attributes for a customer account. These attributes
+         * include AWS DMS quotas for the account and a unique account identifier in a
+         * particular DMS region. DMS quotas include a list of resource quotas supported by
+         * the account, such as the number of replication instances allowed. The
+         * description for each resource quota, includes the quota name, current usage
+         * toward that quota, and the quota's maximum value. DMS uses the unique account
+         * identifier to name each artifact used by DMS in the given region.</p> <p>This
+         * command does not take any parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeAccountAttributes">AWS
          * API Reference</a></p>
          *

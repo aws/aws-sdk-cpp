@@ -49,58 +49,58 @@ namespace Model
 
 
     /**
-     * <p>The database engine name. Valid values, depending on the EndPointType,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
      * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
-     * <p>The database engine name. Valid values, depending on the EndPointType,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
      * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
     /**
-     * <p>The database engine name. Valid values, depending on the EndPointType,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
      * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
-     * <p>The database engine name. Valid values, depending on the EndPointType,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
      * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
     /**
-     * <p>The database engine name. Valid values, depending on the EndPointType,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
      * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
-     * <p>The database engine name. Valid values, depending on the EndPointType,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
      * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline SupportedEndpointType& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
-     * <p>The database engine name. Valid values, depending on the EndPointType,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
      * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline SupportedEndpointType& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
     /**
-     * <p>The database engine name. Valid values, depending on the EndPointType,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
      * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline SupportedEndpointType& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
@@ -127,32 +127,38 @@ namespace Model
 
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline const ReplicationEndpointTypeValue& GetEndpointType() const{ return m_endpointType; }
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline void SetEndpointType(const ReplicationEndpointTypeValue& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline void SetEndpointType(ReplicationEndpointTypeValue&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline SupportedEndpointType& WithEndpointType(const ReplicationEndpointTypeValue& value) { SetEndpointType(value); return *this;}
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline SupportedEndpointType& WithEndpointType(ReplicationEndpointTypeValue&& value) { SetEndpointType(std::move(value)); return *this;}
 

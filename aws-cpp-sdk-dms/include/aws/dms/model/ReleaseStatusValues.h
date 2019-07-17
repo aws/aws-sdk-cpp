@@ -14,35 +14,27 @@
 */
 
 #pragma once
-#include <aws/config/ConfigService_EXPORTS.h>
+#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace ConfigService
+namespace DatabaseMigrationService
 {
 namespace Model
 {
-  enum class OrganizationRuleStatus
+  enum class ReleaseStatusValues
   {
     NOT_SET,
-    CREATE_SUCCESSFUL,
-    CREATE_IN_PROGRESS,
-    CREATE_FAILED,
-    UPDATE_SUCCESSFUL,
-    UPDATE_FAILED,
-    UPDATE_IN_PROGRESS,
-    DELETE_SUCCESSFUL,
-    DELETE_FAILED,
-    DELETE_IN_PROGRESS
+    beta
   };
 
-namespace OrganizationRuleStatusMapper
+namespace ReleaseStatusValuesMapper
 {
-AWS_CONFIGSERVICE_API OrganizationRuleStatus GetOrganizationRuleStatusForName(const Aws::String& name);
+AWS_DATABASEMIGRATIONSERVICE_API ReleaseStatusValues GetReleaseStatusValuesForName(const Aws::String& name);
 
-AWS_CONFIGSERVICE_API Aws::String GetNameForOrganizationRuleStatus(OrganizationRuleStatus value);
-} // namespace OrganizationRuleStatusMapper
+AWS_DATABASEMIGRATIONSERVICE_API Aws::String GetNameForReleaseStatusValues(ReleaseStatusValues value);
+} // namespace ReleaseStatusValuesMapper
 } // namespace Model
-} // namespace ConfigService
+} // namespace DatabaseMigrationService
 } // namespace Aws

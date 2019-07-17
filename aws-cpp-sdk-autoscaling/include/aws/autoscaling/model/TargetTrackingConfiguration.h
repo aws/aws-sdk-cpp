@@ -52,74 +52,74 @@ namespace Model
 
 
     /**
-     * <p>A predefined metric. You can specify either a predefined metric or a
+     * <p>A predefined metric. You must specify either a predefined metric or a
      * customized metric.</p>
      */
     inline const PredefinedMetricSpecification& GetPredefinedMetricSpecification() const{ return m_predefinedMetricSpecification; }
 
     /**
-     * <p>A predefined metric. You can specify either a predefined metric or a
+     * <p>A predefined metric. You must specify either a predefined metric or a
      * customized metric.</p>
      */
     inline bool PredefinedMetricSpecificationHasBeenSet() const { return m_predefinedMetricSpecificationHasBeenSet; }
 
     /**
-     * <p>A predefined metric. You can specify either a predefined metric or a
+     * <p>A predefined metric. You must specify either a predefined metric or a
      * customized metric.</p>
      */
     inline void SetPredefinedMetricSpecification(const PredefinedMetricSpecification& value) { m_predefinedMetricSpecificationHasBeenSet = true; m_predefinedMetricSpecification = value; }
 
     /**
-     * <p>A predefined metric. You can specify either a predefined metric or a
+     * <p>A predefined metric. You must specify either a predefined metric or a
      * customized metric.</p>
      */
     inline void SetPredefinedMetricSpecification(PredefinedMetricSpecification&& value) { m_predefinedMetricSpecificationHasBeenSet = true; m_predefinedMetricSpecification = std::move(value); }
 
     /**
-     * <p>A predefined metric. You can specify either a predefined metric or a
+     * <p>A predefined metric. You must specify either a predefined metric or a
      * customized metric.</p>
      */
     inline TargetTrackingConfiguration& WithPredefinedMetricSpecification(const PredefinedMetricSpecification& value) { SetPredefinedMetricSpecification(value); return *this;}
 
     /**
-     * <p>A predefined metric. You can specify either a predefined metric or a
+     * <p>A predefined metric. You must specify either a predefined metric or a
      * customized metric.</p>
      */
     inline TargetTrackingConfiguration& WithPredefinedMetricSpecification(PredefinedMetricSpecification&& value) { SetPredefinedMetricSpecification(std::move(value)); return *this;}
 
 
     /**
-     * <p>A customized metric. You can specify either a predefined metric or a
+     * <p>A customized metric. You must specify either a predefined metric or a
      * customized metric.</p>
      */
     inline const CustomizedMetricSpecification& GetCustomizedMetricSpecification() const{ return m_customizedMetricSpecification; }
 
     /**
-     * <p>A customized metric. You can specify either a predefined metric or a
+     * <p>A customized metric. You must specify either a predefined metric or a
      * customized metric.</p>
      */
     inline bool CustomizedMetricSpecificationHasBeenSet() const { return m_customizedMetricSpecificationHasBeenSet; }
 
     /**
-     * <p>A customized metric. You can specify either a predefined metric or a
+     * <p>A customized metric. You must specify either a predefined metric or a
      * customized metric.</p>
      */
     inline void SetCustomizedMetricSpecification(const CustomizedMetricSpecification& value) { m_customizedMetricSpecificationHasBeenSet = true; m_customizedMetricSpecification = value; }
 
     /**
-     * <p>A customized metric. You can specify either a predefined metric or a
+     * <p>A customized metric. You must specify either a predefined metric or a
      * customized metric.</p>
      */
     inline void SetCustomizedMetricSpecification(CustomizedMetricSpecification&& value) { m_customizedMetricSpecificationHasBeenSet = true; m_customizedMetricSpecification = std::move(value); }
 
     /**
-     * <p>A customized metric. You can specify either a predefined metric or a
+     * <p>A customized metric. You must specify either a predefined metric or a
      * customized metric.</p>
      */
     inline TargetTrackingConfiguration& WithCustomizedMetricSpecification(const CustomizedMetricSpecification& value) { SetCustomizedMetricSpecification(value); return *this;}
 
     /**
-     * <p>A customized metric. You can specify either a predefined metric or a
+     * <p>A customized metric. You must specify either a predefined metric or a
      * customized metric.</p>
      */
     inline TargetTrackingConfiguration& WithCustomizedMetricSpecification(CustomizedMetricSpecification&& value) { SetCustomizedMetricSpecification(std::move(value)); return *this;}
@@ -151,7 +151,7 @@ namespace Model
      * disabled. If scaling in is disabled, the target tracking scaling policy doesn't
      * remove instances from the Auto Scaling group. Otherwise, the target tracking
      * scaling policy can remove instances from the Auto Scaling group. The default is
-     * disabled.</p>
+     * <code>false</code>.</p>
      */
     inline bool GetDisableScaleIn() const{ return m_disableScaleIn; }
 
@@ -160,7 +160,7 @@ namespace Model
      * disabled. If scaling in is disabled, the target tracking scaling policy doesn't
      * remove instances from the Auto Scaling group. Otherwise, the target tracking
      * scaling policy can remove instances from the Auto Scaling group. The default is
-     * disabled.</p>
+     * <code>false</code>.</p>
      */
     inline bool DisableScaleInHasBeenSet() const { return m_disableScaleInHasBeenSet; }
 
@@ -169,7 +169,7 @@ namespace Model
      * disabled. If scaling in is disabled, the target tracking scaling policy doesn't
      * remove instances from the Auto Scaling group. Otherwise, the target tracking
      * scaling policy can remove instances from the Auto Scaling group. The default is
-     * disabled.</p>
+     * <code>false</code>.</p>
      */
     inline void SetDisableScaleIn(bool value) { m_disableScaleInHasBeenSet = true; m_disableScaleIn = value; }
 
@@ -178,7 +178,7 @@ namespace Model
      * disabled. If scaling in is disabled, the target tracking scaling policy doesn't
      * remove instances from the Auto Scaling group. Otherwise, the target tracking
      * scaling policy can remove instances from the Auto Scaling group. The default is
-     * disabled.</p>
+     * <code>false</code>.</p>
      */
     inline TargetTrackingConfiguration& WithDisableScaleIn(bool value) { SetDisableScaleIn(value); return *this;}
 

@@ -131,7 +131,8 @@ namespace Model
     /**
      * <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to
      * complete before executing the policy.</p> <p>This parameter is not supported if
-     * the policy type is <code>StepScaling</code>.</p> <p>For more information, see <a
+     * the policy type is <code>StepScaling</code> or
+     * <code>TargetTrackingScaling</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -140,7 +141,8 @@ namespace Model
     /**
      * <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to
      * complete before executing the policy.</p> <p>This parameter is not supported if
-     * the policy type is <code>StepScaling</code>.</p> <p>For more information, see <a
+     * the policy type is <code>StepScaling</code> or
+     * <code>TargetTrackingScaling</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -149,7 +151,8 @@ namespace Model
     /**
      * <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to
      * complete before executing the policy.</p> <p>This parameter is not supported if
-     * the policy type is <code>StepScaling</code>.</p> <p>For more information, see <a
+     * the policy type is <code>StepScaling</code> or
+     * <code>TargetTrackingScaling</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -158,7 +161,8 @@ namespace Model
     /**
      * <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to
      * complete before executing the policy.</p> <p>This parameter is not supported if
-     * the policy type is <code>StepScaling</code>.</p> <p>For more information, see <a
+     * the policy type is <code>StepScaling</code> or
+     * <code>TargetTrackingScaling</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */

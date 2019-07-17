@@ -17,6 +17,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/dms/model/ReleaseStatusValues.h>
 #include <utility>
 
 namespace Aws
@@ -288,49 +289,98 @@ namespace Model
 
 
     /**
-     * <p>List of availability zones for this replication instance.</p>
+     * <p>List of Availability Zones for this replication instance.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
     /**
-     * <p>List of availability zones for this replication instance.</p>
+     * <p>List of Availability Zones for this replication instance.</p>
      */
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
-     * <p>List of availability zones for this replication instance.</p>
+     * <p>List of Availability Zones for this replication instance.</p>
      */
     inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
-     * <p>List of availability zones for this replication instance.</p>
+     * <p>List of Availability Zones for this replication instance.</p>
      */
     inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
-     * <p>List of availability zones for this replication instance.</p>
+     * <p>List of Availability Zones for this replication instance.</p>
      */
     inline OrderableReplicationInstance& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
 
     /**
-     * <p>List of availability zones for this replication instance.</p>
+     * <p>List of Availability Zones for this replication instance.</p>
      */
     inline OrderableReplicationInstance& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
-     * <p>List of availability zones for this replication instance.</p>
+     * <p>List of Availability Zones for this replication instance.</p>
      */
     inline OrderableReplicationInstance& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>List of availability zones for this replication instance.</p>
+     * <p>List of Availability Zones for this replication instance.</p>
      */
     inline OrderableReplicationInstance& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>List of availability zones for this replication instance.</p>
+     * <p>List of Availability Zones for this replication instance.</p>
      */
     inline OrderableReplicationInstance& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+
+
+    /**
+     * <p>The value returned when the specified <code>EngineVersion</code> of the
+     * replication instance is in Beta or test mode. This indicates some features might
+     * not work as expected.</p> <note> <p>AWS DMS supports <code>ReleaseStatus</code>
+     * in versions 3.1.4 and later.</p> </note>
+     */
+    inline const ReleaseStatusValues& GetReleaseStatus() const{ return m_releaseStatus; }
+
+    /**
+     * <p>The value returned when the specified <code>EngineVersion</code> of the
+     * replication instance is in Beta or test mode. This indicates some features might
+     * not work as expected.</p> <note> <p>AWS DMS supports <code>ReleaseStatus</code>
+     * in versions 3.1.4 and later.</p> </note>
+     */
+    inline bool ReleaseStatusHasBeenSet() const { return m_releaseStatusHasBeenSet; }
+
+    /**
+     * <p>The value returned when the specified <code>EngineVersion</code> of the
+     * replication instance is in Beta or test mode. This indicates some features might
+     * not work as expected.</p> <note> <p>AWS DMS supports <code>ReleaseStatus</code>
+     * in versions 3.1.4 and later.</p> </note>
+     */
+    inline void SetReleaseStatus(const ReleaseStatusValues& value) { m_releaseStatusHasBeenSet = true; m_releaseStatus = value; }
+
+    /**
+     * <p>The value returned when the specified <code>EngineVersion</code> of the
+     * replication instance is in Beta or test mode. This indicates some features might
+     * not work as expected.</p> <note> <p>AWS DMS supports <code>ReleaseStatus</code>
+     * in versions 3.1.4 and later.</p> </note>
+     */
+    inline void SetReleaseStatus(ReleaseStatusValues&& value) { m_releaseStatusHasBeenSet = true; m_releaseStatus = std::move(value); }
+
+    /**
+     * <p>The value returned when the specified <code>EngineVersion</code> of the
+     * replication instance is in Beta or test mode. This indicates some features might
+     * not work as expected.</p> <note> <p>AWS DMS supports <code>ReleaseStatus</code>
+     * in versions 3.1.4 and later.</p> </note>
+     */
+    inline OrderableReplicationInstance& WithReleaseStatus(const ReleaseStatusValues& value) { SetReleaseStatus(value); return *this;}
+
+    /**
+     * <p>The value returned when the specified <code>EngineVersion</code> of the
+     * replication instance is in Beta or test mode. This indicates some features might
+     * not work as expected.</p> <note> <p>AWS DMS supports <code>ReleaseStatus</code>
+     * in versions 3.1.4 and later.</p> </note>
+     */
+    inline OrderableReplicationInstance& WithReleaseStatus(ReleaseStatusValues&& value) { SetReleaseStatus(std::move(value)); return *this;}
 
   private:
 
@@ -357,6 +407,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
+
+    ReleaseStatusValues m_releaseStatus;
+    bool m_releaseStatusHasBeenSet;
   };
 
 } // namespace Model

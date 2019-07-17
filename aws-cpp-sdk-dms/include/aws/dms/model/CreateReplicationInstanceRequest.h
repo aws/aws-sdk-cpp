@@ -277,58 +277,58 @@ namespace Model
 
 
     /**
-     * <p>The EC2 Availability Zone that the replication instance will be created
-     * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * <p>The AWS Availability Zone where the replication instance will be created. The
+     * default value is a random, system-chosen Availability Zone in the endpoint's AWS
+     * Region, for example: <code>us-east-1d</code> </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The EC2 Availability Zone that the replication instance will be created
-     * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * <p>The AWS Availability Zone where the replication instance will be created. The
+     * default value is a random, system-chosen Availability Zone in the endpoint's AWS
+     * Region, for example: <code>us-east-1d</code> </p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
-     * <p>The EC2 Availability Zone that the replication instance will be created
-     * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * <p>The AWS Availability Zone where the replication instance will be created. The
+     * default value is a random, system-chosen Availability Zone in the endpoint's AWS
+     * Region, for example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The EC2 Availability Zone that the replication instance will be created
-     * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * <p>The AWS Availability Zone where the replication instance will be created. The
+     * default value is a random, system-chosen Availability Zone in the endpoint's AWS
+     * Region, for example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The EC2 Availability Zone that the replication instance will be created
-     * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * <p>The AWS Availability Zone where the replication instance will be created. The
+     * default value is a random, system-chosen Availability Zone in the endpoint's AWS
+     * Region, for example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The EC2 Availability Zone that the replication instance will be created
-     * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * <p>The AWS Availability Zone where the replication instance will be created. The
+     * default value is a random, system-chosen Availability Zone in the endpoint's AWS
+     * Region, for example: <code>us-east-1d</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The EC2 Availability Zone that the replication instance will be created
-     * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * <p>The AWS Availability Zone where the replication instance will be created. The
+     * default value is a random, system-chosen Availability Zone in the endpoint's AWS
+     * Region, for example: <code>us-east-1d</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The EC2 Availability Zone that the replication instance will be created
-     * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
-     * region.</p> <p> Example: <code>us-east-1d</code> </p>
+     * <p>The AWS Availability Zone where the replication instance will be created. The
+     * default value is a random, system-chosen Availability Zone in the endpoint's AWS
+     * Region, for example: <code>us-east-1d</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
@@ -378,8 +378,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week.</p> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * time per AWS Region, occurring on a random day of the week.</p> <p>Valid Days:
+     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
@@ -387,8 +388,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week.</p> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * time per AWS Region, occurring on a random day of the week.</p> <p>Valid Days:
+     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
@@ -396,8 +398,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week.</p> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * time per AWS Region, occurring on a random day of the week.</p> <p>Valid Days:
+     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
@@ -405,8 +408,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week.</p> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * time per AWS Region, occurring on a random day of the week.</p> <p>Valid Days:
+     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
@@ -414,8 +418,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week.</p> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * time per AWS Region, occurring on a random day of the week.</p> <p>Valid Days:
+     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
@@ -423,8 +428,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week.</p> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * time per AWS Region, occurring on a random day of the week.</p> <p>Valid Days:
+     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline CreateReplicationInstanceRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -432,8 +438,9 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week.</p> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * time per AWS Region, occurring on a random day of the week.</p> <p>Valid Days:
+     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline CreateReplicationInstanceRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
@@ -441,37 +448,38 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p> <p>Default: A 30-minute window selected at random from an 8-hour block of
-     * time per region, occurring on a random day of the week.</p> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * time per AWS Region, occurring on a random day of the week.</p> <p>Valid Days:
+     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
      */
     inline CreateReplicationInstanceRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
 
     /**
-     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
-     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
-     * to <code>true</code>. </p>
+     * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * is set to <code>true</code>. </p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
-     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
-     * to <code>true</code>. </p>
+     * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * is set to <code>true</code>. </p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
-     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
-     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
-     * to <code>true</code>. </p>
+     * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * is set to <code>true</code>. </p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
-     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
-     * to <code>true</code>. </p>
+     * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * is set to <code>true</code>. </p>
      */
     inline CreateReplicationInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
@@ -518,144 +526,144 @@ namespace Model
 
 
     /**
-     * <p>Indicates that minor engine upgrades will be applied automatically to the
-     * replication instance during the maintenance window.</p> <p>Default:
-     * <code>true</code> </p>
+     * <p>Indicates whether minor engine upgrades will be applied automatically to the
+     * replication instance during the maintenance window. This parameter defaults to
+     * <code>true</code>.</p> <p>Default: <code>true</code> </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>Indicates that minor engine upgrades will be applied automatically to the
-     * replication instance during the maintenance window.</p> <p>Default:
-     * <code>true</code> </p>
+     * <p>Indicates whether minor engine upgrades will be applied automatically to the
+     * replication instance during the maintenance window. This parameter defaults to
+     * <code>true</code>.</p> <p>Default: <code>true</code> </p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>Indicates that minor engine upgrades will be applied automatically to the
-     * replication instance during the maintenance window.</p> <p>Default:
-     * <code>true</code> </p>
+     * <p>Indicates whether minor engine upgrades will be applied automatically to the
+     * replication instance during the maintenance window. This parameter defaults to
+     * <code>true</code>.</p> <p>Default: <code>true</code> </p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>Indicates that minor engine upgrades will be applied automatically to the
-     * replication instance during the maintenance window.</p> <p>Default:
-     * <code>true</code> </p>
+     * <p>Indicates whether minor engine upgrades will be applied automatically to the
+     * replication instance during the maintenance window. This parameter defaults to
+     * <code>true</code>.</p> <p>Default: <code>true</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
 
     /**
-     * <p>Tags to be associated with the replication instance.</p>
+     * <p>One or more tags to be assigned to the replication instance.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags to be associated with the replication instance.</p>
+     * <p>One or more tags to be assigned to the replication instance.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Tags to be associated with the replication instance.</p>
+     * <p>One or more tags to be assigned to the replication instance.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Tags to be associated with the replication instance.</p>
+     * <p>One or more tags to be assigned to the replication instance.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Tags to be associated with the replication instance.</p>
+     * <p>One or more tags to be assigned to the replication instance.</p>
      */
     inline CreateReplicationInstanceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags to be associated with the replication instance.</p>
+     * <p>One or more tags to be assigned to the replication instance.</p>
      */
     inline CreateReplicationInstanceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags to be associated with the replication instance.</p>
+     * <p>One or more tags to be assigned to the replication instance.</p>
      */
     inline CreateReplicationInstanceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Tags to be associated with the replication instance.</p>
+     * <p>One or more tags to be assigned to the replication instance.</p>
      */
     inline CreateReplicationInstanceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a
+     * different default encryption key for each AWS Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a
+     * different default encryption key for each AWS Region.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a
+     * different default encryption key for each AWS Region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a
+     * different default encryption key for each AWS Region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a
+     * different default encryption key for each AWS Region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a
+     * different default encryption key for each AWS Region.</p>
      */
     inline CreateReplicationInstanceRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a
+     * different default encryption key for each AWS Region.</p>
      */
     inline CreateReplicationInstanceRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a
+     * different default encryption key for each AWS Region.</p>
      */
     inline CreateReplicationInstanceRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

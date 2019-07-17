@@ -52,64 +52,72 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to. For information about creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
-     * Constructing an Amazon Resource Name (ARN)</a> in the DMS documentation.</p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html">
+     * Constructing an Amazon Resource Name (ARN) for AWS DMS</a> in the DMS
+     * documentation.</p>
      */
     inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to. For information about creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
-     * Constructing an Amazon Resource Name (ARN)</a> in the DMS documentation.</p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html">
+     * Constructing an Amazon Resource Name (ARN) for AWS DMS</a> in the DMS
+     * documentation.</p>
      */
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to. For information about creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
-     * Constructing an Amazon Resource Name (ARN)</a> in the DMS documentation.</p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html">
+     * Constructing an Amazon Resource Name (ARN) for AWS DMS</a> in the DMS
+     * documentation.</p>
      */
     inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to. For information about creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
-     * Constructing an Amazon Resource Name (ARN)</a> in the DMS documentation.</p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html">
+     * Constructing an Amazon Resource Name (ARN) for AWS DMS</a> in the DMS
+     * documentation.</p>
      */
     inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to. For information about creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
-     * Constructing an Amazon Resource Name (ARN)</a> in the DMS documentation.</p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html">
+     * Constructing an Amazon Resource Name (ARN) for AWS DMS</a> in the DMS
+     * documentation.</p>
      */
     inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to. For information about creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
-     * Constructing an Amazon Resource Name (ARN)</a> in the DMS documentation.</p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html">
+     * Constructing an Amazon Resource Name (ARN) for AWS DMS</a> in the DMS
+     * documentation.</p>
      */
     inline ResourcePendingMaintenanceActions& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to. For information about creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
-     * Constructing an Amazon Resource Name (ARN)</a> in the DMS documentation.</p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html">
+     * Constructing an Amazon Resource Name (ARN) for AWS DMS</a> in the DMS
+     * documentation.</p>
      */
     inline ResourcePendingMaintenanceActions& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the DMS resource that the pending
      * maintenance action applies to. For information about creating an ARN, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
-     * Constructing an Amazon Resource Name (ARN)</a> in the DMS documentation.</p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html">
+     * Constructing an Amazon Resource Name (ARN) for AWS DMS</a> in the DMS
+     * documentation.</p>
      */
     inline ResourcePendingMaintenanceActions& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
 

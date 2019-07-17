@@ -50,42 +50,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the replication instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
     inline const Aws::String& GetReplicationInstanceArn() const{ return m_replicationInstanceArn; }
 
     /**
-     * <p>The ARN of the replication instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
     inline bool ReplicationInstanceArnHasBeenSet() const { return m_replicationInstanceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the replication instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
     inline void SetReplicationInstanceArn(const Aws::String& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = value; }
 
     /**
-     * <p>The ARN of the replication instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
     inline void SetReplicationInstanceArn(Aws::String&& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the replication instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
     inline void SetReplicationInstanceArn(const char* value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn.assign(value); }
 
     /**
-     * <p>The ARN of the replication instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
     inline DescribePendingMaintenanceActionsRequest& WithReplicationInstanceArn(const Aws::String& value) { SetReplicationInstanceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the replication instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
     inline DescribePendingMaintenanceActionsRequest& WithReplicationInstanceArn(Aws::String&& value) { SetReplicationInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the replication instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
     inline DescribePendingMaintenanceActionsRequest& WithReplicationInstanceArn(const char* value) { SetReplicationInstanceArn(value); return *this;}
 

@@ -37,14 +37,16 @@ namespace Model
   /**
    * <p>Describes a mixed instances policy for an Auto Scaling group. With mixed
    * instances, your Auto Scaling group can provision a combination of On-Demand
-   * Instances and Spot Instances across multiple instance types. Used in combination
-   * with <a>CreateAutoScalingGroup</a>. For more information, see <a
+   * Instances and Spot Instances across multiple instance types. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
    * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
-   * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>When you create your Auto
-   * Scaling group, you can specify a launch configuration or template as a parameter
-   * for the top-level object, or you can specify a mixed instances policy, but not
-   * both at the same time.</p><p><h3>See Also:</h3>   <a
+   * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You can create a mixed
+   * instances policy for a new Auto Scaling group (<a>CreateAutoScalingGroup</a>),
+   * or you can create it for an existing group by updating the group
+   * (<a>UpdateAutoScalingGroup</a>) to specify <code>MixedInstancesPolicy</code> as
+   * the top-level parameter instead of a launch configuration or
+   * template.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/MixedInstancesPolicy">AWS
    * API Reference</a></p>
    */
@@ -60,81 +62,81 @@ namespace Model
 
 
     /**
-     * <p>The launch template and overrides.</p> <p>This parameter is required when
-     * creating an Auto Scaling group with a mixed instances policy, but is not
-     * required when updating the group.</p>
+     * <p>The launch template and instance types (overrides).</p> <p>This parameter
+     * must be specified when creating a mixed instances policy.</p>
      */
     inline const LaunchTemplate& GetLaunchTemplate() const{ return m_launchTemplate; }
 
     /**
-     * <p>The launch template and overrides.</p> <p>This parameter is required when
-     * creating an Auto Scaling group with a mixed instances policy, but is not
-     * required when updating the group.</p>
+     * <p>The launch template and instance types (overrides).</p> <p>This parameter
+     * must be specified when creating a mixed instances policy.</p>
      */
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
 
     /**
-     * <p>The launch template and overrides.</p> <p>This parameter is required when
-     * creating an Auto Scaling group with a mixed instances policy, but is not
-     * required when updating the group.</p>
+     * <p>The launch template and instance types (overrides).</p> <p>This parameter
+     * must be specified when creating a mixed instances policy.</p>
      */
     inline void SetLaunchTemplate(const LaunchTemplate& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
 
     /**
-     * <p>The launch template and overrides.</p> <p>This parameter is required when
-     * creating an Auto Scaling group with a mixed instances policy, but is not
-     * required when updating the group.</p>
+     * <p>The launch template and instance types (overrides).</p> <p>This parameter
+     * must be specified when creating a mixed instances policy.</p>
      */
     inline void SetLaunchTemplate(LaunchTemplate&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
 
     /**
-     * <p>The launch template and overrides.</p> <p>This parameter is required when
-     * creating an Auto Scaling group with a mixed instances policy, but is not
-     * required when updating the group.</p>
+     * <p>The launch template and instance types (overrides).</p> <p>This parameter
+     * must be specified when creating a mixed instances policy.</p>
      */
     inline MixedInstancesPolicy& WithLaunchTemplate(const LaunchTemplate& value) { SetLaunchTemplate(value); return *this;}
 
     /**
-     * <p>The launch template and overrides.</p> <p>This parameter is required when
-     * creating an Auto Scaling group with a mixed instances policy, but is not
-     * required when updating the group.</p>
+     * <p>The launch template and instance types (overrides).</p> <p>This parameter
+     * must be specified when creating a mixed instances policy.</p>
      */
     inline MixedInstancesPolicy& WithLaunchTemplate(LaunchTemplate&& value) { SetLaunchTemplate(std::move(value)); return *this;}
 
 
     /**
-     * <p>The instances distribution to use. </p> <p>If you leave this parameter
-     * unspecified when creating the group, the default values are used.</p>
+     * <p>The instances distribution to use.</p> <p>If you leave this parameter
+     * unspecified when creating a mixed instances policy, the default values are
+     * used.</p>
      */
     inline const InstancesDistribution& GetInstancesDistribution() const{ return m_instancesDistribution; }
 
     /**
-     * <p>The instances distribution to use. </p> <p>If you leave this parameter
-     * unspecified when creating the group, the default values are used.</p>
+     * <p>The instances distribution to use.</p> <p>If you leave this parameter
+     * unspecified when creating a mixed instances policy, the default values are
+     * used.</p>
      */
     inline bool InstancesDistributionHasBeenSet() const { return m_instancesDistributionHasBeenSet; }
 
     /**
-     * <p>The instances distribution to use. </p> <p>If you leave this parameter
-     * unspecified when creating the group, the default values are used.</p>
+     * <p>The instances distribution to use.</p> <p>If you leave this parameter
+     * unspecified when creating a mixed instances policy, the default values are
+     * used.</p>
      */
     inline void SetInstancesDistribution(const InstancesDistribution& value) { m_instancesDistributionHasBeenSet = true; m_instancesDistribution = value; }
 
     /**
-     * <p>The instances distribution to use. </p> <p>If you leave this parameter
-     * unspecified when creating the group, the default values are used.</p>
+     * <p>The instances distribution to use.</p> <p>If you leave this parameter
+     * unspecified when creating a mixed instances policy, the default values are
+     * used.</p>
      */
     inline void SetInstancesDistribution(InstancesDistribution&& value) { m_instancesDistributionHasBeenSet = true; m_instancesDistribution = std::move(value); }
 
     /**
-     * <p>The instances distribution to use. </p> <p>If you leave this parameter
-     * unspecified when creating the group, the default values are used.</p>
+     * <p>The instances distribution to use.</p> <p>If you leave this parameter
+     * unspecified when creating a mixed instances policy, the default values are
+     * used.</p>
      */
     inline MixedInstancesPolicy& WithInstancesDistribution(const InstancesDistribution& value) { SetInstancesDistribution(value); return *this;}
 
     /**
-     * <p>The instances distribution to use. </p> <p>If you leave this parameter
-     * unspecified when creating the group, the default values are used.</p>
+     * <p>The instances distribution to use.</p> <p>If you leave this parameter
+     * unspecified when creating a mixed instances policy, the default values are
+     * used.</p>
      */
     inline MixedInstancesPolicy& WithInstancesDistribution(InstancesDistribution&& value) { SetInstancesDistribution(std::move(value)); return *this;}
 

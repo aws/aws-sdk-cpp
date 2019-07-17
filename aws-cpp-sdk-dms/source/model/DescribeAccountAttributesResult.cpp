@@ -47,6 +47,12 @@ DescribeAccountAttributesResult& DescribeAccountAttributesResult::operator =(con
     }
   }
 
+  if(jsonValue.ValueExists("UniqueAccountIdentifier"))
+  {
+    m_uniqueAccountIdentifier = jsonValue.GetString("UniqueAccountIdentifier");
+
+  }
+
 
 
   return *this;

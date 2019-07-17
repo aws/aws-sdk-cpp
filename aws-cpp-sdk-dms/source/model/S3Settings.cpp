@@ -54,8 +54,11 @@ S3Settings::S3Settings() :
     m_parquetVersionHasBeenSet(false),
     m_enableStatistics(false),
     m_enableStatisticsHasBeenSet(false),
+    m_includeOpForFullLoad(false),
+    m_includeOpForFullLoadHasBeenSet(false),
     m_cdcInsertsOnly(false),
-    m_cdcInsertsOnlyHasBeenSet(false)
+    m_cdcInsertsOnlyHasBeenSet(false),
+    m_timestampColumnNameHasBeenSet(false)
 {
 }
 
@@ -85,8 +88,11 @@ S3Settings::S3Settings(JsonView jsonValue) :
     m_parquetVersionHasBeenSet(false),
     m_enableStatistics(false),
     m_enableStatisticsHasBeenSet(false),
+    m_includeOpForFullLoad(false),
+    m_includeOpForFullLoadHasBeenSet(false),
     m_cdcInsertsOnly(false),
-    m_cdcInsertsOnlyHasBeenSet(false)
+    m_cdcInsertsOnlyHasBeenSet(false),
+    m_timestampColumnNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -205,11 +211,25 @@ S3Settings& S3Settings::operator =(JsonView jsonValue)
     m_enableStatisticsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IncludeOpForFullLoad"))
+  {
+    m_includeOpForFullLoad = jsonValue.GetBool("IncludeOpForFullLoad");
+
+    m_includeOpForFullLoadHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("CdcInsertsOnly"))
   {
     m_cdcInsertsOnly = jsonValue.GetBool("CdcInsertsOnly");
 
     m_cdcInsertsOnlyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TimestampColumnName"))
+  {
+    m_timestampColumnName = jsonValue.GetString("TimestampColumnName");
+
+    m_timestampColumnNameHasBeenSet = true;
   }
 
   return *this;
@@ -310,9 +330,21 @@ JsonValue S3Settings::Jsonize() const
 
   }
 
+  if(m_includeOpForFullLoadHasBeenSet)
+  {
+   payload.WithBool("IncludeOpForFullLoad", m_includeOpForFullLoad);
+
+  }
+
   if(m_cdcInsertsOnlyHasBeenSet)
   {
    payload.WithBool("CdcInsertsOnly", m_cdcInsertsOnly);
+
+  }
+
+  if(m_timestampColumnNameHasBeenSet)
+  {
+   payload.WithString("TimestampColumnName", m_timestampColumnName);
 
   }
 

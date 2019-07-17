@@ -358,30 +358,30 @@ namespace Model
 
 
     /**
-     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
-     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
-     * to <code>true</code>. </p>
+     * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * is set to <code>true</code>. </p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
-     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
-     * to <code>true</code>. </p>
+     * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * is set to <code>true</code>. </p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
-     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
-     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
-     * to <code>true</code>. </p>
+     * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * is set to <code>true</code>. </p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
-     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
-     * to <code>true</code>. </p>
+     * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * is set to <code>true</code>. </p>
      */
     inline ModifyReplicationInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
@@ -429,37 +429,37 @@ namespace Model
 
     /**
      * <p>Indicates that major version upgrades are allowed. Changing this parameter
-     * does not result in an outage and the change is asynchronously applied as soon as
-     * possible.</p> <p>Constraints: This parameter must be set to true when specifying
-     * a value for the <code>EngineVersion</code> parameter that is a different major
-     * version than the replication instance's current version.</p>
+     * does not result in an outage, and the change is asynchronously applied as soon
+     * as possible.</p> <p>This parameter must be set to <code>true</code> when
+     * specifying a value for the <code>EngineVersion</code> parameter that is a
+     * different major version than the replication instance's current version.</p>
      */
     inline bool GetAllowMajorVersionUpgrade() const{ return m_allowMajorVersionUpgrade; }
 
     /**
      * <p>Indicates that major version upgrades are allowed. Changing this parameter
-     * does not result in an outage and the change is asynchronously applied as soon as
-     * possible.</p> <p>Constraints: This parameter must be set to true when specifying
-     * a value for the <code>EngineVersion</code> parameter that is a different major
-     * version than the replication instance's current version.</p>
+     * does not result in an outage, and the change is asynchronously applied as soon
+     * as possible.</p> <p>This parameter must be set to <code>true</code> when
+     * specifying a value for the <code>EngineVersion</code> parameter that is a
+     * different major version than the replication instance's current version.</p>
      */
     inline bool AllowMajorVersionUpgradeHasBeenSet() const { return m_allowMajorVersionUpgradeHasBeenSet; }
 
     /**
      * <p>Indicates that major version upgrades are allowed. Changing this parameter
-     * does not result in an outage and the change is asynchronously applied as soon as
-     * possible.</p> <p>Constraints: This parameter must be set to true when specifying
-     * a value for the <code>EngineVersion</code> parameter that is a different major
-     * version than the replication instance's current version.</p>
+     * does not result in an outage, and the change is asynchronously applied as soon
+     * as possible.</p> <p>This parameter must be set to <code>true</code> when
+     * specifying a value for the <code>EngineVersion</code> parameter that is a
+     * different major version than the replication instance's current version.</p>
      */
     inline void SetAllowMajorVersionUpgrade(bool value) { m_allowMajorVersionUpgradeHasBeenSet = true; m_allowMajorVersionUpgrade = value; }
 
     /**
      * <p>Indicates that major version upgrades are allowed. Changing this parameter
-     * does not result in an outage and the change is asynchronously applied as soon as
-     * possible.</p> <p>Constraints: This parameter must be set to true when specifying
-     * a value for the <code>EngineVersion</code> parameter that is a different major
-     * version than the replication instance's current version.</p>
+     * does not result in an outage, and the change is asynchronously applied as soon
+     * as possible.</p> <p>This parameter must be set to <code>true</code> when
+     * specifying a value for the <code>EngineVersion</code> parameter that is a
+     * different major version than the replication instance's current version.</p>
      */
     inline ModifyReplicationInstanceRequest& WithAllowMajorVersionUpgrade(bool value) { SetAllowMajorVersionUpgrade(value); return *this;}
 

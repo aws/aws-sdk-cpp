@@ -156,88 +156,88 @@ namespace Model
 
 
     /**
-     * <p>The EC2 subnet IDs for the subnet group.</p>
+     * <p>One or more subnet IDs to be assigned to the subnet group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>The EC2 subnet IDs for the subnet group.</p>
+     * <p>One or more subnet IDs to be assigned to the subnet group.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
-     * <p>The EC2 subnet IDs for the subnet group.</p>
+     * <p>One or more subnet IDs to be assigned to the subnet group.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>The EC2 subnet IDs for the subnet group.</p>
+     * <p>One or more subnet IDs to be assigned to the subnet group.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>The EC2 subnet IDs for the subnet group.</p>
+     * <p>One or more subnet IDs to be assigned to the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>The EC2 subnet IDs for the subnet group.</p>
+     * <p>One or more subnet IDs to be assigned to the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>The EC2 subnet IDs for the subnet group.</p>
+     * <p>One or more subnet IDs to be assigned to the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>The EC2 subnet IDs for the subnet group.</p>
+     * <p>One or more subnet IDs to be assigned to the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The EC2 subnet IDs for the subnet group.</p>
+     * <p>One or more subnet IDs to be assigned to the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The tag to be assigned to the subnet group.</p>
+     * <p>One or more tags to be assigned to the subnet group.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tag to be assigned to the subnet group.</p>
+     * <p>One or more tags to be assigned to the subnet group.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tag to be assigned to the subnet group.</p>
+     * <p>One or more tags to be assigned to the subnet group.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tag to be assigned to the subnet group.</p>
+     * <p>One or more tags to be assigned to the subnet group.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tag to be assigned to the subnet group.</p>
+     * <p>One or more tags to be assigned to the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tag to be assigned to the subnet group.</p>
+     * <p>One or more tags to be assigned to the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tag to be assigned to the subnet group.</p>
+     * <p>One or more tags to be assigned to the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tag to be assigned to the subnet group.</p>
+     * <p>One or more tags to be assigned to the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

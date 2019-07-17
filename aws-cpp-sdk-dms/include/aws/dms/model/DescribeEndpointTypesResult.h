@@ -100,37 +100,37 @@ namespace Model
 
 
     /**
-     * <p>The type of endpoints that are supported.</p>
+     * <p>The types of endpoints that are supported.</p>
      */
     inline const Aws::Vector<SupportedEndpointType>& GetSupportedEndpointTypes() const{ return m_supportedEndpointTypes; }
 
     /**
-     * <p>The type of endpoints that are supported.</p>
+     * <p>The types of endpoints that are supported.</p>
      */
     inline void SetSupportedEndpointTypes(const Aws::Vector<SupportedEndpointType>& value) { m_supportedEndpointTypes = value; }
 
     /**
-     * <p>The type of endpoints that are supported.</p>
+     * <p>The types of endpoints that are supported.</p>
      */
     inline void SetSupportedEndpointTypes(Aws::Vector<SupportedEndpointType>&& value) { m_supportedEndpointTypes = std::move(value); }
 
     /**
-     * <p>The type of endpoints that are supported.</p>
+     * <p>The types of endpoints that are supported.</p>
      */
     inline DescribeEndpointTypesResult& WithSupportedEndpointTypes(const Aws::Vector<SupportedEndpointType>& value) { SetSupportedEndpointTypes(value); return *this;}
 
     /**
-     * <p>The type of endpoints that are supported.</p>
+     * <p>The types of endpoints that are supported.</p>
      */
     inline DescribeEndpointTypesResult& WithSupportedEndpointTypes(Aws::Vector<SupportedEndpointType>&& value) { SetSupportedEndpointTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The type of endpoints that are supported.</p>
+     * <p>The types of endpoints that are supported.</p>
      */
     inline DescribeEndpointTypesResult& AddSupportedEndpointTypes(const SupportedEndpointType& value) { m_supportedEndpointTypes.push_back(value); return *this; }
 
     /**
-     * <p>The type of endpoints that are supported.</p>
+     * <p>The types of endpoints that are supported.</p>
      */
     inline DescribeEndpointTypesResult& AddSupportedEndpointTypes(SupportedEndpointType&& value) { m_supportedEndpointTypes.push_back(std::move(value)); return *this; }
 

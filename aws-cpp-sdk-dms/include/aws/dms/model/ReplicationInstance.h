@@ -465,30 +465,30 @@ namespace Model
 
 
     /**
-     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
-     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
-     * to <code>true</code>. </p>
+     * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * is set to <code>true</code>. </p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
-     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
-     * to <code>true</code>. </p>
+     * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * is set to <code>true</code>. </p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
-     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
-     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
-     * to <code>true</code>. </p>
+     * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * is set to <code>true</code>. </p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
-     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
-     * to <code>true</code>. </p>
+     * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * is set to <code>true</code>. </p>
      */
     inline ReplicationInstance& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
@@ -560,74 +560,74 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a
+     * different default encryption key for each AWS Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a
+     * different default encryption key for each AWS Region.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a
+     * different default encryption key for each AWS Region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a
+     * different default encryption key for each AWS Region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a
+     * different default encryption key for each AWS Region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a
+     * different default encryption key for each AWS Region.</p>
      */
     inline ReplicationInstance& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a
+     * different default encryption key for each AWS Region.</p>
      */
     inline ReplicationInstance& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+     * instance.</p> <p>If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key.</p> <p>AWS KMS creates
+     * the default encryption key for your AWS account. Your AWS account has a
+     * different default encryption key for each AWS Region.</p>
      */
     inline ReplicationInstance& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -674,93 +674,93 @@ namespace Model
 
 
     /**
-     * <p>The public IP address of the replication instance.</p>
+     * <p>One or more public IP addresses for the replication instance.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReplicationInstancePublicIpAddresses() const{ return m_replicationInstancePublicIpAddresses; }
 
     /**
-     * <p>The public IP address of the replication instance.</p>
+     * <p>One or more public IP addresses for the replication instance.</p>
      */
     inline bool ReplicationInstancePublicIpAddressesHasBeenSet() const { return m_replicationInstancePublicIpAddressesHasBeenSet; }
 
     /**
-     * <p>The public IP address of the replication instance.</p>
+     * <p>One or more public IP addresses for the replication instance.</p>
      */
     inline void SetReplicationInstancePublicIpAddresses(const Aws::Vector<Aws::String>& value) { m_replicationInstancePublicIpAddressesHasBeenSet = true; m_replicationInstancePublicIpAddresses = value; }
 
     /**
-     * <p>The public IP address of the replication instance.</p>
+     * <p>One or more public IP addresses for the replication instance.</p>
      */
     inline void SetReplicationInstancePublicIpAddresses(Aws::Vector<Aws::String>&& value) { m_replicationInstancePublicIpAddressesHasBeenSet = true; m_replicationInstancePublicIpAddresses = std::move(value); }
 
     /**
-     * <p>The public IP address of the replication instance.</p>
+     * <p>One or more public IP addresses for the replication instance.</p>
      */
     inline ReplicationInstance& WithReplicationInstancePublicIpAddresses(const Aws::Vector<Aws::String>& value) { SetReplicationInstancePublicIpAddresses(value); return *this;}
 
     /**
-     * <p>The public IP address of the replication instance.</p>
+     * <p>One or more public IP addresses for the replication instance.</p>
      */
     inline ReplicationInstance& WithReplicationInstancePublicIpAddresses(Aws::Vector<Aws::String>&& value) { SetReplicationInstancePublicIpAddresses(std::move(value)); return *this;}
 
     /**
-     * <p>The public IP address of the replication instance.</p>
+     * <p>One or more public IP addresses for the replication instance.</p>
      */
     inline ReplicationInstance& AddReplicationInstancePublicIpAddresses(const Aws::String& value) { m_replicationInstancePublicIpAddressesHasBeenSet = true; m_replicationInstancePublicIpAddresses.push_back(value); return *this; }
 
     /**
-     * <p>The public IP address of the replication instance.</p>
+     * <p>One or more public IP addresses for the replication instance.</p>
      */
     inline ReplicationInstance& AddReplicationInstancePublicIpAddresses(Aws::String&& value) { m_replicationInstancePublicIpAddressesHasBeenSet = true; m_replicationInstancePublicIpAddresses.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The public IP address of the replication instance.</p>
+     * <p>One or more public IP addresses for the replication instance.</p>
      */
     inline ReplicationInstance& AddReplicationInstancePublicIpAddresses(const char* value) { m_replicationInstancePublicIpAddressesHasBeenSet = true; m_replicationInstancePublicIpAddresses.push_back(value); return *this; }
 
 
     /**
-     * <p>The private IP address of the replication instance.</p>
+     * <p>One or more private IP addresses for the replication instance.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReplicationInstancePrivateIpAddresses() const{ return m_replicationInstancePrivateIpAddresses; }
 
     /**
-     * <p>The private IP address of the replication instance.</p>
+     * <p>One or more private IP addresses for the replication instance.</p>
      */
     inline bool ReplicationInstancePrivateIpAddressesHasBeenSet() const { return m_replicationInstancePrivateIpAddressesHasBeenSet; }
 
     /**
-     * <p>The private IP address of the replication instance.</p>
+     * <p>One or more private IP addresses for the replication instance.</p>
      */
     inline void SetReplicationInstancePrivateIpAddresses(const Aws::Vector<Aws::String>& value) { m_replicationInstancePrivateIpAddressesHasBeenSet = true; m_replicationInstancePrivateIpAddresses = value; }
 
     /**
-     * <p>The private IP address of the replication instance.</p>
+     * <p>One or more private IP addresses for the replication instance.</p>
      */
     inline void SetReplicationInstancePrivateIpAddresses(Aws::Vector<Aws::String>&& value) { m_replicationInstancePrivateIpAddressesHasBeenSet = true; m_replicationInstancePrivateIpAddresses = std::move(value); }
 
     /**
-     * <p>The private IP address of the replication instance.</p>
+     * <p>One or more private IP addresses for the replication instance.</p>
      */
     inline ReplicationInstance& WithReplicationInstancePrivateIpAddresses(const Aws::Vector<Aws::String>& value) { SetReplicationInstancePrivateIpAddresses(value); return *this;}
 
     /**
-     * <p>The private IP address of the replication instance.</p>
+     * <p>One or more private IP addresses for the replication instance.</p>
      */
     inline ReplicationInstance& WithReplicationInstancePrivateIpAddresses(Aws::Vector<Aws::String>&& value) { SetReplicationInstancePrivateIpAddresses(std::move(value)); return *this;}
 
     /**
-     * <p>The private IP address of the replication instance.</p>
+     * <p>One or more private IP addresses for the replication instance.</p>
      */
     inline ReplicationInstance& AddReplicationInstancePrivateIpAddresses(const Aws::String& value) { m_replicationInstancePrivateIpAddressesHasBeenSet = true; m_replicationInstancePrivateIpAddresses.push_back(value); return *this; }
 
     /**
-     * <p>The private IP address of the replication instance.</p>
+     * <p>One or more private IP addresses for the replication instance.</p>
      */
     inline ReplicationInstance& AddReplicationInstancePrivateIpAddresses(Aws::String&& value) { m_replicationInstancePrivateIpAddressesHasBeenSet = true; m_replicationInstancePrivateIpAddresses.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The private IP address of the replication instance.</p>
+     * <p>One or more private IP addresses for the replication instance.</p>
      */
     inline ReplicationInstance& AddReplicationInstancePrivateIpAddresses(const char* value) { m_replicationInstancePrivateIpAddressesHasBeenSet = true; m_replicationInstancePrivateIpAddresses.push_back(value); return *this; }
 

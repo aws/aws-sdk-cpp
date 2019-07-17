@@ -148,49 +148,49 @@ namespace Model
 
     /**
      * <p> The type of AWS DMS resource that generates the events you want to subscribe
-     * to. </p> <p>Valid values: replication-instance | migration-task</p>
+     * to. </p> <p>Valid values: replication-instance | replication-task</p>
      */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
 
     /**
      * <p> The type of AWS DMS resource that generates the events you want to subscribe
-     * to. </p> <p>Valid values: replication-instance | migration-task</p>
+     * to. </p> <p>Valid values: replication-instance | replication-task</p>
      */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
 
     /**
      * <p> The type of AWS DMS resource that generates the events you want to subscribe
-     * to. </p> <p>Valid values: replication-instance | migration-task</p>
+     * to. </p> <p>Valid values: replication-instance | replication-task</p>
      */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
      * <p> The type of AWS DMS resource that generates the events you want to subscribe
-     * to. </p> <p>Valid values: replication-instance | migration-task</p>
+     * to. </p> <p>Valid values: replication-instance | replication-task</p>
      */
     inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
      * <p> The type of AWS DMS resource that generates the events you want to subscribe
-     * to. </p> <p>Valid values: replication-instance | migration-task</p>
+     * to. </p> <p>Valid values: replication-instance | replication-task</p>
      */
     inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
 
     /**
      * <p> The type of AWS DMS resource that generates the events you want to subscribe
-     * to. </p> <p>Valid values: replication-instance | migration-task</p>
+     * to. </p> <p>Valid values: replication-instance | replication-task</p>
      */
     inline ModifyEventSubscriptionRequest& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
 
     /**
      * <p> The type of AWS DMS resource that generates the events you want to subscribe
-     * to. </p> <p>Valid values: replication-instance | migration-task</p>
+     * to. </p> <p>Valid values: replication-instance | replication-task</p>
      */
     inline ModifyEventSubscriptionRequest& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
 
     /**
      * <p> The type of AWS DMS resource that generates the events you want to subscribe
-     * to. </p> <p>Valid values: replication-instance | migration-task</p>
+     * to. </p> <p>Valid values: replication-instance | replication-task</p>
      */
     inline ModifyEventSubscriptionRequest& WithSourceType(const char* value) { SetSourceType(value); return *this;}
 

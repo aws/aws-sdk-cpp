@@ -197,30 +197,34 @@ namespace Model
 
 
     /**
-     * <p>Set this flag to avoid returning setting information. Use this to reduce
-     * overhead when settings are too large. Choose TRUE to use this flag, otherwise
-     * choose FALSE (default).</p>
+     * <p>An option to set to avoid returning information about settings. Use this to
+     * reduce overhead when setting information is too large. To use this option,
+     * choose <code>true</code>; otherwise, choose <code>false</code> (the
+     * default).</p>
      */
     inline bool GetWithoutSettings() const{ return m_withoutSettings; }
 
     /**
-     * <p>Set this flag to avoid returning setting information. Use this to reduce
-     * overhead when settings are too large. Choose TRUE to use this flag, otherwise
-     * choose FALSE (default).</p>
+     * <p>An option to set to avoid returning information about settings. Use this to
+     * reduce overhead when setting information is too large. To use this option,
+     * choose <code>true</code>; otherwise, choose <code>false</code> (the
+     * default).</p>
      */
     inline bool WithoutSettingsHasBeenSet() const { return m_withoutSettingsHasBeenSet; }
 
     /**
-     * <p>Set this flag to avoid returning setting information. Use this to reduce
-     * overhead when settings are too large. Choose TRUE to use this flag, otherwise
-     * choose FALSE (default).</p>
+     * <p>An option to set to avoid returning information about settings. Use this to
+     * reduce overhead when setting information is too large. To use this option,
+     * choose <code>true</code>; otherwise, choose <code>false</code> (the
+     * default).</p>
      */
     inline void SetWithoutSettings(bool value) { m_withoutSettingsHasBeenSet = true; m_withoutSettings = value; }
 
     /**
-     * <p>Set this flag to avoid returning setting information. Use this to reduce
-     * overhead when settings are too large. Choose TRUE to use this flag, otherwise
-     * choose FALSE (default).</p>
+     * <p>An option to set to avoid returning information about settings. Use this to
+     * reduce overhead when setting information is too large. To use this option,
+     * choose <code>true</code>; otherwise, choose <code>false</code> (the
+     * default).</p>
      */
     inline DescribeReplicationTasksRequest& WithWithoutSettings(bool value) { SetWithoutSettings(value); return *this;}
 

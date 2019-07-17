@@ -93,57 +93,57 @@ namespace Model
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
-     * template. Currently, the only supported override is instance type. </p> <p>You
-     * must specify between 2 and 20 overrides.</p>
+     * template. Currently, the only supported override is instance type. You must
+     * specify between 2 and 20 overrides.</p>
      */
     inline const Aws::Vector<LaunchTemplateOverrides>& GetOverrides() const{ return m_overrides; }
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
-     * template. Currently, the only supported override is instance type. </p> <p>You
-     * must specify between 2 and 20 overrides.</p>
+     * template. Currently, the only supported override is instance type. You must
+     * specify between 2 and 20 overrides.</p>
      */
     inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
-     * template. Currently, the only supported override is instance type. </p> <p>You
-     * must specify between 2 and 20 overrides.</p>
+     * template. Currently, the only supported override is instance type. You must
+     * specify between 2 and 20 overrides.</p>
      */
     inline void SetOverrides(const Aws::Vector<LaunchTemplateOverrides>& value) { m_overridesHasBeenSet = true; m_overrides = value; }
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
-     * template. Currently, the only supported override is instance type. </p> <p>You
-     * must specify between 2 and 20 overrides.</p>
+     * template. Currently, the only supported override is instance type. You must
+     * specify between 2 and 20 overrides.</p>
      */
     inline void SetOverrides(Aws::Vector<LaunchTemplateOverrides>&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
-     * template. Currently, the only supported override is instance type. </p> <p>You
-     * must specify between 2 and 20 overrides.</p>
+     * template. Currently, the only supported override is instance type. You must
+     * specify between 2 and 20 overrides.</p>
      */
     inline LaunchTemplate& WithOverrides(const Aws::Vector<LaunchTemplateOverrides>& value) { SetOverrides(value); return *this;}
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
-     * template. Currently, the only supported override is instance type. </p> <p>You
-     * must specify between 2 and 20 overrides.</p>
+     * template. Currently, the only supported override is instance type. You must
+     * specify between 2 and 20 overrides.</p>
      */
     inline LaunchTemplate& WithOverrides(Aws::Vector<LaunchTemplateOverrides>&& value) { SetOverrides(std::move(value)); return *this;}
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
-     * template. Currently, the only supported override is instance type. </p> <p>You
-     * must specify between 2 and 20 overrides.</p>
+     * template. Currently, the only supported override is instance type. You must
+     * specify between 2 and 20 overrides.</p>
      */
     inline LaunchTemplate& AddOverrides(const LaunchTemplateOverrides& value) { m_overridesHasBeenSet = true; m_overrides.push_back(value); return *this; }
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch
-     * template. Currently, the only supported override is instance type. </p> <p>You
-     * must specify between 2 and 20 overrides.</p>
+     * template. Currently, the only supported override is instance type. You must
+     * specify between 2 and 20 overrides.</p>
      */
     inline LaunchTemplate& AddOverrides(LaunchTemplateOverrides&& value) { m_overridesHasBeenSet = true; m_overrides.push_back(std::move(value)); return *this; }
 

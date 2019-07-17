@@ -177,50 +177,50 @@ namespace Model
 
 
     /**
-     * <p>The policy type. The valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>.</p>
+     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
      */
     inline const Aws::String& GetPolicyType() const{ return m_policyType; }
 
     /**
-     * <p>The policy type. The valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>.</p>
+     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
      */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
     /**
-     * <p>The policy type. The valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>.</p>
+     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
      */
     inline void SetPolicyType(const Aws::String& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
-     * <p>The policy type. The valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>.</p>
+     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
      */
     inline void SetPolicyType(Aws::String&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
-     * <p>The policy type. The valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>.</p>
+     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
      */
     inline void SetPolicyType(const char* value) { m_policyTypeHasBeenSet = true; m_policyType.assign(value); }
 
     /**
-     * <p>The policy type. The valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>.</p>
+     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
      */
     inline ScalingPolicy& WithPolicyType(const Aws::String& value) { SetPolicyType(value); return *this;}
 
     /**
-     * <p>The policy type. The valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>.</p>
+     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
      */
     inline ScalingPolicy& WithPolicyType(Aws::String&& value) { SetPolicyType(std::move(value)); return *this;}
 
     /**
-     * <p>The policy type. The valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>.</p>
+     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
      */
     inline ScalingPolicy& WithPolicyType(const char* value) { SetPolicyType(value); return *this;}
 

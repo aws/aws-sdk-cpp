@@ -116,39 +116,45 @@ namespace Model
 
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline const ReplicationEndpointTypeValue& GetEndpointType() const{ return m_endpointType; }
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline void SetEndpointType(const ReplicationEndpointTypeValue& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline void SetEndpointType(ReplicationEndpointTypeValue&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline CreateEndpointRequest& WithEndpointType(const ReplicationEndpointTypeValue& value) { SetEndpointType(value); return *this;}
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline CreateEndpointRequest& WithEndpointType(ReplicationEndpointTypeValue&& value) { SetEndpointType(std::move(value)); return *this;}
 
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * <code>EndPointType</code> value, include <code>mysql</code>,
+     * <code>EndpointType</code> value, include <code>mysql</code>,
      * <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>,
      * <code>aurora</code>, <code>aurora-postgresql</code>, <code>redshift</code>,
      * <code>s3</code>, <code>db2</code>, <code>azuredb</code>, <code>sybase</code>,
@@ -158,7 +164,7 @@ namespace Model
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * <code>EndPointType</code> value, include <code>mysql</code>,
+     * <code>EndpointType</code> value, include <code>mysql</code>,
      * <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>,
      * <code>aurora</code>, <code>aurora-postgresql</code>, <code>redshift</code>,
      * <code>s3</code>, <code>db2</code>, <code>azuredb</code>, <code>sybase</code>,
@@ -168,7 +174,7 @@ namespace Model
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * <code>EndPointType</code> value, include <code>mysql</code>,
+     * <code>EndpointType</code> value, include <code>mysql</code>,
      * <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>,
      * <code>aurora</code>, <code>aurora-postgresql</code>, <code>redshift</code>,
      * <code>s3</code>, <code>db2</code>, <code>azuredb</code>, <code>sybase</code>,
@@ -178,7 +184,7 @@ namespace Model
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * <code>EndPointType</code> value, include <code>mysql</code>,
+     * <code>EndpointType</code> value, include <code>mysql</code>,
      * <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>,
      * <code>aurora</code>, <code>aurora-postgresql</code>, <code>redshift</code>,
      * <code>s3</code>, <code>db2</code>, <code>azuredb</code>, <code>sybase</code>,
@@ -188,7 +194,7 @@ namespace Model
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * <code>EndPointType</code> value, include <code>mysql</code>,
+     * <code>EndpointType</code> value, include <code>mysql</code>,
      * <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>,
      * <code>aurora</code>, <code>aurora-postgresql</code>, <code>redshift</code>,
      * <code>s3</code>, <code>db2</code>, <code>azuredb</code>, <code>sybase</code>,
@@ -198,7 +204,7 @@ namespace Model
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * <code>EndPointType</code> value, include <code>mysql</code>,
+     * <code>EndpointType</code> value, include <code>mysql</code>,
      * <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>,
      * <code>aurora</code>, <code>aurora-postgresql</code>, <code>redshift</code>,
      * <code>s3</code>, <code>db2</code>, <code>azuredb</code>, <code>sybase</code>,
@@ -208,7 +214,7 @@ namespace Model
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * <code>EndPointType</code> value, include <code>mysql</code>,
+     * <code>EndpointType</code> value, include <code>mysql</code>,
      * <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>,
      * <code>aurora</code>, <code>aurora-postgresql</code>, <code>redshift</code>,
      * <code>s3</code>, <code>db2</code>, <code>azuredb</code>, <code>sybase</code>,
@@ -218,7 +224,7 @@ namespace Model
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * <code>EndPointType</code> value, include <code>mysql</code>,
+     * <code>EndpointType</code> value, include <code>mysql</code>,
      * <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>,
      * <code>aurora</code>, <code>aurora-postgresql</code>, <code>redshift</code>,
      * <code>s3</code>, <code>db2</code>, <code>azuredb</code>, <code>sybase</code>,
@@ -413,156 +419,212 @@ namespace Model
 
 
     /**
-     * <p>Additional attributes associated with the connection.</p>
+     * <p>Additional attributes associated with the connection. Each attribute is
+     * specified as a name-value pair associated by an equal sign (=). Multiple
+     * attributes are separated by a semicolon (;) with no additional white space. For
+     * information on the attributes available for connecting your source or target
+     * endpoint, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working
+     * with AWS DMS Endpoints</a> in the <i>AWS Database Migration Service User
+     * Guide.</i> </p>
      */
     inline const Aws::String& GetExtraConnectionAttributes() const{ return m_extraConnectionAttributes; }
 
     /**
-     * <p>Additional attributes associated with the connection.</p>
+     * <p>Additional attributes associated with the connection. Each attribute is
+     * specified as a name-value pair associated by an equal sign (=). Multiple
+     * attributes are separated by a semicolon (;) with no additional white space. For
+     * information on the attributes available for connecting your source or target
+     * endpoint, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working
+     * with AWS DMS Endpoints</a> in the <i>AWS Database Migration Service User
+     * Guide.</i> </p>
      */
     inline bool ExtraConnectionAttributesHasBeenSet() const { return m_extraConnectionAttributesHasBeenSet; }
 
     /**
-     * <p>Additional attributes associated with the connection.</p>
+     * <p>Additional attributes associated with the connection. Each attribute is
+     * specified as a name-value pair associated by an equal sign (=). Multiple
+     * attributes are separated by a semicolon (;) with no additional white space. For
+     * information on the attributes available for connecting your source or target
+     * endpoint, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working
+     * with AWS DMS Endpoints</a> in the <i>AWS Database Migration Service User
+     * Guide.</i> </p>
      */
     inline void SetExtraConnectionAttributes(const Aws::String& value) { m_extraConnectionAttributesHasBeenSet = true; m_extraConnectionAttributes = value; }
 
     /**
-     * <p>Additional attributes associated with the connection.</p>
+     * <p>Additional attributes associated with the connection. Each attribute is
+     * specified as a name-value pair associated by an equal sign (=). Multiple
+     * attributes are separated by a semicolon (;) with no additional white space. For
+     * information on the attributes available for connecting your source or target
+     * endpoint, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working
+     * with AWS DMS Endpoints</a> in the <i>AWS Database Migration Service User
+     * Guide.</i> </p>
      */
     inline void SetExtraConnectionAttributes(Aws::String&& value) { m_extraConnectionAttributesHasBeenSet = true; m_extraConnectionAttributes = std::move(value); }
 
     /**
-     * <p>Additional attributes associated with the connection.</p>
+     * <p>Additional attributes associated with the connection. Each attribute is
+     * specified as a name-value pair associated by an equal sign (=). Multiple
+     * attributes are separated by a semicolon (;) with no additional white space. For
+     * information on the attributes available for connecting your source or target
+     * endpoint, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working
+     * with AWS DMS Endpoints</a> in the <i>AWS Database Migration Service User
+     * Guide.</i> </p>
      */
     inline void SetExtraConnectionAttributes(const char* value) { m_extraConnectionAttributesHasBeenSet = true; m_extraConnectionAttributes.assign(value); }
 
     /**
-     * <p>Additional attributes associated with the connection.</p>
+     * <p>Additional attributes associated with the connection. Each attribute is
+     * specified as a name-value pair associated by an equal sign (=). Multiple
+     * attributes are separated by a semicolon (;) with no additional white space. For
+     * information on the attributes available for connecting your source or target
+     * endpoint, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working
+     * with AWS DMS Endpoints</a> in the <i>AWS Database Migration Service User
+     * Guide.</i> </p>
      */
     inline CreateEndpointRequest& WithExtraConnectionAttributes(const Aws::String& value) { SetExtraConnectionAttributes(value); return *this;}
 
     /**
-     * <p>Additional attributes associated with the connection.</p>
+     * <p>Additional attributes associated with the connection. Each attribute is
+     * specified as a name-value pair associated by an equal sign (=). Multiple
+     * attributes are separated by a semicolon (;) with no additional white space. For
+     * information on the attributes available for connecting your source or target
+     * endpoint, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working
+     * with AWS DMS Endpoints</a> in the <i>AWS Database Migration Service User
+     * Guide.</i> </p>
      */
     inline CreateEndpointRequest& WithExtraConnectionAttributes(Aws::String&& value) { SetExtraConnectionAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>Additional attributes associated with the connection.</p>
+     * <p>Additional attributes associated with the connection. Each attribute is
+     * specified as a name-value pair associated by an equal sign (=). Multiple
+     * attributes are separated by a semicolon (;) with no additional white space. For
+     * information on the attributes available for connecting your source or target
+     * endpoint, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working
+     * with AWS DMS Endpoints</a> in the <i>AWS Database Migration Service User
+     * Guide.</i> </p>
      */
     inline CreateEndpointRequest& WithExtraConnectionAttributes(const char* value) { SetExtraConnectionAttributes(value); return *this;}
 
 
     /**
-     * <p>The AWS KMS key identifier to use to encrypt the connection parameters. If
-     * you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS
-     * uses your default encryption key. AWS KMS creates the default encryption key for
-     * your AWS account. Your AWS account has a different default encryption key for
-     * each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
+     * for the endpoint.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier to use to encrypt the connection parameters. If
-     * you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS
-     * uses your default encryption key. AWS KMS creates the default encryption key for
-     * your AWS account. Your AWS account has a different default encryption key for
-     * each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
+     * for the endpoint.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier to use to encrypt the connection parameters. If
-     * you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS
-     * uses your default encryption key. AWS KMS creates the default encryption key for
-     * your AWS account. Your AWS account has a different default encryption key for
-     * each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
+     * for the endpoint.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier to use to encrypt the connection parameters. If
-     * you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS
-     * uses your default encryption key. AWS KMS creates the default encryption key for
-     * your AWS account. Your AWS account has a different default encryption key for
-     * each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
+     * for the endpoint.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier to use to encrypt the connection parameters. If
-     * you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS
-     * uses your default encryption key. AWS KMS creates the default encryption key for
-     * your AWS account. Your AWS account has a different default encryption key for
-     * each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
+     * for the endpoint.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier to use to encrypt the connection parameters. If
-     * you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS
-     * uses your default encryption key. AWS KMS creates the default encryption key for
-     * your AWS account. Your AWS account has a different default encryption key for
-     * each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
+     * for the endpoint.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline CreateEndpointRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier to use to encrypt the connection parameters. If
-     * you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS
-     * uses your default encryption key. AWS KMS creates the default encryption key for
-     * your AWS account. Your AWS account has a different default encryption key for
-     * each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
+     * for the endpoint.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline CreateEndpointRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier to use to encrypt the connection parameters. If
-     * you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS
-     * uses your default encryption key. AWS KMS creates the default encryption key for
-     * your AWS account. Your AWS account has a different default encryption key for
-     * each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
+     * for the endpoint.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline CreateEndpointRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p>Tags to be added to the endpoint.</p>
+     * <p>One or more tags to be assigned to the endpoint.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags to be added to the endpoint.</p>
+     * <p>One or more tags to be assigned to the endpoint.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Tags to be added to the endpoint.</p>
+     * <p>One or more tags to be assigned to the endpoint.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Tags to be added to the endpoint.</p>
+     * <p>One or more tags to be assigned to the endpoint.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Tags to be added to the endpoint.</p>
+     * <p>One or more tags to be assigned to the endpoint.</p>
      */
     inline CreateEndpointRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags to be added to the endpoint.</p>
+     * <p>One or more tags to be assigned to the endpoint.</p>
      */
     inline CreateEndpointRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags to be added to the endpoint.</p>
+     * <p>One or more tags to be assigned to the endpoint.</p>
      */
     inline CreateEndpointRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Tags to be added to the endpoint.</p>
+     * <p>One or more tags to be assigned to the endpoint.</p>
      */
     inline CreateEndpointRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -609,50 +671,38 @@ namespace Model
 
 
     /**
-     * <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL
-     * mode can be one of four values: <code>none</code>, <code>require</code>,
-     * <code>verify-ca</code>, <code>verify-full</code>. The default value is
-     * <code>none</code>.</p>
+     * <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The
+     * default is <code>none</code> </p>
      */
     inline const DmsSslModeValue& GetSslMode() const{ return m_sslMode; }
 
     /**
-     * <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL
-     * mode can be one of four values: <code>none</code>, <code>require</code>,
-     * <code>verify-ca</code>, <code>verify-full</code>. The default value is
-     * <code>none</code>.</p>
+     * <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The
+     * default is <code>none</code> </p>
      */
     inline bool SslModeHasBeenSet() const { return m_sslModeHasBeenSet; }
 
     /**
-     * <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL
-     * mode can be one of four values: <code>none</code>, <code>require</code>,
-     * <code>verify-ca</code>, <code>verify-full</code>. The default value is
-     * <code>none</code>.</p>
+     * <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The
+     * default is <code>none</code> </p>
      */
     inline void SetSslMode(const DmsSslModeValue& value) { m_sslModeHasBeenSet = true; m_sslMode = value; }
 
     /**
-     * <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL
-     * mode can be one of four values: <code>none</code>, <code>require</code>,
-     * <code>verify-ca</code>, <code>verify-full</code>. The default value is
-     * <code>none</code>.</p>
+     * <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The
+     * default is <code>none</code> </p>
      */
     inline void SetSslMode(DmsSslModeValue&& value) { m_sslModeHasBeenSet = true; m_sslMode = std::move(value); }
 
     /**
-     * <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL
-     * mode can be one of four values: <code>none</code>, <code>require</code>,
-     * <code>verify-ca</code>, <code>verify-full</code>. The default value is
-     * <code>none</code>.</p>
+     * <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The
+     * default is <code>none</code> </p>
      */
     inline CreateEndpointRequest& WithSslMode(const DmsSslModeValue& value) { SetSslMode(value); return *this;}
 
     /**
-     * <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The SSL
-     * mode can be one of four values: <code>none</code>, <code>require</code>,
-     * <code>verify-ca</code>, <code>verify-full</code>. The default value is
-     * <code>none</code>.</p>
+     * <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The
+     * default is <code>none</code> </p>
      */
     inline CreateEndpointRequest& WithSslMode(DmsSslModeValue&& value) { SetSslMode(std::move(value)); return *this;}
 
@@ -865,7 +915,7 @@ namespace Model
      * the S3 bucket to use.</p> </li> <li> <p> <code>compressionType</code> - An
      * optional parameter to use GZIP to compress the target files. To use GZIP, set
      * this value to <code>NONE</code> (the default). To keep the files uncompressed,
-     * don't use this value. </p> </li> </ul> <p>Shorthand syntax for these attributes
+     * don't use this value.</p> </li> </ul> <p>Shorthand syntax for these attributes
      * is as follows:
      * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      * </p> <p>JSON syntax for these attributes is as follows: <code>{
@@ -882,7 +932,7 @@ namespace Model
      * the S3 bucket to use.</p> </li> <li> <p> <code>compressionType</code> - An
      * optional parameter to use GZIP to compress the target files. To use GZIP, set
      * this value to <code>NONE</code> (the default). To keep the files uncompressed,
-     * don't use this value. </p> </li> </ul> <p>Shorthand syntax for these attributes
+     * don't use this value.</p> </li> </ul> <p>Shorthand syntax for these attributes
      * is as follows:
      * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      * </p> <p>JSON syntax for these attributes is as follows: <code>{
@@ -899,7 +949,7 @@ namespace Model
      * the S3 bucket to use.</p> </li> <li> <p> <code>compressionType</code> - An
      * optional parameter to use GZIP to compress the target files. To use GZIP, set
      * this value to <code>NONE</code> (the default). To keep the files uncompressed,
-     * don't use this value. </p> </li> </ul> <p>Shorthand syntax for these attributes
+     * don't use this value.</p> </li> </ul> <p>Shorthand syntax for these attributes
      * is as follows:
      * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      * </p> <p>JSON syntax for these attributes is as follows: <code>{
@@ -916,7 +966,7 @@ namespace Model
      * the S3 bucket to use.</p> </li> <li> <p> <code>compressionType</code> - An
      * optional parameter to use GZIP to compress the target files. To use GZIP, set
      * this value to <code>NONE</code> (the default). To keep the files uncompressed,
-     * don't use this value. </p> </li> </ul> <p>Shorthand syntax for these attributes
+     * don't use this value.</p> </li> </ul> <p>Shorthand syntax for these attributes
      * is as follows:
      * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      * </p> <p>JSON syntax for these attributes is as follows: <code>{
@@ -933,7 +983,7 @@ namespace Model
      * the S3 bucket to use.</p> </li> <li> <p> <code>compressionType</code> - An
      * optional parameter to use GZIP to compress the target files. To use GZIP, set
      * this value to <code>NONE</code> (the default). To keep the files uncompressed,
-     * don't use this value. </p> </li> </ul> <p>Shorthand syntax for these attributes
+     * don't use this value.</p> </li> </ul> <p>Shorthand syntax for these attributes
      * is as follows:
      * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      * </p> <p>JSON syntax for these attributes is as follows: <code>{
@@ -950,7 +1000,7 @@ namespace Model
      * the S3 bucket to use.</p> </li> <li> <p> <code>compressionType</code> - An
      * optional parameter to use GZIP to compress the target files. To use GZIP, set
      * this value to <code>NONE</code> (the default). To keep the files uncompressed,
-     * don't use this value. </p> </li> </ul> <p>Shorthand syntax for these attributes
+     * don't use this value.</p> </li> </ul> <p>Shorthand syntax for these attributes
      * is as follows:
      * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      * </p> <p>JSON syntax for these attributes is as follows: <code>{
@@ -1018,54 +1068,54 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
      * For more information about the available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
-     * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
-     * <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
+     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline const KinesisSettings& GetKinesisSettings() const{ return m_kinesisSettings; }
 
     /**
      * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
      * For more information about the available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
-     * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
-     * <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
+     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline bool KinesisSettingsHasBeenSet() const { return m_kinesisSettingsHasBeenSet; }
 
     /**
      * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
      * For more information about the available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
-     * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
-     * <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
+     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline void SetKinesisSettings(const KinesisSettings& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = value; }
 
     /**
      * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
      * For more information about the available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
-     * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
-     * <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
+     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline void SetKinesisSettings(KinesisSettings&& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = std::move(value); }
 
     /**
      * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
      * For more information about the available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
-     * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
-     * <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
+     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline CreateEndpointRequest& WithKinesisSettings(const KinesisSettings& value) { SetKinesisSettings(value); return *this;}
 
     /**
      * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
      * For more information about the available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
-     * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
-     * <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
+     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline CreateEndpointRequest& WithKinesisSettings(KinesisSettings&& value) { SetKinesisSettings(std::move(value)); return *this;}
 

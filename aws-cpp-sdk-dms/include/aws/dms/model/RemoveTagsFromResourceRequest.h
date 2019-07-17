@@ -28,7 +28,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Removes one or more tags from an AWS DMS resource.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RemoveTagsFromResourceMessage">AWS
    * API Reference</a></p>
    */
@@ -49,50 +50,50 @@ namespace Model
 
 
     /**
-     * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
-     * removed from.</p>
+     * <p>An AWS DMS resource from which you want to remove tag(s). The value for this
+     * parameter is an Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
-     * removed from.</p>
+     * <p>An AWS DMS resource from which you want to remove tag(s). The value for this
+     * parameter is an Amazon Resource Name (ARN).</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
-     * removed from.</p>
+     * <p>An AWS DMS resource from which you want to remove tag(s). The value for this
+     * parameter is an Amazon Resource Name (ARN).</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
-     * removed from.</p>
+     * <p>An AWS DMS resource from which you want to remove tag(s). The value for this
+     * parameter is an Amazon Resource Name (ARN).</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
-     * removed from.</p>
+     * <p>An AWS DMS resource from which you want to remove tag(s). The value for this
+     * parameter is an Amazon Resource Name (ARN).</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
-     * removed from.</p>
+     * <p>An AWS DMS resource from which you want to remove tag(s). The value for this
+     * parameter is an Amazon Resource Name (ARN).</p>
      */
     inline RemoveTagsFromResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
-     * removed from.</p>
+     * <p>An AWS DMS resource from which you want to remove tag(s). The value for this
+     * parameter is an Amazon Resource Name (ARN).</p>
      */
     inline RemoveTagsFromResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
-     * removed from.</p>
+     * <p>An AWS DMS resource from which you want to remove tag(s). The value for this
+     * parameter is an Amazon Resource Name (ARN).</p>
      */
     inline RemoveTagsFromResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

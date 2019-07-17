@@ -114,89 +114,95 @@ namespace Model
 
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline const ReplicationEndpointTypeValue& GetEndpointType() const{ return m_endpointType; }
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline void SetEndpointType(const ReplicationEndpointTypeValue& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline void SetEndpointType(ReplicationEndpointTypeValue&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline Endpoint& WithEndpointType(const ReplicationEndpointTypeValue& value) { SetEndpointType(value); return *this;}
 
     /**
-     * <p>The type of endpoint.</p>
+     * <p>The type of endpoint. Valid values are <code>source</code> and
+     * <code>target</code>.</p>
      */
     inline Endpoint& WithEndpointType(ReplicationEndpointTypeValue&& value) { SetEndpointType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The database engine name. Valid values, depending on the EndPointType,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
      * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
-     * <p>The database engine name. Valid values, depending on the EndPointType,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
      * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
     /**
-     * <p>The database engine name. Valid values, depending on the EndPointType,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
      * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
-     * <p>The database engine name. Valid values, depending on the EndPointType,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
      * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
     /**
-     * <p>The database engine name. Valid values, depending on the EndPointType,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
      * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
-     * <p>The database engine name. Valid values, depending on the EndPointType,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
      * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline Endpoint& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
-     * <p>The database engine name. Valid values, depending on the EndPointType,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
      * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline Endpoint& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
     /**
-     * <p>The database engine name. Valid values, depending on the EndPointType,
+     * <p>The database engine name. Valid values, depending on the EndpointType,
      * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline Endpoint& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
@@ -485,74 +491,74 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
+     * for the endpoint.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
+     * for the endpoint.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
+     * for the endpoint.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
+     * for the endpoint.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
+     * for the endpoint.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
+     * for the endpoint.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline Endpoint& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
+     * for the endpoint.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline Endpoint& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
-     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.</p>
+     * <p>An AWS KMS key identifier that is used to encrypt the connection parameters
+     * for the endpoint.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.</p> <p>AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline Endpoint& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -648,44 +654,38 @@ namespace Model
 
 
     /**
-     * <p>The SSL mode used to connect to the endpoint.</p> <p>SSL mode can be one of
-     * four values: none, require, verify-ca, verify-full. </p> <p>The default value is
-     * none.</p>
+     * <p>The SSL mode used to connect to the endpoint. The default value is
+     * <code>none</code>.</p>
      */
     inline const DmsSslModeValue& GetSslMode() const{ return m_sslMode; }
 
     /**
-     * <p>The SSL mode used to connect to the endpoint.</p> <p>SSL mode can be one of
-     * four values: none, require, verify-ca, verify-full. </p> <p>The default value is
-     * none.</p>
+     * <p>The SSL mode used to connect to the endpoint. The default value is
+     * <code>none</code>.</p>
      */
     inline bool SslModeHasBeenSet() const { return m_sslModeHasBeenSet; }
 
     /**
-     * <p>The SSL mode used to connect to the endpoint.</p> <p>SSL mode can be one of
-     * four values: none, require, verify-ca, verify-full. </p> <p>The default value is
-     * none.</p>
+     * <p>The SSL mode used to connect to the endpoint. The default value is
+     * <code>none</code>.</p>
      */
     inline void SetSslMode(const DmsSslModeValue& value) { m_sslModeHasBeenSet = true; m_sslMode = value; }
 
     /**
-     * <p>The SSL mode used to connect to the endpoint.</p> <p>SSL mode can be one of
-     * four values: none, require, verify-ca, verify-full. </p> <p>The default value is
-     * none.</p>
+     * <p>The SSL mode used to connect to the endpoint. The default value is
+     * <code>none</code>.</p>
      */
     inline void SetSslMode(DmsSslModeValue&& value) { m_sslModeHasBeenSet = true; m_sslMode = std::move(value); }
 
     /**
-     * <p>The SSL mode used to connect to the endpoint.</p> <p>SSL mode can be one of
-     * four values: none, require, verify-ca, verify-full. </p> <p>The default value is
-     * none.</p>
+     * <p>The SSL mode used to connect to the endpoint. The default value is
+     * <code>none</code>.</p>
      */
     inline Endpoint& WithSslMode(const DmsSslModeValue& value) { SetSslMode(value); return *this;}
 
     /**
-     * <p>The SSL mode used to connect to the endpoint.</p> <p>SSL mode can be one of
-     * four values: none, require, verify-ca, verify-full. </p> <p>The default value is
-     * none.</p>
+     * <p>The SSL mode used to connect to the endpoint. The default value is
+     * <code>none</code>.</p>
      */
     inline Endpoint& WithSslMode(DmsSslModeValue&& value) { SetSslMode(std::move(value)); return *this;}
 
@@ -1118,32 +1118,32 @@ namespace Model
 
 
     /**
-     * <p>Settings for the Amazon Redshift endpoint</p>
+     * <p>Settings for the Amazon Redshift endpoint.</p>
      */
     inline const RedshiftSettings& GetRedshiftSettings() const{ return m_redshiftSettings; }
 
     /**
-     * <p>Settings for the Amazon Redshift endpoint</p>
+     * <p>Settings for the Amazon Redshift endpoint.</p>
      */
     inline bool RedshiftSettingsHasBeenSet() const { return m_redshiftSettingsHasBeenSet; }
 
     /**
-     * <p>Settings for the Amazon Redshift endpoint</p>
+     * <p>Settings for the Amazon Redshift endpoint.</p>
      */
     inline void SetRedshiftSettings(const RedshiftSettings& value) { m_redshiftSettingsHasBeenSet = true; m_redshiftSettings = value; }
 
     /**
-     * <p>Settings for the Amazon Redshift endpoint</p>
+     * <p>Settings for the Amazon Redshift endpoint.</p>
      */
     inline void SetRedshiftSettings(RedshiftSettings&& value) { m_redshiftSettingsHasBeenSet = true; m_redshiftSettings = std::move(value); }
 
     /**
-     * <p>Settings for the Amazon Redshift endpoint</p>
+     * <p>Settings for the Amazon Redshift endpoint.</p>
      */
     inline Endpoint& WithRedshiftSettings(const RedshiftSettings& value) { SetRedshiftSettings(value); return *this;}
 
     /**
-     * <p>Settings for the Amazon Redshift endpoint</p>
+     * <p>Settings for the Amazon Redshift endpoint.</p>
      */
     inline Endpoint& WithRedshiftSettings(RedshiftSettings&& value) { SetRedshiftSettings(std::move(value)); return *this;}
 

@@ -50,50 +50,50 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the launch configuration. This name must be unique within the
-     * scope of your AWS account.</p>
+     * <p>The name of the launch configuration. This name must be unique per Region per
+     * account.</p>
      */
     inline const Aws::String& GetLaunchConfigurationName() const{ return m_launchConfigurationName; }
 
     /**
-     * <p>The name of the launch configuration. This name must be unique within the
-     * scope of your AWS account.</p>
+     * <p>The name of the launch configuration. This name must be unique per Region per
+     * account.</p>
      */
     inline bool LaunchConfigurationNameHasBeenSet() const { return m_launchConfigurationNameHasBeenSet; }
 
     /**
-     * <p>The name of the launch configuration. This name must be unique within the
-     * scope of your AWS account.</p>
+     * <p>The name of the launch configuration. This name must be unique per Region per
+     * account.</p>
      */
     inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
     /**
-     * <p>The name of the launch configuration. This name must be unique within the
-     * scope of your AWS account.</p>
+     * <p>The name of the launch configuration. This name must be unique per Region per
+     * account.</p>
      */
     inline void SetLaunchConfigurationName(Aws::String&& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = std::move(value); }
 
     /**
-     * <p>The name of the launch configuration. This name must be unique within the
-     * scope of your AWS account.</p>
+     * <p>The name of the launch configuration. This name must be unique per Region per
+     * account.</p>
      */
     inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName.assign(value); }
 
     /**
-     * <p>The name of the launch configuration. This name must be unique within the
-     * scope of your AWS account.</p>
+     * <p>The name of the launch configuration. This name must be unique per Region per
+     * account.</p>
      */
     inline CreateLaunchConfigurationRequest& WithLaunchConfigurationName(const Aws::String& value) { SetLaunchConfigurationName(value); return *this;}
 
     /**
-     * <p>The name of the launch configuration. This name must be unique within the
-     * scope of your AWS account.</p>
+     * <p>The name of the launch configuration. This name must be unique per Region per
+     * account.</p>
      */
     inline CreateLaunchConfigurationRequest& WithLaunchConfigurationName(Aws::String&& value) { SetLaunchConfigurationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the launch configuration. This name must be unique within the
-     * scope of your AWS account.</p>
+     * <p>The name of the launch configuration. This name must be unique per Region per
+     * account.</p>
      */
     inline CreateLaunchConfigurationRequest& WithLaunchConfigurationName(const char* value) { SetLaunchConfigurationName(value); return *this;}
 
@@ -637,185 +637,185 @@ namespace Model
     /**
      * <p>The ID of the instance to use to create the launch configuration. The new
      * launch configuration derives attributes from the instance, except for the block
-     * device mapping.</p> <p>If you do not specify <code>InstanceId</code>, you must
-     * specify both <code>ImageId</code> and <code>InstanceType</code>.</p> <p>To
-     * create a launch configuration with a block device mapping or override any other
-     * instance attributes, specify them as part of the same request.</p> <p>For more
-     * information, see <a
+     * device mapping.</p> <p>To create a launch configuration with a block device
+     * mapping or override any other instance attributes, specify them as part of the
+     * same request.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p>
+     * Scaling User Guide</i>.</p> <p>If you do not specify <code>InstanceId</code>,
+     * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
      * <p>The ID of the instance to use to create the launch configuration. The new
      * launch configuration derives attributes from the instance, except for the block
-     * device mapping.</p> <p>If you do not specify <code>InstanceId</code>, you must
-     * specify both <code>ImageId</code> and <code>InstanceType</code>.</p> <p>To
-     * create a launch configuration with a block device mapping or override any other
-     * instance attributes, specify them as part of the same request.</p> <p>For more
-     * information, see <a
+     * device mapping.</p> <p>To create a launch configuration with a block device
+     * mapping or override any other instance attributes, specify them as part of the
+     * same request.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p>
+     * Scaling User Guide</i>.</p> <p>If you do not specify <code>InstanceId</code>,
+     * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance to use to create the launch configuration. The new
      * launch configuration derives attributes from the instance, except for the block
-     * device mapping.</p> <p>If you do not specify <code>InstanceId</code>, you must
-     * specify both <code>ImageId</code> and <code>InstanceType</code>.</p> <p>To
-     * create a launch configuration with a block device mapping or override any other
-     * instance attributes, specify them as part of the same request.</p> <p>For more
-     * information, see <a
+     * device mapping.</p> <p>To create a launch configuration with a block device
+     * mapping or override any other instance attributes, specify them as part of the
+     * same request.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p>
+     * Scaling User Guide</i>.</p> <p>If you do not specify <code>InstanceId</code>,
+     * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
      * <p>The ID of the instance to use to create the launch configuration. The new
      * launch configuration derives attributes from the instance, except for the block
-     * device mapping.</p> <p>If you do not specify <code>InstanceId</code>, you must
-     * specify both <code>ImageId</code> and <code>InstanceType</code>.</p> <p>To
-     * create a launch configuration with a block device mapping or override any other
-     * instance attributes, specify them as part of the same request.</p> <p>For more
-     * information, see <a
+     * device mapping.</p> <p>To create a launch configuration with a block device
+     * mapping or override any other instance attributes, specify them as part of the
+     * same request.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p>
+     * Scaling User Guide</i>.</p> <p>If you do not specify <code>InstanceId</code>,
+     * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the instance to use to create the launch configuration. The new
      * launch configuration derives attributes from the instance, except for the block
-     * device mapping.</p> <p>If you do not specify <code>InstanceId</code>, you must
-     * specify both <code>ImageId</code> and <code>InstanceType</code>.</p> <p>To
-     * create a launch configuration with a block device mapping or override any other
-     * instance attributes, specify them as part of the same request.</p> <p>For more
-     * information, see <a
+     * device mapping.</p> <p>To create a launch configuration with a block device
+     * mapping or override any other instance attributes, specify them as part of the
+     * same request.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p>
+     * Scaling User Guide</i>.</p> <p>If you do not specify <code>InstanceId</code>,
+     * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
      * <p>The ID of the instance to use to create the launch configuration. The new
      * launch configuration derives attributes from the instance, except for the block
-     * device mapping.</p> <p>If you do not specify <code>InstanceId</code>, you must
-     * specify both <code>ImageId</code> and <code>InstanceType</code>.</p> <p>To
-     * create a launch configuration with a block device mapping or override any other
-     * instance attributes, specify them as part of the same request.</p> <p>For more
-     * information, see <a
+     * device mapping.</p> <p>To create a launch configuration with a block device
+     * mapping or override any other instance attributes, specify them as part of the
+     * same request.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p>
+     * Scaling User Guide</i>.</p> <p>If you do not specify <code>InstanceId</code>,
+     * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
      * <p>The ID of the instance to use to create the launch configuration. The new
      * launch configuration derives attributes from the instance, except for the block
-     * device mapping.</p> <p>If you do not specify <code>InstanceId</code>, you must
-     * specify both <code>ImageId</code> and <code>InstanceType</code>.</p> <p>To
-     * create a launch configuration with a block device mapping or override any other
-     * instance attributes, specify them as part of the same request.</p> <p>For more
-     * information, see <a
+     * device mapping.</p> <p>To create a launch configuration with a block device
+     * mapping or override any other instance attributes, specify them as part of the
+     * same request.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p>
+     * Scaling User Guide</i>.</p> <p>If you do not specify <code>InstanceId</code>,
+     * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the instance to use to create the launch configuration. The new
      * launch configuration derives attributes from the instance, except for the block
-     * device mapping.</p> <p>If you do not specify <code>InstanceId</code>, you must
-     * specify both <code>ImageId</code> and <code>InstanceType</code>.</p> <p>To
-     * create a launch configuration with a block device mapping or override any other
-     * instance attributes, specify them as part of the same request.</p> <p>For more
-     * information, see <a
+     * device mapping.</p> <p>To create a launch configuration with a block device
+     * mapping or override any other instance attributes, specify them as part of the
+     * same request.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create
      * a Launch Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p>
+     * Scaling User Guide</i>.</p> <p>If you do not specify <code>InstanceId</code>,
+     * you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
 
     /**
-     * <p>The instance type of the EC2 instance.</p> <p>If you do not specify
-     * <code>InstanceId</code>, you must specify <code>InstanceType</code>.</p> <p>For
-     * information about available instance types, see <a
+     * <p>The instance type of the EC2 instance.</p> <p>For information about available
+     * instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
      * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * <p>If you do not specify <code>InstanceId</code>, you must specify
+     * <code>InstanceType</code>.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type of the EC2 instance.</p> <p>If you do not specify
-     * <code>InstanceId</code>, you must specify <code>InstanceType</code>.</p> <p>For
-     * information about available instance types, see <a
+     * <p>The instance type of the EC2 instance.</p> <p>For information about available
+     * instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
      * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * <p>If you do not specify <code>InstanceId</code>, you must specify
+     * <code>InstanceType</code>.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type of the EC2 instance.</p> <p>If you do not specify
-     * <code>InstanceId</code>, you must specify <code>InstanceType</code>.</p> <p>For
-     * information about available instance types, see <a
+     * <p>The instance type of the EC2 instance.</p> <p>For information about available
+     * instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
      * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * <p>If you do not specify <code>InstanceId</code>, you must specify
+     * <code>InstanceType</code>.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type of the EC2 instance.</p> <p>If you do not specify
-     * <code>InstanceId</code>, you must specify <code>InstanceType</code>.</p> <p>For
-     * information about available instance types, see <a
+     * <p>The instance type of the EC2 instance.</p> <p>For information about available
+     * instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
      * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * <p>If you do not specify <code>InstanceId</code>, you must specify
+     * <code>InstanceType</code>.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type of the EC2 instance.</p> <p>If you do not specify
-     * <code>InstanceId</code>, you must specify <code>InstanceType</code>.</p> <p>For
-     * information about available instance types, see <a
+     * <p>The instance type of the EC2 instance.</p> <p>For information about available
+     * instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
      * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * <p>If you do not specify <code>InstanceId</code>, you must specify
+     * <code>InstanceType</code>.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The instance type of the EC2 instance.</p> <p>If you do not specify
-     * <code>InstanceId</code>, you must specify <code>InstanceType</code>.</p> <p>For
-     * information about available instance types, see <a
+     * <p>The instance type of the EC2 instance.</p> <p>For information about available
+     * instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
      * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * <p>If you do not specify <code>InstanceId</code>, you must specify
+     * <code>InstanceType</code>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type of the EC2 instance.</p> <p>If you do not specify
-     * <code>InstanceId</code>, you must specify <code>InstanceType</code>.</p> <p>For
-     * information about available instance types, see <a
+     * <p>The instance type of the EC2 instance.</p> <p>For information about available
+     * instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
      * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * <p>If you do not specify <code>InstanceId</code>, you must specify
+     * <code>InstanceType</code>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The instance type of the EC2 instance.</p> <p>If you do not specify
-     * <code>InstanceId</code>, you must specify <code>InstanceType</code>.</p> <p>For
-     * information about available instance types, see <a
+     * <p>The instance type of the EC2 instance.</p> <p>For information about available
+     * instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
      * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i> </p>
+     * <p>If you do not specify <code>InstanceId</code>, you must specify
+     * <code>InstanceType</code>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
@@ -1098,9 +1098,9 @@ namespace Model
      * roles with Amazon EC2 Auto Scaling to automatically enable applications running
      * on your EC2 instances to securely access other AWS resources. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">Use
-     * an IAM Role for Applications That Run on Amazon EC2 Instances</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
+     * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline const Aws::String& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
 
@@ -1111,9 +1111,9 @@ namespace Model
      * roles with Amazon EC2 Auto Scaling to automatically enable applications running
      * on your EC2 instances to securely access other AWS resources. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">Use
-     * an IAM Role for Applications That Run on Amazon EC2 Instances</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
+     * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
 
@@ -1124,9 +1124,9 @@ namespace Model
      * roles with Amazon EC2 Auto Scaling to automatically enable applications running
      * on your EC2 instances to securely access other AWS resources. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">Use
-     * an IAM Role for Applications That Run on Amazon EC2 Instances</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
+     * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline void SetIamInstanceProfile(const Aws::String& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
 
@@ -1137,9 +1137,9 @@ namespace Model
      * roles with Amazon EC2 Auto Scaling to automatically enable applications running
      * on your EC2 instances to securely access other AWS resources. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">Use
-     * an IAM Role for Applications That Run on Amazon EC2 Instances</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
+     * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline void SetIamInstanceProfile(Aws::String&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
 
@@ -1150,9 +1150,9 @@ namespace Model
      * roles with Amazon EC2 Auto Scaling to automatically enable applications running
      * on your EC2 instances to securely access other AWS resources. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">Use
-     * an IAM Role for Applications That Run on Amazon EC2 Instances</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
+     * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline void SetIamInstanceProfile(const char* value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile.assign(value); }
 
@@ -1163,9 +1163,9 @@ namespace Model
      * roles with Amazon EC2 Auto Scaling to automatically enable applications running
      * on your EC2 instances to securely access other AWS resources. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">Use
-     * an IAM Role for Applications That Run on Amazon EC2 Instances</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
+     * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithIamInstanceProfile(const Aws::String& value) { SetIamInstanceProfile(value); return *this;}
 
@@ -1176,9 +1176,9 @@ namespace Model
      * roles with Amazon EC2 Auto Scaling to automatically enable applications running
      * on your EC2 instances to securely access other AWS resources. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">Use
-     * an IAM Role for Applications That Run on Amazon EC2 Instances</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
+     * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithIamInstanceProfile(Aws::String&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
 
@@ -1189,9 +1189,9 @@ namespace Model
      * roles with Amazon EC2 Auto Scaling to automatically enable applications running
      * on your EC2 instances to securely access other AWS resources. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">Use
-     * an IAM Role for Applications That Run on Amazon EC2 Instances</a> in the
-     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
+     * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithIamInstanceProfile(const char* value) { SetIamInstanceProfile(value); return *this;}
 
@@ -1308,12 +1308,11 @@ namespace Model
      * into a VPC.</p> <p>To launch Dedicated Instances into a shared tenancy VPC (a
      * VPC with the instance placement tenancy attribute set to <code>default</code>),
      * you must set the value of this parameter to <code>dedicated</code>.</p> <p>If
-     * you specify this parameter, be sure to specify at least one subnet when you
-     * create your group.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
-     * Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>Valid values: <code>default</code> | <code>dedicated</code>
-     * </p>
+     * you specify <code>PlacementTenancy</code>, be sure to specify at least one
+     * subnet when you create your group.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
+     * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
      */
     inline const Aws::String& GetPlacementTenancy() const{ return m_placementTenancy; }
 
@@ -1323,12 +1322,11 @@ namespace Model
      * into a VPC.</p> <p>To launch Dedicated Instances into a shared tenancy VPC (a
      * VPC with the instance placement tenancy attribute set to <code>default</code>),
      * you must set the value of this parameter to <code>dedicated</code>.</p> <p>If
-     * you specify this parameter, be sure to specify at least one subnet when you
-     * create your group.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
-     * Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>Valid values: <code>default</code> | <code>dedicated</code>
-     * </p>
+     * you specify <code>PlacementTenancy</code>, be sure to specify at least one
+     * subnet when you create your group.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
+     * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
      */
     inline bool PlacementTenancyHasBeenSet() const { return m_placementTenancyHasBeenSet; }
 
@@ -1338,12 +1336,11 @@ namespace Model
      * into a VPC.</p> <p>To launch Dedicated Instances into a shared tenancy VPC (a
      * VPC with the instance placement tenancy attribute set to <code>default</code>),
      * you must set the value of this parameter to <code>dedicated</code>.</p> <p>If
-     * you specify this parameter, be sure to specify at least one subnet when you
-     * create your group.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
-     * Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>Valid values: <code>default</code> | <code>dedicated</code>
-     * </p>
+     * you specify <code>PlacementTenancy</code>, be sure to specify at least one
+     * subnet when you create your group.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
+     * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
      */
     inline void SetPlacementTenancy(const Aws::String& value) { m_placementTenancyHasBeenSet = true; m_placementTenancy = value; }
 
@@ -1353,12 +1350,11 @@ namespace Model
      * into a VPC.</p> <p>To launch Dedicated Instances into a shared tenancy VPC (a
      * VPC with the instance placement tenancy attribute set to <code>default</code>),
      * you must set the value of this parameter to <code>dedicated</code>.</p> <p>If
-     * you specify this parameter, be sure to specify at least one subnet when you
-     * create your group.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
-     * Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>Valid values: <code>default</code> | <code>dedicated</code>
-     * </p>
+     * you specify <code>PlacementTenancy</code>, be sure to specify at least one
+     * subnet when you create your group.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
+     * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
      */
     inline void SetPlacementTenancy(Aws::String&& value) { m_placementTenancyHasBeenSet = true; m_placementTenancy = std::move(value); }
 
@@ -1368,12 +1364,11 @@ namespace Model
      * into a VPC.</p> <p>To launch Dedicated Instances into a shared tenancy VPC (a
      * VPC with the instance placement tenancy attribute set to <code>default</code>),
      * you must set the value of this parameter to <code>dedicated</code>.</p> <p>If
-     * you specify this parameter, be sure to specify at least one subnet when you
-     * create your group.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
-     * Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>Valid values: <code>default</code> | <code>dedicated</code>
-     * </p>
+     * you specify <code>PlacementTenancy</code>, be sure to specify at least one
+     * subnet when you create your group.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
+     * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
      */
     inline void SetPlacementTenancy(const char* value) { m_placementTenancyHasBeenSet = true; m_placementTenancy.assign(value); }
 
@@ -1383,12 +1378,11 @@ namespace Model
      * into a VPC.</p> <p>To launch Dedicated Instances into a shared tenancy VPC (a
      * VPC with the instance placement tenancy attribute set to <code>default</code>),
      * you must set the value of this parameter to <code>dedicated</code>.</p> <p>If
-     * you specify this parameter, be sure to specify at least one subnet when you
-     * create your group.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
-     * Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>Valid values: <code>default</code> | <code>dedicated</code>
-     * </p>
+     * you specify <code>PlacementTenancy</code>, be sure to specify at least one
+     * subnet when you create your group.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
+     * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
      */
     inline CreateLaunchConfigurationRequest& WithPlacementTenancy(const Aws::String& value) { SetPlacementTenancy(value); return *this;}
 
@@ -1398,12 +1392,11 @@ namespace Model
      * into a VPC.</p> <p>To launch Dedicated Instances into a shared tenancy VPC (a
      * VPC with the instance placement tenancy attribute set to <code>default</code>),
      * you must set the value of this parameter to <code>dedicated</code>.</p> <p>If
-     * you specify this parameter, be sure to specify at least one subnet when you
-     * create your group.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
-     * Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>Valid values: <code>default</code> | <code>dedicated</code>
-     * </p>
+     * you specify <code>PlacementTenancy</code>, be sure to specify at least one
+     * subnet when you create your group.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
+     * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
      */
     inline CreateLaunchConfigurationRequest& WithPlacementTenancy(Aws::String&& value) { SetPlacementTenancy(std::move(value)); return *this;}
 
@@ -1413,12 +1406,11 @@ namespace Model
      * into a VPC.</p> <p>To launch Dedicated Instances into a shared tenancy VPC (a
      * VPC with the instance placement tenancy attribute set to <code>default</code>),
      * you must set the value of this parameter to <code>dedicated</code>.</p> <p>If
-     * you specify this parameter, be sure to specify at least one subnet when you
-     * create your group.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
-     * Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>Valid values: <code>default</code> | <code>dedicated</code>
-     * </p>
+     * you specify <code>PlacementTenancy</code>, be sure to specify at least one
+     * subnet when you create your group.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
+     * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
      */
     inline CreateLaunchConfigurationRequest& WithPlacementTenancy(const char* value) { SetPlacementTenancy(value); return *this;}
 

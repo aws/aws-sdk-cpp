@@ -91,101 +91,150 @@ namespace Model
 
 
     /**
-     * <p>The name of the launch configuration. If you specify this parameter, you
-     * can't specify a launch template or a mixed instances policy.</p>
+     * <p>The name of the launch configuration. If you specify
+     * <code>LaunchConfigurationName</code> in your update request, you can't specify
+     * <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p> <note>
+     * <p>To update an Auto Scaling group with a launch configuration with
+     * <code>InstanceMonitoring</code> set to <code>false</code>, you must first
+     * disable the collection of group metrics. Otherwise, you get an error. If you
+     * have previously enabled the collection of group metrics, you can disable it
+     * using <a>DisableMetricsCollection</a>.</p> </note>
      */
     inline const Aws::String& GetLaunchConfigurationName() const{ return m_launchConfigurationName; }
 
     /**
-     * <p>The name of the launch configuration. If you specify this parameter, you
-     * can't specify a launch template or a mixed instances policy.</p>
+     * <p>The name of the launch configuration. If you specify
+     * <code>LaunchConfigurationName</code> in your update request, you can't specify
+     * <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p> <note>
+     * <p>To update an Auto Scaling group with a launch configuration with
+     * <code>InstanceMonitoring</code> set to <code>false</code>, you must first
+     * disable the collection of group metrics. Otherwise, you get an error. If you
+     * have previously enabled the collection of group metrics, you can disable it
+     * using <a>DisableMetricsCollection</a>.</p> </note>
      */
     inline bool LaunchConfigurationNameHasBeenSet() const { return m_launchConfigurationNameHasBeenSet; }
 
     /**
-     * <p>The name of the launch configuration. If you specify this parameter, you
-     * can't specify a launch template or a mixed instances policy.</p>
+     * <p>The name of the launch configuration. If you specify
+     * <code>LaunchConfigurationName</code> in your update request, you can't specify
+     * <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p> <note>
+     * <p>To update an Auto Scaling group with a launch configuration with
+     * <code>InstanceMonitoring</code> set to <code>false</code>, you must first
+     * disable the collection of group metrics. Otherwise, you get an error. If you
+     * have previously enabled the collection of group metrics, you can disable it
+     * using <a>DisableMetricsCollection</a>.</p> </note>
      */
     inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
     /**
-     * <p>The name of the launch configuration. If you specify this parameter, you
-     * can't specify a launch template or a mixed instances policy.</p>
+     * <p>The name of the launch configuration. If you specify
+     * <code>LaunchConfigurationName</code> in your update request, you can't specify
+     * <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p> <note>
+     * <p>To update an Auto Scaling group with a launch configuration with
+     * <code>InstanceMonitoring</code> set to <code>false</code>, you must first
+     * disable the collection of group metrics. Otherwise, you get an error. If you
+     * have previously enabled the collection of group metrics, you can disable it
+     * using <a>DisableMetricsCollection</a>.</p> </note>
      */
     inline void SetLaunchConfigurationName(Aws::String&& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = std::move(value); }
 
     /**
-     * <p>The name of the launch configuration. If you specify this parameter, you
-     * can't specify a launch template or a mixed instances policy.</p>
+     * <p>The name of the launch configuration. If you specify
+     * <code>LaunchConfigurationName</code> in your update request, you can't specify
+     * <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p> <note>
+     * <p>To update an Auto Scaling group with a launch configuration with
+     * <code>InstanceMonitoring</code> set to <code>false</code>, you must first
+     * disable the collection of group metrics. Otherwise, you get an error. If you
+     * have previously enabled the collection of group metrics, you can disable it
+     * using <a>DisableMetricsCollection</a>.</p> </note>
      */
     inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName.assign(value); }
 
     /**
-     * <p>The name of the launch configuration. If you specify this parameter, you
-     * can't specify a launch template or a mixed instances policy.</p>
+     * <p>The name of the launch configuration. If you specify
+     * <code>LaunchConfigurationName</code> in your update request, you can't specify
+     * <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p> <note>
+     * <p>To update an Auto Scaling group with a launch configuration with
+     * <code>InstanceMonitoring</code> set to <code>false</code>, you must first
+     * disable the collection of group metrics. Otherwise, you get an error. If you
+     * have previously enabled the collection of group metrics, you can disable it
+     * using <a>DisableMetricsCollection</a>.</p> </note>
      */
     inline UpdateAutoScalingGroupRequest& WithLaunchConfigurationName(const Aws::String& value) { SetLaunchConfigurationName(value); return *this;}
 
     /**
-     * <p>The name of the launch configuration. If you specify this parameter, you
-     * can't specify a launch template or a mixed instances policy.</p>
+     * <p>The name of the launch configuration. If you specify
+     * <code>LaunchConfigurationName</code> in your update request, you can't specify
+     * <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p> <note>
+     * <p>To update an Auto Scaling group with a launch configuration with
+     * <code>InstanceMonitoring</code> set to <code>false</code>, you must first
+     * disable the collection of group metrics. Otherwise, you get an error. If you
+     * have previously enabled the collection of group metrics, you can disable it
+     * using <a>DisableMetricsCollection</a>.</p> </note>
      */
     inline UpdateAutoScalingGroupRequest& WithLaunchConfigurationName(Aws::String&& value) { SetLaunchConfigurationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the launch configuration. If you specify this parameter, you
-     * can't specify a launch template or a mixed instances policy.</p>
+     * <p>The name of the launch configuration. If you specify
+     * <code>LaunchConfigurationName</code> in your update request, you can't specify
+     * <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p> <note>
+     * <p>To update an Auto Scaling group with a launch configuration with
+     * <code>InstanceMonitoring</code> set to <code>false</code>, you must first
+     * disable the collection of group metrics. Otherwise, you get an error. If you
+     * have previously enabled the collection of group metrics, you can disable it
+     * using <a>DisableMetricsCollection</a>.</p> </note>
      */
     inline UpdateAutoScalingGroupRequest& WithLaunchConfigurationName(const char* value) { SetLaunchConfigurationName(value); return *this;}
 
 
     /**
      * <p>The launch template and version to use to specify the updates. If you specify
-     * this parameter, you can't specify a launch configuration or a mixed instances
-     * policy.</p>
+     * <code>LaunchTemplate</code> in your update request, you can't specify
+     * <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
      */
     inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
 
     /**
      * <p>The launch template and version to use to specify the updates. If you specify
-     * this parameter, you can't specify a launch configuration or a mixed instances
-     * policy.</p>
+     * <code>LaunchTemplate</code> in your update request, you can't specify
+     * <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
      */
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
 
     /**
      * <p>The launch template and version to use to specify the updates. If you specify
-     * this parameter, you can't specify a launch configuration or a mixed instances
-     * policy.</p>
+     * <code>LaunchTemplate</code> in your update request, you can't specify
+     * <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
      */
     inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
 
     /**
      * <p>The launch template and version to use to specify the updates. If you specify
-     * this parameter, you can't specify a launch configuration or a mixed instances
-     * policy.</p>
+     * <code>LaunchTemplate</code> in your update request, you can't specify
+     * <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
      */
     inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
 
     /**
      * <p>The launch template and version to use to specify the updates. If you specify
-     * this parameter, you can't specify a launch configuration or a mixed instances
-     * policy.</p>
+     * <code>LaunchTemplate</code> in your update request, you can't specify
+     * <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
 
     /**
      * <p>The launch template and version to use to specify the updates. If you specify
-     * this parameter, you can't specify a launch configuration or a mixed instances
-     * policy.</p>
+     * <code>LaunchTemplate</code> in your update request, you can't specify
+     * <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
 
 
     /**
-     * <p>The mixed instances policy to use to specify the updates. If you specify this
-     * parameter, you can't specify a launch configuration or a launch template. </p>
-     * <p>For more information, see <a
+     * <p>An embedded object that specifies a mixed instances policy.</p> <p>In your
+     * call to <code>UpdateAutoScalingGroup</code>, you can make changes to the policy
+     * that is specified. All optional parameters are left unchanged if not
+     * specified.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -193,9 +242,10 @@ namespace Model
     inline const MixedInstancesPolicy& GetMixedInstancesPolicy() const{ return m_mixedInstancesPolicy; }
 
     /**
-     * <p>The mixed instances policy to use to specify the updates. If you specify this
-     * parameter, you can't specify a launch configuration or a launch template. </p>
-     * <p>For more information, see <a
+     * <p>An embedded object that specifies a mixed instances policy.</p> <p>In your
+     * call to <code>UpdateAutoScalingGroup</code>, you can make changes to the policy
+     * that is specified. All optional parameters are left unchanged if not
+     * specified.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -203,9 +253,10 @@ namespace Model
     inline bool MixedInstancesPolicyHasBeenSet() const { return m_mixedInstancesPolicyHasBeenSet; }
 
     /**
-     * <p>The mixed instances policy to use to specify the updates. If you specify this
-     * parameter, you can't specify a launch configuration or a launch template. </p>
-     * <p>For more information, see <a
+     * <p>An embedded object that specifies a mixed instances policy.</p> <p>In your
+     * call to <code>UpdateAutoScalingGroup</code>, you can make changes to the policy
+     * that is specified. All optional parameters are left unchanged if not
+     * specified.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -213,9 +264,10 @@ namespace Model
     inline void SetMixedInstancesPolicy(const MixedInstancesPolicy& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = value; }
 
     /**
-     * <p>The mixed instances policy to use to specify the updates. If you specify this
-     * parameter, you can't specify a launch configuration or a launch template. </p>
-     * <p>For more information, see <a
+     * <p>An embedded object that specifies a mixed instances policy.</p> <p>In your
+     * call to <code>UpdateAutoScalingGroup</code>, you can make changes to the policy
+     * that is specified. All optional parameters are left unchanged if not
+     * specified.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -223,9 +275,10 @@ namespace Model
     inline void SetMixedInstancesPolicy(MixedInstancesPolicy&& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = std::move(value); }
 
     /**
-     * <p>The mixed instances policy to use to specify the updates. If you specify this
-     * parameter, you can't specify a launch configuration or a launch template. </p>
-     * <p>For more information, see <a
+     * <p>An embedded object that specifies a mixed instances policy.</p> <p>In your
+     * call to <code>UpdateAutoScalingGroup</code>, you can make changes to the policy
+     * that is specified. All optional parameters are left unchanged if not
+     * specified.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -233,9 +286,10 @@ namespace Model
     inline UpdateAutoScalingGroupRequest& WithMixedInstancesPolicy(const MixedInstancesPolicy& value) { SetMixedInstancesPolicy(value); return *this;}
 
     /**
-     * <p>The mixed instances policy to use to specify the updates. If you specify this
-     * parameter, you can't specify a launch configuration or a launch template. </p>
-     * <p>For more information, see <a
+     * <p>An embedded object that specifies a mixed instances policy.</p> <p>In your
+     * call to <code>UpdateAutoScalingGroup</code>, you can make changes to the policy
+     * that is specified. All optional parameters are left unchanged if not
+     * specified.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -316,8 +370,10 @@ namespace Model
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. The default value is <code>300</code>.</p>
-     * <p>For more information, see <a
+     * another scaling activity can start. The default value is <code>300</code>. This
+     * cooldown period is not used when a scaling-specific cooldown is specified.</p>
+     * <p>Cooldown periods are not supported for target tracking scaling policies, step
+     * scaling policies, or scheduled scaling. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -325,8 +381,10 @@ namespace Model
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. The default value is <code>300</code>.</p>
-     * <p>For more information, see <a
+     * another scaling activity can start. The default value is <code>300</code>. This
+     * cooldown period is not used when a scaling-specific cooldown is specified.</p>
+     * <p>Cooldown periods are not supported for target tracking scaling policies, step
+     * scaling policies, or scheduled scaling. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -334,8 +392,10 @@ namespace Model
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. The default value is <code>300</code>.</p>
-     * <p>For more information, see <a
+     * another scaling activity can start. The default value is <code>300</code>. This
+     * cooldown period is not used when a scaling-specific cooldown is specified.</p>
+     * <p>Cooldown periods are not supported for target tracking scaling policies, step
+     * scaling policies, or scheduled scaling. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -343,8 +403,10 @@ namespace Model
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. The default value is <code>300</code>.</p>
-     * <p>For more information, see <a
+     * another scaling activity can start. The default value is <code>300</code>. This
+     * cooldown period is not used when a scaling-specific cooldown is specified.</p>
+     * <p>Cooldown periods are not supported for target tracking scaling policies, step
+     * scaling policies, or scheduled scaling. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -589,7 +651,7 @@ namespace Model
 
 
     /**
-     * <p>A comma-separated list of subnet IDs, if you are launching into a VPC.</p>
+     * <p>A comma-separated list of subnet IDs for virtual private cloud (VPC).</p>
      * <p>If you specify <code>VPCZoneIdentifier</code> with
      * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
      * must reside in those Availability Zones.</p>
@@ -597,7 +659,7 @@ namespace Model
     inline const Aws::String& GetVPCZoneIdentifier() const{ return m_vPCZoneIdentifier; }
 
     /**
-     * <p>A comma-separated list of subnet IDs, if you are launching into a VPC.</p>
+     * <p>A comma-separated list of subnet IDs for virtual private cloud (VPC).</p>
      * <p>If you specify <code>VPCZoneIdentifier</code> with
      * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
      * must reside in those Availability Zones.</p>
@@ -605,7 +667,7 @@ namespace Model
     inline bool VPCZoneIdentifierHasBeenSet() const { return m_vPCZoneIdentifierHasBeenSet; }
 
     /**
-     * <p>A comma-separated list of subnet IDs, if you are launching into a VPC.</p>
+     * <p>A comma-separated list of subnet IDs for virtual private cloud (VPC).</p>
      * <p>If you specify <code>VPCZoneIdentifier</code> with
      * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
      * must reside in those Availability Zones.</p>
@@ -613,7 +675,7 @@ namespace Model
     inline void SetVPCZoneIdentifier(const Aws::String& value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier = value; }
 
     /**
-     * <p>A comma-separated list of subnet IDs, if you are launching into a VPC.</p>
+     * <p>A comma-separated list of subnet IDs for virtual private cloud (VPC).</p>
      * <p>If you specify <code>VPCZoneIdentifier</code> with
      * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
      * must reside in those Availability Zones.</p>
@@ -621,7 +683,7 @@ namespace Model
     inline void SetVPCZoneIdentifier(Aws::String&& value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier = std::move(value); }
 
     /**
-     * <p>A comma-separated list of subnet IDs, if you are launching into a VPC.</p>
+     * <p>A comma-separated list of subnet IDs for virtual private cloud (VPC).</p>
      * <p>If you specify <code>VPCZoneIdentifier</code> with
      * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
      * must reside in those Availability Zones.</p>
@@ -629,7 +691,7 @@ namespace Model
     inline void SetVPCZoneIdentifier(const char* value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier.assign(value); }
 
     /**
-     * <p>A comma-separated list of subnet IDs, if you are launching into a VPC.</p>
+     * <p>A comma-separated list of subnet IDs for virtual private cloud (VPC).</p>
      * <p>If you specify <code>VPCZoneIdentifier</code> with
      * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
      * must reside in those Availability Zones.</p>
@@ -637,7 +699,7 @@ namespace Model
     inline UpdateAutoScalingGroupRequest& WithVPCZoneIdentifier(const Aws::String& value) { SetVPCZoneIdentifier(value); return *this;}
 
     /**
-     * <p>A comma-separated list of subnet IDs, if you are launching into a VPC.</p>
+     * <p>A comma-separated list of subnet IDs for virtual private cloud (VPC).</p>
      * <p>If you specify <code>VPCZoneIdentifier</code> with
      * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
      * must reside in those Availability Zones.</p>
@@ -645,7 +707,7 @@ namespace Model
     inline UpdateAutoScalingGroupRequest& WithVPCZoneIdentifier(Aws::String&& value) { SetVPCZoneIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>A comma-separated list of subnet IDs, if you are launching into a VPC.</p>
+     * <p>A comma-separated list of subnet IDs for virtual private cloud (VPC).</p>
      * <p>If you specify <code>VPCZoneIdentifier</code> with
      * <code>AvailabilityZones</code>, the subnets that you specify for this parameter
      * must reside in those Availability Zones.</p>
