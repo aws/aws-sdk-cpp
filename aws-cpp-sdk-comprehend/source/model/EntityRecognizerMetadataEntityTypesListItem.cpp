@@ -29,12 +29,18 @@ namespace Model
 {
 
 EntityRecognizerMetadataEntityTypesListItem::EntityRecognizerMetadataEntityTypesListItem() : 
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_evaluationMetricsHasBeenSet(false),
+    m_numberOfTrainMentions(0),
+    m_numberOfTrainMentionsHasBeenSet(false)
 {
 }
 
 EntityRecognizerMetadataEntityTypesListItem::EntityRecognizerMetadataEntityTypesListItem(JsonView jsonValue) : 
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_evaluationMetricsHasBeenSet(false),
+    m_numberOfTrainMentions(0),
+    m_numberOfTrainMentionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +54,20 @@ EntityRecognizerMetadataEntityTypesListItem& EntityRecognizerMetadataEntityTypes
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EvaluationMetrics"))
+  {
+    m_evaluationMetrics = jsonValue.GetObject("EvaluationMetrics");
+
+    m_evaluationMetricsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NumberOfTrainMentions"))
+  {
+    m_numberOfTrainMentions = jsonValue.GetInteger("NumberOfTrainMentions");
+
+    m_numberOfTrainMentionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +78,18 @@ JsonValue EntityRecognizerMetadataEntityTypesListItem::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("Type", m_type);
+
+  }
+
+  if(m_evaluationMetricsHasBeenSet)
+  {
+   payload.WithObject("EvaluationMetrics", m_evaluationMetrics.Jsonize());
+
+  }
+
+  if(m_numberOfTrainMentionsHasBeenSet)
+  {
+   payload.WithInteger("NumberOfTrainMentions", m_numberOfTrainMentions);
 
   }
 

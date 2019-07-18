@@ -547,17 +547,17 @@ namespace Model
          * ElastiCache has not been granted READ permissions %s on the S3 Bucket.</p> <p>
          * <b>Solution:</b> Add List and Read permissions on the bucket. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> <li> <p> <b>Error Message: </b> ElastiCache has not been
          * granted WRITE permissions %s on the S3 Bucket.</p> <p> <b>Solution:</b> Add
          * Upload/Delete permissions on the bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> <li> <p> <b>Error Message: </b> ElastiCache has not been
          * granted READ_ACP permissions %s on the S3 Bucket.</p> <p> <b>Solution:</b> Add
          * View Permissions on the bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopySnapshot">AWS
@@ -604,17 +604,17 @@ namespace Model
          * ElastiCache has not been granted READ permissions %s on the S3 Bucket.</p> <p>
          * <b>Solution:</b> Add List and Read permissions on the bucket. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> <li> <p> <b>Error Message: </b> ElastiCache has not been
          * granted WRITE permissions %s on the S3 Bucket.</p> <p> <b>Solution:</b> Add
          * Upload/Delete permissions on the bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> <li> <p> <b>Error Message: </b> ElastiCache has not been
          * granted READ_ACP permissions %s on the S3 Bucket.</p> <p> <b>Solution:</b> Add
          * View Permissions on the bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopySnapshot">AWS
@@ -663,17 +663,17 @@ namespace Model
          * ElastiCache has not been granted READ permissions %s on the S3 Bucket.</p> <p>
          * <b>Solution:</b> Add List and Read permissions on the bucket. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> <li> <p> <b>Error Message: </b> ElastiCache has not been
          * granted WRITE permissions %s on the S3 Bucket.</p> <p> <b>Solution:</b> Add
          * Upload/Delete permissions on the bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> <li> <p> <b>Error Message: </b> ElastiCache has not been
          * granted READ_ACP permissions %s on the S3 Bucket.</p> <p> <b>Solution:</b> Add
          * View Permissions on the bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access.html">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopySnapshot">AWS
@@ -855,7 +855,7 @@ namespace Model
          * collection of clusters, where one of the clusters is a read/write primary and
          * the others are read-only replicas. Writes to the primary are asynchronously
          * propagated to the replicas.</p> <p>A Redis (cluster mode enabled) replication
-         * group is a collection of 1 to 15 node groups (shards). Each node group (shard)
+         * group is a collection of 1 to 90 node groups (shards). Each node group (shard)
          * has one read/write primary node and up to 5 read-only replica nodes. Writes to
          * the primary are asynchronously propagated to the replicas. Redis (cluster mode
          * enabled) replication groups partition the data across node groups (shards).</p>
@@ -880,7 +880,7 @@ namespace Model
          * collection of clusters, where one of the clusters is a read/write primary and
          * the others are read-only replicas. Writes to the primary are asynchronously
          * propagated to the replicas.</p> <p>A Redis (cluster mode enabled) replication
-         * group is a collection of 1 to 15 node groups (shards). Each node group (shard)
+         * group is a collection of 1 to 90 node groups (shards). Each node group (shard)
          * has one read/write primary node and up to 5 read-only replica nodes. Writes to
          * the primary are asynchronously propagated to the replicas. Redis (cluster mode
          * enabled) replication groups partition the data across node groups (shards).</p>
@@ -907,7 +907,7 @@ namespace Model
          * collection of clusters, where one of the clusters is a read/write primary and
          * the others are read-only replicas. Writes to the primary are asynchronously
          * propagated to the replicas.</p> <p>A Redis (cluster mode enabled) replication
-         * group is a collection of 1 to 15 node groups (shards). Each node group (shard)
+         * group is a collection of 1 to 90 node groups (shards). Each node group (shard)
          * has one read/write primary node and up to 5 read-only replica nodes. Writes to
          * the primary are asynchronously propagated to the replicas. Redis (cluster mode
          * enabled) replication groups partition the data across node groups (shards).</p>

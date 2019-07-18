@@ -1592,19 +1592,20 @@ namespace Model
         virtual void ListTasksAsync(const Model::ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies an account setting. For more information, see <a
+         * <p>Modifies an account setting. If you change the account setting for the root
+         * user, the default settings for all of the IAM users and roles for which no
+         * individual account setting has been specified are reset. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
          * Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
          * <p>When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or
-         * <code>containerInstanceLongArnFormat</code> are specified, the ARN and resource
-         * ID format of the resource type for a specified IAM user, IAM role, or the root
-         * user for an account is changed. If you change the account setting for the root
-         * user, the default settings for all of the IAM users and roles for which no
-         * individual account setting has been specified are reset. The opt-in and opt-out
-         * account setting can be specified for each Amazon ECS resource separately. The
-         * ARN and resource ID format of a resource will be defined by the opt-in status of
-         * the IAM user or role that created the resource. You must enable this setting to
-         * use Amazon ECS features such as resource tagging.</p> <p>When
+         * <code>containerInstanceLongArnFormat</code> are specified, the Amazon Resource
+         * Name (ARN) and resource ID format of the resource type for a specified IAM user,
+         * IAM role, or the root user for an account is affected. The opt-in and opt-out
+         * account setting must be set for each Amazon ECS resource separately. The ARN and
+         * resource ID format of a resource will be defined by the opt-in status of the IAM
+         * user or role that created the resource. You must enable this setting to use
+         * Amazon ECS features such as resource tagging.</p> <p>When
          * <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI)
          * limit for any new container instances that support the feature is changed. If
          * <code>awsvpcTrunking</code> is enabled, any new container instances that support
@@ -1612,26 +1613,34 @@ namespace Model
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic
          * Network Interface Trunking</a> in the <i>Amazon Elastic Container Service
-         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Developer Guide</i>.</p> <p>When <code>containerInsights</code> is specified,
+         * the default setting indicating whether CloudWatch Container Insights is enabled
+         * for your clusters is changed. If <code>containerInsights</code> is enabled, any
+         * new clusters that are created will have Container Insights enabled unless you
+         * disable it during cluster creation. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
+         * Container Insights</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">AWS
          * API Reference</a></p>
          */
         virtual Model::PutAccountSettingOutcome PutAccountSetting(const Model::PutAccountSettingRequest& request) const;
 
         /**
-         * <p>Modifies an account setting. For more information, see <a
+         * <p>Modifies an account setting. If you change the account setting for the root
+         * user, the default settings for all of the IAM users and roles for which no
+         * individual account setting has been specified are reset. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
          * Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
          * <p>When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or
-         * <code>containerInstanceLongArnFormat</code> are specified, the ARN and resource
-         * ID format of the resource type for a specified IAM user, IAM role, or the root
-         * user for an account is changed. If you change the account setting for the root
-         * user, the default settings for all of the IAM users and roles for which no
-         * individual account setting has been specified are reset. The opt-in and opt-out
-         * account setting can be specified for each Amazon ECS resource separately. The
-         * ARN and resource ID format of a resource will be defined by the opt-in status of
-         * the IAM user or role that created the resource. You must enable this setting to
-         * use Amazon ECS features such as resource tagging.</p> <p>When
+         * <code>containerInstanceLongArnFormat</code> are specified, the Amazon Resource
+         * Name (ARN) and resource ID format of the resource type for a specified IAM user,
+         * IAM role, or the root user for an account is affected. The opt-in and opt-out
+         * account setting must be set for each Amazon ECS resource separately. The ARN and
+         * resource ID format of a resource will be defined by the opt-in status of the IAM
+         * user or role that created the resource. You must enable this setting to use
+         * Amazon ECS features such as resource tagging.</p> <p>When
          * <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI)
          * limit for any new container instances that support the feature is changed. If
          * <code>awsvpcTrunking</code> is enabled, any new container instances that support
@@ -1639,7 +1648,14 @@ namespace Model
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic
          * Network Interface Trunking</a> in the <i>Amazon Elastic Container Service
-         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Developer Guide</i>.</p> <p>When <code>containerInsights</code> is specified,
+         * the default setting indicating whether CloudWatch Container Insights is enabled
+         * for your clusters is changed. If <code>containerInsights</code> is enabled, any
+         * new clusters that are created will have Container Insights enabled unless you
+         * disable it during cluster creation. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
+         * Container Insights</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">AWS
          * API Reference</a></p>
          *
@@ -1648,19 +1664,20 @@ namespace Model
         virtual Model::PutAccountSettingOutcomeCallable PutAccountSettingCallable(const Model::PutAccountSettingRequest& request) const;
 
         /**
-         * <p>Modifies an account setting. For more information, see <a
+         * <p>Modifies an account setting. If you change the account setting for the root
+         * user, the default settings for all of the IAM users and roles for which no
+         * individual account setting has been specified are reset. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
          * Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
          * <p>When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or
-         * <code>containerInstanceLongArnFormat</code> are specified, the ARN and resource
-         * ID format of the resource type for a specified IAM user, IAM role, or the root
-         * user for an account is changed. If you change the account setting for the root
-         * user, the default settings for all of the IAM users and roles for which no
-         * individual account setting has been specified are reset. The opt-in and opt-out
-         * account setting can be specified for each Amazon ECS resource separately. The
-         * ARN and resource ID format of a resource will be defined by the opt-in status of
-         * the IAM user or role that created the resource. You must enable this setting to
-         * use Amazon ECS features such as resource tagging.</p> <p>When
+         * <code>containerInstanceLongArnFormat</code> are specified, the Amazon Resource
+         * Name (ARN) and resource ID format of the resource type for a specified IAM user,
+         * IAM role, or the root user for an account is affected. The opt-in and opt-out
+         * account setting must be set for each Amazon ECS resource separately. The ARN and
+         * resource ID format of a resource will be defined by the opt-in status of the IAM
+         * user or role that created the resource. You must enable this setting to use
+         * Amazon ECS features such as resource tagging.</p> <p>When
          * <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI)
          * limit for any new container instances that support the feature is changed. If
          * <code>awsvpcTrunking</code> is enabled, any new container instances that support
@@ -1668,7 +1685,14 @@ namespace Model
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic
          * Network Interface Trunking</a> in the <i>Amazon Elastic Container Service
-         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Developer Guide</i>.</p> <p>When <code>containerInsights</code> is specified,
+         * the default setting indicating whether CloudWatch Container Insights is enabled
+         * for your clusters is changed. If <code>containerInsights</code> is enabled, any
+         * new clusters that are created will have Container Insights enabled unless you
+         * disable it during cluster creation. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
+         * Container Insights</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">AWS
          * API Reference</a></p>
          *

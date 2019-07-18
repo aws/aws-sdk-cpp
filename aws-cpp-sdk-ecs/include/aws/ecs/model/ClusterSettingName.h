@@ -23,22 +23,18 @@ namespace ECS
 {
 namespace Model
 {
-  enum class SettingName
+  enum class ClusterSettingName
   {
     NOT_SET,
-    serviceLongArnFormat,
-    taskLongArnFormat,
-    containerInstanceLongArnFormat,
-    awsvpcTrunking,
     containerInsights
   };
 
-namespace SettingNameMapper
+namespace ClusterSettingNameMapper
 {
-AWS_ECS_API SettingName GetSettingNameForName(const Aws::String& name);
+AWS_ECS_API ClusterSettingName GetClusterSettingNameForName(const Aws::String& name);
 
-AWS_ECS_API Aws::String GetNameForSettingName(SettingName value);
-} // namespace SettingNameMapper
+AWS_ECS_API Aws::String GetNameForClusterSettingName(ClusterSettingName value);
+} // namespace ClusterSettingNameMapper
 } // namespace Model
 } // namespace ECS
 } // namespace Aws

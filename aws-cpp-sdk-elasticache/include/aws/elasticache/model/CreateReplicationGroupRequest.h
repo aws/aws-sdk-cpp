@@ -2197,8 +2197,8 @@ namespace Model
      * Amazon VPC.</p> <p>If you enable in-transit encryption, you must also specify a
      * value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only available
      * when creating a replication group in an Amazon VPC using redis version
-     * <code>3.2.6</code> or <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
-     * <important> <p>For HIPAA compliance, you must specify
+     * <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default:
+     * <code>false</code> </p> <important> <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
      * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
      */
@@ -2215,8 +2215,8 @@ namespace Model
      * Amazon VPC.</p> <p>If you enable in-transit encryption, you must also specify a
      * value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only available
      * when creating a replication group in an Amazon VPC using redis version
-     * <code>3.2.6</code> or <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
-     * <important> <p>For HIPAA compliance, you must specify
+     * <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default:
+     * <code>false</code> </p> <important> <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
      * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
      */
@@ -2233,8 +2233,8 @@ namespace Model
      * Amazon VPC.</p> <p>If you enable in-transit encryption, you must also specify a
      * value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only available
      * when creating a replication group in an Amazon VPC using redis version
-     * <code>3.2.6</code> or <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
-     * <important> <p>For HIPAA compliance, you must specify
+     * <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default:
+     * <code>false</code> </p> <important> <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
      * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
      */
@@ -2251,8 +2251,8 @@ namespace Model
      * Amazon VPC.</p> <p>If you enable in-transit encryption, you must also specify a
      * value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only available
      * when creating a replication group in an Amazon VPC using redis version
-     * <code>3.2.6</code> or <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
-     * <important> <p>For HIPAA compliance, you must specify
+     * <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default:
+     * <code>false</code> </p> <important> <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
      * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
      */
@@ -2266,7 +2266,8 @@ namespace Model
      * group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code>
      * when you create the replication group. </p> <p> <b>Required:</b> Only available
      * when creating a replication group in an Amazon VPC using redis version
-     * <code>3.2.6</code> or <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
+     * <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline bool GetAtRestEncryptionEnabled() const{ return m_atRestEncryptionEnabled; }
 
@@ -2277,7 +2278,8 @@ namespace Model
      * group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code>
      * when you create the replication group. </p> <p> <b>Required:</b> Only available
      * when creating a replication group in an Amazon VPC using redis version
-     * <code>3.2.6</code> or <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
+     * <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline bool AtRestEncryptionEnabledHasBeenSet() const { return m_atRestEncryptionEnabledHasBeenSet; }
 
@@ -2288,7 +2290,8 @@ namespace Model
      * group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code>
      * when you create the replication group. </p> <p> <b>Required:</b> Only available
      * when creating a replication group in an Amazon VPC using redis version
-     * <code>3.2.6</code> or <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
+     * <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline void SetAtRestEncryptionEnabled(bool value) { m_atRestEncryptionEnabledHasBeenSet = true; m_atRestEncryptionEnabled = value; }
 
@@ -2299,7 +2302,8 @@ namespace Model
      * group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code>
      * when you create the replication group. </p> <p> <b>Required:</b> Only available
      * when creating a replication group in an Amazon VPC using redis version
-     * <code>3.2.6</code> or <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
+     * <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline CreateReplicationGroupRequest& WithAtRestEncryptionEnabled(bool value) { SetAtRestEncryptionEnabled(value); return *this;}
 

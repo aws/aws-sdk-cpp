@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/comprehend/model/EntityTypesEvaluationMetrics.h>
 #include <utility>
 
 namespace Aws
@@ -96,10 +97,78 @@ namespace Model
      */
     inline EntityRecognizerMetadataEntityTypesListItem& WithType(const char* value) { SetType(value); return *this;}
 
+
+    /**
+     * <p>Detailed information about the accuracy of the entity recognizer for a
+     * specific item on the list of entity types. </p>
+     */
+    inline const EntityTypesEvaluationMetrics& GetEvaluationMetrics() const{ return m_evaluationMetrics; }
+
+    /**
+     * <p>Detailed information about the accuracy of the entity recognizer for a
+     * specific item on the list of entity types. </p>
+     */
+    inline bool EvaluationMetricsHasBeenSet() const { return m_evaluationMetricsHasBeenSet; }
+
+    /**
+     * <p>Detailed information about the accuracy of the entity recognizer for a
+     * specific item on the list of entity types. </p>
+     */
+    inline void SetEvaluationMetrics(const EntityTypesEvaluationMetrics& value) { m_evaluationMetricsHasBeenSet = true; m_evaluationMetrics = value; }
+
+    /**
+     * <p>Detailed information about the accuracy of the entity recognizer for a
+     * specific item on the list of entity types. </p>
+     */
+    inline void SetEvaluationMetrics(EntityTypesEvaluationMetrics&& value) { m_evaluationMetricsHasBeenSet = true; m_evaluationMetrics = std::move(value); }
+
+    /**
+     * <p>Detailed information about the accuracy of the entity recognizer for a
+     * specific item on the list of entity types. </p>
+     */
+    inline EntityRecognizerMetadataEntityTypesListItem& WithEvaluationMetrics(const EntityTypesEvaluationMetrics& value) { SetEvaluationMetrics(value); return *this;}
+
+    /**
+     * <p>Detailed information about the accuracy of the entity recognizer for a
+     * specific item on the list of entity types. </p>
+     */
+    inline EntityRecognizerMetadataEntityTypesListItem& WithEvaluationMetrics(EntityTypesEvaluationMetrics&& value) { SetEvaluationMetrics(std::move(value)); return *this;}
+
+
+    /**
+     * <p>indicates the number of times the given entity name was seen in the training
+     * data. </p>
+     */
+    inline int GetNumberOfTrainMentions() const{ return m_numberOfTrainMentions; }
+
+    /**
+     * <p>indicates the number of times the given entity name was seen in the training
+     * data. </p>
+     */
+    inline bool NumberOfTrainMentionsHasBeenSet() const { return m_numberOfTrainMentionsHasBeenSet; }
+
+    /**
+     * <p>indicates the number of times the given entity name was seen in the training
+     * data. </p>
+     */
+    inline void SetNumberOfTrainMentions(int value) { m_numberOfTrainMentionsHasBeenSet = true; m_numberOfTrainMentions = value; }
+
+    /**
+     * <p>indicates the number of times the given entity name was seen in the training
+     * data. </p>
+     */
+    inline EntityRecognizerMetadataEntityTypesListItem& WithNumberOfTrainMentions(int value) { SetNumberOfTrainMentions(value); return *this;}
+
   private:
 
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
+    EntityTypesEvaluationMetrics m_evaluationMetrics;
+    bool m_evaluationMetricsHasBeenSet;
+
+    int m_numberOfTrainMentions;
+    bool m_numberOfTrainMentionsHasBeenSet;
   };
 
 } // namespace Model

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/Tag.h>
+#include <aws/ecs/model/ClusterSetting.h>
 #include <utility>
 
 namespace Aws
@@ -167,6 +168,71 @@ namespace Model
      */
     inline CreateClusterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The setting to use when creating a cluster. This parameter is used to enable
+     * CloudWatch Container Insights for a cluster. If this value is specified, it will
+     * override the <code>containerInsights</code> value set with
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
+     */
+    inline const Aws::Vector<ClusterSetting>& GetSettings() const{ return m_settings; }
+
+    /**
+     * <p>The setting to use when creating a cluster. This parameter is used to enable
+     * CloudWatch Container Insights for a cluster. If this value is specified, it will
+     * override the <code>containerInsights</code> value set with
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
+     */
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+
+    /**
+     * <p>The setting to use when creating a cluster. This parameter is used to enable
+     * CloudWatch Container Insights for a cluster. If this value is specified, it will
+     * override the <code>containerInsights</code> value set with
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
+     */
+    inline void SetSettings(const Aws::Vector<ClusterSetting>& value) { m_settingsHasBeenSet = true; m_settings = value; }
+
+    /**
+     * <p>The setting to use when creating a cluster. This parameter is used to enable
+     * CloudWatch Container Insights for a cluster. If this value is specified, it will
+     * override the <code>containerInsights</code> value set with
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
+     */
+    inline void SetSettings(Aws::Vector<ClusterSetting>&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
+
+    /**
+     * <p>The setting to use when creating a cluster. This parameter is used to enable
+     * CloudWatch Container Insights for a cluster. If this value is specified, it will
+     * override the <code>containerInsights</code> value set with
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
+     */
+    inline CreateClusterRequest& WithSettings(const Aws::Vector<ClusterSetting>& value) { SetSettings(value); return *this;}
+
+    /**
+     * <p>The setting to use when creating a cluster. This parameter is used to enable
+     * CloudWatch Container Insights for a cluster. If this value is specified, it will
+     * override the <code>containerInsights</code> value set with
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
+     */
+    inline CreateClusterRequest& WithSettings(Aws::Vector<ClusterSetting>&& value) { SetSettings(std::move(value)); return *this;}
+
+    /**
+     * <p>The setting to use when creating a cluster. This parameter is used to enable
+     * CloudWatch Container Insights for a cluster. If this value is specified, it will
+     * override the <code>containerInsights</code> value set with
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
+     */
+    inline CreateClusterRequest& AddSettings(const ClusterSetting& value) { m_settingsHasBeenSet = true; m_settings.push_back(value); return *this; }
+
+    /**
+     * <p>The setting to use when creating a cluster. This parameter is used to enable
+     * CloudWatch Container Insights for a cluster. If this value is specified, it will
+     * override the <code>containerInsights</code> value set with
+     * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
+     */
+    inline CreateClusterRequest& AddSettings(ClusterSetting&& value) { m_settingsHasBeenSet = true; m_settings.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_clusterName;
@@ -174,6 +240,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Vector<ClusterSetting> m_settings;
+    bool m_settingsHasBeenSet;
   };
 
 } // namespace Model

@@ -35,8 +35,9 @@ namespace Model
 
   /**
    * <p>Information about whether instances in the original environment are
-   * terminated when a blue/green deployment is successful.</p><p><h3>See Also:</h3> 
-   * <a
+   * terminated when a blue/green deployment is successful.
+   * <code>BlueInstanceTerminationOption</code> does not apply to Lambda deployments.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BlueInstanceTerminationOption">AWS
    * API Reference</a></p>
    */
@@ -105,30 +106,42 @@ namespace Model
 
 
     /**
-     * <p>The number of minutes to wait after a successful blue/green deployment before
-     * terminating instances from the original environment. The maximum setting is 2880
-     * minutes (2 days).</p>
+     * <p>For an Amazon EC2 deployment, the number of minutes to wait after a
+     * successful blue/green deployment before terminating instances from the original
+     * environment.</p> <p> For an Amazon ECS deployment, the number of minutes before
+     * deleting the original (blue) task set. During an Amazon ECS deployment,
+     * CodeDeploy shifts traffic from the original (blue) task set to a replacement
+     * (green) task set. </p> <p> The maximum setting is 2880 minutes (2 days). </p>
      */
     inline int GetTerminationWaitTimeInMinutes() const{ return m_terminationWaitTimeInMinutes; }
 
     /**
-     * <p>The number of minutes to wait after a successful blue/green deployment before
-     * terminating instances from the original environment. The maximum setting is 2880
-     * minutes (2 days).</p>
+     * <p>For an Amazon EC2 deployment, the number of minutes to wait after a
+     * successful blue/green deployment before terminating instances from the original
+     * environment.</p> <p> For an Amazon ECS deployment, the number of minutes before
+     * deleting the original (blue) task set. During an Amazon ECS deployment,
+     * CodeDeploy shifts traffic from the original (blue) task set to a replacement
+     * (green) task set. </p> <p> The maximum setting is 2880 minutes (2 days). </p>
      */
     inline bool TerminationWaitTimeInMinutesHasBeenSet() const { return m_terminationWaitTimeInMinutesHasBeenSet; }
 
     /**
-     * <p>The number of minutes to wait after a successful blue/green deployment before
-     * terminating instances from the original environment. The maximum setting is 2880
-     * minutes (2 days).</p>
+     * <p>For an Amazon EC2 deployment, the number of minutes to wait after a
+     * successful blue/green deployment before terminating instances from the original
+     * environment.</p> <p> For an Amazon ECS deployment, the number of minutes before
+     * deleting the original (blue) task set. During an Amazon ECS deployment,
+     * CodeDeploy shifts traffic from the original (blue) task set to a replacement
+     * (green) task set. </p> <p> The maximum setting is 2880 minutes (2 days). </p>
      */
     inline void SetTerminationWaitTimeInMinutes(int value) { m_terminationWaitTimeInMinutesHasBeenSet = true; m_terminationWaitTimeInMinutes = value; }
 
     /**
-     * <p>The number of minutes to wait after a successful blue/green deployment before
-     * terminating instances from the original environment. The maximum setting is 2880
-     * minutes (2 days).</p>
+     * <p>For an Amazon EC2 deployment, the number of minutes to wait after a
+     * successful blue/green deployment before terminating instances from the original
+     * environment.</p> <p> For an Amazon ECS deployment, the number of minutes before
+     * deleting the original (blue) task set. During an Amazon ECS deployment,
+     * CodeDeploy shifts traffic from the original (blue) task set to a replacement
+     * (green) task set. </p> <p> The maximum setting is 2880 minutes (2 days). </p>
      */
     inline BlueInstanceTerminationOption& WithTerminationWaitTimeInMinutes(int value) { SetTerminationWaitTimeInMinutes(value); return *this;}
 

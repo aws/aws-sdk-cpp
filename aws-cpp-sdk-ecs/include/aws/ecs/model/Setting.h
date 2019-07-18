@@ -49,97 +49,81 @@ namespace Model
 
 
     /**
-     * <p>The account resource name.</p>
+     * <p>The Amazon ECS resource name.</p>
      */
     inline const SettingName& GetName() const{ return m_name; }
 
     /**
-     * <p>The account resource name.</p>
+     * <p>The Amazon ECS resource name.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The account resource name.</p>
+     * <p>The Amazon ECS resource name.</p>
      */
     inline void SetName(const SettingName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The account resource name.</p>
+     * <p>The Amazon ECS resource name.</p>
      */
     inline void SetName(SettingName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The account resource name.</p>
+     * <p>The Amazon ECS resource name.</p>
      */
     inline Setting& WithName(const SettingName& value) { SetName(value); return *this;}
 
     /**
-     * <p>The account resource name.</p>
+     * <p>The Amazon ECS resource name.</p>
      */
     inline Setting& WithName(SettingName&& value) { SetName(std::move(value)); return *this;}
 
 
     /**
-     * <p>The current account setting for the resource name. If <code>enabled</code>,
-     * the resource receives the new Amazon Resource Name (ARN) and resource identifier
-     * (ID) format. If <code>disabled</code>, the resource receives the old Amazon
-     * Resource Name (ARN) and resource identifier (ID) format.</p>
+     * <p>Whether the account setting is enabled or disabled for the specified
+     * resource.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The current account setting for the resource name. If <code>enabled</code>,
-     * the resource receives the new Amazon Resource Name (ARN) and resource identifier
-     * (ID) format. If <code>disabled</code>, the resource receives the old Amazon
-     * Resource Name (ARN) and resource identifier (ID) format.</p>
+     * <p>Whether the account setting is enabled or disabled for the specified
+     * resource.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The current account setting for the resource name. If <code>enabled</code>,
-     * the resource receives the new Amazon Resource Name (ARN) and resource identifier
-     * (ID) format. If <code>disabled</code>, the resource receives the old Amazon
-     * Resource Name (ARN) and resource identifier (ID) format.</p>
+     * <p>Whether the account setting is enabled or disabled for the specified
+     * resource.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The current account setting for the resource name. If <code>enabled</code>,
-     * the resource receives the new Amazon Resource Name (ARN) and resource identifier
-     * (ID) format. If <code>disabled</code>, the resource receives the old Amazon
-     * Resource Name (ARN) and resource identifier (ID) format.</p>
+     * <p>Whether the account setting is enabled or disabled for the specified
+     * resource.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The current account setting for the resource name. If <code>enabled</code>,
-     * the resource receives the new Amazon Resource Name (ARN) and resource identifier
-     * (ID) format. If <code>disabled</code>, the resource receives the old Amazon
-     * Resource Name (ARN) and resource identifier (ID) format.</p>
+     * <p>Whether the account setting is enabled or disabled for the specified
+     * resource.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The current account setting for the resource name. If <code>enabled</code>,
-     * the resource receives the new Amazon Resource Name (ARN) and resource identifier
-     * (ID) format. If <code>disabled</code>, the resource receives the old Amazon
-     * Resource Name (ARN) and resource identifier (ID) format.</p>
+     * <p>Whether the account setting is enabled or disabled for the specified
+     * resource.</p>
      */
     inline Setting& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The current account setting for the resource name. If <code>enabled</code>,
-     * the resource receives the new Amazon Resource Name (ARN) and resource identifier
-     * (ID) format. If <code>disabled</code>, the resource receives the old Amazon
-     * Resource Name (ARN) and resource identifier (ID) format.</p>
+     * <p>Whether the account setting is enabled or disabled for the specified
+     * resource.</p>
      */
     inline Setting& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The current account setting for the resource name. If <code>enabled</code>,
-     * the resource receives the new Amazon Resource Name (ARN) and resource identifier
-     * (ID) format. If <code>disabled</code>, the resource receives the old Amazon
-     * Resource Name (ARN) and resource identifier (ID) format.</p>
+     * <p>Whether the account setting is enabled or disabled for the specified
+     * resource.</p>
      */
     inline Setting& WithValue(const char* value) { SetValue(value); return *this;}
 

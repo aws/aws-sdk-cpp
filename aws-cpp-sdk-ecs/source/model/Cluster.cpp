@@ -41,7 +41,8 @@ Cluster::Cluster() :
     m_activeServicesCount(0),
     m_activeServicesCountHasBeenSet(false),
     m_statisticsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_settingsHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ Cluster::Cluster(JsonView jsonValue) :
     m_activeServicesCount(0),
     m_activeServicesCountHasBeenSet(false),
     m_statisticsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_settingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -134,6 +136,16 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("settings"))
+  {
+    Array<JsonView> settingsJsonList = jsonValue.GetArray("settings");
+    for(unsigned settingsIndex = 0; settingsIndex < settingsJsonList.GetLength(); ++settingsIndex)
+    {
+      m_settings.push_back(settingsJsonList[settingsIndex].AsObject());
+    }
+    m_settingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -202,6 +214,17 @@ JsonValue Cluster::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_settingsHasBeenSet)
+  {
+   Array<JsonValue> settingsJsonList(m_settings.size());
+   for(unsigned settingsIndex = 0; settingsIndex < settingsJsonList.GetLength(); ++settingsIndex)
+   {
+     settingsJsonList[settingsIndex].AsObject(m_settings[settingsIndex].Jsonize());
+   }
+   payload.WithArray("settings", std::move(settingsJsonList));
 
   }
 

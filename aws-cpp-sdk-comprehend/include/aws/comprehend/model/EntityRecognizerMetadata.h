@@ -101,32 +101,32 @@ namespace Model
 
 
     /**
-     * <p> Detailed information about the accuracy of an entity recognizer.</p>
+     * <p>Detailed information about the accuracy of an entity recognizer.</p>
      */
     inline const EntityRecognizerEvaluationMetrics& GetEvaluationMetrics() const{ return m_evaluationMetrics; }
 
     /**
-     * <p> Detailed information about the accuracy of an entity recognizer.</p>
+     * <p>Detailed information about the accuracy of an entity recognizer.</p>
      */
     inline bool EvaluationMetricsHasBeenSet() const { return m_evaluationMetricsHasBeenSet; }
 
     /**
-     * <p> Detailed information about the accuracy of an entity recognizer.</p>
+     * <p>Detailed information about the accuracy of an entity recognizer.</p>
      */
     inline void SetEvaluationMetrics(const EntityRecognizerEvaluationMetrics& value) { m_evaluationMetricsHasBeenSet = true; m_evaluationMetrics = value; }
 
     /**
-     * <p> Detailed information about the accuracy of an entity recognizer.</p>
+     * <p>Detailed information about the accuracy of an entity recognizer.</p>
      */
     inline void SetEvaluationMetrics(EntityRecognizerEvaluationMetrics&& value) { m_evaluationMetricsHasBeenSet = true; m_evaluationMetrics = std::move(value); }
 
     /**
-     * <p> Detailed information about the accuracy of an entity recognizer.</p>
+     * <p>Detailed information about the accuracy of an entity recognizer.</p>
      */
     inline EntityRecognizerMetadata& WithEvaluationMetrics(const EntityRecognizerEvaluationMetrics& value) { SetEvaluationMetrics(value); return *this;}
 
     /**
-     * <p> Detailed information about the accuracy of an entity recognizer.</p>
+     * <p>Detailed information about the accuracy of an entity recognizer.</p>
      */
     inline EntityRecognizerMetadata& WithEvaluationMetrics(EntityRecognizerEvaluationMetrics&& value) { SetEvaluationMetrics(std::move(value)); return *this;}
 

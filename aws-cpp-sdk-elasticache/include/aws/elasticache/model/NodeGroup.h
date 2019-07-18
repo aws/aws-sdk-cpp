@@ -57,8 +57,8 @@ namespace Model
     /**
      * <p>The identifier for the node group (shard). A Redis (cluster mode disabled)
      * replication group contains only 1 node group; therefore, the node group ID is
-     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 15 node
-     * groups numbered 0001 to 0015. Optionally, the user can provide the id for a node
+     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 90 node
+     * groups numbered 0001 to 0090. Optionally, the user can provide the id for a node
      * group. </p>
      */
     inline const Aws::String& GetNodeGroupId() const{ return m_nodeGroupId; }
@@ -66,8 +66,8 @@ namespace Model
     /**
      * <p>The identifier for the node group (shard). A Redis (cluster mode disabled)
      * replication group contains only 1 node group; therefore, the node group ID is
-     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 15 node
-     * groups numbered 0001 to 0015. Optionally, the user can provide the id for a node
+     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 90 node
+     * groups numbered 0001 to 0090. Optionally, the user can provide the id for a node
      * group. </p>
      */
     inline bool NodeGroupIdHasBeenSet() const { return m_nodeGroupIdHasBeenSet; }
@@ -75,8 +75,8 @@ namespace Model
     /**
      * <p>The identifier for the node group (shard). A Redis (cluster mode disabled)
      * replication group contains only 1 node group; therefore, the node group ID is
-     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 15 node
-     * groups numbered 0001 to 0015. Optionally, the user can provide the id for a node
+     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 90 node
+     * groups numbered 0001 to 0090. Optionally, the user can provide the id for a node
      * group. </p>
      */
     inline void SetNodeGroupId(const Aws::String& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
@@ -84,8 +84,8 @@ namespace Model
     /**
      * <p>The identifier for the node group (shard). A Redis (cluster mode disabled)
      * replication group contains only 1 node group; therefore, the node group ID is
-     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 15 node
-     * groups numbered 0001 to 0015. Optionally, the user can provide the id for a node
+     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 90 node
+     * groups numbered 0001 to 0090. Optionally, the user can provide the id for a node
      * group. </p>
      */
     inline void SetNodeGroupId(Aws::String&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = std::move(value); }
@@ -93,8 +93,8 @@ namespace Model
     /**
      * <p>The identifier for the node group (shard). A Redis (cluster mode disabled)
      * replication group contains only 1 node group; therefore, the node group ID is
-     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 15 node
-     * groups numbered 0001 to 0015. Optionally, the user can provide the id for a node
+     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 90 node
+     * groups numbered 0001 to 0090. Optionally, the user can provide the id for a node
      * group. </p>
      */
     inline void SetNodeGroupId(const char* value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId.assign(value); }
@@ -102,8 +102,8 @@ namespace Model
     /**
      * <p>The identifier for the node group (shard). A Redis (cluster mode disabled)
      * replication group contains only 1 node group; therefore, the node group ID is
-     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 15 node
-     * groups numbered 0001 to 0015. Optionally, the user can provide the id for a node
+     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 90 node
+     * groups numbered 0001 to 0090. Optionally, the user can provide the id for a node
      * group. </p>
      */
     inline NodeGroup& WithNodeGroupId(const Aws::String& value) { SetNodeGroupId(value); return *this;}
@@ -111,8 +111,8 @@ namespace Model
     /**
      * <p>The identifier for the node group (shard). A Redis (cluster mode disabled)
      * replication group contains only 1 node group; therefore, the node group ID is
-     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 15 node
-     * groups numbered 0001 to 0015. Optionally, the user can provide the id for a node
+     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 90 node
+     * groups numbered 0001 to 0090. Optionally, the user can provide the id for a node
      * group. </p>
      */
     inline NodeGroup& WithNodeGroupId(Aws::String&& value) { SetNodeGroupId(std::move(value)); return *this;}
@@ -120,8 +120,8 @@ namespace Model
     /**
      * <p>The identifier for the node group (shard). A Redis (cluster mode disabled)
      * replication group contains only 1 node group; therefore, the node group ID is
-     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 15 node
-     * groups numbered 0001 to 0015. Optionally, the user can provide the id for a node
+     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 90 node
+     * groups numbered 0001 to 0090. Optionally, the user can provide the id for a node
      * group. </p>
      */
     inline NodeGroup& WithNodeGroupId(const char* value) { SetNodeGroupId(value); return *this;}

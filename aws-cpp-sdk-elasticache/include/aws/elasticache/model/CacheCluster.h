@@ -1406,8 +1406,8 @@ namespace Model
      * the cluster is created. To enable in-transit encryption on a cluster you must
      * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
      * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
-     * group in an Amazon VPC using redis version <code>3.2.6</code> or
-     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
+     * group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code>
+     * or later.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetTransitEncryptionEnabled() const{ return m_transitEncryptionEnabled; }
 
@@ -1417,8 +1417,8 @@ namespace Model
      * the cluster is created. To enable in-transit encryption on a cluster you must
      * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
      * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
-     * group in an Amazon VPC using redis version <code>3.2.6</code> or
-     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
+     * group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code>
+     * or later.</p> <p>Default: <code>false</code> </p>
      */
     inline bool TransitEncryptionEnabledHasBeenSet() const { return m_transitEncryptionEnabledHasBeenSet; }
 
@@ -1428,8 +1428,8 @@ namespace Model
      * the cluster is created. To enable in-transit encryption on a cluster you must
      * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
      * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
-     * group in an Amazon VPC using redis version <code>3.2.6</code> or
-     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
+     * group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code>
+     * or later.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetTransitEncryptionEnabled(bool value) { m_transitEncryptionEnabledHasBeenSet = true; m_transitEncryptionEnabled = value; }
 
@@ -1439,8 +1439,8 @@ namespace Model
      * the cluster is created. To enable in-transit encryption on a cluster you must
      * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
      * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
-     * group in an Amazon VPC using redis version <code>3.2.6</code> or
-     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
+     * group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code>
+     * or later.</p> <p>Default: <code>false</code> </p>
      */
     inline CacheCluster& WithTransitEncryptionEnabled(bool value) { SetTransitEncryptionEnabled(value); return *this;}
 
@@ -1451,8 +1451,8 @@ namespace Model
      * cluster is created. To enable at-rest encryption on a cluster you must set
      * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
      * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
-     * group in an Amazon VPC using redis version <code>3.2.6</code> or
-     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
+     * group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code>
+     * or later.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetAtRestEncryptionEnabled() const{ return m_atRestEncryptionEnabled; }
 
@@ -1462,8 +1462,8 @@ namespace Model
      * cluster is created. To enable at-rest encryption on a cluster you must set
      * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
      * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
-     * group in an Amazon VPC using redis version <code>3.2.6</code> or
-     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
+     * group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code>
+     * or later.</p> <p>Default: <code>false</code> </p>
      */
     inline bool AtRestEncryptionEnabledHasBeenSet() const { return m_atRestEncryptionEnabledHasBeenSet; }
 
@@ -1473,8 +1473,8 @@ namespace Model
      * cluster is created. To enable at-rest encryption on a cluster you must set
      * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
      * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
-     * group in an Amazon VPC using redis version <code>3.2.6</code> or
-     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
+     * group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code>
+     * or later.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetAtRestEncryptionEnabled(bool value) { m_atRestEncryptionEnabledHasBeenSet = true; m_atRestEncryptionEnabled = value; }
 
@@ -1484,8 +1484,8 @@ namespace Model
      * cluster is created. To enable at-rest encryption on a cluster you must set
      * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
      * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
-     * group in an Amazon VPC using redis version <code>3.2.6</code> or
-     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
+     * group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code>
+     * or later.</p> <p>Default: <code>false</code> </p>
      */
     inline CacheCluster& WithAtRestEncryptionEnabled(bool value) { SetAtRestEncryptionEnabled(value); return *this;}
 

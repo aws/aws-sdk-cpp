@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p> Detailed information about the accuracy of an entity recognizer.
+   * <p>Detailed information about the accuracy of an entity recognizer.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntityRecognizerEvaluationMetrics">AWS
    * API Reference</a></p>

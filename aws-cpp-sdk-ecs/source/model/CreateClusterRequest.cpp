@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 CreateClusterRequest::CreateClusterRequest() : 
     m_clusterNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_settingsHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,17 @@ Aws::String CreateClusterRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_settingsHasBeenSet)
+  {
+   Array<JsonValue> settingsJsonList(m_settings.size());
+   for(unsigned settingsIndex = 0; settingsIndex < settingsJsonList.GetLength(); ++settingsIndex)
+   {
+     settingsJsonList[settingsIndex].AsObject(m_settings[settingsIndex].Jsonize());
+   }
+   payload.WithArray("settings", std::move(settingsJsonList));
 
   }
 

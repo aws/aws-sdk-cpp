@@ -146,52 +146,112 @@ namespace Model
 
 
     /**
-     * <p> A key used to filter the returned targets. </p>
+     * <p> A key used to filter the returned targets. The two valid values are:</p>
+     * <ul> <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter
+     * string can be <code>Failed</code>, <code>InProgress</code>,
+     * <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>,
+     * <code>Succeeded</code>, or <code>Unknown</code>. </p> </li> <li> <p>
+     * <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter
+     * string can be <code>Blue</code> or <code>Green</code>. </p> </li> </ul>
      */
     inline const Aws::Map<TargetFilterName, Aws::Vector<Aws::String>>& GetTargetFilters() const{ return m_targetFilters; }
 
     /**
-     * <p> A key used to filter the returned targets. </p>
+     * <p> A key used to filter the returned targets. The two valid values are:</p>
+     * <ul> <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter
+     * string can be <code>Failed</code>, <code>InProgress</code>,
+     * <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>,
+     * <code>Succeeded</code>, or <code>Unknown</code>. </p> </li> <li> <p>
+     * <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter
+     * string can be <code>Blue</code> or <code>Green</code>. </p> </li> </ul>
      */
     inline bool TargetFiltersHasBeenSet() const { return m_targetFiltersHasBeenSet; }
 
     /**
-     * <p> A key used to filter the returned targets. </p>
+     * <p> A key used to filter the returned targets. The two valid values are:</p>
+     * <ul> <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter
+     * string can be <code>Failed</code>, <code>InProgress</code>,
+     * <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>,
+     * <code>Succeeded</code>, or <code>Unknown</code>. </p> </li> <li> <p>
+     * <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter
+     * string can be <code>Blue</code> or <code>Green</code>. </p> </li> </ul>
      */
     inline void SetTargetFilters(const Aws::Map<TargetFilterName, Aws::Vector<Aws::String>>& value) { m_targetFiltersHasBeenSet = true; m_targetFilters = value; }
 
     /**
-     * <p> A key used to filter the returned targets. </p>
+     * <p> A key used to filter the returned targets. The two valid values are:</p>
+     * <ul> <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter
+     * string can be <code>Failed</code>, <code>InProgress</code>,
+     * <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>,
+     * <code>Succeeded</code>, or <code>Unknown</code>. </p> </li> <li> <p>
+     * <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter
+     * string can be <code>Blue</code> or <code>Green</code>. </p> </li> </ul>
      */
     inline void SetTargetFilters(Aws::Map<TargetFilterName, Aws::Vector<Aws::String>>&& value) { m_targetFiltersHasBeenSet = true; m_targetFilters = std::move(value); }
 
     /**
-     * <p> A key used to filter the returned targets. </p>
+     * <p> A key used to filter the returned targets. The two valid values are:</p>
+     * <ul> <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter
+     * string can be <code>Failed</code>, <code>InProgress</code>,
+     * <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>,
+     * <code>Succeeded</code>, or <code>Unknown</code>. </p> </li> <li> <p>
+     * <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter
+     * string can be <code>Blue</code> or <code>Green</code>. </p> </li> </ul>
      */
     inline ListDeploymentTargetsRequest& WithTargetFilters(const Aws::Map<TargetFilterName, Aws::Vector<Aws::String>>& value) { SetTargetFilters(value); return *this;}
 
     /**
-     * <p> A key used to filter the returned targets. </p>
+     * <p> A key used to filter the returned targets. The two valid values are:</p>
+     * <ul> <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter
+     * string can be <code>Failed</code>, <code>InProgress</code>,
+     * <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>,
+     * <code>Succeeded</code>, or <code>Unknown</code>. </p> </li> <li> <p>
+     * <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter
+     * string can be <code>Blue</code> or <code>Green</code>. </p> </li> </ul>
      */
     inline ListDeploymentTargetsRequest& WithTargetFilters(Aws::Map<TargetFilterName, Aws::Vector<Aws::String>>&& value) { SetTargetFilters(std::move(value)); return *this;}
 
     /**
-     * <p> A key used to filter the returned targets. </p>
+     * <p> A key used to filter the returned targets. The two valid values are:</p>
+     * <ul> <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter
+     * string can be <code>Failed</code>, <code>InProgress</code>,
+     * <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>,
+     * <code>Succeeded</code>, or <code>Unknown</code>. </p> </li> <li> <p>
+     * <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter
+     * string can be <code>Blue</code> or <code>Green</code>. </p> </li> </ul>
      */
     inline ListDeploymentTargetsRequest& AddTargetFilters(const TargetFilterName& key, const Aws::Vector<Aws::String>& value) { m_targetFiltersHasBeenSet = true; m_targetFilters.emplace(key, value); return *this; }
 
     /**
-     * <p> A key used to filter the returned targets. </p>
+     * <p> A key used to filter the returned targets. The two valid values are:</p>
+     * <ul> <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter
+     * string can be <code>Failed</code>, <code>InProgress</code>,
+     * <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>,
+     * <code>Succeeded</code>, or <code>Unknown</code>. </p> </li> <li> <p>
+     * <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter
+     * string can be <code>Blue</code> or <code>Green</code>. </p> </li> </ul>
      */
     inline ListDeploymentTargetsRequest& AddTargetFilters(TargetFilterName&& key, const Aws::Vector<Aws::String>& value) { m_targetFiltersHasBeenSet = true; m_targetFilters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> A key used to filter the returned targets. </p>
+     * <p> A key used to filter the returned targets. The two valid values are:</p>
+     * <ul> <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter
+     * string can be <code>Failed</code>, <code>InProgress</code>,
+     * <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>,
+     * <code>Succeeded</code>, or <code>Unknown</code>. </p> </li> <li> <p>
+     * <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter
+     * string can be <code>Blue</code> or <code>Green</code>. </p> </li> </ul>
      */
     inline ListDeploymentTargetsRequest& AddTargetFilters(const TargetFilterName& key, Aws::Vector<Aws::String>&& value) { m_targetFiltersHasBeenSet = true; m_targetFilters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> A key used to filter the returned targets. </p>
+     * <p> A key used to filter the returned targets. The two valid values are:</p>
+     * <ul> <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter
+     * string can be <code>Failed</code>, <code>InProgress</code>,
+     * <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>,
+     * <code>Succeeded</code>, or <code>Unknown</code>. </p> </li> <li> <p>
+     * <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter
+     * string can be <code>Blue</code> or <code>Green</code>. </p> </li> </ul>
      */
     inline ListDeploymentTargetsRequest& AddTargetFilters(TargetFilterName&& key, Aws::Vector<Aws::String>&& value) { m_targetFiltersHasBeenSet = true; m_targetFilters.emplace(std::move(key), std::move(value)); return *this; }
 
