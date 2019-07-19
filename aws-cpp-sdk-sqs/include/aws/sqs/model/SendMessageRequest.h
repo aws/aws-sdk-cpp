@@ -253,7 +253,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -262,7 +262,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -271,7 +271,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -280,7 +280,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -289,7 +289,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -298,7 +298,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -307,7 +307,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -316,7 +316,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -325,7 +325,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -334,7 +334,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -343,7 +343,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -352,7 +352,7 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -366,7 +366,7 @@ namespace Model
      * the same <code>MessageDeduplicationId</code> are accepted successfully but
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
      * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
@@ -398,7 +398,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>MessageDeduplicationId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
      * the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>.</p>
      */
@@ -411,7 +411,7 @@ namespace Model
      * the same <code>MessageDeduplicationId</code> are accepted successfully but
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
      * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
@@ -443,7 +443,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>MessageDeduplicationId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
      * the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>.</p>
      */
@@ -456,7 +456,7 @@ namespace Model
      * the same <code>MessageDeduplicationId</code> are accepted successfully but
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
      * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
@@ -488,7 +488,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>MessageDeduplicationId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
      * the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>.</p>
      */
@@ -501,7 +501,7 @@ namespace Model
      * the same <code>MessageDeduplicationId</code> are accepted successfully but
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
      * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
@@ -533,7 +533,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>MessageDeduplicationId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
      * the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>.</p>
      */
@@ -546,7 +546,7 @@ namespace Model
      * the same <code>MessageDeduplicationId</code> are accepted successfully but
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
      * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
@@ -578,7 +578,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>MessageDeduplicationId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
      * the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>.</p>
      */
@@ -591,7 +591,7 @@ namespace Model
      * the same <code>MessageDeduplicationId</code> are accepted successfully but
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
      * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
@@ -623,7 +623,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>MessageDeduplicationId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
      * the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>.</p>
      */
@@ -636,7 +636,7 @@ namespace Model
      * the same <code>MessageDeduplicationId</code> are accepted successfully but
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
      * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
@@ -668,7 +668,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>MessageDeduplicationId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
      * the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>.</p>
      */
@@ -681,7 +681,7 @@ namespace Model
      * the same <code>MessageDeduplicationId</code> are accepted successfully but
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
      * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
@@ -713,7 +713,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>MessageDeduplicationId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
      * the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>.</p>
      */
@@ -739,7 +739,7 @@ namespace Model
      * characters and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>For best
      * practices of using <code>MessageGroupId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
      * queues. You can't use it for Standard queues.</p> </important>
@@ -765,7 +765,7 @@ namespace Model
      * characters and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>For best
      * practices of using <code>MessageGroupId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
      * queues. You can't use it for Standard queues.</p> </important>
@@ -791,7 +791,7 @@ namespace Model
      * characters and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>For best
      * practices of using <code>MessageGroupId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
      * queues. You can't use it for Standard queues.</p> </important>
@@ -817,7 +817,7 @@ namespace Model
      * characters and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>For best
      * practices of using <code>MessageGroupId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
      * queues. You can't use it for Standard queues.</p> </important>
@@ -843,7 +843,7 @@ namespace Model
      * characters and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>For best
      * practices of using <code>MessageGroupId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
      * queues. You can't use it for Standard queues.</p> </important>
@@ -869,7 +869,7 @@ namespace Model
      * characters and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>For best
      * practices of using <code>MessageGroupId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
      * queues. You can't use it for Standard queues.</p> </important>
@@ -895,7 +895,7 @@ namespace Model
      * characters and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>For best
      * practices of using <code>MessageGroupId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
      * queues. You can't use it for Standard queues.</p> </important>
@@ -921,7 +921,7 @@ namespace Model
      * characters and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>For best
      * practices of using <code>MessageGroupId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
      * queues. You can't use it for Standard queues.</p> </important>

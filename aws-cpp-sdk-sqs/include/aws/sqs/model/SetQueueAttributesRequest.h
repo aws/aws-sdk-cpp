@@ -115,7 +115,7 @@ namespace Model
      * seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).
      * </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
      * policy. For more information about policy structure, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
@@ -123,7 +123,7 @@ namespace Model
      * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
      * for the dead-letter queue functionality of the source queue. For more
      * information about the redrive policy and dead-letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
@@ -138,34 +138,34 @@ namespace Model
      * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
      * seconds. Valid values: an integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
      * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
      * <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
      * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
      * hours). Default: 300 (5 minutes). A shorter time period provides better security
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attribute applies only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
      * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
      * <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
@@ -204,7 +204,7 @@ namespace Model
      * seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).
      * </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
      * policy. For more information about policy structure, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
@@ -212,7 +212,7 @@ namespace Model
      * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
      * for the dead-letter queue functionality of the source queue. For more
      * information about the redrive policy and dead-letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
@@ -227,34 +227,34 @@ namespace Model
      * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
      * seconds. Valid values: an integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
      * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
      * <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
      * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
      * hours). Default: 300 (5 minutes). A shorter time period provides better security
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attribute applies only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
      * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
      * <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
@@ -293,7 +293,7 @@ namespace Model
      * seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).
      * </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
      * policy. For more information about policy structure, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
@@ -301,7 +301,7 @@ namespace Model
      * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
      * for the dead-letter queue functionality of the source queue. For more
      * information about the redrive policy and dead-letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
@@ -316,34 +316,34 @@ namespace Model
      * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
      * seconds. Valid values: an integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
      * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
      * <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
      * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
      * hours). Default: 300 (5 minutes). A shorter time period provides better security
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attribute applies only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
      * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
      * <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
@@ -382,7 +382,7 @@ namespace Model
      * seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).
      * </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
      * policy. For more information about policy structure, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
@@ -390,7 +390,7 @@ namespace Model
      * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
      * for the dead-letter queue functionality of the source queue. For more
      * information about the redrive policy and dead-letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
@@ -405,34 +405,34 @@ namespace Model
      * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
      * seconds. Valid values: an integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
      * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
      * <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
      * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
      * hours). Default: 300 (5 minutes). A shorter time period provides better security
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attribute applies only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
      * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
      * <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
@@ -471,7 +471,7 @@ namespace Model
      * seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).
      * </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
      * policy. For more information about policy structure, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
@@ -479,7 +479,7 @@ namespace Model
      * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
      * for the dead-letter queue functionality of the source queue. For more
      * information about the redrive policy and dead-letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
@@ -494,34 +494,34 @@ namespace Model
      * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
      * seconds. Valid values: an integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
      * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
      * <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
      * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
      * hours). Default: 300 (5 minutes). A shorter time period provides better security
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attribute applies only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
      * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
      * <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
@@ -560,7 +560,7 @@ namespace Model
      * seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).
      * </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
      * policy. For more information about policy structure, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
@@ -568,7 +568,7 @@ namespace Model
      * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
      * for the dead-letter queue functionality of the source queue. For more
      * information about the redrive policy and dead-letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
@@ -583,34 +583,34 @@ namespace Model
      * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
      * seconds. Valid values: an integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
      * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
      * <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
      * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
      * hours). Default: 300 (5 minutes). A shorter time period provides better security
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attribute applies only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
      * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
      * <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
@@ -649,7 +649,7 @@ namespace Model
      * seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).
      * </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
      * policy. For more information about policy structure, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
@@ -657,7 +657,7 @@ namespace Model
      * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
      * for the dead-letter queue functionality of the source queue. For more
      * information about the redrive policy and dead-letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
@@ -672,34 +672,34 @@ namespace Model
      * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
      * seconds. Valid values: an integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
      * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
      * <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
      * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
      * hours). Default: 300 (5 minutes). A shorter time period provides better security
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attribute applies only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
      * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
      * <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
@@ -738,7 +738,7 @@ namespace Model
      * seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).
      * </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
      * policy. For more information about policy structure, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
@@ -746,7 +746,7 @@ namespace Model
      * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
      * for the dead-letter queue functionality of the source queue. For more
      * information about the redrive policy and dead-letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
@@ -761,34 +761,34 @@ namespace Model
      * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
      * seconds. Valid values: an integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
      * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
      * <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
      * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
      * hours). Default: 300 (5 minutes). A shorter time period provides better security
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attribute applies only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
      * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
      * <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
@@ -827,7 +827,7 @@ namespace Model
      * seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).
      * </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
      * policy. For more information about policy structure, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
@@ -835,7 +835,7 @@ namespace Model
      * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
      * for the dead-letter queue functionality of the source queue. For more
      * information about the redrive policy and dead-letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
@@ -850,34 +850,34 @@ namespace Model
      * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
      * seconds. Valid values: an integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
      * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
      * <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
      * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
      * hours). Default: 300 (5 minutes). A shorter time period provides better security
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attribute applies only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
      * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
      * <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
@@ -916,7 +916,7 @@ namespace Model
      * seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).
      * </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
      * policy. For more information about policy structure, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
@@ -924,7 +924,7 @@ namespace Model
      * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
      * for the dead-letter queue functionality of the source queue. For more
      * information about the redrive policy and dead-letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
@@ -939,34 +939,34 @@ namespace Model
      * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
      * seconds. Valid values: an integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
      * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
      * <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
      * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
      * hours). Default: 300 (5 minutes). A shorter time period provides better security
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attribute applies only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
      * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
      * <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
@@ -1005,7 +1005,7 @@ namespace Model
      * seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).
      * </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
      * policy. For more information about policy structure, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
@@ -1013,7 +1013,7 @@ namespace Model
      * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
      * for the dead-letter queue functionality of the source queue. For more
      * information about the redrive policy and dead-letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
@@ -1028,34 +1028,34 @@ namespace Model
      * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
      * seconds. Valid values: an integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
      * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
      * <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
      * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
      * hours). Default: 300 (5 minutes). A shorter time period provides better security
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attribute applies only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
      * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
      * <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
@@ -1094,7 +1094,7 @@ namespace Model
      * seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).
      * </p> </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS
      * policy. For more information about policy structure, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
@@ -1102,7 +1102,7 @@ namespace Model
      * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
      * for the dead-letter queue functionality of the source queue. For more
      * information about the redrive policy and dead-letter queues, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
@@ -1117,34 +1117,34 @@ namespace Model
      * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
      * seconds. Valid values: an integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer
      * master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key
      * Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always
      * <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be
      * <code>alias/<i>MyAlias</i> </code>. For more examples, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
      * in the <i>AWS Key Management Service API Reference</i>. </p> </li> <li> <p>
      * <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for
      * which Amazon SQS can reuse a <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
      * hours). Default: 300 (5 minutes). A shorter time period provides better security
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attribute applies only to <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO
      * (first-in-first-out) queues</a>:</p> <ul> <li> <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
      * Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
      * <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a

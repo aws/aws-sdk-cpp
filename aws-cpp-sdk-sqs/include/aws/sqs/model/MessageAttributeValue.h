@@ -252,7 +252,7 @@ namespace Model
      * <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data
      * type, you must use <code>StringValue</code>.</p> <p>You can also append custom
      * labels. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -263,7 +263,7 @@ namespace Model
      * <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data
      * type, you must use <code>StringValue</code>.</p> <p>You can also append custom
      * labels. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -274,7 +274,7 @@ namespace Model
      * <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data
      * type, you must use <code>StringValue</code>.</p> <p>You can also append custom
      * labels. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -285,7 +285,7 @@ namespace Model
      * <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data
      * type, you must use <code>StringValue</code>.</p> <p>You can also append custom
      * labels. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -296,7 +296,7 @@ namespace Model
      * <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data
      * type, you must use <code>StringValue</code>.</p> <p>You can also append custom
      * labels. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -307,7 +307,7 @@ namespace Model
      * <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data
      * type, you must use <code>StringValue</code>.</p> <p>You can also append custom
      * labels. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -318,7 +318,7 @@ namespace Model
      * <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data
      * type, you must use <code>StringValue</code>.</p> <p>You can also append custom
      * labels. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */
@@ -329,7 +329,7 @@ namespace Model
      * <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data
      * type, you must use <code>StringValue</code>.</p> <p>You can also append custom
      * labels. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
      * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p>
      */

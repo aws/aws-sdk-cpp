@@ -101,7 +101,7 @@ namespace Model
 
 
     /**
-     * <p>A list of s that need to be returned along with each message. These
+     * <p>A list of attributes that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
      * the message was first received from the queue (<a
@@ -126,7 +126,7 @@ namespace Model
     inline const Aws::Vector<QueueAttributeName>& GetAttributeNames() const{ return m_attributeNames; }
 
     /**
-     * <p>A list of s that need to be returned along with each message. These
+     * <p>A list of attributes that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
      * the message was first received from the queue (<a
@@ -151,7 +151,7 @@ namespace Model
     inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
 
     /**
-     * <p>A list of s that need to be returned along with each message. These
+     * <p>A list of attributes that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
      * the message was first received from the queue (<a
@@ -176,7 +176,7 @@ namespace Model
     inline void SetAttributeNames(const Aws::Vector<QueueAttributeName>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
     /**
-     * <p>A list of s that need to be returned along with each message. These
+     * <p>A list of attributes that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
      * the message was first received from the queue (<a
@@ -201,7 +201,7 @@ namespace Model
     inline void SetAttributeNames(Aws::Vector<QueueAttributeName>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::move(value); }
 
     /**
-     * <p>A list of s that need to be returned along with each message. These
+     * <p>A list of attributes that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
      * the message was first received from the queue (<a
@@ -226,7 +226,7 @@ namespace Model
     inline ReceiveMessageRequest& WithAttributeNames(const Aws::Vector<QueueAttributeName>& value) { SetAttributeNames(value); return *this;}
 
     /**
-     * <p>A list of s that need to be returned along with each message. These
+     * <p>A list of attributes that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
      * the message was first received from the queue (<a
@@ -251,7 +251,7 @@ namespace Model
     inline ReceiveMessageRequest& WithAttributeNames(Aws::Vector<QueueAttributeName>&& value) { SetAttributeNames(std::move(value)); return *this;}
 
     /**
-     * <p>A list of s that need to be returned along with each message. These
+     * <p>A list of attributes that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
      * the message was first received from the queue (<a
@@ -276,7 +276,7 @@ namespace Model
     inline ReceiveMessageRequest& AddAttributeNames(const QueueAttributeName& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
     /**
-     * <p>A list of s that need to be returned along with each message. These
+     * <p>A list of attributes that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
      * the message was first received from the queue (<a
@@ -576,7 +576,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
      * processes messages when the visibility timeout expires and messages become
@@ -600,7 +600,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
      * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
      * Service Developer Guide</i>.</p>
      */
@@ -627,7 +627,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
      * processes messages when the visibility timeout expires and messages become
@@ -651,7 +651,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
      * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
      * Service Developer Guide</i>.</p>
      */
@@ -678,7 +678,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
      * processes messages when the visibility timeout expires and messages become
@@ -702,7 +702,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
      * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
      * Service Developer Guide</i>.</p>
      */
@@ -729,7 +729,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
      * processes messages when the visibility timeout expires and messages become
@@ -753,7 +753,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
      * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
      * Service Developer Guide</i>.</p>
      */
@@ -780,7 +780,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
      * processes messages when the visibility timeout expires and messages become
@@ -804,7 +804,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
      * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
      * Service Developer Guide</i>.</p>
      */
@@ -831,7 +831,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
      * processes messages when the visibility timeout expires and messages become
@@ -855,7 +855,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
      * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
      * Service Developer Guide</i>.</p>
      */
@@ -882,7 +882,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
      * processes messages when the visibility timeout expires and messages become
@@ -906,7 +906,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
      * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
      * Service Developer Guide</i>.</p>
      */
@@ -933,7 +933,7 @@ namespace Model
      * return the same messages and receipt handles. If a retry occurs within the
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
      * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
      * processes messages when the visibility timeout expires and messages become
@@ -957,7 +957,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
      * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
      * Service Developer Guide</i>.</p>
      */

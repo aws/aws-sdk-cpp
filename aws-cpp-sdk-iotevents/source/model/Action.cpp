@@ -34,7 +34,11 @@ Action::Action() :
     m_iotTopicPublishHasBeenSet(false),
     m_setTimerHasBeenSet(false),
     m_clearTimerHasBeenSet(false),
-    m_resetTimerHasBeenSet(false)
+    m_resetTimerHasBeenSet(false),
+    m_lambdaHasBeenSet(false),
+    m_iotEventsHasBeenSet(false),
+    m_sqsHasBeenSet(false),
+    m_firehoseHasBeenSet(false)
 {
 }
 
@@ -44,7 +48,11 @@ Action::Action(JsonView jsonValue) :
     m_iotTopicPublishHasBeenSet(false),
     m_setTimerHasBeenSet(false),
     m_clearTimerHasBeenSet(false),
-    m_resetTimerHasBeenSet(false)
+    m_resetTimerHasBeenSet(false),
+    m_lambdaHasBeenSet(false),
+    m_iotEventsHasBeenSet(false),
+    m_sqsHasBeenSet(false),
+    m_firehoseHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -93,6 +101,34 @@ Action& Action::operator =(JsonView jsonValue)
     m_resetTimerHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lambda"))
+  {
+    m_lambda = jsonValue.GetObject("lambda");
+
+    m_lambdaHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("iotEvents"))
+  {
+    m_iotEvents = jsonValue.GetObject("iotEvents");
+
+    m_iotEventsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sqs"))
+  {
+    m_sqs = jsonValue.GetObject("sqs");
+
+    m_sqsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("firehose"))
+  {
+    m_firehose = jsonValue.GetObject("firehose");
+
+    m_firehoseHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -133,6 +169,30 @@ JsonValue Action::Jsonize() const
   if(m_resetTimerHasBeenSet)
   {
    payload.WithObject("resetTimer", m_resetTimer.Jsonize());
+
+  }
+
+  if(m_lambdaHasBeenSet)
+  {
+   payload.WithObject("lambda", m_lambda.Jsonize());
+
+  }
+
+  if(m_iotEventsHasBeenSet)
+  {
+   payload.WithObject("iotEvents", m_iotEvents.Jsonize());
+
+  }
+
+  if(m_sqsHasBeenSet)
+  {
+   payload.WithObject("sqs", m_sqs.Jsonize());
+
+  }
+
+  if(m_firehoseHasBeenSet)
+  {
+   payload.WithObject("firehose", m_firehose.Jsonize());
 
   }
 

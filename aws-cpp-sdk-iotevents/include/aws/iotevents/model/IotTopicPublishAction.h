@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Information required to publish the MQTT message via the AWS IoT Message
-   * Broker.</p><p><h3>See Also:</h3>   <a
+   * <p>Information required to publish the MQTT message via the AWS IoT message
+   * broker.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/IotTopicPublishAction">AWS
    * API Reference</a></p>
    */

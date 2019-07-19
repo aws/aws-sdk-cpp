@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Metadata which can be used to manage the resource.</p><p><h3>See Also:</h3>  
+   * <p>Metadata that can be used to manage the resource.</p><p><h3>See Also:</h3>  
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/Tag">AWS
    * API Reference</a></p>
    */

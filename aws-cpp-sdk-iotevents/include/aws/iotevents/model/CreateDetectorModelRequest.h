@@ -281,42 +281,42 @@ namespace Model
 
 
     /**
-     * <p>Metadata which can be used to manage the detector model.</p>
+     * <p>Metadata that can be used to manage the detector model.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Metadata which can be used to manage the detector model.</p>
+     * <p>Metadata that can be used to manage the detector model.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Metadata which can be used to manage the detector model.</p>
+     * <p>Metadata that can be used to manage the detector model.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Metadata which can be used to manage the detector model.</p>
+     * <p>Metadata that can be used to manage the detector model.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Metadata which can be used to manage the detector model.</p>
+     * <p>Metadata that can be used to manage the detector model.</p>
      */
     inline CreateDetectorModelRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Metadata which can be used to manage the detector model.</p>
+     * <p>Metadata that can be used to manage the detector model.</p>
      */
     inline CreateDetectorModelRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Metadata which can be used to manage the detector model.</p>
+     * <p>Metadata that can be used to manage the detector model.</p>
      */
     inline CreateDetectorModelRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Metadata which can be used to manage the detector model.</p>
+     * <p>Metadata that can be used to manage the detector model.</p>
      */
     inline CreateDetectorModelRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

@@ -49,42 +49,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the Amazon SNS target to which the message is sent.</p>
+     * <p>The ARN of the Amazon SNS target where the message is sent.</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
-     * <p>The ARN of the Amazon SNS target to which the message is sent.</p>
+     * <p>The ARN of the Amazon SNS target where the message is sent.</p>
      */
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the Amazon SNS target to which the message is sent.</p>
+     * <p>The ARN of the Amazon SNS target where the message is sent.</p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
-     * <p>The ARN of the Amazon SNS target to which the message is sent.</p>
+     * <p>The ARN of the Amazon SNS target where the message is sent.</p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
-     * <p>The ARN of the Amazon SNS target to which the message is sent.</p>
+     * <p>The ARN of the Amazon SNS target where the message is sent.</p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
-     * <p>The ARN of the Amazon SNS target to which the message is sent.</p>
+     * <p>The ARN of the Amazon SNS target where the message is sent.</p>
      */
     inline SNSTopicPublishAction& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the Amazon SNS target to which the message is sent.</p>
+     * <p>The ARN of the Amazon SNS target where the message is sent.</p>
      */
     inline SNSTopicPublishAction& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the Amazon SNS target to which the message is sent.</p>
+     * <p>The ARN of the Amazon SNS target where the message is sent.</p>
      */
     inline SNSTopicPublishAction& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 

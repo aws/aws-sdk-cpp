@@ -166,7 +166,7 @@ namespace Model
     /**
      * <p>An attribute containing the <code>MessageId</code> of the message sent to the
      * queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
      * and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>. </p>
      */
@@ -175,7 +175,7 @@ namespace Model
     /**
      * <p>An attribute containing the <code>MessageId</code> of the message sent to the
      * queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
      * and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>. </p>
      */
@@ -184,7 +184,7 @@ namespace Model
     /**
      * <p>An attribute containing the <code>MessageId</code> of the message sent to the
      * queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
      * and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>. </p>
      */
@@ -193,7 +193,7 @@ namespace Model
     /**
      * <p>An attribute containing the <code>MessageId</code> of the message sent to the
      * queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
      * and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>. </p>
      */
@@ -202,7 +202,7 @@ namespace Model
     /**
      * <p>An attribute containing the <code>MessageId</code> of the message sent to the
      * queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
      * and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>. </p>
      */
@@ -211,7 +211,7 @@ namespace Model
     /**
      * <p>An attribute containing the <code>MessageId</code> of the message sent to the
      * queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
      * and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>. </p>
      */
@@ -220,7 +220,7 @@ namespace Model
     /**
      * <p>An attribute containing the <code>MessageId</code> of the message sent to the
      * queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
      * and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>. </p>
      */

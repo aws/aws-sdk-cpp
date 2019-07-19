@@ -149,7 +149,9 @@ namespace Model
 
   /**
    * <p>AWS IoT Events monitors your equipment or device fleets for failures or
-   * changes in operation, and triggers actions when such events occur.</p>
+   * changes in operation, and triggers actions when such events occur. AWS IoT
+   * Events API commands enable you to create, read, update and delete inputs and
+   * detector models, and to list their versions.</p>
    */
   class AWS_IOTEVENTS_API IoTEventsClient : public Aws::Client::AWSJsonClient
   {
@@ -284,7 +286,7 @@ namespace Model
         virtual void DeleteInputAsync(const Model::DeleteInputRequest& request, const DeleteInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a detector model. If the <code>version</code> parameter is not
+         * <p>Describes a detector model. If the <code>"version"</code> parameter is not
          * specified, information about the latest version is returned.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModel">AWS
@@ -293,7 +295,7 @@ namespace Model
         virtual Model::DescribeDetectorModelOutcome DescribeDetectorModel(const Model::DescribeDetectorModelRequest& request) const;
 
         /**
-         * <p>Describes a detector model. If the <code>version</code> parameter is not
+         * <p>Describes a detector model. If the <code>"version"</code> parameter is not
          * specified, information about the latest version is returned.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModel">AWS
@@ -304,7 +306,7 @@ namespace Model
         virtual Model::DescribeDetectorModelOutcomeCallable DescribeDetectorModelCallable(const Model::DescribeDetectorModelRequest& request) const;
 
         /**
-         * <p>Describes a detector model. If the <code>version</code> parameter is not
+         * <p>Describes a detector model. If the <code>"version"</code> parameter is not
          * specified, information about the latest version is returned.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModel">AWS
@@ -477,11 +479,11 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets or updates the AWS IoT Events logging options.</p> <p>Note that if you
-         * update the value of any <code>loggingOptions</code> field, it takes up to one
-         * minute for the change to take effect. Also, if you change the policy attached to
-         * the role you specified in the roleArn field (for example, to correct an invalid
-         * policy) it takes up to five minutes for that change to take
+         * <p>Sets or updates the AWS IoT Events logging options.</p> <p>If you update the
+         * value of any <code>"loggingOptions"</code> field, it takes up to one minute for
+         * the change to take effect. Also, if you change the policy attached to the role
+         * you specified in the <code>"roleArn"</code> field (for example, to correct an
+         * invalid policy) it takes up to five minutes for that change to take
          * effect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/PutLoggingOptions">AWS
          * API Reference</a></p>
@@ -489,11 +491,11 @@ namespace Model
         virtual Model::PutLoggingOptionsOutcome PutLoggingOptions(const Model::PutLoggingOptionsRequest& request) const;
 
         /**
-         * <p>Sets or updates the AWS IoT Events logging options.</p> <p>Note that if you
-         * update the value of any <code>loggingOptions</code> field, it takes up to one
-         * minute for the change to take effect. Also, if you change the policy attached to
-         * the role you specified in the roleArn field (for example, to correct an invalid
-         * policy) it takes up to five minutes for that change to take
+         * <p>Sets or updates the AWS IoT Events logging options.</p> <p>If you update the
+         * value of any <code>"loggingOptions"</code> field, it takes up to one minute for
+         * the change to take effect. Also, if you change the policy attached to the role
+         * you specified in the <code>"roleArn"</code> field (for example, to correct an
+         * invalid policy) it takes up to five minutes for that change to take
          * effect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/PutLoggingOptions">AWS
          * API Reference</a></p>
@@ -503,11 +505,11 @@ namespace Model
         virtual Model::PutLoggingOptionsOutcomeCallable PutLoggingOptionsCallable(const Model::PutLoggingOptionsRequest& request) const;
 
         /**
-         * <p>Sets or updates the AWS IoT Events logging options.</p> <p>Note that if you
-         * update the value of any <code>loggingOptions</code> field, it takes up to one
-         * minute for the change to take effect. Also, if you change the policy attached to
-         * the role you specified in the roleArn field (for example, to correct an invalid
-         * policy) it takes up to five minutes for that change to take
+         * <p>Sets or updates the AWS IoT Events logging options.</p> <p>If you update the
+         * value of any <code>"loggingOptions"</code> field, it takes up to one minute for
+         * the change to take effect. Also, if you change the policy attached to the role
+         * you specified in the <code>"roleArn"</code> field (for example, to correct an
+         * invalid policy) it takes up to five minutes for that change to take
          * effect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/PutLoggingOptions">AWS
          * API Reference</a></p>
@@ -517,7 +519,7 @@ namespace Model
         virtual void PutLoggingOptionsAsync(const Model::PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Add to or modifies the tags of the given resource. Tags are metadata which
+         * <p>Adds to or modifies the tags of the given resource. Tags are metadata that
          * can be used to manage a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/TagResource">AWS
          * API Reference</a></p>
@@ -525,7 +527,7 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Add to or modifies the tags of the given resource. Tags are metadata which
+         * <p>Adds to or modifies the tags of the given resource. Tags are metadata that
          * can be used to manage a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/TagResource">AWS
          * API Reference</a></p>
@@ -535,7 +537,7 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Add to or modifies the tags of the given resource. Tags are metadata which
+         * <p>Adds to or modifies the tags of the given resource. Tags are metadata that
          * can be used to manage a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/TagResource">AWS
          * API Reference</a></p>
@@ -574,7 +576,7 @@ namespace Model
 
         /**
          * <p>Updates a detector model. Detectors (instances) spawned by the previous
-         * version will be deleted and re-created as new inputs arrive.</p><p><h3>See
+         * version are deleted and then re-created as new inputs arrive.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UpdateDetectorModel">AWS
          * API Reference</a></p>
@@ -583,7 +585,7 @@ namespace Model
 
         /**
          * <p>Updates a detector model. Detectors (instances) spawned by the previous
-         * version will be deleted and re-created as new inputs arrive.</p><p><h3>See
+         * version are deleted and then re-created as new inputs arrive.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UpdateDetectorModel">AWS
          * API Reference</a></p>
@@ -594,7 +596,7 @@ namespace Model
 
         /**
          * <p>Updates a detector model. Detectors (instances) spawned by the previous
-         * version will be deleted and re-created as new inputs arrive.</p><p><h3>See
+         * version are deleted and then re-created as new inputs arrive.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UpdateDetectorModel">AWS
          * API Reference</a></p>

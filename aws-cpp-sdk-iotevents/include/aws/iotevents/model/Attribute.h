@@ -58,7 +58,7 @@ namespace Model
      * input. Inputs are derived from messages sent to the AWS IoT Events system
      * (<code>BatchPutMessage</code>). Each such message contains a JSON payload, and
      * the attribute (and its paired value) specified here are available for use in the
-     * <code>condition</code> expressions used by detectors. </p> <p>Syntax:
+     * <code>"condition"</code> expressions used by detectors. </p> <p>Syntax:
      * <code>&lt;field-name&gt;.&lt;field-name&gt;...</code> </p>
      */
     inline const Aws::String& GetJsonPath() const{ return m_jsonPath; }
@@ -69,7 +69,7 @@ namespace Model
      * input. Inputs are derived from messages sent to the AWS IoT Events system
      * (<code>BatchPutMessage</code>). Each such message contains a JSON payload, and
      * the attribute (and its paired value) specified here are available for use in the
-     * <code>condition</code> expressions used by detectors. </p> <p>Syntax:
+     * <code>"condition"</code> expressions used by detectors. </p> <p>Syntax:
      * <code>&lt;field-name&gt;.&lt;field-name&gt;...</code> </p>
      */
     inline bool JsonPathHasBeenSet() const { return m_jsonPathHasBeenSet; }
@@ -80,7 +80,7 @@ namespace Model
      * input. Inputs are derived from messages sent to the AWS IoT Events system
      * (<code>BatchPutMessage</code>). Each such message contains a JSON payload, and
      * the attribute (and its paired value) specified here are available for use in the
-     * <code>condition</code> expressions used by detectors. </p> <p>Syntax:
+     * <code>"condition"</code> expressions used by detectors. </p> <p>Syntax:
      * <code>&lt;field-name&gt;.&lt;field-name&gt;...</code> </p>
      */
     inline void SetJsonPath(const Aws::String& value) { m_jsonPathHasBeenSet = true; m_jsonPath = value; }
@@ -91,7 +91,7 @@ namespace Model
      * input. Inputs are derived from messages sent to the AWS IoT Events system
      * (<code>BatchPutMessage</code>). Each such message contains a JSON payload, and
      * the attribute (and its paired value) specified here are available for use in the
-     * <code>condition</code> expressions used by detectors. </p> <p>Syntax:
+     * <code>"condition"</code> expressions used by detectors. </p> <p>Syntax:
      * <code>&lt;field-name&gt;.&lt;field-name&gt;...</code> </p>
      */
     inline void SetJsonPath(Aws::String&& value) { m_jsonPathHasBeenSet = true; m_jsonPath = std::move(value); }
@@ -102,7 +102,7 @@ namespace Model
      * input. Inputs are derived from messages sent to the AWS IoT Events system
      * (<code>BatchPutMessage</code>). Each such message contains a JSON payload, and
      * the attribute (and its paired value) specified here are available for use in the
-     * <code>condition</code> expressions used by detectors. </p> <p>Syntax:
+     * <code>"condition"</code> expressions used by detectors. </p> <p>Syntax:
      * <code>&lt;field-name&gt;.&lt;field-name&gt;...</code> </p>
      */
     inline void SetJsonPath(const char* value) { m_jsonPathHasBeenSet = true; m_jsonPath.assign(value); }
@@ -113,7 +113,7 @@ namespace Model
      * input. Inputs are derived from messages sent to the AWS IoT Events system
      * (<code>BatchPutMessage</code>). Each such message contains a JSON payload, and
      * the attribute (and its paired value) specified here are available for use in the
-     * <code>condition</code> expressions used by detectors. </p> <p>Syntax:
+     * <code>"condition"</code> expressions used by detectors. </p> <p>Syntax:
      * <code>&lt;field-name&gt;.&lt;field-name&gt;...</code> </p>
      */
     inline Attribute& WithJsonPath(const Aws::String& value) { SetJsonPath(value); return *this;}
@@ -124,7 +124,7 @@ namespace Model
      * input. Inputs are derived from messages sent to the AWS IoT Events system
      * (<code>BatchPutMessage</code>). Each such message contains a JSON payload, and
      * the attribute (and its paired value) specified here are available for use in the
-     * <code>condition</code> expressions used by detectors. </p> <p>Syntax:
+     * <code>"condition"</code> expressions used by detectors. </p> <p>Syntax:
      * <code>&lt;field-name&gt;.&lt;field-name&gt;...</code> </p>
      */
     inline Attribute& WithJsonPath(Aws::String&& value) { SetJsonPath(std::move(value)); return *this;}
@@ -135,7 +135,7 @@ namespace Model
      * input. Inputs are derived from messages sent to the AWS IoT Events system
      * (<code>BatchPutMessage</code>). Each such message contains a JSON payload, and
      * the attribute (and its paired value) specified here are available for use in the
-     * <code>condition</code> expressions used by detectors. </p> <p>Syntax:
+     * <code>"condition"</code> expressions used by detectors. </p> <p>Syntax:
      * <code>&lt;field-name&gt;.&lt;field-name&gt;...</code> </p>
      */
     inline Attribute& WithJsonPath(const char* value) { SetJsonPath(value); return *this;}
