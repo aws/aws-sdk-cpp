@@ -188,7 +188,7 @@ TEST(URITest, TestParseWithColon)
     EXPECT_STREQ("test.com", uri.GetAuthority().c_str());
     EXPECT_EQ(443, uri.GetPort());
     EXPECT_STREQ("/path/1234:_Some_Path", uri.GetPath().c_str());
-    EXPECT_STREQ(strUri, uri.GetURIString().c_str());
+    EXPECT_STREQ("https://test.com/path/1234%3A_Some_Path", uri.GetURIString().c_str());
 
     const char* strUriWithPort = "https://test.com:8080/path/1234:_Some_Path";
     URI uriWithPort(strUriWithPort);
@@ -197,7 +197,7 @@ TEST(URITest, TestParseWithColon)
     EXPECT_STREQ("test.com", uriWithPort.GetAuthority().c_str());
     EXPECT_EQ(8080, uriWithPort.GetPort());
     EXPECT_STREQ("/path/1234:_Some_Path", uriWithPort.GetPath().c_str());
-    EXPECT_STREQ(strUriWithPort, uriWithPort.GetURIString().c_str());
+    EXPECT_STREQ("https://test.com:8080/path/1234%3A_Some_Path", uriWithPort.GetURIString().c_str());
 
     const char* strComplexUri = "http://s3.us-east-1.amazonaws.com/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:1234/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:Key";
     URI complexUri(strComplexUri);
@@ -206,7 +206,7 @@ TEST(URITest, TestParseWithColon)
     EXPECT_STREQ("s3.us-east-1.amazonaws.com", complexUri.GetAuthority().c_str());
     EXPECT_EQ(80, complexUri.GetPort());
     EXPECT_STREQ("/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:1234/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:Key", complexUri.GetPath().c_str());
-    EXPECT_STREQ(strComplexUri, complexUri.GetURIString().c_str());
+    EXPECT_STREQ("http://s3.us-east-1.amazonaws.com/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject%3A1234/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject%3AKey", complexUri.GetURIString().c_str());
     
 }
 
@@ -216,10 +216,10 @@ TEST(URITest, TestGetRFC3986URLEncodedPath)
     EXPECT_STREQ("/path/1234/", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
 
     uri = "https://test.com/path/$omething";
-    EXPECT_STREQ("/path/$omething", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
+    EXPECT_STREQ("/path/%24omething", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
 
     uri = "https://test.com/path/$omethingel$e";
-    EXPECT_STREQ("/path/$omethingel$e", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
+    EXPECT_STREQ("/path/%24omethingel%24e", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
 
     uri = "https://test.com/path/~something.an0ther";
     EXPECT_STREQ("/path/~something.an0ther", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
@@ -231,5 +231,5 @@ TEST(URITest, TestGetRFC3986URLEncodedPath)
     EXPECT_STREQ("/%E1%88%B4", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
 
     uri = "https://test.com/segment+other/b;jsession=1";
-    EXPECT_STREQ("/segment%2Bother/b%3Bjsession=1", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
+    EXPECT_STREQ("/segment%2Bother/b%3Bjsession%3D1", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
 }

@@ -137,14 +137,16 @@ Aws::String URI::URLEncodePathRFC3986(const Aws::String& path)
             {
                 // §2.3 unreserved characters
                 case '-': case '_': case '.': case '~':
-                // The path section of the URL allow reserved characters to appear unescaped
-                // RFC 3986 §2.2 Reserved characters
-                // NOTE: this implementation does not accurately implement the RFC on purpose to accommodate for
-                // discrepancies in the implementations of URL encoding between AWS services for legacy reasons.
-                case '$': case '&': case ',':
-                case ':': case '=': case '@':
                     ss << c;
                     break;
+                // NOTE: S3 guidelines, as an example, provide a list of characters in object key names that likely
+                // require URL encoding:
+                //
+                //          '&',  '$',  '@',  '=',  ';',  ':',  '+',  ' ',  ',',  and  '?'.
+                //
+                // REFS:
+                //     https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-key-guidelines-special-handling
+                //     https://tools.ietf.org/html/rfc3986#section-2.2
                 default:
                     ss << '%' << std::setfill('0') << std::setw(2) << (int)((unsigned char)c) << std::setw(0);
             }
