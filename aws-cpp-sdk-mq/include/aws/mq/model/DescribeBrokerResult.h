@@ -21,6 +21,7 @@
 #include <aws/mq/model/Configurations.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/mq/model/DeploymentMode.h>
+#include <aws/mq/model/EncryptionOptions.h>
 #include <aws/mq/model/EngineType.h>
 #include <aws/mq/model/LogsSummary.h>
 #include <aws/mq/model/WeeklyStartTime.h>
@@ -342,6 +343,32 @@ namespace Model
      * Required. The deployment mode of the broker.
      */
     inline DescribeBrokerResult& WithDeploymentMode(DeploymentMode&& value) { SetDeploymentMode(std::move(value)); return *this;}
+
+
+    /**
+     * Encryption options for the broker.
+     */
+    inline const EncryptionOptions& GetEncryptionOptions() const{ return m_encryptionOptions; }
+
+    /**
+     * Encryption options for the broker.
+     */
+    inline void SetEncryptionOptions(const EncryptionOptions& value) { m_encryptionOptions = value; }
+
+    /**
+     * Encryption options for the broker.
+     */
+    inline void SetEncryptionOptions(EncryptionOptions&& value) { m_encryptionOptions = std::move(value); }
+
+    /**
+     * Encryption options for the broker.
+     */
+    inline DescribeBrokerResult& WithEncryptionOptions(const EncryptionOptions& value) { SetEncryptionOptions(value); return *this;}
+
+    /**
+     * Encryption options for the broker.
+     */
+    inline DescribeBrokerResult& WithEncryptionOptions(EncryptionOptions&& value) { SetEncryptionOptions(std::move(value)); return *this;}
 
 
     /**
@@ -809,6 +836,8 @@ namespace Model
     Aws::Utils::DateTime m_created;
 
     DeploymentMode m_deploymentMode;
+
+    EncryptionOptions m_encryptionOptions;
 
     EngineType m_engineType;
 

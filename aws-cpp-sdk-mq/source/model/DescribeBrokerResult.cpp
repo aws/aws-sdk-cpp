@@ -105,6 +105,12 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("encryptionOptions"))
+  {
+    m_encryptionOptions = jsonValue.GetObject("encryptionOptions");
+
+  }
+
   if(jsonValue.ValueExists("engineType"))
   {
     m_engineType = EngineTypeMapper::GetEngineTypeForName(jsonValue.GetString("engineType"));

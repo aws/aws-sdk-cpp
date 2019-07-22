@@ -192,9 +192,9 @@ namespace Model
 
         /**
          * <p>Authorizes the DDoS Response team (DRT) to access the specified Amazon S3
-         * bucket containing your flow logs. You can associate up to 10 Amazon S3 buckets
-         * with your subscription.</p> <p>To use the services of the DRT and make an
-         * <code>AssociateDRTLogBucket</code> request, you must be subscribed to the <a
+         * bucket containing your AWS WAF logs. You can associate up to 10 Amazon S3
+         * buckets with your subscription.</p> <p>To use the services of the DRT and make
+         * an <code>AssociateDRTLogBucket</code> request, you must be subscribed to the <a
          * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
          * plan</a> or the <a
          * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
@@ -206,9 +206,9 @@ namespace Model
 
         /**
          * <p>Authorizes the DDoS Response team (DRT) to access the specified Amazon S3
-         * bucket containing your flow logs. You can associate up to 10 Amazon S3 buckets
-         * with your subscription.</p> <p>To use the services of the DRT and make an
-         * <code>AssociateDRTLogBucket</code> request, you must be subscribed to the <a
+         * bucket containing your AWS WAF logs. You can associate up to 10 Amazon S3
+         * buckets with your subscription.</p> <p>To use the services of the DRT and make
+         * an <code>AssociateDRTLogBucket</code> request, you must be subscribed to the <a
          * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
          * plan</a> or the <a
          * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
@@ -222,9 +222,9 @@ namespace Model
 
         /**
          * <p>Authorizes the DDoS Response team (DRT) to access the specified Amazon S3
-         * bucket containing your flow logs. You can associate up to 10 Amazon S3 buckets
-         * with your subscription.</p> <p>To use the services of the DRT and make an
-         * <code>AssociateDRTLogBucket</code> request, you must be subscribed to the <a
+         * bucket containing your AWS WAF logs. You can associate up to 10 Amazon S3
+         * buckets with your subscription.</p> <p>To use the services of the DRT and make
+         * an <code>AssociateDRTLogBucket</code> request, you must be subscribed to the <a
          * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
          * plan</a> or the <a
          * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
@@ -416,10 +416,14 @@ namespace Model
          * attack. For more information see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/authorize-DRT.html">Authorize
          * the DDoS Response Team to Create Rules and Web ACLs on Your Behalf</a>.</p>
-         * <p>When you initally create a subscription, your subscription is set to be
-         * automatically renewed at the end of the existing subscription period. You can
-         * change this by submitting an <code>UpdateSubscription</code> request.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>To use the services of the DRT, you must be subscribed to the <a
+         * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
+         * plan</a> or the <a
+         * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+         * Support plan</a>.</p> <p>When you initally create a subscription, your
+         * subscription is set to be automatically renewed at the end of the existing
+         * subscription period. You can change this by submitting an
+         * <code>UpdateSubscription</code> request. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription">AWS
          * API Reference</a></p>
          */
@@ -432,10 +436,14 @@ namespace Model
          * attack. For more information see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/authorize-DRT.html">Authorize
          * the DDoS Response Team to Create Rules and Web ACLs on Your Behalf</a>.</p>
-         * <p>When you initally create a subscription, your subscription is set to be
-         * automatically renewed at the end of the existing subscription period. You can
-         * change this by submitting an <code>UpdateSubscription</code> request.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>To use the services of the DRT, you must be subscribed to the <a
+         * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
+         * plan</a> or the <a
+         * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+         * Support plan</a>.</p> <p>When you initally create a subscription, your
+         * subscription is set to be automatically renewed at the end of the existing
+         * subscription period. You can change this by submitting an
+         * <code>UpdateSubscription</code> request. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription">AWS
          * API Reference</a></p>
          *
@@ -450,10 +458,14 @@ namespace Model
          * attack. For more information see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/authorize-DRT.html">Authorize
          * the DDoS Response Team to Create Rules and Web ACLs on Your Behalf</a>.</p>
-         * <p>When you initally create a subscription, your subscription is set to be
-         * automatically renewed at the end of the existing subscription period. You can
-         * change this by submitting an <code>UpdateSubscription</code> request.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>To use the services of the DRT, you must be subscribed to the <a
+         * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
+         * plan</a> or the <a
+         * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+         * Support plan</a>.</p> <p>When you initally create a subscription, your
+         * subscription is set to be automatically renewed at the end of the existing
+         * subscription period. You can change this by submitting an
+         * <code>UpdateSubscription</code> request. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription">AWS
          * API Reference</a></p>
          *
@@ -631,7 +643,7 @@ namespace Model
 
         /**
          * <p>Removes the DDoS Response team's (DRT) access to the specified Amazon S3
-         * bucket containing your flow logs.</p> <p>To make a
+         * bucket containing your AWS WAF logs.</p> <p>To make a
          * <code>DisassociateDRTLogBucket</code> request, you must be subscribed to the <a
          * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
          * plan</a> or the <a
@@ -647,7 +659,7 @@ namespace Model
 
         /**
          * <p>Removes the DDoS Response team's (DRT) access to the specified Amazon S3
-         * bucket containing your flow logs.</p> <p>To make a
+         * bucket containing your AWS WAF logs.</p> <p>To make a
          * <code>DisassociateDRTLogBucket</code> request, you must be subscribed to the <a
          * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
          * plan</a> or the <a
@@ -665,7 +677,7 @@ namespace Model
 
         /**
          * <p>Removes the DDoS Response team's (DRT) access to the specified Amazon S3
-         * bucket containing your flow logs.</p> <p>To make a
+         * bucket containing your AWS WAF logs.</p> <p>To make a
          * <code>DisassociateDRTLogBucket</code> request, you must be subscribed to the <a
          * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
          * plan</a> or the <a

@@ -31,6 +31,7 @@ CreateBrokerRequest::CreateBrokerRequest() :
     m_creatorRequestIdHasBeenSet(true),
     m_deploymentMode(DeploymentMode::NOT_SET),
     m_deploymentModeHasBeenSet(false),
+    m_encryptionOptionsHasBeenSet(false),
     m_engineType(EngineType::NOT_SET),
     m_engineTypeHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
@@ -77,6 +78,12 @@ Aws::String CreateBrokerRequest::SerializePayload() const
   if(m_deploymentModeHasBeenSet)
   {
    payload.WithString("deploymentMode", DeploymentModeMapper::GetNameForDeploymentMode(m_deploymentMode));
+  }
+
+  if(m_encryptionOptionsHasBeenSet)
+  {
+   payload.WithObject("encryptionOptions", m_encryptionOptions.Jsonize());
+
   }
 
   if(m_engineTypeHasBeenSet)

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mq/model/ConfigurationId.h>
 #include <aws/mq/model/DeploymentMode.h>
+#include <aws/mq/model/EncryptionOptions.h>
 #include <aws/mq/model/EngineType.h>
 #include <aws/mq/model/Logs.h>
 #include <aws/mq/model/WeeklyStartTime.h>
@@ -273,6 +274,37 @@ namespace Model
      * Required. The deployment mode of the broker.
      */
     inline CreateBrokerRequest& WithDeploymentMode(DeploymentMode&& value) { SetDeploymentMode(std::move(value)); return *this;}
+
+
+    /**
+     * Encryption options for the broker.
+     */
+    inline const EncryptionOptions& GetEncryptionOptions() const{ return m_encryptionOptions; }
+
+    /**
+     * Encryption options for the broker.
+     */
+    inline bool EncryptionOptionsHasBeenSet() const { return m_encryptionOptionsHasBeenSet; }
+
+    /**
+     * Encryption options for the broker.
+     */
+    inline void SetEncryptionOptions(const EncryptionOptions& value) { m_encryptionOptionsHasBeenSet = true; m_encryptionOptions = value; }
+
+    /**
+     * Encryption options for the broker.
+     */
+    inline void SetEncryptionOptions(EncryptionOptions&& value) { m_encryptionOptionsHasBeenSet = true; m_encryptionOptions = std::move(value); }
+
+    /**
+     * Encryption options for the broker.
+     */
+    inline CreateBrokerRequest& WithEncryptionOptions(const EncryptionOptions& value) { SetEncryptionOptions(value); return *this;}
+
+    /**
+     * Encryption options for the broker.
+     */
+    inline CreateBrokerRequest& WithEncryptionOptions(EncryptionOptions&& value) { SetEncryptionOptions(std::move(value)); return *this;}
 
 
     /**
@@ -771,6 +803,9 @@ namespace Model
 
     DeploymentMode m_deploymentMode;
     bool m_deploymentModeHasBeenSet;
+
+    EncryptionOptions m_encryptionOptions;
+    bool m_encryptionOptionsHasBeenSet;
 
     EngineType m_engineType;
     bool m_engineTypeHasBeenSet;

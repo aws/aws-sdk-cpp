@@ -31,7 +31,9 @@ namespace Model
     SOURCE_ASN,
     SOURCE_COUNTRY,
     SOURCE_IP_ADDRESS,
-    SOURCE_USER_AGENT
+    SOURCE_USER_AGENT,
+    WORDPRESS_PINGBACK_REFLECTOR,
+    WORDPRESS_PINGBACK_SOURCE
   };
 
 namespace AttackPropertyIdentifierMapper

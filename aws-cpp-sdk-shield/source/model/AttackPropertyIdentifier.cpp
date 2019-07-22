@@ -36,6 +36,8 @@ namespace Aws
         static const int SOURCE_COUNTRY_HASH = HashingUtils::HashString("SOURCE_COUNTRY");
         static const int SOURCE_IP_ADDRESS_HASH = HashingUtils::HashString("SOURCE_IP_ADDRESS");
         static const int SOURCE_USER_AGENT_HASH = HashingUtils::HashString("SOURCE_USER_AGENT");
+        static const int WORDPRESS_PINGBACK_REFLECTOR_HASH = HashingUtils::HashString("WORDPRESS_PINGBACK_REFLECTOR");
+        static const int WORDPRESS_PINGBACK_SOURCE_HASH = HashingUtils::HashString("WORDPRESS_PINGBACK_SOURCE");
 
 
         AttackPropertyIdentifier GetAttackPropertyIdentifierForName(const Aws::String& name)
@@ -65,6 +67,14 @@ namespace Aws
           {
             return AttackPropertyIdentifier::SOURCE_USER_AGENT;
           }
+          else if (hashCode == WORDPRESS_PINGBACK_REFLECTOR_HASH)
+          {
+            return AttackPropertyIdentifier::WORDPRESS_PINGBACK_REFLECTOR;
+          }
+          else if (hashCode == WORDPRESS_PINGBACK_SOURCE_HASH)
+          {
+            return AttackPropertyIdentifier::WORDPRESS_PINGBACK_SOURCE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +101,10 @@ namespace Aws
             return "SOURCE_IP_ADDRESS";
           case AttackPropertyIdentifier::SOURCE_USER_AGENT:
             return "SOURCE_USER_AGENT";
+          case AttackPropertyIdentifier::WORDPRESS_PINGBACK_REFLECTOR:
+            return "WORDPRESS_PINGBACK_REFLECTOR";
+          case AttackPropertyIdentifier::WORDPRESS_PINGBACK_SOURCE:
+            return "WORDPRESS_PINGBACK_SOURCE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
