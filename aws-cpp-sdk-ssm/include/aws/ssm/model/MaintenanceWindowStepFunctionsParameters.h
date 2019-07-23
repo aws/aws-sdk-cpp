@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>The parameters for a STEP_FUNCTION task.</p> <p>For information about
+   * <p>The parameters for a STEP_FUNCTIONS task.</p> <p>For information about
    * specifying and updating task parameters, see
    * <a>RegisterTaskWithMaintenanceWindow</a> and
    * <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has
@@ -64,83 +64,83 @@ namespace Model
 
 
     /**
-     * <p>The inputs for the STEP_FUNCTION task.</p>
+     * <p>The inputs for the STEP_FUNCTIONS task.</p>
      */
     inline const Aws::String& GetInput() const{ return m_input; }
 
     /**
-     * <p>The inputs for the STEP_FUNCTION task.</p>
+     * <p>The inputs for the STEP_FUNCTIONS task.</p>
      */
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
 
     /**
-     * <p>The inputs for the STEP_FUNCTION task.</p>
+     * <p>The inputs for the STEP_FUNCTIONS task.</p>
      */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
-     * <p>The inputs for the STEP_FUNCTION task.</p>
+     * <p>The inputs for the STEP_FUNCTIONS task.</p>
      */
     inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     /**
-     * <p>The inputs for the STEP_FUNCTION task.</p>
+     * <p>The inputs for the STEP_FUNCTIONS task.</p>
      */
     inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
 
     /**
-     * <p>The inputs for the STEP_FUNCTION task.</p>
+     * <p>The inputs for the STEP_FUNCTIONS task.</p>
      */
     inline MaintenanceWindowStepFunctionsParameters& WithInput(const Aws::String& value) { SetInput(value); return *this;}
 
     /**
-     * <p>The inputs for the STEP_FUNCTION task.</p>
+     * <p>The inputs for the STEP_FUNCTIONS task.</p>
      */
     inline MaintenanceWindowStepFunctionsParameters& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
     /**
-     * <p>The inputs for the STEP_FUNCTION task.</p>
+     * <p>The inputs for the STEP_FUNCTIONS task.</p>
      */
     inline MaintenanceWindowStepFunctionsParameters& WithInput(const char* value) { SetInput(value); return *this;}
 
 
     /**
-     * <p>The name of the STEP_FUNCTION task.</p>
+     * <p>The name of the STEP_FUNCTIONS task.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the STEP_FUNCTION task.</p>
+     * <p>The name of the STEP_FUNCTIONS task.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the STEP_FUNCTION task.</p>
+     * <p>The name of the STEP_FUNCTIONS task.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the STEP_FUNCTION task.</p>
+     * <p>The name of the STEP_FUNCTIONS task.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the STEP_FUNCTION task.</p>
+     * <p>The name of the STEP_FUNCTIONS task.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the STEP_FUNCTION task.</p>
+     * <p>The name of the STEP_FUNCTIONS task.</p>
      */
     inline MaintenanceWindowStepFunctionsParameters& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the STEP_FUNCTION task.</p>
+     * <p>The name of the STEP_FUNCTIONS task.</p>
      */
     inline MaintenanceWindowStepFunctionsParameters& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the STEP_FUNCTION task.</p>
+     * <p>The name of the STEP_FUNCTIONS task.</p>
      */
     inline MaintenanceWindowStepFunctionsParameters& WithName(const char* value) { SetName(value); return *this;}
 

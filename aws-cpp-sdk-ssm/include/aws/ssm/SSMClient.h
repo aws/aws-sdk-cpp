@@ -1375,16 +1375,14 @@ namespace Model
         virtual void DeleteParameterAsync(const Model::DeleteParameterRequest& request, const DeleteParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Delete a list of parameters. This API is used to delete parameters by using
-         * the Amazon EC2 console.</p><p><h3>See Also:</h3>   <a
+         * <p>Delete a list of parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameters">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteParametersOutcome DeleteParameters(const Model::DeleteParametersRequest& request) const;
 
         /**
-         * <p>Delete a list of parameters. This API is used to delete parameters by using
-         * the Amazon EC2 console.</p><p><h3>See Also:</h3>   <a
+         * <p>Delete a list of parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameters">AWS
          * API Reference</a></p>
          *
@@ -1393,8 +1391,7 @@ namespace Model
         virtual Model::DeleteParametersOutcomeCallable DeleteParametersCallable(const Model::DeleteParametersRequest& request) const;
 
         /**
-         * <p>Delete a list of parameters. This API is used to delete parameters by using
-         * the Amazon EC2 console.</p><p><h3>See Also:</h3>   <a
+         * <p>Delete a list of parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameters">AWS
          * API Reference</a></p>
          *
@@ -1571,20 +1568,20 @@ namespace Model
         virtual void DeregisterTaskFromMaintenanceWindowAsync(const Model::DeregisterTaskFromMaintenanceWindowRequest& request, const DeregisterTaskFromMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Details about the activation, including: the date and time the activation was
-         * created, the expiration date, the IAM role assigned to the instances in the
-         * activation, and the number of instances activated by this
-         * registration.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes details about the activation, such as the date and time the
+         * activation was created, its expiration date, the IAM role assigned to the
+         * instances in the activation, and the number of instances registered by using
+         * this activation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeActivationsOutcome DescribeActivations(const Model::DescribeActivationsRequest& request) const;
 
         /**
-         * <p>Details about the activation, including: the date and time the activation was
-         * created, the expiration date, the IAM role assigned to the instances in the
-         * activation, and the number of instances activated by this
-         * registration.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes details about the activation, such as the date and time the
+         * activation was created, its expiration date, the IAM role assigned to the
+         * instances in the activation, and the number of instances registered by using
+         * this activation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">AWS
          * API Reference</a></p>
          *
@@ -1593,10 +1590,10 @@ namespace Model
         virtual Model::DescribeActivationsOutcomeCallable DescribeActivationsCallable(const Model::DescribeActivationsRequest& request) const;
 
         /**
-         * <p>Details about the activation, including: the date and time the activation was
-         * created, the expiration date, the IAM role assigned to the instances in the
-         * activation, and the number of instances activated by this
-         * registration.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes details about the activation, such as the date and time the
+         * activation was created, its expiration date, the IAM role assigned to the
+         * instances in the activation, and the number of instances registered by using
+         * this activation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">AWS
          * API Reference</a></p>
          *
@@ -1757,16 +1754,16 @@ namespace Model
         virtual void DescribeAutomationStepExecutionsAsync(const Model::DescribeAutomationStepExecutionsRequest& request, const DescribeAutomationStepExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all patches that could possibly be included in a patch
-         * baseline.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all patches eligible to be included in a patch baseline.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeAvailablePatchesOutcome DescribeAvailablePatches(const Model::DescribeAvailablePatchesRequest& request) const;
 
         /**
-         * <p>Lists all patches that could possibly be included in a patch
-         * baseline.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all patches eligible to be included in a patch baseline.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches">AWS
          * API Reference</a></p>
          *
@@ -1775,8 +1772,8 @@ namespace Model
         virtual Model::DescribeAvailablePatchesOutcomeCallable DescribeAvailablePatchesCallable(const Model::DescribeAvailablePatchesRequest& request) const;
 
         /**
-         * <p>Lists all patches that could possibly be included in a patch
-         * baseline.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all patches eligible to be included in a patch baseline.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches">AWS
          * API Reference</a></p>
          *
@@ -2869,7 +2866,7 @@ namespace Model
         virtual void GetMaintenanceWindowAsync(const Model::GetMaintenanceWindowRequest& request, const GetMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves details about a specific task run as part of a maintenance window
+         * <p>Retrieves details about a specific a maintenance window
          * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">AWS
          * API Reference</a></p>
@@ -2877,7 +2874,7 @@ namespace Model
         virtual Model::GetMaintenanceWindowExecutionOutcome GetMaintenanceWindowExecution(const Model::GetMaintenanceWindowExecutionRequest& request) const;
 
         /**
-         * <p>Retrieves details about a specific task run as part of a maintenance window
+         * <p>Retrieves details about a specific a maintenance window
          * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">AWS
          * API Reference</a></p>
@@ -2887,7 +2884,7 @@ namespace Model
         virtual Model::GetMaintenanceWindowExecutionOutcomeCallable GetMaintenanceWindowExecutionCallable(const Model::GetMaintenanceWindowExecutionRequest& request) const;
 
         /**
-         * <p>Retrieves details about a specific task run as part of a maintenance window
+         * <p>Retrieves details about a specific a maintenance window
          * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">AWS
          * API Reference</a></p>
@@ -2925,18 +2922,16 @@ namespace Model
         virtual void GetMaintenanceWindowExecutionTaskAsync(const Model::GetMaintenanceWindowExecutionTaskRequest& request, const GetMaintenanceWindowExecutionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a task invocation. A task invocation is a specific task running on
-         * a specific target. maintenance windows report status for all invocations.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about a specific task running on a specific
+         * target.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMaintenanceWindowExecutionTaskInvocationOutcome GetMaintenanceWindowExecutionTaskInvocation(const Model::GetMaintenanceWindowExecutionTaskInvocationRequest& request) const;
 
         /**
-         * <p>Retrieves a task invocation. A task invocation is a specific task running on
-         * a specific target. maintenance windows report status for all invocations.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about a specific task running on a specific
+         * target.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation">AWS
          * API Reference</a></p>
          *
@@ -2945,9 +2940,8 @@ namespace Model
         virtual Model::GetMaintenanceWindowExecutionTaskInvocationOutcomeCallable GetMaintenanceWindowExecutionTaskInvocationCallable(const Model::GetMaintenanceWindowExecutionTaskInvocationRequest& request) const;
 
         /**
-         * <p>Retrieves a task invocation. A task invocation is a specific task running on
-         * a specific target. maintenance windows report status for all invocations.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about a specific task running on a specific
+         * target.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation">AWS
          * API Reference</a></p>
          *
@@ -3979,14 +3973,22 @@ namespace Model
         virtual void PutParameterAsync(const Model::PutParameterRequest& request, const PutParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Defines the default patch baseline.</p><p><h3>See Also:</h3>   <a
+         * <p>Defines the default patch baseline for the relevant operating system.</p>
+         * <p>To reset the AWS predefined patch baseline as the default, specify the full
+         * patch baseline ARN as the baseline ID value. For example, for CentOS, specify
+         * <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0574b43a65ea646ed</code>
+         * instead of <code>pb-0574b43a65ea646ed</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">AWS
          * API Reference</a></p>
          */
         virtual Model::RegisterDefaultPatchBaselineOutcome RegisterDefaultPatchBaseline(const Model::RegisterDefaultPatchBaselineRequest& request) const;
 
         /**
-         * <p>Defines the default patch baseline.</p><p><h3>See Also:</h3>   <a
+         * <p>Defines the default patch baseline for the relevant operating system.</p>
+         * <p>To reset the AWS predefined patch baseline as the default, specify the full
+         * patch baseline ARN as the baseline ID value. For example, for CentOS, specify
+         * <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0574b43a65ea646ed</code>
+         * instead of <code>pb-0574b43a65ea646ed</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -3995,7 +3997,11 @@ namespace Model
         virtual Model::RegisterDefaultPatchBaselineOutcomeCallable RegisterDefaultPatchBaselineCallable(const Model::RegisterDefaultPatchBaselineRequest& request) const;
 
         /**
-         * <p>Defines the default patch baseline.</p><p><h3>See Also:</h3>   <a
+         * <p>Defines the default patch baseline for the relevant operating system.</p>
+         * <p>To reset the AWS predefined patch baseline as the default, specify the full
+         * patch baseline ARN as the baseline ID value. For example, for CentOS, specify
+         * <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0574b43a65ea646ed</code>
+         * instead of <code>pb-0574b43a65ea646ed</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -4079,14 +4085,14 @@ namespace Model
         virtual void RegisterTaskWithMaintenanceWindowAsync(const Model::RegisterTaskWithMaintenanceWindowRequest& request, const RegisterTaskWithMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes all tags from the specified resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes tag keys from the specified resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource">AWS
          * API Reference</a></p>
          */
         virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
 
         /**
-         * <p>Removes all tags from the specified resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes tag keys from the specified resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource">AWS
          * API Reference</a></p>
          *
@@ -4095,7 +4101,7 @@ namespace Model
         virtual Model::RemoveTagsFromResourceOutcomeCallable RemoveTagsFromResourceCallable(const Model::RemoveTagsFromResourceRequest& request) const;
 
         /**
-         * <p>Removes all tags from the specified resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes tag keys from the specified resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource">AWS
          * API Reference</a></p>
          *
@@ -4481,14 +4487,14 @@ namespace Model
         virtual void UpdateAssociationStatusAsync(const Model::UpdateAssociationStatusRequest& request, const UpdateAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The document you want to update.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates one or more values for an SSM document.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateDocumentOutcome UpdateDocument(const Model::UpdateDocumentRequest& request) const;
 
         /**
-         * <p>The document you want to update.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates one or more values for an SSM document.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument">AWS
          * API Reference</a></p>
          *
@@ -4497,7 +4503,7 @@ namespace Model
         virtual Model::UpdateDocumentOutcomeCallable UpdateDocumentCallable(const Model::UpdateDocumentRequest& request) const;
 
         /**
-         * <p>The document you want to update.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates one or more values for an SSM document.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument">AWS
          * API Reference</a></p>
          *
@@ -4559,24 +4565,28 @@ namespace Model
         virtual void UpdateMaintenanceWindowAsync(const Model::UpdateMaintenanceWindowRequest& request, const UpdateMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the target of an existing maintenance window. You can't change the
-         * target type, but you can change the following:</p> <p>The target from being an
-         * ID target to a Tag target, or a Tag target to an ID target.</p> <p>IDs for an ID
-         * target.</p> <p>Tags for a Tag target.</p> <p>Owner.</p> <p>Name.</p>
-         * <p>Description.</p> <p>If a parameter is null, then the corresponding field is
-         * not modified.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the target of an existing maintenance window. You can change the
+         * following:</p> <ul> <li> <p>Name</p> </li> <li> <p>Description</p> </li> <li>
+         * <p>Owner</p> </li> <li> <p>IDs for an ID target</p> </li> <li> <p>Tags for a Tag
+         * target</p> </li> <li> <p>From any supported tag type to another. The three
+         * supported tag types are ID target, Tag target, and resource group. For more
+         * information, see <a>Target</a>.</p> </li> </ul> <note> <p>If a parameter is
+         * null, then the corresponding field is not modified.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateMaintenanceWindowTargetOutcome UpdateMaintenanceWindowTarget(const Model::UpdateMaintenanceWindowTargetRequest& request) const;
 
         /**
-         * <p>Modifies the target of an existing maintenance window. You can't change the
-         * target type, but you can change the following:</p> <p>The target from being an
-         * ID target to a Tag target, or a Tag target to an ID target.</p> <p>IDs for an ID
-         * target.</p> <p>Tags for a Tag target.</p> <p>Owner.</p> <p>Name.</p>
-         * <p>Description.</p> <p>If a parameter is null, then the corresponding field is
-         * not modified.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the target of an existing maintenance window. You can change the
+         * following:</p> <ul> <li> <p>Name</p> </li> <li> <p>Description</p> </li> <li>
+         * <p>Owner</p> </li> <li> <p>IDs for an ID target</p> </li> <li> <p>Tags for a Tag
+         * target</p> </li> <li> <p>From any supported tag type to another. The three
+         * supported tag types are ID target, Tag target, and resource group. For more
+         * information, see <a>Target</a>.</p> </li> </ul> <note> <p>If a parameter is
+         * null, then the corresponding field is not modified.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget">AWS
          * API Reference</a></p>
          *
@@ -4585,12 +4595,14 @@ namespace Model
         virtual Model::UpdateMaintenanceWindowTargetOutcomeCallable UpdateMaintenanceWindowTargetCallable(const Model::UpdateMaintenanceWindowTargetRequest& request) const;
 
         /**
-         * <p>Modifies the target of an existing maintenance window. You can't change the
-         * target type, but you can change the following:</p> <p>The target from being an
-         * ID target to a Tag target, or a Tag target to an ID target.</p> <p>IDs for an ID
-         * target.</p> <p>Tags for a Tag target.</p> <p>Owner.</p> <p>Name.</p>
-         * <p>Description.</p> <p>If a parameter is null, then the corresponding field is
-         * not modified.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the target of an existing maintenance window. You can change the
+         * following:</p> <ul> <li> <p>Name</p> </li> <li> <p>Description</p> </li> <li>
+         * <p>Owner</p> </li> <li> <p>IDs for an ID target</p> </li> <li> <p>Tags for a Tag
+         * target</p> </li> <li> <p>From any supported tag type to another. The three
+         * supported tag types are ID target, Tag target, and resource group. For more
+         * information, see <a>Target</a>.</p> </li> </ul> <note> <p>If a parameter is
+         * null, then the corresponding field is not modified.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget">AWS
          * API Reference</a></p>
          *
@@ -4654,16 +4666,16 @@ namespace Model
         virtual void UpdateMaintenanceWindowTaskAsync(const Model::UpdateMaintenanceWindowTaskRequest& request, const UpdateMaintenanceWindowTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Assigns or changes an Amazon Identity and Access Management (IAM) role to the
-         * managed instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Assigns or changes an Amazon Identity and Access Management (IAM) role for
+         * the managed instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateManagedInstanceRoleOutcome UpdateManagedInstanceRole(const Model::UpdateManagedInstanceRoleRequest& request) const;
 
         /**
-         * <p>Assigns or changes an Amazon Identity and Access Management (IAM) role to the
-         * managed instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Assigns or changes an Amazon Identity and Access Management (IAM) role for
+         * the managed instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">AWS
          * API Reference</a></p>
          *
@@ -4672,8 +4684,8 @@ namespace Model
         virtual Model::UpdateManagedInstanceRoleOutcomeCallable UpdateManagedInstanceRoleCallable(const Model::UpdateManagedInstanceRoleRequest& request) const;
 
         /**
-         * <p>Assigns or changes an Amazon Identity and Access Management (IAM) role to the
-         * managed instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Assigns or changes an Amazon Identity and Access Management (IAM) role for
+         * the managed instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">AWS
          * API Reference</a></p>
          *

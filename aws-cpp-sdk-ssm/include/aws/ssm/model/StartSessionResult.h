@@ -124,7 +124,7 @@ namespace Model
     /**
      * <p>A URL back to SSM Agent on the instance that the Session Manager client uses
      * to send commands and receive output from the instance. Format:
-     * <code>wss://ssm-messages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
+     * <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
      * </p> <p> <b>region</b> represents the Region identifier for an AWS Region
      * supported by AWS Systems Manager, such as <code>us-east-2</code> for the US East
      * (Ohio) Region. For a list of supported <b>region</b> values, see the
@@ -139,7 +139,7 @@ namespace Model
     /**
      * <p>A URL back to SSM Agent on the instance that the Session Manager client uses
      * to send commands and receive output from the instance. Format:
-     * <code>wss://ssm-messages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
+     * <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
      * </p> <p> <b>region</b> represents the Region identifier for an AWS Region
      * supported by AWS Systems Manager, such as <code>us-east-2</code> for the US East
      * (Ohio) Region. For a list of supported <b>region</b> values, see the
@@ -154,7 +154,7 @@ namespace Model
     /**
      * <p>A URL back to SSM Agent on the instance that the Session Manager client uses
      * to send commands and receive output from the instance. Format:
-     * <code>wss://ssm-messages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
+     * <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
      * </p> <p> <b>region</b> represents the Region identifier for an AWS Region
      * supported by AWS Systems Manager, such as <code>us-east-2</code> for the US East
      * (Ohio) Region. For a list of supported <b>region</b> values, see the
@@ -169,7 +169,7 @@ namespace Model
     /**
      * <p>A URL back to SSM Agent on the instance that the Session Manager client uses
      * to send commands and receive output from the instance. Format:
-     * <code>wss://ssm-messages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
+     * <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
      * </p> <p> <b>region</b> represents the Region identifier for an AWS Region
      * supported by AWS Systems Manager, such as <code>us-east-2</code> for the US East
      * (Ohio) Region. For a list of supported <b>region</b> values, see the
@@ -184,7 +184,7 @@ namespace Model
     /**
      * <p>A URL back to SSM Agent on the instance that the Session Manager client uses
      * to send commands and receive output from the instance. Format:
-     * <code>wss://ssm-messages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
+     * <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
      * </p> <p> <b>region</b> represents the Region identifier for an AWS Region
      * supported by AWS Systems Manager, such as <code>us-east-2</code> for the US East
      * (Ohio) Region. For a list of supported <b>region</b> values, see the
@@ -199,7 +199,7 @@ namespace Model
     /**
      * <p>A URL back to SSM Agent on the instance that the Session Manager client uses
      * to send commands and receive output from the instance. Format:
-     * <code>wss://ssm-messages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
+     * <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
      * </p> <p> <b>region</b> represents the Region identifier for an AWS Region
      * supported by AWS Systems Manager, such as <code>us-east-2</code> for the US East
      * (Ohio) Region. For a list of supported <b>region</b> values, see the
@@ -214,7 +214,7 @@ namespace Model
     /**
      * <p>A URL back to SSM Agent on the instance that the Session Manager client uses
      * to send commands and receive output from the instance. Format:
-     * <code>wss://ssm-messages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
+     * <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
      * </p> <p> <b>region</b> represents the Region identifier for an AWS Region
      * supported by AWS Systems Manager, such as <code>us-east-2</code> for the US East
      * (Ohio) Region. For a list of supported <b>region</b> values, see the

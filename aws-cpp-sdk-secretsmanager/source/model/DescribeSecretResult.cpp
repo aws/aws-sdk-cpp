@@ -131,6 +131,12 @@ DescribeSecretResult& DescribeSecretResult::operator =(const Aws::AmazonWebServi
     }
   }
 
+  if(jsonValue.ValueExists("OwningService"))
+  {
+    m_owningService = jsonValue.GetString("OwningService");
+
+  }
+
 
 
   return *this;

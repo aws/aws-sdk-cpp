@@ -743,6 +743,31 @@ namespace Model
      */
     inline SecretListEntry& AddSecretVersionsToStages(const char* key, const Aws::Vector<Aws::String>& value) { m_secretVersionsToStagesHasBeenSet = true; m_secretVersionsToStages.emplace(key, value); return *this; }
 
+
+    
+    inline const Aws::String& GetOwningService() const{ return m_owningService; }
+
+    
+    inline bool OwningServiceHasBeenSet() const { return m_owningServiceHasBeenSet; }
+
+    
+    inline void SetOwningService(const Aws::String& value) { m_owningServiceHasBeenSet = true; m_owningService = value; }
+
+    
+    inline void SetOwningService(Aws::String&& value) { m_owningServiceHasBeenSet = true; m_owningService = std::move(value); }
+
+    
+    inline void SetOwningService(const char* value) { m_owningServiceHasBeenSet = true; m_owningService.assign(value); }
+
+    
+    inline SecretListEntry& WithOwningService(const Aws::String& value) { SetOwningService(value); return *this;}
+
+    
+    inline SecretListEntry& WithOwningService(Aws::String&& value) { SetOwningService(std::move(value)); return *this;}
+
+    
+    inline SecretListEntry& WithOwningService(const char* value) { SetOwningService(value); return *this;}
+
   private:
 
     Aws::String m_aRN;
@@ -783,6 +808,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_secretVersionsToStages;
     bool m_secretVersionsToStagesHasBeenSet;
+
+    Aws::String m_owningService;
+    bool m_owningServiceHasBeenSet;
   };
 
 } // namespace Model

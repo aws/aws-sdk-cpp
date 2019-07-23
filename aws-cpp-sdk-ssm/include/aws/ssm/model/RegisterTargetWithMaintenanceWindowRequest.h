@@ -123,16 +123,23 @@ namespace Model
     /**
      * <p>The targets to register with the maintenance window. In other words, the
      * instances to run commands on when the maintenance window runs.</p> <p>You can
-     * specify targets using either instance IDs or tags that have been applied to
-     * instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * specify targets using instance IDs, resource group names, or tags that have been
+     * applied to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
      * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
      * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
      * <p>
      * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
      * </code> </p> <p> <b>Example 3</b>: Use tag-keys applied to instances</p> <p>
      * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p>
-     * <p>For more information about these examples formats, including the best use
-     * case for each one, see <a
+     * <p> <b>Example 4</b>: Use resource group names</p> <p>
+     * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p>
+     * <p> <b>Example 5</b>: Use filters for resource group types</p> <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
+     * </code> </p> <note> <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
+     * specify resource types in the following format</p> <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
+     * </code> </p> </note> <p>For more information about these examples formats,
+     * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
      * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
@@ -142,16 +149,23 @@ namespace Model
     /**
      * <p>The targets to register with the maintenance window. In other words, the
      * instances to run commands on when the maintenance window runs.</p> <p>You can
-     * specify targets using either instance IDs or tags that have been applied to
-     * instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * specify targets using instance IDs, resource group names, or tags that have been
+     * applied to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
      * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
      * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
      * <p>
      * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
      * </code> </p> <p> <b>Example 3</b>: Use tag-keys applied to instances</p> <p>
      * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p>
-     * <p>For more information about these examples formats, including the best use
-     * case for each one, see <a
+     * <p> <b>Example 4</b>: Use resource group names</p> <p>
+     * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p>
+     * <p> <b>Example 5</b>: Use filters for resource group types</p> <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
+     * </code> </p> <note> <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
+     * specify resource types in the following format</p> <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
+     * </code> </p> </note> <p>For more information about these examples formats,
+     * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
      * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
@@ -161,16 +175,23 @@ namespace Model
     /**
      * <p>The targets to register with the maintenance window. In other words, the
      * instances to run commands on when the maintenance window runs.</p> <p>You can
-     * specify targets using either instance IDs or tags that have been applied to
-     * instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * specify targets using instance IDs, resource group names, or tags that have been
+     * applied to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
      * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
      * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
      * <p>
      * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
      * </code> </p> <p> <b>Example 3</b>: Use tag-keys applied to instances</p> <p>
      * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p>
-     * <p>For more information about these examples formats, including the best use
-     * case for each one, see <a
+     * <p> <b>Example 4</b>: Use resource group names</p> <p>
+     * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p>
+     * <p> <b>Example 5</b>: Use filters for resource group types</p> <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
+     * </code> </p> <note> <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
+     * specify resource types in the following format</p> <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
+     * </code> </p> </note> <p>For more information about these examples formats,
+     * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
      * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
@@ -180,16 +201,23 @@ namespace Model
     /**
      * <p>The targets to register with the maintenance window. In other words, the
      * instances to run commands on when the maintenance window runs.</p> <p>You can
-     * specify targets using either instance IDs or tags that have been applied to
-     * instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * specify targets using instance IDs, resource group names, or tags that have been
+     * applied to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
      * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
      * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
      * <p>
      * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
      * </code> </p> <p> <b>Example 3</b>: Use tag-keys applied to instances</p> <p>
      * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p>
-     * <p>For more information about these examples formats, including the best use
-     * case for each one, see <a
+     * <p> <b>Example 4</b>: Use resource group names</p> <p>
+     * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p>
+     * <p> <b>Example 5</b>: Use filters for resource group types</p> <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
+     * </code> </p> <note> <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
+     * specify resource types in the following format</p> <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
+     * </code> </p> </note> <p>For more information about these examples formats,
+     * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
      * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
@@ -199,16 +227,23 @@ namespace Model
     /**
      * <p>The targets to register with the maintenance window. In other words, the
      * instances to run commands on when the maintenance window runs.</p> <p>You can
-     * specify targets using either instance IDs or tags that have been applied to
-     * instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * specify targets using instance IDs, resource group names, or tags that have been
+     * applied to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
      * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
      * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
      * <p>
      * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
      * </code> </p> <p> <b>Example 3</b>: Use tag-keys applied to instances</p> <p>
      * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p>
-     * <p>For more information about these examples formats, including the best use
-     * case for each one, see <a
+     * <p> <b>Example 4</b>: Use resource group names</p> <p>
+     * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p>
+     * <p> <b>Example 5</b>: Use filters for resource group types</p> <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
+     * </code> </p> <note> <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
+     * specify resource types in the following format</p> <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
+     * </code> </p> </note> <p>For more information about these examples formats,
+     * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
      * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
@@ -218,16 +253,23 @@ namespace Model
     /**
      * <p>The targets to register with the maintenance window. In other words, the
      * instances to run commands on when the maintenance window runs.</p> <p>You can
-     * specify targets using either instance IDs or tags that have been applied to
-     * instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * specify targets using instance IDs, resource group names, or tags that have been
+     * applied to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
      * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
      * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
      * <p>
      * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
      * </code> </p> <p> <b>Example 3</b>: Use tag-keys applied to instances</p> <p>
      * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p>
-     * <p>For more information about these examples formats, including the best use
-     * case for each one, see <a
+     * <p> <b>Example 4</b>: Use resource group names</p> <p>
+     * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p>
+     * <p> <b>Example 5</b>: Use filters for resource group types</p> <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
+     * </code> </p> <note> <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
+     * specify resource types in the following format</p> <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
+     * </code> </p> </note> <p>For more information about these examples formats,
+     * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
      * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
@@ -237,16 +279,23 @@ namespace Model
     /**
      * <p>The targets to register with the maintenance window. In other words, the
      * instances to run commands on when the maintenance window runs.</p> <p>You can
-     * specify targets using either instance IDs or tags that have been applied to
-     * instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * specify targets using instance IDs, resource group names, or tags that have been
+     * applied to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
      * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
      * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
      * <p>
      * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
      * </code> </p> <p> <b>Example 3</b>: Use tag-keys applied to instances</p> <p>
      * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p>
-     * <p>For more information about these examples formats, including the best use
-     * case for each one, see <a
+     * <p> <b>Example 4</b>: Use resource group names</p> <p>
+     * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p>
+     * <p> <b>Example 5</b>: Use filters for resource group types</p> <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
+     * </code> </p> <note> <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
+     * specify resource types in the following format</p> <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
+     * </code> </p> </note> <p>For more information about these examples formats,
+     * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
      * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
@@ -256,16 +305,23 @@ namespace Model
     /**
      * <p>The targets to register with the maintenance window. In other words, the
      * instances to run commands on when the maintenance window runs.</p> <p>You can
-     * specify targets using either instance IDs or tags that have been applied to
-     * instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * specify targets using instance IDs, resource group names, or tags that have been
+     * applied to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
      * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
      * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
      * <p>
      * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
      * </code> </p> <p> <b>Example 3</b>: Use tag-keys applied to instances</p> <p>
      * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p>
-     * <p>For more information about these examples formats, including the best use
-     * case for each one, see <a
+     * <p> <b>Example 4</b>: Use resource group names</p> <p>
+     * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p>
+     * <p> <b>Example 5</b>: Use filters for resource group types</p> <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
+     * </code> </p> <note> <p>For <code>Key=resource-groups:ResourceTypeFilters</code>,
+     * specify resource types in the following format</p> <p>
+     * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
+     * </code> </p> </note> <p>For more information about these examples formats,
+     * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
      * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>

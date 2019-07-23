@@ -26,7 +26,8 @@ namespace Model
   enum class MaintenanceWindowResourceType
   {
     NOT_SET,
-    INSTANCE
+    INSTANCE,
+    RESOURCE_GROUP
   };
 
 namespace MaintenanceWindowResourceTypeMapper

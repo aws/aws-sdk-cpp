@@ -191,31 +191,31 @@ namespace Model
 
     /**
      * <p>Retrieves the task type for a maintenance window. Task types include the
-     * following: LAMBDA, STEP_FUNCTION, AUTOMATION, RUN_COMMAND.</p>
+     * following: LAMBDA, STEP_FUNCTIONS, AUTOMATION, RUN_COMMAND.</p>
      */
     inline const MaintenanceWindowTaskType& GetTaskType() const{ return m_taskType; }
 
     /**
      * <p>Retrieves the task type for a maintenance window. Task types include the
-     * following: LAMBDA, STEP_FUNCTION, AUTOMATION, RUN_COMMAND.</p>
+     * following: LAMBDA, STEP_FUNCTIONS, AUTOMATION, RUN_COMMAND.</p>
      */
     inline void SetTaskType(const MaintenanceWindowTaskType& value) { m_taskType = value; }
 
     /**
      * <p>Retrieves the task type for a maintenance window. Task types include the
-     * following: LAMBDA, STEP_FUNCTION, AUTOMATION, RUN_COMMAND.</p>
+     * following: LAMBDA, STEP_FUNCTIONS, AUTOMATION, RUN_COMMAND.</p>
      */
     inline void SetTaskType(MaintenanceWindowTaskType&& value) { m_taskType = std::move(value); }
 
     /**
      * <p>Retrieves the task type for a maintenance window. Task types include the
-     * following: LAMBDA, STEP_FUNCTION, AUTOMATION, RUN_COMMAND.</p>
+     * following: LAMBDA, STEP_FUNCTIONS, AUTOMATION, RUN_COMMAND.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithTaskType(const MaintenanceWindowTaskType& value) { SetTaskType(value); return *this;}
 
     /**
      * <p>Retrieves the task type for a maintenance window. Task types include the
-     * following: LAMBDA, STEP_FUNCTION, AUTOMATION, RUN_COMMAND.</p>
+     * following: LAMBDA, STEP_FUNCTIONS, AUTOMATION, RUN_COMMAND.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithTaskType(MaintenanceWindowTaskType&& value) { SetTaskType(std::move(value)); return *this;}
 

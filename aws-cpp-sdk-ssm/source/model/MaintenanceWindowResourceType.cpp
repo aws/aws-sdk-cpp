@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int INSTANCE_HASH = HashingUtils::HashString("INSTANCE");
+        static const int RESOURCE_GROUP_HASH = HashingUtils::HashString("RESOURCE_GROUP");
 
 
         MaintenanceWindowResourceType GetMaintenanceWindowResourceTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == INSTANCE_HASH)
           {
             return MaintenanceWindowResourceType::INSTANCE;
+          }
+          else if (hashCode == RESOURCE_GROUP_HASH)
+          {
+            return MaintenanceWindowResourceType::RESOURCE_GROUP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case MaintenanceWindowResourceType::INSTANCE:
             return "INSTANCE";
+          case MaintenanceWindowResourceType::RESOURCE_GROUP:
+            return "RESOURCE_GROUP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

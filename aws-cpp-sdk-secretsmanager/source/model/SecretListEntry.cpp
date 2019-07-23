@@ -42,7 +42,8 @@ SecretListEntry::SecretListEntry() :
     m_lastAccessedDateHasBeenSet(false),
     m_deletedDateHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_secretVersionsToStagesHasBeenSet(false)
+    m_secretVersionsToStagesHasBeenSet(false),
+    m_owningServiceHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ SecretListEntry::SecretListEntry(JsonView jsonValue) :
     m_lastAccessedDateHasBeenSet(false),
     m_deletedDateHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_secretVersionsToStagesHasBeenSet(false)
+    m_secretVersionsToStagesHasBeenSet(false),
+    m_owningServiceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -171,6 +173,13 @@ SecretListEntry& SecretListEntry::operator =(JsonView jsonValue)
     m_secretVersionsToStagesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OwningService"))
+  {
+    m_owningService = jsonValue.GetString("OwningService");
+
+    m_owningServiceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -264,6 +273,12 @@ JsonValue SecretListEntry::Jsonize() const
      secretVersionsToStagesJsonMap.WithArray(secretVersionsToStagesItem.first, std::move(secretVersionStagesTypeJsonList));
    }
    payload.WithObject("SecretVersionsToStages", std::move(secretVersionsToStagesJsonMap));
+
+  }
+
+  if(m_owningServiceHasBeenSet)
+  {
+   payload.WithString("OwningService", m_owningService);
 
   }
 

@@ -139,7 +139,7 @@ namespace Model
     /**
      * <p>The resource that the task uses during execution. For RUN_COMMAND and
      * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION
+     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
      * tasks, it's the state machine ARN.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
@@ -147,7 +147,7 @@ namespace Model
     /**
      * <p>The resource that the task uses during execution. For RUN_COMMAND and
      * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION
+     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
      * tasks, it's the state machine ARN.</p>
      */
     inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
@@ -155,7 +155,7 @@ namespace Model
     /**
      * <p>The resource that the task uses during execution. For RUN_COMMAND and
      * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION
+     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
      * tasks, it's the state machine ARN.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
@@ -163,7 +163,7 @@ namespace Model
     /**
      * <p>The resource that the task uses during execution. For RUN_COMMAND and
      * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION
+     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
      * tasks, it's the state machine ARN.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
@@ -171,7 +171,7 @@ namespace Model
     /**
      * <p>The resource that the task uses during execution. For RUN_COMMAND and
      * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION
+     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
      * tasks, it's the state machine ARN.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
@@ -179,7 +179,7 @@ namespace Model
     /**
      * <p>The resource that the task uses during execution. For RUN_COMMAND and
      * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION
+     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
      * tasks, it's the state machine ARN.</p>
      */
     inline MaintenanceWindowTask& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
@@ -187,7 +187,7 @@ namespace Model
     /**
      * <p>The resource that the task uses during execution. For RUN_COMMAND and
      * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION
+     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
      * tasks, it's the state machine ARN.</p>
      */
     inline MaintenanceWindowTask& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
@@ -195,7 +195,7 @@ namespace Model
     /**
      * <p>The resource that the task uses during execution. For RUN_COMMAND and
      * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION
+     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
      * tasks, it's the state machine ARN.</p>
      */
     inline MaintenanceWindowTask& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
@@ -203,37 +203,37 @@ namespace Model
 
     /**
      * <p>The type of task. The type can be one of the following: RUN_COMMAND,
-     * AUTOMATION, LAMBDA, or STEP_FUNCTION.</p>
+     * AUTOMATION, LAMBDA, or STEP_FUNCTIONS.</p>
      */
     inline const MaintenanceWindowTaskType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of task. The type can be one of the following: RUN_COMMAND,
-     * AUTOMATION, LAMBDA, or STEP_FUNCTION.</p>
+     * AUTOMATION, LAMBDA, or STEP_FUNCTIONS.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of task. The type can be one of the following: RUN_COMMAND,
-     * AUTOMATION, LAMBDA, or STEP_FUNCTION.</p>
+     * AUTOMATION, LAMBDA, or STEP_FUNCTIONS.</p>
      */
     inline void SetType(const MaintenanceWindowTaskType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of task. The type can be one of the following: RUN_COMMAND,
-     * AUTOMATION, LAMBDA, or STEP_FUNCTION.</p>
+     * AUTOMATION, LAMBDA, or STEP_FUNCTIONS.</p>
      */
     inline void SetType(MaintenanceWindowTaskType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of task. The type can be one of the following: RUN_COMMAND,
-     * AUTOMATION, LAMBDA, or STEP_FUNCTION.</p>
+     * AUTOMATION, LAMBDA, or STEP_FUNCTIONS.</p>
      */
     inline MaintenanceWindowTask& WithType(const MaintenanceWindowTaskType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of task. The type can be one of the following: RUN_COMMAND,
-     * AUTOMATION, LAMBDA, or STEP_FUNCTION.</p>
+     * AUTOMATION, LAMBDA, or STEP_FUNCTIONS.</p>
      */
     inline MaintenanceWindowTask& WithType(MaintenanceWindowTaskType&& value) { SetType(std::move(value)); return *this;}
 

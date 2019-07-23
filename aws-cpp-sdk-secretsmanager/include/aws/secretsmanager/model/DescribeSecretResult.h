@@ -614,6 +614,28 @@ namespace Model
      */
     inline DescribeSecretResult& AddVersionIdsToStages(const char* key, const Aws::Vector<Aws::String>& value) { m_versionIdsToStages.emplace(key, value); return *this; }
 
+
+    
+    inline const Aws::String& GetOwningService() const{ return m_owningService; }
+
+    
+    inline void SetOwningService(const Aws::String& value) { m_owningService = value; }
+
+    
+    inline void SetOwningService(Aws::String&& value) { m_owningService = std::move(value); }
+
+    
+    inline void SetOwningService(const char* value) { m_owningService.assign(value); }
+
+    
+    inline DescribeSecretResult& WithOwningService(const Aws::String& value) { SetOwningService(value); return *this;}
+
+    
+    inline DescribeSecretResult& WithOwningService(Aws::String&& value) { SetOwningService(std::move(value)); return *this;}
+
+    
+    inline DescribeSecretResult& WithOwningService(const char* value) { SetOwningService(value); return *this;}
+
   private:
 
     Aws::String m_aRN;
@@ -641,6 +663,8 @@ namespace Model
     Aws::Vector<Tag> m_tags;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_versionIdsToStages;
+
+    Aws::String m_owningService;
   };
 
 } // namespace Model
