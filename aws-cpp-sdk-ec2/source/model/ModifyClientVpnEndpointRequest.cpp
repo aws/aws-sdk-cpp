@@ -26,6 +26,8 @@ ModifyClientVpnEndpointRequest::ModifyClientVpnEndpointRequest() :
     m_connectionLogOptionsHasBeenSet(false),
     m_dnsServersHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_splitTunnel(false),
+    m_splitTunnelHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -58,6 +60,11 @@ Aws::String ModifyClientVpnEndpointRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
+  if(m_splitTunnelHasBeenSet)
+  {
+    ss << "SplitTunnel=" << std::boolalpha << m_splitTunnel << "&";
   }
 
   if(m_dryRunHasBeenSet)

@@ -130,6 +130,63 @@ namespace Model
      */
     inline Region& WithRegionName(const char* value) { SetRegionName(value); return *this;}
 
+
+    /**
+     * <p>The Region opt-in status. The possible values are
+     * <code>opt-in-not-required</code>, <code>opted-in</code>, and
+     * <code>not-opted-in</code>.</p>
+     */
+    inline const Aws::String& GetOptInStatus() const{ return m_optInStatus; }
+
+    /**
+     * <p>The Region opt-in status. The possible values are
+     * <code>opt-in-not-required</code>, <code>opted-in</code>, and
+     * <code>not-opted-in</code>.</p>
+     */
+    inline bool OptInStatusHasBeenSet() const { return m_optInStatusHasBeenSet; }
+
+    /**
+     * <p>The Region opt-in status. The possible values are
+     * <code>opt-in-not-required</code>, <code>opted-in</code>, and
+     * <code>not-opted-in</code>.</p>
+     */
+    inline void SetOptInStatus(const Aws::String& value) { m_optInStatusHasBeenSet = true; m_optInStatus = value; }
+
+    /**
+     * <p>The Region opt-in status. The possible values are
+     * <code>opt-in-not-required</code>, <code>opted-in</code>, and
+     * <code>not-opted-in</code>.</p>
+     */
+    inline void SetOptInStatus(Aws::String&& value) { m_optInStatusHasBeenSet = true; m_optInStatus = std::move(value); }
+
+    /**
+     * <p>The Region opt-in status. The possible values are
+     * <code>opt-in-not-required</code>, <code>opted-in</code>, and
+     * <code>not-opted-in</code>.</p>
+     */
+    inline void SetOptInStatus(const char* value) { m_optInStatusHasBeenSet = true; m_optInStatus.assign(value); }
+
+    /**
+     * <p>The Region opt-in status. The possible values are
+     * <code>opt-in-not-required</code>, <code>opted-in</code>, and
+     * <code>not-opted-in</code>.</p>
+     */
+    inline Region& WithOptInStatus(const Aws::String& value) { SetOptInStatus(value); return *this;}
+
+    /**
+     * <p>The Region opt-in status. The possible values are
+     * <code>opt-in-not-required</code>, <code>opted-in</code>, and
+     * <code>not-opted-in</code>.</p>
+     */
+    inline Region& WithOptInStatus(Aws::String&& value) { SetOptInStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>The Region opt-in status. The possible values are
+     * <code>opt-in-not-required</code>, <code>opted-in</code>, and
+     * <code>not-opted-in</code>.</p>
+     */
+    inline Region& WithOptInStatus(const char* value) { SetOptInStatus(value); return *this;}
+
   private:
 
     Aws::String m_endpoint;
@@ -137,6 +194,9 @@ namespace Model
 
     Aws::String m_regionName;
     bool m_regionNameHasBeenSet;
+
+    Aws::String m_optInStatus;
+    bool m_optInStatusHasBeenSet;
   };
 
 } // namespace Model

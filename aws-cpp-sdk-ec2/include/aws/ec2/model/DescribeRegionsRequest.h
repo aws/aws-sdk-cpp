@@ -114,47 +114,56 @@ namespace Model
 
 
     /**
-     * <p>The names of the Regions.</p>
+     * <p>The names of the Regions. You can specify any Regions, whether they are
+     * enabled and disabled for your account.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegionNames() const{ return m_regionNames; }
 
     /**
-     * <p>The names of the Regions.</p>
+     * <p>The names of the Regions. You can specify any Regions, whether they are
+     * enabled and disabled for your account.</p>
      */
     inline bool RegionNamesHasBeenSet() const { return m_regionNamesHasBeenSet; }
 
     /**
-     * <p>The names of the Regions.</p>
+     * <p>The names of the Regions. You can specify any Regions, whether they are
+     * enabled and disabled for your account.</p>
      */
     inline void SetRegionNames(const Aws::Vector<Aws::String>& value) { m_regionNamesHasBeenSet = true; m_regionNames = value; }
 
     /**
-     * <p>The names of the Regions.</p>
+     * <p>The names of the Regions. You can specify any Regions, whether they are
+     * enabled and disabled for your account.</p>
      */
     inline void SetRegionNames(Aws::Vector<Aws::String>&& value) { m_regionNamesHasBeenSet = true; m_regionNames = std::move(value); }
 
     /**
-     * <p>The names of the Regions.</p>
+     * <p>The names of the Regions. You can specify any Regions, whether they are
+     * enabled and disabled for your account.</p>
      */
     inline DescribeRegionsRequest& WithRegionNames(const Aws::Vector<Aws::String>& value) { SetRegionNames(value); return *this;}
 
     /**
-     * <p>The names of the Regions.</p>
+     * <p>The names of the Regions. You can specify any Regions, whether they are
+     * enabled and disabled for your account.</p>
      */
     inline DescribeRegionsRequest& WithRegionNames(Aws::Vector<Aws::String>&& value) { SetRegionNames(std::move(value)); return *this;}
 
     /**
-     * <p>The names of the Regions.</p>
+     * <p>The names of the Regions. You can specify any Regions, whether they are
+     * enabled and disabled for your account.</p>
      */
     inline DescribeRegionsRequest& AddRegionNames(const Aws::String& value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(value); return *this; }
 
     /**
-     * <p>The names of the Regions.</p>
+     * <p>The names of the Regions. You can specify any Regions, whether they are
+     * enabled and disabled for your account.</p>
      */
     inline DescribeRegionsRequest& AddRegionNames(Aws::String&& value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of the Regions.</p>
+     * <p>The names of the Regions. You can specify any Regions, whether they are
+     * enabled and disabled for your account.</p>
      */
     inline DescribeRegionsRequest& AddRegionNames(const char* value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(value); return *this; }
 
@@ -191,6 +200,31 @@ namespace Model
      */
     inline DescribeRegionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether to display all Regions, including Regions that are disabled
+     * for your account.</p>
+     */
+    inline bool GetAllRegions() const{ return m_allRegions; }
+
+    /**
+     * <p>Indicates whether to display all Regions, including Regions that are disabled
+     * for your account.</p>
+     */
+    inline bool AllRegionsHasBeenSet() const { return m_allRegionsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to display all Regions, including Regions that are disabled
+     * for your account.</p>
+     */
+    inline void SetAllRegions(bool value) { m_allRegionsHasBeenSet = true; m_allRegions = value; }
+
+    /**
+     * <p>Indicates whether to display all Regions, including Regions that are disabled
+     * for your account.</p>
+     */
+    inline DescribeRegionsRequest& WithAllRegions(bool value) { SetAllRegions(value); return *this;}
+
   private:
 
     Aws::Vector<Filter> m_filters;
@@ -201,6 +235,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    bool m_allRegions;
+    bool m_allRegionsHasBeenSet;
   };
 
 } // namespace Model

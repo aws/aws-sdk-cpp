@@ -45,78 +45,78 @@ namespace Model
 
 
     /**
-     * <p>A list of DevEndpoint definitions.</p>
+     * <p>A list of <code>DevEndpoint</code> definitions.</p>
      */
     inline const Aws::Vector<DevEndpoint>& GetDevEndpoints() const{ return m_devEndpoints; }
 
     /**
-     * <p>A list of DevEndpoint definitions.</p>
+     * <p>A list of <code>DevEndpoint</code> definitions.</p>
      */
     inline void SetDevEndpoints(const Aws::Vector<DevEndpoint>& value) { m_devEndpoints = value; }
 
     /**
-     * <p>A list of DevEndpoint definitions.</p>
+     * <p>A list of <code>DevEndpoint</code> definitions.</p>
      */
     inline void SetDevEndpoints(Aws::Vector<DevEndpoint>&& value) { m_devEndpoints = std::move(value); }
 
     /**
-     * <p>A list of DevEndpoint definitions.</p>
+     * <p>A list of <code>DevEndpoint</code> definitions.</p>
      */
     inline BatchGetDevEndpointsResult& WithDevEndpoints(const Aws::Vector<DevEndpoint>& value) { SetDevEndpoints(value); return *this;}
 
     /**
-     * <p>A list of DevEndpoint definitions.</p>
+     * <p>A list of <code>DevEndpoint</code> definitions.</p>
      */
     inline BatchGetDevEndpointsResult& WithDevEndpoints(Aws::Vector<DevEndpoint>&& value) { SetDevEndpoints(std::move(value)); return *this;}
 
     /**
-     * <p>A list of DevEndpoint definitions.</p>
+     * <p>A list of <code>DevEndpoint</code> definitions.</p>
      */
     inline BatchGetDevEndpointsResult& AddDevEndpoints(const DevEndpoint& value) { m_devEndpoints.push_back(value); return *this; }
 
     /**
-     * <p>A list of DevEndpoint definitions.</p>
+     * <p>A list of <code>DevEndpoint</code> definitions.</p>
      */
     inline BatchGetDevEndpointsResult& AddDevEndpoints(DevEndpoint&& value) { m_devEndpoints.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of DevEndpoints not found.</p>
+     * <p>A list of <code>DevEndpoints</code> not found.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDevEndpointsNotFound() const{ return m_devEndpointsNotFound; }
 
     /**
-     * <p>A list of DevEndpoints not found.</p>
+     * <p>A list of <code>DevEndpoints</code> not found.</p>
      */
     inline void SetDevEndpointsNotFound(const Aws::Vector<Aws::String>& value) { m_devEndpointsNotFound = value; }
 
     /**
-     * <p>A list of DevEndpoints not found.</p>
+     * <p>A list of <code>DevEndpoints</code> not found.</p>
      */
     inline void SetDevEndpointsNotFound(Aws::Vector<Aws::String>&& value) { m_devEndpointsNotFound = std::move(value); }
 
     /**
-     * <p>A list of DevEndpoints not found.</p>
+     * <p>A list of <code>DevEndpoints</code> not found.</p>
      */
     inline BatchGetDevEndpointsResult& WithDevEndpointsNotFound(const Aws::Vector<Aws::String>& value) { SetDevEndpointsNotFound(value); return *this;}
 
     /**
-     * <p>A list of DevEndpoints not found.</p>
+     * <p>A list of <code>DevEndpoints</code> not found.</p>
      */
     inline BatchGetDevEndpointsResult& WithDevEndpointsNotFound(Aws::Vector<Aws::String>&& value) { SetDevEndpointsNotFound(std::move(value)); return *this;}
 
     /**
-     * <p>A list of DevEndpoints not found.</p>
+     * <p>A list of <code>DevEndpoints</code> not found.</p>
      */
     inline BatchGetDevEndpointsResult& AddDevEndpointsNotFound(const Aws::String& value) { m_devEndpointsNotFound.push_back(value); return *this; }
 
     /**
-     * <p>A list of DevEndpoints not found.</p>
+     * <p>A list of <code>DevEndpoints</code> not found.</p>
      */
     inline BatchGetDevEndpointsResult& AddDevEndpointsNotFound(Aws::String&& value) { m_devEndpointsNotFound.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of DevEndpoints not found.</p>
+     * <p>A list of <code>DevEndpoints</code> not found.</p>
      */
     inline BatchGetDevEndpointsResult& AddDevEndpointsNotFound(const char* value) { m_devEndpointsNotFound.push_back(value); return *this; }
 

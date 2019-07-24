@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>A DevEndpoint definition.</p>
+     * <p>A <code>DevEndpoint</code> definition.</p>
      */
     inline const DevEndpoint& GetDevEndpoint() const{ return m_devEndpoint; }
 
     /**
-     * <p>A DevEndpoint definition.</p>
+     * <p>A <code>DevEndpoint</code> definition.</p>
      */
     inline void SetDevEndpoint(const DevEndpoint& value) { m_devEndpoint = value; }
 
     /**
-     * <p>A DevEndpoint definition.</p>
+     * <p>A <code>DevEndpoint</code> definition.</p>
      */
     inline void SetDevEndpoint(DevEndpoint&& value) { m_devEndpoint = std::move(value); }
 
     /**
-     * <p>A DevEndpoint definition.</p>
+     * <p>A <code>DevEndpoint</code> definition.</p>
      */
     inline GetDevEndpointResult& WithDevEndpoint(const DevEndpoint& value) { SetDevEndpoint(value); return *this;}
 
     /**
-     * <p>A DevEndpoint definition.</p>
+     * <p>A <code>DevEndpoint</code> definition.</p>
      */
     inline GetDevEndpointResult& WithDevEndpoint(DevEndpoint&& value) { SetDevEndpoint(std::move(value)); return *this;}
 

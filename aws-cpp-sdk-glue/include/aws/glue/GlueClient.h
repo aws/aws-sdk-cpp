@@ -844,22 +844,22 @@ namespace Model
         virtual void BatchGetCrawlersAsync(const Model::BatchGetCrawlersRequest& request, const BatchGetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of resource metadata for a given list of DevEndpoint names.
-         * After calling the <code>ListDevEndpoints</code> operation, you can call this
-         * operation to access the data to which you have been granted permissions. This
-         * operation supports all IAM permissions, including permission conditions that
-         * uses tags.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of resource metadata for a given list of development endpoint
+         * names. After calling the <code>ListDevEndpoints</code> operation, you can call
+         * this operation to access the data to which you have been granted permissions.
+         * This operation supports all IAM permissions, including permission conditions
+         * that uses tags.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDevEndpoints">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchGetDevEndpointsOutcome BatchGetDevEndpoints(const Model::BatchGetDevEndpointsRequest& request) const;
 
         /**
-         * <p>Returns a list of resource metadata for a given list of DevEndpoint names.
-         * After calling the <code>ListDevEndpoints</code> operation, you can call this
-         * operation to access the data to which you have been granted permissions. This
-         * operation supports all IAM permissions, including permission conditions that
-         * uses tags.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of resource metadata for a given list of development endpoint
+         * names. After calling the <code>ListDevEndpoints</code> operation, you can call
+         * this operation to access the data to which you have been granted permissions.
+         * This operation supports all IAM permissions, including permission conditions
+         * that uses tags.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDevEndpoints">AWS
          * API Reference</a></p>
          *
@@ -868,11 +868,11 @@ namespace Model
         virtual Model::BatchGetDevEndpointsOutcomeCallable BatchGetDevEndpointsCallable(const Model::BatchGetDevEndpointsRequest& request) const;
 
         /**
-         * <p>Returns a list of resource metadata for a given list of DevEndpoint names.
-         * After calling the <code>ListDevEndpoints</code> operation, you can call this
-         * operation to access the data to which you have been granted permissions. This
-         * operation supports all IAM permissions, including permission conditions that
-         * uses tags.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of resource metadata for a given list of development endpoint
+         * names. After calling the <code>ListDevEndpoints</code> operation, you can call
+         * this operation to access the data to which you have been granted permissions.
+         * This operation supports all IAM permissions, including permission conditions
+         * that uses tags.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDevEndpoints">AWS
          * API Reference</a></p>
          *
@@ -1166,14 +1166,14 @@ namespace Model
         virtual void CreateDatabaseAsync(const Model::CreateDatabaseRequest& request, const CreateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new DevEndpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new development endpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDevEndpoint">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDevEndpointOutcome CreateDevEndpoint(const Model::CreateDevEndpointRequest& request) const;
 
         /**
-         * <p>Creates a new DevEndpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new development endpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDevEndpoint">AWS
          * API Reference</a></p>
          *
@@ -1182,7 +1182,7 @@ namespace Model
         virtual Model::CreateDevEndpointOutcomeCallable CreateDevEndpointCallable(const Model::CreateDevEndpointRequest& request) const;
 
         /**
-         * <p>Creates a new DevEndpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new development endpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDevEndpoint">AWS
          * API Reference</a></p>
          *
@@ -1269,14 +1269,26 @@ namespace Model
         virtual void CreateScriptAsync(const Model::CreateScriptRequest& request, const CreateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new security configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new security configuration. A security configuration is a set of
+         * security properties that can be used by AWS Glue. You can use a security
+         * configuration to encrypt data at rest. For information about using security
+         * configurations in AWS Glue, see <a
+         * href="https://docs.aws.amazon.com/glue/latest/dg/encryption-security-configuration.html">Encrypting
+         * Data Written by Crawlers, Jobs, and Development Endpoints</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSecurityConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateSecurityConfigurationOutcome CreateSecurityConfiguration(const Model::CreateSecurityConfigurationRequest& request) const;
 
         /**
-         * <p>Creates a new security configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new security configuration. A security configuration is a set of
+         * security properties that can be used by AWS Glue. You can use a security
+         * configuration to encrypt data at rest. For information about using security
+         * configurations in AWS Glue, see <a
+         * href="https://docs.aws.amazon.com/glue/latest/dg/encryption-security-configuration.html">Encrypting
+         * Data Written by Crawlers, Jobs, and Development Endpoints</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSecurityConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1285,7 +1297,13 @@ namespace Model
         virtual Model::CreateSecurityConfigurationOutcomeCallable CreateSecurityConfigurationCallable(const Model::CreateSecurityConfigurationRequest& request) const;
 
         /**
-         * <p>Creates a new security configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new security configuration. A security configuration is a set of
+         * security properties that can be used by AWS Glue. You can use a security
+         * configuration to encrypt data at rest. For information about using security
+         * configurations in AWS Glue, see <a
+         * href="https://docs.aws.amazon.com/glue/latest/dg/encryption-security-configuration.html">Encrypting
+         * Data Written by Crawlers, Jobs, and Development Endpoints</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSecurityConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1530,14 +1548,14 @@ namespace Model
         virtual void DeleteDatabaseAsync(const Model::DeleteDatabaseRequest& request, const DeleteDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specified DevEndpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specified development endpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDevEndpoint">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDevEndpointOutcome DeleteDevEndpoint(const Model::DeleteDevEndpointRequest& request) const;
 
         /**
-         * <p>Deletes a specified DevEndpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specified development endpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDevEndpoint">AWS
          * API Reference</a></p>
          *
@@ -1546,7 +1564,7 @@ namespace Model
         virtual Model::DeleteDevEndpointOutcomeCallable DeleteDevEndpointCallable(const Model::DeleteDevEndpointRequest& request) const;
 
         /**
-         * <p>Deletes a specified DevEndpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specified development endpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDevEndpoint">AWS
          * API Reference</a></p>
          *
@@ -2134,22 +2152,22 @@ namespace Model
         virtual void GetDataflowGraphAsync(const Model::GetDataflowGraphRequest& request, const GetDataflowGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about a specified DevEndpoint.</p> <note> <p>When you
-         * create a development endpoint in a virtual private cloud (VPC), AWS Glue returns
-         * only a private IP address, and the public IP address field is not populated.
-         * When you create a non-VPC development endpoint, AWS Glue returns only a public
-         * IP address.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about a specified development endpoint.</p> <note>
+         * <p>When you create a development endpoint in a virtual private cloud (VPC), AWS
+         * Glue returns only a private IP address, and the public IP address field is not
+         * populated. When you create a non-VPC development endpoint, AWS Glue returns only
+         * a public IP address.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoint">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDevEndpointOutcome GetDevEndpoint(const Model::GetDevEndpointRequest& request) const;
 
         /**
-         * <p>Retrieves information about a specified DevEndpoint.</p> <note> <p>When you
-         * create a development endpoint in a virtual private cloud (VPC), AWS Glue returns
-         * only a private IP address, and the public IP address field is not populated.
-         * When you create a non-VPC development endpoint, AWS Glue returns only a public
-         * IP address.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about a specified development endpoint.</p> <note>
+         * <p>When you create a development endpoint in a virtual private cloud (VPC), AWS
+         * Glue returns only a private IP address, and the public IP address field is not
+         * populated. When you create a non-VPC development endpoint, AWS Glue returns only
+         * a public IP address.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoint">AWS
          * API Reference</a></p>
          *
@@ -2158,11 +2176,11 @@ namespace Model
         virtual Model::GetDevEndpointOutcomeCallable GetDevEndpointCallable(const Model::GetDevEndpointRequest& request) const;
 
         /**
-         * <p>Retrieves information about a specified DevEndpoint.</p> <note> <p>When you
-         * create a development endpoint in a virtual private cloud (VPC), AWS Glue returns
-         * only a private IP address, and the public IP address field is not populated.
-         * When you create a non-VPC development endpoint, AWS Glue returns only a public
-         * IP address.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about a specified development endpoint.</p> <note>
+         * <p>When you create a development endpoint in a virtual private cloud (VPC), AWS
+         * Glue returns only a private IP address, and the public IP address field is not
+         * populated. When you create a non-VPC development endpoint, AWS Glue returns only
+         * a public IP address.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoint">AWS
          * API Reference</a></p>
          *
@@ -2171,22 +2189,22 @@ namespace Model
         virtual void GetDevEndpointAsync(const Model::GetDevEndpointRequest& request, const GetDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves all the DevEndpoints in this AWS account.</p> <note> <p>When you
-         * create a development endpoint in a virtual private cloud (VPC), AWS Glue returns
-         * only a private IP address and the public IP address field is not populated. When
-         * you create a non-VPC development endpoint, AWS Glue returns only a public IP
-         * address.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Retrieves all the development endpoints in this AWS account.</p> <note>
+         * <p>When you create a development endpoint in a virtual private cloud (VPC), AWS
+         * Glue returns only a private IP address and the public IP address field is not
+         * populated. When you create a non-VPC development endpoint, AWS Glue returns only
+         * a public IP address.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoints">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDevEndpointsOutcome GetDevEndpoints(const Model::GetDevEndpointsRequest& request) const;
 
         /**
-         * <p>Retrieves all the DevEndpoints in this AWS account.</p> <note> <p>When you
-         * create a development endpoint in a virtual private cloud (VPC), AWS Glue returns
-         * only a private IP address and the public IP address field is not populated. When
-         * you create a non-VPC development endpoint, AWS Glue returns only a public IP
-         * address.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Retrieves all the development endpoints in this AWS account.</p> <note>
+         * <p>When you create a development endpoint in a virtual private cloud (VPC), AWS
+         * Glue returns only a private IP address and the public IP address field is not
+         * populated. When you create a non-VPC development endpoint, AWS Glue returns only
+         * a public IP address.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoints">AWS
          * API Reference</a></p>
          *
@@ -2195,11 +2213,11 @@ namespace Model
         virtual Model::GetDevEndpointsOutcomeCallable GetDevEndpointsCallable(const Model::GetDevEndpointsRequest& request) const;
 
         /**
-         * <p>Retrieves all the DevEndpoints in this AWS account.</p> <note> <p>When you
-         * create a development endpoint in a virtual private cloud (VPC), AWS Glue returns
-         * only a private IP address and the public IP address field is not populated. When
-         * you create a non-VPC development endpoint, AWS Glue returns only a public IP
-         * address.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Retrieves all the development endpoints in this AWS account.</p> <note>
+         * <p>When you create a development endpoint in a virtual private cloud (VPC), AWS
+         * Glue returns only a private IP address and the public IP address field is not
+         * populated. When you create a non-VPC development endpoint, AWS Glue returns only
+         * a public IP address.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoints">AWS
          * API Reference</a></p>
          *
@@ -3631,14 +3649,14 @@ namespace Model
         virtual void UpdateDatabaseAsync(const Model::UpdateDatabaseRequest& request, const UpdateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a specified DevEndpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a specified development endpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDevEndpoint">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateDevEndpointOutcome UpdateDevEndpoint(const Model::UpdateDevEndpointRequest& request) const;
 
         /**
-         * <p>Updates a specified DevEndpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a specified development endpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDevEndpoint">AWS
          * API Reference</a></p>
          *
@@ -3647,7 +3665,7 @@ namespace Model
         virtual Model::UpdateDevEndpointOutcomeCallable UpdateDevEndpointCallable(const Model::UpdateDevEndpointRequest& request) const;
 
         /**
-         * <p>Updates a specified DevEndpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a specified development endpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDevEndpoint">AWS
          * API Reference</a></p>
          *

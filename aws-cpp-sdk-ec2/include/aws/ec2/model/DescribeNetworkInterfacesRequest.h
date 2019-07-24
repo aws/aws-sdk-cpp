@@ -73,7 +73,7 @@ namespace Model
      * <code>association.public-dns-name</code> - The public DNS name for the network
      * interface (IPv4).</p> </li> <li> <p> <code>attachment.attachment-id</code> - The
      * ID of the interface attachment.</p> </li> <li> <p>
-     * <code>attachment.attach.time</code> - The time that the network interface was
+     * <code>attachment.attach-time</code> - The time that the network interface was
      * attached to an instance.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Indicates whether the attachment
      * is deleted when an instance is terminated.</p> </li> <li> <p>
@@ -148,7 +148,7 @@ namespace Model
      * <code>association.public-dns-name</code> - The public DNS name for the network
      * interface (IPv4).</p> </li> <li> <p> <code>attachment.attachment-id</code> - The
      * ID of the interface attachment.</p> </li> <li> <p>
-     * <code>attachment.attach.time</code> - The time that the network interface was
+     * <code>attachment.attach-time</code> - The time that the network interface was
      * attached to an instance.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Indicates whether the attachment
      * is deleted when an instance is terminated.</p> </li> <li> <p>
@@ -223,7 +223,7 @@ namespace Model
      * <code>association.public-dns-name</code> - The public DNS name for the network
      * interface (IPv4).</p> </li> <li> <p> <code>attachment.attachment-id</code> - The
      * ID of the interface attachment.</p> </li> <li> <p>
-     * <code>attachment.attach.time</code> - The time that the network interface was
+     * <code>attachment.attach-time</code> - The time that the network interface was
      * attached to an instance.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Indicates whether the attachment
      * is deleted when an instance is terminated.</p> </li> <li> <p>
@@ -298,7 +298,7 @@ namespace Model
      * <code>association.public-dns-name</code> - The public DNS name for the network
      * interface (IPv4).</p> </li> <li> <p> <code>attachment.attachment-id</code> - The
      * ID of the interface attachment.</p> </li> <li> <p>
-     * <code>attachment.attach.time</code> - The time that the network interface was
+     * <code>attachment.attach-time</code> - The time that the network interface was
      * attached to an instance.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Indicates whether the attachment
      * is deleted when an instance is terminated.</p> </li> <li> <p>
@@ -373,7 +373,7 @@ namespace Model
      * <code>association.public-dns-name</code> - The public DNS name for the network
      * interface (IPv4).</p> </li> <li> <p> <code>attachment.attachment-id</code> - The
      * ID of the interface attachment.</p> </li> <li> <p>
-     * <code>attachment.attach.time</code> - The time that the network interface was
+     * <code>attachment.attach-time</code> - The time that the network interface was
      * attached to an instance.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Indicates whether the attachment
      * is deleted when an instance is terminated.</p> </li> <li> <p>
@@ -448,7 +448,7 @@ namespace Model
      * <code>association.public-dns-name</code> - The public DNS name for the network
      * interface (IPv4).</p> </li> <li> <p> <code>attachment.attachment-id</code> - The
      * ID of the interface attachment.</p> </li> <li> <p>
-     * <code>attachment.attach.time</code> - The time that the network interface was
+     * <code>attachment.attach-time</code> - The time that the network interface was
      * attached to an instance.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Indicates whether the attachment
      * is deleted when an instance is terminated.</p> </li> <li> <p>
@@ -523,7 +523,7 @@ namespace Model
      * <code>association.public-dns-name</code> - The public DNS name for the network
      * interface (IPv4).</p> </li> <li> <p> <code>attachment.attachment-id</code> - The
      * ID of the interface attachment.</p> </li> <li> <p>
-     * <code>attachment.attach.time</code> - The time that the network interface was
+     * <code>attachment.attach-time</code> - The time that the network interface was
      * attached to an instance.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Indicates whether the attachment
      * is deleted when an instance is terminated.</p> </li> <li> <p>
@@ -598,7 +598,7 @@ namespace Model
      * <code>association.public-dns-name</code> - The public DNS name for the network
      * interface (IPv4).</p> </li> <li> <p> <code>attachment.attachment-id</code> - The
      * ID of the interface attachment.</p> </li> <li> <p>
-     * <code>attachment.attach.time</code> - The time that the network interface was
+     * <code>attachment.attach-time</code> - The time that the network interface was
      * attached to an instance.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Indicates whether the attachment
      * is deleted when an instance is terminated.</p> </li> <li> <p>

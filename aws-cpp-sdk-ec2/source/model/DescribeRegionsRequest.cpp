@@ -24,7 +24,9 @@ DescribeRegionsRequest::DescribeRegionsRequest() :
     m_filtersHasBeenSet(false),
     m_regionNamesHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_allRegions(false),
+    m_allRegionsHasBeenSet(false)
 {
 }
 
@@ -56,6 +58,11 @@ Aws::String DescribeRegionsRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_allRegionsHasBeenSet)
+  {
+    ss << "AllRegions=" << std::boolalpha << m_allRegions << "&";
   }
 
   ss << "Version=2016-11-15";

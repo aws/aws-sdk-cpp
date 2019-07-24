@@ -39,6 +39,10 @@ DevEndpoint::DevEndpoint() :
     m_zeppelinRemoteSparkInterpreterPortHasBeenSet(false),
     m_publicAddressHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_workerType(WorkerType::NOT_SET),
+    m_workerTypeHasBeenSet(false),
+    m_numberOfWorkers(0),
+    m_numberOfWorkersHasBeenSet(false),
     m_numberOfNodes(0),
     m_numberOfNodesHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
@@ -67,6 +71,10 @@ DevEndpoint::DevEndpoint(JsonView jsonValue) :
     m_zeppelinRemoteSparkInterpreterPortHasBeenSet(false),
     m_publicAddressHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_workerType(WorkerType::NOT_SET),
+    m_workerTypeHasBeenSet(false),
+    m_numberOfWorkers(0),
+    m_numberOfWorkersHasBeenSet(false),
     m_numberOfNodes(0),
     m_numberOfNodesHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
@@ -151,6 +159,20 @@ DevEndpoint& DevEndpoint::operator =(JsonView jsonValue)
     m_status = jsonValue.GetString("Status");
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WorkerType"))
+  {
+    m_workerType = WorkerTypeMapper::GetWorkerTypeForName(jsonValue.GetString("WorkerType"));
+
+    m_workerTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NumberOfWorkers"))
+  {
+    m_numberOfWorkers = jsonValue.GetInteger("NumberOfWorkers");
+
+    m_numberOfWorkersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("NumberOfNodes"))
@@ -313,6 +335,17 @@ JsonValue DevEndpoint::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", m_status);
+
+  }
+
+  if(m_workerTypeHasBeenSet)
+  {
+   payload.WithString("WorkerType", WorkerTypeMapper::GetNameForWorkerType(m_workerType));
+  }
+
+  if(m_numberOfWorkersHasBeenSet)
+  {
+   payload.WithInteger("NumberOfWorkers", m_numberOfWorkers);
 
   }
 

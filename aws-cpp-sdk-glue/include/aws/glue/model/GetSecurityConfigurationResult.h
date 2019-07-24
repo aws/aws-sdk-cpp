@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>The requested security configuration</p>
+     * <p>The requested security configuration.</p>
      */
     inline const SecurityConfiguration& GetSecurityConfiguration() const{ return m_securityConfiguration; }
 
     /**
-     * <p>The requested security configuration</p>
+     * <p>The requested security configuration.</p>
      */
     inline void SetSecurityConfiguration(const SecurityConfiguration& value) { m_securityConfiguration = value; }
 
     /**
-     * <p>The requested security configuration</p>
+     * <p>The requested security configuration.</p>
      */
     inline void SetSecurityConfiguration(SecurityConfiguration&& value) { m_securityConfiguration = std::move(value); }
 
     /**
-     * <p>The requested security configuration</p>
+     * <p>The requested security configuration.</p>
      */
     inline GetSecurityConfigurationResult& WithSecurityConfiguration(const SecurityConfiguration& value) { SetSecurityConfiguration(value); return *this;}
 
     /**
-     * <p>The requested security configuration</p>
+     * <p>The requested security configuration.</p>
      */
     inline GetSecurityConfigurationResult& WithSecurityConfiguration(SecurityConfiguration&& value) { SetSecurityConfiguration(std::move(value)); return *this;}
 

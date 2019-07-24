@@ -45,42 +45,42 @@ namespace Model
 
 
     /**
-     * <p>Name of the DevEndpoint for which to retrieve information.</p>
+     * <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
      */
     inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
 
     /**
-     * <p>Name of the DevEndpoint for which to retrieve information.</p>
+     * <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
      */
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
 
     /**
-     * <p>Name of the DevEndpoint for which to retrieve information.</p>
+     * <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
      */
     inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
 
     /**
-     * <p>Name of the DevEndpoint for which to retrieve information.</p>
+     * <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
      */
     inline void SetEndpointName(Aws::String&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::move(value); }
 
     /**
-     * <p>Name of the DevEndpoint for which to retrieve information.</p>
+     * <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
      */
     inline void SetEndpointName(const char* value) { m_endpointNameHasBeenSet = true; m_endpointName.assign(value); }
 
     /**
-     * <p>Name of the DevEndpoint for which to retrieve information.</p>
+     * <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
      */
     inline GetDevEndpointRequest& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
 
     /**
-     * <p>Name of the DevEndpoint for which to retrieve information.</p>
+     * <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
      */
     inline GetDevEndpointRequest& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the DevEndpoint for which to retrieve information.</p>
+     * <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
      */
     inline GetDevEndpointRequest& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
 

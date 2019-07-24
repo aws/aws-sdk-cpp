@@ -3889,10 +3889,10 @@ namespace Model
          * <p> <code>domain-name-servers</code> - The IP addresses of up to four domain
          * name servers, or AmazonProvidedDNS. The default DHCP option set specifies
          * AmazonProvidedDNS. If specifying more than one domain name server, specify the
-         * IP addresses in a single parameter, separated by commas. ITo have your instance
-         * to receive a custom DNS hostname as specified in <code>domain-name</code>, you
-         * must set <code>domain-name-servers</code> to a custom DNS server.</p> </li> <li>
-         * <p> <code>domain-name</code> - If you're using AmazonProvidedDNS in
+         * IP addresses in a single parameter, separated by commas. To have your instance
+         * receive a custom DNS hostname as specified in <code>domain-name</code>, you must
+         * set <code>domain-name-servers</code> to a custom DNS server.</p> </li> <li> <p>
+         * <code>domain-name</code> - If you're using AmazonProvidedDNS in
          * <code>us-east-1</code>, specify <code>ec2.internal</code>. If you're using
          * AmazonProvidedDNS in another Region, specify
          * <code>region.compute.internal</code> (for example,
@@ -3932,10 +3932,10 @@ namespace Model
          * <p> <code>domain-name-servers</code> - The IP addresses of up to four domain
          * name servers, or AmazonProvidedDNS. The default DHCP option set specifies
          * AmazonProvidedDNS. If specifying more than one domain name server, specify the
-         * IP addresses in a single parameter, separated by commas. ITo have your instance
-         * to receive a custom DNS hostname as specified in <code>domain-name</code>, you
-         * must set <code>domain-name-servers</code> to a custom DNS server.</p> </li> <li>
-         * <p> <code>domain-name</code> - If you're using AmazonProvidedDNS in
+         * IP addresses in a single parameter, separated by commas. To have your instance
+         * receive a custom DNS hostname as specified in <code>domain-name</code>, you must
+         * set <code>domain-name-servers</code> to a custom DNS server.</p> </li> <li> <p>
+         * <code>domain-name</code> - If you're using AmazonProvidedDNS in
          * <code>us-east-1</code>, specify <code>ec2.internal</code>. If you're using
          * AmazonProvidedDNS in another Region, specify
          * <code>region.compute.internal</code> (for example,
@@ -3977,10 +3977,10 @@ namespace Model
          * <p> <code>domain-name-servers</code> - The IP addresses of up to four domain
          * name servers, or AmazonProvidedDNS. The default DHCP option set specifies
          * AmazonProvidedDNS. If specifying more than one domain name server, specify the
-         * IP addresses in a single parameter, separated by commas. ITo have your instance
-         * to receive a custom DNS hostname as specified in <code>domain-name</code>, you
-         * must set <code>domain-name-servers</code> to a custom DNS server.</p> </li> <li>
-         * <p> <code>domain-name</code> - If you're using AmazonProvidedDNS in
+         * IP addresses in a single parameter, separated by commas. To have your instance
+         * receive a custom DNS hostname as specified in <code>domain-name</code>, you must
+         * set <code>domain-name-servers</code> to a custom DNS server.</p> </li> <li> <p>
+         * <code>domain-name</code> - If you're using AmazonProvidedDNS in
          * <code>us-east-1</code>, specify <code>ec2.internal</code>. If you're using
          * AmazonProvidedDNS in another Region, specify
          * <code>region.compute.internal</code> (for example,
@@ -9769,28 +9769,28 @@ namespace Model
         virtual void DescribePublicIpv4PoolsAsync(const Model::DescribePublicIpv4PoolsRequest& request, const DescribePublicIpv4PoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the Regions that are currently available to you. The API returns a
-         * list of all the Regions, including Regions that are disabled for your account.
-         * For information about enabling Regions for your account, see <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-account-payment.html#manage-account-payment-enable-disable-regions">Enabling
-         * and Disabling Regions</a> in the <i>AWS Billing and Cost Management User
-         * Guide</i>.</p> <p>For a list of the Regions supported by Amazon EC2, see <a
+         * <p>Describes the Regions that are enabled for your account, or all Regions.</p>
+         * <p>For a list of the Regions supported by Amazon EC2, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">
-         * Regions and Endpoints</a>.</p><p><h3>See Also:</h3>   <a
+         * Regions and Endpoints</a>.</p> <p>For information about enabling and disabling
+         * Regions for your account, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing
+         * AWS Regions</a> in the <i>AWS General Reference</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeRegionsOutcome DescribeRegions(const Model::DescribeRegionsRequest& request) const;
 
         /**
-         * <p>Describes the Regions that are currently available to you. The API returns a
-         * list of all the Regions, including Regions that are disabled for your account.
-         * For information about enabling Regions for your account, see <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-account-payment.html#manage-account-payment-enable-disable-regions">Enabling
-         * and Disabling Regions</a> in the <i>AWS Billing and Cost Management User
-         * Guide</i>.</p> <p>For a list of the Regions supported by Amazon EC2, see <a
+         * <p>Describes the Regions that are enabled for your account, or all Regions.</p>
+         * <p>For a list of the Regions supported by Amazon EC2, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">
-         * Regions and Endpoints</a>.</p><p><h3>See Also:</h3>   <a
+         * Regions and Endpoints</a>.</p> <p>For information about enabling and disabling
+         * Regions for your account, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing
+         * AWS Regions</a> in the <i>AWS General Reference</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">AWS
          * API Reference</a></p>
          *
@@ -9799,14 +9799,14 @@ namespace Model
         virtual Model::DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
 
         /**
-         * <p>Describes the Regions that are currently available to you. The API returns a
-         * list of all the Regions, including Regions that are disabled for your account.
-         * For information about enabling Regions for your account, see <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-account-payment.html#manage-account-payment-enable-disable-regions">Enabling
-         * and Disabling Regions</a> in the <i>AWS Billing and Cost Management User
-         * Guide</i>.</p> <p>For a list of the Regions supported by Amazon EC2, see <a
+         * <p>Describes the Regions that are enabled for your account, or all Regions.</p>
+         * <p>For a list of the Regions supported by Amazon EC2, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">
-         * Regions and Endpoints</a>.</p><p><h3>See Also:</h3>   <a
+         * Regions and Endpoints</a>.</p> <p>For information about enabling and disabling
+         * Regions for your account, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing
+         * AWS Regions</a> in the <i>AWS General Reference</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">AWS
          * API Reference</a></p>
          *

@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Defines a point which a job can resume processing.</p><p><h3>See Also:</h3>  
+   * <p>Defines a point that a job can resume processing.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/JobBookmarkEntry">AWS
    * API Reference</a></p>
@@ -49,63 +49,63 @@ namespace Model
 
 
     /**
-     * <p>Name of the job in question.</p>
+     * <p>The name of the job in question.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
 
     /**
-     * <p>Name of the job in question.</p>
+     * <p>The name of the job in question.</p>
      */
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
 
     /**
-     * <p>Name of the job in question.</p>
+     * <p>The name of the job in question.</p>
      */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
-     * <p>Name of the job in question.</p>
+     * <p>The name of the job in question.</p>
      */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
 
     /**
-     * <p>Name of the job in question.</p>
+     * <p>The name of the job in question.</p>
      */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
 
     /**
-     * <p>Name of the job in question.</p>
+     * <p>The name of the job in question.</p>
      */
     inline JobBookmarkEntry& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
 
     /**
-     * <p>Name of the job in question.</p>
+     * <p>The name of the job in question.</p>
      */
     inline JobBookmarkEntry& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the job in question.</p>
+     * <p>The name of the job in question.</p>
      */
     inline JobBookmarkEntry& WithJobName(const char* value) { SetJobName(value); return *this;}
 
 
     /**
-     * <p>Version of the job.</p>
+     * <p>The version of the job.</p>
      */
     inline int GetVersion() const{ return m_version; }
 
     /**
-     * <p>Version of the job.</p>
+     * <p>The version of the job.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>Version of the job.</p>
+     * <p>The version of the job.</p>
      */
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Version of the job.</p>
+     * <p>The version of the job.</p>
      */
     inline JobBookmarkEntry& WithVersion(int value) { SetVersion(value); return *this;}
 

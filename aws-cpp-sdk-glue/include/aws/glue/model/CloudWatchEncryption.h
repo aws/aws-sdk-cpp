@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies how CloudWatch data should be encrypted.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Specifies how Amazon CloudWatch data should be encrypted.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CloudWatchEncryption">AWS
    * API Reference</a></p>
    */
@@ -81,42 +81,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the
+     * data.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the
+     * data.</p>
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
-     * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the
+     * data.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
-     * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the
+     * data.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the
+     * data.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the
+     * data.</p>
      */
     inline CloudWatchEncryption& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the
+     * data.</p>
      */
     inline CloudWatchEncryption& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the
+     * data.</p>
      */
     inline CloudWatchEncryption& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 

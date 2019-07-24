@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/glue/model/ConnectionsList.h>
 #include <aws/glue/model/NotificationProperty.h>
+#include <aws/glue/model/WorkerType.h>
 #include <utility>
 
 namespace Aws
@@ -807,6 +808,95 @@ namespace Model
 
 
     /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for jobs of type
+     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
+     * version default to Glue 0.9.</p>
+     */
+    inline const Aws::String& GetGlueVersion() const{ return m_glueVersion; }
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for jobs of type
+     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
+     * version default to Glue 0.9.</p>
+     */
+    inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for jobs of type
+     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
+     * version default to Glue 0.9.</p>
+     */
+    inline void SetGlueVersion(const Aws::String& value) { m_glueVersionHasBeenSet = true; m_glueVersion = value; }
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for jobs of type
+     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
+     * version default to Glue 0.9.</p>
+     */
+    inline void SetGlueVersion(Aws::String&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::move(value); }
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for jobs of type
+     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
+     * version default to Glue 0.9.</p>
+     */
+    inline void SetGlueVersion(const char* value) { m_glueVersionHasBeenSet = true; m_glueVersion.assign(value); }
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for jobs of type
+     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
+     * version default to Glue 0.9.</p>
+     */
+    inline CreateJobRequest& WithGlueVersion(const Aws::String& value) { SetGlueVersion(value); return *this;}
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for jobs of type
+     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
+     * version default to Glue 0.9.</p>
+     */
+    inline CreateJobRequest& WithGlueVersion(Aws::String&& value) { SetGlueVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for jobs of type
+     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
+     * version default to Glue 0.9.</p>
+     */
+    inline CreateJobRequest& WithGlueVersion(const char* value) { SetGlueVersion(value); return *this;}
+
+
+    /**
      * <p>The number of workers of a defined <code>workerType</code> that are allocated
      * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
      * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
@@ -846,7 +936,7 @@ namespace Model
      * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
      * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
      */
-    inline const Aws::String& GetWorkerType() const{ return m_workerType; }
+    inline const WorkerType& GetWorkerType() const{ return m_workerType; }
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
@@ -872,7 +962,7 @@ namespace Model
      * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
      * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
      */
-    inline void SetWorkerType(const Aws::String& value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
+    inline void SetWorkerType(const WorkerType& value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
@@ -885,7 +975,7 @@ namespace Model
      * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
      * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
      */
-    inline void SetWorkerType(Aws::String&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::move(value); }
+    inline void SetWorkerType(WorkerType&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::move(value); }
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
@@ -898,7 +988,7 @@ namespace Model
      * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
      * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
      */
-    inline void SetWorkerType(const char* value) { m_workerTypeHasBeenSet = true; m_workerType.assign(value); }
+    inline CreateJobRequest& WithWorkerType(const WorkerType& value) { SetWorkerType(value); return *this;}
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
@@ -911,33 +1001,7 @@ namespace Model
      * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
      * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
      */
-    inline CreateJobRequest& WithWorkerType(const Aws::String& value) { SetWorkerType(value); return *this;}
-
-    /**
-     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
-     * executor per worker. We recommend this worker type for memory-intensive
-     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
-     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
-     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
-     */
-    inline CreateJobRequest& WithWorkerType(Aws::String&& value) { SetWorkerType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
-     * executor per worker. We recommend this worker type for memory-intensive
-     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
-     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
-     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
-     */
-    inline CreateJobRequest& WithWorkerType(const char* value) { SetWorkerType(value); return *this;}
+    inline CreateJobRequest& WithWorkerType(WorkerType&& value) { SetWorkerType(std::move(value)); return *this;}
 
   private:
 
@@ -983,10 +1047,13 @@ namespace Model
     NotificationProperty m_notificationProperty;
     bool m_notificationPropertyHasBeenSet;
 
+    Aws::String m_glueVersion;
+    bool m_glueVersionHasBeenSet;
+
     int m_numberOfWorkers;
     bool m_numberOfWorkersHasBeenSet;
 
-    Aws::String m_workerType;
+    WorkerType m_workerType;
     bool m_workerTypeHasBeenSet;
   };
 

@@ -203,32 +203,32 @@ namespace Model
 
 
     /**
-     * <p>Copies the tags from the specified instance to all snapshots.</p>
+     * <p>Copies the tags from the specified volume to corresponding snapshot.</p>
      */
     inline const CopyTagsFromSource& GetCopyTagsFromSource() const{ return m_copyTagsFromSource; }
 
     /**
-     * <p>Copies the tags from the specified instance to all snapshots.</p>
+     * <p>Copies the tags from the specified volume to corresponding snapshot.</p>
      */
     inline bool CopyTagsFromSourceHasBeenSet() const { return m_copyTagsFromSourceHasBeenSet; }
 
     /**
-     * <p>Copies the tags from the specified instance to all snapshots.</p>
+     * <p>Copies the tags from the specified volume to corresponding snapshot.</p>
      */
     inline void SetCopyTagsFromSource(const CopyTagsFromSource& value) { m_copyTagsFromSourceHasBeenSet = true; m_copyTagsFromSource = value; }
 
     /**
-     * <p>Copies the tags from the specified instance to all snapshots.</p>
+     * <p>Copies the tags from the specified volume to corresponding snapshot.</p>
      */
     inline void SetCopyTagsFromSource(CopyTagsFromSource&& value) { m_copyTagsFromSourceHasBeenSet = true; m_copyTagsFromSource = std::move(value); }
 
     /**
-     * <p>Copies the tags from the specified instance to all snapshots.</p>
+     * <p>Copies the tags from the specified volume to corresponding snapshot.</p>
      */
     inline CreateSnapshotsRequest& WithCopyTagsFromSource(const CopyTagsFromSource& value) { SetCopyTagsFromSource(value); return *this;}
 
     /**
-     * <p>Copies the tags from the specified instance to all snapshots.</p>
+     * <p>Copies the tags from the specified volume to corresponding snapshot.</p>
      */
     inline CreateSnapshotsRequest& WithCopyTagsFromSource(CopyTagsFromSource&& value) { SetCopyTagsFromSource(std::move(value)); return *this;}
 

@@ -34,6 +34,7 @@
 #include <aws/sts/model/AssumeRoleWithSAMLRequest.h>
 #include <aws/sts/model/AssumeRoleWithWebIdentityRequest.h>
 #include <aws/sts/model/DecodeAuthorizationMessageRequest.h>
+#include <aws/sts/model/GetAccessKeyInfoRequest.h>
 #include <aws/sts/model/GetCallerIdentityRequest.h>
 #include <aws/sts/model/GetFederationTokenRequest.h>
 #include <aws/sts/model/GetSessionTokenRequest.h>
@@ -259,6 +260,41 @@ void STSClient::DecodeAuthorizationMessageAsync(const DecodeAuthorizationMessage
 void STSClient::DecodeAuthorizationMessageAsyncHelper(const DecodeAuthorizationMessageRequest& request, const DecodeAuthorizationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DecodeAuthorizationMessage(request), context);
+}
+
+GetAccessKeyInfoOutcome STSClient::GetAccessKeyInfo(const GetAccessKeyInfoRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetAccessKeyInfoOutcome(GetAccessKeyInfoResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetAccessKeyInfoOutcome(outcome.GetError());
+  }
+}
+
+GetAccessKeyInfoOutcomeCallable STSClient::GetAccessKeyInfoCallable(const GetAccessKeyInfoRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAccessKeyInfoOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessKeyInfo(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void STSClient::GetAccessKeyInfoAsync(const GetAccessKeyInfoRequest& request, const GetAccessKeyInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAccessKeyInfoAsyncHelper( request, handler, context ); } );
+}
+
+void STSClient::GetAccessKeyInfoAsyncHelper(const GetAccessKeyInfoRequest& request, const GetAccessKeyInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAccessKeyInfo(request), context);
 }
 
 GetCallerIdentityOutcome STSClient::GetCallerIdentity(const GetCallerIdentityRequest& request) const

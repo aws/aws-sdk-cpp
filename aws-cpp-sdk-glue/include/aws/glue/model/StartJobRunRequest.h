@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/glue/model/NotificationProperty.h>
+#include <aws/glue/model/WorkerType.h>
 #include <utility>
 
 namespace Aws
@@ -511,7 +512,7 @@ namespace Model
      * provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per
      * worker.</p> </li> </ul>
      */
-    inline const Aws::String& GetWorkerType() const{ return m_workerType; }
+    inline const WorkerType& GetWorkerType() const{ return m_workerType; }
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
@@ -535,7 +536,7 @@ namespace Model
      * provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per
      * worker.</p> </li> </ul>
      */
-    inline void SetWorkerType(const Aws::String& value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
+    inline void SetWorkerType(const WorkerType& value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
@@ -547,7 +548,7 @@ namespace Model
      * provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per
      * worker.</p> </li> </ul>
      */
-    inline void SetWorkerType(Aws::String&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::move(value); }
+    inline void SetWorkerType(WorkerType&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::move(value); }
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
@@ -559,7 +560,7 @@ namespace Model
      * provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per
      * worker.</p> </li> </ul>
      */
-    inline void SetWorkerType(const char* value) { m_workerTypeHasBeenSet = true; m_workerType.assign(value); }
+    inline StartJobRunRequest& WithWorkerType(const WorkerType& value) { SetWorkerType(value); return *this;}
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
@@ -571,31 +572,7 @@ namespace Model
      * provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per
      * worker.</p> </li> </ul>
      */
-    inline StartJobRunRequest& WithWorkerType(const Aws::String& value) { SetWorkerType(value); return *this;}
-
-    /**
-     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per
-     * worker.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker
-     * provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per
-     * worker.</p> </li> </ul>
-     */
-    inline StartJobRunRequest& WithWorkerType(Aws::String&& value) { SetWorkerType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per
-     * worker.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker
-     * provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per
-     * worker.</p> </li> </ul>
-     */
-    inline StartJobRunRequest& WithWorkerType(const char* value) { SetWorkerType(value); return *this;}
+    inline StartJobRunRequest& WithWorkerType(WorkerType&& value) { SetWorkerType(std::move(value)); return *this;}
 
 
     /**
@@ -649,7 +626,7 @@ namespace Model
     NotificationProperty m_notificationProperty;
     bool m_notificationPropertyHasBeenSet;
 
-    Aws::String m_workerType;
+    WorkerType m_workerType;
     bool m_workerTypeHasBeenSet;
 
     int m_numberOfWorkers;

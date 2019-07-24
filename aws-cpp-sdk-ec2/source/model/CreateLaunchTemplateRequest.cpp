@@ -26,7 +26,8 @@ CreateLaunchTemplateRequest::CreateLaunchTemplateRequest() :
     m_clientTokenHasBeenSet(false),
     m_launchTemplateNameHasBeenSet(false),
     m_versionDescriptionHasBeenSet(false),
-    m_launchTemplateDataHasBeenSet(false)
+    m_launchTemplateDataHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -57,6 +58,16 @@ Aws::String CreateLaunchTemplateRequest::SerializePayload() const
   if(m_launchTemplateDataHasBeenSet)
   {
     m_launchTemplateData.OutputToStream(ss, "LaunchTemplateData");
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

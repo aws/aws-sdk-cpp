@@ -57,11 +57,13 @@
 #include <aws/pinpoint/model/GetApnsVoipChannelRequest.h>
 #include <aws/pinpoint/model/GetApnsVoipSandboxChannelRequest.h>
 #include <aws/pinpoint/model/GetAppRequest.h>
+#include <aws/pinpoint/model/GetApplicationDateRangeKpiRequest.h>
 #include <aws/pinpoint/model/GetApplicationSettingsRequest.h>
 #include <aws/pinpoint/model/GetAppsRequest.h>
 #include <aws/pinpoint/model/GetBaiduChannelRequest.h>
 #include <aws/pinpoint/model/GetCampaignRequest.h>
 #include <aws/pinpoint/model/GetCampaignActivitiesRequest.h>
+#include <aws/pinpoint/model/GetCampaignDateRangeKpiRequest.h>
 #include <aws/pinpoint/model/GetCampaignVersionRequest.h>
 #include <aws/pinpoint/model/GetCampaignVersionsRequest.h>
 #include <aws/pinpoint/model/GetCampaignsRequest.h>
@@ -1329,6 +1331,54 @@ void PinpointClient::GetAppAsyncHelper(const GetAppRequest& request, const GetAp
   handler(this, request, GetApp(request), context);
 }
 
+GetApplicationDateRangeKpiOutcome PinpointClient::GetApplicationDateRangeKpi(const GetApplicationDateRangeKpiRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetApplicationDateRangeKpi", "Required field: ApplicationId, is not set");
+    return GetApplicationDateRangeKpiOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.KpiNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetApplicationDateRangeKpi", "Required field: KpiName, is not set");
+    return GetApplicationDateRangeKpiOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KpiName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/kpis/daterange/";
+  ss << request.GetKpiName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetApplicationDateRangeKpiOutcome(GetApplicationDateRangeKpiResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetApplicationDateRangeKpiOutcome(outcome.GetError());
+  }
+}
+
+GetApplicationDateRangeKpiOutcomeCallable PinpointClient::GetApplicationDateRangeKpiCallable(const GetApplicationDateRangeKpiRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetApplicationDateRangeKpiOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApplicationDateRangeKpi(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetApplicationDateRangeKpiAsync(const GetApplicationDateRangeKpiRequest& request, const GetApplicationDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetApplicationDateRangeKpiAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetApplicationDateRangeKpiAsyncHelper(const GetApplicationDateRangeKpiRequest& request, const GetApplicationDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetApplicationDateRangeKpi(request), context);
+}
+
 GetApplicationSettingsOutcome PinpointClient::GetApplicationSettings(const GetApplicationSettingsRequest& request) const
 {
   if (!request.ApplicationIdHasBeenSet())
@@ -1543,6 +1593,61 @@ void PinpointClient::GetCampaignActivitiesAsync(const GetCampaignActivitiesReque
 void PinpointClient::GetCampaignActivitiesAsyncHelper(const GetCampaignActivitiesRequest& request, const GetCampaignActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetCampaignActivities(request), context);
+}
+
+GetCampaignDateRangeKpiOutcome PinpointClient::GetCampaignDateRangeKpi(const GetCampaignDateRangeKpiRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCampaignDateRangeKpi", "Required field: ApplicationId, is not set");
+    return GetCampaignDateRangeKpiOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.CampaignIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCampaignDateRangeKpi", "Required field: CampaignId, is not set");
+    return GetCampaignDateRangeKpiOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CampaignId]", false));
+  }
+  if (!request.KpiNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCampaignDateRangeKpi", "Required field: KpiName, is not set");
+    return GetCampaignDateRangeKpiOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KpiName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/campaigns/";
+  ss << request.GetCampaignId();
+  ss << "/kpis/daterange/";
+  ss << request.GetKpiName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetCampaignDateRangeKpiOutcome(GetCampaignDateRangeKpiResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetCampaignDateRangeKpiOutcome(outcome.GetError());
+  }
+}
+
+GetCampaignDateRangeKpiOutcomeCallable PinpointClient::GetCampaignDateRangeKpiCallable(const GetCampaignDateRangeKpiRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCampaignDateRangeKpiOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCampaignDateRangeKpi(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetCampaignDateRangeKpiAsync(const GetCampaignDateRangeKpiRequest& request, const GetCampaignDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCampaignDateRangeKpiAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetCampaignDateRangeKpiAsyncHelper(const GetCampaignDateRangeKpiRequest& request, const GetCampaignDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCampaignDateRangeKpi(request), context);
 }
 
 GetCampaignVersionOutcome PinpointClient::GetCampaignVersion(const GetCampaignVersionRequest& request) const

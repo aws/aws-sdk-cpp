@@ -765,6 +765,87 @@ namespace Model
      */
     inline JobUpdate& WithNotificationProperty(NotificationProperty&& value) { SetNotificationProperty(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for jobs of type
+     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p>
+     */
+    inline const Aws::String& GetGlueVersion() const{ return m_glueVersion; }
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for jobs of type
+     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p>
+     */
+    inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for jobs of type
+     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p>
+     */
+    inline void SetGlueVersion(const Aws::String& value) { m_glueVersionHasBeenSet = true; m_glueVersion = value; }
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for jobs of type
+     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p>
+     */
+    inline void SetGlueVersion(Aws::String&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::move(value); }
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for jobs of type
+     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p>
+     */
+    inline void SetGlueVersion(const char* value) { m_glueVersionHasBeenSet = true; m_glueVersion.assign(value); }
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for jobs of type
+     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p>
+     */
+    inline JobUpdate& WithGlueVersion(const Aws::String& value) { SetGlueVersion(value); return *this;}
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for jobs of type
+     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p>
+     */
+    inline JobUpdate& WithGlueVersion(Aws::String&& value) { SetGlueVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for jobs of type
+     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p>
+     */
+    inline JobUpdate& WithGlueVersion(const char* value) { SetGlueVersion(value); return *this;}
+
   private:
 
     Aws::String m_description;
@@ -808,6 +889,9 @@ namespace Model
 
     NotificationProperty m_notificationProperty;
     bool m_notificationPropertyHasBeenSet;
+
+    Aws::String m_glueVersion;
+    bool m_glueVersionHasBeenSet;
   };
 
 } // namespace Model

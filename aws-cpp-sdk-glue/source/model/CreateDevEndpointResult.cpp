@@ -28,13 +28,17 @@ using namespace Aws;
 
 CreateDevEndpointResult::CreateDevEndpointResult() : 
     m_zeppelinRemoteSparkInterpreterPort(0),
-    m_numberOfNodes(0)
+    m_numberOfNodes(0),
+    m_workerType(WorkerType::NOT_SET),
+    m_numberOfWorkers(0)
 {
 }
 
 CreateDevEndpointResult::CreateDevEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_zeppelinRemoteSparkInterpreterPort(0),
-    m_numberOfNodes(0)
+    m_numberOfNodes(0),
+    m_workerType(WorkerType::NOT_SET),
+    m_numberOfWorkers(0)
 {
   *this = result;
 }
@@ -90,6 +94,18 @@ CreateDevEndpointResult& CreateDevEndpointResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("NumberOfNodes"))
   {
     m_numberOfNodes = jsonValue.GetInteger("NumberOfNodes");
+
+  }
+
+  if(jsonValue.ValueExists("WorkerType"))
+  {
+    m_workerType = WorkerTypeMapper::GetWorkerTypeForName(jsonValue.GetString("WorkerType"));
+
+  }
+
+  if(jsonValue.ValueExists("NumberOfWorkers"))
+  {
+    m_numberOfWorkers = jsonValue.GetInteger("NumberOfWorkers");
 
   }
 

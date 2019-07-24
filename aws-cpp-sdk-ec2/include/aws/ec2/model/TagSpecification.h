@@ -54,48 +54,72 @@ namespace Model
 
     /**
      * <p>The type of resource to tag. Currently, the resource types that support
-     * tagging on creation are <code>fleet</code>, <code>dedicated-host</code>,
-     * <code>instance</code>, <code>snapshot</code>, and <code>volume</code>. To tag a
+     * tagging on creation are: <code>capacity-reservation</code> |
+     * <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
+     * <code>fleet</code> | <code>instance</code> | <code>launch-template</code> |
+     * <code>snapshot</code> | <code>transit-gateway</code> |
+     * <code>transit-gateway-attachment</code> |
+     * <code>transit-gateway-route-table</code> | <code>volume</code>.</p> <p>To tag a
      * resource after it has been created, see <a>CreateTags</a>.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>The type of resource to tag. Currently, the resource types that support
-     * tagging on creation are <code>fleet</code>, <code>dedicated-host</code>,
-     * <code>instance</code>, <code>snapshot</code>, and <code>volume</code>. To tag a
+     * tagging on creation are: <code>capacity-reservation</code> |
+     * <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
+     * <code>fleet</code> | <code>instance</code> | <code>launch-template</code> |
+     * <code>snapshot</code> | <code>transit-gateway</code> |
+     * <code>transit-gateway-attachment</code> |
+     * <code>transit-gateway-route-table</code> | <code>volume</code>.</p> <p>To tag a
      * resource after it has been created, see <a>CreateTags</a>.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The type of resource to tag. Currently, the resource types that support
-     * tagging on creation are <code>fleet</code>, <code>dedicated-host</code>,
-     * <code>instance</code>, <code>snapshot</code>, and <code>volume</code>. To tag a
+     * tagging on creation are: <code>capacity-reservation</code> |
+     * <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
+     * <code>fleet</code> | <code>instance</code> | <code>launch-template</code> |
+     * <code>snapshot</code> | <code>transit-gateway</code> |
+     * <code>transit-gateway-attachment</code> |
+     * <code>transit-gateway-route-table</code> | <code>volume</code>.</p> <p>To tag a
      * resource after it has been created, see <a>CreateTags</a>.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>The type of resource to tag. Currently, the resource types that support
-     * tagging on creation are <code>fleet</code>, <code>dedicated-host</code>,
-     * <code>instance</code>, <code>snapshot</code>, and <code>volume</code>. To tag a
+     * tagging on creation are: <code>capacity-reservation</code> |
+     * <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
+     * <code>fleet</code> | <code>instance</code> | <code>launch-template</code> |
+     * <code>snapshot</code> | <code>transit-gateway</code> |
+     * <code>transit-gateway-attachment</code> |
+     * <code>transit-gateway-route-table</code> | <code>volume</code>.</p> <p>To tag a
      * resource after it has been created, see <a>CreateTags</a>.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of resource to tag. Currently, the resource types that support
-     * tagging on creation are <code>fleet</code>, <code>dedicated-host</code>,
-     * <code>instance</code>, <code>snapshot</code>, and <code>volume</code>. To tag a
+     * tagging on creation are: <code>capacity-reservation</code> |
+     * <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
+     * <code>fleet</code> | <code>instance</code> | <code>launch-template</code> |
+     * <code>snapshot</code> | <code>transit-gateway</code> |
+     * <code>transit-gateway-attachment</code> |
+     * <code>transit-gateway-route-table</code> | <code>volume</code>.</p> <p>To tag a
      * resource after it has been created, see <a>CreateTags</a>.</p>
      */
     inline TagSpecification& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>The type of resource to tag. Currently, the resource types that support
-     * tagging on creation are <code>fleet</code>, <code>dedicated-host</code>,
-     * <code>instance</code>, <code>snapshot</code>, and <code>volume</code>. To tag a
+     * tagging on creation are: <code>capacity-reservation</code> |
+     * <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
+     * <code>fleet</code> | <code>instance</code> | <code>launch-template</code> |
+     * <code>snapshot</code> | <code>transit-gateway</code> |
+     * <code>transit-gateway-attachment</code> |
+     * <code>transit-gateway-route-table</code> | <code>volume</code>.</p> <p>To tag a
      * resource after it has been created, see <a>CreateTags</a>.</p>
      */
     inline TagSpecification& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}

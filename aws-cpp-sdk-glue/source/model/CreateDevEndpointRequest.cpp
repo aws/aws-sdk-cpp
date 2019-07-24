@@ -31,6 +31,10 @@ CreateDevEndpointRequest::CreateDevEndpointRequest() :
     m_publicKeysHasBeenSet(false),
     m_numberOfNodes(0),
     m_numberOfNodesHasBeenSet(false),
+    m_workerType(WorkerType::NOT_SET),
+    m_workerTypeHasBeenSet(false),
+    m_numberOfWorkers(0),
+    m_numberOfWorkersHasBeenSet(false),
     m_extraPythonLibsS3PathHasBeenSet(false),
     m_extraJarsS3PathHasBeenSet(false),
     m_securityConfigurationHasBeenSet(false),
@@ -92,6 +96,17 @@ Aws::String CreateDevEndpointRequest::SerializePayload() const
   if(m_numberOfNodesHasBeenSet)
   {
    payload.WithInteger("NumberOfNodes", m_numberOfNodes);
+
+  }
+
+  if(m_workerTypeHasBeenSet)
+  {
+   payload.WithString("WorkerType", WorkerTypeMapper::GetNameForWorkerType(m_workerType));
+  }
+
+  if(m_numberOfWorkersHasBeenSet)
+  {
+   payload.WithInteger("NumberOfWorkers", m_numberOfWorkers);
 
   }
 

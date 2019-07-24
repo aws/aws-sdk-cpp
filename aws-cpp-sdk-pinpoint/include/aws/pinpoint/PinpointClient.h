@@ -48,11 +48,13 @@
 #include <aws/pinpoint/model/GetApnsVoipChannelResult.h>
 #include <aws/pinpoint/model/GetApnsVoipSandboxChannelResult.h>
 #include <aws/pinpoint/model/GetAppResult.h>
+#include <aws/pinpoint/model/GetApplicationDateRangeKpiResult.h>
 #include <aws/pinpoint/model/GetApplicationSettingsResult.h>
 #include <aws/pinpoint/model/GetAppsResult.h>
 #include <aws/pinpoint/model/GetBaiduChannelResult.h>
 #include <aws/pinpoint/model/GetCampaignResult.h>
 #include <aws/pinpoint/model/GetCampaignActivitiesResult.h>
+#include <aws/pinpoint/model/GetCampaignDateRangeKpiResult.h>
 #include <aws/pinpoint/model/GetCampaignVersionResult.h>
 #include <aws/pinpoint/model/GetCampaignVersionsResult.h>
 #include <aws/pinpoint/model/GetCampaignsResult.h>
@@ -163,11 +165,13 @@ namespace Model
         class GetApnsVoipChannelRequest;
         class GetApnsVoipSandboxChannelRequest;
         class GetAppRequest;
+        class GetApplicationDateRangeKpiRequest;
         class GetApplicationSettingsRequest;
         class GetAppsRequest;
         class GetBaiduChannelRequest;
         class GetCampaignRequest;
         class GetCampaignActivitiesRequest;
+        class GetCampaignDateRangeKpiRequest;
         class GetCampaignVersionRequest;
         class GetCampaignVersionsRequest;
         class GetCampaignsRequest;
@@ -241,11 +245,13 @@ namespace Model
         typedef Aws::Utils::Outcome<GetApnsVoipChannelResult, Aws::Client::AWSError<PinpointErrors>> GetApnsVoipChannelOutcome;
         typedef Aws::Utils::Outcome<GetApnsVoipSandboxChannelResult, Aws::Client::AWSError<PinpointErrors>> GetApnsVoipSandboxChannelOutcome;
         typedef Aws::Utils::Outcome<GetAppResult, Aws::Client::AWSError<PinpointErrors>> GetAppOutcome;
+        typedef Aws::Utils::Outcome<GetApplicationDateRangeKpiResult, Aws::Client::AWSError<PinpointErrors>> GetApplicationDateRangeKpiOutcome;
         typedef Aws::Utils::Outcome<GetApplicationSettingsResult, Aws::Client::AWSError<PinpointErrors>> GetApplicationSettingsOutcome;
         typedef Aws::Utils::Outcome<GetAppsResult, Aws::Client::AWSError<PinpointErrors>> GetAppsOutcome;
         typedef Aws::Utils::Outcome<GetBaiduChannelResult, Aws::Client::AWSError<PinpointErrors>> GetBaiduChannelOutcome;
         typedef Aws::Utils::Outcome<GetCampaignResult, Aws::Client::AWSError<PinpointErrors>> GetCampaignOutcome;
         typedef Aws::Utils::Outcome<GetCampaignActivitiesResult, Aws::Client::AWSError<PinpointErrors>> GetCampaignActivitiesOutcome;
+        typedef Aws::Utils::Outcome<GetCampaignDateRangeKpiResult, Aws::Client::AWSError<PinpointErrors>> GetCampaignDateRangeKpiOutcome;
         typedef Aws::Utils::Outcome<GetCampaignVersionResult, Aws::Client::AWSError<PinpointErrors>> GetCampaignVersionOutcome;
         typedef Aws::Utils::Outcome<GetCampaignVersionsResult, Aws::Client::AWSError<PinpointErrors>> GetCampaignVersionsOutcome;
         typedef Aws::Utils::Outcome<GetCampaignsResult, Aws::Client::AWSError<PinpointErrors>> GetCampaignsOutcome;
@@ -319,11 +325,13 @@ namespace Model
         typedef std::future<GetApnsVoipChannelOutcome> GetApnsVoipChannelOutcomeCallable;
         typedef std::future<GetApnsVoipSandboxChannelOutcome> GetApnsVoipSandboxChannelOutcomeCallable;
         typedef std::future<GetAppOutcome> GetAppOutcomeCallable;
+        typedef std::future<GetApplicationDateRangeKpiOutcome> GetApplicationDateRangeKpiOutcomeCallable;
         typedef std::future<GetApplicationSettingsOutcome> GetApplicationSettingsOutcomeCallable;
         typedef std::future<GetAppsOutcome> GetAppsOutcomeCallable;
         typedef std::future<GetBaiduChannelOutcome> GetBaiduChannelOutcomeCallable;
         typedef std::future<GetCampaignOutcome> GetCampaignOutcomeCallable;
         typedef std::future<GetCampaignActivitiesOutcome> GetCampaignActivitiesOutcomeCallable;
+        typedef std::future<GetCampaignDateRangeKpiOutcome> GetCampaignDateRangeKpiOutcomeCallable;
         typedef std::future<GetCampaignVersionOutcome> GetCampaignVersionOutcomeCallable;
         typedef std::future<GetCampaignVersionsOutcome> GetCampaignVersionsOutcomeCallable;
         typedef std::future<GetCampaignsOutcome> GetCampaignsOutcomeCallable;
@@ -400,11 +408,13 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::GetApnsVoipChannelRequest&, const Model::GetApnsVoipChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApnsVoipChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetApnsVoipSandboxChannelRequest&, const Model::GetApnsVoipSandboxChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApnsVoipSandboxChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetAppRequest&, const Model::GetAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAppResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::GetApplicationDateRangeKpiRequest&, const Model::GetApplicationDateRangeKpiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationDateRangeKpiResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetApplicationSettingsRequest&, const Model::GetApplicationSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationSettingsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetAppsRequest&, const Model::GetAppsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAppsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetBaiduChannelRequest&, const Model::GetBaiduChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBaiduChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetCampaignRequest&, const Model::GetCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCampaignResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetCampaignActivitiesRequest&, const Model::GetCampaignActivitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCampaignActivitiesResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::GetCampaignDateRangeKpiRequest&, const Model::GetCampaignDateRangeKpiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCampaignDateRangeKpiResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetCampaignVersionRequest&, const Model::GetCampaignVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCampaignVersionResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetCampaignVersionsRequest&, const Model::GetCampaignVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCampaignVersionsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetCampaignsRequest&, const Model::GetCampaignsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCampaignsResponseReceivedHandler;
@@ -1216,6 +1226,34 @@ namespace Model
         virtual void GetAppAsync(const Model::GetAppRequest& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves (queries) pre-aggregated data for a standard metric that applies to
+         * an application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationDateRangeKpi">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetApplicationDateRangeKpiOutcome GetApplicationDateRangeKpi(const Model::GetApplicationDateRangeKpiRequest& request) const;
+
+        /**
+         * <p>Retrieves (queries) pre-aggregated data for a standard metric that applies to
+         * an application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationDateRangeKpi">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetApplicationDateRangeKpiOutcomeCallable GetApplicationDateRangeKpiCallable(const Model::GetApplicationDateRangeKpiRequest& request) const;
+
+        /**
+         * <p>Retrieves (queries) pre-aggregated data for a standard metric that applies to
+         * an application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationDateRangeKpi">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetApplicationDateRangeKpiAsync(const Model::GetApplicationDateRangeKpiRequest& request, const GetApplicationDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves information about the settings for an application.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationSettings">AWS
@@ -1354,6 +1392,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCampaignActivitiesAsync(const Model::GetCampaignActivitiesRequest& request, const GetCampaignActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves (queries) pre-aggregated data for a standard metric that applies to
+         * a campaign.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignDateRangeKpi">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCampaignDateRangeKpiOutcome GetCampaignDateRangeKpi(const Model::GetCampaignDateRangeKpiRequest& request) const;
+
+        /**
+         * <p>Retrieves (queries) pre-aggregated data for a standard metric that applies to
+         * a campaign.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignDateRangeKpi">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetCampaignDateRangeKpiOutcomeCallable GetCampaignDateRangeKpiCallable(const Model::GetCampaignDateRangeKpiRequest& request) const;
+
+        /**
+         * <p>Retrieves (queries) pre-aggregated data for a standard metric that applies to
+         * a campaign.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignDateRangeKpi">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetCampaignDateRangeKpiAsync(const Model::GetCampaignDateRangeKpiRequest& request, const GetCampaignDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the status, configuration, and other settings for
@@ -2664,11 +2730,13 @@ namespace Model
         void GetApnsVoipChannelAsyncHelper(const Model::GetApnsVoipChannelRequest& request, const GetApnsVoipChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApnsVoipSandboxChannelAsyncHelper(const Model::GetApnsVoipSandboxChannelRequest& request, const GetApnsVoipSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAppAsyncHelper(const Model::GetAppRequest& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetApplicationDateRangeKpiAsyncHelper(const Model::GetApplicationDateRangeKpiRequest& request, const GetApplicationDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApplicationSettingsAsyncHelper(const Model::GetApplicationSettingsRequest& request, const GetApplicationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAppsAsyncHelper(const Model::GetAppsRequest& request, const GetAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBaiduChannelAsyncHelper(const Model::GetBaiduChannelRequest& request, const GetBaiduChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCampaignAsyncHelper(const Model::GetCampaignRequest& request, const GetCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCampaignActivitiesAsyncHelper(const Model::GetCampaignActivitiesRequest& request, const GetCampaignActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetCampaignDateRangeKpiAsyncHelper(const Model::GetCampaignDateRangeKpiRequest& request, const GetCampaignDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCampaignVersionAsyncHelper(const Model::GetCampaignVersionRequest& request, const GetCampaignVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCampaignVersionsAsyncHelper(const Model::GetCampaignVersionsRequest& request, const GetCampaignVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCampaignsAsyncHelper(const Model::GetCampaignsRequest& request, const GetCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

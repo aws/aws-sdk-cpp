@@ -45,80 +45,80 @@ namespace Model
 
 
     /**
-     * <p>A list of DevEndpoint definitions.</p>
+     * <p>A list of <code>DevEndpoint</code> definitions.</p>
      */
     inline const Aws::Vector<DevEndpoint>& GetDevEndpoints() const{ return m_devEndpoints; }
 
     /**
-     * <p>A list of DevEndpoint definitions.</p>
+     * <p>A list of <code>DevEndpoint</code> definitions.</p>
      */
     inline void SetDevEndpoints(const Aws::Vector<DevEndpoint>& value) { m_devEndpoints = value; }
 
     /**
-     * <p>A list of DevEndpoint definitions.</p>
+     * <p>A list of <code>DevEndpoint</code> definitions.</p>
      */
     inline void SetDevEndpoints(Aws::Vector<DevEndpoint>&& value) { m_devEndpoints = std::move(value); }
 
     /**
-     * <p>A list of DevEndpoint definitions.</p>
+     * <p>A list of <code>DevEndpoint</code> definitions.</p>
      */
     inline GetDevEndpointsResult& WithDevEndpoints(const Aws::Vector<DevEndpoint>& value) { SetDevEndpoints(value); return *this;}
 
     /**
-     * <p>A list of DevEndpoint definitions.</p>
+     * <p>A list of <code>DevEndpoint</code> definitions.</p>
      */
     inline GetDevEndpointsResult& WithDevEndpoints(Aws::Vector<DevEndpoint>&& value) { SetDevEndpoints(std::move(value)); return *this;}
 
     /**
-     * <p>A list of DevEndpoint definitions.</p>
+     * <p>A list of <code>DevEndpoint</code> definitions.</p>
      */
     inline GetDevEndpointsResult& AddDevEndpoints(const DevEndpoint& value) { m_devEndpoints.push_back(value); return *this; }
 
     /**
-     * <p>A list of DevEndpoint definitions.</p>
+     * <p>A list of <code>DevEndpoint</code> definitions.</p>
      */
     inline GetDevEndpointsResult& AddDevEndpoints(DevEndpoint&& value) { m_devEndpoints.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A continuation token, if not all DevEndpoint definitions have yet been
-     * returned.</p>
+     * <p>A continuation token, if not all <code>DevEndpoint</code> definitions have
+     * yet been returned.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A continuation token, if not all DevEndpoint definitions have yet been
-     * returned.</p>
+     * <p>A continuation token, if not all <code>DevEndpoint</code> definitions have
+     * yet been returned.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>A continuation token, if not all DevEndpoint definitions have yet been
-     * returned.</p>
+     * <p>A continuation token, if not all <code>DevEndpoint</code> definitions have
+     * yet been returned.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>A continuation token, if not all DevEndpoint definitions have yet been
-     * returned.</p>
+     * <p>A continuation token, if not all <code>DevEndpoint</code> definitions have
+     * yet been returned.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>A continuation token, if not all DevEndpoint definitions have yet been
-     * returned.</p>
+     * <p>A continuation token, if not all <code>DevEndpoint</code> definitions have
+     * yet been returned.</p>
      */
     inline GetDevEndpointsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A continuation token, if not all DevEndpoint definitions have yet been
-     * returned.</p>
+     * <p>A continuation token, if not all <code>DevEndpoint</code> definitions have
+     * yet been returned.</p>
      */
     inline GetDevEndpointsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A continuation token, if not all DevEndpoint definitions have yet been
-     * returned.</p>
+     * <p>A continuation token, if not all <code>DevEndpoint</code> definitions have
+     * yet been returned.</p>
      */
     inline GetDevEndpointsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

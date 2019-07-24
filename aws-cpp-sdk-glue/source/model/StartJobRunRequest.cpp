@@ -32,6 +32,7 @@ StartJobRunRequest::StartJobRunRequest() :
     m_maxCapacityHasBeenSet(false),
     m_securityConfigurationHasBeenSet(false),
     m_notificationPropertyHasBeenSet(false),
+    m_workerType(WorkerType::NOT_SET),
     m_workerTypeHasBeenSet(false),
     m_numberOfWorkers(0),
     m_numberOfWorkersHasBeenSet(false)
@@ -91,8 +92,7 @@ Aws::String StartJobRunRequest::SerializePayload() const
 
   if(m_workerTypeHasBeenSet)
   {
-   payload.WithString("WorkerType", m_workerType);
-
+   payload.WithString("WorkerType", WorkerTypeMapper::GetNameForWorkerType(m_workerType));
   }
 
   if(m_numberOfWorkersHasBeenSet)

@@ -26,6 +26,7 @@
 #include <aws/sts/model/AssumeRoleWithSAMLResult.h>
 #include <aws/sts/model/AssumeRoleWithWebIdentityResult.h>
 #include <aws/sts/model/DecodeAuthorizationMessageResult.h>
+#include <aws/sts/model/GetAccessKeyInfoResult.h>
 #include <aws/sts/model/GetCallerIdentityResult.h>
 #include <aws/sts/model/GetFederationTokenResult.h>
 #include <aws/sts/model/GetSessionTokenResult.h>
@@ -78,6 +79,7 @@ namespace Model
         class AssumeRoleWithSAMLRequest;
         class AssumeRoleWithWebIdentityRequest;
         class DecodeAuthorizationMessageRequest;
+        class GetAccessKeyInfoRequest;
         class GetCallerIdentityRequest;
         class GetFederationTokenRequest;
         class GetSessionTokenRequest;
@@ -86,6 +88,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AssumeRoleWithSAMLResult, Aws::Client::AWSError<STSErrors>> AssumeRoleWithSAMLOutcome;
         typedef Aws::Utils::Outcome<AssumeRoleWithWebIdentityResult, Aws::Client::AWSError<STSErrors>> AssumeRoleWithWebIdentityOutcome;
         typedef Aws::Utils::Outcome<DecodeAuthorizationMessageResult, Aws::Client::AWSError<STSErrors>> DecodeAuthorizationMessageOutcome;
+        typedef Aws::Utils::Outcome<GetAccessKeyInfoResult, Aws::Client::AWSError<STSErrors>> GetAccessKeyInfoOutcome;
         typedef Aws::Utils::Outcome<GetCallerIdentityResult, Aws::Client::AWSError<STSErrors>> GetCallerIdentityOutcome;
         typedef Aws::Utils::Outcome<GetFederationTokenResult, Aws::Client::AWSError<STSErrors>> GetFederationTokenOutcome;
         typedef Aws::Utils::Outcome<GetSessionTokenResult, Aws::Client::AWSError<STSErrors>> GetSessionTokenOutcome;
@@ -94,6 +97,7 @@ namespace Model
         typedef std::future<AssumeRoleWithSAMLOutcome> AssumeRoleWithSAMLOutcomeCallable;
         typedef std::future<AssumeRoleWithWebIdentityOutcome> AssumeRoleWithWebIdentityOutcomeCallable;
         typedef std::future<DecodeAuthorizationMessageOutcome> DecodeAuthorizationMessageOutcomeCallable;
+        typedef std::future<GetAccessKeyInfoOutcome> GetAccessKeyInfoOutcomeCallable;
         typedef std::future<GetCallerIdentityOutcome> GetCallerIdentityOutcomeCallable;
         typedef std::future<GetFederationTokenOutcome> GetFederationTokenOutcomeCallable;
         typedef std::future<GetSessionTokenOutcome> GetSessionTokenOutcomeCallable;
@@ -105,6 +109,7 @@ namespace Model
     typedef std::function<void(const STSClient*, const Model::AssumeRoleWithSAMLRequest&, const Model::AssumeRoleWithSAMLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssumeRoleWithSAMLResponseReceivedHandler;
     typedef std::function<void(const STSClient*, const Model::AssumeRoleWithWebIdentityRequest&, const Model::AssumeRoleWithWebIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssumeRoleWithWebIdentityResponseReceivedHandler;
     typedef std::function<void(const STSClient*, const Model::DecodeAuthorizationMessageRequest&, const Model::DecodeAuthorizationMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DecodeAuthorizationMessageResponseReceivedHandler;
+    typedef std::function<void(const STSClient*, const Model::GetAccessKeyInfoRequest&, const Model::GetAccessKeyInfoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessKeyInfoResponseReceivedHandler;
     typedef std::function<void(const STSClient*, const Model::GetCallerIdentityRequest&, const Model::GetCallerIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCallerIdentityResponseReceivedHandler;
     typedef std::function<void(const STSClient*, const Model::GetFederationTokenRequest&, const Model::GetFederationTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFederationTokenResponseReceivedHandler;
     typedef std::function<void(const STSClient*, const Model::GetSessionTokenRequest&, const Model::GetSessionTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSessionTokenResponseReceivedHandler;
@@ -1162,6 +1167,97 @@ namespace Model
         virtual void DecodeAuthorizationMessageAsync(const Model::DecodeAuthorizationMessageRequest& request, const DecodeAuthorizationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the account identifier for the specified access key ID.</p> <p>Access
+         * keys consist of two parts: an access key ID (for example,
+         * <code>AKIAIOSFODNN7EXAMPLE</code>) and a secret access key (for example,
+         * <code>wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</code>). For more information
+         * about access keys, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html">Managing
+         * Access Keys for IAM Users</a> in the <i>IAM User Guide</i>.</p> <p>When you pass
+         * an access key ID to this operation, it returns the ID of the AWS account to
+         * which the keys belong. Access key IDs beginning with <code>AKIA</code> are
+         * long-term credentials for an IAM user or the AWS account root user. Access key
+         * IDs beginning with <code>ASIA</code> are temporary credentials that are created
+         * using STS operations. If the account in the response belongs to you, you can
+         * sign in as the root user and review your root user access keys. Then, you can
+         * pull a <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report">credentials
+         * report</a> to learn which IAM user owns the keys. To learn who requested the
+         * temporary credentials for an <code>ASIA</code> access key, view the STS events
+         * in your <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration">CloudTrail
+         * logs</a>.</p> <p>This operation does not indicate the state of the access key.
+         * The key might be active, inactive, or deleted. Active keys might not have
+         * permissions to perform an operation. Providing a deleted keys might return an
+         * error that the key doesn't exist.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetAccessKeyInfo">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccessKeyInfoOutcome GetAccessKeyInfo(const Model::GetAccessKeyInfoRequest& request) const;
+
+        /**
+         * <p>Returns the account identifier for the specified access key ID.</p> <p>Access
+         * keys consist of two parts: an access key ID (for example,
+         * <code>AKIAIOSFODNN7EXAMPLE</code>) and a secret access key (for example,
+         * <code>wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</code>). For more information
+         * about access keys, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html">Managing
+         * Access Keys for IAM Users</a> in the <i>IAM User Guide</i>.</p> <p>When you pass
+         * an access key ID to this operation, it returns the ID of the AWS account to
+         * which the keys belong. Access key IDs beginning with <code>AKIA</code> are
+         * long-term credentials for an IAM user or the AWS account root user. Access key
+         * IDs beginning with <code>ASIA</code> are temporary credentials that are created
+         * using STS operations. If the account in the response belongs to you, you can
+         * sign in as the root user and review your root user access keys. Then, you can
+         * pull a <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report">credentials
+         * report</a> to learn which IAM user owns the keys. To learn who requested the
+         * temporary credentials for an <code>ASIA</code> access key, view the STS events
+         * in your <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration">CloudTrail
+         * logs</a>.</p> <p>This operation does not indicate the state of the access key.
+         * The key might be active, inactive, or deleted. Active keys might not have
+         * permissions to perform an operation. Providing a deleted keys might return an
+         * error that the key doesn't exist.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetAccessKeyInfo">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAccessKeyInfoOutcomeCallable GetAccessKeyInfoCallable(const Model::GetAccessKeyInfoRequest& request) const;
+
+        /**
+         * <p>Returns the account identifier for the specified access key ID.</p> <p>Access
+         * keys consist of two parts: an access key ID (for example,
+         * <code>AKIAIOSFODNN7EXAMPLE</code>) and a secret access key (for example,
+         * <code>wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</code>). For more information
+         * about access keys, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html">Managing
+         * Access Keys for IAM Users</a> in the <i>IAM User Guide</i>.</p> <p>When you pass
+         * an access key ID to this operation, it returns the ID of the AWS account to
+         * which the keys belong. Access key IDs beginning with <code>AKIA</code> are
+         * long-term credentials for an IAM user or the AWS account root user. Access key
+         * IDs beginning with <code>ASIA</code> are temporary credentials that are created
+         * using STS operations. If the account in the response belongs to you, you can
+         * sign in as the root user and review your root user access keys. Then, you can
+         * pull a <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report">credentials
+         * report</a> to learn which IAM user owns the keys. To learn who requested the
+         * temporary credentials for an <code>ASIA</code> access key, view the STS events
+         * in your <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration">CloudTrail
+         * logs</a>.</p> <p>This operation does not indicate the state of the access key.
+         * The key might be active, inactive, or deleted. Active keys might not have
+         * permissions to perform an operation. Providing a deleted keys might return an
+         * error that the key doesn't exist.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetAccessKeyInfo">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAccessKeyInfoAsync(const Model::GetAccessKeyInfoRequest& request, const GetAccessKeyInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns details about the IAM identity whose credentials are used to call the
          * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity">AWS
@@ -1547,6 +1643,7 @@ namespace Model
         void AssumeRoleWithSAMLAsyncHelper(const Model::AssumeRoleWithSAMLRequest& request, const AssumeRoleWithSAMLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssumeRoleWithWebIdentityAsyncHelper(const Model::AssumeRoleWithWebIdentityRequest& request, const AssumeRoleWithWebIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DecodeAuthorizationMessageAsyncHelper(const Model::DecodeAuthorizationMessageRequest& request, const DecodeAuthorizationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAccessKeyInfoAsyncHelper(const Model::GetAccessKeyInfoRequest& request, const GetAccessKeyInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCallerIdentityAsyncHelper(const Model::GetCallerIdentityRequest& request, const GetCallerIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFederationTokenAsyncHelper(const Model::GetFederationTokenRequest& request, const GetFederationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSessionTokenAsyncHelper(const Model::GetSessionTokenRequest& request, const GetSessionTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

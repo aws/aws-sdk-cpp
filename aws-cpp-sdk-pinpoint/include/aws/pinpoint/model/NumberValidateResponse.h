@@ -49,49 +49,57 @@ namespace Model
 
     /**
      * <p>The carrier or service provider that the phone number is currently registered
-     * with.</p>
+     * with. In some countries and regions, this value may be the carrier or service
+     * provider that the phone number was originally registered with.</p>
      */
     inline const Aws::String& GetCarrier() const{ return m_carrier; }
 
     /**
      * <p>The carrier or service provider that the phone number is currently registered
-     * with.</p>
+     * with. In some countries and regions, this value may be the carrier or service
+     * provider that the phone number was originally registered with.</p>
      */
     inline bool CarrierHasBeenSet() const { return m_carrierHasBeenSet; }
 
     /**
      * <p>The carrier or service provider that the phone number is currently registered
-     * with.</p>
+     * with. In some countries and regions, this value may be the carrier or service
+     * provider that the phone number was originally registered with.</p>
      */
     inline void SetCarrier(const Aws::String& value) { m_carrierHasBeenSet = true; m_carrier = value; }
 
     /**
      * <p>The carrier or service provider that the phone number is currently registered
-     * with.</p>
+     * with. In some countries and regions, this value may be the carrier or service
+     * provider that the phone number was originally registered with.</p>
      */
     inline void SetCarrier(Aws::String&& value) { m_carrierHasBeenSet = true; m_carrier = std::move(value); }
 
     /**
      * <p>The carrier or service provider that the phone number is currently registered
-     * with.</p>
+     * with. In some countries and regions, this value may be the carrier or service
+     * provider that the phone number was originally registered with.</p>
      */
     inline void SetCarrier(const char* value) { m_carrierHasBeenSet = true; m_carrier.assign(value); }
 
     /**
      * <p>The carrier or service provider that the phone number is currently registered
-     * with.</p>
+     * with. In some countries and regions, this value may be the carrier or service
+     * provider that the phone number was originally registered with.</p>
      */
     inline NumberValidateResponse& WithCarrier(const Aws::String& value) { SetCarrier(value); return *this;}
 
     /**
      * <p>The carrier or service provider that the phone number is currently registered
-     * with.</p>
+     * with. In some countries and regions, this value may be the carrier or service
+     * provider that the phone number was originally registered with.</p>
      */
     inline NumberValidateResponse& WithCarrier(Aws::String&& value) { SetCarrier(std::move(value)); return *this;}
 
     /**
      * <p>The carrier or service provider that the phone number is currently registered
-     * with.</p>
+     * with. In some countries and regions, this value may be the carrier or service
+     * provider that the phone number was originally registered with.</p>
      */
     inline NumberValidateResponse& WithCarrier(const char* value) { SetCarrier(value); return *this;}
 

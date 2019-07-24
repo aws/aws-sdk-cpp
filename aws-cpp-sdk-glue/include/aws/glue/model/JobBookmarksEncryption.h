@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies how Job bookmark data should be encrypted.</p><p><h3>See Also:</h3>
+   * <p>Specifies how job bookmark data should be encrypted.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/JobBookmarksEncryption">AWS
    * API Reference</a></p>
@@ -50,73 +50,81 @@ namespace Model
 
 
     /**
-     * <p>The encryption mode to use for Job bookmarks data.</p>
+     * <p>The encryption mode to use for job bookmarks data.</p>
      */
     inline const JobBookmarksEncryptionMode& GetJobBookmarksEncryptionMode() const{ return m_jobBookmarksEncryptionMode; }
 
     /**
-     * <p>The encryption mode to use for Job bookmarks data.</p>
+     * <p>The encryption mode to use for job bookmarks data.</p>
      */
     inline bool JobBookmarksEncryptionModeHasBeenSet() const { return m_jobBookmarksEncryptionModeHasBeenSet; }
 
     /**
-     * <p>The encryption mode to use for Job bookmarks data.</p>
+     * <p>The encryption mode to use for job bookmarks data.</p>
      */
     inline void SetJobBookmarksEncryptionMode(const JobBookmarksEncryptionMode& value) { m_jobBookmarksEncryptionModeHasBeenSet = true; m_jobBookmarksEncryptionMode = value; }
 
     /**
-     * <p>The encryption mode to use for Job bookmarks data.</p>
+     * <p>The encryption mode to use for job bookmarks data.</p>
      */
     inline void SetJobBookmarksEncryptionMode(JobBookmarksEncryptionMode&& value) { m_jobBookmarksEncryptionModeHasBeenSet = true; m_jobBookmarksEncryptionMode = std::move(value); }
 
     /**
-     * <p>The encryption mode to use for Job bookmarks data.</p>
+     * <p>The encryption mode to use for job bookmarks data.</p>
      */
     inline JobBookmarksEncryption& WithJobBookmarksEncryptionMode(const JobBookmarksEncryptionMode& value) { SetJobBookmarksEncryptionMode(value); return *this;}
 
     /**
-     * <p>The encryption mode to use for Job bookmarks data.</p>
+     * <p>The encryption mode to use for job bookmarks data.</p>
      */
     inline JobBookmarksEncryption& WithJobBookmarksEncryptionMode(JobBookmarksEncryptionMode&& value) { SetJobBookmarksEncryptionMode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the
+     * data.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the
+     * data.</p>
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
-     * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the
+     * data.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
-     * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the
+     * data.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the
+     * data.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the
+     * data.</p>
      */
     inline JobBookmarksEncryption& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the
+     * data.</p>
      */
     inline JobBookmarksEncryption& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>
+     * <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the
+     * data.</p>
      */
     inline JobBookmarksEncryption& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 

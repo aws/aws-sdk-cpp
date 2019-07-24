@@ -47,7 +47,8 @@ JobUpdate::JobUpdate() :
     m_numberOfWorkers(0),
     m_numberOfWorkersHasBeenSet(false),
     m_securityConfigurationHasBeenSet(false),
-    m_notificationPropertyHasBeenSet(false)
+    m_notificationPropertyHasBeenSet(false),
+    m_glueVersionHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ JobUpdate::JobUpdate(JsonView jsonValue) :
     m_numberOfWorkers(0),
     m_numberOfWorkersHasBeenSet(false),
     m_securityConfigurationHasBeenSet(false),
-    m_notificationPropertyHasBeenSet(false)
+    m_notificationPropertyHasBeenSet(false),
+    m_glueVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -178,6 +180,13 @@ JobUpdate& JobUpdate::operator =(JsonView jsonValue)
     m_notificationPropertyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GlueVersion"))
+  {
+    m_glueVersion = jsonValue.GetString("GlueVersion");
+
+    m_glueVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -270,6 +279,12 @@ JsonValue JobUpdate::Jsonize() const
   if(m_notificationPropertyHasBeenSet)
   {
    payload.WithObject("NotificationProperty", m_notificationProperty.Jsonize());
+
+  }
+
+  if(m_glueVersionHasBeenSet)
+  {
+   payload.WithString("GlueVersion", m_glueVersion);
 
   }
 

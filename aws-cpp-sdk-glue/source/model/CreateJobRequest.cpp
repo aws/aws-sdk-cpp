@@ -40,8 +40,10 @@ CreateJobRequest::CreateJobRequest() :
     m_securityConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_notificationPropertyHasBeenSet(false),
+    m_glueVersionHasBeenSet(false),
     m_numberOfWorkers(0),
     m_numberOfWorkersHasBeenSet(false),
+    m_workerType(WorkerType::NOT_SET),
     m_workerTypeHasBeenSet(false)
 {
 }
@@ -144,6 +146,12 @@ Aws::String CreateJobRequest::SerializePayload() const
 
   }
 
+  if(m_glueVersionHasBeenSet)
+  {
+   payload.WithString("GlueVersion", m_glueVersion);
+
+  }
+
   if(m_numberOfWorkersHasBeenSet)
   {
    payload.WithInteger("NumberOfWorkers", m_numberOfWorkers);
@@ -152,8 +160,7 @@ Aws::String CreateJobRequest::SerializePayload() const
 
   if(m_workerTypeHasBeenSet)
   {
-   payload.WithString("WorkerType", m_workerType);
-
+   payload.WithString("WorkerType", WorkerTypeMapper::GetNameForWorkerType(m_workerType));
   }
 
   return payload.View().WriteReadable();
