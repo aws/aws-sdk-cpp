@@ -136,14 +136,13 @@ namespace
             return false;
         }
 
-        static void WaitForContainerToEmpty()
+        static bool WaitForContainerToEmpty()
         {
             ListItemsRequest listItemsRequest;
             unsigned timeoutCount = 0;
             while (timeoutCount++ < TIMEOUT_MAX)
             {
                 auto listItemsOutcome = m_mediaStoreDataClient->ListItems(listItemsRequest);
-                ASSERT_TRUE(listItemsOutcome.IsSuccess());
                 if (listItemsOutcome.GetResult().GetItems().size() > 0)
                 {
                     AWS_LOGSTREAM_DEBUG(LOG_TAG, "Listing items while deleting container returned "
@@ -159,11 +158,36 @@ namespace
                 }
                 else
                 {
-                    break;
+                    return true;
                 }
             }
 
-            ASSERT_LE(timeoutCount, TIMEOUT_MAX);
+            return false;
+        }
+
+        static bool DeleteContainerExhaustively(const Aws::String& containerName)
+        {
+            DeleteContainerRequest deleteContainerRequest;
+            deleteContainerRequest.SetContainerName(containerName);
+            unsigned timeoutCount = 0;
+            while (timeoutCount++ < TIMEOUT_MAX)
+            {
+                auto deleteContainerOutcome = m_mediaStoreClient->DeleteContainer(deleteContainerRequest);
+                if (!deleteContainerOutcome.IsSuccess())
+                {
+                    AWS_LOGSTREAM_DEBUG(LOG_TAG, "Failed to delete container: "
+                        << containerName << " with error: "
+                        << deleteContainerOutcome.GetError().GetMessage()
+                        << " Retry in 10 seconds.");
+                    std::this_thread::sleep_for(std::chrono::seconds(10));
+                }
+                else
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         static void DeleteContainer(const Aws::String& containerName)
@@ -190,13 +214,8 @@ namespace
                         m_mediaStoreDataClient->DeleteObject(deleteObjectRequest);
                     }
                 }
-                WaitForContainerToEmpty();
-
-                // Delete container
-                DeleteContainerRequest deleteContainerRequest;
-                deleteContainerRequest.SetContainerName(GetTestContainerName());
-                auto deleteContainerOutcome = m_mediaStoreClient->DeleteContainer(deleteContainerRequest);
-                ASSERT_TRUE(deleteContainerOutcome.IsSuccess());
+                ASSERT_TRUE(WaitForContainerToEmpty());
+                ASSERT_TRUE(DeleteContainerExhaustively(containerName));
             }
         }
 
