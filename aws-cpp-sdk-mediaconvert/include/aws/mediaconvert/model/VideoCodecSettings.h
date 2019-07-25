@@ -41,10 +41,10 @@ namespace Model
   /**
    * Video codec settings, (CodecSettings) under (VideoDescription), contains the
    * group of settings related to video encoding. The settings in this group vary
-   * depending on the value you choose for Video codec (Codec). For each codec enum
-   * you choose, define the corresponding settings object. The following lists the
-   * codec enum, settings object pairs. * H_264, H264Settings * H_265, H265Settings *
-   * MPEG2, Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE,
+   * depending on the value that you choose for Video codec (Codec). For each codec
+   * enum that you choose, define the corresponding settings object. The following
+   * lists the codec enum, settings object pairs. * H_264, H264Settings * H_265,
+   * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE,
    * FrameCaptureSettings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoCodecSettings">AWS
    * API Reference</a></p>

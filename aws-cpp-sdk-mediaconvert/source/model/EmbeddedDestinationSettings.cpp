@@ -30,13 +30,17 @@ namespace Model
 
 EmbeddedDestinationSettings::EmbeddedDestinationSettings() : 
     m_destination608ChannelNumber(0),
-    m_destination608ChannelNumberHasBeenSet(false)
+    m_destination608ChannelNumberHasBeenSet(false),
+    m_destination708ServiceNumber(0),
+    m_destination708ServiceNumberHasBeenSet(false)
 {
 }
 
 EmbeddedDestinationSettings::EmbeddedDestinationSettings(JsonView jsonValue) : 
     m_destination608ChannelNumber(0),
-    m_destination608ChannelNumberHasBeenSet(false)
+    m_destination608ChannelNumberHasBeenSet(false),
+    m_destination708ServiceNumber(0),
+    m_destination708ServiceNumberHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +54,13 @@ EmbeddedDestinationSettings& EmbeddedDestinationSettings::operator =(JsonView js
     m_destination608ChannelNumberHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("destination708ServiceNumber"))
+  {
+    m_destination708ServiceNumber = jsonValue.GetInteger("destination708ServiceNumber");
+
+    m_destination708ServiceNumberHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -60,6 +71,12 @@ JsonValue EmbeddedDestinationSettings::Jsonize() const
   if(m_destination608ChannelNumberHasBeenSet)
   {
    payload.WithInteger("destination608ChannelNumber", m_destination608ChannelNumber);
+
+  }
+
+  if(m_destination708ServiceNumberHasBeenSet)
+  {
+   payload.WithInteger("destination708ServiceNumber", m_destination708ServiceNumber);
 
   }
 

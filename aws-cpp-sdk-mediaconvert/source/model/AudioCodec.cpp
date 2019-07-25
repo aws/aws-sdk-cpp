@@ -36,6 +36,7 @@ namespace Aws
         static const int AIFF_HASH = HashingUtils::HashString("AIFF");
         static const int AC3_HASH = HashingUtils::HashString("AC3");
         static const int EAC3_HASH = HashingUtils::HashString("EAC3");
+        static const int EAC3_ATMOS_HASH = HashingUtils::HashString("EAC3_ATMOS");
         static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
 
 
@@ -65,6 +66,10 @@ namespace Aws
           else if (hashCode == EAC3_HASH)
           {
             return AudioCodec::EAC3;
+          }
+          else if (hashCode == EAC3_ATMOS_HASH)
+          {
+            return AudioCodec::EAC3_ATMOS;
           }
           else if (hashCode == PASSTHROUGH_HASH)
           {
@@ -96,6 +101,8 @@ namespace Aws
             return "AC3";
           case AudioCodec::EAC3:
             return "EAC3";
+          case AudioCodec::EAC3_ATMOS:
+            return "EAC3_ATMOS";
           case AudioCodec::PASSTHROUGH:
             return "PASSTHROUGH";
           default:

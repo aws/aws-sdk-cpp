@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 
 CreateRepositoryRequest::CreateRepositoryRequest() : 
     m_repositoryNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_imageTagMutability(ImageTagMutability::NOT_SET),
+    m_imageTagMutabilityHasBeenSet(false)
 {
 }
 
@@ -47,6 +49,11 @@ Aws::String CreateRepositoryRequest::SerializePayload() const
    }
    payload.WithArray("tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_imageTagMutabilityHasBeenSet)
+  {
+   payload.WithString("imageTagMutability", ImageTagMutabilityMapper::GetNameForImageTagMutability(m_imageTagMutability));
   }
 
   return payload.View().WriteReadable();

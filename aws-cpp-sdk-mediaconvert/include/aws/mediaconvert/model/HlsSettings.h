@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/model/HlsAudioOnlyContainer.h>
 #include <aws/mediaconvert/model/HlsAudioTrackType.h>
 #include <aws/mediaconvert/model/HlsIFrameOnlyManifest.h>
 #include <utility>
@@ -88,6 +89,61 @@ namespace Model
      * Specifies the group to which the audio Rendition belongs.
      */
     inline HlsSettings& WithAudioGroupId(const char* value) { SetAudioGroupId(value); return *this;}
+
+
+    /**
+     * Use this setting only in audio-only outputs. Choose MPEG-2 Transport Stream
+     * (M2TS) to create a file in an MPEG2-TS container. Keep the default value
+     * Automatic (AUTOMATIC) to create an audio-only file in a raw container.
+     * Regardless of the value that you specify here, if this output has video, the
+     * service will place the output into an MPEG2-TS container.
+     */
+    inline const HlsAudioOnlyContainer& GetAudioOnlyContainer() const{ return m_audioOnlyContainer; }
+
+    /**
+     * Use this setting only in audio-only outputs. Choose MPEG-2 Transport Stream
+     * (M2TS) to create a file in an MPEG2-TS container. Keep the default value
+     * Automatic (AUTOMATIC) to create an audio-only file in a raw container.
+     * Regardless of the value that you specify here, if this output has video, the
+     * service will place the output into an MPEG2-TS container.
+     */
+    inline bool AudioOnlyContainerHasBeenSet() const { return m_audioOnlyContainerHasBeenSet; }
+
+    /**
+     * Use this setting only in audio-only outputs. Choose MPEG-2 Transport Stream
+     * (M2TS) to create a file in an MPEG2-TS container. Keep the default value
+     * Automatic (AUTOMATIC) to create an audio-only file in a raw container.
+     * Regardless of the value that you specify here, if this output has video, the
+     * service will place the output into an MPEG2-TS container.
+     */
+    inline void SetAudioOnlyContainer(const HlsAudioOnlyContainer& value) { m_audioOnlyContainerHasBeenSet = true; m_audioOnlyContainer = value; }
+
+    /**
+     * Use this setting only in audio-only outputs. Choose MPEG-2 Transport Stream
+     * (M2TS) to create a file in an MPEG2-TS container. Keep the default value
+     * Automatic (AUTOMATIC) to create an audio-only file in a raw container.
+     * Regardless of the value that you specify here, if this output has video, the
+     * service will place the output into an MPEG2-TS container.
+     */
+    inline void SetAudioOnlyContainer(HlsAudioOnlyContainer&& value) { m_audioOnlyContainerHasBeenSet = true; m_audioOnlyContainer = std::move(value); }
+
+    /**
+     * Use this setting only in audio-only outputs. Choose MPEG-2 Transport Stream
+     * (M2TS) to create a file in an MPEG2-TS container. Keep the default value
+     * Automatic (AUTOMATIC) to create an audio-only file in a raw container.
+     * Regardless of the value that you specify here, if this output has video, the
+     * service will place the output into an MPEG2-TS container.
+     */
+    inline HlsSettings& WithAudioOnlyContainer(const HlsAudioOnlyContainer& value) { SetAudioOnlyContainer(value); return *this;}
+
+    /**
+     * Use this setting only in audio-only outputs. Choose MPEG-2 Transport Stream
+     * (M2TS) to create a file in an MPEG2-TS container. Keep the default value
+     * Automatic (AUTOMATIC) to create an audio-only file in a raw container.
+     * Regardless of the value that you specify here, if this output has video, the
+     * service will place the output into an MPEG2-TS container.
+     */
+    inline HlsSettings& WithAudioOnlyContainer(HlsAudioOnlyContainer&& value) { SetAudioOnlyContainer(std::move(value)); return *this;}
 
 
     /**
@@ -319,6 +375,9 @@ namespace Model
 
     Aws::String m_audioGroupId;
     bool m_audioGroupIdHasBeenSet;
+
+    HlsAudioOnlyContainer m_audioOnlyContainer;
+    bool m_audioOnlyContainerHasBeenSet;
 
     Aws::String m_audioRenditionSets;
     bool m_audioRenditionSetsHasBeenSet;

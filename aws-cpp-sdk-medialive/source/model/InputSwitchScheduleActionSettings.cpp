@@ -29,12 +29,16 @@ namespace Model
 {
 
 InputSwitchScheduleActionSettings::InputSwitchScheduleActionSettings() : 
-    m_inputAttachmentNameReferenceHasBeenSet(false)
+    m_inputAttachmentNameReferenceHasBeenSet(false),
+    m_inputClippingSettingsHasBeenSet(false),
+    m_urlPathHasBeenSet(false)
 {
 }
 
 InputSwitchScheduleActionSettings::InputSwitchScheduleActionSettings(JsonView jsonValue) : 
-    m_inputAttachmentNameReferenceHasBeenSet(false)
+    m_inputAttachmentNameReferenceHasBeenSet(false),
+    m_inputClippingSettingsHasBeenSet(false),
+    m_urlPathHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +52,23 @@ InputSwitchScheduleActionSettings& InputSwitchScheduleActionSettings::operator =
     m_inputAttachmentNameReferenceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("inputClippingSettings"))
+  {
+    m_inputClippingSettings = jsonValue.GetObject("inputClippingSettings");
+
+    m_inputClippingSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("urlPath"))
+  {
+    Array<JsonView> urlPathJsonList = jsonValue.GetArray("urlPath");
+    for(unsigned urlPathIndex = 0; urlPathIndex < urlPathJsonList.GetLength(); ++urlPathIndex)
+    {
+      m_urlPath.push_back(urlPathJsonList[urlPathIndex].AsString());
+    }
+    m_urlPathHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +79,23 @@ JsonValue InputSwitchScheduleActionSettings::Jsonize() const
   if(m_inputAttachmentNameReferenceHasBeenSet)
   {
    payload.WithString("inputAttachmentNameReference", m_inputAttachmentNameReference);
+
+  }
+
+  if(m_inputClippingSettingsHasBeenSet)
+  {
+   payload.WithObject("inputClippingSettings", m_inputClippingSettings.Jsonize());
+
+  }
+
+  if(m_urlPathHasBeenSet)
+  {
+   Array<JsonValue> urlPathJsonList(m_urlPath.size());
+   for(unsigned urlPathIndex = 0; urlPathIndex < urlPathJsonList.GetLength(); ++urlPathIndex)
+   {
+     urlPathJsonList[urlPathIndex].AsString(m_urlPath[urlPathIndex]);
+   }
+   payload.WithArray("urlPath", std::move(urlPathJsonList));
 
   }
 

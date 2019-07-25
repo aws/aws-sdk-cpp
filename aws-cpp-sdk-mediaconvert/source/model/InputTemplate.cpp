@@ -32,6 +32,7 @@ InputTemplate::InputTemplate() :
     m_audioSelectorGroupsHasBeenSet(false),
     m_audioSelectorsHasBeenSet(false),
     m_captionSelectorsHasBeenSet(false),
+    m_cropHasBeenSet(false),
     m_deblockFilter(InputDeblockFilter::NOT_SET),
     m_deblockFilterHasBeenSet(false),
     m_denoiseFilter(InputDenoiseFilter::NOT_SET),
@@ -42,6 +43,7 @@ InputTemplate::InputTemplate() :
     m_filterStrengthHasBeenSet(false),
     m_imageInserterHasBeenSet(false),
     m_inputClippingsHasBeenSet(false),
+    m_positionHasBeenSet(false),
     m_programNumber(0),
     m_programNumberHasBeenSet(false),
     m_psiControl(InputPsiControl::NOT_SET),
@@ -56,6 +58,7 @@ InputTemplate::InputTemplate(JsonView jsonValue) :
     m_audioSelectorGroupsHasBeenSet(false),
     m_audioSelectorsHasBeenSet(false),
     m_captionSelectorsHasBeenSet(false),
+    m_cropHasBeenSet(false),
     m_deblockFilter(InputDeblockFilter::NOT_SET),
     m_deblockFilterHasBeenSet(false),
     m_denoiseFilter(InputDenoiseFilter::NOT_SET),
@@ -66,6 +69,7 @@ InputTemplate::InputTemplate(JsonView jsonValue) :
     m_filterStrengthHasBeenSet(false),
     m_imageInserterHasBeenSet(false),
     m_inputClippingsHasBeenSet(false),
+    m_positionHasBeenSet(false),
     m_programNumber(0),
     m_programNumberHasBeenSet(false),
     m_psiControl(InputPsiControl::NOT_SET),
@@ -107,6 +111,13 @@ InputTemplate& InputTemplate::operator =(JsonView jsonValue)
       m_captionSelectors[captionSelectorsItem.first] = captionSelectorsItem.second.AsObject();
     }
     m_captionSelectorsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("crop"))
+  {
+    m_crop = jsonValue.GetObject("crop");
+
+    m_cropHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("deblockFilter"))
@@ -152,6 +163,13 @@ InputTemplate& InputTemplate::operator =(JsonView jsonValue)
       m_inputClippings.push_back(inputClippingsJsonList[inputClippingsIndex].AsObject());
     }
     m_inputClippingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("position"))
+  {
+    m_position = jsonValue.GetObject("position");
+
+    m_positionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("programNumber"))
@@ -222,6 +240,12 @@ JsonValue InputTemplate::Jsonize() const
 
   }
 
+  if(m_cropHasBeenSet)
+  {
+   payload.WithObject("crop", m_crop.Jsonize());
+
+  }
+
   if(m_deblockFilterHasBeenSet)
   {
    payload.WithString("deblockFilter", InputDeblockFilterMapper::GetNameForInputDeblockFilter(m_deblockFilter));
@@ -257,6 +281,12 @@ JsonValue InputTemplate::Jsonize() const
      inputClippingsJsonList[inputClippingsIndex].AsObject(m_inputClippings[inputClippingsIndex].Jsonize());
    }
    payload.WithArray("inputClippings", std::move(inputClippingsJsonList));
+
+  }
+
+  if(m_positionHasBeenSet)
+  {
+   payload.WithObject("position", m_position.Jsonize());
 
   }
 

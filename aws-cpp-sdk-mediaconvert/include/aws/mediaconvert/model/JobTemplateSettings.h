@@ -244,32 +244,68 @@ namespace Model
 
 
     /**
-     * Settings for Nielsen Configuration
+     * Settings for your Nielsen configuration. If you don't do Nielsen measurement and
+     * analytics, ignore these settings. When you enable Nielsen configuration
+     * (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs
+     * in the job. To enable Nielsen configuration programmatically, include an
+     * instance of nielsenConfiguration in your JSON job specification. Even if you
+     * don't include any children of nielsenConfiguration, you still enable the
+     * setting.
      */
     inline const NielsenConfiguration& GetNielsenConfiguration() const{ return m_nielsenConfiguration; }
 
     /**
-     * Settings for Nielsen Configuration
+     * Settings for your Nielsen configuration. If you don't do Nielsen measurement and
+     * analytics, ignore these settings. When you enable Nielsen configuration
+     * (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs
+     * in the job. To enable Nielsen configuration programmatically, include an
+     * instance of nielsenConfiguration in your JSON job specification. Even if you
+     * don't include any children of nielsenConfiguration, you still enable the
+     * setting.
      */
     inline bool NielsenConfigurationHasBeenSet() const { return m_nielsenConfigurationHasBeenSet; }
 
     /**
-     * Settings for Nielsen Configuration
+     * Settings for your Nielsen configuration. If you don't do Nielsen measurement and
+     * analytics, ignore these settings. When you enable Nielsen configuration
+     * (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs
+     * in the job. To enable Nielsen configuration programmatically, include an
+     * instance of nielsenConfiguration in your JSON job specification. Even if you
+     * don't include any children of nielsenConfiguration, you still enable the
+     * setting.
      */
     inline void SetNielsenConfiguration(const NielsenConfiguration& value) { m_nielsenConfigurationHasBeenSet = true; m_nielsenConfiguration = value; }
 
     /**
-     * Settings for Nielsen Configuration
+     * Settings for your Nielsen configuration. If you don't do Nielsen measurement and
+     * analytics, ignore these settings. When you enable Nielsen configuration
+     * (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs
+     * in the job. To enable Nielsen configuration programmatically, include an
+     * instance of nielsenConfiguration in your JSON job specification. Even if you
+     * don't include any children of nielsenConfiguration, you still enable the
+     * setting.
      */
     inline void SetNielsenConfiguration(NielsenConfiguration&& value) { m_nielsenConfigurationHasBeenSet = true; m_nielsenConfiguration = std::move(value); }
 
     /**
-     * Settings for Nielsen Configuration
+     * Settings for your Nielsen configuration. If you don't do Nielsen measurement and
+     * analytics, ignore these settings. When you enable Nielsen configuration
+     * (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs
+     * in the job. To enable Nielsen configuration programmatically, include an
+     * instance of nielsenConfiguration in your JSON job specification. Even if you
+     * don't include any children of nielsenConfiguration, you still enable the
+     * setting.
      */
     inline JobTemplateSettings& WithNielsenConfiguration(const NielsenConfiguration& value) { SetNielsenConfiguration(value); return *this;}
 
     /**
-     * Settings for Nielsen Configuration
+     * Settings for your Nielsen configuration. If you don't do Nielsen measurement and
+     * analytics, ignore these settings. When you enable Nielsen configuration
+     * (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs
+     * in the job. To enable Nielsen configuration programmatically, include an
+     * instance of nielsenConfiguration in your JSON job specification. Even if you
+     * don't include any children of nielsenConfiguration, you still enable the
+     * setting.
      */
     inline JobTemplateSettings& WithNielsenConfiguration(NielsenConfiguration&& value) { SetNielsenConfiguration(std::move(value)); return *this;}
 

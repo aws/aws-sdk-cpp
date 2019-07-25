@@ -30,13 +30,15 @@ namespace Model
 
 ScheduleActionStartSettings::ScheduleActionStartSettings() : 
     m_fixedModeScheduleActionStartSettingsHasBeenSet(false),
-    m_followModeScheduleActionStartSettingsHasBeenSet(false)
+    m_followModeScheduleActionStartSettingsHasBeenSet(false),
+    m_immediateModeScheduleActionStartSettingsHasBeenSet(false)
 {
 }
 
 ScheduleActionStartSettings::ScheduleActionStartSettings(JsonView jsonValue) : 
     m_fixedModeScheduleActionStartSettingsHasBeenSet(false),
-    m_followModeScheduleActionStartSettingsHasBeenSet(false)
+    m_followModeScheduleActionStartSettingsHasBeenSet(false),
+    m_immediateModeScheduleActionStartSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +59,13 @@ ScheduleActionStartSettings& ScheduleActionStartSettings::operator =(JsonView js
     m_followModeScheduleActionStartSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("immediateModeScheduleActionStartSettings"))
+  {
+    m_immediateModeScheduleActionStartSettings = jsonValue.GetObject("immediateModeScheduleActionStartSettings");
+
+    m_immediateModeScheduleActionStartSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +82,12 @@ JsonValue ScheduleActionStartSettings::Jsonize() const
   if(m_followModeScheduleActionStartSettingsHasBeenSet)
   {
    payload.WithObject("followModeScheduleActionStartSettings", m_followModeScheduleActionStartSettings.Jsonize());
+
+  }
+
+  if(m_immediateModeScheduleActionStartSettingsHasBeenSet)
+  {
+   payload.WithObject("immediateModeScheduleActionStartSettings", m_immediateModeScheduleActionStartSettings.Jsonize());
 
   }
 

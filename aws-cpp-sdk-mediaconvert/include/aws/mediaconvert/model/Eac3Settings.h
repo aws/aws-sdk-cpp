@@ -99,59 +99,63 @@ namespace Model
 
 
     /**
-     * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+     * Specify the average bitrate in bits per second. Valid bitrates depend on the
+     * coding mode.
      */
     inline int GetBitrate() const{ return m_bitrate; }
 
     /**
-     * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+     * Specify the average bitrate in bits per second. Valid bitrates depend on the
+     * coding mode.
      */
     inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
 
     /**
-     * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+     * Specify the average bitrate in bits per second. Valid bitrates depend on the
+     * coding mode.
      */
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
-     * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+     * Specify the average bitrate in bits per second. Valid bitrates depend on the
+     * coding mode.
      */
     inline Eac3Settings& WithBitrate(int value) { SetBitrate(value); return *this;}
 
 
     /**
-     * Specifies the "Bitstream Mode" (bsmod) for the emitted E-AC-3 stream. See ATSC
-     * A/52-2012 (Annex E) for background on these values.
+     * Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For
+     * more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
      */
     inline const Eac3BitstreamMode& GetBitstreamMode() const{ return m_bitstreamMode; }
 
     /**
-     * Specifies the "Bitstream Mode" (bsmod) for the emitted E-AC-3 stream. See ATSC
-     * A/52-2012 (Annex E) for background on these values.
+     * Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For
+     * more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
      */
     inline bool BitstreamModeHasBeenSet() const { return m_bitstreamModeHasBeenSet; }
 
     /**
-     * Specifies the "Bitstream Mode" (bsmod) for the emitted E-AC-3 stream. See ATSC
-     * A/52-2012 (Annex E) for background on these values.
+     * Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For
+     * more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
      */
     inline void SetBitstreamMode(const Eac3BitstreamMode& value) { m_bitstreamModeHasBeenSet = true; m_bitstreamMode = value; }
 
     /**
-     * Specifies the "Bitstream Mode" (bsmod) for the emitted E-AC-3 stream. See ATSC
-     * A/52-2012 (Annex E) for background on these values.
+     * Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For
+     * more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
      */
     inline void SetBitstreamMode(Eac3BitstreamMode&& value) { m_bitstreamModeHasBeenSet = true; m_bitstreamMode = std::move(value); }
 
     /**
-     * Specifies the "Bitstream Mode" (bsmod) for the emitted E-AC-3 stream. See ATSC
-     * A/52-2012 (Annex E) for background on these values.
+     * Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For
+     * more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
      */
     inline Eac3Settings& WithBitstreamMode(const Eac3BitstreamMode& value) { SetBitstreamMode(value); return *this;}
 
     /**
-     * Specifies the "Bitstream Mode" (bsmod) for the emitted E-AC-3 stream. See ATSC
-     * A/52-2012 (Annex E) for background on these values.
+     * Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For
+     * more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
      */
     inline Eac3Settings& WithBitstreamMode(Eac3BitstreamMode&& value) { SetBitstreamMode(std::move(value)); return *this;}
 
@@ -244,75 +248,69 @@ namespace Model
 
 
     /**
-     * Enables Dynamic Range Compression that restricts the absolute peak level for a
-     * signal.
+     * Specify the absolute peak level for a signal with dynamic range compression.
      */
     inline const Eac3DynamicRangeCompressionLine& GetDynamicRangeCompressionLine() const{ return m_dynamicRangeCompressionLine; }
 
     /**
-     * Enables Dynamic Range Compression that restricts the absolute peak level for a
-     * signal.
+     * Specify the absolute peak level for a signal with dynamic range compression.
      */
     inline bool DynamicRangeCompressionLineHasBeenSet() const { return m_dynamicRangeCompressionLineHasBeenSet; }
 
     /**
-     * Enables Dynamic Range Compression that restricts the absolute peak level for a
-     * signal.
+     * Specify the absolute peak level for a signal with dynamic range compression.
      */
     inline void SetDynamicRangeCompressionLine(const Eac3DynamicRangeCompressionLine& value) { m_dynamicRangeCompressionLineHasBeenSet = true; m_dynamicRangeCompressionLine = value; }
 
     /**
-     * Enables Dynamic Range Compression that restricts the absolute peak level for a
-     * signal.
+     * Specify the absolute peak level for a signal with dynamic range compression.
      */
     inline void SetDynamicRangeCompressionLine(Eac3DynamicRangeCompressionLine&& value) { m_dynamicRangeCompressionLineHasBeenSet = true; m_dynamicRangeCompressionLine = std::move(value); }
 
     /**
-     * Enables Dynamic Range Compression that restricts the absolute peak level for a
-     * signal.
+     * Specify the absolute peak level for a signal with dynamic range compression.
      */
     inline Eac3Settings& WithDynamicRangeCompressionLine(const Eac3DynamicRangeCompressionLine& value) { SetDynamicRangeCompressionLine(value); return *this;}
 
     /**
-     * Enables Dynamic Range Compression that restricts the absolute peak level for a
-     * signal.
+     * Specify the absolute peak level for a signal with dynamic range compression.
      */
     inline Eac3Settings& WithDynamicRangeCompressionLine(Eac3DynamicRangeCompressionLine&& value) { SetDynamicRangeCompressionLine(std::move(value)); return *this;}
 
 
     /**
-     * Enables Heavy Dynamic Range Compression, ensures that the instantaneous signal
-     * peaks do not exceed specified levels.
+     * Specify how the service limits the audio dynamic range when compressing the
+     * audio.
      */
     inline const Eac3DynamicRangeCompressionRf& GetDynamicRangeCompressionRf() const{ return m_dynamicRangeCompressionRf; }
 
     /**
-     * Enables Heavy Dynamic Range Compression, ensures that the instantaneous signal
-     * peaks do not exceed specified levels.
+     * Specify how the service limits the audio dynamic range when compressing the
+     * audio.
      */
     inline bool DynamicRangeCompressionRfHasBeenSet() const { return m_dynamicRangeCompressionRfHasBeenSet; }
 
     /**
-     * Enables Heavy Dynamic Range Compression, ensures that the instantaneous signal
-     * peaks do not exceed specified levels.
+     * Specify how the service limits the audio dynamic range when compressing the
+     * audio.
      */
     inline void SetDynamicRangeCompressionRf(const Eac3DynamicRangeCompressionRf& value) { m_dynamicRangeCompressionRfHasBeenSet = true; m_dynamicRangeCompressionRf = value; }
 
     /**
-     * Enables Heavy Dynamic Range Compression, ensures that the instantaneous signal
-     * peaks do not exceed specified levels.
+     * Specify how the service limits the audio dynamic range when compressing the
+     * audio.
      */
     inline void SetDynamicRangeCompressionRf(Eac3DynamicRangeCompressionRf&& value) { m_dynamicRangeCompressionRfHasBeenSet = true; m_dynamicRangeCompressionRf = std::move(value); }
 
     /**
-     * Enables Heavy Dynamic Range Compression, ensures that the instantaneous signal
-     * peaks do not exceed specified levels.
+     * Specify how the service limits the audio dynamic range when compressing the
+     * audio.
      */
     inline Eac3Settings& WithDynamicRangeCompressionRf(const Eac3DynamicRangeCompressionRf& value) { SetDynamicRangeCompressionRf(value); return *this;}
 
     /**
-     * Enables Heavy Dynamic Range Compression, ensures that the instantaneous signal
-     * peaks do not exceed specified levels.
+     * Specify how the service limits the audio dynamic range when compressing the
+     * audio.
      */
     inline Eac3Settings& WithDynamicRangeCompressionRf(Eac3DynamicRangeCompressionRf&& value) { SetDynamicRangeCompressionRf(std::move(value)); return *this;}
 
@@ -386,117 +384,197 @@ namespace Model
 
 
     /**
-     * Left only/Right only center mix level. Only used for 3/2 coding mode.
-Valid
-     * values: 3.0, 1.5, 0.0, -1.5 -3.0 -4.5 -6.0 -60
+     * Specify a value for the following Dolby Digital Plus setting: Left only/Right
+     * only center mix (Lo/Ro center). MediaConvert uses this value for downmixing. How
+     * the service uses this value depends on the value that you choose for Stereo
+     * downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5,
+     * -6.0, and -60. The value -60 mutes the channel. This setting applies only if you
+     * keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the
+     * setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
+     * mode, the service ignores Left only/Right only center (loRoCenterMixLevel).
      */
     inline double GetLoRoCenterMixLevel() const{ return m_loRoCenterMixLevel; }
 
     /**
-     * Left only/Right only center mix level. Only used for 3/2 coding mode.
-Valid
-     * values: 3.0, 1.5, 0.0, -1.5 -3.0 -4.5 -6.0 -60
+     * Specify a value for the following Dolby Digital Plus setting: Left only/Right
+     * only center mix (Lo/Ro center). MediaConvert uses this value for downmixing. How
+     * the service uses this value depends on the value that you choose for Stereo
+     * downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5,
+     * -6.0, and -60. The value -60 mutes the channel. This setting applies only if you
+     * keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the
+     * setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
+     * mode, the service ignores Left only/Right only center (loRoCenterMixLevel).
      */
     inline bool LoRoCenterMixLevelHasBeenSet() const { return m_loRoCenterMixLevelHasBeenSet; }
 
     /**
-     * Left only/Right only center mix level. Only used for 3/2 coding mode.
-Valid
-     * values: 3.0, 1.5, 0.0, -1.5 -3.0 -4.5 -6.0 -60
+     * Specify a value for the following Dolby Digital Plus setting: Left only/Right
+     * only center mix (Lo/Ro center). MediaConvert uses this value for downmixing. How
+     * the service uses this value depends on the value that you choose for Stereo
+     * downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5,
+     * -6.0, and -60. The value -60 mutes the channel. This setting applies only if you
+     * keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the
+     * setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
+     * mode, the service ignores Left only/Right only center (loRoCenterMixLevel).
      */
     inline void SetLoRoCenterMixLevel(double value) { m_loRoCenterMixLevelHasBeenSet = true; m_loRoCenterMixLevel = value; }
 
     /**
-     * Left only/Right only center mix level. Only used for 3/2 coding mode.
-Valid
-     * values: 3.0, 1.5, 0.0, -1.5 -3.0 -4.5 -6.0 -60
+     * Specify a value for the following Dolby Digital Plus setting: Left only/Right
+     * only center mix (Lo/Ro center). MediaConvert uses this value for downmixing. How
+     * the service uses this value depends on the value that you choose for Stereo
+     * downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5,
+     * -6.0, and -60. The value -60 mutes the channel. This setting applies only if you
+     * keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the
+     * setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
+     * mode, the service ignores Left only/Right only center (loRoCenterMixLevel).
      */
     inline Eac3Settings& WithLoRoCenterMixLevel(double value) { SetLoRoCenterMixLevel(value); return *this;}
 
 
     /**
-     * Left only/Right only surround mix level. Only used for 3/2 coding mode.
-Valid
-     * values: -1.5 -3.0 -4.5 -6.0 -60
+     * Specify a value for the following Dolby Digital Plus setting: Left only/Right
+     * only (Lo/Ro surround). MediaConvert uses this value for downmixing. How the
+     * service uses this value depends on the value that you choose for Stereo downmix
+     * (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value
+     * -60 mutes the channel. This setting applies only if you keep the default value
+     * of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode
+     * (Eac3CodingMode). If you choose a different value for Coding mode, the service
+     * ignores Left only/Right only surround (loRoSurroundMixLevel).
      */
     inline double GetLoRoSurroundMixLevel() const{ return m_loRoSurroundMixLevel; }
 
     /**
-     * Left only/Right only surround mix level. Only used for 3/2 coding mode.
-Valid
-     * values: -1.5 -3.0 -4.5 -6.0 -60
+     * Specify a value for the following Dolby Digital Plus setting: Left only/Right
+     * only (Lo/Ro surround). MediaConvert uses this value for downmixing. How the
+     * service uses this value depends on the value that you choose for Stereo downmix
+     * (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value
+     * -60 mutes the channel. This setting applies only if you keep the default value
+     * of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode
+     * (Eac3CodingMode). If you choose a different value for Coding mode, the service
+     * ignores Left only/Right only surround (loRoSurroundMixLevel).
      */
     inline bool LoRoSurroundMixLevelHasBeenSet() const { return m_loRoSurroundMixLevelHasBeenSet; }
 
     /**
-     * Left only/Right only surround mix level. Only used for 3/2 coding mode.
-Valid
-     * values: -1.5 -3.0 -4.5 -6.0 -60
+     * Specify a value for the following Dolby Digital Plus setting: Left only/Right
+     * only (Lo/Ro surround). MediaConvert uses this value for downmixing. How the
+     * service uses this value depends on the value that you choose for Stereo downmix
+     * (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value
+     * -60 mutes the channel. This setting applies only if you keep the default value
+     * of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode
+     * (Eac3CodingMode). If you choose a different value for Coding mode, the service
+     * ignores Left only/Right only surround (loRoSurroundMixLevel).
      */
     inline void SetLoRoSurroundMixLevel(double value) { m_loRoSurroundMixLevelHasBeenSet = true; m_loRoSurroundMixLevel = value; }
 
     /**
-     * Left only/Right only surround mix level. Only used for 3/2 coding mode.
-Valid
-     * values: -1.5 -3.0 -4.5 -6.0 -60
+     * Specify a value for the following Dolby Digital Plus setting: Left only/Right
+     * only (Lo/Ro surround). MediaConvert uses this value for downmixing. How the
+     * service uses this value depends on the value that you choose for Stereo downmix
+     * (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value
+     * -60 mutes the channel. This setting applies only if you keep the default value
+     * of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode
+     * (Eac3CodingMode). If you choose a different value for Coding mode, the service
+     * ignores Left only/Right only surround (loRoSurroundMixLevel).
      */
     inline Eac3Settings& WithLoRoSurroundMixLevel(double value) { SetLoRoSurroundMixLevel(value); return *this;}
 
 
     /**
-     * Left total/Right total center mix level. Only used for 3/2 coding mode.
-Valid
-     * values: 3.0, 1.5, 0.0, -1.5 -3.0 -4.5 -6.0 -60
+     * Specify a value for the following Dolby Digital Plus setting: Left total/Right
+     * total center mix (Lt/Rt center). MediaConvert uses this value for downmixing.
+     * How the service uses this value depends on the value that you choose for Stereo
+     * downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5,
+     * -6.0, and -60. The value -60 mutes the channel. This setting applies only if you
+     * keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the
+     * setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
+     * mode, the service ignores Left total/Right total center (ltRtCenterMixLevel).
      */
     inline double GetLtRtCenterMixLevel() const{ return m_ltRtCenterMixLevel; }
 
     /**
-     * Left total/Right total center mix level. Only used for 3/2 coding mode.
-Valid
-     * values: 3.0, 1.5, 0.0, -1.5 -3.0 -4.5 -6.0 -60
+     * Specify a value for the following Dolby Digital Plus setting: Left total/Right
+     * total center mix (Lt/Rt center). MediaConvert uses this value for downmixing.
+     * How the service uses this value depends on the value that you choose for Stereo
+     * downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5,
+     * -6.0, and -60. The value -60 mutes the channel. This setting applies only if you
+     * keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the
+     * setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
+     * mode, the service ignores Left total/Right total center (ltRtCenterMixLevel).
      */
     inline bool LtRtCenterMixLevelHasBeenSet() const { return m_ltRtCenterMixLevelHasBeenSet; }
 
     /**
-     * Left total/Right total center mix level. Only used for 3/2 coding mode.
-Valid
-     * values: 3.0, 1.5, 0.0, -1.5 -3.0 -4.5 -6.0 -60
+     * Specify a value for the following Dolby Digital Plus setting: Left total/Right
+     * total center mix (Lt/Rt center). MediaConvert uses this value for downmixing.
+     * How the service uses this value depends on the value that you choose for Stereo
+     * downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5,
+     * -6.0, and -60. The value -60 mutes the channel. This setting applies only if you
+     * keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the
+     * setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
+     * mode, the service ignores Left total/Right total center (ltRtCenterMixLevel).
      */
     inline void SetLtRtCenterMixLevel(double value) { m_ltRtCenterMixLevelHasBeenSet = true; m_ltRtCenterMixLevel = value; }
 
     /**
-     * Left total/Right total center mix level. Only used for 3/2 coding mode.
-Valid
-     * values: 3.0, 1.5, 0.0, -1.5 -3.0 -4.5 -6.0 -60
+     * Specify a value for the following Dolby Digital Plus setting: Left total/Right
+     * total center mix (Lt/Rt center). MediaConvert uses this value for downmixing.
+     * How the service uses this value depends on the value that you choose for Stereo
+     * downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5,
+     * -6.0, and -60. The value -60 mutes the channel. This setting applies only if you
+     * keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the
+     * setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
+     * mode, the service ignores Left total/Right total center (ltRtCenterMixLevel).
      */
     inline Eac3Settings& WithLtRtCenterMixLevel(double value) { SetLtRtCenterMixLevel(value); return *this;}
 
 
     /**
-     * Left total/Right total surround mix level. Only used for 3/2 coding mode.
-Valid
-     * values: -1.5 -3.0 -4.5 -6.0 -60
+     * Specify a value for the following Dolby Digital Plus setting: Left total/Right
+     * total surround mix (Lt/Rt surround). MediaConvert uses this value for
+     * downmixing. How the service uses this value depends on the value that you choose
+     * for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0,
+     * and -60. The value -60 mutes the channel. This setting applies only if you keep
+     * the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting
+     * Coding mode (Eac3CodingMode). If you choose a different value for Coding mode,
+     * the service ignores Left total/Right total surround (ltRtSurroundMixLevel).
      */
     inline double GetLtRtSurroundMixLevel() const{ return m_ltRtSurroundMixLevel; }
 
     /**
-     * Left total/Right total surround mix level. Only used for 3/2 coding mode.
-Valid
-     * values: -1.5 -3.0 -4.5 -6.0 -60
+     * Specify a value for the following Dolby Digital Plus setting: Left total/Right
+     * total surround mix (Lt/Rt surround). MediaConvert uses this value for
+     * downmixing. How the service uses this value depends on the value that you choose
+     * for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0,
+     * and -60. The value -60 mutes the channel. This setting applies only if you keep
+     * the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting
+     * Coding mode (Eac3CodingMode). If you choose a different value for Coding mode,
+     * the service ignores Left total/Right total surround (ltRtSurroundMixLevel).
      */
     inline bool LtRtSurroundMixLevelHasBeenSet() const { return m_ltRtSurroundMixLevelHasBeenSet; }
 
     /**
-     * Left total/Right total surround mix level. Only used for 3/2 coding mode.
-Valid
-     * values: -1.5 -3.0 -4.5 -6.0 -60
+     * Specify a value for the following Dolby Digital Plus setting: Left total/Right
+     * total surround mix (Lt/Rt surround). MediaConvert uses this value for
+     * downmixing. How the service uses this value depends on the value that you choose
+     * for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0,
+     * and -60. The value -60 mutes the channel. This setting applies only if you keep
+     * the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting
+     * Coding mode (Eac3CodingMode). If you choose a different value for Coding mode,
+     * the service ignores Left total/Right total surround (ltRtSurroundMixLevel).
      */
     inline void SetLtRtSurroundMixLevel(double value) { m_ltRtSurroundMixLevelHasBeenSet = true; m_ltRtSurroundMixLevel = value; }
 
     /**
-     * Left total/Right total surround mix level. Only used for 3/2 coding mode.
-Valid
-     * values: -1.5 -3.0 -4.5 -6.0 -60
+     * Specify a value for the following Dolby Digital Plus setting: Left total/Right
+     * total surround mix (Lt/Rt surround). MediaConvert uses this value for
+     * downmixing. How the service uses this value depends on the value that you choose
+     * for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0,
+     * and -60. The value -60 mutes the channel. This setting applies only if you keep
+     * the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting
+     * Coding mode (Eac3CodingMode). If you choose a different value for Coding mode,
+     * the service ignores Left total/Right total surround (ltRtSurroundMixLevel).
      */
     inline Eac3Settings& WithLtRtSurroundMixLevel(double value) { SetLtRtSurroundMixLevel(value); return *this;}
 
@@ -631,53 +709,71 @@ Valid
 
 
     /**
-     * Sample rate in hz. Sample rate is always 48000.
+     * This value is always 48000. It represents the sample rate in Hz.
      */
     inline int GetSampleRate() const{ return m_sampleRate; }
 
     /**
-     * Sample rate in hz. Sample rate is always 48000.
+     * This value is always 48000. It represents the sample rate in Hz.
      */
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
 
     /**
-     * Sample rate in hz. Sample rate is always 48000.
+     * This value is always 48000. It represents the sample rate in Hz.
      */
     inline void SetSampleRate(int value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
 
     /**
-     * Sample rate in hz. Sample rate is always 48000.
+     * This value is always 48000. It represents the sample rate in Hz.
      */
     inline Eac3Settings& WithSampleRate(int value) { SetSampleRate(value); return *this;}
 
 
     /**
-     * Stereo downmix preference. Only used for 3/2 coding mode.
+     * Choose how the service does stereo downmixing. This setting only applies if you
+     * keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the
+     * setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
+     * mode, the service ignores Stereo downmix (Eac3StereoDownmix).
      */
     inline const Eac3StereoDownmix& GetStereoDownmix() const{ return m_stereoDownmix; }
 
     /**
-     * Stereo downmix preference. Only used for 3/2 coding mode.
+     * Choose how the service does stereo downmixing. This setting only applies if you
+     * keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the
+     * setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
+     * mode, the service ignores Stereo downmix (Eac3StereoDownmix).
      */
     inline bool StereoDownmixHasBeenSet() const { return m_stereoDownmixHasBeenSet; }
 
     /**
-     * Stereo downmix preference. Only used for 3/2 coding mode.
+     * Choose how the service does stereo downmixing. This setting only applies if you
+     * keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the
+     * setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
+     * mode, the service ignores Stereo downmix (Eac3StereoDownmix).
      */
     inline void SetStereoDownmix(const Eac3StereoDownmix& value) { m_stereoDownmixHasBeenSet = true; m_stereoDownmix = value; }
 
     /**
-     * Stereo downmix preference. Only used for 3/2 coding mode.
+     * Choose how the service does stereo downmixing. This setting only applies if you
+     * keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the
+     * setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
+     * mode, the service ignores Stereo downmix (Eac3StereoDownmix).
      */
     inline void SetStereoDownmix(Eac3StereoDownmix&& value) { m_stereoDownmixHasBeenSet = true; m_stereoDownmix = std::move(value); }
 
     /**
-     * Stereo downmix preference. Only used for 3/2 coding mode.
+     * Choose how the service does stereo downmixing. This setting only applies if you
+     * keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the
+     * setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
+     * mode, the service ignores Stereo downmix (Eac3StereoDownmix).
      */
     inline Eac3Settings& WithStereoDownmix(const Eac3StereoDownmix& value) { SetStereoDownmix(value); return *this;}
 
     /**
-     * Stereo downmix preference. Only used for 3/2 coding mode.
+     * Choose how the service does stereo downmixing. This setting only applies if you
+     * keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the
+     * setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
+     * mode, the service ignores Stereo downmix (Eac3StereoDownmix).
      */
     inline Eac3Settings& WithStereoDownmix(Eac3StereoDownmix&& value) { SetStereoDownmix(std::move(value)); return *this;}
 

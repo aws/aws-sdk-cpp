@@ -118,44 +118,44 @@ namespace Model
 
 
     /**
-     * The service automatically applies the anti-alias filter to all outputs. The
-     * service no longer accepts the value DISABLED for AntiAlias. If you specify that
-     * in your job, the service will ignore the setting.
+     * The anti-alias filter is automatically applied to all outputs. The service no
+     * longer accepts the value DISABLED for AntiAlias. If you specify that in your
+     * job, the service will ignore the setting.
      */
     inline const AntiAlias& GetAntiAlias() const{ return m_antiAlias; }
 
     /**
-     * The service automatically applies the anti-alias filter to all outputs. The
-     * service no longer accepts the value DISABLED for AntiAlias. If you specify that
-     * in your job, the service will ignore the setting.
+     * The anti-alias filter is automatically applied to all outputs. The service no
+     * longer accepts the value DISABLED for AntiAlias. If you specify that in your
+     * job, the service will ignore the setting.
      */
     inline bool AntiAliasHasBeenSet() const { return m_antiAliasHasBeenSet; }
 
     /**
-     * The service automatically applies the anti-alias filter to all outputs. The
-     * service no longer accepts the value DISABLED for AntiAlias. If you specify that
-     * in your job, the service will ignore the setting.
+     * The anti-alias filter is automatically applied to all outputs. The service no
+     * longer accepts the value DISABLED for AntiAlias. If you specify that in your
+     * job, the service will ignore the setting.
      */
     inline void SetAntiAlias(const AntiAlias& value) { m_antiAliasHasBeenSet = true; m_antiAlias = value; }
 
     /**
-     * The service automatically applies the anti-alias filter to all outputs. The
-     * service no longer accepts the value DISABLED for AntiAlias. If you specify that
-     * in your job, the service will ignore the setting.
+     * The anti-alias filter is automatically applied to all outputs. The service no
+     * longer accepts the value DISABLED for AntiAlias. If you specify that in your
+     * job, the service will ignore the setting.
      */
     inline void SetAntiAlias(AntiAlias&& value) { m_antiAliasHasBeenSet = true; m_antiAlias = std::move(value); }
 
     /**
-     * The service automatically applies the anti-alias filter to all outputs. The
-     * service no longer accepts the value DISABLED for AntiAlias. If you specify that
-     * in your job, the service will ignore the setting.
+     * The anti-alias filter is automatically applied to all outputs. The service no
+     * longer accepts the value DISABLED for AntiAlias. If you specify that in your
+     * job, the service will ignore the setting.
      */
     inline VideoDescription& WithAntiAlias(const AntiAlias& value) { SetAntiAlias(value); return *this;}
 
     /**
-     * The service automatically applies the anti-alias filter to all outputs. The
-     * service no longer accepts the value DISABLED for AntiAlias. If you specify that
-     * in your job, the service will ignore the setting.
+     * The anti-alias filter is automatically applied to all outputs. The service no
+     * longer accepts the value DISABLED for AntiAlias. If you specify that in your
+     * job, the service will ignore the setting.
      */
     inline VideoDescription& WithAntiAlias(AntiAlias&& value) { SetAntiAlias(std::move(value)); return *this;}
 
@@ -163,10 +163,10 @@ namespace Model
     /**
      * Video codec settings, (CodecSettings) under (VideoDescription), contains the
      * group of settings related to video encoding. The settings in this group vary
-     * depending on the value you choose for Video codec (Codec). For each codec enum
-     * you choose, define the corresponding settings object. The following lists the
-     * codec enum, settings object pairs. * H_264, H264Settings * H_265, H265Settings *
-     * MPEG2, Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE,
+     * depending on the value that you choose for Video codec (Codec). For each codec
+     * enum that you choose, define the corresponding settings object. The following
+     * lists the codec enum, settings object pairs. * H_264, H264Settings * H_265,
+     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE,
      * FrameCaptureSettings
      */
     inline const VideoCodecSettings& GetCodecSettings() const{ return m_codecSettings; }
@@ -174,10 +174,10 @@ namespace Model
     /**
      * Video codec settings, (CodecSettings) under (VideoDescription), contains the
      * group of settings related to video encoding. The settings in this group vary
-     * depending on the value you choose for Video codec (Codec). For each codec enum
-     * you choose, define the corresponding settings object. The following lists the
-     * codec enum, settings object pairs. * H_264, H264Settings * H_265, H265Settings *
-     * MPEG2, Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE,
+     * depending on the value that you choose for Video codec (Codec). For each codec
+     * enum that you choose, define the corresponding settings object. The following
+     * lists the codec enum, settings object pairs. * H_264, H264Settings * H_265,
+     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE,
      * FrameCaptureSettings
      */
     inline bool CodecSettingsHasBeenSet() const { return m_codecSettingsHasBeenSet; }
@@ -185,10 +185,10 @@ namespace Model
     /**
      * Video codec settings, (CodecSettings) under (VideoDescription), contains the
      * group of settings related to video encoding. The settings in this group vary
-     * depending on the value you choose for Video codec (Codec). For each codec enum
-     * you choose, define the corresponding settings object. The following lists the
-     * codec enum, settings object pairs. * H_264, H264Settings * H_265, H265Settings *
-     * MPEG2, Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE,
+     * depending on the value that you choose for Video codec (Codec). For each codec
+     * enum that you choose, define the corresponding settings object. The following
+     * lists the codec enum, settings object pairs. * H_264, H264Settings * H_265,
+     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE,
      * FrameCaptureSettings
      */
     inline void SetCodecSettings(const VideoCodecSettings& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = value; }
@@ -196,10 +196,10 @@ namespace Model
     /**
      * Video codec settings, (CodecSettings) under (VideoDescription), contains the
      * group of settings related to video encoding. The settings in this group vary
-     * depending on the value you choose for Video codec (Codec). For each codec enum
-     * you choose, define the corresponding settings object. The following lists the
-     * codec enum, settings object pairs. * H_264, H264Settings * H_265, H265Settings *
-     * MPEG2, Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE,
+     * depending on the value that you choose for Video codec (Codec). For each codec
+     * enum that you choose, define the corresponding settings object. The following
+     * lists the codec enum, settings object pairs. * H_264, H264Settings * H_265,
+     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE,
      * FrameCaptureSettings
      */
     inline void SetCodecSettings(VideoCodecSettings&& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = std::move(value); }
@@ -207,10 +207,10 @@ namespace Model
     /**
      * Video codec settings, (CodecSettings) under (VideoDescription), contains the
      * group of settings related to video encoding. The settings in this group vary
-     * depending on the value you choose for Video codec (Codec). For each codec enum
-     * you choose, define the corresponding settings object. The following lists the
-     * codec enum, settings object pairs. * H_264, H264Settings * H_265, H265Settings *
-     * MPEG2, Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE,
+     * depending on the value that you choose for Video codec (Codec). For each codec
+     * enum that you choose, define the corresponding settings object. The following
+     * lists the codec enum, settings object pairs. * H_264, H264Settings * H_265,
+     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE,
      * FrameCaptureSettings
      */
     inline VideoDescription& WithCodecSettings(const VideoCodecSettings& value) { SetCodecSettings(value); return *this;}
@@ -218,10 +218,10 @@ namespace Model
     /**
      * Video codec settings, (CodecSettings) under (VideoDescription), contains the
      * group of settings related to video encoding. The settings in this group vary
-     * depending on the value you choose for Video codec (Codec). For each codec enum
-     * you choose, define the corresponding settings object. The following lists the
-     * codec enum, settings object pairs. * H_264, H264Settings * H_265, H265Settings *
-     * MPEG2, Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE,
+     * depending on the value that you choose for Video codec (Codec). For each codec
+     * enum that you choose, define the corresponding settings object. The following
+     * lists the codec enum, settings object pairs. * H_264, H264Settings * H_265,
+     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * FRAME_CAPTURE,
      * FrameCaptureSettings
      */
     inline VideoDescription& WithCodecSettings(VideoCodecSettings&& value) { SetCodecSettings(std::move(value)); return *this;}
@@ -265,62 +265,38 @@ namespace Model
 
 
     /**
-     * Applies only if your input aspect ratio is different from your output aspect
-     * ratio. Use Input cropping rectangle (Crop) to specify the  video area the
-     * service will include in the output. This will crop the input source, causing
-     * video pixels to be removed on encode. If you crop your input frame size to
-     * smaller than your output frame size, make sure to specify the behavior you want
-     * in your output setting "Scaling behavior".
+     * Use Cropping selection (crop) to specify the video area that the service will
+     * include in the output video frame.
      */
     inline const Rectangle& GetCrop() const{ return m_crop; }
 
     /**
-     * Applies only if your input aspect ratio is different from your output aspect
-     * ratio. Use Input cropping rectangle (Crop) to specify the  video area the
-     * service will include in the output. This will crop the input source, causing
-     * video pixels to be removed on encode. If you crop your input frame size to
-     * smaller than your output frame size, make sure to specify the behavior you want
-     * in your output setting "Scaling behavior".
+     * Use Cropping selection (crop) to specify the video area that the service will
+     * include in the output video frame.
      */
     inline bool CropHasBeenSet() const { return m_cropHasBeenSet; }
 
     /**
-     * Applies only if your input aspect ratio is different from your output aspect
-     * ratio. Use Input cropping rectangle (Crop) to specify the  video area the
-     * service will include in the output. This will crop the input source, causing
-     * video pixels to be removed on encode. If you crop your input frame size to
-     * smaller than your output frame size, make sure to specify the behavior you want
-     * in your output setting "Scaling behavior".
+     * Use Cropping selection (crop) to specify the video area that the service will
+     * include in the output video frame.
      */
     inline void SetCrop(const Rectangle& value) { m_cropHasBeenSet = true; m_crop = value; }
 
     /**
-     * Applies only if your input aspect ratio is different from your output aspect
-     * ratio. Use Input cropping rectangle (Crop) to specify the  video area the
-     * service will include in the output. This will crop the input source, causing
-     * video pixels to be removed on encode. If you crop your input frame size to
-     * smaller than your output frame size, make sure to specify the behavior you want
-     * in your output setting "Scaling behavior".
+     * Use Cropping selection (crop) to specify the video area that the service will
+     * include in the output video frame.
      */
     inline void SetCrop(Rectangle&& value) { m_cropHasBeenSet = true; m_crop = std::move(value); }
 
     /**
-     * Applies only if your input aspect ratio is different from your output aspect
-     * ratio. Use Input cropping rectangle (Crop) to specify the  video area the
-     * service will include in the output. This will crop the input source, causing
-     * video pixels to be removed on encode. If you crop your input frame size to
-     * smaller than your output frame size, make sure to specify the behavior you want
-     * in your output setting "Scaling behavior".
+     * Use Cropping selection (crop) to specify the video area that the service will
+     * include in the output video frame.
      */
     inline VideoDescription& WithCrop(const Rectangle& value) { SetCrop(value); return *this;}
 
     /**
-     * Applies only if your input aspect ratio is different from your output aspect
-     * ratio. Use Input cropping rectangle (Crop) to specify the  video area the
-     * service will include in the output. This will crop the input source, causing
-     * video pixels to be removed on encode. If you crop your input frame size to
-     * smaller than your output frame size, make sure to specify the behavior you want
-     * in your output setting "Scaling behavior".
+     * Use Cropping selection (crop) to specify the video area that the service will
+     * include in the output video frame.
      */
     inline VideoDescription& WithCrop(Rectangle&& value) { SetCrop(std::move(value)); return *this;}
 
@@ -433,38 +409,38 @@ namespace Model
 
 
     /**
-     * Use Position (Position) to point to a rectangle object to define your position.
-     * This setting overrides any other aspect ratio.
+     * Use Selection placement (position) to define the video area in your output
+     * frame. The area outside of the rectangle that you specify here is black.
      */
     inline const Rectangle& GetPosition() const{ return m_position; }
 
     /**
-     * Use Position (Position) to point to a rectangle object to define your position.
-     * This setting overrides any other aspect ratio.
+     * Use Selection placement (position) to define the video area in your output
+     * frame. The area outside of the rectangle that you specify here is black.
      */
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
 
     /**
-     * Use Position (Position) to point to a rectangle object to define your position.
-     * This setting overrides any other aspect ratio.
+     * Use Selection placement (position) to define the video area in your output
+     * frame. The area outside of the rectangle that you specify here is black.
      */
     inline void SetPosition(const Rectangle& value) { m_positionHasBeenSet = true; m_position = value; }
 
     /**
-     * Use Position (Position) to point to a rectangle object to define your position.
-     * This setting overrides any other aspect ratio.
+     * Use Selection placement (position) to define the video area in your output
+     * frame. The area outside of the rectangle that you specify here is black.
      */
     inline void SetPosition(Rectangle&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
-     * Use Position (Position) to point to a rectangle object to define your position.
-     * This setting overrides any other aspect ratio.
+     * Use Selection placement (position) to define the video area in your output
+     * frame. The area outside of the rectangle that you specify here is black.
      */
     inline VideoDescription& WithPosition(const Rectangle& value) { SetPosition(value); return *this;}
 
     /**
-     * Use Position (Position) to point to a rectangle object to define your position.
-     * This setting overrides any other aspect ratio.
+     * Use Selection placement (position) to define the video area in your output
+     * frame. The area outside of the rectangle that you specify here is black.
      */
     inline VideoDescription& WithPosition(Rectangle&& value) { SetPosition(std::move(value)); return *this;}
 
@@ -543,56 +519,56 @@ namespace Model
 
 
     /**
-     * Applies only if your input aspect ratio is different from your output aspect
-     * ratio. Choose "Stretch to output" to have the service stretch your video image
-     * to fit. Keep the setting "Default" to allow the service to letterbox your video
-     * instead. This setting overrides any positioning value you specify elsewhere in
-     * the job.
+     * Specify how the service handles outputs that have a different aspect ratio from
+     * the input aspect ratio. Choose Stretch to output (STRETCH_TO_OUTPUT) to have the
+     * service stretch your video image to fit. Keep the setting Default (DEFAULT) to
+     * have the service letterbox your video instead. This setting overrides any value
+     * that you specify for the setting Selection placement (position) in this output.
      */
     inline const ScalingBehavior& GetScalingBehavior() const{ return m_scalingBehavior; }
 
     /**
-     * Applies only if your input aspect ratio is different from your output aspect
-     * ratio. Choose "Stretch to output" to have the service stretch your video image
-     * to fit. Keep the setting "Default" to allow the service to letterbox your video
-     * instead. This setting overrides any positioning value you specify elsewhere in
-     * the job.
+     * Specify how the service handles outputs that have a different aspect ratio from
+     * the input aspect ratio. Choose Stretch to output (STRETCH_TO_OUTPUT) to have the
+     * service stretch your video image to fit. Keep the setting Default (DEFAULT) to
+     * have the service letterbox your video instead. This setting overrides any value
+     * that you specify for the setting Selection placement (position) in this output.
      */
     inline bool ScalingBehaviorHasBeenSet() const { return m_scalingBehaviorHasBeenSet; }
 
     /**
-     * Applies only if your input aspect ratio is different from your output aspect
-     * ratio. Choose "Stretch to output" to have the service stretch your video image
-     * to fit. Keep the setting "Default" to allow the service to letterbox your video
-     * instead. This setting overrides any positioning value you specify elsewhere in
-     * the job.
+     * Specify how the service handles outputs that have a different aspect ratio from
+     * the input aspect ratio. Choose Stretch to output (STRETCH_TO_OUTPUT) to have the
+     * service stretch your video image to fit. Keep the setting Default (DEFAULT) to
+     * have the service letterbox your video instead. This setting overrides any value
+     * that you specify for the setting Selection placement (position) in this output.
      */
     inline void SetScalingBehavior(const ScalingBehavior& value) { m_scalingBehaviorHasBeenSet = true; m_scalingBehavior = value; }
 
     /**
-     * Applies only if your input aspect ratio is different from your output aspect
-     * ratio. Choose "Stretch to output" to have the service stretch your video image
-     * to fit. Keep the setting "Default" to allow the service to letterbox your video
-     * instead. This setting overrides any positioning value you specify elsewhere in
-     * the job.
+     * Specify how the service handles outputs that have a different aspect ratio from
+     * the input aspect ratio. Choose Stretch to output (STRETCH_TO_OUTPUT) to have the
+     * service stretch your video image to fit. Keep the setting Default (DEFAULT) to
+     * have the service letterbox your video instead. This setting overrides any value
+     * that you specify for the setting Selection placement (position) in this output.
      */
     inline void SetScalingBehavior(ScalingBehavior&& value) { m_scalingBehaviorHasBeenSet = true; m_scalingBehavior = std::move(value); }
 
     /**
-     * Applies only if your input aspect ratio is different from your output aspect
-     * ratio. Choose "Stretch to output" to have the service stretch your video image
-     * to fit. Keep the setting "Default" to allow the service to letterbox your video
-     * instead. This setting overrides any positioning value you specify elsewhere in
-     * the job.
+     * Specify how the service handles outputs that have a different aspect ratio from
+     * the input aspect ratio. Choose Stretch to output (STRETCH_TO_OUTPUT) to have the
+     * service stretch your video image to fit. Keep the setting Default (DEFAULT) to
+     * have the service letterbox your video instead. This setting overrides any value
+     * that you specify for the setting Selection placement (position) in this output.
      */
     inline VideoDescription& WithScalingBehavior(const ScalingBehavior& value) { SetScalingBehavior(value); return *this;}
 
     /**
-     * Applies only if your input aspect ratio is different from your output aspect
-     * ratio. Choose "Stretch to output" to have the service stretch your video image
-     * to fit. Keep the setting "Default" to allow the service to letterbox your video
-     * instead. This setting overrides any positioning value you specify elsewhere in
-     * the job.
+     * Specify how the service handles outputs that have a different aspect ratio from
+     * the input aspect ratio. Choose Stretch to output (STRETCH_TO_OUTPUT) to have the
+     * service stretch your video image to fit. Keep the setting Default (DEFAULT) to
+     * have the service letterbox your video instead. This setting overrides any value
+     * that you specify for the setting Selection placement (position) in this output.
      */
     inline VideoDescription& WithScalingBehavior(ScalingBehavior&& value) { SetScalingBehavior(std::move(value)); return *this;}
 

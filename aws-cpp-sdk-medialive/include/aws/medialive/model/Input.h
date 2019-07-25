@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/model/InputClass.h>
+#include <aws/medialive/model/InputSourceType.h>
 #include <aws/medialive/model/InputState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/InputType.h>
@@ -310,6 +311,61 @@ SINGLE_PIPELINE - You can
 
      */
     inline Input& WithInputClass(InputClass&& value) { SetInputClass(std::move(value)); return *this;}
+
+
+    /**
+     * Certain pull input sources can be dynamic, meaning that they can have their
+     * URL's dynamically changes
+during input switch actions. Presently, this
+     * functionality only works with MP4_FILE inputs.
+
+     */
+    inline const InputSourceType& GetInputSourceType() const{ return m_inputSourceType; }
+
+    /**
+     * Certain pull input sources can be dynamic, meaning that they can have their
+     * URL's dynamically changes
+during input switch actions. Presently, this
+     * functionality only works with MP4_FILE inputs.
+
+     */
+    inline bool InputSourceTypeHasBeenSet() const { return m_inputSourceTypeHasBeenSet; }
+
+    /**
+     * Certain pull input sources can be dynamic, meaning that they can have their
+     * URL's dynamically changes
+during input switch actions. Presently, this
+     * functionality only works with MP4_FILE inputs.
+
+     */
+    inline void SetInputSourceType(const InputSourceType& value) { m_inputSourceTypeHasBeenSet = true; m_inputSourceType = value; }
+
+    /**
+     * Certain pull input sources can be dynamic, meaning that they can have their
+     * URL's dynamically changes
+during input switch actions. Presently, this
+     * functionality only works with MP4_FILE inputs.
+
+     */
+    inline void SetInputSourceType(InputSourceType&& value) { m_inputSourceTypeHasBeenSet = true; m_inputSourceType = std::move(value); }
+
+    /**
+     * Certain pull input sources can be dynamic, meaning that they can have their
+     * URL's dynamically changes
+during input switch actions. Presently, this
+     * functionality only works with MP4_FILE inputs.
+
+     */
+    inline Input& WithInputSourceType(const InputSourceType& value) { SetInputSourceType(value); return *this;}
+
+    /**
+     * Certain pull input sources can be dynamic, meaning that they can have their
+     * URL's dynamically changes
+during input switch actions. Presently, this
+     * functionality only works with MP4_FILE inputs.
+
+     */
+    inline Input& WithInputSourceType(InputSourceType&& value) { SetInputSourceType(std::move(value)); return *this;}
 
 
     /**
@@ -649,6 +705,9 @@ SINGLE_PIPELINE - You can
 
     InputClass m_inputClass;
     bool m_inputClassHasBeenSet;
+
+    InputSourceType m_inputSourceType;
+    bool m_inputSourceTypeHasBeenSet;
 
     Aws::Vector<MediaConnectFlow> m_mediaConnectFlows;
     bool m_mediaConnectFlowsHasBeenSet;

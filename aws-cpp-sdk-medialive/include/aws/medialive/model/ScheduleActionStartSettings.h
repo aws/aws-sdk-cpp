@@ -17,6 +17,7 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/FixedModeScheduleActionStartSettings.h>
 #include <aws/medialive/model/FollowModeScheduleActionStartSettings.h>
+#include <aws/medialive/model/ImmediateModeScheduleActionStartSettings.h>
 #include <utility>
 
 namespace Aws
@@ -35,7 +36,8 @@ namespace Model
 {
 
   /**
-   * Settings to specify the start time for an action.<p><h3>See Also:</h3>   <a
+   * Settings to specify when an action should occur. Only one of the options must be
+   * selected.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ScheduleActionStartSettings">AWS
    * API Reference</a></p>
    */
@@ -49,65 +51,96 @@ namespace Model
 
 
     /**
-     * Holds the start time for the action.
+     * Option for specifying the start time for an action.
      */
     inline const FixedModeScheduleActionStartSettings& GetFixedModeScheduleActionStartSettings() const{ return m_fixedModeScheduleActionStartSettings; }
 
     /**
-     * Holds the start time for the action.
+     * Option for specifying the start time for an action.
      */
     inline bool FixedModeScheduleActionStartSettingsHasBeenSet() const { return m_fixedModeScheduleActionStartSettingsHasBeenSet; }
 
     /**
-     * Holds the start time for the action.
+     * Option for specifying the start time for an action.
      */
     inline void SetFixedModeScheduleActionStartSettings(const FixedModeScheduleActionStartSettings& value) { m_fixedModeScheduleActionStartSettingsHasBeenSet = true; m_fixedModeScheduleActionStartSettings = value; }
 
     /**
-     * Holds the start time for the action.
+     * Option for specifying the start time for an action.
      */
     inline void SetFixedModeScheduleActionStartSettings(FixedModeScheduleActionStartSettings&& value) { m_fixedModeScheduleActionStartSettingsHasBeenSet = true; m_fixedModeScheduleActionStartSettings = std::move(value); }
 
     /**
-     * Holds the start time for the action.
+     * Option for specifying the start time for an action.
      */
     inline ScheduleActionStartSettings& WithFixedModeScheduleActionStartSettings(const FixedModeScheduleActionStartSettings& value) { SetFixedModeScheduleActionStartSettings(value); return *this;}
 
     /**
-     * Holds the start time for the action.
+     * Option for specifying the start time for an action.
      */
     inline ScheduleActionStartSettings& WithFixedModeScheduleActionStartSettings(FixedModeScheduleActionStartSettings&& value) { SetFixedModeScheduleActionStartSettings(std::move(value)); return *this;}
 
 
     /**
-     * Specifies an action to follow for scheduling this action.
+     * Option for specifying an action as relative to another action.
      */
     inline const FollowModeScheduleActionStartSettings& GetFollowModeScheduleActionStartSettings() const{ return m_followModeScheduleActionStartSettings; }
 
     /**
-     * Specifies an action to follow for scheduling this action.
+     * Option for specifying an action as relative to another action.
      */
     inline bool FollowModeScheduleActionStartSettingsHasBeenSet() const { return m_followModeScheduleActionStartSettingsHasBeenSet; }
 
     /**
-     * Specifies an action to follow for scheduling this action.
+     * Option for specifying an action as relative to another action.
      */
     inline void SetFollowModeScheduleActionStartSettings(const FollowModeScheduleActionStartSettings& value) { m_followModeScheduleActionStartSettingsHasBeenSet = true; m_followModeScheduleActionStartSettings = value; }
 
     /**
-     * Specifies an action to follow for scheduling this action.
+     * Option for specifying an action as relative to another action.
      */
     inline void SetFollowModeScheduleActionStartSettings(FollowModeScheduleActionStartSettings&& value) { m_followModeScheduleActionStartSettingsHasBeenSet = true; m_followModeScheduleActionStartSettings = std::move(value); }
 
     /**
-     * Specifies an action to follow for scheduling this action.
+     * Option for specifying an action as relative to another action.
      */
     inline ScheduleActionStartSettings& WithFollowModeScheduleActionStartSettings(const FollowModeScheduleActionStartSettings& value) { SetFollowModeScheduleActionStartSettings(value); return *this;}
 
     /**
-     * Specifies an action to follow for scheduling this action.
+     * Option for specifying an action as relative to another action.
      */
     inline ScheduleActionStartSettings& WithFollowModeScheduleActionStartSettings(FollowModeScheduleActionStartSettings&& value) { SetFollowModeScheduleActionStartSettings(std::move(value)); return *this;}
+
+
+    /**
+     * Option for specifying an action that should be applied immediately.
+     */
+    inline const ImmediateModeScheduleActionStartSettings& GetImmediateModeScheduleActionStartSettings() const{ return m_immediateModeScheduleActionStartSettings; }
+
+    /**
+     * Option for specifying an action that should be applied immediately.
+     */
+    inline bool ImmediateModeScheduleActionStartSettingsHasBeenSet() const { return m_immediateModeScheduleActionStartSettingsHasBeenSet; }
+
+    /**
+     * Option for specifying an action that should be applied immediately.
+     */
+    inline void SetImmediateModeScheduleActionStartSettings(const ImmediateModeScheduleActionStartSettings& value) { m_immediateModeScheduleActionStartSettingsHasBeenSet = true; m_immediateModeScheduleActionStartSettings = value; }
+
+    /**
+     * Option for specifying an action that should be applied immediately.
+     */
+    inline void SetImmediateModeScheduleActionStartSettings(ImmediateModeScheduleActionStartSettings&& value) { m_immediateModeScheduleActionStartSettingsHasBeenSet = true; m_immediateModeScheduleActionStartSettings = std::move(value); }
+
+    /**
+     * Option for specifying an action that should be applied immediately.
+     */
+    inline ScheduleActionStartSettings& WithImmediateModeScheduleActionStartSettings(const ImmediateModeScheduleActionStartSettings& value) { SetImmediateModeScheduleActionStartSettings(value); return *this;}
+
+    /**
+     * Option for specifying an action that should be applied immediately.
+     */
+    inline ScheduleActionStartSettings& WithImmediateModeScheduleActionStartSettings(ImmediateModeScheduleActionStartSettings&& value) { SetImmediateModeScheduleActionStartSettings(std::move(value)); return *this;}
 
   private:
 
@@ -116,6 +149,9 @@ namespace Model
 
     FollowModeScheduleActionStartSettings m_followModeScheduleActionStartSettings;
     bool m_followModeScheduleActionStartSettingsHasBeenSet;
+
+    ImmediateModeScheduleActionStartSettings m_immediateModeScheduleActionStartSettings;
+    bool m_immediateModeScheduleActionStartSettingsHasBeenSet;
   };
 
 } // namespace Model

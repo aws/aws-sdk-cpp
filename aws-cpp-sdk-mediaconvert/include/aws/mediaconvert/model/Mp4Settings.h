@@ -37,7 +37,8 @@ namespace Model
 {
 
   /**
-   * Settings for MP4 Container<p><h3>See Also:</h3>   <a
+   * Settings for MP4 container. You can create audio-only AAC outputs with this
+   * container.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Mp4Settings">AWS
    * API Reference</a></p>
    */

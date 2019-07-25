@@ -109,26 +109,30 @@ namespace Model
 
 
     /**
-     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs,
-     * bitrates must be unique when rounded down to the nearest multiple of 1000.
+     * Specify the average bitrate in bits per second. Required for VBR and CBR. For MS
+     * Smooth outputs, bitrates must be unique when rounded down to the nearest
+     * multiple of 1000.
      */
     inline int GetBitrate() const{ return m_bitrate; }
 
     /**
-     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs,
-     * bitrates must be unique when rounded down to the nearest multiple of 1000.
+     * Specify the average bitrate in bits per second. Required for VBR and CBR. For MS
+     * Smooth outputs, bitrates must be unique when rounded down to the nearest
+     * multiple of 1000.
      */
     inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
 
     /**
-     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs,
-     * bitrates must be unique when rounded down to the nearest multiple of 1000.
+     * Specify the average bitrate in bits per second. Required for VBR and CBR. For MS
+     * Smooth outputs, bitrates must be unique when rounded down to the nearest
+     * multiple of 1000.
      */
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
-     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs,
-     * bitrates must be unique when rounded down to the nearest multiple of 1000.
+     * Specify the average bitrate in bits per second. Required for VBR and CBR. For MS
+     * Smooth outputs, bitrates must be unique when rounded down to the nearest
+     * multiple of 1000.
      */
     inline H264Settings& WithBitrate(int value) { SetBitrate(value); return *this;}
 

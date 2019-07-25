@@ -54,32 +54,38 @@ namespace Model
 
 
     /**
-     * Advanced audio normalization settings.
+     * Advanced audio normalization settings. Ignore these settings unless you need to
+     * comply with a loudness standard.
      */
     inline const AudioNormalizationSettings& GetAudioNormalizationSettings() const{ return m_audioNormalizationSettings; }
 
     /**
-     * Advanced audio normalization settings.
+     * Advanced audio normalization settings. Ignore these settings unless you need to
+     * comply with a loudness standard.
      */
     inline bool AudioNormalizationSettingsHasBeenSet() const { return m_audioNormalizationSettingsHasBeenSet; }
 
     /**
-     * Advanced audio normalization settings.
+     * Advanced audio normalization settings. Ignore these settings unless you need to
+     * comply with a loudness standard.
      */
     inline void SetAudioNormalizationSettings(const AudioNormalizationSettings& value) { m_audioNormalizationSettingsHasBeenSet = true; m_audioNormalizationSettings = value; }
 
     /**
-     * Advanced audio normalization settings.
+     * Advanced audio normalization settings. Ignore these settings unless you need to
+     * comply with a loudness standard.
      */
     inline void SetAudioNormalizationSettings(AudioNormalizationSettings&& value) { m_audioNormalizationSettingsHasBeenSet = true; m_audioNormalizationSettings = std::move(value); }
 
     /**
-     * Advanced audio normalization settings.
+     * Advanced audio normalization settings. Ignore these settings unless you need to
+     * comply with a loudness standard.
      */
     inline AudioDescription& WithAudioNormalizationSettings(const AudioNormalizationSettings& value) { SetAudioNormalizationSettings(value); return *this;}
 
     /**
-     * Advanced audio normalization settings.
+     * Advanced audio normalization settings. Ignore these settings unless you need to
+     * comply with a loudness standard.
      */
     inline AudioDescription& WithAudioNormalizationSettings(AudioNormalizationSettings&& value) { SetAudioNormalizationSettings(std::move(value)); return *this;}
 
@@ -294,60 +300,66 @@ namespace Model
     /**
      * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
      * group of settings related to audio encoding. The settings in this group vary
-     * depending on the value you choose for Audio codec (Codec). For each codec enum
-     * you choose, define the corresponding settings object. The following lists the
-     * codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV,
-     * WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings
+     * depending on the value that you choose for Audio codec (Codec). For each codec
+     * enum that you choose, define the corresponding settings object. The following
+     * lists the codec enum, settings object pairs. * AAC, AacSettings * MP2,
+     * Mp2Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3,
+     * Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
      */
     inline const AudioCodecSettings& GetCodecSettings() const{ return m_codecSettings; }
 
     /**
      * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
      * group of settings related to audio encoding. The settings in this group vary
-     * depending on the value you choose for Audio codec (Codec). For each codec enum
-     * you choose, define the corresponding settings object. The following lists the
-     * codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV,
-     * WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings
+     * depending on the value that you choose for Audio codec (Codec). For each codec
+     * enum that you choose, define the corresponding settings object. The following
+     * lists the codec enum, settings object pairs. * AAC, AacSettings * MP2,
+     * Mp2Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3,
+     * Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
      */
     inline bool CodecSettingsHasBeenSet() const { return m_codecSettingsHasBeenSet; }
 
     /**
      * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
      * group of settings related to audio encoding. The settings in this group vary
-     * depending on the value you choose for Audio codec (Codec). For each codec enum
-     * you choose, define the corresponding settings object. The following lists the
-     * codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV,
-     * WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings
+     * depending on the value that you choose for Audio codec (Codec). For each codec
+     * enum that you choose, define the corresponding settings object. The following
+     * lists the codec enum, settings object pairs. * AAC, AacSettings * MP2,
+     * Mp2Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3,
+     * Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
      */
     inline void SetCodecSettings(const AudioCodecSettings& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = value; }
 
     /**
      * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
      * group of settings related to audio encoding. The settings in this group vary
-     * depending on the value you choose for Audio codec (Codec). For each codec enum
-     * you choose, define the corresponding settings object. The following lists the
-     * codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV,
-     * WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings
+     * depending on the value that you choose for Audio codec (Codec). For each codec
+     * enum that you choose, define the corresponding settings object. The following
+     * lists the codec enum, settings object pairs. * AAC, AacSettings * MP2,
+     * Mp2Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3,
+     * Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
      */
     inline void SetCodecSettings(AudioCodecSettings&& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = std::move(value); }
 
     /**
      * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
      * group of settings related to audio encoding. The settings in this group vary
-     * depending on the value you choose for Audio codec (Codec). For each codec enum
-     * you choose, define the corresponding settings object. The following lists the
-     * codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV,
-     * WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings
+     * depending on the value that you choose for Audio codec (Codec). For each codec
+     * enum that you choose, define the corresponding settings object. The following
+     * lists the codec enum, settings object pairs. * AAC, AacSettings * MP2,
+     * Mp2Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3,
+     * Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
      */
     inline AudioDescription& WithCodecSettings(const AudioCodecSettings& value) { SetCodecSettings(value); return *this;}
 
     /**
      * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
      * group of settings related to audio encoding. The settings in this group vary
-     * depending on the value you choose for Audio codec (Codec). For each codec enum
-     * you choose, define the corresponding settings object. The following lists the
-     * codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV,
-     * WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings
+     * depending on the value that you choose for Audio codec (Codec). For each codec
+     * enum that you choose, define the corresponding settings object. The following
+     * lists the codec enum, settings object pairs. * AAC, AacSettings * MP2,
+     * Mp2Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3,
+     * Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
      */
     inline AudioDescription& WithCodecSettings(AudioCodecSettings&& value) { SetCodecSettings(std::move(value)); return *this;}
 

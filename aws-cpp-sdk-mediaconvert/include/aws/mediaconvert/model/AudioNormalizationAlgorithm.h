@@ -27,7 +27,9 @@ namespace Model
   {
     NOT_SET,
     ITU_BS_1770_1,
-    ITU_BS_1770_2
+    ITU_BS_1770_2,
+    ITU_BS_1770_3,
+    ITU_BS_1770_4
   };
 
 namespace AudioNormalizationAlgorithmMapper

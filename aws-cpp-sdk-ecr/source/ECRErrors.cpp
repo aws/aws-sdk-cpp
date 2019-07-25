@@ -29,6 +29,7 @@ namespace ECRErrorMapper
 {
 
 static const int INVALID_LAYER_HASH = HashingUtils::HashString("InvalidLayerException");
+static const int IMAGE_TAG_ALREADY_EXISTS_HASH = HashingUtils::HashString("ImageTagAlreadyExistsException");
 static const int REPOSITORY_NOT_EMPTY_HASH = HashingUtils::HashString("RepositoryNotEmptyException");
 static const int LAYERS_NOT_FOUND_HASH = HashingUtils::HashString("LayersNotFoundException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
@@ -59,6 +60,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == INVALID_LAYER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::INVALID_LAYER), false);
+  }
+  else if (hashCode == IMAGE_TAG_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::IMAGE_TAG_ALREADY_EXISTS), false);
   }
   else if (hashCode == REPOSITORY_NOT_EMPTY_HASH)
   {

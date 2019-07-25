@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/mediaconvert/model/Rectangle.h>
 #include <aws/mediaconvert/model/InputDeblockFilter.h>
 #include <aws/mediaconvert/model/InputDecryptionSettings.h>
 #include <aws/mediaconvert/model/InputDenoiseFilter.h>
@@ -314,6 +315,49 @@ namespace Model
      * per input.
      */
     inline Input& AddCaptionSelectors(const char* key, const CaptionSelector& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(key, value); return *this; }
+
+
+    /**
+     * Use Cropping selection (crop) to specify the video area that the service will
+     * include in the output video frame. If you specify a value here, it will override
+     * any value that you specify in the output setting Cropping selection (crop).
+     */
+    inline const Rectangle& GetCrop() const{ return m_crop; }
+
+    /**
+     * Use Cropping selection (crop) to specify the video area that the service will
+     * include in the output video frame. If you specify a value here, it will override
+     * any value that you specify in the output setting Cropping selection (crop).
+     */
+    inline bool CropHasBeenSet() const { return m_cropHasBeenSet; }
+
+    /**
+     * Use Cropping selection (crop) to specify the video area that the service will
+     * include in the output video frame. If you specify a value here, it will override
+     * any value that you specify in the output setting Cropping selection (crop).
+     */
+    inline void SetCrop(const Rectangle& value) { m_cropHasBeenSet = true; m_crop = value; }
+
+    /**
+     * Use Cropping selection (crop) to specify the video area that the service will
+     * include in the output video frame. If you specify a value here, it will override
+     * any value that you specify in the output setting Cropping selection (crop).
+     */
+    inline void SetCrop(Rectangle&& value) { m_cropHasBeenSet = true; m_crop = std::move(value); }
+
+    /**
+     * Use Cropping selection (crop) to specify the video area that the service will
+     * include in the output video frame. If you specify a value here, it will override
+     * any value that you specify in the output setting Cropping selection (crop).
+     */
+    inline Input& WithCrop(const Rectangle& value) { SetCrop(value); return *this;}
+
+    /**
+     * Use Cropping selection (crop) to specify the video area that the service will
+     * include in the output video frame. If you specify a value here, it will override
+     * any value that you specify in the output setting Cropping selection (crop).
+     */
+    inline Input& WithCrop(Rectangle&& value) { SetCrop(std::move(value)); return *this;}
 
 
     /**
@@ -751,6 +795,79 @@ namespace Model
 
 
     /**
+     * Use Selection placement (position) to define the video area in your output
+     * frame. The area outside of the rectangle that you specify here is black. If you
+     * specify a value here, it will override any value that you specify in the output
+     * setting Selection placement (position). If you specify a value here, this will
+     * override any AFD values in your input, even if you set Respond to AFD
+     * (RespondToAfd) to Respond (RESPOND). If you specify a value here, this will
+     * ignore anything that you specify for the setting Scaling Behavior
+     * (scalingBehavior).
+     */
+    inline const Rectangle& GetPosition() const{ return m_position; }
+
+    /**
+     * Use Selection placement (position) to define the video area in your output
+     * frame. The area outside of the rectangle that you specify here is black. If you
+     * specify a value here, it will override any value that you specify in the output
+     * setting Selection placement (position). If you specify a value here, this will
+     * override any AFD values in your input, even if you set Respond to AFD
+     * (RespondToAfd) to Respond (RESPOND). If you specify a value here, this will
+     * ignore anything that you specify for the setting Scaling Behavior
+     * (scalingBehavior).
+     */
+    inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
+
+    /**
+     * Use Selection placement (position) to define the video area in your output
+     * frame. The area outside of the rectangle that you specify here is black. If you
+     * specify a value here, it will override any value that you specify in the output
+     * setting Selection placement (position). If you specify a value here, this will
+     * override any AFD values in your input, even if you set Respond to AFD
+     * (RespondToAfd) to Respond (RESPOND). If you specify a value here, this will
+     * ignore anything that you specify for the setting Scaling Behavior
+     * (scalingBehavior).
+     */
+    inline void SetPosition(const Rectangle& value) { m_positionHasBeenSet = true; m_position = value; }
+
+    /**
+     * Use Selection placement (position) to define the video area in your output
+     * frame. The area outside of the rectangle that you specify here is black. If you
+     * specify a value here, it will override any value that you specify in the output
+     * setting Selection placement (position). If you specify a value here, this will
+     * override any AFD values in your input, even if you set Respond to AFD
+     * (RespondToAfd) to Respond (RESPOND). If you specify a value here, this will
+     * ignore anything that you specify for the setting Scaling Behavior
+     * (scalingBehavior).
+     */
+    inline void SetPosition(Rectangle&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
+
+    /**
+     * Use Selection placement (position) to define the video area in your output
+     * frame. The area outside of the rectangle that you specify here is black. If you
+     * specify a value here, it will override any value that you specify in the output
+     * setting Selection placement (position). If you specify a value here, this will
+     * override any AFD values in your input, even if you set Respond to AFD
+     * (RespondToAfd) to Respond (RESPOND). If you specify a value here, this will
+     * ignore anything that you specify for the setting Scaling Behavior
+     * (scalingBehavior).
+     */
+    inline Input& WithPosition(const Rectangle& value) { SetPosition(value); return *this;}
+
+    /**
+     * Use Selection placement (position) to define the video area in your output
+     * frame. The area outside of the rectangle that you specify here is black. If you
+     * specify a value here, it will override any value that you specify in the output
+     * setting Selection placement (position). If you specify a value here, this will
+     * override any AFD values in your input, even if you set Respond to AFD
+     * (RespondToAfd) to Respond (RESPOND). If you specify a value here, this will
+     * ignore anything that you specify for the setting Scaling Behavior
+     * (scalingBehavior).
+     */
+    inline Input& WithPosition(Rectangle&& value) { SetPosition(std::move(value)); return *this;}
+
+
+    /**
      * Use Program (programNumber) to select a specific program from within a
      * multi-program transport stream. Note that Quad 4K is not currently supported.
      * Default is the first program within the transport stream. If the program you
@@ -1025,6 +1142,9 @@ namespace Model
     Aws::Map<Aws::String, CaptionSelector> m_captionSelectors;
     bool m_captionSelectorsHasBeenSet;
 
+    Rectangle m_crop;
+    bool m_cropHasBeenSet;
+
     InputDeblockFilter m_deblockFilter;
     bool m_deblockFilterHasBeenSet;
 
@@ -1048,6 +1168,9 @@ namespace Model
 
     Aws::Vector<InputClipping> m_inputClippings;
     bool m_inputClippingsHasBeenSet;
+
+    Rectangle m_position;
+    bool m_positionHasBeenSet;
 
     int m_programNumber;
     bool m_programNumberHasBeenSet;

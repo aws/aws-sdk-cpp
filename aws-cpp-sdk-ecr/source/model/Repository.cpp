@@ -33,7 +33,9 @@ Repository::Repository() :
     m_registryIdHasBeenSet(false),
     m_repositoryNameHasBeenSet(false),
     m_repositoryUriHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+    m_createdAtHasBeenSet(false),
+    m_imageTagMutability(ImageTagMutability::NOT_SET),
+    m_imageTagMutabilityHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ Repository::Repository(JsonView jsonValue) :
     m_registryIdHasBeenSet(false),
     m_repositoryNameHasBeenSet(false),
     m_repositoryUriHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+    m_createdAtHasBeenSet(false),
+    m_imageTagMutability(ImageTagMutability::NOT_SET),
+    m_imageTagMutabilityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -84,6 +88,13 @@ Repository& Repository::operator =(JsonView jsonValue)
     m_createdAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("imageTagMutability"))
+  {
+    m_imageTagMutability = ImageTagMutabilityMapper::GetImageTagMutabilityForName(jsonValue.GetString("imageTagMutability"));
+
+    m_imageTagMutabilityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -118,6 +129,11 @@ JsonValue Repository::Jsonize() const
   if(m_createdAtHasBeenSet)
   {
    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if(m_imageTagMutabilityHasBeenSet)
+  {
+   payload.WithString("imageTagMutability", ImageTagMutabilityMapper::GetNameForImageTagMutability(m_imageTagMutability));
   }
 
   return payload;

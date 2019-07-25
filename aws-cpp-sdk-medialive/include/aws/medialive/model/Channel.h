@@ -26,6 +26,7 @@
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/ChannelEgressEndpoint.h>
 #include <aws/medialive/model/InputAttachment.h>
+#include <aws/medialive/model/PipelineDetail.h>
 #include <utility>
 
 namespace Aws
@@ -450,6 +451,47 @@ one destination per
 
 
     /**
+     * Runtime details for the pipelines of a running channel.
+     */
+    inline const Aws::Vector<PipelineDetail>& GetPipelineDetails() const{ return m_pipelineDetails; }
+
+    /**
+     * Runtime details for the pipelines of a running channel.
+     */
+    inline bool PipelineDetailsHasBeenSet() const { return m_pipelineDetailsHasBeenSet; }
+
+    /**
+     * Runtime details for the pipelines of a running channel.
+     */
+    inline void SetPipelineDetails(const Aws::Vector<PipelineDetail>& value) { m_pipelineDetailsHasBeenSet = true; m_pipelineDetails = value; }
+
+    /**
+     * Runtime details for the pipelines of a running channel.
+     */
+    inline void SetPipelineDetails(Aws::Vector<PipelineDetail>&& value) { m_pipelineDetailsHasBeenSet = true; m_pipelineDetails = std::move(value); }
+
+    /**
+     * Runtime details for the pipelines of a running channel.
+     */
+    inline Channel& WithPipelineDetails(const Aws::Vector<PipelineDetail>& value) { SetPipelineDetails(value); return *this;}
+
+    /**
+     * Runtime details for the pipelines of a running channel.
+     */
+    inline Channel& WithPipelineDetails(Aws::Vector<PipelineDetail>&& value) { SetPipelineDetails(std::move(value)); return *this;}
+
+    /**
+     * Runtime details for the pipelines of a running channel.
+     */
+    inline Channel& AddPipelineDetails(const PipelineDetail& value) { m_pipelineDetailsHasBeenSet = true; m_pipelineDetails.push_back(value); return *this; }
+
+    /**
+     * Runtime details for the pipelines of a running channel.
+     */
+    inline Channel& AddPipelineDetails(PipelineDetail&& value) { m_pipelineDetailsHasBeenSet = true; m_pipelineDetails.push_back(std::move(value)); return *this; }
+
+
+    /**
      * The number of currently healthy pipelines.
      */
     inline int GetPipelinesRunningCount() const{ return m_pipelinesRunningCount; }
@@ -626,6 +668,9 @@ one destination per
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::Vector<PipelineDetail> m_pipelineDetails;
+    bool m_pipelineDetailsHasBeenSet;
 
     int m_pipelinesRunningCount;
     bool m_pipelinesRunningCountHasBeenSet;

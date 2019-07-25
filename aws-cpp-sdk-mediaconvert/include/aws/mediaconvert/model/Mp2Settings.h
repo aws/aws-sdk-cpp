@@ -47,22 +47,22 @@ namespace Model
 
 
     /**
-     * Average bitrate in bits/second.
+     * Specify the average bitrate in bits per second.
      */
     inline int GetBitrate() const{ return m_bitrate; }
 
     /**
-     * Average bitrate in bits/second.
+     * Specify the average bitrate in bits per second.
      */
     inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
 
     /**
-     * Average bitrate in bits/second.
+     * Specify the average bitrate in bits per second.
      */
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
-     * Average bitrate in bits/second.
+     * Specify the average bitrate in bits per second.
      */
     inline Mp2Settings& WithBitrate(int value) { SetBitrate(value); return *this;}
 

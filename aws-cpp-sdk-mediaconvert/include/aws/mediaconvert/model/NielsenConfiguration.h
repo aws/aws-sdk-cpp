@@ -34,7 +34,13 @@ namespace Model
 {
 
   /**
-   * Settings for Nielsen Configuration<p><h3>See Also:</h3>   <a
+   * Settings for your Nielsen configuration. If you don't do Nielsen measurement and
+   * analytics, ignore these settings. When you enable Nielsen configuration
+   * (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs
+   * in the job. To enable Nielsen configuration programmatically, include an
+   * instance of nielsenConfiguration in your JSON job specification. Even if you
+   * don't include any children of nielsenConfiguration, you still enable the
+   * setting.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/NielsenConfiguration">AWS
    * API Reference</a></p>
    */
@@ -48,26 +54,26 @@ namespace Model
 
 
     /**
-     * Use Nielsen Configuration (NielsenConfiguration) to set the Nielsen measurement
-     * system breakout code. Supported values are 0, 3, 7, and 9.
+     * Nielsen has discontinued the use of breakout code functionality. If you must
+     * include this property, set the value to zero.
      */
     inline int GetBreakoutCode() const{ return m_breakoutCode; }
 
     /**
-     * Use Nielsen Configuration (NielsenConfiguration) to set the Nielsen measurement
-     * system breakout code. Supported values are 0, 3, 7, and 9.
+     * Nielsen has discontinued the use of breakout code functionality. If you must
+     * include this property, set the value to zero.
      */
     inline bool BreakoutCodeHasBeenSet() const { return m_breakoutCodeHasBeenSet; }
 
     /**
-     * Use Nielsen Configuration (NielsenConfiguration) to set the Nielsen measurement
-     * system breakout code. Supported values are 0, 3, 7, and 9.
+     * Nielsen has discontinued the use of breakout code functionality. If you must
+     * include this property, set the value to zero.
      */
     inline void SetBreakoutCode(int value) { m_breakoutCodeHasBeenSet = true; m_breakoutCode = value; }
 
     /**
-     * Use Nielsen Configuration (NielsenConfiguration) to set the Nielsen measurement
-     * system breakout code. Supported values are 0, 3, 7, and 9.
+     * Nielsen has discontinued the use of breakout code functionality. If you must
+     * include this property, set the value to zero.
      */
     inline NielsenConfiguration& WithBreakoutCode(int value) { SetBreakoutCode(value); return *this;}
 

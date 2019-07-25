@@ -32,6 +32,7 @@ namespace Model
     AIFF,
     AC3,
     EAC3,
+    EAC3_ATMOS,
     PASSTHROUGH
   };
 

@@ -1085,38 +1085,62 @@ namespace Model
 
 
     /**
-     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from
-     * input to output.
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
+     * want SCTE-35 markers that appear in your input to also appear in this output.
+     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
+     * markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM
+     * XML as a string in the setting Signal processing notification XML (sccXml). Also
+     * enable ESAM SCTE-35 (include the property scte35Esam).
      */
     inline const M2tsScte35Source& GetScte35Source() const{ return m_scte35Source; }
 
     /**
-     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from
-     * input to output.
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
+     * want SCTE-35 markers that appear in your input to also appear in this output.
+     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
+     * markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM
+     * XML as a string in the setting Signal processing notification XML (sccXml). Also
+     * enable ESAM SCTE-35 (include the property scte35Esam).
      */
     inline bool Scte35SourceHasBeenSet() const { return m_scte35SourceHasBeenSet; }
 
     /**
-     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from
-     * input to output.
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
+     * want SCTE-35 markers that appear in your input to also appear in this output.
+     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
+     * markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM
+     * XML as a string in the setting Signal processing notification XML (sccXml). Also
+     * enable ESAM SCTE-35 (include the property scte35Esam).
      */
     inline void SetScte35Source(const M2tsScte35Source& value) { m_scte35SourceHasBeenSet = true; m_scte35Source = value; }
 
     /**
-     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from
-     * input to output.
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
+     * want SCTE-35 markers that appear in your input to also appear in this output.
+     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
+     * markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM
+     * XML as a string in the setting Signal processing notification XML (sccXml). Also
+     * enable ESAM SCTE-35 (include the property scte35Esam).
      */
     inline void SetScte35Source(M2tsScte35Source&& value) { m_scte35SourceHasBeenSet = true; m_scte35Source = std::move(value); }
 
     /**
-     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from
-     * input to output.
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
+     * want SCTE-35 markers that appear in your input to also appear in this output.
+     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
+     * markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM
+     * XML as a string in the setting Signal processing notification XML (sccXml). Also
+     * enable ESAM SCTE-35 (include the property scte35Esam).
      */
     inline M2tsSettings& WithScte35Source(const M2tsScte35Source& value) { SetScte35Source(value); return *this;}
 
     /**
-     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from
-     * input to output.
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
+     * want SCTE-35 markers that appear in your input to also appear in this output.
+     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
+     * markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM
+     * XML as a string in the setting Signal processing notification XML (sccXml). Also
+     * enable ESAM SCTE-35 (include the property scte35Esam).
      */
     inline M2tsSettings& WithScte35Source(M2tsScte35Source&& value) { SetScte35Source(std::move(value)); return *this;}
 

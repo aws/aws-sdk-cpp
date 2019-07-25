@@ -41,6 +41,7 @@ Channel::Channel() :
     m_logLevel(LogLevel::NOT_SET),
     m_logLevelHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_pipelineDetailsHasBeenSet(false),
     m_pipelinesRunningCount(0),
     m_pipelinesRunningCountHasBeenSet(false),
     m_roleArnHasBeenSet(false),
@@ -63,6 +64,7 @@ Channel::Channel(JsonView jsonValue) :
     m_logLevel(LogLevel::NOT_SET),
     m_logLevelHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_pipelineDetailsHasBeenSet(false),
     m_pipelinesRunningCount(0),
     m_pipelinesRunningCountHasBeenSet(false),
     m_roleArnHasBeenSet(false),
@@ -152,6 +154,16 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("pipelineDetails"))
+  {
+    Array<JsonView> pipelineDetailsJsonList = jsonValue.GetArray("pipelineDetails");
+    for(unsigned pipelineDetailsIndex = 0; pipelineDetailsIndex < pipelineDetailsJsonList.GetLength(); ++pipelineDetailsIndex)
+    {
+      m_pipelineDetails.push_back(pipelineDetailsJsonList[pipelineDetailsIndex].AsObject());
+    }
+    m_pipelineDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("pipelinesRunningCount"))
@@ -262,6 +274,17 @@ JsonValue Channel::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_pipelineDetailsHasBeenSet)
+  {
+   Array<JsonValue> pipelineDetailsJsonList(m_pipelineDetails.size());
+   for(unsigned pipelineDetailsIndex = 0; pipelineDetailsIndex < pipelineDetailsJsonList.GetLength(); ++pipelineDetailsIndex)
+   {
+     pipelineDetailsJsonList[pipelineDetailsIndex].AsObject(m_pipelineDetails[pipelineDetailsIndex].Jsonize());
+   }
+   payload.WithArray("pipelineDetails", std::move(pipelineDetailsJsonList));
 
   }
 

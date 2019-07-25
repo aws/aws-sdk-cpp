@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/model/InputClass.h>
+#include <aws/medialive/model/InputSourceType.h>
 #include <aws/medialive/model/InputState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/InputType.h>
@@ -276,6 +277,52 @@ SINGLE_PIPELINE - You can
 
      */
     inline DescribeInputResult& WithInputClass(InputClass&& value) { SetInputClass(std::move(value)); return *this;}
+
+
+    /**
+     * Certain pull input sources can be dynamic, meaning that they can have their
+     * URL's dynamically changes
+during input switch actions. Presently, this
+     * functionality only works with MP4_FILE inputs.
+
+     */
+    inline const InputSourceType& GetInputSourceType() const{ return m_inputSourceType; }
+
+    /**
+     * Certain pull input sources can be dynamic, meaning that they can have their
+     * URL's dynamically changes
+during input switch actions. Presently, this
+     * functionality only works with MP4_FILE inputs.
+
+     */
+    inline void SetInputSourceType(const InputSourceType& value) { m_inputSourceType = value; }
+
+    /**
+     * Certain pull input sources can be dynamic, meaning that they can have their
+     * URL's dynamically changes
+during input switch actions. Presently, this
+     * functionality only works with MP4_FILE inputs.
+
+     */
+    inline void SetInputSourceType(InputSourceType&& value) { m_inputSourceType = std::move(value); }
+
+    /**
+     * Certain pull input sources can be dynamic, meaning that they can have their
+     * URL's dynamically changes
+during input switch actions. Presently, this
+     * functionality only works with MP4_FILE inputs.
+
+     */
+    inline DescribeInputResult& WithInputSourceType(const InputSourceType& value) { SetInputSourceType(value); return *this;}
+
+    /**
+     * Certain pull input sources can be dynamic, meaning that they can have their
+     * URL's dynamically changes
+during input switch actions. Presently, this
+     * functionality only works with MP4_FILE inputs.
+
+     */
+    inline DescribeInputResult& WithInputSourceType(InputSourceType&& value) { SetInputSourceType(std::move(value)); return *this;}
 
 
     /**
@@ -573,6 +620,8 @@ SINGLE_PIPELINE - You can
     Aws::String m_id;
 
     InputClass m_inputClass;
+
+    InputSourceType m_inputSourceType;
 
     Aws::Vector<MediaConnectFlow> m_mediaConnectFlows;
 

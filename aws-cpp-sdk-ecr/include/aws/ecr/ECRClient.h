@@ -40,6 +40,7 @@
 #include <aws/ecr/model/ListImagesResult.h>
 #include <aws/ecr/model/ListTagsForResourceResult.h>
 #include <aws/ecr/model/PutImageResult.h>
+#include <aws/ecr/model/PutImageTagMutabilityResult.h>
 #include <aws/ecr/model/PutLifecyclePolicyResult.h>
 #include <aws/ecr/model/SetRepositoryPolicyResult.h>
 #include <aws/ecr/model/StartLifecyclePolicyPreviewResult.h>
@@ -104,6 +105,7 @@ namespace Model
         class ListImagesRequest;
         class ListTagsForResourceRequest;
         class PutImageRequest;
+        class PutImageTagMutabilityRequest;
         class PutLifecyclePolicyRequest;
         class SetRepositoryPolicyRequest;
         class StartLifecyclePolicyPreviewRequest;
@@ -130,6 +132,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListImagesResult, Aws::Client::AWSError<ECRErrors>> ListImagesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<ECRErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutImageResult, Aws::Client::AWSError<ECRErrors>> PutImageOutcome;
+        typedef Aws::Utils::Outcome<PutImageTagMutabilityResult, Aws::Client::AWSError<ECRErrors>> PutImageTagMutabilityOutcome;
         typedef Aws::Utils::Outcome<PutLifecyclePolicyResult, Aws::Client::AWSError<ECRErrors>> PutLifecyclePolicyOutcome;
         typedef Aws::Utils::Outcome<SetRepositoryPolicyResult, Aws::Client::AWSError<ECRErrors>> SetRepositoryPolicyOutcome;
         typedef Aws::Utils::Outcome<StartLifecyclePolicyPreviewResult, Aws::Client::AWSError<ECRErrors>> StartLifecyclePolicyPreviewOutcome;
@@ -156,6 +159,7 @@ namespace Model
         typedef std::future<ListImagesOutcome> ListImagesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutImageOutcome> PutImageOutcomeCallable;
+        typedef std::future<PutImageTagMutabilityOutcome> PutImageTagMutabilityOutcomeCallable;
         typedef std::future<PutLifecyclePolicyOutcome> PutLifecyclePolicyOutcomeCallable;
         typedef std::future<SetRepositoryPolicyOutcome> SetRepositoryPolicyOutcomeCallable;
         typedef std::future<StartLifecyclePolicyPreviewOutcome> StartLifecyclePolicyPreviewOutcomeCallable;
@@ -185,6 +189,7 @@ namespace Model
     typedef std::function<void(const ECRClient*, const Model::ListImagesRequest&, const Model::ListImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagesResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::PutImageRequest&, const Model::PutImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutImageResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::PutImageTagMutabilityRequest&, const Model::PutImageTagMutabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutImageTagMutabilityResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::PutLifecyclePolicyRequest&, const Model::PutLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLifecyclePolicyResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::SetRepositoryPolicyRequest&, const Model::SetRepositoryPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetRepositoryPolicyResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::StartLifecyclePolicyPreviewRequest&, const Model::StartLifecyclePolicyPreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartLifecyclePolicyPreviewResponseReceivedHandler;
@@ -193,12 +198,13 @@ namespace Model
     typedef std::function<void(const ECRClient*, const Model::UploadLayerPartRequest&, const Model::UploadLayerPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UploadLayerPartResponseReceivedHandler;
 
   /**
-   * <p>Amazon Elastic Container Registry (Amazon ECR) is a managed Docker registry
-   * service. Customers can use the familiar Docker CLI to push, pull, and manage
-   * images. Amazon ECR provides a secure, scalable, and reliable registry. Amazon
-   * ECR supports private Docker repositories with resource-based permissions using
-   * IAM so that specific users or Amazon EC2 instances can access repositories and
-   * images. Developers can use the Docker CLI to author and manage images.</p>
+   * <fullname>Amazon Elastic Container Registry</fullname> <p>Amazon Elastic
+   * Container Registry (Amazon ECR) is a managed Docker registry service. Customers
+   * can use the familiar Docker CLI to push, pull, and manage images. Amazon ECR
+   * provides a secure, scalable, and reliable registry. Amazon ECR supports private
+   * Docker repositories with resource-based permissions using IAM so that specific
+   * users or Amazon EC2 instances can access repositories and images. Developers can
+   * use the Docker CLI to author and manage images.</p>
    */
   class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient
   {
@@ -864,9 +870,37 @@ namespace Model
         virtual void PutImageAsync(const Model::PutImageRequest& request, const PutImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the image tag mutability settings for a repository.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageTagMutability">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutImageTagMutabilityOutcome PutImageTagMutability(const Model::PutImageTagMutabilityRequest& request) const;
+
+        /**
+         * <p>Updates the image tag mutability settings for a repository.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageTagMutability">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutImageTagMutabilityOutcomeCallable PutImageTagMutabilityCallable(const Model::PutImageTagMutabilityRequest& request) const;
+
+        /**
+         * <p>Updates the image tag mutability settings for a repository.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageTagMutability">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutImageTagMutabilityAsync(const Model::PutImageTagMutabilityRequest& request, const PutImageTagMutabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates or updates a lifecycle policy. For information about lifecycle policy
          * syntax, see <a
-         * href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle
          * Policy Template</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">AWS
          * API Reference</a></p>
@@ -876,7 +910,7 @@ namespace Model
         /**
          * <p>Creates or updates a lifecycle policy. For information about lifecycle policy
          * syntax, see <a
-         * href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle
          * Policy Template</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">AWS
          * API Reference</a></p>
@@ -888,7 +922,7 @@ namespace Model
         /**
          * <p>Creates or updates a lifecycle policy. For information about lifecycle policy
          * syntax, see <a
-         * href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle
          * Policy Template</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">AWS
          * API Reference</a></p>
@@ -899,7 +933,10 @@ namespace Model
 
         /**
          * <p>Applies a repository policy on a specified repository to control access
-         * permissions.</p><p><h3>See Also:</h3>   <a
+         * permissions. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon
+         * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy">AWS
          * API Reference</a></p>
          */
@@ -907,7 +944,10 @@ namespace Model
 
         /**
          * <p>Applies a repository policy on a specified repository to control access
-         * permissions.</p><p><h3>See Also:</h3>   <a
+         * permissions. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon
+         * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy">AWS
          * API Reference</a></p>
          *
@@ -917,7 +957,10 @@ namespace Model
 
         /**
          * <p>Applies a repository policy on a specified repository to control access
-         * permissions.</p><p><h3>See Also:</h3>   <a
+         * permissions. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon
+         * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy">AWS
          * API Reference</a></p>
          *
@@ -1069,6 +1112,7 @@ namespace Model
         void ListImagesAsyncHelper(const Model::ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutImageAsyncHelper(const Model::PutImageRequest& request, const PutImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutImageTagMutabilityAsyncHelper(const Model::PutImageTagMutabilityRequest& request, const PutImageTagMutabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLifecyclePolicyAsyncHelper(const Model::PutLifecyclePolicyRequest& request, const PutLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetRepositoryPolicyAsyncHelper(const Model::SetRepositoryPolicyRequest& request, const SetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartLifecyclePolicyPreviewAsyncHelper(const Model::StartLifecyclePolicyPreviewRequest& request, const StartLifecyclePolicyPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

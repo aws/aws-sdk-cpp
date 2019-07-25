@@ -366,38 +366,74 @@ namespace Model
 
 
     /**
-     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from
-     * input to output.
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
+     * want SCTE-35 markers that appear in your input to also appear in this output.
+     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
+     * markers from an ESAM XML document-- Choose None (NONE) if you don't want
+     * manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers
+     * (adMarkers) if you do want manifest conditioning. In both cases, also provide
+     * the ESAM XML as a string in the setting Signal processing notification XML
+     * (sccXml).
      */
     inline const M3u8Scte35Source& GetScte35Source() const{ return m_scte35Source; }
 
     /**
-     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from
-     * input to output.
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
+     * want SCTE-35 markers that appear in your input to also appear in this output.
+     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
+     * markers from an ESAM XML document-- Choose None (NONE) if you don't want
+     * manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers
+     * (adMarkers) if you do want manifest conditioning. In both cases, also provide
+     * the ESAM XML as a string in the setting Signal processing notification XML
+     * (sccXml).
      */
     inline bool Scte35SourceHasBeenSet() const { return m_scte35SourceHasBeenSet; }
 
     /**
-     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from
-     * input to output.
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
+     * want SCTE-35 markers that appear in your input to also appear in this output.
+     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
+     * markers from an ESAM XML document-- Choose None (NONE) if you don't want
+     * manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers
+     * (adMarkers) if you do want manifest conditioning. In both cases, also provide
+     * the ESAM XML as a string in the setting Signal processing notification XML
+     * (sccXml).
      */
     inline void SetScte35Source(const M3u8Scte35Source& value) { m_scte35SourceHasBeenSet = true; m_scte35Source = value; }
 
     /**
-     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from
-     * input to output.
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
+     * want SCTE-35 markers that appear in your input to also appear in this output.
+     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
+     * markers from an ESAM XML document-- Choose None (NONE) if you don't want
+     * manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers
+     * (adMarkers) if you do want manifest conditioning. In both cases, also provide
+     * the ESAM XML as a string in the setting Signal processing notification XML
+     * (sccXml).
      */
     inline void SetScte35Source(M3u8Scte35Source&& value) { m_scte35SourceHasBeenSet = true; m_scte35Source = std::move(value); }
 
     /**
-     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from
-     * input to output.
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
+     * want SCTE-35 markers that appear in your input to also appear in this output.
+     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
+     * markers from an ESAM XML document-- Choose None (NONE) if you don't want
+     * manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers
+     * (adMarkers) if you do want manifest conditioning. In both cases, also provide
+     * the ESAM XML as a string in the setting Signal processing notification XML
+     * (sccXml).
      */
     inline M3u8Settings& WithScte35Source(const M3u8Scte35Source& value) { SetScte35Source(value); return *this;}
 
     /**
-     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from
-     * input to output.
+     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
+     * want SCTE-35 markers that appear in your input to also appear in this output.
+     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
+     * markers from an ESAM XML document-- Choose None (NONE) if you don't want
+     * manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers
+     * (adMarkers) if you do want manifest conditioning. In both cases, also provide
+     * the ESAM XML as a string in the setting Signal processing notification XML
+     * (sccXml).
      */
     inline M3u8Settings& WithScte35Source(M3u8Scte35Source&& value) { SetScte35Source(std::move(value)); return *this;}
 

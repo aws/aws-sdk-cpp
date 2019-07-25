@@ -34,6 +34,7 @@ AudioCodecSettings::AudioCodecSettings() :
     m_aiffSettingsHasBeenSet(false),
     m_codec(AudioCodec::NOT_SET),
     m_codecHasBeenSet(false),
+    m_eac3AtmosSettingsHasBeenSet(false),
     m_eac3SettingsHasBeenSet(false),
     m_mp2SettingsHasBeenSet(false),
     m_wavSettingsHasBeenSet(false)
@@ -46,6 +47,7 @@ AudioCodecSettings::AudioCodecSettings(JsonView jsonValue) :
     m_aiffSettingsHasBeenSet(false),
     m_codec(AudioCodec::NOT_SET),
     m_codecHasBeenSet(false),
+    m_eac3AtmosSettingsHasBeenSet(false),
     m_eac3SettingsHasBeenSet(false),
     m_mp2SettingsHasBeenSet(false),
     m_wavSettingsHasBeenSet(false)
@@ -81,6 +83,13 @@ AudioCodecSettings& AudioCodecSettings::operator =(JsonView jsonValue)
     m_codec = AudioCodecMapper::GetAudioCodecForName(jsonValue.GetString("codec"));
 
     m_codecHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("eac3AtmosSettings"))
+  {
+    m_eac3AtmosSettings = jsonValue.GetObject("eac3AtmosSettings");
+
+    m_eac3AtmosSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("eac3Settings"))
@@ -132,6 +141,12 @@ JsonValue AudioCodecSettings::Jsonize() const
   if(m_codecHasBeenSet)
   {
    payload.WithString("codec", AudioCodecMapper::GetNameForAudioCodec(m_codec));
+  }
+
+  if(m_eac3AtmosSettingsHasBeenSet)
+  {
+   payload.WithObject("eac3AtmosSettings", m_eac3AtmosSettings.Jsonize());
+
   }
 
   if(m_eac3SettingsHasBeenSet)

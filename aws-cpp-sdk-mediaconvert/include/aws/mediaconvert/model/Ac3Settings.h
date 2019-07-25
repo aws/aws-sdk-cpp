@@ -53,59 +53,63 @@ namespace Model
 
 
     /**
-     * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+     * Specify the average bitrate in bits per second. Valid bitrates depend on the
+     * coding mode.
      */
     inline int GetBitrate() const{ return m_bitrate; }
 
     /**
-     * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+     * Specify the average bitrate in bits per second. Valid bitrates depend on the
+     * coding mode.
      */
     inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
 
     /**
-     * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+     * Specify the average bitrate in bits per second. Valid bitrates depend on the
+     * coding mode.
      */
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
-     * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+     * Specify the average bitrate in bits per second. Valid bitrates depend on the
+     * coding mode.
      */
     inline Ac3Settings& WithBitrate(int value) { SetBitrate(value); return *this;}
 
 
     /**
-     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC
-     * A/52-2012 for background on these values.
+     * Specify the bitstream mode for the AC-3 stream that the encoder emits. For more
+     * information about the AC3 bitstream mode, see ATSC A/52-2012 (Annex E).
      */
     inline const Ac3BitstreamMode& GetBitstreamMode() const{ return m_bitstreamMode; }
 
     /**
-     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC
-     * A/52-2012 for background on these values.
+     * Specify the bitstream mode for the AC-3 stream that the encoder emits. For more
+     * information about the AC3 bitstream mode, see ATSC A/52-2012 (Annex E).
      */
     inline bool BitstreamModeHasBeenSet() const { return m_bitstreamModeHasBeenSet; }
 
     /**
-     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC
-     * A/52-2012 for background on these values.
+     * Specify the bitstream mode for the AC-3 stream that the encoder emits. For more
+     * information about the AC3 bitstream mode, see ATSC A/52-2012 (Annex E).
      */
     inline void SetBitstreamMode(const Ac3BitstreamMode& value) { m_bitstreamModeHasBeenSet = true; m_bitstreamMode = value; }
 
     /**
-     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC
-     * A/52-2012 for background on these values.
+     * Specify the bitstream mode for the AC-3 stream that the encoder emits. For more
+     * information about the AC3 bitstream mode, see ATSC A/52-2012 (Annex E).
      */
     inline void SetBitstreamMode(Ac3BitstreamMode&& value) { m_bitstreamModeHasBeenSet = true; m_bitstreamMode = std::move(value); }
 
     /**
-     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC
-     * A/52-2012 for background on these values.
+     * Specify the bitstream mode for the AC-3 stream that the encoder emits. For more
+     * information about the AC3 bitstream mode, see ATSC A/52-2012 (Annex E).
      */
     inline Ac3Settings& WithBitstreamMode(const Ac3BitstreamMode& value) { SetBitstreamMode(value); return *this;}
 
     /**
-     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC
-     * A/52-2012 for background on these values.
+     * Specify the bitstream mode for the AC-3 stream that the encoder emits. For more
+     * information about the AC3 bitstream mode, see ATSC A/52-2012 (Annex E).
      */
     inline Ac3Settings& WithBitstreamMode(Ac3BitstreamMode&& value) { SetBitstreamMode(std::move(value)); return *this;}
 
@@ -284,22 +288,22 @@ namespace Model
 
 
     /**
-     * Sample rate in hz. Sample rate is always 48000.
+     * This value is always 48000. It represents the sample rate in Hz.
      */
     inline int GetSampleRate() const{ return m_sampleRate; }
 
     /**
-     * Sample rate in hz. Sample rate is always 48000.
+     * This value is always 48000. It represents the sample rate in Hz.
      */
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
 
     /**
-     * Sample rate in hz. Sample rate is always 48000.
+     * This value is always 48000. It represents the sample rate in Hz.
      */
     inline void SetSampleRate(int value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
 
     /**
-     * Sample rate in hz. Sample rate is always 48000.
+     * This value is always 48000. It represents the sample rate in Hz.
      */
     inline Ac3Settings& WithSampleRate(int value) { SetSampleRate(value); return *this;}
 

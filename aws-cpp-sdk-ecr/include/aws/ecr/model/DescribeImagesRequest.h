@@ -105,42 +105,42 @@ namespace Model
 
 
     /**
-     * <p>A list of repositories to describe.</p>
+     * <p>The repository that contains the images to describe.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
 
     /**
-     * <p>A list of repositories to describe.</p>
+     * <p>The repository that contains the images to describe.</p>
      */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
 
     /**
-     * <p>A list of repositories to describe.</p>
+     * <p>The repository that contains the images to describe.</p>
      */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
-     * <p>A list of repositories to describe.</p>
+     * <p>The repository that contains the images to describe.</p>
      */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
-     * <p>A list of repositories to describe.</p>
+     * <p>The repository that contains the images to describe.</p>
      */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
 
     /**
-     * <p>A list of repositories to describe.</p>
+     * <p>The repository that contains the images to describe.</p>
      */
     inline DescribeImagesRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>A list of repositories to describe.</p>
+     * <p>The repository that contains the images to describe.</p>
      */
     inline DescribeImagesRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
-     * <p>A list of repositories to describe.</p>
+     * <p>The repository that contains the images to describe.</p>
      */
     inline DescribeImagesRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 

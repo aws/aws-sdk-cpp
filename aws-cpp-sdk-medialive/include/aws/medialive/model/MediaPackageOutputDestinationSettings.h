@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Media Package Output Destination Settings<p><h3>See Also:</h3>   <a
+   * MediaPackage Output Destination Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MediaPackageOutputDestinationSettings">AWS
    * API Reference</a></p>
    */

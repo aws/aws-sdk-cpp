@@ -17,6 +17,7 @@
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ecr/model/ImageTagMutability.h>
 #include <utility>
 
 namespace Aws
@@ -296,6 +297,37 @@ namespace Model
      */
     inline Repository& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The tag mutability setting for the repository.</p>
+     */
+    inline const ImageTagMutability& GetImageTagMutability() const{ return m_imageTagMutability; }
+
+    /**
+     * <p>The tag mutability setting for the repository.</p>
+     */
+    inline bool ImageTagMutabilityHasBeenSet() const { return m_imageTagMutabilityHasBeenSet; }
+
+    /**
+     * <p>The tag mutability setting for the repository.</p>
+     */
+    inline void SetImageTagMutability(const ImageTagMutability& value) { m_imageTagMutabilityHasBeenSet = true; m_imageTagMutability = value; }
+
+    /**
+     * <p>The tag mutability setting for the repository.</p>
+     */
+    inline void SetImageTagMutability(ImageTagMutability&& value) { m_imageTagMutabilityHasBeenSet = true; m_imageTagMutability = std::move(value); }
+
+    /**
+     * <p>The tag mutability setting for the repository.</p>
+     */
+    inline Repository& WithImageTagMutability(const ImageTagMutability& value) { SetImageTagMutability(value); return *this;}
+
+    /**
+     * <p>The tag mutability setting for the repository.</p>
+     */
+    inline Repository& WithImageTagMutability(ImageTagMutability&& value) { SetImageTagMutability(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_repositoryArn;
@@ -312,6 +344,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
+    ImageTagMutability m_imageTagMutability;
+    bool m_imageTagMutabilityHasBeenSet;
   };
 
 } // namespace Model

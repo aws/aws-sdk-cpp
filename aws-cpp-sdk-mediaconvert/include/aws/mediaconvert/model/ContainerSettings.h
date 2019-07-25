@@ -268,32 +268,38 @@ namespace Model
 
 
     /**
-     * Settings for MP4 Container
+     * Settings for MP4 container. You can create audio-only AAC outputs with this
+     * container.
      */
     inline const Mp4Settings& GetMp4Settings() const{ return m_mp4Settings; }
 
     /**
-     * Settings for MP4 Container
+     * Settings for MP4 container. You can create audio-only AAC outputs with this
+     * container.
      */
     inline bool Mp4SettingsHasBeenSet() const { return m_mp4SettingsHasBeenSet; }
 
     /**
-     * Settings for MP4 Container
+     * Settings for MP4 container. You can create audio-only AAC outputs with this
+     * container.
      */
     inline void SetMp4Settings(const Mp4Settings& value) { m_mp4SettingsHasBeenSet = true; m_mp4Settings = value; }
 
     /**
-     * Settings for MP4 Container
+     * Settings for MP4 container. You can create audio-only AAC outputs with this
+     * container.
      */
     inline void SetMp4Settings(Mp4Settings&& value) { m_mp4SettingsHasBeenSet = true; m_mp4Settings = std::move(value); }
 
     /**
-     * Settings for MP4 Container
+     * Settings for MP4 container. You can create audio-only AAC outputs with this
+     * container.
      */
     inline ContainerSettings& WithMp4Settings(const Mp4Settings& value) { SetMp4Settings(value); return *this;}
 
     /**
-     * Settings for MP4 Container
+     * Settings for MP4 container. You can create audio-only AAC outputs with this
+     * container.
      */
     inline ContainerSettings& WithMp4Settings(Mp4Settings&& value) { SetMp4Settings(std::move(value)); return *this;}
 

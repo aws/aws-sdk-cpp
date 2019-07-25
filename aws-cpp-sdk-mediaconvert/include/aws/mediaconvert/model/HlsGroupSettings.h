@@ -65,50 +65,58 @@ namespace Model
 
 
     /**
-     * Choose one or more ad marker types to pass SCTE35 signals through to this group
-     * of Apple HLS outputs.
+     * Choose one or more ad marker types to decorate your Apple HLS manifest. This
+     * setting does not determine whether SCTE-35 markers appear in the outputs
+     * themselves.
      */
     inline const Aws::Vector<HlsAdMarkers>& GetAdMarkers() const{ return m_adMarkers; }
 
     /**
-     * Choose one or more ad marker types to pass SCTE35 signals through to this group
-     * of Apple HLS outputs.
+     * Choose one or more ad marker types to decorate your Apple HLS manifest. This
+     * setting does not determine whether SCTE-35 markers appear in the outputs
+     * themselves.
      */
     inline bool AdMarkersHasBeenSet() const { return m_adMarkersHasBeenSet; }
 
     /**
-     * Choose one or more ad marker types to pass SCTE35 signals through to this group
-     * of Apple HLS outputs.
+     * Choose one or more ad marker types to decorate your Apple HLS manifest. This
+     * setting does not determine whether SCTE-35 markers appear in the outputs
+     * themselves.
      */
     inline void SetAdMarkers(const Aws::Vector<HlsAdMarkers>& value) { m_adMarkersHasBeenSet = true; m_adMarkers = value; }
 
     /**
-     * Choose one or more ad marker types to pass SCTE35 signals through to this group
-     * of Apple HLS outputs.
+     * Choose one or more ad marker types to decorate your Apple HLS manifest. This
+     * setting does not determine whether SCTE-35 markers appear in the outputs
+     * themselves.
      */
     inline void SetAdMarkers(Aws::Vector<HlsAdMarkers>&& value) { m_adMarkersHasBeenSet = true; m_adMarkers = std::move(value); }
 
     /**
-     * Choose one or more ad marker types to pass SCTE35 signals through to this group
-     * of Apple HLS outputs.
+     * Choose one or more ad marker types to decorate your Apple HLS manifest. This
+     * setting does not determine whether SCTE-35 markers appear in the outputs
+     * themselves.
      */
     inline HlsGroupSettings& WithAdMarkers(const Aws::Vector<HlsAdMarkers>& value) { SetAdMarkers(value); return *this;}
 
     /**
-     * Choose one or more ad marker types to pass SCTE35 signals through to this group
-     * of Apple HLS outputs.
+     * Choose one or more ad marker types to decorate your Apple HLS manifest. This
+     * setting does not determine whether SCTE-35 markers appear in the outputs
+     * themselves.
      */
     inline HlsGroupSettings& WithAdMarkers(Aws::Vector<HlsAdMarkers>&& value) { SetAdMarkers(std::move(value)); return *this;}
 
     /**
-     * Choose one or more ad marker types to pass SCTE35 signals through to this group
-     * of Apple HLS outputs.
+     * Choose one or more ad marker types to decorate your Apple HLS manifest. This
+     * setting does not determine whether SCTE-35 markers appear in the outputs
+     * themselves.
      */
     inline HlsGroupSettings& AddAdMarkers(const HlsAdMarkers& value) { m_adMarkersHasBeenSet = true; m_adMarkers.push_back(value); return *this; }
 
     /**
-     * Choose one or more ad marker types to pass SCTE35 signals through to this group
-     * of Apple HLS outputs.
+     * Choose one or more ad marker types to decorate your Apple HLS manifest. This
+     * setting does not determine whether SCTE-35 markers appear in the outputs
+     * themselves.
      */
     inline HlsGroupSettings& AddAdMarkers(HlsAdMarkers&& value) { m_adMarkersHasBeenSet = true; m_adMarkers.push_back(std::move(value)); return *this; }
 

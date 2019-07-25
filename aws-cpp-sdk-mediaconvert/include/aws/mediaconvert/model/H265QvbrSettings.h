@@ -52,9 +52,9 @@ namespace Model
      * Use this setting only when Rate control mode is QVBR and Quality tuning level is
      * Multi-pass HQ. For Max average bitrate values suited to the complexity of your
      * input video, the service limits the average bitrate of the video part of this
-     * output to the value you choose. That is, the total size of the video element is
-     * less than or equal to the value you set multiplied by the number of seconds of
-     * encoded output.
+     * output to the value that you choose. That is, the total size of the video
+     * element is less than or equal to the value you set multiplied by the number of
+     * seconds of encoded output.
      */
     inline int GetMaxAverageBitrate() const{ return m_maxAverageBitrate; }
 
@@ -62,9 +62,9 @@ namespace Model
      * Use this setting only when Rate control mode is QVBR and Quality tuning level is
      * Multi-pass HQ. For Max average bitrate values suited to the complexity of your
      * input video, the service limits the average bitrate of the video part of this
-     * output to the value you choose. That is, the total size of the video element is
-     * less than or equal to the value you set multiplied by the number of seconds of
-     * encoded output.
+     * output to the value that you choose. That is, the total size of the video
+     * element is less than or equal to the value you set multiplied by the number of
+     * seconds of encoded output.
      */
     inline bool MaxAverageBitrateHasBeenSet() const { return m_maxAverageBitrateHasBeenSet; }
 
@@ -72,9 +72,9 @@ namespace Model
      * Use this setting only when Rate control mode is QVBR and Quality tuning level is
      * Multi-pass HQ. For Max average bitrate values suited to the complexity of your
      * input video, the service limits the average bitrate of the video part of this
-     * output to the value you choose. That is, the total size of the video element is
-     * less than or equal to the value you set multiplied by the number of seconds of
-     * encoded output.
+     * output to the value that you choose. That is, the total size of the video
+     * element is less than or equal to the value you set multiplied by the number of
+     * seconds of encoded output.
      */
     inline void SetMaxAverageBitrate(int value) { m_maxAverageBitrateHasBeenSet = true; m_maxAverageBitrate = value; }
 
@@ -82,9 +82,9 @@ namespace Model
      * Use this setting only when Rate control mode is QVBR and Quality tuning level is
      * Multi-pass HQ. For Max average bitrate values suited to the complexity of your
      * input video, the service limits the average bitrate of the video part of this
-     * output to the value you choose. That is, the total size of the video element is
-     * less than or equal to the value you set multiplied by the number of seconds of
-     * encoded output.
+     * output to the value that you choose. That is, the total size of the video
+     * element is less than or equal to the value you set multiplied by the number of
+     * seconds of encoded output.
      */
     inline H265QvbrSettings& WithMaxAverageBitrate(int value) { SetMaxAverageBitrate(value); return *this;}
 

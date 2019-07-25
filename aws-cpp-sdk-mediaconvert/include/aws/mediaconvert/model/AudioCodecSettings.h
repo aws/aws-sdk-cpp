@@ -19,6 +19,7 @@
 #include <aws/mediaconvert/model/Ac3Settings.h>
 #include <aws/mediaconvert/model/AiffSettings.h>
 #include <aws/mediaconvert/model/AudioCodec.h>
+#include <aws/mediaconvert/model/Eac3AtmosSettings.h>
 #include <aws/mediaconvert/model/Eac3Settings.h>
 #include <aws/mediaconvert/model/Mp2Settings.h>
 #include <aws/mediaconvert/model/WavSettings.h>
@@ -42,11 +43,11 @@ namespace Model
   /**
    * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
    * group of settings related to audio encoding. The settings in this group vary
-   * depending on the value you choose for Audio codec (Codec). For each codec enum
-   * you choose, define the corresponding settings object. The following lists the
-   * codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV,
-   * WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3,
-   * Eac3Settings<p><h3>See Also:</h3>   <a
+   * depending on the value that you choose for Audio codec (Codec). For each codec
+   * enum that you choose, define the corresponding settings object. The following
+   * lists the codec enum, settings object pairs. * AAC, AacSettings * MP2,
+   * Mp2Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3,
+   * Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AudioCodecSettings">AWS
    * API Reference</a></p>
    */
@@ -233,6 +234,43 @@ namespace Model
 
     /**
      * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the
+     * value EAC3_ATMOS.
+     */
+    inline const Eac3AtmosSettings& GetEac3AtmosSettings() const{ return m_eac3AtmosSettings; }
+
+    /**
+     * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the
+     * value EAC3_ATMOS.
+     */
+    inline bool Eac3AtmosSettingsHasBeenSet() const { return m_eac3AtmosSettingsHasBeenSet; }
+
+    /**
+     * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the
+     * value EAC3_ATMOS.
+     */
+    inline void SetEac3AtmosSettings(const Eac3AtmosSettings& value) { m_eac3AtmosSettingsHasBeenSet = true; m_eac3AtmosSettings = value; }
+
+    /**
+     * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the
+     * value EAC3_ATMOS.
+     */
+    inline void SetEac3AtmosSettings(Eac3AtmosSettings&& value) { m_eac3AtmosSettingsHasBeenSet = true; m_eac3AtmosSettings = std::move(value); }
+
+    /**
+     * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the
+     * value EAC3_ATMOS.
+     */
+    inline AudioCodecSettings& WithEac3AtmosSettings(const Eac3AtmosSettings& value) { SetEac3AtmosSettings(value); return *this;}
+
+    /**
+     * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the
+     * value EAC3_ATMOS.
+     */
+    inline AudioCodecSettings& WithEac3AtmosSettings(Eac3AtmosSettings&& value) { SetEac3AtmosSettings(std::move(value)); return *this;}
+
+
+    /**
+     * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the
      * value EAC3.
      */
     inline const Eac3Settings& GetEac3Settings() const{ return m_eac3Settings; }
@@ -354,6 +392,9 @@ namespace Model
 
     AudioCodec m_codec;
     bool m_codecHasBeenSet;
+
+    Eac3AtmosSettings m_eac3AtmosSettings;
+    bool m_eac3AtmosSettingsHasBeenSet;
 
     Eac3Settings m_eac3Settings;
     bool m_eac3SettingsHasBeenSet;
