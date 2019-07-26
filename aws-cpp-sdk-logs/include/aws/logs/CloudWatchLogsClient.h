@@ -396,8 +396,10 @@ namespace Model
          * task at a time. To cancel an export task, use <a>CancelExportTask</a>.</p>
          * <p>You can export logs from multiple log groups or multiple time ranges to the
          * same S3 bucket. To separate out log data for each export task, you can specify a
-         * prefix to be used as the Amazon S3 key prefix for all exported
-         * objects.</p><p><h3>See Also:</h3>   <a
+         * prefix to be used as the Amazon S3 key prefix for all exported objects.</p>
+         * <p>Exporting to S3 buckets that are encrypted with AES-256 is supported.
+         * Exporting to S3 buckets encrypted with SSE-KMS is not supported. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask">AWS
          * API Reference</a></p>
          */
@@ -413,8 +415,10 @@ namespace Model
          * task at a time. To cancel an export task, use <a>CancelExportTask</a>.</p>
          * <p>You can export logs from multiple log groups or multiple time ranges to the
          * same S3 bucket. To separate out log data for each export task, you can specify a
-         * prefix to be used as the Amazon S3 key prefix for all exported
-         * objects.</p><p><h3>See Also:</h3>   <a
+         * prefix to be used as the Amazon S3 key prefix for all exported objects.</p>
+         * <p>Exporting to S3 buckets that are encrypted with AES-256 is supported.
+         * Exporting to S3 buckets encrypted with SSE-KMS is not supported. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask">AWS
          * API Reference</a></p>
          *
@@ -432,8 +436,10 @@ namespace Model
          * task at a time. To cancel an export task, use <a>CancelExportTask</a>.</p>
          * <p>You can export logs from multiple log groups or multiple time ranges to the
          * same S3 bucket. To separate out log data for each export task, you can specify a
-         * prefix to be used as the Amazon S3 key prefix for all exported
-         * objects.</p><p><h3>See Also:</h3>   <a
+         * prefix to be used as the Amazon S3 key prefix for all exported objects.</p>
+         * <p>Exporting to S3 buckets that are encrypted with AES-256 is supported.
+         * Exporting to S3 buckets encrypted with SSE-KMS is not supported. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask">AWS
          * API Reference</a></p>
          *
@@ -1199,26 +1205,30 @@ namespace Model
         virtual void GetLogRecordAsync(const Model::GetLogRecordRequest& request, const GetLogRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the results from the specified query. If the query is in progress,
-         * partial results of that current execution are returned.</p> <p>Only the fields
+         * <p>Returns the results from the specified query.</p> <p>Only the fields
          * requested in the query are returned, along with a <code>@ptr</code> field which
          * is the identifier for the log record. You can use the value of <code>@ptr</code>
          * in a operation to get the full log record.</p> <p> <code>GetQueryResults</code>
-         * does not start a query execution. To run a query, use .</p><p><h3>See Also:</h3>
-         * <a
+         * does not start a query execution. To run a query, use .</p> <p>If the value of
+         * the <code>Status</code> field in the output is <code>Running</code>, this
+         * operation returns only partial results. If you see a value of
+         * <code>Scheduled</code> or <code>Running</code> for the status, you can retry the
+         * operation later to see the final results. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetQueryResults">AWS
          * API Reference</a></p>
          */
         virtual Model::GetQueryResultsOutcome GetQueryResults(const Model::GetQueryResultsRequest& request) const;
 
         /**
-         * <p>Returns the results from the specified query. If the query is in progress,
-         * partial results of that current execution are returned.</p> <p>Only the fields
+         * <p>Returns the results from the specified query.</p> <p>Only the fields
          * requested in the query are returned, along with a <code>@ptr</code> field which
          * is the identifier for the log record. You can use the value of <code>@ptr</code>
          * in a operation to get the full log record.</p> <p> <code>GetQueryResults</code>
-         * does not start a query execution. To run a query, use .</p><p><h3>See Also:</h3>
-         * <a
+         * does not start a query execution. To run a query, use .</p> <p>If the value of
+         * the <code>Status</code> field in the output is <code>Running</code>, this
+         * operation returns only partial results. If you see a value of
+         * <code>Scheduled</code> or <code>Running</code> for the status, you can retry the
+         * operation later to see the final results. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetQueryResults">AWS
          * API Reference</a></p>
          *
@@ -1227,13 +1237,15 @@ namespace Model
         virtual Model::GetQueryResultsOutcomeCallable GetQueryResultsCallable(const Model::GetQueryResultsRequest& request) const;
 
         /**
-         * <p>Returns the results from the specified query. If the query is in progress,
-         * partial results of that current execution are returned.</p> <p>Only the fields
+         * <p>Returns the results from the specified query.</p> <p>Only the fields
          * requested in the query are returned, along with a <code>@ptr</code> field which
          * is the identifier for the log record. You can use the value of <code>@ptr</code>
          * in a operation to get the full log record.</p> <p> <code>GetQueryResults</code>
-         * does not start a query execution. To run a query, use .</p><p><h3>See Also:</h3>
-         * <a
+         * does not start a query execution. To run a query, use .</p> <p>If the value of
+         * the <code>Status</code> field in the output is <code>Running</code>, this
+         * operation returns only partial results. If you see a value of
+         * <code>Scheduled</code> or <code>Running</code> for the status, you can retry the
+         * operation later to see the final results. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetQueryResults">AWS
          * API Reference</a></p>
          *
@@ -1270,14 +1282,14 @@ namespace Model
          * <p>Creates or updates a destination. A destination encapsulates a physical
          * resource (such as an Amazon Kinesis stream) and enables you to subscribe to a
          * real-time stream of log events for a different account, ingested using
-         * <a>PutLogEvents</a>. Currently, the only supported physical resource is a
-         * Kinesis stream belonging to the same account as the destination.</p> <p>Through
-         * an access policy, a destination controls what is written to its Kinesis stream.
-         * By default, <code>PutDestination</code> does not set any access policy with the
-         * destination, which means a cross-account user cannot call
-         * <a>PutSubscriptionFilter</a> against this destination. To enable this, the
-         * destination owner must call <a>PutDestinationPolicy</a> after
-         * <code>PutDestination</code>.</p><p><h3>See Also:</h3>   <a
+         * <a>PutLogEvents</a>. A destination can be an Amazon Kinesis stream, Amazon
+         * Kinesis Data Firehose strea, or an AWS Lambda function.</p> <p>Through an access
+         * policy, a destination controls what is written to it. By default,
+         * <code>PutDestination</code> does not set any access policy with the destination,
+         * which means a cross-account user cannot call <a>PutSubscriptionFilter</a>
+         * against this destination. To enable this, the destination owner must call
+         * <a>PutDestinationPolicy</a> after <code>PutDestination</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestination">AWS
          * API Reference</a></p>
          */
@@ -1287,14 +1299,14 @@ namespace Model
          * <p>Creates or updates a destination. A destination encapsulates a physical
          * resource (such as an Amazon Kinesis stream) and enables you to subscribe to a
          * real-time stream of log events for a different account, ingested using
-         * <a>PutLogEvents</a>. Currently, the only supported physical resource is a
-         * Kinesis stream belonging to the same account as the destination.</p> <p>Through
-         * an access policy, a destination controls what is written to its Kinesis stream.
-         * By default, <code>PutDestination</code> does not set any access policy with the
-         * destination, which means a cross-account user cannot call
-         * <a>PutSubscriptionFilter</a> against this destination. To enable this, the
-         * destination owner must call <a>PutDestinationPolicy</a> after
-         * <code>PutDestination</code>.</p><p><h3>See Also:</h3>   <a
+         * <a>PutLogEvents</a>. A destination can be an Amazon Kinesis stream, Amazon
+         * Kinesis Data Firehose strea, or an AWS Lambda function.</p> <p>Through an access
+         * policy, a destination controls what is written to it. By default,
+         * <code>PutDestination</code> does not set any access policy with the destination,
+         * which means a cross-account user cannot call <a>PutSubscriptionFilter</a>
+         * against this destination. To enable this, the destination owner must call
+         * <a>PutDestinationPolicy</a> after <code>PutDestination</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestination">AWS
          * API Reference</a></p>
          *
@@ -1306,14 +1318,14 @@ namespace Model
          * <p>Creates or updates a destination. A destination encapsulates a physical
          * resource (such as an Amazon Kinesis stream) and enables you to subscribe to a
          * real-time stream of log events for a different account, ingested using
-         * <a>PutLogEvents</a>. Currently, the only supported physical resource is a
-         * Kinesis stream belonging to the same account as the destination.</p> <p>Through
-         * an access policy, a destination controls what is written to its Kinesis stream.
-         * By default, <code>PutDestination</code> does not set any access policy with the
-         * destination, which means a cross-account user cannot call
-         * <a>PutSubscriptionFilter</a> against this destination. To enable this, the
-         * destination owner must call <a>PutDestinationPolicy</a> after
-         * <code>PutDestination</code>.</p><p><h3>See Also:</h3>   <a
+         * <a>PutLogEvents</a>. A destination can be an Amazon Kinesis stream, Amazon
+         * Kinesis Data Firehose strea, or an AWS Lambda function.</p> <p>Through an access
+         * policy, a destination controls what is written to it. By default,
+         * <code>PutDestination</code> does not set any access policy with the destination,
+         * which means a cross-account user cannot call <a>PutSubscriptionFilter</a>
+         * against this destination. To enable this, the destination owner must call
+         * <a>PutDestinationPolicy</a> after <code>PutDestination</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestination">AWS
          * API Reference</a></p>
          *

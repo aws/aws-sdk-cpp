@@ -17,6 +17,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/batch/model/LinuxParameters.h>
 #include <aws/batch/model/Volume.h>
 #include <aws/batch/model/KeyValuePair.h>
 #include <aws/batch/model/MountPoint.h>
@@ -875,6 +876,43 @@ namespace Model
      */
     inline ContainerDetail& AddResourceRequirements(ResourceRequirement&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Linux-specific modifications that are applied to the container, such as Linux
+     * kernel capabilities.</p>
+     */
+    inline const LinuxParameters& GetLinuxParameters() const{ return m_linuxParameters; }
+
+    /**
+     * <p>Linux-specific modifications that are applied to the container, such as Linux
+     * kernel capabilities.</p>
+     */
+    inline bool LinuxParametersHasBeenSet() const { return m_linuxParametersHasBeenSet; }
+
+    /**
+     * <p>Linux-specific modifications that are applied to the container, such as Linux
+     * kernel capabilities.</p>
+     */
+    inline void SetLinuxParameters(const LinuxParameters& value) { m_linuxParametersHasBeenSet = true; m_linuxParameters = value; }
+
+    /**
+     * <p>Linux-specific modifications that are applied to the container, such as Linux
+     * kernel capabilities.</p>
+     */
+    inline void SetLinuxParameters(LinuxParameters&& value) { m_linuxParametersHasBeenSet = true; m_linuxParameters = std::move(value); }
+
+    /**
+     * <p>Linux-specific modifications that are applied to the container, such as Linux
+     * kernel capabilities.</p>
+     */
+    inline ContainerDetail& WithLinuxParameters(const LinuxParameters& value) { SetLinuxParameters(value); return *this;}
+
+    /**
+     * <p>Linux-specific modifications that are applied to the container, such as Linux
+     * kernel capabilities.</p>
+     */
+    inline ContainerDetail& WithLinuxParameters(LinuxParameters&& value) { SetLinuxParameters(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_image;
@@ -936,6 +974,9 @@ namespace Model
 
     Aws::Vector<ResourceRequirement> m_resourceRequirements;
     bool m_resourceRequirementsHasBeenSet;
+
+    LinuxParameters m_linuxParameters;
+    bool m_linuxParametersHasBeenSet;
   };
 
 } // namespace Model

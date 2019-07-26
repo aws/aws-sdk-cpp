@@ -269,28 +269,32 @@ namespace Model
     /**
      * <p>If the value is true, the earliest log events are returned first. If the
      * value is false, the latest log events are returned first. The default value is
-     * false.</p>
+     * false.</p> <p>If you are using <code>nextToken</code> in this operation, you
+     * must specify <code>true</code> for <code>startFromHead</code>.</p>
      */
     inline bool GetStartFromHead() const{ return m_startFromHead; }
 
     /**
      * <p>If the value is true, the earliest log events are returned first. If the
      * value is false, the latest log events are returned first. The default value is
-     * false.</p>
+     * false.</p> <p>If you are using <code>nextToken</code> in this operation, you
+     * must specify <code>true</code> for <code>startFromHead</code>.</p>
      */
     inline bool StartFromHeadHasBeenSet() const { return m_startFromHeadHasBeenSet; }
 
     /**
      * <p>If the value is true, the earliest log events are returned first. If the
      * value is false, the latest log events are returned first. The default value is
-     * false.</p>
+     * false.</p> <p>If you are using <code>nextToken</code> in this operation, you
+     * must specify <code>true</code> for <code>startFromHead</code>.</p>
      */
     inline void SetStartFromHead(bool value) { m_startFromHeadHasBeenSet = true; m_startFromHead = value; }
 
     /**
      * <p>If the value is true, the earliest log events are returned first. If the
      * value is false, the latest log events are returned first. The default value is
-     * false.</p>
+     * false.</p> <p>If you are using <code>nextToken</code> in this operation, you
+     * must specify <code>true</code> for <code>startFromHead</code>.</p>
      */
     inline GetLogEventsRequest& WithStartFromHead(bool value) { SetStartFromHead(value); return *this;}
 

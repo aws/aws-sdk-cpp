@@ -163,67 +163,67 @@ namespace Model
 
 
     /**
-     * Tag(s) to add to the new resource
+     * Tag(s) to add to the new resource.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * Tag(s) to add to the new resource
+     * Tag(s) to add to the new resource.
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * Tag(s) to add to the new resource
+     * Tag(s) to add to the new resource.
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * Tag(s) to add to the new resource
+     * Tag(s) to add to the new resource.
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * Tag(s) to add to the new resource
+     * Tag(s) to add to the new resource.
      */
     inline CreateCoreDefinitionRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * Tag(s) to add to the new resource
+     * Tag(s) to add to the new resource.
      */
     inline CreateCoreDefinitionRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * Tag(s) to add to the new resource
+     * Tag(s) to add to the new resource.
      */
     inline CreateCoreDefinitionRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * Tag(s) to add to the new resource
+     * Tag(s) to add to the new resource.
      */
     inline CreateCoreDefinitionRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * Tag(s) to add to the new resource
+     * Tag(s) to add to the new resource.
      */
     inline CreateCoreDefinitionRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Tag(s) to add to the new resource
+     * Tag(s) to add to the new resource.
      */
     inline CreateCoreDefinitionRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * Tag(s) to add to the new resource
+     * Tag(s) to add to the new resource.
      */
     inline CreateCoreDefinitionRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Tag(s) to add to the new resource
+     * Tag(s) to add to the new resource.
      */
     inline CreateCoreDefinitionRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * Tag(s) to add to the new resource
+     * Tag(s) to add to the new resource.
      */
     inline CreateCoreDefinitionRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

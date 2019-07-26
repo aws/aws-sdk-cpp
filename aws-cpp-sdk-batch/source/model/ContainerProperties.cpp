@@ -46,7 +46,8 @@ ContainerProperties::ContainerProperties() :
     m_ulimitsHasBeenSet(false),
     m_userHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_resourceRequirementsHasBeenSet(false)
+    m_resourceRequirementsHasBeenSet(false),
+    m_linuxParametersHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ ContainerProperties::ContainerProperties(JsonView jsonValue) :
     m_ulimitsHasBeenSet(false),
     m_userHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_resourceRequirementsHasBeenSet(false)
+    m_resourceRequirementsHasBeenSet(false),
+    m_linuxParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -191,6 +193,13 @@ ContainerProperties& ContainerProperties::operator =(JsonView jsonValue)
     m_resourceRequirementsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("linuxParameters"))
+  {
+    m_linuxParameters = jsonValue.GetObject("linuxParameters");
+
+    m_linuxParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -309,6 +318,12 @@ JsonValue ContainerProperties::Jsonize() const
      resourceRequirementsJsonList[resourceRequirementsIndex].AsObject(m_resourceRequirements[resourceRequirementsIndex].Jsonize());
    }
    payload.WithArray("resourceRequirements", std::move(resourceRequirementsJsonList));
+
+  }
+
+  if(m_linuxParametersHasBeenSet)
+  {
+   payload.WithObject("linuxParameters", m_linuxParameters.Jsonize());
 
   }
 

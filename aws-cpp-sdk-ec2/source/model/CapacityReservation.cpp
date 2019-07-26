@@ -32,6 +32,9 @@ namespace Model
 
 CapacityReservation::CapacityReservation() : 
     m_capacityReservationIdHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
+    m_capacityReservationArnHasBeenSet(false),
+    m_availabilityZoneIdHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_instancePlatform(CapacityReservationInstancePlatform::NOT_SET),
     m_instancePlatformHasBeenSet(false),
@@ -60,6 +63,9 @@ CapacityReservation::CapacityReservation() :
 
 CapacityReservation::CapacityReservation(const XmlNode& xmlNode) : 
     m_capacityReservationIdHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
+    m_capacityReservationArnHasBeenSet(false),
+    m_availabilityZoneIdHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_instancePlatform(CapacityReservationInstancePlatform::NOT_SET),
     m_instancePlatformHasBeenSet(false),
@@ -98,6 +104,24 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
     {
       m_capacityReservationId = capacityReservationIdNode.GetText();
       m_capacityReservationIdHasBeenSet = true;
+    }
+    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
+    if(!ownerIdNode.IsNull())
+    {
+      m_ownerId = ownerIdNode.GetText();
+      m_ownerIdHasBeenSet = true;
+    }
+    XmlNode capacityReservationArnNode = resultNode.FirstChild("capacityReservationArn");
+    if(!capacityReservationArnNode.IsNull())
+    {
+      m_capacityReservationArn = capacityReservationArnNode.GetText();
+      m_capacityReservationArnHasBeenSet = true;
+    }
+    XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
+    if(!availabilityZoneIdNode.IsNull())
+    {
+      m_availabilityZoneId = availabilityZoneIdNode.GetText();
+      m_availabilityZoneIdHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
@@ -201,6 +225,21 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".CapacityReservationId=" << StringUtils::URLEncode(m_capacityReservationId.c_str()) << "&";
   }
 
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+
+  if(m_capacityReservationArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CapacityReservationArn=" << StringUtils::URLEncode(m_capacityReservationArn.c_str()) << "&";
+  }
+
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+
   if(m_instanceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
@@ -284,6 +323,18 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_capacityReservationIdHasBeenSet)
   {
       oStream << location << ".CapacityReservationId=" << StringUtils::URLEncode(m_capacityReservationId.c_str()) << "&";
+  }
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+  if(m_capacityReservationArnHasBeenSet)
+  {
+      oStream << location << ".CapacityReservationArn=" << StringUtils::URLEncode(m_capacityReservationArn.c_str()) << "&";
+  }
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
   if(m_instanceTypeHasBeenSet)
   {

@@ -47,7 +47,8 @@ namespace Model
     CACHE_ENGINE,
     INSTANCE_TYPE_FAMILY,
     BILLING_ENTITY,
-    RESERVATION_ID
+    RESERVATION_ID,
+    RIGHTSIZING_TYPE
   };
 
 namespace DimensionMapper

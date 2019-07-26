@@ -39,9 +39,7 @@ LogStream::LogStream() :
     m_lastIngestionTime(0),
     m_lastIngestionTimeHasBeenSet(false),
     m_uploadSequenceTokenHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_storedBytes(0),
-    m_storedBytesHasBeenSet(false)
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -56,9 +54,7 @@ LogStream::LogStream(JsonView jsonValue) :
     m_lastIngestionTime(0),
     m_lastIngestionTimeHasBeenSet(false),
     m_uploadSequenceTokenHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_storedBytes(0),
-    m_storedBytesHasBeenSet(false)
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -114,13 +110,6 @@ LogStream& LogStream::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("storedBytes"))
-  {
-    m_storedBytes = jsonValue.GetInt64("storedBytes");
-
-    m_storedBytesHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -167,12 +156,6 @@ JsonValue LogStream::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
-
-  }
-
-  if(m_storedBytesHasBeenSet)
-  {
-   payload.WithInt64("storedBytes", m_storedBytes);
 
   }
 

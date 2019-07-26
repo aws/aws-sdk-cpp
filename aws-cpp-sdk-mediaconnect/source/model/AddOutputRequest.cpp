@@ -29,6 +29,7 @@ namespace Model
 {
 
 AddOutputRequest::AddOutputRequest() : 
+    m_cidrAllowListHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_destinationHasBeenSet(false),
     m_encryptionHasBeenSet(false),
@@ -39,6 +40,7 @@ AddOutputRequest::AddOutputRequest() :
     m_portHasBeenSet(false),
     m_protocol(Protocol::NOT_SET),
     m_protocolHasBeenSet(false),
+    m_remoteIdHasBeenSet(false),
     m_smoothingLatency(0),
     m_smoothingLatencyHasBeenSet(false),
     m_streamIdHasBeenSet(false)
@@ -46,6 +48,7 @@ AddOutputRequest::AddOutputRequest() :
 }
 
 AddOutputRequest::AddOutputRequest(JsonView jsonValue) : 
+    m_cidrAllowListHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_destinationHasBeenSet(false),
     m_encryptionHasBeenSet(false),
@@ -56,6 +59,7 @@ AddOutputRequest::AddOutputRequest(JsonView jsonValue) :
     m_portHasBeenSet(false),
     m_protocol(Protocol::NOT_SET),
     m_protocolHasBeenSet(false),
+    m_remoteIdHasBeenSet(false),
     m_smoothingLatency(0),
     m_smoothingLatencyHasBeenSet(false),
     m_streamIdHasBeenSet(false)
@@ -65,6 +69,16 @@ AddOutputRequest::AddOutputRequest(JsonView jsonValue) :
 
 AddOutputRequest& AddOutputRequest::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("cidrAllowList"))
+  {
+    Array<JsonView> cidrAllowListJsonList = jsonValue.GetArray("cidrAllowList");
+    for(unsigned cidrAllowListIndex = 0; cidrAllowListIndex < cidrAllowListJsonList.GetLength(); ++cidrAllowListIndex)
+    {
+      m_cidrAllowList.push_back(cidrAllowListJsonList[cidrAllowListIndex].AsString());
+    }
+    m_cidrAllowListHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
@@ -114,6 +128,13 @@ AddOutputRequest& AddOutputRequest::operator =(JsonView jsonValue)
     m_protocolHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("remoteId"))
+  {
+    m_remoteId = jsonValue.GetString("remoteId");
+
+    m_remoteIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("smoothingLatency"))
   {
     m_smoothingLatency = jsonValue.GetInteger("smoothingLatency");
@@ -134,6 +155,17 @@ AddOutputRequest& AddOutputRequest::operator =(JsonView jsonValue)
 JsonValue AddOutputRequest::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_cidrAllowListHasBeenSet)
+  {
+   Array<JsonValue> cidrAllowListJsonList(m_cidrAllowList.size());
+   for(unsigned cidrAllowListIndex = 0; cidrAllowListIndex < cidrAllowListJsonList.GetLength(); ++cidrAllowListIndex)
+   {
+     cidrAllowListJsonList[cidrAllowListIndex].AsString(m_cidrAllowList[cidrAllowListIndex]);
+   }
+   payload.WithArray("cidrAllowList", std::move(cidrAllowListJsonList));
+
+  }
 
   if(m_descriptionHasBeenSet)
   {
@@ -174,6 +206,12 @@ JsonValue AddOutputRequest::Jsonize() const
   if(m_protocolHasBeenSet)
   {
    payload.WithString("protocol", ProtocolMapper::GetNameForProtocol(m_protocol));
+  }
+
+  if(m_remoteIdHasBeenSet)
+  {
+   payload.WithString("remoteId", m_remoteId);
+
   }
 
   if(m_smoothingLatencyHasBeenSet)

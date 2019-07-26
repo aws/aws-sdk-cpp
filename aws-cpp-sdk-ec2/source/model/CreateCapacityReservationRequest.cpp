@@ -26,6 +26,7 @@ CreateCapacityReservationRequest::CreateCapacityReservationRequest() :
     m_instancePlatform(CapacityReservationInstancePlatform::NOT_SET),
     m_instancePlatformHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
+    m_availabilityZoneIdHasBeenSet(false),
     m_tenancy(CapacityReservationTenancy::NOT_SET),
     m_tenancyHasBeenSet(false),
     m_instanceCount(0),
@@ -67,6 +68,11 @@ Aws::String CreateCapacityReservationRequest::SerializePayload() const
   if(m_availabilityZoneHasBeenSet)
   {
     ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+    ss << "AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
 
   if(m_tenancyHasBeenSet)

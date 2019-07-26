@@ -28,6 +28,9 @@ namespace Model
 {
 
   /**
+   * A map of the key-value pairs for the resource tag.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/TagResourceRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_GREENGRASS_API TagResourceRequest : public GreengrassRequest
   {
@@ -84,69 +87,43 @@ namespace Model
     inline TagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
 
-    /**
-     * A map of the key-value pairs for the resource tag.
-     */
+    
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
-    /**
-     * A map of the key-value pairs for the resource tag.
-     */
+    
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
-    /**
-     * A map of the key-value pairs for the resource tag.
-     */
+    
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    /**
-     * A map of the key-value pairs for the resource tag.
-     */
+    
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
-    /**
-     * A map of the key-value pairs for the resource tag.
-     */
+    
     inline TagResourceRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
-    /**
-     * A map of the key-value pairs for the resource tag.
-     */
+    
     inline TagResourceRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
-    /**
-     * A map of the key-value pairs for the resource tag.
-     */
+    
     inline TagResourceRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
-    /**
-     * A map of the key-value pairs for the resource tag.
-     */
+    
     inline TagResourceRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
-    /**
-     * A map of the key-value pairs for the resource tag.
-     */
+    
     inline TagResourceRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
-    /**
-     * A map of the key-value pairs for the resource tag.
-     */
+    
     inline TagResourceRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
-    /**
-     * A map of the key-value pairs for the resource tag.
-     */
+    
     inline TagResourceRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
-    /**
-     * A map of the key-value pairs for the resource tag.
-     */
+    
     inline TagResourceRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
-    /**
-     * A map of the key-value pairs for the resource tag.
-     */
+    
     inline TagResourceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:

@@ -23,7 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ResetJobBookmarkRequest::ResetJobBookmarkRequest() : 
-    m_jobNameHasBeenSet(false)
+    m_jobNameHasBeenSet(false),
+    m_runIdHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,12 @@ Aws::String ResetJobBookmarkRequest::SerializePayload() const
   if(m_jobNameHasBeenSet)
   {
    payload.WithString("JobName", m_jobName);
+
+  }
+
+  if(m_runIdHasBeenSet)
+  {
+   payload.WithString("RunId", m_runId);
 
   }
 

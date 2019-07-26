@@ -90,42 +90,82 @@ namespace Model
 
 
     /**
-     * The ID of the connector definition version.
+     * The ID of the connector definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListConnectorDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a connector definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline const Aws::String& GetConnectorDefinitionVersionId() const{ return m_connectorDefinitionVersionId; }
 
     /**
-     * The ID of the connector definition version.
+     * The ID of the connector definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListConnectorDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a connector definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline bool ConnectorDefinitionVersionIdHasBeenSet() const { return m_connectorDefinitionVersionIdHasBeenSet; }
 
     /**
-     * The ID of the connector definition version.
+     * The ID of the connector definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListConnectorDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a connector definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline void SetConnectorDefinitionVersionId(const Aws::String& value) { m_connectorDefinitionVersionIdHasBeenSet = true; m_connectorDefinitionVersionId = value; }
 
     /**
-     * The ID of the connector definition version.
+     * The ID of the connector definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListConnectorDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a connector definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline void SetConnectorDefinitionVersionId(Aws::String&& value) { m_connectorDefinitionVersionIdHasBeenSet = true; m_connectorDefinitionVersionId = std::move(value); }
 
     /**
-     * The ID of the connector definition version.
+     * The ID of the connector definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListConnectorDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a connector definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline void SetConnectorDefinitionVersionId(const char* value) { m_connectorDefinitionVersionIdHasBeenSet = true; m_connectorDefinitionVersionId.assign(value); }
 
     /**
-     * The ID of the connector definition version.
+     * The ID of the connector definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListConnectorDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a connector definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline GetConnectorDefinitionVersionRequest& WithConnectorDefinitionVersionId(const Aws::String& value) { SetConnectorDefinitionVersionId(value); return *this;}
 
     /**
-     * The ID of the connector definition version.
+     * The ID of the connector definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListConnectorDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a connector definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline GetConnectorDefinitionVersionRequest& WithConnectorDefinitionVersionId(Aws::String&& value) { SetConnectorDefinitionVersionId(std::move(value)); return *this;}
 
     /**
-     * The ID of the connector definition version.
+     * The ID of the connector definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListConnectorDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a connector definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline GetConnectorDefinitionVersionRequest& WithConnectorDefinitionVersionId(const char* value) { SetConnectorDefinitionVersionId(value); return *this;}
 

@@ -188,73 +188,73 @@ namespace Model
 
 
     /**
-     * The latest version of the definition.
+     * The ID of the latest version associated with the definition.
      */
     inline const Aws::String& GetLatestVersion() const{ return m_latestVersion; }
 
     /**
-     * The latest version of the definition.
+     * The ID of the latest version associated with the definition.
      */
     inline void SetLatestVersion(const Aws::String& value) { m_latestVersion = value; }
 
     /**
-     * The latest version of the definition.
+     * The ID of the latest version associated with the definition.
      */
     inline void SetLatestVersion(Aws::String&& value) { m_latestVersion = std::move(value); }
 
     /**
-     * The latest version of the definition.
+     * The ID of the latest version associated with the definition.
      */
     inline void SetLatestVersion(const char* value) { m_latestVersion.assign(value); }
 
     /**
-     * The latest version of the definition.
+     * The ID of the latest version associated with the definition.
      */
     inline GetGroupResult& WithLatestVersion(const Aws::String& value) { SetLatestVersion(value); return *this;}
 
     /**
-     * The latest version of the definition.
+     * The ID of the latest version associated with the definition.
      */
     inline GetGroupResult& WithLatestVersion(Aws::String&& value) { SetLatestVersion(std::move(value)); return *this;}
 
     /**
-     * The latest version of the definition.
+     * The ID of the latest version associated with the definition.
      */
     inline GetGroupResult& WithLatestVersion(const char* value) { SetLatestVersion(value); return *this;}
 
 
     /**
-     * The ARN of the latest version of the definition.
+     * The ARN of the latest version associated with the definition.
      */
     inline const Aws::String& GetLatestVersionArn() const{ return m_latestVersionArn; }
 
     /**
-     * The ARN of the latest version of the definition.
+     * The ARN of the latest version associated with the definition.
      */
     inline void SetLatestVersionArn(const Aws::String& value) { m_latestVersionArn = value; }
 
     /**
-     * The ARN of the latest version of the definition.
+     * The ARN of the latest version associated with the definition.
      */
     inline void SetLatestVersionArn(Aws::String&& value) { m_latestVersionArn = std::move(value); }
 
     /**
-     * The ARN of the latest version of the definition.
+     * The ARN of the latest version associated with the definition.
      */
     inline void SetLatestVersionArn(const char* value) { m_latestVersionArn.assign(value); }
 
     /**
-     * The ARN of the latest version of the definition.
+     * The ARN of the latest version associated with the definition.
      */
     inline GetGroupResult& WithLatestVersionArn(const Aws::String& value) { SetLatestVersionArn(value); return *this;}
 
     /**
-     * The ARN of the latest version of the definition.
+     * The ARN of the latest version associated with the definition.
      */
     inline GetGroupResult& WithLatestVersionArn(Aws::String&& value) { SetLatestVersionArn(std::move(value)); return *this;}
 
     /**
-     * The ARN of the latest version of the definition.
+     * The ARN of the latest version associated with the definition.
      */
     inline GetGroupResult& WithLatestVersionArn(const char* value) { SetLatestVersionArn(value); return *this;}
 
@@ -296,62 +296,62 @@ namespace Model
 
 
     /**
-     * The tags for the definition.
+     * Tag(s) attached to the resource arn.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * The tags for the definition.
+     * Tag(s) attached to the resource arn.
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * The tags for the definition.
+     * Tag(s) attached to the resource arn.
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * The tags for the definition.
+     * Tag(s) attached to the resource arn.
      */
     inline GetGroupResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * The tags for the definition.
+     * Tag(s) attached to the resource arn.
      */
     inline GetGroupResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * The tags for the definition.
+     * Tag(s) attached to the resource arn.
      */
     inline GetGroupResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * The tags for the definition.
+     * Tag(s) attached to the resource arn.
      */
     inline GetGroupResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * The tags for the definition.
+     * Tag(s) attached to the resource arn.
      */
     inline GetGroupResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * The tags for the definition.
+     * Tag(s) attached to the resource arn.
      */
     inline GetGroupResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * The tags for the definition.
+     * Tag(s) attached to the resource arn.
      */
     inline GetGroupResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * The tags for the definition.
+     * Tag(s) attached to the resource arn.
      */
     inline GetGroupResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * The tags for the definition.
+     * Tag(s) attached to the resource arn.
      */
     inline GetGroupResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 

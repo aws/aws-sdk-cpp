@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     zixi_push,
     rtp_fec,
-    rtp
+    rtp,
+    zixi_pull
   };
 
 namespace ProtocolMapper

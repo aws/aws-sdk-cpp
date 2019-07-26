@@ -84,42 +84,82 @@ namespace Model
 
 
     /**
-     * The ID of the resource definition version.
+     * The ID of the resource definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListResourceDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a resource definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline const Aws::String& GetResourceDefinitionVersionId() const{ return m_resourceDefinitionVersionId; }
 
     /**
-     * The ID of the resource definition version.
+     * The ID of the resource definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListResourceDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a resource definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline bool ResourceDefinitionVersionIdHasBeenSet() const { return m_resourceDefinitionVersionIdHasBeenSet; }
 
     /**
-     * The ID of the resource definition version.
+     * The ID of the resource definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListResourceDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a resource definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline void SetResourceDefinitionVersionId(const Aws::String& value) { m_resourceDefinitionVersionIdHasBeenSet = true; m_resourceDefinitionVersionId = value; }
 
     /**
-     * The ID of the resource definition version.
+     * The ID of the resource definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListResourceDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a resource definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline void SetResourceDefinitionVersionId(Aws::String&& value) { m_resourceDefinitionVersionIdHasBeenSet = true; m_resourceDefinitionVersionId = std::move(value); }
 
     /**
-     * The ID of the resource definition version.
+     * The ID of the resource definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListResourceDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a resource definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline void SetResourceDefinitionVersionId(const char* value) { m_resourceDefinitionVersionIdHasBeenSet = true; m_resourceDefinitionVersionId.assign(value); }
 
     /**
-     * The ID of the resource definition version.
+     * The ID of the resource definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListResourceDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a resource definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline GetResourceDefinitionVersionRequest& WithResourceDefinitionVersionId(const Aws::String& value) { SetResourceDefinitionVersionId(value); return *this;}
 
     /**
-     * The ID of the resource definition version.
+     * The ID of the resource definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListResourceDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a resource definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline GetResourceDefinitionVersionRequest& WithResourceDefinitionVersionId(Aws::String&& value) { SetResourceDefinitionVersionId(std::move(value)); return *this;}
 
     /**
-     * The ID of the resource definition version.
+     * The ID of the resource definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListResourceDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a resource definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline GetResourceDefinitionVersionRequest& WithResourceDefinitionVersionId(const char* value) { SetResourceDefinitionVersionId(value); return *this;}
 

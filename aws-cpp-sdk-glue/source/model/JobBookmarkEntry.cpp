@@ -36,6 +36,8 @@ JobBookmarkEntry::JobBookmarkEntry() :
     m_runHasBeenSet(false),
     m_attempt(0),
     m_attemptHasBeenSet(false),
+    m_previousRunIdHasBeenSet(false),
+    m_runIdHasBeenSet(false),
     m_jobBookmarkHasBeenSet(false)
 {
 }
@@ -48,6 +50,8 @@ JobBookmarkEntry::JobBookmarkEntry(JsonView jsonValue) :
     m_runHasBeenSet(false),
     m_attempt(0),
     m_attemptHasBeenSet(false),
+    m_previousRunIdHasBeenSet(false),
+    m_runIdHasBeenSet(false),
     m_jobBookmarkHasBeenSet(false)
 {
   *this = jsonValue;
@@ -81,6 +85,20 @@ JobBookmarkEntry& JobBookmarkEntry::operator =(JsonView jsonValue)
     m_attempt = jsonValue.GetInteger("Attempt");
 
     m_attemptHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PreviousRunId"))
+  {
+    m_previousRunId = jsonValue.GetString("PreviousRunId");
+
+    m_previousRunIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RunId"))
+  {
+    m_runId = jsonValue.GetString("RunId");
+
+    m_runIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("JobBookmark"))
@@ -118,6 +136,18 @@ JsonValue JobBookmarkEntry::Jsonize() const
   if(m_attemptHasBeenSet)
   {
    payload.WithInteger("Attempt", m_attempt);
+
+  }
+
+  if(m_previousRunIdHasBeenSet)
+  {
+   payload.WithString("PreviousRunId", m_previousRunId);
+
+  }
+
+  if(m_runIdHasBeenSet)
+  {
+   payload.WithString("RunId", m_runId);
 
   }
 

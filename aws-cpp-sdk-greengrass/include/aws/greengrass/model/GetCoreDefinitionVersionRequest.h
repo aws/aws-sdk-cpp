@@ -84,42 +84,82 @@ namespace Model
 
 
     /**
-     * The ID of the core definition version.
+     * The ID of the core definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListCoreDefinitionVersions'' requests. If the version is the last one that
+     * was associated with a core definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline const Aws::String& GetCoreDefinitionVersionId() const{ return m_coreDefinitionVersionId; }
 
     /**
-     * The ID of the core definition version.
+     * The ID of the core definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListCoreDefinitionVersions'' requests. If the version is the last one that
+     * was associated with a core definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline bool CoreDefinitionVersionIdHasBeenSet() const { return m_coreDefinitionVersionIdHasBeenSet; }
 
     /**
-     * The ID of the core definition version.
+     * The ID of the core definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListCoreDefinitionVersions'' requests. If the version is the last one that
+     * was associated with a core definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline void SetCoreDefinitionVersionId(const Aws::String& value) { m_coreDefinitionVersionIdHasBeenSet = true; m_coreDefinitionVersionId = value; }
 
     /**
-     * The ID of the core definition version.
+     * The ID of the core definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListCoreDefinitionVersions'' requests. If the version is the last one that
+     * was associated with a core definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline void SetCoreDefinitionVersionId(Aws::String&& value) { m_coreDefinitionVersionIdHasBeenSet = true; m_coreDefinitionVersionId = std::move(value); }
 
     /**
-     * The ID of the core definition version.
+     * The ID of the core definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListCoreDefinitionVersions'' requests. If the version is the last one that
+     * was associated with a core definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline void SetCoreDefinitionVersionId(const char* value) { m_coreDefinitionVersionIdHasBeenSet = true; m_coreDefinitionVersionId.assign(value); }
 
     /**
-     * The ID of the core definition version.
+     * The ID of the core definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListCoreDefinitionVersions'' requests. If the version is the last one that
+     * was associated with a core definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline GetCoreDefinitionVersionRequest& WithCoreDefinitionVersionId(const Aws::String& value) { SetCoreDefinitionVersionId(value); return *this;}
 
     /**
-     * The ID of the core definition version.
+     * The ID of the core definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListCoreDefinitionVersions'' requests. If the version is the last one that
+     * was associated with a core definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline GetCoreDefinitionVersionRequest& WithCoreDefinitionVersionId(Aws::String&& value) { SetCoreDefinitionVersionId(std::move(value)); return *this;}
 
     /**
-     * The ID of the core definition version.
+     * The ID of the core definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListCoreDefinitionVersions'' requests. If the version is the last one that
+     * was associated with a core definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline GetCoreDefinitionVersionRequest& WithCoreDefinitionVersionId(const char* value) { SetCoreDefinitionVersionId(value); return *this;}
 

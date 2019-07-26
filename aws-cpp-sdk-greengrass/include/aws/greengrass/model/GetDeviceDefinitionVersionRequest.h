@@ -90,42 +90,82 @@ namespace Model
 
 
     /**
-     * The ID of the device definition version.
+     * The ID of the device definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListDeviceDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a device definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline const Aws::String& GetDeviceDefinitionVersionId() const{ return m_deviceDefinitionVersionId; }
 
     /**
-     * The ID of the device definition version.
+     * The ID of the device definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListDeviceDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a device definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline bool DeviceDefinitionVersionIdHasBeenSet() const { return m_deviceDefinitionVersionIdHasBeenSet; }
 
     /**
-     * The ID of the device definition version.
+     * The ID of the device definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListDeviceDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a device definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline void SetDeviceDefinitionVersionId(const Aws::String& value) { m_deviceDefinitionVersionIdHasBeenSet = true; m_deviceDefinitionVersionId = value; }
 
     /**
-     * The ID of the device definition version.
+     * The ID of the device definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListDeviceDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a device definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline void SetDeviceDefinitionVersionId(Aws::String&& value) { m_deviceDefinitionVersionIdHasBeenSet = true; m_deviceDefinitionVersionId = std::move(value); }
 
     /**
-     * The ID of the device definition version.
+     * The ID of the device definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListDeviceDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a device definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline void SetDeviceDefinitionVersionId(const char* value) { m_deviceDefinitionVersionIdHasBeenSet = true; m_deviceDefinitionVersionId.assign(value); }
 
     /**
-     * The ID of the device definition version.
+     * The ID of the device definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListDeviceDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a device definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline GetDeviceDefinitionVersionRequest& WithDeviceDefinitionVersionId(const Aws::String& value) { SetDeviceDefinitionVersionId(value); return *this;}
 
     /**
-     * The ID of the device definition version.
+     * The ID of the device definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListDeviceDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a device definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline GetDeviceDefinitionVersionRequest& WithDeviceDefinitionVersionId(Aws::String&& value) { SetDeviceDefinitionVersionId(std::move(value)); return *this;}
 
     /**
-     * The ID of the device definition version.
+     * The ID of the device definition version. This value maps to the ''Version''
+     * property of the corresponding ''VersionInformation'' object, which is returned
+     * by ''ListDeviceDefinitionVersions'' requests. If the version is the last one
+     * that was associated with a device definition, the value also maps to the
+     * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
+     * object.
      */
     inline GetDeviceDefinitionVersionRequest& WithDeviceDefinitionVersionId(const char* value) { SetDeviceDefinitionVersionId(value); return *this;}
 

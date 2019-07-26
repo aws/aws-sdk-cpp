@@ -27,6 +27,7 @@
 #include <aws/ce/model/GetReservationCoverageResult.h>
 #include <aws/ce/model/GetReservationPurchaseRecommendationResult.h>
 #include <aws/ce/model/GetReservationUtilizationResult.h>
+#include <aws/ce/model/GetRightsizingRecommendationResult.h>
 #include <aws/ce/model/GetTagsResult.h>
 #include <aws/ce/model/GetUsageForecastResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -74,6 +75,7 @@ namespace Model
         class GetReservationCoverageRequest;
         class GetReservationPurchaseRecommendationRequest;
         class GetReservationUtilizationRequest;
+        class GetRightsizingRecommendationRequest;
         class GetTagsRequest;
         class GetUsageForecastRequest;
 
@@ -83,6 +85,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetReservationCoverageResult, Aws::Client::AWSError<CostExplorerErrors>> GetReservationCoverageOutcome;
         typedef Aws::Utils::Outcome<GetReservationPurchaseRecommendationResult, Aws::Client::AWSError<CostExplorerErrors>> GetReservationPurchaseRecommendationOutcome;
         typedef Aws::Utils::Outcome<GetReservationUtilizationResult, Aws::Client::AWSError<CostExplorerErrors>> GetReservationUtilizationOutcome;
+        typedef Aws::Utils::Outcome<GetRightsizingRecommendationResult, Aws::Client::AWSError<CostExplorerErrors>> GetRightsizingRecommendationOutcome;
         typedef Aws::Utils::Outcome<GetTagsResult, Aws::Client::AWSError<CostExplorerErrors>> GetTagsOutcome;
         typedef Aws::Utils::Outcome<GetUsageForecastResult, Aws::Client::AWSError<CostExplorerErrors>> GetUsageForecastOutcome;
 
@@ -92,6 +95,7 @@ namespace Model
         typedef std::future<GetReservationCoverageOutcome> GetReservationCoverageOutcomeCallable;
         typedef std::future<GetReservationPurchaseRecommendationOutcome> GetReservationPurchaseRecommendationOutcomeCallable;
         typedef std::future<GetReservationUtilizationOutcome> GetReservationUtilizationOutcomeCallable;
+        typedef std::future<GetRightsizingRecommendationOutcome> GetRightsizingRecommendationOutcomeCallable;
         typedef std::future<GetTagsOutcome> GetTagsOutcomeCallable;
         typedef std::future<GetUsageForecastOutcome> GetUsageForecastOutcomeCallable;
 } // namespace Model
@@ -104,6 +108,7 @@ namespace Model
     typedef std::function<void(const CostExplorerClient*, const Model::GetReservationCoverageRequest&, const Model::GetReservationCoverageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservationCoverageResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetReservationPurchaseRecommendationRequest&, const Model::GetReservationPurchaseRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservationPurchaseRecommendationResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetReservationUtilizationRequest&, const Model::GetReservationUtilizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservationUtilizationResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::GetRightsizingRecommendationRequest&, const Model::GetRightsizingRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRightsizingRecommendationResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetTagsRequest&, const Model::GetTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTagsResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetUsageForecastRequest&, const Model::GetUsageForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageForecastResponseReceivedHandler;
 
@@ -431,6 +436,46 @@ namespace Model
         virtual void GetReservationUtilizationAsync(const Model::GetReservationUtilizationRequest& request, const GetReservationUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates recommendations that helps you save cost by identifying idle and
+         * underutilized Amazon EC2 instances.</p> <p>Recommendations are generated to
+         * either downsize or terminate instances, along with providing savings detail and
+         * metrics. For details on calculation and function, see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-what-is.html">Optimizing
+         * Your Cost with Rightsizing Recommendations</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetRightsizingRecommendation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRightsizingRecommendationOutcome GetRightsizingRecommendation(const Model::GetRightsizingRecommendationRequest& request) const;
+
+        /**
+         * <p>Creates recommendations that helps you save cost by identifying idle and
+         * underutilized Amazon EC2 instances.</p> <p>Recommendations are generated to
+         * either downsize or terminate instances, along with providing savings detail and
+         * metrics. For details on calculation and function, see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-what-is.html">Optimizing
+         * Your Cost with Rightsizing Recommendations</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetRightsizingRecommendation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetRightsizingRecommendationOutcomeCallable GetRightsizingRecommendationCallable(const Model::GetRightsizingRecommendationRequest& request) const;
+
+        /**
+         * <p>Creates recommendations that helps you save cost by identifying idle and
+         * underutilized Amazon EC2 instances.</p> <p>Recommendations are generated to
+         * either downsize or terminate instances, along with providing savings detail and
+         * metrics. For details on calculation and function, see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-what-is.html">Optimizing
+         * Your Cost with Rightsizing Recommendations</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetRightsizingRecommendation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetRightsizingRecommendationAsync(const Model::GetRightsizingRecommendationRequest& request, const GetRightsizingRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Queries for available tag keys and tag values for a specified period. You can
          * search the tag values for an arbitrary string. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetTags">AWS API
@@ -499,6 +544,7 @@ namespace Model
         void GetReservationCoverageAsyncHelper(const Model::GetReservationCoverageRequest& request, const GetReservationCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReservationPurchaseRecommendationAsyncHelper(const Model::GetReservationPurchaseRecommendationRequest& request, const GetReservationPurchaseRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReservationUtilizationAsyncHelper(const Model::GetReservationUtilizationRequest& request, const GetReservationUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetRightsizingRecommendationAsyncHelper(const Model::GetRightsizingRecommendationRequest& request, const GetRightsizingRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTagsAsyncHelper(const Model::GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUsageForecastAsyncHelper(const Model::GetUsageForecastRequest& request, const GetUsageForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

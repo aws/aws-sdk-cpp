@@ -187,73 +187,73 @@ namespace Model
 
 
     /**
-     * The latest version of the definition.
+     * The ID of the latest version associated with the definition.
      */
     inline const Aws::String& GetLatestVersion() const{ return m_latestVersion; }
 
     /**
-     * The latest version of the definition.
+     * The ID of the latest version associated with the definition.
      */
     inline void SetLatestVersion(const Aws::String& value) { m_latestVersion = value; }
 
     /**
-     * The latest version of the definition.
+     * The ID of the latest version associated with the definition.
      */
     inline void SetLatestVersion(Aws::String&& value) { m_latestVersion = std::move(value); }
 
     /**
-     * The latest version of the definition.
+     * The ID of the latest version associated with the definition.
      */
     inline void SetLatestVersion(const char* value) { m_latestVersion.assign(value); }
 
     /**
-     * The latest version of the definition.
+     * The ID of the latest version associated with the definition.
      */
     inline CreateFunctionDefinitionResult& WithLatestVersion(const Aws::String& value) { SetLatestVersion(value); return *this;}
 
     /**
-     * The latest version of the definition.
+     * The ID of the latest version associated with the definition.
      */
     inline CreateFunctionDefinitionResult& WithLatestVersion(Aws::String&& value) { SetLatestVersion(std::move(value)); return *this;}
 
     /**
-     * The latest version of the definition.
+     * The ID of the latest version associated with the definition.
      */
     inline CreateFunctionDefinitionResult& WithLatestVersion(const char* value) { SetLatestVersion(value); return *this;}
 
 
     /**
-     * The ARN of the latest version of the definition.
+     * The ARN of the latest version associated with the definition.
      */
     inline const Aws::String& GetLatestVersionArn() const{ return m_latestVersionArn; }
 
     /**
-     * The ARN of the latest version of the definition.
+     * The ARN of the latest version associated with the definition.
      */
     inline void SetLatestVersionArn(const Aws::String& value) { m_latestVersionArn = value; }
 
     /**
-     * The ARN of the latest version of the definition.
+     * The ARN of the latest version associated with the definition.
      */
     inline void SetLatestVersionArn(Aws::String&& value) { m_latestVersionArn = std::move(value); }
 
     /**
-     * The ARN of the latest version of the definition.
+     * The ARN of the latest version associated with the definition.
      */
     inline void SetLatestVersionArn(const char* value) { m_latestVersionArn.assign(value); }
 
     /**
-     * The ARN of the latest version of the definition.
+     * The ARN of the latest version associated with the definition.
      */
     inline CreateFunctionDefinitionResult& WithLatestVersionArn(const Aws::String& value) { SetLatestVersionArn(value); return *this;}
 
     /**
-     * The ARN of the latest version of the definition.
+     * The ARN of the latest version associated with the definition.
      */
     inline CreateFunctionDefinitionResult& WithLatestVersionArn(Aws::String&& value) { SetLatestVersionArn(std::move(value)); return *this;}
 
     /**
-     * The ARN of the latest version of the definition.
+     * The ARN of the latest version associated with the definition.
      */
     inline CreateFunctionDefinitionResult& WithLatestVersionArn(const char* value) { SetLatestVersionArn(value); return *this;}
 

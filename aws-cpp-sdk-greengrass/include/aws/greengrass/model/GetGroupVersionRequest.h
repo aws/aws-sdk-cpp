@@ -84,42 +84,74 @@ namespace Model
 
 
     /**
-     * The ID of the group version.
+     * The ID of the group version. This value maps to the ''Version'' property of the
+     * corresponding ''VersionInformation'' object, which is returned by
+     * ''ListGroupVersions'' requests. If the version is the last one that was
+     * associated with a group, the value also maps to the ''LatestVersion'' property
+     * of the corresponding ''GroupInformation'' object.
      */
     inline const Aws::String& GetGroupVersionId() const{ return m_groupVersionId; }
 
     /**
-     * The ID of the group version.
+     * The ID of the group version. This value maps to the ''Version'' property of the
+     * corresponding ''VersionInformation'' object, which is returned by
+     * ''ListGroupVersions'' requests. If the version is the last one that was
+     * associated with a group, the value also maps to the ''LatestVersion'' property
+     * of the corresponding ''GroupInformation'' object.
      */
     inline bool GroupVersionIdHasBeenSet() const { return m_groupVersionIdHasBeenSet; }
 
     /**
-     * The ID of the group version.
+     * The ID of the group version. This value maps to the ''Version'' property of the
+     * corresponding ''VersionInformation'' object, which is returned by
+     * ''ListGroupVersions'' requests. If the version is the last one that was
+     * associated with a group, the value also maps to the ''LatestVersion'' property
+     * of the corresponding ''GroupInformation'' object.
      */
     inline void SetGroupVersionId(const Aws::String& value) { m_groupVersionIdHasBeenSet = true; m_groupVersionId = value; }
 
     /**
-     * The ID of the group version.
+     * The ID of the group version. This value maps to the ''Version'' property of the
+     * corresponding ''VersionInformation'' object, which is returned by
+     * ''ListGroupVersions'' requests. If the version is the last one that was
+     * associated with a group, the value also maps to the ''LatestVersion'' property
+     * of the corresponding ''GroupInformation'' object.
      */
     inline void SetGroupVersionId(Aws::String&& value) { m_groupVersionIdHasBeenSet = true; m_groupVersionId = std::move(value); }
 
     /**
-     * The ID of the group version.
+     * The ID of the group version. This value maps to the ''Version'' property of the
+     * corresponding ''VersionInformation'' object, which is returned by
+     * ''ListGroupVersions'' requests. If the version is the last one that was
+     * associated with a group, the value also maps to the ''LatestVersion'' property
+     * of the corresponding ''GroupInformation'' object.
      */
     inline void SetGroupVersionId(const char* value) { m_groupVersionIdHasBeenSet = true; m_groupVersionId.assign(value); }
 
     /**
-     * The ID of the group version.
+     * The ID of the group version. This value maps to the ''Version'' property of the
+     * corresponding ''VersionInformation'' object, which is returned by
+     * ''ListGroupVersions'' requests. If the version is the last one that was
+     * associated with a group, the value also maps to the ''LatestVersion'' property
+     * of the corresponding ''GroupInformation'' object.
      */
     inline GetGroupVersionRequest& WithGroupVersionId(const Aws::String& value) { SetGroupVersionId(value); return *this;}
 
     /**
-     * The ID of the group version.
+     * The ID of the group version. This value maps to the ''Version'' property of the
+     * corresponding ''VersionInformation'' object, which is returned by
+     * ''ListGroupVersions'' requests. If the version is the last one that was
+     * associated with a group, the value also maps to the ''LatestVersion'' property
+     * of the corresponding ''GroupInformation'' object.
      */
     inline GetGroupVersionRequest& WithGroupVersionId(Aws::String&& value) { SetGroupVersionId(std::move(value)); return *this;}
 
     /**
-     * The ID of the group version.
+     * The ID of the group version. This value maps to the ''Version'' property of the
+     * corresponding ''VersionInformation'' object, which is returned by
+     * ''ListGroupVersions'' requests. If the version is the last one that was
+     * associated with a group, the value also maps to the ''LatestVersion'' property
+     * of the corresponding ''GroupInformation'' object.
      */
     inline GetGroupVersionRequest& WithGroupVersionId(const char* value) { SetGroupVersionId(value); return *this;}
 

@@ -424,55 +424,6 @@ namespace Model
      */
     inline FilterLogEventsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
-
-    /**
-     * <p>If the value is true, the operation makes a best effort to provide responses
-     * that contain events from multiple log streams within the log group, interleaved
-     * in a single response. If the value is false, all the matched log events in the
-     * first log stream are searched first, then those in the next log stream, and so
-     * on. The default is false.</p> <p> <b>IMPORTANT:</b> Starting on June 17, 2019,
-     * this parameter will be ignored and the value will be assumed to be true. The
-     * response from this operation will always interleave events from multiple log
-     * streams within a log group.</p>
-     */
-    inline bool GetInterleaved() const{ return m_interleaved; }
-
-    /**
-     * <p>If the value is true, the operation makes a best effort to provide responses
-     * that contain events from multiple log streams within the log group, interleaved
-     * in a single response. If the value is false, all the matched log events in the
-     * first log stream are searched first, then those in the next log stream, and so
-     * on. The default is false.</p> <p> <b>IMPORTANT:</b> Starting on June 17, 2019,
-     * this parameter will be ignored and the value will be assumed to be true. The
-     * response from this operation will always interleave events from multiple log
-     * streams within a log group.</p>
-     */
-    inline bool InterleavedHasBeenSet() const { return m_interleavedHasBeenSet; }
-
-    /**
-     * <p>If the value is true, the operation makes a best effort to provide responses
-     * that contain events from multiple log streams within the log group, interleaved
-     * in a single response. If the value is false, all the matched log events in the
-     * first log stream are searched first, then those in the next log stream, and so
-     * on. The default is false.</p> <p> <b>IMPORTANT:</b> Starting on June 17, 2019,
-     * this parameter will be ignored and the value will be assumed to be true. The
-     * response from this operation will always interleave events from multiple log
-     * streams within a log group.</p>
-     */
-    inline void SetInterleaved(bool value) { m_interleavedHasBeenSet = true; m_interleaved = value; }
-
-    /**
-     * <p>If the value is true, the operation makes a best effort to provide responses
-     * that contain events from multiple log streams within the log group, interleaved
-     * in a single response. If the value is false, all the matched log events in the
-     * first log stream are searched first, then those in the next log stream, and so
-     * on. The default is false.</p> <p> <b>IMPORTANT:</b> Starting on June 17, 2019,
-     * this parameter will be ignored and the value will be assumed to be true. The
-     * response from this operation will always interleave events from multiple log
-     * streams within a log group.</p>
-     */
-    inline FilterLogEventsRequest& WithInterleaved(bool value) { SetInterleaved(value); return *this;}
-
   private:
 
     Aws::String m_logGroupName;
@@ -498,9 +449,6 @@ namespace Model
 
     int m_limit;
     bool m_limitHasBeenSet;
-
-    bool m_interleaved;
-    bool m_interleavedHasBeenSet;
   };
 
 } // namespace Model

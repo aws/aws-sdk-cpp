@@ -212,83 +212,83 @@ namespace Model
 
 
     /**
-     * The latest version of the group.
+     * The ID of the latest version associated with the group.
      */
     inline const Aws::String& GetLatestVersion() const{ return m_latestVersion; }
 
     /**
-     * The latest version of the group.
+     * The ID of the latest version associated with the group.
      */
     inline bool LatestVersionHasBeenSet() const { return m_latestVersionHasBeenSet; }
 
     /**
-     * The latest version of the group.
+     * The ID of the latest version associated with the group.
      */
     inline void SetLatestVersion(const Aws::String& value) { m_latestVersionHasBeenSet = true; m_latestVersion = value; }
 
     /**
-     * The latest version of the group.
+     * The ID of the latest version associated with the group.
      */
     inline void SetLatestVersion(Aws::String&& value) { m_latestVersionHasBeenSet = true; m_latestVersion = std::move(value); }
 
     /**
-     * The latest version of the group.
+     * The ID of the latest version associated with the group.
      */
     inline void SetLatestVersion(const char* value) { m_latestVersionHasBeenSet = true; m_latestVersion.assign(value); }
 
     /**
-     * The latest version of the group.
+     * The ID of the latest version associated with the group.
      */
     inline GroupInformation& WithLatestVersion(const Aws::String& value) { SetLatestVersion(value); return *this;}
 
     /**
-     * The latest version of the group.
+     * The ID of the latest version associated with the group.
      */
     inline GroupInformation& WithLatestVersion(Aws::String&& value) { SetLatestVersion(std::move(value)); return *this;}
 
     /**
-     * The latest version of the group.
+     * The ID of the latest version associated with the group.
      */
     inline GroupInformation& WithLatestVersion(const char* value) { SetLatestVersion(value); return *this;}
 
 
     /**
-     * The ARN of the latest version of the group.
+     * The ARN of the latest version associated with the group.
      */
     inline const Aws::String& GetLatestVersionArn() const{ return m_latestVersionArn; }
 
     /**
-     * The ARN of the latest version of the group.
+     * The ARN of the latest version associated with the group.
      */
     inline bool LatestVersionArnHasBeenSet() const { return m_latestVersionArnHasBeenSet; }
 
     /**
-     * The ARN of the latest version of the group.
+     * The ARN of the latest version associated with the group.
      */
     inline void SetLatestVersionArn(const Aws::String& value) { m_latestVersionArnHasBeenSet = true; m_latestVersionArn = value; }
 
     /**
-     * The ARN of the latest version of the group.
+     * The ARN of the latest version associated with the group.
      */
     inline void SetLatestVersionArn(Aws::String&& value) { m_latestVersionArnHasBeenSet = true; m_latestVersionArn = std::move(value); }
 
     /**
-     * The ARN of the latest version of the group.
+     * The ARN of the latest version associated with the group.
      */
     inline void SetLatestVersionArn(const char* value) { m_latestVersionArnHasBeenSet = true; m_latestVersionArn.assign(value); }
 
     /**
-     * The ARN of the latest version of the group.
+     * The ARN of the latest version associated with the group.
      */
     inline GroupInformation& WithLatestVersionArn(const Aws::String& value) { SetLatestVersionArn(value); return *this;}
 
     /**
-     * The ARN of the latest version of the group.
+     * The ARN of the latest version associated with the group.
      */
     inline GroupInformation& WithLatestVersionArn(Aws::String&& value) { SetLatestVersionArn(std::move(value)); return *this;}
 
     /**
-     * The ARN of the latest version of the group.
+     * The ARN of the latest version associated with the group.
      */
     inline GroupInformation& WithLatestVersionArn(const char* value) { SetLatestVersionArn(value); return *this;}
 

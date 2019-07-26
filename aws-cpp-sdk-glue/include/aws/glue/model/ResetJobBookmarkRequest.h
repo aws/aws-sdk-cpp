@@ -84,10 +84,54 @@ namespace Model
      */
     inline ResetJobBookmarkRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
 
+
+    /**
+     * <p>The unique run identifier associated with this job run.</p>
+     */
+    inline const Aws::String& GetRunId() const{ return m_runId; }
+
+    /**
+     * <p>The unique run identifier associated with this job run.</p>
+     */
+    inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
+
+    /**
+     * <p>The unique run identifier associated with this job run.</p>
+     */
+    inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
+
+    /**
+     * <p>The unique run identifier associated with this job run.</p>
+     */
+    inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
+
+    /**
+     * <p>The unique run identifier associated with this job run.</p>
+     */
+    inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
+
+    /**
+     * <p>The unique run identifier associated with this job run.</p>
+     */
+    inline ResetJobBookmarkRequest& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
+
+    /**
+     * <p>The unique run identifier associated with this job run.</p>
+     */
+    inline ResetJobBookmarkRequest& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique run identifier associated with this job run.</p>
+     */
+    inline ResetJobBookmarkRequest& WithRunId(const char* value) { SetRunId(value); return *this;}
+
   private:
 
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;
+
+    Aws::String m_runId;
+    bool m_runIdHasBeenSet;
   };
 
 } // namespace Model

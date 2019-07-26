@@ -363,56 +363,56 @@ namespace Model
 
     /**
      * The range of IP addresses that should be allowed to contribute content to your
-     * source. These IP addresses should in the form of a Classless Inter-Domain
+     * source. These IP addresses should be in the form of a Classless Inter-Domain
      * Routing (CIDR) block; for example, 10.0.0.0/16.
      */
     inline const Aws::String& GetWhitelistCidr() const{ return m_whitelistCidr; }
 
     /**
      * The range of IP addresses that should be allowed to contribute content to your
-     * source. These IP addresses should in the form of a Classless Inter-Domain
+     * source. These IP addresses should be in the form of a Classless Inter-Domain
      * Routing (CIDR) block; for example, 10.0.0.0/16.
      */
     inline bool WhitelistCidrHasBeenSet() const { return m_whitelistCidrHasBeenSet; }
 
     /**
      * The range of IP addresses that should be allowed to contribute content to your
-     * source. These IP addresses should in the form of a Classless Inter-Domain
+     * source. These IP addresses should be in the form of a Classless Inter-Domain
      * Routing (CIDR) block; for example, 10.0.0.0/16.
      */
     inline void SetWhitelistCidr(const Aws::String& value) { m_whitelistCidrHasBeenSet = true; m_whitelistCidr = value; }
 
     /**
      * The range of IP addresses that should be allowed to contribute content to your
-     * source. These IP addresses should in the form of a Classless Inter-Domain
+     * source. These IP addresses should be in the form of a Classless Inter-Domain
      * Routing (CIDR) block; for example, 10.0.0.0/16.
      */
     inline void SetWhitelistCidr(Aws::String&& value) { m_whitelistCidrHasBeenSet = true; m_whitelistCidr = std::move(value); }
 
     /**
      * The range of IP addresses that should be allowed to contribute content to your
-     * source. These IP addresses should in the form of a Classless Inter-Domain
+     * source. These IP addresses should be in the form of a Classless Inter-Domain
      * Routing (CIDR) block; for example, 10.0.0.0/16.
      */
     inline void SetWhitelistCidr(const char* value) { m_whitelistCidrHasBeenSet = true; m_whitelistCidr.assign(value); }
 
     /**
      * The range of IP addresses that should be allowed to contribute content to your
-     * source. These IP addresses should in the form of a Classless Inter-Domain
+     * source. These IP addresses should be in the form of a Classless Inter-Domain
      * Routing (CIDR) block; for example, 10.0.0.0/16.
      */
     inline Source& WithWhitelistCidr(const Aws::String& value) { SetWhitelistCidr(value); return *this;}
 
     /**
      * The range of IP addresses that should be allowed to contribute content to your
-     * source. These IP addresses should in the form of a Classless Inter-Domain
+     * source. These IP addresses should be in the form of a Classless Inter-Domain
      * Routing (CIDR) block; for example, 10.0.0.0/16.
      */
     inline Source& WithWhitelistCidr(Aws::String&& value) { SetWhitelistCidr(std::move(value)); return *this;}
 
     /**
      * The range of IP addresses that should be allowed to contribute content to your
-     * source. These IP addresses should in the form of a Classless Inter-Domain
+     * source. These IP addresses should be in the form of a Classless Inter-Domain
      * Routing (CIDR) block; for example, 10.0.0.0/16.
      */
     inline Source& WithWhitelistCidr(const char* value) { SetWhitelistCidr(value); return *this;}

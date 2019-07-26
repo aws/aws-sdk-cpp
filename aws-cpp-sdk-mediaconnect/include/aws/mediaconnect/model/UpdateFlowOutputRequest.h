@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/mediaconnect/MediaConnectRequest.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/model/UpdateEncryption.h>
 #include <aws/mediaconnect/model/Protocol.h>
@@ -45,6 +46,70 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "UpdateFlowOutput"; }
 
     Aws::String SerializePayload() const override;
+
+
+    /**
+     * The range of IP addresses that should be allowed to initiate output requests to
+     * this flow. These IP addresses should be in the form of a Classless Inter-Domain
+     * Routing (CIDR) block; for example, 10.0.0.0/16.
+     */
+    inline const Aws::Vector<Aws::String>& GetCidrAllowList() const{ return m_cidrAllowList; }
+
+    /**
+     * The range of IP addresses that should be allowed to initiate output requests to
+     * this flow. These IP addresses should be in the form of a Classless Inter-Domain
+     * Routing (CIDR) block; for example, 10.0.0.0/16.
+     */
+    inline bool CidrAllowListHasBeenSet() const { return m_cidrAllowListHasBeenSet; }
+
+    /**
+     * The range of IP addresses that should be allowed to initiate output requests to
+     * this flow. These IP addresses should be in the form of a Classless Inter-Domain
+     * Routing (CIDR) block; for example, 10.0.0.0/16.
+     */
+    inline void SetCidrAllowList(const Aws::Vector<Aws::String>& value) { m_cidrAllowListHasBeenSet = true; m_cidrAllowList = value; }
+
+    /**
+     * The range of IP addresses that should be allowed to initiate output requests to
+     * this flow. These IP addresses should be in the form of a Classless Inter-Domain
+     * Routing (CIDR) block; for example, 10.0.0.0/16.
+     */
+    inline void SetCidrAllowList(Aws::Vector<Aws::String>&& value) { m_cidrAllowListHasBeenSet = true; m_cidrAllowList = std::move(value); }
+
+    /**
+     * The range of IP addresses that should be allowed to initiate output requests to
+     * this flow. These IP addresses should be in the form of a Classless Inter-Domain
+     * Routing (CIDR) block; for example, 10.0.0.0/16.
+     */
+    inline UpdateFlowOutputRequest& WithCidrAllowList(const Aws::Vector<Aws::String>& value) { SetCidrAllowList(value); return *this;}
+
+    /**
+     * The range of IP addresses that should be allowed to initiate output requests to
+     * this flow. These IP addresses should be in the form of a Classless Inter-Domain
+     * Routing (CIDR) block; for example, 10.0.0.0/16.
+     */
+    inline UpdateFlowOutputRequest& WithCidrAllowList(Aws::Vector<Aws::String>&& value) { SetCidrAllowList(std::move(value)); return *this;}
+
+    /**
+     * The range of IP addresses that should be allowed to initiate output requests to
+     * this flow. These IP addresses should be in the form of a Classless Inter-Domain
+     * Routing (CIDR) block; for example, 10.0.0.0/16.
+     */
+    inline UpdateFlowOutputRequest& AddCidrAllowList(const Aws::String& value) { m_cidrAllowListHasBeenSet = true; m_cidrAllowList.push_back(value); return *this; }
+
+    /**
+     * The range of IP addresses that should be allowed to initiate output requests to
+     * this flow. These IP addresses should be in the form of a Classless Inter-Domain
+     * Routing (CIDR) block; for example, 10.0.0.0/16.
+     */
+    inline UpdateFlowOutputRequest& AddCidrAllowList(Aws::String&& value) { m_cidrAllowListHasBeenSet = true; m_cidrAllowList.push_back(std::move(value)); return *this; }
+
+    /**
+     * The range of IP addresses that should be allowed to initiate output requests to
+     * this flow. These IP addresses should be in the form of a Classless Inter-Domain
+     * Routing (CIDR) block; for example, 10.0.0.0/16.
+     */
+    inline UpdateFlowOutputRequest& AddCidrAllowList(const char* value) { m_cidrAllowListHasBeenSet = true; m_cidrAllowList.push_back(value); return *this; }
 
 
     /**
@@ -330,6 +395,47 @@ namespace Model
 
 
     /**
+     * The remote ID for the Zixi-pull stream.
+     */
+    inline const Aws::String& GetRemoteId() const{ return m_remoteId; }
+
+    /**
+     * The remote ID for the Zixi-pull stream.
+     */
+    inline bool RemoteIdHasBeenSet() const { return m_remoteIdHasBeenSet; }
+
+    /**
+     * The remote ID for the Zixi-pull stream.
+     */
+    inline void SetRemoteId(const Aws::String& value) { m_remoteIdHasBeenSet = true; m_remoteId = value; }
+
+    /**
+     * The remote ID for the Zixi-pull stream.
+     */
+    inline void SetRemoteId(Aws::String&& value) { m_remoteIdHasBeenSet = true; m_remoteId = std::move(value); }
+
+    /**
+     * The remote ID for the Zixi-pull stream.
+     */
+    inline void SetRemoteId(const char* value) { m_remoteIdHasBeenSet = true; m_remoteId.assign(value); }
+
+    /**
+     * The remote ID for the Zixi-pull stream.
+     */
+    inline UpdateFlowOutputRequest& WithRemoteId(const Aws::String& value) { SetRemoteId(value); return *this;}
+
+    /**
+     * The remote ID for the Zixi-pull stream.
+     */
+    inline UpdateFlowOutputRequest& WithRemoteId(Aws::String&& value) { SetRemoteId(std::move(value)); return *this;}
+
+    /**
+     * The remote ID for the Zixi-pull stream.
+     */
+    inline UpdateFlowOutputRequest& WithRemoteId(const char* value) { SetRemoteId(value); return *this;}
+
+
+    /**
      * The smoothing latency in milliseconds for RTP and RTP-FEC streams.
      */
     inline int GetSmoothingLatency() const{ return m_smoothingLatency; }
@@ -400,6 +506,9 @@ namespace Model
 
   private:
 
+    Aws::Vector<Aws::String> m_cidrAllowList;
+    bool m_cidrAllowListHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
 
@@ -423,6 +532,9 @@ namespace Model
 
     Protocol m_protocol;
     bool m_protocolHasBeenSet;
+
+    Aws::String m_remoteId;
+    bool m_remoteIdHasBeenSet;
 
     int m_smoothingLatency;
     bool m_smoothingLatencyHasBeenSet;

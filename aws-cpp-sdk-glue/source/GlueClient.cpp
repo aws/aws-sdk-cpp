@@ -84,6 +84,8 @@
 #include <aws/glue/model/GetDevEndpointRequest.h>
 #include <aws/glue/model/GetDevEndpointsRequest.h>
 #include <aws/glue/model/GetJobRequest.h>
+#include <aws/glue/model/GetJobBookmarkRequest.h>
+#include <aws/glue/model/GetJobBookmarksRequest.h>
 #include <aws/glue/model/GetJobRunRequest.h>
 #include <aws/glue/model/GetJobRunsRequest.h>
 #include <aws/glue/model/GetJobsRequest.h>
@@ -2100,6 +2102,76 @@ void GlueClient::GetJobAsync(const GetJobRequest& request, const GetJobResponseR
 void GlueClient::GetJobAsyncHelper(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetJob(request), context);
+}
+
+GetJobBookmarkOutcome GlueClient::GetJobBookmark(const GetJobBookmarkRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetJobBookmarkOutcome(GetJobBookmarkResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetJobBookmarkOutcome(outcome.GetError());
+  }
+}
+
+GetJobBookmarkOutcomeCallable GlueClient::GetJobBookmarkCallable(const GetJobBookmarkRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetJobBookmarkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetJobBookmark(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetJobBookmarkAsync(const GetJobBookmarkRequest& request, const GetJobBookmarkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetJobBookmarkAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetJobBookmarkAsyncHelper(const GetJobBookmarkRequest& request, const GetJobBookmarkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetJobBookmark(request), context);
+}
+
+GetJobBookmarksOutcome GlueClient::GetJobBookmarks(const GetJobBookmarksRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetJobBookmarksOutcome(GetJobBookmarksResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetJobBookmarksOutcome(outcome.GetError());
+  }
+}
+
+GetJobBookmarksOutcomeCallable GlueClient::GetJobBookmarksCallable(const GetJobBookmarksRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetJobBookmarksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetJobBookmarks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetJobBookmarksAsync(const GetJobBookmarksRequest& request, const GetJobBookmarksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetJobBookmarksAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetJobBookmarksAsyncHelper(const GetJobBookmarksRequest& request, const GetJobBookmarksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetJobBookmarks(request), context);
 }
 
 GetJobRunOutcome GlueClient::GetJobRun(const GetJobRunRequest& request) const

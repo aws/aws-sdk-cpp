@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     armv7l,
     x86_64,
-    aarch64
+    aarch64,
+    openwrt
   };
 
 namespace UpdateTargetsArchitectureMapper

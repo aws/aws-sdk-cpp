@@ -84,42 +84,50 @@ namespace Model
 
 
     /**
-     * The ARN of the role you wish to associate with this group.
+     * The ARN of the role you wish to associate with this group. The existence of the
+     * role is not validated.
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * The ARN of the role you wish to associate with this group.
+     * The ARN of the role you wish to associate with this group. The existence of the
+     * role is not validated.
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * The ARN of the role you wish to associate with this group.
+     * The ARN of the role you wish to associate with this group. The existence of the
+     * role is not validated.
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * The ARN of the role you wish to associate with this group.
+     * The ARN of the role you wish to associate with this group. The existence of the
+     * role is not validated.
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * The ARN of the role you wish to associate with this group.
+     * The ARN of the role you wish to associate with this group. The existence of the
+     * role is not validated.
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * The ARN of the role you wish to associate with this group.
+     * The ARN of the role you wish to associate with this group. The existence of the
+     * role is not validated.
      */
     inline AssociateRoleToGroupRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * The ARN of the role you wish to associate with this group.
+     * The ARN of the role you wish to associate with this group. The existence of the
+     * role is not validated.
      */
     inline AssociateRoleToGroupRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * The ARN of the role you wish to associate with this group.
+     * The ARN of the role you wish to associate with this group. The existence of the
+     * role is not validated.
      */
     inline AssociateRoleToGroupRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

@@ -33,9 +33,7 @@ FilterLogEventsRequest::FilterLogEventsRequest() :
     m_filterPatternHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_limit(0),
-    m_limitHasBeenSet(false),
-    m_interleaved(false),
-    m_interleavedHasBeenSet(false)
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -93,12 +91,6 @@ Aws::String FilterLogEventsRequest::SerializePayload() const
   if(m_limitHasBeenSet)
   {
    payload.WithInteger("limit", m_limit);
-
-  }
-
-  if(m_interleavedHasBeenSet)
-  {
-   payload.WithBool("interleaved", m_interleaved);
 
   }
 
