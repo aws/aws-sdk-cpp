@@ -92,49 +92,49 @@ namespace Model
 
     /**
      * <p>The ARN of the resource that is the target for a trigger. For example, the
-     * ARN of a topic in Amazon Simple Notification Service (SNS).</p>
+     * ARN of a topic in Amazon SNS.</p>
      */
     inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
 
     /**
      * <p>The ARN of the resource that is the target for a trigger. For example, the
-     * ARN of a topic in Amazon Simple Notification Service (SNS).</p>
+     * ARN of a topic in Amazon SNS.</p>
      */
     inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
 
     /**
      * <p>The ARN of the resource that is the target for a trigger. For example, the
-     * ARN of a topic in Amazon Simple Notification Service (SNS).</p>
+     * ARN of a topic in Amazon SNS.</p>
      */
     inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
 
     /**
      * <p>The ARN of the resource that is the target for a trigger. For example, the
-     * ARN of a topic in Amazon Simple Notification Service (SNS).</p>
+     * ARN of a topic in Amazon SNS.</p>
      */
     inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
 
     /**
      * <p>The ARN of the resource that is the target for a trigger. For example, the
-     * ARN of a topic in Amazon Simple Notification Service (SNS).</p>
+     * ARN of a topic in Amazon SNS.</p>
      */
     inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
 
     /**
      * <p>The ARN of the resource that is the target for a trigger. For example, the
-     * ARN of a topic in Amazon Simple Notification Service (SNS).</p>
+     * ARN of a topic in Amazon SNS.</p>
      */
     inline RepositoryTrigger& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
 
     /**
      * <p>The ARN of the resource that is the target for a trigger. For example, the
-     * ARN of a topic in Amazon Simple Notification Service (SNS).</p>
+     * ARN of a topic in Amazon SNS.</p>
      */
     inline RepositoryTrigger& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the resource that is the target for a trigger. For example, the
-     * ARN of a topic in Amazon Simple Notification Service (SNS).</p>
+     * ARN of a topic in Amazon SNS.</p>
      */
     inline RepositoryTrigger& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
 
@@ -191,7 +191,7 @@ namespace Model
     /**
      * <p>The branches that will be included in the trigger configuration. If you
      * specify an empty array, the trigger will apply to all branches.</p> <note>
-     * <p>While no content is required in the array, you must include the array
+     * <p>Although no content is required in the array, you must include the array
      * itself.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetBranches() const{ return m_branches; }
@@ -199,7 +199,7 @@ namespace Model
     /**
      * <p>The branches that will be included in the trigger configuration. If you
      * specify an empty array, the trigger will apply to all branches.</p> <note>
-     * <p>While no content is required in the array, you must include the array
+     * <p>Although no content is required in the array, you must include the array
      * itself.</p> </note>
      */
     inline bool BranchesHasBeenSet() const { return m_branchesHasBeenSet; }
@@ -207,7 +207,7 @@ namespace Model
     /**
      * <p>The branches that will be included in the trigger configuration. If you
      * specify an empty array, the trigger will apply to all branches.</p> <note>
-     * <p>While no content is required in the array, you must include the array
+     * <p>Although no content is required in the array, you must include the array
      * itself.</p> </note>
      */
     inline void SetBranches(const Aws::Vector<Aws::String>& value) { m_branchesHasBeenSet = true; m_branches = value; }
@@ -215,7 +215,7 @@ namespace Model
     /**
      * <p>The branches that will be included in the trigger configuration. If you
      * specify an empty array, the trigger will apply to all branches.</p> <note>
-     * <p>While no content is required in the array, you must include the array
+     * <p>Although no content is required in the array, you must include the array
      * itself.</p> </note>
      */
     inline void SetBranches(Aws::Vector<Aws::String>&& value) { m_branchesHasBeenSet = true; m_branches = std::move(value); }
@@ -223,7 +223,7 @@ namespace Model
     /**
      * <p>The branches that will be included in the trigger configuration. If you
      * specify an empty array, the trigger will apply to all branches.</p> <note>
-     * <p>While no content is required in the array, you must include the array
+     * <p>Although no content is required in the array, you must include the array
      * itself.</p> </note>
      */
     inline RepositoryTrigger& WithBranches(const Aws::Vector<Aws::String>& value) { SetBranches(value); return *this;}
@@ -231,7 +231,7 @@ namespace Model
     /**
      * <p>The branches that will be included in the trigger configuration. If you
      * specify an empty array, the trigger will apply to all branches.</p> <note>
-     * <p>While no content is required in the array, you must include the array
+     * <p>Although no content is required in the array, you must include the array
      * itself.</p> </note>
      */
     inline RepositoryTrigger& WithBranches(Aws::Vector<Aws::String>&& value) { SetBranches(std::move(value)); return *this;}
@@ -239,7 +239,7 @@ namespace Model
     /**
      * <p>The branches that will be included in the trigger configuration. If you
      * specify an empty array, the trigger will apply to all branches.</p> <note>
-     * <p>While no content is required in the array, you must include the array
+     * <p>Although no content is required in the array, you must include the array
      * itself.</p> </note>
      */
     inline RepositoryTrigger& AddBranches(const Aws::String& value) { m_branchesHasBeenSet = true; m_branches.push_back(value); return *this; }
@@ -247,7 +247,7 @@ namespace Model
     /**
      * <p>The branches that will be included in the trigger configuration. If you
      * specify an empty array, the trigger will apply to all branches.</p> <note>
-     * <p>While no content is required in the array, you must include the array
+     * <p>Although no content is required in the array, you must include the array
      * itself.</p> </note>
      */
     inline RepositoryTrigger& AddBranches(Aws::String&& value) { m_branchesHasBeenSet = true; m_branches.push_back(std::move(value)); return *this; }
@@ -255,7 +255,7 @@ namespace Model
     /**
      * <p>The branches that will be included in the trigger configuration. If you
      * specify an empty array, the trigger will apply to all branches.</p> <note>
-     * <p>While no content is required in the array, you must include the array
+     * <p>Although no content is required in the array, you must include the array
      * itself.</p> </note>
      */
     inline RepositoryTrigger& AddBranches(const char* value) { m_branchesHasBeenSet = true; m_branches.push_back(value); return *this; }
@@ -263,65 +263,57 @@ namespace Model
 
     /**
      * <p>The repository events that will cause the trigger to run actions in another
-     * service, such as sending a notification through Amazon Simple Notification
-     * Service (SNS). </p> <note> <p>The valid value "all" cannot be used with any
-     * other values.</p> </note>
+     * service, such as sending a notification through Amazon SNS. </p> <note> <p>The
+     * valid value "all" cannot be used with any other values.</p> </note>
      */
     inline const Aws::Vector<RepositoryTriggerEventEnum>& GetEvents() const{ return m_events; }
 
     /**
      * <p>The repository events that will cause the trigger to run actions in another
-     * service, such as sending a notification through Amazon Simple Notification
-     * Service (SNS). </p> <note> <p>The valid value "all" cannot be used with any
-     * other values.</p> </note>
+     * service, such as sending a notification through Amazon SNS. </p> <note> <p>The
+     * valid value "all" cannot be used with any other values.</p> </note>
      */
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
 
     /**
      * <p>The repository events that will cause the trigger to run actions in another
-     * service, such as sending a notification through Amazon Simple Notification
-     * Service (SNS). </p> <note> <p>The valid value "all" cannot be used with any
-     * other values.</p> </note>
+     * service, such as sending a notification through Amazon SNS. </p> <note> <p>The
+     * valid value "all" cannot be used with any other values.</p> </note>
      */
     inline void SetEvents(const Aws::Vector<RepositoryTriggerEventEnum>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /**
      * <p>The repository events that will cause the trigger to run actions in another
-     * service, such as sending a notification through Amazon Simple Notification
-     * Service (SNS). </p> <note> <p>The valid value "all" cannot be used with any
-     * other values.</p> </note>
+     * service, such as sending a notification through Amazon SNS. </p> <note> <p>The
+     * valid value "all" cannot be used with any other values.</p> </note>
      */
     inline void SetEvents(Aws::Vector<RepositoryTriggerEventEnum>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
     /**
      * <p>The repository events that will cause the trigger to run actions in another
-     * service, such as sending a notification through Amazon Simple Notification
-     * Service (SNS). </p> <note> <p>The valid value "all" cannot be used with any
-     * other values.</p> </note>
+     * service, such as sending a notification through Amazon SNS. </p> <note> <p>The
+     * valid value "all" cannot be used with any other values.</p> </note>
      */
     inline RepositoryTrigger& WithEvents(const Aws::Vector<RepositoryTriggerEventEnum>& value) { SetEvents(value); return *this;}
 
     /**
      * <p>The repository events that will cause the trigger to run actions in another
-     * service, such as sending a notification through Amazon Simple Notification
-     * Service (SNS). </p> <note> <p>The valid value "all" cannot be used with any
-     * other values.</p> </note>
+     * service, such as sending a notification through Amazon SNS. </p> <note> <p>The
+     * valid value "all" cannot be used with any other values.</p> </note>
      */
     inline RepositoryTrigger& WithEvents(Aws::Vector<RepositoryTriggerEventEnum>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
      * <p>The repository events that will cause the trigger to run actions in another
-     * service, such as sending a notification through Amazon Simple Notification
-     * Service (SNS). </p> <note> <p>The valid value "all" cannot be used with any
-     * other values.</p> </note>
+     * service, such as sending a notification through Amazon SNS. </p> <note> <p>The
+     * valid value "all" cannot be used with any other values.</p> </note>
      */
     inline RepositoryTrigger& AddEvents(const RepositoryTriggerEventEnum& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
     /**
      * <p>The repository events that will cause the trigger to run actions in another
-     * service, such as sending a notification through Amazon Simple Notification
-     * Service (SNS). </p> <note> <p>The valid value "all" cannot be used with any
-     * other values.</p> </note>
+     * service, such as sending a notification through Amazon SNS. </p> <note> <p>The
+     * valid value "all" cannot be used with any other values.</p> </note>
      */
     inline RepositoryTrigger& AddEvents(RepositoryTriggerEventEnum&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 

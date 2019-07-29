@@ -173,6 +173,7 @@ static const int TIPS_DIVERGENCE_EXCEEDED_HASH = HashingUtils::HashString("TipsD
 static const int PULL_REQUEST_ID_REQUIRED_HASH = HashingUtils::HashString("PullRequestIdRequiredException");
 static const int INVALID_FILE_POSITION_HASH = HashingUtils::HashString("InvalidFilePositionException");
 static const int FILE_CONTENT_AND_SOURCE_FILE_SPECIFIED_HASH = HashingUtils::HashString("FileContentAndSourceFileSpecifiedException");
+static const int CONCURRENT_REFERENCE_UPDATE_HASH = HashingUtils::HashString("ConcurrentReferenceUpdateException");
 static const int BEFORE_COMMIT_ID_AND_AFTER_COMMIT_ID_ARE_SAME_HASH = HashingUtils::HashString("BeforeCommitIdAndAfterCommitIdAreSameException");
 static const int SAME_FILE_CONTENT_HASH = HashingUtils::HashString("SameFileContentException");
 
@@ -913,6 +914,11 @@ static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == FILE_CONTENT_AND_SOURCE_FILE_SPECIFIED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_CONTENT_AND_SOURCE_FILE_SPECIFIED), false);
+    return true;
+  }
+  else if (hashCode == CONCURRENT_REFERENCE_UPDATE_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::CONCURRENT_REFERENCE_UPDATE), false);
     return true;
   }
   else if (hashCode == BEFORE_COMMIT_ID_AND_AFTER_COMMIT_ID_ARE_SAME_HASH)
