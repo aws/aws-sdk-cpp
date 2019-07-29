@@ -133,6 +133,9 @@ if (BUILD_DEPS)
             set(AWS_DEPS_INSTALL_DIR ${CMAKE_CURRENT_BINARY_DIR}/.deps/install CACHE STRING "A string describes the path where 3rd-party dependencies will be or have been installed")
         endif()
     endif()
+    if (NOT CMAKE_GENERATOR_PLATFORM STREQUAL "")
+        set(GEN_PLATFORM_ARG "-A${CMAKE_GENERATOR_PLATFORM}")
+    endif()
     file(MAKE_DIRECTORY ${AWS_DEPS_BUILD_DIR})
     if(TARGET_ARCH STREQUAL "ANDROID")
         execute_process(
@@ -148,6 +151,7 @@ if (BUILD_DEPS)
             -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
             -DCMAKE_INSTALL_PREFIX=${AWS_DEPS_INSTALL_DIR}
             -DGIT_EXECUTABLE=${GIT_EXECUTABLE}
+            ${GEN_PLATFORM_ARG}
             ${CMAKE_CURRENT_SOURCE_DIR}/third-party
             WORKING_DIRECTORY ${AWS_DEPS_BUILD_DIR}
             RESULT_VARIABLE BUILD_3P_EXIT_CODE)
@@ -165,6 +169,7 @@ if (BUILD_DEPS)
             -DCMAKE_SYSTEM_NAME=${CMAKE_SYSTEM_NAME}
             -DCMAKE_C_FLAGS=${CMAKE_C_FLAGS}
             -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=${CMAKE_CURRENT_BINARY_DIR}/bin
+            ${GEN_PLATFORM_ARG}
             ${CMAKE_CURRENT_SOURCE_DIR}/third-party
             WORKING_DIRECTORY ${AWS_DEPS_BUILD_DIR}
             RESULT_VARIABLE BUILD_3P_EXIT_CODE)
@@ -178,6 +183,7 @@ if (BUILD_DEPS)
             -DSTATIC_CRT=${STATIC_CRT}
             -DCMAKE_INSTALL_PREFIX=${AWS_DEPS_INSTALL_DIR}
             -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=${CMAKE_CURRENT_BINARY_DIR}/bin
+            ${GEN_PLATFORM_ARG}
             ${CMAKE_CURRENT_SOURCE_DIR}/third-party
             WORKING_DIRECTORY ${AWS_DEPS_BUILD_DIR}
             RESULT_VARIABLE BUILD_3P_EXIT_CODE)
