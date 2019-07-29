@@ -299,6 +299,11 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpReque
         return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "SDK failed to sign the request", false/*retryable*/));
     }
 
+    if (request.GetRequestSignedHandler())
+    {
+        request.GetRequestSignedHandler()(*httpRequest);
+    }
+
     AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request Successfully signed");
     std::shared_ptr<HttpResponse> httpResponse(
         m_httpClient->MakeRequest(httpRequest, m_readRateLimiter.get(), m_writeRateLimiter.get()));
@@ -496,36 +501,20 @@ Aws::String Aws::Client::GetAuthorizationHeader(const Aws::Http::HttpRequest& ht
     return authHeader.substr(signaturePosition + strlen(Aws::Auth::SIGNATURE) + 1);
 }
 
-std::shared_ptr<Aws::Http::HttpRequest> AWSClient::BuildAndSignHttpRequest(const Aws::Http::URI& uri,
-                                                   const Aws::AmazonWebServiceRequest& request,
-                                                   Http::HttpMethod method, const char* signerName) const
-{
-    std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, request.GetResponseStreamFactory()));
-    AddHeadersToRequest(httpRequest, request.GetHeaders());
-    httpRequest->AddContentBody(request.GetBody());
-    httpRequest->SetDataReceivedEventHandler(request.GetDataReceivedEventHandler());
-    httpRequest->SetDataSentEventHandler(request.GetDataSentEventHandler());
-    httpRequest->SetContinueRequestHandle(request.GetContinueRequestHandler());
-
-    request.AddQueryStringParameters(httpRequest->GetUri());
-    auto signer = GetSignerByName(signerName);
-    if (!signer->SignRequest(*httpRequest, request.SignBody()))
-    {
-        AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Request signing failed. Returning error.");
-        return nullptr;
-    }
-
-    AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request Successfully signed");
-    return httpRequest;
-}
-
 void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request,
     const std::shared_ptr<HttpRequest>& httpRequest) const
 {
     //do headers first since the request likely will set content-length as it's own header.
     AddHeadersToRequest(httpRequest, request.GetHeaders());
-    AddContentBodyToRequest(httpRequest, request.GetBody(), request.ShouldComputeContentMd5(),
-                            request.IsStreaming() && request.IsChunked() && m_httpClient->SupportsChunkedTransferEncoding());
+
+    if (request.IsEventStreamRequest())
+    {
+        httpRequest->AddContentBody(request.GetBody());
+    }
+    else
+    {
+        AddContentBodyToRequest(httpRequest, request.GetBody(), request.ShouldComputeContentMd5(), request.IsStreaming() && request.IsChunked() && m_httpClient->SupportsChunkedTransferEncoding());
+    }
 
     // Pass along handlers for processing data sent/received in bytes
     httpRequest->SetDataReceivedEventHandler(request.GetDataReceivedEventHandler());

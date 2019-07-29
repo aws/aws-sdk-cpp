@@ -53,6 +53,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "${operationName}"; }
 
+#if($shape.hasEventStreamMembers())
+    inline virtual bool IsEventStreamRequest() const override { return true; }
+#end
 #if(!$shape.hasStreamMembers() && !$shape.hasEventStreamMembers())
     Aws::String SerializePayload() const override;
 
