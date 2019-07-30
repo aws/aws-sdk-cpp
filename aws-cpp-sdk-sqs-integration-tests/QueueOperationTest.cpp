@@ -230,7 +230,7 @@ TEST_F(QueueOperationTest, TestSendReceiveDelete)
     ASSERT_TRUE(queueUrl.find(queueName) != Aws::String::npos);
 
     SendMessageRequest sendMessageRequest;
-    sendMessageRequest.SetMessageBody(" TestMessageBody\r\n ");
+    sendMessageRequest.SetMessageBody(" TestMessageBody<tag>info\"\"</tag>\r\n ");
     MessageAttributeValue stringAttributeValue;
     stringAttributeValue.SetStringValue("TestString");
     stringAttributeValue.SetDataType("String");
@@ -263,7 +263,7 @@ TEST_F(QueueOperationTest, TestSendReceiveDelete)
     ReceiveMessageResult receiveMessageResult = receiveMessageOutcome.GetResult();
     ASSERT_EQ(1uL, receiveMessageResult.GetMessages().size());
     Aws::String receivedMessage = receiveMessageResult.GetMessages()[0].GetBody();
-    EXPECT_STREQ(" TestMessageBody\r\n ", receivedMessage.c_str());
+    EXPECT_STREQ(" TestMessageBody<tag>info\"\"</tag>\r\n ", receivedMessage.c_str());
     EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateMD5(receivedMessage)).c_str(), receiveMessageResult.GetMessages()[0].GetMD5OfBody().c_str());
     Aws::Map<Aws::String, MessageAttributeValue> messageAttributes = receiveMessageResult.GetMessages()[0].GetMessageAttributes();
     ASSERT_TRUE(messageAttributes.find("TestStringAttribute") != messageAttributes.end());

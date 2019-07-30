@@ -65,7 +65,7 @@
 
 #end##member uses location for serialization
 #else##this is not a map or a list
-#set($substituteString = "${lowerCaseVarName}Node.GetText()")
+#set($substituteString = "Aws::Utils::Xml::DecodeEscapedXmlText(${lowerCaseVarName}Node.GetText())")
 #if($member.locationName)##location specified
 #if($member.xmlAttribute)
     auto ${lowerCaseVarName} = resultNode.GetAttributeValue("${member.locationName}");
