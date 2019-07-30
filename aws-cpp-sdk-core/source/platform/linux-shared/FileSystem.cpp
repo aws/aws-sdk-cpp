@@ -19,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UUID.h>
 
 #include <unistd.h>
 #include <pwd.h>
@@ -259,7 +260,8 @@ Aws::String CreateTempFilePath()
 {
     Aws::StringStream ss;
     auto dt = Aws::Utils::DateTime::Now();
-    ss << dt.ToGmtString("%Y%m%dT%H%M%S") << dt.Millis();
+
+    ss << dt.ToGmtString("%Y%m%dT%H%M%S") << dt.Millis() << Aws::String(Aws::Utils::UUID::RandomUUID());
     Aws::String tempFile(ss.str());
 
     AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "CreateTempFilePath generated: " << tempFile);
