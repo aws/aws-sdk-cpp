@@ -507,6 +507,27 @@ namespace Model
 
 
     /**
+     * Relative priority on the job.
+     */
+    inline int GetPriority() const{ return m_priority; }
+
+    /**
+     * Relative priority on the job.
+     */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+
+    /**
+     * Relative priority on the job.
+     */
+    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
+
+    /**
+     * Relative priority on the job.
+     */
+    inline Job& WithPriority(int value) { SetPriority(value); return *this;}
+
+
+    /**
      * Optional. When you create a job, you can specify a queue to send it to. If you
      * don't specify, the job will go to the default queue. For more about queues, see
      * the User Guide topic at
@@ -913,6 +934,9 @@ namespace Model
 
     Aws::Vector<OutputGroupDetail> m_outputGroupDetails;
     bool m_outputGroupDetailsHasBeenSet;
+
+    int m_priority;
+    bool m_priorityHasBeenSet;
 
     Aws::String m_queue;
     bool m_queueHasBeenSet;

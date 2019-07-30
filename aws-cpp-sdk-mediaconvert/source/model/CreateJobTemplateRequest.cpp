@@ -27,6 +27,8 @@ CreateJobTemplateRequest::CreateJobTemplateRequest() :
     m_categoryHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false),
     m_queueHasBeenSet(false),
     m_settingsHasBeenSet(false),
     m_statusUpdateInterval(StatusUpdateInterval::NOT_SET),
@@ -60,6 +62,12 @@ Aws::String CreateJobTemplateRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_priorityHasBeenSet)
+  {
+   payload.WithInteger("priority", m_priority);
 
   }
 

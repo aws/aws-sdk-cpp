@@ -153,7 +153,7 @@ namespace Model
          * lexicon which has been deleted is not available for speech synthesis, nor is it
          * possible to retrieve it using either the <code>GetLexicon</code> or
          * <code>ListLexicon</code> APIs.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+         * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon">AWS
          * API Reference</a></p>
@@ -165,7 +165,7 @@ namespace Model
          * lexicon which has been deleted is not available for speech synthesis, nor is it
          * possible to retrieve it using either the <code>GetLexicon</code> or
          * <code>ListLexicon</code> APIs.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+         * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon">AWS
          * API Reference</a></p>
@@ -179,7 +179,7 @@ namespace Model
          * lexicon which has been deleted is not available for speech synthesis, nor is it
          * possible to retrieve it using either the <code>GetLexicon</code> or
          * <code>ListLexicon</code> APIs.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+         * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon">AWS
          * API Reference</a></p>
@@ -252,7 +252,7 @@ namespace Model
         /**
          * <p>Returns the content of the specified pronunciation lexicon stored in an AWS
          * Region. For more information, see <a
-         * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+         * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">AWS
          * API Reference</a></p>
@@ -262,7 +262,7 @@ namespace Model
         /**
          * <p>Returns the content of the specified pronunciation lexicon stored in an AWS
          * Region. For more information, see <a
-         * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+         * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">AWS
          * API Reference</a></p>
@@ -274,7 +274,7 @@ namespace Model
         /**
          * <p>Returns the content of the specified pronunciation lexicon stored in an AWS
          * Region. For more information, see <a
-         * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+         * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">AWS
          * API Reference</a></p>
@@ -320,7 +320,7 @@ namespace Model
         /**
          * <p>Returns a list of pronunciation lexicons stored in an AWS Region. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+         * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">AWS
          * API Reference</a></p>
@@ -330,7 +330,7 @@ namespace Model
         /**
          * <p>Returns a list of pronunciation lexicons stored in an AWS Region. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+         * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">AWS
          * API Reference</a></p>
@@ -342,7 +342,7 @@ namespace Model
         /**
          * <p>Returns a list of pronunciation lexicons stored in an AWS Region. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+         * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">AWS
          * API Reference</a></p>
@@ -388,7 +388,7 @@ namespace Model
          * operations have eventual consistency, therefore, it might take some time before
          * the lexicon is available to the SynthesizeSpeech operation.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+         * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">AWS
          * API Reference</a></p>
@@ -401,7 +401,7 @@ namespace Model
          * operations have eventual consistency, therefore, it might take some time before
          * the lexicon is available to the SynthesizeSpeech operation.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+         * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">AWS
          * API Reference</a></p>
@@ -416,7 +416,7 @@ namespace Model
          * operations have eventual consistency, therefore, it might take some time before
          * the lexicon is available to the SynthesizeSpeech operation.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+         * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
          * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">AWS
          * API Reference</a></p>
@@ -476,7 +476,7 @@ namespace Model
          * must be valid, well-formed SSML. Some alphabets might not be available with all
          * the voices (for example, Cyrillic might not be read at all by English voices)
          * unless phoneme mapping is used. For more information, see <a
-         * href="http://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How
+         * href="https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How
          * it Works</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">AWS
          * API Reference</a></p>
@@ -488,7 +488,7 @@ namespace Model
          * must be valid, well-formed SSML. Some alphabets might not be available with all
          * the voices (for example, Cyrillic might not be read at all by English voices)
          * unless phoneme mapping is used. For more information, see <a
-         * href="http://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How
+         * href="https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How
          * it Works</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">AWS
          * API Reference</a></p>
@@ -502,7 +502,7 @@ namespace Model
          * must be valid, well-formed SSML. Some alphabets might not be available with all
          * the voices (for example, Cyrillic might not be read at all by English voices)
          * unless phoneme mapping is used. For more information, see <a
-         * href="http://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How
+         * href="https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How
          * it Works</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">AWS
          * API Reference</a></p>

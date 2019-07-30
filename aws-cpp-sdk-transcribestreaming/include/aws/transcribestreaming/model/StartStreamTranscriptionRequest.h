@@ -45,6 +45,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartStreamTranscription"; }
 
+    inline virtual bool IsEventStreamRequest() const override { return true; }
     // SerializePayload will not be invoked.
     // This request is sent by encoding its data in event-streams which is sent as IOStream via GetBody()
     Aws::String SerializePayload() const override { return {}; }

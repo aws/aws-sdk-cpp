@@ -36,6 +36,8 @@ JobTemplate::JobTemplate() :
     m_descriptionHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false),
     m_queueHasBeenSet(false),
     m_settingsHasBeenSet(false),
     m_statusUpdateInterval(StatusUpdateInterval::NOT_SET),
@@ -53,6 +55,8 @@ JobTemplate::JobTemplate(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false),
     m_queueHasBeenSet(false),
     m_settingsHasBeenSet(false),
     m_statusUpdateInterval(StatusUpdateInterval::NOT_SET),
@@ -112,6 +116,13 @@ JobTemplate& JobTemplate::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("priority"))
+  {
+    m_priority = jsonValue.GetInteger("priority");
+
+    m_priorityHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("queue"))
@@ -186,6 +197,12 @@ JsonValue JobTemplate::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_priorityHasBeenSet)
+  {
+   payload.WithInteger("priority", m_priority);
 
   }
 

@@ -37,7 +37,8 @@ Voice::Voice() :
     m_languageCodeHasBeenSet(false),
     m_languageNameHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_additionalLanguageCodesHasBeenSet(false)
+    m_additionalLanguageCodesHasBeenSet(false),
+    m_supportedEnginesHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ Voice::Voice(JsonView jsonValue) :
     m_languageCodeHasBeenSet(false),
     m_languageNameHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_additionalLanguageCodesHasBeenSet(false)
+    m_additionalLanguageCodesHasBeenSet(false),
+    m_supportedEnginesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -102,6 +104,16 @@ Voice& Voice::operator =(JsonView jsonValue)
     m_additionalLanguageCodesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SupportedEngines"))
+  {
+    Array<JsonView> supportedEnginesJsonList = jsonValue.GetArray("SupportedEngines");
+    for(unsigned supportedEnginesIndex = 0; supportedEnginesIndex < supportedEnginesJsonList.GetLength(); ++supportedEnginesIndex)
+    {
+      m_supportedEngines.push_back(EngineMapper::GetEngineForName(supportedEnginesJsonList[supportedEnginesIndex].AsString()));
+    }
+    m_supportedEnginesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -144,6 +156,17 @@ JsonValue Voice::Jsonize() const
      additionalLanguageCodesJsonList[additionalLanguageCodesIndex].AsString(LanguageCodeMapper::GetNameForLanguageCode(m_additionalLanguageCodes[additionalLanguageCodesIndex]));
    }
    payload.WithArray("AdditionalLanguageCodes", std::move(additionalLanguageCodesJsonList));
+
+  }
+
+  if(m_supportedEnginesHasBeenSet)
+  {
+   Array<JsonValue> supportedEnginesJsonList(m_supportedEngines.size());
+   for(unsigned supportedEnginesIndex = 0; supportedEnginesIndex < supportedEnginesJsonList.GetLength(); ++supportedEnginesIndex)
+   {
+     supportedEnginesJsonList[supportedEnginesIndex].AsString(EngineMapper::GetNameForEngine(m_supportedEngines[supportedEnginesIndex]));
+   }
+   payload.WithArray("SupportedEngines", std::move(supportedEnginesJsonList));
 
   }
 

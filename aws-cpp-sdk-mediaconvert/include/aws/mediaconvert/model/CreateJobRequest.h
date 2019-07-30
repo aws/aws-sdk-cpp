@@ -243,6 +243,39 @@ namespace Model
 
 
     /**
+     * Specify the relative priority for this job. In any given queue, the service
+     * begins processing the job with the highest value first. When more than one job
+     * has the same priority, the service begins processing the job that you submitted
+     * first. If you don't specify a priority, the service uses the default value 0.
+     */
+    inline int GetPriority() const{ return m_priority; }
+
+    /**
+     * Specify the relative priority for this job. In any given queue, the service
+     * begins processing the job with the highest value first. When more than one job
+     * has the same priority, the service begins processing the job that you submitted
+     * first. If you don't specify a priority, the service uses the default value 0.
+     */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+
+    /**
+     * Specify the relative priority for this job. In any given queue, the service
+     * begins processing the job with the highest value first. When more than one job
+     * has the same priority, the service begins processing the job that you submitted
+     * first. If you don't specify a priority, the service uses the default value 0.
+     */
+    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
+
+    /**
+     * Specify the relative priority for this job. In any given queue, the service
+     * begins processing the job with the highest value first. When more than one job
+     * has the same priority, the service begins processing the job that you submitted
+     * first. If you don't specify a priority, the service uses the default value 0.
+     */
+    inline CreateJobRequest& WithPriority(int value) { SetPriority(value); return *this;}
+
+
+    /**
      * Optional. When you create a job, you can specify a queue to send it to. If you
      * don't specify, the job will go to the default queue. For more about queues, see
      * the User Guide topic at
@@ -535,6 +568,9 @@ namespace Model
 
     Aws::String m_jobTemplate;
     bool m_jobTemplateHasBeenSet;
+
+    int m_priority;
+    bool m_priorityHasBeenSet;
 
     Aws::String m_queue;
     bool m_queueHasBeenSet;

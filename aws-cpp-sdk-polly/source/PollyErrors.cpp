@@ -33,6 +33,7 @@ static const int LEXICON_NOT_FOUND_HASH = HashingUtils::HashString("LexiconNotFo
 static const int INVALID_SNS_TOPIC_ARN_HASH = HashingUtils::HashString("InvalidSnsTopicArnException");
 static const int MARKS_NOT_SUPPORTED_FOR_FORMAT_HASH = HashingUtils::HashString("MarksNotSupportedForFormatException");
 static const int TEXT_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("TextLengthExceededException");
+static const int ENGINE_NOT_SUPPORTED_HASH = HashingUtils::HashString("EngineNotSupportedException");
 static const int UNSUPPORTED_PLS_LANGUAGE_HASH = HashingUtils::HashString("UnsupportedPlsLanguageException");
 static const int UNSUPPORTED_PLS_ALPHABET_HASH = HashingUtils::HashString("UnsupportedPlsAlphabetException");
 static const int LANGUAGE_NOT_SUPPORTED_HASH = HashingUtils::HashString("LanguageNotSupportedException");
@@ -73,6 +74,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TEXT_LENGTH_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::TEXT_LENGTH_EXCEEDED), false);
+  }
+  else if (hashCode == ENGINE_NOT_SUPPORTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(PollyErrors::ENGINE_NOT_SUPPORTED), false);
   }
   else if (hashCode == UNSUPPORTED_PLS_LANGUAGE_HASH)
   {

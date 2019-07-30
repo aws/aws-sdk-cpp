@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/polly/Polly_EXPORTS.h>
 #include <aws/polly/PollyRequest.h>
+#include <aws/polly/model/Engine.h>
 #include <aws/polly/model/LanguageCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -47,6 +48,43 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+
+    /**
+     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by
+     * Amazon Polly when processing input text for speech synthesis. </p>
+     */
+    inline const Engine& GetEngine() const{ return m_engine; }
+
+    /**
+     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by
+     * Amazon Polly when processing input text for speech synthesis. </p>
+     */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by
+     * Amazon Polly when processing input text for speech synthesis. </p>
+     */
+    inline void SetEngine(const Engine& value) { m_engineHasBeenSet = true; m_engine = value; }
+
+    /**
+     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by
+     * Amazon Polly when processing input text for speech synthesis. </p>
+     */
+    inline void SetEngine(Engine&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
+
+    /**
+     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by
+     * Amazon Polly when processing input text for speech synthesis. </p>
+     */
+    inline DescribeVoicesRequest& WithEngine(const Engine& value) { SetEngine(value); return *this;}
+
+    /**
+     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by
+     * Amazon Polly when processing input text for speech synthesis. </p>
+     */
+    inline DescribeVoicesRequest& WithEngine(Engine&& value) { SetEngine(std::move(value)); return *this;}
 
 
     /**
@@ -186,6 +224,9 @@ namespace Model
     inline DescribeVoicesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
+    Engine m_engine;
+    bool m_engineHasBeenSet;
 
     LanguageCode m_languageCode;
     bool m_languageCodeHasBeenSet;

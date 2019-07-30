@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/polly/Polly_EXPORTS.h>
+#include <aws/polly/model/Engine.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/polly/model/TaskStatus.h>
 #include <aws/core/utils/DateTime.h>
@@ -54,6 +55,49 @@ namespace Model
     SynthesisTask(Aws::Utils::Json::JsonView jsonValue);
     SynthesisTask& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for
+     * Amazon Polly to use when processing input text for speech synthesis. Using a
+     * voice that is not supported for the engine selected will result in an error.</p>
+     */
+    inline const Engine& GetEngine() const{ return m_engine; }
+
+    /**
+     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for
+     * Amazon Polly to use when processing input text for speech synthesis. Using a
+     * voice that is not supported for the engine selected will result in an error.</p>
+     */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for
+     * Amazon Polly to use when processing input text for speech synthesis. Using a
+     * voice that is not supported for the engine selected will result in an error.</p>
+     */
+    inline void SetEngine(const Engine& value) { m_engineHasBeenSet = true; m_engine = value; }
+
+    /**
+     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for
+     * Amazon Polly to use when processing input text for speech synthesis. Using a
+     * voice that is not supported for the engine selected will result in an error.</p>
+     */
+    inline void SetEngine(Engine&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
+
+    /**
+     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for
+     * Amazon Polly to use when processing input text for speech synthesis. Using a
+     * voice that is not supported for the engine selected will result in an error.</p>
+     */
+    inline SynthesisTask& WithEngine(const Engine& value) { SetEngine(value); return *this;}
+
+    /**
+     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for
+     * Amazon Polly to use when processing input text for speech synthesis. Using a
+     * voice that is not supported for the engine selected will result in an error.</p>
+     */
+    inline SynthesisTask& WithEngine(Engine&& value) { SetEngine(std::move(value)); return *this;}
 
 
     /**
@@ -422,7 +466,8 @@ namespace Model
 
     /**
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
-     * ogg_vorbis are "8000", "16000", and "22050". The default value is "22050".</p>
+     * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
+     * standard voices is "22050". The default value for neural voices is "24000".</p>
      * <p>Valid values for pcm are "8000" and "16000" The default value is "16000".
      * </p>
      */
@@ -430,7 +475,8 @@ namespace Model
 
     /**
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
-     * ogg_vorbis are "8000", "16000", and "22050". The default value is "22050".</p>
+     * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
+     * standard voices is "22050". The default value for neural voices is "24000".</p>
      * <p>Valid values for pcm are "8000" and "16000" The default value is "16000".
      * </p>
      */
@@ -438,7 +484,8 @@ namespace Model
 
     /**
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
-     * ogg_vorbis are "8000", "16000", and "22050". The default value is "22050".</p>
+     * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
+     * standard voices is "22050". The default value for neural voices is "24000".</p>
      * <p>Valid values for pcm are "8000" and "16000" The default value is "16000".
      * </p>
      */
@@ -446,7 +493,8 @@ namespace Model
 
     /**
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
-     * ogg_vorbis are "8000", "16000", and "22050". The default value is "22050".</p>
+     * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
+     * standard voices is "22050". The default value for neural voices is "24000".</p>
      * <p>Valid values for pcm are "8000" and "16000" The default value is "16000".
      * </p>
      */
@@ -454,7 +502,8 @@ namespace Model
 
     /**
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
-     * ogg_vorbis are "8000", "16000", and "22050". The default value is "22050".</p>
+     * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
+     * standard voices is "22050". The default value for neural voices is "24000".</p>
      * <p>Valid values for pcm are "8000" and "16000" The default value is "16000".
      * </p>
      */
@@ -462,7 +511,8 @@ namespace Model
 
     /**
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
-     * ogg_vorbis are "8000", "16000", and "22050". The default value is "22050".</p>
+     * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
+     * standard voices is "22050". The default value for neural voices is "24000".</p>
      * <p>Valid values for pcm are "8000" and "16000" The default value is "16000".
      * </p>
      */
@@ -470,7 +520,8 @@ namespace Model
 
     /**
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
-     * ogg_vorbis are "8000", "16000", and "22050". The default value is "22050".</p>
+     * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
+     * standard voices is "22050". The default value for neural voices is "24000".</p>
      * <p>Valid values for pcm are "8000" and "16000" The default value is "16000".
      * </p>
      */
@@ -478,7 +529,8 @@ namespace Model
 
     /**
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
-     * ogg_vorbis are "8000", "16000", and "22050". The default value is "22050".</p>
+     * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
+     * standard voices is "22050". The default value for neural voices is "24000".</p>
      * <p>Valid values for pcm are "8000" and "16000" The default value is "16000".
      * </p>
      */
@@ -667,6 +719,9 @@ namespace Model
     inline SynthesisTask& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
   private:
+
+    Engine m_engine;
+    bool m_engineHasBeenSet;
 
     Aws::String m_taskId;
     bool m_taskIdHasBeenSet;

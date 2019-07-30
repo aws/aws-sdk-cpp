@@ -56,7 +56,8 @@ enum class PollyErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_LEXICON= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ENGINE_NOT_SUPPORTED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_LEXICON,
   INVALID_NEXT_TOKEN,
   INVALID_S3_BUCKET,
   INVALID_S3_KEY,

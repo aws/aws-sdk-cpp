@@ -29,6 +29,8 @@ namespace Model
 {
 
 SynthesisTask::SynthesisTask() : 
+    m_engine(Engine::NOT_SET),
+    m_engineHasBeenSet(false),
     m_taskIdHasBeenSet(false),
     m_taskStatus(TaskStatus::NOT_SET),
     m_taskStatusHasBeenSet(false),
@@ -53,6 +55,8 @@ SynthesisTask::SynthesisTask() :
 }
 
 SynthesisTask::SynthesisTask(JsonView jsonValue) : 
+    m_engine(Engine::NOT_SET),
+    m_engineHasBeenSet(false),
     m_taskIdHasBeenSet(false),
     m_taskStatus(TaskStatus::NOT_SET),
     m_taskStatusHasBeenSet(false),
@@ -79,6 +83,13 @@ SynthesisTask::SynthesisTask(JsonView jsonValue) :
 
 SynthesisTask& SynthesisTask::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Engine"))
+  {
+    m_engine = EngineMapper::GetEngineForName(jsonValue.GetString("Engine"));
+
+    m_engineHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("TaskId"))
   {
     m_taskId = jsonValue.GetString("TaskId");
@@ -189,6 +200,11 @@ SynthesisTask& SynthesisTask::operator =(JsonView jsonValue)
 JsonValue SynthesisTask::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_engineHasBeenSet)
+  {
+   payload.WithString("Engine", EngineMapper::GetNameForEngine(m_engine));
+  }
 
   if(m_taskIdHasBeenSet)
   {

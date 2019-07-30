@@ -325,6 +325,27 @@ namespace Model
 
 
     /**
+     * Relative priority on the job.
+     */
+    inline int GetPriority() const{ return m_priority; }
+
+    /**
+     * Relative priority on the job.
+     */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+
+    /**
+     * Relative priority on the job.
+     */
+    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
+
+    /**
+     * Relative priority on the job.
+     */
+    inline JobTemplate& WithPriority(int value) { SetPriority(value); return *this;}
+
+
+    /**
      * Optional. The queue that jobs created from this template are assigned to. If you
      * don't specify this, jobs will go to the default queue.
      */
@@ -517,6 +538,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    int m_priority;
+    bool m_priorityHasBeenSet;
 
     Aws::String m_queue;
     bool m_queueHasBeenSet;

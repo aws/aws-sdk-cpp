@@ -29,6 +29,8 @@ CreateJobRequest::CreateJobRequest() :
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_jobTemplateHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false),
     m_queueHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_settingsHasBeenSet(false),
@@ -62,6 +64,12 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_jobTemplateHasBeenSet)
   {
    payload.WithString("jobTemplate", m_jobTemplate);
+
+  }
+
+  if(m_priorityHasBeenSet)
+  {
+   payload.WithInteger("priority", m_priority);
 
   }
 

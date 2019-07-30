@@ -44,6 +44,8 @@ Job::Job() :
     m_jobPercentCompleteHasBeenSet(false),
     m_jobTemplateHasBeenSet(false),
     m_outputGroupDetailsHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false),
     m_queueHasBeenSet(false),
     m_retryCount(0),
     m_retryCountHasBeenSet(false),
@@ -74,6 +76,8 @@ Job::Job(JsonView jsonValue) :
     m_jobPercentCompleteHasBeenSet(false),
     m_jobTemplateHasBeenSet(false),
     m_outputGroupDetailsHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false),
     m_queueHasBeenSet(false),
     m_retryCount(0),
     m_retryCountHasBeenSet(false),
@@ -169,6 +173,13 @@ Job& Job::operator =(JsonView jsonValue)
       m_outputGroupDetails.push_back(outputGroupDetailsJsonList[outputGroupDetailsIndex].AsObject());
     }
     m_outputGroupDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("priority"))
+  {
+    m_priority = jsonValue.GetInteger("priority");
+
+    m_priorityHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("queue"))
@@ -302,6 +313,12 @@ JsonValue Job::Jsonize() const
      outputGroupDetailsJsonList[outputGroupDetailsIndex].AsObject(m_outputGroupDetails[outputGroupDetailsIndex].Jsonize());
    }
    payload.WithArray("outputGroupDetails", std::move(outputGroupDetailsJsonList));
+
+  }
+
+  if(m_priorityHasBeenSet)
+  {
+   payload.WithInteger("priority", m_priority);
 
   }
 

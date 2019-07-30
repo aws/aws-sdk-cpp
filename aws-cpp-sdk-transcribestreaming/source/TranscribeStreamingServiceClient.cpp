@@ -110,6 +110,24 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
 {
   Aws::Http::URI uri = m_uri;
+  if (!request.LanguageCodeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartStreamTranscription", "Required field: LanguageCode, is not set");
+    responseHandler(this, request, StartStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LanguageCode]", false)), handlerContext);
+    return;
+  }
+  if (!request.MediaSampleRateHertzHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartStreamTranscription", "Required field: MediaSampleRateHertz, is not set");
+    responseHandler(this, request, StartStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaSampleRateHertz]", false)), handlerContext);
+    return;
+  }
+  if (!request.MediaEncodingHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartStreamTranscription", "Required field: MediaEncoding, is not set");
+    responseHandler(this, request, StartStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaEncoding]", false)), handlerContext);
+    return;
+  }
   Aws::StringStream ss;
   ss << "/stream-transcription";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -120,41 +138,21 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
   auto eventEncoderStream = Aws::MakeShared<Model::AudioStream>(ALLOCATION_TAG);
   eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
   request.SetAudioStream(eventEncoderStream); // this becomes the body of the request
-  // TODO: pass the signer pointer right away instead of doing another lookup by name
-  std::shared_ptr<Aws::Http::HttpRequest> httpRequest = BuildAndSignHttpRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
-  if (!httpRequest)
-  {
-      AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Failed to sign event-stream request");
-      return;
-  }
-  const auto& signature = Aws::Client::GetAuthorizationHeader(*httpRequest);
-  eventEncoderStream->SetSignatureSeed(signature);
-  m_executor->Submit([this, &request, httpRequest, responseHandler, handlerContext] () mutable {
-  if (!request.LanguageCodeHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("StartStreamTranscription", "Required field: LanguageCode, is not set");
-    return StartStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LanguageCode]", false));
-  }
-  if (!request.MediaSampleRateHertzHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("StartStreamTranscription", "Required field: MediaSampleRateHertz, is not set");
-    return StartStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaSampleRateHertz]", false));
-  }
-  if (!request.MediaEncodingHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("StartStreamTranscription", "Required field: MediaEncoding, is not set");
-    return StartStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaEncoding]", false));
-  }
-      JsonOutcome outcome = MakeEventStreamRequest(httpRequest);
+  Aws::Utils::Threading::Semaphore sem(0, 1);
+  request.SetRequestSignedHandler([&](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem.ReleaseAll(); });
+
+  m_executor->Submit([this, uri, &request, responseHandler, handlerContext] () mutable {
+      JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
       if(outcome.IsSuccess())
       {
-      responseHandler(this, request, StartStreamTranscriptionOutcome(NoResult()), handlerContext);
+        responseHandler(this, request, StartStreamTranscriptionOutcome(NoResult()), handlerContext);
       }
       else
       {
-      responseHandler(this, request, StartStreamTranscriptionOutcome(outcome.GetError()), handlerContext);
+        responseHandler(this, request, StartStreamTranscriptionOutcome(outcome.GetError()), handlerContext);
       }
       return StartStreamTranscriptionOutcome(NoResult());
   });
-    streamReadyHandler(*request.GetAudioStream());
+  sem.WaitOne();
+  streamReadyHandler(*request.GetAudioStream());
 }

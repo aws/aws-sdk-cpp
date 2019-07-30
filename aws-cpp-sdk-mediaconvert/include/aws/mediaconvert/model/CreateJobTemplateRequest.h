@@ -219,6 +219,39 @@ namespace Model
 
 
     /**
+     * Specify the relative priority for this job. In any given queue, the service
+     * begins processing the job with the highest value first. When more than one job
+     * has the same priority, the service begins processing the job that you submitted
+     * first. If you don't specify a priority, the service uses the default value 0.
+     */
+    inline int GetPriority() const{ return m_priority; }
+
+    /**
+     * Specify the relative priority for this job. In any given queue, the service
+     * begins processing the job with the highest value first. When more than one job
+     * has the same priority, the service begins processing the job that you submitted
+     * first. If you don't specify a priority, the service uses the default value 0.
+     */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+
+    /**
+     * Specify the relative priority for this job. In any given queue, the service
+     * begins processing the job with the highest value first. When more than one job
+     * has the same priority, the service begins processing the job that you submitted
+     * first. If you don't specify a priority, the service uses the default value 0.
+     */
+    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
+
+    /**
+     * Specify the relative priority for this job. In any given queue, the service
+     * begins processing the job with the highest value first. When more than one job
+     * has the same priority, the service begins processing the job that you submitted
+     * first. If you don't specify a priority, the service uses the default value 0.
+     */
+    inline CreateJobTemplateRequest& WithPriority(int value) { SetPriority(value); return *this;}
+
+
+    /**
      * Optional. The queue that jobs created from this template are assigned to. If you
      * don't specify this, jobs will go to the default queue.
      */
@@ -444,6 +477,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    int m_priority;
+    bool m_priorityHasBeenSet;
 
     Aws::String m_queue;
     bool m_queueHasBeenSet;
