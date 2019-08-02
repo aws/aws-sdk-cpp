@@ -1,12 +1,12 @@
 /*
   * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
+  *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
   * A copy of the License is located at
-  * 
+  *
   *  http://aws.amazon.com/apache2.0
-  * 
+  *
   * or in the "license" file accompanying this file. This file is distributed
   * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
   * express or implied. See the License for the specific language governing
@@ -180,12 +180,26 @@ Aws::String URI::URLEncodePath(const Aws::String& path)
 }
 
 void URI::SetPath(const Aws::String& value)
-{    
-   m_path = value;
+{
+    const Aws::Vector<Aws::String> pathParts = StringUtils::Split(value, '/');
+    Aws::String path;
+    path.reserve(value.length() + 1/* in case we have to append slash before the path. */);
+
+    for (const auto& segment : pathParts)
+    {
+        path.push_back('/');
+        path.append(segment);
+    }
+
+    if (value.back() == '/')
+    {
+        path.push_back('/');
+    }
+    m_path = std::move(path);
 }
 
 //ugh, this isn't even part of the canonicalization spec. It is part of how our services have implemented their signers though....
-//it doesn't really hurt anything to reorder it though, so go ahead and sort the values for parameters with the same key 
+//it doesn't really hurt anything to reorder it though, so go ahead and sort the values for parameters with the same key
 void InsertValueOrderedParameter(QueryStringParameterCollection& queryParams, const Aws::String& key, const Aws::String& value)
 {
     auto entriesAtKey = queryParams.equal_range(key);
@@ -193,7 +207,7 @@ void InsertValueOrderedParameter(QueryStringParameterCollection& queryParams, co
     {
         if (entry->second > value)
         {
-            queryParams.emplace_hint(entry, key, value);            
+            queryParams.emplace_hint(entry, key, value);
             return;
         }
     }
@@ -309,7 +323,7 @@ void URI::SetQueryString(const Aws::String& str)
     m_queryString = "";
 
     if (str.empty()) return;
-    
+
     if (str.front() != '?')
     {
         m_queryString.append("?").append(str);
@@ -317,7 +331,7 @@ void URI::SetQueryString(const Aws::String& str)
     else
     {
        m_queryString = str;
-    }    
+    }
 }
 
 Aws::String URI::GetURIString(bool includeQueryString) const

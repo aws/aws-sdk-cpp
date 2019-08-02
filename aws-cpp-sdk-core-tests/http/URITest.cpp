@@ -1,12 +1,12 @@
 /*
   * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
+  *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
   * A copy of the License is located at
-  * 
+  *
   *  http://aws.amazon.com/apache2.0
-  * 
+  *
   * or in the "license" file accompanying this file. This file is distributed
   * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
   * express or implied. See the License for the specific language governing
@@ -22,7 +22,7 @@ TEST(URITest, DefaultConstructor)
     URI uri;
     EXPECT_EQ(Scheme::HTTP, uri.GetScheme());
     EXPECT_EQ(HTTP_DEFAULT_PORT, uri.GetPort());
-        
+
 }
 
 TEST(URITest, TestSchemeChanges)
@@ -56,12 +56,20 @@ TEST(URITest, TestSetPath)
     uri.SetPath(path);
     EXPECT_EQ(path, uri.GetPath());
 
+    path = "path/to/resource/";
+    uri.SetPath(path);
+    EXPECT_EQ("/path/to/resource/", uri.GetPath());
+
+    path = "//path/to//resource";
+    uri.SetPath(path);
+    EXPECT_EQ("/path/to/resource", uri.GetPath());
+
     //make sure url encoding works here
     path = "/path/with space/to/resource";
     uri.SetPath(path);
     EXPECT_EQ("/path/with%20space/to/resource", uri.GetURLEncodedPath());
     //make sure we return an UnEncoded path properly
-    EXPECT_EQ(path, uri.GetPath());    
+    EXPECT_EQ(path, uri.GetPath());
 }
 
 TEST(URITest, TestAddQueryStringParameters)
@@ -131,7 +139,7 @@ TEST(URITest, TestCanonicalizeQueryStringParameters)
 
     //it should be sorted and canonical
     EXPECT_STREQ("?a=b&b=c&c=a&c=b&d=d", uri.GetQueryString().c_str());
-    
+
     URI nonStandardUri("www.test.com/path/to/resource?nonStandard");
     nonStandardUri.CanonicalizeQueryString();
     EXPECT_EQ("?nonStandard", nonStandardUri.GetQueryString());
@@ -207,7 +215,7 @@ TEST(URITest, TestParseWithColon)
     EXPECT_EQ(80, complexUri.GetPort());
     EXPECT_STREQ("/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:1234/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:Key", complexUri.GetPath().c_str());
     EXPECT_STREQ(strComplexUri, complexUri.GetURIString().c_str());
-    
+
 }
 
 TEST(URITest, TestGetRFC3986URLEncodedPath)
