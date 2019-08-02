@@ -60,37 +60,37 @@ PendingMaintenanceAction& PendingMaintenanceAction::operator =(const XmlNode& xm
     XmlNode actionNode = resultNode.FirstChild("Action");
     if(!actionNode.IsNull())
     {
-      m_action = actionNode.GetText();
+      m_action = Aws::Utils::Xml::DecodeEscapedXmlText(actionNode.GetText());
       m_actionHasBeenSet = true;
     }
     XmlNode autoAppliedAfterDateNode = resultNode.FirstChild("AutoAppliedAfterDate");
     if(!autoAppliedAfterDateNode.IsNull())
     {
-      m_autoAppliedAfterDate = DateTime(StringUtils::Trim(autoAppliedAfterDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_autoAppliedAfterDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoAppliedAfterDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_autoAppliedAfterDateHasBeenSet = true;
     }
     XmlNode forcedApplyDateNode = resultNode.FirstChild("ForcedApplyDate");
     if(!forcedApplyDateNode.IsNull())
     {
-      m_forcedApplyDate = DateTime(StringUtils::Trim(forcedApplyDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_forcedApplyDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(forcedApplyDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_forcedApplyDateHasBeenSet = true;
     }
     XmlNode optInStatusNode = resultNode.FirstChild("OptInStatus");
     if(!optInStatusNode.IsNull())
     {
-      m_optInStatus = optInStatusNode.GetText();
+      m_optInStatus = Aws::Utils::Xml::DecodeEscapedXmlText(optInStatusNode.GetText());
       m_optInStatusHasBeenSet = true;
     }
     XmlNode currentApplyDateNode = resultNode.FirstChild("CurrentApplyDate");
     if(!currentApplyDateNode.IsNull())
     {
-      m_currentApplyDate = DateTime(StringUtils::Trim(currentApplyDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_currentApplyDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currentApplyDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_currentApplyDateHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
   }

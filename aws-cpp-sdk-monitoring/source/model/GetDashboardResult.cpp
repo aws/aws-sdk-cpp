@@ -51,17 +51,17 @@ GetDashboardResult& GetDashboardResult::operator =(const Aws::AmazonWebServiceRe
     XmlNode dashboardArnNode = resultNode.FirstChild("DashboardArn");
     if(!dashboardArnNode.IsNull())
     {
-      m_dashboardArn = dashboardArnNode.GetText();
+      m_dashboardArn = Aws::Utils::Xml::DecodeEscapedXmlText(dashboardArnNode.GetText());
     }
     XmlNode dashboardBodyNode = resultNode.FirstChild("DashboardBody");
     if(!dashboardBodyNode.IsNull())
     {
-      m_dashboardBody = dashboardBodyNode.GetText();
+      m_dashboardBody = Aws::Utils::Xml::DecodeEscapedXmlText(dashboardBodyNode.GetText());
     }
     XmlNode dashboardNameNode = resultNode.FirstChild("DashboardName");
     if(!dashboardNameNode.IsNull())
     {
-      m_dashboardName = dashboardNameNode.GetText();
+      m_dashboardName = Aws::Utils::Xml::DecodeEscapedXmlText(dashboardNameNode.GetText());
     }
   }
 

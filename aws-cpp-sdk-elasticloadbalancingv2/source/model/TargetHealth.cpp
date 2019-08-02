@@ -58,19 +58,19 @@ TargetHealth& TargetHealth::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("State");
     if(!stateNode.IsNull())
     {
-      m_state = TargetHealthStateEnumMapper::GetTargetHealthStateEnumForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_state = TargetHealthStateEnumMapper::GetTargetHealthStateEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
       m_stateHasBeenSet = true;
     }
     XmlNode reasonNode = resultNode.FirstChild("Reason");
     if(!reasonNode.IsNull())
     {
-      m_reason = TargetHealthReasonEnumMapper::GetTargetHealthReasonEnumForName(StringUtils::Trim(reasonNode.GetText().c_str()).c_str());
+      m_reason = TargetHealthReasonEnumMapper::GetTargetHealthReasonEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reasonNode.GetText()).c_str()).c_str());
       m_reasonHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
   }

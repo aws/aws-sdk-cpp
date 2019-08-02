@@ -66,37 +66,37 @@ PlatformSummary& PlatformSummary::operator =(const XmlNode& xmlNode)
     XmlNode platformArnNode = resultNode.FirstChild("PlatformArn");
     if(!platformArnNode.IsNull())
     {
-      m_platformArn = platformArnNode.GetText();
+      m_platformArn = Aws::Utils::Xml::DecodeEscapedXmlText(platformArnNode.GetText());
       m_platformArnHasBeenSet = true;
     }
     XmlNode platformOwnerNode = resultNode.FirstChild("PlatformOwner");
     if(!platformOwnerNode.IsNull())
     {
-      m_platformOwner = platformOwnerNode.GetText();
+      m_platformOwner = Aws::Utils::Xml::DecodeEscapedXmlText(platformOwnerNode.GetText());
       m_platformOwnerHasBeenSet = true;
     }
     XmlNode platformStatusNode = resultNode.FirstChild("PlatformStatus");
     if(!platformStatusNode.IsNull())
     {
-      m_platformStatus = PlatformStatusMapper::GetPlatformStatusForName(StringUtils::Trim(platformStatusNode.GetText().c_str()).c_str());
+      m_platformStatus = PlatformStatusMapper::GetPlatformStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformStatusNode.GetText()).c_str()).c_str());
       m_platformStatusHasBeenSet = true;
     }
     XmlNode platformCategoryNode = resultNode.FirstChild("PlatformCategory");
     if(!platformCategoryNode.IsNull())
     {
-      m_platformCategory = platformCategoryNode.GetText();
+      m_platformCategory = Aws::Utils::Xml::DecodeEscapedXmlText(platformCategoryNode.GetText());
       m_platformCategoryHasBeenSet = true;
     }
     XmlNode operatingSystemNameNode = resultNode.FirstChild("OperatingSystemName");
     if(!operatingSystemNameNode.IsNull())
     {
-      m_operatingSystemName = operatingSystemNameNode.GetText();
+      m_operatingSystemName = Aws::Utils::Xml::DecodeEscapedXmlText(operatingSystemNameNode.GetText());
       m_operatingSystemNameHasBeenSet = true;
     }
     XmlNode operatingSystemVersionNode = resultNode.FirstChild("OperatingSystemVersion");
     if(!operatingSystemVersionNode.IsNull())
     {
-      m_operatingSystemVersion = operatingSystemVersionNode.GetText();
+      m_operatingSystemVersion = Aws::Utils::Xml::DecodeEscapedXmlText(operatingSystemVersionNode.GetText());
       m_operatingSystemVersionHasBeenSet = true;
     }
     XmlNode supportedTierListNode = resultNode.FirstChild("SupportedTierList");

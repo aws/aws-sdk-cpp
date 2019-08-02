@@ -68,55 +68,55 @@ EventDescription& EventDescription::operator =(const XmlNode& xmlNode)
     XmlNode eventDateNode = resultNode.FirstChild("EventDate");
     if(!eventDateNode.IsNull())
     {
-      m_eventDate = DateTime(StringUtils::Trim(eventDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_eventDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(eventDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_eventDateHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
-      m_message = messageNode.GetText();
+      m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
     }
     XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
     if(!applicationNameNode.IsNull())
     {
-      m_applicationName = applicationNameNode.GetText();
+      m_applicationName = Aws::Utils::Xml::DecodeEscapedXmlText(applicationNameNode.GetText());
       m_applicationNameHasBeenSet = true;
     }
     XmlNode versionLabelNode = resultNode.FirstChild("VersionLabel");
     if(!versionLabelNode.IsNull())
     {
-      m_versionLabel = versionLabelNode.GetText();
+      m_versionLabel = Aws::Utils::Xml::DecodeEscapedXmlText(versionLabelNode.GetText());
       m_versionLabelHasBeenSet = true;
     }
     XmlNode templateNameNode = resultNode.FirstChild("TemplateName");
     if(!templateNameNode.IsNull())
     {
-      m_templateName = templateNameNode.GetText();
+      m_templateName = Aws::Utils::Xml::DecodeEscapedXmlText(templateNameNode.GetText());
       m_templateNameHasBeenSet = true;
     }
     XmlNode environmentNameNode = resultNode.FirstChild("EnvironmentName");
     if(!environmentNameNode.IsNull())
     {
-      m_environmentName = environmentNameNode.GetText();
+      m_environmentName = Aws::Utils::Xml::DecodeEscapedXmlText(environmentNameNode.GetText());
       m_environmentNameHasBeenSet = true;
     }
     XmlNode platformArnNode = resultNode.FirstChild("PlatformArn");
     if(!platformArnNode.IsNull())
     {
-      m_platformArn = platformArnNode.GetText();
+      m_platformArn = Aws::Utils::Xml::DecodeEscapedXmlText(platformArnNode.GetText());
       m_platformArnHasBeenSet = true;
     }
     XmlNode requestIdNode = resultNode.FirstChild("RequestId");
     if(!requestIdNode.IsNull())
     {
-      m_requestId = requestIdNode.GetText();
+      m_requestId = Aws::Utils::Xml::DecodeEscapedXmlText(requestIdNode.GetText());
       m_requestIdHasBeenSet = true;
     }
     XmlNode severityNode = resultNode.FirstChild("Severity");
     if(!severityNode.IsNull())
     {
-      m_severity = EventSeverityMapper::GetEventSeverityForName(StringUtils::Trim(severityNode.GetText().c_str()).c_str());
+      m_severity = EventSeverityMapper::GetEventSeverityForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(severityNode.GetText()).c_str()).c_str());
       m_severityHasBeenSet = true;
     }
   }

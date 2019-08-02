@@ -52,7 +52,7 @@ DBClusterSnapshotAttribute& DBClusterSnapshotAttribute::operator =(const XmlNode
     XmlNode attributeNameNode = resultNode.FirstChild("AttributeName");
     if(!attributeNameNode.IsNull())
     {
-      m_attributeName = attributeNameNode.GetText();
+      m_attributeName = Aws::Utils::Xml::DecodeEscapedXmlText(attributeNameNode.GetText());
       m_attributeNameHasBeenSet = true;
     }
     XmlNode attributeValuesNode = resultNode.FirstChild("AttributeValues");

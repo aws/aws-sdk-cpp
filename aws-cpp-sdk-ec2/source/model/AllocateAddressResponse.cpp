@@ -53,22 +53,22 @@ AllocateAddressResponse& AllocateAddressResponse::operator =(const Aws::AmazonWe
     XmlNode publicIpNode = resultNode.FirstChild("publicIp");
     if(!publicIpNode.IsNull())
     {
-      m_publicIp = publicIpNode.GetText();
+      m_publicIp = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpNode.GetText());
     }
     XmlNode allocationIdNode = resultNode.FirstChild("allocationId");
     if(!allocationIdNode.IsNull())
     {
-      m_allocationId = allocationIdNode.GetText();
+      m_allocationId = Aws::Utils::Xml::DecodeEscapedXmlText(allocationIdNode.GetText());
     }
     XmlNode publicIpv4PoolNode = resultNode.FirstChild("publicIpv4Pool");
     if(!publicIpv4PoolNode.IsNull())
     {
-      m_publicIpv4Pool = publicIpv4PoolNode.GetText();
+      m_publicIpv4Pool = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpv4PoolNode.GetText());
     }
     XmlNode domainNode = resultNode.FirstChild("domain");
     if(!domainNode.IsNull())
     {
-      m_domain = DomainTypeMapper::GetDomainTypeForName(StringUtils::Trim(domainNode.GetText().c_str()).c_str());
+      m_domain = DomainTypeMapper::GetDomainTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(domainNode.GetText()).c_str()).c_str());
     }
   }
 

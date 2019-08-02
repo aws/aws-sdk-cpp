@@ -60,7 +60,7 @@ TrafficMirrorFilter& TrafficMirrorFilter::operator =(const XmlNode& xmlNode)
     XmlNode trafficMirrorFilterIdNode = resultNode.FirstChild("trafficMirrorFilterId");
     if(!trafficMirrorFilterIdNode.IsNull())
     {
-      m_trafficMirrorFilterId = trafficMirrorFilterIdNode.GetText();
+      m_trafficMirrorFilterId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficMirrorFilterIdNode.GetText());
       m_trafficMirrorFilterIdHasBeenSet = true;
     }
     XmlNode ingressFilterRulesNode = resultNode.FirstChild("ingressFilterRuleSet");
@@ -102,7 +102,7 @@ TrafficMirrorFilter& TrafficMirrorFilter::operator =(const XmlNode& xmlNode)
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");

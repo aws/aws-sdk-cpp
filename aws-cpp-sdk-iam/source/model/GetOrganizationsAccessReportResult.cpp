@@ -59,27 +59,27 @@ GetOrganizationsAccessReportResult& GetOrganizationsAccessReportResult::operator
     XmlNode jobStatusNode = resultNode.FirstChild("JobStatus");
     if(!jobStatusNode.IsNull())
     {
-      m_jobStatus = JobStatusTypeMapper::GetJobStatusTypeForName(StringUtils::Trim(jobStatusNode.GetText().c_str()).c_str());
+      m_jobStatus = JobStatusTypeMapper::GetJobStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(jobStatusNode.GetText()).c_str()).c_str());
     }
     XmlNode jobCreationDateNode = resultNode.FirstChild("JobCreationDate");
     if(!jobCreationDateNode.IsNull())
     {
-      m_jobCreationDate = DateTime(StringUtils::Trim(jobCreationDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_jobCreationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(jobCreationDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode jobCompletionDateNode = resultNode.FirstChild("JobCompletionDate");
     if(!jobCompletionDateNode.IsNull())
     {
-      m_jobCompletionDate = DateTime(StringUtils::Trim(jobCompletionDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_jobCompletionDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(jobCompletionDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode numberOfServicesAccessibleNode = resultNode.FirstChild("NumberOfServicesAccessible");
     if(!numberOfServicesAccessibleNode.IsNull())
     {
-      m_numberOfServicesAccessible = StringUtils::ConvertToInt32(StringUtils::Trim(numberOfServicesAccessibleNode.GetText().c_str()).c_str());
+      m_numberOfServicesAccessible = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numberOfServicesAccessibleNode.GetText()).c_str()).c_str());
     }
     XmlNode numberOfServicesNotAccessedNode = resultNode.FirstChild("NumberOfServicesNotAccessed");
     if(!numberOfServicesNotAccessedNode.IsNull())
     {
-      m_numberOfServicesNotAccessed = StringUtils::ConvertToInt32(StringUtils::Trim(numberOfServicesNotAccessedNode.GetText().c_str()).c_str());
+      m_numberOfServicesNotAccessed = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numberOfServicesNotAccessedNode.GetText()).c_str()).c_str());
     }
     XmlNode accessDetailsNode = resultNode.FirstChild("AccessDetails");
     if(!accessDetailsNode.IsNull())
@@ -95,12 +95,12 @@ GetOrganizationsAccessReportResult& GetOrganizationsAccessReportResult::operator
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
     {
-      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
-      m_marker = markerNode.GetText();
+      m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
     }
     XmlNode errorDetailsNode = resultNode.FirstChild("ErrorDetails");
     if(!errorDetailsNode.IsNull())

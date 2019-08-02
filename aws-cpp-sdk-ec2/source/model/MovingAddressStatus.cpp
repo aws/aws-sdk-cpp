@@ -54,13 +54,13 @@ MovingAddressStatus& MovingAddressStatus::operator =(const XmlNode& xmlNode)
     XmlNode moveStatusNode = resultNode.FirstChild("moveStatus");
     if(!moveStatusNode.IsNull())
     {
-      m_moveStatus = MoveStatusMapper::GetMoveStatusForName(StringUtils::Trim(moveStatusNode.GetText().c_str()).c_str());
+      m_moveStatus = MoveStatusMapper::GetMoveStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(moveStatusNode.GetText()).c_str()).c_str());
       m_moveStatusHasBeenSet = true;
     }
     XmlNode publicIpNode = resultNode.FirstChild("publicIp");
     if(!publicIpNode.IsNull())
     {
-      m_publicIp = publicIpNode.GetText();
+      m_publicIp = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpNode.GetText());
       m_publicIpHasBeenSet = true;
     }
   }

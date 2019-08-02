@@ -60,19 +60,19 @@ Grantee& Grantee::operator =(const XmlNode& xmlNode)
     XmlNode displayNameNode = resultNode.FirstChild("DisplayName");
     if(!displayNameNode.IsNull())
     {
-      m_displayName = displayNameNode.GetText();
+      m_displayName = Aws::Utils::Xml::DecodeEscapedXmlText(displayNameNode.GetText());
       m_displayNameHasBeenSet = true;
     }
     XmlNode emailAddressNode = resultNode.FirstChild("EmailAddress");
     if(!emailAddressNode.IsNull())
     {
-      m_emailAddress = emailAddressNode.GetText();
+      m_emailAddress = Aws::Utils::Xml::DecodeEscapedXmlText(emailAddressNode.GetText());
       m_emailAddressHasBeenSet = true;
     }
     XmlNode iDNode = resultNode.FirstChild("ID");
     if(!iDNode.IsNull())
     {
-      m_iD = iDNode.GetText();
+      m_iD = Aws::Utils::Xml::DecodeEscapedXmlText(iDNode.GetText());
       m_iDHasBeenSet = true;
     }
     auto type = resultNode.GetAttributeValue("xsi:type");
@@ -84,7 +84,7 @@ Grantee& Grantee::operator =(const XmlNode& xmlNode)
     XmlNode uRINode = resultNode.FirstChild("URI");
     if(!uRINode.IsNull())
     {
-      m_uRI = uRINode.GetText();
+      m_uRI = Aws::Utils::Xml::DecodeEscapedXmlText(uRINode.GetText());
       m_uRIHasBeenSet = true;
     }
   }

@@ -62,7 +62,7 @@ DescribeDBLogFilesResult& DescribeDBLogFilesResult::operator =(const Aws::Amazon
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
-      m_marker = markerNode.GetText();
+      m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
     }
   }
 

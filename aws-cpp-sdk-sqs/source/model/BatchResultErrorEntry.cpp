@@ -58,25 +58,25 @@ BatchResultErrorEntry& BatchResultErrorEntry::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = idNode.GetText();
+      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
     }
     XmlNode senderFaultNode = resultNode.FirstChild("SenderFault");
     if(!senderFaultNode.IsNull())
     {
-      m_senderFault = StringUtils::ConvertToBool(StringUtils::Trim(senderFaultNode.GetText().c_str()).c_str());
+      m_senderFault = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(senderFaultNode.GetText()).c_str()).c_str());
       m_senderFaultHasBeenSet = true;
     }
     XmlNode codeNode = resultNode.FirstChild("Code");
     if(!codeNode.IsNull())
     {
-      m_code = codeNode.GetText();
+      m_code = Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText());
       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
-      m_message = messageNode.GetText();
+      m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
     }
   }

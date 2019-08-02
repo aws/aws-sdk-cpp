@@ -78,55 +78,55 @@ AuthenticateOidcActionConfig& AuthenticateOidcActionConfig::operator =(const Xml
     XmlNode issuerNode = resultNode.FirstChild("Issuer");
     if(!issuerNode.IsNull())
     {
-      m_issuer = issuerNode.GetText();
+      m_issuer = Aws::Utils::Xml::DecodeEscapedXmlText(issuerNode.GetText());
       m_issuerHasBeenSet = true;
     }
     XmlNode authorizationEndpointNode = resultNode.FirstChild("AuthorizationEndpoint");
     if(!authorizationEndpointNode.IsNull())
     {
-      m_authorizationEndpoint = authorizationEndpointNode.GetText();
+      m_authorizationEndpoint = Aws::Utils::Xml::DecodeEscapedXmlText(authorizationEndpointNode.GetText());
       m_authorizationEndpointHasBeenSet = true;
     }
     XmlNode tokenEndpointNode = resultNode.FirstChild("TokenEndpoint");
     if(!tokenEndpointNode.IsNull())
     {
-      m_tokenEndpoint = tokenEndpointNode.GetText();
+      m_tokenEndpoint = Aws::Utils::Xml::DecodeEscapedXmlText(tokenEndpointNode.GetText());
       m_tokenEndpointHasBeenSet = true;
     }
     XmlNode userInfoEndpointNode = resultNode.FirstChild("UserInfoEndpoint");
     if(!userInfoEndpointNode.IsNull())
     {
-      m_userInfoEndpoint = userInfoEndpointNode.GetText();
+      m_userInfoEndpoint = Aws::Utils::Xml::DecodeEscapedXmlText(userInfoEndpointNode.GetText());
       m_userInfoEndpointHasBeenSet = true;
     }
     XmlNode clientIdNode = resultNode.FirstChild("ClientId");
     if(!clientIdNode.IsNull())
     {
-      m_clientId = clientIdNode.GetText();
+      m_clientId = Aws::Utils::Xml::DecodeEscapedXmlText(clientIdNode.GetText());
       m_clientIdHasBeenSet = true;
     }
     XmlNode clientSecretNode = resultNode.FirstChild("ClientSecret");
     if(!clientSecretNode.IsNull())
     {
-      m_clientSecret = clientSecretNode.GetText();
+      m_clientSecret = Aws::Utils::Xml::DecodeEscapedXmlText(clientSecretNode.GetText());
       m_clientSecretHasBeenSet = true;
     }
     XmlNode sessionCookieNameNode = resultNode.FirstChild("SessionCookieName");
     if(!sessionCookieNameNode.IsNull())
     {
-      m_sessionCookieName = sessionCookieNameNode.GetText();
+      m_sessionCookieName = Aws::Utils::Xml::DecodeEscapedXmlText(sessionCookieNameNode.GetText());
       m_sessionCookieNameHasBeenSet = true;
     }
     XmlNode scopeNode = resultNode.FirstChild("Scope");
     if(!scopeNode.IsNull())
     {
-      m_scope = scopeNode.GetText();
+      m_scope = Aws::Utils::Xml::DecodeEscapedXmlText(scopeNode.GetText());
       m_scopeHasBeenSet = true;
     }
     XmlNode sessionTimeoutNode = resultNode.FirstChild("SessionTimeout");
     if(!sessionTimeoutNode.IsNull())
     {
-      m_sessionTimeout = StringUtils::ConvertToInt64(StringUtils::Trim(sessionTimeoutNode.GetText().c_str()).c_str());
+      m_sessionTimeout = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sessionTimeoutNode.GetText()).c_str()).c_str());
       m_sessionTimeoutHasBeenSet = true;
     }
     XmlNode authenticationRequestExtraParamsNode = resultNode.FirstChild("AuthenticationRequestExtraParams");
@@ -148,13 +148,13 @@ AuthenticateOidcActionConfig& AuthenticateOidcActionConfig::operator =(const Xml
     XmlNode onUnauthenticatedRequestNode = resultNode.FirstChild("OnUnauthenticatedRequest");
     if(!onUnauthenticatedRequestNode.IsNull())
     {
-      m_onUnauthenticatedRequest = AuthenticateOidcActionConditionalBehaviorEnumMapper::GetAuthenticateOidcActionConditionalBehaviorEnumForName(StringUtils::Trim(onUnauthenticatedRequestNode.GetText().c_str()).c_str());
+      m_onUnauthenticatedRequest = AuthenticateOidcActionConditionalBehaviorEnumMapper::GetAuthenticateOidcActionConditionalBehaviorEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onUnauthenticatedRequestNode.GetText()).c_str()).c_str());
       m_onUnauthenticatedRequestHasBeenSet = true;
     }
     XmlNode useExistingClientSecretNode = resultNode.FirstChild("UseExistingClientSecret");
     if(!useExistingClientSecretNode.IsNull())
     {
-      m_useExistingClientSecret = StringUtils::ConvertToBool(StringUtils::Trim(useExistingClientSecretNode.GetText().c_str()).c_str());
+      m_useExistingClientSecret = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(useExistingClientSecretNode.GetText()).c_str()).c_str());
       m_useExistingClientSecretHasBeenSet = true;
     }
   }

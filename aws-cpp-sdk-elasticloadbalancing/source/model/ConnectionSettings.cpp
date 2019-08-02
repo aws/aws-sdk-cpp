@@ -52,7 +52,7 @@ ConnectionSettings& ConnectionSettings::operator =(const XmlNode& xmlNode)
     XmlNode idleTimeoutNode = resultNode.FirstChild("IdleTimeout");
     if(!idleTimeoutNode.IsNull())
     {
-      m_idleTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(idleTimeoutNode.GetText().c_str()).c_str());
+      m_idleTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(idleTimeoutNode.GetText()).c_str()).c_str());
       m_idleTimeoutHasBeenSet = true;
     }
   }

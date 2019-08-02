@@ -84,7 +84,7 @@ DefaultCacheBehavior& DefaultCacheBehavior::operator =(const XmlNode& xmlNode)
     XmlNode targetOriginIdNode = resultNode.FirstChild("TargetOriginId");
     if(!targetOriginIdNode.IsNull())
     {
-      m_targetOriginId = targetOriginIdNode.GetText();
+      m_targetOriginId = Aws::Utils::Xml::DecodeEscapedXmlText(targetOriginIdNode.GetText());
       m_targetOriginIdHasBeenSet = true;
     }
     XmlNode forwardedValuesNode = resultNode.FirstChild("ForwardedValues");
@@ -102,13 +102,13 @@ DefaultCacheBehavior& DefaultCacheBehavior::operator =(const XmlNode& xmlNode)
     XmlNode viewerProtocolPolicyNode = resultNode.FirstChild("ViewerProtocolPolicy");
     if(!viewerProtocolPolicyNode.IsNull())
     {
-      m_viewerProtocolPolicy = ViewerProtocolPolicyMapper::GetViewerProtocolPolicyForName(StringUtils::Trim(viewerProtocolPolicyNode.GetText().c_str()).c_str());
+      m_viewerProtocolPolicy = ViewerProtocolPolicyMapper::GetViewerProtocolPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(viewerProtocolPolicyNode.GetText()).c_str()).c_str());
       m_viewerProtocolPolicyHasBeenSet = true;
     }
     XmlNode minTTLNode = resultNode.FirstChild("MinTTL");
     if(!minTTLNode.IsNull())
     {
-      m_minTTL = StringUtils::ConvertToInt64(StringUtils::Trim(minTTLNode.GetText().c_str()).c_str());
+      m_minTTL = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minTTLNode.GetText()).c_str()).c_str());
       m_minTTLHasBeenSet = true;
     }
     XmlNode allowedMethodsNode = resultNode.FirstChild("AllowedMethods");
@@ -120,25 +120,25 @@ DefaultCacheBehavior& DefaultCacheBehavior::operator =(const XmlNode& xmlNode)
     XmlNode smoothStreamingNode = resultNode.FirstChild("SmoothStreaming");
     if(!smoothStreamingNode.IsNull())
     {
-      m_smoothStreaming = StringUtils::ConvertToBool(StringUtils::Trim(smoothStreamingNode.GetText().c_str()).c_str());
+      m_smoothStreaming = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(smoothStreamingNode.GetText()).c_str()).c_str());
       m_smoothStreamingHasBeenSet = true;
     }
     XmlNode defaultTTLNode = resultNode.FirstChild("DefaultTTL");
     if(!defaultTTLNode.IsNull())
     {
-      m_defaultTTL = StringUtils::ConvertToInt64(StringUtils::Trim(defaultTTLNode.GetText().c_str()).c_str());
+      m_defaultTTL = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultTTLNode.GetText()).c_str()).c_str());
       m_defaultTTLHasBeenSet = true;
     }
     XmlNode maxTTLNode = resultNode.FirstChild("MaxTTL");
     if(!maxTTLNode.IsNull())
     {
-      m_maxTTL = StringUtils::ConvertToInt64(StringUtils::Trim(maxTTLNode.GetText().c_str()).c_str());
+      m_maxTTL = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxTTLNode.GetText()).c_str()).c_str());
       m_maxTTLHasBeenSet = true;
     }
     XmlNode compressNode = resultNode.FirstChild("Compress");
     if(!compressNode.IsNull())
     {
-      m_compress = StringUtils::ConvertToBool(StringUtils::Trim(compressNode.GetText().c_str()).c_str());
+      m_compress = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(compressNode.GetText()).c_str()).c_str());
       m_compressHasBeenSet = true;
     }
     XmlNode lambdaFunctionAssociationsNode = resultNode.FirstChild("LambdaFunctionAssociations");
@@ -150,7 +150,7 @@ DefaultCacheBehavior& DefaultCacheBehavior::operator =(const XmlNode& xmlNode)
     XmlNode fieldLevelEncryptionIdNode = resultNode.FirstChild("FieldLevelEncryptionId");
     if(!fieldLevelEncryptionIdNode.IsNull())
     {
-      m_fieldLevelEncryptionId = fieldLevelEncryptionIdNode.GetText();
+      m_fieldLevelEncryptionId = Aws::Utils::Xml::DecodeEscapedXmlText(fieldLevelEncryptionIdNode.GetText());
       m_fieldLevelEncryptionIdHasBeenSet = true;
     }
   }

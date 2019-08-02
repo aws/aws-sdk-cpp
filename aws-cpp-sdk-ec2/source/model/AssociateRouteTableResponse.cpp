@@ -51,7 +51,7 @@ AssociateRouteTableResponse& AssociateRouteTableResponse::operator =(const Aws::
     XmlNode associationIdNode = resultNode.FirstChild("associationId");
     if(!associationIdNode.IsNull())
     {
-      m_associationId = associationIdNode.GetText();
+      m_associationId = Aws::Utils::Xml::DecodeEscapedXmlText(associationIdNode.GetText());
     }
   }
 

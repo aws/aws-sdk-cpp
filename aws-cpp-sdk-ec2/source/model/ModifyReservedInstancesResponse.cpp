@@ -51,7 +51,7 @@ ModifyReservedInstancesResponse& ModifyReservedInstancesResponse::operator =(con
     XmlNode reservedInstancesModificationIdNode = resultNode.FirstChild("reservedInstancesModificationId");
     if(!reservedInstancesModificationIdNode.IsNull())
     {
-      m_reservedInstancesModificationId = reservedInstancesModificationIdNode.GetText();
+      m_reservedInstancesModificationId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedInstancesModificationIdNode.GetText());
     }
   }
 

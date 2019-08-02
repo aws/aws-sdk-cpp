@@ -58,19 +58,19 @@ CancelSpotFleetRequestsSuccessItem& CancelSpotFleetRequestsSuccessItem::operator
     XmlNode currentSpotFleetRequestStateNode = resultNode.FirstChild("currentSpotFleetRequestState");
     if(!currentSpotFleetRequestStateNode.IsNull())
     {
-      m_currentSpotFleetRequestState = BatchStateMapper::GetBatchStateForName(StringUtils::Trim(currentSpotFleetRequestStateNode.GetText().c_str()).c_str());
+      m_currentSpotFleetRequestState = BatchStateMapper::GetBatchStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currentSpotFleetRequestStateNode.GetText()).c_str()).c_str());
       m_currentSpotFleetRequestStateHasBeenSet = true;
     }
     XmlNode previousSpotFleetRequestStateNode = resultNode.FirstChild("previousSpotFleetRequestState");
     if(!previousSpotFleetRequestStateNode.IsNull())
     {
-      m_previousSpotFleetRequestState = BatchStateMapper::GetBatchStateForName(StringUtils::Trim(previousSpotFleetRequestStateNode.GetText().c_str()).c_str());
+      m_previousSpotFleetRequestState = BatchStateMapper::GetBatchStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(previousSpotFleetRequestStateNode.GetText()).c_str()).c_str());
       m_previousSpotFleetRequestStateHasBeenSet = true;
     }
     XmlNode spotFleetRequestIdNode = resultNode.FirstChild("spotFleetRequestId");
     if(!spotFleetRequestIdNode.IsNull())
     {
-      m_spotFleetRequestId = spotFleetRequestIdNode.GetText();
+      m_spotFleetRequestId = Aws::Utils::Xml::DecodeEscapedXmlText(spotFleetRequestIdNode.GetText());
       m_spotFleetRequestIdHasBeenSet = true;
     }
   }

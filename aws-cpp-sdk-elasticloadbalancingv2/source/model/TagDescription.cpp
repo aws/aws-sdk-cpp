@@ -52,7 +52,7 @@ TagDescription& TagDescription::operator =(const XmlNode& xmlNode)
     XmlNode resourceArnNode = resultNode.FirstChild("ResourceArn");
     if(!resourceArnNode.IsNull())
     {
-      m_resourceArn = resourceArnNode.GetText();
+      m_resourceArn = Aws::Utils::Xml::DecodeEscapedXmlText(resourceArnNode.GetText());
       m_resourceArnHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");

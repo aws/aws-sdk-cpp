@@ -51,7 +51,7 @@ DeleteTrafficMirrorFilterRuleResponse& DeleteTrafficMirrorFilterRuleResponse::op
     XmlNode trafficMirrorFilterRuleIdNode = resultNode.FirstChild("trafficMirrorFilterRuleId");
     if(!trafficMirrorFilterRuleIdNode.IsNull())
     {
-      m_trafficMirrorFilterRuleId = trafficMirrorFilterRuleIdNode.GetText();
+      m_trafficMirrorFilterRuleId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficMirrorFilterRuleIdNode.GetText());
     }
   }
 

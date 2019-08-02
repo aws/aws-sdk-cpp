@@ -51,7 +51,7 @@ ModifyEbsDefaultKmsKeyIdResponse& ModifyEbsDefaultKmsKeyIdResponse::operator =(c
     XmlNode kmsKeyIdNode = resultNode.FirstChild("kmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
-      m_kmsKeyId = kmsKeyIdNode.GetText();
+      m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
     }
   }
 

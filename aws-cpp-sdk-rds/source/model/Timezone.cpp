@@ -50,7 +50,7 @@ Timezone& Timezone::operator =(const XmlNode& xmlNode)
     XmlNode timezoneNameNode = resultNode.FirstChild("TimezoneName");
     if(!timezoneNameNode.IsNull())
     {
-      m_timezoneName = timezoneNameNode.GetText();
+      m_timezoneName = Aws::Utils::Xml::DecodeEscapedXmlText(timezoneNameNode.GetText());
       m_timezoneNameHasBeenSet = true;
     }
   }

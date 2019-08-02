@@ -54,13 +54,13 @@ LoadPermission& LoadPermission::operator =(const XmlNode& xmlNode)
     XmlNode userIdNode = resultNode.FirstChild("userId");
     if(!userIdNode.IsNull())
     {
-      m_userId = userIdNode.GetText();
+      m_userId = Aws::Utils::Xml::DecodeEscapedXmlText(userIdNode.GetText());
       m_userIdHasBeenSet = true;
     }
     XmlNode groupNode = resultNode.FirstChild("group");
     if(!groupNode.IsNull())
     {
-      m_group = PermissionGroupMapper::GetPermissionGroupForName(StringUtils::Trim(groupNode.GetText().c_str()).c_str());
+      m_group = PermissionGroupMapper::GetPermissionGroupForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(groupNode.GetText()).c_str()).c_str());
       m_groupHasBeenSet = true;
     }
   }

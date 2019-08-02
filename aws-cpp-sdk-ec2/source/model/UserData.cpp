@@ -50,7 +50,7 @@ UserData& UserData::operator =(const XmlNode& xmlNode)
     XmlNode dataNode = resultNode.FirstChild("data");
     if(!dataNode.IsNull())
     {
-      m_data = dataNode.GetText();
+      m_data = Aws::Utils::Xml::DecodeEscapedXmlText(dataNode.GetText());
       m_dataHasBeenSet = true;
     }
   }

@@ -49,22 +49,22 @@ CompleteMultipartUploadResult& CompleteMultipartUploadResult::operator =(const A
     XmlNode locationNode = resultNode.FirstChild("Location");
     if(!locationNode.IsNull())
     {
-      m_location = locationNode.GetText();
+      m_location = Aws::Utils::Xml::DecodeEscapedXmlText(locationNode.GetText());
     }
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
     if(!bucketNode.IsNull())
     {
-      m_bucket = bucketNode.GetText();
+      m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
     }
     XmlNode keyNode = resultNode.FirstChild("Key");
     if(!keyNode.IsNull())
     {
-      m_key = keyNode.GetText();
+      m_key = Aws::Utils::Xml::DecodeEscapedXmlText(keyNode.GetText());
     }
     XmlNode eTagNode = resultNode.FirstChild("ETag");
     if(!eTagNode.IsNull())
     {
-      m_eTag = eTagNode.GetText();
+      m_eTag = Aws::Utils::Xml::DecodeEscapedXmlText(eTagNode.GetText());
     }
   }
 

@@ -100,73 +100,73 @@ ReservedInstancesOffering& ReservedInstancesOffering::operator =(const XmlNode& 
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = availabilityZoneNode.GetText();
+      m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode durationNode = resultNode.FirstChild("duration");
     if(!durationNode.IsNull())
     {
-      m_duration = StringUtils::ConvertToInt64(StringUtils::Trim(durationNode.GetText().c_str()).c_str());
+      m_duration = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(durationNode.GetText()).c_str()).c_str());
       m_durationHasBeenSet = true;
     }
     XmlNode fixedPriceNode = resultNode.FirstChild("fixedPrice");
     if(!fixedPriceNode.IsNull())
     {
-      m_fixedPrice = StringUtils::ConvertToDouble(StringUtils::Trim(fixedPriceNode.GetText().c_str()).c_str());
+      m_fixedPrice = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fixedPriceNode.GetText()).c_str()).c_str());
       m_fixedPriceHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(instanceTypeNode.GetText().c_str()).c_str());
+      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()).c_str());
       m_instanceTypeHasBeenSet = true;
     }
     XmlNode productDescriptionNode = resultNode.FirstChild("productDescription");
     if(!productDescriptionNode.IsNull())
     {
-      m_productDescription = RIProductDescriptionMapper::GetRIProductDescriptionForName(StringUtils::Trim(productDescriptionNode.GetText().c_str()).c_str());
+      m_productDescription = RIProductDescriptionMapper::GetRIProductDescriptionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(productDescriptionNode.GetText()).c_str()).c_str());
       m_productDescriptionHasBeenSet = true;
     }
     XmlNode reservedInstancesOfferingIdNode = resultNode.FirstChild("reservedInstancesOfferingId");
     if(!reservedInstancesOfferingIdNode.IsNull())
     {
-      m_reservedInstancesOfferingId = reservedInstancesOfferingIdNode.GetText();
+      m_reservedInstancesOfferingId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedInstancesOfferingIdNode.GetText());
       m_reservedInstancesOfferingIdHasBeenSet = true;
     }
     XmlNode usagePriceNode = resultNode.FirstChild("usagePrice");
     if(!usagePriceNode.IsNull())
     {
-      m_usagePrice = StringUtils::ConvertToDouble(StringUtils::Trim(usagePriceNode.GetText().c_str()).c_str());
+      m_usagePrice = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usagePriceNode.GetText()).c_str()).c_str());
       m_usagePriceHasBeenSet = true;
     }
     XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
     if(!currencyCodeNode.IsNull())
     {
-      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(currencyCodeNode.GetText().c_str()).c_str());
+      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText()).c_str()).c_str());
       m_currencyCodeHasBeenSet = true;
     }
     XmlNode instanceTenancyNode = resultNode.FirstChild("instanceTenancy");
     if(!instanceTenancyNode.IsNull())
     {
-      m_instanceTenancy = TenancyMapper::GetTenancyForName(StringUtils::Trim(instanceTenancyNode.GetText().c_str()).c_str());
+      m_instanceTenancy = TenancyMapper::GetTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTenancyNode.GetText()).c_str()).c_str());
       m_instanceTenancyHasBeenSet = true;
     }
     XmlNode marketplaceNode = resultNode.FirstChild("marketplace");
     if(!marketplaceNode.IsNull())
     {
-      m_marketplace = StringUtils::ConvertToBool(StringUtils::Trim(marketplaceNode.GetText().c_str()).c_str());
+      m_marketplace = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(marketplaceNode.GetText()).c_str()).c_str());
       m_marketplaceHasBeenSet = true;
     }
     XmlNode offeringClassNode = resultNode.FirstChild("offeringClass");
     if(!offeringClassNode.IsNull())
     {
-      m_offeringClass = OfferingClassTypeMapper::GetOfferingClassTypeForName(StringUtils::Trim(offeringClassNode.GetText().c_str()).c_str());
+      m_offeringClass = OfferingClassTypeMapper::GetOfferingClassTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(offeringClassNode.GetText()).c_str()).c_str());
       m_offeringClassHasBeenSet = true;
     }
     XmlNode offeringTypeNode = resultNode.FirstChild("offeringType");
     if(!offeringTypeNode.IsNull())
     {
-      m_offeringType = OfferingTypeValuesMapper::GetOfferingTypeValuesForName(StringUtils::Trim(offeringTypeNode.GetText().c_str()).c_str());
+      m_offeringType = OfferingTypeValuesMapper::GetOfferingTypeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(offeringTypeNode.GetText()).c_str()).c_str());
       m_offeringTypeHasBeenSet = true;
     }
     XmlNode pricingDetailsNode = resultNode.FirstChild("pricingDetailsSet");
@@ -196,7 +196,7 @@ ReservedInstancesOffering& ReservedInstancesOffering::operator =(const XmlNode& 
     XmlNode scopeNode = resultNode.FirstChild("scope");
     if(!scopeNode.IsNull())
     {
-      m_scope = ScopeMapper::GetScopeForName(StringUtils::Trim(scopeNode.GetText().c_str()).c_str());
+      m_scope = ScopeMapper::GetScopeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(scopeNode.GetText()).c_str()).c_str());
       m_scopeHasBeenSet = true;
     }
   }

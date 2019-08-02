@@ -52,13 +52,13 @@ Artifact& Artifact::operator =(const XmlNode& xmlNode)
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode uRLNode = resultNode.FirstChild("URL");
     if(!uRLNode.IsNull())
     {
-      m_uRL = uRLNode.GetText();
+      m_uRL = Aws::Utils::Xml::DecodeEscapedXmlText(uRLNode.GetText());
       m_uRLHasBeenSet = true;
     }
   }

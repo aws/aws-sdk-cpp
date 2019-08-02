@@ -56,13 +56,13 @@ Limits& Limits::operator =(const XmlNode& xmlNode)
     XmlNode maximumReplicationCountNode = resultNode.FirstChild("MaximumReplicationCount");
     if(!maximumReplicationCountNode.IsNull())
     {
-      m_maximumReplicationCount = StringUtils::ConvertToInt32(StringUtils::Trim(maximumReplicationCountNode.GetText().c_str()).c_str());
+      m_maximumReplicationCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumReplicationCountNode.GetText()).c_str()).c_str());
       m_maximumReplicationCountHasBeenSet = true;
     }
     XmlNode maximumPartitionCountNode = resultNode.FirstChild("MaximumPartitionCount");
     if(!maximumPartitionCountNode.IsNull())
     {
-      m_maximumPartitionCount = StringUtils::ConvertToInt32(StringUtils::Trim(maximumPartitionCountNode.GetText().c_str()).c_str());
+      m_maximumPartitionCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumPartitionCountNode.GetText()).c_str()).c_str());
       m_maximumPartitionCountHasBeenSet = true;
     }
   }

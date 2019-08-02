@@ -73,17 +73,17 @@ RunInstancesResponse& RunInstancesResponse::operator =(const Aws::AmazonWebServi
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
-      m_ownerId = ownerIdNode.GetText();
+      m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
     }
     XmlNode requesterIdNode = resultNode.FirstChild("requesterId");
     if(!requesterIdNode.IsNull())
     {
-      m_requesterId = requesterIdNode.GetText();
+      m_requesterId = Aws::Utils::Xml::DecodeEscapedXmlText(requesterIdNode.GetText());
     }
     XmlNode reservationIdNode = resultNode.FirstChild("reservationId");
     if(!reservationIdNode.IsNull())
     {
-      m_reservationId = reservationIdNode.GetText();
+      m_reservationId = Aws::Utils::Xml::DecodeEscapedXmlText(reservationIdNode.GetText());
     }
   }
 

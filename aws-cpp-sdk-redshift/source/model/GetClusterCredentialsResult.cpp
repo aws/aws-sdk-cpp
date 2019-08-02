@@ -51,17 +51,17 @@ GetClusterCredentialsResult& GetClusterCredentialsResult::operator =(const Aws::
     XmlNode dbUserNode = resultNode.FirstChild("DbUser");
     if(!dbUserNode.IsNull())
     {
-      m_dbUser = dbUserNode.GetText();
+      m_dbUser = Aws::Utils::Xml::DecodeEscapedXmlText(dbUserNode.GetText());
     }
     XmlNode dbPasswordNode = resultNode.FirstChild("DbPassword");
     if(!dbPasswordNode.IsNull())
     {
-      m_dbPassword = dbPasswordNode.GetText();
+      m_dbPassword = Aws::Utils::Xml::DecodeEscapedXmlText(dbPasswordNode.GetText());
     }
     XmlNode expirationNode = resultNode.FirstChild("Expiration");
     if(!expirationNode.IsNull())
     {
-      m_expiration = DateTime(StringUtils::Trim(expirationNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_expiration = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
   }
 

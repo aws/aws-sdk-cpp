@@ -64,7 +64,7 @@ AnomalyDetectorConfiguration& AnomalyDetectorConfiguration::operator =(const Xml
     XmlNode metricTimezoneNode = resultNode.FirstChild("MetricTimezone");
     if(!metricTimezoneNode.IsNull())
     {
-      m_metricTimezone = metricTimezoneNode.GetText();
+      m_metricTimezone = Aws::Utils::Xml::DecodeEscapedXmlText(metricTimezoneNode.GetText());
       m_metricTimezoneHasBeenSet = true;
     }
   }

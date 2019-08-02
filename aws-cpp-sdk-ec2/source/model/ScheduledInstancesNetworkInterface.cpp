@@ -82,25 +82,25 @@ ScheduledInstancesNetworkInterface& ScheduledInstancesNetworkInterface::operator
     XmlNode associatePublicIpAddressNode = resultNode.FirstChild("AssociatePublicIpAddress");
     if(!associatePublicIpAddressNode.IsNull())
     {
-      m_associatePublicIpAddress = StringUtils::ConvertToBool(StringUtils::Trim(associatePublicIpAddressNode.GetText().c_str()).c_str());
+      m_associatePublicIpAddress = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(associatePublicIpAddressNode.GetText()).c_str()).c_str());
       m_associatePublicIpAddressHasBeenSet = true;
     }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("DeleteOnTermination");
     if(!deleteOnTerminationNode.IsNull())
     {
-      m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(deleteOnTerminationNode.GetText().c_str()).c_str());
+      m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteOnTerminationNode.GetText()).c_str()).c_str());
       m_deleteOnTerminationHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode deviceIndexNode = resultNode.FirstChild("DeviceIndex");
     if(!deviceIndexNode.IsNull())
     {
-      m_deviceIndex = StringUtils::ConvertToInt32(StringUtils::Trim(deviceIndexNode.GetText().c_str()).c_str());
+      m_deviceIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deviceIndexNode.GetText()).c_str()).c_str());
       m_deviceIndexHasBeenSet = true;
     }
     XmlNode groupsNode = resultNode.FirstChild("Group");
@@ -118,7 +118,7 @@ ScheduledInstancesNetworkInterface& ScheduledInstancesNetworkInterface::operator
     XmlNode ipv6AddressCountNode = resultNode.FirstChild("Ipv6AddressCount");
     if(!ipv6AddressCountNode.IsNull())
     {
-      m_ipv6AddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(ipv6AddressCountNode.GetText().c_str()).c_str());
+      m_ipv6AddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6AddressCountNode.GetText()).c_str()).c_str());
       m_ipv6AddressCountHasBeenSet = true;
     }
     XmlNode ipv6AddressesNode = resultNode.FirstChild("Ipv6Address");
@@ -136,13 +136,13 @@ ScheduledInstancesNetworkInterface& ScheduledInstancesNetworkInterface::operator
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("NetworkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
-      m_networkInterfaceId = networkInterfaceIdNode.GetText();
+      m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode privateIpAddressNode = resultNode.FirstChild("PrivateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
-      m_privateIpAddress = privateIpAddressNode.GetText();
+      m_privateIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(privateIpAddressNode.GetText());
       m_privateIpAddressHasBeenSet = true;
     }
     XmlNode privateIpAddressConfigsNode = resultNode.FirstChild("PrivateIpAddressConfig");
@@ -160,13 +160,13 @@ ScheduledInstancesNetworkInterface& ScheduledInstancesNetworkInterface::operator
     XmlNode secondaryPrivateIpAddressCountNode = resultNode.FirstChild("SecondaryPrivateIpAddressCount");
     if(!secondaryPrivateIpAddressCountNode.IsNull())
     {
-      m_secondaryPrivateIpAddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(secondaryPrivateIpAddressCountNode.GetText().c_str()).c_str());
+      m_secondaryPrivateIpAddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(secondaryPrivateIpAddressCountNode.GetText()).c_str()).c_str());
       m_secondaryPrivateIpAddressCountHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("SubnetId");
     if(!subnetIdNode.IsNull())
     {
-      m_subnetId = subnetIdNode.GetText();
+      m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
     }
   }

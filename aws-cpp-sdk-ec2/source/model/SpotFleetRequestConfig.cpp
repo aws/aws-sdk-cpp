@@ -62,13 +62,13 @@ SpotFleetRequestConfig& SpotFleetRequestConfig::operator =(const XmlNode& xmlNod
     XmlNode activityStatusNode = resultNode.FirstChild("activityStatus");
     if(!activityStatusNode.IsNull())
     {
-      m_activityStatus = ActivityStatusMapper::GetActivityStatusForName(StringUtils::Trim(activityStatusNode.GetText().c_str()).c_str());
+      m_activityStatus = ActivityStatusMapper::GetActivityStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(activityStatusNode.GetText()).c_str()).c_str());
       m_activityStatusHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
     if(!createTimeNode.IsNull())
     {
-      m_createTime = DateTime(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
     }
     XmlNode spotFleetRequestConfigNode = resultNode.FirstChild("spotFleetRequestConfig");
@@ -80,13 +80,13 @@ SpotFleetRequestConfig& SpotFleetRequestConfig::operator =(const XmlNode& xmlNod
     XmlNode spotFleetRequestIdNode = resultNode.FirstChild("spotFleetRequestId");
     if(!spotFleetRequestIdNode.IsNull())
     {
-      m_spotFleetRequestId = spotFleetRequestIdNode.GetText();
+      m_spotFleetRequestId = Aws::Utils::Xml::DecodeEscapedXmlText(spotFleetRequestIdNode.GetText());
       m_spotFleetRequestIdHasBeenSet = true;
     }
     XmlNode spotFleetRequestStateNode = resultNode.FirstChild("spotFleetRequestState");
     if(!spotFleetRequestStateNode.IsNull())
     {
-      m_spotFleetRequestState = BatchStateMapper::GetBatchStateForName(StringUtils::Trim(spotFleetRequestStateNode.GetText().c_str()).c_str());
+      m_spotFleetRequestState = BatchStateMapper::GetBatchStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(spotFleetRequestStateNode.GetText()).c_str()).c_str());
       m_spotFleetRequestStateHasBeenSet = true;
     }
   }

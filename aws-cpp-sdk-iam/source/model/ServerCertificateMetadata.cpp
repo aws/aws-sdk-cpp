@@ -60,37 +60,37 @@ ServerCertificateMetadata& ServerCertificateMetadata::operator =(const XmlNode& 
     XmlNode pathNode = resultNode.FirstChild("Path");
     if(!pathNode.IsNull())
     {
-      m_path = pathNode.GetText();
+      m_path = Aws::Utils::Xml::DecodeEscapedXmlText(pathNode.GetText());
       m_pathHasBeenSet = true;
     }
     XmlNode serverCertificateNameNode = resultNode.FirstChild("ServerCertificateName");
     if(!serverCertificateNameNode.IsNull())
     {
-      m_serverCertificateName = serverCertificateNameNode.GetText();
+      m_serverCertificateName = Aws::Utils::Xml::DecodeEscapedXmlText(serverCertificateNameNode.GetText());
       m_serverCertificateNameHasBeenSet = true;
     }
     XmlNode serverCertificateIdNode = resultNode.FirstChild("ServerCertificateId");
     if(!serverCertificateIdNode.IsNull())
     {
-      m_serverCertificateId = serverCertificateIdNode.GetText();
+      m_serverCertificateId = Aws::Utils::Xml::DecodeEscapedXmlText(serverCertificateIdNode.GetText());
       m_serverCertificateIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
-      m_arn = arnNode.GetText();
+      m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
     }
     XmlNode uploadDateNode = resultNode.FirstChild("UploadDate");
     if(!uploadDateNode.IsNull())
     {
-      m_uploadDate = DateTime(StringUtils::Trim(uploadDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_uploadDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(uploadDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_uploadDateHasBeenSet = true;
     }
     XmlNode expirationNode = resultNode.FirstChild("Expiration");
     if(!expirationNode.IsNull())
     {
-      m_expiration = DateTime(StringUtils::Trim(expirationNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_expiration = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_expirationHasBeenSet = true;
     }
   }

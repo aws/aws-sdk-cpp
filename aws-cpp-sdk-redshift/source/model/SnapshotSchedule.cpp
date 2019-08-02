@@ -78,13 +78,13 @@ SnapshotSchedule& SnapshotSchedule::operator =(const XmlNode& xmlNode)
     XmlNode scheduleIdentifierNode = resultNode.FirstChild("ScheduleIdentifier");
     if(!scheduleIdentifierNode.IsNull())
     {
-      m_scheduleIdentifier = scheduleIdentifierNode.GetText();
+      m_scheduleIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(scheduleIdentifierNode.GetText());
       m_scheduleIdentifierHasBeenSet = true;
     }
     XmlNode scheduleDescriptionNode = resultNode.FirstChild("ScheduleDescription");
     if(!scheduleDescriptionNode.IsNull())
     {
-      m_scheduleDescription = scheduleDescriptionNode.GetText();
+      m_scheduleDescription = Aws::Utils::Xml::DecodeEscapedXmlText(scheduleDescriptionNode.GetText());
       m_scheduleDescriptionHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
@@ -114,7 +114,7 @@ SnapshotSchedule& SnapshotSchedule::operator =(const XmlNode& xmlNode)
     XmlNode associatedClusterCountNode = resultNode.FirstChild("AssociatedClusterCount");
     if(!associatedClusterCountNode.IsNull())
     {
-      m_associatedClusterCount = StringUtils::ConvertToInt32(StringUtils::Trim(associatedClusterCountNode.GetText().c_str()).c_str());
+      m_associatedClusterCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(associatedClusterCountNode.GetText()).c_str()).c_str());
       m_associatedClusterCountHasBeenSet = true;
     }
     XmlNode associatedClustersNode = resultNode.FirstChild("AssociatedClusters");

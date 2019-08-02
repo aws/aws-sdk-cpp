@@ -62,7 +62,7 @@ ValidateTemplateResult& ValidateTemplateResult::operator =(const Aws::AmazonWebS
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
     }
     XmlNode capabilitiesNode = resultNode.FirstChild("Capabilities");
     if(!capabilitiesNode.IsNull())
@@ -78,7 +78,7 @@ ValidateTemplateResult& ValidateTemplateResult::operator =(const Aws::AmazonWebS
     XmlNode capabilitiesReasonNode = resultNode.FirstChild("CapabilitiesReason");
     if(!capabilitiesReasonNode.IsNull())
     {
-      m_capabilitiesReason = capabilitiesReasonNode.GetText();
+      m_capabilitiesReason = Aws::Utils::Xml::DecodeEscapedXmlText(capabilitiesReasonNode.GetText());
     }
     XmlNode declaredTransformsNode = resultNode.FirstChild("DeclaredTransforms");
     if(!declaredTransformsNode.IsNull())

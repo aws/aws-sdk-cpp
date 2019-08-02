@@ -74,61 +74,61 @@ ScheduledUpdateGroupAction& ScheduledUpdateGroupAction::operator =(const XmlNode
     XmlNode autoScalingGroupNameNode = resultNode.FirstChild("AutoScalingGroupName");
     if(!autoScalingGroupNameNode.IsNull())
     {
-      m_autoScalingGroupName = autoScalingGroupNameNode.GetText();
+      m_autoScalingGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(autoScalingGroupNameNode.GetText());
       m_autoScalingGroupNameHasBeenSet = true;
     }
     XmlNode scheduledActionNameNode = resultNode.FirstChild("ScheduledActionName");
     if(!scheduledActionNameNode.IsNull())
     {
-      m_scheduledActionName = scheduledActionNameNode.GetText();
+      m_scheduledActionName = Aws::Utils::Xml::DecodeEscapedXmlText(scheduledActionNameNode.GetText());
       m_scheduledActionNameHasBeenSet = true;
     }
     XmlNode scheduledActionARNNode = resultNode.FirstChild("ScheduledActionARN");
     if(!scheduledActionARNNode.IsNull())
     {
-      m_scheduledActionARN = scheduledActionARNNode.GetText();
+      m_scheduledActionARN = Aws::Utils::Xml::DecodeEscapedXmlText(scheduledActionARNNode.GetText());
       m_scheduledActionARNHasBeenSet = true;
     }
     XmlNode timeNode = resultNode.FirstChild("Time");
     if(!timeNode.IsNull())
     {
-      m_time = DateTime(StringUtils::Trim(timeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_time = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_timeHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
     if(!startTimeNode.IsNull())
     {
-      m_startTime = DateTime(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
     }
     XmlNode endTimeNode = resultNode.FirstChild("EndTime");
     if(!endTimeNode.IsNull())
     {
-      m_endTime = DateTime(StringUtils::Trim(endTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_endTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_endTimeHasBeenSet = true;
     }
     XmlNode recurrenceNode = resultNode.FirstChild("Recurrence");
     if(!recurrenceNode.IsNull())
     {
-      m_recurrence = recurrenceNode.GetText();
+      m_recurrence = Aws::Utils::Xml::DecodeEscapedXmlText(recurrenceNode.GetText());
       m_recurrenceHasBeenSet = true;
     }
     XmlNode minSizeNode = resultNode.FirstChild("MinSize");
     if(!minSizeNode.IsNull())
     {
-      m_minSize = StringUtils::ConvertToInt32(StringUtils::Trim(minSizeNode.GetText().c_str()).c_str());
+      m_minSize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minSizeNode.GetText()).c_str()).c_str());
       m_minSizeHasBeenSet = true;
     }
     XmlNode maxSizeNode = resultNode.FirstChild("MaxSize");
     if(!maxSizeNode.IsNull())
     {
-      m_maxSize = StringUtils::ConvertToInt32(StringUtils::Trim(maxSizeNode.GetText().c_str()).c_str());
+      m_maxSize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxSizeNode.GetText()).c_str()).c_str());
       m_maxSizeHasBeenSet = true;
     }
     XmlNode desiredCapacityNode = resultNode.FirstChild("DesiredCapacity");
     if(!desiredCapacityNode.IsNull())
     {
-      m_desiredCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(desiredCapacityNode.GetText().c_str()).c_str());
+      m_desiredCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(desiredCapacityNode.GetText()).c_str()).c_str());
       m_desiredCapacityHasBeenSet = true;
     }
   }

@@ -70,55 +70,55 @@ NodeGroupMemberUpdateStatus& NodeGroupMemberUpdateStatus::operator =(const XmlNo
     XmlNode cacheClusterIdNode = resultNode.FirstChild("CacheClusterId");
     if(!cacheClusterIdNode.IsNull())
     {
-      m_cacheClusterId = cacheClusterIdNode.GetText();
+      m_cacheClusterId = Aws::Utils::Xml::DecodeEscapedXmlText(cacheClusterIdNode.GetText());
       m_cacheClusterIdHasBeenSet = true;
     }
     XmlNode cacheNodeIdNode = resultNode.FirstChild("CacheNodeId");
     if(!cacheNodeIdNode.IsNull())
     {
-      m_cacheNodeId = cacheNodeIdNode.GetText();
+      m_cacheNodeId = Aws::Utils::Xml::DecodeEscapedXmlText(cacheNodeIdNode.GetText());
       m_cacheNodeIdHasBeenSet = true;
     }
     XmlNode nodeUpdateStatusNode = resultNode.FirstChild("NodeUpdateStatus");
     if(!nodeUpdateStatusNode.IsNull())
     {
-      m_nodeUpdateStatus = NodeUpdateStatusMapper::GetNodeUpdateStatusForName(StringUtils::Trim(nodeUpdateStatusNode.GetText().c_str()).c_str());
+      m_nodeUpdateStatus = NodeUpdateStatusMapper::GetNodeUpdateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeUpdateStatusNode.GetText()).c_str()).c_str());
       m_nodeUpdateStatusHasBeenSet = true;
     }
     XmlNode nodeDeletionDateNode = resultNode.FirstChild("NodeDeletionDate");
     if(!nodeDeletionDateNode.IsNull())
     {
-      m_nodeDeletionDate = DateTime(StringUtils::Trim(nodeDeletionDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_nodeDeletionDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeDeletionDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_nodeDeletionDateHasBeenSet = true;
     }
     XmlNode nodeUpdateStartDateNode = resultNode.FirstChild("NodeUpdateStartDate");
     if(!nodeUpdateStartDateNode.IsNull())
     {
-      m_nodeUpdateStartDate = DateTime(StringUtils::Trim(nodeUpdateStartDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_nodeUpdateStartDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeUpdateStartDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_nodeUpdateStartDateHasBeenSet = true;
     }
     XmlNode nodeUpdateEndDateNode = resultNode.FirstChild("NodeUpdateEndDate");
     if(!nodeUpdateEndDateNode.IsNull())
     {
-      m_nodeUpdateEndDate = DateTime(StringUtils::Trim(nodeUpdateEndDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_nodeUpdateEndDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeUpdateEndDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_nodeUpdateEndDateHasBeenSet = true;
     }
     XmlNode nodeUpdateInitiatedByNode = resultNode.FirstChild("NodeUpdateInitiatedBy");
     if(!nodeUpdateInitiatedByNode.IsNull())
     {
-      m_nodeUpdateInitiatedBy = NodeUpdateInitiatedByMapper::GetNodeUpdateInitiatedByForName(StringUtils::Trim(nodeUpdateInitiatedByNode.GetText().c_str()).c_str());
+      m_nodeUpdateInitiatedBy = NodeUpdateInitiatedByMapper::GetNodeUpdateInitiatedByForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeUpdateInitiatedByNode.GetText()).c_str()).c_str());
       m_nodeUpdateInitiatedByHasBeenSet = true;
     }
     XmlNode nodeUpdateInitiatedDateNode = resultNode.FirstChild("NodeUpdateInitiatedDate");
     if(!nodeUpdateInitiatedDateNode.IsNull())
     {
-      m_nodeUpdateInitiatedDate = DateTime(StringUtils::Trim(nodeUpdateInitiatedDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_nodeUpdateInitiatedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeUpdateInitiatedDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_nodeUpdateInitiatedDateHasBeenSet = true;
     }
     XmlNode nodeUpdateStatusModifiedDateNode = resultNode.FirstChild("NodeUpdateStatusModifiedDate");
     if(!nodeUpdateStatusModifiedDateNode.IsNull())
     {
-      m_nodeUpdateStatusModifiedDate = DateTime(StringUtils::Trim(nodeUpdateStatusModifiedDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_nodeUpdateStatusModifiedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nodeUpdateStatusModifiedDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_nodeUpdateStatusModifiedDateHasBeenSet = true;
     }
   }

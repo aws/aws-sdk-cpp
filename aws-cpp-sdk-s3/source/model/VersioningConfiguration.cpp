@@ -56,13 +56,13 @@ VersioningConfiguration& VersioningConfiguration::operator =(const XmlNode& xmlN
     XmlNode mFADeleteNode = resultNode.FirstChild("MfaDelete");
     if(!mFADeleteNode.IsNull())
     {
-      m_mFADelete = MFADeleteMapper::GetMFADeleteForName(StringUtils::Trim(mFADeleteNode.GetText().c_str()).c_str());
+      m_mFADelete = MFADeleteMapper::GetMFADeleteForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(mFADeleteNode.GetText()).c_str()).c_str());
       m_mFADeleteHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = BucketVersioningStatusMapper::GetBucketVersioningStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = BucketVersioningStatusMapper::GetBucketVersioningStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
   }

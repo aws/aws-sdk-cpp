@@ -64,13 +64,13 @@ ConversionTask& ConversionTask::operator =(const XmlNode& xmlNode)
     XmlNode conversionTaskIdNode = resultNode.FirstChild("conversionTaskId");
     if(!conversionTaskIdNode.IsNull())
     {
-      m_conversionTaskId = conversionTaskIdNode.GetText();
+      m_conversionTaskId = Aws::Utils::Xml::DecodeEscapedXmlText(conversionTaskIdNode.GetText());
       m_conversionTaskIdHasBeenSet = true;
     }
     XmlNode expirationTimeNode = resultNode.FirstChild("expirationTime");
     if(!expirationTimeNode.IsNull())
     {
-      m_expirationTime = expirationTimeNode.GetText();
+      m_expirationTime = Aws::Utils::Xml::DecodeEscapedXmlText(expirationTimeNode.GetText());
       m_expirationTimeHasBeenSet = true;
     }
     XmlNode importInstanceNode = resultNode.FirstChild("importInstance");
@@ -88,13 +88,13 @@ ConversionTask& ConversionTask::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = ConversionTaskStateMapper::GetConversionTaskStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_state = ConversionTaskStateMapper::GetConversionTaskStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
       m_stateHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
-      m_statusMessage = statusMessageNode.GetText();
+      m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");

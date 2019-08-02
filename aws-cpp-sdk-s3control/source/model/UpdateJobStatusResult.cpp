@@ -46,17 +46,17 @@ UpdateJobStatusResult& UpdateJobStatusResult::operator =(const Aws::AmazonWebSer
     XmlNode jobIdNode = resultNode.FirstChild("JobId");
     if(!jobIdNode.IsNull())
     {
-      m_jobId = jobIdNode.GetText();
+      m_jobId = Aws::Utils::Xml::DecodeEscapedXmlText(jobIdNode.GetText());
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = JobStatusMapper::GetJobStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = JobStatusMapper::GetJobStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
     }
     XmlNode statusUpdateReasonNode = resultNode.FirstChild("StatusUpdateReason");
     if(!statusUpdateReasonNode.IsNull())
     {
-      m_statusUpdateReason = statusUpdateReasonNode.GetText();
+      m_statusUpdateReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusUpdateReasonNode.GetText());
     }
   }
 

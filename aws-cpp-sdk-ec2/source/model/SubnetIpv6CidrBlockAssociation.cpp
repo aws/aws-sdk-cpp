@@ -54,13 +54,13 @@ SubnetIpv6CidrBlockAssociation& SubnetIpv6CidrBlockAssociation::operator =(const
     XmlNode associationIdNode = resultNode.FirstChild("associationId");
     if(!associationIdNode.IsNull())
     {
-      m_associationId = associationIdNode.GetText();
+      m_associationId = Aws::Utils::Xml::DecodeEscapedXmlText(associationIdNode.GetText());
       m_associationIdHasBeenSet = true;
     }
     XmlNode ipv6CidrBlockNode = resultNode.FirstChild("ipv6CidrBlock");
     if(!ipv6CidrBlockNode.IsNull())
     {
-      m_ipv6CidrBlock = ipv6CidrBlockNode.GetText();
+      m_ipv6CidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(ipv6CidrBlockNode.GetText());
       m_ipv6CidrBlockHasBeenSet = true;
     }
     XmlNode ipv6CidrBlockStateNode = resultNode.FirstChild("ipv6CidrBlockState");

@@ -56,25 +56,25 @@ ElasticGpuAssociation& ElasticGpuAssociation::operator =(const XmlNode& xmlNode)
     XmlNode elasticGpuIdNode = resultNode.FirstChild("elasticGpuId");
     if(!elasticGpuIdNode.IsNull())
     {
-      m_elasticGpuId = elasticGpuIdNode.GetText();
+      m_elasticGpuId = Aws::Utils::Xml::DecodeEscapedXmlText(elasticGpuIdNode.GetText());
       m_elasticGpuIdHasBeenSet = true;
     }
     XmlNode elasticGpuAssociationIdNode = resultNode.FirstChild("elasticGpuAssociationId");
     if(!elasticGpuAssociationIdNode.IsNull())
     {
-      m_elasticGpuAssociationId = elasticGpuAssociationIdNode.GetText();
+      m_elasticGpuAssociationId = Aws::Utils::Xml::DecodeEscapedXmlText(elasticGpuAssociationIdNode.GetText());
       m_elasticGpuAssociationIdHasBeenSet = true;
     }
     XmlNode elasticGpuAssociationStateNode = resultNode.FirstChild("elasticGpuAssociationState");
     if(!elasticGpuAssociationStateNode.IsNull())
     {
-      m_elasticGpuAssociationState = elasticGpuAssociationStateNode.GetText();
+      m_elasticGpuAssociationState = Aws::Utils::Xml::DecodeEscapedXmlText(elasticGpuAssociationStateNode.GetText());
       m_elasticGpuAssociationStateHasBeenSet = true;
     }
     XmlNode elasticGpuAssociationTimeNode = resultNode.FirstChild("elasticGpuAssociationTime");
     if(!elasticGpuAssociationTimeNode.IsNull())
     {
-      m_elasticGpuAssociationTime = elasticGpuAssociationTimeNode.GetText();
+      m_elasticGpuAssociationTime = Aws::Utils::Xml::DecodeEscapedXmlText(elasticGpuAssociationTimeNode.GetText());
       m_elasticGpuAssociationTimeHasBeenSet = true;
     }
   }

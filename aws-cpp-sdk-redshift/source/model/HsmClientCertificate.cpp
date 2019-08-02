@@ -54,13 +54,13 @@ HsmClientCertificate& HsmClientCertificate::operator =(const XmlNode& xmlNode)
     XmlNode hsmClientCertificateIdentifierNode = resultNode.FirstChild("HsmClientCertificateIdentifier");
     if(!hsmClientCertificateIdentifierNode.IsNull())
     {
-      m_hsmClientCertificateIdentifier = hsmClientCertificateIdentifierNode.GetText();
+      m_hsmClientCertificateIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(hsmClientCertificateIdentifierNode.GetText());
       m_hsmClientCertificateIdentifierHasBeenSet = true;
     }
     XmlNode hsmClientCertificatePublicKeyNode = resultNode.FirstChild("HsmClientCertificatePublicKey");
     if(!hsmClientCertificatePublicKeyNode.IsNull())
     {
-      m_hsmClientCertificatePublicKey = hsmClientCertificatePublicKeyNode.GetText();
+      m_hsmClientCertificatePublicKey = Aws::Utils::Xml::DecodeEscapedXmlText(hsmClientCertificatePublicKeyNode.GetText());
       m_hsmClientCertificatePublicKeyHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");

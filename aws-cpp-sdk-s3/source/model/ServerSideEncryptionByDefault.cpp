@@ -54,13 +54,13 @@ ServerSideEncryptionByDefault& ServerSideEncryptionByDefault::operator =(const X
     XmlNode sSEAlgorithmNode = resultNode.FirstChild("SSEAlgorithm");
     if(!sSEAlgorithmNode.IsNull())
     {
-      m_sSEAlgorithm = ServerSideEncryptionMapper::GetServerSideEncryptionForName(StringUtils::Trim(sSEAlgorithmNode.GetText().c_str()).c_str());
+      m_sSEAlgorithm = ServerSideEncryptionMapper::GetServerSideEncryptionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sSEAlgorithmNode.GetText()).c_str()).c_str());
       m_sSEAlgorithmHasBeenSet = true;
     }
     XmlNode kMSMasterKeyIDNode = resultNode.FirstChild("KMSMasterKeyID");
     if(!kMSMasterKeyIDNode.IsNull())
     {
-      m_kMSMasterKeyID = kMSMasterKeyIDNode.GetText();
+      m_kMSMasterKeyID = Aws::Utils::Xml::DecodeEscapedXmlText(kMSMasterKeyIDNode.GetText());
       m_kMSMasterKeyIDHasBeenSet = true;
     }
   }

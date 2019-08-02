@@ -56,13 +56,13 @@ ConfigureShard& ConfigureShard::operator =(const XmlNode& xmlNode)
     XmlNode nodeGroupIdNode = resultNode.FirstChild("NodeGroupId");
     if(!nodeGroupIdNode.IsNull())
     {
-      m_nodeGroupId = nodeGroupIdNode.GetText();
+      m_nodeGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(nodeGroupIdNode.GetText());
       m_nodeGroupIdHasBeenSet = true;
     }
     XmlNode newReplicaCountNode = resultNode.FirstChild("NewReplicaCount");
     if(!newReplicaCountNode.IsNull())
     {
-      m_newReplicaCount = StringUtils::ConvertToInt32(StringUtils::Trim(newReplicaCountNode.GetText().c_str()).c_str());
+      m_newReplicaCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(newReplicaCountNode.GetText()).c_str()).c_str());
       m_newReplicaCountHasBeenSet = true;
     }
     XmlNode preferredAvailabilityZonesNode = resultNode.FirstChild("PreferredAvailabilityZones");

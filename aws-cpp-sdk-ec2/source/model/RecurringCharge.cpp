@@ -56,13 +56,13 @@ RecurringCharge& RecurringCharge::operator =(const XmlNode& xmlNode)
     XmlNode amountNode = resultNode.FirstChild("amount");
     if(!amountNode.IsNull())
     {
-      m_amount = StringUtils::ConvertToDouble(StringUtils::Trim(amountNode.GetText().c_str()).c_str());
+      m_amount = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(amountNode.GetText()).c_str()).c_str());
       m_amountHasBeenSet = true;
     }
     XmlNode frequencyNode = resultNode.FirstChild("frequency");
     if(!frequencyNode.IsNull())
     {
-      m_frequency = RecurringChargeFrequencyMapper::GetRecurringChargeFrequencyForName(StringUtils::Trim(frequencyNode.GetText().c_str()).c_str());
+      m_frequency = RecurringChargeFrequencyMapper::GetRecurringChargeFrequencyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(frequencyNode.GetText()).c_str()).c_str());
       m_frequencyHasBeenSet = true;
     }
   }

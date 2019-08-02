@@ -51,7 +51,7 @@ DescribeScheduledInstancesResponse& DescribeScheduledInstancesResponse::operator
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = nextTokenNode.GetText();
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
     }
     XmlNode scheduledInstanceSetNode = resultNode.FirstChild("scheduledInstanceSet");
     if(!scheduledInstanceSetNode.IsNull())

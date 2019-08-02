@@ -110,19 +110,19 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     XmlNode autoScalingGroupNameNode = resultNode.FirstChild("AutoScalingGroupName");
     if(!autoScalingGroupNameNode.IsNull())
     {
-      m_autoScalingGroupName = autoScalingGroupNameNode.GetText();
+      m_autoScalingGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(autoScalingGroupNameNode.GetText());
       m_autoScalingGroupNameHasBeenSet = true;
     }
     XmlNode autoScalingGroupARNNode = resultNode.FirstChild("AutoScalingGroupARN");
     if(!autoScalingGroupARNNode.IsNull())
     {
-      m_autoScalingGroupARN = autoScalingGroupARNNode.GetText();
+      m_autoScalingGroupARN = Aws::Utils::Xml::DecodeEscapedXmlText(autoScalingGroupARNNode.GetText());
       m_autoScalingGroupARNHasBeenSet = true;
     }
     XmlNode launchConfigurationNameNode = resultNode.FirstChild("LaunchConfigurationName");
     if(!launchConfigurationNameNode.IsNull())
     {
-      m_launchConfigurationName = launchConfigurationNameNode.GetText();
+      m_launchConfigurationName = Aws::Utils::Xml::DecodeEscapedXmlText(launchConfigurationNameNode.GetText());
       m_launchConfigurationNameHasBeenSet = true;
     }
     XmlNode launchTemplateNode = resultNode.FirstChild("LaunchTemplate");
@@ -140,25 +140,25 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     XmlNode minSizeNode = resultNode.FirstChild("MinSize");
     if(!minSizeNode.IsNull())
     {
-      m_minSize = StringUtils::ConvertToInt32(StringUtils::Trim(minSizeNode.GetText().c_str()).c_str());
+      m_minSize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minSizeNode.GetText()).c_str()).c_str());
       m_minSizeHasBeenSet = true;
     }
     XmlNode maxSizeNode = resultNode.FirstChild("MaxSize");
     if(!maxSizeNode.IsNull())
     {
-      m_maxSize = StringUtils::ConvertToInt32(StringUtils::Trim(maxSizeNode.GetText().c_str()).c_str());
+      m_maxSize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxSizeNode.GetText()).c_str()).c_str());
       m_maxSizeHasBeenSet = true;
     }
     XmlNode desiredCapacityNode = resultNode.FirstChild("DesiredCapacity");
     if(!desiredCapacityNode.IsNull())
     {
-      m_desiredCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(desiredCapacityNode.GetText().c_str()).c_str());
+      m_desiredCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(desiredCapacityNode.GetText()).c_str()).c_str());
       m_desiredCapacityHasBeenSet = true;
     }
     XmlNode defaultCooldownNode = resultNode.FirstChild("DefaultCooldown");
     if(!defaultCooldownNode.IsNull())
     {
-      m_defaultCooldown = StringUtils::ConvertToInt32(StringUtils::Trim(defaultCooldownNode.GetText().c_str()).c_str());
+      m_defaultCooldown = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultCooldownNode.GetText()).c_str()).c_str());
       m_defaultCooldownHasBeenSet = true;
     }
     XmlNode availabilityZonesNode = resultNode.FirstChild("AvailabilityZones");
@@ -200,13 +200,13 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     XmlNode healthCheckTypeNode = resultNode.FirstChild("HealthCheckType");
     if(!healthCheckTypeNode.IsNull())
     {
-      m_healthCheckType = healthCheckTypeNode.GetText();
+      m_healthCheckType = Aws::Utils::Xml::DecodeEscapedXmlText(healthCheckTypeNode.GetText());
       m_healthCheckTypeHasBeenSet = true;
     }
     XmlNode healthCheckGracePeriodNode = resultNode.FirstChild("HealthCheckGracePeriod");
     if(!healthCheckGracePeriodNode.IsNull())
     {
-      m_healthCheckGracePeriod = StringUtils::ConvertToInt32(StringUtils::Trim(healthCheckGracePeriodNode.GetText().c_str()).c_str());
+      m_healthCheckGracePeriod = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(healthCheckGracePeriodNode.GetText()).c_str()).c_str());
       m_healthCheckGracePeriodHasBeenSet = true;
     }
     XmlNode instancesNode = resultNode.FirstChild("Instances");
@@ -224,7 +224,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
     if(!createdTimeNode.IsNull())
     {
-      m_createdTime = DateTime(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_createdTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_createdTimeHasBeenSet = true;
     }
     XmlNode suspendedProcessesNode = resultNode.FirstChild("SuspendedProcesses");
@@ -242,13 +242,13 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     XmlNode placementGroupNode = resultNode.FirstChild("PlacementGroup");
     if(!placementGroupNode.IsNull())
     {
-      m_placementGroup = placementGroupNode.GetText();
+      m_placementGroup = Aws::Utils::Xml::DecodeEscapedXmlText(placementGroupNode.GetText());
       m_placementGroupHasBeenSet = true;
     }
     XmlNode vPCZoneIdentifierNode = resultNode.FirstChild("VPCZoneIdentifier");
     if(!vPCZoneIdentifierNode.IsNull())
     {
-      m_vPCZoneIdentifier = vPCZoneIdentifierNode.GetText();
+      m_vPCZoneIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(vPCZoneIdentifierNode.GetText());
       m_vPCZoneIdentifierHasBeenSet = true;
     }
     XmlNode enabledMetricsNode = resultNode.FirstChild("EnabledMetrics");
@@ -266,7 +266,7 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = statusNode.GetText();
+      m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
@@ -296,13 +296,13 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     XmlNode newInstancesProtectedFromScaleInNode = resultNode.FirstChild("NewInstancesProtectedFromScaleIn");
     if(!newInstancesProtectedFromScaleInNode.IsNull())
     {
-      m_newInstancesProtectedFromScaleIn = StringUtils::ConvertToBool(StringUtils::Trim(newInstancesProtectedFromScaleInNode.GetText().c_str()).c_str());
+      m_newInstancesProtectedFromScaleIn = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(newInstancesProtectedFromScaleInNode.GetText()).c_str()).c_str());
       m_newInstancesProtectedFromScaleInHasBeenSet = true;
     }
     XmlNode serviceLinkedRoleARNNode = resultNode.FirstChild("ServiceLinkedRoleARN");
     if(!serviceLinkedRoleARNNode.IsNull())
     {
-      m_serviceLinkedRoleARN = serviceLinkedRoleARNNode.GetText();
+      m_serviceLinkedRoleARN = Aws::Utils::Xml::DecodeEscapedXmlText(serviceLinkedRoleARNNode.GetText());
       m_serviceLinkedRoleARNHasBeenSet = true;
     }
   }

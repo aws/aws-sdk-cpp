@@ -66,31 +66,31 @@ ConnectionNotification& ConnectionNotification::operator =(const XmlNode& xmlNod
     XmlNode connectionNotificationIdNode = resultNode.FirstChild("connectionNotificationId");
     if(!connectionNotificationIdNode.IsNull())
     {
-      m_connectionNotificationId = connectionNotificationIdNode.GetText();
+      m_connectionNotificationId = Aws::Utils::Xml::DecodeEscapedXmlText(connectionNotificationIdNode.GetText());
       m_connectionNotificationIdHasBeenSet = true;
     }
     XmlNode serviceIdNode = resultNode.FirstChild("serviceId");
     if(!serviceIdNode.IsNull())
     {
-      m_serviceId = serviceIdNode.GetText();
+      m_serviceId = Aws::Utils::Xml::DecodeEscapedXmlText(serviceIdNode.GetText());
       m_serviceIdHasBeenSet = true;
     }
     XmlNode vpcEndpointIdNode = resultNode.FirstChild("vpcEndpointId");
     if(!vpcEndpointIdNode.IsNull())
     {
-      m_vpcEndpointId = vpcEndpointIdNode.GetText();
+      m_vpcEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointIdNode.GetText());
       m_vpcEndpointIdHasBeenSet = true;
     }
     XmlNode connectionNotificationTypeNode = resultNode.FirstChild("connectionNotificationType");
     if(!connectionNotificationTypeNode.IsNull())
     {
-      m_connectionNotificationType = ConnectionNotificationTypeMapper::GetConnectionNotificationTypeForName(StringUtils::Trim(connectionNotificationTypeNode.GetText().c_str()).c_str());
+      m_connectionNotificationType = ConnectionNotificationTypeMapper::GetConnectionNotificationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionNotificationTypeNode.GetText()).c_str()).c_str());
       m_connectionNotificationTypeHasBeenSet = true;
     }
     XmlNode connectionNotificationArnNode = resultNode.FirstChild("connectionNotificationArn");
     if(!connectionNotificationArnNode.IsNull())
     {
-      m_connectionNotificationArn = connectionNotificationArnNode.GetText();
+      m_connectionNotificationArn = Aws::Utils::Xml::DecodeEscapedXmlText(connectionNotificationArnNode.GetText());
       m_connectionNotificationArnHasBeenSet = true;
     }
     XmlNode connectionEventsNode = resultNode.FirstChild("connectionEvents");
@@ -108,7 +108,7 @@ ConnectionNotification& ConnectionNotification::operator =(const XmlNode& xmlNod
     XmlNode connectionNotificationStateNode = resultNode.FirstChild("connectionNotificationState");
     if(!connectionNotificationStateNode.IsNull())
     {
-      m_connectionNotificationState = ConnectionNotificationStateMapper::GetConnectionNotificationStateForName(StringUtils::Trim(connectionNotificationStateNode.GetText().c_str()).c_str());
+      m_connectionNotificationState = ConnectionNotificationStateMapper::GetConnectionNotificationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionNotificationStateNode.GetText()).c_str()).c_str());
       m_connectionNotificationStateHasBeenSet = true;
     }
   }

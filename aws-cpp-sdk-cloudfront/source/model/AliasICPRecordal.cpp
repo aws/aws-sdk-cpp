@@ -54,13 +54,13 @@ AliasICPRecordal& AliasICPRecordal::operator =(const XmlNode& xmlNode)
     XmlNode cNAMENode = resultNode.FirstChild("CNAME");
     if(!cNAMENode.IsNull())
     {
-      m_cNAME = cNAMENode.GetText();
+      m_cNAME = Aws::Utils::Xml::DecodeEscapedXmlText(cNAMENode.GetText());
       m_cNAMEHasBeenSet = true;
     }
     XmlNode iCPRecordalStatusNode = resultNode.FirstChild("ICPRecordalStatus");
     if(!iCPRecordalStatusNode.IsNull())
     {
-      m_iCPRecordalStatus = ICPRecordalStatusMapper::GetICPRecordalStatusForName(StringUtils::Trim(iCPRecordalStatusNode.GetText().c_str()).c_str());
+      m_iCPRecordalStatus = ICPRecordalStatusMapper::GetICPRecordalStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iCPRecordalStatusNode.GetText()).c_str()).c_str());
       m_iCPRecordalStatusHasBeenSet = true;
     }
   }

@@ -51,7 +51,7 @@ ResetDBParameterGroupResult& ResetDBParameterGroupResult::operator =(const Aws::
     XmlNode dBParameterGroupNameNode = resultNode.FirstChild("DBParameterGroupName");
     if(!dBParameterGroupNameNode.IsNull())
     {
-      m_dBParameterGroupName = dBParameterGroupNameNode.GetText();
+      m_dBParameterGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(dBParameterGroupNameNode.GetText());
     }
   }
 

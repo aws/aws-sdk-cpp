@@ -54,13 +54,13 @@ ResizeInfo& ResizeInfo::operator =(const XmlNode& xmlNode)
     XmlNode resizeTypeNode = resultNode.FirstChild("ResizeType");
     if(!resizeTypeNode.IsNull())
     {
-      m_resizeType = resizeTypeNode.GetText();
+      m_resizeType = Aws::Utils::Xml::DecodeEscapedXmlText(resizeTypeNode.GetText());
       m_resizeTypeHasBeenSet = true;
     }
     XmlNode allowCancelResizeNode = resultNode.FirstChild("AllowCancelResize");
     if(!allowCancelResizeNode.IsNull())
     {
-      m_allowCancelResize = StringUtils::ConvertToBool(StringUtils::Trim(allowCancelResizeNode.GetText().c_str()).c_str());
+      m_allowCancelResize = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowCancelResizeNode.GetText()).c_str()).c_str());
       m_allowCancelResizeHasBeenSet = true;
     }
   }

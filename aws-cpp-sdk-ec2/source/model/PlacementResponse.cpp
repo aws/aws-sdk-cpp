@@ -50,7 +50,7 @@ PlacementResponse& PlacementResponse::operator =(const XmlNode& xmlNode)
     XmlNode groupNameNode = resultNode.FirstChild("groupName");
     if(!groupNameNode.IsNull())
     {
-      m_groupName = groupNameNode.GetText();
+      m_groupName = Aws::Utils::Xml::DecodeEscapedXmlText(groupNameNode.GetText());
       m_groupNameHasBeenSet = true;
     }
   }

@@ -52,13 +52,13 @@ Content& Content::operator =(const XmlNode& xmlNode)
     XmlNode dataNode = resultNode.FirstChild("Data");
     if(!dataNode.IsNull())
     {
-      m_data = dataNode.GetText();
+      m_data = Aws::Utils::Xml::DecodeEscapedXmlText(dataNode.GetText());
       m_dataHasBeenSet = true;
     }
     XmlNode charsetNode = resultNode.FirstChild("Charset");
     if(!charsetNode.IsNull())
     {
-      m_charset = charsetNode.GetText();
+      m_charset = Aws::Utils::Xml::DecodeEscapedXmlText(charsetNode.GetText());
       m_charsetHasBeenSet = true;
     }
   }

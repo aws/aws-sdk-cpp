@@ -56,19 +56,19 @@ LambdaAction& LambdaAction::operator =(const XmlNode& xmlNode)
     XmlNode topicArnNode = resultNode.FirstChild("TopicArn");
     if(!topicArnNode.IsNull())
     {
-      m_topicArn = topicArnNode.GetText();
+      m_topicArn = Aws::Utils::Xml::DecodeEscapedXmlText(topicArnNode.GetText());
       m_topicArnHasBeenSet = true;
     }
     XmlNode functionArnNode = resultNode.FirstChild("FunctionArn");
     if(!functionArnNode.IsNull())
     {
-      m_functionArn = functionArnNode.GetText();
+      m_functionArn = Aws::Utils::Xml::DecodeEscapedXmlText(functionArnNode.GetText());
       m_functionArnHasBeenSet = true;
     }
     XmlNode invocationTypeNode = resultNode.FirstChild("InvocationType");
     if(!invocationTypeNode.IsNull())
     {
-      m_invocationType = InvocationTypeMapper::GetInvocationTypeForName(StringUtils::Trim(invocationTypeNode.GetText().c_str()).c_str());
+      m_invocationType = InvocationTypeMapper::GetInvocationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(invocationTypeNode.GetText()).c_str()).c_str());
       m_invocationTypeHasBeenSet = true;
     }
   }

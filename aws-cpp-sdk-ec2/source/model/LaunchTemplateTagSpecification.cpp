@@ -54,7 +54,7 @@ LaunchTemplateTagSpecification& LaunchTemplateTagSpecification::operator =(const
     XmlNode resourceTypeNode = resultNode.FirstChild("resourceType");
     if(!resourceTypeNode.IsNull())
     {
-      m_resourceType = ResourceTypeMapper::GetResourceTypeForName(StringUtils::Trim(resourceTypeNode.GetText().c_str()).c_str());
+      m_resourceType = ResourceTypeMapper::GetResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()).c_str());
       m_resourceTypeHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");

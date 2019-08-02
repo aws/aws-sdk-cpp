@@ -76,67 +76,67 @@ Policy& Policy::operator =(const XmlNode& xmlNode)
     XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
     if(!policyNameNode.IsNull())
     {
-      m_policyName = policyNameNode.GetText();
+      m_policyName = Aws::Utils::Xml::DecodeEscapedXmlText(policyNameNode.GetText());
       m_policyNameHasBeenSet = true;
     }
     XmlNode policyIdNode = resultNode.FirstChild("PolicyId");
     if(!policyIdNode.IsNull())
     {
-      m_policyId = policyIdNode.GetText();
+      m_policyId = Aws::Utils::Xml::DecodeEscapedXmlText(policyIdNode.GetText());
       m_policyIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
-      m_arn = arnNode.GetText();
+      m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
     }
     XmlNode pathNode = resultNode.FirstChild("Path");
     if(!pathNode.IsNull())
     {
-      m_path = pathNode.GetText();
+      m_path = Aws::Utils::Xml::DecodeEscapedXmlText(pathNode.GetText());
       m_pathHasBeenSet = true;
     }
     XmlNode defaultVersionIdNode = resultNode.FirstChild("DefaultVersionId");
     if(!defaultVersionIdNode.IsNull())
     {
-      m_defaultVersionId = defaultVersionIdNode.GetText();
+      m_defaultVersionId = Aws::Utils::Xml::DecodeEscapedXmlText(defaultVersionIdNode.GetText());
       m_defaultVersionIdHasBeenSet = true;
     }
     XmlNode attachmentCountNode = resultNode.FirstChild("AttachmentCount");
     if(!attachmentCountNode.IsNull())
     {
-      m_attachmentCount = StringUtils::ConvertToInt32(StringUtils::Trim(attachmentCountNode.GetText().c_str()).c_str());
+      m_attachmentCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attachmentCountNode.GetText()).c_str()).c_str());
       m_attachmentCountHasBeenSet = true;
     }
     XmlNode permissionsBoundaryUsageCountNode = resultNode.FirstChild("PermissionsBoundaryUsageCount");
     if(!permissionsBoundaryUsageCountNode.IsNull())
     {
-      m_permissionsBoundaryUsageCount = StringUtils::ConvertToInt32(StringUtils::Trim(permissionsBoundaryUsageCountNode.GetText().c_str()).c_str());
+      m_permissionsBoundaryUsageCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionsBoundaryUsageCountNode.GetText()).c_str()).c_str());
       m_permissionsBoundaryUsageCountHasBeenSet = true;
     }
     XmlNode isAttachableNode = resultNode.FirstChild("IsAttachable");
     if(!isAttachableNode.IsNull())
     {
-      m_isAttachable = StringUtils::ConvertToBool(StringUtils::Trim(isAttachableNode.GetText().c_str()).c_str());
+      m_isAttachable = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isAttachableNode.GetText()).c_str()).c_str());
       m_isAttachableHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = DateTime(StringUtils::Trim(createDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
     }
     XmlNode updateDateNode = resultNode.FirstChild("UpdateDate");
     if(!updateDateNode.IsNull())
     {
-      m_updateDate = DateTime(StringUtils::Trim(updateDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_updateDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_updateDateHasBeenSet = true;
     }
   }

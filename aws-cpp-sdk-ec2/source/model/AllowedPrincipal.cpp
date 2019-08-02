@@ -54,13 +54,13 @@ AllowedPrincipal& AllowedPrincipal::operator =(const XmlNode& xmlNode)
     XmlNode principalTypeNode = resultNode.FirstChild("principalType");
     if(!principalTypeNode.IsNull())
     {
-      m_principalType = PrincipalTypeMapper::GetPrincipalTypeForName(StringUtils::Trim(principalTypeNode.GetText().c_str()).c_str());
+      m_principalType = PrincipalTypeMapper::GetPrincipalTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(principalTypeNode.GetText()).c_str()).c_str());
       m_principalTypeHasBeenSet = true;
     }
     XmlNode principalNode = resultNode.FirstChild("principal");
     if(!principalNode.IsNull())
     {
-      m_principal = principalNode.GetText();
+      m_principal = Aws::Utils::Xml::DecodeEscapedXmlText(principalNode.GetText());
       m_principalHasBeenSet = true;
     }
   }

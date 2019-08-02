@@ -52,7 +52,7 @@ JSONInput& JSONInput::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = JSONTypeMapper::GetJSONTypeForName(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
+      m_type = JSONTypeMapper::GetJSONTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
       m_typeHasBeenSet = true;
     }
   }

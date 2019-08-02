@@ -52,7 +52,7 @@ DeletionTaskFailureReasonType& DeletionTaskFailureReasonType::operator =(const X
     XmlNode reasonNode = resultNode.FirstChild("Reason");
     if(!reasonNode.IsNull())
     {
-      m_reason = reasonNode.GetText();
+      m_reason = Aws::Utils::Xml::DecodeEscapedXmlText(reasonNode.GetText());
       m_reasonHasBeenSet = true;
     }
     XmlNode roleUsageListNode = resultNode.FirstChild("RoleUsageList");

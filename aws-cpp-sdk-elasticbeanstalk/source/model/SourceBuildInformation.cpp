@@ -58,19 +58,19 @@ SourceBuildInformation& SourceBuildInformation::operator =(const XmlNode& xmlNod
     XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
     if(!sourceTypeNode.IsNull())
     {
-      m_sourceType = SourceTypeMapper::GetSourceTypeForName(StringUtils::Trim(sourceTypeNode.GetText().c_str()).c_str());
+      m_sourceType = SourceTypeMapper::GetSourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceTypeNode.GetText()).c_str()).c_str());
       m_sourceTypeHasBeenSet = true;
     }
     XmlNode sourceRepositoryNode = resultNode.FirstChild("SourceRepository");
     if(!sourceRepositoryNode.IsNull())
     {
-      m_sourceRepository = SourceRepositoryMapper::GetSourceRepositoryForName(StringUtils::Trim(sourceRepositoryNode.GetText().c_str()).c_str());
+      m_sourceRepository = SourceRepositoryMapper::GetSourceRepositoryForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceRepositoryNode.GetText()).c_str()).c_str());
       m_sourceRepositoryHasBeenSet = true;
     }
     XmlNode sourceLocationNode = resultNode.FirstChild("SourceLocation");
     if(!sourceLocationNode.IsNull())
     {
-      m_sourceLocation = sourceLocationNode.GetText();
+      m_sourceLocation = Aws::Utils::Xml::DecodeEscapedXmlText(sourceLocationNode.GetText());
       m_sourceLocationHasBeenSet = true;
     }
   }

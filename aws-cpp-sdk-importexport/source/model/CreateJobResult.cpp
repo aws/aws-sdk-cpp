@@ -53,27 +53,27 @@ CreateJobResult& CreateJobResult::operator =(const Aws::AmazonWebServiceResult<X
     XmlNode jobIdNode = resultNode.FirstChild("JobId");
     if(!jobIdNode.IsNull())
     {
-      m_jobId = jobIdNode.GetText();
+      m_jobId = Aws::Utils::Xml::DecodeEscapedXmlText(jobIdNode.GetText());
     }
     XmlNode jobTypeNode = resultNode.FirstChild("JobType");
     if(!jobTypeNode.IsNull())
     {
-      m_jobType = JobTypeMapper::GetJobTypeForName(StringUtils::Trim(jobTypeNode.GetText().c_str()).c_str());
+      m_jobType = JobTypeMapper::GetJobTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(jobTypeNode.GetText()).c_str()).c_str());
     }
     XmlNode signatureNode = resultNode.FirstChild("Signature");
     if(!signatureNode.IsNull())
     {
-      m_signature = signatureNode.GetText();
+      m_signature = Aws::Utils::Xml::DecodeEscapedXmlText(signatureNode.GetText());
     }
     XmlNode signatureFileContentsNode = resultNode.FirstChild("SignatureFileContents");
     if(!signatureFileContentsNode.IsNull())
     {
-      m_signatureFileContents = signatureFileContentsNode.GetText();
+      m_signatureFileContents = Aws::Utils::Xml::DecodeEscapedXmlText(signatureFileContentsNode.GetText());
     }
     XmlNode warningMessageNode = resultNode.FirstChild("WarningMessage");
     if(!warningMessageNode.IsNull())
     {
-      m_warningMessage = warningMessageNode.GetText();
+      m_warningMessage = Aws::Utils::Xml::DecodeEscapedXmlText(warningMessageNode.GetText());
     }
     XmlNode artifactListNode = resultNode.FirstChild("ArtifactList");
     if(!artifactListNode.IsNull())

@@ -51,7 +51,7 @@ CreateStackSetResult& CreateStackSetResult::operator =(const Aws::AmazonWebServi
     XmlNode stackSetIdNode = resultNode.FirstChild("StackSetId");
     if(!stackSetIdNode.IsNull())
     {
-      m_stackSetId = stackSetIdNode.GetText();
+      m_stackSetId = Aws::Utils::Xml::DecodeEscapedXmlText(stackSetIdNode.GetText());
     }
   }
 

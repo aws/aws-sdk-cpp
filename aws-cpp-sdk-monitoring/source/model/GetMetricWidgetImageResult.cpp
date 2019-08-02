@@ -52,7 +52,7 @@ GetMetricWidgetImageResult& GetMetricWidgetImageResult::operator =(const Aws::Am
     XmlNode metricWidgetImageNode = resultNode.FirstChild("MetricWidgetImage");
     if(!metricWidgetImageNode.IsNull())
     {
-      m_metricWidgetImage = HashingUtils::Base64Decode(metricWidgetImageNode.GetText());
+      m_metricWidgetImage = HashingUtils::Base64Decode(Aws::Utils::Xml::DecodeEscapedXmlText(metricWidgetImageNode.GetText()));
     }
   }
 

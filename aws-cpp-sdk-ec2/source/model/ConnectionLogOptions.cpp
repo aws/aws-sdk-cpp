@@ -56,19 +56,19 @@ ConnectionLogOptions& ConnectionLogOptions::operator =(const XmlNode& xmlNode)
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
     if(!enabledNode.IsNull())
     {
-      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
     XmlNode cloudwatchLogGroupNode = resultNode.FirstChild("CloudwatchLogGroup");
     if(!cloudwatchLogGroupNode.IsNull())
     {
-      m_cloudwatchLogGroup = cloudwatchLogGroupNode.GetText();
+      m_cloudwatchLogGroup = Aws::Utils::Xml::DecodeEscapedXmlText(cloudwatchLogGroupNode.GetText());
       m_cloudwatchLogGroupHasBeenSet = true;
     }
     XmlNode cloudwatchLogStreamNode = resultNode.FirstChild("CloudwatchLogStream");
     if(!cloudwatchLogStreamNode.IsNull())
     {
-      m_cloudwatchLogStream = cloudwatchLogStreamNode.GetText();
+      m_cloudwatchLogStream = Aws::Utils::Xml::DecodeEscapedXmlText(cloudwatchLogStreamNode.GetText());
       m_cloudwatchLogStreamHasBeenSet = true;
     }
   }

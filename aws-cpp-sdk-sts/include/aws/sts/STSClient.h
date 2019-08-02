@@ -1181,15 +1181,15 @@ namespace Model
          * using STS operations. If the account in the response belongs to you, you can
          * sign in as the root user and review your root user access keys. Then, you can
          * pull a <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report">credentials
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">credentials
          * report</a> to learn which IAM user owns the keys. To learn who requested the
          * temporary credentials for an <code>ASIA</code> access key, view the STS events
          * in your <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration">CloudTrail
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">CloudTrail
          * logs</a>.</p> <p>This operation does not indicate the state of the access key.
          * The key might be active, inactive, or deleted. Active keys might not have
-         * permissions to perform an operation. Providing a deleted keys might return an
-         * error that the key doesn't exist.</p><p><h3>See Also:</h3>   <a
+         * permissions to perform an operation. Providing a deleted access key might return
+         * an error that the key doesn't exist.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetAccessKeyInfo">AWS
          * API Reference</a></p>
          */
@@ -1210,15 +1210,15 @@ namespace Model
          * using STS operations. If the account in the response belongs to you, you can
          * sign in as the root user and review your root user access keys. Then, you can
          * pull a <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report">credentials
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">credentials
          * report</a> to learn which IAM user owns the keys. To learn who requested the
          * temporary credentials for an <code>ASIA</code> access key, view the STS events
          * in your <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration">CloudTrail
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">CloudTrail
          * logs</a>.</p> <p>This operation does not indicate the state of the access key.
          * The key might be active, inactive, or deleted. Active keys might not have
-         * permissions to perform an operation. Providing a deleted keys might return an
-         * error that the key doesn't exist.</p><p><h3>See Also:</h3>   <a
+         * permissions to perform an operation. Providing a deleted access key might return
+         * an error that the key doesn't exist.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetAccessKeyInfo">AWS
          * API Reference</a></p>
          *
@@ -1241,15 +1241,15 @@ namespace Model
          * using STS operations. If the account in the response belongs to you, you can
          * sign in as the root user and review your root user access keys. Then, you can
          * pull a <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report">credentials
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">credentials
          * report</a> to learn which IAM user owns the keys. To learn who requested the
          * temporary credentials for an <code>ASIA</code> access key, view the STS events
          * in your <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration">CloudTrail
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">CloudTrail
          * logs</a>.</p> <p>This operation does not indicate the state of the access key.
          * The key might be active, inactive, or deleted. Active keys might not have
-         * permissions to perform an operation. Providing a deleted keys might return an
-         * error that the key doesn't exist.</p><p><h3>See Also:</h3>   <a
+         * permissions to perform an operation. Providing a deleted access key might return
+         * an error that the key doesn't exist.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetAccessKeyInfo">AWS
          * API Reference</a></p>
          *
@@ -1258,16 +1258,32 @@ namespace Model
         virtual void GetAccessKeyInfoAsync(const Model::GetAccessKeyInfoRequest& request, const GetAccessKeyInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns details about the IAM identity whose credentials are used to call the
-         * API.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns details about the IAM user or role whose credentials are used to call
+         * the operation.</p> <note> <p>No permissions are required to perform this
+         * operation. If an administrator adds a policy to your IAM user or role that
+         * explicitly denies access to the <code>sts:GetCallerIdentity</code> action, you
+         * can still perform this operation. Permissions are not required because the same
+         * information is returned when an IAM user or role is denied access. To view an
+         * example response, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_access-denied-delete-mfa">I
+         * Am Not Authorized to Perform: iam:DeleteVirtualMFADevice</a>.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity">AWS
          * API Reference</a></p>
          */
         virtual Model::GetCallerIdentityOutcome GetCallerIdentity(const Model::GetCallerIdentityRequest& request) const;
 
         /**
-         * <p>Returns details about the IAM identity whose credentials are used to call the
-         * API.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns details about the IAM user or role whose credentials are used to call
+         * the operation.</p> <note> <p>No permissions are required to perform this
+         * operation. If an administrator adds a policy to your IAM user or role that
+         * explicitly denies access to the <code>sts:GetCallerIdentity</code> action, you
+         * can still perform this operation. Permissions are not required because the same
+         * information is returned when an IAM user or role is denied access. To view an
+         * example response, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_access-denied-delete-mfa">I
+         * Am Not Authorized to Perform: iam:DeleteVirtualMFADevice</a>.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity">AWS
          * API Reference</a></p>
          *
@@ -1276,8 +1292,16 @@ namespace Model
         virtual Model::GetCallerIdentityOutcomeCallable GetCallerIdentityCallable(const Model::GetCallerIdentityRequest& request) const;
 
         /**
-         * <p>Returns details about the IAM identity whose credentials are used to call the
-         * API.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns details about the IAM user or role whose credentials are used to call
+         * the operation.</p> <note> <p>No permissions are required to perform this
+         * operation. If an administrator adds a policy to your IAM user or role that
+         * explicitly denies access to the <code>sts:GetCallerIdentity</code> action, you
+         * can still perform this operation. Permissions are not required because the same
+         * information is returned when an IAM user or role is denied access. To view an
+         * example response, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_access-denied-delete-mfa">I
+         * Am Not Authorized to Perform: iam:DeleteVirtualMFADevice</a>.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity">AWS
          * API Reference</a></p>
          *

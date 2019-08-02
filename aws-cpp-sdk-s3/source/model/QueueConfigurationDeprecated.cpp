@@ -54,7 +54,7 @@ QueueConfigurationDeprecated& QueueConfigurationDeprecated::operator =(const Xml
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = idNode.GetText();
+      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
     }
     XmlNode eventsNode = resultNode.FirstChild("Event");
@@ -72,7 +72,7 @@ QueueConfigurationDeprecated& QueueConfigurationDeprecated::operator =(const Xml
     XmlNode queueNode = resultNode.FirstChild("Queue");
     if(!queueNode.IsNull())
     {
-      m_queue = queueNode.GetText();
+      m_queue = Aws::Utils::Xml::DecodeEscapedXmlText(queueNode.GetText());
       m_queueHasBeenSet = true;
     }
   }

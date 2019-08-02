@@ -55,12 +55,12 @@ GetServiceLastAccessedDetailsResult& GetServiceLastAccessedDetailsResult::operat
     XmlNode jobStatusNode = resultNode.FirstChild("JobStatus");
     if(!jobStatusNode.IsNull())
     {
-      m_jobStatus = JobStatusTypeMapper::GetJobStatusTypeForName(StringUtils::Trim(jobStatusNode.GetText().c_str()).c_str());
+      m_jobStatus = JobStatusTypeMapper::GetJobStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(jobStatusNode.GetText()).c_str()).c_str());
     }
     XmlNode jobCreationDateNode = resultNode.FirstChild("JobCreationDate");
     if(!jobCreationDateNode.IsNull())
     {
-      m_jobCreationDate = DateTime(StringUtils::Trim(jobCreationDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_jobCreationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(jobCreationDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode servicesLastAccessedNode = resultNode.FirstChild("ServicesLastAccessed");
     if(!servicesLastAccessedNode.IsNull())
@@ -76,17 +76,17 @@ GetServiceLastAccessedDetailsResult& GetServiceLastAccessedDetailsResult::operat
     XmlNode jobCompletionDateNode = resultNode.FirstChild("JobCompletionDate");
     if(!jobCompletionDateNode.IsNull())
     {
-      m_jobCompletionDate = DateTime(StringUtils::Trim(jobCompletionDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_jobCompletionDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(jobCompletionDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
     {
-      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
-      m_marker = markerNode.GetText();
+      m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
     }
     XmlNode errorNode = resultNode.FirstChild("Error");
     if(!errorNode.IsNull())

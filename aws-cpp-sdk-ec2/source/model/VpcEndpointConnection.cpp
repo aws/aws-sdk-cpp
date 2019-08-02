@@ -64,31 +64,31 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
     XmlNode serviceIdNode = resultNode.FirstChild("serviceId");
     if(!serviceIdNode.IsNull())
     {
-      m_serviceId = serviceIdNode.GetText();
+      m_serviceId = Aws::Utils::Xml::DecodeEscapedXmlText(serviceIdNode.GetText());
       m_serviceIdHasBeenSet = true;
     }
     XmlNode vpcEndpointIdNode = resultNode.FirstChild("vpcEndpointId");
     if(!vpcEndpointIdNode.IsNull())
     {
-      m_vpcEndpointId = vpcEndpointIdNode.GetText();
+      m_vpcEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointIdNode.GetText());
       m_vpcEndpointIdHasBeenSet = true;
     }
     XmlNode vpcEndpointOwnerNode = resultNode.FirstChild("vpcEndpointOwner");
     if(!vpcEndpointOwnerNode.IsNull())
     {
-      m_vpcEndpointOwner = vpcEndpointOwnerNode.GetText();
+      m_vpcEndpointOwner = Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointOwnerNode.GetText());
       m_vpcEndpointOwnerHasBeenSet = true;
     }
     XmlNode vpcEndpointStateNode = resultNode.FirstChild("vpcEndpointState");
     if(!vpcEndpointStateNode.IsNull())
     {
-      m_vpcEndpointState = StateMapper::GetStateForName(StringUtils::Trim(vpcEndpointStateNode.GetText().c_str()).c_str());
+      m_vpcEndpointState = StateMapper::GetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointStateNode.GetText()).c_str()).c_str());
       m_vpcEndpointStateHasBeenSet = true;
     }
     XmlNode creationTimestampNode = resultNode.FirstChild("creationTimestamp");
     if(!creationTimestampNode.IsNull())
     {
-      m_creationTimestamp = DateTime(StringUtils::Trim(creationTimestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_creationTimestampHasBeenSet = true;
     }
     XmlNode dnsEntriesNode = resultNode.FirstChild("dnsEntrySet");

@@ -52,13 +52,13 @@ DBParameterGroupStatus& DBParameterGroupStatus::operator =(const XmlNode& xmlNod
     XmlNode dBParameterGroupNameNode = resultNode.FirstChild("DBParameterGroupName");
     if(!dBParameterGroupNameNode.IsNull())
     {
-      m_dBParameterGroupName = dBParameterGroupNameNode.GetText();
+      m_dBParameterGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(dBParameterGroupNameNode.GetText());
       m_dBParameterGroupNameHasBeenSet = true;
     }
     XmlNode parameterApplyStatusNode = resultNode.FirstChild("ParameterApplyStatus");
     if(!parameterApplyStatusNode.IsNull())
     {
-      m_parameterApplyStatus = parameterApplyStatusNode.GetText();
+      m_parameterApplyStatus = Aws::Utils::Xml::DecodeEscapedXmlText(parameterApplyStatusNode.GetText());
       m_parameterApplyStatusHasBeenSet = true;
     }
   }

@@ -54,7 +54,7 @@ QueryArgProfileConfig& QueryArgProfileConfig::operator =(const XmlNode& xmlNode)
     XmlNode forwardWhenQueryArgProfileIsUnknownNode = resultNode.FirstChild("ForwardWhenQueryArgProfileIsUnknown");
     if(!forwardWhenQueryArgProfileIsUnknownNode.IsNull())
     {
-      m_forwardWhenQueryArgProfileIsUnknown = StringUtils::ConvertToBool(StringUtils::Trim(forwardWhenQueryArgProfileIsUnknownNode.GetText().c_str()).c_str());
+      m_forwardWhenQueryArgProfileIsUnknown = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(forwardWhenQueryArgProfileIsUnknownNode.GetText()).c_str()).c_str());
       m_forwardWhenQueryArgProfileIsUnknownHasBeenSet = true;
     }
     XmlNode queryArgProfilesNode = resultNode.FirstChild("QueryArgProfiles");

@@ -62,7 +62,7 @@ DescribePoliciesResult& DescribePoliciesResult::operator =(const Aws::AmazonWebS
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = nextTokenNode.GetText();
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
     }
   }
 

@@ -72,25 +72,25 @@ NatGateway& NatGateway::operator =(const XmlNode& xmlNode)
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
     if(!createTimeNode.IsNull())
     {
-      m_createTime = DateTime(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
     }
     XmlNode deleteTimeNode = resultNode.FirstChild("deleteTime");
     if(!deleteTimeNode.IsNull())
     {
-      m_deleteTime = DateTime(StringUtils::Trim(deleteTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_deleteTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_deleteTimeHasBeenSet = true;
     }
     XmlNode failureCodeNode = resultNode.FirstChild("failureCode");
     if(!failureCodeNode.IsNull())
     {
-      m_failureCode = failureCodeNode.GetText();
+      m_failureCode = Aws::Utils::Xml::DecodeEscapedXmlText(failureCodeNode.GetText());
       m_failureCodeHasBeenSet = true;
     }
     XmlNode failureMessageNode = resultNode.FirstChild("failureMessage");
     if(!failureMessageNode.IsNull())
     {
-      m_failureMessage = failureMessageNode.GetText();
+      m_failureMessage = Aws::Utils::Xml::DecodeEscapedXmlText(failureMessageNode.GetText());
       m_failureMessageHasBeenSet = true;
     }
     XmlNode natGatewayAddressesNode = resultNode.FirstChild("natGatewayAddressSet");
@@ -108,7 +108,7 @@ NatGateway& NatGateway::operator =(const XmlNode& xmlNode)
     XmlNode natGatewayIdNode = resultNode.FirstChild("natGatewayId");
     if(!natGatewayIdNode.IsNull())
     {
-      m_natGatewayId = natGatewayIdNode.GetText();
+      m_natGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(natGatewayIdNode.GetText());
       m_natGatewayIdHasBeenSet = true;
     }
     XmlNode provisionedBandwidthNode = resultNode.FirstChild("provisionedBandwidth");
@@ -120,19 +120,19 @@ NatGateway& NatGateway::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = NatGatewayStateMapper::GetNatGatewayStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_state = NatGatewayStateMapper::GetNatGatewayStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
       m_stateHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
-      m_subnetId = subnetIdNode.GetText();
+      m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = vpcIdNode.GetText();
+      m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");

@@ -54,7 +54,7 @@ BackendServerDescription& BackendServerDescription::operator =(const XmlNode& xm
     XmlNode instancePortNode = resultNode.FirstChild("InstancePort");
     if(!instancePortNode.IsNull())
     {
-      m_instancePort = StringUtils::ConvertToInt32(StringUtils::Trim(instancePortNode.GetText().c_str()).c_str());
+      m_instancePort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancePortNode.GetText()).c_str()).c_str());
       m_instancePortHasBeenSet = true;
     }
     XmlNode policyNamesNode = resultNode.FirstChild("PolicyNames");

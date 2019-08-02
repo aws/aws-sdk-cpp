@@ -54,13 +54,13 @@ ScheduledInstancesPrivateIpAddressConfig& ScheduledInstancesPrivateIpAddressConf
     XmlNode primaryNode = resultNode.FirstChild("Primary");
     if(!primaryNode.IsNull())
     {
-      m_primary = StringUtils::ConvertToBool(StringUtils::Trim(primaryNode.GetText().c_str()).c_str());
+      m_primary = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(primaryNode.GetText()).c_str()).c_str());
       m_primaryHasBeenSet = true;
     }
     XmlNode privateIpAddressNode = resultNode.FirstChild("PrivateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
-      m_privateIpAddress = privateIpAddressNode.GetText();
+      m_privateIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(privateIpAddressNode.GetText());
       m_privateIpAddressHasBeenSet = true;
     }
   }

@@ -60,19 +60,19 @@ JobProgressSummary& JobProgressSummary::operator =(const XmlNode& xmlNode)
     XmlNode totalNumberOfTasksNode = resultNode.FirstChild("TotalNumberOfTasks");
     if(!totalNumberOfTasksNode.IsNull())
     {
-      m_totalNumberOfTasks = StringUtils::ConvertToInt64(StringUtils::Trim(totalNumberOfTasksNode.GetText().c_str()).c_str());
+      m_totalNumberOfTasks = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalNumberOfTasksNode.GetText()).c_str()).c_str());
       m_totalNumberOfTasksHasBeenSet = true;
     }
     XmlNode numberOfTasksSucceededNode = resultNode.FirstChild("NumberOfTasksSucceeded");
     if(!numberOfTasksSucceededNode.IsNull())
     {
-      m_numberOfTasksSucceeded = StringUtils::ConvertToInt64(StringUtils::Trim(numberOfTasksSucceededNode.GetText().c_str()).c_str());
+      m_numberOfTasksSucceeded = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numberOfTasksSucceededNode.GetText()).c_str()).c_str());
       m_numberOfTasksSucceededHasBeenSet = true;
     }
     XmlNode numberOfTasksFailedNode = resultNode.FirstChild("NumberOfTasksFailed");
     if(!numberOfTasksFailedNode.IsNull())
     {
-      m_numberOfTasksFailed = StringUtils::ConvertToInt64(StringUtils::Trim(numberOfTasksFailedNode.GetText().c_str()).c_str());
+      m_numberOfTasksFailed = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numberOfTasksFailedNode.GetText()).c_str()).c_str());
       m_numberOfTasksFailedHasBeenSet = true;
     }
   }

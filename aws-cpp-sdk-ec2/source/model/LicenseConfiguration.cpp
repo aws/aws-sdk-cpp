@@ -50,7 +50,7 @@ LicenseConfiguration& LicenseConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode licenseConfigurationArnNode = resultNode.FirstChild("licenseConfigurationArn");
     if(!licenseConfigurationArnNode.IsNull())
     {
-      m_licenseConfigurationArn = licenseConfigurationArnNode.GetText();
+      m_licenseConfigurationArn = Aws::Utils::Xml::DecodeEscapedXmlText(licenseConfigurationArnNode.GetText());
       m_licenseConfigurationArnHasBeenSet = true;
     }
   }

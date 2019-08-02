@@ -72,37 +72,37 @@ Option& Option::operator =(const XmlNode& xmlNode)
     XmlNode optionNameNode = resultNode.FirstChild("OptionName");
     if(!optionNameNode.IsNull())
     {
-      m_optionName = optionNameNode.GetText();
+      m_optionName = Aws::Utils::Xml::DecodeEscapedXmlText(optionNameNode.GetText());
       m_optionNameHasBeenSet = true;
     }
     XmlNode optionDescriptionNode = resultNode.FirstChild("OptionDescription");
     if(!optionDescriptionNode.IsNull())
     {
-      m_optionDescription = optionDescriptionNode.GetText();
+      m_optionDescription = Aws::Utils::Xml::DecodeEscapedXmlText(optionDescriptionNode.GetText());
       m_optionDescriptionHasBeenSet = true;
     }
     XmlNode persistentNode = resultNode.FirstChild("Persistent");
     if(!persistentNode.IsNull())
     {
-      m_persistent = StringUtils::ConvertToBool(StringUtils::Trim(persistentNode.GetText().c_str()).c_str());
+      m_persistent = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(persistentNode.GetText()).c_str()).c_str());
       m_persistentHasBeenSet = true;
     }
     XmlNode permanentNode = resultNode.FirstChild("Permanent");
     if(!permanentNode.IsNull())
     {
-      m_permanent = StringUtils::ConvertToBool(StringUtils::Trim(permanentNode.GetText().c_str()).c_str());
+      m_permanent = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permanentNode.GetText()).c_str()).c_str());
       m_permanentHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
     if(!portNode.IsNull())
     {
-      m_port = StringUtils::ConvertToInt32(StringUtils::Trim(portNode.GetText().c_str()).c_str());
+      m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
     }
     XmlNode optionVersionNode = resultNode.FirstChild("OptionVersion");
     if(!optionVersionNode.IsNull())
     {
-      m_optionVersion = optionVersionNode.GetText();
+      m_optionVersion = Aws::Utils::Xml::DecodeEscapedXmlText(optionVersionNode.GetText());
       m_optionVersionHasBeenSet = true;
     }
     XmlNode optionSettingsNode = resultNode.FirstChild("OptionSettings");

@@ -68,43 +68,43 @@ LaunchTemplateVersion& LaunchTemplateVersion::operator =(const XmlNode& xmlNode)
     XmlNode launchTemplateIdNode = resultNode.FirstChild("launchTemplateId");
     if(!launchTemplateIdNode.IsNull())
     {
-      m_launchTemplateId = launchTemplateIdNode.GetText();
+      m_launchTemplateId = Aws::Utils::Xml::DecodeEscapedXmlText(launchTemplateIdNode.GetText());
       m_launchTemplateIdHasBeenSet = true;
     }
     XmlNode launchTemplateNameNode = resultNode.FirstChild("launchTemplateName");
     if(!launchTemplateNameNode.IsNull())
     {
-      m_launchTemplateName = launchTemplateNameNode.GetText();
+      m_launchTemplateName = Aws::Utils::Xml::DecodeEscapedXmlText(launchTemplateNameNode.GetText());
       m_launchTemplateNameHasBeenSet = true;
     }
     XmlNode versionNumberNode = resultNode.FirstChild("versionNumber");
     if(!versionNumberNode.IsNull())
     {
-      m_versionNumber = StringUtils::ConvertToInt64(StringUtils::Trim(versionNumberNode.GetText().c_str()).c_str());
+      m_versionNumber = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(versionNumberNode.GetText()).c_str()).c_str());
       m_versionNumberHasBeenSet = true;
     }
     XmlNode versionDescriptionNode = resultNode.FirstChild("versionDescription");
     if(!versionDescriptionNode.IsNull())
     {
-      m_versionDescription = versionDescriptionNode.GetText();
+      m_versionDescription = Aws::Utils::Xml::DecodeEscapedXmlText(versionDescriptionNode.GetText());
       m_versionDescriptionHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
     if(!createTimeNode.IsNull())
     {
-      m_createTime = DateTime(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
     }
     XmlNode createdByNode = resultNode.FirstChild("createdBy");
     if(!createdByNode.IsNull())
     {
-      m_createdBy = createdByNode.GetText();
+      m_createdBy = Aws::Utils::Xml::DecodeEscapedXmlText(createdByNode.GetText());
       m_createdByHasBeenSet = true;
     }
     XmlNode defaultVersionNode = resultNode.FirstChild("defaultVersion");
     if(!defaultVersionNode.IsNull())
     {
-      m_defaultVersion = StringUtils::ConvertToBool(StringUtils::Trim(defaultVersionNode.GetText().c_str()).c_str());
+      m_defaultVersion = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultVersionNode.GetText()).c_str()).c_str());
       m_defaultVersionHasBeenSet = true;
     }
     XmlNode launchTemplateDataNode = resultNode.FirstChild("launchTemplateData");

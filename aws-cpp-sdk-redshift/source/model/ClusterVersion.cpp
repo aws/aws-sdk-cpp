@@ -54,19 +54,19 @@ ClusterVersion& ClusterVersion::operator =(const XmlNode& xmlNode)
     XmlNode clusterVersionNode = resultNode.FirstChild("ClusterVersion");
     if(!clusterVersionNode.IsNull())
     {
-      m_clusterVersion = clusterVersionNode.GetText();
+      m_clusterVersion = Aws::Utils::Xml::DecodeEscapedXmlText(clusterVersionNode.GetText());
       m_clusterVersionHasBeenSet = true;
     }
     XmlNode clusterParameterGroupFamilyNode = resultNode.FirstChild("ClusterParameterGroupFamily");
     if(!clusterParameterGroupFamilyNode.IsNull())
     {
-      m_clusterParameterGroupFamily = clusterParameterGroupFamilyNode.GetText();
+      m_clusterParameterGroupFamily = Aws::Utils::Xml::DecodeEscapedXmlText(clusterParameterGroupFamilyNode.GetText());
       m_clusterParameterGroupFamilyHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
   }

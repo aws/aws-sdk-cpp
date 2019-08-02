@@ -51,12 +51,12 @@ DescribeConfigurationOptionsResult& DescribeConfigurationOptionsResult::operator
     XmlNode solutionStackNameNode = resultNode.FirstChild("SolutionStackName");
     if(!solutionStackNameNode.IsNull())
     {
-      m_solutionStackName = solutionStackNameNode.GetText();
+      m_solutionStackName = Aws::Utils::Xml::DecodeEscapedXmlText(solutionStackNameNode.GetText());
     }
     XmlNode platformArnNode = resultNode.FirstChild("PlatformArn");
     if(!platformArnNode.IsNull())
     {
-      m_platformArn = platformArnNode.GetText();
+      m_platformArn = Aws::Utils::Xml::DecodeEscapedXmlText(platformArnNode.GetText());
     }
     XmlNode optionsNode = resultNode.FirstChild("Options");
     if(!optionsNode.IsNull())

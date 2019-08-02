@@ -52,13 +52,13 @@ LinkedService& LinkedService::operator =(const XmlNode& xmlNode)
     XmlNode servicePrincipalNode = resultNode.FirstChild("ServicePrincipal");
     if(!servicePrincipalNode.IsNull())
     {
-      m_servicePrincipal = servicePrincipalNode.GetText();
+      m_servicePrincipal = Aws::Utils::Xml::DecodeEscapedXmlText(servicePrincipalNode.GetText());
       m_servicePrincipalHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
   }

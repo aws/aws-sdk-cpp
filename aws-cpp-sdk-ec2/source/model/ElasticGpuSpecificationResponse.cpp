@@ -50,7 +50,7 @@ ElasticGpuSpecificationResponse& ElasticGpuSpecificationResponse::operator =(con
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = typeNode.GetText();
+      m_type = Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText());
       m_typeHasBeenSet = true;
     }
   }

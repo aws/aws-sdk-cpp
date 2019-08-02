@@ -50,7 +50,7 @@ OriginGroupMember& OriginGroupMember::operator =(const XmlNode& xmlNode)
     XmlNode originIdNode = resultNode.FirstChild("OriginId");
     if(!originIdNode.IsNull())
     {
-      m_originId = originIdNode.GetText();
+      m_originId = Aws::Utils::Xml::DecodeEscapedXmlText(originIdNode.GetText());
       m_originIdHasBeenSet = true;
     }
   }

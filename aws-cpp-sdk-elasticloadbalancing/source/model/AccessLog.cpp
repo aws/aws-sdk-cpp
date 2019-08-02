@@ -60,25 +60,25 @@ AccessLog& AccessLog::operator =(const XmlNode& xmlNode)
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
     if(!enabledNode.IsNull())
     {
-      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
     XmlNode s3BucketNameNode = resultNode.FirstChild("S3BucketName");
     if(!s3BucketNameNode.IsNull())
     {
-      m_s3BucketName = s3BucketNameNode.GetText();
+      m_s3BucketName = Aws::Utils::Xml::DecodeEscapedXmlText(s3BucketNameNode.GetText());
       m_s3BucketNameHasBeenSet = true;
     }
     XmlNode emitIntervalNode = resultNode.FirstChild("EmitInterval");
     if(!emitIntervalNode.IsNull())
     {
-      m_emitInterval = StringUtils::ConvertToInt32(StringUtils::Trim(emitIntervalNode.GetText().c_str()).c_str());
+      m_emitInterval = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(emitIntervalNode.GetText()).c_str()).c_str());
       m_emitIntervalHasBeenSet = true;
     }
     XmlNode s3BucketPrefixNode = resultNode.FirstChild("S3BucketPrefix");
     if(!s3BucketPrefixNode.IsNull())
     {
-      m_s3BucketPrefix = s3BucketPrefixNode.GetText();
+      m_s3BucketPrefix = Aws::Utils::Xml::DecodeEscapedXmlText(s3BucketPrefixNode.GetText());
       m_s3BucketPrefixHasBeenSet = true;
     }
   }

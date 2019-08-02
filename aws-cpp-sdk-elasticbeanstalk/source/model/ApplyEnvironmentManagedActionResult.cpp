@@ -53,22 +53,22 @@ ApplyEnvironmentManagedActionResult& ApplyEnvironmentManagedActionResult::operat
     XmlNode actionIdNode = resultNode.FirstChild("ActionId");
     if(!actionIdNode.IsNull())
     {
-      m_actionId = actionIdNode.GetText();
+      m_actionId = Aws::Utils::Xml::DecodeEscapedXmlText(actionIdNode.GetText());
     }
     XmlNode actionDescriptionNode = resultNode.FirstChild("ActionDescription");
     if(!actionDescriptionNode.IsNull())
     {
-      m_actionDescription = actionDescriptionNode.GetText();
+      m_actionDescription = Aws::Utils::Xml::DecodeEscapedXmlText(actionDescriptionNode.GetText());
     }
     XmlNode actionTypeNode = resultNode.FirstChild("ActionType");
     if(!actionTypeNode.IsNull())
     {
-      m_actionType = ActionTypeMapper::GetActionTypeForName(StringUtils::Trim(actionTypeNode.GetText().c_str()).c_str());
+      m_actionType = ActionTypeMapper::GetActionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionTypeNode.GetText()).c_str()).c_str());
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = statusNode.GetText();
+      m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
     }
   }
 

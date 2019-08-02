@@ -58,19 +58,19 @@ DiskImageDetail& DiskImageDetail::operator =(const XmlNode& xmlNode)
     XmlNode bytesNode = resultNode.FirstChild("bytes");
     if(!bytesNode.IsNull())
     {
-      m_bytes = StringUtils::ConvertToInt64(StringUtils::Trim(bytesNode.GetText().c_str()).c_str());
+      m_bytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bytesNode.GetText()).c_str()).c_str());
       m_bytesHasBeenSet = true;
     }
     XmlNode formatNode = resultNode.FirstChild("format");
     if(!formatNode.IsNull())
     {
-      m_format = DiskImageFormatMapper::GetDiskImageFormatForName(StringUtils::Trim(formatNode.GetText().c_str()).c_str());
+      m_format = DiskImageFormatMapper::GetDiskImageFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()).c_str());
       m_formatHasBeenSet = true;
     }
     XmlNode importManifestUrlNode = resultNode.FirstChild("importManifestUrl");
     if(!importManifestUrlNode.IsNull())
     {
-      m_importManifestUrl = importManifestUrlNode.GetText();
+      m_importManifestUrl = Aws::Utils::Xml::DecodeEscapedXmlText(importManifestUrlNode.GetText());
       m_importManifestUrlHasBeenSet = true;
     }
   }

@@ -54,7 +54,7 @@ TerminateConnectionStatus& TerminateConnectionStatus::operator =(const XmlNode& 
     XmlNode connectionIdNode = resultNode.FirstChild("connectionId");
     if(!connectionIdNode.IsNull())
     {
-      m_connectionId = connectionIdNode.GetText();
+      m_connectionId = Aws::Utils::Xml::DecodeEscapedXmlText(connectionIdNode.GetText());
       m_connectionIdHasBeenSet = true;
     }
     XmlNode previousStatusNode = resultNode.FirstChild("previousStatus");

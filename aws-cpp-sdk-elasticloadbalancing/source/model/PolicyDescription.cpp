@@ -54,13 +54,13 @@ PolicyDescription& PolicyDescription::operator =(const XmlNode& xmlNode)
     XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
     if(!policyNameNode.IsNull())
     {
-      m_policyName = policyNameNode.GetText();
+      m_policyName = Aws::Utils::Xml::DecodeEscapedXmlText(policyNameNode.GetText());
       m_policyNameHasBeenSet = true;
     }
     XmlNode policyTypeNameNode = resultNode.FirstChild("PolicyTypeName");
     if(!policyTypeNameNode.IsNull())
     {
-      m_policyTypeName = policyTypeNameNode.GetText();
+      m_policyTypeName = Aws::Utils::Xml::DecodeEscapedXmlText(policyTypeNameNode.GetText());
       m_policyTypeNameHasBeenSet = true;
     }
     XmlNode policyAttributeDescriptionsNode = resultNode.FirstChild("PolicyAttributeDescriptions");

@@ -82,31 +82,31 @@ FpgaImage& FpgaImage::operator =(const XmlNode& xmlNode)
     XmlNode fpgaImageIdNode = resultNode.FirstChild("fpgaImageId");
     if(!fpgaImageIdNode.IsNull())
     {
-      m_fpgaImageId = fpgaImageIdNode.GetText();
+      m_fpgaImageId = Aws::Utils::Xml::DecodeEscapedXmlText(fpgaImageIdNode.GetText());
       m_fpgaImageIdHasBeenSet = true;
     }
     XmlNode fpgaImageGlobalIdNode = resultNode.FirstChild("fpgaImageGlobalId");
     if(!fpgaImageGlobalIdNode.IsNull())
     {
-      m_fpgaImageGlobalId = fpgaImageGlobalIdNode.GetText();
+      m_fpgaImageGlobalId = Aws::Utils::Xml::DecodeEscapedXmlText(fpgaImageGlobalIdNode.GetText());
       m_fpgaImageGlobalIdHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("name");
     if(!nameNode.IsNull())
     {
-      m_name = nameNode.GetText();
+      m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode shellVersionNode = resultNode.FirstChild("shellVersion");
     if(!shellVersionNode.IsNull())
     {
-      m_shellVersion = shellVersionNode.GetText();
+      m_shellVersion = Aws::Utils::Xml::DecodeEscapedXmlText(shellVersionNode.GetText());
       m_shellVersionHasBeenSet = true;
     }
     XmlNode pciIdNode = resultNode.FirstChild("pciId");
@@ -124,25 +124,25 @@ FpgaImage& FpgaImage::operator =(const XmlNode& xmlNode)
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
     if(!createTimeNode.IsNull())
     {
-      m_createTime = DateTime(StringUtils::Trim(createTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
     }
     XmlNode updateTimeNode = resultNode.FirstChild("updateTime");
     if(!updateTimeNode.IsNull())
     {
-      m_updateTime = DateTime(StringUtils::Trim(updateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_updateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_updateTimeHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
-      m_ownerId = ownerIdNode.GetText();
+      m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
     }
     XmlNode ownerAliasNode = resultNode.FirstChild("ownerAlias");
     if(!ownerAliasNode.IsNull())
     {
-      m_ownerAlias = ownerAliasNode.GetText();
+      m_ownerAlias = Aws::Utils::Xml::DecodeEscapedXmlText(ownerAliasNode.GetText());
       m_ownerAliasHasBeenSet = true;
     }
     XmlNode productCodesNode = resultNode.FirstChild("productCodes");
@@ -172,13 +172,13 @@ FpgaImage& FpgaImage::operator =(const XmlNode& xmlNode)
     XmlNode publicNode = resultNode.FirstChild("public");
     if(!publicNode.IsNull())
     {
-      m_public = StringUtils::ConvertToBool(StringUtils::Trim(publicNode.GetText().c_str()).c_str());
+      m_public = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publicNode.GetText()).c_str()).c_str());
       m_publicHasBeenSet = true;
     }
     XmlNode dataRetentionSupportNode = resultNode.FirstChild("dataRetentionSupport");
     if(!dataRetentionSupportNode.IsNull())
     {
-      m_dataRetentionSupport = StringUtils::ConvertToBool(StringUtils::Trim(dataRetentionSupportNode.GetText().c_str()).c_str());
+      m_dataRetentionSupport = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataRetentionSupportNode.GetText()).c_str()).c_str());
       m_dataRetentionSupportHasBeenSet = true;
     }
   }

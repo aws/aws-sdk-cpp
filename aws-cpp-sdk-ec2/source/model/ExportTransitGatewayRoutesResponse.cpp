@@ -51,7 +51,7 @@ ExportTransitGatewayRoutesResponse& ExportTransitGatewayRoutesResponse::operator
     XmlNode s3LocationNode = resultNode.FirstChild("s3Location");
     if(!s3LocationNode.IsNull())
     {
-      m_s3Location = s3LocationNode.GetText();
+      m_s3Location = Aws::Utils::Xml::DecodeEscapedXmlText(s3LocationNode.GetText());
     }
   }
 

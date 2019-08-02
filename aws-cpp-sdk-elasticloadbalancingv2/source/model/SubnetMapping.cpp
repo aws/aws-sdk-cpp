@@ -52,13 +52,13 @@ SubnetMapping& SubnetMapping::operator =(const XmlNode& xmlNode)
     XmlNode subnetIdNode = resultNode.FirstChild("SubnetId");
     if(!subnetIdNode.IsNull())
     {
-      m_subnetId = subnetIdNode.GetText();
+      m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
     }
     XmlNode allocationIdNode = resultNode.FirstChild("AllocationId");
     if(!allocationIdNode.IsNull())
     {
-      m_allocationId = allocationIdNode.GetText();
+      m_allocationId = Aws::Utils::Xml::DecodeEscapedXmlText(allocationIdNode.GetText());
       m_allocationIdHasBeenSet = true;
     }
   }

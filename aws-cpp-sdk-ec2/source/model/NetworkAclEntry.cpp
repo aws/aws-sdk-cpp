@@ -70,13 +70,13 @@ NetworkAclEntry& NetworkAclEntry::operator =(const XmlNode& xmlNode)
     XmlNode cidrBlockNode = resultNode.FirstChild("cidrBlock");
     if(!cidrBlockNode.IsNull())
     {
-      m_cidrBlock = cidrBlockNode.GetText();
+      m_cidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(cidrBlockNode.GetText());
       m_cidrBlockHasBeenSet = true;
     }
     XmlNode egressNode = resultNode.FirstChild("egress");
     if(!egressNode.IsNull())
     {
-      m_egress = StringUtils::ConvertToBool(StringUtils::Trim(egressNode.GetText().c_str()).c_str());
+      m_egress = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(egressNode.GetText()).c_str()).c_str());
       m_egressHasBeenSet = true;
     }
     XmlNode icmpTypeCodeNode = resultNode.FirstChild("icmpTypeCode");
@@ -88,7 +88,7 @@ NetworkAclEntry& NetworkAclEntry::operator =(const XmlNode& xmlNode)
     XmlNode ipv6CidrBlockNode = resultNode.FirstChild("ipv6CidrBlock");
     if(!ipv6CidrBlockNode.IsNull())
     {
-      m_ipv6CidrBlock = ipv6CidrBlockNode.GetText();
+      m_ipv6CidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(ipv6CidrBlockNode.GetText());
       m_ipv6CidrBlockHasBeenSet = true;
     }
     XmlNode portRangeNode = resultNode.FirstChild("portRange");
@@ -100,19 +100,19 @@ NetworkAclEntry& NetworkAclEntry::operator =(const XmlNode& xmlNode)
     XmlNode protocolNode = resultNode.FirstChild("protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = protocolNode.GetText();
+      m_protocol = Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText());
       m_protocolHasBeenSet = true;
     }
     XmlNode ruleActionNode = resultNode.FirstChild("ruleAction");
     if(!ruleActionNode.IsNull())
     {
-      m_ruleAction = RuleActionMapper::GetRuleActionForName(StringUtils::Trim(ruleActionNode.GetText().c_str()).c_str());
+      m_ruleAction = RuleActionMapper::GetRuleActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ruleActionNode.GetText()).c_str()).c_str());
       m_ruleActionHasBeenSet = true;
     }
     XmlNode ruleNumberNode = resultNode.FirstChild("ruleNumber");
     if(!ruleNumberNode.IsNull())
     {
-      m_ruleNumber = StringUtils::ConvertToInt32(StringUtils::Trim(ruleNumberNode.GetText().c_str()).c_str());
+      m_ruleNumber = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ruleNumberNode.GetText()).c_str()).c_str());
       m_ruleNumberHasBeenSet = true;
     }
   }

@@ -54,19 +54,19 @@ DeferredMaintenanceWindow& DeferredMaintenanceWindow::operator =(const XmlNode& 
     XmlNode deferMaintenanceIdentifierNode = resultNode.FirstChild("DeferMaintenanceIdentifier");
     if(!deferMaintenanceIdentifierNode.IsNull())
     {
-      m_deferMaintenanceIdentifier = deferMaintenanceIdentifierNode.GetText();
+      m_deferMaintenanceIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(deferMaintenanceIdentifierNode.GetText());
       m_deferMaintenanceIdentifierHasBeenSet = true;
     }
     XmlNode deferMaintenanceStartTimeNode = resultNode.FirstChild("DeferMaintenanceStartTime");
     if(!deferMaintenanceStartTimeNode.IsNull())
     {
-      m_deferMaintenanceStartTime = DateTime(StringUtils::Trim(deferMaintenanceStartTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_deferMaintenanceStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deferMaintenanceStartTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_deferMaintenanceStartTimeHasBeenSet = true;
     }
     XmlNode deferMaintenanceEndTimeNode = resultNode.FirstChild("DeferMaintenanceEndTime");
     if(!deferMaintenanceEndTimeNode.IsNull())
     {
-      m_deferMaintenanceEndTime = DateTime(StringUtils::Trim(deferMaintenanceEndTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_deferMaintenanceEndTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deferMaintenanceEndTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_deferMaintenanceEndTimeHasBeenSet = true;
     }
   }

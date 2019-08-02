@@ -54,13 +54,13 @@ AccountGateResult& AccountGateResult::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = AccountGateStatusMapper::GetAccountGateStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = AccountGateStatusMapper::GetAccountGateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
     if(!statusReasonNode.IsNull())
     {
-      m_statusReason = statusReasonNode.GetText();
+      m_statusReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusReasonNode.GetText());
       m_statusReasonHasBeenSet = true;
     }
   }

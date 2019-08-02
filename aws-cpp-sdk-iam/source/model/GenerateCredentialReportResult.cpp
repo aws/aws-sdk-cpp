@@ -53,12 +53,12 @@ GenerateCredentialReportResult& GenerateCredentialReportResult::operator =(const
     XmlNode stateNode = resultNode.FirstChild("State");
     if(!stateNode.IsNull())
     {
-      m_state = ReportStateTypeMapper::GetReportStateTypeForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_state = ReportStateTypeMapper::GetReportStateTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
     }
   }
 

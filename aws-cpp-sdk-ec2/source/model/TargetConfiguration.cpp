@@ -54,13 +54,13 @@ TargetConfiguration& TargetConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode instanceCountNode = resultNode.FirstChild("instanceCount");
     if(!instanceCountNode.IsNull())
     {
-      m_instanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(instanceCountNode.GetText().c_str()).c_str());
+      m_instanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceCountNode.GetText()).c_str()).c_str());
       m_instanceCountHasBeenSet = true;
     }
     XmlNode offeringIdNode = resultNode.FirstChild("offeringId");
     if(!offeringIdNode.IsNull())
     {
-      m_offeringId = offeringIdNode.GetText();
+      m_offeringId = Aws::Utils::Xml::DecodeEscapedXmlText(offeringIdNode.GetText());
       m_offeringIdHasBeenSet = true;
     }
   }

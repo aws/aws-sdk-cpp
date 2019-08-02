@@ -66,25 +66,25 @@ OptionGroup& OptionGroup::operator =(const XmlNode& xmlNode)
     XmlNode optionGroupNameNode = resultNode.FirstChild("OptionGroupName");
     if(!optionGroupNameNode.IsNull())
     {
-      m_optionGroupName = optionGroupNameNode.GetText();
+      m_optionGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(optionGroupNameNode.GetText());
       m_optionGroupNameHasBeenSet = true;
     }
     XmlNode optionGroupDescriptionNode = resultNode.FirstChild("OptionGroupDescription");
     if(!optionGroupDescriptionNode.IsNull())
     {
-      m_optionGroupDescription = optionGroupDescriptionNode.GetText();
+      m_optionGroupDescription = Aws::Utils::Xml::DecodeEscapedXmlText(optionGroupDescriptionNode.GetText());
       m_optionGroupDescriptionHasBeenSet = true;
     }
     XmlNode engineNameNode = resultNode.FirstChild("EngineName");
     if(!engineNameNode.IsNull())
     {
-      m_engineName = engineNameNode.GetText();
+      m_engineName = Aws::Utils::Xml::DecodeEscapedXmlText(engineNameNode.GetText());
       m_engineNameHasBeenSet = true;
     }
     XmlNode majorEngineVersionNode = resultNode.FirstChild("MajorEngineVersion");
     if(!majorEngineVersionNode.IsNull())
     {
-      m_majorEngineVersion = majorEngineVersionNode.GetText();
+      m_majorEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(majorEngineVersionNode.GetText());
       m_majorEngineVersionHasBeenSet = true;
     }
     XmlNode optionsNode = resultNode.FirstChild("Options");
@@ -102,19 +102,19 @@ OptionGroup& OptionGroup::operator =(const XmlNode& xmlNode)
     XmlNode allowsVpcAndNonVpcInstanceMembershipsNode = resultNode.FirstChild("AllowsVpcAndNonVpcInstanceMemberships");
     if(!allowsVpcAndNonVpcInstanceMembershipsNode.IsNull())
     {
-      m_allowsVpcAndNonVpcInstanceMemberships = StringUtils::ConvertToBool(StringUtils::Trim(allowsVpcAndNonVpcInstanceMembershipsNode.GetText().c_str()).c_str());
+      m_allowsVpcAndNonVpcInstanceMemberships = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowsVpcAndNonVpcInstanceMembershipsNode.GetText()).c_str()).c_str());
       m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = vpcIdNode.GetText();
+      m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
     }
     XmlNode optionGroupArnNode = resultNode.FirstChild("OptionGroupArn");
     if(!optionGroupArnNode.IsNull())
     {
-      m_optionGroupArn = optionGroupArnNode.GetText();
+      m_optionGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(optionGroupArnNode.GetText());
       m_optionGroupArnHasBeenSet = true;
     }
   }

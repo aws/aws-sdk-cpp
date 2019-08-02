@@ -68,37 +68,37 @@ AuthenticateCognitoActionConfig& AuthenticateCognitoActionConfig::operator =(con
     XmlNode userPoolArnNode = resultNode.FirstChild("UserPoolArn");
     if(!userPoolArnNode.IsNull())
     {
-      m_userPoolArn = userPoolArnNode.GetText();
+      m_userPoolArn = Aws::Utils::Xml::DecodeEscapedXmlText(userPoolArnNode.GetText());
       m_userPoolArnHasBeenSet = true;
     }
     XmlNode userPoolClientIdNode = resultNode.FirstChild("UserPoolClientId");
     if(!userPoolClientIdNode.IsNull())
     {
-      m_userPoolClientId = userPoolClientIdNode.GetText();
+      m_userPoolClientId = Aws::Utils::Xml::DecodeEscapedXmlText(userPoolClientIdNode.GetText());
       m_userPoolClientIdHasBeenSet = true;
     }
     XmlNode userPoolDomainNode = resultNode.FirstChild("UserPoolDomain");
     if(!userPoolDomainNode.IsNull())
     {
-      m_userPoolDomain = userPoolDomainNode.GetText();
+      m_userPoolDomain = Aws::Utils::Xml::DecodeEscapedXmlText(userPoolDomainNode.GetText());
       m_userPoolDomainHasBeenSet = true;
     }
     XmlNode sessionCookieNameNode = resultNode.FirstChild("SessionCookieName");
     if(!sessionCookieNameNode.IsNull())
     {
-      m_sessionCookieName = sessionCookieNameNode.GetText();
+      m_sessionCookieName = Aws::Utils::Xml::DecodeEscapedXmlText(sessionCookieNameNode.GetText());
       m_sessionCookieNameHasBeenSet = true;
     }
     XmlNode scopeNode = resultNode.FirstChild("Scope");
     if(!scopeNode.IsNull())
     {
-      m_scope = scopeNode.GetText();
+      m_scope = Aws::Utils::Xml::DecodeEscapedXmlText(scopeNode.GetText());
       m_scopeHasBeenSet = true;
     }
     XmlNode sessionTimeoutNode = resultNode.FirstChild("SessionTimeout");
     if(!sessionTimeoutNode.IsNull())
     {
-      m_sessionTimeout = StringUtils::ConvertToInt64(StringUtils::Trim(sessionTimeoutNode.GetText().c_str()).c_str());
+      m_sessionTimeout = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sessionTimeoutNode.GetText()).c_str()).c_str());
       m_sessionTimeoutHasBeenSet = true;
     }
     XmlNode authenticationRequestExtraParamsNode = resultNode.FirstChild("AuthenticationRequestExtraParams");
@@ -120,7 +120,7 @@ AuthenticateCognitoActionConfig& AuthenticateCognitoActionConfig::operator =(con
     XmlNode onUnauthenticatedRequestNode = resultNode.FirstChild("OnUnauthenticatedRequest");
     if(!onUnauthenticatedRequestNode.IsNull())
     {
-      m_onUnauthenticatedRequest = AuthenticateCognitoActionConditionalBehaviorEnumMapper::GetAuthenticateCognitoActionConditionalBehaviorEnumForName(StringUtils::Trim(onUnauthenticatedRequestNode.GetText().c_str()).c_str());
+      m_onUnauthenticatedRequest = AuthenticateCognitoActionConditionalBehaviorEnumMapper::GetAuthenticateCognitoActionConditionalBehaviorEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onUnauthenticatedRequestNode.GetText()).c_str()).c_str());
       m_onUnauthenticatedRequestHasBeenSet = true;
     }
   }

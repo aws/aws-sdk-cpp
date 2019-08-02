@@ -51,7 +51,7 @@ CreateOpenIDConnectProviderResult& CreateOpenIDConnectProviderResult::operator =
     XmlNode openIDConnectProviderArnNode = resultNode.FirstChild("OpenIDConnectProviderArn");
     if(!openIDConnectProviderArnNode.IsNull())
     {
-      m_openIDConnectProviderArn = openIDConnectProviderArnNode.GetText();
+      m_openIDConnectProviderArn = Aws::Utils::Xml::DecodeEscapedXmlText(openIDConnectProviderArnNode.GetText());
     }
   }
 

@@ -60,19 +60,19 @@ VpcPeeringConnectionOptionsDescription& VpcPeeringConnectionOptionsDescription::
     XmlNode allowDnsResolutionFromRemoteVpcNode = resultNode.FirstChild("allowDnsResolutionFromRemoteVpc");
     if(!allowDnsResolutionFromRemoteVpcNode.IsNull())
     {
-      m_allowDnsResolutionFromRemoteVpc = StringUtils::ConvertToBool(StringUtils::Trim(allowDnsResolutionFromRemoteVpcNode.GetText().c_str()).c_str());
+      m_allowDnsResolutionFromRemoteVpc = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowDnsResolutionFromRemoteVpcNode.GetText()).c_str()).c_str());
       m_allowDnsResolutionFromRemoteVpcHasBeenSet = true;
     }
     XmlNode allowEgressFromLocalClassicLinkToRemoteVpcNode = resultNode.FirstChild("allowEgressFromLocalClassicLinkToRemoteVpc");
     if(!allowEgressFromLocalClassicLinkToRemoteVpcNode.IsNull())
     {
-      m_allowEgressFromLocalClassicLinkToRemoteVpc = StringUtils::ConvertToBool(StringUtils::Trim(allowEgressFromLocalClassicLinkToRemoteVpcNode.GetText().c_str()).c_str());
+      m_allowEgressFromLocalClassicLinkToRemoteVpc = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowEgressFromLocalClassicLinkToRemoteVpcNode.GetText()).c_str()).c_str());
       m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet = true;
     }
     XmlNode allowEgressFromLocalVpcToRemoteClassicLinkNode = resultNode.FirstChild("allowEgressFromLocalVpcToRemoteClassicLink");
     if(!allowEgressFromLocalVpcToRemoteClassicLinkNode.IsNull())
     {
-      m_allowEgressFromLocalVpcToRemoteClassicLink = StringUtils::ConvertToBool(StringUtils::Trim(allowEgressFromLocalVpcToRemoteClassicLinkNode.GetText().c_str()).c_str());
+      m_allowEgressFromLocalVpcToRemoteClassicLink = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowEgressFromLocalVpcToRemoteClassicLinkNode.GetText()).c_str()).c_str());
       m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet = true;
     }
   }

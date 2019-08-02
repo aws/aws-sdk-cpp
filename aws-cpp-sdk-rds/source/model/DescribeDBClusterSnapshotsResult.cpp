@@ -51,7 +51,7 @@ DescribeDBClusterSnapshotsResult& DescribeDBClusterSnapshotsResult::operator =(c
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
-      m_marker = markerNode.GetText();
+      m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
     }
     XmlNode dBClusterSnapshotsNode = resultNode.FirstChild("DBClusterSnapshots");
     if(!dBClusterSnapshotsNode.IsNull())

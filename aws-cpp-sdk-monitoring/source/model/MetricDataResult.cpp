@@ -62,13 +62,13 @@ MetricDataResult& MetricDataResult::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = idNode.GetText();
+      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
     }
     XmlNode labelNode = resultNode.FirstChild("Label");
     if(!labelNode.IsNull())
     {
-      m_label = labelNode.GetText();
+      m_label = Aws::Utils::Xml::DecodeEscapedXmlText(labelNode.GetText());
       m_labelHasBeenSet = true;
     }
     XmlNode timestampsNode = resultNode.FirstChild("Timestamps");
@@ -98,7 +98,7 @@ MetricDataResult& MetricDataResult::operator =(const XmlNode& xmlNode)
     XmlNode statusCodeNode = resultNode.FirstChild("StatusCode");
     if(!statusCodeNode.IsNull())
     {
-      m_statusCode = StatusCodeMapper::GetStatusCodeForName(StringUtils::Trim(statusCodeNode.GetText().c_str()).c_str());
+      m_statusCode = StatusCodeMapper::GetStatusCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusCodeNode.GetText()).c_str()).c_str());
       m_statusCodeHasBeenSet = true;
     }
     XmlNode messagesNode = resultNode.FirstChild("Messages");

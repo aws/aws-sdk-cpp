@@ -65,22 +65,22 @@ DescribeResizeResult& DescribeResizeResult::operator =(const Aws::AmazonWebServi
     XmlNode targetNodeTypeNode = resultNode.FirstChild("TargetNodeType");
     if(!targetNodeTypeNode.IsNull())
     {
-      m_targetNodeType = targetNodeTypeNode.GetText();
+      m_targetNodeType = Aws::Utils::Xml::DecodeEscapedXmlText(targetNodeTypeNode.GetText());
     }
     XmlNode targetNumberOfNodesNode = resultNode.FirstChild("TargetNumberOfNodes");
     if(!targetNumberOfNodesNode.IsNull())
     {
-      m_targetNumberOfNodes = StringUtils::ConvertToInt32(StringUtils::Trim(targetNumberOfNodesNode.GetText().c_str()).c_str());
+      m_targetNumberOfNodes = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetNumberOfNodesNode.GetText()).c_str()).c_str());
     }
     XmlNode targetClusterTypeNode = resultNode.FirstChild("TargetClusterType");
     if(!targetClusterTypeNode.IsNull())
     {
-      m_targetClusterType = targetClusterTypeNode.GetText();
+      m_targetClusterType = Aws::Utils::Xml::DecodeEscapedXmlText(targetClusterTypeNode.GetText());
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = statusNode.GetText();
+      m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
     }
     XmlNode importTablesCompletedNode = resultNode.FirstChild("ImportTablesCompleted");
     if(!importTablesCompletedNode.IsNull())
@@ -118,47 +118,47 @@ DescribeResizeResult& DescribeResizeResult::operator =(const Aws::AmazonWebServi
     XmlNode avgResizeRateInMegaBytesPerSecondNode = resultNode.FirstChild("AvgResizeRateInMegaBytesPerSecond");
     if(!avgResizeRateInMegaBytesPerSecondNode.IsNull())
     {
-      m_avgResizeRateInMegaBytesPerSecond = StringUtils::ConvertToDouble(StringUtils::Trim(avgResizeRateInMegaBytesPerSecondNode.GetText().c_str()).c_str());
+      m_avgResizeRateInMegaBytesPerSecond = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(avgResizeRateInMegaBytesPerSecondNode.GetText()).c_str()).c_str());
     }
     XmlNode totalResizeDataInMegaBytesNode = resultNode.FirstChild("TotalResizeDataInMegaBytes");
     if(!totalResizeDataInMegaBytesNode.IsNull())
     {
-      m_totalResizeDataInMegaBytes = StringUtils::ConvertToInt64(StringUtils::Trim(totalResizeDataInMegaBytesNode.GetText().c_str()).c_str());
+      m_totalResizeDataInMegaBytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalResizeDataInMegaBytesNode.GetText()).c_str()).c_str());
     }
     XmlNode progressInMegaBytesNode = resultNode.FirstChild("ProgressInMegaBytes");
     if(!progressInMegaBytesNode.IsNull())
     {
-      m_progressInMegaBytes = StringUtils::ConvertToInt64(StringUtils::Trim(progressInMegaBytesNode.GetText().c_str()).c_str());
+      m_progressInMegaBytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(progressInMegaBytesNode.GetText()).c_str()).c_str());
     }
     XmlNode elapsedTimeInSecondsNode = resultNode.FirstChild("ElapsedTimeInSeconds");
     if(!elapsedTimeInSecondsNode.IsNull())
     {
-      m_elapsedTimeInSeconds = StringUtils::ConvertToInt64(StringUtils::Trim(elapsedTimeInSecondsNode.GetText().c_str()).c_str());
+      m_elapsedTimeInSeconds = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(elapsedTimeInSecondsNode.GetText()).c_str()).c_str());
     }
     XmlNode estimatedTimeToCompletionInSecondsNode = resultNode.FirstChild("EstimatedTimeToCompletionInSeconds");
     if(!estimatedTimeToCompletionInSecondsNode.IsNull())
     {
-      m_estimatedTimeToCompletionInSeconds = StringUtils::ConvertToInt64(StringUtils::Trim(estimatedTimeToCompletionInSecondsNode.GetText().c_str()).c_str());
+      m_estimatedTimeToCompletionInSeconds = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(estimatedTimeToCompletionInSecondsNode.GetText()).c_str()).c_str());
     }
     XmlNode resizeTypeNode = resultNode.FirstChild("ResizeType");
     if(!resizeTypeNode.IsNull())
     {
-      m_resizeType = resizeTypeNode.GetText();
+      m_resizeType = Aws::Utils::Xml::DecodeEscapedXmlText(resizeTypeNode.GetText());
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
-      m_message = messageNode.GetText();
+      m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
     }
     XmlNode targetEncryptionTypeNode = resultNode.FirstChild("TargetEncryptionType");
     if(!targetEncryptionTypeNode.IsNull())
     {
-      m_targetEncryptionType = targetEncryptionTypeNode.GetText();
+      m_targetEncryptionType = Aws::Utils::Xml::DecodeEscapedXmlText(targetEncryptionTypeNode.GetText());
     }
     XmlNode dataTransferProgressPercentNode = resultNode.FirstChild("DataTransferProgressPercent");
     if(!dataTransferProgressPercentNode.IsNull())
     {
-      m_dataTransferProgressPercent = StringUtils::ConvertToDouble(StringUtils::Trim(dataTransferProgressPercentNode.GetText().c_str()).c_str());
+      m_dataTransferProgressPercent = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataTransferProgressPercentNode.GetText()).c_str()).c_str());
     }
   }
 

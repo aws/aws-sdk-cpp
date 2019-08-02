@@ -56,13 +56,13 @@ InstanceState& InstanceState::operator =(const XmlNode& xmlNode)
     XmlNode codeNode = resultNode.FirstChild("code");
     if(!codeNode.IsNull())
     {
-      m_code = StringUtils::ConvertToInt32(StringUtils::Trim(codeNode.GetText().c_str()).c_str());
+      m_code = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()).c_str());
       m_codeHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("name");
     if(!nameNode.IsNull())
     {
-      m_name = InstanceStateNameMapper::GetInstanceStateNameForName(StringUtils::Trim(nameNode.GetText().c_str()).c_str());
+      m_name = InstanceStateNameMapper::GetInstanceStateNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()).c_str());
       m_nameHasBeenSet = true;
     }
   }

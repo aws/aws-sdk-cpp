@@ -62,13 +62,13 @@ HistoryRecordEntry& HistoryRecordEntry::operator =(const XmlNode& xmlNode)
     XmlNode eventTypeNode = resultNode.FirstChild("eventType");
     if(!eventTypeNode.IsNull())
     {
-      m_eventType = FleetEventTypeMapper::GetFleetEventTypeForName(StringUtils::Trim(eventTypeNode.GetText().c_str()).c_str());
+      m_eventType = FleetEventTypeMapper::GetFleetEventTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(eventTypeNode.GetText()).c_str()).c_str());
       m_eventTypeHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = DateTime(StringUtils::Trim(timestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
     }
   }

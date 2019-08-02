@@ -52,7 +52,7 @@ SlotMigration& SlotMigration::operator =(const XmlNode& xmlNode)
     XmlNode progressPercentageNode = resultNode.FirstChild("ProgressPercentage");
     if(!progressPercentageNode.IsNull())
     {
-      m_progressPercentage = StringUtils::ConvertToDouble(StringUtils::Trim(progressPercentageNode.GetText().c_str()).c_str());
+      m_progressPercentage = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(progressPercentageNode.GetText()).c_str()).c_str());
       m_progressPercentageHasBeenSet = true;
     }
   }

@@ -60,13 +60,13 @@ Rule& Rule::operator =(const XmlNode& xmlNode)
     XmlNode ruleArnNode = resultNode.FirstChild("RuleArn");
     if(!ruleArnNode.IsNull())
     {
-      m_ruleArn = ruleArnNode.GetText();
+      m_ruleArn = Aws::Utils::Xml::DecodeEscapedXmlText(ruleArnNode.GetText());
       m_ruleArnHasBeenSet = true;
     }
     XmlNode priorityNode = resultNode.FirstChild("Priority");
     if(!priorityNode.IsNull())
     {
-      m_priority = priorityNode.GetText();
+      m_priority = Aws::Utils::Xml::DecodeEscapedXmlText(priorityNode.GetText());
       m_priorityHasBeenSet = true;
     }
     XmlNode conditionsNode = resultNode.FirstChild("Conditions");
@@ -96,7 +96,7 @@ Rule& Rule::operator =(const XmlNode& xmlNode)
     XmlNode isDefaultNode = resultNode.FirstChild("IsDefault");
     if(!isDefaultNode.IsNull())
     {
-      m_isDefault = StringUtils::ConvertToBool(StringUtils::Trim(isDefaultNode.GetText().c_str()).c_str());
+      m_isDefault = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultNode.GetText()).c_str()).c_str());
       m_isDefaultHasBeenSet = true;
     }
   }

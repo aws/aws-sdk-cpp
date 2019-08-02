@@ -56,19 +56,19 @@ BulkEmailDestinationStatus& BulkEmailDestinationStatus::operator =(const XmlNode
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = BulkEmailStatusMapper::GetBulkEmailStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = BulkEmailStatusMapper::GetBulkEmailStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode errorNode = resultNode.FirstChild("Error");
     if(!errorNode.IsNull())
     {
-      m_error = errorNode.GetText();
+      m_error = Aws::Utils::Xml::DecodeEscapedXmlText(errorNode.GetText());
       m_errorHasBeenSet = true;
     }
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
     if(!messageIdNode.IsNull())
     {
-      m_messageId = messageIdNode.GetText();
+      m_messageId = Aws::Utils::Xml::DecodeEscapedXmlText(messageIdNode.GetText());
       m_messageIdHasBeenSet = true;
     }
   }

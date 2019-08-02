@@ -58,19 +58,19 @@ DeleteFleetSuccessItem& DeleteFleetSuccessItem::operator =(const XmlNode& xmlNod
     XmlNode currentFleetStateNode = resultNode.FirstChild("currentFleetState");
     if(!currentFleetStateNode.IsNull())
     {
-      m_currentFleetState = FleetStateCodeMapper::GetFleetStateCodeForName(StringUtils::Trim(currentFleetStateNode.GetText().c_str()).c_str());
+      m_currentFleetState = FleetStateCodeMapper::GetFleetStateCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currentFleetStateNode.GetText()).c_str()).c_str());
       m_currentFleetStateHasBeenSet = true;
     }
     XmlNode previousFleetStateNode = resultNode.FirstChild("previousFleetState");
     if(!previousFleetStateNode.IsNull())
     {
-      m_previousFleetState = FleetStateCodeMapper::GetFleetStateCodeForName(StringUtils::Trim(previousFleetStateNode.GetText().c_str()).c_str());
+      m_previousFleetState = FleetStateCodeMapper::GetFleetStateCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(previousFleetStateNode.GetText()).c_str()).c_str());
       m_previousFleetStateHasBeenSet = true;
     }
     XmlNode fleetIdNode = resultNode.FirstChild("fleetId");
     if(!fleetIdNode.IsNull())
     {
-      m_fleetId = fleetIdNode.GetText();
+      m_fleetId = Aws::Utils::Xml::DecodeEscapedXmlText(fleetIdNode.GetText());
       m_fleetIdHasBeenSet = true;
     }
   }

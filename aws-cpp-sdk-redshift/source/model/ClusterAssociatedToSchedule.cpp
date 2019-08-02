@@ -54,13 +54,13 @@ ClusterAssociatedToSchedule& ClusterAssociatedToSchedule::operator =(const XmlNo
     XmlNode clusterIdentifierNode = resultNode.FirstChild("ClusterIdentifier");
     if(!clusterIdentifierNode.IsNull())
     {
-      m_clusterIdentifier = clusterIdentifierNode.GetText();
+      m_clusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(clusterIdentifierNode.GetText());
       m_clusterIdentifierHasBeenSet = true;
     }
     XmlNode scheduleAssociationStateNode = resultNode.FirstChild("ScheduleAssociationState");
     if(!scheduleAssociationStateNode.IsNull())
     {
-      m_scheduleAssociationState = ScheduleStateMapper::GetScheduleStateForName(StringUtils::Trim(scheduleAssociationStateNode.GetText().c_str()).c_str());
+      m_scheduleAssociationState = ScheduleStateMapper::GetScheduleStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(scheduleAssociationStateNode.GetText()).c_str()).c_str());
       m_scheduleAssociationStateHasBeenSet = true;
     }
   }

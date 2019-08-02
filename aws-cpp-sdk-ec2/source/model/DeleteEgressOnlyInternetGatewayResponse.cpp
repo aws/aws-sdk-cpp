@@ -53,7 +53,7 @@ DeleteEgressOnlyInternetGatewayResponse& DeleteEgressOnlyInternetGatewayResponse
     XmlNode returnCodeNode = resultNode.FirstChild("returnCode");
     if(!returnCodeNode.IsNull())
     {
-      m_returnCode = StringUtils::ConvertToBool(StringUtils::Trim(returnCodeNode.GetText().c_str()).c_str());
+      m_returnCode = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnCodeNode.GetText()).c_str()).c_str());
     }
   }
 

@@ -50,7 +50,7 @@ ReservedInstancesId& ReservedInstancesId::operator =(const XmlNode& xmlNode)
     XmlNode reservedInstancesIdNode = resultNode.FirstChild("reservedInstancesId");
     if(!reservedInstancesIdNode.IsNull())
     {
-      m_reservedInstancesId = reservedInstancesIdNode.GetText();
+      m_reservedInstancesId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedInstancesIdNode.GetText());
       m_reservedInstancesIdHasBeenSet = true;
     }
   }

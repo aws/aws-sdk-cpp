@@ -52,7 +52,7 @@ HibernationOptions& HibernationOptions::operator =(const XmlNode& xmlNode)
     XmlNode configuredNode = resultNode.FirstChild("configured");
     if(!configuredNode.IsNull())
     {
-      m_configured = StringUtils::ConvertToBool(StringUtils::Trim(configuredNode.GetText().c_str()).c_str());
+      m_configured = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(configuredNode.GetText()).c_str()).c_str());
       m_configuredHasBeenSet = true;
     }
   }

@@ -54,13 +54,13 @@ AssociatedTargetNetwork& AssociatedTargetNetwork::operator =(const XmlNode& xmlN
     XmlNode networkIdNode = resultNode.FirstChild("networkId");
     if(!networkIdNode.IsNull())
     {
-      m_networkId = networkIdNode.GetText();
+      m_networkId = Aws::Utils::Xml::DecodeEscapedXmlText(networkIdNode.GetText());
       m_networkIdHasBeenSet = true;
     }
     XmlNode networkTypeNode = resultNode.FirstChild("networkType");
     if(!networkTypeNode.IsNull())
     {
-      m_networkType = AssociatedNetworkTypeMapper::GetAssociatedNetworkTypeForName(StringUtils::Trim(networkTypeNode.GetText().c_str()).c_str());
+      m_networkType = AssociatedNetworkTypeMapper::GetAssociatedNetworkTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkTypeNode.GetText()).c_str()).c_str());
       m_networkTypeHasBeenSet = true;
     }
   }

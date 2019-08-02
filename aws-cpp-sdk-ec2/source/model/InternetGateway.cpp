@@ -68,13 +68,13 @@ InternetGateway& InternetGateway::operator =(const XmlNode& xmlNode)
     XmlNode internetGatewayIdNode = resultNode.FirstChild("internetGatewayId");
     if(!internetGatewayIdNode.IsNull())
     {
-      m_internetGatewayId = internetGatewayIdNode.GetText();
+      m_internetGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(internetGatewayIdNode.GetText());
       m_internetGatewayIdHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
-      m_ownerId = ownerIdNode.GetText();
+      m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");

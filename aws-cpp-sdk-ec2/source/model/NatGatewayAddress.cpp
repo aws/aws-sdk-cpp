@@ -56,25 +56,25 @@ NatGatewayAddress& NatGatewayAddress::operator =(const XmlNode& xmlNode)
     XmlNode allocationIdNode = resultNode.FirstChild("allocationId");
     if(!allocationIdNode.IsNull())
     {
-      m_allocationId = allocationIdNode.GetText();
+      m_allocationId = Aws::Utils::Xml::DecodeEscapedXmlText(allocationIdNode.GetText());
       m_allocationIdHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
-      m_networkInterfaceId = networkInterfaceIdNode.GetText();
+      m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode privateIpNode = resultNode.FirstChild("privateIp");
     if(!privateIpNode.IsNull())
     {
-      m_privateIp = privateIpNode.GetText();
+      m_privateIp = Aws::Utils::Xml::DecodeEscapedXmlText(privateIpNode.GetText());
       m_privateIpHasBeenSet = true;
     }
     XmlNode publicIpNode = resultNode.FirstChild("publicIp");
     if(!publicIpNode.IsNull())
     {
-      m_publicIp = publicIpNode.GetText();
+      m_publicIp = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpNode.GetText());
       m_publicIpHasBeenSet = true;
     }
   }

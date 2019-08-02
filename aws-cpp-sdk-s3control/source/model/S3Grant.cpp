@@ -60,7 +60,7 @@ S3Grant& S3Grant::operator =(const XmlNode& xmlNode)
     XmlNode permissionNode = resultNode.FirstChild("Permission");
     if(!permissionNode.IsNull())
     {
-      m_permission = S3PermissionMapper::GetS3PermissionForName(StringUtils::Trim(permissionNode.GetText().c_str()).c_str());
+      m_permission = S3PermissionMapper::GetS3PermissionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionNode.GetText()).c_str()).c_str());
       m_permissionHasBeenSet = true;
     }
   }

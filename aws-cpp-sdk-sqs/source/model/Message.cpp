@@ -62,25 +62,25 @@ Message& Message::operator =(const XmlNode& xmlNode)
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
     if(!messageIdNode.IsNull())
     {
-      m_messageId = messageIdNode.GetText();
+      m_messageId = Aws::Utils::Xml::DecodeEscapedXmlText(messageIdNode.GetText());
       m_messageIdHasBeenSet = true;
     }
     XmlNode receiptHandleNode = resultNode.FirstChild("ReceiptHandle");
     if(!receiptHandleNode.IsNull())
     {
-      m_receiptHandle = receiptHandleNode.GetText();
+      m_receiptHandle = Aws::Utils::Xml::DecodeEscapedXmlText(receiptHandleNode.GetText());
       m_receiptHandleHasBeenSet = true;
     }
     XmlNode mD5OfBodyNode = resultNode.FirstChild("MD5OfBody");
     if(!mD5OfBodyNode.IsNull())
     {
-      m_mD5OfBody = mD5OfBodyNode.GetText();
+      m_mD5OfBody = Aws::Utils::Xml::DecodeEscapedXmlText(mD5OfBodyNode.GetText());
       m_mD5OfBodyHasBeenSet = true;
     }
     XmlNode bodyNode = resultNode.FirstChild("Body");
     if(!bodyNode.IsNull())
     {
-      m_body = bodyNode.GetText();
+      m_body = Aws::Utils::Xml::DecodeEscapedXmlText(bodyNode.GetText());
       m_bodyHasBeenSet = true;
     }
     XmlNode attributesNode = resultNode.FirstChild("Attribute");
@@ -101,7 +101,7 @@ Message& Message::operator =(const XmlNode& xmlNode)
     XmlNode mD5OfMessageAttributesNode = resultNode.FirstChild("MD5OfMessageAttributes");
     if(!mD5OfMessageAttributesNode.IsNull())
     {
-      m_mD5OfMessageAttributes = mD5OfMessageAttributesNode.GetText();
+      m_mD5OfMessageAttributes = Aws::Utils::Xml::DecodeEscapedXmlText(mD5OfMessageAttributesNode.GetText());
       m_mD5OfMessageAttributesHasBeenSet = true;
     }
     XmlNode messageAttributesNode = resultNode.FirstChild("MessageAttribute");

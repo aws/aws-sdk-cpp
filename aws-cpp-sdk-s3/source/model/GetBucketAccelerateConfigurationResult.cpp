@@ -46,7 +46,7 @@ GetBucketAccelerateConfigurationResult& GetBucketAccelerateConfigurationResult::
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = BucketAccelerateStatusMapper::GetBucketAccelerateStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = BucketAccelerateStatusMapper::GetBucketAccelerateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
     }
   }
 

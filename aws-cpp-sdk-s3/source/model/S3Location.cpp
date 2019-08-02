@@ -68,13 +68,13 @@ S3Location& S3Location::operator =(const XmlNode& xmlNode)
     XmlNode bucketNameNode = resultNode.FirstChild("BucketName");
     if(!bucketNameNode.IsNull())
     {
-      m_bucketName = bucketNameNode.GetText();
+      m_bucketName = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNameNode.GetText());
       m_bucketNameHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
     if(!prefixNode.IsNull())
     {
-      m_prefix = prefixNode.GetText();
+      m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
       m_prefixHasBeenSet = true;
     }
     XmlNode encryptionNode = resultNode.FirstChild("Encryption");
@@ -86,7 +86,7 @@ S3Location& S3Location::operator =(const XmlNode& xmlNode)
     XmlNode cannedACLNode = resultNode.FirstChild("CannedACL");
     if(!cannedACLNode.IsNull())
     {
-      m_cannedACL = ObjectCannedACLMapper::GetObjectCannedACLForName(StringUtils::Trim(cannedACLNode.GetText().c_str()).c_str());
+      m_cannedACL = ObjectCannedACLMapper::GetObjectCannedACLForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cannedACLNode.GetText()).c_str()).c_str());
       m_cannedACLHasBeenSet = true;
     }
     XmlNode accessControlListNode = resultNode.FirstChild("AccessControlList");
@@ -122,7 +122,7 @@ S3Location& S3Location::operator =(const XmlNode& xmlNode)
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");
     if(!storageClassNode.IsNull())
     {
-      m_storageClass = StorageClassMapper::GetStorageClassForName(StringUtils::Trim(storageClassNode.GetText().c_str()).c_str());
+      m_storageClass = StorageClassMapper::GetStorageClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageClassNode.GetText()).c_str()).c_str());
       m_storageClassHasBeenSet = true;
     }
   }

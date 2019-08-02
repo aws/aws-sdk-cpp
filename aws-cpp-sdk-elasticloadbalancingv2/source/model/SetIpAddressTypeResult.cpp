@@ -53,7 +53,7 @@ SetIpAddressTypeResult& SetIpAddressTypeResult::operator =(const Aws::AmazonWebS
     XmlNode ipAddressTypeNode = resultNode.FirstChild("IpAddressType");
     if(!ipAddressTypeNode.IsNull())
     {
-      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(ipAddressTypeNode.GetText().c_str()).c_str());
+      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()).c_str());
     }
   }
 

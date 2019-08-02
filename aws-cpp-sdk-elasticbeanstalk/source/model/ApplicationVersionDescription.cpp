@@ -70,25 +70,25 @@ ApplicationVersionDescription& ApplicationVersionDescription::operator =(const X
     XmlNode applicationVersionArnNode = resultNode.FirstChild("ApplicationVersionArn");
     if(!applicationVersionArnNode.IsNull())
     {
-      m_applicationVersionArn = applicationVersionArnNode.GetText();
+      m_applicationVersionArn = Aws::Utils::Xml::DecodeEscapedXmlText(applicationVersionArnNode.GetText());
       m_applicationVersionArnHasBeenSet = true;
     }
     XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
     if(!applicationNameNode.IsNull())
     {
-      m_applicationName = applicationNameNode.GetText();
+      m_applicationName = Aws::Utils::Xml::DecodeEscapedXmlText(applicationNameNode.GetText());
       m_applicationNameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode versionLabelNode = resultNode.FirstChild("VersionLabel");
     if(!versionLabelNode.IsNull())
     {
-      m_versionLabel = versionLabelNode.GetText();
+      m_versionLabel = Aws::Utils::Xml::DecodeEscapedXmlText(versionLabelNode.GetText());
       m_versionLabelHasBeenSet = true;
     }
     XmlNode sourceBuildInformationNode = resultNode.FirstChild("SourceBuildInformation");
@@ -100,7 +100,7 @@ ApplicationVersionDescription& ApplicationVersionDescription::operator =(const X
     XmlNode buildArnNode = resultNode.FirstChild("BuildArn");
     if(!buildArnNode.IsNull())
     {
-      m_buildArn = buildArnNode.GetText();
+      m_buildArn = Aws::Utils::Xml::DecodeEscapedXmlText(buildArnNode.GetText());
       m_buildArnHasBeenSet = true;
     }
     XmlNode sourceBundleNode = resultNode.FirstChild("SourceBundle");
@@ -112,19 +112,19 @@ ApplicationVersionDescription& ApplicationVersionDescription::operator =(const X
     XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
     if(!dateCreatedNode.IsNull())
     {
-      m_dateCreated = DateTime(StringUtils::Trim(dateCreatedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_dateCreated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateCreatedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_dateCreatedHasBeenSet = true;
     }
     XmlNode dateUpdatedNode = resultNode.FirstChild("DateUpdated");
     if(!dateUpdatedNode.IsNull())
     {
-      m_dateUpdated = DateTime(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_dateUpdated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateUpdatedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_dateUpdatedHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ApplicationVersionStatusMapper::GetApplicationVersionStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = ApplicationVersionStatusMapper::GetApplicationVersionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
   }

@@ -60,31 +60,31 @@ InstanceProfile& InstanceProfile::operator =(const XmlNode& xmlNode)
     XmlNode pathNode = resultNode.FirstChild("Path");
     if(!pathNode.IsNull())
     {
-      m_path = pathNode.GetText();
+      m_path = Aws::Utils::Xml::DecodeEscapedXmlText(pathNode.GetText());
       m_pathHasBeenSet = true;
     }
     XmlNode instanceProfileNameNode = resultNode.FirstChild("InstanceProfileName");
     if(!instanceProfileNameNode.IsNull())
     {
-      m_instanceProfileName = instanceProfileNameNode.GetText();
+      m_instanceProfileName = Aws::Utils::Xml::DecodeEscapedXmlText(instanceProfileNameNode.GetText());
       m_instanceProfileNameHasBeenSet = true;
     }
     XmlNode instanceProfileIdNode = resultNode.FirstChild("InstanceProfileId");
     if(!instanceProfileIdNode.IsNull())
     {
-      m_instanceProfileId = instanceProfileIdNode.GetText();
+      m_instanceProfileId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceProfileIdNode.GetText());
       m_instanceProfileIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
-      m_arn = arnNode.GetText();
+      m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = DateTime(StringUtils::Trim(createDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
     }
     XmlNode rolesNode = resultNode.FirstChild("Roles");

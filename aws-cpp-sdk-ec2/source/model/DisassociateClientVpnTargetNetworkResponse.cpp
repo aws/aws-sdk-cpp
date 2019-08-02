@@ -51,7 +51,7 @@ DisassociateClientVpnTargetNetworkResponse& DisassociateClientVpnTargetNetworkRe
     XmlNode associationIdNode = resultNode.FirstChild("associationId");
     if(!associationIdNode.IsNull())
     {
-      m_associationId = associationIdNode.GetText();
+      m_associationId = Aws::Utils::Xml::DecodeEscapedXmlText(associationIdNode.GetText());
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())

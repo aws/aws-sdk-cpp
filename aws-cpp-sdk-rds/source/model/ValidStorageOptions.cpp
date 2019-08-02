@@ -60,7 +60,7 @@ ValidStorageOptions& ValidStorageOptions::operator =(const XmlNode& xmlNode)
     XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
     if(!storageTypeNode.IsNull())
     {
-      m_storageType = storageTypeNode.GetText();
+      m_storageType = Aws::Utils::Xml::DecodeEscapedXmlText(storageTypeNode.GetText());
       m_storageTypeHasBeenSet = true;
     }
     XmlNode storageSizeNode = resultNode.FirstChild("StorageSize");
@@ -102,7 +102,7 @@ ValidStorageOptions& ValidStorageOptions::operator =(const XmlNode& xmlNode)
     XmlNode supportsStorageAutoscalingNode = resultNode.FirstChild("SupportsStorageAutoscaling");
     if(!supportsStorageAutoscalingNode.IsNull())
     {
-      m_supportsStorageAutoscaling = StringUtils::ConvertToBool(StringUtils::Trim(supportsStorageAutoscalingNode.GetText().c_str()).c_str());
+      m_supportsStorageAutoscaling = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsStorageAutoscalingNode.GetText()).c_str()).c_str());
       m_supportsStorageAutoscalingHasBeenSet = true;
     }
   }

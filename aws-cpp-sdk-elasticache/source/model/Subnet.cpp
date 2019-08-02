@@ -52,7 +52,7 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     XmlNode subnetIdentifierNode = resultNode.FirstChild("SubnetIdentifier");
     if(!subnetIdentifierNode.IsNull())
     {
-      m_subnetIdentifier = subnetIdentifierNode.GetText();
+      m_subnetIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdentifierNode.GetText());
       m_subnetIdentifierHasBeenSet = true;
     }
     XmlNode subnetAvailabilityZoneNode = resultNode.FirstChild("SubnetAvailabilityZone");

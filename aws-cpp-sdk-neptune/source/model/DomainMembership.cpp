@@ -56,25 +56,25 @@ DomainMembership& DomainMembership::operator =(const XmlNode& xmlNode)
     XmlNode domainNode = resultNode.FirstChild("Domain");
     if(!domainNode.IsNull())
     {
-      m_domain = domainNode.GetText();
+      m_domain = Aws::Utils::Xml::DecodeEscapedXmlText(domainNode.GetText());
       m_domainHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = statusNode.GetText();
+      m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
     XmlNode fQDNNode = resultNode.FirstChild("FQDN");
     if(!fQDNNode.IsNull())
     {
-      m_fQDN = fQDNNode.GetText();
+      m_fQDN = Aws::Utils::Xml::DecodeEscapedXmlText(fQDNNode.GetText());
       m_fQDNHasBeenSet = true;
     }
     XmlNode iAMRoleNameNode = resultNode.FirstChild("IAMRoleName");
     if(!iAMRoleNameNode.IsNull())
     {
-      m_iAMRoleName = iAMRoleNameNode.GetText();
+      m_iAMRoleName = Aws::Utils::Xml::DecodeEscapedXmlText(iAMRoleNameNode.GetText());
       m_iAMRoleNameHasBeenSet = true;
     }
   }

@@ -88,79 +88,79 @@ ReservedDBInstance& ReservedDBInstance::operator =(const XmlNode& xmlNode)
     XmlNode reservedDBInstanceIdNode = resultNode.FirstChild("ReservedDBInstanceId");
     if(!reservedDBInstanceIdNode.IsNull())
     {
-      m_reservedDBInstanceId = reservedDBInstanceIdNode.GetText();
+      m_reservedDBInstanceId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedDBInstanceIdNode.GetText());
       m_reservedDBInstanceIdHasBeenSet = true;
     }
     XmlNode reservedDBInstancesOfferingIdNode = resultNode.FirstChild("ReservedDBInstancesOfferingId");
     if(!reservedDBInstancesOfferingIdNode.IsNull())
     {
-      m_reservedDBInstancesOfferingId = reservedDBInstancesOfferingIdNode.GetText();
+      m_reservedDBInstancesOfferingId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedDBInstancesOfferingIdNode.GetText());
       m_reservedDBInstancesOfferingIdHasBeenSet = true;
     }
     XmlNode dBInstanceClassNode = resultNode.FirstChild("DBInstanceClass");
     if(!dBInstanceClassNode.IsNull())
     {
-      m_dBInstanceClass = dBInstanceClassNode.GetText();
+      m_dBInstanceClass = Aws::Utils::Xml::DecodeEscapedXmlText(dBInstanceClassNode.GetText());
       m_dBInstanceClassHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
     if(!startTimeNode.IsNull())
     {
-      m_startTime = DateTime(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
     }
     XmlNode durationNode = resultNode.FirstChild("Duration");
     if(!durationNode.IsNull())
     {
-      m_duration = StringUtils::ConvertToInt32(StringUtils::Trim(durationNode.GetText().c_str()).c_str());
+      m_duration = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(durationNode.GetText()).c_str()).c_str());
       m_durationHasBeenSet = true;
     }
     XmlNode fixedPriceNode = resultNode.FirstChild("FixedPrice");
     if(!fixedPriceNode.IsNull())
     {
-      m_fixedPrice = StringUtils::ConvertToDouble(StringUtils::Trim(fixedPriceNode.GetText().c_str()).c_str());
+      m_fixedPrice = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fixedPriceNode.GetText()).c_str()).c_str());
       m_fixedPriceHasBeenSet = true;
     }
     XmlNode usagePriceNode = resultNode.FirstChild("UsagePrice");
     if(!usagePriceNode.IsNull())
     {
-      m_usagePrice = StringUtils::ConvertToDouble(StringUtils::Trim(usagePriceNode.GetText().c_str()).c_str());
+      m_usagePrice = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usagePriceNode.GetText()).c_str()).c_str());
       m_usagePriceHasBeenSet = true;
     }
     XmlNode currencyCodeNode = resultNode.FirstChild("CurrencyCode");
     if(!currencyCodeNode.IsNull())
     {
-      m_currencyCode = currencyCodeNode.GetText();
+      m_currencyCode = Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText());
       m_currencyCodeHasBeenSet = true;
     }
     XmlNode dBInstanceCountNode = resultNode.FirstChild("DBInstanceCount");
     if(!dBInstanceCountNode.IsNull())
     {
-      m_dBInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(dBInstanceCountNode.GetText().c_str()).c_str());
+      m_dBInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dBInstanceCountNode.GetText()).c_str()).c_str());
       m_dBInstanceCountHasBeenSet = true;
     }
     XmlNode productDescriptionNode = resultNode.FirstChild("ProductDescription");
     if(!productDescriptionNode.IsNull())
     {
-      m_productDescription = productDescriptionNode.GetText();
+      m_productDescription = Aws::Utils::Xml::DecodeEscapedXmlText(productDescriptionNode.GetText());
       m_productDescriptionHasBeenSet = true;
     }
     XmlNode offeringTypeNode = resultNode.FirstChild("OfferingType");
     if(!offeringTypeNode.IsNull())
     {
-      m_offeringType = offeringTypeNode.GetText();
+      m_offeringType = Aws::Utils::Xml::DecodeEscapedXmlText(offeringTypeNode.GetText());
       m_offeringTypeHasBeenSet = true;
     }
     XmlNode multiAZNode = resultNode.FirstChild("MultiAZ");
     if(!multiAZNode.IsNull())
     {
-      m_multiAZ = StringUtils::ConvertToBool(StringUtils::Trim(multiAZNode.GetText().c_str()).c_str());
+      m_multiAZ = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiAZNode.GetText()).c_str()).c_str());
       m_multiAZHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("State");
     if(!stateNode.IsNull())
     {
-      m_state = stateNode.GetText();
+      m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
       m_stateHasBeenSet = true;
     }
     XmlNode recurringChargesNode = resultNode.FirstChild("RecurringCharges");
@@ -178,7 +178,7 @@ ReservedDBInstance& ReservedDBInstance::operator =(const XmlNode& xmlNode)
     XmlNode reservedDBInstanceArnNode = resultNode.FirstChild("ReservedDBInstanceArn");
     if(!reservedDBInstanceArnNode.IsNull())
     {
-      m_reservedDBInstanceArn = reservedDBInstanceArnNode.GetText();
+      m_reservedDBInstanceArn = Aws::Utils::Xml::DecodeEscapedXmlText(reservedDBInstanceArnNode.GetText());
       m_reservedDBInstanceArnHasBeenSet = true;
     }
   }

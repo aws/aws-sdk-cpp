@@ -80,49 +80,49 @@ InstanceHealthSummary& InstanceHealthSummary::operator =(const XmlNode& xmlNode)
     XmlNode noDataNode = resultNode.FirstChild("NoData");
     if(!noDataNode.IsNull())
     {
-      m_noData = StringUtils::ConvertToInt32(StringUtils::Trim(noDataNode.GetText().c_str()).c_str());
+      m_noData = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(noDataNode.GetText()).c_str()).c_str());
       m_noDataHasBeenSet = true;
     }
     XmlNode unknownNode = resultNode.FirstChild("Unknown");
     if(!unknownNode.IsNull())
     {
-      m_unknown = StringUtils::ConvertToInt32(StringUtils::Trim(unknownNode.GetText().c_str()).c_str());
+      m_unknown = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unknownNode.GetText()).c_str()).c_str());
       m_unknownHasBeenSet = true;
     }
     XmlNode pendingNode = resultNode.FirstChild("Pending");
     if(!pendingNode.IsNull())
     {
-      m_pending = StringUtils::ConvertToInt32(StringUtils::Trim(pendingNode.GetText().c_str()).c_str());
+      m_pending = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(pendingNode.GetText()).c_str()).c_str());
       m_pendingHasBeenSet = true;
     }
     XmlNode okNode = resultNode.FirstChild("Ok");
     if(!okNode.IsNull())
     {
-      m_ok = StringUtils::ConvertToInt32(StringUtils::Trim(okNode.GetText().c_str()).c_str());
+      m_ok = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(okNode.GetText()).c_str()).c_str());
       m_okHasBeenSet = true;
     }
     XmlNode infoNode = resultNode.FirstChild("Info");
     if(!infoNode.IsNull())
     {
-      m_info = StringUtils::ConvertToInt32(StringUtils::Trim(infoNode.GetText().c_str()).c_str());
+      m_info = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(infoNode.GetText()).c_str()).c_str());
       m_infoHasBeenSet = true;
     }
     XmlNode warningNode = resultNode.FirstChild("Warning");
     if(!warningNode.IsNull())
     {
-      m_warning = StringUtils::ConvertToInt32(StringUtils::Trim(warningNode.GetText().c_str()).c_str());
+      m_warning = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(warningNode.GetText()).c_str()).c_str());
       m_warningHasBeenSet = true;
     }
     XmlNode degradedNode = resultNode.FirstChild("Degraded");
     if(!degradedNode.IsNull())
     {
-      m_degraded = StringUtils::ConvertToInt32(StringUtils::Trim(degradedNode.GetText().c_str()).c_str());
+      m_degraded = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(degradedNode.GetText()).c_str()).c_str());
       m_degradedHasBeenSet = true;
     }
     XmlNode severeNode = resultNode.FirstChild("Severe");
     if(!severeNode.IsNull())
     {
-      m_severe = StringUtils::ConvertToInt32(StringUtils::Trim(severeNode.GetText().c_str()).c_str());
+      m_severe = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(severeNode.GetText()).c_str()).c_str());
       m_severeHasBeenSet = true;
     }
   }

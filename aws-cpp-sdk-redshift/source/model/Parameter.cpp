@@ -70,55 +70,55 @@ Parameter& Parameter::operator =(const XmlNode& xmlNode)
     XmlNode parameterNameNode = resultNode.FirstChild("ParameterName");
     if(!parameterNameNode.IsNull())
     {
-      m_parameterName = parameterNameNode.GetText();
+      m_parameterName = Aws::Utils::Xml::DecodeEscapedXmlText(parameterNameNode.GetText());
       m_parameterNameHasBeenSet = true;
     }
     XmlNode parameterValueNode = resultNode.FirstChild("ParameterValue");
     if(!parameterValueNode.IsNull())
     {
-      m_parameterValue = parameterValueNode.GetText();
+      m_parameterValue = Aws::Utils::Xml::DecodeEscapedXmlText(parameterValueNode.GetText());
       m_parameterValueHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode sourceNode = resultNode.FirstChild("Source");
     if(!sourceNode.IsNull())
     {
-      m_source = sourceNode.GetText();
+      m_source = Aws::Utils::Xml::DecodeEscapedXmlText(sourceNode.GetText());
       m_sourceHasBeenSet = true;
     }
     XmlNode dataTypeNode = resultNode.FirstChild("DataType");
     if(!dataTypeNode.IsNull())
     {
-      m_dataType = dataTypeNode.GetText();
+      m_dataType = Aws::Utils::Xml::DecodeEscapedXmlText(dataTypeNode.GetText());
       m_dataTypeHasBeenSet = true;
     }
     XmlNode allowedValuesNode = resultNode.FirstChild("AllowedValues");
     if(!allowedValuesNode.IsNull())
     {
-      m_allowedValues = allowedValuesNode.GetText();
+      m_allowedValues = Aws::Utils::Xml::DecodeEscapedXmlText(allowedValuesNode.GetText());
       m_allowedValuesHasBeenSet = true;
     }
     XmlNode applyTypeNode = resultNode.FirstChild("ApplyType");
     if(!applyTypeNode.IsNull())
     {
-      m_applyType = ParameterApplyTypeMapper::GetParameterApplyTypeForName(StringUtils::Trim(applyTypeNode.GetText().c_str()).c_str());
+      m_applyType = ParameterApplyTypeMapper::GetParameterApplyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(applyTypeNode.GetText()).c_str()).c_str());
       m_applyTypeHasBeenSet = true;
     }
     XmlNode isModifiableNode = resultNode.FirstChild("IsModifiable");
     if(!isModifiableNode.IsNull())
     {
-      m_isModifiable = StringUtils::ConvertToBool(StringUtils::Trim(isModifiableNode.GetText().c_str()).c_str());
+      m_isModifiable = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isModifiableNode.GetText()).c_str()).c_str());
       m_isModifiableHasBeenSet = true;
     }
     XmlNode minimumEngineVersionNode = resultNode.FirstChild("MinimumEngineVersion");
     if(!minimumEngineVersionNode.IsNull())
     {
-      m_minimumEngineVersion = minimumEngineVersionNode.GetText();
+      m_minimumEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(minimumEngineVersionNode.GetText());
       m_minimumEngineVersionHasBeenSet = true;
     }
   }

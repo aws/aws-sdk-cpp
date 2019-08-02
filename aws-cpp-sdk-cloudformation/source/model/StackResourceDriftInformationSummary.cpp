@@ -54,13 +54,13 @@ StackResourceDriftInformationSummary& StackResourceDriftInformationSummary::oper
     XmlNode stackResourceDriftStatusNode = resultNode.FirstChild("StackResourceDriftStatus");
     if(!stackResourceDriftStatusNode.IsNull())
     {
-      m_stackResourceDriftStatus = StackResourceDriftStatusMapper::GetStackResourceDriftStatusForName(StringUtils::Trim(stackResourceDriftStatusNode.GetText().c_str()).c_str());
+      m_stackResourceDriftStatus = StackResourceDriftStatusMapper::GetStackResourceDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackResourceDriftStatusNode.GetText()).c_str()).c_str());
       m_stackResourceDriftStatusHasBeenSet = true;
     }
     XmlNode lastCheckTimestampNode = resultNode.FirstChild("LastCheckTimestamp");
     if(!lastCheckTimestampNode.IsNull())
     {
-      m_lastCheckTimestamp = DateTime(StringUtils::Trim(lastCheckTimestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastCheckTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastCheckTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_lastCheckTimestampHasBeenSet = true;
     }
   }

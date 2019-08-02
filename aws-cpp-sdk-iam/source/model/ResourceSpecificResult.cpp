@@ -60,13 +60,13 @@ ResourceSpecificResult& ResourceSpecificResult::operator =(const XmlNode& xmlNod
     XmlNode evalResourceNameNode = resultNode.FirstChild("EvalResourceName");
     if(!evalResourceNameNode.IsNull())
     {
-      m_evalResourceName = evalResourceNameNode.GetText();
+      m_evalResourceName = Aws::Utils::Xml::DecodeEscapedXmlText(evalResourceNameNode.GetText());
       m_evalResourceNameHasBeenSet = true;
     }
     XmlNode evalResourceDecisionNode = resultNode.FirstChild("EvalResourceDecision");
     if(!evalResourceDecisionNode.IsNull())
     {
-      m_evalResourceDecision = PolicyEvaluationDecisionTypeMapper::GetPolicyEvaluationDecisionTypeForName(StringUtils::Trim(evalResourceDecisionNode.GetText().c_str()).c_str());
+      m_evalResourceDecision = PolicyEvaluationDecisionTypeMapper::GetPolicyEvaluationDecisionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evalResourceDecisionNode.GetText()).c_str()).c_str());
       m_evalResourceDecisionHasBeenSet = true;
     }
     XmlNode matchedStatementsNode = resultNode.FirstChild("MatchedStatements");

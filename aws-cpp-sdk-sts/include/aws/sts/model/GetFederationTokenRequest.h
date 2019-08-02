@@ -397,18 +397,18 @@ namespace Model
      * use as managed session policies. The plain text that you use for both inline and
      * managed session policies shouldn't exceed 2048 characters. You can provide up to
      * 10 managed policy ARNs. For more information about ARNs, see <a
-     * href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.</p> <p>This
-     * parameter is optional. However, if you do not pass any session policies, then
-     * the resulting federated user session has no permissions. The only exception is
-     * when the credentials are used to access a resource that has a resource-based
-     * policy that specifically references the federated user session in the
-     * <code>Principal</code> element of the policy.</p> <p>When you pass session
-     * policies, the session permissions are the intersection of the IAM user policies
-     * and the session policies that you pass. This gives you a way to further restrict
-     * the permissions for a federated user. You cannot use session policies to grant
-     * more permissions than those that are defined in the permissions policy of the
-     * IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
+     * Reference.</p> <p>This parameter is optional. However, if you do not pass any
+     * session policies, then the resulting federated user session has no permissions.
+     * The only exception is when the credentials are used to access a resource that
+     * has a resource-based policy that specifically references the federated user
+     * session in the <code>Principal</code> element of the policy.</p> <p>When you
+     * pass session policies, the session permissions are the intersection of the IAM
+     * user policies and the session policies that you pass. This gives you a way to
+     * further restrict the permissions for a federated user. You cannot use session
+     * policies to grant more permissions than those that are defined in the
+     * permissions policy of the IAM user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <note> <p>The characters in this
      * parameter count towards the 2048 character session policy guideline. However, an
@@ -430,18 +430,18 @@ namespace Model
      * use as managed session policies. The plain text that you use for both inline and
      * managed session policies shouldn't exceed 2048 characters. You can provide up to
      * 10 managed policy ARNs. For more information about ARNs, see <a
-     * href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.</p> <p>This
-     * parameter is optional. However, if you do not pass any session policies, then
-     * the resulting federated user session has no permissions. The only exception is
-     * when the credentials are used to access a resource that has a resource-based
-     * policy that specifically references the federated user session in the
-     * <code>Principal</code> element of the policy.</p> <p>When you pass session
-     * policies, the session permissions are the intersection of the IAM user policies
-     * and the session policies that you pass. This gives you a way to further restrict
-     * the permissions for a federated user. You cannot use session policies to grant
-     * more permissions than those that are defined in the permissions policy of the
-     * IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
+     * Reference.</p> <p>This parameter is optional. However, if you do not pass any
+     * session policies, then the resulting federated user session has no permissions.
+     * The only exception is when the credentials are used to access a resource that
+     * has a resource-based policy that specifically references the federated user
+     * session in the <code>Principal</code> element of the policy.</p> <p>When you
+     * pass session policies, the session permissions are the intersection of the IAM
+     * user policies and the session policies that you pass. This gives you a way to
+     * further restrict the permissions for a federated user. You cannot use session
+     * policies to grant more permissions than those that are defined in the
+     * permissions policy of the IAM user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <note> <p>The characters in this
      * parameter count towards the 2048 character session policy guideline. However, an
@@ -463,18 +463,18 @@ namespace Model
      * use as managed session policies. The plain text that you use for both inline and
      * managed session policies shouldn't exceed 2048 characters. You can provide up to
      * 10 managed policy ARNs. For more information about ARNs, see <a
-     * href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.</p> <p>This
-     * parameter is optional. However, if you do not pass any session policies, then
-     * the resulting federated user session has no permissions. The only exception is
-     * when the credentials are used to access a resource that has a resource-based
-     * policy that specifically references the federated user session in the
-     * <code>Principal</code> element of the policy.</p> <p>When you pass session
-     * policies, the session permissions are the intersection of the IAM user policies
-     * and the session policies that you pass. This gives you a way to further restrict
-     * the permissions for a federated user. You cannot use session policies to grant
-     * more permissions than those that are defined in the permissions policy of the
-     * IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
+     * Reference.</p> <p>This parameter is optional. However, if you do not pass any
+     * session policies, then the resulting federated user session has no permissions.
+     * The only exception is when the credentials are used to access a resource that
+     * has a resource-based policy that specifically references the federated user
+     * session in the <code>Principal</code> element of the policy.</p> <p>When you
+     * pass session policies, the session permissions are the intersection of the IAM
+     * user policies and the session policies that you pass. This gives you a way to
+     * further restrict the permissions for a federated user. You cannot use session
+     * policies to grant more permissions than those that are defined in the
+     * permissions policy of the IAM user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <note> <p>The characters in this
      * parameter count towards the 2048 character session policy guideline. However, an
@@ -496,18 +496,18 @@ namespace Model
      * use as managed session policies. The plain text that you use for both inline and
      * managed session policies shouldn't exceed 2048 characters. You can provide up to
      * 10 managed policy ARNs. For more information about ARNs, see <a
-     * href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.</p> <p>This
-     * parameter is optional. However, if you do not pass any session policies, then
-     * the resulting federated user session has no permissions. The only exception is
-     * when the credentials are used to access a resource that has a resource-based
-     * policy that specifically references the federated user session in the
-     * <code>Principal</code> element of the policy.</p> <p>When you pass session
-     * policies, the session permissions are the intersection of the IAM user policies
-     * and the session policies that you pass. This gives you a way to further restrict
-     * the permissions for a federated user. You cannot use session policies to grant
-     * more permissions than those that are defined in the permissions policy of the
-     * IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
+     * Reference.</p> <p>This parameter is optional. However, if you do not pass any
+     * session policies, then the resulting federated user session has no permissions.
+     * The only exception is when the credentials are used to access a resource that
+     * has a resource-based policy that specifically references the federated user
+     * session in the <code>Principal</code> element of the policy.</p> <p>When you
+     * pass session policies, the session permissions are the intersection of the IAM
+     * user policies and the session policies that you pass. This gives you a way to
+     * further restrict the permissions for a federated user. You cannot use session
+     * policies to grant more permissions than those that are defined in the
+     * permissions policy of the IAM user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <note> <p>The characters in this
      * parameter count towards the 2048 character session policy guideline. However, an
@@ -529,18 +529,18 @@ namespace Model
      * use as managed session policies. The plain text that you use for both inline and
      * managed session policies shouldn't exceed 2048 characters. You can provide up to
      * 10 managed policy ARNs. For more information about ARNs, see <a
-     * href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.</p> <p>This
-     * parameter is optional. However, if you do not pass any session policies, then
-     * the resulting federated user session has no permissions. The only exception is
-     * when the credentials are used to access a resource that has a resource-based
-     * policy that specifically references the federated user session in the
-     * <code>Principal</code> element of the policy.</p> <p>When you pass session
-     * policies, the session permissions are the intersection of the IAM user policies
-     * and the session policies that you pass. This gives you a way to further restrict
-     * the permissions for a federated user. You cannot use session policies to grant
-     * more permissions than those that are defined in the permissions policy of the
-     * IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
+     * Reference.</p> <p>This parameter is optional. However, if you do not pass any
+     * session policies, then the resulting federated user session has no permissions.
+     * The only exception is when the credentials are used to access a resource that
+     * has a resource-based policy that specifically references the federated user
+     * session in the <code>Principal</code> element of the policy.</p> <p>When you
+     * pass session policies, the session permissions are the intersection of the IAM
+     * user policies and the session policies that you pass. This gives you a way to
+     * further restrict the permissions for a federated user. You cannot use session
+     * policies to grant more permissions than those that are defined in the
+     * permissions policy of the IAM user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <note> <p>The characters in this
      * parameter count towards the 2048 character session policy guideline. However, an
@@ -562,18 +562,18 @@ namespace Model
      * use as managed session policies. The plain text that you use for both inline and
      * managed session policies shouldn't exceed 2048 characters. You can provide up to
      * 10 managed policy ARNs. For more information about ARNs, see <a
-     * href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.</p> <p>This
-     * parameter is optional. However, if you do not pass any session policies, then
-     * the resulting federated user session has no permissions. The only exception is
-     * when the credentials are used to access a resource that has a resource-based
-     * policy that specifically references the federated user session in the
-     * <code>Principal</code> element of the policy.</p> <p>When you pass session
-     * policies, the session permissions are the intersection of the IAM user policies
-     * and the session policies that you pass. This gives you a way to further restrict
-     * the permissions for a federated user. You cannot use session policies to grant
-     * more permissions than those that are defined in the permissions policy of the
-     * IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
+     * Reference.</p> <p>This parameter is optional. However, if you do not pass any
+     * session policies, then the resulting federated user session has no permissions.
+     * The only exception is when the credentials are used to access a resource that
+     * has a resource-based policy that specifically references the federated user
+     * session in the <code>Principal</code> element of the policy.</p> <p>When you
+     * pass session policies, the session permissions are the intersection of the IAM
+     * user policies and the session policies that you pass. This gives you a way to
+     * further restrict the permissions for a federated user. You cannot use session
+     * policies to grant more permissions than those that are defined in the
+     * permissions policy of the IAM user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <note> <p>The characters in this
      * parameter count towards the 2048 character session policy guideline. However, an
@@ -595,18 +595,18 @@ namespace Model
      * use as managed session policies. The plain text that you use for both inline and
      * managed session policies shouldn't exceed 2048 characters. You can provide up to
      * 10 managed policy ARNs. For more information about ARNs, see <a
-     * href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.</p> <p>This
-     * parameter is optional. However, if you do not pass any session policies, then
-     * the resulting federated user session has no permissions. The only exception is
-     * when the credentials are used to access a resource that has a resource-based
-     * policy that specifically references the federated user session in the
-     * <code>Principal</code> element of the policy.</p> <p>When you pass session
-     * policies, the session permissions are the intersection of the IAM user policies
-     * and the session policies that you pass. This gives you a way to further restrict
-     * the permissions for a federated user. You cannot use session policies to grant
-     * more permissions than those that are defined in the permissions policy of the
-     * IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
+     * Reference.</p> <p>This parameter is optional. However, if you do not pass any
+     * session policies, then the resulting federated user session has no permissions.
+     * The only exception is when the credentials are used to access a resource that
+     * has a resource-based policy that specifically references the federated user
+     * session in the <code>Principal</code> element of the policy.</p> <p>When you
+     * pass session policies, the session permissions are the intersection of the IAM
+     * user policies and the session policies that you pass. This gives you a way to
+     * further restrict the permissions for a federated user. You cannot use session
+     * policies to grant more permissions than those that are defined in the
+     * permissions policy of the IAM user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <note> <p>The characters in this
      * parameter count towards the 2048 character session policy guideline. However, an
@@ -628,18 +628,18 @@ namespace Model
      * use as managed session policies. The plain text that you use for both inline and
      * managed session policies shouldn't exceed 2048 characters. You can provide up to
      * 10 managed policy ARNs. For more information about ARNs, see <a
-     * href="general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.</p> <p>This
-     * parameter is optional. However, if you do not pass any session policies, then
-     * the resulting federated user session has no permissions. The only exception is
-     * when the credentials are used to access a resource that has a resource-based
-     * policy that specifically references the federated user session in the
-     * <code>Principal</code> element of the policy.</p> <p>When you pass session
-     * policies, the session permissions are the intersection of the IAM user policies
-     * and the session policies that you pass. This gives you a way to further restrict
-     * the permissions for a federated user. You cannot use session policies to grant
-     * more permissions than those that are defined in the permissions policy of the
-     * IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
+     * Reference.</p> <p>This parameter is optional. However, if you do not pass any
+     * session policies, then the resulting federated user session has no permissions.
+     * The only exception is when the credentials are used to access a resource that
+     * has a resource-based policy that specifically references the federated user
+     * session in the <code>Principal</code> element of the policy.</p> <p>When you
+     * pass session policies, the session permissions are the intersection of the IAM
+     * user policies and the session policies that you pass. This gives you a way to
+     * further restrict the permissions for a federated user. You cannot use session
+     * policies to grant more permissions than those that are defined in the
+     * permissions policy of the IAM user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <note> <p>The characters in this
      * parameter count towards the 2048 character session policy guideline. However, an

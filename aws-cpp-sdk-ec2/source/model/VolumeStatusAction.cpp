@@ -56,25 +56,25 @@ VolumeStatusAction& VolumeStatusAction::operator =(const XmlNode& xmlNode)
     XmlNode codeNode = resultNode.FirstChild("code");
     if(!codeNode.IsNull())
     {
-      m_code = codeNode.GetText();
+      m_code = Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText());
       m_codeHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode eventIdNode = resultNode.FirstChild("eventId");
     if(!eventIdNode.IsNull())
     {
-      m_eventId = eventIdNode.GetText();
+      m_eventId = Aws::Utils::Xml::DecodeEscapedXmlText(eventIdNode.GetText());
       m_eventIdHasBeenSet = true;
     }
     XmlNode eventTypeNode = resultNode.FirstChild("eventType");
     if(!eventTypeNode.IsNull())
     {
-      m_eventType = eventTypeNode.GetText();
+      m_eventType = Aws::Utils::Xml::DecodeEscapedXmlText(eventTypeNode.GetText());
       m_eventTypeHasBeenSet = true;
     }
   }

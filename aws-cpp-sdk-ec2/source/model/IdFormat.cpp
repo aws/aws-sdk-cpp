@@ -56,19 +56,19 @@ IdFormat& IdFormat::operator =(const XmlNode& xmlNode)
     XmlNode deadlineNode = resultNode.FirstChild("deadline");
     if(!deadlineNode.IsNull())
     {
-      m_deadline = DateTime(StringUtils::Trim(deadlineNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_deadline = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deadlineNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_deadlineHasBeenSet = true;
     }
     XmlNode resourceNode = resultNode.FirstChild("resource");
     if(!resourceNode.IsNull())
     {
-      m_resource = resourceNode.GetText();
+      m_resource = Aws::Utils::Xml::DecodeEscapedXmlText(resourceNode.GetText());
       m_resourceHasBeenSet = true;
     }
     XmlNode useLongIdsNode = resultNode.FirstChild("useLongIds");
     if(!useLongIdsNode.IsNull())
     {
-      m_useLongIds = StringUtils::ConvertToBool(StringUtils::Trim(useLongIdsNode.GetText().c_str()).c_str());
+      m_useLongIds = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(useLongIdsNode.GetText()).c_str()).c_str());
       m_useLongIdsHasBeenSet = true;
     }
   }

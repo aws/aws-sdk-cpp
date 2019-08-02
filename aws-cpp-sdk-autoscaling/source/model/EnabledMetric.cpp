@@ -52,13 +52,13 @@ EnabledMetric& EnabledMetric::operator =(const XmlNode& xmlNode)
     XmlNode metricNode = resultNode.FirstChild("Metric");
     if(!metricNode.IsNull())
     {
-      m_metric = metricNode.GetText();
+      m_metric = Aws::Utils::Xml::DecodeEscapedXmlText(metricNode.GetText());
       m_metricHasBeenSet = true;
     }
     XmlNode granularityNode = resultNode.FirstChild("Granularity");
     if(!granularityNode.IsNull())
     {
-      m_granularity = granularityNode.GetText();
+      m_granularity = Aws::Utils::Xml::DecodeEscapedXmlText(granularityNode.GetText());
       m_granularityHasBeenSet = true;
     }
   }

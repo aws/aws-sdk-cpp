@@ -70,55 +70,55 @@ LifecycleHook& LifecycleHook::operator =(const XmlNode& xmlNode)
     XmlNode lifecycleHookNameNode = resultNode.FirstChild("LifecycleHookName");
     if(!lifecycleHookNameNode.IsNull())
     {
-      m_lifecycleHookName = lifecycleHookNameNode.GetText();
+      m_lifecycleHookName = Aws::Utils::Xml::DecodeEscapedXmlText(lifecycleHookNameNode.GetText());
       m_lifecycleHookNameHasBeenSet = true;
     }
     XmlNode autoScalingGroupNameNode = resultNode.FirstChild("AutoScalingGroupName");
     if(!autoScalingGroupNameNode.IsNull())
     {
-      m_autoScalingGroupName = autoScalingGroupNameNode.GetText();
+      m_autoScalingGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(autoScalingGroupNameNode.GetText());
       m_autoScalingGroupNameHasBeenSet = true;
     }
     XmlNode lifecycleTransitionNode = resultNode.FirstChild("LifecycleTransition");
     if(!lifecycleTransitionNode.IsNull())
     {
-      m_lifecycleTransition = lifecycleTransitionNode.GetText();
+      m_lifecycleTransition = Aws::Utils::Xml::DecodeEscapedXmlText(lifecycleTransitionNode.GetText());
       m_lifecycleTransitionHasBeenSet = true;
     }
     XmlNode notificationTargetARNNode = resultNode.FirstChild("NotificationTargetARN");
     if(!notificationTargetARNNode.IsNull())
     {
-      m_notificationTargetARN = notificationTargetARNNode.GetText();
+      m_notificationTargetARN = Aws::Utils::Xml::DecodeEscapedXmlText(notificationTargetARNNode.GetText());
       m_notificationTargetARNHasBeenSet = true;
     }
     XmlNode roleARNNode = resultNode.FirstChild("RoleARN");
     if(!roleARNNode.IsNull())
     {
-      m_roleARN = roleARNNode.GetText();
+      m_roleARN = Aws::Utils::Xml::DecodeEscapedXmlText(roleARNNode.GetText());
       m_roleARNHasBeenSet = true;
     }
     XmlNode notificationMetadataNode = resultNode.FirstChild("NotificationMetadata");
     if(!notificationMetadataNode.IsNull())
     {
-      m_notificationMetadata = notificationMetadataNode.GetText();
+      m_notificationMetadata = Aws::Utils::Xml::DecodeEscapedXmlText(notificationMetadataNode.GetText());
       m_notificationMetadataHasBeenSet = true;
     }
     XmlNode heartbeatTimeoutNode = resultNode.FirstChild("HeartbeatTimeout");
     if(!heartbeatTimeoutNode.IsNull())
     {
-      m_heartbeatTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(heartbeatTimeoutNode.GetText().c_str()).c_str());
+      m_heartbeatTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(heartbeatTimeoutNode.GetText()).c_str()).c_str());
       m_heartbeatTimeoutHasBeenSet = true;
     }
     XmlNode globalTimeoutNode = resultNode.FirstChild("GlobalTimeout");
     if(!globalTimeoutNode.IsNull())
     {
-      m_globalTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(globalTimeoutNode.GetText().c_str()).c_str());
+      m_globalTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(globalTimeoutNode.GetText()).c_str()).c_str());
       m_globalTimeoutHasBeenSet = true;
     }
     XmlNode defaultResultNode = resultNode.FirstChild("DefaultResult");
     if(!defaultResultNode.IsNull())
     {
-      m_defaultResult = defaultResultNode.GetText();
+      m_defaultResult = Aws::Utils::Xml::DecodeEscapedXmlText(defaultResultNode.GetText());
       m_defaultResultHasBeenSet = true;
     }
   }

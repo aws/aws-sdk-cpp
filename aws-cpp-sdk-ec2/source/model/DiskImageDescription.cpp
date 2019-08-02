@@ -60,25 +60,25 @@ DiskImageDescription& DiskImageDescription::operator =(const XmlNode& xmlNode)
     XmlNode checksumNode = resultNode.FirstChild("checksum");
     if(!checksumNode.IsNull())
     {
-      m_checksum = checksumNode.GetText();
+      m_checksum = Aws::Utils::Xml::DecodeEscapedXmlText(checksumNode.GetText());
       m_checksumHasBeenSet = true;
     }
     XmlNode formatNode = resultNode.FirstChild("format");
     if(!formatNode.IsNull())
     {
-      m_format = DiskImageFormatMapper::GetDiskImageFormatForName(StringUtils::Trim(formatNode.GetText().c_str()).c_str());
+      m_format = DiskImageFormatMapper::GetDiskImageFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()).c_str());
       m_formatHasBeenSet = true;
     }
     XmlNode importManifestUrlNode = resultNode.FirstChild("importManifestUrl");
     if(!importManifestUrlNode.IsNull())
     {
-      m_importManifestUrl = importManifestUrlNode.GetText();
+      m_importManifestUrl = Aws::Utils::Xml::DecodeEscapedXmlText(importManifestUrlNode.GetText());
       m_importManifestUrlHasBeenSet = true;
     }
     XmlNode sizeNode = resultNode.FirstChild("size");
     if(!sizeNode.IsNull())
     {
-      m_size = StringUtils::ConvertToInt64(StringUtils::Trim(sizeNode.GetText().c_str()).c_str());
+      m_size = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sizeNode.GetText()).c_str()).c_str());
       m_sizeHasBeenSet = true;
     }
   }

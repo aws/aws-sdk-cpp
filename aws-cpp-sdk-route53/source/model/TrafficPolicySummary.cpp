@@ -64,31 +64,31 @@ TrafficPolicySummary& TrafficPolicySummary::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = idNode.GetText();
+      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = nameNode.GetText();
+      m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
+      m_type = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
       m_typeHasBeenSet = true;
     }
     XmlNode latestVersionNode = resultNode.FirstChild("LatestVersion");
     if(!latestVersionNode.IsNull())
     {
-      m_latestVersion = StringUtils::ConvertToInt32(StringUtils::Trim(latestVersionNode.GetText().c_str()).c_str());
+      m_latestVersion = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(latestVersionNode.GetText()).c_str()).c_str());
       m_latestVersionHasBeenSet = true;
     }
     XmlNode trafficPolicyCountNode = resultNode.FirstChild("TrafficPolicyCount");
     if(!trafficPolicyCountNode.IsNull())
     {
-      m_trafficPolicyCount = StringUtils::ConvertToInt32(StringUtils::Trim(trafficPolicyCountNode.GetText().c_str()).c_str());
+      m_trafficPolicyCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trafficPolicyCountNode.GetText()).c_str()).c_str());
       m_trafficPolicyCountHasBeenSet = true;
     }
   }

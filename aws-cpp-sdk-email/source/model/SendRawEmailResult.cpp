@@ -51,7 +51,7 @@ SendRawEmailResult& SendRawEmailResult::operator =(const Aws::AmazonWebServiceRe
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
     if(!messageIdNode.IsNull())
     {
-      m_messageId = messageIdNode.GetText();
+      m_messageId = Aws::Utils::Xml::DecodeEscapedXmlText(messageIdNode.GetText());
     }
   }
 

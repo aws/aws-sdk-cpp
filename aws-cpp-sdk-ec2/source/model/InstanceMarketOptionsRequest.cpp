@@ -54,7 +54,7 @@ InstanceMarketOptionsRequest& InstanceMarketOptionsRequest::operator =(const Xml
     XmlNode marketTypeNode = resultNode.FirstChild("MarketType");
     if(!marketTypeNode.IsNull())
     {
-      m_marketType = MarketTypeMapper::GetMarketTypeForName(StringUtils::Trim(marketTypeNode.GetText().c_str()).c_str());
+      m_marketType = MarketTypeMapper::GetMarketTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(marketTypeNode.GetText()).c_str()).c_str());
       m_marketTypeHasBeenSet = true;
     }
     XmlNode spotOptionsNode = resultNode.FirstChild("SpotOptions");

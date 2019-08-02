@@ -54,7 +54,7 @@ AvailabilityOptionsStatus& AvailabilityOptionsStatus::operator =(const XmlNode& 
     XmlNode optionsNode = resultNode.FirstChild("Options");
     if(!optionsNode.IsNull())
     {
-      m_options = StringUtils::ConvertToBool(StringUtils::Trim(optionsNode.GetText().c_str()).c_str());
+      m_options = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(optionsNode.GetText()).c_str()).c_str());
       m_optionsHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");

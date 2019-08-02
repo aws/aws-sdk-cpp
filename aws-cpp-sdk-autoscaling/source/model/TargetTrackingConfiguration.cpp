@@ -72,13 +72,13 @@ TargetTrackingConfiguration& TargetTrackingConfiguration::operator =(const XmlNo
     XmlNode targetValueNode = resultNode.FirstChild("TargetValue");
     if(!targetValueNode.IsNull())
     {
-      m_targetValue = StringUtils::ConvertToDouble(StringUtils::Trim(targetValueNode.GetText().c_str()).c_str());
+      m_targetValue = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetValueNode.GetText()).c_str()).c_str());
       m_targetValueHasBeenSet = true;
     }
     XmlNode disableScaleInNode = resultNode.FirstChild("DisableScaleIn");
     if(!disableScaleInNode.IsNull())
     {
-      m_disableScaleIn = StringUtils::ConvertToBool(StringUtils::Trim(disableScaleInNode.GetText().c_str()).c_str());
+      m_disableScaleIn = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(disableScaleInNode.GetText()).c_str()).c_str());
       m_disableScaleInHasBeenSet = true;
     }
   }

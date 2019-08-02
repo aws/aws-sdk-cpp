@@ -51,7 +51,7 @@ UpdateApplicationResourceLifecycleResult& UpdateApplicationResourceLifecycleResu
     XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
     if(!applicationNameNode.IsNull())
     {
-      m_applicationName = applicationNameNode.GetText();
+      m_applicationName = Aws::Utils::Xml::DecodeEscapedXmlText(applicationNameNode.GetText());
     }
     XmlNode resourceLifecycleConfigNode = resultNode.FirstChild("ResourceLifecycleConfig");
     if(!resourceLifecycleConfigNode.IsNull())

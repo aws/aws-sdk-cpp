@@ -54,19 +54,19 @@ Region& Region::operator =(const XmlNode& xmlNode)
     XmlNode endpointNode = resultNode.FirstChild("regionEndpoint");
     if(!endpointNode.IsNull())
     {
-      m_endpoint = endpointNode.GetText();
+      m_endpoint = Aws::Utils::Xml::DecodeEscapedXmlText(endpointNode.GetText());
       m_endpointHasBeenSet = true;
     }
     XmlNode regionNameNode = resultNode.FirstChild("regionName");
     if(!regionNameNode.IsNull())
     {
-      m_regionName = regionNameNode.GetText();
+      m_regionName = Aws::Utils::Xml::DecodeEscapedXmlText(regionNameNode.GetText());
       m_regionNameHasBeenSet = true;
     }
     XmlNode optInStatusNode = resultNode.FirstChild("optInStatus");
     if(!optInStatusNode.IsNull())
     {
-      m_optInStatus = optInStatusNode.GetText();
+      m_optInStatus = Aws::Utils::Xml::DecodeEscapedXmlText(optInStatusNode.GetText());
       m_optInStatusHasBeenSet = true;
     }
   }

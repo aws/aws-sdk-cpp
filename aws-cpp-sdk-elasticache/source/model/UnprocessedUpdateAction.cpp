@@ -56,25 +56,25 @@ UnprocessedUpdateAction& UnprocessedUpdateAction::operator =(const XmlNode& xmlN
     XmlNode replicationGroupIdNode = resultNode.FirstChild("ReplicationGroupId");
     if(!replicationGroupIdNode.IsNull())
     {
-      m_replicationGroupId = replicationGroupIdNode.GetText();
+      m_replicationGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(replicationGroupIdNode.GetText());
       m_replicationGroupIdHasBeenSet = true;
     }
     XmlNode serviceUpdateNameNode = resultNode.FirstChild("ServiceUpdateName");
     if(!serviceUpdateNameNode.IsNull())
     {
-      m_serviceUpdateName = serviceUpdateNameNode.GetText();
+      m_serviceUpdateName = Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateNameNode.GetText());
       m_serviceUpdateNameHasBeenSet = true;
     }
     XmlNode errorTypeNode = resultNode.FirstChild("ErrorType");
     if(!errorTypeNode.IsNull())
     {
-      m_errorType = errorTypeNode.GetText();
+      m_errorType = Aws::Utils::Xml::DecodeEscapedXmlText(errorTypeNode.GetText());
       m_errorTypeHasBeenSet = true;
     }
     XmlNode errorMessageNode = resultNode.FirstChild("ErrorMessage");
     if(!errorMessageNode.IsNull())
     {
-      m_errorMessage = errorMessageNode.GetText();
+      m_errorMessage = Aws::Utils::Xml::DecodeEscapedXmlText(errorMessageNode.GetText());
       m_errorMessageHasBeenSet = true;
     }
   }

@@ -52,7 +52,7 @@ DBClusterSnapshotAttributesResult& DBClusterSnapshotAttributesResult::operator =
     XmlNode dBClusterSnapshotIdentifierNode = resultNode.FirstChild("DBClusterSnapshotIdentifier");
     if(!dBClusterSnapshotIdentifierNode.IsNull())
     {
-      m_dBClusterSnapshotIdentifier = dBClusterSnapshotIdentifierNode.GetText();
+      m_dBClusterSnapshotIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterSnapshotIdentifierNode.GetText());
       m_dBClusterSnapshotIdentifierHasBeenSet = true;
     }
     XmlNode dBClusterSnapshotAttributesNode = resultNode.FirstChild("DBClusterSnapshotAttributes");

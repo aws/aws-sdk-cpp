@@ -54,13 +54,13 @@ AttachedPermissionsBoundary& AttachedPermissionsBoundary::operator =(const XmlNo
     XmlNode permissionsBoundaryTypeNode = resultNode.FirstChild("PermissionsBoundaryType");
     if(!permissionsBoundaryTypeNode.IsNull())
     {
-      m_permissionsBoundaryType = PermissionsBoundaryAttachmentTypeMapper::GetPermissionsBoundaryAttachmentTypeForName(StringUtils::Trim(permissionsBoundaryTypeNode.GetText().c_str()).c_str());
+      m_permissionsBoundaryType = PermissionsBoundaryAttachmentTypeMapper::GetPermissionsBoundaryAttachmentTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionsBoundaryTypeNode.GetText()).c_str()).c_str());
       m_permissionsBoundaryTypeHasBeenSet = true;
     }
     XmlNode permissionsBoundaryArnNode = resultNode.FirstChild("PermissionsBoundaryArn");
     if(!permissionsBoundaryArnNode.IsNull())
     {
-      m_permissionsBoundaryArn = permissionsBoundaryArnNode.GetText();
+      m_permissionsBoundaryArn = Aws::Utils::Xml::DecodeEscapedXmlText(permissionsBoundaryArnNode.GetText());
       m_permissionsBoundaryArnHasBeenSet = true;
     }
   }

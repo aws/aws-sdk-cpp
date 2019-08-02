@@ -56,19 +56,19 @@ AliasTarget& AliasTarget::operator =(const XmlNode& xmlNode)
     XmlNode hostedZoneIdNode = resultNode.FirstChild("HostedZoneId");
     if(!hostedZoneIdNode.IsNull())
     {
-      m_hostedZoneId = hostedZoneIdNode.GetText();
+      m_hostedZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(hostedZoneIdNode.GetText());
       m_hostedZoneIdHasBeenSet = true;
     }
     XmlNode dNSNameNode = resultNode.FirstChild("DNSName");
     if(!dNSNameNode.IsNull())
     {
-      m_dNSName = dNSNameNode.GetText();
+      m_dNSName = Aws::Utils::Xml::DecodeEscapedXmlText(dNSNameNode.GetText());
       m_dNSNameHasBeenSet = true;
     }
     XmlNode evaluateTargetHealthNode = resultNode.FirstChild("EvaluateTargetHealth");
     if(!evaluateTargetHealthNode.IsNull())
     {
-      m_evaluateTargetHealth = StringUtils::ConvertToBool(StringUtils::Trim(evaluateTargetHealthNode.GetText().c_str()).c_str());
+      m_evaluateTargetHealth = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evaluateTargetHealthNode.GetText()).c_str()).c_str());
       m_evaluateTargetHealthHasBeenSet = true;
     }
   }

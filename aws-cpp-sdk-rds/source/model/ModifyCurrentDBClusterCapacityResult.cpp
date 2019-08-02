@@ -57,27 +57,27 @@ ModifyCurrentDBClusterCapacityResult& ModifyCurrentDBClusterCapacityResult::oper
     XmlNode dBClusterIdentifierNode = resultNode.FirstChild("DBClusterIdentifier");
     if(!dBClusterIdentifierNode.IsNull())
     {
-      m_dBClusterIdentifier = dBClusterIdentifierNode.GetText();
+      m_dBClusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterIdentifierNode.GetText());
     }
     XmlNode pendingCapacityNode = resultNode.FirstChild("PendingCapacity");
     if(!pendingCapacityNode.IsNull())
     {
-      m_pendingCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(pendingCapacityNode.GetText().c_str()).c_str());
+      m_pendingCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(pendingCapacityNode.GetText()).c_str()).c_str());
     }
     XmlNode currentCapacityNode = resultNode.FirstChild("CurrentCapacity");
     if(!currentCapacityNode.IsNull())
     {
-      m_currentCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(currentCapacityNode.GetText().c_str()).c_str());
+      m_currentCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currentCapacityNode.GetText()).c_str()).c_str());
     }
     XmlNode secondsBeforeTimeoutNode = resultNode.FirstChild("SecondsBeforeTimeout");
     if(!secondsBeforeTimeoutNode.IsNull())
     {
-      m_secondsBeforeTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(secondsBeforeTimeoutNode.GetText().c_str()).c_str());
+      m_secondsBeforeTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(secondsBeforeTimeoutNode.GetText()).c_str()).c_str());
     }
     XmlNode timeoutActionNode = resultNode.FirstChild("TimeoutAction");
     if(!timeoutActionNode.IsNull())
     {
-      m_timeoutAction = timeoutActionNode.GetText();
+      m_timeoutAction = Aws::Utils::Xml::DecodeEscapedXmlText(timeoutActionNode.GetText());
     }
   }
 

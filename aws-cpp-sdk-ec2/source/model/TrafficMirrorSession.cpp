@@ -74,55 +74,55 @@ TrafficMirrorSession& TrafficMirrorSession::operator =(const XmlNode& xmlNode)
     XmlNode trafficMirrorSessionIdNode = resultNode.FirstChild("trafficMirrorSessionId");
     if(!trafficMirrorSessionIdNode.IsNull())
     {
-      m_trafficMirrorSessionId = trafficMirrorSessionIdNode.GetText();
+      m_trafficMirrorSessionId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficMirrorSessionIdNode.GetText());
       m_trafficMirrorSessionIdHasBeenSet = true;
     }
     XmlNode trafficMirrorTargetIdNode = resultNode.FirstChild("trafficMirrorTargetId");
     if(!trafficMirrorTargetIdNode.IsNull())
     {
-      m_trafficMirrorTargetId = trafficMirrorTargetIdNode.GetText();
+      m_trafficMirrorTargetId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficMirrorTargetIdNode.GetText());
       m_trafficMirrorTargetIdHasBeenSet = true;
     }
     XmlNode trafficMirrorFilterIdNode = resultNode.FirstChild("trafficMirrorFilterId");
     if(!trafficMirrorFilterIdNode.IsNull())
     {
-      m_trafficMirrorFilterId = trafficMirrorFilterIdNode.GetText();
+      m_trafficMirrorFilterId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficMirrorFilterIdNode.GetText());
       m_trafficMirrorFilterIdHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
-      m_networkInterfaceId = networkInterfaceIdNode.GetText();
+      m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
-      m_ownerId = ownerIdNode.GetText();
+      m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
     }
     XmlNode packetLengthNode = resultNode.FirstChild("packetLength");
     if(!packetLengthNode.IsNull())
     {
-      m_packetLength = StringUtils::ConvertToInt32(StringUtils::Trim(packetLengthNode.GetText().c_str()).c_str());
+      m_packetLength = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(packetLengthNode.GetText()).c_str()).c_str());
       m_packetLengthHasBeenSet = true;
     }
     XmlNode sessionNumberNode = resultNode.FirstChild("sessionNumber");
     if(!sessionNumberNode.IsNull())
     {
-      m_sessionNumber = StringUtils::ConvertToInt32(StringUtils::Trim(sessionNumberNode.GetText().c_str()).c_str());
+      m_sessionNumber = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sessionNumberNode.GetText()).c_str()).c_str());
       m_sessionNumberHasBeenSet = true;
     }
     XmlNode virtualNetworkIdNode = resultNode.FirstChild("virtualNetworkId");
     if(!virtualNetworkIdNode.IsNull())
     {
-      m_virtualNetworkId = StringUtils::ConvertToInt32(StringUtils::Trim(virtualNetworkIdNode.GetText().c_str()).c_str());
+      m_virtualNetworkId = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(virtualNetworkIdNode.GetText()).c_str()).c_str());
       m_virtualNetworkIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");

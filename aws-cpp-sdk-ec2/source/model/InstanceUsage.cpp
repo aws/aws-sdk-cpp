@@ -54,13 +54,13 @@ InstanceUsage& InstanceUsage::operator =(const XmlNode& xmlNode)
     XmlNode accountIdNode = resultNode.FirstChild("accountId");
     if(!accountIdNode.IsNull())
     {
-      m_accountId = accountIdNode.GetText();
+      m_accountId = Aws::Utils::Xml::DecodeEscapedXmlText(accountIdNode.GetText());
       m_accountIdHasBeenSet = true;
     }
     XmlNode usedInstanceCountNode = resultNode.FirstChild("usedInstanceCount");
     if(!usedInstanceCountNode.IsNull())
     {
-      m_usedInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(usedInstanceCountNode.GetText().c_str()).c_str());
+      m_usedInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usedInstanceCountNode.GetText()).c_str()).c_str());
       m_usedInstanceCountHasBeenSet = true;
     }
   }

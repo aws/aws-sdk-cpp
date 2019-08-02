@@ -58,19 +58,19 @@ LambdaFunctionAssociation& LambdaFunctionAssociation::operator =(const XmlNode& 
     XmlNode lambdaFunctionARNNode = resultNode.FirstChild("LambdaFunctionARN");
     if(!lambdaFunctionARNNode.IsNull())
     {
-      m_lambdaFunctionARN = lambdaFunctionARNNode.GetText();
+      m_lambdaFunctionARN = Aws::Utils::Xml::DecodeEscapedXmlText(lambdaFunctionARNNode.GetText());
       m_lambdaFunctionARNHasBeenSet = true;
     }
     XmlNode eventTypeNode = resultNode.FirstChild("EventType");
     if(!eventTypeNode.IsNull())
     {
-      m_eventType = EventTypeMapper::GetEventTypeForName(StringUtils::Trim(eventTypeNode.GetText().c_str()).c_str());
+      m_eventType = EventTypeMapper::GetEventTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(eventTypeNode.GetText()).c_str()).c_str());
       m_eventTypeHasBeenSet = true;
     }
     XmlNode includeBodyNode = resultNode.FirstChild("IncludeBody");
     if(!includeBodyNode.IsNull())
     {
-      m_includeBody = StringUtils::ConvertToBool(StringUtils::Trim(includeBodyNode.GetText().c_str()).c_str());
+      m_includeBody = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includeBodyNode.GetText()).c_str()).c_str());
       m_includeBodyHasBeenSet = true;
     }
   }

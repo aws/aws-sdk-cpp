@@ -88,73 +88,73 @@ VolumeModification& VolumeModification::operator =(const XmlNode& xmlNode)
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
     {
-      m_volumeId = volumeIdNode.GetText();
+      m_volumeId = Aws::Utils::Xml::DecodeEscapedXmlText(volumeIdNode.GetText());
       m_volumeIdHasBeenSet = true;
     }
     XmlNode modificationStateNode = resultNode.FirstChild("modificationState");
     if(!modificationStateNode.IsNull())
     {
-      m_modificationState = VolumeModificationStateMapper::GetVolumeModificationStateForName(StringUtils::Trim(modificationStateNode.GetText().c_str()).c_str());
+      m_modificationState = VolumeModificationStateMapper::GetVolumeModificationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modificationStateNode.GetText()).c_str()).c_str());
       m_modificationStateHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
-      m_statusMessage = statusMessageNode.GetText();
+      m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
     }
     XmlNode targetSizeNode = resultNode.FirstChild("targetSize");
     if(!targetSizeNode.IsNull())
     {
-      m_targetSize = StringUtils::ConvertToInt32(StringUtils::Trim(targetSizeNode.GetText().c_str()).c_str());
+      m_targetSize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetSizeNode.GetText()).c_str()).c_str());
       m_targetSizeHasBeenSet = true;
     }
     XmlNode targetIopsNode = resultNode.FirstChild("targetIops");
     if(!targetIopsNode.IsNull())
     {
-      m_targetIops = StringUtils::ConvertToInt32(StringUtils::Trim(targetIopsNode.GetText().c_str()).c_str());
+      m_targetIops = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetIopsNode.GetText()).c_str()).c_str());
       m_targetIopsHasBeenSet = true;
     }
     XmlNode targetVolumeTypeNode = resultNode.FirstChild("targetVolumeType");
     if(!targetVolumeTypeNode.IsNull())
     {
-      m_targetVolumeType = VolumeTypeMapper::GetVolumeTypeForName(StringUtils::Trim(targetVolumeTypeNode.GetText().c_str()).c_str());
+      m_targetVolumeType = VolumeTypeMapper::GetVolumeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetVolumeTypeNode.GetText()).c_str()).c_str());
       m_targetVolumeTypeHasBeenSet = true;
     }
     XmlNode originalSizeNode = resultNode.FirstChild("originalSize");
     if(!originalSizeNode.IsNull())
     {
-      m_originalSize = StringUtils::ConvertToInt32(StringUtils::Trim(originalSizeNode.GetText().c_str()).c_str());
+      m_originalSize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originalSizeNode.GetText()).c_str()).c_str());
       m_originalSizeHasBeenSet = true;
     }
     XmlNode originalIopsNode = resultNode.FirstChild("originalIops");
     if(!originalIopsNode.IsNull())
     {
-      m_originalIops = StringUtils::ConvertToInt32(StringUtils::Trim(originalIopsNode.GetText().c_str()).c_str());
+      m_originalIops = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originalIopsNode.GetText()).c_str()).c_str());
       m_originalIopsHasBeenSet = true;
     }
     XmlNode originalVolumeTypeNode = resultNode.FirstChild("originalVolumeType");
     if(!originalVolumeTypeNode.IsNull())
     {
-      m_originalVolumeType = VolumeTypeMapper::GetVolumeTypeForName(StringUtils::Trim(originalVolumeTypeNode.GetText().c_str()).c_str());
+      m_originalVolumeType = VolumeTypeMapper::GetVolumeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originalVolumeTypeNode.GetText()).c_str()).c_str());
       m_originalVolumeTypeHasBeenSet = true;
     }
     XmlNode progressNode = resultNode.FirstChild("progress");
     if(!progressNode.IsNull())
     {
-      m_progress = StringUtils::ConvertToInt64(StringUtils::Trim(progressNode.GetText().c_str()).c_str());
+      m_progress = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(progressNode.GetText()).c_str()).c_str());
       m_progressHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("startTime");
     if(!startTimeNode.IsNull())
     {
-      m_startTime = DateTime(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
     }
     XmlNode endTimeNode = resultNode.FirstChild("endTime");
     if(!endTimeNode.IsNull())
     {
-      m_endTime = DateTime(StringUtils::Trim(endTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_endTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_endTimeHasBeenSet = true;
     }
   }

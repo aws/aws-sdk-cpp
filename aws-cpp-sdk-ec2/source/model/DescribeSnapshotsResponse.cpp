@@ -62,7 +62,7 @@ DescribeSnapshotsResponse& DescribeSnapshotsResponse::operator =(const Aws::Amaz
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = nextTokenNode.GetText();
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
     }
   }
 

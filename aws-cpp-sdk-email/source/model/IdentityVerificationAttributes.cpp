@@ -54,13 +54,13 @@ IdentityVerificationAttributes& IdentityVerificationAttributes::operator =(const
     XmlNode verificationStatusNode = resultNode.FirstChild("VerificationStatus");
     if(!verificationStatusNode.IsNull())
     {
-      m_verificationStatus = VerificationStatusMapper::GetVerificationStatusForName(StringUtils::Trim(verificationStatusNode.GetText().c_str()).c_str());
+      m_verificationStatus = VerificationStatusMapper::GetVerificationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(verificationStatusNode.GetText()).c_str()).c_str());
       m_verificationStatusHasBeenSet = true;
     }
     XmlNode verificationTokenNode = resultNode.FirstChild("VerificationToken");
     if(!verificationTokenNode.IsNull())
     {
-      m_verificationToken = verificationTokenNode.GetText();
+      m_verificationToken = Aws::Utils::Xml::DecodeEscapedXmlText(verificationTokenNode.GetText());
       m_verificationTokenHasBeenSet = true;
     }
   }

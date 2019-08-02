@@ -56,13 +56,13 @@ Position& Position::operator =(const XmlNode& xmlNode)
     XmlNode lineNode = resultNode.FirstChild("Line");
     if(!lineNode.IsNull())
     {
-      m_line = StringUtils::ConvertToInt32(StringUtils::Trim(lineNode.GetText().c_str()).c_str());
+      m_line = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lineNode.GetText()).c_str()).c_str());
       m_lineHasBeenSet = true;
     }
     XmlNode columnNode = resultNode.FirstChild("Column");
     if(!columnNode.IsNull())
     {
-      m_column = StringUtils::ConvertToInt32(StringUtils::Trim(columnNode.GetText().c_str()).c_str());
+      m_column = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(columnNode.GetText()).c_str()).c_str());
       m_columnHasBeenSet = true;
     }
   }

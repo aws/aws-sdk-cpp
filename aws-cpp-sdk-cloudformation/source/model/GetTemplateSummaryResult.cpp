@@ -62,7 +62,7 @@ GetTemplateSummaryResult& GetTemplateSummaryResult::operator =(const Aws::Amazon
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
     }
     XmlNode capabilitiesNode = resultNode.FirstChild("Capabilities");
     if(!capabilitiesNode.IsNull())
@@ -78,7 +78,7 @@ GetTemplateSummaryResult& GetTemplateSummaryResult::operator =(const Aws::Amazon
     XmlNode capabilitiesReasonNode = resultNode.FirstChild("CapabilitiesReason");
     if(!capabilitiesReasonNode.IsNull())
     {
-      m_capabilitiesReason = capabilitiesReasonNode.GetText();
+      m_capabilitiesReason = Aws::Utils::Xml::DecodeEscapedXmlText(capabilitiesReasonNode.GetText());
     }
     XmlNode resourceTypesNode = resultNode.FirstChild("ResourceTypes");
     if(!resourceTypesNode.IsNull())
@@ -94,12 +94,12 @@ GetTemplateSummaryResult& GetTemplateSummaryResult::operator =(const Aws::Amazon
     XmlNode versionNode = resultNode.FirstChild("Version");
     if(!versionNode.IsNull())
     {
-      m_version = versionNode.GetText();
+      m_version = Aws::Utils::Xml::DecodeEscapedXmlText(versionNode.GetText());
     }
     XmlNode metadataNode = resultNode.FirstChild("Metadata");
     if(!metadataNode.IsNull())
     {
-      m_metadata = metadataNode.GetText();
+      m_metadata = Aws::Utils::Xml::DecodeEscapedXmlText(metadataNode.GetText());
     }
     XmlNode declaredTransformsNode = resultNode.FirstChild("DeclaredTransforms");
     if(!declaredTransformsNode.IsNull())

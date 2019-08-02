@@ -64,7 +64,7 @@ InputSerialization& InputSerialization::operator =(const XmlNode& xmlNode)
     XmlNode compressionTypeNode = resultNode.FirstChild("CompressionType");
     if(!compressionTypeNode.IsNull())
     {
-      m_compressionType = CompressionTypeMapper::GetCompressionTypeForName(StringUtils::Trim(compressionTypeNode.GetText().c_str()).c_str());
+      m_compressionType = CompressionTypeMapper::GetCompressionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(compressionTypeNode.GetText()).c_str()).c_str());
       m_compressionTypeHasBeenSet = true;
     }
     XmlNode jSONNode = resultNode.FirstChild("JSON");

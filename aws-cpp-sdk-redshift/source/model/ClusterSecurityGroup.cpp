@@ -58,13 +58,13 @@ ClusterSecurityGroup& ClusterSecurityGroup::operator =(const XmlNode& xmlNode)
     XmlNode clusterSecurityGroupNameNode = resultNode.FirstChild("ClusterSecurityGroupName");
     if(!clusterSecurityGroupNameNode.IsNull())
     {
-      m_clusterSecurityGroupName = clusterSecurityGroupNameNode.GetText();
+      m_clusterSecurityGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(clusterSecurityGroupNameNode.GetText());
       m_clusterSecurityGroupNameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode eC2SecurityGroupsNode = resultNode.FirstChild("EC2SecurityGroups");

@@ -52,7 +52,7 @@ DhcpConfiguration& DhcpConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode keyNode = resultNode.FirstChild("key");
     if(!keyNode.IsNull())
     {
-      m_key = keyNode.GetText();
+      m_key = Aws::Utils::Xml::DecodeEscapedXmlText(keyNode.GetText());
       m_keyHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("valueSet");

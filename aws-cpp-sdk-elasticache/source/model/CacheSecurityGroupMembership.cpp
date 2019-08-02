@@ -52,13 +52,13 @@ CacheSecurityGroupMembership& CacheSecurityGroupMembership::operator =(const Xml
     XmlNode cacheSecurityGroupNameNode = resultNode.FirstChild("CacheSecurityGroupName");
     if(!cacheSecurityGroupNameNode.IsNull())
     {
-      m_cacheSecurityGroupName = cacheSecurityGroupNameNode.GetText();
+      m_cacheSecurityGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(cacheSecurityGroupNameNode.GetText());
       m_cacheSecurityGroupNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = statusNode.GetText();
+      m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
   }

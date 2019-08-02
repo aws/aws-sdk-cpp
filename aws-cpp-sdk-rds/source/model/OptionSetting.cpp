@@ -70,55 +70,55 @@ OptionSetting& OptionSetting::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = nameNode.GetText();
+      m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
-      m_value = valueNode.GetText();
+      m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
     }
     XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
     if(!defaultValueNode.IsNull())
     {
-      m_defaultValue = defaultValueNode.GetText();
+      m_defaultValue = Aws::Utils::Xml::DecodeEscapedXmlText(defaultValueNode.GetText());
       m_defaultValueHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode applyTypeNode = resultNode.FirstChild("ApplyType");
     if(!applyTypeNode.IsNull())
     {
-      m_applyType = applyTypeNode.GetText();
+      m_applyType = Aws::Utils::Xml::DecodeEscapedXmlText(applyTypeNode.GetText());
       m_applyTypeHasBeenSet = true;
     }
     XmlNode dataTypeNode = resultNode.FirstChild("DataType");
     if(!dataTypeNode.IsNull())
     {
-      m_dataType = dataTypeNode.GetText();
+      m_dataType = Aws::Utils::Xml::DecodeEscapedXmlText(dataTypeNode.GetText());
       m_dataTypeHasBeenSet = true;
     }
     XmlNode allowedValuesNode = resultNode.FirstChild("AllowedValues");
     if(!allowedValuesNode.IsNull())
     {
-      m_allowedValues = allowedValuesNode.GetText();
+      m_allowedValues = Aws::Utils::Xml::DecodeEscapedXmlText(allowedValuesNode.GetText());
       m_allowedValuesHasBeenSet = true;
     }
     XmlNode isModifiableNode = resultNode.FirstChild("IsModifiable");
     if(!isModifiableNode.IsNull())
     {
-      m_isModifiable = StringUtils::ConvertToBool(StringUtils::Trim(isModifiableNode.GetText().c_str()).c_str());
+      m_isModifiable = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isModifiableNode.GetText()).c_str()).c_str());
       m_isModifiableHasBeenSet = true;
     }
     XmlNode isCollectionNode = resultNode.FirstChild("IsCollection");
     if(!isCollectionNode.IsNull())
     {
-      m_isCollection = StringUtils::ConvertToBool(StringUtils::Trim(isCollectionNode.GetText().c_str()).c_str());
+      m_isCollection = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isCollectionNode.GetText()).c_str()).c_str());
       m_isCollectionHasBeenSet = true;
     }
   }

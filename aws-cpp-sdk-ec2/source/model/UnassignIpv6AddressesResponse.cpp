@@ -51,7 +51,7 @@ UnassignIpv6AddressesResponse& UnassignIpv6AddressesResponse::operator =(const A
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
-      m_networkInterfaceId = networkInterfaceIdNode.GetText();
+      m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
     }
     XmlNode unassignedIpv6AddressesNode = resultNode.FirstChild("unassignedIpv6Addresses");
     if(!unassignedIpv6AddressesNode.IsNull())

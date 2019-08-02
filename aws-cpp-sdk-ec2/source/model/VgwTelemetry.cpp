@@ -62,31 +62,31 @@ VgwTelemetry& VgwTelemetry::operator =(const XmlNode& xmlNode)
     XmlNode acceptedRouteCountNode = resultNode.FirstChild("acceptedRouteCount");
     if(!acceptedRouteCountNode.IsNull())
     {
-      m_acceptedRouteCount = StringUtils::ConvertToInt32(StringUtils::Trim(acceptedRouteCountNode.GetText().c_str()).c_str());
+      m_acceptedRouteCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(acceptedRouteCountNode.GetText()).c_str()).c_str());
       m_acceptedRouteCountHasBeenSet = true;
     }
     XmlNode lastStatusChangeNode = resultNode.FirstChild("lastStatusChange");
     if(!lastStatusChangeNode.IsNull())
     {
-      m_lastStatusChange = DateTime(StringUtils::Trim(lastStatusChangeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastStatusChange = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastStatusChangeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_lastStatusChangeHasBeenSet = true;
     }
     XmlNode outsideIpAddressNode = resultNode.FirstChild("outsideIpAddress");
     if(!outsideIpAddressNode.IsNull())
     {
-      m_outsideIpAddress = outsideIpAddressNode.GetText();
+      m_outsideIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(outsideIpAddressNode.GetText());
       m_outsideIpAddressHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = TelemetryStatusMapper::GetTelemetryStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = TelemetryStatusMapper::GetTelemetryStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
-      m_statusMessage = statusMessageNode.GetText();
+      m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
     }
   }

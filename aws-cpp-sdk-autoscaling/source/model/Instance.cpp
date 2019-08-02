@@ -66,31 +66,31 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode instanceIdNode = resultNode.FirstChild("InstanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = instanceIdNode.GetText();
+      m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = availabilityZoneNode.GetText();
+      m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode lifecycleStateNode = resultNode.FirstChild("LifecycleState");
     if(!lifecycleStateNode.IsNull())
     {
-      m_lifecycleState = LifecycleStateMapper::GetLifecycleStateForName(StringUtils::Trim(lifecycleStateNode.GetText().c_str()).c_str());
+      m_lifecycleState = LifecycleStateMapper::GetLifecycleStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lifecycleStateNode.GetText()).c_str()).c_str());
       m_lifecycleStateHasBeenSet = true;
     }
     XmlNode healthStatusNode = resultNode.FirstChild("HealthStatus");
     if(!healthStatusNode.IsNull())
     {
-      m_healthStatus = healthStatusNode.GetText();
+      m_healthStatus = Aws::Utils::Xml::DecodeEscapedXmlText(healthStatusNode.GetText());
       m_healthStatusHasBeenSet = true;
     }
     XmlNode launchConfigurationNameNode = resultNode.FirstChild("LaunchConfigurationName");
     if(!launchConfigurationNameNode.IsNull())
     {
-      m_launchConfigurationName = launchConfigurationNameNode.GetText();
+      m_launchConfigurationName = Aws::Utils::Xml::DecodeEscapedXmlText(launchConfigurationNameNode.GetText());
       m_launchConfigurationNameHasBeenSet = true;
     }
     XmlNode launchTemplateNode = resultNode.FirstChild("LaunchTemplate");
@@ -102,7 +102,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode protectedFromScaleInNode = resultNode.FirstChild("ProtectedFromScaleIn");
     if(!protectedFromScaleInNode.IsNull())
     {
-      m_protectedFromScaleIn = StringUtils::ConvertToBool(StringUtils::Trim(protectedFromScaleInNode.GetText().c_str()).c_str());
+      m_protectedFromScaleIn = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protectedFromScaleInNode.GetText()).c_str()).c_str());
       m_protectedFromScaleInHasBeenSet = true;
     }
   }

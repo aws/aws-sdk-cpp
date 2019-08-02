@@ -54,7 +54,7 @@ LambdaFunctionAssociations& LambdaFunctionAssociations::operator =(const XmlNode
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
     if(!quantityNode.IsNull())
     {
-      m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(quantityNode.GetText().c_str()).c_str());
+      m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(quantityNode.GetText()).c_str()).c_str());
       m_quantityHasBeenSet = true;
     }
     XmlNode itemsNode = resultNode.FirstChild("Items");

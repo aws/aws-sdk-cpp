@@ -108,7 +108,7 @@ CORSRule& CORSRule::operator =(const XmlNode& xmlNode)
     XmlNode maxAgeSecondsNode = resultNode.FirstChild("MaxAgeSeconds");
     if(!maxAgeSecondsNode.IsNull())
     {
-      m_maxAgeSeconds = StringUtils::ConvertToInt32(StringUtils::Trim(maxAgeSecondsNode.GetText().c_str()).c_str());
+      m_maxAgeSeconds = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxAgeSecondsNode.GetText()).c_str()).c_str());
       m_maxAgeSecondsHasBeenSet = true;
     }
   }

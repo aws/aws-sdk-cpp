@@ -56,13 +56,13 @@ ReplicationGroupPendingModifiedValues& ReplicationGroupPendingModifiedValues::op
     XmlNode primaryClusterIdNode = resultNode.FirstChild("PrimaryClusterId");
     if(!primaryClusterIdNode.IsNull())
     {
-      m_primaryClusterId = primaryClusterIdNode.GetText();
+      m_primaryClusterId = Aws::Utils::Xml::DecodeEscapedXmlText(primaryClusterIdNode.GetText());
       m_primaryClusterIdHasBeenSet = true;
     }
     XmlNode automaticFailoverStatusNode = resultNode.FirstChild("AutomaticFailoverStatus");
     if(!automaticFailoverStatusNode.IsNull())
     {
-      m_automaticFailoverStatus = PendingAutomaticFailoverStatusMapper::GetPendingAutomaticFailoverStatusForName(StringUtils::Trim(automaticFailoverStatusNode.GetText().c_str()).c_str());
+      m_automaticFailoverStatus = PendingAutomaticFailoverStatusMapper::GetPendingAutomaticFailoverStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automaticFailoverStatusNode.GetText()).c_str()).c_str());
       m_automaticFailoverStatusHasBeenSet = true;
     }
     XmlNode reshardingNode = resultNode.FirstChild("Resharding");

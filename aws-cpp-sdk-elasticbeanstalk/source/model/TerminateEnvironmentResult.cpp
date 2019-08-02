@@ -59,82 +59,82 @@ TerminateEnvironmentResult& TerminateEnvironmentResult::operator =(const Aws::Am
     XmlNode environmentNameNode = resultNode.FirstChild("EnvironmentName");
     if(!environmentNameNode.IsNull())
     {
-      m_environmentName = environmentNameNode.GetText();
+      m_environmentName = Aws::Utils::Xml::DecodeEscapedXmlText(environmentNameNode.GetText());
     }
     XmlNode environmentIdNode = resultNode.FirstChild("EnvironmentId");
     if(!environmentIdNode.IsNull())
     {
-      m_environmentId = environmentIdNode.GetText();
+      m_environmentId = Aws::Utils::Xml::DecodeEscapedXmlText(environmentIdNode.GetText());
     }
     XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
     if(!applicationNameNode.IsNull())
     {
-      m_applicationName = applicationNameNode.GetText();
+      m_applicationName = Aws::Utils::Xml::DecodeEscapedXmlText(applicationNameNode.GetText());
     }
     XmlNode versionLabelNode = resultNode.FirstChild("VersionLabel");
     if(!versionLabelNode.IsNull())
     {
-      m_versionLabel = versionLabelNode.GetText();
+      m_versionLabel = Aws::Utils::Xml::DecodeEscapedXmlText(versionLabelNode.GetText());
     }
     XmlNode solutionStackNameNode = resultNode.FirstChild("SolutionStackName");
     if(!solutionStackNameNode.IsNull())
     {
-      m_solutionStackName = solutionStackNameNode.GetText();
+      m_solutionStackName = Aws::Utils::Xml::DecodeEscapedXmlText(solutionStackNameNode.GetText());
     }
     XmlNode platformArnNode = resultNode.FirstChild("PlatformArn");
     if(!platformArnNode.IsNull())
     {
-      m_platformArn = platformArnNode.GetText();
+      m_platformArn = Aws::Utils::Xml::DecodeEscapedXmlText(platformArnNode.GetText());
     }
     XmlNode templateNameNode = resultNode.FirstChild("TemplateName");
     if(!templateNameNode.IsNull())
     {
-      m_templateName = templateNameNode.GetText();
+      m_templateName = Aws::Utils::Xml::DecodeEscapedXmlText(templateNameNode.GetText());
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
     }
     XmlNode endpointURLNode = resultNode.FirstChild("EndpointURL");
     if(!endpointURLNode.IsNull())
     {
-      m_endpointURL = endpointURLNode.GetText();
+      m_endpointURL = Aws::Utils::Xml::DecodeEscapedXmlText(endpointURLNode.GetText());
     }
     XmlNode cNAMENode = resultNode.FirstChild("CNAME");
     if(!cNAMENode.IsNull())
     {
-      m_cNAME = cNAMENode.GetText();
+      m_cNAME = Aws::Utils::Xml::DecodeEscapedXmlText(cNAMENode.GetText());
     }
     XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
     if(!dateCreatedNode.IsNull())
     {
-      m_dateCreated = DateTime(StringUtils::Trim(dateCreatedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_dateCreated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateCreatedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode dateUpdatedNode = resultNode.FirstChild("DateUpdated");
     if(!dateUpdatedNode.IsNull())
     {
-      m_dateUpdated = DateTime(StringUtils::Trim(dateUpdatedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_dateUpdated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateUpdatedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = EnvironmentStatusMapper::GetEnvironmentStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = EnvironmentStatusMapper::GetEnvironmentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
     }
     XmlNode abortableOperationInProgressNode = resultNode.FirstChild("AbortableOperationInProgress");
     if(!abortableOperationInProgressNode.IsNull())
     {
-      m_abortableOperationInProgress = StringUtils::ConvertToBool(StringUtils::Trim(abortableOperationInProgressNode.GetText().c_str()).c_str());
+      m_abortableOperationInProgress = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(abortableOperationInProgressNode.GetText()).c_str()).c_str());
     }
     XmlNode healthNode = resultNode.FirstChild("Health");
     if(!healthNode.IsNull())
     {
-      m_health = EnvironmentHealthMapper::GetEnvironmentHealthForName(StringUtils::Trim(healthNode.GetText().c_str()).c_str());
+      m_health = EnvironmentHealthMapper::GetEnvironmentHealthForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(healthNode.GetText()).c_str()).c_str());
     }
     XmlNode healthStatusNode = resultNode.FirstChild("HealthStatus");
     if(!healthStatusNode.IsNull())
     {
-      m_healthStatus = EnvironmentHealthStatusMapper::GetEnvironmentHealthStatusForName(StringUtils::Trim(healthStatusNode.GetText().c_str()).c_str());
+      m_healthStatus = EnvironmentHealthStatusMapper::GetEnvironmentHealthStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(healthStatusNode.GetText()).c_str()).c_str());
     }
     XmlNode resourcesNode = resultNode.FirstChild("Resources");
     if(!resourcesNode.IsNull())
@@ -160,7 +160,7 @@ TerminateEnvironmentResult& TerminateEnvironmentResult::operator =(const Aws::Am
     XmlNode environmentArnNode = resultNode.FirstChild("EnvironmentArn");
     if(!environmentArnNode.IsNull())
     {
-      m_environmentArn = environmentArnNode.GetText();
+      m_environmentArn = Aws::Utils::Xml::DecodeEscapedXmlText(environmentArnNode.GetText());
     }
   }
 

@@ -54,19 +54,19 @@ MFADevice& MFADevice::operator =(const XmlNode& xmlNode)
     XmlNode userNameNode = resultNode.FirstChild("UserName");
     if(!userNameNode.IsNull())
     {
-      m_userName = userNameNode.GetText();
+      m_userName = Aws::Utils::Xml::DecodeEscapedXmlText(userNameNode.GetText());
       m_userNameHasBeenSet = true;
     }
     XmlNode serialNumberNode = resultNode.FirstChild("SerialNumber");
     if(!serialNumberNode.IsNull())
     {
-      m_serialNumber = serialNumberNode.GetText();
+      m_serialNumber = Aws::Utils::Xml::DecodeEscapedXmlText(serialNumberNode.GetText());
       m_serialNumberHasBeenSet = true;
     }
     XmlNode enableDateNode = resultNode.FirstChild("EnableDate");
     if(!enableDateNode.IsNull())
     {
-      m_enableDate = DateTime(StringUtils::Trim(enableDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_enableDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_enableDateHasBeenSet = true;
     }
   }

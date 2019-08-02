@@ -62,31 +62,31 @@ StackSetOperationSummary& StackSetOperationSummary::operator =(const XmlNode& xm
     XmlNode operationIdNode = resultNode.FirstChild("OperationId");
     if(!operationIdNode.IsNull())
     {
-      m_operationId = operationIdNode.GetText();
+      m_operationId = Aws::Utils::Xml::DecodeEscapedXmlText(operationIdNode.GetText());
       m_operationIdHasBeenSet = true;
     }
     XmlNode actionNode = resultNode.FirstChild("Action");
     if(!actionNode.IsNull())
     {
-      m_action = StackSetOperationActionMapper::GetStackSetOperationActionForName(StringUtils::Trim(actionNode.GetText().c_str()).c_str());
+      m_action = StackSetOperationActionMapper::GetStackSetOperationActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionNode.GetText()).c_str()).c_str());
       m_actionHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StackSetOperationStatusMapper::GetStackSetOperationStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = StackSetOperationStatusMapper::GetStackSetOperationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode creationTimestampNode = resultNode.FirstChild("CreationTimestamp");
     if(!creationTimestampNode.IsNull())
     {
-      m_creationTimestamp = DateTime(StringUtils::Trim(creationTimestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_creationTimestampHasBeenSet = true;
     }
     XmlNode endTimestampNode = resultNode.FirstChild("EndTimestamp");
     if(!endTimestampNode.IsNull())
     {
-      m_endTimestamp = DateTime(StringUtils::Trim(endTimestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_endTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_endTimestampHasBeenSet = true;
     }
   }

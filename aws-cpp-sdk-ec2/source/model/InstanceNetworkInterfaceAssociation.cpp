@@ -54,19 +54,19 @@ InstanceNetworkInterfaceAssociation& InstanceNetworkInterfaceAssociation::operat
     XmlNode ipOwnerIdNode = resultNode.FirstChild("ipOwnerId");
     if(!ipOwnerIdNode.IsNull())
     {
-      m_ipOwnerId = ipOwnerIdNode.GetText();
+      m_ipOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(ipOwnerIdNode.GetText());
       m_ipOwnerIdHasBeenSet = true;
     }
     XmlNode publicDnsNameNode = resultNode.FirstChild("publicDnsName");
     if(!publicDnsNameNode.IsNull())
     {
-      m_publicDnsName = publicDnsNameNode.GetText();
+      m_publicDnsName = Aws::Utils::Xml::DecodeEscapedXmlText(publicDnsNameNode.GetText());
       m_publicDnsNameHasBeenSet = true;
     }
     XmlNode publicIpNode = resultNode.FirstChild("publicIp");
     if(!publicIpNode.IsNull())
     {
-      m_publicIp = publicIpNode.GetText();
+      m_publicIp = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpNode.GetText());
       m_publicIpHasBeenSet = true;
     }
   }

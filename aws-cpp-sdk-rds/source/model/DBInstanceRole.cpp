@@ -54,19 +54,19 @@ DBInstanceRole& DBInstanceRole::operator =(const XmlNode& xmlNode)
     XmlNode roleArnNode = resultNode.FirstChild("RoleArn");
     if(!roleArnNode.IsNull())
     {
-      m_roleArn = roleArnNode.GetText();
+      m_roleArn = Aws::Utils::Xml::DecodeEscapedXmlText(roleArnNode.GetText());
       m_roleArnHasBeenSet = true;
     }
     XmlNode featureNameNode = resultNode.FirstChild("FeatureName");
     if(!featureNameNode.IsNull())
     {
-      m_featureName = featureNameNode.GetText();
+      m_featureName = Aws::Utils::Xml::DecodeEscapedXmlText(featureNameNode.GetText());
       m_featureNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = statusNode.GetText();
+      m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
   }

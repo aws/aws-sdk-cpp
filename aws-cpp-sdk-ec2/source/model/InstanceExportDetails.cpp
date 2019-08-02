@@ -54,13 +54,13 @@ InstanceExportDetails& InstanceExportDetails::operator =(const XmlNode& xmlNode)
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = instanceIdNode.GetText();
+      m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
     }
     XmlNode targetEnvironmentNode = resultNode.FirstChild("targetEnvironment");
     if(!targetEnvironmentNode.IsNull())
     {
-      m_targetEnvironment = ExportEnvironmentMapper::GetExportEnvironmentForName(StringUtils::Trim(targetEnvironmentNode.GetText().c_str()).c_str());
+      m_targetEnvironment = ExportEnvironmentMapper::GetExportEnvironmentForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetEnvironmentNode.GetText()).c_str()).c_str());
       m_targetEnvironmentHasBeenSet = true;
     }
   }

@@ -62,25 +62,25 @@ MultipartUpload& MultipartUpload::operator =(const XmlNode& xmlNode)
     XmlNode uploadIdNode = resultNode.FirstChild("UploadId");
     if(!uploadIdNode.IsNull())
     {
-      m_uploadId = uploadIdNode.GetText();
+      m_uploadId = Aws::Utils::Xml::DecodeEscapedXmlText(uploadIdNode.GetText());
       m_uploadIdHasBeenSet = true;
     }
     XmlNode keyNode = resultNode.FirstChild("Key");
     if(!keyNode.IsNull())
     {
-      m_key = keyNode.GetText();
+      m_key = Aws::Utils::Xml::DecodeEscapedXmlText(keyNode.GetText());
       m_keyHasBeenSet = true;
     }
     XmlNode initiatedNode = resultNode.FirstChild("Initiated");
     if(!initiatedNode.IsNull())
     {
-      m_initiated = DateTime(StringUtils::Trim(initiatedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_initiated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(initiatedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_initiatedHasBeenSet = true;
     }
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");
     if(!storageClassNode.IsNull())
     {
-      m_storageClass = StorageClassMapper::GetStorageClassForName(StringUtils::Trim(storageClassNode.GetText().c_str()).c_str());
+      m_storageClass = StorageClassMapper::GetStorageClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageClassNode.GetText()).c_str()).c_str());
       m_storageClassHasBeenSet = true;
     }
     XmlNode ownerNode = resultNode.FirstChild("Owner");

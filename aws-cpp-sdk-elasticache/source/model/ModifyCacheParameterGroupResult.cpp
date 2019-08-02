@@ -51,7 +51,7 @@ ModifyCacheParameterGroupResult& ModifyCacheParameterGroupResult::operator =(con
     XmlNode cacheParameterGroupNameNode = resultNode.FirstChild("CacheParameterGroupName");
     if(!cacheParameterGroupNameNode.IsNull())
     {
-      m_cacheParameterGroupName = cacheParameterGroupNameNode.GetText();
+      m_cacheParameterGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(cacheParameterGroupNameNode.GetText());
     }
   }
 

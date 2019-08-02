@@ -51,7 +51,7 @@ DescribeEventsResult& DescribeEventsResult::operator =(const Aws::AmazonWebServi
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
-      m_marker = markerNode.GetText();
+      m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
     }
     XmlNode eventsNode = resultNode.FirstChild("Events");
     if(!eventsNode.IsNull())

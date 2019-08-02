@@ -58,25 +58,25 @@ ActiveInstance& ActiveInstance::operator =(const XmlNode& xmlNode)
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = instanceIdNode.GetText();
+      m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = instanceTypeNode.GetText();
+      m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
       m_instanceTypeHasBeenSet = true;
     }
     XmlNode spotInstanceRequestIdNode = resultNode.FirstChild("spotInstanceRequestId");
     if(!spotInstanceRequestIdNode.IsNull())
     {
-      m_spotInstanceRequestId = spotInstanceRequestIdNode.GetText();
+      m_spotInstanceRequestId = Aws::Utils::Xml::DecodeEscapedXmlText(spotInstanceRequestIdNode.GetText());
       m_spotInstanceRequestIdHasBeenSet = true;
     }
     XmlNode instanceHealthNode = resultNode.FirstChild("instanceHealth");
     if(!instanceHealthNode.IsNull())
     {
-      m_instanceHealth = InstanceHealthStatusMapper::GetInstanceHealthStatusForName(StringUtils::Trim(instanceHealthNode.GetText().c_str()).c_str());
+      m_instanceHealth = InstanceHealthStatusMapper::GetInstanceHealthStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceHealthNode.GetText()).c_str()).c_str());
       m_instanceHealthHasBeenSet = true;
     }
   }

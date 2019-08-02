@@ -54,13 +54,13 @@ LBCookieStickinessPolicy& LBCookieStickinessPolicy::operator =(const XmlNode& xm
     XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
     if(!policyNameNode.IsNull())
     {
-      m_policyName = policyNameNode.GetText();
+      m_policyName = Aws::Utils::Xml::DecodeEscapedXmlText(policyNameNode.GetText());
       m_policyNameHasBeenSet = true;
     }
     XmlNode cookieExpirationPeriodNode = resultNode.FirstChild("CookieExpirationPeriod");
     if(!cookieExpirationPeriodNode.IsNull())
     {
-      m_cookieExpirationPeriod = StringUtils::ConvertToInt64(StringUtils::Trim(cookieExpirationPeriodNode.GetText().c_str()).c_str());
+      m_cookieExpirationPeriod = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cookieExpirationPeriodNode.GetText()).c_str()).c_str());
       m_cookieExpirationPeriodHasBeenSet = true;
     }
   }

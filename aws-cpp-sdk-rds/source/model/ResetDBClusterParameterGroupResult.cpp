@@ -51,7 +51,7 @@ ResetDBClusterParameterGroupResult& ResetDBClusterParameterGroupResult::operator
     XmlNode dBClusterParameterGroupNameNode = resultNode.FirstChild("DBClusterParameterGroupName");
     if(!dBClusterParameterGroupNameNode.IsNull())
     {
-      m_dBClusterParameterGroupName = dBClusterParameterGroupNameNode.GetText();
+      m_dBClusterParameterGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterParameterGroupNameNode.GetText());
     }
   }
 

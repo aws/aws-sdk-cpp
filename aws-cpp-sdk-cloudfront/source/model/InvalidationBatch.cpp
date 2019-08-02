@@ -58,7 +58,7 @@ InvalidationBatch& InvalidationBatch::operator =(const XmlNode& xmlNode)
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
     if(!callerReferenceNode.IsNull())
     {
-      m_callerReference = callerReferenceNode.GetText();
+      m_callerReference = Aws::Utils::Xml::DecodeEscapedXmlText(callerReferenceNode.GetText());
       m_callerReferenceHasBeenSet = true;
     }
   }

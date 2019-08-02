@@ -56,7 +56,7 @@ DisassociateSubnetCidrBlockResponse& DisassociateSubnetCidrBlockResponse::operat
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
-      m_subnetId = subnetIdNode.GetText();
+      m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
     }
   }
 

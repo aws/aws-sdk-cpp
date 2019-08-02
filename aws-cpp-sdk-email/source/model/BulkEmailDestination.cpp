@@ -72,7 +72,7 @@ BulkEmailDestination& BulkEmailDestination::operator =(const XmlNode& xmlNode)
     XmlNode replacementTemplateDataNode = resultNode.FirstChild("ReplacementTemplateData");
     if(!replacementTemplateDataNode.IsNull())
     {
-      m_replacementTemplateData = replacementTemplateDataNode.GetText();
+      m_replacementTemplateData = Aws::Utils::Xml::DecodeEscapedXmlText(replacementTemplateDataNode.GetText());
       m_replacementTemplateDataHasBeenSet = true;
     }
   }

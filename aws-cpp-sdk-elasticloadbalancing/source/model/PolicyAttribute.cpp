@@ -52,13 +52,13 @@ PolicyAttribute& PolicyAttribute::operator =(const XmlNode& xmlNode)
     XmlNode attributeNameNode = resultNode.FirstChild("AttributeName");
     if(!attributeNameNode.IsNull())
     {
-      m_attributeName = attributeNameNode.GetText();
+      m_attributeName = Aws::Utils::Xml::DecodeEscapedXmlText(attributeNameNode.GetText());
       m_attributeNameHasBeenSet = true;
     }
     XmlNode attributeValueNode = resultNode.FirstChild("AttributeValue");
     if(!attributeValueNode.IsNull())
     {
-      m_attributeValue = attributeValueNode.GetText();
+      m_attributeValue = Aws::Utils::Xml::DecodeEscapedXmlText(attributeValueNode.GetText());
       m_attributeValueHasBeenSet = true;
     }
   }

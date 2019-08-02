@@ -51,7 +51,7 @@ AttachNetworkInterfaceResponse& AttachNetworkInterfaceResponse::operator =(const
     XmlNode attachmentIdNode = resultNode.FirstChild("attachmentId");
     if(!attachmentIdNode.IsNull())
     {
-      m_attachmentId = attachmentIdNode.GetText();
+      m_attachmentId = Aws::Utils::Xml::DecodeEscapedXmlText(attachmentIdNode.GetText());
     }
   }
 

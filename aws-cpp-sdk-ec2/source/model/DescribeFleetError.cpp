@@ -64,19 +64,19 @@ DescribeFleetError& DescribeFleetError::operator =(const XmlNode& xmlNode)
     XmlNode lifecycleNode = resultNode.FirstChild("lifecycle");
     if(!lifecycleNode.IsNull())
     {
-      m_lifecycle = InstanceLifecycleMapper::GetInstanceLifecycleForName(StringUtils::Trim(lifecycleNode.GetText().c_str()).c_str());
+      m_lifecycle = InstanceLifecycleMapper::GetInstanceLifecycleForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lifecycleNode.GetText()).c_str()).c_str());
       m_lifecycleHasBeenSet = true;
     }
     XmlNode errorCodeNode = resultNode.FirstChild("errorCode");
     if(!errorCodeNode.IsNull())
     {
-      m_errorCode = errorCodeNode.GetText();
+      m_errorCode = Aws::Utils::Xml::DecodeEscapedXmlText(errorCodeNode.GetText());
       m_errorCodeHasBeenSet = true;
     }
     XmlNode errorMessageNode = resultNode.FirstChild("errorMessage");
     if(!errorMessageNode.IsNull())
     {
-      m_errorMessage = errorMessageNode.GetText();
+      m_errorMessage = Aws::Utils::Xml::DecodeEscapedXmlText(errorMessageNode.GetText());
       m_errorMessageHasBeenSet = true;
     }
   }

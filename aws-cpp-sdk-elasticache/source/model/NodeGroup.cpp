@@ -60,13 +60,13 @@ NodeGroup& NodeGroup::operator =(const XmlNode& xmlNode)
     XmlNode nodeGroupIdNode = resultNode.FirstChild("NodeGroupId");
     if(!nodeGroupIdNode.IsNull())
     {
-      m_nodeGroupId = nodeGroupIdNode.GetText();
+      m_nodeGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(nodeGroupIdNode.GetText());
       m_nodeGroupIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = statusNode.GetText();
+      m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
     XmlNode primaryEndpointNode = resultNode.FirstChild("PrimaryEndpoint");
@@ -84,7 +84,7 @@ NodeGroup& NodeGroup::operator =(const XmlNode& xmlNode)
     XmlNode slotsNode = resultNode.FirstChild("Slots");
     if(!slotsNode.IsNull())
     {
-      m_slots = slotsNode.GetText();
+      m_slots = Aws::Utils::Xml::DecodeEscapedXmlText(slotsNode.GetText());
       m_slotsHasBeenSet = true;
     }
     XmlNode nodeGroupMembersNode = resultNode.FirstChild("NodeGroupMembers");

@@ -52,13 +52,13 @@ DBClusterOptionGroupStatus& DBClusterOptionGroupStatus::operator =(const XmlNode
     XmlNode dBClusterOptionGroupNameNode = resultNode.FirstChild("DBClusterOptionGroupName");
     if(!dBClusterOptionGroupNameNode.IsNull())
     {
-      m_dBClusterOptionGroupName = dBClusterOptionGroupNameNode.GetText();
+      m_dBClusterOptionGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterOptionGroupNameNode.GetText());
       m_dBClusterOptionGroupNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = statusNode.GetText();
+      m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
   }

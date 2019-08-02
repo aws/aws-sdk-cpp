@@ -52,7 +52,7 @@ ListObjectsV2Result& ListObjectsV2Result::operator =(const Aws::AmazonWebService
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
     {
-      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
     }
     XmlNode contentsNode = resultNode.FirstChild("Contents");
     if(!contentsNode.IsNull())
@@ -68,22 +68,22 @@ ListObjectsV2Result& ListObjectsV2Result::operator =(const Aws::AmazonWebService
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = nameNode.GetText();
+      m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
     if(!prefixNode.IsNull())
     {
-      m_prefix = prefixNode.GetText();
+      m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
     }
     XmlNode delimiterNode = resultNode.FirstChild("Delimiter");
     if(!delimiterNode.IsNull())
     {
-      m_delimiter = delimiterNode.GetText();
+      m_delimiter = Aws::Utils::Xml::DecodeEscapedXmlText(delimiterNode.GetText());
     }
     XmlNode maxKeysNode = resultNode.FirstChild("MaxKeys");
     if(!maxKeysNode.IsNull())
     {
-      m_maxKeys = StringUtils::ConvertToInt32(StringUtils::Trim(maxKeysNode.GetText().c_str()).c_str());
+      m_maxKeys = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxKeysNode.GetText()).c_str()).c_str());
     }
     XmlNode commonPrefixesNode = resultNode.FirstChild("CommonPrefixes");
     if(!commonPrefixesNode.IsNull())
@@ -99,27 +99,27 @@ ListObjectsV2Result& ListObjectsV2Result::operator =(const Aws::AmazonWebService
     XmlNode encodingTypeNode = resultNode.FirstChild("EncodingType");
     if(!encodingTypeNode.IsNull())
     {
-      m_encodingType = EncodingTypeMapper::GetEncodingTypeForName(StringUtils::Trim(encodingTypeNode.GetText().c_str()).c_str());
+      m_encodingType = EncodingTypeMapper::GetEncodingTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encodingTypeNode.GetText()).c_str()).c_str());
     }
     XmlNode keyCountNode = resultNode.FirstChild("KeyCount");
     if(!keyCountNode.IsNull())
     {
-      m_keyCount = StringUtils::ConvertToInt32(StringUtils::Trim(keyCountNode.GetText().c_str()).c_str());
+      m_keyCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(keyCountNode.GetText()).c_str()).c_str());
     }
     XmlNode continuationTokenNode = resultNode.FirstChild("ContinuationToken");
     if(!continuationTokenNode.IsNull())
     {
-      m_continuationToken = continuationTokenNode.GetText();
+      m_continuationToken = Aws::Utils::Xml::DecodeEscapedXmlText(continuationTokenNode.GetText());
     }
     XmlNode nextContinuationTokenNode = resultNode.FirstChild("NextContinuationToken");
     if(!nextContinuationTokenNode.IsNull())
     {
-      m_nextContinuationToken = nextContinuationTokenNode.GetText();
+      m_nextContinuationToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextContinuationTokenNode.GetText());
     }
     XmlNode startAfterNode = resultNode.FirstChild("StartAfter");
     if(!startAfterNode.IsNull())
     {
-      m_startAfter = startAfterNode.GetText();
+      m_startAfter = Aws::Utils::Xml::DecodeEscapedXmlText(startAfterNode.GetText());
     }
   }
 

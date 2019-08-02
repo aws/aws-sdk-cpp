@@ -53,7 +53,7 @@ DisableEbsEncryptionByDefaultResponse& DisableEbsEncryptionByDefaultResponse::op
     XmlNode ebsEncryptionByDefaultNode = resultNode.FirstChild("ebsEncryptionByDefault");
     if(!ebsEncryptionByDefaultNode.IsNull())
     {
-      m_ebsEncryptionByDefault = StringUtils::ConvertToBool(StringUtils::Trim(ebsEncryptionByDefaultNode.GetText().c_str()).c_str());
+      m_ebsEncryptionByDefault = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ebsEncryptionByDefaultNode.GetText()).c_str()).c_str());
     }
   }
 

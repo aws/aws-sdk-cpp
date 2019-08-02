@@ -52,13 +52,13 @@ DBSecurityGroupMembership& DBSecurityGroupMembership::operator =(const XmlNode& 
     XmlNode dBSecurityGroupNameNode = resultNode.FirstChild("DBSecurityGroupName");
     if(!dBSecurityGroupNameNode.IsNull())
     {
-      m_dBSecurityGroupName = dBSecurityGroupNameNode.GetText();
+      m_dBSecurityGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(dBSecurityGroupNameNode.GetText());
       m_dBSecurityGroupNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = statusNode.GetText();
+      m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
   }

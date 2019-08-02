@@ -66,7 +66,7 @@ AvailableCapacity& AvailableCapacity::operator =(const XmlNode& xmlNode)
     XmlNode availableVCpusNode = resultNode.FirstChild("availableVCpus");
     if(!availableVCpusNode.IsNull())
     {
-      m_availableVCpus = StringUtils::ConvertToInt32(StringUtils::Trim(availableVCpusNode.GetText().c_str()).c_str());
+      m_availableVCpus = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(availableVCpusNode.GetText()).c_str()).c_str());
       m_availableVCpusHasBeenSet = true;
     }
   }

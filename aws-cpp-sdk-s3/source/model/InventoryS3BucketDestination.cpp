@@ -60,25 +60,25 @@ InventoryS3BucketDestination& InventoryS3BucketDestination::operator =(const Xml
     XmlNode accountIdNode = resultNode.FirstChild("AccountId");
     if(!accountIdNode.IsNull())
     {
-      m_accountId = accountIdNode.GetText();
+      m_accountId = Aws::Utils::Xml::DecodeEscapedXmlText(accountIdNode.GetText());
       m_accountIdHasBeenSet = true;
     }
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
     if(!bucketNode.IsNull())
     {
-      m_bucket = bucketNode.GetText();
+      m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
       m_bucketHasBeenSet = true;
     }
     XmlNode formatNode = resultNode.FirstChild("Format");
     if(!formatNode.IsNull())
     {
-      m_format = InventoryFormatMapper::GetInventoryFormatForName(StringUtils::Trim(formatNode.GetText().c_str()).c_str());
+      m_format = InventoryFormatMapper::GetInventoryFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()).c_str());
       m_formatHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
     if(!prefixNode.IsNull())
     {
-      m_prefix = prefixNode.GetText();
+      m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
       m_prefixHasBeenSet = true;
     }
     XmlNode encryptionNode = resultNode.FirstChild("Encryption");

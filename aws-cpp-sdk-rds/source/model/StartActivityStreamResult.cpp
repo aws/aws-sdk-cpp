@@ -57,27 +57,27 @@ StartActivityStreamResult& StartActivityStreamResult::operator =(const Aws::Amaz
     XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
-      m_kmsKeyId = kmsKeyIdNode.GetText();
+      m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
     }
     XmlNode kinesisStreamNameNode = resultNode.FirstChild("KinesisStreamName");
     if(!kinesisStreamNameNode.IsNull())
     {
-      m_kinesisStreamName = kinesisStreamNameNode.GetText();
+      m_kinesisStreamName = Aws::Utils::Xml::DecodeEscapedXmlText(kinesisStreamNameNode.GetText());
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ActivityStreamStatusMapper::GetActivityStreamStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = ActivityStreamStatusMapper::GetActivityStreamStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
     }
     XmlNode modeNode = resultNode.FirstChild("Mode");
     if(!modeNode.IsNull())
     {
-      m_mode = ActivityStreamModeMapper::GetActivityStreamModeForName(StringUtils::Trim(modeNode.GetText().c_str()).c_str());
+      m_mode = ActivityStreamModeMapper::GetActivityStreamModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()).c_str());
     }
     XmlNode applyImmediatelyNode = resultNode.FirstChild("ApplyImmediately");
     if(!applyImmediatelyNode.IsNull())
     {
-      m_applyImmediately = StringUtils::ConvertToBool(StringUtils::Trim(applyImmediatelyNode.GetText().c_str()).c_str());
+      m_applyImmediately = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(applyImmediatelyNode.GetText()).c_str()).c_str());
     }
   }
 

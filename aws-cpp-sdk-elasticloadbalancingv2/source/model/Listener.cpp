@@ -66,25 +66,25 @@ Listener& Listener::operator =(const XmlNode& xmlNode)
     XmlNode listenerArnNode = resultNode.FirstChild("ListenerArn");
     if(!listenerArnNode.IsNull())
     {
-      m_listenerArn = listenerArnNode.GetText();
+      m_listenerArn = Aws::Utils::Xml::DecodeEscapedXmlText(listenerArnNode.GetText());
       m_listenerArnHasBeenSet = true;
     }
     XmlNode loadBalancerArnNode = resultNode.FirstChild("LoadBalancerArn");
     if(!loadBalancerArnNode.IsNull())
     {
-      m_loadBalancerArn = loadBalancerArnNode.GetText();
+      m_loadBalancerArn = Aws::Utils::Xml::DecodeEscapedXmlText(loadBalancerArnNode.GetText());
       m_loadBalancerArnHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
     if(!portNode.IsNull())
     {
-      m_port = StringUtils::ConvertToInt32(StringUtils::Trim(portNode.GetText().c_str()).c_str());
+      m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = ProtocolEnumMapper::GetProtocolEnumForName(StringUtils::Trim(protocolNode.GetText().c_str()).c_str());
+      m_protocol = ProtocolEnumMapper::GetProtocolEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
       m_protocolHasBeenSet = true;
     }
     XmlNode certificatesNode = resultNode.FirstChild("Certificates");
@@ -102,7 +102,7 @@ Listener& Listener::operator =(const XmlNode& xmlNode)
     XmlNode sslPolicyNode = resultNode.FirstChild("SslPolicy");
     if(!sslPolicyNode.IsNull())
     {
-      m_sslPolicy = sslPolicyNode.GetText();
+      m_sslPolicy = Aws::Utils::Xml::DecodeEscapedXmlText(sslPolicyNode.GetText());
       m_sslPolicyHasBeenSet = true;
     }
     XmlNode defaultActionsNode = resultNode.FirstChild("DefaultActions");

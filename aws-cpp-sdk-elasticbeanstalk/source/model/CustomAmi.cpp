@@ -52,13 +52,13 @@ CustomAmi& CustomAmi::operator =(const XmlNode& xmlNode)
     XmlNode virtualizationTypeNode = resultNode.FirstChild("VirtualizationType");
     if(!virtualizationTypeNode.IsNull())
     {
-      m_virtualizationType = virtualizationTypeNode.GetText();
+      m_virtualizationType = Aws::Utils::Xml::DecodeEscapedXmlText(virtualizationTypeNode.GetText());
       m_virtualizationTypeHasBeenSet = true;
     }
     XmlNode imageIdNode = resultNode.FirstChild("ImageId");
     if(!imageIdNode.IsNull())
     {
-      m_imageId = imageIdNode.GetText();
+      m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
       m_imageIdHasBeenSet = true;
     }
   }

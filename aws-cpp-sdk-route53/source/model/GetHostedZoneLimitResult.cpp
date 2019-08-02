@@ -51,7 +51,7 @@ GetHostedZoneLimitResult& GetHostedZoneLimitResult::operator =(const Aws::Amazon
     XmlNode countNode = resultNode.FirstChild("Count");
     if(!countNode.IsNull())
     {
-      m_count = StringUtils::ConvertToInt64(StringUtils::Trim(countNode.GetText().c_str()).c_str());
+      m_count = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(countNode.GetText()).c_str()).c_str());
     }
   }
 

@@ -56,19 +56,19 @@ DocumentSuggesterOptions& DocumentSuggesterOptions::operator =(const XmlNode& xm
     XmlNode sourceFieldNode = resultNode.FirstChild("SourceField");
     if(!sourceFieldNode.IsNull())
     {
-      m_sourceField = sourceFieldNode.GetText();
+      m_sourceField = Aws::Utils::Xml::DecodeEscapedXmlText(sourceFieldNode.GetText());
       m_sourceFieldHasBeenSet = true;
     }
     XmlNode fuzzyMatchingNode = resultNode.FirstChild("FuzzyMatching");
     if(!fuzzyMatchingNode.IsNull())
     {
-      m_fuzzyMatching = SuggesterFuzzyMatchingMapper::GetSuggesterFuzzyMatchingForName(StringUtils::Trim(fuzzyMatchingNode.GetText().c_str()).c_str());
+      m_fuzzyMatching = SuggesterFuzzyMatchingMapper::GetSuggesterFuzzyMatchingForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fuzzyMatchingNode.GetText()).c_str()).c_str());
       m_fuzzyMatchingHasBeenSet = true;
     }
     XmlNode sortExpressionNode = resultNode.FirstChild("SortExpression");
     if(!sortExpressionNode.IsNull())
     {
-      m_sortExpression = sortExpressionNode.GetText();
+      m_sortExpression = Aws::Utils::Xml::DecodeEscapedXmlText(sortExpressionNode.GetText());
       m_sortExpressionHasBeenSet = true;
     }
   }

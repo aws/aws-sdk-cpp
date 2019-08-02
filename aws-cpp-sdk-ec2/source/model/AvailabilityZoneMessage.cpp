@@ -50,7 +50,7 @@ AvailabilityZoneMessage& AvailabilityZoneMessage::operator =(const XmlNode& xmlN
     XmlNode messageNode = resultNode.FirstChild("message");
     if(!messageNode.IsNull())
     {
-      m_message = messageNode.GetText();
+      m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
     }
   }

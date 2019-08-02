@@ -53,12 +53,12 @@ RestoreAddressToClassicResponse& RestoreAddressToClassicResponse::operator =(con
     XmlNode publicIpNode = resultNode.FirstChild("publicIp");
     if(!publicIpNode.IsNull())
     {
-      m_publicIp = publicIpNode.GetText();
+      m_publicIp = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpNode.GetText());
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = StatusMapper::GetStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = StatusMapper::GetStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
     }
   }
 

@@ -62,25 +62,25 @@ HostProperties& HostProperties::operator =(const XmlNode& xmlNode)
     XmlNode coresNode = resultNode.FirstChild("cores");
     if(!coresNode.IsNull())
     {
-      m_cores = StringUtils::ConvertToInt32(StringUtils::Trim(coresNode.GetText().c_str()).c_str());
+      m_cores = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(coresNode.GetText()).c_str()).c_str());
       m_coresHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = instanceTypeNode.GetText();
+      m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
       m_instanceTypeHasBeenSet = true;
     }
     XmlNode socketsNode = resultNode.FirstChild("sockets");
     if(!socketsNode.IsNull())
     {
-      m_sockets = StringUtils::ConvertToInt32(StringUtils::Trim(socketsNode.GetText().c_str()).c_str());
+      m_sockets = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(socketsNode.GetText()).c_str()).c_str());
       m_socketsHasBeenSet = true;
     }
     XmlNode totalVCpusNode = resultNode.FirstChild("totalVCpus");
     if(!totalVCpusNode.IsNull())
     {
-      m_totalVCpus = StringUtils::ConvertToInt32(StringUtils::Trim(totalVCpusNode.GetText().c_str()).c_str());
+      m_totalVCpus = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalVCpusNode.GetText()).c_str()).c_str());
       m_totalVCpusHasBeenSet = true;
     }
   }

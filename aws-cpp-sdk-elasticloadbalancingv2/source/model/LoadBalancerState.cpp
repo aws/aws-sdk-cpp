@@ -54,13 +54,13 @@ LoadBalancerState& LoadBalancerState::operator =(const XmlNode& xmlNode)
     XmlNode codeNode = resultNode.FirstChild("Code");
     if(!codeNode.IsNull())
     {
-      m_code = LoadBalancerStateEnumMapper::GetLoadBalancerStateEnumForName(StringUtils::Trim(codeNode.GetText().c_str()).c_str());
+      m_code = LoadBalancerStateEnumMapper::GetLoadBalancerStateEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()).c_str());
       m_codeHasBeenSet = true;
     }
     XmlNode reasonNode = resultNode.FirstChild("Reason");
     if(!reasonNode.IsNull())
     {
-      m_reason = reasonNode.GetText();
+      m_reason = Aws::Utils::Xml::DecodeEscapedXmlText(reasonNode.GetText());
       m_reasonHasBeenSet = true;
     }
   }

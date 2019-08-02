@@ -62,31 +62,31 @@ NetworkInterfacePermission& NetworkInterfacePermission::operator =(const XmlNode
     XmlNode networkInterfacePermissionIdNode = resultNode.FirstChild("networkInterfacePermissionId");
     if(!networkInterfacePermissionIdNode.IsNull())
     {
-      m_networkInterfacePermissionId = networkInterfacePermissionIdNode.GetText();
+      m_networkInterfacePermissionId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfacePermissionIdNode.GetText());
       m_networkInterfacePermissionIdHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
-      m_networkInterfaceId = networkInterfaceIdNode.GetText();
+      m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode awsAccountIdNode = resultNode.FirstChild("awsAccountId");
     if(!awsAccountIdNode.IsNull())
     {
-      m_awsAccountId = awsAccountIdNode.GetText();
+      m_awsAccountId = Aws::Utils::Xml::DecodeEscapedXmlText(awsAccountIdNode.GetText());
       m_awsAccountIdHasBeenSet = true;
     }
     XmlNode awsServiceNode = resultNode.FirstChild("awsService");
     if(!awsServiceNode.IsNull())
     {
-      m_awsService = awsServiceNode.GetText();
+      m_awsService = Aws::Utils::Xml::DecodeEscapedXmlText(awsServiceNode.GetText());
       m_awsServiceHasBeenSet = true;
     }
     XmlNode permissionNode = resultNode.FirstChild("permission");
     if(!permissionNode.IsNull())
     {
-      m_permission = InterfacePermissionTypeMapper::GetInterfacePermissionTypeForName(StringUtils::Trim(permissionNode.GetText().c_str()).c_str());
+      m_permission = InterfacePermissionTypeMapper::GetInterfacePermissionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionNode.GetText()).c_str()).c_str());
       m_permissionHasBeenSet = true;
     }
     XmlNode permissionStateNode = resultNode.FirstChild("permissionState");

@@ -56,19 +56,19 @@ ClusterDbRevision& ClusterDbRevision::operator =(const XmlNode& xmlNode)
     XmlNode clusterIdentifierNode = resultNode.FirstChild("ClusterIdentifier");
     if(!clusterIdentifierNode.IsNull())
     {
-      m_clusterIdentifier = clusterIdentifierNode.GetText();
+      m_clusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(clusterIdentifierNode.GetText());
       m_clusterIdentifierHasBeenSet = true;
     }
     XmlNode currentDatabaseRevisionNode = resultNode.FirstChild("CurrentDatabaseRevision");
     if(!currentDatabaseRevisionNode.IsNull())
     {
-      m_currentDatabaseRevision = currentDatabaseRevisionNode.GetText();
+      m_currentDatabaseRevision = Aws::Utils::Xml::DecodeEscapedXmlText(currentDatabaseRevisionNode.GetText());
       m_currentDatabaseRevisionHasBeenSet = true;
     }
     XmlNode databaseRevisionReleaseDateNode = resultNode.FirstChild("DatabaseRevisionReleaseDate");
     if(!databaseRevisionReleaseDateNode.IsNull())
     {
-      m_databaseRevisionReleaseDate = DateTime(StringUtils::Trim(databaseRevisionReleaseDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_databaseRevisionReleaseDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(databaseRevisionReleaseDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_databaseRevisionReleaseDateHasBeenSet = true;
     }
     XmlNode revisionTargetsNode = resultNode.FirstChild("RevisionTargets");

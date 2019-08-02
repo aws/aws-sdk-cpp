@@ -50,7 +50,7 @@ MetricGranularityType& MetricGranularityType::operator =(const XmlNode& xmlNode)
     XmlNode granularityNode = resultNode.FirstChild("Granularity");
     if(!granularityNode.IsNull())
     {
-      m_granularity = granularityNode.GetText();
+      m_granularity = Aws::Utils::Xml::DecodeEscapedXmlText(granularityNode.GetText());
       m_granularityHasBeenSet = true;
     }
   }

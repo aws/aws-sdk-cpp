@@ -52,13 +52,13 @@ KinesisFirehoseDestination& KinesisFirehoseDestination::operator =(const XmlNode
     XmlNode iAMRoleARNNode = resultNode.FirstChild("IAMRoleARN");
     if(!iAMRoleARNNode.IsNull())
     {
-      m_iAMRoleARN = iAMRoleARNNode.GetText();
+      m_iAMRoleARN = Aws::Utils::Xml::DecodeEscapedXmlText(iAMRoleARNNode.GetText());
       m_iAMRoleARNHasBeenSet = true;
     }
     XmlNode deliveryStreamARNNode = resultNode.FirstChild("DeliveryStreamARN");
     if(!deliveryStreamARNNode.IsNull())
     {
-      m_deliveryStreamARN = deliveryStreamARNNode.GetText();
+      m_deliveryStreamARN = Aws::Utils::Xml::DecodeEscapedXmlText(deliveryStreamARNNode.GetText());
       m_deliveryStreamARNHasBeenSet = true;
     }
   }

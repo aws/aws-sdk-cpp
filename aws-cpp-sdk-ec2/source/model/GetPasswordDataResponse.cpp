@@ -51,17 +51,17 @@ GetPasswordDataResponse& GetPasswordDataResponse::operator =(const Aws::AmazonWe
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = instanceIdNode.GetText();
+      m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
     }
     XmlNode passwordDataNode = resultNode.FirstChild("passwordData");
     if(!passwordDataNode.IsNull())
     {
-      m_passwordData = passwordDataNode.GetText();
+      m_passwordData = Aws::Utils::Xml::DecodeEscapedXmlText(passwordDataNode.GetText());
     }
     XmlNode timestampNode = resultNode.FirstChild("timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = DateTime(StringUtils::Trim(timestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
   }
 

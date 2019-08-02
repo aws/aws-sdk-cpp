@@ -62,31 +62,31 @@ BuildConfiguration& BuildConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode artifactNameNode = resultNode.FirstChild("ArtifactName");
     if(!artifactNameNode.IsNull())
     {
-      m_artifactName = artifactNameNode.GetText();
+      m_artifactName = Aws::Utils::Xml::DecodeEscapedXmlText(artifactNameNode.GetText());
       m_artifactNameHasBeenSet = true;
     }
     XmlNode codeBuildServiceRoleNode = resultNode.FirstChild("CodeBuildServiceRole");
     if(!codeBuildServiceRoleNode.IsNull())
     {
-      m_codeBuildServiceRole = codeBuildServiceRoleNode.GetText();
+      m_codeBuildServiceRole = Aws::Utils::Xml::DecodeEscapedXmlText(codeBuildServiceRoleNode.GetText());
       m_codeBuildServiceRoleHasBeenSet = true;
     }
     XmlNode computeTypeNode = resultNode.FirstChild("ComputeType");
     if(!computeTypeNode.IsNull())
     {
-      m_computeType = ComputeTypeMapper::GetComputeTypeForName(StringUtils::Trim(computeTypeNode.GetText().c_str()).c_str());
+      m_computeType = ComputeTypeMapper::GetComputeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(computeTypeNode.GetText()).c_str()).c_str());
       m_computeTypeHasBeenSet = true;
     }
     XmlNode imageNode = resultNode.FirstChild("Image");
     if(!imageNode.IsNull())
     {
-      m_image = imageNode.GetText();
+      m_image = Aws::Utils::Xml::DecodeEscapedXmlText(imageNode.GetText());
       m_imageHasBeenSet = true;
     }
     XmlNode timeoutInMinutesNode = resultNode.FirstChild("TimeoutInMinutes");
     if(!timeoutInMinutesNode.IsNull())
     {
-      m_timeoutInMinutes = StringUtils::ConvertToInt32(StringUtils::Trim(timeoutInMinutesNode.GetText().c_str()).c_str());
+      m_timeoutInMinutes = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timeoutInMinutesNode.GetText()).c_str()).c_str());
       m_timeoutInMinutesHasBeenSet = true;
     }
   }

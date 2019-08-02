@@ -54,7 +54,7 @@ LoggingEnabled& LoggingEnabled::operator =(const XmlNode& xmlNode)
     XmlNode targetBucketNode = resultNode.FirstChild("TargetBucket");
     if(!targetBucketNode.IsNull())
     {
-      m_targetBucket = targetBucketNode.GetText();
+      m_targetBucket = Aws::Utils::Xml::DecodeEscapedXmlText(targetBucketNode.GetText());
       m_targetBucketHasBeenSet = true;
     }
     XmlNode targetGrantsNode = resultNode.FirstChild("TargetGrants");
@@ -72,7 +72,7 @@ LoggingEnabled& LoggingEnabled::operator =(const XmlNode& xmlNode)
     XmlNode targetPrefixNode = resultNode.FirstChild("TargetPrefix");
     if(!targetPrefixNode.IsNull())
     {
-      m_targetPrefix = targetPrefixNode.GetText();
+      m_targetPrefix = Aws::Utils::Xml::DecodeEscapedXmlText(targetPrefixNode.GetText());
       m_targetPrefixHasBeenSet = true;
     }
   }

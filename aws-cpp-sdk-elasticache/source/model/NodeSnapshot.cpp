@@ -62,19 +62,19 @@ NodeSnapshot& NodeSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode cacheClusterIdNode = resultNode.FirstChild("CacheClusterId");
     if(!cacheClusterIdNode.IsNull())
     {
-      m_cacheClusterId = cacheClusterIdNode.GetText();
+      m_cacheClusterId = Aws::Utils::Xml::DecodeEscapedXmlText(cacheClusterIdNode.GetText());
       m_cacheClusterIdHasBeenSet = true;
     }
     XmlNode nodeGroupIdNode = resultNode.FirstChild("NodeGroupId");
     if(!nodeGroupIdNode.IsNull())
     {
-      m_nodeGroupId = nodeGroupIdNode.GetText();
+      m_nodeGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(nodeGroupIdNode.GetText());
       m_nodeGroupIdHasBeenSet = true;
     }
     XmlNode cacheNodeIdNode = resultNode.FirstChild("CacheNodeId");
     if(!cacheNodeIdNode.IsNull())
     {
-      m_cacheNodeId = cacheNodeIdNode.GetText();
+      m_cacheNodeId = Aws::Utils::Xml::DecodeEscapedXmlText(cacheNodeIdNode.GetText());
       m_cacheNodeIdHasBeenSet = true;
     }
     XmlNode nodeGroupConfigurationNode = resultNode.FirstChild("NodeGroupConfiguration");
@@ -86,19 +86,19 @@ NodeSnapshot& NodeSnapshot::operator =(const XmlNode& xmlNode)
     XmlNode cacheSizeNode = resultNode.FirstChild("CacheSize");
     if(!cacheSizeNode.IsNull())
     {
-      m_cacheSize = cacheSizeNode.GetText();
+      m_cacheSize = Aws::Utils::Xml::DecodeEscapedXmlText(cacheSizeNode.GetText());
       m_cacheSizeHasBeenSet = true;
     }
     XmlNode cacheNodeCreateTimeNode = resultNode.FirstChild("CacheNodeCreateTime");
     if(!cacheNodeCreateTimeNode.IsNull())
     {
-      m_cacheNodeCreateTime = DateTime(StringUtils::Trim(cacheNodeCreateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_cacheNodeCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cacheNodeCreateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_cacheNodeCreateTimeHasBeenSet = true;
     }
     XmlNode snapshotCreateTimeNode = resultNode.FirstChild("SnapshotCreateTime");
     if(!snapshotCreateTimeNode.IsNull())
     {
-      m_snapshotCreateTime = DateTime(StringUtils::Trim(snapshotCreateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_snapshotCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotCreateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_snapshotCreateTimeHasBeenSet = true;
     }
   }

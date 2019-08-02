@@ -54,7 +54,7 @@ Change& Change::operator =(const XmlNode& xmlNode)
     XmlNode actionNode = resultNode.FirstChild("Action");
     if(!actionNode.IsNull())
     {
-      m_action = ChangeActionMapper::GetChangeActionForName(StringUtils::Trim(actionNode.GetText().c_str()).c_str());
+      m_action = ChangeActionMapper::GetChangeActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionNode.GetText()).c_str()).c_str());
       m_actionHasBeenSet = true;
     }
     XmlNode resourceRecordSetNode = resultNode.FirstChild("ResourceRecordSet");

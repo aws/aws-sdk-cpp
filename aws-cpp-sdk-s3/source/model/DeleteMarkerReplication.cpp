@@ -52,7 +52,7 @@ DeleteMarkerReplication& DeleteMarkerReplication::operator =(const XmlNode& xmlN
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = DeleteMarkerReplicationStatusMapper::GetDeleteMarkerReplicationStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = DeleteMarkerReplicationStatusMapper::GetDeleteMarkerReplicationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
   }

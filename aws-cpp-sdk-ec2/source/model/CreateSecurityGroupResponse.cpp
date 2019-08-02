@@ -51,7 +51,7 @@ CreateSecurityGroupResponse& CreateSecurityGroupResponse::operator =(const Aws::
     XmlNode groupIdNode = resultNode.FirstChild("groupId");
     if(!groupIdNode.IsNull())
     {
-      m_groupId = groupIdNode.GetText();
+      m_groupId = Aws::Utils::Xml::DecodeEscapedXmlText(groupIdNode.GetText());
     }
   }
 

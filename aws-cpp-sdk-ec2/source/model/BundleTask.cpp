@@ -66,7 +66,7 @@ BundleTask& BundleTask::operator =(const XmlNode& xmlNode)
     XmlNode bundleIdNode = resultNode.FirstChild("bundleId");
     if(!bundleIdNode.IsNull())
     {
-      m_bundleId = bundleIdNode.GetText();
+      m_bundleId = Aws::Utils::Xml::DecodeEscapedXmlText(bundleIdNode.GetText());
       m_bundleIdHasBeenSet = true;
     }
     XmlNode bundleTaskErrorNode = resultNode.FirstChild("error");
@@ -78,25 +78,25 @@ BundleTask& BundleTask::operator =(const XmlNode& xmlNode)
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = instanceIdNode.GetText();
+      m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
     }
     XmlNode progressNode = resultNode.FirstChild("progress");
     if(!progressNode.IsNull())
     {
-      m_progress = progressNode.GetText();
+      m_progress = Aws::Utils::Xml::DecodeEscapedXmlText(progressNode.GetText());
       m_progressHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("startTime");
     if(!startTimeNode.IsNull())
     {
-      m_startTime = DateTime(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = BundleTaskStateMapper::GetBundleTaskStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_state = BundleTaskStateMapper::GetBundleTaskStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
       m_stateHasBeenSet = true;
     }
     XmlNode storageNode = resultNode.FirstChild("storage");
@@ -108,7 +108,7 @@ BundleTask& BundleTask::operator =(const XmlNode& xmlNode)
     XmlNode updateTimeNode = resultNode.FirstChild("updateTime");
     if(!updateTimeNode.IsNull())
     {
-      m_updateTime = DateTime(StringUtils::Trim(updateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_updateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_updateTimeHasBeenSet = true;
     }
   }

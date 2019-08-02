@@ -64,25 +64,25 @@ TargetCapacitySpecificationRequest& TargetCapacitySpecificationRequest::operator
     XmlNode totalTargetCapacityNode = resultNode.FirstChild("TotalTargetCapacity");
     if(!totalTargetCapacityNode.IsNull())
     {
-      m_totalTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(totalTargetCapacityNode.GetText().c_str()).c_str());
+      m_totalTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalTargetCapacityNode.GetText()).c_str()).c_str());
       m_totalTargetCapacityHasBeenSet = true;
     }
     XmlNode onDemandTargetCapacityNode = resultNode.FirstChild("OnDemandTargetCapacity");
     if(!onDemandTargetCapacityNode.IsNull())
     {
-      m_onDemandTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(onDemandTargetCapacityNode.GetText().c_str()).c_str());
+      m_onDemandTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onDemandTargetCapacityNode.GetText()).c_str()).c_str());
       m_onDemandTargetCapacityHasBeenSet = true;
     }
     XmlNode spotTargetCapacityNode = resultNode.FirstChild("SpotTargetCapacity");
     if(!spotTargetCapacityNode.IsNull())
     {
-      m_spotTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(spotTargetCapacityNode.GetText().c_str()).c_str());
+      m_spotTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(spotTargetCapacityNode.GetText()).c_str()).c_str());
       m_spotTargetCapacityHasBeenSet = true;
     }
     XmlNode defaultTargetCapacityTypeNode = resultNode.FirstChild("DefaultTargetCapacityType");
     if(!defaultTargetCapacityTypeNode.IsNull())
     {
-      m_defaultTargetCapacityType = DefaultTargetCapacityTypeMapper::GetDefaultTargetCapacityTypeForName(StringUtils::Trim(defaultTargetCapacityTypeNode.GetText().c_str()).c_str());
+      m_defaultTargetCapacityType = DefaultTargetCapacityTypeMapper::GetDefaultTargetCapacityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultTargetCapacityTypeNode.GetText()).c_str()).c_str());
       m_defaultTargetCapacityTypeHasBeenSet = true;
     }
   }

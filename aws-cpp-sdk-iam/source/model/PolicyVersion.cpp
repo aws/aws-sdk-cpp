@@ -58,25 +58,25 @@ PolicyVersion& PolicyVersion::operator =(const XmlNode& xmlNode)
     XmlNode documentNode = resultNode.FirstChild("Document");
     if(!documentNode.IsNull())
     {
-      m_document = documentNode.GetText();
+      m_document = Aws::Utils::Xml::DecodeEscapedXmlText(documentNode.GetText());
       m_documentHasBeenSet = true;
     }
     XmlNode versionIdNode = resultNode.FirstChild("VersionId");
     if(!versionIdNode.IsNull())
     {
-      m_versionId = versionIdNode.GetText();
+      m_versionId = Aws::Utils::Xml::DecodeEscapedXmlText(versionIdNode.GetText());
       m_versionIdHasBeenSet = true;
     }
     XmlNode isDefaultVersionNode = resultNode.FirstChild("IsDefaultVersion");
     if(!isDefaultVersionNode.IsNull())
     {
-      m_isDefaultVersion = StringUtils::ConvertToBool(StringUtils::Trim(isDefaultVersionNode.GetText().c_str()).c_str());
+      m_isDefaultVersion = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultVersionNode.GetText()).c_str()).c_str());
       m_isDefaultVersionHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = DateTime(StringUtils::Trim(createDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
     }
   }

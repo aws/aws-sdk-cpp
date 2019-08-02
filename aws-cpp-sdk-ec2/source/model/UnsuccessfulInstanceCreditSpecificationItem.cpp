@@ -52,7 +52,7 @@ UnsuccessfulInstanceCreditSpecificationItem& UnsuccessfulInstanceCreditSpecifica
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = instanceIdNode.GetText();
+      m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
     }
     XmlNode errorNode = resultNode.FirstChild("error");

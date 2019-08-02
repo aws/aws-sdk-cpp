@@ -58,31 +58,31 @@ PolicyAttributeTypeDescription& PolicyAttributeTypeDescription::operator =(const
     XmlNode attributeNameNode = resultNode.FirstChild("AttributeName");
     if(!attributeNameNode.IsNull())
     {
-      m_attributeName = attributeNameNode.GetText();
+      m_attributeName = Aws::Utils::Xml::DecodeEscapedXmlText(attributeNameNode.GetText());
       m_attributeNameHasBeenSet = true;
     }
     XmlNode attributeTypeNode = resultNode.FirstChild("AttributeType");
     if(!attributeTypeNode.IsNull())
     {
-      m_attributeType = attributeTypeNode.GetText();
+      m_attributeType = Aws::Utils::Xml::DecodeEscapedXmlText(attributeTypeNode.GetText());
       m_attributeTypeHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
     if(!defaultValueNode.IsNull())
     {
-      m_defaultValue = defaultValueNode.GetText();
+      m_defaultValue = Aws::Utils::Xml::DecodeEscapedXmlText(defaultValueNode.GetText());
       m_defaultValueHasBeenSet = true;
     }
     XmlNode cardinalityNode = resultNode.FirstChild("Cardinality");
     if(!cardinalityNode.IsNull())
     {
-      m_cardinality = cardinalityNode.GetText();
+      m_cardinality = Aws::Utils::Xml::DecodeEscapedXmlText(cardinalityNode.GetText());
       m_cardinalityHasBeenSet = true;
     }
   }

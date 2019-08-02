@@ -52,7 +52,7 @@ ObjectLockLegalHold& ObjectLockLegalHold::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ObjectLockLegalHoldStatusMapper::GetObjectLockLegalHoldStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = ObjectLockLegalHoldStatusMapper::GetObjectLockLegalHoldStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
   }

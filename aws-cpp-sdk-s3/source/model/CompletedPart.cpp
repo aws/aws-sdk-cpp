@@ -54,13 +54,13 @@ CompletedPart& CompletedPart::operator =(const XmlNode& xmlNode)
     XmlNode eTagNode = resultNode.FirstChild("ETag");
     if(!eTagNode.IsNull())
     {
-      m_eTag = eTagNode.GetText();
+      m_eTag = Aws::Utils::Xml::DecodeEscapedXmlText(eTagNode.GetText());
       m_eTagHasBeenSet = true;
     }
     XmlNode partNumberNode = resultNode.FirstChild("PartNumber");
     if(!partNumberNode.IsNull())
     {
-      m_partNumber = StringUtils::ConvertToInt32(StringUtils::Trim(partNumberNode.GetText().c_str()).c_str());
+      m_partNumber = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(partNumberNode.GetText()).c_str()).c_str());
       m_partNumberHasBeenSet = true;
     }
   }

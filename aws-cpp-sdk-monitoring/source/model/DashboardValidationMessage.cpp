@@ -52,13 +52,13 @@ DashboardValidationMessage& DashboardValidationMessage::operator =(const XmlNode
     XmlNode dataPathNode = resultNode.FirstChild("DataPath");
     if(!dataPathNode.IsNull())
     {
-      m_dataPath = dataPathNode.GetText();
+      m_dataPath = Aws::Utils::Xml::DecodeEscapedXmlText(dataPathNode.GetText());
       m_dataPathHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
-      m_message = messageNode.GetText();
+      m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
     }
   }

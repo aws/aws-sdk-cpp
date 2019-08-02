@@ -52,13 +52,13 @@ Ipv6Range& Ipv6Range::operator =(const XmlNode& xmlNode)
     XmlNode cidrIpv6Node = resultNode.FirstChild("cidrIpv6");
     if(!cidrIpv6Node.IsNull())
     {
-      m_cidrIpv6 = cidrIpv6Node.GetText();
+      m_cidrIpv6 = Aws::Utils::Xml::DecodeEscapedXmlText(cidrIpv6Node.GetText());
       m_cidrIpv6HasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
   }

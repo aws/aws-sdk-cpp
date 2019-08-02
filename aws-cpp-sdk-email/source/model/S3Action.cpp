@@ -56,25 +56,25 @@ S3Action& S3Action::operator =(const XmlNode& xmlNode)
     XmlNode topicArnNode = resultNode.FirstChild("TopicArn");
     if(!topicArnNode.IsNull())
     {
-      m_topicArn = topicArnNode.GetText();
+      m_topicArn = Aws::Utils::Xml::DecodeEscapedXmlText(topicArnNode.GetText());
       m_topicArnHasBeenSet = true;
     }
     XmlNode bucketNameNode = resultNode.FirstChild("BucketName");
     if(!bucketNameNode.IsNull())
     {
-      m_bucketName = bucketNameNode.GetText();
+      m_bucketName = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNameNode.GetText());
       m_bucketNameHasBeenSet = true;
     }
     XmlNode objectKeyPrefixNode = resultNode.FirstChild("ObjectKeyPrefix");
     if(!objectKeyPrefixNode.IsNull())
     {
-      m_objectKeyPrefix = objectKeyPrefixNode.GetText();
+      m_objectKeyPrefix = Aws::Utils::Xml::DecodeEscapedXmlText(objectKeyPrefixNode.GetText());
       m_objectKeyPrefixHasBeenSet = true;
     }
     XmlNode kmsKeyArnNode = resultNode.FirstChild("KmsKeyArn");
     if(!kmsKeyArnNode.IsNull())
     {
-      m_kmsKeyArn = kmsKeyArnNode.GetText();
+      m_kmsKeyArn = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyArnNode.GetText());
       m_kmsKeyArnHasBeenSet = true;
     }
   }

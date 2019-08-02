@@ -54,13 +54,13 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
     XmlNode zoneNameNode = resultNode.FirstChild("ZoneName");
     if(!zoneNameNode.IsNull())
     {
-      m_zoneName = zoneNameNode.GetText();
+      m_zoneName = Aws::Utils::Xml::DecodeEscapedXmlText(zoneNameNode.GetText());
       m_zoneNameHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("SubnetId");
     if(!subnetIdNode.IsNull())
     {
-      m_subnetId = subnetIdNode.GetText();
+      m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
     }
     XmlNode loadBalancerAddressesNode = resultNode.FirstChild("LoadBalancerAddresses");

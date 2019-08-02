@@ -52,7 +52,7 @@ GlacierJobParameters& GlacierJobParameters::operator =(const XmlNode& xmlNode)
     XmlNode tierNode = resultNode.FirstChild("Tier");
     if(!tierNode.IsNull())
     {
-      m_tier = TierMapper::GetTierForName(StringUtils::Trim(tierNode.GetText().c_str()).c_str());
+      m_tier = TierMapper::GetTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tierNode.GetText()).c_str()).c_str());
       m_tierHasBeenSet = true;
     }
   }

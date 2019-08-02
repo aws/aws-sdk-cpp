@@ -56,25 +56,25 @@ SnapshotErrorMessage& SnapshotErrorMessage::operator =(const XmlNode& xmlNode)
     XmlNode snapshotIdentifierNode = resultNode.FirstChild("SnapshotIdentifier");
     if(!snapshotIdentifierNode.IsNull())
     {
-      m_snapshotIdentifier = snapshotIdentifierNode.GetText();
+      m_snapshotIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdentifierNode.GetText());
       m_snapshotIdentifierHasBeenSet = true;
     }
     XmlNode snapshotClusterIdentifierNode = resultNode.FirstChild("SnapshotClusterIdentifier");
     if(!snapshotClusterIdentifierNode.IsNull())
     {
-      m_snapshotClusterIdentifier = snapshotClusterIdentifierNode.GetText();
+      m_snapshotClusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotClusterIdentifierNode.GetText());
       m_snapshotClusterIdentifierHasBeenSet = true;
     }
     XmlNode failureCodeNode = resultNode.FirstChild("FailureCode");
     if(!failureCodeNode.IsNull())
     {
-      m_failureCode = failureCodeNode.GetText();
+      m_failureCode = Aws::Utils::Xml::DecodeEscapedXmlText(failureCodeNode.GetText());
       m_failureCodeHasBeenSet = true;
     }
     XmlNode failureReasonNode = resultNode.FirstChild("FailureReason");
     if(!failureReasonNode.IsNull())
     {
-      m_failureReason = failureReasonNode.GetText();
+      m_failureReason = Aws::Utils::Xml::DecodeEscapedXmlText(failureReasonNode.GetText());
       m_failureReasonHasBeenSet = true;
     }
   }

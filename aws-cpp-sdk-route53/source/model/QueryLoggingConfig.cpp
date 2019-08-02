@@ -54,19 +54,19 @@ QueryLoggingConfig& QueryLoggingConfig::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = idNode.GetText();
+      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
     }
     XmlNode hostedZoneIdNode = resultNode.FirstChild("HostedZoneId");
     if(!hostedZoneIdNode.IsNull())
     {
-      m_hostedZoneId = hostedZoneIdNode.GetText();
+      m_hostedZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(hostedZoneIdNode.GetText());
       m_hostedZoneIdHasBeenSet = true;
     }
     XmlNode cloudWatchLogsLogGroupArnNode = resultNode.FirstChild("CloudWatchLogsLogGroupArn");
     if(!cloudWatchLogsLogGroupArnNode.IsNull())
     {
-      m_cloudWatchLogsLogGroupArn = cloudWatchLogsLogGroupArnNode.GetText();
+      m_cloudWatchLogsLogGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(cloudWatchLogsLogGroupArnNode.GetText());
       m_cloudWatchLogsLogGroupArnHasBeenSet = true;
     }
   }

@@ -60,7 +60,7 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("zoneState");
     if(!stateNode.IsNull())
     {
-      m_state = AvailabilityZoneStateMapper::GetAvailabilityZoneStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_state = AvailabilityZoneStateMapper::GetAvailabilityZoneStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
       m_stateHasBeenSet = true;
     }
     XmlNode messagesNode = resultNode.FirstChild("messageSet");
@@ -78,19 +78,19 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
     XmlNode regionNameNode = resultNode.FirstChild("regionName");
     if(!regionNameNode.IsNull())
     {
-      m_regionName = regionNameNode.GetText();
+      m_regionName = Aws::Utils::Xml::DecodeEscapedXmlText(regionNameNode.GetText());
       m_regionNameHasBeenSet = true;
     }
     XmlNode zoneNameNode = resultNode.FirstChild("zoneName");
     if(!zoneNameNode.IsNull())
     {
-      m_zoneName = zoneNameNode.GetText();
+      m_zoneName = Aws::Utils::Xml::DecodeEscapedXmlText(zoneNameNode.GetText());
       m_zoneNameHasBeenSet = true;
     }
     XmlNode zoneIdNode = resultNode.FirstChild("zoneId");
     if(!zoneIdNode.IsNull())
     {
-      m_zoneId = zoneIdNode.GetText();
+      m_zoneId = Aws::Utils::Xml::DecodeEscapedXmlText(zoneIdNode.GetText());
       m_zoneIdHasBeenSet = true;
     }
   }

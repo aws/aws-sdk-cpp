@@ -58,25 +58,25 @@ Parameter& Parameter::operator =(const XmlNode& xmlNode)
     XmlNode parameterKeyNode = resultNode.FirstChild("ParameterKey");
     if(!parameterKeyNode.IsNull())
     {
-      m_parameterKey = parameterKeyNode.GetText();
+      m_parameterKey = Aws::Utils::Xml::DecodeEscapedXmlText(parameterKeyNode.GetText());
       m_parameterKeyHasBeenSet = true;
     }
     XmlNode parameterValueNode = resultNode.FirstChild("ParameterValue");
     if(!parameterValueNode.IsNull())
     {
-      m_parameterValue = parameterValueNode.GetText();
+      m_parameterValue = Aws::Utils::Xml::DecodeEscapedXmlText(parameterValueNode.GetText());
       m_parameterValueHasBeenSet = true;
     }
     XmlNode usePreviousValueNode = resultNode.FirstChild("UsePreviousValue");
     if(!usePreviousValueNode.IsNull())
     {
-      m_usePreviousValue = StringUtils::ConvertToBool(StringUtils::Trim(usePreviousValueNode.GetText().c_str()).c_str());
+      m_usePreviousValue = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usePreviousValueNode.GetText()).c_str()).c_str());
       m_usePreviousValueHasBeenSet = true;
     }
     XmlNode resolvedValueNode = resultNode.FirstChild("ResolvedValue");
     if(!resolvedValueNode.IsNull())
     {
-      m_resolvedValue = resolvedValueNode.GetText();
+      m_resolvedValue = Aws::Utils::Xml::DecodeEscapedXmlText(resolvedValueNode.GetText());
       m_resolvedValueHasBeenSet = true;
     }
   }

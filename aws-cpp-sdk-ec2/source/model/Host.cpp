@@ -80,13 +80,13 @@ Host& Host::operator =(const XmlNode& xmlNode)
     XmlNode autoPlacementNode = resultNode.FirstChild("autoPlacement");
     if(!autoPlacementNode.IsNull())
     {
-      m_autoPlacement = AutoPlacementMapper::GetAutoPlacementForName(StringUtils::Trim(autoPlacementNode.GetText().c_str()).c_str());
+      m_autoPlacement = AutoPlacementMapper::GetAutoPlacementForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoPlacementNode.GetText()).c_str()).c_str());
       m_autoPlacementHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = availabilityZoneNode.GetText();
+      m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode availableCapacityNode = resultNode.FirstChild("availableCapacity");
@@ -98,13 +98,13 @@ Host& Host::operator =(const XmlNode& xmlNode)
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
-      m_clientToken = clientTokenNode.GetText();
+      m_clientToken = Aws::Utils::Xml::DecodeEscapedXmlText(clientTokenNode.GetText());
       m_clientTokenHasBeenSet = true;
     }
     XmlNode hostIdNode = resultNode.FirstChild("hostId");
     if(!hostIdNode.IsNull())
     {
-      m_hostId = hostIdNode.GetText();
+      m_hostId = Aws::Utils::Xml::DecodeEscapedXmlText(hostIdNode.GetText());
       m_hostIdHasBeenSet = true;
     }
     XmlNode hostPropertiesNode = resultNode.FirstChild("hostProperties");
@@ -116,7 +116,7 @@ Host& Host::operator =(const XmlNode& xmlNode)
     XmlNode hostReservationIdNode = resultNode.FirstChild("hostReservationId");
     if(!hostReservationIdNode.IsNull())
     {
-      m_hostReservationId = hostReservationIdNode.GetText();
+      m_hostReservationId = Aws::Utils::Xml::DecodeEscapedXmlText(hostReservationIdNode.GetText());
       m_hostReservationIdHasBeenSet = true;
     }
     XmlNode instancesNode = resultNode.FirstChild("instances");
@@ -134,19 +134,19 @@ Host& Host::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = AllocationStateMapper::GetAllocationStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_state = AllocationStateMapper::GetAllocationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
       m_stateHasBeenSet = true;
     }
     XmlNode allocationTimeNode = resultNode.FirstChild("allocationTime");
     if(!allocationTimeNode.IsNull())
     {
-      m_allocationTime = DateTime(StringUtils::Trim(allocationTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_allocationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocationTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_allocationTimeHasBeenSet = true;
     }
     XmlNode releaseTimeNode = resultNode.FirstChild("releaseTime");
     if(!releaseTimeNode.IsNull())
     {
-      m_releaseTime = DateTime(StringUtils::Trim(releaseTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_releaseTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(releaseTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_releaseTimeHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
@@ -164,7 +164,7 @@ Host& Host::operator =(const XmlNode& xmlNode)
     XmlNode hostRecoveryNode = resultNode.FirstChild("hostRecovery");
     if(!hostRecoveryNode.IsNull())
     {
-      m_hostRecovery = HostRecoveryMapper::GetHostRecoveryForName(StringUtils::Trim(hostRecoveryNode.GetText().c_str()).c_str());
+      m_hostRecovery = HostRecoveryMapper::GetHostRecoveryForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hostRecoveryNode.GetText()).c_str()).c_str());
       m_hostRecoveryHasBeenSet = true;
     }
   }

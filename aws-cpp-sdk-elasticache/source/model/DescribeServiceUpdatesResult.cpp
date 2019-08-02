@@ -51,7 +51,7 @@ DescribeServiceUpdatesResult& DescribeServiceUpdatesResult::operator =(const Aws
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
-      m_marker = markerNode.GetText();
+      m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
     }
     XmlNode serviceUpdatesNode = resultNode.FirstChild("ServiceUpdates");
     if(!serviceUpdatesNode.IsNull())

@@ -62,37 +62,37 @@ RedirectActionConfig& RedirectActionConfig::operator =(const XmlNode& xmlNode)
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = protocolNode.GetText();
+      m_protocol = Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText());
       m_protocolHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
     if(!portNode.IsNull())
     {
-      m_port = portNode.GetText();
+      m_port = Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText());
       m_portHasBeenSet = true;
     }
     XmlNode hostNode = resultNode.FirstChild("Host");
     if(!hostNode.IsNull())
     {
-      m_host = hostNode.GetText();
+      m_host = Aws::Utils::Xml::DecodeEscapedXmlText(hostNode.GetText());
       m_hostHasBeenSet = true;
     }
     XmlNode pathNode = resultNode.FirstChild("Path");
     if(!pathNode.IsNull())
     {
-      m_path = pathNode.GetText();
+      m_path = Aws::Utils::Xml::DecodeEscapedXmlText(pathNode.GetText());
       m_pathHasBeenSet = true;
     }
     XmlNode queryNode = resultNode.FirstChild("Query");
     if(!queryNode.IsNull())
     {
-      m_query = queryNode.GetText();
+      m_query = Aws::Utils::Xml::DecodeEscapedXmlText(queryNode.GetText());
       m_queryHasBeenSet = true;
     }
     XmlNode statusCodeNode = resultNode.FirstChild("StatusCode");
     if(!statusCodeNode.IsNull())
     {
-      m_statusCode = RedirectActionStatusCodeEnumMapper::GetRedirectActionStatusCodeEnumForName(StringUtils::Trim(statusCodeNode.GetText().c_str()).c_str());
+      m_statusCode = RedirectActionStatusCodeEnumMapper::GetRedirectActionStatusCodeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusCodeNode.GetText()).c_str()).c_str());
       m_statusCodeHasBeenSet = true;
     }
   }

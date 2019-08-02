@@ -54,13 +54,13 @@ SNSAction& SNSAction::operator =(const XmlNode& xmlNode)
     XmlNode topicArnNode = resultNode.FirstChild("TopicArn");
     if(!topicArnNode.IsNull())
     {
-      m_topicArn = topicArnNode.GetText();
+      m_topicArn = Aws::Utils::Xml::DecodeEscapedXmlText(topicArnNode.GetText());
       m_topicArnHasBeenSet = true;
     }
     XmlNode encodingNode = resultNode.FirstChild("Encoding");
     if(!encodingNode.IsNull())
     {
-      m_encoding = SNSActionEncodingMapper::GetSNSActionEncodingForName(StringUtils::Trim(encodingNode.GetText().c_str()).c_str());
+      m_encoding = SNSActionEncodingMapper::GetSNSActionEncodingForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encodingNode.GetText()).c_str()).c_str());
       m_encodingHasBeenSet = true;
     }
   }

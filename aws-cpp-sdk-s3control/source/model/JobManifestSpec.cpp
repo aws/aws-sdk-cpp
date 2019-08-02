@@ -54,7 +54,7 @@ JobManifestSpec& JobManifestSpec::operator =(const XmlNode& xmlNode)
     XmlNode formatNode = resultNode.FirstChild("Format");
     if(!formatNode.IsNull())
     {
-      m_format = JobManifestFormatMapper::GetJobManifestFormatForName(StringUtils::Trim(formatNode.GetText().c_str()).c_str());
+      m_format = JobManifestFormatMapper::GetJobManifestFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()).c_str());
       m_formatHasBeenSet = true;
     }
     XmlNode fieldsNode = resultNode.FirstChild("Fields");

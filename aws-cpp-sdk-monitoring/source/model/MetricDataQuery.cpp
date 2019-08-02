@@ -60,7 +60,7 @@ MetricDataQuery& MetricDataQuery::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = idNode.GetText();
+      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
     }
     XmlNode metricStatNode = resultNode.FirstChild("MetricStat");
@@ -72,19 +72,19 @@ MetricDataQuery& MetricDataQuery::operator =(const XmlNode& xmlNode)
     XmlNode expressionNode = resultNode.FirstChild("Expression");
     if(!expressionNode.IsNull())
     {
-      m_expression = expressionNode.GetText();
+      m_expression = Aws::Utils::Xml::DecodeEscapedXmlText(expressionNode.GetText());
       m_expressionHasBeenSet = true;
     }
     XmlNode labelNode = resultNode.FirstChild("Label");
     if(!labelNode.IsNull())
     {
-      m_label = labelNode.GetText();
+      m_label = Aws::Utils::Xml::DecodeEscapedXmlText(labelNode.GetText());
       m_labelHasBeenSet = true;
     }
     XmlNode returnDataNode = resultNode.FirstChild("ReturnData");
     if(!returnDataNode.IsNull())
     {
-      m_returnData = StringUtils::ConvertToBool(StringUtils::Trim(returnDataNode.GetText().c_str()).c_str());
+      m_returnData = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnDataNode.GetText()).c_str()).c_str());
       m_returnDataHasBeenSet = true;
     }
   }

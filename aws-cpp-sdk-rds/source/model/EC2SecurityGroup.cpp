@@ -56,25 +56,25 @@ EC2SecurityGroup& EC2SecurityGroup::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = statusNode.GetText();
+      m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
     XmlNode eC2SecurityGroupNameNode = resultNode.FirstChild("EC2SecurityGroupName");
     if(!eC2SecurityGroupNameNode.IsNull())
     {
-      m_eC2SecurityGroupName = eC2SecurityGroupNameNode.GetText();
+      m_eC2SecurityGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(eC2SecurityGroupNameNode.GetText());
       m_eC2SecurityGroupNameHasBeenSet = true;
     }
     XmlNode eC2SecurityGroupIdNode = resultNode.FirstChild("EC2SecurityGroupId");
     if(!eC2SecurityGroupIdNode.IsNull())
     {
-      m_eC2SecurityGroupId = eC2SecurityGroupIdNode.GetText();
+      m_eC2SecurityGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(eC2SecurityGroupIdNode.GetText());
       m_eC2SecurityGroupIdHasBeenSet = true;
     }
     XmlNode eC2SecurityGroupOwnerIdNode = resultNode.FirstChild("EC2SecurityGroupOwnerId");
     if(!eC2SecurityGroupOwnerIdNode.IsNull())
     {
-      m_eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerIdNode.GetText();
+      m_eC2SecurityGroupOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(eC2SecurityGroupOwnerIdNode.GetText());
       m_eC2SecurityGroupOwnerIdHasBeenSet = true;
     }
   }

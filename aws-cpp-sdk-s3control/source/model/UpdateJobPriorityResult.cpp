@@ -46,12 +46,12 @@ UpdateJobPriorityResult& UpdateJobPriorityResult::operator =(const Aws::AmazonWe
     XmlNode jobIdNode = resultNode.FirstChild("JobId");
     if(!jobIdNode.IsNull())
     {
-      m_jobId = jobIdNode.GetText();
+      m_jobId = Aws::Utils::Xml::DecodeEscapedXmlText(jobIdNode.GetText());
     }
     XmlNode priorityNode = resultNode.FirstChild("Priority");
     if(!priorityNode.IsNull())
     {
-      m_priority = StringUtils::ConvertToInt32(StringUtils::Trim(priorityNode.GetText().c_str()).c_str());
+      m_priority = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priorityNode.GetText()).c_str()).c_str());
     }
   }
 

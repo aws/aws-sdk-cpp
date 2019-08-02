@@ -62,31 +62,31 @@ UpgradeTarget& UpgradeTarget::operator =(const XmlNode& xmlNode)
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
     {
-      m_engine = engineNode.GetText();
+      m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
-      m_engineVersion = engineVersionNode.GetText();
+      m_engineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(engineVersionNode.GetText());
       m_engineVersionHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode autoUpgradeNode = resultNode.FirstChild("AutoUpgrade");
     if(!autoUpgradeNode.IsNull())
     {
-      m_autoUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(autoUpgradeNode.GetText().c_str()).c_str());
+      m_autoUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoUpgradeNode.GetText()).c_str()).c_str());
       m_autoUpgradeHasBeenSet = true;
     }
     XmlNode isMajorVersionUpgradeNode = resultNode.FirstChild("IsMajorVersionUpgrade");
     if(!isMajorVersionUpgradeNode.IsNull())
     {
-      m_isMajorVersionUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(isMajorVersionUpgradeNode.GetText().c_str()).c_str());
+      m_isMajorVersionUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isMajorVersionUpgradeNode.GetText()).c_str()).c_str());
       m_isMajorVersionUpgradeHasBeenSet = true;
     }
   }

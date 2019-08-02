@@ -54,13 +54,13 @@ SubnetCidrBlockState& SubnetCidrBlockState::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = SubnetCidrBlockStateCodeMapper::GetSubnetCidrBlockStateCodeForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_state = SubnetCidrBlockStateCodeMapper::GetSubnetCidrBlockStateCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
       m_stateHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
-      m_statusMessage = statusMessageNode.GetText();
+      m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
     }
   }

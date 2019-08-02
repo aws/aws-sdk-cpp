@@ -62,19 +62,19 @@ OptionConfiguration& OptionConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode optionNameNode = resultNode.FirstChild("OptionName");
     if(!optionNameNode.IsNull())
     {
-      m_optionName = optionNameNode.GetText();
+      m_optionName = Aws::Utils::Xml::DecodeEscapedXmlText(optionNameNode.GetText());
       m_optionNameHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
     if(!portNode.IsNull())
     {
-      m_port = StringUtils::ConvertToInt32(StringUtils::Trim(portNode.GetText().c_str()).c_str());
+      m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
     }
     XmlNode optionVersionNode = resultNode.FirstChild("OptionVersion");
     if(!optionVersionNode.IsNull())
     {
-      m_optionVersion = optionVersionNode.GetText();
+      m_optionVersion = Aws::Utils::Xml::DecodeEscapedXmlText(optionVersionNode.GetText());
       m_optionVersionHasBeenSet = true;
     }
     XmlNode dBSecurityGroupMembershipsNode = resultNode.FirstChild("DBSecurityGroupMemberships");

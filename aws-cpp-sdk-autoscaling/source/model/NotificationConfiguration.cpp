@@ -54,19 +54,19 @@ NotificationConfiguration& NotificationConfiguration::operator =(const XmlNode& 
     XmlNode autoScalingGroupNameNode = resultNode.FirstChild("AutoScalingGroupName");
     if(!autoScalingGroupNameNode.IsNull())
     {
-      m_autoScalingGroupName = autoScalingGroupNameNode.GetText();
+      m_autoScalingGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(autoScalingGroupNameNode.GetText());
       m_autoScalingGroupNameHasBeenSet = true;
     }
     XmlNode topicARNNode = resultNode.FirstChild("TopicARN");
     if(!topicARNNode.IsNull())
     {
-      m_topicARN = topicARNNode.GetText();
+      m_topicARN = Aws::Utils::Xml::DecodeEscapedXmlText(topicARNNode.GetText());
       m_topicARNHasBeenSet = true;
     }
     XmlNode notificationTypeNode = resultNode.FirstChild("NotificationType");
     if(!notificationTypeNode.IsNull())
     {
-      m_notificationType = notificationTypeNode.GetText();
+      m_notificationType = Aws::Utils::Xml::DecodeEscapedXmlText(notificationTypeNode.GetText());
       m_notificationTypeHasBeenSet = true;
     }
   }

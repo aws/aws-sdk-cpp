@@ -56,7 +56,7 @@ GlobalClusterMember& GlobalClusterMember::operator =(const XmlNode& xmlNode)
     XmlNode dBClusterArnNode = resultNode.FirstChild("DBClusterArn");
     if(!dBClusterArnNode.IsNull())
     {
-      m_dBClusterArn = dBClusterArnNode.GetText();
+      m_dBClusterArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterArnNode.GetText());
       m_dBClusterArnHasBeenSet = true;
     }
     XmlNode readersNode = resultNode.FirstChild("Readers");
@@ -74,7 +74,7 @@ GlobalClusterMember& GlobalClusterMember::operator =(const XmlNode& xmlNode)
     XmlNode isWriterNode = resultNode.FirstChild("IsWriter");
     if(!isWriterNode.IsNull())
     {
-      m_isWriter = StringUtils::ConvertToBool(StringUtils::Trim(isWriterNode.GetText().c_str()).c_str());
+      m_isWriter = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isWriterNode.GetText()).c_str()).c_str());
       m_isWriterHasBeenSet = true;
     }
   }

@@ -94,43 +94,43 @@ OptionGroupOption& OptionGroupOption::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = nameNode.GetText();
+      m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode engineNameNode = resultNode.FirstChild("EngineName");
     if(!engineNameNode.IsNull())
     {
-      m_engineName = engineNameNode.GetText();
+      m_engineName = Aws::Utils::Xml::DecodeEscapedXmlText(engineNameNode.GetText());
       m_engineNameHasBeenSet = true;
     }
     XmlNode majorEngineVersionNode = resultNode.FirstChild("MajorEngineVersion");
     if(!majorEngineVersionNode.IsNull())
     {
-      m_majorEngineVersion = majorEngineVersionNode.GetText();
+      m_majorEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(majorEngineVersionNode.GetText());
       m_majorEngineVersionHasBeenSet = true;
     }
     XmlNode minimumRequiredMinorEngineVersionNode = resultNode.FirstChild("MinimumRequiredMinorEngineVersion");
     if(!minimumRequiredMinorEngineVersionNode.IsNull())
     {
-      m_minimumRequiredMinorEngineVersion = minimumRequiredMinorEngineVersionNode.GetText();
+      m_minimumRequiredMinorEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(minimumRequiredMinorEngineVersionNode.GetText());
       m_minimumRequiredMinorEngineVersionHasBeenSet = true;
     }
     XmlNode portRequiredNode = resultNode.FirstChild("PortRequired");
     if(!portRequiredNode.IsNull())
     {
-      m_portRequired = StringUtils::ConvertToBool(StringUtils::Trim(portRequiredNode.GetText().c_str()).c_str());
+      m_portRequired = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portRequiredNode.GetText()).c_str()).c_str());
       m_portRequiredHasBeenSet = true;
     }
     XmlNode defaultPortNode = resultNode.FirstChild("DefaultPort");
     if(!defaultPortNode.IsNull())
     {
-      m_defaultPort = StringUtils::ConvertToInt32(StringUtils::Trim(defaultPortNode.GetText().c_str()).c_str());
+      m_defaultPort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultPortNode.GetText()).c_str()).c_str());
       m_defaultPortHasBeenSet = true;
     }
     XmlNode optionsDependedOnNode = resultNode.FirstChild("OptionsDependedOn");
@@ -160,31 +160,31 @@ OptionGroupOption& OptionGroupOption::operator =(const XmlNode& xmlNode)
     XmlNode persistentNode = resultNode.FirstChild("Persistent");
     if(!persistentNode.IsNull())
     {
-      m_persistent = StringUtils::ConvertToBool(StringUtils::Trim(persistentNode.GetText().c_str()).c_str());
+      m_persistent = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(persistentNode.GetText()).c_str()).c_str());
       m_persistentHasBeenSet = true;
     }
     XmlNode permanentNode = resultNode.FirstChild("Permanent");
     if(!permanentNode.IsNull())
     {
-      m_permanent = StringUtils::ConvertToBool(StringUtils::Trim(permanentNode.GetText().c_str()).c_str());
+      m_permanent = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permanentNode.GetText()).c_str()).c_str());
       m_permanentHasBeenSet = true;
     }
     XmlNode requiresAutoMinorEngineVersionUpgradeNode = resultNode.FirstChild("RequiresAutoMinorEngineVersionUpgrade");
     if(!requiresAutoMinorEngineVersionUpgradeNode.IsNull())
     {
-      m_requiresAutoMinorEngineVersionUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(requiresAutoMinorEngineVersionUpgradeNode.GetText().c_str()).c_str());
+      m_requiresAutoMinorEngineVersionUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requiresAutoMinorEngineVersionUpgradeNode.GetText()).c_str()).c_str());
       m_requiresAutoMinorEngineVersionUpgradeHasBeenSet = true;
     }
     XmlNode vpcOnlyNode = resultNode.FirstChild("VpcOnly");
     if(!vpcOnlyNode.IsNull())
     {
-      m_vpcOnly = StringUtils::ConvertToBool(StringUtils::Trim(vpcOnlyNode.GetText().c_str()).c_str());
+      m_vpcOnly = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpcOnlyNode.GetText()).c_str()).c_str());
       m_vpcOnlyHasBeenSet = true;
     }
     XmlNode supportsOptionVersionDowngradeNode = resultNode.FirstChild("SupportsOptionVersionDowngrade");
     if(!supportsOptionVersionDowngradeNode.IsNull())
     {
-      m_supportsOptionVersionDowngrade = StringUtils::ConvertToBool(StringUtils::Trim(supportsOptionVersionDowngradeNode.GetText().c_str()).c_str());
+      m_supportsOptionVersionDowngrade = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsOptionVersionDowngradeNode.GetText()).c_str()).c_str());
       m_supportsOptionVersionDowngradeHasBeenSet = true;
     }
     XmlNode optionGroupOptionSettingsNode = resultNode.FirstChild("OptionGroupOptionSettings");

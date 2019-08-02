@@ -56,13 +56,13 @@ HealthCheckObservation& HealthCheckObservation::operator =(const XmlNode& xmlNod
     XmlNode regionNode = resultNode.FirstChild("Region");
     if(!regionNode.IsNull())
     {
-      m_region = HealthCheckRegionMapper::GetHealthCheckRegionForName(StringUtils::Trim(regionNode.GetText().c_str()).c_str());
+      m_region = HealthCheckRegionMapper::GetHealthCheckRegionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(regionNode.GetText()).c_str()).c_str());
       m_regionHasBeenSet = true;
     }
     XmlNode iPAddressNode = resultNode.FirstChild("IPAddress");
     if(!iPAddressNode.IsNull())
     {
-      m_iPAddress = iPAddressNode.GetText();
+      m_iPAddress = Aws::Utils::Xml::DecodeEscapedXmlText(iPAddressNode.GetText());
       m_iPAddressHasBeenSet = true;
     }
     XmlNode statusReportNode = resultNode.FirstChild("StatusReport");

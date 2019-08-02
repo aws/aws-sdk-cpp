@@ -52,13 +52,13 @@ EnvironmentLink& EnvironmentLink::operator =(const XmlNode& xmlNode)
     XmlNode linkNameNode = resultNode.FirstChild("LinkName");
     if(!linkNameNode.IsNull())
     {
-      m_linkName = linkNameNode.GetText();
+      m_linkName = Aws::Utils::Xml::DecodeEscapedXmlText(linkNameNode.GetText());
       m_linkNameHasBeenSet = true;
     }
     XmlNode environmentNameNode = resultNode.FirstChild("EnvironmentName");
     if(!environmentNameNode.IsNull())
     {
-      m_environmentName = environmentNameNode.GetText();
+      m_environmentName = Aws::Utils::Xml::DecodeEscapedXmlText(environmentNameNode.GetText());
       m_environmentNameHasBeenSet = true;
     }
   }

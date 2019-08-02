@@ -51,12 +51,12 @@ TerminateClientVpnConnectionsResponse& TerminateClientVpnConnectionsResponse::op
     XmlNode clientVpnEndpointIdNode = resultNode.FirstChild("clientVpnEndpointId");
     if(!clientVpnEndpointIdNode.IsNull())
     {
-      m_clientVpnEndpointId = clientVpnEndpointIdNode.GetText();
+      m_clientVpnEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(clientVpnEndpointIdNode.GetText());
     }
     XmlNode usernameNode = resultNode.FirstChild("username");
     if(!usernameNode.IsNull())
     {
-      m_username = usernameNode.GetText();
+      m_username = Aws::Utils::Xml::DecodeEscapedXmlText(usernameNode.GetText());
     }
     XmlNode connectionStatusesNode = resultNode.FirstChild("connectionStatuses");
     if(!connectionStatusesNode.IsNull())

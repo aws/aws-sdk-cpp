@@ -64,31 +64,31 @@ SpotMarketOptions& SpotMarketOptions::operator =(const XmlNode& xmlNode)
     XmlNode maxPriceNode = resultNode.FirstChild("MaxPrice");
     if(!maxPriceNode.IsNull())
     {
-      m_maxPrice = maxPriceNode.GetText();
+      m_maxPrice = Aws::Utils::Xml::DecodeEscapedXmlText(maxPriceNode.GetText());
       m_maxPriceHasBeenSet = true;
     }
     XmlNode spotInstanceTypeNode = resultNode.FirstChild("SpotInstanceType");
     if(!spotInstanceTypeNode.IsNull())
     {
-      m_spotInstanceType = SpotInstanceTypeMapper::GetSpotInstanceTypeForName(StringUtils::Trim(spotInstanceTypeNode.GetText().c_str()).c_str());
+      m_spotInstanceType = SpotInstanceTypeMapper::GetSpotInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(spotInstanceTypeNode.GetText()).c_str()).c_str());
       m_spotInstanceTypeHasBeenSet = true;
     }
     XmlNode blockDurationMinutesNode = resultNode.FirstChild("BlockDurationMinutes");
     if(!blockDurationMinutesNode.IsNull())
     {
-      m_blockDurationMinutes = StringUtils::ConvertToInt32(StringUtils::Trim(blockDurationMinutesNode.GetText().c_str()).c_str());
+      m_blockDurationMinutes = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(blockDurationMinutesNode.GetText()).c_str()).c_str());
       m_blockDurationMinutesHasBeenSet = true;
     }
     XmlNode validUntilNode = resultNode.FirstChild("ValidUntil");
     if(!validUntilNode.IsNull())
     {
-      m_validUntil = DateTime(StringUtils::Trim(validUntilNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_validUntil = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validUntilNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_validUntilHasBeenSet = true;
     }
     XmlNode instanceInterruptionBehaviorNode = resultNode.FirstChild("InstanceInterruptionBehavior");
     if(!instanceInterruptionBehaviorNode.IsNull())
     {
-      m_instanceInterruptionBehavior = InstanceInterruptionBehaviorMapper::GetInstanceInterruptionBehaviorForName(StringUtils::Trim(instanceInterruptionBehaviorNode.GetText().c_str()).c_str());
+      m_instanceInterruptionBehavior = InstanceInterruptionBehaviorMapper::GetInstanceInterruptionBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceInterruptionBehaviorNode.GetText()).c_str()).c_str());
       m_instanceInterruptionBehaviorHasBeenSet = true;
     }
   }

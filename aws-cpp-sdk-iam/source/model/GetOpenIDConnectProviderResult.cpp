@@ -51,7 +51,7 @@ GetOpenIDConnectProviderResult& GetOpenIDConnectProviderResult::operator =(const
     XmlNode urlNode = resultNode.FirstChild("Url");
     if(!urlNode.IsNull())
     {
-      m_url = urlNode.GetText();
+      m_url = Aws::Utils::Xml::DecodeEscapedXmlText(urlNode.GetText());
     }
     XmlNode clientIDListNode = resultNode.FirstChild("ClientIDList");
     if(!clientIDListNode.IsNull())
@@ -78,7 +78,7 @@ GetOpenIDConnectProviderResult& GetOpenIDConnectProviderResult::operator =(const
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = DateTime(StringUtils::Trim(createDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
   }
 

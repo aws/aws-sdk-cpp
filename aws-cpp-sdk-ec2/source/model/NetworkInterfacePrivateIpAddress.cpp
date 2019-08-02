@@ -64,19 +64,19 @@ NetworkInterfacePrivateIpAddress& NetworkInterfacePrivateIpAddress::operator =(c
     XmlNode primaryNode = resultNode.FirstChild("primary");
     if(!primaryNode.IsNull())
     {
-      m_primary = StringUtils::ConvertToBool(StringUtils::Trim(primaryNode.GetText().c_str()).c_str());
+      m_primary = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(primaryNode.GetText()).c_str()).c_str());
       m_primaryHasBeenSet = true;
     }
     XmlNode privateDnsNameNode = resultNode.FirstChild("privateDnsName");
     if(!privateDnsNameNode.IsNull())
     {
-      m_privateDnsName = privateDnsNameNode.GetText();
+      m_privateDnsName = Aws::Utils::Xml::DecodeEscapedXmlText(privateDnsNameNode.GetText());
       m_privateDnsNameHasBeenSet = true;
     }
     XmlNode privateIpAddressNode = resultNode.FirstChild("privateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
-      m_privateIpAddress = privateIpAddressNode.GetText();
+      m_privateIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(privateIpAddressNode.GetText());
       m_privateIpAddressHasBeenSet = true;
     }
   }

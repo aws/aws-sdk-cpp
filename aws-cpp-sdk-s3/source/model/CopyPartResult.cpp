@@ -52,13 +52,13 @@ CopyPartResult& CopyPartResult::operator =(const XmlNode& xmlNode)
     XmlNode eTagNode = resultNode.FirstChild("ETag");
     if(!eTagNode.IsNull())
     {
-      m_eTag = eTagNode.GetText();
+      m_eTag = Aws::Utils::Xml::DecodeEscapedXmlText(eTagNode.GetText());
       m_eTagHasBeenSet = true;
     }
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");
     if(!lastModifiedNode.IsNull())
     {
-      m_lastModified = DateTime(StringUtils::Trim(lastModifiedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastModified = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_lastModifiedHasBeenSet = true;
     }
   }

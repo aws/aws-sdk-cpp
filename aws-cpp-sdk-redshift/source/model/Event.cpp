@@ -64,19 +64,19 @@ Event& Event::operator =(const XmlNode& xmlNode)
     XmlNode sourceIdentifierNode = resultNode.FirstChild("SourceIdentifier");
     if(!sourceIdentifierNode.IsNull())
     {
-      m_sourceIdentifier = sourceIdentifierNode.GetText();
+      m_sourceIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(sourceIdentifierNode.GetText());
       m_sourceIdentifierHasBeenSet = true;
     }
     XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
     if(!sourceTypeNode.IsNull())
     {
-      m_sourceType = SourceTypeMapper::GetSourceTypeForName(StringUtils::Trim(sourceTypeNode.GetText().c_str()).c_str());
+      m_sourceType = SourceTypeMapper::GetSourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceTypeNode.GetText()).c_str()).c_str());
       m_sourceTypeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
-      m_message = messageNode.GetText();
+      m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
     }
     XmlNode eventCategoriesNode = resultNode.FirstChild("EventCategories");
@@ -94,19 +94,19 @@ Event& Event::operator =(const XmlNode& xmlNode)
     XmlNode severityNode = resultNode.FirstChild("Severity");
     if(!severityNode.IsNull())
     {
-      m_severity = severityNode.GetText();
+      m_severity = Aws::Utils::Xml::DecodeEscapedXmlText(severityNode.GetText());
       m_severityHasBeenSet = true;
     }
     XmlNode dateNode = resultNode.FirstChild("Date");
     if(!dateNode.IsNull())
     {
-      m_date = DateTime(StringUtils::Trim(dateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_date = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_dateHasBeenSet = true;
     }
     XmlNode eventIdNode = resultNode.FirstChild("EventId");
     if(!eventIdNode.IsNull())
     {
-      m_eventId = eventIdNode.GetText();
+      m_eventId = Aws::Utils::Xml::DecodeEscapedXmlText(eventIdNode.GetText());
       m_eventIdHasBeenSet = true;
     }
   }

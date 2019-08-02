@@ -54,13 +54,13 @@ VPC& VPC::operator =(const XmlNode& xmlNode)
     XmlNode vPCRegionNode = resultNode.FirstChild("VPCRegion");
     if(!vPCRegionNode.IsNull())
     {
-      m_vPCRegion = VPCRegionMapper::GetVPCRegionForName(StringUtils::Trim(vPCRegionNode.GetText().c_str()).c_str());
+      m_vPCRegion = VPCRegionMapper::GetVPCRegionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vPCRegionNode.GetText()).c_str()).c_str());
       m_vPCRegionHasBeenSet = true;
     }
     XmlNode vPCIdNode = resultNode.FirstChild("VPCId");
     if(!vPCIdNode.IsNull())
     {
-      m_vPCId = vPCIdNode.GetText();
+      m_vPCId = Aws::Utils::Xml::DecodeEscapedXmlText(vPCIdNode.GetText());
       m_vPCIdHasBeenSet = true;
     }
   }

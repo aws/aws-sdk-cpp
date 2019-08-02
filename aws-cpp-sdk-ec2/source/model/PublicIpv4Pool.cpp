@@ -62,13 +62,13 @@ PublicIpv4Pool& PublicIpv4Pool::operator =(const XmlNode& xmlNode)
     XmlNode poolIdNode = resultNode.FirstChild("poolId");
     if(!poolIdNode.IsNull())
     {
-      m_poolId = poolIdNode.GetText();
+      m_poolId = Aws::Utils::Xml::DecodeEscapedXmlText(poolIdNode.GetText());
       m_poolIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode poolAddressRangesNode = resultNode.FirstChild("poolAddressRangeSet");
@@ -86,13 +86,13 @@ PublicIpv4Pool& PublicIpv4Pool::operator =(const XmlNode& xmlNode)
     XmlNode totalAddressCountNode = resultNode.FirstChild("totalAddressCount");
     if(!totalAddressCountNode.IsNull())
     {
-      m_totalAddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(totalAddressCountNode.GetText().c_str()).c_str());
+      m_totalAddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalAddressCountNode.GetText()).c_str()).c_str());
       m_totalAddressCountHasBeenSet = true;
     }
     XmlNode totalAvailableAddressCountNode = resultNode.FirstChild("totalAvailableAddressCount");
     if(!totalAvailableAddressCountNode.IsNull())
     {
-      m_totalAvailableAddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(totalAvailableAddressCountNode.GetText().c_str()).c_str());
+      m_totalAvailableAddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalAvailableAddressCountNode.GetText()).c_str()).c_str());
       m_totalAvailableAddressCountHasBeenSet = true;
     }
   }

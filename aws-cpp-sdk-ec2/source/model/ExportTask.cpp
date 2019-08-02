@@ -62,13 +62,13 @@ ExportTask& ExportTask::operator =(const XmlNode& xmlNode)
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode exportTaskIdNode = resultNode.FirstChild("exportTaskId");
     if(!exportTaskIdNode.IsNull())
     {
-      m_exportTaskId = exportTaskIdNode.GetText();
+      m_exportTaskId = Aws::Utils::Xml::DecodeEscapedXmlText(exportTaskIdNode.GetText());
       m_exportTaskIdHasBeenSet = true;
     }
     XmlNode exportToS3TaskNode = resultNode.FirstChild("exportToS3");
@@ -86,13 +86,13 @@ ExportTask& ExportTask::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = ExportTaskStateMapper::GetExportTaskStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_state = ExportTaskStateMapper::GetExportTaskStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
       m_stateHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
-      m_statusMessage = statusMessageNode.GetText();
+      m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
     }
   }

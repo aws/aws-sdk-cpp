@@ -60,31 +60,31 @@ AlarmHistoryItem& AlarmHistoryItem::operator =(const XmlNode& xmlNode)
     XmlNode alarmNameNode = resultNode.FirstChild("AlarmName");
     if(!alarmNameNode.IsNull())
     {
-      m_alarmName = alarmNameNode.GetText();
+      m_alarmName = Aws::Utils::Xml::DecodeEscapedXmlText(alarmNameNode.GetText());
       m_alarmNameHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = DateTime(StringUtils::Trim(timestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
     }
     XmlNode historyItemTypeNode = resultNode.FirstChild("HistoryItemType");
     if(!historyItemTypeNode.IsNull())
     {
-      m_historyItemType = HistoryItemTypeMapper::GetHistoryItemTypeForName(StringUtils::Trim(historyItemTypeNode.GetText().c_str()).c_str());
+      m_historyItemType = HistoryItemTypeMapper::GetHistoryItemTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(historyItemTypeNode.GetText()).c_str()).c_str());
       m_historyItemTypeHasBeenSet = true;
     }
     XmlNode historySummaryNode = resultNode.FirstChild("HistorySummary");
     if(!historySummaryNode.IsNull())
     {
-      m_historySummary = historySummaryNode.GetText();
+      m_historySummary = Aws::Utils::Xml::DecodeEscapedXmlText(historySummaryNode.GetText());
       m_historySummaryHasBeenSet = true;
     }
     XmlNode historyDataNode = resultNode.FirstChild("HistoryData");
     if(!historyDataNode.IsNull())
     {
-      m_historyData = historyDataNode.GetText();
+      m_historyData = Aws::Utils::Xml::DecodeEscapedXmlText(historyDataNode.GetText());
       m_historyDataHasBeenSet = true;
     }
   }

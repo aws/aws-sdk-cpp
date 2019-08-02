@@ -64,31 +64,31 @@ OptionStatus& OptionStatus::operator =(const XmlNode& xmlNode)
     XmlNode creationDateNode = resultNode.FirstChild("CreationDate");
     if(!creationDateNode.IsNull())
     {
-      m_creationDate = DateTime(StringUtils::Trim(creationDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_creationDateHasBeenSet = true;
     }
     XmlNode updateDateNode = resultNode.FirstChild("UpdateDate");
     if(!updateDateNode.IsNull())
     {
-      m_updateDate = DateTime(StringUtils::Trim(updateDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_updateDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_updateDateHasBeenSet = true;
     }
     XmlNode updateVersionNode = resultNode.FirstChild("UpdateVersion");
     if(!updateVersionNode.IsNull())
     {
-      m_updateVersion = StringUtils::ConvertToInt32(StringUtils::Trim(updateVersionNode.GetText().c_str()).c_str());
+      m_updateVersion = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateVersionNode.GetText()).c_str()).c_str());
       m_updateVersionHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("State");
     if(!stateNode.IsNull())
     {
-      m_state = OptionStateMapper::GetOptionStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_state = OptionStateMapper::GetOptionStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
       m_stateHasBeenSet = true;
     }
     XmlNode pendingDeletionNode = resultNode.FirstChild("PendingDeletion");
     if(!pendingDeletionNode.IsNull())
     {
-      m_pendingDeletion = StringUtils::ConvertToBool(StringUtils::Trim(pendingDeletionNode.GetText().c_str()).c_str());
+      m_pendingDeletion = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(pendingDeletionNode.GetText()).c_str()).c_str());
       m_pendingDeletionHasBeenSet = true;
     }
   }

@@ -52,13 +52,13 @@ LoadBalancerTargetGroupState& LoadBalancerTargetGroupState::operator =(const Xml
     XmlNode loadBalancerTargetGroupARNNode = resultNode.FirstChild("LoadBalancerTargetGroupARN");
     if(!loadBalancerTargetGroupARNNode.IsNull())
     {
-      m_loadBalancerTargetGroupARN = loadBalancerTargetGroupARNNode.GetText();
+      m_loadBalancerTargetGroupARN = Aws::Utils::Xml::DecodeEscapedXmlText(loadBalancerTargetGroupARNNode.GetText());
       m_loadBalancerTargetGroupARNHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("State");
     if(!stateNode.IsNull())
     {
-      m_state = stateNode.GetText();
+      m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
       m_stateHasBeenSet = true;
     }
   }

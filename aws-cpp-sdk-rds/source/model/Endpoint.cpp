@@ -56,19 +56,19 @@ Endpoint& Endpoint::operator =(const XmlNode& xmlNode)
     XmlNode addressNode = resultNode.FirstChild("Address");
     if(!addressNode.IsNull())
     {
-      m_address = addressNode.GetText();
+      m_address = Aws::Utils::Xml::DecodeEscapedXmlText(addressNode.GetText());
       m_addressHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
     if(!portNode.IsNull())
     {
-      m_port = StringUtils::ConvertToInt32(StringUtils::Trim(portNode.GetText().c_str()).c_str());
+      m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
     }
     XmlNode hostedZoneIdNode = resultNode.FirstChild("HostedZoneId");
     if(!hostedZoneIdNode.IsNull())
     {
-      m_hostedZoneId = hostedZoneIdNode.GetText();
+      m_hostedZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(hostedZoneIdNode.GetText());
       m_hostedZoneIdHasBeenSet = true;
     }
   }

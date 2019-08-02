@@ -66,7 +66,7 @@ VpcPeeringConnection& VpcPeeringConnection::operator =(const XmlNode& xmlNode)
     XmlNode expirationTimeNode = resultNode.FirstChild("expirationTime");
     if(!expirationTimeNode.IsNull())
     {
-      m_expirationTime = DateTime(StringUtils::Trim(expirationTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_expirationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_expirationTimeHasBeenSet = true;
     }
     XmlNode requesterVpcInfoNode = resultNode.FirstChild("requesterVpcInfo");
@@ -96,7 +96,7 @@ VpcPeeringConnection& VpcPeeringConnection::operator =(const XmlNode& xmlNode)
     XmlNode vpcPeeringConnectionIdNode = resultNode.FirstChild("vpcPeeringConnectionId");
     if(!vpcPeeringConnectionIdNode.IsNull())
     {
-      m_vpcPeeringConnectionId = vpcPeeringConnectionIdNode.GetText();
+      m_vpcPeeringConnectionId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcPeeringConnectionIdNode.GetText());
       m_vpcPeeringConnectionIdHasBeenSet = true;
     }
   }

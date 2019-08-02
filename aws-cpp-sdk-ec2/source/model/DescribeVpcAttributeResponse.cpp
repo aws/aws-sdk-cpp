@@ -51,7 +51,7 @@ DescribeVpcAttributeResponse& DescribeVpcAttributeResponse::operator =(const Aws
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = vpcIdNode.GetText();
+      m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
     }
     XmlNode enableDnsHostnamesNode = resultNode.FirstChild("enableDnsHostnames");
     if(!enableDnsHostnamesNode.IsNull())

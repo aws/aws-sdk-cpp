@@ -58,25 +58,25 @@ ChangeInfo& ChangeInfo::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = idNode.GetText();
+      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ChangeStatusMapper::GetChangeStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = ChangeStatusMapper::GetChangeStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode submittedAtNode = resultNode.FirstChild("SubmittedAt");
     if(!submittedAtNode.IsNull())
     {
-      m_submittedAt = DateTime(StringUtils::Trim(submittedAtNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_submittedAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(submittedAtNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_submittedAtHasBeenSet = true;
     }
     XmlNode commentNode = resultNode.FirstChild("Comment");
     if(!commentNode.IsNull())
     {
-      m_comment = commentNode.GetText();
+      m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
     }
   }

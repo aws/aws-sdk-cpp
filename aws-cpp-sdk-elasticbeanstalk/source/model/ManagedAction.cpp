@@ -62,31 +62,31 @@ ManagedAction& ManagedAction::operator =(const XmlNode& xmlNode)
     XmlNode actionIdNode = resultNode.FirstChild("ActionId");
     if(!actionIdNode.IsNull())
     {
-      m_actionId = actionIdNode.GetText();
+      m_actionId = Aws::Utils::Xml::DecodeEscapedXmlText(actionIdNode.GetText());
       m_actionIdHasBeenSet = true;
     }
     XmlNode actionDescriptionNode = resultNode.FirstChild("ActionDescription");
     if(!actionDescriptionNode.IsNull())
     {
-      m_actionDescription = actionDescriptionNode.GetText();
+      m_actionDescription = Aws::Utils::Xml::DecodeEscapedXmlText(actionDescriptionNode.GetText());
       m_actionDescriptionHasBeenSet = true;
     }
     XmlNode actionTypeNode = resultNode.FirstChild("ActionType");
     if(!actionTypeNode.IsNull())
     {
-      m_actionType = ActionTypeMapper::GetActionTypeForName(StringUtils::Trim(actionTypeNode.GetText().c_str()).c_str());
+      m_actionType = ActionTypeMapper::GetActionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionTypeNode.GetText()).c_str()).c_str());
       m_actionTypeHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ActionStatusMapper::GetActionStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = ActionStatusMapper::GetActionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode windowStartTimeNode = resultNode.FirstChild("WindowStartTime");
     if(!windowStartTimeNode.IsNull())
     {
-      m_windowStartTime = DateTime(StringUtils::Trim(windowStartTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_windowStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(windowStartTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_windowStartTimeHasBeenSet = true;
     }
   }

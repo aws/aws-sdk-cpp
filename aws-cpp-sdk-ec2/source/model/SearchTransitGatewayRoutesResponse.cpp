@@ -64,7 +64,7 @@ SearchTransitGatewayRoutesResponse& SearchTransitGatewayRoutesResponse::operator
     XmlNode additionalRoutesAvailableNode = resultNode.FirstChild("additionalRoutesAvailable");
     if(!additionalRoutesAvailableNode.IsNull())
     {
-      m_additionalRoutesAvailable = StringUtils::ConvertToBool(StringUtils::Trim(additionalRoutesAvailableNode.GetText().c_str()).c_str());
+      m_additionalRoutesAvailable = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(additionalRoutesAvailableNode.GetText()).c_str()).c_str());
     }
   }
 

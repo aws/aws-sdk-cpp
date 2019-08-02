@@ -58,7 +58,7 @@ ForwardedValues& ForwardedValues::operator =(const XmlNode& xmlNode)
     XmlNode queryStringNode = resultNode.FirstChild("QueryString");
     if(!queryStringNode.IsNull())
     {
-      m_queryString = StringUtils::ConvertToBool(StringUtils::Trim(queryStringNode.GetText().c_str()).c_str());
+      m_queryString = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(queryStringNode.GetText()).c_str()).c_str());
       m_queryStringHasBeenSet = true;
     }
     XmlNode cookiesNode = resultNode.FirstChild("Cookies");

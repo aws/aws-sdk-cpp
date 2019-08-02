@@ -84,13 +84,13 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
     XmlNode clientVpnEndpointIdNode = resultNode.FirstChild("clientVpnEndpointId");
     if(!clientVpnEndpointIdNode.IsNull())
     {
-      m_clientVpnEndpointId = clientVpnEndpointIdNode.GetText();
+      m_clientVpnEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(clientVpnEndpointIdNode.GetText());
       m_clientVpnEndpointIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
@@ -102,25 +102,25 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
     if(!creationTimeNode.IsNull())
     {
-      m_creationTime = creationTimeNode.GetText();
+      m_creationTime = Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText());
       m_creationTimeHasBeenSet = true;
     }
     XmlNode deletionTimeNode = resultNode.FirstChild("deletionTime");
     if(!deletionTimeNode.IsNull())
     {
-      m_deletionTime = deletionTimeNode.GetText();
+      m_deletionTime = Aws::Utils::Xml::DecodeEscapedXmlText(deletionTimeNode.GetText());
       m_deletionTimeHasBeenSet = true;
     }
     XmlNode dnsNameNode = resultNode.FirstChild("dnsName");
     if(!dnsNameNode.IsNull())
     {
-      m_dnsName = dnsNameNode.GetText();
+      m_dnsName = Aws::Utils::Xml::DecodeEscapedXmlText(dnsNameNode.GetText());
       m_dnsNameHasBeenSet = true;
     }
     XmlNode clientCidrBlockNode = resultNode.FirstChild("clientCidrBlock");
     if(!clientCidrBlockNode.IsNull())
     {
-      m_clientCidrBlock = clientCidrBlockNode.GetText();
+      m_clientCidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(clientCidrBlockNode.GetText());
       m_clientCidrBlockHasBeenSet = true;
     }
     XmlNode dnsServersNode = resultNode.FirstChild("dnsServer");
@@ -138,25 +138,25 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
     XmlNode splitTunnelNode = resultNode.FirstChild("splitTunnel");
     if(!splitTunnelNode.IsNull())
     {
-      m_splitTunnel = StringUtils::ConvertToBool(StringUtils::Trim(splitTunnelNode.GetText().c_str()).c_str());
+      m_splitTunnel = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(splitTunnelNode.GetText()).c_str()).c_str());
       m_splitTunnelHasBeenSet = true;
     }
     XmlNode vpnProtocolNode = resultNode.FirstChild("vpnProtocol");
     if(!vpnProtocolNode.IsNull())
     {
-      m_vpnProtocol = VpnProtocolMapper::GetVpnProtocolForName(StringUtils::Trim(vpnProtocolNode.GetText().c_str()).c_str());
+      m_vpnProtocol = VpnProtocolMapper::GetVpnProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpnProtocolNode.GetText()).c_str()).c_str());
       m_vpnProtocolHasBeenSet = true;
     }
     XmlNode transportProtocolNode = resultNode.FirstChild("transportProtocol");
     if(!transportProtocolNode.IsNull())
     {
-      m_transportProtocol = TransportProtocolMapper::GetTransportProtocolForName(StringUtils::Trim(transportProtocolNode.GetText().c_str()).c_str());
+      m_transportProtocol = TransportProtocolMapper::GetTransportProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transportProtocolNode.GetText()).c_str()).c_str());
       m_transportProtocolHasBeenSet = true;
     }
     XmlNode serverCertificateArnNode = resultNode.FirstChild("serverCertificateArn");
     if(!serverCertificateArnNode.IsNull())
     {
-      m_serverCertificateArn = serverCertificateArnNode.GetText();
+      m_serverCertificateArn = Aws::Utils::Xml::DecodeEscapedXmlText(serverCertificateArnNode.GetText());
       m_serverCertificateArnHasBeenSet = true;
     }
     XmlNode authenticationOptionsNode = resultNode.FirstChild("authenticationOptions");

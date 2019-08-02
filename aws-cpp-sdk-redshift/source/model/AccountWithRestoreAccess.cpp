@@ -52,13 +52,13 @@ AccountWithRestoreAccess& AccountWithRestoreAccess::operator =(const XmlNode& xm
     XmlNode accountIdNode = resultNode.FirstChild("AccountId");
     if(!accountIdNode.IsNull())
     {
-      m_accountId = accountIdNode.GetText();
+      m_accountId = Aws::Utils::Xml::DecodeEscapedXmlText(accountIdNode.GetText());
       m_accountIdHasBeenSet = true;
     }
     XmlNode accountAliasNode = resultNode.FirstChild("AccountAlias");
     if(!accountAliasNode.IsNull())
     {
-      m_accountAlias = accountAliasNode.GetText();
+      m_accountAlias = Aws::Utils::Xml::DecodeEscapedXmlText(accountAliasNode.GetText());
       m_accountAliasHasBeenSet = true;
     }
   }

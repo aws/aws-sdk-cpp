@@ -52,7 +52,7 @@ ReplicationRuleAndOperator& ReplicationRuleAndOperator::operator =(const XmlNode
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
     if(!prefixNode.IsNull())
     {
-      m_prefix = prefixNode.GetText();
+      m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
       m_prefixHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tag");

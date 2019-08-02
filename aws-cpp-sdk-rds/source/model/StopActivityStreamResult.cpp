@@ -53,17 +53,17 @@ StopActivityStreamResult& StopActivityStreamResult::operator =(const Aws::Amazon
     XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
-      m_kmsKeyId = kmsKeyIdNode.GetText();
+      m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
     }
     XmlNode kinesisStreamNameNode = resultNode.FirstChild("KinesisStreamName");
     if(!kinesisStreamNameNode.IsNull())
     {
-      m_kinesisStreamName = kinesisStreamNameNode.GetText();
+      m_kinesisStreamName = Aws::Utils::Xml::DecodeEscapedXmlText(kinesisStreamNameNode.GetText());
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ActivityStreamStatusMapper::GetActivityStreamStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = ActivityStreamStatusMapper::GetActivityStreamStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
     }
   }
 

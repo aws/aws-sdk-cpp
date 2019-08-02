@@ -51,7 +51,7 @@ GetAccessKeyInfoResult& GetAccessKeyInfoResult::operator =(const Aws::AmazonWebS
     XmlNode accountNode = resultNode.FirstChild("Account");
     if(!accountNode.IsNull())
     {
-      m_account = accountNode.GetText();
+      m_account = Aws::Utils::Xml::DecodeEscapedXmlText(accountNode.GetText());
     }
   }
 

@@ -52,7 +52,7 @@ ApplicationResourceLifecycleConfig& ApplicationResourceLifecycleConfig::operator
     XmlNode serviceRoleNode = resultNode.FirstChild("ServiceRole");
     if(!serviceRoleNode.IsNull())
     {
-      m_serviceRole = serviceRoleNode.GetText();
+      m_serviceRole = Aws::Utils::Xml::DecodeEscapedXmlText(serviceRoleNode.GetText());
       m_serviceRoleHasBeenSet = true;
     }
     XmlNode versionLifecycleConfigNode = resultNode.FirstChild("VersionLifecycleConfig");

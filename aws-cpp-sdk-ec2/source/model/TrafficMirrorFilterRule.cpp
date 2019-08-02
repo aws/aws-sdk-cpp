@@ -78,37 +78,37 @@ TrafficMirrorFilterRule& TrafficMirrorFilterRule::operator =(const XmlNode& xmlN
     XmlNode trafficMirrorFilterRuleIdNode = resultNode.FirstChild("trafficMirrorFilterRuleId");
     if(!trafficMirrorFilterRuleIdNode.IsNull())
     {
-      m_trafficMirrorFilterRuleId = trafficMirrorFilterRuleIdNode.GetText();
+      m_trafficMirrorFilterRuleId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficMirrorFilterRuleIdNode.GetText());
       m_trafficMirrorFilterRuleIdHasBeenSet = true;
     }
     XmlNode trafficMirrorFilterIdNode = resultNode.FirstChild("trafficMirrorFilterId");
     if(!trafficMirrorFilterIdNode.IsNull())
     {
-      m_trafficMirrorFilterId = trafficMirrorFilterIdNode.GetText();
+      m_trafficMirrorFilterId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficMirrorFilterIdNode.GetText());
       m_trafficMirrorFilterIdHasBeenSet = true;
     }
     XmlNode trafficDirectionNode = resultNode.FirstChild("trafficDirection");
     if(!trafficDirectionNode.IsNull())
     {
-      m_trafficDirection = TrafficDirectionMapper::GetTrafficDirectionForName(StringUtils::Trim(trafficDirectionNode.GetText().c_str()).c_str());
+      m_trafficDirection = TrafficDirectionMapper::GetTrafficDirectionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trafficDirectionNode.GetText()).c_str()).c_str());
       m_trafficDirectionHasBeenSet = true;
     }
     XmlNode ruleNumberNode = resultNode.FirstChild("ruleNumber");
     if(!ruleNumberNode.IsNull())
     {
-      m_ruleNumber = StringUtils::ConvertToInt32(StringUtils::Trim(ruleNumberNode.GetText().c_str()).c_str());
+      m_ruleNumber = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ruleNumberNode.GetText()).c_str()).c_str());
       m_ruleNumberHasBeenSet = true;
     }
     XmlNode ruleActionNode = resultNode.FirstChild("ruleAction");
     if(!ruleActionNode.IsNull())
     {
-      m_ruleAction = TrafficMirrorRuleActionMapper::GetTrafficMirrorRuleActionForName(StringUtils::Trim(ruleActionNode.GetText().c_str()).c_str());
+      m_ruleAction = TrafficMirrorRuleActionMapper::GetTrafficMirrorRuleActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ruleActionNode.GetText()).c_str()).c_str());
       m_ruleActionHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = StringUtils::ConvertToInt32(StringUtils::Trim(protocolNode.GetText().c_str()).c_str());
+      m_protocol = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
       m_protocolHasBeenSet = true;
     }
     XmlNode destinationPortRangeNode = resultNode.FirstChild("destinationPortRange");
@@ -126,19 +126,19 @@ TrafficMirrorFilterRule& TrafficMirrorFilterRule::operator =(const XmlNode& xmlN
     XmlNode destinationCidrBlockNode = resultNode.FirstChild("destinationCidrBlock");
     if(!destinationCidrBlockNode.IsNull())
     {
-      m_destinationCidrBlock = destinationCidrBlockNode.GetText();
+      m_destinationCidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(destinationCidrBlockNode.GetText());
       m_destinationCidrBlockHasBeenSet = true;
     }
     XmlNode sourceCidrBlockNode = resultNode.FirstChild("sourceCidrBlock");
     if(!sourceCidrBlockNode.IsNull())
     {
-      m_sourceCidrBlock = sourceCidrBlockNode.GetText();
+      m_sourceCidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(sourceCidrBlockNode.GetText());
       m_sourceCidrBlockHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
   }

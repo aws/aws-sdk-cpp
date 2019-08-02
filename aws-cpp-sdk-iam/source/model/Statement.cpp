@@ -58,13 +58,13 @@ Statement& Statement::operator =(const XmlNode& xmlNode)
     XmlNode sourcePolicyIdNode = resultNode.FirstChild("SourcePolicyId");
     if(!sourcePolicyIdNode.IsNull())
     {
-      m_sourcePolicyId = sourcePolicyIdNode.GetText();
+      m_sourcePolicyId = Aws::Utils::Xml::DecodeEscapedXmlText(sourcePolicyIdNode.GetText());
       m_sourcePolicyIdHasBeenSet = true;
     }
     XmlNode sourcePolicyTypeNode = resultNode.FirstChild("SourcePolicyType");
     if(!sourcePolicyTypeNode.IsNull())
     {
-      m_sourcePolicyType = PolicySourceTypeMapper::GetPolicySourceTypeForName(StringUtils::Trim(sourcePolicyTypeNode.GetText().c_str()).c_str());
+      m_sourcePolicyType = PolicySourceTypeMapper::GetPolicySourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourcePolicyTypeNode.GetText()).c_str()).c_str());
       m_sourcePolicyTypeHasBeenSet = true;
     }
     XmlNode startPositionNode = resultNode.FirstChild("StartPosition");

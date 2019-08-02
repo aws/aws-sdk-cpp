@@ -51,7 +51,7 @@ DeleteTrafficMirrorSessionResponse& DeleteTrafficMirrorSessionResponse::operator
     XmlNode trafficMirrorSessionIdNode = resultNode.FirstChild("trafficMirrorSessionId");
     if(!trafficMirrorSessionIdNode.IsNull())
     {
-      m_trafficMirrorSessionId = trafficMirrorSessionIdNode.GetText();
+      m_trafficMirrorSessionId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficMirrorSessionIdNode.GetText());
     }
   }
 

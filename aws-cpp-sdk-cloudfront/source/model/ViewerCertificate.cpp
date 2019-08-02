@@ -64,31 +64,31 @@ ViewerCertificate& ViewerCertificate::operator =(const XmlNode& xmlNode)
     XmlNode cloudFrontDefaultCertificateNode = resultNode.FirstChild("CloudFrontDefaultCertificate");
     if(!cloudFrontDefaultCertificateNode.IsNull())
     {
-      m_cloudFrontDefaultCertificate = StringUtils::ConvertToBool(StringUtils::Trim(cloudFrontDefaultCertificateNode.GetText().c_str()).c_str());
+      m_cloudFrontDefaultCertificate = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cloudFrontDefaultCertificateNode.GetText()).c_str()).c_str());
       m_cloudFrontDefaultCertificateHasBeenSet = true;
     }
     XmlNode iAMCertificateIdNode = resultNode.FirstChild("IAMCertificateId");
     if(!iAMCertificateIdNode.IsNull())
     {
-      m_iAMCertificateId = iAMCertificateIdNode.GetText();
+      m_iAMCertificateId = Aws::Utils::Xml::DecodeEscapedXmlText(iAMCertificateIdNode.GetText());
       m_iAMCertificateIdHasBeenSet = true;
     }
     XmlNode aCMCertificateArnNode = resultNode.FirstChild("ACMCertificateArn");
     if(!aCMCertificateArnNode.IsNull())
     {
-      m_aCMCertificateArn = aCMCertificateArnNode.GetText();
+      m_aCMCertificateArn = Aws::Utils::Xml::DecodeEscapedXmlText(aCMCertificateArnNode.GetText());
       m_aCMCertificateArnHasBeenSet = true;
     }
     XmlNode sSLSupportMethodNode = resultNode.FirstChild("SSLSupportMethod");
     if(!sSLSupportMethodNode.IsNull())
     {
-      m_sSLSupportMethod = SSLSupportMethodMapper::GetSSLSupportMethodForName(StringUtils::Trim(sSLSupportMethodNode.GetText().c_str()).c_str());
+      m_sSLSupportMethod = SSLSupportMethodMapper::GetSSLSupportMethodForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sSLSupportMethodNode.GetText()).c_str()).c_str());
       m_sSLSupportMethodHasBeenSet = true;
     }
     XmlNode minimumProtocolVersionNode = resultNode.FirstChild("MinimumProtocolVersion");
     if(!minimumProtocolVersionNode.IsNull())
     {
-      m_minimumProtocolVersion = MinimumProtocolVersionMapper::GetMinimumProtocolVersionForName(StringUtils::Trim(minimumProtocolVersionNode.GetText().c_str()).c_str());
+      m_minimumProtocolVersion = MinimumProtocolVersionMapper::GetMinimumProtocolVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minimumProtocolVersionNode.GetText()).c_str()).c_str());
       m_minimumProtocolVersionHasBeenSet = true;
     }
   }

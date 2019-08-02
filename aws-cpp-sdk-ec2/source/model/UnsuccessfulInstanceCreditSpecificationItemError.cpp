@@ -54,13 +54,13 @@ UnsuccessfulInstanceCreditSpecificationItemError& UnsuccessfulInstanceCreditSpec
     XmlNode codeNode = resultNode.FirstChild("code");
     if(!codeNode.IsNull())
     {
-      m_code = UnsuccessfulInstanceCreditSpecificationErrorCodeMapper::GetUnsuccessfulInstanceCreditSpecificationErrorCodeForName(StringUtils::Trim(codeNode.GetText().c_str()).c_str());
+      m_code = UnsuccessfulInstanceCreditSpecificationErrorCodeMapper::GetUnsuccessfulInstanceCreditSpecificationErrorCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()).c_str());
       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("message");
     if(!messageNode.IsNull())
     {
-      m_message = messageNode.GetText();
+      m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
     }
   }

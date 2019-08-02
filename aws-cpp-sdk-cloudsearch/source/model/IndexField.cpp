@@ -76,13 +76,13 @@ IndexField& IndexField::operator =(const XmlNode& xmlNode)
     XmlNode indexFieldNameNode = resultNode.FirstChild("IndexFieldName");
     if(!indexFieldNameNode.IsNull())
     {
-      m_indexFieldName = indexFieldNameNode.GetText();
+      m_indexFieldName = Aws::Utils::Xml::DecodeEscapedXmlText(indexFieldNameNode.GetText());
       m_indexFieldNameHasBeenSet = true;
     }
     XmlNode indexFieldTypeNode = resultNode.FirstChild("IndexFieldType");
     if(!indexFieldTypeNode.IsNull())
     {
-      m_indexFieldType = IndexFieldTypeMapper::GetIndexFieldTypeForName(StringUtils::Trim(indexFieldTypeNode.GetText().c_str()).c_str());
+      m_indexFieldType = IndexFieldTypeMapper::GetIndexFieldTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(indexFieldTypeNode.GetText()).c_str()).c_str());
       m_indexFieldTypeHasBeenSet = true;
     }
     XmlNode intOptionsNode = resultNode.FirstChild("IntOptions");

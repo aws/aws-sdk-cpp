@@ -51,7 +51,7 @@ ListTagsForResourceResult& ListTagsForResourceResult::operator =(const Aws::Amaz
     XmlNode resourceArnNode = resultNode.FirstChild("ResourceArn");
     if(!resourceArnNode.IsNull())
     {
-      m_resourceArn = resourceArnNode.GetText();
+      m_resourceArn = Aws::Utils::Xml::DecodeEscapedXmlText(resourceArnNode.GetText());
     }
     XmlNode resourceTagsNode = resultNode.FirstChild("ResourceTags");
     if(!resourceTagsNode.IsNull())

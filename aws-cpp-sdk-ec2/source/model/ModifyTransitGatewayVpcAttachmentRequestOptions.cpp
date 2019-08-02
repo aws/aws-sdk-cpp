@@ -56,13 +56,13 @@ ModifyTransitGatewayVpcAttachmentRequestOptions& ModifyTransitGatewayVpcAttachme
     XmlNode dnsSupportNode = resultNode.FirstChild("DnsSupport");
     if(!dnsSupportNode.IsNull())
     {
-      m_dnsSupport = DnsSupportValueMapper::GetDnsSupportValueForName(StringUtils::Trim(dnsSupportNode.GetText().c_str()).c_str());
+      m_dnsSupport = DnsSupportValueMapper::GetDnsSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dnsSupportNode.GetText()).c_str()).c_str());
       m_dnsSupportHasBeenSet = true;
     }
     XmlNode ipv6SupportNode = resultNode.FirstChild("Ipv6Support");
     if(!ipv6SupportNode.IsNull())
     {
-      m_ipv6Support = Ipv6SupportValueMapper::GetIpv6SupportValueForName(StringUtils::Trim(ipv6SupportNode.GetText().c_str()).c_str());
+      m_ipv6Support = Ipv6SupportValueMapper::GetIpv6SupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6SupportNode.GetText()).c_str()).c_str());
       m_ipv6SupportHasBeenSet = true;
     }
   }

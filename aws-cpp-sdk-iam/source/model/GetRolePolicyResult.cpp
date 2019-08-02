@@ -51,17 +51,17 @@ GetRolePolicyResult& GetRolePolicyResult::operator =(const Aws::AmazonWebService
     XmlNode roleNameNode = resultNode.FirstChild("RoleName");
     if(!roleNameNode.IsNull())
     {
-      m_roleName = roleNameNode.GetText();
+      m_roleName = Aws::Utils::Xml::DecodeEscapedXmlText(roleNameNode.GetText());
     }
     XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
     if(!policyNameNode.IsNull())
     {
-      m_policyName = policyNameNode.GetText();
+      m_policyName = Aws::Utils::Xml::DecodeEscapedXmlText(policyNameNode.GetText());
     }
     XmlNode policyDocumentNode = resultNode.FirstChild("PolicyDocument");
     if(!policyDocumentNode.IsNull())
     {
-      m_policyDocument = policyDocumentNode.GetText();
+      m_policyDocument = Aws::Utils::Xml::DecodeEscapedXmlText(policyDocumentNode.GetText());
     }
   }
 

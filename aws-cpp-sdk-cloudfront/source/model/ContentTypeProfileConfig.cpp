@@ -54,7 +54,7 @@ ContentTypeProfileConfig& ContentTypeProfileConfig::operator =(const XmlNode& xm
     XmlNode forwardWhenContentTypeIsUnknownNode = resultNode.FirstChild("ForwardWhenContentTypeIsUnknown");
     if(!forwardWhenContentTypeIsUnknownNode.IsNull())
     {
-      m_forwardWhenContentTypeIsUnknown = StringUtils::ConvertToBool(StringUtils::Trim(forwardWhenContentTypeIsUnknownNode.GetText().c_str()).c_str());
+      m_forwardWhenContentTypeIsUnknown = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(forwardWhenContentTypeIsUnknownNode.GetText()).c_str()).c_str());
       m_forwardWhenContentTypeIsUnknownHasBeenSet = true;
     }
     XmlNode contentTypeProfilesNode = resultNode.FirstChild("ContentTypeProfiles");

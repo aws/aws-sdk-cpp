@@ -58,19 +58,19 @@ AccountQuota& AccountQuota::operator =(const XmlNode& xmlNode)
     XmlNode accountQuotaNameNode = resultNode.FirstChild("AccountQuotaName");
     if(!accountQuotaNameNode.IsNull())
     {
-      m_accountQuotaName = accountQuotaNameNode.GetText();
+      m_accountQuotaName = Aws::Utils::Xml::DecodeEscapedXmlText(accountQuotaNameNode.GetText());
       m_accountQuotaNameHasBeenSet = true;
     }
     XmlNode usedNode = resultNode.FirstChild("Used");
     if(!usedNode.IsNull())
     {
-      m_used = StringUtils::ConvertToInt64(StringUtils::Trim(usedNode.GetText().c_str()).c_str());
+      m_used = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usedNode.GetText()).c_str()).c_str());
       m_usedHasBeenSet = true;
     }
     XmlNode maxNode = resultNode.FirstChild("Max");
     if(!maxNode.IsNull())
     {
-      m_max = StringUtils::ConvertToInt64(StringUtils::Trim(maxNode.GetText().c_str()).c_str());
+      m_max = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxNode.GetText()).c_str()).c_str());
       m_maxHasBeenSet = true;
     }
   }

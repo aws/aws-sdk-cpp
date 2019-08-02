@@ -72,31 +72,31 @@ StackSet& StackSet::operator =(const XmlNode& xmlNode)
     XmlNode stackSetNameNode = resultNode.FirstChild("StackSetName");
     if(!stackSetNameNode.IsNull())
     {
-      m_stackSetName = stackSetNameNode.GetText();
+      m_stackSetName = Aws::Utils::Xml::DecodeEscapedXmlText(stackSetNameNode.GetText());
       m_stackSetNameHasBeenSet = true;
     }
     XmlNode stackSetIdNode = resultNode.FirstChild("StackSetId");
     if(!stackSetIdNode.IsNull())
     {
-      m_stackSetId = stackSetIdNode.GetText();
+      m_stackSetId = Aws::Utils::Xml::DecodeEscapedXmlText(stackSetIdNode.GetText());
       m_stackSetIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StackSetStatusMapper::GetStackSetStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = StackSetStatusMapper::GetStackSetStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode templateBodyNode = resultNode.FirstChild("TemplateBody");
     if(!templateBodyNode.IsNull())
     {
-      m_templateBody = templateBodyNode.GetText();
+      m_templateBody = Aws::Utils::Xml::DecodeEscapedXmlText(templateBodyNode.GetText());
       m_templateBodyHasBeenSet = true;
     }
     XmlNode parametersNode = resultNode.FirstChild("Parameters");
@@ -138,19 +138,19 @@ StackSet& StackSet::operator =(const XmlNode& xmlNode)
     XmlNode stackSetARNNode = resultNode.FirstChild("StackSetARN");
     if(!stackSetARNNode.IsNull())
     {
-      m_stackSetARN = stackSetARNNode.GetText();
+      m_stackSetARN = Aws::Utils::Xml::DecodeEscapedXmlText(stackSetARNNode.GetText());
       m_stackSetARNHasBeenSet = true;
     }
     XmlNode administrationRoleARNNode = resultNode.FirstChild("AdministrationRoleARN");
     if(!administrationRoleARNNode.IsNull())
     {
-      m_administrationRoleARN = administrationRoleARNNode.GetText();
+      m_administrationRoleARN = Aws::Utils::Xml::DecodeEscapedXmlText(administrationRoleARNNode.GetText());
       m_administrationRoleARNHasBeenSet = true;
     }
     XmlNode executionRoleNameNode = resultNode.FirstChild("ExecutionRoleName");
     if(!executionRoleNameNode.IsNull())
     {
-      m_executionRoleName = executionRoleNameNode.GetText();
+      m_executionRoleName = Aws::Utils::Xml::DecodeEscapedXmlText(executionRoleNameNode.GetText());
       m_executionRoleNameHasBeenSet = true;
     }
   }

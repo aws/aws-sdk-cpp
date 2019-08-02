@@ -52,13 +52,13 @@ CharacterSet& CharacterSet::operator =(const XmlNode& xmlNode)
     XmlNode characterSetNameNode = resultNode.FirstChild("CharacterSetName");
     if(!characterSetNameNode.IsNull())
     {
-      m_characterSetName = characterSetNameNode.GetText();
+      m_characterSetName = Aws::Utils::Xml::DecodeEscapedXmlText(characterSetNameNode.GetText());
       m_characterSetNameHasBeenSet = true;
     }
     XmlNode characterSetDescriptionNode = resultNode.FirstChild("CharacterSetDescription");
     if(!characterSetDescriptionNode.IsNull())
     {
-      m_characterSetDescription = characterSetDescriptionNode.GetText();
+      m_characterSetDescription = Aws::Utils::Xml::DecodeEscapedXmlText(characterSetDescriptionNode.GetText());
       m_characterSetDescriptionHasBeenSet = true;
     }
   }

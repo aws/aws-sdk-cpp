@@ -51,12 +51,12 @@ GetConsoleScreenshotResponse& GetConsoleScreenshotResponse::operator =(const Aws
     XmlNode imageDataNode = resultNode.FirstChild("imageData");
     if(!imageDataNode.IsNull())
     {
-      m_imageData = imageDataNode.GetText();
+      m_imageData = Aws::Utils::Xml::DecodeEscapedXmlText(imageDataNode.GetText());
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = instanceIdNode.GetText();
+      m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
     }
   }
 

@@ -62,22 +62,22 @@ DescribeFleetHistoryResponse& DescribeFleetHistoryResponse::operator =(const Aws
     XmlNode lastEvaluatedTimeNode = resultNode.FirstChild("lastEvaluatedTime");
     if(!lastEvaluatedTimeNode.IsNull())
     {
-      m_lastEvaluatedTime = DateTime(StringUtils::Trim(lastEvaluatedTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastEvaluatedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastEvaluatedTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = nextTokenNode.GetText();
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
     }
     XmlNode fleetIdNode = resultNode.FirstChild("fleetId");
     if(!fleetIdNode.IsNull())
     {
-      m_fleetId = fleetIdNode.GetText();
+      m_fleetId = Aws::Utils::Xml::DecodeEscapedXmlText(fleetIdNode.GetText());
     }
     XmlNode startTimeNode = resultNode.FirstChild("startTime");
     if(!startTimeNode.IsNull())
     {
-      m_startTime = DateTime(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
   }
 

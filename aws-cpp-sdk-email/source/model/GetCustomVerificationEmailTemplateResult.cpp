@@ -51,32 +51,32 @@ GetCustomVerificationEmailTemplateResult& GetCustomVerificationEmailTemplateResu
     XmlNode templateNameNode = resultNode.FirstChild("TemplateName");
     if(!templateNameNode.IsNull())
     {
-      m_templateName = templateNameNode.GetText();
+      m_templateName = Aws::Utils::Xml::DecodeEscapedXmlText(templateNameNode.GetText());
     }
     XmlNode fromEmailAddressNode = resultNode.FirstChild("FromEmailAddress");
     if(!fromEmailAddressNode.IsNull())
     {
-      m_fromEmailAddress = fromEmailAddressNode.GetText();
+      m_fromEmailAddress = Aws::Utils::Xml::DecodeEscapedXmlText(fromEmailAddressNode.GetText());
     }
     XmlNode templateSubjectNode = resultNode.FirstChild("TemplateSubject");
     if(!templateSubjectNode.IsNull())
     {
-      m_templateSubject = templateSubjectNode.GetText();
+      m_templateSubject = Aws::Utils::Xml::DecodeEscapedXmlText(templateSubjectNode.GetText());
     }
     XmlNode templateContentNode = resultNode.FirstChild("TemplateContent");
     if(!templateContentNode.IsNull())
     {
-      m_templateContent = templateContentNode.GetText();
+      m_templateContent = Aws::Utils::Xml::DecodeEscapedXmlText(templateContentNode.GetText());
     }
     XmlNode successRedirectionURLNode = resultNode.FirstChild("SuccessRedirectionURL");
     if(!successRedirectionURLNode.IsNull())
     {
-      m_successRedirectionURL = successRedirectionURLNode.GetText();
+      m_successRedirectionURL = Aws::Utils::Xml::DecodeEscapedXmlText(successRedirectionURLNode.GetText());
     }
     XmlNode failureRedirectionURLNode = resultNode.FirstChild("FailureRedirectionURL");
     if(!failureRedirectionURLNode.IsNull())
     {
-      m_failureRedirectionURL = failureRedirectionURLNode.GetText();
+      m_failureRedirectionURL = Aws::Utils::Xml::DecodeEscapedXmlText(failureRedirectionURLNode.GetText());
     }
   }
 

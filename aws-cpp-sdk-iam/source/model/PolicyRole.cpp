@@ -52,13 +52,13 @@ PolicyRole& PolicyRole::operator =(const XmlNode& xmlNode)
     XmlNode roleNameNode = resultNode.FirstChild("RoleName");
     if(!roleNameNode.IsNull())
     {
-      m_roleName = roleNameNode.GetText();
+      m_roleName = Aws::Utils::Xml::DecodeEscapedXmlText(roleNameNode.GetText());
       m_roleNameHasBeenSet = true;
     }
     XmlNode roleIdNode = resultNode.FirstChild("RoleId");
     if(!roleIdNode.IsNull())
     {
-      m_roleId = roleIdNode.GetText();
+      m_roleId = Aws::Utils::Xml::DecodeEscapedXmlText(roleIdNode.GetText());
       m_roleIdHasBeenSet = true;
     }
   }

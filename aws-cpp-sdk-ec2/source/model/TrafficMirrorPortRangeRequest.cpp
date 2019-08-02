@@ -56,13 +56,13 @@ TrafficMirrorPortRangeRequest& TrafficMirrorPortRangeRequest::operator =(const X
     XmlNode fromPortNode = resultNode.FirstChild("FromPort");
     if(!fromPortNode.IsNull())
     {
-      m_fromPort = StringUtils::ConvertToInt32(StringUtils::Trim(fromPortNode.GetText().c_str()).c_str());
+      m_fromPort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fromPortNode.GetText()).c_str()).c_str());
       m_fromPortHasBeenSet = true;
     }
     XmlNode toPortNode = resultNode.FirstChild("ToPort");
     if(!toPortNode.IsNull())
     {
-      m_toPort = StringUtils::ConvertToInt32(StringUtils::Trim(toPortNode.GetText().c_str()).c_str());
+      m_toPort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(toPortNode.GetText()).c_str()).c_str());
       m_toPortHasBeenSet = true;
     }
   }

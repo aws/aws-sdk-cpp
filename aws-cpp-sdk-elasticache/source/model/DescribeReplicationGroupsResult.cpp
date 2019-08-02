@@ -51,7 +51,7 @@ DescribeReplicationGroupsResult& DescribeReplicationGroupsResult::operator =(con
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
-      m_marker = markerNode.GetText();
+      m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
     }
     XmlNode replicationGroupsNode = resultNode.FirstChild("ReplicationGroups");
     if(!replicationGroupsNode.IsNull())

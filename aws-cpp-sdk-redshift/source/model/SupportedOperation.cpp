@@ -50,7 +50,7 @@ SupportedOperation& SupportedOperation::operator =(const XmlNode& xmlNode)
     XmlNode operationNameNode = resultNode.FirstChild("OperationName");
     if(!operationNameNode.IsNull())
     {
-      m_operationName = operationNameNode.GetText();
+      m_operationName = Aws::Utils::Xml::DecodeEscapedXmlText(operationNameNode.GetText());
       m_operationNameHasBeenSet = true;
     }
   }

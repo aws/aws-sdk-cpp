@@ -66,13 +66,13 @@ Action& Action::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = ActionTypeEnumMapper::GetActionTypeEnumForName(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
+      m_type = ActionTypeEnumMapper::GetActionTypeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
       m_typeHasBeenSet = true;
     }
     XmlNode targetGroupArnNode = resultNode.FirstChild("TargetGroupArn");
     if(!targetGroupArnNode.IsNull())
     {
-      m_targetGroupArn = targetGroupArnNode.GetText();
+      m_targetGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(targetGroupArnNode.GetText());
       m_targetGroupArnHasBeenSet = true;
     }
     XmlNode authenticateOidcConfigNode = resultNode.FirstChild("AuthenticateOidcConfig");
@@ -90,7 +90,7 @@ Action& Action::operator =(const XmlNode& xmlNode)
     XmlNode orderNode = resultNode.FirstChild("Order");
     if(!orderNode.IsNull())
     {
-      m_order = StringUtils::ConvertToInt32(StringUtils::Trim(orderNode.GetText().c_str()).c_str());
+      m_order = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(orderNode.GetText()).c_str()).c_str());
       m_orderHasBeenSet = true;
     }
     XmlNode redirectConfigNode = resultNode.FirstChild("RedirectConfig");

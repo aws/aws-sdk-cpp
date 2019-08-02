@@ -51,7 +51,7 @@ CreateStorageLocationResult& CreateStorageLocationResult::operator =(const Aws::
     XmlNode s3BucketNode = resultNode.FirstChild("S3Bucket");
     if(!s3BucketNode.IsNull())
     {
-      m_s3Bucket = s3BucketNode.GetText();
+      m_s3Bucket = Aws::Utils::Xml::DecodeEscapedXmlText(s3BucketNode.GetText());
     }
   }
 

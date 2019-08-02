@@ -56,13 +56,13 @@ PricingDetail& PricingDetail::operator =(const XmlNode& xmlNode)
     XmlNode countNode = resultNode.FirstChild("count");
     if(!countNode.IsNull())
     {
-      m_count = StringUtils::ConvertToInt32(StringUtils::Trim(countNode.GetText().c_str()).c_str());
+      m_count = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(countNode.GetText()).c_str()).c_str());
       m_countHasBeenSet = true;
     }
     XmlNode priceNode = resultNode.FirstChild("price");
     if(!priceNode.IsNull())
     {
-      m_price = StringUtils::ConvertToDouble(StringUtils::Trim(priceNode.GetText().c_str()).c_str());
+      m_price = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priceNode.GetText()).c_str()).c_str());
       m_priceHasBeenSet = true;
     }
   }

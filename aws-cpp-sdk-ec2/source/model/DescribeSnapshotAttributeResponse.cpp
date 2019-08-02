@@ -73,7 +73,7 @@ DescribeSnapshotAttributeResponse& DescribeSnapshotAttributeResponse::operator =
     XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
     if(!snapshotIdNode.IsNull())
     {
-      m_snapshotId = snapshotIdNode.GetText();
+      m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
     }
   }
 

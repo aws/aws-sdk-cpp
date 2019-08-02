@@ -50,7 +50,7 @@ CertificateAuthenticationRequest& CertificateAuthenticationRequest::operator =(c
     XmlNode clientRootCertificateChainArnNode = resultNode.FirstChild("ClientRootCertificateChainArn");
     if(!clientRootCertificateChainArnNode.IsNull())
     {
-      m_clientRootCertificateChainArn = clientRootCertificateChainArnNode.GetText();
+      m_clientRootCertificateChainArn = Aws::Utils::Xml::DecodeEscapedXmlText(clientRootCertificateChainArnNode.GetText());
       m_clientRootCertificateChainArnHasBeenSet = true;
     }
   }

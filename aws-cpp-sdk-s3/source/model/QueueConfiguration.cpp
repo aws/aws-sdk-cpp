@@ -56,13 +56,13 @@ QueueConfiguration& QueueConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = idNode.GetText();
+      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
     }
     XmlNode queueArnNode = resultNode.FirstChild("Queue");
     if(!queueArnNode.IsNull())
     {
-      m_queueArn = queueArnNode.GetText();
+      m_queueArn = Aws::Utils::Xml::DecodeEscapedXmlText(queueArnNode.GetText());
       m_queueArnHasBeenSet = true;
     }
     XmlNode eventsNode = resultNode.FirstChild("Event");

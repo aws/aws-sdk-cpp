@@ -60,25 +60,25 @@ DBSubnetGroup& DBSubnetGroup::operator =(const XmlNode& xmlNode)
     XmlNode dBSubnetGroupNameNode = resultNode.FirstChild("DBSubnetGroupName");
     if(!dBSubnetGroupNameNode.IsNull())
     {
-      m_dBSubnetGroupName = dBSubnetGroupNameNode.GetText();
+      m_dBSubnetGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(dBSubnetGroupNameNode.GetText());
       m_dBSubnetGroupNameHasBeenSet = true;
     }
     XmlNode dBSubnetGroupDescriptionNode = resultNode.FirstChild("DBSubnetGroupDescription");
     if(!dBSubnetGroupDescriptionNode.IsNull())
     {
-      m_dBSubnetGroupDescription = dBSubnetGroupDescriptionNode.GetText();
+      m_dBSubnetGroupDescription = Aws::Utils::Xml::DecodeEscapedXmlText(dBSubnetGroupDescriptionNode.GetText());
       m_dBSubnetGroupDescriptionHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = vpcIdNode.GetText();
+      m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
     }
     XmlNode subnetGroupStatusNode = resultNode.FirstChild("SubnetGroupStatus");
     if(!subnetGroupStatusNode.IsNull())
     {
-      m_subnetGroupStatus = subnetGroupStatusNode.GetText();
+      m_subnetGroupStatus = Aws::Utils::Xml::DecodeEscapedXmlText(subnetGroupStatusNode.GetText());
       m_subnetGroupStatusHasBeenSet = true;
     }
     XmlNode subnetsNode = resultNode.FirstChild("Subnets");
@@ -96,7 +96,7 @@ DBSubnetGroup& DBSubnetGroup::operator =(const XmlNode& xmlNode)
     XmlNode dBSubnetGroupArnNode = resultNode.FirstChild("DBSubnetGroupArn");
     if(!dBSubnetGroupArnNode.IsNull())
     {
-      m_dBSubnetGroupArn = dBSubnetGroupArnNode.GetText();
+      m_dBSubnetGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBSubnetGroupArnNode.GetText());
       m_dBSubnetGroupArnHasBeenSet = true;
     }
   }

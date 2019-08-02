@@ -52,13 +52,13 @@ VpcSecurityGroupMembership& VpcSecurityGroupMembership::operator =(const XmlNode
     XmlNode vpcSecurityGroupIdNode = resultNode.FirstChild("VpcSecurityGroupId");
     if(!vpcSecurityGroupIdNode.IsNull())
     {
-      m_vpcSecurityGroupId = vpcSecurityGroupIdNode.GetText();
+      m_vpcSecurityGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcSecurityGroupIdNode.GetText());
       m_vpcSecurityGroupIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = statusNode.GetText();
+      m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
   }

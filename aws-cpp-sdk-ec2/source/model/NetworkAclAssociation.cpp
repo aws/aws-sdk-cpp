@@ -54,19 +54,19 @@ NetworkAclAssociation& NetworkAclAssociation::operator =(const XmlNode& xmlNode)
     XmlNode networkAclAssociationIdNode = resultNode.FirstChild("networkAclAssociationId");
     if(!networkAclAssociationIdNode.IsNull())
     {
-      m_networkAclAssociationId = networkAclAssociationIdNode.GetText();
+      m_networkAclAssociationId = Aws::Utils::Xml::DecodeEscapedXmlText(networkAclAssociationIdNode.GetText());
       m_networkAclAssociationIdHasBeenSet = true;
     }
     XmlNode networkAclIdNode = resultNode.FirstChild("networkAclId");
     if(!networkAclIdNode.IsNull())
     {
-      m_networkAclId = networkAclIdNode.GetText();
+      m_networkAclId = Aws::Utils::Xml::DecodeEscapedXmlText(networkAclIdNode.GetText());
       m_networkAclIdHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
-      m_subnetId = subnetIdNode.GetText();
+      m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
     }
   }

@@ -72,61 +72,61 @@ StackSummary& StackSummary::operator =(const XmlNode& xmlNode)
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
     if(!stackIdNode.IsNull())
     {
-      m_stackId = stackIdNode.GetText();
+      m_stackId = Aws::Utils::Xml::DecodeEscapedXmlText(stackIdNode.GetText());
       m_stackIdHasBeenSet = true;
     }
     XmlNode stackNameNode = resultNode.FirstChild("StackName");
     if(!stackNameNode.IsNull())
     {
-      m_stackName = stackNameNode.GetText();
+      m_stackName = Aws::Utils::Xml::DecodeEscapedXmlText(stackNameNode.GetText());
       m_stackNameHasBeenSet = true;
     }
     XmlNode templateDescriptionNode = resultNode.FirstChild("TemplateDescription");
     if(!templateDescriptionNode.IsNull())
     {
-      m_templateDescription = templateDescriptionNode.GetText();
+      m_templateDescription = Aws::Utils::Xml::DecodeEscapedXmlText(templateDescriptionNode.GetText());
       m_templateDescriptionHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("CreationTime");
     if(!creationTimeNode.IsNull())
     {
-      m_creationTime = DateTime(StringUtils::Trim(creationTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
     }
     XmlNode lastUpdatedTimeNode = resultNode.FirstChild("LastUpdatedTime");
     if(!lastUpdatedTimeNode.IsNull())
     {
-      m_lastUpdatedTime = DateTime(StringUtils::Trim(lastUpdatedTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastUpdatedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdatedTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_lastUpdatedTimeHasBeenSet = true;
     }
     XmlNode deletionTimeNode = resultNode.FirstChild("DeletionTime");
     if(!deletionTimeNode.IsNull())
     {
-      m_deletionTime = DateTime(StringUtils::Trim(deletionTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_deletionTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deletionTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_deletionTimeHasBeenSet = true;
     }
     XmlNode stackStatusNode = resultNode.FirstChild("StackStatus");
     if(!stackStatusNode.IsNull())
     {
-      m_stackStatus = StackStatusMapper::GetStackStatusForName(StringUtils::Trim(stackStatusNode.GetText().c_str()).c_str());
+      m_stackStatus = StackStatusMapper::GetStackStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackStatusNode.GetText()).c_str()).c_str());
       m_stackStatusHasBeenSet = true;
     }
     XmlNode stackStatusReasonNode = resultNode.FirstChild("StackStatusReason");
     if(!stackStatusReasonNode.IsNull())
     {
-      m_stackStatusReason = stackStatusReasonNode.GetText();
+      m_stackStatusReason = Aws::Utils::Xml::DecodeEscapedXmlText(stackStatusReasonNode.GetText());
       m_stackStatusReasonHasBeenSet = true;
     }
     XmlNode parentIdNode = resultNode.FirstChild("ParentId");
     if(!parentIdNode.IsNull())
     {
-      m_parentId = parentIdNode.GetText();
+      m_parentId = Aws::Utils::Xml::DecodeEscapedXmlText(parentIdNode.GetText());
       m_parentIdHasBeenSet = true;
     }
     XmlNode rootIdNode = resultNode.FirstChild("RootId");
     if(!rootIdNode.IsNull())
     {
-      m_rootId = rootIdNode.GetText();
+      m_rootId = Aws::Utils::Xml::DecodeEscapedXmlText(rootIdNode.GetText());
       m_rootIdHasBeenSet = true;
     }
     XmlNode driftInformationNode = resultNode.FirstChild("DriftInformation");

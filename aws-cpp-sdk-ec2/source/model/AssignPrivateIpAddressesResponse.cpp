@@ -51,7 +51,7 @@ AssignPrivateIpAddressesResponse& AssignPrivateIpAddressesResponse::operator =(c
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
-      m_networkInterfaceId = networkInterfaceIdNode.GetText();
+      m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
     }
     XmlNode assignedPrivateIpAddressesNode = resultNode.FirstChild("assignedPrivateIpAddressesSet");
     if(!assignedPrivateIpAddressesNode.IsNull())

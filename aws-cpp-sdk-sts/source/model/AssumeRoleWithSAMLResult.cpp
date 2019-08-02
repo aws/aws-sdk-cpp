@@ -63,32 +63,32 @@ AssumeRoleWithSAMLResult& AssumeRoleWithSAMLResult::operator =(const Aws::Amazon
     XmlNode packedPolicySizeNode = resultNode.FirstChild("PackedPolicySize");
     if(!packedPolicySizeNode.IsNull())
     {
-      m_packedPolicySize = StringUtils::ConvertToInt32(StringUtils::Trim(packedPolicySizeNode.GetText().c_str()).c_str());
+      m_packedPolicySize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(packedPolicySizeNode.GetText()).c_str()).c_str());
     }
     XmlNode subjectNode = resultNode.FirstChild("Subject");
     if(!subjectNode.IsNull())
     {
-      m_subject = subjectNode.GetText();
+      m_subject = Aws::Utils::Xml::DecodeEscapedXmlText(subjectNode.GetText());
     }
     XmlNode subjectTypeNode = resultNode.FirstChild("SubjectType");
     if(!subjectTypeNode.IsNull())
     {
-      m_subjectType = subjectTypeNode.GetText();
+      m_subjectType = Aws::Utils::Xml::DecodeEscapedXmlText(subjectTypeNode.GetText());
     }
     XmlNode issuerNode = resultNode.FirstChild("Issuer");
     if(!issuerNode.IsNull())
     {
-      m_issuer = issuerNode.GetText();
+      m_issuer = Aws::Utils::Xml::DecodeEscapedXmlText(issuerNode.GetText());
     }
     XmlNode audienceNode = resultNode.FirstChild("Audience");
     if(!audienceNode.IsNull())
     {
-      m_audience = audienceNode.GetText();
+      m_audience = Aws::Utils::Xml::DecodeEscapedXmlText(audienceNode.GetText());
     }
     XmlNode nameQualifierNode = resultNode.FirstChild("NameQualifier");
     if(!nameQualifierNode.IsNull())
     {
-      m_nameQualifier = nameQualifierNode.GetText();
+      m_nameQualifier = Aws::Utils::Xml::DecodeEscapedXmlText(nameQualifierNode.GetText());
     }
   }
 

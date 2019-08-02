@@ -54,13 +54,13 @@ InstanceSpecification& InstanceSpecification::operator =(const XmlNode& xmlNode)
     XmlNode instanceIdNode = resultNode.FirstChild("InstanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = instanceIdNode.GetText();
+      m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
     }
     XmlNode excludeBootVolumeNode = resultNode.FirstChild("ExcludeBootVolume");
     if(!excludeBootVolumeNode.IsNull())
     {
-      m_excludeBootVolume = StringUtils::ConvertToBool(StringUtils::Trim(excludeBootVolumeNode.GetText().c_str()).c_str());
+      m_excludeBootVolume = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(excludeBootVolumeNode.GetText()).c_str()).c_str());
       m_excludeBootVolumeHasBeenSet = true;
     }
   }

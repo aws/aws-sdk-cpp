@@ -54,13 +54,13 @@ CancelledSpotInstanceRequest& CancelledSpotInstanceRequest::operator =(const Xml
     XmlNode spotInstanceRequestIdNode = resultNode.FirstChild("spotInstanceRequestId");
     if(!spotInstanceRequestIdNode.IsNull())
     {
-      m_spotInstanceRequestId = spotInstanceRequestIdNode.GetText();
+      m_spotInstanceRequestId = Aws::Utils::Xml::DecodeEscapedXmlText(spotInstanceRequestIdNode.GetText());
       m_spotInstanceRequestIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = CancelSpotInstanceRequestStateMapper::GetCancelSpotInstanceRequestStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_state = CancelSpotInstanceRequestStateMapper::GetCancelSpotInstanceRequestStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
       m_stateHasBeenSet = true;
     }
   }

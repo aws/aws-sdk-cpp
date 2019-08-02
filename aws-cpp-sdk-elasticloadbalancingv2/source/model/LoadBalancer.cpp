@@ -78,43 +78,43 @@ LoadBalancer& LoadBalancer::operator =(const XmlNode& xmlNode)
     XmlNode loadBalancerArnNode = resultNode.FirstChild("LoadBalancerArn");
     if(!loadBalancerArnNode.IsNull())
     {
-      m_loadBalancerArn = loadBalancerArnNode.GetText();
+      m_loadBalancerArn = Aws::Utils::Xml::DecodeEscapedXmlText(loadBalancerArnNode.GetText());
       m_loadBalancerArnHasBeenSet = true;
     }
     XmlNode dNSNameNode = resultNode.FirstChild("DNSName");
     if(!dNSNameNode.IsNull())
     {
-      m_dNSName = dNSNameNode.GetText();
+      m_dNSName = Aws::Utils::Xml::DecodeEscapedXmlText(dNSNameNode.GetText());
       m_dNSNameHasBeenSet = true;
     }
     XmlNode canonicalHostedZoneIdNode = resultNode.FirstChild("CanonicalHostedZoneId");
     if(!canonicalHostedZoneIdNode.IsNull())
     {
-      m_canonicalHostedZoneId = canonicalHostedZoneIdNode.GetText();
+      m_canonicalHostedZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(canonicalHostedZoneIdNode.GetText());
       m_canonicalHostedZoneIdHasBeenSet = true;
     }
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
     if(!createdTimeNode.IsNull())
     {
-      m_createdTime = DateTime(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_createdTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_createdTimeHasBeenSet = true;
     }
     XmlNode loadBalancerNameNode = resultNode.FirstChild("LoadBalancerName");
     if(!loadBalancerNameNode.IsNull())
     {
-      m_loadBalancerName = loadBalancerNameNode.GetText();
+      m_loadBalancerName = Aws::Utils::Xml::DecodeEscapedXmlText(loadBalancerNameNode.GetText());
       m_loadBalancerNameHasBeenSet = true;
     }
     XmlNode schemeNode = resultNode.FirstChild("Scheme");
     if(!schemeNode.IsNull())
     {
-      m_scheme = LoadBalancerSchemeEnumMapper::GetLoadBalancerSchemeEnumForName(StringUtils::Trim(schemeNode.GetText().c_str()).c_str());
+      m_scheme = LoadBalancerSchemeEnumMapper::GetLoadBalancerSchemeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(schemeNode.GetText()).c_str()).c_str());
       m_schemeHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = vpcIdNode.GetText();
+      m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("State");
@@ -126,7 +126,7 @@ LoadBalancer& LoadBalancer::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = LoadBalancerTypeEnumMapper::GetLoadBalancerTypeEnumForName(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
+      m_type = LoadBalancerTypeEnumMapper::GetLoadBalancerTypeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
       m_typeHasBeenSet = true;
     }
     XmlNode availabilityZonesNode = resultNode.FirstChild("AvailabilityZones");
@@ -156,7 +156,7 @@ LoadBalancer& LoadBalancer::operator =(const XmlNode& xmlNode)
     XmlNode ipAddressTypeNode = resultNode.FirstChild("IpAddressType");
     if(!ipAddressTypeNode.IsNull())
     {
-      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(ipAddressTypeNode.GetText().c_str()).c_str());
+      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()).c_str());
       m_ipAddressTypeHasBeenSet = true;
     }
   }

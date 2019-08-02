@@ -66,7 +66,7 @@ InstanceStatusSummary& InstanceStatusSummary::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = SummaryStatusMapper::GetSummaryStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = SummaryStatusMapper::GetSummaryStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
   }

@@ -52,13 +52,13 @@ ElasticIpStatus& ElasticIpStatus::operator =(const XmlNode& xmlNode)
     XmlNode elasticIpNode = resultNode.FirstChild("ElasticIp");
     if(!elasticIpNode.IsNull())
     {
-      m_elasticIp = elasticIpNode.GetText();
+      m_elasticIp = Aws::Utils::Xml::DecodeEscapedXmlText(elasticIpNode.GetText());
       m_elasticIpHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = statusNode.GetText();
+      m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
   }

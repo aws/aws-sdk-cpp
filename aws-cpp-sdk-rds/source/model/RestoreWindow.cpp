@@ -52,13 +52,13 @@ RestoreWindow& RestoreWindow::operator =(const XmlNode& xmlNode)
     XmlNode earliestTimeNode = resultNode.FirstChild("EarliestTime");
     if(!earliestTimeNode.IsNull())
     {
-      m_earliestTime = DateTime(StringUtils::Trim(earliestTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_earliestTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(earliestTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_earliestTimeHasBeenSet = true;
     }
     XmlNode latestTimeNode = resultNode.FirstChild("LatestTime");
     if(!latestTimeNode.IsNull())
     {
-      m_latestTime = DateTime(StringUtils::Trim(latestTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_latestTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(latestTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_latestTimeHasBeenSet = true;
     }
   }

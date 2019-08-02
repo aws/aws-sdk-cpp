@@ -51,7 +51,7 @@ SendEmailResult& SendEmailResult::operator =(const Aws::AmazonWebServiceResult<X
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
     if(!messageIdNode.IsNull())
     {
-      m_messageId = messageIdNode.GetText();
+      m_messageId = Aws::Utils::Xml::DecodeEscapedXmlText(messageIdNode.GetText());
     }
   }
 

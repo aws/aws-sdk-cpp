@@ -54,13 +54,13 @@ LoadBalancerDescription& LoadBalancerDescription::operator =(const XmlNode& xmlN
     XmlNode loadBalancerNameNode = resultNode.FirstChild("LoadBalancerName");
     if(!loadBalancerNameNode.IsNull())
     {
-      m_loadBalancerName = loadBalancerNameNode.GetText();
+      m_loadBalancerName = Aws::Utils::Xml::DecodeEscapedXmlText(loadBalancerNameNode.GetText());
       m_loadBalancerNameHasBeenSet = true;
     }
     XmlNode domainNode = resultNode.FirstChild("Domain");
     if(!domainNode.IsNull())
     {
-      m_domain = domainNode.GetText();
+      m_domain = Aws::Utils::Xml::DecodeEscapedXmlText(domainNode.GetText());
       m_domainHasBeenSet = true;
     }
     XmlNode listenersNode = resultNode.FirstChild("Listeners");

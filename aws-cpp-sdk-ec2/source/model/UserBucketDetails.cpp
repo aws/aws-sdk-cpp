@@ -52,13 +52,13 @@ UserBucketDetails& UserBucketDetails::operator =(const XmlNode& xmlNode)
     XmlNode s3BucketNode = resultNode.FirstChild("s3Bucket");
     if(!s3BucketNode.IsNull())
     {
-      m_s3Bucket = s3BucketNode.GetText();
+      m_s3Bucket = Aws::Utils::Xml::DecodeEscapedXmlText(s3BucketNode.GetText());
       m_s3BucketHasBeenSet = true;
     }
     XmlNode s3KeyNode = resultNode.FirstChild("s3Key");
     if(!s3KeyNode.IsNull())
     {
-      m_s3Key = s3KeyNode.GetText();
+      m_s3Key = Aws::Utils::Xml::DecodeEscapedXmlText(s3KeyNode.GetText());
       m_s3KeyHasBeenSet = true;
     }
   }

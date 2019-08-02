@@ -54,19 +54,19 @@ LaunchTemplateSpecification& LaunchTemplateSpecification::operator =(const XmlNo
     XmlNode launchTemplateIdNode = resultNode.FirstChild("LaunchTemplateId");
     if(!launchTemplateIdNode.IsNull())
     {
-      m_launchTemplateId = launchTemplateIdNode.GetText();
+      m_launchTemplateId = Aws::Utils::Xml::DecodeEscapedXmlText(launchTemplateIdNode.GetText());
       m_launchTemplateIdHasBeenSet = true;
     }
     XmlNode launchTemplateNameNode = resultNode.FirstChild("LaunchTemplateName");
     if(!launchTemplateNameNode.IsNull())
     {
-      m_launchTemplateName = launchTemplateNameNode.GetText();
+      m_launchTemplateName = Aws::Utils::Xml::DecodeEscapedXmlText(launchTemplateNameNode.GetText());
       m_launchTemplateNameHasBeenSet = true;
     }
     XmlNode versionNode = resultNode.FirstChild("Version");
     if(!versionNode.IsNull())
     {
-      m_version = versionNode.GetText();
+      m_version = Aws::Utils::Xml::DecodeEscapedXmlText(versionNode.GetText());
       m_versionHasBeenSet = true;
     }
   }

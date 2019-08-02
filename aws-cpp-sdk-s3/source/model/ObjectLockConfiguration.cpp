@@ -54,7 +54,7 @@ ObjectLockConfiguration& ObjectLockConfiguration::operator =(const XmlNode& xmlN
     XmlNode objectLockEnabledNode = resultNode.FirstChild("ObjectLockEnabled");
     if(!objectLockEnabledNode.IsNull())
     {
-      m_objectLockEnabled = ObjectLockEnabledMapper::GetObjectLockEnabledForName(StringUtils::Trim(objectLockEnabledNode.GetText().c_str()).c_str());
+      m_objectLockEnabled = ObjectLockEnabledMapper::GetObjectLockEnabledForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectLockEnabledNode.GetText()).c_str()).c_str());
       m_objectLockEnabledHasBeenSet = true;
     }
     XmlNode ruleNode = resultNode.FirstChild("Rule");

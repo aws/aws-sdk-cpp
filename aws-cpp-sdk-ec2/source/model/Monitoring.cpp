@@ -52,7 +52,7 @@ Monitoring& Monitoring::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = MonitoringStateMapper::GetMonitoringStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_state = MonitoringStateMapper::GetMonitoringStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
       m_stateHasBeenSet = true;
     }
   }

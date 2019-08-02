@@ -54,13 +54,13 @@ PlatformFilter& PlatformFilter::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = typeNode.GetText();
+      m_type = Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText());
       m_typeHasBeenSet = true;
     }
     XmlNode operatorNode = resultNode.FirstChild("Operator");
     if(!operatorNode.IsNull())
     {
-      m_operator = operatorNode.GetText();
+      m_operator = Aws::Utils::Xml::DecodeEscapedXmlText(operatorNode.GetText());
       m_operatorHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("Values");

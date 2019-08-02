@@ -51,7 +51,7 @@ GetQueueUrlResult& GetQueueUrlResult::operator =(const Aws::AmazonWebServiceResu
     XmlNode queueUrlNode = resultNode.FirstChild("QueueUrl");
     if(!queueUrlNode.IsNull())
     {
-      m_queueUrl = queueUrlNode.GetText();
+      m_queueUrl = Aws::Utils::Xml::DecodeEscapedXmlText(queueUrlNode.GetText());
     }
   }
 

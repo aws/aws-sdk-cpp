@@ -51,7 +51,7 @@ DescribeCacheParametersResult& DescribeCacheParametersResult::operator =(const A
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
-      m_marker = markerNode.GetText();
+      m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
     }
     XmlNode parametersNode = resultNode.FirstChild("Parameters");
     if(!parametersNode.IsNull())

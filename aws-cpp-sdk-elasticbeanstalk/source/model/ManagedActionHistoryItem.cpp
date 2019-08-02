@@ -70,49 +70,49 @@ ManagedActionHistoryItem& ManagedActionHistoryItem::operator =(const XmlNode& xm
     XmlNode actionIdNode = resultNode.FirstChild("ActionId");
     if(!actionIdNode.IsNull())
     {
-      m_actionId = actionIdNode.GetText();
+      m_actionId = Aws::Utils::Xml::DecodeEscapedXmlText(actionIdNode.GetText());
       m_actionIdHasBeenSet = true;
     }
     XmlNode actionTypeNode = resultNode.FirstChild("ActionType");
     if(!actionTypeNode.IsNull())
     {
-      m_actionType = ActionTypeMapper::GetActionTypeForName(StringUtils::Trim(actionTypeNode.GetText().c_str()).c_str());
+      m_actionType = ActionTypeMapper::GetActionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionTypeNode.GetText()).c_str()).c_str());
       m_actionTypeHasBeenSet = true;
     }
     XmlNode actionDescriptionNode = resultNode.FirstChild("ActionDescription");
     if(!actionDescriptionNode.IsNull())
     {
-      m_actionDescription = actionDescriptionNode.GetText();
+      m_actionDescription = Aws::Utils::Xml::DecodeEscapedXmlText(actionDescriptionNode.GetText());
       m_actionDescriptionHasBeenSet = true;
     }
     XmlNode failureTypeNode = resultNode.FirstChild("FailureType");
     if(!failureTypeNode.IsNull())
     {
-      m_failureType = FailureTypeMapper::GetFailureTypeForName(StringUtils::Trim(failureTypeNode.GetText().c_str()).c_str());
+      m_failureType = FailureTypeMapper::GetFailureTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(failureTypeNode.GetText()).c_str()).c_str());
       m_failureTypeHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ActionHistoryStatusMapper::GetActionHistoryStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = ActionHistoryStatusMapper::GetActionHistoryStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode failureDescriptionNode = resultNode.FirstChild("FailureDescription");
     if(!failureDescriptionNode.IsNull())
     {
-      m_failureDescription = failureDescriptionNode.GetText();
+      m_failureDescription = Aws::Utils::Xml::DecodeEscapedXmlText(failureDescriptionNode.GetText());
       m_failureDescriptionHasBeenSet = true;
     }
     XmlNode executedTimeNode = resultNode.FirstChild("ExecutedTime");
     if(!executedTimeNode.IsNull())
     {
-      m_executedTime = DateTime(StringUtils::Trim(executedTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_executedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(executedTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_executedTimeHasBeenSet = true;
     }
     XmlNode finishedTimeNode = resultNode.FirstChild("FinishedTime");
     if(!finishedTimeNode.IsNull())
     {
-      m_finishedTime = DateTime(StringUtils::Trim(finishedTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_finishedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(finishedTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_finishedTimeHasBeenSet = true;
     }
   }

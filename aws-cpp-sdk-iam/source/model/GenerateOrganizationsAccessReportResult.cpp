@@ -51,7 +51,7 @@ GenerateOrganizationsAccessReportResult& GenerateOrganizationsAccessReportResult
     XmlNode jobIdNode = resultNode.FirstChild("JobId");
     if(!jobIdNode.IsNull())
     {
-      m_jobId = jobIdNode.GetText();
+      m_jobId = Aws::Utils::Xml::DecodeEscapedXmlText(jobIdNode.GetText());
     }
   }
 

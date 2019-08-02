@@ -62,37 +62,37 @@ SSHPublicKey& SSHPublicKey::operator =(const XmlNode& xmlNode)
     XmlNode userNameNode = resultNode.FirstChild("UserName");
     if(!userNameNode.IsNull())
     {
-      m_userName = userNameNode.GetText();
+      m_userName = Aws::Utils::Xml::DecodeEscapedXmlText(userNameNode.GetText());
       m_userNameHasBeenSet = true;
     }
     XmlNode sSHPublicKeyIdNode = resultNode.FirstChild("SSHPublicKeyId");
     if(!sSHPublicKeyIdNode.IsNull())
     {
-      m_sSHPublicKeyId = sSHPublicKeyIdNode.GetText();
+      m_sSHPublicKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(sSHPublicKeyIdNode.GetText());
       m_sSHPublicKeyIdHasBeenSet = true;
     }
     XmlNode fingerprintNode = resultNode.FirstChild("Fingerprint");
     if(!fingerprintNode.IsNull())
     {
-      m_fingerprint = fingerprintNode.GetText();
+      m_fingerprint = Aws::Utils::Xml::DecodeEscapedXmlText(fingerprintNode.GetText());
       m_fingerprintHasBeenSet = true;
     }
     XmlNode sSHPublicKeyBodyNode = resultNode.FirstChild("SSHPublicKeyBody");
     if(!sSHPublicKeyBodyNode.IsNull())
     {
-      m_sSHPublicKeyBody = sSHPublicKeyBodyNode.GetText();
+      m_sSHPublicKeyBody = Aws::Utils::Xml::DecodeEscapedXmlText(sSHPublicKeyBodyNode.GetText());
       m_sSHPublicKeyBodyHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode uploadDateNode = resultNode.FirstChild("UploadDate");
     if(!uploadDateNode.IsNull())
     {
-      m_uploadDate = DateTime(StringUtils::Trim(uploadDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_uploadDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(uploadDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_uploadDateHasBeenSet = true;
     }
   }

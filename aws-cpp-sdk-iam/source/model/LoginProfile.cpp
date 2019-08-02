@@ -56,19 +56,19 @@ LoginProfile& LoginProfile::operator =(const XmlNode& xmlNode)
     XmlNode userNameNode = resultNode.FirstChild("UserName");
     if(!userNameNode.IsNull())
     {
-      m_userName = userNameNode.GetText();
+      m_userName = Aws::Utils::Xml::DecodeEscapedXmlText(userNameNode.GetText());
       m_userNameHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = DateTime(StringUtils::Trim(createDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
     }
     XmlNode passwordResetRequiredNode = resultNode.FirstChild("PasswordResetRequired");
     if(!passwordResetRequiredNode.IsNull())
     {
-      m_passwordResetRequired = StringUtils::ConvertToBool(StringUtils::Trim(passwordResetRequiredNode.GetText().c_str()).c_str());
+      m_passwordResetRequired = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(passwordResetRequiredNode.GetText()).c_str()).c_str());
       m_passwordResetRequiredHasBeenSet = true;
     }
   }

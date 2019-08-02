@@ -54,19 +54,19 @@ FixedResponseActionConfig& FixedResponseActionConfig::operator =(const XmlNode& 
     XmlNode messageBodyNode = resultNode.FirstChild("MessageBody");
     if(!messageBodyNode.IsNull())
     {
-      m_messageBody = messageBodyNode.GetText();
+      m_messageBody = Aws::Utils::Xml::DecodeEscapedXmlText(messageBodyNode.GetText());
       m_messageBodyHasBeenSet = true;
     }
     XmlNode statusCodeNode = resultNode.FirstChild("StatusCode");
     if(!statusCodeNode.IsNull())
     {
-      m_statusCode = statusCodeNode.GetText();
+      m_statusCode = Aws::Utils::Xml::DecodeEscapedXmlText(statusCodeNode.GetText());
       m_statusCodeHasBeenSet = true;
     }
     XmlNode contentTypeNode = resultNode.FirstChild("ContentType");
     if(!contentTypeNode.IsNull())
     {
-      m_contentType = contentTypeNode.GetText();
+      m_contentType = Aws::Utils::Xml::DecodeEscapedXmlText(contentTypeNode.GetText());
       m_contentTypeHasBeenSet = true;
     }
   }

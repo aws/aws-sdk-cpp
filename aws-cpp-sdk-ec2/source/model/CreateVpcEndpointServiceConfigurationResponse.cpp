@@ -56,7 +56,7 @@ CreateVpcEndpointServiceConfigurationResponse& CreateVpcEndpointServiceConfigura
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
-      m_clientToken = clientTokenNode.GetText();
+      m_clientToken = Aws::Utils::Xml::DecodeEscapedXmlText(clientTokenNode.GetText());
     }
   }
 

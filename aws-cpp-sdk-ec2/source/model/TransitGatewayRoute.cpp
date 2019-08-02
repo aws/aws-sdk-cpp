@@ -60,7 +60,7 @@ TransitGatewayRoute& TransitGatewayRoute::operator =(const XmlNode& xmlNode)
     XmlNode destinationCidrBlockNode = resultNode.FirstChild("destinationCidrBlock");
     if(!destinationCidrBlockNode.IsNull())
     {
-      m_destinationCidrBlock = destinationCidrBlockNode.GetText();
+      m_destinationCidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(destinationCidrBlockNode.GetText());
       m_destinationCidrBlockHasBeenSet = true;
     }
     XmlNode transitGatewayAttachmentsNode = resultNode.FirstChild("transitGatewayAttachments");
@@ -78,13 +78,13 @@ TransitGatewayRoute& TransitGatewayRoute::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = TransitGatewayRouteTypeMapper::GetTransitGatewayRouteTypeForName(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
+      m_type = TransitGatewayRouteTypeMapper::GetTransitGatewayRouteTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
       m_typeHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = TransitGatewayRouteStateMapper::GetTransitGatewayRouteStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_state = TransitGatewayRouteStateMapper::GetTransitGatewayRouteStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
       m_stateHasBeenSet = true;
     }
   }

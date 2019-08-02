@@ -54,13 +54,13 @@ RulePriorityPair& RulePriorityPair::operator =(const XmlNode& xmlNode)
     XmlNode ruleArnNode = resultNode.FirstChild("RuleArn");
     if(!ruleArnNode.IsNull())
     {
-      m_ruleArn = ruleArnNode.GetText();
+      m_ruleArn = Aws::Utils::Xml::DecodeEscapedXmlText(ruleArnNode.GetText());
       m_ruleArnHasBeenSet = true;
     }
     XmlNode priorityNode = resultNode.FirstChild("Priority");
     if(!priorityNode.IsNull())
     {
-      m_priority = StringUtils::ConvertToInt32(StringUtils::Trim(priorityNode.GetText().c_str()).c_str());
+      m_priority = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priorityNode.GetText()).c_str()).c_str());
       m_priorityHasBeenSet = true;
     }
   }

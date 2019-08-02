@@ -58,19 +58,19 @@ ReputationOptions& ReputationOptions::operator =(const XmlNode& xmlNode)
     XmlNode sendingEnabledNode = resultNode.FirstChild("SendingEnabled");
     if(!sendingEnabledNode.IsNull())
     {
-      m_sendingEnabled = StringUtils::ConvertToBool(StringUtils::Trim(sendingEnabledNode.GetText().c_str()).c_str());
+      m_sendingEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sendingEnabledNode.GetText()).c_str()).c_str());
       m_sendingEnabledHasBeenSet = true;
     }
     XmlNode reputationMetricsEnabledNode = resultNode.FirstChild("ReputationMetricsEnabled");
     if(!reputationMetricsEnabledNode.IsNull())
     {
-      m_reputationMetricsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(reputationMetricsEnabledNode.GetText().c_str()).c_str());
+      m_reputationMetricsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reputationMetricsEnabledNode.GetText()).c_str()).c_str());
       m_reputationMetricsEnabledHasBeenSet = true;
     }
     XmlNode lastFreshStartNode = resultNode.FirstChild("LastFreshStart");
     if(!lastFreshStartNode.IsNull())
     {
-      m_lastFreshStart = DateTime(StringUtils::Trim(lastFreshStartNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastFreshStart = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastFreshStartNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_lastFreshStartHasBeenSet = true;
     }
   }

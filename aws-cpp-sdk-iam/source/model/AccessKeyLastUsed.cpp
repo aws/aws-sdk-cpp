@@ -54,19 +54,19 @@ AccessKeyLastUsed& AccessKeyLastUsed::operator =(const XmlNode& xmlNode)
     XmlNode lastUsedDateNode = resultNode.FirstChild("LastUsedDate");
     if(!lastUsedDateNode.IsNull())
     {
-      m_lastUsedDate = DateTime(StringUtils::Trim(lastUsedDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastUsedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUsedDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_lastUsedDateHasBeenSet = true;
     }
     XmlNode serviceNameNode = resultNode.FirstChild("ServiceName");
     if(!serviceNameNode.IsNull())
     {
-      m_serviceName = serviceNameNode.GetText();
+      m_serviceName = Aws::Utils::Xml::DecodeEscapedXmlText(serviceNameNode.GetText());
       m_serviceNameHasBeenSet = true;
     }
     XmlNode regionNode = resultNode.FirstChild("Region");
     if(!regionNode.IsNull())
     {
-      m_region = regionNode.GetText();
+      m_region = Aws::Utils::Xml::DecodeEscapedXmlText(regionNode.GetText());
       m_regionHasBeenSet = true;
     }
   }

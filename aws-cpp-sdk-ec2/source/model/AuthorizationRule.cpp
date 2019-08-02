@@ -62,31 +62,31 @@ AuthorizationRule& AuthorizationRule::operator =(const XmlNode& xmlNode)
     XmlNode clientVpnEndpointIdNode = resultNode.FirstChild("clientVpnEndpointId");
     if(!clientVpnEndpointIdNode.IsNull())
     {
-      m_clientVpnEndpointId = clientVpnEndpointIdNode.GetText();
+      m_clientVpnEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(clientVpnEndpointIdNode.GetText());
       m_clientVpnEndpointIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode groupIdNode = resultNode.FirstChild("groupId");
     if(!groupIdNode.IsNull())
     {
-      m_groupId = groupIdNode.GetText();
+      m_groupId = Aws::Utils::Xml::DecodeEscapedXmlText(groupIdNode.GetText());
       m_groupIdHasBeenSet = true;
     }
     XmlNode accessAllNode = resultNode.FirstChild("accessAll");
     if(!accessAllNode.IsNull())
     {
-      m_accessAll = StringUtils::ConvertToBool(StringUtils::Trim(accessAllNode.GetText().c_str()).c_str());
+      m_accessAll = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(accessAllNode.GetText()).c_str()).c_str());
       m_accessAllHasBeenSet = true;
     }
     XmlNode destinationCidrNode = resultNode.FirstChild("destinationCidr");
     if(!destinationCidrNode.IsNull())
     {
-      m_destinationCidr = destinationCidrNode.GetText();
+      m_destinationCidr = Aws::Utils::Xml::DecodeEscapedXmlText(destinationCidrNode.GetText());
       m_destinationCidrHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");

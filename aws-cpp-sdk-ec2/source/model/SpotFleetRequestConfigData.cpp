@@ -116,43 +116,43 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
     XmlNode allocationStrategyNode = resultNode.FirstChild("allocationStrategy");
     if(!allocationStrategyNode.IsNull())
     {
-      m_allocationStrategy = AllocationStrategyMapper::GetAllocationStrategyForName(StringUtils::Trim(allocationStrategyNode.GetText().c_str()).c_str());
+      m_allocationStrategy = AllocationStrategyMapper::GetAllocationStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocationStrategyNode.GetText()).c_str()).c_str());
       m_allocationStrategyHasBeenSet = true;
     }
     XmlNode onDemandAllocationStrategyNode = resultNode.FirstChild("onDemandAllocationStrategy");
     if(!onDemandAllocationStrategyNode.IsNull())
     {
-      m_onDemandAllocationStrategy = OnDemandAllocationStrategyMapper::GetOnDemandAllocationStrategyForName(StringUtils::Trim(onDemandAllocationStrategyNode.GetText().c_str()).c_str());
+      m_onDemandAllocationStrategy = OnDemandAllocationStrategyMapper::GetOnDemandAllocationStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onDemandAllocationStrategyNode.GetText()).c_str()).c_str());
       m_onDemandAllocationStrategyHasBeenSet = true;
     }
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
-      m_clientToken = clientTokenNode.GetText();
+      m_clientToken = Aws::Utils::Xml::DecodeEscapedXmlText(clientTokenNode.GetText());
       m_clientTokenHasBeenSet = true;
     }
     XmlNode excessCapacityTerminationPolicyNode = resultNode.FirstChild("excessCapacityTerminationPolicy");
     if(!excessCapacityTerminationPolicyNode.IsNull())
     {
-      m_excessCapacityTerminationPolicy = ExcessCapacityTerminationPolicyMapper::GetExcessCapacityTerminationPolicyForName(StringUtils::Trim(excessCapacityTerminationPolicyNode.GetText().c_str()).c_str());
+      m_excessCapacityTerminationPolicy = ExcessCapacityTerminationPolicyMapper::GetExcessCapacityTerminationPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(excessCapacityTerminationPolicyNode.GetText()).c_str()).c_str());
       m_excessCapacityTerminationPolicyHasBeenSet = true;
     }
     XmlNode fulfilledCapacityNode = resultNode.FirstChild("fulfilledCapacity");
     if(!fulfilledCapacityNode.IsNull())
     {
-      m_fulfilledCapacity = StringUtils::ConvertToDouble(StringUtils::Trim(fulfilledCapacityNode.GetText().c_str()).c_str());
+      m_fulfilledCapacity = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fulfilledCapacityNode.GetText()).c_str()).c_str());
       m_fulfilledCapacityHasBeenSet = true;
     }
     XmlNode onDemandFulfilledCapacityNode = resultNode.FirstChild("onDemandFulfilledCapacity");
     if(!onDemandFulfilledCapacityNode.IsNull())
     {
-      m_onDemandFulfilledCapacity = StringUtils::ConvertToDouble(StringUtils::Trim(onDemandFulfilledCapacityNode.GetText().c_str()).c_str());
+      m_onDemandFulfilledCapacity = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onDemandFulfilledCapacityNode.GetText()).c_str()).c_str());
       m_onDemandFulfilledCapacityHasBeenSet = true;
     }
     XmlNode iamFleetRoleNode = resultNode.FirstChild("iamFleetRole");
     if(!iamFleetRoleNode.IsNull())
     {
-      m_iamFleetRole = iamFleetRoleNode.GetText();
+      m_iamFleetRole = Aws::Utils::Xml::DecodeEscapedXmlText(iamFleetRoleNode.GetText());
       m_iamFleetRoleHasBeenSet = true;
     }
     XmlNode launchSpecificationsNode = resultNode.FirstChild("launchSpecifications");
@@ -182,67 +182,67 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
     XmlNode spotPriceNode = resultNode.FirstChild("spotPrice");
     if(!spotPriceNode.IsNull())
     {
-      m_spotPrice = spotPriceNode.GetText();
+      m_spotPrice = Aws::Utils::Xml::DecodeEscapedXmlText(spotPriceNode.GetText());
       m_spotPriceHasBeenSet = true;
     }
     XmlNode targetCapacityNode = resultNode.FirstChild("targetCapacity");
     if(!targetCapacityNode.IsNull())
     {
-      m_targetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(targetCapacityNode.GetText().c_str()).c_str());
+      m_targetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetCapacityNode.GetText()).c_str()).c_str());
       m_targetCapacityHasBeenSet = true;
     }
     XmlNode onDemandTargetCapacityNode = resultNode.FirstChild("onDemandTargetCapacity");
     if(!onDemandTargetCapacityNode.IsNull())
     {
-      m_onDemandTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(onDemandTargetCapacityNode.GetText().c_str()).c_str());
+      m_onDemandTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onDemandTargetCapacityNode.GetText()).c_str()).c_str());
       m_onDemandTargetCapacityHasBeenSet = true;
     }
     XmlNode onDemandMaxTotalPriceNode = resultNode.FirstChild("onDemandMaxTotalPrice");
     if(!onDemandMaxTotalPriceNode.IsNull())
     {
-      m_onDemandMaxTotalPrice = onDemandMaxTotalPriceNode.GetText();
+      m_onDemandMaxTotalPrice = Aws::Utils::Xml::DecodeEscapedXmlText(onDemandMaxTotalPriceNode.GetText());
       m_onDemandMaxTotalPriceHasBeenSet = true;
     }
     XmlNode spotMaxTotalPriceNode = resultNode.FirstChild("spotMaxTotalPrice");
     if(!spotMaxTotalPriceNode.IsNull())
     {
-      m_spotMaxTotalPrice = spotMaxTotalPriceNode.GetText();
+      m_spotMaxTotalPrice = Aws::Utils::Xml::DecodeEscapedXmlText(spotMaxTotalPriceNode.GetText());
       m_spotMaxTotalPriceHasBeenSet = true;
     }
     XmlNode terminateInstancesWithExpirationNode = resultNode.FirstChild("terminateInstancesWithExpiration");
     if(!terminateInstancesWithExpirationNode.IsNull())
     {
-      m_terminateInstancesWithExpiration = StringUtils::ConvertToBool(StringUtils::Trim(terminateInstancesWithExpirationNode.GetText().c_str()).c_str());
+      m_terminateInstancesWithExpiration = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(terminateInstancesWithExpirationNode.GetText()).c_str()).c_str());
       m_terminateInstancesWithExpirationHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = FleetTypeMapper::GetFleetTypeForName(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
+      m_type = FleetTypeMapper::GetFleetTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
       m_typeHasBeenSet = true;
     }
     XmlNode validFromNode = resultNode.FirstChild("validFrom");
     if(!validFromNode.IsNull())
     {
-      m_validFrom = DateTime(StringUtils::Trim(validFromNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_validFrom = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validFromNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_validFromHasBeenSet = true;
     }
     XmlNode validUntilNode = resultNode.FirstChild("validUntil");
     if(!validUntilNode.IsNull())
     {
-      m_validUntil = DateTime(StringUtils::Trim(validUntilNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_validUntil = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validUntilNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_validUntilHasBeenSet = true;
     }
     XmlNode replaceUnhealthyInstancesNode = resultNode.FirstChild("replaceUnhealthyInstances");
     if(!replaceUnhealthyInstancesNode.IsNull())
     {
-      m_replaceUnhealthyInstances = StringUtils::ConvertToBool(StringUtils::Trim(replaceUnhealthyInstancesNode.GetText().c_str()).c_str());
+      m_replaceUnhealthyInstances = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replaceUnhealthyInstancesNode.GetText()).c_str()).c_str());
       m_replaceUnhealthyInstancesHasBeenSet = true;
     }
     XmlNode instanceInterruptionBehaviorNode = resultNode.FirstChild("instanceInterruptionBehavior");
     if(!instanceInterruptionBehaviorNode.IsNull())
     {
-      m_instanceInterruptionBehavior = InstanceInterruptionBehaviorMapper::GetInstanceInterruptionBehaviorForName(StringUtils::Trim(instanceInterruptionBehaviorNode.GetText().c_str()).c_str());
+      m_instanceInterruptionBehavior = InstanceInterruptionBehaviorMapper::GetInstanceInterruptionBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceInterruptionBehaviorNode.GetText()).c_str()).c_str());
       m_instanceInterruptionBehaviorHasBeenSet = true;
     }
     XmlNode loadBalancersConfigNode = resultNode.FirstChild("loadBalancersConfig");
@@ -254,7 +254,7 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
     XmlNode instancePoolsToUseCountNode = resultNode.FirstChild("instancePoolsToUseCount");
     if(!instancePoolsToUseCountNode.IsNull())
     {
-      m_instancePoolsToUseCount = StringUtils::ConvertToInt32(StringUtils::Trim(instancePoolsToUseCountNode.GetText().c_str()).c_str());
+      m_instancePoolsToUseCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancePoolsToUseCountNode.GetText()).c_str()).c_str());
       m_instancePoolsToUseCountHasBeenSet = true;
     }
   }

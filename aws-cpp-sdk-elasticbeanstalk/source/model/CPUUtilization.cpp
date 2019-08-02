@@ -80,49 +80,49 @@ CPUUtilization& CPUUtilization::operator =(const XmlNode& xmlNode)
     XmlNode userNode = resultNode.FirstChild("User");
     if(!userNode.IsNull())
     {
-      m_user = StringUtils::ConvertToDouble(StringUtils::Trim(userNode.GetText().c_str()).c_str());
+      m_user = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(userNode.GetText()).c_str()).c_str());
       m_userHasBeenSet = true;
     }
     XmlNode niceNode = resultNode.FirstChild("Nice");
     if(!niceNode.IsNull())
     {
-      m_nice = StringUtils::ConvertToDouble(StringUtils::Trim(niceNode.GetText().c_str()).c_str());
+      m_nice = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(niceNode.GetText()).c_str()).c_str());
       m_niceHasBeenSet = true;
     }
     XmlNode systemNode = resultNode.FirstChild("System");
     if(!systemNode.IsNull())
     {
-      m_system = StringUtils::ConvertToDouble(StringUtils::Trim(systemNode.GetText().c_str()).c_str());
+      m_system = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(systemNode.GetText()).c_str()).c_str());
       m_systemHasBeenSet = true;
     }
     XmlNode idleNode = resultNode.FirstChild("Idle");
     if(!idleNode.IsNull())
     {
-      m_idle = StringUtils::ConvertToDouble(StringUtils::Trim(idleNode.GetText().c_str()).c_str());
+      m_idle = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(idleNode.GetText()).c_str()).c_str());
       m_idleHasBeenSet = true;
     }
     XmlNode iOWaitNode = resultNode.FirstChild("IOWait");
     if(!iOWaitNode.IsNull())
     {
-      m_iOWait = StringUtils::ConvertToDouble(StringUtils::Trim(iOWaitNode.GetText().c_str()).c_str());
+      m_iOWait = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iOWaitNode.GetText()).c_str()).c_str());
       m_iOWaitHasBeenSet = true;
     }
     XmlNode iRQNode = resultNode.FirstChild("IRQ");
     if(!iRQNode.IsNull())
     {
-      m_iRQ = StringUtils::ConvertToDouble(StringUtils::Trim(iRQNode.GetText().c_str()).c_str());
+      m_iRQ = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iRQNode.GetText()).c_str()).c_str());
       m_iRQHasBeenSet = true;
     }
     XmlNode softIRQNode = resultNode.FirstChild("SoftIRQ");
     if(!softIRQNode.IsNull())
     {
-      m_softIRQ = StringUtils::ConvertToDouble(StringUtils::Trim(softIRQNode.GetText().c_str()).c_str());
+      m_softIRQ = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(softIRQNode.GetText()).c_str()).c_str());
       m_softIRQHasBeenSet = true;
     }
     XmlNode privilegedNode = resultNode.FirstChild("Privileged");
     if(!privilegedNode.IsNull())
     {
-      m_privileged = StringUtils::ConvertToDouble(StringUtils::Trim(privilegedNode.GetText().c_str()).c_str());
+      m_privileged = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(privilegedNode.GetText()).c_str()).c_str());
       m_privilegedHasBeenSet = true;
     }
   }

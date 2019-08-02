@@ -51,17 +51,17 @@ GetConsoleOutputResponse& GetConsoleOutputResponse::operator =(const Aws::Amazon
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = instanceIdNode.GetText();
+      m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
     }
     XmlNode outputNode = resultNode.FirstChild("output");
     if(!outputNode.IsNull())
     {
-      m_output = outputNode.GetText();
+      m_output = Aws::Utils::Xml::DecodeEscapedXmlText(outputNode.GetText());
     }
     XmlNode timestampNode = resultNode.FirstChild("timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = DateTime(StringUtils::Trim(timestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
   }
 

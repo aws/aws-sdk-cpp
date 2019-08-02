@@ -76,31 +76,31 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
     {
-      m_engine = engineNode.GetText();
+      m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
-      m_engineVersion = engineVersionNode.GetText();
+      m_engineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(engineVersionNode.GetText());
       m_engineVersionHasBeenSet = true;
     }
     XmlNode dBParameterGroupFamilyNode = resultNode.FirstChild("DBParameterGroupFamily");
     if(!dBParameterGroupFamilyNode.IsNull())
     {
-      m_dBParameterGroupFamily = dBParameterGroupFamilyNode.GetText();
+      m_dBParameterGroupFamily = Aws::Utils::Xml::DecodeEscapedXmlText(dBParameterGroupFamilyNode.GetText());
       m_dBParameterGroupFamilyHasBeenSet = true;
     }
     XmlNode dBEngineDescriptionNode = resultNode.FirstChild("DBEngineDescription");
     if(!dBEngineDescriptionNode.IsNull())
     {
-      m_dBEngineDescription = dBEngineDescriptionNode.GetText();
+      m_dBEngineDescription = Aws::Utils::Xml::DecodeEscapedXmlText(dBEngineDescriptionNode.GetText());
       m_dBEngineDescriptionHasBeenSet = true;
     }
     XmlNode dBEngineVersionDescriptionNode = resultNode.FirstChild("DBEngineVersionDescription");
     if(!dBEngineVersionDescriptionNode.IsNull())
     {
-      m_dBEngineVersionDescription = dBEngineVersionDescriptionNode.GetText();
+      m_dBEngineVersionDescription = Aws::Utils::Xml::DecodeEscapedXmlText(dBEngineVersionDescriptionNode.GetText());
       m_dBEngineVersionDescriptionHasBeenSet = true;
     }
     XmlNode defaultCharacterSetNode = resultNode.FirstChild("DefaultCharacterSet");
@@ -160,13 +160,13 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     XmlNode supportsLogExportsToCloudwatchLogsNode = resultNode.FirstChild("SupportsLogExportsToCloudwatchLogs");
     if(!supportsLogExportsToCloudwatchLogsNode.IsNull())
     {
-      m_supportsLogExportsToCloudwatchLogs = StringUtils::ConvertToBool(StringUtils::Trim(supportsLogExportsToCloudwatchLogsNode.GetText().c_str()).c_str());
+      m_supportsLogExportsToCloudwatchLogs = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsLogExportsToCloudwatchLogsNode.GetText()).c_str()).c_str());
       m_supportsLogExportsToCloudwatchLogsHasBeenSet = true;
     }
     XmlNode supportsReadReplicaNode = resultNode.FirstChild("SupportsReadReplica");
     if(!supportsReadReplicaNode.IsNull())
     {
-      m_supportsReadReplica = StringUtils::ConvertToBool(StringUtils::Trim(supportsReadReplicaNode.GetText().c_str()).c_str());
+      m_supportsReadReplica = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsReadReplicaNode.GetText()).c_str()).c_str());
       m_supportsReadReplicaHasBeenSet = true;
     }
   }

@@ -51,7 +51,7 @@ UpdateSAMLProviderResult& UpdateSAMLProviderResult::operator =(const Aws::Amazon
     XmlNode sAMLProviderArnNode = resultNode.FirstChild("SAMLProviderArn");
     if(!sAMLProviderArnNode.IsNull())
     {
-      m_sAMLProviderArn = sAMLProviderArnNode.GetText();
+      m_sAMLProviderArn = Aws::Utils::Xml::DecodeEscapedXmlText(sAMLProviderArnNode.GetText());
     }
   }
 

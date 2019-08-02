@@ -53,22 +53,22 @@ GetReservedInstancesExchangeQuoteResponse& GetReservedInstancesExchangeQuoteResp
     XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
     if(!currencyCodeNode.IsNull())
     {
-      m_currencyCode = currencyCodeNode.GetText();
+      m_currencyCode = Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText());
     }
     XmlNode isValidExchangeNode = resultNode.FirstChild("isValidExchange");
     if(!isValidExchangeNode.IsNull())
     {
-      m_isValidExchange = StringUtils::ConvertToBool(StringUtils::Trim(isValidExchangeNode.GetText().c_str()).c_str());
+      m_isValidExchange = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isValidExchangeNode.GetText()).c_str()).c_str());
     }
     XmlNode outputReservedInstancesWillExpireAtNode = resultNode.FirstChild("outputReservedInstancesWillExpireAt");
     if(!outputReservedInstancesWillExpireAtNode.IsNull())
     {
-      m_outputReservedInstancesWillExpireAt = DateTime(StringUtils::Trim(outputReservedInstancesWillExpireAtNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_outputReservedInstancesWillExpireAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outputReservedInstancesWillExpireAtNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode paymentDueNode = resultNode.FirstChild("paymentDue");
     if(!paymentDueNode.IsNull())
     {
-      m_paymentDue = paymentDueNode.GetText();
+      m_paymentDue = Aws::Utils::Xml::DecodeEscapedXmlText(paymentDueNode.GetText());
     }
     XmlNode reservedInstanceValueRollupNode = resultNode.FirstChild("reservedInstanceValueRollup");
     if(!reservedInstanceValueRollupNode.IsNull())
@@ -105,7 +105,7 @@ GetReservedInstancesExchangeQuoteResponse& GetReservedInstancesExchangeQuoteResp
     XmlNode validationFailureReasonNode = resultNode.FirstChild("validationFailureReason");
     if(!validationFailureReasonNode.IsNull())
     {
-      m_validationFailureReason = validationFailureReasonNode.GetText();
+      m_validationFailureReason = Aws::Utils::Xml::DecodeEscapedXmlText(validationFailureReasonNode.GetText());
     }
   }
 

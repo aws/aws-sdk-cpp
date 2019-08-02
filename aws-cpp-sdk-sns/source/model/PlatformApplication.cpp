@@ -52,7 +52,7 @@ PlatformApplication& PlatformApplication::operator =(const XmlNode& xmlNode)
     XmlNode platformApplicationArnNode = resultNode.FirstChild("PlatformApplicationArn");
     if(!platformApplicationArnNode.IsNull())
     {
-      m_platformApplicationArn = platformApplicationArnNode.GetText();
+      m_platformApplicationArn = Aws::Utils::Xml::DecodeEscapedXmlText(platformApplicationArnNode.GetText());
       m_platformApplicationArnHasBeenSet = true;
     }
     XmlNode attributesNode = resultNode.FirstChild("Attributes");

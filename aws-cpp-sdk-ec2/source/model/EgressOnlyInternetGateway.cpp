@@ -64,7 +64,7 @@ EgressOnlyInternetGateway& EgressOnlyInternetGateway::operator =(const XmlNode& 
     XmlNode egressOnlyInternetGatewayIdNode = resultNode.FirstChild("egressOnlyInternetGatewayId");
     if(!egressOnlyInternetGatewayIdNode.IsNull())
     {
-      m_egressOnlyInternetGatewayId = egressOnlyInternetGatewayIdNode.GetText();
+      m_egressOnlyInternetGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(egressOnlyInternetGatewayIdNode.GetText());
       m_egressOnlyInternetGatewayIdHasBeenSet = true;
     }
   }

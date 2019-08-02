@@ -57,32 +57,32 @@ GetCapacityReservationUsageResponse& GetCapacityReservationUsageResponse::operat
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = nextTokenNode.GetText();
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
     }
     XmlNode capacityReservationIdNode = resultNode.FirstChild("capacityReservationId");
     if(!capacityReservationIdNode.IsNull())
     {
-      m_capacityReservationId = capacityReservationIdNode.GetText();
+      m_capacityReservationId = Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationIdNode.GetText());
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = instanceTypeNode.GetText();
+      m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
     }
     XmlNode totalInstanceCountNode = resultNode.FirstChild("totalInstanceCount");
     if(!totalInstanceCountNode.IsNull())
     {
-      m_totalInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(totalInstanceCountNode.GetText().c_str()).c_str());
+      m_totalInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalInstanceCountNode.GetText()).c_str()).c_str());
     }
     XmlNode availableInstanceCountNode = resultNode.FirstChild("availableInstanceCount");
     if(!availableInstanceCountNode.IsNull())
     {
-      m_availableInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(availableInstanceCountNode.GetText().c_str()).c_str());
+      m_availableInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(availableInstanceCountNode.GetText()).c_str()).c_str());
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = CapacityReservationStateMapper::GetCapacityReservationStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_state = CapacityReservationStateMapper::GetCapacityReservationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
     }
     XmlNode instanceUsagesNode = resultNode.FirstChild("instanceUsageSet");
     if(!instanceUsagesNode.IsNull())

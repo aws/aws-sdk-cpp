@@ -60,19 +60,19 @@ MaxCountRule& MaxCountRule::operator =(const XmlNode& xmlNode)
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
     if(!enabledNode.IsNull())
     {
-      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
     XmlNode maxCountNode = resultNode.FirstChild("MaxCount");
     if(!maxCountNode.IsNull())
     {
-      m_maxCount = StringUtils::ConvertToInt32(StringUtils::Trim(maxCountNode.GetText().c_str()).c_str());
+      m_maxCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxCountNode.GetText()).c_str()).c_str());
       m_maxCountHasBeenSet = true;
     }
     XmlNode deleteSourceFromS3Node = resultNode.FirstChild("DeleteSourceFromS3");
     if(!deleteSourceFromS3Node.IsNull())
     {
-      m_deleteSourceFromS3 = StringUtils::ConvertToBool(StringUtils::Trim(deleteSourceFromS3Node.GetText().c_str()).c_str());
+      m_deleteSourceFromS3 = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteSourceFromS3Node.GetText()).c_str()).c_str());
       m_deleteSourceFromS3HasBeenSet = true;
     }
   }

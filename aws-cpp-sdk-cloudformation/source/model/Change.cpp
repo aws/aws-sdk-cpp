@@ -54,7 +54,7 @@ Change& Change::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = ChangeTypeMapper::GetChangeTypeForName(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
+      m_type = ChangeTypeMapper::GetChangeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
       m_typeHasBeenSet = true;
     }
     XmlNode resourceChangeNode = resultNode.FirstChild("ResourceChange");

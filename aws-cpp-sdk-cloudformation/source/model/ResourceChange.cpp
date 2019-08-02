@@ -66,31 +66,31 @@ ResourceChange& ResourceChange::operator =(const XmlNode& xmlNode)
     XmlNode actionNode = resultNode.FirstChild("Action");
     if(!actionNode.IsNull())
     {
-      m_action = ChangeActionMapper::GetChangeActionForName(StringUtils::Trim(actionNode.GetText().c_str()).c_str());
+      m_action = ChangeActionMapper::GetChangeActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionNode.GetText()).c_str()).c_str());
       m_actionHasBeenSet = true;
     }
     XmlNode logicalResourceIdNode = resultNode.FirstChild("LogicalResourceId");
     if(!logicalResourceIdNode.IsNull())
     {
-      m_logicalResourceId = logicalResourceIdNode.GetText();
+      m_logicalResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(logicalResourceIdNode.GetText());
       m_logicalResourceIdHasBeenSet = true;
     }
     XmlNode physicalResourceIdNode = resultNode.FirstChild("PhysicalResourceId");
     if(!physicalResourceIdNode.IsNull())
     {
-      m_physicalResourceId = physicalResourceIdNode.GetText();
+      m_physicalResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(physicalResourceIdNode.GetText());
       m_physicalResourceIdHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("ResourceType");
     if(!resourceTypeNode.IsNull())
     {
-      m_resourceType = resourceTypeNode.GetText();
+      m_resourceType = Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText());
       m_resourceTypeHasBeenSet = true;
     }
     XmlNode replacementNode = resultNode.FirstChild("Replacement");
     if(!replacementNode.IsNull())
     {
-      m_replacement = ReplacementMapper::GetReplacementForName(StringUtils::Trim(replacementNode.GetText().c_str()).c_str());
+      m_replacement = ReplacementMapper::GetReplacementForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replacementNode.GetText()).c_str()).c_str());
       m_replacementHasBeenSet = true;
     }
     XmlNode scopeNode = resultNode.FirstChild("Scope");

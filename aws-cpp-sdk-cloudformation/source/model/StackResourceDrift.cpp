@@ -70,19 +70,19 @@ StackResourceDrift& StackResourceDrift::operator =(const XmlNode& xmlNode)
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
     if(!stackIdNode.IsNull())
     {
-      m_stackId = stackIdNode.GetText();
+      m_stackId = Aws::Utils::Xml::DecodeEscapedXmlText(stackIdNode.GetText());
       m_stackIdHasBeenSet = true;
     }
     XmlNode logicalResourceIdNode = resultNode.FirstChild("LogicalResourceId");
     if(!logicalResourceIdNode.IsNull())
     {
-      m_logicalResourceId = logicalResourceIdNode.GetText();
+      m_logicalResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(logicalResourceIdNode.GetText());
       m_logicalResourceIdHasBeenSet = true;
     }
     XmlNode physicalResourceIdNode = resultNode.FirstChild("PhysicalResourceId");
     if(!physicalResourceIdNode.IsNull())
     {
-      m_physicalResourceId = physicalResourceIdNode.GetText();
+      m_physicalResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(physicalResourceIdNode.GetText());
       m_physicalResourceIdHasBeenSet = true;
     }
     XmlNode physicalResourceIdContextNode = resultNode.FirstChild("PhysicalResourceIdContext");
@@ -100,19 +100,19 @@ StackResourceDrift& StackResourceDrift::operator =(const XmlNode& xmlNode)
     XmlNode resourceTypeNode = resultNode.FirstChild("ResourceType");
     if(!resourceTypeNode.IsNull())
     {
-      m_resourceType = resourceTypeNode.GetText();
+      m_resourceType = Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText());
       m_resourceTypeHasBeenSet = true;
     }
     XmlNode expectedPropertiesNode = resultNode.FirstChild("ExpectedProperties");
     if(!expectedPropertiesNode.IsNull())
     {
-      m_expectedProperties = expectedPropertiesNode.GetText();
+      m_expectedProperties = Aws::Utils::Xml::DecodeEscapedXmlText(expectedPropertiesNode.GetText());
       m_expectedPropertiesHasBeenSet = true;
     }
     XmlNode actualPropertiesNode = resultNode.FirstChild("ActualProperties");
     if(!actualPropertiesNode.IsNull())
     {
-      m_actualProperties = actualPropertiesNode.GetText();
+      m_actualProperties = Aws::Utils::Xml::DecodeEscapedXmlText(actualPropertiesNode.GetText());
       m_actualPropertiesHasBeenSet = true;
     }
     XmlNode propertyDifferencesNode = resultNode.FirstChild("PropertyDifferences");
@@ -130,13 +130,13 @@ StackResourceDrift& StackResourceDrift::operator =(const XmlNode& xmlNode)
     XmlNode stackResourceDriftStatusNode = resultNode.FirstChild("StackResourceDriftStatus");
     if(!stackResourceDriftStatusNode.IsNull())
     {
-      m_stackResourceDriftStatus = StackResourceDriftStatusMapper::GetStackResourceDriftStatusForName(StringUtils::Trim(stackResourceDriftStatusNode.GetText().c_str()).c_str());
+      m_stackResourceDriftStatus = StackResourceDriftStatusMapper::GetStackResourceDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackResourceDriftStatusNode.GetText()).c_str()).c_str());
       m_stackResourceDriftStatusHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = DateTime(StringUtils::Trim(timestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
     }
   }

@@ -62,19 +62,19 @@ HostedZone& HostedZone::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = idNode.GetText();
+      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = nameNode.GetText();
+      m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
     if(!callerReferenceNode.IsNull())
     {
-      m_callerReference = callerReferenceNode.GetText();
+      m_callerReference = Aws::Utils::Xml::DecodeEscapedXmlText(callerReferenceNode.GetText());
       m_callerReferenceHasBeenSet = true;
     }
     XmlNode configNode = resultNode.FirstChild("Config");
@@ -86,7 +86,7 @@ HostedZone& HostedZone::operator =(const XmlNode& xmlNode)
     XmlNode resourceRecordSetCountNode = resultNode.FirstChild("ResourceRecordSetCount");
     if(!resourceRecordSetCountNode.IsNull())
     {
-      m_resourceRecordSetCount = StringUtils::ConvertToInt64(StringUtils::Trim(resourceRecordSetCountNode.GetText().c_str()).c_str());
+      m_resourceRecordSetCount = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceRecordSetCountNode.GetText()).c_str()).c_str());
       m_resourceRecordSetCountHasBeenSet = true;
     }
     XmlNode linkedServiceNode = resultNode.FirstChild("LinkedService");

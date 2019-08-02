@@ -51,12 +51,12 @@ ImportSnapshotResponse& ImportSnapshotResponse::operator =(const Aws::AmazonWebS
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
     }
     XmlNode importTaskIdNode = resultNode.FirstChild("importTaskId");
     if(!importTaskIdNode.IsNull())
     {
-      m_importTaskId = importTaskIdNode.GetText();
+      m_importTaskId = Aws::Utils::Xml::DecodeEscapedXmlText(importTaskIdNode.GetText());
     }
     XmlNode snapshotTaskDetailNode = resultNode.FirstChild("snapshotTaskDetail");
     if(!snapshotTaskDetailNode.IsNull())

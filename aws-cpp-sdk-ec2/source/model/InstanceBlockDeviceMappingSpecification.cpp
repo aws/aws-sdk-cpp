@@ -56,7 +56,7 @@ InstanceBlockDeviceMappingSpecification& InstanceBlockDeviceMappingSpecification
     XmlNode deviceNameNode = resultNode.FirstChild("deviceName");
     if(!deviceNameNode.IsNull())
     {
-      m_deviceName = deviceNameNode.GetText();
+      m_deviceName = Aws::Utils::Xml::DecodeEscapedXmlText(deviceNameNode.GetText());
       m_deviceNameHasBeenSet = true;
     }
     XmlNode ebsNode = resultNode.FirstChild("ebs");
@@ -68,13 +68,13 @@ InstanceBlockDeviceMappingSpecification& InstanceBlockDeviceMappingSpecification
     XmlNode noDeviceNode = resultNode.FirstChild("noDevice");
     if(!noDeviceNode.IsNull())
     {
-      m_noDevice = noDeviceNode.GetText();
+      m_noDevice = Aws::Utils::Xml::DecodeEscapedXmlText(noDeviceNode.GetText());
       m_noDeviceHasBeenSet = true;
     }
     XmlNode virtualNameNode = resultNode.FirstChild("virtualName");
     if(!virtualNameNode.IsNull())
     {
-      m_virtualName = virtualNameNode.GetText();
+      m_virtualName = Aws::Utils::Xml::DecodeEscapedXmlText(virtualNameNode.GetText());
       m_virtualNameHasBeenSet = true;
     }
   }

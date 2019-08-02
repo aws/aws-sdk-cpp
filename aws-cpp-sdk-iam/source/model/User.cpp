@@ -64,37 +64,37 @@ User& User::operator =(const XmlNode& xmlNode)
     XmlNode pathNode = resultNode.FirstChild("Path");
     if(!pathNode.IsNull())
     {
-      m_path = pathNode.GetText();
+      m_path = Aws::Utils::Xml::DecodeEscapedXmlText(pathNode.GetText());
       m_pathHasBeenSet = true;
     }
     XmlNode userNameNode = resultNode.FirstChild("UserName");
     if(!userNameNode.IsNull())
     {
-      m_userName = userNameNode.GetText();
+      m_userName = Aws::Utils::Xml::DecodeEscapedXmlText(userNameNode.GetText());
       m_userNameHasBeenSet = true;
     }
     XmlNode userIdNode = resultNode.FirstChild("UserId");
     if(!userIdNode.IsNull())
     {
-      m_userId = userIdNode.GetText();
+      m_userId = Aws::Utils::Xml::DecodeEscapedXmlText(userIdNode.GetText());
       m_userIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
-      m_arn = arnNode.GetText();
+      m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = DateTime(StringUtils::Trim(createDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
     }
     XmlNode passwordLastUsedNode = resultNode.FirstChild("PasswordLastUsed");
     if(!passwordLastUsedNode.IsNull())
     {
-      m_passwordLastUsed = DateTime(StringUtils::Trim(passwordLastUsedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_passwordLastUsed = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(passwordLastUsedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_passwordLastUsedHasBeenSet = true;
     }
     XmlNode permissionsBoundaryNode = resultNode.FirstChild("PermissionsBoundary");

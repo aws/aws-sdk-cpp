@@ -54,19 +54,19 @@ SecurityGroupReference& SecurityGroupReference::operator =(const XmlNode& xmlNod
     XmlNode groupIdNode = resultNode.FirstChild("groupId");
     if(!groupIdNode.IsNull())
     {
-      m_groupId = groupIdNode.GetText();
+      m_groupId = Aws::Utils::Xml::DecodeEscapedXmlText(groupIdNode.GetText());
       m_groupIdHasBeenSet = true;
     }
     XmlNode referencingVpcIdNode = resultNode.FirstChild("referencingVpcId");
     if(!referencingVpcIdNode.IsNull())
     {
-      m_referencingVpcId = referencingVpcIdNode.GetText();
+      m_referencingVpcId = Aws::Utils::Xml::DecodeEscapedXmlText(referencingVpcIdNode.GetText());
       m_referencingVpcIdHasBeenSet = true;
     }
     XmlNode vpcPeeringConnectionIdNode = resultNode.FirstChild("vpcPeeringConnectionId");
     if(!vpcPeeringConnectionIdNode.IsNull())
     {
-      m_vpcPeeringConnectionId = vpcPeeringConnectionIdNode.GetText();
+      m_vpcPeeringConnectionId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcPeeringConnectionIdNode.GetText());
       m_vpcPeeringConnectionIdHasBeenSet = true;
     }
   }

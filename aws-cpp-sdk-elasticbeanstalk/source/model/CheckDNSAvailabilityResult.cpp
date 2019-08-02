@@ -53,12 +53,12 @@ CheckDNSAvailabilityResult& CheckDNSAvailabilityResult::operator =(const Aws::Am
     XmlNode availableNode = resultNode.FirstChild("Available");
     if(!availableNode.IsNull())
     {
-      m_available = StringUtils::ConvertToBool(StringUtils::Trim(availableNode.GetText().c_str()).c_str());
+      m_available = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(availableNode.GetText()).c_str()).c_str());
     }
     XmlNode fullyQualifiedCNAMENode = resultNode.FirstChild("FullyQualifiedCNAME");
     if(!fullyQualifiedCNAMENode.IsNull())
     {
-      m_fullyQualifiedCNAME = fullyQualifiedCNAMENode.GetText();
+      m_fullyQualifiedCNAME = Aws::Utils::Xml::DecodeEscapedXmlText(fullyQualifiedCNAMENode.GetText());
     }
   }
 

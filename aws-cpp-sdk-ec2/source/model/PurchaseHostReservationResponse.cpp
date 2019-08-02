@@ -53,12 +53,12 @@ PurchaseHostReservationResponse& PurchaseHostReservationResponse::operator =(con
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
-      m_clientToken = clientTokenNode.GetText();
+      m_clientToken = Aws::Utils::Xml::DecodeEscapedXmlText(clientTokenNode.GetText());
     }
     XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
     if(!currencyCodeNode.IsNull())
     {
-      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(currencyCodeNode.GetText().c_str()).c_str());
+      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText()).c_str()).c_str());
     }
     XmlNode purchaseNode = resultNode.FirstChild("purchase");
     if(!purchaseNode.IsNull())
@@ -74,12 +74,12 @@ PurchaseHostReservationResponse& PurchaseHostReservationResponse::operator =(con
     XmlNode totalHourlyPriceNode = resultNode.FirstChild("totalHourlyPrice");
     if(!totalHourlyPriceNode.IsNull())
     {
-      m_totalHourlyPrice = totalHourlyPriceNode.GetText();
+      m_totalHourlyPrice = Aws::Utils::Xml::DecodeEscapedXmlText(totalHourlyPriceNode.GetText());
     }
     XmlNode totalUpfrontPriceNode = resultNode.FirstChild("totalUpfrontPrice");
     if(!totalUpfrontPriceNode.IsNull())
     {
-      m_totalUpfrontPrice = totalUpfrontPriceNode.GetText();
+      m_totalUpfrontPrice = Aws::Utils::Xml::DecodeEscapedXmlText(totalUpfrontPriceNode.GetText());
     }
   }
 

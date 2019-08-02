@@ -60,37 +60,37 @@ Certificate& Certificate::operator =(const XmlNode& xmlNode)
     XmlNode certificateIdentifierNode = resultNode.FirstChild("CertificateIdentifier");
     if(!certificateIdentifierNode.IsNull())
     {
-      m_certificateIdentifier = certificateIdentifierNode.GetText();
+      m_certificateIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(certificateIdentifierNode.GetText());
       m_certificateIdentifierHasBeenSet = true;
     }
     XmlNode certificateTypeNode = resultNode.FirstChild("CertificateType");
     if(!certificateTypeNode.IsNull())
     {
-      m_certificateType = certificateTypeNode.GetText();
+      m_certificateType = Aws::Utils::Xml::DecodeEscapedXmlText(certificateTypeNode.GetText());
       m_certificateTypeHasBeenSet = true;
     }
     XmlNode thumbprintNode = resultNode.FirstChild("Thumbprint");
     if(!thumbprintNode.IsNull())
     {
-      m_thumbprint = thumbprintNode.GetText();
+      m_thumbprint = Aws::Utils::Xml::DecodeEscapedXmlText(thumbprintNode.GetText());
       m_thumbprintHasBeenSet = true;
     }
     XmlNode validFromNode = resultNode.FirstChild("ValidFrom");
     if(!validFromNode.IsNull())
     {
-      m_validFrom = DateTime(StringUtils::Trim(validFromNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_validFrom = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validFromNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_validFromHasBeenSet = true;
     }
     XmlNode validTillNode = resultNode.FirstChild("ValidTill");
     if(!validTillNode.IsNull())
     {
-      m_validTill = DateTime(StringUtils::Trim(validTillNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_validTill = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validTillNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_validTillHasBeenSet = true;
     }
     XmlNode certificateArnNode = resultNode.FirstChild("CertificateArn");
     if(!certificateArnNode.IsNull())
     {
-      m_certificateArn = certificateArnNode.GetText();
+      m_certificateArn = Aws::Utils::Xml::DecodeEscapedXmlText(certificateArnNode.GetText());
       m_certificateArnHasBeenSet = true;
     }
   }

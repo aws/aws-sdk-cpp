@@ -66,7 +66,7 @@ RollbackConfiguration& RollbackConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode monitoringTimeInMinutesNode = resultNode.FirstChild("MonitoringTimeInMinutes");
     if(!monitoringTimeInMinutesNode.IsNull())
     {
-      m_monitoringTimeInMinutes = StringUtils::ConvertToInt32(StringUtils::Trim(monitoringTimeInMinutesNode.GetText().c_str()).c_str());
+      m_monitoringTimeInMinutes = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(monitoringTimeInMinutesNode.GetText()).c_str()).c_str());
       m_monitoringTimeInMinutesHasBeenSet = true;
     }
   }

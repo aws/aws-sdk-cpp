@@ -59,19 +59,19 @@ VirtualMFADevice& VirtualMFADevice::operator =(const XmlNode& xmlNode)
     XmlNode serialNumberNode = resultNode.FirstChild("SerialNumber");
     if(!serialNumberNode.IsNull())
     {
-      m_serialNumber = serialNumberNode.GetText();
+      m_serialNumber = Aws::Utils::Xml::DecodeEscapedXmlText(serialNumberNode.GetText());
       m_serialNumberHasBeenSet = true;
     }
     XmlNode base32StringSeedNode = resultNode.FirstChild("Base32StringSeed");
     if(!base32StringSeedNode.IsNull())
     {
-      m_base32StringSeed = HashingUtils::Base64Decode(base32StringSeedNode.GetText());
+      m_base32StringSeed = HashingUtils::Base64Decode(Aws::Utils::Xml::DecodeEscapedXmlText(base32StringSeedNode.GetText()));
       m_base32StringSeedHasBeenSet = true;
     }
     XmlNode qRCodePNGNode = resultNode.FirstChild("QRCodePNG");
     if(!qRCodePNGNode.IsNull())
     {
-      m_qRCodePNG = HashingUtils::Base64Decode(qRCodePNGNode.GetText());
+      m_qRCodePNG = HashingUtils::Base64Decode(Aws::Utils::Xml::DecodeEscapedXmlText(qRCodePNGNode.GetText()));
       m_qRCodePNGHasBeenSet = true;
     }
     XmlNode userNode = resultNode.FirstChild("User");
@@ -83,7 +83,7 @@ VirtualMFADevice& VirtualMFADevice::operator =(const XmlNode& xmlNode)
     XmlNode enableDateNode = resultNode.FirstChild("EnableDate");
     if(!enableDateNode.IsNull())
     {
-      m_enableDate = DateTime(StringUtils::Trim(enableDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_enableDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_enableDateHasBeenSet = true;
     }
   }

@@ -76,43 +76,43 @@ Datapoint& Datapoint::operator =(const XmlNode& xmlNode)
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = DateTime(StringUtils::Trim(timestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
     }
     XmlNode sampleCountNode = resultNode.FirstChild("SampleCount");
     if(!sampleCountNode.IsNull())
     {
-      m_sampleCount = StringUtils::ConvertToDouble(StringUtils::Trim(sampleCountNode.GetText().c_str()).c_str());
+      m_sampleCount = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sampleCountNode.GetText()).c_str()).c_str());
       m_sampleCountHasBeenSet = true;
     }
     XmlNode averageNode = resultNode.FirstChild("Average");
     if(!averageNode.IsNull())
     {
-      m_average = StringUtils::ConvertToDouble(StringUtils::Trim(averageNode.GetText().c_str()).c_str());
+      m_average = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(averageNode.GetText()).c_str()).c_str());
       m_averageHasBeenSet = true;
     }
     XmlNode sumNode = resultNode.FirstChild("Sum");
     if(!sumNode.IsNull())
     {
-      m_sum = StringUtils::ConvertToDouble(StringUtils::Trim(sumNode.GetText().c_str()).c_str());
+      m_sum = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sumNode.GetText()).c_str()).c_str());
       m_sumHasBeenSet = true;
     }
     XmlNode minimumNode = resultNode.FirstChild("Minimum");
     if(!minimumNode.IsNull())
     {
-      m_minimum = StringUtils::ConvertToDouble(StringUtils::Trim(minimumNode.GetText().c_str()).c_str());
+      m_minimum = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minimumNode.GetText()).c_str()).c_str());
       m_minimumHasBeenSet = true;
     }
     XmlNode maximumNode = resultNode.FirstChild("Maximum");
     if(!maximumNode.IsNull())
     {
-      m_maximum = StringUtils::ConvertToDouble(StringUtils::Trim(maximumNode.GetText().c_str()).c_str());
+      m_maximum = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNode.GetText()).c_str()).c_str());
       m_maximumHasBeenSet = true;
     }
     XmlNode unitNode = resultNode.FirstChild("Unit");
     if(!unitNode.IsNull())
     {
-      m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(unitNode.GetText().c_str()).c_str());
+      m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()).c_str());
       m_unitHasBeenSet = true;
     }
     XmlNode extendedStatisticsNode = resultNode.FirstChild("ExtendedStatistics");

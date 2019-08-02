@@ -54,7 +54,7 @@ StorageClassAnalysisDataExport& StorageClassAnalysisDataExport::operator =(const
     XmlNode outputSchemaVersionNode = resultNode.FirstChild("OutputSchemaVersion");
     if(!outputSchemaVersionNode.IsNull())
     {
-      m_outputSchemaVersion = StorageClassAnalysisSchemaVersionMapper::GetStorageClassAnalysisSchemaVersionForName(StringUtils::Trim(outputSchemaVersionNode.GetText().c_str()).c_str());
+      m_outputSchemaVersion = StorageClassAnalysisSchemaVersionMapper::GetStorageClassAnalysisSchemaVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outputSchemaVersionNode.GetText()).c_str()).c_str());
       m_outputSchemaVersionHasBeenSet = true;
     }
     XmlNode destinationNode = resultNode.FirstChild("Destination");

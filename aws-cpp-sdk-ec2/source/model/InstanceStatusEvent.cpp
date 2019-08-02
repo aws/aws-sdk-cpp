@@ -62,37 +62,37 @@ InstanceStatusEvent& InstanceStatusEvent::operator =(const XmlNode& xmlNode)
     XmlNode instanceEventIdNode = resultNode.FirstChild("instanceEventId");
     if(!instanceEventIdNode.IsNull())
     {
-      m_instanceEventId = instanceEventIdNode.GetText();
+      m_instanceEventId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceEventIdNode.GetText());
       m_instanceEventIdHasBeenSet = true;
     }
     XmlNode codeNode = resultNode.FirstChild("code");
     if(!codeNode.IsNull())
     {
-      m_code = EventCodeMapper::GetEventCodeForName(StringUtils::Trim(codeNode.GetText().c_str()).c_str());
+      m_code = EventCodeMapper::GetEventCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()).c_str());
       m_codeHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode notAfterNode = resultNode.FirstChild("notAfter");
     if(!notAfterNode.IsNull())
     {
-      m_notAfter = DateTime(StringUtils::Trim(notAfterNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_notAfter = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(notAfterNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_notAfterHasBeenSet = true;
     }
     XmlNode notBeforeNode = resultNode.FirstChild("notBefore");
     if(!notBeforeNode.IsNull())
     {
-      m_notBefore = DateTime(StringUtils::Trim(notBeforeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_notBefore = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(notBeforeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_notBeforeHasBeenSet = true;
     }
     XmlNode notBeforeDeadlineNode = resultNode.FirstChild("notBeforeDeadline");
     if(!notBeforeDeadlineNode.IsNull())
     {
-      m_notBeforeDeadline = DateTime(StringUtils::Trim(notBeforeDeadlineNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_notBeforeDeadline = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(notBeforeDeadlineNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_notBeforeDeadlineHasBeenSet = true;
     }
   }

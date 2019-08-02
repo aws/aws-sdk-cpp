@@ -50,7 +50,7 @@ DirectoryServiceAuthenticationRequest& DirectoryServiceAuthenticationRequest::op
     XmlNode directoryIdNode = resultNode.FirstChild("DirectoryId");
     if(!directoryIdNode.IsNull())
     {
-      m_directoryId = directoryIdNode.GetText();
+      m_directoryId = Aws::Utils::Xml::DecodeEscapedXmlText(directoryIdNode.GetText());
       m_directoryIdHasBeenSet = true;
     }
   }

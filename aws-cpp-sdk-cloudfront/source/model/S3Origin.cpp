@@ -52,13 +52,13 @@ S3Origin& S3Origin::operator =(const XmlNode& xmlNode)
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
     if(!domainNameNode.IsNull())
     {
-      m_domainName = domainNameNode.GetText();
+      m_domainName = Aws::Utils::Xml::DecodeEscapedXmlText(domainNameNode.GetText());
       m_domainNameHasBeenSet = true;
     }
     XmlNode originAccessIdentityNode = resultNode.FirstChild("OriginAccessIdentity");
     if(!originAccessIdentityNode.IsNull())
     {
-      m_originAccessIdentity = originAccessIdentityNode.GetText();
+      m_originAccessIdentity = Aws::Utils::Xml::DecodeEscapedXmlText(originAccessIdentityNode.GetText());
       m_originAccessIdentityHasBeenSet = true;
     }
   }

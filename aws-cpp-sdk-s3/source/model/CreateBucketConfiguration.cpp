@@ -52,7 +52,7 @@ CreateBucketConfiguration& CreateBucketConfiguration::operator =(const XmlNode& 
     XmlNode locationConstraintNode = resultNode.FirstChild("LocationConstraint");
     if(!locationConstraintNode.IsNull())
     {
-      m_locationConstraint = BucketLocationConstraintMapper::GetBucketLocationConstraintForName(StringUtils::Trim(locationConstraintNode.GetText().c_str()).c_str());
+      m_locationConstraint = BucketLocationConstraintMapper::GetBucketLocationConstraintForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(locationConstraintNode.GetText()).c_str()).c_str());
       m_locationConstraintHasBeenSet = true;
     }
   }

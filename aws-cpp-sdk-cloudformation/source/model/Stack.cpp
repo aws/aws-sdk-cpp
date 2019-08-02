@@ -100,25 +100,25 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
     if(!stackIdNode.IsNull())
     {
-      m_stackId = stackIdNode.GetText();
+      m_stackId = Aws::Utils::Xml::DecodeEscapedXmlText(stackIdNode.GetText());
       m_stackIdHasBeenSet = true;
     }
     XmlNode stackNameNode = resultNode.FirstChild("StackName");
     if(!stackNameNode.IsNull())
     {
-      m_stackName = stackNameNode.GetText();
+      m_stackName = Aws::Utils::Xml::DecodeEscapedXmlText(stackNameNode.GetText());
       m_stackNameHasBeenSet = true;
     }
     XmlNode changeSetIdNode = resultNode.FirstChild("ChangeSetId");
     if(!changeSetIdNode.IsNull())
     {
-      m_changeSetId = changeSetIdNode.GetText();
+      m_changeSetId = Aws::Utils::Xml::DecodeEscapedXmlText(changeSetIdNode.GetText());
       m_changeSetIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode parametersNode = resultNode.FirstChild("Parameters");
@@ -136,19 +136,19 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     XmlNode creationTimeNode = resultNode.FirstChild("CreationTime");
     if(!creationTimeNode.IsNull())
     {
-      m_creationTime = DateTime(StringUtils::Trim(creationTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
     }
     XmlNode deletionTimeNode = resultNode.FirstChild("DeletionTime");
     if(!deletionTimeNode.IsNull())
     {
-      m_deletionTime = DateTime(StringUtils::Trim(deletionTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_deletionTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deletionTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_deletionTimeHasBeenSet = true;
     }
     XmlNode lastUpdatedTimeNode = resultNode.FirstChild("LastUpdatedTime");
     if(!lastUpdatedTimeNode.IsNull())
     {
-      m_lastUpdatedTime = DateTime(StringUtils::Trim(lastUpdatedTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastUpdatedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdatedTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_lastUpdatedTimeHasBeenSet = true;
     }
     XmlNode rollbackConfigurationNode = resultNode.FirstChild("RollbackConfiguration");
@@ -160,19 +160,19 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     XmlNode stackStatusNode = resultNode.FirstChild("StackStatus");
     if(!stackStatusNode.IsNull())
     {
-      m_stackStatus = StackStatusMapper::GetStackStatusForName(StringUtils::Trim(stackStatusNode.GetText().c_str()).c_str());
+      m_stackStatus = StackStatusMapper::GetStackStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackStatusNode.GetText()).c_str()).c_str());
       m_stackStatusHasBeenSet = true;
     }
     XmlNode stackStatusReasonNode = resultNode.FirstChild("StackStatusReason");
     if(!stackStatusReasonNode.IsNull())
     {
-      m_stackStatusReason = stackStatusReasonNode.GetText();
+      m_stackStatusReason = Aws::Utils::Xml::DecodeEscapedXmlText(stackStatusReasonNode.GetText());
       m_stackStatusReasonHasBeenSet = true;
     }
     XmlNode disableRollbackNode = resultNode.FirstChild("DisableRollback");
     if(!disableRollbackNode.IsNull())
     {
-      m_disableRollback = StringUtils::ConvertToBool(StringUtils::Trim(disableRollbackNode.GetText().c_str()).c_str());
+      m_disableRollback = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(disableRollbackNode.GetText()).c_str()).c_str());
       m_disableRollbackHasBeenSet = true;
     }
     XmlNode notificationARNsNode = resultNode.FirstChild("NotificationARNs");
@@ -190,7 +190,7 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     XmlNode timeoutInMinutesNode = resultNode.FirstChild("TimeoutInMinutes");
     if(!timeoutInMinutesNode.IsNull())
     {
-      m_timeoutInMinutes = StringUtils::ConvertToInt32(StringUtils::Trim(timeoutInMinutesNode.GetText().c_str()).c_str());
+      m_timeoutInMinutes = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timeoutInMinutesNode.GetText()).c_str()).c_str());
       m_timeoutInMinutesHasBeenSet = true;
     }
     XmlNode capabilitiesNode = resultNode.FirstChild("Capabilities");
@@ -220,7 +220,7 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     XmlNode roleARNNode = resultNode.FirstChild("RoleARN");
     if(!roleARNNode.IsNull())
     {
-      m_roleARN = roleARNNode.GetText();
+      m_roleARN = Aws::Utils::Xml::DecodeEscapedXmlText(roleARNNode.GetText());
       m_roleARNHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
@@ -238,19 +238,19 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
     XmlNode enableTerminationProtectionNode = resultNode.FirstChild("EnableTerminationProtection");
     if(!enableTerminationProtectionNode.IsNull())
     {
-      m_enableTerminationProtection = StringUtils::ConvertToBool(StringUtils::Trim(enableTerminationProtectionNode.GetText().c_str()).c_str());
+      m_enableTerminationProtection = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableTerminationProtectionNode.GetText()).c_str()).c_str());
       m_enableTerminationProtectionHasBeenSet = true;
     }
     XmlNode parentIdNode = resultNode.FirstChild("ParentId");
     if(!parentIdNode.IsNull())
     {
-      m_parentId = parentIdNode.GetText();
+      m_parentId = Aws::Utils::Xml::DecodeEscapedXmlText(parentIdNode.GetText());
       m_parentIdHasBeenSet = true;
     }
     XmlNode rootIdNode = resultNode.FirstChild("RootId");
     if(!rootIdNode.IsNull())
     {
-      m_rootId = rootIdNode.GetText();
+      m_rootId = Aws::Utils::Xml::DecodeEscapedXmlText(rootIdNode.GetText());
       m_rootIdHasBeenSet = true;
     }
     XmlNode driftInformationNode = resultNode.FirstChild("DriftInformation");

@@ -56,25 +56,25 @@ Output& Output::operator =(const XmlNode& xmlNode)
     XmlNode outputKeyNode = resultNode.FirstChild("OutputKey");
     if(!outputKeyNode.IsNull())
     {
-      m_outputKey = outputKeyNode.GetText();
+      m_outputKey = Aws::Utils::Xml::DecodeEscapedXmlText(outputKeyNode.GetText());
       m_outputKeyHasBeenSet = true;
     }
     XmlNode outputValueNode = resultNode.FirstChild("OutputValue");
     if(!outputValueNode.IsNull())
     {
-      m_outputValue = outputValueNode.GetText();
+      m_outputValue = Aws::Utils::Xml::DecodeEscapedXmlText(outputValueNode.GetText());
       m_outputValueHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode exportNameNode = resultNode.FirstChild("ExportName");
     if(!exportNameNode.IsNull())
     {
-      m_exportName = exportNameNode.GetText();
+      m_exportName = Aws::Utils::Xml::DecodeEscapedXmlText(exportNameNode.GetText());
       m_exportNameHasBeenSet = true;
     }
   }

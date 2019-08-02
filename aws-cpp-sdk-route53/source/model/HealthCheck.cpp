@@ -62,13 +62,13 @@ HealthCheck& HealthCheck::operator =(const XmlNode& xmlNode)
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = idNode.GetText();
+      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
     }
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
     if(!callerReferenceNode.IsNull())
     {
-      m_callerReference = callerReferenceNode.GetText();
+      m_callerReference = Aws::Utils::Xml::DecodeEscapedXmlText(callerReferenceNode.GetText());
       m_callerReferenceHasBeenSet = true;
     }
     XmlNode linkedServiceNode = resultNode.FirstChild("LinkedService");
@@ -86,7 +86,7 @@ HealthCheck& HealthCheck::operator =(const XmlNode& xmlNode)
     XmlNode healthCheckVersionNode = resultNode.FirstChild("HealthCheckVersion");
     if(!healthCheckVersionNode.IsNull())
     {
-      m_healthCheckVersion = StringUtils::ConvertToInt64(StringUtils::Trim(healthCheckVersionNode.GetText().c_str()).c_str());
+      m_healthCheckVersion = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(healthCheckVersionNode.GetText()).c_str()).c_str());
       m_healthCheckVersionHasBeenSet = true;
     }
     XmlNode cloudWatchAlarmConfigurationNode = resultNode.FirstChild("CloudWatchAlarmConfiguration");

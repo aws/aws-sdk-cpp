@@ -50,7 +50,7 @@ OpenIDConnectProviderListEntry& OpenIDConnectProviderListEntry::operator =(const
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
-      m_arn = arnNode.GetText();
+      m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
     }
   }

@@ -51,7 +51,7 @@ ConfirmSubscriptionResult& ConfirmSubscriptionResult::operator =(const Aws::Amaz
     XmlNode subscriptionArnNode = resultNode.FirstChild("SubscriptionArn");
     if(!subscriptionArnNode.IsNull())
     {
-      m_subscriptionArn = subscriptionArnNode.GetText();
+      m_subscriptionArn = Aws::Utils::Xml::DecodeEscapedXmlText(subscriptionArnNode.GetText());
     }
   }
 

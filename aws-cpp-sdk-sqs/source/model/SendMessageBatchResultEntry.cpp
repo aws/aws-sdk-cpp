@@ -58,31 +58,31 @@ SendMessageBatchResultEntry& SendMessageBatchResultEntry::operator =(const XmlNo
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = idNode.GetText();
+      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
     }
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
     if(!messageIdNode.IsNull())
     {
-      m_messageId = messageIdNode.GetText();
+      m_messageId = Aws::Utils::Xml::DecodeEscapedXmlText(messageIdNode.GetText());
       m_messageIdHasBeenSet = true;
     }
     XmlNode mD5OfMessageBodyNode = resultNode.FirstChild("MD5OfMessageBody");
     if(!mD5OfMessageBodyNode.IsNull())
     {
-      m_mD5OfMessageBody = mD5OfMessageBodyNode.GetText();
+      m_mD5OfMessageBody = Aws::Utils::Xml::DecodeEscapedXmlText(mD5OfMessageBodyNode.GetText());
       m_mD5OfMessageBodyHasBeenSet = true;
     }
     XmlNode mD5OfMessageAttributesNode = resultNode.FirstChild("MD5OfMessageAttributes");
     if(!mD5OfMessageAttributesNode.IsNull())
     {
-      m_mD5OfMessageAttributes = mD5OfMessageAttributesNode.GetText();
+      m_mD5OfMessageAttributes = Aws::Utils::Xml::DecodeEscapedXmlText(mD5OfMessageAttributesNode.GetText());
       m_mD5OfMessageAttributesHasBeenSet = true;
     }
     XmlNode sequenceNumberNode = resultNode.FirstChild("SequenceNumber");
     if(!sequenceNumberNode.IsNull())
     {
-      m_sequenceNumber = sequenceNumberNode.GetText();
+      m_sequenceNumber = Aws::Utils::Xml::DecodeEscapedXmlText(sequenceNumberNode.GetText());
       m_sequenceNumberHasBeenSet = true;
     }
   }

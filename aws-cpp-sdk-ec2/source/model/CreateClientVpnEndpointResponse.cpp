@@ -51,7 +51,7 @@ CreateClientVpnEndpointResponse& CreateClientVpnEndpointResponse::operator =(con
     XmlNode clientVpnEndpointIdNode = resultNode.FirstChild("clientVpnEndpointId");
     if(!clientVpnEndpointIdNode.IsNull())
     {
-      m_clientVpnEndpointId = clientVpnEndpointIdNode.GetText();
+      m_clientVpnEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(clientVpnEndpointIdNode.GetText());
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
@@ -61,7 +61,7 @@ CreateClientVpnEndpointResponse& CreateClientVpnEndpointResponse::operator =(con
     XmlNode dnsNameNode = resultNode.FirstChild("dnsName");
     if(!dnsNameNode.IsNull())
     {
-      m_dnsName = dnsNameNode.GetText();
+      m_dnsName = Aws::Utils::Xml::DecodeEscapedXmlText(dnsNameNode.GetText());
     }
   }
 

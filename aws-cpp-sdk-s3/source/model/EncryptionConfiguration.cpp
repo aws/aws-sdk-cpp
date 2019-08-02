@@ -50,7 +50,7 @@ EncryptionConfiguration& EncryptionConfiguration::operator =(const XmlNode& xmlN
     XmlNode replicaKmsKeyIDNode = resultNode.FirstChild("ReplicaKmsKeyID");
     if(!replicaKmsKeyIDNode.IsNull())
     {
-      m_replicaKmsKeyID = replicaKmsKeyIDNode.GetText();
+      m_replicaKmsKeyID = Aws::Utils::Xml::DecodeEscapedXmlText(replicaKmsKeyIDNode.GetText());
       m_replicaKmsKeyIDHasBeenSet = true;
     }
   }

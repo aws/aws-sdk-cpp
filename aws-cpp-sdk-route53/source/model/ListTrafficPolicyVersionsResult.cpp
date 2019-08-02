@@ -57,17 +57,17 @@ ListTrafficPolicyVersionsResult& ListTrafficPolicyVersionsResult::operator =(con
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
     {
-      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
     }
     XmlNode trafficPolicyVersionMarkerNode = resultNode.FirstChild("TrafficPolicyVersionMarker");
     if(!trafficPolicyVersionMarkerNode.IsNull())
     {
-      m_trafficPolicyVersionMarker = trafficPolicyVersionMarkerNode.GetText();
+      m_trafficPolicyVersionMarker = Aws::Utils::Xml::DecodeEscapedXmlText(trafficPolicyVersionMarkerNode.GetText());
     }
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");
     if(!maxItemsNode.IsNull())
     {
-      m_maxItems = maxItemsNode.GetText();
+      m_maxItems = Aws::Utils::Xml::DecodeEscapedXmlText(maxItemsNode.GetText());
     }
   }
 

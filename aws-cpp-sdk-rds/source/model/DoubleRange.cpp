@@ -56,13 +56,13 @@ DoubleRange& DoubleRange::operator =(const XmlNode& xmlNode)
     XmlNode fromNode = resultNode.FirstChild("From");
     if(!fromNode.IsNull())
     {
-      m_from = StringUtils::ConvertToDouble(StringUtils::Trim(fromNode.GetText().c_str()).c_str());
+      m_from = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fromNode.GetText()).c_str()).c_str());
       m_fromHasBeenSet = true;
     }
     XmlNode toNode = resultNode.FirstChild("To");
     if(!toNode.IsNull())
     {
-      m_to = StringUtils::ConvertToDouble(StringUtils::Trim(toNode.GetText().c_str()).c_str());
+      m_to = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(toNode.GetText()).c_str()).c_str());
       m_toHasBeenSet = true;
     }
   }

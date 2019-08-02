@@ -62,7 +62,7 @@ DescribeSSLPoliciesResult& DescribeSSLPoliciesResult::operator =(const Aws::Amaz
     XmlNode nextMarkerNode = resultNode.FirstChild("NextMarker");
     if(!nextMarkerNode.IsNull())
     {
-      m_nextMarker = nextMarkerNode.GetText();
+      m_nextMarker = Aws::Utils::Xml::DecodeEscapedXmlText(nextMarkerNode.GetText());
     }
   }
 

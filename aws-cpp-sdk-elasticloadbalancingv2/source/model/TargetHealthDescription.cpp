@@ -60,7 +60,7 @@ TargetHealthDescription& TargetHealthDescription::operator =(const XmlNode& xmlN
     XmlNode healthCheckPortNode = resultNode.FirstChild("HealthCheckPort");
     if(!healthCheckPortNode.IsNull())
     {
-      m_healthCheckPort = healthCheckPortNode.GetText();
+      m_healthCheckPort = Aws::Utils::Xml::DecodeEscapedXmlText(healthCheckPortNode.GetText());
       m_healthCheckPortHasBeenSet = true;
     }
     XmlNode targetHealthNode = resultNode.FirstChild("TargetHealth");

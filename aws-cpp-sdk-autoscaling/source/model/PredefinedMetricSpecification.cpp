@@ -54,13 +54,13 @@ PredefinedMetricSpecification& PredefinedMetricSpecification::operator =(const X
     XmlNode predefinedMetricTypeNode = resultNode.FirstChild("PredefinedMetricType");
     if(!predefinedMetricTypeNode.IsNull())
     {
-      m_predefinedMetricType = MetricTypeMapper::GetMetricTypeForName(StringUtils::Trim(predefinedMetricTypeNode.GetText().c_str()).c_str());
+      m_predefinedMetricType = MetricTypeMapper::GetMetricTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(predefinedMetricTypeNode.GetText()).c_str()).c_str());
       m_predefinedMetricTypeHasBeenSet = true;
     }
     XmlNode resourceLabelNode = resultNode.FirstChild("ResourceLabel");
     if(!resourceLabelNode.IsNull())
     {
-      m_resourceLabel = resourceLabelNode.GetText();
+      m_resourceLabel = Aws::Utils::Xml::DecodeEscapedXmlText(resourceLabelNode.GetText());
       m_resourceLabelHasBeenSet = true;
     }
   }

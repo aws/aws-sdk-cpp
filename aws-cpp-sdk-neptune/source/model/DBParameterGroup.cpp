@@ -56,25 +56,25 @@ DBParameterGroup& DBParameterGroup::operator =(const XmlNode& xmlNode)
     XmlNode dBParameterGroupNameNode = resultNode.FirstChild("DBParameterGroupName");
     if(!dBParameterGroupNameNode.IsNull())
     {
-      m_dBParameterGroupName = dBParameterGroupNameNode.GetText();
+      m_dBParameterGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(dBParameterGroupNameNode.GetText());
       m_dBParameterGroupNameHasBeenSet = true;
     }
     XmlNode dBParameterGroupFamilyNode = resultNode.FirstChild("DBParameterGroupFamily");
     if(!dBParameterGroupFamilyNode.IsNull())
     {
-      m_dBParameterGroupFamily = dBParameterGroupFamilyNode.GetText();
+      m_dBParameterGroupFamily = Aws::Utils::Xml::DecodeEscapedXmlText(dBParameterGroupFamilyNode.GetText());
       m_dBParameterGroupFamilyHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode dBParameterGroupArnNode = resultNode.FirstChild("DBParameterGroupArn");
     if(!dBParameterGroupArnNode.IsNull())
     {
-      m_dBParameterGroupArn = dBParameterGroupArnNode.GetText();
+      m_dBParameterGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBParameterGroupArnNode.GetText());
       m_dBParameterGroupArnHasBeenSet = true;
     }
   }

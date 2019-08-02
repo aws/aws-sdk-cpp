@@ -54,13 +54,13 @@ VolumeStatusDetails& VolumeStatusDetails::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("name");
     if(!nameNode.IsNull())
     {
-      m_name = VolumeStatusNameMapper::GetVolumeStatusNameForName(StringUtils::Trim(nameNode.GetText().c_str()).c_str());
+      m_name = VolumeStatusNameMapper::GetVolumeStatusNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()).c_str());
       m_nameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = statusNode.GetText();
+      m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
   }

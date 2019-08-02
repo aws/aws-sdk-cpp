@@ -66,19 +66,19 @@ ReceiptRule& ReceiptRule::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = nameNode.GetText();
+      m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
     if(!enabledNode.IsNull())
     {
-      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
     XmlNode tlsPolicyNode = resultNode.FirstChild("TlsPolicy");
     if(!tlsPolicyNode.IsNull())
     {
-      m_tlsPolicy = TlsPolicyMapper::GetTlsPolicyForName(StringUtils::Trim(tlsPolicyNode.GetText().c_str()).c_str());
+      m_tlsPolicy = TlsPolicyMapper::GetTlsPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tlsPolicyNode.GetText()).c_str()).c_str());
       m_tlsPolicyHasBeenSet = true;
     }
     XmlNode recipientsNode = resultNode.FirstChild("Recipients");
@@ -108,7 +108,7 @@ ReceiptRule& ReceiptRule::operator =(const XmlNode& xmlNode)
     XmlNode scanEnabledNode = resultNode.FirstChild("ScanEnabled");
     if(!scanEnabledNode.IsNull())
     {
-      m_scanEnabled = StringUtils::ConvertToBool(StringUtils::Trim(scanEnabledNode.GetText().c_str()).c_str());
+      m_scanEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(scanEnabledNode.GetText()).c_str()).c_str());
       m_scanEnabledHasBeenSet = true;
     }
   }

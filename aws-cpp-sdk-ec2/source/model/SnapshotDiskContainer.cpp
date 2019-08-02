@@ -56,19 +56,19 @@ SnapshotDiskContainer& SnapshotDiskContainer::operator =(const XmlNode& xmlNode)
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode formatNode = resultNode.FirstChild("Format");
     if(!formatNode.IsNull())
     {
-      m_format = formatNode.GetText();
+      m_format = Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText());
       m_formatHasBeenSet = true;
     }
     XmlNode urlNode = resultNode.FirstChild("Url");
     if(!urlNode.IsNull())
     {
-      m_url = urlNode.GetText();
+      m_url = Aws::Utils::Xml::DecodeEscapedXmlText(urlNode.GetText());
       m_urlHasBeenSet = true;
     }
     XmlNode userBucketNode = resultNode.FirstChild("UserBucket");

@@ -86,7 +86,7 @@ RouteTable& RouteTable::operator =(const XmlNode& xmlNode)
     XmlNode routeTableIdNode = resultNode.FirstChild("routeTableId");
     if(!routeTableIdNode.IsNull())
     {
-      m_routeTableId = routeTableIdNode.GetText();
+      m_routeTableId = Aws::Utils::Xml::DecodeEscapedXmlText(routeTableIdNode.GetText());
       m_routeTableIdHasBeenSet = true;
     }
     XmlNode routesNode = resultNode.FirstChild("routeSet");
@@ -116,13 +116,13 @@ RouteTable& RouteTable::operator =(const XmlNode& xmlNode)
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = vpcIdNode.GetText();
+      m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
-      m_ownerId = ownerIdNode.GetText();
+      m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
     }
   }

@@ -51,12 +51,12 @@ ModifyClusterParameterGroupResult& ModifyClusterParameterGroupResult::operator =
     XmlNode parameterGroupNameNode = resultNode.FirstChild("ParameterGroupName");
     if(!parameterGroupNameNode.IsNull())
     {
-      m_parameterGroupName = parameterGroupNameNode.GetText();
+      m_parameterGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(parameterGroupNameNode.GetText());
     }
     XmlNode parameterGroupStatusNode = resultNode.FirstChild("ParameterGroupStatus");
     if(!parameterGroupStatusNode.IsNull())
     {
-      m_parameterGroupStatus = parameterGroupStatusNode.GetText();
+      m_parameterGroupStatus = Aws::Utils::Xml::DecodeEscapedXmlText(parameterGroupStatusNode.GetText());
     }
   }
 

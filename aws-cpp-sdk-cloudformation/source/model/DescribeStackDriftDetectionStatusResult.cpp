@@ -57,37 +57,37 @@ DescribeStackDriftDetectionStatusResult& DescribeStackDriftDetectionStatusResult
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
     if(!stackIdNode.IsNull())
     {
-      m_stackId = stackIdNode.GetText();
+      m_stackId = Aws::Utils::Xml::DecodeEscapedXmlText(stackIdNode.GetText());
     }
     XmlNode stackDriftDetectionIdNode = resultNode.FirstChild("StackDriftDetectionId");
     if(!stackDriftDetectionIdNode.IsNull())
     {
-      m_stackDriftDetectionId = stackDriftDetectionIdNode.GetText();
+      m_stackDriftDetectionId = Aws::Utils::Xml::DecodeEscapedXmlText(stackDriftDetectionIdNode.GetText());
     }
     XmlNode stackDriftStatusNode = resultNode.FirstChild("StackDriftStatus");
     if(!stackDriftStatusNode.IsNull())
     {
-      m_stackDriftStatus = StackDriftStatusMapper::GetStackDriftStatusForName(StringUtils::Trim(stackDriftStatusNode.GetText().c_str()).c_str());
+      m_stackDriftStatus = StackDriftStatusMapper::GetStackDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackDriftStatusNode.GetText()).c_str()).c_str());
     }
     XmlNode detectionStatusNode = resultNode.FirstChild("DetectionStatus");
     if(!detectionStatusNode.IsNull())
     {
-      m_detectionStatus = StackDriftDetectionStatusMapper::GetStackDriftDetectionStatusForName(StringUtils::Trim(detectionStatusNode.GetText().c_str()).c_str());
+      m_detectionStatus = StackDriftDetectionStatusMapper::GetStackDriftDetectionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(detectionStatusNode.GetText()).c_str()).c_str());
     }
     XmlNode detectionStatusReasonNode = resultNode.FirstChild("DetectionStatusReason");
     if(!detectionStatusReasonNode.IsNull())
     {
-      m_detectionStatusReason = detectionStatusReasonNode.GetText();
+      m_detectionStatusReason = Aws::Utils::Xml::DecodeEscapedXmlText(detectionStatusReasonNode.GetText());
     }
     XmlNode driftedStackResourceCountNode = resultNode.FirstChild("DriftedStackResourceCount");
     if(!driftedStackResourceCountNode.IsNull())
     {
-      m_driftedStackResourceCount = StringUtils::ConvertToInt32(StringUtils::Trim(driftedStackResourceCountNode.GetText().c_str()).c_str());
+      m_driftedStackResourceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(driftedStackResourceCountNode.GetText()).c_str()).c_str());
     }
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = DateTime(StringUtils::Trim(timestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
   }
 

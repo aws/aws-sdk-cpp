@@ -51,7 +51,7 @@ GetAccessKeyLastUsedResult& GetAccessKeyLastUsedResult::operator =(const Aws::Am
     XmlNode userNameNode = resultNode.FirstChild("UserName");
     if(!userNameNode.IsNull())
     {
-      m_userName = userNameNode.GetText();
+      m_userName = Aws::Utils::Xml::DecodeEscapedXmlText(userNameNode.GetText());
     }
     XmlNode accessKeyLastUsedNode = resultNode.FirstChild("AccessKeyLastUsed");
     if(!accessKeyLastUsedNode.IsNull())

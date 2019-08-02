@@ -52,13 +52,13 @@ DeleteClusterSnapshotMessage& DeleteClusterSnapshotMessage::operator =(const Xml
     XmlNode snapshotIdentifierNode = resultNode.FirstChild("SnapshotIdentifier");
     if(!snapshotIdentifierNode.IsNull())
     {
-      m_snapshotIdentifier = snapshotIdentifierNode.GetText();
+      m_snapshotIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdentifierNode.GetText());
       m_snapshotIdentifierHasBeenSet = true;
     }
     XmlNode snapshotClusterIdentifierNode = resultNode.FirstChild("SnapshotClusterIdentifier");
     if(!snapshotClusterIdentifierNode.IsNull())
     {
-      m_snapshotClusterIdentifier = snapshotClusterIdentifierNode.GetText();
+      m_snapshotClusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotClusterIdentifierNode.GetText());
       m_snapshotClusterIdentifierHasBeenSet = true;
     }
   }

@@ -58,19 +58,19 @@ InstanceCapacity& InstanceCapacity::operator =(const XmlNode& xmlNode)
     XmlNode availableCapacityNode = resultNode.FirstChild("availableCapacity");
     if(!availableCapacityNode.IsNull())
     {
-      m_availableCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(availableCapacityNode.GetText().c_str()).c_str());
+      m_availableCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(availableCapacityNode.GetText()).c_str()).c_str());
       m_availableCapacityHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = instanceTypeNode.GetText();
+      m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
       m_instanceTypeHasBeenSet = true;
     }
     XmlNode totalCapacityNode = resultNode.FirstChild("totalCapacity");
     if(!totalCapacityNode.IsNull())
     {
-      m_totalCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(totalCapacityNode.GetText().c_str()).c_str());
+      m_totalCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalCapacityNode.GetText()).c_str()).c_str());
       m_totalCapacityHasBeenSet = true;
     }
   }

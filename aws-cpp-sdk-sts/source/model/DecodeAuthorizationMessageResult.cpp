@@ -51,7 +51,7 @@ DecodeAuthorizationMessageResult& DecodeAuthorizationMessageResult::operator =(c
     XmlNode decodedMessageNode = resultNode.FirstChild("DecodedMessage");
     if(!decodedMessageNode.IsNull())
     {
-      m_decodedMessage = decodedMessageNode.GetText();
+      m_decodedMessage = Aws::Utils::Xml::DecodeEscapedXmlText(decodedMessageNode.GetText());
     }
   }
 

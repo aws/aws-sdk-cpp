@@ -78,25 +78,25 @@ StackSetOperationPreferences& StackSetOperationPreferences::operator =(const Xml
     XmlNode failureToleranceCountNode = resultNode.FirstChild("FailureToleranceCount");
     if(!failureToleranceCountNode.IsNull())
     {
-      m_failureToleranceCount = StringUtils::ConvertToInt32(StringUtils::Trim(failureToleranceCountNode.GetText().c_str()).c_str());
+      m_failureToleranceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(failureToleranceCountNode.GetText()).c_str()).c_str());
       m_failureToleranceCountHasBeenSet = true;
     }
     XmlNode failureTolerancePercentageNode = resultNode.FirstChild("FailureTolerancePercentage");
     if(!failureTolerancePercentageNode.IsNull())
     {
-      m_failureTolerancePercentage = StringUtils::ConvertToInt32(StringUtils::Trim(failureTolerancePercentageNode.GetText().c_str()).c_str());
+      m_failureTolerancePercentage = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(failureTolerancePercentageNode.GetText()).c_str()).c_str());
       m_failureTolerancePercentageHasBeenSet = true;
     }
     XmlNode maxConcurrentCountNode = resultNode.FirstChild("MaxConcurrentCount");
     if(!maxConcurrentCountNode.IsNull())
     {
-      m_maxConcurrentCount = StringUtils::ConvertToInt32(StringUtils::Trim(maxConcurrentCountNode.GetText().c_str()).c_str());
+      m_maxConcurrentCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxConcurrentCountNode.GetText()).c_str()).c_str());
       m_maxConcurrentCountHasBeenSet = true;
     }
     XmlNode maxConcurrentPercentageNode = resultNode.FirstChild("MaxConcurrentPercentage");
     if(!maxConcurrentPercentageNode.IsNull())
     {
-      m_maxConcurrentPercentage = StringUtils::ConvertToInt32(StringUtils::Trim(maxConcurrentPercentageNode.GetText().c_str()).c_str());
+      m_maxConcurrentPercentage = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxConcurrentPercentageNode.GetText()).c_str()).c_str());
       m_maxConcurrentPercentageHasBeenSet = true;
     }
   }

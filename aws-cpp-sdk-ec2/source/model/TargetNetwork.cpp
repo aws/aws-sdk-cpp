@@ -60,25 +60,25 @@ TargetNetwork& TargetNetwork::operator =(const XmlNode& xmlNode)
     XmlNode associationIdNode = resultNode.FirstChild("associationId");
     if(!associationIdNode.IsNull())
     {
-      m_associationId = associationIdNode.GetText();
+      m_associationId = Aws::Utils::Xml::DecodeEscapedXmlText(associationIdNode.GetText());
       m_associationIdHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = vpcIdNode.GetText();
+      m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
     }
     XmlNode targetNetworkIdNode = resultNode.FirstChild("targetNetworkId");
     if(!targetNetworkIdNode.IsNull())
     {
-      m_targetNetworkId = targetNetworkIdNode.GetText();
+      m_targetNetworkId = Aws::Utils::Xml::DecodeEscapedXmlText(targetNetworkIdNode.GetText());
       m_targetNetworkIdHasBeenSet = true;
     }
     XmlNode clientVpnEndpointIdNode = resultNode.FirstChild("clientVpnEndpointId");
     if(!clientVpnEndpointIdNode.IsNull())
     {
-      m_clientVpnEndpointId = clientVpnEndpointIdNode.GetText();
+      m_clientVpnEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(clientVpnEndpointIdNode.GetText());
       m_clientVpnEndpointIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");

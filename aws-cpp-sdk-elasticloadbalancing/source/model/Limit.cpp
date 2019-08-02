@@ -52,13 +52,13 @@ Limit& Limit::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = nameNode.GetText();
+      m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode maxNode = resultNode.FirstChild("Max");
     if(!maxNode.IsNull())
     {
-      m_max = maxNode.GetText();
+      m_max = Aws::Utils::Xml::DecodeEscapedXmlText(maxNode.GetText());
       m_maxHasBeenSet = true;
     }
   }

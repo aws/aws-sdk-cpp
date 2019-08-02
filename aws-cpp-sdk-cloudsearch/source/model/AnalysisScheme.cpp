@@ -56,13 +56,13 @@ AnalysisScheme& AnalysisScheme::operator =(const XmlNode& xmlNode)
     XmlNode analysisSchemeNameNode = resultNode.FirstChild("AnalysisSchemeName");
     if(!analysisSchemeNameNode.IsNull())
     {
-      m_analysisSchemeName = analysisSchemeNameNode.GetText();
+      m_analysisSchemeName = Aws::Utils::Xml::DecodeEscapedXmlText(analysisSchemeNameNode.GetText());
       m_analysisSchemeNameHasBeenSet = true;
     }
     XmlNode analysisSchemeLanguageNode = resultNode.FirstChild("AnalysisSchemeLanguage");
     if(!analysisSchemeLanguageNode.IsNull())
     {
-      m_analysisSchemeLanguage = AnalysisSchemeLanguageMapper::GetAnalysisSchemeLanguageForName(StringUtils::Trim(analysisSchemeLanguageNode.GetText().c_str()).c_str());
+      m_analysisSchemeLanguage = AnalysisSchemeLanguageMapper::GetAnalysisSchemeLanguageForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(analysisSchemeLanguageNode.GetText()).c_str()).c_str());
       m_analysisSchemeLanguageHasBeenSet = true;
     }
     XmlNode analysisOptionsNode = resultNode.FirstChild("AnalysisOptions");

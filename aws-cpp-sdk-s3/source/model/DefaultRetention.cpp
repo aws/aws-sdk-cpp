@@ -60,19 +60,19 @@ DefaultRetention& DefaultRetention::operator =(const XmlNode& xmlNode)
     XmlNode modeNode = resultNode.FirstChild("Mode");
     if(!modeNode.IsNull())
     {
-      m_mode = ObjectLockRetentionModeMapper::GetObjectLockRetentionModeForName(StringUtils::Trim(modeNode.GetText().c_str()).c_str());
+      m_mode = ObjectLockRetentionModeMapper::GetObjectLockRetentionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()).c_str());
       m_modeHasBeenSet = true;
     }
     XmlNode daysNode = resultNode.FirstChild("Days");
     if(!daysNode.IsNull())
     {
-      m_days = StringUtils::ConvertToInt32(StringUtils::Trim(daysNode.GetText().c_str()).c_str());
+      m_days = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(daysNode.GetText()).c_str()).c_str());
       m_daysHasBeenSet = true;
     }
     XmlNode yearsNode = resultNode.FirstChild("Years");
     if(!yearsNode.IsNull())
     {
-      m_years = StringUtils::ConvertToInt32(StringUtils::Trim(yearsNode.GetText().c_str()).c_str());
+      m_years = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(yearsNode.GetText()).c_str()).c_str());
       m_yearsHasBeenSet = true;
     }
   }

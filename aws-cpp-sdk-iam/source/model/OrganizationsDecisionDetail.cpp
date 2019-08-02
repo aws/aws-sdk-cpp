@@ -52,7 +52,7 @@ OrganizationsDecisionDetail& OrganizationsDecisionDetail::operator =(const XmlNo
     XmlNode allowedByOrganizationsNode = resultNode.FirstChild("AllowedByOrganizations");
     if(!allowedByOrganizationsNode.IsNull())
     {
-      m_allowedByOrganizations = StringUtils::ConvertToBool(StringUtils::Trim(allowedByOrganizationsNode.GetText().c_str()).c_str());
+      m_allowedByOrganizations = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowedByOrganizationsNode.GetText()).c_str()).c_str());
       m_allowedByOrganizationsHasBeenSet = true;
     }
   }

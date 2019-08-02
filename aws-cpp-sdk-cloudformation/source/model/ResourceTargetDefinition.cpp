@@ -58,19 +58,19 @@ ResourceTargetDefinition& ResourceTargetDefinition::operator =(const XmlNode& xm
     XmlNode attributeNode = resultNode.FirstChild("Attribute");
     if(!attributeNode.IsNull())
     {
-      m_attribute = ResourceAttributeMapper::GetResourceAttributeForName(StringUtils::Trim(attributeNode.GetText().c_str()).c_str());
+      m_attribute = ResourceAttributeMapper::GetResourceAttributeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attributeNode.GetText()).c_str()).c_str());
       m_attributeHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = nameNode.GetText();
+      m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode requiresRecreationNode = resultNode.FirstChild("RequiresRecreation");
     if(!requiresRecreationNode.IsNull())
     {
-      m_requiresRecreation = RequiresRecreationMapper::GetRequiresRecreationForName(StringUtils::Trim(requiresRecreationNode.GetText().c_str()).c_str());
+      m_requiresRecreation = RequiresRecreationMapper::GetRequiresRecreationForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requiresRecreationNode.GetText()).c_str()).c_str());
       m_requiresRecreationHasBeenSet = true;
     }
   }

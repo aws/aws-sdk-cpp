@@ -51,12 +51,12 @@ GetShippingLabelResult& GetShippingLabelResult::operator =(const Aws::AmazonWebS
     XmlNode shippingLabelURLNode = resultNode.FirstChild("ShippingLabelURL");
     if(!shippingLabelURLNode.IsNull())
     {
-      m_shippingLabelURL = shippingLabelURLNode.GetText();
+      m_shippingLabelURL = Aws::Utils::Xml::DecodeEscapedXmlText(shippingLabelURLNode.GetText());
     }
     XmlNode warningNode = resultNode.FirstChild("Warning");
     if(!warningNode.IsNull())
     {
-      m_warning = warningNode.GetText();
+      m_warning = Aws::Utils::Xml::DecodeEscapedXmlText(warningNode.GetText());
     }
   }
 

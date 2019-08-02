@@ -72,7 +72,7 @@ InventoryConfiguration& InventoryConfiguration::operator =(const XmlNode& xmlNod
     XmlNode isEnabledNode = resultNode.FirstChild("IsEnabled");
     if(!isEnabledNode.IsNull())
     {
-      m_isEnabled = StringUtils::ConvertToBool(StringUtils::Trim(isEnabledNode.GetText().c_str()).c_str());
+      m_isEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isEnabledNode.GetText()).c_str()).c_str());
       m_isEnabledHasBeenSet = true;
     }
     XmlNode filterNode = resultNode.FirstChild("Filter");
@@ -84,13 +84,13 @@ InventoryConfiguration& InventoryConfiguration::operator =(const XmlNode& xmlNod
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = idNode.GetText();
+      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
     }
     XmlNode includedObjectVersionsNode = resultNode.FirstChild("IncludedObjectVersions");
     if(!includedObjectVersionsNode.IsNull())
     {
-      m_includedObjectVersions = InventoryIncludedObjectVersionsMapper::GetInventoryIncludedObjectVersionsForName(StringUtils::Trim(includedObjectVersionsNode.GetText().c_str()).c_str());
+      m_includedObjectVersions = InventoryIncludedObjectVersionsMapper::GetInventoryIncludedObjectVersionsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includedObjectVersionsNode.GetText()).c_str()).c_str());
       m_includedObjectVersionsHasBeenSet = true;
     }
     XmlNode optionalFieldsNode = resultNode.FirstChild("OptionalFields");

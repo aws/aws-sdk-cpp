@@ -52,7 +52,7 @@ SseKmsEncryptedObjects& SseKmsEncryptedObjects::operator =(const XmlNode& xmlNod
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = SseKmsEncryptedObjectsStatusMapper::GetSseKmsEncryptedObjectsStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = SseKmsEncryptedObjectsStatusMapper::GetSseKmsEncryptedObjectsStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
   }

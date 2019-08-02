@@ -64,13 +64,13 @@ SelectParameters& SelectParameters::operator =(const XmlNode& xmlNode)
     XmlNode expressionTypeNode = resultNode.FirstChild("ExpressionType");
     if(!expressionTypeNode.IsNull())
     {
-      m_expressionType = ExpressionTypeMapper::GetExpressionTypeForName(StringUtils::Trim(expressionTypeNode.GetText().c_str()).c_str());
+      m_expressionType = ExpressionTypeMapper::GetExpressionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expressionTypeNode.GetText()).c_str()).c_str());
       m_expressionTypeHasBeenSet = true;
     }
     XmlNode expressionNode = resultNode.FirstChild("Expression");
     if(!expressionNode.IsNull())
     {
-      m_expression = expressionNode.GetText();
+      m_expression = Aws::Utils::Xml::DecodeEscapedXmlText(expressionNode.GetText());
       m_expressionHasBeenSet = true;
     }
     XmlNode outputSerializationNode = resultNode.FirstChild("OutputSerialization");

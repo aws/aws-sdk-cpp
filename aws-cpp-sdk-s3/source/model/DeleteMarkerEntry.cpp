@@ -66,25 +66,25 @@ DeleteMarkerEntry& DeleteMarkerEntry::operator =(const XmlNode& xmlNode)
     XmlNode keyNode = resultNode.FirstChild("Key");
     if(!keyNode.IsNull())
     {
-      m_key = keyNode.GetText();
+      m_key = Aws::Utils::Xml::DecodeEscapedXmlText(keyNode.GetText());
       m_keyHasBeenSet = true;
     }
     XmlNode versionIdNode = resultNode.FirstChild("VersionId");
     if(!versionIdNode.IsNull())
     {
-      m_versionId = versionIdNode.GetText();
+      m_versionId = Aws::Utils::Xml::DecodeEscapedXmlText(versionIdNode.GetText());
       m_versionIdHasBeenSet = true;
     }
     XmlNode isLatestNode = resultNode.FirstChild("IsLatest");
     if(!isLatestNode.IsNull())
     {
-      m_isLatest = StringUtils::ConvertToBool(StringUtils::Trim(isLatestNode.GetText().c_str()).c_str());
+      m_isLatest = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isLatestNode.GetText()).c_str()).c_str());
       m_isLatestHasBeenSet = true;
     }
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");
     if(!lastModifiedNode.IsNull())
     {
-      m_lastModified = DateTime(StringUtils::Trim(lastModifiedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastModified = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_lastModifiedHasBeenSet = true;
     }
   }

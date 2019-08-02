@@ -66,31 +66,31 @@ OnDemandOptionsRequest& OnDemandOptionsRequest::operator =(const XmlNode& xmlNod
     XmlNode allocationStrategyNode = resultNode.FirstChild("AllocationStrategy");
     if(!allocationStrategyNode.IsNull())
     {
-      m_allocationStrategy = FleetOnDemandAllocationStrategyMapper::GetFleetOnDemandAllocationStrategyForName(StringUtils::Trim(allocationStrategyNode.GetText().c_str()).c_str());
+      m_allocationStrategy = FleetOnDemandAllocationStrategyMapper::GetFleetOnDemandAllocationStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocationStrategyNode.GetText()).c_str()).c_str());
       m_allocationStrategyHasBeenSet = true;
     }
     XmlNode singleInstanceTypeNode = resultNode.FirstChild("SingleInstanceType");
     if(!singleInstanceTypeNode.IsNull())
     {
-      m_singleInstanceType = StringUtils::ConvertToBool(StringUtils::Trim(singleInstanceTypeNode.GetText().c_str()).c_str());
+      m_singleInstanceType = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(singleInstanceTypeNode.GetText()).c_str()).c_str());
       m_singleInstanceTypeHasBeenSet = true;
     }
     XmlNode singleAvailabilityZoneNode = resultNode.FirstChild("SingleAvailabilityZone");
     if(!singleAvailabilityZoneNode.IsNull())
     {
-      m_singleAvailabilityZone = StringUtils::ConvertToBool(StringUtils::Trim(singleAvailabilityZoneNode.GetText().c_str()).c_str());
+      m_singleAvailabilityZone = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(singleAvailabilityZoneNode.GetText()).c_str()).c_str());
       m_singleAvailabilityZoneHasBeenSet = true;
     }
     XmlNode minTargetCapacityNode = resultNode.FirstChild("MinTargetCapacity");
     if(!minTargetCapacityNode.IsNull())
     {
-      m_minTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(minTargetCapacityNode.GetText().c_str()).c_str());
+      m_minTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minTargetCapacityNode.GetText()).c_str()).c_str());
       m_minTargetCapacityHasBeenSet = true;
     }
     XmlNode maxTotalPriceNode = resultNode.FirstChild("MaxTotalPrice");
     if(!maxTotalPriceNode.IsNull())
     {
-      m_maxTotalPrice = maxTotalPriceNode.GetText();
+      m_maxTotalPrice = Aws::Utils::Xml::DecodeEscapedXmlText(maxTotalPriceNode.GetText());
       m_maxTotalPriceHasBeenSet = true;
     }
   }

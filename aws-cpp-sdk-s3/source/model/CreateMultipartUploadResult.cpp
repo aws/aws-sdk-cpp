@@ -49,17 +49,17 @@ CreateMultipartUploadResult& CreateMultipartUploadResult::operator =(const Aws::
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
     if(!bucketNode.IsNull())
     {
-      m_bucket = bucketNode.GetText();
+      m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
     }
     XmlNode keyNode = resultNode.FirstChild("Key");
     if(!keyNode.IsNull())
     {
-      m_key = keyNode.GetText();
+      m_key = Aws::Utils::Xml::DecodeEscapedXmlText(keyNode.GetText());
     }
     XmlNode uploadIdNode = resultNode.FirstChild("UploadId");
     if(!uploadIdNode.IsNull())
     {
-      m_uploadId = uploadIdNode.GetText();
+      m_uploadId = Aws::Utils::Xml::DecodeEscapedXmlText(uploadIdNode.GetText());
     }
   }
 

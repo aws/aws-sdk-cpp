@@ -50,7 +50,7 @@ PropagatingVgw& PropagatingVgw::operator =(const XmlNode& xmlNode)
     XmlNode gatewayIdNode = resultNode.FirstChild("gatewayId");
     if(!gatewayIdNode.IsNull())
     {
-      m_gatewayId = gatewayIdNode.GetText();
+      m_gatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(gatewayIdNode.GetText());
       m_gatewayIdHasBeenSet = true;
     }
   }

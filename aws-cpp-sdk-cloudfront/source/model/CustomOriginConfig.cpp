@@ -70,19 +70,19 @@ CustomOriginConfig& CustomOriginConfig::operator =(const XmlNode& xmlNode)
     XmlNode hTTPPortNode = resultNode.FirstChild("HTTPPort");
     if(!hTTPPortNode.IsNull())
     {
-      m_hTTPPort = StringUtils::ConvertToInt32(StringUtils::Trim(hTTPPortNode.GetText().c_str()).c_str());
+      m_hTTPPort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hTTPPortNode.GetText()).c_str()).c_str());
       m_hTTPPortHasBeenSet = true;
     }
     XmlNode hTTPSPortNode = resultNode.FirstChild("HTTPSPort");
     if(!hTTPSPortNode.IsNull())
     {
-      m_hTTPSPort = StringUtils::ConvertToInt32(StringUtils::Trim(hTTPSPortNode.GetText().c_str()).c_str());
+      m_hTTPSPort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hTTPSPortNode.GetText()).c_str()).c_str());
       m_hTTPSPortHasBeenSet = true;
     }
     XmlNode originProtocolPolicyNode = resultNode.FirstChild("OriginProtocolPolicy");
     if(!originProtocolPolicyNode.IsNull())
     {
-      m_originProtocolPolicy = OriginProtocolPolicyMapper::GetOriginProtocolPolicyForName(StringUtils::Trim(originProtocolPolicyNode.GetText().c_str()).c_str());
+      m_originProtocolPolicy = OriginProtocolPolicyMapper::GetOriginProtocolPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originProtocolPolicyNode.GetText()).c_str()).c_str());
       m_originProtocolPolicyHasBeenSet = true;
     }
     XmlNode originSslProtocolsNode = resultNode.FirstChild("OriginSslProtocols");
@@ -94,13 +94,13 @@ CustomOriginConfig& CustomOriginConfig::operator =(const XmlNode& xmlNode)
     XmlNode originReadTimeoutNode = resultNode.FirstChild("OriginReadTimeout");
     if(!originReadTimeoutNode.IsNull())
     {
-      m_originReadTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(originReadTimeoutNode.GetText().c_str()).c_str());
+      m_originReadTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originReadTimeoutNode.GetText()).c_str()).c_str());
       m_originReadTimeoutHasBeenSet = true;
     }
     XmlNode originKeepaliveTimeoutNode = resultNode.FirstChild("OriginKeepaliveTimeout");
     if(!originKeepaliveTimeoutNode.IsNull())
     {
-      m_originKeepaliveTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(originKeepaliveTimeoutNode.GetText().c_str()).c_str());
+      m_originKeepaliveTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originKeepaliveTimeoutNode.GetText()).c_str()).c_str());
       m_originKeepaliveTimeoutHasBeenSet = true;
     }
   }

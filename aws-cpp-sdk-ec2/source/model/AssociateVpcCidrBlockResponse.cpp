@@ -61,7 +61,7 @@ AssociateVpcCidrBlockResponse& AssociateVpcCidrBlockResponse::operator =(const A
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = vpcIdNode.GetText();
+      m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
     }
   }
 

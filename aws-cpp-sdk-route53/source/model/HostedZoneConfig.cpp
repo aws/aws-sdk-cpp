@@ -54,13 +54,13 @@ HostedZoneConfig& HostedZoneConfig::operator =(const XmlNode& xmlNode)
     XmlNode commentNode = resultNode.FirstChild("Comment");
     if(!commentNode.IsNull())
     {
-      m_comment = commentNode.GetText();
+      m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
     }
     XmlNode privateZoneNode = resultNode.FirstChild("PrivateZone");
     if(!privateZoneNode.IsNull())
     {
-      m_privateZone = StringUtils::ConvertToBool(StringUtils::Trim(privateZoneNode.GetText().c_str()).c_str());
+      m_privateZone = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(privateZoneNode.GetText()).c_str()).c_str());
       m_privateZoneHasBeenSet = true;
     }
   }

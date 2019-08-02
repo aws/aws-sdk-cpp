@@ -46,17 +46,17 @@ TestDNSAnswerResult& TestDNSAnswerResult::operator =(const Aws::AmazonWebService
     XmlNode nameserverNode = resultNode.FirstChild("Nameserver");
     if(!nameserverNode.IsNull())
     {
-      m_nameserver = nameserverNode.GetText();
+      m_nameserver = Aws::Utils::Xml::DecodeEscapedXmlText(nameserverNode.GetText());
     }
     XmlNode recordNameNode = resultNode.FirstChild("RecordName");
     if(!recordNameNode.IsNull())
     {
-      m_recordName = recordNameNode.GetText();
+      m_recordName = Aws::Utils::Xml::DecodeEscapedXmlText(recordNameNode.GetText());
     }
     XmlNode recordTypeNode = resultNode.FirstChild("RecordType");
     if(!recordTypeNode.IsNull())
     {
-      m_recordType = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(recordTypeNode.GetText().c_str()).c_str());
+      m_recordType = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(recordTypeNode.GetText()).c_str()).c_str());
     }
     XmlNode recordDataNode = resultNode.FirstChild("RecordData");
     if(!recordDataNode.IsNull())
@@ -72,12 +72,12 @@ TestDNSAnswerResult& TestDNSAnswerResult::operator =(const Aws::AmazonWebService
     XmlNode responseCodeNode = resultNode.FirstChild("ResponseCode");
     if(!responseCodeNode.IsNull())
     {
-      m_responseCode = responseCodeNode.GetText();
+      m_responseCode = Aws::Utils::Xml::DecodeEscapedXmlText(responseCodeNode.GetText());
     }
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = protocolNode.GetText();
+      m_protocol = Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText());
     }
   }
 

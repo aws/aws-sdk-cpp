@@ -56,13 +56,13 @@ ResourceTagSet& ResourceTagSet::operator =(const XmlNode& xmlNode)
     XmlNode resourceTypeNode = resultNode.FirstChild("ResourceType");
     if(!resourceTypeNode.IsNull())
     {
-      m_resourceType = TagResourceTypeMapper::GetTagResourceTypeForName(StringUtils::Trim(resourceTypeNode.GetText().c_str()).c_str());
+      m_resourceType = TagResourceTypeMapper::GetTagResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()).c_str());
       m_resourceTypeHasBeenSet = true;
     }
     XmlNode resourceIdNode = resultNode.FirstChild("ResourceId");
     if(!resourceIdNode.IsNull())
     {
-      m_resourceId = resourceIdNode.GetText();
+      m_resourceId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceIdNode.GetText());
       m_resourceIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");

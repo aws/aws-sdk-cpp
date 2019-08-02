@@ -88,31 +88,31 @@ JobDescriptor& JobDescriptor::operator =(const XmlNode& xmlNode)
     XmlNode jobIdNode = resultNode.FirstChild("JobId");
     if(!jobIdNode.IsNull())
     {
-      m_jobId = jobIdNode.GetText();
+      m_jobId = Aws::Utils::Xml::DecodeEscapedXmlText(jobIdNode.GetText());
       m_jobIdHasBeenSet = true;
     }
     XmlNode confirmationRequiredNode = resultNode.FirstChild("ConfirmationRequired");
     if(!confirmationRequiredNode.IsNull())
     {
-      m_confirmationRequired = StringUtils::ConvertToBool(StringUtils::Trim(confirmationRequiredNode.GetText().c_str()).c_str());
+      m_confirmationRequired = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(confirmationRequiredNode.GetText()).c_str()).c_str());
       m_confirmationRequiredHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode jobArnNode = resultNode.FirstChild("JobArn");
     if(!jobArnNode.IsNull())
     {
-      m_jobArn = jobArnNode.GetText();
+      m_jobArn = Aws::Utils::Xml::DecodeEscapedXmlText(jobArnNode.GetText());
       m_jobArnHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = JobStatusMapper::GetJobStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = JobStatusMapper::GetJobStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode manifestNode = resultNode.FirstChild("Manifest");
@@ -130,7 +130,7 @@ JobDescriptor& JobDescriptor::operator =(const XmlNode& xmlNode)
     XmlNode priorityNode = resultNode.FirstChild("Priority");
     if(!priorityNode.IsNull())
     {
-      m_priority = StringUtils::ConvertToInt32(StringUtils::Trim(priorityNode.GetText().c_str()).c_str());
+      m_priority = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priorityNode.GetText()).c_str()).c_str());
       m_priorityHasBeenSet = true;
     }
     XmlNode progressSummaryNode = resultNode.FirstChild("ProgressSummary");
@@ -142,7 +142,7 @@ JobDescriptor& JobDescriptor::operator =(const XmlNode& xmlNode)
     XmlNode statusUpdateReasonNode = resultNode.FirstChild("StatusUpdateReason");
     if(!statusUpdateReasonNode.IsNull())
     {
-      m_statusUpdateReason = statusUpdateReasonNode.GetText();
+      m_statusUpdateReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusUpdateReasonNode.GetText());
       m_statusUpdateReasonHasBeenSet = true;
     }
     XmlNode failureReasonsNode = resultNode.FirstChild("FailureReasons");
@@ -166,31 +166,31 @@ JobDescriptor& JobDescriptor::operator =(const XmlNode& xmlNode)
     XmlNode creationTimeNode = resultNode.FirstChild("CreationTime");
     if(!creationTimeNode.IsNull())
     {
-      m_creationTime = DateTime(StringUtils::Trim(creationTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
     }
     XmlNode terminationDateNode = resultNode.FirstChild("TerminationDate");
     if(!terminationDateNode.IsNull())
     {
-      m_terminationDate = DateTime(StringUtils::Trim(terminationDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_terminationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(terminationDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_terminationDateHasBeenSet = true;
     }
     XmlNode roleArnNode = resultNode.FirstChild("RoleArn");
     if(!roleArnNode.IsNull())
     {
-      m_roleArn = roleArnNode.GetText();
+      m_roleArn = Aws::Utils::Xml::DecodeEscapedXmlText(roleArnNode.GetText());
       m_roleArnHasBeenSet = true;
     }
     XmlNode suspendedDateNode = resultNode.FirstChild("SuspendedDate");
     if(!suspendedDateNode.IsNull())
     {
-      m_suspendedDate = DateTime(StringUtils::Trim(suspendedDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_suspendedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(suspendedDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_suspendedDateHasBeenSet = true;
     }
     XmlNode suspendedCauseNode = resultNode.FirstChild("SuspendedCause");
     if(!suspendedCauseNode.IsNull())
     {
-      m_suspendedCause = suspendedCauseNode.GetText();
+      m_suspendedCause = Aws::Utils::Xml::DecodeEscapedXmlText(suspendedCauseNode.GetText());
       m_suspendedCauseHasBeenSet = true;
     }
   }

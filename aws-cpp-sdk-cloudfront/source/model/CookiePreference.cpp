@@ -54,7 +54,7 @@ CookiePreference& CookiePreference::operator =(const XmlNode& xmlNode)
     XmlNode forwardNode = resultNode.FirstChild("Forward");
     if(!forwardNode.IsNull())
     {
-      m_forward = ItemSelectionMapper::GetItemSelectionForName(StringUtils::Trim(forwardNode.GetText().c_str()).c_str());
+      m_forward = ItemSelectionMapper::GetItemSelectionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(forwardNode.GetText()).c_str()).c_str());
       m_forwardHasBeenSet = true;
     }
     XmlNode whitelistedNamesNode = resultNode.FirstChild("WhitelistedNames");

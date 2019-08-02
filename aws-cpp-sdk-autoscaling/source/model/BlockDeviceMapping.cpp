@@ -58,13 +58,13 @@ BlockDeviceMapping& BlockDeviceMapping::operator =(const XmlNode& xmlNode)
     XmlNode virtualNameNode = resultNode.FirstChild("VirtualName");
     if(!virtualNameNode.IsNull())
     {
-      m_virtualName = virtualNameNode.GetText();
+      m_virtualName = Aws::Utils::Xml::DecodeEscapedXmlText(virtualNameNode.GetText());
       m_virtualNameHasBeenSet = true;
     }
     XmlNode deviceNameNode = resultNode.FirstChild("DeviceName");
     if(!deviceNameNode.IsNull())
     {
-      m_deviceName = deviceNameNode.GetText();
+      m_deviceName = Aws::Utils::Xml::DecodeEscapedXmlText(deviceNameNode.GetText());
       m_deviceNameHasBeenSet = true;
     }
     XmlNode ebsNode = resultNode.FirstChild("Ebs");
@@ -76,7 +76,7 @@ BlockDeviceMapping& BlockDeviceMapping::operator =(const XmlNode& xmlNode)
     XmlNode noDeviceNode = resultNode.FirstChild("NoDevice");
     if(!noDeviceNode.IsNull())
     {
-      m_noDevice = StringUtils::ConvertToBool(StringUtils::Trim(noDeviceNode.GetText().c_str()).c_str());
+      m_noDevice = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(noDeviceNode.GetText()).c_str()).c_str());
       m_noDeviceHasBeenSet = true;
     }
   }

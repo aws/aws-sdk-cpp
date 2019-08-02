@@ -62,25 +62,25 @@ PlacementGroup& PlacementGroup::operator =(const XmlNode& xmlNode)
     XmlNode groupNameNode = resultNode.FirstChild("groupName");
     if(!groupNameNode.IsNull())
     {
-      m_groupName = groupNameNode.GetText();
+      m_groupName = Aws::Utils::Xml::DecodeEscapedXmlText(groupNameNode.GetText());
       m_groupNameHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = PlacementGroupStateMapper::GetPlacementGroupStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_state = PlacementGroupStateMapper::GetPlacementGroupStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
       m_stateHasBeenSet = true;
     }
     XmlNode strategyNode = resultNode.FirstChild("strategy");
     if(!strategyNode.IsNull())
     {
-      m_strategy = PlacementStrategyMapper::GetPlacementStrategyForName(StringUtils::Trim(strategyNode.GetText().c_str()).c_str());
+      m_strategy = PlacementStrategyMapper::GetPlacementStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(strategyNode.GetText()).c_str()).c_str());
       m_strategyHasBeenSet = true;
     }
     XmlNode partitionCountNode = resultNode.FirstChild("partitionCount");
     if(!partitionCountNode.IsNull())
     {
-      m_partitionCount = StringUtils::ConvertToInt32(StringUtils::Trim(partitionCountNode.GetText().c_str()).c_str());
+      m_partitionCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(partitionCountNode.GetText()).c_str()).c_str());
       m_partitionCountHasBeenSet = true;
     }
   }

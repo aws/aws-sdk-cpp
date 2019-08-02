@@ -51,7 +51,7 @@ CreatePlatformEndpointResult& CreatePlatformEndpointResult::operator =(const Aws
     XmlNode endpointArnNode = resultNode.FirstChild("EndpointArn");
     if(!endpointArnNode.IsNull())
     {
-      m_endpointArn = endpointArnNode.GetText();
+      m_endpointArn = Aws::Utils::Xml::DecodeEscapedXmlText(endpointArnNode.GetText());
     }
   }
 

@@ -52,13 +52,13 @@ AssumedRoleUser& AssumedRoleUser::operator =(const XmlNode& xmlNode)
     XmlNode assumedRoleIdNode = resultNode.FirstChild("AssumedRoleId");
     if(!assumedRoleIdNode.IsNull())
     {
-      m_assumedRoleId = assumedRoleIdNode.GetText();
+      m_assumedRoleId = Aws::Utils::Xml::DecodeEscapedXmlText(assumedRoleIdNode.GetText());
       m_assumedRoleIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
-      m_arn = arnNode.GetText();
+      m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
     }
   }

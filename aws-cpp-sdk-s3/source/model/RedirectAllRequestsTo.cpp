@@ -54,13 +54,13 @@ RedirectAllRequestsTo& RedirectAllRequestsTo::operator =(const XmlNode& xmlNode)
     XmlNode hostNameNode = resultNode.FirstChild("HostName");
     if(!hostNameNode.IsNull())
     {
-      m_hostName = hostNameNode.GetText();
+      m_hostName = Aws::Utils::Xml::DecodeEscapedXmlText(hostNameNode.GetText());
       m_hostNameHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = ProtocolMapper::GetProtocolForName(StringUtils::Trim(protocolNode.GetText().c_str()).c_str());
+      m_protocol = ProtocolMapper::GetProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
       m_protocolHasBeenSet = true;
     }
   }

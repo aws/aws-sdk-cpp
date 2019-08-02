@@ -58,19 +58,19 @@ InstanceStatusDetails& InstanceStatusDetails::operator =(const XmlNode& xmlNode)
     XmlNode impairedSinceNode = resultNode.FirstChild("impairedSince");
     if(!impairedSinceNode.IsNull())
     {
-      m_impairedSince = DateTime(StringUtils::Trim(impairedSinceNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_impairedSince = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(impairedSinceNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_impairedSinceHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("name");
     if(!nameNode.IsNull())
     {
-      m_name = StatusNameMapper::GetStatusNameForName(StringUtils::Trim(nameNode.GetText().c_str()).c_str());
+      m_name = StatusNameMapper::GetStatusNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()).c_str());
       m_nameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
   }

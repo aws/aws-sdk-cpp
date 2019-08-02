@@ -50,7 +50,7 @@ JSONOutput& JSONOutput::operator =(const XmlNode& xmlNode)
     XmlNode recordDelimiterNode = resultNode.FirstChild("RecordDelimiter");
     if(!recordDelimiterNode.IsNull())
     {
-      m_recordDelimiter = recordDelimiterNode.GetText();
+      m_recordDelimiter = Aws::Utils::Xml::DecodeEscapedXmlText(recordDelimiterNode.GetText());
       m_recordDelimiterHasBeenSet = true;
     }
   }

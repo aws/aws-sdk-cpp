@@ -58,25 +58,25 @@ ClientData& ClientData::operator =(const XmlNode& xmlNode)
     XmlNode commentNode = resultNode.FirstChild("Comment");
     if(!commentNode.IsNull())
     {
-      m_comment = commentNode.GetText();
+      m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
     }
     XmlNode uploadEndNode = resultNode.FirstChild("UploadEnd");
     if(!uploadEndNode.IsNull())
     {
-      m_uploadEnd = DateTime(StringUtils::Trim(uploadEndNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_uploadEnd = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(uploadEndNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_uploadEndHasBeenSet = true;
     }
     XmlNode uploadSizeNode = resultNode.FirstChild("UploadSize");
     if(!uploadSizeNode.IsNull())
     {
-      m_uploadSize = StringUtils::ConvertToDouble(StringUtils::Trim(uploadSizeNode.GetText().c_str()).c_str());
+      m_uploadSize = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(uploadSizeNode.GetText()).c_str()).c_str());
       m_uploadSizeHasBeenSet = true;
     }
     XmlNode uploadStartNode = resultNode.FirstChild("UploadStart");
     if(!uploadStartNode.IsNull())
     {
-      m_uploadStart = DateTime(StringUtils::Trim(uploadStartNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_uploadStart = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(uploadStartNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_uploadStartHasBeenSet = true;
     }
   }

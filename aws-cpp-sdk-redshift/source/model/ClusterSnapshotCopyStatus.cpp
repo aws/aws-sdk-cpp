@@ -60,25 +60,25 @@ ClusterSnapshotCopyStatus& ClusterSnapshotCopyStatus::operator =(const XmlNode& 
     XmlNode destinationRegionNode = resultNode.FirstChild("DestinationRegion");
     if(!destinationRegionNode.IsNull())
     {
-      m_destinationRegion = destinationRegionNode.GetText();
+      m_destinationRegion = Aws::Utils::Xml::DecodeEscapedXmlText(destinationRegionNode.GetText());
       m_destinationRegionHasBeenSet = true;
     }
     XmlNode retentionPeriodNode = resultNode.FirstChild("RetentionPeriod");
     if(!retentionPeriodNode.IsNull())
     {
-      m_retentionPeriod = StringUtils::ConvertToInt64(StringUtils::Trim(retentionPeriodNode.GetText().c_str()).c_str());
+      m_retentionPeriod = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(retentionPeriodNode.GetText()).c_str()).c_str());
       m_retentionPeriodHasBeenSet = true;
     }
     XmlNode manualSnapshotRetentionPeriodNode = resultNode.FirstChild("ManualSnapshotRetentionPeriod");
     if(!manualSnapshotRetentionPeriodNode.IsNull())
     {
-      m_manualSnapshotRetentionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(manualSnapshotRetentionPeriodNode.GetText().c_str()).c_str());
+      m_manualSnapshotRetentionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(manualSnapshotRetentionPeriodNode.GetText()).c_str()).c_str());
       m_manualSnapshotRetentionPeriodHasBeenSet = true;
     }
     XmlNode snapshotCopyGrantNameNode = resultNode.FirstChild("SnapshotCopyGrantName");
     if(!snapshotCopyGrantNameNode.IsNull())
     {
-      m_snapshotCopyGrantName = snapshotCopyGrantNameNode.GetText();
+      m_snapshotCopyGrantName = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotCopyGrantNameNode.GetText());
       m_snapshotCopyGrantNameHasBeenSet = true;
     }
   }

@@ -52,7 +52,7 @@ SpotFleetMonitoring& SpotFleetMonitoring::operator =(const XmlNode& xmlNode)
     XmlNode enabledNode = resultNode.FirstChild("enabled");
     if(!enabledNode.IsNull())
     {
-      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
   }

@@ -58,19 +58,19 @@ DescribeDBLogFilesDetails& DescribeDBLogFilesDetails::operator =(const XmlNode& 
     XmlNode logFileNameNode = resultNode.FirstChild("LogFileName");
     if(!logFileNameNode.IsNull())
     {
-      m_logFileName = logFileNameNode.GetText();
+      m_logFileName = Aws::Utils::Xml::DecodeEscapedXmlText(logFileNameNode.GetText());
       m_logFileNameHasBeenSet = true;
     }
     XmlNode lastWrittenNode = resultNode.FirstChild("LastWritten");
     if(!lastWrittenNode.IsNull())
     {
-      m_lastWritten = StringUtils::ConvertToInt64(StringUtils::Trim(lastWrittenNode.GetText().c_str()).c_str());
+      m_lastWritten = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastWrittenNode.GetText()).c_str()).c_str());
       m_lastWrittenHasBeenSet = true;
     }
     XmlNode sizeNode = resultNode.FirstChild("Size");
     if(!sizeNode.IsNull())
     {
-      m_size = StringUtils::ConvertToInt64(StringUtils::Trim(sizeNode.GetText().c_str()).c_str());
+      m_size = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sizeNode.GetText()).c_str()).c_str());
       m_sizeHasBeenSet = true;
     }
   }

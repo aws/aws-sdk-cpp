@@ -52,13 +52,13 @@ SuspendedProcess& SuspendedProcess::operator =(const XmlNode& xmlNode)
     XmlNode processNameNode = resultNode.FirstChild("ProcessName");
     if(!processNameNode.IsNull())
     {
-      m_processName = processNameNode.GetText();
+      m_processName = Aws::Utils::Xml::DecodeEscapedXmlText(processNameNode.GetText());
       m_processNameHasBeenSet = true;
     }
     XmlNode suspensionReasonNode = resultNode.FirstChild("SuspensionReason");
     if(!suspensionReasonNode.IsNull())
     {
-      m_suspensionReason = suspensionReasonNode.GetText();
+      m_suspensionReason = Aws::Utils::Xml::DecodeEscapedXmlText(suspensionReasonNode.GetText());
       m_suspensionReasonHasBeenSet = true;
     }
   }

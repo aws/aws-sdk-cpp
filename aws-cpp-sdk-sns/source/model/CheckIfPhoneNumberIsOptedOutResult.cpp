@@ -53,7 +53,7 @@ CheckIfPhoneNumberIsOptedOutResult& CheckIfPhoneNumberIsOptedOutResult::operator
     XmlNode isOptedOutNode = resultNode.FirstChild("isOptedOut");
     if(!isOptedOutNode.IsNull())
     {
-      m_isOptedOut = StringUtils::ConvertToBool(StringUtils::Trim(isOptedOutNode.GetText().c_str()).c_str());
+      m_isOptedOut = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isOptedOutNode.GetText()).c_str()).c_str());
     }
   }
 

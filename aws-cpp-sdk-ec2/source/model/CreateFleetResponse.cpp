@@ -51,7 +51,7 @@ CreateFleetResponse& CreateFleetResponse::operator =(const Aws::AmazonWebService
     XmlNode fleetIdNode = resultNode.FirstChild("fleetId");
     if(!fleetIdNode.IsNull())
     {
-      m_fleetId = fleetIdNode.GetText();
+      m_fleetId = Aws::Utils::Xml::DecodeEscapedXmlText(fleetIdNode.GetText());
     }
     XmlNode errorsNode = resultNode.FirstChild("errorSet");
     if(!errorsNode.IsNull())

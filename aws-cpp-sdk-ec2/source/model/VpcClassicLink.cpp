@@ -56,7 +56,7 @@ VpcClassicLink& VpcClassicLink::operator =(const XmlNode& xmlNode)
     XmlNode classicLinkEnabledNode = resultNode.FirstChild("classicLinkEnabled");
     if(!classicLinkEnabledNode.IsNull())
     {
-      m_classicLinkEnabled = StringUtils::ConvertToBool(StringUtils::Trim(classicLinkEnabledNode.GetText().c_str()).c_str());
+      m_classicLinkEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(classicLinkEnabledNode.GetText()).c_str()).c_str());
       m_classicLinkEnabledHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
@@ -74,7 +74,7 @@ VpcClassicLink& VpcClassicLink::operator =(const XmlNode& xmlNode)
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = vpcIdNode.GetText();
+      m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
     }
   }

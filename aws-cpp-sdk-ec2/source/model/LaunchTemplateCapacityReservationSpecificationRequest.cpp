@@ -54,7 +54,7 @@ LaunchTemplateCapacityReservationSpecificationRequest& LaunchTemplateCapacityRes
     XmlNode capacityReservationPreferenceNode = resultNode.FirstChild("CapacityReservationPreference");
     if(!capacityReservationPreferenceNode.IsNull())
     {
-      m_capacityReservationPreference = CapacityReservationPreferenceMapper::GetCapacityReservationPreferenceForName(StringUtils::Trim(capacityReservationPreferenceNode.GetText().c_str()).c_str());
+      m_capacityReservationPreference = CapacityReservationPreferenceMapper::GetCapacityReservationPreferenceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationPreferenceNode.GetText()).c_str()).c_str());
       m_capacityReservationPreferenceHasBeenSet = true;
     }
     XmlNode capacityReservationTargetNode = resultNode.FirstChild("CapacityReservationTarget");

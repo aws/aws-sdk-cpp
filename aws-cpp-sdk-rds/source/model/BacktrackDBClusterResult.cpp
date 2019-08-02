@@ -51,32 +51,32 @@ BacktrackDBClusterResult& BacktrackDBClusterResult::operator =(const Aws::Amazon
     XmlNode dBClusterIdentifierNode = resultNode.FirstChild("DBClusterIdentifier");
     if(!dBClusterIdentifierNode.IsNull())
     {
-      m_dBClusterIdentifier = dBClusterIdentifierNode.GetText();
+      m_dBClusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterIdentifierNode.GetText());
     }
     XmlNode backtrackIdentifierNode = resultNode.FirstChild("BacktrackIdentifier");
     if(!backtrackIdentifierNode.IsNull())
     {
-      m_backtrackIdentifier = backtrackIdentifierNode.GetText();
+      m_backtrackIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(backtrackIdentifierNode.GetText());
     }
     XmlNode backtrackToNode = resultNode.FirstChild("BacktrackTo");
     if(!backtrackToNode.IsNull())
     {
-      m_backtrackTo = DateTime(StringUtils::Trim(backtrackToNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_backtrackTo = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(backtrackToNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode backtrackedFromNode = resultNode.FirstChild("BacktrackedFrom");
     if(!backtrackedFromNode.IsNull())
     {
-      m_backtrackedFrom = DateTime(StringUtils::Trim(backtrackedFromNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_backtrackedFrom = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(backtrackedFromNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode backtrackRequestCreationTimeNode = resultNode.FirstChild("BacktrackRequestCreationTime");
     if(!backtrackRequestCreationTimeNode.IsNull())
     {
-      m_backtrackRequestCreationTime = DateTime(StringUtils::Trim(backtrackRequestCreationTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_backtrackRequestCreationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(backtrackRequestCreationTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = statusNode.GetText();
+      m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
     }
   }
 

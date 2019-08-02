@@ -50,7 +50,7 @@ ResourceRecord& ResourceRecord::operator =(const XmlNode& xmlNode)
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
-      m_value = valueNode.GetText();
+      m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
     }
   }

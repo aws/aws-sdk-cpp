@@ -54,13 +54,13 @@ MessageDsn& MessageDsn::operator =(const XmlNode& xmlNode)
     XmlNode reportingMtaNode = resultNode.FirstChild("ReportingMta");
     if(!reportingMtaNode.IsNull())
     {
-      m_reportingMta = reportingMtaNode.GetText();
+      m_reportingMta = Aws::Utils::Xml::DecodeEscapedXmlText(reportingMtaNode.GetText());
       m_reportingMtaHasBeenSet = true;
     }
     XmlNode arrivalDateNode = resultNode.FirstChild("ArrivalDate");
     if(!arrivalDateNode.IsNull())
     {
-      m_arrivalDate = DateTime(StringUtils::Trim(arrivalDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_arrivalDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(arrivalDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_arrivalDateHasBeenSet = true;
     }
     XmlNode extensionFieldsNode = resultNode.FirstChild("ExtensionFields");

@@ -76,49 +76,49 @@ VpnConnection& VpnConnection::operator =(const XmlNode& xmlNode)
     XmlNode customerGatewayConfigurationNode = resultNode.FirstChild("customerGatewayConfiguration");
     if(!customerGatewayConfigurationNode.IsNull())
     {
-      m_customerGatewayConfiguration = customerGatewayConfigurationNode.GetText();
+      m_customerGatewayConfiguration = Aws::Utils::Xml::DecodeEscapedXmlText(customerGatewayConfigurationNode.GetText());
       m_customerGatewayConfigurationHasBeenSet = true;
     }
     XmlNode customerGatewayIdNode = resultNode.FirstChild("customerGatewayId");
     if(!customerGatewayIdNode.IsNull())
     {
-      m_customerGatewayId = customerGatewayIdNode.GetText();
+      m_customerGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(customerGatewayIdNode.GetText());
       m_customerGatewayIdHasBeenSet = true;
     }
     XmlNode categoryNode = resultNode.FirstChild("category");
     if(!categoryNode.IsNull())
     {
-      m_category = categoryNode.GetText();
+      m_category = Aws::Utils::Xml::DecodeEscapedXmlText(categoryNode.GetText());
       m_categoryHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = VpnStateMapper::GetVpnStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_state = VpnStateMapper::GetVpnStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
       m_stateHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = GatewayTypeMapper::GetGatewayTypeForName(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
+      m_type = GatewayTypeMapper::GetGatewayTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
       m_typeHasBeenSet = true;
     }
     XmlNode vpnConnectionIdNode = resultNode.FirstChild("vpnConnectionId");
     if(!vpnConnectionIdNode.IsNull())
     {
-      m_vpnConnectionId = vpnConnectionIdNode.GetText();
+      m_vpnConnectionId = Aws::Utils::Xml::DecodeEscapedXmlText(vpnConnectionIdNode.GetText());
       m_vpnConnectionIdHasBeenSet = true;
     }
     XmlNode vpnGatewayIdNode = resultNode.FirstChild("vpnGatewayId");
     if(!vpnGatewayIdNode.IsNull())
     {
-      m_vpnGatewayId = vpnGatewayIdNode.GetText();
+      m_vpnGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(vpnGatewayIdNode.GetText());
       m_vpnGatewayIdHasBeenSet = true;
     }
     XmlNode transitGatewayIdNode = resultNode.FirstChild("transitGatewayId");
     if(!transitGatewayIdNode.IsNull())
     {
-      m_transitGatewayId = transitGatewayIdNode.GetText();
+      m_transitGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayIdNode.GetText());
       m_transitGatewayIdHasBeenSet = true;
     }
     XmlNode optionsNode = resultNode.FirstChild("options");

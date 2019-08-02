@@ -54,13 +54,13 @@ StopAction& StopAction::operator =(const XmlNode& xmlNode)
     XmlNode scopeNode = resultNode.FirstChild("Scope");
     if(!scopeNode.IsNull())
     {
-      m_scope = StopScopeMapper::GetStopScopeForName(StringUtils::Trim(scopeNode.GetText().c_str()).c_str());
+      m_scope = StopScopeMapper::GetStopScopeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(scopeNode.GetText()).c_str()).c_str());
       m_scopeHasBeenSet = true;
     }
     XmlNode topicArnNode = resultNode.FirstChild("TopicArn");
     if(!topicArnNode.IsNull())
     {
-      m_topicArn = topicArnNode.GetText();
+      m_topicArn = Aws::Utils::Xml::DecodeEscapedXmlText(topicArnNode.GetText());
       m_topicArnHasBeenSet = true;
     }
   }

@@ -56,13 +56,13 @@ S3InitiateRestoreObjectOperation& S3InitiateRestoreObjectOperation::operator =(c
     XmlNode expirationInDaysNode = resultNode.FirstChild("ExpirationInDays");
     if(!expirationInDaysNode.IsNull())
     {
-      m_expirationInDays = StringUtils::ConvertToInt32(StringUtils::Trim(expirationInDaysNode.GetText().c_str()).c_str());
+      m_expirationInDays = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationInDaysNode.GetText()).c_str()).c_str());
       m_expirationInDaysHasBeenSet = true;
     }
     XmlNode glacierJobTierNode = resultNode.FirstChild("GlacierJobTier");
     if(!glacierJobTierNode.IsNull())
     {
-      m_glacierJobTier = S3GlacierJobTierMapper::GetS3GlacierJobTierForName(StringUtils::Trim(glacierJobTierNode.GetText().c_str()).c_str());
+      m_glacierJobTier = S3GlacierJobTierMapper::GetS3GlacierJobTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(glacierJobTierNode.GetText()).c_str()).c_str());
       m_glacierJobTierHasBeenSet = true;
     }
   }

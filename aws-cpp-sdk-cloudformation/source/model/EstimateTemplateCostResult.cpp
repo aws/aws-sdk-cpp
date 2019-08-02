@@ -51,7 +51,7 @@ EstimateTemplateCostResult& EstimateTemplateCostResult::operator =(const Aws::Am
     XmlNode urlNode = resultNode.FirstChild("Url");
     if(!urlNode.IsNull())
     {
-      m_url = urlNode.GetText();
+      m_url = Aws::Utils::Xml::DecodeEscapedXmlText(urlNode.GetText());
     }
   }
 

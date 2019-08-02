@@ -56,19 +56,19 @@ ClusterParameterGroup& ClusterParameterGroup::operator =(const XmlNode& xmlNode)
     XmlNode parameterGroupNameNode = resultNode.FirstChild("ParameterGroupName");
     if(!parameterGroupNameNode.IsNull())
     {
-      m_parameterGroupName = parameterGroupNameNode.GetText();
+      m_parameterGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(parameterGroupNameNode.GetText());
       m_parameterGroupNameHasBeenSet = true;
     }
     XmlNode parameterGroupFamilyNode = resultNode.FirstChild("ParameterGroupFamily");
     if(!parameterGroupFamilyNode.IsNull())
     {
-      m_parameterGroupFamily = parameterGroupFamilyNode.GetText();
+      m_parameterGroupFamily = Aws::Utils::Xml::DecodeEscapedXmlText(parameterGroupFamilyNode.GetText());
       m_parameterGroupFamilyHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");

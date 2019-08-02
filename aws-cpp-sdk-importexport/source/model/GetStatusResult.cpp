@@ -55,77 +55,77 @@ GetStatusResult& GetStatusResult::operator =(const Aws::AmazonWebServiceResult<X
     XmlNode jobIdNode = resultNode.FirstChild("JobId");
     if(!jobIdNode.IsNull())
     {
-      m_jobId = jobIdNode.GetText();
+      m_jobId = Aws::Utils::Xml::DecodeEscapedXmlText(jobIdNode.GetText());
     }
     XmlNode jobTypeNode = resultNode.FirstChild("JobType");
     if(!jobTypeNode.IsNull())
     {
-      m_jobType = JobTypeMapper::GetJobTypeForName(StringUtils::Trim(jobTypeNode.GetText().c_str()).c_str());
+      m_jobType = JobTypeMapper::GetJobTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(jobTypeNode.GetText()).c_str()).c_str());
     }
     XmlNode locationCodeNode = resultNode.FirstChild("LocationCode");
     if(!locationCodeNode.IsNull())
     {
-      m_locationCode = locationCodeNode.GetText();
+      m_locationCode = Aws::Utils::Xml::DecodeEscapedXmlText(locationCodeNode.GetText());
     }
     XmlNode locationMessageNode = resultNode.FirstChild("LocationMessage");
     if(!locationMessageNode.IsNull())
     {
-      m_locationMessage = locationMessageNode.GetText();
+      m_locationMessage = Aws::Utils::Xml::DecodeEscapedXmlText(locationMessageNode.GetText());
     }
     XmlNode progressCodeNode = resultNode.FirstChild("ProgressCode");
     if(!progressCodeNode.IsNull())
     {
-      m_progressCode = progressCodeNode.GetText();
+      m_progressCode = Aws::Utils::Xml::DecodeEscapedXmlText(progressCodeNode.GetText());
     }
     XmlNode progressMessageNode = resultNode.FirstChild("ProgressMessage");
     if(!progressMessageNode.IsNull())
     {
-      m_progressMessage = progressMessageNode.GetText();
+      m_progressMessage = Aws::Utils::Xml::DecodeEscapedXmlText(progressMessageNode.GetText());
     }
     XmlNode carrierNode = resultNode.FirstChild("Carrier");
     if(!carrierNode.IsNull())
     {
-      m_carrier = carrierNode.GetText();
+      m_carrier = Aws::Utils::Xml::DecodeEscapedXmlText(carrierNode.GetText());
     }
     XmlNode trackingNumberNode = resultNode.FirstChild("TrackingNumber");
     if(!trackingNumberNode.IsNull())
     {
-      m_trackingNumber = trackingNumberNode.GetText();
+      m_trackingNumber = Aws::Utils::Xml::DecodeEscapedXmlText(trackingNumberNode.GetText());
     }
     XmlNode logBucketNode = resultNode.FirstChild("LogBucket");
     if(!logBucketNode.IsNull())
     {
-      m_logBucket = logBucketNode.GetText();
+      m_logBucket = Aws::Utils::Xml::DecodeEscapedXmlText(logBucketNode.GetText());
     }
     XmlNode logKeyNode = resultNode.FirstChild("LogKey");
     if(!logKeyNode.IsNull())
     {
-      m_logKey = logKeyNode.GetText();
+      m_logKey = Aws::Utils::Xml::DecodeEscapedXmlText(logKeyNode.GetText());
     }
     XmlNode errorCountNode = resultNode.FirstChild("ErrorCount");
     if(!errorCountNode.IsNull())
     {
-      m_errorCount = StringUtils::ConvertToInt32(StringUtils::Trim(errorCountNode.GetText().c_str()).c_str());
+      m_errorCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(errorCountNode.GetText()).c_str()).c_str());
     }
     XmlNode signatureNode = resultNode.FirstChild("Signature");
     if(!signatureNode.IsNull())
     {
-      m_signature = signatureNode.GetText();
+      m_signature = Aws::Utils::Xml::DecodeEscapedXmlText(signatureNode.GetText());
     }
     XmlNode signatureFileContentsNode = resultNode.FirstChild("SignatureFileContents");
     if(!signatureFileContentsNode.IsNull())
     {
-      m_signatureFileContents = signatureFileContentsNode.GetText();
+      m_signatureFileContents = Aws::Utils::Xml::DecodeEscapedXmlText(signatureFileContentsNode.GetText());
     }
     XmlNode currentManifestNode = resultNode.FirstChild("CurrentManifest");
     if(!currentManifestNode.IsNull())
     {
-      m_currentManifest = currentManifestNode.GetText();
+      m_currentManifest = Aws::Utils::Xml::DecodeEscapedXmlText(currentManifestNode.GetText());
     }
     XmlNode creationDateNode = resultNode.FirstChild("CreationDate");
     if(!creationDateNode.IsNull())
     {
-      m_creationDate = DateTime(StringUtils::Trim(creationDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode artifactListNode = resultNode.FirstChild("ArtifactList");
     if(!artifactListNode.IsNull())

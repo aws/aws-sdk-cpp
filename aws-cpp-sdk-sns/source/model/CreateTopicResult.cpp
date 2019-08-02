@@ -51,7 +51,7 @@ CreateTopicResult& CreateTopicResult::operator =(const Aws::AmazonWebServiceResu
     XmlNode topicArnNode = resultNode.FirstChild("TopicArn");
     if(!topicArnNode.IsNull())
     {
-      m_topicArn = topicArnNode.GetText();
+      m_topicArn = Aws::Utils::Xml::DecodeEscapedXmlText(topicArnNode.GetText());
     }
   }
 

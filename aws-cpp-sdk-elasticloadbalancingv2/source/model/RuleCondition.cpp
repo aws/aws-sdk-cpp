@@ -64,7 +64,7 @@ RuleCondition& RuleCondition::operator =(const XmlNode& xmlNode)
     XmlNode fieldNode = resultNode.FirstChild("Field");
     if(!fieldNode.IsNull())
     {
-      m_field = fieldNode.GetText();
+      m_field = Aws::Utils::Xml::DecodeEscapedXmlText(fieldNode.GetText());
       m_fieldHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("Values");

@@ -92,13 +92,13 @@ S3CopyObjectOperation& S3CopyObjectOperation::operator =(const XmlNode& xmlNode)
     XmlNode targetResourceNode = resultNode.FirstChild("TargetResource");
     if(!targetResourceNode.IsNull())
     {
-      m_targetResource = targetResourceNode.GetText();
+      m_targetResource = Aws::Utils::Xml::DecodeEscapedXmlText(targetResourceNode.GetText());
       m_targetResourceHasBeenSet = true;
     }
     XmlNode cannedAccessControlListNode = resultNode.FirstChild("CannedAccessControlList");
     if(!cannedAccessControlListNode.IsNull())
     {
-      m_cannedAccessControlList = S3CannedAccessControlListMapper::GetS3CannedAccessControlListForName(StringUtils::Trim(cannedAccessControlListNode.GetText().c_str()).c_str());
+      m_cannedAccessControlList = S3CannedAccessControlListMapper::GetS3CannedAccessControlListForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cannedAccessControlListNode.GetText()).c_str()).c_str());
       m_cannedAccessControlListHasBeenSet = true;
     }
     XmlNode accessControlGrantsNode = resultNode.FirstChild("AccessControlGrants");
@@ -116,13 +116,13 @@ S3CopyObjectOperation& S3CopyObjectOperation::operator =(const XmlNode& xmlNode)
     XmlNode metadataDirectiveNode = resultNode.FirstChild("MetadataDirective");
     if(!metadataDirectiveNode.IsNull())
     {
-      m_metadataDirective = S3MetadataDirectiveMapper::GetS3MetadataDirectiveForName(StringUtils::Trim(metadataDirectiveNode.GetText().c_str()).c_str());
+      m_metadataDirective = S3MetadataDirectiveMapper::GetS3MetadataDirectiveForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(metadataDirectiveNode.GetText()).c_str()).c_str());
       m_metadataDirectiveHasBeenSet = true;
     }
     XmlNode modifiedSinceConstraintNode = resultNode.FirstChild("ModifiedSinceConstraint");
     if(!modifiedSinceConstraintNode.IsNull())
     {
-      m_modifiedSinceConstraint = DateTime(StringUtils::Trim(modifiedSinceConstraintNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_modifiedSinceConstraint = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modifiedSinceConstraintNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_modifiedSinceConstraintHasBeenSet = true;
     }
     XmlNode newObjectMetadataNode = resultNode.FirstChild("NewObjectMetadata");
@@ -146,55 +146,55 @@ S3CopyObjectOperation& S3CopyObjectOperation::operator =(const XmlNode& xmlNode)
     XmlNode redirectLocationNode = resultNode.FirstChild("RedirectLocation");
     if(!redirectLocationNode.IsNull())
     {
-      m_redirectLocation = redirectLocationNode.GetText();
+      m_redirectLocation = Aws::Utils::Xml::DecodeEscapedXmlText(redirectLocationNode.GetText());
       m_redirectLocationHasBeenSet = true;
     }
     XmlNode requesterPaysNode = resultNode.FirstChild("RequesterPays");
     if(!requesterPaysNode.IsNull())
     {
-      m_requesterPays = StringUtils::ConvertToBool(StringUtils::Trim(requesterPaysNode.GetText().c_str()).c_str());
+      m_requesterPays = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requesterPaysNode.GetText()).c_str()).c_str());
       m_requesterPaysHasBeenSet = true;
     }
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");
     if(!storageClassNode.IsNull())
     {
-      m_storageClass = S3StorageClassMapper::GetS3StorageClassForName(StringUtils::Trim(storageClassNode.GetText().c_str()).c_str());
+      m_storageClass = S3StorageClassMapper::GetS3StorageClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageClassNode.GetText()).c_str()).c_str());
       m_storageClassHasBeenSet = true;
     }
     XmlNode unModifiedSinceConstraintNode = resultNode.FirstChild("UnModifiedSinceConstraint");
     if(!unModifiedSinceConstraintNode.IsNull())
     {
-      m_unModifiedSinceConstraint = DateTime(StringUtils::Trim(unModifiedSinceConstraintNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_unModifiedSinceConstraint = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unModifiedSinceConstraintNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_unModifiedSinceConstraintHasBeenSet = true;
     }
     XmlNode sSEAwsKmsKeyIdNode = resultNode.FirstChild("SSEAwsKmsKeyId");
     if(!sSEAwsKmsKeyIdNode.IsNull())
     {
-      m_sSEAwsKmsKeyId = sSEAwsKmsKeyIdNode.GetText();
+      m_sSEAwsKmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(sSEAwsKmsKeyIdNode.GetText());
       m_sSEAwsKmsKeyIdHasBeenSet = true;
     }
     XmlNode targetKeyPrefixNode = resultNode.FirstChild("TargetKeyPrefix");
     if(!targetKeyPrefixNode.IsNull())
     {
-      m_targetKeyPrefix = targetKeyPrefixNode.GetText();
+      m_targetKeyPrefix = Aws::Utils::Xml::DecodeEscapedXmlText(targetKeyPrefixNode.GetText());
       m_targetKeyPrefixHasBeenSet = true;
     }
     XmlNode objectLockLegalHoldStatusNode = resultNode.FirstChild("ObjectLockLegalHoldStatus");
     if(!objectLockLegalHoldStatusNode.IsNull())
     {
-      m_objectLockLegalHoldStatus = S3ObjectLockLegalHoldStatusMapper::GetS3ObjectLockLegalHoldStatusForName(StringUtils::Trim(objectLockLegalHoldStatusNode.GetText().c_str()).c_str());
+      m_objectLockLegalHoldStatus = S3ObjectLockLegalHoldStatusMapper::GetS3ObjectLockLegalHoldStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectLockLegalHoldStatusNode.GetText()).c_str()).c_str());
       m_objectLockLegalHoldStatusHasBeenSet = true;
     }
     XmlNode objectLockModeNode = resultNode.FirstChild("ObjectLockMode");
     if(!objectLockModeNode.IsNull())
     {
-      m_objectLockMode = S3ObjectLockModeMapper::GetS3ObjectLockModeForName(StringUtils::Trim(objectLockModeNode.GetText().c_str()).c_str());
+      m_objectLockMode = S3ObjectLockModeMapper::GetS3ObjectLockModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectLockModeNode.GetText()).c_str()).c_str());
       m_objectLockModeHasBeenSet = true;
     }
     XmlNode objectLockRetainUntilDateNode = resultNode.FirstChild("ObjectLockRetainUntilDate");
     if(!objectLockRetainUntilDateNode.IsNull())
     {
-      m_objectLockRetainUntilDate = DateTime(StringUtils::Trim(objectLockRetainUntilDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_objectLockRetainUntilDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectLockRetainUntilDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_objectLockRetainUntilDateHasBeenSet = true;
     }
   }

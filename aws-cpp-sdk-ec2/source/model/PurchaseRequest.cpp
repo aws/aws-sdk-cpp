@@ -54,13 +54,13 @@ PurchaseRequest& PurchaseRequest::operator =(const XmlNode& xmlNode)
     XmlNode instanceCountNode = resultNode.FirstChild("InstanceCount");
     if(!instanceCountNode.IsNull())
     {
-      m_instanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(instanceCountNode.GetText().c_str()).c_str());
+      m_instanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceCountNode.GetText()).c_str()).c_str());
       m_instanceCountHasBeenSet = true;
     }
     XmlNode purchaseTokenNode = resultNode.FirstChild("PurchaseToken");
     if(!purchaseTokenNode.IsNull())
     {
-      m_purchaseToken = purchaseTokenNode.GetText();
+      m_purchaseToken = Aws::Utils::Xml::DecodeEscapedXmlText(purchaseTokenNode.GetText());
       m_purchaseTokenHasBeenSet = true;
     }
   }

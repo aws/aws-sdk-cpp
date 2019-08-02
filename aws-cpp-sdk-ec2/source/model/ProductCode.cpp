@@ -54,13 +54,13 @@ ProductCode& ProductCode::operator =(const XmlNode& xmlNode)
     XmlNode productCodeIdNode = resultNode.FirstChild("productCode");
     if(!productCodeIdNode.IsNull())
     {
-      m_productCodeId = productCodeIdNode.GetText();
+      m_productCodeId = Aws::Utils::Xml::DecodeEscapedXmlText(productCodeIdNode.GetText());
       m_productCodeIdHasBeenSet = true;
     }
     XmlNode productCodeTypeNode = resultNode.FirstChild("type");
     if(!productCodeTypeNode.IsNull())
     {
-      m_productCodeType = ProductCodeValuesMapper::GetProductCodeValuesForName(StringUtils::Trim(productCodeTypeNode.GetText().c_str()).c_str());
+      m_productCodeType = ProductCodeValuesMapper::GetProductCodeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(productCodeTypeNode.GetText()).c_str()).c_str());
       m_productCodeTypeHasBeenSet = true;
     }
   }

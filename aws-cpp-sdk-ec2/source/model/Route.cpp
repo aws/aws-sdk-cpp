@@ -78,79 +78,79 @@ Route& Route::operator =(const XmlNode& xmlNode)
     XmlNode destinationCidrBlockNode = resultNode.FirstChild("destinationCidrBlock");
     if(!destinationCidrBlockNode.IsNull())
     {
-      m_destinationCidrBlock = destinationCidrBlockNode.GetText();
+      m_destinationCidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(destinationCidrBlockNode.GetText());
       m_destinationCidrBlockHasBeenSet = true;
     }
     XmlNode destinationIpv6CidrBlockNode = resultNode.FirstChild("destinationIpv6CidrBlock");
     if(!destinationIpv6CidrBlockNode.IsNull())
     {
-      m_destinationIpv6CidrBlock = destinationIpv6CidrBlockNode.GetText();
+      m_destinationIpv6CidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(destinationIpv6CidrBlockNode.GetText());
       m_destinationIpv6CidrBlockHasBeenSet = true;
     }
     XmlNode destinationPrefixListIdNode = resultNode.FirstChild("destinationPrefixListId");
     if(!destinationPrefixListIdNode.IsNull())
     {
-      m_destinationPrefixListId = destinationPrefixListIdNode.GetText();
+      m_destinationPrefixListId = Aws::Utils::Xml::DecodeEscapedXmlText(destinationPrefixListIdNode.GetText());
       m_destinationPrefixListIdHasBeenSet = true;
     }
     XmlNode egressOnlyInternetGatewayIdNode = resultNode.FirstChild("egressOnlyInternetGatewayId");
     if(!egressOnlyInternetGatewayIdNode.IsNull())
     {
-      m_egressOnlyInternetGatewayId = egressOnlyInternetGatewayIdNode.GetText();
+      m_egressOnlyInternetGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(egressOnlyInternetGatewayIdNode.GetText());
       m_egressOnlyInternetGatewayIdHasBeenSet = true;
     }
     XmlNode gatewayIdNode = resultNode.FirstChild("gatewayId");
     if(!gatewayIdNode.IsNull())
     {
-      m_gatewayId = gatewayIdNode.GetText();
+      m_gatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(gatewayIdNode.GetText());
       m_gatewayIdHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = instanceIdNode.GetText();
+      m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
     }
     XmlNode instanceOwnerIdNode = resultNode.FirstChild("instanceOwnerId");
     if(!instanceOwnerIdNode.IsNull())
     {
-      m_instanceOwnerId = instanceOwnerIdNode.GetText();
+      m_instanceOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceOwnerIdNode.GetText());
       m_instanceOwnerIdHasBeenSet = true;
     }
     XmlNode natGatewayIdNode = resultNode.FirstChild("natGatewayId");
     if(!natGatewayIdNode.IsNull())
     {
-      m_natGatewayId = natGatewayIdNode.GetText();
+      m_natGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(natGatewayIdNode.GetText());
       m_natGatewayIdHasBeenSet = true;
     }
     XmlNode transitGatewayIdNode = resultNode.FirstChild("transitGatewayId");
     if(!transitGatewayIdNode.IsNull())
     {
-      m_transitGatewayId = transitGatewayIdNode.GetText();
+      m_transitGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayIdNode.GetText());
       m_transitGatewayIdHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
-      m_networkInterfaceId = networkInterfaceIdNode.GetText();
+      m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode originNode = resultNode.FirstChild("origin");
     if(!originNode.IsNull())
     {
-      m_origin = RouteOriginMapper::GetRouteOriginForName(StringUtils::Trim(originNode.GetText().c_str()).c_str());
+      m_origin = RouteOriginMapper::GetRouteOriginForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(originNode.GetText()).c_str()).c_str());
       m_originHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = RouteStateMapper::GetRouteStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_state = RouteStateMapper::GetRouteStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
       m_stateHasBeenSet = true;
     }
     XmlNode vpcPeeringConnectionIdNode = resultNode.FirstChild("vpcPeeringConnectionId");
     if(!vpcPeeringConnectionIdNode.IsNull())
     {
-      m_vpcPeeringConnectionId = vpcPeeringConnectionIdNode.GetText();
+      m_vpcPeeringConnectionId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcPeeringConnectionIdNode.GetText());
       m_vpcPeeringConnectionIdHasBeenSet = true;
     }
   }

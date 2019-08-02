@@ -60,25 +60,25 @@ DBClusterMember& DBClusterMember::operator =(const XmlNode& xmlNode)
     XmlNode dBInstanceIdentifierNode = resultNode.FirstChild("DBInstanceIdentifier");
     if(!dBInstanceIdentifierNode.IsNull())
     {
-      m_dBInstanceIdentifier = dBInstanceIdentifierNode.GetText();
+      m_dBInstanceIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBInstanceIdentifierNode.GetText());
       m_dBInstanceIdentifierHasBeenSet = true;
     }
     XmlNode isClusterWriterNode = resultNode.FirstChild("IsClusterWriter");
     if(!isClusterWriterNode.IsNull())
     {
-      m_isClusterWriter = StringUtils::ConvertToBool(StringUtils::Trim(isClusterWriterNode.GetText().c_str()).c_str());
+      m_isClusterWriter = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isClusterWriterNode.GetText()).c_str()).c_str());
       m_isClusterWriterHasBeenSet = true;
     }
     XmlNode dBClusterParameterGroupStatusNode = resultNode.FirstChild("DBClusterParameterGroupStatus");
     if(!dBClusterParameterGroupStatusNode.IsNull())
     {
-      m_dBClusterParameterGroupStatus = dBClusterParameterGroupStatusNode.GetText();
+      m_dBClusterParameterGroupStatus = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterParameterGroupStatusNode.GetText());
       m_dBClusterParameterGroupStatusHasBeenSet = true;
     }
     XmlNode promotionTierNode = resultNode.FirstChild("PromotionTier");
     if(!promotionTierNode.IsNull())
     {
-      m_promotionTier = StringUtils::ConvertToInt32(StringUtils::Trim(promotionTierNode.GetText().c_str()).c_str());
+      m_promotionTier = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(promotionTierNode.GetText()).c_str()).c_str());
       m_promotionTierHasBeenSet = true;
     }
   }

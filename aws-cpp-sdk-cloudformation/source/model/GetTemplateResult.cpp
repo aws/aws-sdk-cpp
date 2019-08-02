@@ -51,7 +51,7 @@ GetTemplateResult& GetTemplateResult::operator =(const Aws::AmazonWebServiceResu
     XmlNode templateBodyNode = resultNode.FirstChild("TemplateBody");
     if(!templateBodyNode.IsNull())
     {
-      m_templateBody = templateBodyNode.GetText();
+      m_templateBody = Aws::Utils::Xml::DecodeEscapedXmlText(templateBodyNode.GetText());
     }
     XmlNode stagesAvailableNode = resultNode.FirstChild("StagesAvailable");
     if(!stagesAvailableNode.IsNull())

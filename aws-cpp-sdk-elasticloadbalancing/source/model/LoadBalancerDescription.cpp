@@ -80,25 +80,25 @@ LoadBalancerDescription& LoadBalancerDescription::operator =(const XmlNode& xmlN
     XmlNode loadBalancerNameNode = resultNode.FirstChild("LoadBalancerName");
     if(!loadBalancerNameNode.IsNull())
     {
-      m_loadBalancerName = loadBalancerNameNode.GetText();
+      m_loadBalancerName = Aws::Utils::Xml::DecodeEscapedXmlText(loadBalancerNameNode.GetText());
       m_loadBalancerNameHasBeenSet = true;
     }
     XmlNode dNSNameNode = resultNode.FirstChild("DNSName");
     if(!dNSNameNode.IsNull())
     {
-      m_dNSName = dNSNameNode.GetText();
+      m_dNSName = Aws::Utils::Xml::DecodeEscapedXmlText(dNSNameNode.GetText());
       m_dNSNameHasBeenSet = true;
     }
     XmlNode canonicalHostedZoneNameNode = resultNode.FirstChild("CanonicalHostedZoneName");
     if(!canonicalHostedZoneNameNode.IsNull())
     {
-      m_canonicalHostedZoneName = canonicalHostedZoneNameNode.GetText();
+      m_canonicalHostedZoneName = Aws::Utils::Xml::DecodeEscapedXmlText(canonicalHostedZoneNameNode.GetText());
       m_canonicalHostedZoneNameHasBeenSet = true;
     }
     XmlNode canonicalHostedZoneNameIDNode = resultNode.FirstChild("CanonicalHostedZoneNameID");
     if(!canonicalHostedZoneNameIDNode.IsNull())
     {
-      m_canonicalHostedZoneNameID = canonicalHostedZoneNameIDNode.GetText();
+      m_canonicalHostedZoneNameID = Aws::Utils::Xml::DecodeEscapedXmlText(canonicalHostedZoneNameIDNode.GetText());
       m_canonicalHostedZoneNameIDHasBeenSet = true;
     }
     XmlNode listenerDescriptionsNode = resultNode.FirstChild("ListenerDescriptions");
@@ -158,7 +158,7 @@ LoadBalancerDescription& LoadBalancerDescription::operator =(const XmlNode& xmlN
     XmlNode vPCIdNode = resultNode.FirstChild("VPCId");
     if(!vPCIdNode.IsNull())
     {
-      m_vPCId = vPCIdNode.GetText();
+      m_vPCId = Aws::Utils::Xml::DecodeEscapedXmlText(vPCIdNode.GetText());
       m_vPCIdHasBeenSet = true;
     }
     XmlNode instancesNode = resultNode.FirstChild("Instances");
@@ -200,13 +200,13 @@ LoadBalancerDescription& LoadBalancerDescription::operator =(const XmlNode& xmlN
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
     if(!createdTimeNode.IsNull())
     {
-      m_createdTime = DateTime(StringUtils::Trim(createdTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_createdTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_createdTimeHasBeenSet = true;
     }
     XmlNode schemeNode = resultNode.FirstChild("Scheme");
     if(!schemeNode.IsNull())
     {
-      m_scheme = schemeNode.GetText();
+      m_scheme = Aws::Utils::Xml::DecodeEscapedXmlText(schemeNode.GetText());
       m_schemeHasBeenSet = true;
     }
   }

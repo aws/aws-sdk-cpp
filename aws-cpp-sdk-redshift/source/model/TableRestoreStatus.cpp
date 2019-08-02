@@ -82,85 +82,85 @@ TableRestoreStatus& TableRestoreStatus::operator =(const XmlNode& xmlNode)
     XmlNode tableRestoreRequestIdNode = resultNode.FirstChild("TableRestoreRequestId");
     if(!tableRestoreRequestIdNode.IsNull())
     {
-      m_tableRestoreRequestId = tableRestoreRequestIdNode.GetText();
+      m_tableRestoreRequestId = Aws::Utils::Xml::DecodeEscapedXmlText(tableRestoreRequestIdNode.GetText());
       m_tableRestoreRequestIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = TableRestoreStatusTypeMapper::GetTableRestoreStatusTypeForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = TableRestoreStatusTypeMapper::GetTableRestoreStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
-      m_message = messageNode.GetText();
+      m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
     }
     XmlNode requestTimeNode = resultNode.FirstChild("RequestTime");
     if(!requestTimeNode.IsNull())
     {
-      m_requestTime = DateTime(StringUtils::Trim(requestTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_requestTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requestTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_requestTimeHasBeenSet = true;
     }
     XmlNode progressInMegaBytesNode = resultNode.FirstChild("ProgressInMegaBytes");
     if(!progressInMegaBytesNode.IsNull())
     {
-      m_progressInMegaBytes = StringUtils::ConvertToInt64(StringUtils::Trim(progressInMegaBytesNode.GetText().c_str()).c_str());
+      m_progressInMegaBytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(progressInMegaBytesNode.GetText()).c_str()).c_str());
       m_progressInMegaBytesHasBeenSet = true;
     }
     XmlNode totalDataInMegaBytesNode = resultNode.FirstChild("TotalDataInMegaBytes");
     if(!totalDataInMegaBytesNode.IsNull())
     {
-      m_totalDataInMegaBytes = StringUtils::ConvertToInt64(StringUtils::Trim(totalDataInMegaBytesNode.GetText().c_str()).c_str());
+      m_totalDataInMegaBytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalDataInMegaBytesNode.GetText()).c_str()).c_str());
       m_totalDataInMegaBytesHasBeenSet = true;
     }
     XmlNode clusterIdentifierNode = resultNode.FirstChild("ClusterIdentifier");
     if(!clusterIdentifierNode.IsNull())
     {
-      m_clusterIdentifier = clusterIdentifierNode.GetText();
+      m_clusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(clusterIdentifierNode.GetText());
       m_clusterIdentifierHasBeenSet = true;
     }
     XmlNode snapshotIdentifierNode = resultNode.FirstChild("SnapshotIdentifier");
     if(!snapshotIdentifierNode.IsNull())
     {
-      m_snapshotIdentifier = snapshotIdentifierNode.GetText();
+      m_snapshotIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdentifierNode.GetText());
       m_snapshotIdentifierHasBeenSet = true;
     }
     XmlNode sourceDatabaseNameNode = resultNode.FirstChild("SourceDatabaseName");
     if(!sourceDatabaseNameNode.IsNull())
     {
-      m_sourceDatabaseName = sourceDatabaseNameNode.GetText();
+      m_sourceDatabaseName = Aws::Utils::Xml::DecodeEscapedXmlText(sourceDatabaseNameNode.GetText());
       m_sourceDatabaseNameHasBeenSet = true;
     }
     XmlNode sourceSchemaNameNode = resultNode.FirstChild("SourceSchemaName");
     if(!sourceSchemaNameNode.IsNull())
     {
-      m_sourceSchemaName = sourceSchemaNameNode.GetText();
+      m_sourceSchemaName = Aws::Utils::Xml::DecodeEscapedXmlText(sourceSchemaNameNode.GetText());
       m_sourceSchemaNameHasBeenSet = true;
     }
     XmlNode sourceTableNameNode = resultNode.FirstChild("SourceTableName");
     if(!sourceTableNameNode.IsNull())
     {
-      m_sourceTableName = sourceTableNameNode.GetText();
+      m_sourceTableName = Aws::Utils::Xml::DecodeEscapedXmlText(sourceTableNameNode.GetText());
       m_sourceTableNameHasBeenSet = true;
     }
     XmlNode targetDatabaseNameNode = resultNode.FirstChild("TargetDatabaseName");
     if(!targetDatabaseNameNode.IsNull())
     {
-      m_targetDatabaseName = targetDatabaseNameNode.GetText();
+      m_targetDatabaseName = Aws::Utils::Xml::DecodeEscapedXmlText(targetDatabaseNameNode.GetText());
       m_targetDatabaseNameHasBeenSet = true;
     }
     XmlNode targetSchemaNameNode = resultNode.FirstChild("TargetSchemaName");
     if(!targetSchemaNameNode.IsNull())
     {
-      m_targetSchemaName = targetSchemaNameNode.GetText();
+      m_targetSchemaName = Aws::Utils::Xml::DecodeEscapedXmlText(targetSchemaNameNode.GetText());
       m_targetSchemaNameHasBeenSet = true;
     }
     XmlNode newTableNameNode = resultNode.FirstChild("NewTableName");
     if(!newTableNameNode.IsNull())
     {
-      m_newTableName = newTableNameNode.GetText();
+      m_newTableName = Aws::Utils::Xml::DecodeEscapedXmlText(newTableNameNode.GetText());
       m_newTableNameHasBeenSet = true;
     }
   }

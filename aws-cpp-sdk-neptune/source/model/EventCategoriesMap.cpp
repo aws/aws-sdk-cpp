@@ -52,7 +52,7 @@ EventCategoriesMap& EventCategoriesMap::operator =(const XmlNode& xmlNode)
     XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
     if(!sourceTypeNode.IsNull())
     {
-      m_sourceType = sourceTypeNode.GetText();
+      m_sourceType = Aws::Utils::Xml::DecodeEscapedXmlText(sourceTypeNode.GetText());
       m_sourceTypeHasBeenSet = true;
     }
     XmlNode eventCategoriesNode = resultNode.FirstChild("EventCategories");

@@ -46,7 +46,7 @@ GetTrafficPolicyInstanceCountResult& GetTrafficPolicyInstanceCountResult::operat
     XmlNode trafficPolicyInstanceCountNode = resultNode.FirstChild("TrafficPolicyInstanceCount");
     if(!trafficPolicyInstanceCountNode.IsNull())
     {
-      m_trafficPolicyInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(trafficPolicyInstanceCountNode.GetText().c_str()).c_str());
+      m_trafficPolicyInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trafficPolicyInstanceCountNode.GetText()).c_str()).c_str());
     }
   }
 

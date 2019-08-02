@@ -52,13 +52,13 @@ VpnTunnelOptionsSpecification& VpnTunnelOptionsSpecification::operator =(const X
     XmlNode tunnelInsideCidrNode = resultNode.FirstChild("TunnelInsideCidr");
     if(!tunnelInsideCidrNode.IsNull())
     {
-      m_tunnelInsideCidr = tunnelInsideCidrNode.GetText();
+      m_tunnelInsideCidr = Aws::Utils::Xml::DecodeEscapedXmlText(tunnelInsideCidrNode.GetText());
       m_tunnelInsideCidrHasBeenSet = true;
     }
     XmlNode preSharedKeyNode = resultNode.FirstChild("PreSharedKey");
     if(!preSharedKeyNode.IsNull())
     {
-      m_preSharedKey = preSharedKeyNode.GetText();
+      m_preSharedKey = Aws::Utils::Xml::DecodeEscapedXmlText(preSharedKeyNode.GetText());
       m_preSharedKeyHasBeenSet = true;
     }
   }

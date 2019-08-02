@@ -51,7 +51,7 @@ GetStackPolicyResult& GetStackPolicyResult::operator =(const Aws::AmazonWebServi
     XmlNode stackPolicyBodyNode = resultNode.FirstChild("StackPolicyBody");
     if(!stackPolicyBodyNode.IsNull())
     {
-      m_stackPolicyBody = stackPolicyBodyNode.GetText();
+      m_stackPolicyBody = Aws::Utils::Xml::DecodeEscapedXmlText(stackPolicyBodyNode.GetText());
     }
   }
 

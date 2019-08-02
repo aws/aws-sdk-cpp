@@ -68,19 +68,19 @@ SingleInstanceHealth& SingleInstanceHealth::operator =(const XmlNode& xmlNode)
     XmlNode instanceIdNode = resultNode.FirstChild("InstanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = instanceIdNode.GetText();
+      m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
     }
     XmlNode healthStatusNode = resultNode.FirstChild("HealthStatus");
     if(!healthStatusNode.IsNull())
     {
-      m_healthStatus = healthStatusNode.GetText();
+      m_healthStatus = Aws::Utils::Xml::DecodeEscapedXmlText(healthStatusNode.GetText());
       m_healthStatusHasBeenSet = true;
     }
     XmlNode colorNode = resultNode.FirstChild("Color");
     if(!colorNode.IsNull())
     {
-      m_color = colorNode.GetText();
+      m_color = Aws::Utils::Xml::DecodeEscapedXmlText(colorNode.GetText());
       m_colorHasBeenSet = true;
     }
     XmlNode causesNode = resultNode.FirstChild("Causes");
@@ -98,7 +98,7 @@ SingleInstanceHealth& SingleInstanceHealth::operator =(const XmlNode& xmlNode)
     XmlNode launchedAtNode = resultNode.FirstChild("LaunchedAt");
     if(!launchedAtNode.IsNull())
     {
-      m_launchedAt = DateTime(StringUtils::Trim(launchedAtNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_launchedAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(launchedAtNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_launchedAtHasBeenSet = true;
     }
     XmlNode applicationMetricsNode = resultNode.FirstChild("ApplicationMetrics");
@@ -122,13 +122,13 @@ SingleInstanceHealth& SingleInstanceHealth::operator =(const XmlNode& xmlNode)
     XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
-      m_availabilityZone = availabilityZoneNode.GetText();
+      m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("InstanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = instanceTypeNode.GetText();
+      m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
       m_instanceTypeHasBeenSet = true;
     }
   }

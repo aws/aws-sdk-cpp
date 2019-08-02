@@ -46,7 +46,7 @@ ListBucketInventoryConfigurationsResult& ListBucketInventoryConfigurationsResult
     XmlNode continuationTokenNode = resultNode.FirstChild("ContinuationToken");
     if(!continuationTokenNode.IsNull())
     {
-      m_continuationToken = continuationTokenNode.GetText();
+      m_continuationToken = Aws::Utils::Xml::DecodeEscapedXmlText(continuationTokenNode.GetText());
     }
     XmlNode inventoryConfigurationListNode = resultNode.FirstChild("InventoryConfiguration");
     if(!inventoryConfigurationListNode.IsNull())
@@ -62,12 +62,12 @@ ListBucketInventoryConfigurationsResult& ListBucketInventoryConfigurationsResult
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
     {
-      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
     }
     XmlNode nextContinuationTokenNode = resultNode.FirstChild("NextContinuationToken");
     if(!nextContinuationTokenNode.IsNull())
     {
-      m_nextContinuationToken = nextContinuationTokenNode.GetText();
+      m_nextContinuationToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextContinuationTokenNode.GetText());
     }
   }
 

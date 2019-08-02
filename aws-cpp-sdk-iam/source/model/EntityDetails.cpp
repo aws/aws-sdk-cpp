@@ -58,7 +58,7 @@ EntityDetails& EntityDetails::operator =(const XmlNode& xmlNode)
     XmlNode lastAuthenticatedNode = resultNode.FirstChild("LastAuthenticated");
     if(!lastAuthenticatedNode.IsNull())
     {
-      m_lastAuthenticated = DateTime(StringUtils::Trim(lastAuthenticatedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastAuthenticated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastAuthenticatedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_lastAuthenticatedHasBeenSet = true;
     }
   }

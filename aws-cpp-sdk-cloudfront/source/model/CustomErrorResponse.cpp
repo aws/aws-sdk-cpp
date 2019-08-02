@@ -60,25 +60,25 @@ CustomErrorResponse& CustomErrorResponse::operator =(const XmlNode& xmlNode)
     XmlNode errorCodeNode = resultNode.FirstChild("ErrorCode");
     if(!errorCodeNode.IsNull())
     {
-      m_errorCode = StringUtils::ConvertToInt32(StringUtils::Trim(errorCodeNode.GetText().c_str()).c_str());
+      m_errorCode = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(errorCodeNode.GetText()).c_str()).c_str());
       m_errorCodeHasBeenSet = true;
     }
     XmlNode responsePagePathNode = resultNode.FirstChild("ResponsePagePath");
     if(!responsePagePathNode.IsNull())
     {
-      m_responsePagePath = responsePagePathNode.GetText();
+      m_responsePagePath = Aws::Utils::Xml::DecodeEscapedXmlText(responsePagePathNode.GetText());
       m_responsePagePathHasBeenSet = true;
     }
     XmlNode responseCodeNode = resultNode.FirstChild("ResponseCode");
     if(!responseCodeNode.IsNull())
     {
-      m_responseCode = responseCodeNode.GetText();
+      m_responseCode = Aws::Utils::Xml::DecodeEscapedXmlText(responseCodeNode.GetText());
       m_responseCodeHasBeenSet = true;
     }
     XmlNode errorCachingMinTTLNode = resultNode.FirstChild("ErrorCachingMinTTL");
     if(!errorCachingMinTTLNode.IsNull())
     {
-      m_errorCachingMinTTL = StringUtils::ConvertToInt64(StringUtils::Trim(errorCachingMinTTLNode.GetText().c_str()).c_str());
+      m_errorCachingMinTTL = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(errorCachingMinTTLNode.GetText()).c_str()).c_str());
       m_errorCachingMinTTLHasBeenSet = true;
     }
   }

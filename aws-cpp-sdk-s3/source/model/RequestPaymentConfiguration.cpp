@@ -52,7 +52,7 @@ RequestPaymentConfiguration& RequestPaymentConfiguration::operator =(const XmlNo
     XmlNode payerNode = resultNode.FirstChild("Payer");
     if(!payerNode.IsNull())
     {
-      m_payer = PayerMapper::GetPayerForName(StringUtils::Trim(payerNode.GetText().c_str()).c_str());
+      m_payer = PayerMapper::GetPayerForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(payerNode.GetText()).c_str()).c_str());
       m_payerHasBeenSet = true;
     }
   }

@@ -68,37 +68,37 @@ TransitGatewayRouteTable& TransitGatewayRouteTable::operator =(const XmlNode& xm
     XmlNode transitGatewayRouteTableIdNode = resultNode.FirstChild("transitGatewayRouteTableId");
     if(!transitGatewayRouteTableIdNode.IsNull())
     {
-      m_transitGatewayRouteTableId = transitGatewayRouteTableIdNode.GetText();
+      m_transitGatewayRouteTableId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayRouteTableIdNode.GetText());
       m_transitGatewayRouteTableIdHasBeenSet = true;
     }
     XmlNode transitGatewayIdNode = resultNode.FirstChild("transitGatewayId");
     if(!transitGatewayIdNode.IsNull())
     {
-      m_transitGatewayId = transitGatewayIdNode.GetText();
+      m_transitGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayIdNode.GetText());
       m_transitGatewayIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = TransitGatewayRouteTableStateMapper::GetTransitGatewayRouteTableStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
+      m_state = TransitGatewayRouteTableStateMapper::GetTransitGatewayRouteTableStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
       m_stateHasBeenSet = true;
     }
     XmlNode defaultAssociationRouteTableNode = resultNode.FirstChild("defaultAssociationRouteTable");
     if(!defaultAssociationRouteTableNode.IsNull())
     {
-      m_defaultAssociationRouteTable = StringUtils::ConvertToBool(StringUtils::Trim(defaultAssociationRouteTableNode.GetText().c_str()).c_str());
+      m_defaultAssociationRouteTable = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultAssociationRouteTableNode.GetText()).c_str()).c_str());
       m_defaultAssociationRouteTableHasBeenSet = true;
     }
     XmlNode defaultPropagationRouteTableNode = resultNode.FirstChild("defaultPropagationRouteTable");
     if(!defaultPropagationRouteTableNode.IsNull())
     {
-      m_defaultPropagationRouteTable = StringUtils::ConvertToBool(StringUtils::Trim(defaultPropagationRouteTableNode.GetText().c_str()).c_str());
+      m_defaultPropagationRouteTable = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultPropagationRouteTableNode.GetText()).c_str()).c_str());
       m_defaultPropagationRouteTableHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
     if(!creationTimeNode.IsNull())
     {
-      m_creationTime = DateTime(StringUtils::Trim(creationTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");

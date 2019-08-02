@@ -56,13 +56,13 @@ HostedZoneLimit& HostedZoneLimit::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = HostedZoneLimitTypeMapper::GetHostedZoneLimitTypeForName(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
+      m_type = HostedZoneLimitTypeMapper::GetHostedZoneLimitTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
       m_typeHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
-      m_value = StringUtils::ConvertToInt64(StringUtils::Trim(valueNode.GetText().c_str()).c_str());
+      m_value = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText()).c_str()).c_str());
       m_valueHasBeenSet = true;
     }
   }

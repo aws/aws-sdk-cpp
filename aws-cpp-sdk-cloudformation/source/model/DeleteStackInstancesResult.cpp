@@ -51,7 +51,7 @@ DeleteStackInstancesResult& DeleteStackInstancesResult::operator =(const Aws::Am
     XmlNode operationIdNode = resultNode.FirstChild("OperationId");
     if(!operationIdNode.IsNull())
     {
-      m_operationId = operationIdNode.GetText();
+      m_operationId = Aws::Utils::Xml::DecodeEscapedXmlText(operationIdNode.GetText());
     }
   }
 

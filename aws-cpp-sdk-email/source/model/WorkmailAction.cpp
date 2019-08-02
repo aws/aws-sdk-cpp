@@ -52,13 +52,13 @@ WorkmailAction& WorkmailAction::operator =(const XmlNode& xmlNode)
     XmlNode topicArnNode = resultNode.FirstChild("TopicArn");
     if(!topicArnNode.IsNull())
     {
-      m_topicArn = topicArnNode.GetText();
+      m_topicArn = Aws::Utils::Xml::DecodeEscapedXmlText(topicArnNode.GetText());
       m_topicArnHasBeenSet = true;
     }
     XmlNode organizationArnNode = resultNode.FirstChild("OrganizationArn");
     if(!organizationArnNode.IsNull())
     {
-      m_organizationArn = organizationArnNode.GetText();
+      m_organizationArn = Aws::Utils::Xml::DecodeEscapedXmlText(organizationArnNode.GetText());
       m_organizationArnHasBeenSet = true;
     }
   }

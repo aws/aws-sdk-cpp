@@ -46,7 +46,7 @@ GetHealthCheckCountResult& GetHealthCheckCountResult::operator =(const Aws::Amaz
     XmlNode healthCheckCountNode = resultNode.FirstChild("HealthCheckCount");
     if(!healthCheckCountNode.IsNull())
     {
-      m_healthCheckCount = StringUtils::ConvertToInt64(StringUtils::Trim(healthCheckCountNode.GetText().c_str()).c_str());
+      m_healthCheckCount = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(healthCheckCountNode.GetText()).c_str()).c_str());
     }
   }
 

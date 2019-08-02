@@ -52,7 +52,7 @@ VpnConnectionOptions& VpnConnectionOptions::operator =(const XmlNode& xmlNode)
     XmlNode staticRoutesOnlyNode = resultNode.FirstChild("staticRoutesOnly");
     if(!staticRoutesOnlyNode.IsNull())
     {
-      m_staticRoutesOnly = StringUtils::ConvertToBool(StringUtils::Trim(staticRoutesOnlyNode.GetText().c_str()).c_str());
+      m_staticRoutesOnly = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(staticRoutesOnlyNode.GetText()).c_str()).c_str());
       m_staticRoutesOnlyHasBeenSet = true;
     }
   }

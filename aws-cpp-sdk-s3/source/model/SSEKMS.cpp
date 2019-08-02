@@ -50,7 +50,7 @@ SSEKMS& SSEKMS::operator =(const XmlNode& xmlNode)
     XmlNode keyIdNode = resultNode.FirstChild("KeyId");
     if(!keyIdNode.IsNull())
     {
-      m_keyId = keyIdNode.GetText();
+      m_keyId = Aws::Utils::Xml::DecodeEscapedXmlText(keyIdNode.GetText());
       m_keyIdHasBeenSet = true;
     }
   }

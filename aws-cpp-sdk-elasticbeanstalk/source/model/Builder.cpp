@@ -50,7 +50,7 @@ Builder& Builder::operator =(const XmlNode& xmlNode)
     XmlNode aRNNode = resultNode.FirstChild("ARN");
     if(!aRNNode.IsNull())
     {
-      m_aRN = aRNNode.GetText();
+      m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
     }
   }

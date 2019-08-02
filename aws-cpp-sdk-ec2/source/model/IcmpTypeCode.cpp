@@ -56,13 +56,13 @@ IcmpTypeCode& IcmpTypeCode::operator =(const XmlNode& xmlNode)
     XmlNode codeNode = resultNode.FirstChild("code");
     if(!codeNode.IsNull())
     {
-      m_code = StringUtils::ConvertToInt32(StringUtils::Trim(codeNode.GetText().c_str()).c_str());
+      m_code = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()).c_str());
       m_codeHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = StringUtils::ConvertToInt32(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
+      m_type = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
       m_typeHasBeenSet = true;
     }
   }

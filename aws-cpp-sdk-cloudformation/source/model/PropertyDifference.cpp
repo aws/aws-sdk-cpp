@@ -58,25 +58,25 @@ PropertyDifference& PropertyDifference::operator =(const XmlNode& xmlNode)
     XmlNode propertyPathNode = resultNode.FirstChild("PropertyPath");
     if(!propertyPathNode.IsNull())
     {
-      m_propertyPath = propertyPathNode.GetText();
+      m_propertyPath = Aws::Utils::Xml::DecodeEscapedXmlText(propertyPathNode.GetText());
       m_propertyPathHasBeenSet = true;
     }
     XmlNode expectedValueNode = resultNode.FirstChild("ExpectedValue");
     if(!expectedValueNode.IsNull())
     {
-      m_expectedValue = expectedValueNode.GetText();
+      m_expectedValue = Aws::Utils::Xml::DecodeEscapedXmlText(expectedValueNode.GetText());
       m_expectedValueHasBeenSet = true;
     }
     XmlNode actualValueNode = resultNode.FirstChild("ActualValue");
     if(!actualValueNode.IsNull())
     {
-      m_actualValue = actualValueNode.GetText();
+      m_actualValue = Aws::Utils::Xml::DecodeEscapedXmlText(actualValueNode.GetText());
       m_actualValueHasBeenSet = true;
     }
     XmlNode differenceTypeNode = resultNode.FirstChild("DifferenceType");
     if(!differenceTypeNode.IsNull())
     {
-      m_differenceType = DifferenceTypeMapper::GetDifferenceTypeForName(StringUtils::Trim(differenceTypeNode.GetText().c_str()).c_str());
+      m_differenceType = DifferenceTypeMapper::GetDifferenceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(differenceTypeNode.GetText()).c_str()).c_str());
       m_differenceTypeHasBeenSet = true;
     }
   }

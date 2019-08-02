@@ -46,7 +46,7 @@ GetHostedZoneCountResult& GetHostedZoneCountResult::operator =(const Aws::Amazon
     XmlNode hostedZoneCountNode = resultNode.FirstChild("HostedZoneCount");
     if(!hostedZoneCountNode.IsNull())
     {
-      m_hostedZoneCount = StringUtils::ConvertToInt64(StringUtils::Trim(hostedZoneCountNode.GetText().c_str()).c_str());
+      m_hostedZoneCount = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hostedZoneCountNode.GetText()).c_str()).c_str());
     }
   }
 

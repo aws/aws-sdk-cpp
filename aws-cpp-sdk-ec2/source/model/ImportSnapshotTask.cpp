@@ -54,13 +54,13 @@ ImportSnapshotTask& ImportSnapshotTask::operator =(const XmlNode& xmlNode)
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode importTaskIdNode = resultNode.FirstChild("importTaskId");
     if(!importTaskIdNode.IsNull())
     {
-      m_importTaskId = importTaskIdNode.GetText();
+      m_importTaskId = Aws::Utils::Xml::DecodeEscapedXmlText(importTaskIdNode.GetText());
       m_importTaskIdHasBeenSet = true;
     }
     XmlNode snapshotTaskDetailNode = resultNode.FirstChild("snapshotTaskDetail");

@@ -66,31 +66,31 @@ SendDataPoint& SendDataPoint::operator =(const XmlNode& xmlNode)
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = DateTime(StringUtils::Trim(timestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
     }
     XmlNode deliveryAttemptsNode = resultNode.FirstChild("DeliveryAttempts");
     if(!deliveryAttemptsNode.IsNull())
     {
-      m_deliveryAttempts = StringUtils::ConvertToInt64(StringUtils::Trim(deliveryAttemptsNode.GetText().c_str()).c_str());
+      m_deliveryAttempts = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deliveryAttemptsNode.GetText()).c_str()).c_str());
       m_deliveryAttemptsHasBeenSet = true;
     }
     XmlNode bouncesNode = resultNode.FirstChild("Bounces");
     if(!bouncesNode.IsNull())
     {
-      m_bounces = StringUtils::ConvertToInt64(StringUtils::Trim(bouncesNode.GetText().c_str()).c_str());
+      m_bounces = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bouncesNode.GetText()).c_str()).c_str());
       m_bouncesHasBeenSet = true;
     }
     XmlNode complaintsNode = resultNode.FirstChild("Complaints");
     if(!complaintsNode.IsNull())
     {
-      m_complaints = StringUtils::ConvertToInt64(StringUtils::Trim(complaintsNode.GetText().c_str()).c_str());
+      m_complaints = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(complaintsNode.GetText()).c_str()).c_str());
       m_complaintsHasBeenSet = true;
     }
     XmlNode rejectsNode = resultNode.FirstChild("Rejects");
     if(!rejectsNode.IsNull())
     {
-      m_rejects = StringUtils::ConvertToInt64(StringUtils::Trim(rejectsNode.GetText().c_str()).c_str());
+      m_rejects = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(rejectsNode.GetText()).c_str()).c_str());
       m_rejectsHasBeenSet = true;
     }
   }

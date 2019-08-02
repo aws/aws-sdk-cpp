@@ -51,7 +51,7 @@ AcceptReservedInstancesExchangeQuoteResponse& AcceptReservedInstancesExchangeQuo
     XmlNode exchangeIdNode = resultNode.FirstChild("exchangeId");
     if(!exchangeIdNode.IsNull())
     {
-      m_exchangeId = exchangeIdNode.GetText();
+      m_exchangeId = Aws::Utils::Xml::DecodeEscapedXmlText(exchangeIdNode.GetText());
     }
   }
 

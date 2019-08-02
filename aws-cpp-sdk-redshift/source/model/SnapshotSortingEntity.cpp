@@ -56,13 +56,13 @@ SnapshotSortingEntity& SnapshotSortingEntity::operator =(const XmlNode& xmlNode)
     XmlNode attributeNode = resultNode.FirstChild("Attribute");
     if(!attributeNode.IsNull())
     {
-      m_attribute = SnapshotAttributeToSortByMapper::GetSnapshotAttributeToSortByForName(StringUtils::Trim(attributeNode.GetText().c_str()).c_str());
+      m_attribute = SnapshotAttributeToSortByMapper::GetSnapshotAttributeToSortByForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attributeNode.GetText()).c_str()).c_str());
       m_attributeHasBeenSet = true;
     }
     XmlNode sortOrderNode = resultNode.FirstChild("SortOrder");
     if(!sortOrderNode.IsNull())
     {
-      m_sortOrder = SortByOrderMapper::GetSortByOrderForName(StringUtils::Trim(sortOrderNode.GetText().c_str()).c_str());
+      m_sortOrder = SortByOrderMapper::GetSortByOrderForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sortOrderNode.GetText()).c_str()).c_str());
       m_sortOrderHasBeenSet = true;
     }
   }

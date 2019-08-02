@@ -50,7 +50,7 @@ CreditSpecification& CreditSpecification::operator =(const XmlNode& xmlNode)
     XmlNode cpuCreditsNode = resultNode.FirstChild("cpuCredits");
     if(!cpuCreditsNode.IsNull())
     {
-      m_cpuCredits = cpuCreditsNode.GetText();
+      m_cpuCredits = Aws::Utils::Xml::DecodeEscapedXmlText(cpuCreditsNode.GetText());
       m_cpuCreditsHasBeenSet = true;
     }
   }

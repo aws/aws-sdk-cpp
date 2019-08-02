@@ -55,12 +55,12 @@ DescribeStorageResult& DescribeStorageResult::operator =(const Aws::AmazonWebSer
     XmlNode totalBackupSizeInMegaBytesNode = resultNode.FirstChild("TotalBackupSizeInMegaBytes");
     if(!totalBackupSizeInMegaBytesNode.IsNull())
     {
-      m_totalBackupSizeInMegaBytes = StringUtils::ConvertToDouble(StringUtils::Trim(totalBackupSizeInMegaBytesNode.GetText().c_str()).c_str());
+      m_totalBackupSizeInMegaBytes = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalBackupSizeInMegaBytesNode.GetText()).c_str()).c_str());
     }
     XmlNode totalProvisionedStorageInMegaBytesNode = resultNode.FirstChild("TotalProvisionedStorageInMegaBytes");
     if(!totalProvisionedStorageInMegaBytesNode.IsNull())
     {
-      m_totalProvisionedStorageInMegaBytes = StringUtils::ConvertToDouble(StringUtils::Trim(totalProvisionedStorageInMegaBytesNode.GetText().c_str()).c_str());
+      m_totalProvisionedStorageInMegaBytes = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalProvisionedStorageInMegaBytesNode.GetText()).c_str()).c_str());
     }
   }
 

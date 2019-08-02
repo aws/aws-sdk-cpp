@@ -60,19 +60,19 @@ MaxAgeRule& MaxAgeRule::operator =(const XmlNode& xmlNode)
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
     if(!enabledNode.IsNull())
     {
-      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
     XmlNode maxAgeInDaysNode = resultNode.FirstChild("MaxAgeInDays");
     if(!maxAgeInDaysNode.IsNull())
     {
-      m_maxAgeInDays = StringUtils::ConvertToInt32(StringUtils::Trim(maxAgeInDaysNode.GetText().c_str()).c_str());
+      m_maxAgeInDays = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxAgeInDaysNode.GetText()).c_str()).c_str());
       m_maxAgeInDaysHasBeenSet = true;
     }
     XmlNode deleteSourceFromS3Node = resultNode.FirstChild("DeleteSourceFromS3");
     if(!deleteSourceFromS3Node.IsNull())
     {
-      m_deleteSourceFromS3 = StringUtils::ConvertToBool(StringUtils::Trim(deleteSourceFromS3Node.GetText().c_str()).c_str());
+      m_deleteSourceFromS3 = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteSourceFromS3Node.GetText()).c_str()).c_str());
       m_deleteSourceFromS3HasBeenSet = true;
     }
   }

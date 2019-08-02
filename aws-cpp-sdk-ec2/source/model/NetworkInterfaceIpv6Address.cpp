@@ -50,7 +50,7 @@ NetworkInterfaceIpv6Address& NetworkInterfaceIpv6Address::operator =(const XmlNo
     XmlNode ipv6AddressNode = resultNode.FirstChild("ipv6Address");
     if(!ipv6AddressNode.IsNull())
     {
-      m_ipv6Address = ipv6AddressNode.GetText();
+      m_ipv6Address = Aws::Utils::Xml::DecodeEscapedXmlText(ipv6AddressNode.GetText());
       m_ipv6AddressHasBeenSet = true;
     }
   }

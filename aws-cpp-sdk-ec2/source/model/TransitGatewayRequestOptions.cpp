@@ -72,37 +72,37 @@ TransitGatewayRequestOptions& TransitGatewayRequestOptions::operator =(const Xml
     XmlNode amazonSideAsnNode = resultNode.FirstChild("AmazonSideAsn");
     if(!amazonSideAsnNode.IsNull())
     {
-      m_amazonSideAsn = StringUtils::ConvertToInt64(StringUtils::Trim(amazonSideAsnNode.GetText().c_str()).c_str());
+      m_amazonSideAsn = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(amazonSideAsnNode.GetText()).c_str()).c_str());
       m_amazonSideAsnHasBeenSet = true;
     }
     XmlNode autoAcceptSharedAttachmentsNode = resultNode.FirstChild("AutoAcceptSharedAttachments");
     if(!autoAcceptSharedAttachmentsNode.IsNull())
     {
-      m_autoAcceptSharedAttachments = AutoAcceptSharedAttachmentsValueMapper::GetAutoAcceptSharedAttachmentsValueForName(StringUtils::Trim(autoAcceptSharedAttachmentsNode.GetText().c_str()).c_str());
+      m_autoAcceptSharedAttachments = AutoAcceptSharedAttachmentsValueMapper::GetAutoAcceptSharedAttachmentsValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoAcceptSharedAttachmentsNode.GetText()).c_str()).c_str());
       m_autoAcceptSharedAttachmentsHasBeenSet = true;
     }
     XmlNode defaultRouteTableAssociationNode = resultNode.FirstChild("DefaultRouteTableAssociation");
     if(!defaultRouteTableAssociationNode.IsNull())
     {
-      m_defaultRouteTableAssociation = DefaultRouteTableAssociationValueMapper::GetDefaultRouteTableAssociationValueForName(StringUtils::Trim(defaultRouteTableAssociationNode.GetText().c_str()).c_str());
+      m_defaultRouteTableAssociation = DefaultRouteTableAssociationValueMapper::GetDefaultRouteTableAssociationValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultRouteTableAssociationNode.GetText()).c_str()).c_str());
       m_defaultRouteTableAssociationHasBeenSet = true;
     }
     XmlNode defaultRouteTablePropagationNode = resultNode.FirstChild("DefaultRouteTablePropagation");
     if(!defaultRouteTablePropagationNode.IsNull())
     {
-      m_defaultRouteTablePropagation = DefaultRouteTablePropagationValueMapper::GetDefaultRouteTablePropagationValueForName(StringUtils::Trim(defaultRouteTablePropagationNode.GetText().c_str()).c_str());
+      m_defaultRouteTablePropagation = DefaultRouteTablePropagationValueMapper::GetDefaultRouteTablePropagationValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultRouteTablePropagationNode.GetText()).c_str()).c_str());
       m_defaultRouteTablePropagationHasBeenSet = true;
     }
     XmlNode vpnEcmpSupportNode = resultNode.FirstChild("VpnEcmpSupport");
     if(!vpnEcmpSupportNode.IsNull())
     {
-      m_vpnEcmpSupport = VpnEcmpSupportValueMapper::GetVpnEcmpSupportValueForName(StringUtils::Trim(vpnEcmpSupportNode.GetText().c_str()).c_str());
+      m_vpnEcmpSupport = VpnEcmpSupportValueMapper::GetVpnEcmpSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpnEcmpSupportNode.GetText()).c_str()).c_str());
       m_vpnEcmpSupportHasBeenSet = true;
     }
     XmlNode dnsSupportNode = resultNode.FirstChild("DnsSupport");
     if(!dnsSupportNode.IsNull())
     {
-      m_dnsSupport = DnsSupportValueMapper::GetDnsSupportValueForName(StringUtils::Trim(dnsSupportNode.GetText().c_str()).c_str());
+      m_dnsSupport = DnsSupportValueMapper::GetDnsSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dnsSupportNode.GetText()).c_str()).c_str());
       m_dnsSupportHasBeenSet = true;
     }
   }

@@ -54,13 +54,13 @@ ReceiptIpFilter& ReceiptIpFilter::operator =(const XmlNode& xmlNode)
     XmlNode policyNode = resultNode.FirstChild("Policy");
     if(!policyNode.IsNull())
     {
-      m_policy = ReceiptFilterPolicyMapper::GetReceiptFilterPolicyForName(StringUtils::Trim(policyNode.GetText().c_str()).c_str());
+      m_policy = ReceiptFilterPolicyMapper::GetReceiptFilterPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(policyNode.GetText()).c_str()).c_str());
       m_policyHasBeenSet = true;
     }
     XmlNode cidrNode = resultNode.FirstChild("Cidr");
     if(!cidrNode.IsNull())
     {
-      m_cidr = cidrNode.GetText();
+      m_cidr = Aws::Utils::Xml::DecodeEscapedXmlText(cidrNode.GetText());
       m_cidrHasBeenSet = true;
     }
   }

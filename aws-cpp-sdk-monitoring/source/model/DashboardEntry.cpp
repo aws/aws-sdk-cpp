@@ -58,25 +58,25 @@ DashboardEntry& DashboardEntry::operator =(const XmlNode& xmlNode)
     XmlNode dashboardNameNode = resultNode.FirstChild("DashboardName");
     if(!dashboardNameNode.IsNull())
     {
-      m_dashboardName = dashboardNameNode.GetText();
+      m_dashboardName = Aws::Utils::Xml::DecodeEscapedXmlText(dashboardNameNode.GetText());
       m_dashboardNameHasBeenSet = true;
     }
     XmlNode dashboardArnNode = resultNode.FirstChild("DashboardArn");
     if(!dashboardArnNode.IsNull())
     {
-      m_dashboardArn = dashboardArnNode.GetText();
+      m_dashboardArn = Aws::Utils::Xml::DecodeEscapedXmlText(dashboardArnNode.GetText());
       m_dashboardArnHasBeenSet = true;
     }
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");
     if(!lastModifiedNode.IsNull())
     {
-      m_lastModified = DateTime(StringUtils::Trim(lastModifiedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastModified = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_lastModifiedHasBeenSet = true;
     }
     XmlNode sizeNode = resultNode.FirstChild("Size");
     if(!sizeNode.IsNull())
     {
-      m_size = StringUtils::ConvertToInt64(StringUtils::Trim(sizeNode.GetText().c_str()).c_str());
+      m_size = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sizeNode.GetText()).c_str()).c_str());
       m_sizeHasBeenSet = true;
     }
   }

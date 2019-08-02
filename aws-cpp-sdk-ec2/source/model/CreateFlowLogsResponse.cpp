@@ -51,7 +51,7 @@ CreateFlowLogsResponse& CreateFlowLogsResponse::operator =(const Aws::AmazonWebS
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
-      m_clientToken = clientTokenNode.GetText();
+      m_clientToken = Aws::Utils::Xml::DecodeEscapedXmlText(clientTokenNode.GetText());
     }
     XmlNode flowLogIdsNode = resultNode.FirstChild("flowLogIdSet");
     if(!flowLogIdsNode.IsNull())

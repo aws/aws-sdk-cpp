@@ -70,37 +70,37 @@ EventSubscription& EventSubscription::operator =(const XmlNode& xmlNode)
     XmlNode customerAwsIdNode = resultNode.FirstChild("CustomerAwsId");
     if(!customerAwsIdNode.IsNull())
     {
-      m_customerAwsId = customerAwsIdNode.GetText();
+      m_customerAwsId = Aws::Utils::Xml::DecodeEscapedXmlText(customerAwsIdNode.GetText());
       m_customerAwsIdHasBeenSet = true;
     }
     XmlNode custSubscriptionIdNode = resultNode.FirstChild("CustSubscriptionId");
     if(!custSubscriptionIdNode.IsNull())
     {
-      m_custSubscriptionId = custSubscriptionIdNode.GetText();
+      m_custSubscriptionId = Aws::Utils::Xml::DecodeEscapedXmlText(custSubscriptionIdNode.GetText());
       m_custSubscriptionIdHasBeenSet = true;
     }
     XmlNode snsTopicArnNode = resultNode.FirstChild("SnsTopicArn");
     if(!snsTopicArnNode.IsNull())
     {
-      m_snsTopicArn = snsTopicArnNode.GetText();
+      m_snsTopicArn = Aws::Utils::Xml::DecodeEscapedXmlText(snsTopicArnNode.GetText());
       m_snsTopicArnHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = statusNode.GetText();
+      m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
     XmlNode subscriptionCreationTimeNode = resultNode.FirstChild("SubscriptionCreationTime");
     if(!subscriptionCreationTimeNode.IsNull())
     {
-      m_subscriptionCreationTime = subscriptionCreationTimeNode.GetText();
+      m_subscriptionCreationTime = Aws::Utils::Xml::DecodeEscapedXmlText(subscriptionCreationTimeNode.GetText());
       m_subscriptionCreationTimeHasBeenSet = true;
     }
     XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
     if(!sourceTypeNode.IsNull())
     {
-      m_sourceType = sourceTypeNode.GetText();
+      m_sourceType = Aws::Utils::Xml::DecodeEscapedXmlText(sourceTypeNode.GetText());
       m_sourceTypeHasBeenSet = true;
     }
     XmlNode sourceIdsListNode = resultNode.FirstChild("SourceIdsList");
@@ -130,13 +130,13 @@ EventSubscription& EventSubscription::operator =(const XmlNode& xmlNode)
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
     if(!enabledNode.IsNull())
     {
-      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
+      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
     XmlNode eventSubscriptionArnNode = resultNode.FirstChild("EventSubscriptionArn");
     if(!eventSubscriptionArnNode.IsNull())
     {
-      m_eventSubscriptionArn = eventSubscriptionArnNode.GetText();
+      m_eventSubscriptionArn = Aws::Utils::Xml::DecodeEscapedXmlText(eventSubscriptionArnNode.GetText());
       m_eventSubscriptionArnHasBeenSet = true;
     }
   }

@@ -51,17 +51,17 @@ GetSAMLProviderResult& GetSAMLProviderResult::operator =(const Aws::AmazonWebSer
     XmlNode sAMLMetadataDocumentNode = resultNode.FirstChild("SAMLMetadataDocument");
     if(!sAMLMetadataDocumentNode.IsNull())
     {
-      m_sAMLMetadataDocument = sAMLMetadataDocumentNode.GetText();
+      m_sAMLMetadataDocument = Aws::Utils::Xml::DecodeEscapedXmlText(sAMLMetadataDocumentNode.GetText());
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = DateTime(StringUtils::Trim(createDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode validUntilNode = resultNode.FirstChild("ValidUntil");
     if(!validUntilNode.IsNull())
     {
-      m_validUntil = DateTime(StringUtils::Trim(validUntilNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_validUntil = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validUntilNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
   }
 

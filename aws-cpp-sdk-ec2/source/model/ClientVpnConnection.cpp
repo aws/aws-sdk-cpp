@@ -74,67 +74,67 @@ ClientVpnConnection& ClientVpnConnection::operator =(const XmlNode& xmlNode)
     XmlNode clientVpnEndpointIdNode = resultNode.FirstChild("clientVpnEndpointId");
     if(!clientVpnEndpointIdNode.IsNull())
     {
-      m_clientVpnEndpointId = clientVpnEndpointIdNode.GetText();
+      m_clientVpnEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(clientVpnEndpointIdNode.GetText());
       m_clientVpnEndpointIdHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = timestampNode.GetText();
+      m_timestamp = Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText());
       m_timestampHasBeenSet = true;
     }
     XmlNode connectionIdNode = resultNode.FirstChild("connectionId");
     if(!connectionIdNode.IsNull())
     {
-      m_connectionId = connectionIdNode.GetText();
+      m_connectionId = Aws::Utils::Xml::DecodeEscapedXmlText(connectionIdNode.GetText());
       m_connectionIdHasBeenSet = true;
     }
     XmlNode usernameNode = resultNode.FirstChild("username");
     if(!usernameNode.IsNull())
     {
-      m_username = usernameNode.GetText();
+      m_username = Aws::Utils::Xml::DecodeEscapedXmlText(usernameNode.GetText());
       m_usernameHasBeenSet = true;
     }
     XmlNode connectionEstablishedTimeNode = resultNode.FirstChild("connectionEstablishedTime");
     if(!connectionEstablishedTimeNode.IsNull())
     {
-      m_connectionEstablishedTime = connectionEstablishedTimeNode.GetText();
+      m_connectionEstablishedTime = Aws::Utils::Xml::DecodeEscapedXmlText(connectionEstablishedTimeNode.GetText());
       m_connectionEstablishedTimeHasBeenSet = true;
     }
     XmlNode ingressBytesNode = resultNode.FirstChild("ingressBytes");
     if(!ingressBytesNode.IsNull())
     {
-      m_ingressBytes = ingressBytesNode.GetText();
+      m_ingressBytes = Aws::Utils::Xml::DecodeEscapedXmlText(ingressBytesNode.GetText());
       m_ingressBytesHasBeenSet = true;
     }
     XmlNode egressBytesNode = resultNode.FirstChild("egressBytes");
     if(!egressBytesNode.IsNull())
     {
-      m_egressBytes = egressBytesNode.GetText();
+      m_egressBytes = Aws::Utils::Xml::DecodeEscapedXmlText(egressBytesNode.GetText());
       m_egressBytesHasBeenSet = true;
     }
     XmlNode ingressPacketsNode = resultNode.FirstChild("ingressPackets");
     if(!ingressPacketsNode.IsNull())
     {
-      m_ingressPackets = ingressPacketsNode.GetText();
+      m_ingressPackets = Aws::Utils::Xml::DecodeEscapedXmlText(ingressPacketsNode.GetText());
       m_ingressPacketsHasBeenSet = true;
     }
     XmlNode egressPacketsNode = resultNode.FirstChild("egressPackets");
     if(!egressPacketsNode.IsNull())
     {
-      m_egressPackets = egressPacketsNode.GetText();
+      m_egressPackets = Aws::Utils::Xml::DecodeEscapedXmlText(egressPacketsNode.GetText());
       m_egressPacketsHasBeenSet = true;
     }
     XmlNode clientIpNode = resultNode.FirstChild("clientIp");
     if(!clientIpNode.IsNull())
     {
-      m_clientIp = clientIpNode.GetText();
+      m_clientIp = Aws::Utils::Xml::DecodeEscapedXmlText(clientIpNode.GetText());
       m_clientIpHasBeenSet = true;
     }
     XmlNode commonNameNode = resultNode.FirstChild("commonName");
     if(!commonNameNode.IsNull())
     {
-      m_commonName = commonNameNode.GetText();
+      m_commonName = Aws::Utils::Xml::DecodeEscapedXmlText(commonNameNode.GetText());
       m_commonNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
@@ -146,7 +146,7 @@ ClientVpnConnection& ClientVpnConnection::operator =(const XmlNode& xmlNode)
     XmlNode connectionEndTimeNode = resultNode.FirstChild("connectionEndTime");
     if(!connectionEndTimeNode.IsNull())
     {
-      m_connectionEndTime = connectionEndTimeNode.GetText();
+      m_connectionEndTime = Aws::Utils::Xml::DecodeEscapedXmlText(connectionEndTimeNode.GetText());
       m_connectionEndTimeHasBeenSet = true;
     }
   }

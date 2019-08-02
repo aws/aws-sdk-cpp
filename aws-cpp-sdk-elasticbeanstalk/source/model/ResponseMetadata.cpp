@@ -50,7 +50,7 @@ ResponseMetadata& ResponseMetadata::operator =(const XmlNode& xmlNode)
     XmlNode requestIdNode = resultNode.FirstChild("RequestId");
     if(!requestIdNode.IsNull())
     {
-      m_requestId = requestIdNode.GetText();
+      m_requestId = Aws::Utils::Xml::DecodeEscapedXmlText(requestIdNode.GetText());
       m_requestIdHasBeenSet = true;
     }
   }

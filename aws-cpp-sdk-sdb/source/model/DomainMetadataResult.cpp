@@ -65,37 +65,37 @@ DomainMetadataResult& DomainMetadataResult::operator =(const Aws::AmazonWebServi
     XmlNode itemCountNode = resultNode.FirstChild("ItemCount");
     if(!itemCountNode.IsNull())
     {
-      m_itemCount = StringUtils::ConvertToInt32(StringUtils::Trim(itemCountNode.GetText().c_str()).c_str());
+      m_itemCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(itemCountNode.GetText()).c_str()).c_str());
     }
     XmlNode itemNamesSizeBytesNode = resultNode.FirstChild("ItemNamesSizeBytes");
     if(!itemNamesSizeBytesNode.IsNull())
     {
-      m_itemNamesSizeBytes = StringUtils::ConvertToInt64(StringUtils::Trim(itemNamesSizeBytesNode.GetText().c_str()).c_str());
+      m_itemNamesSizeBytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(itemNamesSizeBytesNode.GetText()).c_str()).c_str());
     }
     XmlNode attributeNameCountNode = resultNode.FirstChild("AttributeNameCount");
     if(!attributeNameCountNode.IsNull())
     {
-      m_attributeNameCount = StringUtils::ConvertToInt32(StringUtils::Trim(attributeNameCountNode.GetText().c_str()).c_str());
+      m_attributeNameCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attributeNameCountNode.GetText()).c_str()).c_str());
     }
     XmlNode attributeNamesSizeBytesNode = resultNode.FirstChild("AttributeNamesSizeBytes");
     if(!attributeNamesSizeBytesNode.IsNull())
     {
-      m_attributeNamesSizeBytes = StringUtils::ConvertToInt64(StringUtils::Trim(attributeNamesSizeBytesNode.GetText().c_str()).c_str());
+      m_attributeNamesSizeBytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attributeNamesSizeBytesNode.GetText()).c_str()).c_str());
     }
     XmlNode attributeValueCountNode = resultNode.FirstChild("AttributeValueCount");
     if(!attributeValueCountNode.IsNull())
     {
-      m_attributeValueCount = StringUtils::ConvertToInt32(StringUtils::Trim(attributeValueCountNode.GetText().c_str()).c_str());
+      m_attributeValueCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attributeValueCountNode.GetText()).c_str()).c_str());
     }
     XmlNode attributeValuesSizeBytesNode = resultNode.FirstChild("AttributeValuesSizeBytes");
     if(!attributeValuesSizeBytesNode.IsNull())
     {
-      m_attributeValuesSizeBytes = StringUtils::ConvertToInt64(StringUtils::Trim(attributeValuesSizeBytesNode.GetText().c_str()).c_str());
+      m_attributeValuesSizeBytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attributeValuesSizeBytesNode.GetText()).c_str()).c_str());
     }
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
     {
-      m_timestamp = StringUtils::ConvertToInt32(StringUtils::Trim(timestampNode.GetText().c_str()).c_str());
+      m_timestamp = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str());
     }
   }
 

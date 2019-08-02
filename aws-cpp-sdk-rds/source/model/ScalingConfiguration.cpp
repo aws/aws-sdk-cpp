@@ -66,31 +66,31 @@ ScalingConfiguration& ScalingConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode minCapacityNode = resultNode.FirstChild("MinCapacity");
     if(!minCapacityNode.IsNull())
     {
-      m_minCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(minCapacityNode.GetText().c_str()).c_str());
+      m_minCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minCapacityNode.GetText()).c_str()).c_str());
       m_minCapacityHasBeenSet = true;
     }
     XmlNode maxCapacityNode = resultNode.FirstChild("MaxCapacity");
     if(!maxCapacityNode.IsNull())
     {
-      m_maxCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(maxCapacityNode.GetText().c_str()).c_str());
+      m_maxCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxCapacityNode.GetText()).c_str()).c_str());
       m_maxCapacityHasBeenSet = true;
     }
     XmlNode autoPauseNode = resultNode.FirstChild("AutoPause");
     if(!autoPauseNode.IsNull())
     {
-      m_autoPause = StringUtils::ConvertToBool(StringUtils::Trim(autoPauseNode.GetText().c_str()).c_str());
+      m_autoPause = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoPauseNode.GetText()).c_str()).c_str());
       m_autoPauseHasBeenSet = true;
     }
     XmlNode secondsUntilAutoPauseNode = resultNode.FirstChild("SecondsUntilAutoPause");
     if(!secondsUntilAutoPauseNode.IsNull())
     {
-      m_secondsUntilAutoPause = StringUtils::ConvertToInt32(StringUtils::Trim(secondsUntilAutoPauseNode.GetText().c_str()).c_str());
+      m_secondsUntilAutoPause = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(secondsUntilAutoPauseNode.GetText()).c_str()).c_str());
       m_secondsUntilAutoPauseHasBeenSet = true;
     }
     XmlNode timeoutActionNode = resultNode.FirstChild("TimeoutAction");
     if(!timeoutActionNode.IsNull())
     {
-      m_timeoutAction = timeoutActionNode.GetText();
+      m_timeoutAction = Aws::Utils::Xml::DecodeEscapedXmlText(timeoutActionNode.GetText());
       m_timeoutActionHasBeenSet = true;
     }
   }

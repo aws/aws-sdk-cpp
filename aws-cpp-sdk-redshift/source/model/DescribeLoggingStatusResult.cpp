@@ -53,32 +53,32 @@ DescribeLoggingStatusResult& DescribeLoggingStatusResult::operator =(const Aws::
     XmlNode loggingEnabledNode = resultNode.FirstChild("LoggingEnabled");
     if(!loggingEnabledNode.IsNull())
     {
-      m_loggingEnabled = StringUtils::ConvertToBool(StringUtils::Trim(loggingEnabledNode.GetText().c_str()).c_str());
+      m_loggingEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(loggingEnabledNode.GetText()).c_str()).c_str());
     }
     XmlNode bucketNameNode = resultNode.FirstChild("BucketName");
     if(!bucketNameNode.IsNull())
     {
-      m_bucketName = bucketNameNode.GetText();
+      m_bucketName = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNameNode.GetText());
     }
     XmlNode s3KeyPrefixNode = resultNode.FirstChild("S3KeyPrefix");
     if(!s3KeyPrefixNode.IsNull())
     {
-      m_s3KeyPrefix = s3KeyPrefixNode.GetText();
+      m_s3KeyPrefix = Aws::Utils::Xml::DecodeEscapedXmlText(s3KeyPrefixNode.GetText());
     }
     XmlNode lastSuccessfulDeliveryTimeNode = resultNode.FirstChild("LastSuccessfulDeliveryTime");
     if(!lastSuccessfulDeliveryTimeNode.IsNull())
     {
-      m_lastSuccessfulDeliveryTime = DateTime(StringUtils::Trim(lastSuccessfulDeliveryTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastSuccessfulDeliveryTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastSuccessfulDeliveryTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode lastFailureTimeNode = resultNode.FirstChild("LastFailureTime");
     if(!lastFailureTimeNode.IsNull())
     {
-      m_lastFailureTime = DateTime(StringUtils::Trim(lastFailureTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastFailureTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastFailureTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
     XmlNode lastFailureMessageNode = resultNode.FirstChild("LastFailureMessage");
     if(!lastFailureMessageNode.IsNull())
     {
-      m_lastFailureMessage = lastFailureMessageNode.GetText();
+      m_lastFailureMessage = Aws::Utils::Xml::DecodeEscapedXmlText(lastFailureMessageNode.GetText());
     }
   }
 

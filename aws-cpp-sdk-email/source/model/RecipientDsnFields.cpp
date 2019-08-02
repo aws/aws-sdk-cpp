@@ -64,37 +64,37 @@ RecipientDsnFields& RecipientDsnFields::operator =(const XmlNode& xmlNode)
     XmlNode finalRecipientNode = resultNode.FirstChild("FinalRecipient");
     if(!finalRecipientNode.IsNull())
     {
-      m_finalRecipient = finalRecipientNode.GetText();
+      m_finalRecipient = Aws::Utils::Xml::DecodeEscapedXmlText(finalRecipientNode.GetText());
       m_finalRecipientHasBeenSet = true;
     }
     XmlNode actionNode = resultNode.FirstChild("Action");
     if(!actionNode.IsNull())
     {
-      m_action = DsnActionMapper::GetDsnActionForName(StringUtils::Trim(actionNode.GetText().c_str()).c_str());
+      m_action = DsnActionMapper::GetDsnActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionNode.GetText()).c_str()).c_str());
       m_actionHasBeenSet = true;
     }
     XmlNode remoteMtaNode = resultNode.FirstChild("RemoteMta");
     if(!remoteMtaNode.IsNull())
     {
-      m_remoteMta = remoteMtaNode.GetText();
+      m_remoteMta = Aws::Utils::Xml::DecodeEscapedXmlText(remoteMtaNode.GetText());
       m_remoteMtaHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = statusNode.GetText();
+      m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
     XmlNode diagnosticCodeNode = resultNode.FirstChild("DiagnosticCode");
     if(!diagnosticCodeNode.IsNull())
     {
-      m_diagnosticCode = diagnosticCodeNode.GetText();
+      m_diagnosticCode = Aws::Utils::Xml::DecodeEscapedXmlText(diagnosticCodeNode.GetText());
       m_diagnosticCodeHasBeenSet = true;
     }
     XmlNode lastAttemptDateNode = resultNode.FirstChild("LastAttemptDate");
     if(!lastAttemptDateNode.IsNull())
     {
-      m_lastAttemptDate = DateTime(StringUtils::Trim(lastAttemptDateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastAttemptDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastAttemptDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_lastAttemptDateHasBeenSet = true;
     }
     XmlNode extensionFieldsNode = resultNode.FirstChild("ExtensionFields");

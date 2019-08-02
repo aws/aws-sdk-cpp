@@ -53,22 +53,22 @@ DescribeEnvironmentHealthResult& DescribeEnvironmentHealthResult::operator =(con
     XmlNode environmentNameNode = resultNode.FirstChild("EnvironmentName");
     if(!environmentNameNode.IsNull())
     {
-      m_environmentName = environmentNameNode.GetText();
+      m_environmentName = Aws::Utils::Xml::DecodeEscapedXmlText(environmentNameNode.GetText());
     }
     XmlNode healthStatusNode = resultNode.FirstChild("HealthStatus");
     if(!healthStatusNode.IsNull())
     {
-      m_healthStatus = healthStatusNode.GetText();
+      m_healthStatus = Aws::Utils::Xml::DecodeEscapedXmlText(healthStatusNode.GetText());
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = EnvironmentHealthMapper::GetEnvironmentHealthForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = EnvironmentHealthMapper::GetEnvironmentHealthForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
     }
     XmlNode colorNode = resultNode.FirstChild("Color");
     if(!colorNode.IsNull())
     {
-      m_color = colorNode.GetText();
+      m_color = Aws::Utils::Xml::DecodeEscapedXmlText(colorNode.GetText());
     }
     XmlNode causesNode = resultNode.FirstChild("Causes");
     if(!causesNode.IsNull())
@@ -94,7 +94,7 @@ DescribeEnvironmentHealthResult& DescribeEnvironmentHealthResult::operator =(con
     XmlNode refreshedAtNode = resultNode.FirstChild("RefreshedAt");
     if(!refreshedAtNode.IsNull())
     {
-      m_refreshedAt = DateTime(StringUtils::Trim(refreshedAtNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_refreshedAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(refreshedAtNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
   }
 

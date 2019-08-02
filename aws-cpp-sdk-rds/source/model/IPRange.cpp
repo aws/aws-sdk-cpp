@@ -52,13 +52,13 @@ IPRange& IPRange::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = statusNode.GetText();
+      m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
     XmlNode cIDRIPNode = resultNode.FirstChild("CIDRIP");
     if(!cIDRIPNode.IsNull())
     {
-      m_cIDRIP = cIDRIPNode.GetText();
+      m_cIDRIP = Aws::Utils::Xml::DecodeEscapedXmlText(cIDRIPNode.GetText());
       m_cIDRIPHasBeenSet = true;
     }
   }

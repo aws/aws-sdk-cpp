@@ -52,7 +52,7 @@ SolutionStackDescription& SolutionStackDescription::operator =(const XmlNode& xm
     XmlNode solutionStackNameNode = resultNode.FirstChild("SolutionStackName");
     if(!solutionStackNameNode.IsNull())
     {
-      m_solutionStackName = solutionStackNameNode.GetText();
+      m_solutionStackName = Aws::Utils::Xml::DecodeEscapedXmlText(solutionStackNameNode.GetText());
       m_solutionStackNameHasBeenSet = true;
     }
     XmlNode permittedFileTypesNode = resultNode.FirstChild("PermittedFileTypes");

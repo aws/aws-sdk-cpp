@@ -60,25 +60,25 @@ NodeGroupConfiguration& NodeGroupConfiguration::operator =(const XmlNode& xmlNod
     XmlNode nodeGroupIdNode = resultNode.FirstChild("NodeGroupId");
     if(!nodeGroupIdNode.IsNull())
     {
-      m_nodeGroupId = nodeGroupIdNode.GetText();
+      m_nodeGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(nodeGroupIdNode.GetText());
       m_nodeGroupIdHasBeenSet = true;
     }
     XmlNode slotsNode = resultNode.FirstChild("Slots");
     if(!slotsNode.IsNull())
     {
-      m_slots = slotsNode.GetText();
+      m_slots = Aws::Utils::Xml::DecodeEscapedXmlText(slotsNode.GetText());
       m_slotsHasBeenSet = true;
     }
     XmlNode replicaCountNode = resultNode.FirstChild("ReplicaCount");
     if(!replicaCountNode.IsNull())
     {
-      m_replicaCount = StringUtils::ConvertToInt32(StringUtils::Trim(replicaCountNode.GetText().c_str()).c_str());
+      m_replicaCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replicaCountNode.GetText()).c_str()).c_str());
       m_replicaCountHasBeenSet = true;
     }
     XmlNode primaryAvailabilityZoneNode = resultNode.FirstChild("PrimaryAvailabilityZone");
     if(!primaryAvailabilityZoneNode.IsNull())
     {
-      m_primaryAvailabilityZone = primaryAvailabilityZoneNode.GetText();
+      m_primaryAvailabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(primaryAvailabilityZoneNode.GetText());
       m_primaryAvailabilityZoneHasBeenSet = true;
     }
     XmlNode replicaAvailabilityZonesNode = resultNode.FirstChild("ReplicaAvailabilityZones");

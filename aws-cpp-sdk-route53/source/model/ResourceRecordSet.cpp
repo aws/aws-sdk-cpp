@@ -86,31 +86,31 @@ ResourceRecordSet& ResourceRecordSet::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = nameNode.GetText();
+      m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
+      m_type = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
       m_typeHasBeenSet = true;
     }
     XmlNode setIdentifierNode = resultNode.FirstChild("SetIdentifier");
     if(!setIdentifierNode.IsNull())
     {
-      m_setIdentifier = setIdentifierNode.GetText();
+      m_setIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(setIdentifierNode.GetText());
       m_setIdentifierHasBeenSet = true;
     }
     XmlNode weightNode = resultNode.FirstChild("Weight");
     if(!weightNode.IsNull())
     {
-      m_weight = StringUtils::ConvertToInt64(StringUtils::Trim(weightNode.GetText().c_str()).c_str());
+      m_weight = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(weightNode.GetText()).c_str()).c_str());
       m_weightHasBeenSet = true;
     }
     XmlNode regionNode = resultNode.FirstChild("Region");
     if(!regionNode.IsNull())
     {
-      m_region = ResourceRecordSetRegionMapper::GetResourceRecordSetRegionForName(StringUtils::Trim(regionNode.GetText().c_str()).c_str());
+      m_region = ResourceRecordSetRegionMapper::GetResourceRecordSetRegionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(regionNode.GetText()).c_str()).c_str());
       m_regionHasBeenSet = true;
     }
     XmlNode geoLocationNode = resultNode.FirstChild("GeoLocation");
@@ -122,19 +122,19 @@ ResourceRecordSet& ResourceRecordSet::operator =(const XmlNode& xmlNode)
     XmlNode failoverNode = resultNode.FirstChild("Failover");
     if(!failoverNode.IsNull())
     {
-      m_failover = ResourceRecordSetFailoverMapper::GetResourceRecordSetFailoverForName(StringUtils::Trim(failoverNode.GetText().c_str()).c_str());
+      m_failover = ResourceRecordSetFailoverMapper::GetResourceRecordSetFailoverForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(failoverNode.GetText()).c_str()).c_str());
       m_failoverHasBeenSet = true;
     }
     XmlNode multiValueAnswerNode = resultNode.FirstChild("MultiValueAnswer");
     if(!multiValueAnswerNode.IsNull())
     {
-      m_multiValueAnswer = StringUtils::ConvertToBool(StringUtils::Trim(multiValueAnswerNode.GetText().c_str()).c_str());
+      m_multiValueAnswer = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiValueAnswerNode.GetText()).c_str()).c_str());
       m_multiValueAnswerHasBeenSet = true;
     }
     XmlNode tTLNode = resultNode.FirstChild("TTL");
     if(!tTLNode.IsNull())
     {
-      m_tTL = StringUtils::ConvertToInt64(StringUtils::Trim(tTLNode.GetText().c_str()).c_str());
+      m_tTL = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tTLNode.GetText()).c_str()).c_str());
       m_tTLHasBeenSet = true;
     }
     XmlNode resourceRecordsNode = resultNode.FirstChild("ResourceRecords");
@@ -158,13 +158,13 @@ ResourceRecordSet& ResourceRecordSet::operator =(const XmlNode& xmlNode)
     XmlNode healthCheckIdNode = resultNode.FirstChild("HealthCheckId");
     if(!healthCheckIdNode.IsNull())
     {
-      m_healthCheckId = healthCheckIdNode.GetText();
+      m_healthCheckId = Aws::Utils::Xml::DecodeEscapedXmlText(healthCheckIdNode.GetText());
       m_healthCheckIdHasBeenSet = true;
     }
     XmlNode trafficPolicyInstanceIdNode = resultNode.FirstChild("TrafficPolicyInstanceId");
     if(!trafficPolicyInstanceIdNode.IsNull())
     {
-      m_trafficPolicyInstanceId = trafficPolicyInstanceIdNode.GetText();
+      m_trafficPolicyInstanceId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficPolicyInstanceIdNode.GetText());
       m_trafficPolicyInstanceIdHasBeenSet = true;
     }
   }

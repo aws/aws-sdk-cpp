@@ -48,12 +48,12 @@ GetBucketVersioningResult& GetBucketVersioningResult::operator =(const Aws::Amaz
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = BucketVersioningStatusMapper::GetBucketVersioningStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = BucketVersioningStatusMapper::GetBucketVersioningStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
     }
     XmlNode mFADeleteNode = resultNode.FirstChild("MfaDelete");
     if(!mFADeleteNode.IsNull())
     {
-      m_mFADelete = MFADeleteStatusMapper::GetMFADeleteStatusForName(StringUtils::Trim(mFADeleteNode.GetText().c_str()).c_str());
+      m_mFADelete = MFADeleteStatusMapper::GetMFADeleteStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(mFADeleteNode.GetText()).c_str()).c_str());
     }
   }
 

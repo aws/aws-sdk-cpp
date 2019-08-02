@@ -52,7 +52,7 @@ AbortIncompleteMultipartUpload& AbortIncompleteMultipartUpload::operator =(const
     XmlNode daysAfterInitiationNode = resultNode.FirstChild("DaysAfterInitiation");
     if(!daysAfterInitiationNode.IsNull())
     {
-      m_daysAfterInitiation = StringUtils::ConvertToInt32(StringUtils::Trim(daysAfterInitiationNode.GetText().c_str()).c_str());
+      m_daysAfterInitiation = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(daysAfterInitiationNode.GetText()).c_str()).c_str());
       m_daysAfterInitiationHasBeenSet = true;
     }
   }

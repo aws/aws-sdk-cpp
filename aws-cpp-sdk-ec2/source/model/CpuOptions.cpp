@@ -56,13 +56,13 @@ CpuOptions& CpuOptions::operator =(const XmlNode& xmlNode)
     XmlNode coreCountNode = resultNode.FirstChild("coreCount");
     if(!coreCountNode.IsNull())
     {
-      m_coreCount = StringUtils::ConvertToInt32(StringUtils::Trim(coreCountNode.GetText().c_str()).c_str());
+      m_coreCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(coreCountNode.GetText()).c_str()).c_str());
       m_coreCountHasBeenSet = true;
     }
     XmlNode threadsPerCoreNode = resultNode.FirstChild("threadsPerCore");
     if(!threadsPerCoreNode.IsNull())
     {
-      m_threadsPerCore = StringUtils::ConvertToInt32(StringUtils::Trim(threadsPerCoreNode.GetText().c_str()).c_str());
+      m_threadsPerCore = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(threadsPerCoreNode.GetText()).c_str()).c_str());
       m_threadsPerCoreHasBeenSet = true;
     }
   }

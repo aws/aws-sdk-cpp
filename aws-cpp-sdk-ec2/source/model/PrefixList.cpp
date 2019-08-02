@@ -66,13 +66,13 @@ PrefixList& PrefixList::operator =(const XmlNode& xmlNode)
     XmlNode prefixListIdNode = resultNode.FirstChild("prefixListId");
     if(!prefixListIdNode.IsNull())
     {
-      m_prefixListId = prefixListIdNode.GetText();
+      m_prefixListId = Aws::Utils::Xml::DecodeEscapedXmlText(prefixListIdNode.GetText());
       m_prefixListIdHasBeenSet = true;
     }
     XmlNode prefixListNameNode = resultNode.FirstChild("prefixListName");
     if(!prefixListNameNode.IsNull())
     {
-      m_prefixListName = prefixListNameNode.GetText();
+      m_prefixListName = Aws::Utils::Xml::DecodeEscapedXmlText(prefixListNameNode.GetText());
       m_prefixListNameHasBeenSet = true;
     }
   }

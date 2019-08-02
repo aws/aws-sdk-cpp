@@ -51,7 +51,7 @@ VerifyDomainIdentityResult& VerifyDomainIdentityResult::operator =(const Aws::Am
     XmlNode verificationTokenNode = resultNode.FirstChild("VerificationToken");
     if(!verificationTokenNode.IsNull())
     {
-      m_verificationToken = verificationTokenNode.GetText();
+      m_verificationToken = Aws::Utils::Xml::DecodeEscapedXmlText(verificationTokenNode.GetText());
     }
   }
 

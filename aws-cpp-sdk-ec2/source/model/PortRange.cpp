@@ -56,13 +56,13 @@ PortRange& PortRange::operator =(const XmlNode& xmlNode)
     XmlNode fromNode = resultNode.FirstChild("from");
     if(!fromNode.IsNull())
     {
-      m_from = StringUtils::ConvertToInt32(StringUtils::Trim(fromNode.GetText().c_str()).c_str());
+      m_from = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fromNode.GetText()).c_str()).c_str());
       m_fromHasBeenSet = true;
     }
     XmlNode toNode = resultNode.FirstChild("to");
     if(!toNode.IsNull())
     {
-      m_to = StringUtils::ConvertToInt32(StringUtils::Trim(toNode.GetText().c_str()).c_str());
+      m_to = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(toNode.GetText()).c_str()).c_str());
       m_toHasBeenSet = true;
     }
   }

@@ -66,37 +66,37 @@ TextOptions& TextOptions::operator =(const XmlNode& xmlNode)
     XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
     if(!defaultValueNode.IsNull())
     {
-      m_defaultValue = defaultValueNode.GetText();
+      m_defaultValue = Aws::Utils::Xml::DecodeEscapedXmlText(defaultValueNode.GetText());
       m_defaultValueHasBeenSet = true;
     }
     XmlNode sourceFieldNode = resultNode.FirstChild("SourceField");
     if(!sourceFieldNode.IsNull())
     {
-      m_sourceField = sourceFieldNode.GetText();
+      m_sourceField = Aws::Utils::Xml::DecodeEscapedXmlText(sourceFieldNode.GetText());
       m_sourceFieldHasBeenSet = true;
     }
     XmlNode returnEnabledNode = resultNode.FirstChild("ReturnEnabled");
     if(!returnEnabledNode.IsNull())
     {
-      m_returnEnabled = StringUtils::ConvertToBool(StringUtils::Trim(returnEnabledNode.GetText().c_str()).c_str());
+      m_returnEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnEnabledNode.GetText()).c_str()).c_str());
       m_returnEnabledHasBeenSet = true;
     }
     XmlNode sortEnabledNode = resultNode.FirstChild("SortEnabled");
     if(!sortEnabledNode.IsNull())
     {
-      m_sortEnabled = StringUtils::ConvertToBool(StringUtils::Trim(sortEnabledNode.GetText().c_str()).c_str());
+      m_sortEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sortEnabledNode.GetText()).c_str()).c_str());
       m_sortEnabledHasBeenSet = true;
     }
     XmlNode highlightEnabledNode = resultNode.FirstChild("HighlightEnabled");
     if(!highlightEnabledNode.IsNull())
     {
-      m_highlightEnabled = StringUtils::ConvertToBool(StringUtils::Trim(highlightEnabledNode.GetText().c_str()).c_str());
+      m_highlightEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(highlightEnabledNode.GetText()).c_str()).c_str());
       m_highlightEnabledHasBeenSet = true;
     }
     XmlNode analysisSchemeNode = resultNode.FirstChild("AnalysisScheme");
     if(!analysisSchemeNode.IsNull())
     {
-      m_analysisScheme = analysisSchemeNode.GetText();
+      m_analysisScheme = Aws::Utils::Xml::DecodeEscapedXmlText(analysisSchemeNode.GetText());
       m_analysisSchemeHasBeenSet = true;
     }
   }

@@ -51,7 +51,7 @@ DescribeScheduledInstanceAvailabilityResponse& DescribeScheduledInstanceAvailabi
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = nextTokenNode.GetText();
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
     }
     XmlNode scheduledInstanceAvailabilitySetNode = resultNode.FirstChild("scheduledInstanceAvailabilitySet");
     if(!scheduledInstanceAvailabilitySetNode.IsNull())

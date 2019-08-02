@@ -60,19 +60,19 @@ Range& Range::operator =(const XmlNode& xmlNode)
     XmlNode fromNode = resultNode.FirstChild("From");
     if(!fromNode.IsNull())
     {
-      m_from = StringUtils::ConvertToInt32(StringUtils::Trim(fromNode.GetText().c_str()).c_str());
+      m_from = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fromNode.GetText()).c_str()).c_str());
       m_fromHasBeenSet = true;
     }
     XmlNode toNode = resultNode.FirstChild("To");
     if(!toNode.IsNull())
     {
-      m_to = StringUtils::ConvertToInt32(StringUtils::Trim(toNode.GetText().c_str()).c_str());
+      m_to = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(toNode.GetText()).c_str()).c_str());
       m_toHasBeenSet = true;
     }
     XmlNode stepNode = resultNode.FirstChild("Step");
     if(!stepNode.IsNull())
     {
-      m_step = StringUtils::ConvertToInt32(StringUtils::Trim(stepNode.GetText().c_str()).c_str());
+      m_step = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stepNode.GetText()).c_str()).c_str());
       m_stepHasBeenSet = true;
     }
   }

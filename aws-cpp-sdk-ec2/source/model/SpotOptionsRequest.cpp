@@ -74,43 +74,43 @@ SpotOptionsRequest& SpotOptionsRequest::operator =(const XmlNode& xmlNode)
     XmlNode allocationStrategyNode = resultNode.FirstChild("AllocationStrategy");
     if(!allocationStrategyNode.IsNull())
     {
-      m_allocationStrategy = SpotAllocationStrategyMapper::GetSpotAllocationStrategyForName(StringUtils::Trim(allocationStrategyNode.GetText().c_str()).c_str());
+      m_allocationStrategy = SpotAllocationStrategyMapper::GetSpotAllocationStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocationStrategyNode.GetText()).c_str()).c_str());
       m_allocationStrategyHasBeenSet = true;
     }
     XmlNode instanceInterruptionBehaviorNode = resultNode.FirstChild("InstanceInterruptionBehavior");
     if(!instanceInterruptionBehaviorNode.IsNull())
     {
-      m_instanceInterruptionBehavior = SpotInstanceInterruptionBehaviorMapper::GetSpotInstanceInterruptionBehaviorForName(StringUtils::Trim(instanceInterruptionBehaviorNode.GetText().c_str()).c_str());
+      m_instanceInterruptionBehavior = SpotInstanceInterruptionBehaviorMapper::GetSpotInstanceInterruptionBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceInterruptionBehaviorNode.GetText()).c_str()).c_str());
       m_instanceInterruptionBehaviorHasBeenSet = true;
     }
     XmlNode instancePoolsToUseCountNode = resultNode.FirstChild("InstancePoolsToUseCount");
     if(!instancePoolsToUseCountNode.IsNull())
     {
-      m_instancePoolsToUseCount = StringUtils::ConvertToInt32(StringUtils::Trim(instancePoolsToUseCountNode.GetText().c_str()).c_str());
+      m_instancePoolsToUseCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancePoolsToUseCountNode.GetText()).c_str()).c_str());
       m_instancePoolsToUseCountHasBeenSet = true;
     }
     XmlNode singleInstanceTypeNode = resultNode.FirstChild("SingleInstanceType");
     if(!singleInstanceTypeNode.IsNull())
     {
-      m_singleInstanceType = StringUtils::ConvertToBool(StringUtils::Trim(singleInstanceTypeNode.GetText().c_str()).c_str());
+      m_singleInstanceType = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(singleInstanceTypeNode.GetText()).c_str()).c_str());
       m_singleInstanceTypeHasBeenSet = true;
     }
     XmlNode singleAvailabilityZoneNode = resultNode.FirstChild("SingleAvailabilityZone");
     if(!singleAvailabilityZoneNode.IsNull())
     {
-      m_singleAvailabilityZone = StringUtils::ConvertToBool(StringUtils::Trim(singleAvailabilityZoneNode.GetText().c_str()).c_str());
+      m_singleAvailabilityZone = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(singleAvailabilityZoneNode.GetText()).c_str()).c_str());
       m_singleAvailabilityZoneHasBeenSet = true;
     }
     XmlNode minTargetCapacityNode = resultNode.FirstChild("MinTargetCapacity");
     if(!minTargetCapacityNode.IsNull())
     {
-      m_minTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(minTargetCapacityNode.GetText().c_str()).c_str());
+      m_minTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minTargetCapacityNode.GetText()).c_str()).c_str());
       m_minTargetCapacityHasBeenSet = true;
     }
     XmlNode maxTotalPriceNode = resultNode.FirstChild("MaxTotalPrice");
     if(!maxTotalPriceNode.IsNull())
     {
-      m_maxTotalPrice = maxTotalPriceNode.GetText();
+      m_maxTotalPrice = Aws::Utils::Xml::DecodeEscapedXmlText(maxTotalPriceNode.GetText());
       m_maxTotalPriceHasBeenSet = true;
     }
   }

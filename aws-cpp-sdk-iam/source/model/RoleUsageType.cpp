@@ -52,7 +52,7 @@ RoleUsageType& RoleUsageType::operator =(const XmlNode& xmlNode)
     XmlNode regionNode = resultNode.FirstChild("Region");
     if(!regionNode.IsNull())
     {
-      m_region = regionNode.GetText();
+      m_region = Aws::Utils::Xml::DecodeEscapedXmlText(regionNode.GetText());
       m_regionHasBeenSet = true;
     }
     XmlNode resourcesNode = resultNode.FirstChild("Resources");

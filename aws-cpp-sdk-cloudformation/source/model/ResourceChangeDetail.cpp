@@ -66,19 +66,19 @@ ResourceChangeDetail& ResourceChangeDetail::operator =(const XmlNode& xmlNode)
     XmlNode evaluationNode = resultNode.FirstChild("Evaluation");
     if(!evaluationNode.IsNull())
     {
-      m_evaluation = EvaluationTypeMapper::GetEvaluationTypeForName(StringUtils::Trim(evaluationNode.GetText().c_str()).c_str());
+      m_evaluation = EvaluationTypeMapper::GetEvaluationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evaluationNode.GetText()).c_str()).c_str());
       m_evaluationHasBeenSet = true;
     }
     XmlNode changeSourceNode = resultNode.FirstChild("ChangeSource");
     if(!changeSourceNode.IsNull())
     {
-      m_changeSource = ChangeSourceMapper::GetChangeSourceForName(StringUtils::Trim(changeSourceNode.GetText().c_str()).c_str());
+      m_changeSource = ChangeSourceMapper::GetChangeSourceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(changeSourceNode.GetText()).c_str()).c_str());
       m_changeSourceHasBeenSet = true;
     }
     XmlNode causingEntityNode = resultNode.FirstChild("CausingEntity");
     if(!causingEntityNode.IsNull())
     {
-      m_causingEntity = causingEntityNode.GetText();
+      m_causingEntity = Aws::Utils::Xml::DecodeEscapedXmlText(causingEntityNode.GetText());
       m_causingEntityHasBeenSet = true;
     }
   }

@@ -58,25 +58,25 @@ RouteTableAssociation& RouteTableAssociation::operator =(const XmlNode& xmlNode)
     XmlNode mainNode = resultNode.FirstChild("main");
     if(!mainNode.IsNull())
     {
-      m_main = StringUtils::ConvertToBool(StringUtils::Trim(mainNode.GetText().c_str()).c_str());
+      m_main = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(mainNode.GetText()).c_str()).c_str());
       m_mainHasBeenSet = true;
     }
     XmlNode routeTableAssociationIdNode = resultNode.FirstChild("routeTableAssociationId");
     if(!routeTableAssociationIdNode.IsNull())
     {
-      m_routeTableAssociationId = routeTableAssociationIdNode.GetText();
+      m_routeTableAssociationId = Aws::Utils::Xml::DecodeEscapedXmlText(routeTableAssociationIdNode.GetText());
       m_routeTableAssociationIdHasBeenSet = true;
     }
     XmlNode routeTableIdNode = resultNode.FirstChild("routeTableId");
     if(!routeTableIdNode.IsNull())
     {
-      m_routeTableId = routeTableIdNode.GetText();
+      m_routeTableId = Aws::Utils::Xml::DecodeEscapedXmlText(routeTableIdNode.GetText());
       m_routeTableIdHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
-      m_subnetId = subnetIdNode.GetText();
+      m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
     }
   }

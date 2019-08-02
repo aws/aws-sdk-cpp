@@ -98,79 +98,79 @@ TargetGroup& TargetGroup::operator =(const XmlNode& xmlNode)
     XmlNode targetGroupArnNode = resultNode.FirstChild("TargetGroupArn");
     if(!targetGroupArnNode.IsNull())
     {
-      m_targetGroupArn = targetGroupArnNode.GetText();
+      m_targetGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(targetGroupArnNode.GetText());
       m_targetGroupArnHasBeenSet = true;
     }
     XmlNode targetGroupNameNode = resultNode.FirstChild("TargetGroupName");
     if(!targetGroupNameNode.IsNull())
     {
-      m_targetGroupName = targetGroupNameNode.GetText();
+      m_targetGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(targetGroupNameNode.GetText());
       m_targetGroupNameHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = ProtocolEnumMapper::GetProtocolEnumForName(StringUtils::Trim(protocolNode.GetText().c_str()).c_str());
+      m_protocol = ProtocolEnumMapper::GetProtocolEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
       m_protocolHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
     if(!portNode.IsNull())
     {
-      m_port = StringUtils::ConvertToInt32(StringUtils::Trim(portNode.GetText().c_str()).c_str());
+      m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = vpcIdNode.GetText();
+      m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
     }
     XmlNode healthCheckProtocolNode = resultNode.FirstChild("HealthCheckProtocol");
     if(!healthCheckProtocolNode.IsNull())
     {
-      m_healthCheckProtocol = ProtocolEnumMapper::GetProtocolEnumForName(StringUtils::Trim(healthCheckProtocolNode.GetText().c_str()).c_str());
+      m_healthCheckProtocol = ProtocolEnumMapper::GetProtocolEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(healthCheckProtocolNode.GetText()).c_str()).c_str());
       m_healthCheckProtocolHasBeenSet = true;
     }
     XmlNode healthCheckPortNode = resultNode.FirstChild("HealthCheckPort");
     if(!healthCheckPortNode.IsNull())
     {
-      m_healthCheckPort = healthCheckPortNode.GetText();
+      m_healthCheckPort = Aws::Utils::Xml::DecodeEscapedXmlText(healthCheckPortNode.GetText());
       m_healthCheckPortHasBeenSet = true;
     }
     XmlNode healthCheckEnabledNode = resultNode.FirstChild("HealthCheckEnabled");
     if(!healthCheckEnabledNode.IsNull())
     {
-      m_healthCheckEnabled = StringUtils::ConvertToBool(StringUtils::Trim(healthCheckEnabledNode.GetText().c_str()).c_str());
+      m_healthCheckEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(healthCheckEnabledNode.GetText()).c_str()).c_str());
       m_healthCheckEnabledHasBeenSet = true;
     }
     XmlNode healthCheckIntervalSecondsNode = resultNode.FirstChild("HealthCheckIntervalSeconds");
     if(!healthCheckIntervalSecondsNode.IsNull())
     {
-      m_healthCheckIntervalSeconds = StringUtils::ConvertToInt32(StringUtils::Trim(healthCheckIntervalSecondsNode.GetText().c_str()).c_str());
+      m_healthCheckIntervalSeconds = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(healthCheckIntervalSecondsNode.GetText()).c_str()).c_str());
       m_healthCheckIntervalSecondsHasBeenSet = true;
     }
     XmlNode healthCheckTimeoutSecondsNode = resultNode.FirstChild("HealthCheckTimeoutSeconds");
     if(!healthCheckTimeoutSecondsNode.IsNull())
     {
-      m_healthCheckTimeoutSeconds = StringUtils::ConvertToInt32(StringUtils::Trim(healthCheckTimeoutSecondsNode.GetText().c_str()).c_str());
+      m_healthCheckTimeoutSeconds = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(healthCheckTimeoutSecondsNode.GetText()).c_str()).c_str());
       m_healthCheckTimeoutSecondsHasBeenSet = true;
     }
     XmlNode healthyThresholdCountNode = resultNode.FirstChild("HealthyThresholdCount");
     if(!healthyThresholdCountNode.IsNull())
     {
-      m_healthyThresholdCount = StringUtils::ConvertToInt32(StringUtils::Trim(healthyThresholdCountNode.GetText().c_str()).c_str());
+      m_healthyThresholdCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(healthyThresholdCountNode.GetText()).c_str()).c_str());
       m_healthyThresholdCountHasBeenSet = true;
     }
     XmlNode unhealthyThresholdCountNode = resultNode.FirstChild("UnhealthyThresholdCount");
     if(!unhealthyThresholdCountNode.IsNull())
     {
-      m_unhealthyThresholdCount = StringUtils::ConvertToInt32(StringUtils::Trim(unhealthyThresholdCountNode.GetText().c_str()).c_str());
+      m_unhealthyThresholdCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unhealthyThresholdCountNode.GetText()).c_str()).c_str());
       m_unhealthyThresholdCountHasBeenSet = true;
     }
     XmlNode healthCheckPathNode = resultNode.FirstChild("HealthCheckPath");
     if(!healthCheckPathNode.IsNull())
     {
-      m_healthCheckPath = healthCheckPathNode.GetText();
+      m_healthCheckPath = Aws::Utils::Xml::DecodeEscapedXmlText(healthCheckPathNode.GetText());
       m_healthCheckPathHasBeenSet = true;
     }
     XmlNode matcherNode = resultNode.FirstChild("Matcher");
@@ -194,7 +194,7 @@ TargetGroup& TargetGroup::operator =(const XmlNode& xmlNode)
     XmlNode targetTypeNode = resultNode.FirstChild("TargetType");
     if(!targetTypeNode.IsNull())
     {
-      m_targetType = TargetTypeEnumMapper::GetTargetTypeEnumForName(StringUtils::Trim(targetTypeNode.GetText().c_str()).c_str());
+      m_targetType = TargetTypeEnumMapper::GetTargetTypeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetTypeNode.GetText()).c_str()).c_str());
       m_targetTypeHasBeenSet = true;
     }
   }

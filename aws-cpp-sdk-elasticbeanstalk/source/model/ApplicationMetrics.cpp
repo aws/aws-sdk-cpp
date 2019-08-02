@@ -60,13 +60,13 @@ ApplicationMetrics& ApplicationMetrics::operator =(const XmlNode& xmlNode)
     XmlNode durationNode = resultNode.FirstChild("Duration");
     if(!durationNode.IsNull())
     {
-      m_duration = StringUtils::ConvertToInt32(StringUtils::Trim(durationNode.GetText().c_str()).c_str());
+      m_duration = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(durationNode.GetText()).c_str()).c_str());
       m_durationHasBeenSet = true;
     }
     XmlNode requestCountNode = resultNode.FirstChild("RequestCount");
     if(!requestCountNode.IsNull())
     {
-      m_requestCount = StringUtils::ConvertToInt32(StringUtils::Trim(requestCountNode.GetText().c_str()).c_str());
+      m_requestCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requestCountNode.GetText()).c_str()).c_str());
       m_requestCountHasBeenSet = true;
     }
     XmlNode statusCodesNode = resultNode.FirstChild("StatusCodes");

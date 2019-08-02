@@ -58,13 +58,13 @@ AnomalyDetector& AnomalyDetector::operator =(const XmlNode& xmlNode)
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
     if(!namespaceNode.IsNull())
     {
-      m_namespace = namespaceNode.GetText();
+      m_namespace = Aws::Utils::Xml::DecodeEscapedXmlText(namespaceNode.GetText());
       m_namespaceHasBeenSet = true;
     }
     XmlNode metricNameNode = resultNode.FirstChild("MetricName");
     if(!metricNameNode.IsNull())
     {
-      m_metricName = metricNameNode.GetText();
+      m_metricName = Aws::Utils::Xml::DecodeEscapedXmlText(metricNameNode.GetText());
       m_metricNameHasBeenSet = true;
     }
     XmlNode dimensionsNode = resultNode.FirstChild("Dimensions");
@@ -82,7 +82,7 @@ AnomalyDetector& AnomalyDetector::operator =(const XmlNode& xmlNode)
     XmlNode statNode = resultNode.FirstChild("Stat");
     if(!statNode.IsNull())
     {
-      m_stat = statNode.GetText();
+      m_stat = Aws::Utils::Xml::DecodeEscapedXmlText(statNode.GetText());
       m_statHasBeenSet = true;
     }
     XmlNode configurationNode = resultNode.FirstChild("Configuration");

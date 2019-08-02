@@ -64,37 +64,37 @@ TrafficMirrorTarget& TrafficMirrorTarget::operator =(const XmlNode& xmlNode)
     XmlNode trafficMirrorTargetIdNode = resultNode.FirstChild("trafficMirrorTargetId");
     if(!trafficMirrorTargetIdNode.IsNull())
     {
-      m_trafficMirrorTargetId = trafficMirrorTargetIdNode.GetText();
+      m_trafficMirrorTargetId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficMirrorTargetIdNode.GetText());
       m_trafficMirrorTargetIdHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
-      m_networkInterfaceId = networkInterfaceIdNode.GetText();
+      m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode networkLoadBalancerArnNode = resultNode.FirstChild("networkLoadBalancerArn");
     if(!networkLoadBalancerArnNode.IsNull())
     {
-      m_networkLoadBalancerArn = networkLoadBalancerArnNode.GetText();
+      m_networkLoadBalancerArn = Aws::Utils::Xml::DecodeEscapedXmlText(networkLoadBalancerArnNode.GetText());
       m_networkLoadBalancerArnHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = TrafficMirrorTargetTypeMapper::GetTrafficMirrorTargetTypeForName(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
+      m_type = TrafficMirrorTargetTypeMapper::GetTrafficMirrorTargetTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
       m_typeHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
-      m_ownerId = ownerIdNode.GetText();
+      m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");

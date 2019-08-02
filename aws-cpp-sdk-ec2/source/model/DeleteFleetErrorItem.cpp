@@ -58,7 +58,7 @@ DeleteFleetErrorItem& DeleteFleetErrorItem::operator =(const XmlNode& xmlNode)
     XmlNode fleetIdNode = resultNode.FirstChild("fleetId");
     if(!fleetIdNode.IsNull())
     {
-      m_fleetId = fleetIdNode.GetText();
+      m_fleetId = Aws::Utils::Xml::DecodeEscapedXmlText(fleetIdNode.GetText());
       m_fleetIdHasBeenSet = true;
     }
   }

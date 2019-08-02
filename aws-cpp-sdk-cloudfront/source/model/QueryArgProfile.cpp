@@ -52,13 +52,13 @@ QueryArgProfile& QueryArgProfile::operator =(const XmlNode& xmlNode)
     XmlNode queryArgNode = resultNode.FirstChild("QueryArg");
     if(!queryArgNode.IsNull())
     {
-      m_queryArg = queryArgNode.GetText();
+      m_queryArg = Aws::Utils::Xml::DecodeEscapedXmlText(queryArgNode.GetText());
       m_queryArgHasBeenSet = true;
     }
     XmlNode profileIdNode = resultNode.FirstChild("ProfileId");
     if(!profileIdNode.IsNull())
     {
-      m_profileId = profileIdNode.GetText();
+      m_profileId = Aws::Utils::Xml::DecodeEscapedXmlText(profileIdNode.GetText());
       m_profileIdHasBeenSet = true;
     }
   }

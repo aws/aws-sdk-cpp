@@ -52,7 +52,7 @@ AttributeBooleanValue& AttributeBooleanValue::operator =(const XmlNode& xmlNode)
     XmlNode valueNode = resultNode.FirstChild("value");
     if(!valueNode.IsNull())
     {
-      m_value = StringUtils::ConvertToBool(StringUtils::Trim(valueNode.GetText().c_str()).c_str());
+      m_value = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText()).c_str()).c_str());
       m_valueHasBeenSet = true;
     }
   }

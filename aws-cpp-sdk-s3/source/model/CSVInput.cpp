@@ -66,43 +66,43 @@ CSVInput& CSVInput::operator =(const XmlNode& xmlNode)
     XmlNode fileHeaderInfoNode = resultNode.FirstChild("FileHeaderInfo");
     if(!fileHeaderInfoNode.IsNull())
     {
-      m_fileHeaderInfo = FileHeaderInfoMapper::GetFileHeaderInfoForName(StringUtils::Trim(fileHeaderInfoNode.GetText().c_str()).c_str());
+      m_fileHeaderInfo = FileHeaderInfoMapper::GetFileHeaderInfoForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fileHeaderInfoNode.GetText()).c_str()).c_str());
       m_fileHeaderInfoHasBeenSet = true;
     }
     XmlNode commentsNode = resultNode.FirstChild("Comments");
     if(!commentsNode.IsNull())
     {
-      m_comments = commentsNode.GetText();
+      m_comments = Aws::Utils::Xml::DecodeEscapedXmlText(commentsNode.GetText());
       m_commentsHasBeenSet = true;
     }
     XmlNode quoteEscapeCharacterNode = resultNode.FirstChild("QuoteEscapeCharacter");
     if(!quoteEscapeCharacterNode.IsNull())
     {
-      m_quoteEscapeCharacter = quoteEscapeCharacterNode.GetText();
+      m_quoteEscapeCharacter = Aws::Utils::Xml::DecodeEscapedXmlText(quoteEscapeCharacterNode.GetText());
       m_quoteEscapeCharacterHasBeenSet = true;
     }
     XmlNode recordDelimiterNode = resultNode.FirstChild("RecordDelimiter");
     if(!recordDelimiterNode.IsNull())
     {
-      m_recordDelimiter = recordDelimiterNode.GetText();
+      m_recordDelimiter = Aws::Utils::Xml::DecodeEscapedXmlText(recordDelimiterNode.GetText());
       m_recordDelimiterHasBeenSet = true;
     }
     XmlNode fieldDelimiterNode = resultNode.FirstChild("FieldDelimiter");
     if(!fieldDelimiterNode.IsNull())
     {
-      m_fieldDelimiter = fieldDelimiterNode.GetText();
+      m_fieldDelimiter = Aws::Utils::Xml::DecodeEscapedXmlText(fieldDelimiterNode.GetText());
       m_fieldDelimiterHasBeenSet = true;
     }
     XmlNode quoteCharacterNode = resultNode.FirstChild("QuoteCharacter");
     if(!quoteCharacterNode.IsNull())
     {
-      m_quoteCharacter = quoteCharacterNode.GetText();
+      m_quoteCharacter = Aws::Utils::Xml::DecodeEscapedXmlText(quoteCharacterNode.GetText());
       m_quoteCharacterHasBeenSet = true;
     }
     XmlNode allowQuotedRecordDelimiterNode = resultNode.FirstChild("AllowQuotedRecordDelimiter");
     if(!allowQuotedRecordDelimiterNode.IsNull())
     {
-      m_allowQuotedRecordDelimiter = StringUtils::ConvertToBool(StringUtils::Trim(allowQuotedRecordDelimiterNode.GetText().c_str()).c_str());
+      m_allowQuotedRecordDelimiter = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowQuotedRecordDelimiterNode.GetText()).c_str()).c_str());
       m_allowQuotedRecordDelimiterHasBeenSet = true;
     }
   }

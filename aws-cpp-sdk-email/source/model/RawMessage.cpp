@@ -51,7 +51,7 @@ RawMessage& RawMessage::operator =(const XmlNode& xmlNode)
     XmlNode dataNode = resultNode.FirstChild("Data");
     if(!dataNode.IsNull())
     {
-      m_data = HashingUtils::Base64Decode(dataNode.GetText());
+      m_data = HashingUtils::Base64Decode(Aws::Utils::Xml::DecodeEscapedXmlText(dataNode.GetText()));
       m_dataHasBeenSet = true;
     }
   }

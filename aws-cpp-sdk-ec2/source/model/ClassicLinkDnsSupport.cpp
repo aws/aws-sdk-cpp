@@ -54,13 +54,13 @@ ClassicLinkDnsSupport& ClassicLinkDnsSupport::operator =(const XmlNode& xmlNode)
     XmlNode classicLinkDnsSupportedNode = resultNode.FirstChild("classicLinkDnsSupported");
     if(!classicLinkDnsSupportedNode.IsNull())
     {
-      m_classicLinkDnsSupported = StringUtils::ConvertToBool(StringUtils::Trim(classicLinkDnsSupportedNode.GetText().c_str()).c_str());
+      m_classicLinkDnsSupported = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(classicLinkDnsSupportedNode.GetText()).c_str()).c_str());
       m_classicLinkDnsSupportedHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = vpcIdNode.GetText();
+      m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
     }
   }

@@ -54,17 +54,17 @@ GetCredentialReportResult& GetCredentialReportResult::operator =(const Aws::Amaz
     XmlNode contentNode = resultNode.FirstChild("Content");
     if(!contentNode.IsNull())
     {
-      m_content = HashingUtils::Base64Decode(contentNode.GetText());
+      m_content = HashingUtils::Base64Decode(Aws::Utils::Xml::DecodeEscapedXmlText(contentNode.GetText()));
     }
     XmlNode reportFormatNode = resultNode.FirstChild("ReportFormat");
     if(!reportFormatNode.IsNull())
     {
-      m_reportFormat = ReportFormatTypeMapper::GetReportFormatTypeForName(StringUtils::Trim(reportFormatNode.GetText().c_str()).c_str());
+      m_reportFormat = ReportFormatTypeMapper::GetReportFormatTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reportFormatNode.GetText()).c_str()).c_str());
     }
     XmlNode generatedTimeNode = resultNode.FirstChild("GeneratedTime");
     if(!generatedTimeNode.IsNull())
     {
-      m_generatedTime = DateTime(StringUtils::Trim(generatedTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_generatedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(generatedTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
     }
   }
 

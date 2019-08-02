@@ -52,13 +52,13 @@ NotificationConfiguration& NotificationConfiguration::operator =(const XmlNode& 
     XmlNode topicArnNode = resultNode.FirstChild("TopicArn");
     if(!topicArnNode.IsNull())
     {
-      m_topicArn = topicArnNode.GetText();
+      m_topicArn = Aws::Utils::Xml::DecodeEscapedXmlText(topicArnNode.GetText());
       m_topicArnHasBeenSet = true;
     }
     XmlNode topicStatusNode = resultNode.FirstChild("TopicStatus");
     if(!topicStatusNode.IsNull())
     {
-      m_topicStatus = topicStatusNode.GetText();
+      m_topicStatus = Aws::Utils::Xml::DecodeEscapedXmlText(topicStatusNode.GetText());
       m_topicStatusHasBeenSet = true;
     }
   }

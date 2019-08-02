@@ -53,12 +53,12 @@ UpdateJobResult& UpdateJobResult::operator =(const Aws::AmazonWebServiceResult<X
     XmlNode successNode = resultNode.FirstChild("Success");
     if(!successNode.IsNull())
     {
-      m_success = StringUtils::ConvertToBool(StringUtils::Trim(successNode.GetText().c_str()).c_str());
+      m_success = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(successNode.GetText()).c_str()).c_str());
     }
     XmlNode warningMessageNode = resultNode.FirstChild("WarningMessage");
     if(!warningMessageNode.IsNull())
     {
-      m_warningMessage = warningMessageNode.GetText();
+      m_warningMessage = Aws::Utils::Xml::DecodeEscapedXmlText(warningMessageNode.GetText());
     }
     XmlNode artifactListNode = resultNode.FirstChild("ArtifactList");
     if(!artifactListNode.IsNull())

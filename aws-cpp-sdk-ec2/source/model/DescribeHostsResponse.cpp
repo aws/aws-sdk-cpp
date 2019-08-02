@@ -62,7 +62,7 @@ DescribeHostsResponse& DescribeHostsResponse::operator =(const Aws::AmazonWebSer
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
-      m_nextToken = nextTokenNode.GetText();
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
     }
   }
 

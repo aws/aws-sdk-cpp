@@ -56,19 +56,19 @@ UpdateCondition& UpdateCondition::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = nameNode.GetText();
+      m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
-      m_value = valueNode.GetText();
+      m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
     }
     XmlNode existsNode = resultNode.FirstChild("Exists");
     if(!existsNode.IsNull())
     {
-      m_exists = StringUtils::ConvertToBool(StringUtils::Trim(existsNode.GetText().c_str()).c_str());
+      m_exists = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(existsNode.GetText()).c_str()).c_str());
       m_existsHasBeenSet = true;
     }
   }

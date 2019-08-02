@@ -50,47 +50,47 @@ ListMultipartUploadsResult& ListMultipartUploadsResult::operator =(const Aws::Am
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
     if(!bucketNode.IsNull())
     {
-      m_bucket = bucketNode.GetText();
+      m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
     }
     XmlNode keyMarkerNode = resultNode.FirstChild("KeyMarker");
     if(!keyMarkerNode.IsNull())
     {
-      m_keyMarker = keyMarkerNode.GetText();
+      m_keyMarker = Aws::Utils::Xml::DecodeEscapedXmlText(keyMarkerNode.GetText());
     }
     XmlNode uploadIdMarkerNode = resultNode.FirstChild("UploadIdMarker");
     if(!uploadIdMarkerNode.IsNull())
     {
-      m_uploadIdMarker = uploadIdMarkerNode.GetText();
+      m_uploadIdMarker = Aws::Utils::Xml::DecodeEscapedXmlText(uploadIdMarkerNode.GetText());
     }
     XmlNode nextKeyMarkerNode = resultNode.FirstChild("NextKeyMarker");
     if(!nextKeyMarkerNode.IsNull())
     {
-      m_nextKeyMarker = nextKeyMarkerNode.GetText();
+      m_nextKeyMarker = Aws::Utils::Xml::DecodeEscapedXmlText(nextKeyMarkerNode.GetText());
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
     if(!prefixNode.IsNull())
     {
-      m_prefix = prefixNode.GetText();
+      m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
     }
     XmlNode delimiterNode = resultNode.FirstChild("Delimiter");
     if(!delimiterNode.IsNull())
     {
-      m_delimiter = delimiterNode.GetText();
+      m_delimiter = Aws::Utils::Xml::DecodeEscapedXmlText(delimiterNode.GetText());
     }
     XmlNode nextUploadIdMarkerNode = resultNode.FirstChild("NextUploadIdMarker");
     if(!nextUploadIdMarkerNode.IsNull())
     {
-      m_nextUploadIdMarker = nextUploadIdMarkerNode.GetText();
+      m_nextUploadIdMarker = Aws::Utils::Xml::DecodeEscapedXmlText(nextUploadIdMarkerNode.GetText());
     }
     XmlNode maxUploadsNode = resultNode.FirstChild("MaxUploads");
     if(!maxUploadsNode.IsNull())
     {
-      m_maxUploads = StringUtils::ConvertToInt32(StringUtils::Trim(maxUploadsNode.GetText().c_str()).c_str());
+      m_maxUploads = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxUploadsNode.GetText()).c_str()).c_str());
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
     {
-      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(isTruncatedNode.GetText().c_str()).c_str());
+      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
     }
     XmlNode uploadsNode = resultNode.FirstChild("Upload");
     if(!uploadsNode.IsNull())
@@ -117,7 +117,7 @@ ListMultipartUploadsResult& ListMultipartUploadsResult::operator =(const Aws::Am
     XmlNode encodingTypeNode = resultNode.FirstChild("EncodingType");
     if(!encodingTypeNode.IsNull())
     {
-      m_encodingType = EncodingTypeMapper::GetEncodingTypeForName(StringUtils::Trim(encodingTypeNode.GetText().c_str()).c_str());
+      m_encodingType = EncodingTypeMapper::GetEncodingTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encodingTypeNode.GetText()).c_str()).c_str());
     }
   }
 

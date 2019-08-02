@@ -53,7 +53,7 @@ GetServiceLinkedRoleDeletionStatusResult& GetServiceLinkedRoleDeletionStatusResu
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = DeletionTaskStatusTypeMapper::GetDeletionTaskStatusTypeForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
+      m_status = DeletionTaskStatusTypeMapper::GetDeletionTaskStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
     }
     XmlNode reasonNode = resultNode.FirstChild("Reason");
     if(!reasonNode.IsNull())

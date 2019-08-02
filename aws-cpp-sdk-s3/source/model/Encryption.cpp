@@ -56,19 +56,19 @@ Encryption& Encryption::operator =(const XmlNode& xmlNode)
     XmlNode encryptionTypeNode = resultNode.FirstChild("EncryptionType");
     if(!encryptionTypeNode.IsNull())
     {
-      m_encryptionType = ServerSideEncryptionMapper::GetServerSideEncryptionForName(StringUtils::Trim(encryptionTypeNode.GetText().c_str()).c_str());
+      m_encryptionType = ServerSideEncryptionMapper::GetServerSideEncryptionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptionTypeNode.GetText()).c_str()).c_str());
       m_encryptionTypeHasBeenSet = true;
     }
     XmlNode kMSKeyIdNode = resultNode.FirstChild("KMSKeyId");
     if(!kMSKeyIdNode.IsNull())
     {
-      m_kMSKeyId = kMSKeyIdNode.GetText();
+      m_kMSKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kMSKeyIdNode.GetText());
       m_kMSKeyIdHasBeenSet = true;
     }
     XmlNode kMSContextNode = resultNode.FirstChild("KMSContext");
     if(!kMSContextNode.IsNull())
     {
-      m_kMSContext = kMSContextNode.GetText();
+      m_kMSContext = Aws::Utils::Xml::DecodeEscapedXmlText(kMSContextNode.GetText());
       m_kMSContextHasBeenSet = true;
     }
   }

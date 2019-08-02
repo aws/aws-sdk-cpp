@@ -51,7 +51,7 @@ DeleteServiceLinkedRoleResult& DeleteServiceLinkedRoleResult::operator =(const A
     XmlNode deletionTaskIdNode = resultNode.FirstChild("DeletionTaskId");
     if(!deletionTaskIdNode.IsNull())
     {
-      m_deletionTaskId = deletionTaskIdNode.GetText();
+      m_deletionTaskId = Aws::Utils::Xml::DecodeEscapedXmlText(deletionTaskIdNode.GetText());
     }
   }
 

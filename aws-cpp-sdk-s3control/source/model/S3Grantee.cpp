@@ -56,19 +56,19 @@ S3Grantee& S3Grantee::operator =(const XmlNode& xmlNode)
     XmlNode typeIdentifierNode = resultNode.FirstChild("TypeIdentifier");
     if(!typeIdentifierNode.IsNull())
     {
-      m_typeIdentifier = S3GranteeTypeIdentifierMapper::GetS3GranteeTypeIdentifierForName(StringUtils::Trim(typeIdentifierNode.GetText().c_str()).c_str());
+      m_typeIdentifier = S3GranteeTypeIdentifierMapper::GetS3GranteeTypeIdentifierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeIdentifierNode.GetText()).c_str()).c_str());
       m_typeIdentifierHasBeenSet = true;
     }
     XmlNode identifierNode = resultNode.FirstChild("Identifier");
     if(!identifierNode.IsNull())
     {
-      m_identifier = identifierNode.GetText();
+      m_identifier = Aws::Utils::Xml::DecodeEscapedXmlText(identifierNode.GetText());
       m_identifierHasBeenSet = true;
     }
     XmlNode displayNameNode = resultNode.FirstChild("DisplayName");
     if(!displayNameNode.IsNull())
     {
-      m_displayName = displayNameNode.GetText();
+      m_displayName = Aws::Utils::Xml::DecodeEscapedXmlText(displayNameNode.GetText());
       m_displayNameHasBeenSet = true;
     }
   }

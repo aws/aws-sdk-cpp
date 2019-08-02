@@ -64,25 +64,25 @@ PriceSchedule& PriceSchedule::operator =(const XmlNode& xmlNode)
     XmlNode activeNode = resultNode.FirstChild("active");
     if(!activeNode.IsNull())
     {
-      m_active = StringUtils::ConvertToBool(StringUtils::Trim(activeNode.GetText().c_str()).c_str());
+      m_active = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(activeNode.GetText()).c_str()).c_str());
       m_activeHasBeenSet = true;
     }
     XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
     if(!currencyCodeNode.IsNull())
     {
-      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(currencyCodeNode.GetText().c_str()).c_str());
+      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText()).c_str()).c_str());
       m_currencyCodeHasBeenSet = true;
     }
     XmlNode priceNode = resultNode.FirstChild("price");
     if(!priceNode.IsNull())
     {
-      m_price = StringUtils::ConvertToDouble(StringUtils::Trim(priceNode.GetText().c_str()).c_str());
+      m_price = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priceNode.GetText()).c_str()).c_str());
       m_priceHasBeenSet = true;
     }
     XmlNode termNode = resultNode.FirstChild("term");
     if(!termNode.IsNull())
     {
-      m_term = StringUtils::ConvertToInt64(StringUtils::Trim(termNode.GetText().c_str()).c_str());
+      m_term = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(termNode.GetText()).c_str()).c_str());
       m_termHasBeenSet = true;
     }
   }

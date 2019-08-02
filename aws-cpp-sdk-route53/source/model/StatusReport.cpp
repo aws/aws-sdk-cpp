@@ -52,13 +52,13 @@ StatusReport& StatusReport::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = statusNode.GetText();
+      m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
     XmlNode checkedTimeNode = resultNode.FirstChild("CheckedTime");
     if(!checkedTimeNode.IsNull())
     {
-      m_checkedTime = DateTime(StringUtils::Trim(checkedTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_checkedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checkedTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_checkedTimeHasBeenSet = true;
     }
   }

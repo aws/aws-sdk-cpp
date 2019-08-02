@@ -58,19 +58,19 @@ BouncedRecipientInfo& BouncedRecipientInfo::operator =(const XmlNode& xmlNode)
     XmlNode recipientNode = resultNode.FirstChild("Recipient");
     if(!recipientNode.IsNull())
     {
-      m_recipient = recipientNode.GetText();
+      m_recipient = Aws::Utils::Xml::DecodeEscapedXmlText(recipientNode.GetText());
       m_recipientHasBeenSet = true;
     }
     XmlNode recipientArnNode = resultNode.FirstChild("RecipientArn");
     if(!recipientArnNode.IsNull())
     {
-      m_recipientArn = recipientArnNode.GetText();
+      m_recipientArn = Aws::Utils::Xml::DecodeEscapedXmlText(recipientArnNode.GetText());
       m_recipientArnHasBeenSet = true;
     }
     XmlNode bounceTypeNode = resultNode.FirstChild("BounceType");
     if(!bounceTypeNode.IsNull())
     {
-      m_bounceType = BounceTypeMapper::GetBounceTypeForName(StringUtils::Trim(bounceTypeNode.GetText().c_str()).c_str());
+      m_bounceType = BounceTypeMapper::GetBounceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bounceTypeNode.GetText()).c_str()).c_str());
       m_bounceTypeHasBeenSet = true;
     }
     XmlNode recipientDsnFieldsNode = resultNode.FirstChild("RecipientDsnFields");

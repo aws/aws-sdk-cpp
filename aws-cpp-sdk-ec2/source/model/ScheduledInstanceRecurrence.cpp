@@ -62,13 +62,13 @@ ScheduledInstanceRecurrence& ScheduledInstanceRecurrence::operator =(const XmlNo
     XmlNode frequencyNode = resultNode.FirstChild("frequency");
     if(!frequencyNode.IsNull())
     {
-      m_frequency = frequencyNode.GetText();
+      m_frequency = Aws::Utils::Xml::DecodeEscapedXmlText(frequencyNode.GetText());
       m_frequencyHasBeenSet = true;
     }
     XmlNode intervalNode = resultNode.FirstChild("interval");
     if(!intervalNode.IsNull())
     {
-      m_interval = StringUtils::ConvertToInt32(StringUtils::Trim(intervalNode.GetText().c_str()).c_str());
+      m_interval = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(intervalNode.GetText()).c_str()).c_str());
       m_intervalHasBeenSet = true;
     }
     XmlNode occurrenceDaySetNode = resultNode.FirstChild("occurrenceDaySet");
@@ -86,13 +86,13 @@ ScheduledInstanceRecurrence& ScheduledInstanceRecurrence::operator =(const XmlNo
     XmlNode occurrenceRelativeToEndNode = resultNode.FirstChild("occurrenceRelativeToEnd");
     if(!occurrenceRelativeToEndNode.IsNull())
     {
-      m_occurrenceRelativeToEnd = StringUtils::ConvertToBool(StringUtils::Trim(occurrenceRelativeToEndNode.GetText().c_str()).c_str());
+      m_occurrenceRelativeToEnd = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(occurrenceRelativeToEndNode.GetText()).c_str()).c_str());
       m_occurrenceRelativeToEndHasBeenSet = true;
     }
     XmlNode occurrenceUnitNode = resultNode.FirstChild("occurrenceUnit");
     if(!occurrenceUnitNode.IsNull())
     {
-      m_occurrenceUnit = occurrenceUnitNode.GetText();
+      m_occurrenceUnit = Aws::Utils::Xml::DecodeEscapedXmlText(occurrenceUnitNode.GetText());
       m_occurrenceUnitHasBeenSet = true;
     }
   }

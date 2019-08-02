@@ -72,55 +72,55 @@ GlobalCluster& GlobalCluster::operator =(const XmlNode& xmlNode)
     XmlNode globalClusterIdentifierNode = resultNode.FirstChild("GlobalClusterIdentifier");
     if(!globalClusterIdentifierNode.IsNull())
     {
-      m_globalClusterIdentifier = globalClusterIdentifierNode.GetText();
+      m_globalClusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(globalClusterIdentifierNode.GetText());
       m_globalClusterIdentifierHasBeenSet = true;
     }
     XmlNode globalClusterResourceIdNode = resultNode.FirstChild("GlobalClusterResourceId");
     if(!globalClusterResourceIdNode.IsNull())
     {
-      m_globalClusterResourceId = globalClusterResourceIdNode.GetText();
+      m_globalClusterResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(globalClusterResourceIdNode.GetText());
       m_globalClusterResourceIdHasBeenSet = true;
     }
     XmlNode globalClusterArnNode = resultNode.FirstChild("GlobalClusterArn");
     if(!globalClusterArnNode.IsNull())
     {
-      m_globalClusterArn = globalClusterArnNode.GetText();
+      m_globalClusterArn = Aws::Utils::Xml::DecodeEscapedXmlText(globalClusterArnNode.GetText());
       m_globalClusterArnHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = statusNode.GetText();
+      m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
     {
-      m_engine = engineNode.GetText();
+      m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
-      m_engineVersion = engineVersionNode.GetText();
+      m_engineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(engineVersionNode.GetText());
       m_engineVersionHasBeenSet = true;
     }
     XmlNode databaseNameNode = resultNode.FirstChild("DatabaseName");
     if(!databaseNameNode.IsNull())
     {
-      m_databaseName = databaseNameNode.GetText();
+      m_databaseName = Aws::Utils::Xml::DecodeEscapedXmlText(databaseNameNode.GetText());
       m_databaseNameHasBeenSet = true;
     }
     XmlNode storageEncryptedNode = resultNode.FirstChild("StorageEncrypted");
     if(!storageEncryptedNode.IsNull())
     {
-      m_storageEncrypted = StringUtils::ConvertToBool(StringUtils::Trim(storageEncryptedNode.GetText().c_str()).c_str());
+      m_storageEncrypted = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageEncryptedNode.GetText()).c_str()).c_str());
       m_storageEncryptedHasBeenSet = true;
     }
     XmlNode deletionProtectionNode = resultNode.FirstChild("DeletionProtection");
     if(!deletionProtectionNode.IsNull())
     {
-      m_deletionProtection = StringUtils::ConvertToBool(StringUtils::Trim(deletionProtectionNode.GetText().c_str()).c_str());
+      m_deletionProtection = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deletionProtectionNode.GetText()).c_str()).c_str());
       m_deletionProtectionHasBeenSet = true;
     }
     XmlNode globalClusterMembersNode = resultNode.FirstChild("GlobalClusterMembers");

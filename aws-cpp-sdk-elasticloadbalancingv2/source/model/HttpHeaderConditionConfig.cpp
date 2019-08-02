@@ -52,7 +52,7 @@ HttpHeaderConditionConfig& HttpHeaderConditionConfig::operator =(const XmlNode& 
     XmlNode httpHeaderNameNode = resultNode.FirstChild("HttpHeaderName");
     if(!httpHeaderNameNode.IsNull())
     {
-      m_httpHeaderName = httpHeaderNameNode.GetText();
+      m_httpHeaderName = Aws::Utils::Xml::DecodeEscapedXmlText(httpHeaderNameNode.GetText());
       m_httpHeaderNameHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("Values");

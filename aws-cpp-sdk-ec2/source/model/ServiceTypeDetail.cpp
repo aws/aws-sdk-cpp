@@ -52,7 +52,7 @@ ServiceTypeDetail& ServiceTypeDetail::operator =(const XmlNode& xmlNode)
     XmlNode serviceTypeNode = resultNode.FirstChild("serviceType");
     if(!serviceTypeNode.IsNull())
     {
-      m_serviceType = ServiceTypeMapper::GetServiceTypeForName(StringUtils::Trim(serviceTypeNode.GetText().c_str()).c_str());
+      m_serviceType = ServiceTypeMapper::GetServiceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceTypeNode.GetText()).c_str()).c_str());
       m_serviceTypeHasBeenSet = true;
     }
   }

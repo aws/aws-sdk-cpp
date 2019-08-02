@@ -58,19 +58,19 @@ LifecycleExpiration& LifecycleExpiration::operator =(const XmlNode& xmlNode)
     XmlNode dateNode = resultNode.FirstChild("Date");
     if(!dateNode.IsNull())
     {
-      m_date = DateTime(StringUtils::Trim(dateNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_date = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_dateHasBeenSet = true;
     }
     XmlNode daysNode = resultNode.FirstChild("Days");
     if(!daysNode.IsNull())
     {
-      m_days = StringUtils::ConvertToInt32(StringUtils::Trim(daysNode.GetText().c_str()).c_str());
+      m_days = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(daysNode.GetText()).c_str()).c_str());
       m_daysHasBeenSet = true;
     }
     XmlNode expiredObjectDeleteMarkerNode = resultNode.FirstChild("ExpiredObjectDeleteMarker");
     if(!expiredObjectDeleteMarkerNode.IsNull())
     {
-      m_expiredObjectDeleteMarker = StringUtils::ConvertToBool(StringUtils::Trim(expiredObjectDeleteMarkerNode.GetText().c_str()).c_str());
+      m_expiredObjectDeleteMarker = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expiredObjectDeleteMarkerNode.GetText()).c_str()).c_str());
       m_expiredObjectDeleteMarkerHasBeenSet = true;
     }
   }

@@ -59,22 +59,22 @@ DescribeAccountLimitsResult& DescribeAccountLimitsResult::operator =(const Aws::
     XmlNode maxNumberOfAutoScalingGroupsNode = resultNode.FirstChild("MaxNumberOfAutoScalingGroups");
     if(!maxNumberOfAutoScalingGroupsNode.IsNull())
     {
-      m_maxNumberOfAutoScalingGroups = StringUtils::ConvertToInt32(StringUtils::Trim(maxNumberOfAutoScalingGroupsNode.GetText().c_str()).c_str());
+      m_maxNumberOfAutoScalingGroups = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxNumberOfAutoScalingGroupsNode.GetText()).c_str()).c_str());
     }
     XmlNode maxNumberOfLaunchConfigurationsNode = resultNode.FirstChild("MaxNumberOfLaunchConfigurations");
     if(!maxNumberOfLaunchConfigurationsNode.IsNull())
     {
-      m_maxNumberOfLaunchConfigurations = StringUtils::ConvertToInt32(StringUtils::Trim(maxNumberOfLaunchConfigurationsNode.GetText().c_str()).c_str());
+      m_maxNumberOfLaunchConfigurations = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxNumberOfLaunchConfigurationsNode.GetText()).c_str()).c_str());
     }
     XmlNode numberOfAutoScalingGroupsNode = resultNode.FirstChild("NumberOfAutoScalingGroups");
     if(!numberOfAutoScalingGroupsNode.IsNull())
     {
-      m_numberOfAutoScalingGroups = StringUtils::ConvertToInt32(StringUtils::Trim(numberOfAutoScalingGroupsNode.GetText().c_str()).c_str());
+      m_numberOfAutoScalingGroups = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numberOfAutoScalingGroupsNode.GetText()).c_str()).c_str());
     }
     XmlNode numberOfLaunchConfigurationsNode = resultNode.FirstChild("NumberOfLaunchConfigurations");
     if(!numberOfLaunchConfigurationsNode.IsNull())
     {
-      m_numberOfLaunchConfigurations = StringUtils::ConvertToInt32(StringUtils::Trim(numberOfLaunchConfigurationsNode.GetText().c_str()).c_str());
+      m_numberOfLaunchConfigurations = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numberOfLaunchConfigurationsNode.GetText()).c_str()).c_str());
     }
   }
 

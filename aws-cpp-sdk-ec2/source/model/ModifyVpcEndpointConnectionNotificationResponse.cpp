@@ -53,7 +53,7 @@ ModifyVpcEndpointConnectionNotificationResponse& ModifyVpcEndpointConnectionNoti
     XmlNode returnValueNode = resultNode.FirstChild("return");
     if(!returnValueNode.IsNull())
     {
-      m_returnValue = StringUtils::ConvertToBool(StringUtils::Trim(returnValueNode.GetText().c_str()).c_str());
+      m_returnValue = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnValueNode.GetText()).c_str()).c_str());
     }
   }
 

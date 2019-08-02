@@ -62,19 +62,19 @@ CacheNode& CacheNode::operator =(const XmlNode& xmlNode)
     XmlNode cacheNodeIdNode = resultNode.FirstChild("CacheNodeId");
     if(!cacheNodeIdNode.IsNull())
     {
-      m_cacheNodeId = cacheNodeIdNode.GetText();
+      m_cacheNodeId = Aws::Utils::Xml::DecodeEscapedXmlText(cacheNodeIdNode.GetText());
       m_cacheNodeIdHasBeenSet = true;
     }
     XmlNode cacheNodeStatusNode = resultNode.FirstChild("CacheNodeStatus");
     if(!cacheNodeStatusNode.IsNull())
     {
-      m_cacheNodeStatus = cacheNodeStatusNode.GetText();
+      m_cacheNodeStatus = Aws::Utils::Xml::DecodeEscapedXmlText(cacheNodeStatusNode.GetText());
       m_cacheNodeStatusHasBeenSet = true;
     }
     XmlNode cacheNodeCreateTimeNode = resultNode.FirstChild("CacheNodeCreateTime");
     if(!cacheNodeCreateTimeNode.IsNull())
     {
-      m_cacheNodeCreateTime = DateTime(StringUtils::Trim(cacheNodeCreateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_cacheNodeCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cacheNodeCreateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_cacheNodeCreateTimeHasBeenSet = true;
     }
     XmlNode endpointNode = resultNode.FirstChild("Endpoint");
@@ -86,19 +86,19 @@ CacheNode& CacheNode::operator =(const XmlNode& xmlNode)
     XmlNode parameterGroupStatusNode = resultNode.FirstChild("ParameterGroupStatus");
     if(!parameterGroupStatusNode.IsNull())
     {
-      m_parameterGroupStatus = parameterGroupStatusNode.GetText();
+      m_parameterGroupStatus = Aws::Utils::Xml::DecodeEscapedXmlText(parameterGroupStatusNode.GetText());
       m_parameterGroupStatusHasBeenSet = true;
     }
     XmlNode sourceCacheNodeIdNode = resultNode.FirstChild("SourceCacheNodeId");
     if(!sourceCacheNodeIdNode.IsNull())
     {
-      m_sourceCacheNodeId = sourceCacheNodeIdNode.GetText();
+      m_sourceCacheNodeId = Aws::Utils::Xml::DecodeEscapedXmlText(sourceCacheNodeIdNode.GetText());
       m_sourceCacheNodeIdHasBeenSet = true;
     }
     XmlNode customerAvailabilityZoneNode = resultNode.FirstChild("CustomerAvailabilityZone");
     if(!customerAvailabilityZoneNode.IsNull())
     {
-      m_customerAvailabilityZone = customerAvailabilityZoneNode.GetText();
+      m_customerAvailabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(customerAvailabilityZoneNode.GetText());
       m_customerAvailabilityZoneHasBeenSet = true;
     }
   }

@@ -62,19 +62,19 @@ SendMessageBatchRequestEntry& SendMessageBatchRequestEntry::operator =(const Xml
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = idNode.GetText();
+      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
     }
     XmlNode messageBodyNode = resultNode.FirstChild("MessageBody");
     if(!messageBodyNode.IsNull())
     {
-      m_messageBody = messageBodyNode.GetText();
+      m_messageBody = Aws::Utils::Xml::DecodeEscapedXmlText(messageBodyNode.GetText());
       m_messageBodyHasBeenSet = true;
     }
     XmlNode delaySecondsNode = resultNode.FirstChild("DelaySeconds");
     if(!delaySecondsNode.IsNull())
     {
-      m_delaySeconds = StringUtils::ConvertToInt32(StringUtils::Trim(delaySecondsNode.GetText().c_str()).c_str());
+      m_delaySeconds = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(delaySecondsNode.GetText()).c_str()).c_str());
       m_delaySecondsHasBeenSet = true;
     }
     XmlNode messageAttributesNode = resultNode.FirstChild("MessageAttribute");
@@ -95,13 +95,13 @@ SendMessageBatchRequestEntry& SendMessageBatchRequestEntry::operator =(const Xml
     XmlNode messageDeduplicationIdNode = resultNode.FirstChild("MessageDeduplicationId");
     if(!messageDeduplicationIdNode.IsNull())
     {
-      m_messageDeduplicationId = messageDeduplicationIdNode.GetText();
+      m_messageDeduplicationId = Aws::Utils::Xml::DecodeEscapedXmlText(messageDeduplicationIdNode.GetText());
       m_messageDeduplicationIdHasBeenSet = true;
     }
     XmlNode messageGroupIdNode = resultNode.FirstChild("MessageGroupId");
     if(!messageGroupIdNode.IsNull())
     {
-      m_messageGroupId = messageGroupIdNode.GetText();
+      m_messageGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(messageGroupIdNode.GetText());
       m_messageGroupIdHasBeenSet = true;
     }
   }

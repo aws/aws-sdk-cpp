@@ -52,7 +52,7 @@ AccessControlTranslation& AccessControlTranslation::operator =(const XmlNode& xm
     XmlNode ownerNode = resultNode.FirstChild("Owner");
     if(!ownerNode.IsNull())
     {
-      m_owner = OwnerOverrideMapper::GetOwnerOverrideForName(StringUtils::Trim(ownerNode.GetText().c_str()).c_str());
+      m_owner = OwnerOverrideMapper::GetOwnerOverrideForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ownerNode.GetText()).c_str()).c_str());
       m_ownerHasBeenSet = true;
     }
   }

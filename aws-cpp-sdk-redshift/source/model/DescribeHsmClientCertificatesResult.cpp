@@ -51,7 +51,7 @@ DescribeHsmClientCertificatesResult& DescribeHsmClientCertificatesResult::operat
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
-      m_marker = markerNode.GetText();
+      m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
     }
     XmlNode hsmClientCertificatesNode = resultNode.FirstChild("HsmClientCertificates");
     if(!hsmClientCertificatesNode.IsNull())

@@ -58,25 +58,25 @@ HsmConfiguration& HsmConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode hsmConfigurationIdentifierNode = resultNode.FirstChild("HsmConfigurationIdentifier");
     if(!hsmConfigurationIdentifierNode.IsNull())
     {
-      m_hsmConfigurationIdentifier = hsmConfigurationIdentifierNode.GetText();
+      m_hsmConfigurationIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(hsmConfigurationIdentifierNode.GetText());
       m_hsmConfigurationIdentifierHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode hsmIpAddressNode = resultNode.FirstChild("HsmIpAddress");
     if(!hsmIpAddressNode.IsNull())
     {
-      m_hsmIpAddress = hsmIpAddressNode.GetText();
+      m_hsmIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(hsmIpAddressNode.GetText());
       m_hsmIpAddressHasBeenSet = true;
     }
     XmlNode hsmPartitionNameNode = resultNode.FirstChild("HsmPartitionName");
     if(!hsmPartitionNameNode.IsNull())
     {
-      m_hsmPartitionName = hsmPartitionNameNode.GetText();
+      m_hsmPartitionName = Aws::Utils::Xml::DecodeEscapedXmlText(hsmPartitionNameNode.GetText());
       m_hsmPartitionNameHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");

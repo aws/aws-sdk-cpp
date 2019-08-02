@@ -52,7 +52,7 @@ NodeGroupUpdateStatus& NodeGroupUpdateStatus::operator =(const XmlNode& xmlNode)
     XmlNode nodeGroupIdNode = resultNode.FirstChild("NodeGroupId");
     if(!nodeGroupIdNode.IsNull())
     {
-      m_nodeGroupId = nodeGroupIdNode.GetText();
+      m_nodeGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(nodeGroupIdNode.GetText());
       m_nodeGroupIdHasBeenSet = true;
     }
     XmlNode nodeGroupMemberUpdateStatusNode = resultNode.FirstChild("NodeGroupMemberUpdateStatus");

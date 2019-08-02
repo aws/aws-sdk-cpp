@@ -68,7 +68,7 @@ RestoreRequest& RestoreRequest::operator =(const XmlNode& xmlNode)
     XmlNode daysNode = resultNode.FirstChild("Days");
     if(!daysNode.IsNull())
     {
-      m_days = StringUtils::ConvertToInt32(StringUtils::Trim(daysNode.GetText().c_str()).c_str());
+      m_days = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(daysNode.GetText()).c_str()).c_str());
       m_daysHasBeenSet = true;
     }
     XmlNode glacierJobParametersNode = resultNode.FirstChild("GlacierJobParameters");
@@ -80,19 +80,19 @@ RestoreRequest& RestoreRequest::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = RestoreRequestTypeMapper::GetRestoreRequestTypeForName(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
+      m_type = RestoreRequestTypeMapper::GetRestoreRequestTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
       m_typeHasBeenSet = true;
     }
     XmlNode tierNode = resultNode.FirstChild("Tier");
     if(!tierNode.IsNull())
     {
-      m_tier = TierMapper::GetTierForName(StringUtils::Trim(tierNode.GetText().c_str()).c_str());
+      m_tier = TierMapper::GetTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tierNode.GetText()).c_str()).c_str());
       m_tierHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode selectParametersNode = resultNode.FirstChild("SelectParameters");

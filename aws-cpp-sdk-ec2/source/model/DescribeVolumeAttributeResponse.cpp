@@ -67,7 +67,7 @@ DescribeVolumeAttributeResponse& DescribeVolumeAttributeResponse::operator =(con
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
     {
-      m_volumeId = volumeIdNode.GetText();
+      m_volumeId = Aws::Utils::Xml::DecodeEscapedXmlText(volumeIdNode.GetText());
     }
   }
 

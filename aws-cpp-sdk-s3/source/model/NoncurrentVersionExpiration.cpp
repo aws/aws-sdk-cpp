@@ -52,7 +52,7 @@ NoncurrentVersionExpiration& NoncurrentVersionExpiration::operator =(const XmlNo
     XmlNode noncurrentDaysNode = resultNode.FirstChild("NoncurrentDays");
     if(!noncurrentDaysNode.IsNull())
     {
-      m_noncurrentDays = StringUtils::ConvertToInt32(StringUtils::Trim(noncurrentDaysNode.GetText().c_str()).c_str());
+      m_noncurrentDays = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(noncurrentDaysNode.GetText()).c_str()).c_str());
       m_noncurrentDaysHasBeenSet = true;
     }
   }

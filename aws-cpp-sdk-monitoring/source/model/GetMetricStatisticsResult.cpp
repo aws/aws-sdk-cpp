@@ -51,7 +51,7 @@ GetMetricStatisticsResult& GetMetricStatisticsResult::operator =(const Aws::Amaz
     XmlNode labelNode = resultNode.FirstChild("Label");
     if(!labelNode.IsNull())
     {
-      m_label = labelNode.GetText();
+      m_label = Aws::Utils::Xml::DecodeEscapedXmlText(labelNode.GetText());
     }
     XmlNode datapointsNode = resultNode.FirstChild("Datapoints");
     if(!datapointsNode.IsNull())

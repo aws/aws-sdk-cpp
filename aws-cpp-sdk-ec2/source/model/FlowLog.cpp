@@ -74,67 +74,67 @@ FlowLog& FlowLog::operator =(const XmlNode& xmlNode)
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
     if(!creationTimeNode.IsNull())
     {
-      m_creationTime = DateTime(StringUtils::Trim(creationTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
     }
     XmlNode deliverLogsErrorMessageNode = resultNode.FirstChild("deliverLogsErrorMessage");
     if(!deliverLogsErrorMessageNode.IsNull())
     {
-      m_deliverLogsErrorMessage = deliverLogsErrorMessageNode.GetText();
+      m_deliverLogsErrorMessage = Aws::Utils::Xml::DecodeEscapedXmlText(deliverLogsErrorMessageNode.GetText());
       m_deliverLogsErrorMessageHasBeenSet = true;
     }
     XmlNode deliverLogsPermissionArnNode = resultNode.FirstChild("deliverLogsPermissionArn");
     if(!deliverLogsPermissionArnNode.IsNull())
     {
-      m_deliverLogsPermissionArn = deliverLogsPermissionArnNode.GetText();
+      m_deliverLogsPermissionArn = Aws::Utils::Xml::DecodeEscapedXmlText(deliverLogsPermissionArnNode.GetText());
       m_deliverLogsPermissionArnHasBeenSet = true;
     }
     XmlNode deliverLogsStatusNode = resultNode.FirstChild("deliverLogsStatus");
     if(!deliverLogsStatusNode.IsNull())
     {
-      m_deliverLogsStatus = deliverLogsStatusNode.GetText();
+      m_deliverLogsStatus = Aws::Utils::Xml::DecodeEscapedXmlText(deliverLogsStatusNode.GetText());
       m_deliverLogsStatusHasBeenSet = true;
     }
     XmlNode flowLogIdNode = resultNode.FirstChild("flowLogId");
     if(!flowLogIdNode.IsNull())
     {
-      m_flowLogId = flowLogIdNode.GetText();
+      m_flowLogId = Aws::Utils::Xml::DecodeEscapedXmlText(flowLogIdNode.GetText());
       m_flowLogIdHasBeenSet = true;
     }
     XmlNode flowLogStatusNode = resultNode.FirstChild("flowLogStatus");
     if(!flowLogStatusNode.IsNull())
     {
-      m_flowLogStatus = flowLogStatusNode.GetText();
+      m_flowLogStatus = Aws::Utils::Xml::DecodeEscapedXmlText(flowLogStatusNode.GetText());
       m_flowLogStatusHasBeenSet = true;
     }
     XmlNode logGroupNameNode = resultNode.FirstChild("logGroupName");
     if(!logGroupNameNode.IsNull())
     {
-      m_logGroupName = logGroupNameNode.GetText();
+      m_logGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(logGroupNameNode.GetText());
       m_logGroupNameHasBeenSet = true;
     }
     XmlNode resourceIdNode = resultNode.FirstChild("resourceId");
     if(!resourceIdNode.IsNull())
     {
-      m_resourceId = resourceIdNode.GetText();
+      m_resourceId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceIdNode.GetText());
       m_resourceIdHasBeenSet = true;
     }
     XmlNode trafficTypeNode = resultNode.FirstChild("trafficType");
     if(!trafficTypeNode.IsNull())
     {
-      m_trafficType = TrafficTypeMapper::GetTrafficTypeForName(StringUtils::Trim(trafficTypeNode.GetText().c_str()).c_str());
+      m_trafficType = TrafficTypeMapper::GetTrafficTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trafficTypeNode.GetText()).c_str()).c_str());
       m_trafficTypeHasBeenSet = true;
     }
     XmlNode logDestinationTypeNode = resultNode.FirstChild("logDestinationType");
     if(!logDestinationTypeNode.IsNull())
     {
-      m_logDestinationType = LogDestinationTypeMapper::GetLogDestinationTypeForName(StringUtils::Trim(logDestinationTypeNode.GetText().c_str()).c_str());
+      m_logDestinationType = LogDestinationTypeMapper::GetLogDestinationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(logDestinationTypeNode.GetText()).c_str()).c_str());
       m_logDestinationTypeHasBeenSet = true;
     }
     XmlNode logDestinationNode = resultNode.FirstChild("logDestination");
     if(!logDestinationNode.IsNull())
     {
-      m_logDestination = logDestinationNode.GetText();
+      m_logDestination = Aws::Utils::Xml::DecodeEscapedXmlText(logDestinationNode.GetText());
       m_logDestinationHasBeenSet = true;
     }
   }

@@ -72,61 +72,61 @@ Activity& Activity::operator =(const XmlNode& xmlNode)
     XmlNode activityIdNode = resultNode.FirstChild("ActivityId");
     if(!activityIdNode.IsNull())
     {
-      m_activityId = activityIdNode.GetText();
+      m_activityId = Aws::Utils::Xml::DecodeEscapedXmlText(activityIdNode.GetText());
       m_activityIdHasBeenSet = true;
     }
     XmlNode autoScalingGroupNameNode = resultNode.FirstChild("AutoScalingGroupName");
     if(!autoScalingGroupNameNode.IsNull())
     {
-      m_autoScalingGroupName = autoScalingGroupNameNode.GetText();
+      m_autoScalingGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(autoScalingGroupNameNode.GetText());
       m_autoScalingGroupNameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
-      m_description = descriptionNode.GetText();
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode causeNode = resultNode.FirstChild("Cause");
     if(!causeNode.IsNull())
     {
-      m_cause = causeNode.GetText();
+      m_cause = Aws::Utils::Xml::DecodeEscapedXmlText(causeNode.GetText());
       m_causeHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
     if(!startTimeNode.IsNull())
     {
-      m_startTime = DateTime(StringUtils::Trim(startTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
     }
     XmlNode endTimeNode = resultNode.FirstChild("EndTime");
     if(!endTimeNode.IsNull())
     {
-      m_endTime = DateTime(StringUtils::Trim(endTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_endTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_endTimeHasBeenSet = true;
     }
     XmlNode statusCodeNode = resultNode.FirstChild("StatusCode");
     if(!statusCodeNode.IsNull())
     {
-      m_statusCode = ScalingActivityStatusCodeMapper::GetScalingActivityStatusCodeForName(StringUtils::Trim(statusCodeNode.GetText().c_str()).c_str());
+      m_statusCode = ScalingActivityStatusCodeMapper::GetScalingActivityStatusCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusCodeNode.GetText()).c_str()).c_str());
       m_statusCodeHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("StatusMessage");
     if(!statusMessageNode.IsNull())
     {
-      m_statusMessage = statusMessageNode.GetText();
+      m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
     }
     XmlNode progressNode = resultNode.FirstChild("Progress");
     if(!progressNode.IsNull())
     {
-      m_progress = StringUtils::ConvertToInt32(StringUtils::Trim(progressNode.GetText().c_str()).c_str());
+      m_progress = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(progressNode.GetText()).c_str()).c_str());
       m_progressHasBeenSet = true;
     }
     XmlNode detailsNode = resultNode.FirstChild("Details");
     if(!detailsNode.IsNull())
     {
-      m_details = detailsNode.GetText();
+      m_details = Aws::Utils::Xml::DecodeEscapedXmlText(detailsNode.GetText());
       m_detailsHasBeenSet = true;
     }
   }

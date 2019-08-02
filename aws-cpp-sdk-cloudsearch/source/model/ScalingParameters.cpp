@@ -60,19 +60,19 @@ ScalingParameters& ScalingParameters::operator =(const XmlNode& xmlNode)
     XmlNode desiredInstanceTypeNode = resultNode.FirstChild("DesiredInstanceType");
     if(!desiredInstanceTypeNode.IsNull())
     {
-      m_desiredInstanceType = PartitionInstanceTypeMapper::GetPartitionInstanceTypeForName(StringUtils::Trim(desiredInstanceTypeNode.GetText().c_str()).c_str());
+      m_desiredInstanceType = PartitionInstanceTypeMapper::GetPartitionInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(desiredInstanceTypeNode.GetText()).c_str()).c_str());
       m_desiredInstanceTypeHasBeenSet = true;
     }
     XmlNode desiredReplicationCountNode = resultNode.FirstChild("DesiredReplicationCount");
     if(!desiredReplicationCountNode.IsNull())
     {
-      m_desiredReplicationCount = StringUtils::ConvertToInt32(StringUtils::Trim(desiredReplicationCountNode.GetText().c_str()).c_str());
+      m_desiredReplicationCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(desiredReplicationCountNode.GetText()).c_str()).c_str());
       m_desiredReplicationCountHasBeenSet = true;
     }
     XmlNode desiredPartitionCountNode = resultNode.FirstChild("DesiredPartitionCount");
     if(!desiredPartitionCountNode.IsNull())
     {
-      m_desiredPartitionCount = StringUtils::ConvertToInt32(StringUtils::Trim(desiredPartitionCountNode.GetText().c_str()).c_str());
+      m_desiredPartitionCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(desiredPartitionCountNode.GetText()).c_str()).c_str());
       m_desiredPartitionCountHasBeenSet = true;
     }
   }

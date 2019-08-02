@@ -51,37 +51,37 @@ ModifyDBClusterEndpointResult& ModifyDBClusterEndpointResult::operator =(const A
     XmlNode dBClusterEndpointIdentifierNode = resultNode.FirstChild("DBClusterEndpointIdentifier");
     if(!dBClusterEndpointIdentifierNode.IsNull())
     {
-      m_dBClusterEndpointIdentifier = dBClusterEndpointIdentifierNode.GetText();
+      m_dBClusterEndpointIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterEndpointIdentifierNode.GetText());
     }
     XmlNode dBClusterIdentifierNode = resultNode.FirstChild("DBClusterIdentifier");
     if(!dBClusterIdentifierNode.IsNull())
     {
-      m_dBClusterIdentifier = dBClusterIdentifierNode.GetText();
+      m_dBClusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterIdentifierNode.GetText());
     }
     XmlNode dBClusterEndpointResourceIdentifierNode = resultNode.FirstChild("DBClusterEndpointResourceIdentifier");
     if(!dBClusterEndpointResourceIdentifierNode.IsNull())
     {
-      m_dBClusterEndpointResourceIdentifier = dBClusterEndpointResourceIdentifierNode.GetText();
+      m_dBClusterEndpointResourceIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterEndpointResourceIdentifierNode.GetText());
     }
     XmlNode endpointNode = resultNode.FirstChild("Endpoint");
     if(!endpointNode.IsNull())
     {
-      m_endpoint = endpointNode.GetText();
+      m_endpoint = Aws::Utils::Xml::DecodeEscapedXmlText(endpointNode.GetText());
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = statusNode.GetText();
+      m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
     }
     XmlNode endpointTypeNode = resultNode.FirstChild("EndpointType");
     if(!endpointTypeNode.IsNull())
     {
-      m_endpointType = endpointTypeNode.GetText();
+      m_endpointType = Aws::Utils::Xml::DecodeEscapedXmlText(endpointTypeNode.GetText());
     }
     XmlNode customEndpointTypeNode = resultNode.FirstChild("CustomEndpointType");
     if(!customEndpointTypeNode.IsNull())
     {
-      m_customEndpointType = customEndpointTypeNode.GetText();
+      m_customEndpointType = Aws::Utils::Xml::DecodeEscapedXmlText(customEndpointTypeNode.GetText());
     }
     XmlNode staticMembersNode = resultNode.FirstChild("StaticMembers");
     if(!staticMembersNode.IsNull())
@@ -108,7 +108,7 @@ ModifyDBClusterEndpointResult& ModifyDBClusterEndpointResult::operator =(const A
     XmlNode dBClusterEndpointArnNode = resultNode.FirstChild("DBClusterEndpointArn");
     if(!dBClusterEndpointArnNode.IsNull())
     {
-      m_dBClusterEndpointArn = dBClusterEndpointArnNode.GetText();
+      m_dBClusterEndpointArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterEndpointArnNode.GetText());
     }
   }
 

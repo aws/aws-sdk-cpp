@@ -50,7 +50,7 @@ SNSDestination& SNSDestination::operator =(const XmlNode& xmlNode)
     XmlNode topicARNNode = resultNode.FirstChild("TopicARN");
     if(!topicARNNode.IsNull())
     {
-      m_topicARN = topicARNNode.GetText();
+      m_topicARN = Aws::Utils::Xml::DecodeEscapedXmlText(topicARNNode.GetText());
       m_topicARNHasBeenSet = true;
     }
   }

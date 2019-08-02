@@ -56,19 +56,19 @@ ContentTypeProfile& ContentTypeProfile::operator =(const XmlNode& xmlNode)
     XmlNode formatNode = resultNode.FirstChild("Format");
     if(!formatNode.IsNull())
     {
-      m_format = FormatMapper::GetFormatForName(StringUtils::Trim(formatNode.GetText().c_str()).c_str());
+      m_format = FormatMapper::GetFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()).c_str());
       m_formatHasBeenSet = true;
     }
     XmlNode profileIdNode = resultNode.FirstChild("ProfileId");
     if(!profileIdNode.IsNull())
     {
-      m_profileId = profileIdNode.GetText();
+      m_profileId = Aws::Utils::Xml::DecodeEscapedXmlText(profileIdNode.GetText());
       m_profileIdHasBeenSet = true;
     }
     XmlNode contentTypeNode = resultNode.FirstChild("ContentType");
     if(!contentTypeNode.IsNull())
     {
-      m_contentType = contentTypeNode.GetText();
+      m_contentType = Aws::Utils::Xml::DecodeEscapedXmlText(contentTypeNode.GetText());
       m_contentTypeHasBeenSet = true;
     }
   }

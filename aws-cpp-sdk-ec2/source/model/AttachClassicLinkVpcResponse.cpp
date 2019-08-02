@@ -53,7 +53,7 @@ AttachClassicLinkVpcResponse& AttachClassicLinkVpcResponse::operator =(const Aws
     XmlNode returnNode = resultNode.FirstChild("return");
     if(!returnNode.IsNull())
     {
-      m_return = StringUtils::ConvertToBool(StringUtils::Trim(returnNode.GetText().c_str()).c_str());
+      m_return = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnNode.GetText()).c_str()).c_str());
     }
   }
 

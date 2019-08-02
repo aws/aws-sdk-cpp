@@ -60,7 +60,7 @@ S3AccessControlPolicy& S3AccessControlPolicy::operator =(const XmlNode& xmlNode)
     XmlNode cannedAccessControlListNode = resultNode.FirstChild("CannedAccessControlList");
     if(!cannedAccessControlListNode.IsNull())
     {
-      m_cannedAccessControlList = S3CannedAccessControlListMapper::GetS3CannedAccessControlListForName(StringUtils::Trim(cannedAccessControlListNode.GetText().c_str()).c_str());
+      m_cannedAccessControlList = S3CannedAccessControlListMapper::GetS3CannedAccessControlListForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cannedAccessControlListNode.GetText()).c_str()).c_str());
       m_cannedAccessControlListHasBeenSet = true;
     }
   }

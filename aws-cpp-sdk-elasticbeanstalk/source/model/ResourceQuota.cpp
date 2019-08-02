@@ -52,7 +52,7 @@ ResourceQuota& ResourceQuota::operator =(const XmlNode& xmlNode)
     XmlNode maximumNode = resultNode.FirstChild("Maximum");
     if(!maximumNode.IsNull())
     {
-      m_maximum = StringUtils::ConvertToInt32(StringUtils::Trim(maximumNode.GetText().c_str()).c_str());
+      m_maximum = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNode.GetText()).c_str()).c_str());
       m_maximumHasBeenSet = true;
     }
   }

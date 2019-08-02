@@ -68,43 +68,43 @@ OptionGroupOptionSetting& OptionGroupOptionSetting::operator =(const XmlNode& xm
     XmlNode settingNameNode = resultNode.FirstChild("SettingName");
     if(!settingNameNode.IsNull())
     {
-      m_settingName = settingNameNode.GetText();
+      m_settingName = Aws::Utils::Xml::DecodeEscapedXmlText(settingNameNode.GetText());
       m_settingNameHasBeenSet = true;
     }
     XmlNode settingDescriptionNode = resultNode.FirstChild("SettingDescription");
     if(!settingDescriptionNode.IsNull())
     {
-      m_settingDescription = settingDescriptionNode.GetText();
+      m_settingDescription = Aws::Utils::Xml::DecodeEscapedXmlText(settingDescriptionNode.GetText());
       m_settingDescriptionHasBeenSet = true;
     }
     XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
     if(!defaultValueNode.IsNull())
     {
-      m_defaultValue = defaultValueNode.GetText();
+      m_defaultValue = Aws::Utils::Xml::DecodeEscapedXmlText(defaultValueNode.GetText());
       m_defaultValueHasBeenSet = true;
     }
     XmlNode applyTypeNode = resultNode.FirstChild("ApplyType");
     if(!applyTypeNode.IsNull())
     {
-      m_applyType = applyTypeNode.GetText();
+      m_applyType = Aws::Utils::Xml::DecodeEscapedXmlText(applyTypeNode.GetText());
       m_applyTypeHasBeenSet = true;
     }
     XmlNode allowedValuesNode = resultNode.FirstChild("AllowedValues");
     if(!allowedValuesNode.IsNull())
     {
-      m_allowedValues = allowedValuesNode.GetText();
+      m_allowedValues = Aws::Utils::Xml::DecodeEscapedXmlText(allowedValuesNode.GetText());
       m_allowedValuesHasBeenSet = true;
     }
     XmlNode isModifiableNode = resultNode.FirstChild("IsModifiable");
     if(!isModifiableNode.IsNull())
     {
-      m_isModifiable = StringUtils::ConvertToBool(StringUtils::Trim(isModifiableNode.GetText().c_str()).c_str());
+      m_isModifiable = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isModifiableNode.GetText()).c_str()).c_str());
       m_isModifiableHasBeenSet = true;
     }
     XmlNode isRequiredNode = resultNode.FirstChild("IsRequired");
     if(!isRequiredNode.IsNull())
     {
-      m_isRequired = StringUtils::ConvertToBool(StringUtils::Trim(isRequiredNode.GetText().c_str()).c_str());
+      m_isRequired = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isRequiredNode.GetText()).c_str()).c_str());
       m_isRequiredHasBeenSet = true;
     }
     XmlNode minimumEngineVersionPerAllowedValueNode = resultNode.FirstChild("MinimumEngineVersionPerAllowedValue");

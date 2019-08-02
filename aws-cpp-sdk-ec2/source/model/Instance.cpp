@@ -160,43 +160,43 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode amiLaunchIndexNode = resultNode.FirstChild("amiLaunchIndex");
     if(!amiLaunchIndexNode.IsNull())
     {
-      m_amiLaunchIndex = StringUtils::ConvertToInt32(StringUtils::Trim(amiLaunchIndexNode.GetText().c_str()).c_str());
+      m_amiLaunchIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(amiLaunchIndexNode.GetText()).c_str()).c_str());
       m_amiLaunchIndexHasBeenSet = true;
     }
     XmlNode imageIdNode = resultNode.FirstChild("imageId");
     if(!imageIdNode.IsNull())
     {
-      m_imageId = imageIdNode.GetText();
+      m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
       m_imageIdHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
-      m_instanceId = instanceIdNode.GetText();
+      m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(instanceTypeNode.GetText().c_str()).c_str());
+      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()).c_str());
       m_instanceTypeHasBeenSet = true;
     }
     XmlNode kernelIdNode = resultNode.FirstChild("kernelId");
     if(!kernelIdNode.IsNull())
     {
-      m_kernelId = kernelIdNode.GetText();
+      m_kernelId = Aws::Utils::Xml::DecodeEscapedXmlText(kernelIdNode.GetText());
       m_kernelIdHasBeenSet = true;
     }
     XmlNode keyNameNode = resultNode.FirstChild("keyName");
     if(!keyNameNode.IsNull())
     {
-      m_keyName = keyNameNode.GetText();
+      m_keyName = Aws::Utils::Xml::DecodeEscapedXmlText(keyNameNode.GetText());
       m_keyNameHasBeenSet = true;
     }
     XmlNode launchTimeNode = resultNode.FirstChild("launchTime");
     if(!launchTimeNode.IsNull())
     {
-      m_launchTime = DateTime(StringUtils::Trim(launchTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_launchTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(launchTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_launchTimeHasBeenSet = true;
     }
     XmlNode monitoringNode = resultNode.FirstChild("monitoring");
@@ -214,19 +214,19 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode platformNode = resultNode.FirstChild("platform");
     if(!platformNode.IsNull())
     {
-      m_platform = PlatformValuesMapper::GetPlatformValuesForName(StringUtils::Trim(platformNode.GetText().c_str()).c_str());
+      m_platform = PlatformValuesMapper::GetPlatformValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformNode.GetText()).c_str()).c_str());
       m_platformHasBeenSet = true;
     }
     XmlNode privateDnsNameNode = resultNode.FirstChild("privateDnsName");
     if(!privateDnsNameNode.IsNull())
     {
-      m_privateDnsName = privateDnsNameNode.GetText();
+      m_privateDnsName = Aws::Utils::Xml::DecodeEscapedXmlText(privateDnsNameNode.GetText());
       m_privateDnsNameHasBeenSet = true;
     }
     XmlNode privateIpAddressNode = resultNode.FirstChild("privateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
-      m_privateIpAddress = privateIpAddressNode.GetText();
+      m_privateIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(privateIpAddressNode.GetText());
       m_privateIpAddressHasBeenSet = true;
     }
     XmlNode productCodesNode = resultNode.FirstChild("productCodes");
@@ -244,19 +244,19 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode publicDnsNameNode = resultNode.FirstChild("dnsName");
     if(!publicDnsNameNode.IsNull())
     {
-      m_publicDnsName = publicDnsNameNode.GetText();
+      m_publicDnsName = Aws::Utils::Xml::DecodeEscapedXmlText(publicDnsNameNode.GetText());
       m_publicDnsNameHasBeenSet = true;
     }
     XmlNode publicIpAddressNode = resultNode.FirstChild("ipAddress");
     if(!publicIpAddressNode.IsNull())
     {
-      m_publicIpAddress = publicIpAddressNode.GetText();
+      m_publicIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpAddressNode.GetText());
       m_publicIpAddressHasBeenSet = true;
     }
     XmlNode ramdiskIdNode = resultNode.FirstChild("ramdiskId");
     if(!ramdiskIdNode.IsNull())
     {
-      m_ramdiskId = ramdiskIdNode.GetText();
+      m_ramdiskId = Aws::Utils::Xml::DecodeEscapedXmlText(ramdiskIdNode.GetText());
       m_ramdiskIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("instanceState");
@@ -268,25 +268,25 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode stateTransitionReasonNode = resultNode.FirstChild("reason");
     if(!stateTransitionReasonNode.IsNull())
     {
-      m_stateTransitionReason = stateTransitionReasonNode.GetText();
+      m_stateTransitionReason = Aws::Utils::Xml::DecodeEscapedXmlText(stateTransitionReasonNode.GetText());
       m_stateTransitionReasonHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
-      m_subnetId = subnetIdNode.GetText();
+      m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
-      m_vpcId = vpcIdNode.GetText();
+      m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
     }
     XmlNode architectureNode = resultNode.FirstChild("architecture");
     if(!architectureNode.IsNull())
     {
-      m_architecture = ArchitectureValuesMapper::GetArchitectureValuesForName(StringUtils::Trim(architectureNode.GetText().c_str()).c_str());
+      m_architecture = ArchitectureValuesMapper::GetArchitectureValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(architectureNode.GetText()).c_str()).c_str());
       m_architectureHasBeenSet = true;
     }
     XmlNode blockDeviceMappingsNode = resultNode.FirstChild("blockDeviceMapping");
@@ -304,25 +304,25 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
-      m_clientToken = clientTokenNode.GetText();
+      m_clientToken = Aws::Utils::Xml::DecodeEscapedXmlText(clientTokenNode.GetText());
       m_clientTokenHasBeenSet = true;
     }
     XmlNode ebsOptimizedNode = resultNode.FirstChild("ebsOptimized");
     if(!ebsOptimizedNode.IsNull())
     {
-      m_ebsOptimized = StringUtils::ConvertToBool(StringUtils::Trim(ebsOptimizedNode.GetText().c_str()).c_str());
+      m_ebsOptimized = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ebsOptimizedNode.GetText()).c_str()).c_str());
       m_ebsOptimizedHasBeenSet = true;
     }
     XmlNode enaSupportNode = resultNode.FirstChild("enaSupport");
     if(!enaSupportNode.IsNull())
     {
-      m_enaSupport = StringUtils::ConvertToBool(StringUtils::Trim(enaSupportNode.GetText().c_str()).c_str());
+      m_enaSupport = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enaSupportNode.GetText()).c_str()).c_str());
       m_enaSupportHasBeenSet = true;
     }
     XmlNode hypervisorNode = resultNode.FirstChild("hypervisor");
     if(!hypervisorNode.IsNull())
     {
-      m_hypervisor = HypervisorTypeMapper::GetHypervisorTypeForName(StringUtils::Trim(hypervisorNode.GetText().c_str()).c_str());
+      m_hypervisor = HypervisorTypeMapper::GetHypervisorTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hypervisorNode.GetText()).c_str()).c_str());
       m_hypervisorHasBeenSet = true;
     }
     XmlNode iamInstanceProfileNode = resultNode.FirstChild("iamInstanceProfile");
@@ -334,7 +334,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode instanceLifecycleNode = resultNode.FirstChild("instanceLifecycle");
     if(!instanceLifecycleNode.IsNull())
     {
-      m_instanceLifecycle = InstanceLifecycleTypeMapper::GetInstanceLifecycleTypeForName(StringUtils::Trim(instanceLifecycleNode.GetText().c_str()).c_str());
+      m_instanceLifecycle = InstanceLifecycleTypeMapper::GetInstanceLifecycleTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceLifecycleNode.GetText()).c_str()).c_str());
       m_instanceLifecycleHasBeenSet = true;
     }
     XmlNode elasticGpuAssociationsNode = resultNode.FirstChild("elasticGpuAssociationSet");
@@ -376,13 +376,13 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode rootDeviceNameNode = resultNode.FirstChild("rootDeviceName");
     if(!rootDeviceNameNode.IsNull())
     {
-      m_rootDeviceName = rootDeviceNameNode.GetText();
+      m_rootDeviceName = Aws::Utils::Xml::DecodeEscapedXmlText(rootDeviceNameNode.GetText());
       m_rootDeviceNameHasBeenSet = true;
     }
     XmlNode rootDeviceTypeNode = resultNode.FirstChild("rootDeviceType");
     if(!rootDeviceTypeNode.IsNull())
     {
-      m_rootDeviceType = DeviceTypeMapper::GetDeviceTypeForName(StringUtils::Trim(rootDeviceTypeNode.GetText().c_str()).c_str());
+      m_rootDeviceType = DeviceTypeMapper::GetDeviceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(rootDeviceTypeNode.GetText()).c_str()).c_str());
       m_rootDeviceTypeHasBeenSet = true;
     }
     XmlNode securityGroupsNode = resultNode.FirstChild("groupSet");
@@ -400,19 +400,19 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode sourceDestCheckNode = resultNode.FirstChild("sourceDestCheck");
     if(!sourceDestCheckNode.IsNull())
     {
-      m_sourceDestCheck = StringUtils::ConvertToBool(StringUtils::Trim(sourceDestCheckNode.GetText().c_str()).c_str());
+      m_sourceDestCheck = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceDestCheckNode.GetText()).c_str()).c_str());
       m_sourceDestCheckHasBeenSet = true;
     }
     XmlNode spotInstanceRequestIdNode = resultNode.FirstChild("spotInstanceRequestId");
     if(!spotInstanceRequestIdNode.IsNull())
     {
-      m_spotInstanceRequestId = spotInstanceRequestIdNode.GetText();
+      m_spotInstanceRequestId = Aws::Utils::Xml::DecodeEscapedXmlText(spotInstanceRequestIdNode.GetText());
       m_spotInstanceRequestIdHasBeenSet = true;
     }
     XmlNode sriovNetSupportNode = resultNode.FirstChild("sriovNetSupport");
     if(!sriovNetSupportNode.IsNull())
     {
-      m_sriovNetSupport = sriovNetSupportNode.GetText();
+      m_sriovNetSupport = Aws::Utils::Xml::DecodeEscapedXmlText(sriovNetSupportNode.GetText());
       m_sriovNetSupportHasBeenSet = true;
     }
     XmlNode stateReasonNode = resultNode.FirstChild("stateReason");
@@ -436,7 +436,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode virtualizationTypeNode = resultNode.FirstChild("virtualizationType");
     if(!virtualizationTypeNode.IsNull())
     {
-      m_virtualizationType = VirtualizationTypeMapper::GetVirtualizationTypeForName(StringUtils::Trim(virtualizationTypeNode.GetText().c_str()).c_str());
+      m_virtualizationType = VirtualizationTypeMapper::GetVirtualizationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(virtualizationTypeNode.GetText()).c_str()).c_str());
       m_virtualizationTypeHasBeenSet = true;
     }
     XmlNode cpuOptionsNode = resultNode.FirstChild("cpuOptions");
@@ -448,7 +448,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     XmlNode capacityReservationIdNode = resultNode.FirstChild("capacityReservationId");
     if(!capacityReservationIdNode.IsNull())
     {
-      m_capacityReservationId = capacityReservationIdNode.GetText();
+      m_capacityReservationId = Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationIdNode.GetText());
       m_capacityReservationIdHasBeenSet = true;
     }
     XmlNode capacityReservationSpecificationNode = resultNode.FirstChild("capacityReservationSpecification");

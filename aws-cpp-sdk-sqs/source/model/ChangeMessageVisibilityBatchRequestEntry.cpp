@@ -56,19 +56,19 @@ ChangeMessageVisibilityBatchRequestEntry& ChangeMessageVisibilityBatchRequestEnt
     XmlNode idNode = resultNode.FirstChild("Id");
     if(!idNode.IsNull())
     {
-      m_id = idNode.GetText();
+      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
     }
     XmlNode receiptHandleNode = resultNode.FirstChild("ReceiptHandle");
     if(!receiptHandleNode.IsNull())
     {
-      m_receiptHandle = receiptHandleNode.GetText();
+      m_receiptHandle = Aws::Utils::Xml::DecodeEscapedXmlText(receiptHandleNode.GetText());
       m_receiptHandleHasBeenSet = true;
     }
     XmlNode visibilityTimeoutNode = resultNode.FirstChild("VisibilityTimeout");
     if(!visibilityTimeoutNode.IsNull())
     {
-      m_visibilityTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(visibilityTimeoutNode.GetText().c_str()).c_str());
+      m_visibilityTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(visibilityTimeoutNode.GetText()).c_str()).c_str());
       m_visibilityTimeoutHasBeenSet = true;
     }
   }

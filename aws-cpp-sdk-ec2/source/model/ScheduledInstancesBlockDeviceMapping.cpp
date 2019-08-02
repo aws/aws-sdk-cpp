@@ -56,7 +56,7 @@ ScheduledInstancesBlockDeviceMapping& ScheduledInstancesBlockDeviceMapping::oper
     XmlNode deviceNameNode = resultNode.FirstChild("DeviceName");
     if(!deviceNameNode.IsNull())
     {
-      m_deviceName = deviceNameNode.GetText();
+      m_deviceName = Aws::Utils::Xml::DecodeEscapedXmlText(deviceNameNode.GetText());
       m_deviceNameHasBeenSet = true;
     }
     XmlNode ebsNode = resultNode.FirstChild("Ebs");
@@ -68,13 +68,13 @@ ScheduledInstancesBlockDeviceMapping& ScheduledInstancesBlockDeviceMapping::oper
     XmlNode noDeviceNode = resultNode.FirstChild("NoDevice");
     if(!noDeviceNode.IsNull())
     {
-      m_noDevice = noDeviceNode.GetText();
+      m_noDevice = Aws::Utils::Xml::DecodeEscapedXmlText(noDeviceNode.GetText());
       m_noDeviceHasBeenSet = true;
     }
     XmlNode virtualNameNode = resultNode.FirstChild("VirtualName");
     if(!virtualNameNode.IsNull())
     {
-      m_virtualName = virtualNameNode.GetText();
+      m_virtualName = Aws::Utils::Xml::DecodeEscapedXmlText(virtualNameNode.GetText());
       m_virtualNameHasBeenSet = true;
     }
   }

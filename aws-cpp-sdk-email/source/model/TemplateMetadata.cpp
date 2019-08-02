@@ -52,13 +52,13 @@ TemplateMetadata& TemplateMetadata::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = nameNode.GetText();
+      m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode createdTimestampNode = resultNode.FirstChild("CreatedTimestamp");
     if(!createdTimestampNode.IsNull())
     {
-      m_createdTimestamp = DateTime(StringUtils::Trim(createdTimestampNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_createdTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_createdTimestampHasBeenSet = true;
     }
   }
