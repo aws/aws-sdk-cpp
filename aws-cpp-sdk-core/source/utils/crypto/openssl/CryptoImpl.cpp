@@ -56,7 +56,11 @@ namespace Aws
 
                 void init_static_state()
                 {
+#if OPENSSL_VERSION_LESS_1_1
                     ERR_load_CRYPTO_strings();
+#else
+                    OPENSSL_init_crypto(OPENSSL_INIT_LOAD_CRYPTO_STRINGS /*options*/ ,NULL /* OpenSSL init settings*/ );
+#endif
                     OPENSSL_add_all_algorithms_noconf();
 
 #if OPENSSL_VERSION_LESS_1_1
@@ -624,7 +628,7 @@ namespace Aws
             {
                 CryptoBuffer const& finalBuffer = OpenSSLCipher::FinalizeEncryption();
                 m_tag = CryptoBuffer(TagLengthBytes);
-                if (!EVP_CIPHER_CTX_ctrl(m_encryptor_ctx, EVP_CTRL_CCM_GET_TAG, static_cast<int>(m_tag.GetLength()),
+                if (!EVP_CIPHER_CTX_ctrl(m_encryptor_ctx, EVP_CTRL_GCM_GET_TAG, static_cast<int>(m_tag.GetLength()),
                                          m_tag.GetUnderlyingData()))
                 {
                     m_failure = true;
