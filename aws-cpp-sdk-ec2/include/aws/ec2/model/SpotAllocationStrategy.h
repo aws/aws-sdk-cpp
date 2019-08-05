@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     lowest_price,
-    diversified
+    diversified,
+    capacity_optimized
   };
 
 namespace SpotAllocationStrategyMapper

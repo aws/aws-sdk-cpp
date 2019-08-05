@@ -37,6 +37,7 @@
 #include <aws/iot/model/AttachPolicyRequest.h>
 #include <aws/iot/model/AttachSecurityProfileRequest.h>
 #include <aws/iot/model/AttachThingPrincipalRequest.h>
+#include <aws/iot/model/CancelAuditMitigationActionsTaskRequest.h>
 #include <aws/iot/model/CancelAuditTaskRequest.h>
 #include <aws/iot/model/CancelCertificateTransferRequest.h>
 #include <aws/iot/model/CancelJobRequest.h>
@@ -48,6 +49,7 @@
 #include <aws/iot/model/CreateDynamicThingGroupRequest.h>
 #include <aws/iot/model/CreateJobRequest.h>
 #include <aws/iot/model/CreateKeysAndCertificateRequest.h>
+#include <aws/iot/model/CreateMitigationActionRequest.h>
 #include <aws/iot/model/CreateOTAUpdateRequest.h>
 #include <aws/iot/model/CreatePolicyRequest.h>
 #include <aws/iot/model/CreatePolicyVersionRequest.h>
@@ -67,6 +69,7 @@
 #include <aws/iot/model/DeleteDynamicThingGroupRequest.h>
 #include <aws/iot/model/DeleteJobRequest.h>
 #include <aws/iot/model/DeleteJobExecutionRequest.h>
+#include <aws/iot/model/DeleteMitigationActionRequest.h>
 #include <aws/iot/model/DeleteOTAUpdateRequest.h>
 #include <aws/iot/model/DeletePolicyRequest.h>
 #include <aws/iot/model/DeletePolicyVersionRequest.h>
@@ -82,6 +85,8 @@
 #include <aws/iot/model/DeleteV2LoggingLevelRequest.h>
 #include <aws/iot/model/DeprecateThingTypeRequest.h>
 #include <aws/iot/model/DescribeAccountAuditConfigurationRequest.h>
+#include <aws/iot/model/DescribeAuditFindingRequest.h>
+#include <aws/iot/model/DescribeAuditMitigationActionsTaskRequest.h>
 #include <aws/iot/model/DescribeAuditTaskRequest.h>
 #include <aws/iot/model/DescribeAuthorizerRequest.h>
 #include <aws/iot/model/DescribeBillingGroupRequest.h>
@@ -93,6 +98,7 @@
 #include <aws/iot/model/DescribeIndexRequest.h>
 #include <aws/iot/model/DescribeJobRequest.h>
 #include <aws/iot/model/DescribeJobExecutionRequest.h>
+#include <aws/iot/model/DescribeMitigationActionRequest.h>
 #include <aws/iot/model/DescribeRoleAliasRequest.h>
 #include <aws/iot/model/DescribeScheduledAuditRequest.h>
 #include <aws/iot/model/DescribeSecurityProfileRequest.h>
@@ -120,6 +126,8 @@
 #include <aws/iot/model/ListActiveViolationsRequest.h>
 #include <aws/iot/model/ListAttachedPoliciesRequest.h>
 #include <aws/iot/model/ListAuditFindingsRequest.h>
+#include <aws/iot/model/ListAuditMitigationActionsExecutionsRequest.h>
+#include <aws/iot/model/ListAuditMitigationActionsTasksRequest.h>
 #include <aws/iot/model/ListAuditTasksRequest.h>
 #include <aws/iot/model/ListAuthorizersRequest.h>
 #include <aws/iot/model/ListBillingGroupsRequest.h>
@@ -130,6 +138,7 @@
 #include <aws/iot/model/ListJobExecutionsForJobRequest.h>
 #include <aws/iot/model/ListJobExecutionsForThingRequest.h>
 #include <aws/iot/model/ListJobsRequest.h>
+#include <aws/iot/model/ListMitigationActionsRequest.h>
 #include <aws/iot/model/ListOTAUpdatesRequest.h>
 #include <aws/iot/model/ListOutgoingCertificatesRequest.h>
 #include <aws/iot/model/ListPoliciesRequest.h>
@@ -168,6 +177,7 @@
 #include <aws/iot/model/SetLoggingOptionsRequest.h>
 #include <aws/iot/model/SetV2LoggingLevelRequest.h>
 #include <aws/iot/model/SetV2LoggingOptionsRequest.h>
+#include <aws/iot/model/StartAuditMitigationActionsTaskRequest.h>
 #include <aws/iot/model/StartOnDemandAuditTaskRequest.h>
 #include <aws/iot/model/StartThingRegistrationTaskRequest.h>
 #include <aws/iot/model/StopThingRegistrationTaskRequest.h>
@@ -185,6 +195,7 @@
 #include <aws/iot/model/UpdateEventConfigurationsRequest.h>
 #include <aws/iot/model/UpdateIndexingConfigurationRequest.h>
 #include <aws/iot/model/UpdateJobRequest.h>
+#include <aws/iot/model/UpdateMitigationActionRequest.h>
 #include <aws/iot/model/UpdateRoleAliasRequest.h>
 #include <aws/iot/model/UpdateScheduledAuditRequest.h>
 #include <aws/iot/model/UpdateSecurityProfileRequest.h>
@@ -552,6 +563,48 @@ void IoTClient::AttachThingPrincipalAsync(const AttachThingPrincipalRequest& req
 void IoTClient::AttachThingPrincipalAsyncHelper(const AttachThingPrincipalRequest& request, const AttachThingPrincipalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AttachThingPrincipal(request), context);
+}
+
+CancelAuditMitigationActionsTaskOutcome IoTClient::CancelAuditMitigationActionsTask(const CancelAuditMitigationActionsTaskRequest& request) const
+{
+  if (!request.TaskIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelAuditMitigationActionsTask", "Required field: TaskId, is not set");
+    return CancelAuditMitigationActionsTaskOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TaskId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/audit/mitigationactions/tasks/";
+  ss << request.GetTaskId();
+  ss << "/cancel";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CancelAuditMitigationActionsTaskOutcome(CancelAuditMitigationActionsTaskResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CancelAuditMitigationActionsTaskOutcome(outcome.GetError());
+  }
+}
+
+CancelAuditMitigationActionsTaskOutcomeCallable IoTClient::CancelAuditMitigationActionsTaskCallable(const CancelAuditMitigationActionsTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelAuditMitigationActionsTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelAuditMitigationActionsTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::CancelAuditMitigationActionsTaskAsync(const CancelAuditMitigationActionsTaskRequest& request, const CancelAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelAuditMitigationActionsTaskAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::CancelAuditMitigationActionsTaskAsyncHelper(const CancelAuditMitigationActionsTaskRequest& request, const CancelAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelAuditMitigationActionsTask(request), context);
 }
 
 CancelAuditTaskOutcome IoTClient::CancelAuditTask(const CancelAuditTaskRequest& request) const
@@ -995,6 +1048,47 @@ void IoTClient::CreateKeysAndCertificateAsync(const CreateKeysAndCertificateRequ
 void IoTClient::CreateKeysAndCertificateAsyncHelper(const CreateKeysAndCertificateRequest& request, const CreateKeysAndCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateKeysAndCertificate(request), context);
+}
+
+CreateMitigationActionOutcome IoTClient::CreateMitigationAction(const CreateMitigationActionRequest& request) const
+{
+  if (!request.ActionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateMitigationAction", "Required field: ActionName, is not set");
+    return CreateMitigationActionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ActionName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/mitigationactions/actions/";
+  ss << request.GetActionName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateMitigationActionOutcome(CreateMitigationActionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateMitigationActionOutcome(outcome.GetError());
+  }
+}
+
+CreateMitigationActionOutcomeCallable IoTClient::CreateMitigationActionCallable(const CreateMitigationActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateMitigationActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMitigationAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::CreateMitigationActionAsync(const CreateMitigationActionRequest& request, const CreateMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateMitigationActionAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::CreateMitigationActionAsyncHelper(const CreateMitigationActionRequest& request, const CreateMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateMitigationAction(request), context);
 }
 
 CreateOTAUpdateOutcome IoTClient::CreateOTAUpdate(const CreateOTAUpdateRequest& request) const
@@ -1785,6 +1879,47 @@ void IoTClient::DeleteJobExecutionAsyncHelper(const DeleteJobExecutionRequest& r
   handler(this, request, DeleteJobExecution(request), context);
 }
 
+DeleteMitigationActionOutcome IoTClient::DeleteMitigationAction(const DeleteMitigationActionRequest& request) const
+{
+  if (!request.ActionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteMitigationAction", "Required field: ActionName, is not set");
+    return DeleteMitigationActionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ActionName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/mitigationactions/actions/";
+  ss << request.GetActionName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteMitigationActionOutcome(DeleteMitigationActionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteMitigationActionOutcome(outcome.GetError());
+  }
+}
+
+DeleteMitigationActionOutcomeCallable IoTClient::DeleteMitigationActionCallable(const DeleteMitigationActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteMitigationActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMitigationAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DeleteMitigationActionAsync(const DeleteMitigationActionRequest& request, const DeleteMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteMitigationActionAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DeleteMitigationActionAsyncHelper(const DeleteMitigationActionRequest& request, const DeleteMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteMitigationAction(request), context);
+}
+
 DeleteOTAUpdateOutcome IoTClient::DeleteOTAUpdate(const DeleteOTAUpdateRequest& request) const
 {
   if (!request.OtaUpdateIdHasBeenSet())
@@ -2400,6 +2535,88 @@ void IoTClient::DescribeAccountAuditConfigurationAsyncHelper(const DescribeAccou
   handler(this, request, DescribeAccountAuditConfiguration(request), context);
 }
 
+DescribeAuditFindingOutcome IoTClient::DescribeAuditFinding(const DescribeAuditFindingRequest& request) const
+{
+  if (!request.FindingIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAuditFinding", "Required field: FindingId, is not set");
+    return DescribeAuditFindingOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FindingId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/audit/findings/";
+  ss << request.GetFindingId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeAuditFindingOutcome(DescribeAuditFindingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeAuditFindingOutcome(outcome.GetError());
+  }
+}
+
+DescribeAuditFindingOutcomeCallable IoTClient::DescribeAuditFindingCallable(const DescribeAuditFindingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAuditFindingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAuditFinding(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DescribeAuditFindingAsync(const DescribeAuditFindingRequest& request, const DescribeAuditFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAuditFindingAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DescribeAuditFindingAsyncHelper(const DescribeAuditFindingRequest& request, const DescribeAuditFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAuditFinding(request), context);
+}
+
+DescribeAuditMitigationActionsTaskOutcome IoTClient::DescribeAuditMitigationActionsTask(const DescribeAuditMitigationActionsTaskRequest& request) const
+{
+  if (!request.TaskIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAuditMitigationActionsTask", "Required field: TaskId, is not set");
+    return DescribeAuditMitigationActionsTaskOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TaskId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/audit/mitigationactions/tasks/";
+  ss << request.GetTaskId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeAuditMitigationActionsTaskOutcome(DescribeAuditMitigationActionsTaskResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeAuditMitigationActionsTaskOutcome(outcome.GetError());
+  }
+}
+
+DescribeAuditMitigationActionsTaskOutcomeCallable IoTClient::DescribeAuditMitigationActionsTaskCallable(const DescribeAuditMitigationActionsTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAuditMitigationActionsTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAuditMitigationActionsTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DescribeAuditMitigationActionsTaskAsync(const DescribeAuditMitigationActionsTaskRequest& request, const DescribeAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAuditMitigationActionsTaskAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DescribeAuditMitigationActionsTaskAsyncHelper(const DescribeAuditMitigationActionsTaskRequest& request, const DescribeAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAuditMitigationActionsTask(request), context);
+}
+
 DescribeAuditTaskOutcome IoTClient::DescribeAuditTask(const DescribeAuditTaskRequest& request) const
 {
   if (!request.TaskIdHasBeenSet())
@@ -2838,6 +3055,47 @@ void IoTClient::DescribeJobExecutionAsync(const DescribeJobExecutionRequest& req
 void IoTClient::DescribeJobExecutionAsyncHelper(const DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeJobExecution(request), context);
+}
+
+DescribeMitigationActionOutcome IoTClient::DescribeMitigationAction(const DescribeMitigationActionRequest& request) const
+{
+  if (!request.ActionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeMitigationAction", "Required field: ActionName, is not set");
+    return DescribeMitigationActionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ActionName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/mitigationactions/actions/";
+  ss << request.GetActionName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeMitigationActionOutcome(DescribeMitigationActionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeMitigationActionOutcome(outcome.GetError());
+  }
+}
+
+DescribeMitigationActionOutcomeCallable IoTClient::DescribeMitigationActionCallable(const DescribeMitigationActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeMitigationActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMitigationAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DescribeMitigationActionAsync(const DescribeMitigationActionRequest& request, const DescribeMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeMitigationActionAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DescribeMitigationActionAsyncHelper(const DescribeMitigationActionRequest& request, const DescribeMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeMitigationAction(request), context);
 }
 
 DescribeRoleAliasOutcome IoTClient::DescribeRoleAlias(const DescribeRoleAliasRequest& request) const
@@ -3921,6 +4179,96 @@ void IoTClient::ListAuditFindingsAsyncHelper(const ListAuditFindingsRequest& req
   handler(this, request, ListAuditFindings(request), context);
 }
 
+ListAuditMitigationActionsExecutionsOutcome IoTClient::ListAuditMitigationActionsExecutions(const ListAuditMitigationActionsExecutionsRequest& request) const
+{
+  if (!request.TaskIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAuditMitigationActionsExecutions", "Required field: TaskId, is not set");
+    return ListAuditMitigationActionsExecutionsOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TaskId]", false));
+  }
+  if (!request.FindingIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAuditMitigationActionsExecutions", "Required field: FindingId, is not set");
+    return ListAuditMitigationActionsExecutionsOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FindingId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/audit/mitigationactions/executions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListAuditMitigationActionsExecutionsOutcome(ListAuditMitigationActionsExecutionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListAuditMitigationActionsExecutionsOutcome(outcome.GetError());
+  }
+}
+
+ListAuditMitigationActionsExecutionsOutcomeCallable IoTClient::ListAuditMitigationActionsExecutionsCallable(const ListAuditMitigationActionsExecutionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAuditMitigationActionsExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAuditMitigationActionsExecutions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListAuditMitigationActionsExecutionsAsync(const ListAuditMitigationActionsExecutionsRequest& request, const ListAuditMitigationActionsExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAuditMitigationActionsExecutionsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListAuditMitigationActionsExecutionsAsyncHelper(const ListAuditMitigationActionsExecutionsRequest& request, const ListAuditMitigationActionsExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAuditMitigationActionsExecutions(request), context);
+}
+
+ListAuditMitigationActionsTasksOutcome IoTClient::ListAuditMitigationActionsTasks(const ListAuditMitigationActionsTasksRequest& request) const
+{
+  if (!request.StartTimeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAuditMitigationActionsTasks", "Required field: StartTime, is not set");
+    return ListAuditMitigationActionsTasksOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StartTime]", false));
+  }
+  if (!request.EndTimeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAuditMitigationActionsTasks", "Required field: EndTime, is not set");
+    return ListAuditMitigationActionsTasksOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndTime]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/audit/mitigationactions/tasks";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListAuditMitigationActionsTasksOutcome(ListAuditMitigationActionsTasksResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListAuditMitigationActionsTasksOutcome(outcome.GetError());
+  }
+}
+
+ListAuditMitigationActionsTasksOutcomeCallable IoTClient::ListAuditMitigationActionsTasksCallable(const ListAuditMitigationActionsTasksRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAuditMitigationActionsTasksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAuditMitigationActionsTasks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListAuditMitigationActionsTasksAsync(const ListAuditMitigationActionsTasksRequest& request, const ListAuditMitigationActionsTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAuditMitigationActionsTasksAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListAuditMitigationActionsTasksAsyncHelper(const ListAuditMitigationActionsTasksRequest& request, const ListAuditMitigationActionsTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAuditMitigationActionsTasks(request), context);
+}
+
 ListAuditTasksOutcome IoTClient::ListAuditTasks(const ListAuditTasksRequest& request) const
 {
   if (!request.StartTimeHasBeenSet())
@@ -4299,6 +4647,41 @@ void IoTClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResp
 void IoTClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListJobs(request), context);
+}
+
+ListMitigationActionsOutcome IoTClient::ListMitigationActions(const ListMitigationActionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/mitigationactions/actions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListMitigationActionsOutcome(ListMitigationActionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListMitigationActionsOutcome(outcome.GetError());
+  }
+}
+
+ListMitigationActionsOutcomeCallable IoTClient::ListMitigationActionsCallable(const ListMitigationActionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMitigationActionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMitigationActions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListMitigationActionsAsync(const ListMitigationActionsRequest& request, const ListMitigationActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMitigationActionsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListMitigationActionsAsyncHelper(const ListMitigationActionsRequest& request, const ListMitigationActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMitigationActions(request), context);
 }
 
 ListOTAUpdatesOutcome IoTClient::ListOTAUpdates(const ListOTAUpdatesRequest& request) const
@@ -5741,6 +6124,47 @@ void IoTClient::SetV2LoggingOptionsAsyncHelper(const SetV2LoggingOptionsRequest&
   handler(this, request, SetV2LoggingOptions(request), context);
 }
 
+StartAuditMitigationActionsTaskOutcome IoTClient::StartAuditMitigationActionsTask(const StartAuditMitigationActionsTaskRequest& request) const
+{
+  if (!request.TaskIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartAuditMitigationActionsTask", "Required field: TaskId, is not set");
+    return StartAuditMitigationActionsTaskOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TaskId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/audit/mitigationactions/tasks/";
+  ss << request.GetTaskId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartAuditMitigationActionsTaskOutcome(StartAuditMitigationActionsTaskResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartAuditMitigationActionsTaskOutcome(outcome.GetError());
+  }
+}
+
+StartAuditMitigationActionsTaskOutcomeCallable IoTClient::StartAuditMitigationActionsTaskCallable(const StartAuditMitigationActionsTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartAuditMitigationActionsTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartAuditMitigationActionsTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::StartAuditMitigationActionsTaskAsync(const StartAuditMitigationActionsTaskRequest& request, const StartAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartAuditMitigationActionsTaskAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::StartAuditMitigationActionsTaskAsyncHelper(const StartAuditMitigationActionsTaskRequest& request, const StartAuditMitigationActionsTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartAuditMitigationActionsTask(request), context);
+}
+
 StartOnDemandAuditTaskOutcome IoTClient::StartOnDemandAuditTask(const StartOnDemandAuditTaskRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -6400,6 +6824,47 @@ void IoTClient::UpdateJobAsync(const UpdateJobRequest& request, const UpdateJobR
 void IoTClient::UpdateJobAsyncHelper(const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateJob(request), context);
+}
+
+UpdateMitigationActionOutcome IoTClient::UpdateMitigationAction(const UpdateMitigationActionRequest& request) const
+{
+  if (!request.ActionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateMitigationAction", "Required field: ActionName, is not set");
+    return UpdateMitigationActionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ActionName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/mitigationactions/actions/";
+  ss << request.GetActionName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateMitigationActionOutcome(UpdateMitigationActionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateMitigationActionOutcome(outcome.GetError());
+  }
+}
+
+UpdateMitigationActionOutcomeCallable IoTClient::UpdateMitigationActionCallable(const UpdateMitigationActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateMitigationActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMitigationAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::UpdateMitigationActionAsync(const UpdateMitigationActionRequest& request, const UpdateMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateMitigationActionAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::UpdateMitigationActionAsyncHelper(const UpdateMitigationActionRequest& request, const UpdateMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateMitigationAction(request), context);
 }
 
 UpdateRoleAliasOutcome IoTClient::UpdateRoleAlias(const UpdateRoleAliasRequest& request) const

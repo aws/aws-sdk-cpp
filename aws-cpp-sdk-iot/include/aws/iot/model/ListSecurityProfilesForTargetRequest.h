@@ -111,22 +111,22 @@ namespace Model
 
 
     /**
-     * <p>If true, return child groups as well.</p>
+     * <p>If true, return child groups too.</p>
      */
     inline bool GetRecursive() const{ return m_recursive; }
 
     /**
-     * <p>If true, return child groups as well.</p>
+     * <p>If true, return child groups too.</p>
      */
     inline bool RecursiveHasBeenSet() const { return m_recursiveHasBeenSet; }
 
     /**
-     * <p>If true, return child groups as well.</p>
+     * <p>If true, return child groups too.</p>
      */
     inline void SetRecursive(bool value) { m_recursiveHasBeenSet = true; m_recursive = value; }
 
     /**
-     * <p>If true, return child groups as well.</p>
+     * <p>If true, return child groups too.</p>
      */
     inline ListSecurityProfilesForTargetRequest& WithRecursive(bool value) { SetRecursive(value); return *this;}
 

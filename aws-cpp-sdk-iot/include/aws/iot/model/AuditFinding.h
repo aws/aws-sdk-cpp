@@ -53,42 +53,91 @@ namespace Model
 
 
     /**
-     * <p>The ID of the audit that generated this result (finding)</p>
+     * <p>A unique identifier for this set of audit findings. This identifier is used
+     * to apply mitigation tasks to one or more sets of findings.</p>
+     */
+    inline const Aws::String& GetFindingId() const{ return m_findingId; }
+
+    /**
+     * <p>A unique identifier for this set of audit findings. This identifier is used
+     * to apply mitigation tasks to one or more sets of findings.</p>
+     */
+    inline bool FindingIdHasBeenSet() const { return m_findingIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for this set of audit findings. This identifier is used
+     * to apply mitigation tasks to one or more sets of findings.</p>
+     */
+    inline void SetFindingId(const Aws::String& value) { m_findingIdHasBeenSet = true; m_findingId = value; }
+
+    /**
+     * <p>A unique identifier for this set of audit findings. This identifier is used
+     * to apply mitigation tasks to one or more sets of findings.</p>
+     */
+    inline void SetFindingId(Aws::String&& value) { m_findingIdHasBeenSet = true; m_findingId = std::move(value); }
+
+    /**
+     * <p>A unique identifier for this set of audit findings. This identifier is used
+     * to apply mitigation tasks to one or more sets of findings.</p>
+     */
+    inline void SetFindingId(const char* value) { m_findingIdHasBeenSet = true; m_findingId.assign(value); }
+
+    /**
+     * <p>A unique identifier for this set of audit findings. This identifier is used
+     * to apply mitigation tasks to one or more sets of findings.</p>
+     */
+    inline AuditFinding& WithFindingId(const Aws::String& value) { SetFindingId(value); return *this;}
+
+    /**
+     * <p>A unique identifier for this set of audit findings. This identifier is used
+     * to apply mitigation tasks to one or more sets of findings.</p>
+     */
+    inline AuditFinding& WithFindingId(Aws::String&& value) { SetFindingId(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique identifier for this set of audit findings. This identifier is used
+     * to apply mitigation tasks to one or more sets of findings.</p>
+     */
+    inline AuditFinding& WithFindingId(const char* value) { SetFindingId(value); return *this;}
+
+
+    /**
+     * <p>The ID of the audit that generated this result (finding).</p>
      */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
 
     /**
-     * <p>The ID of the audit that generated this result (finding)</p>
+     * <p>The ID of the audit that generated this result (finding).</p>
      */
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
 
     /**
-     * <p>The ID of the audit that generated this result (finding)</p>
+     * <p>The ID of the audit that generated this result (finding).</p>
      */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /**
-     * <p>The ID of the audit that generated this result (finding)</p>
+     * <p>The ID of the audit that generated this result (finding).</p>
      */
     inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
 
     /**
-     * <p>The ID of the audit that generated this result (finding)</p>
+     * <p>The ID of the audit that generated this result (finding).</p>
      */
     inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
 
     /**
-     * <p>The ID of the audit that generated this result (finding)</p>
+     * <p>The ID of the audit that generated this result (finding).</p>
      */
     inline AuditFinding& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
 
     /**
-     * <p>The ID of the audit that generated this result (finding)</p>
+     * <p>The ID of the audit that generated this result (finding).</p>
      */
     inline AuditFinding& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the audit that generated this result (finding)</p>
+     * <p>The ID of the audit that generated this result (finding).</p>
      */
     inline AuditFinding& WithTaskId(const char* value) { SetTaskId(value); return *this;}
 
@@ -228,32 +277,32 @@ namespace Model
 
 
     /**
-     * <p>The resource that was found to be non-compliant with the audit check.</p>
+     * <p>The resource that was found to be noncompliant with the audit check.</p>
      */
     inline const NonCompliantResource& GetNonCompliantResource() const{ return m_nonCompliantResource; }
 
     /**
-     * <p>The resource that was found to be non-compliant with the audit check.</p>
+     * <p>The resource that was found to be noncompliant with the audit check.</p>
      */
     inline bool NonCompliantResourceHasBeenSet() const { return m_nonCompliantResourceHasBeenSet; }
 
     /**
-     * <p>The resource that was found to be non-compliant with the audit check.</p>
+     * <p>The resource that was found to be noncompliant with the audit check.</p>
      */
     inline void SetNonCompliantResource(const NonCompliantResource& value) { m_nonCompliantResourceHasBeenSet = true; m_nonCompliantResource = value; }
 
     /**
-     * <p>The resource that was found to be non-compliant with the audit check.</p>
+     * <p>The resource that was found to be noncompliant with the audit check.</p>
      */
     inline void SetNonCompliantResource(NonCompliantResource&& value) { m_nonCompliantResourceHasBeenSet = true; m_nonCompliantResource = std::move(value); }
 
     /**
-     * <p>The resource that was found to be non-compliant with the audit check.</p>
+     * <p>The resource that was found to be noncompliant with the audit check.</p>
      */
     inline AuditFinding& WithNonCompliantResource(const NonCompliantResource& value) { SetNonCompliantResource(value); return *this;}
 
     /**
-     * <p>The resource that was found to be non-compliant with the audit check.</p>
+     * <p>The resource that was found to be noncompliant with the audit check.</p>
      */
     inline AuditFinding& WithNonCompliantResource(NonCompliantResource&& value) { SetNonCompliantResource(std::move(value)); return *this;}
 
@@ -300,87 +349,90 @@ namespace Model
 
 
     /**
-     * <p>The reason the resource was non-compliant.</p>
+     * <p>The reason the resource was noncompliant.</p>
      */
     inline const Aws::String& GetReasonForNonCompliance() const{ return m_reasonForNonCompliance; }
 
     /**
-     * <p>The reason the resource was non-compliant.</p>
+     * <p>The reason the resource was noncompliant.</p>
      */
     inline bool ReasonForNonComplianceHasBeenSet() const { return m_reasonForNonComplianceHasBeenSet; }
 
     /**
-     * <p>The reason the resource was non-compliant.</p>
+     * <p>The reason the resource was noncompliant.</p>
      */
     inline void SetReasonForNonCompliance(const Aws::String& value) { m_reasonForNonComplianceHasBeenSet = true; m_reasonForNonCompliance = value; }
 
     /**
-     * <p>The reason the resource was non-compliant.</p>
+     * <p>The reason the resource was noncompliant.</p>
      */
     inline void SetReasonForNonCompliance(Aws::String&& value) { m_reasonForNonComplianceHasBeenSet = true; m_reasonForNonCompliance = std::move(value); }
 
     /**
-     * <p>The reason the resource was non-compliant.</p>
+     * <p>The reason the resource was noncompliant.</p>
      */
     inline void SetReasonForNonCompliance(const char* value) { m_reasonForNonComplianceHasBeenSet = true; m_reasonForNonCompliance.assign(value); }
 
     /**
-     * <p>The reason the resource was non-compliant.</p>
+     * <p>The reason the resource was noncompliant.</p>
      */
     inline AuditFinding& WithReasonForNonCompliance(const Aws::String& value) { SetReasonForNonCompliance(value); return *this;}
 
     /**
-     * <p>The reason the resource was non-compliant.</p>
+     * <p>The reason the resource was noncompliant.</p>
      */
     inline AuditFinding& WithReasonForNonCompliance(Aws::String&& value) { SetReasonForNonCompliance(std::move(value)); return *this;}
 
     /**
-     * <p>The reason the resource was non-compliant.</p>
+     * <p>The reason the resource was noncompliant.</p>
      */
     inline AuditFinding& WithReasonForNonCompliance(const char* value) { SetReasonForNonCompliance(value); return *this;}
 
 
     /**
-     * <p>A code which indicates the reason that the resource was non-compliant.</p>
+     * <p>A code that indicates the reason that the resource was noncompliant.</p>
      */
     inline const Aws::String& GetReasonForNonComplianceCode() const{ return m_reasonForNonComplianceCode; }
 
     /**
-     * <p>A code which indicates the reason that the resource was non-compliant.</p>
+     * <p>A code that indicates the reason that the resource was noncompliant.</p>
      */
     inline bool ReasonForNonComplianceCodeHasBeenSet() const { return m_reasonForNonComplianceCodeHasBeenSet; }
 
     /**
-     * <p>A code which indicates the reason that the resource was non-compliant.</p>
+     * <p>A code that indicates the reason that the resource was noncompliant.</p>
      */
     inline void SetReasonForNonComplianceCode(const Aws::String& value) { m_reasonForNonComplianceCodeHasBeenSet = true; m_reasonForNonComplianceCode = value; }
 
     /**
-     * <p>A code which indicates the reason that the resource was non-compliant.</p>
+     * <p>A code that indicates the reason that the resource was noncompliant.</p>
      */
     inline void SetReasonForNonComplianceCode(Aws::String&& value) { m_reasonForNonComplianceCodeHasBeenSet = true; m_reasonForNonComplianceCode = std::move(value); }
 
     /**
-     * <p>A code which indicates the reason that the resource was non-compliant.</p>
+     * <p>A code that indicates the reason that the resource was noncompliant.</p>
      */
     inline void SetReasonForNonComplianceCode(const char* value) { m_reasonForNonComplianceCodeHasBeenSet = true; m_reasonForNonComplianceCode.assign(value); }
 
     /**
-     * <p>A code which indicates the reason that the resource was non-compliant.</p>
+     * <p>A code that indicates the reason that the resource was noncompliant.</p>
      */
     inline AuditFinding& WithReasonForNonComplianceCode(const Aws::String& value) { SetReasonForNonComplianceCode(value); return *this;}
 
     /**
-     * <p>A code which indicates the reason that the resource was non-compliant.</p>
+     * <p>A code that indicates the reason that the resource was noncompliant.</p>
      */
     inline AuditFinding& WithReasonForNonComplianceCode(Aws::String&& value) { SetReasonForNonComplianceCode(std::move(value)); return *this;}
 
     /**
-     * <p>A code which indicates the reason that the resource was non-compliant.</p>
+     * <p>A code that indicates the reason that the resource was noncompliant.</p>
      */
     inline AuditFinding& WithReasonForNonComplianceCode(const char* value) { SetReasonForNonComplianceCode(value); return *this;}
 
   private:
+
+    Aws::String m_findingId;
+    bool m_findingIdHasBeenSet;
 
     Aws::String m_taskId;
     bool m_taskIdHasBeenSet;

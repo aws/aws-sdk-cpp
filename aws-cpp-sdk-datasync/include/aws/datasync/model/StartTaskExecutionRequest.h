@@ -111,58 +111,66 @@ namespace Model
 
 
     /**
-     * <p/> <p>A filter that determines which files to include in the transfer during a
-     * task execution based on the specified pattern in the filter. When multiple
-     * include filters are set, they are interpreted as an OR.</p>
+     * <p>A list of filter rules that determines which files to include when running a
+     * task. The pattern should contain a single filter string that consists of the
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
+     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline const Aws::Vector<FilterRule>& GetIncludes() const{ return m_includes; }
 
     /**
-     * <p/> <p>A filter that determines which files to include in the transfer during a
-     * task execution based on the specified pattern in the filter. When multiple
-     * include filters are set, they are interpreted as an OR.</p>
+     * <p>A list of filter rules that determines which files to include when running a
+     * task. The pattern should contain a single filter string that consists of the
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
+     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline bool IncludesHasBeenSet() const { return m_includesHasBeenSet; }
 
     /**
-     * <p/> <p>A filter that determines which files to include in the transfer during a
-     * task execution based on the specified pattern in the filter. When multiple
-     * include filters are set, they are interpreted as an OR.</p>
+     * <p>A list of filter rules that determines which files to include when running a
+     * task. The pattern should contain a single filter string that consists of the
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
+     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline void SetIncludes(const Aws::Vector<FilterRule>& value) { m_includesHasBeenSet = true; m_includes = value; }
 
     /**
-     * <p/> <p>A filter that determines which files to include in the transfer during a
-     * task execution based on the specified pattern in the filter. When multiple
-     * include filters are set, they are interpreted as an OR.</p>
+     * <p>A list of filter rules that determines which files to include when running a
+     * task. The pattern should contain a single filter string that consists of the
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
+     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline void SetIncludes(Aws::Vector<FilterRule>&& value) { m_includesHasBeenSet = true; m_includes = std::move(value); }
 
     /**
-     * <p/> <p>A filter that determines which files to include in the transfer during a
-     * task execution based on the specified pattern in the filter. When multiple
-     * include filters are set, they are interpreted as an OR.</p>
+     * <p>A list of filter rules that determines which files to include when running a
+     * task. The pattern should contain a single filter string that consists of the
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
+     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline StartTaskExecutionRequest& WithIncludes(const Aws::Vector<FilterRule>& value) { SetIncludes(value); return *this;}
 
     /**
-     * <p/> <p>A filter that determines which files to include in the transfer during a
-     * task execution based on the specified pattern in the filter. When multiple
-     * include filters are set, they are interpreted as an OR.</p>
+     * <p>A list of filter rules that determines which files to include when running a
+     * task. The pattern should contain a single filter string that consists of the
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
+     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline StartTaskExecutionRequest& WithIncludes(Aws::Vector<FilterRule>&& value) { SetIncludes(std::move(value)); return *this;}
 
     /**
-     * <p/> <p>A filter that determines which files to include in the transfer during a
-     * task execution based on the specified pattern in the filter. When multiple
-     * include filters are set, they are interpreted as an OR.</p>
+     * <p>A list of filter rules that determines which files to include when running a
+     * task. The pattern should contain a single filter string that consists of the
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
+     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline StartTaskExecutionRequest& AddIncludes(const FilterRule& value) { m_includesHasBeenSet = true; m_includes.push_back(value); return *this; }
 
     /**
-     * <p/> <p>A filter that determines which files to include in the transfer during a
-     * task execution based on the specified pattern in the filter. When multiple
-     * include filters are set, they are interpreted as an OR.</p>
+     * <p>A list of filter rules that determines which files to include when running a
+     * task. The pattern should contain a single filter string that consists of the
+     * patterns to include. The patterns are delimited by "|" (that is, a pipe). For
+     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline StartTaskExecutionRequest& AddIncludes(FilterRule&& value) { m_includesHasBeenSet = true; m_includes.push_back(std::move(value)); return *this; }
 

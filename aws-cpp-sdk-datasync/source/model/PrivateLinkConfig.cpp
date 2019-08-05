@@ -29,6 +29,7 @@ namespace Model
 {
 
 PrivateLinkConfig::PrivateLinkConfig() : 
+    m_vpcEndpointIdHasBeenSet(false),
     m_privateLinkEndpointHasBeenSet(false),
     m_subnetArnsHasBeenSet(false),
     m_securityGroupArnsHasBeenSet(false)
@@ -36,6 +37,7 @@ PrivateLinkConfig::PrivateLinkConfig() :
 }
 
 PrivateLinkConfig::PrivateLinkConfig(JsonView jsonValue) : 
+    m_vpcEndpointIdHasBeenSet(false),
     m_privateLinkEndpointHasBeenSet(false),
     m_subnetArnsHasBeenSet(false),
     m_securityGroupArnsHasBeenSet(false)
@@ -45,6 +47,13 @@ PrivateLinkConfig::PrivateLinkConfig(JsonView jsonValue) :
 
 PrivateLinkConfig& PrivateLinkConfig::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("VpcEndpointId"))
+  {
+    m_vpcEndpointId = jsonValue.GetString("VpcEndpointId");
+
+    m_vpcEndpointIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("PrivateLinkEndpoint"))
   {
     m_privateLinkEndpoint = jsonValue.GetString("PrivateLinkEndpoint");
@@ -78,6 +87,12 @@ PrivateLinkConfig& PrivateLinkConfig::operator =(JsonView jsonValue)
 JsonValue PrivateLinkConfig::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_vpcEndpointIdHasBeenSet)
+  {
+   payload.WithString("VpcEndpointId", m_vpcEndpointId);
+
+  }
 
   if(m_privateLinkEndpointHasBeenSet)
   {

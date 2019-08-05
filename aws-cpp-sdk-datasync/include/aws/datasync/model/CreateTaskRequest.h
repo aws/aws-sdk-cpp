@@ -136,104 +136,80 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see
-     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     * (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch User
-     * Guide</i>.</p> <p>For more information about how to useCloudWatchLogs with
-     * DataSync, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html"
-     * (Monitoring Your Task)</p>
+     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
+     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
+     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
+     * User Guide.</i> </p>
      */
     inline const Aws::String& GetCloudWatchLogGroupArn() const{ return m_cloudWatchLogGroupArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see
-     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     * (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch User
-     * Guide</i>.</p> <p>For more information about how to useCloudWatchLogs with
-     * DataSync, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html"
-     * (Monitoring Your Task)</p>
+     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
+     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
+     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
+     * User Guide.</i> </p>
      */
     inline bool CloudWatchLogGroupArnHasBeenSet() const { return m_cloudWatchLogGroupArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see
-     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     * (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch User
-     * Guide</i>.</p> <p>For more information about how to useCloudWatchLogs with
-     * DataSync, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html"
-     * (Monitoring Your Task)</p>
+     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
+     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
+     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
+     * User Guide.</i> </p>
      */
     inline void SetCloudWatchLogGroupArn(const Aws::String& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see
-     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     * (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch User
-     * Guide</i>.</p> <p>For more information about how to useCloudWatchLogs with
-     * DataSync, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html"
-     * (Monitoring Your Task)</p>
+     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
+     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
+     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
+     * User Guide.</i> </p>
      */
     inline void SetCloudWatchLogGroupArn(Aws::String&& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see
-     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     * (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch User
-     * Guide</i>.</p> <p>For more information about how to useCloudWatchLogs with
-     * DataSync, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html"
-     * (Monitoring Your Task)</p>
+     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
+     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
+     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
+     * User Guide.</i> </p>
      */
     inline void SetCloudWatchLogGroupArn(const char* value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see
-     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     * (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch User
-     * Guide</i>.</p> <p>For more information about how to useCloudWatchLogs with
-     * DataSync, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html"
-     * (Monitoring Your Task)</p>
+     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
+     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
+     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
+     * User Guide.</i> </p>
      */
     inline CreateTaskRequest& WithCloudWatchLogGroupArn(const Aws::String& value) { SetCloudWatchLogGroupArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see
-     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     * (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch User
-     * Guide</i>.</p> <p>For more information about how to useCloudWatchLogs with
-     * DataSync, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html"
-     * (Monitoring Your Task)</p>
+     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
+     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
+     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
+     * User Guide.</i> </p>
      */
     inline CreateTaskRequest& WithCloudWatchLogGroupArn(Aws::String&& value) { SetCloudWatchLogGroupArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
      * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see
-     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     * (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch User
-     * Guide</i>.</p> <p>For more information about how to useCloudWatchLogs with
-     * DataSync, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html"
-     * (Monitoring Your Task)</p>
+     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
+     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
+     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
+     * User Guide.</i> </p>
      */
     inline CreateTaskRequest& WithCloudWatchLogGroupArn(const char* value) { SetCloudWatchLogGroupArn(value); return *this;}
 
@@ -355,58 +331,66 @@ namespace Model
 
 
     /**
-     * <p/> <p>A filter that determines which files to exclude from a task based on the
-     * specified pattern. Transfers all files in the task’s subdirectory, except files
-     * that match the filter that is set. </p>
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list should contain a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline const Aws::Vector<FilterRule>& GetExcludes() const{ return m_excludes; }
 
     /**
-     * <p/> <p>A filter that determines which files to exclude from a task based on the
-     * specified pattern. Transfers all files in the task’s subdirectory, except files
-     * that match the filter that is set. </p>
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list should contain a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline bool ExcludesHasBeenSet() const { return m_excludesHasBeenSet; }
 
     /**
-     * <p/> <p>A filter that determines which files to exclude from a task based on the
-     * specified pattern. Transfers all files in the task’s subdirectory, except files
-     * that match the filter that is set. </p>
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list should contain a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline void SetExcludes(const Aws::Vector<FilterRule>& value) { m_excludesHasBeenSet = true; m_excludes = value; }
 
     /**
-     * <p/> <p>A filter that determines which files to exclude from a task based on the
-     * specified pattern. Transfers all files in the task’s subdirectory, except files
-     * that match the filter that is set. </p>
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list should contain a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline void SetExcludes(Aws::Vector<FilterRule>&& value) { m_excludesHasBeenSet = true; m_excludes = std::move(value); }
 
     /**
-     * <p/> <p>A filter that determines which files to exclude from a task based on the
-     * specified pattern. Transfers all files in the task’s subdirectory, except files
-     * that match the filter that is set. </p>
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list should contain a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline CreateTaskRequest& WithExcludes(const Aws::Vector<FilterRule>& value) { SetExcludes(value); return *this;}
 
     /**
-     * <p/> <p>A filter that determines which files to exclude from a task based on the
-     * specified pattern. Transfers all files in the task’s subdirectory, except files
-     * that match the filter that is set. </p>
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list should contain a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline CreateTaskRequest& WithExcludes(Aws::Vector<FilterRule>&& value) { SetExcludes(std::move(value)); return *this;}
 
     /**
-     * <p/> <p>A filter that determines which files to exclude from a task based on the
-     * specified pattern. Transfers all files in the task’s subdirectory, except files
-     * that match the filter that is set. </p>
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list should contain a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline CreateTaskRequest& AddExcludes(const FilterRule& value) { m_excludesHasBeenSet = true; m_excludes.push_back(value); return *this; }
 
     /**
-     * <p/> <p>A filter that determines which files to exclude from a task based on the
-     * specified pattern. Transfers all files in the task’s subdirectory, except files
-     * that match the filter that is set. </p>
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list should contain a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline CreateTaskRequest& AddExcludes(FilterRule&& value) { m_excludesHasBeenSet = true; m_excludes.push_back(std::move(value)); return *this; }
 

@@ -66,9 +66,8 @@ namespace Model
      * permissions for all of the files that you want DataSync allow read access for
      * all users. Doing either enables the agent to read the files. For the agent to
      * access directories, you must additionally enable all execute access.</p> <p>For
-     * information about NFS export configuration, see
-     * "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html"
-     * (18.7. The /etc/exports Configuration File).</p>
+     * information about NFS export configuration, see 18.7. The /etc/exports
+     * Configuration File in the Red Hat Enterprise Linux documentation.</p>
      */
     inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
 
@@ -87,9 +86,8 @@ namespace Model
      * permissions for all of the files that you want DataSync allow read access for
      * all users. Doing either enables the agent to read the files. For the agent to
      * access directories, you must additionally enable all execute access.</p> <p>For
-     * information about NFS export configuration, see
-     * "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html"
-     * (18.7. The /etc/exports Configuration File).</p>
+     * information about NFS export configuration, see 18.7. The /etc/exports
+     * Configuration File in the Red Hat Enterprise Linux documentation.</p>
      */
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
 
@@ -108,9 +106,8 @@ namespace Model
      * permissions for all of the files that you want DataSync allow read access for
      * all users. Doing either enables the agent to read the files. For the agent to
      * access directories, you must additionally enable all execute access.</p> <p>For
-     * information about NFS export configuration, see
-     * "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html"
-     * (18.7. The /etc/exports Configuration File).</p>
+     * information about NFS export configuration, see 18.7. The /etc/exports
+     * Configuration File in the Red Hat Enterprise Linux documentation.</p>
      */
     inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
 
@@ -129,9 +126,8 @@ namespace Model
      * permissions for all of the files that you want DataSync allow read access for
      * all users. Doing either enables the agent to read the files. For the agent to
      * access directories, you must additionally enable all execute access.</p> <p>For
-     * information about NFS export configuration, see
-     * "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html"
-     * (18.7. The /etc/exports Configuration File).</p>
+     * information about NFS export configuration, see 18.7. The /etc/exports
+     * Configuration File in the Red Hat Enterprise Linux documentation.</p>
      */
     inline void SetSubdirectory(Aws::String&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::move(value); }
 
@@ -150,9 +146,8 @@ namespace Model
      * permissions for all of the files that you want DataSync allow read access for
      * all users. Doing either enables the agent to read the files. For the agent to
      * access directories, you must additionally enable all execute access.</p> <p>For
-     * information about NFS export configuration, see
-     * "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html"
-     * (18.7. The /etc/exports Configuration File).</p>
+     * information about NFS export configuration, see 18.7. The /etc/exports
+     * Configuration File in the Red Hat Enterprise Linux documentation.</p>
      */
     inline void SetSubdirectory(const char* value) { m_subdirectoryHasBeenSet = true; m_subdirectory.assign(value); }
 
@@ -171,9 +166,8 @@ namespace Model
      * permissions for all of the files that you want DataSync allow read access for
      * all users. Doing either enables the agent to read the files. For the agent to
      * access directories, you must additionally enable all execute access.</p> <p>For
-     * information about NFS export configuration, see
-     * "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html"
-     * (18.7. The /etc/exports Configuration File).</p>
+     * information about NFS export configuration, see 18.7. The /etc/exports
+     * Configuration File in the Red Hat Enterprise Linux documentation.</p>
      */
     inline CreateLocationNfsRequest& WithSubdirectory(const Aws::String& value) { SetSubdirectory(value); return *this;}
 
@@ -192,9 +186,8 @@ namespace Model
      * permissions for all of the files that you want DataSync allow read access for
      * all users. Doing either enables the agent to read the files. For the agent to
      * access directories, you must additionally enable all execute access.</p> <p>For
-     * information about NFS export configuration, see
-     * "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html"
-     * (18.7. The /etc/exports Configuration File).</p>
+     * information about NFS export configuration, see 18.7. The /etc/exports
+     * Configuration File in the Red Hat Enterprise Linux documentation.</p>
      */
     inline CreateLocationNfsRequest& WithSubdirectory(Aws::String&& value) { SetSubdirectory(std::move(value)); return *this;}
 
@@ -213,9 +206,8 @@ namespace Model
      * permissions for all of the files that you want DataSync allow read access for
      * all users. Doing either enables the agent to read the files. For the agent to
      * access directories, you must additionally enable all execute access.</p> <p>For
-     * information about NFS export configuration, see
-     * "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html"
-     * (18.7. The /etc/exports Configuration File).</p>
+     * information about NFS export configuration, see 18.7. The /etc/exports
+     * Configuration File in the Red Hat Enterprise Linux documentation.</p>
      */
     inline CreateLocationNfsRequest& WithSubdirectory(const char* value) { SetSubdirectory(value); return *this;}
 

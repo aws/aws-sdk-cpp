@@ -25,7 +25,10 @@ using namespace Aws::Utils;
 CreateAgentRequest::CreateAgentRequest() : 
     m_activationKeyHasBeenSet(false),
     m_agentNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_vpcEndpointIdHasBeenSet(false),
+    m_subnetArnsHasBeenSet(false),
+    m_securityGroupArnsHasBeenSet(false)
 {
 }
 
@@ -53,6 +56,34 @@ Aws::String CreateAgentRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_vpcEndpointIdHasBeenSet)
+  {
+   payload.WithString("VpcEndpointId", m_vpcEndpointId);
+
+  }
+
+  if(m_subnetArnsHasBeenSet)
+  {
+   Array<JsonValue> subnetArnsJsonList(m_subnetArns.size());
+   for(unsigned subnetArnsIndex = 0; subnetArnsIndex < subnetArnsJsonList.GetLength(); ++subnetArnsIndex)
+   {
+     subnetArnsJsonList[subnetArnsIndex].AsString(m_subnetArns[subnetArnsIndex]);
+   }
+   payload.WithArray("SubnetArns", std::move(subnetArnsJsonList));
+
+  }
+
+  if(m_securityGroupArnsHasBeenSet)
+  {
+   Array<JsonValue> securityGroupArnsJsonList(m_securityGroupArns.size());
+   for(unsigned securityGroupArnsIndex = 0; securityGroupArnsIndex < securityGroupArnsJsonList.GetLength(); ++securityGroupArnsIndex)
+   {
+     securityGroupArnsJsonList[securityGroupArnsIndex].AsString(m_securityGroupArns[securityGroupArnsIndex]);
+   }
+   payload.WithArray("SecurityGroupArns", std::move(securityGroupArnsJsonList));
 
   }
 

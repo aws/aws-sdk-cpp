@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about the resource that was non-compliant with the audit
+   * <p>Information about the resource that was noncompliant with the audit
    * check.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/NonCompliantResource">AWS
    * API Reference</a></p>
@@ -52,129 +52,129 @@ namespace Model
 
 
     /**
-     * <p>The type of the non-compliant resource.</p>
+     * <p>The type of the noncompliant resource.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of the non-compliant resource.</p>
+     * <p>The type of the noncompliant resource.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of the non-compliant resource.</p>
+     * <p>The type of the noncompliant resource.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of the non-compliant resource.</p>
+     * <p>The type of the noncompliant resource.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of the non-compliant resource.</p>
+     * <p>The type of the noncompliant resource.</p>
      */
     inline NonCompliantResource& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of the non-compliant resource.</p>
+     * <p>The type of the noncompliant resource.</p>
      */
     inline NonCompliantResource& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Information identifying the non-compliant resource.</p>
+     * <p>Information that identifies the noncompliant resource.</p>
      */
     inline const ResourceIdentifier& GetResourceIdentifier() const{ return m_resourceIdentifier; }
 
     /**
-     * <p>Information identifying the non-compliant resource.</p>
+     * <p>Information that identifies the noncompliant resource.</p>
      */
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
 
     /**
-     * <p>Information identifying the non-compliant resource.</p>
+     * <p>Information that identifies the noncompliant resource.</p>
      */
     inline void SetResourceIdentifier(const ResourceIdentifier& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
 
     /**
-     * <p>Information identifying the non-compliant resource.</p>
+     * <p>Information that identifies the noncompliant resource.</p>
      */
     inline void SetResourceIdentifier(ResourceIdentifier&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
 
     /**
-     * <p>Information identifying the non-compliant resource.</p>
+     * <p>Information that identifies the noncompliant resource.</p>
      */
     inline NonCompliantResource& WithResourceIdentifier(const ResourceIdentifier& value) { SetResourceIdentifier(value); return *this;}
 
     /**
-     * <p>Information identifying the non-compliant resource.</p>
+     * <p>Information that identifies the noncompliant resource.</p>
      */
     inline NonCompliantResource& WithResourceIdentifier(ResourceIdentifier&& value) { SetResourceIdentifier(std::move(value)); return *this;}
 
 
     /**
-     * <p>Additional information about the non-compliant resource.</p>
+     * <p>Other information about the noncompliant resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalInfo() const{ return m_additionalInfo; }
 
     /**
-     * <p>Additional information about the non-compliant resource.</p>
+     * <p>Other information about the noncompliant resource.</p>
      */
     inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
 
     /**
-     * <p>Additional information about the non-compliant resource.</p>
+     * <p>Other information about the noncompliant resource.</p>
      */
     inline void SetAdditionalInfo(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
 
     /**
-     * <p>Additional information about the non-compliant resource.</p>
+     * <p>Other information about the noncompliant resource.</p>
      */
     inline void SetAdditionalInfo(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
 
     /**
-     * <p>Additional information about the non-compliant resource.</p>
+     * <p>Other information about the noncompliant resource.</p>
      */
     inline NonCompliantResource& WithAdditionalInfo(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalInfo(value); return *this;}
 
     /**
-     * <p>Additional information about the non-compliant resource.</p>
+     * <p>Other information about the noncompliant resource.</p>
      */
     inline NonCompliantResource& WithAdditionalInfo(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalInfo(std::move(value)); return *this;}
 
     /**
-     * <p>Additional information about the non-compliant resource.</p>
+     * <p>Other information about the noncompliant resource.</p>
      */
     inline NonCompliantResource& AddAdditionalInfo(const Aws::String& key, const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, value); return *this; }
 
     /**
-     * <p>Additional information about the non-compliant resource.</p>
+     * <p>Other information about the noncompliant resource.</p>
      */
     inline NonCompliantResource& AddAdditionalInfo(Aws::String&& key, const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Additional information about the non-compliant resource.</p>
+     * <p>Other information about the noncompliant resource.</p>
      */
     inline NonCompliantResource& AddAdditionalInfo(const Aws::String& key, Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Additional information about the non-compliant resource.</p>
+     * <p>Other information about the noncompliant resource.</p>
      */
     inline NonCompliantResource& AddAdditionalInfo(Aws::String&& key, Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Additional information about the non-compliant resource.</p>
+     * <p>Other information about the noncompliant resource.</p>
      */
     inline NonCompliantResource& AddAdditionalInfo(const char* key, Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Additional information about the non-compliant resource.</p>
+     * <p>Other information about the noncompliant resource.</p>
      */
     inline NonCompliantResource& AddAdditionalInfo(Aws::String&& key, const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Additional information about the non-compliant resource.</p>
+     * <p>Other information about the noncompliant resource.</p>
      */
     inline NonCompliantResource& AddAdditionalInfo(const char* key, const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, value); return *this; }
 

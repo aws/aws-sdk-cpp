@@ -29,6 +29,7 @@ namespace Model
 {
 
 AuditFinding::AuditFinding() : 
+    m_findingIdHasBeenSet(false),
     m_taskIdHasBeenSet(false),
     m_checkNameHasBeenSet(false),
     m_taskStartTimeHasBeenSet(false),
@@ -43,6 +44,7 @@ AuditFinding::AuditFinding() :
 }
 
 AuditFinding::AuditFinding(JsonView jsonValue) : 
+    m_findingIdHasBeenSet(false),
     m_taskIdHasBeenSet(false),
     m_checkNameHasBeenSet(false),
     m_taskStartTimeHasBeenSet(false),
@@ -59,6 +61,13 @@ AuditFinding::AuditFinding(JsonView jsonValue) :
 
 AuditFinding& AuditFinding::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("findingId"))
+  {
+    m_findingId = jsonValue.GetString("findingId");
+
+    m_findingIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
@@ -131,6 +140,12 @@ AuditFinding& AuditFinding::operator =(JsonView jsonValue)
 JsonValue AuditFinding::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_findingIdHasBeenSet)
+  {
+   payload.WithString("findingId", m_findingId);
+
+  }
 
   if(m_taskIdHasBeenSet)
   {

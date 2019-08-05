@@ -92,7 +92,7 @@ namespace Model
     /**
      * <p>The expected version of the security profile. A new version is generated
      * whenever the security profile is updated. If you specify a value that is
-     * different than the actual version, a <code>VersionConflictException</code> is
+     * different from the actual version, a <code>VersionConflictException</code> is
      * thrown.</p>
      */
     inline long long GetExpectedVersion() const{ return m_expectedVersion; }
@@ -100,7 +100,7 @@ namespace Model
     /**
      * <p>The expected version of the security profile. A new version is generated
      * whenever the security profile is updated. If you specify a value that is
-     * different than the actual version, a <code>VersionConflictException</code> is
+     * different from the actual version, a <code>VersionConflictException</code> is
      * thrown.</p>
      */
     inline bool ExpectedVersionHasBeenSet() const { return m_expectedVersionHasBeenSet; }
@@ -108,7 +108,7 @@ namespace Model
     /**
      * <p>The expected version of the security profile. A new version is generated
      * whenever the security profile is updated. If you specify a value that is
-     * different than the actual version, a <code>VersionConflictException</code> is
+     * different from the actual version, a <code>VersionConflictException</code> is
      * thrown.</p>
      */
     inline void SetExpectedVersion(long long value) { m_expectedVersionHasBeenSet = true; m_expectedVersion = value; }
@@ -116,7 +116,7 @@ namespace Model
     /**
      * <p>The expected version of the security profile. A new version is generated
      * whenever the security profile is updated. If you specify a value that is
-     * different than the actual version, a <code>VersionConflictException</code> is
+     * different from the actual version, a <code>VersionConflictException</code> is
      * thrown.</p>
      */
     inline DeleteSecurityProfileRequest& WithExpectedVersion(long long value) { SetExpectedVersion(value); return *this;}

@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Information identifying the non-compliant resource.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Information that identifies the noncompliant resource.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ResourceIdentifier">AWS
    * API Reference</a></p>
    */
@@ -132,42 +132,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Cognito Identity Pool.</p>
+     * <p>The ID of the Amazon Cognito identity pool.</p>
      */
     inline const Aws::String& GetCognitoIdentityPoolId() const{ return m_cognitoIdentityPoolId; }
 
     /**
-     * <p>The ID of the Cognito Identity Pool.</p>
+     * <p>The ID of the Amazon Cognito identity pool.</p>
      */
     inline bool CognitoIdentityPoolIdHasBeenSet() const { return m_cognitoIdentityPoolIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Cognito Identity Pool.</p>
+     * <p>The ID of the Amazon Cognito identity pool.</p>
      */
     inline void SetCognitoIdentityPoolId(const Aws::String& value) { m_cognitoIdentityPoolIdHasBeenSet = true; m_cognitoIdentityPoolId = value; }
 
     /**
-     * <p>The ID of the Cognito Identity Pool.</p>
+     * <p>The ID of the Amazon Cognito identity pool.</p>
      */
     inline void SetCognitoIdentityPoolId(Aws::String&& value) { m_cognitoIdentityPoolIdHasBeenSet = true; m_cognitoIdentityPoolId = std::move(value); }
 
     /**
-     * <p>The ID of the Cognito Identity Pool.</p>
+     * <p>The ID of the Amazon Cognito identity pool.</p>
      */
     inline void SetCognitoIdentityPoolId(const char* value) { m_cognitoIdentityPoolIdHasBeenSet = true; m_cognitoIdentityPoolId.assign(value); }
 
     /**
-     * <p>The ID of the Cognito Identity Pool.</p>
+     * <p>The ID of the Amazon Cognito identity pool.</p>
      */
     inline ResourceIdentifier& WithCognitoIdentityPoolId(const Aws::String& value) { SetCognitoIdentityPoolId(value); return *this;}
 
     /**
-     * <p>The ID of the Cognito Identity Pool.</p>
+     * <p>The ID of the Amazon Cognito identity pool.</p>
      */
     inline ResourceIdentifier& WithCognitoIdentityPoolId(Aws::String&& value) { SetCognitoIdentityPoolId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Cognito Identity Pool.</p>
+     * <p>The ID of the Amazon Cognito identity pool.</p>
      */
     inline ResourceIdentifier& WithCognitoIdentityPoolId(const char* value) { SetCognitoIdentityPoolId(value); return *this;}
 

@@ -47,43 +47,43 @@ namespace Model
 
     /**
      * <p>How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY",
-     * "BIWEEKLY" or "MONTHLY". The actual start time of each audit is determined by
-     * the system.</p>
+     * "BIWEEKLY", or "MONTHLY". The start time of each audit is determined by the
+     * system.</p>
      */
     inline const AuditFrequency& GetFrequency() const{ return m_frequency; }
 
     /**
      * <p>How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY",
-     * "BIWEEKLY" or "MONTHLY". The actual start time of each audit is determined by
-     * the system.</p>
+     * "BIWEEKLY", or "MONTHLY". The start time of each audit is determined by the
+     * system.</p>
      */
     inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
 
     /**
      * <p>How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY",
-     * "BIWEEKLY" or "MONTHLY". The actual start time of each audit is determined by
-     * the system.</p>
+     * "BIWEEKLY", or "MONTHLY". The start time of each audit is determined by the
+     * system.</p>
      */
     inline void SetFrequency(const AuditFrequency& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
 
     /**
      * <p>How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY",
-     * "BIWEEKLY" or "MONTHLY". The actual start time of each audit is determined by
-     * the system.</p>
+     * "BIWEEKLY", or "MONTHLY". The start time of each audit is determined by the
+     * system.</p>
      */
     inline void SetFrequency(AuditFrequency&& value) { m_frequencyHasBeenSet = true; m_frequency = std::move(value); }
 
     /**
      * <p>How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY",
-     * "BIWEEKLY" or "MONTHLY". The actual start time of each audit is determined by
-     * the system.</p>
+     * "BIWEEKLY", or "MONTHLY". The start time of each audit is determined by the
+     * system.</p>
      */
     inline UpdateScheduledAuditRequest& WithFrequency(const AuditFrequency& value) { SetFrequency(value); return *this;}
 
     /**
      * <p>How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY",
-     * "BIWEEKLY" or "MONTHLY". The actual start time of each audit is determined by
-     * the system.</p>
+     * "BIWEEKLY", or "MONTHLY". The start time of each audit is determined by the
+     * system.</p>
      */
     inline UpdateScheduledAuditRequest& WithFrequency(AuditFrequency&& value) { SetFrequency(std::move(value)); return *this;}
 
@@ -155,43 +155,43 @@ namespace Model
 
     /**
      * <p>The day of the week on which the scheduled audit takes place. Can be one of
-     * "SUN", "MON", "TUE", "WED", "THU", "FRI" or "SAT". This field is required if the
-     * "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".</p>
+     * "SUN", "MON", "TUE", "WED", "THU", "FRI", or "SAT". This field is required if
+     * the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".</p>
      */
     inline const DayOfWeek& GetDayOfWeek() const{ return m_dayOfWeek; }
 
     /**
      * <p>The day of the week on which the scheduled audit takes place. Can be one of
-     * "SUN", "MON", "TUE", "WED", "THU", "FRI" or "SAT". This field is required if the
-     * "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".</p>
+     * "SUN", "MON", "TUE", "WED", "THU", "FRI", or "SAT". This field is required if
+     * the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".</p>
      */
     inline bool DayOfWeekHasBeenSet() const { return m_dayOfWeekHasBeenSet; }
 
     /**
      * <p>The day of the week on which the scheduled audit takes place. Can be one of
-     * "SUN", "MON", "TUE", "WED", "THU", "FRI" or "SAT". This field is required if the
-     * "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".</p>
+     * "SUN", "MON", "TUE", "WED", "THU", "FRI", or "SAT". This field is required if
+     * the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".</p>
      */
     inline void SetDayOfWeek(const DayOfWeek& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
 
     /**
      * <p>The day of the week on which the scheduled audit takes place. Can be one of
-     * "SUN", "MON", "TUE", "WED", "THU", "FRI" or "SAT". This field is required if the
-     * "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".</p>
+     * "SUN", "MON", "TUE", "WED", "THU", "FRI", or "SAT". This field is required if
+     * the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".</p>
      */
     inline void SetDayOfWeek(DayOfWeek&& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = std::move(value); }
 
     /**
      * <p>The day of the week on which the scheduled audit takes place. Can be one of
-     * "SUN", "MON", "TUE", "WED", "THU", "FRI" or "SAT". This field is required if the
-     * "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".</p>
+     * "SUN", "MON", "TUE", "WED", "THU", "FRI", or "SAT". This field is required if
+     * the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".</p>
      */
     inline UpdateScheduledAuditRequest& WithDayOfWeek(const DayOfWeek& value) { SetDayOfWeek(value); return *this;}
 
     /**
      * <p>The day of the week on which the scheduled audit takes place. Can be one of
-     * "SUN", "MON", "TUE", "WED", "THU", "FRI" or "SAT". This field is required if the
-     * "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".</p>
+     * "SUN", "MON", "TUE", "WED", "THU", "FRI", or "SAT". This field is required if
+     * the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".</p>
      */
     inline UpdateScheduledAuditRequest& WithDayOfWeek(DayOfWeek&& value) { SetDayOfWeek(std::move(value)); return *this;}
 
@@ -199,7 +199,7 @@ namespace Model
     /**
      * <p>Which checks are performed during the scheduled audit. Checks must be enabled
      * for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the
-     * list of all checks including those that are enabled or
+     * list of all checks, including those that are enabled or use
      * <code>UpdateAccountAuditConfiguration</code> to select which checks are
      * enabled.)</p>
      */
@@ -208,7 +208,7 @@ namespace Model
     /**
      * <p>Which checks are performed during the scheduled audit. Checks must be enabled
      * for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the
-     * list of all checks including those that are enabled or
+     * list of all checks, including those that are enabled or use
      * <code>UpdateAccountAuditConfiguration</code> to select which checks are
      * enabled.)</p>
      */
@@ -217,7 +217,7 @@ namespace Model
     /**
      * <p>Which checks are performed during the scheduled audit. Checks must be enabled
      * for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the
-     * list of all checks including those that are enabled or
+     * list of all checks, including those that are enabled or use
      * <code>UpdateAccountAuditConfiguration</code> to select which checks are
      * enabled.)</p>
      */
@@ -226,7 +226,7 @@ namespace Model
     /**
      * <p>Which checks are performed during the scheduled audit. Checks must be enabled
      * for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the
-     * list of all checks including those that are enabled or
+     * list of all checks, including those that are enabled or use
      * <code>UpdateAccountAuditConfiguration</code> to select which checks are
      * enabled.)</p>
      */
@@ -235,7 +235,7 @@ namespace Model
     /**
      * <p>Which checks are performed during the scheduled audit. Checks must be enabled
      * for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the
-     * list of all checks including those that are enabled or
+     * list of all checks, including those that are enabled or use
      * <code>UpdateAccountAuditConfiguration</code> to select which checks are
      * enabled.)</p>
      */
@@ -244,7 +244,7 @@ namespace Model
     /**
      * <p>Which checks are performed during the scheduled audit. Checks must be enabled
      * for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the
-     * list of all checks including those that are enabled or
+     * list of all checks, including those that are enabled or use
      * <code>UpdateAccountAuditConfiguration</code> to select which checks are
      * enabled.)</p>
      */
@@ -253,7 +253,7 @@ namespace Model
     /**
      * <p>Which checks are performed during the scheduled audit. Checks must be enabled
      * for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the
-     * list of all checks including those that are enabled or
+     * list of all checks, including those that are enabled or use
      * <code>UpdateAccountAuditConfiguration</code> to select which checks are
      * enabled.)</p>
      */
@@ -262,7 +262,7 @@ namespace Model
     /**
      * <p>Which checks are performed during the scheduled audit. Checks must be enabled
      * for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the
-     * list of all checks including those that are enabled or
+     * list of all checks, including those that are enabled or use
      * <code>UpdateAccountAuditConfiguration</code> to select which checks are
      * enabled.)</p>
      */
@@ -271,7 +271,7 @@ namespace Model
     /**
      * <p>Which checks are performed during the scheduled audit. Checks must be enabled
      * for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the
-     * list of all checks including those that are enabled or
+     * list of all checks, including those that are enabled or use
      * <code>UpdateAccountAuditConfiguration</code> to select which checks are
      * enabled.)</p>
      */

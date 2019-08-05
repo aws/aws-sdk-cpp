@@ -49,42 +49,42 @@ namespace Model
 
 
     /**
-     * <p>The completion status of this check, one of "IN_PROGRESS",
+     * <p>The completion status of this check. One of "IN_PROGRESS",
      * "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT",
      * "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
      */
     inline const AuditCheckRunStatus& GetCheckRunStatus() const{ return m_checkRunStatus; }
 
     /**
-     * <p>The completion status of this check, one of "IN_PROGRESS",
+     * <p>The completion status of this check. One of "IN_PROGRESS",
      * "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT",
      * "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
      */
     inline bool CheckRunStatusHasBeenSet() const { return m_checkRunStatusHasBeenSet; }
 
     /**
-     * <p>The completion status of this check, one of "IN_PROGRESS",
+     * <p>The completion status of this check. One of "IN_PROGRESS",
      * "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT",
      * "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
      */
     inline void SetCheckRunStatus(const AuditCheckRunStatus& value) { m_checkRunStatusHasBeenSet = true; m_checkRunStatus = value; }
 
     /**
-     * <p>The completion status of this check, one of "IN_PROGRESS",
+     * <p>The completion status of this check. One of "IN_PROGRESS",
      * "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT",
      * "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
      */
     inline void SetCheckRunStatus(AuditCheckRunStatus&& value) { m_checkRunStatusHasBeenSet = true; m_checkRunStatus = std::move(value); }
 
     /**
-     * <p>The completion status of this check, one of "IN_PROGRESS",
+     * <p>The completion status of this check. One of "IN_PROGRESS",
      * "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT",
      * "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
      */
     inline AuditCheckDetails& WithCheckRunStatus(const AuditCheckRunStatus& value) { SetCheckRunStatus(value); return *this;}
 
     /**
-     * <p>The completion status of this check, one of "IN_PROGRESS",
+     * <p>The completion status of this check. One of "IN_PROGRESS",
      * "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT",
      * "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
      */
@@ -92,22 +92,22 @@ namespace Model
 
 
     /**
-     * <p>True if the check completed and found all resources compliant.</p>
+     * <p>True if the check is complete and found all resources compliant.</p>
      */
     inline bool GetCheckCompliant() const{ return m_checkCompliant; }
 
     /**
-     * <p>True if the check completed and found all resources compliant.</p>
+     * <p>True if the check is complete and found all resources compliant.</p>
      */
     inline bool CheckCompliantHasBeenSet() const { return m_checkCompliantHasBeenSet; }
 
     /**
-     * <p>True if the check completed and found all resources compliant.</p>
+     * <p>True if the check is complete and found all resources compliant.</p>
      */
     inline void SetCheckCompliant(bool value) { m_checkCompliantHasBeenSet = true; m_checkCompliant = value; }
 
     /**
-     * <p>True if the check completed and found all resources compliant.</p>
+     * <p>True if the check is complete and found all resources compliant.</p>
      */
     inline AuditCheckDetails& WithCheckCompliant(bool value) { SetCheckCompliant(value); return *this;}
 
@@ -134,120 +134,120 @@ namespace Model
 
 
     /**
-     * <p>The number of resources that the check found non-compliant.</p>
+     * <p>The number of resources that were found noncompliant during the check.</p>
      */
     inline long long GetNonCompliantResourcesCount() const{ return m_nonCompliantResourcesCount; }
 
     /**
-     * <p>The number of resources that the check found non-compliant.</p>
+     * <p>The number of resources that were found noncompliant during the check.</p>
      */
     inline bool NonCompliantResourcesCountHasBeenSet() const { return m_nonCompliantResourcesCountHasBeenSet; }
 
     /**
-     * <p>The number of resources that the check found non-compliant.</p>
+     * <p>The number of resources that were found noncompliant during the check.</p>
      */
     inline void SetNonCompliantResourcesCount(long long value) { m_nonCompliantResourcesCountHasBeenSet = true; m_nonCompliantResourcesCount = value; }
 
     /**
-     * <p>The number of resources that the check found non-compliant.</p>
+     * <p>The number of resources that were found noncompliant during the check.</p>
      */
     inline AuditCheckDetails& WithNonCompliantResourcesCount(long long value) { SetNonCompliantResourcesCount(value); return *this;}
 
 
     /**
-     * <p>The code of any error encountered when performing this check during this
-     * audit. One of "INSUFFICIENT_PERMISSIONS", or "AUDIT_CHECK_DISABLED".</p>
+     * <p>The code of any error encountered when this check is performed during this
+     * audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
 
     /**
-     * <p>The code of any error encountered when performing this check during this
-     * audit. One of "INSUFFICIENT_PERMISSIONS", or "AUDIT_CHECK_DISABLED".</p>
+     * <p>The code of any error encountered when this check is performed during this
+     * audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
      */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
-     * <p>The code of any error encountered when performing this check during this
-     * audit. One of "INSUFFICIENT_PERMISSIONS", or "AUDIT_CHECK_DISABLED".</p>
+     * <p>The code of any error encountered when this check is performed during this
+     * audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
      */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
-     * <p>The code of any error encountered when performing this check during this
-     * audit. One of "INSUFFICIENT_PERMISSIONS", or "AUDIT_CHECK_DISABLED".</p>
+     * <p>The code of any error encountered when this check is performed during this
+     * audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
      */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
-     * <p>The code of any error encountered when performing this check during this
-     * audit. One of "INSUFFICIENT_PERMISSIONS", or "AUDIT_CHECK_DISABLED".</p>
+     * <p>The code of any error encountered when this check is performed during this
+     * audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
      */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
 
     /**
-     * <p>The code of any error encountered when performing this check during this
-     * audit. One of "INSUFFICIENT_PERMISSIONS", or "AUDIT_CHECK_DISABLED".</p>
+     * <p>The code of any error encountered when this check is performed during this
+     * audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
      */
     inline AuditCheckDetails& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
 
     /**
-     * <p>The code of any error encountered when performing this check during this
-     * audit. One of "INSUFFICIENT_PERMISSIONS", or "AUDIT_CHECK_DISABLED".</p>
+     * <p>The code of any error encountered when this check is performed during this
+     * audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
      */
     inline AuditCheckDetails& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
-     * <p>The code of any error encountered when performing this check during this
-     * audit. One of "INSUFFICIENT_PERMISSIONS", or "AUDIT_CHECK_DISABLED".</p>
+     * <p>The code of any error encountered when this check is performed during this
+     * audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
      */
     inline AuditCheckDetails& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 
 
     /**
-     * <p>The message associated with any error encountered when performing this check
-     * during this audit.</p>
+     * <p>The message associated with any error encountered when this check is
+     * performed during this audit.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>The message associated with any error encountered when performing this check
-     * during this audit.</p>
+     * <p>The message associated with any error encountered when this check is
+     * performed during this audit.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * <p>The message associated with any error encountered when performing this check
-     * during this audit.</p>
+     * <p>The message associated with any error encountered when this check is
+     * performed during this audit.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>The message associated with any error encountered when performing this check
-     * during this audit.</p>
+     * <p>The message associated with any error encountered when this check is
+     * performed during this audit.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p>The message associated with any error encountered when performing this check
-     * during this audit.</p>
+     * <p>The message associated with any error encountered when this check is
+     * performed during this audit.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>The message associated with any error encountered when performing this check
-     * during this audit.</p>
+     * <p>The message associated with any error encountered when this check is
+     * performed during this audit.</p>
      */
     inline AuditCheckDetails& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>The message associated with any error encountered when performing this check
-     * during this audit.</p>
+     * <p>The message associated with any error encountered when this check is
+     * performed during this audit.</p>
      */
     inline AuditCheckDetails& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The message associated with any error encountered when performing this check
-     * during this audit.</p>
+     * <p>The message associated with any error encountered when this check is
+     * performed during this audit.</p>
      */
     inline AuditCheckDetails& WithMessage(const char* value) { SetMessage(value); return *this;}
 

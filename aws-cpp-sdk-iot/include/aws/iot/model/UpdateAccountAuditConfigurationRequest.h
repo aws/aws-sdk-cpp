@@ -48,56 +48,56 @@ namespace Model
 
     /**
      * <p>The ARN of the role that grants permission to AWS IoT to access information
-     * about your devices, policies, certificates and other items as necessary when
+     * about your devices, policies, certificates and other items as required when
      * performing an audit.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The ARN of the role that grants permission to AWS IoT to access information
-     * about your devices, policies, certificates and other items as necessary when
+     * about your devices, policies, certificates and other items as required when
      * performing an audit.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The ARN of the role that grants permission to AWS IoT to access information
-     * about your devices, policies, certificates and other items as necessary when
+     * about your devices, policies, certificates and other items as required when
      * performing an audit.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The ARN of the role that grants permission to AWS IoT to access information
-     * about your devices, policies, certificates and other items as necessary when
+     * about your devices, policies, certificates and other items as required when
      * performing an audit.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The ARN of the role that grants permission to AWS IoT to access information
-     * about your devices, policies, certificates and other items as necessary when
+     * about your devices, policies, certificates and other items as required when
      * performing an audit.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The ARN of the role that grants permission to AWS IoT to access information
-     * about your devices, policies, certificates and other items as necessary when
+     * about your devices, policies, certificates and other items as required when
      * performing an audit.</p>
      */
     inline UpdateAccountAuditConfigurationRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The ARN of the role that grants permission to AWS IoT to access information
-     * about your devices, policies, certificates and other items as necessary when
+     * about your devices, policies, certificates and other items as required when
      * performing an audit.</p>
      */
     inline UpdateAccountAuditConfigurationRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the role that grants permission to AWS IoT to access information
-     * about your devices, policies, certificates and other items as necessary when
+     * about your devices, policies, certificates and other items as required when
      * performing an audit.</p>
      */
     inline UpdateAccountAuditConfigurationRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
@@ -156,157 +156,157 @@ namespace Model
 
     /**
      * <p>Specifies which audit checks are enabled and disabled for this account. Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks
-     * including those that are currently enabled.</p> <p>Note that some data
-     * collection may begin immediately when certain checks are enabled. When a check
-     * is disabled, any data collected so far in relation to the check is deleted.</p>
-     * <p>You cannot disable a check if it is used by any scheduled audit. You must
-     * first delete the check from the scheduled audit or delete the scheduled audit
-     * itself.</p> <p>On the first call to <code>UpdateAccountAuditConfiguration</code>
-     * this parameter is required and must specify at least one enabled check.</p>
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks,
+     * including those that are currently enabled.</p> <p>Some data collection might
+     * start immediately when certain checks are enabled. When a check is disabled, any
+     * data collected so far in relation to the check is deleted.</p> <p>You cannot
+     * disable a check if it is used by any scheduled audit. You must first delete the
+     * check from the scheduled audit or delete the scheduled audit itself.</p> <p>On
+     * the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter
+     * is required and must specify at least one enabled check.</p>
      */
     inline const Aws::Map<Aws::String, AuditCheckConfiguration>& GetAuditCheckConfigurations() const{ return m_auditCheckConfigurations; }
 
     /**
      * <p>Specifies which audit checks are enabled and disabled for this account. Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks
-     * including those that are currently enabled.</p> <p>Note that some data
-     * collection may begin immediately when certain checks are enabled. When a check
-     * is disabled, any data collected so far in relation to the check is deleted.</p>
-     * <p>You cannot disable a check if it is used by any scheduled audit. You must
-     * first delete the check from the scheduled audit or delete the scheduled audit
-     * itself.</p> <p>On the first call to <code>UpdateAccountAuditConfiguration</code>
-     * this parameter is required and must specify at least one enabled check.</p>
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks,
+     * including those that are currently enabled.</p> <p>Some data collection might
+     * start immediately when certain checks are enabled. When a check is disabled, any
+     * data collected so far in relation to the check is deleted.</p> <p>You cannot
+     * disable a check if it is used by any scheduled audit. You must first delete the
+     * check from the scheduled audit or delete the scheduled audit itself.</p> <p>On
+     * the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter
+     * is required and must specify at least one enabled check.</p>
      */
     inline bool AuditCheckConfigurationsHasBeenSet() const { return m_auditCheckConfigurationsHasBeenSet; }
 
     /**
      * <p>Specifies which audit checks are enabled and disabled for this account. Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks
-     * including those that are currently enabled.</p> <p>Note that some data
-     * collection may begin immediately when certain checks are enabled. When a check
-     * is disabled, any data collected so far in relation to the check is deleted.</p>
-     * <p>You cannot disable a check if it is used by any scheduled audit. You must
-     * first delete the check from the scheduled audit or delete the scheduled audit
-     * itself.</p> <p>On the first call to <code>UpdateAccountAuditConfiguration</code>
-     * this parameter is required and must specify at least one enabled check.</p>
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks,
+     * including those that are currently enabled.</p> <p>Some data collection might
+     * start immediately when certain checks are enabled. When a check is disabled, any
+     * data collected so far in relation to the check is deleted.</p> <p>You cannot
+     * disable a check if it is used by any scheduled audit. You must first delete the
+     * check from the scheduled audit or delete the scheduled audit itself.</p> <p>On
+     * the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter
+     * is required and must specify at least one enabled check.</p>
      */
     inline void SetAuditCheckConfigurations(const Aws::Map<Aws::String, AuditCheckConfiguration>& value) { m_auditCheckConfigurationsHasBeenSet = true; m_auditCheckConfigurations = value; }
 
     /**
      * <p>Specifies which audit checks are enabled and disabled for this account. Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks
-     * including those that are currently enabled.</p> <p>Note that some data
-     * collection may begin immediately when certain checks are enabled. When a check
-     * is disabled, any data collected so far in relation to the check is deleted.</p>
-     * <p>You cannot disable a check if it is used by any scheduled audit. You must
-     * first delete the check from the scheduled audit or delete the scheduled audit
-     * itself.</p> <p>On the first call to <code>UpdateAccountAuditConfiguration</code>
-     * this parameter is required and must specify at least one enabled check.</p>
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks,
+     * including those that are currently enabled.</p> <p>Some data collection might
+     * start immediately when certain checks are enabled. When a check is disabled, any
+     * data collected so far in relation to the check is deleted.</p> <p>You cannot
+     * disable a check if it is used by any scheduled audit. You must first delete the
+     * check from the scheduled audit or delete the scheduled audit itself.</p> <p>On
+     * the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter
+     * is required and must specify at least one enabled check.</p>
      */
     inline void SetAuditCheckConfigurations(Aws::Map<Aws::String, AuditCheckConfiguration>&& value) { m_auditCheckConfigurationsHasBeenSet = true; m_auditCheckConfigurations = std::move(value); }
 
     /**
      * <p>Specifies which audit checks are enabled and disabled for this account. Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks
-     * including those that are currently enabled.</p> <p>Note that some data
-     * collection may begin immediately when certain checks are enabled. When a check
-     * is disabled, any data collected so far in relation to the check is deleted.</p>
-     * <p>You cannot disable a check if it is used by any scheduled audit. You must
-     * first delete the check from the scheduled audit or delete the scheduled audit
-     * itself.</p> <p>On the first call to <code>UpdateAccountAuditConfiguration</code>
-     * this parameter is required and must specify at least one enabled check.</p>
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks,
+     * including those that are currently enabled.</p> <p>Some data collection might
+     * start immediately when certain checks are enabled. When a check is disabled, any
+     * data collected so far in relation to the check is deleted.</p> <p>You cannot
+     * disable a check if it is used by any scheduled audit. You must first delete the
+     * check from the scheduled audit or delete the scheduled audit itself.</p> <p>On
+     * the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter
+     * is required and must specify at least one enabled check.</p>
      */
     inline UpdateAccountAuditConfigurationRequest& WithAuditCheckConfigurations(const Aws::Map<Aws::String, AuditCheckConfiguration>& value) { SetAuditCheckConfigurations(value); return *this;}
 
     /**
      * <p>Specifies which audit checks are enabled and disabled for this account. Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks
-     * including those that are currently enabled.</p> <p>Note that some data
-     * collection may begin immediately when certain checks are enabled. When a check
-     * is disabled, any data collected so far in relation to the check is deleted.</p>
-     * <p>You cannot disable a check if it is used by any scheduled audit. You must
-     * first delete the check from the scheduled audit or delete the scheduled audit
-     * itself.</p> <p>On the first call to <code>UpdateAccountAuditConfiguration</code>
-     * this parameter is required and must specify at least one enabled check.</p>
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks,
+     * including those that are currently enabled.</p> <p>Some data collection might
+     * start immediately when certain checks are enabled. When a check is disabled, any
+     * data collected so far in relation to the check is deleted.</p> <p>You cannot
+     * disable a check if it is used by any scheduled audit. You must first delete the
+     * check from the scheduled audit or delete the scheduled audit itself.</p> <p>On
+     * the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter
+     * is required and must specify at least one enabled check.</p>
      */
     inline UpdateAccountAuditConfigurationRequest& WithAuditCheckConfigurations(Aws::Map<Aws::String, AuditCheckConfiguration>&& value) { SetAuditCheckConfigurations(std::move(value)); return *this;}
 
     /**
      * <p>Specifies which audit checks are enabled and disabled for this account. Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks
-     * including those that are currently enabled.</p> <p>Note that some data
-     * collection may begin immediately when certain checks are enabled. When a check
-     * is disabled, any data collected so far in relation to the check is deleted.</p>
-     * <p>You cannot disable a check if it is used by any scheduled audit. You must
-     * first delete the check from the scheduled audit or delete the scheduled audit
-     * itself.</p> <p>On the first call to <code>UpdateAccountAuditConfiguration</code>
-     * this parameter is required and must specify at least one enabled check.</p>
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks,
+     * including those that are currently enabled.</p> <p>Some data collection might
+     * start immediately when certain checks are enabled. When a check is disabled, any
+     * data collected so far in relation to the check is deleted.</p> <p>You cannot
+     * disable a check if it is used by any scheduled audit. You must first delete the
+     * check from the scheduled audit or delete the scheduled audit itself.</p> <p>On
+     * the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter
+     * is required and must specify at least one enabled check.</p>
      */
     inline UpdateAccountAuditConfigurationRequest& AddAuditCheckConfigurations(const Aws::String& key, const AuditCheckConfiguration& value) { m_auditCheckConfigurationsHasBeenSet = true; m_auditCheckConfigurations.emplace(key, value); return *this; }
 
     /**
      * <p>Specifies which audit checks are enabled and disabled for this account. Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks
-     * including those that are currently enabled.</p> <p>Note that some data
-     * collection may begin immediately when certain checks are enabled. When a check
-     * is disabled, any data collected so far in relation to the check is deleted.</p>
-     * <p>You cannot disable a check if it is used by any scheduled audit. You must
-     * first delete the check from the scheduled audit or delete the scheduled audit
-     * itself.</p> <p>On the first call to <code>UpdateAccountAuditConfiguration</code>
-     * this parameter is required and must specify at least one enabled check.</p>
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks,
+     * including those that are currently enabled.</p> <p>Some data collection might
+     * start immediately when certain checks are enabled. When a check is disabled, any
+     * data collected so far in relation to the check is deleted.</p> <p>You cannot
+     * disable a check if it is used by any scheduled audit. You must first delete the
+     * check from the scheduled audit or delete the scheduled audit itself.</p> <p>On
+     * the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter
+     * is required and must specify at least one enabled check.</p>
      */
     inline UpdateAccountAuditConfigurationRequest& AddAuditCheckConfigurations(Aws::String&& key, const AuditCheckConfiguration& value) { m_auditCheckConfigurationsHasBeenSet = true; m_auditCheckConfigurations.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Specifies which audit checks are enabled and disabled for this account. Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks
-     * including those that are currently enabled.</p> <p>Note that some data
-     * collection may begin immediately when certain checks are enabled. When a check
-     * is disabled, any data collected so far in relation to the check is deleted.</p>
-     * <p>You cannot disable a check if it is used by any scheduled audit. You must
-     * first delete the check from the scheduled audit or delete the scheduled audit
-     * itself.</p> <p>On the first call to <code>UpdateAccountAuditConfiguration</code>
-     * this parameter is required and must specify at least one enabled check.</p>
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks,
+     * including those that are currently enabled.</p> <p>Some data collection might
+     * start immediately when certain checks are enabled. When a check is disabled, any
+     * data collected so far in relation to the check is deleted.</p> <p>You cannot
+     * disable a check if it is used by any scheduled audit. You must first delete the
+     * check from the scheduled audit or delete the scheduled audit itself.</p> <p>On
+     * the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter
+     * is required and must specify at least one enabled check.</p>
      */
     inline UpdateAccountAuditConfigurationRequest& AddAuditCheckConfigurations(const Aws::String& key, AuditCheckConfiguration&& value) { m_auditCheckConfigurationsHasBeenSet = true; m_auditCheckConfigurations.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Specifies which audit checks are enabled and disabled for this account. Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks
-     * including those that are currently enabled.</p> <p>Note that some data
-     * collection may begin immediately when certain checks are enabled. When a check
-     * is disabled, any data collected so far in relation to the check is deleted.</p>
-     * <p>You cannot disable a check if it is used by any scheduled audit. You must
-     * first delete the check from the scheduled audit or delete the scheduled audit
-     * itself.</p> <p>On the first call to <code>UpdateAccountAuditConfiguration</code>
-     * this parameter is required and must specify at least one enabled check.</p>
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks,
+     * including those that are currently enabled.</p> <p>Some data collection might
+     * start immediately when certain checks are enabled. When a check is disabled, any
+     * data collected so far in relation to the check is deleted.</p> <p>You cannot
+     * disable a check if it is used by any scheduled audit. You must first delete the
+     * check from the scheduled audit or delete the scheduled audit itself.</p> <p>On
+     * the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter
+     * is required and must specify at least one enabled check.</p>
      */
     inline UpdateAccountAuditConfigurationRequest& AddAuditCheckConfigurations(Aws::String&& key, AuditCheckConfiguration&& value) { m_auditCheckConfigurationsHasBeenSet = true; m_auditCheckConfigurations.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Specifies which audit checks are enabled and disabled for this account. Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks
-     * including those that are currently enabled.</p> <p>Note that some data
-     * collection may begin immediately when certain checks are enabled. When a check
-     * is disabled, any data collected so far in relation to the check is deleted.</p>
-     * <p>You cannot disable a check if it is used by any scheduled audit. You must
-     * first delete the check from the scheduled audit or delete the scheduled audit
-     * itself.</p> <p>On the first call to <code>UpdateAccountAuditConfiguration</code>
-     * this parameter is required and must specify at least one enabled check.</p>
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks,
+     * including those that are currently enabled.</p> <p>Some data collection might
+     * start immediately when certain checks are enabled. When a check is disabled, any
+     * data collected so far in relation to the check is deleted.</p> <p>You cannot
+     * disable a check if it is used by any scheduled audit. You must first delete the
+     * check from the scheduled audit or delete the scheduled audit itself.</p> <p>On
+     * the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter
+     * is required and must specify at least one enabled check.</p>
      */
     inline UpdateAccountAuditConfigurationRequest& AddAuditCheckConfigurations(const char* key, AuditCheckConfiguration&& value) { m_auditCheckConfigurationsHasBeenSet = true; m_auditCheckConfigurations.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Specifies which audit checks are enabled and disabled for this account. Use
-     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks
-     * including those that are currently enabled.</p> <p>Note that some data
-     * collection may begin immediately when certain checks are enabled. When a check
-     * is disabled, any data collected so far in relation to the check is deleted.</p>
-     * <p>You cannot disable a check if it is used by any scheduled audit. You must
-     * first delete the check from the scheduled audit or delete the scheduled audit
-     * itself.</p> <p>On the first call to <code>UpdateAccountAuditConfiguration</code>
-     * this parameter is required and must specify at least one enabled check.</p>
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks,
+     * including those that are currently enabled.</p> <p>Some data collection might
+     * start immediately when certain checks are enabled. When a check is disabled, any
+     * data collected so far in relation to the check is deleted.</p> <p>You cannot
+     * disable a check if it is used by any scheduled audit. You must first delete the
+     * check from the scheduled audit or delete the scheduled audit itself.</p> <p>On
+     * the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter
+     * is required and must specify at least one enabled check.</p>
      */
     inline UpdateAccountAuditConfigurationRequest& AddAuditCheckConfigurations(const char* key, const AuditCheckConfiguration& value) { m_auditCheckConfigurationsHasBeenSet = true; m_auditCheckConfigurations.emplace(key, value); return *this; }
 

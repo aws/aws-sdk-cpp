@@ -162,9 +162,8 @@ namespace Model
      * connections to the NFS port on one of the file system’s mount targets. You can
      * enable outbound connections either by IP address (CIDR range) or security
      * group.</p> <p>For information about security groups and mount targets, see
-     * "https://docs.aws.amazon.com/efs/latest/ug/security-considerations.html#network-access"
-     * (Security Groups for Amazon EC2 Instances and Mount Targets) in the <i>Amazon
-     * EFS User Guide</i>.</p> </li> </ul>
+     * Security Groups for Amazon EC2 Instances and Mount Targets in the <i>Amazon EFS
+     * User Guide.</i> </p> </li> </ul>
      */
     inline const Ec2Config& GetEc2Config() const{ return m_ec2Config; }
 
@@ -182,9 +181,8 @@ namespace Model
      * connections to the NFS port on one of the file system’s mount targets. You can
      * enable outbound connections either by IP address (CIDR range) or security
      * group.</p> <p>For information about security groups and mount targets, see
-     * "https://docs.aws.amazon.com/efs/latest/ug/security-considerations.html#network-access"
-     * (Security Groups for Amazon EC2 Instances and Mount Targets) in the <i>Amazon
-     * EFS User Guide</i>.</p> </li> </ul>
+     * Security Groups for Amazon EC2 Instances and Mount Targets in the <i>Amazon EFS
+     * User Guide.</i> </p> </li> </ul>
      */
     inline bool Ec2ConfigHasBeenSet() const { return m_ec2ConfigHasBeenSet; }
 
@@ -202,9 +200,8 @@ namespace Model
      * connections to the NFS port on one of the file system’s mount targets. You can
      * enable outbound connections either by IP address (CIDR range) or security
      * group.</p> <p>For information about security groups and mount targets, see
-     * "https://docs.aws.amazon.com/efs/latest/ug/security-considerations.html#network-access"
-     * (Security Groups for Amazon EC2 Instances and Mount Targets) in the <i>Amazon
-     * EFS User Guide</i>.</p> </li> </ul>
+     * Security Groups for Amazon EC2 Instances and Mount Targets in the <i>Amazon EFS
+     * User Guide.</i> </p> </li> </ul>
      */
     inline void SetEc2Config(const Ec2Config& value) { m_ec2ConfigHasBeenSet = true; m_ec2Config = value; }
 
@@ -222,9 +219,8 @@ namespace Model
      * connections to the NFS port on one of the file system’s mount targets. You can
      * enable outbound connections either by IP address (CIDR range) or security
      * group.</p> <p>For information about security groups and mount targets, see
-     * "https://docs.aws.amazon.com/efs/latest/ug/security-considerations.html#network-access"
-     * (Security Groups for Amazon EC2 Instances and Mount Targets) in the <i>Amazon
-     * EFS User Guide</i>.</p> </li> </ul>
+     * Security Groups for Amazon EC2 Instances and Mount Targets in the <i>Amazon EFS
+     * User Guide.</i> </p> </li> </ul>
      */
     inline void SetEc2Config(Ec2Config&& value) { m_ec2ConfigHasBeenSet = true; m_ec2Config = std::move(value); }
 
@@ -242,9 +238,8 @@ namespace Model
      * connections to the NFS port on one of the file system’s mount targets. You can
      * enable outbound connections either by IP address (CIDR range) or security
      * group.</p> <p>For information about security groups and mount targets, see
-     * "https://docs.aws.amazon.com/efs/latest/ug/security-considerations.html#network-access"
-     * (Security Groups for Amazon EC2 Instances and Mount Targets) in the <i>Amazon
-     * EFS User Guide</i>.</p> </li> </ul>
+     * Security Groups for Amazon EC2 Instances and Mount Targets in the <i>Amazon EFS
+     * User Guide.</i> </p> </li> </ul>
      */
     inline CreateLocationEfsRequest& WithEc2Config(const Ec2Config& value) { SetEc2Config(value); return *this;}
 
@@ -262,9 +257,8 @@ namespace Model
      * connections to the NFS port on one of the file system’s mount targets. You can
      * enable outbound connections either by IP address (CIDR range) or security
      * group.</p> <p>For information about security groups and mount targets, see
-     * "https://docs.aws.amazon.com/efs/latest/ug/security-considerations.html#network-access"
-     * (Security Groups for Amazon EC2 Instances and Mount Targets) in the <i>Amazon
-     * EFS User Guide</i>.</p> </li> </ul>
+     * Security Groups for Amazon EC2 Instances and Mount Targets in the <i>Amazon EFS
+     * User Guide.</i> </p> </li> </ul>
      */
     inline CreateLocationEfsRequest& WithEc2Config(Ec2Config&& value) { SetEc2Config(std::move(value)); return *this;}
 

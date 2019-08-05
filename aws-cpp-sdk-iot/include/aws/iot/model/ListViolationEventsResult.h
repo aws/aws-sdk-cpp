@@ -46,49 +46,49 @@ namespace Model
 
     /**
      * <p>The security profile violation alerts issued for this account during the
-     * given time frame, potentially filtered by security profile, behavior violated,
+     * given time period, potentially filtered by security profile, behavior violated,
      * or thing (device) violating.</p>
      */
     inline const Aws::Vector<ViolationEvent>& GetViolationEvents() const{ return m_violationEvents; }
 
     /**
      * <p>The security profile violation alerts issued for this account during the
-     * given time frame, potentially filtered by security profile, behavior violated,
+     * given time period, potentially filtered by security profile, behavior violated,
      * or thing (device) violating.</p>
      */
     inline void SetViolationEvents(const Aws::Vector<ViolationEvent>& value) { m_violationEvents = value; }
 
     /**
      * <p>The security profile violation alerts issued for this account during the
-     * given time frame, potentially filtered by security profile, behavior violated,
+     * given time period, potentially filtered by security profile, behavior violated,
      * or thing (device) violating.</p>
      */
     inline void SetViolationEvents(Aws::Vector<ViolationEvent>&& value) { m_violationEvents = std::move(value); }
 
     /**
      * <p>The security profile violation alerts issued for this account during the
-     * given time frame, potentially filtered by security profile, behavior violated,
+     * given time period, potentially filtered by security profile, behavior violated,
      * or thing (device) violating.</p>
      */
     inline ListViolationEventsResult& WithViolationEvents(const Aws::Vector<ViolationEvent>& value) { SetViolationEvents(value); return *this;}
 
     /**
      * <p>The security profile violation alerts issued for this account during the
-     * given time frame, potentially filtered by security profile, behavior violated,
+     * given time period, potentially filtered by security profile, behavior violated,
      * or thing (device) violating.</p>
      */
     inline ListViolationEventsResult& WithViolationEvents(Aws::Vector<ViolationEvent>&& value) { SetViolationEvents(std::move(value)); return *this;}
 
     /**
      * <p>The security profile violation alerts issued for this account during the
-     * given time frame, potentially filtered by security profile, behavior violated,
+     * given time period, potentially filtered by security profile, behavior violated,
      * or thing (device) violating.</p>
      */
     inline ListViolationEventsResult& AddViolationEvents(const ViolationEvent& value) { m_violationEvents.push_back(value); return *this; }
 
     /**
      * <p>The security profile violation alerts issued for this account during the
-     * given time frame, potentially filtered by security profile, behavior violated,
+     * given time period, potentially filtered by security profile, behavior violated,
      * or thing (device) violating.</p>
      */
     inline ListViolationEventsResult& AddViolationEvents(ViolationEvent&& value) { m_violationEvents.push_back(std::move(value)); return *this; }

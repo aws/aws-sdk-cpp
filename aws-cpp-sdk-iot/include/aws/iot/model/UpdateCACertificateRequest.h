@@ -201,22 +201,22 @@ namespace Model
 
 
     /**
-     * <p>If true, remove auto registration.</p>
+     * <p>If true, removes auto registration.</p>
      */
     inline bool GetRemoveAutoRegistration() const{ return m_removeAutoRegistration; }
 
     /**
-     * <p>If true, remove auto registration.</p>
+     * <p>If true, removes auto registration.</p>
      */
     inline bool RemoveAutoRegistrationHasBeenSet() const { return m_removeAutoRegistrationHasBeenSet; }
 
     /**
-     * <p>If true, remove auto registration.</p>
+     * <p>If true, removes auto registration.</p>
      */
     inline void SetRemoveAutoRegistration(bool value) { m_removeAutoRegistrationHasBeenSet = true; m_removeAutoRegistration = value; }
 
     /**
-     * <p>If true, remove auto registration.</p>
+     * <p>If true, removes auto registration.</p>
      */
     inline UpdateCACertificateRequest& WithRemoveAutoRegistration(bool value) { SetRemoveAutoRegistration(value); return *this;}
 

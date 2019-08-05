@@ -101,22 +101,26 @@ namespace Model
 
 
     /**
-     * <p>Forces a certificate request to be deleted.</p>
+     * <p>Forces the deletion of a certificate if it is inactive and is not attached to
+     * an IoT thing.</p>
      */
     inline bool GetForceDelete() const{ return m_forceDelete; }
 
     /**
-     * <p>Forces a certificate request to be deleted.</p>
+     * <p>Forces the deletion of a certificate if it is inactive and is not attached to
+     * an IoT thing.</p>
      */
     inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
 
     /**
-     * <p>Forces a certificate request to be deleted.</p>
+     * <p>Forces the deletion of a certificate if it is inactive and is not attached to
+     * an IoT thing.</p>
      */
     inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
 
     /**
-     * <p>Forces a certificate request to be deleted.</p>
+     * <p>Forces the deletion of a certificate if it is inactive and is not attached to
+     * an IoT thing.</p>
      */
     inline DeleteCertificateRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
 

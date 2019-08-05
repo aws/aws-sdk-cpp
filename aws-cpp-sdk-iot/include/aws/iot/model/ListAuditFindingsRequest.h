@@ -135,32 +135,32 @@ namespace Model
 
 
     /**
-     * <p>Information identifying the non-compliant resource.</p>
+     * <p>Information identifying the noncompliant resource.</p>
      */
     inline const ResourceIdentifier& GetResourceIdentifier() const{ return m_resourceIdentifier; }
 
     /**
-     * <p>Information identifying the non-compliant resource.</p>
+     * <p>Information identifying the noncompliant resource.</p>
      */
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
 
     /**
-     * <p>Information identifying the non-compliant resource.</p>
+     * <p>Information identifying the noncompliant resource.</p>
      */
     inline void SetResourceIdentifier(const ResourceIdentifier& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
 
     /**
-     * <p>Information identifying the non-compliant resource.</p>
+     * <p>Information identifying the noncompliant resource.</p>
      */
     inline void SetResourceIdentifier(ResourceIdentifier&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
 
     /**
-     * <p>Information identifying the non-compliant resource.</p>
+     * <p>Information identifying the noncompliant resource.</p>
      */
     inline ListAuditFindingsRequest& WithResourceIdentifier(const ResourceIdentifier& value) { SetResourceIdentifier(value); return *this;}
 
     /**
-     * <p>Information identifying the non-compliant resource.</p>
+     * <p>Information identifying the noncompliant resource.</p>
      */
     inline ListAuditFindingsRequest& WithResourceIdentifier(ResourceIdentifier&& value) { SetResourceIdentifier(std::move(value)); return *this;}
 

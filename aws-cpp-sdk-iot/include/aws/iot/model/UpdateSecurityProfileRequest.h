@@ -237,63 +237,63 @@ namespace Model
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's <code>behaviors</code> but it is
+     * retained for any metric used in the profile's <code>behaviors</code>, but it is
      * also retained for any metric specified here.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAdditionalMetricsToRetain() const{ return m_additionalMetricsToRetain; }
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's <code>behaviors</code> but it is
+     * retained for any metric used in the profile's <code>behaviors</code>, but it is
      * also retained for any metric specified here.</p>
      */
     inline bool AdditionalMetricsToRetainHasBeenSet() const { return m_additionalMetricsToRetainHasBeenSet; }
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's <code>behaviors</code> but it is
+     * retained for any metric used in the profile's <code>behaviors</code>, but it is
      * also retained for any metric specified here.</p>
      */
     inline void SetAdditionalMetricsToRetain(const Aws::Vector<Aws::String>& value) { m_additionalMetricsToRetainHasBeenSet = true; m_additionalMetricsToRetain = value; }
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's <code>behaviors</code> but it is
+     * retained for any metric used in the profile's <code>behaviors</code>, but it is
      * also retained for any metric specified here.</p>
      */
     inline void SetAdditionalMetricsToRetain(Aws::Vector<Aws::String>&& value) { m_additionalMetricsToRetainHasBeenSet = true; m_additionalMetricsToRetain = std::move(value); }
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's <code>behaviors</code> but it is
+     * retained for any metric used in the profile's <code>behaviors</code>, but it is
      * also retained for any metric specified here.</p>
      */
     inline UpdateSecurityProfileRequest& WithAdditionalMetricsToRetain(const Aws::Vector<Aws::String>& value) { SetAdditionalMetricsToRetain(value); return *this;}
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's <code>behaviors</code> but it is
+     * retained for any metric used in the profile's <code>behaviors</code>, but it is
      * also retained for any metric specified here.</p>
      */
     inline UpdateSecurityProfileRequest& WithAdditionalMetricsToRetain(Aws::Vector<Aws::String>&& value) { SetAdditionalMetricsToRetain(std::move(value)); return *this;}
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's <code>behaviors</code> but it is
+     * retained for any metric used in the profile's <code>behaviors</code>, but it is
      * also retained for any metric specified here.</p>
      */
     inline UpdateSecurityProfileRequest& AddAdditionalMetricsToRetain(const Aws::String& value) { m_additionalMetricsToRetainHasBeenSet = true; m_additionalMetricsToRetain.push_back(value); return *this; }
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's <code>behaviors</code> but it is
+     * retained for any metric used in the profile's <code>behaviors</code>, but it is
      * also retained for any metric specified here.</p>
      */
     inline UpdateSecurityProfileRequest& AddAdditionalMetricsToRetain(Aws::String&& value) { m_additionalMetricsToRetainHasBeenSet = true; m_additionalMetricsToRetain.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's <code>behaviors</code> but it is
+     * retained for any metric used in the profile's <code>behaviors</code>, but it is
      * also retained for any metric specified here.</p>
      */
     inline UpdateSecurityProfileRequest& AddAdditionalMetricsToRetain(const char* value) { m_additionalMetricsToRetainHasBeenSet = true; m_additionalMetricsToRetain.push_back(value); return *this; }
@@ -301,57 +301,57 @@ namespace Model
 
     /**
      * <p>If true, delete all <code>behaviors</code> defined for this security profile.
-     * If any <code>behaviors</code> are defined in the current invocation an exception
-     * occurs.</p>
+     * If any <code>behaviors</code> are defined in the current invocation, an
+     * exception occurs.</p>
      */
     inline bool GetDeleteBehaviors() const{ return m_deleteBehaviors; }
 
     /**
      * <p>If true, delete all <code>behaviors</code> defined for this security profile.
-     * If any <code>behaviors</code> are defined in the current invocation an exception
-     * occurs.</p>
+     * If any <code>behaviors</code> are defined in the current invocation, an
+     * exception occurs.</p>
      */
     inline bool DeleteBehaviorsHasBeenSet() const { return m_deleteBehaviorsHasBeenSet; }
 
     /**
      * <p>If true, delete all <code>behaviors</code> defined for this security profile.
-     * If any <code>behaviors</code> are defined in the current invocation an exception
-     * occurs.</p>
+     * If any <code>behaviors</code> are defined in the current invocation, an
+     * exception occurs.</p>
      */
     inline void SetDeleteBehaviors(bool value) { m_deleteBehaviorsHasBeenSet = true; m_deleteBehaviors = value; }
 
     /**
      * <p>If true, delete all <code>behaviors</code> defined for this security profile.
-     * If any <code>behaviors</code> are defined in the current invocation an exception
-     * occurs.</p>
+     * If any <code>behaviors</code> are defined in the current invocation, an
+     * exception occurs.</p>
      */
     inline UpdateSecurityProfileRequest& WithDeleteBehaviors(bool value) { SetDeleteBehaviors(value); return *this;}
 
 
     /**
      * <p>If true, delete all <code>alertTargets</code> defined for this security
-     * profile. If any <code>alertTargets</code> are defined in the current invocation
+     * profile. If any <code>alertTargets</code> are defined in the current invocation,
      * an exception occurs.</p>
      */
     inline bool GetDeleteAlertTargets() const{ return m_deleteAlertTargets; }
 
     /**
      * <p>If true, delete all <code>alertTargets</code> defined for this security
-     * profile. If any <code>alertTargets</code> are defined in the current invocation
+     * profile. If any <code>alertTargets</code> are defined in the current invocation,
      * an exception occurs.</p>
      */
     inline bool DeleteAlertTargetsHasBeenSet() const { return m_deleteAlertTargetsHasBeenSet; }
 
     /**
      * <p>If true, delete all <code>alertTargets</code> defined for this security
-     * profile. If any <code>alertTargets</code> are defined in the current invocation
+     * profile. If any <code>alertTargets</code> are defined in the current invocation,
      * an exception occurs.</p>
      */
     inline void SetDeleteAlertTargets(bool value) { m_deleteAlertTargetsHasBeenSet = true; m_deleteAlertTargets = value; }
 
     /**
      * <p>If true, delete all <code>alertTargets</code> defined for this security
-     * profile. If any <code>alertTargets</code> are defined in the current invocation
+     * profile. If any <code>alertTargets</code> are defined in the current invocation,
      * an exception occurs.</p>
      */
     inline UpdateSecurityProfileRequest& WithDeleteAlertTargets(bool value) { SetDeleteAlertTargets(value); return *this;}
@@ -360,28 +360,28 @@ namespace Model
     /**
      * <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this
      * security profile. If any <code>additionalMetricsToRetain</code> are defined in
-     * the current invocation an exception occurs.</p>
+     * the current invocation, an exception occurs.</p>
      */
     inline bool GetDeleteAdditionalMetricsToRetain() const{ return m_deleteAdditionalMetricsToRetain; }
 
     /**
      * <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this
      * security profile. If any <code>additionalMetricsToRetain</code> are defined in
-     * the current invocation an exception occurs.</p>
+     * the current invocation, an exception occurs.</p>
      */
     inline bool DeleteAdditionalMetricsToRetainHasBeenSet() const { return m_deleteAdditionalMetricsToRetainHasBeenSet; }
 
     /**
      * <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this
      * security profile. If any <code>additionalMetricsToRetain</code> are defined in
-     * the current invocation an exception occurs.</p>
+     * the current invocation, an exception occurs.</p>
      */
     inline void SetDeleteAdditionalMetricsToRetain(bool value) { m_deleteAdditionalMetricsToRetainHasBeenSet = true; m_deleteAdditionalMetricsToRetain = value; }
 
     /**
      * <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this
      * security profile. If any <code>additionalMetricsToRetain</code> are defined in
-     * the current invocation an exception occurs.</p>
+     * the current invocation, an exception occurs.</p>
      */
     inline UpdateSecurityProfileRequest& WithDeleteAdditionalMetricsToRetain(bool value) { SetDeleteAdditionalMetricsToRetain(value); return *this;}
 
@@ -389,7 +389,7 @@ namespace Model
     /**
      * <p>The expected version of the security profile. A new version is generated
      * whenever the security profile is updated. If you specify a value that is
-     * different than the actual version, a <code>VersionConflictException</code> is
+     * different from the actual version, a <code>VersionConflictException</code> is
      * thrown.</p>
      */
     inline long long GetExpectedVersion() const{ return m_expectedVersion; }
@@ -397,7 +397,7 @@ namespace Model
     /**
      * <p>The expected version of the security profile. A new version is generated
      * whenever the security profile is updated. If you specify a value that is
-     * different than the actual version, a <code>VersionConflictException</code> is
+     * different from the actual version, a <code>VersionConflictException</code> is
      * thrown.</p>
      */
     inline bool ExpectedVersionHasBeenSet() const { return m_expectedVersionHasBeenSet; }
@@ -405,7 +405,7 @@ namespace Model
     /**
      * <p>The expected version of the security profile. A new version is generated
      * whenever the security profile is updated. If you specify a value that is
-     * different than the actual version, a <code>VersionConflictException</code> is
+     * different from the actual version, a <code>VersionConflictException</code> is
      * thrown.</p>
      */
     inline void SetExpectedVersion(long long value) { m_expectedVersionHasBeenSet = true; m_expectedVersion = value; }
@@ -413,7 +413,7 @@ namespace Model
     /**
      * <p>The expected version of the security profile. A new version is generated
      * whenever the security profile is updated. If you specify a value that is
-     * different than the actual version, a <code>VersionConflictException</code> is
+     * different from the actual version, a <code>VersionConflictException</code> is
      * thrown.</p>
      */
     inline UpdateSecurityProfileRequest& WithExpectedVersion(long long value) { SetExpectedVersion(value); return *this;}

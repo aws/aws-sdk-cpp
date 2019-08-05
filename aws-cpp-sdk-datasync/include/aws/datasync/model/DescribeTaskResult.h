@@ -17,8 +17,8 @@
 #include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datasync/model/TaskStatus.h>
-#include <aws/datasync/model/Options.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datasync/model/Options.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/datasync/model/FilterRule.h>
 #include <utility>
@@ -90,41 +90,36 @@ namespace Model
 
     /**
      * <p>The status of the task that was described.</p> <p>For detailed information
-     * about task execution statuses, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
-     * (Understanding Task Statuses).</p>
+     * about task execution statuses, see Understanding Task Statuses in the <i>AWS
+     * DataSync User Guide.</i> </p>
      */
     inline const TaskStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the task that was described.</p> <p>For detailed information
-     * about task execution statuses, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
-     * (Understanding Task Statuses).</p>
+     * about task execution statuses, see Understanding Task Statuses in the <i>AWS
+     * DataSync User Guide.</i> </p>
      */
     inline void SetStatus(const TaskStatus& value) { m_status = value; }
 
     /**
      * <p>The status of the task that was described.</p> <p>For detailed information
-     * about task execution statuses, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
-     * (Understanding Task Statuses).</p>
+     * about task execution statuses, see Understanding Task Statuses in the <i>AWS
+     * DataSync User Guide.</i> </p>
      */
     inline void SetStatus(TaskStatus&& value) { m_status = std::move(value); }
 
     /**
      * <p>The status of the task that was described.</p> <p>For detailed information
-     * about task execution statuses, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
-     * (Understanding Task Statuses).</p>
+     * about task execution statuses, see Understanding Task Statuses in the <i>AWS
+     * DataSync User Guide.</i> </p>
      */
     inline DescribeTaskResult& WithStatus(const TaskStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the task that was described.</p> <p>For detailed information
-     * about task execution statuses, see
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-tasks.html#understand-task-creation-statuses"
-     * (Understanding Task Statuses).</p>
+     * about task execution statuses, see Understanding Task Statuses in the <i>AWS
+     * DataSync User Guide.</i> </p>
      */
     inline DescribeTaskResult& WithStatus(TaskStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -283,72 +278,156 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was
      * used to monitor and log events in the task.</p> <p>For more information on these
-     * groups, see
-     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     * (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch
-     * UserGuide</i>.</p>
+     * groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
+     * User Guide</i>.</p>
      */
     inline const Aws::String& GetCloudWatchLogGroupArn() const{ return m_cloudWatchLogGroupArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was
      * used to monitor and log events in the task.</p> <p>For more information on these
-     * groups, see
-     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     * (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch
-     * UserGuide</i>.</p>
+     * groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
+     * User Guide</i>.</p>
      */
     inline void SetCloudWatchLogGroupArn(const Aws::String& value) { m_cloudWatchLogGroupArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was
      * used to monitor and log events in the task.</p> <p>For more information on these
-     * groups, see
-     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     * (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch
-     * UserGuide</i>.</p>
+     * groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
+     * User Guide</i>.</p>
      */
     inline void SetCloudWatchLogGroupArn(Aws::String&& value) { m_cloudWatchLogGroupArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was
      * used to monitor and log events in the task.</p> <p>For more information on these
-     * groups, see
-     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     * (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch
-     * UserGuide</i>.</p>
+     * groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
+     * User Guide</i>.</p>
      */
     inline void SetCloudWatchLogGroupArn(const char* value) { m_cloudWatchLogGroupArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was
      * used to monitor and log events in the task.</p> <p>For more information on these
-     * groups, see
-     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     * (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch
-     * UserGuide</i>.</p>
+     * groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
+     * User Guide</i>.</p>
      */
     inline DescribeTaskResult& WithCloudWatchLogGroupArn(const Aws::String& value) { SetCloudWatchLogGroupArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was
      * used to monitor and log events in the task.</p> <p>For more information on these
-     * groups, see
-     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     * (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch
-     * UserGuide</i>.</p>
+     * groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
+     * User Guide</i>.</p>
      */
     inline DescribeTaskResult& WithCloudWatchLogGroupArn(Aws::String&& value) { SetCloudWatchLogGroupArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was
      * used to monitor and log events in the task.</p> <p>For more information on these
-     * groups, see
-     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
-     * (Working with Log Groups and Log Streams) in the <i>Amazon CloudWatch
-     * UserGuide</i>.</p>
+     * groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
+     * User Guide</i>.</p>
      */
     inline DescribeTaskResult& WithCloudWatchLogGroupArn(const char* value) { SetCloudWatchLogGroupArn(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source ENIs (Elastic Network Interface)
+     * that was created for your subnet.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSourceNetworkInterfaceArns() const{ return m_sourceNetworkInterfaceArns; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source ENIs (Elastic Network Interface)
+     * that was created for your subnet.</p>
+     */
+    inline void SetSourceNetworkInterfaceArns(const Aws::Vector<Aws::String>& value) { m_sourceNetworkInterfaceArns = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source ENIs (Elastic Network Interface)
+     * that was created for your subnet.</p>
+     */
+    inline void SetSourceNetworkInterfaceArns(Aws::Vector<Aws::String>&& value) { m_sourceNetworkInterfaceArns = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source ENIs (Elastic Network Interface)
+     * that was created for your subnet.</p>
+     */
+    inline DescribeTaskResult& WithSourceNetworkInterfaceArns(const Aws::Vector<Aws::String>& value) { SetSourceNetworkInterfaceArns(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source ENIs (Elastic Network Interface)
+     * that was created for your subnet.</p>
+     */
+    inline DescribeTaskResult& WithSourceNetworkInterfaceArns(Aws::Vector<Aws::String>&& value) { SetSourceNetworkInterfaceArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source ENIs (Elastic Network Interface)
+     * that was created for your subnet.</p>
+     */
+    inline DescribeTaskResult& AddSourceNetworkInterfaceArns(const Aws::String& value) { m_sourceNetworkInterfaceArns.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source ENIs (Elastic Network Interface)
+     * that was created for your subnet.</p>
+     */
+    inline DescribeTaskResult& AddSourceNetworkInterfaceArns(Aws::String&& value) { m_sourceNetworkInterfaceArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source ENIs (Elastic Network Interface)
+     * that was created for your subnet.</p>
+     */
+    inline DescribeTaskResult& AddSourceNetworkInterfaceArns(const char* value) { m_sourceNetworkInterfaceArns.push_back(value); return *this; }
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the destination ENIs (Elastic Network
+     * Interface) that was created for your subnet.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDestinationNetworkInterfaceArns() const{ return m_destinationNetworkInterfaceArns; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the destination ENIs (Elastic Network
+     * Interface) that was created for your subnet.</p>
+     */
+    inline void SetDestinationNetworkInterfaceArns(const Aws::Vector<Aws::String>& value) { m_destinationNetworkInterfaceArns = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the destination ENIs (Elastic Network
+     * Interface) that was created for your subnet.</p>
+     */
+    inline void SetDestinationNetworkInterfaceArns(Aws::Vector<Aws::String>&& value) { m_destinationNetworkInterfaceArns = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the destination ENIs (Elastic Network
+     * Interface) that was created for your subnet.</p>
+     */
+    inline DescribeTaskResult& WithDestinationNetworkInterfaceArns(const Aws::Vector<Aws::String>& value) { SetDestinationNetworkInterfaceArns(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the destination ENIs (Elastic Network
+     * Interface) that was created for your subnet.</p>
+     */
+    inline DescribeTaskResult& WithDestinationNetworkInterfaceArns(Aws::Vector<Aws::String>&& value) { SetDestinationNetworkInterfaceArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the destination ENIs (Elastic Network
+     * Interface) that was created for your subnet.</p>
+     */
+    inline DescribeTaskResult& AddDestinationNetworkInterfaceArns(const Aws::String& value) { m_destinationNetworkInterfaceArns.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the destination ENIs (Elastic Network
+     * Interface) that was created for your subnet.</p>
+     */
+    inline DescribeTaskResult& AddDestinationNetworkInterfaceArns(Aws::String&& value) { m_destinationNetworkInterfaceArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the destination ENIs (Elastic Network
+     * Interface) that was created for your subnet.</p>
+     */
+    inline DescribeTaskResult& AddDestinationNetworkInterfaceArns(const char* value) { m_destinationNetworkInterfaceArns.push_back(value); return *this; }
 
 
     /**
@@ -403,51 +482,58 @@ namespace Model
 
 
     /**
-     * <p/> <p>Specifies that the task excludes files in the transfer based on the
-     * specified pattern in the filter. Transfers all files in the task’s subdirectory,
-     * except files that match the filter that is set. </p>
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list should contain a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example:
+     * <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline const Aws::Vector<FilterRule>& GetExcludes() const{ return m_excludes; }
 
     /**
-     * <p/> <p>Specifies that the task excludes files in the transfer based on the
-     * specified pattern in the filter. Transfers all files in the task’s subdirectory,
-     * except files that match the filter that is set. </p>
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list should contain a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example:
+     * <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline void SetExcludes(const Aws::Vector<FilterRule>& value) { m_excludes = value; }
 
     /**
-     * <p/> <p>Specifies that the task excludes files in the transfer based on the
-     * specified pattern in the filter. Transfers all files in the task’s subdirectory,
-     * except files that match the filter that is set. </p>
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list should contain a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example:
+     * <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline void SetExcludes(Aws::Vector<FilterRule>&& value) { m_excludes = std::move(value); }
 
     /**
-     * <p/> <p>Specifies that the task excludes files in the transfer based on the
-     * specified pattern in the filter. Transfers all files in the task’s subdirectory,
-     * except files that match the filter that is set. </p>
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list should contain a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example:
+     * <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline DescribeTaskResult& WithExcludes(const Aws::Vector<FilterRule>& value) { SetExcludes(value); return *this;}
 
     /**
-     * <p/> <p>Specifies that the task excludes files in the transfer based on the
-     * specified pattern in the filter. Transfers all files in the task’s subdirectory,
-     * except files that match the filter that is set. </p>
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list should contain a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example:
+     * <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline DescribeTaskResult& WithExcludes(Aws::Vector<FilterRule>&& value) { SetExcludes(std::move(value)); return *this;}
 
     /**
-     * <p/> <p>Specifies that the task excludes files in the transfer based on the
-     * specified pattern in the filter. Transfers all files in the task’s subdirectory,
-     * except files that match the filter that is set. </p>
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list should contain a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example:
+     * <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline DescribeTaskResult& AddExcludes(const FilterRule& value) { m_excludes.push_back(value); return *this; }
 
     /**
-     * <p/> <p>Specifies that the task excludes files in the transfer based on the
-     * specified pattern in the filter. Transfers all files in the task’s subdirectory,
-     * except files that match the filter that is set. </p>
+     * <p>A list of filter rules that determines which files to exclude from a task.
+     * The list should contain a single filter string that consists of the patterns to
+     * exclude. The patterns are delimited by "|" (that is, a pipe), for example:
+     * <code>"/folder1|/folder2"</code> </p> <p> </p>
      */
     inline DescribeTaskResult& AddExcludes(FilterRule&& value) { m_excludes.push_back(std::move(value)); return *this; }
 
@@ -578,6 +664,10 @@ namespace Model
     Aws::String m_destinationLocationArn;
 
     Aws::String m_cloudWatchLogGroupArn;
+
+    Aws::Vector<Aws::String> m_sourceNetworkInterfaceArns;
+
+    Aws::Vector<Aws::String> m_destinationNetworkInterfaceArns;
 
     Options m_options;
 

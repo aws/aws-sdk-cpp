@@ -1,0 +1,155 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/iot/IoT_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace IoT
+{
+namespace Model
+{
+
+  /**
+   * <p>Parameters used when defining a mitigation action that move a set of things
+   * to a thing group.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AddThingsToThingGroupParams">AWS
+   * API Reference</a></p>
+   */
+  class AWS_IOT_API AddThingsToThingGroupParams
+  {
+  public:
+    AddThingsToThingGroupParams();
+    AddThingsToThingGroupParams(Aws::Utils::Json::JsonView jsonValue);
+    AddThingsToThingGroupParams& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The list of groups to which you want to add the things that triggered the
+     * mitigation action. You can add a thing to a maximum of 10 groups, but you cannot
+     * add a thing to more than one group in the same hierarchy.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetThingGroupNames() const{ return m_thingGroupNames; }
+
+    /**
+     * <p>The list of groups to which you want to add the things that triggered the
+     * mitigation action. You can add a thing to a maximum of 10 groups, but you cannot
+     * add a thing to more than one group in the same hierarchy.</p>
+     */
+    inline bool ThingGroupNamesHasBeenSet() const { return m_thingGroupNamesHasBeenSet; }
+
+    /**
+     * <p>The list of groups to which you want to add the things that triggered the
+     * mitigation action. You can add a thing to a maximum of 10 groups, but you cannot
+     * add a thing to more than one group in the same hierarchy.</p>
+     */
+    inline void SetThingGroupNames(const Aws::Vector<Aws::String>& value) { m_thingGroupNamesHasBeenSet = true; m_thingGroupNames = value; }
+
+    /**
+     * <p>The list of groups to which you want to add the things that triggered the
+     * mitigation action. You can add a thing to a maximum of 10 groups, but you cannot
+     * add a thing to more than one group in the same hierarchy.</p>
+     */
+    inline void SetThingGroupNames(Aws::Vector<Aws::String>&& value) { m_thingGroupNamesHasBeenSet = true; m_thingGroupNames = std::move(value); }
+
+    /**
+     * <p>The list of groups to which you want to add the things that triggered the
+     * mitigation action. You can add a thing to a maximum of 10 groups, but you cannot
+     * add a thing to more than one group in the same hierarchy.</p>
+     */
+    inline AddThingsToThingGroupParams& WithThingGroupNames(const Aws::Vector<Aws::String>& value) { SetThingGroupNames(value); return *this;}
+
+    /**
+     * <p>The list of groups to which you want to add the things that triggered the
+     * mitigation action. You can add a thing to a maximum of 10 groups, but you cannot
+     * add a thing to more than one group in the same hierarchy.</p>
+     */
+    inline AddThingsToThingGroupParams& WithThingGroupNames(Aws::Vector<Aws::String>&& value) { SetThingGroupNames(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of groups to which you want to add the things that triggered the
+     * mitigation action. You can add a thing to a maximum of 10 groups, but you cannot
+     * add a thing to more than one group in the same hierarchy.</p>
+     */
+    inline AddThingsToThingGroupParams& AddThingGroupNames(const Aws::String& value) { m_thingGroupNamesHasBeenSet = true; m_thingGroupNames.push_back(value); return *this; }
+
+    /**
+     * <p>The list of groups to which you want to add the things that triggered the
+     * mitigation action. You can add a thing to a maximum of 10 groups, but you cannot
+     * add a thing to more than one group in the same hierarchy.</p>
+     */
+    inline AddThingsToThingGroupParams& AddThingGroupNames(Aws::String&& value) { m_thingGroupNamesHasBeenSet = true; m_thingGroupNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of groups to which you want to add the things that triggered the
+     * mitigation action. You can add a thing to a maximum of 10 groups, but you cannot
+     * add a thing to more than one group in the same hierarchy.</p>
+     */
+    inline AddThingsToThingGroupParams& AddThingGroupNames(const char* value) { m_thingGroupNamesHasBeenSet = true; m_thingGroupNames.push_back(value); return *this; }
+
+
+    /**
+     * <p>Specifies if this mitigation action can move the things that triggered the
+     * mitigation action even if they are part of one or more dynamic things
+     * groups.</p>
+     */
+    inline bool GetOverrideDynamicGroups() const{ return m_overrideDynamicGroups; }
+
+    /**
+     * <p>Specifies if this mitigation action can move the things that triggered the
+     * mitigation action even if they are part of one or more dynamic things
+     * groups.</p>
+     */
+    inline bool OverrideDynamicGroupsHasBeenSet() const { return m_overrideDynamicGroupsHasBeenSet; }
+
+    /**
+     * <p>Specifies if this mitigation action can move the things that triggered the
+     * mitigation action even if they are part of one or more dynamic things
+     * groups.</p>
+     */
+    inline void SetOverrideDynamicGroups(bool value) { m_overrideDynamicGroupsHasBeenSet = true; m_overrideDynamicGroups = value; }
+
+    /**
+     * <p>Specifies if this mitigation action can move the things that triggered the
+     * mitigation action even if they are part of one or more dynamic things
+     * groups.</p>
+     */
+    inline AddThingsToThingGroupParams& WithOverrideDynamicGroups(bool value) { SetOverrideDynamicGroups(value); return *this;}
+
+  private:
+
+    Aws::Vector<Aws::String> m_thingGroupNames;
+    bool m_thingGroupNamesHasBeenSet;
+
+    bool m_overrideDynamicGroups;
+    bool m_overrideDynamicGroupsHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace IoT
+} // namespace Aws

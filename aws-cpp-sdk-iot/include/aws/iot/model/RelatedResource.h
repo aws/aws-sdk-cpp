@@ -82,98 +82,98 @@ namespace Model
 
 
     /**
-     * <p>Information identifying the resource.</p>
+     * <p>Information that identifies the resource.</p>
      */
     inline const ResourceIdentifier& GetResourceIdentifier() const{ return m_resourceIdentifier; }
 
     /**
-     * <p>Information identifying the resource.</p>
+     * <p>Information that identifies the resource.</p>
      */
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
 
     /**
-     * <p>Information identifying the resource.</p>
+     * <p>Information that identifies the resource.</p>
      */
     inline void SetResourceIdentifier(const ResourceIdentifier& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
 
     /**
-     * <p>Information identifying the resource.</p>
+     * <p>Information that identifies the resource.</p>
      */
     inline void SetResourceIdentifier(ResourceIdentifier&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
 
     /**
-     * <p>Information identifying the resource.</p>
+     * <p>Information that identifies the resource.</p>
      */
     inline RelatedResource& WithResourceIdentifier(const ResourceIdentifier& value) { SetResourceIdentifier(value); return *this;}
 
     /**
-     * <p>Information identifying the resource.</p>
+     * <p>Information that identifies the resource.</p>
      */
     inline RelatedResource& WithResourceIdentifier(ResourceIdentifier&& value) { SetResourceIdentifier(std::move(value)); return *this;}
 
 
     /**
-     * <p>Additional information about the resource.</p>
+     * <p>Other information about the resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalInfo() const{ return m_additionalInfo; }
 
     /**
-     * <p>Additional information about the resource.</p>
+     * <p>Other information about the resource.</p>
      */
     inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
 
     /**
-     * <p>Additional information about the resource.</p>
+     * <p>Other information about the resource.</p>
      */
     inline void SetAdditionalInfo(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
 
     /**
-     * <p>Additional information about the resource.</p>
+     * <p>Other information about the resource.</p>
      */
     inline void SetAdditionalInfo(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
 
     /**
-     * <p>Additional information about the resource.</p>
+     * <p>Other information about the resource.</p>
      */
     inline RelatedResource& WithAdditionalInfo(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalInfo(value); return *this;}
 
     /**
-     * <p>Additional information about the resource.</p>
+     * <p>Other information about the resource.</p>
      */
     inline RelatedResource& WithAdditionalInfo(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalInfo(std::move(value)); return *this;}
 
     /**
-     * <p>Additional information about the resource.</p>
+     * <p>Other information about the resource.</p>
      */
     inline RelatedResource& AddAdditionalInfo(const Aws::String& key, const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, value); return *this; }
 
     /**
-     * <p>Additional information about the resource.</p>
+     * <p>Other information about the resource.</p>
      */
     inline RelatedResource& AddAdditionalInfo(Aws::String&& key, const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Additional information about the resource.</p>
+     * <p>Other information about the resource.</p>
      */
     inline RelatedResource& AddAdditionalInfo(const Aws::String& key, Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Additional information about the resource.</p>
+     * <p>Other information about the resource.</p>
      */
     inline RelatedResource& AddAdditionalInfo(Aws::String&& key, Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Additional information about the resource.</p>
+     * <p>Other information about the resource.</p>
      */
     inline RelatedResource& AddAdditionalInfo(const char* key, Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Additional information about the resource.</p>
+     * <p>Other information about the resource.</p>
      */
     inline RelatedResource& AddAdditionalInfo(Aws::String&& key, const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Additional information about the resource.</p>
+     * <p>Other information about the resource.</p>
      */
     inline RelatedResource& AddAdditionalInfo(const char* key, const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, value); return *this; }
 

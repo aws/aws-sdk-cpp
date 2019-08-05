@@ -131,43 +131,43 @@ namespace Model
 
 
     /**
-     * <p>The number of checks that found non-compliant resources.</p>
+     * <p>The number of checks that found noncompliant resources.</p>
      */
     inline int GetNonCompliantChecks() const{ return m_nonCompliantChecks; }
 
     /**
-     * <p>The number of checks that found non-compliant resources.</p>
+     * <p>The number of checks that found noncompliant resources.</p>
      */
     inline bool NonCompliantChecksHasBeenSet() const { return m_nonCompliantChecksHasBeenSet; }
 
     /**
-     * <p>The number of checks that found non-compliant resources.</p>
+     * <p>The number of checks that found noncompliant resources.</p>
      */
     inline void SetNonCompliantChecks(int value) { m_nonCompliantChecksHasBeenSet = true; m_nonCompliantChecks = value; }
 
     /**
-     * <p>The number of checks that found non-compliant resources.</p>
+     * <p>The number of checks that found noncompliant resources.</p>
      */
     inline TaskStatistics& WithNonCompliantChecks(int value) { SetNonCompliantChecks(value); return *this;}
 
 
     /**
-     * <p>The number of checks </p>
+     * <p>The number of checks.</p>
      */
     inline int GetFailedChecks() const{ return m_failedChecks; }
 
     /**
-     * <p>The number of checks </p>
+     * <p>The number of checks.</p>
      */
     inline bool FailedChecksHasBeenSet() const { return m_failedChecksHasBeenSet; }
 
     /**
-     * <p>The number of checks </p>
+     * <p>The number of checks.</p>
      */
     inline void SetFailedChecks(int value) { m_failedChecksHasBeenSet = true; m_failedChecks = value; }
 
     /**
-     * <p>The number of checks </p>
+     * <p>The number of checks.</p>
      */
     inline TaskStatistics& WithFailedChecks(int value) { SetFailedChecks(value); return *this;}
 

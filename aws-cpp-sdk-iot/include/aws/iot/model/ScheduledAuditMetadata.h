@@ -132,32 +132,32 @@ namespace Model
 
 
     /**
-     * <p>How often the scheduled audit takes place.</p>
+     * <p>How often the scheduled audit occurs.</p>
      */
     inline const AuditFrequency& GetFrequency() const{ return m_frequency; }
 
     /**
-     * <p>How often the scheduled audit takes place.</p>
+     * <p>How often the scheduled audit occurs.</p>
      */
     inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
 
     /**
-     * <p>How often the scheduled audit takes place.</p>
+     * <p>How often the scheduled audit occurs.</p>
      */
     inline void SetFrequency(const AuditFrequency& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
 
     /**
-     * <p>How often the scheduled audit takes place.</p>
+     * <p>How often the scheduled audit occurs.</p>
      */
     inline void SetFrequency(AuditFrequency&& value) { m_frequencyHasBeenSet = true; m_frequency = std::move(value); }
 
     /**
-     * <p>How often the scheduled audit takes place.</p>
+     * <p>How often the scheduled audit occurs.</p>
      */
     inline ScheduledAuditMetadata& WithFrequency(const AuditFrequency& value) { SetFrequency(value); return *this;}
 
     /**
-     * <p>How often the scheduled audit takes place.</p>
+     * <p>How often the scheduled audit occurs.</p>
      */
     inline ScheduledAuditMetadata& WithFrequency(AuditFrequency&& value) { SetFrequency(std::move(value)); return *this;}
 

@@ -52,44 +52,44 @@ namespace Model
 
 
     /**
-     * <p>The beginning of the time period. Note that audit information is retained for
-     * a limited time (180 days). Requesting a start time prior to what is retained
-     * results in an "InvalidRequestException".</p>
+     * <p>The beginning of the time period. Audit information is retained for a limited
+     * time (180 days). Requesting a start time prior to what is retained results in an
+     * "InvalidRequestException".</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The beginning of the time period. Note that audit information is retained for
-     * a limited time (180 days). Requesting a start time prior to what is retained
-     * results in an "InvalidRequestException".</p>
+     * <p>The beginning of the time period. Audit information is retained for a limited
+     * time (180 days). Requesting a start time prior to what is retained results in an
+     * "InvalidRequestException".</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>The beginning of the time period. Note that audit information is retained for
-     * a limited time (180 days). Requesting a start time prior to what is retained
-     * results in an "InvalidRequestException".</p>
+     * <p>The beginning of the time period. Audit information is retained for a limited
+     * time (180 days). Requesting a start time prior to what is retained results in an
+     * "InvalidRequestException".</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The beginning of the time period. Note that audit information is retained for
-     * a limited time (180 days). Requesting a start time prior to what is retained
-     * results in an "InvalidRequestException".</p>
+     * <p>The beginning of the time period. Audit information is retained for a limited
+     * time (180 days). Requesting a start time prior to what is retained results in an
+     * "InvalidRequestException".</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The beginning of the time period. Note that audit information is retained for
-     * a limited time (180 days). Requesting a start time prior to what is retained
-     * results in an "InvalidRequestException".</p>
+     * <p>The beginning of the time period. Audit information is retained for a limited
+     * time (180 days). Requesting a start time prior to what is retained results in an
+     * "InvalidRequestException".</p>
      */
     inline ListAuditTasksRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The beginning of the time period. Note that audit information is retained for
-     * a limited time (180 days). Requesting a start time prior to what is retained
-     * results in an "InvalidRequestException".</p>
+     * <p>The beginning of the time period. Audit information is retained for a limited
+     * time (180 days). Requesting a start time prior to what is retained results in an
+     * "InvalidRequestException".</p>
      */
     inline ListAuditTasksRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
@@ -164,37 +164,37 @@ namespace Model
 
     /**
      * <p>A filter to limit the output to audits with the specified completion status:
-     * can be one of "IN_PROGRESS", "COMPLETED", "FAILED" or "CANCELED".</p>
+     * can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
      */
     inline const AuditTaskStatus& GetTaskStatus() const{ return m_taskStatus; }
 
     /**
      * <p>A filter to limit the output to audits with the specified completion status:
-     * can be one of "IN_PROGRESS", "COMPLETED", "FAILED" or "CANCELED".</p>
+     * can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
      */
     inline bool TaskStatusHasBeenSet() const { return m_taskStatusHasBeenSet; }
 
     /**
      * <p>A filter to limit the output to audits with the specified completion status:
-     * can be one of "IN_PROGRESS", "COMPLETED", "FAILED" or "CANCELED".</p>
+     * can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
      */
     inline void SetTaskStatus(const AuditTaskStatus& value) { m_taskStatusHasBeenSet = true; m_taskStatus = value; }
 
     /**
      * <p>A filter to limit the output to audits with the specified completion status:
-     * can be one of "IN_PROGRESS", "COMPLETED", "FAILED" or "CANCELED".</p>
+     * can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
      */
     inline void SetTaskStatus(AuditTaskStatus&& value) { m_taskStatusHasBeenSet = true; m_taskStatus = std::move(value); }
 
     /**
      * <p>A filter to limit the output to audits with the specified completion status:
-     * can be one of "IN_PROGRESS", "COMPLETED", "FAILED" or "CANCELED".</p>
+     * can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
      */
     inline ListAuditTasksRequest& WithTaskStatus(const AuditTaskStatus& value) { SetTaskStatus(value); return *this;}
 
     /**
      * <p>A filter to limit the output to audits with the specified completion status:
-     * can be one of "IN_PROGRESS", "COMPLETED", "FAILED" or "CANCELED".</p>
+     * can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
      */
     inline ListAuditTasksRequest& WithTaskStatus(AuditTaskStatus&& value) { SetTaskStatus(std::move(value)); return *this;}
 

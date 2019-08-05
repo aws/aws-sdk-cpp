@@ -27,12 +27,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeAgentResult::DescribeAgentResult() : 
-    m_status(AgentStatus::NOT_SET)
+    m_status(AgentStatus::NOT_SET),
+    m_endpointType(EndpointType::NOT_SET)
 {
 }
 
 DescribeAgentResult::DescribeAgentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(AgentStatus::NOT_SET)
+    m_status(AgentStatus::NOT_SET),
+    m_endpointType(EndpointType::NOT_SET)
 {
   *this = result;
 }
@@ -70,9 +72,9 @@ DescribeAgentResult& DescribeAgentResult::operator =(const Aws::AmazonWebService
 
   }
 
-  if(jsonValue.ValueExists("EndpointOptions"))
+  if(jsonValue.ValueExists("EndpointType"))
   {
-    m_endpointOptions = jsonValue.GetObject("EndpointOptions");
+    m_endpointType = EndpointTypeMapper::GetEndpointTypeForName(jsonValue.GetString("EndpointType"));
 
   }
 

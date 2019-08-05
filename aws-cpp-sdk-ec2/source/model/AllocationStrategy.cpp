@@ -32,6 +32,7 @@ namespace Aws
 
         static const int lowestPrice_HASH = HashingUtils::HashString("lowestPrice");
         static const int diversified_HASH = HashingUtils::HashString("diversified");
+        static const int capacityOptimized_HASH = HashingUtils::HashString("capacityOptimized");
 
 
         AllocationStrategy GetAllocationStrategyForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == diversified_HASH)
           {
             return AllocationStrategy::diversified;
+          }
+          else if (hashCode == capacityOptimized_HASH)
+          {
+            return AllocationStrategy::capacityOptimized;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "lowestPrice";
           case AllocationStrategy::diversified:
             return "diversified";
+          case AllocationStrategy::capacityOptimized:
+            return "capacityOptimized";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

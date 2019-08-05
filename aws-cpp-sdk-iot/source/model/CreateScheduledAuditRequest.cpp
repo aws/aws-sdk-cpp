@@ -29,8 +29,8 @@ CreateScheduledAuditRequest::CreateScheduledAuditRequest() :
     m_dayOfWeek(DayOfWeek::NOT_SET),
     m_dayOfWeekHasBeenSet(false),
     m_targetCheckNamesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_scheduledAuditNameHasBeenSet(false)
+    m_scheduledAuditNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 

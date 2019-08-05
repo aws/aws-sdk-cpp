@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p/> <p>A pattern that determines which files to include in the transfer or
-   * which files to exclude. </p><p><h3>See Also:</h3>   <a
+   * <p>Specifies which files, folders and objects to include or exclude when
+   * transferring files from source to destination.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/FilterRule">AWS
    * API Reference</a></p>
    */
@@ -50,87 +50,95 @@ namespace Model
 
 
     /**
-     * <p/> <p>Specifies the type of filter rule pattern to apply. DataSync only
-     * supports the SIMPLE_PATTERN rule type.</p>
+     * <p>The type of filter rule to apply. AWS DataSync only supports the
+     * SIMPLE_PATTERN rule type.</p>
      */
     inline const FilterType& GetFilterType() const{ return m_filterType; }
 
     /**
-     * <p/> <p>Specifies the type of filter rule pattern to apply. DataSync only
-     * supports the SIMPLE_PATTERN rule type.</p>
+     * <p>The type of filter rule to apply. AWS DataSync only supports the
+     * SIMPLE_PATTERN rule type.</p>
      */
     inline bool FilterTypeHasBeenSet() const { return m_filterTypeHasBeenSet; }
 
     /**
-     * <p/> <p>Specifies the type of filter rule pattern to apply. DataSync only
-     * supports the SIMPLE_PATTERN rule type.</p>
+     * <p>The type of filter rule to apply. AWS DataSync only supports the
+     * SIMPLE_PATTERN rule type.</p>
      */
     inline void SetFilterType(const FilterType& value) { m_filterTypeHasBeenSet = true; m_filterType = value; }
 
     /**
-     * <p/> <p>Specifies the type of filter rule pattern to apply. DataSync only
-     * supports the SIMPLE_PATTERN rule type.</p>
+     * <p>The type of filter rule to apply. AWS DataSync only supports the
+     * SIMPLE_PATTERN rule type.</p>
      */
     inline void SetFilterType(FilterType&& value) { m_filterTypeHasBeenSet = true; m_filterType = std::move(value); }
 
     /**
-     * <p/> <p>Specifies the type of filter rule pattern to apply. DataSync only
-     * supports the SIMPLE_PATTERN rule type.</p>
+     * <p>The type of filter rule to apply. AWS DataSync only supports the
+     * SIMPLE_PATTERN rule type.</p>
      */
     inline FilterRule& WithFilterType(const FilterType& value) { SetFilterType(value); return *this;}
 
     /**
-     * <p/> <p>Specifies the type of filter rule pattern to apply. DataSync only
-     * supports the SIMPLE_PATTERN rule type.</p>
+     * <p>The type of filter rule to apply. AWS DataSync only supports the
+     * SIMPLE_PATTERN rule type.</p>
      */
     inline FilterRule& WithFilterType(FilterType&& value) { SetFilterType(std::move(value)); return *this;}
 
 
     /**
-     * <p/> <p>A pattern that defines the filter. The filter might include or exclude
-     * files is a transfer.</p>
+     * <p>A single filter string that consists of the patterns to include or exclude.
+     * The patterns are delimited by "|" (that is, a pipe), for example:
+     * <code>/folder1|/folder2</code> </p> <p> </p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p/> <p>A pattern that defines the filter. The filter might include or exclude
-     * files is a transfer.</p>
+     * <p>A single filter string that consists of the patterns to include or exclude.
+     * The patterns are delimited by "|" (that is, a pipe), for example:
+     * <code>/folder1|/folder2</code> </p> <p> </p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p/> <p>A pattern that defines the filter. The filter might include or exclude
-     * files is a transfer.</p>
+     * <p>A single filter string that consists of the patterns to include or exclude.
+     * The patterns are delimited by "|" (that is, a pipe), for example:
+     * <code>/folder1|/folder2</code> </p> <p> </p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p/> <p>A pattern that defines the filter. The filter might include or exclude
-     * files is a transfer.</p>
+     * <p>A single filter string that consists of the patterns to include or exclude.
+     * The patterns are delimited by "|" (that is, a pipe), for example:
+     * <code>/folder1|/folder2</code> </p> <p> </p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p/> <p>A pattern that defines the filter. The filter might include or exclude
-     * files is a transfer.</p>
+     * <p>A single filter string that consists of the patterns to include or exclude.
+     * The patterns are delimited by "|" (that is, a pipe), for example:
+     * <code>/folder1|/folder2</code> </p> <p> </p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p/> <p>A pattern that defines the filter. The filter might include or exclude
-     * files is a transfer.</p>
+     * <p>A single filter string that consists of the patterns to include or exclude.
+     * The patterns are delimited by "|" (that is, a pipe), for example:
+     * <code>/folder1|/folder2</code> </p> <p> </p>
      */
     inline FilterRule& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p/> <p>A pattern that defines the filter. The filter might include or exclude
-     * files is a transfer.</p>
+     * <p>A single filter string that consists of the patterns to include or exclude.
+     * The patterns are delimited by "|" (that is, a pipe), for example:
+     * <code>/folder1|/folder2</code> </p> <p> </p>
      */
     inline FilterRule& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p/> <p>A pattern that defines the filter. The filter might include or exclude
-     * files is a transfer.</p>
+     * <p>A single filter string that consists of the patterns to include or exclude.
+     * The patterns are delimited by "|" (that is, a pipe), for example:
+     * <code>/folder1|/folder2</code> </p> <p> </p>
      */
     inline FilterRule& WithValue(const char* value) { SetValue(value); return *this;}
 
