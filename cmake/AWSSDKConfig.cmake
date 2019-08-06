@@ -288,3 +288,6 @@ if (AWSSDK_FIND_COMPONENTS)
         message(STATUS "Found ${TARGET}")
     endforeach()
 endif()
+
+set(AWSSDK_INCLUDE_DIRS ${AWSSDK_INCLUDE_DIR})
+set(AWSSDK_LIBRARIES ${AWSSDK_LINK_LIBRARIES})
