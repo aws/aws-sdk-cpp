@@ -1175,38 +1175,38 @@ namespace Model
 
 
     /**
-     * <p>Linux-specific modifications that are applied to the container, such as Linux
-     * kernel capabilities.</p>
+     * <p>Linux-specific modifications that are applied to the container, such as
+     * details for device mappings.</p>
      */
     inline const LinuxParameters& GetLinuxParameters() const{ return m_linuxParameters; }
 
     /**
-     * <p>Linux-specific modifications that are applied to the container, such as Linux
-     * kernel capabilities.</p>
+     * <p>Linux-specific modifications that are applied to the container, such as
+     * details for device mappings.</p>
      */
     inline bool LinuxParametersHasBeenSet() const { return m_linuxParametersHasBeenSet; }
 
     /**
-     * <p>Linux-specific modifications that are applied to the container, such as Linux
-     * kernel capabilities.</p>
+     * <p>Linux-specific modifications that are applied to the container, such as
+     * details for device mappings.</p>
      */
     inline void SetLinuxParameters(const LinuxParameters& value) { m_linuxParametersHasBeenSet = true; m_linuxParameters = value; }
 
     /**
-     * <p>Linux-specific modifications that are applied to the container, such as Linux
-     * kernel capabilities.</p>
+     * <p>Linux-specific modifications that are applied to the container, such as
+     * details for device mappings.</p>
      */
     inline void SetLinuxParameters(LinuxParameters&& value) { m_linuxParametersHasBeenSet = true; m_linuxParameters = std::move(value); }
 
     /**
-     * <p>Linux-specific modifications that are applied to the container, such as Linux
-     * kernel capabilities.</p>
+     * <p>Linux-specific modifications that are applied to the container, such as
+     * details for device mappings.</p>
      */
     inline ContainerProperties& WithLinuxParameters(const LinuxParameters& value) { SetLinuxParameters(value); return *this;}
 
     /**
-     * <p>Linux-specific modifications that are applied to the container, such as Linux
-     * kernel capabilities.</p>
+     * <p>Linux-specific modifications that are applied to the container, such as
+     * details for device mappings.</p>
      */
     inline ContainerProperties& WithLinuxParameters(LinuxParameters&& value) { SetLinuxParameters(std::move(value)); return *this;}
 

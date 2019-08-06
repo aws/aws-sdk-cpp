@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Linux-specific modifications that are applied to the container, such as Linux
-   * kernel capabilities.</p><p><h3>See Also:</h3>   <a
+   * <p>Linux-specific modifications that are applied to the container, such as
+   * details for device mappings.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/LinuxParameters">AWS
    * API Reference</a></p>
    */
