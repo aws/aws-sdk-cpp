@@ -68,7 +68,7 @@ protected:
     {
         DescribeStreamConsumerRequest request;
         request.SetConsumerARN(consumerARN);
-        int maxRetries = 30;
+        int maxRetries = 18;
         while(maxRetries-- > 0)
         {
             const auto& outcome = m_client->DescribeStreamConsumer(request);
@@ -84,7 +84,7 @@ protected:
             {
                 FAIL();
             }
-            std::this_thread::sleep_for(std::chrono::seconds(2));
+            std::this_thread::sleep_for(std::chrono::seconds(10));
         }
         ASSERT_GT(maxRetries, 0);
     }
