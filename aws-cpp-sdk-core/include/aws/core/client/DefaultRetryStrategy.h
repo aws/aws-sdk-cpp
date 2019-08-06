@@ -31,11 +31,11 @@ public:
         m_scaleFactor(scaleFactor), m_maxRetries(maxRetries)  
     {}
 
-    bool ShouldRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const;
+    bool ShouldRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const override;
 
-    long CalculateDelayBeforeNextRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const;
+    long CalculateDelayBeforeNextRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const override;
 
-private:
+protected:
     long m_scaleFactor;
     long m_maxRetries;
 };

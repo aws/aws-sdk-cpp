@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   * 
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -13,30 +13,26 @@
   * permissions and limitations under the License.
   */
 
-#include <aws/core/client/DefaultRetryStrategy.h>
+#include <aws/core/client/SpecifiedRetryableErrorsRetryStrategy.h>
 
 #include <aws/core/client/AWSError.h>
-#include <aws/core/utils/UnreferencedParam.h>
 
 using namespace Aws;
 using namespace Aws::Client;
 
-bool DefaultRetryStrategy::ShouldRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const
+bool SpecifiedRetryableErrorsRetryStrategy::ShouldRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const
 {    
     if (attemptedRetries >= m_maxRetries)
-        return false;
-
-    return error.ShouldRetry();
-}
-
-long DefaultRetryStrategy::CalculateDelayBeforeNextRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const
-{
-    AWS_UNREFERENCED_PARAM(error);
-
-    if (attemptedRetries == 0)
     {
-        return 0;
+        return false;
+    }
+    for (const auto& err: m_specifiedRetryableErrors)
+    {
+        if (error.GetExceptionName() == err)
+        {
+            return true;
+        }
     }
 
-    return (1 << attemptedRetries) * m_scaleFactor;
+    return error.ShouldRetry();
 }

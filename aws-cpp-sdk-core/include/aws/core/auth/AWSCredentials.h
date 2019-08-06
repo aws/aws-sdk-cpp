@@ -86,7 +86,7 @@ namespace Aws
             }
 
             /**
-             * Sets the underlyint session token. Copies from parameter sessionToken
+             * Sets the underlying session token. Copies from parameter sessionToken
              */
             inline void SetSessionToken(const Aws::String& sessionToken)
             {

@@ -23,6 +23,7 @@
 #include <aws/core/platform/Environment.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <sstream>
 
@@ -32,13 +33,13 @@ using namespace Aws::Http;
 using namespace Aws::Client;
 using namespace Aws::Internal;
 
-static const char* EC2_SECURITY_CREDENTIALS_RESOURCE = "/latest/meta-data/iam/security-credentials";
-static const char* EC2_REGION_RESOURCE = "/latest/meta-data/placement/availability-zone";
+static const char EC2_SECURITY_CREDENTIALS_RESOURCE[] = "/latest/meta-data/iam/security-credentials";
+static const char EC2_REGION_RESOURCE[] = "/latest/meta-data/placement/availability-zone";
 
-static const char* RESOURCE_CLIENT_CONFIGURATION_ALLOCATION_TAG = "AWSHttpResourceClient";
-static const char* EC2_METADATA_CLIENT_LOG_TAG = "EC2MetadataClient";
-static const char* ECS_CREDENTIALS_CLIENT_LOG_TAG = "ECSCredentialsClient";
-
+static const char RESOURCE_CLIENT_CONFIGURATION_ALLOCATION_TAG[] = "AWSHttpResourceClient";
+static const char EC2_METADATA_CLIENT_LOG_TAG[] = "EC2MetadataClient";
+static const char ECS_CREDENTIALS_CLIENT_LOG_TAG[] = "ECSCredentialsClient";
+static const char STS_CREDENTIALS_CLIENT_LOG_TAG[] = "STSAssumeRoleWebIdentityClient";
 
 namespace Aws
 {
@@ -57,7 +58,7 @@ static ClientConfiguration MakeDefaultHttpResourceClientConfiguration(const char
 
 #if defined(WIN32) && defined(BYPASS_DEFAULT_PROXY)
     // For security reasons, we must bypass any proxy settings when fetching sensitive information, for example
-    // user credentials. On Windows, IXMLHttpRequest2 does not support bypasing proxy settings, therefore,
+    // user credentials. On Windows, IXMLHttpRequest2 does not support bypassing proxy settings, therefore,
     // we force using WinHTTP client. On POSIX systems, CURL is set to bypass proxy settings by default.
     res.httpLibOverride = TransferLibType::WIN_HTTP_CLIENT;
     AWS_LOGSTREAM_INFO(logtag, "Overriding the current HTTP client to WinHTTP to bypass proxy settings.");
@@ -71,8 +72,8 @@ static ClientConfiguration MakeDefaultHttpResourceClientConfiguration(const char
     res.proxyPassword = "";
     res.proxyPort = 0;
 
-    // EC2MetatadaService throttles by delaying the response so the service client should set a large read timeout.
-    // EC2MetatadaService delay is in order of seconds so it only make sense to retry after a couple of seconds.
+    // EC2MetadataService throttles by delaying the response so the service client should set a large read timeout.
+    // EC2MetadataService delay is in order of seconds so it only make sense to retry after a couple of seconds.
     res.connectTimeoutMs = 1000;
     res.requestTimeoutMs = 5000;
     res.retryStrategy = Aws::MakeShared<DefaultRetryStrategy>(RESOURCE_CLIENT_CONFIGURATION_ALLOCATION_TAG, 4, 1000);
@@ -128,10 +129,14 @@ Aws::String AWSHttpResourceClient::GetResource(const char* endpoint, const char*
         }
 
         const Aws::Client::AWSError<Aws::Client::CoreErrors> error = [this, &response]() {
-            if (!response)
+            if (!response || response->GetResponseBody().tellp() < 1)
             {
                 AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Http request to retrieve credentials failed");
-                return AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, true);  // Retriable
+                return AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, true);  // Retryable
+            }
+            else if (m_errorMarshaller)
+            {
+                return m_errorMarshaller->Marshall(*response);
             }
             else
             {
@@ -148,7 +153,6 @@ Aws::String AWSHttpResourceClient::GetResource(const char* endpoint, const char*
             AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Can not retrive resource " << resource);
             return {};
         }
-
         auto sleepMillis = m_retryStrategy->CalculateDelayBeforeNextRetry(error, retries);
         AWS_LOGSTREAM_WARN(m_logtag.c_str(), "Request failed, now waiting " << sleepMillis << " ms before attempting again.");
         m_httpClient->RetryRequestSleep(std::chrono::milliseconds(sleepMillis));
@@ -187,7 +191,7 @@ Aws::String EC2MetadataClient::GetDefaultCredentials() const
     Aws::Vector<Aws::String> securityCredentials = StringUtils::Split(trimmedCredentialsString, '\n');
 
     AWS_LOGSTREAM_DEBUG(m_logtag.c_str(),
-            "Calling EC2MetatadaService resource, " << EC2_SECURITY_CREDENTIALS_RESOURCE
+            "Calling EC2MetadataService resource, " << EC2_SECURITY_CREDENTIALS_RESOURCE
             << " returned credential string " << trimmedCredentialsString);
 
     if (securityCredentials.size() == 0)
@@ -200,7 +204,7 @@ Aws::String EC2MetadataClient::GetDefaultCredentials() const
     Aws::StringStream ss;
     ss << EC2_SECURITY_CREDENTIALS_RESOURCE << "/" << securityCredentials[0];
     AWS_LOGSTREAM_DEBUG(m_logtag.c_str(), 
-            "Calling EC2MetatadaService resource " << ss.str());
+            "Calling EC2MetadataService resource " << ss.str());
     return GetResource(ss.str().c_str());
 }
 
@@ -217,7 +221,7 @@ Aws::String EC2MetadataClient::GetCurrentRegion() const
     }
     
     Aws::String trimmedAZString = StringUtils::Trim(azString.c_str());
-    AWS_LOGSTREAM_DEBUG(m_logtag.c_str(), "Calling EC2MetatadaService resource " 
+    AWS_LOGSTREAM_DEBUG(m_logtag.c_str(), "Calling EC2MetadataService resource " 
             << EC2_REGION_RESOURCE << " , returned credential string " << trimmedAZString);
 
     Aws::String region;
@@ -254,3 +258,94 @@ ECSCredentialsClient::ECSCredentialsClient(const Aws::Client::ClientConfiguratio
 {
 }
 
+static const char STS_RESOURCE_CLIENT_LOG_TAG[] = "STSResourceClient";
+STSCredentialsClient::STSCredentialsClient(const Client::ClientConfiguration& clientConfiguration)
+    : AWSHttpResourceClient(clientConfiguration, STS_RESOURCE_CLIENT_LOG_TAG)
+{
+    SetErrorMarshaller(Aws::MakeUnique<Aws::Client::XmlErrorMarshaller>(STS_RESOURCE_CLIENT_LOG_TAG));
+
+    Aws::StringStream ss;
+    if (clientConfiguration.scheme == Aws::Http::Scheme::HTTP)
+    {
+        ss << "http://";
+    }
+    else 
+    {
+        ss << "https://";
+    }
+
+    static const int CN_NORTH_1_HASH = Aws::Utils::HashingUtils::HashString(Aws::Region::CN_NORTH_1);
+    static const int CN_NORTHWEST_1_HASH = Aws::Utils::HashingUtils::HashString(Aws::Region::CN_NORTHWEST_1);
+    auto hash = Aws::Utils::HashingUtils::HashString(clientConfiguration.region.c_str());
+
+    ss << "sts." << clientConfiguration.region << ".amazonaws.com";    
+    if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
+    {
+        ss << ".cn"; 
+    }
+    m_endpoint =  ss.str();
+
+    AWS_LOGSTREAM_INFO(STS_RESOURCE_CLIENT_LOG_TAG, "Creating STS ResourceClient with endpoint: " << m_endpoint);
+}
+
+STSCredentialsClient::STSAssumeRoleWithWebIdentityResult STSCredentialsClient::GetAssumeRoleWithWebIdentityCredentials(const STSAssumeRoleWithWebIdentityRequest& request)
+{
+    //Calculate query string
+    Aws::StringStream ss;
+    ss << "/?Action=AssumeRoleWithWebIdentity"
+        << "&Version=2011-06-15"
+        << "&RoleSessionName=" << Aws::Utils::StringUtils::URLEncode(request.roleSessionName.c_str())
+        << "&RoleArn=" << Aws::Utils::StringUtils::URLEncode(request.roleArn.c_str()) 
+        << "&WebIdentityToken=" << Aws::Utils::StringUtils::URLEncode(request.webIdentityToken.c_str());
+    
+    ss.str();
+    Aws::String credentialsStr = GetResource(m_endpoint.c_str(), ss.str().c_str()/*query string*/, nullptr/*no auth token needed*/);
+
+    //Parse credentials
+    STSAssumeRoleWithWebIdentityResult result;
+    if (credentialsStr.empty())
+    {
+        AWS_LOGSTREAM_WARN(STS_RESOURCE_CLIENT_LOG_TAG, "Get an empty credential from sts");
+        return result;
+    }
+
+    const Utils::Xml::XmlDocument xmlDocument = XmlDocument::CreateFromXmlString(credentialsStr);
+    XmlNode rootNode = xmlDocument.GetRootElement();
+    XmlNode resultNode = rootNode;
+    if (!rootNode.IsNull() && (rootNode.GetName() != "AssumeRoleWithWebIdentityResult"))
+    {
+        resultNode = rootNode.FirstChild("AssumeRoleWithWebIdentityResult");
+    }
+
+    if (!resultNode.IsNull())
+    {
+        XmlNode credentialsNode = resultNode.FirstChild("Credentials");
+        if (!credentialsNode.IsNull())
+        {
+            XmlNode accessKeyIdNode = credentialsNode.FirstChild("AccessKeyId");
+            if (!accessKeyIdNode.IsNull())
+            {
+                result.creds.SetAWSAccessKeyId(accessKeyIdNode.GetText());
+            }
+
+            XmlNode secretAccessKeyNode = credentialsNode.FirstChild("SecretAccessKey");
+            if (!secretAccessKeyNode.IsNull())
+            {
+                result.creds.SetAWSSecretKey(secretAccessKeyNode.GetText());
+            }
+
+            XmlNode sessionTokenNode = credentialsNode.FirstChild("SessionToken");
+            if (!sessionTokenNode.IsNull())
+            {
+                result.creds.SetSessionToken(sessionTokenNode.GetText());
+            }
+
+            XmlNode expirationNode = credentialsNode.FirstChild("Expiration");
+            if (!expirationNode.IsNull())
+            {
+                result.expiration = DateTime(StringUtils::Trim(expirationNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+            }
+        }
+    }
+    return result;
+}

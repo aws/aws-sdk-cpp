@@ -19,7 +19,9 @@
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
-#include <aws/core/client/DefaultRetryStrategy.h>
+#include <aws/core/client/SpecifiedRetryableErrorsRetryStrategy.h>
+#include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/core/auth/AWSCredentialsProvider.h>
 #include <fstream>
 
 using namespace Aws::Utils;
@@ -72,6 +74,82 @@ namespace
             InitHttp();
         }
     };
+
+    TEST_F(AWSHttpResourceClientTest, TestSetErrorMarshallerCorrectly)
+    {
+        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, clientConfig, ALLOCATION_TAG);
+        ASSERT_EQ(nullptr, awsHttpResourceClient->GetErrorMarshaller());
+        awsHttpResourceClient->SetErrorMarshaller(Aws::MakeUnique<Aws::Client::XmlErrorMarshaller>(ALLOCATION_TAG));
+        ASSERT_NE(nullptr, awsHttpResourceClient->GetErrorMarshaller());
+    }
+
+    TEST_F(AWSHttpResourceClientTest, TestErrorMarshallerWorksWithSTSRetryStrategyExpectedly)
+    {
+        Aws::Client::ClientConfiguration config;
+        Aws::Vector<Aws::String> retryableErrors;
+        retryableErrors.push_back("IDPCommunicationError");
+        retryableErrors.push_back("InvalidIdentityToken");
+        config.retryStrategy = Aws::MakeShared<Aws::Client::SpecifiedRetryableErrorsRetryStrategy>(ALLOCATION_TAG, retryableErrors, 3/*max retries*/);
+        auto awsHttpResourceClient = Aws::MakeShared<Aws::Internal::AWSHttpResourceClient>(ALLOCATION_TAG, config, ALLOCATION_TAG);
+        awsHttpResourceClient->SetErrorMarshaller(Aws::MakeUnique<Aws::Client::XmlErrorMarshaller>(ALLOCATION_TAG));
+
+        // Retry 3 times without response, nullptr response is treated as NETWORK_CONNECTION_ERROR and is retryable
+        Aws::String result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res", nullptr/*authToken*/);
+        ASSERT_EQ(4u, mockHttpClient->GetAllRequestsMade().size());
+        ASSERT_EQ("", result);
+
+        std::shared_ptr<HttpRequest> request = CreateHttpRequest(URI("https://www.uri.com/path/to/res"), 
+                HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        
+        Aws::String retryError = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Error><Code>IDPCommunicationError</Code><Message>The resource you requested does not exist</Message><Resource>/path/to/resource.jpg</Resource><RequestId>4442587FB7D0A2F9</RequestId></Error>";
+        std::shared_ptr<StandardHttpResponse> retryableResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        retryableResponse->SetResponseCode(HttpResponseCode::BAD_REQUEST);
+        retryableResponse->GetResponseBody() << retryError;
+        
+        Aws::String retryError2 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Error><Code>InvalidIdentityToken</Code><Message>The resource you requested does not exist</Message><Resource>/path/to/resource.jpg</Resource><RequestId>4442587FB7D0A2F9</RequestId></Error>";
+        std::shared_ptr<StandardHttpResponse> retryableResponse2 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        retryableResponse2->SetResponseCode(HttpResponseCode::BAD_REQUEST);
+        retryableResponse2->GetResponseBody() << retryError2;
+        
+        Aws::String nonRetryError = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Error><Code>OtherError</Code><Message>The resource you requested does not exist</Message><Resource>/path/to/resource.jpg</Resource><RequestId>4442587FB7D0A2F9</RequestId></Error>";
+        std::shared_ptr<StandardHttpResponse> nonRetryResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        nonRetryResponse->SetResponseCode(HttpResponseCode::BAD_REQUEST);
+        nonRetryResponse->GetResponseBody() << nonRetryError;
+        
+        //Made up credentials from https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html
+        Aws::String goodXml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Credentials><SessionToken>AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp+IEXAMPLE</SessionToken><SecretAccessKey>wJalrXUtnFEMI/K7MDENG/bPxRfiCYzEXAMPLEKEY</SecretAccessKey><Expiration>2014-10-24T23:00:23Z</Expiration><AccessKeyId>ASgeIAIOSFODNN7EXAMPLE</AccessKeyId></Credentials>";
+        std::shared_ptr<StandardHttpResponse> goodResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        goodResponse->SetResponseCode(HttpResponseCode::OK);
+        goodResponse->GetResponseBody() << goodXml;
+
+        // Encounter 1 non retryable error
+        mockHttpClient->Reset();
+        mockHttpClient->AddResponseToReturn(nonRetryResponse);
+        result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res", nullptr/*authToken*/);
+        ASSERT_EQ(1u, mockHttpClient->GetAllRequestsMade().size());
+        ASSERT_EQ("", result);
+
+        // Encounter 2 IDPCommunicationError and InvalidIdentityToken in response and 1 other error, will retry 2 times.
+        mockHttpClient->Reset();
+        mockHttpClient->AddResponseToReturn(retryableResponse);
+        mockHttpClient->AddResponseToReturn(retryableResponse2);
+        nonRetryResponse->GetResponseBody() << nonRetryError; // response has been read out. need to refill.
+        mockHttpClient->AddResponseToReturn(nonRetryResponse);
+        result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res", nullptr/*authToken*/);
+        ASSERT_EQ(3u, mockHttpClient->GetAllRequestsMade().size());
+        ASSERT_EQ("", result);
+
+        // Encounter 2 retryable errors and 1 good response, will retry 2 times.
+        mockHttpClient->Reset();
+        retryableResponse->GetResponseBody() << retryError;
+        retryableResponse2->GetResponseBody() << retryError;
+        mockHttpClient->AddResponseToReturn(retryableResponse);
+        mockHttpClient->AddResponseToReturn(retryableResponse2);
+        mockHttpClient->AddResponseToReturn(goodResponse);
+        result = awsHttpResourceClient->GetResource("http://www.uri.com", "/path/to/res", nullptr/*authToken*/);
+        ASSERT_EQ(3u, mockHttpClient->GetAllRequestsMade().size());
+        ASSERT_EQ(goodXml, result);
+    }
 
     TEST_F(AWSHttpResourceClientTest, TestAWSHttpResourceClientWithPermanentNullResponse)
     {

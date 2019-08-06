@@ -25,6 +25,7 @@
 #include <aws/core/internal/AWSHttpResourceClient.h>
 #include <aws/core/auth/AWSCredentials.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
+#include <aws/core/client/RetryStrategy.h>
 #include <memory>
 
 namespace Aws
@@ -33,7 +34,8 @@ namespace Aws
     {
         static int REFRESH_THRESHOLD = 1000 * 60 * 5;
 
-        AWS_CORE_API Aws::String GetConfigProfileFilename();
+        AWS_CORE_API Aws::String GetConfigProfileFilename(); //defaults to "config"
+        AWS_CORE_API Aws::String GetConfigProfileName(); //defaults to "default"
 
         /**
           * Abstract class for retrieving AWS credentials. Create a derived class from this to allow
@@ -310,6 +312,5 @@ namespace Aws
             Aws::Auth::AWSCredentials m_credentials;
             Aws::Utils::DateTime m_expire;
         };
-
     } // namespace Auth
 } // namespace Aws
