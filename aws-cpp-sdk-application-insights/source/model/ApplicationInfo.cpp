@@ -31,6 +31,9 @@ namespace Model
 ApplicationInfo::ApplicationInfo() : 
     m_resourceGroupNameHasBeenSet(false),
     m_lifeCycleHasBeenSet(false),
+    m_opsItemSNSTopicArnHasBeenSet(false),
+    m_opsCenterEnabled(false),
+    m_opsCenterEnabledHasBeenSet(false),
     m_remarksHasBeenSet(false)
 {
 }
@@ -38,6 +41,9 @@ ApplicationInfo::ApplicationInfo() :
 ApplicationInfo::ApplicationInfo(JsonView jsonValue) : 
     m_resourceGroupNameHasBeenSet(false),
     m_lifeCycleHasBeenSet(false),
+    m_opsItemSNSTopicArnHasBeenSet(false),
+    m_opsCenterEnabled(false),
+    m_opsCenterEnabledHasBeenSet(false),
     m_remarksHasBeenSet(false)
 {
   *this = jsonValue;
@@ -57,6 +63,20 @@ ApplicationInfo& ApplicationInfo::operator =(JsonView jsonValue)
     m_lifeCycle = jsonValue.GetString("LifeCycle");
 
     m_lifeCycleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OpsItemSNSTopicArn"))
+  {
+    m_opsItemSNSTopicArn = jsonValue.GetString("OpsItemSNSTopicArn");
+
+    m_opsItemSNSTopicArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OpsCenterEnabled"))
+  {
+    m_opsCenterEnabled = jsonValue.GetBool("OpsCenterEnabled");
+
+    m_opsCenterEnabledHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Remarks"))
@@ -82,6 +102,18 @@ JsonValue ApplicationInfo::Jsonize() const
   if(m_lifeCycleHasBeenSet)
   {
    payload.WithString("LifeCycle", m_lifeCycle);
+
+  }
+
+  if(m_opsItemSNSTopicArnHasBeenSet)
+  {
+   payload.WithString("OpsItemSNSTopicArn", m_opsItemSNSTopicArn);
+
+  }
+
+  if(m_opsCenterEnabledHasBeenSet)
+  {
+   payload.WithBool("OpsCenterEnabled", m_opsCenterEnabled);
 
   }
 

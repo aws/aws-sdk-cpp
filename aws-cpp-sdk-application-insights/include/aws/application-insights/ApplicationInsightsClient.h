@@ -35,6 +35,7 @@
 #include <aws/application-insights/model/ListApplicationsResult.h>
 #include <aws/application-insights/model/ListComponentsResult.h>
 #include <aws/application-insights/model/ListProblemsResult.h>
+#include <aws/application-insights/model/UpdateApplicationResult.h>
 #include <aws/application-insights/model/UpdateComponentResult.h>
 #include <aws/application-insights/model/UpdateComponentConfigurationResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -90,6 +91,7 @@ namespace Model
         class ListApplicationsRequest;
         class ListComponentsRequest;
         class ListProblemsRequest;
+        class UpdateApplicationRequest;
         class UpdateComponentRequest;
         class UpdateComponentConfigurationRequest;
 
@@ -107,6 +109,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListApplicationsResult, Aws::Client::AWSError<ApplicationInsightsErrors>> ListApplicationsOutcome;
         typedef Aws::Utils::Outcome<ListComponentsResult, Aws::Client::AWSError<ApplicationInsightsErrors>> ListComponentsOutcome;
         typedef Aws::Utils::Outcome<ListProblemsResult, Aws::Client::AWSError<ApplicationInsightsErrors>> ListProblemsOutcome;
+        typedef Aws::Utils::Outcome<UpdateApplicationResult, Aws::Client::AWSError<ApplicationInsightsErrors>> UpdateApplicationOutcome;
         typedef Aws::Utils::Outcome<UpdateComponentResult, Aws::Client::AWSError<ApplicationInsightsErrors>> UpdateComponentOutcome;
         typedef Aws::Utils::Outcome<UpdateComponentConfigurationResult, Aws::Client::AWSError<ApplicationInsightsErrors>> UpdateComponentConfigurationOutcome;
 
@@ -124,6 +127,7 @@ namespace Model
         typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
         typedef std::future<ListComponentsOutcome> ListComponentsOutcomeCallable;
         typedef std::future<ListProblemsOutcome> ListProblemsOutcomeCallable;
+        typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
         typedef std::future<UpdateComponentOutcome> UpdateComponentOutcomeCallable;
         typedef std::future<UpdateComponentConfigurationOutcome> UpdateComponentConfigurationOutcomeCallable;
 } // namespace Model
@@ -144,6 +148,7 @@ namespace Model
     typedef std::function<void(const ApplicationInsightsClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::ListComponentsRequest&, const Model::ListComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentsResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::ListProblemsRequest&, const Model::ListProblemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProblemsResponseReceivedHandler;
+    typedef std::function<void(const ApplicationInsightsClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::UpdateComponentRequest&, const Model::UpdateComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateComponentResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::UpdateComponentConfigurationRequest&, const Model::UpdateComponentConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateComponentConfigurationResponseReceivedHandler;
 
@@ -579,6 +584,31 @@ namespace Model
         virtual void ListProblemsAsync(const Model::ListProblemsRequest& request, const ListProblemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
+
+        /**
+         * <p>Updates the application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateApplication">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
+
+        /**
+         * <p>Updates the application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateApplication">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the custom component name and/or the list of resources that make up
          * the component.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateComponent">AWS
@@ -661,6 +691,7 @@ namespace Model
         void ListApplicationsAsyncHelper(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListComponentsAsyncHelper(const Model::ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProblemsAsyncHelper(const Model::ListProblemsRequest& request, const ListProblemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateComponentAsyncHelper(const Model::UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateComponentConfigurationAsyncHelper(const Model::UpdateComponentConfigurationRequest& request, const UpdateComponentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

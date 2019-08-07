@@ -130,50 +130,124 @@ namespace Model
 
 
     /**
-     * <p>The issues on the user side that are blocking Application Insights from fully
-     * monitoring the application.</p>
+     * <p> The SNS topic provided to Application Insights that is associated to the
+     * created opsItems to receive SNS notifications for opsItem updates. </p>
+     */
+    inline const Aws::String& GetOpsItemSNSTopicArn() const{ return m_opsItemSNSTopicArn; }
+
+    /**
+     * <p> The SNS topic provided to Application Insights that is associated to the
+     * created opsItems to receive SNS notifications for opsItem updates. </p>
+     */
+    inline bool OpsItemSNSTopicArnHasBeenSet() const { return m_opsItemSNSTopicArnHasBeenSet; }
+
+    /**
+     * <p> The SNS topic provided to Application Insights that is associated to the
+     * created opsItems to receive SNS notifications for opsItem updates. </p>
+     */
+    inline void SetOpsItemSNSTopicArn(const Aws::String& value) { m_opsItemSNSTopicArnHasBeenSet = true; m_opsItemSNSTopicArn = value; }
+
+    /**
+     * <p> The SNS topic provided to Application Insights that is associated to the
+     * created opsItems to receive SNS notifications for opsItem updates. </p>
+     */
+    inline void SetOpsItemSNSTopicArn(Aws::String&& value) { m_opsItemSNSTopicArnHasBeenSet = true; m_opsItemSNSTopicArn = std::move(value); }
+
+    /**
+     * <p> The SNS topic provided to Application Insights that is associated to the
+     * created opsItems to receive SNS notifications for opsItem updates. </p>
+     */
+    inline void SetOpsItemSNSTopicArn(const char* value) { m_opsItemSNSTopicArnHasBeenSet = true; m_opsItemSNSTopicArn.assign(value); }
+
+    /**
+     * <p> The SNS topic provided to Application Insights that is associated to the
+     * created opsItems to receive SNS notifications for opsItem updates. </p>
+     */
+    inline ApplicationInfo& WithOpsItemSNSTopicArn(const Aws::String& value) { SetOpsItemSNSTopicArn(value); return *this;}
+
+    /**
+     * <p> The SNS topic provided to Application Insights that is associated to the
+     * created opsItems to receive SNS notifications for opsItem updates. </p>
+     */
+    inline ApplicationInfo& WithOpsItemSNSTopicArn(Aws::String&& value) { SetOpsItemSNSTopicArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The SNS topic provided to Application Insights that is associated to the
+     * created opsItems to receive SNS notifications for opsItem updates. </p>
+     */
+    inline ApplicationInfo& WithOpsItemSNSTopicArn(const char* value) { SetOpsItemSNSTopicArn(value); return *this;}
+
+
+    /**
+     * <p> Indicates whether Application Insights will create opsItems for any problem
+     * detected by Application Insights for an application. </p>
+     */
+    inline bool GetOpsCenterEnabled() const{ return m_opsCenterEnabled; }
+
+    /**
+     * <p> Indicates whether Application Insights will create opsItems for any problem
+     * detected by Application Insights for an application. </p>
+     */
+    inline bool OpsCenterEnabledHasBeenSet() const { return m_opsCenterEnabledHasBeenSet; }
+
+    /**
+     * <p> Indicates whether Application Insights will create opsItems for any problem
+     * detected by Application Insights for an application. </p>
+     */
+    inline void SetOpsCenterEnabled(bool value) { m_opsCenterEnabledHasBeenSet = true; m_opsCenterEnabled = value; }
+
+    /**
+     * <p> Indicates whether Application Insights will create opsItems for any problem
+     * detected by Application Insights for an application. </p>
+     */
+    inline ApplicationInfo& WithOpsCenterEnabled(bool value) { SetOpsCenterEnabled(value); return *this;}
+
+
+    /**
+     * <p>The issues on the user side that block Application Insights from successfully
+     * monitoring an application.</p>
      */
     inline const Aws::String& GetRemarks() const{ return m_remarks; }
 
     /**
-     * <p>The issues on the user side that are blocking Application Insights from fully
-     * monitoring the application.</p>
+     * <p>The issues on the user side that block Application Insights from successfully
+     * monitoring an application.</p>
      */
     inline bool RemarksHasBeenSet() const { return m_remarksHasBeenSet; }
 
     /**
-     * <p>The issues on the user side that are blocking Application Insights from fully
-     * monitoring the application.</p>
+     * <p>The issues on the user side that block Application Insights from successfully
+     * monitoring an application.</p>
      */
     inline void SetRemarks(const Aws::String& value) { m_remarksHasBeenSet = true; m_remarks = value; }
 
     /**
-     * <p>The issues on the user side that are blocking Application Insights from fully
-     * monitoring the application.</p>
+     * <p>The issues on the user side that block Application Insights from successfully
+     * monitoring an application.</p>
      */
     inline void SetRemarks(Aws::String&& value) { m_remarksHasBeenSet = true; m_remarks = std::move(value); }
 
     /**
-     * <p>The issues on the user side that are blocking Application Insights from fully
-     * monitoring the application.</p>
+     * <p>The issues on the user side that block Application Insights from successfully
+     * monitoring an application.</p>
      */
     inline void SetRemarks(const char* value) { m_remarksHasBeenSet = true; m_remarks.assign(value); }
 
     /**
-     * <p>The issues on the user side that are blocking Application Insights from fully
-     * monitoring the application.</p>
+     * <p>The issues on the user side that block Application Insights from successfully
+     * monitoring an application.</p>
      */
     inline ApplicationInfo& WithRemarks(const Aws::String& value) { SetRemarks(value); return *this;}
 
     /**
-     * <p>The issues on the user side that are blocking Application Insights from fully
-     * monitoring the application.</p>
+     * <p>The issues on the user side that block Application Insights from successfully
+     * monitoring an application.</p>
      */
     inline ApplicationInfo& WithRemarks(Aws::String&& value) { SetRemarks(std::move(value)); return *this;}
 
     /**
-     * <p>The issues on the user side that are blocking Application Insights from fully
-     * monitoring the application.</p>
+     * <p>The issues on the user side that block Application Insights from successfully
+     * monitoring an application.</p>
      */
     inline ApplicationInfo& WithRemarks(const char* value) { SetRemarks(value); return *this;}
 
@@ -184,6 +258,12 @@ namespace Model
 
     Aws::String m_lifeCycle;
     bool m_lifeCycleHasBeenSet;
+
+    Aws::String m_opsItemSNSTopicArn;
+    bool m_opsItemSNSTopicArnHasBeenSet;
+
+    bool m_opsCenterEnabled;
+    bool m_opsCenterEnabledHasBeenSet;
 
     Aws::String m_remarks;
     bool m_remarksHasBeenSet;

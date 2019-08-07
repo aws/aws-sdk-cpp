@@ -149,57 +149,57 @@ namespace Model
 
     /**
      * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB_TIER</code>,
-     * <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
+     * and <code>DEFAULT</code>.</p>
      */
     inline const Aws::String& GetTier() const{ return m_tier; }
 
     /**
      * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB_TIER</code>,
-     * <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
+     * and <code>DEFAULT</code>.</p>
      */
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
 
     /**
      * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB_TIER</code>,
-     * <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
+     * and <code>DEFAULT</code>.</p>
      */
     inline void SetTier(const Aws::String& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
      * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB_TIER</code>,
-     * <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
+     * and <code>DEFAULT</code>.</p>
      */
     inline void SetTier(Aws::String&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
 
     /**
      * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB_TIER</code>,
-     * <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
+     * and <code>DEFAULT</code>.</p>
      */
     inline void SetTier(const char* value) { m_tierHasBeenSet = true; m_tier.assign(value); }
 
     /**
      * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB_TIER</code>,
-     * <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
+     * and <code>DEFAULT</code>.</p>
      */
     inline UpdateComponentConfigurationRequest& WithTier(const Aws::String& value) { SetTier(value); return *this;}
 
     /**
      * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB_TIER</code>,
-     * <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
+     * and <code>DEFAULT</code>.</p>
      */
     inline UpdateComponentConfigurationRequest& WithTier(Aws::String&& value) { SetTier(std::move(value)); return *this;}
 
     /**
      * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB_TIER</code>,
-     * <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
+     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
+     * and <code>DEFAULT</code>.</p>
      */
     inline UpdateComponentConfigurationRequest& WithTier(const char* value) { SetTier(value); return *this;}
 

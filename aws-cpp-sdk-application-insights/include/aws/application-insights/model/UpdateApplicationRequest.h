@@ -28,16 +28,16 @@ namespace Model
 
   /**
    */
-  class AWS_APPLICATIONINSIGHTS_API CreateApplicationRequest : public ApplicationInsightsRequest
+  class AWS_APPLICATIONINSIGHTS_API UpdateApplicationRequest : public ApplicationInsightsRequest
   {
   public:
-    CreateApplicationRequest();
+    UpdateApplicationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
     // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "CreateApplication"; }
+    inline virtual const char* GetServiceRequestName() const override { return "UpdateApplication"; }
 
     Aws::String SerializePayload() const override;
 
@@ -72,17 +72,17 @@ namespace Model
     /**
      * <p>The name of the resource group.</p>
      */
-    inline CreateApplicationRequest& WithResourceGroupName(const Aws::String& value) { SetResourceGroupName(value); return *this;}
+    inline UpdateApplicationRequest& WithResourceGroupName(const Aws::String& value) { SetResourceGroupName(value); return *this;}
 
     /**
      * <p>The name of the resource group.</p>
      */
-    inline CreateApplicationRequest& WithResourceGroupName(Aws::String&& value) { SetResourceGroupName(std::move(value)); return *this;}
+    inline UpdateApplicationRequest& WithResourceGroupName(Aws::String&& value) { SetResourceGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the resource group.</p>
      */
-    inline CreateApplicationRequest& WithResourceGroupName(const char* value) { SetResourceGroupName(value); return *this;}
+    inline UpdateApplicationRequest& WithResourceGroupName(const char* value) { SetResourceGroupName(value); return *this;}
 
 
     /**
@@ -107,64 +107,89 @@ namespace Model
      * <p> When set to <code>true</code>, creates opsItems for any problems detected on
      * an application. </p>
      */
-    inline CreateApplicationRequest& WithOpsCenterEnabled(bool value) { SetOpsCenterEnabled(value); return *this;}
+    inline UpdateApplicationRequest& WithOpsCenterEnabled(bool value) { SetOpsCenterEnabled(value); return *this;}
 
 
     /**
      * <p> The SNS topic provided to Application Insights that is associated to the
-     * created opsItem. Allows you to receive notifications for updates to the opsItem.
-     * </p>
+     * created opsItem. Allows you to receive notifications for updates to the
+     * opsItem.</p>
      */
     inline const Aws::String& GetOpsItemSNSTopicArn() const{ return m_opsItemSNSTopicArn; }
 
     /**
      * <p> The SNS topic provided to Application Insights that is associated to the
-     * created opsItem. Allows you to receive notifications for updates to the opsItem.
-     * </p>
+     * created opsItem. Allows you to receive notifications for updates to the
+     * opsItem.</p>
      */
     inline bool OpsItemSNSTopicArnHasBeenSet() const { return m_opsItemSNSTopicArnHasBeenSet; }
 
     /**
      * <p> The SNS topic provided to Application Insights that is associated to the
-     * created opsItem. Allows you to receive notifications for updates to the opsItem.
-     * </p>
+     * created opsItem. Allows you to receive notifications for updates to the
+     * opsItem.</p>
      */
     inline void SetOpsItemSNSTopicArn(const Aws::String& value) { m_opsItemSNSTopicArnHasBeenSet = true; m_opsItemSNSTopicArn = value; }
 
     /**
      * <p> The SNS topic provided to Application Insights that is associated to the
-     * created opsItem. Allows you to receive notifications for updates to the opsItem.
-     * </p>
+     * created opsItem. Allows you to receive notifications for updates to the
+     * opsItem.</p>
      */
     inline void SetOpsItemSNSTopicArn(Aws::String&& value) { m_opsItemSNSTopicArnHasBeenSet = true; m_opsItemSNSTopicArn = std::move(value); }
 
     /**
      * <p> The SNS topic provided to Application Insights that is associated to the
-     * created opsItem. Allows you to receive notifications for updates to the opsItem.
-     * </p>
+     * created opsItem. Allows you to receive notifications for updates to the
+     * opsItem.</p>
      */
     inline void SetOpsItemSNSTopicArn(const char* value) { m_opsItemSNSTopicArnHasBeenSet = true; m_opsItemSNSTopicArn.assign(value); }
 
     /**
      * <p> The SNS topic provided to Application Insights that is associated to the
-     * created opsItem. Allows you to receive notifications for updates to the opsItem.
-     * </p>
+     * created opsItem. Allows you to receive notifications for updates to the
+     * opsItem.</p>
      */
-    inline CreateApplicationRequest& WithOpsItemSNSTopicArn(const Aws::String& value) { SetOpsItemSNSTopicArn(value); return *this;}
+    inline UpdateApplicationRequest& WithOpsItemSNSTopicArn(const Aws::String& value) { SetOpsItemSNSTopicArn(value); return *this;}
 
     /**
      * <p> The SNS topic provided to Application Insights that is associated to the
-     * created opsItem. Allows you to receive notifications for updates to the opsItem.
-     * </p>
+     * created opsItem. Allows you to receive notifications for updates to the
+     * opsItem.</p>
      */
-    inline CreateApplicationRequest& WithOpsItemSNSTopicArn(Aws::String&& value) { SetOpsItemSNSTopicArn(std::move(value)); return *this;}
+    inline UpdateApplicationRequest& WithOpsItemSNSTopicArn(Aws::String&& value) { SetOpsItemSNSTopicArn(std::move(value)); return *this;}
 
     /**
      * <p> The SNS topic provided to Application Insights that is associated to the
-     * created opsItem. Allows you to receive notifications for updates to the opsItem.
-     * </p>
+     * created opsItem. Allows you to receive notifications for updates to the
+     * opsItem.</p>
      */
-    inline CreateApplicationRequest& WithOpsItemSNSTopicArn(const char* value) { SetOpsItemSNSTopicArn(value); return *this;}
+    inline UpdateApplicationRequest& WithOpsItemSNSTopicArn(const char* value) { SetOpsItemSNSTopicArn(value); return *this;}
+
+
+    /**
+     * <p> Disassociates the SNS topic from the opsItem created for detected
+     * problems.</p>
+     */
+    inline bool GetRemoveSNSTopic() const{ return m_removeSNSTopic; }
+
+    /**
+     * <p> Disassociates the SNS topic from the opsItem created for detected
+     * problems.</p>
+     */
+    inline bool RemoveSNSTopicHasBeenSet() const { return m_removeSNSTopicHasBeenSet; }
+
+    /**
+     * <p> Disassociates the SNS topic from the opsItem created for detected
+     * problems.</p>
+     */
+    inline void SetRemoveSNSTopic(bool value) { m_removeSNSTopicHasBeenSet = true; m_removeSNSTopic = value; }
+
+    /**
+     * <p> Disassociates the SNS topic from the opsItem created for detected
+     * problems.</p>
+     */
+    inline UpdateApplicationRequest& WithRemoveSNSTopic(bool value) { SetRemoveSNSTopic(value); return *this;}
 
   private:
 
@@ -176,6 +201,9 @@ namespace Model
 
     Aws::String m_opsItemSNSTopicArn;
     bool m_opsItemSNSTopicArnHasBeenSet;
+
+    bool m_removeSNSTopic;
+    bool m_removeSNSTopicHasBeenSet;
   };
 
 } // namespace Model

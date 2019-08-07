@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/application-insights/model/CreateApplicationRequest.h>
+#include <aws/application-insights/model/UpdateApplicationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,15 +22,17 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateApplicationRequest::CreateApplicationRequest() : 
+UpdateApplicationRequest::UpdateApplicationRequest() : 
     m_resourceGroupNameHasBeenSet(false),
     m_opsCenterEnabled(false),
     m_opsCenterEnabledHasBeenSet(false),
-    m_opsItemSNSTopicArnHasBeenSet(false)
+    m_opsItemSNSTopicArnHasBeenSet(false),
+    m_removeSNSTopic(false),
+    m_removeSNSTopicHasBeenSet(false)
 {
 }
 
-Aws::String CreateApplicationRequest::SerializePayload() const
+Aws::String UpdateApplicationRequest::SerializePayload() const
 {
   JsonValue payload;
 
@@ -52,13 +54,19 @@ Aws::String CreateApplicationRequest::SerializePayload() const
 
   }
 
+  if(m_removeSNSTopicHasBeenSet)
+  {
+   payload.WithBool("RemoveSNSTopic", m_removeSNSTopic);
+
+  }
+
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateApplicationRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection UpdateApplicationRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "EC2WindowsBarleyService.CreateApplication"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "EC2WindowsBarleyService.UpdateApplication"));
   return headers;
 
 }

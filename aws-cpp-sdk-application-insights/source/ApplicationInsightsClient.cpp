@@ -44,6 +44,7 @@
 #include <aws/application-insights/model/ListApplicationsRequest.h>
 #include <aws/application-insights/model/ListComponentsRequest.h>
 #include <aws/application-insights/model/ListProblemsRequest.h>
+#include <aws/application-insights/model/UpdateApplicationRequest.h>
 #include <aws/application-insights/model/UpdateComponentRequest.h>
 #include <aws/application-insights/model/UpdateComponentConfigurationRequest.h>
 
@@ -607,6 +608,41 @@ void ApplicationInsightsClient::ListProblemsAsync(const ListProblemsRequest& req
 void ApplicationInsightsClient::ListProblemsAsyncHelper(const ListProblemsRequest& request, const ListProblemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListProblems(request), context);
+}
+
+UpdateApplicationOutcome ApplicationInsightsClient::UpdateApplication(const UpdateApplicationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateApplicationOutcome(UpdateApplicationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateApplicationOutcome(outcome.GetError());
+  }
+}
+
+UpdateApplicationOutcomeCallable ApplicationInsightsClient::UpdateApplicationCallable(const UpdateApplicationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApplication(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApplicationInsightsClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationAsyncHelper( request, handler, context ); } );
+}
+
+void ApplicationInsightsClient::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateApplication(request), context);
 }
 
 UpdateComponentOutcome ApplicationInsightsClient::UpdateComponent(const UpdateComponentRequest& request) const
