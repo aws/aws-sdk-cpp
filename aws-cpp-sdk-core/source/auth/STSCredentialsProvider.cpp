@@ -1,12 +1,12 @@
 /*
   * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
+  *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
   * A copy of the License is located at
-  * 
+  *
   *  http://aws.amazon.com/apache2.0
-  * 
+  *
   * or in the "license" file accompanying this file. This file is distributed
   * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
   * express or implied. See the License for the specific language governing
@@ -23,6 +23,7 @@
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/client/SpecifiedRetryableErrorsRetryStrategy.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UUID.h>
 #include <cstdlib>
 #include <fstream>
 #include <string.h>
@@ -34,7 +35,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Auth;
 using namespace Aws::Internal;
 using namespace Aws::FileSystem;
-using namespace Aws::Utils::Xml;
 using namespace Aws::Client;
 using Aws::Utils::Threading::ReaderLockGuard;
 using Aws::Utils::Threading::WriterLockGuard;
@@ -72,7 +72,7 @@ STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentials
                 {
                     m_roleArn = iter->second.GetRoleArn();
                     m_tokenFile = iter->second.GetValue("web_identity_token_file");
-                    m_sessionName = iter->second.GetValue("role_session_name"); 
+                    m_sessionName = iter->second.GetValue("role_session_name");
                 }
             }
         }
@@ -119,7 +119,7 @@ STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentials
     Aws::Client::ClientConfiguration config;
     config.scheme = Aws::Http::Scheme::HTTPS;
     config.region = tmpRegion;
-    
+
     Aws::Vector<Aws::String> retryableErrors;
     retryableErrors.push_back("IDPCommunicationError");
     retryableErrors.push_back("InvalidIdentityToken");
@@ -133,7 +133,7 @@ STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentials
 
 AWSCredentials STSAssumeRoleWebIdentityCredentialsProvider::GetAWSCredentials()
 {
-    // A valid client means required information like role arn and token file were constructed correctly. 
+    // A valid client means required information like role arn and token file were constructed correctly.
     // We can use this provider to load creds, otherwise, we can just return empty creds.
     if (!m_initialized)
     {

@@ -1,12 +1,12 @@
 /*
   * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
+  *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
   * A copy of the License is located at
-  * 
+  *
   *  http://aws.amazon.com/apache2.0
-  * 
+  *
   * or in the "license" file accompanying this file. This file is distributed
   * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
   * express or implied. See the License for the specific language governing
@@ -20,6 +20,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
@@ -29,6 +30,7 @@
 
 using namespace Aws::Utils;
 using namespace Aws::Utils::Logging;
+using namespace Aws::Utils::Xml;
 using namespace Aws::Http;
 using namespace Aws::Client;
 using namespace Aws::Internal;
@@ -39,7 +41,6 @@ static const char EC2_REGION_RESOURCE[] = "/latest/meta-data/placement/availabil
 static const char RESOURCE_CLIENT_CONFIGURATION_ALLOCATION_TAG[] = "AWSHttpResourceClient";
 static const char EC2_METADATA_CLIENT_LOG_TAG[] = "EC2MetadataClient";
 static const char ECS_CREDENTIALS_CLIENT_LOG_TAG[] = "ECSCredentialsClient";
-static const char STS_CREDENTIALS_CLIENT_LOG_TAG[] = "STSAssumeRoleWebIdentityClient";
 
 namespace Aws
 {
@@ -181,12 +182,12 @@ Aws::String EC2MetadataClient::GetResource(const char* resourcePath) const
 
 Aws::String EC2MetadataClient::GetDefaultCredentials() const
 {
-    AWS_LOGSTREAM_TRACE(m_logtag.c_str(), 
+    AWS_LOGSTREAM_TRACE(m_logtag.c_str(),
             "Getting default credentials for ec2 instance");
     Aws::String credentialsString = GetResource(EC2_SECURITY_CREDENTIALS_RESOURCE);
 
     if (credentialsString.empty()) return {};
-    
+
     Aws::String trimmedCredentialsString = StringUtils::Trim(credentialsString.c_str());
     Aws::Vector<Aws::String> securityCredentials = StringUtils::Split(trimmedCredentialsString, '\n');
 
@@ -196,14 +197,14 @@ Aws::String EC2MetadataClient::GetDefaultCredentials() const
 
     if (securityCredentials.size() == 0)
     {
-        AWS_LOGSTREAM_WARN(m_logtag.c_str(), 
+        AWS_LOGSTREAM_WARN(m_logtag.c_str(),
                 "Initial call to ec2Metadataservice to get credentials failed");
         return {};
     }
 
     Aws::StringStream ss;
     ss << EC2_SECURITY_CREDENTIALS_RESOURCE << "/" << securityCredentials[0];
-    AWS_LOGSTREAM_DEBUG(m_logtag.c_str(), 
+    AWS_LOGSTREAM_DEBUG(m_logtag.c_str(),
             "Calling EC2MetadataService resource " << ss.str());
     return GetResource(ss.str().c_str());
 }
@@ -219,9 +220,9 @@ Aws::String EC2MetadataClient::GetCurrentRegion() const
                 "Unable to pull region from instance metadata service ");
         return {};
     }
-    
+
     Aws::String trimmedAZString = StringUtils::Trim(azString.c_str());
-    AWS_LOGSTREAM_DEBUG(m_logtag.c_str(), "Calling EC2MetadataService resource " 
+    AWS_LOGSTREAM_DEBUG(m_logtag.c_str(), "Calling EC2MetadataService resource "
             << EC2_REGION_RESOURCE << " , returned credential string " << trimmedAZString);
 
     Aws::String region;
@@ -259,7 +260,7 @@ ECSCredentialsClient::ECSCredentialsClient(const Aws::Client::ClientConfiguratio
 }
 
 static const char STS_RESOURCE_CLIENT_LOG_TAG[] = "STSResourceClient";
-STSCredentialsClient::STSCredentialsClient(const Client::ClientConfiguration& clientConfiguration)
+STSCredentialsClient::STSCredentialsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : AWSHttpResourceClient(clientConfiguration, STS_RESOURCE_CLIENT_LOG_TAG)
 {
     SetErrorMarshaller(Aws::MakeUnique<Aws::Client::XmlErrorMarshaller>(STS_RESOURCE_CLIENT_LOG_TAG));
@@ -269,7 +270,7 @@ STSCredentialsClient::STSCredentialsClient(const Client::ClientConfiguration& cl
     {
         ss << "http://";
     }
-    else 
+    else
     {
         ss << "https://";
     }
@@ -278,10 +279,10 @@ STSCredentialsClient::STSCredentialsClient(const Client::ClientConfiguration& cl
     static const int CN_NORTHWEST_1_HASH = Aws::Utils::HashingUtils::HashString(Aws::Region::CN_NORTHWEST_1);
     auto hash = Aws::Utils::HashingUtils::HashString(clientConfiguration.region.c_str());
 
-    ss << "sts." << clientConfiguration.region << ".amazonaws.com";    
+    ss << "sts." << clientConfiguration.region << ".amazonaws.com";
     if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
     {
-        ss << ".cn"; 
+        ss << ".cn";
     }
     m_endpoint =  ss.str();
 
@@ -295,9 +296,9 @@ STSCredentialsClient::STSAssumeRoleWithWebIdentityResult STSCredentialsClient::G
     ss << "/?Action=AssumeRoleWithWebIdentity"
         << "&Version=2011-06-15"
         << "&RoleSessionName=" << Aws::Utils::StringUtils::URLEncode(request.roleSessionName.c_str())
-        << "&RoleArn=" << Aws::Utils::StringUtils::URLEncode(request.roleArn.c_str()) 
+        << "&RoleArn=" << Aws::Utils::StringUtils::URLEncode(request.roleArn.c_str())
         << "&WebIdentityToken=" << Aws::Utils::StringUtils::URLEncode(request.webIdentityToken.c_str());
-    
+
     ss.str();
     Aws::String credentialsStr = GetResource(m_endpoint.c_str(), ss.str().c_str()/*query string*/, nullptr/*no auth token needed*/);
 
