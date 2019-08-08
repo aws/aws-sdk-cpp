@@ -473,7 +473,10 @@ namespace Model
      * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
      * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
      * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for memory-intensive jobs.</p> </li> </ul>
+     * worker type for memory-intensive jobs.</p> </li> </ul> <p>Known issue: when a
+     * development endpoint is created with the <code>G.2X</code>
+     * <code>WorkerType</code> configuration, the Spark drivers for the development
+     * endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
      */
     inline const WorkerType& GetWorkerType() const{ return m_workerType; }
 
@@ -487,7 +490,10 @@ namespace Model
      * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
      * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
      * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for memory-intensive jobs.</p> </li> </ul>
+     * worker type for memory-intensive jobs.</p> </li> </ul> <p>Known issue: when a
+     * development endpoint is created with the <code>G.2X</code>
+     * <code>WorkerType</code> configuration, the Spark drivers for the development
+     * endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
      */
     inline bool WorkerTypeHasBeenSet() const { return m_workerTypeHasBeenSet; }
 
@@ -501,7 +507,10 @@ namespace Model
      * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
      * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
      * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for memory-intensive jobs.</p> </li> </ul>
+     * worker type for memory-intensive jobs.</p> </li> </ul> <p>Known issue: when a
+     * development endpoint is created with the <code>G.2X</code>
+     * <code>WorkerType</code> configuration, the Spark drivers for the development
+     * endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
      */
     inline void SetWorkerType(const WorkerType& value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
 
@@ -515,7 +524,10 @@ namespace Model
      * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
      * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
      * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for memory-intensive jobs.</p> </li> </ul>
+     * worker type for memory-intensive jobs.</p> </li> </ul> <p>Known issue: when a
+     * development endpoint is created with the <code>G.2X</code>
+     * <code>WorkerType</code> configuration, the Spark drivers for the development
+     * endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
      */
     inline void SetWorkerType(WorkerType&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::move(value); }
 
@@ -529,7 +541,10 @@ namespace Model
      * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
      * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
      * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for memory-intensive jobs.</p> </li> </ul>
+     * worker type for memory-intensive jobs.</p> </li> </ul> <p>Known issue: when a
+     * development endpoint is created with the <code>G.2X</code>
+     * <code>WorkerType</code> configuration, the Spark drivers for the development
+     * endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
      */
     inline DevEndpoint& WithWorkerType(const WorkerType& value) { SetWorkerType(value); return *this;}
 
@@ -543,7 +558,10 @@ namespace Model
      * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
      * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
      * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for memory-intensive jobs.</p> </li> </ul>
+     * worker type for memory-intensive jobs.</p> </li> </ul> <p>Known issue: when a
+     * development endpoint is created with the <code>G.2X</code>
+     * <code>WorkerType</code> configuration, the Spark drivers for the development
+     * endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
      */
     inline DevEndpoint& WithWorkerType(WorkerType&& value) { SetWorkerType(std::move(value)); return *this;}
 

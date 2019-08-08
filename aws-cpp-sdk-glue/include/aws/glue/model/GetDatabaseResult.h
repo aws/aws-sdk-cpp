@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>The definition of the specified database in the catalog.</p>
+     * <p>The definition of the specified database in the Data Catalog.</p>
      */
     inline const Database& GetDatabase() const{ return m_database; }
 
     /**
-     * <p>The definition of the specified database in the catalog.</p>
+     * <p>The definition of the specified database in the Data Catalog.</p>
      */
     inline void SetDatabase(const Database& value) { m_database = value; }
 
     /**
-     * <p>The definition of the specified database in the catalog.</p>
+     * <p>The definition of the specified database in the Data Catalog.</p>
      */
     inline void SetDatabase(Database&& value) { m_database = std::move(value); }
 
     /**
-     * <p>The definition of the specified database in the catalog.</p>
+     * <p>The definition of the specified database in the Data Catalog.</p>
      */
     inline GetDatabaseResult& WithDatabase(const Database& value) { SetDatabase(value); return *this;}
 
     /**
-     * <p>The definition of the specified database in the catalog.</p>
+     * <p>The definition of the specified database in the Data Catalog.</p>
      */
     inline GetDatabaseResult& WithDatabase(Database&& value) { SetDatabase(std::move(value)); return *this;}
 

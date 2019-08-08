@@ -33,12 +33,14 @@
 #include <aws/glue/model/BatchGetTriggersResult.h>
 #include <aws/glue/model/BatchGetWorkflowsResult.h>
 #include <aws/glue/model/BatchStopJobRunResult.h>
+#include <aws/glue/model/CancelMLTaskRunResult.h>
 #include <aws/glue/model/CreateClassifierResult.h>
 #include <aws/glue/model/CreateConnectionResult.h>
 #include <aws/glue/model/CreateCrawlerResult.h>
 #include <aws/glue/model/CreateDatabaseResult.h>
 #include <aws/glue/model/CreateDevEndpointResult.h>
 #include <aws/glue/model/CreateJobResult.h>
+#include <aws/glue/model/CreateMLTransformResult.h>
 #include <aws/glue/model/CreatePartitionResult.h>
 #include <aws/glue/model/CreateScriptResult.h>
 #include <aws/glue/model/CreateSecurityConfigurationResult.h>
@@ -52,6 +54,7 @@
 #include <aws/glue/model/DeleteDatabaseResult.h>
 #include <aws/glue/model/DeleteDevEndpointResult.h>
 #include <aws/glue/model/DeleteJobResult.h>
+#include <aws/glue/model/DeleteMLTransformResult.h>
 #include <aws/glue/model/DeletePartitionResult.h>
 #include <aws/glue/model/DeleteResourcePolicyResult.h>
 #include <aws/glue/model/DeleteSecurityConfigurationResult.h>
@@ -80,6 +83,10 @@
 #include <aws/glue/model/GetJobRunResult.h>
 #include <aws/glue/model/GetJobRunsResult.h>
 #include <aws/glue/model/GetJobsResult.h>
+#include <aws/glue/model/GetMLTaskRunResult.h>
+#include <aws/glue/model/GetMLTaskRunsResult.h>
+#include <aws/glue/model/GetMLTransformResult.h>
+#include <aws/glue/model/GetMLTransformsResult.h>
 #include <aws/glue/model/GetMappingResult.h>
 #include <aws/glue/model/GetPartitionResult.h>
 #include <aws/glue/model/GetPartitionsResult.h>
@@ -110,9 +117,14 @@
 #include <aws/glue/model/PutResourcePolicyResult.h>
 #include <aws/glue/model/PutWorkflowRunPropertiesResult.h>
 #include <aws/glue/model/ResetJobBookmarkResult.h>
+#include <aws/glue/model/SearchTablesResult.h>
 #include <aws/glue/model/StartCrawlerResult.h>
 #include <aws/glue/model/StartCrawlerScheduleResult.h>
+#include <aws/glue/model/StartExportLabelsTaskRunResult.h>
+#include <aws/glue/model/StartImportLabelsTaskRunResult.h>
 #include <aws/glue/model/StartJobRunResult.h>
+#include <aws/glue/model/StartMLEvaluationTaskRunResult.h>
+#include <aws/glue/model/StartMLLabelingSetGenerationTaskRunResult.h>
 #include <aws/glue/model/StartTriggerResult.h>
 #include <aws/glue/model/StartWorkflowRunResult.h>
 #include <aws/glue/model/StopCrawlerResult.h>
@@ -127,6 +139,7 @@
 #include <aws/glue/model/UpdateDatabaseResult.h>
 #include <aws/glue/model/UpdateDevEndpointResult.h>
 #include <aws/glue/model/UpdateJobResult.h>
+#include <aws/glue/model/UpdateMLTransformResult.h>
 #include <aws/glue/model/UpdatePartitionResult.h>
 #include <aws/glue/model/UpdateTableResult.h>
 #include <aws/glue/model/UpdateTriggerResult.h>
@@ -183,12 +196,14 @@ namespace Model
         class BatchGetTriggersRequest;
         class BatchGetWorkflowsRequest;
         class BatchStopJobRunRequest;
+        class CancelMLTaskRunRequest;
         class CreateClassifierRequest;
         class CreateConnectionRequest;
         class CreateCrawlerRequest;
         class CreateDatabaseRequest;
         class CreateDevEndpointRequest;
         class CreateJobRequest;
+        class CreateMLTransformRequest;
         class CreatePartitionRequest;
         class CreateScriptRequest;
         class CreateSecurityConfigurationRequest;
@@ -202,6 +217,7 @@ namespace Model
         class DeleteDatabaseRequest;
         class DeleteDevEndpointRequest;
         class DeleteJobRequest;
+        class DeleteMLTransformRequest;
         class DeletePartitionRequest;
         class DeleteResourcePolicyRequest;
         class DeleteSecurityConfigurationRequest;
@@ -230,6 +246,10 @@ namespace Model
         class GetJobRunRequest;
         class GetJobRunsRequest;
         class GetJobsRequest;
+        class GetMLTaskRunRequest;
+        class GetMLTaskRunsRequest;
+        class GetMLTransformRequest;
+        class GetMLTransformsRequest;
         class GetMappingRequest;
         class GetPartitionRequest;
         class GetPartitionsRequest;
@@ -260,9 +280,14 @@ namespace Model
         class PutResourcePolicyRequest;
         class PutWorkflowRunPropertiesRequest;
         class ResetJobBookmarkRequest;
+        class SearchTablesRequest;
         class StartCrawlerRequest;
         class StartCrawlerScheduleRequest;
+        class StartExportLabelsTaskRunRequest;
+        class StartImportLabelsTaskRunRequest;
         class StartJobRunRequest;
+        class StartMLEvaluationTaskRunRequest;
+        class StartMLLabelingSetGenerationTaskRunRequest;
         class StartTriggerRequest;
         class StartWorkflowRunRequest;
         class StopCrawlerRequest;
@@ -277,6 +302,7 @@ namespace Model
         class UpdateDatabaseRequest;
         class UpdateDevEndpointRequest;
         class UpdateJobRequest;
+        class UpdateMLTransformRequest;
         class UpdatePartitionRequest;
         class UpdateTableRequest;
         class UpdateTriggerRequest;
@@ -295,12 +321,14 @@ namespace Model
         typedef Aws::Utils::Outcome<BatchGetTriggersResult, Aws::Client::AWSError<GlueErrors>> BatchGetTriggersOutcome;
         typedef Aws::Utils::Outcome<BatchGetWorkflowsResult, Aws::Client::AWSError<GlueErrors>> BatchGetWorkflowsOutcome;
         typedef Aws::Utils::Outcome<BatchStopJobRunResult, Aws::Client::AWSError<GlueErrors>> BatchStopJobRunOutcome;
+        typedef Aws::Utils::Outcome<CancelMLTaskRunResult, Aws::Client::AWSError<GlueErrors>> CancelMLTaskRunOutcome;
         typedef Aws::Utils::Outcome<CreateClassifierResult, Aws::Client::AWSError<GlueErrors>> CreateClassifierOutcome;
         typedef Aws::Utils::Outcome<CreateConnectionResult, Aws::Client::AWSError<GlueErrors>> CreateConnectionOutcome;
         typedef Aws::Utils::Outcome<CreateCrawlerResult, Aws::Client::AWSError<GlueErrors>> CreateCrawlerOutcome;
         typedef Aws::Utils::Outcome<CreateDatabaseResult, Aws::Client::AWSError<GlueErrors>> CreateDatabaseOutcome;
         typedef Aws::Utils::Outcome<CreateDevEndpointResult, Aws::Client::AWSError<GlueErrors>> CreateDevEndpointOutcome;
         typedef Aws::Utils::Outcome<CreateJobResult, Aws::Client::AWSError<GlueErrors>> CreateJobOutcome;
+        typedef Aws::Utils::Outcome<CreateMLTransformResult, Aws::Client::AWSError<GlueErrors>> CreateMLTransformOutcome;
         typedef Aws::Utils::Outcome<CreatePartitionResult, Aws::Client::AWSError<GlueErrors>> CreatePartitionOutcome;
         typedef Aws::Utils::Outcome<CreateScriptResult, Aws::Client::AWSError<GlueErrors>> CreateScriptOutcome;
         typedef Aws::Utils::Outcome<CreateSecurityConfigurationResult, Aws::Client::AWSError<GlueErrors>> CreateSecurityConfigurationOutcome;
@@ -314,6 +342,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteDatabaseResult, Aws::Client::AWSError<GlueErrors>> DeleteDatabaseOutcome;
         typedef Aws::Utils::Outcome<DeleteDevEndpointResult, Aws::Client::AWSError<GlueErrors>> DeleteDevEndpointOutcome;
         typedef Aws::Utils::Outcome<DeleteJobResult, Aws::Client::AWSError<GlueErrors>> DeleteJobOutcome;
+        typedef Aws::Utils::Outcome<DeleteMLTransformResult, Aws::Client::AWSError<GlueErrors>> DeleteMLTransformOutcome;
         typedef Aws::Utils::Outcome<DeletePartitionResult, Aws::Client::AWSError<GlueErrors>> DeletePartitionOutcome;
         typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, Aws::Client::AWSError<GlueErrors>> DeleteResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteSecurityConfigurationResult, Aws::Client::AWSError<GlueErrors>> DeleteSecurityConfigurationOutcome;
@@ -342,6 +371,10 @@ namespace Model
         typedef Aws::Utils::Outcome<GetJobRunResult, Aws::Client::AWSError<GlueErrors>> GetJobRunOutcome;
         typedef Aws::Utils::Outcome<GetJobRunsResult, Aws::Client::AWSError<GlueErrors>> GetJobRunsOutcome;
         typedef Aws::Utils::Outcome<GetJobsResult, Aws::Client::AWSError<GlueErrors>> GetJobsOutcome;
+        typedef Aws::Utils::Outcome<GetMLTaskRunResult, Aws::Client::AWSError<GlueErrors>> GetMLTaskRunOutcome;
+        typedef Aws::Utils::Outcome<GetMLTaskRunsResult, Aws::Client::AWSError<GlueErrors>> GetMLTaskRunsOutcome;
+        typedef Aws::Utils::Outcome<GetMLTransformResult, Aws::Client::AWSError<GlueErrors>> GetMLTransformOutcome;
+        typedef Aws::Utils::Outcome<GetMLTransformsResult, Aws::Client::AWSError<GlueErrors>> GetMLTransformsOutcome;
         typedef Aws::Utils::Outcome<GetMappingResult, Aws::Client::AWSError<GlueErrors>> GetMappingOutcome;
         typedef Aws::Utils::Outcome<GetPartitionResult, Aws::Client::AWSError<GlueErrors>> GetPartitionOutcome;
         typedef Aws::Utils::Outcome<GetPartitionsResult, Aws::Client::AWSError<GlueErrors>> GetPartitionsOutcome;
@@ -372,9 +405,14 @@ namespace Model
         typedef Aws::Utils::Outcome<PutResourcePolicyResult, Aws::Client::AWSError<GlueErrors>> PutResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<PutWorkflowRunPropertiesResult, Aws::Client::AWSError<GlueErrors>> PutWorkflowRunPropertiesOutcome;
         typedef Aws::Utils::Outcome<ResetJobBookmarkResult, Aws::Client::AWSError<GlueErrors>> ResetJobBookmarkOutcome;
+        typedef Aws::Utils::Outcome<SearchTablesResult, Aws::Client::AWSError<GlueErrors>> SearchTablesOutcome;
         typedef Aws::Utils::Outcome<StartCrawlerResult, Aws::Client::AWSError<GlueErrors>> StartCrawlerOutcome;
         typedef Aws::Utils::Outcome<StartCrawlerScheduleResult, Aws::Client::AWSError<GlueErrors>> StartCrawlerScheduleOutcome;
+        typedef Aws::Utils::Outcome<StartExportLabelsTaskRunResult, Aws::Client::AWSError<GlueErrors>> StartExportLabelsTaskRunOutcome;
+        typedef Aws::Utils::Outcome<StartImportLabelsTaskRunResult, Aws::Client::AWSError<GlueErrors>> StartImportLabelsTaskRunOutcome;
         typedef Aws::Utils::Outcome<StartJobRunResult, Aws::Client::AWSError<GlueErrors>> StartJobRunOutcome;
+        typedef Aws::Utils::Outcome<StartMLEvaluationTaskRunResult, Aws::Client::AWSError<GlueErrors>> StartMLEvaluationTaskRunOutcome;
+        typedef Aws::Utils::Outcome<StartMLLabelingSetGenerationTaskRunResult, Aws::Client::AWSError<GlueErrors>> StartMLLabelingSetGenerationTaskRunOutcome;
         typedef Aws::Utils::Outcome<StartTriggerResult, Aws::Client::AWSError<GlueErrors>> StartTriggerOutcome;
         typedef Aws::Utils::Outcome<StartWorkflowRunResult, Aws::Client::AWSError<GlueErrors>> StartWorkflowRunOutcome;
         typedef Aws::Utils::Outcome<StopCrawlerResult, Aws::Client::AWSError<GlueErrors>> StopCrawlerOutcome;
@@ -389,6 +427,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateDatabaseResult, Aws::Client::AWSError<GlueErrors>> UpdateDatabaseOutcome;
         typedef Aws::Utils::Outcome<UpdateDevEndpointResult, Aws::Client::AWSError<GlueErrors>> UpdateDevEndpointOutcome;
         typedef Aws::Utils::Outcome<UpdateJobResult, Aws::Client::AWSError<GlueErrors>> UpdateJobOutcome;
+        typedef Aws::Utils::Outcome<UpdateMLTransformResult, Aws::Client::AWSError<GlueErrors>> UpdateMLTransformOutcome;
         typedef Aws::Utils::Outcome<UpdatePartitionResult, Aws::Client::AWSError<GlueErrors>> UpdatePartitionOutcome;
         typedef Aws::Utils::Outcome<UpdateTableResult, Aws::Client::AWSError<GlueErrors>> UpdateTableOutcome;
         typedef Aws::Utils::Outcome<UpdateTriggerResult, Aws::Client::AWSError<GlueErrors>> UpdateTriggerOutcome;
@@ -407,12 +446,14 @@ namespace Model
         typedef std::future<BatchGetTriggersOutcome> BatchGetTriggersOutcomeCallable;
         typedef std::future<BatchGetWorkflowsOutcome> BatchGetWorkflowsOutcomeCallable;
         typedef std::future<BatchStopJobRunOutcome> BatchStopJobRunOutcomeCallable;
+        typedef std::future<CancelMLTaskRunOutcome> CancelMLTaskRunOutcomeCallable;
         typedef std::future<CreateClassifierOutcome> CreateClassifierOutcomeCallable;
         typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
         typedef std::future<CreateCrawlerOutcome> CreateCrawlerOutcomeCallable;
         typedef std::future<CreateDatabaseOutcome> CreateDatabaseOutcomeCallable;
         typedef std::future<CreateDevEndpointOutcome> CreateDevEndpointOutcomeCallable;
         typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
+        typedef std::future<CreateMLTransformOutcome> CreateMLTransformOutcomeCallable;
         typedef std::future<CreatePartitionOutcome> CreatePartitionOutcomeCallable;
         typedef std::future<CreateScriptOutcome> CreateScriptOutcomeCallable;
         typedef std::future<CreateSecurityConfigurationOutcome> CreateSecurityConfigurationOutcomeCallable;
@@ -426,6 +467,7 @@ namespace Model
         typedef std::future<DeleteDatabaseOutcome> DeleteDatabaseOutcomeCallable;
         typedef std::future<DeleteDevEndpointOutcome> DeleteDevEndpointOutcomeCallable;
         typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
+        typedef std::future<DeleteMLTransformOutcome> DeleteMLTransformOutcomeCallable;
         typedef std::future<DeletePartitionOutcome> DeletePartitionOutcomeCallable;
         typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
         typedef std::future<DeleteSecurityConfigurationOutcome> DeleteSecurityConfigurationOutcomeCallable;
@@ -454,6 +496,10 @@ namespace Model
         typedef std::future<GetJobRunOutcome> GetJobRunOutcomeCallable;
         typedef std::future<GetJobRunsOutcome> GetJobRunsOutcomeCallable;
         typedef std::future<GetJobsOutcome> GetJobsOutcomeCallable;
+        typedef std::future<GetMLTaskRunOutcome> GetMLTaskRunOutcomeCallable;
+        typedef std::future<GetMLTaskRunsOutcome> GetMLTaskRunsOutcomeCallable;
+        typedef std::future<GetMLTransformOutcome> GetMLTransformOutcomeCallable;
+        typedef std::future<GetMLTransformsOutcome> GetMLTransformsOutcomeCallable;
         typedef std::future<GetMappingOutcome> GetMappingOutcomeCallable;
         typedef std::future<GetPartitionOutcome> GetPartitionOutcomeCallable;
         typedef std::future<GetPartitionsOutcome> GetPartitionsOutcomeCallable;
@@ -484,9 +530,14 @@ namespace Model
         typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
         typedef std::future<PutWorkflowRunPropertiesOutcome> PutWorkflowRunPropertiesOutcomeCallable;
         typedef std::future<ResetJobBookmarkOutcome> ResetJobBookmarkOutcomeCallable;
+        typedef std::future<SearchTablesOutcome> SearchTablesOutcomeCallable;
         typedef std::future<StartCrawlerOutcome> StartCrawlerOutcomeCallable;
         typedef std::future<StartCrawlerScheduleOutcome> StartCrawlerScheduleOutcomeCallable;
+        typedef std::future<StartExportLabelsTaskRunOutcome> StartExportLabelsTaskRunOutcomeCallable;
+        typedef std::future<StartImportLabelsTaskRunOutcome> StartImportLabelsTaskRunOutcomeCallable;
         typedef std::future<StartJobRunOutcome> StartJobRunOutcomeCallable;
+        typedef std::future<StartMLEvaluationTaskRunOutcome> StartMLEvaluationTaskRunOutcomeCallable;
+        typedef std::future<StartMLLabelingSetGenerationTaskRunOutcome> StartMLLabelingSetGenerationTaskRunOutcomeCallable;
         typedef std::future<StartTriggerOutcome> StartTriggerOutcomeCallable;
         typedef std::future<StartWorkflowRunOutcome> StartWorkflowRunOutcomeCallable;
         typedef std::future<StopCrawlerOutcome> StopCrawlerOutcomeCallable;
@@ -501,6 +552,7 @@ namespace Model
         typedef std::future<UpdateDatabaseOutcome> UpdateDatabaseOutcomeCallable;
         typedef std::future<UpdateDevEndpointOutcome> UpdateDevEndpointOutcomeCallable;
         typedef std::future<UpdateJobOutcome> UpdateJobOutcomeCallable;
+        typedef std::future<UpdateMLTransformOutcome> UpdateMLTransformOutcomeCallable;
         typedef std::future<UpdatePartitionOutcome> UpdatePartitionOutcomeCallable;
         typedef std::future<UpdateTableOutcome> UpdateTableOutcomeCallable;
         typedef std::future<UpdateTriggerOutcome> UpdateTriggerOutcomeCallable;
@@ -522,12 +574,14 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::BatchGetTriggersRequest&, const Model::BatchGetTriggersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetTriggersResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::BatchGetWorkflowsRequest&, const Model::BatchGetWorkflowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetWorkflowsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::BatchStopJobRunRequest&, const Model::BatchStopJobRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchStopJobRunResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::CancelMLTaskRunRequest&, const Model::CancelMLTaskRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelMLTaskRunResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateClassifierRequest&, const Model::CreateClassifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClassifierResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateConnectionRequest&, const Model::CreateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateCrawlerRequest&, const Model::CreateCrawlerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCrawlerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateDatabaseRequest&, const Model::CreateDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatabaseResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateDevEndpointRequest&, const Model::CreateDevEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDevEndpointResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateJobRequest&, const Model::CreateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::CreateMLTransformRequest&, const Model::CreateMLTransformOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMLTransformResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreatePartitionRequest&, const Model::CreatePartitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePartitionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateScriptRequest&, const Model::CreateScriptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateScriptResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateSecurityConfigurationRequest&, const Model::CreateSecurityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSecurityConfigurationResponseReceivedHandler;
@@ -541,6 +595,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::DeleteDatabaseRequest&, const Model::DeleteDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatabaseResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteDevEndpointRequest&, const Model::DeleteDevEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDevEndpointResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteJobRequest&, const Model::DeleteJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::DeleteMLTransformRequest&, const Model::DeleteMLTransformOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMLTransformResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeletePartitionRequest&, const Model::DeletePartitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePartitionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteSecurityConfigurationRequest&, const Model::DeleteSecurityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSecurityConfigurationResponseReceivedHandler;
@@ -569,6 +624,10 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::GetJobRunRequest&, const Model::GetJobRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobRunResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetJobRunsRequest&, const Model::GetJobRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobRunsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetJobsRequest&, const Model::GetJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobsResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::GetMLTaskRunRequest&, const Model::GetMLTaskRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMLTaskRunResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::GetMLTaskRunsRequest&, const Model::GetMLTaskRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMLTaskRunsResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::GetMLTransformRequest&, const Model::GetMLTransformOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMLTransformResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::GetMLTransformsRequest&, const Model::GetMLTransformsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMLTransformsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetMappingRequest&, const Model::GetMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMappingResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetPartitionRequest&, const Model::GetPartitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPartitionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetPartitionsRequest&, const Model::GetPartitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPartitionsResponseReceivedHandler;
@@ -599,9 +658,14 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::PutWorkflowRunPropertiesRequest&, const Model::PutWorkflowRunPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutWorkflowRunPropertiesResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ResetJobBookmarkRequest&, const Model::ResetJobBookmarkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetJobBookmarkResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::SearchTablesRequest&, const Model::SearchTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchTablesResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StartCrawlerRequest&, const Model::StartCrawlerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCrawlerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StartCrawlerScheduleRequest&, const Model::StartCrawlerScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCrawlerScheduleResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::StartExportLabelsTaskRunRequest&, const Model::StartExportLabelsTaskRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartExportLabelsTaskRunResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::StartImportLabelsTaskRunRequest&, const Model::StartImportLabelsTaskRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImportLabelsTaskRunResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StartJobRunRequest&, const Model::StartJobRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartJobRunResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::StartMLEvaluationTaskRunRequest&, const Model::StartMLEvaluationTaskRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMLEvaluationTaskRunResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::StartMLLabelingSetGenerationTaskRunRequest&, const Model::StartMLLabelingSetGenerationTaskRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMLLabelingSetGenerationTaskRunResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StartTriggerRequest&, const Model::StartTriggerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTriggerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StartWorkflowRunRequest&, const Model::StartWorkflowRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartWorkflowRunResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StopCrawlerRequest&, const Model::StopCrawlerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopCrawlerResponseReceivedHandler;
@@ -616,6 +680,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::UpdateDatabaseRequest&, const Model::UpdateDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDatabaseResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateDevEndpointRequest&, const Model::UpdateDevEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDevEndpointResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateJobRequest&, const Model::UpdateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::UpdateMLTransformRequest&, const Model::UpdateMLTransformOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMLTransformResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdatePartitionRequest&, const Model::UpdatePartitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePartitionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateTableRequest&, const Model::UpdateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTableResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateTriggerRequest&, const Model::UpdateTriggerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTriggerResponseReceivedHandler;
@@ -741,10 +806,10 @@ namespace Model
 
         /**
          * <p>Deletes multiple tables at once.</p> <note> <p>After completing this
-         * operation, you will no longer have access to the table versions and partitions
-         * that belong to the deleted table. AWS Glue deletes these "orphaned" resources
+         * operation, you no longer have access to the table versions and partitions that
+         * belong to the deleted table. AWS Glue deletes these "orphaned" resources
          * asynchronously in a timely manner, at the discretion of the service.</p> <p>To
-         * ensure immediate deletion of all related resources, before calling
+         * ensure the immediate deletion of all related resources, before calling
          * <code>BatchDeleteTable</code>, use <code>DeleteTableVersion</code> or
          * <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
          * <code>BatchDeletePartition</code>, to delete any resources that belong to the
@@ -756,10 +821,10 @@ namespace Model
 
         /**
          * <p>Deletes multiple tables at once.</p> <note> <p>After completing this
-         * operation, you will no longer have access to the table versions and partitions
-         * that belong to the deleted table. AWS Glue deletes these "orphaned" resources
+         * operation, you no longer have access to the table versions and partitions that
+         * belong to the deleted table. AWS Glue deletes these "orphaned" resources
          * asynchronously in a timely manner, at the discretion of the service.</p> <p>To
-         * ensure immediate deletion of all related resources, before calling
+         * ensure the immediate deletion of all related resources, before calling
          * <code>BatchDeleteTable</code>, use <code>DeleteTableVersion</code> or
          * <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
          * <code>BatchDeletePartition</code>, to delete any resources that belong to the
@@ -773,10 +838,10 @@ namespace Model
 
         /**
          * <p>Deletes multiple tables at once.</p> <note> <p>After completing this
-         * operation, you will no longer have access to the table versions and partitions
-         * that belong to the deleted table. AWS Glue deletes these "orphaned" resources
+         * operation, you no longer have access to the table versions and partitions that
+         * belong to the deleted table. AWS Glue deletes these "orphaned" resources
          * asynchronously in a timely manner, at the discretion of the service.</p> <p>To
-         * ensure immediate deletion of all related resources, before calling
+         * ensure the immediate deletion of all related resources, before calling
          * <code>BatchDeleteTable</code>, use <code>DeleteTableVersion</code> or
          * <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
          * <code>BatchDeletePartition</code>, to delete any resources that belong to the
@@ -1055,6 +1120,46 @@ namespace Model
         virtual void BatchStopJobRunAsync(const Model::BatchStopJobRunRequest& request, const BatchStopJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Cancels (stops) a task run. Machine learning task runs are asynchronous tasks
+         * that AWS Glue runs on your behalf as part of various machine learning workflows.
+         * You can cancel a machine learning task run at any time by calling
+         * <code>CancelMLTaskRun</code> with a task run's parent transform's
+         * <code>TransformID</code> and the task run's <code>TaskRunId</code>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelMLTaskRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelMLTaskRunOutcome CancelMLTaskRun(const Model::CancelMLTaskRunRequest& request) const;
+
+        /**
+         * <p>Cancels (stops) a task run. Machine learning task runs are asynchronous tasks
+         * that AWS Glue runs on your behalf as part of various machine learning workflows.
+         * You can cancel a machine learning task run at any time by calling
+         * <code>CancelMLTaskRun</code> with a task run's parent transform's
+         * <code>TransformID</code> and the task run's <code>TaskRunId</code>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelMLTaskRun">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CancelMLTaskRunOutcomeCallable CancelMLTaskRunCallable(const Model::CancelMLTaskRunRequest& request) const;
+
+        /**
+         * <p>Cancels (stops) a task run. Machine learning task runs are asynchronous tasks
+         * that AWS Glue runs on your behalf as part of various machine learning workflows.
+         * You can cancel a machine learning task run at any time by calling
+         * <code>CancelMLTaskRun</code> with a task run's parent transform's
+         * <code>TransformID</code> and the task run's <code>TaskRunId</code>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelMLTaskRun">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CancelMLTaskRunAsync(const Model::CancelMLTaskRunRequest& request, const CancelMLTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a classifier in the user's account. This can be a
          * <code>GrokClassifier</code>, an <code>XMLClassifier</code>, a
          * <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which
@@ -1224,6 +1329,67 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateJobAsync(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an AWS Glue machine learning transform. This operation creates the
+         * transform and all the necessary parameters to train it.</p> <p>Call this
+         * operation as the first step in the process of using a machine learning transform
+         * (such as the <code>FindMatches</code> transform) for deduplicating data. You can
+         * provide an optional <code>Description</code>, in addition to the parameters that
+         * you want to use for your algorithm.</p> <p>You must also specify certain
+         * parameters for the tasks that AWS Glue runs on your behalf as part of learning
+         * from your data and creating a high-quality machine learning transform. These
+         * parameters include <code>Role</code>, and optionally,
+         * <code>AllocatedCapacity</code>, <code>Timeout</code>, and
+         * <code>MaxRetries</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html">Jobs</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateMLTransform">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMLTransformOutcome CreateMLTransform(const Model::CreateMLTransformRequest& request) const;
+
+        /**
+         * <p>Creates an AWS Glue machine learning transform. This operation creates the
+         * transform and all the necessary parameters to train it.</p> <p>Call this
+         * operation as the first step in the process of using a machine learning transform
+         * (such as the <code>FindMatches</code> transform) for deduplicating data. You can
+         * provide an optional <code>Description</code>, in addition to the parameters that
+         * you want to use for your algorithm.</p> <p>You must also specify certain
+         * parameters for the tasks that AWS Glue runs on your behalf as part of learning
+         * from your data and creating a high-quality machine learning transform. These
+         * parameters include <code>Role</code>, and optionally,
+         * <code>AllocatedCapacity</code>, <code>Timeout</code>, and
+         * <code>MaxRetries</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html">Jobs</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateMLTransform">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateMLTransformOutcomeCallable CreateMLTransformCallable(const Model::CreateMLTransformRequest& request) const;
+
+        /**
+         * <p>Creates an AWS Glue machine learning transform. This operation creates the
+         * transform and all the necessary parameters to train it.</p> <p>Call this
+         * operation as the first step in the process of using a machine learning transform
+         * (such as the <code>FindMatches</code> transform) for deduplicating data. You can
+         * provide an optional <code>Description</code>, in addition to the parameters that
+         * you want to use for your algorithm.</p> <p>You must also specify certain
+         * parameters for the tasks that AWS Glue runs on your behalf as part of learning
+         * from your data and creating a high-quality machine learning transform. These
+         * parameters include <code>Role</code>, and optionally,
+         * <code>AllocatedCapacity</code>, <code>Timeout</code>, and
+         * <code>MaxRetries</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html">Jobs</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateMLTransform">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateMLTransformAsync(const Model::CreateMLTransformRequest& request, const CreateMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new partition.</p><p><h3>See Also:</h3>   <a
@@ -1503,14 +1669,14 @@ namespace Model
         virtual void DeleteCrawlerAsync(const Model::DeleteCrawlerRequest& request, const DeleteCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a specified Database from a Data Catalog.</p> <note> <p>After
-         * completing this operation, you will no longer have access to the tables (and all
+         * <p>Removes a specified database from a Data Catalog.</p> <note> <p>After
+         * completing this operation, you no longer have access to the tables (and all
          * table versions and partitions that might belong to the tables) and the
          * user-defined functions in the deleted database. AWS Glue deletes these
          * "orphaned" resources asynchronously in a timely manner, at the discretion of the
-         * service.</p> <p>To ensure immediate deletion of all related resources, before
-         * calling <code>DeleteDatabase</code>, use <code>DeleteTableVersion</code> or
-         * <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or
+         * service.</p> <p>To ensure the immediate deletion of all related resources,
+         * before calling <code>DeleteDatabase</code>, use <code>DeleteTableVersion</code>
+         * or <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or
          * <code>BatchDeletePartition</code>, <code>DeleteUserDefinedFunction</code>, and
          * <code>DeleteTable</code> or <code>BatchDeleteTable</code>, to delete any
          * resources that belong to the database.</p> </note><p><h3>See Also:</h3>   <a
@@ -1520,14 +1686,14 @@ namespace Model
         virtual Model::DeleteDatabaseOutcome DeleteDatabase(const Model::DeleteDatabaseRequest& request) const;
 
         /**
-         * <p>Removes a specified Database from a Data Catalog.</p> <note> <p>After
-         * completing this operation, you will no longer have access to the tables (and all
+         * <p>Removes a specified database from a Data Catalog.</p> <note> <p>After
+         * completing this operation, you no longer have access to the tables (and all
          * table versions and partitions that might belong to the tables) and the
          * user-defined functions in the deleted database. AWS Glue deletes these
          * "orphaned" resources asynchronously in a timely manner, at the discretion of the
-         * service.</p> <p>To ensure immediate deletion of all related resources, before
-         * calling <code>DeleteDatabase</code>, use <code>DeleteTableVersion</code> or
-         * <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or
+         * service.</p> <p>To ensure the immediate deletion of all related resources,
+         * before calling <code>DeleteDatabase</code>, use <code>DeleteTableVersion</code>
+         * or <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or
          * <code>BatchDeletePartition</code>, <code>DeleteUserDefinedFunction</code>, and
          * <code>DeleteTable</code> or <code>BatchDeleteTable</code>, to delete any
          * resources that belong to the database.</p> </note><p><h3>See Also:</h3>   <a
@@ -1539,14 +1705,14 @@ namespace Model
         virtual Model::DeleteDatabaseOutcomeCallable DeleteDatabaseCallable(const Model::DeleteDatabaseRequest& request) const;
 
         /**
-         * <p>Removes a specified Database from a Data Catalog.</p> <note> <p>After
-         * completing this operation, you will no longer have access to the tables (and all
+         * <p>Removes a specified database from a Data Catalog.</p> <note> <p>After
+         * completing this operation, you no longer have access to the tables (and all
          * table versions and partitions that might belong to the tables) and the
          * user-defined functions in the deleted database. AWS Glue deletes these
          * "orphaned" resources asynchronously in a timely manner, at the discretion of the
-         * service.</p> <p>To ensure immediate deletion of all related resources, before
-         * calling <code>DeleteDatabase</code>, use <code>DeleteTableVersion</code> or
-         * <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or
+         * service.</p> <p>To ensure the immediate deletion of all related resources,
+         * before calling <code>DeleteDatabase</code>, use <code>DeleteTableVersion</code>
+         * or <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or
          * <code>BatchDeletePartition</code>, <code>DeleteUserDefinedFunction</code>, and
          * <code>DeleteTable</code> or <code>BatchDeleteTable</code>, to delete any
          * resources that belong to the database.</p> </note><p><h3>See Also:</h3>   <a
@@ -1609,6 +1775,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteJobAsync(const Model::DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an AWS Glue machine learning transform. Machine learning transforms
+         * are a special type of transform that use machine learning to learn the details
+         * of the transformation to be performed by learning from examples provided by
+         * humans. These transformations are then saved by AWS Glue. If you no longer need
+         * a transform, you can delete it by calling <code>DeleteMLTransforms</code>.
+         * However, any AWS Glue jobs that still reference the deleted transform will no
+         * longer succeed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteMLTransform">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMLTransformOutcome DeleteMLTransform(const Model::DeleteMLTransformRequest& request) const;
+
+        /**
+         * <p>Deletes an AWS Glue machine learning transform. Machine learning transforms
+         * are a special type of transform that use machine learning to learn the details
+         * of the transformation to be performed by learning from examples provided by
+         * humans. These transformations are then saved by AWS Glue. If you no longer need
+         * a transform, you can delete it by calling <code>DeleteMLTransforms</code>.
+         * However, any AWS Glue jobs that still reference the deleted transform will no
+         * longer succeed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteMLTransform">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteMLTransformOutcomeCallable DeleteMLTransformCallable(const Model::DeleteMLTransformRequest& request) const;
+
+        /**
+         * <p>Deletes an AWS Glue machine learning transform. Machine learning transforms
+         * are a special type of transform that use machine learning to learn the details
+         * of the transformation to be performed by learning from examples provided by
+         * humans. These transformations are then saved by AWS Glue. If you no longer need
+         * a transform, you can delete it by calling <code>DeleteMLTransforms</code>.
+         * However, any AWS Glue jobs that still reference the deleted transform will no
+         * longer succeed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteMLTransform">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteMLTransformAsync(const Model::DeleteMLTransformRequest& request, const DeleteMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a specified partition.</p><p><h3>See Also:</h3>   <a
@@ -1687,11 +1896,11 @@ namespace Model
 
         /**
          * <p>Removes a table definition from the Data Catalog.</p> <note> <p>After
-         * completing this operation, you will no longer have access to the table versions
-         * and partitions that belong to the deleted table. AWS Glue deletes these
-         * "orphaned" resources asynchronously in a timely manner, at the discretion of the
-         * service.</p> <p>To ensure immediate deletion of all related resources, before
-         * calling <code>DeleteTable</code>, use <code>DeleteTableVersion</code> or
+         * completing this operation, you no longer have access to the table versions and
+         * partitions that belong to the deleted table. AWS Glue deletes these "orphaned"
+         * resources asynchronously in a timely manner, at the discretion of the
+         * service.</p> <p>To ensure the immediate deletion of all related resources,
+         * before calling <code>DeleteTable</code>, use <code>DeleteTableVersion</code> or
          * <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
          * <code>BatchDeletePartition</code>, to delete any resources that belong to the
          * table.</p> </note><p><h3>See Also:</h3>   <a
@@ -1702,11 +1911,11 @@ namespace Model
 
         /**
          * <p>Removes a table definition from the Data Catalog.</p> <note> <p>After
-         * completing this operation, you will no longer have access to the table versions
-         * and partitions that belong to the deleted table. AWS Glue deletes these
-         * "orphaned" resources asynchronously in a timely manner, at the discretion of the
-         * service.</p> <p>To ensure immediate deletion of all related resources, before
-         * calling <code>DeleteTable</code>, use <code>DeleteTableVersion</code> or
+         * completing this operation, you no longer have access to the table versions and
+         * partitions that belong to the deleted table. AWS Glue deletes these "orphaned"
+         * resources asynchronously in a timely manner, at the discretion of the
+         * service.</p> <p>To ensure the immediate deletion of all related resources,
+         * before calling <code>DeleteTable</code>, use <code>DeleteTableVersion</code> or
          * <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
          * <code>BatchDeletePartition</code>, to delete any resources that belong to the
          * table.</p> </note><p><h3>See Also:</h3>   <a
@@ -1719,11 +1928,11 @@ namespace Model
 
         /**
          * <p>Removes a table definition from the Data Catalog.</p> <note> <p>After
-         * completing this operation, you will no longer have access to the table versions
-         * and partitions that belong to the deleted table. AWS Glue deletes these
-         * "orphaned" resources asynchronously in a timely manner, at the discretion of the
-         * service.</p> <p>To ensure immediate deletion of all related resources, before
-         * calling <code>DeleteTable</code>, use <code>DeleteTableVersion</code> or
+         * completing this operation, you no longer have access to the table versions and
+         * partitions that belong to the deleted table. AWS Glue deletes these "orphaned"
+         * resources asynchronously in a timely manner, at the discretion of the
+         * service.</p> <p>To ensure the immediate deletion of all related resources,
+         * before calling <code>DeleteTable</code>, use <code>DeleteTableVersion</code> or
          * <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
          * <code>BatchDeletePartition</code>, to delete any resources that belong to the
          * table.</p> </note><p><h3>See Also:</h3>   <a
@@ -2106,7 +2315,7 @@ namespace Model
         virtual void GetDatabaseAsync(const Model::GetDatabaseRequest& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves all Databases defined in a given Data Catalog.</p><p><h3>See
+         * <p>Retrieves all databases defined in a given Data Catalog.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDatabases">AWS
          * API Reference</a></p>
@@ -2114,7 +2323,7 @@ namespace Model
         virtual Model::GetDatabasesOutcome GetDatabases(const Model::GetDatabasesRequest& request) const;
 
         /**
-         * <p>Retrieves all Databases defined in a given Data Catalog.</p><p><h3>See
+         * <p>Retrieves all databases defined in a given Data Catalog.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDatabases">AWS
          * API Reference</a></p>
@@ -2124,7 +2333,7 @@ namespace Model
         virtual Model::GetDatabasesOutcomeCallable GetDatabasesCallable(const Model::GetDatabasesRequest& request) const;
 
         /**
-         * <p>Retrieves all Databases defined in a given Data Catalog.</p><p><h3>See
+         * <p>Retrieves all databases defined in a given Data Catalog.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDatabases">AWS
          * API Reference</a></p>
@@ -2390,6 +2599,166 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetJobsAsync(const Model::GetJobsRequest& request, const GetJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets details for a specific task run on a machine learning transform. Machine
+         * learning task runs are asynchronous tasks that AWS Glue runs on your behalf as
+         * part of various machine learning workflows. You can check the stats of any task
+         * run by calling <code>GetMLTaskRun</code> with the <code>TaskRunID</code> and its
+         * parent transform's <code>TransformID</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTaskRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMLTaskRunOutcome GetMLTaskRun(const Model::GetMLTaskRunRequest& request) const;
+
+        /**
+         * <p>Gets details for a specific task run on a machine learning transform. Machine
+         * learning task runs are asynchronous tasks that AWS Glue runs on your behalf as
+         * part of various machine learning workflows. You can check the stats of any task
+         * run by calling <code>GetMLTaskRun</code> with the <code>TaskRunID</code> and its
+         * parent transform's <code>TransformID</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTaskRun">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMLTaskRunOutcomeCallable GetMLTaskRunCallable(const Model::GetMLTaskRunRequest& request) const;
+
+        /**
+         * <p>Gets details for a specific task run on a machine learning transform. Machine
+         * learning task runs are asynchronous tasks that AWS Glue runs on your behalf as
+         * part of various machine learning workflows. You can check the stats of any task
+         * run by calling <code>GetMLTaskRun</code> with the <code>TaskRunID</code> and its
+         * parent transform's <code>TransformID</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTaskRun">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMLTaskRunAsync(const Model::GetMLTaskRunRequest& request, const GetMLTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a list of runs for a machine learning transform. Machine learning task
+         * runs are asynchronous tasks that AWS Glue runs on your behalf as part of various
+         * machine learning workflows. You can get a sortable, filterable list of machine
+         * learning task runs by calling <code>GetMLTaskRuns</code> with their parent
+         * transform's <code>TransformID</code> and other optional parameters as documented
+         * in this section.</p> <p>This operation returns a list of historic runs and must
+         * be paginated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTaskRuns">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMLTaskRunsOutcome GetMLTaskRuns(const Model::GetMLTaskRunsRequest& request) const;
+
+        /**
+         * <p>Gets a list of runs for a machine learning transform. Machine learning task
+         * runs are asynchronous tasks that AWS Glue runs on your behalf as part of various
+         * machine learning workflows. You can get a sortable, filterable list of machine
+         * learning task runs by calling <code>GetMLTaskRuns</code> with their parent
+         * transform's <code>TransformID</code> and other optional parameters as documented
+         * in this section.</p> <p>This operation returns a list of historic runs and must
+         * be paginated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTaskRuns">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMLTaskRunsOutcomeCallable GetMLTaskRunsCallable(const Model::GetMLTaskRunsRequest& request) const;
+
+        /**
+         * <p>Gets a list of runs for a machine learning transform. Machine learning task
+         * runs are asynchronous tasks that AWS Glue runs on your behalf as part of various
+         * machine learning workflows. You can get a sortable, filterable list of machine
+         * learning task runs by calling <code>GetMLTaskRuns</code> with their parent
+         * transform's <code>TransformID</code> and other optional parameters as documented
+         * in this section.</p> <p>This operation returns a list of historic runs and must
+         * be paginated.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTaskRuns">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMLTaskRunsAsync(const Model::GetMLTaskRunsRequest& request, const GetMLTaskRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets an AWS Glue machine learning transform artifact and all its
+         * corresponding metadata. Machine learning transforms are a special type of
+         * transform that use machine learning to learn the details of the transformation
+         * to be performed by learning from examples provided by humans. These
+         * transformations are then saved by AWS Glue. You can retrieve their metadata by
+         * calling <code>GetMLTransform</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransform">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMLTransformOutcome GetMLTransform(const Model::GetMLTransformRequest& request) const;
+
+        /**
+         * <p>Gets an AWS Glue machine learning transform artifact and all its
+         * corresponding metadata. Machine learning transforms are a special type of
+         * transform that use machine learning to learn the details of the transformation
+         * to be performed by learning from examples provided by humans. These
+         * transformations are then saved by AWS Glue. You can retrieve their metadata by
+         * calling <code>GetMLTransform</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransform">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMLTransformOutcomeCallable GetMLTransformCallable(const Model::GetMLTransformRequest& request) const;
+
+        /**
+         * <p>Gets an AWS Glue machine learning transform artifact and all its
+         * corresponding metadata. Machine learning transforms are a special type of
+         * transform that use machine learning to learn the details of the transformation
+         * to be performed by learning from examples provided by humans. These
+         * transformations are then saved by AWS Glue. You can retrieve their metadata by
+         * calling <code>GetMLTransform</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransform">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMLTransformAsync(const Model::GetMLTransformRequest& request, const GetMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a sortable, filterable list of existing AWS Glue machine learning
+         * transforms. Machine learning transforms are a special type of transform that use
+         * machine learning to learn the details of the transformation to be performed by
+         * learning from examples provided by humans. These transformations are then saved
+         * by AWS Glue, and you can retrieve their metadata by calling
+         * <code>GetMLTransforms</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransforms">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMLTransformsOutcome GetMLTransforms(const Model::GetMLTransformsRequest& request) const;
+
+        /**
+         * <p>Gets a sortable, filterable list of existing AWS Glue machine learning
+         * transforms. Machine learning transforms are a special type of transform that use
+         * machine learning to learn the details of the transformation to be performed by
+         * learning from examples provided by humans. These transformations are then saved
+         * by AWS Glue, and you can retrieve their metadata by calling
+         * <code>GetMLTransforms</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransforms">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMLTransformsOutcomeCallable GetMLTransformsCallable(const Model::GetMLTransformsRequest& request) const;
+
+        /**
+         * <p>Gets a sortable, filterable list of existing AWS Glue machine learning
+         * transforms. Machine learning transforms are a special type of transform that use
+         * machine learning to learn the details of the transformation to be performed by
+         * learning from examples provided by humans. These transformations are then saved
+         * by AWS Glue, and you can retrieve their metadata by calling
+         * <code>GetMLTransforms</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransforms">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMLTransformsAsync(const Model::GetMLTransformsRequest& request, const GetMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates mappings.</p><p><h3>See Also:</h3>   <a
@@ -2788,16 +3157,16 @@ namespace Model
         virtual void GetUserDefinedFunctionAsync(const Model::GetUserDefinedFunctionRequest& request, const GetUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a multiple function definitions from the Data
-         * Catalog.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves multiple function definitions from the Data Catalog.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUserDefinedFunctions">AWS
          * API Reference</a></p>
          */
         virtual Model::GetUserDefinedFunctionsOutcome GetUserDefinedFunctions(const Model::GetUserDefinedFunctionsRequest& request) const;
 
         /**
-         * <p>Retrieves a multiple function definitions from the Data
-         * Catalog.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves multiple function definitions from the Data Catalog.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUserDefinedFunctions">AWS
          * API Reference</a></p>
          *
@@ -2806,8 +3175,8 @@ namespace Model
         virtual Model::GetUserDefinedFunctionsOutcomeCallable GetUserDefinedFunctionsCallable(const Model::GetUserDefinedFunctionsRequest& request) const;
 
         /**
-         * <p>Retrieves a multiple function definitions from the Data
-         * Catalog.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves multiple function definitions from the Data Catalog.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUserDefinedFunctions">AWS
          * API Reference</a></p>
          *
@@ -2925,16 +3294,16 @@ namespace Model
         virtual void GetWorkflowRunsAsync(const Model::GetWorkflowRunsRequest& request, const GetWorkflowRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Imports an existing Athena Data Catalog to AWS Glue</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Imports an existing Amazon Athena Data Catalog to AWS Glue</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ImportCatalogToGlue">AWS
          * API Reference</a></p>
          */
         virtual Model::ImportCatalogToGlueOutcome ImportCatalogToGlue(const Model::ImportCatalogToGlueRequest& request) const;
 
         /**
-         * <p>Imports an existing Athena Data Catalog to AWS Glue</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Imports an existing Amazon Athena Data Catalog to AWS Glue</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ImportCatalogToGlue">AWS
          * API Reference</a></p>
          *
@@ -2943,8 +3312,8 @@ namespace Model
         virtual Model::ImportCatalogToGlueOutcomeCallable ImportCatalogToGlueCallable(const Model::ImportCatalogToGlueRequest& request) const;
 
         /**
-         * <p>Imports an existing Athena Data Catalog to AWS Glue</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Imports an existing Amazon Athena Data Catalog to AWS Glue</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ImportCatalogToGlue">AWS
          * API Reference</a></p>
          *
@@ -3271,6 +3640,55 @@ namespace Model
         virtual void ResetJobBookmarkAsync(const Model::ResetJobBookmarkRequest& request, const ResetJobBookmarkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Searches a set of tables based on properties in the table metadata as well as
+         * on the parent database. You can search against text or filter conditions. </p>
+         * <p>You can only get tables that you have access to based on the security
+         * policies defined in Lake Formation. You need at least a read-only access to the
+         * table for it to be returned. If you do not have access to all the columns in the
+         * table, these columns will not be searched against when returning the list of
+         * tables back to you. If you have access to the columns but not the data in the
+         * columns, those columns and the associated metadata for those columns will be
+         * included in the search. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SearchTables">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchTablesOutcome SearchTables(const Model::SearchTablesRequest& request) const;
+
+        /**
+         * <p>Searches a set of tables based on properties in the table metadata as well as
+         * on the parent database. You can search against text or filter conditions. </p>
+         * <p>You can only get tables that you have access to based on the security
+         * policies defined in Lake Formation. You need at least a read-only access to the
+         * table for it to be returned. If you do not have access to all the columns in the
+         * table, these columns will not be searched against when returning the list of
+         * tables back to you. If you have access to the columns but not the data in the
+         * columns, those columns and the associated metadata for those columns will be
+         * included in the search. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SearchTables">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchTablesOutcomeCallable SearchTablesCallable(const Model::SearchTablesRequest& request) const;
+
+        /**
+         * <p>Searches a set of tables based on properties in the table metadata as well as
+         * on the parent database. You can search against text or filter conditions. </p>
+         * <p>You can only get tables that you have access to based on the security
+         * policies defined in Lake Formation. You need at least a read-only access to the
+         * table for it to be returned. If you do not have access to all the columns in the
+         * table, these columns will not be searched against when returning the list of
+         * tables back to you. If you have access to the columns but not the data in the
+         * columns, those columns and the associated metadata for those columns will be
+         * included in the search. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SearchTables">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchTablesAsync(const Model::SearchTablesRequest& request, const SearchTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts a crawl using the specified crawler, regardless of what is scheduled.
          * If the crawler is already running, returns a <a
          * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException">CrawlerRunningException</a>.</p><p><h3>See
@@ -3336,6 +3754,155 @@ namespace Model
         virtual void StartCrawlerScheduleAsync(const Model::StartCrawlerScheduleRequest& request, const StartCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Begins an asynchronous task to export all labeled data for a particular
+         * transform. This task is the only label-related API call that is not part of the
+         * typical active learning workflow. You typically use
+         * <code>StartExportLabelsTaskRun</code> when you want to work with all of your
+         * existing labels at the same time, such as when you want to remove or change
+         * labels that were previously submitted as truth. This API operation accepts the
+         * <code>TransformId</code> whose labels you want to export and an Amazon Simple
+         * Storage Service (Amazon S3) path to export the labels to. The operation returns
+         * a <code>TaskRunId</code>. You can check on the status of your task run by
+         * calling the <code>GetMLTaskRun</code> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartExportLabelsTaskRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartExportLabelsTaskRunOutcome StartExportLabelsTaskRun(const Model::StartExportLabelsTaskRunRequest& request) const;
+
+        /**
+         * <p>Begins an asynchronous task to export all labeled data for a particular
+         * transform. This task is the only label-related API call that is not part of the
+         * typical active learning workflow. You typically use
+         * <code>StartExportLabelsTaskRun</code> when you want to work with all of your
+         * existing labels at the same time, such as when you want to remove or change
+         * labels that were previously submitted as truth. This API operation accepts the
+         * <code>TransformId</code> whose labels you want to export and an Amazon Simple
+         * Storage Service (Amazon S3) path to export the labels to. The operation returns
+         * a <code>TaskRunId</code>. You can check on the status of your task run by
+         * calling the <code>GetMLTaskRun</code> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartExportLabelsTaskRun">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartExportLabelsTaskRunOutcomeCallable StartExportLabelsTaskRunCallable(const Model::StartExportLabelsTaskRunRequest& request) const;
+
+        /**
+         * <p>Begins an asynchronous task to export all labeled data for a particular
+         * transform. This task is the only label-related API call that is not part of the
+         * typical active learning workflow. You typically use
+         * <code>StartExportLabelsTaskRun</code> when you want to work with all of your
+         * existing labels at the same time, such as when you want to remove or change
+         * labels that were previously submitted as truth. This API operation accepts the
+         * <code>TransformId</code> whose labels you want to export and an Amazon Simple
+         * Storage Service (Amazon S3) path to export the labels to. The operation returns
+         * a <code>TaskRunId</code>. You can check on the status of your task run by
+         * calling the <code>GetMLTaskRun</code> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartExportLabelsTaskRun">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartExportLabelsTaskRunAsync(const Model::StartExportLabelsTaskRunRequest& request, const StartExportLabelsTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Enables you to provide additional labels (examples of truth) to be used to
+         * teach the machine learning transform and improve its quality. This API operation
+         * is generally used as part of the active learning workflow that starts with the
+         * <code>StartMLLabelingSetGenerationTaskRun</code> call and that ultimately
+         * results in improving the quality of your machine learning transform. </p>
+         * <p>After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue
+         * machine learning will have generated a series of questions for humans to answer.
+         * (Answering these questions is often called 'labeling' in the machine learning
+         * workflows). In the case of the <code>FindMatches</code> transform, these
+         * questions are of the form, “What is the correct way to group these rows together
+         * into groups composed entirely of matching records?” After the labeling process
+         * is finished, users upload their answers/labels with a call to
+         * <code>StartImportLabelsTaskRun</code>. After
+         * <code>StartImportLabelsTaskRun</code> finishes, all future runs of the machine
+         * learning transform use the new and improved labels and perform a higher-quality
+         * transformation.</p> <p>By default,
+         * <code>StartMLLabelingSetGenerationTaskRun</code> continually learns from and
+         * combines all labels that you upload unless you set <code>Replace</code> to true.
+         * If you set <code>Replace</code> to true, <code>StartImportLabelsTaskRun</code>
+         * deletes and forgets all previously uploaded labels and learns only from the
+         * exact set that you upload. Replacing labels can be helpful if you realize that
+         * you previously uploaded incorrect labels, and you believe that they are having a
+         * negative effect on your transform quality.</p> <p>You can check on the status of
+         * your task run by calling the <code>GetMLTaskRun</code> operation. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartImportLabelsTaskRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartImportLabelsTaskRunOutcome StartImportLabelsTaskRun(const Model::StartImportLabelsTaskRunRequest& request) const;
+
+        /**
+         * <p>Enables you to provide additional labels (examples of truth) to be used to
+         * teach the machine learning transform and improve its quality. This API operation
+         * is generally used as part of the active learning workflow that starts with the
+         * <code>StartMLLabelingSetGenerationTaskRun</code> call and that ultimately
+         * results in improving the quality of your machine learning transform. </p>
+         * <p>After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue
+         * machine learning will have generated a series of questions for humans to answer.
+         * (Answering these questions is often called 'labeling' in the machine learning
+         * workflows). In the case of the <code>FindMatches</code> transform, these
+         * questions are of the form, “What is the correct way to group these rows together
+         * into groups composed entirely of matching records?” After the labeling process
+         * is finished, users upload their answers/labels with a call to
+         * <code>StartImportLabelsTaskRun</code>. After
+         * <code>StartImportLabelsTaskRun</code> finishes, all future runs of the machine
+         * learning transform use the new and improved labels and perform a higher-quality
+         * transformation.</p> <p>By default,
+         * <code>StartMLLabelingSetGenerationTaskRun</code> continually learns from and
+         * combines all labels that you upload unless you set <code>Replace</code> to true.
+         * If you set <code>Replace</code> to true, <code>StartImportLabelsTaskRun</code>
+         * deletes and forgets all previously uploaded labels and learns only from the
+         * exact set that you upload. Replacing labels can be helpful if you realize that
+         * you previously uploaded incorrect labels, and you believe that they are having a
+         * negative effect on your transform quality.</p> <p>You can check on the status of
+         * your task run by calling the <code>GetMLTaskRun</code> operation. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartImportLabelsTaskRun">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartImportLabelsTaskRunOutcomeCallable StartImportLabelsTaskRunCallable(const Model::StartImportLabelsTaskRunRequest& request) const;
+
+        /**
+         * <p>Enables you to provide additional labels (examples of truth) to be used to
+         * teach the machine learning transform and improve its quality. This API operation
+         * is generally used as part of the active learning workflow that starts with the
+         * <code>StartMLLabelingSetGenerationTaskRun</code> call and that ultimately
+         * results in improving the quality of your machine learning transform. </p>
+         * <p>After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue
+         * machine learning will have generated a series of questions for humans to answer.
+         * (Answering these questions is often called 'labeling' in the machine learning
+         * workflows). In the case of the <code>FindMatches</code> transform, these
+         * questions are of the form, “What is the correct way to group these rows together
+         * into groups composed entirely of matching records?” After the labeling process
+         * is finished, users upload their answers/labels with a call to
+         * <code>StartImportLabelsTaskRun</code>. After
+         * <code>StartImportLabelsTaskRun</code> finishes, all future runs of the machine
+         * learning transform use the new and improved labels and perform a higher-quality
+         * transformation.</p> <p>By default,
+         * <code>StartMLLabelingSetGenerationTaskRun</code> continually learns from and
+         * combines all labels that you upload unless you set <code>Replace</code> to true.
+         * If you set <code>Replace</code> to true, <code>StartImportLabelsTaskRun</code>
+         * deletes and forgets all previously uploaded labels and learns only from the
+         * exact set that you upload. Replacing labels can be helpful if you realize that
+         * you previously uploaded incorrect labels, and you believe that they are having a
+         * negative effect on your transform quality.</p> <p>You can check on the status of
+         * your task run by calling the <code>GetMLTaskRun</code> operation. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartImportLabelsTaskRun">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartImportLabelsTaskRunAsync(const Model::StartImportLabelsTaskRunRequest& request, const StartImportLabelsTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts a job run using a job definition.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartJobRun">AWS
          * API Reference</a></p>
@@ -3359,6 +3926,104 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartJobRunAsync(const Model::StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Starts a task to estimate the quality of the transform. </p> <p>When you
+         * provide label sets as examples of truth, AWS Glue machine learning uses some of
+         * those examples to learn from them. The rest of the labels are used as a test to
+         * estimate quality.</p> <p>Returns a unique identifier for the run. You can call
+         * <code>GetMLTaskRun</code> to get more information about the stats of the
+         * <code>EvaluationTaskRun</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMLEvaluationTaskRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMLEvaluationTaskRunOutcome StartMLEvaluationTaskRun(const Model::StartMLEvaluationTaskRunRequest& request) const;
+
+        /**
+         * <p>Starts a task to estimate the quality of the transform. </p> <p>When you
+         * provide label sets as examples of truth, AWS Glue machine learning uses some of
+         * those examples to learn from them. The rest of the labels are used as a test to
+         * estimate quality.</p> <p>Returns a unique identifier for the run. You can call
+         * <code>GetMLTaskRun</code> to get more information about the stats of the
+         * <code>EvaluationTaskRun</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMLEvaluationTaskRun">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartMLEvaluationTaskRunOutcomeCallable StartMLEvaluationTaskRunCallable(const Model::StartMLEvaluationTaskRunRequest& request) const;
+
+        /**
+         * <p>Starts a task to estimate the quality of the transform. </p> <p>When you
+         * provide label sets as examples of truth, AWS Glue machine learning uses some of
+         * those examples to learn from them. The rest of the labels are used as a test to
+         * estimate quality.</p> <p>Returns a unique identifier for the run. You can call
+         * <code>GetMLTaskRun</code> to get more information about the stats of the
+         * <code>EvaluationTaskRun</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMLEvaluationTaskRun">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartMLEvaluationTaskRunAsync(const Model::StartMLEvaluationTaskRunRequest& request, const StartMLEvaluationTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Starts the active learning workflow for your machine learning transform to
+         * improve the transform's quality by generating label sets and adding labels.</p>
+         * <p>When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue
+         * will have generated a "labeling set" or a set of questions for humans to
+         * answer.</p> <p>In the case of the <code>FindMatches</code> transform, these
+         * questions are of the form, “What is the correct way to group these rows together
+         * into groups composed entirely of matching records?” </p> <p>After the labeling
+         * process is finished, you can upload your labels with a call to
+         * <code>StartImportLabelsTaskRun</code>. After
+         * <code>StartImportLabelsTaskRun</code> finishes, all future runs of the machine
+         * learning transform will use the new and improved labels and perform a
+         * higher-quality transformation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMLLabelingSetGenerationTaskRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMLLabelingSetGenerationTaskRunOutcome StartMLLabelingSetGenerationTaskRun(const Model::StartMLLabelingSetGenerationTaskRunRequest& request) const;
+
+        /**
+         * <p>Starts the active learning workflow for your machine learning transform to
+         * improve the transform's quality by generating label sets and adding labels.</p>
+         * <p>When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue
+         * will have generated a "labeling set" or a set of questions for humans to
+         * answer.</p> <p>In the case of the <code>FindMatches</code> transform, these
+         * questions are of the form, “What is the correct way to group these rows together
+         * into groups composed entirely of matching records?” </p> <p>After the labeling
+         * process is finished, you can upload your labels with a call to
+         * <code>StartImportLabelsTaskRun</code>. After
+         * <code>StartImportLabelsTaskRun</code> finishes, all future runs of the machine
+         * learning transform will use the new and improved labels and perform a
+         * higher-quality transformation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMLLabelingSetGenerationTaskRun">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartMLLabelingSetGenerationTaskRunOutcomeCallable StartMLLabelingSetGenerationTaskRunCallable(const Model::StartMLLabelingSetGenerationTaskRunRequest& request) const;
+
+        /**
+         * <p>Starts the active learning workflow for your machine learning transform to
+         * improve the transform's quality by generating label sets and adding labels.</p>
+         * <p>When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue
+         * will have generated a "labeling set" or a set of questions for humans to
+         * answer.</p> <p>In the case of the <code>FindMatches</code> transform, these
+         * questions are of the form, “What is the correct way to group these rows together
+         * into groups composed entirely of matching records?” </p> <p>After the labeling
+         * process is finished, you can upload your labels with a call to
+         * <code>StartImportLabelsTaskRun</code>. After
+         * <code>StartImportLabelsTaskRun</code> finishes, all future runs of the machine
+         * learning transform will use the new and improved labels and perform a
+         * higher-quality transformation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMLLabelingSetGenerationTaskRun">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartMLLabelingSetGenerationTaskRunAsync(const Model::StartMLLabelingSetGenerationTaskRunRequest& request, const StartMLLabelingSetGenerationTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts an existing trigger. See <a
@@ -3762,6 +4427,46 @@ namespace Model
         virtual void UpdateJobAsync(const Model::UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates an existing machine learning transform. Call this operation to tune
+         * the algorithm parameters to achieve better results.</p> <p>After calling this
+         * operation, you can call the <code>StartMLEvaluationTaskRun</code> operation to
+         * assess how well your new parameters achieved your goals (such as improving the
+         * quality of your machine learning transform, or making it more
+         * cost-effective).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateMLTransform">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMLTransformOutcome UpdateMLTransform(const Model::UpdateMLTransformRequest& request) const;
+
+        /**
+         * <p>Updates an existing machine learning transform. Call this operation to tune
+         * the algorithm parameters to achieve better results.</p> <p>After calling this
+         * operation, you can call the <code>StartMLEvaluationTaskRun</code> operation to
+         * assess how well your new parameters achieved your goals (such as improving the
+         * quality of your machine learning transform, or making it more
+         * cost-effective).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateMLTransform">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateMLTransformOutcomeCallable UpdateMLTransformCallable(const Model::UpdateMLTransformRequest& request) const;
+
+        /**
+         * <p>Updates an existing machine learning transform. Call this operation to tune
+         * the algorithm parameters to achieve better results.</p> <p>After calling this
+         * operation, you can call the <code>StartMLEvaluationTaskRun</code> operation to
+         * assess how well your new parameters achieved your goals (such as improving the
+         * quality of your machine learning transform, or making it more
+         * cost-effective).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateMLTransform">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateMLTransformAsync(const Model::UpdateMLTransformRequest& request, const UpdateMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a partition.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdatePartition">AWS
          * API Reference</a></p>
@@ -3905,12 +4610,14 @@ namespace Model
         void BatchGetTriggersAsyncHelper(const Model::BatchGetTriggersRequest& request, const BatchGetTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetWorkflowsAsyncHelper(const Model::BatchGetWorkflowsRequest& request, const BatchGetWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchStopJobRunAsyncHelper(const Model::BatchStopJobRunRequest& request, const BatchStopJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CancelMLTaskRunAsyncHelper(const Model::CancelMLTaskRunRequest& request, const CancelMLTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateClassifierAsyncHelper(const Model::CreateClassifierRequest& request, const CreateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateConnectionAsyncHelper(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCrawlerAsyncHelper(const Model::CreateCrawlerRequest& request, const CreateCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDatabaseAsyncHelper(const Model::CreateDatabaseRequest& request, const CreateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDevEndpointAsyncHelper(const Model::CreateDevEndpointRequest& request, const CreateDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateJobAsyncHelper(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateMLTransformAsyncHelper(const Model::CreateMLTransformRequest& request, const CreateMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePartitionAsyncHelper(const Model::CreatePartitionRequest& request, const CreatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateScriptAsyncHelper(const Model::CreateScriptRequest& request, const CreateScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSecurityConfigurationAsyncHelper(const Model::CreateSecurityConfigurationRequest& request, const CreateSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3924,6 +4631,7 @@ namespace Model
         void DeleteDatabaseAsyncHelper(const Model::DeleteDatabaseRequest& request, const DeleteDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDevEndpointAsyncHelper(const Model::DeleteDevEndpointRequest& request, const DeleteDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteJobAsyncHelper(const Model::DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteMLTransformAsyncHelper(const Model::DeleteMLTransformRequest& request, const DeleteMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePartitionAsyncHelper(const Model::DeletePartitionRequest& request, const DeletePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteResourcePolicyAsyncHelper(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSecurityConfigurationAsyncHelper(const Model::DeleteSecurityConfigurationRequest& request, const DeleteSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3952,6 +4660,10 @@ namespace Model
         void GetJobRunAsyncHelper(const Model::GetJobRunRequest& request, const GetJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobRunsAsyncHelper(const Model::GetJobRunsRequest& request, const GetJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobsAsyncHelper(const Model::GetJobsRequest& request, const GetJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMLTaskRunAsyncHelper(const Model::GetMLTaskRunRequest& request, const GetMLTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMLTaskRunsAsyncHelper(const Model::GetMLTaskRunsRequest& request, const GetMLTaskRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMLTransformAsyncHelper(const Model::GetMLTransformRequest& request, const GetMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMLTransformsAsyncHelper(const Model::GetMLTransformsRequest& request, const GetMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMappingAsyncHelper(const Model::GetMappingRequest& request, const GetMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPartitionAsyncHelper(const Model::GetPartitionRequest& request, const GetPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPartitionsAsyncHelper(const Model::GetPartitionsRequest& request, const GetPartitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3982,9 +4694,14 @@ namespace Model
         void PutResourcePolicyAsyncHelper(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutWorkflowRunPropertiesAsyncHelper(const Model::PutWorkflowRunPropertiesRequest& request, const PutWorkflowRunPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetJobBookmarkAsyncHelper(const Model::ResetJobBookmarkRequest& request, const ResetJobBookmarkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SearchTablesAsyncHelper(const Model::SearchTablesRequest& request, const SearchTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartCrawlerAsyncHelper(const Model::StartCrawlerRequest& request, const StartCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartCrawlerScheduleAsyncHelper(const Model::StartCrawlerScheduleRequest& request, const StartCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartExportLabelsTaskRunAsyncHelper(const Model::StartExportLabelsTaskRunRequest& request, const StartExportLabelsTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartImportLabelsTaskRunAsyncHelper(const Model::StartImportLabelsTaskRunRequest& request, const StartImportLabelsTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartJobRunAsyncHelper(const Model::StartJobRunRequest& request, const StartJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartMLEvaluationTaskRunAsyncHelper(const Model::StartMLEvaluationTaskRunRequest& request, const StartMLEvaluationTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartMLLabelingSetGenerationTaskRunAsyncHelper(const Model::StartMLLabelingSetGenerationTaskRunRequest& request, const StartMLLabelingSetGenerationTaskRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartTriggerAsyncHelper(const Model::StartTriggerRequest& request, const StartTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartWorkflowRunAsyncHelper(const Model::StartWorkflowRunRequest& request, const StartWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopCrawlerAsyncHelper(const Model::StopCrawlerRequest& request, const StopCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3999,6 +4716,7 @@ namespace Model
         void UpdateDatabaseAsyncHelper(const Model::UpdateDatabaseRequest& request, const UpdateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDevEndpointAsyncHelper(const Model::UpdateDevEndpointRequest& request, const UpdateDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateJobAsyncHelper(const Model::UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateMLTransformAsyncHelper(const Model::UpdateMLTransformRequest& request, const UpdateMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePartitionAsyncHelper(const Model::UpdatePartitionRequest& request, const UpdatePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTableAsyncHelper(const Model::UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTriggerAsyncHelper(const Model::UpdateTriggerRequest& request, const UpdateTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

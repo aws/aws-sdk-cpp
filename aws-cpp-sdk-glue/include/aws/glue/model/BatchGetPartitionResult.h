@@ -81,43 +81,43 @@ namespace Model
 
 
     /**
-     * <p>A list of the partition values in the request for which partions were not
+     * <p>A list of the partition values in the request for which partitions were not
      * returned.</p>
      */
     inline const Aws::Vector<PartitionValueList>& GetUnprocessedKeys() const{ return m_unprocessedKeys; }
 
     /**
-     * <p>A list of the partition values in the request for which partions were not
+     * <p>A list of the partition values in the request for which partitions were not
      * returned.</p>
      */
     inline void SetUnprocessedKeys(const Aws::Vector<PartitionValueList>& value) { m_unprocessedKeys = value; }
 
     /**
-     * <p>A list of the partition values in the request for which partions were not
+     * <p>A list of the partition values in the request for which partitions were not
      * returned.</p>
      */
     inline void SetUnprocessedKeys(Aws::Vector<PartitionValueList>&& value) { m_unprocessedKeys = std::move(value); }
 
     /**
-     * <p>A list of the partition values in the request for which partions were not
+     * <p>A list of the partition values in the request for which partitions were not
      * returned.</p>
      */
     inline BatchGetPartitionResult& WithUnprocessedKeys(const Aws::Vector<PartitionValueList>& value) { SetUnprocessedKeys(value); return *this;}
 
     /**
-     * <p>A list of the partition values in the request for which partions were not
+     * <p>A list of the partition values in the request for which partitions were not
      * returned.</p>
      */
     inline BatchGetPartitionResult& WithUnprocessedKeys(Aws::Vector<PartitionValueList>&& value) { SetUnprocessedKeys(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the partition values in the request for which partions were not
+     * <p>A list of the partition values in the request for which partitions were not
      * returned.</p>
      */
     inline BatchGetPartitionResult& AddUnprocessedKeys(const PartitionValueList& value) { m_unprocessedKeys.push_back(value); return *this; }
 
     /**
-     * <p>A list of the partition values in the request for which partions were not
+     * <p>A list of the partition values in the request for which partitions were not
      * returned.</p>
      */
     inline BatchGetPartitionResult& AddUnprocessedKeys(PartitionValueList&& value) { m_unprocessedKeys.push_back(std::move(value)); return *this; }

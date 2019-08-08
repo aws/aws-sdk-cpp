@@ -96,32 +96,32 @@ namespace Model
 
 
     /**
-     * <p>Details about the partition error.</p>
+     * <p>The details about the partition error.</p>
      */
     inline const ErrorDetail& GetErrorDetail() const{ return m_errorDetail; }
 
     /**
-     * <p>Details about the partition error.</p>
+     * <p>The details about the partition error.</p>
      */
     inline bool ErrorDetailHasBeenSet() const { return m_errorDetailHasBeenSet; }
 
     /**
-     * <p>Details about the partition error.</p>
+     * <p>The details about the partition error.</p>
      */
     inline void SetErrorDetail(const ErrorDetail& value) { m_errorDetailHasBeenSet = true; m_errorDetail = value; }
 
     /**
-     * <p>Details about the partition error.</p>
+     * <p>The details about the partition error.</p>
      */
     inline void SetErrorDetail(ErrorDetail&& value) { m_errorDetailHasBeenSet = true; m_errorDetail = std::move(value); }
 
     /**
-     * <p>Details about the partition error.</p>
+     * <p>The details about the partition error.</p>
      */
     inline PartitionError& WithErrorDetail(const ErrorDetail& value) { SetErrorDetail(value); return *this;}
 
     /**
-     * <p>Details about the partition error.</p>
+     * <p>The details about the partition error.</p>
      */
     inline PartitionError& WithErrorDetail(ErrorDetail&& value) { SetErrorDetail(std::move(value)); return *this;}
 

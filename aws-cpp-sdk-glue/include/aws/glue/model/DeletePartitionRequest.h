@@ -47,49 +47,49 @@ namespace Model
 
     /**
      * <p>The ID of the Data Catalog where the partition to be deleted resides. If none
-     * is supplied, the AWS account ID is used by default.</p>
+     * is provided, the AWS account ID is used by default.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
      * <p>The ID of the Data Catalog where the partition to be deleted resides. If none
-     * is supplied, the AWS account ID is used by default.</p>
+     * is provided, the AWS account ID is used by default.</p>
      */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
 
     /**
      * <p>The ID of the Data Catalog where the partition to be deleted resides. If none
-     * is supplied, the AWS account ID is used by default.</p>
+     * is provided, the AWS account ID is used by default.</p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
      * <p>The ID of the Data Catalog where the partition to be deleted resides. If none
-     * is supplied, the AWS account ID is used by default.</p>
+     * is provided, the AWS account ID is used by default.</p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
      * <p>The ID of the Data Catalog where the partition to be deleted resides. If none
-     * is supplied, the AWS account ID is used by default.</p>
+     * is provided, the AWS account ID is used by default.</p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
      * <p>The ID of the Data Catalog where the partition to be deleted resides. If none
-     * is supplied, the AWS account ID is used by default.</p>
+     * is provided, the AWS account ID is used by default.</p>
      */
     inline DeletePartitionRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
      * <p>The ID of the Data Catalog where the partition to be deleted resides. If none
-     * is supplied, the AWS account ID is used by default.</p>
+     * is provided, the AWS account ID is used by default.</p>
      */
     inline DeletePartitionRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Data Catalog where the partition to be deleted resides. If none
-     * is supplied, the AWS account ID is used by default.</p>
+     * is provided, the AWS account ID is used by default.</p>
      */
     inline DeletePartitionRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
@@ -136,42 +136,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the table where the partition to be deleted is located.</p>
+     * <p>The name of the table that contains the partition to be deleted.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
 
     /**
-     * <p>The name of the table where the partition to be deleted is located.</p>
+     * <p>The name of the table that contains the partition to be deleted.</p>
      */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
 
     /**
-     * <p>The name of the table where the partition to be deleted is located.</p>
+     * <p>The name of the table that contains the partition to be deleted.</p>
      */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
-     * <p>The name of the table where the partition to be deleted is located.</p>
+     * <p>The name of the table that contains the partition to be deleted.</p>
      */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
 
     /**
-     * <p>The name of the table where the partition to be deleted is located.</p>
+     * <p>The name of the table that contains the partition to be deleted.</p>
      */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
 
     /**
-     * <p>The name of the table where the partition to be deleted is located.</p>
+     * <p>The name of the table that contains the partition to be deleted.</p>
      */
     inline DeletePartitionRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
 
     /**
-     * <p>The name of the table where the partition to be deleted is located.</p>
+     * <p>The name of the table that contains the partition to be deleted.</p>
      */
     inline DeletePartitionRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the table where the partition to be deleted is located.</p>
+     * <p>The name of the table that contains the partition to be deleted.</p>
      */
     inline DeletePartitionRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
 

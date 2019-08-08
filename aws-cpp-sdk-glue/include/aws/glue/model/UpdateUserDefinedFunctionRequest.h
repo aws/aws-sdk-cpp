@@ -47,49 +47,49 @@ namespace Model
 
     /**
      * <p>The ID of the Data Catalog where the function to be updated is located. If
-     * none is supplied, the AWS account ID is used by default.</p>
+     * none is provided, the AWS account ID is used by default.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
      * <p>The ID of the Data Catalog where the function to be updated is located. If
-     * none is supplied, the AWS account ID is used by default.</p>
+     * none is provided, the AWS account ID is used by default.</p>
      */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
 
     /**
      * <p>The ID of the Data Catalog where the function to be updated is located. If
-     * none is supplied, the AWS account ID is used by default.</p>
+     * none is provided, the AWS account ID is used by default.</p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
      * <p>The ID of the Data Catalog where the function to be updated is located. If
-     * none is supplied, the AWS account ID is used by default.</p>
+     * none is provided, the AWS account ID is used by default.</p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
      * <p>The ID of the Data Catalog where the function to be updated is located. If
-     * none is supplied, the AWS account ID is used by default.</p>
+     * none is provided, the AWS account ID is used by default.</p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
      * <p>The ID of the Data Catalog where the function to be updated is located. If
-     * none is supplied, the AWS account ID is used by default.</p>
+     * none is provided, the AWS account ID is used by default.</p>
      */
     inline UpdateUserDefinedFunctionRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
      * <p>The ID of the Data Catalog where the function to be updated is located. If
-     * none is supplied, the AWS account ID is used by default.</p>
+     * none is provided, the AWS account ID is used by default.</p>
      */
     inline UpdateUserDefinedFunctionRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Data Catalog where the function to be updated is located. If
-     * none is supplied, the AWS account ID is used by default.</p>
+     * none is provided, the AWS account ID is used by default.</p>
      */
     inline UpdateUserDefinedFunctionRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
@@ -185,37 +185,37 @@ namespace Model
 
 
     /**
-     * <p>A <code>FunctionInput</code> object that re-defines the function in the Data
+     * <p>A <code>FunctionInput</code> object that redefines the function in the Data
      * Catalog.</p>
      */
     inline const UserDefinedFunctionInput& GetFunctionInput() const{ return m_functionInput; }
 
     /**
-     * <p>A <code>FunctionInput</code> object that re-defines the function in the Data
+     * <p>A <code>FunctionInput</code> object that redefines the function in the Data
      * Catalog.</p>
      */
     inline bool FunctionInputHasBeenSet() const { return m_functionInputHasBeenSet; }
 
     /**
-     * <p>A <code>FunctionInput</code> object that re-defines the function in the Data
+     * <p>A <code>FunctionInput</code> object that redefines the function in the Data
      * Catalog.</p>
      */
     inline void SetFunctionInput(const UserDefinedFunctionInput& value) { m_functionInputHasBeenSet = true; m_functionInput = value; }
 
     /**
-     * <p>A <code>FunctionInput</code> object that re-defines the function in the Data
+     * <p>A <code>FunctionInput</code> object that redefines the function in the Data
      * Catalog.</p>
      */
     inline void SetFunctionInput(UserDefinedFunctionInput&& value) { m_functionInputHasBeenSet = true; m_functionInput = std::move(value); }
 
     /**
-     * <p>A <code>FunctionInput</code> object that re-defines the function in the Data
+     * <p>A <code>FunctionInput</code> object that redefines the function in the Data
      * Catalog.</p>
      */
     inline UpdateUserDefinedFunctionRequest& WithFunctionInput(const UserDefinedFunctionInput& value) { SetFunctionInput(value); return *this;}
 
     /**
-     * <p>A <code>FunctionInput</code> object that re-defines the function in the Data
+     * <p>A <code>FunctionInput</code> object that redefines the function in the Data
      * Catalog.</p>
      */
     inline UpdateUserDefinedFunctionRequest& WithFunctionInput(UserDefinedFunctionInput&& value) { SetFunctionInput(std::move(value)); return *this;}

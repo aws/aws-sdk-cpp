@@ -98,83 +98,83 @@ namespace Model
 
 
     /**
-     * <p>The name of the catalog database where the table in question is located.</p>
+     * <p>The name of the catalog database in which to create the partition.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     /**
-     * <p>The name of the catalog database where the table in question is located.</p>
+     * <p>The name of the catalog database in which to create the partition.</p>
      */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
-     * <p>The name of the catalog database where the table in question is located.</p>
+     * <p>The name of the catalog database in which to create the partition.</p>
      */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
-     * <p>The name of the catalog database where the table in question is located.</p>
+     * <p>The name of the catalog database in which to create the partition.</p>
      */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
-     * <p>The name of the catalog database where the table in question is located.</p>
+     * <p>The name of the catalog database in which to create the partition.</p>
      */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
 
     /**
-     * <p>The name of the catalog database where the table in question is located.</p>
+     * <p>The name of the catalog database in which to create the partition.</p>
      */
     inline Partition& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     /**
-     * <p>The name of the catalog database where the table in question is located.</p>
+     * <p>The name of the catalog database in which to create the partition.</p>
      */
     inline Partition& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the catalog database where the table in question is located.</p>
+     * <p>The name of the catalog database in which to create the partition.</p>
      */
     inline Partition& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
 
     /**
-     * <p>The name of the table in question.</p>
+     * <p>The name of the database table in which to create the partition.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
 
     /**
-     * <p>The name of the table in question.</p>
+     * <p>The name of the database table in which to create the partition.</p>
      */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
 
     /**
-     * <p>The name of the table in question.</p>
+     * <p>The name of the database table in which to create the partition.</p>
      */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
-     * <p>The name of the table in question.</p>
+     * <p>The name of the database table in which to create the partition.</p>
      */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
 
     /**
-     * <p>The name of the table in question.</p>
+     * <p>The name of the database table in which to create the partition.</p>
      */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
 
     /**
-     * <p>The name of the table in question.</p>
+     * <p>The name of the database table in which to create the partition.</p>
      */
     inline Partition& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
 
     /**
-     * <p>The name of the table in question.</p>
+     * <p>The name of the database table in which to create the partition.</p>
      */
     inline Partition& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the table in question.</p>
+     * <p>The name of the database table in which to create the partition.</p>
      */
     inline Partition& WithTableName(const char* value) { SetTableName(value); return *this;}
 

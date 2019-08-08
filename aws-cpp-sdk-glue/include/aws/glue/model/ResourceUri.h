@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>URIs for function resources.</p><p><h3>See Also:</h3>   <a
+   * <p>The URIs for function resources.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ResourceUri">AWS
    * API Reference</a></p>
    */

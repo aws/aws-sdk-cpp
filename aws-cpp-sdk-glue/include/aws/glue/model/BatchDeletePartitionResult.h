@@ -44,37 +44,37 @@ namespace Model
 
 
     /**
-     * <p>Errors encountered when trying to delete the requested partitions.</p>
+     * <p>The errors encountered when trying to delete the requested partitions.</p>
      */
     inline const Aws::Vector<PartitionError>& GetErrors() const{ return m_errors; }
 
     /**
-     * <p>Errors encountered when trying to delete the requested partitions.</p>
+     * <p>The errors encountered when trying to delete the requested partitions.</p>
      */
     inline void SetErrors(const Aws::Vector<PartitionError>& value) { m_errors = value; }
 
     /**
-     * <p>Errors encountered when trying to delete the requested partitions.</p>
+     * <p>The errors encountered when trying to delete the requested partitions.</p>
      */
     inline void SetErrors(Aws::Vector<PartitionError>&& value) { m_errors = std::move(value); }
 
     /**
-     * <p>Errors encountered when trying to delete the requested partitions.</p>
+     * <p>The errors encountered when trying to delete the requested partitions.</p>
      */
     inline BatchDeletePartitionResult& WithErrors(const Aws::Vector<PartitionError>& value) { SetErrors(value); return *this;}
 
     /**
-     * <p>Errors encountered when trying to delete the requested partitions.</p>
+     * <p>The errors encountered when trying to delete the requested partitions.</p>
      */
     inline BatchDeletePartitionResult& WithErrors(Aws::Vector<PartitionError>&& value) { SetErrors(std::move(value)); return *this;}
 
     /**
-     * <p>Errors encountered when trying to delete the requested partitions.</p>
+     * <p>The errors encountered when trying to delete the requested partitions.</p>
      */
     inline BatchDeletePartitionResult& AddErrors(const PartitionError& value) { m_errors.push_back(value); return *this; }
 
     /**
-     * <p>Errors encountered when trying to delete the requested partitions.</p>
+     * <p>The errors encountered when trying to delete the requested partitions.</p>
      */
     inline BatchDeletePartitionResult& AddErrors(PartitionError&& value) { m_errors.push_back(std::move(value)); return *this; }
 

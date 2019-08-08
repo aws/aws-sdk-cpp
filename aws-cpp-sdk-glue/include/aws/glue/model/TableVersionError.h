@@ -139,32 +139,32 @@ namespace Model
 
 
     /**
-     * <p>Detail about the error.</p>
+     * <p>The details about the error.</p>
      */
     inline const ErrorDetail& GetErrorDetail() const{ return m_errorDetail; }
 
     /**
-     * <p>Detail about the error.</p>
+     * <p>The details about the error.</p>
      */
     inline bool ErrorDetailHasBeenSet() const { return m_errorDetailHasBeenSet; }
 
     /**
-     * <p>Detail about the error.</p>
+     * <p>The details about the error.</p>
      */
     inline void SetErrorDetail(const ErrorDetail& value) { m_errorDetailHasBeenSet = true; m_errorDetail = value; }
 
     /**
-     * <p>Detail about the error.</p>
+     * <p>The details about the error.</p>
      */
     inline void SetErrorDetail(ErrorDetail&& value) { m_errorDetailHasBeenSet = true; m_errorDetail = std::move(value); }
 
     /**
-     * <p>Detail about the error.</p>
+     * <p>The details about the error.</p>
      */
     inline TableVersionError& WithErrorDetail(const ErrorDetail& value) { SetErrorDetail(value); return *this;}
 
     /**
-     * <p>Detail about the error.</p>
+     * <p>The details about the error.</p>
      */
     inline TableVersionError& WithErrorDetail(ErrorDetail&& value) { SetErrorDetail(std::move(value)); return *this;}
 

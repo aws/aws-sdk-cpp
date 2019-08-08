@@ -49,32 +49,32 @@ namespace Model
 
 
     /**
-     * <p>The table in question</p>
+     * <p>The table in question.</p>
      */
     inline const Table& GetTable() const{ return m_table; }
 
     /**
-     * <p>The table in question</p>
+     * <p>The table in question.</p>
      */
     inline bool TableHasBeenSet() const { return m_tableHasBeenSet; }
 
     /**
-     * <p>The table in question</p>
+     * <p>The table in question.</p>
      */
     inline void SetTable(const Table& value) { m_tableHasBeenSet = true; m_table = value; }
 
     /**
-     * <p>The table in question</p>
+     * <p>The table in question.</p>
      */
     inline void SetTable(Table&& value) { m_tableHasBeenSet = true; m_table = std::move(value); }
 
     /**
-     * <p>The table in question</p>
+     * <p>The table in question.</p>
      */
     inline TableVersion& WithTable(const Table& value) { SetTable(value); return *this;}
 
     /**
-     * <p>The table in question</p>
+     * <p>The table in question.</p>
      */
     inline TableVersion& WithTable(Table&& value) { SetTable(std::move(value)); return *this;}
 

@@ -45,7 +45,9 @@ Table::Table() :
     m_viewExpandedTextHasBeenSet(false),
     m_tableTypeHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_createdByHasBeenSet(false)
+    m_createdByHasBeenSet(false),
+    m_isRegisteredWithLakeFormation(false),
+    m_isRegisteredWithLakeFormationHasBeenSet(false)
 {
 }
 
@@ -66,7 +68,9 @@ Table::Table(JsonView jsonValue) :
     m_viewExpandedTextHasBeenSet(false),
     m_tableTypeHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_createdByHasBeenSet(false)
+    m_createdByHasBeenSet(false),
+    m_isRegisteredWithLakeFormation(false),
+    m_isRegisteredWithLakeFormationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -191,6 +195,13 @@ Table& Table::operator =(JsonView jsonValue)
     m_createdByHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IsRegisteredWithLakeFormation"))
+  {
+    m_isRegisteredWithLakeFormation = jsonValue.GetBool("IsRegisteredWithLakeFormation");
+
+    m_isRegisteredWithLakeFormationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -297,6 +308,12 @@ JsonValue Table::Jsonize() const
   if(m_createdByHasBeenSet)
   {
    payload.WithString("CreatedBy", m_createdBy);
+
+  }
+
+  if(m_isRegisteredWithLakeFormationHasBeenSet)
+  {
+   payload.WithBool("IsRegisteredWithLakeFormation", m_isRegisteredWithLakeFormation);
 
   }
 

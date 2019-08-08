@@ -217,6 +217,35 @@ namespace Model
      */
     inline ImportSourceCredentialsRequest& WithAuthType(AuthType&& value) { SetAuthType(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Set to <code>false</code> to prevent overwriting the repository source
+     * credentials. Set to <code>true</code> to overwrite the repository source
+     * credentials. The default value is <code>true</code>. </p>
+     */
+    inline bool GetShouldOverwrite() const{ return m_shouldOverwrite; }
+
+    /**
+     * <p> Set to <code>false</code> to prevent overwriting the repository source
+     * credentials. Set to <code>true</code> to overwrite the repository source
+     * credentials. The default value is <code>true</code>. </p>
+     */
+    inline bool ShouldOverwriteHasBeenSet() const { return m_shouldOverwriteHasBeenSet; }
+
+    /**
+     * <p> Set to <code>false</code> to prevent overwriting the repository source
+     * credentials. Set to <code>true</code> to overwrite the repository source
+     * credentials. The default value is <code>true</code>. </p>
+     */
+    inline void SetShouldOverwrite(bool value) { m_shouldOverwriteHasBeenSet = true; m_shouldOverwrite = value; }
+
+    /**
+     * <p> Set to <code>false</code> to prevent overwriting the repository source
+     * credentials. Set to <code>true</code> to overwrite the repository source
+     * credentials. The default value is <code>true</code>. </p>
+     */
+    inline ImportSourceCredentialsRequest& WithShouldOverwrite(bool value) { SetShouldOverwrite(value); return *this;}
+
   private:
 
     Aws::String m_username;
@@ -230,6 +259,9 @@ namespace Model
 
     AuthType m_authType;
     bool m_authTypeHasBeenSet;
+
+    bool m_shouldOverwrite;
+    bool m_shouldOverwriteHasBeenSet;
   };
 
 } // namespace Model

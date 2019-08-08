@@ -46,50 +46,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the catalog in which the partion is to be created. Currently, this
-     * should be the AWS account ID.</p>
+     * <p>The AWS account ID of the catalog in which the partition is to be
+     * created.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
-     * <p>The ID of the catalog in which the partion is to be created. Currently, this
-     * should be the AWS account ID.</p>
+     * <p>The AWS account ID of the catalog in which the partition is to be
+     * created.</p>
      */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
 
     /**
-     * <p>The ID of the catalog in which the partion is to be created. Currently, this
-     * should be the AWS account ID.</p>
+     * <p>The AWS account ID of the catalog in which the partition is to be
+     * created.</p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
-     * <p>The ID of the catalog in which the partion is to be created. Currently, this
-     * should be the AWS account ID.</p>
+     * <p>The AWS account ID of the catalog in which the partition is to be
+     * created.</p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
-     * <p>The ID of the catalog in which the partion is to be created. Currently, this
-     * should be the AWS account ID.</p>
+     * <p>The AWS account ID of the catalog in which the partition is to be
+     * created.</p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
-     * <p>The ID of the catalog in which the partion is to be created. Currently, this
-     * should be the AWS account ID.</p>
+     * <p>The AWS account ID of the catalog in which the partition is to be
+     * created.</p>
      */
     inline CreatePartitionRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
-     * <p>The ID of the catalog in which the partion is to be created. Currently, this
-     * should be the AWS account ID.</p>
+     * <p>The AWS account ID of the catalog in which the partition is to be
+     * created.</p>
      */
     inline CreatePartitionRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the catalog in which the partion is to be created. Currently, this
-     * should be the AWS account ID.</p>
+     * <p>The AWS account ID of the catalog in which the partition is to be
+     * created.</p>
      */
     inline CreatePartitionRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 

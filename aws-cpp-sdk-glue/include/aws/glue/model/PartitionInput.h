@@ -38,7 +38,7 @@ namespace Model
 {
 
   /**
-   * <p>The structure used to create and update a partion.</p><p><h3>See Also:</h3>  
+   * <p>The structure used to create and update a partition.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PartitionInput">AWS
    * API Reference</a></p>

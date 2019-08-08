@@ -17,6 +17,8 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/PrincipalPermissions.h>
 #include <utility>
 
 namespace Aws
@@ -50,200 +52,254 @@ namespace Model
 
 
     /**
-     * <p>Name of the database. For Hive compatibility, this is folded to lowercase
+     * <p>The name of the database. For Hive compatibility, this is folded to lowercase
      * when it is stored.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Name of the database. For Hive compatibility, this is folded to lowercase
+     * <p>The name of the database. For Hive compatibility, this is folded to lowercase
      * when it is stored.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Name of the database. For Hive compatibility, this is folded to lowercase
+     * <p>The name of the database. For Hive compatibility, this is folded to lowercase
      * when it is stored.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Name of the database. For Hive compatibility, this is folded to lowercase
+     * <p>The name of the database. For Hive compatibility, this is folded to lowercase
      * when it is stored.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Name of the database. For Hive compatibility, this is folded to lowercase
+     * <p>The name of the database. For Hive compatibility, this is folded to lowercase
      * when it is stored.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Name of the database. For Hive compatibility, this is folded to lowercase
+     * <p>The name of the database. For Hive compatibility, this is folded to lowercase
      * when it is stored.</p>
      */
     inline DatabaseInput& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Name of the database. For Hive compatibility, this is folded to lowercase
+     * <p>The name of the database. For Hive compatibility, this is folded to lowercase
      * when it is stored.</p>
      */
     inline DatabaseInput& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the database. For Hive compatibility, this is folded to lowercase
+     * <p>The name of the database. For Hive compatibility, this is folded to lowercase
      * when it is stored.</p>
      */
     inline DatabaseInput& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Description of the database</p>
+     * <p>A description of the database.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>Description of the database</p>
+     * <p>A description of the database.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>Description of the database</p>
+     * <p>A description of the database.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>Description of the database</p>
+     * <p>A description of the database.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>Description of the database</p>
+     * <p>A description of the database.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>Description of the database</p>
+     * <p>A description of the database.</p>
      */
     inline DatabaseInput& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Description of the database</p>
+     * <p>A description of the database.</p>
      */
     inline DatabaseInput& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Description of the database</p>
+     * <p>A description of the database.</p>
      */
     inline DatabaseInput& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The location of the database (for example, an HDFS path).</p>
+     * <p>The location of the database (for example, an HDFS path). </p>
      */
     inline const Aws::String& GetLocationUri() const{ return m_locationUri; }
 
     /**
-     * <p>The location of the database (for example, an HDFS path).</p>
+     * <p>The location of the database (for example, an HDFS path). </p>
      */
     inline bool LocationUriHasBeenSet() const { return m_locationUriHasBeenSet; }
 
     /**
-     * <p>The location of the database (for example, an HDFS path).</p>
+     * <p>The location of the database (for example, an HDFS path). </p>
      */
     inline void SetLocationUri(const Aws::String& value) { m_locationUriHasBeenSet = true; m_locationUri = value; }
 
     /**
-     * <p>The location of the database (for example, an HDFS path).</p>
+     * <p>The location of the database (for example, an HDFS path). </p>
      */
     inline void SetLocationUri(Aws::String&& value) { m_locationUriHasBeenSet = true; m_locationUri = std::move(value); }
 
     /**
-     * <p>The location of the database (for example, an HDFS path).</p>
+     * <p>The location of the database (for example, an HDFS path). </p>
      */
     inline void SetLocationUri(const char* value) { m_locationUriHasBeenSet = true; m_locationUri.assign(value); }
 
     /**
-     * <p>The location of the database (for example, an HDFS path).</p>
+     * <p>The location of the database (for example, an HDFS path). </p>
      */
     inline DatabaseInput& WithLocationUri(const Aws::String& value) { SetLocationUri(value); return *this;}
 
     /**
-     * <p>The location of the database (for example, an HDFS path).</p>
+     * <p>The location of the database (for example, an HDFS path). </p>
      */
     inline DatabaseInput& WithLocationUri(Aws::String&& value) { SetLocationUri(std::move(value)); return *this;}
 
     /**
-     * <p>The location of the database (for example, an HDFS path).</p>
+     * <p>The location of the database (for example, an HDFS path). </p>
      */
     inline DatabaseInput& WithLocationUri(const char* value) { SetLocationUri(value); return *this;}
 
 
     /**
-     * <p>Thes key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>Thes key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>Thes key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>Thes key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>Thes key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
      */
     inline DatabaseInput& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>Thes key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
      */
     inline DatabaseInput& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>Thes key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
      */
     inline DatabaseInput& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
-     * <p>Thes key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
      */
     inline DatabaseInput& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Thes key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
      */
     inline DatabaseInput& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Thes key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
      */
     inline DatabaseInput& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Thes key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
      */
     inline DatabaseInput& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Thes key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
      */
     inline DatabaseInput& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Thes key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
+     * <p>These key-value pairs define parameters and properties of the database.</p>
      */
     inline DatabaseInput& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>Creates a set of default permissions on the table for principals. </p>
+     */
+    inline const Aws::Vector<PrincipalPermissions>& GetCreateTableDefaultPermissions() const{ return m_createTableDefaultPermissions; }
+
+    /**
+     * <p>Creates a set of default permissions on the table for principals. </p>
+     */
+    inline bool CreateTableDefaultPermissionsHasBeenSet() const { return m_createTableDefaultPermissionsHasBeenSet; }
+
+    /**
+     * <p>Creates a set of default permissions on the table for principals. </p>
+     */
+    inline void SetCreateTableDefaultPermissions(const Aws::Vector<PrincipalPermissions>& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions = value; }
+
+    /**
+     * <p>Creates a set of default permissions on the table for principals. </p>
+     */
+    inline void SetCreateTableDefaultPermissions(Aws::Vector<PrincipalPermissions>&& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions = std::move(value); }
+
+    /**
+     * <p>Creates a set of default permissions on the table for principals. </p>
+     */
+    inline DatabaseInput& WithCreateTableDefaultPermissions(const Aws::Vector<PrincipalPermissions>& value) { SetCreateTableDefaultPermissions(value); return *this;}
+
+    /**
+     * <p>Creates a set of default permissions on the table for principals. </p>
+     */
+    inline DatabaseInput& WithCreateTableDefaultPermissions(Aws::Vector<PrincipalPermissions>&& value) { SetCreateTableDefaultPermissions(std::move(value)); return *this;}
+
+    /**
+     * <p>Creates a set of default permissions on the table for principals. </p>
+     */
+    inline DatabaseInput& AddCreateTableDefaultPermissions(const PrincipalPermissions& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions.push_back(value); return *this; }
+
+    /**
+     * <p>Creates a set of default permissions on the table for principals. </p>
+     */
+    inline DatabaseInput& AddCreateTableDefaultPermissions(PrincipalPermissions&& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -258,6 +314,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
+
+    Aws::Vector<PrincipalPermissions> m_createTableDefaultPermissions;
+    bool m_createTableDefaultPermissionsHasBeenSet;
   };
 
 } // namespace Model

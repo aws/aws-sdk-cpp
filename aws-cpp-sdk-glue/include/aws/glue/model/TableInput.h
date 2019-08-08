@@ -39,7 +39,7 @@ namespace Model
 {
 
   /**
-   * <p>Structure used to create or update the table.</p><p><h3>See Also:</h3>   <a
+   * <p>A structure used to define a table.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TableInput">AWS API
    * Reference</a></p>
    */
@@ -53,215 +53,215 @@ namespace Model
 
 
     /**
-     * <p>Name of the table. For Hive compatibility, this is folded to lowercase when
-     * it is stored.</p>
+     * <p>The table name. For Hive compatibility, this is folded to lowercase when it
+     * is stored.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Name of the table. For Hive compatibility, this is folded to lowercase when
-     * it is stored.</p>
+     * <p>The table name. For Hive compatibility, this is folded to lowercase when it
+     * is stored.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Name of the table. For Hive compatibility, this is folded to lowercase when
-     * it is stored.</p>
+     * <p>The table name. For Hive compatibility, this is folded to lowercase when it
+     * is stored.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Name of the table. For Hive compatibility, this is folded to lowercase when
-     * it is stored.</p>
+     * <p>The table name. For Hive compatibility, this is folded to lowercase when it
+     * is stored.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Name of the table. For Hive compatibility, this is folded to lowercase when
-     * it is stored.</p>
+     * <p>The table name. For Hive compatibility, this is folded to lowercase when it
+     * is stored.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Name of the table. For Hive compatibility, this is folded to lowercase when
-     * it is stored.</p>
+     * <p>The table name. For Hive compatibility, this is folded to lowercase when it
+     * is stored.</p>
      */
     inline TableInput& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Name of the table. For Hive compatibility, this is folded to lowercase when
-     * it is stored.</p>
+     * <p>The table name. For Hive compatibility, this is folded to lowercase when it
+     * is stored.</p>
      */
     inline TableInput& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the table. For Hive compatibility, this is folded to lowercase when
-     * it is stored.</p>
+     * <p>The table name. For Hive compatibility, this is folded to lowercase when it
+     * is stored.</p>
      */
     inline TableInput& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Description of the table.</p>
+     * <p>A description of the table.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>Description of the table.</p>
+     * <p>A description of the table.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>Description of the table.</p>
+     * <p>A description of the table.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>Description of the table.</p>
+     * <p>A description of the table.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>Description of the table.</p>
+     * <p>A description of the table.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>Description of the table.</p>
+     * <p>A description of the table.</p>
      */
     inline TableInput& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Description of the table.</p>
+     * <p>A description of the table.</p>
      */
     inline TableInput& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Description of the table.</p>
+     * <p>A description of the table.</p>
      */
     inline TableInput& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>Owner of the table.</p>
+     * <p>The table owner.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>Owner of the table.</p>
+     * <p>The table owner.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p>Owner of the table.</p>
+     * <p>The table owner.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>Owner of the table.</p>
+     * <p>The table owner.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>Owner of the table.</p>
+     * <p>The table owner.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
-     * <p>Owner of the table.</p>
+     * <p>The table owner.</p>
      */
     inline TableInput& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>Owner of the table.</p>
+     * <p>The table owner.</p>
      */
     inline TableInput& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
-     * <p>Owner of the table.</p>
+     * <p>The table owner.</p>
      */
     inline TableInput& WithOwner(const char* value) { SetOwner(value); return *this;}
 
 
     /**
-     * <p>Last time the table was accessed.</p>
+     * <p>The last time that the table was accessed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAccessTime() const{ return m_lastAccessTime; }
 
     /**
-     * <p>Last time the table was accessed.</p>
+     * <p>The last time that the table was accessed.</p>
      */
     inline bool LastAccessTimeHasBeenSet() const { return m_lastAccessTimeHasBeenSet; }
 
     /**
-     * <p>Last time the table was accessed.</p>
+     * <p>The last time that the table was accessed.</p>
      */
     inline void SetLastAccessTime(const Aws::Utils::DateTime& value) { m_lastAccessTimeHasBeenSet = true; m_lastAccessTime = value; }
 
     /**
-     * <p>Last time the table was accessed.</p>
+     * <p>The last time that the table was accessed.</p>
      */
     inline void SetLastAccessTime(Aws::Utils::DateTime&& value) { m_lastAccessTimeHasBeenSet = true; m_lastAccessTime = std::move(value); }
 
     /**
-     * <p>Last time the table was accessed.</p>
+     * <p>The last time that the table was accessed.</p>
      */
     inline TableInput& WithLastAccessTime(const Aws::Utils::DateTime& value) { SetLastAccessTime(value); return *this;}
 
     /**
-     * <p>Last time the table was accessed.</p>
+     * <p>The last time that the table was accessed.</p>
      */
     inline TableInput& WithLastAccessTime(Aws::Utils::DateTime&& value) { SetLastAccessTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>Last time column statistics were computed for this table.</p>
+     * <p>The last time that column statistics were computed for this table.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAnalyzedTime() const{ return m_lastAnalyzedTime; }
 
     /**
-     * <p>Last time column statistics were computed for this table.</p>
+     * <p>The last time that column statistics were computed for this table.</p>
      */
     inline bool LastAnalyzedTimeHasBeenSet() const { return m_lastAnalyzedTimeHasBeenSet; }
 
     /**
-     * <p>Last time column statistics were computed for this table.</p>
+     * <p>The last time that column statistics were computed for this table.</p>
      */
     inline void SetLastAnalyzedTime(const Aws::Utils::DateTime& value) { m_lastAnalyzedTimeHasBeenSet = true; m_lastAnalyzedTime = value; }
 
     /**
-     * <p>Last time column statistics were computed for this table.</p>
+     * <p>The last time that column statistics were computed for this table.</p>
      */
     inline void SetLastAnalyzedTime(Aws::Utils::DateTime&& value) { m_lastAnalyzedTimeHasBeenSet = true; m_lastAnalyzedTime = std::move(value); }
 
     /**
-     * <p>Last time column statistics were computed for this table.</p>
+     * <p>The last time that column statistics were computed for this table.</p>
      */
     inline TableInput& WithLastAnalyzedTime(const Aws::Utils::DateTime& value) { SetLastAnalyzedTime(value); return *this;}
 
     /**
-     * <p>Last time column statistics were computed for this table.</p>
+     * <p>The last time that column statistics were computed for this table.</p>
      */
     inline TableInput& WithLastAnalyzedTime(Aws::Utils::DateTime&& value) { SetLastAnalyzedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>Retention time for this table.</p>
+     * <p>The retention time for this table.</p>
      */
     inline int GetRetention() const{ return m_retention; }
 
     /**
-     * <p>Retention time for this table.</p>
+     * <p>The retention time for this table.</p>
      */
     inline bool RetentionHasBeenSet() const { return m_retentionHasBeenSet; }
 
     /**
-     * <p>Retention time for this table.</p>
+     * <p>The retention time for this table.</p>
      */
     inline void SetRetention(int value) { m_retentionHasBeenSet = true; m_retention = value; }
 
     /**
-     * <p>Retention time for this table.</p>
+     * <p>The retention time for this table.</p>
      */
     inline TableInput& WithRetention(int value) { SetRetention(value); return *this;}
 
@@ -305,73 +305,73 @@ namespace Model
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p> <p>When creating a table used by Athena, and
-     * you do not specify any <code>partitionKeys</code>, you must at least set the
-     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
-     * <code>"PartitionKeys": []</code> </p>
+     * supported as partition keys.</p> <p>When you create a table used by Amazon
+     * Athena, and you do not specify any <code>partitionKeys</code>, you must at least
+     * set the value of <code>partitionKeys</code> to an empty list. For example:</p>
+     * <p> <code>"PartitionKeys": []</code> </p>
      */
     inline const Aws::Vector<Column>& GetPartitionKeys() const{ return m_partitionKeys; }
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p> <p>When creating a table used by Athena, and
-     * you do not specify any <code>partitionKeys</code>, you must at least set the
-     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
-     * <code>"PartitionKeys": []</code> </p>
+     * supported as partition keys.</p> <p>When you create a table used by Amazon
+     * Athena, and you do not specify any <code>partitionKeys</code>, you must at least
+     * set the value of <code>partitionKeys</code> to an empty list. For example:</p>
+     * <p> <code>"PartitionKeys": []</code> </p>
      */
     inline bool PartitionKeysHasBeenSet() const { return m_partitionKeysHasBeenSet; }
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p> <p>When creating a table used by Athena, and
-     * you do not specify any <code>partitionKeys</code>, you must at least set the
-     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
-     * <code>"PartitionKeys": []</code> </p>
+     * supported as partition keys.</p> <p>When you create a table used by Amazon
+     * Athena, and you do not specify any <code>partitionKeys</code>, you must at least
+     * set the value of <code>partitionKeys</code> to an empty list. For example:</p>
+     * <p> <code>"PartitionKeys": []</code> </p>
      */
     inline void SetPartitionKeys(const Aws::Vector<Column>& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys = value; }
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p> <p>When creating a table used by Athena, and
-     * you do not specify any <code>partitionKeys</code>, you must at least set the
-     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
-     * <code>"PartitionKeys": []</code> </p>
+     * supported as partition keys.</p> <p>When you create a table used by Amazon
+     * Athena, and you do not specify any <code>partitionKeys</code>, you must at least
+     * set the value of <code>partitionKeys</code> to an empty list. For example:</p>
+     * <p> <code>"PartitionKeys": []</code> </p>
      */
     inline void SetPartitionKeys(Aws::Vector<Column>&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys = std::move(value); }
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p> <p>When creating a table used by Athena, and
-     * you do not specify any <code>partitionKeys</code>, you must at least set the
-     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
-     * <code>"PartitionKeys": []</code> </p>
+     * supported as partition keys.</p> <p>When you create a table used by Amazon
+     * Athena, and you do not specify any <code>partitionKeys</code>, you must at least
+     * set the value of <code>partitionKeys</code> to an empty list. For example:</p>
+     * <p> <code>"PartitionKeys": []</code> </p>
      */
     inline TableInput& WithPartitionKeys(const Aws::Vector<Column>& value) { SetPartitionKeys(value); return *this;}
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p> <p>When creating a table used by Athena, and
-     * you do not specify any <code>partitionKeys</code>, you must at least set the
-     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
-     * <code>"PartitionKeys": []</code> </p>
+     * supported as partition keys.</p> <p>When you create a table used by Amazon
+     * Athena, and you do not specify any <code>partitionKeys</code>, you must at least
+     * set the value of <code>partitionKeys</code> to an empty list. For example:</p>
+     * <p> <code>"PartitionKeys": []</code> </p>
      */
     inline TableInput& WithPartitionKeys(Aws::Vector<Column>&& value) { SetPartitionKeys(std::move(value)); return *this;}
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p> <p>When creating a table used by Athena, and
-     * you do not specify any <code>partitionKeys</code>, you must at least set the
-     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
-     * <code>"PartitionKeys": []</code> </p>
+     * supported as partition keys.</p> <p>When you create a table used by Amazon
+     * Athena, and you do not specify any <code>partitionKeys</code>, you must at least
+     * set the value of <code>partitionKeys</code> to an empty list. For example:</p>
+     * <p> <code>"PartitionKeys": []</code> </p>
      */
     inline TableInput& AddPartitionKeys(const Column& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys.push_back(value); return *this; }
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p> <p>When creating a table used by Athena, and
-     * you do not specify any <code>partitionKeys</code>, you must at least set the
-     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
-     * <code>"PartitionKeys": []</code> </p>
+     * supported as partition keys.</p> <p>When you create a table used by Amazon
+     * Athena, and you do not specify any <code>partitionKeys</code>, you must at least
+     * set the value of <code>partitionKeys</code> to an empty list. For example:</p>
+     * <p> <code>"PartitionKeys": []</code> </p>
      */
     inline TableInput& AddPartitionKeys(Column&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys.push_back(std::move(value)); return *this; }
 

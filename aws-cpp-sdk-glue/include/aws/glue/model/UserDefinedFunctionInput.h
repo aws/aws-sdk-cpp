@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>A structure used to create or updata a user-defined function.</p><p><h3>See
+   * <p>A structure used to create or update a user-defined function.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UserDefinedFunctionInput">AWS
    * API Reference</a></p>

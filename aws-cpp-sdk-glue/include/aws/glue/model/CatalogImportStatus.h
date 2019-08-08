@@ -50,22 +50,26 @@ namespace Model
 
 
     /**
-     * <p>True if the migration has completed, or False otherwise.</p>
+     * <p> <code>True</code> if the migration has completed, or <code>False</code>
+     * otherwise.</p>
      */
     inline bool GetImportCompleted() const{ return m_importCompleted; }
 
     /**
-     * <p>True if the migration has completed, or False otherwise.</p>
+     * <p> <code>True</code> if the migration has completed, or <code>False</code>
+     * otherwise.</p>
      */
     inline bool ImportCompletedHasBeenSet() const { return m_importCompletedHasBeenSet; }
 
     /**
-     * <p>True if the migration has completed, or False otherwise.</p>
+     * <p> <code>True</code> if the migration has completed, or <code>False</code>
+     * otherwise.</p>
      */
     inline void SetImportCompleted(bool value) { m_importCompletedHasBeenSet = true; m_importCompleted = value; }
 
     /**
-     * <p>True if the migration has completed, or False otherwise.</p>
+     * <p> <code>True</code> if the migration has completed, or <code>False</code>
+     * otherwise.</p>
      */
     inline CatalogImportStatus& WithImportCompleted(bool value) { SetImportCompleted(value); return *this;}
 

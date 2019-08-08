@@ -43,7 +43,7 @@ namespace Model
    * whole connection object again if catalog encryption is also enabled.</p> <p>This
    * encryption requires that you set AWS KMS key permissions to enable or restrict
    * access on the password key according to your security requirements. For example,
-   * you might want only admin users to have decrypt permission on the password
+   * you might want only administrators to have decrypt permission on the password
    * key.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ConnectionPasswordEncryption">AWS
    * API Reference</a></p>

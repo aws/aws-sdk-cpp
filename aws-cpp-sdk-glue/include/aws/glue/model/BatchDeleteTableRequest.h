@@ -46,99 +46,99 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Data Catalog where the table resides. If none is supplied, the
+     * <p>The ID of the Data Catalog where the table resides. If none is provided, the
      * AWS account ID is used by default.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
-     * <p>The ID of the Data Catalog where the table resides. If none is supplied, the
+     * <p>The ID of the Data Catalog where the table resides. If none is provided, the
      * AWS account ID is used by default.</p>
      */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Data Catalog where the table resides. If none is supplied, the
+     * <p>The ID of the Data Catalog where the table resides. If none is provided, the
      * AWS account ID is used by default.</p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
-     * <p>The ID of the Data Catalog where the table resides. If none is supplied, the
+     * <p>The ID of the Data Catalog where the table resides. If none is provided, the
      * AWS account ID is used by default.</p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
-     * <p>The ID of the Data Catalog where the table resides. If none is supplied, the
+     * <p>The ID of the Data Catalog where the table resides. If none is provided, the
      * AWS account ID is used by default.</p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
-     * <p>The ID of the Data Catalog where the table resides. If none is supplied, the
+     * <p>The ID of the Data Catalog where the table resides. If none is provided, the
      * AWS account ID is used by default.</p>
      */
     inline BatchDeleteTableRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
-     * <p>The ID of the Data Catalog where the table resides. If none is supplied, the
+     * <p>The ID of the Data Catalog where the table resides. If none is provided, the
      * AWS account ID is used by default.</p>
      */
     inline BatchDeleteTableRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Data Catalog where the table resides. If none is supplied, the
+     * <p>The ID of the Data Catalog where the table resides. If none is provided, the
      * AWS account ID is used by default.</p>
      */
     inline BatchDeleteTableRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
 
     /**
-     * <p>The name of the catalog database where the tables to delete reside. For Hive
-     * compatibility, this name is entirely lowercase.</p>
+     * <p>The name of the catalog database in which the tables to delete reside. For
+     * Hive compatibility, this name is entirely lowercase.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     /**
-     * <p>The name of the catalog database where the tables to delete reside. For Hive
-     * compatibility, this name is entirely lowercase.</p>
+     * <p>The name of the catalog database in which the tables to delete reside. For
+     * Hive compatibility, this name is entirely lowercase.</p>
      */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
-     * <p>The name of the catalog database where the tables to delete reside. For Hive
-     * compatibility, this name is entirely lowercase.</p>
+     * <p>The name of the catalog database in which the tables to delete reside. For
+     * Hive compatibility, this name is entirely lowercase.</p>
      */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
-     * <p>The name of the catalog database where the tables to delete reside. For Hive
-     * compatibility, this name is entirely lowercase.</p>
+     * <p>The name of the catalog database in which the tables to delete reside. For
+     * Hive compatibility, this name is entirely lowercase.</p>
      */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
-     * <p>The name of the catalog database where the tables to delete reside. For Hive
-     * compatibility, this name is entirely lowercase.</p>
+     * <p>The name of the catalog database in which the tables to delete reside. For
+     * Hive compatibility, this name is entirely lowercase.</p>
      */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
 
     /**
-     * <p>The name of the catalog database where the tables to delete reside. For Hive
-     * compatibility, this name is entirely lowercase.</p>
+     * <p>The name of the catalog database in which the tables to delete reside. For
+     * Hive compatibility, this name is entirely lowercase.</p>
      */
     inline BatchDeleteTableRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     /**
-     * <p>The name of the catalog database where the tables to delete reside. For Hive
-     * compatibility, this name is entirely lowercase.</p>
+     * <p>The name of the catalog database in which the tables to delete reside. For
+     * Hive compatibility, this name is entirely lowercase.</p>
      */
     inline BatchDeleteTableRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the catalog database where the tables to delete reside. For Hive
-     * compatibility, this name is entirely lowercase.</p>
+     * <p>The name of the catalog database in which the tables to delete reside. For
+     * Hive compatibility, this name is entirely lowercase.</p>
      */
     inline BatchDeleteTableRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 

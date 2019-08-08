@@ -153,83 +153,83 @@ namespace Model
 
 
     /**
-     * <p>The unique run identifier associated with the previous job run..</p>
+     * <p>The unique run identifier associated with the previous job run.</p>
      */
     inline const Aws::String& GetPreviousRunId() const{ return m_previousRunId; }
 
     /**
-     * <p>The unique run identifier associated with the previous job run..</p>
+     * <p>The unique run identifier associated with the previous job run.</p>
      */
     inline bool PreviousRunIdHasBeenSet() const { return m_previousRunIdHasBeenSet; }
 
     /**
-     * <p>The unique run identifier associated with the previous job run..</p>
+     * <p>The unique run identifier associated with the previous job run.</p>
      */
     inline void SetPreviousRunId(const Aws::String& value) { m_previousRunIdHasBeenSet = true; m_previousRunId = value; }
 
     /**
-     * <p>The unique run identifier associated with the previous job run..</p>
+     * <p>The unique run identifier associated with the previous job run.</p>
      */
     inline void SetPreviousRunId(Aws::String&& value) { m_previousRunIdHasBeenSet = true; m_previousRunId = std::move(value); }
 
     /**
-     * <p>The unique run identifier associated with the previous job run..</p>
+     * <p>The unique run identifier associated with the previous job run.</p>
      */
     inline void SetPreviousRunId(const char* value) { m_previousRunIdHasBeenSet = true; m_previousRunId.assign(value); }
 
     /**
-     * <p>The unique run identifier associated with the previous job run..</p>
+     * <p>The unique run identifier associated with the previous job run.</p>
      */
     inline JobBookmarkEntry& WithPreviousRunId(const Aws::String& value) { SetPreviousRunId(value); return *this;}
 
     /**
-     * <p>The unique run identifier associated with the previous job run..</p>
+     * <p>The unique run identifier associated with the previous job run.</p>
      */
     inline JobBookmarkEntry& WithPreviousRunId(Aws::String&& value) { SetPreviousRunId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique run identifier associated with the previous job run..</p>
+     * <p>The unique run identifier associated with the previous job run.</p>
      */
     inline JobBookmarkEntry& WithPreviousRunId(const char* value) { SetPreviousRunId(value); return *this;}
 
 
     /**
-     * <p>The unique run identifier associated with this job run.</p>
+     * <p>The run ID number.</p>
      */
     inline const Aws::String& GetRunId() const{ return m_runId; }
 
     /**
-     * <p>The unique run identifier associated with this job run.</p>
+     * <p>The run ID number.</p>
      */
     inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
 
     /**
-     * <p>The unique run identifier associated with this job run.</p>
+     * <p>The run ID number.</p>
      */
     inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
 
     /**
-     * <p>The unique run identifier associated with this job run.</p>
+     * <p>The run ID number.</p>
      */
     inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
 
     /**
-     * <p>The unique run identifier associated with this job run.</p>
+     * <p>The run ID number.</p>
      */
     inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
 
     /**
-     * <p>The unique run identifier associated with this job run.</p>
+     * <p>The run ID number.</p>
      */
     inline JobBookmarkEntry& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
 
     /**
-     * <p>The unique run identifier associated with this job run.</p>
+     * <p>The run ID number.</p>
      */
     inline JobBookmarkEntry& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique run identifier associated with this job run.</p>
+     * <p>The run ID number.</p>
      */
     inline JobBookmarkEntry& WithRunId(const char* value) { SetRunId(value); return *this;}
 

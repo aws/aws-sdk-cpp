@@ -230,18 +230,18 @@ namespace Model
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
      * Catalog encryption settings, this field stores the encrypted password.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
-     * that contains the JDBC driver to use.</p> </li> <li> <p>
-     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
-     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
-     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
-     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
-     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
-     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
-     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
-     * matching will be enforced for the JDBC connection on the client. The default is
-     * false.</p> </li> </ul>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service
+     * (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC
+     * engine to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version
+     * of the JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> -
+     * (Reserved for future use.)</p> </li> <li> <p> <code>INSTANCE_ID</code> - The
+     * instance ID to use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The
+     * URL for the JDBC connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> -
+     * A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL)
+     * with hostname matching is enforced for the JDBC connection on the client. The
+     * default is false.</p> </li> </ul>
      */
     inline const Aws::Map<ConnectionPropertyKey, Aws::String>& GetConnectionProperties() const{ return m_connectionProperties; }
 
@@ -257,18 +257,18 @@ namespace Model
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
      * Catalog encryption settings, this field stores the encrypted password.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
-     * that contains the JDBC driver to use.</p> </li> <li> <p>
-     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
-     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
-     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
-     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
-     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
-     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
-     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
-     * matching will be enforced for the JDBC connection on the client. The default is
-     * false.</p> </li> </ul>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service
+     * (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC
+     * engine to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version
+     * of the JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> -
+     * (Reserved for future use.)</p> </li> <li> <p> <code>INSTANCE_ID</code> - The
+     * instance ID to use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The
+     * URL for the JDBC connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> -
+     * A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL)
+     * with hostname matching is enforced for the JDBC connection on the client. The
+     * default is false.</p> </li> </ul>
      */
     inline bool ConnectionPropertiesHasBeenSet() const { return m_connectionPropertiesHasBeenSet; }
 
@@ -284,18 +284,18 @@ namespace Model
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
      * Catalog encryption settings, this field stores the encrypted password.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
-     * that contains the JDBC driver to use.</p> </li> <li> <p>
-     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
-     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
-     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
-     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
-     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
-     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
-     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
-     * matching will be enforced for the JDBC connection on the client. The default is
-     * false.</p> </li> </ul>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service
+     * (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC
+     * engine to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version
+     * of the JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> -
+     * (Reserved for future use.)</p> </li> <li> <p> <code>INSTANCE_ID</code> - The
+     * instance ID to use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The
+     * URL for the JDBC connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> -
+     * A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL)
+     * with hostname matching is enforced for the JDBC connection on the client. The
+     * default is false.</p> </li> </ul>
      */
     inline void SetConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = value; }
 
@@ -311,18 +311,18 @@ namespace Model
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
      * Catalog encryption settings, this field stores the encrypted password.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
-     * that contains the JDBC driver to use.</p> </li> <li> <p>
-     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
-     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
-     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
-     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
-     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
-     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
-     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
-     * matching will be enforced for the JDBC connection on the client. The default is
-     * false.</p> </li> </ul>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service
+     * (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC
+     * engine to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version
+     * of the JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> -
+     * (Reserved for future use.)</p> </li> <li> <p> <code>INSTANCE_ID</code> - The
+     * instance ID to use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The
+     * URL for the JDBC connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> -
+     * A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL)
+     * with hostname matching is enforced for the JDBC connection on the client. The
+     * default is false.</p> </li> </ul>
      */
     inline void SetConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = std::move(value); }
 
@@ -338,18 +338,18 @@ namespace Model
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
      * Catalog encryption settings, this field stores the encrypted password.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
-     * that contains the JDBC driver to use.</p> </li> <li> <p>
-     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
-     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
-     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
-     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
-     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
-     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
-     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
-     * matching will be enforced for the JDBC connection on the client. The default is
-     * false.</p> </li> </ul>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service
+     * (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC
+     * engine to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version
+     * of the JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> -
+     * (Reserved for future use.)</p> </li> <li> <p> <code>INSTANCE_ID</code> - The
+     * instance ID to use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The
+     * URL for the JDBC connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> -
+     * A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL)
+     * with hostname matching is enforced for the JDBC connection on the client. The
+     * default is false.</p> </li> </ul>
      */
     inline Connection& WithConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { SetConnectionProperties(value); return *this;}
 
@@ -365,18 +365,18 @@ namespace Model
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
      * Catalog encryption settings, this field stores the encrypted password.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
-     * that contains the JDBC driver to use.</p> </li> <li> <p>
-     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
-     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
-     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
-     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
-     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
-     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
-     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
-     * matching will be enforced for the JDBC connection on the client. The default is
-     * false.</p> </li> </ul>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service
+     * (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC
+     * engine to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version
+     * of the JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> -
+     * (Reserved for future use.)</p> </li> <li> <p> <code>INSTANCE_ID</code> - The
+     * instance ID to use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The
+     * URL for the JDBC connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> -
+     * A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL)
+     * with hostname matching is enforced for the JDBC connection on the client. The
+     * default is false.</p> </li> </ul>
      */
     inline Connection& WithConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { SetConnectionProperties(std::move(value)); return *this;}
 
@@ -392,18 +392,18 @@ namespace Model
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
      * Catalog encryption settings, this field stores the encrypted password.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
-     * that contains the JDBC driver to use.</p> </li> <li> <p>
-     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
-     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
-     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
-     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
-     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
-     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
-     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
-     * matching will be enforced for the JDBC connection on the client. The default is
-     * false.</p> </li> </ul>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service
+     * (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC
+     * engine to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version
+     * of the JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> -
+     * (Reserved for future use.)</p> </li> <li> <p> <code>INSTANCE_ID</code> - The
+     * instance ID to use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The
+     * URL for the JDBC connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> -
+     * A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL)
+     * with hostname matching is enforced for the JDBC connection on the client. The
+     * default is false.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 
@@ -419,18 +419,18 @@ namespace Model
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
      * Catalog encryption settings, this field stores the encrypted password.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
-     * that contains the JDBC driver to use.</p> </li> <li> <p>
-     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
-     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
-     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
-     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
-     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
-     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
-     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
-     * matching will be enforced for the JDBC connection on the client. The default is
-     * false.</p> </li> </ul>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service
+     * (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC
+     * engine to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version
+     * of the JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> -
+     * (Reserved for future use.)</p> </li> <li> <p> <code>INSTANCE_ID</code> - The
+     * instance ID to use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The
+     * URL for the JDBC connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> -
+     * A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL)
+     * with hostname matching is enforced for the JDBC connection on the client. The
+     * default is false.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
 
@@ -446,18 +446,18 @@ namespace Model
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
      * Catalog encryption settings, this field stores the encrypted password.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
-     * that contains the JDBC driver to use.</p> </li> <li> <p>
-     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
-     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
-     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
-     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
-     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
-     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
-     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
-     * matching will be enforced for the JDBC connection on the client. The default is
-     * false.</p> </li> </ul>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service
+     * (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC
+     * engine to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version
+     * of the JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> -
+     * (Reserved for future use.)</p> </li> <li> <p> <code>INSTANCE_ID</code> - The
+     * instance ID to use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The
+     * URL for the JDBC connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> -
+     * A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL)
+     * with hostname matching is enforced for the JDBC connection on the client. The
+     * default is false.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, std::move(value)); return *this; }
 
@@ -473,18 +473,18 @@ namespace Model
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
      * Catalog encryption settings, this field stores the encrypted password.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
-     * that contains the JDBC driver to use.</p> </li> <li> <p>
-     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
-     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
-     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
-     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
-     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
-     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
-     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
-     * matching will be enforced for the JDBC connection on the client. The default is
-     * false.</p> </li> </ul>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service
+     * (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC
+     * engine to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version
+     * of the JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> -
+     * (Reserved for future use.)</p> </li> <li> <p> <code>INSTANCE_ID</code> - The
+     * instance ID to use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The
+     * URL for the JDBC connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> -
+     * A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL)
+     * with hostname matching is enforced for the JDBC connection on the client. The
+     * default is false.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -500,18 +500,18 @@ namespace Model
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
      * Catalog encryption settings, this field stores the encrypted password.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
-     * that contains the JDBC driver to use.</p> </li> <li> <p>
-     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
-     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
-     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
-     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
-     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
-     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
-     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
-     * matching will be enforced for the JDBC connection on the client. The default is
-     * false.</p> </li> </ul>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service
+     * (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC
+     * engine to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version
+     * of the JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> -
+     * (Reserved for future use.)</p> </li> <li> <p> <code>INSTANCE_ID</code> - The
+     * instance ID to use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The
+     * URL for the JDBC connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> -
+     * A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL)
+     * with hostname matching is enforced for the JDBC connection on the client. The
+     * default is false.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
 
@@ -527,18 +527,18 @@ namespace Model
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
      * Catalog encryption settings, this field stores the encrypted password.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
-     * that contains the JDBC driver to use.</p> </li> <li> <p>
-     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
-     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
-     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
-     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
-     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
-     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
-     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
-     * matching will be enforced for the JDBC connection on the client. The default is
-     * false.</p> </li> </ul>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service
+     * (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC
+     * engine to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version
+     * of the JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> -
+     * (Reserved for future use.)</p> </li> <li> <p> <code>INSTANCE_ID</code> - The
+     * instance ID to use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The
+     * URL for the JDBC connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> -
+     * A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL)
+     * with hostname matching is enforced for the JDBC connection on the client. The
+     * default is false.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 

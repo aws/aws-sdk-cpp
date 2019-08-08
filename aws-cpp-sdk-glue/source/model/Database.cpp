@@ -33,7 +33,8 @@ Database::Database() :
     m_descriptionHasBeenSet(false),
     m_locationUriHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_createTableDefaultPermissionsHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ Database::Database(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_locationUriHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_createTableDefaultPermissionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -87,6 +89,16 @@ Database& Database::operator =(JsonView jsonValue)
     m_createTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CreateTableDefaultPermissions"))
+  {
+    Array<JsonView> createTableDefaultPermissionsJsonList = jsonValue.GetArray("CreateTableDefaultPermissions");
+    for(unsigned createTableDefaultPermissionsIndex = 0; createTableDefaultPermissionsIndex < createTableDefaultPermissionsJsonList.GetLength(); ++createTableDefaultPermissionsIndex)
+    {
+      m_createTableDefaultPermissions.push_back(createTableDefaultPermissionsJsonList[createTableDefaultPermissionsIndex].AsObject());
+    }
+    m_createTableDefaultPermissionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -126,6 +138,17 @@ JsonValue Database::Jsonize() const
   if(m_createTimeHasBeenSet)
   {
    payload.WithDouble("CreateTime", m_createTime.SecondsWithMSPrecision());
+  }
+
+  if(m_createTableDefaultPermissionsHasBeenSet)
+  {
+   Array<JsonValue> createTableDefaultPermissionsJsonList(m_createTableDefaultPermissions.size());
+   for(unsigned createTableDefaultPermissionsIndex = 0; createTableDefaultPermissionsIndex < createTableDefaultPermissionsJsonList.GetLength(); ++createTableDefaultPermissionsIndex)
+   {
+     createTableDefaultPermissionsJsonList[createTableDefaultPermissionsIndex].AsObject(m_createTableDefaultPermissions[createTableDefaultPermissionsIndex].Jsonize());
+   }
+   payload.WithArray("CreateTableDefaultPermissions", std::move(createTableDefaultPermissionsJsonList));
+
   }
 
   return payload;

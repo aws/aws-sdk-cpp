@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about a serialization/deserialization program (SerDe) which
-   * serves as an extractor and loader.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a serialization/deserialization program (SerDe) that serves
+   * as an extractor and loader.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SerDeInfo">AWS API
    * Reference</a></p>
    */
@@ -91,49 +91,49 @@ namespace Model
 
 
     /**
-     * <p>Usually the class that implements the SerDe. An example is:
+     * <p>Usually the class that implements the SerDe. An example is
      * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
      */
     inline const Aws::String& GetSerializationLibrary() const{ return m_serializationLibrary; }
 
     /**
-     * <p>Usually the class that implements the SerDe. An example is:
+     * <p>Usually the class that implements the SerDe. An example is
      * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
      */
     inline bool SerializationLibraryHasBeenSet() const { return m_serializationLibraryHasBeenSet; }
 
     /**
-     * <p>Usually the class that implements the SerDe. An example is:
+     * <p>Usually the class that implements the SerDe. An example is
      * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
      */
     inline void SetSerializationLibrary(const Aws::String& value) { m_serializationLibraryHasBeenSet = true; m_serializationLibrary = value; }
 
     /**
-     * <p>Usually the class that implements the SerDe. An example is:
+     * <p>Usually the class that implements the SerDe. An example is
      * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
      */
     inline void SetSerializationLibrary(Aws::String&& value) { m_serializationLibraryHasBeenSet = true; m_serializationLibrary = std::move(value); }
 
     /**
-     * <p>Usually the class that implements the SerDe. An example is:
+     * <p>Usually the class that implements the SerDe. An example is
      * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
      */
     inline void SetSerializationLibrary(const char* value) { m_serializationLibraryHasBeenSet = true; m_serializationLibrary.assign(value); }
 
     /**
-     * <p>Usually the class that implements the SerDe. An example is:
+     * <p>Usually the class that implements the SerDe. An example is
      * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
      */
     inline SerDeInfo& WithSerializationLibrary(const Aws::String& value) { SetSerializationLibrary(value); return *this;}
 
     /**
-     * <p>Usually the class that implements the SerDe. An example is:
+     * <p>Usually the class that implements the SerDe. An example is
      * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
      */
     inline SerDeInfo& WithSerializationLibrary(Aws::String&& value) { SetSerializationLibrary(std::move(value)); return *this;}
 
     /**
-     * <p>Usually the class that implements the SerDe. An example is:
+     * <p>Usually the class that implements the SerDe. An example is
      * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
      */
     inline SerDeInfo& WithSerializationLibrary(const char* value) { SetSerializationLibrary(value); return *this;}

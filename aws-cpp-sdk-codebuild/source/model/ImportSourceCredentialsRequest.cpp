@@ -28,7 +28,9 @@ ImportSourceCredentialsRequest::ImportSourceCredentialsRequest() :
     m_serverType(ServerType::NOT_SET),
     m_serverTypeHasBeenSet(false),
     m_authType(AuthType::NOT_SET),
-    m_authTypeHasBeenSet(false)
+    m_authTypeHasBeenSet(false),
+    m_shouldOverwrite(false),
+    m_shouldOverwriteHasBeenSet(false)
 {
 }
 
@@ -56,6 +58,12 @@ Aws::String ImportSourceCredentialsRequest::SerializePayload() const
   if(m_authTypeHasBeenSet)
   {
    payload.WithString("authType", AuthTypeMapper::GetNameForAuthType(m_authType));
+  }
+
+  if(m_shouldOverwriteHasBeenSet)
+  {
+   payload.WithBool("shouldOverwrite", m_shouldOverwrite);
+
   }
 
   return payload.View().WriteReadable();

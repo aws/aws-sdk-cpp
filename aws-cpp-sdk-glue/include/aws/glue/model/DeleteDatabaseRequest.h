@@ -46,97 +46,97 @@ namespace Model
 
     /**
      * <p>The ID of the Data Catalog in which the database resides. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
      * <p>The ID of the Data Catalog in which the database resides. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
 
     /**
      * <p>The ID of the Data Catalog in which the database resides. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
      * <p>The ID of the Data Catalog in which the database resides. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
      * <p>The ID of the Data Catalog in which the database resides. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
      * <p>The ID of the Data Catalog in which the database resides. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline DeleteDatabaseRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
      * <p>The ID of the Data Catalog in which the database resides. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline DeleteDatabaseRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Data Catalog in which the database resides. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline DeleteDatabaseRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
 
     /**
-     * <p>The name of the Database to delete. For Hive compatibility, this must be all
+     * <p>The name of the database to delete. For Hive compatibility, this must be all
      * lowercase.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the Database to delete. For Hive compatibility, this must be all
+     * <p>The name of the database to delete. For Hive compatibility, this must be all
      * lowercase.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the Database to delete. For Hive compatibility, this must be all
+     * <p>The name of the database to delete. For Hive compatibility, this must be all
      * lowercase.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the Database to delete. For Hive compatibility, this must be all
+     * <p>The name of the database to delete. For Hive compatibility, this must be all
      * lowercase.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the Database to delete. For Hive compatibility, this must be all
+     * <p>The name of the database to delete. For Hive compatibility, this must be all
      * lowercase.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the Database to delete. For Hive compatibility, this must be all
+     * <p>The name of the database to delete. For Hive compatibility, this must be all
      * lowercase.</p>
      */
     inline DeleteDatabaseRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the Database to delete. For Hive compatibility, this must be all
+     * <p>The name of the database to delete. For Hive compatibility, this must be all
      * lowercase.</p>
      */
     inline DeleteDatabaseRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Database to delete. For Hive compatibility, this must be all
+     * <p>The name of the database to delete. For Hive compatibility, this must be all
      * lowercase.</p>
      */
     inline DeleteDatabaseRequest& WithName(const char* value) { SetName(value); return *this;}

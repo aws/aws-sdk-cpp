@@ -36,8 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies skewed values in a table. Skewed are ones that occur with very high
-   * frequency.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies skewed values in a table. Skewed values are those that occur with
+   * very high frequency.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SkewedInfo">AWS API
    * Reference</a></p>
    */

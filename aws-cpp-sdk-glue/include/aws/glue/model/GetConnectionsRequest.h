@@ -95,32 +95,32 @@ namespace Model
 
 
     /**
-     * <p>A filter that controls which connections will be returned.</p>
+     * <p>A filter that controls which connections are returned.</p>
      */
     inline const GetConnectionsFilter& GetFilter() const{ return m_filter; }
 
     /**
-     * <p>A filter that controls which connections will be returned.</p>
+     * <p>A filter that controls which connections are returned.</p>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
-     * <p>A filter that controls which connections will be returned.</p>
+     * <p>A filter that controls which connections are returned.</p>
      */
     inline void SetFilter(const GetConnectionsFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>A filter that controls which connections will be returned.</p>
+     * <p>A filter that controls which connections are returned.</p>
      */
     inline void SetFilter(GetConnectionsFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
-     * <p>A filter that controls which connections will be returned.</p>
+     * <p>A filter that controls which connections are returned.</p>
      */
     inline GetConnectionsRequest& WithFilter(const GetConnectionsFilter& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>A filter that controls which connections will be returned.</p>
+     * <p>A filter that controls which connections are returned.</p>
      */
     inline GetConnectionsRequest& WithFilter(GetConnectionsFilter&& value) { SetFilter(std::move(value)); return *this;}
 
@@ -130,7 +130,7 @@ namespace Model
      * password. For instance, the AWS Glue console uses this flag to retrieve the
      * connection, and does not display the password. Set this parameter when the
      * caller might not have permission to use the AWS KMS key to decrypt the password,
-     * but does have permission to access the rest of the connection properties.</p>
+     * but it does have permission to access the rest of the connection properties.</p>
      */
     inline bool GetHidePassword() const{ return m_hidePassword; }
 
@@ -139,7 +139,7 @@ namespace Model
      * password. For instance, the AWS Glue console uses this flag to retrieve the
      * connection, and does not display the password. Set this parameter when the
      * caller might not have permission to use the AWS KMS key to decrypt the password,
-     * but does have permission to access the rest of the connection properties.</p>
+     * but it does have permission to access the rest of the connection properties.</p>
      */
     inline bool HidePasswordHasBeenSet() const { return m_hidePasswordHasBeenSet; }
 
@@ -148,7 +148,7 @@ namespace Model
      * password. For instance, the AWS Glue console uses this flag to retrieve the
      * connection, and does not display the password. Set this parameter when the
      * caller might not have permission to use the AWS KMS key to decrypt the password,
-     * but does have permission to access the rest of the connection properties.</p>
+     * but it does have permission to access the rest of the connection properties.</p>
      */
     inline void SetHidePassword(bool value) { m_hidePasswordHasBeenSet = true; m_hidePassword = value; }
 
@@ -157,7 +157,7 @@ namespace Model
      * password. For instance, the AWS Glue console uses this flag to retrieve the
      * connection, and does not display the password. Set this parameter when the
      * caller might not have permission to use the AWS KMS key to decrypt the password,
-     * but does have permission to access the rest of the connection properties.</p>
+     * but it does have permission to access the rest of the connection properties.</p>
      */
     inline GetConnectionsRequest& WithHidePassword(bool value) { SetHidePassword(value); return *this;}
 
