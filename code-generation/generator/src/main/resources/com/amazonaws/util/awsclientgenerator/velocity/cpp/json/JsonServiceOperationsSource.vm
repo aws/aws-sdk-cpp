@@ -61,14 +61,14 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
   uri.SetQueryString(ss.str());
 #end
 #if($operation.result && $operation.result.shape.hasStreamMembers())
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_${operation.http.method});
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method});
 #elseif($operation.result && $operation.result.shape.hasEventStreamMembers())
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_${operation.http.method});
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method});
 #else
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_${operation.http.method}, ${operation.request.shape.signerName});
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.request.shape.signerName});
 #end
   if(outcome.IsSuccess())
   {
@@ -118,11 +118,11 @@ ${operation.name}Outcome ${className}::${operation.name}() const
   ss << m_uri << "${operation.http.requestUri}";
 #end
 #if($operation.result && $operation.result.shape.hasStreamMembers())
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}");
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}");
 #elseif($operation.request)
-  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}");
+  JsonOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}");
 #else
-  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_${operation.http.method}, Aws::Auth::SIGV4_SIGNER, "${operation.name}");
+  JsonOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, Aws::Auth::SIGV4_SIGNER, "${operation.name}");
 #end
   if(outcome.IsSuccess())
   {
