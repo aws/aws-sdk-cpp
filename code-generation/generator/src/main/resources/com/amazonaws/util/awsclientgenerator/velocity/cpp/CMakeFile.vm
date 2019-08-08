@@ -2,7 +2,7 @@
 #if($metadata.standalone)
 cmake_minimum_required (VERSION 3.1)
 
-project(aws-cpp-sdk-custom-service)
+project(aws-cpp-sdk-${metadata.projectName})
 find_package(AWSSDK REQUIRED COMPONENTS core)
 
 if(CMAKE_HOST_APPLE)
@@ -140,7 +140,7 @@ write_basic_package_version_file(
 export(EXPORT "${PROJECT_NAME}-config"
     FILE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake"
 )
-    
+
 set(ConfigPackageLocation "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
 install(EXPORT "${PROJECT_NAME}-config"
     FILE "${PROJECT_NAME}-config.cmake"

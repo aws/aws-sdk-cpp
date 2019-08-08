@@ -89,6 +89,7 @@ public class C2jModelToGeneratorModelTransformerTest {
         C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel, true);
         Metadata metadata = c2jModelToGeneratorModelTransformer.convertMetadata();
         assertTrue(metadata.isStandalone());
+        assertTrue(metadata.isApigateway());
         assertEquals("service-abbr.execute-api", metadata.getEndpointPrefix());
         assertEquals("application-json", metadata.getProtocol());
     }

@@ -39,6 +39,7 @@ def ParseArguments():
     parser.add_argument("--pathToApiDefinitions", action="store")
     parser.add_argument("--pathToGenerator", action="store")
     parser.add_argument("--prepareTools", help="Makes sure generation environment is setup.", action="store_true")
+    parser.add_argument("--standalone", help="Build custom client as a separete package, with prebuilt C++ SDK as dependency", action="store_true")
     parser.add_argument("--listAll", help="Lists all available SDKs for generation.", action="store_true")
 
     args = vars( parser.parse_args() )
@@ -50,6 +51,7 @@ def ParseArguments():
     argMap[ "pathToApiDefinitions" ] = args["pathToApiDefinitions"] or "./code-generation/api-descriptions"
     argMap[ "pathToGenerator" ] = args["pathToGenerator"] or "./code-generation/generator"
     argMap[ "prepareTools" ] = args["prepareTools"]
+    argMap[ "standalone" ] = args["standalone"]
     argMap[ "listAll" ] = args["listAll"]
 
     return argMap
@@ -87,12 +89,12 @@ def PrepareGenerator(generatorPath):
     process = subprocess.call('mvn package', shell=True)
     os.chdir(currentDir)
 
-def GenerateSdk(generatorPath, sdk, outputDir, namespace, licenseText):
+def GenerateSdk(generatorPath, sdk, outputDir, namespace, licenseText, standalone):
     try:
        with codecs.open(sdk['filePath'], 'rb', 'utf-8') as api_definition:
             api_content = api_definition.read()
             jar_path = join(generatorPath, 'target/aws-client-generator-1.0-SNAPSHOT-jar-with-dependencies.jar')
-            process = Popen(['java', '-jar', jar_path, '--service', sdk['serviceName'], '--version', sdk['apiVersion'], '--namespace', namespace, '--license-text', licenseText, '--language-binding', 'cpp', '--arbitrary'],stdout=PIPE,  stdin=PIPE)
+            process = Popen(['java', '-jar', jar_path, '--service', sdk['serviceName'], '--version', sdk['apiVersion'], '--namespace', namespace, '--license-text', licenseText, '--language-binding', 'cpp', '--arbitrary', '--standalone' if standalone else ''], stdout=PIPE, stdin=PIPE)
             writer = codecs.getwriter('utf-8')
             stdInWriter = writer(process.stdin)
             stdInWriter.write(api_content)
@@ -119,6 +121,6 @@ def Main():
     if arguments['serviceName']:
         print('Generating {} api version {}.'.format(arguments['serviceName'], arguments['apiVersion']))
         key = '{}-{}'.format(arguments['serviceName'], arguments['apiVersion'])
-        GenerateSdk(arguments['pathToGenerator'], sdks[key], arguments['outputLocation'], arguments['namespace'], arguments['licenseText'])
+        GenerateSdk(arguments['pathToGenerator'], sdks[key], arguments['outputLocation'], arguments['namespace'], arguments['licenseText'], arguments['standalone'])
 
 Main()

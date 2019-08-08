@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Generate custom client source code under custom-service/ with API description file located at code-generation/api-description/custom-service.
-python scripts/generate_sdks.py --pathToApiDefinitions=code-generation/api-descriptions/custom-service --outputLocation custom-service --serviceName custom-service --apiVersion 2017-11-03 --namespace Custom --prepareTool
+python scripts/generate_sdks.py --pathToApiDefinitions=code-generation/api-descriptions/custom-service --outputLocation custom-service --serviceName custom-service --apiVersion 2017-11-03 --namespace Custom --prepareTool --standalone
 
 # Build and install aws-cpp-sdk-core
 SDK_ROOT=$(pwd)

@@ -48,7 +48,7 @@ public class C2jModelToGeneratorModelTransformer {
         serviceModel.setVersion(c2jServiceModel.getVersion());
         serviceModel.setDocumentation(formatDocumentation(c2jServiceModel.getDocumentation(), 3));
         serviceModel.setServiceName(c2jServiceModel.getServiceName());
-        
+
         convertShapes();
         convertOperations();
         removeIgnoredOperations();
@@ -111,7 +111,7 @@ public class C2jModelToGeneratorModelTransformer {
         if("api-gateway".equalsIgnoreCase(c2jMetadata.getProtocol())) {
             metadata.setEndpointPrefix(c2jMetadata.getEndpointPrefix() + ".execute-api");
             metadata.setProtocol("application-json");
-            metadata.setStandalone(true);
+            metadata.setApigateway(true);
         } else {
             metadata.setEndpointPrefix(c2jMetadata.getEndpointPrefix());
             metadata.setProtocol(c2jMetadata.getProtocol());
@@ -307,7 +307,7 @@ public class C2jModelToGeneratorModelTransformer {
 
     void removeIgnoredOperations() {
         // Backward propagation to mark all operations containing removed shapes.
-        for (String shapeName : removedShapes) {            
+        for (String shapeName : removedShapes) {
             markRemovedOperations(shapeName);
         }
 
@@ -478,7 +478,7 @@ public class C2jModelToGeneratorModelTransformer {
                     renameShapeMember(shape, name, newName);
                     break;
                 case "BatchUpdateScheduleResult":
-                    shapes.remove(name);                    
+                    shapes.remove(name);
                     break;
                 default:
                     throw new RuntimeException("Unhandled shape name conflict: " + name);

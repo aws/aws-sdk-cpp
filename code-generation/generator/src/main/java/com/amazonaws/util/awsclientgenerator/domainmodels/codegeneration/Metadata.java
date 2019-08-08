@@ -38,6 +38,7 @@ public class Metadata {
     private String timestampFormat;
     private Map<String, String> additionalHeaders;
     private boolean standalone;
+    private boolean apigateway;
     private String serviceId;
 
     // For Host Prefix Injection

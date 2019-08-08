@@ -84,7 +84,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
 }
 #end
 
-#if($metadata.standalone)
+#if($metadata.standalone || $metadata.apigateway)
 ${className}::${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
   const Client::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}) :
   BASECLASS(clientConfiguration, signerProvider,

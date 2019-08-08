@@ -32,7 +32,7 @@ public class main {
     static final String SERVICE_OPTION = "service";
     static final String NAMESPACE = "namespace";
     static final String LICENSE_TEXT = "license-text";
-    static final String STANDALONE_OPTION = "standlone";
+    static final String STANDALONE_OPTION = "standalone";
 
     public static void main(String[] args) throws IOException {
 
