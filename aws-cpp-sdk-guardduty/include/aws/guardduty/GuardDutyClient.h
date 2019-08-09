@@ -369,16 +369,20 @@ namespace Model
         virtual void AcceptInvitationAsync(const Model::AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Archives Amazon GuardDuty findings specified by the list of finding
-         * IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Archives GuardDuty findings specified by the list of finding IDs.</p> <note>
+         * <p>Only the master account can archive findings. Member accounts do not have
+         * permission to archive findings from their accounts.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ArchiveFindings">AWS
          * API Reference</a></p>
          */
         virtual Model::ArchiveFindingsOutcome ArchiveFindings(const Model::ArchiveFindingsRequest& request) const;
 
         /**
-         * <p>Archives Amazon GuardDuty findings specified by the list of finding
-         * IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Archives GuardDuty findings specified by the list of finding IDs.</p> <note>
+         * <p>Only the master account can archive findings. Member accounts do not have
+         * permission to archive findings from their accounts.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ArchiveFindings">AWS
          * API Reference</a></p>
          *
@@ -387,8 +391,10 @@ namespace Model
         virtual Model::ArchiveFindingsOutcomeCallable ArchiveFindingsCallable(const Model::ArchiveFindingsRequest& request) const;
 
         /**
-         * <p>Archives Amazon GuardDuty findings specified by the list of finding
-         * IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Archives GuardDuty findings specified by the list of finding IDs.</p> <note>
+         * <p>Only the master account can archive findings. Member accounts do not have
+         * permission to archive findings from their accounts.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ArchiveFindings">AWS
          * API Reference</a></p>
          *
@@ -397,18 +403,20 @@ namespace Model
         virtual void ArchiveFindingsAsync(const Model::ArchiveFindingsRequest& request, const ArchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a single Amazon GuardDuty detector. A detector is an object that
-         * represents the GuardDuty service. A detector must be created in order for
-         * GuardDuty to become operational.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a single Amazon GuardDuty detector. A detector is a resource that
+         * represents the GuardDuty service. To start using GuardDuty, you must create a
+         * detector in each region that you enable the service. You can have only one
+         * detector per account per region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateDetector">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDetectorOutcome CreateDetector(const Model::CreateDetectorRequest& request) const;
 
         /**
-         * <p>Creates a single Amazon GuardDuty detector. A detector is an object that
-         * represents the GuardDuty service. A detector must be created in order for
-         * GuardDuty to become operational.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a single Amazon GuardDuty detector. A detector is a resource that
+         * represents the GuardDuty service. To start using GuardDuty, you must create a
+         * detector in each region that you enable the service. You can have only one
+         * detector per account per region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateDetector">AWS
          * API Reference</a></p>
          *
@@ -417,9 +425,10 @@ namespace Model
         virtual Model::CreateDetectorOutcomeCallable CreateDetectorCallable(const Model::CreateDetectorRequest& request) const;
 
         /**
-         * <p>Creates a single Amazon GuardDuty detector. A detector is an object that
-         * represents the GuardDuty service. A detector must be created in order for
-         * GuardDuty to become operational.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a single Amazon GuardDuty detector. A detector is a resource that
+         * represents the GuardDuty service. To start using GuardDuty, you must create a
+         * detector in each region that you enable the service. You can have only one
+         * detector per account per region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateDetector">AWS
          * API Reference</a></p>
          *
@@ -997,16 +1006,16 @@ namespace Model
         virtual void GetInvitationsCountAsync(const Model::GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides the details for the GuardDuty master account to the current
-         * GuardDuty member account.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides the details for the GuardDuty master account associated with the
+         * current GuardDuty member account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMasterAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMasterAccountOutcome GetMasterAccount(const Model::GetMasterAccountRequest& request) const;
 
         /**
-         * <p>Provides the details for the GuardDuty master account to the current
-         * GuardDuty member account.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides the details for the GuardDuty master account associated with the
+         * current GuardDuty member account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMasterAccount">AWS
          * API Reference</a></p>
          *
@@ -1015,8 +1024,8 @@ namespace Model
         virtual Model::GetMasterAccountOutcomeCallable GetMasterAccountCallable(const Model::GetMasterAccountRequest& request) const;
 
         /**
-         * <p>Provides the details for the GuardDuty master account to the current
-         * GuardDuty member account.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides the details for the GuardDuty master account associated with the
+         * current GuardDuty member account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMasterAccount">AWS
          * API Reference</a></p>
          *

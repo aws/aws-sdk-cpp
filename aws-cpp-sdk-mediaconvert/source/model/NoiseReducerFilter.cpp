@@ -37,6 +37,7 @@ namespace Aws
         static const int SHARPEN_HASH = HashingUtils::HashString("SHARPEN");
         static const int CONSERVE_HASH = HashingUtils::HashString("CONSERVE");
         static const int SPATIAL_HASH = HashingUtils::HashString("SPATIAL");
+        static const int TEMPORAL_HASH = HashingUtils::HashString("TEMPORAL");
 
 
         NoiseReducerFilter GetNoiseReducerFilterForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return NoiseReducerFilter::SPATIAL;
           }
+          else if (hashCode == TEMPORAL_HASH)
+          {
+            return NoiseReducerFilter::TEMPORAL;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -98,6 +103,8 @@ namespace Aws
             return "CONSERVE";
           case NoiseReducerFilter::SPATIAL:
             return "SPATIAL";
+          case NoiseReducerFilter::TEMPORAL:
+            return "TEMPORAL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

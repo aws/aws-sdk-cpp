@@ -30,8 +30,11 @@
 #include <aws/lex/LexRuntimeServiceClient.h>
 #include <aws/lex/LexRuntimeServiceEndpoint.h>
 #include <aws/lex/LexRuntimeServiceErrorMarshaller.h>
+#include <aws/lex/model/DeleteSessionRequest.h>
+#include <aws/lex/model/GetSessionRequest.h>
 #include <aws/lex/model/PostContentRequest.h>
 #include <aws/lex/model/PostTextRequest.h>
+#include <aws/lex/model/PutSessionRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -103,6 +106,118 @@ void LexRuntimeServiceClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+DeleteSessionOutcome LexRuntimeServiceClient::DeleteSession(const DeleteSessionRequest& request) const
+{
+  if (!request.BotNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSession", "Required field: BotName, is not set");
+    return DeleteSessionOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
+  }
+  if (!request.BotAliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSession", "Required field: BotAlias, is not set");
+    return DeleteSessionOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotAlias]", false));
+  }
+  if (!request.UserIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSession", "Required field: UserId, is not set");
+    return DeleteSessionOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/bot/";
+  ss << request.GetBotName();
+  ss << "/alias/";
+  ss << request.GetBotAlias();
+  ss << "/user/";
+  ss << request.GetUserId();
+  ss << "/session";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteSessionOutcome(DeleteSessionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteSessionOutcome(outcome.GetError());
+  }
+}
+
+DeleteSessionOutcomeCallable LexRuntimeServiceClient::DeleteSessionCallable(const DeleteSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexRuntimeServiceClient::DeleteSessionAsync(const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSessionAsyncHelper( request, handler, context ); } );
+}
+
+void LexRuntimeServiceClient::DeleteSessionAsyncHelper(const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteSession(request), context);
+}
+
+GetSessionOutcome LexRuntimeServiceClient::GetSession(const GetSessionRequest& request) const
+{
+  if (!request.BotNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSession", "Required field: BotName, is not set");
+    return GetSessionOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
+  }
+  if (!request.BotAliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSession", "Required field: BotAlias, is not set");
+    return GetSessionOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotAlias]", false));
+  }
+  if (!request.UserIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSession", "Required field: UserId, is not set");
+    return GetSessionOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/bot/";
+  ss << request.GetBotName();
+  ss << "/alias/";
+  ss << request.GetBotAlias();
+  ss << "/user/";
+  ss << request.GetUserId();
+  ss << "/session";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetSessionOutcome(GetSessionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetSessionOutcome(outcome.GetError());
+  }
+}
+
+GetSessionOutcomeCallable LexRuntimeServiceClient::GetSessionCallable(const GetSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexRuntimeServiceClient::GetSessionAsync(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSessionAsyncHelper( request, handler, context ); } );
+}
+
+void LexRuntimeServiceClient::GetSessionAsyncHelper(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSession(request), context);
 }
 
 PostContentOutcome LexRuntimeServiceClient::PostContent(const PostContentRequest& request) const
@@ -215,5 +330,61 @@ void LexRuntimeServiceClient::PostTextAsync(const PostTextRequest& request, cons
 void LexRuntimeServiceClient::PostTextAsyncHelper(const PostTextRequest& request, const PostTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PostText(request), context);
+}
+
+PutSessionOutcome LexRuntimeServiceClient::PutSession(const PutSessionRequest& request) const
+{
+  if (!request.BotNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutSession", "Required field: BotName, is not set");
+    return PutSessionOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
+  }
+  if (!request.BotAliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutSession", "Required field: BotAlias, is not set");
+    return PutSessionOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotAlias]", false));
+  }
+  if (!request.UserIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutSession", "Required field: UserId, is not set");
+    return PutSessionOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/bot/";
+  ss << request.GetBotName();
+  ss << "/alias/";
+  ss << request.GetBotAlias();
+  ss << "/user/";
+  ss << request.GetUserId();
+  ss << "/session";
+  uri.SetPath(uri.GetPath() + ss.str());
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return PutSessionOutcome(PutSessionResult(outcome.GetResultWithOwnership()));
+  }
+  else
+  {
+    return PutSessionOutcome(outcome.GetError());
+  }
+}
+
+PutSessionOutcomeCallable LexRuntimeServiceClient::PutSessionCallable(const PutSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexRuntimeServiceClient::PutSessionAsync(const PutSessionRequest& request, const PutSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutSessionAsyncHelper( request, handler, context ); } );
+}
+
+void LexRuntimeServiceClient::PutSessionAsyncHelper(const PutSessionRequest& request, const PutSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutSession(request), context);
 }
 

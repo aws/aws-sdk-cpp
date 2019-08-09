@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/CmafEncryptionType.h>
 #include <aws/mediaconvert/model/CmafInitializationVectorInManifest.h>
+#include <aws/mediaconvert/model/SpekeKeyProviderCmaf.h>
 #include <aws/mediaconvert/model/StaticKeyProvider.h>
 #include <aws/mediaconvert/model/CmafKeyProviderType.h>
 #include <utility>
@@ -109,83 +110,114 @@ namespace Model
 
 
     /**
-     * Encrypts the segments with the given encryption scheme. Leave blank to disable.
-     * Selecting 'Disabled' in the web interface also disables encryption.
+     * For DRM with CMAF, the encryption type is always sample AES.
      */
     inline const CmafEncryptionType& GetEncryptionMethod() const{ return m_encryptionMethod; }
 
     /**
-     * Encrypts the segments with the given encryption scheme. Leave blank to disable.
-     * Selecting 'Disabled' in the web interface also disables encryption.
+     * For DRM with CMAF, the encryption type is always sample AES.
      */
     inline bool EncryptionMethodHasBeenSet() const { return m_encryptionMethodHasBeenSet; }
 
     /**
-     * Encrypts the segments with the given encryption scheme. Leave blank to disable.
-     * Selecting 'Disabled' in the web interface also disables encryption.
+     * For DRM with CMAF, the encryption type is always sample AES.
      */
     inline void SetEncryptionMethod(const CmafEncryptionType& value) { m_encryptionMethodHasBeenSet = true; m_encryptionMethod = value; }
 
     /**
-     * Encrypts the segments with the given encryption scheme. Leave blank to disable.
-     * Selecting 'Disabled' in the web interface also disables encryption.
+     * For DRM with CMAF, the encryption type is always sample AES.
      */
     inline void SetEncryptionMethod(CmafEncryptionType&& value) { m_encryptionMethodHasBeenSet = true; m_encryptionMethod = std::move(value); }
 
     /**
-     * Encrypts the segments with the given encryption scheme. Leave blank to disable.
-     * Selecting 'Disabled' in the web interface also disables encryption.
+     * For DRM with CMAF, the encryption type is always sample AES.
      */
     inline CmafEncryptionSettings& WithEncryptionMethod(const CmafEncryptionType& value) { SetEncryptionMethod(value); return *this;}
 
     /**
-     * Encrypts the segments with the given encryption scheme. Leave blank to disable.
-     * Selecting 'Disabled' in the web interface also disables encryption.
+     * For DRM with CMAF, the encryption type is always sample AES.
      */
     inline CmafEncryptionSettings& WithEncryptionMethod(CmafEncryptionType&& value) { SetEncryptionMethod(std::move(value)); return *this;}
 
 
     /**
-     * The Initialization Vector is a 128-bit number used in conjunction with the key
-     * for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the
-     * manifest. Otherwise Initialization Vector is not in the manifest.
+     * When you use DRM with CMAF outputs, choose whether the service writes the
+     * 128-bit encryption initialization vector in the HLS and DASH manifests.
      */
     inline const CmafInitializationVectorInManifest& GetInitializationVectorInManifest() const{ return m_initializationVectorInManifest; }
 
     /**
-     * The Initialization Vector is a 128-bit number used in conjunction with the key
-     * for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the
-     * manifest. Otherwise Initialization Vector is not in the manifest.
+     * When you use DRM with CMAF outputs, choose whether the service writes the
+     * 128-bit encryption initialization vector in the HLS and DASH manifests.
      */
     inline bool InitializationVectorInManifestHasBeenSet() const { return m_initializationVectorInManifestHasBeenSet; }
 
     /**
-     * The Initialization Vector is a 128-bit number used in conjunction with the key
-     * for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the
-     * manifest. Otherwise Initialization Vector is not in the manifest.
+     * When you use DRM with CMAF outputs, choose whether the service writes the
+     * 128-bit encryption initialization vector in the HLS and DASH manifests.
      */
     inline void SetInitializationVectorInManifest(const CmafInitializationVectorInManifest& value) { m_initializationVectorInManifestHasBeenSet = true; m_initializationVectorInManifest = value; }
 
     /**
-     * The Initialization Vector is a 128-bit number used in conjunction with the key
-     * for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the
-     * manifest. Otherwise Initialization Vector is not in the manifest.
+     * When you use DRM with CMAF outputs, choose whether the service writes the
+     * 128-bit encryption initialization vector in the HLS and DASH manifests.
      */
     inline void SetInitializationVectorInManifest(CmafInitializationVectorInManifest&& value) { m_initializationVectorInManifestHasBeenSet = true; m_initializationVectorInManifest = std::move(value); }
 
     /**
-     * The Initialization Vector is a 128-bit number used in conjunction with the key
-     * for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the
-     * manifest. Otherwise Initialization Vector is not in the manifest.
+     * When you use DRM with CMAF outputs, choose whether the service writes the
+     * 128-bit encryption initialization vector in the HLS and DASH manifests.
      */
     inline CmafEncryptionSettings& WithInitializationVectorInManifest(const CmafInitializationVectorInManifest& value) { SetInitializationVectorInManifest(value); return *this;}
 
     /**
-     * The Initialization Vector is a 128-bit number used in conjunction with the key
-     * for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the
-     * manifest. Otherwise Initialization Vector is not in the manifest.
+     * When you use DRM with CMAF outputs, choose whether the service writes the
+     * 128-bit encryption initialization vector in the HLS and DASH manifests.
      */
     inline CmafEncryptionSettings& WithInitializationVectorInManifest(CmafInitializationVectorInManifest&& value) { SetInitializationVectorInManifest(std::move(value)); return *this;}
+
+
+    /**
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider, if your output group type is CMAF. If your output group type is HLS,
+     * MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+     */
+    inline const SpekeKeyProviderCmaf& GetSpekeKeyProvider() const{ return m_spekeKeyProvider; }
+
+    /**
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider, if your output group type is CMAF. If your output group type is HLS,
+     * MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+     */
+    inline bool SpekeKeyProviderHasBeenSet() const { return m_spekeKeyProviderHasBeenSet; }
+
+    /**
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider, if your output group type is CMAF. If your output group type is HLS,
+     * MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+     */
+    inline void SetSpekeKeyProvider(const SpekeKeyProviderCmaf& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = value; }
+
+    /**
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider, if your output group type is CMAF. If your output group type is HLS,
+     * MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+     */
+    inline void SetSpekeKeyProvider(SpekeKeyProviderCmaf&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::move(value); }
+
+    /**
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider, if your output group type is CMAF. If your output group type is HLS,
+     * MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+     */
+    inline CmafEncryptionSettings& WithSpekeKeyProvider(const SpekeKeyProviderCmaf& value) { SetSpekeKeyProvider(value); return *this;}
+
+    /**
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider, if your output group type is CMAF. If your output group type is HLS,
+     * MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+     */
+    inline CmafEncryptionSettings& WithSpekeKeyProvider(SpekeKeyProviderCmaf&& value) { SetSpekeKeyProvider(std::move(value)); return *this;}
 
 
     /**
@@ -220,32 +252,44 @@ namespace Model
 
 
     /**
-     * Indicates which type of key provider is used for encryption.
+     * Specify whether your DRM encryption key is static or from a key provider that
+     * follows the SPEKE standard. For more information about SPEKE, see
+     * https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      */
     inline const CmafKeyProviderType& GetType() const{ return m_type; }
 
     /**
-     * Indicates which type of key provider is used for encryption.
+     * Specify whether your DRM encryption key is static or from a key provider that
+     * follows the SPEKE standard. For more information about SPEKE, see
+     * https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * Indicates which type of key provider is used for encryption.
+     * Specify whether your DRM encryption key is static or from a key provider that
+     * follows the SPEKE standard. For more information about SPEKE, see
+     * https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      */
     inline void SetType(const CmafKeyProviderType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * Indicates which type of key provider is used for encryption.
+     * Specify whether your DRM encryption key is static or from a key provider that
+     * follows the SPEKE standard. For more information about SPEKE, see
+     * https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      */
     inline void SetType(CmafKeyProviderType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * Indicates which type of key provider is used for encryption.
+     * Specify whether your DRM encryption key is static or from a key provider that
+     * follows the SPEKE standard. For more information about SPEKE, see
+     * https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      */
     inline CmafEncryptionSettings& WithType(const CmafKeyProviderType& value) { SetType(value); return *this;}
 
     /**
-     * Indicates which type of key provider is used for encryption.
+     * Specify whether your DRM encryption key is static or from a key provider that
+     * follows the SPEKE standard. For more information about SPEKE, see
+     * https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      */
     inline CmafEncryptionSettings& WithType(CmafKeyProviderType&& value) { SetType(std::move(value)); return *this;}
 
@@ -259,6 +303,9 @@ namespace Model
 
     CmafInitializationVectorInManifest m_initializationVectorInManifest;
     bool m_initializationVectorInManifestHasBeenSet;
+
+    SpekeKeyProviderCmaf m_spekeKeyProvider;
+    bool m_spekeKeyProviderHasBeenSet;
 
     StaticKeyProvider m_staticKeyProvider;
     bool m_staticKeyProviderHasBeenSet;

@@ -1178,32 +1178,56 @@ namespace Model
 
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service
+     * automatically detects. This improves video quality and is enabled by default. If
+     * this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for
+     * further video quality improvement. For more information about QVBR, see
+     * https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      */
     inline const H264SceneChangeDetect& GetSceneChangeDetect() const{ return m_sceneChangeDetect; }
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service
+     * automatically detects. This improves video quality and is enabled by default. If
+     * this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for
+     * further video quality improvement. For more information about QVBR, see
+     * https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      */
     inline bool SceneChangeDetectHasBeenSet() const { return m_sceneChangeDetectHasBeenSet; }
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service
+     * automatically detects. This improves video quality and is enabled by default. If
+     * this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for
+     * further video quality improvement. For more information about QVBR, see
+     * https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      */
     inline void SetSceneChangeDetect(const H264SceneChangeDetect& value) { m_sceneChangeDetectHasBeenSet = true; m_sceneChangeDetect = value; }
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service
+     * automatically detects. This improves video quality and is enabled by default. If
+     * this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for
+     * further video quality improvement. For more information about QVBR, see
+     * https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      */
     inline void SetSceneChangeDetect(H264SceneChangeDetect&& value) { m_sceneChangeDetectHasBeenSet = true; m_sceneChangeDetect = std::move(value); }
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service
+     * automatically detects. This improves video quality and is enabled by default. If
+     * this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for
+     * further video quality improvement. For more information about QVBR, see
+     * https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      */
     inline H264Settings& WithSceneChangeDetect(const H264SceneChangeDetect& value) { SetSceneChangeDetect(value); return *this;}
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service
+     * automatically detects. This improves video quality and is enabled by default. If
+     * this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for
+     * further video quality improvement. For more information about QVBR, see
+     * https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      */
     inline H264Settings& WithSceneChangeDetect(H264SceneChangeDetect&& value) { SetSceneChangeDetect(std::move(value)); return *this;}
 

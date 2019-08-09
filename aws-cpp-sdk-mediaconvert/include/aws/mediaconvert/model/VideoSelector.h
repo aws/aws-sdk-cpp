@@ -52,219 +52,261 @@ namespace Model
 
     /**
      * If your input video has accurate color space metadata, or if you don't know
-     * about color space, leave this set to the default value FOLLOW. The service will
-     * automatically detect your input color space. If your input video has metadata
-     * indicating the wrong color space, or if your input video is missing color space
-     * metadata that should be there, specify the accurate color space here. If you
-     * choose HDR10, you can also correct inaccurate color space coefficients, using
-     * the HDR master display information controls. You must also set Color space usage
-     * (ColorSpaceUsage) to FORCE for the service to use these values.
+     * about color space, leave this set to the default value Follow (FOLLOW). The
+     * service will automatically detect your input color space. If your input video
+     * has metadata indicating the wrong color space, specify the accurate color space
+     * here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display
+     * Color Volume static metadata isn't present in your video stream, or if that
+     * metadata is present but not accurate, choose Force HDR 10 (FORCE_HDR10) here and
+     * specify correct values in the input HDR 10 metadata (Hdr10Metadata) settings.
+     * For more information about MediaConvert HDR jobs, see
+     * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
     inline const ColorSpace& GetColorSpace() const{ return m_colorSpace; }
 
     /**
      * If your input video has accurate color space metadata, or if you don't know
-     * about color space, leave this set to the default value FOLLOW. The service will
-     * automatically detect your input color space. If your input video has metadata
-     * indicating the wrong color space, or if your input video is missing color space
-     * metadata that should be there, specify the accurate color space here. If you
-     * choose HDR10, you can also correct inaccurate color space coefficients, using
-     * the HDR master display information controls. You must also set Color space usage
-     * (ColorSpaceUsage) to FORCE for the service to use these values.
+     * about color space, leave this set to the default value Follow (FOLLOW). The
+     * service will automatically detect your input color space. If your input video
+     * has metadata indicating the wrong color space, specify the accurate color space
+     * here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display
+     * Color Volume static metadata isn't present in your video stream, or if that
+     * metadata is present but not accurate, choose Force HDR 10 (FORCE_HDR10) here and
+     * specify correct values in the input HDR 10 metadata (Hdr10Metadata) settings.
+     * For more information about MediaConvert HDR jobs, see
+     * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
     inline bool ColorSpaceHasBeenSet() const { return m_colorSpaceHasBeenSet; }
 
     /**
      * If your input video has accurate color space metadata, or if you don't know
-     * about color space, leave this set to the default value FOLLOW. The service will
-     * automatically detect your input color space. If your input video has metadata
-     * indicating the wrong color space, or if your input video is missing color space
-     * metadata that should be there, specify the accurate color space here. If you
-     * choose HDR10, you can also correct inaccurate color space coefficients, using
-     * the HDR master display information controls. You must also set Color space usage
-     * (ColorSpaceUsage) to FORCE for the service to use these values.
+     * about color space, leave this set to the default value Follow (FOLLOW). The
+     * service will automatically detect your input color space. If your input video
+     * has metadata indicating the wrong color space, specify the accurate color space
+     * here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display
+     * Color Volume static metadata isn't present in your video stream, or if that
+     * metadata is present but not accurate, choose Force HDR 10 (FORCE_HDR10) here and
+     * specify correct values in the input HDR 10 metadata (Hdr10Metadata) settings.
+     * For more information about MediaConvert HDR jobs, see
+     * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
     inline void SetColorSpace(const ColorSpace& value) { m_colorSpaceHasBeenSet = true; m_colorSpace = value; }
 
     /**
      * If your input video has accurate color space metadata, or if you don't know
-     * about color space, leave this set to the default value FOLLOW. The service will
-     * automatically detect your input color space. If your input video has metadata
-     * indicating the wrong color space, or if your input video is missing color space
-     * metadata that should be there, specify the accurate color space here. If you
-     * choose HDR10, you can also correct inaccurate color space coefficients, using
-     * the HDR master display information controls. You must also set Color space usage
-     * (ColorSpaceUsage) to FORCE for the service to use these values.
+     * about color space, leave this set to the default value Follow (FOLLOW). The
+     * service will automatically detect your input color space. If your input video
+     * has metadata indicating the wrong color space, specify the accurate color space
+     * here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display
+     * Color Volume static metadata isn't present in your video stream, or if that
+     * metadata is present but not accurate, choose Force HDR 10 (FORCE_HDR10) here and
+     * specify correct values in the input HDR 10 metadata (Hdr10Metadata) settings.
+     * For more information about MediaConvert HDR jobs, see
+     * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
     inline void SetColorSpace(ColorSpace&& value) { m_colorSpaceHasBeenSet = true; m_colorSpace = std::move(value); }
 
     /**
      * If your input video has accurate color space metadata, or if you don't know
-     * about color space, leave this set to the default value FOLLOW. The service will
-     * automatically detect your input color space. If your input video has metadata
-     * indicating the wrong color space, or if your input video is missing color space
-     * metadata that should be there, specify the accurate color space here. If you
-     * choose HDR10, you can also correct inaccurate color space coefficients, using
-     * the HDR master display information controls. You must also set Color space usage
-     * (ColorSpaceUsage) to FORCE for the service to use these values.
+     * about color space, leave this set to the default value Follow (FOLLOW). The
+     * service will automatically detect your input color space. If your input video
+     * has metadata indicating the wrong color space, specify the accurate color space
+     * here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display
+     * Color Volume static metadata isn't present in your video stream, or if that
+     * metadata is present but not accurate, choose Force HDR 10 (FORCE_HDR10) here and
+     * specify correct values in the input HDR 10 metadata (Hdr10Metadata) settings.
+     * For more information about MediaConvert HDR jobs, see
+     * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
     inline VideoSelector& WithColorSpace(const ColorSpace& value) { SetColorSpace(value); return *this;}
 
     /**
      * If your input video has accurate color space metadata, or if you don't know
-     * about color space, leave this set to the default value FOLLOW. The service will
-     * automatically detect your input color space. If your input video has metadata
-     * indicating the wrong color space, or if your input video is missing color space
-     * metadata that should be there, specify the accurate color space here. If you
-     * choose HDR10, you can also correct inaccurate color space coefficients, using
-     * the HDR master display information controls. You must also set Color space usage
-     * (ColorSpaceUsage) to FORCE for the service to use these values.
+     * about color space, leave this set to the default value Follow (FOLLOW). The
+     * service will automatically detect your input color space. If your input video
+     * has metadata indicating the wrong color space, specify the accurate color space
+     * here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display
+     * Color Volume static metadata isn't present in your video stream, or if that
+     * metadata is present but not accurate, choose Force HDR 10 (FORCE_HDR10) here and
+     * specify correct values in the input HDR 10 metadata (Hdr10Metadata) settings.
+     * For more information about MediaConvert HDR jobs, see
+     * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
     inline VideoSelector& WithColorSpace(ColorSpace&& value) { SetColorSpace(std::move(value)); return *this;}
 
 
     /**
-     * There are two sources for color metadata, the input file and the job
-     * configuration (in the Color space and HDR master display informaiton settings).
-     * The Color space usage setting controls which takes precedence. FORCE: The system
-     * will use color metadata supplied by user, if any. If the user does not supply
-     * color metadata, the system will use data from the source. FALLBACK: The system
-     * will use color metadata from the source. If source has no color metadata, the
-     * system will use user-supplied color metadata values if available.
+     * There are two sources for color metadata, the input file and the job input
+     * settings Color space (ColorSpace) and HDR master display information
+     * settings(Hdr10Metadata). The Color space usage setting determines which takes
+     * precedence. Choose Force (FORCE) to use color metadata from the input job
+     * settings. If you don't specify values for those settings, the service defaults
+     * to using metadata from your input. FALLBACK - Choose Fallback (FALLBACK) to use
+     * color metadata from the source when it is present. If there's no color metadata
+     * in your input file, the service defaults to using values you specify in the
+     * input settings.
      */
     inline const ColorSpaceUsage& GetColorSpaceUsage() const{ return m_colorSpaceUsage; }
 
     /**
-     * There are two sources for color metadata, the input file and the job
-     * configuration (in the Color space and HDR master display informaiton settings).
-     * The Color space usage setting controls which takes precedence. FORCE: The system
-     * will use color metadata supplied by user, if any. If the user does not supply
-     * color metadata, the system will use data from the source. FALLBACK: The system
-     * will use color metadata from the source. If source has no color metadata, the
-     * system will use user-supplied color metadata values if available.
+     * There are two sources for color metadata, the input file and the job input
+     * settings Color space (ColorSpace) and HDR master display information
+     * settings(Hdr10Metadata). The Color space usage setting determines which takes
+     * precedence. Choose Force (FORCE) to use color metadata from the input job
+     * settings. If you don't specify values for those settings, the service defaults
+     * to using metadata from your input. FALLBACK - Choose Fallback (FALLBACK) to use
+     * color metadata from the source when it is present. If there's no color metadata
+     * in your input file, the service defaults to using values you specify in the
+     * input settings.
      */
     inline bool ColorSpaceUsageHasBeenSet() const { return m_colorSpaceUsageHasBeenSet; }
 
     /**
-     * There are two sources for color metadata, the input file and the job
-     * configuration (in the Color space and HDR master display informaiton settings).
-     * The Color space usage setting controls which takes precedence. FORCE: The system
-     * will use color metadata supplied by user, if any. If the user does not supply
-     * color metadata, the system will use data from the source. FALLBACK: The system
-     * will use color metadata from the source. If source has no color metadata, the
-     * system will use user-supplied color metadata values if available.
+     * There are two sources for color metadata, the input file and the job input
+     * settings Color space (ColorSpace) and HDR master display information
+     * settings(Hdr10Metadata). The Color space usage setting determines which takes
+     * precedence. Choose Force (FORCE) to use color metadata from the input job
+     * settings. If you don't specify values for those settings, the service defaults
+     * to using metadata from your input. FALLBACK - Choose Fallback (FALLBACK) to use
+     * color metadata from the source when it is present. If there's no color metadata
+     * in your input file, the service defaults to using values you specify in the
+     * input settings.
      */
     inline void SetColorSpaceUsage(const ColorSpaceUsage& value) { m_colorSpaceUsageHasBeenSet = true; m_colorSpaceUsage = value; }
 
     /**
-     * There are two sources for color metadata, the input file and the job
-     * configuration (in the Color space and HDR master display informaiton settings).
-     * The Color space usage setting controls which takes precedence. FORCE: The system
-     * will use color metadata supplied by user, if any. If the user does not supply
-     * color metadata, the system will use data from the source. FALLBACK: The system
-     * will use color metadata from the source. If source has no color metadata, the
-     * system will use user-supplied color metadata values if available.
+     * There are two sources for color metadata, the input file and the job input
+     * settings Color space (ColorSpace) and HDR master display information
+     * settings(Hdr10Metadata). The Color space usage setting determines which takes
+     * precedence. Choose Force (FORCE) to use color metadata from the input job
+     * settings. If you don't specify values for those settings, the service defaults
+     * to using metadata from your input. FALLBACK - Choose Fallback (FALLBACK) to use
+     * color metadata from the source when it is present. If there's no color metadata
+     * in your input file, the service defaults to using values you specify in the
+     * input settings.
      */
     inline void SetColorSpaceUsage(ColorSpaceUsage&& value) { m_colorSpaceUsageHasBeenSet = true; m_colorSpaceUsage = std::move(value); }
 
     /**
-     * There are two sources for color metadata, the input file and the job
-     * configuration (in the Color space and HDR master display informaiton settings).
-     * The Color space usage setting controls which takes precedence. FORCE: The system
-     * will use color metadata supplied by user, if any. If the user does not supply
-     * color metadata, the system will use data from the source. FALLBACK: The system
-     * will use color metadata from the source. If source has no color metadata, the
-     * system will use user-supplied color metadata values if available.
+     * There are two sources for color metadata, the input file and the job input
+     * settings Color space (ColorSpace) and HDR master display information
+     * settings(Hdr10Metadata). The Color space usage setting determines which takes
+     * precedence. Choose Force (FORCE) to use color metadata from the input job
+     * settings. If you don't specify values for those settings, the service defaults
+     * to using metadata from your input. FALLBACK - Choose Fallback (FALLBACK) to use
+     * color metadata from the source when it is present. If there's no color metadata
+     * in your input file, the service defaults to using values you specify in the
+     * input settings.
      */
     inline VideoSelector& WithColorSpaceUsage(const ColorSpaceUsage& value) { SetColorSpaceUsage(value); return *this;}
 
     /**
-     * There are two sources for color metadata, the input file and the job
-     * configuration (in the Color space and HDR master display informaiton settings).
-     * The Color space usage setting controls which takes precedence. FORCE: The system
-     * will use color metadata supplied by user, if any. If the user does not supply
-     * color metadata, the system will use data from the source. FALLBACK: The system
-     * will use color metadata from the source. If source has no color metadata, the
-     * system will use user-supplied color metadata values if available.
+     * There are two sources for color metadata, the input file and the job input
+     * settings Color space (ColorSpace) and HDR master display information
+     * settings(Hdr10Metadata). The Color space usage setting determines which takes
+     * precedence. Choose Force (FORCE) to use color metadata from the input job
+     * settings. If you don't specify values for those settings, the service defaults
+     * to using metadata from your input. FALLBACK - Choose Fallback (FALLBACK) to use
+     * color metadata from the source when it is present. If there's no color metadata
+     * in your input file, the service defaults to using values you specify in the
+     * input settings.
      */
     inline VideoSelector& WithColorSpaceUsage(ColorSpaceUsage&& value) { SetColorSpaceUsage(std::move(value)); return *this;}
 
 
     /**
-     * Use the "HDR master display information" (Hdr10Metadata) settings to correct HDR
-     * metadata or to provide missing metadata. These values vary depending on the
-     * input video and must be provided by a color grader. Range is 0 to 50,000; each
-     * increment represents 0.00002 in CIE1931 color coordinate. Note that these
-     * settings are not color correction. Note that if you are creating HDR outputs
-     * inside of an HLS CMAF package, to comply with the Apple specification, you must
-     * use the following settings. Set "MP4 packaging type" (writeMp4PackagingType) to
-     * HVC1 (HVC1). Set "Profile" (H265Settings > codecProfile) to Main10/High
-     * (MAIN10_HIGH). Set "Level" (H265Settings > codecLevel) to 5 (LEVEL_5).
+     * Use these settings to provide HDR 10 metadata that is missing or inaccurate in
+     * your input video. Appropriate values vary depending on the input video and must
+     * be provided by a color grader. The color grader generates these values during
+     * the HDR 10 mastering process. The valid range for each of these settings is 0 to
+     * 50,000. Each increment represents 0.00002 in CIE1931 color coordinate. Related
+     * settings - When you specify these values, you must also set Color space
+     * (ColorSpace) to HDR 10 (HDR10). To specify whether the the values you specify
+     * here take precedence over the values in the metadata of your input file, set
+     * Color space usage (ColorSpaceUsage). To specify whether color metadata is
+     * included in an output, set Color metadata (ColorMetadata). For more information
+     * about MediaConvert HDR jobs, see
+     * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
     inline const Hdr10Metadata& GetHdr10Metadata() const{ return m_hdr10Metadata; }
 
     /**
-     * Use the "HDR master display information" (Hdr10Metadata) settings to correct HDR
-     * metadata or to provide missing metadata. These values vary depending on the
-     * input video and must be provided by a color grader. Range is 0 to 50,000; each
-     * increment represents 0.00002 in CIE1931 color coordinate. Note that these
-     * settings are not color correction. Note that if you are creating HDR outputs
-     * inside of an HLS CMAF package, to comply with the Apple specification, you must
-     * use the following settings. Set "MP4 packaging type" (writeMp4PackagingType) to
-     * HVC1 (HVC1). Set "Profile" (H265Settings > codecProfile) to Main10/High
-     * (MAIN10_HIGH). Set "Level" (H265Settings > codecLevel) to 5 (LEVEL_5).
+     * Use these settings to provide HDR 10 metadata that is missing or inaccurate in
+     * your input video. Appropriate values vary depending on the input video and must
+     * be provided by a color grader. The color grader generates these values during
+     * the HDR 10 mastering process. The valid range for each of these settings is 0 to
+     * 50,000. Each increment represents 0.00002 in CIE1931 color coordinate. Related
+     * settings - When you specify these values, you must also set Color space
+     * (ColorSpace) to HDR 10 (HDR10). To specify whether the the values you specify
+     * here take precedence over the values in the metadata of your input file, set
+     * Color space usage (ColorSpaceUsage). To specify whether color metadata is
+     * included in an output, set Color metadata (ColorMetadata). For more information
+     * about MediaConvert HDR jobs, see
+     * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
     inline bool Hdr10MetadataHasBeenSet() const { return m_hdr10MetadataHasBeenSet; }
 
     /**
-     * Use the "HDR master display information" (Hdr10Metadata) settings to correct HDR
-     * metadata or to provide missing metadata. These values vary depending on the
-     * input video and must be provided by a color grader. Range is 0 to 50,000; each
-     * increment represents 0.00002 in CIE1931 color coordinate. Note that these
-     * settings are not color correction. Note that if you are creating HDR outputs
-     * inside of an HLS CMAF package, to comply with the Apple specification, you must
-     * use the following settings. Set "MP4 packaging type" (writeMp4PackagingType) to
-     * HVC1 (HVC1). Set "Profile" (H265Settings > codecProfile) to Main10/High
-     * (MAIN10_HIGH). Set "Level" (H265Settings > codecLevel) to 5 (LEVEL_5).
+     * Use these settings to provide HDR 10 metadata that is missing or inaccurate in
+     * your input video. Appropriate values vary depending on the input video and must
+     * be provided by a color grader. The color grader generates these values during
+     * the HDR 10 mastering process. The valid range for each of these settings is 0 to
+     * 50,000. Each increment represents 0.00002 in CIE1931 color coordinate. Related
+     * settings - When you specify these values, you must also set Color space
+     * (ColorSpace) to HDR 10 (HDR10). To specify whether the the values you specify
+     * here take precedence over the values in the metadata of your input file, set
+     * Color space usage (ColorSpaceUsage). To specify whether color metadata is
+     * included in an output, set Color metadata (ColorMetadata). For more information
+     * about MediaConvert HDR jobs, see
+     * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
     inline void SetHdr10Metadata(const Hdr10Metadata& value) { m_hdr10MetadataHasBeenSet = true; m_hdr10Metadata = value; }
 
     /**
-     * Use the "HDR master display information" (Hdr10Metadata) settings to correct HDR
-     * metadata or to provide missing metadata. These values vary depending on the
-     * input video and must be provided by a color grader. Range is 0 to 50,000; each
-     * increment represents 0.00002 in CIE1931 color coordinate. Note that these
-     * settings are not color correction. Note that if you are creating HDR outputs
-     * inside of an HLS CMAF package, to comply with the Apple specification, you must
-     * use the following settings. Set "MP4 packaging type" (writeMp4PackagingType) to
-     * HVC1 (HVC1). Set "Profile" (H265Settings > codecProfile) to Main10/High
-     * (MAIN10_HIGH). Set "Level" (H265Settings > codecLevel) to 5 (LEVEL_5).
+     * Use these settings to provide HDR 10 metadata that is missing or inaccurate in
+     * your input video. Appropriate values vary depending on the input video and must
+     * be provided by a color grader. The color grader generates these values during
+     * the HDR 10 mastering process. The valid range for each of these settings is 0 to
+     * 50,000. Each increment represents 0.00002 in CIE1931 color coordinate. Related
+     * settings - When you specify these values, you must also set Color space
+     * (ColorSpace) to HDR 10 (HDR10). To specify whether the the values you specify
+     * here take precedence over the values in the metadata of your input file, set
+     * Color space usage (ColorSpaceUsage). To specify whether color metadata is
+     * included in an output, set Color metadata (ColorMetadata). For more information
+     * about MediaConvert HDR jobs, see
+     * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
     inline void SetHdr10Metadata(Hdr10Metadata&& value) { m_hdr10MetadataHasBeenSet = true; m_hdr10Metadata = std::move(value); }
 
     /**
-     * Use the "HDR master display information" (Hdr10Metadata) settings to correct HDR
-     * metadata or to provide missing metadata. These values vary depending on the
-     * input video and must be provided by a color grader. Range is 0 to 50,000; each
-     * increment represents 0.00002 in CIE1931 color coordinate. Note that these
-     * settings are not color correction. Note that if you are creating HDR outputs
-     * inside of an HLS CMAF package, to comply with the Apple specification, you must
-     * use the following settings. Set "MP4 packaging type" (writeMp4PackagingType) to
-     * HVC1 (HVC1). Set "Profile" (H265Settings > codecProfile) to Main10/High
-     * (MAIN10_HIGH). Set "Level" (H265Settings > codecLevel) to 5 (LEVEL_5).
+     * Use these settings to provide HDR 10 metadata that is missing or inaccurate in
+     * your input video. Appropriate values vary depending on the input video and must
+     * be provided by a color grader. The color grader generates these values during
+     * the HDR 10 mastering process. The valid range for each of these settings is 0 to
+     * 50,000. Each increment represents 0.00002 in CIE1931 color coordinate. Related
+     * settings - When you specify these values, you must also set Color space
+     * (ColorSpace) to HDR 10 (HDR10). To specify whether the the values you specify
+     * here take precedence over the values in the metadata of your input file, set
+     * Color space usage (ColorSpaceUsage). To specify whether color metadata is
+     * included in an output, set Color metadata (ColorMetadata). For more information
+     * about MediaConvert HDR jobs, see
+     * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
     inline VideoSelector& WithHdr10Metadata(const Hdr10Metadata& value) { SetHdr10Metadata(value); return *this;}
 
     /**
-     * Use the "HDR master display information" (Hdr10Metadata) settings to correct HDR
-     * metadata or to provide missing metadata. These values vary depending on the
-     * input video and must be provided by a color grader. Range is 0 to 50,000; each
-     * increment represents 0.00002 in CIE1931 color coordinate. Note that these
-     * settings are not color correction. Note that if you are creating HDR outputs
-     * inside of an HLS CMAF package, to comply with the Apple specification, you must
-     * use the following settings. Set "MP4 packaging type" (writeMp4PackagingType) to
-     * HVC1 (HVC1). Set "Profile" (H265Settings > codecProfile) to Main10/High
-     * (MAIN10_HIGH). Set "Level" (H265Settings > codecLevel) to 5 (LEVEL_5).
+     * Use these settings to provide HDR 10 metadata that is missing or inaccurate in
+     * your input video. Appropriate values vary depending on the input video and must
+     * be provided by a color grader. The color grader generates these values during
+     * the HDR 10 mastering process. The valid range for each of these settings is 0 to
+     * 50,000. Each increment represents 0.00002 in CIE1931 color coordinate. Related
+     * settings - When you specify these values, you must also set Color space
+     * (ColorSpace) to HDR 10 (HDR10). To specify whether the the values you specify
+     * here take precedence over the values in the metadata of your input file, set
+     * Color space usage (ColorSpaceUsage). To specify whether color metadata is
+     * included in an output, set Color metadata (ColorMetadata). For more information
+     * about MediaConvert HDR jobs, see
+     * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
     inline VideoSelector& WithHdr10Metadata(Hdr10Metadata&& value) { SetHdr10Metadata(std::move(value)); return *this;}
 

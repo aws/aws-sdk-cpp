@@ -28,6 +28,8 @@ CreateQueueRequest::CreateQueueRequest() :
     m_pricingPlan(PricingPlan::NOT_SET),
     m_pricingPlanHasBeenSet(false),
     m_reservationPlanSettingsHasBeenSet(false),
+    m_status(QueueStatus::NOT_SET),
+    m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -57,6 +59,11 @@ Aws::String CreateQueueRequest::SerializePayload() const
   {
    payload.WithObject("reservationPlanSettings", m_reservationPlanSettings.Jsonize());
 
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", QueueStatusMapper::GetNameForQueueStatus(m_status));
   }
 
   if(m_tagsHasBeenSet)

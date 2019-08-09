@@ -130,14 +130,15 @@ namespace Model
 
     /**
      * <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from
-     * the user input during the conversation.</p> <p>Amazon Lex creates a resolution
-     * list containing likely values for a slot. The value that it returns is
-     * determined by the <code>valueSelectionStrategy</code> selected when the slot
-     * type was created or updated. If <code>valueSelectionStrategy</code> is set to
-     * <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the
-     * user value is similar to the slot values. If <code>valueSelectionStrategy</code>
-     * is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
-     * resolution list or, if there is no resolution list, null. If you don't specify a
+     * the user input during the conversation. The field is base-64 encoded.</p>
+     * <p>Amazon Lex creates a resolution list containing likely values for a slot. The
+     * value that it returns is determined by the <code>valueSelectionStrategy</code>
+     * selected when the slot type was created or updated. If
+     * <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the
+     * value provided by the user is returned, if the user value is similar to the slot
+     * values. If <code>valueSelectionStrategy</code> is set to
+     * <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution
+     * list or, if there is no resolution list, null. If you don't specify a
      * <code>valueSelectionStrategy</code>, the default is
      * <code>ORIGINAL_VALUE</code>.</p>
      */
@@ -145,14 +146,15 @@ namespace Model
 
     /**
      * <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from
-     * the user input during the conversation.</p> <p>Amazon Lex creates a resolution
-     * list containing likely values for a slot. The value that it returns is
-     * determined by the <code>valueSelectionStrategy</code> selected when the slot
-     * type was created or updated. If <code>valueSelectionStrategy</code> is set to
-     * <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the
-     * user value is similar to the slot values. If <code>valueSelectionStrategy</code>
-     * is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
-     * resolution list or, if there is no resolution list, null. If you don't specify a
+     * the user input during the conversation. The field is base-64 encoded.</p>
+     * <p>Amazon Lex creates a resolution list containing likely values for a slot. The
+     * value that it returns is determined by the <code>valueSelectionStrategy</code>
+     * selected when the slot type was created or updated. If
+     * <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the
+     * value provided by the user is returned, if the user value is similar to the slot
+     * values. If <code>valueSelectionStrategy</code> is set to
+     * <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution
+     * list or, if there is no resolution list, null. If you don't specify a
      * <code>valueSelectionStrategy</code>, the default is
      * <code>ORIGINAL_VALUE</code>.</p>
      */
@@ -160,14 +162,15 @@ namespace Model
 
     /**
      * <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from
-     * the user input during the conversation.</p> <p>Amazon Lex creates a resolution
-     * list containing likely values for a slot. The value that it returns is
-     * determined by the <code>valueSelectionStrategy</code> selected when the slot
-     * type was created or updated. If <code>valueSelectionStrategy</code> is set to
-     * <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the
-     * user value is similar to the slot values. If <code>valueSelectionStrategy</code>
-     * is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
-     * resolution list or, if there is no resolution list, null. If you don't specify a
+     * the user input during the conversation. The field is base-64 encoded.</p>
+     * <p>Amazon Lex creates a resolution list containing likely values for a slot. The
+     * value that it returns is determined by the <code>valueSelectionStrategy</code>
+     * selected when the slot type was created or updated. If
+     * <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the
+     * value provided by the user is returned, if the user value is similar to the slot
+     * values. If <code>valueSelectionStrategy</code> is set to
+     * <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution
+     * list or, if there is no resolution list, null. If you don't specify a
      * <code>valueSelectionStrategy</code>, the default is
      * <code>ORIGINAL_VALUE</code>.</p>
      */
@@ -175,14 +178,15 @@ namespace Model
 
     /**
      * <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from
-     * the user input during the conversation.</p> <p>Amazon Lex creates a resolution
-     * list containing likely values for a slot. The value that it returns is
-     * determined by the <code>valueSelectionStrategy</code> selected when the slot
-     * type was created or updated. If <code>valueSelectionStrategy</code> is set to
-     * <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the
-     * user value is similar to the slot values. If <code>valueSelectionStrategy</code>
-     * is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
-     * resolution list or, if there is no resolution list, null. If you don't specify a
+     * the user input during the conversation. The field is base-64 encoded.</p>
+     * <p>Amazon Lex creates a resolution list containing likely values for a slot. The
+     * value that it returns is determined by the <code>valueSelectionStrategy</code>
+     * selected when the slot type was created or updated. If
+     * <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the
+     * value provided by the user is returned, if the user value is similar to the slot
+     * values. If <code>valueSelectionStrategy</code> is set to
+     * <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution
+     * list or, if there is no resolution list, null. If you don't specify a
      * <code>valueSelectionStrategy</code>, the default is
      * <code>ORIGINAL_VALUE</code>.</p>
      */
@@ -190,14 +194,15 @@ namespace Model
 
     /**
      * <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from
-     * the user input during the conversation.</p> <p>Amazon Lex creates a resolution
-     * list containing likely values for a slot. The value that it returns is
-     * determined by the <code>valueSelectionStrategy</code> selected when the slot
-     * type was created or updated. If <code>valueSelectionStrategy</code> is set to
-     * <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the
-     * user value is similar to the slot values. If <code>valueSelectionStrategy</code>
-     * is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
-     * resolution list or, if there is no resolution list, null. If you don't specify a
+     * the user input during the conversation. The field is base-64 encoded.</p>
+     * <p>Amazon Lex creates a resolution list containing likely values for a slot. The
+     * value that it returns is determined by the <code>valueSelectionStrategy</code>
+     * selected when the slot type was created or updated. If
+     * <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the
+     * value provided by the user is returned, if the user value is similar to the slot
+     * values. If <code>valueSelectionStrategy</code> is set to
+     * <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution
+     * list or, if there is no resolution list, null. If you don't specify a
      * <code>valueSelectionStrategy</code>, the default is
      * <code>ORIGINAL_VALUE</code>.</p>
      */
@@ -205,14 +210,15 @@ namespace Model
 
     /**
      * <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from
-     * the user input during the conversation.</p> <p>Amazon Lex creates a resolution
-     * list containing likely values for a slot. The value that it returns is
-     * determined by the <code>valueSelectionStrategy</code> selected when the slot
-     * type was created or updated. If <code>valueSelectionStrategy</code> is set to
-     * <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the
-     * user value is similar to the slot values. If <code>valueSelectionStrategy</code>
-     * is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
-     * resolution list or, if there is no resolution list, null. If you don't specify a
+     * the user input during the conversation. The field is base-64 encoded.</p>
+     * <p>Amazon Lex creates a resolution list containing likely values for a slot. The
+     * value that it returns is determined by the <code>valueSelectionStrategy</code>
+     * selected when the slot type was created or updated. If
+     * <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the
+     * value provided by the user is returned, if the user value is similar to the slot
+     * values. If <code>valueSelectionStrategy</code> is set to
+     * <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution
+     * list or, if there is no resolution list, null. If you don't specify a
      * <code>valueSelectionStrategy</code>, the default is
      * <code>ORIGINAL_VALUE</code>.</p>
      */
@@ -220,14 +226,15 @@ namespace Model
 
     /**
      * <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from
-     * the user input during the conversation.</p> <p>Amazon Lex creates a resolution
-     * list containing likely values for a slot. The value that it returns is
-     * determined by the <code>valueSelectionStrategy</code> selected when the slot
-     * type was created or updated. If <code>valueSelectionStrategy</code> is set to
-     * <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the
-     * user value is similar to the slot values. If <code>valueSelectionStrategy</code>
-     * is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
-     * resolution list or, if there is no resolution list, null. If you don't specify a
+     * the user input during the conversation. The field is base-64 encoded.</p>
+     * <p>Amazon Lex creates a resolution list containing likely values for a slot. The
+     * value that it returns is determined by the <code>valueSelectionStrategy</code>
+     * selected when the slot type was created or updated. If
+     * <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the
+     * value provided by the user is returned, if the user value is similar to the slot
+     * values. If <code>valueSelectionStrategy</code> is set to
+     * <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution
+     * list or, if there is no resolution list, null. If you don't specify a
      * <code>valueSelectionStrategy</code>, the default is
      * <code>ORIGINAL_VALUE</code>.</p>
      */
@@ -281,7 +288,7 @@ namespace Model
      * <p>The message to convey to the user. The message can come from the bot's
      * configuration or from a Lambda function.</p> <p>If the intent is not configured
      * with a Lambda function, or if the Lambda function returned <code>Delegate</code>
-     * as the <code>dialogAction.type</code> its response, Amazon Lex decides on the
+     * as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the
      * next course of action and selects an appropriate message from the bot's
      * configuration based on the current interaction context. For example, if Amazon
      * Lex isn't able to understand user input, it uses a clarification prompt
@@ -298,7 +305,7 @@ namespace Model
      * <p>The message to convey to the user. The message can come from the bot's
      * configuration or from a Lambda function.</p> <p>If the intent is not configured
      * with a Lambda function, or if the Lambda function returned <code>Delegate</code>
-     * as the <code>dialogAction.type</code> its response, Amazon Lex decides on the
+     * as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the
      * next course of action and selects an appropriate message from the bot's
      * configuration based on the current interaction context. For example, if Amazon
      * Lex isn't able to understand user input, it uses a clarification prompt
@@ -315,7 +322,7 @@ namespace Model
      * <p>The message to convey to the user. The message can come from the bot's
      * configuration or from a Lambda function.</p> <p>If the intent is not configured
      * with a Lambda function, or if the Lambda function returned <code>Delegate</code>
-     * as the <code>dialogAction.type</code> its response, Amazon Lex decides on the
+     * as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the
      * next course of action and selects an appropriate message from the bot's
      * configuration based on the current interaction context. For example, if Amazon
      * Lex isn't able to understand user input, it uses a clarification prompt
@@ -332,7 +339,7 @@ namespace Model
      * <p>The message to convey to the user. The message can come from the bot's
      * configuration or from a Lambda function.</p> <p>If the intent is not configured
      * with a Lambda function, or if the Lambda function returned <code>Delegate</code>
-     * as the <code>dialogAction.type</code> its response, Amazon Lex decides on the
+     * as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the
      * next course of action and selects an appropriate message from the bot's
      * configuration based on the current interaction context. For example, if Amazon
      * Lex isn't able to understand user input, it uses a clarification prompt
@@ -349,7 +356,7 @@ namespace Model
      * <p>The message to convey to the user. The message can come from the bot's
      * configuration or from a Lambda function.</p> <p>If the intent is not configured
      * with a Lambda function, or if the Lambda function returned <code>Delegate</code>
-     * as the <code>dialogAction.type</code> its response, Amazon Lex decides on the
+     * as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the
      * next course of action and selects an appropriate message from the bot's
      * configuration based on the current interaction context. For example, if Amazon
      * Lex isn't able to understand user input, it uses a clarification prompt
@@ -366,7 +373,7 @@ namespace Model
      * <p>The message to convey to the user. The message can come from the bot's
      * configuration or from a Lambda function.</p> <p>If the intent is not configured
      * with a Lambda function, or if the Lambda function returned <code>Delegate</code>
-     * as the <code>dialogAction.type</code> its response, Amazon Lex decides on the
+     * as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the
      * next course of action and selects an appropriate message from the bot's
      * configuration based on the current interaction context. For example, if Amazon
      * Lex isn't able to understand user input, it uses a clarification prompt
@@ -383,7 +390,7 @@ namespace Model
      * <p>The message to convey to the user. The message can come from the bot's
      * configuration or from a Lambda function.</p> <p>If the intent is not configured
      * with a Lambda function, or if the Lambda function returned <code>Delegate</code>
-     * as the <code>dialogAction.type</code> its response, Amazon Lex decides on the
+     * as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the
      * next course of action and selects an appropriate message from the bot's
      * configuration based on the current interaction context. For example, if Amazon
      * Lex isn't able to understand user input, it uses a clarification prompt

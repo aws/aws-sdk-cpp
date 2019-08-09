@@ -35,7 +35,10 @@ namespace Model
 {
 
   /**
-   * Settings for use with a SPEKE key provider<p><h3>See Also:</h3>   <a
+   * Use these settings when doing DRM encryption with a SPEKE-compliant key
+   * provider, if your output group type is HLS, MS Smooth, or DASH. If your output
+   * group type is CMAF, use the SpekeKeyProviderCmaf settings instead.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/SpekeKeyProvider">AWS
    * API Reference</a></p>
    */
@@ -49,203 +52,229 @@ namespace Model
 
 
     /**
-     * Optional AWS Certificate Manager ARN for a certificate to send to the
-     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
-     * keys in its response.
+     * If you want your key provider to encrypt the content keys that it provides to
+     * MediaConvert, set up a certificate with a master key using AWS Certificate
+     * Manager. Specify the certificate's Amazon Resource Name (ARN) here.
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
 
     /**
-     * Optional AWS Certificate Manager ARN for a certificate to send to the
-     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
-     * keys in its response.
+     * If you want your key provider to encrypt the content keys that it provides to
+     * MediaConvert, set up a certificate with a master key using AWS Certificate
+     * Manager. Specify the certificate's Amazon Resource Name (ARN) here.
      */
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
 
     /**
-     * Optional AWS Certificate Manager ARN for a certificate to send to the
-     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
-     * keys in its response.
+     * If you want your key provider to encrypt the content keys that it provides to
+     * MediaConvert, set up a certificate with a master key using AWS Certificate
+     * Manager. Specify the certificate's Amazon Resource Name (ARN) here.
      */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
-     * Optional AWS Certificate Manager ARN for a certificate to send to the
-     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
-     * keys in its response.
+     * If you want your key provider to encrypt the content keys that it provides to
+     * MediaConvert, set up a certificate with a master key using AWS Certificate
+     * Manager. Specify the certificate's Amazon Resource Name (ARN) here.
      */
     inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
 
     /**
-     * Optional AWS Certificate Manager ARN for a certificate to send to the
-     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
-     * keys in its response.
+     * If you want your key provider to encrypt the content keys that it provides to
+     * MediaConvert, set up a certificate with a master key using AWS Certificate
+     * Manager. Specify the certificate's Amazon Resource Name (ARN) here.
      */
     inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
 
     /**
-     * Optional AWS Certificate Manager ARN for a certificate to send to the
-     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
-     * keys in its response.
+     * If you want your key provider to encrypt the content keys that it provides to
+     * MediaConvert, set up a certificate with a master key using AWS Certificate
+     * Manager. Specify the certificate's Amazon Resource Name (ARN) here.
      */
     inline SpekeKeyProvider& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
 
     /**
-     * Optional AWS Certificate Manager ARN for a certificate to send to the
-     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
-     * keys in its response.
+     * If you want your key provider to encrypt the content keys that it provides to
+     * MediaConvert, set up a certificate with a master key using AWS Certificate
+     * Manager. Specify the certificate's Amazon Resource Name (ARN) here.
      */
     inline SpekeKeyProvider& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
     /**
-     * Optional AWS Certificate Manager ARN for a certificate to send to the
-     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
-     * keys in its response.
+     * If you want your key provider to encrypt the content keys that it provides to
+     * MediaConvert, set up a certificate with a master key using AWS Certificate
+     * Manager. Specify the certificate's Amazon Resource Name (ARN) here.
      */
     inline SpekeKeyProvider& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
 
     /**
-     * The SPEKE-compliant server uses Resource ID (ResourceId) to identify content.
+     * Specify the resource ID that your SPEKE-compliant key provider uses to identify
+     * this content.
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * The SPEKE-compliant server uses Resource ID (ResourceId) to identify content.
+     * Specify the resource ID that your SPEKE-compliant key provider uses to identify
+     * this content.
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * The SPEKE-compliant server uses Resource ID (ResourceId) to identify content.
+     * Specify the resource ID that your SPEKE-compliant key provider uses to identify
+     * this content.
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * The SPEKE-compliant server uses Resource ID (ResourceId) to identify content.
+     * Specify the resource ID that your SPEKE-compliant key provider uses to identify
+     * this content.
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * The SPEKE-compliant server uses Resource ID (ResourceId) to identify content.
+     * Specify the resource ID that your SPEKE-compliant key provider uses to identify
+     * this content.
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * The SPEKE-compliant server uses Resource ID (ResourceId) to identify content.
+     * Specify the resource ID that your SPEKE-compliant key provider uses to identify
+     * this content.
      */
     inline SpekeKeyProvider& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * The SPEKE-compliant server uses Resource ID (ResourceId) to identify content.
+     * Specify the resource ID that your SPEKE-compliant key provider uses to identify
+     * this content.
      */
     inline SpekeKeyProvider& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * The SPEKE-compliant server uses Resource ID (ResourceId) to identify content.
+     * Specify the resource ID that your SPEKE-compliant key provider uses to identify
+     * this content.
      */
     inline SpekeKeyProvider& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
 
     /**
      * Relates to SPEKE implementation. DRM system identifiers. DASH output groups
-     * support a max of two system ids. Other group types support one system id.
+     * support a max of two system ids. Other group types support one system id. See
+
+     * https://dashif.org/identifiers/content_protection/ for more details.
      */
     inline const Aws::Vector<Aws::String>& GetSystemIds() const{ return m_systemIds; }
 
     /**
      * Relates to SPEKE implementation. DRM system identifiers. DASH output groups
-     * support a max of two system ids. Other group types support one system id.
+     * support a max of two system ids. Other group types support one system id. See
+
+     * https://dashif.org/identifiers/content_protection/ for more details.
      */
     inline bool SystemIdsHasBeenSet() const { return m_systemIdsHasBeenSet; }
 
     /**
      * Relates to SPEKE implementation. DRM system identifiers. DASH output groups
-     * support a max of two system ids. Other group types support one system id.
+     * support a max of two system ids. Other group types support one system id. See
+
+     * https://dashif.org/identifiers/content_protection/ for more details.
      */
     inline void SetSystemIds(const Aws::Vector<Aws::String>& value) { m_systemIdsHasBeenSet = true; m_systemIds = value; }
 
     /**
      * Relates to SPEKE implementation. DRM system identifiers. DASH output groups
-     * support a max of two system ids. Other group types support one system id.
+     * support a max of two system ids. Other group types support one system id. See
+
+     * https://dashif.org/identifiers/content_protection/ for more details.
      */
     inline void SetSystemIds(Aws::Vector<Aws::String>&& value) { m_systemIdsHasBeenSet = true; m_systemIds = std::move(value); }
 
     /**
      * Relates to SPEKE implementation. DRM system identifiers. DASH output groups
-     * support a max of two system ids. Other group types support one system id.
+     * support a max of two system ids. Other group types support one system id. See
+
+     * https://dashif.org/identifiers/content_protection/ for more details.
      */
     inline SpekeKeyProvider& WithSystemIds(const Aws::Vector<Aws::String>& value) { SetSystemIds(value); return *this;}
 
     /**
      * Relates to SPEKE implementation. DRM system identifiers. DASH output groups
-     * support a max of two system ids. Other group types support one system id.
+     * support a max of two system ids. Other group types support one system id. See
+
+     * https://dashif.org/identifiers/content_protection/ for more details.
      */
     inline SpekeKeyProvider& WithSystemIds(Aws::Vector<Aws::String>&& value) { SetSystemIds(std::move(value)); return *this;}
 
     /**
      * Relates to SPEKE implementation. DRM system identifiers. DASH output groups
-     * support a max of two system ids. Other group types support one system id.
+     * support a max of two system ids. Other group types support one system id. See
+
+     * https://dashif.org/identifiers/content_protection/ for more details.
      */
     inline SpekeKeyProvider& AddSystemIds(const Aws::String& value) { m_systemIdsHasBeenSet = true; m_systemIds.push_back(value); return *this; }
 
     /**
      * Relates to SPEKE implementation. DRM system identifiers. DASH output groups
-     * support a max of two system ids. Other group types support one system id.
+     * support a max of two system ids. Other group types support one system id. See
+
+     * https://dashif.org/identifiers/content_protection/ for more details.
      */
     inline SpekeKeyProvider& AddSystemIds(Aws::String&& value) { m_systemIdsHasBeenSet = true; m_systemIds.push_back(std::move(value)); return *this; }
 
     /**
      * Relates to SPEKE implementation. DRM system identifiers. DASH output groups
-     * support a max of two system ids. Other group types support one system id.
+     * support a max of two system ids. Other group types support one system id. See
+
+     * https://dashif.org/identifiers/content_protection/ for more details.
      */
     inline SpekeKeyProvider& AddSystemIds(const char* value) { m_systemIdsHasBeenSet = true; m_systemIds.push_back(value); return *this; }
 
 
     /**
-     * Use URL (Url) to specify the SPEKE-compliant server that will provide keys for
-     * content.
+     * Specify the URL to the key server that your SPEKE-compliant DRM key provider
+     * uses to provide keys for encrypting your content.
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
     /**
-     * Use URL (Url) to specify the SPEKE-compliant server that will provide keys for
-     * content.
+     * Specify the URL to the key server that your SPEKE-compliant DRM key provider
+     * uses to provide keys for encrypting your content.
      */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
-     * Use URL (Url) to specify the SPEKE-compliant server that will provide keys for
-     * content.
+     * Specify the URL to the key server that your SPEKE-compliant DRM key provider
+     * uses to provide keys for encrypting your content.
      */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
-     * Use URL (Url) to specify the SPEKE-compliant server that will provide keys for
-     * content.
+     * Specify the URL to the key server that your SPEKE-compliant DRM key provider
+     * uses to provide keys for encrypting your content.
      */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
     /**
-     * Use URL (Url) to specify the SPEKE-compliant server that will provide keys for
-     * content.
+     * Specify the URL to the key server that your SPEKE-compliant DRM key provider
+     * uses to provide keys for encrypting your content.
      */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
 
     /**
-     * Use URL (Url) to specify the SPEKE-compliant server that will provide keys for
-     * content.
+     * Specify the URL to the key server that your SPEKE-compliant DRM key provider
+     * uses to provide keys for encrypting your content.
      */
     inline SpekeKeyProvider& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
     /**
-     * Use URL (Url) to specify the SPEKE-compliant server that will provide keys for
-     * content.
+     * Specify the URL to the key server that your SPEKE-compliant DRM key provider
+     * uses to provide keys for encrypting your content.
      */
     inline SpekeKeyProvider& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
-     * Use URL (Url) to specify the SPEKE-compliant server that will provide keys for
-     * content.
+     * Specify the URL to the key server that your SPEKE-compliant DRM key provider
+     * uses to provide keys for encrypting your content.
      */
     inline SpekeKeyProvider& WithUrl(const char* value) { SetUrl(value); return *this;}
 

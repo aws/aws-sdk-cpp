@@ -1959,6 +1959,108 @@ namespace Model
 
 
     /**
+     * <p>The date and time when the next snapshot is expected to be taken for clusters
+     * with a valid snapshot schedule and backups enabled. </p>
+     */
+    inline const Aws::Utils::DateTime& GetExpectedNextSnapshotScheduleTime() const{ return m_expectedNextSnapshotScheduleTime; }
+
+    /**
+     * <p>The date and time when the next snapshot is expected to be taken for clusters
+     * with a valid snapshot schedule and backups enabled. </p>
+     */
+    inline bool ExpectedNextSnapshotScheduleTimeHasBeenSet() const { return m_expectedNextSnapshotScheduleTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time when the next snapshot is expected to be taken for clusters
+     * with a valid snapshot schedule and backups enabled. </p>
+     */
+    inline void SetExpectedNextSnapshotScheduleTime(const Aws::Utils::DateTime& value) { m_expectedNextSnapshotScheduleTimeHasBeenSet = true; m_expectedNextSnapshotScheduleTime = value; }
+
+    /**
+     * <p>The date and time when the next snapshot is expected to be taken for clusters
+     * with a valid snapshot schedule and backups enabled. </p>
+     */
+    inline void SetExpectedNextSnapshotScheduleTime(Aws::Utils::DateTime&& value) { m_expectedNextSnapshotScheduleTimeHasBeenSet = true; m_expectedNextSnapshotScheduleTime = std::move(value); }
+
+    /**
+     * <p>The date and time when the next snapshot is expected to be taken for clusters
+     * with a valid snapshot schedule and backups enabled. </p>
+     */
+    inline Cluster& WithExpectedNextSnapshotScheduleTime(const Aws::Utils::DateTime& value) { SetExpectedNextSnapshotScheduleTime(value); return *this;}
+
+    /**
+     * <p>The date and time when the next snapshot is expected to be taken for clusters
+     * with a valid snapshot schedule and backups enabled. </p>
+     */
+    inline Cluster& WithExpectedNextSnapshotScheduleTime(Aws::Utils::DateTime&& value) { SetExpectedNextSnapshotScheduleTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The status of next expected snapshot for clusters having a valid snapshot
+     * schedule and backups enabled. Possible values are the following:</p> <ul> <li>
+     * <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li> <li>
+     * <p>Pending - The next snapshot is pending to be taken. </p> </li> </ul>
+     */
+    inline const Aws::String& GetExpectedNextSnapshotScheduleTimeStatus() const{ return m_expectedNextSnapshotScheduleTimeStatus; }
+
+    /**
+     * <p> The status of next expected snapshot for clusters having a valid snapshot
+     * schedule and backups enabled. Possible values are the following:</p> <ul> <li>
+     * <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li> <li>
+     * <p>Pending - The next snapshot is pending to be taken. </p> </li> </ul>
+     */
+    inline bool ExpectedNextSnapshotScheduleTimeStatusHasBeenSet() const { return m_expectedNextSnapshotScheduleTimeStatusHasBeenSet; }
+
+    /**
+     * <p> The status of next expected snapshot for clusters having a valid snapshot
+     * schedule and backups enabled. Possible values are the following:</p> <ul> <li>
+     * <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li> <li>
+     * <p>Pending - The next snapshot is pending to be taken. </p> </li> </ul>
+     */
+    inline void SetExpectedNextSnapshotScheduleTimeStatus(const Aws::String& value) { m_expectedNextSnapshotScheduleTimeStatusHasBeenSet = true; m_expectedNextSnapshotScheduleTimeStatus = value; }
+
+    /**
+     * <p> The status of next expected snapshot for clusters having a valid snapshot
+     * schedule and backups enabled. Possible values are the following:</p> <ul> <li>
+     * <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li> <li>
+     * <p>Pending - The next snapshot is pending to be taken. </p> </li> </ul>
+     */
+    inline void SetExpectedNextSnapshotScheduleTimeStatus(Aws::String&& value) { m_expectedNextSnapshotScheduleTimeStatusHasBeenSet = true; m_expectedNextSnapshotScheduleTimeStatus = std::move(value); }
+
+    /**
+     * <p> The status of next expected snapshot for clusters having a valid snapshot
+     * schedule and backups enabled. Possible values are the following:</p> <ul> <li>
+     * <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li> <li>
+     * <p>Pending - The next snapshot is pending to be taken. </p> </li> </ul>
+     */
+    inline void SetExpectedNextSnapshotScheduleTimeStatus(const char* value) { m_expectedNextSnapshotScheduleTimeStatusHasBeenSet = true; m_expectedNextSnapshotScheduleTimeStatus.assign(value); }
+
+    /**
+     * <p> The status of next expected snapshot for clusters having a valid snapshot
+     * schedule and backups enabled. Possible values are the following:</p> <ul> <li>
+     * <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li> <li>
+     * <p>Pending - The next snapshot is pending to be taken. </p> </li> </ul>
+     */
+    inline Cluster& WithExpectedNextSnapshotScheduleTimeStatus(const Aws::String& value) { SetExpectedNextSnapshotScheduleTimeStatus(value); return *this;}
+
+    /**
+     * <p> The status of next expected snapshot for clusters having a valid snapshot
+     * schedule and backups enabled. Possible values are the following:</p> <ul> <li>
+     * <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li> <li>
+     * <p>Pending - The next snapshot is pending to be taken. </p> </li> </ul>
+     */
+    inline Cluster& WithExpectedNextSnapshotScheduleTimeStatus(Aws::String&& value) { SetExpectedNextSnapshotScheduleTimeStatus(std::move(value)); return *this;}
+
+    /**
+     * <p> The status of next expected snapshot for clusters having a valid snapshot
+     * schedule and backups enabled. Possible values are the following:</p> <ul> <li>
+     * <p>OnTrack - The next snapshot is expected to be taken on time. </p> </li> <li>
+     * <p>Pending - The next snapshot is pending to be taken. </p> </li> </ul>
+     */
+    inline Cluster& WithExpectedNextSnapshotScheduleTimeStatus(const char* value) { SetExpectedNextSnapshotScheduleTimeStatus(value); return *this;}
+
+
+    /**
      * <p>Returns the following:</p> <ul> <li> <p>AllowCancelResize: a boolean value
      * indicating if the resize operation can be cancelled.</p> </li> <li>
      * <p>ResizeType: Returns ClassicResize</p> </li> </ul>
@@ -2127,6 +2229,12 @@ namespace Model
 
     ScheduleState m_snapshotScheduleState;
     bool m_snapshotScheduleStateHasBeenSet;
+
+    Aws::Utils::DateTime m_expectedNextSnapshotScheduleTime;
+    bool m_expectedNextSnapshotScheduleTimeHasBeenSet;
+
+    Aws::String m_expectedNextSnapshotScheduleTimeStatus;
+    bool m_expectedNextSnapshotScheduleTimeStatusHasBeenSet;
 
     ResizeInfo m_resizeInfo;
     bool m_resizeInfoHasBeenSet;

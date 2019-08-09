@@ -26,6 +26,7 @@ namespace Model
   enum class CmafKeyProviderType
   {
     NOT_SET,
+    SPEKE,
     STATIC_KEY
   };
 

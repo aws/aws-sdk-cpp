@@ -559,58 +559,66 @@ namespace Model
 
 
     /**
-     * Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the
-     * player (eg. English, or Director Commentary). Alphanumeric characters, spaces,
-     * and underscore are legal.
+     * Specify a label for this output audio stream. For example, "English", "Director
+     * commentary", or "track_2". For streaming outputs, MediaConvert passes this
+     * information into destination manifests for display on the end-viewer's player
+     * device. For outputs in other output groups, the service ignores this setting.
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
 
     /**
-     * Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the
-     * player (eg. English, or Director Commentary). Alphanumeric characters, spaces,
-     * and underscore are legal.
+     * Specify a label for this output audio stream. For example, "English", "Director
+     * commentary", or "track_2". For streaming outputs, MediaConvert passes this
+     * information into destination manifests for display on the end-viewer's player
+     * device. For outputs in other output groups, the service ignores this setting.
      */
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
 
     /**
-     * Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the
-     * player (eg. English, or Director Commentary). Alphanumeric characters, spaces,
-     * and underscore are legal.
+     * Specify a label for this output audio stream. For example, "English", "Director
+     * commentary", or "track_2". For streaming outputs, MediaConvert passes this
+     * information into destination manifests for display on the end-viewer's player
+     * device. For outputs in other output groups, the service ignores this setting.
      */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
-     * Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the
-     * player (eg. English, or Director Commentary). Alphanumeric characters, spaces,
-     * and underscore are legal.
+     * Specify a label for this output audio stream. For example, "English", "Director
+     * commentary", or "track_2". For streaming outputs, MediaConvert passes this
+     * information into destination manifests for display on the end-viewer's player
+     * device. For outputs in other output groups, the service ignores this setting.
      */
     inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
 
     /**
-     * Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the
-     * player (eg. English, or Director Commentary). Alphanumeric characters, spaces,
-     * and underscore are legal.
+     * Specify a label for this output audio stream. For example, "English", "Director
+     * commentary", or "track_2". For streaming outputs, MediaConvert passes this
+     * information into destination manifests for display on the end-viewer's player
+     * device. For outputs in other output groups, the service ignores this setting.
      */
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
     /**
-     * Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the
-     * player (eg. English, or Director Commentary). Alphanumeric characters, spaces,
-     * and underscore are legal.
+     * Specify a label for this output audio stream. For example, "English", "Director
+     * commentary", or "track_2". For streaming outputs, MediaConvert passes this
+     * information into destination manifests for display on the end-viewer's player
+     * device. For outputs in other output groups, the service ignores this setting.
      */
     inline AudioDescription& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
 
     /**
-     * Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the
-     * player (eg. English, or Director Commentary). Alphanumeric characters, spaces,
-     * and underscore are legal.
+     * Specify a label for this output audio stream. For example, "English", "Director
+     * commentary", or "track_2". For streaming outputs, MediaConvert passes this
+     * information into destination manifests for display on the end-viewer's player
+     * device. For outputs in other output groups, the service ignores this setting.
      */
     inline AudioDescription& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
 
     /**
-     * Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the
-     * player (eg. English, or Director Commentary). Alphanumeric characters, spaces,
-     * and underscore are legal.
+     * Specify a label for this output audio stream. For example, "English", "Director
+     * commentary", or "track_2". For streaming outputs, MediaConvert passes this
+     * information into destination manifests for display on the end-viewer's player
+     * device. For outputs in other output groups, the service ignores this setting.
      */
     inline AudioDescription& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 

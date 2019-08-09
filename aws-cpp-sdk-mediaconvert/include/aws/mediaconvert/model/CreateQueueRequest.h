@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/PricingPlan.h>
 #include <aws/mediaconvert/model/ReservationPlanSettings.h>
+#include <aws/mediaconvert/model/QueueStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -220,6 +221,43 @@ namespace Model
 
 
     /**
+     * Initial state of the queue. If you create a paused queue, then jobs in that
+     * queue won't begin.
+     */
+    inline const QueueStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * Initial state of the queue. If you create a paused queue, then jobs in that
+     * queue won't begin.
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * Initial state of the queue. If you create a paused queue, then jobs in that
+     * queue won't begin.
+     */
+    inline void SetStatus(const QueueStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * Initial state of the queue. If you create a paused queue, then jobs in that
+     * queue won't begin.
+     */
+    inline void SetStatus(QueueStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * Initial state of the queue. If you create a paused queue, then jobs in that
+     * queue won't begin.
+     */
+    inline CreateQueueRequest& WithStatus(const QueueStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * Initial state of the queue. If you create a paused queue, then jobs in that
+     * queue won't begin.
+     */
+    inline CreateQueueRequest& WithStatus(QueueStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
      * The tags that you want to add to the resource. You can tag resources with a
      * key-value pair or with only a key.
      */
@@ -310,6 +348,9 @@ namespace Model
 
     ReservationPlanSettings m_reservationPlanSettings;
     bool m_reservationPlanSettingsHasBeenSet;
+
+    QueueStatus m_status;
+    bool m_statusHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

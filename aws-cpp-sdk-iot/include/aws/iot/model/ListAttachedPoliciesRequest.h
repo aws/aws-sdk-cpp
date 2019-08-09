@@ -49,42 +49,42 @@ namespace Model
 
 
     /**
-     * <p>The group for which the policies will be listed.</p>
+     * <p>The group or principal for which the policies will be listed.</p>
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
 
     /**
-     * <p>The group for which the policies will be listed.</p>
+     * <p>The group or principal for which the policies will be listed.</p>
      */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
 
     /**
-     * <p>The group for which the policies will be listed.</p>
+     * <p>The group or principal for which the policies will be listed.</p>
      */
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
-     * <p>The group for which the policies will be listed.</p>
+     * <p>The group or principal for which the policies will be listed.</p>
      */
     inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
     /**
-     * <p>The group for which the policies will be listed.</p>
+     * <p>The group or principal for which the policies will be listed.</p>
      */
     inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
 
     /**
-     * <p>The group for which the policies will be listed.</p>
+     * <p>The group or principal for which the policies will be listed.</p>
      */
     inline ListAttachedPoliciesRequest& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
 
     /**
-     * <p>The group for which the policies will be listed.</p>
+     * <p>The group or principal for which the policies will be listed.</p>
      */
     inline ListAttachedPoliciesRequest& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
 
     /**
-     * <p>The group for which the policies will be listed.</p>
+     * <p>The group or principal for which the policies will be listed.</p>
      */
     inline ListAttachedPoliciesRequest& WithTarget(const char* value) { SetTarget(value); return *this;}
 

@@ -32,7 +32,8 @@ namespace Model
     LANCZOS,
     SHARPEN,
     CONSERVE,
-    SPATIAL
+    SPATIAL,
+    TEMPORAL
   };
 
 namespace NoiseReducerFilterMapper

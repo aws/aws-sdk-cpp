@@ -32,16 +32,11 @@ namespace Model
 {
 
   /**
-   * Use the "HDR master display information" (Hdr10Metadata) settings to correct HDR
-   * metadata or to provide missing metadata. These values vary depending on the
-   * input video and must be provided by a color grader. Range is 0 to 50,000; each
-   * increment represents 0.00002 in CIE1931 color coordinate. Note that these
-   * settings are not color correction. Note that if you are creating HDR outputs
-   * inside of an HLS CMAF package, to comply with the Apple specification, you must
-   * use the following settings. Set "MP4 packaging type" (writeMp4PackagingType) to
-   * HVC1 (HVC1). Set "Profile" (H265Settings > codecProfile) to Main10/High
-   * (MAIN10_HIGH). Set "Level" (H265Settings > codecLevel) to 5 (LEVEL_5).<p><h3>See
-   * Also:</h3>   <a
+   * Use these settings to specify static color calibration metadata, as defined by
+   * SMPTE ST 2086. These values don't affect the pixel values that are encoded in
+   * the video stream. They are intended to help the downstream video player display
+   * content in a way that reflects the intentions of the the content
+   * creator.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Hdr10Metadata">AWS
    * API Reference</a></p>
    */
@@ -172,50 +167,58 @@ namespace Model
 
     /**
      * Maximum light level among all samples in the coded video sequence, in units of
-     * candelas per square meter.
+     * candelas per square meter.  This setting doesn't have a default value; you must
+     * specify a value that is suitable for the content.
      */
     inline int GetMaxContentLightLevel() const{ return m_maxContentLightLevel; }
 
     /**
      * Maximum light level among all samples in the coded video sequence, in units of
-     * candelas per square meter.
+     * candelas per square meter.  This setting doesn't have a default value; you must
+     * specify a value that is suitable for the content.
      */
     inline bool MaxContentLightLevelHasBeenSet() const { return m_maxContentLightLevelHasBeenSet; }
 
     /**
      * Maximum light level among all samples in the coded video sequence, in units of
-     * candelas per square meter.
+     * candelas per square meter.  This setting doesn't have a default value; you must
+     * specify a value that is suitable for the content.
      */
     inline void SetMaxContentLightLevel(int value) { m_maxContentLightLevelHasBeenSet = true; m_maxContentLightLevel = value; }
 
     /**
      * Maximum light level among all samples in the coded video sequence, in units of
-     * candelas per square meter.
+     * candelas per square meter.  This setting doesn't have a default value; you must
+     * specify a value that is suitable for the content.
      */
     inline Hdr10Metadata& WithMaxContentLightLevel(int value) { SetMaxContentLightLevel(value); return *this;}
 
 
     /**
      * Maximum average light level of any frame in the coded video sequence, in units
-     * of candelas per square meter.
+     * of candelas per square meter. This setting doesn't have a default value; you
+     * must specify a value that is suitable for the content.
      */
     inline int GetMaxFrameAverageLightLevel() const{ return m_maxFrameAverageLightLevel; }
 
     /**
      * Maximum average light level of any frame in the coded video sequence, in units
-     * of candelas per square meter.
+     * of candelas per square meter. This setting doesn't have a default value; you
+     * must specify a value that is suitable for the content.
      */
     inline bool MaxFrameAverageLightLevelHasBeenSet() const { return m_maxFrameAverageLightLevelHasBeenSet; }
 
     /**
      * Maximum average light level of any frame in the coded video sequence, in units
-     * of candelas per square meter.
+     * of candelas per square meter. This setting doesn't have a default value; you
+     * must specify a value that is suitable for the content.
      */
     inline void SetMaxFrameAverageLightLevel(int value) { m_maxFrameAverageLightLevelHasBeenSet = true; m_maxFrameAverageLightLevel = value; }
 
     /**
      * Maximum average light level of any frame in the coded video sequence, in units
-     * of candelas per square meter.
+     * of candelas per square meter. This setting doesn't have a default value; you
+     * must specify a value that is suitable for the content.
      */
     inline Hdr10Metadata& WithMaxFrameAverageLightLevel(int value) { SetMaxFrameAverageLightLevel(value); return *this;}
 

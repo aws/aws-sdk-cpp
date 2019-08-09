@@ -33,6 +33,11 @@ namespace GuardDuty
 namespace Model
 {
 
+  /**
+   * <p>Continas information about the member account </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Member">AWS
+   * API Reference</a></p>
+   */
   class AWS_GUARDDUTY_API Member
   {
   public:

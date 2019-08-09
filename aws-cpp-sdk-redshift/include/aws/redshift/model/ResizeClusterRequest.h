@@ -129,42 +129,50 @@ namespace Model
 
 
     /**
-     * <p>The new node type for the nodes you are adding.</p>
+     * <p>The new node type for the nodes you are adding. If not specified, the
+     * cluster's current node type is used.</p>
      */
     inline const Aws::String& GetNodeType() const{ return m_nodeType; }
 
     /**
-     * <p>The new node type for the nodes you are adding.</p>
+     * <p>The new node type for the nodes you are adding. If not specified, the
+     * cluster's current node type is used.</p>
      */
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
 
     /**
-     * <p>The new node type for the nodes you are adding.</p>
+     * <p>The new node type for the nodes you are adding. If not specified, the
+     * cluster's current node type is used.</p>
      */
     inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
     /**
-     * <p>The new node type for the nodes you are adding.</p>
+     * <p>The new node type for the nodes you are adding. If not specified, the
+     * cluster's current node type is used.</p>
      */
     inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
 
     /**
-     * <p>The new node type for the nodes you are adding.</p>
+     * <p>The new node type for the nodes you are adding. If not specified, the
+     * cluster's current node type is used.</p>
      */
     inline void SetNodeType(const char* value) { m_nodeTypeHasBeenSet = true; m_nodeType.assign(value); }
 
     /**
-     * <p>The new node type for the nodes you are adding.</p>
+     * <p>The new node type for the nodes you are adding. If not specified, the
+     * cluster's current node type is used.</p>
      */
     inline ResizeClusterRequest& WithNodeType(const Aws::String& value) { SetNodeType(value); return *this;}
 
     /**
-     * <p>The new node type for the nodes you are adding.</p>
+     * <p>The new node type for the nodes you are adding. If not specified, the
+     * cluster's current node type is used.</p>
      */
     inline ResizeClusterRequest& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
 
     /**
-     * <p>The new node type for the nodes you are adding.</p>
+     * <p>The new node type for the nodes you are adding. If not specified, the
+     * cluster's current node type is used.</p>
      */
     inline ResizeClusterRequest& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 

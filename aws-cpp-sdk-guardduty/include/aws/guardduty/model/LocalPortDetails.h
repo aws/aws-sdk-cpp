@@ -33,6 +33,12 @@ namespace GuardDuty
 namespace Model
 {
 
+  /**
+   * <p>Contains information about the port for the local connection.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/LocalPortDetails">AWS
+   * API Reference</a></p>
+   */
   class AWS_GUARDDUTY_API LocalPortDetails
   {
   public:

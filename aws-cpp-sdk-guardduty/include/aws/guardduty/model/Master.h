@@ -33,6 +33,12 @@ namespace GuardDuty
 namespace Model
 {
 
+  /**
+   * <p>Contains information about the Master account and invitation.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Master">AWS
+   * API Reference</a></p>
+   */
   class AWS_GUARDDUTY_API Master
   {
   public:
@@ -43,42 +49,42 @@ namespace Model
 
 
     /**
-     * <p>Master account ID</p>
+     * <p>The ID of the account used as the Master account.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>Master account ID</p>
+     * <p>The ID of the account used as the Master account.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>Master account ID</p>
+     * <p>The ID of the account used as the Master account.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>Master account ID</p>
+     * <p>The ID of the account used as the Master account.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>Master account ID</p>
+     * <p>The ID of the account used as the Master account.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>Master account ID</p>
+     * <p>The ID of the account used as the Master account.</p>
      */
     inline Master& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>Master account ID</p>
+     * <p>The ID of the account used as the Master account.</p>
      */
     inline Master& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>Master account ID</p>
+     * <p>The ID of the account used as the Master account.</p>
      */
     inline Master& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -166,42 +172,42 @@ namespace Model
 
 
     /**
-     * <p>Timestamp at which the invitation was sent</p>
+     * <p>Timestamp at which the invitation was sent.</p>
      */
     inline const Aws::String& GetInvitedAt() const{ return m_invitedAt; }
 
     /**
-     * <p>Timestamp at which the invitation was sent</p>
+     * <p>Timestamp at which the invitation was sent.</p>
      */
     inline bool InvitedAtHasBeenSet() const { return m_invitedAtHasBeenSet; }
 
     /**
-     * <p>Timestamp at which the invitation was sent</p>
+     * <p>Timestamp at which the invitation was sent.</p>
      */
     inline void SetInvitedAt(const Aws::String& value) { m_invitedAtHasBeenSet = true; m_invitedAt = value; }
 
     /**
-     * <p>Timestamp at which the invitation was sent</p>
+     * <p>Timestamp at which the invitation was sent.</p>
      */
     inline void SetInvitedAt(Aws::String&& value) { m_invitedAtHasBeenSet = true; m_invitedAt = std::move(value); }
 
     /**
-     * <p>Timestamp at which the invitation was sent</p>
+     * <p>Timestamp at which the invitation was sent.</p>
      */
     inline void SetInvitedAt(const char* value) { m_invitedAtHasBeenSet = true; m_invitedAt.assign(value); }
 
     /**
-     * <p>Timestamp at which the invitation was sent</p>
+     * <p>Timestamp at which the invitation was sent.</p>
      */
     inline Master& WithInvitedAt(const Aws::String& value) { SetInvitedAt(value); return *this;}
 
     /**
-     * <p>Timestamp at which the invitation was sent</p>
+     * <p>Timestamp at which the invitation was sent.</p>
      */
     inline Master& WithInvitedAt(Aws::String&& value) { SetInvitedAt(std::move(value)); return *this;}
 
     /**
-     * <p>Timestamp at which the invitation was sent</p>
+     * <p>Timestamp at which the invitation was sent.</p>
      */
     inline Master& WithInvitedAt(const char* value) { SetInvitedAt(value); return *this;}
 

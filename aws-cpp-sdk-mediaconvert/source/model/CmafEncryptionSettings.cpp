@@ -34,6 +34,7 @@ CmafEncryptionSettings::CmafEncryptionSettings() :
     m_encryptionMethodHasBeenSet(false),
     m_initializationVectorInManifest(CmafInitializationVectorInManifest::NOT_SET),
     m_initializationVectorInManifestHasBeenSet(false),
+    m_spekeKeyProviderHasBeenSet(false),
     m_staticKeyProviderHasBeenSet(false),
     m_type(CmafKeyProviderType::NOT_SET),
     m_typeHasBeenSet(false)
@@ -46,6 +47,7 @@ CmafEncryptionSettings::CmafEncryptionSettings(JsonView jsonValue) :
     m_encryptionMethodHasBeenSet(false),
     m_initializationVectorInManifest(CmafInitializationVectorInManifest::NOT_SET),
     m_initializationVectorInManifestHasBeenSet(false),
+    m_spekeKeyProviderHasBeenSet(false),
     m_staticKeyProviderHasBeenSet(false),
     m_type(CmafKeyProviderType::NOT_SET),
     m_typeHasBeenSet(false)
@@ -74,6 +76,13 @@ CmafEncryptionSettings& CmafEncryptionSettings::operator =(JsonView jsonValue)
     m_initializationVectorInManifest = CmafInitializationVectorInManifestMapper::GetCmafInitializationVectorInManifestForName(jsonValue.GetString("initializationVectorInManifest"));
 
     m_initializationVectorInManifestHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("spekeKeyProvider"))
+  {
+    m_spekeKeyProvider = jsonValue.GetObject("spekeKeyProvider");
+
+    m_spekeKeyProviderHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("staticKeyProvider"))
@@ -111,6 +120,12 @@ JsonValue CmafEncryptionSettings::Jsonize() const
   if(m_initializationVectorInManifestHasBeenSet)
   {
    payload.WithString("initializationVectorInManifest", CmafInitializationVectorInManifestMapper::GetNameForCmafInitializationVectorInManifest(m_initializationVectorInManifest));
+  }
+
+  if(m_spekeKeyProviderHasBeenSet)
+  {
+   payload.WithObject("spekeKeyProvider", m_spekeKeyProvider.Jsonize());
+
   }
 
   if(m_staticKeyProviderHasBeenSet)

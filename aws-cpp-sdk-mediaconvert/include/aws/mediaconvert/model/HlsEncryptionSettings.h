@@ -228,32 +228,44 @@ namespace Model
 
 
     /**
-     * Settings for use with a SPEKE key provider
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider, if your output group type is HLS, MS Smooth, or DASH. If your output
+     * group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
      */
     inline const SpekeKeyProvider& GetSpekeKeyProvider() const{ return m_spekeKeyProvider; }
 
     /**
-     * Settings for use with a SPEKE key provider
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider, if your output group type is HLS, MS Smooth, or DASH. If your output
+     * group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
      */
     inline bool SpekeKeyProviderHasBeenSet() const { return m_spekeKeyProviderHasBeenSet; }
 
     /**
-     * Settings for use with a SPEKE key provider
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider, if your output group type is HLS, MS Smooth, or DASH. If your output
+     * group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
      */
     inline void SetSpekeKeyProvider(const SpekeKeyProvider& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = value; }
 
     /**
-     * Settings for use with a SPEKE key provider
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider, if your output group type is HLS, MS Smooth, or DASH. If your output
+     * group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
      */
     inline void SetSpekeKeyProvider(SpekeKeyProvider&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::move(value); }
 
     /**
-     * Settings for use with a SPEKE key provider
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider, if your output group type is HLS, MS Smooth, or DASH. If your output
+     * group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
      */
     inline HlsEncryptionSettings& WithSpekeKeyProvider(const SpekeKeyProvider& value) { SetSpekeKeyProvider(value); return *this;}
 
     /**
-     * Settings for use with a SPEKE key provider
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider, if your output group type is HLS, MS Smooth, or DASH. If your output
+     * group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
      */
     inline HlsEncryptionSettings& WithSpekeKeyProvider(SpekeKeyProvider&& value) { SetSpekeKeyProvider(std::move(value)); return *this;}
 
@@ -290,32 +302,44 @@ namespace Model
 
 
     /**
-     * Indicates which type of key provider is used for encryption.
+     * Specify whether your DRM encryption key is static or from a key provider that
+     * follows the SPEKE standard. For more information about SPEKE, see
+     * https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      */
     inline const HlsKeyProviderType& GetType() const{ return m_type; }
 
     /**
-     * Indicates which type of key provider is used for encryption.
+     * Specify whether your DRM encryption key is static or from a key provider that
+     * follows the SPEKE standard. For more information about SPEKE, see
+     * https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * Indicates which type of key provider is used for encryption.
+     * Specify whether your DRM encryption key is static or from a key provider that
+     * follows the SPEKE standard. For more information about SPEKE, see
+     * https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      */
     inline void SetType(const HlsKeyProviderType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * Indicates which type of key provider is used for encryption.
+     * Specify whether your DRM encryption key is static or from a key provider that
+     * follows the SPEKE standard. For more information about SPEKE, see
+     * https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      */
     inline void SetType(HlsKeyProviderType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * Indicates which type of key provider is used for encryption.
+     * Specify whether your DRM encryption key is static or from a key provider that
+     * follows the SPEKE standard. For more information about SPEKE, see
+     * https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      */
     inline HlsEncryptionSettings& WithType(const HlsKeyProviderType& value) { SetType(value); return *this;}
 
     /**
-     * Indicates which type of key provider is used for encryption.
+     * Specify whether your DRM encryption key is static or from a key provider that
+     * follows the SPEKE standard. For more information about SPEKE, see
+     * https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
      */
     inline HlsEncryptionSettings& WithType(HlsKeyProviderType&& value) { SetType(std::move(value)); return *this;}
 

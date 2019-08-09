@@ -289,7 +289,7 @@ namespace Model
     /**
      * <p>Application-specific information passed between Amazon Lex and a client
      * application.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
      * Session Attributes</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetSessionAttributes() const{ return m_sessionAttributes; }
@@ -297,7 +297,7 @@ namespace Model
     /**
      * <p>Application-specific information passed between Amazon Lex and a client
      * application.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
      * Session Attributes</a>.</p>
      */
     inline bool SessionAttributesHasBeenSet() const { return m_sessionAttributesHasBeenSet; }
@@ -305,7 +305,7 @@ namespace Model
     /**
      * <p>Application-specific information passed between Amazon Lex and a client
      * application.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
      * Session Attributes</a>.</p>
      */
     inline void SetSessionAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = value; }
@@ -313,7 +313,7 @@ namespace Model
     /**
      * <p>Application-specific information passed between Amazon Lex and a client
      * application.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
      * Session Attributes</a>.</p>
      */
     inline void SetSessionAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = std::move(value); }
@@ -321,7 +321,7 @@ namespace Model
     /**
      * <p>Application-specific information passed between Amazon Lex and a client
      * application.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
      * Session Attributes</a>.</p>
      */
     inline PostTextRequest& WithSessionAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetSessionAttributes(value); return *this;}
@@ -329,7 +329,7 @@ namespace Model
     /**
      * <p>Application-specific information passed between Amazon Lex and a client
      * application.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
      * Session Attributes</a>.</p>
      */
     inline PostTextRequest& WithSessionAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetSessionAttributes(std::move(value)); return *this;}
@@ -337,7 +337,7 @@ namespace Model
     /**
      * <p>Application-specific information passed between Amazon Lex and a client
      * application.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
      * Session Attributes</a>.</p>
      */
     inline PostTextRequest& AddSessionAttributes(const Aws::String& key, const Aws::String& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, value); return *this; }
@@ -345,7 +345,7 @@ namespace Model
     /**
      * <p>Application-specific information passed between Amazon Lex and a client
      * application.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
      * Session Attributes</a>.</p>
      */
     inline PostTextRequest& AddSessionAttributes(Aws::String&& key, const Aws::String& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(std::move(key), value); return *this; }
@@ -353,7 +353,7 @@ namespace Model
     /**
      * <p>Application-specific information passed between Amazon Lex and a client
      * application.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
      * Session Attributes</a>.</p>
      */
     inline PostTextRequest& AddSessionAttributes(const Aws::String& key, Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, std::move(value)); return *this; }
@@ -361,7 +361,7 @@ namespace Model
     /**
      * <p>Application-specific information passed between Amazon Lex and a client
      * application.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
      * Session Attributes</a>.</p>
      */
     inline PostTextRequest& AddSessionAttributes(Aws::String&& key, Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(std::move(key), std::move(value)); return *this; }
@@ -369,7 +369,7 @@ namespace Model
     /**
      * <p>Application-specific information passed between Amazon Lex and a client
      * application.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
      * Session Attributes</a>.</p>
      */
     inline PostTextRequest& AddSessionAttributes(const char* key, Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, std::move(value)); return *this; }
@@ -377,7 +377,7 @@ namespace Model
     /**
      * <p>Application-specific information passed between Amazon Lex and a client
      * application.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
      * Session Attributes</a>.</p>
      */
     inline PostTextRequest& AddSessionAttributes(Aws::String&& key, const char* value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(std::move(key), value); return *this; }
@@ -385,7 +385,7 @@ namespace Model
     /**
      * <p>Application-specific information passed between Amazon Lex and a client
      * application.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
      * Session Attributes</a>.</p>
      */
     inline PostTextRequest& AddSessionAttributes(const char* key, const char* value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, value); return *this; }
@@ -396,7 +396,7 @@ namespace Model
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
      * Request Attributes</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRequestAttributes() const{ return m_requestAttributes; }
@@ -406,7 +406,7 @@ namespace Model
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
      * Request Attributes</a>.</p>
      */
     inline bool RequestAttributesHasBeenSet() const { return m_requestAttributesHasBeenSet; }
@@ -416,7 +416,7 @@ namespace Model
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
      * Request Attributes</a>.</p>
      */
     inline void SetRequestAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = value; }
@@ -426,7 +426,7 @@ namespace Model
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
      * Request Attributes</a>.</p>
      */
     inline void SetRequestAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = std::move(value); }
@@ -436,7 +436,7 @@ namespace Model
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
      * Request Attributes</a>.</p>
      */
     inline PostTextRequest& WithRequestAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestAttributes(value); return *this;}
@@ -446,7 +446,7 @@ namespace Model
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
      * Request Attributes</a>.</p>
      */
     inline PostTextRequest& WithRequestAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestAttributes(std::move(value)); return *this;}
@@ -456,7 +456,7 @@ namespace Model
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
      * Request Attributes</a>.</p>
      */
     inline PostTextRequest& AddRequestAttributes(const Aws::String& key, const Aws::String& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(key, value); return *this; }
@@ -466,7 +466,7 @@ namespace Model
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
      * Request Attributes</a>.</p>
      */
     inline PostTextRequest& AddRequestAttributes(Aws::String&& key, const Aws::String& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(std::move(key), value); return *this; }
@@ -476,7 +476,7 @@ namespace Model
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
      * Request Attributes</a>.</p>
      */
     inline PostTextRequest& AddRequestAttributes(const Aws::String& key, Aws::String&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(key, std::move(value)); return *this; }
@@ -486,7 +486,7 @@ namespace Model
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
      * Request Attributes</a>.</p>
      */
     inline PostTextRequest& AddRequestAttributes(Aws::String&& key, Aws::String&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(std::move(key), std::move(value)); return *this; }
@@ -496,7 +496,7 @@ namespace Model
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
      * Request Attributes</a>.</p>
      */
     inline PostTextRequest& AddRequestAttributes(const char* key, Aws::String&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(key, std::move(value)); return *this; }
@@ -506,7 +506,7 @@ namespace Model
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
      * Request Attributes</a>.</p>
      */
     inline PostTextRequest& AddRequestAttributes(Aws::String&& key, const char* value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(std::move(key), value); return *this; }
@@ -516,7 +516,7 @@ namespace Model
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+     * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
      * Request Attributes</a>.</p>
      */
     inline PostTextRequest& AddRequestAttributes(const char* key, const char* value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(key, value); return *this; }

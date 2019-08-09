@@ -81,6 +81,8 @@ Cluster::Cluster() :
     m_snapshotScheduleIdentifierHasBeenSet(false),
     m_snapshotScheduleState(ScheduleState::NOT_SET),
     m_snapshotScheduleStateHasBeenSet(false),
+    m_expectedNextSnapshotScheduleTimeHasBeenSet(false),
+    m_expectedNextSnapshotScheduleTimeStatusHasBeenSet(false),
     m_resizeInfoHasBeenSet(false)
 {
 }
@@ -136,6 +138,8 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_snapshotScheduleIdentifierHasBeenSet(false),
     m_snapshotScheduleState(ScheduleState::NOT_SET),
     m_snapshotScheduleStateHasBeenSet(false),
+    m_expectedNextSnapshotScheduleTimeHasBeenSet(false),
+    m_expectedNextSnapshotScheduleTimeStatusHasBeenSet(false),
     m_resizeInfoHasBeenSet(false)
 {
   *this = xmlNode;
@@ -447,6 +451,18 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_snapshotScheduleState = ScheduleStateMapper::GetScheduleStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotScheduleStateNode.GetText()).c_str()).c_str());
       m_snapshotScheduleStateHasBeenSet = true;
     }
+    XmlNode expectedNextSnapshotScheduleTimeNode = resultNode.FirstChild("ExpectedNextSnapshotScheduleTime");
+    if(!expectedNextSnapshotScheduleTimeNode.IsNull())
+    {
+      m_expectedNextSnapshotScheduleTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expectedNextSnapshotScheduleTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_expectedNextSnapshotScheduleTimeHasBeenSet = true;
+    }
+    XmlNode expectedNextSnapshotScheduleTimeStatusNode = resultNode.FirstChild("ExpectedNextSnapshotScheduleTimeStatus");
+    if(!expectedNextSnapshotScheduleTimeStatusNode.IsNull())
+    {
+      m_expectedNextSnapshotScheduleTimeStatus = Aws::Utils::Xml::DecodeEscapedXmlText(expectedNextSnapshotScheduleTimeStatusNode.GetText());
+      m_expectedNextSnapshotScheduleTimeStatusHasBeenSet = true;
+    }
     XmlNode resizeInfoNode = resultNode.FirstChild("ResizeInfo");
     if(!resizeInfoNode.IsNull())
     {
@@ -730,6 +746,16 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".SnapshotScheduleState=" << ScheduleStateMapper::GetNameForScheduleState(m_snapshotScheduleState) << "&";
   }
 
+  if(m_expectedNextSnapshotScheduleTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ExpectedNextSnapshotScheduleTime=" << StringUtils::URLEncode(m_expectedNextSnapshotScheduleTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_expectedNextSnapshotScheduleTimeStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ExpectedNextSnapshotScheduleTimeStatus=" << StringUtils::URLEncode(m_expectedNextSnapshotScheduleTimeStatus.c_str()) << "&";
+  }
+
   if(m_resizeInfoHasBeenSet)
   {
       Aws::StringStream resizeInfoLocationAndMemberSs;
@@ -968,6 +994,14 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_snapshotScheduleStateHasBeenSet)
   {
       oStream << location << ".SnapshotScheduleState=" << ScheduleStateMapper::GetNameForScheduleState(m_snapshotScheduleState) << "&";
+  }
+  if(m_expectedNextSnapshotScheduleTimeHasBeenSet)
+  {
+      oStream << location << ".ExpectedNextSnapshotScheduleTime=" << StringUtils::URLEncode(m_expectedNextSnapshotScheduleTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_expectedNextSnapshotScheduleTimeStatusHasBeenSet)
+  {
+      oStream << location << ".ExpectedNextSnapshotScheduleTimeStatus=" << StringUtils::URLEncode(m_expectedNextSnapshotScheduleTimeStatus.c_str()) << "&";
   }
   if(m_resizeInfoHasBeenSet)
   {

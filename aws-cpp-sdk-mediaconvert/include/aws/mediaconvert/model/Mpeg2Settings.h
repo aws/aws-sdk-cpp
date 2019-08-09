@@ -948,32 +948,38 @@ namespace Model
 
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service
+     * automatically detects. This improves video quality and is enabled by default.
      */
     inline const Mpeg2SceneChangeDetect& GetSceneChangeDetect() const{ return m_sceneChangeDetect; }
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service
+     * automatically detects. This improves video quality and is enabled by default.
      */
     inline bool SceneChangeDetectHasBeenSet() const { return m_sceneChangeDetectHasBeenSet; }
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service
+     * automatically detects. This improves video quality and is enabled by default.
      */
     inline void SetSceneChangeDetect(const Mpeg2SceneChangeDetect& value) { m_sceneChangeDetectHasBeenSet = true; m_sceneChangeDetect = value; }
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service
+     * automatically detects. This improves video quality and is enabled by default.
      */
     inline void SetSceneChangeDetect(Mpeg2SceneChangeDetect&& value) { m_sceneChangeDetectHasBeenSet = true; m_sceneChangeDetect = std::move(value); }
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service
+     * automatically detects. This improves video quality and is enabled by default.
      */
     inline Mpeg2Settings& WithSceneChangeDetect(const Mpeg2SceneChangeDetect& value) { SetSceneChangeDetect(value); return *this;}
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service
+     * automatically detects. This improves video quality and is enabled by default.
      */
     inline Mpeg2Settings& WithSceneChangeDetect(Mpeg2SceneChangeDetect&& value) { SetSceneChangeDetect(std::move(value)); return *this;}
 

@@ -2747,16 +2747,16 @@ namespace Model
         virtual void DescribeSnapshotSchedulesAsync(const Model::DescribeSnapshotSchedulesRequest& request, const DescribeSnapshotSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the total amount of snapshot usage and provisioned storage for a user
-         * in megabytes.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the total amount of snapshot usage and provisioned storage in
+         * megabytes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeStorage">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeStorageOutcome DescribeStorage(const Model::DescribeStorageRequest& request) const;
 
         /**
-         * <p>Returns the total amount of snapshot usage and provisioned storage for a user
-         * in megabytes.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the total amount of snapshot usage and provisioned storage in
+         * megabytes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeStorage">AWS
          * API Reference</a></p>
          *
@@ -2765,8 +2765,8 @@ namespace Model
         virtual Model::DescribeStorageOutcomeCallable DescribeStorageCallable(const Model::DescribeStorageRequest& request) const;
 
         /**
-         * <p>Returns the total amount of snapshot usage and provisioned storage for a user
-         * in megabytes.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the total amount of snapshot usage and provisioned storage in
+         * megabytes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeStorage">AWS
          * API Reference</a></p>
          *

@@ -30,13 +30,17 @@ namespace Model
 
 RepublishAction::RepublishAction() : 
     m_roleArnHasBeenSet(false),
-    m_topicHasBeenSet(false)
+    m_topicHasBeenSet(false),
+    m_qos(0),
+    m_qosHasBeenSet(false)
 {
 }
 
 RepublishAction::RepublishAction(JsonView jsonValue) : 
     m_roleArnHasBeenSet(false),
-    m_topicHasBeenSet(false)
+    m_topicHasBeenSet(false),
+    m_qos(0),
+    m_qosHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +61,13 @@ RepublishAction& RepublishAction::operator =(JsonView jsonValue)
     m_topicHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("qos"))
+  {
+    m_qos = jsonValue.GetInteger("qos");
+
+    m_qosHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +84,12 @@ JsonValue RepublishAction::Jsonize() const
   if(m_topicHasBeenSet)
   {
    payload.WithString("topic", m_topic);
+
+  }
+
+  if(m_qosHasBeenSet)
+  {
+   payload.WithInteger("qos", m_qos);
 
   }
 

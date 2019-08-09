@@ -286,50 +286,74 @@ namespace Model
 
 
     /**
-     * Human readable information to indicate captions available for players (eg.
-     * English, or Spanish). Alphanumeric characters, spaces, and underscore are legal.
+     * Specify a label for this set of output captions. For example, "English",
+     * "Director commentary", or "track_2". For streaming outputs, MediaConvert passes
+     * this information into destination manifests for display on the end-viewer's
+     * player device. For outputs in other output groups, the service ignores this
+     * setting.
      */
     inline const Aws::String& GetLanguageDescription() const{ return m_languageDescription; }
 
     /**
-     * Human readable information to indicate captions available for players (eg.
-     * English, or Spanish). Alphanumeric characters, spaces, and underscore are legal.
+     * Specify a label for this set of output captions. For example, "English",
+     * "Director commentary", or "track_2". For streaming outputs, MediaConvert passes
+     * this information into destination manifests for display on the end-viewer's
+     * player device. For outputs in other output groups, the service ignores this
+     * setting.
      */
     inline bool LanguageDescriptionHasBeenSet() const { return m_languageDescriptionHasBeenSet; }
 
     /**
-     * Human readable information to indicate captions available for players (eg.
-     * English, or Spanish). Alphanumeric characters, spaces, and underscore are legal.
+     * Specify a label for this set of output captions. For example, "English",
+     * "Director commentary", or "track_2". For streaming outputs, MediaConvert passes
+     * this information into destination manifests for display on the end-viewer's
+     * player device. For outputs in other output groups, the service ignores this
+     * setting.
      */
     inline void SetLanguageDescription(const Aws::String& value) { m_languageDescriptionHasBeenSet = true; m_languageDescription = value; }
 
     /**
-     * Human readable information to indicate captions available for players (eg.
-     * English, or Spanish). Alphanumeric characters, spaces, and underscore are legal.
+     * Specify a label for this set of output captions. For example, "English",
+     * "Director commentary", or "track_2". For streaming outputs, MediaConvert passes
+     * this information into destination manifests for display on the end-viewer's
+     * player device. For outputs in other output groups, the service ignores this
+     * setting.
      */
     inline void SetLanguageDescription(Aws::String&& value) { m_languageDescriptionHasBeenSet = true; m_languageDescription = std::move(value); }
 
     /**
-     * Human readable information to indicate captions available for players (eg.
-     * English, or Spanish). Alphanumeric characters, spaces, and underscore are legal.
+     * Specify a label for this set of output captions. For example, "English",
+     * "Director commentary", or "track_2". For streaming outputs, MediaConvert passes
+     * this information into destination manifests for display on the end-viewer's
+     * player device. For outputs in other output groups, the service ignores this
+     * setting.
      */
     inline void SetLanguageDescription(const char* value) { m_languageDescriptionHasBeenSet = true; m_languageDescription.assign(value); }
 
     /**
-     * Human readable information to indicate captions available for players (eg.
-     * English, or Spanish). Alphanumeric characters, spaces, and underscore are legal.
+     * Specify a label for this set of output captions. For example, "English",
+     * "Director commentary", or "track_2". For streaming outputs, MediaConvert passes
+     * this information into destination manifests for display on the end-viewer's
+     * player device. For outputs in other output groups, the service ignores this
+     * setting.
      */
     inline CaptionDescription& WithLanguageDescription(const Aws::String& value) { SetLanguageDescription(value); return *this;}
 
     /**
-     * Human readable information to indicate captions available for players (eg.
-     * English, or Spanish). Alphanumeric characters, spaces, and underscore are legal.
+     * Specify a label for this set of output captions. For example, "English",
+     * "Director commentary", or "track_2". For streaming outputs, MediaConvert passes
+     * this information into destination manifests for display on the end-viewer's
+     * player device. For outputs in other output groups, the service ignores this
+     * setting.
      */
     inline CaptionDescription& WithLanguageDescription(Aws::String&& value) { SetLanguageDescription(std::move(value)); return *this;}
 
     /**
-     * Human readable information to indicate captions available for players (eg.
-     * English, or Spanish). Alphanumeric characters, spaces, and underscore are legal.
+     * Specify a label for this set of output captions. For example, "English",
+     * "Director commentary", or "track_2". For streaming outputs, MediaConvert passes
+     * this information into destination manifests for display on the end-viewer's
+     * player device. For outputs in other output groups, the service ignores this
+     * setting.
      */
     inline CaptionDescription& WithLanguageDescription(const char* value) { SetLanguageDescription(value); return *this;}
 

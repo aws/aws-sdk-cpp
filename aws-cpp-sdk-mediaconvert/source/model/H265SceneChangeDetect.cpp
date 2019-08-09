@@ -32,6 +32,7 @@ namespace Aws
 
         static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
         static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
+        static const int TRANSITION_DETECTION_HASH = HashingUtils::HashString("TRANSITION_DETECTION");
 
 
         H265SceneChangeDetect GetH265SceneChangeDetectForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == ENABLED_HASH)
           {
             return H265SceneChangeDetect::ENABLED;
+          }
+          else if (hashCode == TRANSITION_DETECTION_HASH)
+          {
+            return H265SceneChangeDetect::TRANSITION_DETECTION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "DISABLED";
           case H265SceneChangeDetect::ENABLED:
             return "ENABLED";
+          case H265SceneChangeDetect::TRANSITION_DETECTION:
+            return "TRANSITION_DETECTION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

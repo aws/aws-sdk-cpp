@@ -33,6 +33,11 @@ namespace GuardDuty
 namespace Model
 {
 
+  /**
+   * <p>Contains information about the access keys.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AccessKeyDetails">AWS
+   * API Reference</a></p>
+   */
   class AWS_GUARDDUTY_API AccessKeyDetails
   {
   public:

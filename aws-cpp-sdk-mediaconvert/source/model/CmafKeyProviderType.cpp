@@ -30,13 +30,18 @@ namespace Aws
       namespace CmafKeyProviderTypeMapper
       {
 
+        static const int SPEKE_HASH = HashingUtils::HashString("SPEKE");
         static const int STATIC_KEY_HASH = HashingUtils::HashString("STATIC_KEY");
 
 
         CmafKeyProviderType GetCmafKeyProviderTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == STATIC_KEY_HASH)
+          if (hashCode == SPEKE_HASH)
+          {
+            return CmafKeyProviderType::SPEKE;
+          }
+          else if (hashCode == STATIC_KEY_HASH)
           {
             return CmafKeyProviderType::STATIC_KEY;
           }
@@ -54,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafKeyProviderType::SPEKE:
+            return "SPEKE";
           case CmafKeyProviderType::STATIC_KEY:
             return "STATIC_KEY";
           default:

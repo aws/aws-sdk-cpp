@@ -132,8 +132,8 @@ namespace Model
      * <code>AttributePayload</code> is merged with the attributes stored in the
      * registry, instead of overwriting them.</p> <p>To remove an attribute, call
      * <code>UpdateThing</code> with an empty attribute value.</p> <note> <p>The
-     * <code>merge</code> attribute is only valid when calling
-     * <code>UpdateThing</code>.</p> </note>
+     * <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>
+     * or <code>UpdateThingGroup</code>.</p> </note>
      */
     inline bool GetMerge() const{ return m_merge; }
 
@@ -142,8 +142,8 @@ namespace Model
      * <code>AttributePayload</code> is merged with the attributes stored in the
      * registry, instead of overwriting them.</p> <p>To remove an attribute, call
      * <code>UpdateThing</code> with an empty attribute value.</p> <note> <p>The
-     * <code>merge</code> attribute is only valid when calling
-     * <code>UpdateThing</code>.</p> </note>
+     * <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>
+     * or <code>UpdateThingGroup</code>.</p> </note>
      */
     inline bool MergeHasBeenSet() const { return m_mergeHasBeenSet; }
 
@@ -152,8 +152,8 @@ namespace Model
      * <code>AttributePayload</code> is merged with the attributes stored in the
      * registry, instead of overwriting them.</p> <p>To remove an attribute, call
      * <code>UpdateThing</code> with an empty attribute value.</p> <note> <p>The
-     * <code>merge</code> attribute is only valid when calling
-     * <code>UpdateThing</code>.</p> </note>
+     * <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>
+     * or <code>UpdateThingGroup</code>.</p> </note>
      */
     inline void SetMerge(bool value) { m_mergeHasBeenSet = true; m_merge = value; }
 
@@ -162,8 +162,8 @@ namespace Model
      * <code>AttributePayload</code> is merged with the attributes stored in the
      * registry, instead of overwriting them.</p> <p>To remove an attribute, call
      * <code>UpdateThing</code> with an empty attribute value.</p> <note> <p>The
-     * <code>merge</code> attribute is only valid when calling
-     * <code>UpdateThing</code>.</p> </note>
+     * <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>
+     * or <code>UpdateThingGroup</code>.</p> </note>
      */
     inline AttributePayload& WithMerge(bool value) { SetMerge(value); return *this;}
 

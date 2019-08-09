@@ -35,6 +35,11 @@ namespace GuardDuty
 namespace Model
 {
 
+  /**
+   * <p>Contains information about the API operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AwsApiCallAction">AWS
+   * API Reference</a></p>
+   */
   class AWS_GUARDDUTY_API AwsApiCallAction
   {
   public:

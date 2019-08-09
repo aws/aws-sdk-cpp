@@ -37,6 +37,12 @@ namespace GuardDuty
 namespace Model
 {
 
+  /**
+   * <p>Continas information about the remote IP address.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/RemoteIpDetails">AWS
+   * API Reference</a></p>
+   */
   class AWS_GUARDDUTY_API RemoteIpDetails
   {
   public:

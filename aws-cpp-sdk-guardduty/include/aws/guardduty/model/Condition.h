@@ -34,6 +34,11 @@ namespace GuardDuty
 namespace Model
 {
 
+  /**
+   * <p>Contains information about the condition.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Condition">AWS
+   * API Reference</a></p>
+   */
   class AWS_GUARDDUTY_API Condition
   {
   public:
@@ -43,59 +48,113 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>Represents an <b>equal</b> condition to be applied to a single field when
+     * querying for findings.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetEquals() const{ return m_equals; }
 
-    
+    /**
+     * <p>Represents an <b>equal</b> condition to be applied to a single field when
+     * querying for findings.</p>
+     */
     inline bool EqualsHasBeenSet() const { return m_equalsHasBeenSet; }
 
-    
+    /**
+     * <p>Represents an <b>equal</b> condition to be applied to a single field when
+     * querying for findings.</p>
+     */
     inline void SetEquals(const Aws::Vector<Aws::String>& value) { m_equalsHasBeenSet = true; m_equals = value; }
 
-    
+    /**
+     * <p>Represents an <b>equal</b> condition to be applied to a single field when
+     * querying for findings.</p>
+     */
     inline void SetEquals(Aws::Vector<Aws::String>&& value) { m_equalsHasBeenSet = true; m_equals = std::move(value); }
 
-    
+    /**
+     * <p>Represents an <b>equal</b> condition to be applied to a single field when
+     * querying for findings.</p>
+     */
     inline Condition& WithEquals(const Aws::Vector<Aws::String>& value) { SetEquals(value); return *this;}
 
-    
+    /**
+     * <p>Represents an <b>equal</b> condition to be applied to a single field when
+     * querying for findings.</p>
+     */
     inline Condition& WithEquals(Aws::Vector<Aws::String>&& value) { SetEquals(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Represents an <b>equal</b> condition to be applied to a single field when
+     * querying for findings.</p>
+     */
     inline Condition& AddEquals(const Aws::String& value) { m_equalsHasBeenSet = true; m_equals.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Represents an <b>equal</b> condition to be applied to a single field when
+     * querying for findings.</p>
+     */
     inline Condition& AddEquals(Aws::String&& value) { m_equalsHasBeenSet = true; m_equals.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p>Represents an <b>equal</b> condition to be applied to a single field when
+     * querying for findings.</p>
+     */
     inline Condition& AddEquals(const char* value) { m_equalsHasBeenSet = true; m_equals.push_back(value); return *this; }
 
 
-    
+    /**
+     * <p>Represents an <b>not equal</b> condition to be applied to a single field when
+     * querying for findings.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetNotEquals() const{ return m_notEquals; }
 
-    
+    /**
+     * <p>Represents an <b>not equal</b> condition to be applied to a single field when
+     * querying for findings.</p>
+     */
     inline bool NotEqualsHasBeenSet() const { return m_notEqualsHasBeenSet; }
 
-    
+    /**
+     * <p>Represents an <b>not equal</b> condition to be applied to a single field when
+     * querying for findings.</p>
+     */
     inline void SetNotEquals(const Aws::Vector<Aws::String>& value) { m_notEqualsHasBeenSet = true; m_notEquals = value; }
 
-    
+    /**
+     * <p>Represents an <b>not equal</b> condition to be applied to a single field when
+     * querying for findings.</p>
+     */
     inline void SetNotEquals(Aws::Vector<Aws::String>&& value) { m_notEqualsHasBeenSet = true; m_notEquals = std::move(value); }
 
-    
+    /**
+     * <p>Represents an <b>not equal</b> condition to be applied to a single field when
+     * querying for findings.</p>
+     */
     inline Condition& WithNotEquals(const Aws::Vector<Aws::String>& value) { SetNotEquals(value); return *this;}
 
-    
+    /**
+     * <p>Represents an <b>not equal</b> condition to be applied to a single field when
+     * querying for findings.</p>
+     */
     inline Condition& WithNotEquals(Aws::Vector<Aws::String>&& value) { SetNotEquals(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Represents an <b>not equal</b> condition to be applied to a single field when
+     * querying for findings.</p>
+     */
     inline Condition& AddNotEquals(const Aws::String& value) { m_notEqualsHasBeenSet = true; m_notEquals.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Represents an <b>not equal</b> condition to be applied to a single field when
+     * querying for findings.</p>
+     */
     inline Condition& AddNotEquals(Aws::String&& value) { m_notEqualsHasBeenSet = true; m_notEquals.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p>Represents an <b>not equal</b> condition to be applied to a single field when
+     * querying for findings.</p>
+     */
     inline Condition& AddNotEquals(const char* value) { m_notEqualsHasBeenSet = true; m_notEquals.push_back(value); return *this; }
 
 

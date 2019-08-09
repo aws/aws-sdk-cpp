@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediaconvert/model/TeletextPageType.h>
 #include <utility>
 
 namespace Aws
@@ -111,10 +113,86 @@ namespace Model
      */
     inline TeletextDestinationSettings& WithPageNumber(const char* value) { SetPageNumber(value); return *this;}
 
+
+    /**
+     * Specify the page types for this Teletext page. If you don't specify a value
+     * here, the service sets the page type to the default value Subtitle
+     * (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't
+     * use this field. When you pass through a set of Teletext pages, your output has
+     * the same page types as your input.
+     */
+    inline const Aws::Vector<TeletextPageType>& GetPageTypes() const{ return m_pageTypes; }
+
+    /**
+     * Specify the page types for this Teletext page. If you don't specify a value
+     * here, the service sets the page type to the default value Subtitle
+     * (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't
+     * use this field. When you pass through a set of Teletext pages, your output has
+     * the same page types as your input.
+     */
+    inline bool PageTypesHasBeenSet() const { return m_pageTypesHasBeenSet; }
+
+    /**
+     * Specify the page types for this Teletext page. If you don't specify a value
+     * here, the service sets the page type to the default value Subtitle
+     * (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't
+     * use this field. When you pass through a set of Teletext pages, your output has
+     * the same page types as your input.
+     */
+    inline void SetPageTypes(const Aws::Vector<TeletextPageType>& value) { m_pageTypesHasBeenSet = true; m_pageTypes = value; }
+
+    /**
+     * Specify the page types for this Teletext page. If you don't specify a value
+     * here, the service sets the page type to the default value Subtitle
+     * (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't
+     * use this field. When you pass through a set of Teletext pages, your output has
+     * the same page types as your input.
+     */
+    inline void SetPageTypes(Aws::Vector<TeletextPageType>&& value) { m_pageTypesHasBeenSet = true; m_pageTypes = std::move(value); }
+
+    /**
+     * Specify the page types for this Teletext page. If you don't specify a value
+     * here, the service sets the page type to the default value Subtitle
+     * (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't
+     * use this field. When you pass through a set of Teletext pages, your output has
+     * the same page types as your input.
+     */
+    inline TeletextDestinationSettings& WithPageTypes(const Aws::Vector<TeletextPageType>& value) { SetPageTypes(value); return *this;}
+
+    /**
+     * Specify the page types for this Teletext page. If you don't specify a value
+     * here, the service sets the page type to the default value Subtitle
+     * (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't
+     * use this field. When you pass through a set of Teletext pages, your output has
+     * the same page types as your input.
+     */
+    inline TeletextDestinationSettings& WithPageTypes(Aws::Vector<TeletextPageType>&& value) { SetPageTypes(std::move(value)); return *this;}
+
+    /**
+     * Specify the page types for this Teletext page. If you don't specify a value
+     * here, the service sets the page type to the default value Subtitle
+     * (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't
+     * use this field. When you pass through a set of Teletext pages, your output has
+     * the same page types as your input.
+     */
+    inline TeletextDestinationSettings& AddPageTypes(const TeletextPageType& value) { m_pageTypesHasBeenSet = true; m_pageTypes.push_back(value); return *this; }
+
+    /**
+     * Specify the page types for this Teletext page. If you don't specify a value
+     * here, the service sets the page type to the default value Subtitle
+     * (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't
+     * use this field. When you pass through a set of Teletext pages, your output has
+     * the same page types as your input.
+     */
+    inline TeletextDestinationSettings& AddPageTypes(TeletextPageType&& value) { m_pageTypesHasBeenSet = true; m_pageTypes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_pageNumber;
     bool m_pageNumberHasBeenSet;
+
+    Aws::Vector<TeletextPageType> m_pageTypes;
+    bool m_pageTypesHasBeenSet;
   };
 
 } // namespace Model

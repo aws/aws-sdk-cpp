@@ -33,6 +33,12 @@ namespace GuardDuty
 namespace Model
 {
 
+  /**
+   * <p>Contains information about the tag associated with the
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Tag">AWS API
+   * Reference</a></p>
+   */
   class AWS_GUARDDUTY_API Tag
   {
   public:

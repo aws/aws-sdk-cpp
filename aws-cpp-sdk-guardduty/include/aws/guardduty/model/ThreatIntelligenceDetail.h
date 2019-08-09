@@ -1,0 +1,158 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/guardduty/GuardDuty_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace GuardDuty
+{
+namespace Model
+{
+
+  /**
+   * <p>An instance of a threat intelligence detail that constitutes evidence for the
+   * finding.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ThreatIntelligenceDetail">AWS
+   * API Reference</a></p>
+   */
+  class AWS_GUARDDUTY_API ThreatIntelligenceDetail
+  {
+  public:
+    ThreatIntelligenceDetail();
+    ThreatIntelligenceDetail(Aws::Utils::Json::JsonView jsonValue);
+    ThreatIntelligenceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The name of the threat intelligence list that triggered the finding.</p>
+     */
+    inline const Aws::String& GetThreatListName() const{ return m_threatListName; }
+
+    /**
+     * <p>The name of the threat intelligence list that triggered the finding.</p>
+     */
+    inline bool ThreatListNameHasBeenSet() const { return m_threatListNameHasBeenSet; }
+
+    /**
+     * <p>The name of the threat intelligence list that triggered the finding.</p>
+     */
+    inline void SetThreatListName(const Aws::String& value) { m_threatListNameHasBeenSet = true; m_threatListName = value; }
+
+    /**
+     * <p>The name of the threat intelligence list that triggered the finding.</p>
+     */
+    inline void SetThreatListName(Aws::String&& value) { m_threatListNameHasBeenSet = true; m_threatListName = std::move(value); }
+
+    /**
+     * <p>The name of the threat intelligence list that triggered the finding.</p>
+     */
+    inline void SetThreatListName(const char* value) { m_threatListNameHasBeenSet = true; m_threatListName.assign(value); }
+
+    /**
+     * <p>The name of the threat intelligence list that triggered the finding.</p>
+     */
+    inline ThreatIntelligenceDetail& WithThreatListName(const Aws::String& value) { SetThreatListName(value); return *this;}
+
+    /**
+     * <p>The name of the threat intelligence list that triggered the finding.</p>
+     */
+    inline ThreatIntelligenceDetail& WithThreatListName(Aws::String&& value) { SetThreatListName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the threat intelligence list that triggered the finding.</p>
+     */
+    inline ThreatIntelligenceDetail& WithThreatListName(const char* value) { SetThreatListName(value); return *this;}
+
+
+    /**
+     * <p>A list of names of the threats in the threat intelligence list that triggered
+     * the finding.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetThreatNames() const{ return m_threatNames; }
+
+    /**
+     * <p>A list of names of the threats in the threat intelligence list that triggered
+     * the finding.</p>
+     */
+    inline bool ThreatNamesHasBeenSet() const { return m_threatNamesHasBeenSet; }
+
+    /**
+     * <p>A list of names of the threats in the threat intelligence list that triggered
+     * the finding.</p>
+     */
+    inline void SetThreatNames(const Aws::Vector<Aws::String>& value) { m_threatNamesHasBeenSet = true; m_threatNames = value; }
+
+    /**
+     * <p>A list of names of the threats in the threat intelligence list that triggered
+     * the finding.</p>
+     */
+    inline void SetThreatNames(Aws::Vector<Aws::String>&& value) { m_threatNamesHasBeenSet = true; m_threatNames = std::move(value); }
+
+    /**
+     * <p>A list of names of the threats in the threat intelligence list that triggered
+     * the finding.</p>
+     */
+    inline ThreatIntelligenceDetail& WithThreatNames(const Aws::Vector<Aws::String>& value) { SetThreatNames(value); return *this;}
+
+    /**
+     * <p>A list of names of the threats in the threat intelligence list that triggered
+     * the finding.</p>
+     */
+    inline ThreatIntelligenceDetail& WithThreatNames(Aws::Vector<Aws::String>&& value) { SetThreatNames(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of names of the threats in the threat intelligence list that triggered
+     * the finding.</p>
+     */
+    inline ThreatIntelligenceDetail& AddThreatNames(const Aws::String& value) { m_threatNamesHasBeenSet = true; m_threatNames.push_back(value); return *this; }
+
+    /**
+     * <p>A list of names of the threats in the threat intelligence list that triggered
+     * the finding.</p>
+     */
+    inline ThreatIntelligenceDetail& AddThreatNames(Aws::String&& value) { m_threatNamesHasBeenSet = true; m_threatNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of names of the threats in the threat intelligence list that triggered
+     * the finding.</p>
+     */
+    inline ThreatIntelligenceDetail& AddThreatNames(const char* value) { m_threatNamesHasBeenSet = true; m_threatNames.push_back(value); return *this; }
+
+  private:
+
+    Aws::String m_threatListName;
+    bool m_threatListNameHasBeenSet;
+
+    Aws::Vector<Aws::String> m_threatNames;
+    bool m_threatNamesHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace GuardDuty
+} // namespace Aws

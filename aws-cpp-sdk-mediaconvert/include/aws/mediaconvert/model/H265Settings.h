@@ -669,104 +669,98 @@ namespace Model
 
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type.
-  - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source
-     * (it will follow the source). The output could therefore be a mix of "top field
-     * first" and "bottom field first".
-  - If the source is progressive, the output
-     * will be interlaced with "top field first" or "bottom field first" polarity,
-     * depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Choose Progressive (PROGRESSIVE) to
+     * create a progressive output, regardless of the scan type of your input. Choose
+     * Top Field First (TOP_FIELD) or Bottom Field First (BOTTOM_FIELD) to create an
+     * output that's interlaced with the same field polarity throughout. Choose Follow,
+     * Default Top (FOLLOW_TOP_FIELD) or Follow, Default Bottom (FOLLOW_BOTTOM_FIELD)
+     * to create an interlaced output with the same field polarity as the source. If
+     * the source is interlaced, the output will be interlaced with the same polarity
+     * as the source (it will follow the source). The output could therefore be a mix
+     * of "top field first" and "bottom field first". If the source is progressive,
+     * your output will be interlaced with "top field first" or "bottom field first"
+     * polarity, depending on which of the Follow options you chose. If you don't
+     * choose a value, the service will default to Progressive (PROGRESSIVE).
      */
     inline const H265InterlaceMode& GetInterlaceMode() const{ return m_interlaceMode; }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type.
-  - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source
-     * (it will follow the source). The output could therefore be a mix of "top field
-     * first" and "bottom field first".
-  - If the source is progressive, the output
-     * will be interlaced with "top field first" or "bottom field first" polarity,
-     * depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Choose Progressive (PROGRESSIVE) to
+     * create a progressive output, regardless of the scan type of your input. Choose
+     * Top Field First (TOP_FIELD) or Bottom Field First (BOTTOM_FIELD) to create an
+     * output that's interlaced with the same field polarity throughout. Choose Follow,
+     * Default Top (FOLLOW_TOP_FIELD) or Follow, Default Bottom (FOLLOW_BOTTOM_FIELD)
+     * to create an interlaced output with the same field polarity as the source. If
+     * the source is interlaced, the output will be interlaced with the same polarity
+     * as the source (it will follow the source). The output could therefore be a mix
+     * of "top field first" and "bottom field first". If the source is progressive,
+     * your output will be interlaced with "top field first" or "bottom field first"
+     * polarity, depending on which of the Follow options you chose. If you don't
+     * choose a value, the service will default to Progressive (PROGRESSIVE).
      */
     inline bool InterlaceModeHasBeenSet() const { return m_interlaceModeHasBeenSet; }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type.
-  - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source
-     * (it will follow the source). The output could therefore be a mix of "top field
-     * first" and "bottom field first".
-  - If the source is progressive, the output
-     * will be interlaced with "top field first" or "bottom field first" polarity,
-     * depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Choose Progressive (PROGRESSIVE) to
+     * create a progressive output, regardless of the scan type of your input. Choose
+     * Top Field First (TOP_FIELD) or Bottom Field First (BOTTOM_FIELD) to create an
+     * output that's interlaced with the same field polarity throughout. Choose Follow,
+     * Default Top (FOLLOW_TOP_FIELD) or Follow, Default Bottom (FOLLOW_BOTTOM_FIELD)
+     * to create an interlaced output with the same field polarity as the source. If
+     * the source is interlaced, the output will be interlaced with the same polarity
+     * as the source (it will follow the source). The output could therefore be a mix
+     * of "top field first" and "bottom field first". If the source is progressive,
+     * your output will be interlaced with "top field first" or "bottom field first"
+     * polarity, depending on which of the Follow options you chose. If you don't
+     * choose a value, the service will default to Progressive (PROGRESSIVE).
      */
     inline void SetInterlaceMode(const H265InterlaceMode& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type.
-  - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source
-     * (it will follow the source). The output could therefore be a mix of "top field
-     * first" and "bottom field first".
-  - If the source is progressive, the output
-     * will be interlaced with "top field first" or "bottom field first" polarity,
-     * depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Choose Progressive (PROGRESSIVE) to
+     * create a progressive output, regardless of the scan type of your input. Choose
+     * Top Field First (TOP_FIELD) or Bottom Field First (BOTTOM_FIELD) to create an
+     * output that's interlaced with the same field polarity throughout. Choose Follow,
+     * Default Top (FOLLOW_TOP_FIELD) or Follow, Default Bottom (FOLLOW_BOTTOM_FIELD)
+     * to create an interlaced output with the same field polarity as the source. If
+     * the source is interlaced, the output will be interlaced with the same polarity
+     * as the source (it will follow the source). The output could therefore be a mix
+     * of "top field first" and "bottom field first". If the source is progressive,
+     * your output will be interlaced with "top field first" or "bottom field first"
+     * polarity, depending on which of the Follow options you chose. If you don't
+     * choose a value, the service will default to Progressive (PROGRESSIVE).
      */
     inline void SetInterlaceMode(H265InterlaceMode&& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = std::move(value); }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type.
-  - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source
-     * (it will follow the source). The output could therefore be a mix of "top field
-     * first" and "bottom field first".
-  - If the source is progressive, the output
-     * will be interlaced with "top field first" or "bottom field first" polarity,
-     * depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Choose Progressive (PROGRESSIVE) to
+     * create a progressive output, regardless of the scan type of your input. Choose
+     * Top Field First (TOP_FIELD) or Bottom Field First (BOTTOM_FIELD) to create an
+     * output that's interlaced with the same field polarity throughout. Choose Follow,
+     * Default Top (FOLLOW_TOP_FIELD) or Follow, Default Bottom (FOLLOW_BOTTOM_FIELD)
+     * to create an interlaced output with the same field polarity as the source. If
+     * the source is interlaced, the output will be interlaced with the same polarity
+     * as the source (it will follow the source). The output could therefore be a mix
+     * of "top field first" and "bottom field first". If the source is progressive,
+     * your output will be interlaced with "top field first" or "bottom field first"
+     * polarity, depending on which of the Follow options you chose. If you don't
+     * choose a value, the service will default to Progressive (PROGRESSIVE).
      */
     inline H265Settings& WithInterlaceMode(const H265InterlaceMode& value) { SetInterlaceMode(value); return *this;}
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
-     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
-     * interlaced output with the entire output having the same field polarity (top or
-     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
-     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
-     * Therefore, behavior depends on the input scan type.
-  - If the source is
-     * interlaced, the output will be interlaced with the same polarity as the source
-     * (it will follow the source). The output could therefore be a mix of "top field
-     * first" and "bottom field first".
-  - If the source is progressive, the output
-     * will be interlaced with "top field first" or "bottom field first" polarity,
-     * depending on which of the Follow options you chose.
+     * Choose the scan line type for the output. Choose Progressive (PROGRESSIVE) to
+     * create a progressive output, regardless of the scan type of your input. Choose
+     * Top Field First (TOP_FIELD) or Bottom Field First (BOTTOM_FIELD) to create an
+     * output that's interlaced with the same field polarity throughout. Choose Follow,
+     * Default Top (FOLLOW_TOP_FIELD) or Follow, Default Bottom (FOLLOW_BOTTOM_FIELD)
+     * to create an interlaced output with the same field polarity as the source. If
+     * the source is interlaced, the output will be interlaced with the same polarity
+     * as the source (it will follow the source). The output could therefore be a mix
+     * of "top field first" and "bottom field first". If the source is progressive,
+     * your output will be interlaced with "top field first" or "bottom field first"
+     * polarity, depending on which of the Follow options you chose. If you don't
+     * choose a value, the service will default to Progressive (PROGRESSIVE).
      */
     inline H265Settings& WithInterlaceMode(H265InterlaceMode&& value) { SetInterlaceMode(std::move(value)); return *this;}
 
@@ -1139,32 +1133,56 @@ namespace Model
 
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service
+     * automatically detects. This improves video quality and is enabled by default. If
+     * this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for
+     * further video quality improvement. For more information about QVBR, see
+     * https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      */
     inline const H265SceneChangeDetect& GetSceneChangeDetect() const{ return m_sceneChangeDetect; }
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service
+     * automatically detects. This improves video quality and is enabled by default. If
+     * this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for
+     * further video quality improvement. For more information about QVBR, see
+     * https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      */
     inline bool SceneChangeDetectHasBeenSet() const { return m_sceneChangeDetectHasBeenSet; }
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service
+     * automatically detects. This improves video quality and is enabled by default. If
+     * this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for
+     * further video quality improvement. For more information about QVBR, see
+     * https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      */
     inline void SetSceneChangeDetect(const H265SceneChangeDetect& value) { m_sceneChangeDetectHasBeenSet = true; m_sceneChangeDetect = value; }
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service
+     * automatically detects. This improves video quality and is enabled by default. If
+     * this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for
+     * further video quality improvement. For more information about QVBR, see
+     * https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      */
     inline void SetSceneChangeDetect(H265SceneChangeDetect&& value) { m_sceneChangeDetectHasBeenSet = true; m_sceneChangeDetect = std::move(value); }
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service
+     * automatically detects. This improves video quality and is enabled by default. If
+     * this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for
+     * further video quality improvement. For more information about QVBR, see
+     * https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      */
     inline H265Settings& WithSceneChangeDetect(const H265SceneChangeDetect& value) { SetSceneChangeDetect(value); return *this;}
 
     /**
-     * Scene change detection (inserts I-frames on scene changes).
+     * Enable this setting to insert I-frames at scene changes that the service
+     * automatically detects. This improves video quality and is enabled by default. If
+     * this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for
+     * further video quality improvement. For more information about QVBR, see
+     * https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      */
     inline H265Settings& WithSceneChangeDetect(H265SceneChangeDetect&& value) { SetSceneChangeDetect(std::move(value)); return *this;}
 

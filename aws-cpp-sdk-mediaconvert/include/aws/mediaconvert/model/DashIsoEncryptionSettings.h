@@ -110,32 +110,44 @@ namespace Model
 
 
     /**
-     * Settings for use with a SPEKE key provider
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider, if your output group type is HLS, MS Smooth, or DASH. If your output
+     * group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
      */
     inline const SpekeKeyProvider& GetSpekeKeyProvider() const{ return m_spekeKeyProvider; }
 
     /**
-     * Settings for use with a SPEKE key provider
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider, if your output group type is HLS, MS Smooth, or DASH. If your output
+     * group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
      */
     inline bool SpekeKeyProviderHasBeenSet() const { return m_spekeKeyProviderHasBeenSet; }
 
     /**
-     * Settings for use with a SPEKE key provider
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider, if your output group type is HLS, MS Smooth, or DASH. If your output
+     * group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
      */
     inline void SetSpekeKeyProvider(const SpekeKeyProvider& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = value; }
 
     /**
-     * Settings for use with a SPEKE key provider
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider, if your output group type is HLS, MS Smooth, or DASH. If your output
+     * group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
      */
     inline void SetSpekeKeyProvider(SpekeKeyProvider&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::move(value); }
 
     /**
-     * Settings for use with a SPEKE key provider
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider, if your output group type is HLS, MS Smooth, or DASH. If your output
+     * group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
      */
     inline DashIsoEncryptionSettings& WithSpekeKeyProvider(const SpekeKeyProvider& value) { SetSpekeKeyProvider(value); return *this;}
 
     /**
-     * Settings for use with a SPEKE key provider
+     * Use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider, if your output group type is HLS, MS Smooth, or DASH. If your output
+     * group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
      */
     inline DashIsoEncryptionSettings& WithSpekeKeyProvider(SpekeKeyProvider&& value) { SetSpekeKeyProvider(std::move(value)); return *this;}
 

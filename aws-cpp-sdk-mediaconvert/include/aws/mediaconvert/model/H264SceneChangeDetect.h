@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     DISABLED,
-    ENABLED
+    ENABLED,
+    TRANSITION_DETECTION
   };
 
 namespace H264SceneChangeDetectMapper

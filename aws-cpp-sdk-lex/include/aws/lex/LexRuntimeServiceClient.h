@@ -21,8 +21,11 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lex/model/DeleteSessionResult.h>
+#include <aws/lex/model/GetSessionResult.h>
 #include <aws/lex/model/PostContentResult.h>
 #include <aws/lex/model/PostTextResult.h>
+#include <aws/lex/model/PutSessionResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -62,20 +65,32 @@ namespace LexRuntimeService
 
 namespace Model
 {
+        class DeleteSessionRequest;
+        class GetSessionRequest;
         class PostContentRequest;
         class PostTextRequest;
+        class PutSessionRequest;
 
+        typedef Aws::Utils::Outcome<DeleteSessionResult, Aws::Client::AWSError<LexRuntimeServiceErrors>> DeleteSessionOutcome;
+        typedef Aws::Utils::Outcome<GetSessionResult, Aws::Client::AWSError<LexRuntimeServiceErrors>> GetSessionOutcome;
         typedef Aws::Utils::Outcome<PostContentResult, Aws::Client::AWSError<LexRuntimeServiceErrors>> PostContentOutcome;
         typedef Aws::Utils::Outcome<PostTextResult, Aws::Client::AWSError<LexRuntimeServiceErrors>> PostTextOutcome;
+        typedef Aws::Utils::Outcome<PutSessionResult, Aws::Client::AWSError<LexRuntimeServiceErrors>> PutSessionOutcome;
 
+        typedef std::future<DeleteSessionOutcome> DeleteSessionOutcomeCallable;
+        typedef std::future<GetSessionOutcome> GetSessionOutcomeCallable;
         typedef std::future<PostContentOutcome> PostContentOutcomeCallable;
         typedef std::future<PostTextOutcome> PostTextOutcomeCallable;
+        typedef std::future<PutSessionOutcome> PutSessionOutcomeCallable;
 } // namespace Model
 
   class LexRuntimeServiceClient;
 
+    typedef std::function<void(const LexRuntimeServiceClient*, const Model::DeleteSessionRequest&, const Model::DeleteSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSessionResponseReceivedHandler;
+    typedef std::function<void(const LexRuntimeServiceClient*, const Model::GetSessionRequest&, const Model::GetSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSessionResponseReceivedHandler;
     typedef std::function<void(const LexRuntimeServiceClient*, const Model::PostContentRequest&, const Model::PostContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostContentResponseReceivedHandler;
     typedef std::function<void(const LexRuntimeServiceClient*, const Model::PostTextRequest&, const Model::PostTextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostTextResponseReceivedHandler;
+    typedef std::function<void(const LexRuntimeServiceClient*, const Model::PutSessionRequest&, const Model::PutSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSessionResponseReceivedHandler;
 
   /**
    * <p>Amazon Lex provides both build and runtime endpoints. Each endpoint provides
@@ -120,6 +135,62 @@ namespace Model
 
 
         /**
+         * <p>Removes session information for a specified bot, alias, and user ID.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/DeleteSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSessionOutcome DeleteSession(const Model::DeleteSessionRequest& request) const;
+
+        /**
+         * <p>Removes session information for a specified bot, alias, and user ID.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/DeleteSession">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteSessionOutcomeCallable DeleteSessionCallable(const Model::DeleteSessionRequest& request) const;
+
+        /**
+         * <p>Removes session information for a specified bot, alias, and user ID.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/DeleteSession">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteSessionAsync(const Model::DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns session information for a specified bot, alias, and user
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/GetSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSessionOutcome GetSession(const Model::GetSessionRequest& request) const;
+
+        /**
+         * <p>Returns session information for a specified bot, alias, and user
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/GetSession">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSessionOutcomeCallable GetSessionCallable(const Model::GetSessionRequest& request) const;
+
+        /**
+         * <p>Returns session information for a specified bot, alias, and user
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/GetSession">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSessionAsync(const Model::GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Sends user input (text or speech) to Amazon Lex. Clients use this API to
          * send text and audio requests to Amazon Lex at runtime. Amazon Lex interprets the
          * user input using the machine learning model that it built for the bot. </p>
@@ -157,7 +228,7 @@ namespace Model
          * the <code>x-amz-slot-to-elicit</code> header is omitted. </p> </li> </ul> <p> In
          * addition, Amazon Lex also returns your application-specific
          * <code>sessionAttributes</code>. For more information, see <a
-         * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
+         * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
          * Conversation Context</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostContent">AWS
          * API Reference</a></p>
@@ -202,7 +273,7 @@ namespace Model
          * the <code>x-amz-slot-to-elicit</code> header is omitted. </p> </li> </ul> <p> In
          * addition, Amazon Lex also returns your application-specific
          * <code>sessionAttributes</code>. For more information, see <a
-         * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
+         * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
          * Conversation Context</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostContent">AWS
          * API Reference</a></p>
@@ -249,7 +320,7 @@ namespace Model
          * the <code>x-amz-slot-to-elicit</code> header is omitted. </p> </li> </ul> <p> In
          * addition, Amazon Lex also returns your application-specific
          * <code>sessionAttributes</code>. For more information, see <a
-         * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
+         * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
          * Conversation Context</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostContent">AWS
          * API Reference</a></p>
@@ -259,24 +330,24 @@ namespace Model
         virtual void PostContentAsync(const Model::PostContentRequest& request, const PostContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sends user input (text-only) to Amazon Lex. Client applications can use this
-         * API to send requests to Amazon Lex at runtime. Amazon Lex then interprets the
-         * user input using the machine learning model it built for the bot. </p> <p> In
-         * response, Amazon Lex returns the next <code>message</code> to convey to the user
-         * an optional <code>responseCard</code> to display. Consider the following example
-         * messages: </p> <ul> <li> <p> For a user input "I would like a pizza", Amazon Lex
-         * might return a response with a message eliciting slot data (for example,
-         * PizzaSize): "What size pizza would you like?" </p> </li> <li> <p> After the user
-         * provides all of the pizza order information, Amazon Lex might return a response
-         * with a message to obtain user confirmation "Proceed with the pizza order?". </p>
-         * </li> <li> <p> After the user replies to a confirmation prompt with a "yes",
-         * Amazon Lex might return a conclusion statement: "Thank you, your cheese pizza
-         * has been ordered.". </p> </li> </ul> <p> Not all Amazon Lex messages require a
-         * user response. For example, a conclusion statement does not require a response.
-         * Some messages require only a "yes" or "no" user response. In addition to the
-         * <code>message</code>, Amazon Lex provides additional context about the message
-         * in the response that you might use to enhance client behavior, for example, to
-         * display the appropriate client user interface. These are the
+         * <p>Sends user input (text or SSML) to Amazon Lex. Client applications can use
+         * this API to send requests to Amazon Lex at runtime. Amazon Lex then interprets
+         * the user input using the machine learning model it built for the bot. </p> <p>
+         * In response, Amazon Lex returns the next <code>message</code> to convey to the
+         * user an optional <code>responseCard</code> to display. Consider the following
+         * example messages: </p> <ul> <li> <p> For a user input "I would like a pizza",
+         * Amazon Lex might return a response with a message eliciting slot data (for
+         * example, PizzaSize): "What size pizza would you like?" </p> </li> <li> <p> After
+         * the user provides all of the pizza order information, Amazon Lex might return a
+         * response with a message to obtain user confirmation "Proceed with the pizza
+         * order?". </p> </li> <li> <p> After the user replies to a confirmation prompt
+         * with a "yes", Amazon Lex might return a conclusion statement: "Thank you, your
+         * cheese pizza has been ordered.". </p> </li> </ul> <p> Not all Amazon Lex
+         * messages require a user response. For example, a conclusion statement does not
+         * require a response. Some messages require only a "yes" or "no" user response. In
+         * addition to the <code>message</code>, Amazon Lex provides additional context
+         * about the message in the response that you might use to enhance client behavior,
+         * for example, to display the appropriate client user interface. These are the
          * <code>slotToElicit</code>, <code>dialogState</code>, <code>intentName</code>,
          * and <code>slots</code> fields in the response. Consider the following examples:
          * </p> <ul> <li> <p>If the message is to elicit slot data, Amazon Lex returns the
@@ -293,7 +364,7 @@ namespace Model
          * <code>slotToElicit</code> is set to null. </p> </li> </ul> <p> In addition,
          * Amazon Lex also returns your application-specific
          * <code>sessionAttributes</code>. For more information, see <a
-         * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
+         * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
          * Conversation Context</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostText">AWS
          * API Reference</a></p>
@@ -301,24 +372,24 @@ namespace Model
         virtual Model::PostTextOutcome PostText(const Model::PostTextRequest& request) const;
 
         /**
-         * <p>Sends user input (text-only) to Amazon Lex. Client applications can use this
-         * API to send requests to Amazon Lex at runtime. Amazon Lex then interprets the
-         * user input using the machine learning model it built for the bot. </p> <p> In
-         * response, Amazon Lex returns the next <code>message</code> to convey to the user
-         * an optional <code>responseCard</code> to display. Consider the following example
-         * messages: </p> <ul> <li> <p> For a user input "I would like a pizza", Amazon Lex
-         * might return a response with a message eliciting slot data (for example,
-         * PizzaSize): "What size pizza would you like?" </p> </li> <li> <p> After the user
-         * provides all of the pizza order information, Amazon Lex might return a response
-         * with a message to obtain user confirmation "Proceed with the pizza order?". </p>
-         * </li> <li> <p> After the user replies to a confirmation prompt with a "yes",
-         * Amazon Lex might return a conclusion statement: "Thank you, your cheese pizza
-         * has been ordered.". </p> </li> </ul> <p> Not all Amazon Lex messages require a
-         * user response. For example, a conclusion statement does not require a response.
-         * Some messages require only a "yes" or "no" user response. In addition to the
-         * <code>message</code>, Amazon Lex provides additional context about the message
-         * in the response that you might use to enhance client behavior, for example, to
-         * display the appropriate client user interface. These are the
+         * <p>Sends user input (text or SSML) to Amazon Lex. Client applications can use
+         * this API to send requests to Amazon Lex at runtime. Amazon Lex then interprets
+         * the user input using the machine learning model it built for the bot. </p> <p>
+         * In response, Amazon Lex returns the next <code>message</code> to convey to the
+         * user an optional <code>responseCard</code> to display. Consider the following
+         * example messages: </p> <ul> <li> <p> For a user input "I would like a pizza",
+         * Amazon Lex might return a response with a message eliciting slot data (for
+         * example, PizzaSize): "What size pizza would you like?" </p> </li> <li> <p> After
+         * the user provides all of the pizza order information, Amazon Lex might return a
+         * response with a message to obtain user confirmation "Proceed with the pizza
+         * order?". </p> </li> <li> <p> After the user replies to a confirmation prompt
+         * with a "yes", Amazon Lex might return a conclusion statement: "Thank you, your
+         * cheese pizza has been ordered.". </p> </li> </ul> <p> Not all Amazon Lex
+         * messages require a user response. For example, a conclusion statement does not
+         * require a response. Some messages require only a "yes" or "no" user response. In
+         * addition to the <code>message</code>, Amazon Lex provides additional context
+         * about the message in the response that you might use to enhance client behavior,
+         * for example, to display the appropriate client user interface. These are the
          * <code>slotToElicit</code>, <code>dialogState</code>, <code>intentName</code>,
          * and <code>slots</code> fields in the response. Consider the following examples:
          * </p> <ul> <li> <p>If the message is to elicit slot data, Amazon Lex returns the
@@ -335,7 +406,7 @@ namespace Model
          * <code>slotToElicit</code> is set to null. </p> </li> </ul> <p> In addition,
          * Amazon Lex also returns your application-specific
          * <code>sessionAttributes</code>. For more information, see <a
-         * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
+         * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
          * Conversation Context</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostText">AWS
          * API Reference</a></p>
@@ -345,24 +416,24 @@ namespace Model
         virtual Model::PostTextOutcomeCallable PostTextCallable(const Model::PostTextRequest& request) const;
 
         /**
-         * <p>Sends user input (text-only) to Amazon Lex. Client applications can use this
-         * API to send requests to Amazon Lex at runtime. Amazon Lex then interprets the
-         * user input using the machine learning model it built for the bot. </p> <p> In
-         * response, Amazon Lex returns the next <code>message</code> to convey to the user
-         * an optional <code>responseCard</code> to display. Consider the following example
-         * messages: </p> <ul> <li> <p> For a user input "I would like a pizza", Amazon Lex
-         * might return a response with a message eliciting slot data (for example,
-         * PizzaSize): "What size pizza would you like?" </p> </li> <li> <p> After the user
-         * provides all of the pizza order information, Amazon Lex might return a response
-         * with a message to obtain user confirmation "Proceed with the pizza order?". </p>
-         * </li> <li> <p> After the user replies to a confirmation prompt with a "yes",
-         * Amazon Lex might return a conclusion statement: "Thank you, your cheese pizza
-         * has been ordered.". </p> </li> </ul> <p> Not all Amazon Lex messages require a
-         * user response. For example, a conclusion statement does not require a response.
-         * Some messages require only a "yes" or "no" user response. In addition to the
-         * <code>message</code>, Amazon Lex provides additional context about the message
-         * in the response that you might use to enhance client behavior, for example, to
-         * display the appropriate client user interface. These are the
+         * <p>Sends user input (text or SSML) to Amazon Lex. Client applications can use
+         * this API to send requests to Amazon Lex at runtime. Amazon Lex then interprets
+         * the user input using the machine learning model it built for the bot. </p> <p>
+         * In response, Amazon Lex returns the next <code>message</code> to convey to the
+         * user an optional <code>responseCard</code> to display. Consider the following
+         * example messages: </p> <ul> <li> <p> For a user input "I would like a pizza",
+         * Amazon Lex might return a response with a message eliciting slot data (for
+         * example, PizzaSize): "What size pizza would you like?" </p> </li> <li> <p> After
+         * the user provides all of the pizza order information, Amazon Lex might return a
+         * response with a message to obtain user confirmation "Proceed with the pizza
+         * order?". </p> </li> <li> <p> After the user replies to a confirmation prompt
+         * with a "yes", Amazon Lex might return a conclusion statement: "Thank you, your
+         * cheese pizza has been ordered.". </p> </li> </ul> <p> Not all Amazon Lex
+         * messages require a user response. For example, a conclusion statement does not
+         * require a response. Some messages require only a "yes" or "no" user response. In
+         * addition to the <code>message</code>, Amazon Lex provides additional context
+         * about the message in the response that you might use to enhance client behavior,
+         * for example, to display the appropriate client user interface. These are the
          * <code>slotToElicit</code>, <code>dialogState</code>, <code>intentName</code>,
          * and <code>slots</code> fields in the response. Consider the following examples:
          * </p> <ul> <li> <p>If the message is to elicit slot data, Amazon Lex returns the
@@ -379,7 +450,7 @@ namespace Model
          * <code>slotToElicit</code> is set to null. </p> </li> </ul> <p> In addition,
          * Amazon Lex also returns your application-specific
          * <code>sessionAttributes</code>. For more information, see <a
-         * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
+         * href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
          * Conversation Context</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostText">AWS
          * API Reference</a></p>
@@ -388,12 +459,52 @@ namespace Model
          */
         virtual void PostTextAsync(const Model::PostTextRequest& request, const PostTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Creates a new session or modifies an existing session with an Amazon Lex bot.
+         * Use this operation to enable your application to set the state of the bot.</p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/lex/latest/dg/how-session-api.html">Managing
+         * Sessions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PutSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutSessionOutcome PutSession(const Model::PutSessionRequest& request) const;
+
+        /**
+         * <p>Creates a new session or modifies an existing session with an Amazon Lex bot.
+         * Use this operation to enable your application to set the state of the bot.</p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/lex/latest/dg/how-session-api.html">Managing
+         * Sessions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PutSession">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutSessionOutcomeCallable PutSessionCallable(const Model::PutSessionRequest& request) const;
+
+        /**
+         * <p>Creates a new session or modifies an existing session with an Amazon Lex bot.
+         * Use this operation to enable your application to set the state of the bot.</p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/lex/latest/dg/how-session-api.html">Managing
+         * Sessions</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PutSession">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutSessionAsync(const Model::PutSessionRequest& request, const PutSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void DeleteSessionAsyncHelper(const Model::DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSessionAsyncHelper(const Model::GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PostContentAsyncHelper(const Model::PostContentRequest& request, const PostContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PostTextAsyncHelper(const Model::PostTextRequest& request, const PostTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutSessionAsyncHelper(const Model::PutSessionRequest& request, const PutSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

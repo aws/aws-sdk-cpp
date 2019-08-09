@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/Action.h>
+#include <aws/guardduty/model/Evidence.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -34,6 +35,11 @@ namespace GuardDuty
 namespace Model
 {
 
+  /**
+   * <p>Contains information about the service.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Service">AWS
+   * API Reference</a></p>
+   */
   class AWS_GUARDDUTY_API Service
   {
   public:
@@ -72,6 +78,37 @@ namespace Model
      * <p>Information about the activity described in a finding.</p>
      */
     inline Service& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An evidence object associated with the service.</p>
+     */
+    inline const Evidence& GetEvidence() const{ return m_evidence; }
+
+    /**
+     * <p>An evidence object associated with the service.</p>
+     */
+    inline bool EvidenceHasBeenSet() const { return m_evidenceHasBeenSet; }
+
+    /**
+     * <p>An evidence object associated with the service.</p>
+     */
+    inline void SetEvidence(const Evidence& value) { m_evidenceHasBeenSet = true; m_evidence = value; }
+
+    /**
+     * <p>An evidence object associated with the service.</p>
+     */
+    inline void SetEvidence(Evidence&& value) { m_evidenceHasBeenSet = true; m_evidence = std::move(value); }
+
+    /**
+     * <p>An evidence object associated with the service.</p>
+     */
+    inline Service& WithEvidence(const Evidence& value) { SetEvidence(value); return *this;}
+
+    /**
+     * <p>An evidence object associated with the service.</p>
+     */
+    inline Service& WithEvidence(Evidence&& value) { SetEvidence(std::move(value)); return *this;}
 
 
     /**
@@ -381,6 +418,9 @@ namespace Model
 
     Action m_action;
     bool m_actionHasBeenSet;
+
+    Evidence m_evidence;
+    bool m_evidenceHasBeenSet;
 
     bool m_archived;
     bool m_archivedHasBeenSet;

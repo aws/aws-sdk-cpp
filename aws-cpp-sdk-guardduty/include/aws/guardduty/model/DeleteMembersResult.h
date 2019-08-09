@@ -44,44 +44,37 @@ namespace Model
 
 
     /**
-     * <p>A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.</p>
+     * <p>The accounts that could not be processed.</p>
      */
     inline const Aws::Vector<UnprocessedAccount>& GetUnprocessedAccounts() const{ return m_unprocessedAccounts; }
 
     /**
-     * <p>A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.</p>
+     * <p>The accounts that could not be processed.</p>
      */
     inline void SetUnprocessedAccounts(const Aws::Vector<UnprocessedAccount>& value) { m_unprocessedAccounts = value; }
 
     /**
-     * <p>A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.</p>
+     * <p>The accounts that could not be processed.</p>
      */
     inline void SetUnprocessedAccounts(Aws::Vector<UnprocessedAccount>&& value) { m_unprocessedAccounts = std::move(value); }
 
     /**
-     * <p>A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.</p>
+     * <p>The accounts that could not be processed.</p>
      */
     inline DeleteMembersResult& WithUnprocessedAccounts(const Aws::Vector<UnprocessedAccount>& value) { SetUnprocessedAccounts(value); return *this;}
 
     /**
-     * <p>A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.</p>
+     * <p>The accounts that could not be processed.</p>
      */
     inline DeleteMembersResult& WithUnprocessedAccounts(Aws::Vector<UnprocessedAccount>&& value) { SetUnprocessedAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.</p>
+     * <p>The accounts that could not be processed.</p>
      */
     inline DeleteMembersResult& AddUnprocessedAccounts(const UnprocessedAccount& value) { m_unprocessedAccounts.push_back(value); return *this; }
 
     /**
-     * <p>A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.</p>
+     * <p>The accounts that could not be processed.</p>
      */
     inline DeleteMembersResult& AddUnprocessedAccounts(UnprocessedAccount&& value) { m_unprocessedAccounts.push_back(std::move(value)); return *this; }
 
