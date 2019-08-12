@@ -50,7 +50,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline const ServiceNamespace& GetServiceNamespace() const{ return m_serviceNamespace; }
@@ -59,7 +59,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
@@ -68,7 +68,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline void SetServiceNamespace(const ServiceNamespace& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
@@ -77,7 +77,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
@@ -86,7 +86,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline RegisterScalableTargetRequest& WithServiceNamespace(const ServiceNamespace& value) { SetServiceNamespace(value); return *this;}
@@ -95,20 +95,20 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline RegisterScalableTargetRequest& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
 
 
     /**
-     * <p>The identifier of the resource associated with the scalable target. This
-     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
-     * service - The resource type is <code>service</code> and the unique identifier is
-     * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <p>The identifier of the resource that is associated with the scalable target.
+     * This string consists of the resource type and unique identifier.</p> <ul> <li>
+     * <p>ECS service - The resource type is <code>service</code> and the unique
+     * identifier is the cluster name and service name. Example:
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -135,13 +135,13 @@ namespace Model
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The identifier of the resource associated with the scalable target. This
-     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
-     * service - The resource type is <code>service</code> and the unique identifier is
-     * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <p>The identifier of the resource that is associated with the scalable target.
+     * This string consists of the resource type and unique identifier.</p> <ul> <li>
+     * <p>ECS service - The resource type is <code>service</code> and the unique
+     * identifier is the cluster name and service name. Example:
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -168,13 +168,13 @@ namespace Model
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the resource associated with the scalable target. This
-     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
-     * service - The resource type is <code>service</code> and the unique identifier is
-     * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <p>The identifier of the resource that is associated with the scalable target.
+     * This string consists of the resource type and unique identifier.</p> <ul> <li>
+     * <p>ECS service - The resource type is <code>service</code> and the unique
+     * identifier is the cluster name and service name. Example:
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -201,13 +201,13 @@ namespace Model
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The identifier of the resource associated with the scalable target. This
-     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
-     * service - The resource type is <code>service</code> and the unique identifier is
-     * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <p>The identifier of the resource that is associated with the scalable target.
+     * This string consists of the resource type and unique identifier.</p> <ul> <li>
+     * <p>ECS service - The resource type is <code>service</code> and the unique
+     * identifier is the cluster name and service name. Example:
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -234,13 +234,13 @@ namespace Model
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>The identifier of the resource associated with the scalable target. This
-     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
-     * service - The resource type is <code>service</code> and the unique identifier is
-     * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <p>The identifier of the resource that is associated with the scalable target.
+     * This string consists of the resource type and unique identifier.</p> <ul> <li>
+     * <p>ECS service - The resource type is <code>service</code> and the unique
+     * identifier is the cluster name and service name. Example:
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -267,13 +267,13 @@ namespace Model
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>The identifier of the resource associated with the scalable target. This
-     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
-     * service - The resource type is <code>service</code> and the unique identifier is
-     * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <p>The identifier of the resource that is associated with the scalable target.
+     * This string consists of the resource type and unique identifier.</p> <ul> <li>
+     * <p>ECS service - The resource type is <code>service</code> and the unique
+     * identifier is the cluster name and service name. Example:
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -300,13 +300,13 @@ namespace Model
     inline RegisterScalableTargetRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The identifier of the resource associated with the scalable target. This
-     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
-     * service - The resource type is <code>service</code> and the unique identifier is
-     * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <p>The identifier of the resource that is associated with the scalable target.
+     * This string consists of the resource type and unique identifier.</p> <ul> <li>
+     * <p>ECS service - The resource type is <code>service</code> and the unique
+     * identifier is the cluster name and service name. Example:
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -333,13 +333,13 @@ namespace Model
     inline RegisterScalableTargetRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the resource associated with the scalable target. This
-     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
-     * service - The resource type is <code>service</code> and the unique identifier is
-     * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <p>The identifier of the resource that is associated with the scalable target.
+     * This string consists of the resource type and unique identifier.</p> <ul> <li>
+     * <p>ECS service - The resource type is <code>service</code> and the unique
+     * identifier is the cluster name and service name. Example:
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -372,7 +372,7 @@ namespace Model
      * <li> <p> <code>ecs:service:DesiredCount</code> - The desired task count of an
      * ECS service.</p> </li> <li> <p>
      * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
-     * Spot fleet request.</p> </li> <li> <p>
+     * Spot Fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -401,7 +401,7 @@ namespace Model
      * <li> <p> <code>ecs:service:DesiredCount</code> - The desired task count of an
      * ECS service.</p> </li> <li> <p>
      * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
-     * Spot fleet request.</p> </li> <li> <p>
+     * Spot Fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -430,7 +430,7 @@ namespace Model
      * <li> <p> <code>ecs:service:DesiredCount</code> - The desired task count of an
      * ECS service.</p> </li> <li> <p>
      * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
-     * Spot fleet request.</p> </li> <li> <p>
+     * Spot Fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -459,7 +459,7 @@ namespace Model
      * <li> <p> <code>ecs:service:DesiredCount</code> - The desired task count of an
      * ECS service.</p> </li> <li> <p>
      * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
-     * Spot fleet request.</p> </li> <li> <p>
+     * Spot Fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -488,7 +488,7 @@ namespace Model
      * <li> <p> <code>ecs:service:DesiredCount</code> - The desired task count of an
      * ECS service.</p> </li> <li> <p>
      * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
-     * Spot fleet request.</p> </li> <li> <p>
+     * Spot Fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -517,7 +517,7 @@ namespace Model
      * <li> <p> <code>ecs:service:DesiredCount</code> - The desired task count of an
      * ECS service.</p> </li> <li> <p>
      * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
-     * Spot fleet request.</p> </li> <li> <p>
+     * Spot Fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -542,51 +542,51 @@ namespace Model
 
 
     /**
-     * <p>The minimum value to scale to in response to a scale-in event. This parameter
-     * is required to register a scalable target.</p>
+     * <p>The minimum value to scale to in response to a scale-in event.
+     * <code>MinCapacity</code> is required to register a scalable target.</p>
      */
     inline int GetMinCapacity() const{ return m_minCapacity; }
 
     /**
-     * <p>The minimum value to scale to in response to a scale-in event. This parameter
-     * is required to register a scalable target.</p>
+     * <p>The minimum value to scale to in response to a scale-in event.
+     * <code>MinCapacity</code> is required to register a scalable target.</p>
      */
     inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
 
     /**
-     * <p>The minimum value to scale to in response to a scale-in event. This parameter
-     * is required to register a scalable target.</p>
+     * <p>The minimum value to scale to in response to a scale-in event.
+     * <code>MinCapacity</code> is required to register a scalable target.</p>
      */
     inline void SetMinCapacity(int value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
 
     /**
-     * <p>The minimum value to scale to in response to a scale-in event. This parameter
-     * is required to register a scalable target.</p>
+     * <p>The minimum value to scale to in response to a scale-in event.
+     * <code>MinCapacity</code> is required to register a scalable target.</p>
      */
     inline RegisterScalableTargetRequest& WithMinCapacity(int value) { SetMinCapacity(value); return *this;}
 
 
     /**
-     * <p>The maximum value to scale to in response to a scale-out event. This
-     * parameter is required to register a scalable target.</p>
+     * <p>The maximum value to scale to in response to a scale-out event.
+     * <code>MaxCapacity</code> is required to register a scalable target.</p>
      */
     inline int GetMaxCapacity() const{ return m_maxCapacity; }
 
     /**
-     * <p>The maximum value to scale to in response to a scale-out event. This
-     * parameter is required to register a scalable target.</p>
+     * <p>The maximum value to scale to in response to a scale-out event.
+     * <code>MaxCapacity</code> is required to register a scalable target.</p>
      */
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
 
     /**
-     * <p>The maximum value to scale to in response to a scale-out event. This
-     * parameter is required to register a scalable target.</p>
+     * <p>The maximum value to scale to in response to a scale-out event.
+     * <code>MaxCapacity</code> is required to register a scalable target.</p>
      */
     inline void SetMaxCapacity(int value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
 
     /**
-     * <p>The maximum value to scale to in response to a scale-out event. This
-     * parameter is required to register a scalable target.</p>
+     * <p>The maximum value to scale to in response to a scale-out event.
+     * <code>MaxCapacity</code> is required to register a scalable target.</p>
      */
     inline RegisterScalableTargetRequest& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
 
@@ -597,7 +597,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html">Service-Linked
      * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required and must
+     * supported using a service-linked role, this parameter is required, and it must
      * specify the ARN of an IAM role that allows Application Auto Scaling to modify
      * the scalable target on your behalf.</p>
      */
@@ -609,7 +609,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html">Service-Linked
      * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required and must
+     * supported using a service-linked role, this parameter is required, and it must
      * specify the ARN of an IAM role that allows Application Auto Scaling to modify
      * the scalable target on your behalf.</p>
      */
@@ -621,7 +621,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html">Service-Linked
      * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required and must
+     * supported using a service-linked role, this parameter is required, and it must
      * specify the ARN of an IAM role that allows Application Auto Scaling to modify
      * the scalable target on your behalf.</p>
      */
@@ -633,7 +633,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html">Service-Linked
      * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required and must
+     * supported using a service-linked role, this parameter is required, and it must
      * specify the ARN of an IAM role that allows Application Auto Scaling to modify
      * the scalable target on your behalf.</p>
      */
@@ -645,7 +645,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html">Service-Linked
      * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required and must
+     * supported using a service-linked role, this parameter is required, and it must
      * specify the ARN of an IAM role that allows Application Auto Scaling to modify
      * the scalable target on your behalf.</p>
      */
@@ -657,7 +657,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html">Service-Linked
      * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required and must
+     * supported using a service-linked role, this parameter is required, and it must
      * specify the ARN of an IAM role that allows Application Auto Scaling to modify
      * the scalable target on your behalf.</p>
      */
@@ -669,7 +669,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html">Service-Linked
      * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required and must
+     * supported using a service-linked role, this parameter is required, and it must
      * specify the ARN of an IAM role that allows Application Auto Scaling to modify
      * the scalable target on your behalf.</p>
      */
@@ -681,7 +681,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html">Service-Linked
      * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required and must
+     * supported using a service-linked role, this parameter is required, and it must
      * specify the ARN of an IAM role that allows Application Auto Scaling to modify
      * the scalable target on your behalf.</p>
      */

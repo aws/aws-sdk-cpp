@@ -50,7 +50,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline const ServiceNamespace& GetServiceNamespace() const{ return m_serviceNamespace; }
@@ -59,7 +59,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
@@ -68,7 +68,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline void SetServiceNamespace(const ServiceNamespace& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
@@ -77,7 +77,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
@@ -86,7 +86,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline DescribeScalingActivitiesRequest& WithServiceNamespace(const ServiceNamespace& value) { SetServiceNamespace(value); return *this;}
@@ -95,7 +95,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline DescribeScalingActivitiesRequest& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
@@ -107,9 +107,9 @@ namespace Model
      * scalable dimension, you must also specify a resource ID.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -141,9 +141,9 @@ namespace Model
      * scalable dimension, you must also specify a resource ID.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -175,9 +175,9 @@ namespace Model
      * scalable dimension, you must also specify a resource ID.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -209,9 +209,9 @@ namespace Model
      * scalable dimension, you must also specify a resource ID.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -243,9 +243,9 @@ namespace Model
      * scalable dimension, you must also specify a resource ID.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -277,9 +277,9 @@ namespace Model
      * scalable dimension, you must also specify a resource ID.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -311,9 +311,9 @@ namespace Model
      * scalable dimension, you must also specify a resource ID.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -345,9 +345,9 @@ namespace Model
      * scalable dimension, you must also specify a resource ID.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -380,7 +380,7 @@ namespace Model
      * must also specify a resource ID.</p> <ul> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
      * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -409,7 +409,7 @@ namespace Model
      * must also specify a resource ID.</p> <ul> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
      * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -438,7 +438,7 @@ namespace Model
      * must also specify a resource ID.</p> <ul> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
      * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -467,7 +467,7 @@ namespace Model
      * must also specify a resource ID.</p> <ul> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
      * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -496,7 +496,7 @@ namespace Model
      * must also specify a resource ID.</p> <ul> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
      * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -525,7 +525,7 @@ namespace Model
      * must also specify a resource ID.</p> <ul> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
      * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an

@@ -33,7 +33,8 @@ namespace Model
     DISGUSTED,
     SURPRISED,
     CALM,
-    UNKNOWN
+    UNKNOWN,
+    FEAR
   };
 
 namespace EmotionNameMapper

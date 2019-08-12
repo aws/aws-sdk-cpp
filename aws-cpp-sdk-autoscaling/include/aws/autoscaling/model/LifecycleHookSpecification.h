@@ -48,8 +48,8 @@ namespace Model
    * </li> <li> <p> <b>Create the lifecycle hook. Specify whether the hook is used
    * when the instances launch or terminate.</b> </p> </li> <li> <p>If you need more
    * time, record the lifecycle action heartbeat to keep the instance in a pending
-   * state using using <a>RecordLifecycleActionHeartbeat</a>.</p> </li> <li> <p>If
-   * you finish before the timeout period ends, complete the lifecycle action using
+   * state using <a>RecordLifecycleActionHeartbeat</a>.</p> </li> <li> <p>If you
+   * finish before the timeout period ends, complete the lifecycle action using
    * <a>CompleteLifecycleAction</a>.</p> </li> </ol> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
    * EC2 Auto Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User

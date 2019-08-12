@@ -42,11 +42,12 @@ namespace Model
    * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
    * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
    * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You can create a mixed
-   * instances policy for a new Auto Scaling group (<a>CreateAutoScalingGroup</a>),
-   * or you can create it for an existing group by updating the group
-   * (<a>UpdateAutoScalingGroup</a>) to specify <code>MixedInstancesPolicy</code> as
-   * the top-level parameter instead of a launch configuration or
-   * template.</p><p><h3>See Also:</h3>   <a
+   * instances policy for a new Auto Scaling group, or you can create it for an
+   * existing group by updating the group to specify
+   * <code>MixedInstancesPolicy</code> as the top-level parameter instead of a launch
+   * configuration or template. For more information, see
+   * <a>CreateAutoScalingGroup</a> and <a>UpdateAutoScalingGroup</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/MixedInstancesPolicy">AWS
    * API Reference</a></p>
    */

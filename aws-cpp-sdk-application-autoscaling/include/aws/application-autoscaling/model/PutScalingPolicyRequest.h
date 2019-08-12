@@ -94,7 +94,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline const ServiceNamespace& GetServiceNamespace() const{ return m_serviceNamespace; }
@@ -103,7 +103,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
@@ -112,7 +112,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline void SetServiceNamespace(const ServiceNamespace& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
@@ -121,7 +121,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
@@ -130,7 +130,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline PutScalingPolicyRequest& WithServiceNamespace(const ServiceNamespace& value) { SetServiceNamespace(value); return *this;}
@@ -139,7 +139,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline PutScalingPolicyRequest& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
@@ -150,9 +150,9 @@ namespace Model
      * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -183,9 +183,9 @@ namespace Model
      * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -216,9 +216,9 @@ namespace Model
      * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -249,9 +249,9 @@ namespace Model
      * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -282,9 +282,9 @@ namespace Model
      * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -315,9 +315,9 @@ namespace Model
      * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -348,9 +348,9 @@ namespace Model
      * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -381,9 +381,9 @@ namespace Model
      * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
      * the unique identifier is the cluster ID and instance group ID. Example:
@@ -415,7 +415,7 @@ namespace Model
      * resource type, and scaling property.</p> <ul> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
      * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -443,7 +443,7 @@ namespace Model
      * resource type, and scaling property.</p> <ul> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
      * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -471,7 +471,7 @@ namespace Model
      * resource type, and scaling property.</p> <ul> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
      * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -499,7 +499,7 @@ namespace Model
      * resource type, and scaling property.</p> <ul> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
      * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -527,7 +527,7 @@ namespace Model
      * resource type, and scaling property.</p> <ul> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
      * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -555,7 +555,7 @@ namespace Model
      * resource type, and scaling property.</p> <ul> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
      * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -581,79 +581,85 @@ namespace Model
 
     /**
      * <p>The policy type. This parameter is required if you are creating a scaling
-     * policy.</p> <p>For information on which services do not support
-     * <code>StepScaling</code> or <code>TargetTrackingScaling</code>, see the
-     * information about <b>Limits</b> in <a
+     * policy.</p> <p>The following policy types are supported: </p> <p>
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR or AppStream</p>
+     * <p> <code>StepScaling</code>—Not supported for Amazon DynamoDB</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies</a> and <a
+     * Scaling Policies for Application Auto Scaling</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies</a> in the <i>Application Auto Scaling User
-     * Guide</i>.</p>
+     * Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application
+     * Auto Scaling User Guide</i>.</p>
      */
     inline const PolicyType& GetPolicyType() const{ return m_policyType; }
 
     /**
      * <p>The policy type. This parameter is required if you are creating a scaling
-     * policy.</p> <p>For information on which services do not support
-     * <code>StepScaling</code> or <code>TargetTrackingScaling</code>, see the
-     * information about <b>Limits</b> in <a
+     * policy.</p> <p>The following policy types are supported: </p> <p>
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR or AppStream</p>
+     * <p> <code>StepScaling</code>—Not supported for Amazon DynamoDB</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies</a> and <a
+     * Scaling Policies for Application Auto Scaling</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies</a> in the <i>Application Auto Scaling User
-     * Guide</i>.</p>
+     * Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application
+     * Auto Scaling User Guide</i>.</p>
      */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
     /**
      * <p>The policy type. This parameter is required if you are creating a scaling
-     * policy.</p> <p>For information on which services do not support
-     * <code>StepScaling</code> or <code>TargetTrackingScaling</code>, see the
-     * information about <b>Limits</b> in <a
+     * policy.</p> <p>The following policy types are supported: </p> <p>
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR or AppStream</p>
+     * <p> <code>StepScaling</code>—Not supported for Amazon DynamoDB</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies</a> and <a
+     * Scaling Policies for Application Auto Scaling</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies</a> in the <i>Application Auto Scaling User
-     * Guide</i>.</p>
+     * Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application
+     * Auto Scaling User Guide</i>.</p>
      */
     inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
      * <p>The policy type. This parameter is required if you are creating a scaling
-     * policy.</p> <p>For information on which services do not support
-     * <code>StepScaling</code> or <code>TargetTrackingScaling</code>, see the
-     * information about <b>Limits</b> in <a
+     * policy.</p> <p>The following policy types are supported: </p> <p>
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR or AppStream</p>
+     * <p> <code>StepScaling</code>—Not supported for Amazon DynamoDB</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies</a> and <a
+     * Scaling Policies for Application Auto Scaling</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies</a> in the <i>Application Auto Scaling User
-     * Guide</i>.</p>
+     * Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application
+     * Auto Scaling User Guide</i>.</p>
      */
     inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
      * <p>The policy type. This parameter is required if you are creating a scaling
-     * policy.</p> <p>For information on which services do not support
-     * <code>StepScaling</code> or <code>TargetTrackingScaling</code>, see the
-     * information about <b>Limits</b> in <a
+     * policy.</p> <p>The following policy types are supported: </p> <p>
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR or AppStream</p>
+     * <p> <code>StepScaling</code>—Not supported for Amazon DynamoDB</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies</a> and <a
+     * Scaling Policies for Application Auto Scaling</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies</a> in the <i>Application Auto Scaling User
-     * Guide</i>.</p>
+     * Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application
+     * Auto Scaling User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
 
     /**
      * <p>The policy type. This parameter is required if you are creating a scaling
-     * policy.</p> <p>For information on which services do not support
-     * <code>StepScaling</code> or <code>TargetTrackingScaling</code>, see the
-     * information about <b>Limits</b> in <a
+     * policy.</p> <p>The following policy types are supported: </p> <p>
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR or AppStream</p>
+     * <p> <code>StepScaling</code>—Not supported for Amazon DynamoDB</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies</a> and <a
+     * Scaling Policies for Application Auto Scaling</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies</a> in the <i>Application Auto Scaling User
-     * Guide</i>.</p>
+     * Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application
+     * Auto Scaling User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
 

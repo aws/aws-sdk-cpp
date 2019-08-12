@@ -38,6 +38,7 @@ namespace Aws
         static const int SURPRISED_HASH = HashingUtils::HashString("SURPRISED");
         static const int CALM_HASH = HashingUtils::HashString("CALM");
         static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static const int FEAR_HASH = HashingUtils::HashString("FEAR");
 
 
         EmotionName GetEmotionNameForName(const Aws::String& name)
@@ -75,6 +76,10 @@ namespace Aws
           {
             return EmotionName::UNKNOWN;
           }
+          else if (hashCode == FEAR_HASH)
+          {
+            return EmotionName::FEAR;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -105,6 +110,8 @@ namespace Aws
             return "CALM";
           case EmotionName::UNKNOWN:
             return "UNKNOWN";
+          case EmotionName::FEAR:
+            return "FEAR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

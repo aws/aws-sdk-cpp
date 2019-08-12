@@ -229,99 +229,159 @@ namespace Model
 
 
     /**
-     * <p>Indicates how to allocate Spot capacity across Spot pools.</p> <p>The only
-     * valid value is <code>lowest-price</code>, which is also the default value. The
-     * Auto Scaling group selects the cheapest Spot pools and evenly allocates your
-     * Spot capacity across the number of Spot pools that you specify. </p>
+     * <p>Indicates how to allocate instances across Spot Instance pools. </p> <p>If
+     * the allocation strategy is <code>lowest-price</code>, the Auto Scaling group
+     * launches instances using the Spot pools with the lowest price, and evenly
+     * allocates your instances across the number of Spot pools that you specify. If
+     * the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling
+     * group launches instances using Spot pools that are optimally chosen based on the
+     * available Spot capacity. </p> <p>The default Spot allocation strategy for calls
+     * that you make through the API, the AWS CLI, or the AWS SDKs is
+     * <code>lowest-price</code>. The default Spot allocation strategy for the AWS
+     * Management Console is <code>capacity-optimized</code>.</p> <p>Valid values:
+     * <code>lowest-price</code> | <code>capacity-optimized</code> </p>
      */
     inline const Aws::String& GetSpotAllocationStrategy() const{ return m_spotAllocationStrategy; }
 
     /**
-     * <p>Indicates how to allocate Spot capacity across Spot pools.</p> <p>The only
-     * valid value is <code>lowest-price</code>, which is also the default value. The
-     * Auto Scaling group selects the cheapest Spot pools and evenly allocates your
-     * Spot capacity across the number of Spot pools that you specify. </p>
+     * <p>Indicates how to allocate instances across Spot Instance pools. </p> <p>If
+     * the allocation strategy is <code>lowest-price</code>, the Auto Scaling group
+     * launches instances using the Spot pools with the lowest price, and evenly
+     * allocates your instances across the number of Spot pools that you specify. If
+     * the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling
+     * group launches instances using Spot pools that are optimally chosen based on the
+     * available Spot capacity. </p> <p>The default Spot allocation strategy for calls
+     * that you make through the API, the AWS CLI, or the AWS SDKs is
+     * <code>lowest-price</code>. The default Spot allocation strategy for the AWS
+     * Management Console is <code>capacity-optimized</code>.</p> <p>Valid values:
+     * <code>lowest-price</code> | <code>capacity-optimized</code> </p>
      */
     inline bool SpotAllocationStrategyHasBeenSet() const { return m_spotAllocationStrategyHasBeenSet; }
 
     /**
-     * <p>Indicates how to allocate Spot capacity across Spot pools.</p> <p>The only
-     * valid value is <code>lowest-price</code>, which is also the default value. The
-     * Auto Scaling group selects the cheapest Spot pools and evenly allocates your
-     * Spot capacity across the number of Spot pools that you specify. </p>
+     * <p>Indicates how to allocate instances across Spot Instance pools. </p> <p>If
+     * the allocation strategy is <code>lowest-price</code>, the Auto Scaling group
+     * launches instances using the Spot pools with the lowest price, and evenly
+     * allocates your instances across the number of Spot pools that you specify. If
+     * the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling
+     * group launches instances using Spot pools that are optimally chosen based on the
+     * available Spot capacity. </p> <p>The default Spot allocation strategy for calls
+     * that you make through the API, the AWS CLI, or the AWS SDKs is
+     * <code>lowest-price</code>. The default Spot allocation strategy for the AWS
+     * Management Console is <code>capacity-optimized</code>.</p> <p>Valid values:
+     * <code>lowest-price</code> | <code>capacity-optimized</code> </p>
      */
     inline void SetSpotAllocationStrategy(const Aws::String& value) { m_spotAllocationStrategyHasBeenSet = true; m_spotAllocationStrategy = value; }
 
     /**
-     * <p>Indicates how to allocate Spot capacity across Spot pools.</p> <p>The only
-     * valid value is <code>lowest-price</code>, which is also the default value. The
-     * Auto Scaling group selects the cheapest Spot pools and evenly allocates your
-     * Spot capacity across the number of Spot pools that you specify. </p>
+     * <p>Indicates how to allocate instances across Spot Instance pools. </p> <p>If
+     * the allocation strategy is <code>lowest-price</code>, the Auto Scaling group
+     * launches instances using the Spot pools with the lowest price, and evenly
+     * allocates your instances across the number of Spot pools that you specify. If
+     * the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling
+     * group launches instances using Spot pools that are optimally chosen based on the
+     * available Spot capacity. </p> <p>The default Spot allocation strategy for calls
+     * that you make through the API, the AWS CLI, or the AWS SDKs is
+     * <code>lowest-price</code>. The default Spot allocation strategy for the AWS
+     * Management Console is <code>capacity-optimized</code>.</p> <p>Valid values:
+     * <code>lowest-price</code> | <code>capacity-optimized</code> </p>
      */
     inline void SetSpotAllocationStrategy(Aws::String&& value) { m_spotAllocationStrategyHasBeenSet = true; m_spotAllocationStrategy = std::move(value); }
 
     /**
-     * <p>Indicates how to allocate Spot capacity across Spot pools.</p> <p>The only
-     * valid value is <code>lowest-price</code>, which is also the default value. The
-     * Auto Scaling group selects the cheapest Spot pools and evenly allocates your
-     * Spot capacity across the number of Spot pools that you specify. </p>
+     * <p>Indicates how to allocate instances across Spot Instance pools. </p> <p>If
+     * the allocation strategy is <code>lowest-price</code>, the Auto Scaling group
+     * launches instances using the Spot pools with the lowest price, and evenly
+     * allocates your instances across the number of Spot pools that you specify. If
+     * the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling
+     * group launches instances using Spot pools that are optimally chosen based on the
+     * available Spot capacity. </p> <p>The default Spot allocation strategy for calls
+     * that you make through the API, the AWS CLI, or the AWS SDKs is
+     * <code>lowest-price</code>. The default Spot allocation strategy for the AWS
+     * Management Console is <code>capacity-optimized</code>.</p> <p>Valid values:
+     * <code>lowest-price</code> | <code>capacity-optimized</code> </p>
      */
     inline void SetSpotAllocationStrategy(const char* value) { m_spotAllocationStrategyHasBeenSet = true; m_spotAllocationStrategy.assign(value); }
 
     /**
-     * <p>Indicates how to allocate Spot capacity across Spot pools.</p> <p>The only
-     * valid value is <code>lowest-price</code>, which is also the default value. The
-     * Auto Scaling group selects the cheapest Spot pools and evenly allocates your
-     * Spot capacity across the number of Spot pools that you specify. </p>
+     * <p>Indicates how to allocate instances across Spot Instance pools. </p> <p>If
+     * the allocation strategy is <code>lowest-price</code>, the Auto Scaling group
+     * launches instances using the Spot pools with the lowest price, and evenly
+     * allocates your instances across the number of Spot pools that you specify. If
+     * the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling
+     * group launches instances using Spot pools that are optimally chosen based on the
+     * available Spot capacity. </p> <p>The default Spot allocation strategy for calls
+     * that you make through the API, the AWS CLI, or the AWS SDKs is
+     * <code>lowest-price</code>. The default Spot allocation strategy for the AWS
+     * Management Console is <code>capacity-optimized</code>.</p> <p>Valid values:
+     * <code>lowest-price</code> | <code>capacity-optimized</code> </p>
      */
     inline InstancesDistribution& WithSpotAllocationStrategy(const Aws::String& value) { SetSpotAllocationStrategy(value); return *this;}
 
     /**
-     * <p>Indicates how to allocate Spot capacity across Spot pools.</p> <p>The only
-     * valid value is <code>lowest-price</code>, which is also the default value. The
-     * Auto Scaling group selects the cheapest Spot pools and evenly allocates your
-     * Spot capacity across the number of Spot pools that you specify. </p>
+     * <p>Indicates how to allocate instances across Spot Instance pools. </p> <p>If
+     * the allocation strategy is <code>lowest-price</code>, the Auto Scaling group
+     * launches instances using the Spot pools with the lowest price, and evenly
+     * allocates your instances across the number of Spot pools that you specify. If
+     * the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling
+     * group launches instances using Spot pools that are optimally chosen based on the
+     * available Spot capacity. </p> <p>The default Spot allocation strategy for calls
+     * that you make through the API, the AWS CLI, or the AWS SDKs is
+     * <code>lowest-price</code>. The default Spot allocation strategy for the AWS
+     * Management Console is <code>capacity-optimized</code>.</p> <p>Valid values:
+     * <code>lowest-price</code> | <code>capacity-optimized</code> </p>
      */
     inline InstancesDistribution& WithSpotAllocationStrategy(Aws::String&& value) { SetSpotAllocationStrategy(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates how to allocate Spot capacity across Spot pools.</p> <p>The only
-     * valid value is <code>lowest-price</code>, which is also the default value. The
-     * Auto Scaling group selects the cheapest Spot pools and evenly allocates your
-     * Spot capacity across the number of Spot pools that you specify. </p>
+     * <p>Indicates how to allocate instances across Spot Instance pools. </p> <p>If
+     * the allocation strategy is <code>lowest-price</code>, the Auto Scaling group
+     * launches instances using the Spot pools with the lowest price, and evenly
+     * allocates your instances across the number of Spot pools that you specify. If
+     * the allocation strategy is <code>capacity-optimized</code>, the Auto Scaling
+     * group launches instances using Spot pools that are optimally chosen based on the
+     * available Spot capacity. </p> <p>The default Spot allocation strategy for calls
+     * that you make through the API, the AWS CLI, or the AWS SDKs is
+     * <code>lowest-price</code>. The default Spot allocation strategy for the AWS
+     * Management Console is <code>capacity-optimized</code>.</p> <p>Valid values:
+     * <code>lowest-price</code> | <code>capacity-optimized</code> </p>
      */
     inline InstancesDistribution& WithSpotAllocationStrategy(const char* value) { SetSpotAllocationStrategy(value); return *this;}
 
 
     /**
-     * <p>The number of Spot pools to use to allocate your Spot capacity. The Spot
-     * pools are determined from the different instance types in the Overrides array of
-     * <a>LaunchTemplate</a>. The range is 1–20.</p> <p>The default value is
-     * <code>2</code>.</p>
+     * <p>The number of Spot Instance pools across which to allocate your Spot
+     * Instances. The Spot pools are determined from the different instance types in
+     * the Overrides array of <a>LaunchTemplate</a>. The range is 1–20. The default
+     * value is <code>2</code>. </p> <p>Valid only when the Spot allocation strategy is
+     * <code>lowest-price</code>. </p>
      */
     inline int GetSpotInstancePools() const{ return m_spotInstancePools; }
 
     /**
-     * <p>The number of Spot pools to use to allocate your Spot capacity. The Spot
-     * pools are determined from the different instance types in the Overrides array of
-     * <a>LaunchTemplate</a>. The range is 1–20.</p> <p>The default value is
-     * <code>2</code>.</p>
+     * <p>The number of Spot Instance pools across which to allocate your Spot
+     * Instances. The Spot pools are determined from the different instance types in
+     * the Overrides array of <a>LaunchTemplate</a>. The range is 1–20. The default
+     * value is <code>2</code>. </p> <p>Valid only when the Spot allocation strategy is
+     * <code>lowest-price</code>. </p>
      */
     inline bool SpotInstancePoolsHasBeenSet() const { return m_spotInstancePoolsHasBeenSet; }
 
     /**
-     * <p>The number of Spot pools to use to allocate your Spot capacity. The Spot
-     * pools are determined from the different instance types in the Overrides array of
-     * <a>LaunchTemplate</a>. The range is 1–20.</p> <p>The default value is
-     * <code>2</code>.</p>
+     * <p>The number of Spot Instance pools across which to allocate your Spot
+     * Instances. The Spot pools are determined from the different instance types in
+     * the Overrides array of <a>LaunchTemplate</a>. The range is 1–20. The default
+     * value is <code>2</code>. </p> <p>Valid only when the Spot allocation strategy is
+     * <code>lowest-price</code>. </p>
      */
     inline void SetSpotInstancePools(int value) { m_spotInstancePoolsHasBeenSet = true; m_spotInstancePools = value; }
 
     /**
-     * <p>The number of Spot pools to use to allocate your Spot capacity. The Spot
-     * pools are determined from the different instance types in the Overrides array of
-     * <a>LaunchTemplate</a>. The range is 1–20.</p> <p>The default value is
-     * <code>2</code>.</p>
+     * <p>The number of Spot Instance pools across which to allocate your Spot
+     * Instances. The Spot pools are determined from the different instance types in
+     * the Overrides array of <a>LaunchTemplate</a>. The range is 1–20. The default
+     * value is <code>2</code>. </p> <p>Valid only when the Spot allocation strategy is
+     * <code>lowest-price</code>. </p>
      */
     inline InstancesDistribution& WithSpotInstancePools(int value) { SetSpotInstancePools(value); return *this;}
 

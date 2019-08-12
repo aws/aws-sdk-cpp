@@ -101,10 +101,7 @@ namespace Model
 
 
     /**
-     * <p>The name of the launch configuration.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg.html">Creating
-     * an Auto Scaling Group Using a Launch Configuration</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>If you do not specify
+     * <p>The name of the launch configuration.</p> <p>If you do not specify
      * <code>LaunchConfigurationName</code>, you must specify one of the following
      * parameters: <code>InstanceId</code>, <code>LaunchTemplate</code>, or
      * <code>MixedInstancesPolicy</code>.</p>
@@ -112,10 +109,7 @@ namespace Model
     inline const Aws::String& GetLaunchConfigurationName() const{ return m_launchConfigurationName; }
 
     /**
-     * <p>The name of the launch configuration.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg.html">Creating
-     * an Auto Scaling Group Using a Launch Configuration</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>If you do not specify
+     * <p>The name of the launch configuration.</p> <p>If you do not specify
      * <code>LaunchConfigurationName</code>, you must specify one of the following
      * parameters: <code>InstanceId</code>, <code>LaunchTemplate</code>, or
      * <code>MixedInstancesPolicy</code>.</p>
@@ -123,10 +117,7 @@ namespace Model
     inline bool LaunchConfigurationNameHasBeenSet() const { return m_launchConfigurationNameHasBeenSet; }
 
     /**
-     * <p>The name of the launch configuration.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg.html">Creating
-     * an Auto Scaling Group Using a Launch Configuration</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>If you do not specify
+     * <p>The name of the launch configuration.</p> <p>If you do not specify
      * <code>LaunchConfigurationName</code>, you must specify one of the following
      * parameters: <code>InstanceId</code>, <code>LaunchTemplate</code>, or
      * <code>MixedInstancesPolicy</code>.</p>
@@ -134,10 +125,7 @@ namespace Model
     inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
     /**
-     * <p>The name of the launch configuration.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg.html">Creating
-     * an Auto Scaling Group Using a Launch Configuration</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>If you do not specify
+     * <p>The name of the launch configuration.</p> <p>If you do not specify
      * <code>LaunchConfigurationName</code>, you must specify one of the following
      * parameters: <code>InstanceId</code>, <code>LaunchTemplate</code>, or
      * <code>MixedInstancesPolicy</code>.</p>
@@ -145,10 +133,7 @@ namespace Model
     inline void SetLaunchConfigurationName(Aws::String&& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = std::move(value); }
 
     /**
-     * <p>The name of the launch configuration.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg.html">Creating
-     * an Auto Scaling Group Using a Launch Configuration</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>If you do not specify
+     * <p>The name of the launch configuration.</p> <p>If you do not specify
      * <code>LaunchConfigurationName</code>, you must specify one of the following
      * parameters: <code>InstanceId</code>, <code>LaunchTemplate</code>, or
      * <code>MixedInstancesPolicy</code>.</p>
@@ -156,10 +141,7 @@ namespace Model
     inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName.assign(value); }
 
     /**
-     * <p>The name of the launch configuration.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg.html">Creating
-     * an Auto Scaling Group Using a Launch Configuration</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>If you do not specify
+     * <p>The name of the launch configuration.</p> <p>If you do not specify
      * <code>LaunchConfigurationName</code>, you must specify one of the following
      * parameters: <code>InstanceId</code>, <code>LaunchTemplate</code>, or
      * <code>MixedInstancesPolicy</code>.</p>
@@ -167,10 +149,7 @@ namespace Model
     inline CreateAutoScalingGroupRequest& WithLaunchConfigurationName(const Aws::String& value) { SetLaunchConfigurationName(value); return *this;}
 
     /**
-     * <p>The name of the launch configuration.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg.html">Creating
-     * an Auto Scaling Group Using a Launch Configuration</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>If you do not specify
+     * <p>The name of the launch configuration.</p> <p>If you do not specify
      * <code>LaunchConfigurationName</code>, you must specify one of the following
      * parameters: <code>InstanceId</code>, <code>LaunchTemplate</code>, or
      * <code>MixedInstancesPolicy</code>.</p>
@@ -178,10 +157,7 @@ namespace Model
     inline CreateAutoScalingGroupRequest& WithLaunchConfigurationName(Aws::String&& value) { SetLaunchConfigurationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the launch configuration.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg.html">Creating
-     * an Auto Scaling Group Using a Launch Configuration</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>If you do not specify
+     * <p>The name of the launch configuration.</p> <p>If you do not specify
      * <code>LaunchConfigurationName</code>, you must specify one of the following
      * parameters: <code>InstanceId</code>, <code>LaunchTemplate</code>, or
      * <code>MixedInstancesPolicy</code>.</p>
@@ -192,11 +168,10 @@ namespace Model
     /**
      * <p>The launch template to use to launch instances.</p> <p>For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-launch-template.html">Creating
-     * an Auto Scaling Group Using a Launch Template</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>If you do not specify
-     * <code>LaunchTemplate</code>, you must specify one of the following parameters:
-     * <code>InstanceId</code>, <code>LaunchConfigurationName</code>, or
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_LaunchTemplateSpecification.html">LaunchTemplateSpecification</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>If you do not
+     * specify <code>LaunchTemplate</code>, you must specify one of the following
+     * parameters: <code>InstanceId</code>, <code>LaunchConfigurationName</code>, or
      * <code>MixedInstancesPolicy</code>.</p>
      */
     inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
@@ -204,11 +179,10 @@ namespace Model
     /**
      * <p>The launch template to use to launch instances.</p> <p>For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-launch-template.html">Creating
-     * an Auto Scaling Group Using a Launch Template</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>If you do not specify
-     * <code>LaunchTemplate</code>, you must specify one of the following parameters:
-     * <code>InstanceId</code>, <code>LaunchConfigurationName</code>, or
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_LaunchTemplateSpecification.html">LaunchTemplateSpecification</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>If you do not
+     * specify <code>LaunchTemplate</code>, you must specify one of the following
+     * parameters: <code>InstanceId</code>, <code>LaunchConfigurationName</code>, or
      * <code>MixedInstancesPolicy</code>.</p>
      */
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
@@ -216,11 +190,10 @@ namespace Model
     /**
      * <p>The launch template to use to launch instances.</p> <p>For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-launch-template.html">Creating
-     * an Auto Scaling Group Using a Launch Template</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>If you do not specify
-     * <code>LaunchTemplate</code>, you must specify one of the following parameters:
-     * <code>InstanceId</code>, <code>LaunchConfigurationName</code>, or
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_LaunchTemplateSpecification.html">LaunchTemplateSpecification</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>If you do not
+     * specify <code>LaunchTemplate</code>, you must specify one of the following
+     * parameters: <code>InstanceId</code>, <code>LaunchConfigurationName</code>, or
      * <code>MixedInstancesPolicy</code>.</p>
      */
     inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
@@ -228,11 +201,10 @@ namespace Model
     /**
      * <p>The launch template to use to launch instances.</p> <p>For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-launch-template.html">Creating
-     * an Auto Scaling Group Using a Launch Template</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>If you do not specify
-     * <code>LaunchTemplate</code>, you must specify one of the following parameters:
-     * <code>InstanceId</code>, <code>LaunchConfigurationName</code>, or
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_LaunchTemplateSpecification.html">LaunchTemplateSpecification</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>If you do not
+     * specify <code>LaunchTemplate</code>, you must specify one of the following
+     * parameters: <code>InstanceId</code>, <code>LaunchConfigurationName</code>, or
      * <code>MixedInstancesPolicy</code>.</p>
      */
     inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
@@ -240,11 +212,10 @@ namespace Model
     /**
      * <p>The launch template to use to launch instances.</p> <p>For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-launch-template.html">Creating
-     * an Auto Scaling Group Using a Launch Template</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>If you do not specify
-     * <code>LaunchTemplate</code>, you must specify one of the following parameters:
-     * <code>InstanceId</code>, <code>LaunchConfigurationName</code>, or
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_LaunchTemplateSpecification.html">LaunchTemplateSpecification</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>If you do not
+     * specify <code>LaunchTemplate</code>, you must specify one of the following
+     * parameters: <code>InstanceId</code>, <code>LaunchConfigurationName</code>, or
      * <code>MixedInstancesPolicy</code>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
@@ -252,11 +223,10 @@ namespace Model
     /**
      * <p>The launch template to use to launch instances.</p> <p>For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-launch-template.html">Creating
-     * an Auto Scaling Group Using a Launch Template</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p> <p>If you do not specify
-     * <code>LaunchTemplate</code>, you must specify one of the following parameters:
-     * <code>InstanceId</code>, <code>LaunchConfigurationName</code>, or
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_LaunchTemplateSpecification.html">LaunchTemplateSpecification</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>If you do not
+     * specify <code>LaunchTemplate</code>, you must specify one of the following
+     * parameters: <code>InstanceId</code>, <code>LaunchConfigurationName</code>, or
      * <code>MixedInstancesPolicy</code>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
@@ -267,10 +237,12 @@ namespace Model
      * parameters must be specified. If optional parameters are unspecified, their
      * default values are used.</p> <p>The policy includes parameters that not only
      * define the distribution of On-Demand Instances and Spot Instances, the maximum
-     * price to pay for Spot instances, and how the Auto Scaling group allocates
+     * price to pay for Spot Instances, and how the Auto Scaling group allocates
      * instance types to fulfill On-Demand and Spot capacity, but also the parameters
      * that specify the instance configuration information—the launch template and
      * instance types.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_MixedInstancesPolicy.html">MixedInstancesPolicy</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You must specify one of the
@@ -285,10 +257,12 @@ namespace Model
      * parameters must be specified. If optional parameters are unspecified, their
      * default values are used.</p> <p>The policy includes parameters that not only
      * define the distribution of On-Demand Instances and Spot Instances, the maximum
-     * price to pay for Spot instances, and how the Auto Scaling group allocates
+     * price to pay for Spot Instances, and how the Auto Scaling group allocates
      * instance types to fulfill On-Demand and Spot capacity, but also the parameters
      * that specify the instance configuration information—the launch template and
      * instance types.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_MixedInstancesPolicy.html">MixedInstancesPolicy</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You must specify one of the
@@ -303,10 +277,12 @@ namespace Model
      * parameters must be specified. If optional parameters are unspecified, their
      * default values are used.</p> <p>The policy includes parameters that not only
      * define the distribution of On-Demand Instances and Spot Instances, the maximum
-     * price to pay for Spot instances, and how the Auto Scaling group allocates
+     * price to pay for Spot Instances, and how the Auto Scaling group allocates
      * instance types to fulfill On-Demand and Spot capacity, but also the parameters
      * that specify the instance configuration information—the launch template and
      * instance types.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_MixedInstancesPolicy.html">MixedInstancesPolicy</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You must specify one of the
@@ -321,10 +297,12 @@ namespace Model
      * parameters must be specified. If optional parameters are unspecified, their
      * default values are used.</p> <p>The policy includes parameters that not only
      * define the distribution of On-Demand Instances and Spot Instances, the maximum
-     * price to pay for Spot instances, and how the Auto Scaling group allocates
+     * price to pay for Spot Instances, and how the Auto Scaling group allocates
      * instance types to fulfill On-Demand and Spot capacity, but also the parameters
      * that specify the instance configuration information—the launch template and
      * instance types.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_MixedInstancesPolicy.html">MixedInstancesPolicy</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You must specify one of the
@@ -339,10 +317,12 @@ namespace Model
      * parameters must be specified. If optional parameters are unspecified, their
      * default values are used.</p> <p>The policy includes parameters that not only
      * define the distribution of On-Demand Instances and Spot Instances, the maximum
-     * price to pay for Spot instances, and how the Auto Scaling group allocates
+     * price to pay for Spot Instances, and how the Auto Scaling group allocates
      * instance types to fulfill On-Demand and Spot capacity, but also the parameters
      * that specify the instance configuration information—the launch template and
      * instance types.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_MixedInstancesPolicy.html">MixedInstancesPolicy</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You must specify one of the
@@ -357,10 +337,12 @@ namespace Model
      * parameters must be specified. If optional parameters are unspecified, their
      * default values are used.</p> <p>The policy includes parameters that not only
      * define the distribution of On-Demand Instances and Spot Instances, the maximum
-     * price to pay for Spot instances, and how the Auto Scaling group allocates
+     * price to pay for Spot Instances, and how the Auto Scaling group allocates
      * instance types to fulfill On-Demand and Spot capacity, but also the parameters
      * that specify the instance configuration information—the launch template and
      * instance types.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_MixedInstancesPolicy.html">MixedInstancesPolicy</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
      * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You must specify one of the
@@ -970,10 +952,10 @@ namespace Model
      * checking the health status of an EC2 instance that has come into service. During
      * this time, any health check failures for the instance are ignored. The default
      * value is <code>0</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
-     * Checks for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>Conditional: This parameter is required if you are adding an
-     * <code>ELB</code> health check.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
+     * Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Conditional: This parameter is required if you are adding an <code>ELB</code>
+     * health check.</p>
      */
     inline int GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
 
@@ -982,10 +964,10 @@ namespace Model
      * checking the health status of an EC2 instance that has come into service. During
      * this time, any health check failures for the instance are ignored. The default
      * value is <code>0</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
-     * Checks for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>Conditional: This parameter is required if you are adding an
-     * <code>ELB</code> health check.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
+     * Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Conditional: This parameter is required if you are adding an <code>ELB</code>
+     * health check.</p>
      */
     inline bool HealthCheckGracePeriodHasBeenSet() const { return m_healthCheckGracePeriodHasBeenSet; }
 
@@ -994,10 +976,10 @@ namespace Model
      * checking the health status of an EC2 instance that has come into service. During
      * this time, any health check failures for the instance are ignored. The default
      * value is <code>0</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
-     * Checks for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>Conditional: This parameter is required if you are adding an
-     * <code>ELB</code> health check.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
+     * Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Conditional: This parameter is required if you are adding an <code>ELB</code>
+     * health check.</p>
      */
     inline void SetHealthCheckGracePeriod(int value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
 
@@ -1006,10 +988,10 @@ namespace Model
      * checking the health status of an EC2 instance that has come into service. During
      * this time, any health check failures for the instance are ignored. The default
      * value is <code>0</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
-     * Checks for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>Conditional: This parameter is required if you are adding an
-     * <code>ELB</code> health check.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
+     * Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>Conditional: This parameter is required if you are adding an <code>ELB</code>
+     * health check.</p>
      */
     inline CreateAutoScalingGroupRequest& WithHealthCheckGracePeriod(int value) { SetHealthCheckGracePeriod(value); return *this;}
 

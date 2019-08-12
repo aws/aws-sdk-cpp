@@ -137,25 +137,25 @@ namespace Model
 
     /**
      * <p>Indicates whether actions should be executed during any changes to the alarm
-     * state. The default is TRUE.</p>
+     * state. The default is <code>TRUE</code>.</p>
      */
     inline bool GetActionsEnabled() const{ return m_actionsEnabled; }
 
     /**
      * <p>Indicates whether actions should be executed during any changes to the alarm
-     * state. The default is TRUE.</p>
+     * state. The default is <code>TRUE</code>.</p>
      */
     inline bool ActionsEnabledHasBeenSet() const { return m_actionsEnabledHasBeenSet; }
 
     /**
      * <p>Indicates whether actions should be executed during any changes to the alarm
-     * state. The default is TRUE.</p>
+     * state. The default is <code>TRUE</code>.</p>
      */
     inline void SetActionsEnabled(bool value) { m_actionsEnabledHasBeenSet = true; m_actionsEnabled = value; }
 
     /**
      * <p>Indicates whether actions should be executed during any changes to the alarm
-     * state. The default is TRUE.</p>
+     * state. The default is <code>TRUE</code>.</p>
      */
     inline PutMetricAlarmRequest& WithActionsEnabled(bool value) { SetActionsEnabled(value); return *this;}
 
@@ -713,74 +713,98 @@ namespace Model
 
 
     /**
-     * <p>The name for the metric associated with the alarm.</p> <p>If you are creating
-     * an alarm based on a math expression, you cannot specify this parameter, or any
-     * of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
-     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead,
-     * you specify all this information in the <code>Metrics</code> array.</p>
+     * <p>The name for the metric associated with the alarm. For each
+     * <code>PutMetricAlarm</code> operation, you must specify either
+     * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
+     * creating an alarm based on a math expression, you cannot specify this parameter,
+     * or any of the <code>Dimensions</code>, <code>Period</code>,
+     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
+     * information in the <code>Metrics</code> array.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
 
     /**
-     * <p>The name for the metric associated with the alarm.</p> <p>If you are creating
-     * an alarm based on a math expression, you cannot specify this parameter, or any
-     * of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
-     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead,
-     * you specify all this information in the <code>Metrics</code> array.</p>
+     * <p>The name for the metric associated with the alarm. For each
+     * <code>PutMetricAlarm</code> operation, you must specify either
+     * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
+     * creating an alarm based on a math expression, you cannot specify this parameter,
+     * or any of the <code>Dimensions</code>, <code>Period</code>,
+     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
+     * information in the <code>Metrics</code> array.</p>
      */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
-     * <p>The name for the metric associated with the alarm.</p> <p>If you are creating
-     * an alarm based on a math expression, you cannot specify this parameter, or any
-     * of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
-     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead,
-     * you specify all this information in the <code>Metrics</code> array.</p>
+     * <p>The name for the metric associated with the alarm. For each
+     * <code>PutMetricAlarm</code> operation, you must specify either
+     * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
+     * creating an alarm based on a math expression, you cannot specify this parameter,
+     * or any of the <code>Dimensions</code>, <code>Period</code>,
+     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
+     * information in the <code>Metrics</code> array.</p>
      */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
-     * <p>The name for the metric associated with the alarm.</p> <p>If you are creating
-     * an alarm based on a math expression, you cannot specify this parameter, or any
-     * of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
-     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead,
-     * you specify all this information in the <code>Metrics</code> array.</p>
+     * <p>The name for the metric associated with the alarm. For each
+     * <code>PutMetricAlarm</code> operation, you must specify either
+     * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
+     * creating an alarm based on a math expression, you cannot specify this parameter,
+     * or any of the <code>Dimensions</code>, <code>Period</code>,
+     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
+     * information in the <code>Metrics</code> array.</p>
      */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
-     * <p>The name for the metric associated with the alarm.</p> <p>If you are creating
-     * an alarm based on a math expression, you cannot specify this parameter, or any
-     * of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
-     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead,
-     * you specify all this information in the <code>Metrics</code> array.</p>
+     * <p>The name for the metric associated with the alarm. For each
+     * <code>PutMetricAlarm</code> operation, you must specify either
+     * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
+     * creating an alarm based on a math expression, you cannot specify this parameter,
+     * or any of the <code>Dimensions</code>, <code>Period</code>,
+     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
+     * information in the <code>Metrics</code> array.</p>
      */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
 
     /**
-     * <p>The name for the metric associated with the alarm.</p> <p>If you are creating
-     * an alarm based on a math expression, you cannot specify this parameter, or any
-     * of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
-     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead,
-     * you specify all this information in the <code>Metrics</code> array.</p>
+     * <p>The name for the metric associated with the alarm. For each
+     * <code>PutMetricAlarm</code> operation, you must specify either
+     * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
+     * creating an alarm based on a math expression, you cannot specify this parameter,
+     * or any of the <code>Dimensions</code>, <code>Period</code>,
+     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
+     * information in the <code>Metrics</code> array.</p>
      */
     inline PutMetricAlarmRequest& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>The name for the metric associated with the alarm.</p> <p>If you are creating
-     * an alarm based on a math expression, you cannot specify this parameter, or any
-     * of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
-     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead,
-     * you specify all this information in the <code>Metrics</code> array.</p>
+     * <p>The name for the metric associated with the alarm. For each
+     * <code>PutMetricAlarm</code> operation, you must specify either
+     * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
+     * creating an alarm based on a math expression, you cannot specify this parameter,
+     * or any of the <code>Dimensions</code>, <code>Period</code>,
+     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
+     * information in the <code>Metrics</code> array.</p>
      */
     inline PutMetricAlarmRequest& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for the metric associated with the alarm.</p> <p>If you are creating
-     * an alarm based on a math expression, you cannot specify this parameter, or any
-     * of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
-     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead,
-     * you specify all this information in the <code>Metrics</code> array.</p>
+     * <p>The name for the metric associated with the alarm. For each
+     * <code>PutMetricAlarm</code> operation, you must specify either
+     * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are
+     * creating an alarm based on a math expression, you cannot specify this parameter,
+     * or any of the <code>Dimensions</code>, <code>Period</code>,
+     * <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>ExtendedStatistic</code> parameters. Instead, you specify all this
+     * information in the <code>Metrics</code> array.</p>
      */
     inline PutMetricAlarmRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
@@ -998,15 +1022,18 @@ namespace Model
     /**
      * <p>The length, in seconds, used each time the metric specified in
      * <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple
-     * of 60.</p> <p>Be sure to specify 10 or 30 only for metrics that are stored by a
-     * <code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If
-     * you specify a period of 10 or 30 for a metric that does not have sub-minute
-     * resolution, the alarm still attempts to gather data at the period rate that you
-     * specify. In this case, it does not receive data for the attempts that do not
-     * correspond to a one-minute data resolution, and the alarm may often lapse into
-     * INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a
-     * high-resolution alarm, which has a higher charge than other alarms. For more
-     * information about pricing, see <a
+     * of 60.</p> <p> <code>Period</code> is required for alarms based on static
+     * thresholds. If you are creating an alarm based on a metric math expression, you
+     * specify the period for each metric within the objects in the
+     * <code>Metrics</code> array.</p> <p>Be sure to specify 10 or 30 only for metrics
+     * that are stored by a <code>PutMetricData</code> call with a
+     * <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a
+     * metric that does not have sub-minute resolution, the alarm still attempts to
+     * gather data at the period rate that you specify. In this case, it does not
+     * receive data for the attempts that do not correspond to a one-minute data
+     * resolution, and the alarm may often lapse into INSUFFICENT_DATA status.
+     * Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a
+     * higher charge than other alarms. For more information about pricing, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
      * Pricing</a>.</p> <p>An alarm's total current evaluation period can be no longer
      * than one day, so <code>Period</code> multiplied by
@@ -1017,15 +1044,18 @@ namespace Model
     /**
      * <p>The length, in seconds, used each time the metric specified in
      * <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple
-     * of 60.</p> <p>Be sure to specify 10 or 30 only for metrics that are stored by a
-     * <code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If
-     * you specify a period of 10 or 30 for a metric that does not have sub-minute
-     * resolution, the alarm still attempts to gather data at the period rate that you
-     * specify. In this case, it does not receive data for the attempts that do not
-     * correspond to a one-minute data resolution, and the alarm may often lapse into
-     * INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a
-     * high-resolution alarm, which has a higher charge than other alarms. For more
-     * information about pricing, see <a
+     * of 60.</p> <p> <code>Period</code> is required for alarms based on static
+     * thresholds. If you are creating an alarm based on a metric math expression, you
+     * specify the period for each metric within the objects in the
+     * <code>Metrics</code> array.</p> <p>Be sure to specify 10 or 30 only for metrics
+     * that are stored by a <code>PutMetricData</code> call with a
+     * <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a
+     * metric that does not have sub-minute resolution, the alarm still attempts to
+     * gather data at the period rate that you specify. In this case, it does not
+     * receive data for the attempts that do not correspond to a one-minute data
+     * resolution, and the alarm may often lapse into INSUFFICENT_DATA status.
+     * Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a
+     * higher charge than other alarms. For more information about pricing, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
      * Pricing</a>.</p> <p>An alarm's total current evaluation period can be no longer
      * than one day, so <code>Period</code> multiplied by
@@ -1036,15 +1066,18 @@ namespace Model
     /**
      * <p>The length, in seconds, used each time the metric specified in
      * <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple
-     * of 60.</p> <p>Be sure to specify 10 or 30 only for metrics that are stored by a
-     * <code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If
-     * you specify a period of 10 or 30 for a metric that does not have sub-minute
-     * resolution, the alarm still attempts to gather data at the period rate that you
-     * specify. In this case, it does not receive data for the attempts that do not
-     * correspond to a one-minute data resolution, and the alarm may often lapse into
-     * INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a
-     * high-resolution alarm, which has a higher charge than other alarms. For more
-     * information about pricing, see <a
+     * of 60.</p> <p> <code>Period</code> is required for alarms based on static
+     * thresholds. If you are creating an alarm based on a metric math expression, you
+     * specify the period for each metric within the objects in the
+     * <code>Metrics</code> array.</p> <p>Be sure to specify 10 or 30 only for metrics
+     * that are stored by a <code>PutMetricData</code> call with a
+     * <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a
+     * metric that does not have sub-minute resolution, the alarm still attempts to
+     * gather data at the period rate that you specify. In this case, it does not
+     * receive data for the attempts that do not correspond to a one-minute data
+     * resolution, and the alarm may often lapse into INSUFFICENT_DATA status.
+     * Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a
+     * higher charge than other alarms. For more information about pricing, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
      * Pricing</a>.</p> <p>An alarm's total current evaluation period can be no longer
      * than one day, so <code>Period</code> multiplied by
@@ -1055,15 +1088,18 @@ namespace Model
     /**
      * <p>The length, in seconds, used each time the metric specified in
      * <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple
-     * of 60.</p> <p>Be sure to specify 10 or 30 only for metrics that are stored by a
-     * <code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If
-     * you specify a period of 10 or 30 for a metric that does not have sub-minute
-     * resolution, the alarm still attempts to gather data at the period rate that you
-     * specify. In this case, it does not receive data for the attempts that do not
-     * correspond to a one-minute data resolution, and the alarm may often lapse into
-     * INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a
-     * high-resolution alarm, which has a higher charge than other alarms. For more
-     * information about pricing, see <a
+     * of 60.</p> <p> <code>Period</code> is required for alarms based on static
+     * thresholds. If you are creating an alarm based on a metric math expression, you
+     * specify the period for each metric within the objects in the
+     * <code>Metrics</code> array.</p> <p>Be sure to specify 10 or 30 only for metrics
+     * that are stored by a <code>PutMetricData</code> call with a
+     * <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a
+     * metric that does not have sub-minute resolution, the alarm still attempts to
+     * gather data at the period rate that you specify. In this case, it does not
+     * receive data for the attempts that do not correspond to a one-minute data
+     * resolution, and the alarm may often lapse into INSUFFICENT_DATA status.
+     * Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a
+     * higher charge than other alarms. For more information about pricing, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
      * Pricing</a>.</p> <p>An alarm's total current evaluation period can be no longer
      * than one day, so <code>Period</code> multiplied by
@@ -1078,9 +1114,15 @@ namespace Model
      * an instance receives on all network interfaces. You can also specify a unit when
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
-     * aggregated separately.</p> <p>If you specify a unit, you must use a unit that is
-     * appropriate for the metric. Otherwise, the CloudWatch alarm can get stuck in the
-     * <code>INSUFFICIENT DATA</code> state. </p>
+     * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
+     * retrieves all unit types that have been published for the metric and attempts to
+     * evaluate the alarm. Usually metrics are published with only one unit, so the
+     * alarm will work as intended.</p> <p>However, if the metric is published with
+     * multiple types of units and you don't specify a unit, the alarm's behavior is
+     * not defined and will behave un-predictably.</p> <p>We recommend omitting
+     * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
+     * is not published for this metric. Doing so causes the alarm to be stuck in the
+     * <code>INSUFFICIENT DATA</code> state.</p>
      */
     inline const StandardUnit& GetUnit() const{ return m_unit; }
 
@@ -1090,9 +1132,15 @@ namespace Model
      * an instance receives on all network interfaces. You can also specify a unit when
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
-     * aggregated separately.</p> <p>If you specify a unit, you must use a unit that is
-     * appropriate for the metric. Otherwise, the CloudWatch alarm can get stuck in the
-     * <code>INSUFFICIENT DATA</code> state. </p>
+     * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
+     * retrieves all unit types that have been published for the metric and attempts to
+     * evaluate the alarm. Usually metrics are published with only one unit, so the
+     * alarm will work as intended.</p> <p>However, if the metric is published with
+     * multiple types of units and you don't specify a unit, the alarm's behavior is
+     * not defined and will behave un-predictably.</p> <p>We recommend omitting
+     * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
+     * is not published for this metric. Doing so causes the alarm to be stuck in the
+     * <code>INSUFFICIENT DATA</code> state.</p>
      */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
@@ -1102,9 +1150,15 @@ namespace Model
      * an instance receives on all network interfaces. You can also specify a unit when
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
-     * aggregated separately.</p> <p>If you specify a unit, you must use a unit that is
-     * appropriate for the metric. Otherwise, the CloudWatch alarm can get stuck in the
-     * <code>INSUFFICIENT DATA</code> state. </p>
+     * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
+     * retrieves all unit types that have been published for the metric and attempts to
+     * evaluate the alarm. Usually metrics are published with only one unit, so the
+     * alarm will work as intended.</p> <p>However, if the metric is published with
+     * multiple types of units and you don't specify a unit, the alarm's behavior is
+     * not defined and will behave un-predictably.</p> <p>We recommend omitting
+     * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
+     * is not published for this metric. Doing so causes the alarm to be stuck in the
+     * <code>INSUFFICIENT DATA</code> state.</p>
      */
     inline void SetUnit(const StandardUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
@@ -1114,9 +1168,15 @@ namespace Model
      * an instance receives on all network interfaces. You can also specify a unit when
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
-     * aggregated separately.</p> <p>If you specify a unit, you must use a unit that is
-     * appropriate for the metric. Otherwise, the CloudWatch alarm can get stuck in the
-     * <code>INSUFFICIENT DATA</code> state. </p>
+     * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
+     * retrieves all unit types that have been published for the metric and attempts to
+     * evaluate the alarm. Usually metrics are published with only one unit, so the
+     * alarm will work as intended.</p> <p>However, if the metric is published with
+     * multiple types of units and you don't specify a unit, the alarm's behavior is
+     * not defined and will behave un-predictably.</p> <p>We recommend omitting
+     * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
+     * is not published for this metric. Doing so causes the alarm to be stuck in the
+     * <code>INSUFFICIENT DATA</code> state.</p>
      */
     inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
@@ -1126,9 +1186,15 @@ namespace Model
      * an instance receives on all network interfaces. You can also specify a unit when
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
-     * aggregated separately.</p> <p>If you specify a unit, you must use a unit that is
-     * appropriate for the metric. Otherwise, the CloudWatch alarm can get stuck in the
-     * <code>INSUFFICIENT DATA</code> state. </p>
+     * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
+     * retrieves all unit types that have been published for the metric and attempts to
+     * evaluate the alarm. Usually metrics are published with only one unit, so the
+     * alarm will work as intended.</p> <p>However, if the metric is published with
+     * multiple types of units and you don't specify a unit, the alarm's behavior is
+     * not defined and will behave un-predictably.</p> <p>We recommend omitting
+     * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
+     * is not published for this metric. Doing so causes the alarm to be stuck in the
+     * <code>INSUFFICIENT DATA</code> state.</p>
      */
     inline PutMetricAlarmRequest& WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
 
@@ -1138,9 +1204,15 @@ namespace Model
      * an instance receives on all network interfaces. You can also specify a unit when
      * you create a custom metric. Units help provide conceptual meaning to your data.
      * Metric data points that specify a unit of measure, such as Percent, are
-     * aggregated separately.</p> <p>If you specify a unit, you must use a unit that is
-     * appropriate for the metric. Otherwise, the CloudWatch alarm can get stuck in the
-     * <code>INSUFFICIENT DATA</code> state. </p>
+     * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
+     * retrieves all unit types that have been published for the metric and attempts to
+     * evaluate the alarm. Usually metrics are published with only one unit, so the
+     * alarm will work as intended.</p> <p>However, if the metric is published with
+     * multiple types of units and you don't specify a unit, the alarm's behavior is
+     * not defined and will behave un-predictably.</p> <p>We recommend omitting
+     * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
+     * is not published for this metric. Doing so causes the alarm to be stuck in the
+     * <code>INSUFFICIENT DATA</code> state.</p>
      */
     inline PutMetricAlarmRequest& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
 
@@ -1224,22 +1296,30 @@ namespace Model
 
 
     /**
-     * <p>The value against which the specified statistic is compared.</p>
+     * <p>The value against which the specified statistic is compared.</p> <p>This
+     * parameter is required for alarms based on static thresholds, but should not be
+     * used for alarms based on anomaly detection models.</p>
      */
     inline double GetThreshold() const{ return m_threshold; }
 
     /**
-     * <p>The value against which the specified statistic is compared.</p>
+     * <p>The value against which the specified statistic is compared.</p> <p>This
+     * parameter is required for alarms based on static thresholds, but should not be
+     * used for alarms based on anomaly detection models.</p>
      */
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
 
     /**
-     * <p>The value against which the specified statistic is compared.</p>
+     * <p>The value against which the specified statistic is compared.</p> <p>This
+     * parameter is required for alarms based on static thresholds, but should not be
+     * used for alarms based on anomaly detection models.</p>
      */
     inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
 
     /**
-     * <p>The value against which the specified statistic is compared.</p>
+     * <p>The value against which the specified statistic is compared.</p> <p>This
+     * parameter is required for alarms based on static thresholds, but should not be
+     * used for alarms based on anomaly detection models.</p>
      */
     inline PutMetricAlarmRequest& WithThreshold(double value) { SetThreshold(value); return *this;}
 
@@ -1487,7 +1567,9 @@ namespace Model
 
     /**
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
-     * an alarm based on the result of a metric math expression. Each item in the
+     * an alarm based on the result of a metric math expression. For each
+     * <code>PutMetricAlarm</code> operation, you must specify either
+     * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
@@ -1504,7 +1586,9 @@ namespace Model
 
     /**
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
-     * an alarm based on the result of a metric math expression. Each item in the
+     * an alarm based on the result of a metric math expression. For each
+     * <code>PutMetricAlarm</code> operation, you must specify either
+     * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
@@ -1521,7 +1605,9 @@ namespace Model
 
     /**
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
-     * an alarm based on the result of a metric math expression. Each item in the
+     * an alarm based on the result of a metric math expression. For each
+     * <code>PutMetricAlarm</code> operation, you must specify either
+     * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
@@ -1538,7 +1624,9 @@ namespace Model
 
     /**
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
-     * an alarm based on the result of a metric math expression. Each item in the
+     * an alarm based on the result of a metric math expression. For each
+     * <code>PutMetricAlarm</code> operation, you must specify either
+     * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
@@ -1555,7 +1643,9 @@ namespace Model
 
     /**
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
-     * an alarm based on the result of a metric math expression. Each item in the
+     * an alarm based on the result of a metric math expression. For each
+     * <code>PutMetricAlarm</code> operation, you must specify either
+     * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
@@ -1572,7 +1662,9 @@ namespace Model
 
     /**
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
-     * an alarm based on the result of a metric math expression. Each item in the
+     * an alarm based on the result of a metric math expression. For each
+     * <code>PutMetricAlarm</code> operation, you must specify either
+     * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
@@ -1589,7 +1681,9 @@ namespace Model
 
     /**
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
-     * an alarm based on the result of a metric math expression. Each item in the
+     * an alarm based on the result of a metric math expression. For each
+     * <code>PutMetricAlarm</code> operation, you must specify either
+     * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting
@@ -1606,7 +1700,9 @@ namespace Model
 
     /**
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
-     * an alarm based on the result of a metric math expression. Each item in the
+     * an alarm based on the result of a metric math expression. For each
+     * <code>PutMetricAlarm</code> operation, you must specify either
+     * <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
      * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
      * that the alarm watches. You designate this expression by setting

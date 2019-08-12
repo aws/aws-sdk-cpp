@@ -414,43 +414,43 @@ namespace Model
 
     /**
      * <p>When you are using a <code>Put</code> operation, this defines what unit you
-     * want to use when storing the metric. In a <code>Get</code> operation, this
-     * displays the unit that is used for the metric.</p>
+     * want to use when storing the metric.</p> <p>In a <code>Get</code> operation,
+     * this displays the unit that is used for the metric.</p>
      */
     inline const StandardUnit& GetUnit() const{ return m_unit; }
 
     /**
      * <p>When you are using a <code>Put</code> operation, this defines what unit you
-     * want to use when storing the metric. In a <code>Get</code> operation, this
-     * displays the unit that is used for the metric.</p>
+     * want to use when storing the metric.</p> <p>In a <code>Get</code> operation,
+     * this displays the unit that is used for the metric.</p>
      */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
      * <p>When you are using a <code>Put</code> operation, this defines what unit you
-     * want to use when storing the metric. In a <code>Get</code> operation, this
-     * displays the unit that is used for the metric.</p>
+     * want to use when storing the metric.</p> <p>In a <code>Get</code> operation,
+     * this displays the unit that is used for the metric.</p>
      */
     inline void SetUnit(const StandardUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
      * <p>When you are using a <code>Put</code> operation, this defines what unit you
-     * want to use when storing the metric. In a <code>Get</code> operation, this
-     * displays the unit that is used for the metric.</p>
+     * want to use when storing the metric.</p> <p>In a <code>Get</code> operation,
+     * this displays the unit that is used for the metric.</p>
      */
     inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
     /**
      * <p>When you are using a <code>Put</code> operation, this defines what unit you
-     * want to use when storing the metric. In a <code>Get</code> operation, this
-     * displays the unit that is used for the metric.</p>
+     * want to use when storing the metric.</p> <p>In a <code>Get</code> operation,
+     * this displays the unit that is used for the metric.</p>
      */
     inline MetricDatum& WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
 
     /**
      * <p>When you are using a <code>Put</code> operation, this defines what unit you
-     * want to use when storing the metric. In a <code>Get</code> operation, this
-     * displays the unit that is used for the metric.</p>
+     * want to use when storing the metric.</p> <p>In a <code>Get</code> operation,
+     * this displays the unit that is used for the metric.</p>
      */
     inline MetricDatum& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
 

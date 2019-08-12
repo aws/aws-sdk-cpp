@@ -651,44 +651,68 @@ namespace Model
 
 
     /**
-     * <p>The unit for a given metric. Metrics may be reported in multiple units. Not
-     * supplying a unit results in all units being returned. If you specify only a unit
-     * that the metric does not report, the results of the call are null.</p>
+     * <p>The unit for a given metric. If you omit <code>Unit</code>, all data that was
+     * collected with any unit is returned, along with the corresponding units that
+     * were specified when the data was reported to CloudWatch. If you specify a unit,
+     * the operation returns only data data that was collected with that unit
+     * specified. If you specify a unit that does not match the data collected, the
+     * results of the operation are null. CloudWatch does not perform unit
+     * conversions.</p>
      */
     inline const StandardUnit& GetUnit() const{ return m_unit; }
 
     /**
-     * <p>The unit for a given metric. Metrics may be reported in multiple units. Not
-     * supplying a unit results in all units being returned. If you specify only a unit
-     * that the metric does not report, the results of the call are null.</p>
+     * <p>The unit for a given metric. If you omit <code>Unit</code>, all data that was
+     * collected with any unit is returned, along with the corresponding units that
+     * were specified when the data was reported to CloudWatch. If you specify a unit,
+     * the operation returns only data data that was collected with that unit
+     * specified. If you specify a unit that does not match the data collected, the
+     * results of the operation are null. CloudWatch does not perform unit
+     * conversions.</p>
      */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
-     * <p>The unit for a given metric. Metrics may be reported in multiple units. Not
-     * supplying a unit results in all units being returned. If you specify only a unit
-     * that the metric does not report, the results of the call are null.</p>
+     * <p>The unit for a given metric. If you omit <code>Unit</code>, all data that was
+     * collected with any unit is returned, along with the corresponding units that
+     * were specified when the data was reported to CloudWatch. If you specify a unit,
+     * the operation returns only data data that was collected with that unit
+     * specified. If you specify a unit that does not match the data collected, the
+     * results of the operation are null. CloudWatch does not perform unit
+     * conversions.</p>
      */
     inline void SetUnit(const StandardUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
-     * <p>The unit for a given metric. Metrics may be reported in multiple units. Not
-     * supplying a unit results in all units being returned. If you specify only a unit
-     * that the metric does not report, the results of the call are null.</p>
+     * <p>The unit for a given metric. If you omit <code>Unit</code>, all data that was
+     * collected with any unit is returned, along with the corresponding units that
+     * were specified when the data was reported to CloudWatch. If you specify a unit,
+     * the operation returns only data data that was collected with that unit
+     * specified. If you specify a unit that does not match the data collected, the
+     * results of the operation are null. CloudWatch does not perform unit
+     * conversions.</p>
      */
     inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
     /**
-     * <p>The unit for a given metric. Metrics may be reported in multiple units. Not
-     * supplying a unit results in all units being returned. If you specify only a unit
-     * that the metric does not report, the results of the call are null.</p>
+     * <p>The unit for a given metric. If you omit <code>Unit</code>, all data that was
+     * collected with any unit is returned, along with the corresponding units that
+     * were specified when the data was reported to CloudWatch. If you specify a unit,
+     * the operation returns only data data that was collected with that unit
+     * specified. If you specify a unit that does not match the data collected, the
+     * results of the operation are null. CloudWatch does not perform unit
+     * conversions.</p>
      */
     inline GetMetricStatisticsRequest& WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
 
     /**
-     * <p>The unit for a given metric. Metrics may be reported in multiple units. Not
-     * supplying a unit results in all units being returned. If you specify only a unit
-     * that the metric does not report, the results of the call are null.</p>
+     * <p>The unit for a given metric. If you omit <code>Unit</code>, all data that was
+     * collected with any unit is returned, along with the corresponding units that
+     * were specified when the data was reported to CloudWatch. If you specify a unit,
+     * the operation returns only data data that was collected with that unit
+     * specified. If you specify a unit that does not match the data collected, the
+     * results of the operation are null. CloudWatch does not perform unit
+     * conversions.</p>
      */
     inline GetMetricStatisticsRequest& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
 

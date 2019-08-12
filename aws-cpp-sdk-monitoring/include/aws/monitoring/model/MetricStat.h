@@ -161,43 +161,73 @@ namespace Model
 
     /**
      * <p>When you are using a <code>Put</code> operation, this defines what unit you
-     * want to use when storing the metric. In a <code>Get</code> operation, this
-     * displays the unit that is used for the metric.</p>
+     * want to use when storing the metric.</p> <p>In a <code>Get</code> operation, if
+     * you omit <code>Unit</code> then all data that was collected with any unit is
+     * returned, along with the corresponding units that were specified when the data
+     * was reported to CloudWatch. If you specify a unit, the operation returns only
+     * data data that was collected with that unit specified. If you specify a unit
+     * that does not match the data collected, the results of the operation are null.
+     * CloudWatch does not perform unit conversions.</p>
      */
     inline const StandardUnit& GetUnit() const{ return m_unit; }
 
     /**
      * <p>When you are using a <code>Put</code> operation, this defines what unit you
-     * want to use when storing the metric. In a <code>Get</code> operation, this
-     * displays the unit that is used for the metric.</p>
+     * want to use when storing the metric.</p> <p>In a <code>Get</code> operation, if
+     * you omit <code>Unit</code> then all data that was collected with any unit is
+     * returned, along with the corresponding units that were specified when the data
+     * was reported to CloudWatch. If you specify a unit, the operation returns only
+     * data data that was collected with that unit specified. If you specify a unit
+     * that does not match the data collected, the results of the operation are null.
+     * CloudWatch does not perform unit conversions.</p>
      */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
      * <p>When you are using a <code>Put</code> operation, this defines what unit you
-     * want to use when storing the metric. In a <code>Get</code> operation, this
-     * displays the unit that is used for the metric.</p>
+     * want to use when storing the metric.</p> <p>In a <code>Get</code> operation, if
+     * you omit <code>Unit</code> then all data that was collected with any unit is
+     * returned, along with the corresponding units that were specified when the data
+     * was reported to CloudWatch. If you specify a unit, the operation returns only
+     * data data that was collected with that unit specified. If you specify a unit
+     * that does not match the data collected, the results of the operation are null.
+     * CloudWatch does not perform unit conversions.</p>
      */
     inline void SetUnit(const StandardUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
      * <p>When you are using a <code>Put</code> operation, this defines what unit you
-     * want to use when storing the metric. In a <code>Get</code> operation, this
-     * displays the unit that is used for the metric.</p>
+     * want to use when storing the metric.</p> <p>In a <code>Get</code> operation, if
+     * you omit <code>Unit</code> then all data that was collected with any unit is
+     * returned, along with the corresponding units that were specified when the data
+     * was reported to CloudWatch. If you specify a unit, the operation returns only
+     * data data that was collected with that unit specified. If you specify a unit
+     * that does not match the data collected, the results of the operation are null.
+     * CloudWatch does not perform unit conversions.</p>
      */
     inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
     /**
      * <p>When you are using a <code>Put</code> operation, this defines what unit you
-     * want to use when storing the metric. In a <code>Get</code> operation, this
-     * displays the unit that is used for the metric.</p>
+     * want to use when storing the metric.</p> <p>In a <code>Get</code> operation, if
+     * you omit <code>Unit</code> then all data that was collected with any unit is
+     * returned, along with the corresponding units that were specified when the data
+     * was reported to CloudWatch. If you specify a unit, the operation returns only
+     * data data that was collected with that unit specified. If you specify a unit
+     * that does not match the data collected, the results of the operation are null.
+     * CloudWatch does not perform unit conversions.</p>
      */
     inline MetricStat& WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
 
     /**
      * <p>When you are using a <code>Put</code> operation, this defines what unit you
-     * want to use when storing the metric. In a <code>Get</code> operation, this
-     * displays the unit that is used for the metric.</p>
+     * want to use when storing the metric.</p> <p>In a <code>Get</code> operation, if
+     * you omit <code>Unit</code> then all data that was collected with any unit is
+     * returned, along with the corresponding units that were specified when the data
+     * was reported to CloudWatch. If you specify a unit, the operation returns only
+     * data data that was collected with that unit specified. If you specify a unit
+     * that does not match the data collected, the results of the operation are null.
+     * CloudWatch does not perform unit conversions.</p>
      */
     inline MetricStat& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
 

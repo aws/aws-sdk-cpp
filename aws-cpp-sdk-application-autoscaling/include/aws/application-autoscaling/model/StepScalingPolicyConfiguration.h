@@ -52,38 +52,44 @@ namespace Model
 
 
     /**
-     * <p>The adjustment type, which specifies how the <code>ScalingAdjustment</code>
-     * parameter in a <a>StepAdjustment</a> is interpreted.</p>
+     * <p>Specifies whether the <code>ScalingAdjustment</code> value in a
+     * <a>StepAdjustment</a> is an absolute number or a percentage of the current
+     * capacity. </p>
      */
     inline const AdjustmentType& GetAdjustmentType() const{ return m_adjustmentType; }
 
     /**
-     * <p>The adjustment type, which specifies how the <code>ScalingAdjustment</code>
-     * parameter in a <a>StepAdjustment</a> is interpreted.</p>
+     * <p>Specifies whether the <code>ScalingAdjustment</code> value in a
+     * <a>StepAdjustment</a> is an absolute number or a percentage of the current
+     * capacity. </p>
      */
     inline bool AdjustmentTypeHasBeenSet() const { return m_adjustmentTypeHasBeenSet; }
 
     /**
-     * <p>The adjustment type, which specifies how the <code>ScalingAdjustment</code>
-     * parameter in a <a>StepAdjustment</a> is interpreted.</p>
+     * <p>Specifies whether the <code>ScalingAdjustment</code> value in a
+     * <a>StepAdjustment</a> is an absolute number or a percentage of the current
+     * capacity. </p>
      */
     inline void SetAdjustmentType(const AdjustmentType& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
 
     /**
-     * <p>The adjustment type, which specifies how the <code>ScalingAdjustment</code>
-     * parameter in a <a>StepAdjustment</a> is interpreted.</p>
+     * <p>Specifies whether the <code>ScalingAdjustment</code> value in a
+     * <a>StepAdjustment</a> is an absolute number or a percentage of the current
+     * capacity. </p>
      */
     inline void SetAdjustmentType(AdjustmentType&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = std::move(value); }
 
     /**
-     * <p>The adjustment type, which specifies how the <code>ScalingAdjustment</code>
-     * parameter in a <a>StepAdjustment</a> is interpreted.</p>
+     * <p>Specifies whether the <code>ScalingAdjustment</code> value in a
+     * <a>StepAdjustment</a> is an absolute number or a percentage of the current
+     * capacity. </p>
      */
     inline StepScalingPolicyConfiguration& WithAdjustmentType(const AdjustmentType& value) { SetAdjustmentType(value); return *this;}
 
     /**
-     * <p>The adjustment type, which specifies how the <code>ScalingAdjustment</code>
-     * parameter in a <a>StepAdjustment</a> is interpreted.</p>
+     * <p>Specifies whether the <code>ScalingAdjustment</code> value in a
+     * <a>StepAdjustment</a> is an absolute number or a percentage of the current
+     * capacity. </p>
      */
     inline StepScalingPolicyConfiguration& WithAdjustmentType(AdjustmentType&& value) { SetAdjustmentType(std::move(value)); return *this;}
 
