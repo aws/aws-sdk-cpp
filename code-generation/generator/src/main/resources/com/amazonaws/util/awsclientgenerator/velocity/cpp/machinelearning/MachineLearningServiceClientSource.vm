@@ -82,9 +82,9 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
 #else
   uri.SetQueryString(ss.str());
 #end
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_${operation.http.method});
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method});
 #else
-  JsonOutcome outcome = MakeRequest(request.GetPredictEndpoint(), request, HttpMethod::HTTP_${operation.http.method});
+  JsonOutcome outcome = MakeRequest(request.GetPredictEndpoint(), request, Aws::Http::HttpMethod::HTTP_${operation.http.method});
 #end
   if(outcome.IsSuccess())
   {

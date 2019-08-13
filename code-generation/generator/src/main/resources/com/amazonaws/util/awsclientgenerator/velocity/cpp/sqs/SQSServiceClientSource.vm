@@ -84,9 +84,9 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
 #else
   uri.SetQueryString(ss.str());
 #end
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_${operation.http.method});
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method});
 #else
-  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_${operation.http.method});
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_${operation.http.method});
 #end
   if(outcome.IsSuccess())
   {

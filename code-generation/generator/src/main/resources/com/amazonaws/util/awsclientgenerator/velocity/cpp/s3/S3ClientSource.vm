@@ -2,7 +2,7 @@
 #set($virtualAddressingSupported = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientSource.vm")
 \#include<aws/core/utils/HashingUtils.h>
-Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, long long expirationInSeconds)
+Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds)
 {
     Aws::StringStream ss;
     ss << ComputeEndpointString(bucketName) << "/" << key;
@@ -10,7 +10,7 @@ Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucketName, co
     return AWSClient::GeneratePresignedUrl(uri, method, expirationInSeconds);
 }
 
-Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, const Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
+Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, const Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
 {
     Aws::StringStream ss;
     ss << ComputeEndpointString(bucketName) << "/" << key;
@@ -18,7 +18,7 @@ Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucketName, co
     return AWSClient::GeneratePresignedUrl(uri, method, customizedHeaders, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds)
 {
     Aws::StringStream ss;
     ss << ComputeEndpointString(bucketName) << "/" << key;
@@ -28,7 +28,7 @@ Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucketNam
     return AWSClient::GeneratePresignedUrl(uri, method, headers, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, long long expirationInSeconds)
 {
     Aws::StringStream ss;
     ss << ComputeEndpointString(bucketName) << "/" << key;
@@ -37,7 +37,7 @@ Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucketNam
     return AWSClient::GeneratePresignedUrl(uri, method, customizedHeaders, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
 {
     Aws::StringStream ss;
     ss << ComputeEndpointString(bucketName) << "/" << key;
@@ -48,7 +48,7 @@ Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucketNa
     return AWSClient::GeneratePresignedUrl(uri, method, headers, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
 {
     Aws::StringStream ss;
     ss << ComputeEndpointString(bucketName) << "/" << key;
@@ -58,7 +58,7 @@ Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucketNa
     return AWSClient::GeneratePresignedUrl(uri, method, customizedHeaders, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
 {
     Aws::StringStream ss;
     ss << ComputeEndpointString(bucketName) << "/" << key;
@@ -72,7 +72,7 @@ Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucketName
     return AWSClient::GeneratePresignedUrl(uri, method, headers, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
 {
     Aws::StringStream ss;
     ss << ComputeEndpointString(bucketName) << "/" << key;
