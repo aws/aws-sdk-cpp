@@ -181,6 +181,31 @@ namespace Model
      */
     inline LogConfig& WithCloudWatchLogsRoleArn(const char* value) { SetCloudWatchLogsRoleArn(value); return *this;}
 
+
+    /**
+     * <p>Set to TRUE to exclude sections that contain information such as headers,
+     * context, and evaluated mapping templates, regardless of logging level.</p>
+     */
+    inline bool GetExcludeVerboseContent() const{ return m_excludeVerboseContent; }
+
+    /**
+     * <p>Set to TRUE to exclude sections that contain information such as headers,
+     * context, and evaluated mapping templates, regardless of logging level.</p>
+     */
+    inline bool ExcludeVerboseContentHasBeenSet() const { return m_excludeVerboseContentHasBeenSet; }
+
+    /**
+     * <p>Set to TRUE to exclude sections that contain information such as headers,
+     * context, and evaluated mapping templates, regardless of logging level.</p>
+     */
+    inline void SetExcludeVerboseContent(bool value) { m_excludeVerboseContentHasBeenSet = true; m_excludeVerboseContent = value; }
+
+    /**
+     * <p>Set to TRUE to exclude sections that contain information such as headers,
+     * context, and evaluated mapping templates, regardless of logging level.</p>
+     */
+    inline LogConfig& WithExcludeVerboseContent(bool value) { SetExcludeVerboseContent(value); return *this;}
+
   private:
 
     FieldLogLevel m_fieldLogLevel;
@@ -188,6 +213,9 @@ namespace Model
 
     Aws::String m_cloudWatchLogsRoleArn;
     bool m_cloudWatchLogsRoleArnHasBeenSet;
+
+    bool m_excludeVerboseContent;
+    bool m_excludeVerboseContentHasBeenSet;
   };
 
 } // namespace Model

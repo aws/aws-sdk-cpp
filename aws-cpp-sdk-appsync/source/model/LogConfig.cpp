@@ -31,14 +31,18 @@ namespace Model
 LogConfig::LogConfig() : 
     m_fieldLogLevel(FieldLogLevel::NOT_SET),
     m_fieldLogLevelHasBeenSet(false),
-    m_cloudWatchLogsRoleArnHasBeenSet(false)
+    m_cloudWatchLogsRoleArnHasBeenSet(false),
+    m_excludeVerboseContent(false),
+    m_excludeVerboseContentHasBeenSet(false)
 {
 }
 
 LogConfig::LogConfig(JsonView jsonValue) : 
     m_fieldLogLevel(FieldLogLevel::NOT_SET),
     m_fieldLogLevelHasBeenSet(false),
-    m_cloudWatchLogsRoleArnHasBeenSet(false)
+    m_cloudWatchLogsRoleArnHasBeenSet(false),
+    m_excludeVerboseContent(false),
+    m_excludeVerboseContentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +63,13 @@ LogConfig& LogConfig::operator =(JsonView jsonValue)
     m_cloudWatchLogsRoleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("excludeVerboseContent"))
+  {
+    m_excludeVerboseContent = jsonValue.GetBool("excludeVerboseContent");
+
+    m_excludeVerboseContentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -74,6 +85,12 @@ JsonValue LogConfig::Jsonize() const
   if(m_cloudWatchLogsRoleArnHasBeenSet)
   {
    payload.WithString("cloudWatchLogsRoleArn", m_cloudWatchLogsRoleArn);
+
+  }
+
+  if(m_excludeVerboseContentHasBeenSet)
+  {
+   payload.WithBool("excludeVerboseContent", m_excludeVerboseContent);
 
   }
 
