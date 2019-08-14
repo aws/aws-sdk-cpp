@@ -135,7 +135,7 @@ DeleteSessionOutcome LexRuntimeServiceClient::DeleteSession(const DeleteSessionR
   ss << request.GetUserId();
   ss << "/session";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteSessionOutcome(DeleteSessionResult(outcome.GetResult()));
@@ -191,7 +191,7 @@ GetSessionOutcome LexRuntimeServiceClient::GetSession(const GetSessionRequest& r
   ss << request.GetUserId();
   ss << "/session";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetSessionOutcome(GetSessionResult(outcome.GetResult()));
@@ -247,7 +247,7 @@ PostContentOutcome LexRuntimeServiceClient::PostContent(const PostContentRequest
   ss << request.GetUserId();
   ss << "/content";
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_POST);
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PostContentOutcome(PostContentResult(outcome.GetResultWithOwnership()));
@@ -303,7 +303,7 @@ PostTextOutcome LexRuntimeServiceClient::PostText(const PostTextRequest& request
   ss << request.GetUserId();
   ss << "/text";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PostTextOutcome(PostTextResult(outcome.GetResult()));
@@ -359,7 +359,7 @@ PutSessionOutcome LexRuntimeServiceClient::PutSession(const PutSessionRequest& r
   ss << request.GetUserId();
   ss << "/session";
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_POST);
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PutSessionOutcome(PutSessionResult(outcome.GetResultWithOwnership()));

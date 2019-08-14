@@ -126,7 +126,7 @@ DescribeJobExecutionOutcome IoTJobsDataPlaneClient::DescribeJobExecution(const D
   ss << "/jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeJobExecutionOutcome(DescribeJobExecutionResult(outcome.GetResult()));
@@ -168,7 +168,7 @@ GetPendingJobExecutionsOutcome IoTJobsDataPlaneClient::GetPendingJobExecutions(c
   ss << request.GetThingName();
   ss << "/jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetPendingJobExecutionsOutcome(GetPendingJobExecutionsResult(outcome.GetResult()));
@@ -210,7 +210,7 @@ StartNextPendingJobExecutionOutcome IoTJobsDataPlaneClient::StartNextPendingJobE
   ss << request.GetThingName();
   ss << "/jobs/$next";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StartNextPendingJobExecutionOutcome(StartNextPendingJobExecutionResult(outcome.GetResult()));
@@ -258,7 +258,7 @@ UpdateJobExecutionOutcome IoTJobsDataPlaneClient::UpdateJobExecution(const Updat
   ss << "/jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateJobExecutionOutcome(UpdateJobExecutionResult(outcome.GetResult()));

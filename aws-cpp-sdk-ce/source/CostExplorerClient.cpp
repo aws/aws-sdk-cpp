@@ -118,7 +118,7 @@ GetCostAndUsageOutcome CostExplorerClient::GetCostAndUsage(const GetCostAndUsage
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetCostAndUsageOutcome(GetCostAndUsageResult(outcome.GetResult()));
@@ -153,7 +153,7 @@ GetCostForecastOutcome CostExplorerClient::GetCostForecast(const GetCostForecast
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetCostForecastOutcome(GetCostForecastResult(outcome.GetResult()));
@@ -188,7 +188,7 @@ GetDimensionValuesOutcome CostExplorerClient::GetDimensionValues(const GetDimens
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDimensionValuesOutcome(GetDimensionValuesResult(outcome.GetResult()));
@@ -223,7 +223,7 @@ GetReservationCoverageOutcome CostExplorerClient::GetReservationCoverage(const G
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetReservationCoverageOutcome(GetReservationCoverageResult(outcome.GetResult()));
@@ -258,7 +258,7 @@ GetReservationPurchaseRecommendationOutcome CostExplorerClient::GetReservationPu
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetReservationPurchaseRecommendationOutcome(GetReservationPurchaseRecommendationResult(outcome.GetResult()));
@@ -293,7 +293,7 @@ GetReservationUtilizationOutcome CostExplorerClient::GetReservationUtilization(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetReservationUtilizationOutcome(GetReservationUtilizationResult(outcome.GetResult()));
@@ -328,7 +328,7 @@ GetRightsizingRecommendationOutcome CostExplorerClient::GetRightsizingRecommenda
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetRightsizingRecommendationOutcome(GetRightsizingRecommendationResult(outcome.GetResult()));
@@ -363,7 +363,7 @@ GetTagsOutcome CostExplorerClient::GetTags(const GetTagsRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetTagsOutcome(GetTagsResult(outcome.GetResult()));
@@ -398,7 +398,7 @@ GetUsageForecastOutcome CostExplorerClient::GetUsageForecast(const GetUsageForec
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetUsageForecastOutcome(GetUsageForecastResult(outcome.GetResult()));

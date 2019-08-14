@@ -121,7 +121,7 @@ CreateAssetOutcome MediaPackageVodClient::CreateAsset(const CreateAssetRequest& 
   Aws::StringStream ss;
   ss << "/assets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateAssetOutcome(CreateAssetResult(outcome.GetResult()));
@@ -156,7 +156,7 @@ CreatePackagingConfigurationOutcome MediaPackageVodClient::CreatePackagingConfig
   Aws::StringStream ss;
   ss << "/packaging_configurations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreatePackagingConfigurationOutcome(CreatePackagingConfigurationResult(outcome.GetResult()));
@@ -191,7 +191,7 @@ CreatePackagingGroupOutcome MediaPackageVodClient::CreatePackagingGroup(const Cr
   Aws::StringStream ss;
   ss << "/packaging_groups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreatePackagingGroupOutcome(CreatePackagingGroupResult(outcome.GetResult()));
@@ -232,7 +232,7 @@ DeleteAssetOutcome MediaPackageVodClient::DeleteAsset(const DeleteAssetRequest& 
   ss << "/assets/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteAssetOutcome(DeleteAssetResult(outcome.GetResult()));
@@ -273,7 +273,7 @@ DeletePackagingConfigurationOutcome MediaPackageVodClient::DeletePackagingConfig
   ss << "/packaging_configurations/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeletePackagingConfigurationOutcome(DeletePackagingConfigurationResult(outcome.GetResult()));
@@ -314,7 +314,7 @@ DeletePackagingGroupOutcome MediaPackageVodClient::DeletePackagingGroup(const De
   ss << "/packaging_groups/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeletePackagingGroupOutcome(DeletePackagingGroupResult(outcome.GetResult()));
@@ -355,7 +355,7 @@ DescribeAssetOutcome MediaPackageVodClient::DescribeAsset(const DescribeAssetReq
   ss << "/assets/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeAssetOutcome(DescribeAssetResult(outcome.GetResult()));
@@ -396,7 +396,7 @@ DescribePackagingConfigurationOutcome MediaPackageVodClient::DescribePackagingCo
   ss << "/packaging_configurations/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribePackagingConfigurationOutcome(DescribePackagingConfigurationResult(outcome.GetResult()));
@@ -437,7 +437,7 @@ DescribePackagingGroupOutcome MediaPackageVodClient::DescribePackagingGroup(cons
   ss << "/packaging_groups/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribePackagingGroupOutcome(DescribePackagingGroupResult(outcome.GetResult()));
@@ -472,7 +472,7 @@ ListAssetsOutcome MediaPackageVodClient::ListAssets(const ListAssetsRequest& req
   Aws::StringStream ss;
   ss << "/assets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListAssetsOutcome(ListAssetsResult(outcome.GetResult()));
@@ -507,7 +507,7 @@ ListPackagingConfigurationsOutcome MediaPackageVodClient::ListPackagingConfigura
   Aws::StringStream ss;
   ss << "/packaging_configurations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListPackagingConfigurationsOutcome(ListPackagingConfigurationsResult(outcome.GetResult()));
@@ -542,7 +542,7 @@ ListPackagingGroupsOutcome MediaPackageVodClient::ListPackagingGroups(const List
   Aws::StringStream ss;
   ss << "/packaging_groups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListPackagingGroupsOutcome(ListPackagingGroupsResult(outcome.GetResult()));

@@ -182,7 +182,7 @@ ActivateGatewayOutcome StorageGatewayClient::ActivateGateway(const ActivateGatew
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ActivateGatewayOutcome(ActivateGatewayResult(outcome.GetResult()));
@@ -217,7 +217,7 @@ AddCacheOutcome StorageGatewayClient::AddCache(const AddCacheRequest& request) c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AddCacheOutcome(AddCacheResult(outcome.GetResult()));
@@ -252,7 +252,7 @@ AddTagsToResourceOutcome StorageGatewayClient::AddTagsToResource(const AddTagsTo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AddTagsToResourceOutcome(AddTagsToResourceResult(outcome.GetResult()));
@@ -287,7 +287,7 @@ AddUploadBufferOutcome StorageGatewayClient::AddUploadBuffer(const AddUploadBuff
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AddUploadBufferOutcome(AddUploadBufferResult(outcome.GetResult()));
@@ -322,7 +322,7 @@ AddWorkingStorageOutcome StorageGatewayClient::AddWorkingStorage(const AddWorkin
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AddWorkingStorageOutcome(AddWorkingStorageResult(outcome.GetResult()));
@@ -357,7 +357,7 @@ AssignTapePoolOutcome StorageGatewayClient::AssignTapePool(const AssignTapePoolR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AssignTapePoolOutcome(AssignTapePoolResult(outcome.GetResult()));
@@ -392,7 +392,7 @@ AttachVolumeOutcome StorageGatewayClient::AttachVolume(const AttachVolumeRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AttachVolumeOutcome(AttachVolumeResult(outcome.GetResult()));
@@ -427,7 +427,7 @@ CancelArchivalOutcome StorageGatewayClient::CancelArchival(const CancelArchivalR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CancelArchivalOutcome(CancelArchivalResult(outcome.GetResult()));
@@ -462,7 +462,7 @@ CancelRetrievalOutcome StorageGatewayClient::CancelRetrieval(const CancelRetriev
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CancelRetrievalOutcome(CancelRetrievalResult(outcome.GetResult()));
@@ -497,7 +497,7 @@ CreateCachediSCSIVolumeOutcome StorageGatewayClient::CreateCachediSCSIVolume(con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateCachediSCSIVolumeOutcome(CreateCachediSCSIVolumeResult(outcome.GetResult()));
@@ -532,7 +532,7 @@ CreateNFSFileShareOutcome StorageGatewayClient::CreateNFSFileShare(const CreateN
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateNFSFileShareOutcome(CreateNFSFileShareResult(outcome.GetResult()));
@@ -567,7 +567,7 @@ CreateSMBFileShareOutcome StorageGatewayClient::CreateSMBFileShare(const CreateS
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateSMBFileShareOutcome(CreateSMBFileShareResult(outcome.GetResult()));
@@ -602,7 +602,7 @@ CreateSnapshotOutcome StorageGatewayClient::CreateSnapshot(const CreateSnapshotR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateSnapshotOutcome(CreateSnapshotResult(outcome.GetResult()));
@@ -637,7 +637,7 @@ CreateSnapshotFromVolumeRecoveryPointOutcome StorageGatewayClient::CreateSnapsho
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateSnapshotFromVolumeRecoveryPointOutcome(CreateSnapshotFromVolumeRecoveryPointResult(outcome.GetResult()));
@@ -672,7 +672,7 @@ CreateStorediSCSIVolumeOutcome StorageGatewayClient::CreateStorediSCSIVolume(con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateStorediSCSIVolumeOutcome(CreateStorediSCSIVolumeResult(outcome.GetResult()));
@@ -707,7 +707,7 @@ CreateTapeWithBarcodeOutcome StorageGatewayClient::CreateTapeWithBarcode(const C
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateTapeWithBarcodeOutcome(CreateTapeWithBarcodeResult(outcome.GetResult()));
@@ -742,7 +742,7 @@ CreateTapesOutcome StorageGatewayClient::CreateTapes(const CreateTapesRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateTapesOutcome(CreateTapesResult(outcome.GetResult()));
@@ -777,7 +777,7 @@ DeleteBandwidthRateLimitOutcome StorageGatewayClient::DeleteBandwidthRateLimit(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteBandwidthRateLimitOutcome(DeleteBandwidthRateLimitResult(outcome.GetResult()));
@@ -812,7 +812,7 @@ DeleteChapCredentialsOutcome StorageGatewayClient::DeleteChapCredentials(const D
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteChapCredentialsOutcome(DeleteChapCredentialsResult(outcome.GetResult()));
@@ -847,7 +847,7 @@ DeleteFileShareOutcome StorageGatewayClient::DeleteFileShare(const DeleteFileSha
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteFileShareOutcome(DeleteFileShareResult(outcome.GetResult()));
@@ -882,7 +882,7 @@ DeleteGatewayOutcome StorageGatewayClient::DeleteGateway(const DeleteGatewayRequ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteGatewayOutcome(DeleteGatewayResult(outcome.GetResult()));
@@ -917,7 +917,7 @@ DeleteSnapshotScheduleOutcome StorageGatewayClient::DeleteSnapshotSchedule(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteSnapshotScheduleOutcome(DeleteSnapshotScheduleResult(outcome.GetResult()));
@@ -952,7 +952,7 @@ DeleteTapeOutcome StorageGatewayClient::DeleteTape(const DeleteTapeRequest& requ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteTapeOutcome(DeleteTapeResult(outcome.GetResult()));
@@ -987,7 +987,7 @@ DeleteTapeArchiveOutcome StorageGatewayClient::DeleteTapeArchive(const DeleteTap
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteTapeArchiveOutcome(DeleteTapeArchiveResult(outcome.GetResult()));
@@ -1022,7 +1022,7 @@ DeleteVolumeOutcome StorageGatewayClient::DeleteVolume(const DeleteVolumeRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteVolumeOutcome(DeleteVolumeResult(outcome.GetResult()));
@@ -1057,7 +1057,7 @@ DescribeBandwidthRateLimitOutcome StorageGatewayClient::DescribeBandwidthRateLim
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeBandwidthRateLimitOutcome(DescribeBandwidthRateLimitResult(outcome.GetResult()));
@@ -1092,7 +1092,7 @@ DescribeCacheOutcome StorageGatewayClient::DescribeCache(const DescribeCacheRequ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeCacheOutcome(DescribeCacheResult(outcome.GetResult()));
@@ -1127,7 +1127,7 @@ DescribeCachediSCSIVolumesOutcome StorageGatewayClient::DescribeCachediSCSIVolum
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeCachediSCSIVolumesOutcome(DescribeCachediSCSIVolumesResult(outcome.GetResult()));
@@ -1162,7 +1162,7 @@ DescribeChapCredentialsOutcome StorageGatewayClient::DescribeChapCredentials(con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeChapCredentialsOutcome(DescribeChapCredentialsResult(outcome.GetResult()));
@@ -1197,7 +1197,7 @@ DescribeGatewayInformationOutcome StorageGatewayClient::DescribeGatewayInformati
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeGatewayInformationOutcome(DescribeGatewayInformationResult(outcome.GetResult()));
@@ -1232,7 +1232,7 @@ DescribeMaintenanceStartTimeOutcome StorageGatewayClient::DescribeMaintenanceSta
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeMaintenanceStartTimeOutcome(DescribeMaintenanceStartTimeResult(outcome.GetResult()));
@@ -1267,7 +1267,7 @@ DescribeNFSFileSharesOutcome StorageGatewayClient::DescribeNFSFileShares(const D
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeNFSFileSharesOutcome(DescribeNFSFileSharesResult(outcome.GetResult()));
@@ -1302,7 +1302,7 @@ DescribeSMBFileSharesOutcome StorageGatewayClient::DescribeSMBFileShares(const D
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeSMBFileSharesOutcome(DescribeSMBFileSharesResult(outcome.GetResult()));
@@ -1337,7 +1337,7 @@ DescribeSMBSettingsOutcome StorageGatewayClient::DescribeSMBSettings(const Descr
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeSMBSettingsOutcome(DescribeSMBSettingsResult(outcome.GetResult()));
@@ -1372,7 +1372,7 @@ DescribeSnapshotScheduleOutcome StorageGatewayClient::DescribeSnapshotSchedule(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeSnapshotScheduleOutcome(DescribeSnapshotScheduleResult(outcome.GetResult()));
@@ -1407,7 +1407,7 @@ DescribeStorediSCSIVolumesOutcome StorageGatewayClient::DescribeStorediSCSIVolum
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeStorediSCSIVolumesOutcome(DescribeStorediSCSIVolumesResult(outcome.GetResult()));
@@ -1442,7 +1442,7 @@ DescribeTapeArchivesOutcome StorageGatewayClient::DescribeTapeArchives(const Des
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeTapeArchivesOutcome(DescribeTapeArchivesResult(outcome.GetResult()));
@@ -1477,7 +1477,7 @@ DescribeTapeRecoveryPointsOutcome StorageGatewayClient::DescribeTapeRecoveryPoin
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeTapeRecoveryPointsOutcome(DescribeTapeRecoveryPointsResult(outcome.GetResult()));
@@ -1512,7 +1512,7 @@ DescribeTapesOutcome StorageGatewayClient::DescribeTapes(const DescribeTapesRequ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeTapesOutcome(DescribeTapesResult(outcome.GetResult()));
@@ -1547,7 +1547,7 @@ DescribeUploadBufferOutcome StorageGatewayClient::DescribeUploadBuffer(const Des
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeUploadBufferOutcome(DescribeUploadBufferResult(outcome.GetResult()));
@@ -1582,7 +1582,7 @@ DescribeVTLDevicesOutcome StorageGatewayClient::DescribeVTLDevices(const Describ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeVTLDevicesOutcome(DescribeVTLDevicesResult(outcome.GetResult()));
@@ -1617,7 +1617,7 @@ DescribeWorkingStorageOutcome StorageGatewayClient::DescribeWorkingStorage(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeWorkingStorageOutcome(DescribeWorkingStorageResult(outcome.GetResult()));
@@ -1652,7 +1652,7 @@ DetachVolumeOutcome StorageGatewayClient::DetachVolume(const DetachVolumeRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DetachVolumeOutcome(DetachVolumeResult(outcome.GetResult()));
@@ -1687,7 +1687,7 @@ DisableGatewayOutcome StorageGatewayClient::DisableGateway(const DisableGatewayR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DisableGatewayOutcome(DisableGatewayResult(outcome.GetResult()));
@@ -1722,7 +1722,7 @@ JoinDomainOutcome StorageGatewayClient::JoinDomain(const JoinDomainRequest& requ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return JoinDomainOutcome(JoinDomainResult(outcome.GetResult()));
@@ -1757,7 +1757,7 @@ ListFileSharesOutcome StorageGatewayClient::ListFileShares(const ListFileSharesR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListFileSharesOutcome(ListFileSharesResult(outcome.GetResult()));
@@ -1792,7 +1792,7 @@ ListGatewaysOutcome StorageGatewayClient::ListGateways(const ListGatewaysRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListGatewaysOutcome(ListGatewaysResult(outcome.GetResult()));
@@ -1827,7 +1827,7 @@ ListLocalDisksOutcome StorageGatewayClient::ListLocalDisks(const ListLocalDisksR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListLocalDisksOutcome(ListLocalDisksResult(outcome.GetResult()));
@@ -1862,7 +1862,7 @@ ListTagsForResourceOutcome StorageGatewayClient::ListTagsForResource(const ListT
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
@@ -1897,7 +1897,7 @@ ListTapesOutcome StorageGatewayClient::ListTapes(const ListTapesRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTapesOutcome(ListTapesResult(outcome.GetResult()));
@@ -1932,7 +1932,7 @@ ListVolumeInitiatorsOutcome StorageGatewayClient::ListVolumeInitiators(const Lis
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListVolumeInitiatorsOutcome(ListVolumeInitiatorsResult(outcome.GetResult()));
@@ -1967,7 +1967,7 @@ ListVolumeRecoveryPointsOutcome StorageGatewayClient::ListVolumeRecoveryPoints(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListVolumeRecoveryPointsOutcome(ListVolumeRecoveryPointsResult(outcome.GetResult()));
@@ -2002,7 +2002,7 @@ ListVolumesOutcome StorageGatewayClient::ListVolumes(const ListVolumesRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListVolumesOutcome(ListVolumesResult(outcome.GetResult()));
@@ -2037,7 +2037,7 @@ NotifyWhenUploadedOutcome StorageGatewayClient::NotifyWhenUploaded(const NotifyW
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return NotifyWhenUploadedOutcome(NotifyWhenUploadedResult(outcome.GetResult()));
@@ -2072,7 +2072,7 @@ RefreshCacheOutcome StorageGatewayClient::RefreshCache(const RefreshCacheRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RefreshCacheOutcome(RefreshCacheResult(outcome.GetResult()));
@@ -2107,7 +2107,7 @@ RemoveTagsFromResourceOutcome StorageGatewayClient::RemoveTagsFromResource(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RemoveTagsFromResourceOutcome(RemoveTagsFromResourceResult(outcome.GetResult()));
@@ -2142,7 +2142,7 @@ ResetCacheOutcome StorageGatewayClient::ResetCache(const ResetCacheRequest& requ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ResetCacheOutcome(ResetCacheResult(outcome.GetResult()));
@@ -2177,7 +2177,7 @@ RetrieveTapeArchiveOutcome StorageGatewayClient::RetrieveTapeArchive(const Retri
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RetrieveTapeArchiveOutcome(RetrieveTapeArchiveResult(outcome.GetResult()));
@@ -2212,7 +2212,7 @@ RetrieveTapeRecoveryPointOutcome StorageGatewayClient::RetrieveTapeRecoveryPoint
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RetrieveTapeRecoveryPointOutcome(RetrieveTapeRecoveryPointResult(outcome.GetResult()));
@@ -2247,7 +2247,7 @@ SetLocalConsolePasswordOutcome StorageGatewayClient::SetLocalConsolePassword(con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SetLocalConsolePasswordOutcome(SetLocalConsolePasswordResult(outcome.GetResult()));
@@ -2282,7 +2282,7 @@ SetSMBGuestPasswordOutcome StorageGatewayClient::SetSMBGuestPassword(const SetSM
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SetSMBGuestPasswordOutcome(SetSMBGuestPasswordResult(outcome.GetResult()));
@@ -2317,7 +2317,7 @@ ShutdownGatewayOutcome StorageGatewayClient::ShutdownGateway(const ShutdownGatew
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ShutdownGatewayOutcome(ShutdownGatewayResult(outcome.GetResult()));
@@ -2352,7 +2352,7 @@ StartGatewayOutcome StorageGatewayClient::StartGateway(const StartGatewayRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StartGatewayOutcome(StartGatewayResult(outcome.GetResult()));
@@ -2387,7 +2387,7 @@ UpdateBandwidthRateLimitOutcome StorageGatewayClient::UpdateBandwidthRateLimit(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateBandwidthRateLimitOutcome(UpdateBandwidthRateLimitResult(outcome.GetResult()));
@@ -2422,7 +2422,7 @@ UpdateChapCredentialsOutcome StorageGatewayClient::UpdateChapCredentials(const U
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateChapCredentialsOutcome(UpdateChapCredentialsResult(outcome.GetResult()));
@@ -2457,7 +2457,7 @@ UpdateGatewayInformationOutcome StorageGatewayClient::UpdateGatewayInformation(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateGatewayInformationOutcome(UpdateGatewayInformationResult(outcome.GetResult()));
@@ -2492,7 +2492,7 @@ UpdateGatewaySoftwareNowOutcome StorageGatewayClient::UpdateGatewaySoftwareNow(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateGatewaySoftwareNowOutcome(UpdateGatewaySoftwareNowResult(outcome.GetResult()));
@@ -2527,7 +2527,7 @@ UpdateMaintenanceStartTimeOutcome StorageGatewayClient::UpdateMaintenanceStartTi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateMaintenanceStartTimeOutcome(UpdateMaintenanceStartTimeResult(outcome.GetResult()));
@@ -2562,7 +2562,7 @@ UpdateNFSFileShareOutcome StorageGatewayClient::UpdateNFSFileShare(const UpdateN
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateNFSFileShareOutcome(UpdateNFSFileShareResult(outcome.GetResult()));
@@ -2597,7 +2597,7 @@ UpdateSMBFileShareOutcome StorageGatewayClient::UpdateSMBFileShare(const UpdateS
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateSMBFileShareOutcome(UpdateSMBFileShareResult(outcome.GetResult()));
@@ -2632,7 +2632,7 @@ UpdateSMBSecurityStrategyOutcome StorageGatewayClient::UpdateSMBSecurityStrategy
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateSMBSecurityStrategyOutcome(UpdateSMBSecurityStrategyResult(outcome.GetResult()));
@@ -2667,7 +2667,7 @@ UpdateSnapshotScheduleOutcome StorageGatewayClient::UpdateSnapshotSchedule(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateSnapshotScheduleOutcome(UpdateSnapshotScheduleResult(outcome.GetResult()));
@@ -2702,7 +2702,7 @@ UpdateVTLDeviceTypeOutcome StorageGatewayClient::UpdateVTLDeviceType(const Updat
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateVTLDeviceTypeOutcome(UpdateVTLDeviceTypeResult(outcome.GetResult()));

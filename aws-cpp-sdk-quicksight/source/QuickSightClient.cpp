@@ -139,7 +139,7 @@ CreateGroupOutcome QuickSightClient::CreateGroup(const CreateGroupRequest& reque
   ss << request.GetNamespace();
   ss << "/groups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateGroupOutcome(CreateGroupResult(outcome.GetResult()));
@@ -201,7 +201,7 @@ CreateGroupMembershipOutcome QuickSightClient::CreateGroupMembership(const Creat
   ss << "/members/";
   ss << request.GetMemberName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateGroupMembershipOutcome(CreateGroupMembershipResult(outcome.GetResult()));
@@ -256,7 +256,7 @@ DeleteGroupOutcome QuickSightClient::DeleteGroup(const DeleteGroupRequest& reque
   ss << "/groups/";
   ss << request.GetGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteGroupOutcome(DeleteGroupResult(outcome.GetResult()));
@@ -318,7 +318,7 @@ DeleteGroupMembershipOutcome QuickSightClient::DeleteGroupMembership(const Delet
   ss << "/members/";
   ss << request.GetMemberName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteGroupMembershipOutcome(DeleteGroupMembershipResult(outcome.GetResult()));
@@ -373,7 +373,7 @@ DeleteUserOutcome QuickSightClient::DeleteUser(const DeleteUserRequest& request)
   ss << "/users/";
   ss << request.GetUserName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteUserOutcome(DeleteUserResult(outcome.GetResult()));
@@ -428,7 +428,7 @@ DeleteUserByPrincipalIdOutcome QuickSightClient::DeleteUserByPrincipalId(const D
   ss << "/user-principals/";
   ss << request.GetPrincipalId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteUserByPrincipalIdOutcome(DeleteUserByPrincipalIdResult(outcome.GetResult()));
@@ -483,7 +483,7 @@ DescribeGroupOutcome QuickSightClient::DescribeGroup(const DescribeGroupRequest&
   ss << "/groups/";
   ss << request.GetGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeGroupOutcome(DescribeGroupResult(outcome.GetResult()));
@@ -538,7 +538,7 @@ DescribeUserOutcome QuickSightClient::DescribeUser(const DescribeUserRequest& re
   ss << "/users/";
   ss << request.GetUserName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeUserOutcome(DescribeUserResult(outcome.GetResult()));
@@ -592,7 +592,7 @@ GetDashboardEmbedUrlOutcome QuickSightClient::GetDashboardEmbedUrl(const GetDash
   ss << request.GetDashboardId();
   ss << "/embed-url";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDashboardEmbedUrlOutcome(GetDashboardEmbedUrlResult(outcome.GetResult()));
@@ -648,7 +648,7 @@ ListGroupMembershipsOutcome QuickSightClient::ListGroupMemberships(const ListGro
   ss << request.GetGroupName();
   ss << "/members";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListGroupMembershipsOutcome(ListGroupMembershipsResult(outcome.GetResult()));
@@ -697,7 +697,7 @@ ListGroupsOutcome QuickSightClient::ListGroups(const ListGroupsRequest& request)
   ss << request.GetNamespace();
   ss << "/groups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListGroupsOutcome(ListGroupsResult(outcome.GetResult()));
@@ -753,7 +753,7 @@ ListUserGroupsOutcome QuickSightClient::ListUserGroups(const ListUserGroupsReque
   ss << request.GetUserName();
   ss << "/groups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListUserGroupsOutcome(ListUserGroupsResult(outcome.GetResult()));
@@ -802,7 +802,7 @@ ListUsersOutcome QuickSightClient::ListUsers(const ListUsersRequest& request) co
   ss << request.GetNamespace();
   ss << "/users";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListUsersOutcome(ListUsersResult(outcome.GetResult()));
@@ -851,7 +851,7 @@ RegisterUserOutcome QuickSightClient::RegisterUser(const RegisterUserRequest& re
   ss << request.GetNamespace();
   ss << "/users";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RegisterUserOutcome(RegisterUserResult(outcome.GetResult()));
@@ -906,7 +906,7 @@ UpdateGroupOutcome QuickSightClient::UpdateGroup(const UpdateGroupRequest& reque
   ss << "/groups/";
   ss << request.GetGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateGroupOutcome(UpdateGroupResult(outcome.GetResult()));
@@ -961,7 +961,7 @@ UpdateUserOutcome QuickSightClient::UpdateUser(const UpdateUserRequest& request)
   ss << "/users/";
   ss << request.GetUserName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateUserOutcome(UpdateUserResult(outcome.GetResult()));

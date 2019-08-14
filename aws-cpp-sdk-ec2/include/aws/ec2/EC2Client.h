@@ -704,6 +704,7 @@ namespace Model
         class RunInstancesRequest;
         class RunScheduledInstancesRequest;
         class SearchTransitGatewayRoutesRequest;
+        class SendDiagnosticInterruptRequest;
         class StartInstancesRequest;
         class StopInstancesRequest;
         class TerminateClientVpnConnectionsRequest;
@@ -1058,6 +1059,7 @@ namespace Model
         typedef Aws::Utils::Outcome<RunInstancesResponse, Aws::Client::AWSError<EC2Errors>> RunInstancesOutcome;
         typedef Aws::Utils::Outcome<RunScheduledInstancesResponse, Aws::Client::AWSError<EC2Errors>> RunScheduledInstancesOutcome;
         typedef Aws::Utils::Outcome<SearchTransitGatewayRoutesResponse, Aws::Client::AWSError<EC2Errors>> SearchTransitGatewayRoutesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> SendDiagnosticInterruptOutcome;
         typedef Aws::Utils::Outcome<StartInstancesResponse, Aws::Client::AWSError<EC2Errors>> StartInstancesOutcome;
         typedef Aws::Utils::Outcome<StopInstancesResponse, Aws::Client::AWSError<EC2Errors>> StopInstancesOutcome;
         typedef Aws::Utils::Outcome<TerminateClientVpnConnectionsResponse, Aws::Client::AWSError<EC2Errors>> TerminateClientVpnConnectionsOutcome;
@@ -1412,6 +1414,7 @@ namespace Model
         typedef std::future<RunInstancesOutcome> RunInstancesOutcomeCallable;
         typedef std::future<RunScheduledInstancesOutcome> RunScheduledInstancesOutcomeCallable;
         typedef std::future<SearchTransitGatewayRoutesOutcome> SearchTransitGatewayRoutesOutcomeCallable;
+        typedef std::future<SendDiagnosticInterruptOutcome> SendDiagnosticInterruptOutcomeCallable;
         typedef std::future<StartInstancesOutcome> StartInstancesOutcomeCallable;
         typedef std::future<StopInstancesOutcome> StopInstancesOutcomeCallable;
         typedef std::future<TerminateClientVpnConnectionsOutcome> TerminateClientVpnConnectionsOutcomeCallable;
@@ -1769,6 +1772,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::RunInstancesRequest&, const Model::RunInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RunInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RunScheduledInstancesRequest&, const Model::RunScheduledInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RunScheduledInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::SearchTransitGatewayRoutesRequest&, const Model::SearchTransitGatewayRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchTransitGatewayRoutesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::SendDiagnosticInterruptRequest&, const Model::SendDiagnosticInterruptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendDiagnosticInterruptResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::StartInstancesRequest&, const Model::StartInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::StopInstancesRequest&, const Model::StopInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::TerminateClientVpnConnectionsRequest&, const Model::TerminateClientVpnConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateClientVpnConnectionsResponseReceivedHandler;
@@ -1786,7 +1790,7 @@ namespace Model
    * cloud. Using Amazon EC2 eliminates the need to invest in hardware up front, so
    * you can develop and deploy applications faster.</p> <p>To learn more, see the
    * following resources:</p> <ul> <li> <p>Amazon EC2: <a
-   * href="http://aws.amazon.com/ec2">Amazon EC2 product page</a>, <a
+   * href="http://aws.amazon.com/ec2">AmazonEC2 product page</a>, <a
    * href="http://aws.amazon.com/documentation/ec2">Amazon EC2 documentation</a> </p>
    * </li> <li> <p>Amazon EBS: <a href="http://aws.amazon.com/ebs">Amazon EBS product
    * page</a>, <a
@@ -12608,19 +12612,37 @@ namespace Model
         virtual void ExportTransitGatewayRoutesAsync(const Model::ExportTransitGatewayRoutesRequest& request, const ExportTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Gets usage information about a Capacity Reservation. If the Capacity
+         * Reservation is shared, it shows usage information for the Capacity Reservation
+         * owner and each AWS account that is currently using the shared capacity. If the
+         * Capacity Reservation is not shared, it shows only the Capacity Reservation
+         * owner's usage.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityReservationUsage">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetCapacityReservationUsageOutcome GetCapacityReservationUsage(const Model::GetCapacityReservationUsageRequest& request) const;
 
         /**
-         * 
+         * <p>Gets usage information about a Capacity Reservation. If the Capacity
+         * Reservation is shared, it shows usage information for the Capacity Reservation
+         * owner and each AWS account that is currently using the shared capacity. If the
+         * Capacity Reservation is not shared, it shows only the Capacity Reservation
+         * owner's usage.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityReservationUsage">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetCapacityReservationUsageOutcomeCallable GetCapacityReservationUsageCallable(const Model::GetCapacityReservationUsageRequest& request) const;
 
         /**
-         * 
+         * <p>Gets usage information about a Capacity Reservation. If the Capacity
+         * Reservation is shared, it shows usage information for the Capacity Reservation
+         * owner and each AWS account that is currently using the shared capacity. If the
+         * Capacity Reservation is not shared, it shows only the Capacity Reservation
+         * owner's usage.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityReservationUsage">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -13430,28 +13452,97 @@ namespace Model
         virtual void ModifyEbsDefaultKmsKeyIdAsync(const Model::ModifyEbsDefaultKmsKeyIdRequest& request, const ModifyEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the specified EC2 Fleet.</p> <p>While the EC2 Fleet is being
-         * modified, it is in the <code>modifying</code> state.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet">AWS
-         * API Reference</a></p>
+         * <p>Modifies the specified EC2 Fleet.</p> <p>You can only modify an EC2 Fleet
+         * request of type <code>maintain</code>.</p> <p>While the EC2 Fleet is being
+         * modified, it is in the <code>modifying</code> state.</p> <p>To scale up your EC2
+         * Fleet, increase its target capacity. The EC2 Fleet launches the additional Spot
+         * Instances according to the allocation strategy for the EC2 Fleet request. If the
+         * allocation strategy is <code>lowestPrice</code>, the EC2 Fleet launches
+         * instances using the Spot Instance pool with the lowest price. If the allocation
+         * strategy is <code>diversified</code>, the EC2 Fleet distributes the instances
+         * across the Spot Instance pools. If the allocation strategy is
+         * <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance
+         * pools that are optimally chosen based on the available Spot Instance
+         * capacity.</p> <p>To scale down your EC2 Fleet, decrease its target capacity.
+         * First, the EC2 Fleet cancels any open requests that exceed the new target
+         * capacity. You can request that the EC2 Fleet terminate Spot Instances until the
+         * size of the fleet no longer exceeds the new target capacity. If the allocation
+         * strategy is <code>lowestPrice</code>, the EC2 Fleet terminates the instances
+         * with the highest price per unit. If the allocation strategy is
+         * <code>capacityOptimized</code>, the EC2 Fleet terminates the instances in the
+         * Spot Instance pools that have the least available Spot Instance capacity. If the
+         * allocation strategy is <code>diversified</code>, the EC2 Fleet terminates
+         * instances across the Spot Instance pools. Alternatively, you can request that
+         * the EC2 Fleet keep the fleet at its current size, but not replace any Spot
+         * Instances that are interrupted or that you terminate manually.</p> <p>If you are
+         * finished with your EC2 Fleet for now, but will use it again later, you can set
+         * the target capacity to 0.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet">AWS API
+         * Reference</a></p>
          */
         virtual Model::ModifyFleetOutcome ModifyFleet(const Model::ModifyFleetRequest& request) const;
 
         /**
-         * <p>Modifies the specified EC2 Fleet.</p> <p>While the EC2 Fleet is being
-         * modified, it is in the <code>modifying</code> state.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet">AWS
-         * API Reference</a></p>
+         * <p>Modifies the specified EC2 Fleet.</p> <p>You can only modify an EC2 Fleet
+         * request of type <code>maintain</code>.</p> <p>While the EC2 Fleet is being
+         * modified, it is in the <code>modifying</code> state.</p> <p>To scale up your EC2
+         * Fleet, increase its target capacity. The EC2 Fleet launches the additional Spot
+         * Instances according to the allocation strategy for the EC2 Fleet request. If the
+         * allocation strategy is <code>lowestPrice</code>, the EC2 Fleet launches
+         * instances using the Spot Instance pool with the lowest price. If the allocation
+         * strategy is <code>diversified</code>, the EC2 Fleet distributes the instances
+         * across the Spot Instance pools. If the allocation strategy is
+         * <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance
+         * pools that are optimally chosen based on the available Spot Instance
+         * capacity.</p> <p>To scale down your EC2 Fleet, decrease its target capacity.
+         * First, the EC2 Fleet cancels any open requests that exceed the new target
+         * capacity. You can request that the EC2 Fleet terminate Spot Instances until the
+         * size of the fleet no longer exceeds the new target capacity. If the allocation
+         * strategy is <code>lowestPrice</code>, the EC2 Fleet terminates the instances
+         * with the highest price per unit. If the allocation strategy is
+         * <code>capacityOptimized</code>, the EC2 Fleet terminates the instances in the
+         * Spot Instance pools that have the least available Spot Instance capacity. If the
+         * allocation strategy is <code>diversified</code>, the EC2 Fleet terminates
+         * instances across the Spot Instance pools. Alternatively, you can request that
+         * the EC2 Fleet keep the fleet at its current size, but not replace any Spot
+         * Instances that are interrupted or that you terminate manually.</p> <p>If you are
+         * finished with your EC2 Fleet for now, but will use it again later, you can set
+         * the target capacity to 0.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ModifyFleetOutcomeCallable ModifyFleetCallable(const Model::ModifyFleetRequest& request) const;
 
         /**
-         * <p>Modifies the specified EC2 Fleet.</p> <p>While the EC2 Fleet is being
-         * modified, it is in the <code>modifying</code> state.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet">AWS
-         * API Reference</a></p>
+         * <p>Modifies the specified EC2 Fleet.</p> <p>You can only modify an EC2 Fleet
+         * request of type <code>maintain</code>.</p> <p>While the EC2 Fleet is being
+         * modified, it is in the <code>modifying</code> state.</p> <p>To scale up your EC2
+         * Fleet, increase its target capacity. The EC2 Fleet launches the additional Spot
+         * Instances according to the allocation strategy for the EC2 Fleet request. If the
+         * allocation strategy is <code>lowestPrice</code>, the EC2 Fleet launches
+         * instances using the Spot Instance pool with the lowest price. If the allocation
+         * strategy is <code>diversified</code>, the EC2 Fleet distributes the instances
+         * across the Spot Instance pools. If the allocation strategy is
+         * <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance
+         * pools that are optimally chosen based on the available Spot Instance
+         * capacity.</p> <p>To scale down your EC2 Fleet, decrease its target capacity.
+         * First, the EC2 Fleet cancels any open requests that exceed the new target
+         * capacity. You can request that the EC2 Fleet terminate Spot Instances until the
+         * size of the fleet no longer exceeds the new target capacity. If the allocation
+         * strategy is <code>lowestPrice</code>, the EC2 Fleet terminates the instances
+         * with the highest price per unit. If the allocation strategy is
+         * <code>capacityOptimized</code>, the EC2 Fleet terminates the instances in the
+         * Spot Instance pools that have the least available Spot Instance capacity. If the
+         * allocation strategy is <code>diversified</code>, the EC2 Fleet terminates
+         * instances across the Spot Instance pools. Alternatively, you can request that
+         * the EC2 Fleet keep the fleet at its current size, but not replace any Spot
+         * Instances that are interrupted or that you terminate manually.</p> <p>If you are
+         * finished with your EC2 Fleet for now, but will use it again later, you can set
+         * the target capacity to 0.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -14128,7 +14219,8 @@ namespace Model
          * <p>Adds or removes permission settings for the specified snapshot. You may add
          * or remove specified AWS account IDs from a snapshot's list of create volume
          * permissions, but you cannot do both in a single operation. If you need to both
-         * add and remove account IDs for a snapshot, you must use multiple operations.</p>
+         * add and remove account IDs for a snapshot, you must use multiple operations. You
+         * can make up to 500 modifications to a snapshot in a single operation.</p>
          * <p>Encrypted snapshots and snapshots with AWS Marketplace product codes cannot
          * be made public. Snapshots encrypted with your default CMK cannot be shared with
          * other accounts.</p> <p>For more information about modifying snapshot
@@ -14145,7 +14237,8 @@ namespace Model
          * <p>Adds or removes permission settings for the specified snapshot. You may add
          * or remove specified AWS account IDs from a snapshot's list of create volume
          * permissions, but you cannot do both in a single operation. If you need to both
-         * add and remove account IDs for a snapshot, you must use multiple operations.</p>
+         * add and remove account IDs for a snapshot, you must use multiple operations. You
+         * can make up to 500 modifications to a snapshot in a single operation.</p>
          * <p>Encrypted snapshots and snapshots with AWS Marketplace product codes cannot
          * be made public. Snapshots encrypted with your default CMK cannot be shared with
          * other accounts.</p> <p>For more information about modifying snapshot
@@ -14164,7 +14257,8 @@ namespace Model
          * <p>Adds or removes permission settings for the specified snapshot. You may add
          * or remove specified AWS account IDs from a snapshot's list of create volume
          * permissions, but you cannot do both in a single operation. If you need to both
-         * add and remove account IDs for a snapshot, you must use multiple operations.</p>
+         * add and remove account IDs for a snapshot, you must use multiple operations. You
+         * can make up to 500 modifications to a snapshot in a single operation.</p>
          * <p>Encrypted snapshots and snapshots with AWS Marketplace product codes cannot
          * be made public. Snapshots encrypted with your default CMK cannot be shared with
          * other accounts.</p> <p>For more information about modifying snapshot
@@ -14186,20 +14280,25 @@ namespace Model
          * your Spot Fleet, increase its target capacity. The Spot Fleet launches the
          * additional Spot Instances according to the allocation strategy for the Spot
          * Fleet request. If the allocation strategy is <code>lowestPrice</code>, the Spot
-         * Fleet launches instances using the Spot pool with the lowest price. If the
-         * allocation strategy is <code>diversified</code>, the Spot Fleet distributes the
-         * instances across the Spot pools.</p> <p>To scale down your Spot Fleet, decrease
-         * its target capacity. First, the Spot Fleet cancels any open requests that exceed
-         * the new target capacity. You can request that the Spot Fleet terminate Spot
-         * Instances until the size of the fleet no longer exceeds the new target capacity.
-         * If the allocation strategy is <code>lowestPrice</code>, the Spot Fleet
-         * terminates the instances with the highest price per unit. If the allocation
-         * strategy is <code>diversified</code>, the Spot Fleet terminates instances across
-         * the Spot pools. Alternatively, you can request that the Spot Fleet keep the
-         * fleet at its current size, but not replace any Spot Instances that are
-         * interrupted or that you terminate manually.</p> <p>If you are finished with your
-         * Spot Fleet for now, but will use it again later, you can set the target capacity
-         * to 0.</p><p><h3>See Also:</h3>   <a
+         * Fleet launches instances using the Spot Instance pool with the lowest price. If
+         * the allocation strategy is <code>diversified</code>, the Spot Fleet distributes
+         * the instances across the Spot Instance pools. If the allocation strategy is
+         * <code>capacityOptimized</code>, Spot Fleet launches instances from Spot Instance
+         * pools that are optimally chosen based on the available Spot Instance
+         * capacity.</p> <p>To scale down your Spot Fleet, decrease its target capacity.
+         * First, the Spot Fleet cancels any open requests that exceed the new target
+         * capacity. You can request that the Spot Fleet terminate Spot Instances until the
+         * size of the fleet no longer exceeds the new target capacity. If the allocation
+         * strategy is <code>lowestPrice</code>, the Spot Fleet terminates the instances
+         * with the highest price per unit. If the allocation strategy is
+         * <code>capacityOptimized</code>, the Spot Fleet terminates the instances in the
+         * Spot Instance pools that have the least available Spot Instance capacity. If the
+         * allocation strategy is <code>diversified</code>, the Spot Fleet terminates
+         * instances across the Spot Instance pools. Alternatively, you can request that
+         * the Spot Fleet keep the fleet at its current size, but not replace any Spot
+         * Instances that are interrupted or that you terminate manually.</p> <p>If you are
+         * finished with your Spot Fleet for now, but will use it again later, you can set
+         * the target capacity to 0.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySpotFleetRequest">AWS
          * API Reference</a></p>
          */
@@ -14212,20 +14311,25 @@ namespace Model
          * your Spot Fleet, increase its target capacity. The Spot Fleet launches the
          * additional Spot Instances according to the allocation strategy for the Spot
          * Fleet request. If the allocation strategy is <code>lowestPrice</code>, the Spot
-         * Fleet launches instances using the Spot pool with the lowest price. If the
-         * allocation strategy is <code>diversified</code>, the Spot Fleet distributes the
-         * instances across the Spot pools.</p> <p>To scale down your Spot Fleet, decrease
-         * its target capacity. First, the Spot Fleet cancels any open requests that exceed
-         * the new target capacity. You can request that the Spot Fleet terminate Spot
-         * Instances until the size of the fleet no longer exceeds the new target capacity.
-         * If the allocation strategy is <code>lowestPrice</code>, the Spot Fleet
-         * terminates the instances with the highest price per unit. If the allocation
-         * strategy is <code>diversified</code>, the Spot Fleet terminates instances across
-         * the Spot pools. Alternatively, you can request that the Spot Fleet keep the
-         * fleet at its current size, but not replace any Spot Instances that are
-         * interrupted or that you terminate manually.</p> <p>If you are finished with your
-         * Spot Fleet for now, but will use it again later, you can set the target capacity
-         * to 0.</p><p><h3>See Also:</h3>   <a
+         * Fleet launches instances using the Spot Instance pool with the lowest price. If
+         * the allocation strategy is <code>diversified</code>, the Spot Fleet distributes
+         * the instances across the Spot Instance pools. If the allocation strategy is
+         * <code>capacityOptimized</code>, Spot Fleet launches instances from Spot Instance
+         * pools that are optimally chosen based on the available Spot Instance
+         * capacity.</p> <p>To scale down your Spot Fleet, decrease its target capacity.
+         * First, the Spot Fleet cancels any open requests that exceed the new target
+         * capacity. You can request that the Spot Fleet terminate Spot Instances until the
+         * size of the fleet no longer exceeds the new target capacity. If the allocation
+         * strategy is <code>lowestPrice</code>, the Spot Fleet terminates the instances
+         * with the highest price per unit. If the allocation strategy is
+         * <code>capacityOptimized</code>, the Spot Fleet terminates the instances in the
+         * Spot Instance pools that have the least available Spot Instance capacity. If the
+         * allocation strategy is <code>diversified</code>, the Spot Fleet terminates
+         * instances across the Spot Instance pools. Alternatively, you can request that
+         * the Spot Fleet keep the fleet at its current size, but not replace any Spot
+         * Instances that are interrupted or that you terminate manually.</p> <p>If you are
+         * finished with your Spot Fleet for now, but will use it again later, you can set
+         * the target capacity to 0.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySpotFleetRequest">AWS
          * API Reference</a></p>
          *
@@ -14240,20 +14344,25 @@ namespace Model
          * your Spot Fleet, increase its target capacity. The Spot Fleet launches the
          * additional Spot Instances according to the allocation strategy for the Spot
          * Fleet request. If the allocation strategy is <code>lowestPrice</code>, the Spot
-         * Fleet launches instances using the Spot pool with the lowest price. If the
-         * allocation strategy is <code>diversified</code>, the Spot Fleet distributes the
-         * instances across the Spot pools.</p> <p>To scale down your Spot Fleet, decrease
-         * its target capacity. First, the Spot Fleet cancels any open requests that exceed
-         * the new target capacity. You can request that the Spot Fleet terminate Spot
-         * Instances until the size of the fleet no longer exceeds the new target capacity.
-         * If the allocation strategy is <code>lowestPrice</code>, the Spot Fleet
-         * terminates the instances with the highest price per unit. If the allocation
-         * strategy is <code>diversified</code>, the Spot Fleet terminates instances across
-         * the Spot pools. Alternatively, you can request that the Spot Fleet keep the
-         * fleet at its current size, but not replace any Spot Instances that are
-         * interrupted or that you terminate manually.</p> <p>If you are finished with your
-         * Spot Fleet for now, but will use it again later, you can set the target capacity
-         * to 0.</p><p><h3>See Also:</h3>   <a
+         * Fleet launches instances using the Spot Instance pool with the lowest price. If
+         * the allocation strategy is <code>diversified</code>, the Spot Fleet distributes
+         * the instances across the Spot Instance pools. If the allocation strategy is
+         * <code>capacityOptimized</code>, Spot Fleet launches instances from Spot Instance
+         * pools that are optimally chosen based on the available Spot Instance
+         * capacity.</p> <p>To scale down your Spot Fleet, decrease its target capacity.
+         * First, the Spot Fleet cancels any open requests that exceed the new target
+         * capacity. You can request that the Spot Fleet terminate Spot Instances until the
+         * size of the fleet no longer exceeds the new target capacity. If the allocation
+         * strategy is <code>lowestPrice</code>, the Spot Fleet terminates the instances
+         * with the highest price per unit. If the allocation strategy is
+         * <code>capacityOptimized</code>, the Spot Fleet terminates the instances in the
+         * Spot Instance pools that have the least available Spot Instance capacity. If the
+         * allocation strategy is <code>diversified</code>, the Spot Fleet terminates
+         * instances across the Spot Instance pools. Alternatively, you can request that
+         * the Spot Fleet keep the fleet at its current size, but not replace any Spot
+         * Instances that are interrupted or that you terminate manually.</p> <p>If you are
+         * finished with your Spot Fleet for now, but will use it again later, you can set
+         * the target capacity to 0.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySpotFleetRequest">AWS
          * API Reference</a></p>
          *
@@ -15950,14 +16059,14 @@ namespace Model
          * the difference as Spot capacity.</p> <p>You can submit a single request that
          * includes multiple launch specifications that vary by instance type, AMI,
          * Availability Zone, or subnet.</p> <p>By default, the Spot Fleet requests Spot
-         * Instances in the Spot pool where the price per unit is the lowest. Each launch
-         * specification can include its own instance weighting that reflects the value of
-         * the instance type to your application workload.</p> <p>Alternatively, you can
-         * specify that the Spot Fleet distribute the target capacity across the Spot pools
-         * included in its launch specifications. By ensuring that the Spot Instances in
-         * your Spot Fleet are in different Spot pools, you can improve the availability of
-         * your fleet.</p> <p>You can specify tags for the Spot Instances. You cannot tag
-         * other resource types in a Spot Fleet request because only the
+         * Instances in the Spot Instance pool where the price per unit is the lowest. Each
+         * launch specification can include its own instance weighting that reflects the
+         * value of the instance type to your application workload.</p> <p>Alternatively,
+         * you can specify that the Spot Fleet distribute the target capacity across the
+         * Spot pools included in its launch specifications. By ensuring that the Spot
+         * Instances in your Spot Fleet are in different Spot pools, you can improve the
+         * availability of your fleet.</p> <p>You can specify tags for the Spot Instances.
+         * You cannot tag other resource types in a Spot Fleet request because only the
          * <code>instance</code> resource type is supported.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
@@ -15975,14 +16084,14 @@ namespace Model
          * the difference as Spot capacity.</p> <p>You can submit a single request that
          * includes multiple launch specifications that vary by instance type, AMI,
          * Availability Zone, or subnet.</p> <p>By default, the Spot Fleet requests Spot
-         * Instances in the Spot pool where the price per unit is the lowest. Each launch
-         * specification can include its own instance weighting that reflects the value of
-         * the instance type to your application workload.</p> <p>Alternatively, you can
-         * specify that the Spot Fleet distribute the target capacity across the Spot pools
-         * included in its launch specifications. By ensuring that the Spot Instances in
-         * your Spot Fleet are in different Spot pools, you can improve the availability of
-         * your fleet.</p> <p>You can specify tags for the Spot Instances. You cannot tag
-         * other resource types in a Spot Fleet request because only the
+         * Instances in the Spot Instance pool where the price per unit is the lowest. Each
+         * launch specification can include its own instance weighting that reflects the
+         * value of the instance type to your application workload.</p> <p>Alternatively,
+         * you can specify that the Spot Fleet distribute the target capacity across the
+         * Spot pools included in its launch specifications. By ensuring that the Spot
+         * Instances in your Spot Fleet are in different Spot pools, you can improve the
+         * availability of your fleet.</p> <p>You can specify tags for the Spot Instances.
+         * You cannot tag other resource types in a Spot Fleet request because only the
          * <code>instance</code> resource type is supported.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
@@ -16002,14 +16111,14 @@ namespace Model
          * the difference as Spot capacity.</p> <p>You can submit a single request that
          * includes multiple launch specifications that vary by instance type, AMI,
          * Availability Zone, or subnet.</p> <p>By default, the Spot Fleet requests Spot
-         * Instances in the Spot pool where the price per unit is the lowest. Each launch
-         * specification can include its own instance weighting that reflects the value of
-         * the instance type to your application workload.</p> <p>Alternatively, you can
-         * specify that the Spot Fleet distribute the target capacity across the Spot pools
-         * included in its launch specifications. By ensuring that the Spot Instances in
-         * your Spot Fleet are in different Spot pools, you can improve the availability of
-         * your fleet.</p> <p>You can specify tags for the Spot Instances. You cannot tag
-         * other resource types in a Spot Fleet request because only the
+         * Instances in the Spot Instance pool where the price per unit is the lowest. Each
+         * launch specification can include its own instance weighting that reflects the
+         * value of the instance type to your application workload.</p> <p>Alternatively,
+         * you can specify that the Spot Fleet distribute the target capacity across the
+         * Spot pools included in its launch specifications. By ensuring that the Spot
+         * Instances in your Spot Fleet are in different Spot pools, you can improve the
+         * availability of your fleet.</p> <p>You can specify tags for the Spot Instances.
+         * You cannot tag other resource types in a Spot Fleet request because only the
          * <code>instance</code> resource type is supported.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
@@ -16698,6 +16807,76 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SearchTransitGatewayRoutesAsync(const Model::SearchTransitGatewayRoutesRequest& request, const SearchTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Sends a diagnostic interrupt to the specified Amazon EC2 instance to trigger
+         * a <i>kernel panic</i> (on Linux instances), or a <i>blue screen</i>/<i>stop
+         * error</i> (on Windows instances). For instances based on Intel and AMD
+         * processors, the interrupt is received as a <i>non-maskable interrupt</i>
+         * (NMI).</p> <p>In general, the operating system crashes and reboots when a kernel
+         * panic or stop error is triggered. The operating system can also be configured to
+         * perform diagnostic tasks, such as generating a memory dump file, loading a
+         * secondary kernel, or obtaining a call trace.</p> <p>Before sending a diagnostic
+         * interrupt to your instance, ensure that its operating system is configured to
+         * perform the required diagnostic tasks.</p> <p>For more information about
+         * configuring your operating system to generate a crash dump when a kernel panic
+         * or stop error occurs, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#diagnostic-interrupt">Send
+         * a Diagnostic Interrupt</a> (Linux instances) or <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/unreachable-instance.html#diagnostic-interrupt">Send
+         * a Diagnostic Interrupt</a> (Windows instances).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SendDiagnosticInterrupt">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendDiagnosticInterruptOutcome SendDiagnosticInterrupt(const Model::SendDiagnosticInterruptRequest& request) const;
+
+        /**
+         * <p>Sends a diagnostic interrupt to the specified Amazon EC2 instance to trigger
+         * a <i>kernel panic</i> (on Linux instances), or a <i>blue screen</i>/<i>stop
+         * error</i> (on Windows instances). For instances based on Intel and AMD
+         * processors, the interrupt is received as a <i>non-maskable interrupt</i>
+         * (NMI).</p> <p>In general, the operating system crashes and reboots when a kernel
+         * panic or stop error is triggered. The operating system can also be configured to
+         * perform diagnostic tasks, such as generating a memory dump file, loading a
+         * secondary kernel, or obtaining a call trace.</p> <p>Before sending a diagnostic
+         * interrupt to your instance, ensure that its operating system is configured to
+         * perform the required diagnostic tasks.</p> <p>For more information about
+         * configuring your operating system to generate a crash dump when a kernel panic
+         * or stop error occurs, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#diagnostic-interrupt">Send
+         * a Diagnostic Interrupt</a> (Linux instances) or <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/unreachable-instance.html#diagnostic-interrupt">Send
+         * a Diagnostic Interrupt</a> (Windows instances).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SendDiagnosticInterrupt">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SendDiagnosticInterruptOutcomeCallable SendDiagnosticInterruptCallable(const Model::SendDiagnosticInterruptRequest& request) const;
+
+        /**
+         * <p>Sends a diagnostic interrupt to the specified Amazon EC2 instance to trigger
+         * a <i>kernel panic</i> (on Linux instances), or a <i>blue screen</i>/<i>stop
+         * error</i> (on Windows instances). For instances based on Intel and AMD
+         * processors, the interrupt is received as a <i>non-maskable interrupt</i>
+         * (NMI).</p> <p>In general, the operating system crashes and reboots when a kernel
+         * panic or stop error is triggered. The operating system can also be configured to
+         * perform diagnostic tasks, such as generating a memory dump file, loading a
+         * secondary kernel, or obtaining a call trace.</p> <p>Before sending a diagnostic
+         * interrupt to your instance, ensure that its operating system is configured to
+         * perform the required diagnostic tasks.</p> <p>For more information about
+         * configuring your operating system to generate a crash dump when a kernel panic
+         * or stop error occurs, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#diagnostic-interrupt">Send
+         * a Diagnostic Interrupt</a> (Linux instances) or <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/unreachable-instance.html#diagnostic-interrupt">Send
+         * a Diagnostic Interrupt</a> (Windows instances).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SendDiagnosticInterrupt">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SendDiagnosticInterruptAsync(const Model::SendDiagnosticInterruptRequest& request, const SendDiagnosticInterruptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts an Amazon EBS-backed instance that you've previously stopped.</p>
@@ -17596,6 +17775,7 @@ namespace Model
         void RunInstancesAsyncHelper(const Model::RunInstancesRequest& request, const RunInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RunScheduledInstancesAsyncHelper(const Model::RunScheduledInstancesRequest& request, const RunScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchTransitGatewayRoutesAsyncHelper(const Model::SearchTransitGatewayRoutesRequest& request, const SearchTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SendDiagnosticInterruptAsyncHelper(const Model::SendDiagnosticInterruptRequest& request, const SendDiagnosticInterruptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartInstancesAsyncHelper(const Model::StartInstancesRequest& request, const StartInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopInstancesAsyncHelper(const Model::StopInstancesRequest& request, const StopInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TerminateClientVpnConnectionsAsyncHelper(const Model::TerminateClientVpnConnectionsRequest& request, const TerminateClientVpnConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

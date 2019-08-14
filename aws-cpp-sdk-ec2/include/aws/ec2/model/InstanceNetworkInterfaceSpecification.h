@@ -582,49 +582,49 @@ namespace Model
 
 
     /**
-     * <p>The ID of the subnet associated with the network string. Applies only if
+     * <p>The ID of the subnet associated with the network interface. Applies only if
      * creating a network interface when launching an instance.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>The ID of the subnet associated with the network string. Applies only if
+     * <p>The ID of the subnet associated with the network interface. Applies only if
      * creating a network interface when launching an instance.</p>
      */
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
-     * <p>The ID of the subnet associated with the network string. Applies only if
+     * <p>The ID of the subnet associated with the network interface. Applies only if
      * creating a network interface when launching an instance.</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>The ID of the subnet associated with the network string. Applies only if
+     * <p>The ID of the subnet associated with the network interface. Applies only if
      * creating a network interface when launching an instance.</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
-     * <p>The ID of the subnet associated with the network string. Applies only if
+     * <p>The ID of the subnet associated with the network interface. Applies only if
      * creating a network interface when launching an instance.</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
-     * <p>The ID of the subnet associated with the network string. Applies only if
+     * <p>The ID of the subnet associated with the network interface. Applies only if
      * creating a network interface when launching an instance.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The ID of the subnet associated with the network string. Applies only if
+     * <p>The ID of the subnet associated with the network interface. Applies only if
      * creating a network interface when launching an instance.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the subnet associated with the network string. Applies only if
+     * <p>The ID of the subnet associated with the network interface. Applies only if
      * creating a network interface when launching an instance.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}

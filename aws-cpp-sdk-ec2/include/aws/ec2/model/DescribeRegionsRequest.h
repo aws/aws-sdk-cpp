@@ -51,64 +51,80 @@ namespace Model
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint of the
      * Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> <li>
-     * <p> <code>region-name</code> - The name of the Region (for example,
-     * <code>us-east-1</code>).</p> </li> </ul>
+     * <p> <code>opt-in-status</code> - The opt-in status of the Region
+     * (<code>opt-in-not-required</code> | <code>opted-in</code> |
+     * <code>not-opted-in</code>).</p> </li> <li> <p> <code>region-name</code> - The
+     * name of the Region (for example, <code>us-east-1</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint of the
      * Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> <li>
-     * <p> <code>region-name</code> - The name of the Region (for example,
-     * <code>us-east-1</code>).</p> </li> </ul>
+     * <p> <code>opt-in-status</code> - The opt-in status of the Region
+     * (<code>opt-in-not-required</code> | <code>opted-in</code> |
+     * <code>not-opted-in</code>).</p> </li> <li> <p> <code>region-name</code> - The
+     * name of the Region (for example, <code>us-east-1</code>).</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint of the
      * Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> <li>
-     * <p> <code>region-name</code> - The name of the Region (for example,
-     * <code>us-east-1</code>).</p> </li> </ul>
+     * <p> <code>opt-in-status</code> - The opt-in status of the Region
+     * (<code>opt-in-not-required</code> | <code>opted-in</code> |
+     * <code>not-opted-in</code>).</p> </li> <li> <p> <code>region-name</code> - The
+     * name of the Region (for example, <code>us-east-1</code>).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint of the
      * Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> <li>
-     * <p> <code>region-name</code> - The name of the Region (for example,
-     * <code>us-east-1</code>).</p> </li> </ul>
+     * <p> <code>opt-in-status</code> - The opt-in status of the Region
+     * (<code>opt-in-not-required</code> | <code>opted-in</code> |
+     * <code>not-opted-in</code>).</p> </li> <li> <p> <code>region-name</code> - The
+     * name of the Region (for example, <code>us-east-1</code>).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint of the
      * Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> <li>
-     * <p> <code>region-name</code> - The name of the Region (for example,
-     * <code>us-east-1</code>).</p> </li> </ul>
+     * <p> <code>opt-in-status</code> - The opt-in status of the Region
+     * (<code>opt-in-not-required</code> | <code>opted-in</code> |
+     * <code>not-opted-in</code>).</p> </li> <li> <p> <code>region-name</code> - The
+     * name of the Region (for example, <code>us-east-1</code>).</p> </li> </ul>
      */
     inline DescribeRegionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint of the
      * Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> <li>
-     * <p> <code>region-name</code> - The name of the Region (for example,
-     * <code>us-east-1</code>).</p> </li> </ul>
+     * <p> <code>opt-in-status</code> - The opt-in status of the Region
+     * (<code>opt-in-not-required</code> | <code>opted-in</code> |
+     * <code>not-opted-in</code>).</p> </li> <li> <p> <code>region-name</code> - The
+     * name of the Region (for example, <code>us-east-1</code>).</p> </li> </ul>
      */
     inline DescribeRegionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint of the
      * Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> <li>
-     * <p> <code>region-name</code> - The name of the Region (for example,
-     * <code>us-east-1</code>).</p> </li> </ul>
+     * <p> <code>opt-in-status</code> - The opt-in status of the Region
+     * (<code>opt-in-not-required</code> | <code>opted-in</code> |
+     * <code>not-opted-in</code>).</p> </li> <li> <p> <code>region-name</code> - The
+     * name of the Region (for example, <code>us-east-1</code>).</p> </li> </ul>
      */
     inline DescribeRegionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint of the
      * Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> <li>
-     * <p> <code>region-name</code> - The name of the Region (for example,
-     * <code>us-east-1</code>).</p> </li> </ul>
+     * <p> <code>opt-in-status</code> - The opt-in status of the Region
+     * (<code>opt-in-not-required</code> | <code>opted-in</code> |
+     * <code>not-opted-in</code>).</p> </li> <li> <p> <code>region-name</code> - The
+     * name of the Region (for example, <code>us-east-1</code>).</p> </li> </ul>
      */
     inline DescribeRegionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

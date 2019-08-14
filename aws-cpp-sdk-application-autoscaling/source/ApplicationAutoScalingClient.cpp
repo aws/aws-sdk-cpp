@@ -119,7 +119,7 @@ DeleteScalingPolicyOutcome ApplicationAutoScalingClient::DeleteScalingPolicy(con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteScalingPolicyOutcome(DeleteScalingPolicyResult(outcome.GetResult()));
@@ -154,7 +154,7 @@ DeleteScheduledActionOutcome ApplicationAutoScalingClient::DeleteScheduledAction
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteScheduledActionOutcome(DeleteScheduledActionResult(outcome.GetResult()));
@@ -189,7 +189,7 @@ DeregisterScalableTargetOutcome ApplicationAutoScalingClient::DeregisterScalable
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeregisterScalableTargetOutcome(DeregisterScalableTargetResult(outcome.GetResult()));
@@ -224,7 +224,7 @@ DescribeScalableTargetsOutcome ApplicationAutoScalingClient::DescribeScalableTar
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeScalableTargetsOutcome(DescribeScalableTargetsResult(outcome.GetResult()));
@@ -259,7 +259,7 @@ DescribeScalingActivitiesOutcome ApplicationAutoScalingClient::DescribeScalingAc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeScalingActivitiesOutcome(DescribeScalingActivitiesResult(outcome.GetResult()));
@@ -294,7 +294,7 @@ DescribeScalingPoliciesOutcome ApplicationAutoScalingClient::DescribeScalingPoli
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeScalingPoliciesOutcome(DescribeScalingPoliciesResult(outcome.GetResult()));
@@ -329,7 +329,7 @@ DescribeScheduledActionsOutcome ApplicationAutoScalingClient::DescribeScheduledA
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeScheduledActionsOutcome(DescribeScheduledActionsResult(outcome.GetResult()));
@@ -364,7 +364,7 @@ PutScalingPolicyOutcome ApplicationAutoScalingClient::PutScalingPolicy(const Put
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutScalingPolicyOutcome(PutScalingPolicyResult(outcome.GetResult()));
@@ -399,7 +399,7 @@ PutScheduledActionOutcome ApplicationAutoScalingClient::PutScheduledAction(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutScheduledActionOutcome(PutScheduledActionResult(outcome.GetResult()));
@@ -434,7 +434,7 @@ RegisterScalableTargetOutcome ApplicationAutoScalingClient::RegisterScalableTarg
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RegisterScalableTargetOutcome(RegisterScalableTargetResult(outcome.GetResult()));

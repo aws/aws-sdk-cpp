@@ -126,7 +126,7 @@ void SQSClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AddPermissionOutcome SQSClient::AddPermission(const AddPermissionRequest& request) const
 {
-  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AddPermissionOutcome(NoResult());
@@ -157,7 +157,7 @@ void SQSClient::AddPermissionAsyncHelper(const AddPermissionRequest& request, co
 
 ChangeMessageVisibilityOutcome SQSClient::ChangeMessageVisibility(const ChangeMessageVisibilityRequest& request) const
 {
-  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ChangeMessageVisibilityOutcome(NoResult());
@@ -188,7 +188,7 @@ void SQSClient::ChangeMessageVisibilityAsyncHelper(const ChangeMessageVisibility
 
 ChangeMessageVisibilityBatchOutcome SQSClient::ChangeMessageVisibilityBatch(const ChangeMessageVisibilityBatchRequest& request) const
 {
-  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ChangeMessageVisibilityBatchOutcome(ChangeMessageVisibilityBatchResult(outcome.GetResult()));
@@ -223,7 +223,7 @@ CreateQueueOutcome SQSClient::CreateQueue(const CreateQueueRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateQueueOutcome(CreateQueueResult(outcome.GetResult()));
@@ -254,7 +254,7 @@ void SQSClient::CreateQueueAsyncHelper(const CreateQueueRequest& request, const 
 
 DeleteMessageOutcome SQSClient::DeleteMessage(const DeleteMessageRequest& request) const
 {
-  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteMessageOutcome(NoResult());
@@ -285,7 +285,7 @@ void SQSClient::DeleteMessageAsyncHelper(const DeleteMessageRequest& request, co
 
 DeleteMessageBatchOutcome SQSClient::DeleteMessageBatch(const DeleteMessageBatchRequest& request) const
 {
-  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteMessageBatchOutcome(DeleteMessageBatchResult(outcome.GetResult()));
@@ -316,7 +316,7 @@ void SQSClient::DeleteMessageBatchAsyncHelper(const DeleteMessageBatchRequest& r
 
 DeleteQueueOutcome SQSClient::DeleteQueue(const DeleteQueueRequest& request) const
 {
-  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteQueueOutcome(NoResult());
@@ -347,7 +347,7 @@ void SQSClient::DeleteQueueAsyncHelper(const DeleteQueueRequest& request, const 
 
 GetQueueAttributesOutcome SQSClient::GetQueueAttributes(const GetQueueAttributesRequest& request) const
 {
-  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetQueueAttributesOutcome(GetQueueAttributesResult(outcome.GetResult()));
@@ -382,7 +382,7 @@ GetQueueUrlOutcome SQSClient::GetQueueUrl(const GetQueueUrlRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetQueueUrlOutcome(GetQueueUrlResult(outcome.GetResult()));
@@ -413,7 +413,7 @@ void SQSClient::GetQueueUrlAsyncHelper(const GetQueueUrlRequest& request, const 
 
 ListDeadLetterSourceQueuesOutcome SQSClient::ListDeadLetterSourceQueues(const ListDeadLetterSourceQueuesRequest& request) const
 {
-  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListDeadLetterSourceQueuesOutcome(ListDeadLetterSourceQueuesResult(outcome.GetResult()));
@@ -444,7 +444,7 @@ void SQSClient::ListDeadLetterSourceQueuesAsyncHelper(const ListDeadLetterSource
 
 ListQueueTagsOutcome SQSClient::ListQueueTags(const ListQueueTagsRequest& request) const
 {
-  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListQueueTagsOutcome(ListQueueTagsResult(outcome.GetResult()));
@@ -479,7 +479,7 @@ ListQueuesOutcome SQSClient::ListQueues(const ListQueuesRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListQueuesOutcome(ListQueuesResult(outcome.GetResult()));
@@ -510,7 +510,7 @@ void SQSClient::ListQueuesAsyncHelper(const ListQueuesRequest& request, const Li
 
 PurgeQueueOutcome SQSClient::PurgeQueue(const PurgeQueueRequest& request) const
 {
-  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PurgeQueueOutcome(NoResult());
@@ -541,7 +541,7 @@ void SQSClient::PurgeQueueAsyncHelper(const PurgeQueueRequest& request, const Pu
 
 ReceiveMessageOutcome SQSClient::ReceiveMessage(const ReceiveMessageRequest& request) const
 {
-  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ReceiveMessageOutcome(ReceiveMessageResult(outcome.GetResult()));
@@ -572,7 +572,7 @@ void SQSClient::ReceiveMessageAsyncHelper(const ReceiveMessageRequest& request, 
 
 RemovePermissionOutcome SQSClient::RemovePermission(const RemovePermissionRequest& request) const
 {
-  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return RemovePermissionOutcome(NoResult());
@@ -603,7 +603,7 @@ void SQSClient::RemovePermissionAsyncHelper(const RemovePermissionRequest& reque
 
 SendMessageOutcome SQSClient::SendMessage(const SendMessageRequest& request) const
 {
-  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SendMessageOutcome(SendMessageResult(outcome.GetResult()));
@@ -634,7 +634,7 @@ void SQSClient::SendMessageAsyncHelper(const SendMessageRequest& request, const 
 
 SendMessageBatchOutcome SQSClient::SendMessageBatch(const SendMessageBatchRequest& request) const
 {
-  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SendMessageBatchOutcome(SendMessageBatchResult(outcome.GetResult()));
@@ -665,7 +665,7 @@ void SQSClient::SendMessageBatchAsyncHelper(const SendMessageBatchRequest& reque
 
 SetQueueAttributesOutcome SQSClient::SetQueueAttributes(const SetQueueAttributesRequest& request) const
 {
-  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetQueueAttributesOutcome(NoResult());
@@ -696,7 +696,7 @@ void SQSClient::SetQueueAttributesAsyncHelper(const SetQueueAttributesRequest& r
 
 TagQueueOutcome SQSClient::TagQueue(const TagQueueRequest& request) const
 {
-  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return TagQueueOutcome(NoResult());
@@ -727,7 +727,7 @@ void SQSClient::TagQueueAsyncHelper(const TagQueueRequest& request, const TagQue
 
 UntagQueueOutcome SQSClient::UntagQueue(const UntagQueueRequest& request) const
 {
-  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UntagQueueOutcome(NoResult());

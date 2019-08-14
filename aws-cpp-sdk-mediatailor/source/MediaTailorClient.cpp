@@ -122,7 +122,7 @@ DeletePlaybackConfigurationOutcome MediaTailorClient::DeletePlaybackConfiguratio
   ss << "/playbackConfiguration/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeletePlaybackConfigurationOutcome(DeletePlaybackConfigurationResult(outcome.GetResult()));
@@ -163,7 +163,7 @@ GetPlaybackConfigurationOutcome MediaTailorClient::GetPlaybackConfiguration(cons
   ss << "/playbackConfiguration/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetPlaybackConfigurationOutcome(GetPlaybackConfigurationResult(outcome.GetResult()));
@@ -198,7 +198,7 @@ ListPlaybackConfigurationsOutcome MediaTailorClient::ListPlaybackConfigurations(
   Aws::StringStream ss;
   ss << "/playbackConfigurations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListPlaybackConfigurationsOutcome(ListPlaybackConfigurationsResult(outcome.GetResult()));
@@ -239,7 +239,7 @@ ListTagsForResourceOutcome MediaTailorClient::ListTagsForResource(const ListTags
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
@@ -274,7 +274,7 @@ PutPlaybackConfigurationOutcome MediaTailorClient::PutPlaybackConfiguration(cons
   Aws::StringStream ss;
   ss << "/playbackConfiguration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutPlaybackConfigurationOutcome(PutPlaybackConfigurationResult(outcome.GetResult()));
@@ -315,7 +315,7 @@ TagResourceOutcome MediaTailorClient::TagResource(const TagResourceRequest& requ
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return TagResourceOutcome(NoResult());
@@ -361,7 +361,7 @@ UntagResourceOutcome MediaTailorClient::UntagResource(const UntagResourceRequest
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UntagResourceOutcome(NoResult());

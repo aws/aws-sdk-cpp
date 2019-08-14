@@ -442,11 +442,7 @@ namespace Model
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
      * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
      * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p> <p>Defaults: If no volume type is specified, the default
-     * is <code>standard</code> in us-east-1, eu-west-1, eu-central-1, us-west-2,
-     * us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     * ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions,
-     * EBS defaults to <code>gp2</code>.</p>
+     * Magnetic volumes.</p> <p>Default: <code>gp2</code> </p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
 
@@ -454,11 +450,7 @@ namespace Model
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
      * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
      * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p> <p>Defaults: If no volume type is specified, the default
-     * is <code>standard</code> in us-east-1, eu-west-1, eu-central-1, us-west-2,
-     * us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     * ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions,
-     * EBS defaults to <code>gp2</code>.</p>
+     * Magnetic volumes.</p> <p>Default: <code>gp2</code> </p>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
@@ -466,11 +458,7 @@ namespace Model
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
      * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
      * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p> <p>Defaults: If no volume type is specified, the default
-     * is <code>standard</code> in us-east-1, eu-west-1, eu-central-1, us-west-2,
-     * us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     * ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions,
-     * EBS defaults to <code>gp2</code>.</p>
+     * Magnetic volumes.</p> <p>Default: <code>gp2</code> </p>
      */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
@@ -478,11 +466,7 @@ namespace Model
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
      * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
      * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p> <p>Defaults: If no volume type is specified, the default
-     * is <code>standard</code> in us-east-1, eu-west-1, eu-central-1, us-west-2,
-     * us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     * ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions,
-     * EBS defaults to <code>gp2</code>.</p>
+     * Magnetic volumes.</p> <p>Default: <code>gp2</code> </p>
      */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
@@ -490,11 +474,7 @@ namespace Model
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
      * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
      * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p> <p>Defaults: If no volume type is specified, the default
-     * is <code>standard</code> in us-east-1, eu-west-1, eu-central-1, us-west-2,
-     * us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     * ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions,
-     * EBS defaults to <code>gp2</code>.</p>
+     * Magnetic volumes.</p> <p>Default: <code>gp2</code> </p>
      */
     inline CreateVolumeRequest& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
 
@@ -502,11 +482,7 @@ namespace Model
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
      * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
      * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
-     * Magnetic volumes.</p> <p>Defaults: If no volume type is specified, the default
-     * is <code>standard</code> in us-east-1, eu-west-1, eu-central-1, us-west-2,
-     * us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     * ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions,
-     * EBS defaults to <code>gp2</code>.</p>
+     * Magnetic volumes.</p> <p>Default: <code>gp2</code> </p>
      */
     inline CreateVolumeRequest& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 

@@ -115,7 +115,7 @@ CreateScalingPlanOutcome AutoScalingPlansClient::CreateScalingPlan(const CreateS
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateScalingPlanOutcome(CreateScalingPlanResult(outcome.GetResult()));
@@ -150,7 +150,7 @@ DeleteScalingPlanOutcome AutoScalingPlansClient::DeleteScalingPlan(const DeleteS
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteScalingPlanOutcome(DeleteScalingPlanResult(outcome.GetResult()));
@@ -185,7 +185,7 @@ DescribeScalingPlanResourcesOutcome AutoScalingPlansClient::DescribeScalingPlanR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeScalingPlanResourcesOutcome(DescribeScalingPlanResourcesResult(outcome.GetResult()));
@@ -220,7 +220,7 @@ DescribeScalingPlansOutcome AutoScalingPlansClient::DescribeScalingPlans(const D
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeScalingPlansOutcome(DescribeScalingPlansResult(outcome.GetResult()));
@@ -255,7 +255,7 @@ GetScalingPlanResourceForecastDataOutcome AutoScalingPlansClient::GetScalingPlan
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetScalingPlanResourceForecastDataOutcome(GetScalingPlanResourceForecastDataResult(outcome.GetResult()));
@@ -290,7 +290,7 @@ UpdateScalingPlanOutcome AutoScalingPlansClient::UpdateScalingPlan(const UpdateS
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateScalingPlanOutcome(UpdateScalingPlanResult(outcome.GetResult()));

@@ -134,7 +134,7 @@ CreateMemberOutcome ManagedBlockchainClient::CreateMember(const CreateMemberRequ
   ss << request.GetNetworkId();
   ss << "/members";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateMemberOutcome(CreateMemberResult(outcome.GetResult()));
@@ -169,7 +169,7 @@ CreateNetworkOutcome ManagedBlockchainClient::CreateNetwork(const CreateNetworkR
   Aws::StringStream ss;
   ss << "/networks";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateNetworkOutcome(CreateNetworkResult(outcome.GetResult()));
@@ -218,7 +218,7 @@ CreateNodeOutcome ManagedBlockchainClient::CreateNode(const CreateNodeRequest& r
   ss << request.GetMemberId();
   ss << "/nodes";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateNodeOutcome(CreateNodeResult(outcome.GetResult()));
@@ -260,7 +260,7 @@ CreateProposalOutcome ManagedBlockchainClient::CreateProposal(const CreatePropos
   ss << request.GetNetworkId();
   ss << "/proposals";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateProposalOutcome(CreateProposalResult(outcome.GetResult()));
@@ -308,7 +308,7 @@ DeleteMemberOutcome ManagedBlockchainClient::DeleteMember(const DeleteMemberRequ
   ss << "/members/";
   ss << request.GetMemberId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteMemberOutcome(DeleteMemberResult(outcome.GetResult()));
@@ -363,7 +363,7 @@ DeleteNodeOutcome ManagedBlockchainClient::DeleteNode(const DeleteNodeRequest& r
   ss << "/nodes/";
   ss << request.GetNodeId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteNodeOutcome(DeleteNodeResult(outcome.GetResult()));
@@ -411,7 +411,7 @@ GetMemberOutcome ManagedBlockchainClient::GetMember(const GetMemberRequest& requ
   ss << "/members/";
   ss << request.GetMemberId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetMemberOutcome(GetMemberResult(outcome.GetResult()));
@@ -452,7 +452,7 @@ GetNetworkOutcome ManagedBlockchainClient::GetNetwork(const GetNetworkRequest& r
   ss << "/networks/";
   ss << request.GetNetworkId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetNetworkOutcome(GetNetworkResult(outcome.GetResult()));
@@ -507,7 +507,7 @@ GetNodeOutcome ManagedBlockchainClient::GetNode(const GetNodeRequest& request) c
   ss << "/nodes/";
   ss << request.GetNodeId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetNodeOutcome(GetNodeResult(outcome.GetResult()));
@@ -555,7 +555,7 @@ GetProposalOutcome ManagedBlockchainClient::GetProposal(const GetProposalRequest
   ss << "/proposals/";
   ss << request.GetProposalId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetProposalOutcome(GetProposalResult(outcome.GetResult()));
@@ -590,7 +590,7 @@ ListInvitationsOutcome ManagedBlockchainClient::ListInvitations(const ListInvita
   Aws::StringStream ss;
   ss << "/invitations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListInvitationsOutcome(ListInvitationsResult(outcome.GetResult()));
@@ -632,7 +632,7 @@ ListMembersOutcome ManagedBlockchainClient::ListMembers(const ListMembersRequest
   ss << request.GetNetworkId();
   ss << "/members";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListMembersOutcome(ListMembersResult(outcome.GetResult()));
@@ -667,7 +667,7 @@ ListNetworksOutcome ManagedBlockchainClient::ListNetworks(const ListNetworksRequ
   Aws::StringStream ss;
   ss << "/networks";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListNetworksOutcome(ListNetworksResult(outcome.GetResult()));
@@ -716,7 +716,7 @@ ListNodesOutcome ManagedBlockchainClient::ListNodes(const ListNodesRequest& requ
   ss << request.GetMemberId();
   ss << "/nodes";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListNodesOutcome(ListNodesResult(outcome.GetResult()));
@@ -765,7 +765,7 @@ ListProposalVotesOutcome ManagedBlockchainClient::ListProposalVotes(const ListPr
   ss << request.GetProposalId();
   ss << "/votes";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListProposalVotesOutcome(ListProposalVotesResult(outcome.GetResult()));
@@ -807,7 +807,7 @@ ListProposalsOutcome ManagedBlockchainClient::ListProposals(const ListProposalsR
   ss << request.GetNetworkId();
   ss << "/proposals";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListProposalsOutcome(ListProposalsResult(outcome.GetResult()));
@@ -848,7 +848,7 @@ RejectInvitationOutcome ManagedBlockchainClient::RejectInvitation(const RejectIn
   ss << "/invitations/";
   ss << request.GetInvitationId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RejectInvitationOutcome(RejectInvitationResult(outcome.GetResult()));
@@ -897,7 +897,7 @@ VoteOnProposalOutcome ManagedBlockchainClient::VoteOnProposal(const VoteOnPropos
   ss << request.GetProposalId();
   ss << "/votes";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return VoteOnProposalOutcome(VoteOnProposalResult(outcome.GetResult()));

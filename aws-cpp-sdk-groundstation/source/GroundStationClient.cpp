@@ -140,7 +140,7 @@ CancelContactOutcome GroundStationClient::CancelContact(const CancelContactReque
   ss << "/contact/";
   ss << request.GetContactId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CancelContactOutcome(CancelContactResult(outcome.GetResult()));
@@ -175,7 +175,7 @@ CreateConfigOutcome GroundStationClient::CreateConfig(const CreateConfigRequest&
   Aws::StringStream ss;
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateConfigOutcome(CreateConfigResult(outcome.GetResult()));
@@ -210,7 +210,7 @@ CreateDataflowEndpointGroupOutcome GroundStationClient::CreateDataflowEndpointGr
   Aws::StringStream ss;
   ss << "/dataflowEndpointGroup";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateDataflowEndpointGroupOutcome(CreateDataflowEndpointGroupResult(outcome.GetResult()));
@@ -245,7 +245,7 @@ CreateMissionProfileOutcome GroundStationClient::CreateMissionProfile(const Crea
   Aws::StringStream ss;
   ss << "/missionprofile";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateMissionProfileOutcome(CreateMissionProfileResult(outcome.GetResult()));
@@ -293,7 +293,7 @@ DeleteConfigOutcome GroundStationClient::DeleteConfig(const DeleteConfigRequest&
   ss << "/";
   ss << request.GetConfigId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteConfigOutcome(DeleteConfigResult(outcome.GetResult()));
@@ -334,7 +334,7 @@ DeleteDataflowEndpointGroupOutcome GroundStationClient::DeleteDataflowEndpointGr
   ss << "/dataflowEndpointGroup/";
   ss << request.GetDataflowEndpointGroupId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteDataflowEndpointGroupOutcome(DeleteDataflowEndpointGroupResult(outcome.GetResult()));
@@ -375,7 +375,7 @@ DeleteMissionProfileOutcome GroundStationClient::DeleteMissionProfile(const Dele
   ss << "/missionprofile/";
   ss << request.GetMissionProfileId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteMissionProfileOutcome(DeleteMissionProfileResult(outcome.GetResult()));
@@ -416,7 +416,7 @@ DescribeContactOutcome GroundStationClient::DescribeContact(const DescribeContac
   ss << "/contact/";
   ss << request.GetContactId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeContactOutcome(DescribeContactResult(outcome.GetResult()));
@@ -464,7 +464,7 @@ GetConfigOutcome GroundStationClient::GetConfig(const GetConfigRequest& request)
   ss << "/";
   ss << request.GetConfigId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetConfigOutcome(GetConfigResult(outcome.GetResult()));
@@ -505,7 +505,7 @@ GetDataflowEndpointGroupOutcome GroundStationClient::GetDataflowEndpointGroup(co
   ss << "/dataflowEndpointGroup/";
   ss << request.GetDataflowEndpointGroupId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDataflowEndpointGroupOutcome(GetDataflowEndpointGroupResult(outcome.GetResult()));
@@ -546,7 +546,7 @@ GetMissionProfileOutcome GroundStationClient::GetMissionProfile(const GetMission
   ss << "/missionprofile/";
   ss << request.GetMissionProfileId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetMissionProfileOutcome(GetMissionProfileResult(outcome.GetResult()));
@@ -581,7 +581,7 @@ ListConfigsOutcome GroundStationClient::ListConfigs(const ListConfigsRequest& re
   Aws::StringStream ss;
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListConfigsOutcome(ListConfigsResult(outcome.GetResult()));
@@ -616,7 +616,7 @@ ListContactsOutcome GroundStationClient::ListContacts(const ListContactsRequest&
   Aws::StringStream ss;
   ss << "/contacts";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListContactsOutcome(ListContactsResult(outcome.GetResult()));
@@ -651,7 +651,7 @@ ListDataflowEndpointGroupsOutcome GroundStationClient::ListDataflowEndpointGroup
   Aws::StringStream ss;
   ss << "/dataflowEndpointGroup";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListDataflowEndpointGroupsOutcome(ListDataflowEndpointGroupsResult(outcome.GetResult()));
@@ -686,7 +686,7 @@ ListMissionProfilesOutcome GroundStationClient::ListMissionProfiles(const ListMi
   Aws::StringStream ss;
   ss << "/missionprofile";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListMissionProfilesOutcome(ListMissionProfilesResult(outcome.GetResult()));
@@ -721,7 +721,7 @@ ReserveContactOutcome GroundStationClient::ReserveContact(const ReserveContactRe
   Aws::StringStream ss;
   ss << "/contact";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ReserveContactOutcome(ReserveContactResult(outcome.GetResult()));
@@ -769,7 +769,7 @@ UpdateConfigOutcome GroundStationClient::UpdateConfig(const UpdateConfigRequest&
   ss << "/";
   ss << request.GetConfigId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateConfigOutcome(UpdateConfigResult(outcome.GetResult()));
@@ -810,7 +810,7 @@ UpdateMissionProfileOutcome GroundStationClient::UpdateMissionProfile(const Upda
   ss << "/missionprofile/";
   ss << request.GetMissionProfileId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateMissionProfileOutcome(UpdateMissionProfileResult(outcome.GetResult()));
@@ -845,7 +845,7 @@ GetMinuteUsageOutcome GroundStationClient::GetMinuteUsage(const GetMinuteUsageRe
   Aws::StringStream ss;
   ss << "/minute-usage";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetMinuteUsageOutcome(GetMinuteUsageResult(outcome.GetResult()));
@@ -886,7 +886,7 @@ GetSatelliteOutcome GroundStationClient::GetSatellite(const GetSatelliteRequest&
   ss << "/satellite/";
   ss << request.GetSatelliteId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetSatelliteOutcome(GetSatelliteResult(outcome.GetResult()));
@@ -921,7 +921,7 @@ ListGroundStationsOutcome GroundStationClient::ListGroundStations(const ListGrou
   Aws::StringStream ss;
   ss << "/groundstation";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListGroundStationsOutcome(ListGroundStationsResult(outcome.GetResult()));
@@ -956,7 +956,7 @@ ListSatellitesOutcome GroundStationClient::ListSatellites(const ListSatellitesRe
   Aws::StringStream ss;
   ss << "/satellite";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListSatellitesOutcome(ListSatellitesResult(outcome.GetResult()));
@@ -997,7 +997,7 @@ ListTagsForResourceOutcome GroundStationClient::ListTagsForResource(const ListTa
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
@@ -1038,7 +1038,7 @@ TagResourceOutcome GroundStationClient::TagResource(const TagResourceRequest& re
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
@@ -1084,7 +1084,7 @@ UntagResourceOutcome GroundStationClient::UntagResource(const UntagResourceReque
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));

@@ -144,7 +144,7 @@ Aws::String SNSClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebS
   ss << "?" << requestToConvert.SerializePayload();
 
   URI uri(ss.str());
-  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+  return GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region, 3600);
 }
 
 AddPermissionOutcome SNSClient::AddPermission(const AddPermissionRequest& request) const
@@ -153,7 +153,7 @@ AddPermissionOutcome SNSClient::AddPermission(const AddPermissionRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AddPermissionOutcome(NoResult());
@@ -188,7 +188,7 @@ CheckIfPhoneNumberIsOptedOutOutcome SNSClient::CheckIfPhoneNumberIsOptedOut(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CheckIfPhoneNumberIsOptedOutOutcome(CheckIfPhoneNumberIsOptedOutResult(outcome.GetResult()));
@@ -223,7 +223,7 @@ ConfirmSubscriptionOutcome SNSClient::ConfirmSubscription(const ConfirmSubscript
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ConfirmSubscriptionOutcome(ConfirmSubscriptionResult(outcome.GetResult()));
@@ -258,7 +258,7 @@ CreatePlatformApplicationOutcome SNSClient::CreatePlatformApplication(const Crea
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreatePlatformApplicationOutcome(CreatePlatformApplicationResult(outcome.GetResult()));
@@ -293,7 +293,7 @@ CreatePlatformEndpointOutcome SNSClient::CreatePlatformEndpoint(const CreatePlat
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreatePlatformEndpointOutcome(CreatePlatformEndpointResult(outcome.GetResult()));
@@ -328,7 +328,7 @@ CreateTopicOutcome SNSClient::CreateTopic(const CreateTopicRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateTopicOutcome(CreateTopicResult(outcome.GetResult()));
@@ -363,7 +363,7 @@ DeleteEndpointOutcome SNSClient::DeleteEndpoint(const DeleteEndpointRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteEndpointOutcome(NoResult());
@@ -398,7 +398,7 @@ DeletePlatformApplicationOutcome SNSClient::DeletePlatformApplication(const Dele
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeletePlatformApplicationOutcome(NoResult());
@@ -433,7 +433,7 @@ DeleteTopicOutcome SNSClient::DeleteTopic(const DeleteTopicRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteTopicOutcome(NoResult());
@@ -468,7 +468,7 @@ GetEndpointAttributesOutcome SNSClient::GetEndpointAttributes(const GetEndpointA
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetEndpointAttributesOutcome(GetEndpointAttributesResult(outcome.GetResult()));
@@ -503,7 +503,7 @@ GetPlatformApplicationAttributesOutcome SNSClient::GetPlatformApplicationAttribu
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetPlatformApplicationAttributesOutcome(GetPlatformApplicationAttributesResult(outcome.GetResult()));
@@ -538,7 +538,7 @@ GetSMSAttributesOutcome SNSClient::GetSMSAttributes(const GetSMSAttributesReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetSMSAttributesOutcome(GetSMSAttributesResult(outcome.GetResult()));
@@ -573,7 +573,7 @@ GetSubscriptionAttributesOutcome SNSClient::GetSubscriptionAttributes(const GetS
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetSubscriptionAttributesOutcome(GetSubscriptionAttributesResult(outcome.GetResult()));
@@ -608,7 +608,7 @@ GetTopicAttributesOutcome SNSClient::GetTopicAttributes(const GetTopicAttributes
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetTopicAttributesOutcome(GetTopicAttributesResult(outcome.GetResult()));
@@ -643,7 +643,7 @@ ListEndpointsByPlatformApplicationOutcome SNSClient::ListEndpointsByPlatformAppl
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListEndpointsByPlatformApplicationOutcome(ListEndpointsByPlatformApplicationResult(outcome.GetResult()));
@@ -678,7 +678,7 @@ ListPhoneNumbersOptedOutOutcome SNSClient::ListPhoneNumbersOptedOut(const ListPh
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListPhoneNumbersOptedOutOutcome(ListPhoneNumbersOptedOutResult(outcome.GetResult()));
@@ -713,7 +713,7 @@ ListPlatformApplicationsOutcome SNSClient::ListPlatformApplications(const ListPl
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListPlatformApplicationsOutcome(ListPlatformApplicationsResult(outcome.GetResult()));
@@ -748,7 +748,7 @@ ListSubscriptionsOutcome SNSClient::ListSubscriptions(const ListSubscriptionsReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListSubscriptionsOutcome(ListSubscriptionsResult(outcome.GetResult()));
@@ -783,7 +783,7 @@ ListSubscriptionsByTopicOutcome SNSClient::ListSubscriptionsByTopic(const ListSu
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListSubscriptionsByTopicOutcome(ListSubscriptionsByTopicResult(outcome.GetResult()));
@@ -818,7 +818,7 @@ ListTagsForResourceOutcome SNSClient::ListTagsForResource(const ListTagsForResou
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
@@ -853,7 +853,7 @@ ListTopicsOutcome SNSClient::ListTopics(const ListTopicsRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListTopicsOutcome(ListTopicsResult(outcome.GetResult()));
@@ -888,7 +888,7 @@ OptInPhoneNumberOutcome SNSClient::OptInPhoneNumber(const OptInPhoneNumberReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return OptInPhoneNumberOutcome(OptInPhoneNumberResult(outcome.GetResult()));
@@ -923,7 +923,7 @@ PublishOutcome SNSClient::Publish(const PublishRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PublishOutcome(PublishResult(outcome.GetResult()));
@@ -958,7 +958,7 @@ RemovePermissionOutcome SNSClient::RemovePermission(const RemovePermissionReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return RemovePermissionOutcome(NoResult());
@@ -993,7 +993,7 @@ SetEndpointAttributesOutcome SNSClient::SetEndpointAttributes(const SetEndpointA
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetEndpointAttributesOutcome(NoResult());
@@ -1028,7 +1028,7 @@ SetPlatformApplicationAttributesOutcome SNSClient::SetPlatformApplicationAttribu
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetPlatformApplicationAttributesOutcome(NoResult());
@@ -1063,7 +1063,7 @@ SetSMSAttributesOutcome SNSClient::SetSMSAttributes(const SetSMSAttributesReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetSMSAttributesOutcome(SetSMSAttributesResult(outcome.GetResult()));
@@ -1098,7 +1098,7 @@ SetSubscriptionAttributesOutcome SNSClient::SetSubscriptionAttributes(const SetS
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetSubscriptionAttributesOutcome(NoResult());
@@ -1133,7 +1133,7 @@ SetTopicAttributesOutcome SNSClient::SetTopicAttributes(const SetTopicAttributes
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetTopicAttributesOutcome(NoResult());
@@ -1168,7 +1168,7 @@ SubscribeOutcome SNSClient::Subscribe(const SubscribeRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SubscribeOutcome(SubscribeResult(outcome.GetResult()));
@@ -1203,7 +1203,7 @@ TagResourceOutcome SNSClient::TagResource(const TagResourceRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
@@ -1238,7 +1238,7 @@ UnsubscribeOutcome SNSClient::Unsubscribe(const UnsubscribeRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UnsubscribeOutcome(NoResult());
@@ -1273,7 +1273,7 @@ UntagResourceOutcome SNSClient::UntagResource(const UntagResourceRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));

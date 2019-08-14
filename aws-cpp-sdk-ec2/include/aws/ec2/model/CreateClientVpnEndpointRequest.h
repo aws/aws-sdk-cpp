@@ -295,72 +295,63 @@ namespace Model
     /**
      * <p>Information about the DNS servers to be used for DNS resolution. A Client VPN
      * endpoint can have up to two DNS servers. If no DNS server is specified, the DNS
-     * address of the VPC that is to be associated with Client VPN endpoint is used as
-     * the DNS server.</p>
+     * address configured on the device is used for the DNS server.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDnsServers() const{ return m_dnsServers; }
 
     /**
      * <p>Information about the DNS servers to be used for DNS resolution. A Client VPN
      * endpoint can have up to two DNS servers. If no DNS server is specified, the DNS
-     * address of the VPC that is to be associated with Client VPN endpoint is used as
-     * the DNS server.</p>
+     * address configured on the device is used for the DNS server.</p>
      */
     inline bool DnsServersHasBeenSet() const { return m_dnsServersHasBeenSet; }
 
     /**
      * <p>Information about the DNS servers to be used for DNS resolution. A Client VPN
      * endpoint can have up to two DNS servers. If no DNS server is specified, the DNS
-     * address of the VPC that is to be associated with Client VPN endpoint is used as
-     * the DNS server.</p>
+     * address configured on the device is used for the DNS server.</p>
      */
     inline void SetDnsServers(const Aws::Vector<Aws::String>& value) { m_dnsServersHasBeenSet = true; m_dnsServers = value; }
 
     /**
      * <p>Information about the DNS servers to be used for DNS resolution. A Client VPN
      * endpoint can have up to two DNS servers. If no DNS server is specified, the DNS
-     * address of the VPC that is to be associated with Client VPN endpoint is used as
-     * the DNS server.</p>
+     * address configured on the device is used for the DNS server.</p>
      */
     inline void SetDnsServers(Aws::Vector<Aws::String>&& value) { m_dnsServersHasBeenSet = true; m_dnsServers = std::move(value); }
 
     /**
      * <p>Information about the DNS servers to be used for DNS resolution. A Client VPN
      * endpoint can have up to two DNS servers. If no DNS server is specified, the DNS
-     * address of the VPC that is to be associated with Client VPN endpoint is used as
-     * the DNS server.</p>
+     * address configured on the device is used for the DNS server.</p>
      */
     inline CreateClientVpnEndpointRequest& WithDnsServers(const Aws::Vector<Aws::String>& value) { SetDnsServers(value); return *this;}
 
     /**
      * <p>Information about the DNS servers to be used for DNS resolution. A Client VPN
      * endpoint can have up to two DNS servers. If no DNS server is specified, the DNS
-     * address of the VPC that is to be associated with Client VPN endpoint is used as
-     * the DNS server.</p>
+     * address configured on the device is used for the DNS server.</p>
      */
     inline CreateClientVpnEndpointRequest& WithDnsServers(Aws::Vector<Aws::String>&& value) { SetDnsServers(std::move(value)); return *this;}
 
     /**
      * <p>Information about the DNS servers to be used for DNS resolution. A Client VPN
      * endpoint can have up to two DNS servers. If no DNS server is specified, the DNS
-     * address of the VPC that is to be associated with Client VPN endpoint is used as
-     * the DNS server.</p>
+     * address configured on the device is used for the DNS server.</p>
      */
     inline CreateClientVpnEndpointRequest& AddDnsServers(const Aws::String& value) { m_dnsServersHasBeenSet = true; m_dnsServers.push_back(value); return *this; }
 
     /**
      * <p>Information about the DNS servers to be used for DNS resolution. A Client VPN
      * endpoint can have up to two DNS servers. If no DNS server is specified, the DNS
-     * address of the VPC that is to be associated with Client VPN endpoint is used as
-     * the DNS server.</p>
+     * address configured on the device is used for the DNS server.</p>
      */
     inline CreateClientVpnEndpointRequest& AddDnsServers(Aws::String&& value) { m_dnsServersHasBeenSet = true; m_dnsServers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Information about the DNS servers to be used for DNS resolution. A Client VPN
      * endpoint can have up to two DNS servers. If no DNS server is specified, the DNS
-     * address of the VPC that is to be associated with Client VPN endpoint is used as
-     * the DNS server.</p>
+     * address configured on the device is used for the DNS server.</p>
      */
     inline CreateClientVpnEndpointRequest& AddDnsServers(const char* value) { m_dnsServersHasBeenSet = true; m_dnsServers.push_back(value); return *this; }
 
@@ -444,9 +435,9 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint
-     * endpoint.</p> <p>By default, split-tunnel on a VPN endpoint is disabled.</p>
-     * <p>For information about split-tunnel VPN endpoints, see <a
+     * <p>Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.</p>
+     * <p>By default, split-tunnel on a VPN endpoint is disabled.</p> <p>For
+     * information about split-tunnel VPN endpoints, see <a
      * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
      * AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator
      * Guide</i>.</p>
@@ -454,9 +445,9 @@ namespace Model
     inline bool GetSplitTunnel() const{ return m_splitTunnel; }
 
     /**
-     * <p>Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint
-     * endpoint.</p> <p>By default, split-tunnel on a VPN endpoint is disabled.</p>
-     * <p>For information about split-tunnel VPN endpoints, see <a
+     * <p>Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.</p>
+     * <p>By default, split-tunnel on a VPN endpoint is disabled.</p> <p>For
+     * information about split-tunnel VPN endpoints, see <a
      * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
      * AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator
      * Guide</i>.</p>
@@ -464,9 +455,9 @@ namespace Model
     inline bool SplitTunnelHasBeenSet() const { return m_splitTunnelHasBeenSet; }
 
     /**
-     * <p>Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint
-     * endpoint.</p> <p>By default, split-tunnel on a VPN endpoint is disabled.</p>
-     * <p>For information about split-tunnel VPN endpoints, see <a
+     * <p>Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.</p>
+     * <p>By default, split-tunnel on a VPN endpoint is disabled.</p> <p>For
+     * information about split-tunnel VPN endpoints, see <a
      * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
      * AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator
      * Guide</i>.</p>
@@ -474,9 +465,9 @@ namespace Model
     inline void SetSplitTunnel(bool value) { m_splitTunnelHasBeenSet = true; m_splitTunnel = value; }
 
     /**
-     * <p>Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint
-     * endpoint.</p> <p>By default, split-tunnel on a VPN endpoint is disabled.</p>
-     * <p>For information about split-tunnel VPN endpoints, see <a
+     * <p>Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.</p>
+     * <p>By default, split-tunnel on a VPN endpoint is disabled.</p> <p>For
+     * information about split-tunnel VPN endpoints, see <a
      * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
      * AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator
      * Guide</i>.</p>

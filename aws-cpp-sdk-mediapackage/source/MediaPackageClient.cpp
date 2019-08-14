@@ -123,7 +123,7 @@ CreateChannelOutcome MediaPackageClient::CreateChannel(const CreateChannelReques
   Aws::StringStream ss;
   ss << "/channels";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateChannelOutcome(CreateChannelResult(outcome.GetResult()));
@@ -158,7 +158,7 @@ CreateOriginEndpointOutcome MediaPackageClient::CreateOriginEndpoint(const Creat
   Aws::StringStream ss;
   ss << "/origin_endpoints";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateOriginEndpointOutcome(CreateOriginEndpointResult(outcome.GetResult()));
@@ -199,7 +199,7 @@ DeleteChannelOutcome MediaPackageClient::DeleteChannel(const DeleteChannelReques
   ss << "/channels/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteChannelOutcome(DeleteChannelResult(outcome.GetResult()));
@@ -240,7 +240,7 @@ DeleteOriginEndpointOutcome MediaPackageClient::DeleteOriginEndpoint(const Delet
   ss << "/origin_endpoints/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteOriginEndpointOutcome(DeleteOriginEndpointResult(outcome.GetResult()));
@@ -281,7 +281,7 @@ DescribeChannelOutcome MediaPackageClient::DescribeChannel(const DescribeChannel
   ss << "/channels/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeChannelOutcome(DescribeChannelResult(outcome.GetResult()));
@@ -322,7 +322,7 @@ DescribeOriginEndpointOutcome MediaPackageClient::DescribeOriginEndpoint(const D
   ss << "/origin_endpoints/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeOriginEndpointOutcome(DescribeOriginEndpointResult(outcome.GetResult()));
@@ -357,7 +357,7 @@ ListChannelsOutcome MediaPackageClient::ListChannels(const ListChannelsRequest& 
   Aws::StringStream ss;
   ss << "/channels";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListChannelsOutcome(ListChannelsResult(outcome.GetResult()));
@@ -392,7 +392,7 @@ ListOriginEndpointsOutcome MediaPackageClient::ListOriginEndpoints(const ListOri
   Aws::StringStream ss;
   ss << "/origin_endpoints";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListOriginEndpointsOutcome(ListOriginEndpointsResult(outcome.GetResult()));
@@ -433,7 +433,7 @@ ListTagsForResourceOutcome MediaPackageClient::ListTagsForResource(const ListTag
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
@@ -482,7 +482,7 @@ RotateIngestEndpointCredentialsOutcome MediaPackageClient::RotateIngestEndpointC
   ss << request.GetIngestEndpointId();
   ss << "/credentials";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RotateIngestEndpointCredentialsOutcome(RotateIngestEndpointCredentialsResult(outcome.GetResult()));
@@ -523,7 +523,7 @@ TagResourceOutcome MediaPackageClient::TagResource(const TagResourceRequest& req
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return TagResourceOutcome(NoResult());
@@ -569,7 +569,7 @@ UntagResourceOutcome MediaPackageClient::UntagResource(const UntagResourceReques
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UntagResourceOutcome(NoResult());
@@ -610,7 +610,7 @@ UpdateChannelOutcome MediaPackageClient::UpdateChannel(const UpdateChannelReques
   ss << "/channels/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateChannelOutcome(UpdateChannelResult(outcome.GetResult()));
@@ -651,7 +651,7 @@ UpdateOriginEndpointOutcome MediaPackageClient::UpdateOriginEndpoint(const Updat
   ss << "/origin_endpoints/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateOriginEndpointOutcome(UpdateOriginEndpointResult(outcome.GetResult()));

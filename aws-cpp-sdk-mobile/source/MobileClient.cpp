@@ -118,7 +118,7 @@ CreateProjectOutcome MobileClient::CreateProject(const CreateProjectRequest& req
   Aws::StringStream ss;
   ss << "/projects";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateProjectOutcome(CreateProjectResult(outcome.GetResult()));
@@ -159,7 +159,7 @@ DeleteProjectOutcome MobileClient::DeleteProject(const DeleteProjectRequest& req
   ss << "/projects/";
   ss << request.GetProjectId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteProjectOutcome(DeleteProjectResult(outcome.GetResult()));
@@ -200,7 +200,7 @@ DescribeBundleOutcome MobileClient::DescribeBundle(const DescribeBundleRequest& 
   ss << "/bundles/";
   ss << request.GetBundleId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeBundleOutcome(DescribeBundleResult(outcome.GetResult()));
@@ -240,7 +240,7 @@ DescribeProjectOutcome MobileClient::DescribeProject(const DescribeProjectReques
   Aws::StringStream ss;
   ss << "/project";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeProjectOutcome(DescribeProjectResult(outcome.GetResult()));
@@ -281,7 +281,7 @@ ExportBundleOutcome MobileClient::ExportBundle(const ExportBundleRequest& reques
   ss << "/bundles/";
   ss << request.GetBundleId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ExportBundleOutcome(ExportBundleResult(outcome.GetResult()));
@@ -322,7 +322,7 @@ ExportProjectOutcome MobileClient::ExportProject(const ExportProjectRequest& req
   ss << "/exports/";
   ss << request.GetProjectId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ExportProjectOutcome(ExportProjectResult(outcome.GetResult()));
@@ -357,7 +357,7 @@ ListBundlesOutcome MobileClient::ListBundles(const ListBundlesRequest& request) 
   Aws::StringStream ss;
   ss << "/bundles";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListBundlesOutcome(ListBundlesResult(outcome.GetResult()));
@@ -392,7 +392,7 @@ ListProjectsOutcome MobileClient::ListProjects(const ListProjectsRequest& reques
   Aws::StringStream ss;
   ss << "/projects";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListProjectsOutcome(ListProjectsResult(outcome.GetResult()));
@@ -432,7 +432,7 @@ UpdateProjectOutcome MobileClient::UpdateProject(const UpdateProjectRequest& req
   Aws::StringStream ss;
   ss << "/update";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateProjectOutcome(UpdateProjectResult(outcome.GetResult()));

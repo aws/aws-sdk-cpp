@@ -136,7 +136,7 @@ CreateJobOutcome S3ControlClient::CreateJob(const CreateJobRequest& request) con
   Aws::StringStream ss;
   ss << "/v20180820/jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateJobOutcome(CreateJobResult(outcome.GetResult()));
@@ -181,7 +181,7 @@ DeletePublicAccessBlockOutcome S3ControlClient::DeletePublicAccessBlock(const De
   Aws::StringStream ss;
   ss << "/v20180820/configuration/publicAccessBlock";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeletePublicAccessBlockOutcome(NoResult());
@@ -232,7 +232,7 @@ DescribeJobOutcome S3ControlClient::DescribeJob(const DescribeJobRequest& reques
   ss << "/v20180820/jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return DescribeJobOutcome(DescribeJobResult(outcome.GetResult()));
@@ -277,7 +277,7 @@ GetPublicAccessBlockOutcome S3ControlClient::GetPublicAccessBlock(const GetPubli
   Aws::StringStream ss;
   ss << "/v20180820/configuration/publicAccessBlock";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetPublicAccessBlockOutcome(GetPublicAccessBlockResult(outcome.GetResult()));
@@ -322,7 +322,7 @@ ListJobsOutcome S3ControlClient::ListJobs(const ListJobsRequest& request) const
   Aws::StringStream ss;
   ss << "/v20180820/jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListJobsOutcome(ListJobsResult(outcome.GetResult()));
@@ -367,7 +367,7 @@ PutPublicAccessBlockOutcome S3ControlClient::PutPublicAccessBlock(const PutPubli
   Aws::StringStream ss;
   ss << "/v20180820/configuration/publicAccessBlock";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutPublicAccessBlockOutcome(NoResult());
@@ -424,7 +424,7 @@ UpdateJobPriorityOutcome S3ControlClient::UpdateJobPriority(const UpdateJobPrior
   ss << request.GetJobId();
   ss << "/priority";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateJobPriorityOutcome(UpdateJobPriorityResult(outcome.GetResult()));
@@ -481,7 +481,7 @@ UpdateJobStatusOutcome S3ControlClient::UpdateJobStatus(const UpdateJobStatusReq
   ss << request.GetJobId();
   ss << "/status";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateJobStatusOutcome(UpdateJobStatusResult(outcome.GetResult()));

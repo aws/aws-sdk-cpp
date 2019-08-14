@@ -136,7 +136,7 @@ AddTagsOutcome MachineLearningClient::AddTags(const AddTagsRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AddTagsOutcome(AddTagsResult(outcome.GetResult()));
@@ -171,7 +171,7 @@ CreateBatchPredictionOutcome MachineLearningClient::CreateBatchPrediction(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateBatchPredictionOutcome(CreateBatchPredictionResult(outcome.GetResult()));
@@ -206,7 +206,7 @@ CreateDataSourceFromRDSOutcome MachineLearningClient::CreateDataSourceFromRDS(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateDataSourceFromRDSOutcome(CreateDataSourceFromRDSResult(outcome.GetResult()));
@@ -241,7 +241,7 @@ CreateDataSourceFromRedshiftOutcome MachineLearningClient::CreateDataSourceFromR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateDataSourceFromRedshiftOutcome(CreateDataSourceFromRedshiftResult(outcome.GetResult()));
@@ -276,7 +276,7 @@ CreateDataSourceFromS3Outcome MachineLearningClient::CreateDataSourceFromS3(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateDataSourceFromS3Outcome(CreateDataSourceFromS3Result(outcome.GetResult()));
@@ -311,7 +311,7 @@ CreateEvaluationOutcome MachineLearningClient::CreateEvaluation(const CreateEval
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateEvaluationOutcome(CreateEvaluationResult(outcome.GetResult()));
@@ -346,7 +346,7 @@ CreateMLModelOutcome MachineLearningClient::CreateMLModel(const CreateMLModelReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateMLModelOutcome(CreateMLModelResult(outcome.GetResult()));
@@ -381,7 +381,7 @@ CreateRealtimeEndpointOutcome MachineLearningClient::CreateRealtimeEndpoint(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateRealtimeEndpointOutcome(CreateRealtimeEndpointResult(outcome.GetResult()));
@@ -416,7 +416,7 @@ DeleteBatchPredictionOutcome MachineLearningClient::DeleteBatchPrediction(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteBatchPredictionOutcome(DeleteBatchPredictionResult(outcome.GetResult()));
@@ -451,7 +451,7 @@ DeleteDataSourceOutcome MachineLearningClient::DeleteDataSource(const DeleteData
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteDataSourceOutcome(DeleteDataSourceResult(outcome.GetResult()));
@@ -486,7 +486,7 @@ DeleteEvaluationOutcome MachineLearningClient::DeleteEvaluation(const DeleteEval
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteEvaluationOutcome(DeleteEvaluationResult(outcome.GetResult()));
@@ -521,7 +521,7 @@ DeleteMLModelOutcome MachineLearningClient::DeleteMLModel(const DeleteMLModelReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteMLModelOutcome(DeleteMLModelResult(outcome.GetResult()));
@@ -556,7 +556,7 @@ DeleteRealtimeEndpointOutcome MachineLearningClient::DeleteRealtimeEndpoint(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteRealtimeEndpointOutcome(DeleteRealtimeEndpointResult(outcome.GetResult()));
@@ -591,7 +591,7 @@ DeleteTagsOutcome MachineLearningClient::DeleteTags(const DeleteTagsRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteTagsOutcome(DeleteTagsResult(outcome.GetResult()));
@@ -626,7 +626,7 @@ DescribeBatchPredictionsOutcome MachineLearningClient::DescribeBatchPredictions(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeBatchPredictionsOutcome(DescribeBatchPredictionsResult(outcome.GetResult()));
@@ -661,7 +661,7 @@ DescribeDataSourcesOutcome MachineLearningClient::DescribeDataSources(const Desc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeDataSourcesOutcome(DescribeDataSourcesResult(outcome.GetResult()));
@@ -696,7 +696,7 @@ DescribeEvaluationsOutcome MachineLearningClient::DescribeEvaluations(const Desc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeEvaluationsOutcome(DescribeEvaluationsResult(outcome.GetResult()));
@@ -731,7 +731,7 @@ DescribeMLModelsOutcome MachineLearningClient::DescribeMLModels(const DescribeML
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeMLModelsOutcome(DescribeMLModelsResult(outcome.GetResult()));
@@ -766,7 +766,7 @@ DescribeTagsOutcome MachineLearningClient::DescribeTags(const DescribeTagsReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeTagsOutcome(DescribeTagsResult(outcome.GetResult()));
@@ -801,7 +801,7 @@ GetBatchPredictionOutcome MachineLearningClient::GetBatchPrediction(const GetBat
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetBatchPredictionOutcome(GetBatchPredictionResult(outcome.GetResult()));
@@ -836,7 +836,7 @@ GetDataSourceOutcome MachineLearningClient::GetDataSource(const GetDataSourceReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetDataSourceOutcome(GetDataSourceResult(outcome.GetResult()));
@@ -871,7 +871,7 @@ GetEvaluationOutcome MachineLearningClient::GetEvaluation(const GetEvaluationReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetEvaluationOutcome(GetEvaluationResult(outcome.GetResult()));
@@ -906,7 +906,7 @@ GetMLModelOutcome MachineLearningClient::GetMLModel(const GetMLModelRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetMLModelOutcome(GetMLModelResult(outcome.GetResult()));
@@ -937,7 +937,7 @@ void MachineLearningClient::GetMLModelAsyncHelper(const GetMLModelRequest& reque
 
 PredictOutcome MachineLearningClient::Predict(const PredictRequest& request) const
 {
-  JsonOutcome outcome = MakeRequest(request.GetPredictEndpoint(), request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(request.GetPredictEndpoint(), request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PredictOutcome(PredictResult(outcome.GetResult()));
@@ -972,7 +972,7 @@ UpdateBatchPredictionOutcome MachineLearningClient::UpdateBatchPrediction(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateBatchPredictionOutcome(UpdateBatchPredictionResult(outcome.GetResult()));
@@ -1007,7 +1007,7 @@ UpdateDataSourceOutcome MachineLearningClient::UpdateDataSource(const UpdateData
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateDataSourceOutcome(UpdateDataSourceResult(outcome.GetResult()));
@@ -1042,7 +1042,7 @@ UpdateEvaluationOutcome MachineLearningClient::UpdateEvaluation(const UpdateEval
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateEvaluationOutcome(UpdateEvaluationResult(outcome.GetResult()));
@@ -1077,7 +1077,7 @@ UpdateMLModelOutcome MachineLearningClient::UpdateMLModel(const UpdateMLModelReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateMLModelOutcome(UpdateMLModelResult(outcome.GetResult()));

@@ -145,7 +145,7 @@ AssociateDeviceWithPlacementOutcome IoT1ClickProjectsClient::AssociateDeviceWith
   ss << "/devices/";
   ss << request.GetDeviceTemplateName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AssociateDeviceWithPlacementOutcome(AssociateDeviceWithPlacementResult(outcome.GetResult()));
@@ -187,7 +187,7 @@ CreatePlacementOutcome IoT1ClickProjectsClient::CreatePlacement(const CreatePlac
   ss << request.GetProjectName();
   ss << "/placements";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreatePlacementOutcome(CreatePlacementResult(outcome.GetResult()));
@@ -222,7 +222,7 @@ CreateProjectOutcome IoT1ClickProjectsClient::CreateProject(const CreateProjectR
   Aws::StringStream ss;
   ss << "/projects";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateProjectOutcome(CreateProjectResult(outcome.GetResult()));
@@ -270,7 +270,7 @@ DeletePlacementOutcome IoT1ClickProjectsClient::DeletePlacement(const DeletePlac
   ss << "/placements/";
   ss << request.GetPlacementName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeletePlacementOutcome(DeletePlacementResult(outcome.GetResult()));
@@ -311,7 +311,7 @@ DeleteProjectOutcome IoT1ClickProjectsClient::DeleteProject(const DeleteProjectR
   ss << "/projects/";
   ss << request.GetProjectName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteProjectOutcome(DeleteProjectResult(outcome.GetResult()));
@@ -359,7 +359,7 @@ DescribePlacementOutcome IoT1ClickProjectsClient::DescribePlacement(const Descri
   ss << "/placements/";
   ss << request.GetPlacementName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribePlacementOutcome(DescribePlacementResult(outcome.GetResult()));
@@ -400,7 +400,7 @@ DescribeProjectOutcome IoT1ClickProjectsClient::DescribeProject(const DescribePr
   ss << "/projects/";
   ss << request.GetProjectName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeProjectOutcome(DescribeProjectResult(outcome.GetResult()));
@@ -455,7 +455,7 @@ DisassociateDeviceFromPlacementOutcome IoT1ClickProjectsClient::DisassociateDevi
   ss << "/devices/";
   ss << request.GetDeviceTemplateName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DisassociateDeviceFromPlacementOutcome(DisassociateDeviceFromPlacementResult(outcome.GetResult()));
@@ -504,7 +504,7 @@ GetDevicesInPlacementOutcome IoT1ClickProjectsClient::GetDevicesInPlacement(cons
   ss << request.GetPlacementName();
   ss << "/devices";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDevicesInPlacementOutcome(GetDevicesInPlacementResult(outcome.GetResult()));
@@ -546,7 +546,7 @@ ListPlacementsOutcome IoT1ClickProjectsClient::ListPlacements(const ListPlacemen
   ss << request.GetProjectName();
   ss << "/placements";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListPlacementsOutcome(ListPlacementsResult(outcome.GetResult()));
@@ -581,7 +581,7 @@ ListProjectsOutcome IoT1ClickProjectsClient::ListProjects(const ListProjectsRequ
   Aws::StringStream ss;
   ss << "/projects";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListProjectsOutcome(ListProjectsResult(outcome.GetResult()));
@@ -622,7 +622,7 @@ ListTagsForResourceOutcome IoT1ClickProjectsClient::ListTagsForResource(const Li
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
@@ -663,7 +663,7 @@ TagResourceOutcome IoT1ClickProjectsClient::TagResource(const TagResourceRequest
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
@@ -709,7 +709,7 @@ UntagResourceOutcome IoT1ClickProjectsClient::UntagResource(const UntagResourceR
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
@@ -757,7 +757,7 @@ UpdatePlacementOutcome IoT1ClickProjectsClient::UpdatePlacement(const UpdatePlac
   ss << "/placements/";
   ss << request.GetPlacementName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdatePlacementOutcome(UpdatePlacementResult(outcome.GetResult()));
@@ -798,7 +798,7 @@ UpdateProjectOutcome IoT1ClickProjectsClient::UpdateProject(const UpdateProjectR
   ss << "/projects/";
   ss << request.GetProjectName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateProjectOutcome(UpdateProjectResult(outcome.GetResult()));

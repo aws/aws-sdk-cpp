@@ -125,7 +125,7 @@ CreateDetectorModelOutcome IoTEventsClient::CreateDetectorModel(const CreateDete
   Aws::StringStream ss;
   ss << "/detector-models";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateDetectorModelOutcome(CreateDetectorModelResult(outcome.GetResult()));
@@ -160,7 +160,7 @@ CreateInputOutcome IoTEventsClient::CreateInput(const CreateInputRequest& reques
   Aws::StringStream ss;
   ss << "/inputs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateInputOutcome(CreateInputResult(outcome.GetResult()));
@@ -201,7 +201,7 @@ DeleteDetectorModelOutcome IoTEventsClient::DeleteDetectorModel(const DeleteDete
   ss << "/detector-models/";
   ss << request.GetDetectorModelName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteDetectorModelOutcome(DeleteDetectorModelResult(outcome.GetResult()));
@@ -242,7 +242,7 @@ DeleteInputOutcome IoTEventsClient::DeleteInput(const DeleteInputRequest& reques
   ss << "/inputs/";
   ss << request.GetInputName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteInputOutcome(DeleteInputResult(outcome.GetResult()));
@@ -283,7 +283,7 @@ DescribeDetectorModelOutcome IoTEventsClient::DescribeDetectorModel(const Descri
   ss << "/detector-models/";
   ss << request.GetDetectorModelName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeDetectorModelOutcome(DescribeDetectorModelResult(outcome.GetResult()));
@@ -324,7 +324,7 @@ DescribeInputOutcome IoTEventsClient::DescribeInput(const DescribeInputRequest& 
   ss << "/inputs/";
   ss << request.GetInputName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeInputOutcome(DescribeInputResult(outcome.GetResult()));
@@ -359,7 +359,7 @@ DescribeLoggingOptionsOutcome IoTEventsClient::DescribeLoggingOptions(const Desc
   Aws::StringStream ss;
   ss << "/logging";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeLoggingOptionsOutcome(DescribeLoggingOptionsResult(outcome.GetResult()));
@@ -401,7 +401,7 @@ ListDetectorModelVersionsOutcome IoTEventsClient::ListDetectorModelVersions(cons
   ss << request.GetDetectorModelName();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListDetectorModelVersionsOutcome(ListDetectorModelVersionsResult(outcome.GetResult()));
@@ -436,7 +436,7 @@ ListDetectorModelsOutcome IoTEventsClient::ListDetectorModels(const ListDetector
   Aws::StringStream ss;
   ss << "/detector-models";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListDetectorModelsOutcome(ListDetectorModelsResult(outcome.GetResult()));
@@ -471,7 +471,7 @@ ListInputsOutcome IoTEventsClient::ListInputs(const ListInputsRequest& request) 
   Aws::StringStream ss;
   ss << "/inputs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListInputsOutcome(ListInputsResult(outcome.GetResult()));
@@ -511,7 +511,7 @@ ListTagsForResourceOutcome IoTEventsClient::ListTagsForResource(const ListTagsFo
   Aws::StringStream ss;
   ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
@@ -546,7 +546,7 @@ PutLoggingOptionsOutcome IoTEventsClient::PutLoggingOptions(const PutLoggingOpti
   Aws::StringStream ss;
   ss << "/logging";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutLoggingOptionsOutcome(NoResult());
@@ -586,7 +586,7 @@ TagResourceOutcome IoTEventsClient::TagResource(const TagResourceRequest& reques
   Aws::StringStream ss;
   ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
@@ -631,7 +631,7 @@ UntagResourceOutcome IoTEventsClient::UntagResource(const UntagResourceRequest& 
   Aws::StringStream ss;
   ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
@@ -672,7 +672,7 @@ UpdateDetectorModelOutcome IoTEventsClient::UpdateDetectorModel(const UpdateDete
   ss << "/detector-models/";
   ss << request.GetDetectorModelName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateDetectorModelOutcome(UpdateDetectorModelResult(outcome.GetResult()));
@@ -713,7 +713,7 @@ UpdateInputOutcome IoTEventsClient::UpdateInput(const UpdateInputRequest& reques
   ss << "/inputs/";
   ss << request.GetInputName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateInputOutcome(UpdateInputResult(outcome.GetResult()));

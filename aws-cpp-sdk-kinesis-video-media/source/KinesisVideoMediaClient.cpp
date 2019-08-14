@@ -110,7 +110,7 @@ GetMediaOutcome KinesisVideoMediaClient::GetMedia(const GetMediaRequest& request
   Aws::StringStream ss;
   ss << "/getMedia";
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_POST);
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetMediaOutcome(GetMediaResult(outcome.GetResultWithOwnership()));

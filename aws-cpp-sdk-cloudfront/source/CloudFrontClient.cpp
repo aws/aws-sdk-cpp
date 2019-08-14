@@ -155,7 +155,7 @@ CreateCloudFrontOriginAccessIdentity2019_03_26Outcome CloudFrontClient::CreateCl
   Aws::StringStream ss;
   ss << "/2019-03-26/origin-access-identity/cloudfront";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateCloudFrontOriginAccessIdentity2019_03_26Outcome(CreateCloudFrontOriginAccessIdentity2019_03_26Result(outcome.GetResult()));
@@ -190,7 +190,7 @@ CreateDistribution2019_03_26Outcome CloudFrontClient::CreateDistribution2019_03_
   Aws::StringStream ss;
   ss << "/2019-03-26/distribution";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateDistribution2019_03_26Outcome(CreateDistribution2019_03_26Result(outcome.GetResult()));
@@ -227,7 +227,7 @@ CreateDistributionWithTags2019_03_26Outcome CloudFrontClient::CreateDistribution
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?WithTags");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateDistributionWithTags2019_03_26Outcome(CreateDistributionWithTags2019_03_26Result(outcome.GetResult()));
@@ -262,7 +262,7 @@ CreateFieldLevelEncryptionConfig2019_03_26Outcome CloudFrontClient::CreateFieldL
   Aws::StringStream ss;
   ss << "/2019-03-26/field-level-encryption";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateFieldLevelEncryptionConfig2019_03_26Outcome(CreateFieldLevelEncryptionConfig2019_03_26Result(outcome.GetResult()));
@@ -297,7 +297,7 @@ CreateFieldLevelEncryptionProfile2019_03_26Outcome CloudFrontClient::CreateField
   Aws::StringStream ss;
   ss << "/2019-03-26/field-level-encryption-profile";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateFieldLevelEncryptionProfile2019_03_26Outcome(CreateFieldLevelEncryptionProfile2019_03_26Result(outcome.GetResult()));
@@ -339,7 +339,7 @@ CreateInvalidation2019_03_26Outcome CloudFrontClient::CreateInvalidation2019_03_
   ss << request.GetDistributionId();
   ss << "/invalidation";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateInvalidation2019_03_26Outcome(CreateInvalidation2019_03_26Result(outcome.GetResult()));
@@ -374,7 +374,7 @@ CreatePublicKey2019_03_26Outcome CloudFrontClient::CreatePublicKey2019_03_26(con
   Aws::StringStream ss;
   ss << "/2019-03-26/public-key";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreatePublicKey2019_03_26Outcome(CreatePublicKey2019_03_26Result(outcome.GetResult()));
@@ -409,7 +409,7 @@ CreateStreamingDistribution2019_03_26Outcome CloudFrontClient::CreateStreamingDi
   Aws::StringStream ss;
   ss << "/2019-03-26/streaming-distribution";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateStreamingDistribution2019_03_26Outcome(CreateStreamingDistribution2019_03_26Result(outcome.GetResult()));
@@ -446,7 +446,7 @@ CreateStreamingDistributionWithTags2019_03_26Outcome CloudFrontClient::CreateStr
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?WithTags");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateStreamingDistributionWithTags2019_03_26Outcome(CreateStreamingDistributionWithTags2019_03_26Result(outcome.GetResult()));
@@ -487,7 +487,7 @@ DeleteCloudFrontOriginAccessIdentity2019_03_26Outcome CloudFrontClient::DeleteCl
   ss << "/2019-03-26/origin-access-identity/cloudfront/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteCloudFrontOriginAccessIdentity2019_03_26Outcome(NoResult());
@@ -528,7 +528,7 @@ DeleteDistribution2019_03_26Outcome CloudFrontClient::DeleteDistribution2019_03_
   ss << "/2019-03-26/distribution/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteDistribution2019_03_26Outcome(NoResult());
@@ -569,7 +569,7 @@ DeleteFieldLevelEncryptionConfig2019_03_26Outcome CloudFrontClient::DeleteFieldL
   ss << "/2019-03-26/field-level-encryption/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteFieldLevelEncryptionConfig2019_03_26Outcome(NoResult());
@@ -610,7 +610,7 @@ DeleteFieldLevelEncryptionProfile2019_03_26Outcome CloudFrontClient::DeleteField
   ss << "/2019-03-26/field-level-encryption-profile/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteFieldLevelEncryptionProfile2019_03_26Outcome(NoResult());
@@ -651,7 +651,7 @@ DeletePublicKey2019_03_26Outcome CloudFrontClient::DeletePublicKey2019_03_26(con
   ss << "/2019-03-26/public-key/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeletePublicKey2019_03_26Outcome(NoResult());
@@ -692,7 +692,7 @@ DeleteStreamingDistribution2019_03_26Outcome CloudFrontClient::DeleteStreamingDi
   ss << "/2019-03-26/streaming-distribution/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteStreamingDistribution2019_03_26Outcome(NoResult());
@@ -733,7 +733,7 @@ GetCloudFrontOriginAccessIdentity2019_03_26Outcome CloudFrontClient::GetCloudFro
   ss << "/2019-03-26/origin-access-identity/cloudfront/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetCloudFrontOriginAccessIdentity2019_03_26Outcome(GetCloudFrontOriginAccessIdentity2019_03_26Result(outcome.GetResult()));
@@ -775,7 +775,7 @@ GetCloudFrontOriginAccessIdentityConfig2019_03_26Outcome CloudFrontClient::GetCl
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetCloudFrontOriginAccessIdentityConfig2019_03_26Outcome(GetCloudFrontOriginAccessIdentityConfig2019_03_26Result(outcome.GetResult()));
@@ -816,7 +816,7 @@ GetDistribution2019_03_26Outcome CloudFrontClient::GetDistribution2019_03_26(con
   ss << "/2019-03-26/distribution/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetDistribution2019_03_26Outcome(GetDistribution2019_03_26Result(outcome.GetResult()));
@@ -858,7 +858,7 @@ GetDistributionConfig2019_03_26Outcome CloudFrontClient::GetDistributionConfig20
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetDistributionConfig2019_03_26Outcome(GetDistributionConfig2019_03_26Result(outcome.GetResult()));
@@ -899,7 +899,7 @@ GetFieldLevelEncryption2019_03_26Outcome CloudFrontClient::GetFieldLevelEncrypti
   ss << "/2019-03-26/field-level-encryption/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetFieldLevelEncryption2019_03_26Outcome(GetFieldLevelEncryption2019_03_26Result(outcome.GetResult()));
@@ -941,7 +941,7 @@ GetFieldLevelEncryptionConfig2019_03_26Outcome CloudFrontClient::GetFieldLevelEn
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetFieldLevelEncryptionConfig2019_03_26Outcome(GetFieldLevelEncryptionConfig2019_03_26Result(outcome.GetResult()));
@@ -982,7 +982,7 @@ GetFieldLevelEncryptionProfile2019_03_26Outcome CloudFrontClient::GetFieldLevelE
   ss << "/2019-03-26/field-level-encryption-profile/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetFieldLevelEncryptionProfile2019_03_26Outcome(GetFieldLevelEncryptionProfile2019_03_26Result(outcome.GetResult()));
@@ -1024,7 +1024,7 @@ GetFieldLevelEncryptionProfileConfig2019_03_26Outcome CloudFrontClient::GetField
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetFieldLevelEncryptionProfileConfig2019_03_26Outcome(GetFieldLevelEncryptionProfileConfig2019_03_26Result(outcome.GetResult()));
@@ -1072,7 +1072,7 @@ GetInvalidation2019_03_26Outcome CloudFrontClient::GetInvalidation2019_03_26(con
   ss << "/invalidation/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetInvalidation2019_03_26Outcome(GetInvalidation2019_03_26Result(outcome.GetResult()));
@@ -1113,7 +1113,7 @@ GetPublicKey2019_03_26Outcome CloudFrontClient::GetPublicKey2019_03_26(const Get
   ss << "/2019-03-26/public-key/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetPublicKey2019_03_26Outcome(GetPublicKey2019_03_26Result(outcome.GetResult()));
@@ -1155,7 +1155,7 @@ GetPublicKeyConfig2019_03_26Outcome CloudFrontClient::GetPublicKeyConfig2019_03_
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetPublicKeyConfig2019_03_26Outcome(GetPublicKeyConfig2019_03_26Result(outcome.GetResult()));
@@ -1196,7 +1196,7 @@ GetStreamingDistribution2019_03_26Outcome CloudFrontClient::GetStreamingDistribu
   ss << "/2019-03-26/streaming-distribution/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetStreamingDistribution2019_03_26Outcome(GetStreamingDistribution2019_03_26Result(outcome.GetResult()));
@@ -1238,7 +1238,7 @@ GetStreamingDistributionConfig2019_03_26Outcome CloudFrontClient::GetStreamingDi
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetStreamingDistributionConfig2019_03_26Outcome(GetStreamingDistributionConfig2019_03_26Result(outcome.GetResult()));
@@ -1273,7 +1273,7 @@ ListCloudFrontOriginAccessIdentities2019_03_26Outcome CloudFrontClient::ListClou
   Aws::StringStream ss;
   ss << "/2019-03-26/origin-access-identity/cloudfront";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListCloudFrontOriginAccessIdentities2019_03_26Outcome(ListCloudFrontOriginAccessIdentities2019_03_26Result(outcome.GetResult()));
@@ -1308,7 +1308,7 @@ ListDistributions2019_03_26Outcome CloudFrontClient::ListDistributions2019_03_26
   Aws::StringStream ss;
   ss << "/2019-03-26/distribution";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListDistributions2019_03_26Outcome(ListDistributions2019_03_26Result(outcome.GetResult()));
@@ -1349,7 +1349,7 @@ ListDistributionsByWebACLId2019_03_26Outcome CloudFrontClient::ListDistributions
   ss << "/2019-03-26/distributionsByWebACLId/";
   ss << request.GetWebACLId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListDistributionsByWebACLId2019_03_26Outcome(ListDistributionsByWebACLId2019_03_26Result(outcome.GetResult()));
@@ -1384,7 +1384,7 @@ ListFieldLevelEncryptionConfigs2019_03_26Outcome CloudFrontClient::ListFieldLeve
   Aws::StringStream ss;
   ss << "/2019-03-26/field-level-encryption";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListFieldLevelEncryptionConfigs2019_03_26Outcome(ListFieldLevelEncryptionConfigs2019_03_26Result(outcome.GetResult()));
@@ -1419,7 +1419,7 @@ ListFieldLevelEncryptionProfiles2019_03_26Outcome CloudFrontClient::ListFieldLev
   Aws::StringStream ss;
   ss << "/2019-03-26/field-level-encryption-profile";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListFieldLevelEncryptionProfiles2019_03_26Outcome(ListFieldLevelEncryptionProfiles2019_03_26Result(outcome.GetResult()));
@@ -1461,7 +1461,7 @@ ListInvalidations2019_03_26Outcome CloudFrontClient::ListInvalidations2019_03_26
   ss << request.GetDistributionId();
   ss << "/invalidation";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListInvalidations2019_03_26Outcome(ListInvalidations2019_03_26Result(outcome.GetResult()));
@@ -1496,7 +1496,7 @@ ListPublicKeys2019_03_26Outcome CloudFrontClient::ListPublicKeys2019_03_26(const
   Aws::StringStream ss;
   ss << "/2019-03-26/public-key";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListPublicKeys2019_03_26Outcome(ListPublicKeys2019_03_26Result(outcome.GetResult()));
@@ -1531,7 +1531,7 @@ ListStreamingDistributions2019_03_26Outcome CloudFrontClient::ListStreamingDistr
   Aws::StringStream ss;
   ss << "/2019-03-26/streaming-distribution";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListStreamingDistributions2019_03_26Outcome(ListStreamingDistributions2019_03_26Result(outcome.GetResult()));
@@ -1571,7 +1571,7 @@ ListTagsForResource2019_03_26Outcome CloudFrontClient::ListTagsForResource2019_0
   Aws::StringStream ss;
   ss << "/2019-03-26/tagging";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListTagsForResource2019_03_26Outcome(ListTagsForResource2019_03_26Result(outcome.GetResult()));
@@ -1613,7 +1613,7 @@ TagResource2019_03_26Outcome CloudFrontClient::TagResource2019_03_26(const TagRe
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=Tag");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return TagResource2019_03_26Outcome(NoResult());
@@ -1655,7 +1655,7 @@ UntagResource2019_03_26Outcome CloudFrontClient::UntagResource2019_03_26(const U
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=Untag");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UntagResource2019_03_26Outcome(NoResult());
@@ -1697,7 +1697,7 @@ UpdateCloudFrontOriginAccessIdentity2019_03_26Outcome CloudFrontClient::UpdateCl
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UpdateCloudFrontOriginAccessIdentity2019_03_26Outcome(UpdateCloudFrontOriginAccessIdentity2019_03_26Result(outcome.GetResult()));
@@ -1739,7 +1739,7 @@ UpdateDistribution2019_03_26Outcome CloudFrontClient::UpdateDistribution2019_03_
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UpdateDistribution2019_03_26Outcome(UpdateDistribution2019_03_26Result(outcome.GetResult()));
@@ -1781,7 +1781,7 @@ UpdateFieldLevelEncryptionConfig2019_03_26Outcome CloudFrontClient::UpdateFieldL
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UpdateFieldLevelEncryptionConfig2019_03_26Outcome(UpdateFieldLevelEncryptionConfig2019_03_26Result(outcome.GetResult()));
@@ -1823,7 +1823,7 @@ UpdateFieldLevelEncryptionProfile2019_03_26Outcome CloudFrontClient::UpdateField
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UpdateFieldLevelEncryptionProfile2019_03_26Outcome(UpdateFieldLevelEncryptionProfile2019_03_26Result(outcome.GetResult()));
@@ -1865,7 +1865,7 @@ UpdatePublicKey2019_03_26Outcome CloudFrontClient::UpdatePublicKey2019_03_26(con
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UpdatePublicKey2019_03_26Outcome(UpdatePublicKey2019_03_26Result(outcome.GetResult()));
@@ -1907,7 +1907,7 @@ UpdateStreamingDistribution2019_03_26Outcome CloudFrontClient::UpdateStreamingDi
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UpdateStreamingDistribution2019_03_26Outcome(UpdateStreamingDistribution2019_03_26Result(outcome.GetResult()));

@@ -115,7 +115,7 @@ AnalyzeDocumentOutcome TextractClient::AnalyzeDocument(const AnalyzeDocumentRequ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AnalyzeDocumentOutcome(AnalyzeDocumentResult(outcome.GetResult()));
@@ -150,7 +150,7 @@ DetectDocumentTextOutcome TextractClient::DetectDocumentText(const DetectDocumen
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DetectDocumentTextOutcome(DetectDocumentTextResult(outcome.GetResult()));
@@ -185,7 +185,7 @@ GetDocumentAnalysisOutcome TextractClient::GetDocumentAnalysis(const GetDocument
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDocumentAnalysisOutcome(GetDocumentAnalysisResult(outcome.GetResult()));
@@ -220,7 +220,7 @@ GetDocumentTextDetectionOutcome TextractClient::GetDocumentTextDetection(const G
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDocumentTextDetectionOutcome(GetDocumentTextDetectionResult(outcome.GetResult()));
@@ -255,7 +255,7 @@ StartDocumentAnalysisOutcome TextractClient::StartDocumentAnalysis(const StartDo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StartDocumentAnalysisOutcome(StartDocumentAnalysisResult(outcome.GetResult()));
@@ -290,7 +290,7 @@ StartDocumentTextDetectionOutcome TextractClient::StartDocumentTextDetection(con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StartDocumentTextDetectionOutcome(StartDocumentTextDetectionResult(outcome.GetResult()));

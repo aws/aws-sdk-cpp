@@ -156,7 +156,7 @@ Aws::String CloudFormationClient::ConvertRequestToPresignedUrl(const AmazonSeria
   ss << "?" << requestToConvert.SerializePayload();
 
   URI uri(ss.str());
-  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+  return GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region, 3600);
 }
 
 CancelUpdateStackOutcome CloudFormationClient::CancelUpdateStack(const CancelUpdateStackRequest& request) const
@@ -165,7 +165,7 @@ CancelUpdateStackOutcome CloudFormationClient::CancelUpdateStack(const CancelUpd
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CancelUpdateStackOutcome(NoResult());
@@ -200,7 +200,7 @@ ContinueUpdateRollbackOutcome CloudFormationClient::ContinueUpdateRollback(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ContinueUpdateRollbackOutcome(ContinueUpdateRollbackResult(outcome.GetResult()));
@@ -235,7 +235,7 @@ CreateChangeSetOutcome CloudFormationClient::CreateChangeSet(const CreateChangeS
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateChangeSetOutcome(CreateChangeSetResult(outcome.GetResult()));
@@ -270,7 +270,7 @@ CreateStackOutcome CloudFormationClient::CreateStack(const CreateStackRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateStackOutcome(CreateStackResult(outcome.GetResult()));
@@ -305,7 +305,7 @@ CreateStackInstancesOutcome CloudFormationClient::CreateStackInstances(const Cre
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateStackInstancesOutcome(CreateStackInstancesResult(outcome.GetResult()));
@@ -340,7 +340,7 @@ CreateStackSetOutcome CloudFormationClient::CreateStackSet(const CreateStackSetR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateStackSetOutcome(CreateStackSetResult(outcome.GetResult()));
@@ -375,7 +375,7 @@ DeleteChangeSetOutcome CloudFormationClient::DeleteChangeSet(const DeleteChangeS
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteChangeSetOutcome(DeleteChangeSetResult(outcome.GetResult()));
@@ -410,7 +410,7 @@ DeleteStackOutcome CloudFormationClient::DeleteStack(const DeleteStackRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteStackOutcome(NoResult());
@@ -445,7 +445,7 @@ DeleteStackInstancesOutcome CloudFormationClient::DeleteStackInstances(const Del
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteStackInstancesOutcome(DeleteStackInstancesResult(outcome.GetResult()));
@@ -480,7 +480,7 @@ DeleteStackSetOutcome CloudFormationClient::DeleteStackSet(const DeleteStackSetR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteStackSetOutcome(DeleteStackSetResult(outcome.GetResult()));
@@ -515,7 +515,7 @@ DescribeAccountLimitsOutcome CloudFormationClient::DescribeAccountLimits(const D
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeAccountLimitsOutcome(DescribeAccountLimitsResult(outcome.GetResult()));
@@ -550,7 +550,7 @@ DescribeChangeSetOutcome CloudFormationClient::DescribeChangeSet(const DescribeC
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeChangeSetOutcome(DescribeChangeSetResult(outcome.GetResult()));
@@ -585,7 +585,7 @@ DescribeStackDriftDetectionStatusOutcome CloudFormationClient::DescribeStackDrif
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeStackDriftDetectionStatusOutcome(DescribeStackDriftDetectionStatusResult(outcome.GetResult()));
@@ -620,7 +620,7 @@ DescribeStackEventsOutcome CloudFormationClient::DescribeStackEvents(const Descr
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeStackEventsOutcome(DescribeStackEventsResult(outcome.GetResult()));
@@ -655,7 +655,7 @@ DescribeStackInstanceOutcome CloudFormationClient::DescribeStackInstance(const D
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeStackInstanceOutcome(DescribeStackInstanceResult(outcome.GetResult()));
@@ -690,7 +690,7 @@ DescribeStackResourceOutcome CloudFormationClient::DescribeStackResource(const D
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeStackResourceOutcome(DescribeStackResourceResult(outcome.GetResult()));
@@ -725,7 +725,7 @@ DescribeStackResourceDriftsOutcome CloudFormationClient::DescribeStackResourceDr
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeStackResourceDriftsOutcome(DescribeStackResourceDriftsResult(outcome.GetResult()));
@@ -760,7 +760,7 @@ DescribeStackResourcesOutcome CloudFormationClient::DescribeStackResources(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeStackResourcesOutcome(DescribeStackResourcesResult(outcome.GetResult()));
@@ -795,7 +795,7 @@ DescribeStackSetOutcome CloudFormationClient::DescribeStackSet(const DescribeSta
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeStackSetOutcome(DescribeStackSetResult(outcome.GetResult()));
@@ -830,7 +830,7 @@ DescribeStackSetOperationOutcome CloudFormationClient::DescribeStackSetOperation
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeStackSetOperationOutcome(DescribeStackSetOperationResult(outcome.GetResult()));
@@ -865,7 +865,7 @@ DescribeStacksOutcome CloudFormationClient::DescribeStacks(const DescribeStacksR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeStacksOutcome(DescribeStacksResult(outcome.GetResult()));
@@ -900,7 +900,7 @@ DetectStackDriftOutcome CloudFormationClient::DetectStackDrift(const DetectStack
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DetectStackDriftOutcome(DetectStackDriftResult(outcome.GetResult()));
@@ -935,7 +935,7 @@ DetectStackResourceDriftOutcome CloudFormationClient::DetectStackResourceDrift(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DetectStackResourceDriftOutcome(DetectStackResourceDriftResult(outcome.GetResult()));
@@ -970,7 +970,7 @@ EstimateTemplateCostOutcome CloudFormationClient::EstimateTemplateCost(const Est
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return EstimateTemplateCostOutcome(EstimateTemplateCostResult(outcome.GetResult()));
@@ -1005,7 +1005,7 @@ ExecuteChangeSetOutcome CloudFormationClient::ExecuteChangeSet(const ExecuteChan
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ExecuteChangeSetOutcome(ExecuteChangeSetResult(outcome.GetResult()));
@@ -1040,7 +1040,7 @@ GetStackPolicyOutcome CloudFormationClient::GetStackPolicy(const GetStackPolicyR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetStackPolicyOutcome(GetStackPolicyResult(outcome.GetResult()));
@@ -1075,7 +1075,7 @@ GetTemplateOutcome CloudFormationClient::GetTemplate(const GetTemplateRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetTemplateOutcome(GetTemplateResult(outcome.GetResult()));
@@ -1110,7 +1110,7 @@ GetTemplateSummaryOutcome CloudFormationClient::GetTemplateSummary(const GetTemp
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetTemplateSummaryOutcome(GetTemplateSummaryResult(outcome.GetResult()));
@@ -1145,7 +1145,7 @@ ListChangeSetsOutcome CloudFormationClient::ListChangeSets(const ListChangeSetsR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListChangeSetsOutcome(ListChangeSetsResult(outcome.GetResult()));
@@ -1180,7 +1180,7 @@ ListExportsOutcome CloudFormationClient::ListExports(const ListExportsRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListExportsOutcome(ListExportsResult(outcome.GetResult()));
@@ -1215,7 +1215,7 @@ ListImportsOutcome CloudFormationClient::ListImports(const ListImportsRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListImportsOutcome(ListImportsResult(outcome.GetResult()));
@@ -1250,7 +1250,7 @@ ListStackInstancesOutcome CloudFormationClient::ListStackInstances(const ListSta
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListStackInstancesOutcome(ListStackInstancesResult(outcome.GetResult()));
@@ -1285,7 +1285,7 @@ ListStackResourcesOutcome CloudFormationClient::ListStackResources(const ListSta
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListStackResourcesOutcome(ListStackResourcesResult(outcome.GetResult()));
@@ -1320,7 +1320,7 @@ ListStackSetOperationResultsOutcome CloudFormationClient::ListStackSetOperationR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListStackSetOperationResultsOutcome(ListStackSetOperationResultsResult(outcome.GetResult()));
@@ -1355,7 +1355,7 @@ ListStackSetOperationsOutcome CloudFormationClient::ListStackSetOperations(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListStackSetOperationsOutcome(ListStackSetOperationsResult(outcome.GetResult()));
@@ -1390,7 +1390,7 @@ ListStackSetsOutcome CloudFormationClient::ListStackSets(const ListStackSetsRequ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListStackSetsOutcome(ListStackSetsResult(outcome.GetResult()));
@@ -1425,7 +1425,7 @@ ListStacksOutcome CloudFormationClient::ListStacks(const ListStacksRequest& requ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListStacksOutcome(ListStacksResult(outcome.GetResult()));
@@ -1460,7 +1460,7 @@ SetStackPolicyOutcome CloudFormationClient::SetStackPolicy(const SetStackPolicyR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetStackPolicyOutcome(NoResult());
@@ -1495,7 +1495,7 @@ SignalResourceOutcome CloudFormationClient::SignalResource(const SignalResourceR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SignalResourceOutcome(NoResult());
@@ -1530,7 +1530,7 @@ StopStackSetOperationOutcome CloudFormationClient::StopStackSetOperation(const S
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return StopStackSetOperationOutcome(StopStackSetOperationResult(outcome.GetResult()));
@@ -1565,7 +1565,7 @@ UpdateStackOutcome CloudFormationClient::UpdateStack(const UpdateStackRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateStackOutcome(UpdateStackResult(outcome.GetResult()));
@@ -1600,7 +1600,7 @@ UpdateStackInstancesOutcome CloudFormationClient::UpdateStackInstances(const Upd
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateStackInstancesOutcome(UpdateStackInstancesResult(outcome.GetResult()));
@@ -1635,7 +1635,7 @@ UpdateStackSetOutcome CloudFormationClient::UpdateStackSet(const UpdateStackSetR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateStackSetOutcome(UpdateStackSetResult(outcome.GetResult()));
@@ -1670,7 +1670,7 @@ UpdateTerminationProtectionOutcome CloudFormationClient::UpdateTerminationProtec
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateTerminationProtectionOutcome(UpdateTerminationProtectionResult(outcome.GetResult()));
@@ -1705,7 +1705,7 @@ ValidateTemplateOutcome CloudFormationClient::ValidateTemplate(const ValidateTem
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ValidateTemplateOutcome(ValidateTemplateResult(outcome.GetResult()));

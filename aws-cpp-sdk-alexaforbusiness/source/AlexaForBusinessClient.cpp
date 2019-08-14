@@ -202,7 +202,7 @@ ApproveSkillOutcome AlexaForBusinessClient::ApproveSkill(const ApproveSkillReque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ApproveSkillOutcome(ApproveSkillResult(outcome.GetResult()));
@@ -237,7 +237,7 @@ AssociateContactWithAddressBookOutcome AlexaForBusinessClient::AssociateContactW
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AssociateContactWithAddressBookOutcome(AssociateContactWithAddressBookResult(outcome.GetResult()));
@@ -272,7 +272,7 @@ AssociateDeviceWithNetworkProfileOutcome AlexaForBusinessClient::AssociateDevice
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AssociateDeviceWithNetworkProfileOutcome(AssociateDeviceWithNetworkProfileResult(outcome.GetResult()));
@@ -307,7 +307,7 @@ AssociateDeviceWithRoomOutcome AlexaForBusinessClient::AssociateDeviceWithRoom(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AssociateDeviceWithRoomOutcome(AssociateDeviceWithRoomResult(outcome.GetResult()));
@@ -342,7 +342,7 @@ AssociateSkillGroupWithRoomOutcome AlexaForBusinessClient::AssociateSkillGroupWi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AssociateSkillGroupWithRoomOutcome(AssociateSkillGroupWithRoomResult(outcome.GetResult()));
@@ -377,7 +377,7 @@ AssociateSkillWithSkillGroupOutcome AlexaForBusinessClient::AssociateSkillWithSk
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AssociateSkillWithSkillGroupOutcome(AssociateSkillWithSkillGroupResult(outcome.GetResult()));
@@ -412,7 +412,7 @@ AssociateSkillWithUsersOutcome AlexaForBusinessClient::AssociateSkillWithUsers(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AssociateSkillWithUsersOutcome(AssociateSkillWithUsersResult(outcome.GetResult()));
@@ -447,7 +447,7 @@ CreateAddressBookOutcome AlexaForBusinessClient::CreateAddressBook(const CreateA
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateAddressBookOutcome(CreateAddressBookResult(outcome.GetResult()));
@@ -482,7 +482,7 @@ CreateBusinessReportScheduleOutcome AlexaForBusinessClient::CreateBusinessReport
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateBusinessReportScheduleOutcome(CreateBusinessReportScheduleResult(outcome.GetResult()));
@@ -517,7 +517,7 @@ CreateConferenceProviderOutcome AlexaForBusinessClient::CreateConferenceProvider
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateConferenceProviderOutcome(CreateConferenceProviderResult(outcome.GetResult()));
@@ -552,7 +552,7 @@ CreateContactOutcome AlexaForBusinessClient::CreateContact(const CreateContactRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateContactOutcome(CreateContactResult(outcome.GetResult()));
@@ -587,7 +587,7 @@ CreateGatewayGroupOutcome AlexaForBusinessClient::CreateGatewayGroup(const Creat
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateGatewayGroupOutcome(CreateGatewayGroupResult(outcome.GetResult()));
@@ -622,7 +622,7 @@ CreateNetworkProfileOutcome AlexaForBusinessClient::CreateNetworkProfile(const C
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateNetworkProfileOutcome(CreateNetworkProfileResult(outcome.GetResult()));
@@ -657,7 +657,7 @@ CreateProfileOutcome AlexaForBusinessClient::CreateProfile(const CreateProfileRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateProfileOutcome(CreateProfileResult(outcome.GetResult()));
@@ -692,7 +692,7 @@ CreateRoomOutcome AlexaForBusinessClient::CreateRoom(const CreateRoomRequest& re
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateRoomOutcome(CreateRoomResult(outcome.GetResult()));
@@ -727,7 +727,7 @@ CreateSkillGroupOutcome AlexaForBusinessClient::CreateSkillGroup(const CreateSki
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateSkillGroupOutcome(CreateSkillGroupResult(outcome.GetResult()));
@@ -762,7 +762,7 @@ CreateUserOutcome AlexaForBusinessClient::CreateUser(const CreateUserRequest& re
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateUserOutcome(CreateUserResult(outcome.GetResult()));
@@ -797,7 +797,7 @@ DeleteAddressBookOutcome AlexaForBusinessClient::DeleteAddressBook(const DeleteA
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteAddressBookOutcome(DeleteAddressBookResult(outcome.GetResult()));
@@ -832,7 +832,7 @@ DeleteBusinessReportScheduleOutcome AlexaForBusinessClient::DeleteBusinessReport
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteBusinessReportScheduleOutcome(DeleteBusinessReportScheduleResult(outcome.GetResult()));
@@ -867,7 +867,7 @@ DeleteConferenceProviderOutcome AlexaForBusinessClient::DeleteConferenceProvider
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteConferenceProviderOutcome(DeleteConferenceProviderResult(outcome.GetResult()));
@@ -902,7 +902,7 @@ DeleteContactOutcome AlexaForBusinessClient::DeleteContact(const DeleteContactRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteContactOutcome(DeleteContactResult(outcome.GetResult()));
@@ -937,7 +937,7 @@ DeleteDeviceOutcome AlexaForBusinessClient::DeleteDevice(const DeleteDeviceReque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteDeviceOutcome(DeleteDeviceResult(outcome.GetResult()));
@@ -972,7 +972,7 @@ DeleteDeviceUsageDataOutcome AlexaForBusinessClient::DeleteDeviceUsageData(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteDeviceUsageDataOutcome(DeleteDeviceUsageDataResult(outcome.GetResult()));
@@ -1007,7 +1007,7 @@ DeleteGatewayGroupOutcome AlexaForBusinessClient::DeleteGatewayGroup(const Delet
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteGatewayGroupOutcome(DeleteGatewayGroupResult(outcome.GetResult()));
@@ -1042,7 +1042,7 @@ DeleteNetworkProfileOutcome AlexaForBusinessClient::DeleteNetworkProfile(const D
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteNetworkProfileOutcome(DeleteNetworkProfileResult(outcome.GetResult()));
@@ -1077,7 +1077,7 @@ DeleteProfileOutcome AlexaForBusinessClient::DeleteProfile(const DeleteProfileRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteProfileOutcome(DeleteProfileResult(outcome.GetResult()));
@@ -1112,7 +1112,7 @@ DeleteRoomOutcome AlexaForBusinessClient::DeleteRoom(const DeleteRoomRequest& re
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteRoomOutcome(DeleteRoomResult(outcome.GetResult()));
@@ -1147,7 +1147,7 @@ DeleteRoomSkillParameterOutcome AlexaForBusinessClient::DeleteRoomSkillParameter
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteRoomSkillParameterOutcome(DeleteRoomSkillParameterResult(outcome.GetResult()));
@@ -1182,7 +1182,7 @@ DeleteSkillAuthorizationOutcome AlexaForBusinessClient::DeleteSkillAuthorization
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteSkillAuthorizationOutcome(DeleteSkillAuthorizationResult(outcome.GetResult()));
@@ -1217,7 +1217,7 @@ DeleteSkillGroupOutcome AlexaForBusinessClient::DeleteSkillGroup(const DeleteSki
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteSkillGroupOutcome(DeleteSkillGroupResult(outcome.GetResult()));
@@ -1252,7 +1252,7 @@ DeleteUserOutcome AlexaForBusinessClient::DeleteUser(const DeleteUserRequest& re
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteUserOutcome(DeleteUserResult(outcome.GetResult()));
@@ -1287,7 +1287,7 @@ DisassociateContactFromAddressBookOutcome AlexaForBusinessClient::DisassociateCo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DisassociateContactFromAddressBookOutcome(DisassociateContactFromAddressBookResult(outcome.GetResult()));
@@ -1322,7 +1322,7 @@ DisassociateDeviceFromRoomOutcome AlexaForBusinessClient::DisassociateDeviceFrom
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DisassociateDeviceFromRoomOutcome(DisassociateDeviceFromRoomResult(outcome.GetResult()));
@@ -1357,7 +1357,7 @@ DisassociateSkillFromSkillGroupOutcome AlexaForBusinessClient::DisassociateSkill
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DisassociateSkillFromSkillGroupOutcome(DisassociateSkillFromSkillGroupResult(outcome.GetResult()));
@@ -1392,7 +1392,7 @@ DisassociateSkillFromUsersOutcome AlexaForBusinessClient::DisassociateSkillFromU
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DisassociateSkillFromUsersOutcome(DisassociateSkillFromUsersResult(outcome.GetResult()));
@@ -1427,7 +1427,7 @@ DisassociateSkillGroupFromRoomOutcome AlexaForBusinessClient::DisassociateSkillG
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DisassociateSkillGroupFromRoomOutcome(DisassociateSkillGroupFromRoomResult(outcome.GetResult()));
@@ -1462,7 +1462,7 @@ ForgetSmartHomeAppliancesOutcome AlexaForBusinessClient::ForgetSmartHomeApplianc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ForgetSmartHomeAppliancesOutcome(ForgetSmartHomeAppliancesResult(outcome.GetResult()));
@@ -1497,7 +1497,7 @@ GetAddressBookOutcome AlexaForBusinessClient::GetAddressBook(const GetAddressBoo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetAddressBookOutcome(GetAddressBookResult(outcome.GetResult()));
@@ -1532,7 +1532,7 @@ GetConferencePreferenceOutcome AlexaForBusinessClient::GetConferencePreference(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetConferencePreferenceOutcome(GetConferencePreferenceResult(outcome.GetResult()));
@@ -1567,7 +1567,7 @@ GetConferenceProviderOutcome AlexaForBusinessClient::GetConferenceProvider(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetConferenceProviderOutcome(GetConferenceProviderResult(outcome.GetResult()));
@@ -1602,7 +1602,7 @@ GetContactOutcome AlexaForBusinessClient::GetContact(const GetContactRequest& re
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetContactOutcome(GetContactResult(outcome.GetResult()));
@@ -1637,7 +1637,7 @@ GetDeviceOutcome AlexaForBusinessClient::GetDevice(const GetDeviceRequest& reque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDeviceOutcome(GetDeviceResult(outcome.GetResult()));
@@ -1672,7 +1672,7 @@ GetGatewayOutcome AlexaForBusinessClient::GetGateway(const GetGatewayRequest& re
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetGatewayOutcome(GetGatewayResult(outcome.GetResult()));
@@ -1707,7 +1707,7 @@ GetGatewayGroupOutcome AlexaForBusinessClient::GetGatewayGroup(const GetGatewayG
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetGatewayGroupOutcome(GetGatewayGroupResult(outcome.GetResult()));
@@ -1742,7 +1742,7 @@ GetInvitationConfigurationOutcome AlexaForBusinessClient::GetInvitationConfigura
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetInvitationConfigurationOutcome(GetInvitationConfigurationResult(outcome.GetResult()));
@@ -1777,7 +1777,7 @@ GetNetworkProfileOutcome AlexaForBusinessClient::GetNetworkProfile(const GetNetw
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetNetworkProfileOutcome(GetNetworkProfileResult(outcome.GetResult()));
@@ -1812,7 +1812,7 @@ GetProfileOutcome AlexaForBusinessClient::GetProfile(const GetProfileRequest& re
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetProfileOutcome(GetProfileResult(outcome.GetResult()));
@@ -1847,7 +1847,7 @@ GetRoomOutcome AlexaForBusinessClient::GetRoom(const GetRoomRequest& request) co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetRoomOutcome(GetRoomResult(outcome.GetResult()));
@@ -1882,7 +1882,7 @@ GetRoomSkillParameterOutcome AlexaForBusinessClient::GetRoomSkillParameter(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetRoomSkillParameterOutcome(GetRoomSkillParameterResult(outcome.GetResult()));
@@ -1917,7 +1917,7 @@ GetSkillGroupOutcome AlexaForBusinessClient::GetSkillGroup(const GetSkillGroupRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetSkillGroupOutcome(GetSkillGroupResult(outcome.GetResult()));
@@ -1952,7 +1952,7 @@ ListBusinessReportSchedulesOutcome AlexaForBusinessClient::ListBusinessReportSch
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListBusinessReportSchedulesOutcome(ListBusinessReportSchedulesResult(outcome.GetResult()));
@@ -1987,7 +1987,7 @@ ListConferenceProvidersOutcome AlexaForBusinessClient::ListConferenceProviders(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListConferenceProvidersOutcome(ListConferenceProvidersResult(outcome.GetResult()));
@@ -2022,7 +2022,7 @@ ListDeviceEventsOutcome AlexaForBusinessClient::ListDeviceEvents(const ListDevic
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListDeviceEventsOutcome(ListDeviceEventsResult(outcome.GetResult()));
@@ -2057,7 +2057,7 @@ ListGatewayGroupsOutcome AlexaForBusinessClient::ListGatewayGroups(const ListGat
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListGatewayGroupsOutcome(ListGatewayGroupsResult(outcome.GetResult()));
@@ -2092,7 +2092,7 @@ ListGatewaysOutcome AlexaForBusinessClient::ListGateways(const ListGatewaysReque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListGatewaysOutcome(ListGatewaysResult(outcome.GetResult()));
@@ -2127,7 +2127,7 @@ ListSkillsOutcome AlexaForBusinessClient::ListSkills(const ListSkillsRequest& re
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListSkillsOutcome(ListSkillsResult(outcome.GetResult()));
@@ -2162,7 +2162,7 @@ ListSkillsStoreCategoriesOutcome AlexaForBusinessClient::ListSkillsStoreCategori
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListSkillsStoreCategoriesOutcome(ListSkillsStoreCategoriesResult(outcome.GetResult()));
@@ -2197,7 +2197,7 @@ ListSkillsStoreSkillsByCategoryOutcome AlexaForBusinessClient::ListSkillsStoreSk
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListSkillsStoreSkillsByCategoryOutcome(ListSkillsStoreSkillsByCategoryResult(outcome.GetResult()));
@@ -2232,7 +2232,7 @@ ListSmartHomeAppliancesOutcome AlexaForBusinessClient::ListSmartHomeAppliances(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListSmartHomeAppliancesOutcome(ListSmartHomeAppliancesResult(outcome.GetResult()));
@@ -2267,7 +2267,7 @@ ListTagsOutcome AlexaForBusinessClient::ListTags(const ListTagsRequest& request)
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTagsOutcome(ListTagsResult(outcome.GetResult()));
@@ -2302,7 +2302,7 @@ PutConferencePreferenceOutcome AlexaForBusinessClient::PutConferencePreference(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutConferencePreferenceOutcome(PutConferencePreferenceResult(outcome.GetResult()));
@@ -2337,7 +2337,7 @@ PutInvitationConfigurationOutcome AlexaForBusinessClient::PutInvitationConfigura
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutInvitationConfigurationOutcome(PutInvitationConfigurationResult(outcome.GetResult()));
@@ -2372,7 +2372,7 @@ PutRoomSkillParameterOutcome AlexaForBusinessClient::PutRoomSkillParameter(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutRoomSkillParameterOutcome(PutRoomSkillParameterResult(outcome.GetResult()));
@@ -2407,7 +2407,7 @@ PutSkillAuthorizationOutcome AlexaForBusinessClient::PutSkillAuthorization(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutSkillAuthorizationOutcome(PutSkillAuthorizationResult(outcome.GetResult()));
@@ -2442,7 +2442,7 @@ RegisterAVSDeviceOutcome AlexaForBusinessClient::RegisterAVSDevice(const Registe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RegisterAVSDeviceOutcome(RegisterAVSDeviceResult(outcome.GetResult()));
@@ -2477,7 +2477,7 @@ RejectSkillOutcome AlexaForBusinessClient::RejectSkill(const RejectSkillRequest&
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RejectSkillOutcome(RejectSkillResult(outcome.GetResult()));
@@ -2512,7 +2512,7 @@ ResolveRoomOutcome AlexaForBusinessClient::ResolveRoom(const ResolveRoomRequest&
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ResolveRoomOutcome(ResolveRoomResult(outcome.GetResult()));
@@ -2547,7 +2547,7 @@ RevokeInvitationOutcome AlexaForBusinessClient::RevokeInvitation(const RevokeInv
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RevokeInvitationOutcome(RevokeInvitationResult(outcome.GetResult()));
@@ -2582,7 +2582,7 @@ SearchAddressBooksOutcome AlexaForBusinessClient::SearchAddressBooks(const Searc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SearchAddressBooksOutcome(SearchAddressBooksResult(outcome.GetResult()));
@@ -2617,7 +2617,7 @@ SearchContactsOutcome AlexaForBusinessClient::SearchContacts(const SearchContact
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SearchContactsOutcome(SearchContactsResult(outcome.GetResult()));
@@ -2652,7 +2652,7 @@ SearchDevicesOutcome AlexaForBusinessClient::SearchDevices(const SearchDevicesRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SearchDevicesOutcome(SearchDevicesResult(outcome.GetResult()));
@@ -2687,7 +2687,7 @@ SearchNetworkProfilesOutcome AlexaForBusinessClient::SearchNetworkProfiles(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SearchNetworkProfilesOutcome(SearchNetworkProfilesResult(outcome.GetResult()));
@@ -2722,7 +2722,7 @@ SearchProfilesOutcome AlexaForBusinessClient::SearchProfiles(const SearchProfile
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SearchProfilesOutcome(SearchProfilesResult(outcome.GetResult()));
@@ -2757,7 +2757,7 @@ SearchRoomsOutcome AlexaForBusinessClient::SearchRooms(const SearchRoomsRequest&
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SearchRoomsOutcome(SearchRoomsResult(outcome.GetResult()));
@@ -2792,7 +2792,7 @@ SearchSkillGroupsOutcome AlexaForBusinessClient::SearchSkillGroups(const SearchS
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SearchSkillGroupsOutcome(SearchSkillGroupsResult(outcome.GetResult()));
@@ -2827,7 +2827,7 @@ SearchUsersOutcome AlexaForBusinessClient::SearchUsers(const SearchUsersRequest&
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SearchUsersOutcome(SearchUsersResult(outcome.GetResult()));
@@ -2862,7 +2862,7 @@ SendAnnouncementOutcome AlexaForBusinessClient::SendAnnouncement(const SendAnnou
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SendAnnouncementOutcome(SendAnnouncementResult(outcome.GetResult()));
@@ -2897,7 +2897,7 @@ SendInvitationOutcome AlexaForBusinessClient::SendInvitation(const SendInvitatio
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SendInvitationOutcome(SendInvitationResult(outcome.GetResult()));
@@ -2932,7 +2932,7 @@ StartDeviceSyncOutcome AlexaForBusinessClient::StartDeviceSync(const StartDevice
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StartDeviceSyncOutcome(StartDeviceSyncResult(outcome.GetResult()));
@@ -2967,7 +2967,7 @@ StartSmartHomeApplianceDiscoveryOutcome AlexaForBusinessClient::StartSmartHomeAp
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StartSmartHomeApplianceDiscoveryOutcome(StartSmartHomeApplianceDiscoveryResult(outcome.GetResult()));
@@ -3002,7 +3002,7 @@ TagResourceOutcome AlexaForBusinessClient::TagResource(const TagResourceRequest&
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
@@ -3037,7 +3037,7 @@ UntagResourceOutcome AlexaForBusinessClient::UntagResource(const UntagResourceRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
@@ -3072,7 +3072,7 @@ UpdateAddressBookOutcome AlexaForBusinessClient::UpdateAddressBook(const UpdateA
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateAddressBookOutcome(UpdateAddressBookResult(outcome.GetResult()));
@@ -3107,7 +3107,7 @@ UpdateBusinessReportScheduleOutcome AlexaForBusinessClient::UpdateBusinessReport
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateBusinessReportScheduleOutcome(UpdateBusinessReportScheduleResult(outcome.GetResult()));
@@ -3142,7 +3142,7 @@ UpdateConferenceProviderOutcome AlexaForBusinessClient::UpdateConferenceProvider
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateConferenceProviderOutcome(UpdateConferenceProviderResult(outcome.GetResult()));
@@ -3177,7 +3177,7 @@ UpdateContactOutcome AlexaForBusinessClient::UpdateContact(const UpdateContactRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateContactOutcome(UpdateContactResult(outcome.GetResult()));
@@ -3212,7 +3212,7 @@ UpdateDeviceOutcome AlexaForBusinessClient::UpdateDevice(const UpdateDeviceReque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateDeviceOutcome(UpdateDeviceResult(outcome.GetResult()));
@@ -3247,7 +3247,7 @@ UpdateGatewayOutcome AlexaForBusinessClient::UpdateGateway(const UpdateGatewayRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateGatewayOutcome(UpdateGatewayResult(outcome.GetResult()));
@@ -3282,7 +3282,7 @@ UpdateGatewayGroupOutcome AlexaForBusinessClient::UpdateGatewayGroup(const Updat
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateGatewayGroupOutcome(UpdateGatewayGroupResult(outcome.GetResult()));
@@ -3317,7 +3317,7 @@ UpdateNetworkProfileOutcome AlexaForBusinessClient::UpdateNetworkProfile(const U
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateNetworkProfileOutcome(UpdateNetworkProfileResult(outcome.GetResult()));
@@ -3352,7 +3352,7 @@ UpdateProfileOutcome AlexaForBusinessClient::UpdateProfile(const UpdateProfileRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateProfileOutcome(UpdateProfileResult(outcome.GetResult()));
@@ -3387,7 +3387,7 @@ UpdateRoomOutcome AlexaForBusinessClient::UpdateRoom(const UpdateRoomRequest& re
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateRoomOutcome(UpdateRoomResult(outcome.GetResult()));
@@ -3422,7 +3422,7 @@ UpdateSkillGroupOutcome AlexaForBusinessClient::UpdateSkillGroup(const UpdateSki
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateSkillGroupOutcome(UpdateSkillGroupResult(outcome.GetResult()));

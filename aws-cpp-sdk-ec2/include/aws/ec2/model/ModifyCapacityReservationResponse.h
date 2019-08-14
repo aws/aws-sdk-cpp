@@ -43,17 +43,20 @@ namespace Model
 
 
     /**
-     * <p>Information about the Capacity Reservation.</p>
+     * <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an
+     * error.</p>
      */
     inline bool GetReturn() const{ return m_return; }
 
     /**
-     * <p>Information about the Capacity Reservation.</p>
+     * <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an
+     * error.</p>
      */
     inline void SetReturn(bool value) { m_return = value; }
 
     /**
-     * <p>Information about the Capacity Reservation.</p>
+     * <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an
+     * error.</p>
      */
     inline ModifyCapacityReservationResponse& WithReturn(bool value) { SetReturn(value); return *this;}
 

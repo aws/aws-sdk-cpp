@@ -182,7 +182,7 @@ Aws::String SESClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebS
   ss << "?" << requestToConvert.SerializePayload();
 
   URI uri(ss.str());
-  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+  return GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region, 3600);
 }
 
 CloneReceiptRuleSetOutcome SESClient::CloneReceiptRuleSet(const CloneReceiptRuleSetRequest& request) const
@@ -191,7 +191,7 @@ CloneReceiptRuleSetOutcome SESClient::CloneReceiptRuleSet(const CloneReceiptRule
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CloneReceiptRuleSetOutcome(CloneReceiptRuleSetResult(outcome.GetResult()));
@@ -226,7 +226,7 @@ CreateConfigurationSetOutcome SESClient::CreateConfigurationSet(const CreateConf
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateConfigurationSetOutcome(CreateConfigurationSetResult(outcome.GetResult()));
@@ -261,7 +261,7 @@ CreateConfigurationSetEventDestinationOutcome SESClient::CreateConfigurationSetE
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateConfigurationSetEventDestinationOutcome(CreateConfigurationSetEventDestinationResult(outcome.GetResult()));
@@ -296,7 +296,7 @@ CreateConfigurationSetTrackingOptionsOutcome SESClient::CreateConfigurationSetTr
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateConfigurationSetTrackingOptionsOutcome(CreateConfigurationSetTrackingOptionsResult(outcome.GetResult()));
@@ -331,7 +331,7 @@ CreateCustomVerificationEmailTemplateOutcome SESClient::CreateCustomVerification
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateCustomVerificationEmailTemplateOutcome(NoResult());
@@ -366,7 +366,7 @@ CreateReceiptFilterOutcome SESClient::CreateReceiptFilter(const CreateReceiptFil
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateReceiptFilterOutcome(CreateReceiptFilterResult(outcome.GetResult()));
@@ -401,7 +401,7 @@ CreateReceiptRuleOutcome SESClient::CreateReceiptRule(const CreateReceiptRuleReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateReceiptRuleOutcome(CreateReceiptRuleResult(outcome.GetResult()));
@@ -436,7 +436,7 @@ CreateReceiptRuleSetOutcome SESClient::CreateReceiptRuleSet(const CreateReceiptR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateReceiptRuleSetOutcome(CreateReceiptRuleSetResult(outcome.GetResult()));
@@ -471,7 +471,7 @@ CreateTemplateOutcome SESClient::CreateTemplate(const CreateTemplateRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateTemplateOutcome(CreateTemplateResult(outcome.GetResult()));
@@ -506,7 +506,7 @@ DeleteConfigurationSetOutcome SESClient::DeleteConfigurationSet(const DeleteConf
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteConfigurationSetOutcome(DeleteConfigurationSetResult(outcome.GetResult()));
@@ -541,7 +541,7 @@ DeleteConfigurationSetEventDestinationOutcome SESClient::DeleteConfigurationSetE
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteConfigurationSetEventDestinationOutcome(DeleteConfigurationSetEventDestinationResult(outcome.GetResult()));
@@ -576,7 +576,7 @@ DeleteConfigurationSetTrackingOptionsOutcome SESClient::DeleteConfigurationSetTr
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteConfigurationSetTrackingOptionsOutcome(DeleteConfigurationSetTrackingOptionsResult(outcome.GetResult()));
@@ -611,7 +611,7 @@ DeleteCustomVerificationEmailTemplateOutcome SESClient::DeleteCustomVerification
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteCustomVerificationEmailTemplateOutcome(NoResult());
@@ -646,7 +646,7 @@ DeleteIdentityOutcome SESClient::DeleteIdentity(const DeleteIdentityRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteIdentityOutcome(DeleteIdentityResult(outcome.GetResult()));
@@ -681,7 +681,7 @@ DeleteIdentityPolicyOutcome SESClient::DeleteIdentityPolicy(const DeleteIdentity
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteIdentityPolicyOutcome(DeleteIdentityPolicyResult(outcome.GetResult()));
@@ -716,7 +716,7 @@ DeleteReceiptFilterOutcome SESClient::DeleteReceiptFilter(const DeleteReceiptFil
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteReceiptFilterOutcome(DeleteReceiptFilterResult(outcome.GetResult()));
@@ -751,7 +751,7 @@ DeleteReceiptRuleOutcome SESClient::DeleteReceiptRule(const DeleteReceiptRuleReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteReceiptRuleOutcome(DeleteReceiptRuleResult(outcome.GetResult()));
@@ -786,7 +786,7 @@ DeleteReceiptRuleSetOutcome SESClient::DeleteReceiptRuleSet(const DeleteReceiptR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteReceiptRuleSetOutcome(DeleteReceiptRuleSetResult(outcome.GetResult()));
@@ -821,7 +821,7 @@ DeleteTemplateOutcome SESClient::DeleteTemplate(const DeleteTemplateRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteTemplateOutcome(DeleteTemplateResult(outcome.GetResult()));
@@ -856,7 +856,7 @@ DeleteVerifiedEmailAddressOutcome SESClient::DeleteVerifiedEmailAddress(const De
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteVerifiedEmailAddressOutcome(NoResult());
@@ -891,7 +891,7 @@ DescribeActiveReceiptRuleSetOutcome SESClient::DescribeActiveReceiptRuleSet(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeActiveReceiptRuleSetOutcome(DescribeActiveReceiptRuleSetResult(outcome.GetResult()));
@@ -926,7 +926,7 @@ DescribeConfigurationSetOutcome SESClient::DescribeConfigurationSet(const Descri
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeConfigurationSetOutcome(DescribeConfigurationSetResult(outcome.GetResult()));
@@ -961,7 +961,7 @@ DescribeReceiptRuleOutcome SESClient::DescribeReceiptRule(const DescribeReceiptR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeReceiptRuleOutcome(DescribeReceiptRuleResult(outcome.GetResult()));
@@ -996,7 +996,7 @@ DescribeReceiptRuleSetOutcome SESClient::DescribeReceiptRuleSet(const DescribeRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeReceiptRuleSetOutcome(DescribeReceiptRuleSetResult(outcome.GetResult()));
@@ -1031,7 +1031,7 @@ GetAccountSendingEnabledOutcome SESClient::GetAccountSendingEnabled(const GetAcc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetAccountSendingEnabledOutcome(GetAccountSendingEnabledResult(outcome.GetResult()));
@@ -1066,7 +1066,7 @@ GetCustomVerificationEmailTemplateOutcome SESClient::GetCustomVerificationEmailT
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetCustomVerificationEmailTemplateOutcome(GetCustomVerificationEmailTemplateResult(outcome.GetResult()));
@@ -1101,7 +1101,7 @@ GetIdentityDkimAttributesOutcome SESClient::GetIdentityDkimAttributes(const GetI
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetIdentityDkimAttributesOutcome(GetIdentityDkimAttributesResult(outcome.GetResult()));
@@ -1136,7 +1136,7 @@ GetIdentityMailFromDomainAttributesOutcome SESClient::GetIdentityMailFromDomainA
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetIdentityMailFromDomainAttributesOutcome(GetIdentityMailFromDomainAttributesResult(outcome.GetResult()));
@@ -1171,7 +1171,7 @@ GetIdentityNotificationAttributesOutcome SESClient::GetIdentityNotificationAttri
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetIdentityNotificationAttributesOutcome(GetIdentityNotificationAttributesResult(outcome.GetResult()));
@@ -1206,7 +1206,7 @@ GetIdentityPoliciesOutcome SESClient::GetIdentityPolicies(const GetIdentityPolic
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetIdentityPoliciesOutcome(GetIdentityPoliciesResult(outcome.GetResult()));
@@ -1241,7 +1241,7 @@ GetIdentityVerificationAttributesOutcome SESClient::GetIdentityVerificationAttri
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetIdentityVerificationAttributesOutcome(GetIdentityVerificationAttributesResult(outcome.GetResult()));
@@ -1276,7 +1276,7 @@ GetSendQuotaOutcome SESClient::GetSendQuota(const GetSendQuotaRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetSendQuotaOutcome(GetSendQuotaResult(outcome.GetResult()));
@@ -1311,7 +1311,7 @@ GetSendStatisticsOutcome SESClient::GetSendStatistics(const GetSendStatisticsReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetSendStatisticsOutcome(GetSendStatisticsResult(outcome.GetResult()));
@@ -1346,7 +1346,7 @@ GetTemplateOutcome SESClient::GetTemplate(const GetTemplateRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetTemplateOutcome(GetTemplateResult(outcome.GetResult()));
@@ -1381,7 +1381,7 @@ ListConfigurationSetsOutcome SESClient::ListConfigurationSets(const ListConfigur
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListConfigurationSetsOutcome(ListConfigurationSetsResult(outcome.GetResult()));
@@ -1416,7 +1416,7 @@ ListCustomVerificationEmailTemplatesOutcome SESClient::ListCustomVerificationEma
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListCustomVerificationEmailTemplatesOutcome(ListCustomVerificationEmailTemplatesResult(outcome.GetResult()));
@@ -1451,7 +1451,7 @@ ListIdentitiesOutcome SESClient::ListIdentities(const ListIdentitiesRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListIdentitiesOutcome(ListIdentitiesResult(outcome.GetResult()));
@@ -1486,7 +1486,7 @@ ListIdentityPoliciesOutcome SESClient::ListIdentityPolicies(const ListIdentityPo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListIdentityPoliciesOutcome(ListIdentityPoliciesResult(outcome.GetResult()));
@@ -1521,7 +1521,7 @@ ListReceiptFiltersOutcome SESClient::ListReceiptFilters(const ListReceiptFilters
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListReceiptFiltersOutcome(ListReceiptFiltersResult(outcome.GetResult()));
@@ -1556,7 +1556,7 @@ ListReceiptRuleSetsOutcome SESClient::ListReceiptRuleSets(const ListReceiptRuleS
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListReceiptRuleSetsOutcome(ListReceiptRuleSetsResult(outcome.GetResult()));
@@ -1591,7 +1591,7 @@ ListTemplatesOutcome SESClient::ListTemplates(const ListTemplatesRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListTemplatesOutcome(ListTemplatesResult(outcome.GetResult()));
@@ -1626,7 +1626,7 @@ ListVerifiedEmailAddressesOutcome SESClient::ListVerifiedEmailAddresses(const Li
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListVerifiedEmailAddressesOutcome(ListVerifiedEmailAddressesResult(outcome.GetResult()));
@@ -1661,7 +1661,7 @@ PutConfigurationSetDeliveryOptionsOutcome SESClient::PutConfigurationSetDelivery
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PutConfigurationSetDeliveryOptionsOutcome(PutConfigurationSetDeliveryOptionsResult(outcome.GetResult()));
@@ -1696,7 +1696,7 @@ PutIdentityPolicyOutcome SESClient::PutIdentityPolicy(const PutIdentityPolicyReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PutIdentityPolicyOutcome(PutIdentityPolicyResult(outcome.GetResult()));
@@ -1731,7 +1731,7 @@ ReorderReceiptRuleSetOutcome SESClient::ReorderReceiptRuleSet(const ReorderRecei
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ReorderReceiptRuleSetOutcome(ReorderReceiptRuleSetResult(outcome.GetResult()));
@@ -1766,7 +1766,7 @@ SendBounceOutcome SESClient::SendBounce(const SendBounceRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SendBounceOutcome(SendBounceResult(outcome.GetResult()));
@@ -1801,7 +1801,7 @@ SendBulkTemplatedEmailOutcome SESClient::SendBulkTemplatedEmail(const SendBulkTe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SendBulkTemplatedEmailOutcome(SendBulkTemplatedEmailResult(outcome.GetResult()));
@@ -1836,7 +1836,7 @@ SendCustomVerificationEmailOutcome SESClient::SendCustomVerificationEmail(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SendCustomVerificationEmailOutcome(SendCustomVerificationEmailResult(outcome.GetResult()));
@@ -1871,7 +1871,7 @@ SendEmailOutcome SESClient::SendEmail(const SendEmailRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SendEmailOutcome(SendEmailResult(outcome.GetResult()));
@@ -1906,7 +1906,7 @@ SendRawEmailOutcome SESClient::SendRawEmail(const SendRawEmailRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SendRawEmailOutcome(SendRawEmailResult(outcome.GetResult()));
@@ -1941,7 +1941,7 @@ SendTemplatedEmailOutcome SESClient::SendTemplatedEmail(const SendTemplatedEmail
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SendTemplatedEmailOutcome(SendTemplatedEmailResult(outcome.GetResult()));
@@ -1976,7 +1976,7 @@ SetActiveReceiptRuleSetOutcome SESClient::SetActiveReceiptRuleSet(const SetActiv
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetActiveReceiptRuleSetOutcome(SetActiveReceiptRuleSetResult(outcome.GetResult()));
@@ -2011,7 +2011,7 @@ SetIdentityDkimEnabledOutcome SESClient::SetIdentityDkimEnabled(const SetIdentit
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetIdentityDkimEnabledOutcome(SetIdentityDkimEnabledResult(outcome.GetResult()));
@@ -2046,7 +2046,7 @@ SetIdentityFeedbackForwardingEnabledOutcome SESClient::SetIdentityFeedbackForwar
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetIdentityFeedbackForwardingEnabledOutcome(SetIdentityFeedbackForwardingEnabledResult(outcome.GetResult()));
@@ -2081,7 +2081,7 @@ SetIdentityHeadersInNotificationsEnabledOutcome SESClient::SetIdentityHeadersInN
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetIdentityHeadersInNotificationsEnabledOutcome(SetIdentityHeadersInNotificationsEnabledResult(outcome.GetResult()));
@@ -2116,7 +2116,7 @@ SetIdentityMailFromDomainOutcome SESClient::SetIdentityMailFromDomain(const SetI
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetIdentityMailFromDomainOutcome(SetIdentityMailFromDomainResult(outcome.GetResult()));
@@ -2151,7 +2151,7 @@ SetIdentityNotificationTopicOutcome SESClient::SetIdentityNotificationTopic(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetIdentityNotificationTopicOutcome(SetIdentityNotificationTopicResult(outcome.GetResult()));
@@ -2186,7 +2186,7 @@ SetReceiptRulePositionOutcome SESClient::SetReceiptRulePosition(const SetReceipt
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetReceiptRulePositionOutcome(SetReceiptRulePositionResult(outcome.GetResult()));
@@ -2221,7 +2221,7 @@ TestRenderTemplateOutcome SESClient::TestRenderTemplate(const TestRenderTemplate
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return TestRenderTemplateOutcome(TestRenderTemplateResult(outcome.GetResult()));
@@ -2256,7 +2256,7 @@ UpdateAccountSendingEnabledOutcome SESClient::UpdateAccountSendingEnabled(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateAccountSendingEnabledOutcome(NoResult());
@@ -2291,7 +2291,7 @@ UpdateConfigurationSetEventDestinationOutcome SESClient::UpdateConfigurationSetE
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateConfigurationSetEventDestinationOutcome(UpdateConfigurationSetEventDestinationResult(outcome.GetResult()));
@@ -2326,7 +2326,7 @@ UpdateConfigurationSetReputationMetricsEnabledOutcome SESClient::UpdateConfigura
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateConfigurationSetReputationMetricsEnabledOutcome(NoResult());
@@ -2361,7 +2361,7 @@ UpdateConfigurationSetSendingEnabledOutcome SESClient::UpdateConfigurationSetSen
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateConfigurationSetSendingEnabledOutcome(NoResult());
@@ -2396,7 +2396,7 @@ UpdateConfigurationSetTrackingOptionsOutcome SESClient::UpdateConfigurationSetTr
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateConfigurationSetTrackingOptionsOutcome(UpdateConfigurationSetTrackingOptionsResult(outcome.GetResult()));
@@ -2431,7 +2431,7 @@ UpdateCustomVerificationEmailTemplateOutcome SESClient::UpdateCustomVerification
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateCustomVerificationEmailTemplateOutcome(NoResult());
@@ -2466,7 +2466,7 @@ UpdateReceiptRuleOutcome SESClient::UpdateReceiptRule(const UpdateReceiptRuleReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateReceiptRuleOutcome(UpdateReceiptRuleResult(outcome.GetResult()));
@@ -2501,7 +2501,7 @@ UpdateTemplateOutcome SESClient::UpdateTemplate(const UpdateTemplateRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateTemplateOutcome(UpdateTemplateResult(outcome.GetResult()));
@@ -2536,7 +2536,7 @@ VerifyDomainDkimOutcome SESClient::VerifyDomainDkim(const VerifyDomainDkimReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return VerifyDomainDkimOutcome(VerifyDomainDkimResult(outcome.GetResult()));
@@ -2571,7 +2571,7 @@ VerifyDomainIdentityOutcome SESClient::VerifyDomainIdentity(const VerifyDomainId
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return VerifyDomainIdentityOutcome(VerifyDomainIdentityResult(outcome.GetResult()));
@@ -2606,7 +2606,7 @@ VerifyEmailAddressOutcome SESClient::VerifyEmailAddress(const VerifyEmailAddress
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return VerifyEmailAddressOutcome(NoResult());
@@ -2641,7 +2641,7 @@ VerifyEmailIdentityOutcome SESClient::VerifyEmailIdentity(const VerifyEmailIdent
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return VerifyEmailIdentityOutcome(VerifyEmailIdentityResult(outcome.GetResult()));

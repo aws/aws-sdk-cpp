@@ -137,7 +137,7 @@ CreateMeshOutcome AppMeshClient::CreateMesh(const CreateMeshRequest& request) co
   Aws::StringStream ss;
   ss << "/v20190125/meshes";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateMeshOutcome(CreateMeshResult(outcome.GetResult()));
@@ -186,7 +186,7 @@ CreateRouteOutcome AppMeshClient::CreateRoute(const CreateRouteRequest& request)
   ss << request.GetVirtualRouterName();
   ss << "/routes";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateRouteOutcome(CreateRouteResult(outcome.GetResult()));
@@ -228,7 +228,7 @@ CreateVirtualNodeOutcome AppMeshClient::CreateVirtualNode(const CreateVirtualNod
   ss << request.GetMeshName();
   ss << "/virtualNodes";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateVirtualNodeOutcome(CreateVirtualNodeResult(outcome.GetResult()));
@@ -270,7 +270,7 @@ CreateVirtualRouterOutcome AppMeshClient::CreateVirtualRouter(const CreateVirtua
   ss << request.GetMeshName();
   ss << "/virtualRouters";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateVirtualRouterOutcome(CreateVirtualRouterResult(outcome.GetResult()));
@@ -312,7 +312,7 @@ CreateVirtualServiceOutcome AppMeshClient::CreateVirtualService(const CreateVirt
   ss << request.GetMeshName();
   ss << "/virtualServices";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateVirtualServiceOutcome(CreateVirtualServiceResult(outcome.GetResult()));
@@ -353,7 +353,7 @@ DeleteMeshOutcome AppMeshClient::DeleteMesh(const DeleteMeshRequest& request) co
   ss << "/v20190125/meshes/";
   ss << request.GetMeshName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteMeshOutcome(DeleteMeshResult(outcome.GetResult()));
@@ -408,7 +408,7 @@ DeleteRouteOutcome AppMeshClient::DeleteRoute(const DeleteRouteRequest& request)
   ss << "/routes/";
   ss << request.GetRouteName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteRouteOutcome(DeleteRouteResult(outcome.GetResult()));
@@ -456,7 +456,7 @@ DeleteVirtualNodeOutcome AppMeshClient::DeleteVirtualNode(const DeleteVirtualNod
   ss << "/virtualNodes/";
   ss << request.GetVirtualNodeName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteVirtualNodeOutcome(DeleteVirtualNodeResult(outcome.GetResult()));
@@ -504,7 +504,7 @@ DeleteVirtualRouterOutcome AppMeshClient::DeleteVirtualRouter(const DeleteVirtua
   ss << "/virtualRouters/";
   ss << request.GetVirtualRouterName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteVirtualRouterOutcome(DeleteVirtualRouterResult(outcome.GetResult()));
@@ -552,7 +552,7 @@ DeleteVirtualServiceOutcome AppMeshClient::DeleteVirtualService(const DeleteVirt
   ss << "/virtualServices/";
   ss << request.GetVirtualServiceName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteVirtualServiceOutcome(DeleteVirtualServiceResult(outcome.GetResult()));
@@ -593,7 +593,7 @@ DescribeMeshOutcome AppMeshClient::DescribeMesh(const DescribeMeshRequest& reque
   ss << "/v20190125/meshes/";
   ss << request.GetMeshName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeMeshOutcome(DescribeMeshResult(outcome.GetResult()));
@@ -648,7 +648,7 @@ DescribeRouteOutcome AppMeshClient::DescribeRoute(const DescribeRouteRequest& re
   ss << "/routes/";
   ss << request.GetRouteName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeRouteOutcome(DescribeRouteResult(outcome.GetResult()));
@@ -696,7 +696,7 @@ DescribeVirtualNodeOutcome AppMeshClient::DescribeVirtualNode(const DescribeVirt
   ss << "/virtualNodes/";
   ss << request.GetVirtualNodeName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeVirtualNodeOutcome(DescribeVirtualNodeResult(outcome.GetResult()));
@@ -744,7 +744,7 @@ DescribeVirtualRouterOutcome AppMeshClient::DescribeVirtualRouter(const Describe
   ss << "/virtualRouters/";
   ss << request.GetVirtualRouterName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeVirtualRouterOutcome(DescribeVirtualRouterResult(outcome.GetResult()));
@@ -792,7 +792,7 @@ DescribeVirtualServiceOutcome AppMeshClient::DescribeVirtualService(const Descri
   ss << "/virtualServices/";
   ss << request.GetVirtualServiceName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeVirtualServiceOutcome(DescribeVirtualServiceResult(outcome.GetResult()));
@@ -827,7 +827,7 @@ ListMeshesOutcome AppMeshClient::ListMeshes(const ListMeshesRequest& request) co
   Aws::StringStream ss;
   ss << "/v20190125/meshes";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListMeshesOutcome(ListMeshesResult(outcome.GetResult()));
@@ -876,7 +876,7 @@ ListRoutesOutcome AppMeshClient::ListRoutes(const ListRoutesRequest& request) co
   ss << request.GetVirtualRouterName();
   ss << "/routes";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListRoutesOutcome(ListRoutesResult(outcome.GetResult()));
@@ -916,7 +916,7 @@ ListTagsForResourceOutcome AppMeshClient::ListTagsForResource(const ListTagsForR
   Aws::StringStream ss;
   ss << "/v20190125/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
@@ -958,7 +958,7 @@ ListVirtualNodesOutcome AppMeshClient::ListVirtualNodes(const ListVirtualNodesRe
   ss << request.GetMeshName();
   ss << "/virtualNodes";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListVirtualNodesOutcome(ListVirtualNodesResult(outcome.GetResult()));
@@ -1000,7 +1000,7 @@ ListVirtualRoutersOutcome AppMeshClient::ListVirtualRouters(const ListVirtualRou
   ss << request.GetMeshName();
   ss << "/virtualRouters";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListVirtualRoutersOutcome(ListVirtualRoutersResult(outcome.GetResult()));
@@ -1042,7 +1042,7 @@ ListVirtualServicesOutcome AppMeshClient::ListVirtualServices(const ListVirtualS
   ss << request.GetMeshName();
   ss << "/virtualServices";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListVirtualServicesOutcome(ListVirtualServicesResult(outcome.GetResult()));
@@ -1082,7 +1082,7 @@ TagResourceOutcome AppMeshClient::TagResource(const TagResourceRequest& request)
   Aws::StringStream ss;
   ss << "/v20190125/tag";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
@@ -1122,7 +1122,7 @@ UntagResourceOutcome AppMeshClient::UntagResource(const UntagResourceRequest& re
   Aws::StringStream ss;
   ss << "/v20190125/untag";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
@@ -1163,7 +1163,7 @@ UpdateMeshOutcome AppMeshClient::UpdateMesh(const UpdateMeshRequest& request) co
   ss << "/v20190125/meshes/";
   ss << request.GetMeshName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateMeshOutcome(UpdateMeshResult(outcome.GetResult()));
@@ -1218,7 +1218,7 @@ UpdateRouteOutcome AppMeshClient::UpdateRoute(const UpdateRouteRequest& request)
   ss << "/routes/";
   ss << request.GetRouteName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateRouteOutcome(UpdateRouteResult(outcome.GetResult()));
@@ -1266,7 +1266,7 @@ UpdateVirtualNodeOutcome AppMeshClient::UpdateVirtualNode(const UpdateVirtualNod
   ss << "/virtualNodes/";
   ss << request.GetVirtualNodeName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateVirtualNodeOutcome(UpdateVirtualNodeResult(outcome.GetResult()));
@@ -1314,7 +1314,7 @@ UpdateVirtualRouterOutcome AppMeshClient::UpdateVirtualRouter(const UpdateVirtua
   ss << "/virtualRouters/";
   ss << request.GetVirtualRouterName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateVirtualRouterOutcome(UpdateVirtualRouterResult(outcome.GetResult()));
@@ -1362,7 +1362,7 @@ UpdateVirtualServiceOutcome AppMeshClient::UpdateVirtualService(const UpdateVirt
   ss << "/virtualServices/";
   ss << request.GetVirtualServiceName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateVirtualServiceOutcome(UpdateVirtualServiceResult(outcome.GetResult()));

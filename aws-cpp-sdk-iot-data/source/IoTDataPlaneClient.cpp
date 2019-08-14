@@ -120,7 +120,7 @@ DeleteThingShadowOutcome IoTDataPlaneClient::DeleteThingShadow(const DeleteThing
   ss << request.GetThingName();
   ss << "/shadow";
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_DELETE);
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteThingShadowOutcome(DeleteThingShadowResult(outcome.GetResultWithOwnership()));
@@ -162,7 +162,7 @@ GetThingShadowOutcome IoTDataPlaneClient::GetThingShadow(const GetThingShadowReq
   ss << request.GetThingName();
   ss << "/shadow";
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_GET);
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetThingShadowOutcome(GetThingShadowResult(outcome.GetResultWithOwnership()));
@@ -203,7 +203,7 @@ PublishOutcome IoTDataPlaneClient::Publish(const PublishRequest& request) const
   ss << "/topics/";
   ss << request.GetTopic();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PublishOutcome(NoResult());
@@ -245,7 +245,7 @@ UpdateThingShadowOutcome IoTDataPlaneClient::UpdateThingShadow(const UpdateThing
   ss << request.GetThingName();
   ss << "/shadow";
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_POST);
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateThingShadowOutcome(UpdateThingShadowResult(outcome.GetResultWithOwnership()));

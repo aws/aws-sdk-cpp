@@ -124,7 +124,7 @@ CancelSigningProfileOutcome SignerClient::CancelSigningProfile(const CancelSigni
   ss << "/signing-profiles/";
   ss << request.GetProfileName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CancelSigningProfileOutcome(NoResult());
@@ -165,7 +165,7 @@ DescribeSigningJobOutcome SignerClient::DescribeSigningJob(const DescribeSigning
   ss << "/signing-jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeSigningJobOutcome(DescribeSigningJobResult(outcome.GetResult()));
@@ -206,7 +206,7 @@ GetSigningPlatformOutcome SignerClient::GetSigningPlatform(const GetSigningPlatf
   ss << "/signing-platforms/";
   ss << request.GetPlatformId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetSigningPlatformOutcome(GetSigningPlatformResult(outcome.GetResult()));
@@ -247,7 +247,7 @@ GetSigningProfileOutcome SignerClient::GetSigningProfile(const GetSigningProfile
   ss << "/signing-profiles/";
   ss << request.GetProfileName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetSigningProfileOutcome(GetSigningProfileResult(outcome.GetResult()));
@@ -282,7 +282,7 @@ ListSigningJobsOutcome SignerClient::ListSigningJobs(const ListSigningJobsReques
   Aws::StringStream ss;
   ss << "/signing-jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListSigningJobsOutcome(ListSigningJobsResult(outcome.GetResult()));
@@ -317,7 +317,7 @@ ListSigningPlatformsOutcome SignerClient::ListSigningPlatforms(const ListSigning
   Aws::StringStream ss;
   ss << "/signing-platforms";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListSigningPlatformsOutcome(ListSigningPlatformsResult(outcome.GetResult()));
@@ -352,7 +352,7 @@ ListSigningProfilesOutcome SignerClient::ListSigningProfiles(const ListSigningPr
   Aws::StringStream ss;
   ss << "/signing-profiles";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListSigningProfilesOutcome(ListSigningProfilesResult(outcome.GetResult()));
@@ -393,7 +393,7 @@ PutSigningProfileOutcome SignerClient::PutSigningProfile(const PutSigningProfile
   ss << "/signing-profiles/";
   ss << request.GetProfileName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutSigningProfileOutcome(PutSigningProfileResult(outcome.GetResult()));
@@ -428,7 +428,7 @@ StartSigningJobOutcome SignerClient::StartSigningJob(const StartSigningJobReques
   Aws::StringStream ss;
   ss << "/signing-jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StartSigningJobOutcome(StartSigningJobResult(outcome.GetResult()));

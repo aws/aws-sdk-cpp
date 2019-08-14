@@ -125,7 +125,7 @@ CancelJobOutcome BatchClient::CancelJob(const CancelJobRequest& request) const
   Aws::StringStream ss;
   ss << "/v1/canceljob";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CancelJobOutcome(CancelJobResult(outcome.GetResult()));
@@ -160,7 +160,7 @@ CreateComputeEnvironmentOutcome BatchClient::CreateComputeEnvironment(const Crea
   Aws::StringStream ss;
   ss << "/v1/createcomputeenvironment";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateComputeEnvironmentOutcome(CreateComputeEnvironmentResult(outcome.GetResult()));
@@ -195,7 +195,7 @@ CreateJobQueueOutcome BatchClient::CreateJobQueue(const CreateJobQueueRequest& r
   Aws::StringStream ss;
   ss << "/v1/createjobqueue";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateJobQueueOutcome(CreateJobQueueResult(outcome.GetResult()));
@@ -230,7 +230,7 @@ DeleteComputeEnvironmentOutcome BatchClient::DeleteComputeEnvironment(const Dele
   Aws::StringStream ss;
   ss << "/v1/deletecomputeenvironment";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteComputeEnvironmentOutcome(DeleteComputeEnvironmentResult(outcome.GetResult()));
@@ -265,7 +265,7 @@ DeleteJobQueueOutcome BatchClient::DeleteJobQueue(const DeleteJobQueueRequest& r
   Aws::StringStream ss;
   ss << "/v1/deletejobqueue";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteJobQueueOutcome(DeleteJobQueueResult(outcome.GetResult()));
@@ -300,7 +300,7 @@ DeregisterJobDefinitionOutcome BatchClient::DeregisterJobDefinition(const Deregi
   Aws::StringStream ss;
   ss << "/v1/deregisterjobdefinition";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeregisterJobDefinitionOutcome(DeregisterJobDefinitionResult(outcome.GetResult()));
@@ -335,7 +335,7 @@ DescribeComputeEnvironmentsOutcome BatchClient::DescribeComputeEnvironments(cons
   Aws::StringStream ss;
   ss << "/v1/describecomputeenvironments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeComputeEnvironmentsOutcome(DescribeComputeEnvironmentsResult(outcome.GetResult()));
@@ -370,7 +370,7 @@ DescribeJobDefinitionsOutcome BatchClient::DescribeJobDefinitions(const Describe
   Aws::StringStream ss;
   ss << "/v1/describejobdefinitions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeJobDefinitionsOutcome(DescribeJobDefinitionsResult(outcome.GetResult()));
@@ -405,7 +405,7 @@ DescribeJobQueuesOutcome BatchClient::DescribeJobQueues(const DescribeJobQueuesR
   Aws::StringStream ss;
   ss << "/v1/describejobqueues";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeJobQueuesOutcome(DescribeJobQueuesResult(outcome.GetResult()));
@@ -440,7 +440,7 @@ DescribeJobsOutcome BatchClient::DescribeJobs(const DescribeJobsRequest& request
   Aws::StringStream ss;
   ss << "/v1/describejobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeJobsOutcome(DescribeJobsResult(outcome.GetResult()));
@@ -475,7 +475,7 @@ ListJobsOutcome BatchClient::ListJobs(const ListJobsRequest& request) const
   Aws::StringStream ss;
   ss << "/v1/listjobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListJobsOutcome(ListJobsResult(outcome.GetResult()));
@@ -510,7 +510,7 @@ RegisterJobDefinitionOutcome BatchClient::RegisterJobDefinition(const RegisterJo
   Aws::StringStream ss;
   ss << "/v1/registerjobdefinition";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RegisterJobDefinitionOutcome(RegisterJobDefinitionResult(outcome.GetResult()));
@@ -545,7 +545,7 @@ SubmitJobOutcome BatchClient::SubmitJob(const SubmitJobRequest& request) const
   Aws::StringStream ss;
   ss << "/v1/submitjob";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SubmitJobOutcome(SubmitJobResult(outcome.GetResult()));
@@ -580,7 +580,7 @@ TerminateJobOutcome BatchClient::TerminateJob(const TerminateJobRequest& request
   Aws::StringStream ss;
   ss << "/v1/terminatejob";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return TerminateJobOutcome(TerminateJobResult(outcome.GetResult()));
@@ -615,7 +615,7 @@ UpdateComputeEnvironmentOutcome BatchClient::UpdateComputeEnvironment(const Upda
   Aws::StringStream ss;
   ss << "/v1/updatecomputeenvironment";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateComputeEnvironmentOutcome(UpdateComputeEnvironmentResult(outcome.GetResult()));
@@ -650,7 +650,7 @@ UpdateJobQueueOutcome BatchClient::UpdateJobQueue(const UpdateJobQueueRequest& r
   Aws::StringStream ss;
   ss << "/v1/updatejobqueue";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateJobQueueOutcome(UpdateJobQueueResult(outcome.GetResult()));

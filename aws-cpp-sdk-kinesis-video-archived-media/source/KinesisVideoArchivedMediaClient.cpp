@@ -113,7 +113,7 @@ GetDASHStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetDASHStream
   Aws::StringStream ss;
   ss << "/getDASHStreamingSessionURL";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDASHStreamingSessionURLOutcome(GetDASHStreamingSessionURLResult(outcome.GetResult()));
@@ -148,7 +148,7 @@ GetHLSStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetHLSStreamin
   Aws::StringStream ss;
   ss << "/getHLSStreamingSessionURL";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetHLSStreamingSessionURLOutcome(GetHLSStreamingSessionURLResult(outcome.GetResult()));
@@ -183,7 +183,7 @@ GetMediaForFragmentListOutcome KinesisVideoArchivedMediaClient::GetMediaForFragm
   Aws::StringStream ss;
   ss << "/getMediaForFragmentList";
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_POST);
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetMediaForFragmentListOutcome(GetMediaForFragmentListResult(outcome.GetResultWithOwnership()));
@@ -218,7 +218,7 @@ ListFragmentsOutcome KinesisVideoArchivedMediaClient::ListFragments(const ListFr
   Aws::StringStream ss;
   ss << "/listFragments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListFragmentsOutcome(ListFragmentsResult(outcome.GetResult()));

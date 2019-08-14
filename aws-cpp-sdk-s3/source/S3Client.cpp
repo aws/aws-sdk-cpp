@@ -218,7 +218,7 @@ AbortMultipartUploadOutcome S3Client::AbortMultipartUpload(const AbortMultipartU
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return AbortMultipartUploadOutcome(AbortMultipartUploadResult(outcome.GetResult()));
@@ -269,7 +269,7 @@ CompleteMultipartUploadOutcome S3Client::CompleteMultipartUpload(const CompleteM
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CompleteMultipartUploadOutcome(CompleteMultipartUploadResult(outcome.GetResult()));
@@ -320,7 +320,7 @@ CopyObjectOutcome S3Client::CopyObject(const CopyObjectRequest& request) const
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return CopyObjectOutcome(CopyObjectResult(outcome.GetResult()));
@@ -361,7 +361,7 @@ CreateBucketOutcome S3Client::CreateBucket(const CreateBucketRequest& request) c
   ss << "/";
   ss << request.GetBucket();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return CreateBucketOutcome(CreateBucketResult(outcome.GetResult()));
@@ -409,7 +409,7 @@ CreateMultipartUploadOutcome S3Client::CreateMultipartUpload(const CreateMultipa
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?uploads");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateMultipartUploadOutcome(CreateMultipartUploadResult(outcome.GetResult()));
@@ -448,7 +448,7 @@ DeleteBucketOutcome S3Client::DeleteBucket(const DeleteBucketRequest& request) c
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteBucketOutcome(NoResult());
@@ -493,7 +493,7 @@ DeleteBucketAnalyticsConfigurationOutcome S3Client::DeleteBucketAnalyticsConfigu
   Aws::StringStream ss;
   ss.str("?analytics");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteBucketAnalyticsConfigurationOutcome(NoResult());
@@ -533,7 +533,7 @@ DeleteBucketCorsOutcome S3Client::DeleteBucketCors(const DeleteBucketCorsRequest
   Aws::StringStream ss;
   ss.str("?cors");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteBucketCorsOutcome(NoResult());
@@ -573,7 +573,7 @@ DeleteBucketEncryptionOutcome S3Client::DeleteBucketEncryption(const DeleteBucke
   Aws::StringStream ss;
   ss.str("?encryption");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteBucketEncryptionOutcome(NoResult());
@@ -618,7 +618,7 @@ DeleteBucketInventoryConfigurationOutcome S3Client::DeleteBucketInventoryConfigu
   Aws::StringStream ss;
   ss.str("?inventory");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteBucketInventoryConfigurationOutcome(NoResult());
@@ -658,7 +658,7 @@ DeleteBucketLifecycleOutcome S3Client::DeleteBucketLifecycle(const DeleteBucketL
   Aws::StringStream ss;
   ss.str("?lifecycle");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteBucketLifecycleOutcome(NoResult());
@@ -703,7 +703,7 @@ DeleteBucketMetricsConfigurationOutcome S3Client::DeleteBucketMetricsConfigurati
   Aws::StringStream ss;
   ss.str("?metrics");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteBucketMetricsConfigurationOutcome(NoResult());
@@ -743,7 +743,7 @@ DeleteBucketPolicyOutcome S3Client::DeleteBucketPolicy(const DeleteBucketPolicyR
   Aws::StringStream ss;
   ss.str("?policy");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteBucketPolicyOutcome(NoResult());
@@ -783,7 +783,7 @@ DeleteBucketReplicationOutcome S3Client::DeleteBucketReplication(const DeleteBuc
   Aws::StringStream ss;
   ss.str("?replication");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteBucketReplicationOutcome(NoResult());
@@ -823,7 +823,7 @@ DeleteBucketTaggingOutcome S3Client::DeleteBucketTagging(const DeleteBucketTaggi
   Aws::StringStream ss;
   ss.str("?tagging");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteBucketTaggingOutcome(NoResult());
@@ -863,7 +863,7 @@ DeleteBucketWebsiteOutcome S3Client::DeleteBucketWebsite(const DeleteBucketWebsi
   Aws::StringStream ss;
   ss.str("?website");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteBucketWebsiteOutcome(NoResult());
@@ -909,7 +909,7 @@ DeleteObjectOutcome S3Client::DeleteObject(const DeleteObjectRequest& request) c
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteObjectOutcome(DeleteObjectResult(outcome.GetResult()));
@@ -957,7 +957,7 @@ DeleteObjectTaggingOutcome S3Client::DeleteObjectTagging(const DeleteObjectTaggi
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?tagging");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeleteObjectTaggingOutcome(DeleteObjectTaggingResult(outcome.GetResult()));
@@ -997,7 +997,7 @@ DeleteObjectsOutcome S3Client::DeleteObjects(const DeleteObjectsRequest& request
   Aws::StringStream ss;
   ss.str("?delete");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteObjectsOutcome(DeleteObjectsResult(outcome.GetResult()));
@@ -1037,7 +1037,7 @@ DeletePublicAccessBlockOutcome S3Client::DeletePublicAccessBlock(const DeletePub
   Aws::StringStream ss;
   ss.str("?publicAccessBlock");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
   if(outcome.IsSuccess())
   {
     return DeletePublicAccessBlockOutcome(NoResult());
@@ -1077,7 +1077,7 @@ GetBucketAccelerateConfigurationOutcome S3Client::GetBucketAccelerateConfigurati
   Aws::StringStream ss;
   ss.str("?accelerate");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBucketAccelerateConfigurationOutcome(GetBucketAccelerateConfigurationResult(outcome.GetResult()));
@@ -1117,7 +1117,7 @@ GetBucketAclOutcome S3Client::GetBucketAcl(const GetBucketAclRequest& request) c
   Aws::StringStream ss;
   ss.str("?acl");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBucketAclOutcome(GetBucketAclResult(outcome.GetResult()));
@@ -1162,7 +1162,7 @@ GetBucketAnalyticsConfigurationOutcome S3Client::GetBucketAnalyticsConfiguration
   Aws::StringStream ss;
   ss.str("?analytics");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBucketAnalyticsConfigurationOutcome(GetBucketAnalyticsConfigurationResult(outcome.GetResult()));
@@ -1202,7 +1202,7 @@ GetBucketCorsOutcome S3Client::GetBucketCors(const GetBucketCorsRequest& request
   Aws::StringStream ss;
   ss.str("?cors");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBucketCorsOutcome(GetBucketCorsResult(outcome.GetResult()));
@@ -1242,7 +1242,7 @@ GetBucketEncryptionOutcome S3Client::GetBucketEncryption(const GetBucketEncrypti
   Aws::StringStream ss;
   ss.str("?encryption");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBucketEncryptionOutcome(GetBucketEncryptionResult(outcome.GetResult()));
@@ -1287,7 +1287,7 @@ GetBucketInventoryConfigurationOutcome S3Client::GetBucketInventoryConfiguration
   Aws::StringStream ss;
   ss.str("?inventory");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBucketInventoryConfigurationOutcome(GetBucketInventoryConfigurationResult(outcome.GetResult()));
@@ -1327,7 +1327,7 @@ GetBucketLifecycleConfigurationOutcome S3Client::GetBucketLifecycleConfiguration
   Aws::StringStream ss;
   ss.str("?lifecycle");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBucketLifecycleConfigurationOutcome(GetBucketLifecycleConfigurationResult(outcome.GetResult()));
@@ -1367,7 +1367,7 @@ GetBucketLocationOutcome S3Client::GetBucketLocation(const GetBucketLocationRequ
   Aws::StringStream ss;
   ss.str("?location");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBucketLocationOutcome(GetBucketLocationResult(outcome.GetResult()));
@@ -1407,7 +1407,7 @@ GetBucketLoggingOutcome S3Client::GetBucketLogging(const GetBucketLoggingRequest
   Aws::StringStream ss;
   ss.str("?logging");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBucketLoggingOutcome(GetBucketLoggingResult(outcome.GetResult()));
@@ -1452,7 +1452,7 @@ GetBucketMetricsConfigurationOutcome S3Client::GetBucketMetricsConfiguration(con
   Aws::StringStream ss;
   ss.str("?metrics");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBucketMetricsConfigurationOutcome(GetBucketMetricsConfigurationResult(outcome.GetResult()));
@@ -1492,7 +1492,7 @@ GetBucketNotificationConfigurationOutcome S3Client::GetBucketNotificationConfigu
   Aws::StringStream ss;
   ss.str("?notification");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBucketNotificationConfigurationOutcome(GetBucketNotificationConfigurationResult(outcome.GetResult()));
@@ -1532,7 +1532,7 @@ GetBucketPolicyOutcome S3Client::GetBucketPolicy(const GetBucketPolicyRequest& r
   Aws::StringStream ss;
   ss.str("?policy");
   uri.SetQueryString(ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_GET);
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBucketPolicyOutcome(GetBucketPolicyResult(outcome.GetResultWithOwnership()));
@@ -1572,7 +1572,7 @@ GetBucketPolicyStatusOutcome S3Client::GetBucketPolicyStatus(const GetBucketPoli
   Aws::StringStream ss;
   ss.str("?policyStatus");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBucketPolicyStatusOutcome(GetBucketPolicyStatusResult(outcome.GetResult()));
@@ -1612,7 +1612,7 @@ GetBucketReplicationOutcome S3Client::GetBucketReplication(const GetBucketReplic
   Aws::StringStream ss;
   ss.str("?replication");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBucketReplicationOutcome(GetBucketReplicationResult(outcome.GetResult()));
@@ -1652,7 +1652,7 @@ GetBucketRequestPaymentOutcome S3Client::GetBucketRequestPayment(const GetBucket
   Aws::StringStream ss;
   ss.str("?requestPayment");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBucketRequestPaymentOutcome(GetBucketRequestPaymentResult(outcome.GetResult()));
@@ -1692,7 +1692,7 @@ GetBucketTaggingOutcome S3Client::GetBucketTagging(const GetBucketTaggingRequest
   Aws::StringStream ss;
   ss.str("?tagging");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBucketTaggingOutcome(GetBucketTaggingResult(outcome.GetResult()));
@@ -1732,7 +1732,7 @@ GetBucketVersioningOutcome S3Client::GetBucketVersioning(const GetBucketVersioni
   Aws::StringStream ss;
   ss.str("?versioning");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBucketVersioningOutcome(GetBucketVersioningResult(outcome.GetResult()));
@@ -1772,7 +1772,7 @@ GetBucketWebsiteOutcome S3Client::GetBucketWebsite(const GetBucketWebsiteRequest
   Aws::StringStream ss;
   ss.str("?website");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetBucketWebsiteOutcome(GetBucketWebsiteResult(outcome.GetResult()));
@@ -1818,7 +1818,7 @@ GetObjectOutcome S3Client::GetObject(const GetObjectRequest& request) const
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_GET);
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetObjectOutcome(GetObjectResult(outcome.GetResultWithOwnership()));
@@ -1866,7 +1866,7 @@ GetObjectAclOutcome S3Client::GetObjectAcl(const GetObjectAclRequest& request) c
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?acl");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetObjectAclOutcome(GetObjectAclResult(outcome.GetResult()));
@@ -1914,7 +1914,7 @@ GetObjectLegalHoldOutcome S3Client::GetObjectLegalHold(const GetObjectLegalHoldR
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?legal-hold");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetObjectLegalHoldOutcome(GetObjectLegalHoldResult(outcome.GetResult()));
@@ -1954,7 +1954,7 @@ GetObjectLockConfigurationOutcome S3Client::GetObjectLockConfiguration(const Get
   Aws::StringStream ss;
   ss.str("?object-lock");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetObjectLockConfigurationOutcome(GetObjectLockConfigurationResult(outcome.GetResult()));
@@ -2002,7 +2002,7 @@ GetObjectRetentionOutcome S3Client::GetObjectRetention(const GetObjectRetentionR
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?retention");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetObjectRetentionOutcome(GetObjectRetentionResult(outcome.GetResult()));
@@ -2050,7 +2050,7 @@ GetObjectTaggingOutcome S3Client::GetObjectTagging(const GetObjectTaggingRequest
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?tagging");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetObjectTaggingOutcome(GetObjectTaggingResult(outcome.GetResult()));
@@ -2098,7 +2098,7 @@ GetObjectTorrentOutcome S3Client::GetObjectTorrent(const GetObjectTorrentRequest
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?torrent");
   uri.SetQueryString(ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_GET);
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetObjectTorrentOutcome(GetObjectTorrentResult(outcome.GetResultWithOwnership()));
@@ -2138,7 +2138,7 @@ GetPublicAccessBlockOutcome S3Client::GetPublicAccessBlock(const GetPublicAccess
   Aws::StringStream ss;
   ss.str("?publicAccessBlock");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetPublicAccessBlockOutcome(GetPublicAccessBlockResult(outcome.GetResult()));
@@ -2177,7 +2177,7 @@ HeadBucketOutcome S3Client::HeadBucket(const HeadBucketRequest& request) const
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_HEAD);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_HEAD);
   if(outcome.IsSuccess())
   {
     return HeadBucketOutcome(NoResult());
@@ -2223,7 +2223,7 @@ HeadObjectOutcome S3Client::HeadObject(const HeadObjectRequest& request) const
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_HEAD);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_HEAD);
   if(outcome.IsSuccess())
   {
     return HeadObjectOutcome(HeadObjectResult(outcome.GetResult()));
@@ -2263,7 +2263,7 @@ ListBucketAnalyticsConfigurationsOutcome S3Client::ListBucketAnalyticsConfigurat
   Aws::StringStream ss;
   ss.str("?analytics");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListBucketAnalyticsConfigurationsOutcome(ListBucketAnalyticsConfigurationsResult(outcome.GetResult()));
@@ -2303,7 +2303,7 @@ ListBucketInventoryConfigurationsOutcome S3Client::ListBucketInventoryConfigurat
   Aws::StringStream ss;
   ss.str("?inventory");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListBucketInventoryConfigurationsOutcome(ListBucketInventoryConfigurationsResult(outcome.GetResult()));
@@ -2343,7 +2343,7 @@ ListBucketMetricsConfigurationsOutcome S3Client::ListBucketMetricsConfigurations
   Aws::StringStream ss;
   ss.str("?metrics");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListBucketMetricsConfigurationsOutcome(ListBucketMetricsConfigurationsResult(outcome.GetResult()));
@@ -2376,7 +2376,7 @@ ListBucketsOutcome S3Client::ListBuckets() const
 {
   Aws::StringStream ss;
   ss << ComputeEndpointString();
-  XmlOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "ListBuckets");
+  XmlOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "ListBuckets");
   if(outcome.IsSuccess())
   {
     return ListBucketsOutcome(ListBucketsResult(outcome.GetResult()));
@@ -2416,7 +2416,7 @@ ListMultipartUploadsOutcome S3Client::ListMultipartUploads(const ListMultipartUp
   Aws::StringStream ss;
   ss.str("?uploads");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListMultipartUploadsOutcome(ListMultipartUploadsResult(outcome.GetResult()));
@@ -2456,7 +2456,7 @@ ListObjectVersionsOutcome S3Client::ListObjectVersions(const ListObjectVersionsR
   Aws::StringStream ss;
   ss.str("?versions");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListObjectVersionsOutcome(ListObjectVersionsResult(outcome.GetResult()));
@@ -2495,7 +2495,7 @@ ListObjectsOutcome S3Client::ListObjects(const ListObjectsRequest& request) cons
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListObjectsOutcome(ListObjectsResult(outcome.GetResult()));
@@ -2535,7 +2535,7 @@ ListObjectsV2Outcome S3Client::ListObjectsV2(const ListObjectsV2Request& request
   Aws::StringStream ss;
   ss.str("?list-type=2");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListObjectsV2Outcome(ListObjectsV2Result(outcome.GetResult()));
@@ -2586,7 +2586,7 @@ ListPartsOutcome S3Client::ListParts(const ListPartsRequest& request) const
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return ListPartsOutcome(ListPartsResult(outcome.GetResult()));
@@ -2626,7 +2626,7 @@ PutBucketAccelerateConfigurationOutcome S3Client::PutBucketAccelerateConfigurati
   Aws::StringStream ss;
   ss.str("?accelerate");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutBucketAccelerateConfigurationOutcome(NoResult());
@@ -2666,7 +2666,7 @@ PutBucketAclOutcome S3Client::PutBucketAcl(const PutBucketAclRequest& request) c
   Aws::StringStream ss;
   ss.str("?acl");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutBucketAclOutcome(NoResult());
@@ -2711,7 +2711,7 @@ PutBucketAnalyticsConfigurationOutcome S3Client::PutBucketAnalyticsConfiguration
   Aws::StringStream ss;
   ss.str("?analytics");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutBucketAnalyticsConfigurationOutcome(NoResult());
@@ -2751,7 +2751,7 @@ PutBucketCorsOutcome S3Client::PutBucketCors(const PutBucketCorsRequest& request
   Aws::StringStream ss;
   ss.str("?cors");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutBucketCorsOutcome(NoResult());
@@ -2791,7 +2791,7 @@ PutBucketEncryptionOutcome S3Client::PutBucketEncryption(const PutBucketEncrypti
   Aws::StringStream ss;
   ss.str("?encryption");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutBucketEncryptionOutcome(NoResult());
@@ -2836,7 +2836,7 @@ PutBucketInventoryConfigurationOutcome S3Client::PutBucketInventoryConfiguration
   Aws::StringStream ss;
   ss.str("?inventory");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutBucketInventoryConfigurationOutcome(NoResult());
@@ -2876,7 +2876,7 @@ PutBucketLifecycleConfigurationOutcome S3Client::PutBucketLifecycleConfiguration
   Aws::StringStream ss;
   ss.str("?lifecycle");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutBucketLifecycleConfigurationOutcome(NoResult());
@@ -2916,7 +2916,7 @@ PutBucketLoggingOutcome S3Client::PutBucketLogging(const PutBucketLoggingRequest
   Aws::StringStream ss;
   ss.str("?logging");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutBucketLoggingOutcome(NoResult());
@@ -2961,7 +2961,7 @@ PutBucketMetricsConfigurationOutcome S3Client::PutBucketMetricsConfiguration(con
   Aws::StringStream ss;
   ss.str("?metrics");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutBucketMetricsConfigurationOutcome(NoResult());
@@ -3001,7 +3001,7 @@ PutBucketNotificationConfigurationOutcome S3Client::PutBucketNotificationConfigu
   Aws::StringStream ss;
   ss.str("?notification");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutBucketNotificationConfigurationOutcome(NoResult());
@@ -3041,7 +3041,7 @@ PutBucketPolicyOutcome S3Client::PutBucketPolicy(const PutBucketPolicyRequest& r
   Aws::StringStream ss;
   ss.str("?policy");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutBucketPolicyOutcome(NoResult());
@@ -3081,7 +3081,7 @@ PutBucketReplicationOutcome S3Client::PutBucketReplication(const PutBucketReplic
   Aws::StringStream ss;
   ss.str("?replication");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutBucketReplicationOutcome(NoResult());
@@ -3121,7 +3121,7 @@ PutBucketRequestPaymentOutcome S3Client::PutBucketRequestPayment(const PutBucket
   Aws::StringStream ss;
   ss.str("?requestPayment");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutBucketRequestPaymentOutcome(NoResult());
@@ -3161,7 +3161,7 @@ PutBucketTaggingOutcome S3Client::PutBucketTagging(const PutBucketTaggingRequest
   Aws::StringStream ss;
   ss.str("?tagging");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutBucketTaggingOutcome(NoResult());
@@ -3201,7 +3201,7 @@ PutBucketVersioningOutcome S3Client::PutBucketVersioning(const PutBucketVersioni
   Aws::StringStream ss;
   ss.str("?versioning");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutBucketVersioningOutcome(NoResult());
@@ -3241,7 +3241,7 @@ PutBucketWebsiteOutcome S3Client::PutBucketWebsite(const PutBucketWebsiteRequest
   Aws::StringStream ss;
   ss.str("?website");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutBucketWebsiteOutcome(NoResult());
@@ -3287,7 +3287,7 @@ PutObjectOutcome S3Client::PutObject(const PutObjectRequest& request) const
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutObjectOutcome(PutObjectResult(outcome.GetResult()));
@@ -3335,7 +3335,7 @@ PutObjectAclOutcome S3Client::PutObjectAcl(const PutObjectAclRequest& request) c
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?acl");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutObjectAclOutcome(PutObjectAclResult(outcome.GetResult()));
@@ -3383,7 +3383,7 @@ PutObjectLegalHoldOutcome S3Client::PutObjectLegalHold(const PutObjectLegalHoldR
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?legal-hold");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutObjectLegalHoldOutcome(PutObjectLegalHoldResult(outcome.GetResult()));
@@ -3423,7 +3423,7 @@ PutObjectLockConfigurationOutcome S3Client::PutObjectLockConfiguration(const Put
   Aws::StringStream ss;
   ss.str("?object-lock");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutObjectLockConfigurationOutcome(PutObjectLockConfigurationResult(outcome.GetResult()));
@@ -3471,7 +3471,7 @@ PutObjectRetentionOutcome S3Client::PutObjectRetention(const PutObjectRetentionR
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?retention");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutObjectRetentionOutcome(PutObjectRetentionResult(outcome.GetResult()));
@@ -3519,7 +3519,7 @@ PutObjectTaggingOutcome S3Client::PutObjectTagging(const PutObjectTaggingRequest
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?tagging");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutObjectTaggingOutcome(PutObjectTaggingResult(outcome.GetResult()));
@@ -3559,7 +3559,7 @@ PutPublicAccessBlockOutcome S3Client::PutPublicAccessBlock(const PutPublicAccess
   Aws::StringStream ss;
   ss.str("?publicAccessBlock");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return PutPublicAccessBlockOutcome(NoResult());
@@ -3607,7 +3607,7 @@ RestoreObjectOutcome S3Client::RestoreObject(const RestoreObjectRequest& request
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?restore");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return RestoreObjectOutcome(RestoreObjectResult(outcome.GetResult()));
@@ -3658,7 +3658,7 @@ SelectObjectContentOutcome S3Client::SelectObjectContent(SelectObjectContentRequ
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
-  XmlOutcome outcome = MakeRequestWithEventStream(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequestWithEventStream(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SelectObjectContentOutcome(NoResult());
@@ -3714,7 +3714,7 @@ UploadPartOutcome S3Client::UploadPart(const UploadPartRequest& request) const
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UploadPartOutcome(UploadPartResult(outcome.GetResult()));
@@ -3775,7 +3775,7 @@ UploadPartCopyOutcome S3Client::UploadPartCopy(const UploadPartCopyRequest& requ
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
   if(outcome.IsSuccess())
   {
     return UploadPartCopyOutcome(UploadPartCopyResult(outcome.GetResult()));
@@ -3807,7 +3807,7 @@ void S3Client::UploadPartCopyAsyncHelper(const UploadPartCopyRequest& request, c
 
 
 #include<aws/core/utils/HashingUtils.h>
-Aws::String S3Client::GeneratePresignedUrl(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrl(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds)
 {
     Aws::StringStream ss;
     ss << ComputeEndpointString(bucketName) << "/" << key;
@@ -3815,7 +3815,7 @@ Aws::String S3Client::GeneratePresignedUrl(const Aws::String& bucketName, const 
     return AWSClient::GeneratePresignedUrl(uri, method, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrl(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, const Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrl(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, const Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
 {
     Aws::StringStream ss;
     ss << ComputeEndpointString(bucketName) << "/" << key;
@@ -3823,7 +3823,7 @@ Aws::String S3Client::GeneratePresignedUrl(const Aws::String& bucketName, const 
     return AWSClient::GeneratePresignedUrl(uri, method, customizedHeaders, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds)
 {
     Aws::StringStream ss;
     ss << ComputeEndpointString(bucketName) << "/" << key;
@@ -3833,7 +3833,7 @@ Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucketNam
     return AWSClient::GeneratePresignedUrl(uri, method, headers, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, long long expirationInSeconds)
 {
     Aws::StringStream ss;
     ss << ComputeEndpointString(bucketName) << "/" << key;
@@ -3842,7 +3842,7 @@ Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucketNam
     return AWSClient::GeneratePresignedUrl(uri, method, customizedHeaders, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
 {
     Aws::StringStream ss;
     ss << ComputeEndpointString(bucketName) << "/" << key;
@@ -3853,7 +3853,7 @@ Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucketNa
     return AWSClient::GeneratePresignedUrl(uri, method, headers, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
 {
     Aws::StringStream ss;
     ss << ComputeEndpointString(bucketName) << "/" << key;
@@ -3863,7 +3863,7 @@ Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucketNa
     return AWSClient::GeneratePresignedUrl(uri, method, customizedHeaders, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
 {
     Aws::StringStream ss;
     ss << ComputeEndpointString(bucketName) << "/" << key;
@@ -3877,7 +3877,7 @@ Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucketName
     return AWSClient::GeneratePresignedUrl(uri, method, headers, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
 {
     Aws::StringStream ss;
     ss << ComputeEndpointString(bucketName) << "/" << key;

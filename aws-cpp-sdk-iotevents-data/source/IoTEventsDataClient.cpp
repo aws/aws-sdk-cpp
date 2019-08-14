@@ -113,7 +113,7 @@ BatchPutMessageOutcome IoTEventsDataClient::BatchPutMessage(const BatchPutMessag
   Aws::StringStream ss;
   ss << "/inputs/messages";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return BatchPutMessageOutcome(BatchPutMessageResult(outcome.GetResult()));
@@ -148,7 +148,7 @@ BatchUpdateDetectorOutcome IoTEventsDataClient::BatchUpdateDetector(const BatchU
   Aws::StringStream ss;
   ss << "/detectors";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return BatchUpdateDetectorOutcome(BatchUpdateDetectorResult(outcome.GetResult()));
@@ -190,7 +190,7 @@ DescribeDetectorOutcome IoTEventsDataClient::DescribeDetector(const DescribeDete
   ss << request.GetDetectorModelName();
   ss << "/keyValues/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeDetectorOutcome(DescribeDetectorResult(outcome.GetResult()));
@@ -231,7 +231,7 @@ ListDetectorsOutcome IoTEventsDataClient::ListDetectors(const ListDetectorsReque
   ss << "/detectors/";
   ss << request.GetDetectorModelName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListDetectorsOutcome(ListDetectorsResult(outcome.GetResult()));

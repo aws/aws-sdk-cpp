@@ -114,7 +114,7 @@ BatchExecuteStatementOutcome RDSDataServiceClient::BatchExecuteStatement(const B
   Aws::StringStream ss;
   ss << "/BatchExecute";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return BatchExecuteStatementOutcome(BatchExecuteStatementResult(outcome.GetResult()));
@@ -149,7 +149,7 @@ BeginTransactionOutcome RDSDataServiceClient::BeginTransaction(const BeginTransa
   Aws::StringStream ss;
   ss << "/BeginTransaction";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return BeginTransactionOutcome(BeginTransactionResult(outcome.GetResult()));
@@ -184,7 +184,7 @@ CommitTransactionOutcome RDSDataServiceClient::CommitTransaction(const CommitTra
   Aws::StringStream ss;
   ss << "/CommitTransaction";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CommitTransactionOutcome(CommitTransactionResult(outcome.GetResult()));
@@ -219,7 +219,7 @@ ExecuteStatementOutcome RDSDataServiceClient::ExecuteStatement(const ExecuteStat
   Aws::StringStream ss;
   ss << "/Execute";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ExecuteStatementOutcome(ExecuteStatementResult(outcome.GetResult()));
@@ -254,7 +254,7 @@ RollbackTransactionOutcome RDSDataServiceClient::RollbackTransaction(const Rollb
   Aws::StringStream ss;
   ss << "/RollbackTransaction";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RollbackTransactionOutcome(RollbackTransactionResult(outcome.GetResult()));

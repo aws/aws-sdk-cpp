@@ -125,7 +125,7 @@ AssociateServiceQuotaTemplateOutcome ServiceQuotasClient::AssociateServiceQuotaT
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AssociateServiceQuotaTemplateOutcome(AssociateServiceQuotaTemplateResult(outcome.GetResult()));
@@ -160,7 +160,7 @@ DeleteServiceQuotaIncreaseRequestFromTemplateOutcome ServiceQuotasClient::Delete
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteServiceQuotaIncreaseRequestFromTemplateOutcome(DeleteServiceQuotaIncreaseRequestFromTemplateResult(outcome.GetResult()));
@@ -195,7 +195,7 @@ DisassociateServiceQuotaTemplateOutcome ServiceQuotasClient::DisassociateService
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DisassociateServiceQuotaTemplateOutcome(DisassociateServiceQuotaTemplateResult(outcome.GetResult()));
@@ -230,7 +230,7 @@ GetAWSDefaultServiceQuotaOutcome ServiceQuotasClient::GetAWSDefaultServiceQuota(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetAWSDefaultServiceQuotaOutcome(GetAWSDefaultServiceQuotaResult(outcome.GetResult()));
@@ -265,7 +265,7 @@ GetAssociationForServiceQuotaTemplateOutcome ServiceQuotasClient::GetAssociation
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetAssociationForServiceQuotaTemplateOutcome(GetAssociationForServiceQuotaTemplateResult(outcome.GetResult()));
@@ -300,7 +300,7 @@ GetRequestedServiceQuotaChangeOutcome ServiceQuotasClient::GetRequestedServiceQu
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetRequestedServiceQuotaChangeOutcome(GetRequestedServiceQuotaChangeResult(outcome.GetResult()));
@@ -335,7 +335,7 @@ GetServiceQuotaOutcome ServiceQuotasClient::GetServiceQuota(const GetServiceQuot
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetServiceQuotaOutcome(GetServiceQuotaResult(outcome.GetResult()));
@@ -370,7 +370,7 @@ GetServiceQuotaIncreaseRequestFromTemplateOutcome ServiceQuotasClient::GetServic
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetServiceQuotaIncreaseRequestFromTemplateOutcome(GetServiceQuotaIncreaseRequestFromTemplateResult(outcome.GetResult()));
@@ -405,7 +405,7 @@ ListAWSDefaultServiceQuotasOutcome ServiceQuotasClient::ListAWSDefaultServiceQuo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListAWSDefaultServiceQuotasOutcome(ListAWSDefaultServiceQuotasResult(outcome.GetResult()));
@@ -440,7 +440,7 @@ ListRequestedServiceQuotaChangeHistoryOutcome ServiceQuotasClient::ListRequested
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListRequestedServiceQuotaChangeHistoryOutcome(ListRequestedServiceQuotaChangeHistoryResult(outcome.GetResult()));
@@ -475,7 +475,7 @@ ListRequestedServiceQuotaChangeHistoryByQuotaOutcome ServiceQuotasClient::ListRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListRequestedServiceQuotaChangeHistoryByQuotaOutcome(ListRequestedServiceQuotaChangeHistoryByQuotaResult(outcome.GetResult()));
@@ -510,7 +510,7 @@ ListServiceQuotaIncreaseRequestsInTemplateOutcome ServiceQuotasClient::ListServi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListServiceQuotaIncreaseRequestsInTemplateOutcome(ListServiceQuotaIncreaseRequestsInTemplateResult(outcome.GetResult()));
@@ -545,7 +545,7 @@ ListServiceQuotasOutcome ServiceQuotasClient::ListServiceQuotas(const ListServic
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListServiceQuotasOutcome(ListServiceQuotasResult(outcome.GetResult()));
@@ -580,7 +580,7 @@ ListServicesOutcome ServiceQuotasClient::ListServices(const ListServicesRequest&
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListServicesOutcome(ListServicesResult(outcome.GetResult()));
@@ -615,7 +615,7 @@ PutServiceQuotaIncreaseRequestIntoTemplateOutcome ServiceQuotasClient::PutServic
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutServiceQuotaIncreaseRequestIntoTemplateOutcome(PutServiceQuotaIncreaseRequestIntoTemplateResult(outcome.GetResult()));
@@ -650,7 +650,7 @@ RequestServiceQuotaIncreaseOutcome ServiceQuotasClient::RequestServiceQuotaIncre
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RequestServiceQuotaIncreaseOutcome(RequestServiceQuotaIncreaseResult(outcome.GetResult()));

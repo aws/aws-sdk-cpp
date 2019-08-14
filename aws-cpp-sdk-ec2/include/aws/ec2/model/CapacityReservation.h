@@ -98,78 +98,126 @@ namespace Model
     inline CapacityReservation& WithCapacityReservationId(const char* value) { SetCapacityReservationId(value); return *this;}
 
 
-    
+    /**
+     * <p>The ID of the AWS account that owns the Capacity Reservation.</p>
+     */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
-    
+    /**
+     * <p>The ID of the AWS account that owns the Capacity Reservation.</p>
+     */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
-    
+    /**
+     * <p>The ID of the AWS account that owns the Capacity Reservation.</p>
+     */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
-    
+    /**
+     * <p>The ID of the AWS account that owns the Capacity Reservation.</p>
+     */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the AWS account that owns the Capacity Reservation.</p>
+     */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the AWS account that owns the Capacity Reservation.</p>
+     */
     inline CapacityReservation& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the AWS account that owns the Capacity Reservation.</p>
+     */
     inline CapacityReservation& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the AWS account that owns the Capacity Reservation.</p>
+     */
     inline CapacityReservation& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Capacity Reservation.</p>
+     */
     inline const Aws::String& GetCapacityReservationArn() const{ return m_capacityReservationArn; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Capacity Reservation.</p>
+     */
     inline bool CapacityReservationArnHasBeenSet() const { return m_capacityReservationArnHasBeenSet; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Capacity Reservation.</p>
+     */
     inline void SetCapacityReservationArn(const Aws::String& value) { m_capacityReservationArnHasBeenSet = true; m_capacityReservationArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Capacity Reservation.</p>
+     */
     inline void SetCapacityReservationArn(Aws::String&& value) { m_capacityReservationArnHasBeenSet = true; m_capacityReservationArn = std::move(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Capacity Reservation.</p>
+     */
     inline void SetCapacityReservationArn(const char* value) { m_capacityReservationArnHasBeenSet = true; m_capacityReservationArn.assign(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Capacity Reservation.</p>
+     */
     inline CapacityReservation& WithCapacityReservationArn(const Aws::String& value) { SetCapacityReservationArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Capacity Reservation.</p>
+     */
     inline CapacityReservation& WithCapacityReservationArn(Aws::String&& value) { SetCapacityReservationArn(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Capacity Reservation.</p>
+     */
     inline CapacityReservation& WithCapacityReservationArn(const char* value) { SetCapacityReservationArn(value); return *this;}
 
 
-    
+    /**
+     * <p>The Availability Zone ID of the Capacity Reservation.</p>
+     */
     inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
 
-    
+    /**
+     * <p>The Availability Zone ID of the Capacity Reservation.</p>
+     */
     inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
 
-    
+    /**
+     * <p>The Availability Zone ID of the Capacity Reservation.</p>
+     */
     inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = value; }
 
-    
+    /**
+     * <p>The Availability Zone ID of the Capacity Reservation.</p>
+     */
     inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::move(value); }
 
-    
+    /**
+     * <p>The Availability Zone ID of the Capacity Reservation.</p>
+     */
     inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId.assign(value); }
 
-    
+    /**
+     * <p>The Availability Zone ID of the Capacity Reservation.</p>
+     */
     inline CapacityReservation& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
 
-    
+    /**
+     * <p>The Availability Zone ID of the Capacity Reservation.</p>
+     */
     inline CapacityReservation& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The Availability Zone ID of the Capacity Reservation.</p>
+     */
     inline CapacityReservation& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
 
 
@@ -362,25 +410,25 @@ namespace Model
 
 
     /**
-     * <p>The number of instances for which the Capacity Reservation reserves
+     * <p>The total number of instances for which the Capacity Reservation reserves
      * capacity.</p>
      */
     inline int GetTotalInstanceCount() const{ return m_totalInstanceCount; }
 
     /**
-     * <p>The number of instances for which the Capacity Reservation reserves
+     * <p>The total number of instances for which the Capacity Reservation reserves
      * capacity.</p>
      */
     inline bool TotalInstanceCountHasBeenSet() const { return m_totalInstanceCountHasBeenSet; }
 
     /**
-     * <p>The number of instances for which the Capacity Reservation reserves
+     * <p>The total number of instances for which the Capacity Reservation reserves
      * capacity.</p>
      */
     inline void SetTotalInstanceCount(int value) { m_totalInstanceCountHasBeenSet = true; m_totalInstanceCount = value; }
 
     /**
-     * <p>The number of instances for which the Capacity Reservation reserves
+     * <p>The total number of instances for which the Capacity Reservation reserves
      * capacity.</p>
      */
     inline CapacityReservation& WithTotalInstanceCount(int value) { SetTotalInstanceCount(value); return *this;}
@@ -477,10 +525,10 @@ namespace Model
      * <p>The current state of the Capacity Reservation. A Capacity Reservation can be
      * in one of the following states:</p> <ul> <li> <p> <code>active</code> - The
      * Capacity Reservation is active and the capacity is available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation expired
+     * </li> <li> <p> <code>expired</code> - The Capacity Reservation expired
      * automatically at the date and time specified in your request. The reserved
      * capacity is no longer available for your use.</p> </li> <li> <p>
-     * <code>expired</code> - The Capacity Reservation was manually cancelled. The
+     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The
      * reserved capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
@@ -494,10 +542,10 @@ namespace Model
      * <p>The current state of the Capacity Reservation. A Capacity Reservation can be
      * in one of the following states:</p> <ul> <li> <p> <code>active</code> - The
      * Capacity Reservation is active and the capacity is available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation expired
+     * </li> <li> <p> <code>expired</code> - The Capacity Reservation expired
      * automatically at the date and time specified in your request. The reserved
      * capacity is no longer available for your use.</p> </li> <li> <p>
-     * <code>expired</code> - The Capacity Reservation was manually cancelled. The
+     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The
      * reserved capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
@@ -511,10 +559,10 @@ namespace Model
      * <p>The current state of the Capacity Reservation. A Capacity Reservation can be
      * in one of the following states:</p> <ul> <li> <p> <code>active</code> - The
      * Capacity Reservation is active and the capacity is available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation expired
+     * </li> <li> <p> <code>expired</code> - The Capacity Reservation expired
      * automatically at the date and time specified in your request. The reserved
      * capacity is no longer available for your use.</p> </li> <li> <p>
-     * <code>expired</code> - The Capacity Reservation was manually cancelled. The
+     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The
      * reserved capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
@@ -528,10 +576,10 @@ namespace Model
      * <p>The current state of the Capacity Reservation. A Capacity Reservation can be
      * in one of the following states:</p> <ul> <li> <p> <code>active</code> - The
      * Capacity Reservation is active and the capacity is available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation expired
+     * </li> <li> <p> <code>expired</code> - The Capacity Reservation expired
      * automatically at the date and time specified in your request. The reserved
      * capacity is no longer available for your use.</p> </li> <li> <p>
-     * <code>expired</code> - The Capacity Reservation was manually cancelled. The
+     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The
      * reserved capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
@@ -545,10 +593,10 @@ namespace Model
      * <p>The current state of the Capacity Reservation. A Capacity Reservation can be
      * in one of the following states:</p> <ul> <li> <p> <code>active</code> - The
      * Capacity Reservation is active and the capacity is available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation expired
+     * </li> <li> <p> <code>expired</code> - The Capacity Reservation expired
      * automatically at the date and time specified in your request. The reserved
      * capacity is no longer available for your use.</p> </li> <li> <p>
-     * <code>expired</code> - The Capacity Reservation was manually cancelled. The
+     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The
      * reserved capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
@@ -562,10 +610,10 @@ namespace Model
      * <p>The current state of the Capacity Reservation. A Capacity Reservation can be
      * in one of the following states:</p> <ul> <li> <p> <code>active</code> - The
      * Capacity Reservation is active and the capacity is available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation expired
+     * </li> <li> <p> <code>expired</code> - The Capacity Reservation expired
      * automatically at the date and time specified in your request. The reserved
      * capacity is no longer available for your use.</p> </li> <li> <p>
-     * <code>expired</code> - The Capacity Reservation was manually cancelled. The
+     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The
      * reserved capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -

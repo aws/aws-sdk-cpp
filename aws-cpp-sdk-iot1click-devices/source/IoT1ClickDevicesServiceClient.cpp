@@ -128,7 +128,7 @@ ClaimDevicesByClaimCodeOutcome IoT1ClickDevicesServiceClient::ClaimDevicesByClai
   ss << "/claims/";
   ss << request.GetClaimCode();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ClaimDevicesByClaimCodeOutcome(ClaimDevicesByClaimCodeResult(outcome.GetResult()));
@@ -169,7 +169,7 @@ DescribeDeviceOutcome IoT1ClickDevicesServiceClient::DescribeDevice(const Descri
   ss << "/devices/";
   ss << request.GetDeviceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeDeviceOutcome(DescribeDeviceResult(outcome.GetResult()));
@@ -211,7 +211,7 @@ FinalizeDeviceClaimOutcome IoT1ClickDevicesServiceClient::FinalizeDeviceClaim(co
   ss << request.GetDeviceId();
   ss << "/finalize-claim";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return FinalizeDeviceClaimOutcome(FinalizeDeviceClaimResult(outcome.GetResult()));
@@ -253,7 +253,7 @@ GetDeviceMethodsOutcome IoT1ClickDevicesServiceClient::GetDeviceMethods(const Ge
   ss << request.GetDeviceId();
   ss << "/methods";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDeviceMethodsOutcome(GetDeviceMethodsResult(outcome.GetResult()));
@@ -295,7 +295,7 @@ InitiateDeviceClaimOutcome IoT1ClickDevicesServiceClient::InitiateDeviceClaim(co
   ss << request.GetDeviceId();
   ss << "/initiate-claim";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return InitiateDeviceClaimOutcome(InitiateDeviceClaimResult(outcome.GetResult()));
@@ -337,7 +337,7 @@ InvokeDeviceMethodOutcome IoT1ClickDevicesServiceClient::InvokeDeviceMethod(cons
   ss << request.GetDeviceId();
   ss << "/methods";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return InvokeDeviceMethodOutcome(InvokeDeviceMethodResult(outcome.GetResult()));
@@ -389,7 +389,7 @@ ListDeviceEventsOutcome IoT1ClickDevicesServiceClient::ListDeviceEvents(const Li
   ss << request.GetDeviceId();
   ss << "/events";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListDeviceEventsOutcome(ListDeviceEventsResult(outcome.GetResult()));
@@ -424,7 +424,7 @@ ListDevicesOutcome IoT1ClickDevicesServiceClient::ListDevices(const ListDevicesR
   Aws::StringStream ss;
   ss << "/devices";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListDevicesOutcome(ListDevicesResult(outcome.GetResult()));
@@ -465,7 +465,7 @@ ListTagsForResourceOutcome IoT1ClickDevicesServiceClient::ListTagsForResource(co
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
@@ -506,7 +506,7 @@ TagResourceOutcome IoT1ClickDevicesServiceClient::TagResource(const TagResourceR
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return TagResourceOutcome(NoResult());
@@ -548,7 +548,7 @@ UnclaimDeviceOutcome IoT1ClickDevicesServiceClient::UnclaimDevice(const UnclaimD
   ss << request.GetDeviceId();
   ss << "/unclaim";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UnclaimDeviceOutcome(UnclaimDeviceResult(outcome.GetResult()));
@@ -594,7 +594,7 @@ UntagResourceOutcome IoT1ClickDevicesServiceClient::UntagResource(const UntagRes
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UntagResourceOutcome(NoResult());
@@ -636,7 +636,7 @@ UpdateDeviceStateOutcome IoT1ClickDevicesServiceClient::UpdateDeviceState(const 
   ss << request.GetDeviceId();
   ss << "/state";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateDeviceStateOutcome(UpdateDeviceStateResult(outcome.GetResult()));

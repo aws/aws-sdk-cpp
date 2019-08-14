@@ -119,7 +119,7 @@ CreateEnvironmentEC2Outcome Cloud9Client::CreateEnvironmentEC2(const CreateEnvir
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateEnvironmentEC2Outcome(CreateEnvironmentEC2Result(outcome.GetResult()));
@@ -154,7 +154,7 @@ CreateEnvironmentMembershipOutcome Cloud9Client::CreateEnvironmentMembership(con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateEnvironmentMembershipOutcome(CreateEnvironmentMembershipResult(outcome.GetResult()));
@@ -189,7 +189,7 @@ DeleteEnvironmentOutcome Cloud9Client::DeleteEnvironment(const DeleteEnvironment
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteEnvironmentOutcome(DeleteEnvironmentResult(outcome.GetResult()));
@@ -224,7 +224,7 @@ DeleteEnvironmentMembershipOutcome Cloud9Client::DeleteEnvironmentMembership(con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteEnvironmentMembershipOutcome(DeleteEnvironmentMembershipResult(outcome.GetResult()));
@@ -259,7 +259,7 @@ DescribeEnvironmentMembershipsOutcome Cloud9Client::DescribeEnvironmentMembershi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeEnvironmentMembershipsOutcome(DescribeEnvironmentMembershipsResult(outcome.GetResult()));
@@ -294,7 +294,7 @@ DescribeEnvironmentStatusOutcome Cloud9Client::DescribeEnvironmentStatus(const D
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeEnvironmentStatusOutcome(DescribeEnvironmentStatusResult(outcome.GetResult()));
@@ -329,7 +329,7 @@ DescribeEnvironmentsOutcome Cloud9Client::DescribeEnvironments(const DescribeEnv
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeEnvironmentsOutcome(DescribeEnvironmentsResult(outcome.GetResult()));
@@ -364,7 +364,7 @@ ListEnvironmentsOutcome Cloud9Client::ListEnvironments(const ListEnvironmentsReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListEnvironmentsOutcome(ListEnvironmentsResult(outcome.GetResult()));
@@ -399,7 +399,7 @@ UpdateEnvironmentOutcome Cloud9Client::UpdateEnvironment(const UpdateEnvironment
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateEnvironmentOutcome(UpdateEnvironmentResult(outcome.GetResult()));
@@ -434,7 +434,7 @@ UpdateEnvironmentMembershipOutcome Cloud9Client::UpdateEnvironmentMembership(con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateEnvironmentMembershipOutcome(UpdateEnvironmentMembershipResult(outcome.GetResult()));

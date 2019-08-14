@@ -139,7 +139,7 @@ CreateAppOutcome AmplifyClient::CreateApp(const CreateAppRequest& request) const
   Aws::StringStream ss;
   ss << "/apps";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateAppOutcome(CreateAppResult(outcome.GetResult()));
@@ -181,7 +181,7 @@ CreateBranchOutcome AmplifyClient::CreateBranch(const CreateBranchRequest& reque
   ss << request.GetAppId();
   ss << "/branches";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateBranchOutcome(CreateBranchResult(outcome.GetResult()));
@@ -230,7 +230,7 @@ CreateDeploymentOutcome AmplifyClient::CreateDeployment(const CreateDeploymentRe
   ss << request.GetBranchName();
   ss << "/deployments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateDeploymentOutcome(CreateDeploymentResult(outcome.GetResult()));
@@ -272,7 +272,7 @@ CreateDomainAssociationOutcome AmplifyClient::CreateDomainAssociation(const Crea
   ss << request.GetAppId();
   ss << "/domains";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateDomainAssociationOutcome(CreateDomainAssociationResult(outcome.GetResult()));
@@ -314,7 +314,7 @@ CreateWebhookOutcome AmplifyClient::CreateWebhook(const CreateWebhookRequest& re
   ss << request.GetAppId();
   ss << "/webhooks";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateWebhookOutcome(CreateWebhookResult(outcome.GetResult()));
@@ -355,7 +355,7 @@ DeleteAppOutcome AmplifyClient::DeleteApp(const DeleteAppRequest& request) const
   ss << "/apps/";
   ss << request.GetAppId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteAppOutcome(DeleteAppResult(outcome.GetResult()));
@@ -403,7 +403,7 @@ DeleteBranchOutcome AmplifyClient::DeleteBranch(const DeleteBranchRequest& reque
   ss << "/branches/";
   ss << request.GetBranchName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteBranchOutcome(DeleteBranchResult(outcome.GetResult()));
@@ -451,7 +451,7 @@ DeleteDomainAssociationOutcome AmplifyClient::DeleteDomainAssociation(const Dele
   ss << "/domains/";
   ss << request.GetDomainName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteDomainAssociationOutcome(DeleteDomainAssociationResult(outcome.GetResult()));
@@ -506,7 +506,7 @@ DeleteJobOutcome AmplifyClient::DeleteJob(const DeleteJobRequest& request) const
   ss << "/jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteJobOutcome(DeleteJobResult(outcome.GetResult()));
@@ -547,7 +547,7 @@ DeleteWebhookOutcome AmplifyClient::DeleteWebhook(const DeleteWebhookRequest& re
   ss << "/webhooks/";
   ss << request.GetWebhookId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteWebhookOutcome(DeleteWebhookResult(outcome.GetResult()));
@@ -588,7 +588,7 @@ GetAppOutcome AmplifyClient::GetApp(const GetAppRequest& request) const
   ss << "/apps/";
   ss << request.GetAppId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetAppOutcome(GetAppResult(outcome.GetResult()));
@@ -636,7 +636,7 @@ GetBranchOutcome AmplifyClient::GetBranch(const GetBranchRequest& request) const
   ss << "/branches/";
   ss << request.GetBranchName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetBranchOutcome(GetBranchResult(outcome.GetResult()));
@@ -684,7 +684,7 @@ GetDomainAssociationOutcome AmplifyClient::GetDomainAssociation(const GetDomainA
   ss << "/domains/";
   ss << request.GetDomainName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDomainAssociationOutcome(GetDomainAssociationResult(outcome.GetResult()));
@@ -739,7 +739,7 @@ GetJobOutcome AmplifyClient::GetJob(const GetJobRequest& request) const
   ss << "/jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetJobOutcome(GetJobResult(outcome.GetResult()));
@@ -780,7 +780,7 @@ GetWebhookOutcome AmplifyClient::GetWebhook(const GetWebhookRequest& request) co
   ss << "/webhooks/";
   ss << request.GetWebhookId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetWebhookOutcome(GetWebhookResult(outcome.GetResult()));
@@ -815,7 +815,7 @@ ListAppsOutcome AmplifyClient::ListApps(const ListAppsRequest& request) const
   Aws::StringStream ss;
   ss << "/apps";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListAppsOutcome(ListAppsResult(outcome.GetResult()));
@@ -857,7 +857,7 @@ ListBranchesOutcome AmplifyClient::ListBranches(const ListBranchesRequest& reque
   ss << request.GetAppId();
   ss << "/branches";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListBranchesOutcome(ListBranchesResult(outcome.GetResult()));
@@ -899,7 +899,7 @@ ListDomainAssociationsOutcome AmplifyClient::ListDomainAssociations(const ListDo
   ss << request.GetAppId();
   ss << "/domains";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListDomainAssociationsOutcome(ListDomainAssociationsResult(outcome.GetResult()));
@@ -948,7 +948,7 @@ ListJobsOutcome AmplifyClient::ListJobs(const ListJobsRequest& request) const
   ss << request.GetBranchName();
   ss << "/jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListJobsOutcome(ListJobsResult(outcome.GetResult()));
@@ -989,7 +989,7 @@ ListTagsForResourceOutcome AmplifyClient::ListTagsForResource(const ListTagsForR
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
@@ -1031,7 +1031,7 @@ ListWebhooksOutcome AmplifyClient::ListWebhooks(const ListWebhooksRequest& reque
   ss << request.GetAppId();
   ss << "/webhooks";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListWebhooksOutcome(ListWebhooksResult(outcome.GetResult()));
@@ -1080,7 +1080,7 @@ StartDeploymentOutcome AmplifyClient::StartDeployment(const StartDeploymentReque
   ss << request.GetBranchName();
   ss << "/deployments/start";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StartDeploymentOutcome(StartDeploymentResult(outcome.GetResult()));
@@ -1129,7 +1129,7 @@ StartJobOutcome AmplifyClient::StartJob(const StartJobRequest& request) const
   ss << request.GetBranchName();
   ss << "/jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StartJobOutcome(StartJobResult(outcome.GetResult()));
@@ -1185,7 +1185,7 @@ StopJobOutcome AmplifyClient::StopJob(const StopJobRequest& request) const
   ss << request.GetJobId();
   ss << "/stop";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StopJobOutcome(StopJobResult(outcome.GetResult()));
@@ -1226,7 +1226,7 @@ TagResourceOutcome AmplifyClient::TagResource(const TagResourceRequest& request)
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
@@ -1272,7 +1272,7 @@ UntagResourceOutcome AmplifyClient::UntagResource(const UntagResourceRequest& re
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
@@ -1313,7 +1313,7 @@ UpdateAppOutcome AmplifyClient::UpdateApp(const UpdateAppRequest& request) const
   ss << "/apps/";
   ss << request.GetAppId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateAppOutcome(UpdateAppResult(outcome.GetResult()));
@@ -1361,7 +1361,7 @@ UpdateBranchOutcome AmplifyClient::UpdateBranch(const UpdateBranchRequest& reque
   ss << "/branches/";
   ss << request.GetBranchName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateBranchOutcome(UpdateBranchResult(outcome.GetResult()));
@@ -1409,7 +1409,7 @@ UpdateDomainAssociationOutcome AmplifyClient::UpdateDomainAssociation(const Upda
   ss << "/domains/";
   ss << request.GetDomainName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateDomainAssociationOutcome(UpdateDomainAssociationResult(outcome.GetResult()));
@@ -1450,7 +1450,7 @@ UpdateWebhookOutcome AmplifyClient::UpdateWebhook(const UpdateWebhookRequest& re
   ss << "/webhooks/";
   ss << request.GetWebhookId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateWebhookOutcome(UpdateWebhookResult(outcome.GetResult()));

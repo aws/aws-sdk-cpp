@@ -145,7 +145,7 @@ Aws::String ElasticLoadBalancingv2Client::ConvertRequestToPresignedUrl(const Ama
   ss << "?" << requestToConvert.SerializePayload();
 
   URI uri(ss.str());
-  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+  return GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region, 3600);
 }
 
 AddListenerCertificatesOutcome ElasticLoadBalancingv2Client::AddListenerCertificates(const AddListenerCertificatesRequest& request) const
@@ -154,7 +154,7 @@ AddListenerCertificatesOutcome ElasticLoadBalancingv2Client::AddListenerCertific
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AddListenerCertificatesOutcome(AddListenerCertificatesResult(outcome.GetResult()));
@@ -189,7 +189,7 @@ AddTagsOutcome ElasticLoadBalancingv2Client::AddTags(const AddTagsRequest& reque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AddTagsOutcome(AddTagsResult(outcome.GetResult()));
@@ -224,7 +224,7 @@ CreateListenerOutcome ElasticLoadBalancingv2Client::CreateListener(const CreateL
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateListenerOutcome(CreateListenerResult(outcome.GetResult()));
@@ -259,7 +259,7 @@ CreateLoadBalancerOutcome ElasticLoadBalancingv2Client::CreateLoadBalancer(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateLoadBalancerOutcome(CreateLoadBalancerResult(outcome.GetResult()));
@@ -294,7 +294,7 @@ CreateRuleOutcome ElasticLoadBalancingv2Client::CreateRule(const CreateRuleReque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateRuleOutcome(CreateRuleResult(outcome.GetResult()));
@@ -329,7 +329,7 @@ CreateTargetGroupOutcome ElasticLoadBalancingv2Client::CreateTargetGroup(const C
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateTargetGroupOutcome(CreateTargetGroupResult(outcome.GetResult()));
@@ -364,7 +364,7 @@ DeleteListenerOutcome ElasticLoadBalancingv2Client::DeleteListener(const DeleteL
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteListenerOutcome(DeleteListenerResult(outcome.GetResult()));
@@ -399,7 +399,7 @@ DeleteLoadBalancerOutcome ElasticLoadBalancingv2Client::DeleteLoadBalancer(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteLoadBalancerOutcome(DeleteLoadBalancerResult(outcome.GetResult()));
@@ -434,7 +434,7 @@ DeleteRuleOutcome ElasticLoadBalancingv2Client::DeleteRule(const DeleteRuleReque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteRuleOutcome(DeleteRuleResult(outcome.GetResult()));
@@ -469,7 +469,7 @@ DeleteTargetGroupOutcome ElasticLoadBalancingv2Client::DeleteTargetGroup(const D
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteTargetGroupOutcome(DeleteTargetGroupResult(outcome.GetResult()));
@@ -504,7 +504,7 @@ DeregisterTargetsOutcome ElasticLoadBalancingv2Client::DeregisterTargets(const D
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeregisterTargetsOutcome(DeregisterTargetsResult(outcome.GetResult()));
@@ -539,7 +539,7 @@ DescribeAccountLimitsOutcome ElasticLoadBalancingv2Client::DescribeAccountLimits
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeAccountLimitsOutcome(DescribeAccountLimitsResult(outcome.GetResult()));
@@ -574,7 +574,7 @@ DescribeListenerCertificatesOutcome ElasticLoadBalancingv2Client::DescribeListen
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeListenerCertificatesOutcome(DescribeListenerCertificatesResult(outcome.GetResult()));
@@ -609,7 +609,7 @@ DescribeListenersOutcome ElasticLoadBalancingv2Client::DescribeListeners(const D
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeListenersOutcome(DescribeListenersResult(outcome.GetResult()));
@@ -644,7 +644,7 @@ DescribeLoadBalancerAttributesOutcome ElasticLoadBalancingv2Client::DescribeLoad
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeLoadBalancerAttributesOutcome(DescribeLoadBalancerAttributesResult(outcome.GetResult()));
@@ -679,7 +679,7 @@ DescribeLoadBalancersOutcome ElasticLoadBalancingv2Client::DescribeLoadBalancers
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeLoadBalancersOutcome(DescribeLoadBalancersResult(outcome.GetResult()));
@@ -714,7 +714,7 @@ DescribeRulesOutcome ElasticLoadBalancingv2Client::DescribeRules(const DescribeR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeRulesOutcome(DescribeRulesResult(outcome.GetResult()));
@@ -749,7 +749,7 @@ DescribeSSLPoliciesOutcome ElasticLoadBalancingv2Client::DescribeSSLPolicies(con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeSSLPoliciesOutcome(DescribeSSLPoliciesResult(outcome.GetResult()));
@@ -784,7 +784,7 @@ DescribeTagsOutcome ElasticLoadBalancingv2Client::DescribeTags(const DescribeTag
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeTagsOutcome(DescribeTagsResult(outcome.GetResult()));
@@ -819,7 +819,7 @@ DescribeTargetGroupAttributesOutcome ElasticLoadBalancingv2Client::DescribeTarge
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeTargetGroupAttributesOutcome(DescribeTargetGroupAttributesResult(outcome.GetResult()));
@@ -854,7 +854,7 @@ DescribeTargetGroupsOutcome ElasticLoadBalancingv2Client::DescribeTargetGroups(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeTargetGroupsOutcome(DescribeTargetGroupsResult(outcome.GetResult()));
@@ -889,7 +889,7 @@ DescribeTargetHealthOutcome ElasticLoadBalancingv2Client::DescribeTargetHealth(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeTargetHealthOutcome(DescribeTargetHealthResult(outcome.GetResult()));
@@ -924,7 +924,7 @@ ModifyListenerOutcome ElasticLoadBalancingv2Client::ModifyListener(const ModifyL
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ModifyListenerOutcome(ModifyListenerResult(outcome.GetResult()));
@@ -959,7 +959,7 @@ ModifyLoadBalancerAttributesOutcome ElasticLoadBalancingv2Client::ModifyLoadBala
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ModifyLoadBalancerAttributesOutcome(ModifyLoadBalancerAttributesResult(outcome.GetResult()));
@@ -994,7 +994,7 @@ ModifyRuleOutcome ElasticLoadBalancingv2Client::ModifyRule(const ModifyRuleReque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ModifyRuleOutcome(ModifyRuleResult(outcome.GetResult()));
@@ -1029,7 +1029,7 @@ ModifyTargetGroupOutcome ElasticLoadBalancingv2Client::ModifyTargetGroup(const M
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ModifyTargetGroupOutcome(ModifyTargetGroupResult(outcome.GetResult()));
@@ -1064,7 +1064,7 @@ ModifyTargetGroupAttributesOutcome ElasticLoadBalancingv2Client::ModifyTargetGro
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ModifyTargetGroupAttributesOutcome(ModifyTargetGroupAttributesResult(outcome.GetResult()));
@@ -1099,7 +1099,7 @@ RegisterTargetsOutcome ElasticLoadBalancingv2Client::RegisterTargets(const Regis
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return RegisterTargetsOutcome(RegisterTargetsResult(outcome.GetResult()));
@@ -1134,7 +1134,7 @@ RemoveListenerCertificatesOutcome ElasticLoadBalancingv2Client::RemoveListenerCe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return RemoveListenerCertificatesOutcome(RemoveListenerCertificatesResult(outcome.GetResult()));
@@ -1169,7 +1169,7 @@ RemoveTagsOutcome ElasticLoadBalancingv2Client::RemoveTags(const RemoveTagsReque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return RemoveTagsOutcome(RemoveTagsResult(outcome.GetResult()));
@@ -1204,7 +1204,7 @@ SetIpAddressTypeOutcome ElasticLoadBalancingv2Client::SetIpAddressType(const Set
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetIpAddressTypeOutcome(SetIpAddressTypeResult(outcome.GetResult()));
@@ -1239,7 +1239,7 @@ SetRulePrioritiesOutcome ElasticLoadBalancingv2Client::SetRulePriorities(const S
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetRulePrioritiesOutcome(SetRulePrioritiesResult(outcome.GetResult()));
@@ -1274,7 +1274,7 @@ SetSecurityGroupsOutcome ElasticLoadBalancingv2Client::SetSecurityGroups(const S
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetSecurityGroupsOutcome(SetSecurityGroupsResult(outcome.GetResult()));
@@ -1309,7 +1309,7 @@ SetSubnetsOutcome ElasticLoadBalancingv2Client::SetSubnets(const SetSubnetsReque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetSubnetsOutcome(SetSubnetsResult(outcome.GetResult()));

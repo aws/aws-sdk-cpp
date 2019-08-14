@@ -143,7 +143,7 @@ BatchPutMessageOutcome IoTAnalyticsClient::BatchPutMessage(const BatchPutMessage
   Aws::StringStream ss;
   ss << "/messages/batch";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return BatchPutMessageOutcome(BatchPutMessageResult(outcome.GetResult()));
@@ -191,7 +191,7 @@ CancelPipelineReprocessingOutcome IoTAnalyticsClient::CancelPipelineReprocessing
   ss << "/reprocessing/";
   ss << request.GetReprocessingId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CancelPipelineReprocessingOutcome(CancelPipelineReprocessingResult(outcome.GetResult()));
@@ -226,7 +226,7 @@ CreateChannelOutcome IoTAnalyticsClient::CreateChannel(const CreateChannelReques
   Aws::StringStream ss;
   ss << "/channels";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateChannelOutcome(CreateChannelResult(outcome.GetResult()));
@@ -261,7 +261,7 @@ CreateDatasetOutcome IoTAnalyticsClient::CreateDataset(const CreateDatasetReques
   Aws::StringStream ss;
   ss << "/datasets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateDatasetOutcome(CreateDatasetResult(outcome.GetResult()));
@@ -303,7 +303,7 @@ CreateDatasetContentOutcome IoTAnalyticsClient::CreateDatasetContent(const Creat
   ss << request.GetDatasetName();
   ss << "/content";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateDatasetContentOutcome(CreateDatasetContentResult(outcome.GetResult()));
@@ -338,7 +338,7 @@ CreateDatastoreOutcome IoTAnalyticsClient::CreateDatastore(const CreateDatastore
   Aws::StringStream ss;
   ss << "/datastores";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateDatastoreOutcome(CreateDatastoreResult(outcome.GetResult()));
@@ -373,7 +373,7 @@ CreatePipelineOutcome IoTAnalyticsClient::CreatePipeline(const CreatePipelineReq
   Aws::StringStream ss;
   ss << "/pipelines";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreatePipelineOutcome(CreatePipelineResult(outcome.GetResult()));
@@ -414,7 +414,7 @@ DeleteChannelOutcome IoTAnalyticsClient::DeleteChannel(const DeleteChannelReques
   ss << "/channels/";
   ss << request.GetChannelName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteChannelOutcome(NoResult());
@@ -455,7 +455,7 @@ DeleteDatasetOutcome IoTAnalyticsClient::DeleteDataset(const DeleteDatasetReques
   ss << "/datasets/";
   ss << request.GetDatasetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteDatasetOutcome(NoResult());
@@ -497,7 +497,7 @@ DeleteDatasetContentOutcome IoTAnalyticsClient::DeleteDatasetContent(const Delet
   ss << request.GetDatasetName();
   ss << "/content";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteDatasetContentOutcome(NoResult());
@@ -538,7 +538,7 @@ DeleteDatastoreOutcome IoTAnalyticsClient::DeleteDatastore(const DeleteDatastore
   ss << "/datastores/";
   ss << request.GetDatastoreName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteDatastoreOutcome(NoResult());
@@ -579,7 +579,7 @@ DeletePipelineOutcome IoTAnalyticsClient::DeletePipeline(const DeletePipelineReq
   ss << "/pipelines/";
   ss << request.GetPipelineName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeletePipelineOutcome(NoResult());
@@ -620,7 +620,7 @@ DescribeChannelOutcome IoTAnalyticsClient::DescribeChannel(const DescribeChannel
   ss << "/channels/";
   ss << request.GetChannelName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeChannelOutcome(DescribeChannelResult(outcome.GetResult()));
@@ -661,7 +661,7 @@ DescribeDatasetOutcome IoTAnalyticsClient::DescribeDataset(const DescribeDataset
   ss << "/datasets/";
   ss << request.GetDatasetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeDatasetOutcome(DescribeDatasetResult(outcome.GetResult()));
@@ -702,7 +702,7 @@ DescribeDatastoreOutcome IoTAnalyticsClient::DescribeDatastore(const DescribeDat
   ss << "/datastores/";
   ss << request.GetDatastoreName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeDatastoreOutcome(DescribeDatastoreResult(outcome.GetResult()));
@@ -737,7 +737,7 @@ DescribeLoggingOptionsOutcome IoTAnalyticsClient::DescribeLoggingOptions(const D
   Aws::StringStream ss;
   ss << "/logging";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeLoggingOptionsOutcome(DescribeLoggingOptionsResult(outcome.GetResult()));
@@ -778,7 +778,7 @@ DescribePipelineOutcome IoTAnalyticsClient::DescribePipeline(const DescribePipel
   ss << "/pipelines/";
   ss << request.GetPipelineName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribePipelineOutcome(DescribePipelineResult(outcome.GetResult()));
@@ -820,7 +820,7 @@ GetDatasetContentOutcome IoTAnalyticsClient::GetDatasetContent(const GetDatasetC
   ss << request.GetDatasetName();
   ss << "/content";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDatasetContentOutcome(GetDatasetContentResult(outcome.GetResult()));
@@ -855,7 +855,7 @@ ListChannelsOutcome IoTAnalyticsClient::ListChannels(const ListChannelsRequest& 
   Aws::StringStream ss;
   ss << "/channels";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListChannelsOutcome(ListChannelsResult(outcome.GetResult()));
@@ -897,7 +897,7 @@ ListDatasetContentsOutcome IoTAnalyticsClient::ListDatasetContents(const ListDat
   ss << request.GetDatasetName();
   ss << "/contents";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListDatasetContentsOutcome(ListDatasetContentsResult(outcome.GetResult()));
@@ -932,7 +932,7 @@ ListDatasetsOutcome IoTAnalyticsClient::ListDatasets(const ListDatasetsRequest& 
   Aws::StringStream ss;
   ss << "/datasets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListDatasetsOutcome(ListDatasetsResult(outcome.GetResult()));
@@ -967,7 +967,7 @@ ListDatastoresOutcome IoTAnalyticsClient::ListDatastores(const ListDatastoresReq
   Aws::StringStream ss;
   ss << "/datastores";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListDatastoresOutcome(ListDatastoresResult(outcome.GetResult()));
@@ -1002,7 +1002,7 @@ ListPipelinesOutcome IoTAnalyticsClient::ListPipelines(const ListPipelinesReques
   Aws::StringStream ss;
   ss << "/pipelines";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListPipelinesOutcome(ListPipelinesResult(outcome.GetResult()));
@@ -1042,7 +1042,7 @@ ListTagsForResourceOutcome IoTAnalyticsClient::ListTagsForResource(const ListTag
   Aws::StringStream ss;
   ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
@@ -1077,7 +1077,7 @@ PutLoggingOptionsOutcome IoTAnalyticsClient::PutLoggingOptions(const PutLoggingO
   Aws::StringStream ss;
   ss << "/logging";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutLoggingOptionsOutcome(NoResult());
@@ -1112,7 +1112,7 @@ RunPipelineActivityOutcome IoTAnalyticsClient::RunPipelineActivity(const RunPipe
   Aws::StringStream ss;
   ss << "/pipelineactivities/run";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RunPipelineActivityOutcome(RunPipelineActivityResult(outcome.GetResult()));
@@ -1154,7 +1154,7 @@ SampleChannelDataOutcome IoTAnalyticsClient::SampleChannelData(const SampleChann
   ss << request.GetChannelName();
   ss << "/sample";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SampleChannelDataOutcome(SampleChannelDataResult(outcome.GetResult()));
@@ -1196,7 +1196,7 @@ StartPipelineReprocessingOutcome IoTAnalyticsClient::StartPipelineReprocessing(c
   ss << request.GetPipelineName();
   ss << "/reprocessing";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StartPipelineReprocessingOutcome(StartPipelineReprocessingResult(outcome.GetResult()));
@@ -1236,7 +1236,7 @@ TagResourceOutcome IoTAnalyticsClient::TagResource(const TagResourceRequest& req
   Aws::StringStream ss;
   ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
@@ -1281,7 +1281,7 @@ UntagResourceOutcome IoTAnalyticsClient::UntagResource(const UntagResourceReques
   Aws::StringStream ss;
   ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
@@ -1322,7 +1322,7 @@ UpdateChannelOutcome IoTAnalyticsClient::UpdateChannel(const UpdateChannelReques
   ss << "/channels/";
   ss << request.GetChannelName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateChannelOutcome(NoResult());
@@ -1363,7 +1363,7 @@ UpdateDatasetOutcome IoTAnalyticsClient::UpdateDataset(const UpdateDatasetReques
   ss << "/datasets/";
   ss << request.GetDatasetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateDatasetOutcome(NoResult());
@@ -1404,7 +1404,7 @@ UpdateDatastoreOutcome IoTAnalyticsClient::UpdateDatastore(const UpdateDatastore
   ss << "/datastores/";
   ss << request.GetDatastoreName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateDatastoreOutcome(NoResult());
@@ -1445,7 +1445,7 @@ UpdatePipelineOutcome IoTAnalyticsClient::UpdatePipeline(const UpdatePipelineReq
   ss << "/pipelines/";
   ss << request.GetPipelineName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdatePipelineOutcome(NoResult());

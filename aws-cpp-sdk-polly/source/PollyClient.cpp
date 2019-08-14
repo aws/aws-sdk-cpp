@@ -124,7 +124,7 @@ DeleteLexiconOutcome PollyClient::DeleteLexicon(const DeleteLexiconRequest& requ
   ss << "/v1/lexicons/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteLexiconOutcome(DeleteLexiconResult(outcome.GetResult()));
@@ -159,7 +159,7 @@ DescribeVoicesOutcome PollyClient::DescribeVoices(const DescribeVoicesRequest& r
   Aws::StringStream ss;
   ss << "/v1/voices";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeVoicesOutcome(DescribeVoicesResult(outcome.GetResult()));
@@ -200,7 +200,7 @@ GetLexiconOutcome PollyClient::GetLexicon(const GetLexiconRequest& request) cons
   ss << "/v1/lexicons/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetLexiconOutcome(GetLexiconResult(outcome.GetResult()));
@@ -241,7 +241,7 @@ GetSpeechSynthesisTaskOutcome PollyClient::GetSpeechSynthesisTask(const GetSpeec
   ss << "/v1/synthesisTasks/";
   ss << request.GetTaskId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetSpeechSynthesisTaskOutcome(GetSpeechSynthesisTaskResult(outcome.GetResult()));
@@ -276,7 +276,7 @@ ListLexiconsOutcome PollyClient::ListLexicons(const ListLexiconsRequest& request
   Aws::StringStream ss;
   ss << "/v1/lexicons";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListLexiconsOutcome(ListLexiconsResult(outcome.GetResult()));
@@ -311,7 +311,7 @@ ListSpeechSynthesisTasksOutcome PollyClient::ListSpeechSynthesisTasks(const List
   Aws::StringStream ss;
   ss << "/v1/synthesisTasks";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListSpeechSynthesisTasksOutcome(ListSpeechSynthesisTasksResult(outcome.GetResult()));
@@ -352,7 +352,7 @@ PutLexiconOutcome PollyClient::PutLexicon(const PutLexiconRequest& request) cons
   ss << "/v1/lexicons/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutLexiconOutcome(PutLexiconResult(outcome.GetResult()));
@@ -387,7 +387,7 @@ StartSpeechSynthesisTaskOutcome PollyClient::StartSpeechSynthesisTask(const Star
   Aws::StringStream ss;
   ss << "/v1/synthesisTasks";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StartSpeechSynthesisTaskOutcome(StartSpeechSynthesisTaskResult(outcome.GetResult()));
@@ -422,7 +422,7 @@ SynthesizeSpeechOutcome PollyClient::SynthesizeSpeech(const SynthesizeSpeechRequ
   Aws::StringStream ss;
   ss << "/v1/speech";
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_POST);
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SynthesizeSpeechOutcome(SynthesizeSpeechResult(outcome.GetResultWithOwnership()));

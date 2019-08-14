@@ -119,7 +119,7 @@ CreateStreamOutcome KinesisVideoClient::CreateStream(const CreateStreamRequest& 
   Aws::StringStream ss;
   ss << "/createStream";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateStreamOutcome(CreateStreamResult(outcome.GetResult()));
@@ -154,7 +154,7 @@ DeleteStreamOutcome KinesisVideoClient::DeleteStream(const DeleteStreamRequest& 
   Aws::StringStream ss;
   ss << "/deleteStream";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteStreamOutcome(DeleteStreamResult(outcome.GetResult()));
@@ -189,7 +189,7 @@ DescribeStreamOutcome KinesisVideoClient::DescribeStream(const DescribeStreamReq
   Aws::StringStream ss;
   ss << "/describeStream";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeStreamOutcome(DescribeStreamResult(outcome.GetResult()));
@@ -224,7 +224,7 @@ GetDataEndpointOutcome KinesisVideoClient::GetDataEndpoint(const GetDataEndpoint
   Aws::StringStream ss;
   ss << "/getDataEndpoint";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDataEndpointOutcome(GetDataEndpointResult(outcome.GetResult()));
@@ -259,7 +259,7 @@ ListStreamsOutcome KinesisVideoClient::ListStreams(const ListStreamsRequest& req
   Aws::StringStream ss;
   ss << "/listStreams";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListStreamsOutcome(ListStreamsResult(outcome.GetResult()));
@@ -294,7 +294,7 @@ ListTagsForStreamOutcome KinesisVideoClient::ListTagsForStream(const ListTagsFor
   Aws::StringStream ss;
   ss << "/listTagsForStream";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTagsForStreamOutcome(ListTagsForStreamResult(outcome.GetResult()));
@@ -329,7 +329,7 @@ TagStreamOutcome KinesisVideoClient::TagStream(const TagStreamRequest& request) 
   Aws::StringStream ss;
   ss << "/tagStream";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return TagStreamOutcome(TagStreamResult(outcome.GetResult()));
@@ -364,7 +364,7 @@ UntagStreamOutcome KinesisVideoClient::UntagStream(const UntagStreamRequest& req
   Aws::StringStream ss;
   ss << "/untagStream";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UntagStreamOutcome(UntagStreamResult(outcome.GetResult()));
@@ -399,7 +399,7 @@ UpdateDataRetentionOutcome KinesisVideoClient::UpdateDataRetention(const UpdateD
   Aws::StringStream ss;
   ss << "/updateDataRetention";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateDataRetentionOutcome(UpdateDataRetentionResult(outcome.GetResult()));
@@ -434,7 +434,7 @@ UpdateStreamOutcome KinesisVideoClient::UpdateStream(const UpdateStreamRequest& 
   Aws::StringStream ss;
   ss << "/updateStream";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateStreamOutcome(UpdateStreamResult(outcome.GetResult()));

@@ -251,7 +251,7 @@ Aws::String IAMClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebS
   ss << "?" << requestToConvert.SerializePayload();
 
   URI uri(ss.str());
-  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+  return GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region, 3600);
 }
 
 AddClientIDToOpenIDConnectProviderOutcome IAMClient::AddClientIDToOpenIDConnectProvider(const AddClientIDToOpenIDConnectProviderRequest& request) const
@@ -260,7 +260,7 @@ AddClientIDToOpenIDConnectProviderOutcome IAMClient::AddClientIDToOpenIDConnectP
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AddClientIDToOpenIDConnectProviderOutcome(NoResult());
@@ -295,7 +295,7 @@ AddRoleToInstanceProfileOutcome IAMClient::AddRoleToInstanceProfile(const AddRol
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AddRoleToInstanceProfileOutcome(NoResult());
@@ -330,7 +330,7 @@ AddUserToGroupOutcome IAMClient::AddUserToGroup(const AddUserToGroupRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AddUserToGroupOutcome(NoResult());
@@ -365,7 +365,7 @@ AttachGroupPolicyOutcome IAMClient::AttachGroupPolicy(const AttachGroupPolicyReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AttachGroupPolicyOutcome(NoResult());
@@ -400,7 +400,7 @@ AttachRolePolicyOutcome IAMClient::AttachRolePolicy(const AttachRolePolicyReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AttachRolePolicyOutcome(NoResult());
@@ -435,7 +435,7 @@ AttachUserPolicyOutcome IAMClient::AttachUserPolicy(const AttachUserPolicyReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AttachUserPolicyOutcome(NoResult());
@@ -470,7 +470,7 @@ ChangePasswordOutcome IAMClient::ChangePassword(const ChangePasswordRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ChangePasswordOutcome(NoResult());
@@ -505,7 +505,7 @@ CreateAccessKeyOutcome IAMClient::CreateAccessKey(const CreateAccessKeyRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateAccessKeyOutcome(CreateAccessKeyResult(outcome.GetResult()));
@@ -540,7 +540,7 @@ CreateAccountAliasOutcome IAMClient::CreateAccountAlias(const CreateAccountAlias
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateAccountAliasOutcome(NoResult());
@@ -575,7 +575,7 @@ CreateGroupOutcome IAMClient::CreateGroup(const CreateGroupRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateGroupOutcome(CreateGroupResult(outcome.GetResult()));
@@ -610,7 +610,7 @@ CreateInstanceProfileOutcome IAMClient::CreateInstanceProfile(const CreateInstan
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateInstanceProfileOutcome(CreateInstanceProfileResult(outcome.GetResult()));
@@ -645,7 +645,7 @@ CreateLoginProfileOutcome IAMClient::CreateLoginProfile(const CreateLoginProfile
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateLoginProfileOutcome(CreateLoginProfileResult(outcome.GetResult()));
@@ -680,7 +680,7 @@ CreateOpenIDConnectProviderOutcome IAMClient::CreateOpenIDConnectProvider(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateOpenIDConnectProviderOutcome(CreateOpenIDConnectProviderResult(outcome.GetResult()));
@@ -715,7 +715,7 @@ CreatePolicyOutcome IAMClient::CreatePolicy(const CreatePolicyRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreatePolicyOutcome(CreatePolicyResult(outcome.GetResult()));
@@ -750,7 +750,7 @@ CreatePolicyVersionOutcome IAMClient::CreatePolicyVersion(const CreatePolicyVers
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreatePolicyVersionOutcome(CreatePolicyVersionResult(outcome.GetResult()));
@@ -785,7 +785,7 @@ CreateRoleOutcome IAMClient::CreateRole(const CreateRoleRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateRoleOutcome(CreateRoleResult(outcome.GetResult()));
@@ -820,7 +820,7 @@ CreateSAMLProviderOutcome IAMClient::CreateSAMLProvider(const CreateSAMLProvider
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateSAMLProviderOutcome(CreateSAMLProviderResult(outcome.GetResult()));
@@ -855,7 +855,7 @@ CreateServiceLinkedRoleOutcome IAMClient::CreateServiceLinkedRole(const CreateSe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateServiceLinkedRoleOutcome(CreateServiceLinkedRoleResult(outcome.GetResult()));
@@ -890,7 +890,7 @@ CreateServiceSpecificCredentialOutcome IAMClient::CreateServiceSpecificCredentia
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateServiceSpecificCredentialOutcome(CreateServiceSpecificCredentialResult(outcome.GetResult()));
@@ -925,7 +925,7 @@ CreateUserOutcome IAMClient::CreateUser(const CreateUserRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateUserOutcome(CreateUserResult(outcome.GetResult()));
@@ -960,7 +960,7 @@ CreateVirtualMFADeviceOutcome IAMClient::CreateVirtualMFADevice(const CreateVirt
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateVirtualMFADeviceOutcome(CreateVirtualMFADeviceResult(outcome.GetResult()));
@@ -995,7 +995,7 @@ DeactivateMFADeviceOutcome IAMClient::DeactivateMFADevice(const DeactivateMFADev
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeactivateMFADeviceOutcome(NoResult());
@@ -1030,7 +1030,7 @@ DeleteAccessKeyOutcome IAMClient::DeleteAccessKey(const DeleteAccessKeyRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteAccessKeyOutcome(NoResult());
@@ -1065,7 +1065,7 @@ DeleteAccountAliasOutcome IAMClient::DeleteAccountAlias(const DeleteAccountAlias
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteAccountAliasOutcome(NoResult());
@@ -1100,7 +1100,7 @@ DeleteAccountPasswordPolicyOutcome IAMClient::DeleteAccountPasswordPolicy(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteAccountPasswordPolicyOutcome(NoResult());
@@ -1135,7 +1135,7 @@ DeleteGroupOutcome IAMClient::DeleteGroup(const DeleteGroupRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteGroupOutcome(NoResult());
@@ -1170,7 +1170,7 @@ DeleteGroupPolicyOutcome IAMClient::DeleteGroupPolicy(const DeleteGroupPolicyReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteGroupPolicyOutcome(NoResult());
@@ -1205,7 +1205,7 @@ DeleteInstanceProfileOutcome IAMClient::DeleteInstanceProfile(const DeleteInstan
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteInstanceProfileOutcome(NoResult());
@@ -1240,7 +1240,7 @@ DeleteLoginProfileOutcome IAMClient::DeleteLoginProfile(const DeleteLoginProfile
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteLoginProfileOutcome(NoResult());
@@ -1275,7 +1275,7 @@ DeleteOpenIDConnectProviderOutcome IAMClient::DeleteOpenIDConnectProvider(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteOpenIDConnectProviderOutcome(NoResult());
@@ -1310,7 +1310,7 @@ DeletePolicyOutcome IAMClient::DeletePolicy(const DeletePolicyRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeletePolicyOutcome(NoResult());
@@ -1345,7 +1345,7 @@ DeletePolicyVersionOutcome IAMClient::DeletePolicyVersion(const DeletePolicyVers
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeletePolicyVersionOutcome(NoResult());
@@ -1380,7 +1380,7 @@ DeleteRoleOutcome IAMClient::DeleteRole(const DeleteRoleRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteRoleOutcome(NoResult());
@@ -1415,7 +1415,7 @@ DeleteRolePermissionsBoundaryOutcome IAMClient::DeleteRolePermissionsBoundary(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteRolePermissionsBoundaryOutcome(NoResult());
@@ -1450,7 +1450,7 @@ DeleteRolePolicyOutcome IAMClient::DeleteRolePolicy(const DeleteRolePolicyReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteRolePolicyOutcome(NoResult());
@@ -1485,7 +1485,7 @@ DeleteSAMLProviderOutcome IAMClient::DeleteSAMLProvider(const DeleteSAMLProvider
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteSAMLProviderOutcome(NoResult());
@@ -1520,7 +1520,7 @@ DeleteSSHPublicKeyOutcome IAMClient::DeleteSSHPublicKey(const DeleteSSHPublicKey
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteSSHPublicKeyOutcome(NoResult());
@@ -1555,7 +1555,7 @@ DeleteServerCertificateOutcome IAMClient::DeleteServerCertificate(const DeleteSe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteServerCertificateOutcome(NoResult());
@@ -1590,7 +1590,7 @@ DeleteServiceLinkedRoleOutcome IAMClient::DeleteServiceLinkedRole(const DeleteSe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteServiceLinkedRoleOutcome(DeleteServiceLinkedRoleResult(outcome.GetResult()));
@@ -1625,7 +1625,7 @@ DeleteServiceSpecificCredentialOutcome IAMClient::DeleteServiceSpecificCredentia
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteServiceSpecificCredentialOutcome(NoResult());
@@ -1660,7 +1660,7 @@ DeleteSigningCertificateOutcome IAMClient::DeleteSigningCertificate(const Delete
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteSigningCertificateOutcome(NoResult());
@@ -1695,7 +1695,7 @@ DeleteUserOutcome IAMClient::DeleteUser(const DeleteUserRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteUserOutcome(NoResult());
@@ -1730,7 +1730,7 @@ DeleteUserPermissionsBoundaryOutcome IAMClient::DeleteUserPermissionsBoundary(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteUserPermissionsBoundaryOutcome(NoResult());
@@ -1765,7 +1765,7 @@ DeleteUserPolicyOutcome IAMClient::DeleteUserPolicy(const DeleteUserPolicyReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteUserPolicyOutcome(NoResult());
@@ -1800,7 +1800,7 @@ DeleteVirtualMFADeviceOutcome IAMClient::DeleteVirtualMFADevice(const DeleteVirt
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteVirtualMFADeviceOutcome(NoResult());
@@ -1835,7 +1835,7 @@ DetachGroupPolicyOutcome IAMClient::DetachGroupPolicy(const DetachGroupPolicyReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DetachGroupPolicyOutcome(NoResult());
@@ -1870,7 +1870,7 @@ DetachRolePolicyOutcome IAMClient::DetachRolePolicy(const DetachRolePolicyReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DetachRolePolicyOutcome(NoResult());
@@ -1905,7 +1905,7 @@ DetachUserPolicyOutcome IAMClient::DetachUserPolicy(const DetachUserPolicyReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DetachUserPolicyOutcome(NoResult());
@@ -1940,7 +1940,7 @@ EnableMFADeviceOutcome IAMClient::EnableMFADevice(const EnableMFADeviceRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return EnableMFADeviceOutcome(NoResult());
@@ -1975,7 +1975,7 @@ GenerateCredentialReportOutcome IAMClient::GenerateCredentialReport(const Genera
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GenerateCredentialReportOutcome(GenerateCredentialReportResult(outcome.GetResult()));
@@ -2010,7 +2010,7 @@ GenerateOrganizationsAccessReportOutcome IAMClient::GenerateOrganizationsAccessR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GenerateOrganizationsAccessReportOutcome(GenerateOrganizationsAccessReportResult(outcome.GetResult()));
@@ -2045,7 +2045,7 @@ GenerateServiceLastAccessedDetailsOutcome IAMClient::GenerateServiceLastAccessed
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GenerateServiceLastAccessedDetailsOutcome(GenerateServiceLastAccessedDetailsResult(outcome.GetResult()));
@@ -2080,7 +2080,7 @@ GetAccessKeyLastUsedOutcome IAMClient::GetAccessKeyLastUsed(const GetAccessKeyLa
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetAccessKeyLastUsedOutcome(GetAccessKeyLastUsedResult(outcome.GetResult()));
@@ -2115,7 +2115,7 @@ GetAccountAuthorizationDetailsOutcome IAMClient::GetAccountAuthorizationDetails(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetAccountAuthorizationDetailsOutcome(GetAccountAuthorizationDetailsResult(outcome.GetResult()));
@@ -2150,7 +2150,7 @@ GetAccountPasswordPolicyOutcome IAMClient::GetAccountPasswordPolicy(const GetAcc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetAccountPasswordPolicyOutcome(GetAccountPasswordPolicyResult(outcome.GetResult()));
@@ -2185,7 +2185,7 @@ GetAccountSummaryOutcome IAMClient::GetAccountSummary(const GetAccountSummaryReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetAccountSummaryOutcome(GetAccountSummaryResult(outcome.GetResult()));
@@ -2220,7 +2220,7 @@ GetContextKeysForCustomPolicyOutcome IAMClient::GetContextKeysForCustomPolicy(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetContextKeysForCustomPolicyOutcome(GetContextKeysForCustomPolicyResult(outcome.GetResult()));
@@ -2255,7 +2255,7 @@ GetContextKeysForPrincipalPolicyOutcome IAMClient::GetContextKeysForPrincipalPol
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetContextKeysForPrincipalPolicyOutcome(GetContextKeysForPrincipalPolicyResult(outcome.GetResult()));
@@ -2290,7 +2290,7 @@ GetCredentialReportOutcome IAMClient::GetCredentialReport(const GetCredentialRep
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetCredentialReportOutcome(GetCredentialReportResult(outcome.GetResult()));
@@ -2325,7 +2325,7 @@ GetGroupOutcome IAMClient::GetGroup(const GetGroupRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetGroupOutcome(GetGroupResult(outcome.GetResult()));
@@ -2360,7 +2360,7 @@ GetGroupPolicyOutcome IAMClient::GetGroupPolicy(const GetGroupPolicyRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetGroupPolicyOutcome(GetGroupPolicyResult(outcome.GetResult()));
@@ -2395,7 +2395,7 @@ GetInstanceProfileOutcome IAMClient::GetInstanceProfile(const GetInstanceProfile
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetInstanceProfileOutcome(GetInstanceProfileResult(outcome.GetResult()));
@@ -2430,7 +2430,7 @@ GetLoginProfileOutcome IAMClient::GetLoginProfile(const GetLoginProfileRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetLoginProfileOutcome(GetLoginProfileResult(outcome.GetResult()));
@@ -2465,7 +2465,7 @@ GetOpenIDConnectProviderOutcome IAMClient::GetOpenIDConnectProvider(const GetOpe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetOpenIDConnectProviderOutcome(GetOpenIDConnectProviderResult(outcome.GetResult()));
@@ -2500,7 +2500,7 @@ GetOrganizationsAccessReportOutcome IAMClient::GetOrganizationsAccessReport(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetOrganizationsAccessReportOutcome(GetOrganizationsAccessReportResult(outcome.GetResult()));
@@ -2535,7 +2535,7 @@ GetPolicyOutcome IAMClient::GetPolicy(const GetPolicyRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetPolicyOutcome(GetPolicyResult(outcome.GetResult()));
@@ -2570,7 +2570,7 @@ GetPolicyVersionOutcome IAMClient::GetPolicyVersion(const GetPolicyVersionReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetPolicyVersionOutcome(GetPolicyVersionResult(outcome.GetResult()));
@@ -2605,7 +2605,7 @@ GetRoleOutcome IAMClient::GetRole(const GetRoleRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetRoleOutcome(GetRoleResult(outcome.GetResult()));
@@ -2640,7 +2640,7 @@ GetRolePolicyOutcome IAMClient::GetRolePolicy(const GetRolePolicyRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetRolePolicyOutcome(GetRolePolicyResult(outcome.GetResult()));
@@ -2675,7 +2675,7 @@ GetSAMLProviderOutcome IAMClient::GetSAMLProvider(const GetSAMLProviderRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetSAMLProviderOutcome(GetSAMLProviderResult(outcome.GetResult()));
@@ -2710,7 +2710,7 @@ GetSSHPublicKeyOutcome IAMClient::GetSSHPublicKey(const GetSSHPublicKeyRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetSSHPublicKeyOutcome(GetSSHPublicKeyResult(outcome.GetResult()));
@@ -2745,7 +2745,7 @@ GetServerCertificateOutcome IAMClient::GetServerCertificate(const GetServerCerti
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetServerCertificateOutcome(GetServerCertificateResult(outcome.GetResult()));
@@ -2780,7 +2780,7 @@ GetServiceLastAccessedDetailsOutcome IAMClient::GetServiceLastAccessedDetails(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetServiceLastAccessedDetailsOutcome(GetServiceLastAccessedDetailsResult(outcome.GetResult()));
@@ -2815,7 +2815,7 @@ GetServiceLastAccessedDetailsWithEntitiesOutcome IAMClient::GetServiceLastAccess
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetServiceLastAccessedDetailsWithEntitiesOutcome(GetServiceLastAccessedDetailsWithEntitiesResult(outcome.GetResult()));
@@ -2850,7 +2850,7 @@ GetServiceLinkedRoleDeletionStatusOutcome IAMClient::GetServiceLinkedRoleDeletio
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetServiceLinkedRoleDeletionStatusOutcome(GetServiceLinkedRoleDeletionStatusResult(outcome.GetResult()));
@@ -2885,7 +2885,7 @@ GetUserOutcome IAMClient::GetUser(const GetUserRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetUserOutcome(GetUserResult(outcome.GetResult()));
@@ -2920,7 +2920,7 @@ GetUserPolicyOutcome IAMClient::GetUserPolicy(const GetUserPolicyRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetUserPolicyOutcome(GetUserPolicyResult(outcome.GetResult()));
@@ -2955,7 +2955,7 @@ ListAccessKeysOutcome IAMClient::ListAccessKeys(const ListAccessKeysRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListAccessKeysOutcome(ListAccessKeysResult(outcome.GetResult()));
@@ -2990,7 +2990,7 @@ ListAccountAliasesOutcome IAMClient::ListAccountAliases(const ListAccountAliases
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListAccountAliasesOutcome(ListAccountAliasesResult(outcome.GetResult()));
@@ -3025,7 +3025,7 @@ ListAttachedGroupPoliciesOutcome IAMClient::ListAttachedGroupPolicies(const List
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListAttachedGroupPoliciesOutcome(ListAttachedGroupPoliciesResult(outcome.GetResult()));
@@ -3060,7 +3060,7 @@ ListAttachedRolePoliciesOutcome IAMClient::ListAttachedRolePolicies(const ListAt
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListAttachedRolePoliciesOutcome(ListAttachedRolePoliciesResult(outcome.GetResult()));
@@ -3095,7 +3095,7 @@ ListAttachedUserPoliciesOutcome IAMClient::ListAttachedUserPolicies(const ListAt
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListAttachedUserPoliciesOutcome(ListAttachedUserPoliciesResult(outcome.GetResult()));
@@ -3130,7 +3130,7 @@ ListEntitiesForPolicyOutcome IAMClient::ListEntitiesForPolicy(const ListEntities
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListEntitiesForPolicyOutcome(ListEntitiesForPolicyResult(outcome.GetResult()));
@@ -3165,7 +3165,7 @@ ListGroupPoliciesOutcome IAMClient::ListGroupPolicies(const ListGroupPoliciesReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListGroupPoliciesOutcome(ListGroupPoliciesResult(outcome.GetResult()));
@@ -3200,7 +3200,7 @@ ListGroupsOutcome IAMClient::ListGroups(const ListGroupsRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListGroupsOutcome(ListGroupsResult(outcome.GetResult()));
@@ -3235,7 +3235,7 @@ ListGroupsForUserOutcome IAMClient::ListGroupsForUser(const ListGroupsForUserReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListGroupsForUserOutcome(ListGroupsForUserResult(outcome.GetResult()));
@@ -3270,7 +3270,7 @@ ListInstanceProfilesOutcome IAMClient::ListInstanceProfiles(const ListInstancePr
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListInstanceProfilesOutcome(ListInstanceProfilesResult(outcome.GetResult()));
@@ -3305,7 +3305,7 @@ ListInstanceProfilesForRoleOutcome IAMClient::ListInstanceProfilesForRole(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListInstanceProfilesForRoleOutcome(ListInstanceProfilesForRoleResult(outcome.GetResult()));
@@ -3340,7 +3340,7 @@ ListMFADevicesOutcome IAMClient::ListMFADevices(const ListMFADevicesRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListMFADevicesOutcome(ListMFADevicesResult(outcome.GetResult()));
@@ -3375,7 +3375,7 @@ ListOpenIDConnectProvidersOutcome IAMClient::ListOpenIDConnectProviders(const Li
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListOpenIDConnectProvidersOutcome(ListOpenIDConnectProvidersResult(outcome.GetResult()));
@@ -3410,7 +3410,7 @@ ListPoliciesOutcome IAMClient::ListPolicies(const ListPoliciesRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListPoliciesOutcome(ListPoliciesResult(outcome.GetResult()));
@@ -3445,7 +3445,7 @@ ListPoliciesGrantingServiceAccessOutcome IAMClient::ListPoliciesGrantingServiceA
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListPoliciesGrantingServiceAccessOutcome(ListPoliciesGrantingServiceAccessResult(outcome.GetResult()));
@@ -3480,7 +3480,7 @@ ListPolicyVersionsOutcome IAMClient::ListPolicyVersions(const ListPolicyVersions
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListPolicyVersionsOutcome(ListPolicyVersionsResult(outcome.GetResult()));
@@ -3515,7 +3515,7 @@ ListRolePoliciesOutcome IAMClient::ListRolePolicies(const ListRolePoliciesReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListRolePoliciesOutcome(ListRolePoliciesResult(outcome.GetResult()));
@@ -3550,7 +3550,7 @@ ListRoleTagsOutcome IAMClient::ListRoleTags(const ListRoleTagsRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListRoleTagsOutcome(ListRoleTagsResult(outcome.GetResult()));
@@ -3585,7 +3585,7 @@ ListRolesOutcome IAMClient::ListRoles(const ListRolesRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListRolesOutcome(ListRolesResult(outcome.GetResult()));
@@ -3620,7 +3620,7 @@ ListSAMLProvidersOutcome IAMClient::ListSAMLProviders(const ListSAMLProvidersReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListSAMLProvidersOutcome(ListSAMLProvidersResult(outcome.GetResult()));
@@ -3655,7 +3655,7 @@ ListSSHPublicKeysOutcome IAMClient::ListSSHPublicKeys(const ListSSHPublicKeysReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListSSHPublicKeysOutcome(ListSSHPublicKeysResult(outcome.GetResult()));
@@ -3690,7 +3690,7 @@ ListServerCertificatesOutcome IAMClient::ListServerCertificates(const ListServer
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListServerCertificatesOutcome(ListServerCertificatesResult(outcome.GetResult()));
@@ -3725,7 +3725,7 @@ ListServiceSpecificCredentialsOutcome IAMClient::ListServiceSpecificCredentials(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListServiceSpecificCredentialsOutcome(ListServiceSpecificCredentialsResult(outcome.GetResult()));
@@ -3760,7 +3760,7 @@ ListSigningCertificatesOutcome IAMClient::ListSigningCertificates(const ListSign
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListSigningCertificatesOutcome(ListSigningCertificatesResult(outcome.GetResult()));
@@ -3795,7 +3795,7 @@ ListUserPoliciesOutcome IAMClient::ListUserPolicies(const ListUserPoliciesReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListUserPoliciesOutcome(ListUserPoliciesResult(outcome.GetResult()));
@@ -3830,7 +3830,7 @@ ListUserTagsOutcome IAMClient::ListUserTags(const ListUserTagsRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListUserTagsOutcome(ListUserTagsResult(outcome.GetResult()));
@@ -3865,7 +3865,7 @@ ListUsersOutcome IAMClient::ListUsers(const ListUsersRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListUsersOutcome(ListUsersResult(outcome.GetResult()));
@@ -3900,7 +3900,7 @@ ListVirtualMFADevicesOutcome IAMClient::ListVirtualMFADevices(const ListVirtualM
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListVirtualMFADevicesOutcome(ListVirtualMFADevicesResult(outcome.GetResult()));
@@ -3935,7 +3935,7 @@ PutGroupPolicyOutcome IAMClient::PutGroupPolicy(const PutGroupPolicyRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PutGroupPolicyOutcome(NoResult());
@@ -3970,7 +3970,7 @@ PutRolePermissionsBoundaryOutcome IAMClient::PutRolePermissionsBoundary(const Pu
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PutRolePermissionsBoundaryOutcome(NoResult());
@@ -4005,7 +4005,7 @@ PutRolePolicyOutcome IAMClient::PutRolePolicy(const PutRolePolicyRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PutRolePolicyOutcome(NoResult());
@@ -4040,7 +4040,7 @@ PutUserPermissionsBoundaryOutcome IAMClient::PutUserPermissionsBoundary(const Pu
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PutUserPermissionsBoundaryOutcome(NoResult());
@@ -4075,7 +4075,7 @@ PutUserPolicyOutcome IAMClient::PutUserPolicy(const PutUserPolicyRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PutUserPolicyOutcome(NoResult());
@@ -4110,7 +4110,7 @@ RemoveClientIDFromOpenIDConnectProviderOutcome IAMClient::RemoveClientIDFromOpen
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return RemoveClientIDFromOpenIDConnectProviderOutcome(NoResult());
@@ -4145,7 +4145,7 @@ RemoveRoleFromInstanceProfileOutcome IAMClient::RemoveRoleFromInstanceProfile(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return RemoveRoleFromInstanceProfileOutcome(NoResult());
@@ -4180,7 +4180,7 @@ RemoveUserFromGroupOutcome IAMClient::RemoveUserFromGroup(const RemoveUserFromGr
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return RemoveUserFromGroupOutcome(NoResult());
@@ -4215,7 +4215,7 @@ ResetServiceSpecificCredentialOutcome IAMClient::ResetServiceSpecificCredential(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ResetServiceSpecificCredentialOutcome(ResetServiceSpecificCredentialResult(outcome.GetResult()));
@@ -4250,7 +4250,7 @@ ResyncMFADeviceOutcome IAMClient::ResyncMFADevice(const ResyncMFADeviceRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ResyncMFADeviceOutcome(NoResult());
@@ -4285,7 +4285,7 @@ SetDefaultPolicyVersionOutcome IAMClient::SetDefaultPolicyVersion(const SetDefau
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetDefaultPolicyVersionOutcome(NoResult());
@@ -4320,7 +4320,7 @@ SetSecurityTokenServicePreferencesOutcome IAMClient::SetSecurityTokenServicePref
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetSecurityTokenServicePreferencesOutcome(NoResult());
@@ -4355,7 +4355,7 @@ SimulateCustomPolicyOutcome IAMClient::SimulateCustomPolicy(const SimulateCustom
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SimulateCustomPolicyOutcome(SimulateCustomPolicyResult(outcome.GetResult()));
@@ -4390,7 +4390,7 @@ SimulatePrincipalPolicyOutcome IAMClient::SimulatePrincipalPolicy(const Simulate
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SimulatePrincipalPolicyOutcome(SimulatePrincipalPolicyResult(outcome.GetResult()));
@@ -4425,7 +4425,7 @@ TagRoleOutcome IAMClient::TagRole(const TagRoleRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return TagRoleOutcome(NoResult());
@@ -4460,7 +4460,7 @@ TagUserOutcome IAMClient::TagUser(const TagUserRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return TagUserOutcome(NoResult());
@@ -4495,7 +4495,7 @@ UntagRoleOutcome IAMClient::UntagRole(const UntagRoleRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UntagRoleOutcome(NoResult());
@@ -4530,7 +4530,7 @@ UntagUserOutcome IAMClient::UntagUser(const UntagUserRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UntagUserOutcome(NoResult());
@@ -4565,7 +4565,7 @@ UpdateAccessKeyOutcome IAMClient::UpdateAccessKey(const UpdateAccessKeyRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateAccessKeyOutcome(NoResult());
@@ -4600,7 +4600,7 @@ UpdateAccountPasswordPolicyOutcome IAMClient::UpdateAccountPasswordPolicy(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateAccountPasswordPolicyOutcome(NoResult());
@@ -4635,7 +4635,7 @@ UpdateAssumeRolePolicyOutcome IAMClient::UpdateAssumeRolePolicy(const UpdateAssu
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateAssumeRolePolicyOutcome(NoResult());
@@ -4670,7 +4670,7 @@ UpdateGroupOutcome IAMClient::UpdateGroup(const UpdateGroupRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateGroupOutcome(NoResult());
@@ -4705,7 +4705,7 @@ UpdateLoginProfileOutcome IAMClient::UpdateLoginProfile(const UpdateLoginProfile
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateLoginProfileOutcome(NoResult());
@@ -4740,7 +4740,7 @@ UpdateOpenIDConnectProviderThumbprintOutcome IAMClient::UpdateOpenIDConnectProvi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateOpenIDConnectProviderThumbprintOutcome(NoResult());
@@ -4775,7 +4775,7 @@ UpdateRoleOutcome IAMClient::UpdateRole(const UpdateRoleRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateRoleOutcome(UpdateRoleResult(outcome.GetResult()));
@@ -4810,7 +4810,7 @@ UpdateRoleDescriptionOutcome IAMClient::UpdateRoleDescription(const UpdateRoleDe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateRoleDescriptionOutcome(UpdateRoleDescriptionResult(outcome.GetResult()));
@@ -4845,7 +4845,7 @@ UpdateSAMLProviderOutcome IAMClient::UpdateSAMLProvider(const UpdateSAMLProvider
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateSAMLProviderOutcome(UpdateSAMLProviderResult(outcome.GetResult()));
@@ -4880,7 +4880,7 @@ UpdateSSHPublicKeyOutcome IAMClient::UpdateSSHPublicKey(const UpdateSSHPublicKey
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateSSHPublicKeyOutcome(NoResult());
@@ -4915,7 +4915,7 @@ UpdateServerCertificateOutcome IAMClient::UpdateServerCertificate(const UpdateSe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateServerCertificateOutcome(NoResult());
@@ -4950,7 +4950,7 @@ UpdateServiceSpecificCredentialOutcome IAMClient::UpdateServiceSpecificCredentia
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateServiceSpecificCredentialOutcome(NoResult());
@@ -4985,7 +4985,7 @@ UpdateSigningCertificateOutcome IAMClient::UpdateSigningCertificate(const Update
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateSigningCertificateOutcome(NoResult());
@@ -5020,7 +5020,7 @@ UpdateUserOutcome IAMClient::UpdateUser(const UpdateUserRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateUserOutcome(NoResult());
@@ -5055,7 +5055,7 @@ UploadSSHPublicKeyOutcome IAMClient::UploadSSHPublicKey(const UploadSSHPublicKey
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UploadSSHPublicKeyOutcome(UploadSSHPublicKeyResult(outcome.GetResult()));
@@ -5090,7 +5090,7 @@ UploadServerCertificateOutcome IAMClient::UploadServerCertificate(const UploadSe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UploadServerCertificateOutcome(UploadServerCertificateResult(outcome.GetResult()));
@@ -5125,7 +5125,7 @@ UploadSigningCertificateOutcome IAMClient::UploadSigningCertificate(const Upload
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UploadSigningCertificateOutcome(UploadSigningCertificateResult(outcome.GetResult()));

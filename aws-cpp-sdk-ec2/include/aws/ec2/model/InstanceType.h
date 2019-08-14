@@ -137,6 +137,7 @@ namespace Model
     i3en_6xlarge,
     i3en_12xlarge,
     i3en_24xlarge,
+    i3en_metal,
     hi1_4xlarge,
     hs1_8xlarge,
     c1_medium,

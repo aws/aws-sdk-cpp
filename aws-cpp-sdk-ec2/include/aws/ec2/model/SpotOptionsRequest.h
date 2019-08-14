@@ -53,38 +53,80 @@ namespace Model
 
 
     /**
-     * <p>Indicates how to allocate the target capacity across the Spot pools specified
-     * by the Spot Fleet request. The default is <code>lowestPrice</code>.</p>
+     * <p>Indicates how to allocate the target Spot Instance capacity across the Spot
+     * Instance pools specified by the EC2 Fleet.</p> <p>If the allocation strategy is
+     * <code>lowestPrice</code>, EC2 Fleet launches instances from the Spot Instance
+     * pools with the lowest price. This is the default allocation strategy.</p> <p>If
+     * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
+     * instances from all the Spot Instance pools that you specify.</p> <p>If the
+     * allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches
+     * instances from Spot Instance pools that are optimally chosen based on the
+     * available Spot Instance capacity.</p>
      */
     inline const SpotAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
 
     /**
-     * <p>Indicates how to allocate the target capacity across the Spot pools specified
-     * by the Spot Fleet request. The default is <code>lowestPrice</code>.</p>
+     * <p>Indicates how to allocate the target Spot Instance capacity across the Spot
+     * Instance pools specified by the EC2 Fleet.</p> <p>If the allocation strategy is
+     * <code>lowestPrice</code>, EC2 Fleet launches instances from the Spot Instance
+     * pools with the lowest price. This is the default allocation strategy.</p> <p>If
+     * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
+     * instances from all the Spot Instance pools that you specify.</p> <p>If the
+     * allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches
+     * instances from Spot Instance pools that are optimally chosen based on the
+     * available Spot Instance capacity.</p>
      */
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
 
     /**
-     * <p>Indicates how to allocate the target capacity across the Spot pools specified
-     * by the Spot Fleet request. The default is <code>lowestPrice</code>.</p>
+     * <p>Indicates how to allocate the target Spot Instance capacity across the Spot
+     * Instance pools specified by the EC2 Fleet.</p> <p>If the allocation strategy is
+     * <code>lowestPrice</code>, EC2 Fleet launches instances from the Spot Instance
+     * pools with the lowest price. This is the default allocation strategy.</p> <p>If
+     * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
+     * instances from all the Spot Instance pools that you specify.</p> <p>If the
+     * allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches
+     * instances from Spot Instance pools that are optimally chosen based on the
+     * available Spot Instance capacity.</p>
      */
     inline void SetAllocationStrategy(const SpotAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
 
     /**
-     * <p>Indicates how to allocate the target capacity across the Spot pools specified
-     * by the Spot Fleet request. The default is <code>lowestPrice</code>.</p>
+     * <p>Indicates how to allocate the target Spot Instance capacity across the Spot
+     * Instance pools specified by the EC2 Fleet.</p> <p>If the allocation strategy is
+     * <code>lowestPrice</code>, EC2 Fleet launches instances from the Spot Instance
+     * pools with the lowest price. This is the default allocation strategy.</p> <p>If
+     * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
+     * instances from all the Spot Instance pools that you specify.</p> <p>If the
+     * allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches
+     * instances from Spot Instance pools that are optimally chosen based on the
+     * available Spot Instance capacity.</p>
      */
     inline void SetAllocationStrategy(SpotAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
 
     /**
-     * <p>Indicates how to allocate the target capacity across the Spot pools specified
-     * by the Spot Fleet request. The default is <code>lowestPrice</code>.</p>
+     * <p>Indicates how to allocate the target Spot Instance capacity across the Spot
+     * Instance pools specified by the EC2 Fleet.</p> <p>If the allocation strategy is
+     * <code>lowestPrice</code>, EC2 Fleet launches instances from the Spot Instance
+     * pools with the lowest price. This is the default allocation strategy.</p> <p>If
+     * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
+     * instances from all the Spot Instance pools that you specify.</p> <p>If the
+     * allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches
+     * instances from Spot Instance pools that are optimally chosen based on the
+     * available Spot Instance capacity.</p>
      */
     inline SpotOptionsRequest& WithAllocationStrategy(const SpotAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
 
     /**
-     * <p>Indicates how to allocate the target capacity across the Spot pools specified
-     * by the Spot Fleet request. The default is <code>lowestPrice</code>.</p>
+     * <p>Indicates how to allocate the target Spot Instance capacity across the Spot
+     * Instance pools specified by the EC2 Fleet.</p> <p>If the allocation strategy is
+     * <code>lowestPrice</code>, EC2 Fleet launches instances from the Spot Instance
+     * pools with the lowest price. This is the default allocation strategy.</p> <p>If
+     * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
+     * instances from all the Spot Instance pools that you specify.</p> <p>If the
+     * allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches
+     * instances from Spot Instance pools that are optimally chosen based on the
+     * available Spot Instance capacity.</p>
      */
     inline SpotOptionsRequest& WithAllocationStrategy(SpotAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
 

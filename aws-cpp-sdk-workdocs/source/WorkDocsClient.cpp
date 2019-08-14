@@ -163,7 +163,7 @@ AbortDocumentVersionUploadOutcome WorkDocsClient::AbortDocumentVersionUpload(con
   ss << "/versions/";
   ss << request.GetVersionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AbortDocumentVersionUploadOutcome(NoResult());
@@ -205,7 +205,7 @@ ActivateUserOutcome WorkDocsClient::ActivateUser(const ActivateUserRequest& requ
   ss << request.GetUserId();
   ss << "/activation";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ActivateUserOutcome(ActivateUserResult(outcome.GetResult()));
@@ -247,7 +247,7 @@ AddResourcePermissionsOutcome WorkDocsClient::AddResourcePermissions(const AddRe
   ss << request.GetResourceId();
   ss << "/permissions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AddResourcePermissionsOutcome(AddResourcePermissionsResult(outcome.GetResult()));
@@ -296,7 +296,7 @@ CreateCommentOutcome WorkDocsClient::CreateComment(const CreateCommentRequest& r
   ss << request.GetVersionId();
   ss << "/comment";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateCommentOutcome(CreateCommentResult(outcome.GetResult()));
@@ -338,7 +338,7 @@ CreateCustomMetadataOutcome WorkDocsClient::CreateCustomMetadata(const CreateCus
   ss << request.GetResourceId();
   ss << "/customMetadata";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateCustomMetadataOutcome(CreateCustomMetadataResult(outcome.GetResult()));
@@ -373,7 +373,7 @@ CreateFolderOutcome WorkDocsClient::CreateFolder(const CreateFolderRequest& requ
   Aws::StringStream ss;
   ss << "/api/v1/folders";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateFolderOutcome(CreateFolderResult(outcome.GetResult()));
@@ -415,7 +415,7 @@ CreateLabelsOutcome WorkDocsClient::CreateLabels(const CreateLabelsRequest& requ
   ss << request.GetResourceId();
   ss << "/labels";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateLabelsOutcome(CreateLabelsResult(outcome.GetResult()));
@@ -457,7 +457,7 @@ CreateNotificationSubscriptionOutcome WorkDocsClient::CreateNotificationSubscrip
   ss << request.GetOrganizationId();
   ss << "/subscriptions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateNotificationSubscriptionOutcome(CreateNotificationSubscriptionResult(outcome.GetResult()));
@@ -492,7 +492,7 @@ CreateUserOutcome WorkDocsClient::CreateUser(const CreateUserRequest& request) c
   Aws::StringStream ss;
   ss << "/api/v1/users";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateUserOutcome(CreateUserResult(outcome.GetResult()));
@@ -534,7 +534,7 @@ DeactivateUserOutcome WorkDocsClient::DeactivateUser(const DeactivateUserRequest
   ss << request.GetUserId();
   ss << "/activation";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeactivateUserOutcome(NoResult());
@@ -589,7 +589,7 @@ DeleteCommentOutcome WorkDocsClient::DeleteComment(const DeleteCommentRequest& r
   ss << "/comment/";
   ss << request.GetCommentId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteCommentOutcome(NoResult());
@@ -631,7 +631,7 @@ DeleteCustomMetadataOutcome WorkDocsClient::DeleteCustomMetadata(const DeleteCus
   ss << request.GetResourceId();
   ss << "/customMetadata";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteCustomMetadataOutcome(DeleteCustomMetadataResult(outcome.GetResult()));
@@ -672,7 +672,7 @@ DeleteDocumentOutcome WorkDocsClient::DeleteDocument(const DeleteDocumentRequest
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteDocumentOutcome(NoResult());
@@ -713,7 +713,7 @@ DeleteFolderOutcome WorkDocsClient::DeleteFolder(const DeleteFolderRequest& requ
   ss << "/api/v1/folders/";
   ss << request.GetFolderId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteFolderOutcome(NoResult());
@@ -755,7 +755,7 @@ DeleteFolderContentsOutcome WorkDocsClient::DeleteFolderContents(const DeleteFol
   ss << request.GetFolderId();
   ss << "/contents";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteFolderContentsOutcome(NoResult());
@@ -797,7 +797,7 @@ DeleteLabelsOutcome WorkDocsClient::DeleteLabels(const DeleteLabelsRequest& requ
   ss << request.GetResourceId();
   ss << "/labels";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteLabelsOutcome(DeleteLabelsResult(outcome.GetResult()));
@@ -845,7 +845,7 @@ DeleteNotificationSubscriptionOutcome WorkDocsClient::DeleteNotificationSubscrip
   ss << "/subscriptions/";
   ss << request.GetSubscriptionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteNotificationSubscriptionOutcome(NoResult());
@@ -886,7 +886,7 @@ DeleteUserOutcome WorkDocsClient::DeleteUser(const DeleteUserRequest& request) c
   ss << "/api/v1/users/";
   ss << request.GetUserId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteUserOutcome(NoResult());
@@ -921,7 +921,7 @@ DescribeActivitiesOutcome WorkDocsClient::DescribeActivities(const DescribeActiv
   Aws::StringStream ss;
   ss << "/api/v1/activities";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeActivitiesOutcome(DescribeActivitiesResult(outcome.GetResult()));
@@ -970,7 +970,7 @@ DescribeCommentsOutcome WorkDocsClient::DescribeComments(const DescribeCommentsR
   ss << request.GetVersionId();
   ss << "/comments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeCommentsOutcome(DescribeCommentsResult(outcome.GetResult()));
@@ -1012,7 +1012,7 @@ DescribeDocumentVersionsOutcome WorkDocsClient::DescribeDocumentVersions(const D
   ss << request.GetDocumentId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeDocumentVersionsOutcome(DescribeDocumentVersionsResult(outcome.GetResult()));
@@ -1054,7 +1054,7 @@ DescribeFolderContentsOutcome WorkDocsClient::DescribeFolderContents(const Descr
   ss << request.GetFolderId();
   ss << "/contents";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeFolderContentsOutcome(DescribeFolderContentsResult(outcome.GetResult()));
@@ -1094,7 +1094,7 @@ DescribeGroupsOutcome WorkDocsClient::DescribeGroups(const DescribeGroupsRequest
   Aws::StringStream ss;
   ss << "/api/v1/groups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeGroupsOutcome(DescribeGroupsResult(outcome.GetResult()));
@@ -1136,7 +1136,7 @@ DescribeNotificationSubscriptionsOutcome WorkDocsClient::DescribeNotificationSub
   ss << request.GetOrganizationId();
   ss << "/subscriptions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeNotificationSubscriptionsOutcome(DescribeNotificationSubscriptionsResult(outcome.GetResult()));
@@ -1178,7 +1178,7 @@ DescribeResourcePermissionsOutcome WorkDocsClient::DescribeResourcePermissions(c
   ss << request.GetResourceId();
   ss << "/permissions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeResourcePermissionsOutcome(DescribeResourcePermissionsResult(outcome.GetResult()));
@@ -1218,7 +1218,7 @@ DescribeRootFoldersOutcome WorkDocsClient::DescribeRootFolders(const DescribeRoo
   Aws::StringStream ss;
   ss << "/api/v1/me/root";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeRootFoldersOutcome(DescribeRootFoldersResult(outcome.GetResult()));
@@ -1253,7 +1253,7 @@ DescribeUsersOutcome WorkDocsClient::DescribeUsers(const DescribeUsersRequest& r
   Aws::StringStream ss;
   ss << "/api/v1/users";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeUsersOutcome(DescribeUsersResult(outcome.GetResult()));
@@ -1293,7 +1293,7 @@ GetCurrentUserOutcome WorkDocsClient::GetCurrentUser(const GetCurrentUserRequest
   Aws::StringStream ss;
   ss << "/api/v1/me";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetCurrentUserOutcome(GetCurrentUserResult(outcome.GetResult()));
@@ -1334,7 +1334,7 @@ GetDocumentOutcome WorkDocsClient::GetDocument(const GetDocumentRequest& request
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDocumentOutcome(GetDocumentResult(outcome.GetResult()));
@@ -1376,7 +1376,7 @@ GetDocumentPathOutcome WorkDocsClient::GetDocumentPath(const GetDocumentPathRequ
   ss << request.GetDocumentId();
   ss << "/path";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDocumentPathOutcome(GetDocumentPathResult(outcome.GetResult()));
@@ -1424,7 +1424,7 @@ GetDocumentVersionOutcome WorkDocsClient::GetDocumentVersion(const GetDocumentVe
   ss << "/versions/";
   ss << request.GetVersionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDocumentVersionOutcome(GetDocumentVersionResult(outcome.GetResult()));
@@ -1465,7 +1465,7 @@ GetFolderOutcome WorkDocsClient::GetFolder(const GetFolderRequest& request) cons
   ss << "/api/v1/folders/";
   ss << request.GetFolderId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetFolderOutcome(GetFolderResult(outcome.GetResult()));
@@ -1507,7 +1507,7 @@ GetFolderPathOutcome WorkDocsClient::GetFolderPath(const GetFolderPathRequest& r
   ss << request.GetFolderId();
   ss << "/path";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetFolderPathOutcome(GetFolderPathResult(outcome.GetResult()));
@@ -1542,7 +1542,7 @@ GetResourcesOutcome WorkDocsClient::GetResources(const GetResourcesRequest& requ
   Aws::StringStream ss;
   ss << "/api/v1/resources";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetResourcesOutcome(GetResourcesResult(outcome.GetResult()));
@@ -1577,7 +1577,7 @@ InitiateDocumentVersionUploadOutcome WorkDocsClient::InitiateDocumentVersionUplo
   Aws::StringStream ss;
   ss << "/api/v1/documents";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return InitiateDocumentVersionUploadOutcome(InitiateDocumentVersionUploadResult(outcome.GetResult()));
@@ -1619,7 +1619,7 @@ RemoveAllResourcePermissionsOutcome WorkDocsClient::RemoveAllResourcePermissions
   ss << request.GetResourceId();
   ss << "/permissions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RemoveAllResourcePermissionsOutcome(NoResult());
@@ -1667,7 +1667,7 @@ RemoveResourcePermissionOutcome WorkDocsClient::RemoveResourcePermission(const R
   ss << "/permissions/";
   ss << request.GetPrincipalId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RemoveResourcePermissionOutcome(NoResult());
@@ -1708,7 +1708,7 @@ UpdateDocumentOutcome WorkDocsClient::UpdateDocument(const UpdateDocumentRequest
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateDocumentOutcome(NoResult());
@@ -1756,7 +1756,7 @@ UpdateDocumentVersionOutcome WorkDocsClient::UpdateDocumentVersion(const UpdateD
   ss << "/versions/";
   ss << request.GetVersionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateDocumentVersionOutcome(NoResult());
@@ -1797,7 +1797,7 @@ UpdateFolderOutcome WorkDocsClient::UpdateFolder(const UpdateFolderRequest& requ
   ss << "/api/v1/folders/";
   ss << request.GetFolderId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateFolderOutcome(NoResult());
@@ -1838,7 +1838,7 @@ UpdateUserOutcome WorkDocsClient::UpdateUser(const UpdateUserRequest& request) c
   ss << "/api/v1/users/";
   ss << request.GetUserId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateUserOutcome(UpdateUserResult(outcome.GetResult()));

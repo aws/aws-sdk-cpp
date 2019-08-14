@@ -161,7 +161,7 @@ namespace Model
 
 
     /**
-     * <p>One or more block devices that are mapped to the Spot instances. You can't
+     * <p>One or more block devices that are mapped to the Spot Instances. You can't
      * specify both a snapshot ID and an encryption value. This is because only blank
      * volumes can be encrypted on creation. If a snapshot is the basis for a volume,
      * it is not blank and its encryption status is used for the volume encryption
@@ -170,7 +170,7 @@ namespace Model
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
     /**
-     * <p>One or more block devices that are mapped to the Spot instances. You can't
+     * <p>One or more block devices that are mapped to the Spot Instances. You can't
      * specify both a snapshot ID and an encryption value. This is because only blank
      * volumes can be encrypted on creation. If a snapshot is the basis for a volume,
      * it is not blank and its encryption status is used for the volume encryption
@@ -179,7 +179,7 @@ namespace Model
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
 
     /**
-     * <p>One or more block devices that are mapped to the Spot instances. You can't
+     * <p>One or more block devices that are mapped to the Spot Instances. You can't
      * specify both a snapshot ID and an encryption value. This is because only blank
      * volumes can be encrypted on creation. If a snapshot is the basis for a volume,
      * it is not blank and its encryption status is used for the volume encryption
@@ -188,7 +188,7 @@ namespace Model
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p>One or more block devices that are mapped to the Spot instances. You can't
+     * <p>One or more block devices that are mapped to the Spot Instances. You can't
      * specify both a snapshot ID and an encryption value. This is because only blank
      * volumes can be encrypted on creation. If a snapshot is the basis for a volume,
      * it is not blank and its encryption status is used for the volume encryption
@@ -197,7 +197,7 @@ namespace Model
     inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
-     * <p>One or more block devices that are mapped to the Spot instances. You can't
+     * <p>One or more block devices that are mapped to the Spot Instances. You can't
      * specify both a snapshot ID and an encryption value. This is because only blank
      * volumes can be encrypted on creation. If a snapshot is the basis for a volume,
      * it is not blank and its encryption status is used for the volume encryption
@@ -206,7 +206,7 @@ namespace Model
     inline SpotFleetLaunchSpecification& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p>One or more block devices that are mapped to the Spot instances. You can't
+     * <p>One or more block devices that are mapped to the Spot Instances. You can't
      * specify both a snapshot ID and an encryption value. This is because only blank
      * volumes can be encrypted on creation. If a snapshot is the basis for a volume,
      * it is not blank and its encryption status is used for the volume encryption
@@ -215,7 +215,7 @@ namespace Model
     inline SpotFleetLaunchSpecification& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
-     * <p>One or more block devices that are mapped to the Spot instances. You can't
+     * <p>One or more block devices that are mapped to the Spot Instances. You can't
      * specify both a snapshot ID and an encryption value. This is because only blank
      * volumes can be encrypted on creation. If a snapshot is the basis for a volume,
      * it is not blank and its encryption status is used for the volume encryption
@@ -224,7 +224,7 @@ namespace Model
     inline SpotFleetLaunchSpecification& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p>One or more block devices that are mapped to the Spot instances. You can't
+     * <p>One or more block devices that are mapped to the Spot Instances. You can't
      * specify both a snapshot ID and an encryption value. This is because only blank
      * volumes can be encrypted on creation. If a snapshot is the basis for a volume,
      * it is not blank and its encryption status is used for the volume encryption
@@ -697,58 +697,58 @@ namespace Model
 
 
     /**
-     * <p>The ID of the subnet in which to launch the instances. To specify multiple
-     * subnets, separate them using commas; for example, "subnet-a61dafcf,
-     * subnet-65ea5f08".</p>
+     * <p>The IDs of the subnets in which to launch the instances. To specify multiple
+     * subnets, separate them using commas; for example, "subnet-1234abcdeexample1,
+     * subnet-0987cdef6example2".</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>The ID of the subnet in which to launch the instances. To specify multiple
-     * subnets, separate them using commas; for example, "subnet-a61dafcf,
-     * subnet-65ea5f08".</p>
+     * <p>The IDs of the subnets in which to launch the instances. To specify multiple
+     * subnets, separate them using commas; for example, "subnet-1234abcdeexample1,
+     * subnet-0987cdef6example2".</p>
      */
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
-     * <p>The ID of the subnet in which to launch the instances. To specify multiple
-     * subnets, separate them using commas; for example, "subnet-a61dafcf,
-     * subnet-65ea5f08".</p>
+     * <p>The IDs of the subnets in which to launch the instances. To specify multiple
+     * subnets, separate them using commas; for example, "subnet-1234abcdeexample1,
+     * subnet-0987cdef6example2".</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>The ID of the subnet in which to launch the instances. To specify multiple
-     * subnets, separate them using commas; for example, "subnet-a61dafcf,
-     * subnet-65ea5f08".</p>
+     * <p>The IDs of the subnets in which to launch the instances. To specify multiple
+     * subnets, separate them using commas; for example, "subnet-1234abcdeexample1,
+     * subnet-0987cdef6example2".</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
-     * <p>The ID of the subnet in which to launch the instances. To specify multiple
-     * subnets, separate them using commas; for example, "subnet-a61dafcf,
-     * subnet-65ea5f08".</p>
+     * <p>The IDs of the subnets in which to launch the instances. To specify multiple
+     * subnets, separate them using commas; for example, "subnet-1234abcdeexample1,
+     * subnet-0987cdef6example2".</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
-     * <p>The ID of the subnet in which to launch the instances. To specify multiple
-     * subnets, separate them using commas; for example, "subnet-a61dafcf,
-     * subnet-65ea5f08".</p>
+     * <p>The IDs of the subnets in which to launch the instances. To specify multiple
+     * subnets, separate them using commas; for example, "subnet-1234abcdeexample1,
+     * subnet-0987cdef6example2".</p>
      */
     inline SpotFleetLaunchSpecification& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The ID of the subnet in which to launch the instances. To specify multiple
-     * subnets, separate them using commas; for example, "subnet-a61dafcf,
-     * subnet-65ea5f08".</p>
+     * <p>The IDs of the subnets in which to launch the instances. To specify multiple
+     * subnets, separate them using commas; for example, "subnet-1234abcdeexample1,
+     * subnet-0987cdef6example2".</p>
      */
     inline SpotFleetLaunchSpecification& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the subnet in which to launch the instances. To specify multiple
-     * subnets, separate them using commas; for example, "subnet-a61dafcf,
-     * subnet-65ea5f08".</p>
+     * <p>The IDs of the subnets in which to launch the instances. To specify multiple
+     * subnets, separate them using commas; for example, "subnet-1234abcdeexample1,
+     * subnet-0987cdef6example2".</p>
      */
     inline SpotFleetLaunchSpecification& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 

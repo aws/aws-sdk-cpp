@@ -123,7 +123,7 @@ CreateFileSystemOutcome EFSClient::CreateFileSystem(const CreateFileSystemReques
   Aws::StringStream ss;
   ss << "/2015-02-01/file-systems";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateFileSystemOutcome(CreateFileSystemResult(outcome.GetResult()));
@@ -158,7 +158,7 @@ CreateMountTargetOutcome EFSClient::CreateMountTarget(const CreateMountTargetReq
   Aws::StringStream ss;
   ss << "/2015-02-01/mount-targets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateMountTargetOutcome(CreateMountTargetResult(outcome.GetResult()));
@@ -199,7 +199,7 @@ CreateTagsOutcome EFSClient::CreateTags(const CreateTagsRequest& request) const
   ss << "/2015-02-01/create-tags/";
   ss << request.GetFileSystemId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateTagsOutcome(NoResult());
@@ -240,7 +240,7 @@ DeleteFileSystemOutcome EFSClient::DeleteFileSystem(const DeleteFileSystemReques
   ss << "/2015-02-01/file-systems/";
   ss << request.GetFileSystemId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteFileSystemOutcome(NoResult());
@@ -281,7 +281,7 @@ DeleteMountTargetOutcome EFSClient::DeleteMountTarget(const DeleteMountTargetReq
   ss << "/2015-02-01/mount-targets/";
   ss << request.GetMountTargetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteMountTargetOutcome(NoResult());
@@ -322,7 +322,7 @@ DeleteTagsOutcome EFSClient::DeleteTags(const DeleteTagsRequest& request) const
   ss << "/2015-02-01/delete-tags/";
   ss << request.GetFileSystemId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteTagsOutcome(NoResult());
@@ -357,7 +357,7 @@ DescribeFileSystemsOutcome EFSClient::DescribeFileSystems(const DescribeFileSyst
   Aws::StringStream ss;
   ss << "/2015-02-01/file-systems";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeFileSystemsOutcome(DescribeFileSystemsResult(outcome.GetResult()));
@@ -399,7 +399,7 @@ DescribeLifecycleConfigurationOutcome EFSClient::DescribeLifecycleConfiguration(
   ss << request.GetFileSystemId();
   ss << "/lifecycle-configuration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeLifecycleConfigurationOutcome(DescribeLifecycleConfigurationResult(outcome.GetResult()));
@@ -441,7 +441,7 @@ DescribeMountTargetSecurityGroupsOutcome EFSClient::DescribeMountTargetSecurityG
   ss << request.GetMountTargetId();
   ss << "/security-groups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeMountTargetSecurityGroupsOutcome(DescribeMountTargetSecurityGroupsResult(outcome.GetResult()));
@@ -476,7 +476,7 @@ DescribeMountTargetsOutcome EFSClient::DescribeMountTargets(const DescribeMountT
   Aws::StringStream ss;
   ss << "/2015-02-01/mount-targets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeMountTargetsOutcome(DescribeMountTargetsResult(outcome.GetResult()));
@@ -518,7 +518,7 @@ DescribeTagsOutcome EFSClient::DescribeTags(const DescribeTagsRequest& request) 
   ss << request.GetFileSystemId();
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeTagsOutcome(DescribeTagsResult(outcome.GetResult()));
@@ -560,7 +560,7 @@ ModifyMountTargetSecurityGroupsOutcome EFSClient::ModifyMountTargetSecurityGroup
   ss << request.GetMountTargetId();
   ss << "/security-groups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ModifyMountTargetSecurityGroupsOutcome(NoResult());
@@ -602,7 +602,7 @@ PutLifecycleConfigurationOutcome EFSClient::PutLifecycleConfiguration(const PutL
   ss << request.GetFileSystemId();
   ss << "/lifecycle-configuration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutLifecycleConfigurationOutcome(PutLifecycleConfigurationResult(outcome.GetResult()));
@@ -643,7 +643,7 @@ UpdateFileSystemOutcome EFSClient::UpdateFileSystem(const UpdateFileSystemReques
   ss << "/2015-02-01/file-systems/";
   ss << request.GetFileSystemId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateFileSystemOutcome(UpdateFileSystemResult(outcome.GetResult()));

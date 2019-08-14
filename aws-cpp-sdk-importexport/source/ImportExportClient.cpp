@@ -117,7 +117,7 @@ Aws::String ImportExportClient::ConvertRequestToPresignedUrl(const AmazonSeriali
   ss << "?" << requestToConvert.SerializePayload();
 
   URI uri(ss.str());
-  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+  return GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region, 3600);
 }
 
 CancelJobOutcome ImportExportClient::CancelJob(const CancelJobRequest& request) const
@@ -128,7 +128,7 @@ CancelJobOutcome ImportExportClient::CancelJob(const CancelJobRequest& request) 
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=CancelJob");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CancelJobOutcome(CancelJobResult(outcome.GetResult()));
@@ -165,7 +165,7 @@ CreateJobOutcome ImportExportClient::CreateJob(const CreateJobRequest& request) 
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=CreateJob");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateJobOutcome(CreateJobResult(outcome.GetResult()));
@@ -202,7 +202,7 @@ GetShippingLabelOutcome ImportExportClient::GetShippingLabel(const GetShippingLa
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=GetShippingLabel");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetShippingLabelOutcome(GetShippingLabelResult(outcome.GetResult()));
@@ -239,7 +239,7 @@ GetStatusOutcome ImportExportClient::GetStatus(const GetStatusRequest& request) 
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=GetStatus");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetStatusOutcome(GetStatusResult(outcome.GetResult()));
@@ -276,7 +276,7 @@ ListJobsOutcome ImportExportClient::ListJobs(const ListJobsRequest& request) con
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=ListJobs");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListJobsOutcome(ListJobsResult(outcome.GetResult()));
@@ -313,7 +313,7 @@ UpdateJobOutcome ImportExportClient::UpdateJob(const UpdateJobRequest& request) 
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=UpdateJob");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateJobOutcome(UpdateJobResult(outcome.GetResult()));

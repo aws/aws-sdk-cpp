@@ -141,6 +141,7 @@ namespace Aws
         static const int i3en_6xlarge_HASH = HashingUtils::HashString("i3en.6xlarge");
         static const int i3en_12xlarge_HASH = HashingUtils::HashString("i3en.12xlarge");
         static const int i3en_24xlarge_HASH = HashingUtils::HashString("i3en.24xlarge");
+        static const int i3en_metal_HASH = HashingUtils::HashString("i3en.metal");
         static const int hi1_4xlarge_HASH = HashingUtils::HashString("hi1.4xlarge");
         static const int hs1_8xlarge_HASH = HashingUtils::HashString("hs1.8xlarge");
         static const int c1_medium_HASH = HashingUtils::HashString("c1.medium");
@@ -815,6 +816,11 @@ namespace Aws
             enumValue = InstanceType::i3en_24xlarge;
             return true;
           }
+          else if (hashCode == i3en_metal_HASH)
+          {
+            enumValue = InstanceType::i3en_metal;
+            return true;
+          }
           else if (hashCode == hi1_4xlarge_HASH)
           {
             enumValue = InstanceType::hi1_4xlarge;
@@ -865,16 +871,16 @@ namespace Aws
             enumValue = InstanceType::c4_large;
             return true;
           }
-          else if (hashCode == c4_xlarge_HASH)
-          {
-            enumValue = InstanceType::c4_xlarge;
-            return true;
-          }
           return false;
         }
         static bool GetEnumForNameHelper1(int hashCode, InstanceType& enumValue)
         {
-          if (hashCode == c4_2xlarge_HASH)
+          if (hashCode == c4_xlarge_HASH)
+          {
+            enumValue = InstanceType::c4_xlarge;
+            return true;
+          }
+          else if (hashCode == c4_2xlarge_HASH)
           {
             enumValue = InstanceType::c4_2xlarge;
             return true;
@@ -1714,6 +1720,9 @@ namespace Aws
           case InstanceType::i3en_24xlarge:
             value = "i3en.24xlarge";
             return true;
+          case InstanceType::i3en_metal:
+            value = "i3en.metal";
+            return true;
           case InstanceType::hi1_4xlarge:
             value = "hi1.4xlarge";
             return true;
@@ -1744,9 +1753,6 @@ namespace Aws
           case InstanceType::c4_large:
             value = "c4.large";
             return true;
-          case InstanceType::c4_xlarge:
-            value = "c4.xlarge";
-            return true;
           default:
             return false;
           }
@@ -1755,6 +1761,9 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceType::c4_xlarge:
+            value = "c4.xlarge";
+            return true;
           case InstanceType::c4_2xlarge:
             value = "c4.2xlarge";
             return true;

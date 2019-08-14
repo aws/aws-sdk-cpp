@@ -129,7 +129,7 @@ BatchGetTracesOutcome XRayClient::BatchGetTraces(const BatchGetTracesRequest& re
   Aws::StringStream ss;
   ss << "/Traces";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return BatchGetTracesOutcome(BatchGetTracesResult(outcome.GetResult()));
@@ -164,7 +164,7 @@ CreateGroupOutcome XRayClient::CreateGroup(const CreateGroupRequest& request) co
   Aws::StringStream ss;
   ss << "/CreateGroup";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateGroupOutcome(CreateGroupResult(outcome.GetResult()));
@@ -199,7 +199,7 @@ CreateSamplingRuleOutcome XRayClient::CreateSamplingRule(const CreateSamplingRul
   Aws::StringStream ss;
   ss << "/CreateSamplingRule";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateSamplingRuleOutcome(CreateSamplingRuleResult(outcome.GetResult()));
@@ -234,7 +234,7 @@ DeleteGroupOutcome XRayClient::DeleteGroup(const DeleteGroupRequest& request) co
   Aws::StringStream ss;
   ss << "/DeleteGroup";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteGroupOutcome(DeleteGroupResult(outcome.GetResult()));
@@ -269,7 +269,7 @@ DeleteSamplingRuleOutcome XRayClient::DeleteSamplingRule(const DeleteSamplingRul
   Aws::StringStream ss;
   ss << "/DeleteSamplingRule";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteSamplingRuleOutcome(DeleteSamplingRuleResult(outcome.GetResult()));
@@ -304,7 +304,7 @@ GetEncryptionConfigOutcome XRayClient::GetEncryptionConfig(const GetEncryptionCo
   Aws::StringStream ss;
   ss << "/EncryptionConfig";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetEncryptionConfigOutcome(GetEncryptionConfigResult(outcome.GetResult()));
@@ -339,7 +339,7 @@ GetGroupOutcome XRayClient::GetGroup(const GetGroupRequest& request) const
   Aws::StringStream ss;
   ss << "/GetGroup";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetGroupOutcome(GetGroupResult(outcome.GetResult()));
@@ -374,7 +374,7 @@ GetGroupsOutcome XRayClient::GetGroups(const GetGroupsRequest& request) const
   Aws::StringStream ss;
   ss << "/Groups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetGroupsOutcome(GetGroupsResult(outcome.GetResult()));
@@ -409,7 +409,7 @@ GetSamplingRulesOutcome XRayClient::GetSamplingRules(const GetSamplingRulesReque
   Aws::StringStream ss;
   ss << "/GetSamplingRules";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetSamplingRulesOutcome(GetSamplingRulesResult(outcome.GetResult()));
@@ -444,7 +444,7 @@ GetSamplingStatisticSummariesOutcome XRayClient::GetSamplingStatisticSummaries(c
   Aws::StringStream ss;
   ss << "/SamplingStatisticSummaries";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetSamplingStatisticSummariesOutcome(GetSamplingStatisticSummariesResult(outcome.GetResult()));
@@ -479,7 +479,7 @@ GetSamplingTargetsOutcome XRayClient::GetSamplingTargets(const GetSamplingTarget
   Aws::StringStream ss;
   ss << "/SamplingTargets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetSamplingTargetsOutcome(GetSamplingTargetsResult(outcome.GetResult()));
@@ -514,7 +514,7 @@ GetServiceGraphOutcome XRayClient::GetServiceGraph(const GetServiceGraphRequest&
   Aws::StringStream ss;
   ss << "/ServiceGraph";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetServiceGraphOutcome(GetServiceGraphResult(outcome.GetResult()));
@@ -549,7 +549,7 @@ GetTimeSeriesServiceStatisticsOutcome XRayClient::GetTimeSeriesServiceStatistics
   Aws::StringStream ss;
   ss << "/TimeSeriesServiceStatistics";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetTimeSeriesServiceStatisticsOutcome(GetTimeSeriesServiceStatisticsResult(outcome.GetResult()));
@@ -584,7 +584,7 @@ GetTraceGraphOutcome XRayClient::GetTraceGraph(const GetTraceGraphRequest& reque
   Aws::StringStream ss;
   ss << "/TraceGraph";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetTraceGraphOutcome(GetTraceGraphResult(outcome.GetResult()));
@@ -619,7 +619,7 @@ GetTraceSummariesOutcome XRayClient::GetTraceSummaries(const GetTraceSummariesRe
   Aws::StringStream ss;
   ss << "/TraceSummaries";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetTraceSummariesOutcome(GetTraceSummariesResult(outcome.GetResult()));
@@ -654,7 +654,7 @@ PutEncryptionConfigOutcome XRayClient::PutEncryptionConfig(const PutEncryptionCo
   Aws::StringStream ss;
   ss << "/PutEncryptionConfig";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutEncryptionConfigOutcome(PutEncryptionConfigResult(outcome.GetResult()));
@@ -689,7 +689,7 @@ PutTelemetryRecordsOutcome XRayClient::PutTelemetryRecords(const PutTelemetryRec
   Aws::StringStream ss;
   ss << "/TelemetryRecords";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutTelemetryRecordsOutcome(PutTelemetryRecordsResult(outcome.GetResult()));
@@ -724,7 +724,7 @@ PutTraceSegmentsOutcome XRayClient::PutTraceSegments(const PutTraceSegmentsReque
   Aws::StringStream ss;
   ss << "/TraceSegments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutTraceSegmentsOutcome(PutTraceSegmentsResult(outcome.GetResult()));
@@ -759,7 +759,7 @@ UpdateGroupOutcome XRayClient::UpdateGroup(const UpdateGroupRequest& request) co
   Aws::StringStream ss;
   ss << "/UpdateGroup";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateGroupOutcome(UpdateGroupResult(outcome.GetResult()));
@@ -794,7 +794,7 @@ UpdateSamplingRuleOutcome XRayClient::UpdateSamplingRule(const UpdateSamplingRul
   Aws::StringStream ss;
   ss << "/UpdateSamplingRule";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateSamplingRuleOutcome(UpdateSamplingRuleResult(outcome.GetResult()));

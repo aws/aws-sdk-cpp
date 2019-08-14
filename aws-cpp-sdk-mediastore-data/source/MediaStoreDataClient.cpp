@@ -120,7 +120,7 @@ DeleteObjectOutcome MediaStoreDataClient::DeleteObject(const DeleteObjectRequest
   ss << "/";
   ss << request.GetPath();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteObjectOutcome(DeleteObjectResult(outcome.GetResult()));
@@ -161,7 +161,7 @@ DescribeObjectOutcome MediaStoreDataClient::DescribeObject(const DescribeObjectR
   ss << "/";
   ss << request.GetPath();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_HEAD, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_HEAD, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeObjectOutcome(DescribeObjectResult(outcome.GetResult()));
@@ -202,7 +202,7 @@ GetObjectOutcome MediaStoreDataClient::GetObject(const GetObjectRequest& request
   ss << "/";
   ss << request.GetPath();
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_GET);
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET);
   if(outcome.IsSuccess())
   {
     return GetObjectOutcome(GetObjectResult(outcome.GetResultWithOwnership()));
@@ -237,7 +237,7 @@ ListItemsOutcome MediaStoreDataClient::ListItems(const ListItemsRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListItemsOutcome(ListItemsResult(outcome.GetResult()));
@@ -278,7 +278,7 @@ PutObjectOutcome MediaStoreDataClient::PutObject(const PutObjectRequest& request
   ss << "/";
   ss << request.GetPath();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutObjectOutcome(PutObjectResult(outcome.GetResult()));

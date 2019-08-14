@@ -246,56 +246,72 @@ namespace Model
     /**
      * <p>The version number of the launch template version on which to base the new
      * version. The new version inherits the same launch parameters as the source
-     * version, except for parameters that you specify in LaunchTemplateData.</p>
+     * version, except for parameters that you specify in
+     * <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping
+     * are ignored when creating a new version unless they are explicitly included.</p>
      */
     inline const Aws::String& GetSourceVersion() const{ return m_sourceVersion; }
 
     /**
      * <p>The version number of the launch template version on which to base the new
      * version. The new version inherits the same launch parameters as the source
-     * version, except for parameters that you specify in LaunchTemplateData.</p>
+     * version, except for parameters that you specify in
+     * <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping
+     * are ignored when creating a new version unless they are explicitly included.</p>
      */
     inline bool SourceVersionHasBeenSet() const { return m_sourceVersionHasBeenSet; }
 
     /**
      * <p>The version number of the launch template version on which to base the new
      * version. The new version inherits the same launch parameters as the source
-     * version, except for parameters that you specify in LaunchTemplateData.</p>
+     * version, except for parameters that you specify in
+     * <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping
+     * are ignored when creating a new version unless they are explicitly included.</p>
      */
     inline void SetSourceVersion(const Aws::String& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = value; }
 
     /**
      * <p>The version number of the launch template version on which to base the new
      * version. The new version inherits the same launch parameters as the source
-     * version, except for parameters that you specify in LaunchTemplateData.</p>
+     * version, except for parameters that you specify in
+     * <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping
+     * are ignored when creating a new version unless they are explicitly included.</p>
      */
     inline void SetSourceVersion(Aws::String&& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = std::move(value); }
 
     /**
      * <p>The version number of the launch template version on which to base the new
      * version. The new version inherits the same launch parameters as the source
-     * version, except for parameters that you specify in LaunchTemplateData.</p>
+     * version, except for parameters that you specify in
+     * <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping
+     * are ignored when creating a new version unless they are explicitly included.</p>
      */
     inline void SetSourceVersion(const char* value) { m_sourceVersionHasBeenSet = true; m_sourceVersion.assign(value); }
 
     /**
      * <p>The version number of the launch template version on which to base the new
      * version. The new version inherits the same launch parameters as the source
-     * version, except for parameters that you specify in LaunchTemplateData.</p>
+     * version, except for parameters that you specify in
+     * <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping
+     * are ignored when creating a new version unless they are explicitly included.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithSourceVersion(const Aws::String& value) { SetSourceVersion(value); return *this;}
 
     /**
      * <p>The version number of the launch template version on which to base the new
      * version. The new version inherits the same launch parameters as the source
-     * version, except for parameters that you specify in LaunchTemplateData.</p>
+     * version, except for parameters that you specify in
+     * <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping
+     * are ignored when creating a new version unless they are explicitly included.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithSourceVersion(Aws::String&& value) { SetSourceVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version number of the launch template version on which to base the new
      * version. The new version inherits the same launch parameters as the source
-     * version, except for parameters that you specify in LaunchTemplateData.</p>
+     * version, except for parameters that you specify in
+     * <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping
+     * are ignored when creating a new version unless they are explicitly included.</p>
      */
     inline CreateLaunchTemplateVersionRequest& WithSourceVersion(const char* value) { SetSourceVersion(value); return *this;}
 

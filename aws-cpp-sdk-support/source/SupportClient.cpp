@@ -123,7 +123,7 @@ AddAttachmentsToSetOutcome SupportClient::AddAttachmentsToSet(const AddAttachmen
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AddAttachmentsToSetOutcome(AddAttachmentsToSetResult(outcome.GetResult()));
@@ -158,7 +158,7 @@ AddCommunicationToCaseOutcome SupportClient::AddCommunicationToCase(const AddCom
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AddCommunicationToCaseOutcome(AddCommunicationToCaseResult(outcome.GetResult()));
@@ -193,7 +193,7 @@ CreateCaseOutcome SupportClient::CreateCase(const CreateCaseRequest& request) co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateCaseOutcome(CreateCaseResult(outcome.GetResult()));
@@ -228,7 +228,7 @@ DescribeAttachmentOutcome SupportClient::DescribeAttachment(const DescribeAttach
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeAttachmentOutcome(DescribeAttachmentResult(outcome.GetResult()));
@@ -263,7 +263,7 @@ DescribeCasesOutcome SupportClient::DescribeCases(const DescribeCasesRequest& re
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeCasesOutcome(DescribeCasesResult(outcome.GetResult()));
@@ -298,7 +298,7 @@ DescribeCommunicationsOutcome SupportClient::DescribeCommunications(const Descri
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeCommunicationsOutcome(DescribeCommunicationsResult(outcome.GetResult()));
@@ -333,7 +333,7 @@ DescribeServicesOutcome SupportClient::DescribeServices(const DescribeServicesRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeServicesOutcome(DescribeServicesResult(outcome.GetResult()));
@@ -368,7 +368,7 @@ DescribeSeverityLevelsOutcome SupportClient::DescribeSeverityLevels(const Descri
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeSeverityLevelsOutcome(DescribeSeverityLevelsResult(outcome.GetResult()));
@@ -403,7 +403,7 @@ DescribeTrustedAdvisorCheckRefreshStatusesOutcome SupportClient::DescribeTrusted
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeTrustedAdvisorCheckRefreshStatusesOutcome(DescribeTrustedAdvisorCheckRefreshStatusesResult(outcome.GetResult()));
@@ -438,7 +438,7 @@ DescribeTrustedAdvisorCheckResultOutcome SupportClient::DescribeTrustedAdvisorCh
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeTrustedAdvisorCheckResultOutcome(DescribeTrustedAdvisorCheckResultResult(outcome.GetResult()));
@@ -473,7 +473,7 @@ DescribeTrustedAdvisorCheckSummariesOutcome SupportClient::DescribeTrustedAdviso
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeTrustedAdvisorCheckSummariesOutcome(DescribeTrustedAdvisorCheckSummariesResult(outcome.GetResult()));
@@ -508,7 +508,7 @@ DescribeTrustedAdvisorChecksOutcome SupportClient::DescribeTrustedAdvisorChecks(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DescribeTrustedAdvisorChecksOutcome(DescribeTrustedAdvisorChecksResult(outcome.GetResult()));
@@ -543,7 +543,7 @@ RefreshTrustedAdvisorCheckOutcome SupportClient::RefreshTrustedAdvisorCheck(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RefreshTrustedAdvisorCheckOutcome(RefreshTrustedAdvisorCheckResult(outcome.GetResult()));
@@ -578,7 +578,7 @@ ResolveCaseOutcome SupportClient::ResolveCase(const ResolveCaseRequest& request)
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ResolveCaseOutcome(ResolveCaseResult(outcome.GetResult()));

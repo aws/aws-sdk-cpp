@@ -121,7 +121,7 @@ CreateGroupOutcome ResourceGroupsClient::CreateGroup(const CreateGroupRequest& r
   Aws::StringStream ss;
   ss << "/groups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateGroupOutcome(CreateGroupResult(outcome.GetResult()));
@@ -162,7 +162,7 @@ DeleteGroupOutcome ResourceGroupsClient::DeleteGroup(const DeleteGroupRequest& r
   ss << "/groups/";
   ss << request.GetGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteGroupOutcome(DeleteGroupResult(outcome.GetResult()));
@@ -203,7 +203,7 @@ GetGroupOutcome ResourceGroupsClient::GetGroup(const GetGroupRequest& request) c
   ss << "/groups/";
   ss << request.GetGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetGroupOutcome(GetGroupResult(outcome.GetResult()));
@@ -245,7 +245,7 @@ GetGroupQueryOutcome ResourceGroupsClient::GetGroupQuery(const GetGroupQueryRequ
   ss << request.GetGroupName();
   ss << "/query";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetGroupQueryOutcome(GetGroupQueryResult(outcome.GetResult()));
@@ -287,7 +287,7 @@ GetTagsOutcome ResourceGroupsClient::GetTags(const GetTagsRequest& request) cons
   ss << request.GetArn();
   ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetTagsOutcome(GetTagsResult(outcome.GetResult()));
@@ -329,7 +329,7 @@ ListGroupResourcesOutcome ResourceGroupsClient::ListGroupResources(const ListGro
   ss << request.GetGroupName();
   ss << "/resource-identifiers-list";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListGroupResourcesOutcome(ListGroupResourcesResult(outcome.GetResult()));
@@ -364,7 +364,7 @@ ListGroupsOutcome ResourceGroupsClient::ListGroups(const ListGroupsRequest& requ
   Aws::StringStream ss;
   ss << "/groups-list";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListGroupsOutcome(ListGroupsResult(outcome.GetResult()));
@@ -399,7 +399,7 @@ SearchResourcesOutcome ResourceGroupsClient::SearchResources(const SearchResourc
   Aws::StringStream ss;
   ss << "/resources/search";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SearchResourcesOutcome(SearchResourcesResult(outcome.GetResult()));
@@ -441,7 +441,7 @@ TagOutcome ResourceGroupsClient::Tag(const TagRequest& request) const
   ss << request.GetArn();
   ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return TagOutcome(TagResult(outcome.GetResult()));
@@ -483,7 +483,7 @@ UntagOutcome ResourceGroupsClient::Untag(const UntagRequest& request) const
   ss << request.GetArn();
   ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UntagOutcome(UntagResult(outcome.GetResult()));
@@ -524,7 +524,7 @@ UpdateGroupOutcome ResourceGroupsClient::UpdateGroup(const UpdateGroupRequest& r
   ss << "/groups/";
   ss << request.GetGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateGroupOutcome(UpdateGroupResult(outcome.GetResult()));
@@ -566,7 +566,7 @@ UpdateGroupQueryOutcome ResourceGroupsClient::UpdateGroupQuery(const UpdateGroup
   ss << request.GetGroupName();
   ss << "/query";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateGroupQueryOutcome(UpdateGroupQueryResult(outcome.GetResult()));

@@ -165,7 +165,7 @@ Aws::String AutoScalingClient::ConvertRequestToPresignedUrl(const AmazonSerializ
   ss << "?" << requestToConvert.SerializePayload();
 
   URI uri(ss.str());
-  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+  return GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region, 3600);
 }
 
 AttachInstancesOutcome AutoScalingClient::AttachInstances(const AttachInstancesRequest& request) const
@@ -174,7 +174,7 @@ AttachInstancesOutcome AutoScalingClient::AttachInstances(const AttachInstancesR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AttachInstancesOutcome(NoResult());
@@ -209,7 +209,7 @@ AttachLoadBalancerTargetGroupsOutcome AutoScalingClient::AttachLoadBalancerTarge
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AttachLoadBalancerTargetGroupsOutcome(AttachLoadBalancerTargetGroupsResult(outcome.GetResult()));
@@ -244,7 +244,7 @@ AttachLoadBalancersOutcome AutoScalingClient::AttachLoadBalancers(const AttachLo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AttachLoadBalancersOutcome(AttachLoadBalancersResult(outcome.GetResult()));
@@ -279,7 +279,7 @@ BatchDeleteScheduledActionOutcome AutoScalingClient::BatchDeleteScheduledAction(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return BatchDeleteScheduledActionOutcome(BatchDeleteScheduledActionResult(outcome.GetResult()));
@@ -314,7 +314,7 @@ BatchPutScheduledUpdateGroupActionOutcome AutoScalingClient::BatchPutScheduledUp
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return BatchPutScheduledUpdateGroupActionOutcome(BatchPutScheduledUpdateGroupActionResult(outcome.GetResult()));
@@ -349,7 +349,7 @@ CompleteLifecycleActionOutcome AutoScalingClient::CompleteLifecycleAction(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CompleteLifecycleActionOutcome(CompleteLifecycleActionResult(outcome.GetResult()));
@@ -384,7 +384,7 @@ CreateAutoScalingGroupOutcome AutoScalingClient::CreateAutoScalingGroup(const Cr
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateAutoScalingGroupOutcome(NoResult());
@@ -419,7 +419,7 @@ CreateLaunchConfigurationOutcome AutoScalingClient::CreateLaunchConfiguration(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateLaunchConfigurationOutcome(NoResult());
@@ -454,7 +454,7 @@ CreateOrUpdateTagsOutcome AutoScalingClient::CreateOrUpdateTags(const CreateOrUp
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateOrUpdateTagsOutcome(NoResult());
@@ -489,7 +489,7 @@ DeleteAutoScalingGroupOutcome AutoScalingClient::DeleteAutoScalingGroup(const De
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteAutoScalingGroupOutcome(NoResult());
@@ -524,7 +524,7 @@ DeleteLaunchConfigurationOutcome AutoScalingClient::DeleteLaunchConfiguration(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteLaunchConfigurationOutcome(NoResult());
@@ -559,7 +559,7 @@ DeleteLifecycleHookOutcome AutoScalingClient::DeleteLifecycleHook(const DeleteLi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteLifecycleHookOutcome(DeleteLifecycleHookResult(outcome.GetResult()));
@@ -594,7 +594,7 @@ DeleteNotificationConfigurationOutcome AutoScalingClient::DeleteNotificationConf
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteNotificationConfigurationOutcome(NoResult());
@@ -629,7 +629,7 @@ DeletePolicyOutcome AutoScalingClient::DeletePolicy(const DeletePolicyRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeletePolicyOutcome(NoResult());
@@ -664,7 +664,7 @@ DeleteScheduledActionOutcome AutoScalingClient::DeleteScheduledAction(const Dele
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteScheduledActionOutcome(NoResult());
@@ -699,7 +699,7 @@ DeleteTagsOutcome AutoScalingClient::DeleteTags(const DeleteTagsRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteTagsOutcome(NoResult());
@@ -734,7 +734,7 @@ DescribeAccountLimitsOutcome AutoScalingClient::DescribeAccountLimits(const Desc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeAccountLimitsOutcome(DescribeAccountLimitsResult(outcome.GetResult()));
@@ -769,7 +769,7 @@ DescribeAdjustmentTypesOutcome AutoScalingClient::DescribeAdjustmentTypes(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeAdjustmentTypesOutcome(DescribeAdjustmentTypesResult(outcome.GetResult()));
@@ -804,7 +804,7 @@ DescribeAutoScalingGroupsOutcome AutoScalingClient::DescribeAutoScalingGroups(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeAutoScalingGroupsOutcome(DescribeAutoScalingGroupsResult(outcome.GetResult()));
@@ -839,7 +839,7 @@ DescribeAutoScalingInstancesOutcome AutoScalingClient::DescribeAutoScalingInstan
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeAutoScalingInstancesOutcome(DescribeAutoScalingInstancesResult(outcome.GetResult()));
@@ -874,7 +874,7 @@ DescribeAutoScalingNotificationTypesOutcome AutoScalingClient::DescribeAutoScali
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeAutoScalingNotificationTypesOutcome(DescribeAutoScalingNotificationTypesResult(outcome.GetResult()));
@@ -909,7 +909,7 @@ DescribeLaunchConfigurationsOutcome AutoScalingClient::DescribeLaunchConfigurati
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeLaunchConfigurationsOutcome(DescribeLaunchConfigurationsResult(outcome.GetResult()));
@@ -944,7 +944,7 @@ DescribeLifecycleHookTypesOutcome AutoScalingClient::DescribeLifecycleHookTypes(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeLifecycleHookTypesOutcome(DescribeLifecycleHookTypesResult(outcome.GetResult()));
@@ -979,7 +979,7 @@ DescribeLifecycleHooksOutcome AutoScalingClient::DescribeLifecycleHooks(const De
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeLifecycleHooksOutcome(DescribeLifecycleHooksResult(outcome.GetResult()));
@@ -1014,7 +1014,7 @@ DescribeLoadBalancerTargetGroupsOutcome AutoScalingClient::DescribeLoadBalancerT
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeLoadBalancerTargetGroupsOutcome(DescribeLoadBalancerTargetGroupsResult(outcome.GetResult()));
@@ -1049,7 +1049,7 @@ DescribeLoadBalancersOutcome AutoScalingClient::DescribeLoadBalancers(const Desc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeLoadBalancersOutcome(DescribeLoadBalancersResult(outcome.GetResult()));
@@ -1084,7 +1084,7 @@ DescribeMetricCollectionTypesOutcome AutoScalingClient::DescribeMetricCollection
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeMetricCollectionTypesOutcome(DescribeMetricCollectionTypesResult(outcome.GetResult()));
@@ -1119,7 +1119,7 @@ DescribeNotificationConfigurationsOutcome AutoScalingClient::DescribeNotificatio
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeNotificationConfigurationsOutcome(DescribeNotificationConfigurationsResult(outcome.GetResult()));
@@ -1154,7 +1154,7 @@ DescribePoliciesOutcome AutoScalingClient::DescribePolicies(const DescribePolici
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribePoliciesOutcome(DescribePoliciesResult(outcome.GetResult()));
@@ -1189,7 +1189,7 @@ DescribeScalingActivitiesOutcome AutoScalingClient::DescribeScalingActivities(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeScalingActivitiesOutcome(DescribeScalingActivitiesResult(outcome.GetResult()));
@@ -1224,7 +1224,7 @@ DescribeScalingProcessTypesOutcome AutoScalingClient::DescribeScalingProcessType
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeScalingProcessTypesOutcome(DescribeScalingProcessTypesResult(outcome.GetResult()));
@@ -1259,7 +1259,7 @@ DescribeScheduledActionsOutcome AutoScalingClient::DescribeScheduledActions(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeScheduledActionsOutcome(DescribeScheduledActionsResult(outcome.GetResult()));
@@ -1294,7 +1294,7 @@ DescribeTagsOutcome AutoScalingClient::DescribeTags(const DescribeTagsRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeTagsOutcome(DescribeTagsResult(outcome.GetResult()));
@@ -1329,7 +1329,7 @@ DescribeTerminationPolicyTypesOutcome AutoScalingClient::DescribeTerminationPoli
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeTerminationPolicyTypesOutcome(DescribeTerminationPolicyTypesResult(outcome.GetResult()));
@@ -1364,7 +1364,7 @@ DetachInstancesOutcome AutoScalingClient::DetachInstances(const DetachInstancesR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DetachInstancesOutcome(DetachInstancesResult(outcome.GetResult()));
@@ -1399,7 +1399,7 @@ DetachLoadBalancerTargetGroupsOutcome AutoScalingClient::DetachLoadBalancerTarge
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DetachLoadBalancerTargetGroupsOutcome(DetachLoadBalancerTargetGroupsResult(outcome.GetResult()));
@@ -1434,7 +1434,7 @@ DetachLoadBalancersOutcome AutoScalingClient::DetachLoadBalancers(const DetachLo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DetachLoadBalancersOutcome(DetachLoadBalancersResult(outcome.GetResult()));
@@ -1469,7 +1469,7 @@ DisableMetricsCollectionOutcome AutoScalingClient::DisableMetricsCollection(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DisableMetricsCollectionOutcome(NoResult());
@@ -1504,7 +1504,7 @@ EnableMetricsCollectionOutcome AutoScalingClient::EnableMetricsCollection(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return EnableMetricsCollectionOutcome(NoResult());
@@ -1539,7 +1539,7 @@ EnterStandbyOutcome AutoScalingClient::EnterStandby(const EnterStandbyRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return EnterStandbyOutcome(EnterStandbyResult(outcome.GetResult()));
@@ -1574,7 +1574,7 @@ ExecutePolicyOutcome AutoScalingClient::ExecutePolicy(const ExecutePolicyRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ExecutePolicyOutcome(NoResult());
@@ -1609,7 +1609,7 @@ ExitStandbyOutcome AutoScalingClient::ExitStandby(const ExitStandbyRequest& requ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ExitStandbyOutcome(ExitStandbyResult(outcome.GetResult()));
@@ -1644,7 +1644,7 @@ PutLifecycleHookOutcome AutoScalingClient::PutLifecycleHook(const PutLifecycleHo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PutLifecycleHookOutcome(PutLifecycleHookResult(outcome.GetResult()));
@@ -1679,7 +1679,7 @@ PutNotificationConfigurationOutcome AutoScalingClient::PutNotificationConfigurat
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PutNotificationConfigurationOutcome(NoResult());
@@ -1714,7 +1714,7 @@ PutScalingPolicyOutcome AutoScalingClient::PutScalingPolicy(const PutScalingPoli
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PutScalingPolicyOutcome(PutScalingPolicyResult(outcome.GetResult()));
@@ -1749,7 +1749,7 @@ PutScheduledUpdateGroupActionOutcome AutoScalingClient::PutScheduledUpdateGroupA
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PutScheduledUpdateGroupActionOutcome(NoResult());
@@ -1784,7 +1784,7 @@ RecordLifecycleActionHeartbeatOutcome AutoScalingClient::RecordLifecycleActionHe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return RecordLifecycleActionHeartbeatOutcome(RecordLifecycleActionHeartbeatResult(outcome.GetResult()));
@@ -1819,7 +1819,7 @@ ResumeProcessesOutcome AutoScalingClient::ResumeProcesses(const ResumeProcessesR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ResumeProcessesOutcome(NoResult());
@@ -1854,7 +1854,7 @@ SetDesiredCapacityOutcome AutoScalingClient::SetDesiredCapacity(const SetDesired
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetDesiredCapacityOutcome(NoResult());
@@ -1889,7 +1889,7 @@ SetInstanceHealthOutcome AutoScalingClient::SetInstanceHealth(const SetInstanceH
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetInstanceHealthOutcome(NoResult());
@@ -1924,7 +1924,7 @@ SetInstanceProtectionOutcome AutoScalingClient::SetInstanceProtection(const SetI
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetInstanceProtectionOutcome(SetInstanceProtectionResult(outcome.GetResult()));
@@ -1959,7 +1959,7 @@ SuspendProcessesOutcome AutoScalingClient::SuspendProcesses(const SuspendProcess
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SuspendProcessesOutcome(NoResult());
@@ -1994,7 +1994,7 @@ TerminateInstanceInAutoScalingGroupOutcome AutoScalingClient::TerminateInstanceI
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return TerminateInstanceInAutoScalingGroupOutcome(TerminateInstanceInAutoScalingGroupResult(outcome.GetResult()));
@@ -2029,7 +2029,7 @@ UpdateAutoScalingGroupOutcome AutoScalingClient::UpdateAutoScalingGroup(const Up
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return UpdateAutoScalingGroupOutcome(NoResult());

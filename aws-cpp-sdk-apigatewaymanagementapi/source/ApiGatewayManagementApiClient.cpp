@@ -116,7 +116,7 @@ PostToConnectionOutcome ApiGatewayManagementApiClient::PostToConnection(const Po
   ss << "/@connections/";
   ss << request.GetConnectionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PostToConnectionOutcome(NoResult());

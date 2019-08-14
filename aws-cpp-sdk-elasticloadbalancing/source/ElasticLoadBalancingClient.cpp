@@ -140,7 +140,7 @@ Aws::String ElasticLoadBalancingClient::ConvertRequestToPresignedUrl(const Amazo
   ss << "?" << requestToConvert.SerializePayload();
 
   URI uri(ss.str());
-  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+  return GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region, 3600);
 }
 
 AddTagsOutcome ElasticLoadBalancingClient::AddTags(const AddTagsRequest& request) const
@@ -149,7 +149,7 @@ AddTagsOutcome ElasticLoadBalancingClient::AddTags(const AddTagsRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AddTagsOutcome(AddTagsResult(outcome.GetResult()));
@@ -184,7 +184,7 @@ ApplySecurityGroupsToLoadBalancerOutcome ElasticLoadBalancingClient::ApplySecuri
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ApplySecurityGroupsToLoadBalancerOutcome(ApplySecurityGroupsToLoadBalancerResult(outcome.GetResult()));
@@ -219,7 +219,7 @@ AttachLoadBalancerToSubnetsOutcome ElasticLoadBalancingClient::AttachLoadBalance
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AttachLoadBalancerToSubnetsOutcome(AttachLoadBalancerToSubnetsResult(outcome.GetResult()));
@@ -254,7 +254,7 @@ ConfigureHealthCheckOutcome ElasticLoadBalancingClient::ConfigureHealthCheck(con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ConfigureHealthCheckOutcome(ConfigureHealthCheckResult(outcome.GetResult()));
@@ -289,7 +289,7 @@ CreateAppCookieStickinessPolicyOutcome ElasticLoadBalancingClient::CreateAppCook
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateAppCookieStickinessPolicyOutcome(CreateAppCookieStickinessPolicyResult(outcome.GetResult()));
@@ -324,7 +324,7 @@ CreateLBCookieStickinessPolicyOutcome ElasticLoadBalancingClient::CreateLBCookie
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateLBCookieStickinessPolicyOutcome(CreateLBCookieStickinessPolicyResult(outcome.GetResult()));
@@ -359,7 +359,7 @@ CreateLoadBalancerOutcome ElasticLoadBalancingClient::CreateLoadBalancer(const C
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateLoadBalancerOutcome(CreateLoadBalancerResult(outcome.GetResult()));
@@ -394,7 +394,7 @@ CreateLoadBalancerListenersOutcome ElasticLoadBalancingClient::CreateLoadBalance
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateLoadBalancerListenersOutcome(CreateLoadBalancerListenersResult(outcome.GetResult()));
@@ -429,7 +429,7 @@ CreateLoadBalancerPolicyOutcome ElasticLoadBalancingClient::CreateLoadBalancerPo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateLoadBalancerPolicyOutcome(CreateLoadBalancerPolicyResult(outcome.GetResult()));
@@ -464,7 +464,7 @@ DeleteLoadBalancerOutcome ElasticLoadBalancingClient::DeleteLoadBalancer(const D
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteLoadBalancerOutcome(DeleteLoadBalancerResult(outcome.GetResult()));
@@ -499,7 +499,7 @@ DeleteLoadBalancerListenersOutcome ElasticLoadBalancingClient::DeleteLoadBalance
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteLoadBalancerListenersOutcome(DeleteLoadBalancerListenersResult(outcome.GetResult()));
@@ -534,7 +534,7 @@ DeleteLoadBalancerPolicyOutcome ElasticLoadBalancingClient::DeleteLoadBalancerPo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeleteLoadBalancerPolicyOutcome(DeleteLoadBalancerPolicyResult(outcome.GetResult()));
@@ -569,7 +569,7 @@ DeregisterInstancesFromLoadBalancerOutcome ElasticLoadBalancingClient::Deregiste
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DeregisterInstancesFromLoadBalancerOutcome(DeregisterInstancesFromLoadBalancerResult(outcome.GetResult()));
@@ -604,7 +604,7 @@ DescribeAccountLimitsOutcome ElasticLoadBalancingClient::DescribeAccountLimits(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeAccountLimitsOutcome(DescribeAccountLimitsResult(outcome.GetResult()));
@@ -639,7 +639,7 @@ DescribeInstanceHealthOutcome ElasticLoadBalancingClient::DescribeInstanceHealth
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeInstanceHealthOutcome(DescribeInstanceHealthResult(outcome.GetResult()));
@@ -674,7 +674,7 @@ DescribeLoadBalancerAttributesOutcome ElasticLoadBalancingClient::DescribeLoadBa
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeLoadBalancerAttributesOutcome(DescribeLoadBalancerAttributesResult(outcome.GetResult()));
@@ -709,7 +709,7 @@ DescribeLoadBalancerPoliciesOutcome ElasticLoadBalancingClient::DescribeLoadBala
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeLoadBalancerPoliciesOutcome(DescribeLoadBalancerPoliciesResult(outcome.GetResult()));
@@ -744,7 +744,7 @@ DescribeLoadBalancerPolicyTypesOutcome ElasticLoadBalancingClient::DescribeLoadB
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeLoadBalancerPolicyTypesOutcome(DescribeLoadBalancerPolicyTypesResult(outcome.GetResult()));
@@ -779,7 +779,7 @@ DescribeLoadBalancersOutcome ElasticLoadBalancingClient::DescribeLoadBalancers(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeLoadBalancersOutcome(DescribeLoadBalancersResult(outcome.GetResult()));
@@ -814,7 +814,7 @@ DescribeTagsOutcome ElasticLoadBalancingClient::DescribeTags(const DescribeTagsR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DescribeTagsOutcome(DescribeTagsResult(outcome.GetResult()));
@@ -849,7 +849,7 @@ DetachLoadBalancerFromSubnetsOutcome ElasticLoadBalancingClient::DetachLoadBalan
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DetachLoadBalancerFromSubnetsOutcome(DetachLoadBalancerFromSubnetsResult(outcome.GetResult()));
@@ -884,7 +884,7 @@ DisableAvailabilityZonesForLoadBalancerOutcome ElasticLoadBalancingClient::Disab
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DisableAvailabilityZonesForLoadBalancerOutcome(DisableAvailabilityZonesForLoadBalancerResult(outcome.GetResult()));
@@ -919,7 +919,7 @@ EnableAvailabilityZonesForLoadBalancerOutcome ElasticLoadBalancingClient::Enable
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return EnableAvailabilityZonesForLoadBalancerOutcome(EnableAvailabilityZonesForLoadBalancerResult(outcome.GetResult()));
@@ -954,7 +954,7 @@ ModifyLoadBalancerAttributesOutcome ElasticLoadBalancingClient::ModifyLoadBalanc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ModifyLoadBalancerAttributesOutcome(ModifyLoadBalancerAttributesResult(outcome.GetResult()));
@@ -989,7 +989,7 @@ RegisterInstancesWithLoadBalancerOutcome ElasticLoadBalancingClient::RegisterIns
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return RegisterInstancesWithLoadBalancerOutcome(RegisterInstancesWithLoadBalancerResult(outcome.GetResult()));
@@ -1024,7 +1024,7 @@ RemoveTagsOutcome ElasticLoadBalancingClient::RemoveTags(const RemoveTagsRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return RemoveTagsOutcome(RemoveTagsResult(outcome.GetResult()));
@@ -1059,7 +1059,7 @@ SetLoadBalancerListenerSSLCertificateOutcome ElasticLoadBalancingClient::SetLoad
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetLoadBalancerListenerSSLCertificateOutcome(SetLoadBalancerListenerSSLCertificateResult(outcome.GetResult()));
@@ -1094,7 +1094,7 @@ SetLoadBalancerPoliciesForBackendServerOutcome ElasticLoadBalancingClient::SetLo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetLoadBalancerPoliciesForBackendServerOutcome(SetLoadBalancerPoliciesForBackendServerResult(outcome.GetResult()));
@@ -1129,7 +1129,7 @@ SetLoadBalancerPoliciesOfListenerOutcome ElasticLoadBalancingClient::SetLoadBala
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return SetLoadBalancerPoliciesOfListenerOutcome(SetLoadBalancerPoliciesOfListenerResult(outcome.GetResult()));

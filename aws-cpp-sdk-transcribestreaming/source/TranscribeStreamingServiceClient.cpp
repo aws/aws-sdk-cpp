@@ -142,7 +142,7 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
   request.SetRequestSignedHandler([&](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem.ReleaseAll(); });
 
   m_executor->Submit([this, uri, &request, responseHandler, handlerContext] () mutable {
-      JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
+      JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
       if(outcome.IsSuccess())
       {
         responseHandler(this, request, StartStreamTranscriptionOutcome(NoResult()), handlerContext);

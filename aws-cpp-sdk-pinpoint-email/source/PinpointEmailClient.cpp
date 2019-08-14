@@ -151,7 +151,7 @@ CreateConfigurationSetOutcome PinpointEmailClient::CreateConfigurationSet(const 
   Aws::StringStream ss;
   ss << "/v1/email/configuration-sets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateConfigurationSetOutcome(CreateConfigurationSetResult(outcome.GetResult()));
@@ -193,7 +193,7 @@ CreateConfigurationSetEventDestinationOutcome PinpointEmailClient::CreateConfigu
   ss << request.GetConfigurationSetName();
   ss << "/event-destinations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateConfigurationSetEventDestinationOutcome(CreateConfigurationSetEventDestinationResult(outcome.GetResult()));
@@ -228,7 +228,7 @@ CreateDedicatedIpPoolOutcome PinpointEmailClient::CreateDedicatedIpPool(const Cr
   Aws::StringStream ss;
   ss << "/v1/email/dedicated-ip-pools";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateDedicatedIpPoolOutcome(CreateDedicatedIpPoolResult(outcome.GetResult()));
@@ -263,7 +263,7 @@ CreateDeliverabilityTestReportOutcome PinpointEmailClient::CreateDeliverabilityT
   Aws::StringStream ss;
   ss << "/v1/email/deliverability-dashboard/test";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateDeliverabilityTestReportOutcome(CreateDeliverabilityTestReportResult(outcome.GetResult()));
@@ -298,7 +298,7 @@ CreateEmailIdentityOutcome PinpointEmailClient::CreateEmailIdentity(const Create
   Aws::StringStream ss;
   ss << "/v1/email/identities";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateEmailIdentityOutcome(CreateEmailIdentityResult(outcome.GetResult()));
@@ -339,7 +339,7 @@ DeleteConfigurationSetOutcome PinpointEmailClient::DeleteConfigurationSet(const 
   ss << "/v1/email/configuration-sets/";
   ss << request.GetConfigurationSetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteConfigurationSetOutcome(DeleteConfigurationSetResult(outcome.GetResult()));
@@ -387,7 +387,7 @@ DeleteConfigurationSetEventDestinationOutcome PinpointEmailClient::DeleteConfigu
   ss << "/event-destinations/";
   ss << request.GetEventDestinationName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteConfigurationSetEventDestinationOutcome(DeleteConfigurationSetEventDestinationResult(outcome.GetResult()));
@@ -428,7 +428,7 @@ DeleteDedicatedIpPoolOutcome PinpointEmailClient::DeleteDedicatedIpPool(const De
   ss << "/v1/email/dedicated-ip-pools/";
   ss << request.GetPoolName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteDedicatedIpPoolOutcome(DeleteDedicatedIpPoolResult(outcome.GetResult()));
@@ -469,7 +469,7 @@ DeleteEmailIdentityOutcome PinpointEmailClient::DeleteEmailIdentity(const Delete
   ss << "/v1/email/identities/";
   ss << request.GetEmailIdentity();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteEmailIdentityOutcome(DeleteEmailIdentityResult(outcome.GetResult()));
@@ -504,7 +504,7 @@ GetAccountOutcome PinpointEmailClient::GetAccount(const GetAccountRequest& reque
   Aws::StringStream ss;
   ss << "/v1/email/account";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetAccountOutcome(GetAccountResult(outcome.GetResult()));
@@ -544,7 +544,7 @@ GetBlacklistReportsOutcome PinpointEmailClient::GetBlacklistReports(const GetBla
   Aws::StringStream ss;
   ss << "/v1/email/deliverability-dashboard/blacklist-report";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetBlacklistReportsOutcome(GetBlacklistReportsResult(outcome.GetResult()));
@@ -585,7 +585,7 @@ GetConfigurationSetOutcome PinpointEmailClient::GetConfigurationSet(const GetCon
   ss << "/v1/email/configuration-sets/";
   ss << request.GetConfigurationSetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetConfigurationSetOutcome(GetConfigurationSetResult(outcome.GetResult()));
@@ -627,7 +627,7 @@ GetConfigurationSetEventDestinationsOutcome PinpointEmailClient::GetConfiguratio
   ss << request.GetConfigurationSetName();
   ss << "/event-destinations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetConfigurationSetEventDestinationsOutcome(GetConfigurationSetEventDestinationsResult(outcome.GetResult()));
@@ -668,7 +668,7 @@ GetDedicatedIpOutcome PinpointEmailClient::GetDedicatedIp(const GetDedicatedIpRe
   ss << "/v1/email/dedicated-ips/";
   ss << request.GetIp();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDedicatedIpOutcome(GetDedicatedIpResult(outcome.GetResult()));
@@ -703,7 +703,7 @@ GetDedicatedIpsOutcome PinpointEmailClient::GetDedicatedIps(const GetDedicatedIp
   Aws::StringStream ss;
   ss << "/v1/email/dedicated-ips";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDedicatedIpsOutcome(GetDedicatedIpsResult(outcome.GetResult()));
@@ -738,7 +738,7 @@ GetDeliverabilityDashboardOptionsOutcome PinpointEmailClient::GetDeliverabilityD
   Aws::StringStream ss;
   ss << "/v1/email/deliverability-dashboard";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDeliverabilityDashboardOptionsOutcome(GetDeliverabilityDashboardOptionsResult(outcome.GetResult()));
@@ -779,7 +779,7 @@ GetDeliverabilityTestReportOutcome PinpointEmailClient::GetDeliverabilityTestRep
   ss << "/v1/email/deliverability-dashboard/test-reports/";
   ss << request.GetReportId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDeliverabilityTestReportOutcome(GetDeliverabilityTestReportResult(outcome.GetResult()));
@@ -820,7 +820,7 @@ GetDomainDeliverabilityCampaignOutcome PinpointEmailClient::GetDomainDeliverabil
   ss << "/v1/email/deliverability-dashboard/campaigns/";
   ss << request.GetCampaignId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDomainDeliverabilityCampaignOutcome(GetDomainDeliverabilityCampaignResult(outcome.GetResult()));
@@ -871,7 +871,7 @@ GetDomainStatisticsReportOutcome PinpointEmailClient::GetDomainStatisticsReport(
   ss << "/v1/email/deliverability-dashboard/statistics-report/";
   ss << request.GetDomain();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDomainStatisticsReportOutcome(GetDomainStatisticsReportResult(outcome.GetResult()));
@@ -912,7 +912,7 @@ GetEmailIdentityOutcome PinpointEmailClient::GetEmailIdentity(const GetEmailIden
   ss << "/v1/email/identities/";
   ss << request.GetEmailIdentity();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetEmailIdentityOutcome(GetEmailIdentityResult(outcome.GetResult()));
@@ -947,7 +947,7 @@ ListConfigurationSetsOutcome PinpointEmailClient::ListConfigurationSets(const Li
   Aws::StringStream ss;
   ss << "/v1/email/configuration-sets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListConfigurationSetsOutcome(ListConfigurationSetsResult(outcome.GetResult()));
@@ -982,7 +982,7 @@ ListDedicatedIpPoolsOutcome PinpointEmailClient::ListDedicatedIpPools(const List
   Aws::StringStream ss;
   ss << "/v1/email/dedicated-ip-pools";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListDedicatedIpPoolsOutcome(ListDedicatedIpPoolsResult(outcome.GetResult()));
@@ -1017,7 +1017,7 @@ ListDeliverabilityTestReportsOutcome PinpointEmailClient::ListDeliverabilityTest
   Aws::StringStream ss;
   ss << "/v1/email/deliverability-dashboard/test-reports";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListDeliverabilityTestReportsOutcome(ListDeliverabilityTestReportsResult(outcome.GetResult()));
@@ -1069,7 +1069,7 @@ ListDomainDeliverabilityCampaignsOutcome PinpointEmailClient::ListDomainDelivera
   ss << request.GetSubscribedDomain();
   ss << "/campaigns";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListDomainDeliverabilityCampaignsOutcome(ListDomainDeliverabilityCampaignsResult(outcome.GetResult()));
@@ -1104,7 +1104,7 @@ ListEmailIdentitiesOutcome PinpointEmailClient::ListEmailIdentities(const ListEm
   Aws::StringStream ss;
   ss << "/v1/email/identities";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListEmailIdentitiesOutcome(ListEmailIdentitiesResult(outcome.GetResult()));
@@ -1144,7 +1144,7 @@ ListTagsForResourceOutcome PinpointEmailClient::ListTagsForResource(const ListTa
   Aws::StringStream ss;
   ss << "/v1/email/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
@@ -1179,7 +1179,7 @@ PutAccountDedicatedIpWarmupAttributesOutcome PinpointEmailClient::PutAccountDedi
   Aws::StringStream ss;
   ss << "/v1/email/account/dedicated-ips/warmup";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutAccountDedicatedIpWarmupAttributesOutcome(PutAccountDedicatedIpWarmupAttributesResult(outcome.GetResult()));
@@ -1214,7 +1214,7 @@ PutAccountSendingAttributesOutcome PinpointEmailClient::PutAccountSendingAttribu
   Aws::StringStream ss;
   ss << "/v1/email/account/sending";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutAccountSendingAttributesOutcome(PutAccountSendingAttributesResult(outcome.GetResult()));
@@ -1256,7 +1256,7 @@ PutConfigurationSetDeliveryOptionsOutcome PinpointEmailClient::PutConfigurationS
   ss << request.GetConfigurationSetName();
   ss << "/delivery-options";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutConfigurationSetDeliveryOptionsOutcome(PutConfigurationSetDeliveryOptionsResult(outcome.GetResult()));
@@ -1298,7 +1298,7 @@ PutConfigurationSetReputationOptionsOutcome PinpointEmailClient::PutConfiguratio
   ss << request.GetConfigurationSetName();
   ss << "/reputation-options";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutConfigurationSetReputationOptionsOutcome(PutConfigurationSetReputationOptionsResult(outcome.GetResult()));
@@ -1340,7 +1340,7 @@ PutConfigurationSetSendingOptionsOutcome PinpointEmailClient::PutConfigurationSe
   ss << request.GetConfigurationSetName();
   ss << "/sending";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutConfigurationSetSendingOptionsOutcome(PutConfigurationSetSendingOptionsResult(outcome.GetResult()));
@@ -1382,7 +1382,7 @@ PutConfigurationSetTrackingOptionsOutcome PinpointEmailClient::PutConfigurationS
   ss << request.GetConfigurationSetName();
   ss << "/tracking-options";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutConfigurationSetTrackingOptionsOutcome(PutConfigurationSetTrackingOptionsResult(outcome.GetResult()));
@@ -1424,7 +1424,7 @@ PutDedicatedIpInPoolOutcome PinpointEmailClient::PutDedicatedIpInPool(const PutD
   ss << request.GetIp();
   ss << "/pool";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutDedicatedIpInPoolOutcome(PutDedicatedIpInPoolResult(outcome.GetResult()));
@@ -1466,7 +1466,7 @@ PutDedicatedIpWarmupAttributesOutcome PinpointEmailClient::PutDedicatedIpWarmupA
   ss << request.GetIp();
   ss << "/warmup";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutDedicatedIpWarmupAttributesOutcome(PutDedicatedIpWarmupAttributesResult(outcome.GetResult()));
@@ -1501,7 +1501,7 @@ PutDeliverabilityDashboardOptionOutcome PinpointEmailClient::PutDeliverabilityDa
   Aws::StringStream ss;
   ss << "/v1/email/deliverability-dashboard";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutDeliverabilityDashboardOptionOutcome(PutDeliverabilityDashboardOptionResult(outcome.GetResult()));
@@ -1543,7 +1543,7 @@ PutEmailIdentityDkimAttributesOutcome PinpointEmailClient::PutEmailIdentityDkimA
   ss << request.GetEmailIdentity();
   ss << "/dkim";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutEmailIdentityDkimAttributesOutcome(PutEmailIdentityDkimAttributesResult(outcome.GetResult()));
@@ -1585,7 +1585,7 @@ PutEmailIdentityFeedbackAttributesOutcome PinpointEmailClient::PutEmailIdentityF
   ss << request.GetEmailIdentity();
   ss << "/feedback";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutEmailIdentityFeedbackAttributesOutcome(PutEmailIdentityFeedbackAttributesResult(outcome.GetResult()));
@@ -1627,7 +1627,7 @@ PutEmailIdentityMailFromAttributesOutcome PinpointEmailClient::PutEmailIdentityM
   ss << request.GetEmailIdentity();
   ss << "/mail-from";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutEmailIdentityMailFromAttributesOutcome(PutEmailIdentityMailFromAttributesResult(outcome.GetResult()));
@@ -1662,7 +1662,7 @@ SendEmailOutcome PinpointEmailClient::SendEmail(const SendEmailRequest& request)
   Aws::StringStream ss;
   ss << "/v1/email/outbound-emails";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SendEmailOutcome(SendEmailResult(outcome.GetResult()));
@@ -1697,7 +1697,7 @@ TagResourceOutcome PinpointEmailClient::TagResource(const TagResourceRequest& re
   Aws::StringStream ss;
   ss << "/v1/email/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
@@ -1742,7 +1742,7 @@ UntagResourceOutcome PinpointEmailClient::UntagResource(const UntagResourceReque
   Aws::StringStream ss;
   ss << "/v1/email/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
@@ -1790,7 +1790,7 @@ UpdateConfigurationSetEventDestinationOutcome PinpointEmailClient::UpdateConfigu
   ss << "/event-destinations/";
   ss << request.GetEventDestinationName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateConfigurationSetEventDestinationOutcome(UpdateConfigurationSetEventDestinationResult(outcome.GetResult()));

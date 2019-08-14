@@ -161,7 +161,7 @@ AddLayerVersionPermissionOutcome LambdaClient::AddLayerVersionPermission(const A
   ss << request.GetVersionNumber();
   ss << "/policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AddLayerVersionPermissionOutcome(AddLayerVersionPermissionResult(outcome.GetResult()));
@@ -203,7 +203,7 @@ AddPermissionOutcome LambdaClient::AddPermission(const AddPermissionRequest& req
   ss << request.GetFunctionName();
   ss << "/policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AddPermissionOutcome(AddPermissionResult(outcome.GetResult()));
@@ -245,7 +245,7 @@ CreateAliasOutcome LambdaClient::CreateAlias(const CreateAliasRequest& request) 
   ss << request.GetFunctionName();
   ss << "/aliases";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateAliasOutcome(CreateAliasResult(outcome.GetResult()));
@@ -280,7 +280,7 @@ CreateEventSourceMappingOutcome LambdaClient::CreateEventSourceMapping(const Cre
   Aws::StringStream ss;
   ss << "/2015-03-31/event-source-mappings/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateEventSourceMappingOutcome(CreateEventSourceMappingResult(outcome.GetResult()));
@@ -315,7 +315,7 @@ CreateFunctionOutcome LambdaClient::CreateFunction(const CreateFunctionRequest& 
   Aws::StringStream ss;
   ss << "/2015-03-31/functions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateFunctionOutcome(CreateFunctionResult(outcome.GetResult()));
@@ -363,7 +363,7 @@ DeleteAliasOutcome LambdaClient::DeleteAlias(const DeleteAliasRequest& request) 
   ss << "/aliases/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteAliasOutcome(NoResult());
@@ -404,7 +404,7 @@ DeleteEventSourceMappingOutcome LambdaClient::DeleteEventSourceMapping(const Del
   ss << "/2015-03-31/event-source-mappings/";
   ss << request.GetUUID();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteEventSourceMappingOutcome(DeleteEventSourceMappingResult(outcome.GetResult()));
@@ -445,7 +445,7 @@ DeleteFunctionOutcome LambdaClient::DeleteFunction(const DeleteFunctionRequest& 
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteFunctionOutcome(NoResult());
@@ -487,7 +487,7 @@ DeleteFunctionConcurrencyOutcome LambdaClient::DeleteFunctionConcurrency(const D
   ss << request.GetFunctionName();
   ss << "/concurrency";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteFunctionConcurrencyOutcome(NoResult());
@@ -535,7 +535,7 @@ DeleteLayerVersionOutcome LambdaClient::DeleteLayerVersion(const DeleteLayerVers
   ss << "/versions/";
   ss << request.GetVersionNumber();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteLayerVersionOutcome(NoResult());
@@ -570,7 +570,7 @@ GetAccountSettingsOutcome LambdaClient::GetAccountSettings(const GetAccountSetti
   Aws::StringStream ss;
   ss << "/2016-08-19/account-settings/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetAccountSettingsOutcome(GetAccountSettingsResult(outcome.GetResult()));
@@ -618,7 +618,7 @@ GetAliasOutcome LambdaClient::GetAlias(const GetAliasRequest& request) const
   ss << "/aliases/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetAliasOutcome(GetAliasResult(outcome.GetResult()));
@@ -659,7 +659,7 @@ GetEventSourceMappingOutcome LambdaClient::GetEventSourceMapping(const GetEventS
   ss << "/2015-03-31/event-source-mappings/";
   ss << request.GetUUID();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetEventSourceMappingOutcome(GetEventSourceMappingResult(outcome.GetResult()));
@@ -700,7 +700,7 @@ GetFunctionOutcome LambdaClient::GetFunction(const GetFunctionRequest& request) 
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetFunctionOutcome(GetFunctionResult(outcome.GetResult()));
@@ -742,7 +742,7 @@ GetFunctionConfigurationOutcome LambdaClient::GetFunctionConfiguration(const Get
   ss << request.GetFunctionName();
   ss << "/configuration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetFunctionConfigurationOutcome(GetFunctionConfigurationResult(outcome.GetResult()));
@@ -790,7 +790,7 @@ GetLayerVersionOutcome LambdaClient::GetLayerVersion(const GetLayerVersionReques
   ss << "/versions/";
   ss << request.GetVersionNumber();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetLayerVersionOutcome(GetLayerVersionResult(outcome.GetResult()));
@@ -832,7 +832,7 @@ GetLayerVersionByArnOutcome LambdaClient::GetLayerVersionByArn(const GetLayerVer
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?find=LayerVersion");
   uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetLayerVersionByArnOutcome(GetLayerVersionByArnResult(outcome.GetResult()));
@@ -881,7 +881,7 @@ GetLayerVersionPolicyOutcome LambdaClient::GetLayerVersionPolicy(const GetLayerV
   ss << request.GetVersionNumber();
   ss << "/policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetLayerVersionPolicyOutcome(GetLayerVersionPolicyResult(outcome.GetResult()));
@@ -923,7 +923,7 @@ GetPolicyOutcome LambdaClient::GetPolicy(const GetPolicyRequest& request) const
   ss << request.GetFunctionName();
   ss << "/policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetPolicyOutcome(GetPolicyResult(outcome.GetResult()));
@@ -965,7 +965,7 @@ InvokeOutcome LambdaClient::Invoke(const InvokeRequest& request) const
   ss << request.GetFunctionName();
   ss << "/invocations";
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_POST);
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return InvokeOutcome(InvokeResult(outcome.GetResultWithOwnership()));
@@ -1007,7 +1007,7 @@ ListAliasesOutcome LambdaClient::ListAliases(const ListAliasesRequest& request) 
   ss << request.GetFunctionName();
   ss << "/aliases";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListAliasesOutcome(ListAliasesResult(outcome.GetResult()));
@@ -1042,7 +1042,7 @@ ListEventSourceMappingsOutcome LambdaClient::ListEventSourceMappings(const ListE
   Aws::StringStream ss;
   ss << "/2015-03-31/event-source-mappings/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListEventSourceMappingsOutcome(ListEventSourceMappingsResult(outcome.GetResult()));
@@ -1077,7 +1077,7 @@ ListFunctionsOutcome LambdaClient::ListFunctions(const ListFunctionsRequest& req
   Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListFunctionsOutcome(ListFunctionsResult(outcome.GetResult()));
@@ -1119,7 +1119,7 @@ ListLayerVersionsOutcome LambdaClient::ListLayerVersions(const ListLayerVersions
   ss << request.GetLayerName();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListLayerVersionsOutcome(ListLayerVersionsResult(outcome.GetResult()));
@@ -1154,7 +1154,7 @@ ListLayersOutcome LambdaClient::ListLayers(const ListLayersRequest& request) con
   Aws::StringStream ss;
   ss << "/2018-10-31/layers";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListLayersOutcome(ListLayersResult(outcome.GetResult()));
@@ -1195,7 +1195,7 @@ ListTagsOutcome LambdaClient::ListTags(const ListTagsRequest& request) const
   ss << "/2017-03-31/tags/";
   ss << request.GetResource();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTagsOutcome(ListTagsResult(outcome.GetResult()));
@@ -1237,7 +1237,7 @@ ListVersionsByFunctionOutcome LambdaClient::ListVersionsByFunction(const ListVer
   ss << request.GetFunctionName();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListVersionsByFunctionOutcome(ListVersionsByFunctionResult(outcome.GetResult()));
@@ -1279,7 +1279,7 @@ PublishLayerVersionOutcome LambdaClient::PublishLayerVersion(const PublishLayerV
   ss << request.GetLayerName();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PublishLayerVersionOutcome(PublishLayerVersionResult(outcome.GetResult()));
@@ -1321,7 +1321,7 @@ PublishVersionOutcome LambdaClient::PublishVersion(const PublishVersionRequest& 
   ss << request.GetFunctionName();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PublishVersionOutcome(PublishVersionResult(outcome.GetResult()));
@@ -1363,7 +1363,7 @@ PutFunctionConcurrencyOutcome LambdaClient::PutFunctionConcurrency(const PutFunc
   ss << request.GetFunctionName();
   ss << "/concurrency";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutFunctionConcurrencyOutcome(PutFunctionConcurrencyResult(outcome.GetResult()));
@@ -1418,7 +1418,7 @@ RemoveLayerVersionPermissionOutcome LambdaClient::RemoveLayerVersionPermission(c
   ss << "/policy/";
   ss << request.GetStatementId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RemoveLayerVersionPermissionOutcome(NoResult());
@@ -1466,7 +1466,7 @@ RemovePermissionOutcome LambdaClient::RemovePermission(const RemovePermissionReq
   ss << "/policy/";
   ss << request.GetStatementId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RemovePermissionOutcome(NoResult());
@@ -1507,7 +1507,7 @@ TagResourceOutcome LambdaClient::TagResource(const TagResourceRequest& request) 
   ss << "/2017-03-31/tags/";
   ss << request.GetResource();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return TagResourceOutcome(NoResult());
@@ -1553,7 +1553,7 @@ UntagResourceOutcome LambdaClient::UntagResource(const UntagResourceRequest& req
   ss << "/2017-03-31/tags/";
   ss << request.GetResource();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UntagResourceOutcome(NoResult());
@@ -1601,7 +1601,7 @@ UpdateAliasOutcome LambdaClient::UpdateAlias(const UpdateAliasRequest& request) 
   ss << "/aliases/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateAliasOutcome(UpdateAliasResult(outcome.GetResult()));
@@ -1642,7 +1642,7 @@ UpdateEventSourceMappingOutcome LambdaClient::UpdateEventSourceMapping(const Upd
   ss << "/2015-03-31/event-source-mappings/";
   ss << request.GetUUID();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateEventSourceMappingOutcome(UpdateEventSourceMappingResult(outcome.GetResult()));
@@ -1684,7 +1684,7 @@ UpdateFunctionCodeOutcome LambdaClient::UpdateFunctionCode(const UpdateFunctionC
   ss << request.GetFunctionName();
   ss << "/code";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateFunctionCodeOutcome(UpdateFunctionCodeResult(outcome.GetResult()));
@@ -1726,7 +1726,7 @@ UpdateFunctionConfigurationOutcome LambdaClient::UpdateFunctionConfiguration(con
   ss << request.GetFunctionName();
   ss << "/configuration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateFunctionConfigurationOutcome(UpdateFunctionConfigurationResult(outcome.GetResult()));

@@ -247,28 +247,52 @@ namespace Model
     inline CreateCapacityReservationRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
 
-    
+    /**
+     * <p>The ID of the Availability Zone in which to create the Capacity
+     * Reservation.</p>
+     */
     inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
 
-    
+    /**
+     * <p>The ID of the Availability Zone in which to create the Capacity
+     * Reservation.</p>
+     */
     inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
 
-    
+    /**
+     * <p>The ID of the Availability Zone in which to create the Capacity
+     * Reservation.</p>
+     */
     inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = value; }
 
-    
+    /**
+     * <p>The ID of the Availability Zone in which to create the Capacity
+     * Reservation.</p>
+     */
     inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the Availability Zone in which to create the Capacity
+     * Reservation.</p>
+     */
     inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the Availability Zone in which to create the Capacity
+     * Reservation.</p>
+     */
     inline CreateCapacityReservationRequest& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the Availability Zone in which to create the Capacity
+     * Reservation.</p>
+     */
     inline CreateCapacityReservationRequest& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the Availability Zone in which to create the Capacity
+     * Reservation.</p>
+     */
     inline CreateCapacityReservationRequest& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
 
 

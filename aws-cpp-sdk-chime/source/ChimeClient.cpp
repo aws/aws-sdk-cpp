@@ -181,7 +181,7 @@ AssociatePhoneNumberWithUserOutcome ChimeClient::AssociatePhoneNumberWithUser(co
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?operation=associate-phone-number");
   uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AssociatePhoneNumberWithUserOutcome(AssociatePhoneNumberWithUserResult(outcome.GetResult()));
@@ -224,7 +224,7 @@ AssociatePhoneNumbersWithVoiceConnectorOutcome ChimeClient::AssociatePhoneNumber
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?operation=associate-phone-numbers");
   uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AssociatePhoneNumbersWithVoiceConnectorOutcome(AssociatePhoneNumbersWithVoiceConnectorResult(outcome.GetResult()));
@@ -261,7 +261,7 @@ BatchDeletePhoneNumberOutcome ChimeClient::BatchDeletePhoneNumber(const BatchDel
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?operation=batch-delete");
   uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return BatchDeletePhoneNumberOutcome(BatchDeletePhoneNumberResult(outcome.GetResult()));
@@ -305,7 +305,7 @@ BatchSuspendUserOutcome ChimeClient::BatchSuspendUser(const BatchSuspendUserRequ
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?operation=suspend");
   uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return BatchSuspendUserOutcome(BatchSuspendUserResult(outcome.GetResult()));
@@ -349,7 +349,7 @@ BatchUnsuspendUserOutcome ChimeClient::BatchUnsuspendUser(const BatchUnsuspendUs
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?operation=unsuspend");
   uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return BatchUnsuspendUserOutcome(BatchUnsuspendUserResult(outcome.GetResult()));
@@ -386,7 +386,7 @@ BatchUpdatePhoneNumberOutcome ChimeClient::BatchUpdatePhoneNumber(const BatchUpd
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?operation=batch-update");
   uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return BatchUpdatePhoneNumberOutcome(BatchUpdatePhoneNumberResult(outcome.GetResult()));
@@ -428,7 +428,7 @@ BatchUpdateUserOutcome ChimeClient::BatchUpdateUser(const BatchUpdateUserRequest
   ss << request.GetAccountId();
   ss << "/users";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return BatchUpdateUserOutcome(BatchUpdateUserResult(outcome.GetResult()));
@@ -463,7 +463,7 @@ CreateAccountOutcome ChimeClient::CreateAccount(const CreateAccountRequest& requ
   Aws::StringStream ss;
   ss << "/accounts";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateAccountOutcome(CreateAccountResult(outcome.GetResult()));
@@ -505,7 +505,7 @@ CreateBotOutcome ChimeClient::CreateBot(const CreateBotRequest& request) const
   ss << request.GetAccountId();
   ss << "/bots";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateBotOutcome(CreateBotResult(outcome.GetResult()));
@@ -540,7 +540,7 @@ CreatePhoneNumberOrderOutcome ChimeClient::CreatePhoneNumberOrder(const CreatePh
   Aws::StringStream ss;
   ss << "/phone-number-orders";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreatePhoneNumberOrderOutcome(CreatePhoneNumberOrderResult(outcome.GetResult()));
@@ -575,7 +575,7 @@ CreateVoiceConnectorOutcome ChimeClient::CreateVoiceConnector(const CreateVoiceC
   Aws::StringStream ss;
   ss << "/voice-connectors";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateVoiceConnectorOutcome(CreateVoiceConnectorResult(outcome.GetResult()));
@@ -616,7 +616,7 @@ DeleteAccountOutcome ChimeClient::DeleteAccount(const DeleteAccountRequest& requ
   ss << "/accounts/";
   ss << request.GetAccountId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteAccountOutcome(DeleteAccountResult(outcome.GetResult()));
@@ -665,7 +665,7 @@ DeleteEventsConfigurationOutcome ChimeClient::DeleteEventsConfiguration(const De
   ss << request.GetBotId();
   ss << "/events-configuration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteEventsConfigurationOutcome(NoResult());
@@ -706,7 +706,7 @@ DeletePhoneNumberOutcome ChimeClient::DeletePhoneNumber(const DeletePhoneNumberR
   ss << "/phone-numbers/";
   ss << request.GetPhoneNumberId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeletePhoneNumberOutcome(NoResult());
@@ -747,7 +747,7 @@ DeleteVoiceConnectorOutcome ChimeClient::DeleteVoiceConnector(const DeleteVoiceC
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteVoiceConnectorOutcome(NoResult());
@@ -789,7 +789,7 @@ DeleteVoiceConnectorOriginationOutcome ChimeClient::DeleteVoiceConnectorOriginat
   ss << request.GetVoiceConnectorId();
   ss << "/origination";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteVoiceConnectorOriginationOutcome(NoResult());
@@ -831,7 +831,7 @@ DeleteVoiceConnectorTerminationOutcome ChimeClient::DeleteVoiceConnectorTerminat
   ss << request.GetVoiceConnectorId();
   ss << "/termination";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteVoiceConnectorTerminationOutcome(NoResult());
@@ -875,7 +875,7 @@ DeleteVoiceConnectorTerminationCredentialsOutcome ChimeClient::DeleteVoiceConnec
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?operation=delete");
   uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteVoiceConnectorTerminationCredentialsOutcome(NoResult());
@@ -925,7 +925,7 @@ DisassociatePhoneNumberFromUserOutcome ChimeClient::DisassociatePhoneNumberFromU
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?operation=disassociate-phone-number");
   uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DisassociatePhoneNumberFromUserOutcome(DisassociatePhoneNumberFromUserResult(outcome.GetResult()));
@@ -968,7 +968,7 @@ DisassociatePhoneNumbersFromVoiceConnectorOutcome ChimeClient::DisassociatePhone
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?operation=disassociate-phone-numbers");
   uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DisassociatePhoneNumbersFromVoiceConnectorOutcome(DisassociatePhoneNumbersFromVoiceConnectorResult(outcome.GetResult()));
@@ -1009,7 +1009,7 @@ GetAccountOutcome ChimeClient::GetAccount(const GetAccountRequest& request) cons
   ss << "/accounts/";
   ss << request.GetAccountId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetAccountOutcome(GetAccountResult(outcome.GetResult()));
@@ -1051,7 +1051,7 @@ GetAccountSettingsOutcome ChimeClient::GetAccountSettings(const GetAccountSettin
   ss << request.GetAccountId();
   ss << "/settings";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetAccountSettingsOutcome(GetAccountSettingsResult(outcome.GetResult()));
@@ -1099,7 +1099,7 @@ GetBotOutcome ChimeClient::GetBot(const GetBotRequest& request) const
   ss << "/bots/";
   ss << request.GetBotId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetBotOutcome(GetBotResult(outcome.GetResult()));
@@ -1148,7 +1148,7 @@ GetEventsConfigurationOutcome ChimeClient::GetEventsConfiguration(const GetEvent
   ss << request.GetBotId();
   ss << "/events-configuration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetEventsConfigurationOutcome(GetEventsConfigurationResult(outcome.GetResult()));
@@ -1181,7 +1181,7 @@ GetGlobalSettingsOutcome ChimeClient::GetGlobalSettings() const
 {
   Aws::StringStream ss;
   ss << m_uri << "/settings";
-  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "GetGlobalSettings");
+  JsonOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "GetGlobalSettings");
   if(outcome.IsSuccess())
   {
     return GetGlobalSettingsOutcome(GetGlobalSettingsResult(outcome.GetResult()));
@@ -1222,7 +1222,7 @@ GetPhoneNumberOutcome ChimeClient::GetPhoneNumber(const GetPhoneNumberRequest& r
   ss << "/phone-numbers/";
   ss << request.GetPhoneNumberId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetPhoneNumberOutcome(GetPhoneNumberResult(outcome.GetResult()));
@@ -1263,7 +1263,7 @@ GetPhoneNumberOrderOutcome ChimeClient::GetPhoneNumberOrder(const GetPhoneNumber
   ss << "/phone-number-orders/";
   ss << request.GetPhoneNumberOrderId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetPhoneNumberOrderOutcome(GetPhoneNumberOrderResult(outcome.GetResult()));
@@ -1311,7 +1311,7 @@ GetUserOutcome ChimeClient::GetUser(const GetUserRequest& request) const
   ss << "/users/";
   ss << request.GetUserId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetUserOutcome(GetUserResult(outcome.GetResult()));
@@ -1360,7 +1360,7 @@ GetUserSettingsOutcome ChimeClient::GetUserSettings(const GetUserSettingsRequest
   ss << request.GetUserId();
   ss << "/settings";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetUserSettingsOutcome(GetUserSettingsResult(outcome.GetResult()));
@@ -1401,7 +1401,7 @@ GetVoiceConnectorOutcome ChimeClient::GetVoiceConnector(const GetVoiceConnectorR
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetVoiceConnectorOutcome(GetVoiceConnectorResult(outcome.GetResult()));
@@ -1443,7 +1443,7 @@ GetVoiceConnectorOriginationOutcome ChimeClient::GetVoiceConnectorOrigination(co
   ss << request.GetVoiceConnectorId();
   ss << "/origination";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetVoiceConnectorOriginationOutcome(GetVoiceConnectorOriginationResult(outcome.GetResult()));
@@ -1485,7 +1485,7 @@ GetVoiceConnectorTerminationOutcome ChimeClient::GetVoiceConnectorTermination(co
   ss << request.GetVoiceConnectorId();
   ss << "/termination";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetVoiceConnectorTerminationOutcome(GetVoiceConnectorTerminationResult(outcome.GetResult()));
@@ -1527,7 +1527,7 @@ GetVoiceConnectorTerminationHealthOutcome ChimeClient::GetVoiceConnectorTerminat
   ss << request.GetVoiceConnectorId();
   ss << "/termination/health";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetVoiceConnectorTerminationHealthOutcome(GetVoiceConnectorTerminationHealthResult(outcome.GetResult()));
@@ -1571,7 +1571,7 @@ InviteUsersOutcome ChimeClient::InviteUsers(const InviteUsersRequest& request) c
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?operation=add");
   uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return InviteUsersOutcome(InviteUsersResult(outcome.GetResult()));
@@ -1606,7 +1606,7 @@ ListAccountsOutcome ChimeClient::ListAccounts(const ListAccountsRequest& request
   Aws::StringStream ss;
   ss << "/accounts";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListAccountsOutcome(ListAccountsResult(outcome.GetResult()));
@@ -1648,7 +1648,7 @@ ListBotsOutcome ChimeClient::ListBots(const ListBotsRequest& request) const
   ss << request.GetAccountId();
   ss << "/bots";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListBotsOutcome(ListBotsResult(outcome.GetResult()));
@@ -1683,7 +1683,7 @@ ListPhoneNumberOrdersOutcome ChimeClient::ListPhoneNumberOrders(const ListPhoneN
   Aws::StringStream ss;
   ss << "/phone-number-orders";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListPhoneNumberOrdersOutcome(ListPhoneNumberOrdersResult(outcome.GetResult()));
@@ -1718,7 +1718,7 @@ ListPhoneNumbersOutcome ChimeClient::ListPhoneNumbers(const ListPhoneNumbersRequ
   Aws::StringStream ss;
   ss << "/phone-numbers";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListPhoneNumbersOutcome(ListPhoneNumbersResult(outcome.GetResult()));
@@ -1760,7 +1760,7 @@ ListUsersOutcome ChimeClient::ListUsers(const ListUsersRequest& request) const
   ss << request.GetAccountId();
   ss << "/users";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListUsersOutcome(ListUsersResult(outcome.GetResult()));
@@ -1802,7 +1802,7 @@ ListVoiceConnectorTerminationCredentialsOutcome ChimeClient::ListVoiceConnectorT
   ss << request.GetVoiceConnectorId();
   ss << "/termination/credentials";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListVoiceConnectorTerminationCredentialsOutcome(ListVoiceConnectorTerminationCredentialsResult(outcome.GetResult()));
@@ -1837,7 +1837,7 @@ ListVoiceConnectorsOutcome ChimeClient::ListVoiceConnectors(const ListVoiceConne
   Aws::StringStream ss;
   ss << "/voice-connectors";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListVoiceConnectorsOutcome(ListVoiceConnectorsResult(outcome.GetResult()));
@@ -1887,7 +1887,7 @@ LogoutUserOutcome ChimeClient::LogoutUser(const LogoutUserRequest& request) cons
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?operation=logout");
   uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return LogoutUserOutcome(LogoutUserResult(outcome.GetResult()));
@@ -1936,7 +1936,7 @@ PutEventsConfigurationOutcome ChimeClient::PutEventsConfiguration(const PutEvent
   ss << request.GetBotId();
   ss << "/events-configuration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutEventsConfigurationOutcome(PutEventsConfigurationResult(outcome.GetResult()));
@@ -1978,7 +1978,7 @@ PutVoiceConnectorOriginationOutcome ChimeClient::PutVoiceConnectorOrigination(co
   ss << request.GetVoiceConnectorId();
   ss << "/origination";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutVoiceConnectorOriginationOutcome(PutVoiceConnectorOriginationResult(outcome.GetResult()));
@@ -2020,7 +2020,7 @@ PutVoiceConnectorTerminationOutcome ChimeClient::PutVoiceConnectorTermination(co
   ss << request.GetVoiceConnectorId();
   ss << "/termination";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutVoiceConnectorTerminationOutcome(PutVoiceConnectorTerminationResult(outcome.GetResult()));
@@ -2064,7 +2064,7 @@ PutVoiceConnectorTerminationCredentialsOutcome ChimeClient::PutVoiceConnectorTer
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?operation=put");
   uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return PutVoiceConnectorTerminationCredentialsOutcome(NoResult());
@@ -2114,7 +2114,7 @@ RegenerateSecurityTokenOutcome ChimeClient::RegenerateSecurityToken(const Regene
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?operation=regenerate-security-token");
   uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RegenerateSecurityTokenOutcome(RegenerateSecurityTokenResult(outcome.GetResult()));
@@ -2164,7 +2164,7 @@ ResetPersonalPINOutcome ChimeClient::ResetPersonalPIN(const ResetPersonalPINRequ
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?operation=reset-personal-pin");
   uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ResetPersonalPINOutcome(ResetPersonalPINResult(outcome.GetResult()));
@@ -2207,7 +2207,7 @@ RestorePhoneNumberOutcome ChimeClient::RestorePhoneNumber(const RestorePhoneNumb
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?operation=restore");
   uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return RestorePhoneNumberOutcome(RestorePhoneNumberResult(outcome.GetResult()));
@@ -2244,7 +2244,7 @@ SearchAvailablePhoneNumbersOutcome ChimeClient::SearchAvailablePhoneNumbers(cons
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?type=phone-numbers");
   uri.SetQueryString(ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return SearchAvailablePhoneNumbersOutcome(SearchAvailablePhoneNumbersResult(outcome.GetResult()));
@@ -2285,7 +2285,7 @@ UpdateAccountOutcome ChimeClient::UpdateAccount(const UpdateAccountRequest& requ
   ss << "/accounts/";
   ss << request.GetAccountId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateAccountOutcome(UpdateAccountResult(outcome.GetResult()));
@@ -2327,7 +2327,7 @@ UpdateAccountSettingsOutcome ChimeClient::UpdateAccountSettings(const UpdateAcco
   ss << request.GetAccountId();
   ss << "/settings";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateAccountSettingsOutcome(UpdateAccountSettingsResult(outcome.GetResult()));
@@ -2375,7 +2375,7 @@ UpdateBotOutcome ChimeClient::UpdateBot(const UpdateBotRequest& request) const
   ss << "/bots/";
   ss << request.GetBotId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateBotOutcome(UpdateBotResult(outcome.GetResult()));
@@ -2410,7 +2410,7 @@ UpdateGlobalSettingsOutcome ChimeClient::UpdateGlobalSettings(const UpdateGlobal
   Aws::StringStream ss;
   ss << "/settings";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateGlobalSettingsOutcome(NoResult());
@@ -2451,7 +2451,7 @@ UpdatePhoneNumberOutcome ChimeClient::UpdatePhoneNumber(const UpdatePhoneNumberR
   ss << "/phone-numbers/";
   ss << request.GetPhoneNumberId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdatePhoneNumberOutcome(UpdatePhoneNumberResult(outcome.GetResult()));
@@ -2499,7 +2499,7 @@ UpdateUserOutcome ChimeClient::UpdateUser(const UpdateUserRequest& request) cons
   ss << "/users/";
   ss << request.GetUserId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateUserOutcome(UpdateUserResult(outcome.GetResult()));
@@ -2548,7 +2548,7 @@ UpdateUserSettingsOutcome ChimeClient::UpdateUserSettings(const UpdateUserSettin
   ss << request.GetUserId();
   ss << "/settings";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateUserSettingsOutcome(NoResult());
@@ -2589,7 +2589,7 @@ UpdateVoiceConnectorOutcome ChimeClient::UpdateVoiceConnector(const UpdateVoiceC
   ss << "/voice-connectors/";
   ss << request.GetVoiceConnectorId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateVoiceConnectorOutcome(UpdateVoiceConnectorResult(outcome.GetResult()));

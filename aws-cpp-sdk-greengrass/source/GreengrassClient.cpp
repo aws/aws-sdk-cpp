@@ -206,7 +206,7 @@ AssociateRoleToGroupOutcome GreengrassClient::AssociateRoleToGroup(const Associa
   ss << request.GetGroupId();
   ss << "/role";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AssociateRoleToGroupOutcome(AssociateRoleToGroupResult(outcome.GetResult()));
@@ -241,7 +241,7 @@ AssociateServiceRoleToAccountOutcome GreengrassClient::AssociateServiceRoleToAcc
   Aws::StringStream ss;
   ss << "/greengrass/servicerole";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return AssociateServiceRoleToAccountOutcome(AssociateServiceRoleToAccountResult(outcome.GetResult()));
@@ -276,7 +276,7 @@ CreateConnectorDefinitionOutcome GreengrassClient::CreateConnectorDefinition(con
   Aws::StringStream ss;
   ss << "/greengrass/definition/connectors";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateConnectorDefinitionOutcome(CreateConnectorDefinitionResult(outcome.GetResult()));
@@ -318,7 +318,7 @@ CreateConnectorDefinitionVersionOutcome GreengrassClient::CreateConnectorDefinit
   ss << request.GetConnectorDefinitionId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateConnectorDefinitionVersionOutcome(CreateConnectorDefinitionVersionResult(outcome.GetResult()));
@@ -353,7 +353,7 @@ CreateCoreDefinitionOutcome GreengrassClient::CreateCoreDefinition(const CreateC
   Aws::StringStream ss;
   ss << "/greengrass/definition/cores";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateCoreDefinitionOutcome(CreateCoreDefinitionResult(outcome.GetResult()));
@@ -395,7 +395,7 @@ CreateCoreDefinitionVersionOutcome GreengrassClient::CreateCoreDefinitionVersion
   ss << request.GetCoreDefinitionId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateCoreDefinitionVersionOutcome(CreateCoreDefinitionVersionResult(outcome.GetResult()));
@@ -437,7 +437,7 @@ CreateDeploymentOutcome GreengrassClient::CreateDeployment(const CreateDeploymen
   ss << request.GetGroupId();
   ss << "/deployments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateDeploymentOutcome(CreateDeploymentResult(outcome.GetResult()));
@@ -472,7 +472,7 @@ CreateDeviceDefinitionOutcome GreengrassClient::CreateDeviceDefinition(const Cre
   Aws::StringStream ss;
   ss << "/greengrass/definition/devices";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateDeviceDefinitionOutcome(CreateDeviceDefinitionResult(outcome.GetResult()));
@@ -514,7 +514,7 @@ CreateDeviceDefinitionVersionOutcome GreengrassClient::CreateDeviceDefinitionVer
   ss << request.GetDeviceDefinitionId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateDeviceDefinitionVersionOutcome(CreateDeviceDefinitionVersionResult(outcome.GetResult()));
@@ -549,7 +549,7 @@ CreateFunctionDefinitionOutcome GreengrassClient::CreateFunctionDefinition(const
   Aws::StringStream ss;
   ss << "/greengrass/definition/functions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateFunctionDefinitionOutcome(CreateFunctionDefinitionResult(outcome.GetResult()));
@@ -591,7 +591,7 @@ CreateFunctionDefinitionVersionOutcome GreengrassClient::CreateFunctionDefinitio
   ss << request.GetFunctionDefinitionId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateFunctionDefinitionVersionOutcome(CreateFunctionDefinitionVersionResult(outcome.GetResult()));
@@ -626,7 +626,7 @@ CreateGroupOutcome GreengrassClient::CreateGroup(const CreateGroupRequest& reque
   Aws::StringStream ss;
   ss << "/greengrass/groups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateGroupOutcome(CreateGroupResult(outcome.GetResult()));
@@ -668,7 +668,7 @@ CreateGroupCertificateAuthorityOutcome GreengrassClient::CreateGroupCertificateA
   ss << request.GetGroupId();
   ss << "/certificateauthorities";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateGroupCertificateAuthorityOutcome(CreateGroupCertificateAuthorityResult(outcome.GetResult()));
@@ -710,7 +710,7 @@ CreateGroupVersionOutcome GreengrassClient::CreateGroupVersion(const CreateGroup
   ss << request.GetGroupId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateGroupVersionOutcome(CreateGroupVersionResult(outcome.GetResult()));
@@ -745,7 +745,7 @@ CreateLoggerDefinitionOutcome GreengrassClient::CreateLoggerDefinition(const Cre
   Aws::StringStream ss;
   ss << "/greengrass/definition/loggers";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateLoggerDefinitionOutcome(CreateLoggerDefinitionResult(outcome.GetResult()));
@@ -787,7 +787,7 @@ CreateLoggerDefinitionVersionOutcome GreengrassClient::CreateLoggerDefinitionVer
   ss << request.GetLoggerDefinitionId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateLoggerDefinitionVersionOutcome(CreateLoggerDefinitionVersionResult(outcome.GetResult()));
@@ -822,7 +822,7 @@ CreateResourceDefinitionOutcome GreengrassClient::CreateResourceDefinition(const
   Aws::StringStream ss;
   ss << "/greengrass/definition/resources";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateResourceDefinitionOutcome(CreateResourceDefinitionResult(outcome.GetResult()));
@@ -864,7 +864,7 @@ CreateResourceDefinitionVersionOutcome GreengrassClient::CreateResourceDefinitio
   ss << request.GetResourceDefinitionId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateResourceDefinitionVersionOutcome(CreateResourceDefinitionVersionResult(outcome.GetResult()));
@@ -899,7 +899,7 @@ CreateSoftwareUpdateJobOutcome GreengrassClient::CreateSoftwareUpdateJob(const C
   Aws::StringStream ss;
   ss << "/greengrass/updates";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateSoftwareUpdateJobOutcome(CreateSoftwareUpdateJobResult(outcome.GetResult()));
@@ -934,7 +934,7 @@ CreateSubscriptionDefinitionOutcome GreengrassClient::CreateSubscriptionDefiniti
   Aws::StringStream ss;
   ss << "/greengrass/definition/subscriptions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateSubscriptionDefinitionOutcome(CreateSubscriptionDefinitionResult(outcome.GetResult()));
@@ -976,7 +976,7 @@ CreateSubscriptionDefinitionVersionOutcome GreengrassClient::CreateSubscriptionD
   ss << request.GetSubscriptionDefinitionId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return CreateSubscriptionDefinitionVersionOutcome(CreateSubscriptionDefinitionVersionResult(outcome.GetResult()));
@@ -1017,7 +1017,7 @@ DeleteConnectorDefinitionOutcome GreengrassClient::DeleteConnectorDefinition(con
   ss << "/greengrass/definition/connectors/";
   ss << request.GetConnectorDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteConnectorDefinitionOutcome(DeleteConnectorDefinitionResult(outcome.GetResult()));
@@ -1058,7 +1058,7 @@ DeleteCoreDefinitionOutcome GreengrassClient::DeleteCoreDefinition(const DeleteC
   ss << "/greengrass/definition/cores/";
   ss << request.GetCoreDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteCoreDefinitionOutcome(DeleteCoreDefinitionResult(outcome.GetResult()));
@@ -1099,7 +1099,7 @@ DeleteDeviceDefinitionOutcome GreengrassClient::DeleteDeviceDefinition(const Del
   ss << "/greengrass/definition/devices/";
   ss << request.GetDeviceDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteDeviceDefinitionOutcome(DeleteDeviceDefinitionResult(outcome.GetResult()));
@@ -1140,7 +1140,7 @@ DeleteFunctionDefinitionOutcome GreengrassClient::DeleteFunctionDefinition(const
   ss << "/greengrass/definition/functions/";
   ss << request.GetFunctionDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteFunctionDefinitionOutcome(DeleteFunctionDefinitionResult(outcome.GetResult()));
@@ -1181,7 +1181,7 @@ DeleteGroupOutcome GreengrassClient::DeleteGroup(const DeleteGroupRequest& reque
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteGroupOutcome(DeleteGroupResult(outcome.GetResult()));
@@ -1222,7 +1222,7 @@ DeleteLoggerDefinitionOutcome GreengrassClient::DeleteLoggerDefinition(const Del
   ss << "/greengrass/definition/loggers/";
   ss << request.GetLoggerDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteLoggerDefinitionOutcome(DeleteLoggerDefinitionResult(outcome.GetResult()));
@@ -1263,7 +1263,7 @@ DeleteResourceDefinitionOutcome GreengrassClient::DeleteResourceDefinition(const
   ss << "/greengrass/definition/resources/";
   ss << request.GetResourceDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteResourceDefinitionOutcome(DeleteResourceDefinitionResult(outcome.GetResult()));
@@ -1304,7 +1304,7 @@ DeleteSubscriptionDefinitionOutcome GreengrassClient::DeleteSubscriptionDefiniti
   ss << "/greengrass/definition/subscriptions/";
   ss << request.GetSubscriptionDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DeleteSubscriptionDefinitionOutcome(DeleteSubscriptionDefinitionResult(outcome.GetResult()));
@@ -1346,7 +1346,7 @@ DisassociateRoleFromGroupOutcome GreengrassClient::DisassociateRoleFromGroup(con
   ss << request.GetGroupId();
   ss << "/role";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DisassociateRoleFromGroupOutcome(DisassociateRoleFromGroupResult(outcome.GetResult()));
@@ -1381,7 +1381,7 @@ DisassociateServiceRoleFromAccountOutcome GreengrassClient::DisassociateServiceR
   Aws::StringStream ss;
   ss << "/greengrass/servicerole";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return DisassociateServiceRoleFromAccountOutcome(DisassociateServiceRoleFromAccountResult(outcome.GetResult()));
@@ -1423,7 +1423,7 @@ GetAssociatedRoleOutcome GreengrassClient::GetAssociatedRole(const GetAssociated
   ss << request.GetGroupId();
   ss << "/role";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetAssociatedRoleOutcome(GetAssociatedRoleResult(outcome.GetResult()));
@@ -1465,7 +1465,7 @@ GetBulkDeploymentStatusOutcome GreengrassClient::GetBulkDeploymentStatus(const G
   ss << request.GetBulkDeploymentId();
   ss << "/status";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetBulkDeploymentStatusOutcome(GetBulkDeploymentStatusResult(outcome.GetResult()));
@@ -1507,7 +1507,7 @@ GetConnectivityInfoOutcome GreengrassClient::GetConnectivityInfo(const GetConnec
   ss << request.GetThingName();
   ss << "/connectivityInfo";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetConnectivityInfoOutcome(GetConnectivityInfoResult(outcome.GetResult()));
@@ -1548,7 +1548,7 @@ GetConnectorDefinitionOutcome GreengrassClient::GetConnectorDefinition(const Get
   ss << "/greengrass/definition/connectors/";
   ss << request.GetConnectorDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetConnectorDefinitionOutcome(GetConnectorDefinitionResult(outcome.GetResult()));
@@ -1596,7 +1596,7 @@ GetConnectorDefinitionVersionOutcome GreengrassClient::GetConnectorDefinitionVer
   ss << "/versions/";
   ss << request.GetConnectorDefinitionVersionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetConnectorDefinitionVersionOutcome(GetConnectorDefinitionVersionResult(outcome.GetResult()));
@@ -1637,7 +1637,7 @@ GetCoreDefinitionOutcome GreengrassClient::GetCoreDefinition(const GetCoreDefini
   ss << "/greengrass/definition/cores/";
   ss << request.GetCoreDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetCoreDefinitionOutcome(GetCoreDefinitionResult(outcome.GetResult()));
@@ -1685,7 +1685,7 @@ GetCoreDefinitionVersionOutcome GreengrassClient::GetCoreDefinitionVersion(const
   ss << "/versions/";
   ss << request.GetCoreDefinitionVersionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetCoreDefinitionVersionOutcome(GetCoreDefinitionVersionResult(outcome.GetResult()));
@@ -1734,7 +1734,7 @@ GetDeploymentStatusOutcome GreengrassClient::GetDeploymentStatus(const GetDeploy
   ss << request.GetDeploymentId();
   ss << "/status";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDeploymentStatusOutcome(GetDeploymentStatusResult(outcome.GetResult()));
@@ -1775,7 +1775,7 @@ GetDeviceDefinitionOutcome GreengrassClient::GetDeviceDefinition(const GetDevice
   ss << "/greengrass/definition/devices/";
   ss << request.GetDeviceDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDeviceDefinitionOutcome(GetDeviceDefinitionResult(outcome.GetResult()));
@@ -1823,7 +1823,7 @@ GetDeviceDefinitionVersionOutcome GreengrassClient::GetDeviceDefinitionVersion(c
   ss << "/versions/";
   ss << request.GetDeviceDefinitionVersionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetDeviceDefinitionVersionOutcome(GetDeviceDefinitionVersionResult(outcome.GetResult()));
@@ -1864,7 +1864,7 @@ GetFunctionDefinitionOutcome GreengrassClient::GetFunctionDefinition(const GetFu
   ss << "/greengrass/definition/functions/";
   ss << request.GetFunctionDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetFunctionDefinitionOutcome(GetFunctionDefinitionResult(outcome.GetResult()));
@@ -1912,7 +1912,7 @@ GetFunctionDefinitionVersionOutcome GreengrassClient::GetFunctionDefinitionVersi
   ss << "/versions/";
   ss << request.GetFunctionDefinitionVersionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetFunctionDefinitionVersionOutcome(GetFunctionDefinitionVersionResult(outcome.GetResult()));
@@ -1953,7 +1953,7 @@ GetGroupOutcome GreengrassClient::GetGroup(const GetGroupRequest& request) const
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetGroupOutcome(GetGroupResult(outcome.GetResult()));
@@ -2001,7 +2001,7 @@ GetGroupCertificateAuthorityOutcome GreengrassClient::GetGroupCertificateAuthori
   ss << "/certificateauthorities/";
   ss << request.GetCertificateAuthorityId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetGroupCertificateAuthorityOutcome(GetGroupCertificateAuthorityResult(outcome.GetResult()));
@@ -2043,7 +2043,7 @@ GetGroupCertificateConfigurationOutcome GreengrassClient::GetGroupCertificateCon
   ss << request.GetGroupId();
   ss << "/certificateauthorities/configuration/expiry";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetGroupCertificateConfigurationOutcome(GetGroupCertificateConfigurationResult(outcome.GetResult()));
@@ -2091,7 +2091,7 @@ GetGroupVersionOutcome GreengrassClient::GetGroupVersion(const GetGroupVersionRe
   ss << "/versions/";
   ss << request.GetGroupVersionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetGroupVersionOutcome(GetGroupVersionResult(outcome.GetResult()));
@@ -2132,7 +2132,7 @@ GetLoggerDefinitionOutcome GreengrassClient::GetLoggerDefinition(const GetLogger
   ss << "/greengrass/definition/loggers/";
   ss << request.GetLoggerDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetLoggerDefinitionOutcome(GetLoggerDefinitionResult(outcome.GetResult()));
@@ -2180,7 +2180,7 @@ GetLoggerDefinitionVersionOutcome GreengrassClient::GetLoggerDefinitionVersion(c
   ss << "/versions/";
   ss << request.GetLoggerDefinitionVersionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetLoggerDefinitionVersionOutcome(GetLoggerDefinitionVersionResult(outcome.GetResult()));
@@ -2221,7 +2221,7 @@ GetResourceDefinitionOutcome GreengrassClient::GetResourceDefinition(const GetRe
   ss << "/greengrass/definition/resources/";
   ss << request.GetResourceDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetResourceDefinitionOutcome(GetResourceDefinitionResult(outcome.GetResult()));
@@ -2269,7 +2269,7 @@ GetResourceDefinitionVersionOutcome GreengrassClient::GetResourceDefinitionVersi
   ss << "/versions/";
   ss << request.GetResourceDefinitionVersionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetResourceDefinitionVersionOutcome(GetResourceDefinitionVersionResult(outcome.GetResult()));
@@ -2304,7 +2304,7 @@ GetServiceRoleForAccountOutcome GreengrassClient::GetServiceRoleForAccount(const
   Aws::StringStream ss;
   ss << "/greengrass/servicerole";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetServiceRoleForAccountOutcome(GetServiceRoleForAccountResult(outcome.GetResult()));
@@ -2345,7 +2345,7 @@ GetSubscriptionDefinitionOutcome GreengrassClient::GetSubscriptionDefinition(con
   ss << "/greengrass/definition/subscriptions/";
   ss << request.GetSubscriptionDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetSubscriptionDefinitionOutcome(GetSubscriptionDefinitionResult(outcome.GetResult()));
@@ -2393,7 +2393,7 @@ GetSubscriptionDefinitionVersionOutcome GreengrassClient::GetSubscriptionDefinit
   ss << "/versions/";
   ss << request.GetSubscriptionDefinitionVersionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return GetSubscriptionDefinitionVersionOutcome(GetSubscriptionDefinitionVersionResult(outcome.GetResult()));
@@ -2435,7 +2435,7 @@ ListBulkDeploymentDetailedReportsOutcome GreengrassClient::ListBulkDeploymentDet
   ss << request.GetBulkDeploymentId();
   ss << "/detailed-reports";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListBulkDeploymentDetailedReportsOutcome(ListBulkDeploymentDetailedReportsResult(outcome.GetResult()));
@@ -2470,7 +2470,7 @@ ListBulkDeploymentsOutcome GreengrassClient::ListBulkDeployments(const ListBulkD
   Aws::StringStream ss;
   ss << "/greengrass/bulk/deployments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListBulkDeploymentsOutcome(ListBulkDeploymentsResult(outcome.GetResult()));
@@ -2512,7 +2512,7 @@ ListConnectorDefinitionVersionsOutcome GreengrassClient::ListConnectorDefinition
   ss << request.GetConnectorDefinitionId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListConnectorDefinitionVersionsOutcome(ListConnectorDefinitionVersionsResult(outcome.GetResult()));
@@ -2547,7 +2547,7 @@ ListConnectorDefinitionsOutcome GreengrassClient::ListConnectorDefinitions(const
   Aws::StringStream ss;
   ss << "/greengrass/definition/connectors";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListConnectorDefinitionsOutcome(ListConnectorDefinitionsResult(outcome.GetResult()));
@@ -2589,7 +2589,7 @@ ListCoreDefinitionVersionsOutcome GreengrassClient::ListCoreDefinitionVersions(c
   ss << request.GetCoreDefinitionId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListCoreDefinitionVersionsOutcome(ListCoreDefinitionVersionsResult(outcome.GetResult()));
@@ -2624,7 +2624,7 @@ ListCoreDefinitionsOutcome GreengrassClient::ListCoreDefinitions(const ListCoreD
   Aws::StringStream ss;
   ss << "/greengrass/definition/cores";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListCoreDefinitionsOutcome(ListCoreDefinitionsResult(outcome.GetResult()));
@@ -2666,7 +2666,7 @@ ListDeploymentsOutcome GreengrassClient::ListDeployments(const ListDeploymentsRe
   ss << request.GetGroupId();
   ss << "/deployments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListDeploymentsOutcome(ListDeploymentsResult(outcome.GetResult()));
@@ -2708,7 +2708,7 @@ ListDeviceDefinitionVersionsOutcome GreengrassClient::ListDeviceDefinitionVersio
   ss << request.GetDeviceDefinitionId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListDeviceDefinitionVersionsOutcome(ListDeviceDefinitionVersionsResult(outcome.GetResult()));
@@ -2743,7 +2743,7 @@ ListDeviceDefinitionsOutcome GreengrassClient::ListDeviceDefinitions(const ListD
   Aws::StringStream ss;
   ss << "/greengrass/definition/devices";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListDeviceDefinitionsOutcome(ListDeviceDefinitionsResult(outcome.GetResult()));
@@ -2785,7 +2785,7 @@ ListFunctionDefinitionVersionsOutcome GreengrassClient::ListFunctionDefinitionVe
   ss << request.GetFunctionDefinitionId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListFunctionDefinitionVersionsOutcome(ListFunctionDefinitionVersionsResult(outcome.GetResult()));
@@ -2820,7 +2820,7 @@ ListFunctionDefinitionsOutcome GreengrassClient::ListFunctionDefinitions(const L
   Aws::StringStream ss;
   ss << "/greengrass/definition/functions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListFunctionDefinitionsOutcome(ListFunctionDefinitionsResult(outcome.GetResult()));
@@ -2862,7 +2862,7 @@ ListGroupCertificateAuthoritiesOutcome GreengrassClient::ListGroupCertificateAut
   ss << request.GetGroupId();
   ss << "/certificateauthorities";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListGroupCertificateAuthoritiesOutcome(ListGroupCertificateAuthoritiesResult(outcome.GetResult()));
@@ -2904,7 +2904,7 @@ ListGroupVersionsOutcome GreengrassClient::ListGroupVersions(const ListGroupVers
   ss << request.GetGroupId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListGroupVersionsOutcome(ListGroupVersionsResult(outcome.GetResult()));
@@ -2939,7 +2939,7 @@ ListGroupsOutcome GreengrassClient::ListGroups(const ListGroupsRequest& request)
   Aws::StringStream ss;
   ss << "/greengrass/groups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListGroupsOutcome(ListGroupsResult(outcome.GetResult()));
@@ -2981,7 +2981,7 @@ ListLoggerDefinitionVersionsOutcome GreengrassClient::ListLoggerDefinitionVersio
   ss << request.GetLoggerDefinitionId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListLoggerDefinitionVersionsOutcome(ListLoggerDefinitionVersionsResult(outcome.GetResult()));
@@ -3016,7 +3016,7 @@ ListLoggerDefinitionsOutcome GreengrassClient::ListLoggerDefinitions(const ListL
   Aws::StringStream ss;
   ss << "/greengrass/definition/loggers";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListLoggerDefinitionsOutcome(ListLoggerDefinitionsResult(outcome.GetResult()));
@@ -3058,7 +3058,7 @@ ListResourceDefinitionVersionsOutcome GreengrassClient::ListResourceDefinitionVe
   ss << request.GetResourceDefinitionId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListResourceDefinitionVersionsOutcome(ListResourceDefinitionVersionsResult(outcome.GetResult()));
@@ -3093,7 +3093,7 @@ ListResourceDefinitionsOutcome GreengrassClient::ListResourceDefinitions(const L
   Aws::StringStream ss;
   ss << "/greengrass/definition/resources";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListResourceDefinitionsOutcome(ListResourceDefinitionsResult(outcome.GetResult()));
@@ -3135,7 +3135,7 @@ ListSubscriptionDefinitionVersionsOutcome GreengrassClient::ListSubscriptionDefi
   ss << request.GetSubscriptionDefinitionId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListSubscriptionDefinitionVersionsOutcome(ListSubscriptionDefinitionVersionsResult(outcome.GetResult()));
@@ -3170,7 +3170,7 @@ ListSubscriptionDefinitionsOutcome GreengrassClient::ListSubscriptionDefinitions
   Aws::StringStream ss;
   ss << "/greengrass/definition/subscriptions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListSubscriptionDefinitionsOutcome(ListSubscriptionDefinitionsResult(outcome.GetResult()));
@@ -3211,7 +3211,7 @@ ListTagsForResourceOutcome GreengrassClient::ListTagsForResource(const ListTagsF
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
@@ -3253,7 +3253,7 @@ ResetDeploymentsOutcome GreengrassClient::ResetDeployments(const ResetDeployment
   ss << request.GetGroupId();
   ss << "/deployments/$reset";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ResetDeploymentsOutcome(ResetDeploymentsResult(outcome.GetResult()));
@@ -3288,7 +3288,7 @@ StartBulkDeploymentOutcome GreengrassClient::StartBulkDeployment(const StartBulk
   Aws::StringStream ss;
   ss << "/greengrass/bulk/deployments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StartBulkDeploymentOutcome(StartBulkDeploymentResult(outcome.GetResult()));
@@ -3330,7 +3330,7 @@ StopBulkDeploymentOutcome GreengrassClient::StopBulkDeployment(const StopBulkDep
   ss << request.GetBulkDeploymentId();
   ss << "/$stop";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return StopBulkDeploymentOutcome(StopBulkDeploymentResult(outcome.GetResult()));
@@ -3371,7 +3371,7 @@ TagResourceOutcome GreengrassClient::TagResource(const TagResourceRequest& reque
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return TagResourceOutcome(NoResult());
@@ -3417,7 +3417,7 @@ UntagResourceOutcome GreengrassClient::UntagResource(const UntagResourceRequest&
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UntagResourceOutcome(NoResult());
@@ -3459,7 +3459,7 @@ UpdateConnectivityInfoOutcome GreengrassClient::UpdateConnectivityInfo(const Upd
   ss << request.GetThingName();
   ss << "/connectivityInfo";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateConnectivityInfoOutcome(UpdateConnectivityInfoResult(outcome.GetResult()));
@@ -3500,7 +3500,7 @@ UpdateConnectorDefinitionOutcome GreengrassClient::UpdateConnectorDefinition(con
   ss << "/greengrass/definition/connectors/";
   ss << request.GetConnectorDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateConnectorDefinitionOutcome(UpdateConnectorDefinitionResult(outcome.GetResult()));
@@ -3541,7 +3541,7 @@ UpdateCoreDefinitionOutcome GreengrassClient::UpdateCoreDefinition(const UpdateC
   ss << "/greengrass/definition/cores/";
   ss << request.GetCoreDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateCoreDefinitionOutcome(UpdateCoreDefinitionResult(outcome.GetResult()));
@@ -3582,7 +3582,7 @@ UpdateDeviceDefinitionOutcome GreengrassClient::UpdateDeviceDefinition(const Upd
   ss << "/greengrass/definition/devices/";
   ss << request.GetDeviceDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateDeviceDefinitionOutcome(UpdateDeviceDefinitionResult(outcome.GetResult()));
@@ -3623,7 +3623,7 @@ UpdateFunctionDefinitionOutcome GreengrassClient::UpdateFunctionDefinition(const
   ss << "/greengrass/definition/functions/";
   ss << request.GetFunctionDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateFunctionDefinitionOutcome(UpdateFunctionDefinitionResult(outcome.GetResult()));
@@ -3664,7 +3664,7 @@ UpdateGroupOutcome GreengrassClient::UpdateGroup(const UpdateGroupRequest& reque
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateGroupOutcome(UpdateGroupResult(outcome.GetResult()));
@@ -3706,7 +3706,7 @@ UpdateGroupCertificateConfigurationOutcome GreengrassClient::UpdateGroupCertific
   ss << request.GetGroupId();
   ss << "/certificateauthorities/configuration/expiry";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateGroupCertificateConfigurationOutcome(UpdateGroupCertificateConfigurationResult(outcome.GetResult()));
@@ -3747,7 +3747,7 @@ UpdateLoggerDefinitionOutcome GreengrassClient::UpdateLoggerDefinition(const Upd
   ss << "/greengrass/definition/loggers/";
   ss << request.GetLoggerDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateLoggerDefinitionOutcome(UpdateLoggerDefinitionResult(outcome.GetResult()));
@@ -3788,7 +3788,7 @@ UpdateResourceDefinitionOutcome GreengrassClient::UpdateResourceDefinition(const
   ss << "/greengrass/definition/resources/";
   ss << request.GetResourceDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateResourceDefinitionOutcome(UpdateResourceDefinitionResult(outcome.GetResult()));
@@ -3829,7 +3829,7 @@ UpdateSubscriptionDefinitionOutcome GreengrassClient::UpdateSubscriptionDefiniti
   ss << "/greengrass/definition/subscriptions/";
   ss << request.GetSubscriptionDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return UpdateSubscriptionDefinitionOutcome(UpdateSubscriptionDefinitionResult(outcome.GetResult()));

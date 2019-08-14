@@ -119,7 +119,7 @@ Aws::String STSClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebS
   ss << "?" << requestToConvert.SerializePayload();
 
   URI uri(ss.str());
-  return GeneratePresignedUrl(uri, HttpMethod::HTTP_GET, region, 3600);
+  return GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region, 3600);
 }
 
 AssumeRoleOutcome STSClient::AssumeRole(const AssumeRoleRequest& request) const
@@ -128,7 +128,7 @@ AssumeRoleOutcome STSClient::AssumeRole(const AssumeRoleRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AssumeRoleOutcome(AssumeRoleResult(outcome.GetResult()));
@@ -163,7 +163,7 @@ AssumeRoleWithSAMLOutcome STSClient::AssumeRoleWithSAML(const AssumeRoleWithSAML
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AssumeRoleWithSAMLOutcome(AssumeRoleWithSAMLResult(outcome.GetResult()));
@@ -198,7 +198,7 @@ AssumeRoleWithWebIdentityOutcome STSClient::AssumeRoleWithWebIdentity(const Assu
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return AssumeRoleWithWebIdentityOutcome(AssumeRoleWithWebIdentityResult(outcome.GetResult()));
@@ -233,7 +233,7 @@ DecodeAuthorizationMessageOutcome STSClient::DecodeAuthorizationMessage(const De
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return DecodeAuthorizationMessageOutcome(DecodeAuthorizationMessageResult(outcome.GetResult()));
@@ -268,7 +268,7 @@ GetAccessKeyInfoOutcome STSClient::GetAccessKeyInfo(const GetAccessKeyInfoReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetAccessKeyInfoOutcome(GetAccessKeyInfoResult(outcome.GetResult()));
@@ -303,7 +303,7 @@ GetCallerIdentityOutcome STSClient::GetCallerIdentity(const GetCallerIdentityReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetCallerIdentityOutcome(GetCallerIdentityResult(outcome.GetResult()));
@@ -338,7 +338,7 @@ GetFederationTokenOutcome STSClient::GetFederationToken(const GetFederationToken
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetFederationTokenOutcome(GetFederationTokenResult(outcome.GetResult()));
@@ -373,7 +373,7 @@ GetSessionTokenOutcome STSClient::GetSessionToken(const GetSessionTokenRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetSessionTokenOutcome(GetSessionTokenResult(outcome.GetResult()));
