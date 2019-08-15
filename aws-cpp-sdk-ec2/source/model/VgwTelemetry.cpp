@@ -37,7 +37,8 @@ VgwTelemetry::VgwTelemetry() :
     m_outsideIpAddressHasBeenSet(false),
     m_status(TelemetryStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+    m_statusMessageHasBeenSet(false),
+    m_certificateArnHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ VgwTelemetry::VgwTelemetry(const XmlNode& xmlNode) :
     m_outsideIpAddressHasBeenSet(false),
     m_status(TelemetryStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+    m_statusMessageHasBeenSet(false),
+    m_certificateArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -89,6 +91,12 @@ VgwTelemetry& VgwTelemetry::operator =(const XmlNode& xmlNode)
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
     }
+    XmlNode certificateArnNode = resultNode.FirstChild("certificateArn");
+    if(!certificateArnNode.IsNull())
+    {
+      m_certificateArn = Aws::Utils::Xml::DecodeEscapedXmlText(certificateArnNode.GetText());
+      m_certificateArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -121,6 +129,11 @@ void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
   }
 
+  if(m_certificateArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CertificateArn=" << StringUtils::URLEncode(m_certificateArn.c_str()) << "&";
+  }
+
 }
 
 void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -144,6 +157,10 @@ void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_statusMessageHasBeenSet)
   {
       oStream << location << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
+  }
+  if(m_certificateArnHasBeenSet)
+  {
+      oStream << location << ".CertificateArn=" << StringUtils::URLEncode(m_certificateArn.c_str()) << "&";
   }
 }
 

@@ -338,6 +338,7 @@
 #include <aws/ec2/model/ModifyVpcPeeringConnectionOptionsRequest.h>
 #include <aws/ec2/model/ModifyVpcTenancyRequest.h>
 #include <aws/ec2/model/ModifyVpnConnectionRequest.h>
+#include <aws/ec2/model/ModifyVpnTunnelCertificateRequest.h>
 #include <aws/ec2/model/MonitorInstancesRequest.h>
 #include <aws/ec2/model/MoveAddressToVpcRequest.h>
 #include <aws/ec2/model/ProvisionByoipCidrRequest.h>
@@ -11236,6 +11237,41 @@ void EC2Client::ModifyVpnConnectionAsync(const ModifyVpnConnectionRequest& reque
 void EC2Client::ModifyVpnConnectionAsyncHelper(const ModifyVpnConnectionRequest& request, const ModifyVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyVpnConnection(request), context);
+}
+
+ModifyVpnTunnelCertificateOutcome EC2Client::ModifyVpnTunnelCertificate(const ModifyVpnTunnelCertificateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyVpnTunnelCertificateOutcome(ModifyVpnTunnelCertificateResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyVpnTunnelCertificateOutcome(outcome.GetError());
+  }
+}
+
+ModifyVpnTunnelCertificateOutcomeCallable EC2Client::ModifyVpnTunnelCertificateCallable(const ModifyVpnTunnelCertificateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyVpnTunnelCertificateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyVpnTunnelCertificate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::ModifyVpnTunnelCertificateAsync(const ModifyVpnTunnelCertificateRequest& request, const ModifyVpnTunnelCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyVpnTunnelCertificateAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::ModifyVpnTunnelCertificateAsyncHelper(const ModifyVpnTunnelCertificateRequest& request, const ModifyVpnTunnelCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyVpnTunnelCertificate(request), context);
 }
 
 MonitorInstancesOutcome EC2Client::MonitorInstances(const MonitorInstancesRequest& request) const

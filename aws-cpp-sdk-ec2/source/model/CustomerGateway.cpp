@@ -34,6 +34,7 @@ CustomerGateway::CustomerGateway() :
     m_bgpAsnHasBeenSet(false),
     m_customerGatewayIdHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
+    m_certificateArnHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -44,6 +45,7 @@ CustomerGateway::CustomerGateway(const XmlNode& xmlNode) :
     m_bgpAsnHasBeenSet(false),
     m_customerGatewayIdHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
+    m_certificateArnHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -74,6 +76,12 @@ CustomerGateway& CustomerGateway::operator =(const XmlNode& xmlNode)
     {
       m_ipAddress = Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressNode.GetText());
       m_ipAddressHasBeenSet = true;
+    }
+    XmlNode certificateArnNode = resultNode.FirstChild("certificateArn");
+    if(!certificateArnNode.IsNull())
+    {
+      m_certificateArn = Aws::Utils::Xml::DecodeEscapedXmlText(certificateArnNode.GetText());
+      m_certificateArnHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
@@ -121,6 +129,11 @@ void CustomerGateway::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".IpAddress=" << StringUtils::URLEncode(m_ipAddress.c_str()) << "&";
   }
 
+  if(m_certificateArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CertificateArn=" << StringUtils::URLEncode(m_certificateArn.c_str()) << "&";
+  }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(m_state.c_str()) << "&";
@@ -157,6 +170,10 @@ void CustomerGateway::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_ipAddressHasBeenSet)
   {
       oStream << location << ".IpAddress=" << StringUtils::URLEncode(m_ipAddress.c_str()) << "&";
+  }
+  if(m_certificateArnHasBeenSet)
+  {
+      oStream << location << ".CertificateArn=" << StringUtils::URLEncode(m_certificateArn.c_str()) << "&";
   }
   if(m_stateHasBeenSet)
   {

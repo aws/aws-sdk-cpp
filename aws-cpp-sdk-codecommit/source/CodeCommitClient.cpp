@@ -31,6 +31,7 @@
 #include <aws/codecommit/CodeCommitEndpoint.h>
 #include <aws/codecommit/CodeCommitErrorMarshaller.h>
 #include <aws/codecommit/model/BatchDescribeMergeConflictsRequest.h>
+#include <aws/codecommit/model/BatchGetCommitsRequest.h>
 #include <aws/codecommit/model/BatchGetRepositoriesRequest.h>
 #include <aws/codecommit/model/CreateBranchRequest.h>
 #include <aws/codecommit/model/CreateCommitRequest.h>
@@ -189,6 +190,41 @@ void CodeCommitClient::BatchDescribeMergeConflictsAsync(const BatchDescribeMerge
 void CodeCommitClient::BatchDescribeMergeConflictsAsyncHelper(const BatchDescribeMergeConflictsRequest& request, const BatchDescribeMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchDescribeMergeConflicts(request), context);
+}
+
+BatchGetCommitsOutcome CodeCommitClient::BatchGetCommits(const BatchGetCommitsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return BatchGetCommitsOutcome(BatchGetCommitsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BatchGetCommitsOutcome(outcome.GetError());
+  }
+}
+
+BatchGetCommitsOutcomeCallable CodeCommitClient::BatchGetCommitsCallable(const BatchGetCommitsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetCommitsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetCommits(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::BatchGetCommitsAsync(const BatchGetCommitsRequest& request, const BatchGetCommitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchGetCommitsAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::BatchGetCommitsAsyncHelper(const BatchGetCommitsRequest& request, const BatchGetCommitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchGetCommits(request), context);
 }
 
 BatchGetRepositoriesOutcome CodeCommitClient::BatchGetRepositories(const BatchGetRepositoriesRequest& request) const

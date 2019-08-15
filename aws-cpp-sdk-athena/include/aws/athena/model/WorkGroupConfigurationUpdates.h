@@ -206,6 +206,59 @@ namespace Model
      */
     inline WorkGroupConfigurationUpdates& WithRemoveBytesScannedCutoffPerQuery(bool value) { SetRemoveBytesScannedCutoffPerQuery(value); return *this;}
 
+
+    /**
+     * <p>If set to <code>true</code>, allows members assigned to a workgroup to
+     * specify Amazon S3 Requester Pays buckets in queries. If set to
+     * <code>false</code>, workgroup members cannot query data from Requester Pays
+     * buckets, and queries that retrieve data from Requester Pays buckets cause an
+     * error. The default is <code>false</code>. For more information about Requester
+     * Pays buckets, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester
+     * Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
+     */
+    inline bool GetRequesterPaysEnabled() const{ return m_requesterPaysEnabled; }
+
+    /**
+     * <p>If set to <code>true</code>, allows members assigned to a workgroup to
+     * specify Amazon S3 Requester Pays buckets in queries. If set to
+     * <code>false</code>, workgroup members cannot query data from Requester Pays
+     * buckets, and queries that retrieve data from Requester Pays buckets cause an
+     * error. The default is <code>false</code>. For more information about Requester
+     * Pays buckets, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester
+     * Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
+     */
+    inline bool RequesterPaysEnabledHasBeenSet() const { return m_requesterPaysEnabledHasBeenSet; }
+
+    /**
+     * <p>If set to <code>true</code>, allows members assigned to a workgroup to
+     * specify Amazon S3 Requester Pays buckets in queries. If set to
+     * <code>false</code>, workgroup members cannot query data from Requester Pays
+     * buckets, and queries that retrieve data from Requester Pays buckets cause an
+     * error. The default is <code>false</code>. For more information about Requester
+     * Pays buckets, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester
+     * Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
+     */
+    inline void SetRequesterPaysEnabled(bool value) { m_requesterPaysEnabledHasBeenSet = true; m_requesterPaysEnabled = value; }
+
+    /**
+     * <p>If set to <code>true</code>, allows members assigned to a workgroup to
+     * specify Amazon S3 Requester Pays buckets in queries. If set to
+     * <code>false</code>, workgroup members cannot query data from Requester Pays
+     * buckets, and queries that retrieve data from Requester Pays buckets cause an
+     * error. The default is <code>false</code>. For more information about Requester
+     * Pays buckets, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester
+     * Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
+     */
+    inline WorkGroupConfigurationUpdates& WithRequesterPaysEnabled(bool value) { SetRequesterPaysEnabled(value); return *this;}
+
   private:
 
     bool m_enforceWorkGroupConfiguration;
@@ -222,6 +275,9 @@ namespace Model
 
     bool m_removeBytesScannedCutoffPerQuery;
     bool m_removeBytesScannedCutoffPerQueryHasBeenSet;
+
+    bool m_requesterPaysEnabled;
+    bool m_requesterPaysEnabledHasBeenSet;
   };
 
 } // namespace Model

@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codecommit/model/BatchDescribeMergeConflictsResult.h>
+#include <aws/codecommit/model/BatchGetCommitsResult.h>
 #include <aws/codecommit/model/BatchGetRepositoriesResult.h>
 #include <aws/codecommit/model/CreateCommitResult.h>
 #include <aws/codecommit/model/CreatePullRequestResult.h>
@@ -109,6 +110,7 @@ namespace CodeCommit
 namespace Model
 {
         class BatchDescribeMergeConflictsRequest;
+        class BatchGetCommitsRequest;
         class BatchGetRepositoriesRequest;
         class CreateBranchRequest;
         class CreateCommitRequest;
@@ -163,6 +165,7 @@ namespace Model
         class UpdateRepositoryNameRequest;
 
         typedef Aws::Utils::Outcome<BatchDescribeMergeConflictsResult, Aws::Client::AWSError<CodeCommitErrors>> BatchDescribeMergeConflictsOutcome;
+        typedef Aws::Utils::Outcome<BatchGetCommitsResult, Aws::Client::AWSError<CodeCommitErrors>> BatchGetCommitsOutcome;
         typedef Aws::Utils::Outcome<BatchGetRepositoriesResult, Aws::Client::AWSError<CodeCommitErrors>> BatchGetRepositoriesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeCommitErrors>> CreateBranchOutcome;
         typedef Aws::Utils::Outcome<CreateCommitResult, Aws::Client::AWSError<CodeCommitErrors>> CreateCommitOutcome;
@@ -217,6 +220,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeCommitErrors>> UpdateRepositoryNameOutcome;
 
         typedef std::future<BatchDescribeMergeConflictsOutcome> BatchDescribeMergeConflictsOutcomeCallable;
+        typedef std::future<BatchGetCommitsOutcome> BatchGetCommitsOutcomeCallable;
         typedef std::future<BatchGetRepositoriesOutcome> BatchGetRepositoriesOutcomeCallable;
         typedef std::future<CreateBranchOutcome> CreateBranchOutcomeCallable;
         typedef std::future<CreateCommitOutcome> CreateCommitOutcomeCallable;
@@ -274,6 +278,7 @@ namespace Model
   class CodeCommitClient;
 
     typedef std::function<void(const CodeCommitClient*, const Model::BatchDescribeMergeConflictsRequest&, const Model::BatchDescribeMergeConflictsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDescribeMergeConflictsResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::BatchGetCommitsRequest&, const Model::BatchGetCommitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetCommitsResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::BatchGetRepositoriesRequest&, const Model::BatchGetRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetRepositoriesResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::CreateBranchRequest&, const Model::CreateBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBranchResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::CreateCommitRequest&, const Model::CreateCommitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCommitResponseReceivedHandler;
@@ -360,17 +365,18 @@ namespace Model
    * of a specified folder or directory.</p> </li> <li> <p> <a>PutFile</a>, which
    * adds or modifies a single file in a specified repository and branch.</p> </li>
    * </ul> <p>Commits, by calling the following:</p> <ul> <li> <p>
-   * <a>CreateCommit</a>, which creates a commit for changes to a repository.</p>
-   * </li> <li> <p> <a>GetCommit</a>, which returns information about a commit,
-   * including commit messages and author and committer information.</p> </li> <li>
-   * <p> <a>GetDifferences</a>, which returns information about the differences in a
-   * valid commit specifier (such as a branch, tag, HEAD, commit ID or other fully
-   * qualified reference).</p> </li> </ul> <p>Merges, by calling the following:</p>
-   * <ul> <li> <p> <a>BatchDescribeMergeConflicts</a>, which returns information
-   * about conflicts in a merge between commits in a repository.</p> </li> <li> <p>
-   * <a>CreateUnreferencedMergeCommit</a>, which creates an unreferenced commit
-   * between two branches or commits for the purpose of comparing them and
-   * identifying any potential conflicts.</p> </li> <li> <p>
+   * <a>BatchGetCommits</a>, which returns information about one or more commits in a
+   * repository</p> </li> <li> <p> <a>CreateCommit</a>, which creates a commit for
+   * changes to a repository.</p> </li> <li> <p> <a>GetCommit</a>, which returns
+   * information about a commit, including commit messages and author and committer
+   * information.</p> </li> <li> <p> <a>GetDifferences</a>, which returns information
+   * about the differences in a valid commit specifier (such as a branch, tag, HEAD,
+   * commit ID or other fully qualified reference).</p> </li> </ul> <p>Merges, by
+   * calling the following:</p> <ul> <li> <p> <a>BatchDescribeMergeConflicts</a>,
+   * which returns information about conflicts in a merge between commits in a
+   * repository.</p> </li> <li> <p> <a>CreateUnreferencedMergeCommit</a>, which
+   * creates an unreferenced commit between two branches or commits for the purpose
+   * of comparing them and identifying any potential conflicts.</p> </li> <li> <p>
    * <a>DescribeMergeConflicts</a>, which returns information about merge conflicts
    * between the base, source, and destination versions of a file in a potential
    * merge.</p> </li> <li> <p> <a>GetMergeCommit</a>, which returns information about
@@ -491,6 +497,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchDescribeMergeConflictsAsync(const Model::BatchDescribeMergeConflictsRequest& request, const BatchDescribeMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about the contents of one or more commits in a
+         * repository.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetCommits">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetCommitsOutcome BatchGetCommits(const Model::BatchGetCommitsRequest& request) const;
+
+        /**
+         * <p>Returns information about the contents of one or more commits in a
+         * repository.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetCommits">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetCommitsOutcomeCallable BatchGetCommitsCallable(const Model::BatchGetCommitsRequest& request) const;
+
+        /**
+         * <p>Returns information about the contents of one or more commits in a
+         * repository.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetCommits">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetCommitsAsync(const Model::BatchGetCommitsRequest& request, const BatchGetCommitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about one or more repositories.</p> <note> <p>The
@@ -2109,6 +2143,7 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void BatchDescribeMergeConflictsAsyncHelper(const Model::BatchDescribeMergeConflictsRequest& request, const BatchDescribeMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchGetCommitsAsyncHelper(const Model::BatchGetCommitsRequest& request, const BatchGetCommitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetRepositoriesAsyncHelper(const Model::BatchGetRepositoriesRequest& request, const BatchGetRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBranchAsyncHelper(const Model::CreateBranchRequest& request, const CreateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCommitAsyncHelper(const Model::CreateCommitRequest& request, const CreateCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

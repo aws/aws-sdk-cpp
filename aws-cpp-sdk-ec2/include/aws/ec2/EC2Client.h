@@ -282,6 +282,7 @@
 #include <aws/ec2/model/ModifyVpcPeeringConnectionOptionsResponse.h>
 #include <aws/ec2/model/ModifyVpcTenancyResponse.h>
 #include <aws/ec2/model/ModifyVpnConnectionResponse.h>
+#include <aws/ec2/model/ModifyVpnTunnelCertificateResponse.h>
 #include <aws/ec2/model/MonitorInstancesResponse.h>
 #include <aws/ec2/model/MoveAddressToVpcResponse.h>
 #include <aws/ec2/model/ProvisionByoipCidrResponse.h>
@@ -669,6 +670,7 @@ namespace Model
         class ModifyVpcPeeringConnectionOptionsRequest;
         class ModifyVpcTenancyRequest;
         class ModifyVpnConnectionRequest;
+        class ModifyVpnTunnelCertificateRequest;
         class MonitorInstancesRequest;
         class MoveAddressToVpcRequest;
         class ProvisionByoipCidrRequest;
@@ -1024,6 +1026,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyVpcPeeringConnectionOptionsResponse, Aws::Client::AWSError<EC2Errors>> ModifyVpcPeeringConnectionOptionsOutcome;
         typedef Aws::Utils::Outcome<ModifyVpcTenancyResponse, Aws::Client::AWSError<EC2Errors>> ModifyVpcTenancyOutcome;
         typedef Aws::Utils::Outcome<ModifyVpnConnectionResponse, Aws::Client::AWSError<EC2Errors>> ModifyVpnConnectionOutcome;
+        typedef Aws::Utils::Outcome<ModifyVpnTunnelCertificateResponse, Aws::Client::AWSError<EC2Errors>> ModifyVpnTunnelCertificateOutcome;
         typedef Aws::Utils::Outcome<MonitorInstancesResponse, Aws::Client::AWSError<EC2Errors>> MonitorInstancesOutcome;
         typedef Aws::Utils::Outcome<MoveAddressToVpcResponse, Aws::Client::AWSError<EC2Errors>> MoveAddressToVpcOutcome;
         typedef Aws::Utils::Outcome<ProvisionByoipCidrResponse, Aws::Client::AWSError<EC2Errors>> ProvisionByoipCidrOutcome;
@@ -1379,6 +1382,7 @@ namespace Model
         typedef std::future<ModifyVpcPeeringConnectionOptionsOutcome> ModifyVpcPeeringConnectionOptionsOutcomeCallable;
         typedef std::future<ModifyVpcTenancyOutcome> ModifyVpcTenancyOutcomeCallable;
         typedef std::future<ModifyVpnConnectionOutcome> ModifyVpnConnectionOutcomeCallable;
+        typedef std::future<ModifyVpnTunnelCertificateOutcome> ModifyVpnTunnelCertificateOutcomeCallable;
         typedef std::future<MonitorInstancesOutcome> MonitorInstancesOutcomeCallable;
         typedef std::future<MoveAddressToVpcOutcome> MoveAddressToVpcOutcomeCallable;
         typedef std::future<ProvisionByoipCidrOutcome> ProvisionByoipCidrOutcomeCallable;
@@ -1737,6 +1741,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ModifyVpcPeeringConnectionOptionsRequest&, const Model::ModifyVpcPeeringConnectionOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpcPeeringConnectionOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyVpcTenancyRequest&, const Model::ModifyVpcTenancyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpcTenancyResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyVpnConnectionRequest&, const Model::ModifyVpnConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpnConnectionResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyVpnTunnelCertificateRequest&, const Model::ModifyVpnTunnelCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpnTunnelCertificateResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::MonitorInstancesRequest&, const Model::MonitorInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MonitorInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::MoveAddressToVpcRequest&, const Model::MoveAddressToVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MoveAddressToVpcResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ProvisionByoipCidrRequest&, const Model::ProvisionByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvisionByoipCidrResponseReceivedHandler;
@@ -15118,6 +15123,31 @@ namespace Model
         virtual void ModifyVpnConnectionAsync(const Model::ModifyVpnConnectionRequest& request, const ModifyVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies the VPN tunnel endpoint certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelCertificate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyVpnTunnelCertificateOutcome ModifyVpnTunnelCertificate(const Model::ModifyVpnTunnelCertificateRequest& request) const;
+
+        /**
+         * <p>Modifies the VPN tunnel endpoint certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelCertificate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyVpnTunnelCertificateOutcomeCallable ModifyVpnTunnelCertificateCallable(const Model::ModifyVpnTunnelCertificateRequest& request) const;
+
+        /**
+         * <p>Modifies the VPN tunnel endpoint certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelCertificate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyVpnTunnelCertificateAsync(const Model::ModifyVpnTunnelCertificateRequest& request, const ModifyVpnTunnelCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Enables detailed monitoring for a running instance. Otherwise, basic
          * monitoring is enabled. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
@@ -17740,6 +17770,7 @@ namespace Model
         void ModifyVpcPeeringConnectionOptionsAsyncHelper(const Model::ModifyVpcPeeringConnectionOptionsRequest& request, const ModifyVpcPeeringConnectionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyVpcTenancyAsyncHelper(const Model::ModifyVpcTenancyRequest& request, const ModifyVpcTenancyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyVpnConnectionAsyncHelper(const Model::ModifyVpnConnectionRequest& request, const ModifyVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyVpnTunnelCertificateAsyncHelper(const Model::ModifyVpnTunnelCertificateRequest& request, const ModifyVpnTunnelCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void MonitorInstancesAsyncHelper(const Model::MonitorInstancesRequest& request, const MonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void MoveAddressToVpcAsyncHelper(const Model::MoveAddressToVpcRequest& request, const MoveAddressToVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ProvisionByoipCidrAsyncHelper(const Model::ProvisionByoipCidrRequest& request, const ProvisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

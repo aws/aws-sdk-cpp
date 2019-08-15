@@ -55,6 +55,7 @@ static const int REPOSITORY_TRIGGER_DESTINATION_ARN_REQUIRED_HASH = HashingUtils
 static const int REPOSITORY_TRIGGER_EVENTS_LIST_REQUIRED_HASH = HashingUtils::HashString("RepositoryTriggerEventsListRequiredException");
 static const int REPOSITORY_TRIGGER_BRANCH_NAME_LIST_REQUIRED_HASH = HashingUtils::HashString("RepositoryTriggerBranchNameListRequiredException");
 static const int INVALID_PULL_REQUEST_STATUS_HASH = HashingUtils::HashString("InvalidPullRequestStatusException");
+static const int COMMIT_IDS_LIST_REQUIRED_HASH = HashingUtils::HashString("CommitIdsListRequiredException");
 static const int INVALID_BLOB_ID_HASH = HashingUtils::HashString("InvalidBlobIdException");
 static const int DIRECTORY_NAME_CONFLICTS_WITH_FILE_NAME_HASH = HashingUtils::HashString("DirectoryNameConflictsWithFileNameException");
 static const int TAG_POLICY_HASH = HashingUtils::HashString("TagPolicyException");
@@ -169,6 +170,7 @@ static const int FILE_NAME_CONFLICTS_WITH_DIRECTORY_NAME_HASH = HashingUtils::Ha
 static const int FOLDER_CONTENT_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("FolderContentSizeLimitExceededException");
 static const int INVALID_TARGETS_HASH = HashingUtils::HashString("InvalidTargetsException");
 static const int INVALID_REPOSITORY_TRIGGER_BRANCH_NAME_HASH = HashingUtils::HashString("InvalidRepositoryTriggerBranchNameException");
+static const int COMMIT_IDS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CommitIdsLimitExceededException");
 static const int TIPS_DIVERGENCE_EXCEEDED_HASH = HashingUtils::HashString("TipsDivergenceExceededException");
 static const int PULL_REQUEST_ID_REQUIRED_HASH = HashingUtils::HashString("PullRequestIdRequiredException");
 static const int INVALID_FILE_POSITION_HASH = HashingUtils::HashString("InvalidFilePositionException");
@@ -319,6 +321,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == INVALID_PULL_REQUEST_STATUS_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_PULL_REQUEST_STATUS), false);
+    return true;
+  }
+  else if (hashCode == COMMIT_IDS_LIST_REQUIRED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMIT_IDS_LIST_REQUIRED), false);
     return true;
   }
   else if (hashCode == INVALID_BLOB_ID_HASH)
@@ -791,17 +798,17 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_CONTENT_SIZE_LIMIT_EXCEEDED), false);
     return true;
   }
-  else if (hashCode == INVALID_PULL_REQUEST_EVENT_TYPE_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_PULL_REQUEST_EVENT_TYPE), false);
-    return true;
-  }
   return false;
 }
 
 static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 {
-  if (hashCode == REPOSITORY_LIMIT_EXCEEDED_HASH)
+  if (hashCode == INVALID_PULL_REQUEST_EVENT_TYPE_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_PULL_REQUEST_EVENT_TYPE), false);
+    return true;
+  }
+  else if (hashCode == REPOSITORY_LIMIT_EXCEEDED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::REPOSITORY_LIMIT_EXCEEDED), false);
     return true;
@@ -894,6 +901,11 @@ static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == INVALID_REPOSITORY_TRIGGER_BRANCH_NAME_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_TRIGGER_BRANCH_NAME), false);
+    return true;
+  }
+  else if (hashCode == COMMIT_IDS_LIMIT_EXCEEDED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMIT_IDS_LIMIT_EXCEEDED), false);
     return true;
   }
   else if (hashCode == TIPS_DIVERGENCE_EXCEEDED_HASH)

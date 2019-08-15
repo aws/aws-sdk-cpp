@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/storagegateway/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -194,6 +196,63 @@ namespace Model
      */
     inline DescribeSnapshotScheduleResult& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 
+
+    /**
+     * <p>A list of up to 50 tags assigned to the snapshot schedule, sorted
+     * alphabetically by key name. Each tag is a key-value pair. For a gateway with
+     * more than 10 tags assigned, you can view all tags using the
+     * <code>ListTagsForResource</code> API operation.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of up to 50 tags assigned to the snapshot schedule, sorted
+     * alphabetically by key name. Each tag is a key-value pair. For a gateway with
+     * more than 10 tags assigned, you can view all tags using the
+     * <code>ListTagsForResource</code> API operation.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+
+    /**
+     * <p>A list of up to 50 tags assigned to the snapshot schedule, sorted
+     * alphabetically by key name. Each tag is a key-value pair. For a gateway with
+     * more than 10 tags assigned, you can view all tags using the
+     * <code>ListTagsForResource</code> API operation.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>A list of up to 50 tags assigned to the snapshot schedule, sorted
+     * alphabetically by key name. Each tag is a key-value pair. For a gateway with
+     * more than 10 tags assigned, you can view all tags using the
+     * <code>ListTagsForResource</code> API operation.</p>
+     */
+    inline DescribeSnapshotScheduleResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of up to 50 tags assigned to the snapshot schedule, sorted
+     * alphabetically by key name. Each tag is a key-value pair. For a gateway with
+     * more than 10 tags assigned, you can view all tags using the
+     * <code>ListTagsForResource</code> API operation.</p>
+     */
+    inline DescribeSnapshotScheduleResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of up to 50 tags assigned to the snapshot schedule, sorted
+     * alphabetically by key name. Each tag is a key-value pair. For a gateway with
+     * more than 10 tags assigned, you can view all tags using the
+     * <code>ListTagsForResource</code> API operation.</p>
+     */
+    inline DescribeSnapshotScheduleResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of up to 50 tags assigned to the snapshot schedule, sorted
+     * alphabetically by key name. Each tag is a key-value pair. For a gateway with
+     * more than 10 tags assigned, you can view all tags using the
+     * <code>ListTagsForResource</code> API operation.</p>
+     */
+    inline DescribeSnapshotScheduleResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_volumeARN;
@@ -205,6 +264,8 @@ namespace Model
     Aws::String m_description;
 
     Aws::String m_timezone;
+
+    Aws::Vector<Tag> m_tags;
   };
 
 } // namespace Model

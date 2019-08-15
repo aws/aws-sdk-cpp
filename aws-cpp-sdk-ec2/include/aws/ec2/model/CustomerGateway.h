@@ -191,6 +191,47 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
+     */
+    inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
+     */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
+     */
+    inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
+     */
+    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
+     */
+    inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
+     */
+    inline CustomerGateway& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
+     */
+    inline CustomerGateway& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
+     */
+    inline CustomerGateway& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+
+
+    /**
      * <p>The current state of the customer gateway (<code>pending | available |
      * deleting | deleted</code>).</p>
      */
@@ -338,6 +379,9 @@ namespace Model
 
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
+
+    Aws::String m_certificateArn;
+    bool m_certificateArnHasBeenSet;
 
     Aws::String m_state;
     bool m_stateHasBeenSet;

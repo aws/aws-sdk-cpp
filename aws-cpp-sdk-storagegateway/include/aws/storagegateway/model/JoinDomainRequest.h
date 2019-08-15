@@ -147,56 +147,56 @@ namespace Model
 
 
     /**
-     * <p>The organizational unit (OU) is a container with an Active Directory that can
+     * <p>The organizational unit (OU) is a container in an Active Directory that can
      * hold users, groups, computers, and other OUs and this parameter specifies the OU
      * that the gateway will join within the AD domain.</p>
      */
     inline const Aws::String& GetOrganizationalUnit() const{ return m_organizationalUnit; }
 
     /**
-     * <p>The organizational unit (OU) is a container with an Active Directory that can
+     * <p>The organizational unit (OU) is a container in an Active Directory that can
      * hold users, groups, computers, and other OUs and this parameter specifies the OU
      * that the gateway will join within the AD domain.</p>
      */
     inline bool OrganizationalUnitHasBeenSet() const { return m_organizationalUnitHasBeenSet; }
 
     /**
-     * <p>The organizational unit (OU) is a container with an Active Directory that can
+     * <p>The organizational unit (OU) is a container in an Active Directory that can
      * hold users, groups, computers, and other OUs and this parameter specifies the OU
      * that the gateway will join within the AD domain.</p>
      */
     inline void SetOrganizationalUnit(const Aws::String& value) { m_organizationalUnitHasBeenSet = true; m_organizationalUnit = value; }
 
     /**
-     * <p>The organizational unit (OU) is a container with an Active Directory that can
+     * <p>The organizational unit (OU) is a container in an Active Directory that can
      * hold users, groups, computers, and other OUs and this parameter specifies the OU
      * that the gateway will join within the AD domain.</p>
      */
     inline void SetOrganizationalUnit(Aws::String&& value) { m_organizationalUnitHasBeenSet = true; m_organizationalUnit = std::move(value); }
 
     /**
-     * <p>The organizational unit (OU) is a container with an Active Directory that can
+     * <p>The organizational unit (OU) is a container in an Active Directory that can
      * hold users, groups, computers, and other OUs and this parameter specifies the OU
      * that the gateway will join within the AD domain.</p>
      */
     inline void SetOrganizationalUnit(const char* value) { m_organizationalUnitHasBeenSet = true; m_organizationalUnit.assign(value); }
 
     /**
-     * <p>The organizational unit (OU) is a container with an Active Directory that can
+     * <p>The organizational unit (OU) is a container in an Active Directory that can
      * hold users, groups, computers, and other OUs and this parameter specifies the OU
      * that the gateway will join within the AD domain.</p>
      */
     inline JoinDomainRequest& WithOrganizationalUnit(const Aws::String& value) { SetOrganizationalUnit(value); return *this;}
 
     /**
-     * <p>The organizational unit (OU) is a container with an Active Directory that can
+     * <p>The organizational unit (OU) is a container in an Active Directory that can
      * hold users, groups, computers, and other OUs and this parameter specifies the OU
      * that the gateway will join within the AD domain.</p>
      */
     inline JoinDomainRequest& WithOrganizationalUnit(Aws::String&& value) { SetOrganizationalUnit(std::move(value)); return *this;}
 
     /**
-     * <p>The organizational unit (OU) is a container with an Active Directory that can
+     * <p>The organizational unit (OU) is a container in an Active Directory that can
      * hold users, groups, computers, and other OUs and this parameter specifies the OU
      * that the gateway will join within the AD domain.</p>
      */

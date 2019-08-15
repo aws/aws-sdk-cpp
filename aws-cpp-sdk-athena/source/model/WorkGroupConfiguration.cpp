@@ -35,7 +35,9 @@ WorkGroupConfiguration::WorkGroupConfiguration() :
     m_publishCloudWatchMetricsEnabled(false),
     m_publishCloudWatchMetricsEnabledHasBeenSet(false),
     m_bytesScannedCutoffPerQuery(0),
-    m_bytesScannedCutoffPerQueryHasBeenSet(false)
+    m_bytesScannedCutoffPerQueryHasBeenSet(false),
+    m_requesterPaysEnabled(false),
+    m_requesterPaysEnabledHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ WorkGroupConfiguration::WorkGroupConfiguration(JsonView jsonValue) :
     m_publishCloudWatchMetricsEnabled(false),
     m_publishCloudWatchMetricsEnabledHasBeenSet(false),
     m_bytesScannedCutoffPerQuery(0),
-    m_bytesScannedCutoffPerQueryHasBeenSet(false)
+    m_bytesScannedCutoffPerQueryHasBeenSet(false),
+    m_requesterPaysEnabled(false),
+    m_requesterPaysEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -81,6 +85,13 @@ WorkGroupConfiguration& WorkGroupConfiguration::operator =(JsonView jsonValue)
     m_bytesScannedCutoffPerQueryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RequesterPaysEnabled"))
+  {
+    m_requesterPaysEnabled = jsonValue.GetBool("RequesterPaysEnabled");
+
+    m_requesterPaysEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +120,12 @@ JsonValue WorkGroupConfiguration::Jsonize() const
   if(m_bytesScannedCutoffPerQueryHasBeenSet)
   {
    payload.WithInt64("BytesScannedCutoffPerQuery", m_bytesScannedCutoffPerQuery);
+
+  }
+
+  if(m_requesterPaysEnabledHasBeenSet)
+  {
+   payload.WithBool("RequesterPaysEnabled", m_requesterPaysEnabled);
 
   }
 

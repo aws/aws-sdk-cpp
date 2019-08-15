@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/glue/model/GetJobBookmarksResult.h>
+#include <aws/codecommit/model/BatchGetCommitsResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -21,38 +21,39 @@
 
 #include <utility>
 
-using namespace Aws::Glue::Model;
+using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetJobBookmarksResult::GetJobBookmarksResult() : 
-    m_nextToken(0)
+BatchGetCommitsResult::BatchGetCommitsResult()
 {
 }
 
-GetJobBookmarksResult::GetJobBookmarksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_nextToken(0)
+BatchGetCommitsResult::BatchGetCommitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetJobBookmarksResult& GetJobBookmarksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+BatchGetCommitsResult& BatchGetCommitsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("JobBookmarkEntries"))
+  if(jsonValue.ValueExists("commits"))
   {
-    Array<JsonView> jobBookmarkEntriesJsonList = jsonValue.GetArray("JobBookmarkEntries");
-    for(unsigned jobBookmarkEntriesIndex = 0; jobBookmarkEntriesIndex < jobBookmarkEntriesJsonList.GetLength(); ++jobBookmarkEntriesIndex)
+    Array<JsonView> commitsJsonList = jsonValue.GetArray("commits");
+    for(unsigned commitsIndex = 0; commitsIndex < commitsJsonList.GetLength(); ++commitsIndex)
     {
-      m_jobBookmarkEntries.push_back(jobBookmarkEntriesJsonList[jobBookmarkEntriesIndex].AsObject());
+      m_commits.push_back(commitsJsonList[commitsIndex].AsObject());
     }
   }
 
-  if(jsonValue.ValueExists("NextToken"))
+  if(jsonValue.ValueExists("errors"))
   {
-    m_nextToken = jsonValue.GetInteger("NextToken");
-
+    Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
+    {
+      m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
+    }
   }
 
 

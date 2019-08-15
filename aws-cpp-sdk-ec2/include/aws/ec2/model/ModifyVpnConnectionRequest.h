@@ -129,6 +129,47 @@ namespace Model
 
 
     /**
+     * <p>The ID of the customer gateway at your end of the VPN connection.</p>
+     */
+    inline const Aws::String& GetCustomerGatewayId() const{ return m_customerGatewayId; }
+
+    /**
+     * <p>The ID of the customer gateway at your end of the VPN connection.</p>
+     */
+    inline bool CustomerGatewayIdHasBeenSet() const { return m_customerGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the customer gateway at your end of the VPN connection.</p>
+     */
+    inline void SetCustomerGatewayId(const Aws::String& value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId = value; }
+
+    /**
+     * <p>The ID of the customer gateway at your end of the VPN connection.</p>
+     */
+    inline void SetCustomerGatewayId(Aws::String&& value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId = std::move(value); }
+
+    /**
+     * <p>The ID of the customer gateway at your end of the VPN connection.</p>
+     */
+    inline void SetCustomerGatewayId(const char* value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId.assign(value); }
+
+    /**
+     * <p>The ID of the customer gateway at your end of the VPN connection.</p>
+     */
+    inline ModifyVpnConnectionRequest& WithCustomerGatewayId(const Aws::String& value) { SetCustomerGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of the customer gateway at your end of the VPN connection.</p>
+     */
+    inline ModifyVpnConnectionRequest& WithCustomerGatewayId(Aws::String&& value) { SetCustomerGatewayId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the customer gateway at your end of the VPN connection.</p>
+     */
+    inline ModifyVpnConnectionRequest& WithCustomerGatewayId(const char* value) { SetCustomerGatewayId(value); return *this;}
+
+
+    /**
      * <p>The ID of the virtual private gateway at the AWS side of the VPN
      * connection.</p>
      */
@@ -216,6 +257,9 @@ namespace Model
 
     Aws::String m_transitGatewayId;
     bool m_transitGatewayIdHasBeenSet;
+
+    Aws::String m_customerGatewayId;
+    bool m_customerGatewayIdHasBeenSet;
 
     Aws::String m_vpnGatewayId;
     bool m_vpnGatewayIdHasBeenSet;

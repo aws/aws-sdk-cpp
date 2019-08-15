@@ -37,7 +37,9 @@ WorkGroupConfigurationUpdates::WorkGroupConfigurationUpdates() :
     m_bytesScannedCutoffPerQuery(0),
     m_bytesScannedCutoffPerQueryHasBeenSet(false),
     m_removeBytesScannedCutoffPerQuery(false),
-    m_removeBytesScannedCutoffPerQueryHasBeenSet(false)
+    m_removeBytesScannedCutoffPerQueryHasBeenSet(false),
+    m_requesterPaysEnabled(false),
+    m_requesterPaysEnabledHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ WorkGroupConfigurationUpdates::WorkGroupConfigurationUpdates(JsonView jsonValue)
     m_bytesScannedCutoffPerQuery(0),
     m_bytesScannedCutoffPerQueryHasBeenSet(false),
     m_removeBytesScannedCutoffPerQuery(false),
-    m_removeBytesScannedCutoffPerQueryHasBeenSet(false)
+    m_removeBytesScannedCutoffPerQueryHasBeenSet(false),
+    m_requesterPaysEnabled(false),
+    m_requesterPaysEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +96,13 @@ WorkGroupConfigurationUpdates& WorkGroupConfigurationUpdates::operator =(JsonVie
     m_removeBytesScannedCutoffPerQueryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RequesterPaysEnabled"))
+  {
+    m_requesterPaysEnabled = jsonValue.GetBool("RequesterPaysEnabled");
+
+    m_requesterPaysEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -126,6 +137,12 @@ JsonValue WorkGroupConfigurationUpdates::Jsonize() const
   if(m_removeBytesScannedCutoffPerQueryHasBeenSet)
   {
    payload.WithBool("RemoveBytesScannedCutoffPerQuery", m_removeBytesScannedCutoffPerQuery);
+
+  }
+
+  if(m_requesterPaysEnabledHasBeenSet)
+  {
+   payload.WithBool("RequesterPaysEnabled", m_requesterPaysEnabled);
 
   }
 

@@ -126,6 +126,47 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
+     */
+    inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
+     */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
+     */
+    inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
+     */
+    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
+     */
+    inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
+     */
+    inline CreateCustomerGatewayRequest& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
+     */
+    inline CreateCustomerGatewayRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
+     */
+    inline CreateCustomerGatewayRequest& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+
+
+    /**
      * <p>The type of VPN connection that this customer gateway supports
      * (<code>ipsec.1</code>).</p>
      */
@@ -201,6 +242,9 @@ namespace Model
 
     Aws::String m_publicIp;
     bool m_publicIpHasBeenSet;
+
+    Aws::String m_certificateArn;
+    bool m_certificateArnHasBeenSet;
 
     GatewayType m_type;
     bool m_typeHasBeenSet;

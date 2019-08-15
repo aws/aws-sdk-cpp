@@ -81,6 +81,35 @@ namespace Model
 
 
     /**
+     * <p>The priority for the route. Routes are matched based on the specified value,
+     * where 0 is
+         the highest priority.</p>
+     */
+    inline int GetPriority() const{ return m_priority; }
+
+    /**
+     * <p>The priority for the route. Routes are matched based on the specified value,
+     * where 0 is
+         the highest priority.</p>
+     */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+
+    /**
+     * <p>The priority for the route. Routes are matched based on the specified value,
+     * where 0 is
+         the highest priority.</p>
+     */
+    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
+
+    /**
+     * <p>The priority for the route. Routes are matched based on the specified value,
+     * where 0 is
+         the highest priority.</p>
+     */
+    inline RouteSpec& WithPriority(int value) { SetPriority(value); return *this;}
+
+
+    /**
      * <p>The TCP routing information for the route.</p>
      */
     inline const TcpRoute& GetTcpRoute() const{ return m_tcpRoute; }
@@ -114,6 +143,9 @@ namespace Model
 
     HttpRoute m_httpRoute;
     bool m_httpRouteHasBeenSet;
+
+    int m_priority;
+    bool m_priorityHasBeenSet;
 
     TcpRoute m_tcpRoute;
     bool m_tcpRouteHasBeenSet;

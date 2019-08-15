@@ -30,12 +30,16 @@ namespace Model
 
 RouteSpec::RouteSpec() : 
     m_httpRouteHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false),
     m_tcpRouteHasBeenSet(false)
 {
 }
 
 RouteSpec::RouteSpec(JsonView jsonValue) : 
     m_httpRouteHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false),
     m_tcpRouteHasBeenSet(false)
 {
   *this = jsonValue;
@@ -48,6 +52,13 @@ RouteSpec& RouteSpec::operator =(JsonView jsonValue)
     m_httpRoute = jsonValue.GetObject("httpRoute");
 
     m_httpRouteHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("priority"))
+  {
+    m_priority = jsonValue.GetInteger("priority");
+
+    m_priorityHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tcpRoute"))
@@ -67,6 +78,12 @@ JsonValue RouteSpec::Jsonize() const
   if(m_httpRouteHasBeenSet)
   {
    payload.WithObject("httpRoute", m_httpRoute.Jsonize());
+
+  }
+
+  if(m_priorityHasBeenSet)
+  {
+   payload.WithInteger("priority", m_priority);
 
   }
 

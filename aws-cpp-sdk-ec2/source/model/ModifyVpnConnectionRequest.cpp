@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 ModifyVpnConnectionRequest::ModifyVpnConnectionRequest() : 
     m_vpnConnectionIdHasBeenSet(false),
     m_transitGatewayIdHasBeenSet(false),
+    m_customerGatewayIdHasBeenSet(false),
     m_vpnGatewayIdHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
@@ -41,6 +42,11 @@ Aws::String ModifyVpnConnectionRequest::SerializePayload() const
   if(m_transitGatewayIdHasBeenSet)
   {
     ss << "TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
+  }
+
+  if(m_customerGatewayIdHasBeenSet)
+  {
+    ss << "CustomerGatewayId=" << StringUtils::URLEncode(m_customerGatewayId.c_str()) << "&";
   }
 
   if(m_vpnGatewayIdHasBeenSet)

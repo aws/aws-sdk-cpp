@@ -79,7 +79,6 @@
 #include <aws/glue/model/GetDevEndpointsResult.h>
 #include <aws/glue/model/GetJobResult.h>
 #include <aws/glue/model/GetJobBookmarkResult.h>
-#include <aws/glue/model/GetJobBookmarksResult.h>
 #include <aws/glue/model/GetJobRunResult.h>
 #include <aws/glue/model/GetJobRunsResult.h>
 #include <aws/glue/model/GetJobsResult.h>
@@ -242,7 +241,6 @@ namespace Model
         class GetDevEndpointsRequest;
         class GetJobRequest;
         class GetJobBookmarkRequest;
-        class GetJobBookmarksRequest;
         class GetJobRunRequest;
         class GetJobRunsRequest;
         class GetJobsRequest;
@@ -367,7 +365,6 @@ namespace Model
         typedef Aws::Utils::Outcome<GetDevEndpointsResult, Aws::Client::AWSError<GlueErrors>> GetDevEndpointsOutcome;
         typedef Aws::Utils::Outcome<GetJobResult, Aws::Client::AWSError<GlueErrors>> GetJobOutcome;
         typedef Aws::Utils::Outcome<GetJobBookmarkResult, Aws::Client::AWSError<GlueErrors>> GetJobBookmarkOutcome;
-        typedef Aws::Utils::Outcome<GetJobBookmarksResult, Aws::Client::AWSError<GlueErrors>> GetJobBookmarksOutcome;
         typedef Aws::Utils::Outcome<GetJobRunResult, Aws::Client::AWSError<GlueErrors>> GetJobRunOutcome;
         typedef Aws::Utils::Outcome<GetJobRunsResult, Aws::Client::AWSError<GlueErrors>> GetJobRunsOutcome;
         typedef Aws::Utils::Outcome<GetJobsResult, Aws::Client::AWSError<GlueErrors>> GetJobsOutcome;
@@ -492,7 +489,6 @@ namespace Model
         typedef std::future<GetDevEndpointsOutcome> GetDevEndpointsOutcomeCallable;
         typedef std::future<GetJobOutcome> GetJobOutcomeCallable;
         typedef std::future<GetJobBookmarkOutcome> GetJobBookmarkOutcomeCallable;
-        typedef std::future<GetJobBookmarksOutcome> GetJobBookmarksOutcomeCallable;
         typedef std::future<GetJobRunOutcome> GetJobRunOutcomeCallable;
         typedef std::future<GetJobRunsOutcome> GetJobRunsOutcomeCallable;
         typedef std::future<GetJobsOutcome> GetJobsOutcomeCallable;
@@ -620,7 +616,6 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::GetDevEndpointsRequest&, const Model::GetDevEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDevEndpointsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetJobRequest&, const Model::GetJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetJobBookmarkRequest&, const Model::GetJobBookmarkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobBookmarkResponseReceivedHandler;
-    typedef std::function<void(const GlueClient*, const Model::GetJobBookmarksRequest&, const Model::GetJobBookmarksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobBookmarksResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetJobRunRequest&, const Model::GetJobRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobRunResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetJobRunsRequest&, const Model::GetJobRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobRunsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetJobsRequest&, const Model::GetJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobsResponseReceivedHandler;
@@ -2493,34 +2488,6 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetJobBookmarkAsync(const Model::GetJobBookmarkRequest& request, const GetJobBookmarkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
-         * <p>Returns information on the job bookmark entries. The list is ordered on
-         * decreasing version numbers.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobBookmarks">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::GetJobBookmarksOutcome GetJobBookmarks(const Model::GetJobBookmarksRequest& request) const;
-
-        /**
-         * <p>Returns information on the job bookmark entries. The list is ordered on
-         * decreasing version numbers.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobBookmarks">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetJobBookmarksOutcomeCallable GetJobBookmarksCallable(const Model::GetJobBookmarksRequest& request) const;
-
-        /**
-         * <p>Returns information on the job bookmark entries. The list is ordered on
-         * decreasing version numbers.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobBookmarks">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetJobBookmarksAsync(const Model::GetJobBookmarksRequest& request, const GetJobBookmarksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the metadata for a given job run.</p><p><h3>See Also:</h3>   <a
@@ -4656,7 +4623,6 @@ namespace Model
         void GetDevEndpointsAsyncHelper(const Model::GetDevEndpointsRequest& request, const GetDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobAsyncHelper(const Model::GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobBookmarkAsyncHelper(const Model::GetJobBookmarkRequest& request, const GetJobBookmarkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetJobBookmarksAsyncHelper(const Model::GetJobBookmarksRequest& request, const GetJobBookmarksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobRunAsyncHelper(const Model::GetJobRunRequest& request, const GetJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobRunsAsyncHelper(const Model::GetJobRunsRequest& request, const GetJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobsAsyncHelper(const Model::GetJobsRequest& request, const GetJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
