@@ -299,7 +299,6 @@ STSCredentialsClient::STSAssumeRoleWithWebIdentityResult STSCredentialsClient::G
         << "&RoleArn=" << Aws::Utils::StringUtils::URLEncode(request.roleArn.c_str())
         << "&WebIdentityToken=" << Aws::Utils::StringUtils::URLEncode(request.webIdentityToken.c_str());
 
-    ss.str();
     Aws::String credentialsStr = GetResource(m_endpoint.c_str(), ss.str().c_str()/*query string*/, nullptr/*no auth token needed*/);
 
     //Parse credentials
