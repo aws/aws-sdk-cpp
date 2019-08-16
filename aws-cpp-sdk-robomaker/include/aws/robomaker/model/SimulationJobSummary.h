@@ -291,6 +291,52 @@ namespace Model
      */
     inline SimulationJobSummary& AddRobotApplicationNames(const char* value) { m_robotApplicationNamesHasBeenSet = true; m_robotApplicationNames.push_back(value); return *this; }
 
+
+    /**
+     * <p>The names of the data sources.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDataSourceNames() const{ return m_dataSourceNames; }
+
+    /**
+     * <p>The names of the data sources.</p>
+     */
+    inline bool DataSourceNamesHasBeenSet() const { return m_dataSourceNamesHasBeenSet; }
+
+    /**
+     * <p>The names of the data sources.</p>
+     */
+    inline void SetDataSourceNames(const Aws::Vector<Aws::String>& value) { m_dataSourceNamesHasBeenSet = true; m_dataSourceNames = value; }
+
+    /**
+     * <p>The names of the data sources.</p>
+     */
+    inline void SetDataSourceNames(Aws::Vector<Aws::String>&& value) { m_dataSourceNamesHasBeenSet = true; m_dataSourceNames = std::move(value); }
+
+    /**
+     * <p>The names of the data sources.</p>
+     */
+    inline SimulationJobSummary& WithDataSourceNames(const Aws::Vector<Aws::String>& value) { SetDataSourceNames(value); return *this;}
+
+    /**
+     * <p>The names of the data sources.</p>
+     */
+    inline SimulationJobSummary& WithDataSourceNames(Aws::Vector<Aws::String>&& value) { SetDataSourceNames(std::move(value)); return *this;}
+
+    /**
+     * <p>The names of the data sources.</p>
+     */
+    inline SimulationJobSummary& AddDataSourceNames(const Aws::String& value) { m_dataSourceNamesHasBeenSet = true; m_dataSourceNames.push_back(value); return *this; }
+
+    /**
+     * <p>The names of the data sources.</p>
+     */
+    inline SimulationJobSummary& AddDataSourceNames(Aws::String&& value) { m_dataSourceNamesHasBeenSet = true; m_dataSourceNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The names of the data sources.</p>
+     */
+    inline SimulationJobSummary& AddDataSourceNames(const char* value) { m_dataSourceNamesHasBeenSet = true; m_dataSourceNames.push_back(value); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -310,6 +356,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_robotApplicationNames;
     bool m_robotApplicationNamesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_dataSourceNames;
+    bool m_dataSourceNamesHasBeenSet;
   };
 
 } // namespace Model

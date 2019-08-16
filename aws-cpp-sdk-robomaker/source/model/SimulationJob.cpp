@@ -42,6 +42,7 @@ SimulationJob::SimulationJob() :
     m_failureReasonHasBeenSet(false),
     m_clientRequestTokenHasBeenSet(false),
     m_outputLocationHasBeenSet(false),
+    m_loggingConfigHasBeenSet(false),
     m_maxJobDurationInSeconds(0),
     m_maxJobDurationInSecondsHasBeenSet(false),
     m_simulationTimeMillis(0),
@@ -49,6 +50,7 @@ SimulationJob::SimulationJob() :
     m_iamRoleHasBeenSet(false),
     m_robotApplicationsHasBeenSet(false),
     m_simulationApplicationsHasBeenSet(false),
+    m_dataSourcesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_vpcConfigHasBeenSet(false)
 {
@@ -68,6 +70,7 @@ SimulationJob::SimulationJob(JsonView jsonValue) :
     m_failureReasonHasBeenSet(false),
     m_clientRequestTokenHasBeenSet(false),
     m_outputLocationHasBeenSet(false),
+    m_loggingConfigHasBeenSet(false),
     m_maxJobDurationInSeconds(0),
     m_maxJobDurationInSecondsHasBeenSet(false),
     m_simulationTimeMillis(0),
@@ -75,6 +78,7 @@ SimulationJob::SimulationJob(JsonView jsonValue) :
     m_iamRoleHasBeenSet(false),
     m_robotApplicationsHasBeenSet(false),
     m_simulationApplicationsHasBeenSet(false),
+    m_dataSourcesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_vpcConfigHasBeenSet(false)
 {
@@ -153,6 +157,13 @@ SimulationJob& SimulationJob::operator =(JsonView jsonValue)
     m_outputLocationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("loggingConfig"))
+  {
+    m_loggingConfig = jsonValue.GetObject("loggingConfig");
+
+    m_loggingConfigHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("maxJobDurationInSeconds"))
   {
     m_maxJobDurationInSeconds = jsonValue.GetInt64("maxJobDurationInSeconds");
@@ -192,6 +203,16 @@ SimulationJob& SimulationJob::operator =(JsonView jsonValue)
       m_simulationApplications.push_back(simulationApplicationsJsonList[simulationApplicationsIndex].AsObject());
     }
     m_simulationApplicationsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dataSources"))
+  {
+    Array<JsonView> dataSourcesJsonList = jsonValue.GetArray("dataSources");
+    for(unsigned dataSourcesIndex = 0; dataSourcesIndex < dataSourcesJsonList.GetLength(); ++dataSourcesIndex)
+    {
+      m_dataSources.push_back(dataSourcesJsonList[dataSourcesIndex].AsObject());
+    }
+    m_dataSourcesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -273,6 +294,12 @@ JsonValue SimulationJob::Jsonize() const
 
   }
 
+  if(m_loggingConfigHasBeenSet)
+  {
+   payload.WithObject("loggingConfig", m_loggingConfig.Jsonize());
+
+  }
+
   if(m_maxJobDurationInSecondsHasBeenSet)
   {
    payload.WithInt64("maxJobDurationInSeconds", m_maxJobDurationInSeconds);
@@ -310,6 +337,17 @@ JsonValue SimulationJob::Jsonize() const
      simulationApplicationsJsonList[simulationApplicationsIndex].AsObject(m_simulationApplications[simulationApplicationsIndex].Jsonize());
    }
    payload.WithArray("simulationApplications", std::move(simulationApplicationsJsonList));
+
+  }
+
+  if(m_dataSourcesHasBeenSet)
+  {
+   Array<JsonValue> dataSourcesJsonList(m_dataSources.size());
+   for(unsigned dataSourcesIndex = 0; dataSourcesIndex < dataSourcesJsonList.GetLength(); ++dataSourcesIndex)
+   {
+     dataSourcesJsonList[dataSourcesIndex].AsObject(m_dataSources[dataSourcesIndex].Jsonize());
+   }
+   payload.WithArray("dataSources", std::move(dataSourcesJsonList));
 
   }
 

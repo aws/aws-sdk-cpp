@@ -35,7 +35,8 @@ SimulationJobSummary::SimulationJobSummary() :
     m_status(SimulationJobStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_simulationApplicationNamesHasBeenSet(false),
-    m_robotApplicationNamesHasBeenSet(false)
+    m_robotApplicationNamesHasBeenSet(false),
+    m_dataSourceNamesHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ SimulationJobSummary::SimulationJobSummary(JsonView jsonValue) :
     m_status(SimulationJobStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_simulationApplicationNamesHasBeenSet(false),
-    m_robotApplicationNamesHasBeenSet(false)
+    m_robotApplicationNamesHasBeenSet(false),
+    m_dataSourceNamesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +103,16 @@ SimulationJobSummary& SimulationJobSummary::operator =(JsonView jsonValue)
     m_robotApplicationNamesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dataSourceNames"))
+  {
+    Array<JsonView> dataSourceNamesJsonList = jsonValue.GetArray("dataSourceNames");
+    for(unsigned dataSourceNamesIndex = 0; dataSourceNamesIndex < dataSourceNamesJsonList.GetLength(); ++dataSourceNamesIndex)
+    {
+      m_dataSourceNames.push_back(dataSourceNamesJsonList[dataSourceNamesIndex].AsString());
+    }
+    m_dataSourceNamesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -149,6 +161,17 @@ JsonValue SimulationJobSummary::Jsonize() const
      robotApplicationNamesJsonList[robotApplicationNamesIndex].AsString(m_robotApplicationNames[robotApplicationNamesIndex]);
    }
    payload.WithArray("robotApplicationNames", std::move(robotApplicationNamesJsonList));
+
+  }
+
+  if(m_dataSourceNamesHasBeenSet)
+  {
+   Array<JsonValue> dataSourceNamesJsonList(m_dataSourceNames.size());
+   for(unsigned dataSourceNamesIndex = 0; dataSourceNamesIndex < dataSourceNamesJsonList.GetLength(); ++dataSourceNamesIndex)
+   {
+     dataSourceNamesJsonList[dataSourceNamesIndex].AsString(m_dataSourceNames[dataSourceNamesIndex]);
+   }
+   payload.WithArray("dataSourceNames", std::move(dataSourceNamesJsonList));
 
   }
 

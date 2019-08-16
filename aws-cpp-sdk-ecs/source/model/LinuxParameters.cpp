@@ -35,7 +35,11 @@ LinuxParameters::LinuxParameters() :
     m_initProcessEnabledHasBeenSet(false),
     m_sharedMemorySize(0),
     m_sharedMemorySizeHasBeenSet(false),
-    m_tmpfsHasBeenSet(false)
+    m_tmpfsHasBeenSet(false),
+    m_maxSwap(0),
+    m_maxSwapHasBeenSet(false),
+    m_swappiness(0),
+    m_swappinessHasBeenSet(false)
 {
 }
 
@@ -46,7 +50,11 @@ LinuxParameters::LinuxParameters(JsonView jsonValue) :
     m_initProcessEnabledHasBeenSet(false),
     m_sharedMemorySize(0),
     m_sharedMemorySizeHasBeenSet(false),
-    m_tmpfsHasBeenSet(false)
+    m_tmpfsHasBeenSet(false),
+    m_maxSwap(0),
+    m_maxSwapHasBeenSet(false),
+    m_swappiness(0),
+    m_swappinessHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -94,6 +102,20 @@ LinuxParameters& LinuxParameters::operator =(JsonView jsonValue)
     m_tmpfsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("maxSwap"))
+  {
+    m_maxSwap = jsonValue.GetInteger("maxSwap");
+
+    m_maxSwapHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("swappiness"))
+  {
+    m_swappiness = jsonValue.GetInteger("swappiness");
+
+    m_swappinessHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +160,18 @@ JsonValue LinuxParameters::Jsonize() const
      tmpfsJsonList[tmpfsIndex].AsObject(m_tmpfs[tmpfsIndex].Jsonize());
    }
    payload.WithArray("tmpfs", std::move(tmpfsJsonList));
+
+  }
+
+  if(m_maxSwapHasBeenSet)
+  {
+   payload.WithInteger("maxSwap", m_maxSwap);
+
+  }
+
+  if(m_swappinessHasBeenSet)
+  {
+   payload.WithInteger("swappiness", m_swappiness);
 
   }
 

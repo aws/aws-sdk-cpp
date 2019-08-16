@@ -40,6 +40,7 @@
 #include <aws/elasticmapreduce/model/DescribeClusterRequest.h>
 #include <aws/elasticmapreduce/model/DescribeSecurityConfigurationRequest.h>
 #include <aws/elasticmapreduce/model/DescribeStepRequest.h>
+#include <aws/elasticmapreduce/model/GetBlockPublicAccessConfigurationRequest.h>
 #include <aws/elasticmapreduce/model/ListBootstrapActionsRequest.h>
 #include <aws/elasticmapreduce/model/ListClustersRequest.h>
 #include <aws/elasticmapreduce/model/ListInstanceFleetsRequest.h>
@@ -50,6 +51,7 @@
 #include <aws/elasticmapreduce/model/ModifyInstanceFleetRequest.h>
 #include <aws/elasticmapreduce/model/ModifyInstanceGroupsRequest.h>
 #include <aws/elasticmapreduce/model/PutAutoScalingPolicyRequest.h>
+#include <aws/elasticmapreduce/model/PutBlockPublicAccessConfigurationRequest.h>
 #include <aws/elasticmapreduce/model/RemoveAutoScalingPolicyRequest.h>
 #include <aws/elasticmapreduce/model/RemoveTagsRequest.h>
 #include <aws/elasticmapreduce/model/RunJobFlowRequest.h>
@@ -479,6 +481,41 @@ void EMRClient::DescribeStepAsyncHelper(const DescribeStepRequest& request, cons
   handler(this, request, DescribeStep(request), context);
 }
 
+GetBlockPublicAccessConfigurationOutcome EMRClient::GetBlockPublicAccessConfiguration(const GetBlockPublicAccessConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetBlockPublicAccessConfigurationOutcome(GetBlockPublicAccessConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBlockPublicAccessConfigurationOutcome(outcome.GetError());
+  }
+}
+
+GetBlockPublicAccessConfigurationOutcomeCallable EMRClient::GetBlockPublicAccessConfigurationCallable(const GetBlockPublicAccessConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBlockPublicAccessConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBlockPublicAccessConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::GetBlockPublicAccessConfigurationAsync(const GetBlockPublicAccessConfigurationRequest& request, const GetBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBlockPublicAccessConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::GetBlockPublicAccessConfigurationAsyncHelper(const GetBlockPublicAccessConfigurationRequest& request, const GetBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBlockPublicAccessConfiguration(request), context);
+}
+
 ListBootstrapActionsOutcome EMRClient::ListBootstrapActions(const ListBootstrapActionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -827,6 +864,41 @@ void EMRClient::PutAutoScalingPolicyAsync(const PutAutoScalingPolicyRequest& req
 void EMRClient::PutAutoScalingPolicyAsyncHelper(const PutAutoScalingPolicyRequest& request, const PutAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutAutoScalingPolicy(request), context);
+}
+
+PutBlockPublicAccessConfigurationOutcome EMRClient::PutBlockPublicAccessConfiguration(const PutBlockPublicAccessConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutBlockPublicAccessConfigurationOutcome(PutBlockPublicAccessConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutBlockPublicAccessConfigurationOutcome(outcome.GetError());
+  }
+}
+
+PutBlockPublicAccessConfigurationOutcomeCallable EMRClient::PutBlockPublicAccessConfigurationCallable(const PutBlockPublicAccessConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutBlockPublicAccessConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutBlockPublicAccessConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::PutBlockPublicAccessConfigurationAsync(const PutBlockPublicAccessConfigurationRequest& request, const PutBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutBlockPublicAccessConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::PutBlockPublicAccessConfigurationAsyncHelper(const PutBlockPublicAccessConfigurationRequest& request, const PutBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutBlockPublicAccessConfiguration(request), context);
 }
 
 RemoveAutoScalingPolicyOutcome EMRClient::RemoveAutoScalingPolicy(const RemoveAutoScalingPolicyRequest& request) const

@@ -826,8 +826,9 @@ namespace Model
          * <a>UpdateService</a>.</p> <note> <p>When you delete a service, if there are
          * still running tasks that require cleanup, the service status moves from
          * <code>ACTIVE</code> to <code>DRAINING</code>, and the service is no longer
-         * visible in the console or in the <a>ListServices</a> API operation. After the
-         * tasks have stopped, then the service status moves from <code>DRAINING</code> to
+         * visible in the console or in the <a>ListServices</a> API operation. After all
+         * tasks have transitioned to either <code>STOPPING</code> or <code>STOPPED</code>
+         * status, the service status moves from <code>DRAINING</code> to
          * <code>INACTIVE</code>. Services in the <code>DRAINING</code> or
          * <code>INACTIVE</code> status can still be viewed with the
          * <a>DescribeServices</a> API operation. However, in the future,
@@ -850,8 +851,9 @@ namespace Model
          * <a>UpdateService</a>.</p> <note> <p>When you delete a service, if there are
          * still running tasks that require cleanup, the service status moves from
          * <code>ACTIVE</code> to <code>DRAINING</code>, and the service is no longer
-         * visible in the console or in the <a>ListServices</a> API operation. After the
-         * tasks have stopped, then the service status moves from <code>DRAINING</code> to
+         * visible in the console or in the <a>ListServices</a> API operation. After all
+         * tasks have transitioned to either <code>STOPPING</code> or <code>STOPPED</code>
+         * status, the service status moves from <code>DRAINING</code> to
          * <code>INACTIVE</code>. Services in the <code>DRAINING</code> or
          * <code>INACTIVE</code> status can still be viewed with the
          * <a>DescribeServices</a> API operation. However, in the future,
@@ -876,8 +878,9 @@ namespace Model
          * <a>UpdateService</a>.</p> <note> <p>When you delete a service, if there are
          * still running tasks that require cleanup, the service status moves from
          * <code>ACTIVE</code> to <code>DRAINING</code>, and the service is no longer
-         * visible in the console or in the <a>ListServices</a> API operation. After the
-         * tasks have stopped, then the service status moves from <code>DRAINING</code> to
+         * visible in the console or in the <a>ListServices</a> API operation. After all
+         * tasks have transitioned to either <code>STOPPING</code> or <code>STOPPED</code>
+         * status, the service status moves from <code>DRAINING</code> to
          * <code>INACTIVE</code>. Services in the <code>DRAINING</code> or
          * <code>INACTIVE</code> status can still be viewed with the
          * <a>DescribeServices</a> API operation. However, in the future,
@@ -1592,10 +1595,10 @@ namespace Model
         virtual void ListTasksAsync(const Model::ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies an account setting. If you change the account setting for the root
-         * user, the default settings for all of the IAM users and roles for which no
-         * individual account setting has been specified are reset. For more information,
-         * see <a
+         * <p>Modifies an account setting. Account settings are set on a per-Region
+         * basis.</p> <p>If you change the account setting for the root user, the default
+         * settings for all of the IAM users and roles for which no individual account
+         * setting has been specified are reset. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
          * Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
          * <p>When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or
@@ -1627,10 +1630,10 @@ namespace Model
         virtual Model::PutAccountSettingOutcome PutAccountSetting(const Model::PutAccountSettingRequest& request) const;
 
         /**
-         * <p>Modifies an account setting. If you change the account setting for the root
-         * user, the default settings for all of the IAM users and roles for which no
-         * individual account setting has been specified are reset. For more information,
-         * see <a
+         * <p>Modifies an account setting. Account settings are set on a per-Region
+         * basis.</p> <p>If you change the account setting for the root user, the default
+         * settings for all of the IAM users and roles for which no individual account
+         * setting has been specified are reset. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
          * Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
          * <p>When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or
@@ -1664,10 +1667,10 @@ namespace Model
         virtual Model::PutAccountSettingOutcomeCallable PutAccountSettingCallable(const Model::PutAccountSettingRequest& request) const;
 
         /**
-         * <p>Modifies an account setting. If you change the account setting for the root
-         * user, the default settings for all of the IAM users and roles for which no
-         * individual account setting has been specified are reset. For more information,
-         * see <a
+         * <p>Modifies an account setting. Account settings are set on a per-Region
+         * basis.</p> <p>If you change the account setting for the root user, the default
+         * settings for all of the IAM users and roles for which no individual account
+         * setting has been specified are reset. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
          * Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
          * <p>When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or
@@ -1702,7 +1705,8 @@ namespace Model
 
         /**
          * <p>Modifies an account setting for all IAM users on an account for whom no
-         * individual account setting has been specified.</p><p><h3>See Also:</h3>   <a
+         * individual account setting has been specified. Account settings are set on a
+         * per-Region basis.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">AWS
          * API Reference</a></p>
          */
@@ -1710,7 +1714,8 @@ namespace Model
 
         /**
          * <p>Modifies an account setting for all IAM users on an account for whom no
-         * individual account setting has been specified.</p><p><h3>See Also:</h3>   <a
+         * individual account setting has been specified. Account settings are set on a
+         * per-Region basis.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">AWS
          * API Reference</a></p>
          *
@@ -1720,7 +1725,8 @@ namespace Model
 
         /**
          * <p>Modifies an account setting for all IAM users on an account for whom no
-         * individual account setting has been specified.</p><p><h3>See Also:</h3>   <a
+         * individual account setting has been specified. Account settings are set on a
+         * per-Region basis.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">AWS
          * API Reference</a></p>
          *

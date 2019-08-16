@@ -96,6 +96,12 @@ CreateSimulationJobResult& CreateSimulationJobResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("loggingConfig"))
+  {
+    m_loggingConfig = jsonValue.GetObject("loggingConfig");
+
+  }
+
   if(jsonValue.ValueExists("maxJobDurationInSeconds"))
   {
     m_maxJobDurationInSeconds = jsonValue.GetInt64("maxJobDurationInSeconds");
@@ -129,6 +135,15 @@ CreateSimulationJobResult& CreateSimulationJobResult::operator =(const Aws::Amaz
     for(unsigned simulationApplicationsIndex = 0; simulationApplicationsIndex < simulationApplicationsJsonList.GetLength(); ++simulationApplicationsIndex)
     {
       m_simulationApplications.push_back(simulationApplicationsJsonList[simulationApplicationsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("dataSources"))
+  {
+    Array<JsonView> dataSourcesJsonList = jsonValue.GetArray("dataSources");
+    for(unsigned dataSourcesIndex = 0; dataSourcesIndex < dataSourcesJsonList.GetLength(); ++dataSourcesIndex)
+    {
+      m_dataSources.push_back(dataSourcesJsonList[dataSourcesIndex].AsObject());
     }
   }
 

@@ -985,12 +985,9 @@ namespace Model
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
      * tasks running on container instances in the <code>DRAINING</code> status.</p>
      * </li> <li> <p>All tasks are reporting a healthy status from the load balancers,
-     * service discovery, and container health checks.</p> <note> <p>If a
-     * <code>healthCheckGracePeriodSeconds</code> value was set when the service was
-     * created, you may see a <code>STEADY_STATE</code> reached since unhealthy Elastic
-     * Load Balancing target health checks will be ignored until it expires.</p>
-     * </note> </li> </ul> <p>If any of those conditions are not met, the stability
-     * status returns <code>STABILIZING</code>.</p>
+     * service discovery, and container health checks.</p> </li> </ul> <p>If any of
+     * those conditions are not met, the stability status returns
+     * <code>STABILIZING</code>.</p>
      */
     inline const StabilityStatus& GetStabilityStatus() const{ return m_stabilityStatus; }
 
@@ -1002,12 +999,9 @@ namespace Model
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
      * tasks running on container instances in the <code>DRAINING</code> status.</p>
      * </li> <li> <p>All tasks are reporting a healthy status from the load balancers,
-     * service discovery, and container health checks.</p> <note> <p>If a
-     * <code>healthCheckGracePeriodSeconds</code> value was set when the service was
-     * created, you may see a <code>STEADY_STATE</code> reached since unhealthy Elastic
-     * Load Balancing target health checks will be ignored until it expires.</p>
-     * </note> </li> </ul> <p>If any of those conditions are not met, the stability
-     * status returns <code>STABILIZING</code>.</p>
+     * service discovery, and container health checks.</p> </li> </ul> <p>If any of
+     * those conditions are not met, the stability status returns
+     * <code>STABILIZING</code>.</p>
      */
     inline bool StabilityStatusHasBeenSet() const { return m_stabilityStatusHasBeenSet; }
 
@@ -1019,12 +1013,9 @@ namespace Model
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
      * tasks running on container instances in the <code>DRAINING</code> status.</p>
      * </li> <li> <p>All tasks are reporting a healthy status from the load balancers,
-     * service discovery, and container health checks.</p> <note> <p>If a
-     * <code>healthCheckGracePeriodSeconds</code> value was set when the service was
-     * created, you may see a <code>STEADY_STATE</code> reached since unhealthy Elastic
-     * Load Balancing target health checks will be ignored until it expires.</p>
-     * </note> </li> </ul> <p>If any of those conditions are not met, the stability
-     * status returns <code>STABILIZING</code>.</p>
+     * service discovery, and container health checks.</p> </li> </ul> <p>If any of
+     * those conditions are not met, the stability status returns
+     * <code>STABILIZING</code>.</p>
      */
     inline void SetStabilityStatus(const StabilityStatus& value) { m_stabilityStatusHasBeenSet = true; m_stabilityStatus = value; }
 
@@ -1036,12 +1027,9 @@ namespace Model
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
      * tasks running on container instances in the <code>DRAINING</code> status.</p>
      * </li> <li> <p>All tasks are reporting a healthy status from the load balancers,
-     * service discovery, and container health checks.</p> <note> <p>If a
-     * <code>healthCheckGracePeriodSeconds</code> value was set when the service was
-     * created, you may see a <code>STEADY_STATE</code> reached since unhealthy Elastic
-     * Load Balancing target health checks will be ignored until it expires.</p>
-     * </note> </li> </ul> <p>If any of those conditions are not met, the stability
-     * status returns <code>STABILIZING</code>.</p>
+     * service discovery, and container health checks.</p> </li> </ul> <p>If any of
+     * those conditions are not met, the stability status returns
+     * <code>STABILIZING</code>.</p>
      */
     inline void SetStabilityStatus(StabilityStatus&& value) { m_stabilityStatusHasBeenSet = true; m_stabilityStatus = std::move(value); }
 
@@ -1053,12 +1041,9 @@ namespace Model
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
      * tasks running on container instances in the <code>DRAINING</code> status.</p>
      * </li> <li> <p>All tasks are reporting a healthy status from the load balancers,
-     * service discovery, and container health checks.</p> <note> <p>If a
-     * <code>healthCheckGracePeriodSeconds</code> value was set when the service was
-     * created, you may see a <code>STEADY_STATE</code> reached since unhealthy Elastic
-     * Load Balancing target health checks will be ignored until it expires.</p>
-     * </note> </li> </ul> <p>If any of those conditions are not met, the stability
-     * status returns <code>STABILIZING</code>.</p>
+     * service discovery, and container health checks.</p> </li> </ul> <p>If any of
+     * those conditions are not met, the stability status returns
+     * <code>STABILIZING</code>.</p>
      */
     inline TaskSet& WithStabilityStatus(const StabilityStatus& value) { SetStabilityStatus(value); return *this;}
 
@@ -1070,12 +1055,9 @@ namespace Model
      * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
      * tasks running on container instances in the <code>DRAINING</code> status.</p>
      * </li> <li> <p>All tasks are reporting a healthy status from the load balancers,
-     * service discovery, and container health checks.</p> <note> <p>If a
-     * <code>healthCheckGracePeriodSeconds</code> value was set when the service was
-     * created, you may see a <code>STEADY_STATE</code> reached since unhealthy Elastic
-     * Load Balancing target health checks will be ignored until it expires.</p>
-     * </note> </li> </ul> <p>If any of those conditions are not met, the stability
-     * status returns <code>STABILIZING</code>.</p>
+     * service discovery, and container health checks.</p> </li> </ul> <p>If any of
+     * those conditions are not met, the stability status returns
+     * <code>STABILIZING</code>.</p>
      */
     inline TaskSet& WithStabilityStatus(StabilityStatus&& value) { SetStabilityStatus(std::move(value)); return *this;}
 

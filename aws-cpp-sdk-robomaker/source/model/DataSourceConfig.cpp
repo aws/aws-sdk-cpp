@@ -1,0 +1,107 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#include <aws/robomaker/model/DataSourceConfig.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace RoboMaker
+{
+namespace Model
+{
+
+DataSourceConfig::DataSourceConfig() : 
+    m_nameHasBeenSet(false),
+    m_s3BucketHasBeenSet(false),
+    m_s3KeysHasBeenSet(false)
+{
+}
+
+DataSourceConfig::DataSourceConfig(JsonView jsonValue) : 
+    m_nameHasBeenSet(false),
+    m_s3BucketHasBeenSet(false),
+    m_s3KeysHasBeenSet(false)
+{
+  *this = jsonValue;
+}
+
+DataSourceConfig& DataSourceConfig::operator =(JsonView jsonValue)
+{
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("s3Bucket"))
+  {
+    m_s3Bucket = jsonValue.GetString("s3Bucket");
+
+    m_s3BucketHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("s3Keys"))
+  {
+    Array<JsonView> s3KeysJsonList = jsonValue.GetArray("s3Keys");
+    for(unsigned s3KeysIndex = 0; s3KeysIndex < s3KeysJsonList.GetLength(); ++s3KeysIndex)
+    {
+      m_s3Keys.push_back(s3KeysJsonList[s3KeysIndex].AsString());
+    }
+    m_s3KeysHasBeenSet = true;
+  }
+
+  return *this;
+}
+
+JsonValue DataSourceConfig::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
+
+  if(m_s3BucketHasBeenSet)
+  {
+   payload.WithString("s3Bucket", m_s3Bucket);
+
+  }
+
+  if(m_s3KeysHasBeenSet)
+  {
+   Array<JsonValue> s3KeysJsonList(m_s3Keys.size());
+   for(unsigned s3KeysIndex = 0; s3KeysIndex < s3KeysJsonList.GetLength(); ++s3KeysIndex)
+   {
+     s3KeysJsonList[s3KeysIndex].AsString(m_s3Keys[s3KeysIndex]);
+   }
+   payload.WithArray("s3Keys", std::move(s3KeysJsonList));
+
+  }
+
+  return payload;
+}
+
+} // namespace Model
+} // namespace RoboMaker
+} // namespace Aws

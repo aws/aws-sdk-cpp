@@ -31,6 +31,7 @@
 #include <aws/elasticmapreduce/model/DescribeClusterResult.h>
 #include <aws/elasticmapreduce/model/DescribeSecurityConfigurationResult.h>
 #include <aws/elasticmapreduce/model/DescribeStepResult.h>
+#include <aws/elasticmapreduce/model/GetBlockPublicAccessConfigurationResult.h>
 #include <aws/elasticmapreduce/model/ListBootstrapActionsResult.h>
 #include <aws/elasticmapreduce/model/ListClustersResult.h>
 #include <aws/elasticmapreduce/model/ListInstanceFleetsResult.h>
@@ -39,6 +40,7 @@
 #include <aws/elasticmapreduce/model/ListSecurityConfigurationsResult.h>
 #include <aws/elasticmapreduce/model/ListStepsResult.h>
 #include <aws/elasticmapreduce/model/PutAutoScalingPolicyResult.h>
+#include <aws/elasticmapreduce/model/PutBlockPublicAccessConfigurationResult.h>
 #include <aws/elasticmapreduce/model/RemoveAutoScalingPolicyResult.h>
 #include <aws/elasticmapreduce/model/RemoveTagsResult.h>
 #include <aws/elasticmapreduce/model/RunJobFlowResult.h>
@@ -92,6 +94,7 @@ namespace Model
         class DescribeClusterRequest;
         class DescribeSecurityConfigurationRequest;
         class DescribeStepRequest;
+        class GetBlockPublicAccessConfigurationRequest;
         class ListBootstrapActionsRequest;
         class ListClustersRequest;
         class ListInstanceFleetsRequest;
@@ -102,6 +105,7 @@ namespace Model
         class ModifyInstanceFleetRequest;
         class ModifyInstanceGroupsRequest;
         class PutAutoScalingPolicyRequest;
+        class PutBlockPublicAccessConfigurationRequest;
         class RemoveAutoScalingPolicyRequest;
         class RemoveTagsRequest;
         class RunJobFlowRequest;
@@ -119,6 +123,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeClusterResult, Aws::Client::AWSError<EMRErrors>> DescribeClusterOutcome;
         typedef Aws::Utils::Outcome<DescribeSecurityConfigurationResult, Aws::Client::AWSError<EMRErrors>> DescribeSecurityConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeStepResult, Aws::Client::AWSError<EMRErrors>> DescribeStepOutcome;
+        typedef Aws::Utils::Outcome<GetBlockPublicAccessConfigurationResult, Aws::Client::AWSError<EMRErrors>> GetBlockPublicAccessConfigurationOutcome;
         typedef Aws::Utils::Outcome<ListBootstrapActionsResult, Aws::Client::AWSError<EMRErrors>> ListBootstrapActionsOutcome;
         typedef Aws::Utils::Outcome<ListClustersResult, Aws::Client::AWSError<EMRErrors>> ListClustersOutcome;
         typedef Aws::Utils::Outcome<ListInstanceFleetsResult, Aws::Client::AWSError<EMRErrors>> ListInstanceFleetsOutcome;
@@ -129,6 +134,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EMRErrors>> ModifyInstanceFleetOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EMRErrors>> ModifyInstanceGroupsOutcome;
         typedef Aws::Utils::Outcome<PutAutoScalingPolicyResult, Aws::Client::AWSError<EMRErrors>> PutAutoScalingPolicyOutcome;
+        typedef Aws::Utils::Outcome<PutBlockPublicAccessConfigurationResult, Aws::Client::AWSError<EMRErrors>> PutBlockPublicAccessConfigurationOutcome;
         typedef Aws::Utils::Outcome<RemoveAutoScalingPolicyResult, Aws::Client::AWSError<EMRErrors>> RemoveAutoScalingPolicyOutcome;
         typedef Aws::Utils::Outcome<RemoveTagsResult, Aws::Client::AWSError<EMRErrors>> RemoveTagsOutcome;
         typedef Aws::Utils::Outcome<RunJobFlowResult, Aws::Client::AWSError<EMRErrors>> RunJobFlowOutcome;
@@ -146,6 +152,7 @@ namespace Model
         typedef std::future<DescribeClusterOutcome> DescribeClusterOutcomeCallable;
         typedef std::future<DescribeSecurityConfigurationOutcome> DescribeSecurityConfigurationOutcomeCallable;
         typedef std::future<DescribeStepOutcome> DescribeStepOutcomeCallable;
+        typedef std::future<GetBlockPublicAccessConfigurationOutcome> GetBlockPublicAccessConfigurationOutcomeCallable;
         typedef std::future<ListBootstrapActionsOutcome> ListBootstrapActionsOutcomeCallable;
         typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
         typedef std::future<ListInstanceFleetsOutcome> ListInstanceFleetsOutcomeCallable;
@@ -156,6 +163,7 @@ namespace Model
         typedef std::future<ModifyInstanceFleetOutcome> ModifyInstanceFleetOutcomeCallable;
         typedef std::future<ModifyInstanceGroupsOutcome> ModifyInstanceGroupsOutcomeCallable;
         typedef std::future<PutAutoScalingPolicyOutcome> PutAutoScalingPolicyOutcomeCallable;
+        typedef std::future<PutBlockPublicAccessConfigurationOutcome> PutBlockPublicAccessConfigurationOutcomeCallable;
         typedef std::future<RemoveAutoScalingPolicyOutcome> RemoveAutoScalingPolicyOutcomeCallable;
         typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
         typedef std::future<RunJobFlowOutcome> RunJobFlowOutcomeCallable;
@@ -176,6 +184,7 @@ namespace Model
     typedef std::function<void(const EMRClient*, const Model::DescribeClusterRequest&, const Model::DescribeClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::DescribeSecurityConfigurationRequest&, const Model::DescribeSecurityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSecurityConfigurationResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::DescribeStepRequest&, const Model::DescribeStepOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStepResponseReceivedHandler;
+    typedef std::function<void(const EMRClient*, const Model::GetBlockPublicAccessConfigurationRequest&, const Model::GetBlockPublicAccessConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBlockPublicAccessConfigurationResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListBootstrapActionsRequest&, const Model::ListBootstrapActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBootstrapActionsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListInstanceFleetsRequest&, const Model::ListInstanceFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInstanceFleetsResponseReceivedHandler;
@@ -186,6 +195,7 @@ namespace Model
     typedef std::function<void(const EMRClient*, const Model::ModifyInstanceFleetRequest&, const Model::ModifyInstanceFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceFleetResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ModifyInstanceGroupsRequest&, const Model::ModifyInstanceGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceGroupsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::PutAutoScalingPolicyRequest&, const Model::PutAutoScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAutoScalingPolicyResponseReceivedHandler;
+    typedef std::function<void(const EMRClient*, const Model::PutBlockPublicAccessConfigurationRequest&, const Model::PutBlockPublicAccessConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBlockPublicAccessConfigurationResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::RemoveAutoScalingPolicyRequest&, const Model::RemoveAutoScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveAutoScalingPolicyResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::RunJobFlowRequest&, const Model::RunJobFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RunJobFlowResponseReceivedHandler;
@@ -578,6 +588,43 @@ namespace Model
         virtual void DescribeStepAsync(const Model::DescribeStepRequest& request, const DescribeStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the Amazon EMR block public access configuration for your AWS account
+         * in the current Region. For more information see <a
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
+         * Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetBlockPublicAccessConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetBlockPublicAccessConfigurationOutcome GetBlockPublicAccessConfiguration(const Model::GetBlockPublicAccessConfigurationRequest& request) const;
+
+        /**
+         * <p>Returns the Amazon EMR block public access configuration for your AWS account
+         * in the current Region. For more information see <a
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
+         * Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetBlockPublicAccessConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetBlockPublicAccessConfigurationOutcomeCallable GetBlockPublicAccessConfigurationCallable(const Model::GetBlockPublicAccessConfigurationRequest& request) const;
+
+        /**
+         * <p>Returns the Amazon EMR block public access configuration for your AWS account
+         * in the current Region. For more information see <a
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
+         * Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetBlockPublicAccessConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetBlockPublicAccessConfigurationAsync(const Model::GetBlockPublicAccessConfigurationRequest& request, const GetBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Provides information about the bootstrap actions associated with a
          * cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListBootstrapActions">AWS
@@ -909,6 +956,43 @@ namespace Model
         virtual void PutAutoScalingPolicyAsync(const Model::PutAutoScalingPolicyRequest& request, const PutAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates or updates an Amazon EMR block public access configuration for your
+         * AWS account in the current Region. For more information see <a
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
+         * Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutBlockPublicAccessConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutBlockPublicAccessConfigurationOutcome PutBlockPublicAccessConfiguration(const Model::PutBlockPublicAccessConfigurationRequest& request) const;
+
+        /**
+         * <p>Creates or updates an Amazon EMR block public access configuration for your
+         * AWS account in the current Region. For more information see <a
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
+         * Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutBlockPublicAccessConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutBlockPublicAccessConfigurationOutcomeCallable PutBlockPublicAccessConfigurationCallable(const Model::PutBlockPublicAccessConfigurationRequest& request) const;
+
+        /**
+         * <p>Creates or updates an Amazon EMR block public access configuration for your
+         * AWS account in the current Region. For more information see <a
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
+         * Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutBlockPublicAccessConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutBlockPublicAccessConfigurationAsync(const Model::PutBlockPublicAccessConfigurationRequest& request, const PutBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Removes an automatic scaling policy from a specified instance group within an
          * EMR cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveAutoScalingPolicy">AWS
@@ -1141,10 +1225,11 @@ namespace Model
         virtual void SetTerminationProtectionAsync(const Model::SetTerminationProtectionRequest& request, const SetTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets whether all AWS Identity and Access Management (IAM) users under your
-         * account can access the specified clusters (job flows). This action works on
-         * running clusters. You can also set the visibility of a cluster when you launch
-         * it using the <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The
+         * <p> <i>This member will be deprecated.</i> </p> <p>Sets whether all AWS Identity
+         * and Access Management (IAM) users under your account can access the specified
+         * clusters (job flows). This action works on running clusters. You can also set
+         * the visibility of a cluster when you launch it using the
+         * <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The
          * SetVisibleToAllUsers action can be called only by an IAM user who created the
          * cluster or the AWS account that owns the cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">AWS
@@ -1153,10 +1238,11 @@ namespace Model
         virtual Model::SetVisibleToAllUsersOutcome SetVisibleToAllUsers(const Model::SetVisibleToAllUsersRequest& request) const;
 
         /**
-         * <p>Sets whether all AWS Identity and Access Management (IAM) users under your
-         * account can access the specified clusters (job flows). This action works on
-         * running clusters. You can also set the visibility of a cluster when you launch
-         * it using the <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The
+         * <p> <i>This member will be deprecated.</i> </p> <p>Sets whether all AWS Identity
+         * and Access Management (IAM) users under your account can access the specified
+         * clusters (job flows). This action works on running clusters. You can also set
+         * the visibility of a cluster when you launch it using the
+         * <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The
          * SetVisibleToAllUsers action can be called only by an IAM user who created the
          * cluster or the AWS account that owns the cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">AWS
@@ -1167,10 +1253,11 @@ namespace Model
         virtual Model::SetVisibleToAllUsersOutcomeCallable SetVisibleToAllUsersCallable(const Model::SetVisibleToAllUsersRequest& request) const;
 
         /**
-         * <p>Sets whether all AWS Identity and Access Management (IAM) users under your
-         * account can access the specified clusters (job flows). This action works on
-         * running clusters. You can also set the visibility of a cluster when you launch
-         * it using the <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The
+         * <p> <i>This member will be deprecated.</i> </p> <p>Sets whether all AWS Identity
+         * and Access Management (IAM) users under your account can access the specified
+         * clusters (job flows). This action works on running clusters. You can also set
+         * the visibility of a cluster when you launch it using the
+         * <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The
          * SetVisibleToAllUsers action can be called only by an IAM user who created the
          * cluster or the AWS account that owns the cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">AWS
@@ -1243,6 +1330,7 @@ namespace Model
         void DescribeClusterAsyncHelper(const Model::DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSecurityConfigurationAsyncHelper(const Model::DescribeSecurityConfigurationRequest& request, const DescribeSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStepAsyncHelper(const Model::DescribeStepRequest& request, const DescribeStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetBlockPublicAccessConfigurationAsyncHelper(const Model::GetBlockPublicAccessConfigurationRequest& request, const GetBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBootstrapActionsAsyncHelper(const Model::ListBootstrapActionsRequest& request, const ListBootstrapActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListClustersAsyncHelper(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInstanceFleetsAsyncHelper(const Model::ListInstanceFleetsRequest& request, const ListInstanceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1253,6 +1341,7 @@ namespace Model
         void ModifyInstanceFleetAsyncHelper(const Model::ModifyInstanceFleetRequest& request, const ModifyInstanceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstanceGroupsAsyncHelper(const Model::ModifyInstanceGroupsRequest& request, const ModifyInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAutoScalingPolicyAsyncHelper(const Model::PutAutoScalingPolicyRequest& request, const PutAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutBlockPublicAccessConfigurationAsyncHelper(const Model::PutBlockPublicAccessConfigurationRequest& request, const PutBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveAutoScalingPolicyAsyncHelper(const Model::RemoveAutoScalingPolicyRequest& request, const RemoveAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsAsyncHelper(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RunJobFlowAsyncHelper(const Model::RunJobFlowRequest& request, const RunJobFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

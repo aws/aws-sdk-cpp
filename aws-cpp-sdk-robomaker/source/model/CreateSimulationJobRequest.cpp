@@ -26,6 +26,7 @@ CreateSimulationJobRequest::CreateSimulationJobRequest() :
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_outputLocationHasBeenSet(false),
+    m_loggingConfigHasBeenSet(false),
     m_maxJobDurationInSeconds(0),
     m_maxJobDurationInSecondsHasBeenSet(false),
     m_iamRoleHasBeenSet(false),
@@ -33,6 +34,7 @@ CreateSimulationJobRequest::CreateSimulationJobRequest() :
     m_failureBehaviorHasBeenSet(false),
     m_robotApplicationsHasBeenSet(false),
     m_simulationApplicationsHasBeenSet(false),
+    m_dataSourcesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_vpcConfigHasBeenSet(false)
 {
@@ -51,6 +53,12 @@ Aws::String CreateSimulationJobRequest::SerializePayload() const
   if(m_outputLocationHasBeenSet)
   {
    payload.WithObject("outputLocation", m_outputLocation.Jsonize());
+
+  }
+
+  if(m_loggingConfigHasBeenSet)
+  {
+   payload.WithObject("loggingConfig", m_loggingConfig.Jsonize());
 
   }
 
@@ -90,6 +98,17 @@ Aws::String CreateSimulationJobRequest::SerializePayload() const
      simulationApplicationsJsonList[simulationApplicationsIndex].AsObject(m_simulationApplications[simulationApplicationsIndex].Jsonize());
    }
    payload.WithArray("simulationApplications", std::move(simulationApplicationsJsonList));
+
+  }
+
+  if(m_dataSourcesHasBeenSet)
+  {
+   Array<JsonValue> dataSourcesJsonList(m_dataSources.size());
+   for(unsigned dataSourcesIndex = 0; dataSourcesIndex < dataSourcesJsonList.GetLength(); ++dataSourcesIndex)
+   {
+     dataSourcesJsonList[dataSourcesIndex].AsObject(m_dataSources[dataSourcesIndex].Jsonize());
+   }
+   payload.WithArray("dataSources", std::move(dataSourcesJsonList));
 
   }
 

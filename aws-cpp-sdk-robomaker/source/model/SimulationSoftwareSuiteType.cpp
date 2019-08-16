@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int Gazebo_HASH = HashingUtils::HashString("Gazebo");
+        static const int RosbagPlay_HASH = HashingUtils::HashString("RosbagPlay");
 
 
         SimulationSoftwareSuiteType GetSimulationSoftwareSuiteTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == Gazebo_HASH)
           {
             return SimulationSoftwareSuiteType::Gazebo;
+          }
+          else if (hashCode == RosbagPlay_HASH)
+          {
+            return SimulationSoftwareSuiteType::RosbagPlay;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case SimulationSoftwareSuiteType::Gazebo:
             return "Gazebo";
+          case SimulationSoftwareSuiteType::RosbagPlay:
+            return "RosbagPlay";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

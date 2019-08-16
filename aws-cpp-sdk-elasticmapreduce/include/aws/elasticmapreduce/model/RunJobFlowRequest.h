@@ -249,11 +249,11 @@ namespace Model
     /**
      * <p>The Amazon EMR release label, which determines the version of open-source
      * application packages installed on the cluster. Release labels are in the form
-     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
-     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
-     * versions and included application versions and features, see <a
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as
+     * <code>emr-5.14.0</code>. For more information about Amazon EMR release versions
+     * and included application versions and features, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
-     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * The release label applies only to Amazon EMR releases version 4.0 and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline const Aws::String& GetReleaseLabel() const{ return m_releaseLabel; }
@@ -261,11 +261,11 @@ namespace Model
     /**
      * <p>The Amazon EMR release label, which determines the version of open-source
      * application packages installed on the cluster. Release labels are in the form
-     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
-     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
-     * versions and included application versions and features, see <a
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as
+     * <code>emr-5.14.0</code>. For more information about Amazon EMR release versions
+     * and included application versions and features, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
-     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * The release label applies only to Amazon EMR releases version 4.0 and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline bool ReleaseLabelHasBeenSet() const { return m_releaseLabelHasBeenSet; }
@@ -273,11 +273,11 @@ namespace Model
     /**
      * <p>The Amazon EMR release label, which determines the version of open-source
      * application packages installed on the cluster. Release labels are in the form
-     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
-     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
-     * versions and included application versions and features, see <a
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as
+     * <code>emr-5.14.0</code>. For more information about Amazon EMR release versions
+     * and included application versions and features, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
-     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * The release label applies only to Amazon EMR releases version 4.0 and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline void SetReleaseLabel(const Aws::String& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
@@ -285,11 +285,11 @@ namespace Model
     /**
      * <p>The Amazon EMR release label, which determines the version of open-source
      * application packages installed on the cluster. Release labels are in the form
-     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
-     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
-     * versions and included application versions and features, see <a
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as
+     * <code>emr-5.14.0</code>. For more information about Amazon EMR release versions
+     * and included application versions and features, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
-     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * The release label applies only to Amazon EMR releases version 4.0 and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::move(value); }
@@ -297,11 +297,11 @@ namespace Model
     /**
      * <p>The Amazon EMR release label, which determines the version of open-source
      * application packages installed on the cluster. Release labels are in the form
-     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
-     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
-     * versions and included application versions and features, see <a
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as
+     * <code>emr-5.14.0</code>. For more information about Amazon EMR release versions
+     * and included application versions and features, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
-     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * The release label applies only to Amazon EMR releases version 4.0 and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline void SetReleaseLabel(const char* value) { m_releaseLabelHasBeenSet = true; m_releaseLabel.assign(value); }
@@ -309,11 +309,11 @@ namespace Model
     /**
      * <p>The Amazon EMR release label, which determines the version of open-source
      * application packages installed on the cluster. Release labels are in the form
-     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
-     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
-     * versions and included application versions and features, see <a
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as
+     * <code>emr-5.14.0</code>. For more information about Amazon EMR release versions
+     * and included application versions and features, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
-     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * The release label applies only to Amazon EMR releases version 4.0 and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline RunJobFlowRequest& WithReleaseLabel(const Aws::String& value) { SetReleaseLabel(value); return *this;}
@@ -321,11 +321,11 @@ namespace Model
     /**
      * <p>The Amazon EMR release label, which determines the version of open-source
      * application packages installed on the cluster. Release labels are in the form
-     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
-     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
-     * versions and included application versions and features, see <a
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as
+     * <code>emr-5.14.0</code>. For more information about Amazon EMR release versions
+     * and included application versions and features, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
-     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * The release label applies only to Amazon EMR releases version 4.0 and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline RunJobFlowRequest& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(std::move(value)); return *this;}
@@ -333,11 +333,11 @@ namespace Model
     /**
      * <p>The Amazon EMR release label, which determines the version of open-source
      * application packages installed on the cluster. Release labels are in the form
-     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
-     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
-     * versions and included application versions and features, see <a
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as
+     * <code>emr-5.14.0</code>. For more information about Amazon EMR release versions
+     * and included application versions and features, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
-     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * The release label applies only to Amazon EMR releases version 4.0 and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline RunJobFlowRequest& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
@@ -856,38 +856,42 @@ namespace Model
 
 
     /**
-     * <p>Whether the cluster is visible to all IAM users of the AWS account associated
-     * with the cluster. If this value is set to <code>true</code>, all IAM users of
-     * that AWS account can view and (if they have the proper policy permissions set)
-     * manage the cluster. If it is set to <code>false</code>, only the IAM user that
-     * created the cluster can view and manage it.</p>
+     * <p> <i>This member will be deprecated.</i> </p> <p>Whether the cluster is
+     * visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view
+     * and (if they have the proper policy permissions set) manage the cluster. If it
+     * is set to <code>false</code>, only the IAM user that created the cluster can
+     * view and manage it.</p>
      */
     inline bool GetVisibleToAllUsers() const{ return m_visibleToAllUsers; }
 
     /**
-     * <p>Whether the cluster is visible to all IAM users of the AWS account associated
-     * with the cluster. If this value is set to <code>true</code>, all IAM users of
-     * that AWS account can view and (if they have the proper policy permissions set)
-     * manage the cluster. If it is set to <code>false</code>, only the IAM user that
-     * created the cluster can view and manage it.</p>
+     * <p> <i>This member will be deprecated.</i> </p> <p>Whether the cluster is
+     * visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view
+     * and (if they have the proper policy permissions set) manage the cluster. If it
+     * is set to <code>false</code>, only the IAM user that created the cluster can
+     * view and manage it.</p>
      */
     inline bool VisibleToAllUsersHasBeenSet() const { return m_visibleToAllUsersHasBeenSet; }
 
     /**
-     * <p>Whether the cluster is visible to all IAM users of the AWS account associated
-     * with the cluster. If this value is set to <code>true</code>, all IAM users of
-     * that AWS account can view and (if they have the proper policy permissions set)
-     * manage the cluster. If it is set to <code>false</code>, only the IAM user that
-     * created the cluster can view and manage it.</p>
+     * <p> <i>This member will be deprecated.</i> </p> <p>Whether the cluster is
+     * visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view
+     * and (if they have the proper policy permissions set) manage the cluster. If it
+     * is set to <code>false</code>, only the IAM user that created the cluster can
+     * view and manage it.</p>
      */
     inline void SetVisibleToAllUsers(bool value) { m_visibleToAllUsersHasBeenSet = true; m_visibleToAllUsers = value; }
 
     /**
-     * <p>Whether the cluster is visible to all IAM users of the AWS account associated
-     * with the cluster. If this value is set to <code>true</code>, all IAM users of
-     * that AWS account can view and (if they have the proper policy permissions set)
-     * manage the cluster. If it is set to <code>false</code>, only the IAM user that
-     * created the cluster can view and manage it.</p>
+     * <p> <i>This member will be deprecated.</i> </p> <p>Whether the cluster is
+     * visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view
+     * and (if they have the proper policy permissions set) manage the cluster. If it
+     * is set to <code>false</code>, only the IAM user that created the cluster can
+     * view and manage it.</p>
      */
     inline RunJobFlowRequest& WithVisibleToAllUsers(bool value) { SetVisibleToAllUsers(value); return *this;}
 

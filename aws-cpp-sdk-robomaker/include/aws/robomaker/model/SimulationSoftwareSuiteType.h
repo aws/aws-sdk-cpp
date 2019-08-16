@@ -26,7 +26,8 @@ namespace Model
   enum class SimulationSoftwareSuiteType
   {
     NOT_SET,
-    Gazebo
+    Gazebo,
+    RosbagPlay
   };
 
 namespace SimulationSoftwareSuiteTypeMapper

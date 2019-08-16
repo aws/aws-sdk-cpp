@@ -359,6 +359,136 @@ namespace Model
      */
     inline LinuxParameters& AddTmpfs(Tmpfs&& value) { m_tmpfsHasBeenSet = true; m_tmpfs.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The total amount of swap memory (in MiB) a container can use. This parameter
+     * will be translated to the <code>--memory-swap</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a> where the
+     * value would be the sum of the container memory plus the <code>maxSwap</code>
+     * value.</p> <p>If a <code>maxSwap</code> value of <code>0</code> is specified,
+     * the container will not use swap. Accepted values are <code>0</code> or any
+     * positive integer. If the <code>maxSwap</code> parameter is omitted, the
+     * container will use the swap configuration for the container instance it is
+     * running on. A <code>maxSwap</code> value must be set for the
+     * <code>swappiness</code> parameter to be used.</p> <note> <p>If you are using
+     * tasks that use the Fargate launch type, the <code>maxSwap</code> parameter is
+     * not supported.</p> </note>
+     */
+    inline int GetMaxSwap() const{ return m_maxSwap; }
+
+    /**
+     * <p>The total amount of swap memory (in MiB) a container can use. This parameter
+     * will be translated to the <code>--memory-swap</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a> where the
+     * value would be the sum of the container memory plus the <code>maxSwap</code>
+     * value.</p> <p>If a <code>maxSwap</code> value of <code>0</code> is specified,
+     * the container will not use swap. Accepted values are <code>0</code> or any
+     * positive integer. If the <code>maxSwap</code> parameter is omitted, the
+     * container will use the swap configuration for the container instance it is
+     * running on. A <code>maxSwap</code> value must be set for the
+     * <code>swappiness</code> parameter to be used.</p> <note> <p>If you are using
+     * tasks that use the Fargate launch type, the <code>maxSwap</code> parameter is
+     * not supported.</p> </note>
+     */
+    inline bool MaxSwapHasBeenSet() const { return m_maxSwapHasBeenSet; }
+
+    /**
+     * <p>The total amount of swap memory (in MiB) a container can use. This parameter
+     * will be translated to the <code>--memory-swap</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a> where the
+     * value would be the sum of the container memory plus the <code>maxSwap</code>
+     * value.</p> <p>If a <code>maxSwap</code> value of <code>0</code> is specified,
+     * the container will not use swap. Accepted values are <code>0</code> or any
+     * positive integer. If the <code>maxSwap</code> parameter is omitted, the
+     * container will use the swap configuration for the container instance it is
+     * running on. A <code>maxSwap</code> value must be set for the
+     * <code>swappiness</code> parameter to be used.</p> <note> <p>If you are using
+     * tasks that use the Fargate launch type, the <code>maxSwap</code> parameter is
+     * not supported.</p> </note>
+     */
+    inline void SetMaxSwap(int value) { m_maxSwapHasBeenSet = true; m_maxSwap = value; }
+
+    /**
+     * <p>The total amount of swap memory (in MiB) a container can use. This parameter
+     * will be translated to the <code>--memory-swap</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a> where the
+     * value would be the sum of the container memory plus the <code>maxSwap</code>
+     * value.</p> <p>If a <code>maxSwap</code> value of <code>0</code> is specified,
+     * the container will not use swap. Accepted values are <code>0</code> or any
+     * positive integer. If the <code>maxSwap</code> parameter is omitted, the
+     * container will use the swap configuration for the container instance it is
+     * running on. A <code>maxSwap</code> value must be set for the
+     * <code>swappiness</code> parameter to be used.</p> <note> <p>If you are using
+     * tasks that use the Fargate launch type, the <code>maxSwap</code> parameter is
+     * not supported.</p> </note>
+     */
+    inline LinuxParameters& WithMaxSwap(int value) { SetMaxSwap(value); return *this;}
+
+
+    /**
+     * <p>This allows you to tune a container's memory swappiness behavior. A
+     * <code>swappiness</code> value of <code>0</code> will cause swapping to not
+     * happen unless absolutely necessary. A <code>swappiness</code> value of
+     * <code>100</code> will cause pages to be swapped very aggressively. Accepted
+     * values are whole numbers between <code>0</code> and <code>100</code>. If the
+     * <code>swappiness</code> parameter is not specified, a default value of
+     * <code>60</code> is used. If a value is not specified for <code>maxSwap</code>
+     * then this parameter is ignored. This parameter maps to the
+     * <code>--memory-swappiness</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>swappiness</code> parameter is not supported.</p> </note>
+     */
+    inline int GetSwappiness() const{ return m_swappiness; }
+
+    /**
+     * <p>This allows you to tune a container's memory swappiness behavior. A
+     * <code>swappiness</code> value of <code>0</code> will cause swapping to not
+     * happen unless absolutely necessary. A <code>swappiness</code> value of
+     * <code>100</code> will cause pages to be swapped very aggressively. Accepted
+     * values are whole numbers between <code>0</code> and <code>100</code>. If the
+     * <code>swappiness</code> parameter is not specified, a default value of
+     * <code>60</code> is used. If a value is not specified for <code>maxSwap</code>
+     * then this parameter is ignored. This parameter maps to the
+     * <code>--memory-swappiness</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>swappiness</code> parameter is not supported.</p> </note>
+     */
+    inline bool SwappinessHasBeenSet() const { return m_swappinessHasBeenSet; }
+
+    /**
+     * <p>This allows you to tune a container's memory swappiness behavior. A
+     * <code>swappiness</code> value of <code>0</code> will cause swapping to not
+     * happen unless absolutely necessary. A <code>swappiness</code> value of
+     * <code>100</code> will cause pages to be swapped very aggressively. Accepted
+     * values are whole numbers between <code>0</code> and <code>100</code>. If the
+     * <code>swappiness</code> parameter is not specified, a default value of
+     * <code>60</code> is used. If a value is not specified for <code>maxSwap</code>
+     * then this parameter is ignored. This parameter maps to the
+     * <code>--memory-swappiness</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>swappiness</code> parameter is not supported.</p> </note>
+     */
+    inline void SetSwappiness(int value) { m_swappinessHasBeenSet = true; m_swappiness = value; }
+
+    /**
+     * <p>This allows you to tune a container's memory swappiness behavior. A
+     * <code>swappiness</code> value of <code>0</code> will cause swapping to not
+     * happen unless absolutely necessary. A <code>swappiness</code> value of
+     * <code>100</code> will cause pages to be swapped very aggressively. Accepted
+     * values are whole numbers between <code>0</code> and <code>100</code>. If the
+     * <code>swappiness</code> parameter is not specified, a default value of
+     * <code>60</code> is used. If a value is not specified for <code>maxSwap</code>
+     * then this parameter is ignored. This parameter maps to the
+     * <code>--memory-swappiness</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>swappiness</code> parameter is not supported.</p> </note>
+     */
+    inline LinuxParameters& WithSwappiness(int value) { SetSwappiness(value); return *this;}
+
   private:
 
     KernelCapabilities m_capabilities;
@@ -375,6 +505,12 @@ namespace Model
 
     Aws::Vector<Tmpfs> m_tmpfs;
     bool m_tmpfsHasBeenSet;
+
+    int m_maxSwap;
+    bool m_maxSwapHasBeenSet;
+
+    int m_swappiness;
+    bool m_swappinessHasBeenSet;
   };
 
 } // namespace Model

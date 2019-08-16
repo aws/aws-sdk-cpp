@@ -21,11 +21,13 @@
 #include <aws/robomaker/model/FailureBehavior.h>
 #include <aws/robomaker/model/SimulationJobErrorCode.h>
 #include <aws/robomaker/model/OutputLocation.h>
+#include <aws/robomaker/model/LoggingConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/robomaker/model/VPCConfigResponse.h>
 #include <aws/robomaker/model/RobotApplicationConfig.h>
 #include <aws/robomaker/model/SimulationApplicationConfig.h>
+#include <aws/robomaker/model/DataSource.h>
 #include <utility>
 
 namespace Aws
@@ -225,7 +227,11 @@ namespace Model
      * does not match value during version creation.</p> </dd>
      * <dt>SimulationApplicationVersionMismatchedEtag</dt> <dd> <p>Etag for
      * SimulationApplication does not match value during version creation.</p> </dd>
-     * </dl>
+     * <dt>WrongRegionS3Output</dt> <dd> <p>S3 output bucket is in a different region
+     * than AWS RoboMaker.</p> </dd> <dt>WrongRegionRobotApplication</dt> <dd>
+     * <p>RobotApplication bucket is in a different region than AWS RoboMaker.</p>
+     * </dd> <dt>WrongRegionSimulationApplication</dt> <dd> <p>SimulationApplication
+     * bucket is in a different region than AWS RoboMaker.</p> </dd> </dl>
      */
     inline const SimulationJobErrorCode& GetFailureCode() const{ return m_failureCode; }
 
@@ -252,7 +258,11 @@ namespace Model
      * does not match value during version creation.</p> </dd>
      * <dt>SimulationApplicationVersionMismatchedEtag</dt> <dd> <p>Etag for
      * SimulationApplication does not match value during version creation.</p> </dd>
-     * </dl>
+     * <dt>WrongRegionS3Output</dt> <dd> <p>S3 output bucket is in a different region
+     * than AWS RoboMaker.</p> </dd> <dt>WrongRegionRobotApplication</dt> <dd>
+     * <p>RobotApplication bucket is in a different region than AWS RoboMaker.</p>
+     * </dd> <dt>WrongRegionSimulationApplication</dt> <dd> <p>SimulationApplication
+     * bucket is in a different region than AWS RoboMaker.</p> </dd> </dl>
      */
     inline void SetFailureCode(const SimulationJobErrorCode& value) { m_failureCode = value; }
 
@@ -279,7 +289,11 @@ namespace Model
      * does not match value during version creation.</p> </dd>
      * <dt>SimulationApplicationVersionMismatchedEtag</dt> <dd> <p>Etag for
      * SimulationApplication does not match value during version creation.</p> </dd>
-     * </dl>
+     * <dt>WrongRegionS3Output</dt> <dd> <p>S3 output bucket is in a different region
+     * than AWS RoboMaker.</p> </dd> <dt>WrongRegionRobotApplication</dt> <dd>
+     * <p>RobotApplication bucket is in a different region than AWS RoboMaker.</p>
+     * </dd> <dt>WrongRegionSimulationApplication</dt> <dd> <p>SimulationApplication
+     * bucket is in a different region than AWS RoboMaker.</p> </dd> </dl>
      */
     inline void SetFailureCode(SimulationJobErrorCode&& value) { m_failureCode = std::move(value); }
 
@@ -306,7 +320,11 @@ namespace Model
      * does not match value during version creation.</p> </dd>
      * <dt>SimulationApplicationVersionMismatchedEtag</dt> <dd> <p>Etag for
      * SimulationApplication does not match value during version creation.</p> </dd>
-     * </dl>
+     * <dt>WrongRegionS3Output</dt> <dd> <p>S3 output bucket is in a different region
+     * than AWS RoboMaker.</p> </dd> <dt>WrongRegionRobotApplication</dt> <dd>
+     * <p>RobotApplication bucket is in a different region than AWS RoboMaker.</p>
+     * </dd> <dt>WrongRegionSimulationApplication</dt> <dd> <p>SimulationApplication
+     * bucket is in a different region than AWS RoboMaker.</p> </dd> </dl>
      */
     inline CreateSimulationJobResult& WithFailureCode(const SimulationJobErrorCode& value) { SetFailureCode(value); return *this;}
 
@@ -333,7 +351,11 @@ namespace Model
      * does not match value during version creation.</p> </dd>
      * <dt>SimulationApplicationVersionMismatchedEtag</dt> <dd> <p>Etag for
      * SimulationApplication does not match value during version creation.</p> </dd>
-     * </dl>
+     * <dt>WrongRegionS3Output</dt> <dd> <p>S3 output bucket is in a different region
+     * than AWS RoboMaker.</p> </dd> <dt>WrongRegionRobotApplication</dt> <dd>
+     * <p>RobotApplication bucket is in a different region than AWS RoboMaker.</p>
+     * </dd> <dt>WrongRegionSimulationApplication</dt> <dd> <p>SimulationApplication
+     * bucket is in a different region than AWS RoboMaker.</p> </dd> </dl>
      */
     inline CreateSimulationJobResult& WithFailureCode(SimulationJobErrorCode&& value) { SetFailureCode(std::move(value)); return *this;}
 
@@ -405,6 +427,32 @@ namespace Model
      * <p>Simulation job output files location.</p>
      */
     inline CreateSimulationJobResult& WithOutputLocation(OutputLocation&& value) { SetOutputLocation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The logging configuration.</p>
+     */
+    inline const LoggingConfig& GetLoggingConfig() const{ return m_loggingConfig; }
+
+    /**
+     * <p>The logging configuration.</p>
+     */
+    inline void SetLoggingConfig(const LoggingConfig& value) { m_loggingConfig = value; }
+
+    /**
+     * <p>The logging configuration.</p>
+     */
+    inline void SetLoggingConfig(LoggingConfig&& value) { m_loggingConfig = std::move(value); }
+
+    /**
+     * <p>The logging configuration.</p>
+     */
+    inline CreateSimulationJobResult& WithLoggingConfig(const LoggingConfig& value) { SetLoggingConfig(value); return *this;}
+
+    /**
+     * <p>The logging configuration.</p>
+     */
+    inline CreateSimulationJobResult& WithLoggingConfig(LoggingConfig&& value) { SetLoggingConfig(std::move(value)); return *this;}
 
 
     /**
@@ -555,6 +603,42 @@ namespace Model
 
 
     /**
+     * <p>The data sources for the simulation job.</p>
+     */
+    inline const Aws::Vector<DataSource>& GetDataSources() const{ return m_dataSources; }
+
+    /**
+     * <p>The data sources for the simulation job.</p>
+     */
+    inline void SetDataSources(const Aws::Vector<DataSource>& value) { m_dataSources = value; }
+
+    /**
+     * <p>The data sources for the simulation job.</p>
+     */
+    inline void SetDataSources(Aws::Vector<DataSource>&& value) { m_dataSources = std::move(value); }
+
+    /**
+     * <p>The data sources for the simulation job.</p>
+     */
+    inline CreateSimulationJobResult& WithDataSources(const Aws::Vector<DataSource>& value) { SetDataSources(value); return *this;}
+
+    /**
+     * <p>The data sources for the simulation job.</p>
+     */
+    inline CreateSimulationJobResult& WithDataSources(Aws::Vector<DataSource>&& value) { SetDataSources(std::move(value)); return *this;}
+
+    /**
+     * <p>The data sources for the simulation job.</p>
+     */
+    inline CreateSimulationJobResult& AddDataSources(const DataSource& value) { m_dataSources.push_back(value); return *this; }
+
+    /**
+     * <p>The data sources for the simulation job.</p>
+     */
+    inline CreateSimulationJobResult& AddDataSources(DataSource&& value) { m_dataSources.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The list of all tags added to the simulation job.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -658,6 +742,8 @@ namespace Model
 
     OutputLocation m_outputLocation;
 
+    LoggingConfig m_loggingConfig;
+
     long long m_maxJobDurationInSeconds;
 
     long long m_simulationTimeMillis;
@@ -667,6 +753,8 @@ namespace Model
     Aws::Vector<RobotApplicationConfig> m_robotApplications;
 
     Aws::Vector<SimulationApplicationConfig> m_simulationApplications;
+
+    Aws::Vector<DataSource> m_dataSources;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
 

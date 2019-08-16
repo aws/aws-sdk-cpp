@@ -250,9 +250,9 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that grants containers in the task permission to call AWS APIs on your
-     * behalf. For more information, see <a
+     * <p>The short name or full Amazon Resource Name (ARN) of the AWS Identity and
+     * Access Management (IAM) role that grants containers in the task permission to
+     * call AWS APIs on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon
      * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
@@ -266,9 +266,9 @@ namespace Model
     inline const Aws::String& GetTaskRoleArn() const{ return m_taskRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that grants containers in the task permission to call AWS APIs on your
-     * behalf. For more information, see <a
+     * <p>The short name or full Amazon Resource Name (ARN) of the AWS Identity and
+     * Access Management (IAM) role that grants containers in the task permission to
+     * call AWS APIs on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon
      * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
@@ -282,9 +282,9 @@ namespace Model
     inline bool TaskRoleArnHasBeenSet() const { return m_taskRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that grants containers in the task permission to call AWS APIs on your
-     * behalf. For more information, see <a
+     * <p>The short name or full Amazon Resource Name (ARN) of the AWS Identity and
+     * Access Management (IAM) role that grants containers in the task permission to
+     * call AWS APIs on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon
      * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
@@ -298,9 +298,9 @@ namespace Model
     inline void SetTaskRoleArn(const Aws::String& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that grants containers in the task permission to call AWS APIs on your
-     * behalf. For more information, see <a
+     * <p>The short name or full Amazon Resource Name (ARN) of the AWS Identity and
+     * Access Management (IAM) role that grants containers in the task permission to
+     * call AWS APIs on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon
      * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
@@ -314,9 +314,9 @@ namespace Model
     inline void SetTaskRoleArn(Aws::String&& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that grants containers in the task permission to call AWS APIs on your
-     * behalf. For more information, see <a
+     * <p>The short name or full Amazon Resource Name (ARN) of the AWS Identity and
+     * Access Management (IAM) role that grants containers in the task permission to
+     * call AWS APIs on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon
      * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
@@ -330,9 +330,9 @@ namespace Model
     inline void SetTaskRoleArn(const char* value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that grants containers in the task permission to call AWS APIs on your
-     * behalf. For more information, see <a
+     * <p>The short name or full Amazon Resource Name (ARN) of the AWS Identity and
+     * Access Management (IAM) role that grants containers in the task permission to
+     * call AWS APIs on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon
      * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
@@ -346,9 +346,9 @@ namespace Model
     inline TaskDefinition& WithTaskRoleArn(const Aws::String& value) { SetTaskRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that grants containers in the task permission to call AWS APIs on your
-     * behalf. For more information, see <a
+     * <p>The short name or full Amazon Resource Name (ARN) of the AWS Identity and
+     * Access Management (IAM) role that grants containers in the task permission to
+     * call AWS APIs on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon
      * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the
@@ -362,9 +362,9 @@ namespace Model
     inline TaskDefinition& WithTaskRoleArn(Aws::String&& value) { SetTaskRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
-     * role that grants containers in the task permission to call AWS APIs on your
-     * behalf. For more information, see <a
+     * <p>The short name or full Amazon Resource Name (ARN) of the AWS Identity and
+     * Access Management (IAM) role that grants containers in the task permission to
+     * call AWS APIs on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon
      * ECS Task Role</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>IAM roles for tasks on Windows require that the

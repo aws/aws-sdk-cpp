@@ -100,82 +100,58 @@ namespace Model
 
 
     /**
-     * <p>To launch the cluster in Amazon VPC, set this parameter to the identifier of
-     * the Amazon VPC subnet where you want the cluster to launch. If you do not
-     * specify this value, the cluster is launched in the normal AWS cloud, outside of
-     * a VPC.</p> <p>Amazon VPC currently does not support cluster compute quadruple
-     * extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
-     * instance type for nodes of a cluster launched in a VPC.</p>
+     * <p>Set this parameter to the identifier of the Amazon VPC subnet where you want
+     * the cluster to launch. If you do not specify this value, and your account
+     * supports EC2-Classic, the cluster launches in EC2-Classic.</p>
      */
     inline const Aws::String& GetEc2SubnetId() const{ return m_ec2SubnetId; }
 
     /**
-     * <p>To launch the cluster in Amazon VPC, set this parameter to the identifier of
-     * the Amazon VPC subnet where you want the cluster to launch. If you do not
-     * specify this value, the cluster is launched in the normal AWS cloud, outside of
-     * a VPC.</p> <p>Amazon VPC currently does not support cluster compute quadruple
-     * extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
-     * instance type for nodes of a cluster launched in a VPC.</p>
+     * <p>Set this parameter to the identifier of the Amazon VPC subnet where you want
+     * the cluster to launch. If you do not specify this value, and your account
+     * supports EC2-Classic, the cluster launches in EC2-Classic.</p>
      */
     inline bool Ec2SubnetIdHasBeenSet() const { return m_ec2SubnetIdHasBeenSet; }
 
     /**
-     * <p>To launch the cluster in Amazon VPC, set this parameter to the identifier of
-     * the Amazon VPC subnet where you want the cluster to launch. If you do not
-     * specify this value, the cluster is launched in the normal AWS cloud, outside of
-     * a VPC.</p> <p>Amazon VPC currently does not support cluster compute quadruple
-     * extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
-     * instance type for nodes of a cluster launched in a VPC.</p>
+     * <p>Set this parameter to the identifier of the Amazon VPC subnet where you want
+     * the cluster to launch. If you do not specify this value, and your account
+     * supports EC2-Classic, the cluster launches in EC2-Classic.</p>
      */
     inline void SetEc2SubnetId(const Aws::String& value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId = value; }
 
     /**
-     * <p>To launch the cluster in Amazon VPC, set this parameter to the identifier of
-     * the Amazon VPC subnet where you want the cluster to launch. If you do not
-     * specify this value, the cluster is launched in the normal AWS cloud, outside of
-     * a VPC.</p> <p>Amazon VPC currently does not support cluster compute quadruple
-     * extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
-     * instance type for nodes of a cluster launched in a VPC.</p>
+     * <p>Set this parameter to the identifier of the Amazon VPC subnet where you want
+     * the cluster to launch. If you do not specify this value, and your account
+     * supports EC2-Classic, the cluster launches in EC2-Classic.</p>
      */
     inline void SetEc2SubnetId(Aws::String&& value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId = std::move(value); }
 
     /**
-     * <p>To launch the cluster in Amazon VPC, set this parameter to the identifier of
-     * the Amazon VPC subnet where you want the cluster to launch. If you do not
-     * specify this value, the cluster is launched in the normal AWS cloud, outside of
-     * a VPC.</p> <p>Amazon VPC currently does not support cluster compute quadruple
-     * extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
-     * instance type for nodes of a cluster launched in a VPC.</p>
+     * <p>Set this parameter to the identifier of the Amazon VPC subnet where you want
+     * the cluster to launch. If you do not specify this value, and your account
+     * supports EC2-Classic, the cluster launches in EC2-Classic.</p>
      */
     inline void SetEc2SubnetId(const char* value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId.assign(value); }
 
     /**
-     * <p>To launch the cluster in Amazon VPC, set this parameter to the identifier of
-     * the Amazon VPC subnet where you want the cluster to launch. If you do not
-     * specify this value, the cluster is launched in the normal AWS cloud, outside of
-     * a VPC.</p> <p>Amazon VPC currently does not support cluster compute quadruple
-     * extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
-     * instance type for nodes of a cluster launched in a VPC.</p>
+     * <p>Set this parameter to the identifier of the Amazon VPC subnet where you want
+     * the cluster to launch. If you do not specify this value, and your account
+     * supports EC2-Classic, the cluster launches in EC2-Classic.</p>
      */
     inline Ec2InstanceAttributes& WithEc2SubnetId(const Aws::String& value) { SetEc2SubnetId(value); return *this;}
 
     /**
-     * <p>To launch the cluster in Amazon VPC, set this parameter to the identifier of
-     * the Amazon VPC subnet where you want the cluster to launch. If you do not
-     * specify this value, the cluster is launched in the normal AWS cloud, outside of
-     * a VPC.</p> <p>Amazon VPC currently does not support cluster compute quadruple
-     * extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
-     * instance type for nodes of a cluster launched in a VPC.</p>
+     * <p>Set this parameter to the identifier of the Amazon VPC subnet where you want
+     * the cluster to launch. If you do not specify this value, and your account
+     * supports EC2-Classic, the cluster launches in EC2-Classic.</p>
      */
     inline Ec2InstanceAttributes& WithEc2SubnetId(Aws::String&& value) { SetEc2SubnetId(std::move(value)); return *this;}
 
     /**
-     * <p>To launch the cluster in Amazon VPC, set this parameter to the identifier of
-     * the Amazon VPC subnet where you want the cluster to launch. If you do not
-     * specify this value, the cluster is launched in the normal AWS cloud, outside of
-     * a VPC.</p> <p>Amazon VPC currently does not support cluster compute quadruple
-     * extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge
-     * instance type for nodes of a cluster launched in a VPC.</p>
+     * <p>Set this parameter to the identifier of the Amazon VPC subnet where you want
+     * the cluster to launch. If you do not specify this value, and your account
+     * supports EC2-Classic, the cluster launches in EC2-Classic.</p>
      */
     inline Ec2InstanceAttributes& WithEc2SubnetId(const char* value) { SetEc2SubnetId(value); return *this;}
 
@@ -186,7 +162,7 @@ namespace Model
      * cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses
      * the EC2 subnet with the best fit from among the list of
      * <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances
-     * within that Subnet. If this value is not specified, and the account and region
+     * within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic
      * network and uses <code>RequestedEc2AvailabilityZones</code> instead of this
      * setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR
@@ -201,7 +177,7 @@ namespace Model
      * cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses
      * the EC2 subnet with the best fit from among the list of
      * <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances
-     * within that Subnet. If this value is not specified, and the account and region
+     * within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic
      * network and uses <code>RequestedEc2AvailabilityZones</code> instead of this
      * setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR
@@ -216,7 +192,7 @@ namespace Model
      * cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses
      * the EC2 subnet with the best fit from among the list of
      * <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances
-     * within that Subnet. If this value is not specified, and the account and region
+     * within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic
      * network and uses <code>RequestedEc2AvailabilityZones</code> instead of this
      * setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR
@@ -231,7 +207,7 @@ namespace Model
      * cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses
      * the EC2 subnet with the best fit from among the list of
      * <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances
-     * within that Subnet. If this value is not specified, and the account and region
+     * within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic
      * network and uses <code>RequestedEc2AvailabilityZones</code> instead of this
      * setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR
@@ -246,7 +222,7 @@ namespace Model
      * cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses
      * the EC2 subnet with the best fit from among the list of
      * <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances
-     * within that Subnet. If this value is not specified, and the account and region
+     * within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic
      * network and uses <code>RequestedEc2AvailabilityZones</code> instead of this
      * setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR
@@ -261,7 +237,7 @@ namespace Model
      * cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses
      * the EC2 subnet with the best fit from among the list of
      * <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances
-     * within that Subnet. If this value is not specified, and the account and region
+     * within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic
      * network and uses <code>RequestedEc2AvailabilityZones</code> instead of this
      * setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR
@@ -276,7 +252,7 @@ namespace Model
      * cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses
      * the EC2 subnet with the best fit from among the list of
      * <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances
-     * within that Subnet. If this value is not specified, and the account and region
+     * within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic
      * network and uses <code>RequestedEc2AvailabilityZones</code> instead of this
      * setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR
@@ -291,7 +267,7 @@ namespace Model
      * cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses
      * the EC2 subnet with the best fit from among the list of
      * <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances
-     * within that Subnet. If this value is not specified, and the account and region
+     * within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic
      * network and uses <code>RequestedEc2AvailabilityZones</code> instead of this
      * setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR
@@ -306,7 +282,7 @@ namespace Model
      * cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses
      * the EC2 subnet with the best fit from among the list of
      * <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances
-     * within that Subnet. If this value is not specified, and the account and region
+     * within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic
      * network and uses <code>RequestedEc2AvailabilityZones</code> instead of this
      * setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR

@@ -21,11 +21,13 @@
 #include <aws/robomaker/model/FailureBehavior.h>
 #include <aws/robomaker/model/SimulationJobErrorCode.h>
 #include <aws/robomaker/model/OutputLocation.h>
+#include <aws/robomaker/model/LoggingConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/robomaker/model/VPCConfigResponse.h>
 #include <aws/robomaker/model/RobotApplicationConfig.h>
 #include <aws/robomaker/model/SimulationApplicationConfig.h>
+#include <aws/robomaker/model/DataSource.h>
 #include <utility>
 
 namespace Aws
@@ -494,6 +496,32 @@ namespace Model
 
 
     /**
+     * <p>The logging configuration.</p>
+     */
+    inline const LoggingConfig& GetLoggingConfig() const{ return m_loggingConfig; }
+
+    /**
+     * <p>The logging configuration.</p>
+     */
+    inline void SetLoggingConfig(const LoggingConfig& value) { m_loggingConfig = value; }
+
+    /**
+     * <p>The logging configuration.</p>
+     */
+    inline void SetLoggingConfig(LoggingConfig&& value) { m_loggingConfig = std::move(value); }
+
+    /**
+     * <p>The logging configuration.</p>
+     */
+    inline DescribeSimulationJobResult& WithLoggingConfig(const LoggingConfig& value) { SetLoggingConfig(value); return *this;}
+
+    /**
+     * <p>The logging configuration.</p>
+     */
+    inline DescribeSimulationJobResult& WithLoggingConfig(LoggingConfig&& value) { SetLoggingConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>The maximum job duration in seconds. The value must be 8 days (691,200
      * seconds) or less.</p>
      */
@@ -644,6 +672,42 @@ namespace Model
 
 
     /**
+     * <p>The data sources for the simulation job.</p>
+     */
+    inline const Aws::Vector<DataSource>& GetDataSources() const{ return m_dataSources; }
+
+    /**
+     * <p>The data sources for the simulation job.</p>
+     */
+    inline void SetDataSources(const Aws::Vector<DataSource>& value) { m_dataSources = value; }
+
+    /**
+     * <p>The data sources for the simulation job.</p>
+     */
+    inline void SetDataSources(Aws::Vector<DataSource>&& value) { m_dataSources = std::move(value); }
+
+    /**
+     * <p>The data sources for the simulation job.</p>
+     */
+    inline DescribeSimulationJobResult& WithDataSources(const Aws::Vector<DataSource>& value) { SetDataSources(value); return *this;}
+
+    /**
+     * <p>The data sources for the simulation job.</p>
+     */
+    inline DescribeSimulationJobResult& WithDataSources(Aws::Vector<DataSource>&& value) { SetDataSources(std::move(value)); return *this;}
+
+    /**
+     * <p>The data sources for the simulation job.</p>
+     */
+    inline DescribeSimulationJobResult& AddDataSources(const DataSource& value) { m_dataSources.push_back(value); return *this; }
+
+    /**
+     * <p>The data sources for the simulation job.</p>
+     */
+    inline DescribeSimulationJobResult& AddDataSources(DataSource&& value) { m_dataSources.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The list of all tags added to the specified simulation job.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -751,6 +815,8 @@ namespace Model
 
     OutputLocation m_outputLocation;
 
+    LoggingConfig m_loggingConfig;
+
     long long m_maxJobDurationInSeconds;
 
     long long m_simulationTimeMillis;
@@ -760,6 +826,8 @@ namespace Model
     Aws::Vector<RobotApplicationConfig> m_robotApplications;
 
     Aws::Vector<SimulationApplicationConfig> m_simulationApplications;
+
+    Aws::Vector<DataSource> m_dataSources;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
 

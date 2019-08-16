@@ -1,0 +1,205 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/elasticmapreduce/EMR_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticmapreduce/model/PortRange.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace EMR
+{
+namespace Model
+{
+
+  /**
+   * <p>A configuration for Amazon EMR block public access. When
+   * <code>BlockPublicSecurityGroupRules</code> is set to <code>true</code>, Amazon
+   * EMR prevents cluster creation if one of the cluster's security groups has a rule
+   * that allows inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is
+   * specified as an exception using
+   * <code>PermittedPublicSecurityGroupRuleRanges</code>.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/BlockPublicAccessConfiguration">AWS
+   * API Reference</a></p>
+   */
+  class AWS_EMR_API BlockPublicAccessConfiguration
+  {
+  public:
+    BlockPublicAccessConfiguration();
+    BlockPublicAccessConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    BlockPublicAccessConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Indicates whether EMR block public access is enabled (<code>true</code>) or
+     * disabled (<code>false</code>). By default, the value is <code>false</code> for
+     * accounts that have created EMR clusters before July 2019. For accounts created
+     * after this, the default is <code>true</code>.</p>
+     */
+    inline bool GetBlockPublicSecurityGroupRules() const{ return m_blockPublicSecurityGroupRules; }
+
+    /**
+     * <p>Indicates whether EMR block public access is enabled (<code>true</code>) or
+     * disabled (<code>false</code>). By default, the value is <code>false</code> for
+     * accounts that have created EMR clusters before July 2019. For accounts created
+     * after this, the default is <code>true</code>.</p>
+     */
+    inline bool BlockPublicSecurityGroupRulesHasBeenSet() const { return m_blockPublicSecurityGroupRulesHasBeenSet; }
+
+    /**
+     * <p>Indicates whether EMR block public access is enabled (<code>true</code>) or
+     * disabled (<code>false</code>). By default, the value is <code>false</code> for
+     * accounts that have created EMR clusters before July 2019. For accounts created
+     * after this, the default is <code>true</code>.</p>
+     */
+    inline void SetBlockPublicSecurityGroupRules(bool value) { m_blockPublicSecurityGroupRulesHasBeenSet = true; m_blockPublicSecurityGroupRules = value; }
+
+    /**
+     * <p>Indicates whether EMR block public access is enabled (<code>true</code>) or
+     * disabled (<code>false</code>). By default, the value is <code>false</code> for
+     * accounts that have created EMR clusters before July 2019. For accounts created
+     * after this, the default is <code>true</code>.</p>
+     */
+    inline BlockPublicAccessConfiguration& WithBlockPublicSecurityGroupRules(bool value) { SetBlockPublicSecurityGroupRules(value); return *this;}
+
+
+    /**
+     * <p>Specifies ports and port ranges that are permitted to have security group
+     * rules that allow inbound traffic from all public sources. For example, if Port
+     * 23 (Telnet) is specified for
+     * <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster
+     * creation if a security group associated with the cluster has a rule that allows
+     * inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the
+     * source.</p> <p>By default, Port 22, which is used for SSH access to the cluster
+     * EC2 instances, is in the list of
+     * <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
+     */
+    inline const Aws::Vector<PortRange>& GetPermittedPublicSecurityGroupRuleRanges() const{ return m_permittedPublicSecurityGroupRuleRanges; }
+
+    /**
+     * <p>Specifies ports and port ranges that are permitted to have security group
+     * rules that allow inbound traffic from all public sources. For example, if Port
+     * 23 (Telnet) is specified for
+     * <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster
+     * creation if a security group associated with the cluster has a rule that allows
+     * inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the
+     * source.</p> <p>By default, Port 22, which is used for SSH access to the cluster
+     * EC2 instances, is in the list of
+     * <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
+     */
+    inline bool PermittedPublicSecurityGroupRuleRangesHasBeenSet() const { return m_permittedPublicSecurityGroupRuleRangesHasBeenSet; }
+
+    /**
+     * <p>Specifies ports and port ranges that are permitted to have security group
+     * rules that allow inbound traffic from all public sources. For example, if Port
+     * 23 (Telnet) is specified for
+     * <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster
+     * creation if a security group associated with the cluster has a rule that allows
+     * inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the
+     * source.</p> <p>By default, Port 22, which is used for SSH access to the cluster
+     * EC2 instances, is in the list of
+     * <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
+     */
+    inline void SetPermittedPublicSecurityGroupRuleRanges(const Aws::Vector<PortRange>& value) { m_permittedPublicSecurityGroupRuleRangesHasBeenSet = true; m_permittedPublicSecurityGroupRuleRanges = value; }
+
+    /**
+     * <p>Specifies ports and port ranges that are permitted to have security group
+     * rules that allow inbound traffic from all public sources. For example, if Port
+     * 23 (Telnet) is specified for
+     * <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster
+     * creation if a security group associated with the cluster has a rule that allows
+     * inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the
+     * source.</p> <p>By default, Port 22, which is used for SSH access to the cluster
+     * EC2 instances, is in the list of
+     * <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
+     */
+    inline void SetPermittedPublicSecurityGroupRuleRanges(Aws::Vector<PortRange>&& value) { m_permittedPublicSecurityGroupRuleRangesHasBeenSet = true; m_permittedPublicSecurityGroupRuleRanges = std::move(value); }
+
+    /**
+     * <p>Specifies ports and port ranges that are permitted to have security group
+     * rules that allow inbound traffic from all public sources. For example, if Port
+     * 23 (Telnet) is specified for
+     * <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster
+     * creation if a security group associated with the cluster has a rule that allows
+     * inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the
+     * source.</p> <p>By default, Port 22, which is used for SSH access to the cluster
+     * EC2 instances, is in the list of
+     * <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
+     */
+    inline BlockPublicAccessConfiguration& WithPermittedPublicSecurityGroupRuleRanges(const Aws::Vector<PortRange>& value) { SetPermittedPublicSecurityGroupRuleRanges(value); return *this;}
+
+    /**
+     * <p>Specifies ports and port ranges that are permitted to have security group
+     * rules that allow inbound traffic from all public sources. For example, if Port
+     * 23 (Telnet) is specified for
+     * <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster
+     * creation if a security group associated with the cluster has a rule that allows
+     * inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the
+     * source.</p> <p>By default, Port 22, which is used for SSH access to the cluster
+     * EC2 instances, is in the list of
+     * <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
+     */
+    inline BlockPublicAccessConfiguration& WithPermittedPublicSecurityGroupRuleRanges(Aws::Vector<PortRange>&& value) { SetPermittedPublicSecurityGroupRuleRanges(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies ports and port ranges that are permitted to have security group
+     * rules that allow inbound traffic from all public sources. For example, if Port
+     * 23 (Telnet) is specified for
+     * <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster
+     * creation if a security group associated with the cluster has a rule that allows
+     * inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the
+     * source.</p> <p>By default, Port 22, which is used for SSH access to the cluster
+     * EC2 instances, is in the list of
+     * <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
+     */
+    inline BlockPublicAccessConfiguration& AddPermittedPublicSecurityGroupRuleRanges(const PortRange& value) { m_permittedPublicSecurityGroupRuleRangesHasBeenSet = true; m_permittedPublicSecurityGroupRuleRanges.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies ports and port ranges that are permitted to have security group
+     * rules that allow inbound traffic from all public sources. For example, if Port
+     * 23 (Telnet) is specified for
+     * <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster
+     * creation if a security group associated with the cluster has a rule that allows
+     * inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the
+     * source.</p> <p>By default, Port 22, which is used for SSH access to the cluster
+     * EC2 instances, is in the list of
+     * <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
+     */
+    inline BlockPublicAccessConfiguration& AddPermittedPublicSecurityGroupRuleRanges(PortRange&& value) { m_permittedPublicSecurityGroupRuleRangesHasBeenSet = true; m_permittedPublicSecurityGroupRuleRanges.push_back(std::move(value)); return *this; }
+
+  private:
+
+    bool m_blockPublicSecurityGroupRules;
+    bool m_blockPublicSecurityGroupRulesHasBeenSet;
+
+    Aws::Vector<PortRange> m_permittedPublicSecurityGroupRuleRanges;
+    bool m_permittedPublicSecurityGroupRuleRangesHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace EMR
+} // namespace Aws

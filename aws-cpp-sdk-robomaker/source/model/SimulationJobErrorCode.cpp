@@ -35,6 +35,7 @@ namespace Aws
         static const int SimulationApplicationCrash_HASH = HashingUtils::HashString("SimulationApplicationCrash");
         static const int BadPermissionsRobotApplication_HASH = HashingUtils::HashString("BadPermissionsRobotApplication");
         static const int BadPermissionsSimulationApplication_HASH = HashingUtils::HashString("BadPermissionsSimulationApplication");
+        static const int BadPermissionsS3Object_HASH = HashingUtils::HashString("BadPermissionsS3Object");
         static const int BadPermissionsS3Output_HASH = HashingUtils::HashString("BadPermissionsS3Output");
         static const int BadPermissionsCloudwatchLogs_HASH = HashingUtils::HashString("BadPermissionsCloudwatchLogs");
         static const int SubnetIpLimitExceeded_HASH = HashingUtils::HashString("SubnetIpLimitExceeded");
@@ -42,8 +43,13 @@ namespace Aws
         static const int BadPermissionsUserCredentials_HASH = HashingUtils::HashString("BadPermissionsUserCredentials");
         static const int InvalidBundleRobotApplication_HASH = HashingUtils::HashString("InvalidBundleRobotApplication");
         static const int InvalidBundleSimulationApplication_HASH = HashingUtils::HashString("InvalidBundleSimulationApplication");
+        static const int InvalidS3Resource_HASH = HashingUtils::HashString("InvalidS3Resource");
+        static const int MismatchedEtag_HASH = HashingUtils::HashString("MismatchedEtag");
         static const int RobotApplicationVersionMismatchedEtag_HASH = HashingUtils::HashString("RobotApplicationVersionMismatchedEtag");
         static const int SimulationApplicationVersionMismatchedEtag_HASH = HashingUtils::HashString("SimulationApplicationVersionMismatchedEtag");
+        static const int ResourceNotFound_HASH = HashingUtils::HashString("ResourceNotFound");
+        static const int InvalidInput_HASH = HashingUtils::HashString("InvalidInput");
+        static const int WrongRegionS3Bucket_HASH = HashingUtils::HashString("WrongRegionS3Bucket");
         static const int WrongRegionS3Output_HASH = HashingUtils::HashString("WrongRegionS3Output");
         static const int WrongRegionRobotApplication_HASH = HashingUtils::HashString("WrongRegionRobotApplication");
         static const int WrongRegionSimulationApplication_HASH = HashingUtils::HashString("WrongRegionSimulationApplication");
@@ -71,6 +77,10 @@ namespace Aws
           else if (hashCode == BadPermissionsSimulationApplication_HASH)
           {
             return SimulationJobErrorCode::BadPermissionsSimulationApplication;
+          }
+          else if (hashCode == BadPermissionsS3Object_HASH)
+          {
+            return SimulationJobErrorCode::BadPermissionsS3Object;
           }
           else if (hashCode == BadPermissionsS3Output_HASH)
           {
@@ -100,6 +110,14 @@ namespace Aws
           {
             return SimulationJobErrorCode::InvalidBundleSimulationApplication;
           }
+          else if (hashCode == InvalidS3Resource_HASH)
+          {
+            return SimulationJobErrorCode::InvalidS3Resource;
+          }
+          else if (hashCode == MismatchedEtag_HASH)
+          {
+            return SimulationJobErrorCode::MismatchedEtag;
+          }
           else if (hashCode == RobotApplicationVersionMismatchedEtag_HASH)
           {
             return SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag;
@@ -107,6 +125,18 @@ namespace Aws
           else if (hashCode == SimulationApplicationVersionMismatchedEtag_HASH)
           {
             return SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag;
+          }
+          else if (hashCode == ResourceNotFound_HASH)
+          {
+            return SimulationJobErrorCode::ResourceNotFound;
+          }
+          else if (hashCode == InvalidInput_HASH)
+          {
+            return SimulationJobErrorCode::InvalidInput;
+          }
+          else if (hashCode == WrongRegionS3Bucket_HASH)
+          {
+            return SimulationJobErrorCode::WrongRegionS3Bucket;
           }
           else if (hashCode == WrongRegionS3Output_HASH)
           {
@@ -144,6 +174,8 @@ namespace Aws
             return "BadPermissionsRobotApplication";
           case SimulationJobErrorCode::BadPermissionsSimulationApplication:
             return "BadPermissionsSimulationApplication";
+          case SimulationJobErrorCode::BadPermissionsS3Object:
+            return "BadPermissionsS3Object";
           case SimulationJobErrorCode::BadPermissionsS3Output:
             return "BadPermissionsS3Output";
           case SimulationJobErrorCode::BadPermissionsCloudwatchLogs:
@@ -158,10 +190,20 @@ namespace Aws
             return "InvalidBundleRobotApplication";
           case SimulationJobErrorCode::InvalidBundleSimulationApplication:
             return "InvalidBundleSimulationApplication";
+          case SimulationJobErrorCode::InvalidS3Resource:
+            return "InvalidS3Resource";
+          case SimulationJobErrorCode::MismatchedEtag:
+            return "MismatchedEtag";
           case SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag:
             return "RobotApplicationVersionMismatchedEtag";
           case SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag:
             return "SimulationApplicationVersionMismatchedEtag";
+          case SimulationJobErrorCode::ResourceNotFound:
+            return "ResourceNotFound";
+          case SimulationJobErrorCode::InvalidInput:
+            return "InvalidInput";
+          case SimulationJobErrorCode::WrongRegionS3Bucket:
+            return "WrongRegionS3Bucket";
           case SimulationJobErrorCode::WrongRegionS3Output:
             return "WrongRegionS3Output";
           case SimulationJobErrorCode::WrongRegionRobotApplication:

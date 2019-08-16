@@ -3925,13 +3925,8 @@ namespace Model
 
 
     /**
-     * <p>The log configuration specification for the container.</p> <p>For tasks using
-     * the Fargate launch type, the supported log drivers are <code>awslogs</code> and
-     * <code>splunk</code>.</p> <p>For tasks using the EC2 launch type, the supported
-     * log drivers are <code>awslogs</code>, <code>syslog</code>, <code>gelf</code>,
-     * <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and
-     * <code>json-file</code>.</p> <p>This parameter maps to <code>LogConfig</code> in
-     * the <a
+     * <p>The log configuration specification for the container.</p> <p>This parameter
+     * maps to <code>LogConfig</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -3965,13 +3960,8 @@ namespace Model
     inline const LogConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
 
     /**
-     * <p>The log configuration specification for the container.</p> <p>For tasks using
-     * the Fargate launch type, the supported log drivers are <code>awslogs</code> and
-     * <code>splunk</code>.</p> <p>For tasks using the EC2 launch type, the supported
-     * log drivers are <code>awslogs</code>, <code>syslog</code>, <code>gelf</code>,
-     * <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and
-     * <code>json-file</code>.</p> <p>This parameter maps to <code>LogConfig</code> in
-     * the <a
+     * <p>The log configuration specification for the container.</p> <p>This parameter
+     * maps to <code>LogConfig</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4005,13 +3995,8 @@ namespace Model
     inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
 
     /**
-     * <p>The log configuration specification for the container.</p> <p>For tasks using
-     * the Fargate launch type, the supported log drivers are <code>awslogs</code> and
-     * <code>splunk</code>.</p> <p>For tasks using the EC2 launch type, the supported
-     * log drivers are <code>awslogs</code>, <code>syslog</code>, <code>gelf</code>,
-     * <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and
-     * <code>json-file</code>.</p> <p>This parameter maps to <code>LogConfig</code> in
-     * the <a
+     * <p>The log configuration specification for the container.</p> <p>This parameter
+     * maps to <code>LogConfig</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4045,13 +4030,8 @@ namespace Model
     inline void SetLogConfiguration(const LogConfiguration& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
 
     /**
-     * <p>The log configuration specification for the container.</p> <p>For tasks using
-     * the Fargate launch type, the supported log drivers are <code>awslogs</code> and
-     * <code>splunk</code>.</p> <p>For tasks using the EC2 launch type, the supported
-     * log drivers are <code>awslogs</code>, <code>syslog</code>, <code>gelf</code>,
-     * <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and
-     * <code>json-file</code>.</p> <p>This parameter maps to <code>LogConfig</code> in
-     * the <a
+     * <p>The log configuration specification for the container.</p> <p>This parameter
+     * maps to <code>LogConfig</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4085,13 +4065,8 @@ namespace Model
     inline void SetLogConfiguration(LogConfiguration&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
 
     /**
-     * <p>The log configuration specification for the container.</p> <p>For tasks using
-     * the Fargate launch type, the supported log drivers are <code>awslogs</code> and
-     * <code>splunk</code>.</p> <p>For tasks using the EC2 launch type, the supported
-     * log drivers are <code>awslogs</code>, <code>syslog</code>, <code>gelf</code>,
-     * <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and
-     * <code>json-file</code>.</p> <p>This parameter maps to <code>LogConfig</code> in
-     * the <a
+     * <p>The log configuration specification for the container.</p> <p>This parameter
+     * maps to <code>LogConfig</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4125,13 +4100,8 @@ namespace Model
     inline ContainerDefinition& WithLogConfiguration(const LogConfiguration& value) { SetLogConfiguration(value); return *this;}
 
     /**
-     * <p>The log configuration specification for the container.</p> <p>For tasks using
-     * the Fargate launch type, the supported log drivers are <code>awslogs</code> and
-     * <code>splunk</code>.</p> <p>For tasks using the EC2 launch type, the supported
-     * log drivers are <code>awslogs</code>, <code>syslog</code>, <code>gelf</code>,
-     * <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and
-     * <code>json-file</code>.</p> <p>This parameter maps to <code>LogConfig</code> in
-     * the <a
+     * <p>The log configuration specification for the container.</p> <p>This parameter
+     * maps to <code>LogConfig</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the

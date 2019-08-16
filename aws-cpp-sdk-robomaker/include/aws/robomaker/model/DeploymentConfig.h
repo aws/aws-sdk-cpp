@@ -90,6 +90,31 @@ namespace Model
      */
     inline DeploymentConfig& WithFailureThresholdPercentage(int value) { SetFailureThresholdPercentage(value); return *this;}
 
+
+    /**
+     * <p>The amount of time, in seconds, to wait for deployment to a single robot to
+     * complete. Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
+     */
+    inline long long GetRobotDeploymentTimeoutInSeconds() const{ return m_robotDeploymentTimeoutInSeconds; }
+
+    /**
+     * <p>The amount of time, in seconds, to wait for deployment to a single robot to
+     * complete. Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
+     */
+    inline bool RobotDeploymentTimeoutInSecondsHasBeenSet() const { return m_robotDeploymentTimeoutInSecondsHasBeenSet; }
+
+    /**
+     * <p>The amount of time, in seconds, to wait for deployment to a single robot to
+     * complete. Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
+     */
+    inline void SetRobotDeploymentTimeoutInSeconds(long long value) { m_robotDeploymentTimeoutInSecondsHasBeenSet = true; m_robotDeploymentTimeoutInSeconds = value; }
+
+    /**
+     * <p>The amount of time, in seconds, to wait for deployment to a single robot to
+     * complete. Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
+     */
+    inline DeploymentConfig& WithRobotDeploymentTimeoutInSeconds(long long value) { SetRobotDeploymentTimeoutInSeconds(value); return *this;}
+
   private:
 
     int m_concurrentDeploymentPercentage;
@@ -97,6 +122,9 @@ namespace Model
 
     int m_failureThresholdPercentage;
     bool m_failureThresholdPercentageHasBeenSet;
+
+    long long m_robotDeploymentTimeoutInSeconds;
+    bool m_robotDeploymentTimeoutInSecondsHasBeenSet;
   };
 
 } // namespace Model
