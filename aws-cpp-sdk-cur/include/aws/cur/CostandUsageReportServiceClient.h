@@ -23,6 +23,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cur/model/DeleteReportDefinitionResult.h>
 #include <aws/cur/model/DescribeReportDefinitionsResult.h>
+#include <aws/cur/model/ModifyReportDefinitionResult.h>
 #include <aws/cur/model/PutReportDefinitionResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -65,14 +66,17 @@ namespace Model
 {
         class DeleteReportDefinitionRequest;
         class DescribeReportDefinitionsRequest;
+        class ModifyReportDefinitionRequest;
         class PutReportDefinitionRequest;
 
         typedef Aws::Utils::Outcome<DeleteReportDefinitionResult, Aws::Client::AWSError<CostandUsageReportServiceErrors>> DeleteReportDefinitionOutcome;
         typedef Aws::Utils::Outcome<DescribeReportDefinitionsResult, Aws::Client::AWSError<CostandUsageReportServiceErrors>> DescribeReportDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<ModifyReportDefinitionResult, Aws::Client::AWSError<CostandUsageReportServiceErrors>> ModifyReportDefinitionOutcome;
         typedef Aws::Utils::Outcome<PutReportDefinitionResult, Aws::Client::AWSError<CostandUsageReportServiceErrors>> PutReportDefinitionOutcome;
 
         typedef std::future<DeleteReportDefinitionOutcome> DeleteReportDefinitionOutcomeCallable;
         typedef std::future<DescribeReportDefinitionsOutcome> DescribeReportDefinitionsOutcomeCallable;
+        typedef std::future<ModifyReportDefinitionOutcome> ModifyReportDefinitionOutcomeCallable;
         typedef std::future<PutReportDefinitionOutcome> PutReportDefinitionOutcomeCallable;
 } // namespace Model
 
@@ -80,6 +84,7 @@ namespace Model
 
     typedef std::function<void(const CostandUsageReportServiceClient*, const Model::DeleteReportDefinitionRequest&, const Model::DeleteReportDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReportDefinitionResponseReceivedHandler;
     typedef std::function<void(const CostandUsageReportServiceClient*, const Model::DescribeReportDefinitionsRequest&, const Model::DescribeReportDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReportDefinitionsResponseReceivedHandler;
+    typedef std::function<void(const CostandUsageReportServiceClient*, const Model::ModifyReportDefinitionRequest&, const Model::ModifyReportDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReportDefinitionResponseReceivedHandler;
     typedef std::function<void(const CostandUsageReportServiceClient*, const Model::PutReportDefinitionRequest&, const Model::PutReportDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutReportDefinitionResponseReceivedHandler;
 
   /**
@@ -176,6 +181,34 @@ namespace Model
         virtual void DescribeReportDefinitionsAsync(const Model::DescribeReportDefinitionsRequest& request, const DescribeReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Allows you to programatically update your report preferences.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ModifyReportDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyReportDefinitionOutcome ModifyReportDefinition(const Model::ModifyReportDefinitionRequest& request) const;
+
+        /**
+         * <p>Allows you to programatically update your report preferences.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ModifyReportDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyReportDefinitionOutcomeCallable ModifyReportDefinitionCallable(const Model::ModifyReportDefinitionRequest& request) const;
+
+        /**
+         * <p>Allows you to programatically update your report preferences.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ModifyReportDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyReportDefinitionAsync(const Model::ModifyReportDefinitionRequest& request, const ModifyReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a new report using the description that you provide.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition">AWS
@@ -209,6 +242,7 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void DeleteReportDefinitionAsyncHelper(const Model::DeleteReportDefinitionRequest& request, const DeleteReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReportDefinitionsAsyncHelper(const Model::DescribeReportDefinitionsRequest& request, const DescribeReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyReportDefinitionAsyncHelper(const Model::ModifyReportDefinitionRequest& request, const ModifyReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutReportDefinitionAsyncHelper(const Model::PutReportDefinitionRequest& request, const PutReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

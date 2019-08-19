@@ -35,7 +35,8 @@ namespace Model
     ap_southeast_2,
     ap_northeast_1,
     eu_north_1,
-    ap_northeast_3
+    ap_northeast_3,
+    ap_east_1
   };
 
 namespace AWSRegionMapper

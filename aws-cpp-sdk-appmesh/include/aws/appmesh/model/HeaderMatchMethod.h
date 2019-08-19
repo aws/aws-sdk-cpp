@@ -36,8 +36,7 @@ namespace Model
 
   /**
    * <p>An object representing the method and value to match the header value sent
-   * with a
-         request. Specify one match method.</p><p><h3>See Also:</h3>   <a
+   * with a request. Specify one match method.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HeaderMatchMethod">AWS
    * API Reference</a></p>
    */
@@ -149,44 +148,38 @@ namespace Model
 
 
     /**
-     * <p>The object that specifies the range of numbers within which the header value
-     * sent by the client
-         must be included.</p>
+     * <p>The object that specifies the range of numbers that the header value sent by
+     * the client must be included in.</p>
      */
     inline const MatchRange& GetRange() const{ return m_range; }
 
     /**
-     * <p>The object that specifies the range of numbers within which the header value
-     * sent by the client
-         must be included.</p>
+     * <p>The object that specifies the range of numbers that the header value sent by
+     * the client must be included in.</p>
      */
     inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
 
     /**
-     * <p>The object that specifies the range of numbers within which the header value
-     * sent by the client
-         must be included.</p>
+     * <p>The object that specifies the range of numbers that the header value sent by
+     * the client must be included in.</p>
      */
     inline void SetRange(const MatchRange& value) { m_rangeHasBeenSet = true; m_range = value; }
 
     /**
-     * <p>The object that specifies the range of numbers within which the header value
-     * sent by the client
-         must be included.</p>
+     * <p>The object that specifies the range of numbers that the header value sent by
+     * the client must be included in.</p>
      */
     inline void SetRange(MatchRange&& value) { m_rangeHasBeenSet = true; m_range = std::move(value); }
 
     /**
-     * <p>The object that specifies the range of numbers within which the header value
-     * sent by the client
-         must be included.</p>
+     * <p>The object that specifies the range of numbers that the header value sent by
+     * the client must be included in.</p>
      */
     inline HeaderMatchMethod& WithRange(const MatchRange& value) { SetRange(value); return *this;}
 
     /**
-     * <p>The object that specifies the range of numbers within which the header value
-     * sent by the client
-         must be included.</p>
+     * <p>The object that specifies the range of numbers that the header value sent by
+     * the client must be included in.</p>
      */
     inline HeaderMatchMethod& WithRange(MatchRange&& value) { SetRange(std::move(value)); return *this;}
 

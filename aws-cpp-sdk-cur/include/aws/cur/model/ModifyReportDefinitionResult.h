@@ -14,35 +14,33 @@
 */
 
 #pragma once
-#include <aws/appmesh/AppMesh_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cur/CostandUsageReportService_EXPORTS.h>
 
 namespace Aws
 {
-namespace AppMesh
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace CostandUsageReportService
 {
 namespace Model
 {
-  enum class HttpMethod
+  class AWS_COSTANDUSAGEREPORTSERVICE_API ModifyReportDefinitionResult
   {
-    NOT_SET,
-    CONNECT,
-    DELETE_,
-    GET_,
-    HEAD,
-    OPTIONS,
-    PATCH,
-    POST,
-    PUT,
-    TRACE
+  public:
+    ModifyReportDefinitionResult();
+    ModifyReportDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ModifyReportDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
   };
 
-namespace HttpMethodMapper
-{
-AWS_APPMESH_API HttpMethod GetHttpMethodForName(const Aws::String& name);
-
-AWS_APPMESH_API Aws::String GetNameForHttpMethod(HttpMethod value);
-} // namespace HttpMethodMapper
 } // namespace Model
-} // namespace AppMesh
+} // namespace CostandUsageReportService
 } // namespace Aws

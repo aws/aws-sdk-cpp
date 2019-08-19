@@ -255,32 +255,32 @@ namespace Model
 
 
     /**
-     * <p>The client request scheme to match on.</p>
+     * <p>The client request header scheme to match on.</p>
      */
     inline const HttpScheme& GetScheme() const{ return m_scheme; }
 
     /**
-     * <p>The client request scheme to match on.</p>
+     * <p>The client request header scheme to match on.</p>
      */
     inline bool SchemeHasBeenSet() const { return m_schemeHasBeenSet; }
 
     /**
-     * <p>The client request scheme to match on.</p>
+     * <p>The client request header scheme to match on.</p>
      */
     inline void SetScheme(const HttpScheme& value) { m_schemeHasBeenSet = true; m_scheme = value; }
 
     /**
-     * <p>The client request scheme to match on.</p>
+     * <p>The client request header scheme to match on.</p>
      */
     inline void SetScheme(HttpScheme&& value) { m_schemeHasBeenSet = true; m_scheme = std::move(value); }
 
     /**
-     * <p>The client request scheme to match on.</p>
+     * <p>The client request header scheme to match on.</p>
      */
     inline HttpRouteMatch& WithScheme(const HttpScheme& value) { SetScheme(value); return *this;}
 
     /**
-     * <p>The client request scheme to match on.</p>
+     * <p>The client request header scheme to match on.</p>
      */
     inline HttpRouteMatch& WithScheme(HttpScheme&& value) { SetScheme(std::move(value)); return *this;}
 
