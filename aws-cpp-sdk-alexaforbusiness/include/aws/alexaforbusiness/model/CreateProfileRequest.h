@@ -265,6 +265,47 @@ namespace Model
 
 
     /**
+     * <p>The locale of the room profile.</p>
+     */
+    inline const Aws::String& GetLocale() const{ return m_locale; }
+
+    /**
+     * <p>The locale of the room profile.</p>
+     */
+    inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
+
+    /**
+     * <p>The locale of the room profile.</p>
+     */
+    inline void SetLocale(const Aws::String& value) { m_localeHasBeenSet = true; m_locale = value; }
+
+    /**
+     * <p>The locale of the room profile.</p>
+     */
+    inline void SetLocale(Aws::String&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
+
+    /**
+     * <p>The locale of the room profile.</p>
+     */
+    inline void SetLocale(const char* value) { m_localeHasBeenSet = true; m_locale.assign(value); }
+
+    /**
+     * <p>The locale of the room profile.</p>
+     */
+    inline CreateProfileRequest& WithLocale(const Aws::String& value) { SetLocale(value); return *this;}
+
+    /**
+     * <p>The locale of the room profile.</p>
+     */
+    inline CreateProfileRequest& WithLocale(Aws::String&& value) { SetLocale(std::move(value)); return *this;}
+
+    /**
+     * <p>The locale of the room profile.</p>
+     */
+    inline CreateProfileRequest& WithLocale(const char* value) { SetLocale(value); return *this;}
+
+
+    /**
      * <p>The user-specified token that is used during the creation of a profile.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
@@ -386,6 +427,9 @@ namespace Model
 
     WakeWord m_wakeWord;
     bool m_wakeWordHasBeenSet;
+
+    Aws::String m_locale;
+    bool m_localeHasBeenSet;
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;

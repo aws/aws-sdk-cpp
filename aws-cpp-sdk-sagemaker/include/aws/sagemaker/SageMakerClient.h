@@ -1142,12 +1142,12 @@ namespace Model
          * network interfaces when launching this instance. This enables inbound traffic
          * from your own VPC to the notebook instance, assuming that the security groups
          * allow it.</p> </li> </ol> <p>After creating the notebook instance, Amazon
-         * SageMaker returns its Amazon Resource Name (ARN).</p> <p>After Amazon SageMaker
-         * creates the notebook instance, you can connect to the Jupyter server and work in
-         * Jupyter notebooks. For example, you can write code to explore a dataset that you
-         * can use for model training, train a model, host models by creating Amazon
-         * SageMaker endpoints, and validate hosted models. </p> <p>For more information,
-         * see <a
+         * SageMaker returns its Amazon Resource Name (ARN). You can't change the name of a
+         * notebook instance after you create it.</p> <p>After Amazon SageMaker creates the
+         * notebook instance, you can connect to the Jupyter server and work in Jupyter
+         * notebooks. For example, you can write code to explore a dataset that you can use
+         * for model training, train a model, host models by creating Amazon SageMaker
+         * endpoints, and validate hosted models. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
          * Works</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstance">AWS
@@ -1176,12 +1176,12 @@ namespace Model
          * network interfaces when launching this instance. This enables inbound traffic
          * from your own VPC to the notebook instance, assuming that the security groups
          * allow it.</p> </li> </ol> <p>After creating the notebook instance, Amazon
-         * SageMaker returns its Amazon Resource Name (ARN).</p> <p>After Amazon SageMaker
-         * creates the notebook instance, you can connect to the Jupyter server and work in
-         * Jupyter notebooks. For example, you can write code to explore a dataset that you
-         * can use for model training, train a model, host models by creating Amazon
-         * SageMaker endpoints, and validate hosted models. </p> <p>For more information,
-         * see <a
+         * SageMaker returns its Amazon Resource Name (ARN). You can't change the name of a
+         * notebook instance after you create it.</p> <p>After Amazon SageMaker creates the
+         * notebook instance, you can connect to the Jupyter server and work in Jupyter
+         * notebooks. For example, you can write code to explore a dataset that you can use
+         * for model training, train a model, host models by creating Amazon SageMaker
+         * endpoints, and validate hosted models. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
          * Works</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstance">AWS
@@ -1212,12 +1212,12 @@ namespace Model
          * network interfaces when launching this instance. This enables inbound traffic
          * from your own VPC to the notebook instance, assuming that the security groups
          * allow it.</p> </li> </ol> <p>After creating the notebook instance, Amazon
-         * SageMaker returns its Amazon Resource Name (ARN).</p> <p>After Amazon SageMaker
-         * creates the notebook instance, you can connect to the Jupyter server and work in
-         * Jupyter notebooks. For example, you can write code to explore a dataset that you
-         * can use for model training, train a model, host models by creating Amazon
-         * SageMaker endpoints, and validate hosted models. </p> <p>For more information,
-         * see <a
+         * SageMaker returns its Amazon Resource Name (ARN). You can't change the name of a
+         * notebook instance after you create it.</p> <p>After Amazon SageMaker creates the
+         * notebook instance, you can connect to the Jupyter server and work in Jupyter
+         * notebooks. For example, you can write code to explore a dataset that you can use
+         * for model training, train a model, host models by creating Amazon SageMaker
+         * endpoints, and validate hosted models. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
          * Works</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstance">AWS
@@ -1387,13 +1387,20 @@ namespace Model
          * Amazon SageMaker to save the results of model training. </p> <p/> </li> <li> <p>
          * <code>ResourceConfig</code> - Identifies the resources, ML compute instances,
          * and ML storage volumes to deploy for model training. In distributed training,
-         * you specify more than one instance. </p> </li> <li> <p> <code>RoleARN</code> -
-         * The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks
-         * on your behalf during model training. You must grant this role the necessary
-         * permissions so that Amazon SageMaker can successfully complete model training.
-         * </p> </li> <li> <p> <code>StoppingCondition</code> - Sets a time limit for
-         * training. Use this parameter to cap model training costs. </p> </li> </ul> <p>
-         * For more information about Amazon SageMaker, see <a
+         * you specify more than one instance. </p> </li> <li> <p>
+         * <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine
+         * learning models by up to 80% by using Amazon EC2 Spot instances. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed
+         * Spot Training</a>. </p> </li> <li> <p> <code>RoleARN</code> - The Amazon
+         * Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your
+         * behalf during model training. You must grant this role the necessary permissions
+         * so that Amazon SageMaker can successfully complete model training. </p> </li>
+         * <li> <p> <code>StoppingCondition</code> - To help cap training costs, use
+         * <code>MaxRuntimeInSeconds</code> to set a time limit for training. Use
+         * <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to to wait
+         * for a managed spot training job to complete. </p> </li> </ul> <p> For more
+         * information about Amazon SageMaker, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
          * Works</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingJob">AWS
@@ -1421,13 +1428,20 @@ namespace Model
          * Amazon SageMaker to save the results of model training. </p> <p/> </li> <li> <p>
          * <code>ResourceConfig</code> - Identifies the resources, ML compute instances,
          * and ML storage volumes to deploy for model training. In distributed training,
-         * you specify more than one instance. </p> </li> <li> <p> <code>RoleARN</code> -
-         * The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks
-         * on your behalf during model training. You must grant this role the necessary
-         * permissions so that Amazon SageMaker can successfully complete model training.
-         * </p> </li> <li> <p> <code>StoppingCondition</code> - Sets a time limit for
-         * training. Use this parameter to cap model training costs. </p> </li> </ul> <p>
-         * For more information about Amazon SageMaker, see <a
+         * you specify more than one instance. </p> </li> <li> <p>
+         * <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine
+         * learning models by up to 80% by using Amazon EC2 Spot instances. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed
+         * Spot Training</a>. </p> </li> <li> <p> <code>RoleARN</code> - The Amazon
+         * Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your
+         * behalf during model training. You must grant this role the necessary permissions
+         * so that Amazon SageMaker can successfully complete model training. </p> </li>
+         * <li> <p> <code>StoppingCondition</code> - To help cap training costs, use
+         * <code>MaxRuntimeInSeconds</code> to set a time limit for training. Use
+         * <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to to wait
+         * for a managed spot training job to complete. </p> </li> </ul> <p> For more
+         * information about Amazon SageMaker, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
          * Works</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingJob">AWS
@@ -1457,13 +1471,20 @@ namespace Model
          * Amazon SageMaker to save the results of model training. </p> <p/> </li> <li> <p>
          * <code>ResourceConfig</code> - Identifies the resources, ML compute instances,
          * and ML storage volumes to deploy for model training. In distributed training,
-         * you specify more than one instance. </p> </li> <li> <p> <code>RoleARN</code> -
-         * The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks
-         * on your behalf during model training. You must grant this role the necessary
-         * permissions so that Amazon SageMaker can successfully complete model training.
-         * </p> </li> <li> <p> <code>StoppingCondition</code> - Sets a time limit for
-         * training. Use this parameter to cap model training costs. </p> </li> </ul> <p>
-         * For more information about Amazon SageMaker, see <a
+         * you specify more than one instance. </p> </li> <li> <p>
+         * <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine
+         * learning models by up to 80% by using Amazon EC2 Spot instances. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed
+         * Spot Training</a>. </p> </li> <li> <p> <code>RoleARN</code> - The Amazon
+         * Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your
+         * behalf during model training. You must grant this role the necessary permissions
+         * so that Amazon SageMaker can successfully complete model training. </p> </li>
+         * <li> <p> <code>StoppingCondition</code> - To help cap training costs, use
+         * <code>MaxRuntimeInSeconds</code> to set a time limit for training. Use
+         * <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to to wait
+         * for a managed spot training job to complete. </p> </li> </ul> <p> For more
+         * information about Amazon SageMaker, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
          * Works</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingJob">AWS

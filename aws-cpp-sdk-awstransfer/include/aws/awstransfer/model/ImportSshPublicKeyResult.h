@@ -35,9 +35,10 @@ namespace Transfer
 namespace Model
 {
   /**
-   * <p>This response identifies the user, server they belong to, and the identifier
-   * of the SSH public key associated with that user. A user can have more than one
-   * key on each server that they are associate with.</p><p><h3>See Also:</h3>   <a
+   * <p>This response identifies the user, the server they belong to, and the
+   * identifier of the SSH public key associated with that user. A user can have more
+   * than one key on each server that they are associated with.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportSshPublicKeyResponse">AWS
    * API Reference</a></p>
    */

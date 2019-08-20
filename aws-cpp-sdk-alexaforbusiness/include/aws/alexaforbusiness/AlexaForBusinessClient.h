@@ -1181,10 +1181,7 @@ namespace Model
          * <p>When this action is called for a specified shared device, it allows
          * authorized users to delete the device's entire previous history of voice input
          * data and associated response data. This action can be called once every 24 hours
-         * for a specific shared device.</p> <p>When this action is called for a specified
-         * shared device, it allows authorized users to delete the device's entire previous
-         * history of voice input data. This action can be called once every 24 hours for a
-         * specific shared device. </p><p><h3>See Also:</h3>   <a
+         * for a specific shared device.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData">AWS
          * API Reference</a></p>
          */
@@ -1194,10 +1191,7 @@ namespace Model
          * <p>When this action is called for a specified shared device, it allows
          * authorized users to delete the device's entire previous history of voice input
          * data and associated response data. This action can be called once every 24 hours
-         * for a specific shared device.</p> <p>When this action is called for a specified
-         * shared device, it allows authorized users to delete the device's entire previous
-         * history of voice input data. This action can be called once every 24 hours for a
-         * specific shared device. </p><p><h3>See Also:</h3>   <a
+         * for a specific shared device.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData">AWS
          * API Reference</a></p>
          *
@@ -1209,10 +1203,7 @@ namespace Model
          * <p>When this action is called for a specified shared device, it allows
          * authorized users to delete the device's entire previous history of voice input
          * data and associated response data. This action can be called once every 24 hours
-         * for a specific shared device.</p> <p>When this action is called for a specified
-         * shared device, it allows authorized users to delete the device's entire previous
-         * history of voice input data. This action can be called once every 24 hours for a
-         * specific shared device. </p><p><h3>See Also:</h3>   <a
+         * for a specific shared device.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData">AWS
          * API Reference</a></p>
          *

@@ -1433,7 +1433,7 @@ namespace Model
          * can tag AppStream 2.0 image builders, images, fleets, and stacks.</p> <p>For
          * more information about tags, see <a
          * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-         * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
+         * Your Resources</a> in the <i>Amazon AppStream 2.0 Administration
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1445,7 +1445,7 @@ namespace Model
          * can tag AppStream 2.0 image builders, images, fleets, and stacks.</p> <p>For
          * more information about tags, see <a
          * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-         * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
+         * Your Resources</a> in the <i>Amazon AppStream 2.0 Administration
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1459,7 +1459,7 @@ namespace Model
          * can tag AppStream 2.0 image builders, images, fleets, and stacks.</p> <p>For
          * more information about tags, see <a
          * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-         * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
+         * Your Resources</a> in the <i>Amazon AppStream 2.0 Administration
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1577,7 +1577,7 @@ namespace Model
          * tags from your resources, use <a>UntagResource</a>.</p> <p>For more information
          * about tags, see <a
          * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-         * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
+         * Your Resources</a> in the <i>Amazon AppStream 2.0 Administration
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/TagResource">AWS
          * API Reference</a></p>
@@ -1593,7 +1593,7 @@ namespace Model
          * tags from your resources, use <a>UntagResource</a>.</p> <p>For more information
          * about tags, see <a
          * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-         * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
+         * Your Resources</a> in the <i>Amazon AppStream 2.0 Administration
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/TagResource">AWS
          * API Reference</a></p>
@@ -1611,7 +1611,7 @@ namespace Model
          * tags from your resources, use <a>UntagResource</a>.</p> <p>For more information
          * about tags, see <a
          * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-         * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
+         * Your Resources</a> in the <i>Amazon AppStream 2.0 Administration
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/TagResource">AWS
          * API Reference</a></p>
@@ -1625,7 +1625,7 @@ namespace Model
          * resource.</p> <p>To list the current tags for your resources, use
          * <a>ListTagsForResource</a>.</p> <p>For more information about tags, see <a
          * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-         * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
+         * Your Resources</a> in the <i>Amazon AppStream 2.0 Administration
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UntagResource">AWS
          * API Reference</a></p>
@@ -1637,7 +1637,7 @@ namespace Model
          * resource.</p> <p>To list the current tags for your resources, use
          * <a>ListTagsForResource</a>.</p> <p>For more information about tags, see <a
          * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-         * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
+         * Your Resources</a> in the <i>Amazon AppStream 2.0 Administration
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UntagResource">AWS
          * API Reference</a></p>
@@ -1651,7 +1651,7 @@ namespace Model
          * resource.</p> <p>To list the current tags for your resources, use
          * <a>ListTagsForResource</a>.</p> <p>For more information about tags, see <a
          * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-         * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer
+         * Your Resources</a> in the <i>Amazon AppStream 2.0 Administration
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UntagResource">AWS
          * API Reference</a></p>

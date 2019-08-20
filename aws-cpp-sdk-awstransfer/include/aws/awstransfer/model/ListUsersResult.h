@@ -47,7 +47,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListUsers</code> call, a
      * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * a subsequent command to the <code>NextToken</code> parameter to continue listing
      * additional users.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -55,7 +55,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListUsers</code> call, a
      * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * a subsequent command to the <code>NextToken</code> parameter to continue listing
      * additional users.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
@@ -63,7 +63,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListUsers</code> call, a
      * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * a subsequent command to the <code>NextToken</code> parameter to continue listing
      * additional users.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
@@ -71,7 +71,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListUsers</code> call, a
      * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * a subsequent command to the <code>NextToken</code> parameter to continue listing
      * additional users.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
@@ -79,7 +79,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListUsers</code> call, a
      * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * a subsequent command to the <code>NextToken</code> parameter to continue listing
      * additional users.</p>
      */
     inline ListUsersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
@@ -87,7 +87,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListUsers</code> call, a
      * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * a subsequent command to the <code>NextToken</code> parameter to continue listing
      * additional users.</p>
      */
     inline ListUsersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
@@ -95,7 +95,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListUsers</code> call, a
      * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * a subsequent command to the <code>NextToken</code> parameter to continue listing
      * additional users.</p>
      */
     inline ListUsersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

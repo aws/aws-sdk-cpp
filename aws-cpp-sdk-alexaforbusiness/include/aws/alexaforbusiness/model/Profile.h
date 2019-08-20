@@ -329,6 +329,47 @@ namespace Model
 
 
     /**
+     * <p>The locale of a room profile.</p>
+     */
+    inline const Aws::String& GetLocale() const{ return m_locale; }
+
+    /**
+     * <p>The locale of a room profile.</p>
+     */
+    inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
+
+    /**
+     * <p>The locale of a room profile.</p>
+     */
+    inline void SetLocale(const Aws::String& value) { m_localeHasBeenSet = true; m_locale = value; }
+
+    /**
+     * <p>The locale of a room profile.</p>
+     */
+    inline void SetLocale(Aws::String&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
+
+    /**
+     * <p>The locale of a room profile.</p>
+     */
+    inline void SetLocale(const char* value) { m_localeHasBeenSet = true; m_locale.assign(value); }
+
+    /**
+     * <p>The locale of a room profile.</p>
+     */
+    inline Profile& WithLocale(const Aws::String& value) { SetLocale(value); return *this;}
+
+    /**
+     * <p>The locale of a room profile.</p>
+     */
+    inline Profile& WithLocale(Aws::String&& value) { SetLocale(std::move(value)); return *this;}
+
+    /**
+     * <p>The locale of a room profile.</p>
+     */
+    inline Profile& WithLocale(const char* value) { SetLocale(value); return *this;}
+
+
+    /**
      * <p>The setup mode of a room profile.</p>
      */
     inline bool GetSetupModeDisabled() const{ return m_setupModeDisabled; }
@@ -456,6 +497,9 @@ namespace Model
 
     WakeWord m_wakeWord;
     bool m_wakeWordHasBeenSet;
+
+    Aws::String m_locale;
+    bool m_localeHasBeenSet;
 
     bool m_setupModeDisabled;
     bool m_setupModeDisabledHasBeenSet;

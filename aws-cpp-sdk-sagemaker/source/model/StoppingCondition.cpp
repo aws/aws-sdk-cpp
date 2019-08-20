@@ -30,13 +30,17 @@ namespace Model
 
 StoppingCondition::StoppingCondition() : 
     m_maxRuntimeInSeconds(0),
-    m_maxRuntimeInSecondsHasBeenSet(false)
+    m_maxRuntimeInSecondsHasBeenSet(false),
+    m_maxWaitTimeInSeconds(0),
+    m_maxWaitTimeInSecondsHasBeenSet(false)
 {
 }
 
 StoppingCondition::StoppingCondition(JsonView jsonValue) : 
     m_maxRuntimeInSeconds(0),
-    m_maxRuntimeInSecondsHasBeenSet(false)
+    m_maxRuntimeInSecondsHasBeenSet(false),
+    m_maxWaitTimeInSeconds(0),
+    m_maxWaitTimeInSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +54,13 @@ StoppingCondition& StoppingCondition::operator =(JsonView jsonValue)
     m_maxRuntimeInSecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MaxWaitTimeInSeconds"))
+  {
+    m_maxWaitTimeInSeconds = jsonValue.GetInteger("MaxWaitTimeInSeconds");
+
+    m_maxWaitTimeInSecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -60,6 +71,12 @@ JsonValue StoppingCondition::Jsonize() const
   if(m_maxRuntimeInSecondsHasBeenSet)
   {
    payload.WithInteger("MaxRuntimeInSeconds", m_maxRuntimeInSeconds);
+
+  }
+
+  if(m_maxWaitTimeInSecondsHasBeenSet)
+  {
+   payload.WithInteger("MaxWaitTimeInSeconds", m_maxWaitTimeInSeconds);
 
   }
 

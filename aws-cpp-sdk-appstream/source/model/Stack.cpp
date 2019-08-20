@@ -39,7 +39,8 @@ Stack::Stack() :
     m_feedbackURLHasBeenSet(false),
     m_stackErrorsHasBeenSet(false),
     m_userSettingsHasBeenSet(false),
-    m_applicationSettingsHasBeenSet(false)
+    m_applicationSettingsHasBeenSet(false),
+    m_accessEndpointsHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ Stack::Stack(JsonView jsonValue) :
     m_feedbackURLHasBeenSet(false),
     m_stackErrorsHasBeenSet(false),
     m_userSettingsHasBeenSet(false),
-    m_applicationSettingsHasBeenSet(false)
+    m_applicationSettingsHasBeenSet(false),
+    m_accessEndpointsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -147,6 +149,16 @@ Stack& Stack::operator =(JsonView jsonValue)
     m_applicationSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AccessEndpoints"))
+  {
+    Array<JsonView> accessEndpointsJsonList = jsonValue.GetArray("AccessEndpoints");
+    for(unsigned accessEndpointsIndex = 0; accessEndpointsIndex < accessEndpointsJsonList.GetLength(); ++accessEndpointsIndex)
+    {
+      m_accessEndpoints.push_back(accessEndpointsJsonList[accessEndpointsIndex].AsObject());
+    }
+    m_accessEndpointsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -231,6 +243,17 @@ JsonValue Stack::Jsonize() const
   if(m_applicationSettingsHasBeenSet)
   {
    payload.WithObject("ApplicationSettings", m_applicationSettings.Jsonize());
+
+  }
+
+  if(m_accessEndpointsHasBeenSet)
+  {
+   Array<JsonValue> accessEndpointsJsonList(m_accessEndpoints.size());
+   for(unsigned accessEndpointsIndex = 0; accessEndpointsIndex < accessEndpointsJsonList.GetLength(); ++accessEndpointsIndex)
+   {
+     accessEndpointsJsonList[accessEndpointsIndex].AsObject(m_accessEndpoints[accessEndpointsIndex].Jsonize());
+   }
+   payload.WithArray("AccessEndpoints", std::move(accessEndpointsJsonList));
 
   }
 

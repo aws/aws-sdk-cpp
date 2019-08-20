@@ -25,6 +25,7 @@
 #include <aws/appstream/model/NetworkAccessConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appstream/model/ResourceError.h>
+#include <aws/appstream/model/AccessEndpoint.h>
 #include <utility>
 
 namespace Aws
@@ -624,6 +625,63 @@ namespace Model
      */
     inline ImageBuilder& WithAppstreamAgentVersion(const char* value) { SetAppstreamAgentVersion(value); return *this;}
 
+
+    /**
+     * <p>The list of virtual private cloud (VPC) interface endpoint objects.
+     * Administrators can connect to the image builder only through the specified
+     * endpoints.</p>
+     */
+    inline const Aws::Vector<AccessEndpoint>& GetAccessEndpoints() const{ return m_accessEndpoints; }
+
+    /**
+     * <p>The list of virtual private cloud (VPC) interface endpoint objects.
+     * Administrators can connect to the image builder only through the specified
+     * endpoints.</p>
+     */
+    inline bool AccessEndpointsHasBeenSet() const { return m_accessEndpointsHasBeenSet; }
+
+    /**
+     * <p>The list of virtual private cloud (VPC) interface endpoint objects.
+     * Administrators can connect to the image builder only through the specified
+     * endpoints.</p>
+     */
+    inline void SetAccessEndpoints(const Aws::Vector<AccessEndpoint>& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints = value; }
+
+    /**
+     * <p>The list of virtual private cloud (VPC) interface endpoint objects.
+     * Administrators can connect to the image builder only through the specified
+     * endpoints.</p>
+     */
+    inline void SetAccessEndpoints(Aws::Vector<AccessEndpoint>&& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints = std::move(value); }
+
+    /**
+     * <p>The list of virtual private cloud (VPC) interface endpoint objects.
+     * Administrators can connect to the image builder only through the specified
+     * endpoints.</p>
+     */
+    inline ImageBuilder& WithAccessEndpoints(const Aws::Vector<AccessEndpoint>& value) { SetAccessEndpoints(value); return *this;}
+
+    /**
+     * <p>The list of virtual private cloud (VPC) interface endpoint objects.
+     * Administrators can connect to the image builder only through the specified
+     * endpoints.</p>
+     */
+    inline ImageBuilder& WithAccessEndpoints(Aws::Vector<AccessEndpoint>&& value) { SetAccessEndpoints(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of virtual private cloud (VPC) interface endpoint objects.
+     * Administrators can connect to the image builder only through the specified
+     * endpoints.</p>
+     */
+    inline ImageBuilder& AddAccessEndpoints(const AccessEndpoint& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints.push_back(value); return *this; }
+
+    /**
+     * <p>The list of virtual private cloud (VPC) interface endpoint objects.
+     * Administrators can connect to the image builder only through the specified
+     * endpoints.</p>
+     */
+    inline ImageBuilder& AddAccessEndpoints(AccessEndpoint&& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -673,6 +731,9 @@ namespace Model
 
     Aws::String m_appstreamAgentVersion;
     bool m_appstreamAgentVersionHasBeenSet;
+
+    Aws::Vector<AccessEndpoint> m_accessEndpoints;
+    bool m_accessEndpointsHasBeenSet;
   };
 
 } // namespace Model

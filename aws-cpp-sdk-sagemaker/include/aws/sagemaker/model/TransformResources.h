@@ -52,42 +52,42 @@ namespace Model
     /**
      * <p>The ML compute instance type for the transform job. If you are using built-in
      * algorithms to transform moderately sized datasets, we recommend using
-     * ml.m4.xlarge or <code>ml.m5.large</code>instance types.</p>
+     * ml.m4.xlarge or <code>ml.m5.large</code> instance types.</p>
      */
     inline const TransformInstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
      * <p>The ML compute instance type for the transform job. If you are using built-in
      * algorithms to transform moderately sized datasets, we recommend using
-     * ml.m4.xlarge or <code>ml.m5.large</code>instance types.</p>
+     * ml.m4.xlarge or <code>ml.m5.large</code> instance types.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The ML compute instance type for the transform job. If you are using built-in
      * algorithms to transform moderately sized datasets, we recommend using
-     * ml.m4.xlarge or <code>ml.m5.large</code>instance types.</p>
+     * ml.m4.xlarge or <code>ml.m5.large</code> instance types.</p>
      */
     inline void SetInstanceType(const TransformInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
      * <p>The ML compute instance type for the transform job. If you are using built-in
      * algorithms to transform moderately sized datasets, we recommend using
-     * ml.m4.xlarge or <code>ml.m5.large</code>instance types.</p>
+     * ml.m4.xlarge or <code>ml.m5.large</code> instance types.</p>
      */
     inline void SetInstanceType(TransformInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The ML compute instance type for the transform job. If you are using built-in
      * algorithms to transform moderately sized datasets, we recommend using
-     * ml.m4.xlarge or <code>ml.m5.large</code>instance types.</p>
+     * ml.m4.xlarge or <code>ml.m5.large</code> instance types.</p>
      */
     inline TransformResources& WithInstanceType(const TransformInstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
      * <p>The ML compute instance type for the transform job. If you are using built-in
      * algorithms to transform moderately sized datasets, we recommend using
-     * ml.m4.xlarge or <code>ml.m5.large</code>instance types.</p>
+     * ml.m4.xlarge or <code>ml.m5.large</code> instance types.</p>
      */
     inline TransformResources& WithInstanceType(TransformInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 

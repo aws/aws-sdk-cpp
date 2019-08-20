@@ -44,7 +44,10 @@ namespace Aws
         static const int deeplens_HASH = HashingUtils::HashString("deeplens");
         static const int rk3399_HASH = HashingUtils::HashString("rk3399");
         static const int rk3288_HASH = HashingUtils::HashString("rk3288");
+        static const int aisage_HASH = HashingUtils::HashString("aisage");
         static const int sbe_c_HASH = HashingUtils::HashString("sbe_c");
+        static const int qcs605_HASH = HashingUtils::HashString("qcs605");
+        static const int qcs603_HASH = HashingUtils::HashString("qcs603");
 
 
         TargetDevice GetTargetDeviceForName(const Aws::String& name)
@@ -106,9 +109,21 @@ namespace Aws
           {
             return TargetDevice::rk3288;
           }
+          else if (hashCode == aisage_HASH)
+          {
+            return TargetDevice::aisage;
+          }
           else if (hashCode == sbe_c_HASH)
           {
             return TargetDevice::sbe_c;
+          }
+          else if (hashCode == qcs605_HASH)
+          {
+            return TargetDevice::qcs605;
+          }
+          else if (hashCode == qcs603_HASH)
+          {
+            return TargetDevice::qcs603;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -152,8 +167,14 @@ namespace Aws
             return "rk3399";
           case TargetDevice::rk3288:
             return "rk3288";
+          case TargetDevice::aisage:
+            return "aisage";
           case TargetDevice::sbe_c:
             return "sbe_c";
+          case TargetDevice::qcs605:
+            return "qcs605";
+          case TargetDevice::qcs603:
+            return "qcs603";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

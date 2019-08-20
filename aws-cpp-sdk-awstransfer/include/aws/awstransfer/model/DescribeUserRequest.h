@@ -95,57 +95,57 @@ namespace Model
 
     /**
      * <p>The name of the user assigned to one or more servers. User names are part of
-     * the sign-in credentials to use the AWS Transfer service and perform file
-     * transfer tasks.</p>
+     * the sign-in credentials to use the AWS Transfer for SFTP service and perform
+     * file transfer tasks.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
      * <p>The name of the user assigned to one or more servers. User names are part of
-     * the sign-in credentials to use the AWS Transfer service and perform file
-     * transfer tasks.</p>
+     * the sign-in credentials to use the AWS Transfer for SFTP service and perform
+     * file transfer tasks.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
      * <p>The name of the user assigned to one or more servers. User names are part of
-     * the sign-in credentials to use the AWS Transfer service and perform file
-     * transfer tasks.</p>
+     * the sign-in credentials to use the AWS Transfer for SFTP service and perform
+     * file transfer tasks.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
      * <p>The name of the user assigned to one or more servers. User names are part of
-     * the sign-in credentials to use the AWS Transfer service and perform file
-     * transfer tasks.</p>
+     * the sign-in credentials to use the AWS Transfer for SFTP service and perform
+     * file transfer tasks.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the user assigned to one or more servers. User names are part of
-     * the sign-in credentials to use the AWS Transfer service and perform file
-     * transfer tasks.</p>
+     * the sign-in credentials to use the AWS Transfer for SFTP service and perform
+     * file transfer tasks.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
      * <p>The name of the user assigned to one or more servers. User names are part of
-     * the sign-in credentials to use the AWS Transfer service and perform file
-     * transfer tasks.</p>
+     * the sign-in credentials to use the AWS Transfer for SFTP service and perform
+     * file transfer tasks.</p>
      */
     inline DescribeUserRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
      * <p>The name of the user assigned to one or more servers. User names are part of
-     * the sign-in credentials to use the AWS Transfer service and perform file
-     * transfer tasks.</p>
+     * the sign-in credentials to use the AWS Transfer for SFTP service and perform
+     * file transfer tasks.</p>
      */
     inline DescribeUserRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the user assigned to one or more servers. User names are part of
-     * the sign-in credentials to use the AWS Transfer service and perform file
-     * transfer tasks.</p>
+     * the sign-in credentials to use the AWS Transfer for SFTP service and perform
+     * file transfer tasks.</p>
      */
     inline DescribeUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 

@@ -34,7 +34,8 @@ CreateImageBuilderRequest::CreateImageBuilderRequest() :
     m_enableDefaultInternetAccessHasBeenSet(false),
     m_domainJoinInfoHasBeenSet(false),
     m_appstreamAgentVersionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_accessEndpointsHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,17 @@ Aws::String CreateImageBuilderRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_accessEndpointsHasBeenSet)
+  {
+   Array<JsonValue> accessEndpointsJsonList(m_accessEndpoints.size());
+   for(unsigned accessEndpointsIndex = 0; accessEndpointsIndex < accessEndpointsJsonList.GetLength(); ++accessEndpointsIndex)
+   {
+     accessEndpointsJsonList[accessEndpointsIndex].AsObject(m_accessEndpoints[accessEndpointsIndex].Jsonize());
+   }
+   payload.WithArray("AccessEndpoints", std::move(accessEndpointsJsonList));
 
   }
 

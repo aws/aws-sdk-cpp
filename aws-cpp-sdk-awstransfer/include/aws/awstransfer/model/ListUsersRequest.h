@@ -72,7 +72,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListUsers</code> call, a
      * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * a subsequent command to the <code>NextToken</code> parameter to continue listing
      * additional users.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -80,7 +80,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListUsers</code> call, a
      * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * a subsequent command to the <code>NextToken</code> parameter to continue listing
      * additional users.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -88,7 +88,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListUsers</code> call, a
      * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * a subsequent command to the <code>NextToken</code> parameter to continue listing
      * additional users.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
@@ -96,7 +96,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListUsers</code> call, a
      * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * a subsequent command to the <code>NextToken</code> parameter to continue listing
      * additional users.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
@@ -104,7 +104,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListUsers</code> call, a
      * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * a subsequent command to the <code>NextToken</code> parameter to continue listing
      * additional users.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
@@ -112,7 +112,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListUsers</code> call, a
      * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * a subsequent command to the <code>NextToken</code> parameter to continue listing
      * additional users.</p>
      */
     inline ListUsersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
@@ -120,7 +120,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListUsers</code> call, a
      * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * a subsequent command to the <code>NextToken</code> parameter to continue listing
      * additional users.</p>
      */
     inline ListUsersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
@@ -128,7 +128,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListUsers</code> call, a
      * <code>NextToken</code> parameter is returned in the output. You can then pass in
-     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * a subsequent command to the <code>NextToken</code> parameter to continue listing
      * additional users.</p>
      */
     inline ListUsersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
@@ -136,49 +136,49 @@ namespace Model
 
     /**
      * <p>A system-assigned unique identifier for a Secure File Transfer Protocol
-     * (SFTP) server that has users are assigned to it.</p>
+     * (SFTP) server that has users assigned to it.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
 
     /**
      * <p>A system-assigned unique identifier for a Secure File Transfer Protocol
-     * (SFTP) server that has users are assigned to it.</p>
+     * (SFTP) server that has users assigned to it.</p>
      */
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
 
     /**
      * <p>A system-assigned unique identifier for a Secure File Transfer Protocol
-     * (SFTP) server that has users are assigned to it.</p>
+     * (SFTP) server that has users assigned to it.</p>
      */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
 
     /**
      * <p>A system-assigned unique identifier for a Secure File Transfer Protocol
-     * (SFTP) server that has users are assigned to it.</p>
+     * (SFTP) server that has users assigned to it.</p>
      */
     inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
 
     /**
      * <p>A system-assigned unique identifier for a Secure File Transfer Protocol
-     * (SFTP) server that has users are assigned to it.</p>
+     * (SFTP) server that has users assigned to it.</p>
      */
     inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
 
     /**
      * <p>A system-assigned unique identifier for a Secure File Transfer Protocol
-     * (SFTP) server that has users are assigned to it.</p>
+     * (SFTP) server that has users assigned to it.</p>
      */
     inline ListUsersRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
 
     /**
      * <p>A system-assigned unique identifier for a Secure File Transfer Protocol
-     * (SFTP) server that has users are assigned to it.</p>
+     * (SFTP) server that has users assigned to it.</p>
      */
     inline ListUsersRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
 
     /**
      * <p>A system-assigned unique identifier for a Secure File Transfer Protocol
-     * (SFTP) server that has users are assigned to it.</p>
+     * (SFTP) server that has users assigned to it.</p>
      */
     inline ListUsersRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
 

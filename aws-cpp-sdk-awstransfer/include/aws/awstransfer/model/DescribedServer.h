@@ -41,10 +41,10 @@ namespace Model
 {
 
   /**
-   * <p>Describe the properties of the server that was specified. Information
-   * returned includes: the server Amazon Resource Name (ARN), the authentication
-   * configuration and type, the logging role, server Id and state, and assigned tags
-   * or metadata. </p><p><h3>See Also:</h3>   <a
+   * <p>Describes the properties of the server that was specified. Information
+   * returned includes the following: the server Amazon Resource Name (ARN), the
+   * authentication configuration and type, the logging role, the server ID and
+   * state, and assigned tags or metadata. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribedServer">AWS
    * API Reference</a></p>
    */
@@ -187,58 +187,58 @@ namespace Model
 
 
     /**
-     * <p>This value contains the Message-Digest Algorithm (MD5) hash of the server's
-     * host key. This value is equivalent to the output of <code>ssh-keygen -l -E md5
-     * -f my-new-server-key</code> command.</p>
+     * <p>This value contains the message-digest algorithm (MD5) hash of the server's
+     * host key. This value is equivalent to the output of the <code>ssh-keygen -l -E
+     * md5 -f my-new-server-key</code> command.</p>
      */
     inline const Aws::String& GetHostKeyFingerprint() const{ return m_hostKeyFingerprint; }
 
     /**
-     * <p>This value contains the Message-Digest Algorithm (MD5) hash of the server's
-     * host key. This value is equivalent to the output of <code>ssh-keygen -l -E md5
-     * -f my-new-server-key</code> command.</p>
+     * <p>This value contains the message-digest algorithm (MD5) hash of the server's
+     * host key. This value is equivalent to the output of the <code>ssh-keygen -l -E
+     * md5 -f my-new-server-key</code> command.</p>
      */
     inline bool HostKeyFingerprintHasBeenSet() const { return m_hostKeyFingerprintHasBeenSet; }
 
     /**
-     * <p>This value contains the Message-Digest Algorithm (MD5) hash of the server's
-     * host key. This value is equivalent to the output of <code>ssh-keygen -l -E md5
-     * -f my-new-server-key</code> command.</p>
+     * <p>This value contains the message-digest algorithm (MD5) hash of the server's
+     * host key. This value is equivalent to the output of the <code>ssh-keygen -l -E
+     * md5 -f my-new-server-key</code> command.</p>
      */
     inline void SetHostKeyFingerprint(const Aws::String& value) { m_hostKeyFingerprintHasBeenSet = true; m_hostKeyFingerprint = value; }
 
     /**
-     * <p>This value contains the Message-Digest Algorithm (MD5) hash of the server's
-     * host key. This value is equivalent to the output of <code>ssh-keygen -l -E md5
-     * -f my-new-server-key</code> command.</p>
+     * <p>This value contains the message-digest algorithm (MD5) hash of the server's
+     * host key. This value is equivalent to the output of the <code>ssh-keygen -l -E
+     * md5 -f my-new-server-key</code> command.</p>
      */
     inline void SetHostKeyFingerprint(Aws::String&& value) { m_hostKeyFingerprintHasBeenSet = true; m_hostKeyFingerprint = std::move(value); }
 
     /**
-     * <p>This value contains the Message-Digest Algorithm (MD5) hash of the server's
-     * host key. This value is equivalent to the output of <code>ssh-keygen -l -E md5
-     * -f my-new-server-key</code> command.</p>
+     * <p>This value contains the message-digest algorithm (MD5) hash of the server's
+     * host key. This value is equivalent to the output of the <code>ssh-keygen -l -E
+     * md5 -f my-new-server-key</code> command.</p>
      */
     inline void SetHostKeyFingerprint(const char* value) { m_hostKeyFingerprintHasBeenSet = true; m_hostKeyFingerprint.assign(value); }
 
     /**
-     * <p>This value contains the Message-Digest Algorithm (MD5) hash of the server's
-     * host key. This value is equivalent to the output of <code>ssh-keygen -l -E md5
-     * -f my-new-server-key</code> command.</p>
+     * <p>This value contains the message-digest algorithm (MD5) hash of the server's
+     * host key. This value is equivalent to the output of the <code>ssh-keygen -l -E
+     * md5 -f my-new-server-key</code> command.</p>
      */
     inline DescribedServer& WithHostKeyFingerprint(const Aws::String& value) { SetHostKeyFingerprint(value); return *this;}
 
     /**
-     * <p>This value contains the Message-Digest Algorithm (MD5) hash of the server's
-     * host key. This value is equivalent to the output of <code>ssh-keygen -l -E md5
-     * -f my-new-server-key</code> command.</p>
+     * <p>This value contains the message-digest algorithm (MD5) hash of the server's
+     * host key. This value is equivalent to the output of the <code>ssh-keygen -l -E
+     * md5 -f my-new-server-key</code> command.</p>
      */
     inline DescribedServer& WithHostKeyFingerprint(Aws::String&& value) { SetHostKeyFingerprint(std::move(value)); return *this;}
 
     /**
-     * <p>This value contains the Message-Digest Algorithm (MD5) hash of the server's
-     * host key. This value is equivalent to the output of <code>ssh-keygen -l -E md5
-     * -f my-new-server-key</code> command.</p>
+     * <p>This value contains the message-digest algorithm (MD5) hash of the server's
+     * host key. This value is equivalent to the output of the <code>ssh-keygen -l -E
+     * md5 -f my-new-server-key</code> command.</p>
      */
     inline DescribedServer& WithHostKeyFingerprint(const char* value) { SetHostKeyFingerprint(value); return *this;}
 
@@ -288,8 +288,8 @@ namespace Model
 
     /**
      * <p>This property defines the mode of authentication method enabled for this
-     * service. A value of <code>SERVICE_MANAGED</code>, means that you are using this
-     * Server to store and access SFTP user credentials within the service. A value of
+     * service. A value of <code>SERVICE_MANAGED</code> means that you are using this
+     * server to store and access SFTP user credentials within the service. A value of
      * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
      * endpoint that will be invoked for authenticating your user into the service.</p>
      */
@@ -297,8 +297,8 @@ namespace Model
 
     /**
      * <p>This property defines the mode of authentication method enabled for this
-     * service. A value of <code>SERVICE_MANAGED</code>, means that you are using this
-     * Server to store and access SFTP user credentials within the service. A value of
+     * service. A value of <code>SERVICE_MANAGED</code> means that you are using this
+     * server to store and access SFTP user credentials within the service. A value of
      * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
      * endpoint that will be invoked for authenticating your user into the service.</p>
      */
@@ -306,8 +306,8 @@ namespace Model
 
     /**
      * <p>This property defines the mode of authentication method enabled for this
-     * service. A value of <code>SERVICE_MANAGED</code>, means that you are using this
-     * Server to store and access SFTP user credentials within the service. A value of
+     * service. A value of <code>SERVICE_MANAGED</code> means that you are using this
+     * server to store and access SFTP user credentials within the service. A value of
      * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
      * endpoint that will be invoked for authenticating your user into the service.</p>
      */
@@ -315,8 +315,8 @@ namespace Model
 
     /**
      * <p>This property defines the mode of authentication method enabled for this
-     * service. A value of <code>SERVICE_MANAGED</code>, means that you are using this
-     * Server to store and access SFTP user credentials within the service. A value of
+     * service. A value of <code>SERVICE_MANAGED</code> means that you are using this
+     * server to store and access SFTP user credentials within the service. A value of
      * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
      * endpoint that will be invoked for authenticating your user into the service.</p>
      */
@@ -324,8 +324,8 @@ namespace Model
 
     /**
      * <p>This property defines the mode of authentication method enabled for this
-     * service. A value of <code>SERVICE_MANAGED</code>, means that you are using this
-     * Server to store and access SFTP user credentials within the service. A value of
+     * service. A value of <code>SERVICE_MANAGED</code> means that you are using this
+     * server to store and access SFTP user credentials within the service. A value of
      * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
      * endpoint that will be invoked for authenticating your user into the service.</p>
      */
@@ -333,8 +333,8 @@ namespace Model
 
     /**
      * <p>This property defines the mode of authentication method enabled for this
-     * service. A value of <code>SERVICE_MANAGED</code>, means that you are using this
-     * Server to store and access SFTP user credentials within the service. A value of
+     * service. A value of <code>SERVICE_MANAGED</code> means that you are using this
+     * server to store and access SFTP user credentials within the service. A value of
      * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
      * endpoint that will be invoked for authenticating your user into the service.</p>
      */
@@ -344,104 +344,104 @@ namespace Model
     /**
      * <p>This property is an AWS Identity and Access Management (IAM) entity that
      * allows the server to turn on Amazon CloudWatch logging for Amazon S3 events.
-     * When set, user activity can be view in your CloudWatch logs.</p>
+     * When set, user activity can be viewed in your CloudWatch logs.</p>
      */
     inline const Aws::String& GetLoggingRole() const{ return m_loggingRole; }
 
     /**
      * <p>This property is an AWS Identity and Access Management (IAM) entity that
      * allows the server to turn on Amazon CloudWatch logging for Amazon S3 events.
-     * When set, user activity can be view in your CloudWatch logs.</p>
+     * When set, user activity can be viewed in your CloudWatch logs.</p>
      */
     inline bool LoggingRoleHasBeenSet() const { return m_loggingRoleHasBeenSet; }
 
     /**
      * <p>This property is an AWS Identity and Access Management (IAM) entity that
      * allows the server to turn on Amazon CloudWatch logging for Amazon S3 events.
-     * When set, user activity can be view in your CloudWatch logs.</p>
+     * When set, user activity can be viewed in your CloudWatch logs.</p>
      */
     inline void SetLoggingRole(const Aws::String& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = value; }
 
     /**
      * <p>This property is an AWS Identity and Access Management (IAM) entity that
      * allows the server to turn on Amazon CloudWatch logging for Amazon S3 events.
-     * When set, user activity can be view in your CloudWatch logs.</p>
+     * When set, user activity can be viewed in your CloudWatch logs.</p>
      */
     inline void SetLoggingRole(Aws::String&& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = std::move(value); }
 
     /**
      * <p>This property is an AWS Identity and Access Management (IAM) entity that
      * allows the server to turn on Amazon CloudWatch logging for Amazon S3 events.
-     * When set, user activity can be view in your CloudWatch logs.</p>
+     * When set, user activity can be viewed in your CloudWatch logs.</p>
      */
     inline void SetLoggingRole(const char* value) { m_loggingRoleHasBeenSet = true; m_loggingRole.assign(value); }
 
     /**
      * <p>This property is an AWS Identity and Access Management (IAM) entity that
      * allows the server to turn on Amazon CloudWatch logging for Amazon S3 events.
-     * When set, user activity can be view in your CloudWatch logs.</p>
+     * When set, user activity can be viewed in your CloudWatch logs.</p>
      */
     inline DescribedServer& WithLoggingRole(const Aws::String& value) { SetLoggingRole(value); return *this;}
 
     /**
      * <p>This property is an AWS Identity and Access Management (IAM) entity that
      * allows the server to turn on Amazon CloudWatch logging for Amazon S3 events.
-     * When set, user activity can be view in your CloudWatch logs.</p>
+     * When set, user activity can be viewed in your CloudWatch logs.</p>
      */
     inline DescribedServer& WithLoggingRole(Aws::String&& value) { SetLoggingRole(std::move(value)); return *this;}
 
     /**
      * <p>This property is an AWS Identity and Access Management (IAM) entity that
      * allows the server to turn on Amazon CloudWatch logging for Amazon S3 events.
-     * When set, user activity can be view in your CloudWatch logs.</p>
+     * When set, user activity can be viewed in your CloudWatch logs.</p>
      */
     inline DescribedServer& WithLoggingRole(const char* value) { SetLoggingRole(value); return *this;}
 
 
     /**
-     * <p>This property is a unique system assigned identifier for the SFTP server that
+     * <p>This property is a unique system-assigned identifier for the SFTP server that
      * you instantiate.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
 
     /**
-     * <p>This property is a unique system assigned identifier for the SFTP server that
+     * <p>This property is a unique system-assigned identifier for the SFTP server that
      * you instantiate.</p>
      */
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
 
     /**
-     * <p>This property is a unique system assigned identifier for the SFTP server that
+     * <p>This property is a unique system-assigned identifier for the SFTP server that
      * you instantiate.</p>
      */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
 
     /**
-     * <p>This property is a unique system assigned identifier for the SFTP server that
+     * <p>This property is a unique system-assigned identifier for the SFTP server that
      * you instantiate.</p>
      */
     inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
 
     /**
-     * <p>This property is a unique system assigned identifier for the SFTP server that
+     * <p>This property is a unique system-assigned identifier for the SFTP server that
      * you instantiate.</p>
      */
     inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
 
     /**
-     * <p>This property is a unique system assigned identifier for the SFTP server that
+     * <p>This property is a unique system-assigned identifier for the SFTP server that
      * you instantiate.</p>
      */
     inline DescribedServer& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
 
     /**
-     * <p>This property is a unique system assigned identifier for the SFTP server that
+     * <p>This property is a unique system-assigned identifier for the SFTP server that
      * you instantiate.</p>
      */
     inline DescribedServer& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
 
     /**
-     * <p>This property is a unique system assigned identifier for the SFTP server that
+     * <p>This property is a unique system-assigned identifier for the SFTP server that
      * you instantiate.</p>
      */
     inline DescribedServer& WithServerId(const char* value) { SetServerId(value); return *this;}
@@ -452,7 +452,7 @@ namespace Model
      * of <code>ONLINE</code> indicates that the server can accept jobs and transfer
      * files. A <code>State</code> value of <code>OFFLINE</code> means that the server
      * cannot perform file transfer operations.</p> <p>The states of
-     * <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in
+     * <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in
      * an intermediate state, either not fully able to respond, or not fully offline.
      * The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate
      * an error condition.</p>
@@ -464,7 +464,7 @@ namespace Model
      * of <code>ONLINE</code> indicates that the server can accept jobs and transfer
      * files. A <code>State</code> value of <code>OFFLINE</code> means that the server
      * cannot perform file transfer operations.</p> <p>The states of
-     * <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in
+     * <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in
      * an intermediate state, either not fully able to respond, or not fully offline.
      * The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate
      * an error condition.</p>
@@ -476,7 +476,7 @@ namespace Model
      * of <code>ONLINE</code> indicates that the server can accept jobs and transfer
      * files. A <code>State</code> value of <code>OFFLINE</code> means that the server
      * cannot perform file transfer operations.</p> <p>The states of
-     * <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in
+     * <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in
      * an intermediate state, either not fully able to respond, or not fully offline.
      * The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate
      * an error condition.</p>
@@ -488,7 +488,7 @@ namespace Model
      * of <code>ONLINE</code> indicates that the server can accept jobs and transfer
      * files. A <code>State</code> value of <code>OFFLINE</code> means that the server
      * cannot perform file transfer operations.</p> <p>The states of
-     * <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in
+     * <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in
      * an intermediate state, either not fully able to respond, or not fully offline.
      * The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate
      * an error condition.</p>
@@ -500,7 +500,7 @@ namespace Model
      * of <code>ONLINE</code> indicates that the server can accept jobs and transfer
      * files. A <code>State</code> value of <code>OFFLINE</code> means that the server
      * cannot perform file transfer operations.</p> <p>The states of
-     * <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in
+     * <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in
      * an intermediate state, either not fully able to respond, or not fully offline.
      * The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate
      * an error condition.</p>
@@ -512,7 +512,7 @@ namespace Model
      * of <code>ONLINE</code> indicates that the server can accept jobs and transfer
      * files. A <code>State</code> value of <code>OFFLINE</code> means that the server
      * cannot perform file transfer operations.</p> <p>The states of
-     * <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in
+     * <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in
      * an intermediate state, either not fully able to respond, or not fully offline.
      * The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate
      * an error condition.</p>

@@ -23,6 +23,7 @@
 #include <aws/sagemaker/model/OutputDataConfig.h>
 #include <aws/sagemaker/model/ResourceConfig.h>
 #include <aws/sagemaker/model/StoppingCondition.h>
+#include <aws/sagemaker/model/CheckpointConfig.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <utility>
 
@@ -442,44 +443,50 @@ namespace Model
 
 
     /**
-     * <p>Specifies a limit to how long a model hyperparameter training job can run.
-     * When the job reaches the time limit, Amazon SageMaker ends the training job. Use
-     * this API to cap model training costs.</p>
+     * <p>Specifies a limit to how long a model hyperparameter training job can run. It
+     * also specifies how long you are willing to wait for a managed spot training job
+     * to complete. When the job reaches the a limit, Amazon SageMaker ends the
+     * training job. Use this API to cap model training costs.</p>
      */
     inline const StoppingCondition& GetStoppingCondition() const{ return m_stoppingCondition; }
 
     /**
-     * <p>Specifies a limit to how long a model hyperparameter training job can run.
-     * When the job reaches the time limit, Amazon SageMaker ends the training job. Use
-     * this API to cap model training costs.</p>
+     * <p>Specifies a limit to how long a model hyperparameter training job can run. It
+     * also specifies how long you are willing to wait for a managed spot training job
+     * to complete. When the job reaches the a limit, Amazon SageMaker ends the
+     * training job. Use this API to cap model training costs.</p>
      */
     inline bool StoppingConditionHasBeenSet() const { return m_stoppingConditionHasBeenSet; }
 
     /**
-     * <p>Specifies a limit to how long a model hyperparameter training job can run.
-     * When the job reaches the time limit, Amazon SageMaker ends the training job. Use
-     * this API to cap model training costs.</p>
+     * <p>Specifies a limit to how long a model hyperparameter training job can run. It
+     * also specifies how long you are willing to wait for a managed spot training job
+     * to complete. When the job reaches the a limit, Amazon SageMaker ends the
+     * training job. Use this API to cap model training costs.</p>
      */
     inline void SetStoppingCondition(const StoppingCondition& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = value; }
 
     /**
-     * <p>Specifies a limit to how long a model hyperparameter training job can run.
-     * When the job reaches the time limit, Amazon SageMaker ends the training job. Use
-     * this API to cap model training costs.</p>
+     * <p>Specifies a limit to how long a model hyperparameter training job can run. It
+     * also specifies how long you are willing to wait for a managed spot training job
+     * to complete. When the job reaches the a limit, Amazon SageMaker ends the
+     * training job. Use this API to cap model training costs.</p>
      */
     inline void SetStoppingCondition(StoppingCondition&& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = std::move(value); }
 
     /**
-     * <p>Specifies a limit to how long a model hyperparameter training job can run.
-     * When the job reaches the time limit, Amazon SageMaker ends the training job. Use
-     * this API to cap model training costs.</p>
+     * <p>Specifies a limit to how long a model hyperparameter training job can run. It
+     * also specifies how long you are willing to wait for a managed spot training job
+     * to complete. When the job reaches the a limit, Amazon SageMaker ends the
+     * training job. Use this API to cap model training costs.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithStoppingCondition(const StoppingCondition& value) { SetStoppingCondition(value); return *this;}
 
     /**
-     * <p>Specifies a limit to how long a model hyperparameter training job can run.
-     * When the job reaches the time limit, Amazon SageMaker ends the training job. Use
-     * this API to cap model training costs.</p>
+     * <p>Specifies a limit to how long a model hyperparameter training job can run. It
+     * also specifies how long you are willing to wait for a managed spot training job
+     * to complete. When the job reaches the a limit, Amazon SageMaker ends the
+     * training job. Use this API to cap model training costs.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithStoppingCondition(StoppingCondition&& value) { SetStoppingCondition(std::move(value)); return *this;}
 
@@ -565,6 +572,50 @@ namespace Model
      */
     inline HyperParameterTrainingJobDefinition& WithEnableInterContainerTrafficEncryption(bool value) { SetEnableInterContainerTrafficEncryption(value); return *this;}
 
+
+    /**
+     * <p>A Boolean indicating whether managed spot training is enabled
+     * (<code>True</code>) or not (<code>False</code>).</p>
+     */
+    inline bool GetEnableManagedSpotTraining() const{ return m_enableManagedSpotTraining; }
+
+    /**
+     * <p>A Boolean indicating whether managed spot training is enabled
+     * (<code>True</code>) or not (<code>False</code>).</p>
+     */
+    inline bool EnableManagedSpotTrainingHasBeenSet() const { return m_enableManagedSpotTrainingHasBeenSet; }
+
+    /**
+     * <p>A Boolean indicating whether managed spot training is enabled
+     * (<code>True</code>) or not (<code>False</code>).</p>
+     */
+    inline void SetEnableManagedSpotTraining(bool value) { m_enableManagedSpotTrainingHasBeenSet = true; m_enableManagedSpotTraining = value; }
+
+    /**
+     * <p>A Boolean indicating whether managed spot training is enabled
+     * (<code>True</code>) or not (<code>False</code>).</p>
+     */
+    inline HyperParameterTrainingJobDefinition& WithEnableManagedSpotTraining(bool value) { SetEnableManagedSpotTraining(value); return *this;}
+
+
+    
+    inline const CheckpointConfig& GetCheckpointConfig() const{ return m_checkpointConfig; }
+
+    
+    inline bool CheckpointConfigHasBeenSet() const { return m_checkpointConfigHasBeenSet; }
+
+    
+    inline void SetCheckpointConfig(const CheckpointConfig& value) { m_checkpointConfigHasBeenSet = true; m_checkpointConfig = value; }
+
+    
+    inline void SetCheckpointConfig(CheckpointConfig&& value) { m_checkpointConfigHasBeenSet = true; m_checkpointConfig = std::move(value); }
+
+    
+    inline HyperParameterTrainingJobDefinition& WithCheckpointConfig(const CheckpointConfig& value) { SetCheckpointConfig(value); return *this;}
+
+    
+    inline HyperParameterTrainingJobDefinition& WithCheckpointConfig(CheckpointConfig&& value) { SetCheckpointConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::Map<Aws::String, Aws::String> m_staticHyperParameters;
@@ -596,6 +647,12 @@ namespace Model
 
     bool m_enableInterContainerTrafficEncryption;
     bool m_enableInterContainerTrafficEncryptionHasBeenSet;
+
+    bool m_enableManagedSpotTraining;
+    bool m_enableManagedSpotTrainingHasBeenSet;
+
+    CheckpointConfig m_checkpointConfig;
+    bool m_checkpointConfigHasBeenSet;
   };
 
 } // namespace Model

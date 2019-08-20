@@ -106,6 +106,19 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
      * </p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
@@ -170,6 +183,19 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
      * </p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
@@ -234,6 +260,19 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
      * </p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
@@ -298,6 +337,19 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
      * </p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
@@ -362,6 +414,19 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
      * </p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
@@ -426,6 +491,19 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
      * </p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
@@ -490,6 +568,19 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
      * </p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
@@ -554,6 +645,19 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
      * </p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>

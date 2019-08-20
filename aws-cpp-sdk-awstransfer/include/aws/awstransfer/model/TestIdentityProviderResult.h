@@ -43,39 +43,39 @@ namespace Model
 
 
     /**
-     * <p>The result of the authorization test as a message. </p>
+     * <p>The response that is returned from your API Gateway.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetResponse() const{ return m_response; }
 
     /**
-     * <p>The result of the authorization test as a message. </p>
+     * <p>The response that is returned from your API Gateway.</p>
      */
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
+    inline void SetResponse(const Aws::String& value) { m_response = value; }
 
     /**
-     * <p>The result of the authorization test as a message. </p>
+     * <p>The response that is returned from your API Gateway.</p>
      */
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
+    inline void SetResponse(Aws::String&& value) { m_response = std::move(value); }
 
     /**
-     * <p>The result of the authorization test as a message. </p>
+     * <p>The response that is returned from your API Gateway.</p>
      */
-    inline void SetMessage(const char* value) { m_message.assign(value); }
+    inline void SetResponse(const char* value) { m_response.assign(value); }
 
     /**
-     * <p>The result of the authorization test as a message. </p>
+     * <p>The response that is returned from your API Gateway.</p>
      */
-    inline TestIdentityProviderResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+    inline TestIdentityProviderResult& WithResponse(const Aws::String& value) { SetResponse(value); return *this;}
 
     /**
-     * <p>The result of the authorization test as a message. </p>
+     * <p>The response that is returned from your API Gateway.</p>
      */
-    inline TestIdentityProviderResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+    inline TestIdentityProviderResult& WithResponse(Aws::String&& value) { SetResponse(std::move(value)); return *this;}
 
     /**
-     * <p>The result of the authorization test as a message. </p>
+     * <p>The response that is returned from your API Gateway.</p>
      */
-    inline TestIdentityProviderResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline TestIdentityProviderResult& WithResponse(const char* value) { SetResponse(value); return *this;}
 
 
     /**
@@ -92,6 +92,42 @@ namespace Model
      * <p>The HTTP status code that is the response from your API Gateway.</p>
      */
     inline TestIdentityProviderResult& WithStatusCode(int value) { SetStatusCode(value); return *this;}
+
+
+    /**
+     * <p>A message that indicates whether the test was successful or not. </p>
+     */
+    inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>A message that indicates whether the test was successful or not. </p>
+     */
+    inline void SetMessage(const Aws::String& value) { m_message = value; }
+
+    /**
+     * <p>A message that indicates whether the test was successful or not. </p>
+     */
+    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
+
+    /**
+     * <p>A message that indicates whether the test was successful or not. </p>
+     */
+    inline void SetMessage(const char* value) { m_message.assign(value); }
+
+    /**
+     * <p>A message that indicates whether the test was successful or not. </p>
+     */
+    inline TestIdentityProviderResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /**
+     * <p>A message that indicates whether the test was successful or not. </p>
+     */
+    inline TestIdentityProviderResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>A message that indicates whether the test was successful or not. </p>
+     */
+    inline TestIdentityProviderResult& WithMessage(const char* value) { SetMessage(value); return *this;}
 
 
     /**
@@ -131,9 +167,11 @@ namespace Model
 
   private:
 
-    Aws::String m_message;
+    Aws::String m_response;
 
     int m_statusCode;
+
+    Aws::String m_message;
 
     Aws::String m_url;
   };

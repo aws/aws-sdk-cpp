@@ -45,57 +45,57 @@ namespace Model
 
 
     /**
-     * <p>The HomeDirectory parameter specifies the landing directory (folder) for a
-     * user when they log in to the server using their client. An example would be:
+     * <p>A parameter that specifies the landing directory (folder) for a user when
+     * they log in to the server using their client. An example is
      * <code>/home/<i>username</i> </code>.</p>
      */
     inline const Aws::String& GetHomeDirectory() const{ return m_homeDirectory; }
 
     /**
-     * <p>The HomeDirectory parameter specifies the landing directory (folder) for a
-     * user when they log in to the server using their client. An example would be:
+     * <p>A parameter that specifies the landing directory (folder) for a user when
+     * they log in to the server using their client. An example is
      * <code>/home/<i>username</i> </code>.</p>
      */
     inline bool HomeDirectoryHasBeenSet() const { return m_homeDirectoryHasBeenSet; }
 
     /**
-     * <p>The HomeDirectory parameter specifies the landing directory (folder) for a
-     * user when they log in to the server using their client. An example would be:
+     * <p>A parameter that specifies the landing directory (folder) for a user when
+     * they log in to the server using their client. An example is
      * <code>/home/<i>username</i> </code>.</p>
      */
     inline void SetHomeDirectory(const Aws::String& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = value; }
 
     /**
-     * <p>The HomeDirectory parameter specifies the landing directory (folder) for a
-     * user when they log in to the server using their client. An example would be:
+     * <p>A parameter that specifies the landing directory (folder) for a user when
+     * they log in to the server using their client. An example is
      * <code>/home/<i>username</i> </code>.</p>
      */
     inline void SetHomeDirectory(Aws::String&& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = std::move(value); }
 
     /**
-     * <p>The HomeDirectory parameter specifies the landing directory (folder) for a
-     * user when they log in to the server using their client. An example would be:
+     * <p>A parameter that specifies the landing directory (folder) for a user when
+     * they log in to the server using their client. An example is
      * <code>/home/<i>username</i> </code>.</p>
      */
     inline void SetHomeDirectory(const char* value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory.assign(value); }
 
     /**
-     * <p>The HomeDirectory parameter specifies the landing directory (folder) for a
-     * user when they log in to the server using their client. An example would be:
+     * <p>A parameter that specifies the landing directory (folder) for a user when
+     * they log in to the server using their client. An example is
      * <code>/home/<i>username</i> </code>.</p>
      */
     inline UpdateUserRequest& WithHomeDirectory(const Aws::String& value) { SetHomeDirectory(value); return *this;}
 
     /**
-     * <p>The HomeDirectory parameter specifies the landing directory (folder) for a
-     * user when they log in to the server using their client. An example would be:
+     * <p>A parameter that specifies the landing directory (folder) for a user when
+     * they log in to the server using their client. An example is
      * <code>/home/<i>username</i> </code>.</p>
      */
     inline UpdateUserRequest& WithHomeDirectory(Aws::String&& value) { SetHomeDirectory(std::move(value)); return *this;}
 
     /**
-     * <p>The HomeDirectory parameter specifies the landing directory (folder) for a
-     * user when they log in to the server using their client. An example would be:
+     * <p>A parameter that specifies the landing directory (folder) for a user when
+     * they log in to the server using their client. An example is
      * <code>/home/<i>username</i> </code>.</p>
      */
     inline UpdateUserRequest& WithHomeDirectory(const char* value) { SetHomeDirectory(value); return *this;}
@@ -104,80 +104,144 @@ namespace Model
     /**
      * <p>Allows you to supply a scope-down policy for your user so you can use the
      * same AWS Identity and Access Management (IAM) role across multiple users. The
-     * policy scopes down users access to portions of your Amazon S3 bucket. Variables
+     * policy scopes down user access to portions of your Amazon S3 bucket. Variables
      * you can use inside this policy include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>
+     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     * Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+     * it in the <code>Policy</code> argument.</p> <p>For an example of a scope-down
+     * policy, see
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating
+     * a Scope-Down Policy.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the
+     * <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
      * <p>Allows you to supply a scope-down policy for your user so you can use the
      * same AWS Identity and Access Management (IAM) role across multiple users. The
-     * policy scopes down users access to portions of your Amazon S3 bucket. Variables
+     * policy scopes down user access to portions of your Amazon S3 bucket. Variables
      * you can use inside this policy include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>
+     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     * Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+     * it in the <code>Policy</code> argument.</p> <p>For an example of a scope-down
+     * policy, see
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating
+     * a Scope-Down Policy.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the
+     * <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
      * <p>Allows you to supply a scope-down policy for your user so you can use the
      * same AWS Identity and Access Management (IAM) role across multiple users. The
-     * policy scopes down users access to portions of your Amazon S3 bucket. Variables
+     * policy scopes down user access to portions of your Amazon S3 bucket. Variables
      * you can use inside this policy include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>
+     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     * Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+     * it in the <code>Policy</code> argument.</p> <p>For an example of a scope-down
+     * policy, see
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating
+     * a Scope-Down Policy.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the
+     * <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
      * <p>Allows you to supply a scope-down policy for your user so you can use the
      * same AWS Identity and Access Management (IAM) role across multiple users. The
-     * policy scopes down users access to portions of your Amazon S3 bucket. Variables
+     * policy scopes down user access to portions of your Amazon S3 bucket. Variables
      * you can use inside this policy include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>
+     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     * Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+     * it in the <code>Policy</code> argument.</p> <p>For an example of a scope-down
+     * policy, see
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating
+     * a Scope-Down Policy.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the
+     * <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
      * <p>Allows you to supply a scope-down policy for your user so you can use the
      * same AWS Identity and Access Management (IAM) role across multiple users. The
-     * policy scopes down users access to portions of your Amazon S3 bucket. Variables
+     * policy scopes down user access to portions of your Amazon S3 bucket. Variables
      * you can use inside this policy include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>
+     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     * Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+     * it in the <code>Policy</code> argument.</p> <p>For an example of a scope-down
+     * policy, see
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating
+     * a Scope-Down Policy.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the
+     * <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /**
      * <p>Allows you to supply a scope-down policy for your user so you can use the
      * same AWS Identity and Access Management (IAM) role across multiple users. The
-     * policy scopes down users access to portions of your Amazon S3 bucket. Variables
+     * policy scopes down user access to portions of your Amazon S3 bucket. Variables
      * you can use inside this policy include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>
+     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     * Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+     * it in the <code>Policy</code> argument.</p> <p>For an example of a scope-down
+     * policy, see
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating
+     * a Scope-Down Policy.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the
+     * <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
     inline UpdateUserRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
      * <p>Allows you to supply a scope-down policy for your user so you can use the
      * same AWS Identity and Access Management (IAM) role across multiple users. The
-     * policy scopes down users access to portions of your Amazon S3 bucket. Variables
+     * policy scopes down user access to portions of your Amazon S3 bucket. Variables
      * you can use inside this policy include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>
+     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     * Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+     * it in the <code>Policy</code> argument.</p> <p>For an example of a scope-down
+     * policy, see
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating
+     * a Scope-Down Policy.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the
+     * <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
     inline UpdateUserRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
      * <p>Allows you to supply a scope-down policy for your user so you can use the
      * same AWS Identity and Access Management (IAM) role across multiple users. The
-     * policy scopes down users access to portions of your Amazon S3 bucket. Variables
+     * policy scopes down user access to portions of your Amazon S3 bucket. Variables
      * you can use inside this policy include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>
+     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     * Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+     * it in the <code>Policy</code> argument.</p> <p>For an example of a scope-down
+     * policy, see
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating
+     * a Scope-Down Policy.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the
+     * <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
     inline UpdateUserRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
@@ -314,73 +378,73 @@ namespace Model
 
     /**
      * <p>A unique string that identifies a user and is associated with a server as
-     * specified by the ServerId. This is the string that will be used by your user
-     * when they log in to your SFTP server. This user name is a minimum of 3 and a
-     * maximum of 32 characters long. The following are valid characters: a-z, A-Z,
-     * 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
+     * specified by the <code>ServerId</code>. This is the string that will be used by
+     * your user when they log in to your SFTP server. This user name is a minimum of 3
+     * and a maximum of 32 characters long. The following are valid characters: a-z,
+     * A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
      * <p>A unique string that identifies a user and is associated with a server as
-     * specified by the ServerId. This is the string that will be used by your user
-     * when they log in to your SFTP server. This user name is a minimum of 3 and a
-     * maximum of 32 characters long. The following are valid characters: a-z, A-Z,
-     * 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
+     * specified by the <code>ServerId</code>. This is the string that will be used by
+     * your user when they log in to your SFTP server. This user name is a minimum of 3
+     * and a maximum of 32 characters long. The following are valid characters: a-z,
+     * A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
      * <p>A unique string that identifies a user and is associated with a server as
-     * specified by the ServerId. This is the string that will be used by your user
-     * when they log in to your SFTP server. This user name is a minimum of 3 and a
-     * maximum of 32 characters long. The following are valid characters: a-z, A-Z,
-     * 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
+     * specified by the <code>ServerId</code>. This is the string that will be used by
+     * your user when they log in to your SFTP server. This user name is a minimum of 3
+     * and a maximum of 32 characters long. The following are valid characters: a-z,
+     * A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
      * <p>A unique string that identifies a user and is associated with a server as
-     * specified by the ServerId. This is the string that will be used by your user
-     * when they log in to your SFTP server. This user name is a minimum of 3 and a
-     * maximum of 32 characters long. The following are valid characters: a-z, A-Z,
-     * 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
+     * specified by the <code>ServerId</code>. This is the string that will be used by
+     * your user when they log in to your SFTP server. This user name is a minimum of 3
+     * and a maximum of 32 characters long. The following are valid characters: a-z,
+     * A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>A unique string that identifies a user and is associated with a server as
-     * specified by the ServerId. This is the string that will be used by your user
-     * when they log in to your SFTP server. This user name is a minimum of 3 and a
-     * maximum of 32 characters long. The following are valid characters: a-z, A-Z,
-     * 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
+     * specified by the <code>ServerId</code>. This is the string that will be used by
+     * your user when they log in to your SFTP server. This user name is a minimum of 3
+     * and a maximum of 32 characters long. The following are valid characters: a-z,
+     * A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
      * <p>A unique string that identifies a user and is associated with a server as
-     * specified by the ServerId. This is the string that will be used by your user
-     * when they log in to your SFTP server. This user name is a minimum of 3 and a
-     * maximum of 32 characters long. The following are valid characters: a-z, A-Z,
-     * 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
+     * specified by the <code>ServerId</code>. This is the string that will be used by
+     * your user when they log in to your SFTP server. This user name is a minimum of 3
+     * and a maximum of 32 characters long. The following are valid characters: a-z,
+     * A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
      */
     inline UpdateUserRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
      * <p>A unique string that identifies a user and is associated with a server as
-     * specified by the ServerId. This is the string that will be used by your user
-     * when they log in to your SFTP server. This user name is a minimum of 3 and a
-     * maximum of 32 characters long. The following are valid characters: a-z, A-Z,
-     * 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
+     * specified by the <code>ServerId</code>. This is the string that will be used by
+     * your user when they log in to your SFTP server. This user name is a minimum of 3
+     * and a maximum of 32 characters long. The following are valid characters: a-z,
+     * A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
      */
     inline UpdateUserRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>A unique string that identifies a user and is associated with a server as
-     * specified by the ServerId. This is the string that will be used by your user
-     * when they log in to your SFTP server. This user name is a minimum of 3 and a
-     * maximum of 32 characters long. The following are valid characters: a-z, A-Z,
-     * 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
+     * specified by the <code>ServerId</code>. This is the string that will be used by
+     * your user when they log in to your SFTP server. This user name is a minimum of 3
+     * and a maximum of 32 characters long. The following are valid characters: a-z,
+     * A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.</p>
      */
     inline UpdateUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 

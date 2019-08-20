@@ -40,7 +40,8 @@ ProfileData::ProfileData() :
     m_temperatureUnit(TemperatureUnit::NOT_SET),
     m_temperatureUnitHasBeenSet(false),
     m_wakeWord(WakeWord::NOT_SET),
-    m_wakeWordHasBeenSet(false)
+    m_wakeWordHasBeenSet(false),
+    m_localeHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ ProfileData::ProfileData(JsonView jsonValue) :
     m_temperatureUnit(TemperatureUnit::NOT_SET),
     m_temperatureUnitHasBeenSet(false),
     m_wakeWord(WakeWord::NOT_SET),
-    m_wakeWordHasBeenSet(false)
+    m_wakeWordHasBeenSet(false),
+    m_localeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -119,6 +121,13 @@ ProfileData& ProfileData::operator =(JsonView jsonValue)
     m_wakeWordHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Locale"))
+  {
+    m_locale = jsonValue.GetString("Locale");
+
+    m_localeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -169,6 +178,12 @@ JsonValue ProfileData::Jsonize() const
   if(m_wakeWordHasBeenSet)
   {
    payload.WithString("WakeWord", WakeWordMapper::GetNameForWakeWord(m_wakeWord));
+  }
+
+  if(m_localeHasBeenSet)
+  {
+   payload.WithString("Locale", m_locale);
+
   }
 
   return payload;

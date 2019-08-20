@@ -27,6 +27,7 @@
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/StoppingCondition.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/sagemaker/model/CheckpointConfig.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/SecondaryStatusTransition.h>
 #include <aws/sagemaker/model/MetricData.h>
@@ -334,13 +335,17 @@ namespace Model
      * <code>FailureReason</code> field of
      * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd> <dt>Stopped</dt>
      * <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it
-     * exceeded the maximum allowed runtime.</p> </li> <li> <p> <code>Stopped</code> -
-     * The training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul>
-     * <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul>
-     * </dd> </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are
-     * subject to change. </p> </important> <p>We no longer support the following
-     * secondary statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p>
-     * </li> <li> <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * exceeded the maximum allowed runtime.</p> </li> <li> <p>
+     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the
+     * maximum allowed wait time.</p> </li> <li> <p> <code>Interrupted</code> - The job
+     * stopped because the managed spot training instances were interrupted. </p> </li>
+     * <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li> </ul>
+     * </dd> <dt>Stopping</dt> <dd> <ul> <li> <p> <code>Stopping</code> - Stopping the
+     * training job.</p> </li> </ul> </dd> </dl> <important> <p>Valid values for
+     * <code>SecondaryStatus</code> are subject to change. </p> </important> <p>We no
+     * longer support the following secondary statuses:</p> <ul> <li> <p>
+     * <code>LaunchingMLInstances</code> </p> </li> <li> <p>
+     * <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline const SecondaryStatus& GetSecondaryStatus() const{ return m_secondaryStatus; }
@@ -363,13 +368,17 @@ namespace Model
      * <code>FailureReason</code> field of
      * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd> <dt>Stopped</dt>
      * <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it
-     * exceeded the maximum allowed runtime.</p> </li> <li> <p> <code>Stopped</code> -
-     * The training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul>
-     * <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul>
-     * </dd> </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are
-     * subject to change. </p> </important> <p>We no longer support the following
-     * secondary statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p>
-     * </li> <li> <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * exceeded the maximum allowed runtime.</p> </li> <li> <p>
+     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the
+     * maximum allowed wait time.</p> </li> <li> <p> <code>Interrupted</code> - The job
+     * stopped because the managed spot training instances were interrupted. </p> </li>
+     * <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li> </ul>
+     * </dd> <dt>Stopping</dt> <dd> <ul> <li> <p> <code>Stopping</code> - Stopping the
+     * training job.</p> </li> </ul> </dd> </dl> <important> <p>Valid values for
+     * <code>SecondaryStatus</code> are subject to change. </p> </important> <p>We no
+     * longer support the following secondary statuses:</p> <ul> <li> <p>
+     * <code>LaunchingMLInstances</code> </p> </li> <li> <p>
+     * <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline void SetSecondaryStatus(const SecondaryStatus& value) { m_secondaryStatus = value; }
@@ -392,13 +401,17 @@ namespace Model
      * <code>FailureReason</code> field of
      * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd> <dt>Stopped</dt>
      * <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it
-     * exceeded the maximum allowed runtime.</p> </li> <li> <p> <code>Stopped</code> -
-     * The training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul>
-     * <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul>
-     * </dd> </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are
-     * subject to change. </p> </important> <p>We no longer support the following
-     * secondary statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p>
-     * </li> <li> <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * exceeded the maximum allowed runtime.</p> </li> <li> <p>
+     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the
+     * maximum allowed wait time.</p> </li> <li> <p> <code>Interrupted</code> - The job
+     * stopped because the managed spot training instances were interrupted. </p> </li>
+     * <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li> </ul>
+     * </dd> <dt>Stopping</dt> <dd> <ul> <li> <p> <code>Stopping</code> - Stopping the
+     * training job.</p> </li> </ul> </dd> </dl> <important> <p>Valid values for
+     * <code>SecondaryStatus</code> are subject to change. </p> </important> <p>We no
+     * longer support the following secondary statuses:</p> <ul> <li> <p>
+     * <code>LaunchingMLInstances</code> </p> </li> <li> <p>
+     * <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline void SetSecondaryStatus(SecondaryStatus&& value) { m_secondaryStatus = std::move(value); }
@@ -421,13 +434,17 @@ namespace Model
      * <code>FailureReason</code> field of
      * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd> <dt>Stopped</dt>
      * <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it
-     * exceeded the maximum allowed runtime.</p> </li> <li> <p> <code>Stopped</code> -
-     * The training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul>
-     * <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul>
-     * </dd> </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are
-     * subject to change. </p> </important> <p>We no longer support the following
-     * secondary statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p>
-     * </li> <li> <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * exceeded the maximum allowed runtime.</p> </li> <li> <p>
+     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the
+     * maximum allowed wait time.</p> </li> <li> <p> <code>Interrupted</code> - The job
+     * stopped because the managed spot training instances were interrupted. </p> </li>
+     * <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li> </ul>
+     * </dd> <dt>Stopping</dt> <dd> <ul> <li> <p> <code>Stopping</code> - Stopping the
+     * training job.</p> </li> </ul> </dd> </dl> <important> <p>Valid values for
+     * <code>SecondaryStatus</code> are subject to change. </p> </important> <p>We no
+     * longer support the following secondary statuses:</p> <ul> <li> <p>
+     * <code>LaunchingMLInstances</code> </p> </li> <li> <p>
+     * <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline DescribeTrainingJobResult& WithSecondaryStatus(const SecondaryStatus& value) { SetSecondaryStatus(value); return *this;}
@@ -450,13 +467,17 @@ namespace Model
      * <code>FailureReason</code> field of
      * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd> <dt>Stopped</dt>
      * <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it
-     * exceeded the maximum allowed runtime.</p> </li> <li> <p> <code>Stopped</code> -
-     * The training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul>
-     * <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul>
-     * </dd> </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are
-     * subject to change. </p> </important> <p>We no longer support the following
-     * secondary statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p>
-     * </li> <li> <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * exceeded the maximum allowed runtime.</p> </li> <li> <p>
+     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the
+     * maximum allowed wait time.</p> </li> <li> <p> <code>Interrupted</code> - The job
+     * stopped because the managed spot training instances were interrupted. </p> </li>
+     * <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li> </ul>
+     * </dd> <dt>Stopping</dt> <dd> <ul> <li> <p> <code>Stopping</code> - Stopping the
+     * training job.</p> </li> </ul> </dd> </dl> <important> <p>Valid values for
+     * <code>SecondaryStatus</code> are subject to change. </p> </important> <p>We no
+     * longer support the following secondary statuses:</p> <ul> <li> <p>
+     * <code>LaunchingMLInstances</code> </p> </li> <li> <p>
+     * <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline DescribeTrainingJobResult& WithSecondaryStatus(SecondaryStatus&& value) { SetSecondaryStatus(std::move(value)); return *this;}
@@ -780,52 +801,57 @@ namespace Model
 
 
     /**
-     * <p>Specifies a limit to how long a model training job can run. When the job
-     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
-     * algorithm the <code>SIGTERM</code> signal, which delays job termination for 120
-     * seconds. Algorithms can use this 120-second window to save the model artifacts,
-     * so the results of training are not lost. </p>
+     * <p>Specifies a limit to how long a model training job can run. It also specifies
+     * the maximum time to wait for a spot instance. When the job reaches the time
+     * limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
+     * Algorithms can use this 120-second window to save the model artifacts, so the
+     * results of training are not lost. </p>
      */
     inline const StoppingCondition& GetStoppingCondition() const{ return m_stoppingCondition; }
 
     /**
-     * <p>Specifies a limit to how long a model training job can run. When the job
-     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
-     * algorithm the <code>SIGTERM</code> signal, which delays job termination for 120
-     * seconds. Algorithms can use this 120-second window to save the model artifacts,
-     * so the results of training are not lost. </p>
+     * <p>Specifies a limit to how long a model training job can run. It also specifies
+     * the maximum time to wait for a spot instance. When the job reaches the time
+     * limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
+     * Algorithms can use this 120-second window to save the model artifacts, so the
+     * results of training are not lost. </p>
      */
     inline void SetStoppingCondition(const StoppingCondition& value) { m_stoppingCondition = value; }
 
     /**
-     * <p>Specifies a limit to how long a model training job can run. When the job
-     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
-     * algorithm the <code>SIGTERM</code> signal, which delays job termination for 120
-     * seconds. Algorithms can use this 120-second window to save the model artifacts,
-     * so the results of training are not lost. </p>
+     * <p>Specifies a limit to how long a model training job can run. It also specifies
+     * the maximum time to wait for a spot instance. When the job reaches the time
+     * limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
+     * Algorithms can use this 120-second window to save the model artifacts, so the
+     * results of training are not lost. </p>
      */
     inline void SetStoppingCondition(StoppingCondition&& value) { m_stoppingCondition = std::move(value); }
 
     /**
-     * <p>Specifies a limit to how long a model training job can run. When the job
-     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
-     * algorithm the <code>SIGTERM</code> signal, which delays job termination for 120
-     * seconds. Algorithms can use this 120-second window to save the model artifacts,
-     * so the results of training are not lost. </p>
+     * <p>Specifies a limit to how long a model training job can run. It also specifies
+     * the maximum time to wait for a spot instance. When the job reaches the time
+     * limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
+     * Algorithms can use this 120-second window to save the model artifacts, so the
+     * results of training are not lost. </p>
      */
     inline DescribeTrainingJobResult& WithStoppingCondition(const StoppingCondition& value) { SetStoppingCondition(value); return *this;}
 
     /**
-     * <p>Specifies a limit to how long a model training job can run. When the job
-     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
-     * algorithm the <code>SIGTERM</code> signal, which delays job termination for 120
-     * seconds. Algorithms can use this 120-second window to save the model artifacts,
-     * so the results of training are not lost. </p>
+     * <p>Specifies a limit to how long a model training job can run. It also specifies
+     * the maximum time to wait for a spot instance. When the job reaches the time
+     * limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
+     * Algorithms can use this 120-second window to save the model artifacts, so the
+     * results of training are not lost. </p>
      */
     inline DescribeTrainingJobResult& WithStoppingCondition(StoppingCondition&& value) { SetStoppingCondition(std::move(value)); return *this;}
 
@@ -1133,6 +1159,85 @@ namespace Model
      */
     inline DescribeTrainingJobResult& WithEnableInterContainerTrafficEncryption(bool value) { SetEnableInterContainerTrafficEncryption(value); return *this;}
 
+
+    /**
+     * <p>A Boolean indicating whether managed spot training is enabled
+     * (<code>True</code>) or not (<code>False</code>).</p>
+     */
+    inline bool GetEnableManagedSpotTraining() const{ return m_enableManagedSpotTraining; }
+
+    /**
+     * <p>A Boolean indicating whether managed spot training is enabled
+     * (<code>True</code>) or not (<code>False</code>).</p>
+     */
+    inline void SetEnableManagedSpotTraining(bool value) { m_enableManagedSpotTraining = value; }
+
+    /**
+     * <p>A Boolean indicating whether managed spot training is enabled
+     * (<code>True</code>) or not (<code>False</code>).</p>
+     */
+    inline DescribeTrainingJobResult& WithEnableManagedSpotTraining(bool value) { SetEnableManagedSpotTraining(value); return *this;}
+
+
+    
+    inline const CheckpointConfig& GetCheckpointConfig() const{ return m_checkpointConfig; }
+
+    
+    inline void SetCheckpointConfig(const CheckpointConfig& value) { m_checkpointConfig = value; }
+
+    
+    inline void SetCheckpointConfig(CheckpointConfig&& value) { m_checkpointConfig = std::move(value); }
+
+    
+    inline DescribeTrainingJobResult& WithCheckpointConfig(const CheckpointConfig& value) { SetCheckpointConfig(value); return *this;}
+
+    
+    inline DescribeTrainingJobResult& WithCheckpointConfig(CheckpointConfig&& value) { SetCheckpointConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The training time in seconds.</p>
+     */
+    inline int GetTrainingTimeInSeconds() const{ return m_trainingTimeInSeconds; }
+
+    /**
+     * <p>The training time in seconds.</p>
+     */
+    inline void SetTrainingTimeInSeconds(int value) { m_trainingTimeInSeconds = value; }
+
+    /**
+     * <p>The training time in seconds.</p>
+     */
+    inline DescribeTrainingJobResult& WithTrainingTimeInSeconds(int value) { SetTrainingTimeInSeconds(value); return *this;}
+
+
+    /**
+     * <p>The billable time in seconds.</p> <p>You can calculate the savings from using
+     * managed spot training using the formula <code>(1 - BillableTimeInSeconds /
+     * TrainingTimeInSeconds) * 100</code>. For example, if
+     * <code>BillableTimeInSeconds</code> is 100 and <code>TrainingTimeInSeconds</code>
+     * is 500, the savings is 80%.</p>
+     */
+    inline int GetBillableTimeInSeconds() const{ return m_billableTimeInSeconds; }
+
+    /**
+     * <p>The billable time in seconds.</p> <p>You can calculate the savings from using
+     * managed spot training using the formula <code>(1 - BillableTimeInSeconds /
+     * TrainingTimeInSeconds) * 100</code>. For example, if
+     * <code>BillableTimeInSeconds</code> is 100 and <code>TrainingTimeInSeconds</code>
+     * is 500, the savings is 80%.</p>
+     */
+    inline void SetBillableTimeInSeconds(int value) { m_billableTimeInSeconds = value; }
+
+    /**
+     * <p>The billable time in seconds.</p> <p>You can calculate the savings from using
+     * managed spot training using the formula <code>(1 - BillableTimeInSeconds /
+     * TrainingTimeInSeconds) * 100</code>. For example, if
+     * <code>BillableTimeInSeconds</code> is 100 and <code>TrainingTimeInSeconds</code>
+     * is 500, the savings is 80%.</p>
+     */
+    inline DescribeTrainingJobResult& WithBillableTimeInSeconds(int value) { SetBillableTimeInSeconds(value); return *this;}
+
   private:
 
     Aws::String m_trainingJobName;
@@ -1182,6 +1287,14 @@ namespace Model
     bool m_enableNetworkIsolation;
 
     bool m_enableInterContainerTrafficEncryption;
+
+    bool m_enableManagedSpotTraining;
+
+    CheckpointConfig m_checkpointConfig;
+
+    int m_trainingTimeInSeconds;
+
+    int m_billableTimeInSeconds;
   };
 
 } // namespace Model

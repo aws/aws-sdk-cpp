@@ -538,50 +538,74 @@ namespace Model
 
 
     /**
-     * <p>The data structure used for combining the input data and inference in the
-     * output file. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch
-     * Transform I/O Join</a>.</p>
+     * <p>The data structure used to specify the data to be used for inference in a
+     * batch transform job and to associate the data that is relevant to the prediction
+     * results in the output. The input filter provided allows you to exclude input
+     * data that is not needed for inference in a batch transform job. The output
+     * filter provided allows you to include input data relevant to interpreting the
+     * predictions in the output from the job. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
+     * Prediction Results with their Corresponding Input Records</a>.</p>
      */
     inline const DataProcessing& GetDataProcessing() const{ return m_dataProcessing; }
 
     /**
-     * <p>The data structure used for combining the input data and inference in the
-     * output file. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch
-     * Transform I/O Join</a>.</p>
+     * <p>The data structure used to specify the data to be used for inference in a
+     * batch transform job and to associate the data that is relevant to the prediction
+     * results in the output. The input filter provided allows you to exclude input
+     * data that is not needed for inference in a batch transform job. The output
+     * filter provided allows you to include input data relevant to interpreting the
+     * predictions in the output from the job. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
+     * Prediction Results with their Corresponding Input Records</a>.</p>
      */
     inline bool DataProcessingHasBeenSet() const { return m_dataProcessingHasBeenSet; }
 
     /**
-     * <p>The data structure used for combining the input data and inference in the
-     * output file. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch
-     * Transform I/O Join</a>.</p>
+     * <p>The data structure used to specify the data to be used for inference in a
+     * batch transform job and to associate the data that is relevant to the prediction
+     * results in the output. The input filter provided allows you to exclude input
+     * data that is not needed for inference in a batch transform job. The output
+     * filter provided allows you to include input data relevant to interpreting the
+     * predictions in the output from the job. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
+     * Prediction Results with their Corresponding Input Records</a>.</p>
      */
     inline void SetDataProcessing(const DataProcessing& value) { m_dataProcessingHasBeenSet = true; m_dataProcessing = value; }
 
     /**
-     * <p>The data structure used for combining the input data and inference in the
-     * output file. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch
-     * Transform I/O Join</a>.</p>
+     * <p>The data structure used to specify the data to be used for inference in a
+     * batch transform job and to associate the data that is relevant to the prediction
+     * results in the output. The input filter provided allows you to exclude input
+     * data that is not needed for inference in a batch transform job. The output
+     * filter provided allows you to include input data relevant to interpreting the
+     * predictions in the output from the job. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
+     * Prediction Results with their Corresponding Input Records</a>.</p>
      */
     inline void SetDataProcessing(DataProcessing&& value) { m_dataProcessingHasBeenSet = true; m_dataProcessing = std::move(value); }
 
     /**
-     * <p>The data structure used for combining the input data and inference in the
-     * output file. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch
-     * Transform I/O Join</a>.</p>
+     * <p>The data structure used to specify the data to be used for inference in a
+     * batch transform job and to associate the data that is relevant to the prediction
+     * results in the output. The input filter provided allows you to exclude input
+     * data that is not needed for inference in a batch transform job. The output
+     * filter provided allows you to include input data relevant to interpreting the
+     * predictions in the output from the job. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
+     * Prediction Results with their Corresponding Input Records</a>.</p>
      */
     inline CreateTransformJobRequest& WithDataProcessing(const DataProcessing& value) { SetDataProcessing(value); return *this;}
 
     /**
-     * <p>The data structure used for combining the input data and inference in the
-     * output file. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch
-     * Transform I/O Join</a>.</p>
+     * <p>The data structure used to specify the data to be used for inference in a
+     * batch transform job and to associate the data that is relevant to the prediction
+     * results in the output. The input filter provided allows you to exclude input
+     * data that is not needed for inference in a batch transform job. The output
+     * filter provided allows you to include input data relevant to interpreting the
+     * predictions in the output from the job. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
+     * Prediction Results with their Corresponding Input Records</a>.</p>
      */
     inline CreateTransformJobRequest& WithDataProcessing(DataProcessing&& value) { SetDataProcessing(std::move(value)); return *this;}
 

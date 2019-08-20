@@ -41,6 +41,7 @@ Profile::Profile() :
     m_temperatureUnitHasBeenSet(false),
     m_wakeWord(WakeWord::NOT_SET),
     m_wakeWordHasBeenSet(false),
+    m_localeHasBeenSet(false),
     m_setupModeDisabled(false),
     m_setupModeDisabledHasBeenSet(false),
     m_maxVolumeLimit(0),
@@ -64,6 +65,7 @@ Profile::Profile(JsonView jsonValue) :
     m_temperatureUnitHasBeenSet(false),
     m_wakeWord(WakeWord::NOT_SET),
     m_wakeWordHasBeenSet(false),
+    m_localeHasBeenSet(false),
     m_setupModeDisabled(false),
     m_setupModeDisabledHasBeenSet(false),
     m_maxVolumeLimit(0),
@@ -131,6 +133,13 @@ Profile& Profile::operator =(JsonView jsonValue)
     m_wakeWord = WakeWordMapper::GetWakeWordForName(jsonValue.GetString("WakeWord"));
 
     m_wakeWordHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Locale"))
+  {
+    m_locale = jsonValue.GetString("Locale");
+
+    m_localeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SetupModeDisabled"))
@@ -211,6 +220,12 @@ JsonValue Profile::Jsonize() const
   if(m_wakeWordHasBeenSet)
   {
    payload.WithString("WakeWord", WakeWordMapper::GetNameForWakeWord(m_wakeWord));
+  }
+
+  if(m_localeHasBeenSet)
+  {
+   payload.WithString("Locale", m_locale);
+
   }
 
   if(m_setupModeDisabledHasBeenSet)

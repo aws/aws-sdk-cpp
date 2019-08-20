@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>Returns properties of the user that you wish to describe.</p><p><h3>See
+   * <p>Returns properties of the user that you want to describe.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribedUser">AWS
    * API Reference</a></p>
@@ -101,66 +101,66 @@ namespace Model
 
 
     /**
-     * <p>This property specifies the landing directory (or folder) which is the
+     * <p>This property specifies the landing directory (or folder), which is the
      * location that files are written to or read from in an Amazon S3 bucket for the
-     * described user. An example would be:
-     * <code>/<i>bucket_name</i>/home/<i>username</i> </code>.</p>
+     * described user. An example is <code>/<i>bucket_name</i>/home/<i>username</i>
+     * </code>.</p>
      */
     inline const Aws::String& GetHomeDirectory() const{ return m_homeDirectory; }
 
     /**
-     * <p>This property specifies the landing directory (or folder) which is the
+     * <p>This property specifies the landing directory (or folder), which is the
      * location that files are written to or read from in an Amazon S3 bucket for the
-     * described user. An example would be:
-     * <code>/<i>bucket_name</i>/home/<i>username</i> </code>.</p>
+     * described user. An example is <code>/<i>bucket_name</i>/home/<i>username</i>
+     * </code>.</p>
      */
     inline bool HomeDirectoryHasBeenSet() const { return m_homeDirectoryHasBeenSet; }
 
     /**
-     * <p>This property specifies the landing directory (or folder) which is the
+     * <p>This property specifies the landing directory (or folder), which is the
      * location that files are written to or read from in an Amazon S3 bucket for the
-     * described user. An example would be:
-     * <code>/<i>bucket_name</i>/home/<i>username</i> </code>.</p>
+     * described user. An example is <code>/<i>bucket_name</i>/home/<i>username</i>
+     * </code>.</p>
      */
     inline void SetHomeDirectory(const Aws::String& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = value; }
 
     /**
-     * <p>This property specifies the landing directory (or folder) which is the
+     * <p>This property specifies the landing directory (or folder), which is the
      * location that files are written to or read from in an Amazon S3 bucket for the
-     * described user. An example would be:
-     * <code>/<i>bucket_name</i>/home/<i>username</i> </code>.</p>
+     * described user. An example is <code>/<i>bucket_name</i>/home/<i>username</i>
+     * </code>.</p>
      */
     inline void SetHomeDirectory(Aws::String&& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = std::move(value); }
 
     /**
-     * <p>This property specifies the landing directory (or folder) which is the
+     * <p>This property specifies the landing directory (or folder), which is the
      * location that files are written to or read from in an Amazon S3 bucket for the
-     * described user. An example would be:
-     * <code>/<i>bucket_name</i>/home/<i>username</i> </code>.</p>
+     * described user. An example is <code>/<i>bucket_name</i>/home/<i>username</i>
+     * </code>.</p>
      */
     inline void SetHomeDirectory(const char* value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory.assign(value); }
 
     /**
-     * <p>This property specifies the landing directory (or folder) which is the
+     * <p>This property specifies the landing directory (or folder), which is the
      * location that files are written to or read from in an Amazon S3 bucket for the
-     * described user. An example would be:
-     * <code>/<i>bucket_name</i>/home/<i>username</i> </code>.</p>
+     * described user. An example is <code>/<i>bucket_name</i>/home/<i>username</i>
+     * </code>.</p>
      */
     inline DescribedUser& WithHomeDirectory(const Aws::String& value) { SetHomeDirectory(value); return *this;}
 
     /**
-     * <p>This property specifies the landing directory (or folder) which is the
+     * <p>This property specifies the landing directory (or folder), which is the
      * location that files are written to or read from in an Amazon S3 bucket for the
-     * described user. An example would be:
-     * <code>/<i>bucket_name</i>/home/<i>username</i> </code>.</p>
+     * described user. An example is <code>/<i>bucket_name</i>/home/<i>username</i>
+     * </code>.</p>
      */
     inline DescribedUser& WithHomeDirectory(Aws::String&& value) { SetHomeDirectory(std::move(value)); return *this;}
 
     /**
-     * <p>This property specifies the landing directory (or folder) which is the
+     * <p>This property specifies the landing directory (or folder), which is the
      * location that files are written to or read from in an Amazon S3 bucket for the
-     * described user. An example would be:
-     * <code>/<i>bucket_name</i>/home/<i>username</i> </code>.</p>
+     * described user. An example is <code>/<i>bucket_name</i>/home/<i>username</i>
+     * </code>.</p>
      */
     inline DescribedUser& WithHomeDirectory(const char* value) { SetHomeDirectory(value); return *this;}
 

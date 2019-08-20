@@ -24,6 +24,7 @@
 #include <aws/sagemaker/model/ResourceConfig.h>
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/StoppingCondition.h>
+#include <aws/sagemaker/model/CheckpointConfig.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -933,6 +934,96 @@ namespace Model
      */
     inline CreateTrainingJobRequest& WithEnableInterContainerTrafficEncryption(bool value) { SetEnableInterContainerTrafficEncryption(value); return *this;}
 
+
+    /**
+     * <p>To train models using managed spot training, choose <code>True</code>.
+     * Managed spot training provides a fully managed and scalable infrastructure for
+     * training machine learning models. this option is useful when training jobs can
+     * be interrupted and when there is flexibility when the training job is run. </p>
+     * <p>The complete and intermediate results of jobs are stored in an Amazon S3
+     * bucket, and can be used as a starting point to train models incrementally.
+     * Amazon SageMaker provides metrics and logs in CloudWatch. They can be used to
+     * see when managed spot training jobs are running, interrupted, resumed, or
+     * completed. </p>
+     */
+    inline bool GetEnableManagedSpotTraining() const{ return m_enableManagedSpotTraining; }
+
+    /**
+     * <p>To train models using managed spot training, choose <code>True</code>.
+     * Managed spot training provides a fully managed and scalable infrastructure for
+     * training machine learning models. this option is useful when training jobs can
+     * be interrupted and when there is flexibility when the training job is run. </p>
+     * <p>The complete and intermediate results of jobs are stored in an Amazon S3
+     * bucket, and can be used as a starting point to train models incrementally.
+     * Amazon SageMaker provides metrics and logs in CloudWatch. They can be used to
+     * see when managed spot training jobs are running, interrupted, resumed, or
+     * completed. </p>
+     */
+    inline bool EnableManagedSpotTrainingHasBeenSet() const { return m_enableManagedSpotTrainingHasBeenSet; }
+
+    /**
+     * <p>To train models using managed spot training, choose <code>True</code>.
+     * Managed spot training provides a fully managed and scalable infrastructure for
+     * training machine learning models. this option is useful when training jobs can
+     * be interrupted and when there is flexibility when the training job is run. </p>
+     * <p>The complete and intermediate results of jobs are stored in an Amazon S3
+     * bucket, and can be used as a starting point to train models incrementally.
+     * Amazon SageMaker provides metrics and logs in CloudWatch. They can be used to
+     * see when managed spot training jobs are running, interrupted, resumed, or
+     * completed. </p>
+     */
+    inline void SetEnableManagedSpotTraining(bool value) { m_enableManagedSpotTrainingHasBeenSet = true; m_enableManagedSpotTraining = value; }
+
+    /**
+     * <p>To train models using managed spot training, choose <code>True</code>.
+     * Managed spot training provides a fully managed and scalable infrastructure for
+     * training machine learning models. this option is useful when training jobs can
+     * be interrupted and when there is flexibility when the training job is run. </p>
+     * <p>The complete and intermediate results of jobs are stored in an Amazon S3
+     * bucket, and can be used as a starting point to train models incrementally.
+     * Amazon SageMaker provides metrics and logs in CloudWatch. They can be used to
+     * see when managed spot training jobs are running, interrupted, resumed, or
+     * completed. </p>
+     */
+    inline CreateTrainingJobRequest& WithEnableManagedSpotTraining(bool value) { SetEnableManagedSpotTraining(value); return *this;}
+
+
+    /**
+     * <p>Contains information about the output location for managed spot training
+     * checkpoint data.</p>
+     */
+    inline const CheckpointConfig& GetCheckpointConfig() const{ return m_checkpointConfig; }
+
+    /**
+     * <p>Contains information about the output location for managed spot training
+     * checkpoint data.</p>
+     */
+    inline bool CheckpointConfigHasBeenSet() const { return m_checkpointConfigHasBeenSet; }
+
+    /**
+     * <p>Contains information about the output location for managed spot training
+     * checkpoint data.</p>
+     */
+    inline void SetCheckpointConfig(const CheckpointConfig& value) { m_checkpointConfigHasBeenSet = true; m_checkpointConfig = value; }
+
+    /**
+     * <p>Contains information about the output location for managed spot training
+     * checkpoint data.</p>
+     */
+    inline void SetCheckpointConfig(CheckpointConfig&& value) { m_checkpointConfigHasBeenSet = true; m_checkpointConfig = std::move(value); }
+
+    /**
+     * <p>Contains information about the output location for managed spot training
+     * checkpoint data.</p>
+     */
+    inline CreateTrainingJobRequest& WithCheckpointConfig(const CheckpointConfig& value) { SetCheckpointConfig(value); return *this;}
+
+    /**
+     * <p>Contains information about the output location for managed spot training
+     * checkpoint data.</p>
+     */
+    inline CreateTrainingJobRequest& WithCheckpointConfig(CheckpointConfig&& value) { SetCheckpointConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_trainingJobName;
@@ -970,6 +1061,12 @@ namespace Model
 
     bool m_enableInterContainerTrafficEncryption;
     bool m_enableInterContainerTrafficEncryptionHasBeenSet;
+
+    bool m_enableManagedSpotTraining;
+    bool m_enableManagedSpotTrainingHasBeenSet;
+
+    CheckpointConfig m_checkpointConfig;
+    bool m_checkpointConfigHasBeenSet;
   };
 
 } // namespace Model

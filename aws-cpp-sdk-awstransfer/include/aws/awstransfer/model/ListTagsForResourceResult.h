@@ -83,7 +83,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListTagsForResource</code>
      * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command the <code>NextToken</code> parameter to continue
+     * pass in a subsequent command to the <code>NextToken</code> parameter to continue
      * listing additional tags.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -91,7 +91,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListTagsForResource</code>
      * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command the <code>NextToken</code> parameter to continue
+     * pass in a subsequent command to the <code>NextToken</code> parameter to continue
      * listing additional tags.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
@@ -99,7 +99,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListTagsForResource</code>
      * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command the <code>NextToken</code> parameter to continue
+     * pass in a subsequent command to the <code>NextToken</code> parameter to continue
      * listing additional tags.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
@@ -107,7 +107,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListTagsForResource</code>
      * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command the <code>NextToken</code> parameter to continue
+     * pass in a subsequent command to the <code>NextToken</code> parameter to continue
      * listing additional tags.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
@@ -115,7 +115,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListTagsForResource</code>
      * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command the <code>NextToken</code> parameter to continue
+     * pass in a subsequent command to the <code>NextToken</code> parameter to continue
      * listing additional tags.</p>
      */
     inline ListTagsForResourceResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
@@ -123,7 +123,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListTagsForResource</code>
      * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command the <code>NextToken</code> parameter to continue
+     * pass in a subsequent command to the <code>NextToken</code> parameter to continue
      * listing additional tags.</p>
      */
     inline ListTagsForResourceResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
@@ -131,7 +131,7 @@ namespace Model
     /**
      * <p>When you can get additional results from the <code>ListTagsForResource</code>
      * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command the <code>NextToken</code> parameter to continue
+     * pass in a subsequent command to the <code>NextToken</code> parameter to continue
      * listing additional tags.</p>
      */
     inline ListTagsForResourceResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
@@ -139,50 +139,43 @@ namespace Model
 
     /**
      * <p>Key-value pairs that are assigned to a resource, usually for the purpose of
-     * grouping and searching for items. Tags are metadata that you define that you can
-     * use for any purpose.</p>
+     * grouping and searching for items. Tags are metadata that you define.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>Key-value pairs that are assigned to a resource, usually for the purpose of
-     * grouping and searching for items. Tags are metadata that you define that you can
-     * use for any purpose.</p>
+     * grouping and searching for items. Tags are metadata that you define.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
     /**
      * <p>Key-value pairs that are assigned to a resource, usually for the purpose of
-     * grouping and searching for items. Tags are metadata that you define that you can
-     * use for any purpose.</p>
+     * grouping and searching for items. Tags are metadata that you define.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
      * <p>Key-value pairs that are assigned to a resource, usually for the purpose of
-     * grouping and searching for items. Tags are metadata that you define that you can
-     * use for any purpose.</p>
+     * grouping and searching for items. Tags are metadata that you define.</p>
      */
     inline ListTagsForResourceResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>Key-value pairs that are assigned to a resource, usually for the purpose of
-     * grouping and searching for items. Tags are metadata that you define that you can
-     * use for any purpose.</p>
+     * grouping and searching for items. Tags are metadata that you define.</p>
      */
     inline ListTagsForResourceResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Key-value pairs that are assigned to a resource, usually for the purpose of
-     * grouping and searching for items. Tags are metadata that you define that you can
-     * use for any purpose.</p>
+     * grouping and searching for items. Tags are metadata that you define.</p>
      */
     inline ListTagsForResourceResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
     /**
      * <p>Key-value pairs that are assigned to a resource, usually for the purpose of
-     * grouping and searching for items. Tags are metadata that you define that you can
-     * use for any purpose.</p>
+     * grouping and searching for items. Tags are metadata that you define.</p>
      */
     inline ListTagsForResourceResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 

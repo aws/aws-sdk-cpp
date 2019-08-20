@@ -14,40 +14,27 @@
 */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace SageMaker
+namespace AppStream
 {
 namespace Model
 {
-  enum class SecondaryStatus
+  enum class AccessEndpointType
   {
     NOT_SET,
-    Starting,
-    LaunchingMLInstances,
-    PreparingTrainingStack,
-    Downloading,
-    DownloadingTrainingImage,
-    Training,
-    Uploading,
-    Stopping,
-    Stopped,
-    MaxRuntimeExceeded,
-    Completed,
-    Failed,
-    Interrupted,
-    MaxWaitTimeExceeded
+    STREAMING
   };
 
-namespace SecondaryStatusMapper
+namespace AccessEndpointTypeMapper
 {
-AWS_SAGEMAKER_API SecondaryStatus GetSecondaryStatusForName(const Aws::String& name);
+AWS_APPSTREAM_API AccessEndpointType GetAccessEndpointTypeForName(const Aws::String& name);
 
-AWS_SAGEMAKER_API Aws::String GetNameForSecondaryStatus(SecondaryStatus value);
-} // namespace SecondaryStatusMapper
+AWS_APPSTREAM_API Aws::String GetNameForAccessEndpointType(AccessEndpointType value);
+} // namespace AccessEndpointTypeMapper
 } // namespace Model
-} // namespace SageMaker
+} // namespace AppStream
 } // namespace Aws

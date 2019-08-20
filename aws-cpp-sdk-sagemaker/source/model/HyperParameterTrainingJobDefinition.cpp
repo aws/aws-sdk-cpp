@@ -40,7 +40,10 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition() :
     m_enableNetworkIsolation(false),
     m_enableNetworkIsolationHasBeenSet(false),
     m_enableInterContainerTrafficEncryption(false),
-    m_enableInterContainerTrafficEncryptionHasBeenSet(false)
+    m_enableInterContainerTrafficEncryptionHasBeenSet(false),
+    m_enableManagedSpotTraining(false),
+    m_enableManagedSpotTrainingHasBeenSet(false),
+    m_checkpointConfigHasBeenSet(false)
 {
 }
 
@@ -56,7 +59,10 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition(JsonVie
     m_enableNetworkIsolation(false),
     m_enableNetworkIsolationHasBeenSet(false),
     m_enableInterContainerTrafficEncryption(false),
-    m_enableInterContainerTrafficEncryptionHasBeenSet(false)
+    m_enableInterContainerTrafficEncryptionHasBeenSet(false),
+    m_enableManagedSpotTraining(false),
+    m_enableManagedSpotTrainingHasBeenSet(false),
+    m_checkpointConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -139,6 +145,20 @@ HyperParameterTrainingJobDefinition& HyperParameterTrainingJobDefinition::operat
     m_enableInterContainerTrafficEncryptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnableManagedSpotTraining"))
+  {
+    m_enableManagedSpotTraining = jsonValue.GetBool("EnableManagedSpotTraining");
+
+    m_enableManagedSpotTrainingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CheckpointConfig"))
+  {
+    m_checkpointConfig = jsonValue.GetObject("CheckpointConfig");
+
+    m_checkpointConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -213,6 +233,18 @@ JsonValue HyperParameterTrainingJobDefinition::Jsonize() const
   if(m_enableInterContainerTrafficEncryptionHasBeenSet)
   {
    payload.WithBool("EnableInterContainerTrafficEncryption", m_enableInterContainerTrafficEncryption);
+
+  }
+
+  if(m_enableManagedSpotTrainingHasBeenSet)
+  {
+   payload.WithBool("EnableManagedSpotTraining", m_enableManagedSpotTraining);
+
+  }
+
+  if(m_checkpointConfigHasBeenSet)
+  {
+   payload.WithObject("CheckpointConfig", m_checkpointConfig.Jsonize());
 
   }
 

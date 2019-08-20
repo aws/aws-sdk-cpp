@@ -40,7 +40,10 @@ namespace Model
     deeplens,
     rk3399,
     rk3288,
-    sbe_c
+    aisage,
+    sbe_c,
+    qcs605,
+    qcs603
   };
 
 namespace TargetDeviceMapper

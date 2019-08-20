@@ -98,72 +98,136 @@ namespace Model
     /**
      * <p>A scope-down policy for your user so you can use the same IAM role across
      * multiple users. This policy scopes down user access to portions of their Amazon
-     * S3 bucket. Variables you can use inside this policy include
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>
+     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     * Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+     * it in the <code>Policy</code> argument.</p> <p>For an example of a scope-down
+     * policy, see
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating
+     * a Scope-Down Policy.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the
+     * <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
      * <p>A scope-down policy for your user so you can use the same IAM role across
      * multiple users. This policy scopes down user access to portions of their Amazon
-     * S3 bucket. Variables you can use inside this policy include
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>
+     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     * Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+     * it in the <code>Policy</code> argument.</p> <p>For an example of a scope-down
+     * policy, see
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating
+     * a Scope-Down Policy.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the
+     * <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
      * <p>A scope-down policy for your user so you can use the same IAM role across
      * multiple users. This policy scopes down user access to portions of their Amazon
-     * S3 bucket. Variables you can use inside this policy include
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>
+     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     * Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+     * it in the <code>Policy</code> argument.</p> <p>For an example of a scope-down
+     * policy, see
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating
+     * a Scope-Down Policy.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the
+     * <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
      * <p>A scope-down policy for your user so you can use the same IAM role across
      * multiple users. This policy scopes down user access to portions of their Amazon
-     * S3 bucket. Variables you can use inside this policy include
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>
+     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     * Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+     * it in the <code>Policy</code> argument.</p> <p>For an example of a scope-down
+     * policy, see
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating
+     * a Scope-Down Policy.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the
+     * <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
      * <p>A scope-down policy for your user so you can use the same IAM role across
      * multiple users. This policy scopes down user access to portions of their Amazon
-     * S3 bucket. Variables you can use inside this policy include
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>
+     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     * Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+     * it in the <code>Policy</code> argument.</p> <p>For an example of a scope-down
+     * policy, see
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating
+     * a Scope-Down Policy.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the
+     * <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /**
      * <p>A scope-down policy for your user so you can use the same IAM role across
      * multiple users. This policy scopes down user access to portions of their Amazon
-     * S3 bucket. Variables you can use inside this policy include
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>
+     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     * Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+     * it in the <code>Policy</code> argument.</p> <p>For an example of a scope-down
+     * policy, see
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating
+     * a Scope-Down Policy.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the
+     * <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
     inline CreateUserRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
      * <p>A scope-down policy for your user so you can use the same IAM role across
      * multiple users. This policy scopes down user access to portions of their Amazon
-     * S3 bucket. Variables you can use inside this policy include
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>
+     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     * Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+     * it in the <code>Policy</code> argument.</p> <p>For an example of a scope-down
+     * policy, see
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating
+     * a Scope-Down Policy.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the
+     * <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
     inline CreateUserRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
      * <p>A scope-down policy for your user so you can use the same IAM role across
      * multiple users. This policy scopes down user access to portions of their Amazon
-     * S3 bucket. Variables you can use inside this policy include
+     * S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>
+     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     * Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+     * it in the <code>Policy</code> argument.</p> <p>For an example of a scope-down
+     * policy, see
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating
+     * a Scope-Down Policy.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the
+     * <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
     inline CreateUserRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
@@ -299,49 +363,49 @@ namespace Model
 
 
     /**
-     * <p>The public portion of the Secure Shall (SSH) key used to authenticate the
+     * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
      * user to the SFTP server.</p>
      */
     inline const Aws::String& GetSshPublicKeyBody() const{ return m_sshPublicKeyBody; }
 
     /**
-     * <p>The public portion of the Secure Shall (SSH) key used to authenticate the
+     * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
      * user to the SFTP server.</p>
      */
     inline bool SshPublicKeyBodyHasBeenSet() const { return m_sshPublicKeyBodyHasBeenSet; }
 
     /**
-     * <p>The public portion of the Secure Shall (SSH) key used to authenticate the
+     * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
      * user to the SFTP server.</p>
      */
     inline void SetSshPublicKeyBody(const Aws::String& value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody = value; }
 
     /**
-     * <p>The public portion of the Secure Shall (SSH) key used to authenticate the
+     * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
      * user to the SFTP server.</p>
      */
     inline void SetSshPublicKeyBody(Aws::String&& value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody = std::move(value); }
 
     /**
-     * <p>The public portion of the Secure Shall (SSH) key used to authenticate the
+     * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
      * user to the SFTP server.</p>
      */
     inline void SetSshPublicKeyBody(const char* value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody.assign(value); }
 
     /**
-     * <p>The public portion of the Secure Shall (SSH) key used to authenticate the
+     * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
      * user to the SFTP server.</p>
      */
     inline CreateUserRequest& WithSshPublicKeyBody(const Aws::String& value) { SetSshPublicKeyBody(value); return *this;}
 
     /**
-     * <p>The public portion of the Secure Shall (SSH) key used to authenticate the
+     * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
      * user to the SFTP server.</p>
      */
     inline CreateUserRequest& WithSshPublicKeyBody(Aws::String&& value) { SetSshPublicKeyBody(std::move(value)); return *this;}
 
     /**
-     * <p>The public portion of the Secure Shall (SSH) key used to authenticate the
+     * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
      * user to the SFTP server.</p>
      */
     inline CreateUserRequest& WithSshPublicKeyBody(const char* value) { SetSshPublicKeyBody(value); return *this;}

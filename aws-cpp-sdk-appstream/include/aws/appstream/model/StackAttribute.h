@@ -33,7 +33,8 @@ namespace Model
     REDIRECT_URL,
     FEEDBACK_URL,
     THEME_NAME,
-    USER_SETTINGS
+    USER_SETTINGS,
+    ACCESS_ENDPOINTS
   };
 
 namespace StackAttributeMapper

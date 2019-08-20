@@ -50,49 +50,49 @@ namespace Model
 
     /**
      * <p>This property is the unique Amazon Resource Name (ARN) for the user that you
-     * wish to learn about.</p>
+     * want to learn about.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
      * <p>This property is the unique Amazon Resource Name (ARN) for the user that you
-     * wish to learn about.</p>
+     * want to learn about.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>This property is the unique Amazon Resource Name (ARN) for the user that you
-     * wish to learn about.</p>
+     * want to learn about.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
      * <p>This property is the unique Amazon Resource Name (ARN) for the user that you
-     * wish to learn about.</p>
+     * want to learn about.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>This property is the unique Amazon Resource Name (ARN) for the user that you
-     * wish to learn about.</p>
+     * want to learn about.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
      * <p>This property is the unique Amazon Resource Name (ARN) for the user that you
-     * wish to learn about.</p>
+     * want to learn about.</p>
      */
     inline ListedUser& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
      * <p>This property is the unique Amazon Resource Name (ARN) for the user that you
-     * wish to learn about.</p>
+     * want to learn about.</p>
      */
     inline ListedUser& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>This property is the unique Amazon Resource Name (ARN) for the user that you
-     * wish to learn about.</p>
+     * want to learn about.</p>
      */
     inline ListedUser& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -148,7 +148,7 @@ namespace Model
 
     /**
      * <p>The role in use by this user. A <i>role</i> is an AWS Identity and Access
-     * Management (IAM) entity that in this case allows the SFTP server to act on a
+     * Management (IAM) entity that, in this case, allows the SFTP server to act on a
      * user's behalf. It allows the server to inherit the trust relationship that
      * enables that user to perform file operations to their Amazon S3 bucket.</p>
      */
@@ -156,7 +156,7 @@ namespace Model
 
     /**
      * <p>The role in use by this user. A <i>role</i> is an AWS Identity and Access
-     * Management (IAM) entity that in this case allows the SFTP server to act on a
+     * Management (IAM) entity that, in this case, allows the SFTP server to act on a
      * user's behalf. It allows the server to inherit the trust relationship that
      * enables that user to perform file operations to their Amazon S3 bucket.</p>
      */
@@ -164,7 +164,7 @@ namespace Model
 
     /**
      * <p>The role in use by this user. A <i>role</i> is an AWS Identity and Access
-     * Management (IAM) entity that in this case allows the SFTP server to act on a
+     * Management (IAM) entity that, in this case, allows the SFTP server to act on a
      * user's behalf. It allows the server to inherit the trust relationship that
      * enables that user to perform file operations to their Amazon S3 bucket.</p>
      */
@@ -172,7 +172,7 @@ namespace Model
 
     /**
      * <p>The role in use by this user. A <i>role</i> is an AWS Identity and Access
-     * Management (IAM) entity that in this case allows the SFTP server to act on a
+     * Management (IAM) entity that, in this case, allows the SFTP server to act on a
      * user's behalf. It allows the server to inherit the trust relationship that
      * enables that user to perform file operations to their Amazon S3 bucket.</p>
      */
@@ -180,7 +180,7 @@ namespace Model
 
     /**
      * <p>The role in use by this user. A <i>role</i> is an AWS Identity and Access
-     * Management (IAM) entity that in this case allows the SFTP server to act on a
+     * Management (IAM) entity that, in this case, allows the SFTP server to act on a
      * user's behalf. It allows the server to inherit the trust relationship that
      * enables that user to perform file operations to their Amazon S3 bucket.</p>
      */
@@ -188,7 +188,7 @@ namespace Model
 
     /**
      * <p>The role in use by this user. A <i>role</i> is an AWS Identity and Access
-     * Management (IAM) entity that in this case allows the SFTP server to act on a
+     * Management (IAM) entity that, in this case, allows the SFTP server to act on a
      * user's behalf. It allows the server to inherit the trust relationship that
      * enables that user to perform file operations to their Amazon S3 bucket.</p>
      */
@@ -196,7 +196,7 @@ namespace Model
 
     /**
      * <p>The role in use by this user. A <i>role</i> is an AWS Identity and Access
-     * Management (IAM) entity that in this case allows the SFTP server to act on a
+     * Management (IAM) entity that, in this case, allows the SFTP server to act on a
      * user's behalf. It allows the server to inherit the trust relationship that
      * enables that user to perform file operations to their Amazon S3 bucket.</p>
      */
@@ -204,7 +204,7 @@ namespace Model
 
     /**
      * <p>The role in use by this user. A <i>role</i> is an AWS Identity and Access
-     * Management (IAM) entity that in this case allows the SFTP server to act on a
+     * Management (IAM) entity that, in this case, allows the SFTP server to act on a
      * user's behalf. It allows the server to inherit the trust relationship that
      * enables that user to perform file operations to their Amazon S3 bucket.</p>
      */

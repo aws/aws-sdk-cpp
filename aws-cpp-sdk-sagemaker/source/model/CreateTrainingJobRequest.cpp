@@ -36,7 +36,10 @@ CreateTrainingJobRequest::CreateTrainingJobRequest() :
     m_enableNetworkIsolation(false),
     m_enableNetworkIsolationHasBeenSet(false),
     m_enableInterContainerTrafficEncryption(false),
-    m_enableInterContainerTrafficEncryptionHasBeenSet(false)
+    m_enableInterContainerTrafficEncryptionHasBeenSet(false),
+    m_enableManagedSpotTraining(false),
+    m_enableManagedSpotTrainingHasBeenSet(false),
+    m_checkpointConfigHasBeenSet(false)
 {
 }
 
@@ -128,6 +131,18 @@ Aws::String CreateTrainingJobRequest::SerializePayload() const
   if(m_enableInterContainerTrafficEncryptionHasBeenSet)
   {
    payload.WithBool("EnableInterContainerTrafficEncryption", m_enableInterContainerTrafficEncryption);
+
+  }
+
+  if(m_enableManagedSpotTrainingHasBeenSet)
+  {
+   payload.WithBool("EnableManagedSpotTraining", m_enableManagedSpotTraining);
+
+  }
+
+  if(m_checkpointConfigHasBeenSet)
+  {
+   payload.WithObject("CheckpointConfig", m_checkpointConfig.Jsonize());
 
   }
 

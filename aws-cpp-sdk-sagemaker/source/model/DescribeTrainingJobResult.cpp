@@ -30,7 +30,10 @@ DescribeTrainingJobResult::DescribeTrainingJobResult() :
     m_trainingJobStatus(TrainingJobStatus::NOT_SET),
     m_secondaryStatus(SecondaryStatus::NOT_SET),
     m_enableNetworkIsolation(false),
-    m_enableInterContainerTrafficEncryption(false)
+    m_enableInterContainerTrafficEncryption(false),
+    m_enableManagedSpotTraining(false),
+    m_trainingTimeInSeconds(0),
+    m_billableTimeInSeconds(0)
 {
 }
 
@@ -38,7 +41,10 @@ DescribeTrainingJobResult::DescribeTrainingJobResult(const Aws::AmazonWebService
     m_trainingJobStatus(TrainingJobStatus::NOT_SET),
     m_secondaryStatus(SecondaryStatus::NOT_SET),
     m_enableNetworkIsolation(false),
-    m_enableInterContainerTrafficEncryption(false)
+    m_enableInterContainerTrafficEncryption(false),
+    m_enableManagedSpotTraining(false),
+    m_trainingTimeInSeconds(0),
+    m_billableTimeInSeconds(0)
 {
   *this = result;
 }
@@ -199,6 +205,30 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("EnableInterContainerTrafficEncryption"))
   {
     m_enableInterContainerTrafficEncryption = jsonValue.GetBool("EnableInterContainerTrafficEncryption");
+
+  }
+
+  if(jsonValue.ValueExists("EnableManagedSpotTraining"))
+  {
+    m_enableManagedSpotTraining = jsonValue.GetBool("EnableManagedSpotTraining");
+
+  }
+
+  if(jsonValue.ValueExists("CheckpointConfig"))
+  {
+    m_checkpointConfig = jsonValue.GetObject("CheckpointConfig");
+
+  }
+
+  if(jsonValue.ValueExists("TrainingTimeInSeconds"))
+  {
+    m_trainingTimeInSeconds = jsonValue.GetInteger("TrainingTimeInSeconds");
+
+  }
+
+  if(jsonValue.ValueExists("BillableTimeInSeconds"))
+  {
+    m_billableTimeInSeconds = jsonValue.GetInteger("BillableTimeInSeconds");
 
   }
 

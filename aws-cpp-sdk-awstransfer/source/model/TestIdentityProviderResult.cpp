@@ -40,15 +40,21 @@ TestIdentityProviderResult::TestIdentityProviderResult(const Aws::AmazonWebServi
 TestIdentityProviderResult& TestIdentityProviderResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Message"))
+  if(jsonValue.ValueExists("Response"))
   {
-    m_message = jsonValue.GetString("Message");
+    m_response = jsonValue.GetString("Response");
 
   }
 
   if(jsonValue.ValueExists("StatusCode"))
   {
     m_statusCode = jsonValue.GetInteger("StatusCode");
+
+  }
+
+  if(jsonValue.ValueExists("Message"))
+  {
+    m_message = jsonValue.GetString("Message");
 
   }
 
