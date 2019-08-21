@@ -47,38 +47,38 @@ namespace Model
 
 
     /**
-     * <p>The video in which you want to moderate content. The video must be stored in
-     * an Amazon S3 bucket.</p>
+     * <p>The video in which you want to detect unsafe content. The video must be
+     * stored in an Amazon S3 bucket.</p>
      */
     inline const Video& GetVideo() const{ return m_video; }
 
     /**
-     * <p>The video in which you want to moderate content. The video must be stored in
-     * an Amazon S3 bucket.</p>
+     * <p>The video in which you want to detect unsafe content. The video must be
+     * stored in an Amazon S3 bucket.</p>
      */
     inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
 
     /**
-     * <p>The video in which you want to moderate content. The video must be stored in
-     * an Amazon S3 bucket.</p>
+     * <p>The video in which you want to detect unsafe content. The video must be
+     * stored in an Amazon S3 bucket.</p>
      */
     inline void SetVideo(const Video& value) { m_videoHasBeenSet = true; m_video = value; }
 
     /**
-     * <p>The video in which you want to moderate content. The video must be stored in
-     * an Amazon S3 bucket.</p>
+     * <p>The video in which you want to detect unsafe content. The video must be
+     * stored in an Amazon S3 bucket.</p>
      */
     inline void SetVideo(Video&& value) { m_videoHasBeenSet = true; m_video = std::move(value); }
 
     /**
-     * <p>The video in which you want to moderate content. The video must be stored in
-     * an Amazon S3 bucket.</p>
+     * <p>The video in which you want to detect unsafe content. The video must be
+     * stored in an Amazon S3 bucket.</p>
      */
     inline StartContentModerationRequest& WithVideo(const Video& value) { SetVideo(value); return *this;}
 
     /**
-     * <p>The video in which you want to moderate content. The video must be stored in
-     * an Amazon S3 bucket.</p>
+     * <p>The video in which you want to detect unsafe content. The video must be
+     * stored in an Amazon S3 bucket.</p>
      */
     inline StartContentModerationRequest& WithVideo(Video&& value) { SetVideo(std::move(value)); return *this;}
 
@@ -199,86 +199,102 @@ namespace Model
 
     /**
      * <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish
-     * the completion status of the content moderation analysis to.</p>
+     * the completion status of the unsafe content analysis to.</p>
      */
     inline const NotificationChannel& GetNotificationChannel() const{ return m_notificationChannel; }
 
     /**
      * <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish
-     * the completion status of the content moderation analysis to.</p>
+     * the completion status of the unsafe content analysis to.</p>
      */
     inline bool NotificationChannelHasBeenSet() const { return m_notificationChannelHasBeenSet; }
 
     /**
      * <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish
-     * the completion status of the content moderation analysis to.</p>
+     * the completion status of the unsafe content analysis to.</p>
      */
     inline void SetNotificationChannel(const NotificationChannel& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = value; }
 
     /**
      * <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish
-     * the completion status of the content moderation analysis to.</p>
+     * the completion status of the unsafe content analysis to.</p>
      */
     inline void SetNotificationChannel(NotificationChannel&& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = std::move(value); }
 
     /**
      * <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish
-     * the completion status of the content moderation analysis to.</p>
+     * the completion status of the unsafe content analysis to.</p>
      */
     inline StartContentModerationRequest& WithNotificationChannel(const NotificationChannel& value) { SetNotificationChannel(value); return *this;}
 
     /**
      * <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish
-     * the completion status of the content moderation analysis to.</p>
+     * the completion status of the unsafe content analysis to.</p>
      */
     inline StartContentModerationRequest& WithNotificationChannel(NotificationChannel&& value) { SetNotificationChannel(std::move(value)); return *this;}
 
 
     /**
-     * <p>Unique identifier you specify to identify the job in the completion status
-     * published to the Amazon Simple Notification Service topic. </p>
+     * <p>An identifier you specify that's returned in the completion notification
+     * that's published to your Amazon Simple Notification Service topic. For example,
+     * you can use <code>JobTag</code> to group related jobs and identify them in the
+     * completion notification.</p>
      */
     inline const Aws::String& GetJobTag() const{ return m_jobTag; }
 
     /**
-     * <p>Unique identifier you specify to identify the job in the completion status
-     * published to the Amazon Simple Notification Service topic. </p>
+     * <p>An identifier you specify that's returned in the completion notification
+     * that's published to your Amazon Simple Notification Service topic. For example,
+     * you can use <code>JobTag</code> to group related jobs and identify them in the
+     * completion notification.</p>
      */
     inline bool JobTagHasBeenSet() const { return m_jobTagHasBeenSet; }
 
     /**
-     * <p>Unique identifier you specify to identify the job in the completion status
-     * published to the Amazon Simple Notification Service topic. </p>
+     * <p>An identifier you specify that's returned in the completion notification
+     * that's published to your Amazon Simple Notification Service topic. For example,
+     * you can use <code>JobTag</code> to group related jobs and identify them in the
+     * completion notification.</p>
      */
     inline void SetJobTag(const Aws::String& value) { m_jobTagHasBeenSet = true; m_jobTag = value; }
 
     /**
-     * <p>Unique identifier you specify to identify the job in the completion status
-     * published to the Amazon Simple Notification Service topic. </p>
+     * <p>An identifier you specify that's returned in the completion notification
+     * that's published to your Amazon Simple Notification Service topic. For example,
+     * you can use <code>JobTag</code> to group related jobs and identify them in the
+     * completion notification.</p>
      */
     inline void SetJobTag(Aws::String&& value) { m_jobTagHasBeenSet = true; m_jobTag = std::move(value); }
 
     /**
-     * <p>Unique identifier you specify to identify the job in the completion status
-     * published to the Amazon Simple Notification Service topic. </p>
+     * <p>An identifier you specify that's returned in the completion notification
+     * that's published to your Amazon Simple Notification Service topic. For example,
+     * you can use <code>JobTag</code> to group related jobs and identify them in the
+     * completion notification.</p>
      */
     inline void SetJobTag(const char* value) { m_jobTagHasBeenSet = true; m_jobTag.assign(value); }
 
     /**
-     * <p>Unique identifier you specify to identify the job in the completion status
-     * published to the Amazon Simple Notification Service topic. </p>
+     * <p>An identifier you specify that's returned in the completion notification
+     * that's published to your Amazon Simple Notification Service topic. For example,
+     * you can use <code>JobTag</code> to group related jobs and identify them in the
+     * completion notification.</p>
      */
     inline StartContentModerationRequest& WithJobTag(const Aws::String& value) { SetJobTag(value); return *this;}
 
     /**
-     * <p>Unique identifier you specify to identify the job in the completion status
-     * published to the Amazon Simple Notification Service topic. </p>
+     * <p>An identifier you specify that's returned in the completion notification
+     * that's published to your Amazon Simple Notification Service topic. For example,
+     * you can use <code>JobTag</code> to group related jobs and identify them in the
+     * completion notification.</p>
      */
     inline StartContentModerationRequest& WithJobTag(Aws::String&& value) { SetJobTag(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier you specify to identify the job in the completion status
-     * published to the Amazon Simple Notification Service topic. </p>
+     * <p>An identifier you specify that's returned in the completion notification
+     * that's published to your Amazon Simple Notification Service topic. For example,
+     * you can use <code>JobTag</code> to group related jobs and identify them in the
+     * completion notification.</p>
      */
     inline StartContentModerationRequest& WithJobTag(const char* value) { SetJobTag(value); return *this;}
 

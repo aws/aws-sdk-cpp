@@ -43,7 +43,7 @@ namespace Model
    * <code>registry/repository[@digest]</code>. A digest is a hash value that
    * identifies a specific version of an image. For information about Amazon ECR
    * paths, see <a
-   * href="http://docs.aws.amazon.com//AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling
+   * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling
    * an Image</a> in the <i>Amazon ECR User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeployedImage">AWS
    * API Reference</a></p>

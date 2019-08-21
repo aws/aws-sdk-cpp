@@ -372,22 +372,40 @@ namespace Model
     inline Workteam& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Configures SNS notifications of available or expiring work items for work
+     * teams.</p>
+     */
     inline const NotificationConfiguration& GetNotificationConfiguration() const{ return m_notificationConfiguration; }
 
-    
+    /**
+     * <p>Configures SNS notifications of available or expiring work items for work
+     * teams.</p>
+     */
     inline bool NotificationConfigurationHasBeenSet() const { return m_notificationConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>Configures SNS notifications of available or expiring work items for work
+     * teams.</p>
+     */
     inline void SetNotificationConfiguration(const NotificationConfiguration& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = value; }
 
-    
+    /**
+     * <p>Configures SNS notifications of available or expiring work items for work
+     * teams.</p>
+     */
     inline void SetNotificationConfiguration(NotificationConfiguration&& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>Configures SNS notifications of available or expiring work items for work
+     * teams.</p>
+     */
     inline Workteam& WithNotificationConfiguration(const NotificationConfiguration& value) { SetNotificationConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>Configures SNS notifications of available or expiring work items for work
+     * teams.</p>
+     */
     inline Workteam& WithNotificationConfiguration(NotificationConfiguration&& value) { SetNotificationConfiguration(std::move(value)); return *this;}
 
   private:

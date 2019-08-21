@@ -41,7 +41,7 @@ namespace Model
    * data that is not needed for inference in a batch transform job. The output
    * filter provided allows you to include input data relevant to interpreting the
    * predictions in the output from the job. For more information, see <a
-   * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
    * Prediction Results with their Corresponding Input Records</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DataProcessing">AWS
@@ -58,7 +58,7 @@ namespace Model
 
     /**
      * <p>A <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
      * column, from the input. If you want Amazon SageMaker to pass the entire input
@@ -70,7 +70,7 @@ namespace Model
 
     /**
      * <p>A <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
      * column, from the input. If you want Amazon SageMaker to pass the entire input
@@ -82,7 +82,7 @@ namespace Model
 
     /**
      * <p>A <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
      * column, from the input. If you want Amazon SageMaker to pass the entire input
@@ -94,7 +94,7 @@ namespace Model
 
     /**
      * <p>A <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
      * column, from the input. If you want Amazon SageMaker to pass the entire input
@@ -106,7 +106,7 @@ namespace Model
 
     /**
      * <p>A <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
      * column, from the input. If you want Amazon SageMaker to pass the entire input
@@ -118,7 +118,7 @@ namespace Model
 
     /**
      * <p>A <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
      * column, from the input. If you want Amazon SageMaker to pass the entire input
@@ -130,7 +130,7 @@ namespace Model
 
     /**
      * <p>A <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
      * column, from the input. If you want Amazon SageMaker to pass the entire input
@@ -142,7 +142,7 @@ namespace Model
 
     /**
      * <p>A <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
      * column, from the input. If you want Amazon SageMaker to pass the entire input
@@ -155,7 +155,7 @@ namespace Model
 
     /**
      * <p>A <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
      * file for a batch transform job. If you want Amazon SageMaker to store the entire
      * input dataset in the output file, leave the default value, <code>$</code>. If
@@ -167,7 +167,7 @@ namespace Model
 
     /**
      * <p>A <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
      * file for a batch transform job. If you want Amazon SageMaker to store the entire
      * input dataset in the output file, leave the default value, <code>$</code>. If
@@ -179,7 +179,7 @@ namespace Model
 
     /**
      * <p>A <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
      * file for a batch transform job. If you want Amazon SageMaker to store the entire
      * input dataset in the output file, leave the default value, <code>$</code>. If
@@ -191,7 +191,7 @@ namespace Model
 
     /**
      * <p>A <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
      * file for a batch transform job. If you want Amazon SageMaker to store the entire
      * input dataset in the output file, leave the default value, <code>$</code>. If
@@ -203,7 +203,7 @@ namespace Model
 
     /**
      * <p>A <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
      * file for a batch transform job. If you want Amazon SageMaker to store the entire
      * input dataset in the output file, leave the default value, <code>$</code>. If
@@ -215,7 +215,7 @@ namespace Model
 
     /**
      * <p>A <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
      * file for a batch transform job. If you want Amazon SageMaker to store the entire
      * input dataset in the output file, leave the default value, <code>$</code>. If
@@ -227,7 +227,7 @@ namespace Model
 
     /**
      * <p>A <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
      * file for a batch transform job. If you want Amazon SageMaker to store the entire
      * input dataset in the output file, leave the default value, <code>$</code>. If
@@ -239,7 +239,7 @@ namespace Model
 
     /**
      * <p>A <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
      * file for a batch transform job. If you want Amazon SageMaker to store the entire
      * input dataset in the output file, leave the default value, <code>$</code>. If

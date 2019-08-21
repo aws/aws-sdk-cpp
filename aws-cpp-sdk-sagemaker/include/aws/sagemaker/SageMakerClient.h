@@ -566,7 +566,7 @@ namespace Model
          * notebook instance, and it persists independently from the lifecycle of any
          * notebook instances it is associated with.</p> <p>The repository can be hosted
          * either in <a
-         * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
          * CodeCommit</a> or in any other Git repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCodeRepository">AWS
          * API Reference</a></p>
@@ -581,7 +581,7 @@ namespace Model
          * notebook instance, and it persists independently from the lifecycle of any
          * notebook instances it is associated with.</p> <p>The repository can be hosted
          * either in <a
-         * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
          * CodeCommit</a> or in any other Git repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCodeRepository">AWS
          * API Reference</a></p>
@@ -598,7 +598,7 @@ namespace Model
          * notebook instance, and it persists independently from the lifecycle of any
          * notebook instances it is associated with.</p> <p>The repository can be hosted
          * either in <a
-         * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+         * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
          * CodeCommit</a> or in any other Git repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCodeRepository">AWS
          * API Reference</a></p>
@@ -709,7 +709,7 @@ namespace Model
          * from the S3 path you provided. AWS STS is activated in your IAM user account by
          * default. If you previously deactivated AWS STS for a region, you need to
          * reactivate AWS STS for that region. For more information, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+         * href="IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
          * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpoint">AWS
@@ -743,7 +743,7 @@ namespace Model
          * from the S3 path you provided. AWS STS is activated in your IAM user account by
          * default. If you previously deactivated AWS STS for a region, you need to
          * reactivate AWS STS for that region. For more information, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+         * href="IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
          * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpoint">AWS
@@ -779,7 +779,7 @@ namespace Model
          * from the S3 path you provided. AWS STS is activated in your IAM user account by
          * default. If you previously deactivated AWS STS for a region, you need to
          * reactivate AWS STS for that region. For more information, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+         * href="IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
          * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpoint">AWS
@@ -915,11 +915,11 @@ namespace Model
          * Automated data labeling uses <i>active learning</i> to determine if a data
          * object can be labeled by machine or if it needs to be sent to a human worker.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-automated-labeling.html">Using
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-automated-labeling.html">Using
          * Automated Data Labeling</a>.</p> <p>The data objects to be labeled are contained
          * in an Amazon S3 bucket. You create a <i>manifest file</i> that describes the
          * location of each object. For more information, see <a
-         * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-data.html">Using Input
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data.html">Using Input
          * and Output Data</a>.</p> <p>The output can be used as the manifest file for
          * another labeling job or as training data for your machine learning
          * models.</p><p><h3>See Also:</h3>   <a
@@ -944,11 +944,11 @@ namespace Model
          * Automated data labeling uses <i>active learning</i> to determine if a data
          * object can be labeled by machine or if it needs to be sent to a human worker.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-automated-labeling.html">Using
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-automated-labeling.html">Using
          * Automated Data Labeling</a>.</p> <p>The data objects to be labeled are contained
          * in an Amazon S3 bucket. You create a <i>manifest file</i> that describes the
          * location of each object. For more information, see <a
-         * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-data.html">Using Input
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data.html">Using Input
          * and Output Data</a>.</p> <p>The output can be used as the manifest file for
          * another labeling job or as training data for your machine learning
          * models.</p><p><h3>See Also:</h3>   <a
@@ -975,11 +975,11 @@ namespace Model
          * Automated data labeling uses <i>active learning</i> to determine if a data
          * object can be labeled by machine or if it needs to be sent to a human worker.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-automated-labeling.html">Using
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-automated-labeling.html">Using
          * Automated Data Labeling</a>.</p> <p>The data objects to be labeled are contained
          * in an Amazon S3 bucket. You create a <i>manifest file</i> that describes the
          * location of each object. For more information, see <a
-         * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-data.html">Using Input
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data.html">Using Input
          * and Output Data</a>.</p> <p>The output can be used as the manifest file for
          * another labeling job or as training data for your machine learning
          * models.</p><p><h3>See Also:</h3>   <a
@@ -1382,12 +1382,12 @@ namespace Model
          * each training algorithm provided by Amazon SageMaker, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
          * </p> </li> <li> <p> <code>InputDataConfig</code> - Describes the training
-         * dataset and the Amazon S3 location where it is stored.</p> </li> <li> <p>
-         * <code>OutputDataConfig</code> - Identifies the Amazon S3 location where you want
-         * Amazon SageMaker to save the results of model training. </p> <p/> </li> <li> <p>
-         * <code>ResourceConfig</code> - Identifies the resources, ML compute instances,
-         * and ML storage volumes to deploy for model training. In distributed training,
-         * you specify more than one instance. </p> </li> <li> <p>
+         * dataset and the Amazon S3, EFS, or FSx location where it is stored.</p> </li>
+         * <li> <p> <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where
+         * you want Amazon SageMaker to save the results of model training. </p> <p/> </li>
+         * <li> <p> <code>ResourceConfig</code> - Identifies the resources, ML compute
+         * instances, and ML storage volumes to deploy for model training. In distributed
+         * training, you specify more than one instance. </p> </li> <li> <p>
          * <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine
          * learning models by up to 80% by using Amazon EC2 Spot instances. For more
          * information, see <a
@@ -1423,12 +1423,12 @@ namespace Model
          * each training algorithm provided by Amazon SageMaker, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
          * </p> </li> <li> <p> <code>InputDataConfig</code> - Describes the training
-         * dataset and the Amazon S3 location where it is stored.</p> </li> <li> <p>
-         * <code>OutputDataConfig</code> - Identifies the Amazon S3 location where you want
-         * Amazon SageMaker to save the results of model training. </p> <p/> </li> <li> <p>
-         * <code>ResourceConfig</code> - Identifies the resources, ML compute instances,
-         * and ML storage volumes to deploy for model training. In distributed training,
-         * you specify more than one instance. </p> </li> <li> <p>
+         * dataset and the Amazon S3, EFS, or FSx location where it is stored.</p> </li>
+         * <li> <p> <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where
+         * you want Amazon SageMaker to save the results of model training. </p> <p/> </li>
+         * <li> <p> <code>ResourceConfig</code> - Identifies the resources, ML compute
+         * instances, and ML storage volumes to deploy for model training. In distributed
+         * training, you specify more than one instance. </p> </li> <li> <p>
          * <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine
          * learning models by up to 80% by using Amazon EC2 Spot instances. For more
          * information, see <a
@@ -1466,12 +1466,12 @@ namespace Model
          * each training algorithm provided by Amazon SageMaker, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
          * </p> </li> <li> <p> <code>InputDataConfig</code> - Describes the training
-         * dataset and the Amazon S3 location where it is stored.</p> </li> <li> <p>
-         * <code>OutputDataConfig</code> - Identifies the Amazon S3 location where you want
-         * Amazon SageMaker to save the results of model training. </p> <p/> </li> <li> <p>
-         * <code>ResourceConfig</code> - Identifies the resources, ML compute instances,
-         * and ML storage volumes to deploy for model training. In distributed training,
-         * you specify more than one instance. </p> </li> <li> <p>
+         * dataset and the Amazon S3, EFS, or FSx location where it is stored.</p> </li>
+         * <li> <p> <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where
+         * you want Amazon SageMaker to save the results of model training. </p> <p/> </li>
+         * <li> <p> <code>ResourceConfig</code> - Identifies the resources, ML compute
+         * instances, and ML storage volumes to deploy for model training. In distributed
+         * training, you specify more than one instance. </p> </li> <li> <p>
          * <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine
          * learning models by up to 80% by using Amazon EC2 Spot instances. For more
          * information, see <a

@@ -93,7 +93,7 @@ namespace Model
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
      * identify the Amazon Cognito user pool that makes up the work team. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
      * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
      * objects that make up the member definition must have the same
      * <code>ClientId</code> and <code>UserPool</code> values.</p>
@@ -104,7 +104,7 @@ namespace Model
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
      * identify the Amazon Cognito user pool that makes up the work team. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
      * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
      * objects that make up the member definition must have the same
      * <code>ClientId</code> and <code>UserPool</code> values.</p>
@@ -115,7 +115,7 @@ namespace Model
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
      * identify the Amazon Cognito user pool that makes up the work team. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
      * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
      * objects that make up the member definition must have the same
      * <code>ClientId</code> and <code>UserPool</code> values.</p>
@@ -126,7 +126,7 @@ namespace Model
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
      * identify the Amazon Cognito user pool that makes up the work team. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
      * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
      * objects that make up the member definition must have the same
      * <code>ClientId</code> and <code>UserPool</code> values.</p>
@@ -137,7 +137,7 @@ namespace Model
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
      * identify the Amazon Cognito user pool that makes up the work team. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
      * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
      * objects that make up the member definition must have the same
      * <code>ClientId</code> and <code>UserPool</code> values.</p>
@@ -148,7 +148,7 @@ namespace Model
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
      * identify the Amazon Cognito user pool that makes up the work team. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
      * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
      * objects that make up the member definition must have the same
      * <code>ClientId</code> and <code>UserPool</code> values.</p>
@@ -159,7 +159,7 @@ namespace Model
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
      * identify the Amazon Cognito user pool that makes up the work team. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
      * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
      * objects that make up the member definition must have the same
      * <code>ClientId</code> and <code>UserPool</code> values.</p>
@@ -170,7 +170,7 @@ namespace Model
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
      * identify the Amazon Cognito user pool that makes up the work team. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
      * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
      * objects that make up the member definition must have the same
      * <code>ClientId</code> and <code>UserPool</code> values.</p>
@@ -257,42 +257,82 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>An array of key-value pairs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
+     * Tag</a> and <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p/>
+     * <p>An array of key-value pairs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
+     * Tag</a> and <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
+     * Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>An array of key-value pairs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
+     * Tag</a> and <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
+     * Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p/>
+     * <p>An array of key-value pairs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
+     * Tag</a> and <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
+     * Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p/>
+     * <p>An array of key-value pairs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
+     * Tag</a> and <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
+     * Guide</i>.</p>
      */
     inline CreateWorkteamRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p/>
+     * <p>An array of key-value pairs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
+     * Tag</a> and <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
+     * Guide</i>.</p>
      */
     inline CreateWorkteamRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>An array of key-value pairs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
+     * Tag</a> and <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
+     * Guide</i>.</p>
      */
     inline CreateWorkteamRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>An array of key-value pairs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
+     * Tag</a> and <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
+     * Guide</i>.</p>
      */
     inline CreateWorkteamRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

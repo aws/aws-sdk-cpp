@@ -22,7 +22,8 @@ using namespace Aws::Utils;
 
 CreateQueueRequest::CreateQueueRequest() : 
     m_queueNameHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+    m_attributesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,19 @@ Aws::String CreateQueueRequest::SerializePayload() const
       ss << "Attribute." << attributesCount << ".Value="
           << StringUtils::URLEncode(item.second.c_str()) << "&";
       attributesCount++;
+    }
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      ss << "Tag." << tagsCount << ".Key="
+          << StringUtils::URLEncode(item.first.c_str()) << "&";
+      ss << "Tag." << tagsCount << ".Value="
+          << StringUtils::URLEncode(item.second.c_str()) << "&";
+      tagsCount++;
     }
   }
 

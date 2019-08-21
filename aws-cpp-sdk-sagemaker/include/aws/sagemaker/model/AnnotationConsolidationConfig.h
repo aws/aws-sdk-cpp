@@ -64,6 +64,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-BoundingBox</code> </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
      * </p> </li> <li> <p> <i>Image classification</i> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of an image based
      * on annotations from individual workers.</p> <p>
@@ -78,6 +90,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      * </p> </li> <li> <p> <i>Semantic segmentation</i> - Treats each pixel in an image
      * as a multi-class classification and treats pixel annotations from workers as
      * "votes" for the correct label.</p> <p>
@@ -92,6 +116,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
      * </p> </li> <li> <p> <i>Text classification</i> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
      * annotations from individual workers.</p> <p>
@@ -106,6 +142,43 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
+     * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
      * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
@@ -120,7 +193,7 @@ namespace Model
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
      */
     inline const Aws::String& GetAnnotationConsolidationLambdaArn() const{ return m_annotationConsolidationLambdaArn; }
@@ -141,6 +214,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-BoundingBox</code> </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
      * </p> </li> <li> <p> <i>Image classification</i> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of an image based
      * on annotations from individual workers.</p> <p>
@@ -155,6 +240,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      * </p> </li> <li> <p> <i>Semantic segmentation</i> - Treats each pixel in an image
      * as a multi-class classification and treats pixel annotations from workers as
      * "votes" for the correct label.</p> <p>
@@ -169,6 +266,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
      * </p> </li> <li> <p> <i>Text classification</i> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
      * annotations from individual workers.</p> <p>
@@ -183,6 +292,43 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
+     * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
      * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
@@ -197,7 +343,7 @@ namespace Model
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
      */
     inline bool AnnotationConsolidationLambdaArnHasBeenSet() const { return m_annotationConsolidationLambdaArnHasBeenSet; }
@@ -218,6 +364,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-BoundingBox</code> </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
      * </p> </li> <li> <p> <i>Image classification</i> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of an image based
      * on annotations from individual workers.</p> <p>
@@ -232,6 +390,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      * </p> </li> <li> <p> <i>Semantic segmentation</i> - Treats each pixel in an image
      * as a multi-class classification and treats pixel annotations from workers as
      * "votes" for the correct label.</p> <p>
@@ -246,6 +416,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
      * </p> </li> <li> <p> <i>Text classification</i> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
      * annotations from individual workers.</p> <p>
@@ -260,6 +442,43 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
+     * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
      * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
@@ -274,7 +493,7 @@ namespace Model
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
      */
     inline void SetAnnotationConsolidationLambdaArn(const Aws::String& value) { m_annotationConsolidationLambdaArnHasBeenSet = true; m_annotationConsolidationLambdaArn = value; }
@@ -295,6 +514,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-BoundingBox</code> </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
      * </p> </li> <li> <p> <i>Image classification</i> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of an image based
      * on annotations from individual workers.</p> <p>
@@ -309,6 +540,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      * </p> </li> <li> <p> <i>Semantic segmentation</i> - Treats each pixel in an image
      * as a multi-class classification and treats pixel annotations from workers as
      * "votes" for the correct label.</p> <p>
@@ -323,6 +566,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
      * </p> </li> <li> <p> <i>Text classification</i> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
      * annotations from individual workers.</p> <p>
@@ -337,6 +592,43 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
+     * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
      * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
@@ -351,7 +643,7 @@ namespace Model
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
      */
     inline void SetAnnotationConsolidationLambdaArn(Aws::String&& value) { m_annotationConsolidationLambdaArnHasBeenSet = true; m_annotationConsolidationLambdaArn = std::move(value); }
@@ -372,6 +664,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-BoundingBox</code> </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
      * </p> </li> <li> <p> <i>Image classification</i> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of an image based
      * on annotations from individual workers.</p> <p>
@@ -386,6 +690,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      * </p> </li> <li> <p> <i>Semantic segmentation</i> - Treats each pixel in an image
      * as a multi-class classification and treats pixel annotations from workers as
      * "votes" for the correct label.</p> <p>
@@ -400,6 +716,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
      * </p> </li> <li> <p> <i>Text classification</i> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
      * annotations from individual workers.</p> <p>
@@ -414,6 +742,43 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
+     * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
      * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
@@ -428,7 +793,7 @@ namespace Model
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
      */
     inline void SetAnnotationConsolidationLambdaArn(const char* value) { m_annotationConsolidationLambdaArnHasBeenSet = true; m_annotationConsolidationLambdaArn.assign(value); }
@@ -449,6 +814,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-BoundingBox</code> </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
      * </p> </li> <li> <p> <i>Image classification</i> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of an image based
      * on annotations from individual workers.</p> <p>
@@ -463,6 +840,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      * </p> </li> <li> <p> <i>Semantic segmentation</i> - Treats each pixel in an image
      * as a multi-class classification and treats pixel annotations from workers as
      * "votes" for the correct label.</p> <p>
@@ -477,6 +866,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
      * </p> </li> <li> <p> <i>Text classification</i> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
      * annotations from individual workers.</p> <p>
@@ -491,6 +892,43 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
+     * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
      * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
@@ -505,7 +943,7 @@ namespace Model
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
      */
     inline AnnotationConsolidationConfig& WithAnnotationConsolidationLambdaArn(const Aws::String& value) { SetAnnotationConsolidationLambdaArn(value); return *this;}
@@ -526,6 +964,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-BoundingBox</code> </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
      * </p> </li> <li> <p> <i>Image classification</i> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of an image based
      * on annotations from individual workers.</p> <p>
@@ -540,6 +990,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      * </p> </li> <li> <p> <i>Semantic segmentation</i> - Treats each pixel in an image
      * as a multi-class classification and treats pixel annotations from workers as
      * "votes" for the correct label.</p> <p>
@@ -554,6 +1016,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
      * </p> </li> <li> <p> <i>Text classification</i> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
      * annotations from individual workers.</p> <p>
@@ -568,6 +1042,43 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
+     * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
      * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
@@ -582,7 +1093,7 @@ namespace Model
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
      */
     inline AnnotationConsolidationConfig& WithAnnotationConsolidationLambdaArn(Aws::String&& value) { SetAnnotationConsolidationLambdaArn(std::move(value)); return *this;}
@@ -603,6 +1114,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-BoundingBox</code> </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
      * </p> </li> <li> <p> <i>Image classification</i> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of an image based
      * on annotations from individual workers.</p> <p>
@@ -617,6 +1140,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      * </p> </li> <li> <p> <i>Semantic segmentation</i> - Treats each pixel in an image
      * as a multi-class classification and treats pixel annotations from workers as
      * "votes" for the correct label.</p> <p>
@@ -631,6 +1166,18 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
      * </p> </li> <li> <p> <i>Text classification</i> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
      * annotations from individual workers.</p> <p>
@@ -645,6 +1192,43 @@ namespace Model
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
+     * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      * </p> </li> <li> <p> <i>Named entity eecognition</i> - Groups similar selections
      * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
@@ -659,7 +1243,7 @@ namespace Model
      * </p> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
      */
     inline AnnotationConsolidationConfig& WithAnnotationConsolidationLambdaArn(const char* value) { SetAnnotationConsolidationLambdaArn(value); return *this;}

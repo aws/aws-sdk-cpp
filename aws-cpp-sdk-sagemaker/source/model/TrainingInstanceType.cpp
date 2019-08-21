@@ -56,6 +56,7 @@ namespace Aws
         static const int ml_c5_4xlarge_HASH = HashingUtils::HashString("ml.c5.4xlarge");
         static const int ml_c5_9xlarge_HASH = HashingUtils::HashString("ml.c5.9xlarge");
         static const int ml_c5_18xlarge_HASH = HashingUtils::HashString("ml.c5.18xlarge");
+        static const int ml_p3dn_24xlarge_HASH = HashingUtils::HashString("ml.p3dn.24xlarge");
 
 
         TrainingInstanceType GetTrainingInstanceTypeForName(const Aws::String& name)
@@ -165,6 +166,10 @@ namespace Aws
           {
             return TrainingInstanceType::ml_c5_18xlarge;
           }
+          else if (hashCode == ml_p3dn_24xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_p3dn_24xlarge;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -231,6 +236,8 @@ namespace Aws
             return "ml.c5.9xlarge";
           case TrainingInstanceType::ml_c5_18xlarge:
             return "ml.c5.18xlarge";
+          case TrainingInstanceType::ml_p3dn_24xlarge:
+            return "ml.p3dn.24xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -384,11 +384,11 @@ namespace Model
      * <p>The Git repository associated with the notebook instance as its default code
      * repository. This can be either the name of a Git repository stored as a resource
      * in your account, or the URL of a Git repository in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
      * CodeCommit</a> or in any other Git repository. When you open a notebook
      * instance, it opens in the directory that contains this repository. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline const Aws::String& GetDefaultCodeRepository() const{ return m_defaultCodeRepository; }
@@ -397,11 +397,11 @@ namespace Model
      * <p>The Git repository associated with the notebook instance as its default code
      * repository. This can be either the name of a Git repository stored as a resource
      * in your account, or the URL of a Git repository in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
      * CodeCommit</a> or in any other Git repository. When you open a notebook
      * instance, it opens in the directory that contains this repository. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline bool DefaultCodeRepositoryHasBeenSet() const { return m_defaultCodeRepositoryHasBeenSet; }
@@ -410,11 +410,11 @@ namespace Model
      * <p>The Git repository associated with the notebook instance as its default code
      * repository. This can be either the name of a Git repository stored as a resource
      * in your account, or the URL of a Git repository in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
      * CodeCommit</a> or in any other Git repository. When you open a notebook
      * instance, it opens in the directory that contains this repository. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline void SetDefaultCodeRepository(const Aws::String& value) { m_defaultCodeRepositoryHasBeenSet = true; m_defaultCodeRepository = value; }
@@ -423,11 +423,11 @@ namespace Model
      * <p>The Git repository associated with the notebook instance as its default code
      * repository. This can be either the name of a Git repository stored as a resource
      * in your account, or the URL of a Git repository in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
      * CodeCommit</a> or in any other Git repository. When you open a notebook
      * instance, it opens in the directory that contains this repository. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline void SetDefaultCodeRepository(Aws::String&& value) { m_defaultCodeRepositoryHasBeenSet = true; m_defaultCodeRepository = std::move(value); }
@@ -436,11 +436,11 @@ namespace Model
      * <p>The Git repository associated with the notebook instance as its default code
      * repository. This can be either the name of a Git repository stored as a resource
      * in your account, or the URL of a Git repository in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
      * CodeCommit</a> or in any other Git repository. When you open a notebook
      * instance, it opens in the directory that contains this repository. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline void SetDefaultCodeRepository(const char* value) { m_defaultCodeRepositoryHasBeenSet = true; m_defaultCodeRepository.assign(value); }
@@ -449,11 +449,11 @@ namespace Model
      * <p>The Git repository associated with the notebook instance as its default code
      * repository. This can be either the name of a Git repository stored as a resource
      * in your account, or the URL of a Git repository in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
      * CodeCommit</a> or in any other Git repository. When you open a notebook
      * instance, it opens in the directory that contains this repository. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline NotebookInstanceSummary& WithDefaultCodeRepository(const Aws::String& value) { SetDefaultCodeRepository(value); return *this;}
@@ -462,11 +462,11 @@ namespace Model
      * <p>The Git repository associated with the notebook instance as its default code
      * repository. This can be either the name of a Git repository stored as a resource
      * in your account, or the URL of a Git repository in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
      * CodeCommit</a> or in any other Git repository. When you open a notebook
      * instance, it opens in the directory that contains this repository. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline NotebookInstanceSummary& WithDefaultCodeRepository(Aws::String&& value) { SetDefaultCodeRepository(std::move(value)); return *this;}
@@ -475,11 +475,11 @@ namespace Model
      * <p>The Git repository associated with the notebook instance as its default code
      * repository. This can be either the name of a Git repository stored as a resource
      * in your account, or the URL of a Git repository in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
      * CodeCommit</a> or in any other Git repository. When you open a notebook
      * instance, it opens in the directory that contains this repository. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline NotebookInstanceSummary& WithDefaultCodeRepository(const char* value) { SetDefaultCodeRepository(value); return *this;}
@@ -489,11 +489,11 @@ namespace Model
      * <p>An array of up to three Git repositories associated with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
      * CodeCommit</a> or in any other Git repository. These repositories are cloned at
      * the same level as the default repository of your notebook instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAdditionalCodeRepositories() const{ return m_additionalCodeRepositories; }
@@ -502,11 +502,11 @@ namespace Model
      * <p>An array of up to three Git repositories associated with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
      * CodeCommit</a> or in any other Git repository. These repositories are cloned at
      * the same level as the default repository of your notebook instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline bool AdditionalCodeRepositoriesHasBeenSet() const { return m_additionalCodeRepositoriesHasBeenSet; }
@@ -515,11 +515,11 @@ namespace Model
      * <p>An array of up to three Git repositories associated with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
      * CodeCommit</a> or in any other Git repository. These repositories are cloned at
      * the same level as the default repository of your notebook instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline void SetAdditionalCodeRepositories(const Aws::Vector<Aws::String>& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories = value; }
@@ -528,11 +528,11 @@ namespace Model
      * <p>An array of up to three Git repositories associated with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
      * CodeCommit</a> or in any other Git repository. These repositories are cloned at
      * the same level as the default repository of your notebook instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline void SetAdditionalCodeRepositories(Aws::Vector<Aws::String>&& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories = std::move(value); }
@@ -541,11 +541,11 @@ namespace Model
      * <p>An array of up to three Git repositories associated with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
      * CodeCommit</a> or in any other Git repository. These repositories are cloned at
      * the same level as the default repository of your notebook instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline NotebookInstanceSummary& WithAdditionalCodeRepositories(const Aws::Vector<Aws::String>& value) { SetAdditionalCodeRepositories(value); return *this;}
@@ -554,11 +554,11 @@ namespace Model
      * <p>An array of up to three Git repositories associated with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
      * CodeCommit</a> or in any other Git repository. These repositories are cloned at
      * the same level as the default repository of your notebook instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline NotebookInstanceSummary& WithAdditionalCodeRepositories(Aws::Vector<Aws::String>&& value) { SetAdditionalCodeRepositories(std::move(value)); return *this;}
@@ -567,11 +567,11 @@ namespace Model
      * <p>An array of up to three Git repositories associated with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
      * CodeCommit</a> or in any other Git repository. These repositories are cloned at
      * the same level as the default repository of your notebook instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline NotebookInstanceSummary& AddAdditionalCodeRepositories(const Aws::String& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories.push_back(value); return *this; }
@@ -580,11 +580,11 @@ namespace Model
      * <p>An array of up to three Git repositories associated with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
      * CodeCommit</a> or in any other Git repository. These repositories are cloned at
      * the same level as the default repository of your notebook instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline NotebookInstanceSummary& AddAdditionalCodeRepositories(Aws::String&& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories.push_back(std::move(value)); return *this; }
@@ -593,11 +593,11 @@ namespace Model
      * <p>An array of up to three Git repositories associated with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
      * CodeCommit</a> or in any other Git repository. These repositories are cloned at
      * the same level as the default repository of your notebook instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline NotebookInstanceSummary& AddAdditionalCodeRepositories(const char* value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories.push_back(value); return *this; }

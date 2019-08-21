@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket location of the UI template. For more information about
      * the contents of a UI template, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
      * Creating Your Custom Labeling Task Template</a>.</p>
      */
     inline const Aws::String& GetUiTemplateS3Uri() const{ return m_uiTemplateS3Uri; }
@@ -59,7 +59,7 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket location of the UI template. For more information about
      * the contents of a UI template, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
      * Creating Your Custom Labeling Task Template</a>.</p>
      */
     inline bool UiTemplateS3UriHasBeenSet() const { return m_uiTemplateS3UriHasBeenSet; }
@@ -67,7 +67,7 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket location of the UI template. For more information about
      * the contents of a UI template, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
      * Creating Your Custom Labeling Task Template</a>.</p>
      */
     inline void SetUiTemplateS3Uri(const Aws::String& value) { m_uiTemplateS3UriHasBeenSet = true; m_uiTemplateS3Uri = value; }
@@ -75,7 +75,7 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket location of the UI template. For more information about
      * the contents of a UI template, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
      * Creating Your Custom Labeling Task Template</a>.</p>
      */
     inline void SetUiTemplateS3Uri(Aws::String&& value) { m_uiTemplateS3UriHasBeenSet = true; m_uiTemplateS3Uri = std::move(value); }
@@ -83,7 +83,7 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket location of the UI template. For more information about
      * the contents of a UI template, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
      * Creating Your Custom Labeling Task Template</a>.</p>
      */
     inline void SetUiTemplateS3Uri(const char* value) { m_uiTemplateS3UriHasBeenSet = true; m_uiTemplateS3Uri.assign(value); }
@@ -91,7 +91,7 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket location of the UI template. For more information about
      * the contents of a UI template, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
      * Creating Your Custom Labeling Task Template</a>.</p>
      */
     inline UiConfig& WithUiTemplateS3Uri(const Aws::String& value) { SetUiTemplateS3Uri(value); return *this;}
@@ -99,7 +99,7 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket location of the UI template. For more information about
      * the contents of a UI template, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
      * Creating Your Custom Labeling Task Template</a>.</p>
      */
     inline UiConfig& WithUiTemplateS3Uri(Aws::String&& value) { SetUiTemplateS3Uri(std::move(value)); return *this;}
@@ -107,7 +107,7 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket location of the UI template. For more information about
      * the contents of a UI template, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
      * Creating Your Custom Labeling Task Template</a>.</p>
      */
     inline UiConfig& WithUiTemplateS3Uri(const char* value) { SetUiTemplateS3Uri(value); return *this;}

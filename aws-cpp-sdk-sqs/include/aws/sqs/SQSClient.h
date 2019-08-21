@@ -1529,12 +1529,8 @@ namespace Model
          * recommended.</p> </li> <li> <p>Tags don't have any semantic meaning. Amazon SQS
          * interprets tags as character strings.</p> </li> <li> <p>Tags are
          * case-sensitive.</p> </li> <li> <p>A new tag with a key identical to that of an
-         * existing tag overwrites the existing tag.</p> </li> <li> <p>Tagging actions are
-         * limited to 5 TPS per AWS account. If your application requires a higher
-         * throughput, file a <a
-         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
-         * support request</a>.</p> </li> </ul> <p>For a full list of tag restrictions, see
-         * <a
+         * existing tag overwrites the existing tag.</p> </li> </ul> <p>For a full list of
+         * tag restrictions, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
          * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
          * Guide</i>.</p> <note> <p>Cross-account permissions don't apply to this action.
@@ -1557,12 +1553,8 @@ namespace Model
          * recommended.</p> </li> <li> <p>Tags don't have any semantic meaning. Amazon SQS
          * interprets tags as character strings.</p> </li> <li> <p>Tags are
          * case-sensitive.</p> </li> <li> <p>A new tag with a key identical to that of an
-         * existing tag overwrites the existing tag.</p> </li> <li> <p>Tagging actions are
-         * limited to 5 TPS per AWS account. If your application requires a higher
-         * throughput, file a <a
-         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
-         * support request</a>.</p> </li> </ul> <p>For a full list of tag restrictions, see
-         * <a
+         * existing tag overwrites the existing tag.</p> </li> </ul> <p>For a full list of
+         * tag restrictions, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
          * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
          * Guide</i>.</p> <note> <p>Cross-account permissions don't apply to this action.
@@ -1587,12 +1579,8 @@ namespace Model
          * recommended.</p> </li> <li> <p>Tags don't have any semantic meaning. Amazon SQS
          * interprets tags as character strings.</p> </li> <li> <p>Tags are
          * case-sensitive.</p> </li> <li> <p>A new tag with a key identical to that of an
-         * existing tag overwrites the existing tag.</p> </li> <li> <p>Tagging actions are
-         * limited to 5 TPS per AWS account. If your application requires a higher
-         * throughput, file a <a
-         * href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
-         * support request</a>.</p> </li> </ul> <p>For a full list of tag restrictions, see
-         * <a
+         * existing tag overwrites the existing tag.</p> </li> </ul> <p>For a full list of
+         * tag restrictions, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
          * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
          * Guide</i>.</p> <note> <p>Cross-account permissions don't apply to this action.

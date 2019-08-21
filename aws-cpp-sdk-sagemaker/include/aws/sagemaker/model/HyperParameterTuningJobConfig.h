@@ -56,7 +56,7 @@ namespace Model
      * hyperparameter values to use for the training job it launches. To use the
      * Bayesian search stategy, set this to <code>Bayesian</code>. To randomly search,
      * set it to <code>Random</code>. For information about search strategies, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
     inline const HyperParameterTuningJobStrategyType& GetStrategy() const{ return m_strategy; }
@@ -66,7 +66,7 @@ namespace Model
      * hyperparameter values to use for the training job it launches. To use the
      * Bayesian search stategy, set this to <code>Bayesian</code>. To randomly search,
      * set it to <code>Random</code>. For information about search strategies, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
     inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
@@ -76,7 +76,7 @@ namespace Model
      * hyperparameter values to use for the training job it launches. To use the
      * Bayesian search stategy, set this to <code>Bayesian</code>. To randomly search,
      * set it to <code>Random</code>. For information about search strategies, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
     inline void SetStrategy(const HyperParameterTuningJobStrategyType& value) { m_strategyHasBeenSet = true; m_strategy = value; }
@@ -86,7 +86,7 @@ namespace Model
      * hyperparameter values to use for the training job it launches. To use the
      * Bayesian search stategy, set this to <code>Bayesian</code>. To randomly search,
      * set it to <code>Random</code>. For information about search strategies, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
     inline void SetStrategy(HyperParameterTuningJobStrategyType&& value) { m_strategyHasBeenSet = true; m_strategy = std::move(value); }
@@ -96,7 +96,7 @@ namespace Model
      * hyperparameter values to use for the training job it launches. To use the
      * Bayesian search stategy, set this to <code>Bayesian</code>. To randomly search,
      * set it to <code>Random</code>. For information about search strategies, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
     inline HyperParameterTuningJobConfig& WithStrategy(const HyperParameterTuningJobStrategyType& value) { SetStrategy(value); return *this;}
@@ -106,7 +106,7 @@ namespace Model
      * hyperparameter values to use for the training job it launches. To use the
      * Bayesian search stategy, set this to <code>Bayesian</code>. To randomly search,
      * set it to <code>Random</code>. For information about search strategies, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
     inline HyperParameterTuningJobConfig& WithStrategy(HyperParameterTuningJobStrategyType&& value) { SetStrategy(std::move(value)); return *this;}
@@ -231,7 +231,7 @@ namespace Model
      * <dt>AUTO</dt> <dd> <p>Amazon SageMaker stops training jobs launched by the
      * hyperparameter tuning job when they are unlikely to perform better than
      * previously completed training jobs. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
      * Training Jobs Early</a>.</p> </dd> </dl>
      */
     inline const TrainingJobEarlyStoppingType& GetTrainingJobEarlyStoppingType() const{ return m_trainingJobEarlyStoppingType; }
@@ -244,7 +244,7 @@ namespace Model
      * <dt>AUTO</dt> <dd> <p>Amazon SageMaker stops training jobs launched by the
      * hyperparameter tuning job when they are unlikely to perform better than
      * previously completed training jobs. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
      * Training Jobs Early</a>.</p> </dd> </dl>
      */
     inline bool TrainingJobEarlyStoppingTypeHasBeenSet() const { return m_trainingJobEarlyStoppingTypeHasBeenSet; }
@@ -257,7 +257,7 @@ namespace Model
      * <dt>AUTO</dt> <dd> <p>Amazon SageMaker stops training jobs launched by the
      * hyperparameter tuning job when they are unlikely to perform better than
      * previously completed training jobs. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
      * Training Jobs Early</a>.</p> </dd> </dl>
      */
     inline void SetTrainingJobEarlyStoppingType(const TrainingJobEarlyStoppingType& value) { m_trainingJobEarlyStoppingTypeHasBeenSet = true; m_trainingJobEarlyStoppingType = value; }
@@ -270,7 +270,7 @@ namespace Model
      * <dt>AUTO</dt> <dd> <p>Amazon SageMaker stops training jobs launched by the
      * hyperparameter tuning job when they are unlikely to perform better than
      * previously completed training jobs. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
      * Training Jobs Early</a>.</p> </dd> </dl>
      */
     inline void SetTrainingJobEarlyStoppingType(TrainingJobEarlyStoppingType&& value) { m_trainingJobEarlyStoppingTypeHasBeenSet = true; m_trainingJobEarlyStoppingType = std::move(value); }
@@ -283,7 +283,7 @@ namespace Model
      * <dt>AUTO</dt> <dd> <p>Amazon SageMaker stops training jobs launched by the
      * hyperparameter tuning job when they are unlikely to perform better than
      * previously completed training jobs. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
      * Training Jobs Early</a>.</p> </dd> </dl>
      */
     inline HyperParameterTuningJobConfig& WithTrainingJobEarlyStoppingType(const TrainingJobEarlyStoppingType& value) { SetTrainingJobEarlyStoppingType(value); return *this;}
@@ -296,7 +296,7 @@ namespace Model
      * <dt>AUTO</dt> <dd> <p>Amazon SageMaker stops training jobs launched by the
      * hyperparameter tuning job when they are unlikely to perform better than
      * previously completed training jobs. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
      * Training Jobs Early</a>.</p> </dd> </dl>
      */
     inline HyperParameterTuningJobConfig& WithTrainingJobEarlyStoppingType(TrainingJobEarlyStoppingType&& value) { SetTrainingJobEarlyStoppingType(std::move(value)); return *this;}

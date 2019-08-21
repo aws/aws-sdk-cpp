@@ -901,36 +901,34 @@ namespace Model
         virtual void DetectLabelsAsync(const Model::DetectLabelsRequest& request, const DetectLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Detects explicit or suggestive adult content in a specified JPEG or PNG
-         * format image. Use <code>DetectModerationLabels</code> to moderate images
-         * depending on your requirements. For example, you might want to filter images
-         * that contain nudity, but not images containing suggestive content.</p> <p>To
-         * filter images, use the labels returned by <code>DetectModerationLabels</code> to
-         * determine which types of content are appropriate.</p> <p>For information about
-         * moderation labels, see Detecting Unsafe Content in the Amazon Rekognition
-         * Developer Guide.</p> <p>You pass the input image either as base64-encoded image
-         * bytes or as a reference to an image in an Amazon S3 bucket. If you use the AWS
-         * CLI to call Amazon Rekognition operations, passing image bytes is not supported.
-         * The image must be either a PNG or JPEG formatted file. </p><p><h3>See Also:</h3>
-         * <a
+         * <p>Detects unsafe content in a specified JPEG or PNG format image. Use
+         * <code>DetectModerationLabels</code> to moderate images depending on your
+         * requirements. For example, you might want to filter images that contain nudity,
+         * but not images containing suggestive content.</p> <p>To filter images, use the
+         * labels returned by <code>DetectModerationLabels</code> to determine which types
+         * of content are appropriate.</p> <p>For information about moderation labels, see
+         * Detecting Unsafe Content in the Amazon Rekognition Developer Guide.</p> <p>You
+         * pass the input image either as base64-encoded image bytes or as a reference to
+         * an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon
+         * Rekognition operations, passing image bytes is not supported. The image must be
+         * either a PNG or JPEG formatted file. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">AWS
          * API Reference</a></p>
          */
         virtual Model::DetectModerationLabelsOutcome DetectModerationLabels(const Model::DetectModerationLabelsRequest& request) const;
 
         /**
-         * <p>Detects explicit or suggestive adult content in a specified JPEG or PNG
-         * format image. Use <code>DetectModerationLabels</code> to moderate images
-         * depending on your requirements. For example, you might want to filter images
-         * that contain nudity, but not images containing suggestive content.</p> <p>To
-         * filter images, use the labels returned by <code>DetectModerationLabels</code> to
-         * determine which types of content are appropriate.</p> <p>For information about
-         * moderation labels, see Detecting Unsafe Content in the Amazon Rekognition
-         * Developer Guide.</p> <p>You pass the input image either as base64-encoded image
-         * bytes or as a reference to an image in an Amazon S3 bucket. If you use the AWS
-         * CLI to call Amazon Rekognition operations, passing image bytes is not supported.
-         * The image must be either a PNG or JPEG formatted file. </p><p><h3>See Also:</h3>
-         * <a
+         * <p>Detects unsafe content in a specified JPEG or PNG format image. Use
+         * <code>DetectModerationLabels</code> to moderate images depending on your
+         * requirements. For example, you might want to filter images that contain nudity,
+         * but not images containing suggestive content.</p> <p>To filter images, use the
+         * labels returned by <code>DetectModerationLabels</code> to determine which types
+         * of content are appropriate.</p> <p>For information about moderation labels, see
+         * Detecting Unsafe Content in the Amazon Rekognition Developer Guide.</p> <p>You
+         * pass the input image either as base64-encoded image bytes or as a reference to
+         * an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon
+         * Rekognition operations, passing image bytes is not supported. The image must be
+         * either a PNG or JPEG formatted file. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">AWS
          * API Reference</a></p>
          *
@@ -939,18 +937,17 @@ namespace Model
         virtual Model::DetectModerationLabelsOutcomeCallable DetectModerationLabelsCallable(const Model::DetectModerationLabelsRequest& request) const;
 
         /**
-         * <p>Detects explicit or suggestive adult content in a specified JPEG or PNG
-         * format image. Use <code>DetectModerationLabels</code> to moderate images
-         * depending on your requirements. For example, you might want to filter images
-         * that contain nudity, but not images containing suggestive content.</p> <p>To
-         * filter images, use the labels returned by <code>DetectModerationLabels</code> to
-         * determine which types of content are appropriate.</p> <p>For information about
-         * moderation labels, see Detecting Unsafe Content in the Amazon Rekognition
-         * Developer Guide.</p> <p>You pass the input image either as base64-encoded image
-         * bytes or as a reference to an image in an Amazon S3 bucket. If you use the AWS
-         * CLI to call Amazon Rekognition operations, passing image bytes is not supported.
-         * The image must be either a PNG or JPEG formatted file. </p><p><h3>See Also:</h3>
-         * <a
+         * <p>Detects unsafe content in a specified JPEG or PNG format image. Use
+         * <code>DetectModerationLabels</code> to moderate images depending on your
+         * requirements. For example, you might want to filter images that contain nudity,
+         * but not images containing suggestive content.</p> <p>To filter images, use the
+         * labels returned by <code>DetectModerationLabels</code> to determine which types
+         * of content are appropriate.</p> <p>For information about moderation labels, see
+         * Detecting Unsafe Content in the Amazon Rekognition Developer Guide.</p> <p>You
+         * pass the input image either as base64-encoded image bytes or as a reference to
+         * an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon
+         * Rekognition operations, passing image bytes is not supported. The image must be
+         * either a PNG or JPEG formatted file. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">AWS
          * API Reference</a></p>
          *
@@ -1238,21 +1235,21 @@ namespace Model
         virtual void GetCelebrityRecognitionAsync(const Model::GetCelebrityRecognitionRequest& request, const GetCelebrityRecognitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the content moderation analysis results for a Amazon Rekognition Video
-         * analysis started by <a>StartContentModeration</a>.</p> <p>Content moderation
+         * <p>Gets the unsafe content analysis results for a Amazon Rekognition Video
+         * analysis started by <a>StartContentModeration</a>.</p> <p>Unsafe content
          * analysis of a video is an asynchronous operation. You start analysis by calling
          * <a>StartContentModeration</a> which returns a job identifier
          * (<code>JobId</code>). When analysis finishes, Amazon Rekognition Video publishes
          * a completion status to the Amazon Simple Notification Service topic registered
          * in the initial call to <code>StartContentModeration</code>. To get the results
-         * of the content moderation analysis, first check that the status value published
-         * to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
+         * of the unsafe content analysis, first check that the status value published to
+         * the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
          * <code>GetContentModeration</code> and pass the job identifier
          * (<code>JobId</code>) from the initial call to
          * <code>StartContentModeration</code>. </p> <p>For more information, see Working
          * with Stored Videos in the Amazon Rekognition Devlopers Guide.</p> <p>
-         * <code>GetContentModeration</code> returns detected content moderation labels,
-         * and the time they are detected, in an array, <code>ModerationLabels</code>, of
+         * <code>GetContentModeration</code> returns detected unsafe content labels, and
+         * the time they are detected, in an array, <code>ModerationLabels</code>, of
          * <a>ContentModerationDetection</a> objects. </p> <p>By default, the moderated
          * labels are returned sorted by time, in milliseconds from the start of the video.
          * You can also sort them by moderated label by specifying <code>NAME</code> for
@@ -1274,21 +1271,21 @@ namespace Model
         virtual Model::GetContentModerationOutcome GetContentModeration(const Model::GetContentModerationRequest& request) const;
 
         /**
-         * <p>Gets the content moderation analysis results for a Amazon Rekognition Video
-         * analysis started by <a>StartContentModeration</a>.</p> <p>Content moderation
+         * <p>Gets the unsafe content analysis results for a Amazon Rekognition Video
+         * analysis started by <a>StartContentModeration</a>.</p> <p>Unsafe content
          * analysis of a video is an asynchronous operation. You start analysis by calling
          * <a>StartContentModeration</a> which returns a job identifier
          * (<code>JobId</code>). When analysis finishes, Amazon Rekognition Video publishes
          * a completion status to the Amazon Simple Notification Service topic registered
          * in the initial call to <code>StartContentModeration</code>. To get the results
-         * of the content moderation analysis, first check that the status value published
-         * to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
+         * of the unsafe content analysis, first check that the status value published to
+         * the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
          * <code>GetContentModeration</code> and pass the job identifier
          * (<code>JobId</code>) from the initial call to
          * <code>StartContentModeration</code>. </p> <p>For more information, see Working
          * with Stored Videos in the Amazon Rekognition Devlopers Guide.</p> <p>
-         * <code>GetContentModeration</code> returns detected content moderation labels,
-         * and the time they are detected, in an array, <code>ModerationLabels</code>, of
+         * <code>GetContentModeration</code> returns detected unsafe content labels, and
+         * the time they are detected, in an array, <code>ModerationLabels</code>, of
          * <a>ContentModerationDetection</a> objects. </p> <p>By default, the moderated
          * labels are returned sorted by time, in milliseconds from the start of the video.
          * You can also sort them by moderated label by specifying <code>NAME</code> for
@@ -1312,21 +1309,21 @@ namespace Model
         virtual Model::GetContentModerationOutcomeCallable GetContentModerationCallable(const Model::GetContentModerationRequest& request) const;
 
         /**
-         * <p>Gets the content moderation analysis results for a Amazon Rekognition Video
-         * analysis started by <a>StartContentModeration</a>.</p> <p>Content moderation
+         * <p>Gets the unsafe content analysis results for a Amazon Rekognition Video
+         * analysis started by <a>StartContentModeration</a>.</p> <p>Unsafe content
          * analysis of a video is an asynchronous operation. You start analysis by calling
          * <a>StartContentModeration</a> which returns a job identifier
          * (<code>JobId</code>). When analysis finishes, Amazon Rekognition Video publishes
          * a completion status to the Amazon Simple Notification Service topic registered
          * in the initial call to <code>StartContentModeration</code>. To get the results
-         * of the content moderation analysis, first check that the status value published
-         * to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
+         * of the unsafe content analysis, first check that the status value published to
+         * the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
          * <code>GetContentModeration</code> and pass the job identifier
          * (<code>JobId</code>) from the initial call to
          * <code>StartContentModeration</code>. </p> <p>For more information, see Working
          * with Stored Videos in the Amazon Rekognition Devlopers Guide.</p> <p>
-         * <code>GetContentModeration</code> returns detected content moderation labels,
-         * and the time they are detected, in an array, <code>ModerationLabels</code>, of
+         * <code>GetContentModeration</code> returns detected unsafe content labels, and
+         * the time they are detected, in an array, <code>ModerationLabels</code>, of
          * <a>ContentModerationDetection</a> objects. </p> <p>By default, the moderated
          * labels are returned sorted by time, in milliseconds from the start of the video.
          * You can also sort them by moderated label by specifying <code>NAME</code> for
@@ -2376,16 +2373,16 @@ namespace Model
         virtual void StartCelebrityRecognitionAsync(const Model::StartCelebrityRecognitionRequest& request, const StartCelebrityRecognitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Starts asynchronous detection of explicit or suggestive adult content in a
-         * stored video.</p> <p>Amazon Rekognition Video can moderate content in a video
-         * stored in an Amazon S3 bucket. Use <a>Video</a> to specify the bucket name and
-         * the filename of the video. <code>StartContentModeration</code> returns a job
-         * identifier (<code>JobId</code>) which you use to get the results of the
-         * analysis. When content moderation analysis is finished, Amazon Rekognition Video
-         * publishes a completion status to the Amazon Simple Notification Service topic
-         * that you specify in <code>NotificationChannel</code>.</p> <p>To get the results
-         * of the content moderation analysis, first check that the status value published
-         * to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
+         * <p> Starts asynchronous detection of unsafe content in a stored video.</p>
+         * <p>Amazon Rekognition Video can moderate content in a video stored in an Amazon
+         * S3 bucket. Use <a>Video</a> to specify the bucket name and the filename of the
+         * video. <code>StartContentModeration</code> returns a job identifier
+         * (<code>JobId</code>) which you use to get the results of the analysis. When
+         * unsafe content analysis is finished, Amazon Rekognition Video publishes a
+         * completion status to the Amazon Simple Notification Service topic that you
+         * specify in <code>NotificationChannel</code>.</p> <p>To get the results of the
+         * unsafe content analysis, first check that the status value published to the
+         * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
          * <a>GetContentModeration</a> and pass the job identifier (<code>JobId</code>)
          * from the initial call to <code>StartContentModeration</code>. </p> <p>For more
          * information, see Detecting Unsafe Content in the Amazon Rekognition Developer
@@ -2396,16 +2393,16 @@ namespace Model
         virtual Model::StartContentModerationOutcome StartContentModeration(const Model::StartContentModerationRequest& request) const;
 
         /**
-         * <p> Starts asynchronous detection of explicit or suggestive adult content in a
-         * stored video.</p> <p>Amazon Rekognition Video can moderate content in a video
-         * stored in an Amazon S3 bucket. Use <a>Video</a> to specify the bucket name and
-         * the filename of the video. <code>StartContentModeration</code> returns a job
-         * identifier (<code>JobId</code>) which you use to get the results of the
-         * analysis. When content moderation analysis is finished, Amazon Rekognition Video
-         * publishes a completion status to the Amazon Simple Notification Service topic
-         * that you specify in <code>NotificationChannel</code>.</p> <p>To get the results
-         * of the content moderation analysis, first check that the status value published
-         * to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
+         * <p> Starts asynchronous detection of unsafe content in a stored video.</p>
+         * <p>Amazon Rekognition Video can moderate content in a video stored in an Amazon
+         * S3 bucket. Use <a>Video</a> to specify the bucket name and the filename of the
+         * video. <code>StartContentModeration</code> returns a job identifier
+         * (<code>JobId</code>) which you use to get the results of the analysis. When
+         * unsafe content analysis is finished, Amazon Rekognition Video publishes a
+         * completion status to the Amazon Simple Notification Service topic that you
+         * specify in <code>NotificationChannel</code>.</p> <p>To get the results of the
+         * unsafe content analysis, first check that the status value published to the
+         * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
          * <a>GetContentModeration</a> and pass the job identifier (<code>JobId</code>)
          * from the initial call to <code>StartContentModeration</code>. </p> <p>For more
          * information, see Detecting Unsafe Content in the Amazon Rekognition Developer
@@ -2418,16 +2415,16 @@ namespace Model
         virtual Model::StartContentModerationOutcomeCallable StartContentModerationCallable(const Model::StartContentModerationRequest& request) const;
 
         /**
-         * <p> Starts asynchronous detection of explicit or suggestive adult content in a
-         * stored video.</p> <p>Amazon Rekognition Video can moderate content in a video
-         * stored in an Amazon S3 bucket. Use <a>Video</a> to specify the bucket name and
-         * the filename of the video. <code>StartContentModeration</code> returns a job
-         * identifier (<code>JobId</code>) which you use to get the results of the
-         * analysis. When content moderation analysis is finished, Amazon Rekognition Video
-         * publishes a completion status to the Amazon Simple Notification Service topic
-         * that you specify in <code>NotificationChannel</code>.</p> <p>To get the results
-         * of the content moderation analysis, first check that the status value published
-         * to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
+         * <p> Starts asynchronous detection of unsafe content in a stored video.</p>
+         * <p>Amazon Rekognition Video can moderate content in a video stored in an Amazon
+         * S3 bucket. Use <a>Video</a> to specify the bucket name and the filename of the
+         * video. <code>StartContentModeration</code> returns a job identifier
+         * (<code>JobId</code>) which you use to get the results of the analysis. When
+         * unsafe content analysis is finished, Amazon Rekognition Video publishes a
+         * completion status to the Amazon Simple Notification Service topic that you
+         * specify in <code>NotificationChannel</code>.</p> <p>To get the results of the
+         * unsafe content analysis, first check that the status value published to the
+         * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
          * <a>GetContentModeration</a> and pass the job identifier (<code>JobId</code>)
          * from the initial call to <code>StartContentModeration</code>. </p> <p>For more
          * information, see Detecting Unsafe Content in the Amazon Rekognition Developer

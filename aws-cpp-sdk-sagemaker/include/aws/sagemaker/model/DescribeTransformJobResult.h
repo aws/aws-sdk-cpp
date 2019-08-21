@@ -157,7 +157,7 @@ namespace Model
      * <p>If the transform job failed, <code>FailureReason</code> describes why it
      * failed. A transform job creates a log file, which includes error messages, and
      * stores it as an Amazon S3 object. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
      * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
@@ -166,7 +166,7 @@ namespace Model
      * <p>If the transform job failed, <code>FailureReason</code> describes why it
      * failed. A transform job creates a log file, which includes error messages, and
      * stores it as an Amazon S3 object. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
      * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
@@ -175,7 +175,7 @@ namespace Model
      * <p>If the transform job failed, <code>FailureReason</code> describes why it
      * failed. A transform job creates a log file, which includes error messages, and
      * stores it as an Amazon S3 object. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
      * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
@@ -184,7 +184,7 @@ namespace Model
      * <p>If the transform job failed, <code>FailureReason</code> describes why it
      * failed. A transform job creates a log file, which includes error messages, and
      * stores it as an Amazon S3 object. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
      * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
@@ -193,7 +193,7 @@ namespace Model
      * <p>If the transform job failed, <code>FailureReason</code> describes why it
      * failed. A transform job creates a log file, which includes error messages, and
      * stores it as an Amazon S3 object. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
      * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline DescribeTransformJobResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
@@ -202,7 +202,7 @@ namespace Model
      * <p>If the transform job failed, <code>FailureReason</code> describes why it
      * failed. A transform job creates a log file, which includes error messages, and
      * stores it as an Amazon S3 object. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
      * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline DescribeTransformJobResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
@@ -211,7 +211,7 @@ namespace Model
      * <p>If the transform job failed, <code>FailureReason</code> describes why it
      * failed. A transform job creates a log file, which includes error messages, and
      * stores it as an Amazon S3 object. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
      * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline DescribeTransformJobResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}

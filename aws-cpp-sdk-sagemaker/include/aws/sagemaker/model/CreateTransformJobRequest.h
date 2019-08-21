@@ -165,7 +165,7 @@ namespace Model
      * execution-parameters to determine the optimal settings for your chosen
      * algorithm. If the execution-parameters endpoint is not enabled, the default
      * value is <code>1</code>. For more information on execution-parameters, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
      * Containers Serve Requests</a>. For built-in algorithms, you don't need to set a
      * value for <code>MaxConcurrentTransforms</code>.</p>
      */
@@ -178,7 +178,7 @@ namespace Model
      * execution-parameters to determine the optimal settings for your chosen
      * algorithm. If the execution-parameters endpoint is not enabled, the default
      * value is <code>1</code>. For more information on execution-parameters, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
      * Containers Serve Requests</a>. For built-in algorithms, you don't need to set a
      * value for <code>MaxConcurrentTransforms</code>.</p>
      */
@@ -191,7 +191,7 @@ namespace Model
      * execution-parameters to determine the optimal settings for your chosen
      * algorithm. If the execution-parameters endpoint is not enabled, the default
      * value is <code>1</code>. For more information on execution-parameters, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
      * Containers Serve Requests</a>. For built-in algorithms, you don't need to set a
      * value for <code>MaxConcurrentTransforms</code>.</p>
      */
@@ -204,7 +204,7 @@ namespace Model
      * execution-parameters to determine the optimal settings for your chosen
      * algorithm. If the execution-parameters endpoint is not enabled, the default
      * value is <code>1</code>. For more information on execution-parameters, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
      * Containers Serve Requests</a>. For built-in algorithms, you don't need to set a
      * value for <code>MaxConcurrentTransforms</code>.</p>
      */
@@ -544,7 +544,7 @@ namespace Model
      * data that is not needed for inference in a batch transform job. The output
      * filter provided allows you to include input data relevant to interpreting the
      * predictions in the output from the job. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
      * Prediction Results with their Corresponding Input Records</a>.</p>
      */
     inline const DataProcessing& GetDataProcessing() const{ return m_dataProcessing; }
@@ -556,7 +556,7 @@ namespace Model
      * data that is not needed for inference in a batch transform job. The output
      * filter provided allows you to include input data relevant to interpreting the
      * predictions in the output from the job. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
      * Prediction Results with their Corresponding Input Records</a>.</p>
      */
     inline bool DataProcessingHasBeenSet() const { return m_dataProcessingHasBeenSet; }
@@ -568,7 +568,7 @@ namespace Model
      * data that is not needed for inference in a batch transform job. The output
      * filter provided allows you to include input data relevant to interpreting the
      * predictions in the output from the job. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
      * Prediction Results with their Corresponding Input Records</a>.</p>
      */
     inline void SetDataProcessing(const DataProcessing& value) { m_dataProcessingHasBeenSet = true; m_dataProcessing = value; }
@@ -580,7 +580,7 @@ namespace Model
      * data that is not needed for inference in a batch transform job. The output
      * filter provided allows you to include input data relevant to interpreting the
      * predictions in the output from the job. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
      * Prediction Results with their Corresponding Input Records</a>.</p>
      */
     inline void SetDataProcessing(DataProcessing&& value) { m_dataProcessingHasBeenSet = true; m_dataProcessing = std::move(value); }
@@ -592,7 +592,7 @@ namespace Model
      * data that is not needed for inference in a batch transform job. The output
      * filter provided allows you to include input data relevant to interpreting the
      * predictions in the output from the job. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
      * Prediction Results with their Corresponding Input Records</a>.</p>
      */
     inline CreateTransformJobRequest& WithDataProcessing(const DataProcessing& value) { SetDataProcessing(value); return *this;}
@@ -604,7 +604,7 @@ namespace Model
      * data that is not needed for inference in a batch transform job. The output
      * filter provided allows you to include input data relevant to interpreting the
      * predictions in the output from the job. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate
      * Prediction Results with their Corresponding Input Records</a>.</p>
      */
     inline CreateTransformJobRequest& WithDataProcessing(DataProcessing&& value) { SetDataProcessing(std::move(value)); return *this;}

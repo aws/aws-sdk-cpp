@@ -29,12 +29,14 @@ namespace Model
 {
 
 DataSource::DataSource() : 
-    m_s3DataSourceHasBeenSet(false)
+    m_s3DataSourceHasBeenSet(false),
+    m_fileSystemDataSourceHasBeenSet(false)
 {
 }
 
 DataSource::DataSource(JsonView jsonValue) : 
-    m_s3DataSourceHasBeenSet(false)
+    m_s3DataSourceHasBeenSet(false),
+    m_fileSystemDataSourceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ DataSource& DataSource::operator =(JsonView jsonValue)
     m_s3DataSourceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FileSystemDataSource"))
+  {
+    m_fileSystemDataSource = jsonValue.GetObject("FileSystemDataSource");
+
+    m_fileSystemDataSourceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue DataSource::Jsonize() const
   if(m_s3DataSourceHasBeenSet)
   {
    payload.WithObject("S3DataSource", m_s3DataSource.Jsonize());
+
+  }
+
+  if(m_fileSystemDataSourceHasBeenSet)
+  {
+   payload.WithObject("FileSystemDataSource", m_fileSystemDataSource.Jsonize());
 
   }
 

@@ -174,29 +174,29 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies the minimum confidence in the face match to return. For
-     * example, don't return any matches where confidence in matches is less than
-     * 70%.</p>
+     * example, don't return any matches where confidence in matches is less than 70%.
+     * The default value is 80%.</p>
      */
     inline double GetFaceMatchThreshold() const{ return m_faceMatchThreshold; }
 
     /**
      * <p>(Optional) Specifies the minimum confidence in the face match to return. For
-     * example, don't return any matches where confidence in matches is less than
-     * 70%.</p>
+     * example, don't return any matches where confidence in matches is less than 70%.
+     * The default value is 80%.</p>
      */
     inline bool FaceMatchThresholdHasBeenSet() const { return m_faceMatchThresholdHasBeenSet; }
 
     /**
      * <p>(Optional) Specifies the minimum confidence in the face match to return. For
-     * example, don't return any matches where confidence in matches is less than
-     * 70%.</p>
+     * example, don't return any matches where confidence in matches is less than 70%.
+     * The default value is 80%.</p>
      */
     inline void SetFaceMatchThreshold(double value) { m_faceMatchThresholdHasBeenSet = true; m_faceMatchThreshold = value; }
 
     /**
      * <p>(Optional) Specifies the minimum confidence in the face match to return. For
-     * example, don't return any matches where confidence in matches is less than
-     * 70%.</p>
+     * example, don't return any matches where confidence in matches is less than 70%.
+     * The default value is 80%.</p>
      */
     inline SearchFacesByImageRequest& WithFaceMatchThreshold(double value) { SetFaceMatchThreshold(value); return *this;}
 

@@ -59,6 +59,17 @@ ListAllowedNodeTypeModificationsResult& ListAllowedNodeTypeModificationsResult::
       }
 
     }
+    XmlNode scaleDownModificationsNode = resultNode.FirstChild("ScaleDownModifications");
+    if(!scaleDownModificationsNode.IsNull())
+    {
+      XmlNode scaleDownModificationsMember = scaleDownModificationsNode.FirstChild("member");
+      while(!scaleDownModificationsMember.IsNull())
+      {
+        m_scaleDownModifications.push_back(scaleDownModificationsMember.GetText());
+        scaleDownModificationsMember = scaleDownModificationsMember.NextNode("member");
+      }
+
+    }
   }
 
   if (!rootNode.IsNull()) {

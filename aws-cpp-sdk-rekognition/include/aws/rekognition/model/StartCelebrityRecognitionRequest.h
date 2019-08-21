@@ -186,50 +186,66 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier you specify to identify the job in the completion status
-     * published to the Amazon Simple Notification Service topic. </p>
+     * <p>An identifier you specify that's returned in the completion notification
+     * that's published to your Amazon Simple Notification Service topic. For example,
+     * you can use <code>JobTag</code> to group related jobs and identify them in the
+     * completion notification.</p>
      */
     inline const Aws::String& GetJobTag() const{ return m_jobTag; }
 
     /**
-     * <p>Unique identifier you specify to identify the job in the completion status
-     * published to the Amazon Simple Notification Service topic. </p>
+     * <p>An identifier you specify that's returned in the completion notification
+     * that's published to your Amazon Simple Notification Service topic. For example,
+     * you can use <code>JobTag</code> to group related jobs and identify them in the
+     * completion notification.</p>
      */
     inline bool JobTagHasBeenSet() const { return m_jobTagHasBeenSet; }
 
     /**
-     * <p>Unique identifier you specify to identify the job in the completion status
-     * published to the Amazon Simple Notification Service topic. </p>
+     * <p>An identifier you specify that's returned in the completion notification
+     * that's published to your Amazon Simple Notification Service topic. For example,
+     * you can use <code>JobTag</code> to group related jobs and identify them in the
+     * completion notification.</p>
      */
     inline void SetJobTag(const Aws::String& value) { m_jobTagHasBeenSet = true; m_jobTag = value; }
 
     /**
-     * <p>Unique identifier you specify to identify the job in the completion status
-     * published to the Amazon Simple Notification Service topic. </p>
+     * <p>An identifier you specify that's returned in the completion notification
+     * that's published to your Amazon Simple Notification Service topic. For example,
+     * you can use <code>JobTag</code> to group related jobs and identify them in the
+     * completion notification.</p>
      */
     inline void SetJobTag(Aws::String&& value) { m_jobTagHasBeenSet = true; m_jobTag = std::move(value); }
 
     /**
-     * <p>Unique identifier you specify to identify the job in the completion status
-     * published to the Amazon Simple Notification Service topic. </p>
+     * <p>An identifier you specify that's returned in the completion notification
+     * that's published to your Amazon Simple Notification Service topic. For example,
+     * you can use <code>JobTag</code> to group related jobs and identify them in the
+     * completion notification.</p>
      */
     inline void SetJobTag(const char* value) { m_jobTagHasBeenSet = true; m_jobTag.assign(value); }
 
     /**
-     * <p>Unique identifier you specify to identify the job in the completion status
-     * published to the Amazon Simple Notification Service topic. </p>
+     * <p>An identifier you specify that's returned in the completion notification
+     * that's published to your Amazon Simple Notification Service topic. For example,
+     * you can use <code>JobTag</code> to group related jobs and identify them in the
+     * completion notification.</p>
      */
     inline StartCelebrityRecognitionRequest& WithJobTag(const Aws::String& value) { SetJobTag(value); return *this;}
 
     /**
-     * <p>Unique identifier you specify to identify the job in the completion status
-     * published to the Amazon Simple Notification Service topic. </p>
+     * <p>An identifier you specify that's returned in the completion notification
+     * that's published to your Amazon Simple Notification Service topic. For example,
+     * you can use <code>JobTag</code> to group related jobs and identify them in the
+     * completion notification.</p>
      */
     inline StartCelebrityRecognitionRequest& WithJobTag(Aws::String&& value) { SetJobTag(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier you specify to identify the job in the completion status
-     * published to the Amazon Simple Notification Service topic. </p>
+     * <p>An identifier you specify that's returned in the completion notification
+     * that's published to your Amazon Simple Notification Service topic. For example,
+     * you can use <code>JobTag</code> to group related jobs and identify them in the
+     * completion notification.</p>
      */
     inline StartCelebrityRecognitionRequest& WithJobTag(const char* value) { SetJobTag(value); return *this;}
 

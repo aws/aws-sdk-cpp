@@ -43,51 +43,44 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the content moderation analysis job. Use
-     * <code>JobId</code> to identify the job in a subsequent call to
-     * <code>GetContentModeration</code>.</p>
+     * <p>The identifier for the unsafe content analysis job. Use <code>JobId</code> to
+     * identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
     /**
-     * <p>The identifier for the content moderation analysis job. Use
-     * <code>JobId</code> to identify the job in a subsequent call to
-     * <code>GetContentModeration</code>.</p>
+     * <p>The identifier for the unsafe content analysis job. Use <code>JobId</code> to
+     * identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
      */
     inline void SetJobId(const Aws::String& value) { m_jobId = value; }
 
     /**
-     * <p>The identifier for the content moderation analysis job. Use
-     * <code>JobId</code> to identify the job in a subsequent call to
-     * <code>GetContentModeration</code>.</p>
+     * <p>The identifier for the unsafe content analysis job. Use <code>JobId</code> to
+     * identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
      */
     inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
 
     /**
-     * <p>The identifier for the content moderation analysis job. Use
-     * <code>JobId</code> to identify the job in a subsequent call to
-     * <code>GetContentModeration</code>.</p>
+     * <p>The identifier for the unsafe content analysis job. Use <code>JobId</code> to
+     * identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
      */
     inline void SetJobId(const char* value) { m_jobId.assign(value); }
 
     /**
-     * <p>The identifier for the content moderation analysis job. Use
-     * <code>JobId</code> to identify the job in a subsequent call to
-     * <code>GetContentModeration</code>.</p>
+     * <p>The identifier for the unsafe content analysis job. Use <code>JobId</code> to
+     * identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
      */
     inline StartContentModerationResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
 
     /**
-     * <p>The identifier for the content moderation analysis job. Use
-     * <code>JobId</code> to identify the job in a subsequent call to
-     * <code>GetContentModeration</code>.</p>
+     * <p>The identifier for the unsafe content analysis job. Use <code>JobId</code> to
+     * identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
      */
     inline StartContentModerationResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the content moderation analysis job. Use
-     * <code>JobId</code> to identify the job in a subsequent call to
-     * <code>GetContentModeration</code>.</p>
+     * <p>The identifier for the unsafe content analysis job. Use <code>JobId</code> to
+     * identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
      */
     inline StartContentModerationResult& WithJobId(const char* value) { SetJobId(value); return *this;}
 

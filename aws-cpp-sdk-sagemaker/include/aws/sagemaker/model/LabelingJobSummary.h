@@ -361,7 +361,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Lambda function used to consolidate the
      * annotations from individual workers into a label for a data object. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
      */
     inline const Aws::String& GetAnnotationConsolidationLambdaArn() const{ return m_annotationConsolidationLambdaArn; }
@@ -370,7 +370,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Lambda function used to consolidate the
      * annotations from individual workers into a label for a data object. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
      */
     inline bool AnnotationConsolidationLambdaArnHasBeenSet() const { return m_annotationConsolidationLambdaArnHasBeenSet; }
@@ -379,7 +379,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Lambda function used to consolidate the
      * annotations from individual workers into a label for a data object. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
      */
     inline void SetAnnotationConsolidationLambdaArn(const Aws::String& value) { m_annotationConsolidationLambdaArnHasBeenSet = true; m_annotationConsolidationLambdaArn = value; }
@@ -388,7 +388,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Lambda function used to consolidate the
      * annotations from individual workers into a label for a data object. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
      */
     inline void SetAnnotationConsolidationLambdaArn(Aws::String&& value) { m_annotationConsolidationLambdaArnHasBeenSet = true; m_annotationConsolidationLambdaArn = std::move(value); }
@@ -397,7 +397,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Lambda function used to consolidate the
      * annotations from individual workers into a label for a data object. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
      */
     inline void SetAnnotationConsolidationLambdaArn(const char* value) { m_annotationConsolidationLambdaArnHasBeenSet = true; m_annotationConsolidationLambdaArn.assign(value); }
@@ -406,7 +406,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Lambda function used to consolidate the
      * annotations from individual workers into a label for a data object. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
      */
     inline LabelingJobSummary& WithAnnotationConsolidationLambdaArn(const Aws::String& value) { SetAnnotationConsolidationLambdaArn(value); return *this;}
@@ -415,7 +415,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Lambda function used to consolidate the
      * annotations from individual workers into a label for a data object. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
      */
     inline LabelingJobSummary& WithAnnotationConsolidationLambdaArn(Aws::String&& value) { SetAnnotationConsolidationLambdaArn(std::move(value)); return *this;}
@@ -424,7 +424,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Lambda function used to consolidate the
      * annotations from individual workers into a label for a data object. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.</p>
      */
     inline LabelingJobSummary& WithAnnotationConsolidationLambdaArn(const char* value) { SetAnnotationConsolidationLambdaArn(value); return *this;}

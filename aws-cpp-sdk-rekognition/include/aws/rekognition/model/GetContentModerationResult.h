@@ -47,27 +47,27 @@ namespace Model
 
 
     /**
-     * <p>The current status of the content moderation job.</p>
+     * <p>The current status of the unsafe content analysis job.</p>
      */
     inline const VideoJobStatus& GetJobStatus() const{ return m_jobStatus; }
 
     /**
-     * <p>The current status of the content moderation job.</p>
+     * <p>The current status of the unsafe content analysis job.</p>
      */
     inline void SetJobStatus(const VideoJobStatus& value) { m_jobStatus = value; }
 
     /**
-     * <p>The current status of the content moderation job.</p>
+     * <p>The current status of the unsafe content analysis job.</p>
      */
     inline void SetJobStatus(VideoJobStatus&& value) { m_jobStatus = std::move(value); }
 
     /**
-     * <p>The current status of the content moderation job.</p>
+     * <p>The current status of the unsafe content analysis job.</p>
      */
     inline GetContentModerationResult& WithJobStatus(const VideoJobStatus& value) { SetJobStatus(value); return *this;}
 
     /**
-     * <p>The current status of the content moderation job.</p>
+     * <p>The current status of the unsafe content analysis job.</p>
      */
     inline GetContentModerationResult& WithJobStatus(VideoJobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
 
@@ -152,87 +152,87 @@ namespace Model
 
 
     /**
-     * <p>The detected moderation labels and the time(s) they were detected.</p>
+     * <p>The detected unsafe content labels and the time(s) they were detected.</p>
      */
     inline const Aws::Vector<ContentModerationDetection>& GetModerationLabels() const{ return m_moderationLabels; }
 
     /**
-     * <p>The detected moderation labels and the time(s) they were detected.</p>
+     * <p>The detected unsafe content labels and the time(s) they were detected.</p>
      */
     inline void SetModerationLabels(const Aws::Vector<ContentModerationDetection>& value) { m_moderationLabels = value; }
 
     /**
-     * <p>The detected moderation labels and the time(s) they were detected.</p>
+     * <p>The detected unsafe content labels and the time(s) they were detected.</p>
      */
     inline void SetModerationLabels(Aws::Vector<ContentModerationDetection>&& value) { m_moderationLabels = std::move(value); }
 
     /**
-     * <p>The detected moderation labels and the time(s) they were detected.</p>
+     * <p>The detected unsafe content labels and the time(s) they were detected.</p>
      */
     inline GetContentModerationResult& WithModerationLabels(const Aws::Vector<ContentModerationDetection>& value) { SetModerationLabels(value); return *this;}
 
     /**
-     * <p>The detected moderation labels and the time(s) they were detected.</p>
+     * <p>The detected unsafe content labels and the time(s) they were detected.</p>
      */
     inline GetContentModerationResult& WithModerationLabels(Aws::Vector<ContentModerationDetection>&& value) { SetModerationLabels(std::move(value)); return *this;}
 
     /**
-     * <p>The detected moderation labels and the time(s) they were detected.</p>
+     * <p>The detected unsafe content labels and the time(s) they were detected.</p>
      */
     inline GetContentModerationResult& AddModerationLabels(const ContentModerationDetection& value) { m_moderationLabels.push_back(value); return *this; }
 
     /**
-     * <p>The detected moderation labels and the time(s) they were detected.</p>
+     * <p>The detected unsafe content labels and the time(s) they were detected.</p>
      */
     inline GetContentModerationResult& AddModerationLabels(ContentModerationDetection&& value) { m_moderationLabels.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>If the response is truncated, Amazon Rekognition Video returns this token
-     * that you can use in the subsequent request to retrieve the next set of
-     * moderation labels. </p>
+     * that you can use in the subsequent request to retrieve the next set of unsafe
+     * content labels. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>If the response is truncated, Amazon Rekognition Video returns this token
-     * that you can use in the subsequent request to retrieve the next set of
-     * moderation labels. </p>
+     * that you can use in the subsequent request to retrieve the next set of unsafe
+     * content labels. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>If the response is truncated, Amazon Rekognition Video returns this token
-     * that you can use in the subsequent request to retrieve the next set of
-     * moderation labels. </p>
+     * that you can use in the subsequent request to retrieve the next set of unsafe
+     * content labels. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the response is truncated, Amazon Rekognition Video returns this token
-     * that you can use in the subsequent request to retrieve the next set of
-     * moderation labels. </p>
+     * that you can use in the subsequent request to retrieve the next set of unsafe
+     * content labels. </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>If the response is truncated, Amazon Rekognition Video returns this token
-     * that you can use in the subsequent request to retrieve the next set of
-     * moderation labels. </p>
+     * that you can use in the subsequent request to retrieve the next set of unsafe
+     * content labels. </p>
      */
     inline GetContentModerationResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>If the response is truncated, Amazon Rekognition Video returns this token
-     * that you can use in the subsequent request to retrieve the next set of
-     * moderation labels. </p>
+     * that you can use in the subsequent request to retrieve the next set of unsafe
+     * content labels. </p>
      */
     inline GetContentModerationResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the response is truncated, Amazon Rekognition Video returns this token
-     * that you can use in the subsequent request to retrieve the next set of
-     * moderation labels. </p>
+     * that you can use in the subsequent request to retrieve the next set of unsafe
+     * content labels. </p>
      */
     inline GetContentModerationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

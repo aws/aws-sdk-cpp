@@ -45,43 +45,43 @@ namespace Model
 
 
     /**
-     * <p>Array of detected Moderation labels and the time, in millseconds from the
+     * <p>Array of detected Moderation labels and the time, in milliseconds from the
      * start of the video, they were detected.</p>
      */
     inline const Aws::Vector<ModerationLabel>& GetModerationLabels() const{ return m_moderationLabels; }
 
     /**
-     * <p>Array of detected Moderation labels and the time, in millseconds from the
+     * <p>Array of detected Moderation labels and the time, in milliseconds from the
      * start of the video, they were detected.</p>
      */
     inline void SetModerationLabels(const Aws::Vector<ModerationLabel>& value) { m_moderationLabels = value; }
 
     /**
-     * <p>Array of detected Moderation labels and the time, in millseconds from the
+     * <p>Array of detected Moderation labels and the time, in milliseconds from the
      * start of the video, they were detected.</p>
      */
     inline void SetModerationLabels(Aws::Vector<ModerationLabel>&& value) { m_moderationLabels = std::move(value); }
 
     /**
-     * <p>Array of detected Moderation labels and the time, in millseconds from the
+     * <p>Array of detected Moderation labels and the time, in milliseconds from the
      * start of the video, they were detected.</p>
      */
     inline DetectModerationLabelsResult& WithModerationLabels(const Aws::Vector<ModerationLabel>& value) { SetModerationLabels(value); return *this;}
 
     /**
-     * <p>Array of detected Moderation labels and the time, in millseconds from the
+     * <p>Array of detected Moderation labels and the time, in milliseconds from the
      * start of the video, they were detected.</p>
      */
     inline DetectModerationLabelsResult& WithModerationLabels(Aws::Vector<ModerationLabel>&& value) { SetModerationLabels(std::move(value)); return *this;}
 
     /**
-     * <p>Array of detected Moderation labels and the time, in millseconds from the
+     * <p>Array of detected Moderation labels and the time, in milliseconds from the
      * start of the video, they were detected.</p>
      */
     inline DetectModerationLabelsResult& AddModerationLabels(const ModerationLabel& value) { m_moderationLabels.push_back(value); return *this; }
 
     /**
-     * <p>Array of detected Moderation labels and the time, in millseconds from the
+     * <p>Array of detected Moderation labels and the time, in milliseconds from the
      * start of the video, they were detected.</p>
      */
     inline DetectModerationLabelsResult& AddModerationLabels(ModerationLabel&& value) { m_moderationLabels.push_back(std::move(value)); return *this; }

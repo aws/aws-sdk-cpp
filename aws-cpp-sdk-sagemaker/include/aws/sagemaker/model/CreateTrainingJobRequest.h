@@ -441,12 +441,14 @@ namespace Model
      * </p> <p>Algorithms can accept input data from one or more channels. For example,
      * an algorithm might have two channels of input data, <code>training_data</code>
      * and <code>validation_data</code>. The configuration for each channel provides
-     * the S3 location where the input data is stored. It also provides information
-     * about the stored data: the MIME type, compression method, and whether the data
-     * is wrapped in RecordIO format. </p> <p>Depending on the input mode that the
-     * algorithm supports, Amazon SageMaker either copies input data files from an S3
-     * bucket to a local directory in the Docker container, or makes it available as
-     * input streams. </p>
+     * the S3, EFS, or FSx location where the input data is stored. It also provides
+     * information about the stored data: the MIME type, compression method, and
+     * whether the data is wrapped in RecordIO format. </p> <p>Depending on the input
+     * mode that the algorithm supports, Amazon SageMaker either copies input data
+     * files from an S3 bucket to a local directory in the Docker container, or makes
+     * it available as input streams. For example, if you specify an EFS location,
+     * input data files will be made available as input streams. They do not need to be
+     * downloaded.</p>
      */
     inline const Aws::Vector<Channel>& GetInputDataConfig() const{ return m_inputDataConfig; }
 
@@ -456,12 +458,14 @@ namespace Model
      * </p> <p>Algorithms can accept input data from one or more channels. For example,
      * an algorithm might have two channels of input data, <code>training_data</code>
      * and <code>validation_data</code>. The configuration for each channel provides
-     * the S3 location where the input data is stored. It also provides information
-     * about the stored data: the MIME type, compression method, and whether the data
-     * is wrapped in RecordIO format. </p> <p>Depending on the input mode that the
-     * algorithm supports, Amazon SageMaker either copies input data files from an S3
-     * bucket to a local directory in the Docker container, or makes it available as
-     * input streams. </p>
+     * the S3, EFS, or FSx location where the input data is stored. It also provides
+     * information about the stored data: the MIME type, compression method, and
+     * whether the data is wrapped in RecordIO format. </p> <p>Depending on the input
+     * mode that the algorithm supports, Amazon SageMaker either copies input data
+     * files from an S3 bucket to a local directory in the Docker container, or makes
+     * it available as input streams. For example, if you specify an EFS location,
+     * input data files will be made available as input streams. They do not need to be
+     * downloaded.</p>
      */
     inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
 
@@ -471,12 +475,14 @@ namespace Model
      * </p> <p>Algorithms can accept input data from one or more channels. For example,
      * an algorithm might have two channels of input data, <code>training_data</code>
      * and <code>validation_data</code>. The configuration for each channel provides
-     * the S3 location where the input data is stored. It also provides information
-     * about the stored data: the MIME type, compression method, and whether the data
-     * is wrapped in RecordIO format. </p> <p>Depending on the input mode that the
-     * algorithm supports, Amazon SageMaker either copies input data files from an S3
-     * bucket to a local directory in the Docker container, or makes it available as
-     * input streams. </p>
+     * the S3, EFS, or FSx location where the input data is stored. It also provides
+     * information about the stored data: the MIME type, compression method, and
+     * whether the data is wrapped in RecordIO format. </p> <p>Depending on the input
+     * mode that the algorithm supports, Amazon SageMaker either copies input data
+     * files from an S3 bucket to a local directory in the Docker container, or makes
+     * it available as input streams. For example, if you specify an EFS location,
+     * input data files will be made available as input streams. They do not need to be
+     * downloaded.</p>
      */
     inline void SetInputDataConfig(const Aws::Vector<Channel>& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
 
@@ -486,12 +492,14 @@ namespace Model
      * </p> <p>Algorithms can accept input data from one or more channels. For example,
      * an algorithm might have two channels of input data, <code>training_data</code>
      * and <code>validation_data</code>. The configuration for each channel provides
-     * the S3 location where the input data is stored. It also provides information
-     * about the stored data: the MIME type, compression method, and whether the data
-     * is wrapped in RecordIO format. </p> <p>Depending on the input mode that the
-     * algorithm supports, Amazon SageMaker either copies input data files from an S3
-     * bucket to a local directory in the Docker container, or makes it available as
-     * input streams. </p>
+     * the S3, EFS, or FSx location where the input data is stored. It also provides
+     * information about the stored data: the MIME type, compression method, and
+     * whether the data is wrapped in RecordIO format. </p> <p>Depending on the input
+     * mode that the algorithm supports, Amazon SageMaker either copies input data
+     * files from an S3 bucket to a local directory in the Docker container, or makes
+     * it available as input streams. For example, if you specify an EFS location,
+     * input data files will be made available as input streams. They do not need to be
+     * downloaded.</p>
      */
     inline void SetInputDataConfig(Aws::Vector<Channel>&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::move(value); }
 
@@ -501,12 +509,14 @@ namespace Model
      * </p> <p>Algorithms can accept input data from one or more channels. For example,
      * an algorithm might have two channels of input data, <code>training_data</code>
      * and <code>validation_data</code>. The configuration for each channel provides
-     * the S3 location where the input data is stored. It also provides information
-     * about the stored data: the MIME type, compression method, and whether the data
-     * is wrapped in RecordIO format. </p> <p>Depending on the input mode that the
-     * algorithm supports, Amazon SageMaker either copies input data files from an S3
-     * bucket to a local directory in the Docker container, or makes it available as
-     * input streams. </p>
+     * the S3, EFS, or FSx location where the input data is stored. It also provides
+     * information about the stored data: the MIME type, compression method, and
+     * whether the data is wrapped in RecordIO format. </p> <p>Depending on the input
+     * mode that the algorithm supports, Amazon SageMaker either copies input data
+     * files from an S3 bucket to a local directory in the Docker container, or makes
+     * it available as input streams. For example, if you specify an EFS location,
+     * input data files will be made available as input streams. They do not need to be
+     * downloaded.</p>
      */
     inline CreateTrainingJobRequest& WithInputDataConfig(const Aws::Vector<Channel>& value) { SetInputDataConfig(value); return *this;}
 
@@ -516,12 +526,14 @@ namespace Model
      * </p> <p>Algorithms can accept input data from one or more channels. For example,
      * an algorithm might have two channels of input data, <code>training_data</code>
      * and <code>validation_data</code>. The configuration for each channel provides
-     * the S3 location where the input data is stored. It also provides information
-     * about the stored data: the MIME type, compression method, and whether the data
-     * is wrapped in RecordIO format. </p> <p>Depending on the input mode that the
-     * algorithm supports, Amazon SageMaker either copies input data files from an S3
-     * bucket to a local directory in the Docker container, or makes it available as
-     * input streams. </p>
+     * the S3, EFS, or FSx location where the input data is stored. It also provides
+     * information about the stored data: the MIME type, compression method, and
+     * whether the data is wrapped in RecordIO format. </p> <p>Depending on the input
+     * mode that the algorithm supports, Amazon SageMaker either copies input data
+     * files from an S3 bucket to a local directory in the Docker container, or makes
+     * it available as input streams. For example, if you specify an EFS location,
+     * input data files will be made available as input streams. They do not need to be
+     * downloaded.</p>
      */
     inline CreateTrainingJobRequest& WithInputDataConfig(Aws::Vector<Channel>&& value) { SetInputDataConfig(std::move(value)); return *this;}
 
@@ -531,12 +543,14 @@ namespace Model
      * </p> <p>Algorithms can accept input data from one or more channels. For example,
      * an algorithm might have two channels of input data, <code>training_data</code>
      * and <code>validation_data</code>. The configuration for each channel provides
-     * the S3 location where the input data is stored. It also provides information
-     * about the stored data: the MIME type, compression method, and whether the data
-     * is wrapped in RecordIO format. </p> <p>Depending on the input mode that the
-     * algorithm supports, Amazon SageMaker either copies input data files from an S3
-     * bucket to a local directory in the Docker container, or makes it available as
-     * input streams. </p>
+     * the S3, EFS, or FSx location where the input data is stored. It also provides
+     * information about the stored data: the MIME type, compression method, and
+     * whether the data is wrapped in RecordIO format. </p> <p>Depending on the input
+     * mode that the algorithm supports, Amazon SageMaker either copies input data
+     * files from an S3 bucket to a local directory in the Docker container, or makes
+     * it available as input streams. For example, if you specify an EFS location,
+     * input data files will be made available as input streams. They do not need to be
+     * downloaded.</p>
      */
     inline CreateTrainingJobRequest& AddInputDataConfig(const Channel& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(value); return *this; }
 
@@ -546,49 +560,51 @@ namespace Model
      * </p> <p>Algorithms can accept input data from one or more channels. For example,
      * an algorithm might have two channels of input data, <code>training_data</code>
      * and <code>validation_data</code>. The configuration for each channel provides
-     * the S3 location where the input data is stored. It also provides information
-     * about the stored data: the MIME type, compression method, and whether the data
-     * is wrapped in RecordIO format. </p> <p>Depending on the input mode that the
-     * algorithm supports, Amazon SageMaker either copies input data files from an S3
-     * bucket to a local directory in the Docker container, or makes it available as
-     * input streams. </p>
+     * the S3, EFS, or FSx location where the input data is stored. It also provides
+     * information about the stored data: the MIME type, compression method, and
+     * whether the data is wrapped in RecordIO format. </p> <p>Depending on the input
+     * mode that the algorithm supports, Amazon SageMaker either copies input data
+     * files from an S3 bucket to a local directory in the Docker container, or makes
+     * it available as input streams. For example, if you specify an EFS location,
+     * input data files will be made available as input streams. They do not need to be
+     * downloaded.</p>
      */
     inline CreateTrainingJobRequest& AddInputDataConfig(Channel&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Specifies the path to the S3 bucket where you want to store model artifacts.
-     * Amazon SageMaker creates subfolders for the artifacts. </p>
+     * <p>Specifies the path to the S3 location where you want to store model
+     * artifacts. Amazon SageMaker creates subfolders for the artifacts. </p>
      */
     inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
 
     /**
-     * <p>Specifies the path to the S3 bucket where you want to store model artifacts.
-     * Amazon SageMaker creates subfolders for the artifacts. </p>
+     * <p>Specifies the path to the S3 location where you want to store model
+     * artifacts. Amazon SageMaker creates subfolders for the artifacts. </p>
      */
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
 
     /**
-     * <p>Specifies the path to the S3 bucket where you want to store model artifacts.
-     * Amazon SageMaker creates subfolders for the artifacts. </p>
+     * <p>Specifies the path to the S3 location where you want to store model
+     * artifacts. Amazon SageMaker creates subfolders for the artifacts. </p>
      */
     inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
 
     /**
-     * <p>Specifies the path to the S3 bucket where you want to store model artifacts.
-     * Amazon SageMaker creates subfolders for the artifacts. </p>
+     * <p>Specifies the path to the S3 location where you want to store model
+     * artifacts. Amazon SageMaker creates subfolders for the artifacts. </p>
      */
     inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
 
     /**
-     * <p>Specifies the path to the S3 bucket where you want to store model artifacts.
-     * Amazon SageMaker creates subfolders for the artifacts. </p>
+     * <p>Specifies the path to the S3 location where you want to store model
+     * artifacts. Amazon SageMaker creates subfolders for the artifacts. </p>
      */
     inline CreateTrainingJobRequest& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
 
     /**
-     * <p>Specifies the path to the S3 bucket where you want to store model artifacts.
-     * Amazon SageMaker creates subfolders for the artifacts. </p>
+     * <p>Specifies the path to the S3 location where you want to store model
+     * artifacts. Amazon SageMaker creates subfolders for the artifacts. </p>
      */
     inline CreateTrainingJobRequest& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
 

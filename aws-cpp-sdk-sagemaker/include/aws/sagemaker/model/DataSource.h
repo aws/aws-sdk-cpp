@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/S3DataSource.h>
+#include <aws/sagemaker/model/FileSystemDataSource.h>
 #include <utility>
 
 namespace Aws
@@ -77,10 +78,44 @@ namespace Model
      */
     inline DataSource& WithS3DataSource(S3DataSource&& value) { SetS3DataSource(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The file system that is associated with a channel.</p>
+     */
+    inline const FileSystemDataSource& GetFileSystemDataSource() const{ return m_fileSystemDataSource; }
+
+    /**
+     * <p>The file system that is associated with a channel.</p>
+     */
+    inline bool FileSystemDataSourceHasBeenSet() const { return m_fileSystemDataSourceHasBeenSet; }
+
+    /**
+     * <p>The file system that is associated with a channel.</p>
+     */
+    inline void SetFileSystemDataSource(const FileSystemDataSource& value) { m_fileSystemDataSourceHasBeenSet = true; m_fileSystemDataSource = value; }
+
+    /**
+     * <p>The file system that is associated with a channel.</p>
+     */
+    inline void SetFileSystemDataSource(FileSystemDataSource&& value) { m_fileSystemDataSourceHasBeenSet = true; m_fileSystemDataSource = std::move(value); }
+
+    /**
+     * <p>The file system that is associated with a channel.</p>
+     */
+    inline DataSource& WithFileSystemDataSource(const FileSystemDataSource& value) { SetFileSystemDataSource(value); return *this;}
+
+    /**
+     * <p>The file system that is associated with a channel.</p>
+     */
+    inline DataSource& WithFileSystemDataSource(FileSystemDataSource&& value) { SetFileSystemDataSource(std::move(value)); return *this;}
+
   private:
 
     S3DataSource m_s3DataSource;
     bool m_s3DataSourceHasBeenSet;
+
+    FileSystemDataSource m_fileSystemDataSource;
+    bool m_fileSystemDataSourceHasBeenSet;
   };
 
 } // namespace Model

@@ -327,7 +327,7 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
      * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
@@ -337,7 +337,7 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
      * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
@@ -347,7 +347,7 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
      * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
@@ -357,7 +357,7 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
      * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
@@ -367,7 +367,7 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
      * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
@@ -377,7 +377,7 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
      * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
@@ -387,7 +387,7 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
      * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
@@ -397,7 +397,7 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
      * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */

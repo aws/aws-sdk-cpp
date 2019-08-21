@@ -59,6 +59,8 @@ namespace Model
      * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</code>
      * </p> </li> <li> <p> <i>Object detection</i> </p> <p>
      * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code>
+     * </p> </li> <li> <p> <i>Semantic Segmentation</i> </p> <p>
+     * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code>
      * </p> </li> </ul>
      */
     inline const Aws::String& GetLabelingJobAlgorithmSpecificationArn() const{ return m_labelingJobAlgorithmSpecificationArn; }
@@ -72,6 +74,8 @@ namespace Model
      * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</code>
      * </p> </li> <li> <p> <i>Object detection</i> </p> <p>
      * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code>
+     * </p> </li> <li> <p> <i>Semantic Segmentation</i> </p> <p>
+     * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code>
      * </p> </li> </ul>
      */
     inline bool LabelingJobAlgorithmSpecificationArnHasBeenSet() const { return m_labelingJobAlgorithmSpecificationArnHasBeenSet; }
@@ -85,6 +89,8 @@ namespace Model
      * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</code>
      * </p> </li> <li> <p> <i>Object detection</i> </p> <p>
      * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code>
+     * </p> </li> <li> <p> <i>Semantic Segmentation</i> </p> <p>
+     * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code>
      * </p> </li> </ul>
      */
     inline void SetLabelingJobAlgorithmSpecificationArn(const Aws::String& value) { m_labelingJobAlgorithmSpecificationArnHasBeenSet = true; m_labelingJobAlgorithmSpecificationArn = value; }
@@ -98,6 +104,8 @@ namespace Model
      * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</code>
      * </p> </li> <li> <p> <i>Object detection</i> </p> <p>
      * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code>
+     * </p> </li> <li> <p> <i>Semantic Segmentation</i> </p> <p>
+     * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code>
      * </p> </li> </ul>
      */
     inline void SetLabelingJobAlgorithmSpecificationArn(Aws::String&& value) { m_labelingJobAlgorithmSpecificationArnHasBeenSet = true; m_labelingJobAlgorithmSpecificationArn = std::move(value); }
@@ -111,6 +119,8 @@ namespace Model
      * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</code>
      * </p> </li> <li> <p> <i>Object detection</i> </p> <p>
      * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code>
+     * </p> </li> <li> <p> <i>Semantic Segmentation</i> </p> <p>
+     * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code>
      * </p> </li> </ul>
      */
     inline void SetLabelingJobAlgorithmSpecificationArn(const char* value) { m_labelingJobAlgorithmSpecificationArnHasBeenSet = true; m_labelingJobAlgorithmSpecificationArn.assign(value); }
@@ -124,6 +134,8 @@ namespace Model
      * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</code>
      * </p> </li> <li> <p> <i>Object detection</i> </p> <p>
      * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code>
+     * </p> </li> <li> <p> <i>Semantic Segmentation</i> </p> <p>
+     * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code>
      * </p> </li> </ul>
      */
     inline LabelingJobAlgorithmsConfig& WithLabelingJobAlgorithmSpecificationArn(const Aws::String& value) { SetLabelingJobAlgorithmSpecificationArn(value); return *this;}
@@ -137,6 +149,8 @@ namespace Model
      * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</code>
      * </p> </li> <li> <p> <i>Object detection</i> </p> <p>
      * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code>
+     * </p> </li> <li> <p> <i>Semantic Segmentation</i> </p> <p>
+     * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code>
      * </p> </li> </ul>
      */
     inline LabelingJobAlgorithmsConfig& WithLabelingJobAlgorithmSpecificationArn(Aws::String&& value) { SetLabelingJobAlgorithmSpecificationArn(std::move(value)); return *this;}
@@ -150,6 +164,8 @@ namespace Model
      * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</code>
      * </p> </li> <li> <p> <i>Object detection</i> </p> <p>
      * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code>
+     * </p> </li> <li> <p> <i>Semantic Segmentation</i> </p> <p>
+     * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code>
      * </p> </li> </ul>
      */
     inline LabelingJobAlgorithmsConfig& WithLabelingJobAlgorithmSpecificationArn(const char* value) { SetLabelingJobAlgorithmSpecificationArn(value); return *this;}

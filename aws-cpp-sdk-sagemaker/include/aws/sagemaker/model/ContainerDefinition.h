@@ -54,7 +54,7 @@ namespace Model
      * <code>PrimaryContainer</code>.</p> <p>When a <code>ContainerDefinition</code> is
      * part of an inference pipeline, the value of ths parameter uniquely identifies
      * the container for the purposes of logging and metrics. For information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
      * Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a
      * value for this parameter for a <code>ContainerDefinition</code> that is part of
      * an inference pipeline, a unique name is automatically assigned based on the
@@ -71,7 +71,7 @@ namespace Model
      * <code>PrimaryContainer</code>.</p> <p>When a <code>ContainerDefinition</code> is
      * part of an inference pipeline, the value of ths parameter uniquely identifies
      * the container for the purposes of logging and metrics. For information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
      * Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a
      * value for this parameter for a <code>ContainerDefinition</code> that is part of
      * an inference pipeline, a unique name is automatically assigned based on the
@@ -88,7 +88,7 @@ namespace Model
      * <code>PrimaryContainer</code>.</p> <p>When a <code>ContainerDefinition</code> is
      * part of an inference pipeline, the value of ths parameter uniquely identifies
      * the container for the purposes of logging and metrics. For information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
      * Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a
      * value for this parameter for a <code>ContainerDefinition</code> that is part of
      * an inference pipeline, a unique name is automatically assigned based on the
@@ -105,7 +105,7 @@ namespace Model
      * <code>PrimaryContainer</code>.</p> <p>When a <code>ContainerDefinition</code> is
      * part of an inference pipeline, the value of ths parameter uniquely identifies
      * the container for the purposes of logging and metrics. For information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
      * Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a
      * value for this parameter for a <code>ContainerDefinition</code> that is part of
      * an inference pipeline, a unique name is automatically assigned based on the
@@ -122,7 +122,7 @@ namespace Model
      * <code>PrimaryContainer</code>.</p> <p>When a <code>ContainerDefinition</code> is
      * part of an inference pipeline, the value of ths parameter uniquely identifies
      * the container for the purposes of logging and metrics. For information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
      * Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a
      * value for this parameter for a <code>ContainerDefinition</code> that is part of
      * an inference pipeline, a unique name is automatically assigned based on the
@@ -139,7 +139,7 @@ namespace Model
      * <code>PrimaryContainer</code>.</p> <p>When a <code>ContainerDefinition</code> is
      * part of an inference pipeline, the value of ths parameter uniquely identifies
      * the container for the purposes of logging and metrics. For information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
      * Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a
      * value for this parameter for a <code>ContainerDefinition</code> that is part of
      * an inference pipeline, a unique name is automatically assigned based on the
@@ -156,7 +156,7 @@ namespace Model
      * <code>PrimaryContainer</code>.</p> <p>When a <code>ContainerDefinition</code> is
      * part of an inference pipeline, the value of ths parameter uniquely identifies
      * the container for the purposes of logging and metrics. For information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
      * Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a
      * value for this parameter for a <code>ContainerDefinition</code> that is part of
      * an inference pipeline, a unique name is automatically assigned based on the
@@ -173,7 +173,7 @@ namespace Model
      * <code>PrimaryContainer</code>.</p> <p>When a <code>ContainerDefinition</code> is
      * part of an inference pipeline, the value of ths parameter uniquely identifies
      * the container for the purposes of logging and metrics. For information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
      * Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a
      * value for this parameter for a <code>ContainerDefinition</code> that is part of
      * an inference pipeline, a unique name is automatically assigned based on the
@@ -297,13 +297,13 @@ namespace Model
      * suffix). The S3 path is required for Amazon SageMaker built-in algorithms, but
      * not if you use your own algorithms. For more information on built-in algorithms,
      * see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
      * Parameters</a>. </p> <p>If you provide a value for this parameter, Amazon
      * SageMaker uses AWS Security Token Service to download model artifacts from the
      * S3 path you provide. AWS STS is activated in your IAM user account by default.
      * If you previously deactivated AWS STS for a region, you need to reactivate AWS
      * STS for that region. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
      * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
@@ -317,13 +317,13 @@ namespace Model
      * suffix). The S3 path is required for Amazon SageMaker built-in algorithms, but
      * not if you use your own algorithms. For more information on built-in algorithms,
      * see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
      * Parameters</a>. </p> <p>If you provide a value for this parameter, Amazon
      * SageMaker uses AWS Security Token Service to download model artifacts from the
      * S3 path you provide. AWS STS is activated in your IAM user account by default.
      * If you previously deactivated AWS STS for a region, you need to reactivate AWS
      * STS for that region. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
      * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
@@ -337,13 +337,13 @@ namespace Model
      * suffix). The S3 path is required for Amazon SageMaker built-in algorithms, but
      * not if you use your own algorithms. For more information on built-in algorithms,
      * see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
      * Parameters</a>. </p> <p>If you provide a value for this parameter, Amazon
      * SageMaker uses AWS Security Token Service to download model artifacts from the
      * S3 path you provide. AWS STS is activated in your IAM user account by default.
      * If you previously deactivated AWS STS for a region, you need to reactivate AWS
      * STS for that region. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
      * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
@@ -357,13 +357,13 @@ namespace Model
      * suffix). The S3 path is required for Amazon SageMaker built-in algorithms, but
      * not if you use your own algorithms. For more information on built-in algorithms,
      * see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
      * Parameters</a>. </p> <p>If you provide a value for this parameter, Amazon
      * SageMaker uses AWS Security Token Service to download model artifacts from the
      * S3 path you provide. AWS STS is activated in your IAM user account by default.
      * If you previously deactivated AWS STS for a region, you need to reactivate AWS
      * STS for that region. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
      * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
@@ -377,13 +377,13 @@ namespace Model
      * suffix). The S3 path is required for Amazon SageMaker built-in algorithms, but
      * not if you use your own algorithms. For more information on built-in algorithms,
      * see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
      * Parameters</a>. </p> <p>If you provide a value for this parameter, Amazon
      * SageMaker uses AWS Security Token Service to download model artifacts from the
      * S3 path you provide. AWS STS is activated in your IAM user account by default.
      * If you previously deactivated AWS STS for a region, you need to reactivate AWS
      * STS for that region. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
      * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
@@ -397,13 +397,13 @@ namespace Model
      * suffix). The S3 path is required for Amazon SageMaker built-in algorithms, but
      * not if you use your own algorithms. For more information on built-in algorithms,
      * see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
      * Parameters</a>. </p> <p>If you provide a value for this parameter, Amazon
      * SageMaker uses AWS Security Token Service to download model artifacts from the
      * S3 path you provide. AWS STS is activated in your IAM user account by default.
      * If you previously deactivated AWS STS for a region, you need to reactivate AWS
      * STS for that region. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
      * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
@@ -417,13 +417,13 @@ namespace Model
      * suffix). The S3 path is required for Amazon SageMaker built-in algorithms, but
      * not if you use your own algorithms. For more information on built-in algorithms,
      * see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
      * Parameters</a>. </p> <p>If you provide a value for this parameter, Amazon
      * SageMaker uses AWS Security Token Service to download model artifacts from the
      * S3 path you provide. AWS STS is activated in your IAM user account by default.
      * If you previously deactivated AWS STS for a region, you need to reactivate AWS
      * STS for that region. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
      * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
@@ -437,13 +437,13 @@ namespace Model
      * suffix). The S3 path is required for Amazon SageMaker built-in algorithms, but
      * not if you use your own algorithms. For more information on built-in algorithms,
      * see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
      * Parameters</a>. </p> <p>If you provide a value for this parameter, Amazon
      * SageMaker uses AWS Security Token Service to download model artifacts from the
      * S3 path you provide. AWS STS is activated in your IAM user account by default.
      * If you previously deactivated AWS STS for a region, you need to reactivate AWS
      * STS for that region. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
      * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
