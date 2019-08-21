@@ -3,6 +3,7 @@
 .build
 .idea
 *.d
+compile_commands.json
 Debug
 Release
 *~

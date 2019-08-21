@@ -32,10 +32,26 @@ namespace Aws
 {
     namespace Auth
     {
-        static int REFRESH_THRESHOLD = 1000 * 60 * 5;
+        constexpr int REFRESH_THRESHOLD = 1000 * 60 * 5;
 
+        /**
+         * Returns the full path of the config file.
+         */
         AWS_CORE_API Aws::String GetConfigProfileFilename(); //defaults to "config"
+
+        /**
+         * Returns the default profile name.
+         * The value is the first non-empty value of the following:
+         * 1. AWS_PROFILE environment variable
+         * 2. AWS_DEFAULT_PROFILE environment variable
+         * 3. The literal name "default"
+         */
         AWS_CORE_API Aws::String GetConfigProfileName(); //defaults to "default"
+
+        /*
+         * Fetches credentials by executing the process in the parameter
+         */
+        AWS_CORE_API AWSCredentials GetCredentialsFromProcess(const Aws::String& process);
 
         /**
           * Abstract class for retrieving AWS credentials. Create a derived class from this to allow
@@ -96,15 +112,14 @@ namespace Aws
              * Initializes object from awsAccessKeyId, awsSecretAccessKey, and sessionToken parameters. sessionToken parameter is defaulted to empty.
              */
             inline SimpleAWSCredentialsProvider(const Aws::String& awsAccessKeyId, const Aws::String& awsSecretAccessKey, const Aws::String& sessionToken = "")
-                : m_accessKeyId(awsAccessKeyId), m_secretAccessKey(awsSecretAccessKey), m_sessionToken(sessionToken)
+                : m_credentials(awsAccessKeyId, awsSecretAccessKey, sessionToken)
             { }
 
             /**
             * Initializes object from credentials object. everything is copied.
             */
             inline SimpleAWSCredentialsProvider(const AWSCredentials& credentials)
-                : m_accessKeyId(credentials.GetAWSAccessKeyId()), m_secretAccessKey(credentials.GetAWSSecretKey()),
-                m_sessionToken(credentials.GetSessionToken())
+                : m_credentials(credentials)
             { }
 
             /**
@@ -112,13 +127,11 @@ namespace Aws
              */
             inline AWSCredentials GetAWSCredentials() override
             {
-                return AWSCredentials(m_accessKeyId, m_secretAccessKey, m_sessionToken);
+                return m_credentials;
             }
 
         private:
-            Aws::String m_accessKeyId;
-            Aws::String m_secretAccessKey;
-            Aws::String m_sessionToken;
+            AWSCredentials m_credentials;
         };
 
         /**
@@ -310,7 +323,6 @@ namespace Aws
             Aws::String m_profileToUse;
             Aws::Config::AWSConfigFileProfileConfigLoader m_configFileLoader;
             Aws::Auth::AWSCredentials m_credentials;
-            Aws::Utils::DateTime m_expire;
         };
     } // namespace Auth
 } // namespace Aws

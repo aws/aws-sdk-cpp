@@ -373,16 +373,14 @@ void TaskRoleCredentialsProvider::RefreshIfExpired()
 static const char PROCESS_LOG_TAG[] = "ProcessCredentialsProvider";
 ProcessCredentialsProvider::ProcessCredentialsProvider() :
     m_profileToUse(Aws::Auth::GetConfigProfileName()),
-    m_configFileLoader(GetConfigProfileFilename(), true),
-    m_expire(std::chrono::time_point<std::chrono::system_clock>::min())
+    m_configFileLoader(GetConfigProfileFilename(), true)
 {
     AWS_LOGSTREAM_INFO(PROCESS_LOG_TAG, "Setting process credentials provider to read config from " <<  m_profileToUse);
 }
 
 ProcessCredentialsProvider::ProcessCredentialsProvider(const Aws::String& profile) :
     m_profileToUse(profile),
-    m_configFileLoader(GetConfigProfileFilename(), true),
-    m_expire(std::chrono::time_point<std::chrono::system_clock>::min())
+    m_configFileLoader(GetConfigProfileFilename(), true)
 {
     AWS_LOGSTREAM_INFO(PROCESS_LOG_TAG, "Setting process credentials provider to read config from " <<  m_profileToUse);
 }
@@ -391,10 +389,6 @@ AWSCredentials ProcessCredentialsProvider::GetAWSCredentials()
 {
     RefreshIfExpired();
     ReaderLockGuard guard(m_reloadLock);
-    if (m_expire <= Aws::Utils::DateTime::Now())
-    {
-        return Aws::Auth::AWSCredentials();
-    }
     return m_credentials;
 }
 
@@ -408,49 +402,83 @@ void ProcessCredentialsProvider::Reload()
         AWS_LOGSTREAM_ERROR(PROCESS_LOG_TAG, "Failed to find credential process's profile: " << m_profileToUse);
         return;
     }
-    
-    Aws::String command = configFileProfileIter->second.GetCredentialProcess();
-    command.append(" 2>&1"); // redirect stderr to stdout
-    Aws::String result = Aws::Utils::StringUtils::Trim(Aws::OSVersionInfo::GetSysCommandOutput(command.c_str()).c_str());
-    Json::JsonValue credentialsDoc(result);
-    if (!credentialsDoc.WasParseSuccessful()) 
-    {
-        AWS_LOGSTREAM_ERROR(PROCESS_LOG_TAG, "Failed to load credential from running: " << command << " Error: " << result);
-        return;
-    }
 
-    Aws::Utils::Json::JsonView credentialsView(credentialsDoc);
-    if (!credentialsView.KeyExists("Version") || credentialsView.GetInteger("Version") != 1)
-    {
-        AWS_LOGSTREAM_ERROR(PROCESS_LOG_TAG, "Encountered an unsupported process credentials payload version:" << credentialsView.GetInteger("Version"));
-        return;
-    }
-
-    Aws::String accessKey, secretKey, token, expire;
-    accessKey = credentialsView.GetString("AccessKeyId");
-    secretKey = credentialsView.GetString("SecretAccessKey");
-    token = credentialsView.GetString("SessionToken");
-
-    m_credentials.SetAWSAccessKeyId(accessKey);
-    m_credentials.SetAWSSecretKey(secretKey);
-    m_credentials.SetSessionToken(token);
-    m_expire = credentialsView.KeyExists("Expiration") ? Aws::Utils::DateTime(credentialsView.GetString("Expiration"), DateFormat::ISO_8601) : Aws::Utils::DateTime(std::chrono::time_point<std::chrono::system_clock>::max());
-    AWS_LOGSTREAM_DEBUG(PROCESS_LOG_TAG, "Successfully pulled credentials from process credential with AccessKey " << accessKey << ", Expiration:" << credentialsView.GetString("Expiration"));
+    const Aws::String& command = configFileProfileIter->second.GetCredentialProcess();
+    m_credentials = GetCredentialsFromProcess(command);
 }
 
 void ProcessCredentialsProvider::RefreshIfExpired()
 {
     ReaderLockGuard guard(m_reloadLock);
-    if (Aws::Utils::DateTime::Now() < m_expire)
+    if (!m_credentials.IsExpiredOrEmpty())
     {
        return;
     }
 
     guard.UpgradeToWriterLock();
-    if (Aws::Utils::DateTime::Now() < m_expire) // double-checked lock to avoid refreshing twice
+    if (!m_credentials.IsExpiredOrEmpty()) // double-checked lock to avoid refreshing twice
     {
         return;
     }
 
     Reload();
 }
+
+AWSCredentials Aws::Auth::GetCredentialsFromProcess(const Aws::String& process)
+{
+    Aws::String command = process;
+    command.append(" 2>&1"); // redirect stderr to stdout
+    Aws::String result = Aws::Utils::StringUtils::Trim(Aws::OSVersionInfo::GetSysCommandOutput(command.c_str()).c_str());
+    Json::JsonValue credentialsDoc(result);
+    if (!credentialsDoc.WasParseSuccessful())
+    {
+        AWS_LOGSTREAM_ERROR(PROFILE_LOG_TAG, "Failed to load credential from running: " << command << " Error: " << result);
+        return {};
+    }
+
+    Aws::Utils::Json::JsonView credentialsView(credentialsDoc);
+    if (!credentialsView.KeyExists("Version") || credentialsView.GetInteger("Version") != 1)
+    {
+        AWS_LOGSTREAM_ERROR(PROFILE_LOG_TAG, "Encountered an unsupported process credentials payload version:" << credentialsView.GetInteger("Version"));
+        return {};
+    }
+
+    AWSCredentials credentials;
+    Aws::String accessKey, secretKey, token, expire;
+    if (credentialsView.KeyExists("AccessKeyId"))
+    {
+        credentials.SetAWSAccessKeyId(credentialsView.GetString("AccessKeyId"));
+    }
+
+    if (credentialsView.KeyExists("SecretAccessKey"))
+    {
+        credentials.SetAWSSecretKey(credentialsView.GetString("SecretAccessKey"));
+    }
+
+    if (credentialsView.KeyExists("SessionToken"))
+    {
+        credentials.SetSessionToken(credentialsView.GetString("SessionToken"));
+    }
+
+    if (credentialsView.KeyExists("Expiration"))
+    {
+        const auto expiration = Aws::Utils::DateTime(credentialsView.GetString("Expiration"), DateFormat::ISO_8601);
+        if (expiration.WasParseSuccessful())
+        {
+            credentials.SetExpiration(expiration);
+        }
+        else
+        {
+            AWS_LOGSTREAM_ERROR(PROFILE_LOG_TAG, "Failed to parse credential's expiration value as an ISO 8601 Date. Credentials will be marked expired.");
+            credentials.SetExpiration(Aws::Utils::DateTime::Now());
+        }
+    }
+    else
+    {
+        credentials.SetExpiration(std::chrono::time_point<std::chrono::system_clock>::max());
+    }
+
+    AWS_LOGSTREAM_DEBUG(PROFILE_LOG_TAG, "Successfully pulled credentials from process credential with AccessKey: " << accessKey << ", Expiration:" << credentialsView.GetString("Expiration"));
+    return credentials;
+}
+

@@ -96,6 +96,8 @@ namespace Aws
              */
             inline const Aws::Utils::DateTime& LastLoadTime() const { return m_lastLoadTime; }
 
+            using ProfilesContainer = Aws::Map<Aws::String, Aws::Config::Profile>;
+
         protected:
             /**
              * Subclasses override this method to implement fetching the profiles.
@@ -107,7 +109,7 @@ namespace Aws
              */
             virtual bool PersistInternal(const Aws::Map<Aws::String, Aws::Config::Profile>&) { return false; }
 
-            Aws::Map<Aws::String, Aws::Config::Profile> m_profiles;
+            ProfilesContainer m_profiles;
             Aws::Utils::DateTime m_lastLoadTime;
         };
 

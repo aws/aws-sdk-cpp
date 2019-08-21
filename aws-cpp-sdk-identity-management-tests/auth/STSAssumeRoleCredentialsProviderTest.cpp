@@ -24,6 +24,8 @@ using namespace Aws::Auth;
 using namespace Aws::STS;
 using namespace Aws::Utils;
 
+namespace {
+
 class MockSTSClient : public STSClient
 {
 public:
@@ -210,4 +212,5 @@ TEST(STSAssumeRoleCredentialsProviderTest, TestCredentialsErrorThenRecovery)
 
     //should have been called twice.
     ASSERT_EQ(2, stsClient->CalledCount());
+}
 }

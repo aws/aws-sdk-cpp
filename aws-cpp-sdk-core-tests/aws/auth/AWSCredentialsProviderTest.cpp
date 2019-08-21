@@ -538,7 +538,7 @@ TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderExpiredThen
 
     ProcessCredentialsProvider provider;
     Aws::Auth::AWSCredentials credsOne = provider.GetAWSCredentials();
-    EXPECT_TRUE(credsOne.IsEmpty());
+    EXPECT_TRUE(credsOne.IsExpired());
 
     Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
     configFileNew << "[default]" << std::endl;
@@ -840,4 +840,39 @@ TEST_F(STSAssumeRoleWithWebIdentityCredentialsProviderTest, TestInitializeFromEn
 
     Aws::FileSystem::RemoveFileIfExists(tokenFileName.c_str());
     Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
+}
+
+TEST(AWSCredentialsTest, TestDefaultState)
+{
+    AWSCredentials credentials;
+    ASSERT_TRUE(credentials.IsEmpty());
+    ASSERT_FALSE(credentials.IsExpired());
+    ASSERT_TRUE(credentials.IsExpiredOrEmpty());
+}
+
+TEST(AWSCredentialsTest, TestValidState)
+{
+    AWSCredentials credentials;
+    credentials.SetAWSAccessKeyId("a");
+    credentials.SetAWSSecretKey("b");
+    ASSERT_FALSE(credentials.IsEmpty());
+    ASSERT_FALSE(credentials.IsExpired());
+    ASSERT_FALSE(credentials.IsExpiredOrEmpty());
+}
+
+TEST(AWSCredentialsTest, TestExpiredState)
+{
+    AWSCredentials credentials;
+    credentials.SetExpiration(DateTime::Now() - std::chrono::minutes(1));
+
+    ASSERT_TRUE(credentials.IsEmpty());
+    ASSERT_TRUE(credentials.IsExpired());
+    ASSERT_TRUE(credentials.IsExpiredOrEmpty());
+
+    credentials.SetAWSAccessKeyId("a");
+    credentials.SetAWSSecretKey("b");
+
+    ASSERT_FALSE(credentials.IsEmpty());
+    ASSERT_TRUE(credentials.IsExpired());
+    ASSERT_TRUE(credentials.IsExpiredOrEmpty());
 }
