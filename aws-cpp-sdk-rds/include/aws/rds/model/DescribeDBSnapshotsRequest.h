@@ -415,42 +415,98 @@ namespace Model
 
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>A filter that specifies one or more DB snapshots to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-instance-id</code> - Accepts DB
+     * instance identifiers and DB instance Amazon Resource Names (ARNs).</p> </li>
+     * <li> <p> <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p>
+     * </li> <li> <p> <code>dbi-resource-id</code> - Accepts identifiers of source DB
+     * instances.</p> </li> <li> <p> <code>snapshot-type</code> - Accepts types of DB
+     * snapshots.</p> </li> <li> <p> <code>engine</code> - Accepts names of database
+     * engines.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>A filter that specifies one or more DB snapshots to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-instance-id</code> - Accepts DB
+     * instance identifiers and DB instance Amazon Resource Names (ARNs).</p> </li>
+     * <li> <p> <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p>
+     * </li> <li> <p> <code>dbi-resource-id</code> - Accepts identifiers of source DB
+     * instances.</p> </li> <li> <p> <code>snapshot-type</code> - Accepts types of DB
+     * snapshots.</p> </li> <li> <p> <code>engine</code> - Accepts names of database
+     * engines.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>A filter that specifies one or more DB snapshots to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-instance-id</code> - Accepts DB
+     * instance identifiers and DB instance Amazon Resource Names (ARNs).</p> </li>
+     * <li> <p> <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p>
+     * </li> <li> <p> <code>dbi-resource-id</code> - Accepts identifiers of source DB
+     * instances.</p> </li> <li> <p> <code>snapshot-type</code> - Accepts types of DB
+     * snapshots.</p> </li> <li> <p> <code>engine</code> - Accepts names of database
+     * engines.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>A filter that specifies one or more DB snapshots to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-instance-id</code> - Accepts DB
+     * instance identifiers and DB instance Amazon Resource Names (ARNs).</p> </li>
+     * <li> <p> <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p>
+     * </li> <li> <p> <code>dbi-resource-id</code> - Accepts identifiers of source DB
+     * instances.</p> </li> <li> <p> <code>snapshot-type</code> - Accepts types of DB
+     * snapshots.</p> </li> <li> <p> <code>engine</code> - Accepts names of database
+     * engines.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>A filter that specifies one or more DB snapshots to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-instance-id</code> - Accepts DB
+     * instance identifiers and DB instance Amazon Resource Names (ARNs).</p> </li>
+     * <li> <p> <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p>
+     * </li> <li> <p> <code>dbi-resource-id</code> - Accepts identifiers of source DB
+     * instances.</p> </li> <li> <p> <code>snapshot-type</code> - Accepts types of DB
+     * snapshots.</p> </li> <li> <p> <code>engine</code> - Accepts names of database
+     * engines.</p> </li> </ul>
      */
     inline DescribeDBSnapshotsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>A filter that specifies one or more DB snapshots to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-instance-id</code> - Accepts DB
+     * instance identifiers and DB instance Amazon Resource Names (ARNs).</p> </li>
+     * <li> <p> <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p>
+     * </li> <li> <p> <code>dbi-resource-id</code> - Accepts identifiers of source DB
+     * instances.</p> </li> <li> <p> <code>snapshot-type</code> - Accepts types of DB
+     * snapshots.</p> </li> <li> <p> <code>engine</code> - Accepts names of database
+     * engines.</p> </li> </ul>
      */
     inline DescribeDBSnapshotsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>A filter that specifies one or more DB snapshots to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-instance-id</code> - Accepts DB
+     * instance identifiers and DB instance Amazon Resource Names (ARNs).</p> </li>
+     * <li> <p> <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p>
+     * </li> <li> <p> <code>dbi-resource-id</code> - Accepts identifiers of source DB
+     * instances.</p> </li> <li> <p> <code>snapshot-type</code> - Accepts types of DB
+     * snapshots.</p> </li> <li> <p> <code>engine</code> - Accepts names of database
+     * engines.</p> </li> </ul>
      */
     inline DescribeDBSnapshotsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>A filter that specifies one or more DB snapshots to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-instance-id</code> - Accepts DB
+     * instance identifiers and DB instance Amazon Resource Names (ARNs).</p> </li>
+     * <li> <p> <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.</p>
+     * </li> <li> <p> <code>dbi-resource-id</code> - Accepts identifiers of source DB
+     * instances.</p> </li> <li> <p> <code>snapshot-type</code> - Accepts types of DB
+     * snapshots.</p> </li> <li> <p> <code>engine</code> - Accepts names of database
+     * engines.</p> </li> </ul>
      */
     inline DescribeDBSnapshotsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

@@ -391,42 +391,90 @@ namespace Model
 
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>A filter that specifies one or more DB cluster snapshots to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
+     * cluster identifiers and DB cluster Amazon Resource Names (ARNs).</p> </li> <li>
+     * <p> <code>db-cluster-snapshot-id</code> - Accepts DB cluster snapshot
+     * identifiers.</p> </li> <li> <p> <code>snapshot-type</code> - Accepts types of DB
+     * cluster snapshots.</p> </li> <li> <p> <code>engine</code> - Accepts names of
+     * database engines.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>A filter that specifies one or more DB cluster snapshots to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
+     * cluster identifiers and DB cluster Amazon Resource Names (ARNs).</p> </li> <li>
+     * <p> <code>db-cluster-snapshot-id</code> - Accepts DB cluster snapshot
+     * identifiers.</p> </li> <li> <p> <code>snapshot-type</code> - Accepts types of DB
+     * cluster snapshots.</p> </li> <li> <p> <code>engine</code> - Accepts names of
+     * database engines.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>A filter that specifies one or more DB cluster snapshots to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
+     * cluster identifiers and DB cluster Amazon Resource Names (ARNs).</p> </li> <li>
+     * <p> <code>db-cluster-snapshot-id</code> - Accepts DB cluster snapshot
+     * identifiers.</p> </li> <li> <p> <code>snapshot-type</code> - Accepts types of DB
+     * cluster snapshots.</p> </li> <li> <p> <code>engine</code> - Accepts names of
+     * database engines.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>A filter that specifies one or more DB cluster snapshots to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
+     * cluster identifiers and DB cluster Amazon Resource Names (ARNs).</p> </li> <li>
+     * <p> <code>db-cluster-snapshot-id</code> - Accepts DB cluster snapshot
+     * identifiers.</p> </li> <li> <p> <code>snapshot-type</code> - Accepts types of DB
+     * cluster snapshots.</p> </li> <li> <p> <code>engine</code> - Accepts names of
+     * database engines.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>A filter that specifies one or more DB cluster snapshots to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
+     * cluster identifiers and DB cluster Amazon Resource Names (ARNs).</p> </li> <li>
+     * <p> <code>db-cluster-snapshot-id</code> - Accepts DB cluster snapshot
+     * identifiers.</p> </li> <li> <p> <code>snapshot-type</code> - Accepts types of DB
+     * cluster snapshots.</p> </li> <li> <p> <code>engine</code> - Accepts names of
+     * database engines.</p> </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>A filter that specifies one or more DB cluster snapshots to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
+     * cluster identifiers and DB cluster Amazon Resource Names (ARNs).</p> </li> <li>
+     * <p> <code>db-cluster-snapshot-id</code> - Accepts DB cluster snapshot
+     * identifiers.</p> </li> <li> <p> <code>snapshot-type</code> - Accepts types of DB
+     * cluster snapshots.</p> </li> <li> <p> <code>engine</code> - Accepts names of
+     * database engines.</p> </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>A filter that specifies one or more DB cluster snapshots to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
+     * cluster identifiers and DB cluster Amazon Resource Names (ARNs).</p> </li> <li>
+     * <p> <code>db-cluster-snapshot-id</code> - Accepts DB cluster snapshot
+     * identifiers.</p> </li> <li> <p> <code>snapshot-type</code> - Accepts types of DB
+     * cluster snapshots.</p> </li> <li> <p> <code>engine</code> - Accepts names of
+     * database engines.</p> </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>A filter that specifies one or more DB cluster snapshots to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
+     * cluster identifiers and DB cluster Amazon Resource Names (ARNs).</p> </li> <li>
+     * <p> <code>db-cluster-snapshot-id</code> - Accepts DB cluster snapshot
+     * identifiers.</p> </li> <li> <p> <code>snapshot-type</code> - Accepts types of DB
+     * cluster snapshots.</p> </li> <li> <p> <code>engine</code> - Accepts names of
+     * database engines.</p> </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

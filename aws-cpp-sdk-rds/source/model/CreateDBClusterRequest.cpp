@@ -55,6 +55,8 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
     m_globalClusterIdentifierHasBeenSet(false),
+    m_enableHttpEndpoint(false),
+    m_enableHttpEndpointHasBeenSet(false),
     m_copyTagsToSnapshot(false),
     m_copyTagsToSnapshotHasBeenSet(false)
 {
@@ -225,6 +227,11 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_globalClusterIdentifierHasBeenSet)
   {
     ss << "GlobalClusterIdentifier=" << StringUtils::URLEncode(m_globalClusterIdentifier.c_str()) << "&";
+  }
+
+  if(m_enableHttpEndpointHasBeenSet)
+  {
+    ss << "EnableHttpEndpoint=" << std::boolalpha << m_enableHttpEndpoint << "&";
   }
 
   if(m_copyTagsToSnapshotHasBeenSet)

@@ -2077,7 +2077,7 @@ namespace Model
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
      * initially allocated for the DB instance. For information about valid Iops
-     * values, see see <a
+     * values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints: Must be a multiple between 1 and 50 of the
@@ -2088,7 +2088,7 @@ namespace Model
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
      * initially allocated for the DB instance. For information about valid Iops
-     * values, see see <a
+     * values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints: Must be a multiple between 1 and 50 of the
@@ -2099,7 +2099,7 @@ namespace Model
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
      * initially allocated for the DB instance. For information about valid Iops
-     * values, see see <a
+     * values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints: Must be a multiple between 1 and 50 of the
@@ -2110,7 +2110,7 @@ namespace Model
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
      * initially allocated for the DB instance. For information about valid Iops
-     * values, see see <a
+     * values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints: Must be a multiple between 1 and 50 of the
@@ -3159,7 +3159,15 @@ namespace Model
      * database engines:</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Mapping
      * AWS IAM accounts to database accounts is managed by the DB cluster.</p> <p>
      * <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p>
-     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> </ul>
+     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> <li>
+     * <p>For MySQL 8.0, minor version 8.0.16 or higher</p> </li> </ul> <p>
+     * <b>PostgreSQL</b> </p> <ul> <li> <p>For PostgreSQL 9.5, minor version 9.5.15 or
+     * higher</p> </li> <li> <p>For PostgreSQL 9.6, minor version 9.6.11 or higher</p>
+     * </li> <li> <p>PostgreSQL 10.6, 10.7, and 10.9</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
+     * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
+     * User Guide.</i> </p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
@@ -3170,7 +3178,15 @@ namespace Model
      * database engines:</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Mapping
      * AWS IAM accounts to database accounts is managed by the DB cluster.</p> <p>
      * <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p>
-     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> </ul>
+     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> <li>
+     * <p>For MySQL 8.0, minor version 8.0.16 or higher</p> </li> </ul> <p>
+     * <b>PostgreSQL</b> </p> <ul> <li> <p>For PostgreSQL 9.5, minor version 9.5.15 or
+     * higher</p> </li> <li> <p>For PostgreSQL 9.6, minor version 9.6.11 or higher</p>
+     * </li> <li> <p>PostgreSQL 10.6, 10.7, and 10.9</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
+     * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
+     * User Guide.</i> </p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
@@ -3181,7 +3197,15 @@ namespace Model
      * database engines:</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Mapping
      * AWS IAM accounts to database accounts is managed by the DB cluster.</p> <p>
      * <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p>
-     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> </ul>
+     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> <li>
+     * <p>For MySQL 8.0, minor version 8.0.16 or higher</p> </li> </ul> <p>
+     * <b>PostgreSQL</b> </p> <ul> <li> <p>For PostgreSQL 9.5, minor version 9.5.15 or
+     * higher</p> </li> <li> <p>For PostgreSQL 9.6, minor version 9.6.11 or higher</p>
+     * </li> <li> <p>PostgreSQL 10.6, 10.7, and 10.9</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
+     * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
+     * User Guide.</i> </p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
@@ -3192,7 +3216,15 @@ namespace Model
      * database engines:</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Mapping
      * AWS IAM accounts to database accounts is managed by the DB cluster.</p> <p>
      * <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p>
-     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> </ul>
+     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> <li>
+     * <p>For MySQL 8.0, minor version 8.0.16 or higher</p> </li> </ul> <p>
+     * <b>PostgreSQL</b> </p> <ul> <li> <p>For PostgreSQL 9.5, minor version 9.5.15 or
+     * higher</p> </li> <li> <p>For PostgreSQL 9.6, minor version 9.6.11 or higher</p>
+     * </li> <li> <p>PostgreSQL 10.6, 10.7, and 10.9</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
+     * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
+     * User Guide.</i> </p>
      */
     inline CreateDBInstanceRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 

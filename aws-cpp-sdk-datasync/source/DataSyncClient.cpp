@@ -35,6 +35,7 @@
 #include <aws/datasync/model/CreateLocationEfsRequest.h>
 #include <aws/datasync/model/CreateLocationNfsRequest.h>
 #include <aws/datasync/model/CreateLocationS3Request.h>
+#include <aws/datasync/model/CreateLocationSmbRequest.h>
 #include <aws/datasync/model/CreateTaskRequest.h>
 #include <aws/datasync/model/DeleteAgentRequest.h>
 #include <aws/datasync/model/DeleteLocationRequest.h>
@@ -43,6 +44,7 @@
 #include <aws/datasync/model/DescribeLocationEfsRequest.h>
 #include <aws/datasync/model/DescribeLocationNfsRequest.h>
 #include <aws/datasync/model/DescribeLocationS3Request.h>
+#include <aws/datasync/model/DescribeLocationSmbRequest.h>
 #include <aws/datasync/model/DescribeTaskRequest.h>
 #include <aws/datasync/model/DescribeTaskExecutionRequest.h>
 #include <aws/datasync/model/ListAgentsRequest.h>
@@ -301,6 +303,41 @@ void DataSyncClient::CreateLocationS3Async(const CreateLocationS3Request& reques
 void DataSyncClient::CreateLocationS3AsyncHelper(const CreateLocationS3Request& request, const CreateLocationS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateLocationS3(request), context);
+}
+
+CreateLocationSmbOutcome DataSyncClient::CreateLocationSmb(const CreateLocationSmbRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateLocationSmbOutcome(CreateLocationSmbResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateLocationSmbOutcome(outcome.GetError());
+  }
+}
+
+CreateLocationSmbOutcomeCallable DataSyncClient::CreateLocationSmbCallable(const CreateLocationSmbRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLocationSmbOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocationSmb(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::CreateLocationSmbAsync(const CreateLocationSmbRequest& request, const CreateLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLocationSmbAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::CreateLocationSmbAsyncHelper(const CreateLocationSmbRequest& request, const CreateLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLocationSmb(request), context);
 }
 
 CreateTaskOutcome DataSyncClient::CreateTask(const CreateTaskRequest& request) const
@@ -581,6 +618,41 @@ void DataSyncClient::DescribeLocationS3Async(const DescribeLocationS3Request& re
 void DataSyncClient::DescribeLocationS3AsyncHelper(const DescribeLocationS3Request& request, const DescribeLocationS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeLocationS3(request), context);
+}
+
+DescribeLocationSmbOutcome DataSyncClient::DescribeLocationSmb(const DescribeLocationSmbRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeLocationSmbOutcome(DescribeLocationSmbResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeLocationSmbOutcome(outcome.GetError());
+  }
+}
+
+DescribeLocationSmbOutcomeCallable DataSyncClient::DescribeLocationSmbCallable(const DescribeLocationSmbRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLocationSmbOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocationSmb(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::DescribeLocationSmbAsync(const DescribeLocationSmbRequest& request, const DescribeLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocationSmbAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::DescribeLocationSmbAsyncHelper(const DescribeLocationSmbRequest& request, const DescribeLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLocationSmb(request), context);
 }
 
 DescribeTaskOutcome DataSyncClient::DescribeTask(const DescribeTaskRequest& request) const
