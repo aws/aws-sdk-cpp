@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediapackage-vod/model/EncryptionMethod.h>
 #include <aws/mediapackage-vod/model/SpekeKeyProvider.h>
 #include <utility>
@@ -46,6 +47,71 @@ namespace Model
     HlsEncryption(Aws::Utils::Json::JsonView jsonValue);
     HlsEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * A constant initialization vector for encryption (optional).
+When not specified
+     * the initialization vector will be periodically rotated.
+
+     */
+    inline const Aws::String& GetConstantInitializationVector() const{ return m_constantInitializationVector; }
+
+    /**
+     * A constant initialization vector for encryption (optional).
+When not specified
+     * the initialization vector will be periodically rotated.
+
+     */
+    inline bool ConstantInitializationVectorHasBeenSet() const { return m_constantInitializationVectorHasBeenSet; }
+
+    /**
+     * A constant initialization vector for encryption (optional).
+When not specified
+     * the initialization vector will be periodically rotated.
+
+     */
+    inline void SetConstantInitializationVector(const Aws::String& value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector = value; }
+
+    /**
+     * A constant initialization vector for encryption (optional).
+When not specified
+     * the initialization vector will be periodically rotated.
+
+     */
+    inline void SetConstantInitializationVector(Aws::String&& value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector = std::move(value); }
+
+    /**
+     * A constant initialization vector for encryption (optional).
+When not specified
+     * the initialization vector will be periodically rotated.
+
+     */
+    inline void SetConstantInitializationVector(const char* value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector.assign(value); }
+
+    /**
+     * A constant initialization vector for encryption (optional).
+When not specified
+     * the initialization vector will be periodically rotated.
+
+     */
+    inline HlsEncryption& WithConstantInitializationVector(const Aws::String& value) { SetConstantInitializationVector(value); return *this;}
+
+    /**
+     * A constant initialization vector for encryption (optional).
+When not specified
+     * the initialization vector will be periodically rotated.
+
+     */
+    inline HlsEncryption& WithConstantInitializationVector(Aws::String&& value) { SetConstantInitializationVector(std::move(value)); return *this;}
+
+    /**
+     * A constant initialization vector for encryption (optional).
+When not specified
+     * the initialization vector will be periodically rotated.
+
+     */
+    inline HlsEncryption& WithConstantInitializationVector(const char* value) { SetConstantInitializationVector(value); return *this;}
 
 
     /**
@@ -98,6 +164,9 @@ namespace Model
     inline HlsEncryption& WithSpekeKeyProvider(SpekeKeyProvider&& value) { SetSpekeKeyProvider(std::move(value)); return *this;}
 
   private:
+
+    Aws::String m_constantInitializationVector;
+    bool m_constantInitializationVectorHasBeenSet;
 
     EncryptionMethod m_encryptionMethod;
     bool m_encryptionMethodHasBeenSet;

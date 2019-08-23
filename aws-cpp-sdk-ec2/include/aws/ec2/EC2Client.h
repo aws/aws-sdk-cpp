@@ -141,6 +141,7 @@
 #include <aws/ec2/model/DescribeDhcpOptionsResponse.h>
 #include <aws/ec2/model/DescribeEgressOnlyInternetGatewaysResponse.h>
 #include <aws/ec2/model/DescribeElasticGpusResponse.h>
+#include <aws/ec2/model/DescribeExportImageTasksResponse.h>
 #include <aws/ec2/model/DescribeExportTasksResponse.h>
 #include <aws/ec2/model/DescribeFleetHistoryResponse.h>
 #include <aws/ec2/model/DescribeFleetInstancesResponse.h>
@@ -238,6 +239,7 @@
 #include <aws/ec2/model/EnableVpcClassicLinkDnsSupportResponse.h>
 #include <aws/ec2/model/ExportClientVpnClientCertificateRevocationListResponse.h>
 #include <aws/ec2/model/ExportClientVpnClientConfigurationResponse.h>
+#include <aws/ec2/model/ExportImageResponse.h>
 #include <aws/ec2/model/ExportTransitGatewayRoutesResponse.h>
 #include <aws/ec2/model/GetCapacityReservationUsageResponse.h>
 #include <aws/ec2/model/GetConsoleOutputResponse.h>
@@ -512,6 +514,7 @@ namespace Model
         class DescribeDhcpOptionsRequest;
         class DescribeEgressOnlyInternetGatewaysRequest;
         class DescribeElasticGpusRequest;
+        class DescribeExportImageTasksRequest;
         class DescribeExportTasksRequest;
         class DescribeFleetHistoryRequest;
         class DescribeFleetInstancesRequest;
@@ -617,6 +620,7 @@ namespace Model
         class EnableVpcClassicLinkDnsSupportRequest;
         class ExportClientVpnClientCertificateRevocationListRequest;
         class ExportClientVpnClientConfigurationRequest;
+        class ExportImageRequest;
         class ExportTransitGatewayRoutesRequest;
         class GetCapacityReservationUsageRequest;
         class GetConsoleOutputRequest;
@@ -868,6 +872,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeDhcpOptionsResponse, Aws::Client::AWSError<EC2Errors>> DescribeDhcpOptionsOutcome;
         typedef Aws::Utils::Outcome<DescribeEgressOnlyInternetGatewaysResponse, Aws::Client::AWSError<EC2Errors>> DescribeEgressOnlyInternetGatewaysOutcome;
         typedef Aws::Utils::Outcome<DescribeElasticGpusResponse, Aws::Client::AWSError<EC2Errors>> DescribeElasticGpusOutcome;
+        typedef Aws::Utils::Outcome<DescribeExportImageTasksResponse, Aws::Client::AWSError<EC2Errors>> DescribeExportImageTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeExportTasksResponse, Aws::Client::AWSError<EC2Errors>> DescribeExportTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeFleetHistoryResponse, Aws::Client::AWSError<EC2Errors>> DescribeFleetHistoryOutcome;
         typedef Aws::Utils::Outcome<DescribeFleetInstancesResponse, Aws::Client::AWSError<EC2Errors>> DescribeFleetInstancesOutcome;
@@ -973,6 +978,7 @@ namespace Model
         typedef Aws::Utils::Outcome<EnableVpcClassicLinkDnsSupportResponse, Aws::Client::AWSError<EC2Errors>> EnableVpcClassicLinkDnsSupportOutcome;
         typedef Aws::Utils::Outcome<ExportClientVpnClientCertificateRevocationListResponse, Aws::Client::AWSError<EC2Errors>> ExportClientVpnClientCertificateRevocationListOutcome;
         typedef Aws::Utils::Outcome<ExportClientVpnClientConfigurationResponse, Aws::Client::AWSError<EC2Errors>> ExportClientVpnClientConfigurationOutcome;
+        typedef Aws::Utils::Outcome<ExportImageResponse, Aws::Client::AWSError<EC2Errors>> ExportImageOutcome;
         typedef Aws::Utils::Outcome<ExportTransitGatewayRoutesResponse, Aws::Client::AWSError<EC2Errors>> ExportTransitGatewayRoutesOutcome;
         typedef Aws::Utils::Outcome<GetCapacityReservationUsageResponse, Aws::Client::AWSError<EC2Errors>> GetCapacityReservationUsageOutcome;
         typedef Aws::Utils::Outcome<GetConsoleOutputResponse, Aws::Client::AWSError<EC2Errors>> GetConsoleOutputOutcome;
@@ -1224,6 +1230,7 @@ namespace Model
         typedef std::future<DescribeDhcpOptionsOutcome> DescribeDhcpOptionsOutcomeCallable;
         typedef std::future<DescribeEgressOnlyInternetGatewaysOutcome> DescribeEgressOnlyInternetGatewaysOutcomeCallable;
         typedef std::future<DescribeElasticGpusOutcome> DescribeElasticGpusOutcomeCallable;
+        typedef std::future<DescribeExportImageTasksOutcome> DescribeExportImageTasksOutcomeCallable;
         typedef std::future<DescribeExportTasksOutcome> DescribeExportTasksOutcomeCallable;
         typedef std::future<DescribeFleetHistoryOutcome> DescribeFleetHistoryOutcomeCallable;
         typedef std::future<DescribeFleetInstancesOutcome> DescribeFleetInstancesOutcomeCallable;
@@ -1329,6 +1336,7 @@ namespace Model
         typedef std::future<EnableVpcClassicLinkDnsSupportOutcome> EnableVpcClassicLinkDnsSupportOutcomeCallable;
         typedef std::future<ExportClientVpnClientCertificateRevocationListOutcome> ExportClientVpnClientCertificateRevocationListOutcomeCallable;
         typedef std::future<ExportClientVpnClientConfigurationOutcome> ExportClientVpnClientConfigurationOutcomeCallable;
+        typedef std::future<ExportImageOutcome> ExportImageOutcomeCallable;
         typedef std::future<ExportTransitGatewayRoutesOutcome> ExportTransitGatewayRoutesOutcomeCallable;
         typedef std::future<GetCapacityReservationUsageOutcome> GetCapacityReservationUsageOutcomeCallable;
         typedef std::future<GetConsoleOutputOutcome> GetConsoleOutputOutcomeCallable;
@@ -1583,6 +1591,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeDhcpOptionsRequest&, const Model::DescribeDhcpOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDhcpOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeEgressOnlyInternetGatewaysRequest&, const Model::DescribeEgressOnlyInternetGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEgressOnlyInternetGatewaysResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeElasticGpusRequest&, const Model::DescribeElasticGpusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeElasticGpusResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeExportImageTasksRequest&, const Model::DescribeExportImageTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportImageTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeExportTasksRequest&, const Model::DescribeExportTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeFleetHistoryRequest&, const Model::DescribeFleetHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetHistoryResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeFleetInstancesRequest&, const Model::DescribeFleetInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetInstancesResponseReceivedHandler;
@@ -1688,6 +1697,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::EnableVpcClassicLinkDnsSupportRequest&, const Model::EnableVpcClassicLinkDnsSupportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableVpcClassicLinkDnsSupportResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ExportClientVpnClientCertificateRevocationListRequest&, const Model::ExportClientVpnClientCertificateRevocationListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportClientVpnClientCertificateRevocationListResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ExportClientVpnClientConfigurationRequest&, const Model::ExportClientVpnClientConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportClientVpnClientConfigurationResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ExportImageRequest&, const Model::ExportImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ExportTransitGatewayRoutesRequest&, const Model::ExportTransitGatewayRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportTransitGatewayRoutesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetCapacityReservationUsageRequest&, const Model::GetCapacityReservationUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCapacityReservationUsageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetConsoleOutputRequest&, const Model::GetConsoleOutputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConsoleOutputResponseReceivedHandler;
@@ -8359,16 +8369,44 @@ namespace Model
         virtual void DescribeElasticGpusAsync(const Model::DescribeElasticGpusRequest& request, const DescribeElasticGpusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified export tasks or all your export tasks.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the specified export image tasks or all your export image
+         * tasks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportImageTasks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeExportImageTasksOutcome DescribeExportImageTasks(const Model::DescribeExportImageTasksRequest& request) const;
+
+        /**
+         * <p>Describes the specified export image tasks or all your export image
+         * tasks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportImageTasks">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeExportImageTasksOutcomeCallable DescribeExportImageTasksCallable(const Model::DescribeExportImageTasksRequest& request) const;
+
+        /**
+         * <p>Describes the specified export image tasks or all your export image
+         * tasks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportImageTasks">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeExportImageTasksAsync(const Model::DescribeExportImageTasksRequest& request, const DescribeExportImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the specified export instance tasks or all your export instance
+         * tasks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeExportTasksOutcome DescribeExportTasks(const Model::DescribeExportTasksRequest& request) const;
 
         /**
-         * <p>Describes the specified export tasks or all your export tasks.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the specified export instance tasks or all your export instance
+         * tasks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks">AWS
          * API Reference</a></p>
          *
@@ -8377,8 +8415,8 @@ namespace Model
         virtual Model::DescribeExportTasksOutcomeCallable DescribeExportTasksCallable(const Model::DescribeExportTasksRequest& request) const;
 
         /**
-         * <p>Describes the specified export tasks or all your export tasks.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the specified export instance tasks or all your export instance
+         * tasks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks">AWS
          * API Reference</a></p>
          *
@@ -12586,6 +12624,43 @@ namespace Model
         virtual void ExportClientVpnClientConfigurationAsync(const Model::ExportClientVpnClientConfigurationRequest& request, const ExportClientVpnClientConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Exports an Amazon Machine Image (AMI) to a VM file. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport_image.html">Exporting
+         * a VM Directory from an Amazon Machine Image (AMI)</a> in the <i>VM Import/Export
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportImage">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::ExportImageOutcome ExportImage(const Model::ExportImageRequest& request) const;
+
+        /**
+         * <p>Exports an Amazon Machine Image (AMI) to a VM file. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport_image.html">Exporting
+         * a VM Directory from an Amazon Machine Image (AMI)</a> in the <i>VM Import/Export
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportImage">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ExportImageOutcomeCallable ExportImageCallable(const Model::ExportImageRequest& request) const;
+
+        /**
+         * <p>Exports an Amazon Machine Image (AMI) to a VM file. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport_image.html">Exporting
+         * a VM Directory from an Amazon Machine Image (AMI)</a> in the <i>VM Import/Export
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportImage">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ExportImageAsync(const Model::ExportImageRequest& request, const ExportImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Exports routes from the specified transit gateway route table to the
          * specified S3 bucket. By default, all routes are exported. Alternatively, you can
          * filter by CIDR range.</p><p><h3>See Also:</h3>   <a
@@ -13467,13 +13542,13 @@ namespace Model
          * strategy is <code>diversified</code>, the EC2 Fleet distributes the instances
          * across the Spot Instance pools. If the allocation strategy is
          * <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance
-         * pools that are optimally chosen based on the available Spot Instance
-         * capacity.</p> <p>To scale down your EC2 Fleet, decrease its target capacity.
-         * First, the EC2 Fleet cancels any open requests that exceed the new target
-         * capacity. You can request that the EC2 Fleet terminate Spot Instances until the
-         * size of the fleet no longer exceeds the new target capacity. If the allocation
-         * strategy is <code>lowestPrice</code>, the EC2 Fleet terminates the instances
-         * with the highest price per unit. If the allocation strategy is
+         * pools with optimal capacity for the number of instances that are launching.</p>
+         * <p>To scale down your EC2 Fleet, decrease its target capacity. First, the EC2
+         * Fleet cancels any open requests that exceed the new target capacity. You can
+         * request that the EC2 Fleet terminate Spot Instances until the size of the fleet
+         * no longer exceeds the new target capacity. If the allocation strategy is
+         * <code>lowestPrice</code>, the EC2 Fleet terminates the instances with the
+         * highest price per unit. If the allocation strategy is
          * <code>capacityOptimized</code>, the EC2 Fleet terminates the instances in the
          * Spot Instance pools that have the least available Spot Instance capacity. If the
          * allocation strategy is <code>diversified</code>, the EC2 Fleet terminates
@@ -13498,13 +13573,13 @@ namespace Model
          * strategy is <code>diversified</code>, the EC2 Fleet distributes the instances
          * across the Spot Instance pools. If the allocation strategy is
          * <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance
-         * pools that are optimally chosen based on the available Spot Instance
-         * capacity.</p> <p>To scale down your EC2 Fleet, decrease its target capacity.
-         * First, the EC2 Fleet cancels any open requests that exceed the new target
-         * capacity. You can request that the EC2 Fleet terminate Spot Instances until the
-         * size of the fleet no longer exceeds the new target capacity. If the allocation
-         * strategy is <code>lowestPrice</code>, the EC2 Fleet terminates the instances
-         * with the highest price per unit. If the allocation strategy is
+         * pools with optimal capacity for the number of instances that are launching.</p>
+         * <p>To scale down your EC2 Fleet, decrease its target capacity. First, the EC2
+         * Fleet cancels any open requests that exceed the new target capacity. You can
+         * request that the EC2 Fleet terminate Spot Instances until the size of the fleet
+         * no longer exceeds the new target capacity. If the allocation strategy is
+         * <code>lowestPrice</code>, the EC2 Fleet terminates the instances with the
+         * highest price per unit. If the allocation strategy is
          * <code>capacityOptimized</code>, the EC2 Fleet terminates the instances in the
          * Spot Instance pools that have the least available Spot Instance capacity. If the
          * allocation strategy is <code>diversified</code>, the EC2 Fleet terminates
@@ -13531,13 +13606,13 @@ namespace Model
          * strategy is <code>diversified</code>, the EC2 Fleet distributes the instances
          * across the Spot Instance pools. If the allocation strategy is
          * <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance
-         * pools that are optimally chosen based on the available Spot Instance
-         * capacity.</p> <p>To scale down your EC2 Fleet, decrease its target capacity.
-         * First, the EC2 Fleet cancels any open requests that exceed the new target
-         * capacity. You can request that the EC2 Fleet terminate Spot Instances until the
-         * size of the fleet no longer exceeds the new target capacity. If the allocation
-         * strategy is <code>lowestPrice</code>, the EC2 Fleet terminates the instances
-         * with the highest price per unit. If the allocation strategy is
+         * pools with optimal capacity for the number of instances that are launching.</p>
+         * <p>To scale down your EC2 Fleet, decrease its target capacity. First, the EC2
+         * Fleet cancels any open requests that exceed the new target capacity. You can
+         * request that the EC2 Fleet terminate Spot Instances until the size of the fleet
+         * no longer exceeds the new target capacity. If the allocation strategy is
+         * <code>lowestPrice</code>, the EC2 Fleet terminates the instances with the
+         * highest price per unit. If the allocation strategy is
          * <code>capacityOptimized</code>, the EC2 Fleet terminates the instances in the
          * Spot Instance pools that have the least available Spot Instance capacity. If the
          * allocation strategy is <code>diversified</code>, the EC2 Fleet terminates
@@ -14289,13 +14364,13 @@ namespace Model
          * the allocation strategy is <code>diversified</code>, the Spot Fleet distributes
          * the instances across the Spot Instance pools. If the allocation strategy is
          * <code>capacityOptimized</code>, Spot Fleet launches instances from Spot Instance
-         * pools that are optimally chosen based on the available Spot Instance
-         * capacity.</p> <p>To scale down your Spot Fleet, decrease its target capacity.
-         * First, the Spot Fleet cancels any open requests that exceed the new target
-         * capacity. You can request that the Spot Fleet terminate Spot Instances until the
-         * size of the fleet no longer exceeds the new target capacity. If the allocation
-         * strategy is <code>lowestPrice</code>, the Spot Fleet terminates the instances
-         * with the highest price per unit. If the allocation strategy is
+         * pools with optimal capacity for the number of instances that are launching.</p>
+         * <p>To scale down your Spot Fleet, decrease its target capacity. First, the Spot
+         * Fleet cancels any open requests that exceed the new target capacity. You can
+         * request that the Spot Fleet terminate Spot Instances until the size of the fleet
+         * no longer exceeds the new target capacity. If the allocation strategy is
+         * <code>lowestPrice</code>, the Spot Fleet terminates the instances with the
+         * highest price per unit. If the allocation strategy is
          * <code>capacityOptimized</code>, the Spot Fleet terminates the instances in the
          * Spot Instance pools that have the least available Spot Instance capacity. If the
          * allocation strategy is <code>diversified</code>, the Spot Fleet terminates
@@ -14320,13 +14395,13 @@ namespace Model
          * the allocation strategy is <code>diversified</code>, the Spot Fleet distributes
          * the instances across the Spot Instance pools. If the allocation strategy is
          * <code>capacityOptimized</code>, Spot Fleet launches instances from Spot Instance
-         * pools that are optimally chosen based on the available Spot Instance
-         * capacity.</p> <p>To scale down your Spot Fleet, decrease its target capacity.
-         * First, the Spot Fleet cancels any open requests that exceed the new target
-         * capacity. You can request that the Spot Fleet terminate Spot Instances until the
-         * size of the fleet no longer exceeds the new target capacity. If the allocation
-         * strategy is <code>lowestPrice</code>, the Spot Fleet terminates the instances
-         * with the highest price per unit. If the allocation strategy is
+         * pools with optimal capacity for the number of instances that are launching.</p>
+         * <p>To scale down your Spot Fleet, decrease its target capacity. First, the Spot
+         * Fleet cancels any open requests that exceed the new target capacity. You can
+         * request that the Spot Fleet terminate Spot Instances until the size of the fleet
+         * no longer exceeds the new target capacity. If the allocation strategy is
+         * <code>lowestPrice</code>, the Spot Fleet terminates the instances with the
+         * highest price per unit. If the allocation strategy is
          * <code>capacityOptimized</code>, the Spot Fleet terminates the instances in the
          * Spot Instance pools that have the least available Spot Instance capacity. If the
          * allocation strategy is <code>diversified</code>, the Spot Fleet terminates
@@ -14353,13 +14428,13 @@ namespace Model
          * the allocation strategy is <code>diversified</code>, the Spot Fleet distributes
          * the instances across the Spot Instance pools. If the allocation strategy is
          * <code>capacityOptimized</code>, Spot Fleet launches instances from Spot Instance
-         * pools that are optimally chosen based on the available Spot Instance
-         * capacity.</p> <p>To scale down your Spot Fleet, decrease its target capacity.
-         * First, the Spot Fleet cancels any open requests that exceed the new target
-         * capacity. You can request that the Spot Fleet terminate Spot Instances until the
-         * size of the fleet no longer exceeds the new target capacity. If the allocation
-         * strategy is <code>lowestPrice</code>, the Spot Fleet terminates the instances
-         * with the highest price per unit. If the allocation strategy is
+         * pools with optimal capacity for the number of instances that are launching.</p>
+         * <p>To scale down your Spot Fleet, decrease its target capacity. First, the Spot
+         * Fleet cancels any open requests that exceed the new target capacity. You can
+         * request that the Spot Fleet terminate Spot Instances until the size of the fleet
+         * no longer exceeds the new target capacity. If the allocation strategy is
+         * <code>lowestPrice</code>, the Spot Fleet terminates the instances with the
+         * highest price per unit. If the allocation strategy is
          * <code>capacityOptimized</code>, the Spot Fleet terminates the instances in the
          * Spot Instance pools that have the least available Spot Instance capacity. If the
          * allocation strategy is <code>diversified</code>, the Spot Fleet terminates
@@ -16851,9 +16926,9 @@ namespace Model
          * perform the required diagnostic tasks.</p> <p>For more information about
          * configuring your operating system to generate a crash dump when a kernel panic
          * or stop error occurs, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#diagnostic-interrupt">Send
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send
          * a Diagnostic Interrupt</a> (Linux instances) or <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/unreachable-instance.html#diagnostic-interrupt">Send
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send
          * a Diagnostic Interrupt</a> (Windows instances).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SendDiagnosticInterrupt">AWS
          * API Reference</a></p>
@@ -16873,9 +16948,9 @@ namespace Model
          * perform the required diagnostic tasks.</p> <p>For more information about
          * configuring your operating system to generate a crash dump when a kernel panic
          * or stop error occurs, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#diagnostic-interrupt">Send
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send
          * a Diagnostic Interrupt</a> (Linux instances) or <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/unreachable-instance.html#diagnostic-interrupt">Send
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send
          * a Diagnostic Interrupt</a> (Windows instances).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SendDiagnosticInterrupt">AWS
          * API Reference</a></p>
@@ -16897,9 +16972,9 @@ namespace Model
          * perform the required diagnostic tasks.</p> <p>For more information about
          * configuring your operating system to generate a crash dump when a kernel panic
          * or stop error occurs, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#diagnostic-interrupt">Send
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send
          * a Diagnostic Interrupt</a> (Linux instances) or <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/unreachable-instance.html#diagnostic-interrupt">Send
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send
          * a Diagnostic Interrupt</a> (Windows instances).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SendDiagnosticInterrupt">AWS
          * API Reference</a></p>
@@ -17612,6 +17687,7 @@ namespace Model
         void DescribeDhcpOptionsAsyncHelper(const Model::DescribeDhcpOptionsRequest& request, const DescribeDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEgressOnlyInternetGatewaysAsyncHelper(const Model::DescribeEgressOnlyInternetGatewaysRequest& request, const DescribeEgressOnlyInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeElasticGpusAsyncHelper(const Model::DescribeElasticGpusRequest& request, const DescribeElasticGpusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeExportImageTasksAsyncHelper(const Model::DescribeExportImageTasksRequest& request, const DescribeExportImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeExportTasksAsyncHelper(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFleetHistoryAsyncHelper(const Model::DescribeFleetHistoryRequest& request, const DescribeFleetHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFleetInstancesAsyncHelper(const Model::DescribeFleetInstancesRequest& request, const DescribeFleetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -17717,6 +17793,7 @@ namespace Model
         void EnableVpcClassicLinkDnsSupportAsyncHelper(const Model::EnableVpcClassicLinkDnsSupportRequest& request, const EnableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportClientVpnClientCertificateRevocationListAsyncHelper(const Model::ExportClientVpnClientCertificateRevocationListRequest& request, const ExportClientVpnClientCertificateRevocationListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportClientVpnClientConfigurationAsyncHelper(const Model::ExportClientVpnClientConfigurationRequest& request, const ExportClientVpnClientConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ExportImageAsyncHelper(const Model::ExportImageRequest& request, const ExportImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportTransitGatewayRoutesAsyncHelper(const Model::ExportTransitGatewayRoutesRequest& request, const ExportTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCapacityReservationUsageAsyncHelper(const Model::GetCapacityReservationUsageRequest& request, const GetCapacityReservationUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConsoleOutputAsyncHelper(const Model::GetConsoleOutputRequest& request, const GetConsoleOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

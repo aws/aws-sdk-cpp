@@ -68,8 +68,8 @@ namespace Model
      * strategy.</p> <p>If the allocation strategy is <code>diversified</code>, Spot
      * Fleet launches instances from all the Spot Instance pools that you specify.</p>
      * <p>If the allocation strategy is <code>capacityOptimized</code>, Spot Fleet
-     * launches instances from Spot Instance pools that are optimally chosen based on
-     * the available Spot Instance capacity.</p>
+     * launches instances from Spot Instance pools with optimal capacity for the number
+     * of instances that are launching.</p>
      */
     inline const AllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
 
@@ -81,8 +81,8 @@ namespace Model
      * strategy.</p> <p>If the allocation strategy is <code>diversified</code>, Spot
      * Fleet launches instances from all the Spot Instance pools that you specify.</p>
      * <p>If the allocation strategy is <code>capacityOptimized</code>, Spot Fleet
-     * launches instances from Spot Instance pools that are optimally chosen based on
-     * the available Spot Instance capacity.</p>
+     * launches instances from Spot Instance pools with optimal capacity for the number
+     * of instances that are launching.</p>
      */
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
 
@@ -94,8 +94,8 @@ namespace Model
      * strategy.</p> <p>If the allocation strategy is <code>diversified</code>, Spot
      * Fleet launches instances from all the Spot Instance pools that you specify.</p>
      * <p>If the allocation strategy is <code>capacityOptimized</code>, Spot Fleet
-     * launches instances from Spot Instance pools that are optimally chosen based on
-     * the available Spot Instance capacity.</p>
+     * launches instances from Spot Instance pools with optimal capacity for the number
+     * of instances that are launching.</p>
      */
     inline void SetAllocationStrategy(const AllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
 
@@ -107,8 +107,8 @@ namespace Model
      * strategy.</p> <p>If the allocation strategy is <code>diversified</code>, Spot
      * Fleet launches instances from all the Spot Instance pools that you specify.</p>
      * <p>If the allocation strategy is <code>capacityOptimized</code>, Spot Fleet
-     * launches instances from Spot Instance pools that are optimally chosen based on
-     * the available Spot Instance capacity.</p>
+     * launches instances from Spot Instance pools with optimal capacity for the number
+     * of instances that are launching.</p>
      */
     inline void SetAllocationStrategy(AllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
 
@@ -120,8 +120,8 @@ namespace Model
      * strategy.</p> <p>If the allocation strategy is <code>diversified</code>, Spot
      * Fleet launches instances from all the Spot Instance pools that you specify.</p>
      * <p>If the allocation strategy is <code>capacityOptimized</code>, Spot Fleet
-     * launches instances from Spot Instance pools that are optimally chosen based on
-     * the available Spot Instance capacity.</p>
+     * launches instances from Spot Instance pools with optimal capacity for the number
+     * of instances that are launching.</p>
      */
     inline SpotFleetRequestConfigData& WithAllocationStrategy(const AllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
 
@@ -133,8 +133,8 @@ namespace Model
      * strategy.</p> <p>If the allocation strategy is <code>diversified</code>, Spot
      * Fleet launches instances from all the Spot Instance pools that you specify.</p>
      * <p>If the allocation strategy is <code>capacityOptimized</code>, Spot Fleet
-     * launches instances from Spot Instance pools that are optimally chosen based on
-     * the available Spot Instance capacity.</p>
+     * launches instances from Spot Instance pools with optimal capacity for the number
+     * of instances that are launching.</p>
      */
     inline SpotFleetRequestConfigData& WithAllocationStrategy(AllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
 

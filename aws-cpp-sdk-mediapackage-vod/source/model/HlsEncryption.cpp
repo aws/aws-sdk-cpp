@@ -29,6 +29,7 @@ namespace Model
 {
 
 HlsEncryption::HlsEncryption() : 
+    m_constantInitializationVectorHasBeenSet(false),
     m_encryptionMethod(EncryptionMethod::NOT_SET),
     m_encryptionMethodHasBeenSet(false),
     m_spekeKeyProviderHasBeenSet(false)
@@ -36,6 +37,7 @@ HlsEncryption::HlsEncryption() :
 }
 
 HlsEncryption::HlsEncryption(JsonView jsonValue) : 
+    m_constantInitializationVectorHasBeenSet(false),
     m_encryptionMethod(EncryptionMethod::NOT_SET),
     m_encryptionMethodHasBeenSet(false),
     m_spekeKeyProviderHasBeenSet(false)
@@ -45,6 +47,13 @@ HlsEncryption::HlsEncryption(JsonView jsonValue) :
 
 HlsEncryption& HlsEncryption::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("constantInitializationVector"))
+  {
+    m_constantInitializationVector = jsonValue.GetString("constantInitializationVector");
+
+    m_constantInitializationVectorHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("encryptionMethod"))
   {
     m_encryptionMethod = EncryptionMethodMapper::GetEncryptionMethodForName(jsonValue.GetString("encryptionMethod"));
@@ -65,6 +74,12 @@ HlsEncryption& HlsEncryption::operator =(JsonView jsonValue)
 JsonValue HlsEncryption::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_constantInitializationVectorHasBeenSet)
+  {
+   payload.WithString("constantInitializationVector", m_constantInitializationVector);
+
+  }
 
   if(m_encryptionMethodHasBeenSet)
   {

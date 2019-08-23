@@ -70,30 +70,26 @@ namespace Model
 
 
     /**
-     * <p>The number of threads per CPU core. To disable Intel Hyper-Threading
-     * Technology for the instance, specify a value of 1. Otherwise, specify the
-     * default value of 2.</p>
+     * <p>The number of threads per CPU core. To disable multithreading for the
+     * instance, specify a value of 1. Otherwise, specify the default value of 2.</p>
      */
     inline int GetThreadsPerCore() const{ return m_threadsPerCore; }
 
     /**
-     * <p>The number of threads per CPU core. To disable Intel Hyper-Threading
-     * Technology for the instance, specify a value of 1. Otherwise, specify the
-     * default value of 2.</p>
+     * <p>The number of threads per CPU core. To disable multithreading for the
+     * instance, specify a value of 1. Otherwise, specify the default value of 2.</p>
      */
     inline bool ThreadsPerCoreHasBeenSet() const { return m_threadsPerCoreHasBeenSet; }
 
     /**
-     * <p>The number of threads per CPU core. To disable Intel Hyper-Threading
-     * Technology for the instance, specify a value of 1. Otherwise, specify the
-     * default value of 2.</p>
+     * <p>The number of threads per CPU core. To disable multithreading for the
+     * instance, specify a value of 1. Otherwise, specify the default value of 2.</p>
      */
     inline void SetThreadsPerCore(int value) { m_threadsPerCoreHasBeenSet = true; m_threadsPerCore = value; }
 
     /**
-     * <p>The number of threads per CPU core. To disable Intel Hyper-Threading
-     * Technology for the instance, specify a value of 1. Otherwise, specify the
-     * default value of 2.</p>
+     * <p>The number of threads per CPU core. To disable multithreading for the
+     * instance, specify a value of 1. Otherwise, specify the default value of 2.</p>
      */
     inline LaunchTemplateCpuOptionsRequest& WithThreadsPerCore(int value) { SetThreadsPerCore(value); return *this;}
 

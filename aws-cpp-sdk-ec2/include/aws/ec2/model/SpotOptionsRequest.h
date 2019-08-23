@@ -60,8 +60,8 @@ namespace Model
      * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
      * instances from all the Spot Instance pools that you specify.</p> <p>If the
      * allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches
-     * instances from Spot Instance pools that are optimally chosen based on the
-     * available Spot Instance capacity.</p>
+     * instances from Spot Instance pools with optimal capacity for the number of
+     * instances that are launching.</p>
      */
     inline const SpotAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
 
@@ -73,8 +73,8 @@ namespace Model
      * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
      * instances from all the Spot Instance pools that you specify.</p> <p>If the
      * allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches
-     * instances from Spot Instance pools that are optimally chosen based on the
-     * available Spot Instance capacity.</p>
+     * instances from Spot Instance pools with optimal capacity for the number of
+     * instances that are launching.</p>
      */
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
 
@@ -86,8 +86,8 @@ namespace Model
      * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
      * instances from all the Spot Instance pools that you specify.</p> <p>If the
      * allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches
-     * instances from Spot Instance pools that are optimally chosen based on the
-     * available Spot Instance capacity.</p>
+     * instances from Spot Instance pools with optimal capacity for the number of
+     * instances that are launching.</p>
      */
     inline void SetAllocationStrategy(const SpotAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
 
@@ -99,8 +99,8 @@ namespace Model
      * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
      * instances from all the Spot Instance pools that you specify.</p> <p>If the
      * allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches
-     * instances from Spot Instance pools that are optimally chosen based on the
-     * available Spot Instance capacity.</p>
+     * instances from Spot Instance pools with optimal capacity for the number of
+     * instances that are launching.</p>
      */
     inline void SetAllocationStrategy(SpotAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
 
@@ -112,8 +112,8 @@ namespace Model
      * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
      * instances from all the Spot Instance pools that you specify.</p> <p>If the
      * allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches
-     * instances from Spot Instance pools that are optimally chosen based on the
-     * available Spot Instance capacity.</p>
+     * instances from Spot Instance pools with optimal capacity for the number of
+     * instances that are launching.</p>
      */
     inline SpotOptionsRequest& WithAllocationStrategy(const SpotAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
 
@@ -125,8 +125,8 @@ namespace Model
      * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
      * instances from all the Spot Instance pools that you specify.</p> <p>If the
      * allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches
-     * instances from Spot Instance pools that are optimally chosen based on the
-     * available Spot Instance capacity.</p>
+     * instances from Spot Instance pools with optimal capacity for the number of
+     * instances that are launching.</p>
      */
     inline SpotOptionsRequest& WithAllocationStrategy(SpotAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
 

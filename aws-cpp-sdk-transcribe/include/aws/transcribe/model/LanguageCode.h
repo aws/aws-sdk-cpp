@@ -39,7 +39,9 @@ namespace Model
     es_ES,
     en_IN,
     hi_IN,
-    ar_SA
+    ar_SA,
+    ru_RU,
+    zh_CN
   };
 
 namespace LanguageCodeMapper
