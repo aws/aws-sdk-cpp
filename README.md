@@ -78,7 +78,7 @@ msbuild INSTALL.vcxproj /p:Configuration=Release
 Starting from version 1.7.0, we added several third party dependencies, including [`aws-c-common`](https://github.com/awslabs/aws-c-common), [`aws-checksums`](https://github.com/awslabs/aws-checksums) and [`aws-c-event-stream`](https://github.com/awslabs/aws-c-event-stream). By default, they will be built and installed in `<BUILD_DIR>/.deps/install`, and copied to default system directory during SDK installation. You can change the location by specifying `CMAKE_INSTALL_PREFIX`.
 
 However, if you want to build and install these libraries separately:
-1. Download, build and install `aws-c-commom`:
+1. Download, build and install `aws-c-common`:
 ```sh
 git clone https://github.com/awslabs/aws-c-common
 cd aws-c-common
