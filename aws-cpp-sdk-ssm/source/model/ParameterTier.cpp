@@ -32,6 +32,7 @@ namespace Aws
 
         static const int Standard_HASH = HashingUtils::HashString("Standard");
         static const int Advanced_HASH = HashingUtils::HashString("Advanced");
+        static const int Intelligent_Tiering_HASH = HashingUtils::HashString("Intelligent-Tiering");
 
 
         ParameterTier GetParameterTierForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == Advanced_HASH)
           {
             return ParameterTier::Advanced;
+          }
+          else if (hashCode == Intelligent_Tiering_HASH)
+          {
+            return ParameterTier::Intelligent_Tiering;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "Standard";
           case ParameterTier::Advanced:
             return "Advanced";
+          case ParameterTier::Intelligent_Tiering:
+            return "Intelligent-Tiering";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -21,6 +21,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace SecurityHub
 {
 namespace Model
@@ -40,6 +44,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "DescribeHub"; }
 
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**

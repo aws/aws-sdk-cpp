@@ -15,12 +15,15 @@
 
 #include <aws/securityhub/model/DescribeHubRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
 using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+using namespace Aws::Http;
 
 DescribeHubRequest::DescribeHubRequest() : 
     m_hubArnHasBeenSet(false)
@@ -29,17 +32,20 @@ DescribeHubRequest::DescribeHubRequest() :
 
 Aws::String DescribeHubRequest::SerializePayload() const
 {
-  JsonValue payload;
-
-  if(m_hubArnHasBeenSet)
-  {
-   payload.WithString("HubArn", m_hubArn);
-
-  }
-
-  return payload.View().WriteReadable();
+  return {};
 }
 
+void DescribeHubRequest::AddQueryStringParameters(URI& uri) const
+{
+    Aws::StringStream ss;
+    if(m_hubArnHasBeenSet)
+    {
+      ss << m_hubArn;
+      uri.AddQueryStringParameter("HubArn", ss.str());
+      ss.str("");
+    }
+
+}
 
 
 

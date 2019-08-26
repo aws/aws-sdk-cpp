@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     Standard,
-    Advanced
+    Advanced,
+    Intelligent_Tiering
   };
 
 namespace ParameterTierMapper

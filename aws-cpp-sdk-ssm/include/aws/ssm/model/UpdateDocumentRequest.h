@@ -236,42 +236,42 @@ namespace Model
 
 
     /**
-     * <p>The version of the document that you want to update.</p>
+     * <p>(Required) The version of the document that you want to update. </p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
 
     /**
-     * <p>The version of the document that you want to update.</p>
+     * <p>(Required) The version of the document that you want to update. </p>
      */
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
-     * <p>The version of the document that you want to update.</p>
+     * <p>(Required) The version of the document that you want to update. </p>
      */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
-     * <p>The version of the document that you want to update.</p>
+     * <p>(Required) The version of the document that you want to update. </p>
      */
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
-     * <p>The version of the document that you want to update.</p>
+     * <p>(Required) The version of the document that you want to update. </p>
      */
     inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
 
     /**
-     * <p>The version of the document that you want to update.</p>
+     * <p>(Required) The version of the document that you want to update. </p>
      */
     inline UpdateDocumentRequest& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
 
     /**
-     * <p>The version of the document that you want to update.</p>
+     * <p>(Required) The version of the document that you want to update. </p>
      */
     inline UpdateDocumentRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the document that you want to update.</p>
+     * <p>(Required) The version of the document that you want to update. </p>
      */
     inline UpdateDocumentRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
