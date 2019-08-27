@@ -48,96 +48,96 @@ namespace Model
     /**
      * <p>The unique identifier (ID) for the parent root or OU whose children you want
      * to list.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for a parent ID string requires one of the following:</p> <ul> <li> <p>Root: a
-     * string that begins with "r-" followed by from 4 to 32 lower-case letters or
-     * digits.</p> </li> <li> <p>Organizational unit (OU): a string that begins with
-     * "ou-" followed by from 4 to 32 lower-case letters or digits (the ID of the root
-     * that the OU is in) followed by a second "-" dash and from 8 to 32 additional
-     * lower-case letters or digits.</p> </li> </ul>
+     * for a parent ID string requires one of the following:</p> <ul> <li> <p>
+     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case
+     * letters or digits.</p> </li> <li> <p> <b>Organizational unit (OU)</b> - A string
+     * that begins with "ou-" followed by from 4 to 32 lower-case letters or digits
+     * (the ID of the root that the OU is in) followed by a second "-" dash and from 8
+     * to 32 additional lower-case letters or digits.</p> </li> </ul>
      */
     inline const Aws::String& GetParentId() const{ return m_parentId; }
 
     /**
      * <p>The unique identifier (ID) for the parent root or OU whose children you want
      * to list.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for a parent ID string requires one of the following:</p> <ul> <li> <p>Root: a
-     * string that begins with "r-" followed by from 4 to 32 lower-case letters or
-     * digits.</p> </li> <li> <p>Organizational unit (OU): a string that begins with
-     * "ou-" followed by from 4 to 32 lower-case letters or digits (the ID of the root
-     * that the OU is in) followed by a second "-" dash and from 8 to 32 additional
-     * lower-case letters or digits.</p> </li> </ul>
+     * for a parent ID string requires one of the following:</p> <ul> <li> <p>
+     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case
+     * letters or digits.</p> </li> <li> <p> <b>Organizational unit (OU)</b> - A string
+     * that begins with "ou-" followed by from 4 to 32 lower-case letters or digits
+     * (the ID of the root that the OU is in) followed by a second "-" dash and from 8
+     * to 32 additional lower-case letters or digits.</p> </li> </ul>
      */
     inline bool ParentIdHasBeenSet() const { return m_parentIdHasBeenSet; }
 
     /**
      * <p>The unique identifier (ID) for the parent root or OU whose children you want
      * to list.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for a parent ID string requires one of the following:</p> <ul> <li> <p>Root: a
-     * string that begins with "r-" followed by from 4 to 32 lower-case letters or
-     * digits.</p> </li> <li> <p>Organizational unit (OU): a string that begins with
-     * "ou-" followed by from 4 to 32 lower-case letters or digits (the ID of the root
-     * that the OU is in) followed by a second "-" dash and from 8 to 32 additional
-     * lower-case letters or digits.</p> </li> </ul>
+     * for a parent ID string requires one of the following:</p> <ul> <li> <p>
+     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case
+     * letters or digits.</p> </li> <li> <p> <b>Organizational unit (OU)</b> - A string
+     * that begins with "ou-" followed by from 4 to 32 lower-case letters or digits
+     * (the ID of the root that the OU is in) followed by a second "-" dash and from 8
+     * to 32 additional lower-case letters or digits.</p> </li> </ul>
      */
     inline void SetParentId(const Aws::String& value) { m_parentIdHasBeenSet = true; m_parentId = value; }
 
     /**
      * <p>The unique identifier (ID) for the parent root or OU whose children you want
      * to list.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for a parent ID string requires one of the following:</p> <ul> <li> <p>Root: a
-     * string that begins with "r-" followed by from 4 to 32 lower-case letters or
-     * digits.</p> </li> <li> <p>Organizational unit (OU): a string that begins with
-     * "ou-" followed by from 4 to 32 lower-case letters or digits (the ID of the root
-     * that the OU is in) followed by a second "-" dash and from 8 to 32 additional
-     * lower-case letters or digits.</p> </li> </ul>
+     * for a parent ID string requires one of the following:</p> <ul> <li> <p>
+     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case
+     * letters or digits.</p> </li> <li> <p> <b>Organizational unit (OU)</b> - A string
+     * that begins with "ou-" followed by from 4 to 32 lower-case letters or digits
+     * (the ID of the root that the OU is in) followed by a second "-" dash and from 8
+     * to 32 additional lower-case letters or digits.</p> </li> </ul>
      */
     inline void SetParentId(Aws::String&& value) { m_parentIdHasBeenSet = true; m_parentId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) for the parent root or OU whose children you want
      * to list.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for a parent ID string requires one of the following:</p> <ul> <li> <p>Root: a
-     * string that begins with "r-" followed by from 4 to 32 lower-case letters or
-     * digits.</p> </li> <li> <p>Organizational unit (OU): a string that begins with
-     * "ou-" followed by from 4 to 32 lower-case letters or digits (the ID of the root
-     * that the OU is in) followed by a second "-" dash and from 8 to 32 additional
-     * lower-case letters or digits.</p> </li> </ul>
+     * for a parent ID string requires one of the following:</p> <ul> <li> <p>
+     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case
+     * letters or digits.</p> </li> <li> <p> <b>Organizational unit (OU)</b> - A string
+     * that begins with "ou-" followed by from 4 to 32 lower-case letters or digits
+     * (the ID of the root that the OU is in) followed by a second "-" dash and from 8
+     * to 32 additional lower-case letters or digits.</p> </li> </ul>
      */
     inline void SetParentId(const char* value) { m_parentIdHasBeenSet = true; m_parentId.assign(value); }
 
     /**
      * <p>The unique identifier (ID) for the parent root or OU whose children you want
      * to list.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for a parent ID string requires one of the following:</p> <ul> <li> <p>Root: a
-     * string that begins with "r-" followed by from 4 to 32 lower-case letters or
-     * digits.</p> </li> <li> <p>Organizational unit (OU): a string that begins with
-     * "ou-" followed by from 4 to 32 lower-case letters or digits (the ID of the root
-     * that the OU is in) followed by a second "-" dash and from 8 to 32 additional
-     * lower-case letters or digits.</p> </li> </ul>
+     * for a parent ID string requires one of the following:</p> <ul> <li> <p>
+     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case
+     * letters or digits.</p> </li> <li> <p> <b>Organizational unit (OU)</b> - A string
+     * that begins with "ou-" followed by from 4 to 32 lower-case letters or digits
+     * (the ID of the root that the OU is in) followed by a second "-" dash and from 8
+     * to 32 additional lower-case letters or digits.</p> </li> </ul>
      */
     inline ListChildrenRequest& WithParentId(const Aws::String& value) { SetParentId(value); return *this;}
 
     /**
      * <p>The unique identifier (ID) for the parent root or OU whose children you want
      * to list.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for a parent ID string requires one of the following:</p> <ul> <li> <p>Root: a
-     * string that begins with "r-" followed by from 4 to 32 lower-case letters or
-     * digits.</p> </li> <li> <p>Organizational unit (OU): a string that begins with
-     * "ou-" followed by from 4 to 32 lower-case letters or digits (the ID of the root
-     * that the OU is in) followed by a second "-" dash and from 8 to 32 additional
-     * lower-case letters or digits.</p> </li> </ul>
+     * for a parent ID string requires one of the following:</p> <ul> <li> <p>
+     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case
+     * letters or digits.</p> </li> <li> <p> <b>Organizational unit (OU)</b> - A string
+     * that begins with "ou-" followed by from 4 to 32 lower-case letters or digits
+     * (the ID of the root that the OU is in) followed by a second "-" dash and from 8
+     * to 32 additional lower-case letters or digits.</p> </li> </ul>
      */
     inline ListChildrenRequest& WithParentId(Aws::String&& value) { SetParentId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) for the parent root or OU whose children you want
      * to list.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for a parent ID string requires one of the following:</p> <ul> <li> <p>Root: a
-     * string that begins with "r-" followed by from 4 to 32 lower-case letters or
-     * digits.</p> </li> <li> <p>Organizational unit (OU): a string that begins with
-     * "ou-" followed by from 4 to 32 lower-case letters or digits (the ID of the root
-     * that the OU is in) followed by a second "-" dash and from 8 to 32 additional
-     * lower-case letters or digits.</p> </li> </ul>
+     * for a parent ID string requires one of the following:</p> <ul> <li> <p>
+     * <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lower-case
+     * letters or digits.</p> </li> <li> <p> <b>Organizational unit (OU)</b> - A string
+     * that begins with "ou-" followed by from 4 to 32 lower-case letters or digits
+     * (the ID of the root that the OU is in) followed by a second "-" dash and from 8
+     * to 32 additional lower-case letters or digits.</p> </li> </ul>
      */
     inline ListChildrenRequest& WithParentId(const char* value) { SetParentId(value); return *this;}
 
