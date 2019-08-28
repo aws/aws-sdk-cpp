@@ -20,6 +20,7 @@
 #include <aws/mediaconvert/model/BillingTagsSource.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/JobSettings.h>
+#include <aws/mediaconvert/model/SimulateReservedQueue.h>
 #include <aws/mediaconvert/model/StatusUpdateInterval.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -429,6 +430,55 @@ namespace Model
 
 
     /**
+     * Enable this setting when you run a test job to estimate how many reserved
+     * transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your
+     * job from an on-demand queue with similar performance to what you will see with
+     * one RTS in a reserved queue. This setting is disabled by default.
+     */
+    inline const SimulateReservedQueue& GetSimulateReservedQueue() const{ return m_simulateReservedQueue; }
+
+    /**
+     * Enable this setting when you run a test job to estimate how many reserved
+     * transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your
+     * job from an on-demand queue with similar performance to what you will see with
+     * one RTS in a reserved queue. This setting is disabled by default.
+     */
+    inline bool SimulateReservedQueueHasBeenSet() const { return m_simulateReservedQueueHasBeenSet; }
+
+    /**
+     * Enable this setting when you run a test job to estimate how many reserved
+     * transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your
+     * job from an on-demand queue with similar performance to what you will see with
+     * one RTS in a reserved queue. This setting is disabled by default.
+     */
+    inline void SetSimulateReservedQueue(const SimulateReservedQueue& value) { m_simulateReservedQueueHasBeenSet = true; m_simulateReservedQueue = value; }
+
+    /**
+     * Enable this setting when you run a test job to estimate how many reserved
+     * transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your
+     * job from an on-demand queue with similar performance to what you will see with
+     * one RTS in a reserved queue. This setting is disabled by default.
+     */
+    inline void SetSimulateReservedQueue(SimulateReservedQueue&& value) { m_simulateReservedQueueHasBeenSet = true; m_simulateReservedQueue = std::move(value); }
+
+    /**
+     * Enable this setting when you run a test job to estimate how many reserved
+     * transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your
+     * job from an on-demand queue with similar performance to what you will see with
+     * one RTS in a reserved queue. This setting is disabled by default.
+     */
+    inline CreateJobRequest& WithSimulateReservedQueue(const SimulateReservedQueue& value) { SetSimulateReservedQueue(value); return *this;}
+
+    /**
+     * Enable this setting when you run a test job to estimate how many reserved
+     * transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your
+     * job from an on-demand queue with similar performance to what you will see with
+     * one RTS in a reserved queue. This setting is disabled by default.
+     */
+    inline CreateJobRequest& WithSimulateReservedQueue(SimulateReservedQueue&& value) { SetSimulateReservedQueue(std::move(value)); return *this;}
+
+
+    /**
      * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
      * Events. Set the interval, in seconds, between status updates. MediaConvert sends
      * an update at this interval from the time the service begins processing your job
@@ -580,6 +630,9 @@ namespace Model
 
     JobSettings m_settings;
     bool m_settingsHasBeenSet;
+
+    SimulateReservedQueue m_simulateReservedQueue;
+    bool m_simulateReservedQueueHasBeenSet;
 
     StatusUpdateInterval m_statusUpdateInterval;
     bool m_statusUpdateIntervalHasBeenSet;

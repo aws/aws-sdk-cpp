@@ -19,6 +19,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sqs/model/MessageAttributeValue.h>
+#include <aws/sqs/model/MessageSystemAttributeNameForSends.h>
+#include <aws/sqs/model/MessageSystemAttributeValue.h>
 #include <utility>
 
 namespace Aws
@@ -357,6 +359,117 @@ namespace Model
      * Guide</i>.</p>
      */
     inline SendMessageRequest& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The message system attribute to send. Each message system attribute consists
+     * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
+     * <important> <ul> <li> <p>Currently, the only supported message system attribute
+     * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
+     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
+     * <p>The size of a message system attribute doesn't count towards the total size
+     * of a message.</p> </li> </ul> </important>
+     */
+    inline const Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>& GetMessageSystemAttributes() const{ return m_messageSystemAttributes; }
+
+    /**
+     * <p>The message system attribute to send. Each message system attribute consists
+     * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
+     * <important> <ul> <li> <p>Currently, the only supported message system attribute
+     * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
+     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
+     * <p>The size of a message system attribute doesn't count towards the total size
+     * of a message.</p> </li> </ul> </important>
+     */
+    inline bool MessageSystemAttributesHasBeenSet() const { return m_messageSystemAttributesHasBeenSet; }
+
+    /**
+     * <p>The message system attribute to send. Each message system attribute consists
+     * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
+     * <important> <ul> <li> <p>Currently, the only supported message system attribute
+     * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
+     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
+     * <p>The size of a message system attribute doesn't count towards the total size
+     * of a message.</p> </li> </ul> </important>
+     */
+    inline void SetMessageSystemAttributes(const Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes = value; }
+
+    /**
+     * <p>The message system attribute to send. Each message system attribute consists
+     * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
+     * <important> <ul> <li> <p>Currently, the only supported message system attribute
+     * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
+     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
+     * <p>The size of a message system attribute doesn't count towards the total size
+     * of a message.</p> </li> </ul> </important>
+     */
+    inline void SetMessageSystemAttributes(Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>&& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes = std::move(value); }
+
+    /**
+     * <p>The message system attribute to send. Each message system attribute consists
+     * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
+     * <important> <ul> <li> <p>Currently, the only supported message system attribute
+     * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
+     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
+     * <p>The size of a message system attribute doesn't count towards the total size
+     * of a message.</p> </li> </ul> </important>
+     */
+    inline SendMessageRequest& WithMessageSystemAttributes(const Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>& value) { SetMessageSystemAttributes(value); return *this;}
+
+    /**
+     * <p>The message system attribute to send. Each message system attribute consists
+     * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
+     * <important> <ul> <li> <p>Currently, the only supported message system attribute
+     * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
+     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
+     * <p>The size of a message system attribute doesn't count towards the total size
+     * of a message.</p> </li> </ul> </important>
+     */
+    inline SendMessageRequest& WithMessageSystemAttributes(Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>&& value) { SetMessageSystemAttributes(std::move(value)); return *this;}
+
+    /**
+     * <p>The message system attribute to send. Each message system attribute consists
+     * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
+     * <important> <ul> <li> <p>Currently, the only supported message system attribute
+     * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
+     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
+     * <p>The size of a message system attribute doesn't count towards the total size
+     * of a message.</p> </li> </ul> </important>
+     */
+    inline SendMessageRequest& AddMessageSystemAttributes(const MessageSystemAttributeNameForSends& key, const MessageSystemAttributeValue& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(key, value); return *this; }
+
+    /**
+     * <p>The message system attribute to send. Each message system attribute consists
+     * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
+     * <important> <ul> <li> <p>Currently, the only supported message system attribute
+     * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
+     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
+     * <p>The size of a message system attribute doesn't count towards the total size
+     * of a message.</p> </li> </ul> </important>
+     */
+    inline SendMessageRequest& AddMessageSystemAttributes(MessageSystemAttributeNameForSends&& key, const MessageSystemAttributeValue& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The message system attribute to send. Each message system attribute consists
+     * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
+     * <important> <ul> <li> <p>Currently, the only supported message system attribute
+     * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
+     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
+     * <p>The size of a message system attribute doesn't count towards the total size
+     * of a message.</p> </li> </ul> </important>
+     */
+    inline SendMessageRequest& AddMessageSystemAttributes(const MessageSystemAttributeNameForSends& key, MessageSystemAttributeValue&& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The message system attribute to send. Each message system attribute consists
+     * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
+     * <important> <ul> <li> <p>Currently, the only supported message system attribute
+     * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
+     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
+     * <p>The size of a message system attribute doesn't count towards the total size
+     * of a message.</p> </li> </ul> </important>
+     */
+    inline SendMessageRequest& AddMessageSystemAttributes(MessageSystemAttributeNameForSends&& key, MessageSystemAttributeValue&& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(std::move(key), std::move(value)); return *this; }
 
 
     /**
@@ -941,6 +1054,9 @@ namespace Model
 
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
     bool m_messageAttributesHasBeenSet;
+
+    Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue> m_messageSystemAttributes;
+    bool m_messageSystemAttributesHasBeenSet;
 
     Aws::String m_messageDeduplicationId;
     bool m_messageDeduplicationIdHasBeenSet;

@@ -36,6 +36,7 @@ SendMessageBatchRequestEntry::SendMessageBatchRequestEntry() :
     m_delaySeconds(0),
     m_delaySecondsHasBeenSet(false),
     m_messageAttributesHasBeenSet(false),
+    m_messageSystemAttributesHasBeenSet(false),
     m_messageDeduplicationIdHasBeenSet(false),
     m_messageGroupIdHasBeenSet(false)
 {
@@ -47,6 +48,7 @@ SendMessageBatchRequestEntry::SendMessageBatchRequestEntry(const XmlNode& xmlNod
     m_delaySeconds(0),
     m_delaySecondsHasBeenSet(false),
     m_messageAttributesHasBeenSet(false),
+    m_messageSystemAttributesHasBeenSet(false),
     m_messageDeduplicationIdHasBeenSet(false),
     m_messageGroupIdHasBeenSet(false)
 {
@@ -91,6 +93,21 @@ SendMessageBatchRequestEntry& SendMessageBatchRequestEntry::operator =(const Xml
       }
 
       m_messageAttributesHasBeenSet = true;
+    }
+    XmlNode messageSystemAttributesNode = resultNode.FirstChild("MessageSystemAttribute");
+    if(!messageSystemAttributesNode.IsNull())
+    {
+      XmlNode messageSystemAttributeEntry = messageSystemAttributesNode;
+      while(!messageSystemAttributeEntry.IsNull())
+      {
+        XmlNode keyNode = messageSystemAttributeEntry.FirstChild("Name");
+        XmlNode valueNode = messageSystemAttributeEntry.FirstChild("Value");
+        m_messageSystemAttributes[MessageSystemAttributeNameForSendsMapper::GetMessageSystemAttributeNameForSendsForName(StringUtils::Trim(keyNode.GetText().c_str()))] =
+            valueNode;
+        messageSystemAttributeEntry = messageSystemAttributeEntry.NextNode("MessageSystemAttribute");
+      }
+
+      m_messageSystemAttributesHasBeenSet = true;
     }
     XmlNode messageDeduplicationIdNode = resultNode.FirstChild("MessageDeduplicationId");
     if(!messageDeduplicationIdNode.IsNull())
@@ -140,6 +157,20 @@ void SendMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const c
       }
   }
 
+  if(m_messageSystemAttributesHasBeenSet)
+  {
+      unsigned messageSystemAttributesIdx = 1;
+      for(auto& item : m_messageSystemAttributes)
+      {
+        oStream << location << index << locationValue << ".MessageSystemAttribute." << messageSystemAttributesIdx << ".Name="
+            << StringUtils::URLEncode(MessageSystemAttributeNameForSendsMapper::GetNameForMessageSystemAttributeNameForSends(item.first).c_str()) << "&";
+        Aws::StringStream messageSystemAttributesSs;
+        messageSystemAttributesSs << location << index << locationValue << ".MessageSystemAttribute." << messageSystemAttributesIdx << ".Value";
+        item.second.OutputToStream(oStream, messageSystemAttributesSs.str().c_str());
+        messageSystemAttributesIdx++;
+      }
+  }
+
   if(m_messageDeduplicationIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".MessageDeduplicationId=" << StringUtils::URLEncode(m_messageDeduplicationId.c_str()) << "&";
@@ -177,6 +208,20 @@ void SendMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const c
         messageAttributesSs << location << ".MessageAttribute." << messageAttributesIdx << ".Value";
         item.second.OutputToStream(oStream, messageAttributesSs.str().c_str());
         messageAttributesIdx++;
+      }
+
+  }
+  if(m_messageSystemAttributesHasBeenSet)
+  {
+      unsigned messageSystemAttributesIdx = 1;
+      for(auto& item : m_messageSystemAttributes)
+      {
+        oStream << location << ".MessageSystemAttribute."  << messageSystemAttributesIdx << ".Name="
+            << StringUtils::URLEncode(MessageSystemAttributeNameForSendsMapper::GetNameForMessageSystemAttributeNameForSends(item.first).c_str()) << "&";
+        Aws::StringStream messageSystemAttributesSs;
+        messageSystemAttributesSs << location << ".MessageSystemAttribute." << messageSystemAttributesIdx << ".Value";
+        item.second.OutputToStream(oStream, messageSystemAttributesSs.str().c_str());
+        messageSystemAttributesIdx++;
       }
 
   }

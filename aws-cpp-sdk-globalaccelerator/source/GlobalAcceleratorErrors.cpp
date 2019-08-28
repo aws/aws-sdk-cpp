@@ -36,9 +36,9 @@ static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededEx
 static const int ACCELERATOR_NOT_FOUND_HASH = HashingUtils::HashString("AcceleratorNotFoundException");
 static const int INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("InternalServiceErrorException");
 static const int ENDPOINT_GROUP_ALREADY_EXISTS_HASH = HashingUtils::HashString("EndpointGroupAlreadyExistsException");
+static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
 static const int ASSOCIATED_ENDPOINT_GROUP_FOUND_HASH = HashingUtils::HashString("AssociatedEndpointGroupFoundException");
-static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 static const int ACCELERATOR_NOT_DISABLED_HASH = HashingUtils::HashString("AcceleratorNotDisabledException");
 
 
@@ -78,6 +78,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlobalAcceleratorErrors::ENDPOINT_GROUP_ALREADY_EXISTS), false);
   }
+  else if (hashCode == INVALID_NEXT_TOKEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlobalAcceleratorErrors::INVALID_NEXT_TOKEN), false);
+  }
   else if (hashCode == INVALID_ARGUMENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlobalAcceleratorErrors::INVALID_ARGUMENT), false);
@@ -85,10 +89,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ASSOCIATED_ENDPOINT_GROUP_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlobalAcceleratorErrors::ASSOCIATED_ENDPOINT_GROUP_FOUND), false);
-  }
-  else if (hashCode == INVALID_NEXT_TOKEN_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlobalAcceleratorErrors::INVALID_NEXT_TOKEN), false);
   }
   else if (hashCode == ACCELERATOR_NOT_DISABLED_HASH)
   {

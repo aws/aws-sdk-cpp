@@ -164,6 +164,56 @@ namespace Model
 
 
     /**
+     * <p>An MD5 digest of the non-URL-encoded message system attribute string. You can
+     * use this attribute to verify that Amazon SQS received the message correctly.
+     * Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
+     */
+    inline const Aws::String& GetMD5OfMessageSystemAttributes() const{ return m_mD5OfMessageSystemAttributes; }
+
+    /**
+     * <p>An MD5 digest of the non-URL-encoded message system attribute string. You can
+     * use this attribute to verify that Amazon SQS received the message correctly.
+     * Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
+     */
+    inline void SetMD5OfMessageSystemAttributes(const Aws::String& value) { m_mD5OfMessageSystemAttributes = value; }
+
+    /**
+     * <p>An MD5 digest of the non-URL-encoded message system attribute string. You can
+     * use this attribute to verify that Amazon SQS received the message correctly.
+     * Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
+     */
+    inline void SetMD5OfMessageSystemAttributes(Aws::String&& value) { m_mD5OfMessageSystemAttributes = std::move(value); }
+
+    /**
+     * <p>An MD5 digest of the non-URL-encoded message system attribute string. You can
+     * use this attribute to verify that Amazon SQS received the message correctly.
+     * Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
+     */
+    inline void SetMD5OfMessageSystemAttributes(const char* value) { m_mD5OfMessageSystemAttributes.assign(value); }
+
+    /**
+     * <p>An MD5 digest of the non-URL-encoded message system attribute string. You can
+     * use this attribute to verify that Amazon SQS received the message correctly.
+     * Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
+     */
+    inline SendMessageResult& WithMD5OfMessageSystemAttributes(const Aws::String& value) { SetMD5OfMessageSystemAttributes(value); return *this;}
+
+    /**
+     * <p>An MD5 digest of the non-URL-encoded message system attribute string. You can
+     * use this attribute to verify that Amazon SQS received the message correctly.
+     * Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
+     */
+    inline SendMessageResult& WithMD5OfMessageSystemAttributes(Aws::String&& value) { SetMD5OfMessageSystemAttributes(std::move(value)); return *this;}
+
+    /**
+     * <p>An MD5 digest of the non-URL-encoded message system attribute string. You can
+     * use this attribute to verify that Amazon SQS received the message correctly.
+     * Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
+     */
+    inline SendMessageResult& WithMD5OfMessageSystemAttributes(const char* value) { SetMD5OfMessageSystemAttributes(value); return *this;}
+
+
+    /**
      * <p>An attribute containing the <code>MessageId</code> of the message sent to the
      * queue. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
@@ -311,6 +361,8 @@ namespace Model
     Aws::String m_mD5OfMessageBody;
 
     Aws::String m_mD5OfMessageAttributes;
+
+    Aws::String m_mD5OfMessageSystemAttributes;
 
     Aws::String m_messageId;
 

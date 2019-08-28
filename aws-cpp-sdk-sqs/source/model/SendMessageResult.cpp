@@ -58,6 +58,11 @@ SendMessageResult& SendMessageResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_mD5OfMessageAttributes = Aws::Utils::Xml::DecodeEscapedXmlText(mD5OfMessageAttributesNode.GetText());
     }
+    XmlNode mD5OfMessageSystemAttributesNode = resultNode.FirstChild("MD5OfMessageSystemAttributes");
+    if(!mD5OfMessageSystemAttributesNode.IsNull())
+    {
+      m_mD5OfMessageSystemAttributes = Aws::Utils::Xml::DecodeEscapedXmlText(mD5OfMessageSystemAttributesNode.GetText());
+    }
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
     if(!messageIdNode.IsNull())
     {

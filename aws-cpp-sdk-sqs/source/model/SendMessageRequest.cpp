@@ -26,6 +26,7 @@ SendMessageRequest::SendMessageRequest() :
     m_delaySeconds(0),
     m_delaySecondsHasBeenSet(false),
     m_messageAttributesHasBeenSet(false),
+    m_messageSystemAttributesHasBeenSet(false),
     m_messageDeduplicationIdHasBeenSet(false),
     m_messageGroupIdHasBeenSet(false)
 {
@@ -59,6 +60,18 @@ Aws::String SendMessageRequest::SerializePayload() const
           << StringUtils::URLEncode(item.first.c_str()) << "&";
       item.second.OutputToStream(ss, "MessageAttribute.", messageAttributesCount, ".Value");
       messageAttributesCount++;
+    }
+  }
+
+  if(m_messageSystemAttributesHasBeenSet)
+  {
+    unsigned messageSystemAttributesCount = 1;
+    for(auto& item : m_messageSystemAttributes)
+    {
+      ss << "MessageSystemAttribute." << messageSystemAttributesCount << ".Name="
+          << StringUtils::URLEncode(MessageSystemAttributeNameForSendsMapper::GetNameForMessageSystemAttributeNameForSends(item.first).c_str()) << "&";
+      item.second.OutputToStream(ss, "MessageSystemAttribute.", messageSystemAttributesCount, ".Value");
+      messageSystemAttributesCount++;
     }
   }
 

@@ -23,25 +23,18 @@ namespace SQS
 {
 namespace Model
 {
-  enum class MessageSystemAttributeName
+  enum class MessageSystemAttributeNameForSends
   {
     NOT_SET,
-    SenderId,
-    SentTimestamp,
-    ApproximateReceiveCount,
-    ApproximateFirstReceiveTimestamp,
-    SequenceNumber,
-    MessageDeduplicationId,
-    MessageGroupId,
     AWSTraceHeader
   };
 
-namespace MessageSystemAttributeNameMapper
+namespace MessageSystemAttributeNameForSendsMapper
 {
-AWS_SQS_API MessageSystemAttributeName GetMessageSystemAttributeNameForName(const Aws::String& name);
+AWS_SQS_API MessageSystemAttributeNameForSends GetMessageSystemAttributeNameForSendsForName(const Aws::String& name);
 
-AWS_SQS_API Aws::String GetNameForMessageSystemAttributeName(MessageSystemAttributeName value);
-} // namespace MessageSystemAttributeNameMapper
+AWS_SQS_API Aws::String GetNameForMessageSystemAttributeNameForSends(MessageSystemAttributeNameForSends value);
+} // namespace MessageSystemAttributeNameForSendsMapper
 } // namespace Model
 } // namespace SQS
 } // namespace Aws

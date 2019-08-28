@@ -53,7 +53,8 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID.</p>
+     * address allocation ID. An Application Load Balancer can be either internal or
+     * internet-facing.</p>
      */
     inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
 
@@ -61,7 +62,8 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID.</p>
+     * address allocation ID. An Application Load Balancer can be either internal or
+     * internet-facing.</p>
      */
     inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
 
@@ -69,7 +71,8 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID.</p>
+     * address allocation ID. An Application Load Balancer can be either internal or
+     * internet-facing.</p>
      */
     inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
 
@@ -77,7 +80,8 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID.</p>
+     * address allocation ID. An Application Load Balancer can be either internal or
+     * internet-facing.</p>
      */
     inline void SetEndpointId(Aws::String&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::move(value); }
 
@@ -85,7 +89,8 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID.</p>
+     * address allocation ID. An Application Load Balancer can be either internal or
+     * internet-facing.</p>
      */
     inline void SetEndpointId(const char* value) { m_endpointIdHasBeenSet = true; m_endpointId.assign(value); }
 
@@ -93,7 +98,8 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID.</p>
+     * address allocation ID. An Application Load Balancer can be either internal or
+     * internet-facing.</p>
      */
     inline EndpointDescription& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
 
@@ -101,7 +107,8 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID.</p>
+     * address allocation ID. An Application Load Balancer can be either internal or
+     * internet-facing.</p>
      */
     inline EndpointDescription& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
 
@@ -109,7 +116,8 @@ namespace Model
      * <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
-     * address allocation ID.</p>
+     * address allocation ID. An Application Load Balancer can be either internal or
+     * internet-facing.</p>
      */
     inline EndpointDescription& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
 
@@ -322,6 +330,59 @@ namespace Model
      */
     inline EndpointDescription& WithHealthReason(const char* value) { SetHealthReason(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether client IP address preservation is enabled for an
+     * Application Load Balancer endpoint. The value is true or false. The default
+     * value is true for new accelerators. </p> <p>If the value is set to true, the
+     * client's IP address is preserved in the <code>X-Forwarded-For</code> request
+     * header as traffic travels to applications on the Application Load Balancer
+     * endpoint fronted by the accelerator.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html">
+     * Viewing Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global
+     * Accelerator Developer Guide</i>.</p>
+     */
+    inline bool GetClientIPPreservationEnabled() const{ return m_clientIPPreservationEnabled; }
+
+    /**
+     * <p>Indicates whether client IP address preservation is enabled for an
+     * Application Load Balancer endpoint. The value is true or false. The default
+     * value is true for new accelerators. </p> <p>If the value is set to true, the
+     * client's IP address is preserved in the <code>X-Forwarded-For</code> request
+     * header as traffic travels to applications on the Application Load Balancer
+     * endpoint fronted by the accelerator.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html">
+     * Viewing Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global
+     * Accelerator Developer Guide</i>.</p>
+     */
+    inline bool ClientIPPreservationEnabledHasBeenSet() const { return m_clientIPPreservationEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether client IP address preservation is enabled for an
+     * Application Load Balancer endpoint. The value is true or false. The default
+     * value is true for new accelerators. </p> <p>If the value is set to true, the
+     * client's IP address is preserved in the <code>X-Forwarded-For</code> request
+     * header as traffic travels to applications on the Application Load Balancer
+     * endpoint fronted by the accelerator.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html">
+     * Viewing Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global
+     * Accelerator Developer Guide</i>.</p>
+     */
+    inline void SetClientIPPreservationEnabled(bool value) { m_clientIPPreservationEnabledHasBeenSet = true; m_clientIPPreservationEnabled = value; }
+
+    /**
+     * <p>Indicates whether client IP address preservation is enabled for an
+     * Application Load Balancer endpoint. The value is true or false. The default
+     * value is true for new accelerators. </p> <p>If the value is set to true, the
+     * client's IP address is preserved in the <code>X-Forwarded-For</code> request
+     * header as traffic travels to applications on the Application Load Balancer
+     * endpoint fronted by the accelerator.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html">
+     * Viewing Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global
+     * Accelerator Developer Guide</i>.</p>
+     */
+    inline EndpointDescription& WithClientIPPreservationEnabled(bool value) { SetClientIPPreservationEnabled(value); return *this;}
+
   private:
 
     Aws::String m_endpointId;
@@ -335,6 +396,9 @@ namespace Model
 
     Aws::String m_healthReason;
     bool m_healthReasonHasBeenSet;
+
+    bool m_clientIPPreservationEnabled;
+    bool m_clientIPPreservationEnabledHasBeenSet;
   };
 
 } // namespace Model

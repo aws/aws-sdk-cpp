@@ -45,50 +45,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.
-     * Attribute is required.</p>
+     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to
+     * update.</p>
      */
     inline const Aws::String& GetAcceleratorArn() const{ return m_acceleratorArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.
-     * Attribute is required.</p>
+     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to
+     * update.</p>
      */
     inline bool AcceleratorArnHasBeenSet() const { return m_acceleratorArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.
-     * Attribute is required.</p>
+     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to
+     * update.</p>
      */
     inline void SetAcceleratorArn(const Aws::String& value) { m_acceleratorArnHasBeenSet = true; m_acceleratorArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.
-     * Attribute is required.</p>
+     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to
+     * update.</p>
      */
     inline void SetAcceleratorArn(Aws::String&& value) { m_acceleratorArnHasBeenSet = true; m_acceleratorArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.
-     * Attribute is required.</p>
+     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to
+     * update.</p>
      */
     inline void SetAcceleratorArn(const char* value) { m_acceleratorArnHasBeenSet = true; m_acceleratorArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.
-     * Attribute is required.</p>
+     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to
+     * update.</p>
      */
     inline UpdateAcceleratorAttributesRequest& WithAcceleratorArn(const Aws::String& value) { SetAcceleratorArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.
-     * Attribute is required.</p>
+     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to
+     * update.</p>
      */
     inline UpdateAcceleratorAttributesRequest& WithAcceleratorArn(Aws::String&& value) { SetAcceleratorArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.
-     * Attribute is required.</p>
+     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to
+     * update.</p>
      */
     inline UpdateAcceleratorAttributesRequest& WithAcceleratorArn(const char* value) { SetAcceleratorArn(value); return *this;}
 

@@ -51,6 +51,8 @@ Job::Job() :
     m_retryCountHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_settingsHasBeenSet(false),
+    m_simulateReservedQueue(SimulateReservedQueue::NOT_SET),
+    m_simulateReservedQueueHasBeenSet(false),
     m_status(JobStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusUpdateInterval(StatusUpdateInterval::NOT_SET),
@@ -83,6 +85,8 @@ Job::Job(JsonView jsonValue) :
     m_retryCountHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_settingsHasBeenSet(false),
+    m_simulateReservedQueue(SimulateReservedQueue::NOT_SET),
+    m_simulateReservedQueueHasBeenSet(false),
     m_status(JobStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusUpdateInterval(StatusUpdateInterval::NOT_SET),
@@ -208,6 +212,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_settings = jsonValue.GetObject("settings");
 
     m_settingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("simulateReservedQueue"))
+  {
+    m_simulateReservedQueue = SimulateReservedQueueMapper::GetSimulateReservedQueueForName(jsonValue.GetString("simulateReservedQueue"));
+
+    m_simulateReservedQueueHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -344,6 +355,11 @@ JsonValue Job::Jsonize() const
   {
    payload.WithObject("settings", m_settings.Jsonize());
 
+  }
+
+  if(m_simulateReservedQueueHasBeenSet)
+  {
+   payload.WithString("simulateReservedQueue", SimulateReservedQueueMapper::GetNameForSimulateReservedQueue(m_simulateReservedQueue));
   }
 
   if(m_statusHasBeenSet)

@@ -34,7 +34,9 @@ EndpointDescription::EndpointDescription() :
     m_weightHasBeenSet(false),
     m_healthState(HealthState::NOT_SET),
     m_healthStateHasBeenSet(false),
-    m_healthReasonHasBeenSet(false)
+    m_healthReasonHasBeenSet(false),
+    m_clientIPPreservationEnabled(false),
+    m_clientIPPreservationEnabledHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ EndpointDescription::EndpointDescription(JsonView jsonValue) :
     m_weightHasBeenSet(false),
     m_healthState(HealthState::NOT_SET),
     m_healthStateHasBeenSet(false),
-    m_healthReasonHasBeenSet(false)
+    m_healthReasonHasBeenSet(false),
+    m_clientIPPreservationEnabled(false),
+    m_clientIPPreservationEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,6 +83,13 @@ EndpointDescription& EndpointDescription::operator =(JsonView jsonValue)
     m_healthReasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ClientIPPreservationEnabled"))
+  {
+    m_clientIPPreservationEnabled = jsonValue.GetBool("ClientIPPreservationEnabled");
+
+    m_clientIPPreservationEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -106,6 +117,12 @@ JsonValue EndpointDescription::Jsonize() const
   if(m_healthReasonHasBeenSet)
   {
    payload.WithString("HealthReason", m_healthReason);
+
+  }
+
+  if(m_clientIPPreservationEnabledHasBeenSet)
+  {
+   payload.WithBool("ClientIPPreservationEnabled", m_clientIPPreservationEnabled);
 
   }
 

@@ -31,14 +31,18 @@ namespace Model
 EndpointConfiguration::EndpointConfiguration() : 
     m_endpointIdHasBeenSet(false),
     m_weight(0),
-    m_weightHasBeenSet(false)
+    m_weightHasBeenSet(false),
+    m_clientIPPreservationEnabled(false),
+    m_clientIPPreservationEnabledHasBeenSet(false)
 {
 }
 
 EndpointConfiguration::EndpointConfiguration(JsonView jsonValue) : 
     m_endpointIdHasBeenSet(false),
     m_weight(0),
-    m_weightHasBeenSet(false)
+    m_weightHasBeenSet(false),
+    m_clientIPPreservationEnabled(false),
+    m_clientIPPreservationEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +63,13 @@ EndpointConfiguration& EndpointConfiguration::operator =(JsonView jsonValue)
     m_weightHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ClientIPPreservationEnabled"))
+  {
+    m_clientIPPreservationEnabled = jsonValue.GetBool("ClientIPPreservationEnabled");
+
+    m_clientIPPreservationEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -75,6 +86,12 @@ JsonValue EndpointConfiguration::Jsonize() const
   if(m_weightHasBeenSet)
   {
    payload.WithInteger("Weight", m_weight);
+
+  }
+
+  if(m_clientIPPreservationEnabledHasBeenSet)
+  {
+   payload.WithBool("ClientIPPreservationEnabled", m_clientIPPreservationEnabled);
 
   }
 

@@ -37,6 +37,7 @@ namespace Aws
         static const int SequenceNumber_HASH = HashingUtils::HashString("SequenceNumber");
         static const int MessageDeduplicationId_HASH = HashingUtils::HashString("MessageDeduplicationId");
         static const int MessageGroupId_HASH = HashingUtils::HashString("MessageGroupId");
+        static const int AWSTraceHeader_HASH = HashingUtils::HashString("AWSTraceHeader");
 
 
         MessageSystemAttributeName GetMessageSystemAttributeNameForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return MessageSystemAttributeName::MessageGroupId;
           }
+          else if (hashCode == AWSTraceHeader_HASH)
+          {
+            return MessageSystemAttributeName::AWSTraceHeader;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -98,6 +103,8 @@ namespace Aws
             return "MessageDeduplicationId";
           case MessageSystemAttributeName::MessageGroupId:
             return "MessageGroupId";
+          case MessageSystemAttributeName::AWSTraceHeader:
+            return "AWSTraceHeader";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

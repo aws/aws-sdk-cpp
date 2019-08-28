@@ -22,6 +22,7 @@
 #include <aws/mediaconvert/model/JobPhase.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/JobSettings.h>
+#include <aws/mediaconvert/model/SimulateReservedQueue.h>
 #include <aws/mediaconvert/model/JobStatus.h>
 #include <aws/mediaconvert/model/StatusUpdateInterval.h>
 #include <aws/mediaconvert/model/Timing.h>
@@ -706,6 +707,55 @@ namespace Model
 
 
     /**
+     * Enable this setting when you run a test job to estimate how many reserved
+     * transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your
+     * job from an on-demand queue with similar performance to what you will see with
+     * one RTS in a reserved queue. This setting is disabled by default.
+     */
+    inline const SimulateReservedQueue& GetSimulateReservedQueue() const{ return m_simulateReservedQueue; }
+
+    /**
+     * Enable this setting when you run a test job to estimate how many reserved
+     * transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your
+     * job from an on-demand queue with similar performance to what you will see with
+     * one RTS in a reserved queue. This setting is disabled by default.
+     */
+    inline bool SimulateReservedQueueHasBeenSet() const { return m_simulateReservedQueueHasBeenSet; }
+
+    /**
+     * Enable this setting when you run a test job to estimate how many reserved
+     * transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your
+     * job from an on-demand queue with similar performance to what you will see with
+     * one RTS in a reserved queue. This setting is disabled by default.
+     */
+    inline void SetSimulateReservedQueue(const SimulateReservedQueue& value) { m_simulateReservedQueueHasBeenSet = true; m_simulateReservedQueue = value; }
+
+    /**
+     * Enable this setting when you run a test job to estimate how many reserved
+     * transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your
+     * job from an on-demand queue with similar performance to what you will see with
+     * one RTS in a reserved queue. This setting is disabled by default.
+     */
+    inline void SetSimulateReservedQueue(SimulateReservedQueue&& value) { m_simulateReservedQueueHasBeenSet = true; m_simulateReservedQueue = std::move(value); }
+
+    /**
+     * Enable this setting when you run a test job to estimate how many reserved
+     * transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your
+     * job from an on-demand queue with similar performance to what you will see with
+     * one RTS in a reserved queue. This setting is disabled by default.
+     */
+    inline Job& WithSimulateReservedQueue(const SimulateReservedQueue& value) { SetSimulateReservedQueue(value); return *this;}
+
+    /**
+     * Enable this setting when you run a test job to estimate how many reserved
+     * transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your
+     * job from an on-demand queue with similar performance to what you will see with
+     * one RTS in a reserved queue. This setting is disabled by default.
+     */
+    inline Job& WithSimulateReservedQueue(SimulateReservedQueue&& value) { SetSimulateReservedQueue(std::move(value)); return *this;}
+
+
+    /**
      * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
      */
     inline const JobStatus& GetStatus() const{ return m_status; }
@@ -949,6 +999,9 @@ namespace Model
 
     JobSettings m_settings;
     bool m_settingsHasBeenSet;
+
+    SimulateReservedQueue m_simulateReservedQueue;
+    bool m_simulateReservedQueueHasBeenSet;
 
     JobStatus m_status;
     bool m_statusHasBeenSet;

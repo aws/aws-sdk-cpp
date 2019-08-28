@@ -14,34 +14,28 @@
 */
 
 #pragma once
-#include <aws/sqs/SQS_EXPORTS.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace SQS
+namespace MediaConvert
 {
 namespace Model
 {
-  enum class MessageSystemAttributeName
+  enum class SimulateReservedQueue
   {
     NOT_SET,
-    SenderId,
-    SentTimestamp,
-    ApproximateReceiveCount,
-    ApproximateFirstReceiveTimestamp,
-    SequenceNumber,
-    MessageDeduplicationId,
-    MessageGroupId,
-    AWSTraceHeader
+    DISABLED,
+    ENABLED
   };
 
-namespace MessageSystemAttributeNameMapper
+namespace SimulateReservedQueueMapper
 {
-AWS_SQS_API MessageSystemAttributeName GetMessageSystemAttributeNameForName(const Aws::String& name);
+AWS_MEDIACONVERT_API SimulateReservedQueue GetSimulateReservedQueueForName(const Aws::String& name);
 
-AWS_SQS_API Aws::String GetNameForMessageSystemAttributeName(MessageSystemAttributeName value);
-} // namespace MessageSystemAttributeNameMapper
+AWS_MEDIACONVERT_API Aws::String GetNameForSimulateReservedQueue(SimulateReservedQueue value);
+} // namespace SimulateReservedQueueMapper
 } // namespace Model
-} // namespace SQS
+} // namespace MediaConvert
 } // namespace Aws

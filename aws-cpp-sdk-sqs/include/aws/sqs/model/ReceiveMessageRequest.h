@@ -108,8 +108,9 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
      * the number of times a message has been received from the queue but not
-     * deleted.</p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM
-     * user, returns the IAM user ID, for example
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> - Returns the AWS X-Ray
+     * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
+     * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
@@ -133,8 +134,9 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
      * the number of times a message has been received from the queue but not
-     * deleted.</p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM
-     * user, returns the IAM user ID, for example
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> - Returns the AWS X-Ray
+     * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
+     * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
@@ -158,8 +160,9 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
      * the number of times a message has been received from the queue but not
-     * deleted.</p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM
-     * user, returns the IAM user ID, for example
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> - Returns the AWS X-Ray
+     * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
+     * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
@@ -183,8 +186,9 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
      * the number of times a message has been received from the queue but not
-     * deleted.</p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM
-     * user, returns the IAM user ID, for example
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> - Returns the AWS X-Ray
+     * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
+     * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
@@ -208,8 +212,9 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
      * the number of times a message has been received from the queue but not
-     * deleted.</p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM
-     * user, returns the IAM user ID, for example
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> - Returns the AWS X-Ray
+     * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
+     * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
@@ -233,8 +238,9 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
      * the number of times a message has been received from the queue but not
-     * deleted.</p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM
-     * user, returns the IAM user ID, for example
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> - Returns the AWS X-Ray
+     * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
+     * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
@@ -258,8 +264,9 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
      * the number of times a message has been received from the queue but not
-     * deleted.</p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM
-     * user, returns the IAM user ID, for example
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> - Returns the AWS X-Ray
+     * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
+     * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
@@ -283,8 +290,9 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
      * the number of times a message has been received from the queue but not
-     * deleted.</p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li> <p>For an IAM
-     * user, returns the IAM user ID, for example
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> - Returns the AWS X-Ray
+     * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
+     * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
