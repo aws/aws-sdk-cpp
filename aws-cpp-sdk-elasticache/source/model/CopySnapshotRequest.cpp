@@ -23,7 +23,8 @@ using namespace Aws::Utils;
 CopySnapshotRequest::CopySnapshotRequest() : 
     m_sourceSnapshotNameHasBeenSet(false),
     m_targetSnapshotNameHasBeenSet(false),
-    m_targetBucketHasBeenSet(false)
+    m_targetBucketHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -44,6 +45,11 @@ Aws::String CopySnapshotRequest::SerializePayload() const
   if(m_targetBucketHasBeenSet)
   {
     ss << "TargetBucket=" << StringUtils::URLEncode(m_targetBucket.c_str()) << "&";
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+    ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
   ss << "Version=2015-02-02";

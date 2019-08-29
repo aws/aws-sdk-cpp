@@ -92,6 +92,47 @@ namespace Model
 
 
     /**
+     * <p>The ID of the Docker container.</p>
+     */
+    inline const Aws::String& GetRuntimeId() const{ return m_runtimeId; }
+
+    /**
+     * <p>The ID of the Docker container.</p>
+     */
+    inline bool RuntimeIdHasBeenSet() const { return m_runtimeIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Docker container.</p>
+     */
+    inline void SetRuntimeId(const Aws::String& value) { m_runtimeIdHasBeenSet = true; m_runtimeId = value; }
+
+    /**
+     * <p>The ID of the Docker container.</p>
+     */
+    inline void SetRuntimeId(Aws::String&& value) { m_runtimeIdHasBeenSet = true; m_runtimeId = std::move(value); }
+
+    /**
+     * <p>The ID of the Docker container.</p>
+     */
+    inline void SetRuntimeId(const char* value) { m_runtimeIdHasBeenSet = true; m_runtimeId.assign(value); }
+
+    /**
+     * <p>The ID of the Docker container.</p>
+     */
+    inline ContainerStateChange& WithRuntimeId(const Aws::String& value) { SetRuntimeId(value); return *this;}
+
+    /**
+     * <p>The ID of the Docker container.</p>
+     */
+    inline ContainerStateChange& WithRuntimeId(Aws::String&& value) { SetRuntimeId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Docker container.</p>
+     */
+    inline ContainerStateChange& WithRuntimeId(const char* value) { SetRuntimeId(value); return *this;}
+
+
+    /**
      * <p>The exit code for the container, if the state change is a result of the
      * container exiting.</p>
      */
@@ -242,6 +283,9 @@ namespace Model
 
     Aws::String m_containerName;
     bool m_containerNameHasBeenSet;
+
+    Aws::String m_runtimeId;
+    bool m_runtimeIdHasBeenSet;
 
     int m_exitCode;
     bool m_exitCodeHasBeenSet;

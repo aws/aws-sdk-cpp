@@ -101,6 +101,16 @@ namespace Model
     inline GetEventSourceMappingResult& WithBatchSize(int value) { SetBatchSize(value); return *this;}
 
 
+    
+    inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
+
+    
+    inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSeconds = value; }
+
+    
+    inline GetEventSourceMappingResult& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
+
+
     /**
      * <p>The Amazon Resource Name (ARN) of the event source.</p>
      */
@@ -339,6 +349,8 @@ namespace Model
     Aws::String m_uUID;
 
     int m_batchSize;
+
+    int m_maximumBatchingWindowInSeconds;
 
     Aws::String m_eventSourceArn;
 

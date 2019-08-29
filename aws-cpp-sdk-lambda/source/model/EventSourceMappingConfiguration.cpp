@@ -32,6 +32,8 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration() :
     m_uUIDHasBeenSet(false),
     m_batchSize(0),
     m_batchSizeHasBeenSet(false),
+    m_maximumBatchingWindowInSeconds(0),
+    m_maximumBatchingWindowInSecondsHasBeenSet(false),
     m_eventSourceArnHasBeenSet(false),
     m_functionArnHasBeenSet(false),
     m_lastModifiedHasBeenSet(false),
@@ -45,6 +47,8 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration(JsonView jsonVa
     m_uUIDHasBeenSet(false),
     m_batchSize(0),
     m_batchSizeHasBeenSet(false),
+    m_maximumBatchingWindowInSeconds(0),
+    m_maximumBatchingWindowInSecondsHasBeenSet(false),
     m_eventSourceArnHasBeenSet(false),
     m_functionArnHasBeenSet(false),
     m_lastModifiedHasBeenSet(false),
@@ -69,6 +73,13 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
     m_batchSize = jsonValue.GetInteger("BatchSize");
 
     m_batchSizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaximumBatchingWindowInSeconds"))
+  {
+    m_maximumBatchingWindowInSeconds = jsonValue.GetInteger("MaximumBatchingWindowInSeconds");
+
+    m_maximumBatchingWindowInSecondsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EventSourceArn"))
@@ -129,6 +140,12 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
   if(m_batchSizeHasBeenSet)
   {
    payload.WithInteger("BatchSize", m_batchSize);
+
+  }
+
+  if(m_maximumBatchingWindowInSecondsHasBeenSet)
+  {
+   payload.WithInteger("MaximumBatchingWindowInSeconds", m_maximumBatchingWindowInSeconds);
 
   }
 

@@ -34,7 +34,8 @@ PipelineExecutionSummary::PipelineExecutionSummary() :
     m_statusHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
-    m_sourceRevisionsHasBeenSet(false)
+    m_sourceRevisionsHasBeenSet(false),
+    m_triggerHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ PipelineExecutionSummary::PipelineExecutionSummary(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
-    m_sourceRevisionsHasBeenSet(false)
+    m_sourceRevisionsHasBeenSet(false),
+    m_triggerHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -89,6 +91,13 @@ PipelineExecutionSummary& PipelineExecutionSummary::operator =(JsonView jsonValu
     m_sourceRevisionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("trigger"))
+  {
+    m_trigger = jsonValue.GetObject("trigger");
+
+    m_triggerHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -125,6 +134,12 @@ JsonValue PipelineExecutionSummary::Jsonize() const
      sourceRevisionsJsonList[sourceRevisionsIndex].AsObject(m_sourceRevisions[sourceRevisionsIndex].Jsonize());
    }
    payload.WithArray("sourceRevisions", std::move(sourceRevisionsJsonList));
+
+  }
+
+  if(m_triggerHasBeenSet)
+  {
+   payload.WithObject("trigger", m_trigger.Jsonize());
 
   }
 

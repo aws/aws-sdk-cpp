@@ -2276,11 +2276,11 @@ namespace Model
 
 
     /**
-     * <p>Time duration to wait before giving up on resolving dependencies for a
-     * container. For example, you specify two containers in a task definition with
-     * containerA having a dependency on containerB reaching a <code>COMPLETE</code>,
-     * <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a
-     * <code>startTimeout</code> value is specified for containerB and it does not
+     * <p>Time duration (in seconds) to wait before giving up on resolving dependencies
+     * for a container. For example, you specify two containers in a task definition
+     * with containerA having a dependency on containerB reaching a
+     * <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If
+     * a <code>startTimeout</code> value is specified for containerB and it does not
      * reach the desired status within that time then containerA will give up and not
      * start. This results in the task transitioning to a <code>STOPPED</code>
      * state.</p> <p>For tasks using the EC2 launch type, the container instances
@@ -2304,11 +2304,11 @@ namespace Model
     inline int GetStartTimeout() const{ return m_startTimeout; }
 
     /**
-     * <p>Time duration to wait before giving up on resolving dependencies for a
-     * container. For example, you specify two containers in a task definition with
-     * containerA having a dependency on containerB reaching a <code>COMPLETE</code>,
-     * <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a
-     * <code>startTimeout</code> value is specified for containerB and it does not
+     * <p>Time duration (in seconds) to wait before giving up on resolving dependencies
+     * for a container. For example, you specify two containers in a task definition
+     * with containerA having a dependency on containerB reaching a
+     * <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If
+     * a <code>startTimeout</code> value is specified for containerB and it does not
      * reach the desired status within that time then containerA will give up and not
      * start. This results in the task transitioning to a <code>STOPPED</code>
      * state.</p> <p>For tasks using the EC2 launch type, the container instances
@@ -2332,11 +2332,11 @@ namespace Model
     inline bool StartTimeoutHasBeenSet() const { return m_startTimeoutHasBeenSet; }
 
     /**
-     * <p>Time duration to wait before giving up on resolving dependencies for a
-     * container. For example, you specify two containers in a task definition with
-     * containerA having a dependency on containerB reaching a <code>COMPLETE</code>,
-     * <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a
-     * <code>startTimeout</code> value is specified for containerB and it does not
+     * <p>Time duration (in seconds) to wait before giving up on resolving dependencies
+     * for a container. For example, you specify two containers in a task definition
+     * with containerA having a dependency on containerB reaching a
+     * <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If
+     * a <code>startTimeout</code> value is specified for containerB and it does not
      * reach the desired status within that time then containerA will give up and not
      * start. This results in the task transitioning to a <code>STOPPED</code>
      * state.</p> <p>For tasks using the EC2 launch type, the container instances
@@ -2360,11 +2360,11 @@ namespace Model
     inline void SetStartTimeout(int value) { m_startTimeoutHasBeenSet = true; m_startTimeout = value; }
 
     /**
-     * <p>Time duration to wait before giving up on resolving dependencies for a
-     * container. For example, you specify two containers in a task definition with
-     * containerA having a dependency on containerB reaching a <code>COMPLETE</code>,
-     * <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a
-     * <code>startTimeout</code> value is specified for containerB and it does not
+     * <p>Time duration (in seconds) to wait before giving up on resolving dependencies
+     * for a container. For example, you specify two containers in a task definition
+     * with containerA having a dependency on containerB reaching a
+     * <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If
+     * a <code>startTimeout</code> value is specified for containerB and it does not
      * reach the desired status within that time then containerA will give up and not
      * start. This results in the task transitioning to a <code>STOPPED</code>
      * state.</p> <p>For tasks using the EC2 launch type, the container instances
@@ -2389,17 +2389,17 @@ namespace Model
 
 
     /**
-     * <p>Time duration to wait before the container is forcefully killed if it doesn't
-     * exit normally on its own. For tasks using the Fargate launch type, the max
-     * <code>stopTimeout</code> value is 2 minutes. This parameter is available for
-     * tasks using the Fargate launch type in the Ohio (us-east-2) region only and the
-     * task or service requires platform version 1.3.0 or later.</p> <p>For tasks using
-     * the EC2 launch type, the stop timeout value for the container takes precedence
-     * over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration
-     * parameter, if used. Container instances require at least version 1.26.0 of the
-     * container agent to enable a container stop timeout value. However, we recommend
-     * using the latest container agent version. For information about checking your
-     * agent version and updating to the latest version, see <a
+     * <p>Time duration (in seconds) to wait before the container is forcefully killed
+     * if it doesn't exit normally on its own. For tasks using the Fargate launch type,
+     * the max <code>stopTimeout</code> value is 2 minutes. This parameter is available
+     * for tasks using the Fargate launch type in the Ohio (us-east-2) region only and
+     * the task or service requires platform version 1.3.0 or later.</p> <p>For tasks
+     * using the EC2 launch type, the stop timeout value for the container takes
+     * precedence over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent
+     * configuration parameter, if used. Container instances require at least version
+     * 1.26.0 of the container agent to enable a container stop timeout value. However,
+     * we recommend using the latest container agent version. For information about
+     * checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2414,17 +2414,17 @@ namespace Model
     inline int GetStopTimeout() const{ return m_stopTimeout; }
 
     /**
-     * <p>Time duration to wait before the container is forcefully killed if it doesn't
-     * exit normally on its own. For tasks using the Fargate launch type, the max
-     * <code>stopTimeout</code> value is 2 minutes. This parameter is available for
-     * tasks using the Fargate launch type in the Ohio (us-east-2) region only and the
-     * task or service requires platform version 1.3.0 or later.</p> <p>For tasks using
-     * the EC2 launch type, the stop timeout value for the container takes precedence
-     * over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration
-     * parameter, if used. Container instances require at least version 1.26.0 of the
-     * container agent to enable a container stop timeout value. However, we recommend
-     * using the latest container agent version. For information about checking your
-     * agent version and updating to the latest version, see <a
+     * <p>Time duration (in seconds) to wait before the container is forcefully killed
+     * if it doesn't exit normally on its own. For tasks using the Fargate launch type,
+     * the max <code>stopTimeout</code> value is 2 minutes. This parameter is available
+     * for tasks using the Fargate launch type in the Ohio (us-east-2) region only and
+     * the task or service requires platform version 1.3.0 or later.</p> <p>For tasks
+     * using the EC2 launch type, the stop timeout value for the container takes
+     * precedence over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent
+     * configuration parameter, if used. Container instances require at least version
+     * 1.26.0 of the container agent to enable a container stop timeout value. However,
+     * we recommend using the latest container agent version. For information about
+     * checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2439,17 +2439,17 @@ namespace Model
     inline bool StopTimeoutHasBeenSet() const { return m_stopTimeoutHasBeenSet; }
 
     /**
-     * <p>Time duration to wait before the container is forcefully killed if it doesn't
-     * exit normally on its own. For tasks using the Fargate launch type, the max
-     * <code>stopTimeout</code> value is 2 minutes. This parameter is available for
-     * tasks using the Fargate launch type in the Ohio (us-east-2) region only and the
-     * task or service requires platform version 1.3.0 or later.</p> <p>For tasks using
-     * the EC2 launch type, the stop timeout value for the container takes precedence
-     * over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration
-     * parameter, if used. Container instances require at least version 1.26.0 of the
-     * container agent to enable a container stop timeout value. However, we recommend
-     * using the latest container agent version. For information about checking your
-     * agent version and updating to the latest version, see <a
+     * <p>Time duration (in seconds) to wait before the container is forcefully killed
+     * if it doesn't exit normally on its own. For tasks using the Fargate launch type,
+     * the max <code>stopTimeout</code> value is 2 minutes. This parameter is available
+     * for tasks using the Fargate launch type in the Ohio (us-east-2) region only and
+     * the task or service requires platform version 1.3.0 or later.</p> <p>For tasks
+     * using the EC2 launch type, the stop timeout value for the container takes
+     * precedence over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent
+     * configuration parameter, if used. Container instances require at least version
+     * 1.26.0 of the container agent to enable a container stop timeout value. However,
+     * we recommend using the latest container agent version. For information about
+     * checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
@@ -2464,17 +2464,17 @@ namespace Model
     inline void SetStopTimeout(int value) { m_stopTimeoutHasBeenSet = true; m_stopTimeout = value; }
 
     /**
-     * <p>Time duration to wait before the container is forcefully killed if it doesn't
-     * exit normally on its own. For tasks using the Fargate launch type, the max
-     * <code>stopTimeout</code> value is 2 minutes. This parameter is available for
-     * tasks using the Fargate launch type in the Ohio (us-east-2) region only and the
-     * task or service requires platform version 1.3.0 or later.</p> <p>For tasks using
-     * the EC2 launch type, the stop timeout value for the container takes precedence
-     * over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration
-     * parameter, if used. Container instances require at least version 1.26.0 of the
-     * container agent to enable a container stop timeout value. However, we recommend
-     * using the latest container agent version. For information about checking your
-     * agent version and updating to the latest version, see <a
+     * <p>Time duration (in seconds) to wait before the container is forcefully killed
+     * if it doesn't exit normally on its own. For tasks using the Fargate launch type,
+     * the max <code>stopTimeout</code> value is 2 minutes. This parameter is available
+     * for tasks using the Fargate launch type in the Ohio (us-east-2) region only and
+     * the task or service requires platform version 1.3.0 or later.</p> <p>For tasks
+     * using the EC2 launch type, the stop timeout value for the container takes
+     * precedence over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent
+     * configuration parameter, if used. Container instances require at least version
+     * 1.26.0 of the container agent to enable a container stop timeout value. However,
+     * we recommend using the latest container agent version. For information about
+     * checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
      * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your

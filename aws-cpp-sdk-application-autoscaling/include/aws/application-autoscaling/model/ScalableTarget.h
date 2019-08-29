@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/application-autoscaling/model/ScalableDimension.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/application-autoscaling/model/SuspendedState.h>
 #include <utility>
 
 namespace Aws
@@ -666,6 +667,25 @@ namespace Model
      */
     inline ScalableTarget& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
+
+    
+    inline const SuspendedState& GetSuspendedState() const{ return m_suspendedState; }
+
+    
+    inline bool SuspendedStateHasBeenSet() const { return m_suspendedStateHasBeenSet; }
+
+    
+    inline void SetSuspendedState(const SuspendedState& value) { m_suspendedStateHasBeenSet = true; m_suspendedState = value; }
+
+    
+    inline void SetSuspendedState(SuspendedState&& value) { m_suspendedStateHasBeenSet = true; m_suspendedState = std::move(value); }
+
+    
+    inline ScalableTarget& WithSuspendedState(const SuspendedState& value) { SetSuspendedState(value); return *this;}
+
+    
+    inline ScalableTarget& WithSuspendedState(SuspendedState&& value) { SetSuspendedState(std::move(value)); return *this;}
+
   private:
 
     ServiceNamespace m_serviceNamespace;
@@ -688,6 +708,9 @@ namespace Model
 
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
+    SuspendedState m_suspendedState;
+    bool m_suspendedStateHasBeenSet;
   };
 
 } // namespace Model

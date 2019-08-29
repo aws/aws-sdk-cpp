@@ -32,7 +32,8 @@ RegisterScalableTargetRequest::RegisterScalableTargetRequest() :
     m_minCapacityHasBeenSet(false),
     m_maxCapacity(0),
     m_maxCapacityHasBeenSet(false),
-    m_roleARNHasBeenSet(false)
+    m_roleARNHasBeenSet(false),
+    m_suspendedStateHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,12 @@ Aws::String RegisterScalableTargetRequest::SerializePayload() const
   if(m_roleARNHasBeenSet)
   {
    payload.WithString("RoleARN", m_roleARN);
+
+  }
+
+  if(m_suspendedStateHasBeenSet)
+  {
+   payload.WithObject("SuspendedState", m_suspendedState.Jsonize());
 
   }
 

@@ -27,12 +27,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DeleteEventSourceMappingResult::DeleteEventSourceMappingResult() : 
-    m_batchSize(0)
+    m_batchSize(0),
+    m_maximumBatchingWindowInSeconds(0)
 {
 }
 
 DeleteEventSourceMappingResult::DeleteEventSourceMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_batchSize(0)
+    m_batchSize(0),
+    m_maximumBatchingWindowInSeconds(0)
 {
   *this = result;
 }
@@ -49,6 +51,12 @@ DeleteEventSourceMappingResult& DeleteEventSourceMappingResult::operator =(const
   if(jsonValue.ValueExists("BatchSize"))
   {
     m_batchSize = jsonValue.GetInteger("BatchSize");
+
+  }
+
+  if(jsonValue.ValueExists("MaximumBatchingWindowInSeconds"))
+  {
+    m_maximumBatchingWindowInSeconds = jsonValue.GetInteger("MaximumBatchingWindowInSeconds");
 
   }
 

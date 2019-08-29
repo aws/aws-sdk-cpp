@@ -19,6 +19,7 @@
 #include <aws/codepipeline/model/PipelineExecutionStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codepipeline/model/ExecutionTrigger.h>
 #include <aws/codepipeline/model/SourceRevision.h>
 #include <utility>
 
@@ -275,6 +276,43 @@ namespace Model
      */
     inline PipelineExecutionSummary& AddSourceRevisions(SourceRevision&& value) { m_sourceRevisionsHasBeenSet = true; m_sourceRevisions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The interaction or event that started a pipeline execution, such as automated
+     * change detection or a <code>StartPipelineExecution</code> API call.</p>
+     */
+    inline const ExecutionTrigger& GetTrigger() const{ return m_trigger; }
+
+    /**
+     * <p>The interaction or event that started a pipeline execution, such as automated
+     * change detection or a <code>StartPipelineExecution</code> API call.</p>
+     */
+    inline bool TriggerHasBeenSet() const { return m_triggerHasBeenSet; }
+
+    /**
+     * <p>The interaction or event that started a pipeline execution, such as automated
+     * change detection or a <code>StartPipelineExecution</code> API call.</p>
+     */
+    inline void SetTrigger(const ExecutionTrigger& value) { m_triggerHasBeenSet = true; m_trigger = value; }
+
+    /**
+     * <p>The interaction or event that started a pipeline execution, such as automated
+     * change detection or a <code>StartPipelineExecution</code> API call.</p>
+     */
+    inline void SetTrigger(ExecutionTrigger&& value) { m_triggerHasBeenSet = true; m_trigger = std::move(value); }
+
+    /**
+     * <p>The interaction or event that started a pipeline execution, such as automated
+     * change detection or a <code>StartPipelineExecution</code> API call.</p>
+     */
+    inline PipelineExecutionSummary& WithTrigger(const ExecutionTrigger& value) { SetTrigger(value); return *this;}
+
+    /**
+     * <p>The interaction or event that started a pipeline execution, such as automated
+     * change detection or a <code>StartPipelineExecution</code> API call.</p>
+     */
+    inline PipelineExecutionSummary& WithTrigger(ExecutionTrigger&& value) { SetTrigger(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_pipelineExecutionId;
@@ -291,6 +329,9 @@ namespace Model
 
     Aws::Vector<SourceRevision> m_sourceRevisions;
     bool m_sourceRevisionsHasBeenSet;
+
+    ExecutionTrigger m_trigger;
+    bool m_triggerHasBeenSet;
   };
 
 } // namespace Model

@@ -57,7 +57,8 @@ CreateReplicationGroupRequest::CreateReplicationGroupRequest() :
     m_transitEncryptionEnabled(false),
     m_transitEncryptionEnabledHasBeenSet(false),
     m_atRestEncryptionEnabled(false),
-    m_atRestEncryptionEnabledHasBeenSet(false)
+    m_atRestEncryptionEnabledHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,11 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
   if(m_atRestEncryptionEnabledHasBeenSet)
   {
     ss << "AtRestEncryptionEnabled=" << std::boolalpha << m_atRestEncryptionEnabled << "&";
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+    ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
   ss << "Version=2015-02-02";

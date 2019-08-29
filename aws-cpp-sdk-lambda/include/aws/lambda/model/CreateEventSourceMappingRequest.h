@@ -284,6 +284,19 @@ namespace Model
     inline CreateEventSourceMappingRequest& WithBatchSize(int value) { SetBatchSize(value); return *this;}
 
 
+    
+    inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
+
+    
+    inline bool MaximumBatchingWindowInSecondsHasBeenSet() const { return m_maximumBatchingWindowInSecondsHasBeenSet; }
+
+    
+    inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSecondsHasBeenSet = true; m_maximumBatchingWindowInSeconds = value; }
+
+    
+    inline CreateEventSourceMappingRequest& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
+
+
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
      * Kinesis and Amazon DynamoDB Streams sources. <code>AT_TIMESTAMP</code> is only
@@ -376,6 +389,9 @@ namespace Model
 
     int m_batchSize;
     bool m_batchSizeHasBeenSet;
+
+    int m_maximumBatchingWindowInSeconds;
+    bool m_maximumBatchingWindowInSecondsHasBeenSet;
 
     EventSourcePosition m_startingPosition;
     bool m_startingPositionHasBeenSet;

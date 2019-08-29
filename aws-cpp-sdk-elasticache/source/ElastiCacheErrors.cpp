@@ -52,6 +52,7 @@ static const int CACHE_CLUSTER_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashStr
 static const int RESERVED_CACHE_NODE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ReservedCacheNodeAlreadyExists");
 static const int REPLICATION_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ReplicationGroupNotFoundFault");
 static const int INVALID_CACHE_SECURITY_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidCacheSecurityGroupState");
+static const int INVALID_K_M_S_KEY_FAULT_HASH = HashingUtils::HashString("InvalidKMSKeyFault");
 static const int CACHE_SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("CacheSubnetGroupAlreadyExists");
 static const int CACHE_SUBNET_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("CacheSubnetQuotaExceededFault");
 static const int CACHE_SUBNET_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("CacheSubnetGroupNotFoundFault");
@@ -176,6 +177,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_CACHE_SECURITY_GROUP_STATE_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::INVALID_CACHE_SECURITY_GROUP_STATE_FAULT), false);
+  }
+  else if (hashCode == INVALID_K_M_S_KEY_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::INVALID_K_M_S_KEY_FAULT), false);
   }
   else if (hashCode == CACHE_SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH)
   {

@@ -60,7 +60,8 @@ Snapshot::Snapshot() :
     m_numNodeGroupsHasBeenSet(false),
     m_automaticFailover(AutomaticFailoverStatus::NOT_SET),
     m_automaticFailoverHasBeenSet(false),
-    m_nodeSnapshotsHasBeenSet(false)
+    m_nodeSnapshotsHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -94,7 +95,8 @@ Snapshot::Snapshot(const XmlNode& xmlNode) :
     m_numNodeGroupsHasBeenSet(false),
     m_automaticFailover(AutomaticFailoverStatus::NOT_SET),
     m_automaticFailoverHasBeenSet(false),
-    m_nodeSnapshotsHasBeenSet(false)
+    m_nodeSnapshotsHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -255,6 +257,12 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
 
       m_nodeSnapshotsHasBeenSet = true;
     }
+    XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
+    if(!kmsKeyIdNode.IsNull())
+    {
+      m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
+      m_kmsKeyIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -388,6 +396,11 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       }
   }
 
+  if(m_kmsKeyIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+
 }
 
 void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -493,6 +506,10 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
         nodeSnapshotsSs << location <<  ".NodeSnapshot." << nodeSnapshotsIdx++;
         item.OutputToStream(oStream, nodeSnapshotsSs.str().c_str());
       }
+  }
+  if(m_kmsKeyIdHasBeenSet)
+  {
+      oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 }
 

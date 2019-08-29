@@ -56,7 +56,7 @@ namespace Model
     /**
      * <p>The node group (shard) identifier. This parameter is stored as a lowercase
      * string.</p> <p> <b>Constraints:</b> </p> <ul> <li> <p>A name must contain from 1
-     * to 20 alphanumeric characters or hyphens.</p> </li> <li> <p>The first character
+     * to 50 alphanumeric characters or hyphens.</p> </li> <li> <p>The first character
      * must be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
      */
@@ -65,7 +65,7 @@ namespace Model
     /**
      * <p>The node group (shard) identifier. This parameter is stored as a lowercase
      * string.</p> <p> <b>Constraints:</b> </p> <ul> <li> <p>A name must contain from 1
-     * to 20 alphanumeric characters or hyphens.</p> </li> <li> <p>The first character
+     * to 50 alphanumeric characters or hyphens.</p> </li> <li> <p>The first character
      * must be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
      */
@@ -74,7 +74,7 @@ namespace Model
     /**
      * <p>The node group (shard) identifier. This parameter is stored as a lowercase
      * string.</p> <p> <b>Constraints:</b> </p> <ul> <li> <p>A name must contain from 1
-     * to 20 alphanumeric characters or hyphens.</p> </li> <li> <p>The first character
+     * to 50 alphanumeric characters or hyphens.</p> </li> <li> <p>The first character
      * must be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
      */
@@ -83,7 +83,7 @@ namespace Model
     /**
      * <p>The node group (shard) identifier. This parameter is stored as a lowercase
      * string.</p> <p> <b>Constraints:</b> </p> <ul> <li> <p>A name must contain from 1
-     * to 20 alphanumeric characters or hyphens.</p> </li> <li> <p>The first character
+     * to 50 alphanumeric characters or hyphens.</p> </li> <li> <p>The first character
      * must be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
      */
@@ -92,7 +92,7 @@ namespace Model
     /**
      * <p>The node group (shard) identifier. This parameter is stored as a lowercase
      * string.</p> <p> <b>Constraints:</b> </p> <ul> <li> <p>A name must contain from 1
-     * to 20 alphanumeric characters or hyphens.</p> </li> <li> <p>The first character
+     * to 50 alphanumeric characters or hyphens.</p> </li> <li> <p>The first character
      * must be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
      */
@@ -101,7 +101,7 @@ namespace Model
     /**
      * <p>The node group (shard) identifier. This parameter is stored as a lowercase
      * string.</p> <p> <b>Constraints:</b> </p> <ul> <li> <p>A name must contain from 1
-     * to 20 alphanumeric characters or hyphens.</p> </li> <li> <p>The first character
+     * to 50 alphanumeric characters or hyphens.</p> </li> <li> <p>The first character
      * must be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
      */
@@ -110,7 +110,7 @@ namespace Model
     /**
      * <p>The node group (shard) identifier. This parameter is stored as a lowercase
      * string.</p> <p> <b>Constraints:</b> </p> <ul> <li> <p>A name must contain from 1
-     * to 20 alphanumeric characters or hyphens.</p> </li> <li> <p>The first character
+     * to 50 alphanumeric characters or hyphens.</p> </li> <li> <p>The first character
      * must be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
      */
@@ -119,7 +119,7 @@ namespace Model
     /**
      * <p>The node group (shard) identifier. This parameter is stored as a lowercase
      * string.</p> <p> <b>Constraints:</b> </p> <ul> <li> <p>A name must contain from 1
-     * to 20 alphanumeric characters or hyphens.</p> </li> <li> <p>The first character
+     * to 50 alphanumeric characters or hyphens.</p> </li> <li> <p>The first character
      * must be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
      */

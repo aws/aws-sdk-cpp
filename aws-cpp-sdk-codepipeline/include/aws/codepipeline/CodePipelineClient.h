@@ -437,14 +437,22 @@ namespace Model
         virtual void CreateCustomActionTypeAsync(const Model::CreateCustomActionTypeRequest& request, const CreateCustomActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a pipeline.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a pipeline.</p> <note> <p>In the pipeline structure, you must include
+         * either <code>artifactStore</code> or <code>artifactStores</code> in your
+         * pipeline, but you cannot use both. If you create a cross-region action in your
+         * pipeline, you must use <code>artifactStores</code>.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline">AWS
          * API Reference</a></p>
          */
         virtual Model::CreatePipelineOutcome CreatePipeline(const Model::CreatePipelineRequest& request) const;
 
         /**
-         * <p>Creates a pipeline.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a pipeline.</p> <note> <p>In the pipeline structure, you must include
+         * either <code>artifactStore</code> or <code>artifactStores</code> in your
+         * pipeline, but you cannot use both. If you create a cross-region action in your
+         * pipeline, you must use <code>artifactStores</code>.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline">AWS
          * API Reference</a></p>
          *
@@ -453,7 +461,11 @@ namespace Model
         virtual Model::CreatePipelineOutcomeCallable CreatePipelineCallable(const Model::CreatePipelineRequest& request) const;
 
         /**
-         * <p>Creates a pipeline.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a pipeline.</p> <note> <p>In the pipeline structure, you must include
+         * either <code>artifactStore</code> or <code>artifactStores</code> in your
+         * pipeline, but you cannot use both. If you create a cross-region action in your
+         * pipeline, you must use <code>artifactStores</code>.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline">AWS
          * API Reference</a></p>
          *

@@ -1437,6 +1437,47 @@ namespace Model
      */
     inline Snapshot& AddNodeSnapshots(NodeSnapshot&& value) { m_nodeSnapshotsHasBeenSet = true; m_nodeSnapshots.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ID of the KMS key used to encrypt the snapshot.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The ID of the KMS key used to encrypt the snapshot.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the KMS key used to encrypt the snapshot.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p>The ID of the KMS key used to encrypt the snapshot.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>The ID of the KMS key used to encrypt the snapshot.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>The ID of the KMS key used to encrypt the snapshot.</p>
+     */
+    inline Snapshot& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The ID of the KMS key used to encrypt the snapshot.</p>
+     */
+    inline Snapshot& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the KMS key used to encrypt the snapshot.</p>
+     */
+    inline Snapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_snapshotName;
@@ -1510,6 +1551,9 @@ namespace Model
 
     Aws::Vector<NodeSnapshot> m_nodeSnapshots;
     bool m_nodeSnapshotsHasBeenSet;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet;
   };
 
 } // namespace Model

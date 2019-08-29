@@ -252,16 +252,20 @@ namespace Model
 
 
     /**
-     * <p>A load balancer object representing the load balancer to use with your
-     * service.</p> <p>If the service is using the <code>ECS</code> deployment
-     * controller, you are limited to one load balancer or target group.</p> <p>If the
-     * service is using the <code>CODE_DEPLOY</code> deployment controller, the service
-     * is required to use either an Application Load Balancer or Network Load Balancer.
-     * When creating an AWS CodeDeploy deployment group, you specify two target groups
-     * (referred to as a <code>targetGroupPair</code>). During a deployment, AWS
-     * CodeDeploy determines which task set in your service has the status
-     * <code>PRIMARY</code> and associates one target group with it, and then
-     * associates the other target group with the replacement task set. The load
+     * <p>A load balancer object representing the load balancers to use with your
+     * service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>If the service is using the rolling update (<code>ECS</code>)
+     * deployment controller and using either an Application Load Balancer or Network
+     * Load Balancer, you can specify multiple target groups to attach to the
+     * service.</p> <p>If the service is using the <code>CODE_DEPLOY</code> deployment
+     * controller, the service is required to use either an Application Load Balancer
+     * or Network Load Balancer. When creating an AWS CodeDeploy deployment group, you
+     * specify two target groups (referred to as a <code>targetGroupPair</code>).
+     * During a deployment, AWS CodeDeploy determines which task set in your service
+     * has the status <code>PRIMARY</code> and associates one target group with it, and
+     * then associates the other target group with the replacement task set. The load
      * balancer can also have up to two listeners: a required listener for production
      * traffic and an optional listener that allows you perform validation tests with
      * Lambda functions before routing production traffic to it.</p> <p>After you
@@ -269,16 +273,16 @@ namespace Model
      * balancer name or target group ARN, container name, and container port specified
      * in the service definition are immutable. If you are using the
      * <code>CODE_DEPLOY</code> deployment controller, these values can be changed when
-     * updating the service.</p> <p>For Classic Load Balancers, this object must
-     * contain the load balancer name, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * is registered with the load balancer specified here.</p> <p>For Application Load
-     * Balancers and Network Load Balancers, this object must contain the load balancer
-     * target group ARN, the container name (as it appears in a container definition),
-     * and the container port to access from the load balancer. When a task from this
-     * service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group specified here.</p>
+     * updating the service.</p> <p>For Application Load Balancers and Network Load
+     * Balancers, this object must contain the load balancer target group ARN, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as
+     * a target in the target group specified here.</p> <p>For Classic Load Balancers,
+     * this object must contain the load balancer name, the container name (as it
+     * appears in a container definition), and the container port to access from the
+     * load balancer. When a task from this service is placed on a container instance,
+     * the container instance is registered with the load balancer specified here.</p>
      * <p>Services with tasks that use the <code>awsvpc</code> network mode (for
      * example, those with the Fargate launch type) only support Application Load
      * Balancers and Network Load Balancers. Classic Load Balancers are not supported.
@@ -290,16 +294,20 @@ namespace Model
     inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const{ return m_loadBalancers; }
 
     /**
-     * <p>A load balancer object representing the load balancer to use with your
-     * service.</p> <p>If the service is using the <code>ECS</code> deployment
-     * controller, you are limited to one load balancer or target group.</p> <p>If the
-     * service is using the <code>CODE_DEPLOY</code> deployment controller, the service
-     * is required to use either an Application Load Balancer or Network Load Balancer.
-     * When creating an AWS CodeDeploy deployment group, you specify two target groups
-     * (referred to as a <code>targetGroupPair</code>). During a deployment, AWS
-     * CodeDeploy determines which task set in your service has the status
-     * <code>PRIMARY</code> and associates one target group with it, and then
-     * associates the other target group with the replacement task set. The load
+     * <p>A load balancer object representing the load balancers to use with your
+     * service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>If the service is using the rolling update (<code>ECS</code>)
+     * deployment controller and using either an Application Load Balancer or Network
+     * Load Balancer, you can specify multiple target groups to attach to the
+     * service.</p> <p>If the service is using the <code>CODE_DEPLOY</code> deployment
+     * controller, the service is required to use either an Application Load Balancer
+     * or Network Load Balancer. When creating an AWS CodeDeploy deployment group, you
+     * specify two target groups (referred to as a <code>targetGroupPair</code>).
+     * During a deployment, AWS CodeDeploy determines which task set in your service
+     * has the status <code>PRIMARY</code> and associates one target group with it, and
+     * then associates the other target group with the replacement task set. The load
      * balancer can also have up to two listeners: a required listener for production
      * traffic and an optional listener that allows you perform validation tests with
      * Lambda functions before routing production traffic to it.</p> <p>After you
@@ -307,16 +315,16 @@ namespace Model
      * balancer name or target group ARN, container name, and container port specified
      * in the service definition are immutable. If you are using the
      * <code>CODE_DEPLOY</code> deployment controller, these values can be changed when
-     * updating the service.</p> <p>For Classic Load Balancers, this object must
-     * contain the load balancer name, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * is registered with the load balancer specified here.</p> <p>For Application Load
-     * Balancers and Network Load Balancers, this object must contain the load balancer
-     * target group ARN, the container name (as it appears in a container definition),
-     * and the container port to access from the load balancer. When a task from this
-     * service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group specified here.</p>
+     * updating the service.</p> <p>For Application Load Balancers and Network Load
+     * Balancers, this object must contain the load balancer target group ARN, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as
+     * a target in the target group specified here.</p> <p>For Classic Load Balancers,
+     * this object must contain the load balancer name, the container name (as it
+     * appears in a container definition), and the container port to access from the
+     * load balancer. When a task from this service is placed on a container instance,
+     * the container instance is registered with the load balancer specified here.</p>
      * <p>Services with tasks that use the <code>awsvpc</code> network mode (for
      * example, those with the Fargate launch type) only support Application Load
      * Balancers and Network Load Balancers. Classic Load Balancers are not supported.
@@ -328,16 +336,20 @@ namespace Model
     inline bool LoadBalancersHasBeenSet() const { return m_loadBalancersHasBeenSet; }
 
     /**
-     * <p>A load balancer object representing the load balancer to use with your
-     * service.</p> <p>If the service is using the <code>ECS</code> deployment
-     * controller, you are limited to one load balancer or target group.</p> <p>If the
-     * service is using the <code>CODE_DEPLOY</code> deployment controller, the service
-     * is required to use either an Application Load Balancer or Network Load Balancer.
-     * When creating an AWS CodeDeploy deployment group, you specify two target groups
-     * (referred to as a <code>targetGroupPair</code>). During a deployment, AWS
-     * CodeDeploy determines which task set in your service has the status
-     * <code>PRIMARY</code> and associates one target group with it, and then
-     * associates the other target group with the replacement task set. The load
+     * <p>A load balancer object representing the load balancers to use with your
+     * service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>If the service is using the rolling update (<code>ECS</code>)
+     * deployment controller and using either an Application Load Balancer or Network
+     * Load Balancer, you can specify multiple target groups to attach to the
+     * service.</p> <p>If the service is using the <code>CODE_DEPLOY</code> deployment
+     * controller, the service is required to use either an Application Load Balancer
+     * or Network Load Balancer. When creating an AWS CodeDeploy deployment group, you
+     * specify two target groups (referred to as a <code>targetGroupPair</code>).
+     * During a deployment, AWS CodeDeploy determines which task set in your service
+     * has the status <code>PRIMARY</code> and associates one target group with it, and
+     * then associates the other target group with the replacement task set. The load
      * balancer can also have up to two listeners: a required listener for production
      * traffic and an optional listener that allows you perform validation tests with
      * Lambda functions before routing production traffic to it.</p> <p>After you
@@ -345,16 +357,16 @@ namespace Model
      * balancer name or target group ARN, container name, and container port specified
      * in the service definition are immutable. If you are using the
      * <code>CODE_DEPLOY</code> deployment controller, these values can be changed when
-     * updating the service.</p> <p>For Classic Load Balancers, this object must
-     * contain the load balancer name, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * is registered with the load balancer specified here.</p> <p>For Application Load
-     * Balancers and Network Load Balancers, this object must contain the load balancer
-     * target group ARN, the container name (as it appears in a container definition),
-     * and the container port to access from the load balancer. When a task from this
-     * service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group specified here.</p>
+     * updating the service.</p> <p>For Application Load Balancers and Network Load
+     * Balancers, this object must contain the load balancer target group ARN, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as
+     * a target in the target group specified here.</p> <p>For Classic Load Balancers,
+     * this object must contain the load balancer name, the container name (as it
+     * appears in a container definition), and the container port to access from the
+     * load balancer. When a task from this service is placed on a container instance,
+     * the container instance is registered with the load balancer specified here.</p>
      * <p>Services with tasks that use the <code>awsvpc</code> network mode (for
      * example, those with the Fargate launch type) only support Application Load
      * Balancers and Network Load Balancers. Classic Load Balancers are not supported.
@@ -366,16 +378,20 @@ namespace Model
     inline void SetLoadBalancers(const Aws::Vector<LoadBalancer>& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = value; }
 
     /**
-     * <p>A load balancer object representing the load balancer to use with your
-     * service.</p> <p>If the service is using the <code>ECS</code> deployment
-     * controller, you are limited to one load balancer or target group.</p> <p>If the
-     * service is using the <code>CODE_DEPLOY</code> deployment controller, the service
-     * is required to use either an Application Load Balancer or Network Load Balancer.
-     * When creating an AWS CodeDeploy deployment group, you specify two target groups
-     * (referred to as a <code>targetGroupPair</code>). During a deployment, AWS
-     * CodeDeploy determines which task set in your service has the status
-     * <code>PRIMARY</code> and associates one target group with it, and then
-     * associates the other target group with the replacement task set. The load
+     * <p>A load balancer object representing the load balancers to use with your
+     * service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>If the service is using the rolling update (<code>ECS</code>)
+     * deployment controller and using either an Application Load Balancer or Network
+     * Load Balancer, you can specify multiple target groups to attach to the
+     * service.</p> <p>If the service is using the <code>CODE_DEPLOY</code> deployment
+     * controller, the service is required to use either an Application Load Balancer
+     * or Network Load Balancer. When creating an AWS CodeDeploy deployment group, you
+     * specify two target groups (referred to as a <code>targetGroupPair</code>).
+     * During a deployment, AWS CodeDeploy determines which task set in your service
+     * has the status <code>PRIMARY</code> and associates one target group with it, and
+     * then associates the other target group with the replacement task set. The load
      * balancer can also have up to two listeners: a required listener for production
      * traffic and an optional listener that allows you perform validation tests with
      * Lambda functions before routing production traffic to it.</p> <p>After you
@@ -383,16 +399,16 @@ namespace Model
      * balancer name or target group ARN, container name, and container port specified
      * in the service definition are immutable. If you are using the
      * <code>CODE_DEPLOY</code> deployment controller, these values can be changed when
-     * updating the service.</p> <p>For Classic Load Balancers, this object must
-     * contain the load balancer name, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * is registered with the load balancer specified here.</p> <p>For Application Load
-     * Balancers and Network Load Balancers, this object must contain the load balancer
-     * target group ARN, the container name (as it appears in a container definition),
-     * and the container port to access from the load balancer. When a task from this
-     * service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group specified here.</p>
+     * updating the service.</p> <p>For Application Load Balancers and Network Load
+     * Balancers, this object must contain the load balancer target group ARN, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as
+     * a target in the target group specified here.</p> <p>For Classic Load Balancers,
+     * this object must contain the load balancer name, the container name (as it
+     * appears in a container definition), and the container port to access from the
+     * load balancer. When a task from this service is placed on a container instance,
+     * the container instance is registered with the load balancer specified here.</p>
      * <p>Services with tasks that use the <code>awsvpc</code> network mode (for
      * example, those with the Fargate launch type) only support Application Load
      * Balancers and Network Load Balancers. Classic Load Balancers are not supported.
@@ -404,16 +420,20 @@ namespace Model
     inline void SetLoadBalancers(Aws::Vector<LoadBalancer>&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = std::move(value); }
 
     /**
-     * <p>A load balancer object representing the load balancer to use with your
-     * service.</p> <p>If the service is using the <code>ECS</code> deployment
-     * controller, you are limited to one load balancer or target group.</p> <p>If the
-     * service is using the <code>CODE_DEPLOY</code> deployment controller, the service
-     * is required to use either an Application Load Balancer or Network Load Balancer.
-     * When creating an AWS CodeDeploy deployment group, you specify two target groups
-     * (referred to as a <code>targetGroupPair</code>). During a deployment, AWS
-     * CodeDeploy determines which task set in your service has the status
-     * <code>PRIMARY</code> and associates one target group with it, and then
-     * associates the other target group with the replacement task set. The load
+     * <p>A load balancer object representing the load balancers to use with your
+     * service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>If the service is using the rolling update (<code>ECS</code>)
+     * deployment controller and using either an Application Load Balancer or Network
+     * Load Balancer, you can specify multiple target groups to attach to the
+     * service.</p> <p>If the service is using the <code>CODE_DEPLOY</code> deployment
+     * controller, the service is required to use either an Application Load Balancer
+     * or Network Load Balancer. When creating an AWS CodeDeploy deployment group, you
+     * specify two target groups (referred to as a <code>targetGroupPair</code>).
+     * During a deployment, AWS CodeDeploy determines which task set in your service
+     * has the status <code>PRIMARY</code> and associates one target group with it, and
+     * then associates the other target group with the replacement task set. The load
      * balancer can also have up to two listeners: a required listener for production
      * traffic and an optional listener that allows you perform validation tests with
      * Lambda functions before routing production traffic to it.</p> <p>After you
@@ -421,16 +441,16 @@ namespace Model
      * balancer name or target group ARN, container name, and container port specified
      * in the service definition are immutable. If you are using the
      * <code>CODE_DEPLOY</code> deployment controller, these values can be changed when
-     * updating the service.</p> <p>For Classic Load Balancers, this object must
-     * contain the load balancer name, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * is registered with the load balancer specified here.</p> <p>For Application Load
-     * Balancers and Network Load Balancers, this object must contain the load balancer
-     * target group ARN, the container name (as it appears in a container definition),
-     * and the container port to access from the load balancer. When a task from this
-     * service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group specified here.</p>
+     * updating the service.</p> <p>For Application Load Balancers and Network Load
+     * Balancers, this object must contain the load balancer target group ARN, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as
+     * a target in the target group specified here.</p> <p>For Classic Load Balancers,
+     * this object must contain the load balancer name, the container name (as it
+     * appears in a container definition), and the container port to access from the
+     * load balancer. When a task from this service is placed on a container instance,
+     * the container instance is registered with the load balancer specified here.</p>
      * <p>Services with tasks that use the <code>awsvpc</code> network mode (for
      * example, those with the Fargate launch type) only support Application Load
      * Balancers and Network Load Balancers. Classic Load Balancers are not supported.
@@ -442,16 +462,20 @@ namespace Model
     inline CreateServiceRequest& WithLoadBalancers(const Aws::Vector<LoadBalancer>& value) { SetLoadBalancers(value); return *this;}
 
     /**
-     * <p>A load balancer object representing the load balancer to use with your
-     * service.</p> <p>If the service is using the <code>ECS</code> deployment
-     * controller, you are limited to one load balancer or target group.</p> <p>If the
-     * service is using the <code>CODE_DEPLOY</code> deployment controller, the service
-     * is required to use either an Application Load Balancer or Network Load Balancer.
-     * When creating an AWS CodeDeploy deployment group, you specify two target groups
-     * (referred to as a <code>targetGroupPair</code>). During a deployment, AWS
-     * CodeDeploy determines which task set in your service has the status
-     * <code>PRIMARY</code> and associates one target group with it, and then
-     * associates the other target group with the replacement task set. The load
+     * <p>A load balancer object representing the load balancers to use with your
+     * service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>If the service is using the rolling update (<code>ECS</code>)
+     * deployment controller and using either an Application Load Balancer or Network
+     * Load Balancer, you can specify multiple target groups to attach to the
+     * service.</p> <p>If the service is using the <code>CODE_DEPLOY</code> deployment
+     * controller, the service is required to use either an Application Load Balancer
+     * or Network Load Balancer. When creating an AWS CodeDeploy deployment group, you
+     * specify two target groups (referred to as a <code>targetGroupPair</code>).
+     * During a deployment, AWS CodeDeploy determines which task set in your service
+     * has the status <code>PRIMARY</code> and associates one target group with it, and
+     * then associates the other target group with the replacement task set. The load
      * balancer can also have up to two listeners: a required listener for production
      * traffic and an optional listener that allows you perform validation tests with
      * Lambda functions before routing production traffic to it.</p> <p>After you
@@ -459,16 +483,16 @@ namespace Model
      * balancer name or target group ARN, container name, and container port specified
      * in the service definition are immutable. If you are using the
      * <code>CODE_DEPLOY</code> deployment controller, these values can be changed when
-     * updating the service.</p> <p>For Classic Load Balancers, this object must
-     * contain the load balancer name, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * is registered with the load balancer specified here.</p> <p>For Application Load
-     * Balancers and Network Load Balancers, this object must contain the load balancer
-     * target group ARN, the container name (as it appears in a container definition),
-     * and the container port to access from the load balancer. When a task from this
-     * service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group specified here.</p>
+     * updating the service.</p> <p>For Application Load Balancers and Network Load
+     * Balancers, this object must contain the load balancer target group ARN, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as
+     * a target in the target group specified here.</p> <p>For Classic Load Balancers,
+     * this object must contain the load balancer name, the container name (as it
+     * appears in a container definition), and the container port to access from the
+     * load balancer. When a task from this service is placed on a container instance,
+     * the container instance is registered with the load balancer specified here.</p>
      * <p>Services with tasks that use the <code>awsvpc</code> network mode (for
      * example, those with the Fargate launch type) only support Application Load
      * Balancers and Network Load Balancers. Classic Load Balancers are not supported.
@@ -480,16 +504,20 @@ namespace Model
     inline CreateServiceRequest& WithLoadBalancers(Aws::Vector<LoadBalancer>&& value) { SetLoadBalancers(std::move(value)); return *this;}
 
     /**
-     * <p>A load balancer object representing the load balancer to use with your
-     * service.</p> <p>If the service is using the <code>ECS</code> deployment
-     * controller, you are limited to one load balancer or target group.</p> <p>If the
-     * service is using the <code>CODE_DEPLOY</code> deployment controller, the service
-     * is required to use either an Application Load Balancer or Network Load Balancer.
-     * When creating an AWS CodeDeploy deployment group, you specify two target groups
-     * (referred to as a <code>targetGroupPair</code>). During a deployment, AWS
-     * CodeDeploy determines which task set in your service has the status
-     * <code>PRIMARY</code> and associates one target group with it, and then
-     * associates the other target group with the replacement task set. The load
+     * <p>A load balancer object representing the load balancers to use with your
+     * service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>If the service is using the rolling update (<code>ECS</code>)
+     * deployment controller and using either an Application Load Balancer or Network
+     * Load Balancer, you can specify multiple target groups to attach to the
+     * service.</p> <p>If the service is using the <code>CODE_DEPLOY</code> deployment
+     * controller, the service is required to use either an Application Load Balancer
+     * or Network Load Balancer. When creating an AWS CodeDeploy deployment group, you
+     * specify two target groups (referred to as a <code>targetGroupPair</code>).
+     * During a deployment, AWS CodeDeploy determines which task set in your service
+     * has the status <code>PRIMARY</code> and associates one target group with it, and
+     * then associates the other target group with the replacement task set. The load
      * balancer can also have up to two listeners: a required listener for production
      * traffic and an optional listener that allows you perform validation tests with
      * Lambda functions before routing production traffic to it.</p> <p>After you
@@ -497,16 +525,16 @@ namespace Model
      * balancer name or target group ARN, container name, and container port specified
      * in the service definition are immutable. If you are using the
      * <code>CODE_DEPLOY</code> deployment controller, these values can be changed when
-     * updating the service.</p> <p>For Classic Load Balancers, this object must
-     * contain the load balancer name, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * is registered with the load balancer specified here.</p> <p>For Application Load
-     * Balancers and Network Load Balancers, this object must contain the load balancer
-     * target group ARN, the container name (as it appears in a container definition),
-     * and the container port to access from the load balancer. When a task from this
-     * service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group specified here.</p>
+     * updating the service.</p> <p>For Application Load Balancers and Network Load
+     * Balancers, this object must contain the load balancer target group ARN, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as
+     * a target in the target group specified here.</p> <p>For Classic Load Balancers,
+     * this object must contain the load balancer name, the container name (as it
+     * appears in a container definition), and the container port to access from the
+     * load balancer. When a task from this service is placed on a container instance,
+     * the container instance is registered with the load balancer specified here.</p>
      * <p>Services with tasks that use the <code>awsvpc</code> network mode (for
      * example, those with the Fargate launch type) only support Application Load
      * Balancers and Network Load Balancers. Classic Load Balancers are not supported.
@@ -518,16 +546,20 @@ namespace Model
     inline CreateServiceRequest& AddLoadBalancers(const LoadBalancer& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
 
     /**
-     * <p>A load balancer object representing the load balancer to use with your
-     * service.</p> <p>If the service is using the <code>ECS</code> deployment
-     * controller, you are limited to one load balancer or target group.</p> <p>If the
-     * service is using the <code>CODE_DEPLOY</code> deployment controller, the service
-     * is required to use either an Application Load Balancer or Network Load Balancer.
-     * When creating an AWS CodeDeploy deployment group, you specify two target groups
-     * (referred to as a <code>targetGroupPair</code>). During a deployment, AWS
-     * CodeDeploy determines which task set in your service has the status
-     * <code>PRIMARY</code> and associates one target group with it, and then
-     * associates the other target group with the replacement task set. The load
+     * <p>A load balancer object representing the load balancers to use with your
+     * service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>If the service is using the rolling update (<code>ECS</code>)
+     * deployment controller and using either an Application Load Balancer or Network
+     * Load Balancer, you can specify multiple target groups to attach to the
+     * service.</p> <p>If the service is using the <code>CODE_DEPLOY</code> deployment
+     * controller, the service is required to use either an Application Load Balancer
+     * or Network Load Balancer. When creating an AWS CodeDeploy deployment group, you
+     * specify two target groups (referred to as a <code>targetGroupPair</code>).
+     * During a deployment, AWS CodeDeploy determines which task set in your service
+     * has the status <code>PRIMARY</code> and associates one target group with it, and
+     * then associates the other target group with the replacement task set. The load
      * balancer can also have up to two listeners: a required listener for production
      * traffic and an optional listener that allows you perform validation tests with
      * Lambda functions before routing production traffic to it.</p> <p>After you
@@ -535,16 +567,16 @@ namespace Model
      * balancer name or target group ARN, container name, and container port specified
      * in the service definition are immutable. If you are using the
      * <code>CODE_DEPLOY</code> deployment controller, these values can be changed when
-     * updating the service.</p> <p>For Classic Load Balancers, this object must
-     * contain the load balancer name, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * is registered with the load balancer specified here.</p> <p>For Application Load
-     * Balancers and Network Load Balancers, this object must contain the load balancer
-     * target group ARN, the container name (as it appears in a container definition),
-     * and the container port to access from the load balancer. When a task from this
-     * service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group specified here.</p>
+     * updating the service.</p> <p>For Application Load Balancers and Network Load
+     * Balancers, this object must contain the load balancer target group ARN, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as
+     * a target in the target group specified here.</p> <p>For Classic Load Balancers,
+     * this object must contain the load balancer name, the container name (as it
+     * appears in a container definition), and the container port to access from the
+     * load balancer. When a task from this service is placed on a container instance,
+     * the container instance is registered with the load balancer specified here.</p>
      * <p>Services with tasks that use the <code>awsvpc</code> network mode (for
      * example, those with the Fargate launch type) only support Application Load
      * Balancers and Network Load Balancers. Classic Load Balancers are not supported.

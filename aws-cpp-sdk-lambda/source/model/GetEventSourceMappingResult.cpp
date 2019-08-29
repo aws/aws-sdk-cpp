@@ -27,12 +27,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetEventSourceMappingResult::GetEventSourceMappingResult() : 
-    m_batchSize(0)
+    m_batchSize(0),
+    m_maximumBatchingWindowInSeconds(0)
 {
 }
 
 GetEventSourceMappingResult::GetEventSourceMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_batchSize(0)
+    m_batchSize(0),
+    m_maximumBatchingWindowInSeconds(0)
 {
   *this = result;
 }
@@ -49,6 +51,12 @@ GetEventSourceMappingResult& GetEventSourceMappingResult::operator =(const Aws::
   if(jsonValue.ValueExists("BatchSize"))
   {
     m_batchSize = jsonValue.GetInteger("BatchSize");
+
+  }
+
+  if(jsonValue.ValueExists("MaximumBatchingWindowInSeconds"))
+  {
+    m_maximumBatchingWindowInSeconds = jsonValue.GetInteger("MaximumBatchingWindowInSeconds");
 
   }
 

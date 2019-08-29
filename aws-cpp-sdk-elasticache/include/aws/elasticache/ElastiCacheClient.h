@@ -1718,9 +1718,9 @@ namespace Model
 
         /**
          * <p>Lists all available node types that you can scale your Redis cluster's or
-         * replication group's current node type up to.</p> <p>When you use the
+         * replication group's current node type.</p> <p>When you use the
          * <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>
-         * operations to scale up your cluster or replication group, the value of the
+         * operations to scale your cluster or replication group, the value of the
          * <code>CacheNodeType</code> parameter must be one of the node types returned by
          * this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListAllowedNodeTypeModifications">AWS
@@ -1730,9 +1730,9 @@ namespace Model
 
         /**
          * <p>Lists all available node types that you can scale your Redis cluster's or
-         * replication group's current node type up to.</p> <p>When you use the
+         * replication group's current node type.</p> <p>When you use the
          * <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>
-         * operations to scale up your cluster or replication group, the value of the
+         * operations to scale your cluster or replication group, the value of the
          * <code>CacheNodeType</code> parameter must be one of the node types returned by
          * this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListAllowedNodeTypeModifications">AWS
@@ -1744,9 +1744,9 @@ namespace Model
 
         /**
          * <p>Lists all available node types that you can scale your Redis cluster's or
-         * replication group's current node type up to.</p> <p>When you use the
+         * replication group's current node type.</p> <p>When you use the
          * <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>
-         * operations to scale up your cluster or replication group, the value of the
+         * operations to scale your cluster or replication group, the value of the
          * <code>CacheNodeType</code> parameter must be one of the node types returned by
          * this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListAllowedNodeTypeModifications">AWS

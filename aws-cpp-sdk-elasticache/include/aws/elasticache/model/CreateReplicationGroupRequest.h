@@ -55,7 +55,7 @@ namespace Model
 
     /**
      * <p>The replication group identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>A name must contain from 1 to 20
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>A name must contain from 1 to 40
      * alphanumeric characters or hyphens.</p> </li> <li> <p>The first character must
      * be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
@@ -64,7 +64,7 @@ namespace Model
 
     /**
      * <p>The replication group identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>A name must contain from 1 to 20
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>A name must contain from 1 to 40
      * alphanumeric characters or hyphens.</p> </li> <li> <p>The first character must
      * be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
@@ -73,7 +73,7 @@ namespace Model
 
     /**
      * <p>The replication group identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>A name must contain from 1 to 20
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>A name must contain from 1 to 40
      * alphanumeric characters or hyphens.</p> </li> <li> <p>The first character must
      * be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
@@ -82,7 +82,7 @@ namespace Model
 
     /**
      * <p>The replication group identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>A name must contain from 1 to 20
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>A name must contain from 1 to 40
      * alphanumeric characters or hyphens.</p> </li> <li> <p>The first character must
      * be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
@@ -91,7 +91,7 @@ namespace Model
 
     /**
      * <p>The replication group identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>A name must contain from 1 to 20
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>A name must contain from 1 to 40
      * alphanumeric characters or hyphens.</p> </li> <li> <p>The first character must
      * be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
@@ -100,7 +100,7 @@ namespace Model
 
     /**
      * <p>The replication group identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>A name must contain from 1 to 20
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>A name must contain from 1 to 40
      * alphanumeric characters or hyphens.</p> </li> <li> <p>The first character must
      * be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
@@ -109,7 +109,7 @@ namespace Model
 
     /**
      * <p>The replication group identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>A name must contain from 1 to 20
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>A name must contain from 1 to 40
      * alphanumeric characters or hyphens.</p> </li> <li> <p>The first character must
      * be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
@@ -118,7 +118,7 @@ namespace Model
 
     /**
      * <p>The replication group identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>A name must contain from 1 to 20
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>A name must contain from 1 to 40
      * alphanumeric characters or hyphens.</p> </li> <li> <p>The first character must
      * be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
@@ -2193,10 +2193,10 @@ namespace Model
      * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
      * cluster.</p> <p>This parameter is valid only if the <code>Engine</code>
      * parameter is <code>redis</code>, the <code>EngineVersion</code> parameter is
-     * <code>3.2.6</code> or <code>4.x</code>, and the cluster is being created in an
-     * Amazon VPC.</p> <p>If you enable in-transit encryption, you must also specify a
-     * value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only available
-     * when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being created
+     * in an Amazon VPC.</p> <p>If you enable in-transit encryption, you must also
+     * specify a value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only
+     * available when creating a replication group in an Amazon VPC using redis version
      * <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default:
      * <code>false</code> </p> <important> <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
@@ -2211,10 +2211,10 @@ namespace Model
      * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
      * cluster.</p> <p>This parameter is valid only if the <code>Engine</code>
      * parameter is <code>redis</code>, the <code>EngineVersion</code> parameter is
-     * <code>3.2.6</code> or <code>4.x</code>, and the cluster is being created in an
-     * Amazon VPC.</p> <p>If you enable in-transit encryption, you must also specify a
-     * value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only available
-     * when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being created
+     * in an Amazon VPC.</p> <p>If you enable in-transit encryption, you must also
+     * specify a value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only
+     * available when creating a replication group in an Amazon VPC using redis version
      * <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default:
      * <code>false</code> </p> <important> <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
@@ -2229,10 +2229,10 @@ namespace Model
      * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
      * cluster.</p> <p>This parameter is valid only if the <code>Engine</code>
      * parameter is <code>redis</code>, the <code>EngineVersion</code> parameter is
-     * <code>3.2.6</code> or <code>4.x</code>, and the cluster is being created in an
-     * Amazon VPC.</p> <p>If you enable in-transit encryption, you must also specify a
-     * value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only available
-     * when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being created
+     * in an Amazon VPC.</p> <p>If you enable in-transit encryption, you must also
+     * specify a value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only
+     * available when creating a replication group in an Amazon VPC using redis version
      * <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default:
      * <code>false</code> </p> <important> <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
@@ -2247,10 +2247,10 @@ namespace Model
      * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
      * cluster.</p> <p>This parameter is valid only if the <code>Engine</code>
      * parameter is <code>redis</code>, the <code>EngineVersion</code> parameter is
-     * <code>3.2.6</code> or <code>4.x</code>, and the cluster is being created in an
-     * Amazon VPC.</p> <p>If you enable in-transit encryption, you must also specify a
-     * value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only available
-     * when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being created
+     * in an Amazon VPC.</p> <p>If you enable in-transit encryption, you must also
+     * specify a value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only
+     * available when creating a replication group in an Amazon VPC using redis version
      * <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default:
      * <code>false</code> </p> <important> <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
@@ -2306,6 +2306,47 @@ namespace Model
      * <code>false</code> </p>
      */
     inline CreateReplicationGroupRequest& WithAtRestEncryptionEnabled(bool value) { SetAtRestEncryptionEnabled(value); return *this;}
+
+
+    /**
+     * <p>The ID of the KMS key used to encrypt the disk on the cluster.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The ID of the KMS key used to encrypt the disk on the cluster.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the KMS key used to encrypt the disk on the cluster.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p>The ID of the KMS key used to encrypt the disk on the cluster.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>The ID of the KMS key used to encrypt the disk on the cluster.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>The ID of the KMS key used to encrypt the disk on the cluster.</p>
+     */
+    inline CreateReplicationGroupRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The ID of the KMS key used to encrypt the disk on the cluster.</p>
+     */
+    inline CreateReplicationGroupRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the KMS key used to encrypt the disk on the cluster.</p>
+     */
+    inline CreateReplicationGroupRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
   private:
 
@@ -2392,6 +2433,9 @@ namespace Model
 
     bool m_atRestEncryptionEnabled;
     bool m_atRestEncryptionEnabledHasBeenSet;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet;
   };
 
 } // namespace Model

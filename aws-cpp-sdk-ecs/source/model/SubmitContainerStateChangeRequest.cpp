@@ -26,6 +26,7 @@ SubmitContainerStateChangeRequest::SubmitContainerStateChangeRequest() :
     m_clusterHasBeenSet(false),
     m_taskHasBeenSet(false),
     m_containerNameHasBeenSet(false),
+    m_runtimeIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_exitCode(0),
     m_exitCodeHasBeenSet(false),
@@ -53,6 +54,12 @@ Aws::String SubmitContainerStateChangeRequest::SerializePayload() const
   if(m_containerNameHasBeenSet)
   {
    payload.WithString("containerName", m_containerName);
+
+  }
+
+  if(m_runtimeIdHasBeenSet)
+  {
+   payload.WithString("runtimeId", m_runtimeId);
 
   }
 

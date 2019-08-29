@@ -23,7 +23,8 @@ using namespace Aws::Utils;
 CreateSnapshotRequest::CreateSnapshotRequest() : 
     m_replicationGroupIdHasBeenSet(false),
     m_cacheClusterIdHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false)
+    m_snapshotNameHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -44,6 +45,11 @@ Aws::String CreateSnapshotRequest::SerializePayload() const
   if(m_snapshotNameHasBeenSet)
   {
     ss << "SnapshotName=" << StringUtils::URLEncode(m_snapshotName.c_str()) << "&";
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+    ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
   ss << "Version=2015-02-02";

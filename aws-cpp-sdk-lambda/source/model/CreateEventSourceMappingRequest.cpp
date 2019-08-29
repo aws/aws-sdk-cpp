@@ -29,6 +29,8 @@ CreateEventSourceMappingRequest::CreateEventSourceMappingRequest() :
     m_enabledHasBeenSet(false),
     m_batchSize(0),
     m_batchSizeHasBeenSet(false),
+    m_maximumBatchingWindowInSeconds(0),
+    m_maximumBatchingWindowInSecondsHasBeenSet(false),
     m_startingPosition(EventSourcePosition::NOT_SET),
     m_startingPositionHasBeenSet(false),
     m_startingPositionTimestampHasBeenSet(false)
@@ -60,6 +62,12 @@ Aws::String CreateEventSourceMappingRequest::SerializePayload() const
   if(m_batchSizeHasBeenSet)
   {
    payload.WithInteger("BatchSize", m_batchSize);
+
+  }
+
+  if(m_maximumBatchingWindowInSecondsHasBeenSet)
+  {
+   payload.WithInteger("MaximumBatchingWindowInSeconds", m_maximumBatchingWindowInSeconds);
 
   }
 

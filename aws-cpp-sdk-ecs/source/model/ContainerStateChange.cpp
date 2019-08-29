@@ -30,6 +30,7 @@ namespace Model
 
 ContainerStateChange::ContainerStateChange() : 
     m_containerNameHasBeenSet(false),
+    m_runtimeIdHasBeenSet(false),
     m_exitCode(0),
     m_exitCodeHasBeenSet(false),
     m_networkBindingsHasBeenSet(false),
@@ -40,6 +41,7 @@ ContainerStateChange::ContainerStateChange() :
 
 ContainerStateChange::ContainerStateChange(JsonView jsonValue) : 
     m_containerNameHasBeenSet(false),
+    m_runtimeIdHasBeenSet(false),
     m_exitCode(0),
     m_exitCodeHasBeenSet(false),
     m_networkBindingsHasBeenSet(false),
@@ -56,6 +58,13 @@ ContainerStateChange& ContainerStateChange::operator =(JsonView jsonValue)
     m_containerName = jsonValue.GetString("containerName");
 
     m_containerNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("runtimeId"))
+  {
+    m_runtimeId = jsonValue.GetString("runtimeId");
+
+    m_runtimeIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("exitCode"))
@@ -99,6 +108,12 @@ JsonValue ContainerStateChange::Jsonize() const
   if(m_containerNameHasBeenSet)
   {
    payload.WithString("containerName", m_containerName);
+
+  }
+
+  if(m_runtimeIdHasBeenSet)
+  {
+   payload.WithString("runtimeId", m_runtimeId);
 
   }
 
