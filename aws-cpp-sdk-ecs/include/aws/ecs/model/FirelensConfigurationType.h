@@ -23,25 +23,19 @@ namespace ECS
 {
 namespace Model
 {
-  enum class LogDriver
+  enum class FirelensConfigurationType
   {
     NOT_SET,
-    json_file,
-    syslog,
-    journald,
-    gelf,
     fluentd,
-    awslogs,
-    splunk,
-    awsfirelens
+    fluentbit
   };
 
-namespace LogDriverMapper
+namespace FirelensConfigurationTypeMapper
 {
-AWS_ECS_API LogDriver GetLogDriverForName(const Aws::String& name);
+AWS_ECS_API FirelensConfigurationType GetFirelensConfigurationTypeForName(const Aws::String& name);
 
-AWS_ECS_API Aws::String GetNameForLogDriver(LogDriver value);
-} // namespace LogDriverMapper
+AWS_ECS_API Aws::String GetNameForFirelensConfigurationType(FirelensConfigurationType value);
+} // namespace FirelensConfigurationTypeMapper
 } // namespace Model
 } // namespace ECS
 } // namespace Aws

@@ -70,6 +70,15 @@ UpdateBrokerResult& UpdateBrokerResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("securityGroups"))
+  {
+    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
+    for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
+    {
+      m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
+    }
+  }
+
 
 
   return *this;

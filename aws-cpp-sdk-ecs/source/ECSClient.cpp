@@ -69,6 +69,7 @@
 #include <aws/ecs/model/SubmitTaskStateChangeRequest.h>
 #include <aws/ecs/model/TagResourceRequest.h>
 #include <aws/ecs/model/UntagResourceRequest.h>
+#include <aws/ecs/model/UpdateClusterSettingsRequest.h>
 #include <aws/ecs/model/UpdateContainerAgentRequest.h>
 #include <aws/ecs/model/UpdateContainerInstancesStateRequest.h>
 #include <aws/ecs/model/UpdateServiceRequest.h>
@@ -1510,6 +1511,41 @@ void ECSClient::UntagResourceAsync(const UntagResourceRequest& request, const Un
 void ECSClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateClusterSettingsOutcome ECSClient::UpdateClusterSettings(const UpdateClusterSettingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateClusterSettingsOutcome(UpdateClusterSettingsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateClusterSettingsOutcome(outcome.GetError());
+  }
+}
+
+UpdateClusterSettingsOutcomeCallable ECSClient::UpdateClusterSettingsCallable(const UpdateClusterSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateClusterSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateClusterSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECSClient::UpdateClusterSettingsAsync(const UpdateClusterSettingsRequest& request, const UpdateClusterSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateClusterSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void ECSClient::UpdateClusterSettingsAsyncHelper(const UpdateClusterSettingsRequest& request, const UpdateClusterSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateClusterSettings(request), context);
 }
 
 UpdateContainerAgentOutcome ECSClient::UpdateContainerAgent(const UpdateContainerAgentRequest& request) const

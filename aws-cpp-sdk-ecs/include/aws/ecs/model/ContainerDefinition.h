@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ecs/model/LogConfiguration.h>
 #include <aws/ecs/model/HealthCheck.h>
+#include <aws/ecs/model/FirelensConfiguration.h>
 #include <aws/ecs/model/PortMapping.h>
 #include <aws/ecs/model/KeyValuePair.h>
 #include <aws/ecs/model/MountPoint.h>
@@ -4403,6 +4404,43 @@ namespace Model
      */
     inline ContainerDefinition& AddResourceRequirements(ResourceRequirement&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The FireLens configuration for the container. This is used to specify and
+     * configure a log router for container logs.</p>
+     */
+    inline const FirelensConfiguration& GetFirelensConfiguration() const{ return m_firelensConfiguration; }
+
+    /**
+     * <p>The FireLens configuration for the container. This is used to specify and
+     * configure a log router for container logs.</p>
+     */
+    inline bool FirelensConfigurationHasBeenSet() const { return m_firelensConfigurationHasBeenSet; }
+
+    /**
+     * <p>The FireLens configuration for the container. This is used to specify and
+     * configure a log router for container logs.</p>
+     */
+    inline void SetFirelensConfiguration(const FirelensConfiguration& value) { m_firelensConfigurationHasBeenSet = true; m_firelensConfiguration = value; }
+
+    /**
+     * <p>The FireLens configuration for the container. This is used to specify and
+     * configure a log router for container logs.</p>
+     */
+    inline void SetFirelensConfiguration(FirelensConfiguration&& value) { m_firelensConfigurationHasBeenSet = true; m_firelensConfiguration = std::move(value); }
+
+    /**
+     * <p>The FireLens configuration for the container. This is used to specify and
+     * configure a log router for container logs.</p>
+     */
+    inline ContainerDefinition& WithFirelensConfiguration(const FirelensConfiguration& value) { SetFirelensConfiguration(value); return *this;}
+
+    /**
+     * <p>The FireLens configuration for the container. This is used to specify and
+     * configure a log router for container logs.</p>
+     */
+    inline ContainerDefinition& WithFirelensConfiguration(FirelensConfiguration&& value) { SetFirelensConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -4515,6 +4553,9 @@ namespace Model
 
     Aws::Vector<ResourceRequirement> m_resourceRequirements;
     bool m_resourceRequirementsHasBeenSet;
+
+    FirelensConfiguration m_firelensConfiguration;
+    bool m_firelensConfigurationHasBeenSet;
   };
 
 } // namespace Model

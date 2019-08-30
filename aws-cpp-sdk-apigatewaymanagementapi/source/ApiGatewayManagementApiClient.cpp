@@ -30,6 +30,8 @@
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiClient.h>
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiEndpoint.h>
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiErrorMarshaller.h>
+#include <aws/apigatewaymanagementapi/model/DeleteConnectionRequest.h>
+#include <aws/apigatewaymanagementapi/model/GetConnectionRequest.h>
 #include <aws/apigatewaymanagementapi/model/PostToConnectionRequest.h>
 
 using namespace Aws;
@@ -102,6 +104,88 @@ void ApiGatewayManagementApiClient::OverrideEndpoint(const Aws::String& endpoint
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+DeleteConnectionOutcome ApiGatewayManagementApiClient::DeleteConnection(const DeleteConnectionRequest& request) const
+{
+  if (!request.ConnectionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteConnection", "Required field: ConnectionId, is not set");
+    return DeleteConnectionOutcome(Aws::Client::AWSError<ApiGatewayManagementApiErrors>(ApiGatewayManagementApiErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/@connections/";
+  ss << request.GetConnectionId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteConnectionOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteConnectionOutcome(outcome.GetError());
+  }
+}
+
+DeleteConnectionOutcomeCallable ApiGatewayManagementApiClient::DeleteConnectionCallable(const DeleteConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApiGatewayManagementApiClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void ApiGatewayManagementApiClient::DeleteConnectionAsyncHelper(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteConnection(request), context);
+}
+
+GetConnectionOutcome ApiGatewayManagementApiClient::GetConnection(const GetConnectionRequest& request) const
+{
+  if (!request.ConnectionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetConnection", "Required field: ConnectionId, is not set");
+    return GetConnectionOutcome(Aws::Client::AWSError<ApiGatewayManagementApiErrors>(ApiGatewayManagementApiErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/@connections/";
+  ss << request.GetConnectionId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetConnectionOutcome(GetConnectionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetConnectionOutcome(outcome.GetError());
+  }
+}
+
+GetConnectionOutcomeCallable ApiGatewayManagementApiClient::GetConnectionCallable(const GetConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApiGatewayManagementApiClient::GetConnectionAsync(const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void ApiGatewayManagementApiClient::GetConnectionAsyncHelper(const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetConnection(request), context);
 }
 
 PostToConnectionOutcome ApiGatewayManagementApiClient::PostToConnection(const PostToConnectionRequest& request) const

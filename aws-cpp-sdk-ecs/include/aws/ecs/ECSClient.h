@@ -60,6 +60,7 @@
 #include <aws/ecs/model/SubmitTaskStateChangeResult.h>
 #include <aws/ecs/model/TagResourceResult.h>
 #include <aws/ecs/model/UntagResourceResult.h>
+#include <aws/ecs/model/UpdateClusterSettingsResult.h>
 #include <aws/ecs/model/UpdateContainerAgentResult.h>
 #include <aws/ecs/model/UpdateContainerInstancesStateResult.h>
 #include <aws/ecs/model/UpdateServiceResult.h>
@@ -143,6 +144,7 @@ namespace Model
         class SubmitTaskStateChangeRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdateClusterSettingsRequest;
         class UpdateContainerAgentRequest;
         class UpdateContainerInstancesStateRequest;
         class UpdateServiceRequest;
@@ -188,6 +190,7 @@ namespace Model
         typedef Aws::Utils::Outcome<SubmitTaskStateChangeResult, Aws::Client::AWSError<ECSErrors>> SubmitTaskStateChangeOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<ECSErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<ECSErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateClusterSettingsResult, Aws::Client::AWSError<ECSErrors>> UpdateClusterSettingsOutcome;
         typedef Aws::Utils::Outcome<UpdateContainerAgentResult, Aws::Client::AWSError<ECSErrors>> UpdateContainerAgentOutcome;
         typedef Aws::Utils::Outcome<UpdateContainerInstancesStateResult, Aws::Client::AWSError<ECSErrors>> UpdateContainerInstancesStateOutcome;
         typedef Aws::Utils::Outcome<UpdateServiceResult, Aws::Client::AWSError<ECSErrors>> UpdateServiceOutcome;
@@ -233,6 +236,7 @@ namespace Model
         typedef std::future<SubmitTaskStateChangeOutcome> SubmitTaskStateChangeOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateClusterSettingsOutcome> UpdateClusterSettingsOutcomeCallable;
         typedef std::future<UpdateContainerAgentOutcome> UpdateContainerAgentOutcomeCallable;
         typedef std::future<UpdateContainerInstancesStateOutcome> UpdateContainerInstancesStateOutcomeCallable;
         typedef std::future<UpdateServiceOutcome> UpdateServiceOutcomeCallable;
@@ -281,6 +285,7 @@ namespace Model
     typedef std::function<void(const ECSClient*, const Model::SubmitTaskStateChangeRequest&, const Model::SubmitTaskStateChangeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubmitTaskStateChangeResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const ECSClient*, const Model::UpdateClusterSettingsRequest&, const Model::UpdateClusterSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterSettingsResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::UpdateContainerAgentRequest&, const Model::UpdateContainerAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContainerAgentResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::UpdateContainerInstancesStateRequest&, const Model::UpdateContainerInstancesStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContainerInstancesStateResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::UpdateServiceRequest&, const Model::UpdateServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceResponseReceivedHandler;
@@ -2250,6 +2255,31 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies the settings to use for a cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateClusterSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateClusterSettingsOutcome UpdateClusterSettings(const Model::UpdateClusterSettingsRequest& request) const;
+
+        /**
+         * <p>Modifies the settings to use for a cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateClusterSettings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateClusterSettingsOutcomeCallable UpdateClusterSettingsCallable(const Model::UpdateClusterSettingsRequest& request) const;
+
+        /**
+         * <p>Modifies the settings to use for a cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateClusterSettings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateClusterSettingsAsync(const Model::UpdateClusterSettingsRequest& request, const UpdateClusterSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the Amazon ECS container agent on a specified container instance.
          * Updating the Amazon ECS container agent does not interrupt running tasks or
          * services on the container instance. The process for updating the agent differs
@@ -2822,6 +2852,7 @@ namespace Model
         void SubmitTaskStateChangeAsyncHelper(const Model::SubmitTaskStateChangeRequest& request, const SubmitTaskStateChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateClusterSettingsAsyncHelper(const Model::UpdateClusterSettingsRequest& request, const UpdateClusterSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateContainerAgentAsyncHelper(const Model::UpdateContainerAgentRequest& request, const UpdateContainerAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateContainerInstancesStateAsyncHelper(const Model::UpdateContainerInstancesStateRequest& request, const UpdateContainerInstancesStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateServiceAsyncHelper(const Model::UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -530,55 +530,55 @@ namespace Model
 
 
     /**
-     * The list of rules (1 minimum, 125 maximum) that authorize connections to
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
      * brokers.
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
-     * The list of rules (1 minimum, 125 maximum) that authorize connections to
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
      * brokers.
      */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
-     * The list of rules (1 minimum, 125 maximum) that authorize connections to
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
      * brokers.
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
-     * The list of rules (1 minimum, 125 maximum) that authorize connections to
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
      * brokers.
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
-     * The list of rules (1 minimum, 125 maximum) that authorize connections to
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
      * brokers.
      */
     inline CreateBrokerRequest& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     /**
-     * The list of rules (1 minimum, 125 maximum) that authorize connections to
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
      * brokers.
      */
     inline CreateBrokerRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * The list of rules (1 minimum, 125 maximum) that authorize connections to
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
      * brokers.
      */
     inline CreateBrokerRequest& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
-     * The list of rules (1 minimum, 125 maximum) that authorize connections to
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
      * brokers.
      */
     inline CreateBrokerRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * The list of rules (1 minimum, 125 maximum) that authorize connections to
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
      * brokers.
      */
     inline CreateBrokerRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }

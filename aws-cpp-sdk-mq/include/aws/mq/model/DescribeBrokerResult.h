@@ -589,6 +589,47 @@ namespace Model
 
 
     /**
+     * The list of pending security groups to authorize connections to brokers.
+     */
+    inline const Aws::Vector<Aws::String>& GetPendingSecurityGroups() const{ return m_pendingSecurityGroups; }
+
+    /**
+     * The list of pending security groups to authorize connections to brokers.
+     */
+    inline void SetPendingSecurityGroups(const Aws::Vector<Aws::String>& value) { m_pendingSecurityGroups = value; }
+
+    /**
+     * The list of pending security groups to authorize connections to brokers.
+     */
+    inline void SetPendingSecurityGroups(Aws::Vector<Aws::String>&& value) { m_pendingSecurityGroups = std::move(value); }
+
+    /**
+     * The list of pending security groups to authorize connections to brokers.
+     */
+    inline DescribeBrokerResult& WithPendingSecurityGroups(const Aws::Vector<Aws::String>& value) { SetPendingSecurityGroups(value); return *this;}
+
+    /**
+     * The list of pending security groups to authorize connections to brokers.
+     */
+    inline DescribeBrokerResult& WithPendingSecurityGroups(Aws::Vector<Aws::String>&& value) { SetPendingSecurityGroups(std::move(value)); return *this;}
+
+    /**
+     * The list of pending security groups to authorize connections to brokers.
+     */
+    inline DescribeBrokerResult& AddPendingSecurityGroups(const Aws::String& value) { m_pendingSecurityGroups.push_back(value); return *this; }
+
+    /**
+     * The list of pending security groups to authorize connections to brokers.
+     */
+    inline DescribeBrokerResult& AddPendingSecurityGroups(Aws::String&& value) { m_pendingSecurityGroups.push_back(std::move(value)); return *this; }
+
+    /**
+     * The list of pending security groups to authorize connections to brokers.
+     */
+    inline DescribeBrokerResult& AddPendingSecurityGroups(const char* value) { m_pendingSecurityGroups.push_back(value); return *this; }
+
+
+    /**
      * Required. Enables connections from applications outside of the VPC that hosts
      * the broker's subnets.
      */
@@ -608,50 +649,50 @@ namespace Model
 
 
     /**
-     * Required. The list of rules (1 minimum, 125 maximum) that authorize connections
-     * to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
+     * brokers.
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
-     * Required. The list of rules (1 minimum, 125 maximum) that authorize connections
-     * to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
+     * brokers.
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroups = value; }
 
     /**
-     * Required. The list of rules (1 minimum, 125 maximum) that authorize connections
-     * to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
+     * brokers.
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroups = std::move(value); }
 
     /**
-     * Required. The list of rules (1 minimum, 125 maximum) that authorize connections
-     * to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
+     * brokers.
      */
     inline DescribeBrokerResult& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     /**
-     * Required. The list of rules (1 minimum, 125 maximum) that authorize connections
-     * to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
+     * brokers.
      */
     inline DescribeBrokerResult& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * Required. The list of rules (1 minimum, 125 maximum) that authorize connections
-     * to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
+     * brokers.
      */
     inline DescribeBrokerResult& AddSecurityGroups(const Aws::String& value) { m_securityGroups.push_back(value); return *this; }
 
     /**
-     * Required. The list of rules (1 minimum, 125 maximum) that authorize connections
-     * to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
+     * brokers.
      */
     inline DescribeBrokerResult& AddSecurityGroups(Aws::String&& value) { m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * Required. The list of rules (1 minimum, 125 maximum) that authorize connections
-     * to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
+     * brokers.
      */
     inline DescribeBrokerResult& AddSecurityGroups(const char* value) { m_securityGroups.push_back(value); return *this; }
 
@@ -850,6 +891,8 @@ namespace Model
     WeeklyStartTime m_maintenanceWindowStartTime;
 
     Aws::String m_pendingEngineVersion;
+
+    Aws::Vector<Aws::String> m_pendingSecurityGroups;
 
     bool m_publiclyAccessible;
 

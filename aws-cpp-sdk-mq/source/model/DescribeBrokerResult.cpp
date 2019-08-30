@@ -147,6 +147,15 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("pendingSecurityGroups"))
+  {
+    Array<JsonView> pendingSecurityGroupsJsonList = jsonValue.GetArray("pendingSecurityGroups");
+    for(unsigned pendingSecurityGroupsIndex = 0; pendingSecurityGroupsIndex < pendingSecurityGroupsJsonList.GetLength(); ++pendingSecurityGroupsIndex)
+    {
+      m_pendingSecurityGroups.push_back(pendingSecurityGroupsJsonList[pendingSecurityGroupsIndex].AsString());
+    }
+  }
+
   if(jsonValue.ValueExists("publiclyAccessible"))
   {
     m_publiclyAccessible = jsonValue.GetBool("publiclyAccessible");

@@ -21,6 +21,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/apigatewaymanagementapi/model/GetConnectionResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -61,15 +62,23 @@ namespace ApiGatewayManagementApi
 
 namespace Model
 {
+        class DeleteConnectionRequest;
+        class GetConnectionRequest;
         class PostToConnectionRequest;
 
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayManagementApiErrors>> DeleteConnectionOutcome;
+        typedef Aws::Utils::Outcome<GetConnectionResult, Aws::Client::AWSError<ApiGatewayManagementApiErrors>> GetConnectionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayManagementApiErrors>> PostToConnectionOutcome;
 
+        typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
+        typedef std::future<GetConnectionOutcome> GetConnectionOutcomeCallable;
         typedef std::future<PostToConnectionOutcome> PostToConnectionOutcomeCallable;
 } // namespace Model
 
   class ApiGatewayManagementApiClient;
 
+    typedef std::function<void(const ApiGatewayManagementApiClient*, const Model::DeleteConnectionRequest&, const Model::DeleteConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectionResponseReceivedHandler;
+    typedef std::function<void(const ApiGatewayManagementApiClient*, const Model::GetConnectionRequest&, const Model::GetConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConnectionResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayManagementApiClient*, const Model::PostToConnectionRequest&, const Model::PostToConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostToConnectionResponseReceivedHandler;
 
   /**
@@ -110,6 +119,59 @@ namespace Model
 
 
         /**
+         * <p>Delete the connection with the provided id.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/DeleteConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteConnectionOutcome DeleteConnection(const Model::DeleteConnectionRequest& request) const;
+
+        /**
+         * <p>Delete the connection with the provided id.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/DeleteConnection">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteConnectionOutcomeCallable DeleteConnectionCallable(const Model::DeleteConnectionRequest& request) const;
+
+        /**
+         * <p>Delete the connection with the provided id.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/DeleteConnection">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteConnectionAsync(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Get information about the connection with the provided id.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/GetConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetConnectionOutcome GetConnection(const Model::GetConnectionRequest& request) const;
+
+        /**
+         * <p>Get information about the connection with the provided id.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/GetConnection">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetConnectionOutcomeCallable GetConnectionCallable(const Model::GetConnectionRequest& request) const;
+
+        /**
+         * <p>Get information about the connection with the provided id.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/GetConnection">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetConnectionAsync(const Model::GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Sends the provided data to the specified connection.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/PostToConnection">AWS
@@ -141,6 +203,8 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void DeleteConnectionAsyncHelper(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetConnectionAsyncHelper(const Model::GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PostToConnectionAsyncHelper(const Model::PostToConnectionRequest& request, const PostToConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

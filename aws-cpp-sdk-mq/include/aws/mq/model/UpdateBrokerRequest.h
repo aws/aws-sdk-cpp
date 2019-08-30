@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mq/model/ConfigurationId.h>
 #include <aws/mq/model/Logs.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -251,6 +252,61 @@ namespace Model
      */
     inline UpdateBrokerRequest& WithLogs(Logs&& value) { SetLogs(std::move(value)); return *this;}
 
+
+    /**
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
+     * brokers.
+     */
+    inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+
+    /**
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
+     * brokers.
+     */
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
+
+    /**
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
+     * brokers.
+     */
+    inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
+
+    /**
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
+     * brokers.
+     */
+    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
+
+    /**
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
+     * brokers.
+     */
+    inline UpdateBrokerRequest& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
+
+    /**
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
+     * brokers.
+     */
+    inline UpdateBrokerRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
+
+    /**
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
+     * brokers.
+     */
+    inline UpdateBrokerRequest& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+
+    /**
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
+     * brokers.
+     */
+    inline UpdateBrokerRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
+
+    /**
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
+     * brokers.
+     */
+    inline UpdateBrokerRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+
   private:
 
     bool m_autoMinorVersionUpgrade;
@@ -267,6 +323,9 @@ namespace Model
 
     Logs m_logs;
     bool m_logsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_securityGroups;
+    bool m_securityGroupsHasBeenSet;
   };
 
 } // namespace Model

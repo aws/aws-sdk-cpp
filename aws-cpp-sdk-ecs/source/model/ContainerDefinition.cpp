@@ -76,7 +76,8 @@ ContainerDefinition::ContainerDefinition() :
     m_logConfigurationHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
     m_systemControlsHasBeenSet(false),
-    m_resourceRequirementsHasBeenSet(false)
+    m_resourceRequirementsHasBeenSet(false),
+    m_firelensConfigurationHasBeenSet(false)
 {
 }
 
@@ -128,7 +129,8 @@ ContainerDefinition::ContainerDefinition(JsonView jsonValue) :
     m_logConfigurationHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
     m_systemControlsHasBeenSet(false),
-    m_resourceRequirementsHasBeenSet(false)
+    m_resourceRequirementsHasBeenSet(false),
+    m_firelensConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -445,6 +447,13 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
     m_resourceRequirementsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("firelensConfiguration"))
+  {
+    m_firelensConfiguration = jsonValue.GetObject("firelensConfiguration");
+
+    m_firelensConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -756,6 +765,12 @@ JsonValue ContainerDefinition::Jsonize() const
      resourceRequirementsJsonList[resourceRequirementsIndex].AsObject(m_resourceRequirements[resourceRequirementsIndex].Jsonize());
    }
    payload.WithArray("resourceRequirements", std::move(resourceRequirementsJsonList));
+
+  }
+
+  if(m_firelensConfigurationHasBeenSet)
+  {
+   payload.WithObject("firelensConfiguration", m_firelensConfiguration.Jsonize());
 
   }
 
