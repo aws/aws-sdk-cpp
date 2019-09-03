@@ -30,6 +30,7 @@ namespace Model
 
 TaskOverride::TaskOverride() : 
     m_containerOverridesHasBeenSet(false),
+    m_inferenceAcceleratorOverridesHasBeenSet(false),
     m_taskRoleArnHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false)
 {
@@ -37,6 +38,7 @@ TaskOverride::TaskOverride() :
 
 TaskOverride::TaskOverride(JsonView jsonValue) : 
     m_containerOverridesHasBeenSet(false),
+    m_inferenceAcceleratorOverridesHasBeenSet(false),
     m_taskRoleArnHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false)
 {
@@ -53,6 +55,16 @@ TaskOverride& TaskOverride::operator =(JsonView jsonValue)
       m_containerOverrides.push_back(containerOverridesJsonList[containerOverridesIndex].AsObject());
     }
     m_containerOverridesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inferenceAcceleratorOverrides"))
+  {
+    Array<JsonView> inferenceAcceleratorOverridesJsonList = jsonValue.GetArray("inferenceAcceleratorOverrides");
+    for(unsigned inferenceAcceleratorOverridesIndex = 0; inferenceAcceleratorOverridesIndex < inferenceAcceleratorOverridesJsonList.GetLength(); ++inferenceAcceleratorOverridesIndex)
+    {
+      m_inferenceAcceleratorOverrides.push_back(inferenceAcceleratorOverridesJsonList[inferenceAcceleratorOverridesIndex].AsObject());
+    }
+    m_inferenceAcceleratorOverridesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("taskRoleArn"))
@@ -84,6 +96,17 @@ JsonValue TaskOverride::Jsonize() const
      containerOverridesJsonList[containerOverridesIndex].AsObject(m_containerOverrides[containerOverridesIndex].Jsonize());
    }
    payload.WithArray("containerOverrides", std::move(containerOverridesJsonList));
+
+  }
+
+  if(m_inferenceAcceleratorOverridesHasBeenSet)
+  {
+   Array<JsonValue> inferenceAcceleratorOverridesJsonList(m_inferenceAcceleratorOverrides.size());
+   for(unsigned inferenceAcceleratorOverridesIndex = 0; inferenceAcceleratorOverridesIndex < inferenceAcceleratorOverridesJsonList.GetLength(); ++inferenceAcceleratorOverridesIndex)
+   {
+     inferenceAcceleratorOverridesJsonList[inferenceAcceleratorOverridesIndex].AsObject(m_inferenceAcceleratorOverrides[inferenceAcceleratorOverridesIndex].Jsonize());
+   }
+   payload.WithArray("inferenceAcceleratorOverrides", std::move(inferenceAcceleratorOverridesJsonList));
 
   }
 

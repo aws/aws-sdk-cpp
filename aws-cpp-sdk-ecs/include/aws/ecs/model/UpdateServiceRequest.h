@@ -510,10 +510,10 @@ namespace Model
      * first started. This is only valid if your service is configured to use a load
      * balancer. If your service's tasks take a while to start and respond to Elastic
      * Load Balancing health checks, you can specify a health check grace period of up
-     * to 1,800 seconds. During that time, the ECS service scheduler ignores the
-     * Elastic Load Balancing health check status. This grace period can prevent the
-     * ECS service scheduler from marking tasks as unhealthy and stopping them before
-     * they have time to come up.</p>
+     * to 2,147,483,647 seconds. During that time, the ECS service scheduler ignores
+     * the Elastic Load Balancing health check status. This grace period can prevent
+     * the ECS service scheduler from marking tasks as unhealthy and stopping them
+     * before they have time to come up.</p>
      */
     inline int GetHealthCheckGracePeriodSeconds() const{ return m_healthCheckGracePeriodSeconds; }
 
@@ -523,10 +523,10 @@ namespace Model
      * first started. This is only valid if your service is configured to use a load
      * balancer. If your service's tasks take a while to start and respond to Elastic
      * Load Balancing health checks, you can specify a health check grace period of up
-     * to 1,800 seconds. During that time, the ECS service scheduler ignores the
-     * Elastic Load Balancing health check status. This grace period can prevent the
-     * ECS service scheduler from marking tasks as unhealthy and stopping them before
-     * they have time to come up.</p>
+     * to 2,147,483,647 seconds. During that time, the ECS service scheduler ignores
+     * the Elastic Load Balancing health check status. This grace period can prevent
+     * the ECS service scheduler from marking tasks as unhealthy and stopping them
+     * before they have time to come up.</p>
      */
     inline bool HealthCheckGracePeriodSecondsHasBeenSet() const { return m_healthCheckGracePeriodSecondsHasBeenSet; }
 
@@ -536,10 +536,10 @@ namespace Model
      * first started. This is only valid if your service is configured to use a load
      * balancer. If your service's tasks take a while to start and respond to Elastic
      * Load Balancing health checks, you can specify a health check grace period of up
-     * to 1,800 seconds. During that time, the ECS service scheduler ignores the
-     * Elastic Load Balancing health check status. This grace period can prevent the
-     * ECS service scheduler from marking tasks as unhealthy and stopping them before
-     * they have time to come up.</p>
+     * to 2,147,483,647 seconds. During that time, the ECS service scheduler ignores
+     * the Elastic Load Balancing health check status. This grace period can prevent
+     * the ECS service scheduler from marking tasks as unhealthy and stopping them
+     * before they have time to come up.</p>
      */
     inline void SetHealthCheckGracePeriodSeconds(int value) { m_healthCheckGracePeriodSecondsHasBeenSet = true; m_healthCheckGracePeriodSeconds = value; }
 
@@ -549,10 +549,10 @@ namespace Model
      * first started. This is only valid if your service is configured to use a load
      * balancer. If your service's tasks take a while to start and respond to Elastic
      * Load Balancing health checks, you can specify a health check grace period of up
-     * to 1,800 seconds. During that time, the ECS service scheduler ignores the
-     * Elastic Load Balancing health check status. This grace period can prevent the
-     * ECS service scheduler from marking tasks as unhealthy and stopping them before
-     * they have time to come up.</p>
+     * to 2,147,483,647 seconds. During that time, the ECS service scheduler ignores
+     * the Elastic Load Balancing health check status. This grace period can prevent
+     * the ECS service scheduler from marking tasks as unhealthy and stopping them
+     * before they have time to come up.</p>
      */
     inline UpdateServiceRequest& WithHealthCheckGracePeriodSeconds(int value) { SetHealthCheckGracePeriodSeconds(value); return *this;}
 

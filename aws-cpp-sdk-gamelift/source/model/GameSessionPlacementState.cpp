@@ -34,6 +34,7 @@ namespace Aws
         static const int FULFILLED_HASH = HashingUtils::HashString("FULFILLED");
         static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
         static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
+        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 
         GameSessionPlacementState GetGameSessionPlacementStateForName(const Aws::String& name)
@@ -54,6 +55,10 @@ namespace Aws
           else if (hashCode == TIMED_OUT_HASH)
           {
             return GameSessionPlacementState::TIMED_OUT;
+          }
+          else if (hashCode == FAILED_HASH)
+          {
+            return GameSessionPlacementState::FAILED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +82,8 @@ namespace Aws
             return "CANCELLED";
           case GameSessionPlacementState::TIMED_OUT:
             return "TIMED_OUT";
+          case GameSessionPlacementState::FAILED:
+            return "FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

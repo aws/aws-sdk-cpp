@@ -53,7 +53,8 @@ FleetAttributes::FleetAttributes() :
     m_resourceCreationLimitPolicyHasBeenSet(false),
     m_metricGroupsHasBeenSet(false),
     m_stoppedActionsHasBeenSet(false),
-    m_instanceRoleArnHasBeenSet(false)
+    m_instanceRoleArnHasBeenSet(false),
+    m_certificateConfigurationHasBeenSet(false)
 {
 }
 
@@ -82,7 +83,8 @@ FleetAttributes::FleetAttributes(JsonView jsonValue) :
     m_resourceCreationLimitPolicyHasBeenSet(false),
     m_metricGroupsHasBeenSet(false),
     m_stoppedActionsHasBeenSet(false),
-    m_instanceRoleArnHasBeenSet(false)
+    m_instanceRoleArnHasBeenSet(false),
+    m_certificateConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -238,6 +240,13 @@ FleetAttributes& FleetAttributes::operator =(JsonView jsonValue)
     m_instanceRoleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CertificateConfiguration"))
+  {
+    m_certificateConfiguration = jsonValue.GetObject("CertificateConfiguration");
+
+    m_certificateConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -370,6 +379,12 @@ JsonValue FleetAttributes::Jsonize() const
   if(m_instanceRoleArnHasBeenSet)
   {
    payload.WithString("InstanceRoleArn", m_instanceRoleArn);
+
+  }
+
+  if(m_certificateConfigurationHasBeenSet)
+  {
+   payload.WithObject("CertificateConfiguration", m_certificateConfiguration.Jsonize());
 
   }
 

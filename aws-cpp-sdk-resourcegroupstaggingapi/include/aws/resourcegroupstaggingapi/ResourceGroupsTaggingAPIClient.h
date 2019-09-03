@@ -107,28 +107,34 @@ namespace Model
    * for the AWS account</p> </li> <li> <p>List all existing tag keys in the
    * specified region for the AWS account</p> </li> <li> <p>List all existing values
    * for the specified key in the specified region for the AWS account</p> </li>
-   * </ul> <p>To make full use of the resource groups tagging API operations, you
-   * might need additional IAM permissions, including permission to access the
-   * resources of individual services as well as permission to view and apply tags to
-   * those resources. For more information, see <a
-   * href="http://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/obtaining-permissions-for-resource-groups.html">Obtaining
-   * Permissions for Resource Groups and Tag Editor</a>.</p> <p>You can use the
-   * Resource Groups Tagging API to tag resources for the following AWS services.</p>
-   * <ul> <li> <p>Alexa for Business (a4b)</p> </li> <li> <p>API Gateway</p> </li>
-   * <li> <p>AWS AppStream</p> </li> <li> <p>AWS AppSync</p> </li> <li> <p>Amazon
-   * Athena</p> </li> <li> <p>Amazon Aurora</p> </li> <li> <p>AWS Certificate
-   * Manager</p> </li> <li> <p>AWS Certificate Manager Private CA</p> </li> <li>
-   * <p>Amazon Cloud Directory</p> </li> <li> <p>AWS CloudFormation</p> </li> <li>
-   * <p>Amazon CloudFront</p> </li> <li> <p>AWS CloudHSM</p> </li> <li> <p>AWS
-   * CloudTrail</p> </li> <li> <p>Amazon CloudWatch (alarms only)</p> </li> <li>
-   * <p>Amazon CloudWatch Events</p> </li> <li> <p>Amazon CloudWatch Logs</p> </li>
-   * <li> <p>AWS CodeBuild</p> </li> <li> <p>AWS CodeStar</p> </li> <li> <p>Amazon
-   * Cognito Identity</p> </li> <li> <p>Amazon Cognito User Pools</p> </li> <li>
-   * <p>Amazon Comprehend</p> </li> <li> <p>AWS Config</p> </li> <li> <p>AWS Data
-   * Pipeline</p> </li> <li> <p>AWS Database Migration Service</p> </li> <li> <p>AWS
-   * Datasync</p> </li> <li> <p>AWS Direct Connect</p> </li> <li> <p>AWS Directory
-   * Service</p> </li> <li> <p>Amazon DynamoDB</p> </li> <li> <p>Amazon EBS</p> </li>
-   * <li> <p>Amazon EC2</p> </li> <li> <p>Amazon ECR</p> </li> <li> <p>Amazon ECS</p>
+   * </ul> <p/> <p>To use resource groups tagging API operations, you must add the
+   * following permissions to your IAM policy:</p> <ul> <li> <p>
+   * <code>tag:GetResources</code> </p> </li> <li> <p> <code>tag:TagResources</code>
+   * </p> </li> <li> <p> <code>tag:UntagResources</code> </p> </li> <li> <p>
+   * <code>tag:GetTagKeys</code> </p> </li> <li> <p> <code>tag:GetTagValues</code>
+   * </p> </li> </ul> <p>You'll also need permissions to access the resources of
+   * individual services so that you can tag and untag those resources.</p> <p>For
+   * more information on IAM policies, see <a
+   * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage.html">Managing
+   * IAM Policies</a> in the <i>IAM User Guide</i>.</p> <p>You can use the Resource
+   * Groups Tagging API to tag resources for the following AWS services.</p> <ul>
+   * <li> <p>Alexa for Business (a4b)</p> </li> <li> <p>API Gateway</p> </li> <li>
+   * <p>AWS AppStream</p> </li> <li> <p>AWS AppSync</p> </li> <li> <p>AWS App
+   * Mesh</p> </li> <li> <p>Amazon Athena</p> </li> <li> <p>Amazon Aurora</p> </li>
+   * <li> <p>AWS Backup</p> </li> <li> <p>AWS Certificate Manager</p> </li> <li>
+   * <p>AWS Certificate Manager Private CA</p> </li> <li> <p>Amazon Cloud
+   * Directory</p> </li> <li> <p>AWS CloudFormation</p> </li> <li> <p>Amazon
+   * CloudFront</p> </li> <li> <p>AWS CloudHSM</p> </li> <li> <p>AWS CloudTrail</p>
+   * </li> <li> <p>Amazon CloudWatch (alarms only)</p> </li> <li> <p>Amazon
+   * CloudWatch Events</p> </li> <li> <p>Amazon CloudWatch Logs</p> </li> <li> <p>AWS
+   * CodeBuild</p> </li> <li> <p>AWS CodeCommit</p> </li> <li> <p>AWS
+   * CodePipeline</p> </li> <li> <p>AWS CodeStar</p> </li> <li> <p>Amazon Cognito
+   * Identity</p> </li> <li> <p>Amazon Cognito User Pools</p> </li> <li> <p>Amazon
+   * Comprehend</p> </li> <li> <p>AWS Config</p> </li> <li> <p>AWS Data Pipeline</p>
+   * </li> <li> <p>AWS Database Migration Service</p> </li> <li> <p>AWS Datasync</p>
+   * </li> <li> <p>AWS Direct Connect</p> </li> <li> <p>AWS Directory Service</p>
+   * </li> <li> <p>Amazon DynamoDB</p> </li> <li> <p>Amazon EBS</p> </li> <li>
+   * <p>Amazon EC2</p> </li> <li> <p>Amazon ECR</p> </li> <li> <p>Amazon ECS</p>
    * </li> <li> <p>AWS Elastic Beanstalk</p> </li> <li> <p>Amazon Elastic File
    * System</p> </li> <li> <p>Elastic Load Balancing</p> </li> <li> <p>Amazon
    * ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li> <li> <p>AWS

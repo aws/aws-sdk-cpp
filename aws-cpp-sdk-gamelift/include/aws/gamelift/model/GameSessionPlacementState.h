@@ -29,7 +29,8 @@ namespace Model
     PENDING,
     FULFILLED,
     CANCELLED,
-    TIMED_OUT
+    TIMED_OUT,
+    FAILED
   };
 
 namespace GameSessionPlacementStateMapper

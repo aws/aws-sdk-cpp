@@ -679,25 +679,37 @@ namespace Model
 
     /**
      * <p>The number of instantiations of the specified task definition to place and
-     * keep running on your cluster.</p>
+     * keep running on your cluster.</p> <p>This is required if
+     * <code>schedulingStrategy</code> is <code>REPLICA</code> or is not specified. If
+     * <code>schedulingStrategy</code> is <code>DAEMON</code> then this is not
+     * required.</p>
      */
     inline int GetDesiredCount() const{ return m_desiredCount; }
 
     /**
      * <p>The number of instantiations of the specified task definition to place and
-     * keep running on your cluster.</p>
+     * keep running on your cluster.</p> <p>This is required if
+     * <code>schedulingStrategy</code> is <code>REPLICA</code> or is not specified. If
+     * <code>schedulingStrategy</code> is <code>DAEMON</code> then this is not
+     * required.</p>
      */
     inline bool DesiredCountHasBeenSet() const { return m_desiredCountHasBeenSet; }
 
     /**
      * <p>The number of instantiations of the specified task definition to place and
-     * keep running on your cluster.</p>
+     * keep running on your cluster.</p> <p>This is required if
+     * <code>schedulingStrategy</code> is <code>REPLICA</code> or is not specified. If
+     * <code>schedulingStrategy</code> is <code>DAEMON</code> then this is not
+     * required.</p>
      */
     inline void SetDesiredCount(int value) { m_desiredCountHasBeenSet = true; m_desiredCount = value; }
 
     /**
      * <p>The number of instantiations of the specified task definition to place and
-     * keep running on your cluster.</p>
+     * keep running on your cluster.</p> <p>This is required if
+     * <code>schedulingStrategy</code> is <code>REPLICA</code> or is not specified. If
+     * <code>schedulingStrategy</code> is <code>DAEMON</code> then this is not
+     * required.</p>
      */
     inline CreateServiceRequest& WithDesiredCount(int value) { SetDesiredCount(value); return *this;}
 

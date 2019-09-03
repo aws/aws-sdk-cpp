@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/ecs/model/ResourceType.h>
+#include <aws/gamelift/model/CertificateType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -23,46 +23,46 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace ECS
+  namespace GameLift
   {
     namespace Model
     {
-      namespace ResourceTypeMapper
+      namespace CertificateTypeMapper
       {
 
-        static const int GPU_HASH = HashingUtils::HashString("GPU");
-        static const int InferenceAccelerator_HASH = HashingUtils::HashString("InferenceAccelerator");
+        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static const int GENERATED_HASH = HashingUtils::HashString("GENERATED");
 
 
-        ResourceType GetResourceTypeForName(const Aws::String& name)
+        CertificateType GetCertificateTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == GPU_HASH)
+          if (hashCode == DISABLED_HASH)
           {
-            return ResourceType::GPU;
+            return CertificateType::DISABLED;
           }
-          else if (hashCode == InferenceAccelerator_HASH)
+          else if (hashCode == GENERATED_HASH)
           {
-            return ResourceType::InferenceAccelerator;
+            return CertificateType::GENERATED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ResourceType>(hashCode);
+            return static_cast<CertificateType>(hashCode);
           }
 
-          return ResourceType::NOT_SET;
+          return CertificateType::NOT_SET;
         }
 
-        Aws::String GetNameForResourceType(ResourceType enumValue)
+        Aws::String GetNameForCertificateType(CertificateType enumValue)
         {
           switch(enumValue)
           {
-          case ResourceType::GPU:
-            return "GPU";
-          case ResourceType::InferenceAccelerator:
-            return "InferenceAccelerator";
+          case CertificateType::DISABLED:
+            return "DISABLED";
+          case CertificateType::GENERATED:
+            return "GENERATED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -74,7 +74,7 @@ namespace Aws
           }
         }
 
-      } // namespace ResourceTypeMapper
+      } // namespace CertificateTypeMapper
     } // namespace Model
-  } // namespace ECS
+  } // namespace GameLift
 } // namespace Aws

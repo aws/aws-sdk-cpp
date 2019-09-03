@@ -14,28 +14,28 @@
 */
 
 #pragma once
-#include <aws/ecs/ECS_EXPORTS.h>
+#include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace ECS
+namespace GameLift
 {
 namespace Model
 {
-  enum class ResourceType
+  enum class CertificateType
   {
     NOT_SET,
-    GPU,
-    InferenceAccelerator
+    DISABLED,
+    GENERATED
   };
 
-namespace ResourceTypeMapper
+namespace CertificateTypeMapper
 {
-AWS_ECS_API ResourceType GetResourceTypeForName(const Aws::String& name);
+AWS_GAMELIFT_API CertificateType GetCertificateTypeForName(const Aws::String& name);
 
-AWS_ECS_API Aws::String GetNameForResourceType(ResourceType value);
-} // namespace ResourceTypeMapper
+AWS_GAMELIFT_API Aws::String GetNameForCertificateType(CertificateType value);
+} // namespace CertificateTypeMapper
 } // namespace Model
-} // namespace ECS
+} // namespace GameLift
 } // namespace Aws

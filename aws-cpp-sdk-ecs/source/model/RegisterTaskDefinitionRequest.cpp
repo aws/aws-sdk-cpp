@@ -39,7 +39,8 @@ RegisterTaskDefinitionRequest::RegisterTaskDefinitionRequest() :
     m_pidModeHasBeenSet(false),
     m_ipcMode(IpcMode::NOT_SET),
     m_ipcModeHasBeenSet(false),
-    m_proxyConfigurationHasBeenSet(false)
+    m_proxyConfigurationHasBeenSet(false),
+    m_inferenceAcceleratorsHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,17 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
   if(m_proxyConfigurationHasBeenSet)
   {
    payload.WithObject("proxyConfiguration", m_proxyConfiguration.Jsonize());
+
+  }
+
+  if(m_inferenceAcceleratorsHasBeenSet)
+  {
+   Array<JsonValue> inferenceAcceleratorsJsonList(m_inferenceAccelerators.size());
+   for(unsigned inferenceAcceleratorsIndex = 0; inferenceAcceleratorsIndex < inferenceAcceleratorsJsonList.GetLength(); ++inferenceAcceleratorsIndex)
+   {
+     inferenceAcceleratorsJsonList[inferenceAcceleratorsIndex].AsObject(m_inferenceAccelerators[inferenceAcceleratorsIndex].Jsonize());
+   }
+   payload.WithArray("inferenceAccelerators", std::move(inferenceAcceleratorsJsonList));
 
   }
 

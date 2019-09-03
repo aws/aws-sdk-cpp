@@ -731,6 +731,31 @@ namespace Model
     inline GameSessionPlacement& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
 
+    
+    inline const Aws::String& GetDnsName() const{ return m_dnsName; }
+
+    
+    inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
+
+    
+    inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
+
+    
+    inline void SetDnsName(Aws::String&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::move(value); }
+
+    
+    inline void SetDnsName(const char* value) { m_dnsNameHasBeenSet = true; m_dnsName.assign(value); }
+
+    
+    inline GameSessionPlacement& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
+
+    
+    inline GameSessionPlacement& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
+
+    
+    inline GameSessionPlacement& WithDnsName(const char* value) { SetDnsName(value); return *this;}
+
+
     /**
      * <p>Port number for the game session. To connect to a Amazon GameLift game
      * server, an app needs both the IP address and port number. This value is set once
@@ -1050,6 +1075,9 @@ namespace Model
 
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
+
+    Aws::String m_dnsName;
+    bool m_dnsNameHasBeenSet;
 
     int m_port;
     bool m_portHasBeenSet;

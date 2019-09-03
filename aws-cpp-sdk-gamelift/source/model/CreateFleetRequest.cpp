@@ -42,7 +42,8 @@ CreateFleetRequest::CreateFleetRequest() :
     m_peerVpcIdHasBeenSet(false),
     m_fleetType(FleetType::NOT_SET),
     m_fleetTypeHasBeenSet(false),
-    m_instanceRoleArnHasBeenSet(false)
+    m_instanceRoleArnHasBeenSet(false),
+    m_certificateConfigurationHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,12 @@ Aws::String CreateFleetRequest::SerializePayload() const
   if(m_instanceRoleArnHasBeenSet)
   {
    payload.WithString("InstanceRoleArn", m_instanceRoleArn);
+
+  }
+
+  if(m_certificateConfigurationHasBeenSet)
+  {
+   payload.WithObject("CertificateConfiguration", m_certificateConfiguration.Jsonize());
 
   }
 

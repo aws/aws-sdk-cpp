@@ -23,6 +23,7 @@
 #include <aws/gamelift/model/RuntimeConfiguration.h>
 #include <aws/gamelift/model/ResourceCreationLimitPolicy.h>
 #include <aws/gamelift/model/FleetType.h>
+#include <aws/gamelift/model/CertificateConfiguration.h>
 #include <aws/gamelift/model/IpPermission.h>
 #include <utility>
 
@@ -1188,6 +1189,25 @@ namespace Model
      */
     inline CreateFleetRequest& WithInstanceRoleArn(const char* value) { SetInstanceRoleArn(value); return *this;}
 
+
+    
+    inline const CertificateConfiguration& GetCertificateConfiguration() const{ return m_certificateConfiguration; }
+
+    
+    inline bool CertificateConfigurationHasBeenSet() const { return m_certificateConfigurationHasBeenSet; }
+
+    
+    inline void SetCertificateConfiguration(const CertificateConfiguration& value) { m_certificateConfigurationHasBeenSet = true; m_certificateConfiguration = value; }
+
+    
+    inline void SetCertificateConfiguration(CertificateConfiguration&& value) { m_certificateConfigurationHasBeenSet = true; m_certificateConfiguration = std::move(value); }
+
+    
+    inline CreateFleetRequest& WithCertificateConfiguration(const CertificateConfiguration& value) { SetCertificateConfiguration(value); return *this;}
+
+    
+    inline CreateFleetRequest& WithCertificateConfiguration(CertificateConfiguration&& value) { SetCertificateConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1240,6 +1260,9 @@ namespace Model
 
     Aws::String m_instanceRoleArn;
     bool m_instanceRoleArnHasBeenSet;
+
+    CertificateConfiguration m_certificateConfiguration;
+    bool m_certificateConfigurationHasBeenSet;
   };
 
 } // namespace Model

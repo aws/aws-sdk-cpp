@@ -1,0 +1,161 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/ecs/ECS_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace ECS
+{
+namespace Model
+{
+
+  /**
+   * <p>Details on a Elastic Inference accelerator. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html">Working
+   * with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic
+   * Container Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/InferenceAccelerator">AWS
+   * API Reference</a></p>
+   */
+  class AWS_ECS_API InferenceAccelerator
+  {
+  public:
+    InferenceAccelerator();
+    InferenceAccelerator(Aws::Utils::Json::JsonView jsonValue);
+    InferenceAccelerator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The Elastic Inference accelerator device name. The <code>deviceName</code>
+     * must also be referenced in a container definition as a
+     * <a>ResourceRequirement</a>.</p>
+     */
+    inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
+
+    /**
+     * <p>The Elastic Inference accelerator device name. The <code>deviceName</code>
+     * must also be referenced in a container definition as a
+     * <a>ResourceRequirement</a>.</p>
+     */
+    inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
+
+    /**
+     * <p>The Elastic Inference accelerator device name. The <code>deviceName</code>
+     * must also be referenced in a container definition as a
+     * <a>ResourceRequirement</a>.</p>
+     */
+    inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
+
+    /**
+     * <p>The Elastic Inference accelerator device name. The <code>deviceName</code>
+     * must also be referenced in a container definition as a
+     * <a>ResourceRequirement</a>.</p>
+     */
+    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
+
+    /**
+     * <p>The Elastic Inference accelerator device name. The <code>deviceName</code>
+     * must also be referenced in a container definition as a
+     * <a>ResourceRequirement</a>.</p>
+     */
+    inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
+
+    /**
+     * <p>The Elastic Inference accelerator device name. The <code>deviceName</code>
+     * must also be referenced in a container definition as a
+     * <a>ResourceRequirement</a>.</p>
+     */
+    inline InferenceAccelerator& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
+
+    /**
+     * <p>The Elastic Inference accelerator device name. The <code>deviceName</code>
+     * must also be referenced in a container definition as a
+     * <a>ResourceRequirement</a>.</p>
+     */
+    inline InferenceAccelerator& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The Elastic Inference accelerator device name. The <code>deviceName</code>
+     * must also be referenced in a container definition as a
+     * <a>ResourceRequirement</a>.</p>
+     */
+    inline InferenceAccelerator& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
+
+
+    /**
+     * <p>The Elastic Inference accelerator type to use.</p>
+     */
+    inline const Aws::String& GetDeviceType() const{ return m_deviceType; }
+
+    /**
+     * <p>The Elastic Inference accelerator type to use.</p>
+     */
+    inline bool DeviceTypeHasBeenSet() const { return m_deviceTypeHasBeenSet; }
+
+    /**
+     * <p>The Elastic Inference accelerator type to use.</p>
+     */
+    inline void SetDeviceType(const Aws::String& value) { m_deviceTypeHasBeenSet = true; m_deviceType = value; }
+
+    /**
+     * <p>The Elastic Inference accelerator type to use.</p>
+     */
+    inline void SetDeviceType(Aws::String&& value) { m_deviceTypeHasBeenSet = true; m_deviceType = std::move(value); }
+
+    /**
+     * <p>The Elastic Inference accelerator type to use.</p>
+     */
+    inline void SetDeviceType(const char* value) { m_deviceTypeHasBeenSet = true; m_deviceType.assign(value); }
+
+    /**
+     * <p>The Elastic Inference accelerator type to use.</p>
+     */
+    inline InferenceAccelerator& WithDeviceType(const Aws::String& value) { SetDeviceType(value); return *this;}
+
+    /**
+     * <p>The Elastic Inference accelerator type to use.</p>
+     */
+    inline InferenceAccelerator& WithDeviceType(Aws::String&& value) { SetDeviceType(std::move(value)); return *this;}
+
+    /**
+     * <p>The Elastic Inference accelerator type to use.</p>
+     */
+    inline InferenceAccelerator& WithDeviceType(const char* value) { SetDeviceType(value); return *this;}
+
+  private:
+
+    Aws::String m_deviceName;
+    bool m_deviceNameHasBeenSet;
+
+    Aws::String m_deviceType;
+    bool m_deviceTypeHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace ECS
+} // namespace Aws

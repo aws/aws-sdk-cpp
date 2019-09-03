@@ -26,6 +26,7 @@
 #include <aws/ecs/model/Container.h>
 #include <aws/ecs/model/Attachment.h>
 #include <aws/ecs/model/Tag.h>
+#include <aws/ecs/model/InferenceAccelerator.h>
 #include <utility>
 
 namespace Aws
@@ -1739,6 +1740,47 @@ namespace Model
      */
     inline Task& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Elastic Inference accelerator associated with the task.</p>
+     */
+    inline const Aws::Vector<InferenceAccelerator>& GetInferenceAccelerators() const{ return m_inferenceAccelerators; }
+
+    /**
+     * <p>The Elastic Inference accelerator associated with the task.</p>
+     */
+    inline bool InferenceAcceleratorsHasBeenSet() const { return m_inferenceAcceleratorsHasBeenSet; }
+
+    /**
+     * <p>The Elastic Inference accelerator associated with the task.</p>
+     */
+    inline void SetInferenceAccelerators(const Aws::Vector<InferenceAccelerator>& value) { m_inferenceAcceleratorsHasBeenSet = true; m_inferenceAccelerators = value; }
+
+    /**
+     * <p>The Elastic Inference accelerator associated with the task.</p>
+     */
+    inline void SetInferenceAccelerators(Aws::Vector<InferenceAccelerator>&& value) { m_inferenceAcceleratorsHasBeenSet = true; m_inferenceAccelerators = std::move(value); }
+
+    /**
+     * <p>The Elastic Inference accelerator associated with the task.</p>
+     */
+    inline Task& WithInferenceAccelerators(const Aws::Vector<InferenceAccelerator>& value) { SetInferenceAccelerators(value); return *this;}
+
+    /**
+     * <p>The Elastic Inference accelerator associated with the task.</p>
+     */
+    inline Task& WithInferenceAccelerators(Aws::Vector<InferenceAccelerator>&& value) { SetInferenceAccelerators(std::move(value)); return *this;}
+
+    /**
+     * <p>The Elastic Inference accelerator associated with the task.</p>
+     */
+    inline Task& AddInferenceAccelerators(const InferenceAccelerator& value) { m_inferenceAcceleratorsHasBeenSet = true; m_inferenceAccelerators.push_back(value); return *this; }
+
+    /**
+     * <p>The Elastic Inference accelerator associated with the task.</p>
+     */
+    inline Task& AddInferenceAccelerators(InferenceAccelerator&& value) { m_inferenceAcceleratorsHasBeenSet = true; m_inferenceAccelerators.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_taskArn;
@@ -1827,6 +1869,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Vector<InferenceAccelerator> m_inferenceAccelerators;
+    bool m_inferenceAcceleratorsHasBeenSet;
   };
 
 } // namespace Model

@@ -686,10 +686,10 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>If
-     * your containers are part of a task using the Fargate launch type, this field is
-     * optional.</p> <p>For containers that are part of a task using the EC2 launch
-     * type, you must specify a non-zero integer for one or both of <code>memory</code>
-     * or <code>memoryReservation</code> in container definitions. If you specify both,
+     * using the Fargate launch type, this parameter is optional.</p> <p>If using the
+     * EC2 launch type, you must specify either a task-level memory value or a
+     * container-level memory value. If you specify both a container-level
+     * <code>memory</code> and <code>memoryReservation</code> value,
      * <code>memory</code> must be greater than <code>memoryReservation</code>. If you
      * specify <code>memoryReservation</code>, then that value is subtracted from the
      * available memory resources for the container instance on which the container is
@@ -710,10 +710,10 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>If
-     * your containers are part of a task using the Fargate launch type, this field is
-     * optional.</p> <p>For containers that are part of a task using the EC2 launch
-     * type, you must specify a non-zero integer for one or both of <code>memory</code>
-     * or <code>memoryReservation</code> in container definitions. If you specify both,
+     * using the Fargate launch type, this parameter is optional.</p> <p>If using the
+     * EC2 launch type, you must specify either a task-level memory value or a
+     * container-level memory value. If you specify both a container-level
+     * <code>memory</code> and <code>memoryReservation</code> value,
      * <code>memory</code> must be greater than <code>memoryReservation</code>. If you
      * specify <code>memoryReservation</code>, then that value is subtracted from the
      * available memory resources for the container instance on which the container is
@@ -734,10 +734,10 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>If
-     * your containers are part of a task using the Fargate launch type, this field is
-     * optional.</p> <p>For containers that are part of a task using the EC2 launch
-     * type, you must specify a non-zero integer for one or both of <code>memory</code>
-     * or <code>memoryReservation</code> in container definitions. If you specify both,
+     * using the Fargate launch type, this parameter is optional.</p> <p>If using the
+     * EC2 launch type, you must specify either a task-level memory value or a
+     * container-level memory value. If you specify both a container-level
+     * <code>memory</code> and <code>memoryReservation</code> value,
      * <code>memory</code> must be greater than <code>memoryReservation</code>. If you
      * specify <code>memoryReservation</code>, then that value is subtracted from the
      * available memory resources for the container instance on which the container is
@@ -758,10 +758,10 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>If
-     * your containers are part of a task using the Fargate launch type, this field is
-     * optional.</p> <p>For containers that are part of a task using the EC2 launch
-     * type, you must specify a non-zero integer for one or both of <code>memory</code>
-     * or <code>memoryReservation</code> in container definitions. If you specify both,
+     * using the Fargate launch type, this parameter is optional.</p> <p>If using the
+     * EC2 launch type, you must specify either a task-level memory value or a
+     * container-level memory value. If you specify both a container-level
+     * <code>memory</code> and <code>memoryReservation</code> value,
      * <code>memory</code> must be greater than <code>memoryReservation</code>. If you
      * specify <code>memoryReservation</code>, then that value is subtracted from the
      * available memory resources for the container instance on which the container is
@@ -784,21 +784,22 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--memory-reservation</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>You
-     * must specify a non-zero integer for one or both of <code>memory</code> or
-     * <code>memoryReservation</code> in container definitions. If you specify both,
-     * <code>memory</code> must be greater than <code>memoryReservation</code>. If you
-     * specify <code>memoryReservation</code>, then that value is subtracted from the
-     * available memory resources for the container instance on which the container is
-     * placed. Otherwise, the value of <code>memory</code> is used.</p> <p>For example,
-     * if your container normally uses 128 MiB of memory, but occasionally bursts to
-     * 256 MiB of memory for short periods of time, you can set a
-     * <code>memoryReservation</code> of 128 MiB, and a <code>memory</code> hard limit
-     * of 300 MiB. This configuration would allow the container to only reserve 128 MiB
-     * of memory from the remaining resources on the container instance, but also allow
-     * the container to consume more memory resources when needed.</p> <p>The Docker
-     * daemon reserves a minimum of 4 MiB of memory for a container, so you should not
-     * specify fewer than 4 MiB of memory for your containers. </p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>If a
+     * task-level memory value is not specified, you must specify a non-zero integer
+     * for one or both of <code>memory</code> or <code>memoryReservation</code> in a
+     * container definition. If you specify both, <code>memory</code> must be greater
+     * than <code>memoryReservation</code>. If you specify
+     * <code>memoryReservation</code>, then that value is subtracted from the available
+     * memory resources for the container instance on which the container is placed.
+     * Otherwise, the value of <code>memory</code> is used.</p> <p>For example, if your
+     * container normally uses 128 MiB of memory, but occasionally bursts to 256 MiB of
+     * memory for short periods of time, you can set a <code>memoryReservation</code>
+     * of 128 MiB, and a <code>memory</code> hard limit of 300 MiB. This configuration
+     * would allow the container to only reserve 128 MiB of memory from the remaining
+     * resources on the container instance, but also allow the container to consume
+     * more memory resources when needed.</p> <p>The Docker daemon reserves a minimum
+     * of 4 MiB of memory for a container, so you should not specify fewer than 4 MiB
+     * of memory for your containers. </p>
      */
     inline int GetMemoryReservation() const{ return m_memoryReservation; }
 
@@ -814,21 +815,22 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--memory-reservation</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>You
-     * must specify a non-zero integer for one or both of <code>memory</code> or
-     * <code>memoryReservation</code> in container definitions. If you specify both,
-     * <code>memory</code> must be greater than <code>memoryReservation</code>. If you
-     * specify <code>memoryReservation</code>, then that value is subtracted from the
-     * available memory resources for the container instance on which the container is
-     * placed. Otherwise, the value of <code>memory</code> is used.</p> <p>For example,
-     * if your container normally uses 128 MiB of memory, but occasionally bursts to
-     * 256 MiB of memory for short periods of time, you can set a
-     * <code>memoryReservation</code> of 128 MiB, and a <code>memory</code> hard limit
-     * of 300 MiB. This configuration would allow the container to only reserve 128 MiB
-     * of memory from the remaining resources on the container instance, but also allow
-     * the container to consume more memory resources when needed.</p> <p>The Docker
-     * daemon reserves a minimum of 4 MiB of memory for a container, so you should not
-     * specify fewer than 4 MiB of memory for your containers. </p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>If a
+     * task-level memory value is not specified, you must specify a non-zero integer
+     * for one or both of <code>memory</code> or <code>memoryReservation</code> in a
+     * container definition. If you specify both, <code>memory</code> must be greater
+     * than <code>memoryReservation</code>. If you specify
+     * <code>memoryReservation</code>, then that value is subtracted from the available
+     * memory resources for the container instance on which the container is placed.
+     * Otherwise, the value of <code>memory</code> is used.</p> <p>For example, if your
+     * container normally uses 128 MiB of memory, but occasionally bursts to 256 MiB of
+     * memory for short periods of time, you can set a <code>memoryReservation</code>
+     * of 128 MiB, and a <code>memory</code> hard limit of 300 MiB. This configuration
+     * would allow the container to only reserve 128 MiB of memory from the remaining
+     * resources on the container instance, but also allow the container to consume
+     * more memory resources when needed.</p> <p>The Docker daemon reserves a minimum
+     * of 4 MiB of memory for a container, so you should not specify fewer than 4 MiB
+     * of memory for your containers. </p>
      */
     inline bool MemoryReservationHasBeenSet() const { return m_memoryReservationHasBeenSet; }
 
@@ -844,21 +846,22 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--memory-reservation</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>You
-     * must specify a non-zero integer for one or both of <code>memory</code> or
-     * <code>memoryReservation</code> in container definitions. If you specify both,
-     * <code>memory</code> must be greater than <code>memoryReservation</code>. If you
-     * specify <code>memoryReservation</code>, then that value is subtracted from the
-     * available memory resources for the container instance on which the container is
-     * placed. Otherwise, the value of <code>memory</code> is used.</p> <p>For example,
-     * if your container normally uses 128 MiB of memory, but occasionally bursts to
-     * 256 MiB of memory for short periods of time, you can set a
-     * <code>memoryReservation</code> of 128 MiB, and a <code>memory</code> hard limit
-     * of 300 MiB. This configuration would allow the container to only reserve 128 MiB
-     * of memory from the remaining resources on the container instance, but also allow
-     * the container to consume more memory resources when needed.</p> <p>The Docker
-     * daemon reserves a minimum of 4 MiB of memory for a container, so you should not
-     * specify fewer than 4 MiB of memory for your containers. </p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>If a
+     * task-level memory value is not specified, you must specify a non-zero integer
+     * for one or both of <code>memory</code> or <code>memoryReservation</code> in a
+     * container definition. If you specify both, <code>memory</code> must be greater
+     * than <code>memoryReservation</code>. If you specify
+     * <code>memoryReservation</code>, then that value is subtracted from the available
+     * memory resources for the container instance on which the container is placed.
+     * Otherwise, the value of <code>memory</code> is used.</p> <p>For example, if your
+     * container normally uses 128 MiB of memory, but occasionally bursts to 256 MiB of
+     * memory for short periods of time, you can set a <code>memoryReservation</code>
+     * of 128 MiB, and a <code>memory</code> hard limit of 300 MiB. This configuration
+     * would allow the container to only reserve 128 MiB of memory from the remaining
+     * resources on the container instance, but also allow the container to consume
+     * more memory resources when needed.</p> <p>The Docker daemon reserves a minimum
+     * of 4 MiB of memory for a container, so you should not specify fewer than 4 MiB
+     * of memory for your containers. </p>
      */
     inline void SetMemoryReservation(int value) { m_memoryReservationHasBeenSet = true; m_memoryReservation = value; }
 
@@ -874,21 +877,22 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--memory-reservation</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>You
-     * must specify a non-zero integer for one or both of <code>memory</code> or
-     * <code>memoryReservation</code> in container definitions. If you specify both,
-     * <code>memory</code> must be greater than <code>memoryReservation</code>. If you
-     * specify <code>memoryReservation</code>, then that value is subtracted from the
-     * available memory resources for the container instance on which the container is
-     * placed. Otherwise, the value of <code>memory</code> is used.</p> <p>For example,
-     * if your container normally uses 128 MiB of memory, but occasionally bursts to
-     * 256 MiB of memory for short periods of time, you can set a
-     * <code>memoryReservation</code> of 128 MiB, and a <code>memory</code> hard limit
-     * of 300 MiB. This configuration would allow the container to only reserve 128 MiB
-     * of memory from the remaining resources on the container instance, but also allow
-     * the container to consume more memory resources when needed.</p> <p>The Docker
-     * daemon reserves a minimum of 4 MiB of memory for a container, so you should not
-     * specify fewer than 4 MiB of memory for your containers. </p>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>If a
+     * task-level memory value is not specified, you must specify a non-zero integer
+     * for one or both of <code>memory</code> or <code>memoryReservation</code> in a
+     * container definition. If you specify both, <code>memory</code> must be greater
+     * than <code>memoryReservation</code>. If you specify
+     * <code>memoryReservation</code>, then that value is subtracted from the available
+     * memory resources for the container instance on which the container is placed.
+     * Otherwise, the value of <code>memory</code> is used.</p> <p>For example, if your
+     * container normally uses 128 MiB of memory, but occasionally bursts to 256 MiB of
+     * memory for short periods of time, you can set a <code>memoryReservation</code>
+     * of 128 MiB, and a <code>memory</code> hard limit of 300 MiB. This configuration
+     * would allow the container to only reserve 128 MiB of memory from the remaining
+     * resources on the container instance, but also allow the container to consume
+     * more memory resources when needed.</p> <p>The Docker daemon reserves a minimum
+     * of 4 MiB of memory for a container, so you should not specify fewer than 4 MiB
+     * of memory for your containers. </p>
      */
     inline ContainerDefinition& WithMemoryReservation(int value) { SetMemoryReservation(value); return *this;}
 

@@ -27,6 +27,7 @@
 #include <aws/ecs/model/TaskDefinitionPlacementConstraint.h>
 #include <aws/ecs/model/Compatibility.h>
 #include <aws/ecs/model/Tag.h>
+#include <aws/ecs/model/InferenceAccelerator.h>
 #include <utility>
 
 namespace Aws
@@ -1537,6 +1538,47 @@ namespace Model
     
     inline RegisterTaskDefinitionRequest& WithProxyConfiguration(ProxyConfiguration&& value) { SetProxyConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Elastic Inference accelerators to use for the containers in the task.</p>
+     */
+    inline const Aws::Vector<InferenceAccelerator>& GetInferenceAccelerators() const{ return m_inferenceAccelerators; }
+
+    /**
+     * <p>The Elastic Inference accelerators to use for the containers in the task.</p>
+     */
+    inline bool InferenceAcceleratorsHasBeenSet() const { return m_inferenceAcceleratorsHasBeenSet; }
+
+    /**
+     * <p>The Elastic Inference accelerators to use for the containers in the task.</p>
+     */
+    inline void SetInferenceAccelerators(const Aws::Vector<InferenceAccelerator>& value) { m_inferenceAcceleratorsHasBeenSet = true; m_inferenceAccelerators = value; }
+
+    /**
+     * <p>The Elastic Inference accelerators to use for the containers in the task.</p>
+     */
+    inline void SetInferenceAccelerators(Aws::Vector<InferenceAccelerator>&& value) { m_inferenceAcceleratorsHasBeenSet = true; m_inferenceAccelerators = std::move(value); }
+
+    /**
+     * <p>The Elastic Inference accelerators to use for the containers in the task.</p>
+     */
+    inline RegisterTaskDefinitionRequest& WithInferenceAccelerators(const Aws::Vector<InferenceAccelerator>& value) { SetInferenceAccelerators(value); return *this;}
+
+    /**
+     * <p>The Elastic Inference accelerators to use for the containers in the task.</p>
+     */
+    inline RegisterTaskDefinitionRequest& WithInferenceAccelerators(Aws::Vector<InferenceAccelerator>&& value) { SetInferenceAccelerators(std::move(value)); return *this;}
+
+    /**
+     * <p>The Elastic Inference accelerators to use for the containers in the task.</p>
+     */
+    inline RegisterTaskDefinitionRequest& AddInferenceAccelerators(const InferenceAccelerator& value) { m_inferenceAcceleratorsHasBeenSet = true; m_inferenceAccelerators.push_back(value); return *this; }
+
+    /**
+     * <p>The Elastic Inference accelerators to use for the containers in the task.</p>
+     */
+    inline RegisterTaskDefinitionRequest& AddInferenceAccelerators(InferenceAccelerator&& value) { m_inferenceAcceleratorsHasBeenSet = true; m_inferenceAccelerators.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_family;
@@ -1580,6 +1622,9 @@ namespace Model
 
     ProxyConfiguration m_proxyConfiguration;
     bool m_proxyConfigurationHasBeenSet;
+
+    Aws::Vector<InferenceAccelerator> m_inferenceAccelerators;
+    bool m_inferenceAcceleratorsHasBeenSet;
   };
 
 } // namespace Model

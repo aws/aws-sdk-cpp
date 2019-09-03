@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/ContainerOverride.h>
+#include <aws/ecs/model/InferenceAcceleratorOverride.h>
 #include <utility>
 
 namespace Aws
@@ -88,6 +89,47 @@ namespace Model
      * <p>One or more container overrides sent to a task.</p>
      */
     inline TaskOverride& AddContainerOverrides(ContainerOverride&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The Elastic Inference accelerator override for the task.</p>
+     */
+    inline const Aws::Vector<InferenceAcceleratorOverride>& GetInferenceAcceleratorOverrides() const{ return m_inferenceAcceleratorOverrides; }
+
+    /**
+     * <p>The Elastic Inference accelerator override for the task.</p>
+     */
+    inline bool InferenceAcceleratorOverridesHasBeenSet() const { return m_inferenceAcceleratorOverridesHasBeenSet; }
+
+    /**
+     * <p>The Elastic Inference accelerator override for the task.</p>
+     */
+    inline void SetInferenceAcceleratorOverrides(const Aws::Vector<InferenceAcceleratorOverride>& value) { m_inferenceAcceleratorOverridesHasBeenSet = true; m_inferenceAcceleratorOverrides = value; }
+
+    /**
+     * <p>The Elastic Inference accelerator override for the task.</p>
+     */
+    inline void SetInferenceAcceleratorOverrides(Aws::Vector<InferenceAcceleratorOverride>&& value) { m_inferenceAcceleratorOverridesHasBeenSet = true; m_inferenceAcceleratorOverrides = std::move(value); }
+
+    /**
+     * <p>The Elastic Inference accelerator override for the task.</p>
+     */
+    inline TaskOverride& WithInferenceAcceleratorOverrides(const Aws::Vector<InferenceAcceleratorOverride>& value) { SetInferenceAcceleratorOverrides(value); return *this;}
+
+    /**
+     * <p>The Elastic Inference accelerator override for the task.</p>
+     */
+    inline TaskOverride& WithInferenceAcceleratorOverrides(Aws::Vector<InferenceAcceleratorOverride>&& value) { SetInferenceAcceleratorOverrides(std::move(value)); return *this;}
+
+    /**
+     * <p>The Elastic Inference accelerator override for the task.</p>
+     */
+    inline TaskOverride& AddInferenceAcceleratorOverrides(const InferenceAcceleratorOverride& value) { m_inferenceAcceleratorOverridesHasBeenSet = true; m_inferenceAcceleratorOverrides.push_back(value); return *this; }
+
+    /**
+     * <p>The Elastic Inference accelerator override for the task.</p>
+     */
+    inline TaskOverride& AddInferenceAcceleratorOverrides(InferenceAcceleratorOverride&& value) { m_inferenceAcceleratorOverridesHasBeenSet = true; m_inferenceAcceleratorOverrides.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -199,6 +241,9 @@ namespace Model
 
     Aws::Vector<ContainerOverride> m_containerOverrides;
     bool m_containerOverridesHasBeenSet;
+
+    Aws::Vector<InferenceAcceleratorOverride> m_inferenceAcceleratorOverrides;
+    bool m_inferenceAcceleratorOverridesHasBeenSet;
 
     Aws::String m_taskRoleArn;
     bool m_taskRoleArnHasBeenSet;

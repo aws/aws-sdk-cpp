@@ -62,7 +62,8 @@ Task::Task() :
     m_attachmentsHasBeenSet(false),
     m_healthStatus(HealthStatus::NOT_SET),
     m_healthStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_inferenceAcceleratorsHasBeenSet(false)
 {
 }
 
@@ -100,7 +101,8 @@ Task::Task(JsonView jsonValue) :
     m_attachmentsHasBeenSet(false),
     m_healthStatus(HealthStatus::NOT_SET),
     m_healthStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_inferenceAcceleratorsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -319,6 +321,16 @@ Task& Task::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("inferenceAccelerators"))
+  {
+    Array<JsonView> inferenceAcceleratorsJsonList = jsonValue.GetArray("inferenceAccelerators");
+    for(unsigned inferenceAcceleratorsIndex = 0; inferenceAcceleratorsIndex < inferenceAcceleratorsJsonList.GetLength(); ++inferenceAcceleratorsIndex)
+    {
+      m_inferenceAccelerators.push_back(inferenceAcceleratorsJsonList[inferenceAcceleratorsIndex].AsObject());
+    }
+    m_inferenceAcceleratorsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -500,6 +512,17 @@ JsonValue Task::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_inferenceAcceleratorsHasBeenSet)
+  {
+   Array<JsonValue> inferenceAcceleratorsJsonList(m_inferenceAccelerators.size());
+   for(unsigned inferenceAcceleratorsIndex = 0; inferenceAcceleratorsIndex < inferenceAcceleratorsJsonList.GetLength(); ++inferenceAcceleratorsIndex)
+   {
+     inferenceAcceleratorsJsonList[inferenceAcceleratorsIndex].AsObject(m_inferenceAccelerators[inferenceAcceleratorsIndex].Jsonize());
+   }
+   payload.WithArray("inferenceAccelerators", std::move(inferenceAcceleratorsJsonList));
 
   }
 

@@ -38,6 +38,7 @@ PlayerSession::PlayerSession() :
     m_status(PlayerSessionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
+    m_dnsNameHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
     m_playerDataHasBeenSet(false)
@@ -54,6 +55,7 @@ PlayerSession::PlayerSession(JsonView jsonValue) :
     m_status(PlayerSessionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
+    m_dnsNameHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
     m_playerDataHasBeenSet(false)
@@ -119,6 +121,13 @@ PlayerSession& PlayerSession::operator =(JsonView jsonValue)
     m_ipAddressHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DnsName"))
+  {
+    m_dnsName = jsonValue.GetString("DnsName");
+
+    m_dnsNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
@@ -182,6 +191,12 @@ JsonValue PlayerSession::Jsonize() const
   if(m_ipAddressHasBeenSet)
   {
    payload.WithString("IpAddress", m_ipAddress);
+
+  }
+
+  if(m_dnsNameHasBeenSet)
+  {
+   payload.WithString("DnsName", m_dnsName);
 
   }
 

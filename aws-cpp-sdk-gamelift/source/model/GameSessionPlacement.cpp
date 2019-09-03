@@ -44,6 +44,7 @@ GameSessionPlacement::GameSessionPlacement() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
+    m_dnsNameHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
     m_placedPlayerSessionsHasBeenSet(false),
@@ -68,6 +69,7 @@ GameSessionPlacement::GameSessionPlacement(JsonView jsonValue) :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
+    m_dnsNameHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
     m_placedPlayerSessionsHasBeenSet(false),
@@ -174,6 +176,13 @@ GameSessionPlacement& GameSessionPlacement::operator =(JsonView jsonValue)
     m_ipAddress = jsonValue.GetString("IpAddress");
 
     m_ipAddressHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DnsName"))
+  {
+    m_dnsName = jsonValue.GetString("DnsName");
+
+    m_dnsNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Port"))
@@ -296,6 +305,12 @@ JsonValue GameSessionPlacement::Jsonize() const
   if(m_ipAddressHasBeenSet)
   {
    payload.WithString("IpAddress", m_ipAddress);
+
+  }
+
+  if(m_dnsNameHasBeenSet)
+  {
+   payload.WithString("DnsName", m_dnsName);
 
   }
 

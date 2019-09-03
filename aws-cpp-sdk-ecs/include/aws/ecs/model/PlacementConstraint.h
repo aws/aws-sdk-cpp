@@ -39,7 +39,8 @@ namespace Model
    * see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
    * Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * Guide</i>.</p> <note> <p>If you are using the Fargate launch type, task
+   * placement constraints are not supported.</p> </note><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PlacementConstraint">AWS
    * API Reference</a></p>
    */
@@ -55,54 +56,48 @@ namespace Model
     /**
      * <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each
      * task in a particular group is running on a different container instance. Use
-     * <code>memberOf</code> to restrict the selection to a group of valid candidates.
-     * The value <code>distinctInstance</code> is not supported in task
-     * definitions.</p>
+     * <code>memberOf</code> to restrict the selection to a group of valid
+     * candidates.</p>
      */
     inline const PlacementConstraintType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each
      * task in a particular group is running on a different container instance. Use
-     * <code>memberOf</code> to restrict the selection to a group of valid candidates.
-     * The value <code>distinctInstance</code> is not supported in task
-     * definitions.</p>
+     * <code>memberOf</code> to restrict the selection to a group of valid
+     * candidates.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each
      * task in a particular group is running on a different container instance. Use
-     * <code>memberOf</code> to restrict the selection to a group of valid candidates.
-     * The value <code>distinctInstance</code> is not supported in task
-     * definitions.</p>
+     * <code>memberOf</code> to restrict the selection to a group of valid
+     * candidates.</p>
      */
     inline void SetType(const PlacementConstraintType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each
      * task in a particular group is running on a different container instance. Use
-     * <code>memberOf</code> to restrict the selection to a group of valid candidates.
-     * The value <code>distinctInstance</code> is not supported in task
-     * definitions.</p>
+     * <code>memberOf</code> to restrict the selection to a group of valid
+     * candidates.</p>
      */
     inline void SetType(PlacementConstraintType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each
      * task in a particular group is running on a different container instance. Use
-     * <code>memberOf</code> to restrict the selection to a group of valid candidates.
-     * The value <code>distinctInstance</code> is not supported in task
-     * definitions.</p>
+     * <code>memberOf</code> to restrict the selection to a group of valid
+     * candidates.</p>
      */
     inline PlacementConstraint& WithType(const PlacementConstraintType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each
      * task in a particular group is running on a different container instance. Use
-     * <code>memberOf</code> to restrict the selection to a group of valid candidates.
-     * The value <code>distinctInstance</code> is not supported in task
-     * definitions.</p>
+     * <code>memberOf</code> to restrict the selection to a group of valid
+     * candidates.</p>
      */
     inline PlacementConstraint& WithType(PlacementConstraintType&& value) { SetType(std::move(value)); return *this;}
 
