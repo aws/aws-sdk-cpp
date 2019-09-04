@@ -13,7 +13,8 @@ RUN curl https://cmake.org/files/v3.13/cmake-3.13.3-Linux-x86_64.tar.gz --output
 
 #Install curl and openssl
 RUN yum install curl-devel -y && \
-    yum install openssl-devel -y
+    yum install openssl-devel -y && \
+    yum install ninja-build -y
 
 #Install awscli
 RUN yum install python-pip -y && \

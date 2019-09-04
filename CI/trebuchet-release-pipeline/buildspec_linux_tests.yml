@@ -13,7 +13,7 @@ phases:
   post_build:
     commands:
       - cd /tmp
-      # - aws s3 cp ./ s3://aws-sdk-cpp-dev-pipeline/LinuxGccLog --recursive --exclude "*" --include "*.log"
+      - aws s3 cp ./build s3://${S3_BUCKET_NAME}/log/${CODEBUILD_BUILD_ID}/ --recursive --exclude "*" --include "aws*.log"
       - export BUILD_JOB_NAME=$(echo "${CODEBUILD_BUILD_ID}" | cut -f1 -d ":")
       - export BUILD_URL="https://${AWS_REGION}.console.aws.amazon.com/codesuite/codebuild/projects/${BUILD_JOB_NAME}/build/${CODEBUILD_BUILD_ID}"
       - |
