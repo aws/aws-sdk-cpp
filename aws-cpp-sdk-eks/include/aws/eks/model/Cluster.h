@@ -19,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/eks/model/VpcConfigResponse.h>
 #include <aws/eks/model/Logging.h>
+#include <aws/eks/model/Identity.h>
 #include <aws/eks/model/ClusterStatus.h>
 #include <aws/eks/model/Certificate.h>
 #include <utility>
@@ -403,6 +404,37 @@ namespace Model
 
 
     /**
+     * <p>The identity provider information for the cluster.</p>
+     */
+    inline const Identity& GetIdentity() const{ return m_identity; }
+
+    /**
+     * <p>The identity provider information for the cluster.</p>
+     */
+    inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
+
+    /**
+     * <p>The identity provider information for the cluster.</p>
+     */
+    inline void SetIdentity(const Identity& value) { m_identityHasBeenSet = true; m_identity = value; }
+
+    /**
+     * <p>The identity provider information for the cluster.</p>
+     */
+    inline void SetIdentity(Identity&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
+
+    /**
+     * <p>The identity provider information for the cluster.</p>
+     */
+    inline Cluster& WithIdentity(const Identity& value) { SetIdentity(value); return *this;}
+
+    /**
+     * <p>The identity provider information for the cluster.</p>
+     */
+    inline Cluster& WithIdentity(Identity&& value) { SetIdentity(std::move(value)); return *this;}
+
+
+    /**
      * <p>The current status of the cluster.</p>
      */
     inline const ClusterStatus& GetStatus() const{ return m_status; }
@@ -594,6 +626,9 @@ namespace Model
 
     Logging m_logging;
     bool m_loggingHasBeenSet;
+
+    Identity m_identity;
+    bool m_identityHasBeenSet;
 
     ClusterStatus m_status;
     bool m_statusHasBeenSet;

@@ -37,6 +37,7 @@ Cluster::Cluster() :
     m_roleArnHasBeenSet(false),
     m_resourcesVpcConfigHasBeenSet(false),
     m_loggingHasBeenSet(false),
+    m_identityHasBeenSet(false),
     m_status(ClusterStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_certificateAuthorityHasBeenSet(false),
@@ -54,6 +55,7 @@ Cluster::Cluster(JsonView jsonValue) :
     m_roleArnHasBeenSet(false),
     m_resourcesVpcConfigHasBeenSet(false),
     m_loggingHasBeenSet(false),
+    m_identityHasBeenSet(false),
     m_status(ClusterStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_certificateAuthorityHasBeenSet(false),
@@ -119,6 +121,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_logging = jsonValue.GetObject("logging");
 
     m_loggingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("identity"))
+  {
+    m_identity = jsonValue.GetObject("identity");
+
+    m_identityHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -200,6 +209,12 @@ JsonValue Cluster::Jsonize() const
   if(m_loggingHasBeenSet)
   {
    payload.WithObject("logging", m_logging.Jsonize());
+
+  }
+
+  if(m_identityHasBeenSet)
+  {
+   payload.WithObject("identity", m_identity.Jsonize());
 
   }
 

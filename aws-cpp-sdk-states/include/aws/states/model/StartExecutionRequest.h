@@ -91,7 +91,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
-     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
      * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
      * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
@@ -105,7 +105,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
-     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
      * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
      * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
@@ -119,7 +119,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
-     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
      * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
      * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
@@ -133,7 +133,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
-     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
      * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
      * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
@@ -147,7 +147,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
-     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
      * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
      * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
@@ -161,7 +161,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
-     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
      * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
      * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
@@ -175,7 +175,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
-     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
      * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
      * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
@@ -189,7 +189,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
-     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
      * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
      * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
      * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>

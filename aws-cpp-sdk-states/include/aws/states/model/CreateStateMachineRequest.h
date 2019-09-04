@@ -48,7 +48,7 @@ namespace Model
 
     /**
      * <p>The name of the state machine. </p> <p>A name must <i>not</i> contain:</p>
-     * <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
+     * <ul> <li> <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
      * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
@@ -58,7 +58,7 @@ namespace Model
 
     /**
      * <p>The name of the state machine. </p> <p>A name must <i>not</i> contain:</p>
-     * <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
+     * <ul> <li> <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
      * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
@@ -68,7 +68,7 @@ namespace Model
 
     /**
      * <p>The name of the state machine. </p> <p>A name must <i>not</i> contain:</p>
-     * <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
+     * <ul> <li> <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
      * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
@@ -78,7 +78,7 @@ namespace Model
 
     /**
      * <p>The name of the state machine. </p> <p>A name must <i>not</i> contain:</p>
-     * <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
+     * <ul> <li> <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
      * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
@@ -88,7 +88,7 @@ namespace Model
 
     /**
      * <p>The name of the state machine. </p> <p>A name must <i>not</i> contain:</p>
-     * <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
+     * <ul> <li> <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
      * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
@@ -98,7 +98,7 @@ namespace Model
 
     /**
      * <p>The name of the state machine. </p> <p>A name must <i>not</i> contain:</p>
-     * <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
+     * <ul> <li> <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
      * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
@@ -108,7 +108,7 @@ namespace Model
 
     /**
      * <p>The name of the state machine. </p> <p>A name must <i>not</i> contain:</p>
-     * <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
+     * <ul> <li> <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
      * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
@@ -118,7 +118,7 @@ namespace Model
 
     /**
      * <p>The name of the state machine. </p> <p>A name must <i>not</i> contain:</p>
-     * <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
+     * <ul> <li> <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
      * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
@@ -234,42 +234,98 @@ namespace Model
 
 
     /**
-     * <p>Tags to be added when creating a state machine.</p>
+     * <p>Tags to be added when creating a state machine.</p> <p>An array of key-value
+     * pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
+     * Guide</i>, and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+     * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
+     * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags to be added when creating a state machine.</p>
+     * <p>Tags to be added when creating a state machine.</p> <p>An array of key-value
+     * pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
+     * Guide</i>, and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+     * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
+     * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Tags to be added when creating a state machine.</p>
+     * <p>Tags to be added when creating a state machine.</p> <p>An array of key-value
+     * pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
+     * Guide</i>, and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+     * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
+     * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Tags to be added when creating a state machine.</p>
+     * <p>Tags to be added when creating a state machine.</p> <p>An array of key-value
+     * pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
+     * Guide</i>, and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+     * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
+     * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Tags to be added when creating a state machine.</p>
+     * <p>Tags to be added when creating a state machine.</p> <p>An array of key-value
+     * pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
+     * Guide</i>, and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+     * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
+     * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
      */
     inline CreateStateMachineRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags to be added when creating a state machine.</p>
+     * <p>Tags to be added when creating a state machine.</p> <p>An array of key-value
+     * pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
+     * Guide</i>, and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+     * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
+     * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
      */
     inline CreateStateMachineRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags to be added when creating a state machine.</p>
+     * <p>Tags to be added when creating a state machine.</p> <p>An array of key-value
+     * pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
+     * Guide</i>, and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+     * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
+     * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
      */
     inline CreateStateMachineRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Tags to be added when creating a state machine.</p>
+     * <p>Tags to be added when creating a state machine.</p> <p>An array of key-value
+     * pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
+     * Guide</i>, and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+     * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
+     * white space, or these symbols: <code>_ . : / = + - @</code>.</p>
      */
     inline CreateStateMachineRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

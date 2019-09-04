@@ -81,7 +81,7 @@ namespace Model
 
     /**
      * <p>The name of the activity.</p> <p>A name must <i>not</i> contain:</p> <ul>
-     * <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code>
+     * <li> <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code>
      * </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
@@ -91,7 +91,7 @@ namespace Model
 
     /**
      * <p>The name of the activity.</p> <p>A name must <i>not</i> contain:</p> <ul>
-     * <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code>
+     * <li> <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code>
      * </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
@@ -101,7 +101,7 @@ namespace Model
 
     /**
      * <p>The name of the activity.</p> <p>A name must <i>not</i> contain:</p> <ul>
-     * <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code>
+     * <li> <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code>
      * </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
@@ -111,7 +111,7 @@ namespace Model
 
     /**
      * <p>The name of the activity.</p> <p>A name must <i>not</i> contain:</p> <ul>
-     * <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code>
+     * <li> <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code>
      * </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
@@ -121,7 +121,7 @@ namespace Model
 
     /**
      * <p>The name of the activity.</p> <p>A name must <i>not</i> contain:</p> <ul>
-     * <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code>
+     * <li> <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code>
      * </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
@@ -131,7 +131,7 @@ namespace Model
 
     /**
      * <p>The name of the activity.</p> <p>A name must <i>not</i> contain:</p> <ul>
-     * <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code>
+     * <li> <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code>
      * </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
@@ -141,7 +141,7 @@ namespace Model
 
     /**
      * <p>The name of the activity.</p> <p>A name must <i>not</i> contain:</p> <ul>
-     * <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code>
+     * <li> <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code>
      * </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,

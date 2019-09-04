@@ -36,6 +36,8 @@
 #include <aws/states/model/ExecutionSucceededEventDetails.h>
 #include <aws/states/model/ExecutionAbortedEventDetails.h>
 #include <aws/states/model/ExecutionTimedOutEventDetails.h>
+#include <aws/states/model/MapStateStartedEventDetails.h>
+#include <aws/states/model/MapIterationEventDetails.h>
 #include <aws/states/model/LambdaFunctionFailedEventDetails.h>
 #include <aws/states/model/LambdaFunctionScheduleFailedEventDetails.h>
 #include <aws/states/model/LambdaFunctionScheduledEventDetails.h>
@@ -655,6 +657,161 @@ namespace Model
     inline HistoryEvent& WithExecutionTimedOutEventDetails(ExecutionTimedOutEventDetails&& value) { SetExecutionTimedOutEventDetails(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Contains details about Map state that was started.</p>
+     */
+    inline const MapStateStartedEventDetails& GetMapStateStartedEventDetails() const{ return m_mapStateStartedEventDetails; }
+
+    /**
+     * <p>Contains details about Map state that was started.</p>
+     */
+    inline bool MapStateStartedEventDetailsHasBeenSet() const { return m_mapStateStartedEventDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains details about Map state that was started.</p>
+     */
+    inline void SetMapStateStartedEventDetails(const MapStateStartedEventDetails& value) { m_mapStateStartedEventDetailsHasBeenSet = true; m_mapStateStartedEventDetails = value; }
+
+    /**
+     * <p>Contains details about Map state that was started.</p>
+     */
+    inline void SetMapStateStartedEventDetails(MapStateStartedEventDetails&& value) { m_mapStateStartedEventDetailsHasBeenSet = true; m_mapStateStartedEventDetails = std::move(value); }
+
+    /**
+     * <p>Contains details about Map state that was started.</p>
+     */
+    inline HistoryEvent& WithMapStateStartedEventDetails(const MapStateStartedEventDetails& value) { SetMapStateStartedEventDetails(value); return *this;}
+
+    /**
+     * <p>Contains details about Map state that was started.</p>
+     */
+    inline HistoryEvent& WithMapStateStartedEventDetails(MapStateStartedEventDetails&& value) { SetMapStateStartedEventDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains details about an iteration of a Map state that was started.</p>
+     */
+    inline const MapIterationEventDetails& GetMapIterationStartedEventDetails() const{ return m_mapIterationStartedEventDetails; }
+
+    /**
+     * <p>Contains details about an iteration of a Map state that was started.</p>
+     */
+    inline bool MapIterationStartedEventDetailsHasBeenSet() const { return m_mapIterationStartedEventDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains details about an iteration of a Map state that was started.</p>
+     */
+    inline void SetMapIterationStartedEventDetails(const MapIterationEventDetails& value) { m_mapIterationStartedEventDetailsHasBeenSet = true; m_mapIterationStartedEventDetails = value; }
+
+    /**
+     * <p>Contains details about an iteration of a Map state that was started.</p>
+     */
+    inline void SetMapIterationStartedEventDetails(MapIterationEventDetails&& value) { m_mapIterationStartedEventDetailsHasBeenSet = true; m_mapIterationStartedEventDetails = std::move(value); }
+
+    /**
+     * <p>Contains details about an iteration of a Map state that was started.</p>
+     */
+    inline HistoryEvent& WithMapIterationStartedEventDetails(const MapIterationEventDetails& value) { SetMapIterationStartedEventDetails(value); return *this;}
+
+    /**
+     * <p>Contains details about an iteration of a Map state that was started.</p>
+     */
+    inline HistoryEvent& WithMapIterationStartedEventDetails(MapIterationEventDetails&& value) { SetMapIterationStartedEventDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains details about an iteration of a Map state that succeeded.</p>
+     */
+    inline const MapIterationEventDetails& GetMapIterationSucceededEventDetails() const{ return m_mapIterationSucceededEventDetails; }
+
+    /**
+     * <p>Contains details about an iteration of a Map state that succeeded.</p>
+     */
+    inline bool MapIterationSucceededEventDetailsHasBeenSet() const { return m_mapIterationSucceededEventDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains details about an iteration of a Map state that succeeded.</p>
+     */
+    inline void SetMapIterationSucceededEventDetails(const MapIterationEventDetails& value) { m_mapIterationSucceededEventDetailsHasBeenSet = true; m_mapIterationSucceededEventDetails = value; }
+
+    /**
+     * <p>Contains details about an iteration of a Map state that succeeded.</p>
+     */
+    inline void SetMapIterationSucceededEventDetails(MapIterationEventDetails&& value) { m_mapIterationSucceededEventDetailsHasBeenSet = true; m_mapIterationSucceededEventDetails = std::move(value); }
+
+    /**
+     * <p>Contains details about an iteration of a Map state that succeeded.</p>
+     */
+    inline HistoryEvent& WithMapIterationSucceededEventDetails(const MapIterationEventDetails& value) { SetMapIterationSucceededEventDetails(value); return *this;}
+
+    /**
+     * <p>Contains details about an iteration of a Map state that succeeded.</p>
+     */
+    inline HistoryEvent& WithMapIterationSucceededEventDetails(MapIterationEventDetails&& value) { SetMapIterationSucceededEventDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains details about an iteration of a Map state that failed.</p>
+     */
+    inline const MapIterationEventDetails& GetMapIterationFailedEventDetails() const{ return m_mapIterationFailedEventDetails; }
+
+    /**
+     * <p>Contains details about an iteration of a Map state that failed.</p>
+     */
+    inline bool MapIterationFailedEventDetailsHasBeenSet() const { return m_mapIterationFailedEventDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains details about an iteration of a Map state that failed.</p>
+     */
+    inline void SetMapIterationFailedEventDetails(const MapIterationEventDetails& value) { m_mapIterationFailedEventDetailsHasBeenSet = true; m_mapIterationFailedEventDetails = value; }
+
+    /**
+     * <p>Contains details about an iteration of a Map state that failed.</p>
+     */
+    inline void SetMapIterationFailedEventDetails(MapIterationEventDetails&& value) { m_mapIterationFailedEventDetailsHasBeenSet = true; m_mapIterationFailedEventDetails = std::move(value); }
+
+    /**
+     * <p>Contains details about an iteration of a Map state that failed.</p>
+     */
+    inline HistoryEvent& WithMapIterationFailedEventDetails(const MapIterationEventDetails& value) { SetMapIterationFailedEventDetails(value); return *this;}
+
+    /**
+     * <p>Contains details about an iteration of a Map state that failed.</p>
+     */
+    inline HistoryEvent& WithMapIterationFailedEventDetails(MapIterationEventDetails&& value) { SetMapIterationFailedEventDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains details about an iteration of a Map state that was aborted.</p>
+     */
+    inline const MapIterationEventDetails& GetMapIterationAbortedEventDetails() const{ return m_mapIterationAbortedEventDetails; }
+
+    /**
+     * <p>Contains details about an iteration of a Map state that was aborted.</p>
+     */
+    inline bool MapIterationAbortedEventDetailsHasBeenSet() const { return m_mapIterationAbortedEventDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains details about an iteration of a Map state that was aborted.</p>
+     */
+    inline void SetMapIterationAbortedEventDetails(const MapIterationEventDetails& value) { m_mapIterationAbortedEventDetailsHasBeenSet = true; m_mapIterationAbortedEventDetails = value; }
+
+    /**
+     * <p>Contains details about an iteration of a Map state that was aborted.</p>
+     */
+    inline void SetMapIterationAbortedEventDetails(MapIterationEventDetails&& value) { m_mapIterationAbortedEventDetailsHasBeenSet = true; m_mapIterationAbortedEventDetails = std::move(value); }
+
+    /**
+     * <p>Contains details about an iteration of a Map state that was aborted.</p>
+     */
+    inline HistoryEvent& WithMapIterationAbortedEventDetails(const MapIterationEventDetails& value) { SetMapIterationAbortedEventDetails(value); return *this;}
+
+    /**
+     * <p>Contains details about an iteration of a Map state that was aborted.</p>
+     */
+    inline HistoryEvent& WithMapIterationAbortedEventDetails(MapIterationEventDetails&& value) { SetMapIterationAbortedEventDetails(std::move(value)); return *this;}
+
+
     
     inline const LambdaFunctionFailedEventDetails& GetLambdaFunctionFailedEventDetails() const{ return m_lambdaFunctionFailedEventDetails; }
 
@@ -912,6 +1069,21 @@ namespace Model
 
     ExecutionTimedOutEventDetails m_executionTimedOutEventDetails;
     bool m_executionTimedOutEventDetailsHasBeenSet;
+
+    MapStateStartedEventDetails m_mapStateStartedEventDetails;
+    bool m_mapStateStartedEventDetailsHasBeenSet;
+
+    MapIterationEventDetails m_mapIterationStartedEventDetails;
+    bool m_mapIterationStartedEventDetailsHasBeenSet;
+
+    MapIterationEventDetails m_mapIterationSucceededEventDetails;
+    bool m_mapIterationSucceededEventDetailsHasBeenSet;
+
+    MapIterationEventDetails m_mapIterationFailedEventDetails;
+    bool m_mapIterationFailedEventDetailsHasBeenSet;
+
+    MapIterationEventDetails m_mapIterationAbortedEventDetails;
+    bool m_mapIterationAbortedEventDetailsHasBeenSet;
 
     LambdaFunctionFailedEventDetails m_lambdaFunctionFailedEventDetails;
     bool m_lambdaFunctionFailedEventDetailsHasBeenSet;

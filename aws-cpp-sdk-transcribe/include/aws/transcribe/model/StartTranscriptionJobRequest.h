@@ -137,7 +137,7 @@ namespace Model
 
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
+     * <p>The sample rate of the audio track in the input media file in Hertz. </p>
      * <p>If you do not specify the media sample rate, Amazon Transcribe determines the
      * sample rate. If you specify the sample rate, it must match the sample rate
      * detected by Amazon Transcribe. In most cases, you should leave the
@@ -147,7 +147,7 @@ namespace Model
     inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
+     * <p>The sample rate of the audio track in the input media file in Hertz. </p>
      * <p>If you do not specify the media sample rate, Amazon Transcribe determines the
      * sample rate. If you specify the sample rate, it must match the sample rate
      * detected by Amazon Transcribe. In most cases, you should leave the
@@ -157,7 +157,7 @@ namespace Model
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
+     * <p>The sample rate of the audio track in the input media file in Hertz. </p>
      * <p>If you do not specify the media sample rate, Amazon Transcribe determines the
      * sample rate. If you specify the sample rate, it must match the sample rate
      * detected by Amazon Transcribe. In most cases, you should leave the
@@ -167,7 +167,7 @@ namespace Model
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
+     * <p>The sample rate of the audio track in the input media file in Hertz. </p>
      * <p>If you do not specify the media sample rate, Amazon Transcribe determines the
      * sample rate. If you specify the sample rate, it must match the sample rate
      * detected by Amazon Transcribe. In most cases, you should leave the
@@ -178,32 +178,62 @@ namespace Model
 
 
     /**
-     * <p>The format of the input media file.</p>
+     * <p>The format of the input media file.</p> <p> If you do not specify the format
+     * of the media file, Amazon Transcribe determines the format. If the format is not
+     * recognized, Amazon Transcribe returns an <code>InternalFailureException</code>
+     * exception. If you specify the format, it must match the format detected by
+     * Amazon Transcribe, otherwise you get an <code>InternalFailureException</code>
+     * exception.</p>
      */
     inline const MediaFormat& GetMediaFormat() const{ return m_mediaFormat; }
 
     /**
-     * <p>The format of the input media file.</p>
+     * <p>The format of the input media file.</p> <p> If you do not specify the format
+     * of the media file, Amazon Transcribe determines the format. If the format is not
+     * recognized, Amazon Transcribe returns an <code>InternalFailureException</code>
+     * exception. If you specify the format, it must match the format detected by
+     * Amazon Transcribe, otherwise you get an <code>InternalFailureException</code>
+     * exception.</p>
      */
     inline bool MediaFormatHasBeenSet() const { return m_mediaFormatHasBeenSet; }
 
     /**
-     * <p>The format of the input media file.</p>
+     * <p>The format of the input media file.</p> <p> If you do not specify the format
+     * of the media file, Amazon Transcribe determines the format. If the format is not
+     * recognized, Amazon Transcribe returns an <code>InternalFailureException</code>
+     * exception. If you specify the format, it must match the format detected by
+     * Amazon Transcribe, otherwise you get an <code>InternalFailureException</code>
+     * exception.</p>
      */
     inline void SetMediaFormat(const MediaFormat& value) { m_mediaFormatHasBeenSet = true; m_mediaFormat = value; }
 
     /**
-     * <p>The format of the input media file.</p>
+     * <p>The format of the input media file.</p> <p> If you do not specify the format
+     * of the media file, Amazon Transcribe determines the format. If the format is not
+     * recognized, Amazon Transcribe returns an <code>InternalFailureException</code>
+     * exception. If you specify the format, it must match the format detected by
+     * Amazon Transcribe, otherwise you get an <code>InternalFailureException</code>
+     * exception.</p>
      */
     inline void SetMediaFormat(MediaFormat&& value) { m_mediaFormatHasBeenSet = true; m_mediaFormat = std::move(value); }
 
     /**
-     * <p>The format of the input media file.</p>
+     * <p>The format of the input media file.</p> <p> If you do not specify the format
+     * of the media file, Amazon Transcribe determines the format. If the format is not
+     * recognized, Amazon Transcribe returns an <code>InternalFailureException</code>
+     * exception. If you specify the format, it must match the format detected by
+     * Amazon Transcribe, otherwise you get an <code>InternalFailureException</code>
+     * exception.</p>
      */
     inline StartTranscriptionJobRequest& WithMediaFormat(const MediaFormat& value) { SetMediaFormat(value); return *this;}
 
     /**
-     * <p>The format of the input media file.</p>
+     * <p>The format of the input media file.</p> <p> If you do not specify the format
+     * of the media file, Amazon Transcribe determines the format. If the format is not
+     * recognized, Amazon Transcribe returns an <code>InternalFailureException</code>
+     * exception. If you specify the format, it must match the format detected by
+     * Amazon Transcribe, otherwise you get an <code>InternalFailureException</code>
+     * exception.</p>
      */
     inline StartTranscriptionJobRequest& WithMediaFormat(MediaFormat&& value) { SetMediaFormat(std::move(value)); return *this;}
 

@@ -233,7 +233,14 @@ namespace Model
          * Step Functions know the existence of your activity and returns an identifier for
          * use in a state machine and when polling from the activity.</p> <note> <p>This
          * operation is eventually consistent. The results are best effort and may not
-         * reflect very recent updates and changes.</p> </note><p><h3>See Also:</h3>   <a
+         * reflect very recent updates and changes.</p> </note> <note> <p>
+         * <code>CreateActivity</code> is an idempotent API. Subsequent requests won’t
+         * create a duplicate resource if it was already created.
+         * <code>CreateActivity</code>'s idempotency check is based on the activity
+         * <code>name</code>. If a following request has different <code>tags</code>
+         * values, Step Functions will ignore these differences and treat it as an
+         * idempotent request of the previous. In this case, <code>tags</code> will not be
+         * updated, even if they are different.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">AWS
          * API Reference</a></p>
          */
@@ -247,7 +254,14 @@ namespace Model
          * Step Functions know the existence of your activity and returns an identifier for
          * use in a state machine and when polling from the activity.</p> <note> <p>This
          * operation is eventually consistent. The results are best effort and may not
-         * reflect very recent updates and changes.</p> </note><p><h3>See Also:</h3>   <a
+         * reflect very recent updates and changes.</p> </note> <note> <p>
+         * <code>CreateActivity</code> is an idempotent API. Subsequent requests won’t
+         * create a duplicate resource if it was already created.
+         * <code>CreateActivity</code>'s idempotency check is based on the activity
+         * <code>name</code>. If a following request has different <code>tags</code>
+         * values, Step Functions will ignore these differences and treat it as an
+         * idempotent request of the previous. In this case, <code>tags</code> will not be
+         * updated, even if they are different.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">AWS
          * API Reference</a></p>
          *
@@ -263,7 +277,14 @@ namespace Model
          * Step Functions know the existence of your activity and returns an identifier for
          * use in a state machine and when polling from the activity.</p> <note> <p>This
          * operation is eventually consistent. The results are best effort and may not
-         * reflect very recent updates and changes.</p> </note><p><h3>See Also:</h3>   <a
+         * reflect very recent updates and changes.</p> </note> <note> <p>
+         * <code>CreateActivity</code> is an idempotent API. Subsequent requests won’t
+         * create a duplicate resource if it was already created.
+         * <code>CreateActivity</code>'s idempotency check is based on the activity
+         * <code>name</code>. If a following request has different <code>tags</code>
+         * values, Step Functions will ignore these differences and treat it as an
+         * idempotent request of the previous. In this case, <code>tags</code> will not be
+         * updated, even if they are different.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">AWS
          * API Reference</a></p>
          *
@@ -278,7 +299,14 @@ namespace Model
          * (<code>Fail</code> states), and so on. State machines are specified using a
          * JSON-based, structured language.</p> <note> <p>This operation is eventually
          * consistent. The results are best effort and may not reflect very recent updates
-         * and changes.</p> </note><p><h3>See Also:</h3>   <a
+         * and changes.</p> </note> <note> <p> <code>CreateStateMachine</code> is an
+         * idempotent API. Subsequent requests won’t create a duplicate resource if it was
+         * already created. <code>CreateStateMachine</code>'s idempotency check is based on
+         * the state machine <code>name</code> and <code>definition</code>. If a following
+         * request has a different <code>roleArn</code> or <code>tags</code>, Step
+         * Functions will ignore these differences and treat it as an idempotent request of
+         * the previous. In this case, <code>roleArn</code> and <code>tags</code> will not
+         * be updated, even if they are different.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">AWS
          * API Reference</a></p>
          */
@@ -291,7 +319,14 @@ namespace Model
          * (<code>Fail</code> states), and so on. State machines are specified using a
          * JSON-based, structured language.</p> <note> <p>This operation is eventually
          * consistent. The results are best effort and may not reflect very recent updates
-         * and changes.</p> </note><p><h3>See Also:</h3>   <a
+         * and changes.</p> </note> <note> <p> <code>CreateStateMachine</code> is an
+         * idempotent API. Subsequent requests won’t create a duplicate resource if it was
+         * already created. <code>CreateStateMachine</code>'s idempotency check is based on
+         * the state machine <code>name</code> and <code>definition</code>. If a following
+         * request has a different <code>roleArn</code> or <code>tags</code>, Step
+         * Functions will ignore these differences and treat it as an idempotent request of
+         * the previous. In this case, <code>roleArn</code> and <code>tags</code> will not
+         * be updated, even if they are different.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">AWS
          * API Reference</a></p>
          *
@@ -306,7 +341,14 @@ namespace Model
          * (<code>Fail</code> states), and so on. State machines are specified using a
          * JSON-based, structured language.</p> <note> <p>This operation is eventually
          * consistent. The results are best effort and may not reflect very recent updates
-         * and changes.</p> </note><p><h3>See Also:</h3>   <a
+         * and changes.</p> </note> <note> <p> <code>CreateStateMachine</code> is an
+         * idempotent API. Subsequent requests won’t create a duplicate resource if it was
+         * already created. <code>CreateStateMachine</code>'s idempotency check is based on
+         * the state machine <code>name</code> and <code>definition</code>. If a following
+         * request has a different <code>roleArn</code> or <code>tags</code>, Step
+         * Functions will ignore these differences and treat it as an idempotent request of
+         * the previous. In this case, <code>roleArn</code> and <code>tags</code> will not
+         * be updated, even if they are different.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">AWS
          * API Reference</a></p>
          *
@@ -758,14 +800,18 @@ namespace Model
         virtual void ListStateMachinesAsync(const Model::ListStateMachinesRequest& request, const ListStateMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List tags for a given resource.</p><p><h3>See Also:</h3>   <a
+         * <p>List tags for a given resource.</p> <p>Tags may only contain Unicode letters,
+         * digits, white space, or these symbols: <code>_ . : / = + -
+         * @</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>List tags for a given resource.</p><p><h3>See Also:</h3>   <a
+         * <p>List tags for a given resource.</p> <p>Tags may only contain Unicode letters,
+         * digits, white space, or these symbols: <code>_ . : / = + -
+         * @</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -774,7 +820,9 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>List tags for a given resource.</p><p><h3>See Also:</h3>   <a
+         * <p>List tags for a given resource.</p> <p>Tags may only contain Unicode letters,
+         * digits, white space, or these symbols: <code>_ . : / = + -
+         * @</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -783,16 +831,20 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Used by workers to report that the task identified by the
-         * <code>taskToken</code> failed.</p><p><h3>See Also:</h3>   <a
+         * <p>Used by activity workers and task states using the <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+         * pattern to report that the task identified by the <code>taskToken</code>
+         * failed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure">AWS
          * API Reference</a></p>
          */
         virtual Model::SendTaskFailureOutcome SendTaskFailure(const Model::SendTaskFailureRequest& request) const;
 
         /**
-         * <p>Used by workers to report that the task identified by the
-         * <code>taskToken</code> failed.</p><p><h3>See Also:</h3>   <a
+         * <p>Used by activity workers and task states using the <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+         * pattern to report that the task identified by the <code>taskToken</code>
+         * failed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure">AWS
          * API Reference</a></p>
          *
@@ -801,8 +853,10 @@ namespace Model
         virtual Model::SendTaskFailureOutcomeCallable SendTaskFailureCallable(const Model::SendTaskFailureRequest& request) const;
 
         /**
-         * <p>Used by workers to report that the task identified by the
-         * <code>taskToken</code> failed.</p><p><h3>See Also:</h3>   <a
+         * <p>Used by activity workers and task states using the <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+         * pattern to report that the task identified by the <code>taskToken</code>
+         * failed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure">AWS
          * API Reference</a></p>
          *
@@ -811,34 +865,48 @@ namespace Model
         virtual void SendTaskFailureAsync(const Model::SendTaskFailureRequest& request, const SendTaskFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Used by workers to report to the service that the task represented by the
-         * specified <code>taskToken</code> is still making progress. This action resets
-         * the <code>Heartbeat</code> clock. The <code>Heartbeat</code> threshold is
-         * specified in the state machine's Amazon States Language definition. This action
-         * does not in itself create an event in the execution history. However, if the
-         * task times out, the execution history contains an <code>ActivityTimedOut</code>
-         * event.</p> <note> <p>The <code>Timeout</code> of a task, defined in the state
+         * <p>Used by activity workers and task states using the <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+         * pattern to report to Step Functions that the task represented by the specified
+         * <code>taskToken</code> is still making progress. This action resets the
+         * <code>Heartbeat</code> clock. The <code>Heartbeat</code> threshold is specified
+         * in the state machine's Amazon States Language definition
+         * (<code>HeartbeatSeconds</code>). This action does not in itself create an event
+         * in the execution history. However, if the task times out, the execution history
+         * contains an <code>ActivityTimedOut</code> entry for activities, or a
+         * <code>TaskTimedOut</code> entry for for tasks using the <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync">job
+         * run</a> or <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+         * pattern.</p> <note> <p>The <code>Timeout</code> of a task, defined in the state
          * machine's Amazon States Language definition, is its maximum allowed duration,
-         * regardless of the number of <a>SendTaskHeartbeat</a> requests received.</p>
-         * </note> <note> <p>This operation is only useful for long-lived tasks to report
-         * the liveliness of the task.</p> </note><p><h3>See Also:</h3>   <a
+         * regardless of the number of <a>SendTaskHeartbeat</a> requests received. Use
+         * <code>HeartbeatSeconds</code> to configure the timeout interval for
+         * heartbeats.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat">AWS
          * API Reference</a></p>
          */
         virtual Model::SendTaskHeartbeatOutcome SendTaskHeartbeat(const Model::SendTaskHeartbeatRequest& request) const;
 
         /**
-         * <p>Used by workers to report to the service that the task represented by the
-         * specified <code>taskToken</code> is still making progress. This action resets
-         * the <code>Heartbeat</code> clock. The <code>Heartbeat</code> threshold is
-         * specified in the state machine's Amazon States Language definition. This action
-         * does not in itself create an event in the execution history. However, if the
-         * task times out, the execution history contains an <code>ActivityTimedOut</code>
-         * event.</p> <note> <p>The <code>Timeout</code> of a task, defined in the state
+         * <p>Used by activity workers and task states using the <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+         * pattern to report to Step Functions that the task represented by the specified
+         * <code>taskToken</code> is still making progress. This action resets the
+         * <code>Heartbeat</code> clock. The <code>Heartbeat</code> threshold is specified
+         * in the state machine's Amazon States Language definition
+         * (<code>HeartbeatSeconds</code>). This action does not in itself create an event
+         * in the execution history. However, if the task times out, the execution history
+         * contains an <code>ActivityTimedOut</code> entry for activities, or a
+         * <code>TaskTimedOut</code> entry for for tasks using the <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync">job
+         * run</a> or <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+         * pattern.</p> <note> <p>The <code>Timeout</code> of a task, defined in the state
          * machine's Amazon States Language definition, is its maximum allowed duration,
-         * regardless of the number of <a>SendTaskHeartbeat</a> requests received.</p>
-         * </note> <note> <p>This operation is only useful for long-lived tasks to report
-         * the liveliness of the task.</p> </note><p><h3>See Also:</h3>   <a
+         * regardless of the number of <a>SendTaskHeartbeat</a> requests received. Use
+         * <code>HeartbeatSeconds</code> to configure the timeout interval for
+         * heartbeats.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat">AWS
          * API Reference</a></p>
          *
@@ -847,17 +915,24 @@ namespace Model
         virtual Model::SendTaskHeartbeatOutcomeCallable SendTaskHeartbeatCallable(const Model::SendTaskHeartbeatRequest& request) const;
 
         /**
-         * <p>Used by workers to report to the service that the task represented by the
-         * specified <code>taskToken</code> is still making progress. This action resets
-         * the <code>Heartbeat</code> clock. The <code>Heartbeat</code> threshold is
-         * specified in the state machine's Amazon States Language definition. This action
-         * does not in itself create an event in the execution history. However, if the
-         * task times out, the execution history contains an <code>ActivityTimedOut</code>
-         * event.</p> <note> <p>The <code>Timeout</code> of a task, defined in the state
+         * <p>Used by activity workers and task states using the <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+         * pattern to report to Step Functions that the task represented by the specified
+         * <code>taskToken</code> is still making progress. This action resets the
+         * <code>Heartbeat</code> clock. The <code>Heartbeat</code> threshold is specified
+         * in the state machine's Amazon States Language definition
+         * (<code>HeartbeatSeconds</code>). This action does not in itself create an event
+         * in the execution history. However, if the task times out, the execution history
+         * contains an <code>ActivityTimedOut</code> entry for activities, or a
+         * <code>TaskTimedOut</code> entry for for tasks using the <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync">job
+         * run</a> or <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+         * pattern.</p> <note> <p>The <code>Timeout</code> of a task, defined in the state
          * machine's Amazon States Language definition, is its maximum allowed duration,
-         * regardless of the number of <a>SendTaskHeartbeat</a> requests received.</p>
-         * </note> <note> <p>This operation is only useful for long-lived tasks to report
-         * the liveliness of the task.</p> </note><p><h3>See Also:</h3>   <a
+         * regardless of the number of <a>SendTaskHeartbeat</a> requests received. Use
+         * <code>HeartbeatSeconds</code> to configure the timeout interval for
+         * heartbeats.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat">AWS
          * API Reference</a></p>
          *
@@ -866,16 +941,20 @@ namespace Model
         virtual void SendTaskHeartbeatAsync(const Model::SendTaskHeartbeatRequest& request, const SendTaskHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Used by workers to report that the task identified by the
-         * <code>taskToken</code> completed successfully.</p><p><h3>See Also:</h3>   <a
+         * <p>Used by activity workers and task states using the <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+         * pattern to report that the task identified by the <code>taskToken</code>
+         * completed successfully.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess">AWS
          * API Reference</a></p>
          */
         virtual Model::SendTaskSuccessOutcome SendTaskSuccess(const Model::SendTaskSuccessRequest& request) const;
 
         /**
-         * <p>Used by workers to report that the task identified by the
-         * <code>taskToken</code> completed successfully.</p><p><h3>See Also:</h3>   <a
+         * <p>Used by activity workers and task states using the <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+         * pattern to report that the task identified by the <code>taskToken</code>
+         * completed successfully.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess">AWS
          * API Reference</a></p>
          *
@@ -884,8 +963,10 @@ namespace Model
         virtual Model::SendTaskSuccessOutcomeCallable SendTaskSuccessCallable(const Model::SendTaskSuccessRequest& request) const;
 
         /**
-         * <p>Used by workers to report that the task identified by the
-         * <code>taskToken</code> completed successfully.</p><p><h3>See Also:</h3>   <a
+         * <p>Used by activity workers and task states using the <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+         * pattern to report that the task identified by the <code>taskToken</code>
+         * completed successfully.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess">AWS
          * API Reference</a></p>
          *
@@ -959,14 +1040,30 @@ namespace Model
         virtual void StopExecutionAsync(const Model::StopExecutionRequest& request, const StopExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Add a tag to a Step Functions resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Add a tag to a Step Functions resource.</p> <p>An array of key-value pairs.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+         * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
+         * Guide</i>, and <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+         * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
+         * white space, or these symbols: <code>_ . : / = + - @</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Add a tag to a Step Functions resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Add a tag to a Step Functions resource.</p> <p>An array of key-value pairs.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+         * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
+         * Guide</i>, and <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+         * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
+         * white space, or these symbols: <code>_ . : / = + - @</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TagResource">AWS
          * API Reference</a></p>
          *
@@ -975,7 +1072,15 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Add a tag to a Step Functions resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Add a tag to a Step Functions resource.</p> <p>An array of key-value pairs.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+         * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
+         * Guide</i>, and <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+         * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
+         * white space, or these symbols: <code>_ . : / = + - @</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TagResource">AWS
          * API Reference</a></p>
          *
