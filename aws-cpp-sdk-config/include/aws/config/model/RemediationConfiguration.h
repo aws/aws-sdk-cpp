@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/config/model/RemediationTargetType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/config/model/ExecutionControls.h>
 #include <aws/config/model/RemediationParameterValue.h>
 #include <utility>
 
@@ -313,6 +314,210 @@ namespace Model
      */
     inline RemediationConfiguration& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
+
+    /**
+     * <p>The remediation is triggered automatically.</p>
+     */
+    inline bool GetAutomatic() const{ return m_automatic; }
+
+    /**
+     * <p>The remediation is triggered automatically.</p>
+     */
+    inline bool AutomaticHasBeenSet() const { return m_automaticHasBeenSet; }
+
+    /**
+     * <p>The remediation is triggered automatically.</p>
+     */
+    inline void SetAutomatic(bool value) { m_automaticHasBeenSet = true; m_automatic = value; }
+
+    /**
+     * <p>The remediation is triggered automatically.</p>
+     */
+    inline RemediationConfiguration& WithAutomatic(bool value) { SetAutomatic(value); return *this;}
+
+
+    /**
+     * <p>An ExecutionControls object.</p>
+     */
+    inline const ExecutionControls& GetExecutionControls() const{ return m_executionControls; }
+
+    /**
+     * <p>An ExecutionControls object.</p>
+     */
+    inline bool ExecutionControlsHasBeenSet() const { return m_executionControlsHasBeenSet; }
+
+    /**
+     * <p>An ExecutionControls object.</p>
+     */
+    inline void SetExecutionControls(const ExecutionControls& value) { m_executionControlsHasBeenSet = true; m_executionControls = value; }
+
+    /**
+     * <p>An ExecutionControls object.</p>
+     */
+    inline void SetExecutionControls(ExecutionControls&& value) { m_executionControlsHasBeenSet = true; m_executionControls = std::move(value); }
+
+    /**
+     * <p>An ExecutionControls object.</p>
+     */
+    inline RemediationConfiguration& WithExecutionControls(const ExecutionControls& value) { SetExecutionControls(value); return *this;}
+
+    /**
+     * <p>An ExecutionControls object.</p>
+     */
+    inline RemediationConfiguration& WithExecutionControls(ExecutionControls&& value) { SetExecutionControls(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The maximum number of failed attempts for auto-remediation. If you do not
+     * select a number, the default is 5.</p> <p>For example, if you specify
+     * MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
+     * Config throws an exception after the 5th failed attempt within 50 seconds.</p>
+     */
+    inline int GetMaximumAutomaticAttempts() const{ return m_maximumAutomaticAttempts; }
+
+    /**
+     * <p>The maximum number of failed attempts for auto-remediation. If you do not
+     * select a number, the default is 5.</p> <p>For example, if you specify
+     * MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
+     * Config throws an exception after the 5th failed attempt within 50 seconds.</p>
+     */
+    inline bool MaximumAutomaticAttemptsHasBeenSet() const { return m_maximumAutomaticAttemptsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of failed attempts for auto-remediation. If you do not
+     * select a number, the default is 5.</p> <p>For example, if you specify
+     * MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
+     * Config throws an exception after the 5th failed attempt within 50 seconds.</p>
+     */
+    inline void SetMaximumAutomaticAttempts(int value) { m_maximumAutomaticAttemptsHasBeenSet = true; m_maximumAutomaticAttempts = value; }
+
+    /**
+     * <p>The maximum number of failed attempts for auto-remediation. If you do not
+     * select a number, the default is 5.</p> <p>For example, if you specify
+     * MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
+     * Config throws an exception after the 5th failed attempt within 50 seconds.</p>
+     */
+    inline RemediationConfiguration& WithMaximumAutomaticAttempts(int value) { SetMaximumAutomaticAttempts(value); return *this;}
+
+
+    /**
+     * <p>Maximum time in seconds that AWS Config runs auto-remediation. If you do not
+     * select a number, the default is 60 seconds. </p> <p>For example, if you specify
+     * RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config
+     * will run auto-remediations 5 times within 50 seconds before throwing an
+     * exception. </p>
+     */
+    inline long long GetRetryAttemptSeconds() const{ return m_retryAttemptSeconds; }
+
+    /**
+     * <p>Maximum time in seconds that AWS Config runs auto-remediation. If you do not
+     * select a number, the default is 60 seconds. </p> <p>For example, if you specify
+     * RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config
+     * will run auto-remediations 5 times within 50 seconds before throwing an
+     * exception. </p>
+     */
+    inline bool RetryAttemptSecondsHasBeenSet() const { return m_retryAttemptSecondsHasBeenSet; }
+
+    /**
+     * <p>Maximum time in seconds that AWS Config runs auto-remediation. If you do not
+     * select a number, the default is 60 seconds. </p> <p>For example, if you specify
+     * RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config
+     * will run auto-remediations 5 times within 50 seconds before throwing an
+     * exception. </p>
+     */
+    inline void SetRetryAttemptSeconds(long long value) { m_retryAttemptSecondsHasBeenSet = true; m_retryAttemptSeconds = value; }
+
+    /**
+     * <p>Maximum time in seconds that AWS Config runs auto-remediation. If you do not
+     * select a number, the default is 60 seconds. </p> <p>For example, if you specify
+     * RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config
+     * will run auto-remediations 5 times within 50 seconds before throwing an
+     * exception. </p>
+     */
+    inline RemediationConfiguration& WithRetryAttemptSeconds(long long value) { SetRetryAttemptSeconds(value); return *this;}
+
+
+    /**
+     * <p>Amazon Resource Name (ARN) of remediation configuration.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of remediation configuration.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of remediation configuration.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of remediation configuration.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of remediation configuration.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of remediation configuration.</p>
+     */
+    inline RemediationConfiguration& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>Amazon Resource Name (ARN) of remediation configuration.</p>
+     */
+    inline RemediationConfiguration& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Amazon Resource Name (ARN) of remediation configuration.</p>
+     */
+    inline RemediationConfiguration& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     */
+    inline const Aws::String& GetCreatedByService() const{ return m_createdByService; }
+
+    /**
+     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     */
+    inline bool CreatedByServiceHasBeenSet() const { return m_createdByServiceHasBeenSet; }
+
+    /**
+     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     */
+    inline void SetCreatedByService(const Aws::String& value) { m_createdByServiceHasBeenSet = true; m_createdByService = value; }
+
+    /**
+     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     */
+    inline void SetCreatedByService(Aws::String&& value) { m_createdByServiceHasBeenSet = true; m_createdByService = std::move(value); }
+
+    /**
+     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     */
+    inline void SetCreatedByService(const char* value) { m_createdByServiceHasBeenSet = true; m_createdByService.assign(value); }
+
+    /**
+     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     */
+    inline RemediationConfiguration& WithCreatedByService(const Aws::String& value) { SetCreatedByService(value); return *this;}
+
+    /**
+     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     */
+    inline RemediationConfiguration& WithCreatedByService(Aws::String&& value) { SetCreatedByService(std::move(value)); return *this;}
+
+    /**
+     * <p>Name of the service that owns the service linked rule, if applicable.</p>
+     */
+    inline RemediationConfiguration& WithCreatedByService(const char* value) { SetCreatedByService(value); return *this;}
+
   private:
 
     Aws::String m_configRuleName;
@@ -332,6 +537,24 @@ namespace Model
 
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
+    bool m_automatic;
+    bool m_automaticHasBeenSet;
+
+    ExecutionControls m_executionControls;
+    bool m_executionControlsHasBeenSet;
+
+    int m_maximumAutomaticAttempts;
+    bool m_maximumAutomaticAttemptsHasBeenSet;
+
+    long long m_retryAttemptSeconds;
+    bool m_retryAttemptSecondsHasBeenSet;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
+
+    Aws::String m_createdByService;
+    bool m_createdByServiceHasBeenSet;
   };
 
 } // namespace Model

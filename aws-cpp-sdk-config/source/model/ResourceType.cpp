@@ -45,55 +45,81 @@ namespace Aws
         static const int AWS_EC2_VPC_HASH = HashingUtils::HashString("AWS::EC2::VPC");
         static const int AWS_EC2_VPNConnection_HASH = HashingUtils::HashString("AWS::EC2::VPNConnection");
         static const int AWS_EC2_VPNGateway_HASH = HashingUtils::HashString("AWS::EC2::VPNGateway");
+        static const int AWS_EC2_RegisteredHAInstance_HASH = HashingUtils::HashString("AWS::EC2::RegisteredHAInstance");
+        static const int AWS_EC2_NatGateway_HASH = HashingUtils::HashString("AWS::EC2::NatGateway");
+        static const int AWS_EC2_EgressOnlyInternetGateway_HASH = HashingUtils::HashString("AWS::EC2::EgressOnlyInternetGateway");
+        static const int AWS_EC2_VPCEndpoint_HASH = HashingUtils::HashString("AWS::EC2::VPCEndpoint");
+        static const int AWS_EC2_VPCEndpointService_HASH = HashingUtils::HashString("AWS::EC2::VPCEndpointService");
+        static const int AWS_EC2_FlowLog_HASH = HashingUtils::HashString("AWS::EC2::FlowLog");
+        static const int AWS_EC2_VPCPeeringConnection_HASH = HashingUtils::HashString("AWS::EC2::VPCPeeringConnection");
         static const int AWS_IAM_Group_HASH = HashingUtils::HashString("AWS::IAM::Group");
         static const int AWS_IAM_Policy_HASH = HashingUtils::HashString("AWS::IAM::Policy");
         static const int AWS_IAM_Role_HASH = HashingUtils::HashString("AWS::IAM::Role");
         static const int AWS_IAM_User_HASH = HashingUtils::HashString("AWS::IAM::User");
+        static const int AWS_ElasticLoadBalancingV2_LoadBalancer_HASH = HashingUtils::HashString("AWS::ElasticLoadBalancingV2::LoadBalancer");
         static const int AWS_ACM_Certificate_HASH = HashingUtils::HashString("AWS::ACM::Certificate");
         static const int AWS_RDS_DBInstance_HASH = HashingUtils::HashString("AWS::RDS::DBInstance");
+        static const int AWS_RDS_DBParameterGroup_HASH = HashingUtils::HashString("AWS::RDS::DBParameterGroup");
+        static const int AWS_RDS_DBOptionGroup_HASH = HashingUtils::HashString("AWS::RDS::DBOptionGroup");
         static const int AWS_RDS_DBSubnetGroup_HASH = HashingUtils::HashString("AWS::RDS::DBSubnetGroup");
         static const int AWS_RDS_DBSecurityGroup_HASH = HashingUtils::HashString("AWS::RDS::DBSecurityGroup");
         static const int AWS_RDS_DBSnapshot_HASH = HashingUtils::HashString("AWS::RDS::DBSnapshot");
+        static const int AWS_RDS_DBCluster_HASH = HashingUtils::HashString("AWS::RDS::DBCluster");
+        static const int AWS_RDS_DBClusterParameterGroup_HASH = HashingUtils::HashString("AWS::RDS::DBClusterParameterGroup");
+        static const int AWS_RDS_DBClusterSnapshot_HASH = HashingUtils::HashString("AWS::RDS::DBClusterSnapshot");
         static const int AWS_RDS_EventSubscription_HASH = HashingUtils::HashString("AWS::RDS::EventSubscription");
-        static const int AWS_ElasticLoadBalancingV2_LoadBalancer_HASH = HashingUtils::HashString("AWS::ElasticLoadBalancingV2::LoadBalancer");
         static const int AWS_S3_Bucket_HASH = HashingUtils::HashString("AWS::S3::Bucket");
-        static const int AWS_SSM_ManagedInstanceInventory_HASH = HashingUtils::HashString("AWS::SSM::ManagedInstanceInventory");
+        static const int AWS_S3_AccountPublicAccessBlock_HASH = HashingUtils::HashString("AWS::S3::AccountPublicAccessBlock");
         static const int AWS_Redshift_Cluster_HASH = HashingUtils::HashString("AWS::Redshift::Cluster");
         static const int AWS_Redshift_ClusterSnapshot_HASH = HashingUtils::HashString("AWS::Redshift::ClusterSnapshot");
         static const int AWS_Redshift_ClusterParameterGroup_HASH = HashingUtils::HashString("AWS::Redshift::ClusterParameterGroup");
         static const int AWS_Redshift_ClusterSecurityGroup_HASH = HashingUtils::HashString("AWS::Redshift::ClusterSecurityGroup");
         static const int AWS_Redshift_ClusterSubnetGroup_HASH = HashingUtils::HashString("AWS::Redshift::ClusterSubnetGroup");
         static const int AWS_Redshift_EventSubscription_HASH = HashingUtils::HashString("AWS::Redshift::EventSubscription");
+        static const int AWS_SSM_ManagedInstanceInventory_HASH = HashingUtils::HashString("AWS::SSM::ManagedInstanceInventory");
         static const int AWS_CloudWatch_Alarm_HASH = HashingUtils::HashString("AWS::CloudWatch::Alarm");
         static const int AWS_CloudFormation_Stack_HASH = HashingUtils::HashString("AWS::CloudFormation::Stack");
-        static const int AWS_DynamoDB_Table_HASH = HashingUtils::HashString("AWS::DynamoDB::Table");
+        static const int AWS_ElasticLoadBalancing_LoadBalancer_HASH = HashingUtils::HashString("AWS::ElasticLoadBalancing::LoadBalancer");
         static const int AWS_AutoScaling_AutoScalingGroup_HASH = HashingUtils::HashString("AWS::AutoScaling::AutoScalingGroup");
         static const int AWS_AutoScaling_LaunchConfiguration_HASH = HashingUtils::HashString("AWS::AutoScaling::LaunchConfiguration");
         static const int AWS_AutoScaling_ScalingPolicy_HASH = HashingUtils::HashString("AWS::AutoScaling::ScalingPolicy");
         static const int AWS_AutoScaling_ScheduledAction_HASH = HashingUtils::HashString("AWS::AutoScaling::ScheduledAction");
+        static const int AWS_DynamoDB_Table_HASH = HashingUtils::HashString("AWS::DynamoDB::Table");
         static const int AWS_CodeBuild_Project_HASH = HashingUtils::HashString("AWS::CodeBuild::Project");
         static const int AWS_WAF_RateBasedRule_HASH = HashingUtils::HashString("AWS::WAF::RateBasedRule");
         static const int AWS_WAF_Rule_HASH = HashingUtils::HashString("AWS::WAF::Rule");
+        static const int AWS_WAF_RuleGroup_HASH = HashingUtils::HashString("AWS::WAF::RuleGroup");
         static const int AWS_WAF_WebACL_HASH = HashingUtils::HashString("AWS::WAF::WebACL");
         static const int AWS_WAFRegional_RateBasedRule_HASH = HashingUtils::HashString("AWS::WAFRegional::RateBasedRule");
         static const int AWS_WAFRegional_Rule_HASH = HashingUtils::HashString("AWS::WAFRegional::Rule");
+        static const int AWS_WAFRegional_RuleGroup_HASH = HashingUtils::HashString("AWS::WAFRegional::RuleGroup");
         static const int AWS_WAFRegional_WebACL_HASH = HashingUtils::HashString("AWS::WAFRegional::WebACL");
         static const int AWS_CloudFront_Distribution_HASH = HashingUtils::HashString("AWS::CloudFront::Distribution");
         static const int AWS_CloudFront_StreamingDistribution_HASH = HashingUtils::HashString("AWS::CloudFront::StreamingDistribution");
-        static const int AWS_WAF_RuleGroup_HASH = HashingUtils::HashString("AWS::WAF::RuleGroup");
-        static const int AWS_WAFRegional_RuleGroup_HASH = HashingUtils::HashString("AWS::WAFRegional::RuleGroup");
+        static const int AWS_Lambda_Alias_HASH = HashingUtils::HashString("AWS::Lambda::Alias");
         static const int AWS_Lambda_Function_HASH = HashingUtils::HashString("AWS::Lambda::Function");
         static const int AWS_ElasticBeanstalk_Application_HASH = HashingUtils::HashString("AWS::ElasticBeanstalk::Application");
         static const int AWS_ElasticBeanstalk_ApplicationVersion_HASH = HashingUtils::HashString("AWS::ElasticBeanstalk::ApplicationVersion");
         static const int AWS_ElasticBeanstalk_Environment_HASH = HashingUtils::HashString("AWS::ElasticBeanstalk::Environment");
-        static const int AWS_ElasticLoadBalancing_LoadBalancer_HASH = HashingUtils::HashString("AWS::ElasticLoadBalancing::LoadBalancer");
+        static const int AWS_MobileHub_Project_HASH = HashingUtils::HashString("AWS::MobileHub::Project");
         static const int AWS_XRay_EncryptionConfig_HASH = HashingUtils::HashString("AWS::XRay::EncryptionConfig");
         static const int AWS_SSM_AssociationCompliance_HASH = HashingUtils::HashString("AWS::SSM::AssociationCompliance");
         static const int AWS_SSM_PatchCompliance_HASH = HashingUtils::HashString("AWS::SSM::PatchCompliance");
         static const int AWS_Shield_Protection_HASH = HashingUtils::HashString("AWS::Shield::Protection");
         static const int AWS_ShieldRegional_Protection_HASH = HashingUtils::HashString("AWS::ShieldRegional::Protection");
         static const int AWS_Config_ResourceCompliance_HASH = HashingUtils::HashString("AWS::Config::ResourceCompliance");
+        static const int AWS_LicenseManager_LicenseConfiguration_HASH = HashingUtils::HashString("AWS::LicenseManager::LicenseConfiguration");
+        static const int AWS_ApiGateway_DomainName_HASH = HashingUtils::HashString("AWS::ApiGateway::DomainName");
+        static const int AWS_ApiGateway_Method_HASH = HashingUtils::HashString("AWS::ApiGateway::Method");
+        static const int AWS_ApiGateway_Stage_HASH = HashingUtils::HashString("AWS::ApiGateway::Stage");
+        static const int AWS_ApiGateway_RestApi_HASH = HashingUtils::HashString("AWS::ApiGateway::RestApi");
+        static const int AWS_ApiGatewayV2_DomainName_HASH = HashingUtils::HashString("AWS::ApiGatewayV2::DomainName");
+        static const int AWS_ApiGatewayV2_Stage_HASH = HashingUtils::HashString("AWS::ApiGatewayV2::Stage");
+        static const int AWS_ApiGatewayV2_Api_HASH = HashingUtils::HashString("AWS::ApiGatewayV2::Api");
         static const int AWS_CodePipeline_Pipeline_HASH = HashingUtils::HashString("AWS::CodePipeline::Pipeline");
+        static const int AWS_ServiceCatalog_CloudFormationProvisionedProduct_HASH = HashingUtils::HashString("AWS::ServiceCatalog::CloudFormationProvisionedProduct");
+        static const int AWS_ServiceCatalog_CloudFormationProduct_HASH = HashingUtils::HashString("AWS::ServiceCatalog::CloudFormationProduct");
+        static const int AWS_ServiceCatalog_Portfolio_HASH = HashingUtils::HashString("AWS::ServiceCatalog::Portfolio");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -159,6 +185,34 @@ namespace Aws
           {
             return ResourceType::AWS_EC2_VPNGateway;
           }
+          else if (hashCode == AWS_EC2_RegisteredHAInstance_HASH)
+          {
+            return ResourceType::AWS_EC2_RegisteredHAInstance;
+          }
+          else if (hashCode == AWS_EC2_NatGateway_HASH)
+          {
+            return ResourceType::AWS_EC2_NatGateway;
+          }
+          else if (hashCode == AWS_EC2_EgressOnlyInternetGateway_HASH)
+          {
+            return ResourceType::AWS_EC2_EgressOnlyInternetGateway;
+          }
+          else if (hashCode == AWS_EC2_VPCEndpoint_HASH)
+          {
+            return ResourceType::AWS_EC2_VPCEndpoint;
+          }
+          else if (hashCode == AWS_EC2_VPCEndpointService_HASH)
+          {
+            return ResourceType::AWS_EC2_VPCEndpointService;
+          }
+          else if (hashCode == AWS_EC2_FlowLog_HASH)
+          {
+            return ResourceType::AWS_EC2_FlowLog;
+          }
+          else if (hashCode == AWS_EC2_VPCPeeringConnection_HASH)
+          {
+            return ResourceType::AWS_EC2_VPCPeeringConnection;
+          }
           else if (hashCode == AWS_IAM_Group_HASH)
           {
             return ResourceType::AWS_IAM_Group;
@@ -175,6 +229,10 @@ namespace Aws
           {
             return ResourceType::AWS_IAM_User;
           }
+          else if (hashCode == AWS_ElasticLoadBalancingV2_LoadBalancer_HASH)
+          {
+            return ResourceType::AWS_ElasticLoadBalancingV2_LoadBalancer;
+          }
           else if (hashCode == AWS_ACM_Certificate_HASH)
           {
             return ResourceType::AWS_ACM_Certificate;
@@ -182,6 +240,14 @@ namespace Aws
           else if (hashCode == AWS_RDS_DBInstance_HASH)
           {
             return ResourceType::AWS_RDS_DBInstance;
+          }
+          else if (hashCode == AWS_RDS_DBParameterGroup_HASH)
+          {
+            return ResourceType::AWS_RDS_DBParameterGroup;
+          }
+          else if (hashCode == AWS_RDS_DBOptionGroup_HASH)
+          {
+            return ResourceType::AWS_RDS_DBOptionGroup;
           }
           else if (hashCode == AWS_RDS_DBSubnetGroup_HASH)
           {
@@ -195,21 +261,29 @@ namespace Aws
           {
             return ResourceType::AWS_RDS_DBSnapshot;
           }
+          else if (hashCode == AWS_RDS_DBCluster_HASH)
+          {
+            return ResourceType::AWS_RDS_DBCluster;
+          }
+          else if (hashCode == AWS_RDS_DBClusterParameterGroup_HASH)
+          {
+            return ResourceType::AWS_RDS_DBClusterParameterGroup;
+          }
+          else if (hashCode == AWS_RDS_DBClusterSnapshot_HASH)
+          {
+            return ResourceType::AWS_RDS_DBClusterSnapshot;
+          }
           else if (hashCode == AWS_RDS_EventSubscription_HASH)
           {
             return ResourceType::AWS_RDS_EventSubscription;
-          }
-          else if (hashCode == AWS_ElasticLoadBalancingV2_LoadBalancer_HASH)
-          {
-            return ResourceType::AWS_ElasticLoadBalancingV2_LoadBalancer;
           }
           else if (hashCode == AWS_S3_Bucket_HASH)
           {
             return ResourceType::AWS_S3_Bucket;
           }
-          else if (hashCode == AWS_SSM_ManagedInstanceInventory_HASH)
+          else if (hashCode == AWS_S3_AccountPublicAccessBlock_HASH)
           {
-            return ResourceType::AWS_SSM_ManagedInstanceInventory;
+            return ResourceType::AWS_S3_AccountPublicAccessBlock;
           }
           else if (hashCode == AWS_Redshift_Cluster_HASH)
           {
@@ -235,6 +309,10 @@ namespace Aws
           {
             return ResourceType::AWS_Redshift_EventSubscription;
           }
+          else if (hashCode == AWS_SSM_ManagedInstanceInventory_HASH)
+          {
+            return ResourceType::AWS_SSM_ManagedInstanceInventory;
+          }
           else if (hashCode == AWS_CloudWatch_Alarm_HASH)
           {
             return ResourceType::AWS_CloudWatch_Alarm;
@@ -243,9 +321,9 @@ namespace Aws
           {
             return ResourceType::AWS_CloudFormation_Stack;
           }
-          else if (hashCode == AWS_DynamoDB_Table_HASH)
+          else if (hashCode == AWS_ElasticLoadBalancing_LoadBalancer_HASH)
           {
-            return ResourceType::AWS_DynamoDB_Table;
+            return ResourceType::AWS_ElasticLoadBalancing_LoadBalancer;
           }
           else if (hashCode == AWS_AutoScaling_AutoScalingGroup_HASH)
           {
@@ -263,6 +341,10 @@ namespace Aws
           {
             return ResourceType::AWS_AutoScaling_ScheduledAction;
           }
+          else if (hashCode == AWS_DynamoDB_Table_HASH)
+          {
+            return ResourceType::AWS_DynamoDB_Table;
+          }
           else if (hashCode == AWS_CodeBuild_Project_HASH)
           {
             return ResourceType::AWS_CodeBuild_Project;
@@ -274,6 +356,10 @@ namespace Aws
           else if (hashCode == AWS_WAF_Rule_HASH)
           {
             return ResourceType::AWS_WAF_Rule;
+          }
+          else if (hashCode == AWS_WAF_RuleGroup_HASH)
+          {
+            return ResourceType::AWS_WAF_RuleGroup;
           }
           else if (hashCode == AWS_WAF_WebACL_HASH)
           {
@@ -287,6 +373,10 @@ namespace Aws
           {
             return ResourceType::AWS_WAFRegional_Rule;
           }
+          else if (hashCode == AWS_WAFRegional_RuleGroup_HASH)
+          {
+            return ResourceType::AWS_WAFRegional_RuleGroup;
+          }
           else if (hashCode == AWS_WAFRegional_WebACL_HASH)
           {
             return ResourceType::AWS_WAFRegional_WebACL;
@@ -299,13 +389,9 @@ namespace Aws
           {
             return ResourceType::AWS_CloudFront_StreamingDistribution;
           }
-          else if (hashCode == AWS_WAF_RuleGroup_HASH)
+          else if (hashCode == AWS_Lambda_Alias_HASH)
           {
-            return ResourceType::AWS_WAF_RuleGroup;
-          }
-          else if (hashCode == AWS_WAFRegional_RuleGroup_HASH)
-          {
-            return ResourceType::AWS_WAFRegional_RuleGroup;
+            return ResourceType::AWS_Lambda_Alias;
           }
           else if (hashCode == AWS_Lambda_Function_HASH)
           {
@@ -323,9 +409,9 @@ namespace Aws
           {
             return ResourceType::AWS_ElasticBeanstalk_Environment;
           }
-          else if (hashCode == AWS_ElasticLoadBalancing_LoadBalancer_HASH)
+          else if (hashCode == AWS_MobileHub_Project_HASH)
           {
-            return ResourceType::AWS_ElasticLoadBalancing_LoadBalancer;
+            return ResourceType::AWS_MobileHub_Project;
           }
           else if (hashCode == AWS_XRay_EncryptionConfig_HASH)
           {
@@ -351,9 +437,53 @@ namespace Aws
           {
             return ResourceType::AWS_Config_ResourceCompliance;
           }
+          else if (hashCode == AWS_LicenseManager_LicenseConfiguration_HASH)
+          {
+            return ResourceType::AWS_LicenseManager_LicenseConfiguration;
+          }
+          else if (hashCode == AWS_ApiGateway_DomainName_HASH)
+          {
+            return ResourceType::AWS_ApiGateway_DomainName;
+          }
+          else if (hashCode == AWS_ApiGateway_Method_HASH)
+          {
+            return ResourceType::AWS_ApiGateway_Method;
+          }
+          else if (hashCode == AWS_ApiGateway_Stage_HASH)
+          {
+            return ResourceType::AWS_ApiGateway_Stage;
+          }
+          else if (hashCode == AWS_ApiGateway_RestApi_HASH)
+          {
+            return ResourceType::AWS_ApiGateway_RestApi;
+          }
+          else if (hashCode == AWS_ApiGatewayV2_DomainName_HASH)
+          {
+            return ResourceType::AWS_ApiGatewayV2_DomainName;
+          }
+          else if (hashCode == AWS_ApiGatewayV2_Stage_HASH)
+          {
+            return ResourceType::AWS_ApiGatewayV2_Stage;
+          }
+          else if (hashCode == AWS_ApiGatewayV2_Api_HASH)
+          {
+            return ResourceType::AWS_ApiGatewayV2_Api;
+          }
           else if (hashCode == AWS_CodePipeline_Pipeline_HASH)
           {
             return ResourceType::AWS_CodePipeline_Pipeline;
+          }
+          else if (hashCode == AWS_ServiceCatalog_CloudFormationProvisionedProduct_HASH)
+          {
+            return ResourceType::AWS_ServiceCatalog_CloudFormationProvisionedProduct;
+          }
+          else if (hashCode == AWS_ServiceCatalog_CloudFormationProduct_HASH)
+          {
+            return ResourceType::AWS_ServiceCatalog_CloudFormationProduct;
+          }
+          else if (hashCode == AWS_ServiceCatalog_Portfolio_HASH)
+          {
+            return ResourceType::AWS_ServiceCatalog_Portfolio;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -399,6 +529,20 @@ namespace Aws
             return "AWS::EC2::VPNConnection";
           case ResourceType::AWS_EC2_VPNGateway:
             return "AWS::EC2::VPNGateway";
+          case ResourceType::AWS_EC2_RegisteredHAInstance:
+            return "AWS::EC2::RegisteredHAInstance";
+          case ResourceType::AWS_EC2_NatGateway:
+            return "AWS::EC2::NatGateway";
+          case ResourceType::AWS_EC2_EgressOnlyInternetGateway:
+            return "AWS::EC2::EgressOnlyInternetGateway";
+          case ResourceType::AWS_EC2_VPCEndpoint:
+            return "AWS::EC2::VPCEndpoint";
+          case ResourceType::AWS_EC2_VPCEndpointService:
+            return "AWS::EC2::VPCEndpointService";
+          case ResourceType::AWS_EC2_FlowLog:
+            return "AWS::EC2::FlowLog";
+          case ResourceType::AWS_EC2_VPCPeeringConnection:
+            return "AWS::EC2::VPCPeeringConnection";
           case ResourceType::AWS_IAM_Group:
             return "AWS::IAM::Group";
           case ResourceType::AWS_IAM_Policy:
@@ -407,24 +551,34 @@ namespace Aws
             return "AWS::IAM::Role";
           case ResourceType::AWS_IAM_User:
             return "AWS::IAM::User";
+          case ResourceType::AWS_ElasticLoadBalancingV2_LoadBalancer:
+            return "AWS::ElasticLoadBalancingV2::LoadBalancer";
           case ResourceType::AWS_ACM_Certificate:
             return "AWS::ACM::Certificate";
           case ResourceType::AWS_RDS_DBInstance:
             return "AWS::RDS::DBInstance";
+          case ResourceType::AWS_RDS_DBParameterGroup:
+            return "AWS::RDS::DBParameterGroup";
+          case ResourceType::AWS_RDS_DBOptionGroup:
+            return "AWS::RDS::DBOptionGroup";
           case ResourceType::AWS_RDS_DBSubnetGroup:
             return "AWS::RDS::DBSubnetGroup";
           case ResourceType::AWS_RDS_DBSecurityGroup:
             return "AWS::RDS::DBSecurityGroup";
           case ResourceType::AWS_RDS_DBSnapshot:
             return "AWS::RDS::DBSnapshot";
+          case ResourceType::AWS_RDS_DBCluster:
+            return "AWS::RDS::DBCluster";
+          case ResourceType::AWS_RDS_DBClusterParameterGroup:
+            return "AWS::RDS::DBClusterParameterGroup";
+          case ResourceType::AWS_RDS_DBClusterSnapshot:
+            return "AWS::RDS::DBClusterSnapshot";
           case ResourceType::AWS_RDS_EventSubscription:
             return "AWS::RDS::EventSubscription";
-          case ResourceType::AWS_ElasticLoadBalancingV2_LoadBalancer:
-            return "AWS::ElasticLoadBalancingV2::LoadBalancer";
           case ResourceType::AWS_S3_Bucket:
             return "AWS::S3::Bucket";
-          case ResourceType::AWS_SSM_ManagedInstanceInventory:
-            return "AWS::SSM::ManagedInstanceInventory";
+          case ResourceType::AWS_S3_AccountPublicAccessBlock:
+            return "AWS::S3::AccountPublicAccessBlock";
           case ResourceType::AWS_Redshift_Cluster:
             return "AWS::Redshift::Cluster";
           case ResourceType::AWS_Redshift_ClusterSnapshot:
@@ -437,12 +591,14 @@ namespace Aws
             return "AWS::Redshift::ClusterSubnetGroup";
           case ResourceType::AWS_Redshift_EventSubscription:
             return "AWS::Redshift::EventSubscription";
+          case ResourceType::AWS_SSM_ManagedInstanceInventory:
+            return "AWS::SSM::ManagedInstanceInventory";
           case ResourceType::AWS_CloudWatch_Alarm:
             return "AWS::CloudWatch::Alarm";
           case ResourceType::AWS_CloudFormation_Stack:
             return "AWS::CloudFormation::Stack";
-          case ResourceType::AWS_DynamoDB_Table:
-            return "AWS::DynamoDB::Table";
+          case ResourceType::AWS_ElasticLoadBalancing_LoadBalancer:
+            return "AWS::ElasticLoadBalancing::LoadBalancer";
           case ResourceType::AWS_AutoScaling_AutoScalingGroup:
             return "AWS::AutoScaling::AutoScalingGroup";
           case ResourceType::AWS_AutoScaling_LaunchConfiguration:
@@ -451,28 +607,32 @@ namespace Aws
             return "AWS::AutoScaling::ScalingPolicy";
           case ResourceType::AWS_AutoScaling_ScheduledAction:
             return "AWS::AutoScaling::ScheduledAction";
+          case ResourceType::AWS_DynamoDB_Table:
+            return "AWS::DynamoDB::Table";
           case ResourceType::AWS_CodeBuild_Project:
             return "AWS::CodeBuild::Project";
           case ResourceType::AWS_WAF_RateBasedRule:
             return "AWS::WAF::RateBasedRule";
           case ResourceType::AWS_WAF_Rule:
             return "AWS::WAF::Rule";
+          case ResourceType::AWS_WAF_RuleGroup:
+            return "AWS::WAF::RuleGroup";
           case ResourceType::AWS_WAF_WebACL:
             return "AWS::WAF::WebACL";
           case ResourceType::AWS_WAFRegional_RateBasedRule:
             return "AWS::WAFRegional::RateBasedRule";
           case ResourceType::AWS_WAFRegional_Rule:
             return "AWS::WAFRegional::Rule";
+          case ResourceType::AWS_WAFRegional_RuleGroup:
+            return "AWS::WAFRegional::RuleGroup";
           case ResourceType::AWS_WAFRegional_WebACL:
             return "AWS::WAFRegional::WebACL";
           case ResourceType::AWS_CloudFront_Distribution:
             return "AWS::CloudFront::Distribution";
           case ResourceType::AWS_CloudFront_StreamingDistribution:
             return "AWS::CloudFront::StreamingDistribution";
-          case ResourceType::AWS_WAF_RuleGroup:
-            return "AWS::WAF::RuleGroup";
-          case ResourceType::AWS_WAFRegional_RuleGroup:
-            return "AWS::WAFRegional::RuleGroup";
+          case ResourceType::AWS_Lambda_Alias:
+            return "AWS::Lambda::Alias";
           case ResourceType::AWS_Lambda_Function:
             return "AWS::Lambda::Function";
           case ResourceType::AWS_ElasticBeanstalk_Application:
@@ -481,8 +641,8 @@ namespace Aws
             return "AWS::ElasticBeanstalk::ApplicationVersion";
           case ResourceType::AWS_ElasticBeanstalk_Environment:
             return "AWS::ElasticBeanstalk::Environment";
-          case ResourceType::AWS_ElasticLoadBalancing_LoadBalancer:
-            return "AWS::ElasticLoadBalancing::LoadBalancer";
+          case ResourceType::AWS_MobileHub_Project:
+            return "AWS::MobileHub::Project";
           case ResourceType::AWS_XRay_EncryptionConfig:
             return "AWS::XRay::EncryptionConfig";
           case ResourceType::AWS_SSM_AssociationCompliance:
@@ -495,8 +655,30 @@ namespace Aws
             return "AWS::ShieldRegional::Protection";
           case ResourceType::AWS_Config_ResourceCompliance:
             return "AWS::Config::ResourceCompliance";
+          case ResourceType::AWS_LicenseManager_LicenseConfiguration:
+            return "AWS::LicenseManager::LicenseConfiguration";
+          case ResourceType::AWS_ApiGateway_DomainName:
+            return "AWS::ApiGateway::DomainName";
+          case ResourceType::AWS_ApiGateway_Method:
+            return "AWS::ApiGateway::Method";
+          case ResourceType::AWS_ApiGateway_Stage:
+            return "AWS::ApiGateway::Stage";
+          case ResourceType::AWS_ApiGateway_RestApi:
+            return "AWS::ApiGateway::RestApi";
+          case ResourceType::AWS_ApiGatewayV2_DomainName:
+            return "AWS::ApiGatewayV2::DomainName";
+          case ResourceType::AWS_ApiGatewayV2_Stage:
+            return "AWS::ApiGatewayV2::Stage";
+          case ResourceType::AWS_ApiGatewayV2_Api:
+            return "AWS::ApiGatewayV2::Api";
           case ResourceType::AWS_CodePipeline_Pipeline:
             return "AWS::CodePipeline::Pipeline";
+          case ResourceType::AWS_ServiceCatalog_CloudFormationProvisionedProduct:
+            return "AWS::ServiceCatalog::CloudFormationProvisionedProduct";
+          case ResourceType::AWS_ServiceCatalog_CloudFormationProduct:
+            return "AWS::ServiceCatalog::CloudFormationProduct";
+          case ResourceType::AWS_ServiceCatalog_Portfolio:
+            return "AWS::ServiceCatalog::Portfolio";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

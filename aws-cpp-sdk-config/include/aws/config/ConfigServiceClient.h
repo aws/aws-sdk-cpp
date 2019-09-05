@@ -25,6 +25,7 @@
 #include <aws/config/model/BatchGetResourceConfigResult.h>
 #include <aws/config/model/DeleteEvaluationResultsResult.h>
 #include <aws/config/model/DeleteRemediationConfigurationResult.h>
+#include <aws/config/model/DeleteRemediationExceptionsResult.h>
 #include <aws/config/model/DeliverConfigSnapshotResult.h>
 #include <aws/config/model/DescribeAggregateComplianceByConfigRulesResult.h>
 #include <aws/config/model/DescribeAggregationAuthorizationsResult.h>
@@ -42,6 +43,7 @@
 #include <aws/config/model/DescribeOrganizationConfigRulesResult.h>
 #include <aws/config/model/DescribePendingAggregationRequestsResult.h>
 #include <aws/config/model/DescribeRemediationConfigurationsResult.h>
+#include <aws/config/model/DescribeRemediationExceptionsResult.h>
 #include <aws/config/model/DescribeRemediationExecutionStatusResult.h>
 #include <aws/config/model/DescribeRetentionConfigurationsResult.h>
 #include <aws/config/model/GetAggregateComplianceDetailsByConfigRuleResult.h>
@@ -63,6 +65,7 @@
 #include <aws/config/model/PutEvaluationsResult.h>
 #include <aws/config/model/PutOrganizationConfigRuleResult.h>
 #include <aws/config/model/PutRemediationConfigurationsResult.h>
+#include <aws/config/model/PutRemediationExceptionsResult.h>
 #include <aws/config/model/PutRetentionConfigurationResult.h>
 #include <aws/config/model/SelectResourceConfigResult.h>
 #include <aws/config/model/StartConfigRulesEvaluationResult.h>
@@ -118,6 +121,7 @@ namespace Model
         class DeleteOrganizationConfigRuleRequest;
         class DeletePendingAggregationRequestRequest;
         class DeleteRemediationConfigurationRequest;
+        class DeleteRemediationExceptionsRequest;
         class DeleteRetentionConfigurationRequest;
         class DeliverConfigSnapshotRequest;
         class DescribeAggregateComplianceByConfigRulesRequest;
@@ -136,6 +140,7 @@ namespace Model
         class DescribeOrganizationConfigRulesRequest;
         class DescribePendingAggregationRequestsRequest;
         class DescribeRemediationConfigurationsRequest;
+        class DescribeRemediationExceptionsRequest;
         class DescribeRemediationExecutionStatusRequest;
         class DescribeRetentionConfigurationsRequest;
         class GetAggregateComplianceDetailsByConfigRuleRequest;
@@ -159,6 +164,7 @@ namespace Model
         class PutEvaluationsRequest;
         class PutOrganizationConfigRuleRequest;
         class PutRemediationConfigurationsRequest;
+        class PutRemediationExceptionsRequest;
         class PutRetentionConfigurationRequest;
         class SelectResourceConfigRequest;
         class StartConfigRulesEvaluationRequest;
@@ -179,6 +185,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteOrganizationConfigRuleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeletePendingAggregationRequestOutcome;
         typedef Aws::Utils::Outcome<DeleteRemediationConfigurationResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteRemediationConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DeleteRemediationExceptionsResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteRemediationExceptionsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteRetentionConfigurationOutcome;
         typedef Aws::Utils::Outcome<DeliverConfigSnapshotResult, Aws::Client::AWSError<ConfigServiceErrors>> DeliverConfigSnapshotOutcome;
         typedef Aws::Utils::Outcome<DescribeAggregateComplianceByConfigRulesResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeAggregateComplianceByConfigRulesOutcome;
@@ -197,6 +204,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeOrganizationConfigRulesResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeOrganizationConfigRulesOutcome;
         typedef Aws::Utils::Outcome<DescribePendingAggregationRequestsResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribePendingAggregationRequestsOutcome;
         typedef Aws::Utils::Outcome<DescribeRemediationConfigurationsResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeRemediationConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeRemediationExceptionsResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeRemediationExceptionsOutcome;
         typedef Aws::Utils::Outcome<DescribeRemediationExecutionStatusResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeRemediationExecutionStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeRetentionConfigurationsResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeRetentionConfigurationsOutcome;
         typedef Aws::Utils::Outcome<GetAggregateComplianceDetailsByConfigRuleResult, Aws::Client::AWSError<ConfigServiceErrors>> GetAggregateComplianceDetailsByConfigRuleOutcome;
@@ -221,6 +229,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutEvaluationsResult, Aws::Client::AWSError<ConfigServiceErrors>> PutEvaluationsOutcome;
         typedef Aws::Utils::Outcome<PutOrganizationConfigRuleResult, Aws::Client::AWSError<ConfigServiceErrors>> PutOrganizationConfigRuleOutcome;
         typedef Aws::Utils::Outcome<PutRemediationConfigurationsResult, Aws::Client::AWSError<ConfigServiceErrors>> PutRemediationConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<PutRemediationExceptionsResult, Aws::Client::AWSError<ConfigServiceErrors>> PutRemediationExceptionsOutcome;
         typedef Aws::Utils::Outcome<PutRetentionConfigurationResult, Aws::Client::AWSError<ConfigServiceErrors>> PutRetentionConfigurationOutcome;
         typedef Aws::Utils::Outcome<SelectResourceConfigResult, Aws::Client::AWSError<ConfigServiceErrors>> SelectResourceConfigOutcome;
         typedef Aws::Utils::Outcome<StartConfigRulesEvaluationResult, Aws::Client::AWSError<ConfigServiceErrors>> StartConfigRulesEvaluationOutcome;
@@ -241,6 +250,7 @@ namespace Model
         typedef std::future<DeleteOrganizationConfigRuleOutcome> DeleteOrganizationConfigRuleOutcomeCallable;
         typedef std::future<DeletePendingAggregationRequestOutcome> DeletePendingAggregationRequestOutcomeCallable;
         typedef std::future<DeleteRemediationConfigurationOutcome> DeleteRemediationConfigurationOutcomeCallable;
+        typedef std::future<DeleteRemediationExceptionsOutcome> DeleteRemediationExceptionsOutcomeCallable;
         typedef std::future<DeleteRetentionConfigurationOutcome> DeleteRetentionConfigurationOutcomeCallable;
         typedef std::future<DeliverConfigSnapshotOutcome> DeliverConfigSnapshotOutcomeCallable;
         typedef std::future<DescribeAggregateComplianceByConfigRulesOutcome> DescribeAggregateComplianceByConfigRulesOutcomeCallable;
@@ -259,6 +269,7 @@ namespace Model
         typedef std::future<DescribeOrganizationConfigRulesOutcome> DescribeOrganizationConfigRulesOutcomeCallable;
         typedef std::future<DescribePendingAggregationRequestsOutcome> DescribePendingAggregationRequestsOutcomeCallable;
         typedef std::future<DescribeRemediationConfigurationsOutcome> DescribeRemediationConfigurationsOutcomeCallable;
+        typedef std::future<DescribeRemediationExceptionsOutcome> DescribeRemediationExceptionsOutcomeCallable;
         typedef std::future<DescribeRemediationExecutionStatusOutcome> DescribeRemediationExecutionStatusOutcomeCallable;
         typedef std::future<DescribeRetentionConfigurationsOutcome> DescribeRetentionConfigurationsOutcomeCallable;
         typedef std::future<GetAggregateComplianceDetailsByConfigRuleOutcome> GetAggregateComplianceDetailsByConfigRuleOutcomeCallable;
@@ -283,6 +294,7 @@ namespace Model
         typedef std::future<PutEvaluationsOutcome> PutEvaluationsOutcomeCallable;
         typedef std::future<PutOrganizationConfigRuleOutcome> PutOrganizationConfigRuleOutcomeCallable;
         typedef std::future<PutRemediationConfigurationsOutcome> PutRemediationConfigurationsOutcomeCallable;
+        typedef std::future<PutRemediationExceptionsOutcome> PutRemediationExceptionsOutcomeCallable;
         typedef std::future<PutRetentionConfigurationOutcome> PutRetentionConfigurationOutcomeCallable;
         typedef std::future<SelectResourceConfigOutcome> SelectResourceConfigOutcomeCallable;
         typedef std::future<StartConfigRulesEvaluationOutcome> StartConfigRulesEvaluationOutcomeCallable;
@@ -306,6 +318,7 @@ namespace Model
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteOrganizationConfigRuleRequest&, const Model::DeleteOrganizationConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOrganizationConfigRuleResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeletePendingAggregationRequestRequest&, const Model::DeletePendingAggregationRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePendingAggregationRequestResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteRemediationConfigurationRequest&, const Model::DeleteRemediationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRemediationConfigurationResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteRemediationExceptionsRequest&, const Model::DeleteRemediationExceptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRemediationExceptionsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteRetentionConfigurationRequest&, const Model::DeleteRetentionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRetentionConfigurationResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeliverConfigSnapshotRequest&, const Model::DeliverConfigSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeliverConfigSnapshotResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeAggregateComplianceByConfigRulesRequest&, const Model::DescribeAggregateComplianceByConfigRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAggregateComplianceByConfigRulesResponseReceivedHandler;
@@ -324,6 +337,7 @@ namespace Model
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeOrganizationConfigRulesRequest&, const Model::DescribeOrganizationConfigRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrganizationConfigRulesResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribePendingAggregationRequestsRequest&, const Model::DescribePendingAggregationRequestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePendingAggregationRequestsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeRemediationConfigurationsRequest&, const Model::DescribeRemediationConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRemediationConfigurationsResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeRemediationExceptionsRequest&, const Model::DescribeRemediationExceptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRemediationExceptionsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeRemediationExecutionStatusRequest&, const Model::DescribeRemediationExecutionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRemediationExecutionStatusResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeRetentionConfigurationsRequest&, const Model::DescribeRetentionConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRetentionConfigurationsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetAggregateComplianceDetailsByConfigRuleRequest&, const Model::GetAggregateComplianceDetailsByConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAggregateComplianceDetailsByConfigRuleResponseReceivedHandler;
@@ -348,6 +362,7 @@ namespace Model
     typedef std::function<void(const ConfigServiceClient*, const Model::PutEvaluationsRequest&, const Model::PutEvaluationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEvaluationsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutOrganizationConfigRuleRequest&, const Model::PutOrganizationConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutOrganizationConfigRuleResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutRemediationConfigurationsRequest&, const Model::PutRemediationConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRemediationConfigurationsResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::PutRemediationExceptionsRequest&, const Model::PutRemediationExceptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRemediationExceptionsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutRetentionConfigurationRequest&, const Model::PutRetentionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRetentionConfigurationResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::SelectResourceConfigRequest&, const Model::SelectResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SelectResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::StartConfigRulesEvaluationRequest&, const Model::StartConfigRulesEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartConfigRulesEvaluationResponseReceivedHandler;
@@ -710,19 +725,37 @@ namespace Model
         virtual void DeleteEvaluationResultsAsync(const Model::DeleteEvaluationResultsRequest& request, const DeleteEvaluationResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Deletes the specified organization config rule and all of its evaluation
+         * results from all member accounts in that organization. Only a master account can
+         * delete an organization config rule.</p> <p>AWS Config sets the state of a rule
+         * to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a rule
+         * while it is in this state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConfigRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteOrganizationConfigRuleOutcome DeleteOrganizationConfigRule(const Model::DeleteOrganizationConfigRuleRequest& request) const;
 
         /**
-         * 
+         * <p>Deletes the specified organization config rule and all of its evaluation
+         * results from all member accounts in that organization. Only a master account can
+         * delete an organization config rule.</p> <p>AWS Config sets the state of a rule
+         * to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a rule
+         * while it is in this state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConfigRule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteOrganizationConfigRuleOutcomeCallable DeleteOrganizationConfigRuleCallable(const Model::DeleteOrganizationConfigRuleRequest& request) const;
 
         /**
-         * 
+         * <p>Deletes the specified organization config rule and all of its evaluation
+         * results from all member accounts in that organization. Only a master account can
+         * delete an organization config rule.</p> <p>AWS Config sets the state of a rule
+         * to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a rule
+         * while it is in this state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConfigRule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -780,6 +813,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteRemediationConfigurationAsync(const Model::DeleteRemediationConfigurationRequest& request, const DeleteRemediationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes one or more remediation exceptions mentioned in the resource
+         * keys.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationExceptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRemediationExceptionsOutcome DeleteRemediationExceptions(const Model::DeleteRemediationExceptionsRequest& request) const;
+
+        /**
+         * <p>Deletes one or more remediation exceptions mentioned in the resource
+         * keys.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationExceptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteRemediationExceptionsOutcomeCallable DeleteRemediationExceptionsCallable(const Model::DeleteRemediationExceptionsRequest& request) const;
+
+        /**
+         * <p>Deletes one or more remediation exceptions mentioned in the resource
+         * keys.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationExceptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteRemediationExceptionsAsync(const Model::DeleteRemediationExceptionsRequest& request, const DeleteRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the retention configuration.</p><p><h3>See Also:</h3>   <a
@@ -852,8 +913,8 @@ namespace Model
         /**
          * <p>Returns a list of compliant and noncompliant rules with the number of
          * resources for compliant and noncompliant rules. </p> <note> <p>The results can
-         * return an empty result page, but if you have a nextToken, the results are
-         * displayed on the next page.</p> </note><p><h3>See Also:</h3>   <a
+         * return an empty result page, but if you have a <code>nextToken</code>, the
+         * results are displayed on the next page.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConfigRules">AWS
          * API Reference</a></p>
          */
@@ -862,8 +923,8 @@ namespace Model
         /**
          * <p>Returns a list of compliant and noncompliant rules with the number of
          * resources for compliant and noncompliant rules. </p> <note> <p>The results can
-         * return an empty result page, but if you have a nextToken, the results are
-         * displayed on the next page.</p> </note><p><h3>See Also:</h3>   <a
+         * return an empty result page, but if you have a <code>nextToken</code>, the
+         * results are displayed on the next page.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConfigRules">AWS
          * API Reference</a></p>
          *
@@ -874,8 +935,8 @@ namespace Model
         /**
          * <p>Returns a list of compliant and noncompliant rules with the number of
          * resources for compliant and noncompliant rules. </p> <note> <p>The results can
-         * return an empty result page, but if you have a nextToken, the results are
-         * displayed on the next page.</p> </note><p><h3>See Also:</h3>   <a
+         * return an empty result page, but if you have a <code>nextToken</code>, the
+         * results are displayed on the next page.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConfigRules">AWS
          * API Reference</a></p>
          *
@@ -1351,38 +1412,83 @@ namespace Model
         virtual void DescribeDeliveryChannelsAsync(const Model::DescribeDeliveryChannelsRequest& request, const DescribeDeliveryChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Provides organization config rule deployment status for an organization.</p>
+         * <note> <p>The status is not considered successful until organization config rule
+         * is successfully deployed in all the member accounts with an exception of
+         * excluded accounts.</p> <p>When you specify the limit and the next token, you
+         * receive a paginated response. Limit and next token are not applicable if you
+         * specify organization config rule names. It is only applicable, when you request
+         * all the organization config rules.</p> <p>Only a master account can call this
+         * API.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeOrganizationConfigRuleStatusesOutcome DescribeOrganizationConfigRuleStatuses(const Model::DescribeOrganizationConfigRuleStatusesRequest& request) const;
 
         /**
-         * 
+         * <p>Provides organization config rule deployment status for an organization.</p>
+         * <note> <p>The status is not considered successful until organization config rule
+         * is successfully deployed in all the member accounts with an exception of
+         * excluded accounts.</p> <p>When you specify the limit and the next token, you
+         * receive a paginated response. Limit and next token are not applicable if you
+         * specify organization config rule names. It is only applicable, when you request
+         * all the organization config rules.</p> <p>Only a master account can call this
+         * API.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeOrganizationConfigRuleStatusesOutcomeCallable DescribeOrganizationConfigRuleStatusesCallable(const Model::DescribeOrganizationConfigRuleStatusesRequest& request) const;
 
         /**
-         * 
+         * <p>Provides organization config rule deployment status for an organization.</p>
+         * <note> <p>The status is not considered successful until organization config rule
+         * is successfully deployed in all the member accounts with an exception of
+         * excluded accounts.</p> <p>When you specify the limit and the next token, you
+         * receive a paginated response. Limit and next token are not applicable if you
+         * specify organization config rule names. It is only applicable, when you request
+         * all the organization config rules.</p> <p>Only a master account can call this
+         * API.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeOrganizationConfigRuleStatusesAsync(const Model::DescribeOrganizationConfigRuleStatusesRequest& request, const DescribeOrganizationConfigRuleStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Returns a list of organization config rules.</p> <note> <p>When you specify
+         * the limit and the next token, you receive a paginated response. Limit and next
+         * token are not applicable if you specify organization config rule names. It is
+         * only applicable, when you request all the organization config rules.</p> <p>Only
+         * a master account can call this API.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeOrganizationConfigRulesOutcome DescribeOrganizationConfigRules(const Model::DescribeOrganizationConfigRulesRequest& request) const;
 
         /**
-         * 
+         * <p>Returns a list of organization config rules.</p> <note> <p>When you specify
+         * the limit and the next token, you receive a paginated response. Limit and next
+         * token are not applicable if you specify organization config rule names. It is
+         * only applicable, when you request all the organization config rules.</p> <p>Only
+         * a master account can call this API.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeOrganizationConfigRulesOutcomeCallable DescribeOrganizationConfigRulesCallable(const Model::DescribeOrganizationConfigRulesRequest& request) const;
 
         /**
-         * 
+         * <p>Returns a list of organization config rules.</p> <note> <p>When you specify
+         * the limit and the next token, you receive a paginated response. Limit and next
+         * token are not applicable if you specify organization config rule names. It is
+         * only applicable, when you request all the organization config rules.</p> <p>Only
+         * a master account can call this API.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1443,6 +1549,52 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeRemediationConfigurationsAsync(const Model::DescribeRemediationConfigurationsRequest& request, const DescribeRemediationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the details of one or more remediation exceptions. A detailed view of
+         * a remediation exception for a set of resources that includes an explanation of
+         * an exception and the time when the exception will be deleted. When you specify
+         * the limit and the next token, you receive a paginated response. </p> <note>
+         * <p>When you specify the limit and the next token, you receive a paginated
+         * response. </p> <p>Limit and next token are not applicable if you request
+         * resources in batch. It is only applicable, when you request all resources.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationExceptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRemediationExceptionsOutcome DescribeRemediationExceptions(const Model::DescribeRemediationExceptionsRequest& request) const;
+
+        /**
+         * <p>Returns the details of one or more remediation exceptions. A detailed view of
+         * a remediation exception for a set of resources that includes an explanation of
+         * an exception and the time when the exception will be deleted. When you specify
+         * the limit and the next token, you receive a paginated response. </p> <note>
+         * <p>When you specify the limit and the next token, you receive a paginated
+         * response. </p> <p>Limit and next token are not applicable if you request
+         * resources in batch. It is only applicable, when you request all resources.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationExceptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeRemediationExceptionsOutcomeCallable DescribeRemediationExceptionsCallable(const Model::DescribeRemediationExceptionsRequest& request) const;
+
+        /**
+         * <p>Returns the details of one or more remediation exceptions. A detailed view of
+         * a remediation exception for a set of resources that includes an explanation of
+         * an exception and the time when the exception will be deleted. When you specify
+         * the limit and the next token, you receive a paginated response. </p> <note>
+         * <p>When you specify the limit and the next token, you receive a paginated
+         * response. </p> <p>Limit and next token are not applicable if you request
+         * resources in batch. It is only applicable, when you request all resources.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationExceptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeRemediationExceptionsAsync(const Model::DescribeRemediationExceptionsRequest& request, const DescribeRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a detailed view of a Remediation Execution for a set of resources
@@ -1523,8 +1675,8 @@ namespace Model
          * specific resource in a rule. The results indicate which AWS resources were
          * evaluated by the rule, when each resource was last evaluated, and whether each
          * resource complies with the rule. </p> <note> <p>The results can return an empty
-         * result page. But if you have a nextToken, the results are displayed on the next
-         * page.</p> </note><p><h3>See Also:</h3>   <a
+         * result page. But if you have a <code>nextToken</code>, the results are displayed
+         * on the next page.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateComplianceDetailsByConfigRule">AWS
          * API Reference</a></p>
          */
@@ -1535,8 +1687,8 @@ namespace Model
          * specific resource in a rule. The results indicate which AWS resources were
          * evaluated by the rule, when each resource was last evaluated, and whether each
          * resource complies with the rule. </p> <note> <p>The results can return an empty
-         * result page. But if you have a nextToken, the results are displayed on the next
-         * page.</p> </note><p><h3>See Also:</h3>   <a
+         * result page. But if you have a <code>nextToken</code>, the results are displayed
+         * on the next page.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateComplianceDetailsByConfigRule">AWS
          * API Reference</a></p>
          *
@@ -1549,8 +1701,8 @@ namespace Model
          * specific resource in a rule. The results indicate which AWS resources were
          * evaluated by the rule, when each resource was last evaluated, and whether each
          * resource complies with the rule. </p> <note> <p>The results can return an empty
-         * result page. But if you have a nextToken, the results are displayed on the next
-         * page.</p> </note><p><h3>See Also:</h3>   <a
+         * result page. But if you have a <code>nextToken</code>, the results are displayed
+         * on the next page.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateComplianceDetailsByConfigRule">AWS
          * API Reference</a></p>
          *
@@ -1881,19 +2033,31 @@ namespace Model
         virtual void GetDiscoveredResourceCountsAsync(const Model::GetDiscoveredResourceCountsRequest& request, const GetDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Returns detailed status for each member account within an organization for a
+         * given organization config rule.</p> <note> <p>Only a master account can call
+         * this API.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetOrganizationConfigRuleDetailedStatusOutcome GetOrganizationConfigRuleDetailedStatus(const Model::GetOrganizationConfigRuleDetailedStatusRequest& request) const;
 
         /**
-         * 
+         * <p>Returns detailed status for each member account within an organization for a
+         * given organization config rule.</p> <note> <p>Only a master account can call
+         * this API.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetOrganizationConfigRuleDetailedStatusOutcomeCallable GetOrganizationConfigRuleDetailedStatusCallable(const Model::GetOrganizationConfigRuleDetailedStatusRequest& request) const;
 
         /**
-         * 
+         * <p>Returns detailed status for each member account within an organization for a
+         * given organization config rule.</p> <note> <p>Only a master account can call
+         * this API.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2417,19 +2581,82 @@ namespace Model
         virtual void PutEvaluationsAsync(const Model::PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Adds or updates organization config rule for your entire organization
+         * evaluating whether your AWS resources comply with your desired configurations.
+         * Only a master account can create or update an organization config rule.</p>
+         * <p>This API enables organization service access through the
+         * <code>EnableAWSServiceAccess</code> action and creates a service linked role
+         * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of
+         * your organization. The service linked role is created only when the role does
+         * not exist in the master account. AWS Config verifies the existence of role with
+         * <code>GetRole</code> action.</p> <p>You can use this action to create both
+         * custom AWS Config rules and AWS managed Config rules. If you are adding a new
+         * custom AWS Config rule, you must first create AWS Lambda function in the master
+         * account that the rule invokes to evaluate your resources. When you use the
+         * <code>PutOrganizationConfigRule</code> action to add the rule to AWS Config, you
+         * must specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the
+         * function. If you are adding an AWS managed Config rule, specify the rule's
+         * identifier for the <code>RuleIdentifier</code> key.</p> <p>The maximum number of
+         * organization config rules that AWS Config supports is 150.</p> <note> <p>Specify
+         * either <code>OrganizationCustomRuleMetadata</code> or
+         * <code>OrganizationManagedRuleMetadata</code>.</p> </note><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConfigRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutOrganizationConfigRuleOutcome PutOrganizationConfigRule(const Model::PutOrganizationConfigRuleRequest& request) const;
 
         /**
-         * 
+         * <p>Adds or updates organization config rule for your entire organization
+         * evaluating whether your AWS resources comply with your desired configurations.
+         * Only a master account can create or update an organization config rule.</p>
+         * <p>This API enables organization service access through the
+         * <code>EnableAWSServiceAccess</code> action and creates a service linked role
+         * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of
+         * your organization. The service linked role is created only when the role does
+         * not exist in the master account. AWS Config verifies the existence of role with
+         * <code>GetRole</code> action.</p> <p>You can use this action to create both
+         * custom AWS Config rules and AWS managed Config rules. If you are adding a new
+         * custom AWS Config rule, you must first create AWS Lambda function in the master
+         * account that the rule invokes to evaluate your resources. When you use the
+         * <code>PutOrganizationConfigRule</code> action to add the rule to AWS Config, you
+         * must specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the
+         * function. If you are adding an AWS managed Config rule, specify the rule's
+         * identifier for the <code>RuleIdentifier</code> key.</p> <p>The maximum number of
+         * organization config rules that AWS Config supports is 150.</p> <note> <p>Specify
+         * either <code>OrganizationCustomRuleMetadata</code> or
+         * <code>OrganizationManagedRuleMetadata</code>.</p> </note><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConfigRule">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutOrganizationConfigRuleOutcomeCallable PutOrganizationConfigRuleCallable(const Model::PutOrganizationConfigRuleRequest& request) const;
 
         /**
-         * 
+         * <p>Adds or updates organization config rule for your entire organization
+         * evaluating whether your AWS resources comply with your desired configurations.
+         * Only a master account can create or update an organization config rule.</p>
+         * <p>This API enables organization service access through the
+         * <code>EnableAWSServiceAccess</code> action and creates a service linked role
+         * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of
+         * your organization. The service linked role is created only when the role does
+         * not exist in the master account. AWS Config verifies the existence of role with
+         * <code>GetRole</code> action.</p> <p>You can use this action to create both
+         * custom AWS Config rules and AWS managed Config rules. If you are adding a new
+         * custom AWS Config rule, you must first create AWS Lambda function in the master
+         * account that the rule invokes to evaluate your resources. When you use the
+         * <code>PutOrganizationConfigRule</code> action to add the rule to AWS Config, you
+         * must specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the
+         * function. If you are adding an AWS managed Config rule, specify the rule's
+         * identifier for the <code>RuleIdentifier</code> key.</p> <p>The maximum number of
+         * organization config rules that AWS Config supports is 150.</p> <note> <p>Specify
+         * either <code>OrganizationCustomRuleMetadata</code> or
+         * <code>OrganizationManagedRuleMetadata</code>.</p> </note><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConfigRule">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2474,6 +2701,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutRemediationConfigurationsAsync(const Model::PutRemediationConfigurationsRequest& request, const PutRemediationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>A remediation exception is when a specific resource is no longer considered
+         * for auto-remediation. This API adds a new exception or updates an exisiting
+         * exception for a specific resource with a specific AWS Config rule.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationExceptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutRemediationExceptionsOutcome PutRemediationExceptions(const Model::PutRemediationExceptionsRequest& request) const;
+
+        /**
+         * <p>A remediation exception is when a specific resource is no longer considered
+         * for auto-remediation. This API adds a new exception or updates an exisiting
+         * exception for a specific resource with a specific AWS Config rule.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationExceptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutRemediationExceptionsOutcomeCallable PutRemediationExceptionsCallable(const Model::PutRemediationExceptionsRequest& request) const;
+
+        /**
+         * <p>A remediation exception is when a specific resource is no longer considered
+         * for auto-remediation. This API adds a new exception or updates an exisiting
+         * exception for a specific resource with a specific AWS Config rule.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationExceptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutRemediationExceptionsAsync(const Model::PutRemediationExceptionsRequest& request, const PutRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates and updates the retention configuration with details about retention
@@ -2828,6 +3089,7 @@ namespace Model
         void DeleteOrganizationConfigRuleAsyncHelper(const Model::DeleteOrganizationConfigRuleRequest& request, const DeleteOrganizationConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePendingAggregationRequestAsyncHelper(const Model::DeletePendingAggregationRequestRequest& request, const DeletePendingAggregationRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRemediationConfigurationAsyncHelper(const Model::DeleteRemediationConfigurationRequest& request, const DeleteRemediationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteRemediationExceptionsAsyncHelper(const Model::DeleteRemediationExceptionsRequest& request, const DeleteRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRetentionConfigurationAsyncHelper(const Model::DeleteRetentionConfigurationRequest& request, const DeleteRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeliverConfigSnapshotAsyncHelper(const Model::DeliverConfigSnapshotRequest& request, const DeliverConfigSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAggregateComplianceByConfigRulesAsyncHelper(const Model::DescribeAggregateComplianceByConfigRulesRequest& request, const DescribeAggregateComplianceByConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2846,6 +3108,7 @@ namespace Model
         void DescribeOrganizationConfigRulesAsyncHelper(const Model::DescribeOrganizationConfigRulesRequest& request, const DescribeOrganizationConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePendingAggregationRequestsAsyncHelper(const Model::DescribePendingAggregationRequestsRequest& request, const DescribePendingAggregationRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRemediationConfigurationsAsyncHelper(const Model::DescribeRemediationConfigurationsRequest& request, const DescribeRemediationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeRemediationExceptionsAsyncHelper(const Model::DescribeRemediationExceptionsRequest& request, const DescribeRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRemediationExecutionStatusAsyncHelper(const Model::DescribeRemediationExecutionStatusRequest& request, const DescribeRemediationExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRetentionConfigurationsAsyncHelper(const Model::DescribeRetentionConfigurationsRequest& request, const DescribeRetentionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAggregateComplianceDetailsByConfigRuleAsyncHelper(const Model::GetAggregateComplianceDetailsByConfigRuleRequest& request, const GetAggregateComplianceDetailsByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2870,6 +3133,7 @@ namespace Model
         void PutEvaluationsAsyncHelper(const Model::PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutOrganizationConfigRuleAsyncHelper(const Model::PutOrganizationConfigRuleRequest& request, const PutOrganizationConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRemediationConfigurationsAsyncHelper(const Model::PutRemediationConfigurationsRequest& request, const PutRemediationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutRemediationExceptionsAsyncHelper(const Model::PutRemediationExceptionsRequest& request, const PutRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRetentionConfigurationAsyncHelper(const Model::PutRetentionConfigurationRequest& request, const PutRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SelectResourceConfigAsyncHelper(const Model::SelectResourceConfigRequest& request, const SelectResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartConfigRulesEvaluationAsyncHelper(const Model::StartConfigRulesEvaluationRequest& request, const StartConfigRulesEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

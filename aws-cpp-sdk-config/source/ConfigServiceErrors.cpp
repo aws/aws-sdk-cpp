@@ -51,6 +51,7 @@ static const int ORGANIZATION_ACCESS_DENIED_HASH = HashingUtils::HashString("Org
 static const int NO_SUCH_BUCKET_HASH = HashingUtils::HashString("NoSuchBucketException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int INVALID_TIME_RANGE_HASH = HashingUtils::HashString("InvalidTimeRangeException");
+static const int NO_SUCH_REMEDIATION_EXCEPTION_HASH = HashingUtils::HashString("NoSuchRemediationExceptionException");
 static const int MAX_NUMBER_OF_DELIVERY_CHANNELS_EXCEEDED_HASH = HashingUtils::HashString("MaxNumberOfDeliveryChannelsExceededException");
 static const int NO_SUCH_DELIVERY_CHANNEL_HASH = HashingUtils::HashString("NoSuchDeliveryChannelException");
 static const int NO_SUCH_CONFIG_RULE_HASH = HashingUtils::HashString("NoSuchConfigRuleException");
@@ -164,6 +165,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_TIME_RANGE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::INVALID_TIME_RANGE), false);
+  }
+  else if (hashCode == NO_SUCH_REMEDIATION_EXCEPTION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::NO_SUCH_REMEDIATION_EXCEPTION), false);
   }
   else if (hashCode == MAX_NUMBER_OF_DELIVERY_CHANNELS_EXCEEDED_HASH)
   {
