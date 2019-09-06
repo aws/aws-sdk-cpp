@@ -1115,16 +1115,20 @@ namespace Model
         virtual void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the list of key-value tags assigned to the
-         * application.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the list of key-value tags assigned to the application. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+         * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Retrieves the list of key-value tags assigned to the
-         * application.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the list of key-value tags assigned to the application. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+         * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -1133,8 +1137,10 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Retrieves the list of key-value tags assigned to the
-         * application.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the list of key-value tags assigned to the application. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+         * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -1285,7 +1291,9 @@ namespace Model
         /**
          * <p>Adds one or more key-value tags to a Kinesis Analytics application. Note that
          * the maximum number of application tags includes system tags. The maximum number
-         * of user-defined application tags is 50.</p><p><h3>See Also:</h3>   <a
+         * of user-defined application tags is 50. For more information, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+         * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/TagResource">AWS
          * API Reference</a></p>
          */
@@ -1294,7 +1302,9 @@ namespace Model
         /**
          * <p>Adds one or more key-value tags to a Kinesis Analytics application. Note that
          * the maximum number of application tags includes system tags. The maximum number
-         * of user-defined application tags is 50.</p><p><h3>See Also:</h3>   <a
+         * of user-defined application tags is 50. For more information, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+         * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1305,7 +1315,9 @@ namespace Model
         /**
          * <p>Adds one or more key-value tags to a Kinesis Analytics application. Note that
          * the maximum number of application tags includes system tags. The maximum number
-         * of user-defined application tags is 50.</p><p><h3>See Also:</h3>   <a
+         * of user-defined application tags is 50. For more information, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+         * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1314,16 +1326,20 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more tags from a Kinesis Analytics application.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes one or more tags from a Kinesis Analytics application. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+         * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from a Kinesis Analytics application.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes one or more tags from a Kinesis Analytics application. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+         * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1332,8 +1348,10 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from a Kinesis Analytics application.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes one or more tags from a Kinesis Analytics application. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+         * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/UntagResource">AWS
          * API Reference</a></p>
          *

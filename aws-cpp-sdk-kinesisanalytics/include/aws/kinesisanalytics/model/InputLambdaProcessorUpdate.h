@@ -52,7 +52,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the new <a
-     * href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a> function that is used
+     * href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used
      * to preprocess the records in the stream.</p> <note> <p>To specify an earlier
      * version of the Lambda function than the latest, include the Lambda function
      * version in the Lambda function ARN. For more information about Lambda ARNs, see
@@ -64,7 +64,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the new <a
-     * href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a> function that is used
+     * href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used
      * to preprocess the records in the stream.</p> <note> <p>To specify an earlier
      * version of the Lambda function than the latest, include the Lambda function
      * version in the Lambda function ARN. For more information about Lambda ARNs, see
@@ -76,7 +76,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the new <a
-     * href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a> function that is used
+     * href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used
      * to preprocess the records in the stream.</p> <note> <p>To specify an earlier
      * version of the Lambda function than the latest, include the Lambda function
      * version in the Lambda function ARN. For more information about Lambda ARNs, see
@@ -88,7 +88,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the new <a
-     * href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a> function that is used
+     * href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used
      * to preprocess the records in the stream.</p> <note> <p>To specify an earlier
      * version of the Lambda function than the latest, include the Lambda function
      * version in the Lambda function ARN. For more information about Lambda ARNs, see
@@ -100,7 +100,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the new <a
-     * href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a> function that is used
+     * href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used
      * to preprocess the records in the stream.</p> <note> <p>To specify an earlier
      * version of the Lambda function than the latest, include the Lambda function
      * version in the Lambda function ARN. For more information about Lambda ARNs, see
@@ -112,7 +112,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the new <a
-     * href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a> function that is used
+     * href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used
      * to preprocess the records in the stream.</p> <note> <p>To specify an earlier
      * version of the Lambda function than the latest, include the Lambda function
      * version in the Lambda function ARN. For more information about Lambda ARNs, see
@@ -124,7 +124,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the new <a
-     * href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a> function that is used
+     * href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used
      * to preprocess the records in the stream.</p> <note> <p>To specify an earlier
      * version of the Lambda function than the latest, include the Lambda function
      * version in the Lambda function ARN. For more information about Lambda ARNs, see
@@ -136,7 +136,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the new <a
-     * href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a> function that is used
+     * href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used
      * to preprocess the records in the stream.</p> <note> <p>To specify an earlier
      * version of the Lambda function than the latest, include the Lambda function
      * version in the Lambda function ARN. For more information about Lambda ARNs, see

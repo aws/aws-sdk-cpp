@@ -631,9 +631,8 @@ namespace Model
      * pair that identifies an application. Note that the maximum number of application
      * tags includes system tags. The maximum number of user-defined application tags
      * is 50. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+     * Tagging</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -642,9 +641,8 @@ namespace Model
      * pair that identifies an application. Note that the maximum number of application
      * tags includes system tags. The maximum number of user-defined application tags
      * is 50. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+     * Tagging</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -653,9 +651,8 @@ namespace Model
      * pair that identifies an application. Note that the maximum number of application
      * tags includes system tags. The maximum number of user-defined application tags
      * is 50. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+     * Tagging</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -664,9 +661,8 @@ namespace Model
      * pair that identifies an application. Note that the maximum number of application
      * tags includes system tags. The maximum number of user-defined application tags
      * is 50. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+     * Tagging</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -675,9 +671,8 @@ namespace Model
      * pair that identifies an application. Note that the maximum number of application
      * tags includes system tags. The maximum number of user-defined application tags
      * is 50. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+     * Tagging</a>.</p>
      */
     inline CreateApplicationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -686,9 +681,8 @@ namespace Model
      * pair that identifies an application. Note that the maximum number of application
      * tags includes system tags. The maximum number of user-defined application tags
      * is 50. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+     * Tagging</a>.</p>
      */
     inline CreateApplicationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -697,9 +691,8 @@ namespace Model
      * pair that identifies an application. Note that the maximum number of application
      * tags includes system tags. The maximum number of user-defined application tags
      * is 50. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+     * Tagging</a>.</p>
      */
     inline CreateApplicationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -708,9 +701,8 @@ namespace Model
      * pair that identifies an application. Note that the maximum number of application
      * tags includes system tags. The maximum number of user-defined application tags
      * is 50. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using
+     * Tagging</a>.</p>
      */
     inline CreateApplicationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
