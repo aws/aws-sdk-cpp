@@ -42,7 +42,7 @@ public class JsonCppClientGenerator extends CppClientGenerator {
     protected SdkFileEntry generateModelHeaderFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
 
         Shape shape = shapeEntry.getValue();
-        if (shape.isException())
+        if (shape.isException() && !shape.isJsonModeledException())
             return null;
 
         if (shape.isResult() && shape.hasEventStreamMembers())
@@ -91,7 +91,7 @@ public class JsonCppClientGenerator extends CppClientGenerator {
         if (shape.isEvent() && shape.getMembers().size() == 1 && shape.hasBlobMembers())
             return null;
 
-        if (shape.isException())
+        if (shape.isException() && !shape.isJsonModeledException())
             return null;
 
         if (shape.isEventStream())

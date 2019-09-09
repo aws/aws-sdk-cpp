@@ -11,7 +11,6 @@
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/utils/Outcome.h>
-#include <aws/core/utils/ratelimiter/DefaultRateLimiter.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/TestingEnvironment.h>

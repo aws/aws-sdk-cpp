@@ -73,30 +73,12 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
-  XmlOutcome outcome = MakeRequestWithEventStream(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride});
+  return ${operation.name}Outcome(MakeRequestWithEventStream(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}));
 #elseif($operation.result && $operation.result.shape.hasStreamMembers())
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride});
+  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}));
 #else
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride});
+  return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}));
 #end
-  if(outcome.IsSuccess())
-  {
-#if(${operation.result})
-#if($operation.result.shape.hasEventStreamMembers())
-    return ${operation.name}Outcome(NoResult());
-#elseif($operation.result.shape.hasStreamMembers())
-    return ${operation.name}Outcome(${operation.result.shape.name}(outcome.GetResultWithOwnership()));
-#else
-    return ${operation.name}Outcome(${operation.result.shape.name}(outcome.GetResult()));
-#end
-#else
-    return ${operation.name}Outcome(NoResult());
-#end
-  }
-  else
-  {
-    return ${operation.name}Outcome(outcome.GetError());
-  }
 }
 
 ${operation.name}OutcomeCallable ${className}::${operation.name}Callable(${constText}${operation.request.shape.name}& request) const
@@ -137,28 +119,12 @@ ${operation.name}Outcome ${className}::${operation.name}() const
 #end
 #end
 #if($operation.result && $operation.result.shape.hasStreamMembers())
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"${signerRegionOverride});
+  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"${signerRegionOverride}));
 #elseif($operation.request)
-  XmlOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "{operation.name}"${signerRegionOverride})
+  return ${operation.name}Outcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "{operation.name}${signerRegionOverride}"));
 #else
-  XmlOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, Aws::Auth::SIGV4_SIGNER, "${operation.name}"${signerRegionOverride});
+  return ${operation.name}Outcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, Aws::Auth::SIGV4_SIGNER, "${operation.name}"${signerRegionOverride}));
 #end
-  if(outcome.IsSuccess())
-  {
-#if(${operation.result})
-#if($operation.result.shape.hasStreamMembers())
-    return ${operation.name}Outcome(${operation.result.shape.name}(outcome.GetResultWithOwnership()));
-#else
-    return ${operation.name}Outcome(${operation.result.shape.name}(outcome.GetResult()));
-#end
-#else
-    return ${operation.name}Outcome(NoResult());
-#end
-  }
-  else
-  {
-    return ${operation.name}Outcome(outcome.GetError());
-  }
 }
 
 ${operation.name}OutcomeCallable ${className}::${operation.name}Callable() const

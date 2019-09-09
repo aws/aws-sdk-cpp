@@ -84,22 +84,10 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
 #else
   uri.SetQueryString(ss.str());
 #end
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method});
+  return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
 #else
-  XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_${operation.http.method});
+  return ${operation.name}Outcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
 #end
-  if(outcome.IsSuccess())
-  {
-#if(${operation.result})
-    return ${operation.name}Outcome(${operation.result.shape.name}(outcome.GetResult()));
-#else
-    return ${operation.name}Outcome(NoResult());
-#end
-  }
-  else
-  {
-    return ${operation.name}Outcome(outcome.GetError());
-  }
 }
 
 ${operation.name}OutcomeCallable ${className}::${operation.name}Callable(const ${operation.request.shape.name}& request) const

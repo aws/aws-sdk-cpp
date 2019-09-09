@@ -256,7 +256,7 @@ protected:
         DescribeTableOutcome outcome = m_client->DescribeTable(describeTableRequest);
 
         while (shouldContinue)
-        {     
+        {
             if (outcome.IsSuccess() && outcome.GetResult().GetTable().GetTableStatus() == TableStatus::ACTIVE)
             {
                 break;
@@ -371,6 +371,10 @@ TEST_F(TableOperationTest, TestConditionalCheckFailure)
     badRequest.AddExpected("Simpson", expected);
     PutItemOutcome result = m_client->PutItem(badRequest);
     ASSERT_FALSE(result.IsSuccess());
+#if ENABLE_CURL_CLIENT
+    ASSERT_FALSE(result.GetError().GetRemoteHostIpAddress().empty());
+#endif
+    ASSERT_FALSE(result.GetError().GetRequestId().empty());
     ASSERT_EQ(DynamoDBErrors::CONDITIONAL_CHECK_FAILED, result.GetError().GetErrorType());
 }
 
@@ -390,6 +394,10 @@ TEST_F(TableOperationTest, TestValidationError)
 
     PutItemOutcome result = m_client->PutItem(request);
     ASSERT_FALSE(result.IsSuccess());
+#if ENABLE_CURL_CLIENT
+    ASSERT_FALSE(result.GetError().GetRemoteHostIpAddress().empty());
+#endif
+    ASSERT_FALSE(result.GetError().GetRequestId().empty());
     ASSERT_EQ(DynamoDBErrors::VALIDATION, result.GetError().GetErrorType());
 }
 
@@ -865,7 +873,7 @@ TEST_F(TableOperationTest, TestLimiter)
 
     // set limiter to 1k/sec
     // each request is a Put of 1k of data + >600 from headers/misc and response data
-    // so we expect 20 requests to take at least 30 seconds 
+    // so we expect 20 requests to take at least 30 seconds
     m_limiter->SetRate(1000, true);
 
     auto startTime = CLOCK::now();

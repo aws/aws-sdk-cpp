@@ -324,6 +324,21 @@ TEST(JsonSerializerTest, TestCopy)
     ASSERT_FALSE(copiedValue.WasParseSuccessful());
 }
 
+TEST(JsonSerializerTest, TestMove)
+{
+    JsonValue value;
+    ASSERT_TRUE(value.WasParseSuccessful());
+    JsonValue movedValue(value);
+    ASSERT_TRUE(movedValue.WasParseSuccessful());
+    JsonValue movedValue2;
+    movedValue2 = value;
+    ASSERT_TRUE(movedValue2.WasParseSuccessful());
+    JsonValue bad(Aws::String("not valid json"));
+    ASSERT_FALSE(bad.WasParseSuccessful());
+    movedValue = bad;
+    ASSERT_FALSE(movedValue.WasParseSuccessful());
+}
+
 TEST(JsonSerializer, TestBuilderPatternReplacesKeys)
 {
     auto input = R"({"AWS" : {

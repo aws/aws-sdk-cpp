@@ -78,8 +78,48 @@ TEST(XmlSerializerTest, TestXmlHasChildren)
     XmlDocument doc = XmlDocument::CreateWithRootNode("ToDo");
     XmlNode rootElement = doc.GetRootElement();
     XmlNode item1 = rootElement.CreateChildElement("Item");
-   
+
     ASSERT_TRUE(rootElement.HasChildren());
     ASSERT_FALSE(item1.HasChildren());
 }
-    
+
+TEST(XmlSerializerTest, TestXmlCopyAndMove)
+{
+    const char* testXml = "<?xml version=\"1.0\" ?>\n"
+        "<!-- Our to do list data -->\n"
+        "<ToDo>\n"
+        "</ToDo>";
+
+    XmlDocument doc = XmlDocument::CreateFromXmlString(testXml);
+    ASSERT_TRUE(doc.WasParseSuccessful());
+
+    // Copy constructor
+    XmlDocument copiedDoc(doc);
+    ASSERT_TRUE(copiedDoc.GetErrorMessage().empty());
+    ASSERT_EQ("ToDo", copiedDoc.GetRootElement().GetName());
+
+    ASSERT_TRUE(doc.GetErrorMessage().empty());
+    ASSERT_EQ("ToDo", doc.GetRootElement().GetName());
+
+    // Move constructor
+    XmlDocument movedDoc(std::move(doc));
+    ASSERT_TRUE(movedDoc.GetErrorMessage().empty());
+    ASSERT_EQ("ToDo", movedDoc.GetRootElement().GetName());
+    ASSERT_EQ("", doc.ConvertToString());
+
+    // Copy assignment
+    {
+        XmlDocument scopedDoc = XmlDocument::CreateFromXmlString(testXml);
+        copiedDoc = scopedDoc;
+    }
+    ASSERT_TRUE(copiedDoc.GetErrorMessage().empty());
+    ASSERT_EQ("ToDo", copiedDoc.GetRootElement().GetName());
+
+    // Move assignment
+    {
+        XmlDocument scopedDoc = XmlDocument::CreateFromXmlString(testXml);
+        movedDoc = std::move(scopedDoc);
+    }
+    ASSERT_TRUE(movedDoc.GetErrorMessage().empty());
+    ASSERT_EQ("ToDo", movedDoc.GetRootElement().GetName());
+}
