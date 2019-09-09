@@ -1,12 +1,12 @@
 /*
   * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
+  *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
   * A copy of the License is located at
-  * 
+  *
   *  http://aws.amazon.com/apache2.0
-  * 
+  *
   * or in the "license" file accompanying this file. This file is distributed
   * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
   * express or implied. See the License for the specific language governing
@@ -332,6 +332,21 @@ TEST(JsonSerializerTest, TestCopy)
     ASSERT_FALSE(bad.WasParseSuccessful());
     copiedValue = bad;
     ASSERT_FALSE(copiedValue.WasParseSuccessful());
+}
+
+TEST(JsonSerializerTest, TestMove)
+{
+    JsonValue value;
+    ASSERT_TRUE(value.WasParseSuccessful());
+    JsonValue movedValue(value);
+    ASSERT_TRUE(movedValue.WasParseSuccessful());
+    JsonValue movedValue2;
+    movedValue2 = value;
+    ASSERT_TRUE(movedValue2.WasParseSuccessful());
+    JsonValue bad(Aws::String("not valid json"));
+    ASSERT_FALSE(bad.WasParseSuccessful());
+    movedValue = bad;
+    ASSERT_FALSE(movedValue.WasParseSuccessful());
 }
 
 TEST(JsonSerializer, TestBuilderPatternReplacesKeys)

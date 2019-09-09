@@ -92,6 +92,8 @@ public class QueryCppClientGenerator extends CppClientGenerator {
     @Override
     protected SdkFileEntry generateModelHeaderFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
         Shape shape = shapeEntry.getValue();
+        if (shape.isException() && !shape.isXmlModeledException())
+            return null;
 
         //we only want to handle results and internal structures. We don't want requests or enums.
         if (shape.isRequest() || shape.isEnum() || shape.hasEventPayloadMembers() && shape.hasBlobMembers()) {
@@ -123,6 +125,9 @@ public class QueryCppClientGenerator extends CppClientGenerator {
     @Override
     protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
         Shape shape = shapeEntry.getValue();
+        if (shape.isException() && !shape.isXmlModeledException())
+            return null;
+
         if (shape.isEnum()) {
             return super.generateModelSourceFile(serviceModel, shapeEntry);
         }

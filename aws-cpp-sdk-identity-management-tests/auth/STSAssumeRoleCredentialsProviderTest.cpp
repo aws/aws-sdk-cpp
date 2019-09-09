@@ -84,13 +84,13 @@ TEST(STSAssumeRoleCredentialsProviderTest, TestCredentialsLoadAndCache)
 
     Model::AssumeRoleResult assumeRoleResult;
     assumeRoleResult.SetCredentials(stsCredentials);
-    
+
     stsClient->MockAssumeRole(assumeRoleResult);
 
     STSAssumeRoleCredentialsProvider credsProvider(ROLE_ARN, SESSION_NAME, EXTERNAL_ID, DEFAULT_CREDS_LOAD_FREQ_SECONDS, stsClient);
 
     auto credentials = credsProvider.GetAWSCredentials();
-  
+
     ASSERT_STREQ(ACCESS_KEY_ID_1, credentials.GetAWSAccessKeyId().c_str());
     ASSERT_STREQ(SECRET_ACCESS_KEY_ID_1, credentials.GetAWSSecretKey().c_str());
     ASSERT_STREQ(SESSION_TOKEN_1, credentials.GetSessionToken().c_str());
@@ -168,9 +168,9 @@ TEST(STSAssumeRoleCredentialsProviderTest, TestCredentialsCacheExpiry)
 
 //Fail once then make sure next call recovers.
 TEST(STSAssumeRoleCredentialsProviderTest, TestCredentialsErrorThenRecovery)
-{    
-    auto stsClient = Aws::MakeShared<MockSTSClient>(CLASS_TAG);    
-        
+{
+    auto stsClient = Aws::MakeShared<MockSTSClient>(CLASS_TAG);
+
     STSAssumeRoleCredentialsProvider credsProvider(ROLE_ARN, SESSION_NAME, EXTERNAL_ID, DEFAULT_CREDS_LOAD_FREQ_SECONDS, stsClient);
 
     Aws::Client::AWSError<STSErrors> error(STSErrors::INVALID_ACTION, "blah", "blah", false);
@@ -200,7 +200,7 @@ TEST(STSAssumeRoleCredentialsProviderTest, TestCredentialsErrorThenRecovery)
     Model::AssumeRoleResult assumeRoleResult;
     assumeRoleResult.SetCredentials(stsCredentials);
 
-    stsClient->MockAssumeRole(assumeRoleResult);  
+    stsClient->MockAssumeRole(assumeRoleResult);
 
     credentials = credsProvider.GetAWSCredentials();
     request = stsClient->CapturedRequest();

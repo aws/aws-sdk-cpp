@@ -160,7 +160,7 @@ namespace Aws
 
             /**
              * Container for Xml Document as a whole. All nodes have a reference to their parent document. Any changes
-             * you make to the nodes will be reflected here. 
+             * you make to the nodes will be reflected here.
              */
             class AWS_CORE_API XmlDocument
             {
@@ -168,8 +168,11 @@ namespace Aws
                 /**
                  * move document memory
                  */
-                XmlDocument(XmlDocument&& doc); 
-                XmlDocument(const XmlDocument& other) = delete;
+                XmlDocument(const XmlDocument& other);
+                XmlDocument(XmlDocument&& doc);
+
+                XmlDocument& operator=(const XmlDocument& other);
+                XmlDocument& operator=(XmlDocument&& other);
 
                 ~XmlDocument();
 
@@ -187,7 +190,7 @@ namespace Aws
                  */
                 bool WasParseSuccessful() const;
                 /**
-                 * Returns the error message if the call to CreateFromXml* failed. 
+                 * Returns the error message if the call to CreateFromXml* failed.
                  */
                 Aws::String GetErrorMessage() const;
                 /**
@@ -205,6 +208,7 @@ namespace Aws
 
             private:
                 XmlDocument();
+                void InitDoc();
 
                 Aws::External::tinyxml2::XMLDocument* m_doc;
 
@@ -213,6 +217,8 @@ namespace Aws
                 //allow outcome call the default constructor to handle it's error case.
                 friend class Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
                 friend class Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>;
+                template<typename T>
+                friend class Client::AWSError;
                 friend class Client::AWSXMLClient;
             };
 

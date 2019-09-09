@@ -1154,6 +1154,10 @@ namespace
 
         ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
         ASSERT_FALSE(listObjectsOutcome.IsSuccess());
+#if ENABLE_CURL_CLIENT
+        ASSERT_FALSE(listObjectsOutcome.GetError().GetRemoteHostIpAddress().empty());
+#endif
+        ASSERT_FALSE(listObjectsOutcome.GetError().GetRequestId().empty());
         ASSERT_EQ(S3Errors::NO_SUCH_BUCKET, listObjectsOutcome.GetError().GetErrorType());
 
         CreateBucketRequest createBucketRequest;
@@ -1169,6 +1173,10 @@ namespace
         getObjectRequest.SetKey("non-Existent");
         GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
         ASSERT_FALSE(getObjectOutcome.IsSuccess());
+#if ENABLE_CURL_CLIENT
+        ASSERT_FALSE(getObjectOutcome.GetError().GetRemoteHostIpAddress().empty());
+#endif
+        ASSERT_FALSE(getObjectOutcome.GetError().GetRequestId().empty());
         ASSERT_EQ(S3Errors::NO_SUCH_KEY, getObjectOutcome.GetError().GetErrorType());
     }
 
@@ -1514,8 +1522,11 @@ namespace
 
         auto selectObjectContentOutcome = Client->SelectObjectContent(selectObjectContentRequest);
         ASSERT_FALSE(selectObjectContentOutcome.IsSuccess());
+#if ENABLE_CURL_CLIENT
+        ASSERT_FALSE(selectObjectContentOutcome.GetError().GetRemoteHostIpAddress().empty());
+#endif
+        ASSERT_FALSE(selectObjectContentOutcome.GetError().GetRequestId().empty());
         ASSERT_EQ(S3Errors::NO_SUCH_BUCKET, selectObjectContentOutcome.GetError().GetErrorType());
-
     }
 
     TEST_F(BucketAndObjectOperationTest, TestErrorsInEventStream)
@@ -1582,7 +1593,7 @@ namespace
 
         selectObjectContentRequest.SetEventStreamHandler(handler);
 
-        auto selectObjectContentOutcome = Client->SelectObjectContent(selectObjectContentRequest);
+        Client->SelectObjectContent(selectObjectContentRequest);
 
         ASSERT_TRUE(isErrorEventReceived);
     }

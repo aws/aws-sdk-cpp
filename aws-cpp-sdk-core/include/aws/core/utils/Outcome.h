@@ -17,6 +17,7 @@
 
 #include <aws/core/Core_EXPORTS.h>
 
+#include <cassert>
 #include <utility>
 
 namespace Aws
@@ -37,23 +38,69 @@ namespace Aws
 
             Outcome() : success(false)
             {
-            } // Default constructor
+            }
             Outcome(const R& r) : result(r), success(true)
             {
-            } // Result copy constructor
+            }
             Outcome(const E& e) : error(e), success(false)
             {
-            } // Error copy constructor
+            }
             Outcome(R&& r) : result(std::forward<R>(r)), success(true)
             {
-            } // Result move constructor
+            }
             Outcome(E&& e) : error(std::forward<E>(e)), success(false)
             {
-            } // Error move constructor
+            }
             Outcome(const Outcome& o) :
                 result(o.result),
                 error(o.error),
                 success(o.success)
+            {
+            }
+
+            template<typename RT, typename ET>
+            friend class Outcome;
+
+#if defined (__cplusplus) && __cplusplus > 201103L
+            template< bool B, class T = void >
+            using enable_if_t = std::enable_if_t<B, T>;
+#else
+            template< bool B, class T = void >
+            using enable_if_t = typename std::enable_if<B,T>::type;
+#endif
+
+            // Move both result and error from other type of outcome
+            template<typename RT, typename ET, enable_if_t<std::is_convertible<RT, R>::value &&
+                                                           std::is_convertible<ET, E>::value, int> = 0>
+            Outcome(Outcome<RT, ET>&& o) :
+                result(std::move(o.result)),
+                error(std::move(o.error)),
+                success(o.success)
+            {
+            }
+
+            // Move result from other type of outcome
+            template<typename RT, typename ET, enable_if_t<std::is_convertible<RT, R>::value &&
+                                                          !std::is_convertible<ET, E>::value, int> = 0>
+            Outcome(Outcome<RT, ET>&& o) :
+                result(std::move(o.result)),
+                success(o.success)
+            {
+                assert(o.success);
+            }
+
+            // Move error from other type of outcome
+            template<typename RT, typename ET, enable_if_t<!std::is_convertible<RT, R>::value &&
+                                                            std::is_convertible<ET, E>::value, int> = 0>
+            Outcome(Outcome<RT, ET>&& o) :
+                error(std::move(o.error)),
+                success(o.success)
+            {
+                assert(!o.success);
+            }
+
+            template<typename ET, enable_if_t<std::is_convertible<ET, E>::value, int> = 0>
+            Outcome(ET&& e) : error(std::forward<ET>(e)), success(false)
             {
             }
 
@@ -110,6 +157,12 @@ namespace Aws
             inline const E& GetError() const
             {
                 return error;
+            }
+
+            template<typename T>
+            inline T GetError()
+            {
+                return error.template GetModeledError<T>();
             }
 
             inline bool IsSuccess() const

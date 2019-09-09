@@ -57,7 +57,7 @@ public class C2jModelToGeneratorModelTransformer {
 
         serviceModel.setShapes(shapes);
         serviceModel.setOperations(operations);
-        serviceModel.setServiceErrors(filterOutCoreErrors(allErrors));
+        serviceModel.setServiceErrors(allErrors);
         serviceModel.getMetadata().setHasEndpointTrait(hasEndpointTrait);
         serviceModel.getMetadata().setHasEndpointDiscoveryTrait(hasEndpointDiscoveryTrait && !endpointOperationName.isEmpty());
         serviceModel.getMetadata().setEndpointOperationName(endpointOperationName);
@@ -457,7 +457,7 @@ public class C2jModelToGeneratorModelTransformer {
 
         List<Error> operationErrors = new ArrayList<>();
         if (c2jOperation.getErrors() != null) {
-            operationErrors.addAll(c2jOperation.getErrors().stream().map(this::convertError).collect(Collectors.toList()));
+            operationErrors.addAll(c2jOperation.getErrors().stream().map(c2jError -> convertError(c2jError, c2jOperation.getName())).collect(Collectors.toList()));
         }
 
         operation.setErrors(operationErrors);
@@ -541,19 +541,33 @@ public class C2jModelToGeneratorModelTransformer {
         return endpoint;
     }
 
-    Error convertError(C2jError c2jError) {
+    Error convertError(C2jError c2jError, String operationName) {
+        Error error = new Error();
+        error.setModeled(false);
         if(c2jServiceModel.getShapes().get(c2jError.getShape()) != null) {
             C2jShape shape = c2jServiceModel.getShapes().get(c2jError.getShape());
             c2jError.setError(shape.getError());
             c2jError.setException(shape.isException());
-        }
 
-        Error error = new Error();
+            Shape referencedShape = shapes.get(CppViewHelper.convertToUpperCamel(c2jError.getShape()));
+            referencedShape.getReferencedBy().add(operationName);
+            referencedShape.setReferenced(true);
+            // We define an error as a modeled error if:
+            // 1. Its shape is defined in C2J model.
+            // 2. For XML payload type, it has extra member other than "message" and "code" (case insensitive).
+            // 3. For JSON payload type, it has extra member other than "message" (case insensitive).
+            String errorPayloadType = CppViewHelper.computeServicePayloadType(this.c2jServiceModel.getMetadata().getProtocol());
+            if (errorPayloadType.equals("xml") && referencedShape.isXmlModeledException() ||
+                errorPayloadType.equals("json") && referencedShape.isJsonModeledException()) {
+                error.setModeled(true);
+            }
+        }
         error.setDocumentation(formatDocumentation(c2jError.getDocumentation(), 3));
-        error.setName(c2jError.getShape());
+        error.setName(CppViewHelper.convertToUpperCamel(c2jError.getShape()));
         error.setText(c2jError.getShape());
         error.setException(c2jError.isException());
         error.setFault(c2jError.isFault());
+        error.setCoreError(CoreErrors.VARIANTS.containsKey(error.getName()));
 
         //query xml loads this inner structure to do this work.
         if (c2jError.getError() != null && c2jError.getError().getCode() != null) {
@@ -566,10 +580,6 @@ public class C2jModelToGeneratorModelTransformer {
 
         allErrors.add(error);
         return error;
-    }
-
-    Set<Error> filterOutCoreErrors(Set<Error> errors) {
-        return errors.stream().filter(e -> !CoreErrors.VARIANTS.contains(e.getName())).collect(Collectors.toSet());
     }
 
     String sanitizeServiceAbbreviation(String serviceAbbreviation) {

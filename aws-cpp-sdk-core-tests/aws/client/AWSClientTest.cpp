@@ -100,6 +100,7 @@ protected:
     {
         auto httpRequest = CreateHttpRequest(URI("http://www.uri.com/path/to/res"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        httpRequest->SetResolvedRemoteHost("127.0.0.1");
         auto httpResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, httpRequest);
         httpResponse->SetResponseCode(code);
         httpResponse->GetResponseBody() << "";
@@ -202,12 +203,14 @@ TEST_F(AWSClientTestSuite, TestClockSkewConsecutiveRequests)
     outcome = client->MakeRequest(request);
     ASSERT_FALSE(outcome.IsSuccess()); // should _not_ attempt to adjust clock skew and retry the request.
     ASSERT_EQ(HttpResponseCode::UNAUTHORIZED, outcome.GetError().GetResponseCode());
+    ASSERT_STREQ("127.0.0.1", outcome.GetError().GetRemoteHostIpAddress().c_str());
     ASSERT_EQ(0, client->GetRequestAttemptedRetries());
 
     QueueMockResponse(HttpResponseCode::FORBIDDEN, responseHeaders);
     outcome = client->MakeRequest(request);
     ASSERT_FALSE(outcome.IsSuccess()); // should _not_ attempt to adjust clock skew and retry the request.
     ASSERT_EQ(HttpResponseCode::FORBIDDEN, outcome.GetError().GetResponseCode());
+    ASSERT_STREQ("127.0.0.1", outcome.GetError().GetRemoteHostIpAddress().c_str());
     ASSERT_EQ(0, client->GetRequestAttemptedRetries());
 }
 

@@ -37,6 +37,7 @@ public:
         AWS_UNREFERENCED_PARAM(readLimiter);
         AWS_UNREFERENCED_PARAM(writeLimiter);
 
+        request->SetResolvedRemoteHost("127.0.0.1");
         //note that the mock client factory logically enforces type safety here.
         m_requestsMade.push_back(static_cast<const Aws::Http::Standard::StandardHttpRequest&>(*request));
 

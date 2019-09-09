@@ -135,6 +135,7 @@ list(APPEND SDK_TEST_PROJECT_LIST "cognito-identity:aws-cpp-sdk-cognitoidentity-
 list(APPEND SDK_TEST_PROJECT_LIST "core:aws-cpp-sdk-core-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "dynamodb:aws-cpp-sdk-dynamodb-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "ec2:aws-cpp-sdk-ec2-integration-tests")
+list(APPEND SDK_TEST_PROJECT_LIST "elasticfilesystem:aws-cpp-sdk-elasticfilesystem-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "identity-management:aws-cpp-sdk-identity-management-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "kinesis:aws-cpp-sdk-kinesis-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "lambda:aws-cpp-sdk-lambda-integration-tests")

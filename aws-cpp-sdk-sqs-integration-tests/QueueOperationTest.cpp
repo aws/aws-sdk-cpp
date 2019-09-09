@@ -197,6 +197,10 @@ TEST_F(QueueOperationTest, TestCreateQueue)
 
     createQueueOutcome = sqsClient->CreateQueue(createQueueRequest);
     ASSERT_FALSE(createQueueOutcome.IsSuccess());
+#if ENABLE_CURL_CLIENT
+    ASSERT_FALSE(createQueueOutcome.GetError().GetRemoteHostIpAddress().empty());
+#endif
+    ASSERT_FALSE(createQueueOutcome.GetError().GetRequestId().empty());
     SQSErrors error = createQueueOutcome.GetError().GetErrorType();
     EXPECT_TRUE(SQSErrors::QUEUE_NAME_EXISTS == error || SQSErrors::QUEUE_DELETED_RECENTLY == error);
 

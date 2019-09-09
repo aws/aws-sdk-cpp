@@ -21,7 +21,6 @@
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/utils/Outcome.h>
-#include <aws/core/utils/ratelimiter/DefaultRateLimiter.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/TestingEnvironment.h>
@@ -229,6 +228,10 @@ namespace
         getPublicAccessBlockRequest.SetAccountId(m_accountId);
         auto getPublicAccessBlockOutcome = m_client.GetPublicAccessBlock(getPublicAccessBlockRequest);
         ASSERT_FALSE(getPublicAccessBlockOutcome.IsSuccess());
+#if ENABLE_CURL_CLIENT
+        ASSERT_FALSE(getPublicAccessBlockOutcome.GetError().GetRemoteHostIpAddress().empty());
+#endif
+        ASSERT_FALSE(getPublicAccessBlockOutcome.GetError().GetRequestId().empty());
         ASSERT_EQ(S3ControlErrors::NO_SUCH_PUBLIC_ACCESS_BLOCK_CONFIGURATION, getPublicAccessBlockOutcome.GetError().GetErrorType());
 
         PutPublicAccessBlockRequest putPublicAccessBlockRequest;
@@ -257,6 +260,10 @@ namespace
         getPublicAccessBlockRequest.SetAccountId(m_accountId);
         auto getPublicAccessBlockOutcome = s3ControlClient.GetPublicAccessBlock(getPublicAccessBlockRequest);
         ASSERT_FALSE(getPublicAccessBlockOutcome.IsSuccess());
+#if ENABLE_CURL_CLIENT
+        ASSERT_FALSE(getPublicAccessBlockOutcome.GetError().GetRemoteHostIpAddress().empty());
+#endif
+        ASSERT_FALSE(getPublicAccessBlockOutcome.GetError().GetRequestId().empty());
         ASSERT_EQ(S3ControlErrors::NO_SUCH_PUBLIC_ACCESS_BLOCK_CONFIGURATION, getPublicAccessBlockOutcome.GetError().GetErrorType());
 
         PutPublicAccessBlockRequest putPublicAccessBlockRequest;
@@ -284,7 +291,7 @@ namespace
         auto putPublicAccessBlockOutcome = m_client.PutPublicAccessBlock(putPublicAccessBlockRequest);
         ASSERT_FALSE(putPublicAccessBlockOutcome.IsSuccess());
 
-        // The account id shoud be a valid DNS label. Otherwise we will not make the request.
+        // The account id should be a valid DNS label. Otherwise we will not make the request.
         putPublicAccessBlockRequest.SetAccountId("invalid.account.id");
 
         putPublicAccessBlockOutcome = m_client.PutPublicAccessBlock(putPublicAccessBlockRequest);

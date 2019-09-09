@@ -189,11 +189,11 @@ bool AWSClient::AdjustClockSkew(HttpResponseOutcome& outcome, const char* signer
             diff = DateTime::Diff(serverTime, DateTime::Now());
             AWS_LOGSTREAM_INFO(AWS_CLIENT_LOG_TAG, "Computed time difference as " << diff.count() << " milliseconds. Adjusting signer with the skew.");
             signer->SetClockSkew(diff);
-            auto newError = AWSError<CoreErrors>(
+            AWSError<CoreErrors> newError(
                 outcome.GetError().GetErrorType(), outcome.GetError().GetExceptionName(), outcome.GetError().GetMessage(), true);
             newError.SetResponseHeaders(outcome.GetError().GetResponseHeaders());
             newError.SetResponseCode(outcome.GetError().GetResponseCode());
-            outcome = newError;
+            outcome = std::move(newError);
             return true;
         }
     }
@@ -378,6 +378,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
 static bool DoesResponseGenerateError(const std::shared_ptr<HttpResponse>& response)
 {
     if (response->HasClientError()) return true;
+
     int responseCode = static_cast<int>(response->GetResponseCode());
     return responseCode < SUCCESS_RESPONSE_MIN || responseCode > SUCCESS_RESPONSE_MAX;
 
@@ -406,18 +407,13 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpReque
     if (DoesResponseGenerateError(httpResponse))
     {
         AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
-        auto err = BuildAWSError(httpResponse);
-        auto ip = httpRequest->GetResolvedRemoteHost();
-        if (!ip.empty())
-        {
-            err.SetMessage(err.GetMessage() + " with address : " + ip);
-        }
-        return HttpResponseOutcome(err);
+        auto error = BuildAWSError(httpResponse);
+        return HttpResponseOutcome(std::move(error));
     }
 
     AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned successful response.");
 
-    return HttpResponseOutcome(httpResponse);
+    return HttpResponseOutcome(std::move(httpResponse));
 }
 
 HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpRequest>& httpRequest,
@@ -442,12 +438,13 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpReque
     if (DoesResponseGenerateError(httpResponse))
     {
         AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
-        return HttpResponseOutcome(BuildAWSError(httpResponse));
+        auto error = BuildAWSError(httpResponse);
+        return HttpResponseOutcome(std::move(error));
     }
 
     AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned successful response.");
 
-    return HttpResponseOutcome(httpResponse);
+    return HttpResponseOutcome(std::move(httpResponse));
 }
 
 StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& uri,
@@ -464,7 +461,7 @@ StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& u
             httpResponseOutcome.GetResult()->GetHeaders(), httpResponseOutcome.GetResult()->GetResponseCode()));
     }
 
-    return StreamOutcome(httpResponseOutcome.GetError());
+    return StreamOutcome(std::move(httpResponseOutcome));
 }
 
 StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& uri, Http::HttpMethod method,
@@ -478,7 +475,7 @@ StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& u
             httpResponseOutcome.GetResult()->GetHeaders(), httpResponseOutcome.GetResult()->GetResponseCode()));
     }
 
-    return StreamOutcome(httpResponseOutcome.GetError());
+    return StreamOutcome(std::move(httpResponseOutcome));
 }
 
 XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::Http::URI& uri,
@@ -493,7 +490,7 @@ XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::Http::URI& uri,
         return XmlOutcome(AmazonWebServiceResult<XmlDocument>(XmlDocument(), httpOutcome.GetResult()->GetHeaders()));
     }
 
-    return XmlOutcome(httpOutcome.GetError());
+    return XmlOutcome(std::move(httpOutcome));
 }
 
 XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::Http::URI& uri, Http::HttpMethod method,
@@ -505,7 +502,7 @@ XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::Http::URI& uri, H
         return XmlOutcome(AmazonWebServiceResult<XmlDocument>(XmlDocument(), httpOutcome.GetResult()->GetHeaders()));
     }
 
-    return XmlOutcome(httpOutcome.GetError());
+    return XmlOutcome(std::move(httpOutcome));
 }
 
 void AWSClient::AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
@@ -782,7 +779,7 @@ JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
     HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method, signerName, signerRegionOverride));
     if (!httpOutcome.IsSuccess())
     {
-        return JsonOutcome(httpOutcome.GetError());
+        return JsonOutcome(std::move(httpOutcome));
     }
 
     if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
@@ -804,7 +801,7 @@ JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
     HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride));
     if (!httpOutcome.IsSuccess())
     {
-        return JsonOutcome(httpOutcome.GetError());
+        return JsonOutcome(std::move(httpOutcome));
     }
 
     if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
@@ -832,13 +829,13 @@ JsonOutcome AWSJsonClient::MakeEventStreamRequest(std::shared_ptr<Aws::Http::Htt
     if (DoesResponseGenerateError(httpResponse))
     {
         AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
-        HttpResponseOutcome httpOutcome(BuildAWSError(httpResponse));
-        return JsonOutcome(httpOutcome.GetError());
+        auto error = BuildAWSError(httpResponse);
+        return JsonOutcome(std::move(error));
     }
 
     AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned successful response.");
 
-    HttpResponseOutcome httpOutcome(httpResponse);
+    HttpResponseOutcome httpOutcome(std::move(httpResponse));
 
     if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
     {
@@ -884,11 +881,7 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
 
     error.SetResponseHeaders(httpResponse->GetHeaders());
     error.SetResponseCode(httpResponse->GetResponseCode());
-    auto ip = httpResponse->GetOriginatingRequest().GetResolvedRemoteHost();
-    if (!ip.empty())
-    {
-        error.SetMessage(error.GetMessage() + " with address : " + ip);
-    }
+    error.SetRemoteHostIpAddress(httpResponse->GetOriginatingRequest().GetResolvedRemoteHost());
     AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, error);
     return error;
 }
@@ -917,7 +910,7 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
     HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method, signerName, signerRegionOverride));
     if (!httpOutcome.IsSuccess())
     {
-        return XmlOutcome(httpOutcome.GetError());
+        return XmlOutcome(std::move(httpOutcome));
     }
 
     if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
@@ -946,7 +939,7 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
     HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride));
     if (!httpOutcome.IsSuccess())
     {
-        return XmlOutcome(httpOutcome.GetError());
+        return XmlOutcome(std::move(httpOutcome));
     }
 
     if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
@@ -993,11 +986,7 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
 
     error.SetResponseHeaders(httpResponse->GetHeaders());
     error.SetResponseCode(httpResponse->GetResponseCode());
-    auto ip = httpResponse->GetOriginatingRequest().GetResolvedRemoteHost();
-    if (!ip.empty())
-    {
-        error.SetMessage(error.GetMessage() + " with address : " + ip);
-    }
+    error.SetRemoteHostIpAddress(httpResponse->GetOriginatingRequest().GetResolvedRemoteHost());
     AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, error);
     return error;
 }

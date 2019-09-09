@@ -113,16 +113,17 @@ protected:
     std::shared_ptr<CountedRetryStrategy> m_countedRetryStrategy;
     Aws::Client::AWSError<Aws::Client::CoreErrors> BuildAWSError(const std::shared_ptr<Aws::Http::HttpResponse>& response) const override
     {
+        Aws::Client::AWSError<Aws::Client::CoreErrors> error;
         if (response->HasClientError())
         {
-            auto err = Aws::Client::AWSError<Aws::Client::CoreErrors>(Aws::Client::CoreErrors::NETWORK_CONNECTION, "", "Unable to connect to endpoint", true);
-            err.SetResponseCode(Aws::Http::HttpResponseCode::INTERNAL_SERVER_ERROR);
-            return err;
+            bool retryable = response->GetClientErrorType() == Aws::Client::CoreErrors::NETWORK_CONNECTION ? true : false;
+            error = Aws::Client::AWSError<Aws::Client::CoreErrors>(response->GetClientErrorType(), "", response->GetClientErrorMessage(), retryable);
         }
-        auto err = Aws::Client::AWSError<Aws::Client::CoreErrors>(Aws::Client::CoreErrors::INVALID_ACTION, false);
-        err.SetResponseHeaders(response->GetHeaders());
-        err.SetResponseCode(response->GetResponseCode());
-        return err;
+        error = Aws::Client::AWSError<Aws::Client::CoreErrors>(Aws::Client::CoreErrors::INVALID_ACTION, false);
+        error.SetResponseHeaders(response->GetHeaders());
+        error.SetResponseCode(response->GetResponseCode());
+        error.SetRemoteHostIpAddress(response->GetOriginatingRequest().GetResolvedRemoteHost());
+        return error;
     }
 };
 

@@ -20,7 +20,6 @@
 #include <aws/core/platform/Platform.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/Outcome.h>
-#include <aws/core/utils/ratelimiter/DefaultRateLimiter.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>

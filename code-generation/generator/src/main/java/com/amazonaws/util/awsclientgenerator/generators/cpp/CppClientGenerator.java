@@ -278,6 +278,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         VelocityContext context = createContext(serviceModel);
         context.put("ErrorFormatter", ErrorFormatter.class);
+        context.put("CppViewHelper", CppViewHelper.class);
 
         String fileName = String.format("source/%sErrors.cpp", serviceModel.getMetadata().getClassNamePrefix());
         return makeFile(template, context, fileName, true);
@@ -319,7 +320,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         VelocityContext context = createContext(serviceModel);
         ErrorFormatter errorFormatter = new ErrorFormatter();
-        context.put("errorConstNames", errorFormatter.formatErrorConstNames(serviceModel.getServiceErrors()));
+        context.put("errorConstNames", errorFormatter.formatErrorConstNames(serviceModel.getNonCoreServiceErrors()));
         context.put("CppViewHelper", CppViewHelper.class);
 
         String fileName = String.format("include/aws/%s/%sErrors.h", serviceModel.getMetadata().getProjectName(),

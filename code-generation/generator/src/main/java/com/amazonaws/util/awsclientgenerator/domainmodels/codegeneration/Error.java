@@ -27,5 +27,7 @@ public class Error {
     private boolean exception;
     private boolean fault;
     private boolean isRetryable;
+    private boolean isCoreError;
+    private boolean isModeled;
 
 }

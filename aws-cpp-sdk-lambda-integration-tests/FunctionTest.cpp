@@ -40,6 +40,7 @@
 #include <aws/lambda/model/GetEventSourceMappingRequest.h>
 #include <aws/lambda/model/UpdateEventSourceMappingRequest.h>
 #include <aws/lambda/model/DeleteEventSourceMappingRequest.h>
+#include <aws/lambda/model/ResourceNotFoundException.h>
 
 #include <aws/kinesis/KinesisClient.h>
 #include <aws/kinesis/model/CreateStreamRequest.h>
@@ -471,6 +472,7 @@ TEST_F(FunctionTest, TestPermissions)
     if (!getRemovedPolicyOutcome.IsSuccess())
     {
        EXPECT_EQ(LambdaErrors::RESOURCE_NOT_FOUND, getRemovedPolicyOutcome.GetError().GetErrorType());
+       EXPECT_STREQ("User", getRemovedPolicyOutcome.GetError<ResourceNotFoundException>().GetType().c_str());
     }
     //Now we should get an empty policy a GetPolicy because we just removed it
     else
@@ -503,6 +505,10 @@ TEST_F(FunctionTest, TestEventSources)
         }
         else
         {
+#if ENABLE_CURL_CLIENT
+            ASSERT_FALSE(describeStreamOutcome.GetError().GetRemoteHostIpAddress().empty());
+#endif
+            ASSERT_FALSE(describeStreamOutcome.GetError().GetRequestId().empty());
             auto errCode = describeStreamOutcome.GetError().GetErrorType();
             ASSERT_TRUE(KinesisErrors::LIMIT_EXCEEDED == errCode);
             //If the limit was exceeded, wait and try again.
@@ -533,6 +539,10 @@ TEST_F(FunctionTest, TestEventSources)
     {
         //This means the mapping still exists from a previous failed test. We'll skip the CreatedResult test, but continue with the existing mapping.
         //This should only happen during dev after test failures
+#if ENABLE_CURL_CLIENT
+        ASSERT_FALSE(createOutcome.GetError().GetRemoteHostIpAddress().empty());
+#endif
+        ASSERT_FALSE(createOutcome.GetError().GetRequestId().empty());
         auto message = createOutcome.GetError().GetMessage();
         createdMappingUUID = message.substr(message.length()-36);
     }

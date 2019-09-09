@@ -92,6 +92,16 @@ public class Shape {
         return !isMap() && !isList() && !isStructure() && !isString() && !isEnum() && !isBlob() && !isTimeStamp();
     }
 
+    public boolean isXmlModeledException() {
+        if (!exception) return false;
+        return members.keySet().parallelStream().anyMatch(key -> !key.equals("Message") && !key.equals("message") && !key.equals("Code") && !key.equals("code"));
+    }
+
+    public boolean isJsonModeledException() {
+        if (!exception) return false;
+        return members.keySet().parallelStream().anyMatch(key -> !key.equals("Message") && !key.equals("message"));
+    }
+
     public boolean isMemberRequired(String member) {
         ShapeMember shapeMember = members.get(member);
         return shapeMember != null && members.get(member).isRequired();
