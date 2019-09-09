@@ -36,6 +36,7 @@ namespace Aws
         static const int NETWORK_INTERFACE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("NETWORK_INTERFACE_LIMIT_EXCEEDED");
         static const int INTERNAL_SERVICE_ERROR_HASH = HashingUtils::HashString("INTERNAL_SERVICE_ERROR");
         static const int IAM_SERVICE_ROLE_IS_MISSING_HASH = HashingUtils::HashString("IAM_SERVICE_ROLE_IS_MISSING");
+        static const int MACHINE_ROLE_IS_MISSING_HASH = HashingUtils::HashString("MACHINE_ROLE_IS_MISSING");
         static const int STS_DISABLED_IN_REGION_HASH = HashingUtils::HashString("STS_DISABLED_IN_REGION");
         static const int SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES_HASH = HashingUtils::HashString("SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES");
         static const int IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION_HASH = HashingUtils::HashString("IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION");
@@ -85,6 +86,10 @@ namespace Aws
           else if (hashCode == IAM_SERVICE_ROLE_IS_MISSING_HASH)
           {
             return FleetErrorCode::IAM_SERVICE_ROLE_IS_MISSING;
+          }
+          else if (hashCode == MACHINE_ROLE_IS_MISSING_HASH)
+          {
+            return FleetErrorCode::MACHINE_ROLE_IS_MISSING;
           }
           else if (hashCode == STS_DISABLED_IN_REGION_HASH)
           {
@@ -196,6 +201,8 @@ namespace Aws
             return "INTERNAL_SERVICE_ERROR";
           case FleetErrorCode::IAM_SERVICE_ROLE_IS_MISSING:
             return "IAM_SERVICE_ROLE_IS_MISSING";
+          case FleetErrorCode::MACHINE_ROLE_IS_MISSING:
+            return "MACHINE_ROLE_IS_MISSING";
           case FleetErrorCode::STS_DISABLED_IN_REGION:
             return "STS_DISABLED_IN_REGION";
           case FleetErrorCode::SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES:

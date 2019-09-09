@@ -16,6 +16,9 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/TunnelOption.h>
+#include <utility>
 
 namespace Aws
 {
@@ -71,10 +74,54 @@ namespace Model
      */
     inline VpnConnectionOptions& WithStaticRoutesOnly(bool value) { SetStaticRoutesOnly(value); return *this;}
 
+
+    /**
+     * <p>Indicates the VPN tunnel options.</p>
+     */
+    inline const Aws::Vector<TunnelOption>& GetTunnelOptions() const{ return m_tunnelOptions; }
+
+    /**
+     * <p>Indicates the VPN tunnel options.</p>
+     */
+    inline bool TunnelOptionsHasBeenSet() const { return m_tunnelOptionsHasBeenSet; }
+
+    /**
+     * <p>Indicates the VPN tunnel options.</p>
+     */
+    inline void SetTunnelOptions(const Aws::Vector<TunnelOption>& value) { m_tunnelOptionsHasBeenSet = true; m_tunnelOptions = value; }
+
+    /**
+     * <p>Indicates the VPN tunnel options.</p>
+     */
+    inline void SetTunnelOptions(Aws::Vector<TunnelOption>&& value) { m_tunnelOptionsHasBeenSet = true; m_tunnelOptions = std::move(value); }
+
+    /**
+     * <p>Indicates the VPN tunnel options.</p>
+     */
+    inline VpnConnectionOptions& WithTunnelOptions(const Aws::Vector<TunnelOption>& value) { SetTunnelOptions(value); return *this;}
+
+    /**
+     * <p>Indicates the VPN tunnel options.</p>
+     */
+    inline VpnConnectionOptions& WithTunnelOptions(Aws::Vector<TunnelOption>&& value) { SetTunnelOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates the VPN tunnel options.</p>
+     */
+    inline VpnConnectionOptions& AddTunnelOptions(const TunnelOption& value) { m_tunnelOptionsHasBeenSet = true; m_tunnelOptions.push_back(value); return *this; }
+
+    /**
+     * <p>Indicates the VPN tunnel options.</p>
+     */
+    inline VpnConnectionOptions& AddTunnelOptions(TunnelOption&& value) { m_tunnelOptionsHasBeenSet = true; m_tunnelOptions.push_back(std::move(value)); return *this; }
+
   private:
 
     bool m_staticRoutesOnly;
     bool m_staticRoutesOnlyHasBeenSet;
+
+    Aws::Vector<TunnelOption> m_tunnelOptions;
+    bool m_tunnelOptionsHasBeenSet;
   };
 
 } // namespace Model

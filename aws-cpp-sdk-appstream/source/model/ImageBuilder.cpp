@@ -38,6 +38,7 @@ ImageBuilder::ImageBuilder() :
     m_instanceTypeHasBeenSet(false),
     m_platform(PlatformType::NOT_SET),
     m_platformHasBeenSet(false),
+    m_iamRoleArnHasBeenSet(false),
     m_state(ImageBuilderState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
@@ -62,6 +63,7 @@ ImageBuilder::ImageBuilder(JsonView jsonValue) :
     m_instanceTypeHasBeenSet(false),
     m_platform(PlatformType::NOT_SET),
     m_platformHasBeenSet(false),
+    m_iamRoleArnHasBeenSet(false),
     m_state(ImageBuilderState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
@@ -133,6 +135,13 @@ ImageBuilder& ImageBuilder::operator =(JsonView jsonValue)
     m_platform = PlatformTypeMapper::GetPlatformTypeForName(jsonValue.GetString("Platform"));
 
     m_platformHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IamRoleArn"))
+  {
+    m_iamRoleArn = jsonValue.GetString("IamRoleArn");
+
+    m_iamRoleArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("State"))
@@ -256,6 +265,12 @@ JsonValue ImageBuilder::Jsonize() const
   if(m_platformHasBeenSet)
   {
    payload.WithString("Platform", PlatformTypeMapper::GetNameForPlatformType(m_platform));
+  }
+
+  if(m_iamRoleArnHasBeenSet)
+  {
+   payload.WithString("IamRoleArn", m_iamRoleArn);
+
   }
 
   if(m_stateHasBeenSet)

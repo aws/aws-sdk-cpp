@@ -864,7 +864,8 @@ namespace Model
 
         /**
          * <p>Returns a list of deployment jobs for a fleet. You can optionally provide
-         * filters to retrieve specific deployment jobs. </p><p><h3>See Also:</h3>   <a
+         * filters to retrieve specific deployment jobs. </p> <note> <p> </p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListDeploymentJobs">AWS
          * API Reference</a></p>
          */
@@ -872,7 +873,8 @@ namespace Model
 
         /**
          * <p>Returns a list of deployment jobs for a fleet. You can optionally provide
-         * filters to retrieve specific deployment jobs. </p><p><h3>See Also:</h3>   <a
+         * filters to retrieve specific deployment jobs. </p> <note> <p> </p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListDeploymentJobs">AWS
          * API Reference</a></p>
          *
@@ -882,7 +884,8 @@ namespace Model
 
         /**
          * <p>Returns a list of deployment jobs for a fleet. You can optionally provide
-         * filters to retrieve specific deployment jobs. </p><p><h3>See Also:</h3>   <a
+         * filters to retrieve specific deployment jobs. </p> <note> <p> </p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListDeploymentJobs">AWS
          * API Reference</a></p>
          *

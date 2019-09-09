@@ -40,6 +40,8 @@ namespace Aws
         static const int daily_business_canceled_product_subscribers_HASH = HashingUtils::HashString("daily_business_canceled_product_subscribers");
         static const int monthly_revenue_billing_and_revenue_data_HASH = HashingUtils::HashString("monthly_revenue_billing_and_revenue_data");
         static const int monthly_revenue_annual_subscriptions_HASH = HashingUtils::HashString("monthly_revenue_annual_subscriptions");
+        static const int monthly_revenue_field_demonstration_usage_HASH = HashingUtils::HashString("monthly_revenue_field_demonstration_usage");
+        static const int monthly_revenue_flexible_payment_schedule_HASH = HashingUtils::HashString("monthly_revenue_flexible_payment_schedule");
         static const int disbursed_amount_by_product_HASH = HashingUtils::HashString("disbursed_amount_by_product");
         static const int disbursed_amount_by_product_with_uncollected_funds_HASH = HashingUtils::HashString("disbursed_amount_by_product_with_uncollected_funds");
         static const int disbursed_amount_by_instance_hours_HASH = HashingUtils::HashString("disbursed_amount_by_instance_hours");
@@ -95,6 +97,14 @@ namespace Aws
           else if (hashCode == monthly_revenue_annual_subscriptions_HASH)
           {
             return DataSetType::monthly_revenue_annual_subscriptions;
+          }
+          else if (hashCode == monthly_revenue_field_demonstration_usage_HASH)
+          {
+            return DataSetType::monthly_revenue_field_demonstration_usage;
+          }
+          else if (hashCode == monthly_revenue_flexible_payment_schedule_HASH)
+          {
+            return DataSetType::monthly_revenue_flexible_payment_schedule;
           }
           else if (hashCode == disbursed_amount_by_product_HASH)
           {
@@ -174,6 +184,10 @@ namespace Aws
             return "monthly_revenue_billing_and_revenue_data";
           case DataSetType::monthly_revenue_annual_subscriptions:
             return "monthly_revenue_annual_subscriptions";
+          case DataSetType::monthly_revenue_field_demonstration_usage:
+            return "monthly_revenue_field_demonstration_usage";
+          case DataSetType::monthly_revenue_flexible_payment_schedule:
+            return "monthly_revenue_flexible_payment_schedule";
           case DataSetType::disbursed_amount_by_product:
             return "disbursed_amount_by_product";
           case DataSetType::disbursed_amount_by_product_with_uncollected_funds:

@@ -52,7 +52,8 @@ Fleet::Fleet() :
     m_enableDefaultInternetAccessHasBeenSet(false),
     m_domainJoinInfoHasBeenSet(false),
     m_idleDisconnectTimeoutInSeconds(0),
-    m_idleDisconnectTimeoutInSecondsHasBeenSet(false)
+    m_idleDisconnectTimeoutInSecondsHasBeenSet(false),
+    m_iamRoleArnHasBeenSet(false)
 {
 }
 
@@ -80,7 +81,8 @@ Fleet::Fleet(JsonView jsonValue) :
     m_enableDefaultInternetAccessHasBeenSet(false),
     m_domainJoinInfoHasBeenSet(false),
     m_idleDisconnectTimeoutInSeconds(0),
-    m_idleDisconnectTimeoutInSecondsHasBeenSet(false)
+    m_idleDisconnectTimeoutInSecondsHasBeenSet(false),
+    m_iamRoleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -216,6 +218,13 @@ Fleet& Fleet::operator =(JsonView jsonValue)
     m_idleDisconnectTimeoutInSecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IamRoleArn"))
+  {
+    m_iamRoleArn = jsonValue.GetString("IamRoleArn");
+
+    m_iamRoleArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -330,6 +339,12 @@ JsonValue Fleet::Jsonize() const
   if(m_idleDisconnectTimeoutInSecondsHasBeenSet)
   {
    payload.WithInteger("IdleDisconnectTimeoutInSeconds", m_idleDisconnectTimeoutInSeconds);
+
+  }
+
+  if(m_iamRoleArnHasBeenSet)
+  {
+   payload.WithString("IamRoleArn", m_iamRoleArn);
 
   }
 

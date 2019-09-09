@@ -30,13 +30,15 @@ namespace Model
 
 HttpRoute::HttpRoute() : 
     m_actionHasBeenSet(false),
-    m_matchHasBeenSet(false)
+    m_matchHasBeenSet(false),
+    m_retryPolicyHasBeenSet(false)
 {
 }
 
 HttpRoute::HttpRoute(JsonView jsonValue) : 
     m_actionHasBeenSet(false),
-    m_matchHasBeenSet(false)
+    m_matchHasBeenSet(false),
+    m_retryPolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +59,13 @@ HttpRoute& HttpRoute::operator =(JsonView jsonValue)
     m_matchHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("retryPolicy"))
+  {
+    m_retryPolicy = jsonValue.GetObject("retryPolicy");
+
+    m_retryPolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +82,12 @@ JsonValue HttpRoute::Jsonize() const
   if(m_matchHasBeenSet)
   {
    payload.WithObject("match", m_match.Jsonize());
+
+  }
+
+  if(m_retryPolicyHasBeenSet)
+  {
+   payload.WithObject("retryPolicy", m_retryPolicy.Jsonize());
 
   }
 

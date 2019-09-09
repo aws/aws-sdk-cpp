@@ -227,11 +227,7 @@ namespace Model
      * does not match value during version creation.</p> </dd>
      * <dt>SimulationApplicationVersionMismatchedEtag</dt> <dd> <p>Etag for
      * SimulationApplication does not match value during version creation.</p> </dd>
-     * <dt>WrongRegionS3Output</dt> <dd> <p>S3 output bucket is in a different region
-     * than AWS RoboMaker.</p> </dd> <dt>WrongRegionRobotApplication</dt> <dd>
-     * <p>RobotApplication bucket is in a different region than AWS RoboMaker.</p>
-     * </dd> <dt>WrongRegionSimulationApplication</dt> <dd> <p>SimulationApplication
-     * bucket is in a different region than AWS RoboMaker.</p> </dd> </dl>
+     * </dl>
      */
     inline const SimulationJobErrorCode& GetFailureCode() const{ return m_failureCode; }
 
@@ -258,11 +254,7 @@ namespace Model
      * does not match value during version creation.</p> </dd>
      * <dt>SimulationApplicationVersionMismatchedEtag</dt> <dd> <p>Etag for
      * SimulationApplication does not match value during version creation.</p> </dd>
-     * <dt>WrongRegionS3Output</dt> <dd> <p>S3 output bucket is in a different region
-     * than AWS RoboMaker.</p> </dd> <dt>WrongRegionRobotApplication</dt> <dd>
-     * <p>RobotApplication bucket is in a different region than AWS RoboMaker.</p>
-     * </dd> <dt>WrongRegionSimulationApplication</dt> <dd> <p>SimulationApplication
-     * bucket is in a different region than AWS RoboMaker.</p> </dd> </dl>
+     * </dl>
      */
     inline void SetFailureCode(const SimulationJobErrorCode& value) { m_failureCode = value; }
 
@@ -289,11 +281,7 @@ namespace Model
      * does not match value during version creation.</p> </dd>
      * <dt>SimulationApplicationVersionMismatchedEtag</dt> <dd> <p>Etag for
      * SimulationApplication does not match value during version creation.</p> </dd>
-     * <dt>WrongRegionS3Output</dt> <dd> <p>S3 output bucket is in a different region
-     * than AWS RoboMaker.</p> </dd> <dt>WrongRegionRobotApplication</dt> <dd>
-     * <p>RobotApplication bucket is in a different region than AWS RoboMaker.</p>
-     * </dd> <dt>WrongRegionSimulationApplication</dt> <dd> <p>SimulationApplication
-     * bucket is in a different region than AWS RoboMaker.</p> </dd> </dl>
+     * </dl>
      */
     inline void SetFailureCode(SimulationJobErrorCode&& value) { m_failureCode = std::move(value); }
 
@@ -320,11 +308,7 @@ namespace Model
      * does not match value during version creation.</p> </dd>
      * <dt>SimulationApplicationVersionMismatchedEtag</dt> <dd> <p>Etag for
      * SimulationApplication does not match value during version creation.</p> </dd>
-     * <dt>WrongRegionS3Output</dt> <dd> <p>S3 output bucket is in a different region
-     * than AWS RoboMaker.</p> </dd> <dt>WrongRegionRobotApplication</dt> <dd>
-     * <p>RobotApplication bucket is in a different region than AWS RoboMaker.</p>
-     * </dd> <dt>WrongRegionSimulationApplication</dt> <dd> <p>SimulationApplication
-     * bucket is in a different region than AWS RoboMaker.</p> </dd> </dl>
+     * </dl>
      */
     inline CreateSimulationJobResult& WithFailureCode(const SimulationJobErrorCode& value) { SetFailureCode(value); return *this;}
 
@@ -351,11 +335,7 @@ namespace Model
      * does not match value during version creation.</p> </dd>
      * <dt>SimulationApplicationVersionMismatchedEtag</dt> <dd> <p>Etag for
      * SimulationApplication does not match value during version creation.</p> </dd>
-     * <dt>WrongRegionS3Output</dt> <dd> <p>S3 output bucket is in a different region
-     * than AWS RoboMaker.</p> </dd> <dt>WrongRegionRobotApplication</dt> <dd>
-     * <p>RobotApplication bucket is in a different region than AWS RoboMaker.</p>
-     * </dd> <dt>WrongRegionSimulationApplication</dt> <dd> <p>SimulationApplication
-     * bucket is in a different region than AWS RoboMaker.</p> </dd> </dl>
+     * </dl>
      */
     inline CreateSimulationJobResult& WithFailureCode(SimulationJobErrorCode&& value) { SetFailureCode(std::move(value)); return *this;}
 

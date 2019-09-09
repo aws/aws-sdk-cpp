@@ -554,50 +554,50 @@ namespace Model
 
 
     /**
-     * <p>The list of virtual private cloud (VPC) interface endpoint objects. Users of
-     * the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
+     * <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the
+     * stack can connect to AppStream 2.0 only through the specified endpoints.</p>
      */
     inline const Aws::Vector<AccessEndpoint>& GetAccessEndpoints() const{ return m_accessEndpoints; }
 
     /**
-     * <p>The list of virtual private cloud (VPC) interface endpoint objects. Users of
-     * the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
+     * <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the
+     * stack can connect to AppStream 2.0 only through the specified endpoints.</p>
      */
     inline bool AccessEndpointsHasBeenSet() const { return m_accessEndpointsHasBeenSet; }
 
     /**
-     * <p>The list of virtual private cloud (VPC) interface endpoint objects. Users of
-     * the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
+     * <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the
+     * stack can connect to AppStream 2.0 only through the specified endpoints.</p>
      */
     inline void SetAccessEndpoints(const Aws::Vector<AccessEndpoint>& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints = value; }
 
     /**
-     * <p>The list of virtual private cloud (VPC) interface endpoint objects. Users of
-     * the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
+     * <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the
+     * stack can connect to AppStream 2.0 only through the specified endpoints.</p>
      */
     inline void SetAccessEndpoints(Aws::Vector<AccessEndpoint>&& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints = std::move(value); }
 
     /**
-     * <p>The list of virtual private cloud (VPC) interface endpoint objects. Users of
-     * the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
+     * <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the
+     * stack can connect to AppStream 2.0 only through the specified endpoints.</p>
      */
     inline CreateStackRequest& WithAccessEndpoints(const Aws::Vector<AccessEndpoint>& value) { SetAccessEndpoints(value); return *this;}
 
     /**
-     * <p>The list of virtual private cloud (VPC) interface endpoint objects. Users of
-     * the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
+     * <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the
+     * stack can connect to AppStream 2.0 only through the specified endpoints.</p>
      */
     inline CreateStackRequest& WithAccessEndpoints(Aws::Vector<AccessEndpoint>&& value) { SetAccessEndpoints(std::move(value)); return *this;}
 
     /**
-     * <p>The list of virtual private cloud (VPC) interface endpoint objects. Users of
-     * the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
+     * <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the
+     * stack can connect to AppStream 2.0 only through the specified endpoints.</p>
      */
     inline CreateStackRequest& AddAccessEndpoints(const AccessEndpoint& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints.push_back(value); return *this; }
 
     /**
-     * <p>The list of virtual private cloud (VPC) interface endpoint objects. Users of
-     * the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
+     * <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the
+     * stack can connect to AppStream 2.0 only through the specified endpoints.</p>
      */
     inline CreateStackRequest& AddAccessEndpoints(AccessEndpoint&& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints.push_back(std::move(value)); return *this; }
 

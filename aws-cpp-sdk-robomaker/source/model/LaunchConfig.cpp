@@ -31,14 +31,16 @@ namespace Model
 LaunchConfig::LaunchConfig() : 
     m_packageNameHasBeenSet(false),
     m_launchFileHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false)
+    m_environmentVariablesHasBeenSet(false),
+    m_portForwardingConfigHasBeenSet(false)
 {
 }
 
 LaunchConfig::LaunchConfig(JsonView jsonValue) : 
     m_packageNameHasBeenSet(false),
     m_launchFileHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false)
+    m_environmentVariablesHasBeenSet(false),
+    m_portForwardingConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +71,13 @@ LaunchConfig& LaunchConfig::operator =(JsonView jsonValue)
     m_environmentVariablesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("portForwardingConfig"))
+  {
+    m_portForwardingConfig = jsonValue.GetObject("portForwardingConfig");
+
+    m_portForwardingConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -96,6 +105,12 @@ JsonValue LaunchConfig::Jsonize() const
      environmentVariablesJsonMap.WithString(environmentVariablesItem.first, environmentVariablesItem.second);
    }
    payload.WithObject("environmentVariables", std::move(environmentVariablesJsonMap));
+
+  }
+
+  if(m_portForwardingConfigHasBeenSet)
+  {
+   payload.WithObject("portForwardingConfig", m_portForwardingConfig.Jsonize());
 
   }
 

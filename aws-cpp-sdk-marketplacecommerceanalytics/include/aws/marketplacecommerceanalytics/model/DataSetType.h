@@ -36,6 +36,8 @@ namespace Model
     daily_business_canceled_product_subscribers,
     monthly_revenue_billing_and_revenue_data,
     monthly_revenue_annual_subscriptions,
+    monthly_revenue_field_demonstration_usage,
+    monthly_revenue_flexible_payment_schedule,
     disbursed_amount_by_product,
     disbursed_amount_by_product_with_uncollected_funds,
     disbursed_amount_by_instance_hours,

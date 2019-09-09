@@ -25,6 +25,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/robomaker/model/VPCConfigResponse.h>
+#include <aws/robomaker/model/NetworkInterface.h>
 #include <aws/robomaker/model/RobotApplicationConfig.h>
 #include <aws/robomaker/model/SimulationApplicationConfig.h>
 #include <aws/robomaker/model/DataSource.h>
@@ -799,6 +800,37 @@ namespace Model
      */
     inline SimulationJob& WithVpcConfig(VPCConfigResponse&& value) { SetVpcConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p/>
+     */
+    inline const NetworkInterface& GetNetworkInterface() const{ return m_networkInterface; }
+
+    /**
+     * <p/>
+     */
+    inline bool NetworkInterfaceHasBeenSet() const { return m_networkInterfaceHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetNetworkInterface(const NetworkInterface& value) { m_networkInterfaceHasBeenSet = true; m_networkInterface = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetNetworkInterface(NetworkInterface&& value) { m_networkInterfaceHasBeenSet = true; m_networkInterface = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline SimulationJob& WithNetworkInterface(const NetworkInterface& value) { SetNetworkInterface(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline SimulationJob& WithNetworkInterface(NetworkInterface&& value) { SetNetworkInterface(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -857,6 +889,9 @@ namespace Model
 
     VPCConfigResponse m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+
+    NetworkInterface m_networkInterface;
+    bool m_networkInterfaceHasBeenSet;
   };
 
 } // namespace Model

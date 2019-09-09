@@ -367,6 +367,71 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the IAM role that is applied to the image builder. To assume a
+     * role, the image builder calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials. </p>
+     */
+    inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+
+    /**
+     * <p>The ARN of the IAM role that is applied to the image builder. To assume a
+     * role, the image builder calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials. </p>
+     */
+    inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the IAM role that is applied to the image builder. To assume a
+     * role, the image builder calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials. </p>
+     */
+    inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
+
+    /**
+     * <p>The ARN of the IAM role that is applied to the image builder. To assume a
+     * role, the image builder calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials. </p>
+     */
+    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the IAM role that is applied to the image builder. To assume a
+     * role, the image builder calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials. </p>
+     */
+    inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
+
+    /**
+     * <p>The ARN of the IAM role that is applied to the image builder. To assume a
+     * role, the image builder calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials. </p>
+     */
+    inline ImageBuilder& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the IAM role that is applied to the image builder. To assume a
+     * role, the image builder calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials. </p>
+     */
+    inline ImageBuilder& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the IAM role that is applied to the image builder. To assume a
+     * role, the image builder calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials. </p>
+     */
+    inline ImageBuilder& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+
+
+    /**
      * <p>The state of the image builder.</p>
      */
     inline const ImageBuilderState& GetState() const{ return m_state; }
@@ -707,6 +772,9 @@ namespace Model
 
     PlatformType m_platform;
     bool m_platformHasBeenSet;
+
+    Aws::String m_iamRoleArn;
+    bool m_iamRoleArnHasBeenSet;
 
     ImageBuilderState m_state;
     bool m_stateHasBeenSet;

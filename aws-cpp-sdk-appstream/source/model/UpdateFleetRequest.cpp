@@ -40,7 +40,8 @@ UpdateFleetRequest::UpdateFleetRequest() :
     m_domainJoinInfoHasBeenSet(false),
     m_idleDisconnectTimeoutInSeconds(0),
     m_idleDisconnectTimeoutInSecondsHasBeenSet(false),
-    m_attributesToDeleteHasBeenSet(false)
+    m_attributesToDeleteHasBeenSet(false),
+    m_iamRoleArnHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,12 @@ Aws::String UpdateFleetRequest::SerializePayload() const
      attributesToDeleteJsonList[attributesToDeleteIndex].AsString(FleetAttributeMapper::GetNameForFleetAttribute(m_attributesToDelete[attributesToDeleteIndex]));
    }
    payload.WithArray("AttributesToDelete", std::move(attributesToDeleteJsonList));
+
+  }
+
+  if(m_iamRoleArnHasBeenSet)
+  {
+   payload.WithString("IamRoleArn", m_iamRoleArn);
 
   }
 

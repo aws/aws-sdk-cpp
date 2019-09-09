@@ -929,6 +929,71 @@ namespace Model
      */
     inline CreateFleetRequest& WithIdleDisconnectTimeoutInSeconds(int value) { SetIdleDisconnectTimeoutInSeconds(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To
+     * assume a role, a fleet instance calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials.</p>
+     */
+    inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To
+     * assume a role, a fleet instance calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials.</p>
+     */
+    inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To
+     * assume a role, a fleet instance calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials.</p>
+     */
+    inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To
+     * assume a role, a fleet instance calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials.</p>
+     */
+    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To
+     * assume a role, a fleet instance calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials.</p>
+     */
+    inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To
+     * assume a role, a fleet instance calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials.</p>
+     */
+    inline CreateFleetRequest& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To
+     * assume a role, a fleet instance calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials.</p>
+     */
+    inline CreateFleetRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To
+     * assume a role, a fleet instance calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials.</p>
+     */
+    inline CreateFleetRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -975,6 +1040,9 @@ namespace Model
 
     int m_idleDisconnectTimeoutInSeconds;
     bool m_idleDisconnectTimeoutInSecondsHasBeenSet;
+
+    Aws::String m_iamRoleArn;
+    bool m_iamRoleArnHasBeenSet;
   };
 
 } // namespace Model

@@ -32,13 +32,15 @@ namespace Model
 
 VpnConnectionOptions::VpnConnectionOptions() : 
     m_staticRoutesOnly(false),
-    m_staticRoutesOnlyHasBeenSet(false)
+    m_staticRoutesOnlyHasBeenSet(false),
+    m_tunnelOptionsHasBeenSet(false)
 {
 }
 
 VpnConnectionOptions::VpnConnectionOptions(const XmlNode& xmlNode) : 
     m_staticRoutesOnly(false),
-    m_staticRoutesOnlyHasBeenSet(false)
+    m_staticRoutesOnlyHasBeenSet(false),
+    m_tunnelOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -55,6 +57,18 @@ VpnConnectionOptions& VpnConnectionOptions::operator =(const XmlNode& xmlNode)
       m_staticRoutesOnly = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(staticRoutesOnlyNode.GetText()).c_str()).c_str());
       m_staticRoutesOnlyHasBeenSet = true;
     }
+    XmlNode tunnelOptionsNode = resultNode.FirstChild("tunnelOptionSet");
+    if(!tunnelOptionsNode.IsNull())
+    {
+      XmlNode tunnelOptionsMember = tunnelOptionsNode.FirstChild("item");
+      while(!tunnelOptionsMember.IsNull())
+      {
+        m_tunnelOptions.push_back(tunnelOptionsMember);
+        tunnelOptionsMember = tunnelOptionsMember.NextNode("item");
+      }
+
+      m_tunnelOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -67,6 +81,17 @@ void VpnConnectionOptions::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << index << locationValue << ".StaticRoutesOnly=" << std::boolalpha << m_staticRoutesOnly << "&";
   }
 
+  if(m_tunnelOptionsHasBeenSet)
+  {
+      unsigned tunnelOptionsIdx = 1;
+      for(auto& item : m_tunnelOptions)
+      {
+        Aws::StringStream tunnelOptionsSs;
+        tunnelOptionsSs << location << index << locationValue << ".TunnelOptionSet." << tunnelOptionsIdx++;
+        item.OutputToStream(oStream, tunnelOptionsSs.str().c_str());
+      }
+  }
+
 }
 
 void VpnConnectionOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -74,6 +99,16 @@ void VpnConnectionOptions::OutputToStream(Aws::OStream& oStream, const char* loc
   if(m_staticRoutesOnlyHasBeenSet)
   {
       oStream << location << ".StaticRoutesOnly=" << std::boolalpha << m_staticRoutesOnly << "&";
+  }
+  if(m_tunnelOptionsHasBeenSet)
+  {
+      unsigned tunnelOptionsIdx = 1;
+      for(auto& item : m_tunnelOptions)
+      {
+        Aws::StringStream tunnelOptionsSs;
+        tunnelOptionsSs << location <<  ".TunnelOptionSet." << tunnelOptionsIdx++;
+        item.OutputToStream(oStream, tunnelOptionsSs.str().c_str());
+      }
   }
 }
 

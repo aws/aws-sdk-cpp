@@ -333,6 +333,71 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder.
+     * To assume a role, the image builder calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials.</p>
+     */
+    inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder.
+     * To assume a role, the image builder calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials.</p>
+     */
+    inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder.
+     * To assume a role, the image builder calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials.</p>
+     */
+    inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder.
+     * To assume a role, the image builder calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials.</p>
+     */
+    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder.
+     * To assume a role, the image builder calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials.</p>
+     */
+    inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder.
+     * To assume a role, the image builder calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials.</p>
+     */
+    inline CreateImageBuilderRequest& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder.
+     * To assume a role, the image builder calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials.</p>
+     */
+    inline CreateImageBuilderRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder.
+     * To assume a role, the image builder calls the AWS Security Token Service (STS)
+     * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials.</p>
+     */
+    inline CreateImageBuilderRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+
+
+    /**
      * <p>Enables or disables default internet access for the image builder.</p>
      */
     inline bool GetEnableDefaultInternetAccess() const{ return m_enableDefaultInternetAccess; }
@@ -597,56 +662,56 @@ namespace Model
 
 
     /**
-     * <p>The list of virtual private cloud (VPC) interface endpoint objects.
+     * <p>The list of interface VPC endpoint (interface endpoint) objects.
      * Administrators can connect to the image builder only through the specified
      * endpoints.</p>
      */
     inline const Aws::Vector<AccessEndpoint>& GetAccessEndpoints() const{ return m_accessEndpoints; }
 
     /**
-     * <p>The list of virtual private cloud (VPC) interface endpoint objects.
+     * <p>The list of interface VPC endpoint (interface endpoint) objects.
      * Administrators can connect to the image builder only through the specified
      * endpoints.</p>
      */
     inline bool AccessEndpointsHasBeenSet() const { return m_accessEndpointsHasBeenSet; }
 
     /**
-     * <p>The list of virtual private cloud (VPC) interface endpoint objects.
+     * <p>The list of interface VPC endpoint (interface endpoint) objects.
      * Administrators can connect to the image builder only through the specified
      * endpoints.</p>
      */
     inline void SetAccessEndpoints(const Aws::Vector<AccessEndpoint>& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints = value; }
 
     /**
-     * <p>The list of virtual private cloud (VPC) interface endpoint objects.
+     * <p>The list of interface VPC endpoint (interface endpoint) objects.
      * Administrators can connect to the image builder only through the specified
      * endpoints.</p>
      */
     inline void SetAccessEndpoints(Aws::Vector<AccessEndpoint>&& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints = std::move(value); }
 
     /**
-     * <p>The list of virtual private cloud (VPC) interface endpoint objects.
+     * <p>The list of interface VPC endpoint (interface endpoint) objects.
      * Administrators can connect to the image builder only through the specified
      * endpoints.</p>
      */
     inline CreateImageBuilderRequest& WithAccessEndpoints(const Aws::Vector<AccessEndpoint>& value) { SetAccessEndpoints(value); return *this;}
 
     /**
-     * <p>The list of virtual private cloud (VPC) interface endpoint objects.
+     * <p>The list of interface VPC endpoint (interface endpoint) objects.
      * Administrators can connect to the image builder only through the specified
      * endpoints.</p>
      */
     inline CreateImageBuilderRequest& WithAccessEndpoints(Aws::Vector<AccessEndpoint>&& value) { SetAccessEndpoints(std::move(value)); return *this;}
 
     /**
-     * <p>The list of virtual private cloud (VPC) interface endpoint objects.
+     * <p>The list of interface VPC endpoint (interface endpoint) objects.
      * Administrators can connect to the image builder only through the specified
      * endpoints.</p>
      */
     inline CreateImageBuilderRequest& AddAccessEndpoints(const AccessEndpoint& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints.push_back(value); return *this; }
 
     /**
-     * <p>The list of virtual private cloud (VPC) interface endpoint objects.
+     * <p>The list of interface VPC endpoint (interface endpoint) objects.
      * Administrators can connect to the image builder only through the specified
      * endpoints.</p>
      */
@@ -674,6 +739,9 @@ namespace Model
 
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+
+    Aws::String m_iamRoleArn;
+    bool m_iamRoleArnHasBeenSet;
 
     bool m_enableDefaultInternetAccess;
     bool m_enableDefaultInternetAccessHasBeenSet;

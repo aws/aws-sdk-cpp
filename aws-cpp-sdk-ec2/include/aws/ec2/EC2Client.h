@@ -285,6 +285,7 @@
 #include <aws/ec2/model/ModifyVpcTenancyResponse.h>
 #include <aws/ec2/model/ModifyVpnConnectionResponse.h>
 #include <aws/ec2/model/ModifyVpnTunnelCertificateResponse.h>
+#include <aws/ec2/model/ModifyVpnTunnelOptionsResponse.h>
 #include <aws/ec2/model/MonitorInstancesResponse.h>
 #include <aws/ec2/model/MoveAddressToVpcResponse.h>
 #include <aws/ec2/model/ProvisionByoipCidrResponse.h>
@@ -675,6 +676,7 @@ namespace Model
         class ModifyVpcTenancyRequest;
         class ModifyVpnConnectionRequest;
         class ModifyVpnTunnelCertificateRequest;
+        class ModifyVpnTunnelOptionsRequest;
         class MonitorInstancesRequest;
         class MoveAddressToVpcRequest;
         class ProvisionByoipCidrRequest;
@@ -1033,6 +1035,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyVpcTenancyResponse, Aws::Client::AWSError<EC2Errors>> ModifyVpcTenancyOutcome;
         typedef Aws::Utils::Outcome<ModifyVpnConnectionResponse, Aws::Client::AWSError<EC2Errors>> ModifyVpnConnectionOutcome;
         typedef Aws::Utils::Outcome<ModifyVpnTunnelCertificateResponse, Aws::Client::AWSError<EC2Errors>> ModifyVpnTunnelCertificateOutcome;
+        typedef Aws::Utils::Outcome<ModifyVpnTunnelOptionsResponse, Aws::Client::AWSError<EC2Errors>> ModifyVpnTunnelOptionsOutcome;
         typedef Aws::Utils::Outcome<MonitorInstancesResponse, Aws::Client::AWSError<EC2Errors>> MonitorInstancesOutcome;
         typedef Aws::Utils::Outcome<MoveAddressToVpcResponse, Aws::Client::AWSError<EC2Errors>> MoveAddressToVpcOutcome;
         typedef Aws::Utils::Outcome<ProvisionByoipCidrResponse, Aws::Client::AWSError<EC2Errors>> ProvisionByoipCidrOutcome;
@@ -1391,6 +1394,7 @@ namespace Model
         typedef std::future<ModifyVpcTenancyOutcome> ModifyVpcTenancyOutcomeCallable;
         typedef std::future<ModifyVpnConnectionOutcome> ModifyVpnConnectionOutcomeCallable;
         typedef std::future<ModifyVpnTunnelCertificateOutcome> ModifyVpnTunnelCertificateOutcomeCallable;
+        typedef std::future<ModifyVpnTunnelOptionsOutcome> ModifyVpnTunnelOptionsOutcomeCallable;
         typedef std::future<MonitorInstancesOutcome> MonitorInstancesOutcomeCallable;
         typedef std::future<MoveAddressToVpcOutcome> MoveAddressToVpcOutcomeCallable;
         typedef std::future<ProvisionByoipCidrOutcome> ProvisionByoipCidrOutcomeCallable;
@@ -1752,6 +1756,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ModifyVpcTenancyRequest&, const Model::ModifyVpcTenancyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpcTenancyResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyVpnConnectionRequest&, const Model::ModifyVpnConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpnConnectionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyVpnTunnelCertificateRequest&, const Model::ModifyVpnTunnelCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpnTunnelCertificateResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyVpnTunnelOptionsRequest&, const Model::ModifyVpnTunnelOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpnTunnelOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::MonitorInstancesRequest&, const Model::MonitorInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MonitorInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::MoveAddressToVpcRequest&, const Model::MoveAddressToVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MoveAddressToVpcResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ProvisionByoipCidrRequest&, const Model::ProvisionByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvisionByoipCidrResponseReceivedHandler;
@@ -3720,7 +3725,7 @@ namespace Model
          * customer gateway is the appliance at your end of the VPN connection. (The device
          * on the AWS side of the VPN connection is the virtual private gateway.) You must
          * provide the Internet-routable IP address of the customer gateway's external
-         * interface. The IP address must be static and may be behind a device performing
+         * interface. The IP address must be static and can be behind a device performing
          * network address translation (NAT).</p> <p>For devices that use Border Gateway
          * Protocol (BGP), you can also provide the device's BGP Autonomous System Number
          * (ASN). You can use an existing ASN assigned to your network. If you don't have
@@ -3747,7 +3752,7 @@ namespace Model
          * customer gateway is the appliance at your end of the VPN connection. (The device
          * on the AWS side of the VPN connection is the virtual private gateway.) You must
          * provide the Internet-routable IP address of the customer gateway's external
-         * interface. The IP address must be static and may be behind a device performing
+         * interface. The IP address must be static and can be behind a device performing
          * network address translation (NAT).</p> <p>For devices that use Border Gateway
          * Protocol (BGP), you can also provide the device's BGP Autonomous System Number
          * (ASN). You can use an existing ASN assigned to your network. If you don't have
@@ -3776,7 +3781,7 @@ namespace Model
          * customer gateway is the appliance at your end of the VPN connection. (The device
          * on the AWS side of the VPN connection is the virtual private gateway.) You must
          * provide the Internet-routable IP address of the customer gateway's external
-         * interface. The IP address must be static and may be behind a device performing
+         * interface. The IP address must be static and can be behind a device performing
          * network address translation (NAT).</p> <p>For devices that use Border Gateway
          * Protocol (BGP), you can also provide the device's BGP Autonomous System Number
          * (ASN). You can use an existing ASN assigned to your network. If you don't have
@@ -6085,17 +6090,16 @@ namespace Model
 
         /**
          * <p>Creates a VPN connection between an existing virtual private gateway and a
-         * VPN customer gateway. The supported connection types is
-         * <code>ipsec.1</code>.</p> <p>The response includes information that you need to
-         * give to your network administrator to configure your customer gateway.</p>
-         * <important> <p>We strongly recommend that you use HTTPS when calling this
-         * operation because the response contains sensitive cryptographic information for
-         * configuring your customer gateway.</p> </important> <p>If you decide to shut
-         * down your VPN connection for any reason and later create a new VPN connection,
-         * you must reconfigure your customer gateway with the new information returned
-         * from this call.</p> <p>This is an idempotent operation. If you perform the
-         * operation more than once, Amazon EC2 doesn't return an error.</p> <p>For more
-         * information, see <a
+         * VPN customer gateway. The supported connection type is <code>ipsec.1</code>.</p>
+         * <p>The response includes information that you need to give to your network
+         * administrator to configure your customer gateway.</p> <important> <p>We strongly
+         * recommend that you use HTTPS when calling this operation because the response
+         * contains sensitive cryptographic information for configuring your customer
+         * gateway.</p> </important> <p>If you decide to shut down your VPN connection for
+         * any reason and later create a new VPN connection, you must reconfigure your
+         * customer gateway with the new information returned from this call.</p> <p>This
+         * is an idempotent operation. If you perform the operation more than once, Amazon
+         * EC2 doesn't return an error.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -6106,17 +6110,16 @@ namespace Model
 
         /**
          * <p>Creates a VPN connection between an existing virtual private gateway and a
-         * VPN customer gateway. The supported connection types is
-         * <code>ipsec.1</code>.</p> <p>The response includes information that you need to
-         * give to your network administrator to configure your customer gateway.</p>
-         * <important> <p>We strongly recommend that you use HTTPS when calling this
-         * operation because the response contains sensitive cryptographic information for
-         * configuring your customer gateway.</p> </important> <p>If you decide to shut
-         * down your VPN connection for any reason and later create a new VPN connection,
-         * you must reconfigure your customer gateway with the new information returned
-         * from this call.</p> <p>This is an idempotent operation. If you perform the
-         * operation more than once, Amazon EC2 doesn't return an error.</p> <p>For more
-         * information, see <a
+         * VPN customer gateway. The supported connection type is <code>ipsec.1</code>.</p>
+         * <p>The response includes information that you need to give to your network
+         * administrator to configure your customer gateway.</p> <important> <p>We strongly
+         * recommend that you use HTTPS when calling this operation because the response
+         * contains sensitive cryptographic information for configuring your customer
+         * gateway.</p> </important> <p>If you decide to shut down your VPN connection for
+         * any reason and later create a new VPN connection, you must reconfigure your
+         * customer gateway with the new information returned from this call.</p> <p>This
+         * is an idempotent operation. If you perform the operation more than once, Amazon
+         * EC2 doesn't return an error.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -6129,17 +6132,16 @@ namespace Model
 
         /**
          * <p>Creates a VPN connection between an existing virtual private gateway and a
-         * VPN customer gateway. The supported connection types is
-         * <code>ipsec.1</code>.</p> <p>The response includes information that you need to
-         * give to your network administrator to configure your customer gateway.</p>
-         * <important> <p>We strongly recommend that you use HTTPS when calling this
-         * operation because the response contains sensitive cryptographic information for
-         * configuring your customer gateway.</p> </important> <p>If you decide to shut
-         * down your VPN connection for any reason and later create a new VPN connection,
-         * you must reconfigure your customer gateway with the new information returned
-         * from this call.</p> <p>This is an idempotent operation. If you perform the
-         * operation more than once, Amazon EC2 doesn't return an error.</p> <p>For more
-         * information, see <a
+         * VPN customer gateway. The supported connection type is <code>ipsec.1</code>.</p>
+         * <p>The response includes information that you need to give to your network
+         * administrator to configure your customer gateway.</p> <important> <p>We strongly
+         * recommend that you use HTTPS when calling this operation because the response
+         * contains sensitive cryptographic information for configuring your customer
+         * gateway.</p> </important> <p>If you decide to shut down your VPN connection for
+         * any reason and later create a new VPN connection, you must reconfigure your
+         * customer gateway with the new information returned from this call.</p> <p>This
+         * is an idempotent operation. If you perform the operation more than once, Amazon
+         * EC2 doesn't return an error.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -15095,7 +15097,7 @@ namespace Model
         virtual void ModifyVpcTenancyAsync(const Model::ModifyVpcTenancyRequest& request, const ModifyVpcTenancyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the target gateway of a AWS Site-to-Site VPN connection. The
+         * <p>Modifies the target gateway of an AWS Site-to-Site VPN connection. The
          * following migration options are available:</p> <ul> <li> <p>An existing virtual
          * private gateway to a new virtual private gateway</p> </li> <li> <p>An existing
          * virtual private gateway to a transit gateway</p> </li> <li> <p>An existing
@@ -15128,7 +15130,7 @@ namespace Model
         virtual Model::ModifyVpnConnectionOutcome ModifyVpnConnection(const Model::ModifyVpnConnectionRequest& request) const;
 
         /**
-         * <p>Modifies the target gateway of a AWS Site-to-Site VPN connection. The
+         * <p>Modifies the target gateway of an AWS Site-to-Site VPN connection. The
          * following migration options are available:</p> <ul> <li> <p>An existing virtual
          * private gateway to a new virtual private gateway</p> </li> <li> <p>An existing
          * virtual private gateway to a transit gateway</p> </li> <li> <p>An existing
@@ -15163,7 +15165,7 @@ namespace Model
         virtual Model::ModifyVpnConnectionOutcomeCallable ModifyVpnConnectionCallable(const Model::ModifyVpnConnectionRequest& request) const;
 
         /**
-         * <p>Modifies the target gateway of a AWS Site-to-Site VPN connection. The
+         * <p>Modifies the target gateway of an AWS Site-to-Site VPN connection. The
          * following migration options are available:</p> <ul> <li> <p>An existing virtual
          * private gateway to a new virtual private gateway</p> </li> <li> <p>An existing
          * virtual private gateway to a transit gateway</p> </li> <li> <p>An existing
@@ -15221,6 +15223,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ModifyVpnTunnelCertificateAsync(const Model::ModifyVpnTunnelCertificateRequest& request, const ModifyVpnTunnelCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Modifies the options for a VPN tunnel in an AWS Site-to-Site VPN connection.
+         * You can modify multiple options for a tunnel in a single request, but you can
+         * only modify one tunnel at a time. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site
+         * VPN Tunnel Options for Your Site-to-Site VPN Connection</a> in the <i>AWS
+         * Site-to-Site VPN User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyVpnTunnelOptionsOutcome ModifyVpnTunnelOptions(const Model::ModifyVpnTunnelOptionsRequest& request) const;
+
+        /**
+         * <p>Modifies the options for a VPN tunnel in an AWS Site-to-Site VPN connection.
+         * You can modify multiple options for a tunnel in a single request, but you can
+         * only modify one tunnel at a time. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site
+         * VPN Tunnel Options for Your Site-to-Site VPN Connection</a> in the <i>AWS
+         * Site-to-Site VPN User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelOptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyVpnTunnelOptionsOutcomeCallable ModifyVpnTunnelOptionsCallable(const Model::ModifyVpnTunnelOptionsRequest& request) const;
+
+        /**
+         * <p>Modifies the options for a VPN tunnel in an AWS Site-to-Site VPN connection.
+         * You can modify multiple options for a tunnel in a single request, but you can
+         * only modify one tunnel at a time. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site
+         * VPN Tunnel Options for Your Site-to-Site VPN Connection</a> in the <i>AWS
+         * Site-to-Site VPN User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelOptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyVpnTunnelOptionsAsync(const Model::ModifyVpnTunnelOptionsRequest& request, const ModifyVpnTunnelOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables detailed monitoring for a running instance. Otherwise, basic
@@ -17848,6 +17890,7 @@ namespace Model
         void ModifyVpcTenancyAsyncHelper(const Model::ModifyVpcTenancyRequest& request, const ModifyVpcTenancyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyVpnConnectionAsyncHelper(const Model::ModifyVpnConnectionRequest& request, const ModifyVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyVpnTunnelCertificateAsyncHelper(const Model::ModifyVpnTunnelCertificateRequest& request, const ModifyVpnTunnelCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyVpnTunnelOptionsAsyncHelper(const Model::ModifyVpnTunnelOptionsRequest& request, const ModifyVpnTunnelOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void MonitorInstancesAsyncHelper(const Model::MonitorInstancesRequest& request, const MonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void MoveAddressToVpcAsyncHelper(const Model::MoveAddressToVpcRequest& request, const MoveAddressToVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ProvisionByoipCidrAsyncHelper(const Model::ProvisionByoipCidrRequest& request, const ProvisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

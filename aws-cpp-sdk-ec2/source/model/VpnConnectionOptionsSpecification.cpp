@@ -60,11 +60,11 @@ VpnConnectionOptionsSpecification& VpnConnectionOptionsSpecification::operator =
     XmlNode tunnelOptionsNode = resultNode.FirstChild("TunnelOptions");
     if(!tunnelOptionsNode.IsNull())
     {
-      XmlNode tunnelOptionsMember = tunnelOptionsNode.FirstChild("item");
+      XmlNode tunnelOptionsMember = tunnelOptionsNode.FirstChild("member");
       while(!tunnelOptionsMember.IsNull())
       {
         m_tunnelOptions.push_back(tunnelOptionsMember);
-        tunnelOptionsMember = tunnelOptionsMember.NextNode("item");
+        tunnelOptionsMember = tunnelOptionsMember.NextNode("member");
       }
 
       m_tunnelOptionsHasBeenSet = true;
@@ -106,7 +106,7 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
       for(auto& item : m_tunnelOptions)
       {
         Aws::StringStream tunnelOptionsSs;
-        tunnelOptionsSs << location <<  ".Item." << tunnelOptionsIdx++;
+        tunnelOptionsSs << location <<  ".TunnelOptions." << tunnelOptionsIdx++;
         item.OutputToStream(oStream, tunnelOptionsSs.str().c_str());
       }
   }

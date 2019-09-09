@@ -17,6 +17,7 @@
 #include <aws/robomaker/RoboMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/robomaker/model/PortForwardingConfig.h>
 #include <utility>
 
 namespace Aws
@@ -195,6 +196,37 @@ namespace Model
      */
     inline LaunchConfig& AddEnvironmentVariables(const char* key, const char* value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The port forwarding configuration.</p>
+     */
+    inline const PortForwardingConfig& GetPortForwardingConfig() const{ return m_portForwardingConfig; }
+
+    /**
+     * <p>The port forwarding configuration.</p>
+     */
+    inline bool PortForwardingConfigHasBeenSet() const { return m_portForwardingConfigHasBeenSet; }
+
+    /**
+     * <p>The port forwarding configuration.</p>
+     */
+    inline void SetPortForwardingConfig(const PortForwardingConfig& value) { m_portForwardingConfigHasBeenSet = true; m_portForwardingConfig = value; }
+
+    /**
+     * <p>The port forwarding configuration.</p>
+     */
+    inline void SetPortForwardingConfig(PortForwardingConfig&& value) { m_portForwardingConfigHasBeenSet = true; m_portForwardingConfig = std::move(value); }
+
+    /**
+     * <p>The port forwarding configuration.</p>
+     */
+    inline LaunchConfig& WithPortForwardingConfig(const PortForwardingConfig& value) { SetPortForwardingConfig(value); return *this;}
+
+    /**
+     * <p>The port forwarding configuration.</p>
+     */
+    inline LaunchConfig& WithPortForwardingConfig(PortForwardingConfig&& value) { SetPortForwardingConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_packageName;
@@ -205,6 +237,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_environmentVariables;
     bool m_environmentVariablesHasBeenSet;
+
+    PortForwardingConfig m_portForwardingConfig;
+    bool m_portForwardingConfigHasBeenSet;
   };
 
 } // namespace Model

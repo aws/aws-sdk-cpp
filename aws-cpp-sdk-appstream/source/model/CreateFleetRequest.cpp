@@ -42,7 +42,8 @@ CreateFleetRequest::CreateFleetRequest() :
     m_domainJoinInfoHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_idleDisconnectTimeoutInSeconds(0),
-    m_idleDisconnectTimeoutInSecondsHasBeenSet(false)
+    m_idleDisconnectTimeoutInSecondsHasBeenSet(false),
+    m_iamRoleArnHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,12 @@ Aws::String CreateFleetRequest::SerializePayload() const
   if(m_idleDisconnectTimeoutInSecondsHasBeenSet)
   {
    payload.WithInteger("IdleDisconnectTimeoutInSeconds", m_idleDisconnectTimeoutInSeconds);
+
+  }
+
+  if(m_iamRoleArnHasBeenSet)
+  {
+   payload.WithString("IamRoleArn", m_iamRoleArn);
 
   }
 

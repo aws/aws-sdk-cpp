@@ -174,6 +174,12 @@ DescribeSimulationJobResult& DescribeSimulationJobResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("networkInterface"))
+  {
+    m_networkInterface = jsonValue.GetObject("networkInterface");
+
+  }
+
 
 
   return *this;

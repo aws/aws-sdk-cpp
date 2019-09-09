@@ -30,6 +30,7 @@ CreateImageBuilderRequest::CreateImageBuilderRequest() :
     m_descriptionHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
+    m_iamRoleArnHasBeenSet(false),
     m_enableDefaultInternetAccess(false),
     m_enableDefaultInternetAccessHasBeenSet(false),
     m_domainJoinInfoHasBeenSet(false),
@@ -82,6 +83,12 @@ Aws::String CreateImageBuilderRequest::SerializePayload() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_iamRoleArnHasBeenSet)
+  {
+   payload.WithString("IamRoleArn", m_iamRoleArn);
 
   }
 

@@ -17,6 +17,7 @@
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/appmesh/model/HttpRouteAction.h>
 #include <aws/appmesh/model/HttpRouteMatch.h>
+#include <aws/appmesh/model/HttpRetryPolicy.h>
 #include <utility>
 
 namespace Aws
@@ -110,6 +111,37 @@ namespace Model
      */
     inline HttpRoute& WithMatch(HttpRouteMatch&& value) { SetMatch(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object that represents a retry policy.</p>
+     */
+    inline const HttpRetryPolicy& GetRetryPolicy() const{ return m_retryPolicy; }
+
+    /**
+     * <p>An object that represents a retry policy.</p>
+     */
+    inline bool RetryPolicyHasBeenSet() const { return m_retryPolicyHasBeenSet; }
+
+    /**
+     * <p>An object that represents a retry policy.</p>
+     */
+    inline void SetRetryPolicy(const HttpRetryPolicy& value) { m_retryPolicyHasBeenSet = true; m_retryPolicy = value; }
+
+    /**
+     * <p>An object that represents a retry policy.</p>
+     */
+    inline void SetRetryPolicy(HttpRetryPolicy&& value) { m_retryPolicyHasBeenSet = true; m_retryPolicy = std::move(value); }
+
+    /**
+     * <p>An object that represents a retry policy.</p>
+     */
+    inline HttpRoute& WithRetryPolicy(const HttpRetryPolicy& value) { SetRetryPolicy(value); return *this;}
+
+    /**
+     * <p>An object that represents a retry policy.</p>
+     */
+    inline HttpRoute& WithRetryPolicy(HttpRetryPolicy&& value) { SetRetryPolicy(std::move(value)); return *this;}
+
   private:
 
     HttpRouteAction m_action;
@@ -117,6 +149,9 @@ namespace Model
 
     HttpRouteMatch m_match;
     bool m_matchHasBeenSet;
+
+    HttpRetryPolicy m_retryPolicy;
+    bool m_retryPolicyHasBeenSet;
   };
 
 } // namespace Model

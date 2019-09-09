@@ -38,6 +38,7 @@ namespace Aws
         static const int FEEDBACK_URL_HASH = HashingUtils::HashString("FEEDBACK_URL");
         static const int THEME_NAME_HASH = HashingUtils::HashString("THEME_NAME");
         static const int USER_SETTINGS_HASH = HashingUtils::HashString("USER_SETTINGS");
+        static const int IAM_ROLE_ARN_HASH = HashingUtils::HashString("IAM_ROLE_ARN");
         static const int ACCESS_ENDPOINTS_HASH = HashingUtils::HashString("ACCESS_ENDPOINTS");
 
 
@@ -76,6 +77,10 @@ namespace Aws
           {
             return StackAttribute::USER_SETTINGS;
           }
+          else if (hashCode == IAM_ROLE_ARN_HASH)
+          {
+            return StackAttribute::IAM_ROLE_ARN;
+          }
           else if (hashCode == ACCESS_ENDPOINTS_HASH)
           {
             return StackAttribute::ACCESS_ENDPOINTS;
@@ -110,6 +115,8 @@ namespace Aws
             return "THEME_NAME";
           case StackAttribute::USER_SETTINGS:
             return "USER_SETTINGS";
+          case StackAttribute::IAM_ROLE_ARN:
+            return "IAM_ROLE_ARN";
           case StackAttribute::ACCESS_ENDPOINTS:
             return "ACCESS_ENDPOINTS";
           default:

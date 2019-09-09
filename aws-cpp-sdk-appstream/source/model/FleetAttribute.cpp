@@ -33,6 +33,7 @@ namespace Aws
         static const int VPC_CONFIGURATION_HASH = HashingUtils::HashString("VPC_CONFIGURATION");
         static const int VPC_CONFIGURATION_SECURITY_GROUP_IDS_HASH = HashingUtils::HashString("VPC_CONFIGURATION_SECURITY_GROUP_IDS");
         static const int DOMAIN_JOIN_INFO_HASH = HashingUtils::HashString("DOMAIN_JOIN_INFO");
+        static const int IAM_ROLE_ARN_HASH = HashingUtils::HashString("IAM_ROLE_ARN");
 
 
         FleetAttribute GetFleetAttributeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == DOMAIN_JOIN_INFO_HASH)
           {
             return FleetAttribute::DOMAIN_JOIN_INFO;
+          }
+          else if (hashCode == IAM_ROLE_ARN_HASH)
+          {
+            return FleetAttribute::IAM_ROLE_ARN;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "VPC_CONFIGURATION_SECURITY_GROUP_IDS";
           case FleetAttribute::DOMAIN_JOIN_INFO:
             return "DOMAIN_JOIN_INFO";
+          case FleetAttribute::IAM_ROLE_ARN:
+            return "IAM_ROLE_ARN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

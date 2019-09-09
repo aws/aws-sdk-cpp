@@ -25,6 +25,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/robomaker/model/VPCConfigResponse.h>
+#include <aws/robomaker/model/NetworkInterface.h>
 #include <aws/robomaker/model/RobotApplicationConfig.h>
 #include <aws/robomaker/model/SimulationApplicationConfig.h>
 #include <aws/robomaker/model/DataSource.h>
@@ -793,6 +794,32 @@ namespace Model
      */
     inline DescribeSimulationJobResult& WithVpcConfig(VPCConfigResponse&& value) { SetVpcConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The network interface information for the simulation job.</p>
+     */
+    inline const NetworkInterface& GetNetworkInterface() const{ return m_networkInterface; }
+
+    /**
+     * <p>The network interface information for the simulation job.</p>
+     */
+    inline void SetNetworkInterface(const NetworkInterface& value) { m_networkInterface = value; }
+
+    /**
+     * <p>The network interface information for the simulation job.</p>
+     */
+    inline void SetNetworkInterface(NetworkInterface&& value) { m_networkInterface = std::move(value); }
+
+    /**
+     * <p>The network interface information for the simulation job.</p>
+     */
+    inline DescribeSimulationJobResult& WithNetworkInterface(const NetworkInterface& value) { SetNetworkInterface(value); return *this;}
+
+    /**
+     * <p>The network interface information for the simulation job.</p>
+     */
+    inline DescribeSimulationJobResult& WithNetworkInterface(NetworkInterface&& value) { SetNetworkInterface(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -832,6 +859,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     VPCConfigResponse m_vpcConfig;
+
+    NetworkInterface m_networkInterface;
   };
 
 } // namespace Model
