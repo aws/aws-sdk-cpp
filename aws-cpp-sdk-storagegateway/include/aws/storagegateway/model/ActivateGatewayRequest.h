@@ -277,10 +277,10 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates the region where you want to store your data. The
-     * gateway region specified must be the same region as the region in your
-     * <code>Host</code> header in the request. For more information about available
-     * regions and endpoints for AWS Storage Gateway, see <a
+     * <p>A value that indicates the AWS Region where you want to store your data. The
+     * gateway AWS Region specified must be the same AWS Region as the AWS Region in
+     * your <code>Host</code> header in the request. For more information about
+     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
      * Values: See <a
@@ -290,10 +290,10 @@ namespace Model
     inline const Aws::String& GetGatewayRegion() const{ return m_gatewayRegion; }
 
     /**
-     * <p>A value that indicates the region where you want to store your data. The
-     * gateway region specified must be the same region as the region in your
-     * <code>Host</code> header in the request. For more information about available
-     * regions and endpoints for AWS Storage Gateway, see <a
+     * <p>A value that indicates the AWS Region where you want to store your data. The
+     * gateway AWS Region specified must be the same AWS Region as the AWS Region in
+     * your <code>Host</code> header in the request. For more information about
+     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
      * Values: See <a
@@ -303,10 +303,10 @@ namespace Model
     inline bool GatewayRegionHasBeenSet() const { return m_gatewayRegionHasBeenSet; }
 
     /**
-     * <p>A value that indicates the region where you want to store your data. The
-     * gateway region specified must be the same region as the region in your
-     * <code>Host</code> header in the request. For more information about available
-     * regions and endpoints for AWS Storage Gateway, see <a
+     * <p>A value that indicates the AWS Region where you want to store your data. The
+     * gateway AWS Region specified must be the same AWS Region as the AWS Region in
+     * your <code>Host</code> header in the request. For more information about
+     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
      * Values: See <a
@@ -316,10 +316,10 @@ namespace Model
     inline void SetGatewayRegion(const Aws::String& value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion = value; }
 
     /**
-     * <p>A value that indicates the region where you want to store your data. The
-     * gateway region specified must be the same region as the region in your
-     * <code>Host</code> header in the request. For more information about available
-     * regions and endpoints for AWS Storage Gateway, see <a
+     * <p>A value that indicates the AWS Region where you want to store your data. The
+     * gateway AWS Region specified must be the same AWS Region as the AWS Region in
+     * your <code>Host</code> header in the request. For more information about
+     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
      * Values: See <a
@@ -329,10 +329,10 @@ namespace Model
     inline void SetGatewayRegion(Aws::String&& value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion = std::move(value); }
 
     /**
-     * <p>A value that indicates the region where you want to store your data. The
-     * gateway region specified must be the same region as the region in your
-     * <code>Host</code> header in the request. For more information about available
-     * regions and endpoints for AWS Storage Gateway, see <a
+     * <p>A value that indicates the AWS Region where you want to store your data. The
+     * gateway AWS Region specified must be the same AWS Region as the AWS Region in
+     * your <code>Host</code> header in the request. For more information about
+     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
      * Values: See <a
@@ -342,10 +342,10 @@ namespace Model
     inline void SetGatewayRegion(const char* value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion.assign(value); }
 
     /**
-     * <p>A value that indicates the region where you want to store your data. The
-     * gateway region specified must be the same region as the region in your
-     * <code>Host</code> header in the request. For more information about available
-     * regions and endpoints for AWS Storage Gateway, see <a
+     * <p>A value that indicates the AWS Region where you want to store your data. The
+     * gateway AWS Region specified must be the same AWS Region as the AWS Region in
+     * your <code>Host</code> header in the request. For more information about
+     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
      * Values: See <a
@@ -355,10 +355,10 @@ namespace Model
     inline ActivateGatewayRequest& WithGatewayRegion(const Aws::String& value) { SetGatewayRegion(value); return *this;}
 
     /**
-     * <p>A value that indicates the region where you want to store your data. The
-     * gateway region specified must be the same region as the region in your
-     * <code>Host</code> header in the request. For more information about available
-     * regions and endpoints for AWS Storage Gateway, see <a
+     * <p>A value that indicates the AWS Region where you want to store your data. The
+     * gateway AWS Region specified must be the same AWS Region as the AWS Region in
+     * your <code>Host</code> header in the request. For more information about
+     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
      * Values: See <a
@@ -368,10 +368,10 @@ namespace Model
     inline ActivateGatewayRequest& WithGatewayRegion(Aws::String&& value) { SetGatewayRegion(std::move(value)); return *this;}
 
     /**
-     * <p>A value that indicates the region where you want to store your data. The
-     * gateway region specified must be the same region as the region in your
-     * <code>Host</code> header in the request. For more information about available
-     * regions and endpoints for AWS Storage Gateway, see <a
+     * <p>A value that indicates the AWS Region where you want to store your data. The
+     * gateway AWS Region specified must be the same AWS Region as the AWS Region in
+     * your <code>Host</code> header in the request. For more information about
+     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
      * Values: See <a
@@ -545,74 +545,82 @@ namespace Model
 
 
     /**
-     * <p>A list of up to 50 tags that can be assigned to the gateway. Each tag is a
+     * <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a
      * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
-     * spaces, and numbers representable in UTF-8 format, and the following special
-     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * spaces, and numbers that can be represented in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256 characters.</p>
+     * </note>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of up to 50 tags that can be assigned to the gateway. Each tag is a
+     * <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a
      * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
-     * spaces, and numbers representable in UTF-8 format, and the following special
-     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * spaces, and numbers that can be represented in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256 characters.</p>
+     * </note>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A list of up to 50 tags that can be assigned to the gateway. Each tag is a
+     * <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a
      * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
-     * spaces, and numbers representable in UTF-8 format, and the following special
-     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * spaces, and numbers that can be represented in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256 characters.</p>
+     * </note>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of up to 50 tags that can be assigned to the gateway. Each tag is a
+     * <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a
      * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
-     * spaces, and numbers representable in UTF-8 format, and the following special
-     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * spaces, and numbers that can be represented in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256 characters.</p>
+     * </note>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A list of up to 50 tags that can be assigned to the gateway. Each tag is a
+     * <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a
      * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
-     * spaces, and numbers representable in UTF-8 format, and the following special
-     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * spaces, and numbers that can be represented in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256 characters.</p>
+     * </note>
      */
     inline ActivateGatewayRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of up to 50 tags that can be assigned to the gateway. Each tag is a
+     * <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a
      * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
-     * spaces, and numbers representable in UTF-8 format, and the following special
-     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * spaces, and numbers that can be represented in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256 characters.</p>
+     * </note>
      */
     inline ActivateGatewayRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of up to 50 tags that can be assigned to the gateway. Each tag is a
+     * <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a
      * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
-     * spaces, and numbers representable in UTF-8 format, and the following special
-     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * spaces, and numbers that can be represented in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256 characters.</p>
+     * </note>
      */
     inline ActivateGatewayRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of up to 50 tags that can be assigned to the gateway. Each tag is a
+     * <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a
      * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
-     * spaces, and numbers representable in UTF-8 format, and the following special
-     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * spaces, and numbers that can be represented in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256 characters.</p>
+     * </note>
      */
     inline ActivateGatewayRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

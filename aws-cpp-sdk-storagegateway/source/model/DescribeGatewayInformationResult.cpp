@@ -122,6 +122,12 @@ DescribeGatewayInformationResult& DescribeGatewayInformationResult::operator =(c
 
   }
 
+  if(jsonValue.ValueExists("CloudWatchLogGroupARN"))
+  {
+    m_cloudWatchLogGroupARN = jsonValue.GetString("CloudWatchLogGroupARN");
+
+  }
+
 
 
   return *this;

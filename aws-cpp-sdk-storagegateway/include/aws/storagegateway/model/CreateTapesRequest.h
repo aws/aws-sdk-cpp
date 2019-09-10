@@ -52,56 +52,56 @@ namespace Model
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation to
-     * return a list of gateways for your account and region.</p>
+     * return a list of gateways for your account and AWS Region.</p>
      */
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation to
-     * return a list of gateways for your account and region.</p>
+     * return a list of gateways for your account and AWS Region.</p>
      */
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation to
-     * return a list of gateways for your account and region.</p>
+     * return a list of gateways for your account and AWS Region.</p>
      */
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation to
-     * return a list of gateways for your account and region.</p>
+     * return a list of gateways for your account and AWS Region.</p>
      */
     inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation to
-     * return a list of gateways for your account and region.</p>
+     * return a list of gateways for your account and AWS Region.</p>
      */
     inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation to
-     * return a list of gateways for your account and region.</p>
+     * return a list of gateways for your account and AWS Region.</p>
      */
     inline CreateTapesRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation to
-     * return a list of gateways for your account and region.</p>
+     * return a list of gateways for your account and AWS Region.</p>
      */
     inline CreateTapesRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation to
-     * return a list of gateways for your account and region.</p>
+     * return a list of gateways for your account and AWS Region.</p>
      */
     inline CreateTapesRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 

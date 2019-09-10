@@ -99,64 +99,64 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the
      * virtual tape to. Use the <a>ListGateways</a> operation to return a list of
-     * gateways for your account and region.</p> <p>You retrieve archived virtual tapes
-     * to only one gateway and the gateway must be a tape gateway.</p>
+     * gateways for your account and AWS Region.</p> <p>You retrieve archived virtual
+     * tapes to only one gateway and the gateway must be a tape gateway.</p>
      */
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the
      * virtual tape to. Use the <a>ListGateways</a> operation to return a list of
-     * gateways for your account and region.</p> <p>You retrieve archived virtual tapes
-     * to only one gateway and the gateway must be a tape gateway.</p>
+     * gateways for your account and AWS Region.</p> <p>You retrieve archived virtual
+     * tapes to only one gateway and the gateway must be a tape gateway.</p>
      */
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the
      * virtual tape to. Use the <a>ListGateways</a> operation to return a list of
-     * gateways for your account and region.</p> <p>You retrieve archived virtual tapes
-     * to only one gateway and the gateway must be a tape gateway.</p>
+     * gateways for your account and AWS Region.</p> <p>You retrieve archived virtual
+     * tapes to only one gateway and the gateway must be a tape gateway.</p>
      */
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the
      * virtual tape to. Use the <a>ListGateways</a> operation to return a list of
-     * gateways for your account and region.</p> <p>You retrieve archived virtual tapes
-     * to only one gateway and the gateway must be a tape gateway.</p>
+     * gateways for your account and AWS Region.</p> <p>You retrieve archived virtual
+     * tapes to only one gateway and the gateway must be a tape gateway.</p>
      */
     inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the
      * virtual tape to. Use the <a>ListGateways</a> operation to return a list of
-     * gateways for your account and region.</p> <p>You retrieve archived virtual tapes
-     * to only one gateway and the gateway must be a tape gateway.</p>
+     * gateways for your account and AWS Region.</p> <p>You retrieve archived virtual
+     * tapes to only one gateway and the gateway must be a tape gateway.</p>
      */
     inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the
      * virtual tape to. Use the <a>ListGateways</a> operation to return a list of
-     * gateways for your account and region.</p> <p>You retrieve archived virtual tapes
-     * to only one gateway and the gateway must be a tape gateway.</p>
+     * gateways for your account and AWS Region.</p> <p>You retrieve archived virtual
+     * tapes to only one gateway and the gateway must be a tape gateway.</p>
      */
     inline RetrieveTapeArchiveRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the
      * virtual tape to. Use the <a>ListGateways</a> operation to return a list of
-     * gateways for your account and region.</p> <p>You retrieve archived virtual tapes
-     * to only one gateway and the gateway must be a tape gateway.</p>
+     * gateways for your account and AWS Region.</p> <p>You retrieve archived virtual
+     * tapes to only one gateway and the gateway must be a tape gateway.</p>
      */
     inline RetrieveTapeArchiveRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the
      * virtual tape to. Use the <a>ListGateways</a> operation to return a list of
-     * gateways for your account and region.</p> <p>You retrieve archived virtual tapes
-     * to only one gateway and the gateway must be a tape gateway.</p>
+     * gateways for your account and AWS Region.</p> <p>You retrieve archived virtual
+     * tapes to only one gateway and the gateway must be a tape gateway.</p>
      */
     inline RetrieveTapeArchiveRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
