@@ -97,7 +97,7 @@ namespace Aws
             /**
              * Returns empty credentials object.
              */
-            inline AWSCredentials GetAWSCredentials() override { return AWSCredentials("", ""); }
+            inline AWSCredentials GetAWSCredentials() override { return AWSCredentials(); }
         };
 
         /**
@@ -278,7 +278,6 @@ namespace Aws
         private:
             std::shared_ptr<Aws::Internal::ECSCredentialsClient> m_ecsCredentialsClient;
             long m_loadFrequencyMs;
-            Aws::Utils::DateTime m_expirationDate;
             Aws::Auth::AWSCredentials m_credentials;
         };
 

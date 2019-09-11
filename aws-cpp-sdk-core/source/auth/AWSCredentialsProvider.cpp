@@ -81,7 +81,7 @@ static const char* ENVIRONMENT_LOG_TAG = "EnvironmentAWSCredentialsProvider";
 AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
 {
     auto accessKey = Aws::Environment::GetEnv(ACCESS_KEY_ENV_VAR);
-    AWSCredentials credentials("", "", "");
+    AWSCredentials credentials;
 
     if (!accessKey.empty())
     {
@@ -287,17 +287,14 @@ static const char TASK_ROLE_LOG_TAG[] = "TaskRoleCredentialsProvider";
 
 TaskRoleCredentialsProvider::TaskRoleCredentialsProvider(const char* URI, long refreshRateMs) :
     m_ecsCredentialsClient(Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(TASK_ROLE_LOG_TAG, URI)),
-    m_loadFrequencyMs(refreshRateMs),
-    m_expirationDate(DateTime::Now())
+    m_loadFrequencyMs(refreshRateMs)
 {
     AWS_LOGSTREAM_INFO(TASK_ROLE_LOG_TAG, "Creating TaskRole with default ECSCredentialsClient and refresh rate " << refreshRateMs);
 }
 
 TaskRoleCredentialsProvider::TaskRoleCredentialsProvider(const char* endpoint, const char* token, long refreshRateMs) :
-    m_ecsCredentialsClient(Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(TASK_ROLE_LOG_TAG, ""/*resourcePath*/,
-                endpoint, token)),
-    m_loadFrequencyMs(refreshRateMs),
-    m_expirationDate(DateTime::Now())
+    m_ecsCredentialsClient(Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(TASK_ROLE_LOG_TAG, ""/*resourcePath*/, endpoint, token)),
+    m_loadFrequencyMs(refreshRateMs)
 {
     AWS_LOGSTREAM_INFO(TASK_ROLE_LOG_TAG, "Creating TaskRole with default ECSCredentialsClient and refresh rate " << refreshRateMs);
 }
@@ -305,8 +302,7 @@ TaskRoleCredentialsProvider::TaskRoleCredentialsProvider(const char* endpoint, c
 TaskRoleCredentialsProvider::TaskRoleCredentialsProvider(
         const std::shared_ptr<Aws::Internal::ECSCredentialsClient>& client, long refreshRateMs) :
     m_ecsCredentialsClient(client),
-    m_loadFrequencyMs(refreshRateMs),
-    m_expirationDate(DateTime::Now())
+    m_loadFrequencyMs(refreshRateMs)
 {
     AWS_LOGSTREAM_INFO(TASK_ROLE_LOG_TAG, "Creating TaskRole with default ECSCredentialsClient and refresh rate " << refreshRateMs);
 }
@@ -320,7 +316,7 @@ AWSCredentials TaskRoleCredentialsProvider::GetAWSCredentials()
 
 bool TaskRoleCredentialsProvider::ExpiresSoon() const
 {
-    return (m_expirationDate.Millis() - Aws::Utils::DateTime::Now().Millis() < EXPIRATION_GRACE_PERIOD);
+    return ((m_credentials.GetExpiration() - Aws::Utils::DateTime::Now()).count() < EXPIRATION_GRACE_PERIOD);
 }
 
 void TaskRoleCredentialsProvider::Reload()
@@ -347,7 +343,7 @@ void TaskRoleCredentialsProvider::Reload()
     m_credentials.SetAWSAccessKeyId(accessKey);
     m_credentials.SetAWSSecretKey(secretKey);
     m_credentials.SetSessionToken(token);
-    m_expirationDate = Aws::Utils::DateTime(credentialsView.GetString("Expiration"), DateFormat::ISO_8601);
+    m_credentials.SetExpiration(Aws::Utils::DateTime(credentialsView.GetString("Expiration"), DateFormat::ISO_8601));
     AWSCredentialsProvider::Reload();
 }
 
@@ -355,14 +351,14 @@ void TaskRoleCredentialsProvider::RefreshIfExpired()
 {
     AWS_LOGSTREAM_DEBUG(TASK_ROLE_LOG_TAG, "Checking if latest credential pull has expired.");
     ReaderLockGuard guard(m_reloadLock);
-    if (!IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon())
+    if (!m_credentials.IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon())
     {
         return;
     }
 
     guard.UpgradeToWriterLock();
 
-    if (!IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon())
+    if (!m_credentials.IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon())
     {
         return;
     }

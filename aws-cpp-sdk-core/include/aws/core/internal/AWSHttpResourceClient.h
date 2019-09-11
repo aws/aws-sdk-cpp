@@ -189,7 +189,6 @@ namespace Aws
             struct STSAssumeRoleWithWebIdentityResult
             {
                 Aws::Auth::AWSCredentials creds;
-                Aws::Utils::DateTime expiration;
             };
 
             STSAssumeRoleWithWebIdentityResult GetAssumeRoleWithWebIdentityCredentials(const STSAssumeRoleWithWebIdentityRequest& request);

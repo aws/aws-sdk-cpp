@@ -143,25 +143,26 @@ namespace Aws
                 m_sessionToken = sessionToken;
             }
 
+
             /**
-            * Sets the underlying access key credential. Copies from parameter accessKeyId.
-            */
+             * Sets the underlying access key credential. Copies from parameter accessKeyId.
+             */
             inline void SetAWSAccessKeyId(const char* accessKeyId)
             {
                 m_accessKeyId = accessKeyId;
             }
 
             /**
-            * Sets the underlying secret key credential. Copies from parameter secretKey
-            */
+             * Sets the underlying secret key credential. Copies from parameter secretKey
+             */
             inline void SetAWSSecretKey(const char* secretKey)
             {
                 m_secretKey = secretKey;
             }
 
             /**
-            * Sets the underlying secret key credential. Copies from parameter secretKey
-            */
+             * Sets the underlying secret key credential. Copies from parameter secretKey
+             */
             inline void SetSessionToken(const char* sessionToken)
             {
                 m_sessionToken = sessionToken;

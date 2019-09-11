@@ -50,7 +50,6 @@ namespace Aws
             Aws::String CalculateQueryString() const;
 
             Aws::UniquePtr<Aws::Internal::STSCredentialsClient> m_client;
-            Aws::Utils::DateTime m_expire;
             Aws::Auth::AWSCredentials m_credentials;
             Aws::String m_roleArn;
             Aws::String m_tokenFile;

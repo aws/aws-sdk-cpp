@@ -39,7 +39,7 @@ AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials()
         }
     }
 
-    return AWSCredentials("", "");
+    return AWSCredentials();
 }
 
 DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain() : AWSCredentialsProviderChain()

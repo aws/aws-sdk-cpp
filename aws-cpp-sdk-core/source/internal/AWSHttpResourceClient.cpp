@@ -343,7 +343,7 @@ STSCredentialsClient::STSAssumeRoleWithWebIdentityResult STSCredentialsClient::G
             XmlNode expirationNode = credentialsNode.FirstChild("Expiration");
             if (!expirationNode.IsNull())
             {
-                result.expiration = DateTime(StringUtils::Trim(expirationNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+                result.creds.SetExpiration(DateTime(StringUtils::Trim(expirationNode.GetText().c_str()).c_str(), DateFormat::ISO_8601));
             }
         }
     }

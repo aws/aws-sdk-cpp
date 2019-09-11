@@ -41,7 +41,6 @@ using Aws::Utils::Threading::WriterLockGuard;
 
 static const char STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG[] = "STSAssumeRoleWithWebIdentityCredentialsProvider";
 STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentialsProvider() :
-    m_expire(std::chrono::time_point<std::chrono::system_clock>::min()),
     m_initialized(false)
 {
     // check environment variables
@@ -163,19 +162,18 @@ void STSAssumeRoleWebIdentityCredentialsProvider::Reload()
 
     auto result = m_client->GetAssumeRoleWithWebIdentityCredentials(request);
     m_credentials = result.creds;
-    m_expire = result.expiration;
 }
 
 void STSAssumeRoleWebIdentityCredentialsProvider::RefreshIfExpired()
 {
     ReaderLockGuard guard(m_reloadLock);
-    if (Aws::Utils::DateTime::Now() < m_expire)
+    if (!m_credentials.IsExpiredOrEmpty())
     {
        return;
     }
 
     guard.UpgradeToWriterLock();
-    if (Aws::Utils::DateTime::Now() < m_expire) // double-checked lock to avoid refreshing twice
+    if (!m_credentials.IsExpiredOrEmpty()) // double-checked lock to avoid refreshing twice
     {
         return;
     }
