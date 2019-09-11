@@ -107,34 +107,38 @@ namespace Model
 
 
     /**
-     * <p>The number of days to retain automated backups. Setting this parameter to a
-     * positive number enables backups. Setting this parameter to 0 disables automated
-     * backups.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value
-     * from 0 to 8</p> </li> </ul>
+     * <p>The number of days for which automated backups are retained. Setting this
+     * parameter to a positive number enables backups. Setting this parameter to 0
+     * disables automated backups.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be a value from 0 to 35.</p> </li> <li> <p>Can't be set to 0 if the DB
+     * instance is a source to Read Replicas.</p> </li> </ul>
      */
     inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
     /**
-     * <p>The number of days to retain automated backups. Setting this parameter to a
-     * positive number enables backups. Setting this parameter to 0 disables automated
-     * backups.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value
-     * from 0 to 8</p> </li> </ul>
+     * <p>The number of days for which automated backups are retained. Setting this
+     * parameter to a positive number enables backups. Setting this parameter to 0
+     * disables automated backups.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be a value from 0 to 35.</p> </li> <li> <p>Can't be set to 0 if the DB
+     * instance is a source to Read Replicas.</p> </li> </ul>
      */
     inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
 
     /**
-     * <p>The number of days to retain automated backups. Setting this parameter to a
-     * positive number enables backups. Setting this parameter to 0 disables automated
-     * backups.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value
-     * from 0 to 8</p> </li> </ul>
+     * <p>The number of days for which automated backups are retained. Setting this
+     * parameter to a positive number enables backups. Setting this parameter to 0
+     * disables automated backups.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be a value from 0 to 35.</p> </li> <li> <p>Can't be set to 0 if the DB
+     * instance is a source to Read Replicas.</p> </li> </ul>
      */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
     /**
-     * <p>The number of days to retain automated backups. Setting this parameter to a
-     * positive number enables backups. Setting this parameter to 0 disables automated
-     * backups.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value
-     * from 0 to 8</p> </li> </ul>
+     * <p>The number of days for which automated backups are retained. Setting this
+     * parameter to a positive number enables backups. Setting this parameter to 0
+     * disables automated backups.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be a value from 0 to 35.</p> </li> <li> <p>Can't be set to 0 if the DB
+     * instance is a source to Read Replicas.</p> </li> </ul>
      */
     inline PromoteReadReplicaRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 

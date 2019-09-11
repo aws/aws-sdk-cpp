@@ -135,9 +135,10 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code>: The name of
      * the service.</p> </li> <li> <p> <code>vpc-id</code>: The ID of the VPC in which
      * the endpoint resides.</p> </li> <li> <p> <code>vpc-endpoint-id</code>: The ID of
-     * the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code>: The state of
-     * the endpoint. (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>)</p> </li> <li> <p>
+     * the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code> - The state of
+     * the endpoint (<code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -153,9 +154,10 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code>: The name of
      * the service.</p> </li> <li> <p> <code>vpc-id</code>: The ID of the VPC in which
      * the endpoint resides.</p> </li> <li> <p> <code>vpc-endpoint-id</code>: The ID of
-     * the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code>: The state of
-     * the endpoint. (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>)</p> </li> <li> <p>
+     * the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code> - The state of
+     * the endpoint (<code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -171,9 +173,10 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code>: The name of
      * the service.</p> </li> <li> <p> <code>vpc-id</code>: The ID of the VPC in which
      * the endpoint resides.</p> </li> <li> <p> <code>vpc-endpoint-id</code>: The ID of
-     * the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code>: The state of
-     * the endpoint. (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>)</p> </li> <li> <p>
+     * the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code> - The state of
+     * the endpoint (<code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -189,9 +192,10 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code>: The name of
      * the service.</p> </li> <li> <p> <code>vpc-id</code>: The ID of the VPC in which
      * the endpoint resides.</p> </li> <li> <p> <code>vpc-endpoint-id</code>: The ID of
-     * the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code>: The state of
-     * the endpoint. (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>)</p> </li> <li> <p>
+     * the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code> - The state of
+     * the endpoint (<code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -207,9 +211,10 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code>: The name of
      * the service.</p> </li> <li> <p> <code>vpc-id</code>: The ID of the VPC in which
      * the endpoint resides.</p> </li> <li> <p> <code>vpc-endpoint-id</code>: The ID of
-     * the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code>: The state of
-     * the endpoint. (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>)</p> </li> <li> <p>
+     * the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code> - The state of
+     * the endpoint (<code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -225,9 +230,10 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code>: The name of
      * the service.</p> </li> <li> <p> <code>vpc-id</code>: The ID of the VPC in which
      * the endpoint resides.</p> </li> <li> <p> <code>vpc-endpoint-id</code>: The ID of
-     * the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code>: The state of
-     * the endpoint. (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>)</p> </li> <li> <p>
+     * the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code> - The state of
+     * the endpoint (<code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -243,9 +249,10 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code>: The name of
      * the service.</p> </li> <li> <p> <code>vpc-id</code>: The ID of the VPC in which
      * the endpoint resides.</p> </li> <li> <p> <code>vpc-endpoint-id</code>: The ID of
-     * the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code>: The state of
-     * the endpoint. (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>)</p> </li> <li> <p>
+     * the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code> - The state of
+     * the endpoint (<code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -261,9 +268,10 @@ namespace Model
      * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code>: The name of
      * the service.</p> </li> <li> <p> <code>vpc-id</code>: The ID of the VPC in which
      * the endpoint resides.</p> </li> <li> <p> <code>vpc-endpoint-id</code>: The ID of
-     * the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code>: The state of
-     * the endpoint. (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>)</p> </li> <li> <p>
+     * the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code> - The state of
+     * the endpoint (<code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key

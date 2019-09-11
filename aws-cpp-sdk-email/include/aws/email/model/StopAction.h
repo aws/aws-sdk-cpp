@@ -56,32 +56,38 @@ namespace Model
 
 
     /**
-     * <p>The name of the RuleSet that is being stopped.</p>
+     * <p>The scope of the StopAction. The only acceptable value is
+     * <code>RuleSet</code>.</p>
      */
     inline const StopScope& GetScope() const{ return m_scope; }
 
     /**
-     * <p>The name of the RuleSet that is being stopped.</p>
+     * <p>The scope of the StopAction. The only acceptable value is
+     * <code>RuleSet</code>.</p>
      */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
-     * <p>The name of the RuleSet that is being stopped.</p>
+     * <p>The scope of the StopAction. The only acceptable value is
+     * <code>RuleSet</code>.</p>
      */
     inline void SetScope(const StopScope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
-     * <p>The name of the RuleSet that is being stopped.</p>
+     * <p>The scope of the StopAction. The only acceptable value is
+     * <code>RuleSet</code>.</p>
      */
     inline void SetScope(StopScope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
-     * <p>The name of the RuleSet that is being stopped.</p>
+     * <p>The scope of the StopAction. The only acceptable value is
+     * <code>RuleSet</code>.</p>
      */
     inline StopAction& WithScope(const StopScope& value) { SetScope(value); return *this;}
 
     /**
-     * <p>The name of the RuleSet that is being stopped.</p>
+     * <p>The scope of the StopAction. The only acceptable value is
+     * <code>RuleSet</code>.</p>
      */
     inline StopAction& WithScope(StopScope&& value) { SetScope(std::move(value)); return *this;}
 

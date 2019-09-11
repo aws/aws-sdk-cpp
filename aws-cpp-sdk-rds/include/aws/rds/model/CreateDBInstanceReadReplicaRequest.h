@@ -607,6 +607,103 @@ namespace Model
 
 
     /**
+     * <p>The name of the DB parameter group to associate with this DB instance.</p>
+     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
+     * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
+     * same region Read Replica, or the default <code>DBParameterGroup</code> for the
+     * specified DB engine for a cross region Read Replica.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
+     */
+    inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance.</p>
+     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
+     * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
+     * same region Read Replica, or the default <code>DBParameterGroup</code> for the
+     * specified DB engine for a cross region Read Replica.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
+     */
+    inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance.</p>
+     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
+     * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
+     * same region Read Replica, or the default <code>DBParameterGroup</code> for the
+     * specified DB engine for a cross region Read Replica.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
+     */
+    inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance.</p>
+     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
+     * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
+     * same region Read Replica, or the default <code>DBParameterGroup</code> for the
+     * specified DB engine for a cross region Read Replica.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
+     */
+    inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::move(value); }
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance.</p>
+     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
+     * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
+     * same region Read Replica, or the default <code>DBParameterGroup</code> for the
+     * specified DB engine for a cross region Read Replica.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
+     */
+    inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance.</p>
+     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
+     * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
+     * same region Read Replica, or the default <code>DBParameterGroup</code> for the
+     * specified DB engine for a cross region Read Replica.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance.</p>
+     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
+     * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
+     * same region Read Replica, or the default <code>DBParameterGroup</code> for the
+     * specified DB engine for a cross region Read Replica.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance.</p>
+     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
+     * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
+     * same region Read Replica, or the default <code>DBParameterGroup</code> for the
+     * specified DB engine for a cross region Read Replica.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
+
+
+    /**
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
@@ -1968,6 +2065,9 @@ namespace Model
 
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
+
+    Aws::String m_dBParameterGroupName;
+    bool m_dBParameterGroupNameHasBeenSet;
 
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;

@@ -97,42 +97,50 @@ namespace Model
 
 
     /**
-     * <p>The type of the endpoint. One of: <code>READER</code>, <code>ANY</code>. </p>
+     * <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>,
+     * <code>ANY</code>.</p>
      */
     inline const Aws::String& GetEndpointType() const{ return m_endpointType; }
 
     /**
-     * <p>The type of the endpoint. One of: <code>READER</code>, <code>ANY</code>. </p>
+     * <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>,
+     * <code>ANY</code>.</p>
      */
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
 
     /**
-     * <p>The type of the endpoint. One of: <code>READER</code>, <code>ANY</code>. </p>
+     * <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>,
+     * <code>ANY</code>.</p>
      */
     inline void SetEndpointType(const Aws::String& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
     /**
-     * <p>The type of the endpoint. One of: <code>READER</code>, <code>ANY</code>. </p>
+     * <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>,
+     * <code>ANY</code>.</p>
      */
     inline void SetEndpointType(Aws::String&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
 
     /**
-     * <p>The type of the endpoint. One of: <code>READER</code>, <code>ANY</code>. </p>
+     * <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>,
+     * <code>ANY</code>.</p>
      */
     inline void SetEndpointType(const char* value) { m_endpointTypeHasBeenSet = true; m_endpointType.assign(value); }
 
     /**
-     * <p>The type of the endpoint. One of: <code>READER</code>, <code>ANY</code>. </p>
+     * <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>,
+     * <code>ANY</code>.</p>
      */
     inline ModifyDBClusterEndpointRequest& WithEndpointType(const Aws::String& value) { SetEndpointType(value); return *this;}
 
     /**
-     * <p>The type of the endpoint. One of: <code>READER</code>, <code>ANY</code>. </p>
+     * <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>,
+     * <code>ANY</code>.</p>
      */
     inline ModifyDBClusterEndpointRequest& WithEndpointType(Aws::String&& value) { SetEndpointType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of the endpoint. One of: <code>READER</code>, <code>ANY</code>. </p>
+     * <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>,
+     * <code>ANY</code>.</p>
      */
     inline ModifyDBClusterEndpointRequest& WithEndpointType(const char* value) { SetEndpointType(value); return *this;}
 

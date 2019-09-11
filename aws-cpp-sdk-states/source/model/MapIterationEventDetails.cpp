@@ -45,16 +45,16 @@ MapIterationEventDetails::MapIterationEventDetails(JsonView jsonValue) :
 
 MapIterationEventDetails& MapIterationEventDetails::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Name"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_name = jsonValue.GetString("Name");
+    m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Index"))
+  if(jsonValue.ValueExists("index"))
   {
-    m_index = jsonValue.GetInteger("Index");
+    m_index = jsonValue.GetInteger("index");
 
     m_indexHasBeenSet = true;
   }
@@ -68,13 +68,13 @@ JsonValue MapIterationEventDetails::Jsonize() const
 
   if(m_nameHasBeenSet)
   {
-   payload.WithString("Name", m_name);
+   payload.WithString("name", m_name);
 
   }
 
   if(m_indexHasBeenSet)
   {
-   payload.WithInteger("Index", m_index);
+   payload.WithInteger("index", m_index);
 
   }
 

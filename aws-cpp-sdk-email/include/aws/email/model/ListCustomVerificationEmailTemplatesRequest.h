@@ -30,8 +30,8 @@ namespace Model
    * <p>Represents a request to list the existing custom verification email templates
    * for your account.</p> <p>For more information about custom verification email
    * templates, see <a
-   * href="ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
-   * Verification Email Templates</a> in the <i>Amazon SES Developer
+   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+   * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListCustomVerificationEmailTemplatesRequest">AWS
    * API Reference</a></p>

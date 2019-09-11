@@ -43,9 +43,9 @@ MapStateStartedEventDetails::MapStateStartedEventDetails(JsonView jsonValue) :
 
 MapStateStartedEventDetails& MapStateStartedEventDetails::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Length"))
+  if(jsonValue.ValueExists("length"))
   {
-    m_length = jsonValue.GetInteger("Length");
+    m_length = jsonValue.GetInteger("length");
 
     m_lengthHasBeenSet = true;
   }
@@ -59,7 +59,7 @@ JsonValue MapStateStartedEventDetails::Jsonize() const
 
   if(m_lengthHasBeenSet)
   {
-   payload.WithInteger("Length", m_length);
+   payload.WithInteger("length", m_length);
 
   }
 

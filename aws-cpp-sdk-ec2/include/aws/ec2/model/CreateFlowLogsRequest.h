@@ -608,6 +608,111 @@ namespace Model
      */
     inline CreateFlowLogsRequest& WithLogDestination(const char* value) { SetLogDestination(value); return *this;}
 
+
+    /**
+     * <p>The fields to include in the flow log record, in the order in which they
+     * should appear. For a list of available fields, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
+     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * default format. If you specify this parameter, you must specify at least one
+     * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
+     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
+     * surround the parameter value.</p> <p>Only applicable to flow logs that are
+     * published to an Amazon S3 bucket.</p>
+     */
+    inline const Aws::String& GetLogFormat() const{ return m_logFormat; }
+
+    /**
+     * <p>The fields to include in the flow log record, in the order in which they
+     * should appear. For a list of available fields, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
+     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * default format. If you specify this parameter, you must specify at least one
+     * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
+     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
+     * surround the parameter value.</p> <p>Only applicable to flow logs that are
+     * published to an Amazon S3 bucket.</p>
+     */
+    inline bool LogFormatHasBeenSet() const { return m_logFormatHasBeenSet; }
+
+    /**
+     * <p>The fields to include in the flow log record, in the order in which they
+     * should appear. For a list of available fields, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
+     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * default format. If you specify this parameter, you must specify at least one
+     * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
+     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
+     * surround the parameter value.</p> <p>Only applicable to flow logs that are
+     * published to an Amazon S3 bucket.</p>
+     */
+    inline void SetLogFormat(const Aws::String& value) { m_logFormatHasBeenSet = true; m_logFormat = value; }
+
+    /**
+     * <p>The fields to include in the flow log record, in the order in which they
+     * should appear. For a list of available fields, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
+     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * default format. If you specify this parameter, you must specify at least one
+     * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
+     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
+     * surround the parameter value.</p> <p>Only applicable to flow logs that are
+     * published to an Amazon S3 bucket.</p>
+     */
+    inline void SetLogFormat(Aws::String&& value) { m_logFormatHasBeenSet = true; m_logFormat = std::move(value); }
+
+    /**
+     * <p>The fields to include in the flow log record, in the order in which they
+     * should appear. For a list of available fields, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
+     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * default format. If you specify this parameter, you must specify at least one
+     * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
+     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
+     * surround the parameter value.</p> <p>Only applicable to flow logs that are
+     * published to an Amazon S3 bucket.</p>
+     */
+    inline void SetLogFormat(const char* value) { m_logFormatHasBeenSet = true; m_logFormat.assign(value); }
+
+    /**
+     * <p>The fields to include in the flow log record, in the order in which they
+     * should appear. For a list of available fields, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
+     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * default format. If you specify this parameter, you must specify at least one
+     * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
+     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
+     * surround the parameter value.</p> <p>Only applicable to flow logs that are
+     * published to an Amazon S3 bucket.</p>
+     */
+    inline CreateFlowLogsRequest& WithLogFormat(const Aws::String& value) { SetLogFormat(value); return *this;}
+
+    /**
+     * <p>The fields to include in the flow log record, in the order in which they
+     * should appear. For a list of available fields, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
+     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * default format. If you specify this parameter, you must specify at least one
+     * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
+     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
+     * surround the parameter value.</p> <p>Only applicable to flow logs that are
+     * published to an Amazon S3 bucket.</p>
+     */
+    inline CreateFlowLogsRequest& WithLogFormat(Aws::String&& value) { SetLogFormat(std::move(value)); return *this;}
+
+    /**
+     * <p>The fields to include in the flow log record, in the order in which they
+     * should appear. For a list of available fields, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
+     * Log Records</a>. If you omit this parameter, the flow log is created using the
+     * default format. If you specify this parameter, you must specify at least one
+     * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
+     * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
+     * surround the parameter value.</p> <p>Only applicable to flow logs that are
+     * published to an Amazon S3 bucket.</p>
+     */
+    inline CreateFlowLogsRequest& WithLogFormat(const char* value) { SetLogFormat(value); return *this;}
+
   private:
 
     bool m_dryRun;
@@ -636,6 +741,9 @@ namespace Model
 
     Aws::String m_logDestination;
     bool m_logDestinationHasBeenSet;
+
+    Aws::String m_logFormat;
+    bool m_logFormatHasBeenSet;
   };
 
 } // namespace Model

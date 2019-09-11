@@ -33,7 +33,8 @@ CreateFlowLogsRequest::CreateFlowLogsRequest() :
     m_trafficTypeHasBeenSet(false),
     m_logDestinationType(LogDestinationType::NOT_SET),
     m_logDestinationTypeHasBeenSet(false),
-    m_logDestinationHasBeenSet(false)
+    m_logDestinationHasBeenSet(false),
+    m_logFormatHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,11 @@ Aws::String CreateFlowLogsRequest::SerializePayload() const
   if(m_logDestinationHasBeenSet)
   {
     ss << "LogDestination=" << StringUtils::URLEncode(m_logDestination.c_str()) << "&";
+  }
+
+  if(m_logFormatHasBeenSet)
+  {
+    ss << "LogFormat=" << StringUtils::URLEncode(m_logFormat.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

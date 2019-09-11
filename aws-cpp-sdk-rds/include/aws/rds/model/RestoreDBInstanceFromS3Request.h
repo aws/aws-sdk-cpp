@@ -821,58 +821,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the DB parameter group to associate with this DB instance. If
-     * this argument is omitted, the default parameter group for the specified engine
-     * is used. </p>
+     * <p>The name of the DB parameter group to associate with this DB instance.</p>
+     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the
+     * default <code>DBParameterGroup</code> for the specified DB engine is used.</p>
      */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
 
     /**
-     * <p>The name of the DB parameter group to associate with this DB instance. If
-     * this argument is omitted, the default parameter group for the specified engine
-     * is used. </p>
+     * <p>The name of the DB parameter group to associate with this DB instance.</p>
+     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the
+     * default <code>DBParameterGroup</code> for the specified DB engine is used.</p>
      */
     inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the DB parameter group to associate with this DB instance. If
-     * this argument is omitted, the default parameter group for the specified engine
-     * is used. </p>
+     * <p>The name of the DB parameter group to associate with this DB instance.</p>
+     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the
+     * default <code>DBParameterGroup</code> for the specified DB engine is used.</p>
      */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**
-     * <p>The name of the DB parameter group to associate with this DB instance. If
-     * this argument is omitted, the default parameter group for the specified engine
-     * is used. </p>
+     * <p>The name of the DB parameter group to associate with this DB instance.</p>
+     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the
+     * default <code>DBParameterGroup</code> for the specified DB engine is used.</p>
      */
     inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::move(value); }
 
     /**
-     * <p>The name of the DB parameter group to associate with this DB instance. If
-     * this argument is omitted, the default parameter group for the specified engine
-     * is used. </p>
+     * <p>The name of the DB parameter group to associate with this DB instance.</p>
+     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the
+     * default <code>DBParameterGroup</code> for the specified DB engine is used.</p>
      */
     inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
 
     /**
-     * <p>The name of the DB parameter group to associate with this DB instance. If
-     * this argument is omitted, the default parameter group for the specified engine
-     * is used. </p>
+     * <p>The name of the DB parameter group to associate with this DB instance.</p>
+     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the
+     * default <code>DBParameterGroup</code> for the specified DB engine is used.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
 
     /**
-     * <p>The name of the DB parameter group to associate with this DB instance. If
-     * this argument is omitted, the default parameter group for the specified engine
-     * is used. </p>
+     * <p>The name of the DB parameter group to associate with this DB instance.</p>
+     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the
+     * default <code>DBParameterGroup</code> for the specified DB engine is used.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the DB parameter group to associate with this DB instance. If
-     * this argument is omitted, the default parameter group for the specified engine
-     * is used. </p>
+     * <p>The name of the DB parameter group to associate with this DB instance.</p>
+     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the
+     * default <code>DBParameterGroup</code> for the specified DB engine is used.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 

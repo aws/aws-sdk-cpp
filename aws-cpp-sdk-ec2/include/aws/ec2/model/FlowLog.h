@@ -566,6 +566,47 @@ namespace Model
      */
     inline FlowLog& WithLogDestination(const char* value) { SetLogDestination(value); return *this;}
 
+
+    /**
+     * <p>The format of the flow log record.</p>
+     */
+    inline const Aws::String& GetLogFormat() const{ return m_logFormat; }
+
+    /**
+     * <p>The format of the flow log record.</p>
+     */
+    inline bool LogFormatHasBeenSet() const { return m_logFormatHasBeenSet; }
+
+    /**
+     * <p>The format of the flow log record.</p>
+     */
+    inline void SetLogFormat(const Aws::String& value) { m_logFormatHasBeenSet = true; m_logFormat = value; }
+
+    /**
+     * <p>The format of the flow log record.</p>
+     */
+    inline void SetLogFormat(Aws::String&& value) { m_logFormatHasBeenSet = true; m_logFormat = std::move(value); }
+
+    /**
+     * <p>The format of the flow log record.</p>
+     */
+    inline void SetLogFormat(const char* value) { m_logFormatHasBeenSet = true; m_logFormat.assign(value); }
+
+    /**
+     * <p>The format of the flow log record.</p>
+     */
+    inline FlowLog& WithLogFormat(const Aws::String& value) { SetLogFormat(value); return *this;}
+
+    /**
+     * <p>The format of the flow log record.</p>
+     */
+    inline FlowLog& WithLogFormat(Aws::String&& value) { SetLogFormat(std::move(value)); return *this;}
+
+    /**
+     * <p>The format of the flow log record.</p>
+     */
+    inline FlowLog& WithLogFormat(const char* value) { SetLogFormat(value); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_creationTime;
@@ -600,6 +641,9 @@ namespace Model
 
     Aws::String m_logDestination;
     bool m_logDestinationHasBeenSet;
+
+    Aws::String m_logFormat;
+    bool m_logFormatHasBeenSet;
   };
 
 } // namespace Model

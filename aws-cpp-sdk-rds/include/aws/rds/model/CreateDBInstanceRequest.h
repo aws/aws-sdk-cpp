@@ -1419,73 +1419,81 @@ namespace Model
 
 
     /**
-     * <p>The name of the DB parameter group to associate with this DB instance. If
-     * this argument is omitted, the default DBParameterGroup for the specified engine
-     * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
-     * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>The name of the DB parameter group to associate with this DB instance. If you
+     * do not specify a value for <code>DBParameterGroupName</code>, then the default
+     * <code>DBParameterGroup</code> for the specified DB engine is used.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
 
     /**
-     * <p>The name of the DB parameter group to associate with this DB instance. If
-     * this argument is omitted, the default DBParameterGroup for the specified engine
-     * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
-     * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>The name of the DB parameter group to associate with this DB instance. If you
+     * do not specify a value for <code>DBParameterGroupName</code>, then the default
+     * <code>DBParameterGroup</code> for the specified DB engine is used.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the DB parameter group to associate with this DB instance. If
-     * this argument is omitted, the default DBParameterGroup for the specified engine
-     * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
-     * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>The name of the DB parameter group to associate with this DB instance. If you
+     * do not specify a value for <code>DBParameterGroupName</code>, then the default
+     * <code>DBParameterGroup</code> for the specified DB engine is used.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**
-     * <p>The name of the DB parameter group to associate with this DB instance. If
-     * this argument is omitted, the default DBParameterGroup for the specified engine
-     * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
-     * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>The name of the DB parameter group to associate with this DB instance. If you
+     * do not specify a value for <code>DBParameterGroupName</code>, then the default
+     * <code>DBParameterGroup</code> for the specified DB engine is used.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::move(value); }
 
     /**
-     * <p>The name of the DB parameter group to associate with this DB instance. If
-     * this argument is omitted, the default DBParameterGroup for the specified engine
-     * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
-     * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>The name of the DB parameter group to associate with this DB instance. If you
+     * do not specify a value for <code>DBParameterGroupName</code>, then the default
+     * <code>DBParameterGroup</code> for the specified DB engine is used.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
 
     /**
-     * <p>The name of the DB parameter group to associate with this DB instance. If
-     * this argument is omitted, the default DBParameterGroup for the specified engine
-     * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
-     * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>The name of the DB parameter group to associate with this DB instance. If you
+     * do not specify a value for <code>DBParameterGroupName</code>, then the default
+     * <code>DBParameterGroup</code> for the specified DB engine is used.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
 
     /**
-     * <p>The name of the DB parameter group to associate with this DB instance. If
-     * this argument is omitted, the default DBParameterGroup for the specified engine
-     * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
-     * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>The name of the DB parameter group to associate with this DB instance. If you
+     * do not specify a value for <code>DBParameterGroupName</code>, then the default
+     * <code>DBParameterGroup</code> for the specified DB engine is used.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the DB parameter group to associate with this DB instance. If
-     * this argument is omitted, the default DBParameterGroup for the specified engine
-     * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
-     * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>The name of the DB parameter group to associate with this DB instance. If you
+     * do not specify a value for <code>DBParameterGroupName</code>, then the default
+     * <code>DBParameterGroup</code> for the specified DB engine is used.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}

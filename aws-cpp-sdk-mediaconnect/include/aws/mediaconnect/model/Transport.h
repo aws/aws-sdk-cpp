@@ -115,43 +115,47 @@ namespace Model
 
 
     /**
-     * The smoothing max bitrate for RTP and RTP-FEC streams.
+     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
      */
     inline int GetMaxBitrate() const{ return m_maxBitrate; }
 
     /**
-     * The smoothing max bitrate for RTP and RTP-FEC streams.
+     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
      */
     inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
 
     /**
-     * The smoothing max bitrate for RTP and RTP-FEC streams.
+     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
      */
     inline void SetMaxBitrate(int value) { m_maxBitrateHasBeenSet = true; m_maxBitrate = value; }
 
     /**
-     * The smoothing max bitrate for RTP and RTP-FEC streams.
+     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
      */
     inline Transport& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
 
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based
+     * and Zixi-based streams.
      */
     inline int GetMaxLatency() const{ return m_maxLatency; }
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based
+     * and Zixi-based streams.
      */
     inline bool MaxLatencyHasBeenSet() const { return m_maxLatencyHasBeenSet; }
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based
+     * and Zixi-based streams.
      */
     inline void SetMaxLatency(int value) { m_maxLatencyHasBeenSet = true; m_maxLatency = value; }
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based
+     * and Zixi-based streams.
      */
     inline Transport& WithMaxLatency(int value) { SetMaxLatency(value); return *this;}
 
@@ -229,22 +233,22 @@ namespace Model
 
 
     /**
-     * The smoothing latency in milliseconds for RTP and RTP-FEC streams.
+     * The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
      */
     inline int GetSmoothingLatency() const{ return m_smoothingLatency; }
 
     /**
-     * The smoothing latency in milliseconds for RTP and RTP-FEC streams.
+     * The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
      */
     inline bool SmoothingLatencyHasBeenSet() const { return m_smoothingLatencyHasBeenSet; }
 
     /**
-     * The smoothing latency in milliseconds for RTP and RTP-FEC streams.
+     * The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
      */
     inline void SetSmoothingLatency(int value) { m_smoothingLatencyHasBeenSet = true; m_smoothingLatency = value; }
 
     /**
-     * The smoothing latency in milliseconds for RTP and RTP-FEC streams.
+     * The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
      */
     inline Transport& WithSmoothingLatency(int value) { SetSmoothingLatency(value); return *this;}
 

@@ -29,7 +29,8 @@ namespace Model
     zixi_push,
     rtp_fec,
     rtp,
-    zixi_pull
+    zixi_pull,
+    rist
   };
 
 namespace ProtocolMapper

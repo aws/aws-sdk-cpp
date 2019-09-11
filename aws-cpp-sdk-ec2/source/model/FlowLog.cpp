@@ -43,7 +43,8 @@ FlowLog::FlowLog() :
     m_trafficTypeHasBeenSet(false),
     m_logDestinationType(LogDestinationType::NOT_SET),
     m_logDestinationTypeHasBeenSet(false),
-    m_logDestinationHasBeenSet(false)
+    m_logDestinationHasBeenSet(false),
+    m_logFormatHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ FlowLog::FlowLog(const XmlNode& xmlNode) :
     m_trafficTypeHasBeenSet(false),
     m_logDestinationType(LogDestinationType::NOT_SET),
     m_logDestinationTypeHasBeenSet(false),
-    m_logDestinationHasBeenSet(false)
+    m_logDestinationHasBeenSet(false),
+    m_logFormatHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -137,6 +139,12 @@ FlowLog& FlowLog::operator =(const XmlNode& xmlNode)
       m_logDestination = Aws::Utils::Xml::DecodeEscapedXmlText(logDestinationNode.GetText());
       m_logDestinationHasBeenSet = true;
     }
+    XmlNode logFormatNode = resultNode.FirstChild("logFormat");
+    if(!logFormatNode.IsNull())
+    {
+      m_logFormat = Aws::Utils::Xml::DecodeEscapedXmlText(logFormatNode.GetText());
+      m_logFormatHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -199,6 +207,11 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".LogDestination=" << StringUtils::URLEncode(m_logDestination.c_str()) << "&";
   }
 
+  if(m_logFormatHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LogFormat=" << StringUtils::URLEncode(m_logFormat.c_str()) << "&";
+  }
+
 }
 
 void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -246,6 +259,10 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_logDestinationHasBeenSet)
   {
       oStream << location << ".LogDestination=" << StringUtils::URLEncode(m_logDestination.c_str()) << "&";
+  }
+  if(m_logFormatHasBeenSet)
+  {
+      oStream << location << ".LogFormat=" << StringUtils::URLEncode(m_logFormat.c_str()) << "&";
   }
 }
 

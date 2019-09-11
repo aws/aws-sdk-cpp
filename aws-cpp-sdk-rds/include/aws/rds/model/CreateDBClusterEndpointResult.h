@@ -309,43 +309,43 @@ namespace Model
 
     /**
      * <p>The type associated with a custom endpoint. One of: <code>READER</code>,
-     * <code>ANY</code>.</p>
+     * <code>WRITER</code>, <code>ANY</code>.</p>
      */
     inline const Aws::String& GetCustomEndpointType() const{ return m_customEndpointType; }
 
     /**
      * <p>The type associated with a custom endpoint. One of: <code>READER</code>,
-     * <code>ANY</code>.</p>
+     * <code>WRITER</code>, <code>ANY</code>.</p>
      */
     inline void SetCustomEndpointType(const Aws::String& value) { m_customEndpointType = value; }
 
     /**
      * <p>The type associated with a custom endpoint. One of: <code>READER</code>,
-     * <code>ANY</code>.</p>
+     * <code>WRITER</code>, <code>ANY</code>.</p>
      */
     inline void SetCustomEndpointType(Aws::String&& value) { m_customEndpointType = std::move(value); }
 
     /**
      * <p>The type associated with a custom endpoint. One of: <code>READER</code>,
-     * <code>ANY</code>.</p>
+     * <code>WRITER</code>, <code>ANY</code>.</p>
      */
     inline void SetCustomEndpointType(const char* value) { m_customEndpointType.assign(value); }
 
     /**
      * <p>The type associated with a custom endpoint. One of: <code>READER</code>,
-     * <code>ANY</code>.</p>
+     * <code>WRITER</code>, <code>ANY</code>.</p>
      */
     inline CreateDBClusterEndpointResult& WithCustomEndpointType(const Aws::String& value) { SetCustomEndpointType(value); return *this;}
 
     /**
      * <p>The type associated with a custom endpoint. One of: <code>READER</code>,
-     * <code>ANY</code>.</p>
+     * <code>WRITER</code>, <code>ANY</code>.</p>
      */
     inline CreateDBClusterEndpointResult& WithCustomEndpointType(Aws::String&& value) { SetCustomEndpointType(std::move(value)); return *this;}
 
     /**
      * <p>The type associated with a custom endpoint. One of: <code>READER</code>,
-     * <code>ANY</code>.</p>
+     * <code>WRITER</code>, <code>ANY</code>.</p>
      */
     inline CreateDBClusterEndpointResult& WithCustomEndpointType(const char* value) { SetCustomEndpointType(value); return *this;}
 
