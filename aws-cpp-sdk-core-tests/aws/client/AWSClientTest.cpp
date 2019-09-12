@@ -29,6 +29,7 @@
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/platform/Environment.h>
 #include <fstream>
+#include <thread>
 
 using Aws::Utils::DateTime;
 using Aws::Utils::DateFormat;
@@ -360,7 +361,9 @@ TEST(AWSClientTest, TestOverflowContainer)
 TEST_F(AWSConfigTestSuite, TestClientConfigurationWithNonExistentProfile)
 {
     // create a config file with profile named Dijkstra
-    Aws::String configFileName = Aws::Auth::GetConfigProfileFilename() + "Test";
+    Aws::StringStream ss;
+    ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
+    Aws::String configFileName = ss.str();
     Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1/*overwrite*/);
 
     Aws::OFStream configFileNew(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
@@ -390,7 +393,9 @@ TEST_F(AWSConfigTestSuite, TestClientConfigurationWithNonExistentConfigFile)
 TEST_F(AWSConfigTestSuite, TestClientConfigurationSetsRegionToProfile)
 {
     // create a config file with profile named Dijkstra
-    Aws::String configFileName = Aws::Auth::GetConfigProfileFilename() + "Test";
+    Aws::StringStream ss;
+    ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
+    Aws::String configFileName = ss.str();
     Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1/*overwrite*/);
 
     Aws::OFStream configFileNew(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);

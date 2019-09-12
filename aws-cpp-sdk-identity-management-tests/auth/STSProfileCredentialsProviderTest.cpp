@@ -26,7 +26,7 @@
 
 #include <fstream>
 #include <cassert>
-
+#include <thread>
 using namespace Aws::Auth;
 using namespace Aws::STS;
 using namespace Aws::Utils;
@@ -88,7 +88,10 @@ public:
         Aws::Environment::UnSetEnv("AWS_DEFAULT_PROFILE");
 
         Aws::FileSystem::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
-        m_configFilename = Aws::Auth::GetConfigProfileFilename() + "_sts_test";
+        
+        Aws::StringStream ss;
+        ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
+        m_configFilename = ss.str();
 
         SaveEnvironmentVariable("AWS_CONFIG");
         Aws::Environment::SetEnv("AWS_CONFIG_FILE", m_configFilename.c_str(), 1);

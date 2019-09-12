@@ -53,7 +53,9 @@ public:
         SaveEnvironmentVariable("AWS_DEFAULT_PROFILE");
 
         Aws::FileSystem::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
-        m_credsFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() + "_blah";
+        Aws::StringStream ss;
+        ss << ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() << "_blah" << std::this_thread::get_id();
+        m_credsFileName = ss.str();
 
         Aws::Environment::SetEnv("AWS_SHARED_CREDENTIALS_FILE", m_credsFileName.c_str(), 1);
         Aws::Environment::UnSetEnv("AWS_DEFAULT_PROFILE");
@@ -142,7 +144,9 @@ public:
         SaveEnvironmentVariable("AWS_EC2_METADATA_DISABLED");
 
         Aws::FileSystem::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
-        m_credsFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() + "_blah";
+        Aws::StringStream ss;
+        ss << ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() << "_blah" << std::this_thread::get_id();
+        m_credsFileName = ss.str();
         Aws::Environment::SetEnv("AWS_SHARED_CREDENTIALS_FILE", m_credsFileName.c_str(), 1);
 
     }
@@ -491,7 +495,9 @@ public:
         SaveEnvironmentVariable("AWS_CONFIG_FILE");
         SaveEnvironmentVariable("AWS_DEFAULT_PROFILE");
 
-        m_configFileName = Aws::Auth::GetConfigProfileFilename() + "_blah";
+        Aws::StringStream ss;
+        ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
+        m_configFileName = ss.str();
         Aws::Environment::SetEnv("AWS_CONFIG_FILE", m_configFileName.c_str(), 1);
         Aws::Environment::UnSetEnv("AWS_DEFAULT_PROFILE");
 
@@ -621,7 +627,9 @@ public:
         SaveEnvironmentVariable("AWS_ROLE_ARN");
         SaveEnvironmentVariable("AWS_DEFAULT_REGION");
 
-        m_configFileName = Aws::Auth::GetConfigProfileFilename() + "_blah";
+        Aws::StringStream ss;
+        ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
+        m_configFileName = ss.str();
         Aws::Environment::SetEnv("AWS_CONFIG_FILE", m_configFileName.c_str(), 1);
         Aws::Environment::UnSetEnv("AWS_DEFAULT_PROFILE");
         // avoid reading region environment var when testing get correct region from config file
