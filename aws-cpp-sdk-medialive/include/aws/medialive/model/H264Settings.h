@@ -18,6 +18,7 @@
 #include <aws/medialive/model/H264AdaptiveQuantization.h>
 #include <aws/medialive/model/AfdSignaling.h>
 #include <aws/medialive/model/H264ColorMetadata.h>
+#include <aws/medialive/model/H264ColorSpaceSettings.h>
 #include <aws/medialive/model/H264EntropyEncoding.h>
 #include <aws/medialive/model/FixedAfd.h>
 #include <aws/medialive/model/H264FlickerAq.h>
@@ -204,22 +205,22 @@ namespace Model
 
 
     /**
-     * Size of buffer (HRD buffer model) in bits/second.
+     * Size of buffer (HRD buffer model) in bits.
      */
     inline int GetBufSize() const{ return m_bufSize; }
 
     /**
-     * Size of buffer (HRD buffer model) in bits/second.
+     * Size of buffer (HRD buffer model) in bits.
      */
     inline bool BufSizeHasBeenSet() const { return m_bufSizeHasBeenSet; }
 
     /**
-     * Size of buffer (HRD buffer model) in bits/second.
+     * Size of buffer (HRD buffer model) in bits.
      */
     inline void SetBufSize(int value) { m_bufSizeHasBeenSet = true; m_bufSize = value; }
 
     /**
-     * Size of buffer (HRD buffer model) in bits/second.
+     * Size of buffer (HRD buffer model) in bits.
      */
     inline H264Settings& WithBufSize(int value) { SetBufSize(value); return *this;}
 
@@ -253,6 +254,37 @@ namespace Model
      * Includes colorspace metadata in the output.
      */
     inline H264Settings& WithColorMetadata(H264ColorMetadata&& value) { SetColorMetadata(std::move(value)); return *this;}
+
+
+    /**
+     * Color Space settings
+     */
+    inline const H264ColorSpaceSettings& GetColorSpaceSettings() const{ return m_colorSpaceSettings; }
+
+    /**
+     * Color Space settings
+     */
+    inline bool ColorSpaceSettingsHasBeenSet() const { return m_colorSpaceSettingsHasBeenSet; }
+
+    /**
+     * Color Space settings
+     */
+    inline void SetColorSpaceSettings(const H264ColorSpaceSettings& value) { m_colorSpaceSettingsHasBeenSet = true; m_colorSpaceSettings = value; }
+
+    /**
+     * Color Space settings
+     */
+    inline void SetColorSpaceSettings(H264ColorSpaceSettings&& value) { m_colorSpaceSettingsHasBeenSet = true; m_colorSpaceSettings = std::move(value); }
+
+    /**
+     * Color Space settings
+     */
+    inline H264Settings& WithColorSpaceSettings(const H264ColorSpaceSettings& value) { SetColorSpaceSettings(value); return *this;}
+
+    /**
+     * Color Space settings
+     */
+    inline H264Settings& WithColorSpaceSettings(H264ColorSpaceSettings&& value) { SetColorSpaceSettings(std::move(value)); return *this;}
 
 
     /**
@@ -669,34 +701,34 @@ namespace Model
 
 
     /**
-     * For QVBR: See the tooltip for Quality level 
+     * For QVBR: See the tooltip for Quality level
 
-For VBR: Set the maximum bitrate
-     * in order to accommodate expected spikes in the complexity of the video.
+For VBR: Set the maximum bitrate in
+     * order to accommodate expected spikes in the complexity of the video.
      */
     inline int GetMaxBitrate() const{ return m_maxBitrate; }
 
     /**
-     * For QVBR: See the tooltip for Quality level 
+     * For QVBR: See the tooltip for Quality level
 
-For VBR: Set the maximum bitrate
-     * in order to accommodate expected spikes in the complexity of the video.
+For VBR: Set the maximum bitrate in
+     * order to accommodate expected spikes in the complexity of the video.
      */
     inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
 
     /**
-     * For QVBR: See the tooltip for Quality level 
+     * For QVBR: See the tooltip for Quality level
 
-For VBR: Set the maximum bitrate
-     * in order to accommodate expected spikes in the complexity of the video.
+For VBR: Set the maximum bitrate in
+     * order to accommodate expected spikes in the complexity of the video.
      */
     inline void SetMaxBitrate(int value) { m_maxBitrateHasBeenSet = true; m_maxBitrate = value; }
 
     /**
-     * For QVBR: See the tooltip for Quality level 
+     * For QVBR: See the tooltip for Quality level
 
-For VBR: Set the maximum bitrate
-     * in order to accommodate expected spikes in the complexity of the video.
+For VBR: Set the maximum bitrate in
+     * order to accommodate expected spikes in the complexity of the video.
      */
     inline H264Settings& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
 
@@ -953,7 +985,7 @@ For VBR: Set the maximum bitrate
 
 
     /**
-     * Rate control mode. 
+     * Rate control mode.
 
 QVBR: Quality will match the specified quality level except
      * when it is constrained by the
@@ -973,7 +1005,7 @@ your
     inline const H264RateControlMode& GetRateControlMode() const{ return m_rateControlMode; }
 
     /**
-     * Rate control mode. 
+     * Rate control mode.
 
 QVBR: Quality will match the specified quality level except
      * when it is constrained by the
@@ -993,7 +1025,7 @@ your
     inline bool RateControlModeHasBeenSet() const { return m_rateControlModeHasBeenSet; }
 
     /**
-     * Rate control mode. 
+     * Rate control mode.
 
 QVBR: Quality will match the specified quality level except
      * when it is constrained by the
@@ -1013,7 +1045,7 @@ your
     inline void SetRateControlMode(const H264RateControlMode& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = value; }
 
     /**
-     * Rate control mode. 
+     * Rate control mode.
 
 QVBR: Quality will match the specified quality level except
      * when it is constrained by the
@@ -1033,7 +1065,7 @@ your
     inline void SetRateControlMode(H264RateControlMode&& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = std::move(value); }
 
     /**
-     * Rate control mode. 
+     * Rate control mode.
 
 QVBR: Quality will match the specified quality level except
      * when it is constrained by the
@@ -1053,7 +1085,7 @@ your
     inline H264Settings& WithRateControlMode(const H264RateControlMode& value) { SetRateControlMode(value); return *this;}
 
     /**
-     * Rate control mode. 
+     * Rate control mode.
 
 QVBR: Quality will match the specified quality level except
      * when it is constrained by the
@@ -1440,6 +1472,9 @@ This field is optional; when
 
     H264ColorMetadata m_colorMetadata;
     bool m_colorMetadataHasBeenSet;
+
+    H264ColorSpaceSettings m_colorSpaceSettings;
+    bool m_colorSpaceSettingsHasBeenSet;
 
     H264EntropyEncoding m_entropyEncoding;
     bool m_entropyEncodingHasBeenSet;

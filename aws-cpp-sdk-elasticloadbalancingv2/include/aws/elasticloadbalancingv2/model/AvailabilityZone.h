@@ -93,83 +93,99 @@ namespace Model
 
 
     /**
-     * <p>The ID of the subnet.</p>
+     * <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>The ID of the subnet.</p>
+     * <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
      */
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
-     * <p>The ID of the subnet.</p>
+     * <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>The ID of the subnet.</p>
+     * <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
-     * <p>The ID of the subnet.</p>
+     * <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
-     * <p>The ID of the subnet.</p>
+     * <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
      */
     inline AvailabilityZone& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The ID of the subnet.</p>
+     * <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
      */
     inline AvailabilityZone& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the subnet.</p>
+     * <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
      */
     inline AvailabilityZone& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
 
     /**
-     * <p>[Network Load Balancers] The static IP address.</p>
+     * <p>[Network Load Balancers] If you need static IP addresses for your load
+     * balancer, you can specify one Elastic IP address per Availability Zone when you
+     * create the load balancer.</p>
      */
     inline const Aws::Vector<LoadBalancerAddress>& GetLoadBalancerAddresses() const{ return m_loadBalancerAddresses; }
 
     /**
-     * <p>[Network Load Balancers] The static IP address.</p>
+     * <p>[Network Load Balancers] If you need static IP addresses for your load
+     * balancer, you can specify one Elastic IP address per Availability Zone when you
+     * create the load balancer.</p>
      */
     inline bool LoadBalancerAddressesHasBeenSet() const { return m_loadBalancerAddressesHasBeenSet; }
 
     /**
-     * <p>[Network Load Balancers] The static IP address.</p>
+     * <p>[Network Load Balancers] If you need static IP addresses for your load
+     * balancer, you can specify one Elastic IP address per Availability Zone when you
+     * create the load balancer.</p>
      */
     inline void SetLoadBalancerAddresses(const Aws::Vector<LoadBalancerAddress>& value) { m_loadBalancerAddressesHasBeenSet = true; m_loadBalancerAddresses = value; }
 
     /**
-     * <p>[Network Load Balancers] The static IP address.</p>
+     * <p>[Network Load Balancers] If you need static IP addresses for your load
+     * balancer, you can specify one Elastic IP address per Availability Zone when you
+     * create the load balancer.</p>
      */
     inline void SetLoadBalancerAddresses(Aws::Vector<LoadBalancerAddress>&& value) { m_loadBalancerAddressesHasBeenSet = true; m_loadBalancerAddresses = std::move(value); }
 
     /**
-     * <p>[Network Load Balancers] The static IP address.</p>
+     * <p>[Network Load Balancers] If you need static IP addresses for your load
+     * balancer, you can specify one Elastic IP address per Availability Zone when you
+     * create the load balancer.</p>
      */
     inline AvailabilityZone& WithLoadBalancerAddresses(const Aws::Vector<LoadBalancerAddress>& value) { SetLoadBalancerAddresses(value); return *this;}
 
     /**
-     * <p>[Network Load Balancers] The static IP address.</p>
+     * <p>[Network Load Balancers] If you need static IP addresses for your load
+     * balancer, you can specify one Elastic IP address per Availability Zone when you
+     * create the load balancer.</p>
      */
     inline AvailabilityZone& WithLoadBalancerAddresses(Aws::Vector<LoadBalancerAddress>&& value) { SetLoadBalancerAddresses(std::move(value)); return *this;}
 
     /**
-     * <p>[Network Load Balancers] The static IP address.</p>
+     * <p>[Network Load Balancers] If you need static IP addresses for your load
+     * balancer, you can specify one Elastic IP address per Availability Zone when you
+     * create the load balancer.</p>
      */
     inline AvailabilityZone& AddLoadBalancerAddresses(const LoadBalancerAddress& value) { m_loadBalancerAddressesHasBeenSet = true; m_loadBalancerAddresses.push_back(value); return *this; }
 
     /**
-     * <p>[Network Load Balancers] The static IP address.</p>
+     * <p>[Network Load Balancers] If you need static IP addresses for your load
+     * balancer, you can specify one Elastic IP address per Availability Zone when you
+     * create the load balancer.</p>
      */
     inline AvailabilityZone& AddLoadBalancerAddresses(LoadBalancerAddress&& value) { m_loadBalancerAddressesHasBeenSet = true; m_loadBalancerAddresses.push_back(std::move(value)); return *this; }
 

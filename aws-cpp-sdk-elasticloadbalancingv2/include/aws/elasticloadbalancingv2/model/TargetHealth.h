@@ -96,19 +96,18 @@ namespace Model
      * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an
      * expected HTTP code.</p> </li> <li> <p> <code>Target.Timeout</code> - The health
      * check requests timed out.</p> </li> <li> <p>
-     * <code>Target.FailedHealthChecks</code> - The health checks failed because the
-     * connection to the target timed out, the target response was malformed, or the
-     * target failed the health check for an unknown reason.</p> </li> <li> <p>
-     * <code>Elb.InternalError</code> - The health checks failed due to an internal
-     * error.</p> </li> </ul> <p>If the target state is <code>unused</code>, the reason
-     * code can be one of the following values:</p> <ul> <li> <p>
-     * <code>Target.NotRegistered</code> - The target is not registered with the target
-     * group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The target group is not
-     * used by any load balancer or the target is in an Availability Zone that is not
-     * enabled for its load balancer.</p> </li> <li> <p> <code>Target.IpUnusable</code>
-     * - The target IP address is reserved for use by a load balancer.</p> </li> <li>
-     * <p> <code>Target.InvalidState</code> - The target is in the stopped or
-     * terminated state.</p> </li> </ul> <p>If the target state is
+     * <code>Target.FailedHealthChecks</code> - The load balancer received an error
+     * while establishing a connection to the target or the target response was
+     * malformed.</p> </li> <li> <p> <code>Elb.InternalError</code> - The health checks
+     * failed due to an internal error.</p> </li> </ul> <p>If the target state is
+     * <code>unused</code>, the reason code can be one of the following values:</p>
+     * <ul> <li> <p> <code>Target.NotRegistered</code> - The target is not registered
+     * with the target group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The
+     * target group is not used by any load balancer or the target is in an
+     * Availability Zone that is not enabled for its load balancer.</p> </li> <li> <p>
+     * <code>Target.IpUnusable</code> - The target IP address is reserved for use by a
+     * load balancer.</p> </li> <li> <p> <code>Target.InvalidState</code> - The target
+     * is in the stopped or terminated state.</p> </li> </ul> <p>If the target state is
      * <code>draining</code>, the reason code can be the following value:</p> <ul> <li>
      * <p> <code>Target.DeregistrationInProgress</code> - The target is in the process
      * of being deregistered and the deregistration delay period has not expired.</p>
@@ -132,19 +131,18 @@ namespace Model
      * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an
      * expected HTTP code.</p> </li> <li> <p> <code>Target.Timeout</code> - The health
      * check requests timed out.</p> </li> <li> <p>
-     * <code>Target.FailedHealthChecks</code> - The health checks failed because the
-     * connection to the target timed out, the target response was malformed, or the
-     * target failed the health check for an unknown reason.</p> </li> <li> <p>
-     * <code>Elb.InternalError</code> - The health checks failed due to an internal
-     * error.</p> </li> </ul> <p>If the target state is <code>unused</code>, the reason
-     * code can be one of the following values:</p> <ul> <li> <p>
-     * <code>Target.NotRegistered</code> - The target is not registered with the target
-     * group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The target group is not
-     * used by any load balancer or the target is in an Availability Zone that is not
-     * enabled for its load balancer.</p> </li> <li> <p> <code>Target.IpUnusable</code>
-     * - The target IP address is reserved for use by a load balancer.</p> </li> <li>
-     * <p> <code>Target.InvalidState</code> - The target is in the stopped or
-     * terminated state.</p> </li> </ul> <p>If the target state is
+     * <code>Target.FailedHealthChecks</code> - The load balancer received an error
+     * while establishing a connection to the target or the target response was
+     * malformed.</p> </li> <li> <p> <code>Elb.InternalError</code> - The health checks
+     * failed due to an internal error.</p> </li> </ul> <p>If the target state is
+     * <code>unused</code>, the reason code can be one of the following values:</p>
+     * <ul> <li> <p> <code>Target.NotRegistered</code> - The target is not registered
+     * with the target group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The
+     * target group is not used by any load balancer or the target is in an
+     * Availability Zone that is not enabled for its load balancer.</p> </li> <li> <p>
+     * <code>Target.IpUnusable</code> - The target IP address is reserved for use by a
+     * load balancer.</p> </li> <li> <p> <code>Target.InvalidState</code> - The target
+     * is in the stopped or terminated state.</p> </li> </ul> <p>If the target state is
      * <code>draining</code>, the reason code can be the following value:</p> <ul> <li>
      * <p> <code>Target.DeregistrationInProgress</code> - The target is in the process
      * of being deregistered and the deregistration delay period has not expired.</p>
@@ -168,19 +166,18 @@ namespace Model
      * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an
      * expected HTTP code.</p> </li> <li> <p> <code>Target.Timeout</code> - The health
      * check requests timed out.</p> </li> <li> <p>
-     * <code>Target.FailedHealthChecks</code> - The health checks failed because the
-     * connection to the target timed out, the target response was malformed, or the
-     * target failed the health check for an unknown reason.</p> </li> <li> <p>
-     * <code>Elb.InternalError</code> - The health checks failed due to an internal
-     * error.</p> </li> </ul> <p>If the target state is <code>unused</code>, the reason
-     * code can be one of the following values:</p> <ul> <li> <p>
-     * <code>Target.NotRegistered</code> - The target is not registered with the target
-     * group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The target group is not
-     * used by any load balancer or the target is in an Availability Zone that is not
-     * enabled for its load balancer.</p> </li> <li> <p> <code>Target.IpUnusable</code>
-     * - The target IP address is reserved for use by a load balancer.</p> </li> <li>
-     * <p> <code>Target.InvalidState</code> - The target is in the stopped or
-     * terminated state.</p> </li> </ul> <p>If the target state is
+     * <code>Target.FailedHealthChecks</code> - The load balancer received an error
+     * while establishing a connection to the target or the target response was
+     * malformed.</p> </li> <li> <p> <code>Elb.InternalError</code> - The health checks
+     * failed due to an internal error.</p> </li> </ul> <p>If the target state is
+     * <code>unused</code>, the reason code can be one of the following values:</p>
+     * <ul> <li> <p> <code>Target.NotRegistered</code> - The target is not registered
+     * with the target group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The
+     * target group is not used by any load balancer or the target is in an
+     * Availability Zone that is not enabled for its load balancer.</p> </li> <li> <p>
+     * <code>Target.IpUnusable</code> - The target IP address is reserved for use by a
+     * load balancer.</p> </li> <li> <p> <code>Target.InvalidState</code> - The target
+     * is in the stopped or terminated state.</p> </li> </ul> <p>If the target state is
      * <code>draining</code>, the reason code can be the following value:</p> <ul> <li>
      * <p> <code>Target.DeregistrationInProgress</code> - The target is in the process
      * of being deregistered and the deregistration delay period has not expired.</p>
@@ -204,19 +201,18 @@ namespace Model
      * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an
      * expected HTTP code.</p> </li> <li> <p> <code>Target.Timeout</code> - The health
      * check requests timed out.</p> </li> <li> <p>
-     * <code>Target.FailedHealthChecks</code> - The health checks failed because the
-     * connection to the target timed out, the target response was malformed, or the
-     * target failed the health check for an unknown reason.</p> </li> <li> <p>
-     * <code>Elb.InternalError</code> - The health checks failed due to an internal
-     * error.</p> </li> </ul> <p>If the target state is <code>unused</code>, the reason
-     * code can be one of the following values:</p> <ul> <li> <p>
-     * <code>Target.NotRegistered</code> - The target is not registered with the target
-     * group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The target group is not
-     * used by any load balancer or the target is in an Availability Zone that is not
-     * enabled for its load balancer.</p> </li> <li> <p> <code>Target.IpUnusable</code>
-     * - The target IP address is reserved for use by a load balancer.</p> </li> <li>
-     * <p> <code>Target.InvalidState</code> - The target is in the stopped or
-     * terminated state.</p> </li> </ul> <p>If the target state is
+     * <code>Target.FailedHealthChecks</code> - The load balancer received an error
+     * while establishing a connection to the target or the target response was
+     * malformed.</p> </li> <li> <p> <code>Elb.InternalError</code> - The health checks
+     * failed due to an internal error.</p> </li> </ul> <p>If the target state is
+     * <code>unused</code>, the reason code can be one of the following values:</p>
+     * <ul> <li> <p> <code>Target.NotRegistered</code> - The target is not registered
+     * with the target group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The
+     * target group is not used by any load balancer or the target is in an
+     * Availability Zone that is not enabled for its load balancer.</p> </li> <li> <p>
+     * <code>Target.IpUnusable</code> - The target IP address is reserved for use by a
+     * load balancer.</p> </li> <li> <p> <code>Target.InvalidState</code> - The target
+     * is in the stopped or terminated state.</p> </li> </ul> <p>If the target state is
      * <code>draining</code>, the reason code can be the following value:</p> <ul> <li>
      * <p> <code>Target.DeregistrationInProgress</code> - The target is in the process
      * of being deregistered and the deregistration delay period has not expired.</p>
@@ -240,19 +236,18 @@ namespace Model
      * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an
      * expected HTTP code.</p> </li> <li> <p> <code>Target.Timeout</code> - The health
      * check requests timed out.</p> </li> <li> <p>
-     * <code>Target.FailedHealthChecks</code> - The health checks failed because the
-     * connection to the target timed out, the target response was malformed, or the
-     * target failed the health check for an unknown reason.</p> </li> <li> <p>
-     * <code>Elb.InternalError</code> - The health checks failed due to an internal
-     * error.</p> </li> </ul> <p>If the target state is <code>unused</code>, the reason
-     * code can be one of the following values:</p> <ul> <li> <p>
-     * <code>Target.NotRegistered</code> - The target is not registered with the target
-     * group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The target group is not
-     * used by any load balancer or the target is in an Availability Zone that is not
-     * enabled for its load balancer.</p> </li> <li> <p> <code>Target.IpUnusable</code>
-     * - The target IP address is reserved for use by a load balancer.</p> </li> <li>
-     * <p> <code>Target.InvalidState</code> - The target is in the stopped or
-     * terminated state.</p> </li> </ul> <p>If the target state is
+     * <code>Target.FailedHealthChecks</code> - The load balancer received an error
+     * while establishing a connection to the target or the target response was
+     * malformed.</p> </li> <li> <p> <code>Elb.InternalError</code> - The health checks
+     * failed due to an internal error.</p> </li> </ul> <p>If the target state is
+     * <code>unused</code>, the reason code can be one of the following values:</p>
+     * <ul> <li> <p> <code>Target.NotRegistered</code> - The target is not registered
+     * with the target group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The
+     * target group is not used by any load balancer or the target is in an
+     * Availability Zone that is not enabled for its load balancer.</p> </li> <li> <p>
+     * <code>Target.IpUnusable</code> - The target IP address is reserved for use by a
+     * load balancer.</p> </li> <li> <p> <code>Target.InvalidState</code> - The target
+     * is in the stopped or terminated state.</p> </li> </ul> <p>If the target state is
      * <code>draining</code>, the reason code can be the following value:</p> <ul> <li>
      * <p> <code>Target.DeregistrationInProgress</code> - The target is in the process
      * of being deregistered and the deregistration delay period has not expired.</p>
@@ -276,19 +271,18 @@ namespace Model
      * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an
      * expected HTTP code.</p> </li> <li> <p> <code>Target.Timeout</code> - The health
      * check requests timed out.</p> </li> <li> <p>
-     * <code>Target.FailedHealthChecks</code> - The health checks failed because the
-     * connection to the target timed out, the target response was malformed, or the
-     * target failed the health check for an unknown reason.</p> </li> <li> <p>
-     * <code>Elb.InternalError</code> - The health checks failed due to an internal
-     * error.</p> </li> </ul> <p>If the target state is <code>unused</code>, the reason
-     * code can be one of the following values:</p> <ul> <li> <p>
-     * <code>Target.NotRegistered</code> - The target is not registered with the target
-     * group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The target group is not
-     * used by any load balancer or the target is in an Availability Zone that is not
-     * enabled for its load balancer.</p> </li> <li> <p> <code>Target.IpUnusable</code>
-     * - The target IP address is reserved for use by a load balancer.</p> </li> <li>
-     * <p> <code>Target.InvalidState</code> - The target is in the stopped or
-     * terminated state.</p> </li> </ul> <p>If the target state is
+     * <code>Target.FailedHealthChecks</code> - The load balancer received an error
+     * while establishing a connection to the target or the target response was
+     * malformed.</p> </li> <li> <p> <code>Elb.InternalError</code> - The health checks
+     * failed due to an internal error.</p> </li> </ul> <p>If the target state is
+     * <code>unused</code>, the reason code can be one of the following values:</p>
+     * <ul> <li> <p> <code>Target.NotRegistered</code> - The target is not registered
+     * with the target group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The
+     * target group is not used by any load balancer or the target is in an
+     * Availability Zone that is not enabled for its load balancer.</p> </li> <li> <p>
+     * <code>Target.IpUnusable</code> - The target IP address is reserved for use by a
+     * load balancer.</p> </li> <li> <p> <code>Target.InvalidState</code> - The target
+     * is in the stopped or terminated state.</p> </li> </ul> <p>If the target state is
      * <code>draining</code>, the reason code can be the following value:</p> <ul> <li>
      * <p> <code>Target.DeregistrationInProgress</code> - The target is in the process
      * of being deregistered and the deregistration delay period has not expired.</p>

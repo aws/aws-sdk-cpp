@@ -192,49 +192,57 @@ namespace Model
 
     /**
      * <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda
-     * function, this parameter does not apply.</p>
+     * function, this parameter does not apply. Otherwise, this parameter is
+     * required.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
      * <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda
-     * function, this parameter does not apply.</p>
+     * function, this parameter does not apply. Otherwise, this parameter is
+     * required.</p>
      */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda
-     * function, this parameter does not apply.</p>
+     * function, this parameter does not apply. Otherwise, this parameter is
+     * required.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
      * <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda
-     * function, this parameter does not apply.</p>
+     * function, this parameter does not apply. Otherwise, this parameter is
+     * required.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda
-     * function, this parameter does not apply.</p>
+     * function, this parameter does not apply. Otherwise, this parameter is
+     * required.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
      * <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda
-     * function, this parameter does not apply.</p>
+     * function, this parameter does not apply. Otherwise, this parameter is
+     * required.</p>
      */
     inline CreateTargetGroupRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
      * <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda
-     * function, this parameter does not apply.</p>
+     * function, this parameter does not apply. Otherwise, this parameter is
+     * required.</p>
      */
     inline CreateTargetGroupRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda
-     * function, this parameter does not apply.</p>
+     * function, this parameter does not apply. Otherwise, this parameter is
+     * required.</p>
      */
     inline CreateTargetGroupRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 

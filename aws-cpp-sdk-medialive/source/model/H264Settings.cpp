@@ -41,6 +41,7 @@ H264Settings::H264Settings() :
     m_bufSizeHasBeenSet(false),
     m_colorMetadata(H264ColorMetadata::NOT_SET),
     m_colorMetadataHasBeenSet(false),
+    m_colorSpaceSettingsHasBeenSet(false),
     m_entropyEncoding(H264EntropyEncoding::NOT_SET),
     m_entropyEncodingHasBeenSet(false),
     m_fixedAfd(FixedAfd::NOT_SET),
@@ -119,6 +120,7 @@ H264Settings::H264Settings(JsonView jsonValue) :
     m_bufSizeHasBeenSet(false),
     m_colorMetadata(H264ColorMetadata::NOT_SET),
     m_colorMetadataHasBeenSet(false),
+    m_colorSpaceSettingsHasBeenSet(false),
     m_entropyEncoding(H264EntropyEncoding::NOT_SET),
     m_entropyEncodingHasBeenSet(false),
     m_fixedAfd(FixedAfd::NOT_SET),
@@ -227,6 +229,13 @@ H264Settings& H264Settings::operator =(JsonView jsonValue)
     m_colorMetadata = H264ColorMetadataMapper::GetH264ColorMetadataForName(jsonValue.GetString("colorMetadata"));
 
     m_colorMetadataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("colorSpaceSettings"))
+  {
+    m_colorSpaceSettings = jsonValue.GetObject("colorSpaceSettings");
+
+    m_colorSpaceSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("entropyEncoding"))
@@ -484,6 +493,12 @@ JsonValue H264Settings::Jsonize() const
   if(m_colorMetadataHasBeenSet)
   {
    payload.WithString("colorMetadata", H264ColorMetadataMapper::GetNameForH264ColorMetadata(m_colorMetadata));
+  }
+
+  if(m_colorSpaceSettingsHasBeenSet)
+  {
+   payload.WithObject("colorSpaceSettings", m_colorSpaceSettings.Jsonize());
+
   }
 
   if(m_entropyEncodingHasBeenSet)

@@ -51,38 +51,44 @@ namespace Model
 
 
     /**
-     * Specifies the colorspace of an input. This setting works in tandem with
-     * colorSpaceConversion to determine if any conversion will be performed.
+     * Specifies the color space of an input. This setting works in tandem with
+     * colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine
+     * if any conversion will be performed.
      */
     inline const VideoSelectorColorSpace& GetColorSpace() const{ return m_colorSpace; }
 
     /**
-     * Specifies the colorspace of an input. This setting works in tandem with
-     * colorSpaceConversion to determine if any conversion will be performed.
+     * Specifies the color space of an input. This setting works in tandem with
+     * colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine
+     * if any conversion will be performed.
      */
     inline bool ColorSpaceHasBeenSet() const { return m_colorSpaceHasBeenSet; }
 
     /**
-     * Specifies the colorspace of an input. This setting works in tandem with
-     * colorSpaceConversion to determine if any conversion will be performed.
+     * Specifies the color space of an input. This setting works in tandem with
+     * colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine
+     * if any conversion will be performed.
      */
     inline void SetColorSpace(const VideoSelectorColorSpace& value) { m_colorSpaceHasBeenSet = true; m_colorSpace = value; }
 
     /**
-     * Specifies the colorspace of an input. This setting works in tandem with
-     * colorSpaceConversion to determine if any conversion will be performed.
+     * Specifies the color space of an input. This setting works in tandem with
+     * colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine
+     * if any conversion will be performed.
      */
     inline void SetColorSpace(VideoSelectorColorSpace&& value) { m_colorSpaceHasBeenSet = true; m_colorSpace = std::move(value); }
 
     /**
-     * Specifies the colorspace of an input. This setting works in tandem with
-     * colorSpaceConversion to determine if any conversion will be performed.
+     * Specifies the color space of an input. This setting works in tandem with
+     * colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine
+     * if any conversion will be performed.
      */
     inline VideoSelector& WithColorSpace(const VideoSelectorColorSpace& value) { SetColorSpace(value); return *this;}
 
     /**
-     * Specifies the colorspace of an input. This setting works in tandem with
-     * colorSpaceConversion to determine if any conversion will be performed.
+     * Specifies the color space of an input. This setting works in tandem with
+     * colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine
+     * if any conversion will be performed.
      */
     inline VideoSelector& WithColorSpace(VideoSelectorColorSpace&& value) { SetColorSpace(std::move(value)); return *this;}
 

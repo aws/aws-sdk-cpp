@@ -31,8 +31,8 @@ namespace Aws
       {
 
         static const int error_HASH = HashingUtils::HashString("error");
-        static const int pending_fulfillment_HASH = HashingUtils::HashString("pending-fulfillment");
-        static const int pending_termination_HASH = HashingUtils::HashString("pending-termination");
+        static const int pending_fulfillment_HASH = HashingUtils::HashString("pending_fulfillment");
+        static const int pending_termination_HASH = HashingUtils::HashString("pending_termination");
         static const int fulfilled_HASH = HashingUtils::HashString("fulfilled");
 
 
@@ -72,9 +72,9 @@ namespace Aws
           case FleetActivityStatus::error:
             return "error";
           case FleetActivityStatus::pending_fulfillment:
-            return "pending-fulfillment";
+            return "pending_fulfillment";
           case FleetActivityStatus::pending_termination:
-            return "pending-termination";
+            return "pending_termination";
           case FleetActivityStatus::fulfilled:
             return "fulfilled";
           default:

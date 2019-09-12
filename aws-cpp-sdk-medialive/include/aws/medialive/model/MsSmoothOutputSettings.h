@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/MsSmoothH265PackagingType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -45,6 +46,49 @@ namespace Model
     MsSmoothOutputSettings(Aws::Utils::Json::JsonView jsonValue);
     MsSmoothOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Only applicable when this output is referencing an H.265 video
+     * description.
+Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+     */
+    inline const MsSmoothH265PackagingType& GetH265PackagingType() const{ return m_h265PackagingType; }
+
+    /**
+     * Only applicable when this output is referencing an H.265 video
+     * description.
+Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+     */
+    inline bool H265PackagingTypeHasBeenSet() const { return m_h265PackagingTypeHasBeenSet; }
+
+    /**
+     * Only applicable when this output is referencing an H.265 video
+     * description.
+Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+     */
+    inline void SetH265PackagingType(const MsSmoothH265PackagingType& value) { m_h265PackagingTypeHasBeenSet = true; m_h265PackagingType = value; }
+
+    /**
+     * Only applicable when this output is referencing an H.265 video
+     * description.
+Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+     */
+    inline void SetH265PackagingType(MsSmoothH265PackagingType&& value) { m_h265PackagingTypeHasBeenSet = true; m_h265PackagingType = std::move(value); }
+
+    /**
+     * Only applicable when this output is referencing an H.265 video
+     * description.
+Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+     */
+    inline MsSmoothOutputSettings& WithH265PackagingType(const MsSmoothH265PackagingType& value) { SetH265PackagingType(value); return *this;}
+
+    /**
+     * Only applicable when this output is referencing an H.265 video
+     * description.
+Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+     */
+    inline MsSmoothOutputSettings& WithH265PackagingType(MsSmoothH265PackagingType&& value) { SetH265PackagingType(std::move(value)); return *this;}
 
 
     /**
@@ -96,6 +140,9 @@ namespace Model
     inline MsSmoothOutputSettings& WithNameModifier(const char* value) { SetNameModifier(value); return *this;}
 
   private:
+
+    MsSmoothH265PackagingType m_h265PackagingType;
+    bool m_h265PackagingTypeHasBeenSet;
 
     Aws::String m_nameModifier;
     bool m_nameModifierHasBeenSet;

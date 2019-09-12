@@ -34,8 +34,8 @@ namespace Aws
         static const int active_HASH = HashingUtils::HashString("active");
         static const int deleted_HASH = HashingUtils::HashString("deleted");
         static const int failed_HASH = HashingUtils::HashString("failed");
-        static const int deleted_running_HASH = HashingUtils::HashString("deleted-running");
-        static const int deleted_terminating_HASH = HashingUtils::HashString("deleted-terminating");
+        static const int deleted_running_HASH = HashingUtils::HashString("deleted_running");
+        static const int deleted_terminating_HASH = HashingUtils::HashString("deleted_terminating");
         static const int modifying_HASH = HashingUtils::HashString("modifying");
 
 
@@ -93,9 +93,9 @@ namespace Aws
           case FleetStateCode::failed:
             return "failed";
           case FleetStateCode::deleted_running:
-            return "deleted-running";
+            return "deleted_running";
           case FleetStateCode::deleted_terminating:
-            return "deleted-terminating";
+            return "deleted_terminating";
           case FleetStateCode::modifying:
             return "modifying";
           default:

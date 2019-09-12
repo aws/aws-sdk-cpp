@@ -30,13 +30,15 @@ namespace Model
 
 VideoCodecSettings::VideoCodecSettings() : 
     m_frameCaptureSettingsHasBeenSet(false),
-    m_h264SettingsHasBeenSet(false)
+    m_h264SettingsHasBeenSet(false),
+    m_h265SettingsHasBeenSet(false)
 {
 }
 
 VideoCodecSettings::VideoCodecSettings(JsonView jsonValue) : 
     m_frameCaptureSettingsHasBeenSet(false),
-    m_h264SettingsHasBeenSet(false)
+    m_h264SettingsHasBeenSet(false),
+    m_h265SettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +59,13 @@ VideoCodecSettings& VideoCodecSettings::operator =(JsonView jsonValue)
     m_h264SettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("h265Settings"))
+  {
+    m_h265Settings = jsonValue.GetObject("h265Settings");
+
+    m_h265SettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +82,12 @@ JsonValue VideoCodecSettings::Jsonize() const
   if(m_h264SettingsHasBeenSet)
   {
    payload.WithObject("h264Settings", m_h264Settings.Jsonize());
+
+  }
+
+  if(m_h265SettingsHasBeenSet)
+  {
+   payload.WithObject("h265Settings", m_h265Settings.Jsonize());
 
   }
 

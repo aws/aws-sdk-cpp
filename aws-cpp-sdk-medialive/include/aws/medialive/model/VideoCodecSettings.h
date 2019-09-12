@@ -17,6 +17,7 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/FrameCaptureSettings.h>
 #include <aws/medialive/model/H264Settings.h>
+#include <aws/medialive/model/H265Settings.h>
 #include <utility>
 
 namespace Aws
@@ -85,6 +86,25 @@ namespace Model
     
     inline VideoCodecSettings& WithH264Settings(H264Settings&& value) { SetH264Settings(std::move(value)); return *this;}
 
+
+    
+    inline const H265Settings& GetH265Settings() const{ return m_h265Settings; }
+
+    
+    inline bool H265SettingsHasBeenSet() const { return m_h265SettingsHasBeenSet; }
+
+    
+    inline void SetH265Settings(const H265Settings& value) { m_h265SettingsHasBeenSet = true; m_h265Settings = value; }
+
+    
+    inline void SetH265Settings(H265Settings&& value) { m_h265SettingsHasBeenSet = true; m_h265Settings = std::move(value); }
+
+    
+    inline VideoCodecSettings& WithH265Settings(const H265Settings& value) { SetH265Settings(value); return *this;}
+
+    
+    inline VideoCodecSettings& WithH265Settings(H265Settings&& value) { SetH265Settings(std::move(value)); return *this;}
+
   private:
 
     FrameCaptureSettings m_frameCaptureSettings;
@@ -92,6 +112,9 @@ namespace Model
 
     H264Settings m_h264Settings;
     bool m_h264SettingsHasBeenSet;
+
+    H265Settings m_h265Settings;
+    bool m_h265SettingsHasBeenSet;
   };
 
 } // namespace Model

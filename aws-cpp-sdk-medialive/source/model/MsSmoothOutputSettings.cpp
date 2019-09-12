@@ -29,11 +29,15 @@ namespace Model
 {
 
 MsSmoothOutputSettings::MsSmoothOutputSettings() : 
+    m_h265PackagingType(MsSmoothH265PackagingType::NOT_SET),
+    m_h265PackagingTypeHasBeenSet(false),
     m_nameModifierHasBeenSet(false)
 {
 }
 
 MsSmoothOutputSettings::MsSmoothOutputSettings(JsonView jsonValue) : 
+    m_h265PackagingType(MsSmoothH265PackagingType::NOT_SET),
+    m_h265PackagingTypeHasBeenSet(false),
     m_nameModifierHasBeenSet(false)
 {
   *this = jsonValue;
@@ -41,6 +45,13 @@ MsSmoothOutputSettings::MsSmoothOutputSettings(JsonView jsonValue) :
 
 MsSmoothOutputSettings& MsSmoothOutputSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("h265PackagingType"))
+  {
+    m_h265PackagingType = MsSmoothH265PackagingTypeMapper::GetMsSmoothH265PackagingTypeForName(jsonValue.GetString("h265PackagingType"));
+
+    m_h265PackagingTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("nameModifier"))
   {
     m_nameModifier = jsonValue.GetString("nameModifier");
@@ -54,6 +65,11 @@ MsSmoothOutputSettings& MsSmoothOutputSettings::operator =(JsonView jsonValue)
 JsonValue MsSmoothOutputSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_h265PackagingTypeHasBeenSet)
+  {
+   payload.WithString("h265PackagingType", MsSmoothH265PackagingTypeMapper::GetNameForMsSmoothH265PackagingType(m_h265PackagingType));
+  }
 
   if(m_nameModifierHasBeenSet)
   {
