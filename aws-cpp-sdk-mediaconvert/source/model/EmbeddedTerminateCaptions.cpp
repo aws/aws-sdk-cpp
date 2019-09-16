@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/mediaconvert/model/CmafEncryptionType.h>
+#include <aws/mediaconvert/model/EmbeddedTerminateCaptions.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -27,42 +27,42 @@ namespace Aws
   {
     namespace Model
     {
-      namespace CmafEncryptionTypeMapper
+      namespace EmbeddedTerminateCaptionsMapper
       {
 
-        static const int SAMPLE_AES_HASH = HashingUtils::HashString("SAMPLE_AES");
-        static const int AES_CTR_HASH = HashingUtils::HashString("AES_CTR");
+        static const int END_OF_INPUT_HASH = HashingUtils::HashString("END_OF_INPUT");
+        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
 
-        CmafEncryptionType GetCmafEncryptionTypeForName(const Aws::String& name)
+        EmbeddedTerminateCaptions GetEmbeddedTerminateCaptionsForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == SAMPLE_AES_HASH)
+          if (hashCode == END_OF_INPUT_HASH)
           {
-            return CmafEncryptionType::SAMPLE_AES;
+            return EmbeddedTerminateCaptions::END_OF_INPUT;
           }
-          else if (hashCode == AES_CTR_HASH)
+          else if (hashCode == DISABLED_HASH)
           {
-            return CmafEncryptionType::AES_CTR;
+            return EmbeddedTerminateCaptions::DISABLED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<CmafEncryptionType>(hashCode);
+            return static_cast<EmbeddedTerminateCaptions>(hashCode);
           }
 
-          return CmafEncryptionType::NOT_SET;
+          return EmbeddedTerminateCaptions::NOT_SET;
         }
 
-        Aws::String GetNameForCmafEncryptionType(CmafEncryptionType enumValue)
+        Aws::String GetNameForEmbeddedTerminateCaptions(EmbeddedTerminateCaptions enumValue)
         {
           switch(enumValue)
           {
-          case CmafEncryptionType::SAMPLE_AES:
-            return "SAMPLE_AES";
-          case CmafEncryptionType::AES_CTR:
-            return "AES_CTR";
+          case EmbeddedTerminateCaptions::END_OF_INPUT:
+            return "END_OF_INPUT";
+          case EmbeddedTerminateCaptions::DISABLED:
+            return "DISABLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -74,7 +74,7 @@ namespace Aws
           }
         }
 
-      } // namespace CmafEncryptionTypeMapper
+      } // namespace EmbeddedTerminateCaptionsMapper
     } // namespace Model
   } // namespace MediaConvert
 } // namespace Aws

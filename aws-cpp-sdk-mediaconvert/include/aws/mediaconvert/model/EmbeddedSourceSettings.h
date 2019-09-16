@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/EmbeddedConvert608To708.h>
+#include <aws/mediaconvert/model/EmbeddedTerminateCaptions.h>
 #include <utility>
 
 namespace Aws
@@ -48,44 +49,56 @@ namespace Model
 
 
     /**
-     * When set to UPCONVERT, 608 data is both passed through via the "608
-     * compatibility bytes" fields of the 708 wrapper as well as translated into 708.
-     * 708 data present in the source content will be discarded.
+     * Specify whether this set of input captions appears in your outputs in both 608
+     * and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the
+     * captions data in two ways: it passes the 608 data through using the 608
+     * compatibility bytes fields of the 708 wrapper, and it also translates the 608
+     * data into 708.
      */
     inline const EmbeddedConvert608To708& GetConvert608To708() const{ return m_convert608To708; }
 
     /**
-     * When set to UPCONVERT, 608 data is both passed through via the "608
-     * compatibility bytes" fields of the 708 wrapper as well as translated into 708.
-     * 708 data present in the source content will be discarded.
+     * Specify whether this set of input captions appears in your outputs in both 608
+     * and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the
+     * captions data in two ways: it passes the 608 data through using the 608
+     * compatibility bytes fields of the 708 wrapper, and it also translates the 608
+     * data into 708.
      */
     inline bool Convert608To708HasBeenSet() const { return m_convert608To708HasBeenSet; }
 
     /**
-     * When set to UPCONVERT, 608 data is both passed through via the "608
-     * compatibility bytes" fields of the 708 wrapper as well as translated into 708.
-     * 708 data present in the source content will be discarded.
+     * Specify whether this set of input captions appears in your outputs in both 608
+     * and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the
+     * captions data in two ways: it passes the 608 data through using the 608
+     * compatibility bytes fields of the 708 wrapper, and it also translates the 608
+     * data into 708.
      */
     inline void SetConvert608To708(const EmbeddedConvert608To708& value) { m_convert608To708HasBeenSet = true; m_convert608To708 = value; }
 
     /**
-     * When set to UPCONVERT, 608 data is both passed through via the "608
-     * compatibility bytes" fields of the 708 wrapper as well as translated into 708.
-     * 708 data present in the source content will be discarded.
+     * Specify whether this set of input captions appears in your outputs in both 608
+     * and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the
+     * captions data in two ways: it passes the 608 data through using the 608
+     * compatibility bytes fields of the 708 wrapper, and it also translates the 608
+     * data into 708.
      */
     inline void SetConvert608To708(EmbeddedConvert608To708&& value) { m_convert608To708HasBeenSet = true; m_convert608To708 = std::move(value); }
 
     /**
-     * When set to UPCONVERT, 608 data is both passed through via the "608
-     * compatibility bytes" fields of the 708 wrapper as well as translated into 708.
-     * 708 data present in the source content will be discarded.
+     * Specify whether this set of input captions appears in your outputs in both 608
+     * and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the
+     * captions data in two ways: it passes the 608 data through using the 608
+     * compatibility bytes fields of the 708 wrapper, and it also translates the 608
+     * data into 708.
      */
     inline EmbeddedSourceSettings& WithConvert608To708(const EmbeddedConvert608To708& value) { SetConvert608To708(value); return *this;}
 
     /**
-     * When set to UPCONVERT, 608 data is both passed through via the "608
-     * compatibility bytes" fields of the 708 wrapper as well as translated into 708.
-     * 708 data present in the source content will be discarded.
+     * Specify whether this set of input captions appears in your outputs in both 608
+     * and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the
+     * captions data in two ways: it passes the 608 data through using the 608
+     * compatibility bytes fields of the 708 wrapper, and it also translates the 608
+     * data into 708.
      */
     inline EmbeddedSourceSettings& WithConvert608To708(EmbeddedConvert608To708&& value) { SetConvert608To708(std::move(value)); return *this;}
 
@@ -139,6 +152,49 @@ namespace Model
      */
     inline EmbeddedSourceSettings& WithSource608TrackNumber(int value) { SetSource608TrackNumber(value); return *this;}
 
+
+    /**
+     * By default, the service terminates any unterminated captions at the end of each
+     * input. If you want the caption to continue onto your next input, disable this
+     * setting.
+     */
+    inline const EmbeddedTerminateCaptions& GetTerminateCaptions() const{ return m_terminateCaptions; }
+
+    /**
+     * By default, the service terminates any unterminated captions at the end of each
+     * input. If you want the caption to continue onto your next input, disable this
+     * setting.
+     */
+    inline bool TerminateCaptionsHasBeenSet() const { return m_terminateCaptionsHasBeenSet; }
+
+    /**
+     * By default, the service terminates any unterminated captions at the end of each
+     * input. If you want the caption to continue onto your next input, disable this
+     * setting.
+     */
+    inline void SetTerminateCaptions(const EmbeddedTerminateCaptions& value) { m_terminateCaptionsHasBeenSet = true; m_terminateCaptions = value; }
+
+    /**
+     * By default, the service terminates any unterminated captions at the end of each
+     * input. If you want the caption to continue onto your next input, disable this
+     * setting.
+     */
+    inline void SetTerminateCaptions(EmbeddedTerminateCaptions&& value) { m_terminateCaptionsHasBeenSet = true; m_terminateCaptions = std::move(value); }
+
+    /**
+     * By default, the service terminates any unterminated captions at the end of each
+     * input. If you want the caption to continue onto your next input, disable this
+     * setting.
+     */
+    inline EmbeddedSourceSettings& WithTerminateCaptions(const EmbeddedTerminateCaptions& value) { SetTerminateCaptions(value); return *this;}
+
+    /**
+     * By default, the service terminates any unterminated captions at the end of each
+     * input. If you want the caption to continue onto your next input, disable this
+     * setting.
+     */
+    inline EmbeddedSourceSettings& WithTerminateCaptions(EmbeddedTerminateCaptions&& value) { SetTerminateCaptions(std::move(value)); return *this;}
+
   private:
 
     EmbeddedConvert608To708 m_convert608To708;
@@ -149,6 +205,9 @@ namespace Model
 
     int m_source608TrackNumber;
     bool m_source608TrackNumberHasBeenSet;
+
+    EmbeddedTerminateCaptions m_terminateCaptions;
+    bool m_terminateCaptionsHasBeenSet;
   };
 
 } // namespace Model

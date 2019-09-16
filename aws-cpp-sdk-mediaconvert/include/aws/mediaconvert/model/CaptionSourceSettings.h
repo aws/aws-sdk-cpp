@@ -40,8 +40,10 @@ namespace Model
 {
 
   /**
-   * Source settings (SourceSettings) contains the group of settings for captions in
-   * the input.<p><h3>See Also:</h3>   <a
+   * If your input captions are SCC, TTML, STL, SMI, SRT, or IMSC in an xml file,
+   * specify the URI of the input captions source file. If your input captions are
+   * IMSC in an IMF package, use TrackSourceSettings instead of
+   * FileSoureSettings.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CaptionSourceSettings">AWS
    * API Reference</a></p>
    */
@@ -148,32 +150,44 @@ namespace Model
 
 
     /**
-     * Settings for File-based Captions in Source
+     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file,
+     * specify the URI of the input caption source file. If your caption source is IMSC
+     * in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
      */
     inline const FileSourceSettings& GetFileSourceSettings() const{ return m_fileSourceSettings; }
 
     /**
-     * Settings for File-based Captions in Source
+     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file,
+     * specify the URI of the input caption source file. If your caption source is IMSC
+     * in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
      */
     inline bool FileSourceSettingsHasBeenSet() const { return m_fileSourceSettingsHasBeenSet; }
 
     /**
-     * Settings for File-based Captions in Source
+     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file,
+     * specify the URI of the input caption source file. If your caption source is IMSC
+     * in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
      */
     inline void SetFileSourceSettings(const FileSourceSettings& value) { m_fileSourceSettingsHasBeenSet = true; m_fileSourceSettings = value; }
 
     /**
-     * Settings for File-based Captions in Source
+     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file,
+     * specify the URI of the input caption source file. If your caption source is IMSC
+     * in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
      */
     inline void SetFileSourceSettings(FileSourceSettings&& value) { m_fileSourceSettingsHasBeenSet = true; m_fileSourceSettings = std::move(value); }
 
     /**
-     * Settings for File-based Captions in Source
+     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file,
+     * specify the URI of the input caption source file. If your caption source is IMSC
+     * in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
      */
     inline CaptionSourceSettings& WithFileSourceSettings(const FileSourceSettings& value) { SetFileSourceSettings(value); return *this;}
 
     /**
-     * Settings for File-based Captions in Source
+     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file,
+     * specify the URI of the input caption source file. If your caption source is IMSC
+     * in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
      */
     inline CaptionSourceSettings& WithFileSourceSettings(FileSourceSettings&& value) { SetFileSourceSettings(std::move(value)); return *this;}
 
@@ -247,38 +261,50 @@ namespace Model
 
 
     /**
-     * Settings specific to caption sources that are specfied by track number. Sources
-     * include IMSC in IMF.
+     * Settings specific to caption sources that are specified by track number.
+     * Currently, this is only IMSC captions in an IMF package. If your caption source
+     * is IMSC 1.1 in a separate xml file, use FileSourceSettings instead of
+     * TrackSourceSettings.
      */
     inline const TrackSourceSettings& GetTrackSourceSettings() const{ return m_trackSourceSettings; }
 
     /**
-     * Settings specific to caption sources that are specfied by track number. Sources
-     * include IMSC in IMF.
+     * Settings specific to caption sources that are specified by track number.
+     * Currently, this is only IMSC captions in an IMF package. If your caption source
+     * is IMSC 1.1 in a separate xml file, use FileSourceSettings instead of
+     * TrackSourceSettings.
      */
     inline bool TrackSourceSettingsHasBeenSet() const { return m_trackSourceSettingsHasBeenSet; }
 
     /**
-     * Settings specific to caption sources that are specfied by track number. Sources
-     * include IMSC in IMF.
+     * Settings specific to caption sources that are specified by track number.
+     * Currently, this is only IMSC captions in an IMF package. If your caption source
+     * is IMSC 1.1 in a separate xml file, use FileSourceSettings instead of
+     * TrackSourceSettings.
      */
     inline void SetTrackSourceSettings(const TrackSourceSettings& value) { m_trackSourceSettingsHasBeenSet = true; m_trackSourceSettings = value; }
 
     /**
-     * Settings specific to caption sources that are specfied by track number. Sources
-     * include IMSC in IMF.
+     * Settings specific to caption sources that are specified by track number.
+     * Currently, this is only IMSC captions in an IMF package. If your caption source
+     * is IMSC 1.1 in a separate xml file, use FileSourceSettings instead of
+     * TrackSourceSettings.
      */
     inline void SetTrackSourceSettings(TrackSourceSettings&& value) { m_trackSourceSettingsHasBeenSet = true; m_trackSourceSettings = std::move(value); }
 
     /**
-     * Settings specific to caption sources that are specfied by track number. Sources
-     * include IMSC in IMF.
+     * Settings specific to caption sources that are specified by track number.
+     * Currently, this is only IMSC captions in an IMF package. If your caption source
+     * is IMSC 1.1 in a separate xml file, use FileSourceSettings instead of
+     * TrackSourceSettings.
      */
     inline CaptionSourceSettings& WithTrackSourceSettings(const TrackSourceSettings& value) { SetTrackSourceSettings(value); return *this;}
 
     /**
-     * Settings specific to caption sources that are specfied by track number. Sources
-     * include IMSC in IMF.
+     * Settings specific to caption sources that are specified by track number.
+     * Currently, this is only IMSC captions in an IMF package. If your caption source
+     * is IMSC 1.1 in a separate xml file, use FileSourceSettings instead of
+     * TrackSourceSettings.
      */
     inline CaptionSourceSettings& WithTrackSourceSettings(TrackSourceSettings&& value) { SetTrackSourceSettings(std::move(value)); return *this;}
 

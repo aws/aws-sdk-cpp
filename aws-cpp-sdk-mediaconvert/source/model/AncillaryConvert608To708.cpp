@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/mediaconvert/model/CmafEncryptionType.h>
+#include <aws/mediaconvert/model/AncillaryConvert608To708.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -27,42 +27,42 @@ namespace Aws
   {
     namespace Model
     {
-      namespace CmafEncryptionTypeMapper
+      namespace AncillaryConvert608To708Mapper
       {
 
-        static const int SAMPLE_AES_HASH = HashingUtils::HashString("SAMPLE_AES");
-        static const int AES_CTR_HASH = HashingUtils::HashString("AES_CTR");
+        static const int UPCONVERT_HASH = HashingUtils::HashString("UPCONVERT");
+        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
 
-        CmafEncryptionType GetCmafEncryptionTypeForName(const Aws::String& name)
+        AncillaryConvert608To708 GetAncillaryConvert608To708ForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == SAMPLE_AES_HASH)
+          if (hashCode == UPCONVERT_HASH)
           {
-            return CmafEncryptionType::SAMPLE_AES;
+            return AncillaryConvert608To708::UPCONVERT;
           }
-          else if (hashCode == AES_CTR_HASH)
+          else if (hashCode == DISABLED_HASH)
           {
-            return CmafEncryptionType::AES_CTR;
+            return AncillaryConvert608To708::DISABLED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<CmafEncryptionType>(hashCode);
+            return static_cast<AncillaryConvert608To708>(hashCode);
           }
 
-          return CmafEncryptionType::NOT_SET;
+          return AncillaryConvert608To708::NOT_SET;
         }
 
-        Aws::String GetNameForCmafEncryptionType(CmafEncryptionType enumValue)
+        Aws::String GetNameForAncillaryConvert608To708(AncillaryConvert608To708 enumValue)
         {
           switch(enumValue)
           {
-          case CmafEncryptionType::SAMPLE_AES:
-            return "SAMPLE_AES";
-          case CmafEncryptionType::AES_CTR:
-            return "AES_CTR";
+          case AncillaryConvert608To708::UPCONVERT:
+            return "UPCONVERT";
+          case AncillaryConvert608To708::DISABLED:
+            return "DISABLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -74,7 +74,7 @@ namespace Aws
           }
         }
 
-      } // namespace CmafEncryptionTypeMapper
+      } // namespace AncillaryConvert608To708Mapper
     } // namespace Model
   } // namespace MediaConvert
 } // namespace Aws

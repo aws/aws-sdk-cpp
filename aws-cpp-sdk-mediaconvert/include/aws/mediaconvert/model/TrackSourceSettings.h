@@ -32,8 +32,10 @@ namespace Model
 {
 
   /**
-   * Settings specific to caption sources that are specfied by track number. Sources
-   * include IMSC in IMF.<p><h3>See Also:</h3>   <a
+   * Settings specific to caption sources that are specified by track number.
+   * Currently, this is only IMSC captions in an IMF package. If your caption source
+   * is IMSC 1.1 in a separate xml file, use FileSourceSettings instead of
+   * TrackSourceSettings.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TrackSourceSettings">AWS
    * API Reference</a></p>
    */

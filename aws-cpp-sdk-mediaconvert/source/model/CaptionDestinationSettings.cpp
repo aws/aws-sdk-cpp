@@ -34,6 +34,7 @@ CaptionDestinationSettings::CaptionDestinationSettings() :
     m_destinationTypeHasBeenSet(false),
     m_dvbSubDestinationSettingsHasBeenSet(false),
     m_embeddedDestinationSettingsHasBeenSet(false),
+    m_imscDestinationSettingsHasBeenSet(false),
     m_sccDestinationSettingsHasBeenSet(false),
     m_teletextDestinationSettingsHasBeenSet(false),
     m_ttmlDestinationSettingsHasBeenSet(false)
@@ -46,6 +47,7 @@ CaptionDestinationSettings::CaptionDestinationSettings(JsonView jsonValue) :
     m_destinationTypeHasBeenSet(false),
     m_dvbSubDestinationSettingsHasBeenSet(false),
     m_embeddedDestinationSettingsHasBeenSet(false),
+    m_imscDestinationSettingsHasBeenSet(false),
     m_sccDestinationSettingsHasBeenSet(false),
     m_teletextDestinationSettingsHasBeenSet(false),
     m_ttmlDestinationSettingsHasBeenSet(false)
@@ -81,6 +83,13 @@ CaptionDestinationSettings& CaptionDestinationSettings::operator =(JsonView json
     m_embeddedDestinationSettings = jsonValue.GetObject("embeddedDestinationSettings");
 
     m_embeddedDestinationSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("imscDestinationSettings"))
+  {
+    m_imscDestinationSettings = jsonValue.GetObject("imscDestinationSettings");
+
+    m_imscDestinationSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sccDestinationSettings"))
@@ -131,6 +140,12 @@ JsonValue CaptionDestinationSettings::Jsonize() const
   if(m_embeddedDestinationSettingsHasBeenSet)
   {
    payload.WithObject("embeddedDestinationSettings", m_embeddedDestinationSettings.Jsonize());
+
+  }
+
+  if(m_imscDestinationSettingsHasBeenSet)
+  {
+   payload.WithObject("imscDestinationSettings", m_imscDestinationSettings.Jsonize());
 
   }
 

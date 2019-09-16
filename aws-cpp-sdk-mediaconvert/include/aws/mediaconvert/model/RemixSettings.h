@@ -130,25 +130,25 @@ namespace Model
 
     /**
      * Specify the number of channels in this output after remixing. Valid values: 1,
-     * 2, 4, 6, 8
+     * 2, 4, 6, 8... 64. (1 and even numbers to 64.)
      */
     inline int GetChannelsOut() const{ return m_channelsOut; }
 
     /**
      * Specify the number of channels in this output after remixing. Valid values: 1,
-     * 2, 4, 6, 8
+     * 2, 4, 6, 8... 64. (1 and even numbers to 64.)
      */
     inline bool ChannelsOutHasBeenSet() const { return m_channelsOutHasBeenSet; }
 
     /**
      * Specify the number of channels in this output after remixing. Valid values: 1,
-     * 2, 4, 6, 8
+     * 2, 4, 6, 8... 64. (1 and even numbers to 64.)
      */
     inline void SetChannelsOut(int value) { m_channelsOutHasBeenSet = true; m_channelsOut = value; }
 
     /**
      * Specify the number of channels in this output after remixing. Valid values: 1,
-     * 2, 4, 6, 8
+     * 2, 4, 6, 8... 64. (1 and even numbers to 64.)
      */
     inline RemixSettings& WithChannelsOut(int value) { SetChannelsOut(value); return *this;}
 

@@ -49,8 +49,8 @@ namespace Model
     /**
      * Ignore this setting unless your input captions are SCC format and your output
      * captions are embedded in the video stream. Specify a CC number for each captions
-     * channel in this output. If you have two channels, pick CC numbers that aren't in
-     * the same field. For example, choose 1 and 3. For more information, see
+     * channel in this output. If you have two channels, choose CC numbers that aren't
+     * in the same field. For example, choose 1 and 3. For more information, see
      * https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      */
     inline int GetDestination608ChannelNumber() const{ return m_destination608ChannelNumber; }
@@ -58,8 +58,8 @@ namespace Model
     /**
      * Ignore this setting unless your input captions are SCC format and your output
      * captions are embedded in the video stream. Specify a CC number for each captions
-     * channel in this output. If you have two channels, pick CC numbers that aren't in
-     * the same field. For example, choose 1 and 3. For more information, see
+     * channel in this output. If you have two channels, choose CC numbers that aren't
+     * in the same field. For example, choose 1 and 3. For more information, see
      * https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      */
     inline bool Destination608ChannelNumberHasBeenSet() const { return m_destination608ChannelNumberHasBeenSet; }
@@ -67,8 +67,8 @@ namespace Model
     /**
      * Ignore this setting unless your input captions are SCC format and your output
      * captions are embedded in the video stream. Specify a CC number for each captions
-     * channel in this output. If you have two channels, pick CC numbers that aren't in
-     * the same field. For example, choose 1 and 3. For more information, see
+     * channel in this output. If you have two channels, choose CC numbers that aren't
+     * in the same field. For example, choose 1 and 3. For more information, see
      * https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      */
     inline void SetDestination608ChannelNumber(int value) { m_destination608ChannelNumberHasBeenSet = true; m_destination608ChannelNumber = value; }
@@ -76,8 +76,8 @@ namespace Model
     /**
      * Ignore this setting unless your input captions are SCC format and your output
      * captions are embedded in the video stream. Specify a CC number for each captions
-     * channel in this output. If you have two channels, pick CC numbers that aren't in
-     * the same field. For example, choose 1 and 3. For more information, see
+     * channel in this output. If you have two channels, choose CC numbers that aren't
+     * in the same field. For example, choose 1 and 3. For more information, see
      * https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      */
     inline EmbeddedDestinationSettings& WithDestination608ChannelNumber(int value) { SetDestination608ChannelNumber(value); return *this;}
@@ -90,7 +90,7 @@ namespace Model
      * each channel. To use this setting, also set Force 608 to 708 upconvert
      * (Convert608To708) to Upconvert (UPCONVERT) in your input captions selector
      * settings. If you choose to upconvert but don't specify a 708 service number,
-     * MediaConvert uses the number you specify for CC channel number
+     * MediaConvert uses the number that you specify for CC channel number
      * (destination608ChannelNumber) for the 708 service number. For more information,
      * see https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      */
@@ -103,7 +103,7 @@ namespace Model
      * each channel. To use this setting, also set Force 608 to 708 upconvert
      * (Convert608To708) to Upconvert (UPCONVERT) in your input captions selector
      * settings. If you choose to upconvert but don't specify a 708 service number,
-     * MediaConvert uses the number you specify for CC channel number
+     * MediaConvert uses the number that you specify for CC channel number
      * (destination608ChannelNumber) for the 708 service number. For more information,
      * see https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      */
@@ -116,7 +116,7 @@ namespace Model
      * each channel. To use this setting, also set Force 608 to 708 upconvert
      * (Convert608To708) to Upconvert (UPCONVERT) in your input captions selector
      * settings. If you choose to upconvert but don't specify a 708 service number,
-     * MediaConvert uses the number you specify for CC channel number
+     * MediaConvert uses the number that you specify for CC channel number
      * (destination608ChannelNumber) for the 708 service number. For more information,
      * see https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      */
@@ -129,7 +129,7 @@ namespace Model
      * each channel. To use this setting, also set Force 608 to 708 upconvert
      * (Convert608To708) to Upconvert (UPCONVERT) in your input captions selector
      * settings. If you choose to upconvert but don't specify a 708 service number,
-     * MediaConvert uses the number you specify for CC channel number
+     * MediaConvert uses the number that you specify for CC channel number
      * (destination608ChannelNumber) for the 708 service number. For more information,
      * see https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      */

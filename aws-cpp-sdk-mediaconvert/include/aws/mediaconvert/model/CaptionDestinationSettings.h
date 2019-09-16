@@ -19,6 +19,7 @@
 #include <aws/mediaconvert/model/CaptionDestinationType.h>
 #include <aws/mediaconvert/model/DvbSubDestinationSettings.h>
 #include <aws/mediaconvert/model/EmbeddedDestinationSettings.h>
+#include <aws/mediaconvert/model/ImscDestinationSettings.h>
 #include <aws/mediaconvert/model/SccDestinationSettings.h>
 #include <aws/mediaconvert/model/TeletextDestinationSettings.h>
 #include <aws/mediaconvert/model/TtmlDestinationSettings.h>
@@ -89,60 +90,66 @@ namespace Model
     /**
      * Specify the format for this set of captions on this output. The default format
      * is embedded without SCTE-20. Other options are embedded with SCTE-20, burn-in,
-     * DVB-sub, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20, choose
-     * SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies
-     * with the SCTE-43 spec. To create a non-compliant output where the embedded
-     * captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     * DVB-sub, IMSC, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20,
+     * choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that
+     * complies with the SCTE-43 spec. To create a non-compliant output where the
+     * embedded captions come first, choose Embedded plus SCTE-20
+     * (EMBEDDED_PLUS_SCTE20).
      */
     inline const CaptionDestinationType& GetDestinationType() const{ return m_destinationType; }
 
     /**
      * Specify the format for this set of captions on this output. The default format
      * is embedded without SCTE-20. Other options are embedded with SCTE-20, burn-in,
-     * DVB-sub, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20, choose
-     * SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies
-     * with the SCTE-43 spec. To create a non-compliant output where the embedded
-     * captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     * DVB-sub, IMSC, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20,
+     * choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that
+     * complies with the SCTE-43 spec. To create a non-compliant output where the
+     * embedded captions come first, choose Embedded plus SCTE-20
+     * (EMBEDDED_PLUS_SCTE20).
      */
     inline bool DestinationTypeHasBeenSet() const { return m_destinationTypeHasBeenSet; }
 
     /**
      * Specify the format for this set of captions on this output. The default format
      * is embedded without SCTE-20. Other options are embedded with SCTE-20, burn-in,
-     * DVB-sub, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20, choose
-     * SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies
-     * with the SCTE-43 spec. To create a non-compliant output where the embedded
-     * captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     * DVB-sub, IMSC, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20,
+     * choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that
+     * complies with the SCTE-43 spec. To create a non-compliant output where the
+     * embedded captions come first, choose Embedded plus SCTE-20
+     * (EMBEDDED_PLUS_SCTE20).
      */
     inline void SetDestinationType(const CaptionDestinationType& value) { m_destinationTypeHasBeenSet = true; m_destinationType = value; }
 
     /**
      * Specify the format for this set of captions on this output. The default format
      * is embedded without SCTE-20. Other options are embedded with SCTE-20, burn-in,
-     * DVB-sub, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20, choose
-     * SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies
-     * with the SCTE-43 spec. To create a non-compliant output where the embedded
-     * captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     * DVB-sub, IMSC, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20,
+     * choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that
+     * complies with the SCTE-43 spec. To create a non-compliant output where the
+     * embedded captions come first, choose Embedded plus SCTE-20
+     * (EMBEDDED_PLUS_SCTE20).
      */
     inline void SetDestinationType(CaptionDestinationType&& value) { m_destinationTypeHasBeenSet = true; m_destinationType = std::move(value); }
 
     /**
      * Specify the format for this set of captions on this output. The default format
      * is embedded without SCTE-20. Other options are embedded with SCTE-20, burn-in,
-     * DVB-sub, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20, choose
-     * SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies
-     * with the SCTE-43 spec. To create a non-compliant output where the embedded
-     * captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     * DVB-sub, IMSC, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20,
+     * choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that
+     * complies with the SCTE-43 spec. To create a non-compliant output where the
+     * embedded captions come first, choose Embedded plus SCTE-20
+     * (EMBEDDED_PLUS_SCTE20).
      */
     inline CaptionDestinationSettings& WithDestinationType(const CaptionDestinationType& value) { SetDestinationType(value); return *this;}
 
     /**
      * Specify the format for this set of captions on this output. The default format
      * is embedded without SCTE-20. Other options are embedded with SCTE-20, burn-in,
-     * DVB-sub, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20, choose
-     * SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies
-     * with the SCTE-43 spec. To create a non-compliant output where the embedded
-     * captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     * DVB-sub, IMSC, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20,
+     * choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that
+     * complies with the SCTE-43 spec. To create a non-compliant output where the
+     * embedded captions come first, choose Embedded plus SCTE-20
+     * (EMBEDDED_PLUS_SCTE20).
      */
     inline CaptionDestinationSettings& WithDestinationType(CaptionDestinationType&& value) { SetDestinationType(std::move(value)); return *this;}
 
@@ -213,6 +220,37 @@ namespace Model
      * Channel destination number.
      */
     inline CaptionDestinationSettings& WithEmbeddedDestinationSettings(EmbeddedDestinationSettings&& value) { SetEmbeddedDestinationSettings(std::move(value)); return *this;}
+
+
+    /**
+     * Settings specific to IMSC caption outputs.
+     */
+    inline const ImscDestinationSettings& GetImscDestinationSettings() const{ return m_imscDestinationSettings; }
+
+    /**
+     * Settings specific to IMSC caption outputs.
+     */
+    inline bool ImscDestinationSettingsHasBeenSet() const { return m_imscDestinationSettingsHasBeenSet; }
+
+    /**
+     * Settings specific to IMSC caption outputs.
+     */
+    inline void SetImscDestinationSettings(const ImscDestinationSettings& value) { m_imscDestinationSettingsHasBeenSet = true; m_imscDestinationSettings = value; }
+
+    /**
+     * Settings specific to IMSC caption outputs.
+     */
+    inline void SetImscDestinationSettings(ImscDestinationSettings&& value) { m_imscDestinationSettingsHasBeenSet = true; m_imscDestinationSettings = std::move(value); }
+
+    /**
+     * Settings specific to IMSC caption outputs.
+     */
+    inline CaptionDestinationSettings& WithImscDestinationSettings(const ImscDestinationSettings& value) { SetImscDestinationSettings(value); return *this;}
+
+    /**
+     * Settings specific to IMSC caption outputs.
+     */
+    inline CaptionDestinationSettings& WithImscDestinationSettings(ImscDestinationSettings&& value) { SetImscDestinationSettings(std::move(value)); return *this;}
 
 
     /**
@@ -326,6 +364,9 @@ namespace Model
 
     EmbeddedDestinationSettings m_embeddedDestinationSettings;
     bool m_embeddedDestinationSettingsHasBeenSet;
+
+    ImscDestinationSettings m_imscDestinationSettings;
+    bool m_imscDestinationSettingsHasBeenSet;
 
     SccDestinationSettings m_sccDestinationSettings;
     bool m_sccDestinationSettingsHasBeenSet;

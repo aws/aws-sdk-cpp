@@ -23,29 +23,19 @@ namespace MediaConvert
 {
 namespace Model
 {
-  enum class CaptionDestinationType
+  enum class AncillaryTerminateCaptions
   {
     NOT_SET,
-    BURN_IN,
-    DVB_SUB,
-    EMBEDDED,
-    EMBEDDED_PLUS_SCTE20,
-    IMSC,
-    SCTE20_PLUS_EMBEDDED,
-    SCC,
-    SRT,
-    SMI,
-    TELETEXT,
-    TTML,
-    WEBVTT
+    END_OF_INPUT,
+    DISABLED
   };
 
-namespace CaptionDestinationTypeMapper
+namespace AncillaryTerminateCaptionsMapper
 {
-AWS_MEDIACONVERT_API CaptionDestinationType GetCaptionDestinationTypeForName(const Aws::String& name);
+AWS_MEDIACONVERT_API AncillaryTerminateCaptions GetAncillaryTerminateCaptionsForName(const Aws::String& name);
 
-AWS_MEDIACONVERT_API Aws::String GetNameForCaptionDestinationType(CaptionDestinationType value);
-} // namespace CaptionDestinationTypeMapper
+AWS_MEDIACONVERT_API Aws::String GetNameForAncillaryTerminateCaptions(AncillaryTerminateCaptions value);
+} // namespace AncillaryTerminateCaptionsMapper
 } // namespace Model
 } // namespace MediaConvert
 } // namespace Aws

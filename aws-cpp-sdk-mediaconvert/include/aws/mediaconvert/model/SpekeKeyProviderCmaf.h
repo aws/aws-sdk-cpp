@@ -35,9 +35,9 @@ namespace Model
 {
 
   /**
-   * Use these settings when doing DRM encryption with a SPEKE-compliant key
-   * provider, if your output group type is CMAF. If your output group type is HLS,
-   * MS Smooth, or DASH, use the SpekeKeyProvider settings instead.<p><h3>See
+   * If your output group type is CMAF, use these settings when doing DRM encryption
+   * with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or
+   * Microsoft Smooth, use the SpekeKeyProvider settings instead.<p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/SpekeKeyProviderCmaf">AWS
    * API Reference</a></p>

@@ -56,9 +56,11 @@ enum class EKSErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CLIENT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CLIENT,
   INVALID_PARAMETER,
   INVALID_REQUEST,
+  NOT_FOUND,
   RESOURCE_IN_USE,
   RESOURCE_LIMIT_EXCEEDED,
   SERVER,

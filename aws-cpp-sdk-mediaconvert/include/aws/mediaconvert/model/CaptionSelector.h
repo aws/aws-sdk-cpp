@@ -201,38 +201,44 @@ namespace Model
 
 
     /**
-     * Source settings (SourceSettings) contains the group of settings for captions in
-     * the input.
+     * If your input captions are SCC, TTML, STL, SMI, SRT, or IMSC in an xml file,
+     * specify the URI of the input captions source file. If your input captions are
+     * IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
      */
     inline const CaptionSourceSettings& GetSourceSettings() const{ return m_sourceSettings; }
 
     /**
-     * Source settings (SourceSettings) contains the group of settings for captions in
-     * the input.
+     * If your input captions are SCC, TTML, STL, SMI, SRT, or IMSC in an xml file,
+     * specify the URI of the input captions source file. If your input captions are
+     * IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
      */
     inline bool SourceSettingsHasBeenSet() const { return m_sourceSettingsHasBeenSet; }
 
     /**
-     * Source settings (SourceSettings) contains the group of settings for captions in
-     * the input.
+     * If your input captions are SCC, TTML, STL, SMI, SRT, or IMSC in an xml file,
+     * specify the URI of the input captions source file. If your input captions are
+     * IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
      */
     inline void SetSourceSettings(const CaptionSourceSettings& value) { m_sourceSettingsHasBeenSet = true; m_sourceSettings = value; }
 
     /**
-     * Source settings (SourceSettings) contains the group of settings for captions in
-     * the input.
+     * If your input captions are SCC, TTML, STL, SMI, SRT, or IMSC in an xml file,
+     * specify the URI of the input captions source file. If your input captions are
+     * IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
      */
     inline void SetSourceSettings(CaptionSourceSettings&& value) { m_sourceSettingsHasBeenSet = true; m_sourceSettings = std::move(value); }
 
     /**
-     * Source settings (SourceSettings) contains the group of settings for captions in
-     * the input.
+     * If your input captions are SCC, TTML, STL, SMI, SRT, or IMSC in an xml file,
+     * specify the URI of the input captions source file. If your input captions are
+     * IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
      */
     inline CaptionSelector& WithSourceSettings(const CaptionSourceSettings& value) { SetSourceSettings(value); return *this;}
 
     /**
-     * Source settings (SourceSettings) contains the group of settings for captions in
-     * the input.
+     * If your input captions are SCC, TTML, STL, SMI, SRT, or IMSC in an xml file,
+     * specify the URI of the input captions source file. If your input captions are
+     * IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
      */
     inline CaptionSelector& WithSourceSettings(CaptionSourceSettings&& value) { SetSourceSettings(std::move(value)); return *this;}
 

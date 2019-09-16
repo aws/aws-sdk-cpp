@@ -26,7 +26,10 @@
 #include <aws/eks/model/DescribeClusterResult.h>
 #include <aws/eks/model/DescribeUpdateResult.h>
 #include <aws/eks/model/ListClustersResult.h>
+#include <aws/eks/model/ListTagsForResourceResult.h>
 #include <aws/eks/model/ListUpdatesResult.h>
+#include <aws/eks/model/TagResourceResult.h>
+#include <aws/eks/model/UntagResourceResult.h>
 #include <aws/eks/model/UpdateClusterConfigResult.h>
 #include <aws/eks/model/UpdateClusterVersionResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -73,7 +76,10 @@ namespace Model
         class DescribeClusterRequest;
         class DescribeUpdateRequest;
         class ListClustersRequest;
+        class ListTagsForResourceRequest;
         class ListUpdatesRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateClusterConfigRequest;
         class UpdateClusterVersionRequest;
 
@@ -82,7 +88,10 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeClusterResult, Aws::Client::AWSError<EKSErrors>> DescribeClusterOutcome;
         typedef Aws::Utils::Outcome<DescribeUpdateResult, Aws::Client::AWSError<EKSErrors>> DescribeUpdateOutcome;
         typedef Aws::Utils::Outcome<ListClustersResult, Aws::Client::AWSError<EKSErrors>> ListClustersOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<EKSErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListUpdatesResult, Aws::Client::AWSError<EKSErrors>> ListUpdatesOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<EKSErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<EKSErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateClusterConfigResult, Aws::Client::AWSError<EKSErrors>> UpdateClusterConfigOutcome;
         typedef Aws::Utils::Outcome<UpdateClusterVersionResult, Aws::Client::AWSError<EKSErrors>> UpdateClusterVersionOutcome;
 
@@ -91,7 +100,10 @@ namespace Model
         typedef std::future<DescribeClusterOutcome> DescribeClusterOutcomeCallable;
         typedef std::future<DescribeUpdateOutcome> DescribeUpdateOutcomeCallable;
         typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListUpdatesOutcome> ListUpdatesOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateClusterConfigOutcome> UpdateClusterConfigOutcomeCallable;
         typedef std::future<UpdateClusterVersionOutcome> UpdateClusterVersionOutcomeCallable;
 } // namespace Model
@@ -103,7 +115,10 @@ namespace Model
     typedef std::function<void(const EKSClient*, const Model::DescribeClusterRequest&, const Model::DescribeClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeUpdateRequest&, const Model::DescribeUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUpdateResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListUpdatesRequest&, const Model::ListUpdatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUpdatesResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::UpdateClusterConfigRequest&, const Model::UpdateClusterConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterConfigResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::UpdateClusterVersionRequest&, const Model::UpdateClusterVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterVersionResponseReceivedHandler;
 
@@ -446,6 +461,31 @@ namespace Model
         virtual void ListClustersAsync(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>List the tags for an Amazon EKS resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>List the tags for an Amazon EKS resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>List the tags for an Amazon EKS resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the updates associated with an Amazon EKS cluster in your AWS account,
          * in the specified Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListUpdates">AWS API
@@ -472,6 +512,65 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListUpdatesAsync(const Model::ListUpdatesRequest& request, const ListUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates the specified tags to a resource with the specified
+         * <code>resourceArn</code>. If existing tags on a resource are not specified in
+         * the request parameters, they are not changed. When a resource is deleted, the
+         * tags associated with that resource are deleted as well.</p><p><h3>See Also:</h3>
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Associates the specified tags to a resource with the specified
+         * <code>resourceArn</code>. If existing tags on a resource are not specified in
+         * the request parameters, they are not changed. When a resource is deleted, the
+         * tags associated with that resource are deleted as well.</p><p><h3>See Also:</h3>
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Associates the specified tags to a resource with the specified
+         * <code>resourceArn</code>. If existing tags on a resource are not specified in
+         * the request parameters, they are not changed. When a resource is deleted, the
+         * tags associated with that resource are deleted as well.</p><p><h3>See Also:</h3>
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes specified tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Deletes specified tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Deletes specified tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an Amazon EKS cluster configuration. Your cluster continues to
@@ -628,7 +727,10 @@ namespace Model
         void DescribeClusterAsyncHelper(const Model::DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUpdateAsyncHelper(const Model::DescribeUpdateRequest& request, const DescribeUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListClustersAsyncHelper(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUpdatesAsyncHelper(const Model::ListUpdatesRequest& request, const ListUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateClusterConfigAsyncHelper(const Model::UpdateClusterConfigRequest& request, const UpdateClusterConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateClusterVersionAsyncHelper(const Model::UpdateClusterVersionRequest& request, const UpdateClusterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eks/model/VpcConfigRequest.h>
 #include <aws/eks/model/Logging.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -420,6 +421,98 @@ namespace Model
      */
     inline CreateClusterRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
+    /**
+     * <p>The metadata to apply to the cluster to assist with categorization and
+     * organization. Each tag consists of a key and an optional value, both of which
+     * you define.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The metadata to apply to the cluster to assist with categorization and
+     * organization. Each tag consists of a key and an optional value, both of which
+     * you define.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The metadata to apply to the cluster to assist with categorization and
+     * organization. Each tag consists of a key and an optional value, both of which
+     * you define.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The metadata to apply to the cluster to assist with categorization and
+     * organization. Each tag consists of a key and an optional value, both of which
+     * you define.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The metadata to apply to the cluster to assist with categorization and
+     * organization. Each tag consists of a key and an optional value, both of which
+     * you define.</p>
+     */
+    inline CreateClusterRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The metadata to apply to the cluster to assist with categorization and
+     * organization. Each tag consists of a key and an optional value, both of which
+     * you define.</p>
+     */
+    inline CreateClusterRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The metadata to apply to the cluster to assist with categorization and
+     * organization. Each tag consists of a key and an optional value, both of which
+     * you define.</p>
+     */
+    inline CreateClusterRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The metadata to apply to the cluster to assist with categorization and
+     * organization. Each tag consists of a key and an optional value, both of which
+     * you define.</p>
+     */
+    inline CreateClusterRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The metadata to apply to the cluster to assist with categorization and
+     * organization. Each tag consists of a key and an optional value, both of which
+     * you define.</p>
+     */
+    inline CreateClusterRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata to apply to the cluster to assist with categorization and
+     * organization. Each tag consists of a key and an optional value, both of which
+     * you define.</p>
+     */
+    inline CreateClusterRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata to apply to the cluster to assist with categorization and
+     * organization. Each tag consists of a key and an optional value, both of which
+     * you define.</p>
+     */
+    inline CreateClusterRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata to apply to the cluster to assist with categorization and
+     * organization. Each tag consists of a key and an optional value, both of which
+     * you define.</p>
+     */
+    inline CreateClusterRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The metadata to apply to the cluster to assist with categorization and
+     * organization. Each tag consists of a key and an optional value, both of which
+     * you define.</p>
+     */
+    inline CreateClusterRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -439,6 +532,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

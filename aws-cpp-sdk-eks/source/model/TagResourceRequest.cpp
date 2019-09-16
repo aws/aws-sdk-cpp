@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/eks/model/CreateClusterRequest.h>
+#include <aws/eks/model/TagResourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,57 +22,15 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateClusterRequest::CreateClusterRequest() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_resourcesVpcConfigHasBeenSet(false),
-    m_loggingHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
+TagResourceRequest::TagResourceRequest() : 
+    m_resourceArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
-Aws::String CreateClusterRequest::SerializePayload() const
+Aws::String TagResourceRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
-  }
-
-  if(m_versionHasBeenSet)
-  {
-   payload.WithString("version", m_version);
-
-  }
-
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
-  }
-
-  if(m_resourcesVpcConfigHasBeenSet)
-  {
-   payload.WithObject("resourcesVpcConfig", m_resourcesVpcConfig.Jsonize());
-
-  }
-
-  if(m_loggingHasBeenSet)
-  {
-   payload.WithObject("logging", m_logging.Jsonize());
-
-  }
-
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("clientRequestToken", m_clientRequestToken);
-
-  }
 
   if(m_tagsHasBeenSet)
   {

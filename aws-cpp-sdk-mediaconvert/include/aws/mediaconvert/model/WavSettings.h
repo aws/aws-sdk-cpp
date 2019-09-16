@@ -74,30 +74,26 @@ namespace Model
 
 
     /**
-     * Set Channels to specify the number of channels in this output audio track. With
-     * WAV, valid values 1, 2, 4, and 8. In the console, these values are Mono, Stereo,
-     * 4-Channel, and 8-Channel, respectively.
+     * Specify the number of channels in this output audio track. Valid values are 1
+     * and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
      */
     inline int GetChannels() const{ return m_channels; }
 
     /**
-     * Set Channels to specify the number of channels in this output audio track. With
-     * WAV, valid values 1, 2, 4, and 8. In the console, these values are Mono, Stereo,
-     * 4-Channel, and 8-Channel, respectively.
+     * Specify the number of channels in this output audio track. Valid values are 1
+     * and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
      */
     inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
 
     /**
-     * Set Channels to specify the number of channels in this output audio track. With
-     * WAV, valid values 1, 2, 4, and 8. In the console, these values are Mono, Stereo,
-     * 4-Channel, and 8-Channel, respectively.
+     * Specify the number of channels in this output audio track. Valid values are 1
+     * and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
      */
     inline void SetChannels(int value) { m_channelsHasBeenSet = true; m_channels = value; }
 
     /**
-     * Set Channels to specify the number of channels in this output audio track. With
-     * WAV, valid values 1, 2, 4, and 8. In the console, these values are Mono, Stereo,
-     * 4-Channel, and 8-Channel, respectively.
+     * Specify the number of channels in this output audio track. Valid values are 1
+     * and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
      */
     inline WavSettings& WithChannels(int value) { SetChannels(value); return *this;}
 

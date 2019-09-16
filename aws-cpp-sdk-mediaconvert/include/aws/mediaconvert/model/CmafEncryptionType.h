@@ -26,7 +26,8 @@ namespace Model
   enum class CmafEncryptionType
   {
     NOT_SET,
-    SAMPLE_AES
+    SAMPLE_AES,
+    AES_CTR
   };
 
 namespace CmafEncryptionTypeMapper

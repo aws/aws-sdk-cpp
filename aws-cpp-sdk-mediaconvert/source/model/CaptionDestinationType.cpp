@@ -34,6 +34,7 @@ namespace Aws
         static const int DVB_SUB_HASH = HashingUtils::HashString("DVB_SUB");
         static const int EMBEDDED_HASH = HashingUtils::HashString("EMBEDDED");
         static const int EMBEDDED_PLUS_SCTE20_HASH = HashingUtils::HashString("EMBEDDED_PLUS_SCTE20");
+        static const int IMSC_HASH = HashingUtils::HashString("IMSC");
         static const int SCTE20_PLUS_EMBEDDED_HASH = HashingUtils::HashString("SCTE20_PLUS_EMBEDDED");
         static const int SCC_HASH = HashingUtils::HashString("SCC");
         static const int SRT_HASH = HashingUtils::HashString("SRT");
@@ -61,6 +62,10 @@ namespace Aws
           else if (hashCode == EMBEDDED_PLUS_SCTE20_HASH)
           {
             return CaptionDestinationType::EMBEDDED_PLUS_SCTE20;
+          }
+          else if (hashCode == IMSC_HASH)
+          {
+            return CaptionDestinationType::IMSC;
           }
           else if (hashCode == SCTE20_PLUS_EMBEDDED_HASH)
           {
@@ -112,6 +117,8 @@ namespace Aws
             return "EMBEDDED";
           case CaptionDestinationType::EMBEDDED_PLUS_SCTE20:
             return "EMBEDDED_PLUS_SCTE20";
+          case CaptionDestinationType::IMSC:
+            return "IMSC";
           case CaptionDestinationType::SCTE20_PLUS_EMBEDDED:
             return "SCTE20_PLUS_EMBEDDED";
           case CaptionDestinationType::SCC:

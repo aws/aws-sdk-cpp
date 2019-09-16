@@ -34,7 +34,9 @@ EmbeddedSourceSettings::EmbeddedSourceSettings() :
     m_source608ChannelNumber(0),
     m_source608ChannelNumberHasBeenSet(false),
     m_source608TrackNumber(0),
-    m_source608TrackNumberHasBeenSet(false)
+    m_source608TrackNumberHasBeenSet(false),
+    m_terminateCaptions(EmbeddedTerminateCaptions::NOT_SET),
+    m_terminateCaptionsHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ EmbeddedSourceSettings::EmbeddedSourceSettings(JsonView jsonValue) :
     m_source608ChannelNumber(0),
     m_source608ChannelNumberHasBeenSet(false),
     m_source608TrackNumber(0),
-    m_source608TrackNumberHasBeenSet(false)
+    m_source608TrackNumberHasBeenSet(false),
+    m_terminateCaptions(EmbeddedTerminateCaptions::NOT_SET),
+    m_terminateCaptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -72,6 +76,13 @@ EmbeddedSourceSettings& EmbeddedSourceSettings::operator =(JsonView jsonValue)
     m_source608TrackNumberHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("terminateCaptions"))
+  {
+    m_terminateCaptions = EmbeddedTerminateCaptionsMapper::GetEmbeddedTerminateCaptionsForName(jsonValue.GetString("terminateCaptions"));
+
+    m_terminateCaptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +105,11 @@ JsonValue EmbeddedSourceSettings::Jsonize() const
   {
    payload.WithInteger("source608TrackNumber", m_source608TrackNumber);
 
+  }
+
+  if(m_terminateCaptionsHasBeenSet)
+  {
+   payload.WithString("terminateCaptions", EmbeddedTerminateCaptionsMapper::GetNameForEmbeddedTerminateCaptions(m_terminateCaptions));
   }
 
   return payload;

@@ -110,32 +110,38 @@ namespace Model
 
 
     /**
-     * For DRM with CMAF, the encryption type is always sample AES.
+     * Specify the encryption scheme that you want the service to use when encrypting
+     * your CMAF segments. Choose AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
      */
     inline const CmafEncryptionType& GetEncryptionMethod() const{ return m_encryptionMethod; }
 
     /**
-     * For DRM with CMAF, the encryption type is always sample AES.
+     * Specify the encryption scheme that you want the service to use when encrypting
+     * your CMAF segments. Choose AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
      */
     inline bool EncryptionMethodHasBeenSet() const { return m_encryptionMethodHasBeenSet; }
 
     /**
-     * For DRM with CMAF, the encryption type is always sample AES.
+     * Specify the encryption scheme that you want the service to use when encrypting
+     * your CMAF segments. Choose AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
      */
     inline void SetEncryptionMethod(const CmafEncryptionType& value) { m_encryptionMethodHasBeenSet = true; m_encryptionMethod = value; }
 
     /**
-     * For DRM with CMAF, the encryption type is always sample AES.
+     * Specify the encryption scheme that you want the service to use when encrypting
+     * your CMAF segments. Choose AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
      */
     inline void SetEncryptionMethod(CmafEncryptionType&& value) { m_encryptionMethodHasBeenSet = true; m_encryptionMethod = std::move(value); }
 
     /**
-     * For DRM with CMAF, the encryption type is always sample AES.
+     * Specify the encryption scheme that you want the service to use when encrypting
+     * your CMAF segments. Choose AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
      */
     inline CmafEncryptionSettings& WithEncryptionMethod(const CmafEncryptionType& value) { SetEncryptionMethod(value); return *this;}
 
     /**
-     * For DRM with CMAF, the encryption type is always sample AES.
+     * Specify the encryption scheme that you want the service to use when encrypting
+     * your CMAF segments. Choose AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
      */
     inline CmafEncryptionSettings& WithEncryptionMethod(CmafEncryptionType&& value) { SetEncryptionMethod(std::move(value)); return *this;}
 
@@ -178,44 +184,44 @@ namespace Model
 
 
     /**
-     * Use these settings when doing DRM encryption with a SPEKE-compliant key
-     * provider, if your output group type is CMAF. If your output group type is HLS,
-     * MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+     * If your output group type is CMAF, use these settings when doing DRM encryption
+     * with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or
+     * Microsoft Smooth, use the SpekeKeyProvider settings instead.
      */
     inline const SpekeKeyProviderCmaf& GetSpekeKeyProvider() const{ return m_spekeKeyProvider; }
 
     /**
-     * Use these settings when doing DRM encryption with a SPEKE-compliant key
-     * provider, if your output group type is CMAF. If your output group type is HLS,
-     * MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+     * If your output group type is CMAF, use these settings when doing DRM encryption
+     * with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or
+     * Microsoft Smooth, use the SpekeKeyProvider settings instead.
      */
     inline bool SpekeKeyProviderHasBeenSet() const { return m_spekeKeyProviderHasBeenSet; }
 
     /**
-     * Use these settings when doing DRM encryption with a SPEKE-compliant key
-     * provider, if your output group type is CMAF. If your output group type is HLS,
-     * MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+     * If your output group type is CMAF, use these settings when doing DRM encryption
+     * with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or
+     * Microsoft Smooth, use the SpekeKeyProvider settings instead.
      */
     inline void SetSpekeKeyProvider(const SpekeKeyProviderCmaf& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = value; }
 
     /**
-     * Use these settings when doing DRM encryption with a SPEKE-compliant key
-     * provider, if your output group type is CMAF. If your output group type is HLS,
-     * MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+     * If your output group type is CMAF, use these settings when doing DRM encryption
+     * with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or
+     * Microsoft Smooth, use the SpekeKeyProvider settings instead.
      */
     inline void SetSpekeKeyProvider(SpekeKeyProviderCmaf&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::move(value); }
 
     /**
-     * Use these settings when doing DRM encryption with a SPEKE-compliant key
-     * provider, if your output group type is CMAF. If your output group type is HLS,
-     * MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+     * If your output group type is CMAF, use these settings when doing DRM encryption
+     * with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or
+     * Microsoft Smooth, use the SpekeKeyProvider settings instead.
      */
     inline CmafEncryptionSettings& WithSpekeKeyProvider(const SpekeKeyProviderCmaf& value) { SetSpekeKeyProvider(value); return *this;}
 
     /**
-     * Use these settings when doing DRM encryption with a SPEKE-compliant key
-     * provider, if your output group type is CMAF. If your output group type is HLS,
-     * MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+     * If your output group type is CMAF, use these settings when doing DRM encryption
+     * with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or
+     * Microsoft Smooth, use the SpekeKeyProvider settings instead.
      */
     inline CmafEncryptionSettings& WithSpekeKeyProvider(SpekeKeyProviderCmaf&& value) { SetSpekeKeyProvider(std::move(value)); return *this;}
 

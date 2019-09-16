@@ -23,29 +23,19 @@ namespace MediaConvert
 {
 namespace Model
 {
-  enum class CaptionDestinationType
+  enum class AncillaryConvert608To708
   {
     NOT_SET,
-    BURN_IN,
-    DVB_SUB,
-    EMBEDDED,
-    EMBEDDED_PLUS_SCTE20,
-    IMSC,
-    SCTE20_PLUS_EMBEDDED,
-    SCC,
-    SRT,
-    SMI,
-    TELETEXT,
-    TTML,
-    WEBVTT
+    UPCONVERT,
+    DISABLED
   };
 
-namespace CaptionDestinationTypeMapper
+namespace AncillaryConvert608To708Mapper
 {
-AWS_MEDIACONVERT_API CaptionDestinationType GetCaptionDestinationTypeForName(const Aws::String& name);
+AWS_MEDIACONVERT_API AncillaryConvert608To708 GetAncillaryConvert608To708ForName(const Aws::String& name);
 
-AWS_MEDIACONVERT_API Aws::String GetNameForCaptionDestinationType(CaptionDestinationType value);
-} // namespace CaptionDestinationTypeMapper
+AWS_MEDIACONVERT_API Aws::String GetNameForAncillaryConvert608To708(AncillaryConvert608To708 value);
+} // namespace AncillaryConvert608To708Mapper
 } // namespace Model
 } // namespace MediaConvert
 } // namespace Aws

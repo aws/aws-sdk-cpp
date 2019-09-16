@@ -104,34 +104,38 @@ namespace Model
 
 
     /**
-     * Relative strength of noise reducing filter. Higher values produce stronger
-     * filtering. Recommended Range: * [0 .. 2] for complexity reduction with minimal
-     * sharpness loss * [2 .. 8] for complexity reduction with image preservation * [8
-     * .. 16] for noise reduction. Reduce noise combined high complexity reduction
+     * Specify the strength of the noise reducing filter on this output. Higher values
+     * produce stronger filtering. We recommend the following value ranges, depending
+     * on the result that you want: * 0-2 for complexity reduction with minimal
+     * sharpness loss * 2-8 for complexity reduction with image preservation * 8-16 for
+     * a high level of complexity reduction
      */
     inline int GetStrength() const{ return m_strength; }
 
     /**
-     * Relative strength of noise reducing filter. Higher values produce stronger
-     * filtering. Recommended Range: * [0 .. 2] for complexity reduction with minimal
-     * sharpness loss * [2 .. 8] for complexity reduction with image preservation * [8
-     * .. 16] for noise reduction. Reduce noise combined high complexity reduction
+     * Specify the strength of the noise reducing filter on this output. Higher values
+     * produce stronger filtering. We recommend the following value ranges, depending
+     * on the result that you want: * 0-2 for complexity reduction with minimal
+     * sharpness loss * 2-8 for complexity reduction with image preservation * 8-16 for
+     * a high level of complexity reduction
      */
     inline bool StrengthHasBeenSet() const { return m_strengthHasBeenSet; }
 
     /**
-     * Relative strength of noise reducing filter. Higher values produce stronger
-     * filtering. Recommended Range: * [0 .. 2] for complexity reduction with minimal
-     * sharpness loss * [2 .. 8] for complexity reduction with image preservation * [8
-     * .. 16] for noise reduction. Reduce noise combined high complexity reduction
+     * Specify the strength of the noise reducing filter on this output. Higher values
+     * produce stronger filtering. We recommend the following value ranges, depending
+     * on the result that you want: * 0-2 for complexity reduction with minimal
+     * sharpness loss * 2-8 for complexity reduction with image preservation * 8-16 for
+     * a high level of complexity reduction
      */
     inline void SetStrength(int value) { m_strengthHasBeenSet = true; m_strength = value; }
 
     /**
-     * Relative strength of noise reducing filter. Higher values produce stronger
-     * filtering. Recommended Range: * [0 .. 2] for complexity reduction with minimal
-     * sharpness loss * [2 .. 8] for complexity reduction with image preservation * [8
-     * .. 16] for noise reduction. Reduce noise combined high complexity reduction
+     * Specify the strength of the noise reducing filter on this output. Higher values
+     * produce stronger filtering. We recommend the following value ranges, depending
+     * on the result that you want: * 0-2 for complexity reduction with minimal
+     * sharpness loss * 2-8 for complexity reduction with image preservation * 8-16 for
+     * a high level of complexity reduction
      */
     inline NoiseReducerTemporalFilterSettings& WithStrength(int value) { SetStrength(value); return *this;}
 
