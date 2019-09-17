@@ -32,7 +32,8 @@ QueryExecutionStatistics::QueryExecutionStatistics() :
     m_engineExecutionTimeInMillis(0),
     m_engineExecutionTimeInMillisHasBeenSet(false),
     m_dataScannedInBytes(0),
-    m_dataScannedInBytesHasBeenSet(false)
+    m_dataScannedInBytesHasBeenSet(false),
+    m_dataManifestLocationHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ QueryExecutionStatistics::QueryExecutionStatistics(JsonView jsonValue) :
     m_engineExecutionTimeInMillis(0),
     m_engineExecutionTimeInMillisHasBeenSet(false),
     m_dataScannedInBytes(0),
-    m_dataScannedInBytesHasBeenSet(false)
+    m_dataScannedInBytesHasBeenSet(false),
+    m_dataManifestLocationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +63,13 @@ QueryExecutionStatistics& QueryExecutionStatistics::operator =(JsonView jsonValu
     m_dataScannedInBytesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataManifestLocation"))
+  {
+    m_dataManifestLocation = jsonValue.GetString("DataManifestLocation");
+
+    m_dataManifestLocationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -77,6 +86,12 @@ JsonValue QueryExecutionStatistics::Jsonize() const
   if(m_dataScannedInBytesHasBeenSet)
   {
    payload.WithInt64("DataScannedInBytes", m_dataScannedInBytes);
+
+  }
+
+  if(m_dataManifestLocationHasBeenSet)
+  {
+   payload.WithString("DataManifestLocation", m_dataManifestLocation);
 
   }
 

@@ -41,7 +41,7 @@ namespace Model
    * values) to use in the simulation. This information is used when evaluating the
    * <code>Condition</code> elements of the input policies.</p> <p>This data type is
    * used as an input parameter to <code> <a>SimulateCustomPolicy</a> </code> and
-   * <code> <a>SimulateCustomPolicy</a> </code>.</p><p><h3>See Also:</h3>   <a
+   * <code> <a>SimulatePrincipalPolicy</a> </code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ContextEntry">AWS
    * API Reference</a></p>
    */

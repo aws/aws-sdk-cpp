@@ -239,7 +239,7 @@ namespace Model
      * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
      * set (through \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line
      * feed (\u000A), and carriage return (\u000D)</p> </li> </ul> <p> Upon success,
-     * the response includes the same trust policy as a URL-encoded JSON string.</p>
+     * the response includes the same trust policy in JSON format.</p>
      */
     inline const Aws::String& GetAssumeRolePolicyDocument() const{ return m_assumeRolePolicyDocument; }
 
@@ -256,7 +256,7 @@ namespace Model
      * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
      * set (through \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line
      * feed (\u000A), and carriage return (\u000D)</p> </li> </ul> <p> Upon success,
-     * the response includes the same trust policy as a URL-encoded JSON string.</p>
+     * the response includes the same trust policy in JSON format.</p>
      */
     inline bool AssumeRolePolicyDocumentHasBeenSet() const { return m_assumeRolePolicyDocumentHasBeenSet; }
 
@@ -273,7 +273,7 @@ namespace Model
      * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
      * set (through \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line
      * feed (\u000A), and carriage return (\u000D)</p> </li> </ul> <p> Upon success,
-     * the response includes the same trust policy as a URL-encoded JSON string.</p>
+     * the response includes the same trust policy in JSON format.</p>
      */
     inline void SetAssumeRolePolicyDocument(const Aws::String& value) { m_assumeRolePolicyDocumentHasBeenSet = true; m_assumeRolePolicyDocument = value; }
 
@@ -290,7 +290,7 @@ namespace Model
      * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
      * set (through \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line
      * feed (\u000A), and carriage return (\u000D)</p> </li> </ul> <p> Upon success,
-     * the response includes the same trust policy as a URL-encoded JSON string.</p>
+     * the response includes the same trust policy in JSON format.</p>
      */
     inline void SetAssumeRolePolicyDocument(Aws::String&& value) { m_assumeRolePolicyDocumentHasBeenSet = true; m_assumeRolePolicyDocument = std::move(value); }
 
@@ -307,7 +307,7 @@ namespace Model
      * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
      * set (through \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line
      * feed (\u000A), and carriage return (\u000D)</p> </li> </ul> <p> Upon success,
-     * the response includes the same trust policy as a URL-encoded JSON string.</p>
+     * the response includes the same trust policy in JSON format.</p>
      */
     inline void SetAssumeRolePolicyDocument(const char* value) { m_assumeRolePolicyDocumentHasBeenSet = true; m_assumeRolePolicyDocument.assign(value); }
 
@@ -324,7 +324,7 @@ namespace Model
      * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
      * set (through \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line
      * feed (\u000A), and carriage return (\u000D)</p> </li> </ul> <p> Upon success,
-     * the response includes the same trust policy as a URL-encoded JSON string.</p>
+     * the response includes the same trust policy in JSON format.</p>
      */
     inline CreateRoleRequest& WithAssumeRolePolicyDocument(const Aws::String& value) { SetAssumeRolePolicyDocument(value); return *this;}
 
@@ -341,7 +341,7 @@ namespace Model
      * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
      * set (through \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line
      * feed (\u000A), and carriage return (\u000D)</p> </li> </ul> <p> Upon success,
-     * the response includes the same trust policy as a URL-encoded JSON string.</p>
+     * the response includes the same trust policy in JSON format.</p>
      */
     inline CreateRoleRequest& WithAssumeRolePolicyDocument(Aws::String&& value) { SetAssumeRolePolicyDocument(std::move(value)); return *this;}
 
@@ -358,7 +358,7 @@ namespace Model
      * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
      * set (through \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line
      * feed (\u000A), and carriage return (\u000D)</p> </li> </ul> <p> Upon success,
-     * the response includes the same trust policy as a URL-encoded JSON string.</p>
+     * the response includes the same trust policy in JSON format.</p>
      */
     inline CreateRoleRequest& WithAssumeRolePolicyDocument(const char* value) { SetAssumeRolePolicyDocument(value); return *this;}
 

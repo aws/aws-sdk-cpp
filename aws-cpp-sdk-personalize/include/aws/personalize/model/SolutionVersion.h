@@ -357,6 +357,27 @@ namespace Model
 
 
     /**
+     * <p>The time used to train the model. </p>
+     */
+    inline double GetTrainingHours() const{ return m_trainingHours; }
+
+    /**
+     * <p>The time used to train the model. </p>
+     */
+    inline bool TrainingHoursHasBeenSet() const { return m_trainingHoursHasBeenSet; }
+
+    /**
+     * <p>The time used to train the model. </p>
+     */
+    inline void SetTrainingHours(double value) { m_trainingHoursHasBeenSet = true; m_trainingHours = value; }
+
+    /**
+     * <p>The time used to train the model. </p>
+     */
+    inline SolutionVersion& WithTrainingHours(double value) { SetTrainingHours(value); return *this;}
+
+
+    /**
      * <p>The status of the solution version.</p> <p>A solution version can be in one
      * of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS
      * &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul>
@@ -546,6 +567,9 @@ namespace Model
 
     SolutionConfig m_solutionConfig;
     bool m_solutionConfigHasBeenSet;
+
+    double m_trainingHours;
+    bool m_trainingHoursHasBeenSet;
 
     Aws::String m_status;
     bool m_statusHasBeenSet;

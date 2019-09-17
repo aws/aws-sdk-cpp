@@ -39,6 +39,8 @@ SolutionVersion::SolutionVersion() :
     m_eventTypeHasBeenSet(false),
     m_datasetGroupArnHasBeenSet(false),
     m_solutionConfigHasBeenSet(false),
+    m_trainingHours(0.0),
+    m_trainingHoursHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
@@ -57,6 +59,8 @@ SolutionVersion::SolutionVersion(JsonView jsonValue) :
     m_eventTypeHasBeenSet(false),
     m_datasetGroupArnHasBeenSet(false),
     m_solutionConfigHasBeenSet(false),
+    m_trainingHours(0.0),
+    m_trainingHoursHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
@@ -121,6 +125,13 @@ SolutionVersion& SolutionVersion::operator =(JsonView jsonValue)
     m_solutionConfig = jsonValue.GetObject("solutionConfig");
 
     m_solutionConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("trainingHours"))
+  {
+    m_trainingHours = jsonValue.GetDouble("trainingHours");
+
+    m_trainingHoursHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -203,6 +214,12 @@ JsonValue SolutionVersion::Jsonize() const
   if(m_solutionConfigHasBeenSet)
   {
    payload.WithObject("solutionConfig", m_solutionConfig.Jsonize());
+
+  }
+
+  if(m_trainingHoursHasBeenSet)
+  {
+   payload.WithDouble("trainingHours", m_trainingHours);
 
   }
 
