@@ -36,8 +36,7 @@ ResourceShareInvitation::ResourceShareInvitation() :
     m_receiverAccountIdHasBeenSet(false),
     m_invitationTimestampHasBeenSet(false),
     m_status(ResourceShareInvitationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_resourceShareAssociationsHasBeenSet(false)
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -49,8 +48,7 @@ ResourceShareInvitation::ResourceShareInvitation(JsonView jsonValue) :
     m_receiverAccountIdHasBeenSet(false),
     m_invitationTimestampHasBeenSet(false),
     m_status(ResourceShareInvitationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_resourceShareAssociationsHasBeenSet(false)
+    m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -106,16 +104,6 @@ ResourceShareInvitation& ResourceShareInvitation::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("resourceShareAssociations"))
-  {
-    Array<JsonView> resourceShareAssociationsJsonList = jsonValue.GetArray("resourceShareAssociations");
-    for(unsigned resourceShareAssociationsIndex = 0; resourceShareAssociationsIndex < resourceShareAssociationsJsonList.GetLength(); ++resourceShareAssociationsIndex)
-    {
-      m_resourceShareAssociations.push_back(resourceShareAssociationsJsonList[resourceShareAssociationsIndex].AsObject());
-    }
-    m_resourceShareAssociationsHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -161,17 +149,6 @@ JsonValue ResourceShareInvitation::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", ResourceShareInvitationStatusMapper::GetNameForResourceShareInvitationStatus(m_status));
-  }
-
-  if(m_resourceShareAssociationsHasBeenSet)
-  {
-   Array<JsonValue> resourceShareAssociationsJsonList(m_resourceShareAssociations.size());
-   for(unsigned resourceShareAssociationsIndex = 0; resourceShareAssociationsIndex < resourceShareAssociationsJsonList.GetLength(); ++resourceShareAssociationsIndex)
-   {
-     resourceShareAssociationsJsonList[resourceShareAssociationsIndex].AsObject(m_resourceShareAssociations[resourceShareAssociationsIndex].Jsonize());
-   }
-   payload.WithArray("resourceShareAssociations", std::move(resourceShareAssociationsJsonList));
-
   }
 
   return payload;

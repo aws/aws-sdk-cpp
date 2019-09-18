@@ -18,8 +18,6 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ram/model/ResourceShareInvitationStatus.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ram/model/ResourceShareAssociation.h>
 #include <utility>
 
 namespace Aws
@@ -318,47 +316,6 @@ namespace Model
      */
     inline ResourceShareInvitation& WithStatus(ResourceShareInvitationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The resources associated with the resource share.</p>
-     */
-    inline const Aws::Vector<ResourceShareAssociation>& GetResourceShareAssociations() const{ return m_resourceShareAssociations; }
-
-    /**
-     * <p>The resources associated with the resource share.</p>
-     */
-    inline bool ResourceShareAssociationsHasBeenSet() const { return m_resourceShareAssociationsHasBeenSet; }
-
-    /**
-     * <p>The resources associated with the resource share.</p>
-     */
-    inline void SetResourceShareAssociations(const Aws::Vector<ResourceShareAssociation>& value) { m_resourceShareAssociationsHasBeenSet = true; m_resourceShareAssociations = value; }
-
-    /**
-     * <p>The resources associated with the resource share.</p>
-     */
-    inline void SetResourceShareAssociations(Aws::Vector<ResourceShareAssociation>&& value) { m_resourceShareAssociationsHasBeenSet = true; m_resourceShareAssociations = std::move(value); }
-
-    /**
-     * <p>The resources associated with the resource share.</p>
-     */
-    inline ResourceShareInvitation& WithResourceShareAssociations(const Aws::Vector<ResourceShareAssociation>& value) { SetResourceShareAssociations(value); return *this;}
-
-    /**
-     * <p>The resources associated with the resource share.</p>
-     */
-    inline ResourceShareInvitation& WithResourceShareAssociations(Aws::Vector<ResourceShareAssociation>&& value) { SetResourceShareAssociations(std::move(value)); return *this;}
-
-    /**
-     * <p>The resources associated with the resource share.</p>
-     */
-    inline ResourceShareInvitation& AddResourceShareAssociations(const ResourceShareAssociation& value) { m_resourceShareAssociationsHasBeenSet = true; m_resourceShareAssociations.push_back(value); return *this; }
-
-    /**
-     * <p>The resources associated with the resource share.</p>
-     */
-    inline ResourceShareInvitation& AddResourceShareAssociations(ResourceShareAssociation&& value) { m_resourceShareAssociationsHasBeenSet = true; m_resourceShareAssociations.push_back(std::move(value)); return *this; }
-
   private:
 
     Aws::String m_resourceShareInvitationArn;
@@ -381,9 +338,6 @@ namespace Model
 
     ResourceShareInvitationStatus m_status;
     bool m_statusHasBeenSet;
-
-    Aws::Vector<ResourceShareAssociation> m_resourceShareAssociations;
-    bool m_resourceShareAssociationsHasBeenSet;
   };
 
 } // namespace Model

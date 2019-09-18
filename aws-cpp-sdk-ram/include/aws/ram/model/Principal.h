@@ -194,26 +194,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the principal belongs to the same organization as the AWS
-     * account that owns the resource share.</p>
+     * <p>Indicates whether the principal belongs to the same AWS organization as the
+     * AWS account that owns the resource share.</p>
      */
     inline bool GetExternal() const{ return m_external; }
 
     /**
-     * <p>Indicates whether the principal belongs to the same organization as the AWS
-     * account that owns the resource share.</p>
+     * <p>Indicates whether the principal belongs to the same AWS organization as the
+     * AWS account that owns the resource share.</p>
      */
     inline bool ExternalHasBeenSet() const { return m_externalHasBeenSet; }
 
     /**
-     * <p>Indicates whether the principal belongs to the same organization as the AWS
-     * account that owns the resource share.</p>
+     * <p>Indicates whether the principal belongs to the same AWS organization as the
+     * AWS account that owns the resource share.</p>
      */
     inline void SetExternal(bool value) { m_externalHasBeenSet = true; m_external = value; }
 
     /**
-     * <p>Indicates whether the principal belongs to the same organization as the AWS
-     * account that owns the resource share.</p>
+     * <p>Indicates whether the principal belongs to the same AWS organization as the
+     * AWS account that owns the resource share.</p>
      */
     inline Principal& WithExternal(bool value) { SetExternal(value); return *this;}
 

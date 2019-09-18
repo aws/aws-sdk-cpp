@@ -17,7 +17,7 @@
 #include <aws/ram/RAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ram/model/ResourceShareAssociation.h>
+#include <aws/ram/model/Resource.h>
 #include <utility>
 
 namespace Aws
@@ -36,48 +36,48 @@ namespace RAM
 {
 namespace Model
 {
-  class AWS_RAM_API GetResourceShareAssociationsResult
+  class AWS_RAM_API ListPendingInvitationResourcesResult
   {
   public:
-    GetResourceShareAssociationsResult();
-    GetResourceShareAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetResourceShareAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPendingInvitationResourcesResult();
+    ListPendingInvitationResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPendingInvitationResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>Information about the associations.</p>
+     * <p>Information about the resources included the resource share.</p>
      */
-    inline const Aws::Vector<ResourceShareAssociation>& GetResourceShareAssociations() const{ return m_resourceShareAssociations; }
+    inline const Aws::Vector<Resource>& GetResources() const{ return m_resources; }
 
     /**
-     * <p>Information about the associations.</p>
+     * <p>Information about the resources included the resource share.</p>
      */
-    inline void SetResourceShareAssociations(const Aws::Vector<ResourceShareAssociation>& value) { m_resourceShareAssociations = value; }
+    inline void SetResources(const Aws::Vector<Resource>& value) { m_resources = value; }
 
     /**
-     * <p>Information about the associations.</p>
+     * <p>Information about the resources included the resource share.</p>
      */
-    inline void SetResourceShareAssociations(Aws::Vector<ResourceShareAssociation>&& value) { m_resourceShareAssociations = std::move(value); }
+    inline void SetResources(Aws::Vector<Resource>&& value) { m_resources = std::move(value); }
 
     /**
-     * <p>Information about the associations.</p>
+     * <p>Information about the resources included the resource share.</p>
      */
-    inline GetResourceShareAssociationsResult& WithResourceShareAssociations(const Aws::Vector<ResourceShareAssociation>& value) { SetResourceShareAssociations(value); return *this;}
+    inline ListPendingInvitationResourcesResult& WithResources(const Aws::Vector<Resource>& value) { SetResources(value); return *this;}
 
     /**
-     * <p>Information about the associations.</p>
+     * <p>Information about the resources included the resource share.</p>
      */
-    inline GetResourceShareAssociationsResult& WithResourceShareAssociations(Aws::Vector<ResourceShareAssociation>&& value) { SetResourceShareAssociations(std::move(value)); return *this;}
+    inline ListPendingInvitationResourcesResult& WithResources(Aws::Vector<Resource>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the associations.</p>
+     * <p>Information about the resources included the resource share.</p>
      */
-    inline GetResourceShareAssociationsResult& AddResourceShareAssociations(const ResourceShareAssociation& value) { m_resourceShareAssociations.push_back(value); return *this; }
+    inline ListPendingInvitationResourcesResult& AddResources(const Resource& value) { m_resources.push_back(value); return *this; }
 
     /**
-     * <p>Information about the associations.</p>
+     * <p>Information about the resources included the resource share.</p>
      */
-    inline GetResourceShareAssociationsResult& AddResourceShareAssociations(ResourceShareAssociation&& value) { m_resourceShareAssociations.push_back(std::move(value)); return *this; }
+    inline ListPendingInvitationResourcesResult& AddResources(Resource&& value) { m_resources.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -108,23 +108,23 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline GetResourceShareAssociationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListPendingInvitationResourcesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline GetResourceShareAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline ListPendingInvitationResourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline GetResourceShareAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline ListPendingInvitationResourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
 
-    Aws::Vector<ResourceShareAssociation> m_resourceShareAssociations;
+    Aws::Vector<Resource> m_resources;
 
     Aws::String m_nextToken;
   };

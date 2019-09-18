@@ -29,7 +29,8 @@ namespace Model
     AVAILABLE,
     ZONAL_RESOURCE_INACCESSIBLE,
     LIMIT_EXCEEDED,
-    UNAVAILABLE
+    UNAVAILABLE,
+    PENDING
   };
 
 namespace ResourceStatusMapper

@@ -34,6 +34,7 @@ namespace Aws
         static const int ZONAL_RESOURCE_INACCESSIBLE_HASH = HashingUtils::HashString("ZONAL_RESOURCE_INACCESSIBLE");
         static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LIMIT_EXCEEDED");
         static const int UNAVAILABLE_HASH = HashingUtils::HashString("UNAVAILABLE");
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
 
 
         ResourceStatus GetResourceStatusForName(const Aws::String& name)
@@ -54,6 +55,10 @@ namespace Aws
           else if (hashCode == UNAVAILABLE_HASH)
           {
             return ResourceStatus::UNAVAILABLE;
+          }
+          else if (hashCode == PENDING_HASH)
+          {
+            return ResourceStatus::PENDING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +82,8 @@ namespace Aws
             return "LIMIT_EXCEEDED";
           case ResourceStatus::UNAVAILABLE:
             return "UNAVAILABLE";
+          case ResourceStatus::PENDING:
+            return "PENDING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -92,6 +92,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the resource share.</p>
+     */
+    inline const Aws::String& GetResourceShareName() const{ return m_resourceShareName; }
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline bool ResourceShareNameHasBeenSet() const { return m_resourceShareNameHasBeenSet; }
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline void SetResourceShareName(const Aws::String& value) { m_resourceShareNameHasBeenSet = true; m_resourceShareName = value; }
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline void SetResourceShareName(Aws::String&& value) { m_resourceShareNameHasBeenSet = true; m_resourceShareName = std::move(value); }
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline void SetResourceShareName(const char* value) { m_resourceShareNameHasBeenSet = true; m_resourceShareName.assign(value); }
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline ResourceShareAssociation& WithResourceShareName(const Aws::String& value) { SetResourceShareName(value); return *this;}
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline ResourceShareAssociation& WithResourceShareName(Aws::String&& value) { SetResourceShareName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline ResourceShareAssociation& WithResourceShareName(const char* value) { SetResourceShareName(value); return *this;}
+
+
+    /**
      * <p>The associated entity. For resource associations, this is the ARN of the
      * resource. For principal associations, this is the ID of an AWS account or the
      * ARN of an OU or organization from AWS Organizations.</p>
@@ -314,26 +355,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the principal belongs to the same organization as the AWS
-     * account that owns the resource share.</p>
+     * <p>Indicates whether the principal belongs to the same AWS organization as the
+     * AWS account that owns the resource share.</p>
      */
     inline bool GetExternal() const{ return m_external; }
 
     /**
-     * <p>Indicates whether the principal belongs to the same organization as the AWS
-     * account that owns the resource share.</p>
+     * <p>Indicates whether the principal belongs to the same AWS organization as the
+     * AWS account that owns the resource share.</p>
      */
     inline bool ExternalHasBeenSet() const { return m_externalHasBeenSet; }
 
     /**
-     * <p>Indicates whether the principal belongs to the same organization as the AWS
-     * account that owns the resource share.</p>
+     * <p>Indicates whether the principal belongs to the same AWS organization as the
+     * AWS account that owns the resource share.</p>
      */
     inline void SetExternal(bool value) { m_externalHasBeenSet = true; m_external = value; }
 
     /**
-     * <p>Indicates whether the principal belongs to the same organization as the AWS
-     * account that owns the resource share.</p>
+     * <p>Indicates whether the principal belongs to the same AWS organization as the
+     * AWS account that owns the resource share.</p>
      */
     inline ResourceShareAssociation& WithExternal(bool value) { SetExternal(value); return *this;}
 
@@ -341,6 +382,9 @@ namespace Model
 
     Aws::String m_resourceShareArn;
     bool m_resourceShareArnHasBeenSet;
+
+    Aws::String m_resourceShareName;
+    bool m_resourceShareNameHasBeenSet;
 
     Aws::String m_associatedEntity;
     bool m_associatedEntityHasBeenSet;

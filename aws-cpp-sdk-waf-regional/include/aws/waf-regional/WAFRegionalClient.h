@@ -3391,7 +3391,7 @@ namespace Model
         /**
          * <p>Associates a <a>LoggingConfiguration</a> with a specified web ACL.</p> <p>You
          * can access information about all traffic that AWS WAF inspects using the
-         * following steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose . </p>
+         * following steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose. </p>
          * <p>Create the data firehose with a PUT source and in the region that you are
          * operating. However, if you are capturing logs for Amazon CloudFront, always
          * create the firehose in US East (N. Virginia). </p> <note> <p>Do not create the
@@ -3413,7 +3413,7 @@ namespace Model
         /**
          * <p>Associates a <a>LoggingConfiguration</a> with a specified web ACL.</p> <p>You
          * can access information about all traffic that AWS WAF inspects using the
-         * following steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose . </p>
+         * following steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose. </p>
          * <p>Create the data firehose with a PUT source and in the region that you are
          * operating. However, if you are capturing logs for Amazon CloudFront, always
          * create the firehose in US East (N. Virginia). </p> <note> <p>Do not create the
@@ -3437,7 +3437,7 @@ namespace Model
         /**
          * <p>Associates a <a>LoggingConfiguration</a> with a specified web ACL.</p> <p>You
          * can access information about all traffic that AWS WAF inspects using the
-         * following steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose . </p>
+         * following steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose. </p>
          * <p>Create the data firehose with a PUT source and in the region that you are
          * operating. However, if you are capturing logs for Amazon CloudFront, always
          * create the firehose in US East (N. Virginia). </p> <note> <p>Do not create the

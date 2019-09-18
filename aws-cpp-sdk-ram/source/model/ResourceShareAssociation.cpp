@@ -30,6 +30,7 @@ namespace Model
 
 ResourceShareAssociation::ResourceShareAssociation() : 
     m_resourceShareArnHasBeenSet(false),
+    m_resourceShareNameHasBeenSet(false),
     m_associatedEntityHasBeenSet(false),
     m_associationType(ResourceShareAssociationType::NOT_SET),
     m_associationTypeHasBeenSet(false),
@@ -45,6 +46,7 @@ ResourceShareAssociation::ResourceShareAssociation() :
 
 ResourceShareAssociation::ResourceShareAssociation(JsonView jsonValue) : 
     m_resourceShareArnHasBeenSet(false),
+    m_resourceShareNameHasBeenSet(false),
     m_associatedEntityHasBeenSet(false),
     m_associationType(ResourceShareAssociationType::NOT_SET),
     m_associationTypeHasBeenSet(false),
@@ -66,6 +68,13 @@ ResourceShareAssociation& ResourceShareAssociation::operator =(JsonView jsonValu
     m_resourceShareArn = jsonValue.GetString("resourceShareArn");
 
     m_resourceShareArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resourceShareName"))
+  {
+    m_resourceShareName = jsonValue.GetString("resourceShareName");
+
+    m_resourceShareNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("associatedEntity"))
@@ -127,6 +136,12 @@ JsonValue ResourceShareAssociation::Jsonize() const
   if(m_resourceShareArnHasBeenSet)
   {
    payload.WithString("resourceShareArn", m_resourceShareArn);
+
+  }
+
+  if(m_resourceShareNameHasBeenSet)
+  {
+   payload.WithString("resourceShareName", m_resourceShareName);
 
   }
 

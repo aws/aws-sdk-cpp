@@ -41,6 +41,7 @@ static const int UNKNOWN_RESOURCE_HASH = HashingUtils::HashString("UnknownResour
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 static const int RESOURCE_SHARE_INVITATION_ARN_NOT_FOUND_HASH = HashingUtils::HashString("ResourceShareInvitationArnNotFoundException");
 static const int SERVER_INTERNAL_HASH = HashingUtils::HashString("ServerInternalException");
+static const int TAG_POLICY_VIOLATION_HASH = HashingUtils::HashString("TagPolicyViolationException");
 static const int INVALID_RESOURCE_TYPE_HASH = HashingUtils::HashString("InvalidResourceTypeException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int RESOURCE_SHARE_INVITATION_EXPIRED_HASH = HashingUtils::HashString("ResourceShareInvitationExpiredException");
@@ -104,6 +105,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == SERVER_INTERNAL_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::SERVER_INTERNAL), false);
+  }
+  else if (hashCode == TAG_POLICY_VIOLATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::TAG_POLICY_VIOLATION), false);
   }
   else if (hashCode == INVALID_RESOURCE_TYPE_HASH)
   {

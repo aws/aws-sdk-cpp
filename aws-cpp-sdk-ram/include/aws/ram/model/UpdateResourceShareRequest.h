@@ -125,26 +125,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether principals outside your organization can be associated with
-     * a resource share.</p>
+     * <p>Indicates whether principals outside your AWS organization can be associated
+     * with a resource share.</p>
      */
     inline bool GetAllowExternalPrincipals() const{ return m_allowExternalPrincipals; }
 
     /**
-     * <p>Indicates whether principals outside your organization can be associated with
-     * a resource share.</p>
+     * <p>Indicates whether principals outside your AWS organization can be associated
+     * with a resource share.</p>
      */
     inline bool AllowExternalPrincipalsHasBeenSet() const { return m_allowExternalPrincipalsHasBeenSet; }
 
     /**
-     * <p>Indicates whether principals outside your organization can be associated with
-     * a resource share.</p>
+     * <p>Indicates whether principals outside your AWS organization can be associated
+     * with a resource share.</p>
      */
     inline void SetAllowExternalPrincipals(bool value) { m_allowExternalPrincipalsHasBeenSet = true; m_allowExternalPrincipals = value; }
 
     /**
-     * <p>Indicates whether principals outside your organization can be associated with
-     * a resource share.</p>
+     * <p>Indicates whether principals outside your AWS organization can be associated
+     * with a resource share.</p>
      */
     inline UpdateResourceShareRequest& WithAllowExternalPrincipals(bool value) { SetAllowExternalPrincipals(value); return *this;}
 

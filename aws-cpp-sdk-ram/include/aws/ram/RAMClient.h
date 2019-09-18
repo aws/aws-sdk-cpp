@@ -31,6 +31,7 @@
 #include <aws/ram/model/GetResourceShareAssociationsResult.h>
 #include <aws/ram/model/GetResourceShareInvitationsResult.h>
 #include <aws/ram/model/GetResourceSharesResult.h>
+#include <aws/ram/model/ListPendingInvitationResourcesResult.h>
 #include <aws/ram/model/ListPrincipalsResult.h>
 #include <aws/ram/model/ListResourcesResult.h>
 #include <aws/ram/model/RejectResourceShareInvitationResult.h>
@@ -86,6 +87,7 @@ namespace Model
         class GetResourceShareAssociationsRequest;
         class GetResourceShareInvitationsRequest;
         class GetResourceSharesRequest;
+        class ListPendingInvitationResourcesRequest;
         class ListPrincipalsRequest;
         class ListResourcesRequest;
         class RejectResourceShareInvitationRequest;
@@ -103,6 +105,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetResourceShareAssociationsResult, Aws::Client::AWSError<RAMErrors>> GetResourceShareAssociationsOutcome;
         typedef Aws::Utils::Outcome<GetResourceShareInvitationsResult, Aws::Client::AWSError<RAMErrors>> GetResourceShareInvitationsOutcome;
         typedef Aws::Utils::Outcome<GetResourceSharesResult, Aws::Client::AWSError<RAMErrors>> GetResourceSharesOutcome;
+        typedef Aws::Utils::Outcome<ListPendingInvitationResourcesResult, Aws::Client::AWSError<RAMErrors>> ListPendingInvitationResourcesOutcome;
         typedef Aws::Utils::Outcome<ListPrincipalsResult, Aws::Client::AWSError<RAMErrors>> ListPrincipalsOutcome;
         typedef Aws::Utils::Outcome<ListResourcesResult, Aws::Client::AWSError<RAMErrors>> ListResourcesOutcome;
         typedef Aws::Utils::Outcome<RejectResourceShareInvitationResult, Aws::Client::AWSError<RAMErrors>> RejectResourceShareInvitationOutcome;
@@ -120,6 +123,7 @@ namespace Model
         typedef std::future<GetResourceShareAssociationsOutcome> GetResourceShareAssociationsOutcomeCallable;
         typedef std::future<GetResourceShareInvitationsOutcome> GetResourceShareInvitationsOutcomeCallable;
         typedef std::future<GetResourceSharesOutcome> GetResourceSharesOutcomeCallable;
+        typedef std::future<ListPendingInvitationResourcesOutcome> ListPendingInvitationResourcesOutcomeCallable;
         typedef std::future<ListPrincipalsOutcome> ListPrincipalsOutcomeCallable;
         typedef std::future<ListResourcesOutcome> ListResourcesOutcomeCallable;
         typedef std::future<RejectResourceShareInvitationOutcome> RejectResourceShareInvitationOutcomeCallable;
@@ -140,6 +144,7 @@ namespace Model
     typedef std::function<void(const RAMClient*, const Model::GetResourceShareAssociationsRequest&, const Model::GetResourceShareAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceShareAssociationsResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::GetResourceShareInvitationsRequest&, const Model::GetResourceShareInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceShareInvitationsResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::GetResourceSharesRequest&, const Model::GetResourceSharesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceSharesResponseReceivedHandler;
+    typedef std::function<void(const RAMClient*, const Model::ListPendingInvitationResourcesRequest&, const Model::ListPendingInvitationResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPendingInvitationResourcesResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::ListPrincipalsRequest&, const Model::ListPrincipalsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPrincipalsResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::ListResourcesRequest&, const Model::ListResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourcesResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::RejectResourceShareInvitationRequest&, const Model::RejectResourceShareInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectResourceShareInvitationResponseReceivedHandler;
@@ -150,17 +155,12 @@ namespace Model
   /**
    * <p>Use AWS Resource Access Manager to share AWS resources between AWS accounts.
    * To share a resource, you create a resource share, associate the resource with
-   * the resource share, and specify the principals that can access the resource. The
-   * following principals are supported:</p> <ul> <li> <p>The ID of an AWS
-   * account</p> </li> <li> <p>The Amazon Resource Name (ARN) of an OU from AWS
-   * Organizations</p> </li> <li> <p>The Amazon Resource Name (ARN) of an
-   * organization from AWS Organizations</p> </li> </ul> <p>If you specify an AWS
-   * account that doesn't exist in the same organization as the account that owns the
-   * resource share, the owner of the specified account receives an invitation to
-   * accept the resource share. After the owner accepts the invitation, they can
-   * access the resources in the resource share. An administrator of the specified
-   * account can use IAM policies to restrict access resources in the resource
-   * share.</p>
+   * the resource share, and specify the principals that can access the resources
+   * associated with the resource share. The following principals are supported: AWS
+   * accounts, organizational units (OU) from AWS Organizations, and organizations
+   * from AWS Organizations.</p> <p>For more information, see the <a
+   * href="https://docs.aws.amazon.com/ram/latest/userguide/">AWS Resource Access
+   * Manager User Guide</a>.</p>
    */
   class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient
   {
@@ -326,16 +326,16 @@ namespace Model
         virtual void DisassociateResourceShareAsync(const Model::DisassociateResourceShareRequest& request, const DisassociateResourceShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables resource sharing within your organization.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Enables resource sharing within your AWS Organization.</p> <p>The caller must
+         * be the master account for the AWS Organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/EnableSharingWithAwsOrganization">AWS
          * API Reference</a></p>
          */
         virtual Model::EnableSharingWithAwsOrganizationOutcome EnableSharingWithAwsOrganization(const Model::EnableSharingWithAwsOrganizationRequest& request) const;
 
         /**
-         * <p>Enables resource sharing within your organization.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Enables resource sharing within your AWS Organization.</p> <p>The caller must
+         * be the master account for the AWS Organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/EnableSharingWithAwsOrganization">AWS
          * API Reference</a></p>
          *
@@ -344,8 +344,8 @@ namespace Model
         virtual Model::EnableSharingWithAwsOrganizationOutcomeCallable EnableSharingWithAwsOrganizationCallable(const Model::EnableSharingWithAwsOrganizationRequest& request) const;
 
         /**
-         * <p>Enables resource sharing within your organization.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Enables resource sharing within your AWS Organization.</p> <p>The caller must
+         * be the master account for the AWS Organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/EnableSharingWithAwsOrganization">AWS
          * API Reference</a></p>
          *
@@ -354,14 +354,16 @@ namespace Model
         virtual void EnableSharingWithAwsOrganizationAsync(const Model::EnableSharingWithAwsOrganizationRequest& request, const EnableSharingWithAwsOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the policies for the specifies resources.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the policies for the specified resources that you own and have
+         * shared.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourcePolicies">AWS
          * API Reference</a></p>
          */
         virtual Model::GetResourcePoliciesOutcome GetResourcePolicies(const Model::GetResourcePoliciesRequest& request) const;
 
         /**
-         * <p>Gets the policies for the specifies resources.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the policies for the specified resources that you own and have
+         * shared.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourcePolicies">AWS
          * API Reference</a></p>
          *
@@ -370,7 +372,8 @@ namespace Model
         virtual Model::GetResourcePoliciesOutcomeCallable GetResourcePoliciesCallable(const Model::GetResourcePoliciesRequest& request) const;
 
         /**
-         * <p>Gets the policies for the specifies resources.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the policies for the specified resources that you own and have
+         * shared.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourcePolicies">AWS
          * API Reference</a></p>
          *
@@ -379,16 +382,16 @@ namespace Model
         virtual void GetResourcePoliciesAsync(const Model::GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the associations for the specified resource share.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets the resources or principals for the resource shares that you
+         * own.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareAssociations">AWS
          * API Reference</a></p>
          */
         virtual Model::GetResourceShareAssociationsOutcome GetResourceShareAssociations(const Model::GetResourceShareAssociationsRequest& request) const;
 
         /**
-         * <p>Gets the associations for the specified resource share.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets the resources or principals for the resource shares that you
+         * own.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareAssociations">AWS
          * API Reference</a></p>
          *
@@ -397,8 +400,8 @@ namespace Model
         virtual Model::GetResourceShareAssociationsOutcomeCallable GetResourceShareAssociationsCallable(const Model::GetResourceShareAssociationsRequest& request) const;
 
         /**
-         * <p>Gets the associations for the specified resource share.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets the resources or principals for the resource shares that you
+         * own.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareAssociations">AWS
          * API Reference</a></p>
          *
@@ -407,16 +410,16 @@ namespace Model
         virtual void GetResourceShareAssociationsAsync(const Model::GetResourceShareAssociationsRequest& request, const GetResourceShareAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the specified invitations for resource sharing.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets the invitations for resource sharing that you've received.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareInvitations">AWS
          * API Reference</a></p>
          */
         virtual Model::GetResourceShareInvitationsOutcome GetResourceShareInvitations(const Model::GetResourceShareInvitationsRequest& request) const;
 
         /**
-         * <p>Gets the specified invitations for resource sharing.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets the invitations for resource sharing that you've received.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareInvitations">AWS
          * API Reference</a></p>
          *
@@ -425,8 +428,8 @@ namespace Model
         virtual Model::GetResourceShareInvitationsOutcomeCallable GetResourceShareInvitationsCallable(const Model::GetResourceShareInvitationsRequest& request) const;
 
         /**
-         * <p>Gets the specified invitations for resource sharing.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets the invitations for resource sharing that you've received.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareInvitations">AWS
          * API Reference</a></p>
          *
@@ -435,16 +438,16 @@ namespace Model
         virtual void GetResourceShareInvitationsAsync(const Model::GetResourceShareInvitationsRequest& request, const GetResourceShareInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the specified resource shares or all of your resource
-         * shares.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the resource shares that you own or the resource shares that are shared
+         * with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShares">AWS
          * API Reference</a></p>
          */
         virtual Model::GetResourceSharesOutcome GetResourceShares(const Model::GetResourceSharesRequest& request) const;
 
         /**
-         * <p>Gets the specified resource shares or all of your resource
-         * shares.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the resource shares that you own or the resource shares that are shared
+         * with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShares">AWS
          * API Reference</a></p>
          *
@@ -453,8 +456,8 @@ namespace Model
         virtual Model::GetResourceSharesOutcomeCallable GetResourceSharesCallable(const Model::GetResourceSharesRequest& request) const;
 
         /**
-         * <p>Gets the specified resource shares or all of your resource
-         * shares.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the resource shares that you own or the resource shares that are shared
+         * with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShares">AWS
          * API Reference</a></p>
          *
@@ -463,16 +466,44 @@ namespace Model
         virtual void GetResourceSharesAsync(const Model::GetResourceSharesRequest& request, const GetResourceSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the principals with access to the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the resources in a resource share that is shared with you but that the
+         * invitation is still pending for.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPendingInvitationResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPendingInvitationResourcesOutcome ListPendingInvitationResources(const Model::ListPendingInvitationResourcesRequest& request) const;
+
+        /**
+         * <p>Lists the resources in a resource share that is shared with you but that the
+         * invitation is still pending for.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPendingInvitationResources">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListPendingInvitationResourcesOutcomeCallable ListPendingInvitationResourcesCallable(const Model::ListPendingInvitationResourcesRequest& request) const;
+
+        /**
+         * <p>Lists the resources in a resource share that is shared with you but that the
+         * invitation is still pending for.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPendingInvitationResources">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListPendingInvitationResourcesAsync(const Model::ListPendingInvitationResourcesRequest& request, const ListPendingInvitationResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the principals that you have shared resources with or the principals
+         * that have shared resources with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPrincipals">AWS
          * API Reference</a></p>
          */
         virtual Model::ListPrincipalsOutcome ListPrincipals(const Model::ListPrincipalsRequest& request) const;
 
         /**
-         * <p>Lists the principals with access to the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the principals that you have shared resources with or the principals
+         * that have shared resources with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPrincipals">AWS
          * API Reference</a></p>
          *
@@ -481,8 +512,8 @@ namespace Model
         virtual Model::ListPrincipalsOutcomeCallable ListPrincipalsCallable(const Model::ListPrincipalsRequest& request) const;
 
         /**
-         * <p>Lists the principals with access to the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the principals that you have shared resources with or the principals
+         * that have shared resources with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPrincipals">AWS
          * API Reference</a></p>
          *
@@ -491,16 +522,16 @@ namespace Model
         virtual void ListPrincipalsAsync(const Model::ListPrincipalsRequest& request, const ListPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the resources that the specified principal can access.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the resources that you added to a resource shares or the resources that
+         * are shared with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResources">AWS
          * API Reference</a></p>
          */
         virtual Model::ListResourcesOutcome ListResources(const Model::ListResourcesRequest& request) const;
 
         /**
-         * <p>Lists the resources that the specified principal can access.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the resources that you added to a resource shares or the resources that
+         * are shared with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResources">AWS
          * API Reference</a></p>
          *
@@ -509,8 +540,8 @@ namespace Model
         virtual Model::ListResourcesOutcomeCallable ListResourcesCallable(const Model::ListResourcesRequest& request) const;
 
         /**
-         * <p>Lists the resources that the specified principal can access.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the resources that you added to a resource shares or the resources that
+         * are shared with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResources">AWS
          * API Reference</a></p>
          *
@@ -547,16 +578,16 @@ namespace Model
         virtual void RejectResourceShareInvitationAsync(const Model::RejectResourceShareInvitationRequest& request, const RejectResourceShareInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds the specified tags to the specified resource share.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds the specified tags to the specified resource share that you
+         * own.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/TagResource">AWS API
          * Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds the specified tags to the specified resource share.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds the specified tags to the specified resource share that you
+         * own.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/TagResource">AWS API
          * Reference</a></p>
          *
@@ -565,8 +596,8 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds the specified tags to the specified resource share.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds the specified tags to the specified resource share that you
+         * own.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/TagResource">AWS API
          * Reference</a></p>
          *
@@ -575,16 +606,16 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified tags from the specified resource share.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the specified tags from the specified resource share that you
+         * own.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes the specified tags from the specified resource share.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the specified tags from the specified resource share that you
+         * own.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -593,8 +624,8 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes the specified tags from the specified resource share.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the specified tags from the specified resource share that you
+         * own.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -603,14 +634,16 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified resource share.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified resource share that you own.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UpdateResourceShare">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateResourceShareOutcome UpdateResourceShare(const Model::UpdateResourceShareRequest& request) const;
 
         /**
-         * <p>Updates the specified resource share.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified resource share that you own.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UpdateResourceShare">AWS
          * API Reference</a></p>
          *
@@ -619,7 +652,8 @@ namespace Model
         virtual Model::UpdateResourceShareOutcomeCallable UpdateResourceShareCallable(const Model::UpdateResourceShareRequest& request) const;
 
         /**
-         * <p>Updates the specified resource share.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified resource share that you own.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UpdateResourceShare">AWS
          * API Reference</a></p>
          *
@@ -641,6 +675,7 @@ namespace Model
         void GetResourceShareAssociationsAsyncHelper(const Model::GetResourceShareAssociationsRequest& request, const GetResourceShareAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourceShareInvitationsAsyncHelper(const Model::GetResourceShareInvitationsRequest& request, const GetResourceShareInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourceSharesAsyncHelper(const Model::GetResourceSharesRequest& request, const GetResourceSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListPendingInvitationResourcesAsyncHelper(const Model::ListPendingInvitationResourcesRequest& request, const ListPendingInvitationResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPrincipalsAsyncHelper(const Model::ListPrincipalsRequest& request, const ListPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResourcesAsyncHelper(const Model::ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RejectResourceShareInvitationAsyncHelper(const Model::RejectResourceShareInvitationRequest& request, const RejectResourceShareInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

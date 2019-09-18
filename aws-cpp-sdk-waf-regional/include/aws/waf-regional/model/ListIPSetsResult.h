@@ -45,72 +45,51 @@ namespace Model
 
 
     /**
-     * <p>If you have more <code>IPSet</code> objects than the number that you
-     * specified for <code>Limit</code> in the request, the response includes a
-     * <code>NextMarker</code> value. To list more <code>IPSet</code> objects, submit
-     * another <code>ListIPSets</code> request, and specify the <code>NextMarker</code>
-     * value from the response in the <code>NextMarker</code> value in the next
-     * request.</p>
+     * <p>To list more <code>IPSet</code> objects, submit another
+     * <code>ListIPSets</code> request, and in the next request use the
+     * <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
 
     /**
-     * <p>If you have more <code>IPSet</code> objects than the number that you
-     * specified for <code>Limit</code> in the request, the response includes a
-     * <code>NextMarker</code> value. To list more <code>IPSet</code> objects, submit
-     * another <code>ListIPSets</code> request, and specify the <code>NextMarker</code>
-     * value from the response in the <code>NextMarker</code> value in the next
-     * request.</p>
+     * <p>To list more <code>IPSet</code> objects, submit another
+     * <code>ListIPSets</code> request, and in the next request use the
+     * <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
      */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
 
     /**
-     * <p>If you have more <code>IPSet</code> objects than the number that you
-     * specified for <code>Limit</code> in the request, the response includes a
-     * <code>NextMarker</code> value. To list more <code>IPSet</code> objects, submit
-     * another <code>ListIPSets</code> request, and specify the <code>NextMarker</code>
-     * value from the response in the <code>NextMarker</code> value in the next
-     * request.</p>
+     * <p>To list more <code>IPSet</code> objects, submit another
+     * <code>ListIPSets</code> request, and in the next request use the
+     * <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
      */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
-     * <p>If you have more <code>IPSet</code> objects than the number that you
-     * specified for <code>Limit</code> in the request, the response includes a
-     * <code>NextMarker</code> value. To list more <code>IPSet</code> objects, submit
-     * another <code>ListIPSets</code> request, and specify the <code>NextMarker</code>
-     * value from the response in the <code>NextMarker</code> value in the next
-     * request.</p>
+     * <p>To list more <code>IPSet</code> objects, submit another
+     * <code>ListIPSets</code> request, and in the next request use the
+     * <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
      */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
 
     /**
-     * <p>If you have more <code>IPSet</code> objects than the number that you
-     * specified for <code>Limit</code> in the request, the response includes a
-     * <code>NextMarker</code> value. To list more <code>IPSet</code> objects, submit
-     * another <code>ListIPSets</code> request, and specify the <code>NextMarker</code>
-     * value from the response in the <code>NextMarker</code> value in the next
-     * request.</p>
+     * <p>To list more <code>IPSet</code> objects, submit another
+     * <code>ListIPSets</code> request, and in the next request use the
+     * <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
      */
     inline ListIPSetsResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
 
     /**
-     * <p>If you have more <code>IPSet</code> objects than the number that you
-     * specified for <code>Limit</code> in the request, the response includes a
-     * <code>NextMarker</code> value. To list more <code>IPSet</code> objects, submit
-     * another <code>ListIPSets</code> request, and specify the <code>NextMarker</code>
-     * value from the response in the <code>NextMarker</code> value in the next
-     * request.</p>
+     * <p>To list more <code>IPSet</code> objects, submit another
+     * <code>ListIPSets</code> request, and in the next request use the
+     * <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
      */
     inline ListIPSetsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
-     * <p>If you have more <code>IPSet</code> objects than the number that you
-     * specified for <code>Limit</code> in the request, the response includes a
-     * <code>NextMarker</code> value. To list more <code>IPSet</code> objects, submit
-     * another <code>ListIPSets</code> request, and specify the <code>NextMarker</code>
-     * value from the response in the <code>NextMarker</code> value in the next
-     * request.</p>
+     * <p>To list more <code>IPSet</code> objects, submit another
+     * <code>ListIPSets</code> request, and in the next request use the
+     * <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
      */
     inline ListIPSetsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 

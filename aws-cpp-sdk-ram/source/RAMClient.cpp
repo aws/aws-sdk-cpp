@@ -40,6 +40,7 @@
 #include <aws/ram/model/GetResourceShareAssociationsRequest.h>
 #include <aws/ram/model/GetResourceShareInvitationsRequest.h>
 #include <aws/ram/model/GetResourceSharesRequest.h>
+#include <aws/ram/model/ListPendingInvitationResourcesRequest.h>
 #include <aws/ram/model/ListPrincipalsRequest.h>
 #include <aws/ram/model/ListResourcesRequest.h>
 #include <aws/ram/model/RejectResourceShareInvitationRequest.h>
@@ -472,6 +473,41 @@ void RAMClient::GetResourceSharesAsync(const GetResourceSharesRequest& request, 
 void RAMClient::GetResourceSharesAsyncHelper(const GetResourceSharesRequest& request, const GetResourceSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetResourceShares(request), context);
+}
+
+ListPendingInvitationResourcesOutcome RAMClient::ListPendingInvitationResources(const ListPendingInvitationResourcesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/listpendinginvitationresources";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListPendingInvitationResourcesOutcome(ListPendingInvitationResourcesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListPendingInvitationResourcesOutcome(outcome.GetError());
+  }
+}
+
+ListPendingInvitationResourcesOutcomeCallable RAMClient::ListPendingInvitationResourcesCallable(const ListPendingInvitationResourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPendingInvitationResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPendingInvitationResources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RAMClient::ListPendingInvitationResourcesAsync(const ListPendingInvitationResourcesRequest& request, const ListPendingInvitationResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPendingInvitationResourcesAsyncHelper( request, handler, context ); } );
+}
+
+void RAMClient::ListPendingInvitationResourcesAsyncHelper(const ListPendingInvitationResourcesRequest& request, const ListPendingInvitationResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPendingInvitationResources(request), context);
 }
 
 ListPrincipalsOutcome RAMClient::ListPrincipals(const ListPrincipalsRequest& request) const
