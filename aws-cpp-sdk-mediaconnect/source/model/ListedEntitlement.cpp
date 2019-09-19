@@ -29,12 +29,16 @@ namespace Model
 {
 
 ListedEntitlement::ListedEntitlement() : 
+    m_dataTransferSubscriberFeePercent(0),
+    m_dataTransferSubscriberFeePercentHasBeenSet(false),
     m_entitlementArnHasBeenSet(false),
     m_entitlementNameHasBeenSet(false)
 {
 }
 
 ListedEntitlement::ListedEntitlement(JsonView jsonValue) : 
+    m_dataTransferSubscriberFeePercent(0),
+    m_dataTransferSubscriberFeePercentHasBeenSet(false),
     m_entitlementArnHasBeenSet(false),
     m_entitlementNameHasBeenSet(false)
 {
@@ -43,6 +47,13 @@ ListedEntitlement::ListedEntitlement(JsonView jsonValue) :
 
 ListedEntitlement& ListedEntitlement::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("dataTransferSubscriberFeePercent"))
+  {
+    m_dataTransferSubscriberFeePercent = jsonValue.GetInteger("dataTransferSubscriberFeePercent");
+
+    m_dataTransferSubscriberFeePercentHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("entitlementArn"))
   {
     m_entitlementArn = jsonValue.GetString("entitlementArn");
@@ -63,6 +74,12 @@ ListedEntitlement& ListedEntitlement::operator =(JsonView jsonValue)
 JsonValue ListedEntitlement::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_dataTransferSubscriberFeePercentHasBeenSet)
+  {
+   payload.WithInteger("dataTransferSubscriberFeePercent", m_dataTransferSubscriberFeePercent);
+
+  }
 
   if(m_entitlementArnHasBeenSet)
   {

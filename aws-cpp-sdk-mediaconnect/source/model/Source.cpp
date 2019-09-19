@@ -29,6 +29,8 @@ namespace Model
 {
 
 Source::Source() : 
+    m_dataTransferSubscriberFeePercent(0),
+    m_dataTransferSubscriberFeePercentHasBeenSet(false),
     m_decryptionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_entitlementArnHasBeenSet(false),
@@ -43,6 +45,8 @@ Source::Source() :
 }
 
 Source::Source(JsonView jsonValue) : 
+    m_dataTransferSubscriberFeePercent(0),
+    m_dataTransferSubscriberFeePercentHasBeenSet(false),
     m_decryptionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_entitlementArnHasBeenSet(false),
@@ -59,6 +63,13 @@ Source::Source(JsonView jsonValue) :
 
 Source& Source::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("dataTransferSubscriberFeePercent"))
+  {
+    m_dataTransferSubscriberFeePercent = jsonValue.GetInteger("dataTransferSubscriberFeePercent");
+
+    m_dataTransferSubscriberFeePercentHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("decryption"))
   {
     m_decryption = jsonValue.GetObject("decryption");
@@ -128,6 +139,12 @@ Source& Source::operator =(JsonView jsonValue)
 JsonValue Source::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_dataTransferSubscriberFeePercentHasBeenSet)
+  {
+   payload.WithInteger("dataTransferSubscriberFeePercent", m_dataTransferSubscriberFeePercent);
+
+  }
 
   if(m_decryptionHasBeenSet)
   {

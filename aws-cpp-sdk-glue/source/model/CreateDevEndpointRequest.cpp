@@ -33,6 +33,7 @@ CreateDevEndpointRequest::CreateDevEndpointRequest() :
     m_numberOfNodesHasBeenSet(false),
     m_workerType(WorkerType::NOT_SET),
     m_workerTypeHasBeenSet(false),
+    m_glueVersionHasBeenSet(false),
     m_numberOfWorkers(0),
     m_numberOfWorkersHasBeenSet(false),
     m_extraPythonLibsS3PathHasBeenSet(false),
@@ -102,6 +103,12 @@ Aws::String CreateDevEndpointRequest::SerializePayload() const
   if(m_workerTypeHasBeenSet)
   {
    payload.WithString("WorkerType", WorkerTypeMapper::GetNameForWorkerType(m_workerType));
+  }
+
+  if(m_glueVersionHasBeenSet)
+  {
+   payload.WithString("GlueVersion", m_glueVersion);
+
   }
 
   if(m_numberOfWorkersHasBeenSet)

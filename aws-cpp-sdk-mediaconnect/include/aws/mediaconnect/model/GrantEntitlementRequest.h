@@ -50,6 +50,27 @@ namespace Model
 
 
     /**
+     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     */
+    inline int GetDataTransferSubscriberFeePercent() const{ return m_dataTransferSubscriberFeePercent; }
+
+    /**
+     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     */
+    inline bool DataTransferSubscriberFeePercentHasBeenSet() const { return m_dataTransferSubscriberFeePercentHasBeenSet; }
+
+    /**
+     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     */
+    inline void SetDataTransferSubscriberFeePercent(int value) { m_dataTransferSubscriberFeePercentHasBeenSet = true; m_dataTransferSubscriberFeePercent = value; }
+
+    /**
+     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     */
+    inline GrantEntitlementRequest& WithDataTransferSubscriberFeePercent(int value) { SetDataTransferSubscriberFeePercent(value); return *this;}
+
+
+    /**
      * A description of the entitlement. This description appears only on the AWS
      * Elemental MediaConnect console and will not be seen by the subscriber or end
      * user.
@@ -248,6 +269,9 @@ namespace Model
     inline GrantEntitlementRequest& AddSubscribers(const char* value) { m_subscribersHasBeenSet = true; m_subscribers.push_back(value); return *this; }
 
   private:
+
+    int m_dataTransferSubscriberFeePercent;
+    bool m_dataTransferSubscriberFeePercentHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;

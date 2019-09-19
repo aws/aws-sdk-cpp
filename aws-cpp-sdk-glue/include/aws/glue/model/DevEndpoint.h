@@ -567,6 +567,127 @@ namespace Model
 
 
     /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for running your
+     * ETL scripts on development endpoints. </p> <p>For more information about the
+     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p> <p>Development endpoints that are created without
+     * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
+     * of Python support for development endpoints by using the <code>Arguments</code>
+     * parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
+     */
+    inline const Aws::String& GetGlueVersion() const{ return m_glueVersion; }
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for running your
+     * ETL scripts on development endpoints. </p> <p>For more information about the
+     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p> <p>Development endpoints that are created without
+     * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
+     * of Python support for development endpoints by using the <code>Arguments</code>
+     * parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
+     */
+    inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for running your
+     * ETL scripts on development endpoints. </p> <p>For more information about the
+     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p> <p>Development endpoints that are created without
+     * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
+     * of Python support for development endpoints by using the <code>Arguments</code>
+     * parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
+     */
+    inline void SetGlueVersion(const Aws::String& value) { m_glueVersionHasBeenSet = true; m_glueVersion = value; }
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for running your
+     * ETL scripts on development endpoints. </p> <p>For more information about the
+     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p> <p>Development endpoints that are created without
+     * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
+     * of Python support for development endpoints by using the <code>Arguments</code>
+     * parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
+     */
+    inline void SetGlueVersion(Aws::String&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::move(value); }
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for running your
+     * ETL scripts on development endpoints. </p> <p>For more information about the
+     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p> <p>Development endpoints that are created without
+     * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
+     * of Python support for development endpoints by using the <code>Arguments</code>
+     * parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
+     */
+    inline void SetGlueVersion(const char* value) { m_glueVersionHasBeenSet = true; m_glueVersion.assign(value); }
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for running your
+     * ETL scripts on development endpoints. </p> <p>For more information about the
+     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p> <p>Development endpoints that are created without
+     * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
+     * of Python support for development endpoints by using the <code>Arguments</code>
+     * parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
+     */
+    inline DevEndpoint& WithGlueVersion(const Aws::String& value) { SetGlueVersion(value); return *this;}
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for running your
+     * ETL scripts on development endpoints. </p> <p>For more information about the
+     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p> <p>Development endpoints that are created without
+     * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
+     * of Python support for development endpoints by using the <code>Arguments</code>
+     * parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
+     */
+    inline DevEndpoint& WithGlueVersion(Aws::String&& value) { SetGlueVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * supports. The Python version indicates the version supported for running your
+     * ETL scripts on development endpoints. </p> <p>For more information about the
+     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
+     * in the developer guide.</p> <p>Development endpoints that are created without
+     * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
+     * of Python support for development endpoints by using the <code>Arguments</code>
+     * parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
+     */
+    inline DevEndpoint& WithGlueVersion(const char* value) { SetGlueVersion(value); return *this;}
+
+
+    /**
      * <p>The number of workers of a defined <code>workerType</code> that are allocated
      * to the development endpoint.</p> <p>The maximum number of workers you can define
      * are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
@@ -1215,92 +1336,157 @@ namespace Model
 
     /**
      * <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
-     * <p>Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as
-     * a valid argument.</p>
+     * <p>Valid arguments are:</p> <ul> <li> <p> <code>"--enable-glue-datacatalog":
+     * ""</code> </p> </li> <li> <p> <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li>
+     * <li> <p> <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can
+     * specify a version of Python support for development endpoints by using the
+     * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const{ return m_arguments; }
 
     /**
      * <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
-     * <p>Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as
-     * a valid argument.</p>
+     * <p>Valid arguments are:</p> <ul> <li> <p> <code>"--enable-glue-datacatalog":
+     * ""</code> </p> </li> <li> <p> <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li>
+     * <li> <p> <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can
+     * specify a version of Python support for development endpoints by using the
+     * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
      */
     inline bool ArgumentsHasBeenSet() const { return m_argumentsHasBeenSet; }
 
     /**
      * <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
-     * <p>Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as
-     * a valid argument.</p>
+     * <p>Valid arguments are:</p> <ul> <li> <p> <code>"--enable-glue-datacatalog":
+     * ""</code> </p> </li> <li> <p> <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li>
+     * <li> <p> <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can
+     * specify a version of Python support for development endpoints by using the
+     * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
      */
     inline void SetArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_argumentsHasBeenSet = true; m_arguments = value; }
 
     /**
      * <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
-     * <p>Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as
-     * a valid argument.</p>
+     * <p>Valid arguments are:</p> <ul> <li> <p> <code>"--enable-glue-datacatalog":
+     * ""</code> </p> </li> <li> <p> <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li>
+     * <li> <p> <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can
+     * specify a version of Python support for development endpoints by using the
+     * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
      */
     inline void SetArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_argumentsHasBeenSet = true; m_arguments = std::move(value); }
 
     /**
      * <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
-     * <p>Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as
-     * a valid argument.</p>
+     * <p>Valid arguments are:</p> <ul> <li> <p> <code>"--enable-glue-datacatalog":
+     * ""</code> </p> </li> <li> <p> <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li>
+     * <li> <p> <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can
+     * specify a version of Python support for development endpoints by using the
+     * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
      */
     inline DevEndpoint& WithArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetArguments(value); return *this;}
 
     /**
      * <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
-     * <p>Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as
-     * a valid argument.</p>
+     * <p>Valid arguments are:</p> <ul> <li> <p> <code>"--enable-glue-datacatalog":
+     * ""</code> </p> </li> <li> <p> <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li>
+     * <li> <p> <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can
+     * specify a version of Python support for development endpoints by using the
+     * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
      */
     inline DevEndpoint& WithArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetArguments(std::move(value)); return *this;}
 
     /**
      * <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
-     * <p>Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as
-     * a valid argument.</p>
+     * <p>Valid arguments are:</p> <ul> <li> <p> <code>"--enable-glue-datacatalog":
+     * ""</code> </p> </li> <li> <p> <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li>
+     * <li> <p> <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can
+     * specify a version of Python support for development endpoints by using the
+     * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
      */
     inline DevEndpoint& AddArguments(const Aws::String& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
 
     /**
      * <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
-     * <p>Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as
-     * a valid argument.</p>
+     * <p>Valid arguments are:</p> <ul> <li> <p> <code>"--enable-glue-datacatalog":
+     * ""</code> </p> </li> <li> <p> <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li>
+     * <li> <p> <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can
+     * specify a version of Python support for development endpoints by using the
+     * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
      */
     inline DevEndpoint& AddArguments(Aws::String&& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
-     * <p>Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as
-     * a valid argument.</p>
+     * <p>Valid arguments are:</p> <ul> <li> <p> <code>"--enable-glue-datacatalog":
+     * ""</code> </p> </li> <li> <p> <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li>
+     * <li> <p> <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can
+     * specify a version of Python support for development endpoints by using the
+     * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
      */
     inline DevEndpoint& AddArguments(const Aws::String& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
-     * <p>Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as
-     * a valid argument.</p>
+     * <p>Valid arguments are:</p> <ul> <li> <p> <code>"--enable-glue-datacatalog":
+     * ""</code> </p> </li> <li> <p> <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li>
+     * <li> <p> <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can
+     * specify a version of Python support for development endpoints by using the
+     * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
      */
     inline DevEndpoint& AddArguments(Aws::String&& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
-     * <p>Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as
-     * a valid argument.</p>
+     * <p>Valid arguments are:</p> <ul> <li> <p> <code>"--enable-glue-datacatalog":
+     * ""</code> </p> </li> <li> <p> <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li>
+     * <li> <p> <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can
+     * specify a version of Python support for development endpoints by using the
+     * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
      */
     inline DevEndpoint& AddArguments(const char* key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
-     * <p>Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as
-     * a valid argument.</p>
+     * <p>Valid arguments are:</p> <ul> <li> <p> <code>"--enable-glue-datacatalog":
+     * ""</code> </p> </li> <li> <p> <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li>
+     * <li> <p> <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can
+     * specify a version of Python support for development endpoints by using the
+     * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
      */
     inline DevEndpoint& AddArguments(Aws::String&& key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
-     * <p>Currently, only <code>"--enable-glue-datacatalog": ""</code> is supported as
-     * a valid argument.</p>
+     * <p>Valid arguments are:</p> <ul> <li> <p> <code>"--enable-glue-datacatalog":
+     * ""</code> </p> </li> <li> <p> <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li>
+     * <li> <p> <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can
+     * specify a version of Python support for development endpoints by using the
+     * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
+     * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
+     * defaults to Python 2.</p>
      */
     inline DevEndpoint& AddArguments(const char* key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
 
@@ -1335,6 +1521,9 @@ namespace Model
 
     WorkerType m_workerType;
     bool m_workerTypeHasBeenSet;
+
+    Aws::String m_glueVersion;
+    bool m_glueVersionHasBeenSet;
 
     int m_numberOfWorkers;
     bool m_numberOfWorkersHasBeenSet;

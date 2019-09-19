@@ -49,6 +49,27 @@ namespace Model
 
 
     /**
+     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     */
+    inline int GetDataTransferSubscriberFeePercent() const{ return m_dataTransferSubscriberFeePercent; }
+
+    /**
+     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     */
+    inline bool DataTransferSubscriberFeePercentHasBeenSet() const { return m_dataTransferSubscriberFeePercentHasBeenSet; }
+
+    /**
+     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     */
+    inline void SetDataTransferSubscriberFeePercent(int value) { m_dataTransferSubscriberFeePercentHasBeenSet = true; m_dataTransferSubscriberFeePercent = value; }
+
+    /**
+     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     */
+    inline ListedEntitlement& WithDataTransferSubscriberFeePercent(int value) { SetDataTransferSubscriberFeePercent(value); return *this;}
+
+
+    /**
      * The ARN of the entitlement.
      */
     inline const Aws::String& GetEntitlementArn() const{ return m_entitlementArn; }
@@ -130,6 +151,9 @@ namespace Model
     inline ListedEntitlement& WithEntitlementName(const char* value) { SetEntitlementName(value); return *this;}
 
   private:
+
+    int m_dataTransferSubscriberFeePercent;
+    bool m_dataTransferSubscriberFeePercentHasBeenSet;
 
     Aws::String m_entitlementArn;
     bool m_entitlementArnHasBeenSet;

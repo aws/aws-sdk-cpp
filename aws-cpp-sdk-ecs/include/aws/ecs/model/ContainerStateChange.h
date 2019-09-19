@@ -92,6 +92,47 @@ namespace Model
 
 
     /**
+     * <p>The container image SHA 256 digest.</p>
+     */
+    inline const Aws::String& GetImageDigest() const{ return m_imageDigest; }
+
+    /**
+     * <p>The container image SHA 256 digest.</p>
+     */
+    inline bool ImageDigestHasBeenSet() const { return m_imageDigestHasBeenSet; }
+
+    /**
+     * <p>The container image SHA 256 digest.</p>
+     */
+    inline void SetImageDigest(const Aws::String& value) { m_imageDigestHasBeenSet = true; m_imageDigest = value; }
+
+    /**
+     * <p>The container image SHA 256 digest.</p>
+     */
+    inline void SetImageDigest(Aws::String&& value) { m_imageDigestHasBeenSet = true; m_imageDigest = std::move(value); }
+
+    /**
+     * <p>The container image SHA 256 digest.</p>
+     */
+    inline void SetImageDigest(const char* value) { m_imageDigestHasBeenSet = true; m_imageDigest.assign(value); }
+
+    /**
+     * <p>The container image SHA 256 digest.</p>
+     */
+    inline ContainerStateChange& WithImageDigest(const Aws::String& value) { SetImageDigest(value); return *this;}
+
+    /**
+     * <p>The container image SHA 256 digest.</p>
+     */
+    inline ContainerStateChange& WithImageDigest(Aws::String&& value) { SetImageDigest(std::move(value)); return *this;}
+
+    /**
+     * <p>The container image SHA 256 digest.</p>
+     */
+    inline ContainerStateChange& WithImageDigest(const char* value) { SetImageDigest(value); return *this;}
+
+
+    /**
      * <p>The ID of the Docker container.</p>
      */
     inline const Aws::String& GetRuntimeId() const{ return m_runtimeId; }
@@ -283,6 +324,9 @@ namespace Model
 
     Aws::String m_containerName;
     bool m_containerNameHasBeenSet;
+
+    Aws::String m_imageDigest;
+    bool m_imageDigestHasBeenSet;
 
     Aws::String m_runtimeId;
     bool m_runtimeIdHasBeenSet;

@@ -29,6 +29,8 @@ namespace Model
 {
 
 Entitlement::Entitlement() : 
+    m_dataTransferSubscriberFeePercent(0),
+    m_dataTransferSubscriberFeePercentHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_encryptionHasBeenSet(false),
     m_entitlementArnHasBeenSet(false),
@@ -38,6 +40,8 @@ Entitlement::Entitlement() :
 }
 
 Entitlement::Entitlement(JsonView jsonValue) : 
+    m_dataTransferSubscriberFeePercent(0),
+    m_dataTransferSubscriberFeePercentHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_encryptionHasBeenSet(false),
     m_entitlementArnHasBeenSet(false),
@@ -49,6 +53,13 @@ Entitlement::Entitlement(JsonView jsonValue) :
 
 Entitlement& Entitlement::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("dataTransferSubscriberFeePercent"))
+  {
+    m_dataTransferSubscriberFeePercent = jsonValue.GetInteger("dataTransferSubscriberFeePercent");
+
+    m_dataTransferSubscriberFeePercentHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
@@ -93,6 +104,12 @@ Entitlement& Entitlement::operator =(JsonView jsonValue)
 JsonValue Entitlement::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_dataTransferSubscriberFeePercentHasBeenSet)
+  {
+   payload.WithInteger("dataTransferSubscriberFeePercent", m_dataTransferSubscriberFeePercent);
+
+  }
 
   if(m_descriptionHasBeenSet)
   {

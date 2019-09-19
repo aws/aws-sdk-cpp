@@ -29,6 +29,8 @@ namespace Model
 {
 
 Output::Output() : 
+    m_dataTransferSubscriberFeePercent(0),
+    m_dataTransferSubscriberFeePercentHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_destinationHasBeenSet(false),
     m_encryptionHasBeenSet(false),
@@ -43,6 +45,8 @@ Output::Output() :
 }
 
 Output::Output(JsonView jsonValue) : 
+    m_dataTransferSubscriberFeePercent(0),
+    m_dataTransferSubscriberFeePercentHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_destinationHasBeenSet(false),
     m_encryptionHasBeenSet(false),
@@ -59,6 +63,13 @@ Output::Output(JsonView jsonValue) :
 
 Output& Output::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("dataTransferSubscriberFeePercent"))
+  {
+    m_dataTransferSubscriberFeePercent = jsonValue.GetInteger("dataTransferSubscriberFeePercent");
+
+    m_dataTransferSubscriberFeePercentHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
@@ -128,6 +139,12 @@ Output& Output::operator =(JsonView jsonValue)
 JsonValue Output::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_dataTransferSubscriberFeePercentHasBeenSet)
+  {
+   payload.WithInteger("dataTransferSubscriberFeePercent", m_dataTransferSubscriberFeePercent);
+
+  }
 
   if(m_descriptionHasBeenSet)
   {

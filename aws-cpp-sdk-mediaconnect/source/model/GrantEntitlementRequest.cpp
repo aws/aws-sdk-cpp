@@ -29,6 +29,8 @@ namespace Model
 {
 
 GrantEntitlementRequest::GrantEntitlementRequest() : 
+    m_dataTransferSubscriberFeePercent(0),
+    m_dataTransferSubscriberFeePercentHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_encryptionHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -37,6 +39,8 @@ GrantEntitlementRequest::GrantEntitlementRequest() :
 }
 
 GrantEntitlementRequest::GrantEntitlementRequest(JsonView jsonValue) : 
+    m_dataTransferSubscriberFeePercent(0),
+    m_dataTransferSubscriberFeePercentHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_encryptionHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -47,6 +51,13 @@ GrantEntitlementRequest::GrantEntitlementRequest(JsonView jsonValue) :
 
 GrantEntitlementRequest& GrantEntitlementRequest::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("dataTransferSubscriberFeePercent"))
+  {
+    m_dataTransferSubscriberFeePercent = jsonValue.GetInteger("dataTransferSubscriberFeePercent");
+
+    m_dataTransferSubscriberFeePercentHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
@@ -84,6 +95,12 @@ GrantEntitlementRequest& GrantEntitlementRequest::operator =(JsonView jsonValue)
 JsonValue GrantEntitlementRequest::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_dataTransferSubscriberFeePercentHasBeenSet)
+  {
+   payload.WithInteger("dataTransferSubscriberFeePercent", m_dataTransferSubscriberFeePercent);
+
+  }
 
   if(m_descriptionHasBeenSet)
   {

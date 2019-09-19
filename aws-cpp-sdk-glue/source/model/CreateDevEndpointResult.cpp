@@ -103,6 +103,12 @@ CreateDevEndpointResult& CreateDevEndpointResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("GlueVersion"))
+  {
+    m_glueVersion = jsonValue.GetString("GlueVersion");
+
+  }
+
   if(jsonValue.ValueExists("NumberOfWorkers"))
   {
     m_numberOfWorkers = jsonValue.GetInteger("NumberOfWorkers");

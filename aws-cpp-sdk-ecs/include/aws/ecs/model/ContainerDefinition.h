@@ -4411,37 +4411,55 @@ namespace Model
 
     /**
      * <p>The FireLens configuration for the container. This is used to specify and
-     * configure a log router for container logs.</p>
+     * configure a log router for container logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
+     * Log Routing</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const FirelensConfiguration& GetFirelensConfiguration() const{ return m_firelensConfiguration; }
 
     /**
      * <p>The FireLens configuration for the container. This is used to specify and
-     * configure a log router for container logs.</p>
+     * configure a log router for container logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
+     * Log Routing</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline bool FirelensConfigurationHasBeenSet() const { return m_firelensConfigurationHasBeenSet; }
 
     /**
      * <p>The FireLens configuration for the container. This is used to specify and
-     * configure a log router for container logs.</p>
+     * configure a log router for container logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
+     * Log Routing</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetFirelensConfiguration(const FirelensConfiguration& value) { m_firelensConfigurationHasBeenSet = true; m_firelensConfiguration = value; }
 
     /**
      * <p>The FireLens configuration for the container. This is used to specify and
-     * configure a log router for container logs.</p>
+     * configure a log router for container logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
+     * Log Routing</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetFirelensConfiguration(FirelensConfiguration&& value) { m_firelensConfigurationHasBeenSet = true; m_firelensConfiguration = std::move(value); }
 
     /**
      * <p>The FireLens configuration for the container. This is used to specify and
-     * configure a log router for container logs.</p>
+     * configure a log router for container logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
+     * Log Routing</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline ContainerDefinition& WithFirelensConfiguration(const FirelensConfiguration& value) { SetFirelensConfiguration(value); return *this;}
 
     /**
      * <p>The FireLens configuration for the container. This is used to specify and
-     * configure a log router for container logs.</p>
+     * configure a log router for container logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
+     * Log Routing</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline ContainerDefinition& WithFirelensConfiguration(FirelensConfiguration&& value) { SetFirelensConfiguration(std::move(value)); return *this;}
 

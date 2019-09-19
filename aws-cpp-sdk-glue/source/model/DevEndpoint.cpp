@@ -41,6 +41,7 @@ DevEndpoint::DevEndpoint() :
     m_statusHasBeenSet(false),
     m_workerType(WorkerType::NOT_SET),
     m_workerTypeHasBeenSet(false),
+    m_glueVersionHasBeenSet(false),
     m_numberOfWorkers(0),
     m_numberOfWorkersHasBeenSet(false),
     m_numberOfNodes(0),
@@ -73,6 +74,7 @@ DevEndpoint::DevEndpoint(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_workerType(WorkerType::NOT_SET),
     m_workerTypeHasBeenSet(false),
+    m_glueVersionHasBeenSet(false),
     m_numberOfWorkers(0),
     m_numberOfWorkersHasBeenSet(false),
     m_numberOfNodes(0),
@@ -166,6 +168,13 @@ DevEndpoint& DevEndpoint::operator =(JsonView jsonValue)
     m_workerType = WorkerTypeMapper::GetWorkerTypeForName(jsonValue.GetString("WorkerType"));
 
     m_workerTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("GlueVersion"))
+  {
+    m_glueVersion = jsonValue.GetString("GlueVersion");
+
+    m_glueVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("NumberOfWorkers"))
@@ -341,6 +350,12 @@ JsonValue DevEndpoint::Jsonize() const
   if(m_workerTypeHasBeenSet)
   {
    payload.WithString("WorkerType", WorkerTypeMapper::GetNameForWorkerType(m_workerType));
+  }
+
+  if(m_glueVersionHasBeenSet)
+  {
+   payload.WithString("GlueVersion", m_glueVersion);
+
   }
 
   if(m_numberOfWorkersHasBeenSet)

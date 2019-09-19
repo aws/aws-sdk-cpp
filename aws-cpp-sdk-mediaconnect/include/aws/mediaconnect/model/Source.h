@@ -50,6 +50,27 @@ namespace Model
 
 
     /**
+     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     */
+    inline int GetDataTransferSubscriberFeePercent() const{ return m_dataTransferSubscriberFeePercent; }
+
+    /**
+     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     */
+    inline bool DataTransferSubscriberFeePercentHasBeenSet() const { return m_dataTransferSubscriberFeePercentHasBeenSet; }
+
+    /**
+     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     */
+    inline void SetDataTransferSubscriberFeePercent(int value) { m_dataTransferSubscriberFeePercentHasBeenSet = true; m_dataTransferSubscriberFeePercent = value; }
+
+    /**
+     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+     */
+    inline Source& WithDataTransferSubscriberFeePercent(int value) { SetDataTransferSubscriberFeePercent(value); return *this;}
+
+
+    /**
      * The type of encryption that is used on the content ingested from this source.
      */
     inline const Encryption& GetDecryption() const{ return m_decryption; }
@@ -418,6 +439,9 @@ namespace Model
     inline Source& WithWhitelistCidr(const char* value) { SetWhitelistCidr(value); return *this;}
 
   private:
+
+    int m_dataTransferSubscriberFeePercent;
+    bool m_dataTransferSubscriberFeePercentHasBeenSet;
 
     Encryption m_decryption;
     bool m_decryptionHasBeenSet;
