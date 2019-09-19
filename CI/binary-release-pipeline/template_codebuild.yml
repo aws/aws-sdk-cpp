@@ -60,7 +60,7 @@ Parameters:
     Default: <android-buildspec-location>
     Description: Location of buildspec for CodeBuild Project to build SDK with Android NDK.
   BuildParallel:
-    Type: Number
+    Type: String
     Default: <build-parallel>
     Description: Number of jobs in parallel to build C++ SDK.
 Resources:
@@ -102,7 +102,7 @@ Resources:
   WindowsVS2015Project:
     Type: AWS::CodeBuild::Project
     Properties:
-      Name: 
+      Name:
         !Join
           - '-'
           - - !Ref WindowsProjectName

@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: 2010-09-09
 Parameters:
-  BinaryReleasePipelineName: 
+  BinaryReleasePipelineName:
     Type: String
     Default: <binary-release-pipeline-name>
     Description: Name of the binary release pipeline.
@@ -12,7 +12,7 @@ Parameters:
     Type: String
     Default: <pipeline-cache-s3-bucket-name>
     Description: Name of the S3 Bucket used for pipeline cache.
-  BinaryReleaseS3BucketName: 
+  BinaryReleaseS3BucketName:
     Type: String
     Default: <binary-release-s3-bucket-name>
     Description: Name of the binary release bucket.
@@ -53,7 +53,7 @@ Parameters:
     Default: <jenkins-macosx-provider>
     Description: Provider name of Jenkins used to build SDK on MacOSX.
   JenkinsMacOSXProviderVersion:
-    Type: Number
+    Type: String
     Default: <jenkins-macosx-provider-version>
     Description: Version of the custom provider (Jenkins) used to build SDK on MacOSX.
   JenkinsPS4Provider:
@@ -61,7 +61,7 @@ Parameters:
     Default: <jenkins-ps4-provider>
     Description: Provider name of Jenkins used to build SDK on PS4.
   JenkinsPS4ProviderVersion:
-    Type: Number
+    Type: String
     Default: <jenkins-ps4-provider-version>
     Description: Version of the custom provider (Jenkins) used to build SDK on PS4.
   JenkinsXboxProvider:
@@ -69,7 +69,7 @@ Parameters:
     Default: <jenkins-xbox-provider>
     Description: Provider name of Jenkins used to build SDK on XBOX.
   JenkinsXboxProviderVersion:
-    Type: Number
+    Type: String
     Default: <jenkins-xbox-provider-version>
     Description: Version of the custom provider (Jenkins) used to build SDK on XBOX.
   IPhoneArm64ProjectName:
@@ -89,7 +89,7 @@ Parameters:
     Default: <ps4-project-name>
     Description: Name of the Jenkins project used to build SDK on PS4.
   BuildParallel:
-    Type: Number
+    Type: String
     Default: <build-parallel>
     Description: Number of jobs in parallel to build C++ SDK.
   AndroidProjectName:
@@ -164,6 +164,18 @@ Parameters:
     Type: String
     Default: <binary-release-result-notifications-topic-name>
     Description: Topic name of the SNS, used to handle notifications received from lambda functions.
+  GithubImportProjectName:
+    Type: String
+    Default: <github-import-project-name>
+    Description: Name of the CodeBuild project, which will upload source code to S3 when there is an update in public Github repository.
+  GithubPublicRepository:
+    Type: String
+    Default: <github-public-repository>
+    Description: Github public repository name, for example "aws/aws-sdk-cpp".
+  GithubImportBuildSpecLocation:
+    Type: String
+    Default: <github-import-buildspec-location>
+    Description: Location of buildspec for CodeBuild Project to upload source code to S3 from public Github repository.
   ExtractMetadataProjectName:
     Type: String
     Default: <extract-metadata-project-name>
@@ -199,10 +211,10 @@ Mappings:
       AndroidArm64Api21DebugStatic: android-arm64-api21_debug_static
       AndroidArm64Api21ReleaseDynamic: android-arm64-api21_release_dynamic
       AndroidArm64Api21ReleaseStatic: android-arm64-api21_release_static
-      IPhoneArm64Dynamic: iphone_arm64_dynamic
-      IPhoneArm64Static: iphone_arm64_static
-      AppleTVArm64Dynamic: appletv_arm64_dynamic
-      AppleTVArm64Static: appletv_arm64_static
+      IPhoneArm64Dynamic: iphone-arm64_dynamic
+      IPhoneArm64Static: iphone-arm64_static
+      AppleTVArm64Dynamic: appletv-arm64_dynamic
+      AppleTVArm64Static: appletv-arm64_static
       PS4OrbisDebugDynamic: ps4-orbis_debug_dynamic
       PS4OrbisDebugStatic: ps4-orbis_debug_static
       PS4OrbisReleaseDynamic: ps4-orbis_release_dynamic
@@ -420,7 +432,7 @@ Resources:
         Status: Enabled
   CodeBuildDebugDynamic:
     Type: AWS::CloudFormation::Stack
-    Properties: 
+    Properties:
       TemplateURL: !Ref CodeBuildStackTemplate
       Parameters:
         BuildConfig: DebugDynamic
@@ -440,7 +452,7 @@ Resources:
         BuildParallel: !Ref BuildParallel
   CodeBuildDebugStatic:
     Type: AWS::CloudFormation::Stack
-    Properties: 
+    Properties:
       TemplateURL: !Ref CodeBuildStackTemplate
       Parameters:
         BuildConfig: DebugStatic
@@ -460,7 +472,7 @@ Resources:
         BuildParallel: !Ref BuildParallel
   CodeBuildReleaseDynamic:
     Type: AWS::CloudFormation::Stack
-    Properties: 
+    Properties:
       TemplateURL: !Ref CodeBuildStackTemplate
       Parameters:
         BuildConfig: ReleaseDynamic
@@ -480,7 +492,7 @@ Resources:
         BuildParallel: !Ref BuildParallel
   CodeBuildReleaseStatic:
     Type: AWS::CloudFormation::Stack
-    Properties: 
+    Properties:
       TemplateURL: !Ref CodeBuildStackTemplate
       Parameters:
         BuildConfig: ReleaseStatic
@@ -498,6 +510,37 @@ Resources:
         AndroidProjectName: !Ref AndroidProjectName
         AndroidBuildSpecLocation: !Ref AndroidBuildSpecLocation
         BuildParallel: !Ref BuildParallel
+  GithubImportProject:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: !Ref GithubImportProjectName
+      ServiceRole: !Ref BinaryReleaseCodeBuildRole
+      Source:
+        Type: GITHUB
+        GitCloneDepth: 1
+        Location: !Join
+          - ''
+          - - https://github.com/
+            - !Ref GithubPublicRepository
+            - .git
+        BuildSpec: !Ref GithubImportBuildSpecLocation
+      Triggers:
+        Webhook: true
+        FilterGroups:
+          - - Type: EVENT
+              Pattern: PUSH
+            - Type: HEAD_REF
+              Pattern: ^refs/heads/master$
+      Artifacts:
+        Type: S3
+        Location: !Ref BinaryReleaseS3BucketName
+        Path: release/origin/master
+        Name: /
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_LARGE
+        Image: !Ref CodeBuildProvidedLinuxImageName
+      TimeoutInMinutes: 60
   ExtractMetadataProject:
     Type: AWS::CodeBuild::Project
     Properties:
@@ -552,7 +595,7 @@ Resources:
           NOTIFICATIONS_TOPIC: !Ref BinaryReleaseResultNotificationsTopic
   BinaryReleaseResultNotificationsTopic:
     Type: AWS::SNS::Topic
-    Properties: 
+    Properties:
       Subscription:
         -
           Endpoint: !GetAtt BinaryReleaseResultNotificationsFunction.Arn
@@ -570,84 +613,84 @@ Resources:
     Properties:
       Name: !Ref BinaryReleasePipelineName
       RoleArn: !GetAtt BinaryReleaseCodePipelineRole.Arn
-      ArtifactStore: 
+      ArtifactStore:
         Type: S3
         Location: !Ref CodePipelineCacheBucket
-      Stages: 
-        - 
+      Stages:
+        -
           Name: Source
-          Actions: 
-            - 
+          Actions:
+            -
               Name: CppSdkSource
-              ActionTypeId: 
+              ActionTypeId:
                 Category: Source
                 Owner: AWS
                 Provider: S3
                 Version: 1
-              OutputArtifacts: 
+              OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
-              Configuration: 
+              Configuration:
                 PollForSourceChanges: true
                 S3Bucket: !Ref BinaryReleaseS3BucketName
                 S3ObjectKey: !Ref CppSdkSourceS3KeyName
               RunOrder: 1
-            - 
+            -
               Name: ConsoleSource
-              ActionTypeId: 
+              ActionTypeId:
                 Category: Source
                 Owner: AWS
                 Provider: S3
                 Version: 1
-              OutputArtifacts: 
+              OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, ConsoleSource]
-              Configuration: 
+              Configuration:
                 PollForSourceChanges: false
                 S3Bucket: !Ref BinaryReleaseS3BucketName
                 S3ObjectKey: !Ref ConsoleSourceS3KeyName
               RunOrder: 1
-            - 
+            -
               Name: IPhoneCurl
-              ActionTypeId: 
+              ActionTypeId:
                 Category: Source
                 Owner: AWS
                 Provider: S3
                 Version: 1
-              OutputArtifacts: 
+              OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, IPhoneCurl]
-              Configuration: 
+              Configuration:
                 PollForSourceChanges: false
                 S3Bucket: !Ref BinaryReleaseS3BucketName
                 S3ObjectKey: !Ref IPhoneCurlS3KeyName
               RunOrder: 1
-            - 
+            -
               Name: AppleTVCurl
-              ActionTypeId: 
+              ActionTypeId:
                 Category: Source
                 Owner: AWS
                 Provider: S3
                 Version: 1
-              OutputArtifacts: 
+              OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, AppleTvCurl]
-              Configuration: 
+              Configuration:
                 PollForSourceChanges: false
                 S3Bucket: !Ref BinaryReleaseS3BucketName
                 S3ObjectKey: !Ref AppleTvCurlS3KeyName
               RunOrder: 1
-        - 
+        -
           Name: MobilePlatforms
-          Actions: 
-            - 
+          Actions:
+            -
               Name: AndroidArm32Api19DebugDynamic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, AndroidArm32Api19DebugDynamic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
@@ -656,18 +699,18 @@ Resources:
                       - api19
                       - DebugDynamic
               RunOrder: 1
-            - 
+            -
               Name: AndroidArm32Api19DebugStatic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, AndroidArm32Api19DebugStatic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
@@ -676,18 +719,18 @@ Resources:
                       - api19
                       - DebugStatic
               RunOrder: 1
-            - 
+            -
               Name: AndroidArm32Api19ReleaseDynamic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, AndroidArm32Api19ReleaseDynamic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
@@ -696,18 +739,18 @@ Resources:
                       - api19
                       - ReleaseDynamic
               RunOrder: 1
-            - 
+            -
               Name: AndroidArm32Api19ReleaseStatic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, AndroidArm32Api19ReleaseStatic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
@@ -716,18 +759,18 @@ Resources:
                       - api19
                       - ReleaseStatic
               RunOrder: 1
-            - 
+            -
               Name: AndroidArm32Api21DebugDynamic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, AndroidArm32Api21DebugDynamic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
@@ -736,18 +779,18 @@ Resources:
                       - api21
                       - DebugDynamic
               RunOrder: 1
-            - 
+            -
               Name: AndroidArm32Api21DebugStatic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, AndroidArm32Api21DebugStatic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
@@ -756,18 +799,18 @@ Resources:
                       - api21
                       - DebugStatic
               RunOrder: 1
-            - 
+            -
               Name: AndroidArm32Api21ReleaseDynamic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, AndroidArm32Api21ReleaseDynamic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
@@ -776,18 +819,18 @@ Resources:
                       - api21
                       - ReleaseDynamic
               RunOrder: 1
-            - 
+            -
               Name: AndroidArm32Api21ReleaseStatic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, AndroidArm32Api21ReleaseStatic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
@@ -796,18 +839,18 @@ Resources:
                       - api21
                       - ReleaseStatic
               RunOrder: 1
-            - 
+            -
               Name: AndroidArm64Api21DebugDynamic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, AndroidArm64Api21DebugDynamic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
@@ -816,18 +859,18 @@ Resources:
                       - api21
                       - DebugDynamic
               RunOrder: 1
-            - 
+            -
               Name: AndroidArm64Api21DebugStatic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, AndroidArm64Api21DebugStatic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
@@ -836,18 +879,18 @@ Resources:
                       - api21
                       - DebugStatic
               RunOrder: 1
-            - 
+            -
               Name: AndroidArm64Api21ReleaseDynamic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, AndroidArm64Api21ReleaseDynamic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
@@ -856,18 +899,18 @@ Resources:
                       - api21
                       - ReleaseDynamic
               RunOrder: 1
-            - 
+            -
               Name: AndroidArm64Api21ReleaseStatic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, AndroidArm64Api21ReleaseStatic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
@@ -883,7 +926,7 @@ Resources:
                 Owner: Custom
                 Provider: !Ref JenkinsMacOSXProvider
                 Version: !Ref JenkinsMacOSXProviderVersion
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
                 - Name: !FindInMap [PipelineArtifacts, StageSource, IPhoneCurl]
               OutputArtifacts:
@@ -902,7 +945,7 @@ Resources:
                 Owner: Custom
                 Provider: !Ref JenkinsMacOSXProvider
                 Version: !Ref JenkinsMacOSXProviderVersion
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
                 - Name: !FindInMap [PipelineArtifacts, StageSource, IPhoneCurl]
               OutputArtifacts:
@@ -921,7 +964,7 @@ Resources:
                 Owner: Custom
                 Provider: !Ref JenkinsMacOSXProvider
                 Version: !Ref JenkinsMacOSXProviderVersion
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
                 - Name: !FindInMap [PipelineArtifacts, StageSource, AppleTvCurl]
               OutputArtifacts:
@@ -940,7 +983,7 @@ Resources:
                 Owner: Custom
                 Provider: !Ref JenkinsMacOSXProvider
                 Version: !Ref JenkinsMacOSXProviderVersion
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
                 - Name: !FindInMap [PipelineArtifacts, StageSource, AppleTvCurl]
               OutputArtifacts:
@@ -959,12 +1002,12 @@ Resources:
                 Owner: Custom
                 Provider: !Ref JenkinsPS4Provider
                 Version: !Ref JenkinsPS4ProviderVersion
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
                 - Name: !FindInMap [PipelineArtifacts, StageSource, ConsoleSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, PS4OrbisDebugDynamic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - ''
@@ -978,12 +1021,12 @@ Resources:
                 Owner: Custom
                 Provider: !Ref JenkinsPS4Provider
                 Version: !Ref JenkinsPS4ProviderVersion
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
                 - Name: !FindInMap [PipelineArtifacts, StageSource, ConsoleSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, PS4OrbisDebugStatic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - ''
@@ -997,12 +1040,12 @@ Resources:
                 Owner: Custom
                 Provider: !Ref JenkinsPS4Provider
                 Version: !Ref JenkinsPS4ProviderVersion
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
                 - Name: !FindInMap [PipelineArtifacts, StageSource, ConsoleSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, PS4OrbisReleaseDynamic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - ''
@@ -1016,12 +1059,12 @@ Resources:
                 Owner: Custom
                 Provider: !Ref JenkinsPS4Provider
                 Version: !Ref JenkinsPS4ProviderVersion
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
                 - Name: !FindInMap [PipelineArtifacts, StageSource, ConsoleSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, PS4OrbisReleaseStatic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - ''
@@ -1035,12 +1078,12 @@ Resources:
                 Owner: Custom
                 Provider: !Ref JenkinsXboxProvider
                 Version: !Ref JenkinsXboxProviderVersion
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
                 - Name: !FindInMap [PipelineArtifacts, StageSource, ConsoleSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, XboxDurangoDebugDynamic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - ''
@@ -1054,12 +1097,12 @@ Resources:
                 Owner: Custom
                 Provider: !Ref JenkinsXboxProvider
                 Version: !Ref JenkinsXboxProviderVersion
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
                 - Name: !FindInMap [PipelineArtifacts, StageSource, ConsoleSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, XboxDurangoDebugStatic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - ''
@@ -1073,12 +1116,12 @@ Resources:
                 Owner: Custom
                 Provider: !Ref JenkinsXboxProvider
                 Version: !Ref JenkinsXboxProviderVersion
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
                 - Name: !FindInMap [PipelineArtifacts, StageSource, ConsoleSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, XboxDurangoReleaseDynamic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - ''
@@ -1092,105 +1135,105 @@ Resources:
                 Owner: Custom
                 Provider: !Ref JenkinsXboxProvider
                 Version: !Ref JenkinsXboxProviderVersion
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
                 - Name: !FindInMap [PipelineArtifacts, StageSource, ConsoleSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, XboxDurangoReleaseStatic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - ''
                     - - !Ref XboxProjectName
                       - ReleaseStatic
               RunOrder: 1
-        - 
+        -
           Name: BuildReleaseBinaries
-          Actions: 
-            - 
+          Actions:
+            -
               Name: LinuxGccDebugDynamic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageBuildReleaseBinaries, LinuxDebugDynamic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
                     - - !Ref LinuxGccProjectName
                       - DebugDynamic
               RunOrder: 1
-            - 
+            -
               Name: LinuxGccDebugStatic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageBuildReleaseBinaries, LinuxDebugStatic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
                     - - !Ref LinuxGccProjectName
                       - DebugStatic
               RunOrder: 1
-            - 
+            -
               Name: LinuxGccReleaseDynamic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageBuildReleaseBinaries, LinuxReleaseDynamic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
                     - - !Ref LinuxGccProjectName
                       - ReleaseDynamic
               RunOrder: 1
-            - 
+            -
               Name: LinuxGccReleaseStatic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageBuildReleaseBinaries, LinuxReleaseStatic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
                     - - !Ref LinuxGccProjectName
                       - ReleaseStatic
               RunOrder: 1
-            - 
+            -
               Name: VS2015DebugDynamic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageBuildReleaseBinaries, VS2015DebugDynamic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
@@ -1198,18 +1241,18 @@ Resources:
                       - vs2015
                       - DebugDynamic
               RunOrder: 1
-            - 
+            -
               Name: VS2015DebugStatic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageBuildReleaseBinaries, VS2015DebugStatic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
@@ -1217,18 +1260,18 @@ Resources:
                       - vs2015
                       - DebugStatic
               RunOrder: 1
-            - 
+            -
               Name: VS2015ReleaseDynamic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageBuildReleaseBinaries, VS2015ReleaseDynamic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
@@ -1236,18 +1279,18 @@ Resources:
                       - vs2015
                       - ReleaseDynamic
               RunOrder: 1
-            - 
+            -
               Name: VS2015ReleaseStatic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageBuildReleaseBinaries, VS2015ReleaseStatic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
@@ -1255,18 +1298,18 @@ Resources:
                       - vs2015
                       - ReleaseStatic
               RunOrder: 1
-            - 
+            -
               Name: VS2017DebugDynamic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageBuildReleaseBinaries, VS2017DebugDynamic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
@@ -1274,18 +1317,18 @@ Resources:
                       - vs2017
                       - DebugDynamic
               RunOrder: 1
-            - 
+            -
               Name: VS2017DebugStatic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageBuildReleaseBinaries, VS2017DebugStatic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
@@ -1293,18 +1336,18 @@ Resources:
                       - vs2017
                       - DebugStatic
               RunOrder: 1
-            - 
+            -
               Name: VS2017ReleaseDynamic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageBuildReleaseBinaries, VS2017ReleaseDynamic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
@@ -1312,18 +1355,18 @@ Resources:
                       - vs2017
                       - ReleaseDynamic
               RunOrder: 1
-            - 
+            -
               Name: VS2017ReleaseStatic
               ActionTypeId:
                 Category: Build
                 Owner: AWS
                 Provider: CodeBuild
                 Version: 1
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageBuildReleaseBinaries, VS2017ReleaseStatic]
-              Configuration: 
+              Configuration:
                 ProjectName:
                   !Join
                     - '-'
@@ -1331,14 +1374,14 @@ Resources:
                       - vs2017
                       - ReleaseStatic
               RunOrder: 1
-            - 
+            -
               Name: MacOSXDebugDynamic
               ActionTypeId:
                 Category: Build
                 Owner: Custom
                 Provider: !Ref JenkinsMacOSXProvider
                 Version: !Ref JenkinsMacOSXProviderVersion
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageBuildReleaseBinaries, MacOSXDebugDynamic]
@@ -1349,14 +1392,14 @@ Resources:
                     - - !Ref MacOSXProjectName
                       - DebugDynamic
               RunOrder: 1
-            - 
+            -
               Name: MacOSXDebugStatic
               ActionTypeId:
                 Category: Build
                 Owner: Custom
                 Provider: !Ref JenkinsMacOSXProvider
                 Version: !Ref JenkinsMacOSXProviderVersion
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageBuildReleaseBinaries, MacOSXDebugStatic]
@@ -1367,14 +1410,14 @@ Resources:
                     - - !Ref MacOSXProjectName
                       - DebugStatic
               RunOrder: 1
-            - 
+            -
               Name: MacOSXReleaseDynamic
               ActionTypeId:
                 Category: Build
                 Owner: Custom
                 Provider: !Ref JenkinsMacOSXProvider
                 Version: !Ref JenkinsMacOSXProviderVersion
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageBuildReleaseBinaries, MacOSXReleaseDynamic]
@@ -1385,14 +1428,14 @@ Resources:
                     - - !Ref MacOSXProjectName
                       - ReleaseDynamic
               RunOrder: 1
-            - 
+            -
               Name: MacOSXReleaseStatic
               ActionTypeId:
                 Category: Build
                 Owner: Custom
                 Provider: !Ref JenkinsMacOSXProvider
                 Version: !Ref JenkinsMacOSXProviderVersion
-              InputArtifacts: 
+              InputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               OutputArtifacts:
                 - Name: !FindInMap [PipelineArtifacts, StageBuildReleaseBinaries, MacOSXReleaseStatic]
@@ -1403,7 +1446,7 @@ Resources:
                     - - !Ref MacOSXProjectName
                       - ReleaseStatic
               RunOrder: 1
-        - 
+        -
           Name: PrePublish
           Actions:
             -
@@ -1420,7 +1463,7 @@ Resources:
               Configuration:
                 ProjectName: !Ref ExtractMetadataProjectName
               RunOrder: 1
-        - 
+        -
           Name: Publish
           Actions:
             -
@@ -1435,7 +1478,7 @@ Resources:
                 - Name: !FindInMap [PipelineArtifacts, StageSource, CppSdkSource]
               Configuration:
                 FunctionName: !Ref BinaryReleasePublishFunctionName
-                UserParameters: 
+                UserParameters:
                   !Join
                     - ''
                     - - '{"bucket":"'
@@ -1459,7 +1502,7 @@ Resources:
                 - Name: !FindInMap [PipelineArtifacts, StageBuildReleaseBinaries, LinuxReleaseStatic]
               Configuration:
                 FunctionName: !Ref BinaryReleasePublishFunctionName
-                UserParameters: 
+                UserParameters:
                   !Join
                     - ''
                     - - '{"bucket":"'
@@ -1483,7 +1526,7 @@ Resources:
                 - Name: !FindInMap [PipelineArtifacts, StageBuildReleaseBinaries, VS2015ReleaseStatic]
               Configuration:
                 FunctionName: !Ref BinaryReleasePublishFunctionName
-                UserParameters: 
+                UserParameters:
                   !Join
                     - ''
                     - - '{"bucket":"'
@@ -1507,7 +1550,7 @@ Resources:
                 - Name: !FindInMap [PipelineArtifacts, StageBuildReleaseBinaries, VS2017ReleaseStatic]
               Configuration:
                 FunctionName: !Ref BinaryReleasePublishFunctionName
-                UserParameters: 
+                UserParameters:
                   !Join
                     - ''
                     - - '{"bucket":"'
@@ -1531,7 +1574,7 @@ Resources:
                 - Name: !FindInMap [PipelineArtifacts, StageBuildReleaseBinaries, MacOSXReleaseStatic]
               Configuration:
                 FunctionName: !Ref BinaryReleasePublishFunctionName
-                UserParameters: 
+                UserParameters:
                   !Join
                     - ''
                     - - '{"bucket":"'
@@ -1555,7 +1598,7 @@ Resources:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, AndroidArm32Api19ReleaseStatic]
               Configuration:
                 FunctionName: !Ref BinaryReleasePublishFunctionName
-                UserParameters: 
+                UserParameters:
                   !Join
                     - ''
                     - - '{"bucket":"'
@@ -1579,7 +1622,7 @@ Resources:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, AndroidArm32Api21ReleaseStatic]
               Configuration:
                 FunctionName: !Ref BinaryReleasePublishFunctionName
-                UserParameters: 
+                UserParameters:
                   !Join
                     - ''
                     - - '{"bucket":"'
@@ -1603,7 +1646,7 @@ Resources:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, AndroidArm64Api21ReleaseStatic]
               Configuration:
                 FunctionName: !Ref BinaryReleasePublishFunctionName
-                UserParameters: 
+                UserParameters:
                   !Join
                     - ''
                     - - '{"bucket":"'
@@ -1625,7 +1668,7 @@ Resources:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, IPhoneArm64Static]
               Configuration:
                 FunctionName: !Ref BinaryReleasePublishFunctionName
-                UserParameters: 
+                UserParameters:
                   !Join
                     - ''
                     - - '{"bucket":"'
@@ -1647,7 +1690,7 @@ Resources:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, AppleTVArm64Static]
               Configuration:
                 FunctionName: !Ref BinaryReleasePublishFunctionName
-                UserParameters: 
+                UserParameters:
                   !Join
                     - ''
                     - - '{"bucket":"'
@@ -1671,7 +1714,7 @@ Resources:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, PS4OrbisReleaseStatic]
               Configuration:
                 FunctionName: !Ref BinaryReleasePublishFunctionName
-                UserParameters: 
+                UserParameters:
                   !Join
                     - ''
                     - - '{"bucket":"'
@@ -1695,7 +1738,7 @@ Resources:
                 - Name: !FindInMap [PipelineArtifacts, StageMobilePlatforms, XboxDurangoReleaseStatic]
               Configuration:
                 FunctionName: !Ref BinaryReleasePublishFunctionName
-                UserParameters: 
+                UserParameters:
                   !Join
                     - ''
                     - - '{"bucket":"'

@@ -198,11 +198,11 @@ Parameters:
   GithubPrivateRepository:
     Type: String
     Default: <GithubPrivateRepository>
-    Description: Github private repository.
+    Description: Github private repository name, for example "aws/aws-sdk-cpp".
   GithubPublicRepository:
     Type: String
     Default: <GithubPublicRepository>
-    Description: Github private repository.
+    Description: Github public repository name, for example "aws/aws-sdk-cpp".
   GitCommitAuthorName:
     Type: String
     Default: <GitCommitAuthorName>
