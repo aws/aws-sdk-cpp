@@ -559,6 +559,63 @@ namespace Model
      */
     inline ReservedDBInstance& WithReservedDBInstanceArn(const char* value) { SetReservedDBInstanceArn(value); return *this;}
 
+
+    /**
+     * <p>The unique identifier for the lease associated with the reserved DB
+     * instance.</p> <note> <p>AWS Support might request the lease ID for an issue
+     * related to a reserved DB instance.</p> </note>
+     */
+    inline const Aws::String& GetLeaseId() const{ return m_leaseId; }
+
+    /**
+     * <p>The unique identifier for the lease associated with the reserved DB
+     * instance.</p> <note> <p>AWS Support might request the lease ID for an issue
+     * related to a reserved DB instance.</p> </note>
+     */
+    inline bool LeaseIdHasBeenSet() const { return m_leaseIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the lease associated with the reserved DB
+     * instance.</p> <note> <p>AWS Support might request the lease ID for an issue
+     * related to a reserved DB instance.</p> </note>
+     */
+    inline void SetLeaseId(const Aws::String& value) { m_leaseIdHasBeenSet = true; m_leaseId = value; }
+
+    /**
+     * <p>The unique identifier for the lease associated with the reserved DB
+     * instance.</p> <note> <p>AWS Support might request the lease ID for an issue
+     * related to a reserved DB instance.</p> </note>
+     */
+    inline void SetLeaseId(Aws::String&& value) { m_leaseIdHasBeenSet = true; m_leaseId = std::move(value); }
+
+    /**
+     * <p>The unique identifier for the lease associated with the reserved DB
+     * instance.</p> <note> <p>AWS Support might request the lease ID for an issue
+     * related to a reserved DB instance.</p> </note>
+     */
+    inline void SetLeaseId(const char* value) { m_leaseIdHasBeenSet = true; m_leaseId.assign(value); }
+
+    /**
+     * <p>The unique identifier for the lease associated with the reserved DB
+     * instance.</p> <note> <p>AWS Support might request the lease ID for an issue
+     * related to a reserved DB instance.</p> </note>
+     */
+    inline ReservedDBInstance& WithLeaseId(const Aws::String& value) { SetLeaseId(value); return *this;}
+
+    /**
+     * <p>The unique identifier for the lease associated with the reserved DB
+     * instance.</p> <note> <p>AWS Support might request the lease ID for an issue
+     * related to a reserved DB instance.</p> </note>
+     */
+    inline ReservedDBInstance& WithLeaseId(Aws::String&& value) { SetLeaseId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier for the lease associated with the reserved DB
+     * instance.</p> <note> <p>AWS Support might request the lease ID for an issue
+     * related to a reserved DB instance.</p> </note>
+     */
+    inline ReservedDBInstance& WithLeaseId(const char* value) { SetLeaseId(value); return *this;}
+
   private:
 
     Aws::String m_reservedDBInstanceId;
@@ -605,6 +662,9 @@ namespace Model
 
     Aws::String m_reservedDBInstanceArn;
     bool m_reservedDBInstanceArnHasBeenSet;
+
+    Aws::String m_leaseId;
+    bool m_leaseIdHasBeenSet;
   };
 
 } // namespace Model

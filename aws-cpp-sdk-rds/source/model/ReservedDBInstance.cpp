@@ -50,7 +50,8 @@ ReservedDBInstance::ReservedDBInstance() :
     m_multiAZHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_recurringChargesHasBeenSet(false),
-    m_reservedDBInstanceArnHasBeenSet(false)
+    m_reservedDBInstanceArnHasBeenSet(false),
+    m_leaseIdHasBeenSet(false)
 {
 }
 
@@ -74,7 +75,8 @@ ReservedDBInstance::ReservedDBInstance(const XmlNode& xmlNode) :
     m_multiAZHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_recurringChargesHasBeenSet(false),
-    m_reservedDBInstanceArnHasBeenSet(false)
+    m_reservedDBInstanceArnHasBeenSet(false),
+    m_leaseIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -181,6 +183,12 @@ ReservedDBInstance& ReservedDBInstance::operator =(const XmlNode& xmlNode)
       m_reservedDBInstanceArn = Aws::Utils::Xml::DecodeEscapedXmlText(reservedDBInstanceArnNode.GetText());
       m_reservedDBInstanceArnHasBeenSet = true;
     }
+    XmlNode leaseIdNode = resultNode.FirstChild("LeaseId");
+    if(!leaseIdNode.IsNull())
+    {
+      m_leaseId = Aws::Utils::Xml::DecodeEscapedXmlText(leaseIdNode.GetText());
+      m_leaseIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -269,6 +277,11 @@ void ReservedDBInstance::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << index << locationValue << ".ReservedDBInstanceArn=" << StringUtils::URLEncode(m_reservedDBInstanceArn.c_str()) << "&";
   }
 
+  if(m_leaseIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LeaseId=" << StringUtils::URLEncode(m_leaseId.c_str()) << "&";
+  }
+
 }
 
 void ReservedDBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -338,6 +351,10 @@ void ReservedDBInstance::OutputToStream(Aws::OStream& oStream, const char* locat
   if(m_reservedDBInstanceArnHasBeenSet)
   {
       oStream << location << ".ReservedDBInstanceArn=" << StringUtils::URLEncode(m_reservedDBInstanceArn.c_str()) << "&";
+  }
+  if(m_leaseIdHasBeenSet)
+  {
+      oStream << location << ".LeaseId=" << StringUtils::URLEncode(m_leaseId.c_str()) << "&";
   }
 }
 

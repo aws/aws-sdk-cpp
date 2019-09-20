@@ -130,83 +130,83 @@ namespace Model
 
 
     /**
-     * The ID of the version.
+     * The ID of the parent definition that the version is associated with.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * The ID of the version.
+     * The ID of the parent definition that the version is associated with.
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * The ID of the version.
+     * The ID of the parent definition that the version is associated with.
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * The ID of the version.
+     * The ID of the parent definition that the version is associated with.
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * The ID of the version.
+     * The ID of the parent definition that the version is associated with.
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * The ID of the version.
+     * The ID of the parent definition that the version is associated with.
      */
     inline VersionInformation& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * The ID of the version.
+     * The ID of the parent definition that the version is associated with.
      */
     inline VersionInformation& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * The ID of the version.
+     * The ID of the parent definition that the version is associated with.
      */
     inline VersionInformation& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * The unique ID of the version.
+     * The ID of the version.
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * The unique ID of the version.
+     * The ID of the version.
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * The unique ID of the version.
+     * The ID of the version.
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * The unique ID of the version.
+     * The ID of the version.
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * The unique ID of the version.
+     * The ID of the version.
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * The unique ID of the version.
+     * The ID of the version.
      */
     inline VersionInformation& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * The unique ID of the version.
+     * The ID of the version.
      */
     inline VersionInformation& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * The unique ID of the version.
+     * The ID of the version.
      */
     inline VersionInformation& WithVersion(const char* value) { SetVersion(value); return *this;}
 

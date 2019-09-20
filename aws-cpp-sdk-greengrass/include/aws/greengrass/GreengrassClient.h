@@ -2717,18 +2717,20 @@ namespace Model
         virtual void StopBulkDeploymentAsync(const Model::StopBulkDeploymentRequest& request, const StopBulkDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Add resource tags to a Greengrass Resource. Valid resources are Group,
-         * Connector, Core, Device, Function, Logger, Subscription, and Resource
-         * Defintions, and also BulkDeploymentIds.<p><h3>See Also:</h3>   <a
+         * Adds tags to a Greengrass resource. Valid resources are 'Group',
+         * 'ConnectorDefinition', 'CoreDefinition', 'DeviceDefinition',
+         * 'FunctionDefinition', 'LoggerDefinition', 'SubscriptionDefinition',
+         * 'ResourceDefinition', and 'BulkDeployment'.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * Add resource tags to a Greengrass Resource. Valid resources are Group,
-         * Connector, Core, Device, Function, Logger, Subscription, and Resource
-         * Defintions, and also BulkDeploymentIds.<p><h3>See Also:</h3>   <a
+         * Adds tags to a Greengrass resource. Valid resources are 'Group',
+         * 'ConnectorDefinition', 'CoreDefinition', 'DeviceDefinition',
+         * 'FunctionDefinition', 'LoggerDefinition', 'SubscriptionDefinition',
+         * 'ResourceDefinition', and 'BulkDeployment'.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/TagResource">AWS
          * API Reference</a></p>
          *
@@ -2737,9 +2739,10 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * Add resource tags to a Greengrass Resource. Valid resources are Group,
-         * Connector, Core, Device, Function, Logger, Subscription, and Resource
-         * Defintions, and also BulkDeploymentIds.<p><h3>See Also:</h3>   <a
+         * Adds tags to a Greengrass resource. Valid resources are 'Group',
+         * 'ConnectorDefinition', 'CoreDefinition', 'DeviceDefinition',
+         * 'FunctionDefinition', 'LoggerDefinition', 'SubscriptionDefinition',
+         * 'ResourceDefinition', and 'BulkDeployment'.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/TagResource">AWS
          * API Reference</a></p>
          *

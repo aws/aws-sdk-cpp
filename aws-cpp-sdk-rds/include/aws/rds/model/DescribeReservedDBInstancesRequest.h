@@ -387,6 +387,63 @@ namespace Model
 
 
     /**
+     * <p>The lease identifier filter value. Specify this parameter to show only the
+     * reservation that matches the specified lease ID.</p> <note> <p>AWS Support might
+     * request the lease ID for an issue related to a reserved DB instance.</p> </note>
+     */
+    inline const Aws::String& GetLeaseId() const{ return m_leaseId; }
+
+    /**
+     * <p>The lease identifier filter value. Specify this parameter to show only the
+     * reservation that matches the specified lease ID.</p> <note> <p>AWS Support might
+     * request the lease ID for an issue related to a reserved DB instance.</p> </note>
+     */
+    inline bool LeaseIdHasBeenSet() const { return m_leaseIdHasBeenSet; }
+
+    /**
+     * <p>The lease identifier filter value. Specify this parameter to show only the
+     * reservation that matches the specified lease ID.</p> <note> <p>AWS Support might
+     * request the lease ID for an issue related to a reserved DB instance.</p> </note>
+     */
+    inline void SetLeaseId(const Aws::String& value) { m_leaseIdHasBeenSet = true; m_leaseId = value; }
+
+    /**
+     * <p>The lease identifier filter value. Specify this parameter to show only the
+     * reservation that matches the specified lease ID.</p> <note> <p>AWS Support might
+     * request the lease ID for an issue related to a reserved DB instance.</p> </note>
+     */
+    inline void SetLeaseId(Aws::String&& value) { m_leaseIdHasBeenSet = true; m_leaseId = std::move(value); }
+
+    /**
+     * <p>The lease identifier filter value. Specify this parameter to show only the
+     * reservation that matches the specified lease ID.</p> <note> <p>AWS Support might
+     * request the lease ID for an issue related to a reserved DB instance.</p> </note>
+     */
+    inline void SetLeaseId(const char* value) { m_leaseIdHasBeenSet = true; m_leaseId.assign(value); }
+
+    /**
+     * <p>The lease identifier filter value. Specify this parameter to show only the
+     * reservation that matches the specified lease ID.</p> <note> <p>AWS Support might
+     * request the lease ID for an issue related to a reserved DB instance.</p> </note>
+     */
+    inline DescribeReservedDBInstancesRequest& WithLeaseId(const Aws::String& value) { SetLeaseId(value); return *this;}
+
+    /**
+     * <p>The lease identifier filter value. Specify this parameter to show only the
+     * reservation that matches the specified lease ID.</p> <note> <p>AWS Support might
+     * request the lease ID for an issue related to a reserved DB instance.</p> </note>
+     */
+    inline DescribeReservedDBInstancesRequest& WithLeaseId(Aws::String&& value) { SetLeaseId(std::move(value)); return *this;}
+
+    /**
+     * <p>The lease identifier filter value. Specify this parameter to show only the
+     * reservation that matches the specified lease ID.</p> <note> <p>AWS Support might
+     * request the lease ID for an issue related to a reserved DB instance.</p> </note>
+     */
+    inline DescribeReservedDBInstancesRequest& WithLeaseId(const char* value) { SetLeaseId(value); return *this;}
+
+
+    /**
      * <p>This parameter is not currently supported.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
@@ -538,6 +595,9 @@ namespace Model
 
     bool m_multiAZ;
     bool m_multiAZHasBeenSet;
+
+    Aws::String m_leaseId;
+    bool m_leaseIdHasBeenSet;
 
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;

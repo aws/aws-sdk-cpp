@@ -113,11 +113,49 @@ namespace Model
      */
     inline CreateSoftwareUpdateJobResult& WithIotJobId(const char* value) { SetIotJobId(value); return *this;}
 
+
+    /**
+     * The software version installed on the device or devices after the update.
+     */
+    inline const Aws::String& GetPlatformSoftwareVersion() const{ return m_platformSoftwareVersion; }
+
+    /**
+     * The software version installed on the device or devices after the update.
+     */
+    inline void SetPlatformSoftwareVersion(const Aws::String& value) { m_platformSoftwareVersion = value; }
+
+    /**
+     * The software version installed on the device or devices after the update.
+     */
+    inline void SetPlatformSoftwareVersion(Aws::String&& value) { m_platformSoftwareVersion = std::move(value); }
+
+    /**
+     * The software version installed on the device or devices after the update.
+     */
+    inline void SetPlatformSoftwareVersion(const char* value) { m_platformSoftwareVersion.assign(value); }
+
+    /**
+     * The software version installed on the device or devices after the update.
+     */
+    inline CreateSoftwareUpdateJobResult& WithPlatformSoftwareVersion(const Aws::String& value) { SetPlatformSoftwareVersion(value); return *this;}
+
+    /**
+     * The software version installed on the device or devices after the update.
+     */
+    inline CreateSoftwareUpdateJobResult& WithPlatformSoftwareVersion(Aws::String&& value) { SetPlatformSoftwareVersion(std::move(value)); return *this;}
+
+    /**
+     * The software version installed on the device or devices after the update.
+     */
+    inline CreateSoftwareUpdateJobResult& WithPlatformSoftwareVersion(const char* value) { SetPlatformSoftwareVersion(value); return *this;}
+
   private:
 
     Aws::String m_iotJobArn;
 
     Aws::String m_iotJobId;
+
+    Aws::String m_platformSoftwareVersion;
   };
 
 } // namespace Model

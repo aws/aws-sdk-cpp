@@ -29,6 +29,7 @@ DescribeReservedDBInstancesRequest::DescribeReservedDBInstancesRequest() :
     m_offeringTypeHasBeenSet(false),
     m_multiAZ(false),
     m_multiAZHasBeenSet(false),
+    m_leaseIdHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_maxRecords(0),
     m_maxRecordsHasBeenSet(false),
@@ -73,6 +74,11 @@ Aws::String DescribeReservedDBInstancesRequest::SerializePayload() const
   if(m_multiAZHasBeenSet)
   {
     ss << "MultiAZ=" << std::boolalpha << m_multiAZ << "&";
+  }
+
+  if(m_leaseIdHasBeenSet)
+  {
+    ss << "LeaseId=" << StringUtils::URLEncode(m_leaseId.c_str()) << "&";
   }
 
   if(m_filtersHasBeenSet)
