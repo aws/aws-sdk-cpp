@@ -206,6 +206,20 @@ CMake options are variables that can either be ON or OFF, with a controllable de
 #### ENABLE_TESTING
 (Defaults to ON) Controls whether or not the unit and integration test projects are built
 
+#### ENABLE_VIRTUAL_OPERATIONS
+(Defaults to ON) This option usually works with REGENERATE_CLIENTS.
+If enabled when doing code generation (REGENERATE_CLIENTS=ON), operation related functions in service clients will be marked as `virtual`.
+
+If disabled when doing code generation (REGENERATE_CLIENTS=ON), `virtual` will not be added to operation functions and service client classes will be marked as final.
+
+If disabled, SDK will also add compiler flags `-ffunction-sections -fdata-sections` for gcc and clang when compiling.
+
+You can utilize this feature to work with your linker to reduce binary size of your application on Unix platforms when doing static linking in Release mode.
+
+For example, if your system uses `ld` as linker, then you can turn this option OFF when building SDK, and specify linker flag `--gc-sections` (or `-dead_strip` on Mac) in your own build scripts.
+
+You can also tell gcc or clang to pass these linker flags by specifying `-Wl,--gc-sections`, or `-Wl,-dead_strip`. Or via `-DCMAKE_CXX_FLAGS="-Wl,[flag]"` if you use CMake.
+
 ### Android CMake Variables/Options
 
 #### NDK_DIR

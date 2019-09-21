@@ -31,7 +31,7 @@ import java.util.zip.ZipOutputStream;
 
 public class MainClientGenerator {
 
-    public File generateSourceFromC2jModel(C2jServiceModel c2jModel, String serviceName, String languageBinding, String namespace, String licenseText, boolean generateStandalonePackage) throws Exception {
+    public File generateSourceFromC2jModel(C2jServiceModel c2jModel, String serviceName, String languageBinding, String namespace, String licenseText, boolean generateStandalonePackage, boolean enableVirtualOperations) throws Exception {
 
         SdkSpec spec = new SdkSpec(languageBinding, serviceName, null);
         // Transform to ServiceModel
@@ -42,6 +42,7 @@ public class MainClientGenerator {
         serviceModel.setRuntimeMinorVersion("@RUNTIME_MINOR_VERSION@");
         serviceModel.setNamespace(namespace);
         serviceModel.setLicenseText(licenseText);
+        serviceModel.setEnableVirtualOperations(enableVirtualOperations);
 
         spec.setVersion(serviceModel.getMetadata().getApiVersion());
 

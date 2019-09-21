@@ -77,6 +77,13 @@ if(ADD_CUSTOM_CLIENTS OR REGENERATE_CLIENTS)
     )
 endif()
 
+            
+if(ENABLE_VIRTUAL_OPERATIONS) # it could be set to 0/1 or ON/OFF
+    set(ENABLE_VIRTUAL_OPERATIONS_ARG "--enableVirtualOperations")
+else()
+    set(ENABLE_VIRTUAL_OPERATIONS_ARG "")
+endif()
+
 if(REGENERATE_CLIENTS)
     message(STATUS "Regenerating clients that have been selected for build.")
     set(MERGED_BUILD_LIST ${SDK_BUILD_LIST})
@@ -91,9 +98,9 @@ if(REGENERATE_CLIENTS)
         if(EXISTS ${SDK_C2J_FILE})
             message(STATUS "Clearing existing directory for ${SDK} to prepare for generation.")
             file(REMOVE_RECURSE "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-${SDK}")
-            
+
             execute_process(
-                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ${SDK} --apiVersion ${C2J_DATE} --outputLocation ./
+                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ${SDK} --apiVersion ${C2J_DATE} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --outputLocation ./
                 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
             )
             message(STATUS "Generated service: ${SDK}, version: ${C2J_DATE}")
@@ -122,7 +129,7 @@ foreach(custom_client ${ADD_CUSTOM_CLIENTS})
         file(REMOVE_RECURSE "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-${C_SERVICE_NAME}")
         message(STATUS "generating client for ${C_SERVICE_NAME} version ${C_VERSION}")
         execute_process(
-            COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ${C_SERVICE_NAME} --apiVersion ${C_VERSION} --outputLocation ./
+            COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ${C_SERVICE_NAME} --apiVersion ${C_VERSION} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --outputLocation ./
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         )
         LIST(APPEND SDK_BUILD_LIST ${C_SERVICE_NAME})        
@@ -189,6 +196,12 @@ function(add_sdks)
                     if (NO_HTTP_CLIENT AND NOT "${SDK}" STREQUAL "core")
                         set(NO_HTTP_CLIENT_SKIP_INTEGRATION_TEST ON)
                         continue()
+                    endif()
+                    if (NOT ENABLE_VIRTUAL_OPERATIONS)
+                        if ("${SDK}" STREQUAL "transfer" OR "${SDK}" STREQUAL "s3-encryption")
+                            message(STATUS "Skip building ${SDK} integration tests because some tests need to override service operations, but ENABLE_VIRTUAL_OPERATIONS is switched off.")
+                            continue()
+                        endif()
                     endif()
                     STRING(REPLACE "," ";" LIST_RESULT ${TEST_PROJECTS})
                     foreach(TEST_PROJECT IN LISTS LIST_RESULT)

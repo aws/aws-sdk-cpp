@@ -46,6 +46,10 @@ macro(set_gcc_flags)
     if(MINIMIZE_SIZE AND COMPILER_GCC)
         list(APPEND AWS_COMPILER_FLAGS "-s")
     endif()
+
+    if(NOT BUILD_SHARED_LIBS AND NOT ENABLE_VIRTUAL_OPERATIONS)
+        list(APPEND AWS_COMPILER_FLAGS "-ffunction-sections;-fdata-sections")
+    endif()
 endmacro()
 
 macro(set_gcc_warnings)

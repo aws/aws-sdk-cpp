@@ -33,6 +33,7 @@ public class main {
     static final String NAMESPACE = "namespace";
     static final String LICENSE_TEXT = "license-text";
     static final String STANDALONE_OPTION = "standalone";
+    static final String ENABLE_VIRTUAL_OPERATIONS = "enable-virtual-operations";
 
     public static void main(String[] args) throws IOException {
 
@@ -69,6 +70,7 @@ public class main {
             boolean generateStandalonePakckage = argPairs.containsKey(STANDALONE_OPTION);
             String languageBinding = argPairs.get(LANGUAGE_BINDING_OPTION);
             String serviceName = argPairs.get(SERVICE_OPTION);
+            boolean enableVirtualOperations = argPairs.containsKey(ENABLE_VIRTUAL_OPERATIONS);
 
             //read from the piped input
             try (InputStream stream = getInputStreamReader(argPairs)) {
@@ -90,7 +92,8 @@ public class main {
                             serviceName,
                             namespace,
                             licenseText,
-                            generateStandalonePakckage);
+                            generateStandalonePakckage,
+                            enableVirtualOperations);
                     System.out.println(outputLib.getAbsolutePath());
                 } catch (GeneratorNotImplementedException e) {
                     e.printStackTrace();

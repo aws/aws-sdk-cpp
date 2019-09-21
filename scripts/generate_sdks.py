@@ -41,6 +41,7 @@ def ParseArguments():
     parser.add_argument("--prepareTools", help="Makes sure generation environment is setup.", action="store_true")
     parser.add_argument("--standalone", help="Build custom client as a separete package, with prebuilt C++ SDK as dependency", action="store_true")
     parser.add_argument("--listAll", help="Lists all available SDKs for generation.", action="store_true")
+    parser.add_argument("--enableVirtualOperations", help ="Mark operation functions in service client as virtual functions.", action="store_true")
 
     args = vars( parser.parse_args() )
     argMap[ "outputLocation" ] = args[ "outputLocation" ] or "./"
@@ -53,6 +54,7 @@ def ParseArguments():
     argMap[ "prepareTools" ] = args["prepareTools"]
     argMap[ "standalone" ] = args["standalone"]
     argMap[ "listAll" ] = args["listAll"]
+    argMap[ "enableVirtualOperations" ] = args["enableVirtualOperations"]
 
     return argMap
 
@@ -89,12 +91,12 @@ def PrepareGenerator(generatorPath):
     process = subprocess.call('mvn package', shell=True)
     os.chdir(currentDir)
 
-def GenerateSdk(generatorPath, sdk, outputDir, namespace, licenseText, standalone):
+def GenerateSdk(generatorPath, sdk, outputDir, namespace, licenseText, standalone, enableVirtualOperations):
     try:
        with codecs.open(sdk['filePath'], 'rb', 'utf-8') as api_definition:
             api_content = api_definition.read()
             jar_path = join(generatorPath, 'target/aws-client-generator-1.0-SNAPSHOT-jar-with-dependencies.jar')
-            process = Popen(['java', '-jar', jar_path, '--service', sdk['serviceName'], '--version', sdk['apiVersion'], '--namespace', namespace, '--license-text', licenseText, '--language-binding', 'cpp', '--arbitrary', '--standalone' if standalone else ''], stdout=PIPE, stdin=PIPE)
+            process = Popen(['java', '-jar', jar_path, '--service', sdk['serviceName'], '--version', sdk['apiVersion'], '--namespace', namespace, '--license-text', licenseText, '--language-binding', 'cpp', '--arbitrary', '--standalone' if standalone else '', '--enable-virtual-operations' if enableVirtualOperations else '' ], stdout=PIPE, stdin=PIPE)
             writer = codecs.getwriter('utf-8')
             stdInWriter = writer(process.stdin)
             stdInWriter.write(api_content)
@@ -121,6 +123,6 @@ def Main():
     if arguments['serviceName']:
         print('Generating {} api version {}.'.format(arguments['serviceName'], arguments['apiVersion']))
         key = '{}-{}'.format(arguments['serviceName'], arguments['apiVersion'])
-        GenerateSdk(arguments['pathToGenerator'], sdks[key], arguments['outputLocation'], arguments['namespace'], arguments['licenseText'], arguments['standalone'])
+        GenerateSdk(arguments['pathToGenerator'], sdks[key], arguments['outputLocation'], arguments['namespace'], arguments['licenseText'], arguments['standalone'], arguments['enableVirtualOperations'])
 
 Main()

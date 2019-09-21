@@ -35,6 +35,7 @@ public class ServiceModel {
     String licenseText;
     Map<String, Shape> shapes;
     Map<String, Operation> operations;
+    boolean enableVirtualOperations;
     Collection<Error> serviceErrors;
 
     @Getter(AccessLevel.PRIVATE)

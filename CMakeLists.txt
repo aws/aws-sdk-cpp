@@ -73,12 +73,38 @@ option(ENABLE_ADDRESS_SANITIZER "Flags to enable/disable Address Sanitizer for g
 option(BYPASS_DEFAULT_PROXY "Bypass the machine's default proxy settings when using IXmlHttpRequest2" ON)
 option(BUILD_DEPS "Build third-party dependencies" ON)
 option(ENABLE_CURL_LOGGING "If enabled, Curl's internal log will be piped to SDK's logger" OFF)
+option(ENABLE_VIRTUAL_OPERATIONS "This option usually works with REGENERATE_CLIENTS. \
+                                If enabled when doing code generation, operation related functions in service clients will be marked as virtual. \
+                                If disabled when doing code generation, virtual will not be added to operation functions and service client class will be marked as final. \
+                                If disabled, SDK will add compiler flags '-ffunction-sections -fdata-sections' for gcc and clang when compiling. \
+                                You can utilize this feature to work with your linker to reduce binary size of your application on Unix platforms when doing static linking in Release mode." ON)
 
 set(BUILD_ONLY "" CACHE STRING "A semi-colon delimited list of the projects to build")
 set(CPP_STANDARD "11" CACHE STRING "Flag to upgrade the C++ standard used. The default is 11. The minimum is 11.")
 
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
+endif()
+
+#From https://stackoverflow.com/questions/18968979/how-to-get-colorized-output-with-cmake
+if(NOT WIN32)
+  string(ASCII 27 Esc)
+  set(ColourReset "${Esc}[m")
+  set(ColourBold  "${Esc}[1m")
+  set(Red         "${Esc}[31m")
+  set(Green       "${Esc}[32m")
+  set(Yellow      "${Esc}[33m")
+  set(Blue        "${Esc}[34m")
+  set(Magenta     "${Esc}[35m")
+  set(Cyan        "${Esc}[36m")
+  set(White       "${Esc}[37m")
+  set(BoldRed     "${Esc}[1;31m")
+  set(BoldGreen   "${Esc}[1;32m")
+  set(BoldYellow  "${Esc}[1;33m")
+  set(BoldBlue    "${Esc}[1;34m")
+  set(BoldMagenta "${Esc}[1;35m")
+  set(BoldCyan    "${Esc}[1;36m")
+  set(BoldWhite   "${Esc}[1;37m")
 endif()
 
 # backwards compatibility with old command line params
@@ -101,6 +127,12 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 # include() will "load and run" cmake script
 include(resolve_platform)
 include(CMakePackageConfigHelpers)
+
+if (REGENERATE_CLIENTS AND NOT ENABLE_VIRTUAL_OPERATIONS)
+    if (PLATFORM_LINUX OR PLATFORM_APPLE)
+        Message(STATUS "${BoldYellow}You are regenerating service client's source code and is turning ENABLE_VIRTUAL_OPERATIONS off. If you are targeting smaller binary size, read description string of ENABLE_VIRTUAL_OPERATIONS.${ColourReset}")
+    endif()
+endif()
 
 # use response files to prevent command-line-too-big errors for large libraries like iam
 set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_OBJECTS 1)

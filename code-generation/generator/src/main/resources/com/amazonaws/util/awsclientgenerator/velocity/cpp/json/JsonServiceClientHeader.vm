@@ -82,7 +82,11 @@ namespace Model
    * ${serviceModel.documentation}
    */
 #end
-  class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className} : public Aws::Client::AWSJsonClient
+#set($finalClass = " final")
+#if($serviceModel.enableVirtualOperations)
+#set($finalClass = "")
+#end
+  class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}${finalClass} : public Aws::Client::AWSJsonClient
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
