@@ -15,6 +15,12 @@ int main() {
     return x + y;
 }")
 
+set(LIBATOMIC_TEST_CXX_SOURCE "
+int main() {
+    __atomic_load_8(nullptr, 0);
+    return 0;
+}")
+
 macro(apply_post_project_platform_settings)
     include(GNUInstallDirs)
 
@@ -32,12 +38,9 @@ macro(apply_post_project_platform_settings)
     list(APPEND CMAKE_REQUIRED_FLAGS "-std=c++${CPP_STANDARD}")
     check_cxx_source_compiles("${ATOMIC_TEST_CXX_SOURCE}" HAVE_ATOMICS_WITHOUT_LIBATOMIC)
     if(NOT HAVE_ATOMICS_WITHOUT_LIBATOMIC)
-        if("${CMAKE_VERSION}" VERSION_LESS "3.4.0")
-            enable_language(C)
-        endif()
-        check_library_exists(atomic __atomic_load_8 "" LIBATOMIC_EXISTS)
+        set(CMAKE_REQUIRED_LIBRARIES atomic)
+        check_cxx_source_compiles("${LIBATOMIC_TEST_CXX_SOURCE}" LIBATOMIC_EXISTS)
         if(LIBATOMIC_EXISTS)
-            set(CMAKE_REQUIRED_LIBRARIES atomic)
             check_cxx_source_compiles("${ATOMIC_TEST_CXX_SOURCE}" HAVE_ATOMICS_WITH_LIBATOMIC)
         endif()
         if(HAVE_ATOMICS_WITH_LIBATOMIC)
