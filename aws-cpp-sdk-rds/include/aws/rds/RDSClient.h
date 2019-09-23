@@ -657,7 +657,7 @@ namespace Aws
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Using_the_Query_API.html">Using
    * the Query API</a>.</p> </li> </ul>
      */
-        class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient
+                class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient
     {
     public:
     typedef Aws::Client::AWSXMLClient BASECLASS;

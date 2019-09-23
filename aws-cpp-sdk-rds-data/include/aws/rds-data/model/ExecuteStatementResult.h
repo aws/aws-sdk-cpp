@@ -38,8 +38,7 @@ namespace Model
 {
   /**
    * <p>The response elements represent the output of a request to run a SQL
-   * statement against
-            a database.</p><p><h3>See Also:</h3>   <a
+   * statement against a database.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteStatementResponse">AWS
    * API Reference</a></p>
    */
@@ -88,37 +87,79 @@ namespace Model
 
 
     /**
-     * <p>Values for fields generated during the request.</p>
+     * <p>Values for fields generated during the request.</p> <pre><code> &lt;note&gt;
+     * &lt;p&gt;The &lt;code&gt;generatedFields&lt;/code&gt; data isn't supported by
+     * Aurora PostgreSQL. To get the values of generated fields, use the
+     * &lt;code&gt;RETURNING&lt;/code&gt; clause. For more information, see &lt;a
+     * href=&quot;https://www.postgresql.org/docs/10/dml-returning.html&quot;&gt;Returning
+     * Data From Modified Rows&lt;/a&gt; in the PostgreSQL documentation.&lt;/p&gt;
+     * &lt;/note&gt; </code></pre>
      */
     inline const Aws::Vector<Field>& GetGeneratedFields() const{ return m_generatedFields; }
 
     /**
-     * <p>Values for fields generated during the request.</p>
+     * <p>Values for fields generated during the request.</p> <pre><code> &lt;note&gt;
+     * &lt;p&gt;The &lt;code&gt;generatedFields&lt;/code&gt; data isn't supported by
+     * Aurora PostgreSQL. To get the values of generated fields, use the
+     * &lt;code&gt;RETURNING&lt;/code&gt; clause. For more information, see &lt;a
+     * href=&quot;https://www.postgresql.org/docs/10/dml-returning.html&quot;&gt;Returning
+     * Data From Modified Rows&lt;/a&gt; in the PostgreSQL documentation.&lt;/p&gt;
+     * &lt;/note&gt; </code></pre>
      */
     inline void SetGeneratedFields(const Aws::Vector<Field>& value) { m_generatedFields = value; }
 
     /**
-     * <p>Values for fields generated during the request.</p>
+     * <p>Values for fields generated during the request.</p> <pre><code> &lt;note&gt;
+     * &lt;p&gt;The &lt;code&gt;generatedFields&lt;/code&gt; data isn't supported by
+     * Aurora PostgreSQL. To get the values of generated fields, use the
+     * &lt;code&gt;RETURNING&lt;/code&gt; clause. For more information, see &lt;a
+     * href=&quot;https://www.postgresql.org/docs/10/dml-returning.html&quot;&gt;Returning
+     * Data From Modified Rows&lt;/a&gt; in the PostgreSQL documentation.&lt;/p&gt;
+     * &lt;/note&gt; </code></pre>
      */
     inline void SetGeneratedFields(Aws::Vector<Field>&& value) { m_generatedFields = std::move(value); }
 
     /**
-     * <p>Values for fields generated during the request.</p>
+     * <p>Values for fields generated during the request.</p> <pre><code> &lt;note&gt;
+     * &lt;p&gt;The &lt;code&gt;generatedFields&lt;/code&gt; data isn't supported by
+     * Aurora PostgreSQL. To get the values of generated fields, use the
+     * &lt;code&gt;RETURNING&lt;/code&gt; clause. For more information, see &lt;a
+     * href=&quot;https://www.postgresql.org/docs/10/dml-returning.html&quot;&gt;Returning
+     * Data From Modified Rows&lt;/a&gt; in the PostgreSQL documentation.&lt;/p&gt;
+     * &lt;/note&gt; </code></pre>
      */
     inline ExecuteStatementResult& WithGeneratedFields(const Aws::Vector<Field>& value) { SetGeneratedFields(value); return *this;}
 
     /**
-     * <p>Values for fields generated during the request.</p>
+     * <p>Values for fields generated during the request.</p> <pre><code> &lt;note&gt;
+     * &lt;p&gt;The &lt;code&gt;generatedFields&lt;/code&gt; data isn't supported by
+     * Aurora PostgreSQL. To get the values of generated fields, use the
+     * &lt;code&gt;RETURNING&lt;/code&gt; clause. For more information, see &lt;a
+     * href=&quot;https://www.postgresql.org/docs/10/dml-returning.html&quot;&gt;Returning
+     * Data From Modified Rows&lt;/a&gt; in the PostgreSQL documentation.&lt;/p&gt;
+     * &lt;/note&gt; </code></pre>
      */
     inline ExecuteStatementResult& WithGeneratedFields(Aws::Vector<Field>&& value) { SetGeneratedFields(std::move(value)); return *this;}
 
     /**
-     * <p>Values for fields generated during the request.</p>
+     * <p>Values for fields generated during the request.</p> <pre><code> &lt;note&gt;
+     * &lt;p&gt;The &lt;code&gt;generatedFields&lt;/code&gt; data isn't supported by
+     * Aurora PostgreSQL. To get the values of generated fields, use the
+     * &lt;code&gt;RETURNING&lt;/code&gt; clause. For more information, see &lt;a
+     * href=&quot;https://www.postgresql.org/docs/10/dml-returning.html&quot;&gt;Returning
+     * Data From Modified Rows&lt;/a&gt; in the PostgreSQL documentation.&lt;/p&gt;
+     * &lt;/note&gt; </code></pre>
      */
     inline ExecuteStatementResult& AddGeneratedFields(const Field& value) { m_generatedFields.push_back(value); return *this; }
 
     /**
-     * <p>Values for fields generated during the request.</p>
+     * <p>Values for fields generated during the request.</p> <pre><code> &lt;note&gt;
+     * &lt;p&gt;The &lt;code&gt;generatedFields&lt;/code&gt; data isn't supported by
+     * Aurora PostgreSQL. To get the values of generated fields, use the
+     * &lt;code&gt;RETURNING&lt;/code&gt; clause. For more information, see &lt;a
+     * href=&quot;https://www.postgresql.org/docs/10/dml-returning.html&quot;&gt;Returning
+     * Data From Modified Rows&lt;/a&gt; in the PostgreSQL documentation.&lt;/p&gt;
+     * &lt;/note&gt; </code></pre>
      */
     inline ExecuteStatementResult& AddGeneratedFields(Field&& value) { m_generatedFields.push_back(std::move(value)); return *this; }
 

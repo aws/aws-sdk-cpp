@@ -83,6 +83,7 @@ Cluster::Cluster() :
     m_snapshotScheduleStateHasBeenSet(false),
     m_expectedNextSnapshotScheduleTimeHasBeenSet(false),
     m_expectedNextSnapshotScheduleTimeStatusHasBeenSet(false),
+    m_nextMaintenanceWindowStartTimeHasBeenSet(false),
     m_resizeInfoHasBeenSet(false)
 {
 }
@@ -140,6 +141,7 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_snapshotScheduleStateHasBeenSet(false),
     m_expectedNextSnapshotScheduleTimeHasBeenSet(false),
     m_expectedNextSnapshotScheduleTimeStatusHasBeenSet(false),
+    m_nextMaintenanceWindowStartTimeHasBeenSet(false),
     m_resizeInfoHasBeenSet(false)
 {
   *this = xmlNode;
@@ -463,6 +465,12 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_expectedNextSnapshotScheduleTimeStatus = Aws::Utils::Xml::DecodeEscapedXmlText(expectedNextSnapshotScheduleTimeStatusNode.GetText());
       m_expectedNextSnapshotScheduleTimeStatusHasBeenSet = true;
     }
+    XmlNode nextMaintenanceWindowStartTimeNode = resultNode.FirstChild("NextMaintenanceWindowStartTime");
+    if(!nextMaintenanceWindowStartTimeNode.IsNull())
+    {
+      m_nextMaintenanceWindowStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nextMaintenanceWindowStartTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_nextMaintenanceWindowStartTimeHasBeenSet = true;
+    }
     XmlNode resizeInfoNode = resultNode.FirstChild("ResizeInfo");
     if(!resizeInfoNode.IsNull())
     {
@@ -756,6 +764,11 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".ExpectedNextSnapshotScheduleTimeStatus=" << StringUtils::URLEncode(m_expectedNextSnapshotScheduleTimeStatus.c_str()) << "&";
   }
 
+  if(m_nextMaintenanceWindowStartTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NextMaintenanceWindowStartTime=" << StringUtils::URLEncode(m_nextMaintenanceWindowStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
   if(m_resizeInfoHasBeenSet)
   {
       Aws::StringStream resizeInfoLocationAndMemberSs;
@@ -1002,6 +1015,10 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_expectedNextSnapshotScheduleTimeStatusHasBeenSet)
   {
       oStream << location << ".ExpectedNextSnapshotScheduleTimeStatus=" << StringUtils::URLEncode(m_expectedNextSnapshotScheduleTimeStatus.c_str()) << "&";
+  }
+  if(m_nextMaintenanceWindowStartTimeHasBeenSet)
+  {
+      oStream << location << ".NextMaintenanceWindowStartTime=" << StringUtils::URLEncode(m_nextMaintenanceWindowStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_resizeInfoHasBeenSet)
   {

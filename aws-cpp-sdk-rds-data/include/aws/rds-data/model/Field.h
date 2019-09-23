@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
+#include <aws/rds-data/model/ArrayValue.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -46,6 +47,37 @@ namespace Model
     Field(Aws::Utils::Json::JsonView jsonValue);
     Field& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>An array of values.</p>
+     */
+    inline const ArrayValue& GetArrayValue() const{ return m_arrayValue; }
+
+    /**
+     * <p>An array of values.</p>
+     */
+    inline bool ArrayValueHasBeenSet() const { return m_arrayValueHasBeenSet; }
+
+    /**
+     * <p>An array of values.</p>
+     */
+    inline void SetArrayValue(const ArrayValue& value) { m_arrayValueHasBeenSet = true; m_arrayValue = value; }
+
+    /**
+     * <p>An array of values.</p>
+     */
+    inline void SetArrayValue(ArrayValue&& value) { m_arrayValueHasBeenSet = true; m_arrayValue = std::move(value); }
+
+    /**
+     * <p>An array of values.</p>
+     */
+    inline Field& WithArrayValue(const ArrayValue& value) { SetArrayValue(value); return *this;}
+
+    /**
+     * <p>An array of values.</p>
+     */
+    inline Field& WithArrayValue(ArrayValue&& value) { SetArrayValue(std::move(value)); return *this;}
 
 
     /**
@@ -204,6 +236,9 @@ namespace Model
     inline Field& WithStringValue(const char* value) { SetStringValue(value); return *this;}
 
   private:
+
+    ArrayValue m_arrayValue;
+    bool m_arrayValueHasBeenSet;
 
     Aws::Utils::ByteBuffer m_blobValue;
     bool m_blobValueHasBeenSet;

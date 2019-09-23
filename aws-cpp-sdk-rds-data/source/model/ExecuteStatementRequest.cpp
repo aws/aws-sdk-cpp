@@ -30,6 +30,7 @@ ExecuteStatementRequest::ExecuteStatementRequest() :
     m_includeResultMetadataHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
+    m_resultSetOptionsHasBeenSet(false),
     m_schemaHasBeenSet(false),
     m_secretArnHasBeenSet(false),
     m_sqlHasBeenSet(false),
@@ -73,6 +74,12 @@ Aws::String ExecuteStatementRequest::SerializePayload() const
   if(m_resourceArnHasBeenSet)
   {
    payload.WithString("resourceArn", m_resourceArn);
+
+  }
+
+  if(m_resultSetOptionsHasBeenSet)
+  {
+   payload.WithObject("resultSetOptions", m_resultSetOptions.Jsonize());
 
   }
 

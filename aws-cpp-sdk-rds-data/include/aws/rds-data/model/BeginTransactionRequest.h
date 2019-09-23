@@ -28,7 +28,6 @@ namespace Model
 
   /**
    * <p>The request parameters represent the input of a request to start a SQL
-      
    * transaction.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BeginTransactionRequest">AWS
    * API Reference</a></p>

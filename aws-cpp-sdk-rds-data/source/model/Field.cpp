@@ -30,6 +30,7 @@ namespace Model
 {
 
 Field::Field() : 
+    m_arrayValueHasBeenSet(false),
     m_blobValueHasBeenSet(false),
     m_booleanValue(false),
     m_booleanValueHasBeenSet(false),
@@ -44,6 +45,7 @@ Field::Field() :
 }
 
 Field::Field(JsonView jsonValue) : 
+    m_arrayValueHasBeenSet(false),
     m_blobValueHasBeenSet(false),
     m_booleanValue(false),
     m_booleanValueHasBeenSet(false),
@@ -60,6 +62,13 @@ Field::Field(JsonView jsonValue) :
 
 Field& Field::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("arrayValue"))
+  {
+    m_arrayValue = jsonValue.GetObject("arrayValue");
+
+    m_arrayValueHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("blobValue"))
   {
     m_blobValue = HashingUtils::Base64Decode(jsonValue.GetString("blobValue"));
@@ -107,6 +116,12 @@ Field& Field::operator =(JsonView jsonValue)
 JsonValue Field::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_arrayValueHasBeenSet)
+  {
+   payload.WithObject("arrayValue", m_arrayValue.Jsonize());
+
+  }
 
   if(m_blobValueHasBeenSet)
   {

@@ -30,8 +30,7 @@ namespace Model
 
   /**
    * <p>The request parameters represent the input of a SQL statement over an array
-   * of
-            data.</p><p><h3>See Also:</h3>   <a
+   * of data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BatchExecuteStatementRequest">AWS
    * API Reference</a></p>
    */
@@ -297,105 +296,65 @@ namespace Model
 
     /**
      * <p>The identifier of a transaction that was started by using the
-               
      * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     
-     * transaction that you want to include the SQL statement in.</p>
-        <p>If the
-     * SQL statement is not part of a transaction, don't set this
-           
-     * parameter.</p>
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
      */
     inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
 
     /**
      * <p>The identifier of a transaction that was started by using the
-               
      * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     
-     * transaction that you want to include the SQL statement in.</p>
-        <p>If the
-     * SQL statement is not part of a transaction, don't set this
-           
-     * parameter.</p>
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
      */
     inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
 
     /**
      * <p>The identifier of a transaction that was started by using the
-               
      * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     
-     * transaction that you want to include the SQL statement in.</p>
-        <p>If the
-     * SQL statement is not part of a transaction, don't set this
-           
-     * parameter.</p>
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
      */
     inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
 
     /**
      * <p>The identifier of a transaction that was started by using the
-               
      * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     
-     * transaction that you want to include the SQL statement in.</p>
-        <p>If the
-     * SQL statement is not part of a transaction, don't set this
-           
-     * parameter.</p>
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
      */
     inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
 
     /**
      * <p>The identifier of a transaction that was started by using the
-               
      * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     
-     * transaction that you want to include the SQL statement in.</p>
-        <p>If the
-     * SQL statement is not part of a transaction, don't set this
-           
-     * parameter.</p>
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
      */
     inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
 
     /**
      * <p>The identifier of a transaction that was started by using the
-               
      * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     
-     * transaction that you want to include the SQL statement in.</p>
-        <p>If the
-     * SQL statement is not part of a transaction, don't set this
-           
-     * parameter.</p>
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
      */
     inline BatchExecuteStatementRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
 
     /**
      * <p>The identifier of a transaction that was started by using the
-               
      * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     
-     * transaction that you want to include the SQL statement in.</p>
-        <p>If the
-     * SQL statement is not part of a transaction, don't set this
-           
-     * parameter.</p>
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
      */
     inline BatchExecuteStatementRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of a transaction that was started by using the
-               
      * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     
-     * transaction that you want to include the SQL statement in.</p>
-        <p>If the
-     * SQL statement is not part of a transaction, don't set this
-           
-     * parameter.</p>
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
      */
     inline BatchExecuteStatementRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
 

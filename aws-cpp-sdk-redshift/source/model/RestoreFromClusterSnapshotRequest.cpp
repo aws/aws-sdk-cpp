@@ -51,7 +51,9 @@ RestoreFromClusterSnapshotRequest::RestoreFromClusterSnapshotRequest() :
     m_additionalInfoHasBeenSet(false),
     m_iamRolesHasBeenSet(false),
     m_maintenanceTrackNameHasBeenSet(false),
-    m_snapshotScheduleIdentifierHasBeenSet(false)
+    m_snapshotScheduleIdentifierHasBeenSet(false),
+    m_numberOfNodes(0),
+    m_numberOfNodesHasBeenSet(false)
 {
 }
 
@@ -200,6 +202,11 @@ Aws::String RestoreFromClusterSnapshotRequest::SerializePayload() const
   if(m_snapshotScheduleIdentifierHasBeenSet)
   {
     ss << "SnapshotScheduleIdentifier=" << StringUtils::URLEncode(m_snapshotScheduleIdentifier.c_str()) << "&";
+  }
+
+  if(m_numberOfNodesHasBeenSet)
+  {
+    ss << "NumberOfNodes=" << m_numberOfNodes << "&";
   }
 
   ss << "Version=2012-12-01";

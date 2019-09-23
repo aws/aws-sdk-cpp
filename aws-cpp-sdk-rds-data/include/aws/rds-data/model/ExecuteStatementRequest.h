@@ -18,6 +18,7 @@
 #include <aws/rds-data/RDSDataServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds-data/model/ResultSetOptions.h>
 #include <aws/rds-data/model/SqlParameter.h>
 #include <utility>
 
@@ -30,8 +31,7 @@ namespace Model
 
   /**
    * <p>The request parameters represent the input of a request to run a SQL
-   * statement against
-            a database.</p><p><h3>See Also:</h3>   <a
+   * statement against a database.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteStatementRequest">AWS
    * API Reference</a></p>
    */
@@ -50,74 +50,42 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to continue running the statement after 
-     
-     * the call times out. By default, the statement stops running when the call 
-     
-     * times out.</p>
-        <important>
-            <p>For DDL statements, we
-     * recommend continuing to run the statement after 
-               the call times
-     * out. When a DDL statement terminates before it is finished 
-              
-     * running, it can result in errors and possibly corrupted data structures.</p>
-   
-     *     </important>
+     * <p>A value that indicates whether to continue running the statement after the
+     * call times out. By default, the statement stops running when the call times
+     * out.</p> <important> <p>For DDL statements, we recommend continuing to run the
+     * statement after the call times out. When a DDL statement terminates before it is
+     * finished running, it can result in errors and possibly corrupted data
+     * structures.</p> </important>
      */
     inline bool GetContinueAfterTimeout() const{ return m_continueAfterTimeout; }
 
     /**
-     * <p>A value that indicates whether to continue running the statement after 
-     
-     * the call times out. By default, the statement stops running when the call 
-     
-     * times out.</p>
-        <important>
-            <p>For DDL statements, we
-     * recommend continuing to run the statement after 
-               the call times
-     * out. When a DDL statement terminates before it is finished 
-              
-     * running, it can result in errors and possibly corrupted data structures.</p>
-   
-     *     </important>
+     * <p>A value that indicates whether to continue running the statement after the
+     * call times out. By default, the statement stops running when the call times
+     * out.</p> <important> <p>For DDL statements, we recommend continuing to run the
+     * statement after the call times out. When a DDL statement terminates before it is
+     * finished running, it can result in errors and possibly corrupted data
+     * structures.</p> </important>
      */
     inline bool ContinueAfterTimeoutHasBeenSet() const { return m_continueAfterTimeoutHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to continue running the statement after 
-     
-     * the call times out. By default, the statement stops running when the call 
-     
-     * times out.</p>
-        <important>
-            <p>For DDL statements, we
-     * recommend continuing to run the statement after 
-               the call times
-     * out. When a DDL statement terminates before it is finished 
-              
-     * running, it can result in errors and possibly corrupted data structures.</p>
-   
-     *     </important>
+     * <p>A value that indicates whether to continue running the statement after the
+     * call times out. By default, the statement stops running when the call times
+     * out.</p> <important> <p>For DDL statements, we recommend continuing to run the
+     * statement after the call times out. When a DDL statement terminates before it is
+     * finished running, it can result in errors and possibly corrupted data
+     * structures.</p> </important>
      */
     inline void SetContinueAfterTimeout(bool value) { m_continueAfterTimeoutHasBeenSet = true; m_continueAfterTimeout = value; }
 
     /**
-     * <p>A value that indicates whether to continue running the statement after 
-     
-     * the call times out. By default, the statement stops running when the call 
-     
-     * times out.</p>
-        <important>
-            <p>For DDL statements, we
-     * recommend continuing to run the statement after 
-               the call times
-     * out. When a DDL statement terminates before it is finished 
-              
-     * running, it can result in errors and possibly corrupted data structures.</p>
-   
-     *     </important>
+     * <p>A value that indicates whether to continue running the statement after the
+     * call times out. By default, the statement stops running when the call times
+     * out.</p> <important> <p>For DDL statements, we recommend continuing to run the
+     * statement after the call times out. When a DDL statement terminates before it is
+     * finished running, it can result in errors and possibly corrupted data
+     * structures.</p> </important>
      */
     inline ExecuteStatementRequest& WithContinueAfterTimeout(bool value) { SetContinueAfterTimeout(value); return *this;}
 
@@ -267,6 +235,37 @@ namespace Model
 
 
     /**
+     * <p>Options that control how the result set is returned.</p>
+     */
+    inline const ResultSetOptions& GetResultSetOptions() const{ return m_resultSetOptions; }
+
+    /**
+     * <p>Options that control how the result set is returned.</p>
+     */
+    inline bool ResultSetOptionsHasBeenSet() const { return m_resultSetOptionsHasBeenSet; }
+
+    /**
+     * <p>Options that control how the result set is returned.</p>
+     */
+    inline void SetResultSetOptions(const ResultSetOptions& value) { m_resultSetOptionsHasBeenSet = true; m_resultSetOptions = value; }
+
+    /**
+     * <p>Options that control how the result set is returned.</p>
+     */
+    inline void SetResultSetOptions(ResultSetOptions&& value) { m_resultSetOptionsHasBeenSet = true; m_resultSetOptions = std::move(value); }
+
+    /**
+     * <p>Options that control how the result set is returned.</p>
+     */
+    inline ExecuteStatementRequest& WithResultSetOptions(const ResultSetOptions& value) { SetResultSetOptions(value); return *this;}
+
+    /**
+     * <p>Options that control how the result set is returned.</p>
+     */
+    inline ExecuteStatementRequest& WithResultSetOptions(ResultSetOptions&& value) { SetResultSetOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p>The name of the database schema.</p>
      */
     inline const Aws::String& GetSchema() const{ return m_schema; }
@@ -391,89 +390,65 @@ namespace Model
 
     /**
      * <p>The identifier of a transaction that was started by using the
-               
      * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     
-     * transaction that you want to include the SQL statement in.</p>
-        <p>If the
-     * SQL statement is not part of a transaction, don't set this parameter.</p>
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
      */
     inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
 
     /**
      * <p>The identifier of a transaction that was started by using the
-               
      * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     
-     * transaction that you want to include the SQL statement in.</p>
-        <p>If the
-     * SQL statement is not part of a transaction, don't set this parameter.</p>
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
      */
     inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
 
     /**
      * <p>The identifier of a transaction that was started by using the
-               
      * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     
-     * transaction that you want to include the SQL statement in.</p>
-        <p>If the
-     * SQL statement is not part of a transaction, don't set this parameter.</p>
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
      */
     inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
 
     /**
      * <p>The identifier of a transaction that was started by using the
-               
      * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     
-     * transaction that you want to include the SQL statement in.</p>
-        <p>If the
-     * SQL statement is not part of a transaction, don't set this parameter.</p>
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
      */
     inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
 
     /**
      * <p>The identifier of a transaction that was started by using the
-               
      * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     
-     * transaction that you want to include the SQL statement in.</p>
-        <p>If the
-     * SQL statement is not part of a transaction, don't set this parameter.</p>
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
      */
     inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
 
     /**
      * <p>The identifier of a transaction that was started by using the
-               
      * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     
-     * transaction that you want to include the SQL statement in.</p>
-        <p>If the
-     * SQL statement is not part of a transaction, don't set this parameter.</p>
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
      */
     inline ExecuteStatementRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
 
     /**
      * <p>The identifier of a transaction that was started by using the
-               
      * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     
-     * transaction that you want to include the SQL statement in.</p>
-        <p>If the
-     * SQL statement is not part of a transaction, don't set this parameter.</p>
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
      */
     inline ExecuteStatementRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of a transaction that was started by using the
-               
      * <code>BeginTransaction</code> operation. Specify the transaction ID of the
-     
-     * transaction that you want to include the SQL statement in.</p>
-        <p>If the
-     * SQL statement is not part of a transaction, don't set this parameter.</p>
+     * transaction that you want to include the SQL statement in.</p> <p>If the SQL
+     * statement is not part of a transaction, don't set this parameter.</p>
      */
     inline ExecuteStatementRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
 
@@ -493,6 +468,9 @@ namespace Model
 
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
+
+    ResultSetOptions m_resultSetOptions;
+    bool m_resultSetOptionsHasBeenSet;
 
     Aws::String m_schema;
     bool m_schemaHasBeenSet;

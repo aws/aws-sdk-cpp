@@ -2061,6 +2061,37 @@ namespace Model
 
 
     /**
+     * <p>The date and time in UTC when system maintenance can begin.</p>
+     */
+    inline const Aws::Utils::DateTime& GetNextMaintenanceWindowStartTime() const{ return m_nextMaintenanceWindowStartTime; }
+
+    /**
+     * <p>The date and time in UTC when system maintenance can begin.</p>
+     */
+    inline bool NextMaintenanceWindowStartTimeHasBeenSet() const { return m_nextMaintenanceWindowStartTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time in UTC when system maintenance can begin.</p>
+     */
+    inline void SetNextMaintenanceWindowStartTime(const Aws::Utils::DateTime& value) { m_nextMaintenanceWindowStartTimeHasBeenSet = true; m_nextMaintenanceWindowStartTime = value; }
+
+    /**
+     * <p>The date and time in UTC when system maintenance can begin.</p>
+     */
+    inline void SetNextMaintenanceWindowStartTime(Aws::Utils::DateTime&& value) { m_nextMaintenanceWindowStartTimeHasBeenSet = true; m_nextMaintenanceWindowStartTime = std::move(value); }
+
+    /**
+     * <p>The date and time in UTC when system maintenance can begin.</p>
+     */
+    inline Cluster& WithNextMaintenanceWindowStartTime(const Aws::Utils::DateTime& value) { SetNextMaintenanceWindowStartTime(value); return *this;}
+
+    /**
+     * <p>The date and time in UTC when system maintenance can begin.</p>
+     */
+    inline Cluster& WithNextMaintenanceWindowStartTime(Aws::Utils::DateTime&& value) { SetNextMaintenanceWindowStartTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>Returns the following:</p> <ul> <li> <p>AllowCancelResize: a boolean value
      * indicating if the resize operation can be cancelled.</p> </li> <li>
      * <p>ResizeType: Returns ClassicResize</p> </li> </ul>
@@ -2235,6 +2266,9 @@ namespace Model
 
     Aws::String m_expectedNextSnapshotScheduleTimeStatus;
     bool m_expectedNextSnapshotScheduleTimeStatusHasBeenSet;
+
+    Aws::Utils::DateTime m_nextMaintenanceWindowStartTime;
+    bool m_nextMaintenanceWindowStartTimeHasBeenSet;
 
     ResizeInfo m_resizeInfo;
     bool m_resizeInfoHasBeenSet;

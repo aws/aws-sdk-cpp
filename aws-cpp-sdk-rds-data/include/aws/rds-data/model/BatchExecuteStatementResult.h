@@ -37,8 +37,7 @@ namespace Model
 {
   /**
    * <p>The response elements represent the output of a SQL statement over an array
-   * of
-            data.</p><p><h3>See Also:</h3>   <a
+   * of data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BatchExecuteStatementResponse">AWS
    * API Reference</a></p>
    */

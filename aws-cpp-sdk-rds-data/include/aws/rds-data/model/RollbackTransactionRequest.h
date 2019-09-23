@@ -28,8 +28,7 @@ namespace Model
 
   /**
    * <p>The request parameters represent the input of a request to perform a rollback
-   * of a
-            transaction.</p><p><h3>See Also:</h3>   <a
+   * of a transaction.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/RollbackTransactionRequest">AWS
    * API Reference</a></p>
    */
