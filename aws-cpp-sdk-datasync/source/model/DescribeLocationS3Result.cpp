@@ -26,11 +26,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLocationS3Result::DescribeLocationS3Result()
+DescribeLocationS3Result::DescribeLocationS3Result() : 
+    m_s3StorageClass(S3StorageClass::NOT_SET)
 {
 }
 
-DescribeLocationS3Result::DescribeLocationS3Result(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeLocationS3Result::DescribeLocationS3Result(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_s3StorageClass(S3StorageClass::NOT_SET)
 {
   *this = result;
 }
@@ -47,6 +49,12 @@ DescribeLocationS3Result& DescribeLocationS3Result::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("LocationUri"))
   {
     m_locationUri = jsonValue.GetString("LocationUri");
+
+  }
+
+  if(jsonValue.ValueExists("S3StorageClass"))
+  {
+    m_s3StorageClass = S3StorageClassMapper::GetS3StorageClassForName(jsonValue.GetString("S3StorageClass"));
 
   }
 

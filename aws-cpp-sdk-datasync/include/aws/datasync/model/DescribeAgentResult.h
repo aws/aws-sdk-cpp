@@ -252,19 +252,34 @@ namespace Model
     inline DescribeAgentResult& WithEndpointType(EndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The subnet and the security group that DataSync used to access a VPC
+     * endpoint.</p>
+     */
     inline const PrivateLinkConfig& GetPrivateLinkConfig() const{ return m_privateLinkConfig; }
 
-    
+    /**
+     * <p>The subnet and the security group that DataSync used to access a VPC
+     * endpoint.</p>
+     */
     inline void SetPrivateLinkConfig(const PrivateLinkConfig& value) { m_privateLinkConfig = value; }
 
-    
+    /**
+     * <p>The subnet and the security group that DataSync used to access a VPC
+     * endpoint.</p>
+     */
     inline void SetPrivateLinkConfig(PrivateLinkConfig&& value) { m_privateLinkConfig = std::move(value); }
 
-    
+    /**
+     * <p>The subnet and the security group that DataSync used to access a VPC
+     * endpoint.</p>
+     */
     inline DescribeAgentResult& WithPrivateLinkConfig(const PrivateLinkConfig& value) { SetPrivateLinkConfig(value); return *this;}
 
-    
+    /**
+     * <p>The subnet and the security group that DataSync used to access a VPC
+     * endpoint.</p>
+     */
     inline DescribeAgentResult& WithPrivateLinkConfig(PrivateLinkConfig&& value) { SetPrivateLinkConfig(std::move(value)); return *this;}
 
   private:

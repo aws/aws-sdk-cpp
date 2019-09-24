@@ -31,6 +31,8 @@ namespace Model
 Options::Options() : 
     m_verifyMode(VerifyMode::NOT_SET),
     m_verifyModeHasBeenSet(false),
+    m_overwriteMode(OverwriteMode::NOT_SET),
+    m_overwriteModeHasBeenSet(false),
     m_atime(Atime::NOT_SET),
     m_atimeHasBeenSet(false),
     m_mtime(Mtime::NOT_SET),
@@ -53,6 +55,8 @@ Options::Options() :
 Options::Options(JsonView jsonValue) : 
     m_verifyMode(VerifyMode::NOT_SET),
     m_verifyModeHasBeenSet(false),
+    m_overwriteMode(OverwriteMode::NOT_SET),
+    m_overwriteModeHasBeenSet(false),
     m_atime(Atime::NOT_SET),
     m_atimeHasBeenSet(false),
     m_mtime(Mtime::NOT_SET),
@@ -80,6 +84,13 @@ Options& Options::operator =(JsonView jsonValue)
     m_verifyMode = VerifyModeMapper::GetVerifyModeForName(jsonValue.GetString("VerifyMode"));
 
     m_verifyModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OverwriteMode"))
+  {
+    m_overwriteMode = OverwriteModeMapper::GetOverwriteModeForName(jsonValue.GetString("OverwriteMode"));
+
+    m_overwriteModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Atime"))
@@ -148,6 +159,11 @@ JsonValue Options::Jsonize() const
   if(m_verifyModeHasBeenSet)
   {
    payload.WithString("VerifyMode", VerifyModeMapper::GetNameForVerifyMode(m_verifyMode));
+  }
+
+  if(m_overwriteModeHasBeenSet)
+  {
+   payload.WithString("OverwriteMode", OverwriteModeMapper::GetNameForOverwriteMode(m_overwriteMode));
   }
 
   if(m_atimeHasBeenSet)

@@ -52,42 +52,42 @@ namespace Model
     /**
      * <p> The type of the attribute, could be one of the following values:
      * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
-     * "PERSONAL_HEALTH_INFORMATION". </p>
+     * "PROTECTED_HEALTH_INFORMATION". </p>
      */
     inline const EntityType& GetType() const{ return m_type; }
 
     /**
      * <p> The type of the attribute, could be one of the following values:
      * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
-     * "PERSONAL_HEALTH_INFORMATION". </p>
+     * "PROTECTED_HEALTH_INFORMATION". </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p> The type of the attribute, could be one of the following values:
      * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
-     * "PERSONAL_HEALTH_INFORMATION". </p>
+     * "PROTECTED_HEALTH_INFORMATION". </p>
      */
     inline void SetType(const EntityType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p> The type of the attribute, could be one of the following values:
      * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
-     * "PERSONAL_HEALTH_INFORMATION". </p>
+     * "PROTECTED_HEALTH_INFORMATION". </p>
      */
     inline void SetType(EntityType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p> The type of the attribute, could be one of the following values:
      * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
-     * "PERSONAL_HEALTH_INFORMATION". </p>
+     * "PROTECTED_HEALTH_INFORMATION". </p>
      */
     inline UnmappedAttribute& WithType(const EntityType& value) { SetType(value); return *this;}
 
     /**
      * <p> The type of the attribute, could be one of the following values:
      * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
-     * "PERSONAL_HEALTH_INFORMATION". </p>
+     * "PROTECTED_HEALTH_INFORMATION". </p>
      */
     inline UnmappedAttribute& WithType(EntityType&& value) { SetType(std::move(value)); return *this;}
 

@@ -30,8 +30,16 @@
 #include <aws/comprehendmedical/ComprehendMedicalClient.h>
 #include <aws/comprehendmedical/ComprehendMedicalEndpoint.h>
 #include <aws/comprehendmedical/ComprehendMedicalErrorMarshaller.h>
-#include <aws/comprehendmedical/model/DetectEntitiesRequest.h>
+#include <aws/comprehendmedical/model/DescribeEntitiesDetectionV2JobRequest.h>
+#include <aws/comprehendmedical/model/DescribePHIDetectionJobRequest.h>
+#include <aws/comprehendmedical/model/DetectEntitiesV2Request.h>
 #include <aws/comprehendmedical/model/DetectPHIRequest.h>
+#include <aws/comprehendmedical/model/ListEntitiesDetectionV2JobsRequest.h>
+#include <aws/comprehendmedical/model/ListPHIDetectionJobsRequest.h>
+#include <aws/comprehendmedical/model/StartEntitiesDetectionV2JobRequest.h>
+#include <aws/comprehendmedical/model/StartPHIDetectionJobRequest.h>
+#include <aws/comprehendmedical/model/StopEntitiesDetectionV2JobRequest.h>
+#include <aws/comprehendmedical/model/StopPHIDetectionJobRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -105,7 +113,7 @@ void ComprehendMedicalClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
-DetectEntitiesOutcome ComprehendMedicalClient::DetectEntities(const DetectEntitiesRequest& request) const
+DescribeEntitiesDetectionV2JobOutcome ComprehendMedicalClient::DescribeEntitiesDetectionV2Job(const DescribeEntitiesDetectionV2JobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
@@ -114,30 +122,100 @@ DetectEntitiesOutcome ComprehendMedicalClient::DetectEntities(const DetectEntiti
   JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
-    return DetectEntitiesOutcome(DetectEntitiesResult(outcome.GetResult()));
+    return DescribeEntitiesDetectionV2JobOutcome(DescribeEntitiesDetectionV2JobResult(outcome.GetResult()));
   }
   else
   {
-    return DetectEntitiesOutcome(outcome.GetError());
+    return DescribeEntitiesDetectionV2JobOutcome(outcome.GetError());
   }
 }
 
-DetectEntitiesOutcomeCallable ComprehendMedicalClient::DetectEntitiesCallable(const DetectEntitiesRequest& request) const
+DescribeEntitiesDetectionV2JobOutcomeCallable ComprehendMedicalClient::DescribeEntitiesDetectionV2JobCallable(const DescribeEntitiesDetectionV2JobRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DetectEntitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetectEntities(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEntitiesDetectionV2JobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEntitiesDetectionV2Job(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void ComprehendMedicalClient::DetectEntitiesAsync(const DetectEntitiesRequest& request, const DetectEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::DescribeEntitiesDetectionV2JobAsync(const DescribeEntitiesDetectionV2JobRequest& request, const DescribeEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectEntitiesAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEntitiesDetectionV2JobAsyncHelper( request, handler, context ); } );
 }
 
-void ComprehendMedicalClient::DetectEntitiesAsyncHelper(const DetectEntitiesRequest& request, const DetectEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ComprehendMedicalClient::DescribeEntitiesDetectionV2JobAsyncHelper(const DescribeEntitiesDetectionV2JobRequest& request, const DescribeEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DetectEntities(request), context);
+  handler(this, request, DescribeEntitiesDetectionV2Job(request), context);
+}
+
+DescribePHIDetectionJobOutcome ComprehendMedicalClient::DescribePHIDetectionJob(const DescribePHIDetectionJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribePHIDetectionJobOutcome(DescribePHIDetectionJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribePHIDetectionJobOutcome(outcome.GetError());
+  }
+}
+
+DescribePHIDetectionJobOutcomeCallable ComprehendMedicalClient::DescribePHIDetectionJobCallable(const DescribePHIDetectionJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribePHIDetectionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePHIDetectionJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendMedicalClient::DescribePHIDetectionJobAsync(const DescribePHIDetectionJobRequest& request, const DescribePHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePHIDetectionJobAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendMedicalClient::DescribePHIDetectionJobAsyncHelper(const DescribePHIDetectionJobRequest& request, const DescribePHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribePHIDetectionJob(request), context);
+}
+
+DetectEntitiesV2Outcome ComprehendMedicalClient::DetectEntitiesV2(const DetectEntitiesV2Request& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DetectEntitiesV2Outcome(DetectEntitiesV2Result(outcome.GetResult()));
+  }
+  else
+  {
+    return DetectEntitiesV2Outcome(outcome.GetError());
+  }
+}
+
+DetectEntitiesV2OutcomeCallable ComprehendMedicalClient::DetectEntitiesV2Callable(const DetectEntitiesV2Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DetectEntitiesV2Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetectEntitiesV2(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendMedicalClient::DetectEntitiesV2Async(const DetectEntitiesV2Request& request, const DetectEntitiesV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DetectEntitiesV2AsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendMedicalClient::DetectEntitiesV2AsyncHelper(const DetectEntitiesV2Request& request, const DetectEntitiesV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DetectEntitiesV2(request), context);
 }
 
 DetectPHIOutcome ComprehendMedicalClient::DetectPHI(const DetectPHIRequest& request) const
@@ -173,5 +251,215 @@ void ComprehendMedicalClient::DetectPHIAsync(const DetectPHIRequest& request, co
 void ComprehendMedicalClient::DetectPHIAsyncHelper(const DetectPHIRequest& request, const DetectPHIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DetectPHI(request), context);
+}
+
+ListEntitiesDetectionV2JobsOutcome ComprehendMedicalClient::ListEntitiesDetectionV2Jobs(const ListEntitiesDetectionV2JobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListEntitiesDetectionV2JobsOutcome(ListEntitiesDetectionV2JobsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListEntitiesDetectionV2JobsOutcome(outcome.GetError());
+  }
+}
+
+ListEntitiesDetectionV2JobsOutcomeCallable ComprehendMedicalClient::ListEntitiesDetectionV2JobsCallable(const ListEntitiesDetectionV2JobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListEntitiesDetectionV2JobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListEntitiesDetectionV2Jobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendMedicalClient::ListEntitiesDetectionV2JobsAsync(const ListEntitiesDetectionV2JobsRequest& request, const ListEntitiesDetectionV2JobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListEntitiesDetectionV2JobsAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendMedicalClient::ListEntitiesDetectionV2JobsAsyncHelper(const ListEntitiesDetectionV2JobsRequest& request, const ListEntitiesDetectionV2JobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListEntitiesDetectionV2Jobs(request), context);
+}
+
+ListPHIDetectionJobsOutcome ComprehendMedicalClient::ListPHIDetectionJobs(const ListPHIDetectionJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListPHIDetectionJobsOutcome(ListPHIDetectionJobsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListPHIDetectionJobsOutcome(outcome.GetError());
+  }
+}
+
+ListPHIDetectionJobsOutcomeCallable ComprehendMedicalClient::ListPHIDetectionJobsCallable(const ListPHIDetectionJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPHIDetectionJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPHIDetectionJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendMedicalClient::ListPHIDetectionJobsAsync(const ListPHIDetectionJobsRequest& request, const ListPHIDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPHIDetectionJobsAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendMedicalClient::ListPHIDetectionJobsAsyncHelper(const ListPHIDetectionJobsRequest& request, const ListPHIDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPHIDetectionJobs(request), context);
+}
+
+StartEntitiesDetectionV2JobOutcome ComprehendMedicalClient::StartEntitiesDetectionV2Job(const StartEntitiesDetectionV2JobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartEntitiesDetectionV2JobOutcome(StartEntitiesDetectionV2JobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartEntitiesDetectionV2JobOutcome(outcome.GetError());
+  }
+}
+
+StartEntitiesDetectionV2JobOutcomeCallable ComprehendMedicalClient::StartEntitiesDetectionV2JobCallable(const StartEntitiesDetectionV2JobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartEntitiesDetectionV2JobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartEntitiesDetectionV2Job(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendMedicalClient::StartEntitiesDetectionV2JobAsync(const StartEntitiesDetectionV2JobRequest& request, const StartEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartEntitiesDetectionV2JobAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendMedicalClient::StartEntitiesDetectionV2JobAsyncHelper(const StartEntitiesDetectionV2JobRequest& request, const StartEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartEntitiesDetectionV2Job(request), context);
+}
+
+StartPHIDetectionJobOutcome ComprehendMedicalClient::StartPHIDetectionJob(const StartPHIDetectionJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartPHIDetectionJobOutcome(StartPHIDetectionJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartPHIDetectionJobOutcome(outcome.GetError());
+  }
+}
+
+StartPHIDetectionJobOutcomeCallable ComprehendMedicalClient::StartPHIDetectionJobCallable(const StartPHIDetectionJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartPHIDetectionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartPHIDetectionJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendMedicalClient::StartPHIDetectionJobAsync(const StartPHIDetectionJobRequest& request, const StartPHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartPHIDetectionJobAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendMedicalClient::StartPHIDetectionJobAsyncHelper(const StartPHIDetectionJobRequest& request, const StartPHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartPHIDetectionJob(request), context);
+}
+
+StopEntitiesDetectionV2JobOutcome ComprehendMedicalClient::StopEntitiesDetectionV2Job(const StopEntitiesDetectionV2JobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StopEntitiesDetectionV2JobOutcome(StopEntitiesDetectionV2JobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopEntitiesDetectionV2JobOutcome(outcome.GetError());
+  }
+}
+
+StopEntitiesDetectionV2JobOutcomeCallable ComprehendMedicalClient::StopEntitiesDetectionV2JobCallable(const StopEntitiesDetectionV2JobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopEntitiesDetectionV2JobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopEntitiesDetectionV2Job(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendMedicalClient::StopEntitiesDetectionV2JobAsync(const StopEntitiesDetectionV2JobRequest& request, const StopEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopEntitiesDetectionV2JobAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendMedicalClient::StopEntitiesDetectionV2JobAsyncHelper(const StopEntitiesDetectionV2JobRequest& request, const StopEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopEntitiesDetectionV2Job(request), context);
+}
+
+StopPHIDetectionJobOutcome ComprehendMedicalClient::StopPHIDetectionJob(const StopPHIDetectionJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StopPHIDetectionJobOutcome(StopPHIDetectionJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopPHIDetectionJobOutcome(outcome.GetError());
+  }
+}
+
+StopPHIDetectionJobOutcomeCallable ComprehendMedicalClient::StopPHIDetectionJobCallable(const StopPHIDetectionJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopPHIDetectionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopPHIDetectionJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendMedicalClient::StopPHIDetectionJobAsync(const StopPHIDetectionJobRequest& request, const StopPHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopPHIDetectionJobAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendMedicalClient::StopPHIDetectionJobAsyncHelper(const StopPHIDetectionJobRequest& request, const StopPHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopPHIDetectionJob(request), context);
 }
 

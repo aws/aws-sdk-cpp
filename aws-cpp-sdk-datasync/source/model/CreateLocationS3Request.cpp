@@ -25,6 +25,8 @@ using namespace Aws::Utils;
 CreateLocationS3Request::CreateLocationS3Request() : 
     m_subdirectoryHasBeenSet(false),
     m_s3BucketArnHasBeenSet(false),
+    m_s3StorageClass(S3StorageClass::NOT_SET),
+    m_s3StorageClassHasBeenSet(false),
     m_s3ConfigHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -44,6 +46,11 @@ Aws::String CreateLocationS3Request::SerializePayload() const
   {
    payload.WithString("S3BucketArn", m_s3BucketArn);
 
+  }
+
+  if(m_s3StorageClassHasBeenSet)
+  {
+   payload.WithString("S3StorageClass", S3StorageClassMapper::GetNameForS3StorageClass(m_s3StorageClass));
   }
 
   if(m_s3ConfigHasBeenSet)

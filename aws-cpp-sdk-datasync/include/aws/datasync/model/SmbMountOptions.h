@@ -52,7 +52,7 @@ namespace Model
      * <p>The specific SMB version that you want DataSync to use to mount your SMB
      * share. If you don't specify a version, DataSync defaults to
      * <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based
-     * on negotiation with the SMB Server server.</p>
+     * on negotiation with the SMB server.</p>
      */
     inline const SmbVersion& GetVersion() const{ return m_version; }
 
@@ -60,7 +60,7 @@ namespace Model
      * <p>The specific SMB version that you want DataSync to use to mount your SMB
      * share. If you don't specify a version, DataSync defaults to
      * <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based
-     * on negotiation with the SMB Server server.</p>
+     * on negotiation with the SMB server.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
@@ -68,7 +68,7 @@ namespace Model
      * <p>The specific SMB version that you want DataSync to use to mount your SMB
      * share. If you don't specify a version, DataSync defaults to
      * <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based
-     * on negotiation with the SMB Server server.</p>
+     * on negotiation with the SMB server.</p>
      */
     inline void SetVersion(const SmbVersion& value) { m_versionHasBeenSet = true; m_version = value; }
 
@@ -76,7 +76,7 @@ namespace Model
      * <p>The specific SMB version that you want DataSync to use to mount your SMB
      * share. If you don't specify a version, DataSync defaults to
      * <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based
-     * on negotiation with the SMB Server server.</p>
+     * on negotiation with the SMB server.</p>
      */
     inline void SetVersion(SmbVersion&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
@@ -84,7 +84,7 @@ namespace Model
      * <p>The specific SMB version that you want DataSync to use to mount your SMB
      * share. If you don't specify a version, DataSync defaults to
      * <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based
-     * on negotiation with the SMB Server server.</p>
+     * on negotiation with the SMB server.</p>
      */
     inline SmbMountOptions& WithVersion(const SmbVersion& value) { SetVersion(value); return *this;}
 
@@ -92,7 +92,7 @@ namespace Model
      * <p>The specific SMB version that you want DataSync to use to mount your SMB
      * share. If you don't specify a version, DataSync defaults to
      * <code>AUTOMATIC</code>. That is, DataSync automatically selects a version based
-     * on negotiation with the SMB Server server.</p>
+     * on negotiation with the SMB server.</p>
      */
     inline SmbMountOptions& WithVersion(SmbVersion&& value) { SetVersion(std::move(value)); return *this;}
 

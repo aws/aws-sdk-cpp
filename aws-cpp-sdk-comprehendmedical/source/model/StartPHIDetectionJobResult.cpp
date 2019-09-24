@@ -13,41 +13,38 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/comprehendmedical/model/DetectEntitiesRequest.h>
+#include <aws/comprehendmedical/model/StartPHIDetectionJobResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 
 #include <utility>
 
 using namespace Aws::ComprehendMedical::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+using namespace Aws;
 
-DetectEntitiesRequest::DetectEntitiesRequest() : 
-    m_textHasBeenSet(false)
+StartPHIDetectionJobResult::StartPHIDetectionJobResult()
 {
 }
 
-Aws::String DetectEntitiesRequest::SerializePayload() const
+StartPHIDetectionJobResult::StartPHIDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  JsonValue payload;
+  *this = result;
+}
 
-  if(m_textHasBeenSet)
+StartPHIDetectionJobResult& StartPHIDetectionJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+{
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("JobId"))
   {
-   payload.WithString("Text", m_text);
+    m_jobId = jsonValue.GetString("JobId");
 
   }
 
-  return payload.View().WriteReadable();
+
+
+  return *this;
 }
-
-Aws::Http::HeaderValueCollection DetectEntitiesRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ComprehendMedical_20181030.DetectEntities"));
-  return headers;
-
-}
-
-
-
-

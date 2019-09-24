@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/comprehendmedical/model/DetectEntitiesResult.h>
+#include <aws/comprehendmedical/model/DetectEntitiesV2Result.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -26,16 +26,16 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DetectEntitiesResult::DetectEntitiesResult()
+DetectEntitiesV2Result::DetectEntitiesV2Result()
 {
 }
 
-DetectEntitiesResult::DetectEntitiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DetectEntitiesV2Result::DetectEntitiesV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DetectEntitiesResult& DetectEntitiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DetectEntitiesV2Result& DetectEntitiesV2Result::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Entities"))
@@ -59,6 +59,12 @@ DetectEntitiesResult& DetectEntitiesResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("PaginationToken"))
   {
     m_paginationToken = jsonValue.GetString("PaginationToken");
+
+  }
+
+  if(jsonValue.ValueExists("ModelVersion"))
+  {
+    m_modelVersion = jsonValue.GetString("ModelVersion");
 
   }
 

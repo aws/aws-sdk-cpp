@@ -190,8 +190,8 @@ namespace Model
     /**
      * <p>The name of the SMB server. This value is the IP address or Domain Name
      * Service (DNS) name of the SMB server. An agent that is installed on-premises
-     * uses this host name to mount the SMB server in a network.</p> <note> <p>This
-     * name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+     * uses this hostname to mount the SMB server in a network.</p> <note> <p>This name
+     * must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
      * </note>
      */
     inline const Aws::String& GetServerHostname() const{ return m_serverHostname; }
@@ -199,8 +199,8 @@ namespace Model
     /**
      * <p>The name of the SMB server. This value is the IP address or Domain Name
      * Service (DNS) name of the SMB server. An agent that is installed on-premises
-     * uses this host name to mount the SMB server in a network.</p> <note> <p>This
-     * name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+     * uses this hostname to mount the SMB server in a network.</p> <note> <p>This name
+     * must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
      * </note>
      */
     inline bool ServerHostnameHasBeenSet() const { return m_serverHostnameHasBeenSet; }
@@ -208,8 +208,8 @@ namespace Model
     /**
      * <p>The name of the SMB server. This value is the IP address or Domain Name
      * Service (DNS) name of the SMB server. An agent that is installed on-premises
-     * uses this host name to mount the SMB server in a network.</p> <note> <p>This
-     * name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+     * uses this hostname to mount the SMB server in a network.</p> <note> <p>This name
+     * must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
      * </note>
      */
     inline void SetServerHostname(const Aws::String& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = value; }
@@ -217,8 +217,8 @@ namespace Model
     /**
      * <p>The name of the SMB server. This value is the IP address or Domain Name
      * Service (DNS) name of the SMB server. An agent that is installed on-premises
-     * uses this host name to mount the SMB server in a network.</p> <note> <p>This
-     * name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+     * uses this hostname to mount the SMB server in a network.</p> <note> <p>This name
+     * must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
      * </note>
      */
     inline void SetServerHostname(Aws::String&& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = std::move(value); }
@@ -226,8 +226,8 @@ namespace Model
     /**
      * <p>The name of the SMB server. This value is the IP address or Domain Name
      * Service (DNS) name of the SMB server. An agent that is installed on-premises
-     * uses this host name to mount the SMB server in a network.</p> <note> <p>This
-     * name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+     * uses this hostname to mount the SMB server in a network.</p> <note> <p>This name
+     * must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
      * </note>
      */
     inline void SetServerHostname(const char* value) { m_serverHostnameHasBeenSet = true; m_serverHostname.assign(value); }
@@ -235,8 +235,8 @@ namespace Model
     /**
      * <p>The name of the SMB server. This value is the IP address or Domain Name
      * Service (DNS) name of the SMB server. An agent that is installed on-premises
-     * uses this host name to mount the SMB server in a network.</p> <note> <p>This
-     * name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+     * uses this hostname to mount the SMB server in a network.</p> <note> <p>This name
+     * must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
      * </note>
      */
     inline CreateLocationSmbRequest& WithServerHostname(const Aws::String& value) { SetServerHostname(value); return *this;}
@@ -244,8 +244,8 @@ namespace Model
     /**
      * <p>The name of the SMB server. This value is the IP address or Domain Name
      * Service (DNS) name of the SMB server. An agent that is installed on-premises
-     * uses this host name to mount the SMB server in a network.</p> <note> <p>This
-     * name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+     * uses this hostname to mount the SMB server in a network.</p> <note> <p>This name
+     * must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
      * </note>
      */
     inline CreateLocationSmbRequest& WithServerHostname(Aws::String&& value) { SetServerHostname(std::move(value)); return *this;}
@@ -253,8 +253,8 @@ namespace Model
     /**
      * <p>The name of the SMB server. This value is the IP address or Domain Name
      * Service (DNS) name of the SMB server. An agent that is installed on-premises
-     * uses this host name to mount the SMB server in a network.</p> <note> <p>This
-     * name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+     * uses this hostname to mount the SMB server in a network.</p> <note> <p>This name
+     * must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
      * </note>
      */
     inline CreateLocationSmbRequest& WithServerHostname(const char* value) { SetServerHostname(value); return *this;}
@@ -262,131 +262,139 @@ namespace Model
 
     /**
      * <p>The user who can mount the share, has the permissions to access files and
-     * directories in the SMB share.</p>
+     * folders in the SMB share.</p>
      */
     inline const Aws::String& GetUser() const{ return m_user; }
 
     /**
      * <p>The user who can mount the share, has the permissions to access files and
-     * directories in the SMB share.</p>
+     * folders in the SMB share.</p>
      */
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
 
     /**
      * <p>The user who can mount the share, has the permissions to access files and
-     * directories in the SMB share.</p>
+     * folders in the SMB share.</p>
      */
     inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
 
     /**
      * <p>The user who can mount the share, has the permissions to access files and
-     * directories in the SMB share.</p>
+     * folders in the SMB share.</p>
      */
     inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
 
     /**
      * <p>The user who can mount the share, has the permissions to access files and
-     * directories in the SMB share.</p>
+     * folders in the SMB share.</p>
      */
     inline void SetUser(const char* value) { m_userHasBeenSet = true; m_user.assign(value); }
 
     /**
      * <p>The user who can mount the share, has the permissions to access files and
-     * directories in the SMB share.</p>
+     * folders in the SMB share.</p>
      */
     inline CreateLocationSmbRequest& WithUser(const Aws::String& value) { SetUser(value); return *this;}
 
     /**
      * <p>The user who can mount the share, has the permissions to access files and
-     * directories in the SMB share.</p>
+     * folders in the SMB share.</p>
      */
     inline CreateLocationSmbRequest& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
 
     /**
      * <p>The user who can mount the share, has the permissions to access files and
-     * directories in the SMB share.</p>
+     * folders in the SMB share.</p>
      */
     inline CreateLocationSmbRequest& WithUser(const char* value) { SetUser(value); return *this;}
 
 
     /**
-     * <p>The name of the domain that the SMB server belongs to.</p>
+     * <p>The name of the Windows domain that the SMB server belongs to.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>The name of the domain that the SMB server belongs to.</p>
+     * <p>The name of the Windows domain that the SMB server belongs to.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>The name of the domain that the SMB server belongs to.</p>
+     * <p>The name of the Windows domain that the SMB server belongs to.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>The name of the domain that the SMB server belongs to.</p>
+     * <p>The name of the Windows domain that the SMB server belongs to.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>The name of the domain that the SMB server belongs to.</p>
+     * <p>The name of the Windows domain that the SMB server belongs to.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>The name of the domain that the SMB server belongs to.</p>
+     * <p>The name of the Windows domain that the SMB server belongs to.</p>
      */
     inline CreateLocationSmbRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>The name of the domain that the SMB server belongs to.</p>
+     * <p>The name of the Windows domain that the SMB server belongs to.</p>
      */
     inline CreateLocationSmbRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the domain that the SMB server belongs to.</p>
+     * <p>The name of the Windows domain that the SMB server belongs to.</p>
      */
     inline CreateLocationSmbRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
 
     /**
-     * <p>The password of the user who has permission to access the SMB server.</p>
+     * <p>The password of the user who can mount the share, has the permissions to
+     * access files and folders in the SMB share.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
 
     /**
-     * <p>The password of the user who has permission to access the SMB server.</p>
+     * <p>The password of the user who can mount the share, has the permissions to
+     * access files and folders in the SMB share.</p>
      */
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
-     * <p>The password of the user who has permission to access the SMB server.</p>
+     * <p>The password of the user who can mount the share, has the permissions to
+     * access files and folders in the SMB share.</p>
      */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /**
-     * <p>The password of the user who has permission to access the SMB server.</p>
+     * <p>The password of the user who can mount the share, has the permissions to
+     * access files and folders in the SMB share.</p>
      */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
     /**
-     * <p>The password of the user who has permission to access the SMB server.</p>
+     * <p>The password of the user who can mount the share, has the permissions to
+     * access files and folders in the SMB share.</p>
      */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
 
     /**
-     * <p>The password of the user who has permission to access the SMB server.</p>
+     * <p>The password of the user who can mount the share, has the permissions to
+     * access files and folders in the SMB share.</p>
      */
     inline CreateLocationSmbRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
 
     /**
-     * <p>The password of the user who has permission to access the SMB server.</p>
+     * <p>The password of the user who can mount the share, has the permissions to
+     * access files and folders in the SMB share.</p>
      */
     inline CreateLocationSmbRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The password of the user who has permission to access the SMB server.</p>
+     * <p>The password of the user who can mount the share, has the permissions to
+     * access files and folders in the SMB share.</p>
      */
     inline CreateLocationSmbRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 
@@ -447,38 +455,32 @@ namespace Model
 
 
     /**
-     * <p>The mount options that are available for DataSync to use to access an SMB
-     * location.</p>
+     * <p>The mount options used by DataSync to access the SMB server.</p>
      */
     inline const SmbMountOptions& GetMountOptions() const{ return m_mountOptions; }
 
     /**
-     * <p>The mount options that are available for DataSync to use to access an SMB
-     * location.</p>
+     * <p>The mount options used by DataSync to access the SMB server.</p>
      */
     inline bool MountOptionsHasBeenSet() const { return m_mountOptionsHasBeenSet; }
 
     /**
-     * <p>The mount options that are available for DataSync to use to access an SMB
-     * location.</p>
+     * <p>The mount options used by DataSync to access the SMB server.</p>
      */
     inline void SetMountOptions(const SmbMountOptions& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = value; }
 
     /**
-     * <p>The mount options that are available for DataSync to use to access an SMB
-     * location.</p>
+     * <p>The mount options used by DataSync to access the SMB server.</p>
      */
     inline void SetMountOptions(SmbMountOptions&& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = std::move(value); }
 
     /**
-     * <p>The mount options that are available for DataSync to use to access an SMB
-     * location.</p>
+     * <p>The mount options used by DataSync to access the SMB server.</p>
      */
     inline CreateLocationSmbRequest& WithMountOptions(const SmbMountOptions& value) { SetMountOptions(value); return *this;}
 
     /**
-     * <p>The mount options that are available for DataSync to use to access an SMB
-     * location.</p>
+     * <p>The mount options used by DataSync to access the SMB server.</p>
      */
     inline CreateLocationSmbRequest& WithMountOptions(SmbMountOptions&& value) { SetMountOptions(std::move(value)); return *this;}
 

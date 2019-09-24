@@ -414,9 +414,9 @@ namespace Model
          * (IAM) role that has the required permissions. You can set up the required
          * permissions by creating an IAM policy that grants the required permissions and
          * attaching the policy to the role. An example of such a policy is shown in the
-         * examples section.</p> <p>For more information, see Configuring Amazon S3
-         * Location Settings in the <i>AWS DataSync User Guide.</i> </p><p><h3>See
-         * Also:</h3>   <a
+         * examples section.</p> <p>For more information, see
+         * https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location
+         * in the <i>AWS DataSync User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationS3">AWS
          * API Reference</a></p>
          */
@@ -428,9 +428,9 @@ namespace Model
          * (IAM) role that has the required permissions. You can set up the required
          * permissions by creating an IAM policy that grants the required permissions and
          * attaching the policy to the role. An example of such a policy is shown in the
-         * examples section.</p> <p>For more information, see Configuring Amazon S3
-         * Location Settings in the <i>AWS DataSync User Guide.</i> </p><p><h3>See
-         * Also:</h3>   <a
+         * examples section.</p> <p>For more information, see
+         * https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location
+         * in the <i>AWS DataSync User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationS3">AWS
          * API Reference</a></p>
          *
@@ -444,9 +444,9 @@ namespace Model
          * (IAM) role that has the required permissions. You can set up the required
          * permissions by creating an IAM policy that grants the required permissions and
          * attaching the policy to the role. An example of such a policy is shown in the
-         * examples section.</p> <p>For more information, see Configuring Amazon S3
-         * Location Settings in the <i>AWS DataSync User Guide.</i> </p><p><h3>See
-         * Also:</h3>   <a
+         * examples section.</p> <p>For more information, see
+         * https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location
+         * in the <i>AWS DataSync User Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationS3">AWS
          * API Reference</a></p>
          *

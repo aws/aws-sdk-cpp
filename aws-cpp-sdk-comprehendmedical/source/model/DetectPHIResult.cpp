@@ -53,6 +53,12 @@ DetectPHIResult& DetectPHIResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
+  if(jsonValue.ValueExists("ModelVersion"))
+  {
+    m_modelVersion = jsonValue.GetString("ModelVersion");
+
+  }
+
 
 
   return *this;

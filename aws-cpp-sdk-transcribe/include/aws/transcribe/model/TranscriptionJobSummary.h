@@ -38,7 +38,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides a summary of information about a transcription job. .</p><p><h3>See
+   * <p>Provides a summary of information about a transcription job.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TranscriptionJobSummary">AWS
    * API Reference</a></p>

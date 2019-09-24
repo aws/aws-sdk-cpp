@@ -172,73 +172,80 @@ namespace Model
 
 
     /**
-     * <p>The user who is logged on the SMB server.</p>
+     * <p>The user who can mount the share, has the permissions to access files and
+     * folders in the SMB share.</p>
      */
     inline const Aws::String& GetUser() const{ return m_user; }
 
     /**
-     * <p>The user who is logged on the SMB server.</p>
+     * <p>The user who can mount the share, has the permissions to access files and
+     * folders in the SMB share.</p>
      */
     inline void SetUser(const Aws::String& value) { m_user = value; }
 
     /**
-     * <p>The user who is logged on the SMB server.</p>
+     * <p>The user who can mount the share, has the permissions to access files and
+     * folders in the SMB share.</p>
      */
     inline void SetUser(Aws::String&& value) { m_user = std::move(value); }
 
     /**
-     * <p>The user who is logged on the SMB server.</p>
+     * <p>The user who can mount the share, has the permissions to access files and
+     * folders in the SMB share.</p>
      */
     inline void SetUser(const char* value) { m_user.assign(value); }
 
     /**
-     * <p>The user who is logged on the SMB server.</p>
+     * <p>The user who can mount the share, has the permissions to access files and
+     * folders in the SMB share.</p>
      */
     inline DescribeLocationSmbResult& WithUser(const Aws::String& value) { SetUser(value); return *this;}
 
     /**
-     * <p>The user who is logged on the SMB server.</p>
+     * <p>The user who can mount the share, has the permissions to access files and
+     * folders in the SMB share.</p>
      */
     inline DescribeLocationSmbResult& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
 
     /**
-     * <p>The user who is logged on the SMB server.</p>
+     * <p>The user who can mount the share, has the permissions to access files and
+     * folders in the SMB share.</p>
      */
     inline DescribeLocationSmbResult& WithUser(const char* value) { SetUser(value); return *this;}
 
 
     /**
-     * <p>The name of the domain that the SMB server belongs to.</p>
+     * <p>The name of the Windows domain that the SMB server belongs to.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>The name of the domain that the SMB server belongs to.</p>
+     * <p>The name of the Windows domain that the SMB server belongs to.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domain = value; }
 
     /**
-     * <p>The name of the domain that the SMB server belongs to.</p>
+     * <p>The name of the Windows domain that the SMB server belongs to.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domain = std::move(value); }
 
     /**
-     * <p>The name of the domain that the SMB server belongs to.</p>
+     * <p>The name of the Windows domain that the SMB server belongs to.</p>
      */
     inline void SetDomain(const char* value) { m_domain.assign(value); }
 
     /**
-     * <p>The name of the domain that the SMB server belongs to.</p>
+     * <p>The name of the Windows domain that the SMB server belongs to.</p>
      */
     inline DescribeLocationSmbResult& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>The name of the domain that the SMB server belongs to.</p>
+     * <p>The name of the Windows domain that the SMB server belongs to.</p>
      */
     inline DescribeLocationSmbResult& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the domain that the SMB server belongs to.</p>
+     * <p>The name of the Windows domain that the SMB server belongs to.</p>
      */
     inline DescribeLocationSmbResult& WithDomain(const char* value) { SetDomain(value); return *this;}
 

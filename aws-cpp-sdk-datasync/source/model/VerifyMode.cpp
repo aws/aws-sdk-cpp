@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int POINT_IN_TIME_CONSISTENT_HASH = HashingUtils::HashString("POINT_IN_TIME_CONSISTENT");
+        static const int ONLY_FILES_TRANSFERRED_HASH = HashingUtils::HashString("ONLY_FILES_TRANSFERRED");
         static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 
@@ -40,6 +41,10 @@ namespace Aws
           if (hashCode == POINT_IN_TIME_CONSISTENT_HASH)
           {
             return VerifyMode::POINT_IN_TIME_CONSISTENT;
+          }
+          else if (hashCode == ONLY_FILES_TRANSFERRED_HASH)
+          {
+            return VerifyMode::ONLY_FILES_TRANSFERRED;
           }
           else if (hashCode == NONE_HASH)
           {
@@ -61,6 +66,8 @@ namespace Aws
           {
           case VerifyMode::POINT_IN_TIME_CONSISTENT:
             return "POINT_IN_TIME_CONSISTENT";
+          case VerifyMode::ONLY_FILES_TRANSFERRED:
+            return "ONLY_FILES_TRANSFERRED";
           case VerifyMode::NONE:
             return "NONE";
           default:

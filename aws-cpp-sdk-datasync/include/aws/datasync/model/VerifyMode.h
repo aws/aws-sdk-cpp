@@ -27,6 +27,7 @@ namespace Model
   {
     NOT_SET,
     POINT_IN_TIME_CONSISTENT,
+    ONLY_FILES_TRANSFERRED,
     NONE
   };
 

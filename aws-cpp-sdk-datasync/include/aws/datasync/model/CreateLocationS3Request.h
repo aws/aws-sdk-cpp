@@ -17,6 +17,7 @@
 #include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/datasync/DataSyncRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datasync/model/S3StorageClass.h>
 #include <aws/datasync/model/S3Config.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datasync/model/TagListEntry.h>
@@ -148,6 +149,67 @@ namespace Model
     inline CreateLocationS3Request& WithS3BucketArn(const char* value) { SetS3BucketArn(value); return *this;}
 
 
+    /**
+     * <p>The Amazon S3 storage class that you want to store your files in when this
+     * location is used as a task destination. For more information about S3 storage
+     * classes, see <a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3
+     * Storage Classes</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Some storage classes have behaviors that can affect your S3 storage cost. For
+     * detailed information, see <a>using-storage-classes</a>.</p>
+     */
+    inline const S3StorageClass& GetS3StorageClass() const{ return m_s3StorageClass; }
+
+    /**
+     * <p>The Amazon S3 storage class that you want to store your files in when this
+     * location is used as a task destination. For more information about S3 storage
+     * classes, see <a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3
+     * Storage Classes</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Some storage classes have behaviors that can affect your S3 storage cost. For
+     * detailed information, see <a>using-storage-classes</a>.</p>
+     */
+    inline bool S3StorageClassHasBeenSet() const { return m_s3StorageClassHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 storage class that you want to store your files in when this
+     * location is used as a task destination. For more information about S3 storage
+     * classes, see <a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3
+     * Storage Classes</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Some storage classes have behaviors that can affect your S3 storage cost. For
+     * detailed information, see <a>using-storage-classes</a>.</p>
+     */
+    inline void SetS3StorageClass(const S3StorageClass& value) { m_s3StorageClassHasBeenSet = true; m_s3StorageClass = value; }
+
+    /**
+     * <p>The Amazon S3 storage class that you want to store your files in when this
+     * location is used as a task destination. For more information about S3 storage
+     * classes, see <a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3
+     * Storage Classes</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Some storage classes have behaviors that can affect your S3 storage cost. For
+     * detailed information, see <a>using-storage-classes</a>.</p>
+     */
+    inline void SetS3StorageClass(S3StorageClass&& value) { m_s3StorageClassHasBeenSet = true; m_s3StorageClass = std::move(value); }
+
+    /**
+     * <p>The Amazon S3 storage class that you want to store your files in when this
+     * location is used as a task destination. For more information about S3 storage
+     * classes, see <a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3
+     * Storage Classes</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Some storage classes have behaviors that can affect your S3 storage cost. For
+     * detailed information, see <a>using-storage-classes</a>.</p>
+     */
+    inline CreateLocationS3Request& WithS3StorageClass(const S3StorageClass& value) { SetS3StorageClass(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 storage class that you want to store your files in when this
+     * location is used as a task destination. For more information about S3 storage
+     * classes, see <a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3
+     * Storage Classes</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Some storage classes have behaviors that can affect your S3 storage cost. For
+     * detailed information, see <a>using-storage-classes</a>.</p>
+     */
+    inline CreateLocationS3Request& WithS3StorageClass(S3StorageClass&& value) { SetS3StorageClass(std::move(value)); return *this;}
+
+
     
     inline const S3Config& GetS3Config() const{ return m_s3Config; }
 
@@ -230,6 +292,9 @@ namespace Model
 
     Aws::String m_s3BucketArn;
     bool m_s3BucketArnHasBeenSet;
+
+    S3StorageClass m_s3StorageClass;
+    bool m_s3StorageClassHasBeenSet;
 
     S3Config m_s3Config;
     bool m_s3ConfigHasBeenSet;
