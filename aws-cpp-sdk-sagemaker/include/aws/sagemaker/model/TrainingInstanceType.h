@@ -47,12 +47,12 @@ namespace Model
     ml_p3_2xlarge,
     ml_p3_8xlarge,
     ml_p3_16xlarge,
+    ml_p3dn_24xlarge,
     ml_c5_xlarge,
     ml_c5_2xlarge,
     ml_c5_4xlarge,
     ml_c5_9xlarge,
-    ml_c5_18xlarge,
-    ml_p3dn_24xlarge
+    ml_c5_18xlarge
   };
 
 namespace TrainingInstanceTypeMapper

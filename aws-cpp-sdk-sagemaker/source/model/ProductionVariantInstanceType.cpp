@@ -62,6 +62,18 @@ namespace Aws
         static const int ml_c5_4xlarge_HASH = HashingUtils::HashString("ml.c5.4xlarge");
         static const int ml_c5_9xlarge_HASH = HashingUtils::HashString("ml.c5.9xlarge");
         static const int ml_c5_18xlarge_HASH = HashingUtils::HashString("ml.c5.18xlarge");
+        static const int ml_g4dn_xlarge_HASH = HashingUtils::HashString("ml.g4dn.xlarge");
+        static const int ml_g4dn_2xlarge_HASH = HashingUtils::HashString("ml.g4dn.2xlarge");
+        static const int ml_g4dn_4xlarge_HASH = HashingUtils::HashString("ml.g4dn.4xlarge");
+        static const int ml_g4dn_8xlarge_HASH = HashingUtils::HashString("ml.g4dn.8xlarge");
+        static const int ml_g4dn_12xlarge_HASH = HashingUtils::HashString("ml.g4dn.12xlarge");
+        static const int ml_g4dn_16xlarge_HASH = HashingUtils::HashString("ml.g4dn.16xlarge");
+        static const int ml_r5_large_HASH = HashingUtils::HashString("ml.r5.large");
+        static const int ml_r5_xlarge_HASH = HashingUtils::HashString("ml.r5.xlarge");
+        static const int ml_r5_2xlarge_HASH = HashingUtils::HashString("ml.r5.2xlarge");
+        static const int ml_r5_4xlarge_HASH = HashingUtils::HashString("ml.r5.4xlarge");
+        static const int ml_r5_12xlarge_HASH = HashingUtils::HashString("ml.r5.12xlarge");
+        static const int ml_r5_24xlarge_HASH = HashingUtils::HashString("ml.r5.24xlarge");
 
 
         ProductionVariantInstanceType GetProductionVariantInstanceTypeForName(const Aws::String& name)
@@ -195,6 +207,54 @@ namespace Aws
           {
             return ProductionVariantInstanceType::ml_c5_18xlarge;
           }
+          else if (hashCode == ml_g4dn_xlarge_HASH)
+          {
+            return ProductionVariantInstanceType::ml_g4dn_xlarge;
+          }
+          else if (hashCode == ml_g4dn_2xlarge_HASH)
+          {
+            return ProductionVariantInstanceType::ml_g4dn_2xlarge;
+          }
+          else if (hashCode == ml_g4dn_4xlarge_HASH)
+          {
+            return ProductionVariantInstanceType::ml_g4dn_4xlarge;
+          }
+          else if (hashCode == ml_g4dn_8xlarge_HASH)
+          {
+            return ProductionVariantInstanceType::ml_g4dn_8xlarge;
+          }
+          else if (hashCode == ml_g4dn_12xlarge_HASH)
+          {
+            return ProductionVariantInstanceType::ml_g4dn_12xlarge;
+          }
+          else if (hashCode == ml_g4dn_16xlarge_HASH)
+          {
+            return ProductionVariantInstanceType::ml_g4dn_16xlarge;
+          }
+          else if (hashCode == ml_r5_large_HASH)
+          {
+            return ProductionVariantInstanceType::ml_r5_large;
+          }
+          else if (hashCode == ml_r5_xlarge_HASH)
+          {
+            return ProductionVariantInstanceType::ml_r5_xlarge;
+          }
+          else if (hashCode == ml_r5_2xlarge_HASH)
+          {
+            return ProductionVariantInstanceType::ml_r5_2xlarge;
+          }
+          else if (hashCode == ml_r5_4xlarge_HASH)
+          {
+            return ProductionVariantInstanceType::ml_r5_4xlarge;
+          }
+          else if (hashCode == ml_r5_12xlarge_HASH)
+          {
+            return ProductionVariantInstanceType::ml_r5_12xlarge;
+          }
+          else if (hashCode == ml_r5_24xlarge_HASH)
+          {
+            return ProductionVariantInstanceType::ml_r5_24xlarge;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -273,6 +333,30 @@ namespace Aws
             return "ml.c5.9xlarge";
           case ProductionVariantInstanceType::ml_c5_18xlarge:
             return "ml.c5.18xlarge";
+          case ProductionVariantInstanceType::ml_g4dn_xlarge:
+            return "ml.g4dn.xlarge";
+          case ProductionVariantInstanceType::ml_g4dn_2xlarge:
+            return "ml.g4dn.2xlarge";
+          case ProductionVariantInstanceType::ml_g4dn_4xlarge:
+            return "ml.g4dn.4xlarge";
+          case ProductionVariantInstanceType::ml_g4dn_8xlarge:
+            return "ml.g4dn.8xlarge";
+          case ProductionVariantInstanceType::ml_g4dn_12xlarge:
+            return "ml.g4dn.12xlarge";
+          case ProductionVariantInstanceType::ml_g4dn_16xlarge:
+            return "ml.g4dn.16xlarge";
+          case ProductionVariantInstanceType::ml_r5_large:
+            return "ml.r5.large";
+          case ProductionVariantInstanceType::ml_r5_xlarge:
+            return "ml.r5.xlarge";
+          case ProductionVariantInstanceType::ml_r5_2xlarge:
+            return "ml.r5.2xlarge";
+          case ProductionVariantInstanceType::ml_r5_4xlarge:
+            return "ml.r5.4xlarge";
+          case ProductionVariantInstanceType::ml_r5_12xlarge:
+            return "ml.r5.12xlarge";
+          case ProductionVariantInstanceType::ml_r5_24xlarge:
+            return "ml.r5.24xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

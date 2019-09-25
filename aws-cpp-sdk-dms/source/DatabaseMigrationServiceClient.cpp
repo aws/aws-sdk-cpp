@@ -38,6 +38,7 @@
 #include <aws/dms/model/CreateReplicationSubnetGroupRequest.h>
 #include <aws/dms/model/CreateReplicationTaskRequest.h>
 #include <aws/dms/model/DeleteCertificateRequest.h>
+#include <aws/dms/model/DeleteConnectionRequest.h>
 #include <aws/dms/model/DeleteEndpointRequest.h>
 #include <aws/dms/model/DeleteEventSubscriptionRequest.h>
 #include <aws/dms/model/DeleteReplicationInstanceRequest.h>
@@ -427,6 +428,41 @@ void DatabaseMigrationServiceClient::DeleteCertificateAsync(const DeleteCertific
 void DatabaseMigrationServiceClient::DeleteCertificateAsyncHelper(const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteCertificate(request), context);
+}
+
+DeleteConnectionOutcome DatabaseMigrationServiceClient::DeleteConnection(const DeleteConnectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteConnectionOutcome(DeleteConnectionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteConnectionOutcome(outcome.GetError());
+  }
+}
+
+DeleteConnectionOutcomeCallable DatabaseMigrationServiceClient::DeleteConnectionCallable(const DeleteConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DatabaseMigrationServiceClient::DeleteConnectionAsync(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void DatabaseMigrationServiceClient::DeleteConnectionAsyncHelper(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteConnection(request), context);
 }
 
 DeleteEndpointOutcome DatabaseMigrationServiceClient::DeleteEndpoint(const DeleteEndpointRequest& request) const

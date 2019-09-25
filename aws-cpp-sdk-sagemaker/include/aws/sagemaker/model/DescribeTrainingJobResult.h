@@ -327,25 +327,24 @@ namespace Model
      * optional stage for algorithms that support <code>File</code> training input
      * mode. It indicates that data is being downloaded to the ML storage volumes.</p>
      * </li> <li> <p> <code>Training</code> - Training is in progress.</p> </li> <li>
-     * <p> <code>Uploading</code> - Training is complete and the model artifacts are
-     * being uploaded to the S3 location.</p> </li> </ul> </dd> <dt>Completed</dt> <dd>
-     * <ul> <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
-     * </ul> </dd> <dt>Failed</dt> <dd> <ul> <li> <p> <code>Failed</code> - The
-     * training job has failed. The reason for the failure is returned in the
-     * <code>FailureReason</code> field of
-     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd> <dt>Stopped</dt>
-     * <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it
-     * exceeded the maximum allowed runtime.</p> </li> <li> <p>
+     * <p> <code>Interrupted</code> - The job stopped because the managed spot training
+     * instances were interrupted. </p> </li> <li> <p> <code>Uploading</code> -
+     * Training is complete and the model artifacts are being uploaded to the S3
+     * location.</p> </li> </ul> </dd> <dt>Completed</dt> <dd> <ul> <li> <p>
+     * <code>Completed</code> - The training job has completed.</p> </li> </ul> </dd>
+     * <dt>Failed</dt> <dd> <ul> <li> <p> <code>Failed</code> - The training job has
+     * failed. The reason for the failure is returned in the <code>FailureReason</code>
+     * field of <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd>
+     * <dt>Stopped</dt> <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job
+     * stopped because it exceeded the maximum allowed runtime.</p> </li> <li> <p>
      * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the
-     * maximum allowed wait time.</p> </li> <li> <p> <code>Interrupted</code> - The job
-     * stopped because the managed spot training instances were interrupted. </p> </li>
-     * <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li> </ul>
-     * </dd> <dt>Stopping</dt> <dd> <ul> <li> <p> <code>Stopping</code> - Stopping the
-     * training job.</p> </li> </ul> </dd> </dl> <important> <p>Valid values for
-     * <code>SecondaryStatus</code> are subject to change. </p> </important> <p>We no
-     * longer support the following secondary statuses:</p> <ul> <li> <p>
-     * <code>LaunchingMLInstances</code> </p> </li> <li> <p>
-     * <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * maximum allowed wait time.</p> </li> <li> <p> <code>Stopped</code> - The
+     * training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul> <li>
+     * <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul> </dd>
+     * </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are subject
+     * to change. </p> </important> <p>We no longer support the following secondary
+     * statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p> </li> <li>
+     * <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline const SecondaryStatus& GetSecondaryStatus() const{ return m_secondaryStatus; }
@@ -360,25 +359,24 @@ namespace Model
      * optional stage for algorithms that support <code>File</code> training input
      * mode. It indicates that data is being downloaded to the ML storage volumes.</p>
      * </li> <li> <p> <code>Training</code> - Training is in progress.</p> </li> <li>
-     * <p> <code>Uploading</code> - Training is complete and the model artifacts are
-     * being uploaded to the S3 location.</p> </li> </ul> </dd> <dt>Completed</dt> <dd>
-     * <ul> <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
-     * </ul> </dd> <dt>Failed</dt> <dd> <ul> <li> <p> <code>Failed</code> - The
-     * training job has failed. The reason for the failure is returned in the
-     * <code>FailureReason</code> field of
-     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd> <dt>Stopped</dt>
-     * <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it
-     * exceeded the maximum allowed runtime.</p> </li> <li> <p>
+     * <p> <code>Interrupted</code> - The job stopped because the managed spot training
+     * instances were interrupted. </p> </li> <li> <p> <code>Uploading</code> -
+     * Training is complete and the model artifacts are being uploaded to the S3
+     * location.</p> </li> </ul> </dd> <dt>Completed</dt> <dd> <ul> <li> <p>
+     * <code>Completed</code> - The training job has completed.</p> </li> </ul> </dd>
+     * <dt>Failed</dt> <dd> <ul> <li> <p> <code>Failed</code> - The training job has
+     * failed. The reason for the failure is returned in the <code>FailureReason</code>
+     * field of <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd>
+     * <dt>Stopped</dt> <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job
+     * stopped because it exceeded the maximum allowed runtime.</p> </li> <li> <p>
      * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the
-     * maximum allowed wait time.</p> </li> <li> <p> <code>Interrupted</code> - The job
-     * stopped because the managed spot training instances were interrupted. </p> </li>
-     * <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li> </ul>
-     * </dd> <dt>Stopping</dt> <dd> <ul> <li> <p> <code>Stopping</code> - Stopping the
-     * training job.</p> </li> </ul> </dd> </dl> <important> <p>Valid values for
-     * <code>SecondaryStatus</code> are subject to change. </p> </important> <p>We no
-     * longer support the following secondary statuses:</p> <ul> <li> <p>
-     * <code>LaunchingMLInstances</code> </p> </li> <li> <p>
-     * <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * maximum allowed wait time.</p> </li> <li> <p> <code>Stopped</code> - The
+     * training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul> <li>
+     * <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul> </dd>
+     * </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are subject
+     * to change. </p> </important> <p>We no longer support the following secondary
+     * statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p> </li> <li>
+     * <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline void SetSecondaryStatus(const SecondaryStatus& value) { m_secondaryStatus = value; }
@@ -393,25 +391,24 @@ namespace Model
      * optional stage for algorithms that support <code>File</code> training input
      * mode. It indicates that data is being downloaded to the ML storage volumes.</p>
      * </li> <li> <p> <code>Training</code> - Training is in progress.</p> </li> <li>
-     * <p> <code>Uploading</code> - Training is complete and the model artifacts are
-     * being uploaded to the S3 location.</p> </li> </ul> </dd> <dt>Completed</dt> <dd>
-     * <ul> <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
-     * </ul> </dd> <dt>Failed</dt> <dd> <ul> <li> <p> <code>Failed</code> - The
-     * training job has failed. The reason for the failure is returned in the
-     * <code>FailureReason</code> field of
-     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd> <dt>Stopped</dt>
-     * <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it
-     * exceeded the maximum allowed runtime.</p> </li> <li> <p>
+     * <p> <code>Interrupted</code> - The job stopped because the managed spot training
+     * instances were interrupted. </p> </li> <li> <p> <code>Uploading</code> -
+     * Training is complete and the model artifacts are being uploaded to the S3
+     * location.</p> </li> </ul> </dd> <dt>Completed</dt> <dd> <ul> <li> <p>
+     * <code>Completed</code> - The training job has completed.</p> </li> </ul> </dd>
+     * <dt>Failed</dt> <dd> <ul> <li> <p> <code>Failed</code> - The training job has
+     * failed. The reason for the failure is returned in the <code>FailureReason</code>
+     * field of <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd>
+     * <dt>Stopped</dt> <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job
+     * stopped because it exceeded the maximum allowed runtime.</p> </li> <li> <p>
      * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the
-     * maximum allowed wait time.</p> </li> <li> <p> <code>Interrupted</code> - The job
-     * stopped because the managed spot training instances were interrupted. </p> </li>
-     * <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li> </ul>
-     * </dd> <dt>Stopping</dt> <dd> <ul> <li> <p> <code>Stopping</code> - Stopping the
-     * training job.</p> </li> </ul> </dd> </dl> <important> <p>Valid values for
-     * <code>SecondaryStatus</code> are subject to change. </p> </important> <p>We no
-     * longer support the following secondary statuses:</p> <ul> <li> <p>
-     * <code>LaunchingMLInstances</code> </p> </li> <li> <p>
-     * <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * maximum allowed wait time.</p> </li> <li> <p> <code>Stopped</code> - The
+     * training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul> <li>
+     * <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul> </dd>
+     * </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are subject
+     * to change. </p> </important> <p>We no longer support the following secondary
+     * statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p> </li> <li>
+     * <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline void SetSecondaryStatus(SecondaryStatus&& value) { m_secondaryStatus = std::move(value); }
@@ -426,25 +423,24 @@ namespace Model
      * optional stage for algorithms that support <code>File</code> training input
      * mode. It indicates that data is being downloaded to the ML storage volumes.</p>
      * </li> <li> <p> <code>Training</code> - Training is in progress.</p> </li> <li>
-     * <p> <code>Uploading</code> - Training is complete and the model artifacts are
-     * being uploaded to the S3 location.</p> </li> </ul> </dd> <dt>Completed</dt> <dd>
-     * <ul> <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
-     * </ul> </dd> <dt>Failed</dt> <dd> <ul> <li> <p> <code>Failed</code> - The
-     * training job has failed. The reason for the failure is returned in the
-     * <code>FailureReason</code> field of
-     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd> <dt>Stopped</dt>
-     * <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it
-     * exceeded the maximum allowed runtime.</p> </li> <li> <p>
+     * <p> <code>Interrupted</code> - The job stopped because the managed spot training
+     * instances were interrupted. </p> </li> <li> <p> <code>Uploading</code> -
+     * Training is complete and the model artifacts are being uploaded to the S3
+     * location.</p> </li> </ul> </dd> <dt>Completed</dt> <dd> <ul> <li> <p>
+     * <code>Completed</code> - The training job has completed.</p> </li> </ul> </dd>
+     * <dt>Failed</dt> <dd> <ul> <li> <p> <code>Failed</code> - The training job has
+     * failed. The reason for the failure is returned in the <code>FailureReason</code>
+     * field of <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd>
+     * <dt>Stopped</dt> <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job
+     * stopped because it exceeded the maximum allowed runtime.</p> </li> <li> <p>
      * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the
-     * maximum allowed wait time.</p> </li> <li> <p> <code>Interrupted</code> - The job
-     * stopped because the managed spot training instances were interrupted. </p> </li>
-     * <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li> </ul>
-     * </dd> <dt>Stopping</dt> <dd> <ul> <li> <p> <code>Stopping</code> - Stopping the
-     * training job.</p> </li> </ul> </dd> </dl> <important> <p>Valid values for
-     * <code>SecondaryStatus</code> are subject to change. </p> </important> <p>We no
-     * longer support the following secondary statuses:</p> <ul> <li> <p>
-     * <code>LaunchingMLInstances</code> </p> </li> <li> <p>
-     * <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * maximum allowed wait time.</p> </li> <li> <p> <code>Stopped</code> - The
+     * training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul> <li>
+     * <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul> </dd>
+     * </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are subject
+     * to change. </p> </important> <p>We no longer support the following secondary
+     * statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p> </li> <li>
+     * <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline DescribeTrainingJobResult& WithSecondaryStatus(const SecondaryStatus& value) { SetSecondaryStatus(value); return *this;}
@@ -459,25 +455,24 @@ namespace Model
      * optional stage for algorithms that support <code>File</code> training input
      * mode. It indicates that data is being downloaded to the ML storage volumes.</p>
      * </li> <li> <p> <code>Training</code> - Training is in progress.</p> </li> <li>
-     * <p> <code>Uploading</code> - Training is complete and the model artifacts are
-     * being uploaded to the S3 location.</p> </li> </ul> </dd> <dt>Completed</dt> <dd>
-     * <ul> <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
-     * </ul> </dd> <dt>Failed</dt> <dd> <ul> <li> <p> <code>Failed</code> - The
-     * training job has failed. The reason for the failure is returned in the
-     * <code>FailureReason</code> field of
-     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd> <dt>Stopped</dt>
-     * <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it
-     * exceeded the maximum allowed runtime.</p> </li> <li> <p>
+     * <p> <code>Interrupted</code> - The job stopped because the managed spot training
+     * instances were interrupted. </p> </li> <li> <p> <code>Uploading</code> -
+     * Training is complete and the model artifacts are being uploaded to the S3
+     * location.</p> </li> </ul> </dd> <dt>Completed</dt> <dd> <ul> <li> <p>
+     * <code>Completed</code> - The training job has completed.</p> </li> </ul> </dd>
+     * <dt>Failed</dt> <dd> <ul> <li> <p> <code>Failed</code> - The training job has
+     * failed. The reason for the failure is returned in the <code>FailureReason</code>
+     * field of <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd>
+     * <dt>Stopped</dt> <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job
+     * stopped because it exceeded the maximum allowed runtime.</p> </li> <li> <p>
      * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the
-     * maximum allowed wait time.</p> </li> <li> <p> <code>Interrupted</code> - The job
-     * stopped because the managed spot training instances were interrupted. </p> </li>
-     * <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li> </ul>
-     * </dd> <dt>Stopping</dt> <dd> <ul> <li> <p> <code>Stopping</code> - Stopping the
-     * training job.</p> </li> </ul> </dd> </dl> <important> <p>Valid values for
-     * <code>SecondaryStatus</code> are subject to change. </p> </important> <p>We no
-     * longer support the following secondary statuses:</p> <ul> <li> <p>
-     * <code>LaunchingMLInstances</code> </p> </li> <li> <p>
-     * <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * maximum allowed wait time.</p> </li> <li> <p> <code>Stopped</code> - The
+     * training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul> <li>
+     * <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul> </dd>
+     * </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are subject
+     * to change. </p> </important> <p>We no longer support the following secondary
+     * statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p> </li> <li>
+     * <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline DescribeTrainingJobResult& WithSecondaryStatus(SecondaryStatus&& value) { SetSecondaryStatus(std::move(value)); return *this;}

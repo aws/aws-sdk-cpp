@@ -57,7 +57,19 @@ namespace Model
     ml_c5_2xlarge,
     ml_c5_4xlarge,
     ml_c5_9xlarge,
-    ml_c5_18xlarge
+    ml_c5_18xlarge,
+    ml_g4dn_xlarge,
+    ml_g4dn_2xlarge,
+    ml_g4dn_4xlarge,
+    ml_g4dn_8xlarge,
+    ml_g4dn_12xlarge,
+    ml_g4dn_16xlarge,
+    ml_r5_large,
+    ml_r5_xlarge,
+    ml_r5_2xlarge,
+    ml_r5_4xlarge,
+    ml_r5_12xlarge,
+    ml_r5_24xlarge
   };
 
 namespace ProductionVariantInstanceTypeMapper

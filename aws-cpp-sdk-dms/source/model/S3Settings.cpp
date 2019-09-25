@@ -58,7 +58,9 @@ S3Settings::S3Settings() :
     m_includeOpForFullLoadHasBeenSet(false),
     m_cdcInsertsOnly(false),
     m_cdcInsertsOnlyHasBeenSet(false),
-    m_timestampColumnNameHasBeenSet(false)
+    m_timestampColumnNameHasBeenSet(false),
+    m_parquetTimestampInMillisecond(false),
+    m_parquetTimestampInMillisecondHasBeenSet(false)
 {
 }
 
@@ -92,7 +94,9 @@ S3Settings::S3Settings(JsonView jsonValue) :
     m_includeOpForFullLoadHasBeenSet(false),
     m_cdcInsertsOnly(false),
     m_cdcInsertsOnlyHasBeenSet(false),
-    m_timestampColumnNameHasBeenSet(false)
+    m_timestampColumnNameHasBeenSet(false),
+    m_parquetTimestampInMillisecond(false),
+    m_parquetTimestampInMillisecondHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -232,6 +236,13 @@ S3Settings& S3Settings::operator =(JsonView jsonValue)
     m_timestampColumnNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ParquetTimestampInMillisecond"))
+  {
+    m_parquetTimestampInMillisecond = jsonValue.GetBool("ParquetTimestampInMillisecond");
+
+    m_parquetTimestampInMillisecondHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -345,6 +356,12 @@ JsonValue S3Settings::Jsonize() const
   if(m_timestampColumnNameHasBeenSet)
   {
    payload.WithString("TimestampColumnName", m_timestampColumnName);
+
+  }
+
+  if(m_parquetTimestampInMillisecondHasBeenSet)
+  {
+   payload.WithBool("ParquetTimestampInMillisecond", m_parquetTimestampInMillisecond);
 
   }
 

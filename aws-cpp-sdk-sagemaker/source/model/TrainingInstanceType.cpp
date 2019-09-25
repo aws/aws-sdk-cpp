@@ -51,12 +51,12 @@ namespace Aws
         static const int ml_p3_2xlarge_HASH = HashingUtils::HashString("ml.p3.2xlarge");
         static const int ml_p3_8xlarge_HASH = HashingUtils::HashString("ml.p3.8xlarge");
         static const int ml_p3_16xlarge_HASH = HashingUtils::HashString("ml.p3.16xlarge");
+        static const int ml_p3dn_24xlarge_HASH = HashingUtils::HashString("ml.p3dn.24xlarge");
         static const int ml_c5_xlarge_HASH = HashingUtils::HashString("ml.c5.xlarge");
         static const int ml_c5_2xlarge_HASH = HashingUtils::HashString("ml.c5.2xlarge");
         static const int ml_c5_4xlarge_HASH = HashingUtils::HashString("ml.c5.4xlarge");
         static const int ml_c5_9xlarge_HASH = HashingUtils::HashString("ml.c5.9xlarge");
         static const int ml_c5_18xlarge_HASH = HashingUtils::HashString("ml.c5.18xlarge");
-        static const int ml_p3dn_24xlarge_HASH = HashingUtils::HashString("ml.p3dn.24xlarge");
 
 
         TrainingInstanceType GetTrainingInstanceTypeForName(const Aws::String& name)
@@ -146,6 +146,10 @@ namespace Aws
           {
             return TrainingInstanceType::ml_p3_16xlarge;
           }
+          else if (hashCode == ml_p3dn_24xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_p3dn_24xlarge;
+          }
           else if (hashCode == ml_c5_xlarge_HASH)
           {
             return TrainingInstanceType::ml_c5_xlarge;
@@ -165,10 +169,6 @@ namespace Aws
           else if (hashCode == ml_c5_18xlarge_HASH)
           {
             return TrainingInstanceType::ml_c5_18xlarge;
-          }
-          else if (hashCode == ml_p3dn_24xlarge_HASH)
-          {
-            return TrainingInstanceType::ml_p3dn_24xlarge;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -226,6 +226,8 @@ namespace Aws
             return "ml.p3.8xlarge";
           case TrainingInstanceType::ml_p3_16xlarge:
             return "ml.p3.16xlarge";
+          case TrainingInstanceType::ml_p3dn_24xlarge:
+            return "ml.p3dn.24xlarge";
           case TrainingInstanceType::ml_c5_xlarge:
             return "ml.c5.xlarge";
           case TrainingInstanceType::ml_c5_2xlarge:
@@ -236,8 +238,6 @@ namespace Aws
             return "ml.c5.9xlarge";
           case TrainingInstanceType::ml_c5_18xlarge:
             return "ml.c5.18xlarge";
-          case TrainingInstanceType::ml_p3dn_24xlarge:
-            return "ml.p3dn.24xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

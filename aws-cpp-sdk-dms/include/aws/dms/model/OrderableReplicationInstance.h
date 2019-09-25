@@ -337,48 +337,48 @@ namespace Model
     /**
      * <p>The value returned when the specified <code>EngineVersion</code> of the
      * replication instance is in Beta or test mode. This indicates some features might
-     * not work as expected.</p> <note> <p>AWS DMS supports <code>ReleaseStatus</code>
-     * in versions 3.1.4 and later.</p> </note>
+     * not work as expected.</p> <note> <p>AWS DMS supports the
+     * <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p> </note>
      */
     inline const ReleaseStatusValues& GetReleaseStatus() const{ return m_releaseStatus; }
 
     /**
      * <p>The value returned when the specified <code>EngineVersion</code> of the
      * replication instance is in Beta or test mode. This indicates some features might
-     * not work as expected.</p> <note> <p>AWS DMS supports <code>ReleaseStatus</code>
-     * in versions 3.1.4 and later.</p> </note>
+     * not work as expected.</p> <note> <p>AWS DMS supports the
+     * <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p> </note>
      */
     inline bool ReleaseStatusHasBeenSet() const { return m_releaseStatusHasBeenSet; }
 
     /**
      * <p>The value returned when the specified <code>EngineVersion</code> of the
      * replication instance is in Beta or test mode. This indicates some features might
-     * not work as expected.</p> <note> <p>AWS DMS supports <code>ReleaseStatus</code>
-     * in versions 3.1.4 and later.</p> </note>
+     * not work as expected.</p> <note> <p>AWS DMS supports the
+     * <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p> </note>
      */
     inline void SetReleaseStatus(const ReleaseStatusValues& value) { m_releaseStatusHasBeenSet = true; m_releaseStatus = value; }
 
     /**
      * <p>The value returned when the specified <code>EngineVersion</code> of the
      * replication instance is in Beta or test mode. This indicates some features might
-     * not work as expected.</p> <note> <p>AWS DMS supports <code>ReleaseStatus</code>
-     * in versions 3.1.4 and later.</p> </note>
+     * not work as expected.</p> <note> <p>AWS DMS supports the
+     * <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p> </note>
      */
     inline void SetReleaseStatus(ReleaseStatusValues&& value) { m_releaseStatusHasBeenSet = true; m_releaseStatus = std::move(value); }
 
     /**
      * <p>The value returned when the specified <code>EngineVersion</code> of the
      * replication instance is in Beta or test mode. This indicates some features might
-     * not work as expected.</p> <note> <p>AWS DMS supports <code>ReleaseStatus</code>
-     * in versions 3.1.4 and later.</p> </note>
+     * not work as expected.</p> <note> <p>AWS DMS supports the
+     * <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p> </note>
      */
     inline OrderableReplicationInstance& WithReleaseStatus(const ReleaseStatusValues& value) { SetReleaseStatus(value); return *this;}
 
     /**
      * <p>The value returned when the specified <code>EngineVersion</code> of the
      * replication instance is in Beta or test mode. This indicates some features might
-     * not work as expected.</p> <note> <p>AWS DMS supports <code>ReleaseStatus</code>
-     * in versions 3.1.4 and later.</p> </note>
+     * not work as expected.</p> <note> <p>AWS DMS supports the
+     * <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p> </note>
      */
     inline OrderableReplicationInstance& WithReleaseStatus(ReleaseStatusValues&& value) { SetReleaseStatus(std::move(value)); return *this;}
 

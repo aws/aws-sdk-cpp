@@ -36,6 +36,7 @@ Accelerator::Accelerator() :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_ipSetsHasBeenSet(false),
+    m_dnsNameHasBeenSet(false),
     m_status(AcceleratorStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
@@ -51,6 +52,7 @@ Accelerator::Accelerator(JsonView jsonValue) :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_ipSetsHasBeenSet(false),
+    m_dnsNameHasBeenSet(false),
     m_status(AcceleratorStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
@@ -97,6 +99,13 @@ Accelerator& Accelerator::operator =(JsonView jsonValue)
       m_ipSets.push_back(ipSetsJsonList[ipSetsIndex].AsObject());
     }
     m_ipSetsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DnsName"))
+  {
+    m_dnsName = jsonValue.GetString("DnsName");
+
+    m_dnsNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -158,6 +167,12 @@ JsonValue Accelerator::Jsonize() const
      ipSetsJsonList[ipSetsIndex].AsObject(m_ipSets[ipSetsIndex].Jsonize());
    }
    payload.WithArray("IpSets", std::move(ipSetsJsonList));
+
+  }
+
+  if(m_dnsNameHasBeenSet)
+  {
+   payload.WithString("DnsName", m_dnsName);
 
   }
 

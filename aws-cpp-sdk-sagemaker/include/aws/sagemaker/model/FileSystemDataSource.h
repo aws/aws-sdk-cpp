@@ -94,42 +94,42 @@ namespace Model
     /**
      * <p>The access mode of the mount of the directory associated with the channel. A
      * directory can be mounted either in <code>ro</code> (read-only) or
-     * <code>rw</code> (read-write).</p>
+     * <code>rw</code> (read-write) mode.</p>
      */
     inline const FileSystemAccessMode& GetFileSystemAccessMode() const{ return m_fileSystemAccessMode; }
 
     /**
      * <p>The access mode of the mount of the directory associated with the channel. A
      * directory can be mounted either in <code>ro</code> (read-only) or
-     * <code>rw</code> (read-write).</p>
+     * <code>rw</code> (read-write) mode.</p>
      */
     inline bool FileSystemAccessModeHasBeenSet() const { return m_fileSystemAccessModeHasBeenSet; }
 
     /**
      * <p>The access mode of the mount of the directory associated with the channel. A
      * directory can be mounted either in <code>ro</code> (read-only) or
-     * <code>rw</code> (read-write).</p>
+     * <code>rw</code> (read-write) mode.</p>
      */
     inline void SetFileSystemAccessMode(const FileSystemAccessMode& value) { m_fileSystemAccessModeHasBeenSet = true; m_fileSystemAccessMode = value; }
 
     /**
      * <p>The access mode of the mount of the directory associated with the channel. A
      * directory can be mounted either in <code>ro</code> (read-only) or
-     * <code>rw</code> (read-write).</p>
+     * <code>rw</code> (read-write) mode.</p>
      */
     inline void SetFileSystemAccessMode(FileSystemAccessMode&& value) { m_fileSystemAccessModeHasBeenSet = true; m_fileSystemAccessMode = std::move(value); }
 
     /**
      * <p>The access mode of the mount of the directory associated with the channel. A
      * directory can be mounted either in <code>ro</code> (read-only) or
-     * <code>rw</code> (read-write).</p>
+     * <code>rw</code> (read-write) mode.</p>
      */
     inline FileSystemDataSource& WithFileSystemAccessMode(const FileSystemAccessMode& value) { SetFileSystemAccessMode(value); return *this;}
 
     /**
      * <p>The access mode of the mount of the directory associated with the channel. A
      * directory can be mounted either in <code>ro</code> (read-only) or
-     * <code>rw</code> (read-write).</p>
+     * <code>rw</code> (read-write) mode.</p>
      */
     inline FileSystemDataSource& WithFileSystemAccessMode(FileSystemAccessMode&& value) { SetFileSystemAccessMode(std::move(value)); return *this;}
 

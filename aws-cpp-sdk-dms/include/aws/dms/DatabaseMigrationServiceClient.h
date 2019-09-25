@@ -29,6 +29,7 @@
 #include <aws/dms/model/CreateReplicationSubnetGroupResult.h>
 #include <aws/dms/model/CreateReplicationTaskResult.h>
 #include <aws/dms/model/DeleteCertificateResult.h>
+#include <aws/dms/model/DeleteConnectionResult.h>
 #include <aws/dms/model/DeleteEndpointResult.h>
 #include <aws/dms/model/DeleteEventSubscriptionResult.h>
 #include <aws/dms/model/DeleteReplicationInstanceResult.h>
@@ -114,6 +115,7 @@ namespace Model
         class CreateReplicationSubnetGroupRequest;
         class CreateReplicationTaskRequest;
         class DeleteCertificateRequest;
+        class DeleteConnectionRequest;
         class DeleteEndpointRequest;
         class DeleteEventSubscriptionRequest;
         class DeleteReplicationInstanceRequest;
@@ -161,6 +163,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateReplicationSubnetGroupResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> CreateReplicationSubnetGroupOutcome;
         typedef Aws::Utils::Outcome<CreateReplicationTaskResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> CreateReplicationTaskOutcome;
         typedef Aws::Utils::Outcome<DeleteCertificateResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DeleteCertificateOutcome;
+        typedef Aws::Utils::Outcome<DeleteConnectionResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DeleteConnectionOutcome;
         typedef Aws::Utils::Outcome<DeleteEndpointResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DeleteEndpointOutcome;
         typedef Aws::Utils::Outcome<DeleteEventSubscriptionResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DeleteEventSubscriptionOutcome;
         typedef Aws::Utils::Outcome<DeleteReplicationInstanceResult, Aws::Client::AWSError<DatabaseMigrationServiceErrors>> DeleteReplicationInstanceOutcome;
@@ -208,6 +211,7 @@ namespace Model
         typedef std::future<CreateReplicationSubnetGroupOutcome> CreateReplicationSubnetGroupOutcomeCallable;
         typedef std::future<CreateReplicationTaskOutcome> CreateReplicationTaskOutcomeCallable;
         typedef std::future<DeleteCertificateOutcome> DeleteCertificateOutcomeCallable;
+        typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
         typedef std::future<DeleteEndpointOutcome> DeleteEndpointOutcomeCallable;
         typedef std::future<DeleteEventSubscriptionOutcome> DeleteEventSubscriptionOutcomeCallable;
         typedef std::future<DeleteReplicationInstanceOutcome> DeleteReplicationInstanceOutcomeCallable;
@@ -258,6 +262,7 @@ namespace Model
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CreateReplicationSubnetGroupRequest&, const Model::CreateReplicationSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplicationSubnetGroupResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CreateReplicationTaskRequest&, const Model::CreateReplicationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplicationTaskResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteCertificateRequest&, const Model::DeleteCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCertificateResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteConnectionRequest&, const Model::DeleteConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectionResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteEndpointRequest&, const Model::DeleteEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteEventSubscriptionRequest&, const Model::DeleteEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventSubscriptionResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteReplicationInstanceRequest&, const Model::DeleteReplicationInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReplicationInstanceResponseReceivedHandler;
@@ -610,6 +615,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteCertificateAsync(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the connection between a replication instance and an
+         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteConnectionOutcome DeleteConnection(const Model::DeleteConnectionRequest& request) const;
+
+        /**
+         * <p>Deletes the connection between a replication instance and an
+         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteConnection">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteConnectionOutcomeCallable DeleteConnectionCallable(const Model::DeleteConnectionRequest& request) const;
+
+        /**
+         * <p>Deletes the connection between a replication instance and an
+         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteConnection">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteConnectionAsync(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified endpoint.</p> <note> <p>All tasks associated with the
@@ -1762,6 +1795,7 @@ namespace Model
         void CreateReplicationSubnetGroupAsyncHelper(const Model::CreateReplicationSubnetGroupRequest& request, const CreateReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReplicationTaskAsyncHelper(const Model::CreateReplicationTaskRequest& request, const CreateReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCertificateAsyncHelper(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteConnectionAsyncHelper(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEndpointAsyncHelper(const Model::DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventSubscriptionAsyncHelper(const Model::DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteReplicationInstanceAsyncHelper(const Model::DeleteReplicationInstanceRequest& request, const DeleteReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
