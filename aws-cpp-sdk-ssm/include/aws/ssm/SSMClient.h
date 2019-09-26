@@ -4426,9 +4426,15 @@ namespace Model
 
         /**
          * <p>Updates an association. You can update the association name and version, the
-         * document version, schedule, parameters, and Amazon S3 output.</p> <important>
-         * <p>When you update an association, the association immediately runs against the
-         * specified targets.</p> </important><p><h3>See Also:</h3>   <a
+         * document version, schedule, parameters, and Amazon S3 output. </p> <p>In order
+         * to call this API action, your IAM user account, group, or role must be
+         * configured with permission to call the <a>DescribeAssociation</a> API action. If
+         * you don't have permission to call DescribeAssociation, then you receive the
+         * following error: <code>An error occurred (AccessDeniedException) when calling
+         * the UpdateAssociation operation: User: &lt;user_arn&gt; is not authorized to
+         * perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code> </p>
+         * <important> <p>When you update an association, the association immediately runs
+         * against the specified targets.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
          * API Reference</a></p>
          */
@@ -4436,9 +4442,15 @@ namespace Model
 
         /**
          * <p>Updates an association. You can update the association name and version, the
-         * document version, schedule, parameters, and Amazon S3 output.</p> <important>
-         * <p>When you update an association, the association immediately runs against the
-         * specified targets.</p> </important><p><h3>See Also:</h3>   <a
+         * document version, schedule, parameters, and Amazon S3 output. </p> <p>In order
+         * to call this API action, your IAM user account, group, or role must be
+         * configured with permission to call the <a>DescribeAssociation</a> API action. If
+         * you don't have permission to call DescribeAssociation, then you receive the
+         * following error: <code>An error occurred (AccessDeniedException) when calling
+         * the UpdateAssociation operation: User: &lt;user_arn&gt; is not authorized to
+         * perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code> </p>
+         * <important> <p>When you update an association, the association immediately runs
+         * against the specified targets.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
          * API Reference</a></p>
          *
@@ -4448,9 +4460,15 @@ namespace Model
 
         /**
          * <p>Updates an association. You can update the association name and version, the
-         * document version, schedule, parameters, and Amazon S3 output.</p> <important>
-         * <p>When you update an association, the association immediately runs against the
-         * specified targets.</p> </important><p><h3>See Also:</h3>   <a
+         * document version, schedule, parameters, and Amazon S3 output. </p> <p>In order
+         * to call this API action, your IAM user account, group, or role must be
+         * configured with permission to call the <a>DescribeAssociation</a> API action. If
+         * you don't have permission to call DescribeAssociation, then you receive the
+         * following error: <code>An error occurred (AccessDeniedException) when calling
+         * the UpdateAssociation operation: User: &lt;user_arn&gt; is not authorized to
+         * perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code> </p>
+         * <important> <p>When you update an association, the association immediately runs
+         * against the specified targets.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
          * API Reference</a></p>
          *

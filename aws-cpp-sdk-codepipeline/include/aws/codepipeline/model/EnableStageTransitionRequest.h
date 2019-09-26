@@ -156,44 +156,44 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether artifacts will be allowed to enter the stage and be
-     * processed by the actions in that stage (inbound) or whether already-processed
-     * artifacts will be allowed to transition to the next stage (outbound).</p>
+     * <p>Specifies whether artifacts are allowed to enter the stage and be processed
+     * by the actions in that stage (inbound) or whether already processed artifacts
+     * are allowed to transition to the next stage (outbound).</p>
      */
     inline const StageTransitionType& GetTransitionType() const{ return m_transitionType; }
 
     /**
-     * <p>Specifies whether artifacts will be allowed to enter the stage and be
-     * processed by the actions in that stage (inbound) or whether already-processed
-     * artifacts will be allowed to transition to the next stage (outbound).</p>
+     * <p>Specifies whether artifacts are allowed to enter the stage and be processed
+     * by the actions in that stage (inbound) or whether already processed artifacts
+     * are allowed to transition to the next stage (outbound).</p>
      */
     inline bool TransitionTypeHasBeenSet() const { return m_transitionTypeHasBeenSet; }
 
     /**
-     * <p>Specifies whether artifacts will be allowed to enter the stage and be
-     * processed by the actions in that stage (inbound) or whether already-processed
-     * artifacts will be allowed to transition to the next stage (outbound).</p>
+     * <p>Specifies whether artifacts are allowed to enter the stage and be processed
+     * by the actions in that stage (inbound) or whether already processed artifacts
+     * are allowed to transition to the next stage (outbound).</p>
      */
     inline void SetTransitionType(const StageTransitionType& value) { m_transitionTypeHasBeenSet = true; m_transitionType = value; }
 
     /**
-     * <p>Specifies whether artifacts will be allowed to enter the stage and be
-     * processed by the actions in that stage (inbound) or whether already-processed
-     * artifacts will be allowed to transition to the next stage (outbound).</p>
+     * <p>Specifies whether artifacts are allowed to enter the stage and be processed
+     * by the actions in that stage (inbound) or whether already processed artifacts
+     * are allowed to transition to the next stage (outbound).</p>
      */
     inline void SetTransitionType(StageTransitionType&& value) { m_transitionTypeHasBeenSet = true; m_transitionType = std::move(value); }
 
     /**
-     * <p>Specifies whether artifacts will be allowed to enter the stage and be
-     * processed by the actions in that stage (inbound) or whether already-processed
-     * artifacts will be allowed to transition to the next stage (outbound).</p>
+     * <p>Specifies whether artifacts are allowed to enter the stage and be processed
+     * by the actions in that stage (inbound) or whether already processed artifacts
+     * are allowed to transition to the next stage (outbound).</p>
      */
     inline EnableStageTransitionRequest& WithTransitionType(const StageTransitionType& value) { SetTransitionType(value); return *this;}
 
     /**
-     * <p>Specifies whether artifacts will be allowed to enter the stage and be
-     * processed by the actions in that stage (inbound) or whether already-processed
-     * artifacts will be allowed to transition to the next stage (outbound).</p>
+     * <p>Specifies whether artifacts are allowed to enter the stage and be processed
+     * by the actions in that stage (inbound) or whether already processed artifacts
+     * are allowed to transition to the next stage (outbound).</p>
      */
     inline EnableStageTransitionRequest& WithTransitionType(StageTransitionType&& value) { SetTransitionType(std::move(value)); return *this;}
 

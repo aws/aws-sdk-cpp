@@ -87,57 +87,57 @@ namespace Model
 
     /**
      * <p>The token that was returned from the previous API call, which would be used
-     * to return the next page of the list. However, the ListTagsforResource call lists
-     * all available tags in one call and does not use pagination.</p>
+     * to return the next page of the list. The ListTagsforResource call lists all
+     * available tags in one call and does not use pagination.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>The token that was returned from the previous API call, which would be used
-     * to return the next page of the list. However, the ListTagsforResource call lists
-     * all available tags in one call and does not use pagination.</p>
+     * to return the next page of the list. The ListTagsforResource call lists all
+     * available tags in one call and does not use pagination.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token that was returned from the previous API call, which would be used
-     * to return the next page of the list. However, the ListTagsforResource call lists
-     * all available tags in one call and does not use pagination.</p>
+     * to return the next page of the list. The ListTagsforResource call lists all
+     * available tags in one call and does not use pagination.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>The token that was returned from the previous API call, which would be used
-     * to return the next page of the list. However, the ListTagsforResource call lists
-     * all available tags in one call and does not use pagination.</p>
+     * to return the next page of the list. The ListTagsforResource call lists all
+     * available tags in one call and does not use pagination.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The token that was returned from the previous API call, which would be used
-     * to return the next page of the list. However, the ListTagsforResource call lists
-     * all available tags in one call and does not use pagination.</p>
+     * to return the next page of the list. The ListTagsforResource call lists all
+     * available tags in one call and does not use pagination.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>The token that was returned from the previous API call, which would be used
-     * to return the next page of the list. However, the ListTagsforResource call lists
-     * all available tags in one call and does not use pagination.</p>
+     * to return the next page of the list. The ListTagsforResource call lists all
+     * available tags in one call and does not use pagination.</p>
      */
     inline ListTagsForResourceRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>The token that was returned from the previous API call, which would be used
-     * to return the next page of the list. However, the ListTagsforResource call lists
-     * all available tags in one call and does not use pagination.</p>
+     * to return the next page of the list. The ListTagsforResource call lists all
+     * available tags in one call and does not use pagination.</p>
      */
     inline ListTagsForResourceRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token that was returned from the previous API call, which would be used
-     * to return the next page of the list. However, the ListTagsforResource call lists
-     * all available tags in one call and does not use pagination.</p>
+     * to return the next page of the list. The ListTagsforResource call lists all
+     * available tags in one call and does not use pagination.</p>
      */
     inline ListTagsForResourceRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

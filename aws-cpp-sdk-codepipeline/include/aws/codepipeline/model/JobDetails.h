@@ -91,37 +91,37 @@ namespace Model
 
 
     /**
-     * <p>Represents additional information about a job required for a job worker to
+     * <p>Represents other information about a job required for a job worker to
      * complete the job. </p>
      */
     inline const JobData& GetData() const{ return m_data; }
 
     /**
-     * <p>Represents additional information about a job required for a job worker to
+     * <p>Represents other information about a job required for a job worker to
      * complete the job. </p>
      */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
-     * <p>Represents additional information about a job required for a job worker to
+     * <p>Represents other information about a job required for a job worker to
      * complete the job. </p>
      */
     inline void SetData(const JobData& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
-     * <p>Represents additional information about a job required for a job worker to
+     * <p>Represents other information about a job required for a job worker to
      * complete the job. </p>
      */
     inline void SetData(JobData&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
-     * <p>Represents additional information about a job required for a job worker to
+     * <p>Represents other information about a job required for a job worker to
      * complete the job. </p>
      */
     inline JobDetails& WithData(const JobData& value) { SetData(value); return *this;}
 
     /**
-     * <p>Represents additional information about a job required for a job worker to
+     * <p>Represents other information about a job required for a job worker to
      * complete the job. </p>
      */
     inline JobDetails& WithData(JobData&& value) { SetData(std::move(value)); return *this;}

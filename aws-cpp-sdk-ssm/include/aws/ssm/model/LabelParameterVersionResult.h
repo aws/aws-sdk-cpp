@@ -107,9 +107,27 @@ namespace Model
      */
     inline LabelParameterVersionResult& AddInvalidLabels(const char* value) { m_invalidLabels.push_back(value); return *this; }
 
+
+    /**
+     * <p>The version of the parameter that has been labeled.</p>
+     */
+    inline long long GetParameterVersion() const{ return m_parameterVersion; }
+
+    /**
+     * <p>The version of the parameter that has been labeled.</p>
+     */
+    inline void SetParameterVersion(long long value) { m_parameterVersion = value; }
+
+    /**
+     * <p>The version of the parameter that has been labeled.</p>
+     */
+    inline LabelParameterVersionResult& WithParameterVersion(long long value) { SetParameterVersion(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_invalidLabels;
+
+    long long m_parameterVersion;
   };
 
 } // namespace Model

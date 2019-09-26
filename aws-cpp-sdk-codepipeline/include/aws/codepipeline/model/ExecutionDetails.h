@@ -139,26 +139,26 @@ namespace Model
 
 
     /**
-     * <p>The percentage of work completed on the action, represented on a scale of
-     * zero to one hundred percent.</p>
+     * <p>The percentage of work completed on the action, represented on a scale of 0
+     * to 100 percent.</p>
      */
     inline int GetPercentComplete() const{ return m_percentComplete; }
 
     /**
-     * <p>The percentage of work completed on the action, represented on a scale of
-     * zero to one hundred percent.</p>
+     * <p>The percentage of work completed on the action, represented on a scale of 0
+     * to 100 percent.</p>
      */
     inline bool PercentCompleteHasBeenSet() const { return m_percentCompleteHasBeenSet; }
 
     /**
-     * <p>The percentage of work completed on the action, represented on a scale of
-     * zero to one hundred percent.</p>
+     * <p>The percentage of work completed on the action, represented on a scale of 0
+     * to 100 percent.</p>
      */
     inline void SetPercentComplete(int value) { m_percentCompleteHasBeenSet = true; m_percentComplete = value; }
 
     /**
-     * <p>The percentage of work completed on the action, represented on a scale of
-     * zero to one hundred percent.</p>
+     * <p>The percentage of work completed on the action, represented on a scale of 0
+     * to 100 percent.</p>
      */
     inline ExecutionDetails& WithPercentComplete(int value) { SetPercentComplete(value); return *this;}
 

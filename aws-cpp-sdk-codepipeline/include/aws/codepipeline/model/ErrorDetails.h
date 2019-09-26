@@ -49,42 +49,42 @@ namespace Model
 
 
     /**
-     * <p>The system ID or error number code of the error.</p>
+     * <p>The system ID or number code of the error.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
 
     /**
-     * <p>The system ID or error number code of the error.</p>
+     * <p>The system ID or number code of the error.</p>
      */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
 
     /**
-     * <p>The system ID or error number code of the error.</p>
+     * <p>The system ID or number code of the error.</p>
      */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
-     * <p>The system ID or error number code of the error.</p>
+     * <p>The system ID or number code of the error.</p>
      */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
-     * <p>The system ID or error number code of the error.</p>
+     * <p>The system ID or number code of the error.</p>
      */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
 
     /**
-     * <p>The system ID or error number code of the error.</p>
+     * <p>The system ID or number code of the error.</p>
      */
     inline ErrorDetails& WithCode(const Aws::String& value) { SetCode(value); return *this;}
 
     /**
-     * <p>The system ID or error number code of the error.</p>
+     * <p>The system ID or number code of the error.</p>
      */
     inline ErrorDetails& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
     /**
-     * <p>The system ID or error number code of the error.</p>
+     * <p>The system ID or number code of the error.</p>
      */
     inline ErrorDetails& WithCode(const char* value) { SetCode(value); return *this;}
 

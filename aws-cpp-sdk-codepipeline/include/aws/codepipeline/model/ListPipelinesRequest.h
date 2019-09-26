@@ -49,50 +49,50 @@ namespace Model
 
 
     /**
-     * <p>An identifier that was returned from the previous list pipelines call, which
-     * can be used to return the next set of pipelines in the list.</p>
+     * <p>An identifier that was returned from the previous list pipelines call. It can
+     * be used to return the next set of pipelines in the list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>An identifier that was returned from the previous list pipelines call, which
-     * can be used to return the next set of pipelines in the list.</p>
+     * <p>An identifier that was returned from the previous list pipelines call. It can
+     * be used to return the next set of pipelines in the list.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>An identifier that was returned from the previous list pipelines call, which
-     * can be used to return the next set of pipelines in the list.</p>
+     * <p>An identifier that was returned from the previous list pipelines call. It can
+     * be used to return the next set of pipelines in the list.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>An identifier that was returned from the previous list pipelines call, which
-     * can be used to return the next set of pipelines in the list.</p>
+     * <p>An identifier that was returned from the previous list pipelines call. It can
+     * be used to return the next set of pipelines in the list.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>An identifier that was returned from the previous list pipelines call, which
-     * can be used to return the next set of pipelines in the list.</p>
+     * <p>An identifier that was returned from the previous list pipelines call. It can
+     * be used to return the next set of pipelines in the list.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>An identifier that was returned from the previous list pipelines call, which
-     * can be used to return the next set of pipelines in the list.</p>
+     * <p>An identifier that was returned from the previous list pipelines call. It can
+     * be used to return the next set of pipelines in the list.</p>
      */
     inline ListPipelinesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>An identifier that was returned from the previous list pipelines call, which
-     * can be used to return the next set of pipelines in the list.</p>
+     * <p>An identifier that was returned from the previous list pipelines call. It can
+     * be used to return the next set of pipelines in the list.</p>
      */
     inline ListPipelinesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>An identifier that was returned from the previous list pipelines call, which
-     * can be used to return the next set of pipelines in the list.</p>
+     * <p>An identifier that was returned from the previous list pipelines call. It can
+     * be used to return the next set of pipelines in the list.</p>
      */
     inline ListPipelinesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

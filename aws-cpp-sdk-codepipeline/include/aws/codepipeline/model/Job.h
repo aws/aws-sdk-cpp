@@ -90,32 +90,32 @@ namespace Model
 
 
     /**
-     * <p>Additional data about a job.</p>
+     * <p>Other data about a job.</p>
      */
     inline const JobData& GetData() const{ return m_data; }
 
     /**
-     * <p>Additional data about a job.</p>
+     * <p>Other data about a job.</p>
      */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
-     * <p>Additional data about a job.</p>
+     * <p>Other data about a job.</p>
      */
     inline void SetData(const JobData& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
-     * <p>Additional data about a job.</p>
+     * <p>Other data about a job.</p>
      */
     inline void SetData(JobData&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
-     * <p>Additional data about a job.</p>
+     * <p>Other data about a job.</p>
      */
     inline Job& WithData(const JobData& value) { SetData(value); return *this;}
 
     /**
-     * <p>Additional data about a job.</p>
+     * <p>Other data about a job.</p>
      */
     inline Job& WithData(JobData&& value) { SetData(std::move(value)); return *this;}
 

@@ -752,7 +752,7 @@ namespace Model
      * exist in your AWS account in the current Region.</p> </li> </ul> <p>For more
      * information about configuring the default tier option, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-     * a Default Parameter Tier</a> in the AWS Systems Manager User Guide.</p>
+     * a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline const ParameterTier& GetTier() const{ return m_tier; }
 
@@ -800,7 +800,7 @@ namespace Model
      * exist in your AWS account in the current Region.</p> </li> </ul> <p>For more
      * information about configuring the default tier option, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-     * a Default Parameter Tier</a> in the AWS Systems Manager User Guide.</p>
+     * a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
 
@@ -848,7 +848,7 @@ namespace Model
      * exist in your AWS account in the current Region.</p> </li> </ul> <p>For more
      * information about configuring the default tier option, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-     * a Default Parameter Tier</a> in the AWS Systems Manager User Guide.</p>
+     * a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetTier(const ParameterTier& value) { m_tierHasBeenSet = true; m_tier = value; }
 
@@ -896,7 +896,7 @@ namespace Model
      * exist in your AWS account in the current Region.</p> </li> </ul> <p>For more
      * information about configuring the default tier option, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-     * a Default Parameter Tier</a> in the AWS Systems Manager User Guide.</p>
+     * a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetTier(ParameterTier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
 
@@ -944,7 +944,7 @@ namespace Model
      * exist in your AWS account in the current Region.</p> </li> </ul> <p>For more
      * information about configuring the default tier option, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-     * a Default Parameter Tier</a> in the AWS Systems Manager User Guide.</p>
+     * a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline PutParameterRequest& WithTier(const ParameterTier& value) { SetTier(value); return *this;}
 
@@ -992,7 +992,7 @@ namespace Model
      * exist in your AWS account in the current Region.</p> </li> </ul> <p>For more
      * information about configuring the default tier option, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-     * a Default Parameter Tier</a> in the AWS Systems Manager User Guide.</p>
+     * a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline PutParameterRequest& WithTier(ParameterTier&& value) { SetTier(std::move(value)); return *this;}
 

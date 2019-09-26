@@ -41,7 +41,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents additional information about a job required for a job worker to
+   * <p>Represents other information about a job required for a job worker to
    * complete the job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/JobData">AWS
    * API Reference</a></p>
@@ -120,42 +120,42 @@ namespace Model
     /**
      * <p>Represents information about a pipeline to a job worker.</p> <note>
      * <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for
-     * Custom jobs.</p> </note>
+     * custom jobs.</p> </note>
      */
     inline const PipelineContext& GetPipelineContext() const{ return m_pipelineContext; }
 
     /**
      * <p>Represents information about a pipeline to a job worker.</p> <note>
      * <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for
-     * Custom jobs.</p> </note>
+     * custom jobs.</p> </note>
      */
     inline bool PipelineContextHasBeenSet() const { return m_pipelineContextHasBeenSet; }
 
     /**
      * <p>Represents information about a pipeline to a job worker.</p> <note>
      * <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for
-     * Custom jobs.</p> </note>
+     * custom jobs.</p> </note>
      */
     inline void SetPipelineContext(const PipelineContext& value) { m_pipelineContextHasBeenSet = true; m_pipelineContext = value; }
 
     /**
      * <p>Represents information about a pipeline to a job worker.</p> <note>
      * <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for
-     * Custom jobs.</p> </note>
+     * custom jobs.</p> </note>
      */
     inline void SetPipelineContext(PipelineContext&& value) { m_pipelineContextHasBeenSet = true; m_pipelineContext = std::move(value); }
 
     /**
      * <p>Represents information about a pipeline to a job worker.</p> <note>
      * <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for
-     * Custom jobs.</p> </note>
+     * custom jobs.</p> </note>
      */
     inline JobData& WithPipelineContext(const PipelineContext& value) { SetPipelineContext(value); return *this;}
 
     /**
      * <p>Represents information about a pipeline to a job worker.</p> <note>
      * <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for
-     * Custom jobs.</p> </note>
+     * custom jobs.</p> </note>
      */
     inline JobData& WithPipelineContext(PipelineContext&& value) { SetPipelineContext(std::move(value)); return *this;}
 
@@ -292,50 +292,50 @@ namespace Model
 
 
     /**
-     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job
-     * requires in order to continue the job asynchronously.</p>
+     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by
+     * a job to continue the job asynchronously.</p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
 
     /**
-     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job
-     * requires in order to continue the job asynchronously.</p>
+     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by
+     * a job to continue the job asynchronously.</p>
      */
     inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }
 
     /**
-     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job
-     * requires in order to continue the job asynchronously.</p>
+     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by
+     * a job to continue the job asynchronously.</p>
      */
     inline void SetContinuationToken(const Aws::String& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
 
     /**
-     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job
-     * requires in order to continue the job asynchronously.</p>
+     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by
+     * a job to continue the job asynchronously.</p>
      */
     inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::move(value); }
 
     /**
-     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job
-     * requires in order to continue the job asynchronously.</p>
+     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by
+     * a job to continue the job asynchronously.</p>
      */
     inline void SetContinuationToken(const char* value) { m_continuationTokenHasBeenSet = true; m_continuationToken.assign(value); }
 
     /**
-     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job
-     * requires in order to continue the job asynchronously.</p>
+     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by
+     * a job to continue the job asynchronously.</p>
      */
     inline JobData& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
 
     /**
-     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job
-     * requires in order to continue the job asynchronously.</p>
+     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by
+     * a job to continue the job asynchronously.</p>
      */
     inline JobData& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
 
     /**
-     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job
-     * requires in order to continue the job asynchronously.</p>
+     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by
+     * a job to continue the job asynchronously.</p>
      */
     inline JobData& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 

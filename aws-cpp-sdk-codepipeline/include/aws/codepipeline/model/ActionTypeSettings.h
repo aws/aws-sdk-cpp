@@ -101,7 +101,7 @@ namespace Model
      * <p>The URL returned to the AWS CodePipeline console that provides a deep link to
      * the resources of the external system, such as the configuration page for an AWS
      * CodeDeploy deployment group. This link is provided as part of the action display
-     * within the pipeline.</p>
+     * in the pipeline.</p>
      */
     inline const Aws::String& GetEntityUrlTemplate() const{ return m_entityUrlTemplate; }
 
@@ -109,7 +109,7 @@ namespace Model
      * <p>The URL returned to the AWS CodePipeline console that provides a deep link to
      * the resources of the external system, such as the configuration page for an AWS
      * CodeDeploy deployment group. This link is provided as part of the action display
-     * within the pipeline.</p>
+     * in the pipeline.</p>
      */
     inline bool EntityUrlTemplateHasBeenSet() const { return m_entityUrlTemplateHasBeenSet; }
 
@@ -117,7 +117,7 @@ namespace Model
      * <p>The URL returned to the AWS CodePipeline console that provides a deep link to
      * the resources of the external system, such as the configuration page for an AWS
      * CodeDeploy deployment group. This link is provided as part of the action display
-     * within the pipeline.</p>
+     * in the pipeline.</p>
      */
     inline void SetEntityUrlTemplate(const Aws::String& value) { m_entityUrlTemplateHasBeenSet = true; m_entityUrlTemplate = value; }
 
@@ -125,7 +125,7 @@ namespace Model
      * <p>The URL returned to the AWS CodePipeline console that provides a deep link to
      * the resources of the external system, such as the configuration page for an AWS
      * CodeDeploy deployment group. This link is provided as part of the action display
-     * within the pipeline.</p>
+     * in the pipeline.</p>
      */
     inline void SetEntityUrlTemplate(Aws::String&& value) { m_entityUrlTemplateHasBeenSet = true; m_entityUrlTemplate = std::move(value); }
 
@@ -133,7 +133,7 @@ namespace Model
      * <p>The URL returned to the AWS CodePipeline console that provides a deep link to
      * the resources of the external system, such as the configuration page for an AWS
      * CodeDeploy deployment group. This link is provided as part of the action display
-     * within the pipeline.</p>
+     * in the pipeline.</p>
      */
     inline void SetEntityUrlTemplate(const char* value) { m_entityUrlTemplateHasBeenSet = true; m_entityUrlTemplate.assign(value); }
 
@@ -141,7 +141,7 @@ namespace Model
      * <p>The URL returned to the AWS CodePipeline console that provides a deep link to
      * the resources of the external system, such as the configuration page for an AWS
      * CodeDeploy deployment group. This link is provided as part of the action display
-     * within the pipeline.</p>
+     * in the pipeline.</p>
      */
     inline ActionTypeSettings& WithEntityUrlTemplate(const Aws::String& value) { SetEntityUrlTemplate(value); return *this;}
 
@@ -149,7 +149,7 @@ namespace Model
      * <p>The URL returned to the AWS CodePipeline console that provides a deep link to
      * the resources of the external system, such as the configuration page for an AWS
      * CodeDeploy deployment group. This link is provided as part of the action display
-     * within the pipeline.</p>
+     * in the pipeline.</p>
      */
     inline ActionTypeSettings& WithEntityUrlTemplate(Aws::String&& value) { SetEntityUrlTemplate(std::move(value)); return *this;}
 
@@ -157,14 +157,14 @@ namespace Model
      * <p>The URL returned to the AWS CodePipeline console that provides a deep link to
      * the resources of the external system, such as the configuration page for an AWS
      * CodeDeploy deployment group. This link is provided as part of the action display
-     * within the pipeline.</p>
+     * in the pipeline.</p>
      */
     inline ActionTypeSettings& WithEntityUrlTemplate(const char* value) { SetEntityUrlTemplate(value); return *this;}
 
 
     /**
      * <p>The URL returned to the AWS CodePipeline console that contains a link to the
-     * top-level landing page for the external system, such as console page for AWS
+     * top-level landing page for the external system, such as the console page for AWS
      * CodeDeploy. This link is shown on the pipeline view page in the AWS CodePipeline
      * console and provides a link to the execution entity of the external action.</p>
      */
@@ -172,7 +172,7 @@ namespace Model
 
     /**
      * <p>The URL returned to the AWS CodePipeline console that contains a link to the
-     * top-level landing page for the external system, such as console page for AWS
+     * top-level landing page for the external system, such as the console page for AWS
      * CodeDeploy. This link is shown on the pipeline view page in the AWS CodePipeline
      * console and provides a link to the execution entity of the external action.</p>
      */
@@ -180,7 +180,7 @@ namespace Model
 
     /**
      * <p>The URL returned to the AWS CodePipeline console that contains a link to the
-     * top-level landing page for the external system, such as console page for AWS
+     * top-level landing page for the external system, such as the console page for AWS
      * CodeDeploy. This link is shown on the pipeline view page in the AWS CodePipeline
      * console and provides a link to the execution entity of the external action.</p>
      */
@@ -188,7 +188,7 @@ namespace Model
 
     /**
      * <p>The URL returned to the AWS CodePipeline console that contains a link to the
-     * top-level landing page for the external system, such as console page for AWS
+     * top-level landing page for the external system, such as the console page for AWS
      * CodeDeploy. This link is shown on the pipeline view page in the AWS CodePipeline
      * console and provides a link to the execution entity of the external action.</p>
      */
@@ -196,7 +196,7 @@ namespace Model
 
     /**
      * <p>The URL returned to the AWS CodePipeline console that contains a link to the
-     * top-level landing page for the external system, such as console page for AWS
+     * top-level landing page for the external system, such as the console page for AWS
      * CodeDeploy. This link is shown on the pipeline view page in the AWS CodePipeline
      * console and provides a link to the execution entity of the external action.</p>
      */
@@ -204,7 +204,7 @@ namespace Model
 
     /**
      * <p>The URL returned to the AWS CodePipeline console that contains a link to the
-     * top-level landing page for the external system, such as console page for AWS
+     * top-level landing page for the external system, such as the console page for AWS
      * CodeDeploy. This link is shown on the pipeline view page in the AWS CodePipeline
      * console and provides a link to the execution entity of the external action.</p>
      */
@@ -212,7 +212,7 @@ namespace Model
 
     /**
      * <p>The URL returned to the AWS CodePipeline console that contains a link to the
-     * top-level landing page for the external system, such as console page for AWS
+     * top-level landing page for the external system, such as the console page for AWS
      * CodeDeploy. This link is shown on the pipeline view page in the AWS CodePipeline
      * console and provides a link to the execution entity of the external action.</p>
      */
@@ -220,7 +220,7 @@ namespace Model
 
     /**
      * <p>The URL returned to the AWS CodePipeline console that contains a link to the
-     * top-level landing page for the external system, such as console page for AWS
+     * top-level landing page for the external system, such as the console page for AWS
      * CodeDeploy. This link is shown on the pipeline view page in the AWS CodePipeline
      * console and provides a link to the execution entity of the external action.</p>
      */

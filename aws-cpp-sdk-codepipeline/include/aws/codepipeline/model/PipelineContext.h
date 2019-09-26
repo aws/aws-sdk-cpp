@@ -134,32 +134,32 @@ namespace Model
 
 
     /**
-     * <p>The context of an action to a job worker within the stage of a pipeline.</p>
+     * <p>The context of an action to a job worker in the stage of a pipeline.</p>
      */
     inline const ActionContext& GetAction() const{ return m_action; }
 
     /**
-     * <p>The context of an action to a job worker within the stage of a pipeline.</p>
+     * <p>The context of an action to a job worker in the stage of a pipeline.</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * <p>The context of an action to a job worker within the stage of a pipeline.</p>
+     * <p>The context of an action to a job worker in the stage of a pipeline.</p>
      */
     inline void SetAction(const ActionContext& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>The context of an action to a job worker within the stage of a pipeline.</p>
+     * <p>The context of an action to a job worker in the stage of a pipeline.</p>
      */
     inline void SetAction(ActionContext&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>The context of an action to a job worker within the stage of a pipeline.</p>
+     * <p>The context of an action to a job worker in the stage of a pipeline.</p>
      */
     inline PipelineContext& WithAction(const ActionContext& value) { SetAction(value); return *this;}
 
     /**
-     * <p>The context of an action to a job worker within the stage of a pipeline.</p>
+     * <p>The context of an action to a job worker in the stage of a pipeline.</p>
      */
     inline PipelineContext& WithAction(ActionContext&& value) { SetAction(std::move(value)); return *this;}
 

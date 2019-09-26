@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the context of an action within the stage of a pipeline to a job
+   * <p>Represents the context of an action in the stage of a pipeline to a job
    * worker.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionContext">AWS
    * API Reference</a></p>
@@ -49,42 +49,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the action within the context of a job.</p>
+     * <p>The name of the action in the context of a job.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the action within the context of a job.</p>
+     * <p>The name of the action in the context of a job.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the action within the context of a job.</p>
+     * <p>The name of the action in the context of a job.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the action within the context of a job.</p>
+     * <p>The name of the action in the context of a job.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the action within the context of a job.</p>
+     * <p>The name of the action in the context of a job.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the action within the context of a job.</p>
+     * <p>The name of the action in the context of a job.</p>
      */
     inline ActionContext& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the action within the context of a job.</p>
+     * <p>The name of the action in the context of a job.</p>
      */
     inline ActionContext& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the action within the context of a job.</p>
+     * <p>The name of the action in the context of a job.</p>
      */
     inline ActionContext& WithName(const char* value) { SetName(value); return *this;}
 

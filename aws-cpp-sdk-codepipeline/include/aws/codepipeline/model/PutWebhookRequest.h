@@ -49,54 +49,54 @@ namespace Model
     /**
      * <p>The detail provided in an input file to create the webhook, such as the
      * webhook name, the pipeline name, and the action name. Give the webhook a unique
-     * name which identifies the webhook being defined. You may choose to name the
-     * webhook after the pipeline and action it targets so that you can easily
-     * recognize what it's used for later.</p>
+     * name that helps you identify it. You might name the webhook after the pipeline
+     * and action it targets so that you can easily recognize what it's used for
+     * later.</p>
      */
     inline const WebhookDefinition& GetWebhook() const{ return m_webhook; }
 
     /**
      * <p>The detail provided in an input file to create the webhook, such as the
      * webhook name, the pipeline name, and the action name. Give the webhook a unique
-     * name which identifies the webhook being defined. You may choose to name the
-     * webhook after the pipeline and action it targets so that you can easily
-     * recognize what it's used for later.</p>
+     * name that helps you identify it. You might name the webhook after the pipeline
+     * and action it targets so that you can easily recognize what it's used for
+     * later.</p>
      */
     inline bool WebhookHasBeenSet() const { return m_webhookHasBeenSet; }
 
     /**
      * <p>The detail provided in an input file to create the webhook, such as the
      * webhook name, the pipeline name, and the action name. Give the webhook a unique
-     * name which identifies the webhook being defined. You may choose to name the
-     * webhook after the pipeline and action it targets so that you can easily
-     * recognize what it's used for later.</p>
+     * name that helps you identify it. You might name the webhook after the pipeline
+     * and action it targets so that you can easily recognize what it's used for
+     * later.</p>
      */
     inline void SetWebhook(const WebhookDefinition& value) { m_webhookHasBeenSet = true; m_webhook = value; }
 
     /**
      * <p>The detail provided in an input file to create the webhook, such as the
      * webhook name, the pipeline name, and the action name. Give the webhook a unique
-     * name which identifies the webhook being defined. You may choose to name the
-     * webhook after the pipeline and action it targets so that you can easily
-     * recognize what it's used for later.</p>
+     * name that helps you identify it. You might name the webhook after the pipeline
+     * and action it targets so that you can easily recognize what it's used for
+     * later.</p>
      */
     inline void SetWebhook(WebhookDefinition&& value) { m_webhookHasBeenSet = true; m_webhook = std::move(value); }
 
     /**
      * <p>The detail provided in an input file to create the webhook, such as the
      * webhook name, the pipeline name, and the action name. Give the webhook a unique
-     * name which identifies the webhook being defined. You may choose to name the
-     * webhook after the pipeline and action it targets so that you can easily
-     * recognize what it's used for later.</p>
+     * name that helps you identify it. You might name the webhook after the pipeline
+     * and action it targets so that you can easily recognize what it's used for
+     * later.</p>
      */
     inline PutWebhookRequest& WithWebhook(const WebhookDefinition& value) { SetWebhook(value); return *this;}
 
     /**
      * <p>The detail provided in an input file to create the webhook, such as the
      * webhook name, the pipeline name, and the action name. Give the webhook a unique
-     * name which identifies the webhook being defined. You may choose to name the
-     * webhook after the pipeline and action it targets so that you can easily
-     * recognize what it's used for later.</p>
+     * name that helps you identify it. You might name the webhook after the pipeline
+     * and action it targets so that you can easily recognize what it's used for
+     * later.</p>
      */
     inline PutWebhookRequest& WithWebhook(WebhookDefinition&& value) { SetWebhook(std::move(value)); return *this;}
 

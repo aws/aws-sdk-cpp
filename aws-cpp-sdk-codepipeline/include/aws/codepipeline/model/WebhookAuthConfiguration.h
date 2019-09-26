@@ -49,58 +49,58 @@ namespace Model
 
 
     /**
-     * <p>The property used to configure acceptance of webhooks within a specific IP
-     * range. For IP, only the <code>AllowedIPRange</code> property must be set, and
-     * this property must be set to a valid CIDR range.</p>
+     * <p>The property used to configure acceptance of webhooks in an IP address range.
+     * For IP, only the <code>AllowedIPRange</code> property must be set. This property
+     * must be set to a valid CIDR range.</p>
      */
     inline const Aws::String& GetAllowedIPRange() const{ return m_allowedIPRange; }
 
     /**
-     * <p>The property used to configure acceptance of webhooks within a specific IP
-     * range. For IP, only the <code>AllowedIPRange</code> property must be set, and
-     * this property must be set to a valid CIDR range.</p>
+     * <p>The property used to configure acceptance of webhooks in an IP address range.
+     * For IP, only the <code>AllowedIPRange</code> property must be set. This property
+     * must be set to a valid CIDR range.</p>
      */
     inline bool AllowedIPRangeHasBeenSet() const { return m_allowedIPRangeHasBeenSet; }
 
     /**
-     * <p>The property used to configure acceptance of webhooks within a specific IP
-     * range. For IP, only the <code>AllowedIPRange</code> property must be set, and
-     * this property must be set to a valid CIDR range.</p>
+     * <p>The property used to configure acceptance of webhooks in an IP address range.
+     * For IP, only the <code>AllowedIPRange</code> property must be set. This property
+     * must be set to a valid CIDR range.</p>
      */
     inline void SetAllowedIPRange(const Aws::String& value) { m_allowedIPRangeHasBeenSet = true; m_allowedIPRange = value; }
 
     /**
-     * <p>The property used to configure acceptance of webhooks within a specific IP
-     * range. For IP, only the <code>AllowedIPRange</code> property must be set, and
-     * this property must be set to a valid CIDR range.</p>
+     * <p>The property used to configure acceptance of webhooks in an IP address range.
+     * For IP, only the <code>AllowedIPRange</code> property must be set. This property
+     * must be set to a valid CIDR range.</p>
      */
     inline void SetAllowedIPRange(Aws::String&& value) { m_allowedIPRangeHasBeenSet = true; m_allowedIPRange = std::move(value); }
 
     /**
-     * <p>The property used to configure acceptance of webhooks within a specific IP
-     * range. For IP, only the <code>AllowedIPRange</code> property must be set, and
-     * this property must be set to a valid CIDR range.</p>
+     * <p>The property used to configure acceptance of webhooks in an IP address range.
+     * For IP, only the <code>AllowedIPRange</code> property must be set. This property
+     * must be set to a valid CIDR range.</p>
      */
     inline void SetAllowedIPRange(const char* value) { m_allowedIPRangeHasBeenSet = true; m_allowedIPRange.assign(value); }
 
     /**
-     * <p>The property used to configure acceptance of webhooks within a specific IP
-     * range. For IP, only the <code>AllowedIPRange</code> property must be set, and
-     * this property must be set to a valid CIDR range.</p>
+     * <p>The property used to configure acceptance of webhooks in an IP address range.
+     * For IP, only the <code>AllowedIPRange</code> property must be set. This property
+     * must be set to a valid CIDR range.</p>
      */
     inline WebhookAuthConfiguration& WithAllowedIPRange(const Aws::String& value) { SetAllowedIPRange(value); return *this;}
 
     /**
-     * <p>The property used to configure acceptance of webhooks within a specific IP
-     * range. For IP, only the <code>AllowedIPRange</code> property must be set, and
-     * this property must be set to a valid CIDR range.</p>
+     * <p>The property used to configure acceptance of webhooks in an IP address range.
+     * For IP, only the <code>AllowedIPRange</code> property must be set. This property
+     * must be set to a valid CIDR range.</p>
      */
     inline WebhookAuthConfiguration& WithAllowedIPRange(Aws::String&& value) { SetAllowedIPRange(std::move(value)); return *this;}
 
     /**
-     * <p>The property used to configure acceptance of webhooks within a specific IP
-     * range. For IP, only the <code>AllowedIPRange</code> property must be set, and
-     * this property must be set to a valid CIDR range.</p>
+     * <p>The property used to configure acceptance of webhooks in an IP address range.
+     * For IP, only the <code>AllowedIPRange</code> property must be set. This property
+     * must be set to a valid CIDR range.</p>
      */
     inline WebhookAuthConfiguration& WithAllowedIPRange(const char* value) { SetAllowedIPRange(value); return *this;}
 

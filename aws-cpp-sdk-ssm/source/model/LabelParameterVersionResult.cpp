@@ -26,11 +26,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-LabelParameterVersionResult::LabelParameterVersionResult()
+LabelParameterVersionResult::LabelParameterVersionResult() : 
+    m_parameterVersion(0)
 {
 }
 
-LabelParameterVersionResult::LabelParameterVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+LabelParameterVersionResult::LabelParameterVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_parameterVersion(0)
 {
   *this = result;
 }
@@ -45,6 +47,12 @@ LabelParameterVersionResult& LabelParameterVersionResult::operator =(const Aws::
     {
       m_invalidLabels.push_back(invalidLabelsJsonList[invalidLabelsIndex].AsString());
     }
+  }
+
+  if(jsonValue.ValueExists("ParameterVersion"))
+  {
+    m_parameterVersion = jsonValue.GetInt64("ParameterVersion");
+
   }
 
 

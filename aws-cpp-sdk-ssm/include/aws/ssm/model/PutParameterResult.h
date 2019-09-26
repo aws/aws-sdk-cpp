@@ -15,6 +15,8 @@
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
+#include <aws/ssm/model/ParameterTier.h>
+#include <utility>
 
 namespace Aws
 {
@@ -70,9 +72,37 @@ namespace Model
      */
     inline PutParameterResult& WithVersion(long long value) { SetVersion(value); return *this;}
 
+
+    /**
+     * <p>The tier assigned to the parameter.</p>
+     */
+    inline const ParameterTier& GetTier() const{ return m_tier; }
+
+    /**
+     * <p>The tier assigned to the parameter.</p>
+     */
+    inline void SetTier(const ParameterTier& value) { m_tier = value; }
+
+    /**
+     * <p>The tier assigned to the parameter.</p>
+     */
+    inline void SetTier(ParameterTier&& value) { m_tier = std::move(value); }
+
+    /**
+     * <p>The tier assigned to the parameter.</p>
+     */
+    inline PutParameterResult& WithTier(const ParameterTier& value) { SetTier(value); return *this;}
+
+    /**
+     * <p>The tier assigned to the parameter.</p>
+     */
+    inline PutParameterResult& WithTier(ParameterTier&& value) { SetTier(std::move(value)); return *this;}
+
   private:
 
     long long m_version;
+
+    ParameterTier m_tier;
   };
 
 } // namespace Model

@@ -52,42 +52,42 @@ namespace Model
     /**
      * <p>A category defines what kind of action can be taken in the stage, and
      * constrains the provider type for the action. Valid categories are limited to one
-     * of the values below.</p>
+     * of the following values. </p>
      */
     inline const ActionCategory& GetCategory() const{ return m_category; }
 
     /**
      * <p>A category defines what kind of action can be taken in the stage, and
      * constrains the provider type for the action. Valid categories are limited to one
-     * of the values below.</p>
+     * of the following values. </p>
      */
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
 
     /**
      * <p>A category defines what kind of action can be taken in the stage, and
      * constrains the provider type for the action. Valid categories are limited to one
-     * of the values below.</p>
+     * of the following values. </p>
      */
     inline void SetCategory(const ActionCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
      * <p>A category defines what kind of action can be taken in the stage, and
      * constrains the provider type for the action. Valid categories are limited to one
-     * of the values below.</p>
+     * of the following values. </p>
      */
     inline void SetCategory(ActionCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
 
     /**
      * <p>A category defines what kind of action can be taken in the stage, and
      * constrains the provider type for the action. Valid categories are limited to one
-     * of the values below.</p>
+     * of the following values. </p>
      */
     inline ActionTypeId& WithCategory(const ActionCategory& value) { SetCategory(value); return *this;}
 
     /**
      * <p>A category defines what kind of action can be taken in the stage, and
      * constrains the provider type for the action. Valid categories are limited to one
-     * of the values below.</p>
+     * of the following values. </p>
      */
     inline ActionTypeId& WithCategory(ActionCategory&& value) { SetCategory(std::move(value)); return *this;}
 
@@ -127,7 +127,7 @@ namespace Model
      * <p>The provider of the service being called by the action. Valid providers are
      * determined by the action category. For example, an action in the Deploy category
      * type might have a provider of AWS CodeDeploy, which would be specified as
-     * CodeDeploy. To reference a list of action providers by action type, see <a
+     * CodeDeploy. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
      * Action Types and Providers in CodePipeline</a>.</p>
      */
@@ -137,7 +137,7 @@ namespace Model
      * <p>The provider of the service being called by the action. Valid providers are
      * determined by the action category. For example, an action in the Deploy category
      * type might have a provider of AWS CodeDeploy, which would be specified as
-     * CodeDeploy. To reference a list of action providers by action type, see <a
+     * CodeDeploy. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
      * Action Types and Providers in CodePipeline</a>.</p>
      */
@@ -147,7 +147,7 @@ namespace Model
      * <p>The provider of the service being called by the action. Valid providers are
      * determined by the action category. For example, an action in the Deploy category
      * type might have a provider of AWS CodeDeploy, which would be specified as
-     * CodeDeploy. To reference a list of action providers by action type, see <a
+     * CodeDeploy. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
      * Action Types and Providers in CodePipeline</a>.</p>
      */
@@ -157,7 +157,7 @@ namespace Model
      * <p>The provider of the service being called by the action. Valid providers are
      * determined by the action category. For example, an action in the Deploy category
      * type might have a provider of AWS CodeDeploy, which would be specified as
-     * CodeDeploy. To reference a list of action providers by action type, see <a
+     * CodeDeploy. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
      * Action Types and Providers in CodePipeline</a>.</p>
      */
@@ -167,7 +167,7 @@ namespace Model
      * <p>The provider of the service being called by the action. Valid providers are
      * determined by the action category. For example, an action in the Deploy category
      * type might have a provider of AWS CodeDeploy, which would be specified as
-     * CodeDeploy. To reference a list of action providers by action type, see <a
+     * CodeDeploy. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
      * Action Types and Providers in CodePipeline</a>.</p>
      */
@@ -177,7 +177,7 @@ namespace Model
      * <p>The provider of the service being called by the action. Valid providers are
      * determined by the action category. For example, an action in the Deploy category
      * type might have a provider of AWS CodeDeploy, which would be specified as
-     * CodeDeploy. To reference a list of action providers by action type, see <a
+     * CodeDeploy. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
      * Action Types and Providers in CodePipeline</a>.</p>
      */
@@ -187,7 +187,7 @@ namespace Model
      * <p>The provider of the service being called by the action. Valid providers are
      * determined by the action category. For example, an action in the Deploy category
      * type might have a provider of AWS CodeDeploy, which would be specified as
-     * CodeDeploy. To reference a list of action providers by action type, see <a
+     * CodeDeploy. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
      * Action Types and Providers in CodePipeline</a>.</p>
      */
@@ -197,7 +197,7 @@ namespace Model
      * <p>The provider of the service being called by the action. Valid providers are
      * determined by the action category. For example, an action in the Deploy category
      * type might have a provider of AWS CodeDeploy, which would be specified as
-     * CodeDeploy. To reference a list of action providers by action type, see <a
+     * CodeDeploy. For more information, see <a
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
      * Action Types and Providers in CodePipeline</a>.</p>
      */

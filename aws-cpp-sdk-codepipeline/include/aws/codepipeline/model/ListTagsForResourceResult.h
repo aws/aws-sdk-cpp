@@ -83,56 +83,56 @@ namespace Model
     /**
      * <p>If the amount of returned information is significantly large, an identifier
      * is also returned and can be used in a subsequent API call to return the next
-     * page of the list. However, the ListTagsforResource call lists all available tags
-     * in one call and does not use pagination.</p>
+     * page of the list. The ListTagsforResource call lists all available tags in one
+     * call and does not use pagination.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>If the amount of returned information is significantly large, an identifier
      * is also returned and can be used in a subsequent API call to return the next
-     * page of the list. However, the ListTagsforResource call lists all available tags
-     * in one call and does not use pagination.</p>
+     * page of the list. The ListTagsforResource call lists all available tags in one
+     * call and does not use pagination.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>If the amount of returned information is significantly large, an identifier
      * is also returned and can be used in a subsequent API call to return the next
-     * page of the list. However, the ListTagsforResource call lists all available tags
-     * in one call and does not use pagination.</p>
+     * page of the list. The ListTagsforResource call lists all available tags in one
+     * call and does not use pagination.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the amount of returned information is significantly large, an identifier
      * is also returned and can be used in a subsequent API call to return the next
-     * page of the list. However, the ListTagsforResource call lists all available tags
-     * in one call and does not use pagination.</p>
+     * page of the list. The ListTagsforResource call lists all available tags in one
+     * call and does not use pagination.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>If the amount of returned information is significantly large, an identifier
      * is also returned and can be used in a subsequent API call to return the next
-     * page of the list. However, the ListTagsforResource call lists all available tags
-     * in one call and does not use pagination.</p>
+     * page of the list. The ListTagsforResource call lists all available tags in one
+     * call and does not use pagination.</p>
      */
     inline ListTagsForResourceResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>If the amount of returned information is significantly large, an identifier
      * is also returned and can be used in a subsequent API call to return the next
-     * page of the list. However, the ListTagsforResource call lists all available tags
-     * in one call and does not use pagination.</p>
+     * page of the list. The ListTagsforResource call lists all available tags in one
+     * call and does not use pagination.</p>
      */
     inline ListTagsForResourceResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the amount of returned information is significantly large, an identifier
      * is also returned and can be used in a subsequent API call to return the next
-     * page of the list. However, the ListTagsforResource call lists all available tags
-     * in one call and does not use pagination.</p>
+     * page of the list. The ListTagsforResource call lists all available tags in one
+     * call and does not use pagination.</p>
      */
     inline ListTagsForResourceResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

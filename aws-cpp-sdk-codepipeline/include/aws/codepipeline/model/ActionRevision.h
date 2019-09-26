@@ -99,50 +99,50 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the change that set the state to this revision, for
-     * example a deployment ID or timestamp.</p>
+     * <p>The unique identifier of the change that set the state to this revision (for
+     * example, a deployment ID or timestamp).</p>
      */
     inline const Aws::String& GetRevisionChangeId() const{ return m_revisionChangeId; }
 
     /**
-     * <p>The unique identifier of the change that set the state to this revision, for
-     * example a deployment ID or timestamp.</p>
+     * <p>The unique identifier of the change that set the state to this revision (for
+     * example, a deployment ID or timestamp).</p>
      */
     inline bool RevisionChangeIdHasBeenSet() const { return m_revisionChangeIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the change that set the state to this revision, for
-     * example a deployment ID or timestamp.</p>
+     * <p>The unique identifier of the change that set the state to this revision (for
+     * example, a deployment ID or timestamp).</p>
      */
     inline void SetRevisionChangeId(const Aws::String& value) { m_revisionChangeIdHasBeenSet = true; m_revisionChangeId = value; }
 
     /**
-     * <p>The unique identifier of the change that set the state to this revision, for
-     * example a deployment ID or timestamp.</p>
+     * <p>The unique identifier of the change that set the state to this revision (for
+     * example, a deployment ID or timestamp).</p>
      */
     inline void SetRevisionChangeId(Aws::String&& value) { m_revisionChangeIdHasBeenSet = true; m_revisionChangeId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the change that set the state to this revision, for
-     * example a deployment ID or timestamp.</p>
+     * <p>The unique identifier of the change that set the state to this revision (for
+     * example, a deployment ID or timestamp).</p>
      */
     inline void SetRevisionChangeId(const char* value) { m_revisionChangeIdHasBeenSet = true; m_revisionChangeId.assign(value); }
 
     /**
-     * <p>The unique identifier of the change that set the state to this revision, for
-     * example a deployment ID or timestamp.</p>
+     * <p>The unique identifier of the change that set the state to this revision (for
+     * example, a deployment ID or timestamp).</p>
      */
     inline ActionRevision& WithRevisionChangeId(const Aws::String& value) { SetRevisionChangeId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the change that set the state to this revision, for
-     * example a deployment ID or timestamp.</p>
+     * <p>The unique identifier of the change that set the state to this revision (for
+     * example, a deployment ID or timestamp).</p>
      */
     inline ActionRevision& WithRevisionChangeId(Aws::String&& value) { SetRevisionChangeId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the change that set the state to this revision, for
-     * example a deployment ID or timestamp.</p>
+     * <p>The unique identifier of the change that set the state to this revision (for
+     * example, a deployment ID or timestamp).</p>
      */
     inline ActionRevision& WithRevisionChangeId(const char* value) { SetRevisionChangeId(value); return *this;}
 

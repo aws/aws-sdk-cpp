@@ -50,140 +50,132 @@ namespace Model
 
 
     /**
-     * <p>The name of the pipeline that will start processing the revision to the
+     * <p>The name of the pipeline that starts processing the revision to the
      * source.</p>
      */
     inline const Aws::String& GetPipelineName() const{ return m_pipelineName; }
 
     /**
-     * <p>The name of the pipeline that will start processing the revision to the
+     * <p>The name of the pipeline that starts processing the revision to the
      * source.</p>
      */
     inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
 
     /**
-     * <p>The name of the pipeline that will start processing the revision to the
+     * <p>The name of the pipeline that starts processing the revision to the
      * source.</p>
      */
     inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
 
     /**
-     * <p>The name of the pipeline that will start processing the revision to the
+     * <p>The name of the pipeline that starts processing the revision to the
      * source.</p>
      */
     inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::move(value); }
 
     /**
-     * <p>The name of the pipeline that will start processing the revision to the
+     * <p>The name of the pipeline that starts processing the revision to the
      * source.</p>
      */
     inline void SetPipelineName(const char* value) { m_pipelineNameHasBeenSet = true; m_pipelineName.assign(value); }
 
     /**
-     * <p>The name of the pipeline that will start processing the revision to the
+     * <p>The name of the pipeline that starts processing the revision to the
      * source.</p>
      */
     inline PutActionRevisionRequest& WithPipelineName(const Aws::String& value) { SetPipelineName(value); return *this;}
 
     /**
-     * <p>The name of the pipeline that will start processing the revision to the
+     * <p>The name of the pipeline that starts processing the revision to the
      * source.</p>
      */
     inline PutActionRevisionRequest& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the pipeline that will start processing the revision to the
+     * <p>The name of the pipeline that starts processing the revision to the
      * source.</p>
      */
     inline PutActionRevisionRequest& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
 
 
     /**
-     * <p>The name of the stage that contains the action that will act upon the
-     * revision.</p>
+     * <p>The name of the stage that contains the action that acts on the revision.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
 
     /**
-     * <p>The name of the stage that contains the action that will act upon the
-     * revision.</p>
+     * <p>The name of the stage that contains the action that acts on the revision.</p>
      */
     inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
 
     /**
-     * <p>The name of the stage that contains the action that will act upon the
-     * revision.</p>
+     * <p>The name of the stage that contains the action that acts on the revision.</p>
      */
     inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
 
     /**
-     * <p>The name of the stage that contains the action that will act upon the
-     * revision.</p>
+     * <p>The name of the stage that contains the action that acts on the revision.</p>
      */
     inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
 
     /**
-     * <p>The name of the stage that contains the action that will act upon the
-     * revision.</p>
+     * <p>The name of the stage that contains the action that acts on the revision.</p>
      */
     inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
 
     /**
-     * <p>The name of the stage that contains the action that will act upon the
-     * revision.</p>
+     * <p>The name of the stage that contains the action that acts on the revision.</p>
      */
     inline PutActionRevisionRequest& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
 
     /**
-     * <p>The name of the stage that contains the action that will act upon the
-     * revision.</p>
+     * <p>The name of the stage that contains the action that acts on the revision.</p>
      */
     inline PutActionRevisionRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the stage that contains the action that will act upon the
-     * revision.</p>
+     * <p>The name of the stage that contains the action that acts on the revision.</p>
      */
     inline PutActionRevisionRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 
 
     /**
-     * <p>The name of the action that will process the revision.</p>
+     * <p>The name of the action that processes the revision.</p>
      */
     inline const Aws::String& GetActionName() const{ return m_actionName; }
 
     /**
-     * <p>The name of the action that will process the revision.</p>
+     * <p>The name of the action that processes the revision.</p>
      */
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
 
     /**
-     * <p>The name of the action that will process the revision.</p>
+     * <p>The name of the action that processes the revision.</p>
      */
     inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
 
     /**
-     * <p>The name of the action that will process the revision.</p>
+     * <p>The name of the action that processes the revision.</p>
      */
     inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
 
     /**
-     * <p>The name of the action that will process the revision.</p>
+     * <p>The name of the action that processes the revision.</p>
      */
     inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
 
     /**
-     * <p>The name of the action that will process the revision.</p>
+     * <p>The name of the action that processes the revision.</p>
      */
     inline PutActionRevisionRequest& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
 
     /**
-     * <p>The name of the action that will process the revision.</p>
+     * <p>The name of the action that processes the revision.</p>
      */
     inline PutActionRevisionRequest& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the action that will process the revision.</p>
+     * <p>The name of the action that processes the revision.</p>
      */
     inline PutActionRevisionRequest& WithActionName(const char* value) { SetActionName(value); return *this;}
 

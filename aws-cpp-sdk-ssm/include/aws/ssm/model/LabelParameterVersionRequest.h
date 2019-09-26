@@ -89,28 +89,28 @@ namespace Model
     /**
      * <p>The specific version of the parameter on which you want to attach one or more
      * labels. If no version is specified, the system attaches the label to the latest
-     * version.)</p>
+     * version.</p>
      */
     inline long long GetParameterVersion() const{ return m_parameterVersion; }
 
     /**
      * <p>The specific version of the parameter on which you want to attach one or more
      * labels. If no version is specified, the system attaches the label to the latest
-     * version.)</p>
+     * version.</p>
      */
     inline bool ParameterVersionHasBeenSet() const { return m_parameterVersionHasBeenSet; }
 
     /**
      * <p>The specific version of the parameter on which you want to attach one or more
      * labels. If no version is specified, the system attaches the label to the latest
-     * version.)</p>
+     * version.</p>
      */
     inline void SetParameterVersion(long long value) { m_parameterVersionHasBeenSet = true; m_parameterVersion = value; }
 
     /**
      * <p>The specific version of the parameter on which you want to attach one or more
      * labels. If no version is specified, the system attaches the label to the latest
-     * version.)</p>
+     * version.</p>
      */
     inline LabelParameterVersionRequest& WithParameterVersion(long long value) { SetParameterVersion(value); return *this;}
 

@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>A tag is a key/value pair that is used to manage the resource.</p><p><h3>See
+   * <p>A tag is a key-value pair that is used to manage the resource.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/Tag">AWS
    * API Reference</a></p>
