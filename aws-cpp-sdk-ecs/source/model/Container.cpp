@@ -46,8 +46,7 @@ Container::Container() :
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_memoryReservationHasBeenSet(false),
-    m_gpuIdsHasBeenSet(false),
-    m_firelensConfigurationHasBeenSet(false)
+    m_gpuIdsHasBeenSet(false)
 {
 }
 
@@ -69,8 +68,7 @@ Container::Container(JsonView jsonValue) :
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_memoryReservationHasBeenSet(false),
-    m_gpuIdsHasBeenSet(false),
-    m_firelensConfigurationHasBeenSet(false)
+    m_gpuIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -198,13 +196,6 @@ Container& Container::operator =(JsonView jsonValue)
     m_gpuIdsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("firelensConfiguration"))
-  {
-    m_firelensConfiguration = jsonValue.GetObject("firelensConfiguration");
-
-    m_firelensConfigurationHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -319,12 +310,6 @@ JsonValue Container::Jsonize() const
      gpuIdsJsonList[gpuIdsIndex].AsString(m_gpuIds[gpuIdsIndex]);
    }
    payload.WithArray("gpuIds", std::move(gpuIdsJsonList));
-
-  }
-
-  if(m_firelensConfigurationHasBeenSet)
-  {
-   payload.WithObject("firelensConfiguration", m_firelensConfiguration.Jsonize());
 
   }
 

@@ -268,6 +268,88 @@ namespace Model
 
 
     /**
+     * <p> URL to the test artifact for the execution step. </p>
+     */
+    inline const Aws::String& GetTestArtifactsUrl() const{ return m_testArtifactsUrl; }
+
+    /**
+     * <p> URL to the test artifact for the execution step. </p>
+     */
+    inline bool TestArtifactsUrlHasBeenSet() const { return m_testArtifactsUrlHasBeenSet; }
+
+    /**
+     * <p> URL to the test artifact for the execution step. </p>
+     */
+    inline void SetTestArtifactsUrl(const Aws::String& value) { m_testArtifactsUrlHasBeenSet = true; m_testArtifactsUrl = value; }
+
+    /**
+     * <p> URL to the test artifact for the execution step. </p>
+     */
+    inline void SetTestArtifactsUrl(Aws::String&& value) { m_testArtifactsUrlHasBeenSet = true; m_testArtifactsUrl = std::move(value); }
+
+    /**
+     * <p> URL to the test artifact for the execution step. </p>
+     */
+    inline void SetTestArtifactsUrl(const char* value) { m_testArtifactsUrlHasBeenSet = true; m_testArtifactsUrl.assign(value); }
+
+    /**
+     * <p> URL to the test artifact for the execution step. </p>
+     */
+    inline Step& WithTestArtifactsUrl(const Aws::String& value) { SetTestArtifactsUrl(value); return *this;}
+
+    /**
+     * <p> URL to the test artifact for the execution step. </p>
+     */
+    inline Step& WithTestArtifactsUrl(Aws::String&& value) { SetTestArtifactsUrl(std::move(value)); return *this;}
+
+    /**
+     * <p> URL to the test artifact for the execution step. </p>
+     */
+    inline Step& WithTestArtifactsUrl(const char* value) { SetTestArtifactsUrl(value); return *this;}
+
+
+    /**
+     * <p> URL to the test config for the execution step. </p>
+     */
+    inline const Aws::String& GetTestConfigUrl() const{ return m_testConfigUrl; }
+
+    /**
+     * <p> URL to the test config for the execution step. </p>
+     */
+    inline bool TestConfigUrlHasBeenSet() const { return m_testConfigUrlHasBeenSet; }
+
+    /**
+     * <p> URL to the test config for the execution step. </p>
+     */
+    inline void SetTestConfigUrl(const Aws::String& value) { m_testConfigUrlHasBeenSet = true; m_testConfigUrl = value; }
+
+    /**
+     * <p> URL to the test config for the execution step. </p>
+     */
+    inline void SetTestConfigUrl(Aws::String&& value) { m_testConfigUrlHasBeenSet = true; m_testConfigUrl = std::move(value); }
+
+    /**
+     * <p> URL to the test config for the execution step. </p>
+     */
+    inline void SetTestConfigUrl(const char* value) { m_testConfigUrlHasBeenSet = true; m_testConfigUrl.assign(value); }
+
+    /**
+     * <p> URL to the test config for the execution step. </p>
+     */
+    inline Step& WithTestConfigUrl(const Aws::String& value) { SetTestConfigUrl(value); return *this;}
+
+    /**
+     * <p> URL to the test config for the execution step. </p>
+     */
+    inline Step& WithTestConfigUrl(Aws::String&& value) { SetTestConfigUrl(std::move(value)); return *this;}
+
+    /**
+     * <p> URL to the test config for the execution step. </p>
+     */
+    inline Step& WithTestConfigUrl(const char* value) { SetTestConfigUrl(value); return *this;}
+
+
+    /**
      * <p> List of screenshot URLs for the execution step, if relevant. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetScreenshots() const{ return m_screenshots; }
@@ -441,6 +523,12 @@ namespace Model
 
     Aws::String m_artifactsUrl;
     bool m_artifactsUrlHasBeenSet;
+
+    Aws::String m_testArtifactsUrl;
+    bool m_testArtifactsUrlHasBeenSet;
+
+    Aws::String m_testConfigUrl;
+    bool m_testConfigUrlHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_screenshots;
     bool m_screenshotsHasBeenSet;

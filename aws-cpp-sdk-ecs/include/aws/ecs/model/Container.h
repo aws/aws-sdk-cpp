@@ -18,7 +18,6 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/HealthStatus.h>
-#include <aws/ecs/model/FirelensConfiguration.h>
 #include <aws/ecs/model/NetworkBinding.h>
 #include <aws/ecs/model/NetworkInterface.h>
 #include <utility>
@@ -734,37 +733,6 @@ namespace Model
      */
     inline Container& AddGpuIds(const char* value) { m_gpuIdsHasBeenSet = true; m_gpuIds.push_back(value); return *this; }
 
-
-    /**
-     * <p>The FireLens configuration for the container.</p>
-     */
-    inline const FirelensConfiguration& GetFirelensConfiguration() const{ return m_firelensConfiguration; }
-
-    /**
-     * <p>The FireLens configuration for the container.</p>
-     */
-    inline bool FirelensConfigurationHasBeenSet() const { return m_firelensConfigurationHasBeenSet; }
-
-    /**
-     * <p>The FireLens configuration for the container.</p>
-     */
-    inline void SetFirelensConfiguration(const FirelensConfiguration& value) { m_firelensConfigurationHasBeenSet = true; m_firelensConfiguration = value; }
-
-    /**
-     * <p>The FireLens configuration for the container.</p>
-     */
-    inline void SetFirelensConfiguration(FirelensConfiguration&& value) { m_firelensConfigurationHasBeenSet = true; m_firelensConfiguration = std::move(value); }
-
-    /**
-     * <p>The FireLens configuration for the container.</p>
-     */
-    inline Container& WithFirelensConfiguration(const FirelensConfiguration& value) { SetFirelensConfiguration(value); return *this;}
-
-    /**
-     * <p>The FireLens configuration for the container.</p>
-     */
-    inline Container& WithFirelensConfiguration(FirelensConfiguration&& value) { SetFirelensConfiguration(std::move(value)); return *this;}
-
   private:
 
     Aws::String m_containerArn;
@@ -814,9 +782,6 @@ namespace Model
 
     Aws::Vector<Aws::String> m_gpuIds;
     bool m_gpuIdsHasBeenSet;
-
-    FirelensConfiguration m_firelensConfiguration;
-    bool m_firelensConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -31,12 +31,15 @@
 #include <aws/amplify/model/DeleteDomainAssociationResult.h>
 #include <aws/amplify/model/DeleteJobResult.h>
 #include <aws/amplify/model/DeleteWebhookResult.h>
+#include <aws/amplify/model/GenerateAccessLogsResult.h>
 #include <aws/amplify/model/GetAppResult.h>
+#include <aws/amplify/model/GetArtifactUrlResult.h>
 #include <aws/amplify/model/GetBranchResult.h>
 #include <aws/amplify/model/GetDomainAssociationResult.h>
 #include <aws/amplify/model/GetJobResult.h>
 #include <aws/amplify/model/GetWebhookResult.h>
 #include <aws/amplify/model/ListAppsResult.h>
+#include <aws/amplify/model/ListArtifactsResult.h>
 #include <aws/amplify/model/ListBranchesResult.h>
 #include <aws/amplify/model/ListDomainAssociationsResult.h>
 #include <aws/amplify/model/ListJobsResult.h>
@@ -100,12 +103,15 @@ namespace Model
         class DeleteDomainAssociationRequest;
         class DeleteJobRequest;
         class DeleteWebhookRequest;
+        class GenerateAccessLogsRequest;
         class GetAppRequest;
+        class GetArtifactUrlRequest;
         class GetBranchRequest;
         class GetDomainAssociationRequest;
         class GetJobRequest;
         class GetWebhookRequest;
         class ListAppsRequest;
+        class ListArtifactsRequest;
         class ListBranchesRequest;
         class ListDomainAssociationsRequest;
         class ListJobsRequest;
@@ -131,12 +137,15 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteDomainAssociationResult, Aws::Client::AWSError<AmplifyErrors>> DeleteDomainAssociationOutcome;
         typedef Aws::Utils::Outcome<DeleteJobResult, Aws::Client::AWSError<AmplifyErrors>> DeleteJobOutcome;
         typedef Aws::Utils::Outcome<DeleteWebhookResult, Aws::Client::AWSError<AmplifyErrors>> DeleteWebhookOutcome;
+        typedef Aws::Utils::Outcome<GenerateAccessLogsResult, Aws::Client::AWSError<AmplifyErrors>> GenerateAccessLogsOutcome;
         typedef Aws::Utils::Outcome<GetAppResult, Aws::Client::AWSError<AmplifyErrors>> GetAppOutcome;
+        typedef Aws::Utils::Outcome<GetArtifactUrlResult, Aws::Client::AWSError<AmplifyErrors>> GetArtifactUrlOutcome;
         typedef Aws::Utils::Outcome<GetBranchResult, Aws::Client::AWSError<AmplifyErrors>> GetBranchOutcome;
         typedef Aws::Utils::Outcome<GetDomainAssociationResult, Aws::Client::AWSError<AmplifyErrors>> GetDomainAssociationOutcome;
         typedef Aws::Utils::Outcome<GetJobResult, Aws::Client::AWSError<AmplifyErrors>> GetJobOutcome;
         typedef Aws::Utils::Outcome<GetWebhookResult, Aws::Client::AWSError<AmplifyErrors>> GetWebhookOutcome;
         typedef Aws::Utils::Outcome<ListAppsResult, Aws::Client::AWSError<AmplifyErrors>> ListAppsOutcome;
+        typedef Aws::Utils::Outcome<ListArtifactsResult, Aws::Client::AWSError<AmplifyErrors>> ListArtifactsOutcome;
         typedef Aws::Utils::Outcome<ListBranchesResult, Aws::Client::AWSError<AmplifyErrors>> ListBranchesOutcome;
         typedef Aws::Utils::Outcome<ListDomainAssociationsResult, Aws::Client::AWSError<AmplifyErrors>> ListDomainAssociationsOutcome;
         typedef Aws::Utils::Outcome<ListJobsResult, Aws::Client::AWSError<AmplifyErrors>> ListJobsOutcome;
@@ -162,12 +171,15 @@ namespace Model
         typedef std::future<DeleteDomainAssociationOutcome> DeleteDomainAssociationOutcomeCallable;
         typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
         typedef std::future<DeleteWebhookOutcome> DeleteWebhookOutcomeCallable;
+        typedef std::future<GenerateAccessLogsOutcome> GenerateAccessLogsOutcomeCallable;
         typedef std::future<GetAppOutcome> GetAppOutcomeCallable;
+        typedef std::future<GetArtifactUrlOutcome> GetArtifactUrlOutcomeCallable;
         typedef std::future<GetBranchOutcome> GetBranchOutcomeCallable;
         typedef std::future<GetDomainAssociationOutcome> GetDomainAssociationOutcomeCallable;
         typedef std::future<GetJobOutcome> GetJobOutcomeCallable;
         typedef std::future<GetWebhookOutcome> GetWebhookOutcomeCallable;
         typedef std::future<ListAppsOutcome> ListAppsOutcomeCallable;
+        typedef std::future<ListArtifactsOutcome> ListArtifactsOutcomeCallable;
         typedef std::future<ListBranchesOutcome> ListBranchesOutcomeCallable;
         typedef std::future<ListDomainAssociationsOutcome> ListDomainAssociationsOutcomeCallable;
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
@@ -196,12 +208,15 @@ namespace Model
     typedef std::function<void(const AmplifyClient*, const Model::DeleteDomainAssociationRequest&, const Model::DeleteDomainAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainAssociationResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::DeleteJobRequest&, const Model::DeleteJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::DeleteWebhookRequest&, const Model::DeleteWebhookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWebhookResponseReceivedHandler;
+    typedef std::function<void(const AmplifyClient*, const Model::GenerateAccessLogsRequest&, const Model::GenerateAccessLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateAccessLogsResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::GetAppRequest&, const Model::GetAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAppResponseReceivedHandler;
+    typedef std::function<void(const AmplifyClient*, const Model::GetArtifactUrlRequest&, const Model::GetArtifactUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetArtifactUrlResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::GetBranchRequest&, const Model::GetBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBranchResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::GetDomainAssociationRequest&, const Model::GetDomainAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainAssociationResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::GetJobRequest&, const Model::GetJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::GetWebhookRequest&, const Model::GetWebhookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWebhookResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::ListAppsRequest&, const Model::ListAppsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppsResponseReceivedHandler;
+    typedef std::function<void(const AmplifyClient*, const Model::ListArtifactsRequest&, const Model::ListArtifactsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListArtifactsResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::ListBranchesRequest&, const Model::ListBranchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBranchesResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::ListDomainAssociationsRequest&, const Model::ListDomainAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainAssociationsResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
@@ -507,6 +522,37 @@ namespace Model
         virtual void DeleteWebhookAsync(const Model::DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Retrieve website access logs for a specific time range via a pre-signed URL.
+         * Optionally, deliver the logs to a given S3 bucket. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GenerateAccessLogs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GenerateAccessLogsOutcome GenerateAccessLogs(const Model::GenerateAccessLogsRequest& request) const;
+
+        /**
+         * <p> Retrieve website access logs for a specific time range via a pre-signed URL.
+         * Optionally, deliver the logs to a given S3 bucket. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GenerateAccessLogs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GenerateAccessLogsOutcomeCallable GenerateAccessLogsCallable(const Model::GenerateAccessLogsRequest& request) const;
+
+        /**
+         * <p> Retrieve website access logs for a specific time range via a pre-signed URL.
+         * Optionally, deliver the logs to a given S3 bucket. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GenerateAccessLogs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GenerateAccessLogsAsync(const Model::GenerateAccessLogsRequest& request, const GenerateAccessLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Retrieves an existing Amplify App by appId. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetApp">AWS API
          * Reference</a></p>
@@ -530,6 +576,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetAppAsync(const Model::GetAppRequest& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Retrieves artifact info that corresponds to a artifactId. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetArtifactUrl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetArtifactUrlOutcome GetArtifactUrl(const Model::GetArtifactUrlRequest& request) const;
+
+        /**
+         * <p> Retrieves artifact info that corresponds to a artifactId. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetArtifactUrl">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetArtifactUrlOutcomeCallable GetArtifactUrlCallable(const Model::GetArtifactUrlRequest& request) const;
+
+        /**
+         * <p> Retrieves artifact info that corresponds to a artifactId. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetArtifactUrl">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetArtifactUrlAsync(const Model::GetArtifactUrlRequest& request, const GetArtifactUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves a branch for an Amplify App. </p><p><h3>See Also:</h3>   <a
@@ -661,6 +735,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAppsAsync(const Model::ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> List artifacts with an app, a branch, a job and an artifact type.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListArtifacts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListArtifactsOutcome ListArtifacts(const Model::ListArtifactsRequest& request) const;
+
+        /**
+         * <p> List artifacts with an app, a branch, a job and an artifact type.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListArtifacts">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListArtifactsOutcomeCallable ListArtifactsCallable(const Model::ListArtifactsRequest& request) const;
+
+        /**
+         * <p> List artifacts with an app, a branch, a job and an artifact type.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListArtifacts">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListArtifactsAsync(const Model::ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists branches for an Amplify App. </p><p><h3>See Also:</h3>   <a
@@ -1035,12 +1137,15 @@ namespace Model
         void DeleteDomainAssociationAsyncHelper(const Model::DeleteDomainAssociationRequest& request, const DeleteDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteJobAsyncHelper(const Model::DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteWebhookAsyncHelper(const Model::DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GenerateAccessLogsAsyncHelper(const Model::GenerateAccessLogsRequest& request, const GenerateAccessLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAppAsyncHelper(const Model::GetAppRequest& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetArtifactUrlAsyncHelper(const Model::GetArtifactUrlRequest& request, const GetArtifactUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBranchAsyncHelper(const Model::GetBranchRequest& request, const GetBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDomainAssociationAsyncHelper(const Model::GetDomainAssociationRequest& request, const GetDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobAsyncHelper(const Model::GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetWebhookAsyncHelper(const Model::GetWebhookRequest& request, const GetWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAppsAsyncHelper(const Model::ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListArtifactsAsyncHelper(const Model::ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBranchesAsyncHelper(const Model::ListBranchesRequest& request, const ListBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDomainAssociationsAsyncHelper(const Model::ListDomainAssociationsRequest& request, const ListDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

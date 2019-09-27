@@ -36,6 +36,8 @@ Step::Step() :
     m_endTimeHasBeenSet(false),
     m_logUrlHasBeenSet(false),
     m_artifactsUrlHasBeenSet(false),
+    m_testArtifactsUrlHasBeenSet(false),
+    m_testConfigUrlHasBeenSet(false),
     m_screenshotsHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_contextHasBeenSet(false)
@@ -50,6 +52,8 @@ Step::Step(JsonView jsonValue) :
     m_endTimeHasBeenSet(false),
     m_logUrlHasBeenSet(false),
     m_artifactsUrlHasBeenSet(false),
+    m_testArtifactsUrlHasBeenSet(false),
+    m_testConfigUrlHasBeenSet(false),
     m_screenshotsHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_contextHasBeenSet(false)
@@ -99,6 +103,20 @@ Step& Step::operator =(JsonView jsonValue)
     m_artifactsUrl = jsonValue.GetString("artifactsUrl");
 
     m_artifactsUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("testArtifactsUrl"))
+  {
+    m_testArtifactsUrl = jsonValue.GetString("testArtifactsUrl");
+
+    m_testArtifactsUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("testConfigUrl"))
+  {
+    m_testConfigUrl = jsonValue.GetString("testConfigUrl");
+
+    m_testConfigUrlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("screenshots"))
@@ -162,6 +180,18 @@ JsonValue Step::Jsonize() const
   if(m_artifactsUrlHasBeenSet)
   {
    payload.WithString("artifactsUrl", m_artifactsUrl);
+
+  }
+
+  if(m_testArtifactsUrlHasBeenSet)
+  {
+   payload.WithString("testArtifactsUrl", m_testArtifactsUrl);
+
+  }
+
+  if(m_testConfigUrlHasBeenSet)
+  {
+   payload.WithString("testConfigUrl", m_testConfigUrl);
 
   }
 

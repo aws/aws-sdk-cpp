@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/amplify/model/Stage.h>
+#include <aws/amplify/model/ArtifactType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -27,63 +27,35 @@ namespace Aws
   {
     namespace Model
     {
-      namespace StageMapper
+      namespace ArtifactTypeMapper
       {
 
-        static const int PRODUCTION_HASH = HashingUtils::HashString("PRODUCTION");
-        static const int BETA_HASH = HashingUtils::HashString("BETA");
-        static const int DEVELOPMENT_HASH = HashingUtils::HashString("DEVELOPMENT");
-        static const int EXPERIMENTAL_HASH = HashingUtils::HashString("EXPERIMENTAL");
-        static const int PULL_REQUEST_HASH = HashingUtils::HashString("PULL_REQUEST");
+        static const int TEST_HASH = HashingUtils::HashString("TEST");
 
 
-        Stage GetStageForName(const Aws::String& name)
+        ArtifactType GetArtifactTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == PRODUCTION_HASH)
+          if (hashCode == TEST_HASH)
           {
-            return Stage::PRODUCTION;
-          }
-          else if (hashCode == BETA_HASH)
-          {
-            return Stage::BETA;
-          }
-          else if (hashCode == DEVELOPMENT_HASH)
-          {
-            return Stage::DEVELOPMENT;
-          }
-          else if (hashCode == EXPERIMENTAL_HASH)
-          {
-            return Stage::EXPERIMENTAL;
-          }
-          else if (hashCode == PULL_REQUEST_HASH)
-          {
-            return Stage::PULL_REQUEST;
+            return ArtifactType::TEST;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<Stage>(hashCode);
+            return static_cast<ArtifactType>(hashCode);
           }
 
-          return Stage::NOT_SET;
+          return ArtifactType::NOT_SET;
         }
 
-        Aws::String GetNameForStage(Stage enumValue)
+        Aws::String GetNameForArtifactType(ArtifactType enumValue)
         {
           switch(enumValue)
           {
-          case Stage::PRODUCTION:
-            return "PRODUCTION";
-          case Stage::BETA:
-            return "BETA";
-          case Stage::DEVELOPMENT:
-            return "DEVELOPMENT";
-          case Stage::EXPERIMENTAL:
-            return "EXPERIMENTAL";
-          case Stage::PULL_REQUEST:
-            return "PULL_REQUEST";
+          case ArtifactType::TEST:
+            return "TEST";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -95,7 +67,7 @@ namespace Aws
           }
         }
 
-      } // namespace StageMapper
+      } // namespace ArtifactTypeMapper
     } // namespace Model
   } // namespace Amplify
 } // namespace Aws

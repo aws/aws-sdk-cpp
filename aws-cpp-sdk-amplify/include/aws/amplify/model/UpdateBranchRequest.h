@@ -534,6 +534,27 @@ namespace Model
      */
     inline UpdateBranchRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
+
+    /**
+     * <p> Enables Pull Request Preview for this branch. </p>
+     */
+    inline bool GetEnablePullRequestPreview() const{ return m_enablePullRequestPreview; }
+
+    /**
+     * <p> Enables Pull Request Preview for this branch. </p>
+     */
+    inline bool EnablePullRequestPreviewHasBeenSet() const { return m_enablePullRequestPreviewHasBeenSet; }
+
+    /**
+     * <p> Enables Pull Request Preview for this branch. </p>
+     */
+    inline void SetEnablePullRequestPreview(bool value) { m_enablePullRequestPreviewHasBeenSet = true; m_enablePullRequestPreview = value; }
+
+    /**
+     * <p> Enables Pull Request Preview for this branch. </p>
+     */
+    inline UpdateBranchRequest& WithEnablePullRequestPreview(bool value) { SetEnablePullRequestPreview(value); return *this;}
+
   private:
 
     Aws::String m_appId;
@@ -574,6 +595,9 @@ namespace Model
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
+
+    bool m_enablePullRequestPreview;
+    bool m_enablePullRequestPreviewHasBeenSet;
   };
 
 } // namespace Model

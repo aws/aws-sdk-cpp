@@ -13,32 +13,25 @@
 * permissions and limitations under the License.
 */
 
-#pragma once
-#include <aws/amplify/Amplify_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/amplify/model/GetArtifactUrlRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 
-namespace Aws
-{
-namespace Amplify
-{
-namespace Model
-{
-  enum class Stage
-  {
-    NOT_SET,
-    PRODUCTION,
-    BETA,
-    DEVELOPMENT,
-    EXPERIMENTAL,
-    PULL_REQUEST
-  };
+#include <utility>
 
-namespace StageMapper
-{
-AWS_AMPLIFY_API Stage GetStageForName(const Aws::String& name);
+using namespace Aws::Amplify::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
 
-AWS_AMPLIFY_API Aws::String GetNameForStage(Stage value);
-} // namespace StageMapper
-} // namespace Model
-} // namespace Amplify
-} // namespace Aws
+GetArtifactUrlRequest::GetArtifactUrlRequest() : 
+    m_artifactIdHasBeenSet(false)
+{
+}
+
+Aws::String GetArtifactUrlRequest::SerializePayload() const
+{
+  return {};
+}
+
+
+
+

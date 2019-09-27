@@ -23,22 +23,18 @@ namespace Amplify
 {
 namespace Model
 {
-  enum class Stage
+  enum class ArtifactType
   {
     NOT_SET,
-    PRODUCTION,
-    BETA,
-    DEVELOPMENT,
-    EXPERIMENTAL,
-    PULL_REQUEST
+    TEST
   };
 
-namespace StageMapper
+namespace ArtifactTypeMapper
 {
-AWS_AMPLIFY_API Stage GetStageForName(const Aws::String& name);
+AWS_AMPLIFY_API ArtifactType GetArtifactTypeForName(const Aws::String& name);
 
-AWS_AMPLIFY_API Aws::String GetNameForStage(Stage value);
-} // namespace StageMapper
+AWS_AMPLIFY_API Aws::String GetNameForArtifactType(ArtifactType value);
+} // namespace ArtifactTypeMapper
 } // namespace Model
 } // namespace Amplify
 } // namespace Aws

@@ -39,7 +39,9 @@ UpdateBranchRequest::UpdateBranchRequest() :
     m_enableBasicAuthHasBeenSet(false),
     m_buildSpecHasBeenSet(false),
     m_ttlHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
+    m_displayNameHasBeenSet(false),
+    m_enablePullRequestPreview(false),
+    m_enablePullRequestPreviewHasBeenSet(false)
 {
 }
 
@@ -114,6 +116,12 @@ Aws::String UpdateBranchRequest::SerializePayload() const
   if(m_displayNameHasBeenSet)
   {
    payload.WithString("displayName", m_displayName);
+
+  }
+
+  if(m_enablePullRequestPreviewHasBeenSet)
+  {
+   payload.WithBool("enablePullRequestPreview", m_enablePullRequestPreview);
 
   }
 

@@ -38,7 +38,9 @@ AutoBranchCreationConfig::AutoBranchCreationConfig() :
     m_basicAuthCredentialsHasBeenSet(false),
     m_enableBasicAuth(false),
     m_enableBasicAuthHasBeenSet(false),
-    m_buildSpecHasBeenSet(false)
+    m_buildSpecHasBeenSet(false),
+    m_enablePullRequestPreview(false),
+    m_enablePullRequestPreviewHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ AutoBranchCreationConfig::AutoBranchCreationConfig(JsonView jsonValue) :
     m_basicAuthCredentialsHasBeenSet(false),
     m_enableBasicAuth(false),
     m_enableBasicAuthHasBeenSet(false),
-    m_buildSpecHasBeenSet(false)
+    m_buildSpecHasBeenSet(false),
+    m_enablePullRequestPreview(false),
+    m_enablePullRequestPreviewHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -111,6 +115,13 @@ AutoBranchCreationConfig& AutoBranchCreationConfig::operator =(JsonView jsonValu
     m_buildSpecHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("enablePullRequestPreview"))
+  {
+    m_enablePullRequestPreview = jsonValue.GetBool("enablePullRequestPreview");
+
+    m_enablePullRequestPreviewHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -161,6 +172,12 @@ JsonValue AutoBranchCreationConfig::Jsonize() const
   if(m_buildSpecHasBeenSet)
   {
    payload.WithString("buildSpec", m_buildSpec);
+
+  }
+
+  if(m_enablePullRequestPreviewHasBeenSet)
+  {
+   payload.WithBool("enablePullRequestPreview", m_enablePullRequestPreview);
 
   }
 

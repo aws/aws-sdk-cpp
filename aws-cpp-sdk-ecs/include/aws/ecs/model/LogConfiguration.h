@@ -60,8 +60,9 @@ namespace Model
      * <code>awsfirelens</code>.</p> <p>For tasks using the EC2 launch type, the
      * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
      * <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
-     * <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-     * <p>For more information about using the <code>awslogs</code> log driver, see <a
+     * <code>logentries</code>, <code>syslog</code>, <code>splunk</code>, and
+     * <code>awsfirelens</code>.</p> <p>For more information about using the
+     * <code>awslogs</code> log driver, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For more information about using the <code>awsfirelens</code>
@@ -90,8 +91,9 @@ namespace Model
      * <code>awsfirelens</code>.</p> <p>For tasks using the EC2 launch type, the
      * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
      * <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
-     * <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-     * <p>For more information about using the <code>awslogs</code> log driver, see <a
+     * <code>logentries</code>, <code>syslog</code>, <code>splunk</code>, and
+     * <code>awsfirelens</code>.</p> <p>For more information about using the
+     * <code>awslogs</code> log driver, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For more information about using the <code>awsfirelens</code>
@@ -120,8 +122,9 @@ namespace Model
      * <code>awsfirelens</code>.</p> <p>For tasks using the EC2 launch type, the
      * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
      * <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
-     * <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-     * <p>For more information about using the <code>awslogs</code> log driver, see <a
+     * <code>logentries</code>, <code>syslog</code>, <code>splunk</code>, and
+     * <code>awsfirelens</code>.</p> <p>For more information about using the
+     * <code>awslogs</code> log driver, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For more information about using the <code>awsfirelens</code>
@@ -150,8 +153,9 @@ namespace Model
      * <code>awsfirelens</code>.</p> <p>For tasks using the EC2 launch type, the
      * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
      * <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
-     * <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-     * <p>For more information about using the <code>awslogs</code> log driver, see <a
+     * <code>logentries</code>, <code>syslog</code>, <code>splunk</code>, and
+     * <code>awsfirelens</code>.</p> <p>For more information about using the
+     * <code>awslogs</code> log driver, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For more information about using the <code>awsfirelens</code>
@@ -180,8 +184,9 @@ namespace Model
      * <code>awsfirelens</code>.</p> <p>For tasks using the EC2 launch type, the
      * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
      * <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
-     * <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-     * <p>For more information about using the <code>awslogs</code> log driver, see <a
+     * <code>logentries</code>, <code>syslog</code>, <code>splunk</code>, and
+     * <code>awsfirelens</code>.</p> <p>For more information about using the
+     * <code>awslogs</code> log driver, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For more information about using the <code>awsfirelens</code>
@@ -210,8 +215,9 @@ namespace Model
      * <code>awsfirelens</code>.</p> <p>For tasks using the EC2 launch type, the
      * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
      * <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
-     * <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-     * <p>For more information about using the <code>awslogs</code> log driver, see <a
+     * <code>logentries</code>, <code>syslog</code>, <code>splunk</code>, and
+     * <code>awsfirelens</code>.</p> <p>For more information about using the
+     * <code>awslogs</code> log driver, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>For more information about using the <code>awsfirelens</code>
@@ -352,42 +358,66 @@ namespace Model
 
 
     /**
-     * <p>The secrets to pass to the log configuration.</p>
+     * <p>The secrets to pass to the log configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<Secret>& GetSecretOptions() const{ return m_secretOptions; }
 
     /**
-     * <p>The secrets to pass to the log configuration.</p>
+     * <p>The secrets to pass to the log configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline bool SecretOptionsHasBeenSet() const { return m_secretOptionsHasBeenSet; }
 
     /**
-     * <p>The secrets to pass to the log configuration.</p>
+     * <p>The secrets to pass to the log configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetSecretOptions(const Aws::Vector<Secret>& value) { m_secretOptionsHasBeenSet = true; m_secretOptions = value; }
 
     /**
-     * <p>The secrets to pass to the log configuration.</p>
+     * <p>The secrets to pass to the log configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetSecretOptions(Aws::Vector<Secret>&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions = std::move(value); }
 
     /**
-     * <p>The secrets to pass to the log configuration.</p>
+     * <p>The secrets to pass to the log configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline LogConfiguration& WithSecretOptions(const Aws::Vector<Secret>& value) { SetSecretOptions(value); return *this;}
 
     /**
-     * <p>The secrets to pass to the log configuration.</p>
+     * <p>The secrets to pass to the log configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline LogConfiguration& WithSecretOptions(Aws::Vector<Secret>&& value) { SetSecretOptions(std::move(value)); return *this;}
 
     /**
-     * <p>The secrets to pass to the log configuration.</p>
+     * <p>The secrets to pass to the log configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline LogConfiguration& AddSecretOptions(const Secret& value) { m_secretOptionsHasBeenSet = true; m_secretOptions.push_back(value); return *this; }
 
     /**
-     * <p>The secrets to pass to the log configuration.</p>
+     * <p>The secrets to pass to the log configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline LogConfiguration& AddSecretOptions(Secret&& value) { m_secretOptionsHasBeenSet = true; m_secretOptions.push_back(std::move(value)); return *this; }
 

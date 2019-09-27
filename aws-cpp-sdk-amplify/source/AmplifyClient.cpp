@@ -40,12 +40,15 @@
 #include <aws/amplify/model/DeleteDomainAssociationRequest.h>
 #include <aws/amplify/model/DeleteJobRequest.h>
 #include <aws/amplify/model/DeleteWebhookRequest.h>
+#include <aws/amplify/model/GenerateAccessLogsRequest.h>
 #include <aws/amplify/model/GetAppRequest.h>
+#include <aws/amplify/model/GetArtifactUrlRequest.h>
 #include <aws/amplify/model/GetBranchRequest.h>
 #include <aws/amplify/model/GetDomainAssociationRequest.h>
 #include <aws/amplify/model/GetJobRequest.h>
 #include <aws/amplify/model/GetWebhookRequest.h>
 #include <aws/amplify/model/ListAppsRequest.h>
+#include <aws/amplify/model/ListArtifactsRequest.h>
 #include <aws/amplify/model/ListBranchesRequest.h>
 #include <aws/amplify/model/ListDomainAssociationsRequest.h>
 #include <aws/amplify/model/ListJobsRequest.h>
@@ -576,6 +579,48 @@ void AmplifyClient::DeleteWebhookAsyncHelper(const DeleteWebhookRequest& request
   handler(this, request, DeleteWebhook(request), context);
 }
 
+GenerateAccessLogsOutcome AmplifyClient::GenerateAccessLogs(const GenerateAccessLogsRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GenerateAccessLogs", "Required field: AppId, is not set");
+    return GenerateAccessLogsOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/apps/";
+  ss << request.GetAppId();
+  ss << "/accesslogs";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GenerateAccessLogsOutcome(GenerateAccessLogsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GenerateAccessLogsOutcome(outcome.GetError());
+  }
+}
+
+GenerateAccessLogsOutcomeCallable AmplifyClient::GenerateAccessLogsCallable(const GenerateAccessLogsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GenerateAccessLogsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GenerateAccessLogs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyClient::GenerateAccessLogsAsync(const GenerateAccessLogsRequest& request, const GenerateAccessLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GenerateAccessLogsAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyClient::GenerateAccessLogsAsyncHelper(const GenerateAccessLogsRequest& request, const GenerateAccessLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GenerateAccessLogs(request), context);
+}
+
 GetAppOutcome AmplifyClient::GetApp(const GetAppRequest& request) const
 {
   if (!request.AppIdHasBeenSet())
@@ -615,6 +660,47 @@ void AmplifyClient::GetAppAsync(const GetAppRequest& request, const GetAppRespon
 void AmplifyClient::GetAppAsyncHelper(const GetAppRequest& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetApp(request), context);
+}
+
+GetArtifactUrlOutcome AmplifyClient::GetArtifactUrl(const GetArtifactUrlRequest& request) const
+{
+  if (!request.ArtifactIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetArtifactUrl", "Required field: ArtifactId, is not set");
+    return GetArtifactUrlOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ArtifactId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/artifacts/";
+  ss << request.GetArtifactId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetArtifactUrlOutcome(GetArtifactUrlResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetArtifactUrlOutcome(outcome.GetError());
+  }
+}
+
+GetArtifactUrlOutcomeCallable AmplifyClient::GetArtifactUrlCallable(const GetArtifactUrlRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetArtifactUrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetArtifactUrl(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyClient::GetArtifactUrlAsync(const GetArtifactUrlRequest& request, const GetArtifactUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetArtifactUrlAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyClient::GetArtifactUrlAsyncHelper(const GetArtifactUrlRequest& request, const GetArtifactUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetArtifactUrl(request), context);
 }
 
 GetBranchOutcome AmplifyClient::GetBranch(const GetBranchRequest& request) const
@@ -842,6 +928,62 @@ void AmplifyClient::ListAppsAsync(const ListAppsRequest& request, const ListApps
 void AmplifyClient::ListAppsAsyncHelper(const ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListApps(request), context);
+}
+
+ListArtifactsOutcome AmplifyClient::ListArtifacts(const ListArtifactsRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListArtifacts", "Required field: AppId, is not set");
+    return ListArtifactsOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.BranchNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListArtifacts", "Required field: BranchName, is not set");
+    return ListArtifactsOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BranchName]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListArtifacts", "Required field: JobId, is not set");
+    return ListArtifactsOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/apps/";
+  ss << request.GetAppId();
+  ss << "/branches/";
+  ss << request.GetBranchName();
+  ss << "/jobs/";
+  ss << request.GetJobId();
+  ss << "/artifacts";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListArtifactsOutcome(ListArtifactsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListArtifactsOutcome(outcome.GetError());
+  }
+}
+
+ListArtifactsOutcomeCallable AmplifyClient::ListArtifactsCallable(const ListArtifactsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListArtifactsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListArtifacts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyClient::ListArtifactsAsync(const ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListArtifactsAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyClient::ListArtifactsAsyncHelper(const ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListArtifacts(request), context);
 }
 
 ListBranchesOutcome AmplifyClient::ListBranches(const ListBranchesRequest& request) const

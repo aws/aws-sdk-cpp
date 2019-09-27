@@ -53,7 +53,11 @@ Branch::Branch() :
     m_basicAuthCredentialsHasBeenSet(false),
     m_buildSpecHasBeenSet(false),
     m_ttlHasBeenSet(false),
-    m_associatedResourcesHasBeenSet(false)
+    m_associatedResourcesHasBeenSet(false),
+    m_enablePullRequestPreview(false),
+    m_enablePullRequestPreviewHasBeenSet(false),
+    m_destinationBranchHasBeenSet(false),
+    m_sourceBranchHasBeenSet(false)
 {
 }
 
@@ -82,7 +86,11 @@ Branch::Branch(JsonView jsonValue) :
     m_basicAuthCredentialsHasBeenSet(false),
     m_buildSpecHasBeenSet(false),
     m_ttlHasBeenSet(false),
-    m_associatedResourcesHasBeenSet(false)
+    m_associatedResourcesHasBeenSet(false),
+    m_enablePullRequestPreview(false),
+    m_enablePullRequestPreviewHasBeenSet(false),
+    m_destinationBranchHasBeenSet(false),
+    m_sourceBranchHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -248,6 +256,27 @@ Branch& Branch::operator =(JsonView jsonValue)
     m_associatedResourcesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("enablePullRequestPreview"))
+  {
+    m_enablePullRequestPreview = jsonValue.GetBool("enablePullRequestPreview");
+
+    m_enablePullRequestPreviewHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("destinationBranch"))
+  {
+    m_destinationBranch = jsonValue.GetString("destinationBranch");
+
+    m_destinationBranchHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sourceBranch"))
+  {
+    m_sourceBranch = jsonValue.GetString("sourceBranch");
+
+    m_sourceBranchHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -395,6 +424,24 @@ JsonValue Branch::Jsonize() const
      associatedResourcesJsonList[associatedResourcesIndex].AsString(m_associatedResources[associatedResourcesIndex]);
    }
    payload.WithArray("associatedResources", std::move(associatedResourcesJsonList));
+
+  }
+
+  if(m_enablePullRequestPreviewHasBeenSet)
+  {
+   payload.WithBool("enablePullRequestPreview", m_enablePullRequestPreview);
+
+  }
+
+  if(m_destinationBranchHasBeenSet)
+  {
+   payload.WithString("destinationBranch", m_destinationBranch);
+
+  }
+
+  if(m_sourceBranchHasBeenSet)
+  {
+   payload.WithString("sourceBranch", m_sourceBranch);
 
   }
 

@@ -544,34 +544,173 @@ namespace Model
 
 
     /**
-     * <p> Automated branch creation config for the Amplify App. </p>
+     * <p> Automated branch creation branchConfig for the Amplify App. </p>
      */
     inline const AutoBranchCreationConfig& GetAutoBranchCreationConfig() const{ return m_autoBranchCreationConfig; }
 
     /**
-     * <p> Automated branch creation config for the Amplify App. </p>
+     * <p> Automated branch creation branchConfig for the Amplify App. </p>
      */
     inline bool AutoBranchCreationConfigHasBeenSet() const { return m_autoBranchCreationConfigHasBeenSet; }
 
     /**
-     * <p> Automated branch creation config for the Amplify App. </p>
+     * <p> Automated branch creation branchConfig for the Amplify App. </p>
      */
     inline void SetAutoBranchCreationConfig(const AutoBranchCreationConfig& value) { m_autoBranchCreationConfigHasBeenSet = true; m_autoBranchCreationConfig = value; }
 
     /**
-     * <p> Automated branch creation config for the Amplify App. </p>
+     * <p> Automated branch creation branchConfig for the Amplify App. </p>
      */
     inline void SetAutoBranchCreationConfig(AutoBranchCreationConfig&& value) { m_autoBranchCreationConfigHasBeenSet = true; m_autoBranchCreationConfig = std::move(value); }
 
     /**
-     * <p> Automated branch creation config for the Amplify App. </p>
+     * <p> Automated branch creation branchConfig for the Amplify App. </p>
      */
     inline UpdateAppRequest& WithAutoBranchCreationConfig(const AutoBranchCreationConfig& value) { SetAutoBranchCreationConfig(value); return *this;}
 
     /**
-     * <p> Automated branch creation config for the Amplify App. </p>
+     * <p> Automated branch creation branchConfig for the Amplify App. </p>
      */
     inline UpdateAppRequest& WithAutoBranchCreationConfig(AutoBranchCreationConfig&& value) { SetAutoBranchCreationConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Repository for an Amplify App </p>
+     */
+    inline const Aws::String& GetRepository() const{ return m_repository; }
+
+    /**
+     * <p> Repository for an Amplify App </p>
+     */
+    inline bool RepositoryHasBeenSet() const { return m_repositoryHasBeenSet; }
+
+    /**
+     * <p> Repository for an Amplify App </p>
+     */
+    inline void SetRepository(const Aws::String& value) { m_repositoryHasBeenSet = true; m_repository = value; }
+
+    /**
+     * <p> Repository for an Amplify App </p>
+     */
+    inline void SetRepository(Aws::String&& value) { m_repositoryHasBeenSet = true; m_repository = std::move(value); }
+
+    /**
+     * <p> Repository for an Amplify App </p>
+     */
+    inline void SetRepository(const char* value) { m_repositoryHasBeenSet = true; m_repository.assign(value); }
+
+    /**
+     * <p> Repository for an Amplify App </p>
+     */
+    inline UpdateAppRequest& WithRepository(const Aws::String& value) { SetRepository(value); return *this;}
+
+    /**
+     * <p> Repository for an Amplify App </p>
+     */
+    inline UpdateAppRequest& WithRepository(Aws::String&& value) { SetRepository(std::move(value)); return *this;}
+
+    /**
+     * <p> Repository for an Amplify App </p>
+     */
+    inline UpdateAppRequest& WithRepository(const char* value) { SetRepository(value); return *this;}
+
+
+    /**
+     * <p> OAuth token for 3rd party source control system for an Amplify App, used to
+     * create webhook and read-only deploy key. OAuth token is not stored. </p>
+     */
+    inline const Aws::String& GetOauthToken() const{ return m_oauthToken; }
+
+    /**
+     * <p> OAuth token for 3rd party source control system for an Amplify App, used to
+     * create webhook and read-only deploy key. OAuth token is not stored. </p>
+     */
+    inline bool OauthTokenHasBeenSet() const { return m_oauthTokenHasBeenSet; }
+
+    /**
+     * <p> OAuth token for 3rd party source control system for an Amplify App, used to
+     * create webhook and read-only deploy key. OAuth token is not stored. </p>
+     */
+    inline void SetOauthToken(const Aws::String& value) { m_oauthTokenHasBeenSet = true; m_oauthToken = value; }
+
+    /**
+     * <p> OAuth token for 3rd party source control system for an Amplify App, used to
+     * create webhook and read-only deploy key. OAuth token is not stored. </p>
+     */
+    inline void SetOauthToken(Aws::String&& value) { m_oauthTokenHasBeenSet = true; m_oauthToken = std::move(value); }
+
+    /**
+     * <p> OAuth token for 3rd party source control system for an Amplify App, used to
+     * create webhook and read-only deploy key. OAuth token is not stored. </p>
+     */
+    inline void SetOauthToken(const char* value) { m_oauthTokenHasBeenSet = true; m_oauthToken.assign(value); }
+
+    /**
+     * <p> OAuth token for 3rd party source control system for an Amplify App, used to
+     * create webhook and read-only deploy key. OAuth token is not stored. </p>
+     */
+    inline UpdateAppRequest& WithOauthToken(const Aws::String& value) { SetOauthToken(value); return *this;}
+
+    /**
+     * <p> OAuth token for 3rd party source control system for an Amplify App, used to
+     * create webhook and read-only deploy key. OAuth token is not stored. </p>
+     */
+    inline UpdateAppRequest& WithOauthToken(Aws::String&& value) { SetOauthToken(std::move(value)); return *this;}
+
+    /**
+     * <p> OAuth token for 3rd party source control system for an Amplify App, used to
+     * create webhook and read-only deploy key. OAuth token is not stored. </p>
+     */
+    inline UpdateAppRequest& WithOauthToken(const char* value) { SetOauthToken(value); return *this;}
+
+
+    /**
+     * <p> Personal Access token for 3rd party source control system for an Amplify
+     * App, used to create webhook and read-only deploy key. Token is not stored. </p>
+     */
+    inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
+
+    /**
+     * <p> Personal Access token for 3rd party source control system for an Amplify
+     * App, used to create webhook and read-only deploy key. Token is not stored. </p>
+     */
+    inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
+
+    /**
+     * <p> Personal Access token for 3rd party source control system for an Amplify
+     * App, used to create webhook and read-only deploy key. Token is not stored. </p>
+     */
+    inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
+
+    /**
+     * <p> Personal Access token for 3rd party source control system for an Amplify
+     * App, used to create webhook and read-only deploy key. Token is not stored. </p>
+     */
+    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
+
+    /**
+     * <p> Personal Access token for 3rd party source control system for an Amplify
+     * App, used to create webhook and read-only deploy key. Token is not stored. </p>
+     */
+    inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
+
+    /**
+     * <p> Personal Access token for 3rd party source control system for an Amplify
+     * App, used to create webhook and read-only deploy key. Token is not stored. </p>
+     */
+    inline UpdateAppRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
+
+    /**
+     * <p> Personal Access token for 3rd party source control system for an Amplify
+     * App, used to create webhook and read-only deploy key. Token is not stored. </p>
+     */
+    inline UpdateAppRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
+
+    /**
+     * <p> Personal Access token for 3rd party source control system for an Amplify
+     * App, used to create webhook and read-only deploy key. Token is not stored. </p>
+     */
+    inline UpdateAppRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 
   private:
 
@@ -616,6 +755,15 @@ namespace Model
 
     AutoBranchCreationConfig m_autoBranchCreationConfig;
     bool m_autoBranchCreationConfigHasBeenSet;
+
+    Aws::String m_repository;
+    bool m_repositoryHasBeenSet;
+
+    Aws::String m_oauthToken;
+    bool m_oauthTokenHasBeenSet;
+
+    Aws::String m_accessToken;
+    bool m_accessTokenHasBeenSet;
   };
 
 } // namespace Model

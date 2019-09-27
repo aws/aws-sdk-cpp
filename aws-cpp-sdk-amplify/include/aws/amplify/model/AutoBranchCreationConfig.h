@@ -310,6 +310,27 @@ namespace Model
      */
     inline AutoBranchCreationConfig& WithBuildSpec(const char* value) { SetBuildSpec(value); return *this;}
 
+
+    /**
+     * <p> Enables Pull Request Preview for auto created branch. </p>
+     */
+    inline bool GetEnablePullRequestPreview() const{ return m_enablePullRequestPreview; }
+
+    /**
+     * <p> Enables Pull Request Preview for auto created branch. </p>
+     */
+    inline bool EnablePullRequestPreviewHasBeenSet() const { return m_enablePullRequestPreviewHasBeenSet; }
+
+    /**
+     * <p> Enables Pull Request Preview for auto created branch. </p>
+     */
+    inline void SetEnablePullRequestPreview(bool value) { m_enablePullRequestPreviewHasBeenSet = true; m_enablePullRequestPreview = value; }
+
+    /**
+     * <p> Enables Pull Request Preview for auto created branch. </p>
+     */
+    inline AutoBranchCreationConfig& WithEnablePullRequestPreview(bool value) { SetEnablePullRequestPreview(value); return *this;}
+
   private:
 
     Stage m_stage;
@@ -332,6 +353,9 @@ namespace Model
 
     Aws::String m_buildSpec;
     bool m_buildSpecHasBeenSet;
+
+    bool m_enablePullRequestPreview;
+    bool m_enablePullRequestPreviewHasBeenSet;
   };
 
 } // namespace Model

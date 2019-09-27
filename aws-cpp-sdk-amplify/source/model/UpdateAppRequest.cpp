@@ -40,7 +40,10 @@ UpdateAppRequest::UpdateAppRequest() :
     m_enableAutoBranchCreation(false),
     m_enableAutoBranchCreationHasBeenSet(false),
     m_autoBranchCreationPatternsHasBeenSet(false),
-    m_autoBranchCreationConfigHasBeenSet(false)
+    m_autoBranchCreationConfigHasBeenSet(false),
+    m_repositoryHasBeenSet(false),
+    m_oauthTokenHasBeenSet(false),
+    m_accessTokenHasBeenSet(false)
 {
 }
 
@@ -137,6 +140,24 @@ Aws::String UpdateAppRequest::SerializePayload() const
   if(m_autoBranchCreationConfigHasBeenSet)
   {
    payload.WithObject("autoBranchCreationConfig", m_autoBranchCreationConfig.Jsonize());
+
+  }
+
+  if(m_repositoryHasBeenSet)
+  {
+   payload.WithString("repository", m_repository);
+
+  }
+
+  if(m_oauthTokenHasBeenSet)
+  {
+   payload.WithString("oauthToken", m_oauthToken);
+
+  }
+
+  if(m_accessTokenHasBeenSet)
+  {
+   payload.WithString("accessToken", m_accessToken);
 
   }
 
