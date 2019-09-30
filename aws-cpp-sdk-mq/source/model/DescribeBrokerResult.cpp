@@ -156,6 +156,12 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
     }
   }
 
+  if(jsonValue.ValueExists("pendingHostInstanceType"))
+  {
+    m_pendingHostInstanceType = jsonValue.GetString("pendingHostInstanceType");
+
+  }
+
   if(jsonValue.ValueExists("publiclyAccessible"))
   {
     m_publiclyAccessible = jsonValue.GetBool("publiclyAccessible");

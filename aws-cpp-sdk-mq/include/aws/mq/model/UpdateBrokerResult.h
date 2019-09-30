@@ -174,6 +174,56 @@ namespace Model
 
 
     /**
+     * The host instance type of the broker to upgrade to. For a list of supported
+     * instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     */
+    inline const Aws::String& GetHostInstanceType() const{ return m_hostInstanceType; }
+
+    /**
+     * The host instance type of the broker to upgrade to. For a list of supported
+     * instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     */
+    inline void SetHostInstanceType(const Aws::String& value) { m_hostInstanceType = value; }
+
+    /**
+     * The host instance type of the broker to upgrade to. For a list of supported
+     * instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     */
+    inline void SetHostInstanceType(Aws::String&& value) { m_hostInstanceType = std::move(value); }
+
+    /**
+     * The host instance type of the broker to upgrade to. For a list of supported
+     * instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     */
+    inline void SetHostInstanceType(const char* value) { m_hostInstanceType.assign(value); }
+
+    /**
+     * The host instance type of the broker to upgrade to. For a list of supported
+     * instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     */
+    inline UpdateBrokerResult& WithHostInstanceType(const Aws::String& value) { SetHostInstanceType(value); return *this;}
+
+    /**
+     * The host instance type of the broker to upgrade to. For a list of supported
+     * instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     */
+    inline UpdateBrokerResult& WithHostInstanceType(Aws::String&& value) { SetHostInstanceType(std::move(value)); return *this;}
+
+    /**
+     * The host instance type of the broker to upgrade to. For a list of supported
+     * instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     */
+    inline UpdateBrokerResult& WithHostInstanceType(const char* value) { SetHostInstanceType(value); return *this;}
+
+
+    /**
      * The list of information about logs to be enabled for the specified broker.
      */
     inline const Logs& GetLogs() const{ return m_logs; }
@@ -256,6 +306,8 @@ namespace Model
     ConfigurationId m_configuration;
 
     Aws::String m_engineVersion;
+
+    Aws::String m_hostInstanceType;
 
     Logs m_logs;
 

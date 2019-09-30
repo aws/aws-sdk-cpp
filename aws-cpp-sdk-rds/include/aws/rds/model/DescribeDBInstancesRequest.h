@@ -127,7 +127,11 @@ namespace Model
      * about the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
      * results list will only include information about the DB instances identified by
-     * these resource identifiers.</p> </li> </ul>
+     * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
+     * Accepts Active Directory directory IDs. The results list will only include
+     * information about the DB instances associated with these domains.</p> </li> <li>
+     * <p> <code>engine</code> - Accepts engine names. The results list will only
+     * include information about the DB instances for these engines.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -142,7 +146,11 @@ namespace Model
      * about the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
      * results list will only include information about the DB instances identified by
-     * these resource identifiers.</p> </li> </ul>
+     * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
+     * Accepts Active Directory directory IDs. The results list will only include
+     * information about the DB instances associated with these domains.</p> </li> <li>
+     * <p> <code>engine</code> - Accepts engine names. The results list will only
+     * include information about the DB instances for these engines.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -157,7 +165,11 @@ namespace Model
      * about the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
      * results list will only include information about the DB instances identified by
-     * these resource identifiers.</p> </li> </ul>
+     * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
+     * Accepts Active Directory directory IDs. The results list will only include
+     * information about the DB instances associated with these domains.</p> </li> <li>
+     * <p> <code>engine</code> - Accepts engine names. The results list will only
+     * include information about the DB instances for these engines.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -172,7 +184,11 @@ namespace Model
      * about the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
      * results list will only include information about the DB instances identified by
-     * these resource identifiers.</p> </li> </ul>
+     * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
+     * Accepts Active Directory directory IDs. The results list will only include
+     * information about the DB instances associated with these domains.</p> </li> <li>
+     * <p> <code>engine</code> - Accepts engine names. The results list will only
+     * include information about the DB instances for these engines.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -187,7 +203,11 @@ namespace Model
      * about the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
      * results list will only include information about the DB instances identified by
-     * these resource identifiers.</p> </li> </ul>
+     * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
+     * Accepts Active Directory directory IDs. The results list will only include
+     * information about the DB instances associated with these domains.</p> </li> <li>
+     * <p> <code>engine</code> - Accepts engine names. The results list will only
+     * include information about the DB instances for these engines.</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -202,7 +222,11 @@ namespace Model
      * about the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
      * results list will only include information about the DB instances identified by
-     * these resource identifiers.</p> </li> </ul>
+     * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
+     * Accepts Active Directory directory IDs. The results list will only include
+     * information about the DB instances associated with these domains.</p> </li> <li>
+     * <p> <code>engine</code> - Accepts engine names. The results list will only
+     * include information about the DB instances for these engines.</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -217,7 +241,11 @@ namespace Model
      * about the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
      * results list will only include information about the DB instances identified by
-     * these resource identifiers.</p> </li> </ul>
+     * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
+     * Accepts Active Directory directory IDs. The results list will only include
+     * information about the DB instances associated with these domains.</p> </li> <li>
+     * <p> <code>engine</code> - Accepts engine names. The results list will only
+     * include information about the DB instances for these engines.</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -232,7 +260,11 @@ namespace Model
      * about the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
      * results list will only include information about the DB instances identified by
-     * these resource identifiers.</p> </li> </ul>
+     * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
+     * Accepts Active Directory directory IDs. The results list will only include
+     * information about the DB instances associated with these domains.</p> </li> <li>
+     * <p> <code>engine</code> - Accepts engine names. The results list will only
+     * include information about the DB instances for these engines.</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

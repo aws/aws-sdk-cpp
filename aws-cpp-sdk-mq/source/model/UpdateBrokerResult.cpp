@@ -64,6 +64,12 @@ UpdateBrokerResult& UpdateBrokerResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("hostInstanceType"))
+  {
+    m_hostInstanceType = jsonValue.GetString("hostInstanceType");
+
+  }
+
   if(jsonValue.ValueExists("logs"))
   {
     m_logs = jsonValue.GetObject("logs");

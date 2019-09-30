@@ -60,7 +60,9 @@ CreateDBInstanceReadReplicaRequest::CreateDBInstanceReadReplicaRequest() :
     m_useDefaultProcessorFeatures(false),
     m_useDefaultProcessorFeaturesHasBeenSet(false),
     m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_domainIAMRoleNameHasBeenSet(false)
 {
 }
 
@@ -228,6 +230,16 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
   if(m_deletionProtectionHasBeenSet)
   {
     ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
+  }
+
+  if(m_domainHasBeenSet)
+  {
+    ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
+  }
+
+  if(m_domainIAMRoleNameHasBeenSet)
+  {
+    ss << "DomainIAMRoleName=" << StringUtils::URLEncode(m_domainIAMRoleName.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

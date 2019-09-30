@@ -2746,90 +2746,138 @@ namespace Model
 
 
     /**
-     * <p>For an Amazon RDS DB instance that's running Microsoft SQL Server, this
-     * parameter specifies the Active Directory directory ID to create the instance in.
-     * Amazon RDS uses Windows Authentication to authenticate users that connect to the
-     * DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/DeveloperGuide/USER_SQLServerWinAuth.html">Using
-     * Windows Authentication with an Amazon RDS DB Instance Running Microsoft SQL
-     * Server</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * <p>The Active Directory directory ID to create the DB instance in. Currently,
+     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
+     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
+     * use Windows Authentication to authenticate users that connect to the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
+     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
+     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
+     * instance, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p> <p/>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>For an Amazon RDS DB instance that's running Microsoft SQL Server, this
-     * parameter specifies the Active Directory directory ID to create the instance in.
-     * Amazon RDS uses Windows Authentication to authenticate users that connect to the
-     * DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/DeveloperGuide/USER_SQLServerWinAuth.html">Using
-     * Windows Authentication with an Amazon RDS DB Instance Running Microsoft SQL
-     * Server</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * <p>The Active Directory directory ID to create the DB instance in. Currently,
+     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
+     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
+     * use Windows Authentication to authenticate users that connect to the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
+     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
+     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
+     * instance, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p> <p/>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>For an Amazon RDS DB instance that's running Microsoft SQL Server, this
-     * parameter specifies the Active Directory directory ID to create the instance in.
-     * Amazon RDS uses Windows Authentication to authenticate users that connect to the
-     * DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/DeveloperGuide/USER_SQLServerWinAuth.html">Using
-     * Windows Authentication with an Amazon RDS DB Instance Running Microsoft SQL
-     * Server</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * <p>The Active Directory directory ID to create the DB instance in. Currently,
+     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
+     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
+     * use Windows Authentication to authenticate users that connect to the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
+     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
+     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
+     * instance, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p> <p/>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>For an Amazon RDS DB instance that's running Microsoft SQL Server, this
-     * parameter specifies the Active Directory directory ID to create the instance in.
-     * Amazon RDS uses Windows Authentication to authenticate users that connect to the
-     * DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/DeveloperGuide/USER_SQLServerWinAuth.html">Using
-     * Windows Authentication with an Amazon RDS DB Instance Running Microsoft SQL
-     * Server</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * <p>The Active Directory directory ID to create the DB instance in. Currently,
+     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
+     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
+     * use Windows Authentication to authenticate users that connect to the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
+     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
+     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
+     * instance, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p> <p/>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>For an Amazon RDS DB instance that's running Microsoft SQL Server, this
-     * parameter specifies the Active Directory directory ID to create the instance in.
-     * Amazon RDS uses Windows Authentication to authenticate users that connect to the
-     * DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/DeveloperGuide/USER_SQLServerWinAuth.html">Using
-     * Windows Authentication with an Amazon RDS DB Instance Running Microsoft SQL
-     * Server</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * <p>The Active Directory directory ID to create the DB instance in. Currently,
+     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
+     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
+     * use Windows Authentication to authenticate users that connect to the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
+     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
+     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
+     * instance, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p> <p/>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>For an Amazon RDS DB instance that's running Microsoft SQL Server, this
-     * parameter specifies the Active Directory directory ID to create the instance in.
-     * Amazon RDS uses Windows Authentication to authenticate users that connect to the
-     * DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/DeveloperGuide/USER_SQLServerWinAuth.html">Using
-     * Windows Authentication with an Amazon RDS DB Instance Running Microsoft SQL
-     * Server</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * <p>The Active Directory directory ID to create the DB instance in. Currently,
+     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
+     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
+     * use Windows Authentication to authenticate users that connect to the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
+     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
+     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
+     * instance, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p> <p/>
      */
     inline CreateDBInstanceRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>For an Amazon RDS DB instance that's running Microsoft SQL Server, this
-     * parameter specifies the Active Directory directory ID to create the instance in.
-     * Amazon RDS uses Windows Authentication to authenticate users that connect to the
-     * DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/DeveloperGuide/USER_SQLServerWinAuth.html">Using
-     * Windows Authentication with an Amazon RDS DB Instance Running Microsoft SQL
-     * Server</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * <p>The Active Directory directory ID to create the DB instance in. Currently,
+     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
+     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
+     * use Windows Authentication to authenticate users that connect to the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
+     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
+     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
+     * instance, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p> <p/>
      */
     inline CreateDBInstanceRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>For an Amazon RDS DB instance that's running Microsoft SQL Server, this
-     * parameter specifies the Active Directory directory ID to create the instance in.
-     * Amazon RDS uses Windows Authentication to authenticate users that connect to the
-     * DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/DeveloperGuide/USER_SQLServerWinAuth.html">Using
-     * Windows Authentication with an Amazon RDS DB Instance Running Microsoft SQL
-     * Server</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * <p>The Active Directory directory ID to create the DB instance in. Currently,
+     * only Microsoft SQL Server and Oracle DB instances can be created in an Active
+     * Directory Domain.</p> <p>For Microsoft SQL Server DB instances, Amazon RDS can
+     * use Windows Authentication to authenticate users that connect to the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
+     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
+     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
+     * instance, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p> <p/>
      */
     inline CreateDBInstanceRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 

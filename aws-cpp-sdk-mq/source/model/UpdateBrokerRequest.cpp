@@ -28,6 +28,7 @@ UpdateBrokerRequest::UpdateBrokerRequest() :
     m_brokerIdHasBeenSet(false),
     m_configurationHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
+    m_hostInstanceTypeHasBeenSet(false),
     m_logsHasBeenSet(false),
     m_securityGroupsHasBeenSet(false)
 {
@@ -52,6 +53,12 @@ Aws::String UpdateBrokerRequest::SerializePayload() const
   if(m_engineVersionHasBeenSet)
   {
    payload.WithString("engineVersion", m_engineVersion);
+
+  }
+
+  if(m_hostInstanceTypeHasBeenSet)
+  {
+   payload.WithString("hostInstanceType", m_hostInstanceType);
 
   }
 

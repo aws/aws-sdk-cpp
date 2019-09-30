@@ -2037,6 +2037,136 @@ namespace Model
      */
     inline CreateDBInstanceReadReplicaRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
+
+    /**
+     * <p>The Active Directory directory ID to create the DB instance in.</p> <p>For
+     * Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate
+     * users that connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p>
+     */
+    inline const Aws::String& GetDomain() const{ return m_domain; }
+
+    /**
+     * <p>The Active Directory directory ID to create the DB instance in.</p> <p>For
+     * Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate
+     * users that connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p>
+     */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The Active Directory directory ID to create the DB instance in.</p> <p>For
+     * Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate
+     * users that connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p>
+     */
+    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /**
+     * <p>The Active Directory directory ID to create the DB instance in.</p> <p>For
+     * Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate
+     * users that connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p>
+     */
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
+
+    /**
+     * <p>The Active Directory directory ID to create the DB instance in.</p> <p>For
+     * Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate
+     * users that connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p>
+     */
+    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
+
+    /**
+     * <p>The Active Directory directory ID to create the DB instance in.</p> <p>For
+     * Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate
+     * users that connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
+
+    /**
+     * <p>The Active Directory directory ID to create the DB instance in.</p> <p>For
+     * Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate
+     * users that connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
+
+    /**
+     * <p>The Active Directory directory ID to create the DB instance in.</p> <p>For
+     * Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate
+     * users that connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
+
+    /**
+     * <p>Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service.</p>
+     */
+    inline const Aws::String& GetDomainIAMRoleName() const{ return m_domainIAMRoleName; }
+
+    /**
+     * <p>Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service.</p>
+     */
+    inline bool DomainIAMRoleNameHasBeenSet() const { return m_domainIAMRoleNameHasBeenSet; }
+
+    /**
+     * <p>Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service.</p>
+     */
+    inline void SetDomainIAMRoleName(const Aws::String& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
+
+    /**
+     * <p>Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service.</p>
+     */
+    inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = std::move(value); }
+
+    /**
+     * <p>Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service.</p>
+     */
+    inline void SetDomainIAMRoleName(const char* value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName.assign(value); }
+
+    /**
+     * <p>Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service.</p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithDomainIAMRoleName(const Aws::String& value) { SetDomainIAMRoleName(value); return *this;}
+
+    /**
+     * <p>Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service.</p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service.</p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -2122,6 +2252,12 @@ namespace Model
 
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet;
+
+    Aws::String m_domain;
+    bool m_domainHasBeenSet;
+
+    Aws::String m_domainIAMRoleName;
+    bool m_domainIAMRoleNameHasBeenSet;
   };
 
 } // namespace Model

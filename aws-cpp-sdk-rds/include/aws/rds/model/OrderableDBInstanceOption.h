@@ -718,6 +718,27 @@ namespace Model
      */
     inline OrderableDBInstanceOption& WithSupportsStorageAutoscaling(bool value) { SetSupportsStorageAutoscaling(value); return *this;}
 
+
+    /**
+     * <p>Whether a DB instance supports Kerberos Authentication.</p>
+     */
+    inline bool GetSupportsKerberosAuthentication() const{ return m_supportsKerberosAuthentication; }
+
+    /**
+     * <p>Whether a DB instance supports Kerberos Authentication.</p>
+     */
+    inline bool SupportsKerberosAuthenticationHasBeenSet() const { return m_supportsKerberosAuthenticationHasBeenSet; }
+
+    /**
+     * <p>Whether a DB instance supports Kerberos Authentication.</p>
+     */
+    inline void SetSupportsKerberosAuthentication(bool value) { m_supportsKerberosAuthenticationHasBeenSet = true; m_supportsKerberosAuthentication = value; }
+
+    /**
+     * <p>Whether a DB instance supports Kerberos Authentication.</p>
+     */
+    inline OrderableDBInstanceOption& WithSupportsKerberosAuthentication(bool value) { SetSupportsKerberosAuthentication(value); return *this;}
+
   private:
 
     Aws::String m_engine;
@@ -788,6 +809,9 @@ namespace Model
 
     bool m_supportsStorageAutoscaling;
     bool m_supportsStorageAutoscalingHasBeenSet;
+
+    bool m_supportsKerberosAuthentication;
+    bool m_supportsKerberosAuthenticationHasBeenSet;
   };
 
 } // namespace Model

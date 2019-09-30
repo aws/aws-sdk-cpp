@@ -630,6 +630,56 @@ namespace Model
 
 
     /**
+     * The host instance type of the broker to upgrade to. For a list of supported
+     * instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     */
+    inline const Aws::String& GetPendingHostInstanceType() const{ return m_pendingHostInstanceType; }
+
+    /**
+     * The host instance type of the broker to upgrade to. For a list of supported
+     * instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     */
+    inline void SetPendingHostInstanceType(const Aws::String& value) { m_pendingHostInstanceType = value; }
+
+    /**
+     * The host instance type of the broker to upgrade to. For a list of supported
+     * instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     */
+    inline void SetPendingHostInstanceType(Aws::String&& value) { m_pendingHostInstanceType = std::move(value); }
+
+    /**
+     * The host instance type of the broker to upgrade to. For a list of supported
+     * instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     */
+    inline void SetPendingHostInstanceType(const char* value) { m_pendingHostInstanceType.assign(value); }
+
+    /**
+     * The host instance type of the broker to upgrade to. For a list of supported
+     * instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     */
+    inline DescribeBrokerResult& WithPendingHostInstanceType(const Aws::String& value) { SetPendingHostInstanceType(value); return *this;}
+
+    /**
+     * The host instance type of the broker to upgrade to. For a list of supported
+     * instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     */
+    inline DescribeBrokerResult& WithPendingHostInstanceType(Aws::String&& value) { SetPendingHostInstanceType(std::move(value)); return *this;}
+
+    /**
+     * The host instance type of the broker to upgrade to. For a list of supported
+     * instance types, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
+     */
+    inline DescribeBrokerResult& WithPendingHostInstanceType(const char* value) { SetPendingHostInstanceType(value); return *this;}
+
+
+    /**
      * Required. Enables connections from applications outside of the VPC that hosts
      * the broker's subnets.
      */
@@ -893,6 +943,8 @@ namespace Model
     Aws::String m_pendingEngineVersion;
 
     Aws::Vector<Aws::String> m_pendingSecurityGroups;
+
+    Aws::String m_pendingHostInstanceType;
 
     bool m_publiclyAccessible;
 

@@ -1143,42 +1143,146 @@ namespace Model
 
 
     /**
-     * <p>Specify the Active Directory Domain to restore the instance in.</p>
+     * <p>Specify the Active Directory directory ID to restore the DB instance in. The
+     * domain must be created prior to this operation. Currently, only Microsoft SQL
+     * Server and Oracle DB instances can be created in an Active Directory Domain.
+     * </p> <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
+     * Authentication to authenticate users that connect to the DB instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
+     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
+     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
+     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>Specify the Active Directory Domain to restore the instance in.</p>
+     * <p>Specify the Active Directory directory ID to restore the DB instance in. The
+     * domain must be created prior to this operation. Currently, only Microsoft SQL
+     * Server and Oracle DB instances can be created in an Active Directory Domain.
+     * </p> <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
+     * Authentication to authenticate users that connect to the DB instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
+     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
+     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
+     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>Specify the Active Directory Domain to restore the instance in.</p>
+     * <p>Specify the Active Directory directory ID to restore the DB instance in. The
+     * domain must be created prior to this operation. Currently, only Microsoft SQL
+     * Server and Oracle DB instances can be created in an Active Directory Domain.
+     * </p> <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
+     * Authentication to authenticate users that connect to the DB instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
+     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
+     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
+     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>Specify the Active Directory Domain to restore the instance in.</p>
+     * <p>Specify the Active Directory directory ID to restore the DB instance in. The
+     * domain must be created prior to this operation. Currently, only Microsoft SQL
+     * Server and Oracle DB instances can be created in an Active Directory Domain.
+     * </p> <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
+     * Authentication to authenticate users that connect to the DB instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
+     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
+     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
+     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>Specify the Active Directory Domain to restore the instance in.</p>
+     * <p>Specify the Active Directory directory ID to restore the DB instance in. The
+     * domain must be created prior to this operation. Currently, only Microsoft SQL
+     * Server and Oracle DB instances can be created in an Active Directory Domain.
+     * </p> <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
+     * Authentication to authenticate users that connect to the DB instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
+     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
+     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
+     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>Specify the Active Directory Domain to restore the instance in.</p>
+     * <p>Specify the Active Directory directory ID to restore the DB instance in. The
+     * domain must be created prior to this operation. Currently, only Microsoft SQL
+     * Server and Oracle DB instances can be created in an Active Directory Domain.
+     * </p> <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
+     * Authentication to authenticate users that connect to the DB instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
+     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
+     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
+     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>Specify the Active Directory Domain to restore the instance in.</p>
+     * <p>Specify the Active Directory directory ID to restore the DB instance in. The
+     * domain must be created prior to this operation. Currently, only Microsoft SQL
+     * Server and Oracle DB instances can be created in an Active Directory Domain.
+     * </p> <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
+     * Authentication to authenticate users that connect to the DB instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
+     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
+     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
+     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>Specify the Active Directory Domain to restore the instance in.</p>
+     * <p>Specify the Active Directory directory ID to restore the DB instance in. The
+     * domain must be created prior to this operation. Currently, only Microsoft SQL
+     * Server and Oracle DB instances can be created in an Active Directory Domain.
+     * </p> <p>For Microsoft SQL Server DB instances, Amazon RDS can use Windows
+     * Authentication to authenticate users that connect to the DB instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
+     * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
+     * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
+     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * connect to the DB instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
+     * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
+     * RDS User Guide</i>.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
