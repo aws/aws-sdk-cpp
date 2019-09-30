@@ -1,0 +1,50 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - $SDK_ROOT="$Env:CODEBUILD_SRC_DIR/aws-sdk-cpp"
+      - cd $SDK_ROOT
+      # Testing the first approach to build custom client as a separate package, which means you have to build and install aws-sdk-cpp first.
+      # Generate custom client source code under custom-service/ with API description file located at code-generation/api-description/custom-service.
+      - python scripts/generate_sdks.py --pathToApiDefinitions=code-generation/api-descriptions/custom-service --outputLocation custom-service --serviceName custom-service --apiVersion 2017-11-03 --namespace Custom  --prepareTool --standalone
+
+      # Build and install aws-cpp-sdk-core
+      - mkdir -p $SDK_ROOT/build/AWSSDK
+      - mkdir -p $SDK_ROOT/install
+      - cd $SDK_ROOT/build/AWSSDK
+      - cmake $SDK_ROOT -DBUILD_ONLY="core" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX="$SDK_ROOT/install" -DBUILD_SHARED_LIBS=ON
+      - MSBuild.exe ALL_BUILD.vcxproj -p:Configuration=Debug -m
+      - MSBuild.exe INSTALL.vcxproj -p:Configuration=Debug
+
+      # Build custom-service
+      - mkdir -p $SDK_ROOT/build/custom-service
+      - cd $SDK_ROOT/build/custom-service
+      - cmake $SDK_ROOT/custom-service/aws-cpp-sdk-custom-service -DCMAKE_PREFIX_PATH="$SDK_ROOT/install" -DAWSSDK_ROOT_DIR="$SDK_ROOT/install" -DCMAKE_INSTALL_PREFIX="$SDK_ROOT/install" -DBUILD_SHARED_LIBS=ON -DUSE_WINDOWS_DLL_SEMANTICS=ON
+      - MSBuild.exe ALL_BUILD.vcxproj -p:Configuration=Debug -m
+      - MSBuild.exe INSTALL.vcxproj -p:Configuration=Debug
+
+      # Build and run custom-service integration tests
+      - mkdir -p $SDK_ROOT/build/custom-service-integration-tests
+      - cd $SDK_ROOT/build/custom-service-integration-tests
+      - cmake $SDK_ROOT/aws-cpp-sdk-custom-service-integration-tests -DCMAKE_PREFIX_PATH="$SDK_ROOT/install" -DAWSSDK_ROOT_DIR="$SDK_ROOT/install" -DBUILD_SHARED_LIBS=ON -DSTANDALONE=ON
+      - MSBuild.exe ALL_BUILD.vcxproj -p:Configuration=Debug -m
+      - ./Debug/aws-cpp-sdk-custom-service-integration-tests
+
+      # Testing the second approach to build custom client along with AWS C++ SDK, which means we will build everything altogether at the same time.
+      # Copy the c2j model to code-generation/api-descriptions
+      - cp $SDK_ROOT/code-generation/api-descriptions/custom-service/custom-service-2017-11-03.normal.json $SDK_ROOT/code-generation/api-descriptions/petstore-2017-11-03.normal.json
+
+      # Build and install aws-cpp-sdk-core and aws-cpp-sdk-petstore
+      - mkdir -p $SDK_ROOT/build_all
+      - mkdir -p $SDK_ROOT/install_all
+      - cd $SDK_ROOT/build_all
+      - cmake $SDK_ROOT -DBUILD_ONLY=core -DADD_CUSTOM_CLIENTS="serviceName=petstore, version=2017-11-03" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX="$SDK_ROOT/install_all" -DBUILD_SHARED_LIBS=ON
+      - MSBuild.exe ALL_BUILD.vcxproj -p:Configuration=Debug -m
+      - MSBuild.exe INSTALL.vcxproj -p:Configuration=Debug
+
+      # Build and run petstore integration tests
+      - mkdir -p $SDK_ROOT/build_tests
+      - cd $SDK_ROOT/build_tests
+      - cmake $SDK_ROOT/aws-cpp-sdk-custom-service-integration-tests -DCMAKE_PREFIX_PATH="$SDK_ROOT/install_all" -DAWSSDK_ROOT_DIR="$SDK_ROOT/install_all" -DBUILD_SHARED_LIBS=ON -DSTANDALONE=OFF
+      - MSBuild.exe ALL_BUILD.vcxproj -p:Configuration=Debug -m
+      - ./Debug/aws-cpp-sdk-custom-service-integration-tests.exe

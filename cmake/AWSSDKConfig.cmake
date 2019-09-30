@@ -1,12 +1,12 @@
 #
 # Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-# 
+#
 # Licensed under the Apache License, Version 2.0 (the "License").
 # You may not use this file except in compliance with the License.
 # A copy of the License is located at
-# 
+#
 #  http://aws.amazon.com/apache2.0
-# 
+#
 # or in the "license" file accompanying this file. This file is distributed
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
@@ -25,7 +25,7 @@
 
 #   The libraries will all be in <prefix>/lib/<platform_prefix> dir
 #   The binaries will all be in <prefix>/bin/<platform_prefix> dir
-#   The archives will all be in <prefix>/lib/<platform_prefix> dir if target is shared, 
+#   The archives will all be in <prefix>/lib/<platform_prefix> dir if target is shared,
 #   otherwise will be in <prefix>/bin/<platform_prefix> dir.
 
 # Platfrom_prefix is determined on compile time nbu option SIMPLE_INSTALL
@@ -129,7 +129,7 @@ get_filename_component(TEMP_NAME "${TEMP_PATH}" NAME)
 
 while (NOT TEMP_NAME STREQUAL ${LIB_SEARCH_PREFIX})
     set(TEMP_PLATFORM_PREFIX "${TEMP_NAME}/${TEMP_PLATFORM_PREFIX}")
-    get_filename_component(TEMP_PATH "${TEMP_PATH}" PATH) 
+    get_filename_component(TEMP_PATH "${TEMP_PATH}" PATH)
     get_filename_component(TEMP_NAME "${TEMP_PATH}" NAME)
 endwhile()
 
@@ -143,19 +143,19 @@ set(AWSSDK_BIN_DIR "${AWSSDK_ROOT_DIR}/${AWSSDK_INSTALL_BINDIR}/${AWSSDK_PLATFOR
 
 
 if (AWSSDK_PLATFORM_DEPS_LIBS)
-	set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS_LIBS}")
+    set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS_LIBS}")
 endif()
 
 if (AWSSDK_CRYPTO_LIBS)
-	set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS}" "${AWSSDK_CRYPTO_LIBS}")
+    set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS}" "${AWSSDK_CRYPTO_LIBS}")
 endif()
 
 if (AWSSDK_CLIENT_LIBS)
-	set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS}" "${AWSSDK_CLIENT_LIBS}")
+    set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS}" "${AWSSDK_CLIENT_LIBS}")
 endif()
 
 if (AWSSDK_ADDITIONAL_LIBS)
-	set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS}" "${AWSSDK_ADDITIONAL_LIBS}")
+    set(AWSSDK_PLATFORM_DEPS "${AWSSDK_PLATFORM_DEPS}" "${AWSSDK_ADDITIONAL_LIBS}")
 endif()
 
 message(STATUS "Found AWS SDK for C++, Version: ${PACKAGE_VERSION}, Install Root:${AWSSDK_ROOT_DIR}, Platform Prefix:${AWSSDK_PLATFORM_PREFIX}, Platform Dependent Libraries: ${AWSSDK_PLATFORM_DEPS}")
@@ -164,7 +164,7 @@ message(STATUS "Found AWS SDK for C++, Version: ${PACKAGE_VERSION}, Install Root
 # copy libs of services in SERVICE_LIST and all there dependent libs to DEST_DIR
 # CONFIG denote copy release or debug version
 macro(AWSSDK_CPY_DYN_LIBS SERVICE_LIST CONFIG DEST_DIR)
-    set(ALL_SERVICES "core")
+    set(ALL_SERVICES "core;aws-c-event-stream;aws-checksums;aws-c-common")
 
     foreach(SVC IN LISTS ${SERVICE_LIST})
         list(APPEND ALL_SERVICES ${SVC})
@@ -178,15 +178,18 @@ macro(AWSSDK_CPY_DYN_LIBS SERVICE_LIST CONFIG DEST_DIR)
     list(REMOVE_DUPLICATES ALL_SERVICES)
 
     foreach(SVC IN LISTS ALL_SERVICES)
-		if (WIN32)
+        if (WIN32)
             set(CMAKE_FIND_LIBRARY_SUFFIXES_TEMP ${CMAKE_FIND_LIBRARY_SUFFIXES})
-			set(CMAKE_FIND_LIBRARY_SUFFIXES ".dll")
-		endif()
+            set(CMAKE_FIND_LIBRARY_SUFFIXES ".dll")
+        endif()
         find_library(LIB_PATH "aws-cpp-sdk-${SVC}" "${AWSSDK_LIB_DIR}/${CONFIG}" NO_DEFAULT_PATH)
         if (NOT LIB_PATH)
-            message(FATAL_ERROR "Couldn't find library aws-cpp-sdk-${SVC}")
+            find_library(LIB_PATH "${SVC}" "${AWSSDK_LIB_DIR}/${CONFIG}" NO_DEFAULT_PATH)
+            if (NOT LIB_PATH)
+                message(FATAL_ERROR "Couldn't find library aws-cpp-sdk-${SVC} or ${SVC}")
+            endif()
         endif()
-        file(COPY ${LIB_PATH} DESTINATION ${DEST_DIR}) 
+        file(COPY ${LIB_PATH} DESTINATION ${DEST_DIR})
         unset(LIB_PATH CACHE)
         if (WIN32)
             set(CMAKE_FIND_LIBRARY_SUFFIXES ${CMAKE_FIND_LIBRARY_SUFFIXES_TEMP})

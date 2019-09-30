@@ -15,14 +15,25 @@
 #include <aws/external/gtest.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSignerProvider.h>
+#if STANDALONE
 #include <aws/custom-service/PetStoreClient.h>
 #include <aws/custom-service/model/CreatePetRequest.h>
 #include <aws/custom-service/model/GetPetRequest.h>
 #include <aws/custom-service/model/GetPetsRequest.h>
 
-using namespace Aws::Auth;
 using namespace Custom::PetStore;
 using namespace Custom::PetStore::Model;
+#else
+#include <aws/petstore/PetStoreClient.h>
+#include <aws/petstore/model/CreatePetRequest.h>
+#include <aws/petstore/model/GetPetRequest.h>
+#include <aws/petstore/model/GetPetsRequest.h>
+
+using namespace Aws::PetStore;
+using namespace Aws::PetStore::Model;
+#endif
+
+using namespace Aws::Auth;
 
 namespace
 {
