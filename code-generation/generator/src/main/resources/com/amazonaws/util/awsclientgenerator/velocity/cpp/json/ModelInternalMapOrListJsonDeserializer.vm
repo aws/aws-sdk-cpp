@@ -21,6 +21,9 @@
 #if(!$template.currentShape.mapValue.shape.map && !$template.currentShape.mapValue.shape.list)
 #set($lvalue = "${template.containerVar}[${template.lowerCaseVarName}Item.first]")
 #set($rvalue = "${template.lowerCaseVarName}Item.second.As${CppViewHelper.computeJsonCppType($template.currentShape.mapValue.shape)}()")
+#if($template.currentShape.mapValue.shape.isBlob())
+#set($rvalue = "HashingUtils::Base64Decode(${template.lowerCaseVarName}Item.second.As${CppViewHelper.computeJsonCppType($template.currentShape.mapValue.shape)}())")
+#end
 #if($template.currentShape.mapKey.shape.enum)
 #set($enumName = $template.currentShape.mapKey.shape.name)
 #set($lvalue = "${template.containerVar}[${enumName}Mapper::Get${enumName}ForName(${template.lowerCaseVarName}Item.first)]")
