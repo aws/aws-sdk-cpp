@@ -707,38 +707,26 @@ namespace Model
 
 
     /**
-     * <p>Specifies the availability options for the DB instance. A value of
-     * <code>true</code> specifies an internet-facing instance with a publicly
-     * resolvable DNS name, which resolves to a public IP address. A value of
-     * <code>false</code> specifies an internal instance with a DNS name that resolves
-     * to a private IP address.</p>
+     * <p>Not supported. Amazon DocumentDB does not currently support public endpoints.
+     * The value of <code>PubliclyAccessible</code> is always <code>false</code>.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>Specifies the availability options for the DB instance. A value of
-     * <code>true</code> specifies an internet-facing instance with a publicly
-     * resolvable DNS name, which resolves to a public IP address. A value of
-     * <code>false</code> specifies an internal instance with a DNS name that resolves
-     * to a private IP address.</p>
+     * <p>Not supported. Amazon DocumentDB does not currently support public endpoints.
+     * The value of <code>PubliclyAccessible</code> is always <code>false</code>.</p>
      */
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
-     * <p>Specifies the availability options for the DB instance. A value of
-     * <code>true</code> specifies an internet-facing instance with a publicly
-     * resolvable DNS name, which resolves to a public IP address. A value of
-     * <code>false</code> specifies an internal instance with a DNS name that resolves
-     * to a private IP address.</p>
+     * <p>Not supported. Amazon DocumentDB does not currently support public endpoints.
+     * The value of <code>PubliclyAccessible</code> is always <code>false</code>.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>Specifies the availability options for the DB instance. A value of
-     * <code>true</code> specifies an internet-facing instance with a publicly
-     * resolvable DNS name, which resolves to a public IP address. A value of
-     * <code>false</code> specifies an internal instance with a DNS name that resolves
-     * to a private IP address.</p>
+     * <p>Not supported. Amazon DocumentDB does not currently support public endpoints.
+     * The value of <code>PubliclyAccessible</code> is always <code>false</code>.</p>
      */
     inline DBInstance& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
@@ -842,22 +830,22 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the DB instance is encrypted.</p>
+     * <p>Specifies whether or not the DB instance is encrypted.</p>
      */
     inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
 
     /**
-     * <p>Specifies whether the DB instance is encrypted.</p>
+     * <p>Specifies whether or not the DB instance is encrypted.</p>
      */
     inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
 
     /**
-     * <p>Specifies whether the DB instance is encrypted.</p>
+     * <p>Specifies whether or not the DB instance is encrypted.</p>
      */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
-     * <p>Specifies whether the DB instance is encrypted.</p>
+     * <p>Specifies whether or not the DB instance is encrypted.</p>
      */
     inline DBInstance& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
 
@@ -966,6 +954,47 @@ namespace Model
      * the DB instance is accessed.</p>
      */
     inline DBInstance& WithDbiResourceId(const char* value) { SetDbiResourceId(value); return *this;}
+
+
+    /**
+     * <p>The identifier of the CA certificate for this DB instance.</p>
+     */
+    inline const Aws::String& GetCACertificateIdentifier() const{ return m_cACertificateIdentifier; }
+
+    /**
+     * <p>The identifier of the CA certificate for this DB instance.</p>
+     */
+    inline bool CACertificateIdentifierHasBeenSet() const { return m_cACertificateIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier of the CA certificate for this DB instance.</p>
+     */
+    inline void SetCACertificateIdentifier(const Aws::String& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = value; }
+
+    /**
+     * <p>The identifier of the CA certificate for this DB instance.</p>
+     */
+    inline void SetCACertificateIdentifier(Aws::String&& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = std::move(value); }
+
+    /**
+     * <p>The identifier of the CA certificate for this DB instance.</p>
+     */
+    inline void SetCACertificateIdentifier(const char* value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier.assign(value); }
+
+    /**
+     * <p>The identifier of the CA certificate for this DB instance.</p>
+     */
+    inline DBInstance& WithCACertificateIdentifier(const Aws::String& value) { SetCACertificateIdentifier(value); return *this;}
+
+    /**
+     * <p>The identifier of the CA certificate for this DB instance.</p>
+     */
+    inline DBInstance& WithCACertificateIdentifier(Aws::String&& value) { SetCACertificateIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the CA certificate for this DB instance.</p>
+     */
+    inline DBInstance& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
 
 
     /**
@@ -1159,6 +1188,9 @@ namespace Model
 
     Aws::String m_dbiResourceId;
     bool m_dbiResourceIdHasBeenSet;
+
+    Aws::String m_cACertificateIdentifier;
+    bool m_cACertificateIdentifierHasBeenSet;
 
     int m_promotionTier;
     bool m_promotionTierHasBeenSet;

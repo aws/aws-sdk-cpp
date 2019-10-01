@@ -29,6 +29,7 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_autoMinorVersionUpgrade(false),
     m_autoMinorVersionUpgradeHasBeenSet(false),
     m_newDBInstanceIdentifierHasBeenSet(false),
+    m_cACertificateIdentifierHasBeenSet(false),
     m_promotionTier(0),
     m_promotionTierHasBeenSet(false)
 {
@@ -66,6 +67,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_newDBInstanceIdentifierHasBeenSet)
   {
     ss << "NewDBInstanceIdentifier=" << StringUtils::URLEncode(m_newDBInstanceIdentifier.c_str()) << "&";
+  }
+
+  if(m_cACertificateIdentifierHasBeenSet)
+  {
+    ss << "CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
   }
 
   if(m_promotionTierHasBeenSet)

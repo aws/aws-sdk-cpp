@@ -57,6 +57,7 @@ DBInstance::DBInstance() :
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_dbiResourceIdHasBeenSet(false),
+    m_cACertificateIdentifierHasBeenSet(false),
     m_promotionTier(0),
     m_promotionTierHasBeenSet(false),
     m_dBInstanceArnHasBeenSet(false),
@@ -91,6 +92,7 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_dbiResourceIdHasBeenSet(false),
+    m_cACertificateIdentifierHasBeenSet(false),
     m_promotionTier(0),
     m_promotionTierHasBeenSet(false),
     m_dBInstanceArnHasBeenSet(false),
@@ -248,6 +250,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     {
       m_dbiResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(dbiResourceIdNode.GetText());
       m_dbiResourceIdHasBeenSet = true;
+    }
+    XmlNode cACertificateIdentifierNode = resultNode.FirstChild("CACertificateIdentifier");
+    if(!cACertificateIdentifierNode.IsNull())
+    {
+      m_cACertificateIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(cACertificateIdentifierNode.GetText());
+      m_cACertificateIdentifierHasBeenSet = true;
     }
     XmlNode promotionTierNode = resultNode.FirstChild("PromotionTier");
     if(!promotionTierNode.IsNull())
@@ -408,6 +416,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".DbiResourceId=" << StringUtils::URLEncode(m_dbiResourceId.c_str()) << "&";
   }
 
+  if(m_cACertificateIdentifierHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
+  }
+
   if(m_promotionTierHasBeenSet)
   {
       oStream << location << index << locationValue << ".PromotionTier=" << m_promotionTier << "&";
@@ -536,6 +549,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_dbiResourceIdHasBeenSet)
   {
       oStream << location << ".DbiResourceId=" << StringUtils::URLEncode(m_dbiResourceId.c_str()) << "&";
+  }
+  if(m_cACertificateIdentifierHasBeenSet)
+  {
+      oStream << location << ".CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
   }
   if(m_promotionTierHasBeenSet)
   {

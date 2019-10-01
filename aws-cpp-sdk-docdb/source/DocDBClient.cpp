@@ -44,6 +44,7 @@
 #include <aws/docdb/model/DeleteDBClusterSnapshotRequest.h>
 #include <aws/docdb/model/DeleteDBInstanceRequest.h>
 #include <aws/docdb/model/DeleteDBSubnetGroupRequest.h>
+#include <aws/docdb/model/DescribeCertificatesRequest.h>
 #include <aws/docdb/model/DescribeDBClusterParameterGroupsRequest.h>
 #include <aws/docdb/model/DescribeDBClusterParametersRequest.h>
 #include <aws/docdb/model/DescribeDBClusterSnapshotAttributesRequest.h>
@@ -643,6 +644,41 @@ void DocDBClient::DeleteDBSubnetGroupAsync(const DeleteDBSubnetGroupRequest& req
 void DocDBClient::DeleteDBSubnetGroupAsyncHelper(const DeleteDBSubnetGroupRequest& request, const DeleteDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteDBSubnetGroup(request), context);
+}
+
+DescribeCertificatesOutcome DocDBClient::DescribeCertificates(const DescribeCertificatesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeCertificatesOutcome(DescribeCertificatesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeCertificatesOutcome(outcome.GetError());
+  }
+}
+
+DescribeCertificatesOutcomeCallable DocDBClient::DescribeCertificatesCallable(const DescribeCertificatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeCertificatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCertificates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DocDBClient::DescribeCertificatesAsync(const DescribeCertificatesRequest& request, const DescribeCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeCertificatesAsyncHelper( request, handler, context ); } );
+}
+
+void DocDBClient::DescribeCertificatesAsyncHelper(const DescribeCertificatesRequest& request, const DescribeCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeCertificates(request), context);
 }
 
 DescribeDBClusterParameterGroupsOutcome DocDBClient::DescribeDBClusterParameterGroups(const DescribeDBClusterParameterGroupsRequest& request) const

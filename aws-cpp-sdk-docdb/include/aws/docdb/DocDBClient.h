@@ -33,6 +33,7 @@
 #include <aws/docdb/model/DeleteDBClusterResult.h>
 #include <aws/docdb/model/DeleteDBClusterSnapshotResult.h>
 #include <aws/docdb/model/DeleteDBInstanceResult.h>
+#include <aws/docdb/model/DescribeCertificatesResult.h>
 #include <aws/docdb/model/DescribeDBClusterParameterGroupsResult.h>
 #include <aws/docdb/model/DescribeDBClusterParametersResult.h>
 #include <aws/docdb/model/DescribeDBClusterSnapshotAttributesResult.h>
@@ -119,6 +120,7 @@ namespace Model
         class DeleteDBClusterSnapshotRequest;
         class DeleteDBInstanceRequest;
         class DeleteDBSubnetGroupRequest;
+        class DescribeCertificatesRequest;
         class DescribeDBClusterParameterGroupsRequest;
         class DescribeDBClusterParametersRequest;
         class DescribeDBClusterSnapshotAttributesRequest;
@@ -161,6 +163,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteDBClusterSnapshotResult, Aws::Client::AWSError<DocDBErrors>> DeleteDBClusterSnapshotOutcome;
         typedef Aws::Utils::Outcome<DeleteDBInstanceResult, Aws::Client::AWSError<DocDBErrors>> DeleteDBInstanceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DocDBErrors>> DeleteDBSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<DescribeCertificatesResult, Aws::Client::AWSError<DocDBErrors>> DescribeCertificatesOutcome;
         typedef Aws::Utils::Outcome<DescribeDBClusterParameterGroupsResult, Aws::Client::AWSError<DocDBErrors>> DescribeDBClusterParameterGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeDBClusterParametersResult, Aws::Client::AWSError<DocDBErrors>> DescribeDBClusterParametersOutcome;
         typedef Aws::Utils::Outcome<DescribeDBClusterSnapshotAttributesResult, Aws::Client::AWSError<DocDBErrors>> DescribeDBClusterSnapshotAttributesOutcome;
@@ -203,6 +206,7 @@ namespace Model
         typedef std::future<DeleteDBClusterSnapshotOutcome> DeleteDBClusterSnapshotOutcomeCallable;
         typedef std::future<DeleteDBInstanceOutcome> DeleteDBInstanceOutcomeCallable;
         typedef std::future<DeleteDBSubnetGroupOutcome> DeleteDBSubnetGroupOutcomeCallable;
+        typedef std::future<DescribeCertificatesOutcome> DescribeCertificatesOutcomeCallable;
         typedef std::future<DescribeDBClusterParameterGroupsOutcome> DescribeDBClusterParameterGroupsOutcomeCallable;
         typedef std::future<DescribeDBClusterParametersOutcome> DescribeDBClusterParametersOutcomeCallable;
         typedef std::future<DescribeDBClusterSnapshotAttributesOutcome> DescribeDBClusterSnapshotAttributesOutcomeCallable;
@@ -248,6 +252,7 @@ namespace Model
     typedef std::function<void(const DocDBClient*, const Model::DeleteDBClusterSnapshotRequest&, const Model::DeleteDBClusterSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBClusterSnapshotResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::DeleteDBInstanceRequest&, const Model::DeleteDBInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBInstanceResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::DeleteDBSubnetGroupRequest&, const Model::DeleteDBSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBSubnetGroupResponseReceivedHandler;
+    typedef std::function<void(const DocDBClient*, const Model::DescribeCertificatesRequest&, const Model::DescribeCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCertificatesResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::DescribeDBClusterParameterGroupsRequest&, const Model::DescribeDBClusterParameterGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBClusterParameterGroupsResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::DescribeDBClusterParametersRequest&, const Model::DescribeDBClusterParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBClusterParametersResponseReceivedHandler;
     typedef std::function<void(const DocDBClient*, const Model::DescribeDBClusterSnapshotAttributesRequest&, const Model::DescribeDBClusterSnapshotAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBClusterSnapshotAttributesResponseReceivedHandler;
@@ -783,6 +788,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDBSubnetGroupAsync(const Model::DeleteDBSubnetGroupRequest& request, const DeleteDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of certificate authority (CA) certificates provided by Amazon
+         * RDS for this AWS account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCertificatesOutcome DescribeCertificates(const Model::DescribeCertificatesRequest& request) const;
+
+        /**
+         * <p>Returns a list of certificate authority (CA) certificates provided by Amazon
+         * RDS for this AWS account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeCertificatesOutcomeCallable DescribeCertificatesCallable(const Model::DescribeCertificatesRequest& request) const;
+
+        /**
+         * <p>Returns a list of certificate authority (CA) certificates provided by Amazon
+         * RDS for this AWS account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeCertificatesAsync(const Model::DescribeCertificatesRequest& request, const DescribeCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a
@@ -1765,6 +1798,7 @@ namespace Model
         void DeleteDBClusterSnapshotAsyncHelper(const Model::DeleteDBClusterSnapshotRequest& request, const DeleteDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBInstanceAsyncHelper(const Model::DeleteDBInstanceRequest& request, const DeleteDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBSubnetGroupAsyncHelper(const Model::DeleteDBSubnetGroupRequest& request, const DeleteDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeCertificatesAsyncHelper(const Model::DescribeCertificatesRequest& request, const DescribeCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDBClusterParameterGroupsAsyncHelper(const Model::DescribeDBClusterParameterGroupsRequest& request, const DescribeDBClusterParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDBClusterParametersAsyncHelper(const Model::DescribeDBClusterParametersRequest& request, const DescribeDBClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDBClusterSnapshotAttributesAsyncHelper(const Model::DescribeDBClusterSnapshotAttributesRequest& request, const DescribeDBClusterSnapshotAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

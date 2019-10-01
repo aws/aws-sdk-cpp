@@ -505,6 +505,47 @@ namespace Model
 
 
     /**
+     * <p>Indicates the certificate that needs to be associated with the instance.</p>
+     */
+    inline const Aws::String& GetCACertificateIdentifier() const{ return m_cACertificateIdentifier; }
+
+    /**
+     * <p>Indicates the certificate that needs to be associated with the instance.</p>
+     */
+    inline bool CACertificateIdentifierHasBeenSet() const { return m_cACertificateIdentifierHasBeenSet; }
+
+    /**
+     * <p>Indicates the certificate that needs to be associated with the instance.</p>
+     */
+    inline void SetCACertificateIdentifier(const Aws::String& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = value; }
+
+    /**
+     * <p>Indicates the certificate that needs to be associated with the instance.</p>
+     */
+    inline void SetCACertificateIdentifier(Aws::String&& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = std::move(value); }
+
+    /**
+     * <p>Indicates the certificate that needs to be associated with the instance.</p>
+     */
+    inline void SetCACertificateIdentifier(const char* value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier.assign(value); }
+
+    /**
+     * <p>Indicates the certificate that needs to be associated with the instance.</p>
+     */
+    inline ModifyDBInstanceRequest& WithCACertificateIdentifier(const Aws::String& value) { SetCACertificateIdentifier(value); return *this;}
+
+    /**
+     * <p>Indicates the certificate that needs to be associated with the instance.</p>
+     */
+    inline ModifyDBInstanceRequest& WithCACertificateIdentifier(Aws::String&& value) { SetCACertificateIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates the certificate that needs to be associated with the instance.</p>
+     */
+    inline ModifyDBInstanceRequest& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
+
+
+    /**
      * <p>A value that specifies the order in which an Amazon DocumentDB replica is
      * promoted to the primary instance after a failure of the existing primary
      * instance.</p> <p>Default: 1</p> <p>Valid values: 0-15</p>
@@ -551,6 +592,9 @@ namespace Model
 
     Aws::String m_newDBInstanceIdentifier;
     bool m_newDBInstanceIdentifierHasBeenSet;
+
+    Aws::String m_cACertificateIdentifier;
+    bool m_cACertificateIdentifierHasBeenSet;
 
     int m_promotionTier;
     bool m_promotionTierHasBeenSet;

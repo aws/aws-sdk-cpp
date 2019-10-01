@@ -477,7 +477,7 @@ namespace Model
 
     /**
      * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be from 1 to 16 letters or numbers.</p> </li> <li> <p>The first
+     * <li> <p>Must be from 1 to 63 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
      * chosen database engine.</p> </li> </ul>
      */
@@ -485,7 +485,7 @@ namespace Model
 
     /**
      * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be from 1 to 16 letters or numbers.</p> </li> <li> <p>The first
+     * <li> <p>Must be from 1 to 63 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
      * chosen database engine.</p> </li> </ul>
      */
@@ -493,7 +493,7 @@ namespace Model
 
     /**
      * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be from 1 to 16 letters or numbers.</p> </li> <li> <p>The first
+     * <li> <p>Must be from 1 to 63 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
      * chosen database engine.</p> </li> </ul>
      */
@@ -501,7 +501,7 @@ namespace Model
 
     /**
      * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be from 1 to 16 letters or numbers.</p> </li> <li> <p>The first
+     * <li> <p>Must be from 1 to 63 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
      * chosen database engine.</p> </li> </ul>
      */
@@ -509,7 +509,7 @@ namespace Model
 
     /**
      * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be from 1 to 16 letters or numbers.</p> </li> <li> <p>The first
+     * <li> <p>Must be from 1 to 63 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
      * chosen database engine.</p> </li> </ul>
      */
@@ -517,7 +517,7 @@ namespace Model
 
     /**
      * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be from 1 to 16 letters or numbers.</p> </li> <li> <p>The first
+     * <li> <p>Must be from 1 to 63 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
      * chosen database engine.</p> </li> </ul>
      */
@@ -525,7 +525,7 @@ namespace Model
 
     /**
      * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be from 1 to 16 letters or numbers.</p> </li> <li> <p>The first
+     * <li> <p>Must be from 1 to 63 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
      * chosen database engine.</p> </li> </ul>
      */
@@ -533,7 +533,7 @@ namespace Model
 
     /**
      * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must be from 1 to 16 letters or numbers.</p> </li> <li> <p>The first
+     * <li> <p>Must be from 1 to 63 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
      * chosen database engine.</p> </li> </ul>
      */
@@ -543,56 +543,56 @@ namespace Model
     /**
      * <p>The password for the master database user. This password can contain any
      * printable ASCII character except forward slash (/), double quote ("), or the
-     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 100 characters.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
      * <p>The password for the master database user. This password can contain any
      * printable ASCII character except forward slash (/), double quote ("), or the
-     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 100 characters.</p>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
      * <p>The password for the master database user. This password can contain any
      * printable ASCII character except forward slash (/), double quote ("), or the
-     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 100 characters.</p>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
      * <p>The password for the master database user. This password can contain any
      * printable ASCII character except forward slash (/), double quote ("), or the
-     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 100 characters.</p>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
      * <p>The password for the master database user. This password can contain any
      * printable ASCII character except forward slash (/), double quote ("), or the
-     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 100 characters.</p>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
      * <p>The password for the master database user. This password can contain any
      * printable ASCII character except forward slash (/), double quote ("), or the
-     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 100 characters.</p>
      */
     inline CreateDBClusterRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
      * <p>The password for the master database user. This password can contain any
      * printable ASCII character except forward slash (/), double quote ("), or the
-     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 100 characters.</p>
      */
     inline CreateDBClusterRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
      * <p>The password for the master database user. This password can contain any
      * printable ASCII character except forward slash (/), double quote ("), or the
-     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 100 characters.</p>
      */
     inline CreateDBClusterRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 

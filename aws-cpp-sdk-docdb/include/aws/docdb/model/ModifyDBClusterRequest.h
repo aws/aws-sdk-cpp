@@ -411,56 +411,56 @@ namespace Model
     /**
      * <p>The password for the master database user. This password can contain any
      * printable ASCII character except forward slash (/), double quote ("), or the
-     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 100 characters.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
      * <p>The password for the master database user. This password can contain any
      * printable ASCII character except forward slash (/), double quote ("), or the
-     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 100 characters.</p>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
      * <p>The password for the master database user. This password can contain any
      * printable ASCII character except forward slash (/), double quote ("), or the
-     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 100 characters.</p>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
      * <p>The password for the master database user. This password can contain any
      * printable ASCII character except forward slash (/), double quote ("), or the
-     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 100 characters.</p>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
      * <p>The password for the master database user. This password can contain any
      * printable ASCII character except forward slash (/), double quote ("), or the
-     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 100 characters.</p>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
      * <p>The password for the master database user. This password can contain any
      * printable ASCII character except forward slash (/), double quote ("), or the
-     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 100 characters.</p>
      */
     inline ModifyDBClusterRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
      * <p>The password for the master database user. This password can contain any
      * printable ASCII character except forward slash (/), double quote ("), or the
-     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 100 characters.</p>
      */
     inline ModifyDBClusterRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
      * <p>The password for the master database user. This password can contain any
      * printable ASCII character except forward slash (/), double quote ("), or the
-     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * "at" symbol (@).</p> <p>Constraints: Must contain from 8 to 100 characters.</p>
      */
     inline ModifyDBClusterRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
