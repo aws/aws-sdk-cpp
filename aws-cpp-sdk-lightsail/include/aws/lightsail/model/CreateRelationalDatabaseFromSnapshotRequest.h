@@ -373,8 +373,8 @@ namespace Model
      * <p>The date and time to restore your database from.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be before the latest restorable time for the database.</p> </li>
      * <li> <p>Cannot be specified if the <code>use latest restorable time</code>
-     * parameter is <code>true</code>.</p> </li> <li> <p>Specified in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p>
+     * parameter is <code>true</code>.</p> </li> <li> <p>Specified in Coordinated
+     * Universal Time (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p>
      * <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM
      * UTC, then you input <code>1538424000</code> as the restore time.</p> </li> </ul>
      */
@@ -384,8 +384,8 @@ namespace Model
      * <p>The date and time to restore your database from.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be before the latest restorable time for the database.</p> </li>
      * <li> <p>Cannot be specified if the <code>use latest restorable time</code>
-     * parameter is <code>true</code>.</p> </li> <li> <p>Specified in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p>
+     * parameter is <code>true</code>.</p> </li> <li> <p>Specified in Coordinated
+     * Universal Time (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p>
      * <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM
      * UTC, then you input <code>1538424000</code> as the restore time.</p> </li> </ul>
      */
@@ -395,8 +395,8 @@ namespace Model
      * <p>The date and time to restore your database from.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be before the latest restorable time for the database.</p> </li>
      * <li> <p>Cannot be specified if the <code>use latest restorable time</code>
-     * parameter is <code>true</code>.</p> </li> <li> <p>Specified in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p>
+     * parameter is <code>true</code>.</p> </li> <li> <p>Specified in Coordinated
+     * Universal Time (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p>
      * <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM
      * UTC, then you input <code>1538424000</code> as the restore time.</p> </li> </ul>
      */
@@ -406,8 +406,8 @@ namespace Model
      * <p>The date and time to restore your database from.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be before the latest restorable time for the database.</p> </li>
      * <li> <p>Cannot be specified if the <code>use latest restorable time</code>
-     * parameter is <code>true</code>.</p> </li> <li> <p>Specified in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p>
+     * parameter is <code>true</code>.</p> </li> <li> <p>Specified in Coordinated
+     * Universal Time (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p>
      * <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM
      * UTC, then you input <code>1538424000</code> as the restore time.</p> </li> </ul>
      */
@@ -417,8 +417,8 @@ namespace Model
      * <p>The date and time to restore your database from.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be before the latest restorable time for the database.</p> </li>
      * <li> <p>Cannot be specified if the <code>use latest restorable time</code>
-     * parameter is <code>true</code>.</p> </li> <li> <p>Specified in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p>
+     * parameter is <code>true</code>.</p> </li> <li> <p>Specified in Coordinated
+     * Universal Time (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p>
      * <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM
      * UTC, then you input <code>1538424000</code> as the restore time.</p> </li> </ul>
      */
@@ -428,8 +428,8 @@ namespace Model
      * <p>The date and time to restore your database from.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be before the latest restorable time for the database.</p> </li>
      * <li> <p>Cannot be specified if the <code>use latest restorable time</code>
-     * parameter is <code>true</code>.</p> </li> <li> <p>Specified in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p>
+     * parameter is <code>true</code>.</p> </li> <li> <p>Specified in Coordinated
+     * Universal Time (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p>
      * <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM
      * UTC, then you input <code>1538424000</code> as the restore time.</p> </li> </ul>
      */

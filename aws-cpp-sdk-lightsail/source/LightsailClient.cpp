@@ -52,6 +52,7 @@
 #include <aws/lightsail/model/CreateRelationalDatabaseRequest.h>
 #include <aws/lightsail/model/CreateRelationalDatabaseFromSnapshotRequest.h>
 #include <aws/lightsail/model/CreateRelationalDatabaseSnapshotRequest.h>
+#include <aws/lightsail/model/DeleteAutoSnapshotRequest.h>
 #include <aws/lightsail/model/DeleteDiskRequest.h>
 #include <aws/lightsail/model/DeleteDiskSnapshotRequest.h>
 #include <aws/lightsail/model/DeleteDomainRequest.h>
@@ -67,9 +68,12 @@
 #include <aws/lightsail/model/DetachDiskRequest.h>
 #include <aws/lightsail/model/DetachInstancesFromLoadBalancerRequest.h>
 #include <aws/lightsail/model/DetachStaticIpRequest.h>
+#include <aws/lightsail/model/DisableAddOnRequest.h>
 #include <aws/lightsail/model/DownloadDefaultKeyPairRequest.h>
+#include <aws/lightsail/model/EnableAddOnRequest.h>
 #include <aws/lightsail/model/ExportSnapshotRequest.h>
 #include <aws/lightsail/model/GetActiveNamesRequest.h>
+#include <aws/lightsail/model/GetAutoSnapshotsRequest.h>
 #include <aws/lightsail/model/GetBlueprintsRequest.h>
 #include <aws/lightsail/model/GetBundlesRequest.h>
 #include <aws/lightsail/model/GetCloudFormationStackRecordsRequest.h>
@@ -974,6 +978,41 @@ void LightsailClient::CreateRelationalDatabaseSnapshotAsyncHelper(const CreateRe
   handler(this, request, CreateRelationalDatabaseSnapshot(request), context);
 }
 
+DeleteAutoSnapshotOutcome LightsailClient::DeleteAutoSnapshot(const DeleteAutoSnapshotRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteAutoSnapshotOutcome(DeleteAutoSnapshotResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteAutoSnapshotOutcome(outcome.GetError());
+  }
+}
+
+DeleteAutoSnapshotOutcomeCallable LightsailClient::DeleteAutoSnapshotCallable(const DeleteAutoSnapshotRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAutoSnapshotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAutoSnapshot(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::DeleteAutoSnapshotAsync(const DeleteAutoSnapshotRequest& request, const DeleteAutoSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAutoSnapshotAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::DeleteAutoSnapshotAsyncHelper(const DeleteAutoSnapshotRequest& request, const DeleteAutoSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAutoSnapshot(request), context);
+}
+
 DeleteDiskOutcome LightsailClient::DeleteDisk(const DeleteDiskRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1499,6 +1538,41 @@ void LightsailClient::DetachStaticIpAsyncHelper(const DetachStaticIpRequest& req
   handler(this, request, DetachStaticIp(request), context);
 }
 
+DisableAddOnOutcome LightsailClient::DisableAddOn(const DisableAddOnRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DisableAddOnOutcome(DisableAddOnResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DisableAddOnOutcome(outcome.GetError());
+  }
+}
+
+DisableAddOnOutcomeCallable LightsailClient::DisableAddOnCallable(const DisableAddOnRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisableAddOnOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableAddOn(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::DisableAddOnAsync(const DisableAddOnRequest& request, const DisableAddOnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisableAddOnAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::DisableAddOnAsyncHelper(const DisableAddOnRequest& request, const DisableAddOnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisableAddOn(request), context);
+}
+
 DownloadDefaultKeyPairOutcome LightsailClient::DownloadDefaultKeyPair(const DownloadDefaultKeyPairRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1532,6 +1606,41 @@ void LightsailClient::DownloadDefaultKeyPairAsync(const DownloadDefaultKeyPairRe
 void LightsailClient::DownloadDefaultKeyPairAsyncHelper(const DownloadDefaultKeyPairRequest& request, const DownloadDefaultKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DownloadDefaultKeyPair(request), context);
+}
+
+EnableAddOnOutcome LightsailClient::EnableAddOn(const EnableAddOnRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return EnableAddOnOutcome(EnableAddOnResult(outcome.GetResult()));
+  }
+  else
+  {
+    return EnableAddOnOutcome(outcome.GetError());
+  }
+}
+
+EnableAddOnOutcomeCallable LightsailClient::EnableAddOnCallable(const EnableAddOnRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< EnableAddOnOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableAddOn(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::EnableAddOnAsync(const EnableAddOnRequest& request, const EnableAddOnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->EnableAddOnAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::EnableAddOnAsyncHelper(const EnableAddOnRequest& request, const EnableAddOnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, EnableAddOn(request), context);
 }
 
 ExportSnapshotOutcome LightsailClient::ExportSnapshot(const ExportSnapshotRequest& request) const
@@ -1602,6 +1711,41 @@ void LightsailClient::GetActiveNamesAsync(const GetActiveNamesRequest& request, 
 void LightsailClient::GetActiveNamesAsyncHelper(const GetActiveNamesRequest& request, const GetActiveNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetActiveNames(request), context);
+}
+
+GetAutoSnapshotsOutcome LightsailClient::GetAutoSnapshots(const GetAutoSnapshotsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetAutoSnapshotsOutcome(GetAutoSnapshotsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetAutoSnapshotsOutcome(outcome.GetError());
+  }
+}
+
+GetAutoSnapshotsOutcomeCallable LightsailClient::GetAutoSnapshotsCallable(const GetAutoSnapshotsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAutoSnapshotsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAutoSnapshots(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetAutoSnapshotsAsync(const GetAutoSnapshotsRequest& request, const GetAutoSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAutoSnapshotsAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetAutoSnapshotsAsyncHelper(const GetAutoSnapshotsRequest& request, const GetAutoSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAutoSnapshots(request), context);
 }
 
 GetBlueprintsOutcome LightsailClient::GetBlueprints(const GetBlueprintsRequest& request) const

@@ -527,7 +527,7 @@ namespace Model
      * With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS)
      * documentation.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code>
-     * </p> </li> <li> <p>Specified in Universal Coordinated Time (UTC).</p> </li> <li>
+     * </p> </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
      * <p>Must not conflict with the preferred maintenance window.</p> </li> <li>
      * <p>Must be at least 30 minutes.</p> </li> </ul>
      */
@@ -543,7 +543,7 @@ namespace Model
      * With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS)
      * documentation.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code>
-     * </p> </li> <li> <p>Specified in Universal Coordinated Time (UTC).</p> </li> <li>
+     * </p> </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
      * <p>Must not conflict with the preferred maintenance window.</p> </li> <li>
      * <p>Must be at least 30 minutes.</p> </li> </ul>
      */
@@ -559,7 +559,7 @@ namespace Model
      * With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS)
      * documentation.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code>
-     * </p> </li> <li> <p>Specified in Universal Coordinated Time (UTC).</p> </li> <li>
+     * </p> </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
      * <p>Must not conflict with the preferred maintenance window.</p> </li> <li>
      * <p>Must be at least 30 minutes.</p> </li> </ul>
      */
@@ -575,7 +575,7 @@ namespace Model
      * With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS)
      * documentation.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code>
-     * </p> </li> <li> <p>Specified in Universal Coordinated Time (UTC).</p> </li> <li>
+     * </p> </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
      * <p>Must not conflict with the preferred maintenance window.</p> </li> <li>
      * <p>Must be at least 30 minutes.</p> </li> </ul>
      */
@@ -591,7 +591,7 @@ namespace Model
      * With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS)
      * documentation.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code>
-     * </p> </li> <li> <p>Specified in Universal Coordinated Time (UTC).</p> </li> <li>
+     * </p> </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
      * <p>Must not conflict with the preferred maintenance window.</p> </li> <li>
      * <p>Must be at least 30 minutes.</p> </li> </ul>
      */
@@ -607,7 +607,7 @@ namespace Model
      * With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS)
      * documentation.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code>
-     * </p> </li> <li> <p>Specified in Universal Coordinated Time (UTC).</p> </li> <li>
+     * </p> </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
      * <p>Must not conflict with the preferred maintenance window.</p> </li> <li>
      * <p>Must be at least 30 minutes.</p> </li> </ul>
      */
@@ -623,7 +623,7 @@ namespace Model
      * With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS)
      * documentation.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code>
-     * </p> </li> <li> <p>Specified in Universal Coordinated Time (UTC).</p> </li> <li>
+     * </p> </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
      * <p>Must not conflict with the preferred maintenance window.</p> </li> <li>
      * <p>Must be at least 30 minutes.</p> </li> </ul>
      */
@@ -639,7 +639,7 @@ namespace Model
      * With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS)
      * documentation.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code>
-     * </p> </li> <li> <p>Specified in Universal Coordinated Time (UTC).</p> </li> <li>
+     * </p> </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
      * <p>Must not conflict with the preferred maintenance window.</p> </li> <li>
      * <p>Must be at least 30 minutes.</p> </li> </ul>
      */
@@ -653,7 +653,7 @@ namespace Model
      * week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li> <li> <p>Valid days: Mon,
      * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be at least 30 minutes.</p>
-     * </li> <li> <p>Specified in Universal Coordinated Time (UTC).</p> </li> <li>
+     * </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
      * <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li> </ul>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
@@ -665,7 +665,7 @@ namespace Model
      * week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li> <li> <p>Valid days: Mon,
      * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be at least 30 minutes.</p>
-     * </li> <li> <p>Specified in Universal Coordinated Time (UTC).</p> </li> <li>
+     * </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
      * <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li> </ul>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
@@ -677,7 +677,7 @@ namespace Model
      * week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li> <li> <p>Valid days: Mon,
      * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be at least 30 minutes.</p>
-     * </li> <li> <p>Specified in Universal Coordinated Time (UTC).</p> </li> <li>
+     * </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
      * <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li> </ul>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
@@ -689,7 +689,7 @@ namespace Model
      * week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li> <li> <p>Valid days: Mon,
      * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be at least 30 minutes.</p>
-     * </li> <li> <p>Specified in Universal Coordinated Time (UTC).</p> </li> <li>
+     * </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
      * <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li> </ul>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
@@ -701,7 +701,7 @@ namespace Model
      * week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li> <li> <p>Valid days: Mon,
      * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be at least 30 minutes.</p>
-     * </li> <li> <p>Specified in Universal Coordinated Time (UTC).</p> </li> <li>
+     * </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
      * <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li> </ul>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
@@ -713,7 +713,7 @@ namespace Model
      * week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li> <li> <p>Valid days: Mon,
      * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be at least 30 minutes.</p>
-     * </li> <li> <p>Specified in Universal Coordinated Time (UTC).</p> </li> <li>
+     * </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
      * <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li> </ul>
      */
     inline CreateRelationalDatabaseRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
@@ -725,7 +725,7 @@ namespace Model
      * week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li> <li> <p>Valid days: Mon,
      * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be at least 30 minutes.</p>
-     * </li> <li> <p>Specified in Universal Coordinated Time (UTC).</p> </li> <li>
+     * </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
      * <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li> </ul>
      */
     inline CreateRelationalDatabaseRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
@@ -737,7 +737,7 @@ namespace Model
      * week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li> <li> <p>Valid days: Mon,
      * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be at least 30 minutes.</p>
-     * </li> <li> <p>Specified in Universal Coordinated Time (UTC).</p> </li> <li>
+     * </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
      * <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li> </ul>
      */
     inline CreateRelationalDatabaseRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}

@@ -23,7 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteDiskRequest::DeleteDiskRequest() : 
-    m_diskNameHasBeenSet(false)
+    m_diskNameHasBeenSet(false),
+    m_forceDeleteAddOns(false),
+    m_forceDeleteAddOnsHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,12 @@ Aws::String DeleteDiskRequest::SerializePayload() const
   if(m_diskNameHasBeenSet)
   {
    payload.WithString("diskName", m_diskName);
+
+  }
+
+  if(m_forceDeleteAddOnsHasBeenSet)
+  {
+   payload.WithBool("forceDeleteAddOns", m_forceDeleteAddOns);
 
   }
 

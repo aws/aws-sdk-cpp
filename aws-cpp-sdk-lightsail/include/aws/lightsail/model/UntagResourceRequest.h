@@ -87,6 +87,55 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the resource from which you want to remove
+     * a tag.</p>
+     */
+    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource from which you want to remove
+     * a tag.</p>
+     */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource from which you want to remove
+     * a tag.</p>
+     */
+    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource from which you want to remove
+     * a tag.</p>
+     */
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource from which you want to remove
+     * a tag.</p>
+     */
+    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource from which you want to remove
+     * a tag.</p>
+     */
+    inline UntagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource from which you want to remove
+     * a tag.</p>
+     */
+    inline UntagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource from which you want to remove
+     * a tag.</p>
+     */
+    inline UntagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
+
+    /**
      * <p>The tag keys to delete from the specified resource.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
@@ -135,6 +184,9 @@ namespace Model
 
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+
+    Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet;
 
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;

@@ -75,6 +75,8 @@ namespace Aws
         static const int StartRelationalDatabase_HASH = HashingUtils::HashString("StartRelationalDatabase");
         static const int RebootRelationalDatabase_HASH = HashingUtils::HashString("RebootRelationalDatabase");
         static const int StopRelationalDatabase_HASH = HashingUtils::HashString("StopRelationalDatabase");
+        static const int EnableAddOn_HASH = HashingUtils::HashString("EnableAddOn");
+        static const int DisableAddOn_HASH = HashingUtils::HashString("DisableAddOn");
 
 
         OperationType GetOperationTypeForName(const Aws::String& name)
@@ -260,6 +262,14 @@ namespace Aws
           {
             return OperationType::StopRelationalDatabase;
           }
+          else if (hashCode == EnableAddOn_HASH)
+          {
+            return OperationType::EnableAddOn;
+          }
+          else if (hashCode == DisableAddOn_HASH)
+          {
+            return OperationType::DisableAddOn;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -364,6 +374,10 @@ namespace Aws
             return "RebootRelationalDatabase";
           case OperationType::StopRelationalDatabase:
             return "StopRelationalDatabase";
+          case OperationType::EnableAddOn:
+            return "EnableAddOn";
+          case OperationType::DisableAddOn:
+            return "DisableAddOn";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -41,8 +41,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the snapshot of the virtual private server, or
-   * <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an instance snapshot.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstanceSnapshot">AWS
    * API Reference</a></p>
    */
@@ -692,6 +691,31 @@ namespace Model
 
 
     /**
+     * <p>A Boolean value indicating whether the snapshot was created from an automatic
+     * snapshot.</p>
+     */
+    inline bool GetIsFromAutoSnapshot() const{ return m_isFromAutoSnapshot; }
+
+    /**
+     * <p>A Boolean value indicating whether the snapshot was created from an automatic
+     * snapshot.</p>
+     */
+    inline bool IsFromAutoSnapshotHasBeenSet() const { return m_isFromAutoSnapshotHasBeenSet; }
+
+    /**
+     * <p>A Boolean value indicating whether the snapshot was created from an automatic
+     * snapshot.</p>
+     */
+    inline void SetIsFromAutoSnapshot(bool value) { m_isFromAutoSnapshotHasBeenSet = true; m_isFromAutoSnapshot = value; }
+
+    /**
+     * <p>A Boolean value indicating whether the snapshot was created from an automatic
+     * snapshot.</p>
+     */
+    inline InstanceSnapshot& WithIsFromAutoSnapshot(bool value) { SetIsFromAutoSnapshot(value); return *this;}
+
+
+    /**
      * <p>The size in GB of the SSD.</p>
      */
     inline int GetSizeInGb() const{ return m_sizeInGb; }
@@ -754,6 +778,9 @@ namespace Model
 
     Aws::String m_fromBundleId;
     bool m_fromBundleIdHasBeenSet;
+
+    bool m_isFromAutoSnapshot;
+    bool m_isFromAutoSnapshotHasBeenSet;
 
     int m_sizeInGb;
     bool m_sizeInGbHasBeenSet;

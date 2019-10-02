@@ -638,6 +638,31 @@ namespace Model
      */
     inline DiskSnapshot& WithFromInstanceArn(const char* value) { SetFromInstanceArn(value); return *this;}
 
+
+    /**
+     * <p>A Boolean value indicating whether the snapshot was created from an automatic
+     * snapshot.</p>
+     */
+    inline bool GetIsFromAutoSnapshot() const{ return m_isFromAutoSnapshot; }
+
+    /**
+     * <p>A Boolean value indicating whether the snapshot was created from an automatic
+     * snapshot.</p>
+     */
+    inline bool IsFromAutoSnapshotHasBeenSet() const { return m_isFromAutoSnapshotHasBeenSet; }
+
+    /**
+     * <p>A Boolean value indicating whether the snapshot was created from an automatic
+     * snapshot.</p>
+     */
+    inline void SetIsFromAutoSnapshot(bool value) { m_isFromAutoSnapshotHasBeenSet = true; m_isFromAutoSnapshot = value; }
+
+    /**
+     * <p>A Boolean value indicating whether the snapshot was created from an automatic
+     * snapshot.</p>
+     */
+    inline DiskSnapshot& WithIsFromAutoSnapshot(bool value) { SetIsFromAutoSnapshot(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -681,6 +706,9 @@ namespace Model
 
     Aws::String m_fromInstanceArn;
     bool m_fromInstanceArnHasBeenSet;
+
+    bool m_isFromAutoSnapshot;
+    bool m_isFromAutoSnapshotHasBeenSet;
   };
 
 } // namespace Model

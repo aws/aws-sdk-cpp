@@ -84,10 +84,38 @@ namespace Model
      */
     inline DeleteInstanceRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 
+
+    /**
+     * <p>A Boolean value to indicate whether to delete the enabled add-ons for the
+     * disk.</p>
+     */
+    inline bool GetForceDeleteAddOns() const{ return m_forceDeleteAddOns; }
+
+    /**
+     * <p>A Boolean value to indicate whether to delete the enabled add-ons for the
+     * disk.</p>
+     */
+    inline bool ForceDeleteAddOnsHasBeenSet() const { return m_forceDeleteAddOnsHasBeenSet; }
+
+    /**
+     * <p>A Boolean value to indicate whether to delete the enabled add-ons for the
+     * disk.</p>
+     */
+    inline void SetForceDeleteAddOns(bool value) { m_forceDeleteAddOnsHasBeenSet = true; m_forceDeleteAddOns = value; }
+
+    /**
+     * <p>A Boolean value to indicate whether to delete the enabled add-ons for the
+     * disk.</p>
+     */
+    inline DeleteInstanceRequest& WithForceDeleteAddOns(bool value) { SetForceDeleteAddOns(value); return *this;}
+
   private:
 
     Aws::String m_instanceName;
     bool m_instanceNameHasBeenSet;
+
+    bool m_forceDeleteAddOns;
+    bool m_forceDeleteAddOnsHasBeenSet;
   };
 
 } // namespace Model

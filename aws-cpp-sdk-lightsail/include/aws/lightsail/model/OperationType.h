@@ -70,7 +70,9 @@ namespace Model
     UpdateRelationalDatabaseParameters,
     StartRelationalDatabase,
     RebootRelationalDatabase,
-    StopRelationalDatabase
+    StopRelationalDatabase,
+    EnableAddOn,
+    DisableAddOn
   };
 
 namespace OperationTypeMapper

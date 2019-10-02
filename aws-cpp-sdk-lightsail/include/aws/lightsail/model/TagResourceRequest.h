@@ -88,6 +88,55 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the resource to which you want to add a
+     * tag.</p>
+     */
+    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource to which you want to add a
+     * tag.</p>
+     */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource to which you want to add a
+     * tag.</p>
+     */
+    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource to which you want to add a
+     * tag.</p>
+     */
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource to which you want to add a
+     * tag.</p>
+     */
+    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource to which you want to add a
+     * tag.</p>
+     */
+    inline TagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource to which you want to add a
+     * tag.</p>
+     */
+    inline TagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource to which you want to add a
+     * tag.</p>
+     */
+    inline TagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
+
+    /**
      * <p>The tag key and optional value.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -131,6 +180,9 @@ namespace Model
 
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+
+    Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

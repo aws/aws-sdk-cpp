@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/model/DiskState.h>
 #include <aws/lightsail/model/Tag.h>
+#include <aws/lightsail/model/AddOn.h>
 #include <utility>
 
 namespace Aws
@@ -40,7 +41,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a system disk or an block storage disk.</p><p><h3>See Also:</h3>  
+   * <p>Describes a system disk or a block storage disk.</p><p><h3>See Also:</h3>  
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Disk">AWS
    * API Reference</a></p>
    */
@@ -351,6 +352,47 @@ namespace Model
 
 
     /**
+     * <p>An array of objects representing the add-ons enabled on the disk.</p>
+     */
+    inline const Aws::Vector<AddOn>& GetAddOns() const{ return m_addOns; }
+
+    /**
+     * <p>An array of objects representing the add-ons enabled on the disk.</p>
+     */
+    inline bool AddOnsHasBeenSet() const { return m_addOnsHasBeenSet; }
+
+    /**
+     * <p>An array of objects representing the add-ons enabled on the disk.</p>
+     */
+    inline void SetAddOns(const Aws::Vector<AddOn>& value) { m_addOnsHasBeenSet = true; m_addOns = value; }
+
+    /**
+     * <p>An array of objects representing the add-ons enabled on the disk.</p>
+     */
+    inline void SetAddOns(Aws::Vector<AddOn>&& value) { m_addOnsHasBeenSet = true; m_addOns = std::move(value); }
+
+    /**
+     * <p>An array of objects representing the add-ons enabled on the disk.</p>
+     */
+    inline Disk& WithAddOns(const Aws::Vector<AddOn>& value) { SetAddOns(value); return *this;}
+
+    /**
+     * <p>An array of objects representing the add-ons enabled on the disk.</p>
+     */
+    inline Disk& WithAddOns(Aws::Vector<AddOn>&& value) { SetAddOns(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of objects representing the add-ons enabled on the disk.</p>
+     */
+    inline Disk& AddAddOns(const AddOn& value) { m_addOnsHasBeenSet = true; m_addOns.push_back(value); return *this; }
+
+    /**
+     * <p>An array of objects representing the add-ons enabled on the disk.</p>
+     */
+    inline Disk& AddAddOns(AddOn&& value) { m_addOnsHasBeenSet = true; m_addOns.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The size of the disk in GB.</p>
      */
     inline int GetSizeInGb() const{ return m_sizeInGb; }
@@ -572,6 +614,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Vector<AddOn> m_addOns;
+    bool m_addOnsHasBeenSet;
 
     int m_sizeInGb;
     bool m_sizeInGbHasBeenSet;

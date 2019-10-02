@@ -144,7 +144,7 @@ namespace Model
 
     /**
      * <p>The start of the time interval from which to get metric data.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the start time.</p> </li> </ul>
@@ -153,7 +153,7 @@ namespace Model
 
     /**
      * <p>The start of the time interval from which to get metric data.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the start time.</p> </li> </ul>
@@ -162,7 +162,7 @@ namespace Model
 
     /**
      * <p>The start of the time interval from which to get metric data.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the start time.</p> </li> </ul>
@@ -171,7 +171,7 @@ namespace Model
 
     /**
      * <p>The start of the time interval from which to get metric data.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the start time.</p> </li> </ul>
@@ -180,7 +180,7 @@ namespace Model
 
     /**
      * <p>The start of the time interval from which to get metric data.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the start time.</p> </li> </ul>
@@ -189,7 +189,7 @@ namespace Model
 
     /**
      * <p>The start of the time interval from which to get metric data.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the start time.</p> </li> </ul>
@@ -199,7 +199,7 @@ namespace Model
 
     /**
      * <p>The end of the time interval from which to get metric data.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the end time.</p> </li> </ul>
@@ -208,7 +208,7 @@ namespace Model
 
     /**
      * <p>The end of the time interval from which to get metric data.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the end time.</p> </li> </ul>
@@ -217,7 +217,7 @@ namespace Model
 
     /**
      * <p>The end of the time interval from which to get metric data.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the end time.</p> </li> </ul>
@@ -226,7 +226,7 @@ namespace Model
 
     /**
      * <p>The end of the time interval from which to get metric data.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the end time.</p> </li> </ul>
@@ -235,7 +235,7 @@ namespace Model
 
     /**
      * <p>The end of the time interval from which to get metric data.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the end time.</p> </li> </ul>
@@ -244,7 +244,7 @@ namespace Model
 
     /**
      * <p>The end of the time interval from which to get metric data.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the end time.</p> </li> </ul>

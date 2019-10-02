@@ -37,6 +37,7 @@ Disk::Disk() :
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_addOnsHasBeenSet(false),
     m_sizeInGb(0),
     m_sizeInGbHasBeenSet(false),
     m_isSystemDisk(false),
@@ -61,6 +62,7 @@ Disk::Disk(JsonView jsonValue) :
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_addOnsHasBeenSet(false),
     m_sizeInGb(0),
     m_sizeInGbHasBeenSet(false),
     m_isSystemDisk(false),
@@ -129,6 +131,16 @@ Disk& Disk::operator =(JsonView jsonValue)
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("addOns"))
+  {
+    Array<JsonView> addOnsJsonList = jsonValue.GetArray("addOns");
+    for(unsigned addOnsIndex = 0; addOnsIndex < addOnsJsonList.GetLength(); ++addOnsIndex)
+    {
+      m_addOns.push_back(addOnsJsonList[addOnsIndex].AsObject());
+    }
+    m_addOnsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sizeInGb"))
@@ -229,6 +241,17 @@ JsonValue Disk::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_addOnsHasBeenSet)
+  {
+   Array<JsonValue> addOnsJsonList(m_addOns.size());
+   for(unsigned addOnsIndex = 0; addOnsIndex < addOnsJsonList.GetLength(); ++addOnsIndex)
+   {
+     addOnsJsonList[addOnsIndex].AsObject(m_addOns[addOnsIndex].Jsonize());
+   }
+   payload.WithArray("addOns", std::move(addOnsJsonList));
 
   }
 

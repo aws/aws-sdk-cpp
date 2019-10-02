@@ -44,37 +44,37 @@ namespace Model
 
 
     /**
-     * <p>An object describing the API operations.</p>
+     * <p>An array of objects that describe the result of your request.</p>
      */
     inline const Aws::Vector<Operation>& GetOperations() const{ return m_operations; }
 
     /**
-     * <p>An object describing the API operations.</p>
+     * <p>An array of objects that describe the result of your request.</p>
      */
     inline void SetOperations(const Aws::Vector<Operation>& value) { m_operations = value; }
 
     /**
-     * <p>An object describing the API operations.</p>
+     * <p>An array of objects that describe the result of your request.</p>
      */
     inline void SetOperations(Aws::Vector<Operation>&& value) { m_operations = std::move(value); }
 
     /**
-     * <p>An object describing the API operations.</p>
+     * <p>An array of objects that describe the result of your request.</p>
      */
     inline DeleteDiskResult& WithOperations(const Aws::Vector<Operation>& value) { SetOperations(value); return *this;}
 
     /**
-     * <p>An object describing the API operations.</p>
+     * <p>An array of objects that describe the result of your request.</p>
      */
     inline DeleteDiskResult& WithOperations(Aws::Vector<Operation>&& value) { SetOperations(std::move(value)); return *this;}
 
     /**
-     * <p>An object describing the API operations.</p>
+     * <p>An array of objects that describe the result of your request.</p>
      */
     inline DeleteDiskResult& AddOperations(const Operation& value) { m_operations.push_back(value); return *this; }
 
     /**
-     * <p>An object describing the API operations.</p>
+     * <p>An array of objects that describe the result of your request.</p>
      */
     inline DeleteDiskResult& AddOperations(Operation&& value) { m_operations.push_back(std::move(value)); return *this; }
 

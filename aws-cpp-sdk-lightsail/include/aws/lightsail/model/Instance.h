@@ -24,6 +24,7 @@
 #include <aws/lightsail/model/InstanceNetworking.h>
 #include <aws/lightsail/model/InstanceState.h>
 #include <aws/lightsail/model/Tag.h>
+#include <aws/lightsail/model/AddOn.h>
 #include <utility>
 
 namespace Aws
@@ -499,6 +500,47 @@ namespace Model
 
 
     /**
+     * <p>An array of objects representing the add-ons enabled on the instance.</p>
+     */
+    inline const Aws::Vector<AddOn>& GetAddOns() const{ return m_addOns; }
+
+    /**
+     * <p>An array of objects representing the add-ons enabled on the instance.</p>
+     */
+    inline bool AddOnsHasBeenSet() const { return m_addOnsHasBeenSet; }
+
+    /**
+     * <p>An array of objects representing the add-ons enabled on the instance.</p>
+     */
+    inline void SetAddOns(const Aws::Vector<AddOn>& value) { m_addOnsHasBeenSet = true; m_addOns = value; }
+
+    /**
+     * <p>An array of objects representing the add-ons enabled on the instance.</p>
+     */
+    inline void SetAddOns(Aws::Vector<AddOn>&& value) { m_addOnsHasBeenSet = true; m_addOns = std::move(value); }
+
+    /**
+     * <p>An array of objects representing the add-ons enabled on the instance.</p>
+     */
+    inline Instance& WithAddOns(const Aws::Vector<AddOn>& value) { SetAddOns(value); return *this;}
+
+    /**
+     * <p>An array of objects representing the add-ons enabled on the instance.</p>
+     */
+    inline Instance& WithAddOns(Aws::Vector<AddOn>&& value) { SetAddOns(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of objects representing the add-ons enabled on the instance.</p>
+     */
+    inline Instance& AddAddOns(const AddOn& value) { m_addOnsHasBeenSet = true; m_addOns.push_back(value); return *this; }
+
+    /**
+     * <p>An array of objects representing the add-ons enabled on the instance.</p>
+     */
+    inline Instance& AddAddOns(AddOn&& value) { m_addOnsHasBeenSet = true; m_addOns.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>A Boolean value indicating whether this instance has a static IP assigned to
      * it.</p>
      */
@@ -879,6 +921,9 @@ namespace Model
 
     Aws::String m_bundleId;
     bool m_bundleIdHasBeenSet;
+
+    Aws::Vector<AddOn> m_addOns;
+    bool m_addOnsHasBeenSet;
 
     bool m_isStaticIp;
     bool m_isStaticIpHasBeenSet;

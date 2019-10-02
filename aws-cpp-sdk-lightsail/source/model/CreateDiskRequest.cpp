@@ -27,7 +27,8 @@ CreateDiskRequest::CreateDiskRequest() :
     m_availabilityZoneHasBeenSet(false),
     m_sizeInGb(0),
     m_sizeInGbHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_addOnsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,17 @@ Aws::String CreateDiskRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_addOnsHasBeenSet)
+  {
+   Array<JsonValue> addOnsJsonList(m_addOns.size());
+   for(unsigned addOnsIndex = 0; addOnsIndex < addOnsJsonList.GetLength(); ++addOnsIndex)
+   {
+     addOnsJsonList[addOnsIndex].AsObject(m_addOns[addOnsIndex].Jsonize());
+   }
+   payload.WithArray("addOns", std::move(addOnsJsonList));
 
   }
 

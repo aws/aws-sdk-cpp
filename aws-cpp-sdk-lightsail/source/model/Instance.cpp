@@ -40,6 +40,7 @@ Instance::Instance() :
     m_blueprintIdHasBeenSet(false),
     m_blueprintNameHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
+    m_addOnsHasBeenSet(false),
     m_isStaticIp(false),
     m_isStaticIpHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
@@ -65,6 +66,7 @@ Instance::Instance(JsonView jsonValue) :
     m_blueprintIdHasBeenSet(false),
     m_blueprintNameHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
+    m_addOnsHasBeenSet(false),
     m_isStaticIp(false),
     m_isStaticIpHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
@@ -152,6 +154,16 @@ Instance& Instance::operator =(JsonView jsonValue)
     m_bundleId = jsonValue.GetString("bundleId");
 
     m_bundleIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("addOns"))
+  {
+    Array<JsonView> addOnsJsonList = jsonValue.GetArray("addOns");
+    for(unsigned addOnsIndex = 0; addOnsIndex < addOnsJsonList.GetLength(); ++addOnsIndex)
+    {
+      m_addOns.push_back(addOnsJsonList[addOnsIndex].AsObject());
+    }
+    m_addOnsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("isStaticIp"))
@@ -284,6 +296,17 @@ JsonValue Instance::Jsonize() const
   if(m_bundleIdHasBeenSet)
   {
    payload.WithString("bundleId", m_bundleId);
+
+  }
+
+  if(m_addOnsHasBeenSet)
+  {
+   Array<JsonValue> addOnsJsonList(m_addOns.size());
+   for(unsigned addOnsIndex = 0; addOnsIndex < addOnsJsonList.GetLength(); ++addOnsIndex)
+   {
+     addOnsJsonList[addOnsIndex].AsObject(m_addOns[addOnsIndex].Jsonize());
+   }
+   payload.WithArray("addOns", std::move(addOnsJsonList));
 
   }
 

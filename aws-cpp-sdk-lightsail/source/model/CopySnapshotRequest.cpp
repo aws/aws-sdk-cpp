@@ -24,6 +24,10 @@ using namespace Aws::Utils;
 
 CopySnapshotRequest::CopySnapshotRequest() : 
     m_sourceSnapshotNameHasBeenSet(false),
+    m_sourceResourceNameHasBeenSet(false),
+    m_restoreDateHasBeenSet(false),
+    m_useLatestRestorableAutoSnapshot(false),
+    m_useLatestRestorableAutoSnapshotHasBeenSet(false),
     m_targetSnapshotNameHasBeenSet(false),
     m_sourceRegion(RegionName::NOT_SET),
     m_sourceRegionHasBeenSet(false)
@@ -37,6 +41,24 @@ Aws::String CopySnapshotRequest::SerializePayload() const
   if(m_sourceSnapshotNameHasBeenSet)
   {
    payload.WithString("sourceSnapshotName", m_sourceSnapshotName);
+
+  }
+
+  if(m_sourceResourceNameHasBeenSet)
+  {
+   payload.WithString("sourceResourceName", m_sourceResourceName);
+
+  }
+
+  if(m_restoreDateHasBeenSet)
+  {
+   payload.WithString("restoreDate", m_restoreDate);
+
+  }
+
+  if(m_useLatestRestorableAutoSnapshotHasBeenSet)
+  {
+   payload.WithBool("useLatestRestorableAutoSnapshot", m_useLatestRestorableAutoSnapshot);
 
   }
 

@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 TagResourceRequest::TagResourceRequest() : 
     m_resourceNameHasBeenSet(false),
+    m_resourceArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -35,6 +36,12 @@ Aws::String TagResourceRequest::SerializePayload() const
   if(m_resourceNameHasBeenSet)
   {
    payload.WithString("resourceName", m_resourceName);
+
+  }
+
+  if(m_resourceArnHasBeenSet)
+  {
+   payload.WithString("resourceArn", m_resourceArn);
 
   }
 

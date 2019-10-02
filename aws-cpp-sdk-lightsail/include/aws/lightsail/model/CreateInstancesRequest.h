@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/model/Tag.h>
+#include <aws/lightsail/model/AddOnRequest.h>
 #include <utility>
 
 namespace Aws
@@ -193,65 +194,97 @@ namespace Model
 
     /**
      * <p>The ID for a virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the get
-     * blueprints operation to return a list of available images (or
-     * <i>blueprints</i>).</p>
+     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
+     * blueprints</code> operation to return a list of available images (or
+     * <i>blueprints</i>).</p> <note> <p>Use active blueprints when creating new
+     * instances. Inactive blueprints are listed to support customers with existing
+     * instances and are not necessarily available to create new instances. Blueprints
+     * are marked inactive when they become outdated due to operating system updates or
+     * new application releases.</p> </note>
      */
     inline const Aws::String& GetBlueprintId() const{ return m_blueprintId; }
 
     /**
      * <p>The ID for a virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the get
-     * blueprints operation to return a list of available images (or
-     * <i>blueprints</i>).</p>
+     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
+     * blueprints</code> operation to return a list of available images (or
+     * <i>blueprints</i>).</p> <note> <p>Use active blueprints when creating new
+     * instances. Inactive blueprints are listed to support customers with existing
+     * instances and are not necessarily available to create new instances. Blueprints
+     * are marked inactive when they become outdated due to operating system updates or
+     * new application releases.</p> </note>
      */
     inline bool BlueprintIdHasBeenSet() const { return m_blueprintIdHasBeenSet; }
 
     /**
      * <p>The ID for a virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the get
-     * blueprints operation to return a list of available images (or
-     * <i>blueprints</i>).</p>
+     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
+     * blueprints</code> operation to return a list of available images (or
+     * <i>blueprints</i>).</p> <note> <p>Use active blueprints when creating new
+     * instances. Inactive blueprints are listed to support customers with existing
+     * instances and are not necessarily available to create new instances. Blueprints
+     * are marked inactive when they become outdated due to operating system updates or
+     * new application releases.</p> </note>
      */
     inline void SetBlueprintId(const Aws::String& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = value; }
 
     /**
      * <p>The ID for a virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the get
-     * blueprints operation to return a list of available images (or
-     * <i>blueprints</i>).</p>
+     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
+     * blueprints</code> operation to return a list of available images (or
+     * <i>blueprints</i>).</p> <note> <p>Use active blueprints when creating new
+     * instances. Inactive blueprints are listed to support customers with existing
+     * instances and are not necessarily available to create new instances. Blueprints
+     * are marked inactive when they become outdated due to operating system updates or
+     * new application releases.</p> </note>
      */
     inline void SetBlueprintId(Aws::String&& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = std::move(value); }
 
     /**
      * <p>The ID for a virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the get
-     * blueprints operation to return a list of available images (or
-     * <i>blueprints</i>).</p>
+     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
+     * blueprints</code> operation to return a list of available images (or
+     * <i>blueprints</i>).</p> <note> <p>Use active blueprints when creating new
+     * instances. Inactive blueprints are listed to support customers with existing
+     * instances and are not necessarily available to create new instances. Blueprints
+     * are marked inactive when they become outdated due to operating system updates or
+     * new application releases.</p> </note>
      */
     inline void SetBlueprintId(const char* value) { m_blueprintIdHasBeenSet = true; m_blueprintId.assign(value); }
 
     /**
      * <p>The ID for a virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the get
-     * blueprints operation to return a list of available images (or
-     * <i>blueprints</i>).</p>
+     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
+     * blueprints</code> operation to return a list of available images (or
+     * <i>blueprints</i>).</p> <note> <p>Use active blueprints when creating new
+     * instances. Inactive blueprints are listed to support customers with existing
+     * instances and are not necessarily available to create new instances. Blueprints
+     * are marked inactive when they become outdated due to operating system updates or
+     * new application releases.</p> </note>
      */
     inline CreateInstancesRequest& WithBlueprintId(const Aws::String& value) { SetBlueprintId(value); return *this;}
 
     /**
      * <p>The ID for a virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the get
-     * blueprints operation to return a list of available images (or
-     * <i>blueprints</i>).</p>
+     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
+     * blueprints</code> operation to return a list of available images (or
+     * <i>blueprints</i>).</p> <note> <p>Use active blueprints when creating new
+     * instances. Inactive blueprints are listed to support customers with existing
+     * instances and are not necessarily available to create new instances. Blueprints
+     * are marked inactive when they become outdated due to operating system updates or
+     * new application releases.</p> </note>
      */
     inline CreateInstancesRequest& WithBlueprintId(Aws::String&& value) { SetBlueprintId(std::move(value)); return *this;}
 
     /**
      * <p>The ID for a virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the get
-     * blueprints operation to return a list of available images (or
-     * <i>blueprints</i>).</p>
+     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
+     * blueprints</code> operation to return a list of available images (or
+     * <i>blueprints</i>).</p> <note> <p>Use active blueprints when creating new
+     * instances. Inactive blueprints are listed to support customers with existing
+     * instances and are not necessarily available to create new instances. Blueprints
+     * are marked inactive when they become outdated due to operating system updates or
+     * new application releases.</p> </note>
      */
     inline CreateInstancesRequest& WithBlueprintId(const char* value) { SetBlueprintId(value); return *this;}
 
@@ -499,6 +532,55 @@ namespace Model
      */
     inline CreateInstancesRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>An array of objects representing the add-ons to enable for the new
+     * instance.</p>
+     */
+    inline const Aws::Vector<AddOnRequest>& GetAddOns() const{ return m_addOns; }
+
+    /**
+     * <p>An array of objects representing the add-ons to enable for the new
+     * instance.</p>
+     */
+    inline bool AddOnsHasBeenSet() const { return m_addOnsHasBeenSet; }
+
+    /**
+     * <p>An array of objects representing the add-ons to enable for the new
+     * instance.</p>
+     */
+    inline void SetAddOns(const Aws::Vector<AddOnRequest>& value) { m_addOnsHasBeenSet = true; m_addOns = value; }
+
+    /**
+     * <p>An array of objects representing the add-ons to enable for the new
+     * instance.</p>
+     */
+    inline void SetAddOns(Aws::Vector<AddOnRequest>&& value) { m_addOnsHasBeenSet = true; m_addOns = std::move(value); }
+
+    /**
+     * <p>An array of objects representing the add-ons to enable for the new
+     * instance.</p>
+     */
+    inline CreateInstancesRequest& WithAddOns(const Aws::Vector<AddOnRequest>& value) { SetAddOns(value); return *this;}
+
+    /**
+     * <p>An array of objects representing the add-ons to enable for the new
+     * instance.</p>
+     */
+    inline CreateInstancesRequest& WithAddOns(Aws::Vector<AddOnRequest>&& value) { SetAddOns(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of objects representing the add-ons to enable for the new
+     * instance.</p>
+     */
+    inline CreateInstancesRequest& AddAddOns(const AddOnRequest& value) { m_addOnsHasBeenSet = true; m_addOns.push_back(value); return *this; }
+
+    /**
+     * <p>An array of objects representing the add-ons to enable for the new
+     * instance.</p>
+     */
+    inline CreateInstancesRequest& AddAddOns(AddOnRequest&& value) { m_addOnsHasBeenSet = true; m_addOns.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<Aws::String> m_instanceNames;
@@ -521,6 +603,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Vector<AddOnRequest> m_addOns;
+    bool m_addOnsHasBeenSet;
   };
 
 } // namespace Model

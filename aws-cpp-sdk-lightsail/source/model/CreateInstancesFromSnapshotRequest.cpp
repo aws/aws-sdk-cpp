@@ -30,7 +30,12 @@ CreateInstancesFromSnapshotRequest::CreateInstancesFromSnapshotRequest() :
     m_bundleIdHasBeenSet(false),
     m_userDataHasBeenSet(false),
     m_keyPairNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_addOnsHasBeenSet(false),
+    m_sourceInstanceNameHasBeenSet(false),
+    m_restoreDateHasBeenSet(false),
+    m_useLatestRestorableAutoSnapshot(false),
+    m_useLatestRestorableAutoSnapshotHasBeenSet(false)
 {
 }
 
@@ -103,6 +108,35 @@ Aws::String CreateInstancesFromSnapshotRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_addOnsHasBeenSet)
+  {
+   Array<JsonValue> addOnsJsonList(m_addOns.size());
+   for(unsigned addOnsIndex = 0; addOnsIndex < addOnsJsonList.GetLength(); ++addOnsIndex)
+   {
+     addOnsJsonList[addOnsIndex].AsObject(m_addOns[addOnsIndex].Jsonize());
+   }
+   payload.WithArray("addOns", std::move(addOnsJsonList));
+
+  }
+
+  if(m_sourceInstanceNameHasBeenSet)
+  {
+   payload.WithString("sourceInstanceName", m_sourceInstanceName);
+
+  }
+
+  if(m_restoreDateHasBeenSet)
+  {
+   payload.WithString("restoreDate", m_restoreDate);
+
+  }
+
+  if(m_useLatestRestorableAutoSnapshotHasBeenSet)
+  {
+   payload.WithBool("useLatestRestorableAutoSnapshot", m_useLatestRestorableAutoSnapshot);
 
   }
 

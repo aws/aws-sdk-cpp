@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 UntagResourceRequest::UntagResourceRequest() : 
     m_resourceNameHasBeenSet(false),
+    m_resourceArnHasBeenSet(false),
     m_tagKeysHasBeenSet(false)
 {
 }
@@ -35,6 +36,12 @@ Aws::String UntagResourceRequest::SerializePayload() const
   if(m_resourceNameHasBeenSet)
   {
    payload.WithString("resourceName", m_resourceName);
+
+  }
+
+  if(m_resourceArnHasBeenSet)
+  {
+   payload.WithString("resourceArn", m_resourceArn);
 
   }
 

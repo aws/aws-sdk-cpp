@@ -137,7 +137,7 @@ namespace Model
 
     /**
      * <p>The start of the time interval from which to get log events.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the start time.</p> </li> </ul>
@@ -146,7 +146,7 @@ namespace Model
 
     /**
      * <p>The start of the time interval from which to get log events.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the start time.</p> </li> </ul>
@@ -155,7 +155,7 @@ namespace Model
 
     /**
      * <p>The start of the time interval from which to get log events.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the start time.</p> </li> </ul>
@@ -164,7 +164,7 @@ namespace Model
 
     /**
      * <p>The start of the time interval from which to get log events.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the start time.</p> </li> </ul>
@@ -173,7 +173,7 @@ namespace Model
 
     /**
      * <p>The start of the time interval from which to get log events.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the start time.</p> </li> </ul>
@@ -182,7 +182,7 @@ namespace Model
 
     /**
      * <p>The start of the time interval from which to get log events.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the start time.</p> </li> </ul>
@@ -192,7 +192,7 @@ namespace Model
 
     /**
      * <p>The end of the time interval from which to get log events.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the end time.</p> </li> </ul>
@@ -201,7 +201,7 @@ namespace Model
 
     /**
      * <p>The end of the time interval from which to get log events.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the end time.</p> </li> </ul>
@@ -210,7 +210,7 @@ namespace Model
 
     /**
      * <p>The end of the time interval from which to get log events.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the end time.</p> </li> </ul>
@@ -219,7 +219,7 @@ namespace Model
 
     /**
      * <p>The end of the time interval from which to get log events.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the end time.</p> </li> </ul>
@@ -228,7 +228,7 @@ namespace Model
 
     /**
      * <p>The end of the time interval from which to get log events.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the end time.</p> </li> </ul>
@@ -237,7 +237,7 @@ namespace Model
 
     /**
      * <p>The end of the time interval from which to get log events.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Coordinated Universal Time
      * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
      * if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the end time.</p> </li> </ul>
@@ -249,7 +249,8 @@ namespace Model
      * <p>Parameter to specify if the log should start from head or tail. If
      * <code>true</code> is specified, the log event starts from the head of the log.
      * If <code>false</code> is specified, the log event starts from the tail of the
-     * log.</p> <p>Default: <code>false</code> </p>
+     * log.</p> <note> <p>For PostgreSQL, the default value of <code>false</code> is
+     * the only option available.</p> </note>
      */
     inline bool GetStartFromHead() const{ return m_startFromHead; }
 
@@ -257,7 +258,8 @@ namespace Model
      * <p>Parameter to specify if the log should start from head or tail. If
      * <code>true</code> is specified, the log event starts from the head of the log.
      * If <code>false</code> is specified, the log event starts from the tail of the
-     * log.</p> <p>Default: <code>false</code> </p>
+     * log.</p> <note> <p>For PostgreSQL, the default value of <code>false</code> is
+     * the only option available.</p> </note>
      */
     inline bool StartFromHeadHasBeenSet() const { return m_startFromHeadHasBeenSet; }
 
@@ -265,7 +267,8 @@ namespace Model
      * <p>Parameter to specify if the log should start from head or tail. If
      * <code>true</code> is specified, the log event starts from the head of the log.
      * If <code>false</code> is specified, the log event starts from the tail of the
-     * log.</p> <p>Default: <code>false</code> </p>
+     * log.</p> <note> <p>For PostgreSQL, the default value of <code>false</code> is
+     * the only option available.</p> </note>
      */
     inline void SetStartFromHead(bool value) { m_startFromHeadHasBeenSet = true; m_startFromHead = value; }
 
@@ -273,7 +276,8 @@ namespace Model
      * <p>Parameter to specify if the log should start from head or tail. If
      * <code>true</code> is specified, the log event starts from the head of the log.
      * If <code>false</code> is specified, the log event starts from the tail of the
-     * log.</p> <p>Default: <code>false</code> </p>
+     * log.</p> <note> <p>For PostgreSQL, the default value of <code>false</code> is
+     * the only option available.</p> </note>
      */
     inline GetRelationalDatabaseLogEventsRequest& WithStartFromHead(bool value) { SetStartFromHead(value); return *this;}
 

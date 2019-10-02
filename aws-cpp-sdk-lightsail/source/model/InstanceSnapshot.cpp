@@ -45,6 +45,8 @@ InstanceSnapshot::InstanceSnapshot() :
     m_fromInstanceArnHasBeenSet(false),
     m_fromBlueprintIdHasBeenSet(false),
     m_fromBundleIdHasBeenSet(false),
+    m_isFromAutoSnapshot(false),
+    m_isFromAutoSnapshotHasBeenSet(false),
     m_sizeInGb(0),
     m_sizeInGbHasBeenSet(false)
 {
@@ -67,6 +69,8 @@ InstanceSnapshot::InstanceSnapshot(JsonView jsonValue) :
     m_fromInstanceArnHasBeenSet(false),
     m_fromBlueprintIdHasBeenSet(false),
     m_fromBundleIdHasBeenSet(false),
+    m_isFromAutoSnapshot(false),
+    m_isFromAutoSnapshotHasBeenSet(false),
     m_sizeInGb(0),
     m_sizeInGbHasBeenSet(false)
 {
@@ -179,6 +183,13 @@ InstanceSnapshot& InstanceSnapshot::operator =(JsonView jsonValue)
     m_fromBundleIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("isFromAutoSnapshot"))
+  {
+    m_isFromAutoSnapshot = jsonValue.GetBool("isFromAutoSnapshot");
+
+    m_isFromAutoSnapshotHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("sizeInGb"))
   {
     m_sizeInGb = jsonValue.GetInteger("sizeInGb");
@@ -281,6 +292,12 @@ JsonValue InstanceSnapshot::Jsonize() const
   if(m_fromBundleIdHasBeenSet)
   {
    payload.WithString("fromBundleId", m_fromBundleId);
+
+  }
+
+  if(m_isFromAutoSnapshotHasBeenSet)
+  {
+   payload.WithBool("isFromAutoSnapshot", m_isFromAutoSnapshot);
 
   }
 
