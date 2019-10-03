@@ -34,7 +34,8 @@ CreateElasticsearchDomainRequest::CreateElasticsearchDomainRequest() :
     m_encryptionAtRestOptionsHasBeenSet(false),
     m_nodeToNodeEncryptionOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
-    m_logPublishingOptionsHasBeenSet(false)
+    m_logPublishingOptionsHasBeenSet(false),
+    m_domainEndpointOptionsHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,12 @@ Aws::String CreateElasticsearchDomainRequest::SerializePayload() const
      logPublishingOptionsJsonMap.WithObject(LogTypeMapper::GetNameForLogType(logPublishingOptionsItem.first), logPublishingOptionsItem.second.Jsonize());
    }
    payload.WithObject("LogPublishingOptions", std::move(logPublishingOptionsJsonMap));
+
+  }
+
+  if(m_domainEndpointOptionsHasBeenSet)
+  {
+   payload.WithObject("DomainEndpointOptions", m_domainEndpointOptions.Jsonize());
 
   }
 

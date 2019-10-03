@@ -14,32 +14,28 @@
 */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace EC2
+namespace ElasticsearchService
 {
 namespace Model
 {
-  enum class ReservedInstanceState
+  enum class TLSSecurityPolicy
   {
     NOT_SET,
-    payment_pending,
-    active,
-    payment_failed,
-    retired,
-    queued,
-    queued_deleted
+    Policy_Min_TLS_1_0_2019_07,
+    Policy_Min_TLS_1_2_2019_07
   };
 
-namespace ReservedInstanceStateMapper
+namespace TLSSecurityPolicyMapper
 {
-AWS_EC2_API ReservedInstanceState GetReservedInstanceStateForName(const Aws::String& name);
+AWS_ELASTICSEARCHSERVICE_API TLSSecurityPolicy GetTLSSecurityPolicyForName(const Aws::String& name);
 
-AWS_EC2_API Aws::String GetNameForReservedInstanceState(ReservedInstanceState value);
-} // namespace ReservedInstanceStateMapper
+AWS_ELASTICSEARCHSERVICE_API Aws::String GetNameForTLSSecurityPolicy(TLSSecurityPolicy value);
+} // namespace TLSSecurityPolicyMapper
 } // namespace Model
-} // namespace EC2
+} // namespace ElasticsearchService
 } // namespace Aws

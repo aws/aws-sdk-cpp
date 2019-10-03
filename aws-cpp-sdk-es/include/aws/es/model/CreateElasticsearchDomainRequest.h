@@ -25,6 +25,7 @@
 #include <aws/es/model/EncryptionAtRestOptions.h>
 #include <aws/es/model/NodeToNodeEncryptionOptions.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/es/model/DomainEndpointOptions.h>
 #include <aws/es/model/LogType.h>
 #include <aws/es/model/LogPublishingOption.h>
 #include <utility>
@@ -55,7 +56,7 @@ namespace Model
     /**
      * <p>The name of the Elasticsearch domain that you are creating. Domain names are
      * unique across the domains owned by an account within an AWS region. Domain names
-     * must start with a letter or number and can contain the following characters: a-z
+     * must start with a lowercase letter and can contain the following characters: a-z
      * (lowercase), 0-9, and - (hyphen).</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
@@ -63,7 +64,7 @@ namespace Model
     /**
      * <p>The name of the Elasticsearch domain that you are creating. Domain names are
      * unique across the domains owned by an account within an AWS region. Domain names
-     * must start with a letter or number and can contain the following characters: a-z
+     * must start with a lowercase letter and can contain the following characters: a-z
      * (lowercase), 0-9, and - (hyphen).</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
@@ -71,7 +72,7 @@ namespace Model
     /**
      * <p>The name of the Elasticsearch domain that you are creating. Domain names are
      * unique across the domains owned by an account within an AWS region. Domain names
-     * must start with a letter or number and can contain the following characters: a-z
+     * must start with a lowercase letter and can contain the following characters: a-z
      * (lowercase), 0-9, and - (hyphen).</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
@@ -79,7 +80,7 @@ namespace Model
     /**
      * <p>The name of the Elasticsearch domain that you are creating. Domain names are
      * unique across the domains owned by an account within an AWS region. Domain names
-     * must start with a letter or number and can contain the following characters: a-z
+     * must start with a lowercase letter and can contain the following characters: a-z
      * (lowercase), 0-9, and - (hyphen).</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
@@ -87,7 +88,7 @@ namespace Model
     /**
      * <p>The name of the Elasticsearch domain that you are creating. Domain names are
      * unique across the domains owned by an account within an AWS region. Domain names
-     * must start with a letter or number and can contain the following characters: a-z
+     * must start with a lowercase letter and can contain the following characters: a-z
      * (lowercase), 0-9, and - (hyphen).</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
@@ -95,7 +96,7 @@ namespace Model
     /**
      * <p>The name of the Elasticsearch domain that you are creating. Domain names are
      * unique across the domains owned by an account within an AWS region. Domain names
-     * must start with a letter or number and can contain the following characters: a-z
+     * must start with a lowercase letter and can contain the following characters: a-z
      * (lowercase), 0-9, and - (hyphen).</p>
      */
     inline CreateElasticsearchDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The name of the Elasticsearch domain that you are creating. Domain names are
      * unique across the domains owned by an account within an AWS region. Domain names
-     * must start with a letter or number and can contain the following characters: a-z
+     * must start with a lowercase letter and can contain the following characters: a-z
      * (lowercase), 0-9, and - (hyphen).</p>
      */
     inline CreateElasticsearchDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
@@ -111,7 +112,7 @@ namespace Model
     /**
      * <p>The name of the Elasticsearch domain that you are creating. Domain names are
      * unique across the domains owned by an account within an AWS region. Domain names
-     * must start with a letter or number and can contain the following characters: a-z
+     * must start with a lowercase letter and can contain the following characters: a-z
      * (lowercase), 0-9, and - (hyphen).</p>
      */
     inline CreateElasticsearchDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
@@ -686,6 +687,43 @@ namespace Model
      */
     inline CreateElasticsearchDomainRequest& AddLogPublishingOptions(LogType&& key, LogPublishingOption&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(std::move(key), std::move(value)); return *this; }
 
+
+    /**
+     * <p>Options to specify configuration that will be applied to the domain
+     * endpoint.</p>
+     */
+    inline const DomainEndpointOptions& GetDomainEndpointOptions() const{ return m_domainEndpointOptions; }
+
+    /**
+     * <p>Options to specify configuration that will be applied to the domain
+     * endpoint.</p>
+     */
+    inline bool DomainEndpointOptionsHasBeenSet() const { return m_domainEndpointOptionsHasBeenSet; }
+
+    /**
+     * <p>Options to specify configuration that will be applied to the domain
+     * endpoint.</p>
+     */
+    inline void SetDomainEndpointOptions(const DomainEndpointOptions& value) { m_domainEndpointOptionsHasBeenSet = true; m_domainEndpointOptions = value; }
+
+    /**
+     * <p>Options to specify configuration that will be applied to the domain
+     * endpoint.</p>
+     */
+    inline void SetDomainEndpointOptions(DomainEndpointOptions&& value) { m_domainEndpointOptionsHasBeenSet = true; m_domainEndpointOptions = std::move(value); }
+
+    /**
+     * <p>Options to specify configuration that will be applied to the domain
+     * endpoint.</p>
+     */
+    inline CreateElasticsearchDomainRequest& WithDomainEndpointOptions(const DomainEndpointOptions& value) { SetDomainEndpointOptions(value); return *this;}
+
+    /**
+     * <p>Options to specify configuration that will be applied to the domain
+     * endpoint.</p>
+     */
+    inline CreateElasticsearchDomainRequest& WithDomainEndpointOptions(DomainEndpointOptions&& value) { SetDomainEndpointOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -723,6 +761,9 @@ namespace Model
 
     Aws::Map<LogType, LogPublishingOption> m_logPublishingOptions;
     bool m_logPublishingOptionsHasBeenSet;
+
+    DomainEndpointOptions m_domainEndpointOptions;
+    bool m_domainEndpointOptionsHasBeenSet;
   };
 
 } // namespace Model

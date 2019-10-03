@@ -49,50 +49,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the remote access session about which you
-     * are requesting information.</p>
+     * <p>The Amazon Resource Name (ARN) of the project about which you are requesting
+     * information.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the remote access session about which you
-     * are requesting information.</p>
+     * <p>The Amazon Resource Name (ARN) of the project about which you are requesting
+     * information.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the remote access session about which you
-     * are requesting information.</p>
+     * <p>The Amazon Resource Name (ARN) of the project about which you are requesting
+     * information.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the remote access session about which you
-     * are requesting information.</p>
+     * <p>The Amazon Resource Name (ARN) of the project about which you are requesting
+     * information.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the remote access session about which you
-     * are requesting information.</p>
+     * <p>The Amazon Resource Name (ARN) of the project about which you are requesting
+     * information.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the remote access session about which you
-     * are requesting information.</p>
+     * <p>The Amazon Resource Name (ARN) of the project about which you are requesting
+     * information.</p>
      */
     inline ListRemoteAccessSessionsRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the remote access session about which you
-     * are requesting information.</p>
+     * <p>The Amazon Resource Name (ARN) of the project about which you are requesting
+     * information.</p>
      */
     inline ListRemoteAccessSessionsRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the remote access session about which you
-     * are requesting information.</p>
+     * <p>The Amazon Resource Name (ARN) of the project about which you are requesting
+     * information.</p>
      */
     inline ListRemoteAccessSessionsRequest& WithArn(const char* value) { SetArn(value); return *this;}
 

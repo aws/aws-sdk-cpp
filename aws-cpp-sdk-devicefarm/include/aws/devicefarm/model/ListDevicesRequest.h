@@ -157,11 +157,14 @@ namespace Model
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
      * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
      * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator:
-     * The filter operator.</p> <ul> <li> <p>The EQUALS operator is available for every
+     * Valid values are "TRUE" or "FALSE". <i>This attribute will be ignored, as remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p> </li> <li> <p>INSTANCE_ARN: The Amazon Resource
+     * Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS: The label
+     * of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type. Valid
+     * values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator: The
+     * filter operator.</p> <ul> <li> <p>The EQUALS operator is available for every
      * attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS operator is
      * available for the INSTANCE_LABELS and MODEL attributes.</p> </li> <li> <p>The IN
      * and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER,
@@ -193,11 +196,14 @@ namespace Model
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
      * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
      * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator:
-     * The filter operator.</p> <ul> <li> <p>The EQUALS operator is available for every
+     * Valid values are "TRUE" or "FALSE". <i>This attribute will be ignored, as remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p> </li> <li> <p>INSTANCE_ARN: The Amazon Resource
+     * Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS: The label
+     * of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type. Valid
+     * values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator: The
+     * filter operator.</p> <ul> <li> <p>The EQUALS operator is available for every
      * attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS operator is
      * available for the INSTANCE_LABELS and MODEL attributes.</p> </li> <li> <p>The IN
      * and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER,
@@ -229,11 +235,14 @@ namespace Model
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
      * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
      * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator:
-     * The filter operator.</p> <ul> <li> <p>The EQUALS operator is available for every
+     * Valid values are "TRUE" or "FALSE". <i>This attribute will be ignored, as remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p> </li> <li> <p>INSTANCE_ARN: The Amazon Resource
+     * Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS: The label
+     * of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type. Valid
+     * values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator: The
+     * filter operator.</p> <ul> <li> <p>The EQUALS operator is available for every
      * attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS operator is
      * available for the INSTANCE_LABELS and MODEL attributes.</p> </li> <li> <p>The IN
      * and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER,
@@ -265,11 +274,14 @@ namespace Model
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
      * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
      * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator:
-     * The filter operator.</p> <ul> <li> <p>The EQUALS operator is available for every
+     * Valid values are "TRUE" or "FALSE". <i>This attribute will be ignored, as remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p> </li> <li> <p>INSTANCE_ARN: The Amazon Resource
+     * Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS: The label
+     * of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type. Valid
+     * values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator: The
+     * filter operator.</p> <ul> <li> <p>The EQUALS operator is available for every
      * attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS operator is
      * available for the INSTANCE_LABELS and MODEL attributes.</p> </li> <li> <p>The IN
      * and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER,
@@ -301,11 +313,14 @@ namespace Model
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
      * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
      * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator:
-     * The filter operator.</p> <ul> <li> <p>The EQUALS operator is available for every
+     * Valid values are "TRUE" or "FALSE". <i>This attribute will be ignored, as remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p> </li> <li> <p>INSTANCE_ARN: The Amazon Resource
+     * Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS: The label
+     * of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type. Valid
+     * values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator: The
+     * filter operator.</p> <ul> <li> <p>The EQUALS operator is available for every
      * attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS operator is
      * available for the INSTANCE_LABELS and MODEL attributes.</p> </li> <li> <p>The IN
      * and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER,
@@ -337,11 +352,14 @@ namespace Model
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
      * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
      * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator:
-     * The filter operator.</p> <ul> <li> <p>The EQUALS operator is available for every
+     * Valid values are "TRUE" or "FALSE". <i>This attribute will be ignored, as remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p> </li> <li> <p>INSTANCE_ARN: The Amazon Resource
+     * Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS: The label
+     * of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type. Valid
+     * values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator: The
+     * filter operator.</p> <ul> <li> <p>The EQUALS operator is available for every
      * attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS operator is
      * available for the INSTANCE_LABELS and MODEL attributes.</p> </li> <li> <p>The IN
      * and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER,
@@ -373,11 +391,14 @@ namespace Model
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
      * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
      * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator:
-     * The filter operator.</p> <ul> <li> <p>The EQUALS operator is available for every
+     * Valid values are "TRUE" or "FALSE". <i>This attribute will be ignored, as remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p> </li> <li> <p>INSTANCE_ARN: The Amazon Resource
+     * Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS: The label
+     * of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type. Valid
+     * values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator: The
+     * filter operator.</p> <ul> <li> <p>The EQUALS operator is available for every
      * attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS operator is
      * available for the INSTANCE_LABELS and MODEL attributes.</p> </li> <li> <p>The IN
      * and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER,
@@ -409,11 +430,14 @@ namespace Model
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
      * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
      * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator:
-     * The filter operator.</p> <ul> <li> <p>The EQUALS operator is available for every
+     * Valid values are "TRUE" or "FALSE". <i>This attribute will be ignored, as remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p> </li> <li> <p>INSTANCE_ARN: The Amazon Resource
+     * Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS: The label
+     * of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type. Valid
+     * values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator: The
+     * filter operator.</p> <ul> <li> <p>The EQUALS operator is available for every
      * attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS operator is
      * available for the INSTANCE_LABELS and MODEL attributes.</p> </li> <li> <p>The IN
      * and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER,

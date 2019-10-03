@@ -18,6 +18,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ReservedInstanceLimitPrice.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -188,6 +189,37 @@ namespace Model
      */
     inline PurchaseReservedInstancesOfferingRequest& WithLimitPrice(ReservedInstanceLimitPrice&& value) { SetLimitPrice(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The time at which to purchase the Reserved Instance.</p>
+     */
+    inline const Aws::Utils::DateTime& GetPurchaseTime() const{ return m_purchaseTime; }
+
+    /**
+     * <p>The time at which to purchase the Reserved Instance.</p>
+     */
+    inline bool PurchaseTimeHasBeenSet() const { return m_purchaseTimeHasBeenSet; }
+
+    /**
+     * <p>The time at which to purchase the Reserved Instance.</p>
+     */
+    inline void SetPurchaseTime(const Aws::Utils::DateTime& value) { m_purchaseTimeHasBeenSet = true; m_purchaseTime = value; }
+
+    /**
+     * <p>The time at which to purchase the Reserved Instance.</p>
+     */
+    inline void SetPurchaseTime(Aws::Utils::DateTime&& value) { m_purchaseTimeHasBeenSet = true; m_purchaseTime = std::move(value); }
+
+    /**
+     * <p>The time at which to purchase the Reserved Instance.</p>
+     */
+    inline PurchaseReservedInstancesOfferingRequest& WithPurchaseTime(const Aws::Utils::DateTime& value) { SetPurchaseTime(value); return *this;}
+
+    /**
+     * <p>The time at which to purchase the Reserved Instance.</p>
+     */
+    inline PurchaseReservedInstancesOfferingRequest& WithPurchaseTime(Aws::Utils::DateTime&& value) { SetPurchaseTime(std::move(value)); return *this;}
+
   private:
 
     int m_instanceCount;
@@ -201,6 +233,9 @@ namespace Model
 
     ReservedInstanceLimitPrice m_limitPrice;
     bool m_limitPriceHasBeenSet;
+
+    Aws::Utils::DateTime m_purchaseTime;
+    bool m_purchaseTimeHasBeenSet;
   };
 
 } // namespace Model

@@ -585,11 +585,10 @@ namespace Model
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR or AppStream</p>
      * <p> <code>StepScaling</code>—Not supported for Amazon DynamoDB</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies for Application Auto Scaling</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application
-     * Auto Scaling User Guide</i>.</p>
+     * Tracking Scaling Policies</a> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
+     * Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline const PolicyType& GetPolicyType() const{ return m_policyType; }
 
@@ -599,11 +598,10 @@ namespace Model
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR or AppStream</p>
      * <p> <code>StepScaling</code>—Not supported for Amazon DynamoDB</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies for Application Auto Scaling</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application
-     * Auto Scaling User Guide</i>.</p>
+     * Tracking Scaling Policies</a> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
+     * Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
@@ -613,11 +611,10 @@ namespace Model
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR or AppStream</p>
      * <p> <code>StepScaling</code>—Not supported for Amazon DynamoDB</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies for Application Auto Scaling</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application
-     * Auto Scaling User Guide</i>.</p>
+     * Tracking Scaling Policies</a> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
+     * Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
@@ -627,11 +624,10 @@ namespace Model
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR or AppStream</p>
      * <p> <code>StepScaling</code>—Not supported for Amazon DynamoDB</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies for Application Auto Scaling</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application
-     * Auto Scaling User Guide</i>.</p>
+     * Tracking Scaling Policies</a> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
+     * Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
@@ -641,11 +637,10 @@ namespace Model
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR or AppStream</p>
      * <p> <code>StepScaling</code>—Not supported for Amazon DynamoDB</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies for Application Auto Scaling</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application
-     * Auto Scaling User Guide</i>.</p>
+     * Tracking Scaling Policies</a> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
+     * Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
 
@@ -655,11 +650,10 @@ namespace Model
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR or AppStream</p>
      * <p> <code>StepScaling</code>—Not supported for Amazon DynamoDB</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies for Application Auto Scaling</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application
-     * Auto Scaling User Guide</i>.</p>
+     * Tracking Scaling Policies</a> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
+     * Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
 

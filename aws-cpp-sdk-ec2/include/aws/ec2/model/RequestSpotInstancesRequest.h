@@ -564,7 +564,9 @@ namespace Model
      * becomes active at this date and time and remains active until all instances
      * launch, the request expires, or the request is canceled. If the request is
      * persistent, the request becomes active at this date and time and remains active
-     * until it expires or is canceled.</p>
+     * until it expires or is canceled.</p> <p>The specified start date and time cannot
+     * be equal to the current date and time. You must specify a start date and time
+     * that occurs after the current date and time.</p>
      */
     inline const Aws::Utils::DateTime& GetValidFrom() const{ return m_validFrom; }
 
@@ -573,7 +575,9 @@ namespace Model
      * becomes active at this date and time and remains active until all instances
      * launch, the request expires, or the request is canceled. If the request is
      * persistent, the request becomes active at this date and time and remains active
-     * until it expires or is canceled.</p>
+     * until it expires or is canceled.</p> <p>The specified start date and time cannot
+     * be equal to the current date and time. You must specify a start date and time
+     * that occurs after the current date and time.</p>
      */
     inline bool ValidFromHasBeenSet() const { return m_validFromHasBeenSet; }
 
@@ -582,7 +586,9 @@ namespace Model
      * becomes active at this date and time and remains active until all instances
      * launch, the request expires, or the request is canceled. If the request is
      * persistent, the request becomes active at this date and time and remains active
-     * until it expires or is canceled.</p>
+     * until it expires or is canceled.</p> <p>The specified start date and time cannot
+     * be equal to the current date and time. You must specify a start date and time
+     * that occurs after the current date and time.</p>
      */
     inline void SetValidFrom(const Aws::Utils::DateTime& value) { m_validFromHasBeenSet = true; m_validFrom = value; }
 
@@ -591,7 +597,9 @@ namespace Model
      * becomes active at this date and time and remains active until all instances
      * launch, the request expires, or the request is canceled. If the request is
      * persistent, the request becomes active at this date and time and remains active
-     * until it expires or is canceled.</p>
+     * until it expires or is canceled.</p> <p>The specified start date and time cannot
+     * be equal to the current date and time. You must specify a start date and time
+     * that occurs after the current date and time.</p>
      */
     inline void SetValidFrom(Aws::Utils::DateTime&& value) { m_validFromHasBeenSet = true; m_validFrom = std::move(value); }
 
@@ -600,7 +608,9 @@ namespace Model
      * becomes active at this date and time and remains active until all instances
      * launch, the request expires, or the request is canceled. If the request is
      * persistent, the request becomes active at this date and time and remains active
-     * until it expires or is canceled.</p>
+     * until it expires or is canceled.</p> <p>The specified start date and time cannot
+     * be equal to the current date and time. You must specify a start date and time
+     * that occurs after the current date and time.</p>
      */
     inline RequestSpotInstancesRequest& WithValidFrom(const Aws::Utils::DateTime& value) { SetValidFrom(value); return *this;}
 
@@ -609,7 +619,9 @@ namespace Model
      * becomes active at this date and time and remains active until all instances
      * launch, the request expires, or the request is canceled. If the request is
      * persistent, the request becomes active at this date and time and remains active
-     * until it expires or is canceled.</p>
+     * until it expires or is canceled.</p> <p>The specified start date and time cannot
+     * be equal to the current date and time. You must specify a start date and time
+     * that occurs after the current date and time.</p>
      */
     inline RequestSpotInstancesRequest& WithValidFrom(Aws::Utils::DateTime&& value) { SetValidFrom(std::move(value)); return *this;}
 

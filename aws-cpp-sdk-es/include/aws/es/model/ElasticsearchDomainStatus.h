@@ -25,6 +25,7 @@
 #include <aws/es/model/EncryptionAtRestOptions.h>
 #include <aws/es/model/NodeToNodeEncryptionOptions.h>
 #include <aws/es/model/ServiceSoftwareOptions.h>
+#include <aws/es/model/DomainEndpointOptions.h>
 #include <aws/es/model/LogType.h>
 #include <aws/es/model/LogPublishingOption.h>
 #include <utility>
@@ -968,6 +969,37 @@ namespace Model
      */
     inline ElasticsearchDomainStatus& WithServiceSoftwareOptions(ServiceSoftwareOptions&& value) { SetServiceSoftwareOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The current status of the Elasticsearch domain's endpoint options.</p>
+     */
+    inline const DomainEndpointOptions& GetDomainEndpointOptions() const{ return m_domainEndpointOptions; }
+
+    /**
+     * <p>The current status of the Elasticsearch domain's endpoint options.</p>
+     */
+    inline bool DomainEndpointOptionsHasBeenSet() const { return m_domainEndpointOptionsHasBeenSet; }
+
+    /**
+     * <p>The current status of the Elasticsearch domain's endpoint options.</p>
+     */
+    inline void SetDomainEndpointOptions(const DomainEndpointOptions& value) { m_domainEndpointOptionsHasBeenSet = true; m_domainEndpointOptions = value; }
+
+    /**
+     * <p>The current status of the Elasticsearch domain's endpoint options.</p>
+     */
+    inline void SetDomainEndpointOptions(DomainEndpointOptions&& value) { m_domainEndpointOptionsHasBeenSet = true; m_domainEndpointOptions = std::move(value); }
+
+    /**
+     * <p>The current status of the Elasticsearch domain's endpoint options.</p>
+     */
+    inline ElasticsearchDomainStatus& WithDomainEndpointOptions(const DomainEndpointOptions& value) { SetDomainEndpointOptions(value); return *this;}
+
+    /**
+     * <p>The current status of the Elasticsearch domain's endpoint options.</p>
+     */
+    inline ElasticsearchDomainStatus& WithDomainEndpointOptions(DomainEndpointOptions&& value) { SetDomainEndpointOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainId;
@@ -1032,6 +1064,9 @@ namespace Model
 
     ServiceSoftwareOptions m_serviceSoftwareOptions;
     bool m_serviceSoftwareOptionsHasBeenSet;
+
+    DomainEndpointOptions m_domainEndpointOptions;
+    bool m_domainEndpointOptionsHasBeenSet;
   };
 
 } // namespace Model

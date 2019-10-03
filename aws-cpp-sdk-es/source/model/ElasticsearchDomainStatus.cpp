@@ -53,7 +53,8 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus() :
     m_nodeToNodeEncryptionOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false),
-    m_serviceSoftwareOptionsHasBeenSet(false)
+    m_serviceSoftwareOptionsHasBeenSet(false),
+    m_domainEndpointOptionsHasBeenSet(false)
 {
 }
 
@@ -82,7 +83,8 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus(JsonView jsonValue) :
     m_nodeToNodeEncryptionOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false),
-    m_serviceSoftwareOptionsHasBeenSet(false)
+    m_serviceSoftwareOptionsHasBeenSet(false),
+    m_domainEndpointOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -245,6 +247,13 @@ ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(JsonView jsonVa
     m_serviceSoftwareOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DomainEndpointOptions"))
+  {
+    m_domainEndpointOptions = jsonValue.GetObject("DomainEndpointOptions");
+
+    m_domainEndpointOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -390,6 +399,12 @@ JsonValue ElasticsearchDomainStatus::Jsonize() const
   if(m_serviceSoftwareOptionsHasBeenSet)
   {
    payload.WithObject("ServiceSoftwareOptions", m_serviceSoftwareOptions.Jsonize());
+
+  }
+
+  if(m_domainEndpointOptionsHasBeenSet)
+  {
+   payload.WithObject("DomainEndpointOptions", m_domainEndpointOptions.Jsonize());
 
   }
 

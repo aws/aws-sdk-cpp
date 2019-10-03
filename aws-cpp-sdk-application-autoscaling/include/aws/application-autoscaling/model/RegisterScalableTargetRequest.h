@@ -52,7 +52,7 @@ namespace Model
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>. </p>
      */
     inline const ServiceNamespace& GetServiceNamespace() const{ return m_serviceNamespace; }
 
@@ -61,7 +61,7 @@ namespace Model
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>. </p>
      */
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
 
@@ -70,7 +70,7 @@ namespace Model
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>. </p>
      */
     inline void SetServiceNamespace(const ServiceNamespace& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
 
@@ -79,7 +79,7 @@ namespace Model
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>. </p>
      */
     inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
 
@@ -88,7 +88,7 @@ namespace Model
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>. </p>
      */
     inline RegisterScalableTargetRequest& WithServiceNamespace(const ServiceNamespace& value) { SetServiceNamespace(value); return *this;}
 
@@ -97,7 +97,7 @@ namespace Model
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>. </p>
      */
     inline RegisterScalableTargetRequest& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
 
@@ -597,10 +597,9 @@ namespace Model
      * permissions to modify the scalable target on your behalf. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html">Service-Linked
-     * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required, and it must
-     * specify the ARN of an IAM role that allows Application Auto Scaling to modify
-     * the scalable target on your behalf.</p>
+     * Roles for Application Auto Scaling</a>.</p> <p>For Amazon EMR, this parameter is
+     * required, and it must specify the ARN of an IAM role that allows Application
+     * Auto Scaling to modify the scalable target on your behalf.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
@@ -609,10 +608,9 @@ namespace Model
      * permissions to modify the scalable target on your behalf. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html">Service-Linked
-     * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required, and it must
-     * specify the ARN of an IAM role that allows Application Auto Scaling to modify
-     * the scalable target on your behalf.</p>
+     * Roles for Application Auto Scaling</a>.</p> <p>For Amazon EMR, this parameter is
+     * required, and it must specify the ARN of an IAM role that allows Application
+     * Auto Scaling to modify the scalable target on your behalf.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
@@ -621,10 +619,9 @@ namespace Model
      * permissions to modify the scalable target on your behalf. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html">Service-Linked
-     * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required, and it must
-     * specify the ARN of an IAM role that allows Application Auto Scaling to modify
-     * the scalable target on your behalf.</p>
+     * Roles for Application Auto Scaling</a>.</p> <p>For Amazon EMR, this parameter is
+     * required, and it must specify the ARN of an IAM role that allows Application
+     * Auto Scaling to modify the scalable target on your behalf.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
@@ -633,10 +630,9 @@ namespace Model
      * permissions to modify the scalable target on your behalf. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html">Service-Linked
-     * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required, and it must
-     * specify the ARN of an IAM role that allows Application Auto Scaling to modify
-     * the scalable target on your behalf.</p>
+     * Roles for Application Auto Scaling</a>.</p> <p>For Amazon EMR, this parameter is
+     * required, and it must specify the ARN of an IAM role that allows Application
+     * Auto Scaling to modify the scalable target on your behalf.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
@@ -645,10 +641,9 @@ namespace Model
      * permissions to modify the scalable target on your behalf. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html">Service-Linked
-     * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required, and it must
-     * specify the ARN of an IAM role that allows Application Auto Scaling to modify
-     * the scalable target on your behalf.</p>
+     * Roles for Application Auto Scaling</a>.</p> <p>For Amazon EMR, this parameter is
+     * required, and it must specify the ARN of an IAM role that allows Application
+     * Auto Scaling to modify the scalable target on your behalf.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
@@ -657,10 +652,9 @@ namespace Model
      * permissions to modify the scalable target on your behalf. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html">Service-Linked
-     * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required, and it must
-     * specify the ARN of an IAM role that allows Application Auto Scaling to modify
-     * the scalable target on your behalf.</p>
+     * Roles for Application Auto Scaling</a>.</p> <p>For Amazon EMR, this parameter is
+     * required, and it must specify the ARN of an IAM role that allows Application
+     * Auto Scaling to modify the scalable target on your behalf.</p>
      */
     inline RegisterScalableTargetRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
@@ -669,10 +663,9 @@ namespace Model
      * permissions to modify the scalable target on your behalf. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html">Service-Linked
-     * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required, and it must
-     * specify the ARN of an IAM role that allows Application Auto Scaling to modify
-     * the scalable target on your behalf.</p>
+     * Roles for Application Auto Scaling</a>.</p> <p>For Amazon EMR, this parameter is
+     * required, and it must specify the ARN of an IAM role that allows Application
+     * Auto Scaling to modify the scalable target on your behalf.</p>
      */
     inline RegisterScalableTargetRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
@@ -681,10 +674,9 @@ namespace Model
      * permissions to modify the scalable target on your behalf. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html">Service-Linked
-     * Roles for Application Auto Scaling</a>.</p> <p>For resources that are not
-     * supported using a service-linked role, this parameter is required, and it must
-     * specify the ARN of an IAM role that allows Application Auto Scaling to modify
-     * the scalable target on your behalf.</p>
+     * Roles for Application Auto Scaling</a>.</p> <p>For Amazon EMR, this parameter is
+     * required, and it must specify the ARN of an IAM role that allows Application
+     * Auto Scaling to modify the scalable target on your behalf.</p>
      */
     inline RegisterScalableTargetRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 

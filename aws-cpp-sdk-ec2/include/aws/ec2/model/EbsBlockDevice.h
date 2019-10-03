@@ -51,22 +51,38 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
+     * <p>Indicates whether the EBS volume is deleted on instance termination. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving
+     * Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute
+     * Cloud User Guide.</p>
      */
     inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
 
     /**
-     * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
+     * <p>Indicates whether the EBS volume is deleted on instance termination. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving
+     * Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute
+     * Cloud User Guide.</p>
      */
     inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
 
     /**
-     * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
+     * <p>Indicates whether the EBS volume is deleted on instance termination. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving
+     * Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute
+     * Cloud User Guide.</p>
      */
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
 
     /**
-     * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
+     * <p>Indicates whether the EBS volume is deleted on instance termination. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving
+     * Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute
+     * Cloud User Guide.</p>
      */
     inline EbsBlockDevice& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
 

@@ -641,25 +641,33 @@ namespace Model
 
     /**
      * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
-     * device.</p>
+     * device.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline bool GetRemoteDebugEnabled() const{ return m_remoteDebugEnabled; }
 
     /**
      * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
-     * device.</p>
+     * device.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline bool RemoteDebugEnabledHasBeenSet() const { return m_remoteDebugEnabledHasBeenSet; }
 
     /**
      * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
-     * device.</p>
+     * device.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline void SetRemoteDebugEnabled(bool value) { m_remoteDebugEnabledHasBeenSet = true; m_remoteDebugEnabled = value; }
 
     /**
      * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
-     * device.</p>
+     * device.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline Device& WithRemoteDebugEnabled(bool value) { SetRemoteDebugEnabled(value); return *this;}
 

@@ -347,47 +347,56 @@ namespace Model
 
 
     /**
-     * <p>A list of auxiliary apps for the run.</p>
+     * <p>A list of Upload ARNs for app packages that will be installed alongside your
+     * app.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAuxiliaryApps() const{ return m_auxiliaryApps; }
 
     /**
-     * <p>A list of auxiliary apps for the run.</p>
+     * <p>A list of Upload ARNs for app packages that will be installed alongside your
+     * app.</p>
      */
     inline bool AuxiliaryAppsHasBeenSet() const { return m_auxiliaryAppsHasBeenSet; }
 
     /**
-     * <p>A list of auxiliary apps for the run.</p>
+     * <p>A list of Upload ARNs for app packages that will be installed alongside your
+     * app.</p>
      */
     inline void SetAuxiliaryApps(const Aws::Vector<Aws::String>& value) { m_auxiliaryAppsHasBeenSet = true; m_auxiliaryApps = value; }
 
     /**
-     * <p>A list of auxiliary apps for the run.</p>
+     * <p>A list of Upload ARNs for app packages that will be installed alongside your
+     * app.</p>
      */
     inline void SetAuxiliaryApps(Aws::Vector<Aws::String>&& value) { m_auxiliaryAppsHasBeenSet = true; m_auxiliaryApps = std::move(value); }
 
     /**
-     * <p>A list of auxiliary apps for the run.</p>
+     * <p>A list of Upload ARNs for app packages that will be installed alongside your
+     * app.</p>
      */
     inline ScheduleRunConfiguration& WithAuxiliaryApps(const Aws::Vector<Aws::String>& value) { SetAuxiliaryApps(value); return *this;}
 
     /**
-     * <p>A list of auxiliary apps for the run.</p>
+     * <p>A list of Upload ARNs for app packages that will be installed alongside your
+     * app.</p>
      */
     inline ScheduleRunConfiguration& WithAuxiliaryApps(Aws::Vector<Aws::String>&& value) { SetAuxiliaryApps(std::move(value)); return *this;}
 
     /**
-     * <p>A list of auxiliary apps for the run.</p>
+     * <p>A list of Upload ARNs for app packages that will be installed alongside your
+     * app.</p>
      */
     inline ScheduleRunConfiguration& AddAuxiliaryApps(const Aws::String& value) { m_auxiliaryAppsHasBeenSet = true; m_auxiliaryApps.push_back(value); return *this; }
 
     /**
-     * <p>A list of auxiliary apps for the run.</p>
+     * <p>A list of Upload ARNs for app packages that will be installed alongside your
+     * app.</p>
      */
     inline ScheduleRunConfiguration& AddAuxiliaryApps(Aws::String&& value) { m_auxiliaryAppsHasBeenSet = true; m_auxiliaryApps.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of auxiliary apps for the run.</p>
+     * <p>A list of Upload ARNs for app packages that will be installed alongside your
+     * app.</p>
      */
     inline ScheduleRunConfiguration& AddAuxiliaryApps(const char* value) { m_auxiliaryAppsHasBeenSet = true; m_auxiliaryApps.push_back(value); return *this; }
 

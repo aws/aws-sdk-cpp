@@ -479,25 +479,33 @@ namespace Model
 
     /**
      * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
-     * remote access session.</p>
+     * remote access session.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline bool GetRemoteDebugEnabled() const{ return m_remoteDebugEnabled; }
 
     /**
      * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
-     * remote access session.</p>
+     * remote access session.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline bool RemoteDebugEnabledHasBeenSet() const { return m_remoteDebugEnabledHasBeenSet; }
 
     /**
      * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
-     * remote access session.</p>
+     * remote access session.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline void SetRemoteDebugEnabled(bool value) { m_remoteDebugEnabledHasBeenSet = true; m_remoteDebugEnabled = value; }
 
     /**
      * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
-     * remote access session.</p>
+     * remote access session.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline RemoteAccessSession& WithRemoteDebugEnabled(bool value) { SetRemoteDebugEnabled(value); return *this;}
 
@@ -579,105 +587,145 @@ namespace Model
     /**
      * <p>IP address of the EC2 host where you need to connect to remotely debug
      * devices. Only returned if remote debugging is enabled for the remote access
-     * session.</p>
+     * session.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline const Aws::String& GetHostAddress() const{ return m_hostAddress; }
 
     /**
      * <p>IP address of the EC2 host where you need to connect to remotely debug
      * devices. Only returned if remote debugging is enabled for the remote access
-     * session.</p>
+     * session.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline bool HostAddressHasBeenSet() const { return m_hostAddressHasBeenSet; }
 
     /**
      * <p>IP address of the EC2 host where you need to connect to remotely debug
      * devices. Only returned if remote debugging is enabled for the remote access
-     * session.</p>
+     * session.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline void SetHostAddress(const Aws::String& value) { m_hostAddressHasBeenSet = true; m_hostAddress = value; }
 
     /**
      * <p>IP address of the EC2 host where you need to connect to remotely debug
      * devices. Only returned if remote debugging is enabled for the remote access
-     * session.</p>
+     * session.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline void SetHostAddress(Aws::String&& value) { m_hostAddressHasBeenSet = true; m_hostAddress = std::move(value); }
 
     /**
      * <p>IP address of the EC2 host where you need to connect to remotely debug
      * devices. Only returned if remote debugging is enabled for the remote access
-     * session.</p>
+     * session.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline void SetHostAddress(const char* value) { m_hostAddressHasBeenSet = true; m_hostAddress.assign(value); }
 
     /**
      * <p>IP address of the EC2 host where you need to connect to remotely debug
      * devices. Only returned if remote debugging is enabled for the remote access
-     * session.</p>
+     * session.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline RemoteAccessSession& WithHostAddress(const Aws::String& value) { SetHostAddress(value); return *this;}
 
     /**
      * <p>IP address of the EC2 host where you need to connect to remotely debug
      * devices. Only returned if remote debugging is enabled for the remote access
-     * session.</p>
+     * session.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline RemoteAccessSession& WithHostAddress(Aws::String&& value) { SetHostAddress(std::move(value)); return *this;}
 
     /**
      * <p>IP address of the EC2 host where you need to connect to remotely debug
      * devices. Only returned if remote debugging is enabled for the remote access
-     * session.</p>
+     * session.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline RemoteAccessSession& WithHostAddress(const char* value) { SetHostAddress(value); return *this;}
 
 
     /**
      * <p>Unique identifier of your client for the remote access session. Only returned
-     * if remote debugging is enabled for the remote access session.</p>
+     * if remote debugging is enabled for the remote access session.</p> <p> <i>Remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
 
     /**
      * <p>Unique identifier of your client for the remote access session. Only returned
-     * if remote debugging is enabled for the remote access session.</p>
+     * if remote debugging is enabled for the remote access session.</p> <p> <i>Remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
 
     /**
      * <p>Unique identifier of your client for the remote access session. Only returned
-     * if remote debugging is enabled for the remote access session.</p>
+     * if remote debugging is enabled for the remote access session.</p> <p> <i>Remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
      * <p>Unique identifier of your client for the remote access session. Only returned
-     * if remote debugging is enabled for the remote access session.</p>
+     * if remote debugging is enabled for the remote access session.</p> <p> <i>Remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
 
     /**
      * <p>Unique identifier of your client for the remote access session. Only returned
-     * if remote debugging is enabled for the remote access session.</p>
+     * if remote debugging is enabled for the remote access session.</p> <p> <i>Remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
 
     /**
      * <p>Unique identifier of your client for the remote access session. Only returned
-     * if remote debugging is enabled for the remote access session.</p>
+     * if remote debugging is enabled for the remote access session.</p> <p> <i>Remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline RemoteAccessSession& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
 
     /**
      * <p>Unique identifier of your client for the remote access session. Only returned
-     * if remote debugging is enabled for the remote access session.</p>
+     * if remote debugging is enabled for the remote access session.</p> <p> <i>Remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline RemoteAccessSession& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier of your client for the remote access session. Only returned
-     * if remote debugging is enabled for the remote access session.</p>
+     * if remote debugging is enabled for the remote access session.</p> <p> <i>Remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline RemoteAccessSession& WithClientId(const char* value) { SetClientId(value); return *this;}
 
@@ -817,49 +865,73 @@ namespace Model
 
     /**
      * <p>Unique device identifier for the remote device. Only returned if remote
-     * debugging is enabled for the remote access session.</p>
+     * debugging is enabled for the remote access session.</p> <p> <i>Remote debugging
+     * is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline const Aws::String& GetDeviceUdid() const{ return m_deviceUdid; }
 
     /**
      * <p>Unique device identifier for the remote device. Only returned if remote
-     * debugging is enabled for the remote access session.</p>
+     * debugging is enabled for the remote access session.</p> <p> <i>Remote debugging
+     * is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline bool DeviceUdidHasBeenSet() const { return m_deviceUdidHasBeenSet; }
 
     /**
      * <p>Unique device identifier for the remote device. Only returned if remote
-     * debugging is enabled for the remote access session.</p>
+     * debugging is enabled for the remote access session.</p> <p> <i>Remote debugging
+     * is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline void SetDeviceUdid(const Aws::String& value) { m_deviceUdidHasBeenSet = true; m_deviceUdid = value; }
 
     /**
      * <p>Unique device identifier for the remote device. Only returned if remote
-     * debugging is enabled for the remote access session.</p>
+     * debugging is enabled for the remote access session.</p> <p> <i>Remote debugging
+     * is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline void SetDeviceUdid(Aws::String&& value) { m_deviceUdidHasBeenSet = true; m_deviceUdid = std::move(value); }
 
     /**
      * <p>Unique device identifier for the remote device. Only returned if remote
-     * debugging is enabled for the remote access session.</p>
+     * debugging is enabled for the remote access session.</p> <p> <i>Remote debugging
+     * is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline void SetDeviceUdid(const char* value) { m_deviceUdidHasBeenSet = true; m_deviceUdid.assign(value); }
 
     /**
      * <p>Unique device identifier for the remote device. Only returned if remote
-     * debugging is enabled for the remote access session.</p>
+     * debugging is enabled for the remote access session.</p> <p> <i>Remote debugging
+     * is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline RemoteAccessSession& WithDeviceUdid(const Aws::String& value) { SetDeviceUdid(value); return *this;}
 
     /**
      * <p>Unique device identifier for the remote device. Only returned if remote
-     * debugging is enabled for the remote access session.</p>
+     * debugging is enabled for the remote access session.</p> <p> <i>Remote debugging
+     * is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline RemoteAccessSession& WithDeviceUdid(Aws::String&& value) { SetDeviceUdid(std::move(value)); return *this;}
 
     /**
      * <p>Unique device identifier for the remote device. Only returned if remote
-     * debugging is enabled for the remote access session.</p>
+     * debugging is enabled for the remote access session.</p> <p> <i>Remote debugging
+     * is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline RemoteAccessSession& WithDeviceUdid(const char* value) { SetDeviceUdid(value); return *this;}
 

@@ -121,7 +121,7 @@ namespace Model
    * <p>With Application Auto Scaling, you can configure automatic scaling for the
    * following resources:</p> <ul> <li> <p>Amazon ECS services</p> </li> <li>
    * <p>Amazon EC2 Spot Fleet requests</p> </li> <li> <p>Amazon EMR clusters</p>
-   * </li> <li> <p>Amazon AppStream 2.0 fleets </p> </li> <li> <p>Amazon DynamoDB
+   * </li> <li> <p>Amazon AppStream 2.0 fleets</p> </li> <li> <p>Amazon DynamoDB
    * tables and global secondary indexes throughput capacity</p> </li> <li> <p>Amazon
    * Aurora Replicas</p> </li> <li> <p>Amazon SageMaker endpoint variants</p> </li>
    * <li> <p>Custom resources provided by your own applications or services</p> </li>
@@ -485,7 +485,7 @@ namespace Model
          * there is a chance that multiple policies could conflict, instructing the
          * scalable target to scale out or in at the same time. Application Auto Scaling
          * gives precedence to the policy that provides the largest capacity for both scale
-         * in and scale out. For example, if one policy increases capacity by 3, another
+         * out and scale in. For example, if one policy increases capacity by 3, another
          * policy increases capacity by 200 percent, and the current capacity is 10,
          * Application Auto Scaling uses the policy with the highest calculated capacity
          * (200% of 10 = 20) and scales out to 30. </p> <p>Learn more about how to work
@@ -514,7 +514,7 @@ namespace Model
          * there is a chance that multiple policies could conflict, instructing the
          * scalable target to scale out or in at the same time. Application Auto Scaling
          * gives precedence to the policy that provides the largest capacity for both scale
-         * in and scale out. For example, if one policy increases capacity by 3, another
+         * out and scale in. For example, if one policy increases capacity by 3, another
          * policy increases capacity by 200 percent, and the current capacity is 10,
          * Application Auto Scaling uses the policy with the highest calculated capacity
          * (200% of 10 = 20) and scales out to 30. </p> <p>Learn more about how to work
@@ -545,7 +545,7 @@ namespace Model
          * there is a chance that multiple policies could conflict, instructing the
          * scalable target to scale out or in at the same time. Application Auto Scaling
          * gives precedence to the policy that provides the largest capacity for both scale
-         * in and scale out. For example, if one policy increases capacity by 3, another
+         * out and scale in. For example, if one policy increases capacity by 3, another
          * policy increases capacity by 200 percent, and the current capacity is 10,
          * Application Auto Scaling uses the policy with the highest calculated capacity
          * (200% of 10 = 20) and scales out to 30. </p> <p>Learn more about how to work

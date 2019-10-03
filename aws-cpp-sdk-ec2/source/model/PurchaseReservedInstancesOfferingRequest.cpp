@@ -26,7 +26,8 @@ PurchaseReservedInstancesOfferingRequest::PurchaseReservedInstancesOfferingReque
     m_reservedInstancesOfferingIdHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_limitPriceHasBeenSet(false)
+    m_limitPriceHasBeenSet(false),
+    m_purchaseTimeHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,11 @@ Aws::String PurchaseReservedInstancesOfferingRequest::SerializePayload() const
   if(m_limitPriceHasBeenSet)
   {
     m_limitPrice.OutputToStream(ss, "LimitPrice");
+  }
+
+  if(m_purchaseTimeHasBeenSet)
+  {
+    ss << "PurchaseTime=" << StringUtils::URLEncode(m_purchaseTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

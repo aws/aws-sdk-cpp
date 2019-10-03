@@ -23,23 +23,20 @@ namespace EC2
 {
 namespace Model
 {
-  enum class ReservedInstanceState
+  enum class DeleteQueuedReservedInstancesErrorCode
   {
     NOT_SET,
-    payment_pending,
-    active,
-    payment_failed,
-    retired,
-    queued,
-    queued_deleted
+    reserved_instances_id_invalid,
+    reserved_instances_not_in_queued_state,
+    unexpected_error
   };
 
-namespace ReservedInstanceStateMapper
+namespace DeleteQueuedReservedInstancesErrorCodeMapper
 {
-AWS_EC2_API ReservedInstanceState GetReservedInstanceStateForName(const Aws::String& name);
+AWS_EC2_API DeleteQueuedReservedInstancesErrorCode GetDeleteQueuedReservedInstancesErrorCodeForName(const Aws::String& name);
 
-AWS_EC2_API Aws::String GetNameForReservedInstanceState(ReservedInstanceState value);
-} // namespace ReservedInstanceStateMapper
+AWS_EC2_API Aws::String GetNameForDeleteQueuedReservedInstancesErrorCode(DeleteQueuedReservedInstancesErrorCode value);
+} // namespace DeleteQueuedReservedInstancesErrorCodeMapper
 } // namespace Model
 } // namespace EC2
 } // namespace Aws

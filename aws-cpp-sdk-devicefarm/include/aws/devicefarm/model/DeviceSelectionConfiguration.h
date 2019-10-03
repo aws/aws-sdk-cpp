@@ -68,28 +68,30 @@ namespace Model
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
      * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
      * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>
-     * <b>Operator</b> </p> <p>The filter operator.</p> <ul> <li> <p>The EQUALS
-     * operator is available for every attribute except INSTANCE_LABELS.</p> </li> <li>
-     * <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
-     * attributes.</p> </li> <li> <p>The IN and NOT_IN operators are available for the
-     * ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>
-     * <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
-     * GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
-     * attribute.</p> </li> </ul> </li> <li> <p> <b>Values</b> </p> <p>An array of one
-     * or more filter values.</p> <p class="title"> <b>Operator Values</b> </p> <ul>
-     * <li> <p>The IN and NOT_IN operators can take a values array that has more than
-     * one element.</p> </li> <li> <p>The other operators require an array with a
-     * single element.</p> </li> </ul> <p class="title"> <b>Attribute Values</b> </p>
-     * <ul> <li> <p>The PLATFORM attribute can be set to "ANDROID" or "IOS".</p> </li>
-     * <li> <p>The AVAILABILITY attribute can be set to "AVAILABLE",
-     * "HIGHLY_AVAILABLE", "BUSY", or "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The
-     * FORM_FACTOR attribute can be set to "PHONE" or "TABLET".</p> </li> <li> <p>The
-     * FLEET_TYPE attribute can be set to "PUBLIC" or "PRIVATE".</p> </li> </ul> </li>
-     * </ul>
+     * Valid values are "TRUE" or "FALSE". <i>This filter will be ignored, as remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p> </li> <li> <p>INSTANCE_ARN: The Amazon Resource
+     * Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS: The label
+     * of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type. Valid
+     * values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p> <b>Operator</b>
+     * </p> <p>The filter operator.</p> <ul> <li> <p>The EQUALS operator is available
+     * for every attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS
+     * operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>
+     * <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
+     * MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li> <li> <p>The
+     * LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS
+     * operators are also available for the OS_VERSION attribute.</p> </li> </ul> </li>
+     * <li> <p> <b>Values</b> </p> <p>An array of one or more filter values.</p> <p
+     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT_IN
+     * operators can take a values array that has more than one element.</p> </li> <li>
+     * <p>The other operators require an array with a single element.</p> </li> </ul>
+     * <p class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM
+     * attribute can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY
+     * attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The FORM_FACTOR attribute can be
+     * set to "PHONE" or "TABLET".</p> </li> <li> <p>The FLEET_TYPE attribute can be
+     * set to "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> </ul>
      */
     inline const Aws::Vector<DeviceFilter>& GetFilters() const{ return m_filters; }
 
@@ -110,28 +112,30 @@ namespace Model
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
      * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
      * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>
-     * <b>Operator</b> </p> <p>The filter operator.</p> <ul> <li> <p>The EQUALS
-     * operator is available for every attribute except INSTANCE_LABELS.</p> </li> <li>
-     * <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
-     * attributes.</p> </li> <li> <p>The IN and NOT_IN operators are available for the
-     * ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>
-     * <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
-     * GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
-     * attribute.</p> </li> </ul> </li> <li> <p> <b>Values</b> </p> <p>An array of one
-     * or more filter values.</p> <p class="title"> <b>Operator Values</b> </p> <ul>
-     * <li> <p>The IN and NOT_IN operators can take a values array that has more than
-     * one element.</p> </li> <li> <p>The other operators require an array with a
-     * single element.</p> </li> </ul> <p class="title"> <b>Attribute Values</b> </p>
-     * <ul> <li> <p>The PLATFORM attribute can be set to "ANDROID" or "IOS".</p> </li>
-     * <li> <p>The AVAILABILITY attribute can be set to "AVAILABLE",
-     * "HIGHLY_AVAILABLE", "BUSY", or "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The
-     * FORM_FACTOR attribute can be set to "PHONE" or "TABLET".</p> </li> <li> <p>The
-     * FLEET_TYPE attribute can be set to "PUBLIC" or "PRIVATE".</p> </li> </ul> </li>
-     * </ul>
+     * Valid values are "TRUE" or "FALSE". <i>This filter will be ignored, as remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p> </li> <li> <p>INSTANCE_ARN: The Amazon Resource
+     * Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS: The label
+     * of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type. Valid
+     * values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p> <b>Operator</b>
+     * </p> <p>The filter operator.</p> <ul> <li> <p>The EQUALS operator is available
+     * for every attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS
+     * operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>
+     * <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
+     * MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li> <li> <p>The
+     * LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS
+     * operators are also available for the OS_VERSION attribute.</p> </li> </ul> </li>
+     * <li> <p> <b>Values</b> </p> <p>An array of one or more filter values.</p> <p
+     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT_IN
+     * operators can take a values array that has more than one element.</p> </li> <li>
+     * <p>The other operators require an array with a single element.</p> </li> </ul>
+     * <p class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM
+     * attribute can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY
+     * attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The FORM_FACTOR attribute can be
+     * set to "PHONE" or "TABLET".</p> </li> <li> <p>The FLEET_TYPE attribute can be
+     * set to "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -152,28 +156,30 @@ namespace Model
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
      * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
      * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>
-     * <b>Operator</b> </p> <p>The filter operator.</p> <ul> <li> <p>The EQUALS
-     * operator is available for every attribute except INSTANCE_LABELS.</p> </li> <li>
-     * <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
-     * attributes.</p> </li> <li> <p>The IN and NOT_IN operators are available for the
-     * ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>
-     * <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
-     * GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
-     * attribute.</p> </li> </ul> </li> <li> <p> <b>Values</b> </p> <p>An array of one
-     * or more filter values.</p> <p class="title"> <b>Operator Values</b> </p> <ul>
-     * <li> <p>The IN and NOT_IN operators can take a values array that has more than
-     * one element.</p> </li> <li> <p>The other operators require an array with a
-     * single element.</p> </li> </ul> <p class="title"> <b>Attribute Values</b> </p>
-     * <ul> <li> <p>The PLATFORM attribute can be set to "ANDROID" or "IOS".</p> </li>
-     * <li> <p>The AVAILABILITY attribute can be set to "AVAILABLE",
-     * "HIGHLY_AVAILABLE", "BUSY", or "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The
-     * FORM_FACTOR attribute can be set to "PHONE" or "TABLET".</p> </li> <li> <p>The
-     * FLEET_TYPE attribute can be set to "PUBLIC" or "PRIVATE".</p> </li> </ul> </li>
-     * </ul>
+     * Valid values are "TRUE" or "FALSE". <i>This filter will be ignored, as remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p> </li> <li> <p>INSTANCE_ARN: The Amazon Resource
+     * Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS: The label
+     * of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type. Valid
+     * values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p> <b>Operator</b>
+     * </p> <p>The filter operator.</p> <ul> <li> <p>The EQUALS operator is available
+     * for every attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS
+     * operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>
+     * <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
+     * MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li> <li> <p>The
+     * LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS
+     * operators are also available for the OS_VERSION attribute.</p> </li> </ul> </li>
+     * <li> <p> <b>Values</b> </p> <p>An array of one or more filter values.</p> <p
+     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT_IN
+     * operators can take a values array that has more than one element.</p> </li> <li>
+     * <p>The other operators require an array with a single element.</p> </li> </ul>
+     * <p class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM
+     * attribute can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY
+     * attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The FORM_FACTOR attribute can be
+     * set to "PHONE" or "TABLET".</p> </li> <li> <p>The FLEET_TYPE attribute can be
+     * set to "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<DeviceFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -194,28 +200,30 @@ namespace Model
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
      * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
      * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>
-     * <b>Operator</b> </p> <p>The filter operator.</p> <ul> <li> <p>The EQUALS
-     * operator is available for every attribute except INSTANCE_LABELS.</p> </li> <li>
-     * <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
-     * attributes.</p> </li> <li> <p>The IN and NOT_IN operators are available for the
-     * ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>
-     * <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
-     * GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
-     * attribute.</p> </li> </ul> </li> <li> <p> <b>Values</b> </p> <p>An array of one
-     * or more filter values.</p> <p class="title"> <b>Operator Values</b> </p> <ul>
-     * <li> <p>The IN and NOT_IN operators can take a values array that has more than
-     * one element.</p> </li> <li> <p>The other operators require an array with a
-     * single element.</p> </li> </ul> <p class="title"> <b>Attribute Values</b> </p>
-     * <ul> <li> <p>The PLATFORM attribute can be set to "ANDROID" or "IOS".</p> </li>
-     * <li> <p>The AVAILABILITY attribute can be set to "AVAILABLE",
-     * "HIGHLY_AVAILABLE", "BUSY", or "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The
-     * FORM_FACTOR attribute can be set to "PHONE" or "TABLET".</p> </li> <li> <p>The
-     * FLEET_TYPE attribute can be set to "PUBLIC" or "PRIVATE".</p> </li> </ul> </li>
-     * </ul>
+     * Valid values are "TRUE" or "FALSE". <i>This filter will be ignored, as remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p> </li> <li> <p>INSTANCE_ARN: The Amazon Resource
+     * Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS: The label
+     * of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type. Valid
+     * values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p> <b>Operator</b>
+     * </p> <p>The filter operator.</p> <ul> <li> <p>The EQUALS operator is available
+     * for every attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS
+     * operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>
+     * <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
+     * MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li> <li> <p>The
+     * LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS
+     * operators are also available for the OS_VERSION attribute.</p> </li> </ul> </li>
+     * <li> <p> <b>Values</b> </p> <p>An array of one or more filter values.</p> <p
+     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT_IN
+     * operators can take a values array that has more than one element.</p> </li> <li>
+     * <p>The other operators require an array with a single element.</p> </li> </ul>
+     * <p class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM
+     * attribute can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY
+     * attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The FORM_FACTOR attribute can be
+     * set to "PHONE" or "TABLET".</p> </li> <li> <p>The FLEET_TYPE attribute can be
+     * set to "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<DeviceFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -236,28 +244,30 @@ namespace Model
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
      * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
      * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>
-     * <b>Operator</b> </p> <p>The filter operator.</p> <ul> <li> <p>The EQUALS
-     * operator is available for every attribute except INSTANCE_LABELS.</p> </li> <li>
-     * <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
-     * attributes.</p> </li> <li> <p>The IN and NOT_IN operators are available for the
-     * ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>
-     * <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
-     * GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
-     * attribute.</p> </li> </ul> </li> <li> <p> <b>Values</b> </p> <p>An array of one
-     * or more filter values.</p> <p class="title"> <b>Operator Values</b> </p> <ul>
-     * <li> <p>The IN and NOT_IN operators can take a values array that has more than
-     * one element.</p> </li> <li> <p>The other operators require an array with a
-     * single element.</p> </li> </ul> <p class="title"> <b>Attribute Values</b> </p>
-     * <ul> <li> <p>The PLATFORM attribute can be set to "ANDROID" or "IOS".</p> </li>
-     * <li> <p>The AVAILABILITY attribute can be set to "AVAILABLE",
-     * "HIGHLY_AVAILABLE", "BUSY", or "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The
-     * FORM_FACTOR attribute can be set to "PHONE" or "TABLET".</p> </li> <li> <p>The
-     * FLEET_TYPE attribute can be set to "PUBLIC" or "PRIVATE".</p> </li> </ul> </li>
-     * </ul>
+     * Valid values are "TRUE" or "FALSE". <i>This filter will be ignored, as remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p> </li> <li> <p>INSTANCE_ARN: The Amazon Resource
+     * Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS: The label
+     * of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type. Valid
+     * values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p> <b>Operator</b>
+     * </p> <p>The filter operator.</p> <ul> <li> <p>The EQUALS operator is available
+     * for every attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS
+     * operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>
+     * <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
+     * MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li> <li> <p>The
+     * LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS
+     * operators are also available for the OS_VERSION attribute.</p> </li> </ul> </li>
+     * <li> <p> <b>Values</b> </p> <p>An array of one or more filter values.</p> <p
+     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT_IN
+     * operators can take a values array that has more than one element.</p> </li> <li>
+     * <p>The other operators require an array with a single element.</p> </li> </ul>
+     * <p class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM
+     * attribute can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY
+     * attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The FORM_FACTOR attribute can be
+     * set to "PHONE" or "TABLET".</p> </li> <li> <p>The FLEET_TYPE attribute can be
+     * set to "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> </ul>
      */
     inline DeviceSelectionConfiguration& WithFilters(const Aws::Vector<DeviceFilter>& value) { SetFilters(value); return *this;}
 
@@ -278,28 +288,30 @@ namespace Model
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
      * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
      * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>
-     * <b>Operator</b> </p> <p>The filter operator.</p> <ul> <li> <p>The EQUALS
-     * operator is available for every attribute except INSTANCE_LABELS.</p> </li> <li>
-     * <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
-     * attributes.</p> </li> <li> <p>The IN and NOT_IN operators are available for the
-     * ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>
-     * <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
-     * GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
-     * attribute.</p> </li> </ul> </li> <li> <p> <b>Values</b> </p> <p>An array of one
-     * or more filter values.</p> <p class="title"> <b>Operator Values</b> </p> <ul>
-     * <li> <p>The IN and NOT_IN operators can take a values array that has more than
-     * one element.</p> </li> <li> <p>The other operators require an array with a
-     * single element.</p> </li> </ul> <p class="title"> <b>Attribute Values</b> </p>
-     * <ul> <li> <p>The PLATFORM attribute can be set to "ANDROID" or "IOS".</p> </li>
-     * <li> <p>The AVAILABILITY attribute can be set to "AVAILABLE",
-     * "HIGHLY_AVAILABLE", "BUSY", or "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The
-     * FORM_FACTOR attribute can be set to "PHONE" or "TABLET".</p> </li> <li> <p>The
-     * FLEET_TYPE attribute can be set to "PUBLIC" or "PRIVATE".</p> </li> </ul> </li>
-     * </ul>
+     * Valid values are "TRUE" or "FALSE". <i>This filter will be ignored, as remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p> </li> <li> <p>INSTANCE_ARN: The Amazon Resource
+     * Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS: The label
+     * of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type. Valid
+     * values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p> <b>Operator</b>
+     * </p> <p>The filter operator.</p> <ul> <li> <p>The EQUALS operator is available
+     * for every attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS
+     * operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>
+     * <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
+     * MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li> <li> <p>The
+     * LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS
+     * operators are also available for the OS_VERSION attribute.</p> </li> </ul> </li>
+     * <li> <p> <b>Values</b> </p> <p>An array of one or more filter values.</p> <p
+     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT_IN
+     * operators can take a values array that has more than one element.</p> </li> <li>
+     * <p>The other operators require an array with a single element.</p> </li> </ul>
+     * <p class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM
+     * attribute can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY
+     * attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The FORM_FACTOR attribute can be
+     * set to "PHONE" or "TABLET".</p> </li> <li> <p>The FLEET_TYPE attribute can be
+     * set to "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> </ul>
      */
     inline DeviceSelectionConfiguration& WithFilters(Aws::Vector<DeviceFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -320,28 +332,30 @@ namespace Model
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
      * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
      * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>
-     * <b>Operator</b> </p> <p>The filter operator.</p> <ul> <li> <p>The EQUALS
-     * operator is available for every attribute except INSTANCE_LABELS.</p> </li> <li>
-     * <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
-     * attributes.</p> </li> <li> <p>The IN and NOT_IN operators are available for the
-     * ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>
-     * <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
-     * GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
-     * attribute.</p> </li> </ul> </li> <li> <p> <b>Values</b> </p> <p>An array of one
-     * or more filter values.</p> <p class="title"> <b>Operator Values</b> </p> <ul>
-     * <li> <p>The IN and NOT_IN operators can take a values array that has more than
-     * one element.</p> </li> <li> <p>The other operators require an array with a
-     * single element.</p> </li> </ul> <p class="title"> <b>Attribute Values</b> </p>
-     * <ul> <li> <p>The PLATFORM attribute can be set to "ANDROID" or "IOS".</p> </li>
-     * <li> <p>The AVAILABILITY attribute can be set to "AVAILABLE",
-     * "HIGHLY_AVAILABLE", "BUSY", or "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The
-     * FORM_FACTOR attribute can be set to "PHONE" or "TABLET".</p> </li> <li> <p>The
-     * FLEET_TYPE attribute can be set to "PUBLIC" or "PRIVATE".</p> </li> </ul> </li>
-     * </ul>
+     * Valid values are "TRUE" or "FALSE". <i>This filter will be ignored, as remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p> </li> <li> <p>INSTANCE_ARN: The Amazon Resource
+     * Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS: The label
+     * of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type. Valid
+     * values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p> <b>Operator</b>
+     * </p> <p>The filter operator.</p> <ul> <li> <p>The EQUALS operator is available
+     * for every attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS
+     * operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>
+     * <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
+     * MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li> <li> <p>The
+     * LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS
+     * operators are also available for the OS_VERSION attribute.</p> </li> </ul> </li>
+     * <li> <p> <b>Values</b> </p> <p>An array of one or more filter values.</p> <p
+     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT_IN
+     * operators can take a values array that has more than one element.</p> </li> <li>
+     * <p>The other operators require an array with a single element.</p> </li> </ul>
+     * <p class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM
+     * attribute can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY
+     * attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The FORM_FACTOR attribute can be
+     * set to "PHONE" or "TABLET".</p> </li> <li> <p>The FLEET_TYPE attribute can be
+     * set to "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> </ul>
      */
     inline DeviceSelectionConfiguration& AddFilters(const DeviceFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -362,28 +376,30 @@ namespace Model
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
      * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
      * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>
-     * <b>Operator</b> </p> <p>The filter operator.</p> <ul> <li> <p>The EQUALS
-     * operator is available for every attribute except INSTANCE_LABELS.</p> </li> <li>
-     * <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
-     * attributes.</p> </li> <li> <p>The IN and NOT_IN operators are available for the
-     * ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>
-     * <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
-     * GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
-     * attribute.</p> </li> </ul> </li> <li> <p> <b>Values</b> </p> <p>An array of one
-     * or more filter values.</p> <p class="title"> <b>Operator Values</b> </p> <ul>
-     * <li> <p>The IN and NOT_IN operators can take a values array that has more than
-     * one element.</p> </li> <li> <p>The other operators require an array with a
-     * single element.</p> </li> </ul> <p class="title"> <b>Attribute Values</b> </p>
-     * <ul> <li> <p>The PLATFORM attribute can be set to "ANDROID" or "IOS".</p> </li>
-     * <li> <p>The AVAILABILITY attribute can be set to "AVAILABLE",
-     * "HIGHLY_AVAILABLE", "BUSY", or "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The
-     * FORM_FACTOR attribute can be set to "PHONE" or "TABLET".</p> </li> <li> <p>The
-     * FLEET_TYPE attribute can be set to "PUBLIC" or "PRIVATE".</p> </li> </ul> </li>
-     * </ul>
+     * Valid values are "TRUE" or "FALSE". <i>This filter will be ignored, as remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p> </li> <li> <p>INSTANCE_ARN: The Amazon Resource
+     * Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS: The label
+     * of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type. Valid
+     * values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p> <b>Operator</b>
+     * </p> <p>The filter operator.</p> <ul> <li> <p>The EQUALS operator is available
+     * for every attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS
+     * operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>
+     * <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
+     * MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li> <li> <p>The
+     * LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS
+     * operators are also available for the OS_VERSION attribute.</p> </li> </ul> </li>
+     * <li> <p> <b>Values</b> </p> <p>An array of one or more filter values.</p> <p
+     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT_IN
+     * operators can take a values array that has more than one element.</p> </li> <li>
+     * <p>The other operators require an array with a single element.</p> </li> </ul>
+     * <p class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM
+     * attribute can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY
+     * attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The FORM_FACTOR attribute can be
+     * set to "PHONE" or "TABLET".</p> </li> <li> <p>The FLEET_TYPE attribute can be
+     * set to "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> </ul>
      */
     inline DeviceSelectionConfiguration& AddFilters(DeviceFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

@@ -198,83 +198,115 @@ namespace Model
 
 
     /**
-     * <p>The public key of the <code>ssh</code> key pair you want to use for
-     * connecting to remote devices in your remote debugging session. This is only
-     * required if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     * <p> <i>Ignored.</i> The public key of the <code>ssh</code> key pair you want to
+     * use for connecting to remote devices in your remote debugging session. This is
+     * only required if <code>remoteDebugEnabled</code> is set to
+     * <code>true</code>.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline const Aws::String& GetSshPublicKey() const{ return m_sshPublicKey; }
 
     /**
-     * <p>The public key of the <code>ssh</code> key pair you want to use for
-     * connecting to remote devices in your remote debugging session. This is only
-     * required if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     * <p> <i>Ignored.</i> The public key of the <code>ssh</code> key pair you want to
+     * use for connecting to remote devices in your remote debugging session. This is
+     * only required if <code>remoteDebugEnabled</code> is set to
+     * <code>true</code>.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline bool SshPublicKeyHasBeenSet() const { return m_sshPublicKeyHasBeenSet; }
 
     /**
-     * <p>The public key of the <code>ssh</code> key pair you want to use for
-     * connecting to remote devices in your remote debugging session. This is only
-     * required if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     * <p> <i>Ignored.</i> The public key of the <code>ssh</code> key pair you want to
+     * use for connecting to remote devices in your remote debugging session. This is
+     * only required if <code>remoteDebugEnabled</code> is set to
+     * <code>true</code>.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline void SetSshPublicKey(const Aws::String& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = value; }
 
     /**
-     * <p>The public key of the <code>ssh</code> key pair you want to use for
-     * connecting to remote devices in your remote debugging session. This is only
-     * required if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     * <p> <i>Ignored.</i> The public key of the <code>ssh</code> key pair you want to
+     * use for connecting to remote devices in your remote debugging session. This is
+     * only required if <code>remoteDebugEnabled</code> is set to
+     * <code>true</code>.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline void SetSshPublicKey(Aws::String&& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = std::move(value); }
 
     /**
-     * <p>The public key of the <code>ssh</code> key pair you want to use for
-     * connecting to remote devices in your remote debugging session. This is only
-     * required if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     * <p> <i>Ignored.</i> The public key of the <code>ssh</code> key pair you want to
+     * use for connecting to remote devices in your remote debugging session. This is
+     * only required if <code>remoteDebugEnabled</code> is set to
+     * <code>true</code>.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline void SetSshPublicKey(const char* value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey.assign(value); }
 
     /**
-     * <p>The public key of the <code>ssh</code> key pair you want to use for
-     * connecting to remote devices in your remote debugging session. This is only
-     * required if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     * <p> <i>Ignored.</i> The public key of the <code>ssh</code> key pair you want to
+     * use for connecting to remote devices in your remote debugging session. This is
+     * only required if <code>remoteDebugEnabled</code> is set to
+     * <code>true</code>.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline CreateRemoteAccessSessionRequest& WithSshPublicKey(const Aws::String& value) { SetSshPublicKey(value); return *this;}
 
     /**
-     * <p>The public key of the <code>ssh</code> key pair you want to use for
-     * connecting to remote devices in your remote debugging session. This is only
-     * required if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     * <p> <i>Ignored.</i> The public key of the <code>ssh</code> key pair you want to
+     * use for connecting to remote devices in your remote debugging session. This is
+     * only required if <code>remoteDebugEnabled</code> is set to
+     * <code>true</code>.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline CreateRemoteAccessSessionRequest& WithSshPublicKey(Aws::String&& value) { SetSshPublicKey(std::move(value)); return *this;}
 
     /**
-     * <p>The public key of the <code>ssh</code> key pair you want to use for
-     * connecting to remote devices in your remote debugging session. This is only
-     * required if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     * <p> <i>Ignored.</i> The public key of the <code>ssh</code> key pair you want to
+     * use for connecting to remote devices in your remote debugging session. This is
+     * only required if <code>remoteDebugEnabled</code> is set to
+     * <code>true</code>.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline CreateRemoteAccessSessionRequest& WithSshPublicKey(const char* value) { SetSshPublicKey(value); return *this;}
 
 
     /**
      * <p>Set to <code>true</code> if you want to access devices remotely for debugging
-     * in your remote access session.</p>
+     * in your remote access session.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline bool GetRemoteDebugEnabled() const{ return m_remoteDebugEnabled; }
 
     /**
      * <p>Set to <code>true</code> if you want to access devices remotely for debugging
-     * in your remote access session.</p>
+     * in your remote access session.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline bool RemoteDebugEnabledHasBeenSet() const { return m_remoteDebugEnabledHasBeenSet; }
 
     /**
      * <p>Set to <code>true</code> if you want to access devices remotely for debugging
-     * in your remote access session.</p>
+     * in your remote access session.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline void SetRemoteDebugEnabled(bool value) { m_remoteDebugEnabledHasBeenSet = true; m_remoteDebugEnabled = value; }
 
     /**
      * <p>Set to <code>true</code> if you want to access devices remotely for debugging
-     * in your remote access session.</p>
+     * in your remote access session.</p> <p> <i>Remote debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline CreateRemoteAccessSessionRequest& WithRemoteDebugEnabled(bool value) { SetRemoteDebugEnabled(value); return *this;}
 
@@ -398,7 +430,10 @@ namespace Model
      * <p>Unique identifier for the client. If you want access to multiple devices on
      * the same client, you should pass the same <code>clientId</code> value in each
      * call to <code>CreateRemoteAccessSession</code>. This is required only if
-     * <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     * <code>remoteDebugEnabled</code> is set to <code>true</code>.</p> <p> <i>Remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
 
@@ -406,7 +441,10 @@ namespace Model
      * <p>Unique identifier for the client. If you want access to multiple devices on
      * the same client, you should pass the same <code>clientId</code> value in each
      * call to <code>CreateRemoteAccessSession</code>. This is required only if
-     * <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     * <code>remoteDebugEnabled</code> is set to <code>true</code>.</p> <p> <i>Remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
 
@@ -414,7 +452,10 @@ namespace Model
      * <p>Unique identifier for the client. If you want access to multiple devices on
      * the same client, you should pass the same <code>clientId</code> value in each
      * call to <code>CreateRemoteAccessSession</code>. This is required only if
-     * <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     * <code>remoteDebugEnabled</code> is set to <code>true</code>.</p> <p> <i>Remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
@@ -422,7 +463,10 @@ namespace Model
      * <p>Unique identifier for the client. If you want access to multiple devices on
      * the same client, you should pass the same <code>clientId</code> value in each
      * call to <code>CreateRemoteAccessSession</code>. This is required only if
-     * <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     * <code>remoteDebugEnabled</code> is set to <code>true</code>.</p> <p> <i>Remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
 
@@ -430,7 +474,10 @@ namespace Model
      * <p>Unique identifier for the client. If you want access to multiple devices on
      * the same client, you should pass the same <code>clientId</code> value in each
      * call to <code>CreateRemoteAccessSession</code>. This is required only if
-     * <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     * <code>remoteDebugEnabled</code> is set to <code>true</code>.</p> <p> <i>Remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
 
@@ -438,7 +485,10 @@ namespace Model
      * <p>Unique identifier for the client. If you want access to multiple devices on
      * the same client, you should pass the same <code>clientId</code> value in each
      * call to <code>CreateRemoteAccessSession</code>. This is required only if
-     * <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     * <code>remoteDebugEnabled</code> is set to <code>true</code>.</p> <p> <i>Remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline CreateRemoteAccessSessionRequest& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
 
@@ -446,7 +496,10 @@ namespace Model
      * <p>Unique identifier for the client. If you want access to multiple devices on
      * the same client, you should pass the same <code>clientId</code> value in each
      * call to <code>CreateRemoteAccessSession</code>. This is required only if
-     * <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     * <code>remoteDebugEnabled</code> is set to <code>true</code>.</p> <p> <i>Remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline CreateRemoteAccessSessionRequest& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
 
@@ -454,7 +507,10 @@ namespace Model
      * <p>Unique identifier for the client. If you want access to multiple devices on
      * the same client, you should pass the same <code>clientId</code> value in each
      * call to <code>CreateRemoteAccessSession</code>. This is required only if
-     * <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     * <code>remoteDebugEnabled</code> is set to <code>true</code>.</p> <p> <i>Remote
+     * debugging is <a
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     * longer supported</a>.</i> </p>
      */
     inline CreateRemoteAccessSessionRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
 

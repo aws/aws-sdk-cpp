@@ -110,6 +110,7 @@
 #include <aws/ec2/model/DeleteLaunchTemplateVersionsResponse.h>
 #include <aws/ec2/model/DeleteNatGatewayResponse.h>
 #include <aws/ec2/model/DeleteNetworkInterfacePermissionResponse.h>
+#include <aws/ec2/model/DeleteQueuedReservedInstancesResponse.h>
 #include <aws/ec2/model/DeleteTrafficMirrorFilterResponse.h>
 #include <aws/ec2/model/DeleteTrafficMirrorFilterRuleResponse.h>
 #include <aws/ec2/model/DeleteTrafficMirrorSessionResponse.h>
@@ -471,6 +472,7 @@ namespace Model
         class DeleteNetworkInterfaceRequest;
         class DeleteNetworkInterfacePermissionRequest;
         class DeletePlacementGroupRequest;
+        class DeleteQueuedReservedInstancesRequest;
         class DeleteRouteRequest;
         class DeleteRouteTableRequest;
         class DeleteSecurityGroupRequest;
@@ -830,6 +832,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteNetworkInterfaceOutcome;
         typedef Aws::Utils::Outcome<DeleteNetworkInterfacePermissionResponse, Aws::Client::AWSError<EC2Errors>> DeleteNetworkInterfacePermissionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeletePlacementGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteQueuedReservedInstancesResponse, Aws::Client::AWSError<EC2Errors>> DeleteQueuedReservedInstancesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteRouteOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteRouteTableOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteSecurityGroupOutcome;
@@ -1189,6 +1192,7 @@ namespace Model
         typedef std::future<DeleteNetworkInterfaceOutcome> DeleteNetworkInterfaceOutcomeCallable;
         typedef std::future<DeleteNetworkInterfacePermissionOutcome> DeleteNetworkInterfacePermissionOutcomeCallable;
         typedef std::future<DeletePlacementGroupOutcome> DeletePlacementGroupOutcomeCallable;
+        typedef std::future<DeleteQueuedReservedInstancesOutcome> DeleteQueuedReservedInstancesOutcomeCallable;
         typedef std::future<DeleteRouteOutcome> DeleteRouteOutcomeCallable;
         typedef std::future<DeleteRouteTableOutcome> DeleteRouteTableOutcomeCallable;
         typedef std::future<DeleteSecurityGroupOutcome> DeleteSecurityGroupOutcomeCallable;
@@ -1551,6 +1555,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DeleteNetworkInterfaceRequest&, const Model::DeleteNetworkInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkInterfaceResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteNetworkInterfacePermissionRequest&, const Model::DeleteNetworkInterfacePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkInterfacePermissionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeletePlacementGroupRequest&, const Model::DeletePlacementGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePlacementGroupResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteQueuedReservedInstancesRequest&, const Model::DeleteQueuedReservedInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQueuedReservedInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteRouteRequest&, const Model::DeleteRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRouteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteRouteTableRequest&, const Model::DeleteRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteSecurityGroupRequest&, const Model::DeleteSecurityGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSecurityGroupResponseReceivedHandler;
@@ -6795,6 +6800,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeletePlacementGroupAsync(const Model::DeletePlacementGroupRequest& request, const DeletePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the queued purchases for the specified Reserved
+         * Instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteQueuedReservedInstances">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteQueuedReservedInstancesOutcome DeleteQueuedReservedInstances(const Model::DeleteQueuedReservedInstancesRequest& request) const;
+
+        /**
+         * <p>Deletes the queued purchases for the specified Reserved
+         * Instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteQueuedReservedInstances">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteQueuedReservedInstancesOutcomeCallable DeleteQueuedReservedInstancesCallable(const Model::DeleteQueuedReservedInstancesRequest& request) const;
+
+        /**
+         * <p>Deletes the queued purchases for the specified Reserved
+         * Instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteQueuedReservedInstances">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteQueuedReservedInstancesAsync(const Model::DeleteQueuedReservedInstancesRequest& request, const DeleteQueuedReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified route from the specified route table.</p><p><h3>See
@@ -15457,7 +15490,9 @@ namespace Model
          * pricing.</p> <p>Use <a>DescribeReservedInstancesOfferings</a> to get a list of
          * Reserved Instance offerings that match your specifications. After you've
          * purchased a Reserved Instance, you can check for your new Reserved Instance with
-         * <a>DescribeReservedInstances</a>.</p> <p>For more information, see <a
+         * <a>DescribeReservedInstances</a>.</p> <p>To queue a purchase for a future date
+         * and time, specify a purchase time. If you do not specify a purchase time, the
+         * default is the current time.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
          * Instances</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
@@ -15474,7 +15509,9 @@ namespace Model
          * pricing.</p> <p>Use <a>DescribeReservedInstancesOfferings</a> to get a list of
          * Reserved Instance offerings that match your specifications. After you've
          * purchased a Reserved Instance, you can check for your new Reserved Instance with
-         * <a>DescribeReservedInstances</a>.</p> <p>For more information, see <a
+         * <a>DescribeReservedInstances</a>.</p> <p>To queue a purchase for a future date
+         * and time, specify a purchase time. If you do not specify a purchase time, the
+         * default is the current time.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
          * Instances</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
@@ -15493,7 +15530,9 @@ namespace Model
          * pricing.</p> <p>Use <a>DescribeReservedInstancesOfferings</a> to get a list of
          * Reserved Instance offerings that match your specifications. After you've
          * purchased a Reserved Instance, you can check for your new Reserved Instance with
-         * <a>DescribeReservedInstances</a>.</p> <p>For more information, see <a
+         * <a>DescribeReservedInstances</a>.</p> <p>To queue a purchase for a future date
+         * and time, specify a purchase time. If you do not specify a purchase time, the
+         * default is the current time.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
          * Instances</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
@@ -17685,6 +17724,7 @@ namespace Model
         void DeleteNetworkInterfaceAsyncHelper(const Model::DeleteNetworkInterfaceRequest& request, const DeleteNetworkInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNetworkInterfacePermissionAsyncHelper(const Model::DeleteNetworkInterfacePermissionRequest& request, const DeleteNetworkInterfacePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePlacementGroupAsyncHelper(const Model::DeletePlacementGroupRequest& request, const DeletePlacementGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteQueuedReservedInstancesAsyncHelper(const Model::DeleteQueuedReservedInstancesRequest& request, const DeleteQueuedReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRouteAsyncHelper(const Model::DeleteRouteRequest& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRouteTableAsyncHelper(const Model::DeleteRouteTableRequest& request, const DeleteRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSecurityGroupAsyncHelper(const Model::DeleteSecurityGroupRequest& request, const DeleteSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
