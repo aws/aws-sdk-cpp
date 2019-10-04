@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>The SMS multi-factor authentication (MFA) settings type.</p><p><h3>See
+   * <p>The type used for enabling SMS MFA at the user level.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SMSMfaSettingsType">AWS
    * API Reference</a></p>
@@ -68,22 +68,22 @@ namespace Model
 
 
     /**
-     * <p>The preferred MFA method.</p>
+     * <p>Specifies whether SMS is the preferred MFA method.</p>
      */
     inline bool GetPreferredMfa() const{ return m_preferredMfa; }
 
     /**
-     * <p>The preferred MFA method.</p>
+     * <p>Specifies whether SMS is the preferred MFA method.</p>
      */
     inline bool PreferredMfaHasBeenSet() const { return m_preferredMfaHasBeenSet; }
 
     /**
-     * <p>The preferred MFA method.</p>
+     * <p>Specifies whether SMS is the preferred MFA method.</p>
      */
     inline void SetPreferredMfa(bool value) { m_preferredMfaHasBeenSet = true; m_preferredMfa = value; }
 
     /**
-     * <p>The preferred MFA method.</p>
+     * <p>Specifies whether SMS is the preferred MFA method.</p>
      */
     inline SMSMfaSettingsType& WithPreferredMfa(bool value) { SetPreferredMfa(value); return *this;}
 

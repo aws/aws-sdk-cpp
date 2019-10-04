@@ -50,42 +50,66 @@ namespace Model
 
 
     /**
-     * <p>The SMS authentication message.</p>
+     * <p>The SMS authentication message that will be sent to users with the code they
+     * need to sign in. The message must contain the ‘{####}’ placeholder, which will
+     * be replaced with the code. If the message is not included, and default message
+     * will be used.</p>
      */
     inline const Aws::String& GetSmsAuthenticationMessage() const{ return m_smsAuthenticationMessage; }
 
     /**
-     * <p>The SMS authentication message.</p>
+     * <p>The SMS authentication message that will be sent to users with the code they
+     * need to sign in. The message must contain the ‘{####}’ placeholder, which will
+     * be replaced with the code. If the message is not included, and default message
+     * will be used.</p>
      */
     inline bool SmsAuthenticationMessageHasBeenSet() const { return m_smsAuthenticationMessageHasBeenSet; }
 
     /**
-     * <p>The SMS authentication message.</p>
+     * <p>The SMS authentication message that will be sent to users with the code they
+     * need to sign in. The message must contain the ‘{####}’ placeholder, which will
+     * be replaced with the code. If the message is not included, and default message
+     * will be used.</p>
      */
     inline void SetSmsAuthenticationMessage(const Aws::String& value) { m_smsAuthenticationMessageHasBeenSet = true; m_smsAuthenticationMessage = value; }
 
     /**
-     * <p>The SMS authentication message.</p>
+     * <p>The SMS authentication message that will be sent to users with the code they
+     * need to sign in. The message must contain the ‘{####}’ placeholder, which will
+     * be replaced with the code. If the message is not included, and default message
+     * will be used.</p>
      */
     inline void SetSmsAuthenticationMessage(Aws::String&& value) { m_smsAuthenticationMessageHasBeenSet = true; m_smsAuthenticationMessage = std::move(value); }
 
     /**
-     * <p>The SMS authentication message.</p>
+     * <p>The SMS authentication message that will be sent to users with the code they
+     * need to sign in. The message must contain the ‘{####}’ placeholder, which will
+     * be replaced with the code. If the message is not included, and default message
+     * will be used.</p>
      */
     inline void SetSmsAuthenticationMessage(const char* value) { m_smsAuthenticationMessageHasBeenSet = true; m_smsAuthenticationMessage.assign(value); }
 
     /**
-     * <p>The SMS authentication message.</p>
+     * <p>The SMS authentication message that will be sent to users with the code they
+     * need to sign in. The message must contain the ‘{####}’ placeholder, which will
+     * be replaced with the code. If the message is not included, and default message
+     * will be used.</p>
      */
     inline SmsMfaConfigType& WithSmsAuthenticationMessage(const Aws::String& value) { SetSmsAuthenticationMessage(value); return *this;}
 
     /**
-     * <p>The SMS authentication message.</p>
+     * <p>The SMS authentication message that will be sent to users with the code they
+     * need to sign in. The message must contain the ‘{####}’ placeholder, which will
+     * be replaced with the code. If the message is not included, and default message
+     * will be used.</p>
      */
     inline SmsMfaConfigType& WithSmsAuthenticationMessage(Aws::String&& value) { SetSmsAuthenticationMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The SMS authentication message.</p>
+     * <p>The SMS authentication message that will be sent to users with the code they
+     * need to sign in. The message must contain the ‘{####}’ placeholder, which will
+     * be replaced with the code. If the message is not included, and default message
+     * will be used.</p>
      */
     inline SmsMfaConfigType& WithSmsAuthenticationMessage(const char* value) { SetSmsAuthenticationMessage(value); return *this;}
 

@@ -1017,14 +1017,28 @@ namespace Model
         virtual void CreateDocumentAsync(const Model::CreateDocumentRequest& request, const CreateDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new maintenance window.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new maintenance window.</p> <note> <p>The value you specify for
+         * <code>Duration</code> determines the specific end time for the maintenance
+         * window based on the time it begins. No maintenance window tasks are permitted to
+         * start after the resulting endtime minus the number of hours you specify for
+         * <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the
+         * duration is three hours, and the value you specify for <code>Cutoff</code> is
+         * one hour, no maintenance window tasks can start after 5 PM.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateMaintenanceWindowOutcome CreateMaintenanceWindow(const Model::CreateMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Creates a new maintenance window.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new maintenance window.</p> <note> <p>The value you specify for
+         * <code>Duration</code> determines the specific end time for the maintenance
+         * window based on the time it begins. No maintenance window tasks are permitted to
+         * start after the resulting endtime minus the number of hours you specify for
+         * <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the
+         * duration is three hours, and the value you specify for <code>Cutoff</code> is
+         * one hour, no maintenance window tasks can start after 5 PM.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -1033,7 +1047,14 @@ namespace Model
         virtual Model::CreateMaintenanceWindowOutcomeCallable CreateMaintenanceWindowCallable(const Model::CreateMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Creates a new maintenance window.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new maintenance window.</p> <note> <p>The value you specify for
+         * <code>Duration</code> determines the specific end time for the maintenance
+         * window based on the time it begins. No maintenance window tasks are permitted to
+         * start after the resulting endtime minus the number of hours you specify for
+         * <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the
+         * duration is three hours, and the value you specify for <code>Cutoff</code> is
+         * one hour, no maintenance window tasks can start after 5 PM.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -4328,7 +4349,9 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">
          * Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems
-         * Manager User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Manager User Guide</i>.</p> <p>AWS Tools for PowerShell usage: Start-SSMSession
+         * is not currently supported by AWS Tools for PowerShell on Windows local
+         * machines.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">AWS
          * API Reference</a></p>
          */
@@ -4343,7 +4366,9 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">
          * Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems
-         * Manager User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Manager User Guide</i>.</p> <p>AWS Tools for PowerShell usage: Start-SSMSession
+         * is not currently supported by AWS Tools for PowerShell on Windows local
+         * machines.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">AWS
          * API Reference</a></p>
          *
@@ -4360,7 +4385,9 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">
          * Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems
-         * Manager User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Manager User Guide</i>.</p> <p>AWS Tools for PowerShell usage: Start-SSMSession
+         * is not currently supported by AWS Tools for PowerShell on Windows local
+         * machines.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">AWS
          * API Reference</a></p>
          *
@@ -4556,7 +4583,13 @@ namespace Model
 
         /**
          * <p>Updates an existing maintenance window. Only specified parameters are
-         * modified.</p><p><h3>See Also:</h3>   <a
+         * modified.</p> <note> <p>The value you specify for <code>Duration</code>
+         * determines the specific end time for the maintenance window based on the time it
+         * begins. No maintenance window tasks are permitted to start after the resulting
+         * endtime minus the number of hours you specify for <code>Cutoff</code>. For
+         * example, if the maintenance window starts at 3 PM, the duration is three hours,
+         * and the value you specify for <code>Cutoff</code> is one hour, no maintenance
+         * window tasks can start after 5 PM.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">AWS
          * API Reference</a></p>
          */
@@ -4564,7 +4597,13 @@ namespace Model
 
         /**
          * <p>Updates an existing maintenance window. Only specified parameters are
-         * modified.</p><p><h3>See Also:</h3>   <a
+         * modified.</p> <note> <p>The value you specify for <code>Duration</code>
+         * determines the specific end time for the maintenance window based on the time it
+         * begins. No maintenance window tasks are permitted to start after the resulting
+         * endtime minus the number of hours you specify for <code>Cutoff</code>. For
+         * example, if the maintenance window starts at 3 PM, the duration is three hours,
+         * and the value you specify for <code>Cutoff</code> is one hour, no maintenance
+         * window tasks can start after 5 PM.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -4574,7 +4613,13 @@ namespace Model
 
         /**
          * <p>Updates an existing maintenance window. Only specified parameters are
-         * modified.</p><p><h3>See Also:</h3>   <a
+         * modified.</p> <note> <p>The value you specify for <code>Duration</code>
+         * determines the specific end time for the maintenance window based on the time it
+         * begins. No maintenance window tasks are permitted to start after the resulting
+         * endtime minus the number of hours you specify for <code>Cutoff</code>. For
+         * example, if the maintenance window starts at 3 PM, the duration is three hours,
+         * and the value you specify for <code>Cutoff</code> is one hour, no maintenance
+         * window tasks can start after 5 PM.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">AWS
          * API Reference</a></p>
          *

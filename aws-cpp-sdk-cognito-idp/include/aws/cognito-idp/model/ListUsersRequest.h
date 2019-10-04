@@ -253,9 +253,9 @@ namespace Model
      * <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li> <li> <p>
      * <code>sub</code> </p> </li> </ul> <p>Custom attributes are not searchable.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
      * of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
      */
     inline const Aws::String& GetFilter() const{ return m_filter; }
@@ -282,9 +282,9 @@ namespace Model
      * <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li> <li> <p>
      * <code>sub</code> </p> </li> </ul> <p>Custom attributes are not searchable.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
      * of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
@@ -311,9 +311,9 @@ namespace Model
      * <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li> <li> <p>
      * <code>sub</code> </p> </li> </ul> <p>Custom attributes are not searchable.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
      * of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
      */
     inline void SetFilter(const Aws::String& value) { m_filterHasBeenSet = true; m_filter = value; }
@@ -340,9 +340,9 @@ namespace Model
      * <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li> <li> <p>
      * <code>sub</code> </p> </li> </ul> <p>Custom attributes are not searchable.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
      * of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
      */
     inline void SetFilter(Aws::String&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
@@ -369,9 +369,9 @@ namespace Model
      * <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li> <li> <p>
      * <code>sub</code> </p> </li> </ul> <p>Custom attributes are not searchable.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
      * of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
      */
     inline void SetFilter(const char* value) { m_filterHasBeenSet = true; m_filter.assign(value); }
@@ -398,9 +398,9 @@ namespace Model
      * <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li> <li> <p>
      * <code>sub</code> </p> </li> </ul> <p>Custom attributes are not searchable.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
      * of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
      */
     inline ListUsersRequest& WithFilter(const Aws::String& value) { SetFilter(value); return *this;}
@@ -427,9 +427,9 @@ namespace Model
      * <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li> <li> <p>
      * <code>sub</code> </p> </li> </ul> <p>Custom attributes are not searchable.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
      * of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
      */
     inline ListUsersRequest& WithFilter(Aws::String&& value) { SetFilter(std::move(value)); return *this;}
@@ -456,9 +456,9 @@ namespace Model
      * <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li> <li> <p>
      * <code>sub</code> </p> </li> </ul> <p>Custom attributes are not searchable.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching
      * for Users Using the ListUsers API</a> and <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
      * of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
      */
     inline ListUsersRequest& WithFilter(const char* value) { SetFilter(value); return *this;}

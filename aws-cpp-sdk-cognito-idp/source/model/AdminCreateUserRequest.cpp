@@ -32,7 +32,8 @@ AdminCreateUserRequest::AdminCreateUserRequest() :
     m_forceAliasCreationHasBeenSet(false),
     m_messageAction(MessageActionType::NOT_SET),
     m_messageActionHasBeenSet(false),
-    m_desiredDeliveryMediumsHasBeenSet(false)
+    m_desiredDeliveryMediumsHasBeenSet(false),
+    m_clientMetadataHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,17 @@ Aws::String AdminCreateUserRequest::SerializePayload() const
      desiredDeliveryMediumsJsonList[desiredDeliveryMediumsIndex].AsString(DeliveryMediumTypeMapper::GetNameForDeliveryMediumType(m_desiredDeliveryMediums[desiredDeliveryMediumsIndex]));
    }
    payload.WithArray("DesiredDeliveryMediums", std::move(desiredDeliveryMediumsJsonList));
+
+  }
+
+  if(m_clientMetadataHasBeenSet)
+  {
+   JsonValue clientMetadataJsonMap;
+   for(auto& clientMetadataItem : m_clientMetadata)
+   {
+     clientMetadataJsonMap.WithString(clientMetadataItem.first, clientMetadataItem.second);
+   }
+   payload.WithObject("ClientMetadata", std::move(clientMetadataJsonMap));
 
   }
 

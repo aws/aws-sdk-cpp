@@ -30,7 +30,8 @@ AdminRespondToAuthChallengeRequest::AdminRespondToAuthChallengeRequest() :
     m_challengeResponsesHasBeenSet(false),
     m_sessionHasBeenSet(false),
     m_analyticsMetadataHasBeenSet(false),
-    m_contextDataHasBeenSet(false)
+    m_contextDataHasBeenSet(false),
+    m_clientMetadataHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,17 @@ Aws::String AdminRespondToAuthChallengeRequest::SerializePayload() const
   if(m_contextDataHasBeenSet)
   {
    payload.WithObject("ContextData", m_contextData.Jsonize());
+
+  }
+
+  if(m_clientMetadataHasBeenSet)
+  {
+   JsonValue clientMetadataJsonMap;
+   for(auto& clientMetadataItem : m_clientMetadata)
+   {
+     clientMetadataJsonMap.WithString(clientMetadataItem.first, clientMetadataItem.second);
+   }
+   payload.WithObject("ClientMetadata", std::move(clientMetadataJsonMap));
 
   }
 

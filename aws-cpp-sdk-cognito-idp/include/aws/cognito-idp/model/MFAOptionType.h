@@ -35,8 +35,14 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the different settings for multi-factor authentication
-   * (MFA).</p><p><h3>See Also:</h3>   <a
+   * <p> <i>This data type is no longer supported.</i> You can use it only for SMS
+   * MFA configurations. You can't use it for TOTP software token MFA
+   * configurations.</p> <p>To set either type of MFA configuration, use the
+   * <a>AdminSetUserMFAPreference</a> or <a>SetUserMFAPreference</a> actions.</p>
+   * <p>To look up information about either type of MFA configuration, use the
+   * <a>AdminGetUserResponse$UserMFASettingList</a> or
+   * <a>GetUserResponse$UserMFASettingList</a> responses.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/MFAOptionType">AWS
    * API Reference</a></p>
    */
@@ -50,73 +56,87 @@ namespace Model
 
 
     /**
-     * <p>The delivery medium (email message or SMS message) to send the MFA code.</p>
+     * <p>The delivery medium to send the MFA code. You can use this parameter to set
+     * only the <code>SMS</code> delivery medium value.</p>
      */
     inline const DeliveryMediumType& GetDeliveryMedium() const{ return m_deliveryMedium; }
 
     /**
-     * <p>The delivery medium (email message or SMS message) to send the MFA code.</p>
+     * <p>The delivery medium to send the MFA code. You can use this parameter to set
+     * only the <code>SMS</code> delivery medium value.</p>
      */
     inline bool DeliveryMediumHasBeenSet() const { return m_deliveryMediumHasBeenSet; }
 
     /**
-     * <p>The delivery medium (email message or SMS message) to send the MFA code.</p>
+     * <p>The delivery medium to send the MFA code. You can use this parameter to set
+     * only the <code>SMS</code> delivery medium value.</p>
      */
     inline void SetDeliveryMedium(const DeliveryMediumType& value) { m_deliveryMediumHasBeenSet = true; m_deliveryMedium = value; }
 
     /**
-     * <p>The delivery medium (email message or SMS message) to send the MFA code.</p>
+     * <p>The delivery medium to send the MFA code. You can use this parameter to set
+     * only the <code>SMS</code> delivery medium value.</p>
      */
     inline void SetDeliveryMedium(DeliveryMediumType&& value) { m_deliveryMediumHasBeenSet = true; m_deliveryMedium = std::move(value); }
 
     /**
-     * <p>The delivery medium (email message or SMS message) to send the MFA code.</p>
+     * <p>The delivery medium to send the MFA code. You can use this parameter to set
+     * only the <code>SMS</code> delivery medium value.</p>
      */
     inline MFAOptionType& WithDeliveryMedium(const DeliveryMediumType& value) { SetDeliveryMedium(value); return *this;}
 
     /**
-     * <p>The delivery medium (email message or SMS message) to send the MFA code.</p>
+     * <p>The delivery medium to send the MFA code. You can use this parameter to set
+     * only the <code>SMS</code> delivery medium value.</p>
      */
     inline MFAOptionType& WithDeliveryMedium(DeliveryMediumType&& value) { SetDeliveryMedium(std::move(value)); return *this;}
 
 
     /**
-     * <p>The attribute name of the MFA option type.</p>
+     * <p>The attribute name of the MFA option type. The only valid value is
+     * <code>phone_number</code>.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
     /**
-     * <p>The attribute name of the MFA option type.</p>
+     * <p>The attribute name of the MFA option type. The only valid value is
+     * <code>phone_number</code>.</p>
      */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
-     * <p>The attribute name of the MFA option type.</p>
+     * <p>The attribute name of the MFA option type. The only valid value is
+     * <code>phone_number</code>.</p>
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
-     * <p>The attribute name of the MFA option type.</p>
+     * <p>The attribute name of the MFA option type. The only valid value is
+     * <code>phone_number</code>.</p>
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
-     * <p>The attribute name of the MFA option type.</p>
+     * <p>The attribute name of the MFA option type. The only valid value is
+     * <code>phone_number</code>.</p>
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
     /**
-     * <p>The attribute name of the MFA option type.</p>
+     * <p>The attribute name of the MFA option type. The only valid value is
+     * <code>phone_number</code>.</p>
      */
     inline MFAOptionType& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
     /**
-     * <p>The attribute name of the MFA option type.</p>
+     * <p>The attribute name of the MFA option type. The only valid value is
+     * <code>phone_number</code>.</p>
      */
     inline MFAOptionType& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
-     * <p>The attribute name of the MFA option type.</p>
+     * <p>The attribute name of the MFA option type. The only valid value is
+     * <code>phone_number</code>.</p>
      */
     inline MFAOptionType& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 

@@ -27,7 +27,8 @@ ForgotPasswordRequest::ForgotPasswordRequest() :
     m_secretHashHasBeenSet(false),
     m_userContextDataHasBeenSet(false),
     m_usernameHasBeenSet(false),
-    m_analyticsMetadataHasBeenSet(false)
+    m_analyticsMetadataHasBeenSet(false),
+    m_clientMetadataHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,17 @@ Aws::String ForgotPasswordRequest::SerializePayload() const
   if(m_analyticsMetadataHasBeenSet)
   {
    payload.WithObject("AnalyticsMetadata", m_analyticsMetadata.Jsonize());
+
+  }
+
+  if(m_clientMetadataHasBeenSet)
+  {
+   JsonValue clientMetadataJsonMap;
+   for(auto& clientMetadataItem : m_clientMetadata)
+   {
+     clientMetadataJsonMap.WithString(clientMetadataItem.first, clientMetadataItem.second);
+   }
+   payload.WithObject("ClientMetadata", std::move(clientMetadataJsonMap));
 
   }
 

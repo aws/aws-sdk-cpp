@@ -97,27 +97,47 @@ namespace Model
 
 
     /**
-     * <p>The MFA configuration.</p>
+     * <p>The MFA configuration. Valid values include:</p> <ul> <li> <p>
+     * <code>OFF</code> MFA will not be used for any users.</p> </li> <li> <p>
+     * <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an
+     * MFA factor enabled.</p> </li> </ul>
      */
     inline const UserPoolMfaType& GetMfaConfiguration() const{ return m_mfaConfiguration; }
 
     /**
-     * <p>The MFA configuration.</p>
+     * <p>The MFA configuration. Valid values include:</p> <ul> <li> <p>
+     * <code>OFF</code> MFA will not be used for any users.</p> </li> <li> <p>
+     * <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an
+     * MFA factor enabled.</p> </li> </ul>
      */
     inline void SetMfaConfiguration(const UserPoolMfaType& value) { m_mfaConfiguration = value; }
 
     /**
-     * <p>The MFA configuration.</p>
+     * <p>The MFA configuration. Valid values include:</p> <ul> <li> <p>
+     * <code>OFF</code> MFA will not be used for any users.</p> </li> <li> <p>
+     * <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an
+     * MFA factor enabled.</p> </li> </ul>
      */
     inline void SetMfaConfiguration(UserPoolMfaType&& value) { m_mfaConfiguration = std::move(value); }
 
     /**
-     * <p>The MFA configuration.</p>
+     * <p>The MFA configuration. Valid values include:</p> <ul> <li> <p>
+     * <code>OFF</code> MFA will not be used for any users.</p> </li> <li> <p>
+     * <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an
+     * MFA factor enabled.</p> </li> </ul>
      */
     inline SetUserPoolMfaConfigResult& WithMfaConfiguration(const UserPoolMfaType& value) { SetMfaConfiguration(value); return *this;}
 
     /**
-     * <p>The MFA configuration.</p>
+     * <p>The MFA configuration. Valid values include:</p> <ul> <li> <p>
+     * <code>OFF</code> MFA will not be used for any users.</p> </li> <li> <p>
+     * <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
+     * <code>OPTIONAL</code> MFA will be required only for individual users who have an
+     * MFA factor enabled.</p> </li> </ul>
      */
     inline SetUserPoolMfaConfigResult& WithMfaConfiguration(UserPoolMfaType&& value) { SetMfaConfiguration(std::move(value)); return *this;}
 

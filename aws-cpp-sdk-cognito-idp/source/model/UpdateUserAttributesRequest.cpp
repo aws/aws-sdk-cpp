@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 UpdateUserAttributesRequest::UpdateUserAttributesRequest() : 
     m_userAttributesHasBeenSet(false),
-    m_accessTokenHasBeenSet(false)
+    m_accessTokenHasBeenSet(false),
+    m_clientMetadataHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,17 @@ Aws::String UpdateUserAttributesRequest::SerializePayload() const
   if(m_accessTokenHasBeenSet)
   {
    payload.WithString("AccessToken", m_accessToken);
+
+  }
+
+  if(m_clientMetadataHasBeenSet)
+  {
+   JsonValue clientMetadataJsonMap;
+   for(auto& clientMetadataItem : m_clientMetadata)
+   {
+     clientMetadataJsonMap.WithString(clientMetadataItem.first, clientMetadataItem.second);
+   }
+   payload.WithObject("ClientMetadata", std::move(clientMetadataJsonMap));
 
   }
 

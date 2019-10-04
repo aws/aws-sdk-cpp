@@ -30,7 +30,8 @@ ConfirmSignUpRequest::ConfirmSignUpRequest() :
     m_forceAliasCreation(false),
     m_forceAliasCreationHasBeenSet(false),
     m_analyticsMetadataHasBeenSet(false),
-    m_userContextDataHasBeenSet(false)
+    m_userContextDataHasBeenSet(false),
+    m_clientMetadataHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,17 @@ Aws::String ConfirmSignUpRequest::SerializePayload() const
   if(m_userContextDataHasBeenSet)
   {
    payload.WithObject("UserContextData", m_userContextData.Jsonize());
+
+  }
+
+  if(m_clientMetadataHasBeenSet)
+  {
+   JsonValue clientMetadataJsonMap;
+   for(auto& clientMetadataItem : m_clientMetadata)
+   {
+     clientMetadataJsonMap.WithString(clientMetadataItem.first, clientMetadataItem.second);
+   }
+   payload.WithObject("ClientMetadata", std::move(clientMetadataJsonMap));
 
   }
 

@@ -27,12 +27,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeOriginEndpointResult::DescribeOriginEndpointResult() : 
+    m_origination(Origination::NOT_SET),
     m_startoverWindowSeconds(0),
     m_timeDelaySeconds(0)
 {
 }
 
 DescribeOriginEndpointResult::DescribeOriginEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_origination(Origination::NOT_SET),
     m_startoverWindowSeconds(0),
     m_timeDelaySeconds(0)
 {
@@ -93,6 +95,12 @@ DescribeOriginEndpointResult& DescribeOriginEndpointResult::operator =(const Aws
   if(jsonValue.ValueExists("mssPackage"))
   {
     m_mssPackage = jsonValue.GetObject("mssPackage");
+
+  }
+
+  if(jsonValue.ValueExists("origination"))
+  {
+    m_origination = OriginationMapper::GetOriginationForName(jsonValue.GetString("origination"));
 
   }
 

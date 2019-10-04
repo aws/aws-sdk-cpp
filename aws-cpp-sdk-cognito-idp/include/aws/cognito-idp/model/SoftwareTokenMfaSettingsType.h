@@ -68,22 +68,22 @@ namespace Model
 
 
     /**
-     * <p>The preferred MFA method.</p>
+     * <p>Specifies whether software token MFA is the preferred MFA method.</p>
      */
     inline bool GetPreferredMfa() const{ return m_preferredMfa; }
 
     /**
-     * <p>The preferred MFA method.</p>
+     * <p>Specifies whether software token MFA is the preferred MFA method.</p>
      */
     inline bool PreferredMfaHasBeenSet() const { return m_preferredMfaHasBeenSet; }
 
     /**
-     * <p>The preferred MFA method.</p>
+     * <p>Specifies whether software token MFA is the preferred MFA method.</p>
      */
     inline void SetPreferredMfa(bool value) { m_preferredMfaHasBeenSet = true; m_preferredMfa = value; }
 
     /**
-     * <p>The preferred MFA method.</p>
+     * <p>Specifies whether software token MFA is the preferred MFA method.</p>
      */
     inline SoftwareTokenMfaSettingsType& WithPreferredMfa(bool value) { SetPreferredMfa(value); return *this;}
 

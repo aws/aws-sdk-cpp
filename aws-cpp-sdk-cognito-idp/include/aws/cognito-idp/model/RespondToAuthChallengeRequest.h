@@ -205,196 +205,274 @@ namespace Model
 
     /**
      * <p>The challenge responses. These are inputs corresponding to the value of
-     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
-     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
-     * app client is configured with client secret).</p> </li> <li> <p>
-     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
-     * with client secret).</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> </ul>
+     * <code>ChallengeName</code>, for example:</p> <note> <p> <code>SECRET_HASH</code>
+     * (if app client is configured with client secret) applies to all inputs below
+     * (including <code>SOFTWARE_TOKEN_MFA</code>).</p> </note> <ul> <li> <p>
+     * <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p>
+     * </li> <li> <p> <code>PASSWORD_VERIFIER</code>:
+     * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
+     * <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>. </p> </li> <li> <p>
+     * <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and
+     * <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li> <li> <p>
+     * <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>,
+     * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
+     * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
+     * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
+     * </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetChallengeResponses() const{ return m_challengeResponses; }
 
     /**
      * <p>The challenge responses. These are inputs corresponding to the value of
-     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
-     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
-     * app client is configured with client secret).</p> </li> <li> <p>
-     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
-     * with client secret).</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> </ul>
+     * <code>ChallengeName</code>, for example:</p> <note> <p> <code>SECRET_HASH</code>
+     * (if app client is configured with client secret) applies to all inputs below
+     * (including <code>SOFTWARE_TOKEN_MFA</code>).</p> </note> <ul> <li> <p>
+     * <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p>
+     * </li> <li> <p> <code>PASSWORD_VERIFIER</code>:
+     * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
+     * <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>. </p> </li> <li> <p>
+     * <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and
+     * <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li> <li> <p>
+     * <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>,
+     * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
+     * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
+     * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
+     * </ul>
      */
     inline bool ChallengeResponsesHasBeenSet() const { return m_challengeResponsesHasBeenSet; }
 
     /**
      * <p>The challenge responses. These are inputs corresponding to the value of
-     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
-     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
-     * app client is configured with client secret).</p> </li> <li> <p>
-     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
-     * with client secret).</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> </ul>
+     * <code>ChallengeName</code>, for example:</p> <note> <p> <code>SECRET_HASH</code>
+     * (if app client is configured with client secret) applies to all inputs below
+     * (including <code>SOFTWARE_TOKEN_MFA</code>).</p> </note> <ul> <li> <p>
+     * <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p>
+     * </li> <li> <p> <code>PASSWORD_VERIFIER</code>:
+     * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
+     * <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>. </p> </li> <li> <p>
+     * <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and
+     * <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li> <li> <p>
+     * <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>,
+     * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
+     * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
+     * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
+     * </ul>
      */
     inline void SetChallengeResponses(const Aws::Map<Aws::String, Aws::String>& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses = value; }
 
     /**
      * <p>The challenge responses. These are inputs corresponding to the value of
-     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
-     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
-     * app client is configured with client secret).</p> </li> <li> <p>
-     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
-     * with client secret).</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> </ul>
+     * <code>ChallengeName</code>, for example:</p> <note> <p> <code>SECRET_HASH</code>
+     * (if app client is configured with client secret) applies to all inputs below
+     * (including <code>SOFTWARE_TOKEN_MFA</code>).</p> </note> <ul> <li> <p>
+     * <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p>
+     * </li> <li> <p> <code>PASSWORD_VERIFIER</code>:
+     * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
+     * <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>. </p> </li> <li> <p>
+     * <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and
+     * <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li> <li> <p>
+     * <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>,
+     * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
+     * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
+     * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
+     * </ul>
      */
     inline void SetChallengeResponses(Aws::Map<Aws::String, Aws::String>&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses = std::move(value); }
 
     /**
      * <p>The challenge responses. These are inputs corresponding to the value of
-     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
-     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
-     * app client is configured with client secret).</p> </li> <li> <p>
-     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
-     * with client secret).</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> </ul>
+     * <code>ChallengeName</code>, for example:</p> <note> <p> <code>SECRET_HASH</code>
+     * (if app client is configured with client secret) applies to all inputs below
+     * (including <code>SOFTWARE_TOKEN_MFA</code>).</p> </note> <ul> <li> <p>
+     * <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p>
+     * </li> <li> <p> <code>PASSWORD_VERIFIER</code>:
+     * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
+     * <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>. </p> </li> <li> <p>
+     * <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and
+     * <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li> <li> <p>
+     * <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>,
+     * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
+     * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
+     * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
+     * </ul>
      */
     inline RespondToAuthChallengeRequest& WithChallengeResponses(const Aws::Map<Aws::String, Aws::String>& value) { SetChallengeResponses(value); return *this;}
 
     /**
      * <p>The challenge responses. These are inputs corresponding to the value of
-     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
-     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
-     * app client is configured with client secret).</p> </li> <li> <p>
-     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
-     * with client secret).</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> </ul>
+     * <code>ChallengeName</code>, for example:</p> <note> <p> <code>SECRET_HASH</code>
+     * (if app client is configured with client secret) applies to all inputs below
+     * (including <code>SOFTWARE_TOKEN_MFA</code>).</p> </note> <ul> <li> <p>
+     * <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p>
+     * </li> <li> <p> <code>PASSWORD_VERIFIER</code>:
+     * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
+     * <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>. </p> </li> <li> <p>
+     * <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and
+     * <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li> <li> <p>
+     * <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>,
+     * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
+     * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
+     * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
+     * </ul>
      */
     inline RespondToAuthChallengeRequest& WithChallengeResponses(Aws::Map<Aws::String, Aws::String>&& value) { SetChallengeResponses(std::move(value)); return *this;}
 
     /**
      * <p>The challenge responses. These are inputs corresponding to the value of
-     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
-     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
-     * app client is configured with client secret).</p> </li> <li> <p>
-     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
-     * with client secret).</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> </ul>
+     * <code>ChallengeName</code>, for example:</p> <note> <p> <code>SECRET_HASH</code>
+     * (if app client is configured with client secret) applies to all inputs below
+     * (including <code>SOFTWARE_TOKEN_MFA</code>).</p> </note> <ul> <li> <p>
+     * <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p>
+     * </li> <li> <p> <code>PASSWORD_VERIFIER</code>:
+     * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
+     * <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>. </p> </li> <li> <p>
+     * <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and
+     * <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li> <li> <p>
+     * <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>,
+     * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
+     * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
+     * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
+     * </ul>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(const Aws::String& key, const Aws::String& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, value); return *this; }
 
     /**
      * <p>The challenge responses. These are inputs corresponding to the value of
-     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
-     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
-     * app client is configured with client secret).</p> </li> <li> <p>
-     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
-     * with client secret).</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> </ul>
+     * <code>ChallengeName</code>, for example:</p> <note> <p> <code>SECRET_HASH</code>
+     * (if app client is configured with client secret) applies to all inputs below
+     * (including <code>SOFTWARE_TOKEN_MFA</code>).</p> </note> <ul> <li> <p>
+     * <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p>
+     * </li> <li> <p> <code>PASSWORD_VERIFIER</code>:
+     * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
+     * <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>. </p> </li> <li> <p>
+     * <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and
+     * <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li> <li> <p>
+     * <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>,
+     * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
+     * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
+     * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
+     * </ul>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(Aws::String&& key, const Aws::String& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The challenge responses. These are inputs corresponding to the value of
-     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
-     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
-     * app client is configured with client secret).</p> </li> <li> <p>
-     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
-     * with client secret).</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> </ul>
+     * <code>ChallengeName</code>, for example:</p> <note> <p> <code>SECRET_HASH</code>
+     * (if app client is configured with client secret) applies to all inputs below
+     * (including <code>SOFTWARE_TOKEN_MFA</code>).</p> </note> <ul> <li> <p>
+     * <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p>
+     * </li> <li> <p> <code>PASSWORD_VERIFIER</code>:
+     * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
+     * <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>. </p> </li> <li> <p>
+     * <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and
+     * <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li> <li> <p>
+     * <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>,
+     * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
+     * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
+     * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
+     * </ul>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(const Aws::String& key, Aws::String&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The challenge responses. These are inputs corresponding to the value of
-     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
-     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
-     * app client is configured with client secret).</p> </li> <li> <p>
-     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
-     * with client secret).</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> </ul>
+     * <code>ChallengeName</code>, for example:</p> <note> <p> <code>SECRET_HASH</code>
+     * (if app client is configured with client secret) applies to all inputs below
+     * (including <code>SOFTWARE_TOKEN_MFA</code>).</p> </note> <ul> <li> <p>
+     * <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p>
+     * </li> <li> <p> <code>PASSWORD_VERIFIER</code>:
+     * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
+     * <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>. </p> </li> <li> <p>
+     * <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and
+     * <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li> <li> <p>
+     * <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>,
+     * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
+     * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
+     * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
+     * </ul>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(Aws::String&& key, Aws::String&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The challenge responses. These are inputs corresponding to the value of
-     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
-     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
-     * app client is configured with client secret).</p> </li> <li> <p>
-     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
-     * with client secret).</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> </ul>
+     * <code>ChallengeName</code>, for example:</p> <note> <p> <code>SECRET_HASH</code>
+     * (if app client is configured with client secret) applies to all inputs below
+     * (including <code>SOFTWARE_TOKEN_MFA</code>).</p> </note> <ul> <li> <p>
+     * <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p>
+     * </li> <li> <p> <code>PASSWORD_VERIFIER</code>:
+     * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
+     * <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>. </p> </li> <li> <p>
+     * <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and
+     * <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li> <li> <p>
+     * <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>,
+     * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
+     * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
+     * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
+     * </ul>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(const char* key, Aws::String&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The challenge responses. These are inputs corresponding to the value of
-     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
-     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
-     * app client is configured with client secret).</p> </li> <li> <p>
-     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
-     * with client secret).</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> </ul>
+     * <code>ChallengeName</code>, for example:</p> <note> <p> <code>SECRET_HASH</code>
+     * (if app client is configured with client secret) applies to all inputs below
+     * (including <code>SOFTWARE_TOKEN_MFA</code>).</p> </note> <ul> <li> <p>
+     * <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p>
+     * </li> <li> <p> <code>PASSWORD_VERIFIER</code>:
+     * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
+     * <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>. </p> </li> <li> <p>
+     * <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and
+     * <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li> <li> <p>
+     * <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>,
+     * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
+     * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
+     * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
+     * </ul>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(Aws::String&& key, const char* value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The challenge responses. These are inputs corresponding to the value of
-     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
-     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
-     * app client is configured with client secret).</p> </li> <li> <p>
-     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
-     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
-     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
-     * with client secret).</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> </ul>
+     * <code>ChallengeName</code>, for example:</p> <note> <p> <code>SECRET_HASH</code>
+     * (if app client is configured with client secret) applies to all inputs below
+     * (including <code>SOFTWARE_TOKEN_MFA</code>).</p> </note> <ul> <li> <p>
+     * <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p>
+     * </li> <li> <p> <code>PASSWORD_VERIFIER</code>:
+     * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
+     * <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>. </p> </li> <li> <p>
+     * <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and
+     * <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li> <li> <p>
+     * <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>,
+     * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
+     * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
+     * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
+     * </ul>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(const char* key, const char* value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, value); return *this; }
 
@@ -478,6 +556,371 @@ namespace Model
      */
     inline RespondToAuthChallengeRequest& WithUserContextData(UserContextDataType&& value) { SetUserContextData(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are
+     * assigned to the following triggers: <i>post authentication</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * RespondToAuthChallenge request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const{ return m_clientMetadata; }
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are
+     * assigned to the following triggers: <i>post authentication</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * RespondToAuthChallenge request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline bool ClientMetadataHasBeenSet() const { return m_clientMetadataHasBeenSet; }
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are
+     * assigned to the following triggers: <i>post authentication</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * RespondToAuthChallenge request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline void SetClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = value; }
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are
+     * assigned to the following triggers: <i>post authentication</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * RespondToAuthChallenge request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline void SetClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = std::move(value); }
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are
+     * assigned to the following triggers: <i>post authentication</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * RespondToAuthChallenge request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline RespondToAuthChallengeRequest& WithClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetClientMetadata(value); return *this;}
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are
+     * assigned to the following triggers: <i>post authentication</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * RespondToAuthChallenge request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline RespondToAuthChallengeRequest& WithClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetClientMetadata(std::move(value)); return *this;}
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are
+     * assigned to the following triggers: <i>post authentication</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * RespondToAuthChallenge request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline RespondToAuthChallengeRequest& AddClientMetadata(const Aws::String& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are
+     * assigned to the following triggers: <i>post authentication</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * RespondToAuthChallenge request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline RespondToAuthChallengeRequest& AddClientMetadata(Aws::String&& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are
+     * assigned to the following triggers: <i>post authentication</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * RespondToAuthChallenge request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline RespondToAuthChallengeRequest& AddClientMetadata(const Aws::String& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are
+     * assigned to the following triggers: <i>post authentication</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * RespondToAuthChallenge request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline RespondToAuthChallengeRequest& AddClientMetadata(Aws::String&& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are
+     * assigned to the following triggers: <i>post authentication</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * RespondToAuthChallenge request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline RespondToAuthChallengeRequest& AddClientMetadata(const char* key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are
+     * assigned to the following triggers: <i>post authentication</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * RespondToAuthChallenge request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline RespondToAuthChallengeRequest& AddClientMetadata(Aws::String&& key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are
+     * assigned to the following triggers: <i>post authentication</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * RespondToAuthChallenge request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline RespondToAuthChallengeRequest& AddClientMetadata(const char* key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_clientId;
@@ -497,6 +940,9 @@ namespace Model
 
     UserContextDataType m_userContextData;
     bool m_userContextDataHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_clientMetadata;
+    bool m_clientMetadataHasBeenSet;
   };
 
 } // namespace Model

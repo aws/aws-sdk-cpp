@@ -265,37 +265,65 @@ namespace Model
 
 
     /**
-     * <p>Specifies the options for MFA (e.g., email or phone number).</p>
+     * <p> <i>This response parameter is no longer supported.</i> It provides
+     * information only about SMS MFA configurations. It doesn't provide information
+     * about TOTP software token MFA configurations. To look up information about
+     * either type of MFA configuration, use the
+     * <a>AdminGetUserResponse$UserMFASettingList</a> response instead.</p>
      */
     inline const Aws::Vector<MFAOptionType>& GetMFAOptions() const{ return m_mFAOptions; }
 
     /**
-     * <p>Specifies the options for MFA (e.g., email or phone number).</p>
+     * <p> <i>This response parameter is no longer supported.</i> It provides
+     * information only about SMS MFA configurations. It doesn't provide information
+     * about TOTP software token MFA configurations. To look up information about
+     * either type of MFA configuration, use the
+     * <a>AdminGetUserResponse$UserMFASettingList</a> response instead.</p>
      */
     inline void SetMFAOptions(const Aws::Vector<MFAOptionType>& value) { m_mFAOptions = value; }
 
     /**
-     * <p>Specifies the options for MFA (e.g., email or phone number).</p>
+     * <p> <i>This response parameter is no longer supported.</i> It provides
+     * information only about SMS MFA configurations. It doesn't provide information
+     * about TOTP software token MFA configurations. To look up information about
+     * either type of MFA configuration, use the
+     * <a>AdminGetUserResponse$UserMFASettingList</a> response instead.</p>
      */
     inline void SetMFAOptions(Aws::Vector<MFAOptionType>&& value) { m_mFAOptions = std::move(value); }
 
     /**
-     * <p>Specifies the options for MFA (e.g., email or phone number).</p>
+     * <p> <i>This response parameter is no longer supported.</i> It provides
+     * information only about SMS MFA configurations. It doesn't provide information
+     * about TOTP software token MFA configurations. To look up information about
+     * either type of MFA configuration, use the
+     * <a>AdminGetUserResponse$UserMFASettingList</a> response instead.</p>
      */
     inline AdminGetUserResult& WithMFAOptions(const Aws::Vector<MFAOptionType>& value) { SetMFAOptions(value); return *this;}
 
     /**
-     * <p>Specifies the options for MFA (e.g., email or phone number).</p>
+     * <p> <i>This response parameter is no longer supported.</i> It provides
+     * information only about SMS MFA configurations. It doesn't provide information
+     * about TOTP software token MFA configurations. To look up information about
+     * either type of MFA configuration, use the
+     * <a>AdminGetUserResponse$UserMFASettingList</a> response instead.</p>
      */
     inline AdminGetUserResult& WithMFAOptions(Aws::Vector<MFAOptionType>&& value) { SetMFAOptions(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the options for MFA (e.g., email or phone number).</p>
+     * <p> <i>This response parameter is no longer supported.</i> It provides
+     * information only about SMS MFA configurations. It doesn't provide information
+     * about TOTP software token MFA configurations. To look up information about
+     * either type of MFA configuration, use the
+     * <a>AdminGetUserResponse$UserMFASettingList</a> response instead.</p>
      */
     inline AdminGetUserResult& AddMFAOptions(const MFAOptionType& value) { m_mFAOptions.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the options for MFA (e.g., email or phone number).</p>
+     * <p> <i>This response parameter is no longer supported.</i> It provides
+     * information only about SMS MFA configurations. It doesn't provide information
+     * about TOTP software token MFA configurations. To look up information about
+     * either type of MFA configuration, use the
+     * <a>AdminGetUserResponse$UserMFASettingList</a> response instead.</p>
      */
     inline AdminGetUserResult& AddMFAOptions(MFAOptionType&& value) { m_mFAOptions.push_back(std::move(value)); return *this; }
 
@@ -337,42 +365,50 @@ namespace Model
 
 
     /**
-     * <p>The list of the user's MFA settings.</p>
+     * <p>The MFA options that are enabled for the user. The possible values in this
+     * list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserMFASettingList() const{ return m_userMFASettingList; }
 
     /**
-     * <p>The list of the user's MFA settings.</p>
+     * <p>The MFA options that are enabled for the user. The possible values in this
+     * list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
      */
     inline void SetUserMFASettingList(const Aws::Vector<Aws::String>& value) { m_userMFASettingList = value; }
 
     /**
-     * <p>The list of the user's MFA settings.</p>
+     * <p>The MFA options that are enabled for the user. The possible values in this
+     * list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
      */
     inline void SetUserMFASettingList(Aws::Vector<Aws::String>&& value) { m_userMFASettingList = std::move(value); }
 
     /**
-     * <p>The list of the user's MFA settings.</p>
+     * <p>The MFA options that are enabled for the user. The possible values in this
+     * list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
      */
     inline AdminGetUserResult& WithUserMFASettingList(const Aws::Vector<Aws::String>& value) { SetUserMFASettingList(value); return *this;}
 
     /**
-     * <p>The list of the user's MFA settings.</p>
+     * <p>The MFA options that are enabled for the user. The possible values in this
+     * list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
      */
     inline AdminGetUserResult& WithUserMFASettingList(Aws::Vector<Aws::String>&& value) { SetUserMFASettingList(std::move(value)); return *this;}
 
     /**
-     * <p>The list of the user's MFA settings.</p>
+     * <p>The MFA options that are enabled for the user. The possible values in this
+     * list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
      */
     inline AdminGetUserResult& AddUserMFASettingList(const Aws::String& value) { m_userMFASettingList.push_back(value); return *this; }
 
     /**
-     * <p>The list of the user's MFA settings.</p>
+     * <p>The MFA options that are enabled for the user. The possible values in this
+     * list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
      */
     inline AdminGetUserResult& AddUserMFASettingList(Aws::String&& value) { m_userMFASettingList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of the user's MFA settings.</p>
+     * <p>The MFA options that are enabled for the user. The possible values in this
+     * list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
      */
     inline AdminGetUserResult& AddUserMFASettingList(const char* value) { m_userMFASettingList.push_back(value); return *this; }
 

@@ -31,12 +31,15 @@
 #include <aws/mediapackage/MediaPackageEndpoint.h>
 #include <aws/mediapackage/MediaPackageErrorMarshaller.h>
 #include <aws/mediapackage/model/CreateChannelRequest.h>
+#include <aws/mediapackage/model/CreateHarvestJobRequest.h>
 #include <aws/mediapackage/model/CreateOriginEndpointRequest.h>
 #include <aws/mediapackage/model/DeleteChannelRequest.h>
 #include <aws/mediapackage/model/DeleteOriginEndpointRequest.h>
 #include <aws/mediapackage/model/DescribeChannelRequest.h>
+#include <aws/mediapackage/model/DescribeHarvestJobRequest.h>
 #include <aws/mediapackage/model/DescribeOriginEndpointRequest.h>
 #include <aws/mediapackage/model/ListChannelsRequest.h>
+#include <aws/mediapackage/model/ListHarvestJobsRequest.h>
 #include <aws/mediapackage/model/ListOriginEndpointsRequest.h>
 #include <aws/mediapackage/model/ListTagsForResourceRequest.h>
 #include <aws/mediapackage/model/RotateIngestEndpointCredentialsRequest.h>
@@ -150,6 +153,41 @@ void MediaPackageClient::CreateChannelAsync(const CreateChannelRequest& request,
 void MediaPackageClient::CreateChannelAsyncHelper(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateChannel(request), context);
+}
+
+CreateHarvestJobOutcome MediaPackageClient::CreateHarvestJob(const CreateHarvestJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/harvest_jobs";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateHarvestJobOutcome(CreateHarvestJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateHarvestJobOutcome(outcome.GetError());
+  }
+}
+
+CreateHarvestJobOutcomeCallable MediaPackageClient::CreateHarvestJobCallable(const CreateHarvestJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateHarvestJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHarvestJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaPackageClient::CreateHarvestJobAsync(const CreateHarvestJobRequest& request, const CreateHarvestJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateHarvestJobAsyncHelper( request, handler, context ); } );
+}
+
+void MediaPackageClient::CreateHarvestJobAsyncHelper(const CreateHarvestJobRequest& request, const CreateHarvestJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateHarvestJob(request), context);
 }
 
 CreateOriginEndpointOutcome MediaPackageClient::CreateOriginEndpoint(const CreateOriginEndpointRequest& request) const
@@ -310,6 +348,47 @@ void MediaPackageClient::DescribeChannelAsyncHelper(const DescribeChannelRequest
   handler(this, request, DescribeChannel(request), context);
 }
 
+DescribeHarvestJobOutcome MediaPackageClient::DescribeHarvestJob(const DescribeHarvestJobRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeHarvestJob", "Required field: Id, is not set");
+    return DescribeHarvestJobOutcome(Aws::Client::AWSError<MediaPackageErrors>(MediaPackageErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/harvest_jobs/";
+  ss << request.GetId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeHarvestJobOutcome(DescribeHarvestJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeHarvestJobOutcome(outcome.GetError());
+  }
+}
+
+DescribeHarvestJobOutcomeCallable MediaPackageClient::DescribeHarvestJobCallable(const DescribeHarvestJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeHarvestJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeHarvestJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaPackageClient::DescribeHarvestJobAsync(const DescribeHarvestJobRequest& request, const DescribeHarvestJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeHarvestJobAsyncHelper( request, handler, context ); } );
+}
+
+void MediaPackageClient::DescribeHarvestJobAsyncHelper(const DescribeHarvestJobRequest& request, const DescribeHarvestJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeHarvestJob(request), context);
+}
+
 DescribeOriginEndpointOutcome MediaPackageClient::DescribeOriginEndpoint(const DescribeOriginEndpointRequest& request) const
 {
   if (!request.IdHasBeenSet())
@@ -384,6 +463,41 @@ void MediaPackageClient::ListChannelsAsync(const ListChannelsRequest& request, c
 void MediaPackageClient::ListChannelsAsyncHelper(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListChannels(request), context);
+}
+
+ListHarvestJobsOutcome MediaPackageClient::ListHarvestJobs(const ListHarvestJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/harvest_jobs";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListHarvestJobsOutcome(ListHarvestJobsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListHarvestJobsOutcome(outcome.GetError());
+  }
+}
+
+ListHarvestJobsOutcomeCallable MediaPackageClient::ListHarvestJobsCallable(const ListHarvestJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListHarvestJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHarvestJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaPackageClient::ListHarvestJobsAsync(const ListHarvestJobsRequest& request, const ListHarvestJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListHarvestJobsAsyncHelper( request, handler, context ); } );
+}
+
+void MediaPackageClient::ListHarvestJobsAsyncHelper(const ListHarvestJobsRequest& request, const ListHarvestJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListHarvestJobs(request), context);
 }
 
 ListOriginEndpointsOutcome MediaPackageClient::ListOriginEndpoints(const ListOriginEndpointsRequest& request) const

@@ -29,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to set user settings as an
-   * administrator.</p><p><h3>See Also:</h3>   <a
+   * <p>You can use this parameter to set an MFA configuration that uses the SMS
+   * delivery medium.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettingsRequest">AWS
    * API Reference</a></p>
    */
@@ -51,132 +51,140 @@ namespace Model
 
 
     /**
-     * <p>The user pool ID for the user pool where you want to set the user's settings,
-     * such as MFA options.</p>
+     * <p>The ID of the user pool that contains the user that you are setting options
+     * for.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
 
     /**
-     * <p>The user pool ID for the user pool where you want to set the user's settings,
-     * such as MFA options.</p>
+     * <p>The ID of the user pool that contains the user that you are setting options
+     * for.</p>
      */
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
 
     /**
-     * <p>The user pool ID for the user pool where you want to set the user's settings,
-     * such as MFA options.</p>
+     * <p>The ID of the user pool that contains the user that you are setting options
+     * for.</p>
      */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
-     * <p>The user pool ID for the user pool where you want to set the user's settings,
-     * such as MFA options.</p>
+     * <p>The ID of the user pool that contains the user that you are setting options
+     * for.</p>
      */
     inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
 
     /**
-     * <p>The user pool ID for the user pool where you want to set the user's settings,
-     * such as MFA options.</p>
+     * <p>The ID of the user pool that contains the user that you are setting options
+     * for.</p>
      */
     inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
 
     /**
-     * <p>The user pool ID for the user pool where you want to set the user's settings,
-     * such as MFA options.</p>
+     * <p>The ID of the user pool that contains the user that you are setting options
+     * for.</p>
      */
     inline AdminSetUserSettingsRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
 
     /**
-     * <p>The user pool ID for the user pool where you want to set the user's settings,
-     * such as MFA options.</p>
+     * <p>The ID of the user pool that contains the user that you are setting options
+     * for.</p>
      */
     inline AdminSetUserSettingsRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
 
     /**
-     * <p>The user pool ID for the user pool where you want to set the user's settings,
-     * such as MFA options.</p>
+     * <p>The ID of the user pool that contains the user that you are setting options
+     * for.</p>
      */
     inline AdminSetUserSettingsRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
 
     /**
-     * <p>The user name of the user for whom you wish to set user settings.</p>
+     * <p>The user name of the user that you are setting options for.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user name of the user for whom you wish to set user settings.</p>
+     * <p>The user name of the user that you are setting options for.</p>
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
-     * <p>The user name of the user for whom you wish to set user settings.</p>
+     * <p>The user name of the user that you are setting options for.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user name of the user for whom you wish to set user settings.</p>
+     * <p>The user name of the user that you are setting options for.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>The user name of the user for whom you wish to set user settings.</p>
+     * <p>The user name of the user that you are setting options for.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The user name of the user for whom you wish to set user settings.</p>
+     * <p>The user name of the user that you are setting options for.</p>
      */
     inline AdminSetUserSettingsRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name of the user for whom you wish to set user settings.</p>
+     * <p>The user name of the user that you are setting options for.</p>
      */
     inline AdminSetUserSettingsRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user name of the user for whom you wish to set user settings.</p>
+     * <p>The user name of the user that you are setting options for.</p>
      */
     inline AdminSetUserSettingsRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
 
     /**
-     * <p>Specifies the options for MFA (e.g., email or phone number).</p>
+     * <p>You can use this parameter only to set an SMS configuration that uses SMS for
+     * delivery.</p>
      */
     inline const Aws::Vector<MFAOptionType>& GetMFAOptions() const{ return m_mFAOptions; }
 
     /**
-     * <p>Specifies the options for MFA (e.g., email or phone number).</p>
+     * <p>You can use this parameter only to set an SMS configuration that uses SMS for
+     * delivery.</p>
      */
     inline bool MFAOptionsHasBeenSet() const { return m_mFAOptionsHasBeenSet; }
 
     /**
-     * <p>Specifies the options for MFA (e.g., email or phone number).</p>
+     * <p>You can use this parameter only to set an SMS configuration that uses SMS for
+     * delivery.</p>
      */
     inline void SetMFAOptions(const Aws::Vector<MFAOptionType>& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions = value; }
 
     /**
-     * <p>Specifies the options for MFA (e.g., email or phone number).</p>
+     * <p>You can use this parameter only to set an SMS configuration that uses SMS for
+     * delivery.</p>
      */
     inline void SetMFAOptions(Aws::Vector<MFAOptionType>&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions = std::move(value); }
 
     /**
-     * <p>Specifies the options for MFA (e.g., email or phone number).</p>
+     * <p>You can use this parameter only to set an SMS configuration that uses SMS for
+     * delivery.</p>
      */
     inline AdminSetUserSettingsRequest& WithMFAOptions(const Aws::Vector<MFAOptionType>& value) { SetMFAOptions(value); return *this;}
 
     /**
-     * <p>Specifies the options for MFA (e.g., email or phone number).</p>
+     * <p>You can use this parameter only to set an SMS configuration that uses SMS for
+     * delivery.</p>
      */
     inline AdminSetUserSettingsRequest& WithMFAOptions(Aws::Vector<MFAOptionType>&& value) { SetMFAOptions(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the options for MFA (e.g., email or phone number).</p>
+     * <p>You can use this parameter only to set an SMS configuration that uses SMS for
+     * delivery.</p>
      */
     inline AdminSetUserSettingsRequest& AddMFAOptions(const MFAOptionType& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the options for MFA (e.g., email or phone number).</p>
+     * <p>You can use this parameter only to set an SMS configuration that uses SMS for
+     * delivery.</p>
      */
     inline AdminSetUserSettingsRequest& AddMFAOptions(MFAOptionType&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions.push_back(std::move(value)); return *this; }
 

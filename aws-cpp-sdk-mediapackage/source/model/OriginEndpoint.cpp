@@ -38,6 +38,8 @@ OriginEndpoint::OriginEndpoint() :
     m_idHasBeenSet(false),
     m_manifestNameHasBeenSet(false),
     m_mssPackageHasBeenSet(false),
+    m_origination(Origination::NOT_SET),
+    m_originationHasBeenSet(false),
     m_startoverWindowSeconds(0),
     m_startoverWindowSecondsHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -58,6 +60,8 @@ OriginEndpoint::OriginEndpoint(JsonView jsonValue) :
     m_idHasBeenSet(false),
     m_manifestNameHasBeenSet(false),
     m_mssPackageHasBeenSet(false),
+    m_origination(Origination::NOT_SET),
+    m_originationHasBeenSet(false),
     m_startoverWindowSeconds(0),
     m_startoverWindowSecondsHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -132,6 +136,13 @@ OriginEndpoint& OriginEndpoint::operator =(JsonView jsonValue)
     m_mssPackage = jsonValue.GetObject("mssPackage");
 
     m_mssPackageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("origination"))
+  {
+    m_origination = OriginationMapper::GetOriginationForName(jsonValue.GetString("origination"));
+
+    m_originationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("startoverWindowSeconds"))
@@ -234,6 +245,11 @@ JsonValue OriginEndpoint::Jsonize() const
   {
    payload.WithObject("mssPackage", m_mssPackage.Jsonize());
 
+  }
+
+  if(m_originationHasBeenSet)
+  {
+   payload.WithString("origination", OriginationMapper::GetNameForOrigination(m_origination));
   }
 
   if(m_startoverWindowSecondsHasBeenSet)

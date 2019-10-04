@@ -604,6 +604,384 @@ namespace Model
      */
     inline AdminRespondToAuthChallengeRequest& WithContextData(ContextDataType&& value) { SetContextData(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions
+     * that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom
+     * message</i>, <i>post authentication</i>, <i>user migration</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge response</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * AdminRespondToAuthChallenge request. In your function code in AWS Lambda, you
+     * can process the <code>clientMetadata</code> value to enhance your workflow for
+     * your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const{ return m_clientMetadata; }
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions
+     * that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom
+     * message</i>, <i>post authentication</i>, <i>user migration</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge response</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * AdminRespondToAuthChallenge request. In your function code in AWS Lambda, you
+     * can process the <code>clientMetadata</code> value to enhance your workflow for
+     * your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline bool ClientMetadataHasBeenSet() const { return m_clientMetadataHasBeenSet; }
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions
+     * that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom
+     * message</i>, <i>post authentication</i>, <i>user migration</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge response</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * AdminRespondToAuthChallenge request. In your function code in AWS Lambda, you
+     * can process the <code>clientMetadata</code> value to enhance your workflow for
+     * your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline void SetClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = value; }
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions
+     * that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom
+     * message</i>, <i>post authentication</i>, <i>user migration</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge response</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * AdminRespondToAuthChallenge request. In your function code in AWS Lambda, you
+     * can process the <code>clientMetadata</code> value to enhance your workflow for
+     * your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline void SetClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = std::move(value); }
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions
+     * that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom
+     * message</i>, <i>post authentication</i>, <i>user migration</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge response</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * AdminRespondToAuthChallenge request. In your function code in AWS Lambda, you
+     * can process the <code>clientMetadata</code> value to enhance your workflow for
+     * your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline AdminRespondToAuthChallengeRequest& WithClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetClientMetadata(value); return *this;}
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions
+     * that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom
+     * message</i>, <i>post authentication</i>, <i>user migration</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge response</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * AdminRespondToAuthChallenge request. In your function code in AWS Lambda, you
+     * can process the <code>clientMetadata</code> value to enhance your workflow for
+     * your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline AdminRespondToAuthChallengeRequest& WithClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetClientMetadata(std::move(value)); return *this;}
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions
+     * that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom
+     * message</i>, <i>post authentication</i>, <i>user migration</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge response</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * AdminRespondToAuthChallenge request. In your function code in AWS Lambda, you
+     * can process the <code>clientMetadata</code> value to enhance your workflow for
+     * your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline AdminRespondToAuthChallengeRequest& AddClientMetadata(const Aws::String& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions
+     * that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom
+     * message</i>, <i>post authentication</i>, <i>user migration</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge response</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * AdminRespondToAuthChallenge request. In your function code in AWS Lambda, you
+     * can process the <code>clientMetadata</code> value to enhance your workflow for
+     * your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline AdminRespondToAuthChallengeRequest& AddClientMetadata(Aws::String&& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions
+     * that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom
+     * message</i>, <i>post authentication</i>, <i>user migration</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge response</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * AdminRespondToAuthChallenge request. In your function code in AWS Lambda, you
+     * can process the <code>clientMetadata</code> value to enhance your workflow for
+     * your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline AdminRespondToAuthChallengeRequest& AddClientMetadata(const Aws::String& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions
+     * that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom
+     * message</i>, <i>post authentication</i>, <i>user migration</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge response</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * AdminRespondToAuthChallenge request. In your function code in AWS Lambda, you
+     * can process the <code>clientMetadata</code> value to enhance your workflow for
+     * your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline AdminRespondToAuthChallengeRequest& AddClientMetadata(Aws::String&& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions
+     * that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom
+     * message</i>, <i>post authentication</i>, <i>user migration</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge response</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * AdminRespondToAuthChallenge request. In your function code in AWS Lambda, you
+     * can process the <code>clientMetadata</code> value to enhance your workflow for
+     * your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline AdminRespondToAuthChallengeRequest& AddClientMetadata(const char* key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions
+     * that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom
+     * message</i>, <i>post authentication</i>, <i>user migration</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge response</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * AdminRespondToAuthChallenge request. In your function code in AWS Lambda, you
+     * can process the <code>clientMetadata</code> value to enhance your workflow for
+     * your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline AdminRespondToAuthChallengeRequest& AddClientMetadata(Aws::String&& key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of custom key-value pairs that you can provide as input for any custom
+     * workflows that this action triggers. </p> <p>You create custom workflows by
+     * assigning AWS Lambda functions to user pool triggers. When you use the
+     * AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions
+     * that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom
+     * message</i>, <i>post authentication</i>, <i>user migration</i>, <i>pre token
+     * generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and
+     * <i>verify auth challenge response</i>. When Amazon Cognito invokes any of these
+     * functions, it passes a JSON payload, which the function receives as input. This
+     * payload contains a <code>clientMetadata</code> attribute, which provides the
+     * data that you assigned to the ClientMetadata parameter in your
+     * AdminRespondToAuthChallenge request. In your function code in AWS Lambda, you
+     * can process the <code>clientMetadata</code> value to enhance your workflow for
+     * your specific needs.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
+     * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
+     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
+     * store the ClientMetadata value. This data is available only to AWS Lambda
+     * triggers that are assigned to a user pool to support custom workflows. If your
+     * user pool configuration does not include triggers, the ClientMetadata parameter
+     * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
+     * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
+     * ClientMetadata value, so don't use it to provide sensitive information.</p>
+     * </li> </ul> </note>
+     */
+    inline AdminRespondToAuthChallengeRequest& AddClientMetadata(const char* key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_userPoolId;
@@ -626,6 +1004,9 @@ namespace Model
 
     ContextDataType m_contextData;
     bool m_contextDataHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_clientMetadata;
+    bool m_clientMetadataHasBeenSet;
   };
 
 } // namespace Model

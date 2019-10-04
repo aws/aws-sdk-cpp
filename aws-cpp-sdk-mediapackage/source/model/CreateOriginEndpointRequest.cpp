@@ -31,6 +31,8 @@ CreateOriginEndpointRequest::CreateOriginEndpointRequest() :
     m_idHasBeenSet(false),
     m_manifestNameHasBeenSet(false),
     m_mssPackageHasBeenSet(false),
+    m_origination(Origination::NOT_SET),
+    m_originationHasBeenSet(false),
     m_startoverWindowSeconds(0),
     m_startoverWindowSecondsHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -90,6 +92,11 @@ Aws::String CreateOriginEndpointRequest::SerializePayload() const
   {
    payload.WithObject("mssPackage", m_mssPackage.Jsonize());
 
+  }
+
+  if(m_originationHasBeenSet)
+  {
+   payload.WithString("origination", OriginationMapper::GetNameForOrigination(m_origination));
   }
 
   if(m_startoverWindowSecondsHasBeenSet)

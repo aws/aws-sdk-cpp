@@ -789,63 +789,72 @@ namespace Model
     /**
      * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
      * <code>"phone"</code>, <code>"email"</code>, <code>"openid"</code>, and
-     * <code>"Cognito"</code>.</p>
+     * <code>"Cognito"</code>. In addition to these values, custom scopes created in
+     * Resource Servers are also supported.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllowedOAuthScopes() const{ return m_allowedOAuthScopes; }
 
     /**
      * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
      * <code>"phone"</code>, <code>"email"</code>, <code>"openid"</code>, and
-     * <code>"Cognito"</code>.</p>
+     * <code>"Cognito"</code>. In addition to these values, custom scopes created in
+     * Resource Servers are also supported.</p>
      */
     inline bool AllowedOAuthScopesHasBeenSet() const { return m_allowedOAuthScopesHasBeenSet; }
 
     /**
      * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
      * <code>"phone"</code>, <code>"email"</code>, <code>"openid"</code>, and
-     * <code>"Cognito"</code>.</p>
+     * <code>"Cognito"</code>. In addition to these values, custom scopes created in
+     * Resource Servers are also supported.</p>
      */
     inline void SetAllowedOAuthScopes(const Aws::Vector<Aws::String>& value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes = value; }
 
     /**
      * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
      * <code>"phone"</code>, <code>"email"</code>, <code>"openid"</code>, and
-     * <code>"Cognito"</code>.</p>
+     * <code>"Cognito"</code>. In addition to these values, custom scopes created in
+     * Resource Servers are also supported.</p>
      */
     inline void SetAllowedOAuthScopes(Aws::Vector<Aws::String>&& value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes = std::move(value); }
 
     /**
      * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
      * <code>"phone"</code>, <code>"email"</code>, <code>"openid"</code>, and
-     * <code>"Cognito"</code>.</p>
+     * <code>"Cognito"</code>. In addition to these values, custom scopes created in
+     * Resource Servers are also supported.</p>
      */
     inline CreateUserPoolClientRequest& WithAllowedOAuthScopes(const Aws::Vector<Aws::String>& value) { SetAllowedOAuthScopes(value); return *this;}
 
     /**
      * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
      * <code>"phone"</code>, <code>"email"</code>, <code>"openid"</code>, and
-     * <code>"Cognito"</code>.</p>
+     * <code>"Cognito"</code>. In addition to these values, custom scopes created in
+     * Resource Servers are also supported.</p>
      */
     inline CreateUserPoolClientRequest& WithAllowedOAuthScopes(Aws::Vector<Aws::String>&& value) { SetAllowedOAuthScopes(std::move(value)); return *this;}
 
     /**
      * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
      * <code>"phone"</code>, <code>"email"</code>, <code>"openid"</code>, and
-     * <code>"Cognito"</code>.</p>
+     * <code>"Cognito"</code>. In addition to these values, custom scopes created in
+     * Resource Servers are also supported.</p>
      */
     inline CreateUserPoolClientRequest& AddAllowedOAuthScopes(const Aws::String& value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes.push_back(value); return *this; }
 
     /**
      * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
      * <code>"phone"</code>, <code>"email"</code>, <code>"openid"</code>, and
-     * <code>"Cognito"</code>.</p>
+     * <code>"Cognito"</code>. In addition to these values, custom scopes created in
+     * Resource Servers are also supported.</p>
      */
     inline CreateUserPoolClientRequest& AddAllowedOAuthScopes(Aws::String&& value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
      * <code>"phone"</code>, <code>"email"</code>, <code>"openid"</code>, and
-     * <code>"Cognito"</code>.</p>
+     * <code>"Cognito"</code>. In addition to these values, custom scopes created in
+     * Resource Servers are also supported.</p>
      */
     inline CreateUserPoolClientRequest& AddAllowedOAuthScopes(const char* value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes.push_back(value); return *this; }
 

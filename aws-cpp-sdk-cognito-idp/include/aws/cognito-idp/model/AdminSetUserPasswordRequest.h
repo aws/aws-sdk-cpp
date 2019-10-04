@@ -44,91 +44,159 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>The user pool ID for the user pool where you want to set the user's
+     * password.</p>
+     */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
 
-    
+    /**
+     * <p>The user pool ID for the user pool where you want to set the user's
+     * password.</p>
+     */
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
 
-    
+    /**
+     * <p>The user pool ID for the user pool where you want to set the user's
+     * password.</p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
-    
+    /**
+     * <p>The user pool ID for the user pool where you want to set the user's
+     * password.</p>
+     */
     inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
 
-    
+    /**
+     * <p>The user pool ID for the user pool where you want to set the user's
+     * password.</p>
+     */
     inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
 
-    
+    /**
+     * <p>The user pool ID for the user pool where you want to set the user's
+     * password.</p>
+     */
     inline AdminSetUserPasswordRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
 
-    
+    /**
+     * <p>The user pool ID for the user pool where you want to set the user's
+     * password.</p>
+     */
     inline AdminSetUserPasswordRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The user pool ID for the user pool where you want to set the user's
+     * password.</p>
+     */
     inline AdminSetUserPasswordRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
 
-    
+    /**
+     * <p>The user name of the user whose password you wish to set.</p>
+     */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
-    
+    /**
+     * <p>The user name of the user whose password you wish to set.</p>
+     */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
-    
+    /**
+     * <p>The user name of the user whose password you wish to set.</p>
+     */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
-    
+    /**
+     * <p>The user name of the user whose password you wish to set.</p>
+     */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
-    
+    /**
+     * <p>The user name of the user whose password you wish to set.</p>
+     */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
-    
+    /**
+     * <p>The user name of the user whose password you wish to set.</p>
+     */
     inline AdminSetUserPasswordRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
-    
+    /**
+     * <p>The user name of the user whose password you wish to set.</p>
+     */
     inline AdminSetUserPasswordRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The user name of the user whose password you wish to set.</p>
+     */
     inline AdminSetUserPasswordRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
 
-    
+    /**
+     * <p>The password for the user.</p>
+     */
     inline const Aws::String& GetPassword() const{ return m_password; }
 
-    
+    /**
+     * <p>The password for the user.</p>
+     */
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
-    
+    /**
+     * <p>The password for the user.</p>
+     */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
-    
+    /**
+     * <p>The password for the user.</p>
+     */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
-    
+    /**
+     * <p>The password for the user.</p>
+     */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
 
-    
+    /**
+     * <p>The password for the user.</p>
+     */
     inline AdminSetUserPasswordRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
 
-    
+    /**
+     * <p>The password for the user.</p>
+     */
     inline AdminSetUserPasswordRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The password for the user.</p>
+     */
     inline AdminSetUserPasswordRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 
 
-    
+    /**
+     * <p> <code>True</code> if the password is permanent, <code>False</code> if it is
+     * temporary.</p>
+     */
     inline bool GetPermanent() const{ return m_permanent; }
 
-    
+    /**
+     * <p> <code>True</code> if the password is permanent, <code>False</code> if it is
+     * temporary.</p>
+     */
     inline bool PermanentHasBeenSet() const { return m_permanentHasBeenSet; }
 
-    
+    /**
+     * <p> <code>True</code> if the password is permanent, <code>False</code> if it is
+     * temporary.</p>
+     */
     inline void SetPermanent(bool value) { m_permanentHasBeenSet = true; m_permanent = value; }
 
-    
+    /**
+     * <p> <code>True</code> if the password is permanent, <code>False</code> if it is
+     * temporary.</p>
+     */
     inline AdminSetUserPasswordRequest& WithPermanent(bool value) { SetPermanent(value); return *this;}
 
   private:

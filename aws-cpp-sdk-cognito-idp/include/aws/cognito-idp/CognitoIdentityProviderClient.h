@@ -622,16 +622,16 @@ namespace Model
         virtual void AddCustomAttributesAsync(const Model::AddCustomAttributesRequest& request, const AddCustomAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds the specified user to the specified group.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds the specified user to the specified group.</p> <p>Calling this action
+         * requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminAddUserToGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::AdminAddUserToGroupOutcome AdminAddUserToGroup(const Model::AdminAddUserToGroupRequest& request) const;
 
         /**
-         * <p>Adds the specified user to the specified group.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds the specified user to the specified group.</p> <p>Calling this action
+         * requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminAddUserToGroup">AWS
          * API Reference</a></p>
          *
@@ -640,8 +640,8 @@ namespace Model
         virtual Model::AdminAddUserToGroupOutcomeCallable AdminAddUserToGroupCallable(const Model::AdminAddUserToGroupRequest& request) const;
 
         /**
-         * <p>Adds the specified user to the specified group.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds the specified user to the specified group.</p> <p>Calling this action
+         * requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminAddUserToGroup">AWS
          * API Reference</a></p>
          *
@@ -651,8 +651,8 @@ namespace Model
 
         /**
          * <p>Confirms user registration as an admin without using a confirmation code.
-         * Works on any user.</p> <p>Requires developer credentials.</p><p><h3>See
-         * Also:</h3>   <a
+         * Works on any user.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminConfirmSignUp">AWS
          * API Reference</a></p>
          */
@@ -660,8 +660,8 @@ namespace Model
 
         /**
          * <p>Confirms user registration as an admin without using a confirmation code.
-         * Works on any user.</p> <p>Requires developer credentials.</p><p><h3>See
-         * Also:</h3>   <a
+         * Works on any user.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminConfirmSignUp">AWS
          * API Reference</a></p>
          *
@@ -671,8 +671,8 @@ namespace Model
 
         /**
          * <p>Confirms user registration as an admin without using a confirmation code.
-         * Works on any user.</p> <p>Requires developer credentials.</p><p><h3>See
-         * Also:</h3>   <a
+         * Works on any user.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminConfirmSignUp">AWS
          * API Reference</a></p>
          *
@@ -736,16 +736,16 @@ namespace Model
         virtual void AdminCreateUserAsync(const Model::AdminCreateUserRequest& request, const AdminCreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a user as an administrator. Works on any user.</p> <p>Requires
-         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a user as an administrator. Works on any user.</p> <p>Calling this
+         * action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUser">AWS
          * API Reference</a></p>
          */
         virtual Model::AdminDeleteUserOutcome AdminDeleteUser(const Model::AdminDeleteUserRequest& request) const;
 
         /**
-         * <p>Deletes a user as an administrator. Works on any user.</p> <p>Requires
-         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a user as an administrator. Works on any user.</p> <p>Calling this
+         * action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUser">AWS
          * API Reference</a></p>
          *
@@ -754,8 +754,8 @@ namespace Model
         virtual Model::AdminDeleteUserOutcomeCallable AdminDeleteUserCallable(const Model::AdminDeleteUserRequest& request) const;
 
         /**
-         * <p>Deletes a user as an administrator. Works on any user.</p> <p>Requires
-         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a user as an administrator. Works on any user.</p> <p>Calling this
+         * action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUser">AWS
          * API Reference</a></p>
          *
@@ -765,7 +765,8 @@ namespace Model
 
         /**
          * <p>Deletes the user attributes in a user pool as an administrator. Works on any
-         * user.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * user.</p> <p>Calling this action requires developer credentials.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUserAttributes">AWS
          * API Reference</a></p>
          */
@@ -773,7 +774,8 @@ namespace Model
 
         /**
          * <p>Deletes the user attributes in a user pool as an administrator. Works on any
-         * user.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * user.</p> <p>Calling this action requires developer credentials.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUserAttributes">AWS
          * API Reference</a></p>
          *
@@ -783,7 +785,8 @@ namespace Model
 
         /**
          * <p>Deletes the user attributes in a user pool as an administrator. Works on any
-         * user.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * user.</p> <p>Calling this action requires developer credentials.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUserAttributes">AWS
          * API Reference</a></p>
          *
@@ -892,16 +895,16 @@ namespace Model
         virtual void AdminDisableProviderForUserAsync(const Model::AdminDisableProviderForUserRequest& request, const AdminDisableProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disables the specified user as an administrator. Works on any user.</p>
-         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables the specified user.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableUser">AWS
          * API Reference</a></p>
          */
         virtual Model::AdminDisableUserOutcome AdminDisableUser(const Model::AdminDisableUserRequest& request) const;
 
         /**
-         * <p>Disables the specified user as an administrator. Works on any user.</p>
-         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables the specified user.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableUser">AWS
          * API Reference</a></p>
          *
@@ -910,8 +913,8 @@ namespace Model
         virtual Model::AdminDisableUserOutcomeCallable AdminDisableUserCallable(const Model::AdminDisableUserRequest& request) const;
 
         /**
-         * <p>Disables the specified user as an administrator. Works on any user.</p>
-         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables the specified user.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableUser">AWS
          * API Reference</a></p>
          *
@@ -921,7 +924,8 @@ namespace Model
 
         /**
          * <p>Enables the specified user as an administrator. Works on any user.</p>
-         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Calling this action requires developer credentials.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminEnableUser">AWS
          * API Reference</a></p>
          */
@@ -929,7 +933,8 @@ namespace Model
 
         /**
          * <p>Enables the specified user as an administrator. Works on any user.</p>
-         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Calling this action requires developer credentials.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminEnableUser">AWS
          * API Reference</a></p>
          *
@@ -939,7 +944,8 @@ namespace Model
 
         /**
          * <p>Enables the specified user as an administrator. Works on any user.</p>
-         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Calling this action requires developer credentials.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminEnableUser">AWS
          * API Reference</a></p>
          *
@@ -948,16 +954,16 @@ namespace Model
         virtual void AdminEnableUserAsync(const Model::AdminEnableUserRequest& request, const AdminEnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Forgets the device, as an administrator.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Forgets the device, as an administrator.</p> <p>Calling this action requires
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminForgetDevice">AWS
          * API Reference</a></p>
          */
         virtual Model::AdminForgetDeviceOutcome AdminForgetDevice(const Model::AdminForgetDeviceRequest& request) const;
 
         /**
-         * <p>Forgets the device, as an administrator.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Forgets the device, as an administrator.</p> <p>Calling this action requires
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminForgetDevice">AWS
          * API Reference</a></p>
          *
@@ -966,8 +972,8 @@ namespace Model
         virtual Model::AdminForgetDeviceOutcomeCallable AdminForgetDeviceCallable(const Model::AdminForgetDeviceRequest& request) const;
 
         /**
-         * <p>Forgets the device, as an administrator.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Forgets the device, as an administrator.</p> <p>Calling this action requires
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminForgetDevice">AWS
          * API Reference</a></p>
          *
@@ -976,16 +982,16 @@ namespace Model
         virtual void AdminForgetDeviceAsync(const Model::AdminForgetDeviceRequest& request, const AdminForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the device, as an administrator.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the device, as an administrator.</p> <p>Calling this action requires
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetDevice">AWS
          * API Reference</a></p>
          */
         virtual Model::AdminGetDeviceOutcome AdminGetDevice(const Model::AdminGetDeviceRequest& request) const;
 
         /**
-         * <p>Gets the device, as an administrator.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the device, as an administrator.</p> <p>Calling this action requires
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetDevice">AWS
          * API Reference</a></p>
          *
@@ -994,8 +1000,8 @@ namespace Model
         virtual Model::AdminGetDeviceOutcomeCallable AdminGetDeviceCallable(const Model::AdminGetDeviceRequest& request) const;
 
         /**
-         * <p>Gets the device, as an administrator.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the device, as an administrator.</p> <p>Calling this action requires
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetDevice">AWS
          * API Reference</a></p>
          *
@@ -1005,8 +1011,8 @@ namespace Model
 
         /**
          * <p>Gets the specified user by user name in a user pool as an administrator.
-         * Works on any user.</p> <p>Requires developer credentials.</p><p><h3>See
-         * Also:</h3>   <a
+         * Works on any user.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetUser">AWS
          * API Reference</a></p>
          */
@@ -1014,8 +1020,8 @@ namespace Model
 
         /**
          * <p>Gets the specified user by user name in a user pool as an administrator.
-         * Works on any user.</p> <p>Requires developer credentials.</p><p><h3>See
-         * Also:</h3>   <a
+         * Works on any user.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetUser">AWS
          * API Reference</a></p>
          *
@@ -1025,8 +1031,8 @@ namespace Model
 
         /**
          * <p>Gets the specified user by user name in a user pool as an administrator.
-         * Works on any user.</p> <p>Requires developer credentials.</p><p><h3>See
-         * Also:</h3>   <a
+         * Works on any user.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetUser">AWS
          * API Reference</a></p>
          *
@@ -1035,16 +1041,16 @@ namespace Model
         virtual void AdminGetUserAsync(const Model::AdminGetUserRequest& request, const AdminGetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Initiates the authentication flow, as an administrator.</p> <p>Requires
-         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Initiates the authentication flow, as an administrator.</p> <p>Calling this
+         * action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminInitiateAuth">AWS
          * API Reference</a></p>
          */
         virtual Model::AdminInitiateAuthOutcome AdminInitiateAuth(const Model::AdminInitiateAuthRequest& request) const;
 
         /**
-         * <p>Initiates the authentication flow, as an administrator.</p> <p>Requires
-         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Initiates the authentication flow, as an administrator.</p> <p>Calling this
+         * action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminInitiateAuth">AWS
          * API Reference</a></p>
          *
@@ -1053,8 +1059,8 @@ namespace Model
         virtual Model::AdminInitiateAuthOutcomeCallable AdminInitiateAuthCallable(const Model::AdminInitiateAuthRequest& request) const;
 
         /**
-         * <p>Initiates the authentication flow, as an administrator.</p> <p>Requires
-         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Initiates the authentication flow, as an administrator.</p> <p>Calling this
+         * action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminInitiateAuth">AWS
          * API Reference</a></p>
          *
@@ -1130,16 +1136,16 @@ namespace Model
         virtual void AdminLinkProviderForUserAsync(const Model::AdminLinkProviderForUserRequest& request, const AdminLinkProviderForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists devices, as an administrator.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists devices, as an administrator.</p> <p>Calling this action requires
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListDevices">AWS
          * API Reference</a></p>
          */
         virtual Model::AdminListDevicesOutcome AdminListDevices(const Model::AdminListDevicesRequest& request) const;
 
         /**
-         * <p>Lists devices, as an administrator.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists devices, as an administrator.</p> <p>Calling this action requires
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListDevices">AWS
          * API Reference</a></p>
          *
@@ -1148,8 +1154,8 @@ namespace Model
         virtual Model::AdminListDevicesOutcomeCallable AdminListDevicesCallable(const Model::AdminListDevicesRequest& request) const;
 
         /**
-         * <p>Lists devices, as an administrator.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists devices, as an administrator.</p> <p>Calling this action requires
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListDevices">AWS
          * API Reference</a></p>
          *
@@ -1158,16 +1164,16 @@ namespace Model
         virtual void AdminListDevicesAsync(const Model::AdminListDevicesRequest& request, const AdminListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the groups that the user belongs to.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the groups that the user belongs to.</p> <p>Calling this action
+         * requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListGroupsForUser">AWS
          * API Reference</a></p>
          */
         virtual Model::AdminListGroupsForUserOutcome AdminListGroupsForUser(const Model::AdminListGroupsForUserRequest& request) const;
 
         /**
-         * <p>Lists the groups that the user belongs to.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the groups that the user belongs to.</p> <p>Calling this action
+         * requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListGroupsForUser">AWS
          * API Reference</a></p>
          *
@@ -1176,8 +1182,8 @@ namespace Model
         virtual Model::AdminListGroupsForUserOutcomeCallable AdminListGroupsForUserCallable(const Model::AdminListGroupsForUserRequest& request) const;
 
         /**
-         * <p>Lists the groups that the user belongs to.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the groups that the user belongs to.</p> <p>Calling this action
+         * requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListGroupsForUser">AWS
          * API Reference</a></p>
          *
@@ -1214,16 +1220,16 @@ namespace Model
         virtual void AdminListUserAuthEventsAsync(const Model::AdminListUserAuthEventsRequest& request, const AdminListUserAuthEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified user from the specified group.</p> <p>Requires
-         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified user from the specified group.</p> <p>Calling this
+         * action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRemoveUserFromGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::AdminRemoveUserFromGroupOutcome AdminRemoveUserFromGroup(const Model::AdminRemoveUserFromGroupRequest& request) const;
 
         /**
-         * <p>Removes the specified user from the specified group.</p> <p>Requires
-         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified user from the specified group.</p> <p>Calling this
+         * action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRemoveUserFromGroup">AWS
          * API Reference</a></p>
          *
@@ -1232,8 +1238,8 @@ namespace Model
         virtual Model::AdminRemoveUserFromGroupOutcomeCallable AdminRemoveUserFromGroupCallable(const Model::AdminRemoveUserFromGroupRequest& request) const;
 
         /**
-         * <p>Removes the specified user from the specified group.</p> <p>Requires
-         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified user from the specified group.</p> <p>Calling this
+         * action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRemoveUserFromGroup">AWS
          * API Reference</a></p>
          *
@@ -1251,8 +1257,8 @@ namespace Model
          * selected and a verified phone number exists for the user, or if email
          * verification is selected and a verified email exists for the user, calling this
          * API will also result in sending a message to the end user with the code to
-         * change their password.</p> <p>Requires developer credentials.</p><p><h3>See
-         * Also:</h3>   <a
+         * change their password.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminResetUserPassword">AWS
          * API Reference</a></p>
          */
@@ -1268,8 +1274,8 @@ namespace Model
          * selected and a verified phone number exists for the user, or if email
          * verification is selected and a verified email exists for the user, calling this
          * API will also result in sending a message to the end user with the code to
-         * change their password.</p> <p>Requires developer credentials.</p><p><h3>See
-         * Also:</h3>   <a
+         * change their password.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminResetUserPassword">AWS
          * API Reference</a></p>
          *
@@ -1287,8 +1293,8 @@ namespace Model
          * selected and a verified phone number exists for the user, or if email
          * verification is selected and a verified email exists for the user, calling this
          * API will also result in sending a message to the end user with the code to
-         * change their password.</p> <p>Requires developer credentials.</p><p><h3>See
-         * Also:</h3>   <a
+         * change their password.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminResetUserPassword">AWS
          * API Reference</a></p>
          *
@@ -1297,16 +1303,16 @@ namespace Model
         virtual void AdminResetUserPasswordAsync(const Model::AdminResetUserPasswordRequest& request, const AdminResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Responds to an authentication challenge, as an administrator.</p> <p>Requires
-         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Responds to an authentication challenge, as an administrator.</p> <p>Calling
+         * this action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRespondToAuthChallenge">AWS
          * API Reference</a></p>
          */
         virtual Model::AdminRespondToAuthChallengeOutcome AdminRespondToAuthChallenge(const Model::AdminRespondToAuthChallengeRequest& request) const;
 
         /**
-         * <p>Responds to an authentication challenge, as an administrator.</p> <p>Requires
-         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Responds to an authentication challenge, as an administrator.</p> <p>Calling
+         * this action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRespondToAuthChallenge">AWS
          * API Reference</a></p>
          *
@@ -1315,8 +1321,8 @@ namespace Model
         virtual Model::AdminRespondToAuthChallengeOutcomeCallable AdminRespondToAuthChallengeCallable(const Model::AdminRespondToAuthChallengeRequest& request) const;
 
         /**
-         * <p>Responds to an authentication challenge, as an administrator.</p> <p>Requires
-         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Responds to an authentication challenge, as an administrator.</p> <p>Calling
+         * this action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRespondToAuthChallenge">AWS
          * API Reference</a></p>
          *
@@ -1325,16 +1331,24 @@ namespace Model
         virtual void AdminRespondToAuthChallengeAsync(const Model::AdminRespondToAuthChallengeRequest& request, const AdminRespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets the user's multi-factor authentication (MFA) preference.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Sets the user's multi-factor authentication (MFA) preference, including which
+         * MFA options are enabled and if any are preferred. Only one factor can be set as
+         * preferred. The preferred MFA factor will be used to authenticate a user if
+         * multiple factors are enabled. If multiple options are enabled and no preference
+         * is set, a challenge to choose an MFA option will be returned during sign
+         * in.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserMFAPreference">AWS
          * API Reference</a></p>
          */
         virtual Model::AdminSetUserMFAPreferenceOutcome AdminSetUserMFAPreference(const Model::AdminSetUserMFAPreferenceRequest& request) const;
 
         /**
-         * <p>Sets the user's multi-factor authentication (MFA) preference.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Sets the user's multi-factor authentication (MFA) preference, including which
+         * MFA options are enabled and if any are preferred. Only one factor can be set as
+         * preferred. The preferred MFA factor will be used to authenticate a user if
+         * multiple factors are enabled. If multiple options are enabled and no preference
+         * is set, a challenge to choose an MFA option will be returned during sign
+         * in.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserMFAPreference">AWS
          * API Reference</a></p>
          *
@@ -1343,8 +1357,12 @@ namespace Model
         virtual Model::AdminSetUserMFAPreferenceOutcomeCallable AdminSetUserMFAPreferenceCallable(const Model::AdminSetUserMFAPreferenceRequest& request) const;
 
         /**
-         * <p>Sets the user's multi-factor authentication (MFA) preference.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Sets the user's multi-factor authentication (MFA) preference, including which
+         * MFA options are enabled and if any are preferred. Only one factor can be set as
+         * preferred. The preferred MFA factor will be used to authenticate a user if
+         * multiple factors are enabled. If multiple options are enabled and no preference
+         * is set, a challenge to choose an MFA option will be returned during sign
+         * in.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserMFAPreference">AWS
          * API Reference</a></p>
          *
@@ -1353,35 +1371,72 @@ namespace Model
         virtual void AdminSetUserMFAPreferenceAsync(const Model::AdminSetUserMFAPreferenceRequest& request, const AdminSetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Sets the specified user's password in a user pool as an administrator. Works
+         * on any user. </p> <p>The password can be temporary or permanent. If it is
+         * temporary, the user status will be placed into the
+         * <code>FORCE_CHANGE_PASSWORD</code> state. When the user next tries to sign in,
+         * the InitiateAuth/AdminInitiateAuth response will contain the
+         * <code>NEW_PASSWORD_REQUIRED</code> challenge. If the user does not sign in
+         * before it expires, the user will not be able to sign in and their password will
+         * need to be reset by an administrator. </p> <p>Once the user has set a new
+         * password, or the password is permanent, the user status will be set to
+         * <code>Confirmed</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserPassword">AWS
+         * API Reference</a></p>
          */
         virtual Model::AdminSetUserPasswordOutcome AdminSetUserPassword(const Model::AdminSetUserPasswordRequest& request) const;
 
         /**
-         * 
+         * <p>Sets the specified user's password in a user pool as an administrator. Works
+         * on any user. </p> <p>The password can be temporary or permanent. If it is
+         * temporary, the user status will be placed into the
+         * <code>FORCE_CHANGE_PASSWORD</code> state. When the user next tries to sign in,
+         * the InitiateAuth/AdminInitiateAuth response will contain the
+         * <code>NEW_PASSWORD_REQUIRED</code> challenge. If the user does not sign in
+         * before it expires, the user will not be able to sign in and their password will
+         * need to be reset by an administrator. </p> <p>Once the user has set a new
+         * password, or the password is permanent, the user status will be set to
+         * <code>Confirmed</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserPassword">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AdminSetUserPasswordOutcomeCallable AdminSetUserPasswordCallable(const Model::AdminSetUserPasswordRequest& request) const;
 
         /**
-         * 
+         * <p>Sets the specified user's password in a user pool as an administrator. Works
+         * on any user. </p> <p>The password can be temporary or permanent. If it is
+         * temporary, the user status will be placed into the
+         * <code>FORCE_CHANGE_PASSWORD</code> state. When the user next tries to sign in,
+         * the InitiateAuth/AdminInitiateAuth response will contain the
+         * <code>NEW_PASSWORD_REQUIRED</code> challenge. If the user does not sign in
+         * before it expires, the user will not be able to sign in and their password will
+         * need to be reset by an administrator. </p> <p>Once the user has set a new
+         * password, or the password is permanent, the user status will be set to
+         * <code>Confirmed</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserPassword">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AdminSetUserPasswordAsync(const Model::AdminSetUserPasswordRequest& request, const AdminSetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets all the user settings for a specified user name. Works on any user.</p>
-         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p> <i>This action is no longer supported.</i> You can use it to configure only
+         * SMS MFA. You can't use it to configure TOTP software token MFA. To configure
+         * either type of MFA, use the <a>AdminSetUserMFAPreference</a> action
+         * instead.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::AdminSetUserSettingsOutcome AdminSetUserSettings(const Model::AdminSetUserSettingsRequest& request) const;
 
         /**
-         * <p>Sets all the user settings for a specified user name. Works on any user.</p>
-         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p> <i>This action is no longer supported.</i> You can use it to configure only
+         * SMS MFA. You can't use it to configure TOTP software token MFA. To configure
+         * either type of MFA, use the <a>AdminSetUserMFAPreference</a> action
+         * instead.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettings">AWS
          * API Reference</a></p>
          *
@@ -1390,8 +1445,10 @@ namespace Model
         virtual Model::AdminSetUserSettingsOutcomeCallable AdminSetUserSettingsCallable(const Model::AdminSetUserSettingsRequest& request) const;
 
         /**
-         * <p>Sets all the user settings for a specified user name. Works on any user.</p>
-         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p> <i>This action is no longer supported.</i> You can use it to configure only
+         * SMS MFA. You can't use it to configure TOTP software token MFA. To configure
+         * either type of MFA, use the <a>AdminSetUserMFAPreference</a> action
+         * instead.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettings">AWS
          * API Reference</a></p>
          *
@@ -1434,16 +1491,16 @@ namespace Model
         virtual void AdminUpdateAuthEventFeedbackAsync(const Model::AdminUpdateAuthEventFeedbackRequest& request, const AdminUpdateAuthEventFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the device status as an administrator.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the device status as an administrator.</p> <p>Calling this action
+         * requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateDeviceStatus">AWS
          * API Reference</a></p>
          */
         virtual Model::AdminUpdateDeviceStatusOutcome AdminUpdateDeviceStatus(const Model::AdminUpdateDeviceStatusRequest& request) const;
 
         /**
-         * <p>Updates the device status as an administrator.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the device status as an administrator.</p> <p>Calling this action
+         * requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateDeviceStatus">AWS
          * API Reference</a></p>
          *
@@ -1452,8 +1509,8 @@ namespace Model
         virtual Model::AdminUpdateDeviceStatusOutcomeCallable AdminUpdateDeviceStatusCallable(const Model::AdminUpdateDeviceStatusRequest& request) const;
 
         /**
-         * <p>Updates the device status as an administrator.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the device status as an administrator.</p> <p>Calling this action
+         * requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateDeviceStatus">AWS
          * API Reference</a></p>
          *
@@ -1466,8 +1523,8 @@ namespace Model
          * an administrator. Works on any user.</p> <p>For custom attributes, you must
          * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>In
          * addition to updating user attributes, this API can also be used to mark phone
-         * and email as verified.</p> <p>Requires developer credentials.</p><p><h3>See
-         * Also:</h3>   <a
+         * and email as verified.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateUserAttributes">AWS
          * API Reference</a></p>
          */
@@ -1478,8 +1535,8 @@ namespace Model
          * an administrator. Works on any user.</p> <p>For custom attributes, you must
          * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>In
          * addition to updating user attributes, this API can also be used to mark phone
-         * and email as verified.</p> <p>Requires developer credentials.</p><p><h3>See
-         * Also:</h3>   <a
+         * and email as verified.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateUserAttributes">AWS
          * API Reference</a></p>
          *
@@ -1492,8 +1549,8 @@ namespace Model
          * an administrator. Works on any user.</p> <p>For custom attributes, you must
          * prepend the <code>custom:</code> prefix to the attribute name.</p> <p>In
          * addition to updating user attributes, this API can also be used to mark phone
-         * and email as verified.</p> <p>Requires developer credentials.</p><p><h3>See
-         * Also:</h3>   <a
+         * and email as verified.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateUserAttributes">AWS
          * API Reference</a></p>
          *
@@ -1502,16 +1559,16 @@ namespace Model
         virtual void AdminUpdateUserAttributesAsync(const Model::AdminUpdateUserAttributesRequest& request, const AdminUpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Signs out users from all devices, as an administrator.</p> <p>Requires
-         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Signs out users from all devices, as an administrator.</p> <p>Calling this
+         * action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUserGlobalSignOut">AWS
          * API Reference</a></p>
          */
         virtual Model::AdminUserGlobalSignOutOutcome AdminUserGlobalSignOut(const Model::AdminUserGlobalSignOutRequest& request) const;
 
         /**
-         * <p>Signs out users from all devices, as an administrator.</p> <p>Requires
-         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Signs out users from all devices, as an administrator.</p> <p>Calling this
+         * action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUserGlobalSignOut">AWS
          * API Reference</a></p>
          *
@@ -1520,8 +1577,8 @@ namespace Model
         virtual Model::AdminUserGlobalSignOutOutcomeCallable AdminUserGlobalSignOutCallable(const Model::AdminUserGlobalSignOutRequest& request) const;
 
         /**
-         * <p>Signs out users from all devices, as an administrator.</p> <p>Requires
-         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Signs out users from all devices, as an administrator.</p> <p>Calling this
+         * action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUserGlobalSignOut">AWS
          * API Reference</a></p>
          *
@@ -1673,16 +1730,16 @@ namespace Model
         virtual void ConfirmSignUpAsync(const Model::ConfirmSignUpRequest& request, const ConfirmSignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new group in the specified user pool.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new group in the specified user pool.</p> <p>Calling this action
+         * requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateGroupOutcome CreateGroup(const Model::CreateGroupRequest& request) const;
 
         /**
-         * <p>Creates a new group in the specified user pool.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new group in the specified user pool.</p> <p>Calling this action
+         * requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateGroup">AWS
          * API Reference</a></p>
          *
@@ -1691,8 +1748,8 @@ namespace Model
         virtual Model::CreateGroupOutcomeCallable CreateGroupCallable(const Model::CreateGroupRequest& request) const;
 
         /**
-         * <p>Creates a new group in the specified user pool.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new group in the specified user pool.</p> <p>Calling this action
+         * requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateGroup">AWS
          * API Reference</a></p>
          *
@@ -1858,7 +1915,8 @@ namespace Model
 
         /**
          * <p>Deletes a group. Currently only groups with no members can be deleted.</p>
-         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Calling this action requires developer credentials.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteGroup">AWS
          * API Reference</a></p>
          */
@@ -1866,7 +1924,8 @@ namespace Model
 
         /**
          * <p>Deletes a group. Currently only groups with no members can be deleted.</p>
-         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Calling this action requires developer credentials.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteGroup">AWS
          * API Reference</a></p>
          *
@@ -1876,7 +1935,8 @@ namespace Model
 
         /**
          * <p>Deletes a group. Currently only groups with no members can be deleted.</p>
-         * <p>Requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Calling this action requires developer credentials.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteGroup">AWS
          * API Reference</a></p>
          *
@@ -2374,16 +2434,16 @@ namespace Model
         virtual void GetDeviceAsync(const Model::GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a group.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets a group.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::GetGroupOutcome GetGroup(const Model::GetGroupRequest& request) const;
 
         /**
-         * <p>Gets a group.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets a group.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetGroup">AWS
          * API Reference</a></p>
          *
@@ -2392,8 +2452,8 @@ namespace Model
         virtual Model::GetGroupOutcomeCallable GetGroupCallable(const Model::GetGroupRequest& request) const;
 
         /**
-         * <p>Gets a group.</p> <p>Requires developer credentials.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets a group.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetGroup">AWS
          * API Reference</a></p>
          *
@@ -2651,16 +2711,16 @@ namespace Model
         virtual void ListDevicesAsync(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the groups associated with a user pool.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the groups associated with a user pool.</p> <p>Calling this action
+         * requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListGroups">AWS
          * API Reference</a></p>
          */
         virtual Model::ListGroupsOutcome ListGroups(const Model::ListGroupsRequest& request) const;
 
         /**
-         * <p>Lists the groups associated with a user pool.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the groups associated with a user pool.</p> <p>Calling this action
+         * requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListGroups">AWS
          * API Reference</a></p>
          *
@@ -2669,8 +2729,8 @@ namespace Model
         virtual Model::ListGroupsOutcomeCallable ListGroupsCallable(const Model::ListGroupsRequest& request) const;
 
         /**
-         * <p>Lists the groups associated with a user pool.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the groups associated with a user pool.</p> <p>Calling this action
+         * requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListGroups">AWS
          * API Reference</a></p>
          *
@@ -2878,16 +2938,16 @@ namespace Model
         virtual void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the users in the specified group.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the users in the specified group.</p> <p>Calling this action requires
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsersInGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::ListUsersInGroupOutcome ListUsersInGroup(const Model::ListUsersInGroupRequest& request) const;
 
         /**
-         * <p>Lists the users in the specified group.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the users in the specified group.</p> <p>Calling this action requires
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsersInGroup">AWS
          * API Reference</a></p>
          *
@@ -2896,8 +2956,8 @@ namespace Model
         virtual Model::ListUsersInGroupOutcomeCallable ListUsersInGroupCallable(const Model::ListUsersInGroupRequest& request) const;
 
         /**
-         * <p>Lists the users in the specified group.</p> <p>Requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the users in the specified group.</p> <p>Calling this action requires
+         * developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsersInGroup">AWS
          * API Reference</a></p>
          *
@@ -3048,16 +3108,24 @@ namespace Model
         virtual void SetUICustomizationAsync(const Model::SetUICustomizationRequest& request, const SetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Set the user's multi-factor authentication (MFA) method
-         * preference.</p><p><h3>See Also:</h3>   <a
+         * <p>Set the user's multi-factor authentication (MFA) method preference, including
+         * which MFA factors are enabled and if any are preferred. Only one factor can be
+         * set as preferred. The preferred MFA factor will be used to authenticate a user
+         * if multiple factors are enabled. If multiple options are enabled and no
+         * preference is set, a challenge to choose an MFA option will be returned during
+         * sign in.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference">AWS
          * API Reference</a></p>
          */
         virtual Model::SetUserMFAPreferenceOutcome SetUserMFAPreference(const Model::SetUserMFAPreferenceRequest& request) const;
 
         /**
-         * <p>Set the user's multi-factor authentication (MFA) method
-         * preference.</p><p><h3>See Also:</h3>   <a
+         * <p>Set the user's multi-factor authentication (MFA) method preference, including
+         * which MFA factors are enabled and if any are preferred. Only one factor can be
+         * set as preferred. The preferred MFA factor will be used to authenticate a user
+         * if multiple factors are enabled. If multiple options are enabled and no
+         * preference is set, a challenge to choose an MFA option will be returned during
+         * sign in.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference">AWS
          * API Reference</a></p>
          *
@@ -3066,8 +3134,12 @@ namespace Model
         virtual Model::SetUserMFAPreferenceOutcomeCallable SetUserMFAPreferenceCallable(const Model::SetUserMFAPreferenceRequest& request) const;
 
         /**
-         * <p>Set the user's multi-factor authentication (MFA) method
-         * preference.</p><p><h3>See Also:</h3>   <a
+         * <p>Set the user's multi-factor authentication (MFA) method preference, including
+         * which MFA factors are enabled and if any are preferred. Only one factor can be
+         * set as preferred. The preferred MFA factor will be used to authenticate a user
+         * if multiple factors are enabled. If multiple options are enabled and no
+         * preference is set, a challenge to choose an MFA option will be returned during
+         * sign in.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference">AWS
          * API Reference</a></p>
          *
@@ -3076,14 +3148,16 @@ namespace Model
         virtual void SetUserMFAPreferenceAsync(const Model::SetUserMFAPreferenceRequest& request, const SetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Set the user pool MFA configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Set the user pool multi-factor authentication (MFA)
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserPoolMfaConfig">AWS
          * API Reference</a></p>
          */
         virtual Model::SetUserPoolMfaConfigOutcome SetUserPoolMfaConfig(const Model::SetUserPoolMfaConfigRequest& request) const;
 
         /**
-         * <p>Set the user pool MFA configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Set the user pool multi-factor authentication (MFA)
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserPoolMfaConfig">AWS
          * API Reference</a></p>
          *
@@ -3092,7 +3166,8 @@ namespace Model
         virtual Model::SetUserPoolMfaConfigOutcomeCallable SetUserPoolMfaConfigCallable(const Model::SetUserPoolMfaConfigRequest& request) const;
 
         /**
-         * <p>Set the user pool MFA configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Set the user pool multi-factor authentication (MFA)
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserPoolMfaConfig">AWS
          * API Reference</a></p>
          *
@@ -3101,20 +3176,20 @@ namespace Model
         virtual void SetUserPoolMfaConfigAsync(const Model::SetUserPoolMfaConfigRequest& request, const SetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets the user settings like multi-factor authentication (MFA). If MFA is to
-         * be removed for a particular attribute pass the attribute with code delivery as
-         * null. If null list is passed, all MFA options are removed.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p> <i>This action is no longer supported.</i> You can use it to configure only
+         * SMS MFA. You can't use it to configure TOTP software token MFA. To configure
+         * either type of MFA, use the <a>SetUserMFAPreference</a> action
+         * instead.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::SetUserSettingsOutcome SetUserSettings(const Model::SetUserSettingsRequest& request) const;
 
         /**
-         * <p>Sets the user settings like multi-factor authentication (MFA). If MFA is to
-         * be removed for a particular attribute pass the attribute with code delivery as
-         * null. If null list is passed, all MFA options are removed.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p> <i>This action is no longer supported.</i> You can use it to configure only
+         * SMS MFA. You can't use it to configure TOTP software token MFA. To configure
+         * either type of MFA, use the <a>SetUserMFAPreference</a> action
+         * instead.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettings">AWS
          * API Reference</a></p>
          *
@@ -3123,10 +3198,10 @@ namespace Model
         virtual Model::SetUserSettingsOutcomeCallable SetUserSettingsCallable(const Model::SetUserSettingsRequest& request) const;
 
         /**
-         * <p>Sets the user settings like multi-factor authentication (MFA). If MFA is to
-         * be removed for a particular attribute pass the attribute with code delivery as
-         * null. If null list is passed, all MFA options are removed.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p> <i>This action is no longer supported.</i> You can use it to configure only
+         * SMS MFA. You can't use it to configure TOTP software token MFA. To configure
+         * either type of MFA, use the <a>SetUserMFAPreference</a> action
+         * instead.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettings">AWS
          * API Reference</a></p>
          *
@@ -3364,16 +3439,16 @@ namespace Model
         virtual void UpdateDeviceStatusAsync(const Model::UpdateDeviceStatusRequest& request, const UpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified group with the specified attributes.</p> <p>Requires
-         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified group with the specified attributes.</p> <p>Calling
+         * this action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateGroupOutcome UpdateGroup(const Model::UpdateGroupRequest& request) const;
 
         /**
-         * <p>Updates the specified group with the specified attributes.</p> <p>Requires
-         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified group with the specified attributes.</p> <p>Calling
+         * this action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">AWS
          * API Reference</a></p>
          *
@@ -3382,8 +3457,8 @@ namespace Model
         virtual Model::UpdateGroupOutcomeCallable UpdateGroupCallable(const Model::UpdateGroupRequest& request) const;
 
         /**
-         * <p>Updates the specified group with the specified attributes.</p> <p>Requires
-         * developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified group with the specified attributes.</p> <p>Calling
+         * this action requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">AWS
          * API Reference</a></p>
          *
