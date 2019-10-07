@@ -72,7 +72,7 @@ option(FORCE_CURL "Forces usage of the Curl client rather than the default OS-sp
 option(ENABLE_ADDRESS_SANITIZER "Flags to enable/disable Address Sanitizer for gcc or clang" OFF)
 option(BYPASS_DEFAULT_PROXY "Bypass the machine's default proxy settings when using IXmlHttpRequest2" ON)
 option(BUILD_DEPS "Build third-party dependencies" ON)
-option(ENABLE_CURL_LOGGING "If enabled, Curl's internal log will be piped to SDK's logger" OFF)
+option(ENABLE_CURL_LOGGING "If enabled, Curl's internal log will be piped to SDK's logger" ON)
 option(ENABLE_HTTP_CLIENT_TESTING "If enabled, corresponding http client test suites will be built and run" OFF)
 option(ENABLE_VIRTUAL_OPERATIONS "This option usually works with REGENERATE_CLIENTS. \
                                 If enabled when doing code generation, operation related functions in service clients will be marked as virtual. \
