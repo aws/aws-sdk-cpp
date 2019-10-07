@@ -18,6 +18,7 @@
 #include <aws/sts/STSClient.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/UUID.h>
 
 #include <utility>
 
@@ -326,6 +327,7 @@ AWSCredentials STSProfileCredentialsProvider::GetCredentialsFromSTSInternal(cons
     AssumeRoleRequest assumeRoleRequest;
     assumeRoleRequest
         .WithRoleArn(roleArn)
+        .WithRoleSessionName(Aws::Utils::UUID::RandomUUID())
         .WithDurationSeconds(static_cast<int>(std::chrono::seconds(m_duration).count()));
     auto outcome = client->AssumeRole(assumeRoleRequest);
     if (outcome.IsSuccess())
