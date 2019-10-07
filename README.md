@@ -184,7 +184,7 @@ For more information, see the CMake documentation for your platform.
 CMake options are variables that can either be ON or OFF, with a controllable default.  You can set an option either with CMake Gui tools or the command line via -D.
 
 #### ENABLE_UNITY_BUILD
-(Defaults to OFF) If enabled, most SDK libraries will be built as a single, generated .cpp file.  This can significantly reduce static library size as well as speed up compilation time.
+(Defaults to ON) If enabled, most SDK libraries will be built as a single, generated .cpp file.  This can significantly reduce static library size as well as speed up compilation time.
 
 #### MINIMIZE_SIZE
 (Defaults to OFF) A superset of ENABLE_UNITY_BUILD, if enabled this option turns on ENABLE_UNITY_BUILD as well as some additional binary size reduction settings.  This is a work-in-progress and may change in the future (symbol stripping in particular).
