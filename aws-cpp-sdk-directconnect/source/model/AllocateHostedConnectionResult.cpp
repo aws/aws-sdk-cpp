@@ -145,6 +145,12 @@ AllocateHostedConnectionResult& AllocateHostedConnectionResult::operator =(const
     }
   }
 
+  if(jsonValue.ValueExists("providerName"))
+  {
+    m_providerName = jsonValue.GetString("providerName");
+
+  }
+
 
 
   return *this;

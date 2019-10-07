@@ -44,7 +44,8 @@ Interconnect::Interconnect() :
     m_awsDeviceV2HasBeenSet(false),
     m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
     m_hasLogicalRedundancyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_providerNameHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ Interconnect::Interconnect(JsonView jsonValue) :
     m_awsDeviceV2HasBeenSet(false),
     m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
     m_hasLogicalRedundancyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_providerNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -165,6 +167,13 @@ Interconnect& Interconnect::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("providerName"))
+  {
+    m_providerName = jsonValue.GetString("providerName");
+
+    m_providerNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -249,6 +258,12 @@ JsonValue Interconnect::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_providerNameHasBeenSet)
+  {
+   payload.WithString("providerName", m_providerName);
 
   }
 

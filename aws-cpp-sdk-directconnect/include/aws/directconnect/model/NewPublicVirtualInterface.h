@@ -115,25 +115,25 @@ namespace Model
 
     /**
      * <p>The autonomous system (AS) number for Border Gateway Protocol (BGP)
-     * configuration.</p>
+     * configuration.</p> <p>The valid values are 1-2147483647.</p>
      */
     inline int GetAsn() const{ return m_asn; }
 
     /**
      * <p>The autonomous system (AS) number for Border Gateway Protocol (BGP)
-     * configuration.</p>
+     * configuration.</p> <p>The valid values are 1-2147483647.</p>
      */
     inline bool AsnHasBeenSet() const { return m_asnHasBeenSet; }
 
     /**
      * <p>The autonomous system (AS) number for Border Gateway Protocol (BGP)
-     * configuration.</p>
+     * configuration.</p> <p>The valid values are 1-2147483647.</p>
      */
     inline void SetAsn(int value) { m_asnHasBeenSet = true; m_asn = value; }
 
     /**
      * <p>The autonomous system (AS) number for Border Gateway Protocol (BGP)
-     * configuration.</p>
+     * configuration.</p> <p>The valid values are 1-2147483647.</p>
      */
     inline NewPublicVirtualInterface& WithAsn(int value) { SetAsn(value); return *this;}
 
@@ -350,42 +350,42 @@ namespace Model
 
 
     /**
-     * <p>Any tags assigned to the public virtual interface.</p>
+     * <p>The tags associated with the public virtual interface.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Any tags assigned to the public virtual interface.</p>
+     * <p>The tags associated with the public virtual interface.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Any tags assigned to the public virtual interface.</p>
+     * <p>The tags associated with the public virtual interface.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Any tags assigned to the public virtual interface.</p>
+     * <p>The tags associated with the public virtual interface.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Any tags assigned to the public virtual interface.</p>
+     * <p>The tags associated with the public virtual interface.</p>
      */
     inline NewPublicVirtualInterface& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Any tags assigned to the public virtual interface.</p>
+     * <p>The tags associated with the public virtual interface.</p>
      */
     inline NewPublicVirtualInterface& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Any tags assigned to the public virtual interface.</p>
+     * <p>The tags associated with the public virtual interface.</p>
      */
     inline NewPublicVirtualInterface& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Any tags assigned to the public virtual interface.</p>
+     * <p>The tags associated with the public virtual interface.</p>
      */
     inline NewPublicVirtualInterface& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

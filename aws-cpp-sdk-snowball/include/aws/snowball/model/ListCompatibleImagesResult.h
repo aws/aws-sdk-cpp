@@ -45,37 +45,44 @@ namespace Model
 
 
     /**
-     * <p>A JSON-formatted object that describes a compatible AMI.</p>
+     * <p>A JSON-formatted object that describes a compatible AMI, including the ID and
+     * name for a Snowball Edge AMI.</p>
      */
     inline const Aws::Vector<CompatibleImage>& GetCompatibleImages() const{ return m_compatibleImages; }
 
     /**
-     * <p>A JSON-formatted object that describes a compatible AMI.</p>
+     * <p>A JSON-formatted object that describes a compatible AMI, including the ID and
+     * name for a Snowball Edge AMI.</p>
      */
     inline void SetCompatibleImages(const Aws::Vector<CompatibleImage>& value) { m_compatibleImages = value; }
 
     /**
-     * <p>A JSON-formatted object that describes a compatible AMI.</p>
+     * <p>A JSON-formatted object that describes a compatible AMI, including the ID and
+     * name for a Snowball Edge AMI.</p>
      */
     inline void SetCompatibleImages(Aws::Vector<CompatibleImage>&& value) { m_compatibleImages = std::move(value); }
 
     /**
-     * <p>A JSON-formatted object that describes a compatible AMI.</p>
+     * <p>A JSON-formatted object that describes a compatible AMI, including the ID and
+     * name for a Snowball Edge AMI.</p>
      */
     inline ListCompatibleImagesResult& WithCompatibleImages(const Aws::Vector<CompatibleImage>& value) { SetCompatibleImages(value); return *this;}
 
     /**
-     * <p>A JSON-formatted object that describes a compatible AMI.</p>
+     * <p>A JSON-formatted object that describes a compatible AMI, including the ID and
+     * name for a Snowball Edge AMI.</p>
      */
     inline ListCompatibleImagesResult& WithCompatibleImages(Aws::Vector<CompatibleImage>&& value) { SetCompatibleImages(std::move(value)); return *this;}
 
     /**
-     * <p>A JSON-formatted object that describes a compatible AMI.</p>
+     * <p>A JSON-formatted object that describes a compatible AMI, including the ID and
+     * name for a Snowball Edge AMI.</p>
      */
     inline ListCompatibleImagesResult& AddCompatibleImages(const CompatibleImage& value) { m_compatibleImages.push_back(value); return *this; }
 
     /**
-     * <p>A JSON-formatted object that describes a compatible AMI.</p>
+     * <p>A JSON-formatted object that describes a compatible AMI, including the ID and
+     * name for a Snowball Edge AMI.</p>
      */
     inline ListCompatibleImagesResult& AddCompatibleImages(CompatibleImage&& value) { m_compatibleImages.push_back(std::move(value)); return *this; }
 

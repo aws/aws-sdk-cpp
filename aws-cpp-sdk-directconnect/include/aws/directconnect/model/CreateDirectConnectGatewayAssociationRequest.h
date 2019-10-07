@@ -129,64 +129,72 @@ namespace Model
 
 
     /**
-     * <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p> <p>For
-     * information about how to set the prefixes, see <a
+     * <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
+     * <p>This parameter is required when you create an association to a transit
+     * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
      * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
      */
     inline const Aws::Vector<RouteFilterPrefix>& GetAddAllowedPrefixesToDirectConnectGateway() const{ return m_addAllowedPrefixesToDirectConnectGateway; }
 
     /**
-     * <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p> <p>For
-     * information about how to set the prefixes, see <a
+     * <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
+     * <p>This parameter is required when you create an association to a transit
+     * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
      * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
      */
     inline bool AddAllowedPrefixesToDirectConnectGatewayHasBeenSet() const { return m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet; }
 
     /**
-     * <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p> <p>For
-     * information about how to set the prefixes, see <a
+     * <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
+     * <p>This parameter is required when you create an association to a transit
+     * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
      * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
      */
     inline void SetAddAllowedPrefixesToDirectConnectGateway(const Aws::Vector<RouteFilterPrefix>& value) { m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_addAllowedPrefixesToDirectConnectGateway = value; }
 
     /**
-     * <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p> <p>For
-     * information about how to set the prefixes, see <a
+     * <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
+     * <p>This parameter is required when you create an association to a transit
+     * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
      * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
      */
     inline void SetAddAllowedPrefixesToDirectConnectGateway(Aws::Vector<RouteFilterPrefix>&& value) { m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_addAllowedPrefixesToDirectConnectGateway = std::move(value); }
 
     /**
-     * <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p> <p>For
-     * information about how to set the prefixes, see <a
+     * <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
+     * <p>This parameter is required when you create an association to a transit
+     * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
      * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
      */
     inline CreateDirectConnectGatewayAssociationRequest& WithAddAllowedPrefixesToDirectConnectGateway(const Aws::Vector<RouteFilterPrefix>& value) { SetAddAllowedPrefixesToDirectConnectGateway(value); return *this;}
 
     /**
-     * <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p> <p>For
-     * information about how to set the prefixes, see <a
+     * <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
+     * <p>This parameter is required when you create an association to a transit
+     * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
      * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
      */
     inline CreateDirectConnectGatewayAssociationRequest& WithAddAllowedPrefixesToDirectConnectGateway(Aws::Vector<RouteFilterPrefix>&& value) { SetAddAllowedPrefixesToDirectConnectGateway(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p> <p>For
-     * information about how to set the prefixes, see <a
+     * <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
+     * <p>This parameter is required when you create an association to a transit
+     * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
      * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
      */
     inline CreateDirectConnectGatewayAssociationRequest& AddAddAllowedPrefixesToDirectConnectGateway(const RouteFilterPrefix& value) { m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_addAllowedPrefixesToDirectConnectGateway.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p> <p>For
-     * information about how to set the prefixes, see <a
+     * <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>
+     * <p>This parameter is required when you create an association to a transit
+     * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
      * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
      */

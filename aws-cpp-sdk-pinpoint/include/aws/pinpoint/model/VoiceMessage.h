@@ -149,58 +149,66 @@ namespace Model
 
 
     /**
-     * <p>The phone number from the pool or messaging service to send the message from.
-     * Although it isn't required, we recommend that you specify the phone number in
-     * E.164 format to ensure prompt and accurate delivery.</p>
+     * <p>The long code to send the voice message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code in E.164 format, for
+     * example +12065550100, to ensure prompt and accurate delivery of the message.</p>
      */
     inline const Aws::String& GetOriginationNumber() const{ return m_originationNumber; }
 
     /**
-     * <p>The phone number from the pool or messaging service to send the message from.
-     * Although it isn't required, we recommend that you specify the phone number in
-     * E.164 format to ensure prompt and accurate delivery.</p>
+     * <p>The long code to send the voice message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code in E.164 format, for
+     * example +12065550100, to ensure prompt and accurate delivery of the message.</p>
      */
     inline bool OriginationNumberHasBeenSet() const { return m_originationNumberHasBeenSet; }
 
     /**
-     * <p>The phone number from the pool or messaging service to send the message from.
-     * Although it isn't required, we recommend that you specify the phone number in
-     * E.164 format to ensure prompt and accurate delivery.</p>
+     * <p>The long code to send the voice message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code in E.164 format, for
+     * example +12065550100, to ensure prompt and accurate delivery of the message.</p>
      */
     inline void SetOriginationNumber(const Aws::String& value) { m_originationNumberHasBeenSet = true; m_originationNumber = value; }
 
     /**
-     * <p>The phone number from the pool or messaging service to send the message from.
-     * Although it isn't required, we recommend that you specify the phone number in
-     * E.164 format to ensure prompt and accurate delivery.</p>
+     * <p>The long code to send the voice message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code in E.164 format, for
+     * example +12065550100, to ensure prompt and accurate delivery of the message.</p>
      */
     inline void SetOriginationNumber(Aws::String&& value) { m_originationNumberHasBeenSet = true; m_originationNumber = std::move(value); }
 
     /**
-     * <p>The phone number from the pool or messaging service to send the message from.
-     * Although it isn't required, we recommend that you specify the phone number in
-     * E.164 format to ensure prompt and accurate delivery.</p>
+     * <p>The long code to send the voice message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code in E.164 format, for
+     * example +12065550100, to ensure prompt and accurate delivery of the message.</p>
      */
     inline void SetOriginationNumber(const char* value) { m_originationNumberHasBeenSet = true; m_originationNumber.assign(value); }
 
     /**
-     * <p>The phone number from the pool or messaging service to send the message from.
-     * Although it isn't required, we recommend that you specify the phone number in
-     * E.164 format to ensure prompt and accurate delivery.</p>
+     * <p>The long code to send the voice message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code in E.164 format, for
+     * example +12065550100, to ensure prompt and accurate delivery of the message.</p>
      */
     inline VoiceMessage& WithOriginationNumber(const Aws::String& value) { SetOriginationNumber(value); return *this;}
 
     /**
-     * <p>The phone number from the pool or messaging service to send the message from.
-     * Although it isn't required, we recommend that you specify the phone number in
-     * E.164 format to ensure prompt and accurate delivery.</p>
+     * <p>The long code to send the voice message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code in E.164 format, for
+     * example +12065550100, to ensure prompt and accurate delivery of the message.</p>
      */
     inline VoiceMessage& WithOriginationNumber(Aws::String&& value) { SetOriginationNumber(std::move(value)); return *this;}
 
     /**
-     * <p>The phone number from the pool or messaging service to send the message from.
-     * Although it isn't required, we recommend that you specify the phone number in
-     * E.164 format to ensure prompt and accurate delivery.</p>
+     * <p>The long code to send the voice message from. This value should be one of the
+     * dedicated long codes that's assigned to your AWS account. Although it isn't
+     * required, we recommend that you specify the long code in E.164 format, for
+     * example +12065550100, to ensure prompt and accurate delivery of the message.</p>
      */
     inline VoiceMessage& WithOriginationNumber(const char* value) { SetOriginationNumber(value); return *this;}
 

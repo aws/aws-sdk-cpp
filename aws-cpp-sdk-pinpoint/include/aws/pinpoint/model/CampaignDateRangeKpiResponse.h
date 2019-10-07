@@ -134,38 +134,38 @@ namespace Model
 
 
     /**
-     * <p>The last date or date and time of the date range that was used to filter the
-     * query results, in ISO 8601 format. The date range is inclusive.</p>
+     * <p>The last date and time of the date range that was used to filter the query
+     * results, in extended ISO 8601 format. The date range is inclusive.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The last date or date and time of the date range that was used to filter the
-     * query results, in ISO 8601 format. The date range is inclusive.</p>
+     * <p>The last date and time of the date range that was used to filter the query
+     * results, in extended ISO 8601 format. The date range is inclusive.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>The last date or date and time of the date range that was used to filter the
-     * query results, in ISO 8601 format. The date range is inclusive.</p>
+     * <p>The last date and time of the date range that was used to filter the query
+     * results, in extended ISO 8601 format. The date range is inclusive.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The last date or date and time of the date range that was used to filter the
-     * query results, in ISO 8601 format. The date range is inclusive.</p>
+     * <p>The last date and time of the date range that was used to filter the query
+     * results, in extended ISO 8601 format. The date range is inclusive.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The last date or date and time of the date range that was used to filter the
-     * query results, in ISO 8601 format. The date range is inclusive.</p>
+     * <p>The last date and time of the date range that was used to filter the query
+     * results, in extended ISO 8601 format. The date range is inclusive.</p>
      */
     inline CampaignDateRangeKpiResponse& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The last date or date and time of the date range that was used to filter the
-     * query results, in ISO 8601 format. The date range is inclusive.</p>
+     * <p>The last date and time of the date range that was used to filter the query
+     * results, in extended ISO 8601 format. The date range is inclusive.</p>
      */
     inline CampaignDateRangeKpiResponse& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
@@ -175,7 +175,9 @@ namespace Model
      * (KPI)</i>, that the data was retrieved for. This value describes the associated
      * metric and consists of two or more terms, which are comprised of lowercase
      * alphanumeric characters, separated by a hyphen. For a list of valid values, see
-     * the <a href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * Pinpoint Developer Guide</a>.</p>
      */
     inline const Aws::String& GetKpiName() const{ return m_kpiName; }
 
@@ -184,7 +186,9 @@ namespace Model
      * (KPI)</i>, that the data was retrieved for. This value describes the associated
      * metric and consists of two or more terms, which are comprised of lowercase
      * alphanumeric characters, separated by a hyphen. For a list of valid values, see
-     * the <a href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * Pinpoint Developer Guide</a>.</p>
      */
     inline bool KpiNameHasBeenSet() const { return m_kpiNameHasBeenSet; }
 
@@ -193,7 +197,9 @@ namespace Model
      * (KPI)</i>, that the data was retrieved for. This value describes the associated
      * metric and consists of two or more terms, which are comprised of lowercase
      * alphanumeric characters, separated by a hyphen. For a list of valid values, see
-     * the <a href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * Pinpoint Developer Guide</a>.</p>
      */
     inline void SetKpiName(const Aws::String& value) { m_kpiNameHasBeenSet = true; m_kpiName = value; }
 
@@ -202,7 +208,9 @@ namespace Model
      * (KPI)</i>, that the data was retrieved for. This value describes the associated
      * metric and consists of two or more terms, which are comprised of lowercase
      * alphanumeric characters, separated by a hyphen. For a list of valid values, see
-     * the <a href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * Pinpoint Developer Guide</a>.</p>
      */
     inline void SetKpiName(Aws::String&& value) { m_kpiNameHasBeenSet = true; m_kpiName = std::move(value); }
 
@@ -211,7 +219,9 @@ namespace Model
      * (KPI)</i>, that the data was retrieved for. This value describes the associated
      * metric and consists of two or more terms, which are comprised of lowercase
      * alphanumeric characters, separated by a hyphen. For a list of valid values, see
-     * the <a href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * Pinpoint Developer Guide</a>.</p>
      */
     inline void SetKpiName(const char* value) { m_kpiNameHasBeenSet = true; m_kpiName.assign(value); }
 
@@ -220,7 +230,9 @@ namespace Model
      * (KPI)</i>, that the data was retrieved for. This value describes the associated
      * metric and consists of two or more terms, which are comprised of lowercase
      * alphanumeric characters, separated by a hyphen. For a list of valid values, see
-     * the <a href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * Pinpoint Developer Guide</a>.</p>
      */
     inline CampaignDateRangeKpiResponse& WithKpiName(const Aws::String& value) { SetKpiName(value); return *this;}
 
@@ -229,7 +241,9 @@ namespace Model
      * (KPI)</i>, that the data was retrieved for. This value describes the associated
      * metric and consists of two or more terms, which are comprised of lowercase
      * alphanumeric characters, separated by a hyphen. For a list of valid values, see
-     * the <a href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * Pinpoint Developer Guide</a>.</p>
      */
     inline CampaignDateRangeKpiResponse& WithKpiName(Aws::String&& value) { SetKpiName(std::move(value)); return *this;}
 
@@ -238,7 +252,9 @@ namespace Model
      * (KPI)</i>, that the data was retrieved for. This value describes the associated
      * metric and consists of two or more terms, which are comprised of lowercase
      * alphanumeric characters, separated by a hyphen. For a list of valid values, see
-     * the <a href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * Pinpoint Developer Guide</a>.</p>
      */
     inline CampaignDateRangeKpiResponse& WithKpiName(const char* value) { SetKpiName(value); return *this;}
 
@@ -338,38 +354,38 @@ namespace Model
 
 
     /**
-     * <p>The first date or date and time of the date range that was used to filter the
-     * query results, in ISO 8601 format. The date range is inclusive.</p>
+     * <p>The first date and time of the date range that was used to filter the query
+     * results, in extended ISO 8601 format. The date range is inclusive.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The first date or date and time of the date range that was used to filter the
-     * query results, in ISO 8601 format. The date range is inclusive.</p>
+     * <p>The first date and time of the date range that was used to filter the query
+     * results, in extended ISO 8601 format. The date range is inclusive.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>The first date or date and time of the date range that was used to filter the
-     * query results, in ISO 8601 format. The date range is inclusive.</p>
+     * <p>The first date and time of the date range that was used to filter the query
+     * results, in extended ISO 8601 format. The date range is inclusive.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The first date or date and time of the date range that was used to filter the
-     * query results, in ISO 8601 format. The date range is inclusive.</p>
+     * <p>The first date and time of the date range that was used to filter the query
+     * results, in extended ISO 8601 format. The date range is inclusive.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The first date or date and time of the date range that was used to filter the
-     * query results, in ISO 8601 format. The date range is inclusive.</p>
+     * <p>The first date and time of the date range that was used to filter the query
+     * results, in extended ISO 8601 format. The date range is inclusive.</p>
      */
     inline CampaignDateRangeKpiResponse& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The first date or date and time of the date range that was used to filter the
-     * query results, in ISO 8601 format. The date range is inclusive.</p>
+     * <p>The first date and time of the date range that was used to filter the query
+     * results, in extended ISO 8601 format. The date range is inclusive.</p>
      */
     inline CampaignDateRangeKpiResponse& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 

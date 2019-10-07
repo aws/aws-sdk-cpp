@@ -141,50 +141,50 @@ namespace Model
 
 
     /**
-     * <p>The API key, also referred to as a <i>server key</i>, that you received from
-     * Google to communicate with Google services.</p>
+     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
+     * that you received from Google to communicate with Google services.</p>
      */
     inline const Aws::String& GetCredential() const{ return m_credential; }
 
     /**
-     * <p>The API key, also referred to as a <i>server key</i>, that you received from
-     * Google to communicate with Google services.</p>
+     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
+     * that you received from Google to communicate with Google services.</p>
      */
     inline bool CredentialHasBeenSet() const { return m_credentialHasBeenSet; }
 
     /**
-     * <p>The API key, also referred to as a <i>server key</i>, that you received from
-     * Google to communicate with Google services.</p>
+     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
+     * that you received from Google to communicate with Google services.</p>
      */
     inline void SetCredential(const Aws::String& value) { m_credentialHasBeenSet = true; m_credential = value; }
 
     /**
-     * <p>The API key, also referred to as a <i>server key</i>, that you received from
-     * Google to communicate with Google services.</p>
+     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
+     * that you received from Google to communicate with Google services.</p>
      */
     inline void SetCredential(Aws::String&& value) { m_credentialHasBeenSet = true; m_credential = std::move(value); }
 
     /**
-     * <p>The API key, also referred to as a <i>server key</i>, that you received from
-     * Google to communicate with Google services.</p>
+     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
+     * that you received from Google to communicate with Google services.</p>
      */
     inline void SetCredential(const char* value) { m_credentialHasBeenSet = true; m_credential.assign(value); }
 
     /**
-     * <p>The API key, also referred to as a <i>server key</i>, that you received from
-     * Google to communicate with Google services.</p>
+     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
+     * that you received from Google to communicate with Google services.</p>
      */
     inline GCMChannelResponse& WithCredential(const Aws::String& value) { SetCredential(value); return *this;}
 
     /**
-     * <p>The API key, also referred to as a <i>server key</i>, that you received from
-     * Google to communicate with Google services.</p>
+     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
+     * that you received from Google to communicate with Google services.</p>
      */
     inline GCMChannelResponse& WithCredential(Aws::String&& value) { SetCredential(std::move(value)); return *this;}
 
     /**
-     * <p>The API key, also referred to as a <i>server key</i>, that you received from
-     * Google to communicate with Google services.</p>
+     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
+     * that you received from Google to communicate with Google services.</p>
      */
     inline GCMChannelResponse& WithCredential(const char* value) { SetCredential(value); return *this;}
 

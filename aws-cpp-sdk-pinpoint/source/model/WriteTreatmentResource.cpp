@@ -33,6 +33,7 @@ WriteTreatmentResource::WriteTreatmentResource() :
     m_scheduleHasBeenSet(false),
     m_sizePercent(0),
     m_sizePercentHasBeenSet(false),
+    m_templateConfigurationHasBeenSet(false),
     m_treatmentDescriptionHasBeenSet(false),
     m_treatmentNameHasBeenSet(false)
 {
@@ -43,6 +44,7 @@ WriteTreatmentResource::WriteTreatmentResource(JsonView jsonValue) :
     m_scheduleHasBeenSet(false),
     m_sizePercent(0),
     m_sizePercentHasBeenSet(false),
+    m_templateConfigurationHasBeenSet(false),
     m_treatmentDescriptionHasBeenSet(false),
     m_treatmentNameHasBeenSet(false)
 {
@@ -70,6 +72,13 @@ WriteTreatmentResource& WriteTreatmentResource::operator =(JsonView jsonValue)
     m_sizePercent = jsonValue.GetInteger("SizePercent");
 
     m_sizePercentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TemplateConfiguration"))
+  {
+    m_templateConfiguration = jsonValue.GetObject("TemplateConfiguration");
+
+    m_templateConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("TreatmentDescription"))
@@ -108,6 +117,12 @@ JsonValue WriteTreatmentResource::Jsonize() const
   if(m_sizePercentHasBeenSet)
   {
    payload.WithInteger("SizePercent", m_sizePercent);
+
+  }
+
+  if(m_templateConfigurationHasBeenSet)
+  {
+   payload.WithObject("TemplateConfiguration", m_templateConfiguration.Jsonize());
 
   }
 

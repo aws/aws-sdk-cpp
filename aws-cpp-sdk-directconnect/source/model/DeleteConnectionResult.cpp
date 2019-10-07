@@ -145,6 +145,12 @@ DeleteConnectionResult& DeleteConnectionResult::operator =(const Aws::AmazonWebS
     }
   }
 
+  if(jsonValue.ValueExists("providerName"))
+  {
+    m_providerName = jsonValue.GetString("providerName");
+
+  }
+
 
 
   return *this;

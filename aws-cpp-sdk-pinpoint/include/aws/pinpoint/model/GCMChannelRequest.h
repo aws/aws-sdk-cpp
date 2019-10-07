@@ -51,50 +51,50 @@ namespace Model
 
 
     /**
-     * <p>The API key, also referred to as a <i>server key</i>, that you received from
-     * Google to communicate with Google services.</p>
+     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
+     * that you received from Google to communicate with Google services.</p>
      */
     inline const Aws::String& GetApiKey() const{ return m_apiKey; }
 
     /**
-     * <p>The API key, also referred to as a <i>server key</i>, that you received from
-     * Google to communicate with Google services.</p>
+     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
+     * that you received from Google to communicate with Google services.</p>
      */
     inline bool ApiKeyHasBeenSet() const { return m_apiKeyHasBeenSet; }
 
     /**
-     * <p>The API key, also referred to as a <i>server key</i>, that you received from
-     * Google to communicate with Google services.</p>
+     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
+     * that you received from Google to communicate with Google services.</p>
      */
     inline void SetApiKey(const Aws::String& value) { m_apiKeyHasBeenSet = true; m_apiKey = value; }
 
     /**
-     * <p>The API key, also referred to as a <i>server key</i>, that you received from
-     * Google to communicate with Google services.</p>
+     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
+     * that you received from Google to communicate with Google services.</p>
      */
     inline void SetApiKey(Aws::String&& value) { m_apiKeyHasBeenSet = true; m_apiKey = std::move(value); }
 
     /**
-     * <p>The API key, also referred to as a <i>server key</i>, that you received from
-     * Google to communicate with Google services.</p>
+     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
+     * that you received from Google to communicate with Google services.</p>
      */
     inline void SetApiKey(const char* value) { m_apiKeyHasBeenSet = true; m_apiKey.assign(value); }
 
     /**
-     * <p>The API key, also referred to as a <i>server key</i>, that you received from
-     * Google to communicate with Google services.</p>
+     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
+     * that you received from Google to communicate with Google services.</p>
      */
     inline GCMChannelRequest& WithApiKey(const Aws::String& value) { SetApiKey(value); return *this;}
 
     /**
-     * <p>The API key, also referred to as a <i>server key</i>, that you received from
-     * Google to communicate with Google services.</p>
+     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
+     * that you received from Google to communicate with Google services.</p>
      */
     inline GCMChannelRequest& WithApiKey(Aws::String&& value) { SetApiKey(std::move(value)); return *this;}
 
     /**
-     * <p>The API key, also referred to as a <i>server key</i>, that you received from
-     * Google to communicate with Google services.</p>
+     * <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>,
+     * that you received from Google to communicate with Google services.</p>
      */
     inline GCMChannelRequest& WithApiKey(const char* value) { SetApiKey(value); return *this;}
 

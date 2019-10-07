@@ -31,6 +31,7 @@ namespace Model
 SendUsersMessageRequest::SendUsersMessageRequest() : 
     m_contextHasBeenSet(false),
     m_messageConfigurationHasBeenSet(false),
+    m_templateConfigurationHasBeenSet(false),
     m_traceIdHasBeenSet(false),
     m_usersHasBeenSet(false)
 {
@@ -39,6 +40,7 @@ SendUsersMessageRequest::SendUsersMessageRequest() :
 SendUsersMessageRequest::SendUsersMessageRequest(JsonView jsonValue) : 
     m_contextHasBeenSet(false),
     m_messageConfigurationHasBeenSet(false),
+    m_templateConfigurationHasBeenSet(false),
     m_traceIdHasBeenSet(false),
     m_usersHasBeenSet(false)
 {
@@ -62,6 +64,13 @@ SendUsersMessageRequest& SendUsersMessageRequest::operator =(JsonView jsonValue)
     m_messageConfiguration = jsonValue.GetObject("MessageConfiguration");
 
     m_messageConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TemplateConfiguration"))
+  {
+    m_templateConfiguration = jsonValue.GetObject("TemplateConfiguration");
+
+    m_templateConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("TraceId"))
@@ -102,6 +111,12 @@ JsonValue SendUsersMessageRequest::Jsonize() const
   if(m_messageConfigurationHasBeenSet)
   {
    payload.WithObject("MessageConfiguration", m_messageConfiguration.Jsonize());
+
+  }
+
+  if(m_templateConfigurationHasBeenSet)
+  {
+   payload.WithObject("TemplateConfiguration", m_templateConfiguration.Jsonize());
 
   }
 

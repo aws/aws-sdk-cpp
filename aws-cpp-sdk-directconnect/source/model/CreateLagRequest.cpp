@@ -30,7 +30,8 @@ CreateLagRequest::CreateLagRequest() :
     m_lagNameHasBeenSet(false),
     m_connectionIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_childConnectionTagsHasBeenSet(false)
+    m_childConnectionTagsHasBeenSet(false),
+    m_providerNameHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,12 @@ Aws::String CreateLagRequest::SerializePayload() const
      childConnectionTagsJsonList[childConnectionTagsIndex].AsObject(m_childConnectionTags[childConnectionTagsIndex].Jsonize());
    }
    payload.WithArray("childConnectionTags", std::move(childConnectionTagsJsonList));
+
+  }
+
+  if(m_providerNameHasBeenSet)
+  {
+   payload.WithString("providerName", m_providerName);
 
   }
 

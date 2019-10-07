@@ -225,6 +225,52 @@ namespace Model
      */
     inline Location& AddAvailablePortSpeeds(const char* value) { m_availablePortSpeedsHasBeenSet = true; m_availablePortSpeeds.push_back(value); return *this; }
 
+
+    /**
+     * <p>The name of the service provider for the location.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAvailableProviders() const{ return m_availableProviders; }
+
+    /**
+     * <p>The name of the service provider for the location.</p>
+     */
+    inline bool AvailableProvidersHasBeenSet() const { return m_availableProvidersHasBeenSet; }
+
+    /**
+     * <p>The name of the service provider for the location.</p>
+     */
+    inline void SetAvailableProviders(const Aws::Vector<Aws::String>& value) { m_availableProvidersHasBeenSet = true; m_availableProviders = value; }
+
+    /**
+     * <p>The name of the service provider for the location.</p>
+     */
+    inline void SetAvailableProviders(Aws::Vector<Aws::String>&& value) { m_availableProvidersHasBeenSet = true; m_availableProviders = std::move(value); }
+
+    /**
+     * <p>The name of the service provider for the location.</p>
+     */
+    inline Location& WithAvailableProviders(const Aws::Vector<Aws::String>& value) { SetAvailableProviders(value); return *this;}
+
+    /**
+     * <p>The name of the service provider for the location.</p>
+     */
+    inline Location& WithAvailableProviders(Aws::Vector<Aws::String>&& value) { SetAvailableProviders(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the service provider for the location.</p>
+     */
+    inline Location& AddAvailableProviders(const Aws::String& value) { m_availableProvidersHasBeenSet = true; m_availableProviders.push_back(value); return *this; }
+
+    /**
+     * <p>The name of the service provider for the location.</p>
+     */
+    inline Location& AddAvailableProviders(Aws::String&& value) { m_availableProvidersHasBeenSet = true; m_availableProviders.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The name of the service provider for the location.</p>
+     */
+    inline Location& AddAvailableProviders(const char* value) { m_availableProvidersHasBeenSet = true; m_availableProviders.push_back(value); return *this; }
+
   private:
 
     Aws::String m_locationCode;
@@ -238,6 +284,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_availablePortSpeeds;
     bool m_availablePortSpeedsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_availableProviders;
+    bool m_availableProvidersHasBeenSet;
   };
 
 } // namespace Model

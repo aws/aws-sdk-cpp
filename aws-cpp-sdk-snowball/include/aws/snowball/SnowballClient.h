@@ -33,6 +33,7 @@
 #include <aws/snowball/model/GetJobManifestResult.h>
 #include <aws/snowball/model/GetJobUnlockCodeResult.h>
 #include <aws/snowball/model/GetSnowballUsageResult.h>
+#include <aws/snowball/model/GetSoftwareUpdatesResult.h>
 #include <aws/snowball/model/ListClusterJobsResult.h>
 #include <aws/snowball/model/ListClustersResult.h>
 #include <aws/snowball/model/ListCompatibleImagesResult.h>
@@ -90,6 +91,7 @@ namespace Model
         class GetJobManifestRequest;
         class GetJobUnlockCodeRequest;
         class GetSnowballUsageRequest;
+        class GetSoftwareUpdatesRequest;
         class ListClusterJobsRequest;
         class ListClustersRequest;
         class ListCompatibleImagesRequest;
@@ -109,6 +111,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetJobManifestResult, Aws::Client::AWSError<SnowballErrors>> GetJobManifestOutcome;
         typedef Aws::Utils::Outcome<GetJobUnlockCodeResult, Aws::Client::AWSError<SnowballErrors>> GetJobUnlockCodeOutcome;
         typedef Aws::Utils::Outcome<GetSnowballUsageResult, Aws::Client::AWSError<SnowballErrors>> GetSnowballUsageOutcome;
+        typedef Aws::Utils::Outcome<GetSoftwareUpdatesResult, Aws::Client::AWSError<SnowballErrors>> GetSoftwareUpdatesOutcome;
         typedef Aws::Utils::Outcome<ListClusterJobsResult, Aws::Client::AWSError<SnowballErrors>> ListClusterJobsOutcome;
         typedef Aws::Utils::Outcome<ListClustersResult, Aws::Client::AWSError<SnowballErrors>> ListClustersOutcome;
         typedef Aws::Utils::Outcome<ListCompatibleImagesResult, Aws::Client::AWSError<SnowballErrors>> ListCompatibleImagesOutcome;
@@ -128,6 +131,7 @@ namespace Model
         typedef std::future<GetJobManifestOutcome> GetJobManifestOutcomeCallable;
         typedef std::future<GetJobUnlockCodeOutcome> GetJobUnlockCodeOutcomeCallable;
         typedef std::future<GetSnowballUsageOutcome> GetSnowballUsageOutcomeCallable;
+        typedef std::future<GetSoftwareUpdatesOutcome> GetSoftwareUpdatesOutcomeCallable;
         typedef std::future<ListClusterJobsOutcome> ListClusterJobsOutcomeCallable;
         typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
         typedef std::future<ListCompatibleImagesOutcome> ListCompatibleImagesOutcomeCallable;
@@ -150,6 +154,7 @@ namespace Model
     typedef std::function<void(const SnowballClient*, const Model::GetJobManifestRequest&, const Model::GetJobManifestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobManifestResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::GetJobUnlockCodeRequest&, const Model::GetJobUnlockCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobUnlockCodeResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::GetSnowballUsageRequest&, const Model::GetSnowballUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSnowballUsageResponseReceivedHandler;
+    typedef std::function<void(const SnowballClient*, const Model::GetSoftwareUpdatesRequest&, const Model::GetSoftwareUpdatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSoftwareUpdatesResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::ListClusterJobsRequest&, const Model::ListClusterJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClusterJobsResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::ListCompatibleImagesRequest&, const Model::ListCompatibleImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCompatibleImagesResponseReceivedHandler;
@@ -160,11 +165,14 @@ namespace Model
   /**
    * <p>AWS Snowball is a petabyte-scale data transport solution that uses secure
    * devices to transfer large amounts of data between your on-premises data centers
-   * and Amazon Simple Storage Service (Amazon S3). The commands described here
-   * provide access to the same functionality that is available in the AWS Snowball
-   * Management Console, which enables you to create and manage jobs for Snowball and
-   * Snowball Edge devices. To transfer data locally with a device, you'll need to
-   * use the Snowball client or the Amazon S3 API adapter for Snowball.</p>
+   * and Amazon Simple Storage Service (Amazon S3). The Snowball commands described
+   * here provide access to the same functionality that is available in the AWS
+   * Snowball Management Console, which enables you to create and manage jobs for
+   * Snowball. To transfer data locally with a Snowball device, you'll need to use
+   * the Snowball client or the Amazon S3 API adapter for Snowball. For more
+   * information, see the <a
+   * href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User
+   * Guide</a>.</p>
    */
   class AWS_SNOWBALL_API SnowballClient : public Aws::Client::AWSJsonClient
   {
@@ -646,6 +654,34 @@ namespace Model
         virtual void GetSnowballUsageAsync(const Model::GetSnowballUsageRequest& request, const GetSnowballUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns an Amazon S3 presigned URL for an update file associated with a
+         * specified <code>JobId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSoftwareUpdates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSoftwareUpdatesOutcome GetSoftwareUpdates(const Model::GetSoftwareUpdatesRequest& request) const;
+
+        /**
+         * <p>Returns an Amazon S3 presigned URL for an update file associated with a
+         * specified <code>JobId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSoftwareUpdates">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSoftwareUpdatesOutcomeCallable GetSoftwareUpdatesCallable(const Model::GetSoftwareUpdatesRequest& request) const;
+
+        /**
+         * <p>Returns an Amazon S3 presigned URL for an update file associated with a
+         * specified <code>JobId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSoftwareUpdates">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSoftwareUpdatesAsync(const Model::GetSoftwareUpdatesRequest& request, const GetSoftwareUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns an array of <code>JobListEntry</code> objects of the specified
          * length. Each <code>JobListEntry</code> object is for a job in the specified
          * cluster and contains a job's state, a job's ID, and other
@@ -715,12 +751,11 @@ namespace Model
 
         /**
          * <p>This action returns a list of the different Amazon EC2 Amazon Machine Images
-         * (AMIs) that are owned by your AWS account that would be supported for use on
-         * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code> devices. For
-         * more information on compatible AMIs, see <a
-         * href="http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html">Using
-         * Amazon EC2 Compute Instances</a> in the <i>AWS Snowball Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * (AMIs) that are owned by your AWS account that would be supported for use on a
+         * Snowball Edge device. Currently, supported AMIs are based on the CentOS 7
+         * (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS
+         * - Xenial (HVM) images, available on the AWS Marketplace.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages">AWS
          * API Reference</a></p>
          */
@@ -728,12 +763,11 @@ namespace Model
 
         /**
          * <p>This action returns a list of the different Amazon EC2 Amazon Machine Images
-         * (AMIs) that are owned by your AWS account that would be supported for use on
-         * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code> devices. For
-         * more information on compatible AMIs, see <a
-         * href="http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html">Using
-         * Amazon EC2 Compute Instances</a> in the <i>AWS Snowball Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * (AMIs) that are owned by your AWS account that would be supported for use on a
+         * Snowball Edge device. Currently, supported AMIs are based on the CentOS 7
+         * (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS
+         * - Xenial (HVM) images, available on the AWS Marketplace.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages">AWS
          * API Reference</a></p>
          *
@@ -743,12 +777,11 @@ namespace Model
 
         /**
          * <p>This action returns a list of the different Amazon EC2 Amazon Machine Images
-         * (AMIs) that are owned by your AWS account that would be supported for use on
-         * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code> devices. For
-         * more information on compatible AMIs, see <a
-         * href="http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html">Using
-         * Amazon EC2 Compute Instances</a> in the <i>AWS Snowball Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * (AMIs) that are owned by your AWS account that would be supported for use on a
+         * Snowball Edge device. Currently, supported AMIs are based on the CentOS 7
+         * (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS
+         * - Xenial (HVM) images, available on the AWS Marketplace.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages">AWS
          * API Reference</a></p>
          *
@@ -883,6 +916,7 @@ namespace Model
         void GetJobManifestAsyncHelper(const Model::GetJobManifestRequest& request, const GetJobManifestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobUnlockCodeAsyncHelper(const Model::GetJobUnlockCodeRequest& request, const GetJobUnlockCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSnowballUsageAsyncHelper(const Model::GetSnowballUsageRequest& request, const GetSnowballUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSoftwareUpdatesAsyncHelper(const Model::GetSoftwareUpdatesRequest& request, const GetSoftwareUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListClusterJobsAsyncHelper(const Model::ListClusterJobsRequest& request, const ListClusterJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListClustersAsyncHelper(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCompatibleImagesAsyncHelper(const Model::ListCompatibleImagesRequest& request, const ListCompatibleImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -32,9 +32,12 @@
 #include <aws/pinpoint/PinpointErrorMarshaller.h>
 #include <aws/pinpoint/model/CreateAppRequest.h>
 #include <aws/pinpoint/model/CreateCampaignRequest.h>
+#include <aws/pinpoint/model/CreateEmailTemplateRequest.h>
 #include <aws/pinpoint/model/CreateExportJobRequest.h>
 #include <aws/pinpoint/model/CreateImportJobRequest.h>
+#include <aws/pinpoint/model/CreatePushTemplateRequest.h>
 #include <aws/pinpoint/model/CreateSegmentRequest.h>
+#include <aws/pinpoint/model/CreateSmsTemplateRequest.h>
 #include <aws/pinpoint/model/DeleteAdmChannelRequest.h>
 #include <aws/pinpoint/model/DeleteApnsChannelRequest.h>
 #include <aws/pinpoint/model/DeleteApnsSandboxChannelRequest.h>
@@ -44,11 +47,14 @@
 #include <aws/pinpoint/model/DeleteBaiduChannelRequest.h>
 #include <aws/pinpoint/model/DeleteCampaignRequest.h>
 #include <aws/pinpoint/model/DeleteEmailChannelRequest.h>
+#include <aws/pinpoint/model/DeleteEmailTemplateRequest.h>
 #include <aws/pinpoint/model/DeleteEndpointRequest.h>
 #include <aws/pinpoint/model/DeleteEventStreamRequest.h>
 #include <aws/pinpoint/model/DeleteGcmChannelRequest.h>
+#include <aws/pinpoint/model/DeletePushTemplateRequest.h>
 #include <aws/pinpoint/model/DeleteSegmentRequest.h>
 #include <aws/pinpoint/model/DeleteSmsChannelRequest.h>
+#include <aws/pinpoint/model/DeleteSmsTemplateRequest.h>
 #include <aws/pinpoint/model/DeleteUserEndpointsRequest.h>
 #include <aws/pinpoint/model/DeleteVoiceChannelRequest.h>
 #include <aws/pinpoint/model/GetAdmChannelRequest.h>
@@ -69,6 +75,7 @@
 #include <aws/pinpoint/model/GetCampaignsRequest.h>
 #include <aws/pinpoint/model/GetChannelsRequest.h>
 #include <aws/pinpoint/model/GetEmailChannelRequest.h>
+#include <aws/pinpoint/model/GetEmailTemplateRequest.h>
 #include <aws/pinpoint/model/GetEndpointRequest.h>
 #include <aws/pinpoint/model/GetEventStreamRequest.h>
 #include <aws/pinpoint/model/GetExportJobRequest.h>
@@ -76,6 +83,7 @@
 #include <aws/pinpoint/model/GetGcmChannelRequest.h>
 #include <aws/pinpoint/model/GetImportJobRequest.h>
 #include <aws/pinpoint/model/GetImportJobsRequest.h>
+#include <aws/pinpoint/model/GetPushTemplateRequest.h>
 #include <aws/pinpoint/model/GetSegmentRequest.h>
 #include <aws/pinpoint/model/GetSegmentExportJobsRequest.h>
 #include <aws/pinpoint/model/GetSegmentImportJobsRequest.h>
@@ -83,9 +91,11 @@
 #include <aws/pinpoint/model/GetSegmentVersionsRequest.h>
 #include <aws/pinpoint/model/GetSegmentsRequest.h>
 #include <aws/pinpoint/model/GetSmsChannelRequest.h>
+#include <aws/pinpoint/model/GetSmsTemplateRequest.h>
 #include <aws/pinpoint/model/GetUserEndpointsRequest.h>
 #include <aws/pinpoint/model/GetVoiceChannelRequest.h>
 #include <aws/pinpoint/model/ListTagsForResourceRequest.h>
+#include <aws/pinpoint/model/ListTemplatesRequest.h>
 #include <aws/pinpoint/model/PhoneNumberValidateRequest.h>
 #include <aws/pinpoint/model/PutEventStreamRequest.h>
 #include <aws/pinpoint/model/PutEventsRequest.h>
@@ -103,11 +113,14 @@
 #include <aws/pinpoint/model/UpdateBaiduChannelRequest.h>
 #include <aws/pinpoint/model/UpdateCampaignRequest.h>
 #include <aws/pinpoint/model/UpdateEmailChannelRequest.h>
+#include <aws/pinpoint/model/UpdateEmailTemplateRequest.h>
 #include <aws/pinpoint/model/UpdateEndpointRequest.h>
 #include <aws/pinpoint/model/UpdateEndpointsBatchRequest.h>
 #include <aws/pinpoint/model/UpdateGcmChannelRequest.h>
+#include <aws/pinpoint/model/UpdatePushTemplateRequest.h>
 #include <aws/pinpoint/model/UpdateSegmentRequest.h>
 #include <aws/pinpoint/model/UpdateSmsChannelRequest.h>
+#include <aws/pinpoint/model/UpdateSmsTemplateRequest.h>
 #include <aws/pinpoint/model/UpdateVoiceChannelRequest.h>
 
 using namespace Aws;
@@ -259,6 +272,48 @@ void PinpointClient::CreateCampaignAsyncHelper(const CreateCampaignRequest& requ
   handler(this, request, CreateCampaign(request), context);
 }
 
+CreateEmailTemplateOutcome PinpointClient::CreateEmailTemplate(const CreateEmailTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateEmailTemplate", "Required field: TemplateName, is not set");
+    return CreateEmailTemplateOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/templates/";
+  ss << request.GetTemplateName();
+  ss << "/email";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateEmailTemplateOutcome(CreateEmailTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateEmailTemplateOutcome(outcome.GetError());
+  }
+}
+
+CreateEmailTemplateOutcomeCallable PinpointClient::CreateEmailTemplateCallable(const CreateEmailTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateEmailTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateEmailTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::CreateEmailTemplateAsync(const CreateEmailTemplateRequest& request, const CreateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateEmailTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::CreateEmailTemplateAsyncHelper(const CreateEmailTemplateRequest& request, const CreateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateEmailTemplate(request), context);
+}
+
 CreateExportJobOutcome PinpointClient::CreateExportJob(const CreateExportJobRequest& request) const
 {
   if (!request.ApplicationIdHasBeenSet())
@@ -343,6 +398,48 @@ void PinpointClient::CreateImportJobAsyncHelper(const CreateImportJobRequest& re
   handler(this, request, CreateImportJob(request), context);
 }
 
+CreatePushTemplateOutcome PinpointClient::CreatePushTemplate(const CreatePushTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreatePushTemplate", "Required field: TemplateName, is not set");
+    return CreatePushTemplateOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/templates/";
+  ss << request.GetTemplateName();
+  ss << "/push";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreatePushTemplateOutcome(CreatePushTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreatePushTemplateOutcome(outcome.GetError());
+  }
+}
+
+CreatePushTemplateOutcomeCallable PinpointClient::CreatePushTemplateCallable(const CreatePushTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreatePushTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePushTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::CreatePushTemplateAsync(const CreatePushTemplateRequest& request, const CreatePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreatePushTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::CreatePushTemplateAsyncHelper(const CreatePushTemplateRequest& request, const CreatePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreatePushTemplate(request), context);
+}
+
 CreateSegmentOutcome PinpointClient::CreateSegment(const CreateSegmentRequest& request) const
 {
   if (!request.ApplicationIdHasBeenSet())
@@ -383,6 +480,48 @@ void PinpointClient::CreateSegmentAsync(const CreateSegmentRequest& request, con
 void PinpointClient::CreateSegmentAsyncHelper(const CreateSegmentRequest& request, const CreateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateSegment(request), context);
+}
+
+CreateSmsTemplateOutcome PinpointClient::CreateSmsTemplate(const CreateSmsTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateSmsTemplate", "Required field: TemplateName, is not set");
+    return CreateSmsTemplateOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/templates/";
+  ss << request.GetTemplateName();
+  ss << "/sms";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateSmsTemplateOutcome(CreateSmsTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateSmsTemplateOutcome(outcome.GetError());
+  }
+}
+
+CreateSmsTemplateOutcomeCallable PinpointClient::CreateSmsTemplateCallable(const CreateSmsTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateSmsTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSmsTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::CreateSmsTemplateAsync(const CreateSmsTemplateRequest& request, const CreateSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateSmsTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::CreateSmsTemplateAsyncHelper(const CreateSmsTemplateRequest& request, const CreateSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateSmsTemplate(request), context);
 }
 
 DeleteAdmChannelOutcome PinpointClient::DeleteAdmChannel(const DeleteAdmChannelRequest& request) const
@@ -768,6 +907,48 @@ void PinpointClient::DeleteEmailChannelAsyncHelper(const DeleteEmailChannelReque
   handler(this, request, DeleteEmailChannel(request), context);
 }
 
+DeleteEmailTemplateOutcome PinpointClient::DeleteEmailTemplate(const DeleteEmailTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteEmailTemplate", "Required field: TemplateName, is not set");
+    return DeleteEmailTemplateOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/templates/";
+  ss << request.GetTemplateName();
+  ss << "/email";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteEmailTemplateOutcome(DeleteEmailTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteEmailTemplateOutcome(outcome.GetError());
+  }
+}
+
+DeleteEmailTemplateOutcomeCallable PinpointClient::DeleteEmailTemplateCallable(const DeleteEmailTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteEmailTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteEmailTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::DeleteEmailTemplateAsync(const DeleteEmailTemplateRequest& request, const DeleteEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEmailTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::DeleteEmailTemplateAsyncHelper(const DeleteEmailTemplateRequest& request, const DeleteEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteEmailTemplate(request), context);
+}
+
 DeleteEndpointOutcome PinpointClient::DeleteEndpoint(const DeleteEndpointRequest& request) const
 {
   if (!request.ApplicationIdHasBeenSet())
@@ -900,6 +1081,48 @@ void PinpointClient::DeleteGcmChannelAsyncHelper(const DeleteGcmChannelRequest& 
   handler(this, request, DeleteGcmChannel(request), context);
 }
 
+DeletePushTemplateOutcome PinpointClient::DeletePushTemplate(const DeletePushTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePushTemplate", "Required field: TemplateName, is not set");
+    return DeletePushTemplateOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/templates/";
+  ss << request.GetTemplateName();
+  ss << "/push";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeletePushTemplateOutcome(DeletePushTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeletePushTemplateOutcome(outcome.GetError());
+  }
+}
+
+DeletePushTemplateOutcomeCallable PinpointClient::DeletePushTemplateCallable(const DeletePushTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePushTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePushTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::DeletePushTemplateAsync(const DeletePushTemplateRequest& request, const DeletePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePushTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::DeletePushTemplateAsyncHelper(const DeletePushTemplateRequest& request, const DeletePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePushTemplate(request), context);
+}
+
 DeleteSegmentOutcome PinpointClient::DeleteSegment(const DeleteSegmentRequest& request) const
 {
   if (!request.ApplicationIdHasBeenSet())
@@ -988,6 +1211,48 @@ void PinpointClient::DeleteSmsChannelAsync(const DeleteSmsChannelRequest& reques
 void PinpointClient::DeleteSmsChannelAsyncHelper(const DeleteSmsChannelRequest& request, const DeleteSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteSmsChannel(request), context);
+}
+
+DeleteSmsTemplateOutcome PinpointClient::DeleteSmsTemplate(const DeleteSmsTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSmsTemplate", "Required field: TemplateName, is not set");
+    return DeleteSmsTemplateOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/templates/";
+  ss << request.GetTemplateName();
+  ss << "/sms";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteSmsTemplateOutcome(DeleteSmsTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteSmsTemplateOutcome(outcome.GetError());
+  }
+}
+
+DeleteSmsTemplateOutcomeCallable PinpointClient::DeleteSmsTemplateCallable(const DeleteSmsTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSmsTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSmsTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::DeleteSmsTemplateAsync(const DeleteSmsTemplateRequest& request, const DeleteSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSmsTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::DeleteSmsTemplateAsyncHelper(const DeleteSmsTemplateRequest& request, const DeleteSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteSmsTemplate(request), context);
 }
 
 DeleteUserEndpointsOutcome PinpointClient::DeleteUserEndpoints(const DeleteUserEndpointsRequest& request) const
@@ -1880,6 +2145,48 @@ void PinpointClient::GetEmailChannelAsyncHelper(const GetEmailChannelRequest& re
   handler(this, request, GetEmailChannel(request), context);
 }
 
+GetEmailTemplateOutcome PinpointClient::GetEmailTemplate(const GetEmailTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetEmailTemplate", "Required field: TemplateName, is not set");
+    return GetEmailTemplateOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/templates/";
+  ss << request.GetTemplateName();
+  ss << "/email";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetEmailTemplateOutcome(GetEmailTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetEmailTemplateOutcome(outcome.GetError());
+  }
+}
+
+GetEmailTemplateOutcomeCallable PinpointClient::GetEmailTemplateCallable(const GetEmailTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetEmailTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetEmailTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetEmailTemplateAsync(const GetEmailTemplateRequest& request, const GetEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetEmailTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetEmailTemplateAsyncHelper(const GetEmailTemplateRequest& request, const GetEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetEmailTemplate(request), context);
+}
+
 GetEndpointOutcome PinpointClient::GetEndpoint(const GetEndpointRequest& request) const
 {
   if (!request.ApplicationIdHasBeenSet())
@@ -2190,6 +2497,48 @@ void PinpointClient::GetImportJobsAsync(const GetImportJobsRequest& request, con
 void PinpointClient::GetImportJobsAsyncHelper(const GetImportJobsRequest& request, const GetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetImportJobs(request), context);
+}
+
+GetPushTemplateOutcome PinpointClient::GetPushTemplate(const GetPushTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPushTemplate", "Required field: TemplateName, is not set");
+    return GetPushTemplateOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/templates/";
+  ss << request.GetTemplateName();
+  ss << "/push";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetPushTemplateOutcome(GetPushTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetPushTemplateOutcome(outcome.GetError());
+  }
+}
+
+GetPushTemplateOutcomeCallable PinpointClient::GetPushTemplateCallable(const GetPushTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPushTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPushTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetPushTemplateAsync(const GetPushTemplateRequest& request, const GetPushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPushTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetPushTemplateAsyncHelper(const GetPushTemplateRequest& request, const GetPushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPushTemplate(request), context);
 }
 
 GetSegmentOutcome PinpointClient::GetSegment(const GetSegmentRequest& request) const
@@ -2526,6 +2875,48 @@ void PinpointClient::GetSmsChannelAsyncHelper(const GetSmsChannelRequest& reques
   handler(this, request, GetSmsChannel(request), context);
 }
 
+GetSmsTemplateOutcome PinpointClient::GetSmsTemplate(const GetSmsTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSmsTemplate", "Required field: TemplateName, is not set");
+    return GetSmsTemplateOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/templates/";
+  ss << request.GetTemplateName();
+  ss << "/sms";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetSmsTemplateOutcome(GetSmsTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetSmsTemplateOutcome(outcome.GetError());
+  }
+}
+
+GetSmsTemplateOutcomeCallable PinpointClient::GetSmsTemplateCallable(const GetSmsTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSmsTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSmsTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetSmsTemplateAsync(const GetSmsTemplateRequest& request, const GetSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSmsTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetSmsTemplateAsyncHelper(const GetSmsTemplateRequest& request, const GetSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSmsTemplate(request), context);
+}
+
 GetUserEndpointsOutcome PinpointClient::GetUserEndpoints(const GetUserEndpointsRequest& request) const
 {
   if (!request.ApplicationIdHasBeenSet())
@@ -2655,6 +3046,41 @@ void PinpointClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& 
 void PinpointClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+ListTemplatesOutcome PinpointClient::ListTemplates(const ListTemplatesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/templates";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListTemplatesOutcome(ListTemplatesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTemplatesOutcome(outcome.GetError());
+  }
+}
+
+ListTemplatesOutcomeCallable PinpointClient::ListTemplatesCallable(const ListTemplatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTemplates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::ListTemplatesAsync(const ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTemplatesAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::ListTemplatesAsyncHelper(const ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTemplates(request), context);
 }
 
 PhoneNumberValidateOutcome PinpointClient::PhoneNumberValidate(const PhoneNumberValidateRequest& request) const
@@ -3379,6 +3805,48 @@ void PinpointClient::UpdateEmailChannelAsyncHelper(const UpdateEmailChannelReque
   handler(this, request, UpdateEmailChannel(request), context);
 }
 
+UpdateEmailTemplateOutcome PinpointClient::UpdateEmailTemplate(const UpdateEmailTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateEmailTemplate", "Required field: TemplateName, is not set");
+    return UpdateEmailTemplateOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/templates/";
+  ss << request.GetTemplateName();
+  ss << "/email";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateEmailTemplateOutcome(UpdateEmailTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateEmailTemplateOutcome(outcome.GetError());
+  }
+}
+
+UpdateEmailTemplateOutcomeCallable PinpointClient::UpdateEmailTemplateCallable(const UpdateEmailTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateEmailTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateEmailTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::UpdateEmailTemplateAsync(const UpdateEmailTemplateRequest& request, const UpdateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateEmailTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::UpdateEmailTemplateAsyncHelper(const UpdateEmailTemplateRequest& request, const UpdateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateEmailTemplate(request), context);
+}
+
 UpdateEndpointOutcome PinpointClient::UpdateEndpoint(const UpdateEndpointRequest& request) const
 {
   if (!request.ApplicationIdHasBeenSet())
@@ -3511,6 +3979,48 @@ void PinpointClient::UpdateGcmChannelAsyncHelper(const UpdateGcmChannelRequest& 
   handler(this, request, UpdateGcmChannel(request), context);
 }
 
+UpdatePushTemplateOutcome PinpointClient::UpdatePushTemplate(const UpdatePushTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePushTemplate", "Required field: TemplateName, is not set");
+    return UpdatePushTemplateOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/templates/";
+  ss << request.GetTemplateName();
+  ss << "/push";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdatePushTemplateOutcome(UpdatePushTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdatePushTemplateOutcome(outcome.GetError());
+  }
+}
+
+UpdatePushTemplateOutcomeCallable PinpointClient::UpdatePushTemplateCallable(const UpdatePushTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePushTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePushTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::UpdatePushTemplateAsync(const UpdatePushTemplateRequest& request, const UpdatePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePushTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::UpdatePushTemplateAsyncHelper(const UpdatePushTemplateRequest& request, const UpdatePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePushTemplate(request), context);
+}
+
 UpdateSegmentOutcome PinpointClient::UpdateSegment(const UpdateSegmentRequest& request) const
 {
   if (!request.ApplicationIdHasBeenSet())
@@ -3599,6 +4109,48 @@ void PinpointClient::UpdateSmsChannelAsync(const UpdateSmsChannelRequest& reques
 void PinpointClient::UpdateSmsChannelAsyncHelper(const UpdateSmsChannelRequest& request, const UpdateSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateSmsChannel(request), context);
+}
+
+UpdateSmsTemplateOutcome PinpointClient::UpdateSmsTemplate(const UpdateSmsTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateSmsTemplate", "Required field: TemplateName, is not set");
+    return UpdateSmsTemplateOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/templates/";
+  ss << request.GetTemplateName();
+  ss << "/sms";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateSmsTemplateOutcome(UpdateSmsTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateSmsTemplateOutcome(outcome.GetError());
+  }
+}
+
+UpdateSmsTemplateOutcomeCallable PinpointClient::UpdateSmsTemplateCallable(const UpdateSmsTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSmsTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSmsTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::UpdateSmsTemplateAsync(const UpdateSmsTemplateRequest& request, const UpdateSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateSmsTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::UpdateSmsTemplateAsyncHelper(const UpdateSmsTemplateRequest& request, const UpdateSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateSmsTemplate(request), context);
 }
 
 UpdateVoiceChannelOutcome PinpointClient::UpdateVoiceChannel(const UpdateVoiceChannelRequest& request) const

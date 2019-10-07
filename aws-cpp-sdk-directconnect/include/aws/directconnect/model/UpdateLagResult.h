@@ -557,39 +557,75 @@ namespace Model
 
 
     /**
-     * <p>Any tags assigned to link aggregation group (LAG).</p>
+     * <p>The tags associated with the LAG.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Any tags assigned to link aggregation group (LAG).</p>
+     * <p>The tags associated with the LAG.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
     /**
-     * <p>Any tags assigned to link aggregation group (LAG).</p>
+     * <p>The tags associated with the LAG.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>Any tags assigned to link aggregation group (LAG).</p>
+     * <p>The tags associated with the LAG.</p>
      */
     inline UpdateLagResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Any tags assigned to link aggregation group (LAG).</p>
+     * <p>The tags associated with the LAG.</p>
      */
     inline UpdateLagResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Any tags assigned to link aggregation group (LAG).</p>
+     * <p>The tags associated with the LAG.</p>
      */
     inline UpdateLagResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Any tags assigned to link aggregation group (LAG).</p>
+     * <p>The tags associated with the LAG.</p>
      */
     inline UpdateLagResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The name of the service provider associated with the LAG.</p>
+     */
+    inline const Aws::String& GetProviderName() const{ return m_providerName; }
+
+    /**
+     * <p>The name of the service provider associated with the LAG.</p>
+     */
+    inline void SetProviderName(const Aws::String& value) { m_providerName = value; }
+
+    /**
+     * <p>The name of the service provider associated with the LAG.</p>
+     */
+    inline void SetProviderName(Aws::String&& value) { m_providerName = std::move(value); }
+
+    /**
+     * <p>The name of the service provider associated with the LAG.</p>
+     */
+    inline void SetProviderName(const char* value) { m_providerName.assign(value); }
+
+    /**
+     * <p>The name of the service provider associated with the LAG.</p>
+     */
+    inline UpdateLagResult& WithProviderName(const Aws::String& value) { SetProviderName(value); return *this;}
+
+    /**
+     * <p>The name of the service provider associated with the LAG.</p>
+     */
+    inline UpdateLagResult& WithProviderName(Aws::String&& value) { SetProviderName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the service provider associated with the LAG.</p>
+     */
+    inline UpdateLagResult& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
   private:
 
@@ -624,6 +660,8 @@ namespace Model
     HasLogicalRedundancy m_hasLogicalRedundancy;
 
     Aws::Vector<Tag> m_tags;
+
+    Aws::String m_providerName;
   };
 
 } // namespace Model

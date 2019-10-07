@@ -50,7 +50,8 @@ Lag::Lag() :
     m_jumboFrameCapableHasBeenSet(false),
     m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
     m_hasLogicalRedundancyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_providerNameHasBeenSet(false)
 {
 }
 
@@ -76,7 +77,8 @@ Lag::Lag(JsonView jsonValue) :
     m_jumboFrameCapableHasBeenSet(false),
     m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
     m_hasLogicalRedundancyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_providerNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -201,6 +203,13 @@ Lag& Lag::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("providerName"))
+  {
+    m_providerName = jsonValue.GetString("providerName");
+
+    m_providerNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -309,6 +318,12 @@ JsonValue Lag::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_providerNameHasBeenSet)
+  {
+   payload.WithString("providerName", m_providerName);
 
   }
 

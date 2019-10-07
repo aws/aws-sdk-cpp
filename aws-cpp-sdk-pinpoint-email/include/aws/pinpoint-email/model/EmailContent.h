@@ -17,6 +17,7 @@
 #include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
 #include <aws/pinpoint-email/model/Message.h>
 #include <aws/pinpoint-email/model/RawMessage.h>
+#include <aws/pinpoint-email/model/Template.h>
 #include <utility>
 
 namespace Aws
@@ -186,6 +187,37 @@ namespace Model
      */
     inline EmailContent& WithRaw(RawMessage&& value) { SetRaw(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The template to use for the email message.</p>
+     */
+    inline const Template& GetTemplate() const{ return m_template; }
+
+    /**
+     * <p>The template to use for the email message.</p>
+     */
+    inline bool TemplateHasBeenSet() const { return m_templateHasBeenSet; }
+
+    /**
+     * <p>The template to use for the email message.</p>
+     */
+    inline void SetTemplate(const Template& value) { m_templateHasBeenSet = true; m_template = value; }
+
+    /**
+     * <p>The template to use for the email message.</p>
+     */
+    inline void SetTemplate(Template&& value) { m_templateHasBeenSet = true; m_template = std::move(value); }
+
+    /**
+     * <p>The template to use for the email message.</p>
+     */
+    inline EmailContent& WithTemplate(const Template& value) { SetTemplate(value); return *this;}
+
+    /**
+     * <p>The template to use for the email message.</p>
+     */
+    inline EmailContent& WithTemplate(Template&& value) { SetTemplate(std::move(value)); return *this;}
+
   private:
 
     Message m_simple;
@@ -193,6 +225,9 @@ namespace Model
 
     RawMessage m_raw;
     bool m_rawHasBeenSet;
+
+    Template m_template;
+    bool m_templateHasBeenSet;
   };
 
 } // namespace Model

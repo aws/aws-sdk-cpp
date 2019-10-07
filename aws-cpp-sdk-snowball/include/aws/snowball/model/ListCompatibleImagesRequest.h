@@ -45,26 +45,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results for the list of compatible images. Currently,
-     * each supported device can store 10 AMIs.</p>
+     * <p>The maximum number of results for the list of compatible images. Currently, a
+     * Snowball Edge device can store 10 AMIs.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results for the list of compatible images. Currently,
-     * each supported device can store 10 AMIs.</p>
+     * <p>The maximum number of results for the list of compatible images. Currently, a
+     * Snowball Edge device can store 10 AMIs.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results for the list of compatible images. Currently,
-     * each supported device can store 10 AMIs.</p>
+     * <p>The maximum number of results for the list of compatible images. Currently, a
+     * Snowball Edge device can store 10 AMIs.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results for the list of compatible images. Currently,
-     * each supported device can store 10 AMIs.</p>
+     * <p>The maximum number of results for the list of compatible images. Currently, a
+     * Snowball Edge device can store 10 AMIs.</p>
      */
     inline ListCompatibleImagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

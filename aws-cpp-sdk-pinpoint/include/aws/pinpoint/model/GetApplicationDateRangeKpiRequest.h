@@ -99,56 +99,50 @@ namespace Model
 
 
     /**
-     * <p>The last date to retrieve data for, as part of an inclusive date range that
-     * filters the query results. This value should be in ISO 8601 format, for example:
-     * 2019-07-19 for July 19, 2019. To define a date range that ends at a specific
-     * time, specify the date and time in ISO 8601 format, for example:
-     * 2019-07-19T20:00Z for 8:00 PM July 19, 2019.</p>
+     * <p>The last date and time to retrieve data for, as part of an inclusive date
+     * range that filters the query results. This value should be in extended ISO 8601
+     * format, for example: 2019-07-19T00:00:00Z for July 19, 2019 and
+     * 2019-07-19T20:00:00Z for 8:00 PM July 19, 2019.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The last date to retrieve data for, as part of an inclusive date range that
-     * filters the query results. This value should be in ISO 8601 format, for example:
-     * 2019-07-19 for July 19, 2019. To define a date range that ends at a specific
-     * time, specify the date and time in ISO 8601 format, for example:
-     * 2019-07-19T20:00Z for 8:00 PM July 19, 2019.</p>
+     * <p>The last date and time to retrieve data for, as part of an inclusive date
+     * range that filters the query results. This value should be in extended ISO 8601
+     * format, for example: 2019-07-19T00:00:00Z for July 19, 2019 and
+     * 2019-07-19T20:00:00Z for 8:00 PM July 19, 2019.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>The last date to retrieve data for, as part of an inclusive date range that
-     * filters the query results. This value should be in ISO 8601 format, for example:
-     * 2019-07-19 for July 19, 2019. To define a date range that ends at a specific
-     * time, specify the date and time in ISO 8601 format, for example:
-     * 2019-07-19T20:00Z for 8:00 PM July 19, 2019.</p>
+     * <p>The last date and time to retrieve data for, as part of an inclusive date
+     * range that filters the query results. This value should be in extended ISO 8601
+     * format, for example: 2019-07-19T00:00:00Z for July 19, 2019 and
+     * 2019-07-19T20:00:00Z for 8:00 PM July 19, 2019.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The last date to retrieve data for, as part of an inclusive date range that
-     * filters the query results. This value should be in ISO 8601 format, for example:
-     * 2019-07-19 for July 19, 2019. To define a date range that ends at a specific
-     * time, specify the date and time in ISO 8601 format, for example:
-     * 2019-07-19T20:00Z for 8:00 PM July 19, 2019.</p>
+     * <p>The last date and time to retrieve data for, as part of an inclusive date
+     * range that filters the query results. This value should be in extended ISO 8601
+     * format, for example: 2019-07-19T00:00:00Z for July 19, 2019 and
+     * 2019-07-19T20:00:00Z for 8:00 PM July 19, 2019.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The last date to retrieve data for, as part of an inclusive date range that
-     * filters the query results. This value should be in ISO 8601 format, for example:
-     * 2019-07-19 for July 19, 2019. To define a date range that ends at a specific
-     * time, specify the date and time in ISO 8601 format, for example:
-     * 2019-07-19T20:00Z for 8:00 PM July 19, 2019.</p>
+     * <p>The last date and time to retrieve data for, as part of an inclusive date
+     * range that filters the query results. This value should be in extended ISO 8601
+     * format, for example: 2019-07-19T00:00:00Z for July 19, 2019 and
+     * 2019-07-19T20:00:00Z for 8:00 PM July 19, 2019.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The last date to retrieve data for, as part of an inclusive date range that
-     * filters the query results. This value should be in ISO 8601 format, for example:
-     * 2019-07-19 for July 19, 2019. To define a date range that ends at a specific
-     * time, specify the date and time in ISO 8601 format, for example:
-     * 2019-07-19T20:00Z for 8:00 PM July 19, 2019.</p>
+     * <p>The last date and time to retrieve data for, as part of an inclusive date
+     * range that filters the query results. This value should be in extended ISO 8601
+     * format, for example: 2019-07-19T00:00:00Z for July 19, 2019 and
+     * 2019-07-19T20:00:00Z for 8:00 PM July 19, 2019.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
@@ -157,8 +151,8 @@ namespace Model
      * <p>The name of the metric, also referred to as a <i>key performance indicator
      * (KPI)</i>, to retrieve data for. This value describes the associated metric and
      * consists of two or more terms, which are comprised of lowercase alphanumeric
-     * characters, separated by a hyphen. Examples are attempted-deliveries and
-     * successful-deliveries. For a list of valid values, see the <a
+     * characters, separated by a hyphen. Examples are email-open-rate and
+     * successful-delivery-rate. For a list of valid values, see the <a
      * href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
      */
     inline const Aws::String& GetKpiName() const{ return m_kpiName; }
@@ -167,8 +161,8 @@ namespace Model
      * <p>The name of the metric, also referred to as a <i>key performance indicator
      * (KPI)</i>, to retrieve data for. This value describes the associated metric and
      * consists of two or more terms, which are comprised of lowercase alphanumeric
-     * characters, separated by a hyphen. Examples are attempted-deliveries and
-     * successful-deliveries. For a list of valid values, see the <a
+     * characters, separated by a hyphen. Examples are email-open-rate and
+     * successful-delivery-rate. For a list of valid values, see the <a
      * href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
      */
     inline bool KpiNameHasBeenSet() const { return m_kpiNameHasBeenSet; }
@@ -177,8 +171,8 @@ namespace Model
      * <p>The name of the metric, also referred to as a <i>key performance indicator
      * (KPI)</i>, to retrieve data for. This value describes the associated metric and
      * consists of two or more terms, which are comprised of lowercase alphanumeric
-     * characters, separated by a hyphen. Examples are attempted-deliveries and
-     * successful-deliveries. For a list of valid values, see the <a
+     * characters, separated by a hyphen. Examples are email-open-rate and
+     * successful-delivery-rate. For a list of valid values, see the <a
      * href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
      */
     inline void SetKpiName(const Aws::String& value) { m_kpiNameHasBeenSet = true; m_kpiName = value; }
@@ -187,8 +181,8 @@ namespace Model
      * <p>The name of the metric, also referred to as a <i>key performance indicator
      * (KPI)</i>, to retrieve data for. This value describes the associated metric and
      * consists of two or more terms, which are comprised of lowercase alphanumeric
-     * characters, separated by a hyphen. Examples are attempted-deliveries and
-     * successful-deliveries. For a list of valid values, see the <a
+     * characters, separated by a hyphen. Examples are email-open-rate and
+     * successful-delivery-rate. For a list of valid values, see the <a
      * href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
      */
     inline void SetKpiName(Aws::String&& value) { m_kpiNameHasBeenSet = true; m_kpiName = std::move(value); }
@@ -197,8 +191,8 @@ namespace Model
      * <p>The name of the metric, also referred to as a <i>key performance indicator
      * (KPI)</i>, to retrieve data for. This value describes the associated metric and
      * consists of two or more terms, which are comprised of lowercase alphanumeric
-     * characters, separated by a hyphen. Examples are attempted-deliveries and
-     * successful-deliveries. For a list of valid values, see the <a
+     * characters, separated by a hyphen. Examples are email-open-rate and
+     * successful-delivery-rate. For a list of valid values, see the <a
      * href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
      */
     inline void SetKpiName(const char* value) { m_kpiNameHasBeenSet = true; m_kpiName.assign(value); }
@@ -207,8 +201,8 @@ namespace Model
      * <p>The name of the metric, also referred to as a <i>key performance indicator
      * (KPI)</i>, to retrieve data for. This value describes the associated metric and
      * consists of two or more terms, which are comprised of lowercase alphanumeric
-     * characters, separated by a hyphen. Examples are attempted-deliveries and
-     * successful-deliveries. For a list of valid values, see the <a
+     * characters, separated by a hyphen. Examples are email-open-rate and
+     * successful-delivery-rate. For a list of valid values, see the <a
      * href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithKpiName(const Aws::String& value) { SetKpiName(value); return *this;}
@@ -217,8 +211,8 @@ namespace Model
      * <p>The name of the metric, also referred to as a <i>key performance indicator
      * (KPI)</i>, to retrieve data for. This value describes the associated metric and
      * consists of two or more terms, which are comprised of lowercase alphanumeric
-     * characters, separated by a hyphen. Examples are attempted-deliveries and
-     * successful-deliveries. For a list of valid values, see the <a
+     * characters, separated by a hyphen. Examples are email-open-rate and
+     * successful-delivery-rate. For a list of valid values, see the <a
      * href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithKpiName(Aws::String&& value) { SetKpiName(std::move(value)); return *this;}
@@ -227,8 +221,8 @@ namespace Model
      * <p>The name of the metric, also referred to as a <i>key performance indicator
      * (KPI)</i>, to retrieve data for. This value describes the associated metric and
      * consists of two or more terms, which are comprised of lowercase alphanumeric
-     * characters, separated by a hyphen. Examples are attempted-deliveries and
-     * successful-deliveries. For a list of valid values, see the <a
+     * characters, separated by a hyphen. Examples are email-open-rate and
+     * successful-delivery-rate. For a list of valid values, see the <a
      * href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithKpiName(const char* value) { SetKpiName(value); return *this;}
@@ -236,169 +230,163 @@ namespace Model
 
     /**
      * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response. This parameter is currently not supported by the App Metrics
-     * and Campaign Metrics resources.</p>
+     * paginated response. This parameter is currently not supported by the Application
+     * Metrics and Campaign Metrics resources.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response. This parameter is currently not supported by the App Metrics
-     * and Campaign Metrics resources.</p>
+     * paginated response. This parameter is currently not supported by the Application
+     * Metrics and Campaign Metrics resources.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response. This parameter is currently not supported by the App Metrics
-     * and Campaign Metrics resources.</p>
+     * paginated response. This parameter is currently not supported by the Application
+     * Metrics and Campaign Metrics resources.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response. This parameter is currently not supported by the App Metrics
-     * and Campaign Metrics resources.</p>
+     * paginated response. This parameter is currently not supported by the Application
+     * Metrics and Campaign Metrics resources.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response. This parameter is currently not supported by the App Metrics
-     * and Campaign Metrics resources.</p>
+     * paginated response. This parameter is currently not supported by the Application
+     * Metrics and Campaign Metrics resources.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response. This parameter is currently not supported by the App Metrics
-     * and Campaign Metrics resources.</p>
+     * paginated response. This parameter is currently not supported by the Application
+     * Metrics and Campaign Metrics resources.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response. This parameter is currently not supported by the App Metrics
-     * and Campaign Metrics resources.</p>
+     * paginated response. This parameter is currently not supported by the Application
+     * Metrics and Campaign Metrics resources.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response. This parameter is currently not supported by the App Metrics
-     * and Campaign Metrics resources.</p>
+     * paginated response. This parameter is currently not supported by the Application
+     * Metrics and Campaign Metrics resources.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported by the App Metrics and Campaign
-     * Metrics resources.</p>
+     * This parameter is currently not supported by the Application Metrics and
+     * Campaign Metrics resources.</p>
      */
     inline const Aws::String& GetPageSize() const{ return m_pageSize; }
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported by the App Metrics and Campaign
-     * Metrics resources.</p>
+     * This parameter is currently not supported by the Application Metrics and
+     * Campaign Metrics resources.</p>
      */
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported by the App Metrics and Campaign
-     * Metrics resources.</p>
+     * This parameter is currently not supported by the Application Metrics and
+     * Campaign Metrics resources.</p>
      */
     inline void SetPageSize(const Aws::String& value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported by the App Metrics and Campaign
-     * Metrics resources.</p>
+     * This parameter is currently not supported by the Application Metrics and
+     * Campaign Metrics resources.</p>
      */
     inline void SetPageSize(Aws::String&& value) { m_pageSizeHasBeenSet = true; m_pageSize = std::move(value); }
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported by the App Metrics and Campaign
-     * Metrics resources.</p>
+     * This parameter is currently not supported by the Application Metrics and
+     * Campaign Metrics resources.</p>
      */
     inline void SetPageSize(const char* value) { m_pageSizeHasBeenSet = true; m_pageSize.assign(value); }
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported by the App Metrics and Campaign
-     * Metrics resources.</p>
+     * This parameter is currently not supported by the Application Metrics and
+     * Campaign Metrics resources.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithPageSize(const Aws::String& value) { SetPageSize(value); return *this;}
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported by the App Metrics and Campaign
-     * Metrics resources.</p>
+     * This parameter is currently not supported by the Application Metrics and
+     * Campaign Metrics resources.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithPageSize(Aws::String&& value) { SetPageSize(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported by the App Metrics and Campaign
-     * Metrics resources.</p>
+     * This parameter is currently not supported by the Application Metrics and
+     * Campaign Metrics resources.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithPageSize(const char* value) { SetPageSize(value); return *this;}
 
 
     /**
-     * <p>The first date to retrieve data for, as part of an inclusive date range that
-     * filters the query results. This value should be in ISO 8601 format, for example:
-     * 2019-07-15 for July 15, 2019. To define a date range that begins at a specific
-     * time, specify the date and time in ISO 8601 format, for example:
-     * 2019-07-15T16:00Z for 4:00 PM July 15, 2019.</p>
+     * <p>The first date and time to retrieve data for, as part of an inclusive date
+     * range that filters the query results. This value should be in extended ISO 8601
+     * format, for example: 2019-07-15T00:00:00Z for July 15, 2019 and
+     * 2019-07-15T16:00:00Z for 4:00 PM July 15, 2019.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The first date to retrieve data for, as part of an inclusive date range that
-     * filters the query results. This value should be in ISO 8601 format, for example:
-     * 2019-07-15 for July 15, 2019. To define a date range that begins at a specific
-     * time, specify the date and time in ISO 8601 format, for example:
-     * 2019-07-15T16:00Z for 4:00 PM July 15, 2019.</p>
+     * <p>The first date and time to retrieve data for, as part of an inclusive date
+     * range that filters the query results. This value should be in extended ISO 8601
+     * format, for example: 2019-07-15T00:00:00Z for July 15, 2019 and
+     * 2019-07-15T16:00:00Z for 4:00 PM July 15, 2019.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>The first date to retrieve data for, as part of an inclusive date range that
-     * filters the query results. This value should be in ISO 8601 format, for example:
-     * 2019-07-15 for July 15, 2019. To define a date range that begins at a specific
-     * time, specify the date and time in ISO 8601 format, for example:
-     * 2019-07-15T16:00Z for 4:00 PM July 15, 2019.</p>
+     * <p>The first date and time to retrieve data for, as part of an inclusive date
+     * range that filters the query results. This value should be in extended ISO 8601
+     * format, for example: 2019-07-15T00:00:00Z for July 15, 2019 and
+     * 2019-07-15T16:00:00Z for 4:00 PM July 15, 2019.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The first date to retrieve data for, as part of an inclusive date range that
-     * filters the query results. This value should be in ISO 8601 format, for example:
-     * 2019-07-15 for July 15, 2019. To define a date range that begins at a specific
-     * time, specify the date and time in ISO 8601 format, for example:
-     * 2019-07-15T16:00Z for 4:00 PM July 15, 2019.</p>
+     * <p>The first date and time to retrieve data for, as part of an inclusive date
+     * range that filters the query results. This value should be in extended ISO 8601
+     * format, for example: 2019-07-15T00:00:00Z for July 15, 2019 and
+     * 2019-07-15T16:00:00Z for 4:00 PM July 15, 2019.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The first date to retrieve data for, as part of an inclusive date range that
-     * filters the query results. This value should be in ISO 8601 format, for example:
-     * 2019-07-15 for July 15, 2019. To define a date range that begins at a specific
-     * time, specify the date and time in ISO 8601 format, for example:
-     * 2019-07-15T16:00Z for 4:00 PM July 15, 2019.</p>
+     * <p>The first date and time to retrieve data for, as part of an inclusive date
+     * range that filters the query results. This value should be in extended ISO 8601
+     * format, for example: 2019-07-15T00:00:00Z for July 15, 2019 and
+     * 2019-07-15T16:00:00Z for 4:00 PM July 15, 2019.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The first date to retrieve data for, as part of an inclusive date range that
-     * filters the query results. This value should be in ISO 8601 format, for example:
-     * 2019-07-15 for July 15, 2019. To define a date range that begins at a specific
-     * time, specify the date and time in ISO 8601 format, for example:
-     * 2019-07-15T16:00Z for 4:00 PM July 15, 2019.</p>
+     * <p>The first date and time to retrieve data for, as part of an inclusive date
+     * range that filters the query results. This value should be in extended ISO 8601
+     * format, for example: 2019-07-15T00:00:00Z for July 15, 2019 and
+     * 2019-07-15T16:00:00Z for 4:00 PM July 15, 2019.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 

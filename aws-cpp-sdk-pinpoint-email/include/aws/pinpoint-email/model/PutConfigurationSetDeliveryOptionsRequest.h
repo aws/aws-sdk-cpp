@@ -97,38 +97,56 @@ namespace Model
 
 
     /**
-     * <p>Whether Amazon Pinpoint should require that incoming email is delivered over
-     * a connection encrypted with Transport Layer Security (TLS).</p>
+     * <p>Specifies whether messages that use the configuration set are required to use
+     * Transport Layer Security (TLS). If the value is <code>Require</code>, messages
+     * are only delivered if a TLS connection can be established. If the value is
+     * <code>Optional</code>, messages can be delivered in plain text if a TLS
+     * connection can't be established.</p>
      */
     inline const TlsPolicy& GetTlsPolicy() const{ return m_tlsPolicy; }
 
     /**
-     * <p>Whether Amazon Pinpoint should require that incoming email is delivered over
-     * a connection encrypted with Transport Layer Security (TLS).</p>
+     * <p>Specifies whether messages that use the configuration set are required to use
+     * Transport Layer Security (TLS). If the value is <code>Require</code>, messages
+     * are only delivered if a TLS connection can be established. If the value is
+     * <code>Optional</code>, messages can be delivered in plain text if a TLS
+     * connection can't be established.</p>
      */
     inline bool TlsPolicyHasBeenSet() const { return m_tlsPolicyHasBeenSet; }
 
     /**
-     * <p>Whether Amazon Pinpoint should require that incoming email is delivered over
-     * a connection encrypted with Transport Layer Security (TLS).</p>
+     * <p>Specifies whether messages that use the configuration set are required to use
+     * Transport Layer Security (TLS). If the value is <code>Require</code>, messages
+     * are only delivered if a TLS connection can be established. If the value is
+     * <code>Optional</code>, messages can be delivered in plain text if a TLS
+     * connection can't be established.</p>
      */
     inline void SetTlsPolicy(const TlsPolicy& value) { m_tlsPolicyHasBeenSet = true; m_tlsPolicy = value; }
 
     /**
-     * <p>Whether Amazon Pinpoint should require that incoming email is delivered over
-     * a connection encrypted with Transport Layer Security (TLS).</p>
+     * <p>Specifies whether messages that use the configuration set are required to use
+     * Transport Layer Security (TLS). If the value is <code>Require</code>, messages
+     * are only delivered if a TLS connection can be established. If the value is
+     * <code>Optional</code>, messages can be delivered in plain text if a TLS
+     * connection can't be established.</p>
      */
     inline void SetTlsPolicy(TlsPolicy&& value) { m_tlsPolicyHasBeenSet = true; m_tlsPolicy = std::move(value); }
 
     /**
-     * <p>Whether Amazon Pinpoint should require that incoming email is delivered over
-     * a connection encrypted with Transport Layer Security (TLS).</p>
+     * <p>Specifies whether messages that use the configuration set are required to use
+     * Transport Layer Security (TLS). If the value is <code>Require</code>, messages
+     * are only delivered if a TLS connection can be established. If the value is
+     * <code>Optional</code>, messages can be delivered in plain text if a TLS
+     * connection can't be established.</p>
      */
     inline PutConfigurationSetDeliveryOptionsRequest& WithTlsPolicy(const TlsPolicy& value) { SetTlsPolicy(value); return *this;}
 
     /**
-     * <p>Whether Amazon Pinpoint should require that incoming email is delivered over
-     * a connection encrypted with Transport Layer Security (TLS).</p>
+     * <p>Specifies whether messages that use the configuration set are required to use
+     * Transport Layer Security (TLS). If the value is <code>Require</code>, messages
+     * are only delivered if a TLS connection can be established. If the value is
+     * <code>Optional</code>, messages can be delivered in plain text if a TLS
+     * connection can't be established.</p>
      */
     inline PutConfigurationSetDeliveryOptionsRequest& WithTlsPolicy(TlsPolicy&& value) { SetTlsPolicy(std::move(value)); return *this;}
 

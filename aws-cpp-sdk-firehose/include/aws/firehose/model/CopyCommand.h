@@ -141,10 +141,10 @@ namespace Model
     /**
      * <p>Optional parameters to use with the Amazon Redshift <code>COPY</code>
      * command. For more information, see the "Optional Parameters" section of <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift
-     * COPY command</a>. Some possible examples that would apply to Kinesis Data
-     * Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are
-     * delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+     * Redshift COPY command</a>. Some possible examples that would apply to Kinesis
+     * Data Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields
+     * are delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
      * <code>delimiter '|'</code> - fields are delimited with "|" (this is the default
      * delimiter).</p> <p> <code>delimiter '|' escape</code> - the delimiter should be
      * escaped.</p> <p> <code>fixedwidth
@@ -153,7 +153,7 @@ namespace Model
      * the table.</p> <p> <code>JSON 's3://mybucket/jsonpaths.txt'</code> - data is in
      * JSON format, and the path specified is the format of the data.</p> <p>For more
      * examples, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
      * Redshift COPY command examples</a>.</p>
      */
     inline const Aws::String& GetCopyOptions() const{ return m_copyOptions; }
@@ -161,10 +161,10 @@ namespace Model
     /**
      * <p>Optional parameters to use with the Amazon Redshift <code>COPY</code>
      * command. For more information, see the "Optional Parameters" section of <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift
-     * COPY command</a>. Some possible examples that would apply to Kinesis Data
-     * Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are
-     * delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+     * Redshift COPY command</a>. Some possible examples that would apply to Kinesis
+     * Data Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields
+     * are delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
      * <code>delimiter '|'</code> - fields are delimited with "|" (this is the default
      * delimiter).</p> <p> <code>delimiter '|' escape</code> - the delimiter should be
      * escaped.</p> <p> <code>fixedwidth
@@ -173,7 +173,7 @@ namespace Model
      * the table.</p> <p> <code>JSON 's3://mybucket/jsonpaths.txt'</code> - data is in
      * JSON format, and the path specified is the format of the data.</p> <p>For more
      * examples, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
      * Redshift COPY command examples</a>.</p>
      */
     inline bool CopyOptionsHasBeenSet() const { return m_copyOptionsHasBeenSet; }
@@ -181,10 +181,10 @@ namespace Model
     /**
      * <p>Optional parameters to use with the Amazon Redshift <code>COPY</code>
      * command. For more information, see the "Optional Parameters" section of <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift
-     * COPY command</a>. Some possible examples that would apply to Kinesis Data
-     * Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are
-     * delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+     * Redshift COPY command</a>. Some possible examples that would apply to Kinesis
+     * Data Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields
+     * are delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
      * <code>delimiter '|'</code> - fields are delimited with "|" (this is the default
      * delimiter).</p> <p> <code>delimiter '|' escape</code> - the delimiter should be
      * escaped.</p> <p> <code>fixedwidth
@@ -193,7 +193,7 @@ namespace Model
      * the table.</p> <p> <code>JSON 's3://mybucket/jsonpaths.txt'</code> - data is in
      * JSON format, and the path specified is the format of the data.</p> <p>For more
      * examples, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
      * Redshift COPY command examples</a>.</p>
      */
     inline void SetCopyOptions(const Aws::String& value) { m_copyOptionsHasBeenSet = true; m_copyOptions = value; }
@@ -201,10 +201,10 @@ namespace Model
     /**
      * <p>Optional parameters to use with the Amazon Redshift <code>COPY</code>
      * command. For more information, see the "Optional Parameters" section of <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift
-     * COPY command</a>. Some possible examples that would apply to Kinesis Data
-     * Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are
-     * delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+     * Redshift COPY command</a>. Some possible examples that would apply to Kinesis
+     * Data Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields
+     * are delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
      * <code>delimiter '|'</code> - fields are delimited with "|" (this is the default
      * delimiter).</p> <p> <code>delimiter '|' escape</code> - the delimiter should be
      * escaped.</p> <p> <code>fixedwidth
@@ -213,7 +213,7 @@ namespace Model
      * the table.</p> <p> <code>JSON 's3://mybucket/jsonpaths.txt'</code> - data is in
      * JSON format, and the path specified is the format of the data.</p> <p>For more
      * examples, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
      * Redshift COPY command examples</a>.</p>
      */
     inline void SetCopyOptions(Aws::String&& value) { m_copyOptionsHasBeenSet = true; m_copyOptions = std::move(value); }
@@ -221,10 +221,10 @@ namespace Model
     /**
      * <p>Optional parameters to use with the Amazon Redshift <code>COPY</code>
      * command. For more information, see the "Optional Parameters" section of <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift
-     * COPY command</a>. Some possible examples that would apply to Kinesis Data
-     * Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are
-     * delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+     * Redshift COPY command</a>. Some possible examples that would apply to Kinesis
+     * Data Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields
+     * are delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
      * <code>delimiter '|'</code> - fields are delimited with "|" (this is the default
      * delimiter).</p> <p> <code>delimiter '|' escape</code> - the delimiter should be
      * escaped.</p> <p> <code>fixedwidth
@@ -233,7 +233,7 @@ namespace Model
      * the table.</p> <p> <code>JSON 's3://mybucket/jsonpaths.txt'</code> - data is in
      * JSON format, and the path specified is the format of the data.</p> <p>For more
      * examples, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
      * Redshift COPY command examples</a>.</p>
      */
     inline void SetCopyOptions(const char* value) { m_copyOptionsHasBeenSet = true; m_copyOptions.assign(value); }
@@ -241,10 +241,10 @@ namespace Model
     /**
      * <p>Optional parameters to use with the Amazon Redshift <code>COPY</code>
      * command. For more information, see the "Optional Parameters" section of <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift
-     * COPY command</a>. Some possible examples that would apply to Kinesis Data
-     * Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are
-     * delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+     * Redshift COPY command</a>. Some possible examples that would apply to Kinesis
+     * Data Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields
+     * are delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
      * <code>delimiter '|'</code> - fields are delimited with "|" (this is the default
      * delimiter).</p> <p> <code>delimiter '|' escape</code> - the delimiter should be
      * escaped.</p> <p> <code>fixedwidth
@@ -253,7 +253,7 @@ namespace Model
      * the table.</p> <p> <code>JSON 's3://mybucket/jsonpaths.txt'</code> - data is in
      * JSON format, and the path specified is the format of the data.</p> <p>For more
      * examples, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
      * Redshift COPY command examples</a>.</p>
      */
     inline CopyCommand& WithCopyOptions(const Aws::String& value) { SetCopyOptions(value); return *this;}
@@ -261,10 +261,10 @@ namespace Model
     /**
      * <p>Optional parameters to use with the Amazon Redshift <code>COPY</code>
      * command. For more information, see the "Optional Parameters" section of <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift
-     * COPY command</a>. Some possible examples that would apply to Kinesis Data
-     * Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are
-     * delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+     * Redshift COPY command</a>. Some possible examples that would apply to Kinesis
+     * Data Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields
+     * are delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
      * <code>delimiter '|'</code> - fields are delimited with "|" (this is the default
      * delimiter).</p> <p> <code>delimiter '|' escape</code> - the delimiter should be
      * escaped.</p> <p> <code>fixedwidth
@@ -273,7 +273,7 @@ namespace Model
      * the table.</p> <p> <code>JSON 's3://mybucket/jsonpaths.txt'</code> - data is in
      * JSON format, and the path specified is the format of the data.</p> <p>For more
      * examples, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
      * Redshift COPY command examples</a>.</p>
      */
     inline CopyCommand& WithCopyOptions(Aws::String&& value) { SetCopyOptions(std::move(value)); return *this;}
@@ -281,10 +281,10 @@ namespace Model
     /**
      * <p>Optional parameters to use with the Amazon Redshift <code>COPY</code>
      * command. For more information, see the "Optional Parameters" section of <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift
-     * COPY command</a>. Some possible examples that would apply to Kinesis Data
-     * Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are
-     * delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+     * Redshift COPY command</a>. Some possible examples that would apply to Kinesis
+     * Data Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields
+     * are delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
      * <code>delimiter '|'</code> - fields are delimited with "|" (this is the default
      * delimiter).</p> <p> <code>delimiter '|' escape</code> - the delimiter should be
      * escaped.</p> <p> <code>fixedwidth
@@ -293,7 +293,7 @@ namespace Model
      * the table.</p> <p> <code>JSON 's3://mybucket/jsonpaths.txt'</code> - data is in
      * JSON format, and the path specified is the format of the data.</p> <p>For more
      * examples, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
      * Redshift COPY command examples</a>.</p>
      */
     inline CopyCommand& WithCopyOptions(const char* value) { SetCopyOptions(value); return *this;}

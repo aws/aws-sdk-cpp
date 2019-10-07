@@ -139,7 +139,7 @@ namespace Model
     /**
      * <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this
      * cluster. This ARN was created using the <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
      * API action in AWS Key Management Service (AWS KMS).</p>
      */
     inline const Aws::String& GetKmsKeyARN() const{ return m_kmsKeyARN; }
@@ -147,7 +147,7 @@ namespace Model
     /**
      * <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this
      * cluster. This ARN was created using the <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
      * API action in AWS Key Management Service (AWS KMS).</p>
      */
     inline bool KmsKeyARNHasBeenSet() const { return m_kmsKeyARNHasBeenSet; }
@@ -155,7 +155,7 @@ namespace Model
     /**
      * <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this
      * cluster. This ARN was created using the <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
      * API action in AWS Key Management Service (AWS KMS).</p>
      */
     inline void SetKmsKeyARN(const Aws::String& value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN = value; }
@@ -163,7 +163,7 @@ namespace Model
     /**
      * <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this
      * cluster. This ARN was created using the <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
      * API action in AWS Key Management Service (AWS KMS).</p>
      */
     inline void SetKmsKeyARN(Aws::String&& value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN = std::move(value); }
@@ -171,7 +171,7 @@ namespace Model
     /**
      * <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this
      * cluster. This ARN was created using the <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
      * API action in AWS Key Management Service (AWS KMS).</p>
      */
     inline void SetKmsKeyARN(const char* value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN.assign(value); }
@@ -179,7 +179,7 @@ namespace Model
     /**
      * <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this
      * cluster. This ARN was created using the <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
      * API action in AWS Key Management Service (AWS KMS).</p>
      */
     inline ClusterMetadata& WithKmsKeyARN(const Aws::String& value) { SetKmsKeyARN(value); return *this;}
@@ -187,7 +187,7 @@ namespace Model
     /**
      * <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this
      * cluster. This ARN was created using the <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
      * API action in AWS Key Management Service (AWS KMS).</p>
      */
     inline ClusterMetadata& WithKmsKeyARN(Aws::String&& value) { SetKmsKeyARN(std::move(value)); return *this;}
@@ -195,7 +195,7 @@ namespace Model
     /**
      * <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this
      * cluster. This ARN was created using the <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
      * API action in AWS Key Management Service (AWS KMS).</p>
      */
     inline ClusterMetadata& WithKmsKeyARN(const char* value) { SetKmsKeyARN(value); return *this;}
@@ -203,56 +203,56 @@ namespace Model
 
     /**
      * <p>The role ARN associated with this cluster. This ARN was created using the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
      * <p>The role ARN associated with this cluster. This ARN was created using the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
      * <p>The role ARN associated with this cluster. This ARN was created using the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
      * <p>The role ARN associated with this cluster. This ARN was created using the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The role ARN associated with this cluster. This ARN was created using the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
      * <p>The role ARN associated with this cluster. This ARN was created using the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
     inline ClusterMetadata& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
      * <p>The role ARN associated with this cluster. This ARN was created using the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
     inline ClusterMetadata& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The role ARN associated with this cluster. This ARN was created using the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
     inline ClusterMetadata& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
@@ -327,44 +327,38 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. The only supported
-     * device types for cluster jobs are <code>EDGE</code>, <code>EDGE_C</code>, and
-     * <code>EDGE_CG</code>.</p>
+     * <p>The type of AWS Snowball device to use for this cluster. Currently, the only
+     * supported device type for cluster jobs is <code>EDGE</code>.</p>
      */
     inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. The only supported
-     * device types for cluster jobs are <code>EDGE</code>, <code>EDGE_C</code>, and
-     * <code>EDGE_CG</code>.</p>
+     * <p>The type of AWS Snowball device to use for this cluster. Currently, the only
+     * supported device type for cluster jobs is <code>EDGE</code>.</p>
      */
     inline bool SnowballTypeHasBeenSet() const { return m_snowballTypeHasBeenSet; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. The only supported
-     * device types for cluster jobs are <code>EDGE</code>, <code>EDGE_C</code>, and
-     * <code>EDGE_CG</code>.</p>
+     * <p>The type of AWS Snowball device to use for this cluster. Currently, the only
+     * supported device type for cluster jobs is <code>EDGE</code>.</p>
      */
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. The only supported
-     * device types for cluster jobs are <code>EDGE</code>, <code>EDGE_C</code>, and
-     * <code>EDGE_CG</code>.</p>
+     * <p>The type of AWS Snowball device to use for this cluster. Currently, the only
+     * supported device type for cluster jobs is <code>EDGE</code>.</p>
      */
     inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. The only supported
-     * device types for cluster jobs are <code>EDGE</code>, <code>EDGE_C</code>, and
-     * <code>EDGE_CG</code>.</p>
+     * <p>The type of AWS Snowball device to use for this cluster. Currently, the only
+     * supported device type for cluster jobs is <code>EDGE</code>.</p>
      */
     inline ClusterMetadata& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. The only supported
-     * device types for cluster jobs are <code>EDGE</code>, <code>EDGE_C</code>, and
-     * <code>EDGE_CG</code>.</p>
+     * <p>The type of AWS Snowball device to use for this cluster. Currently, the only
+     * supported device type for cluster jobs is <code>EDGE</code>.</p>
      */
     inline ClusterMetadata& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
 
@@ -480,91 +474,91 @@ namespace Model
 
     /**
      * <p>The shipping speed for each node in this cluster. This speed doesn't dictate
-     * how soon you'll get each device, rather it represents how quickly each device
-     * moves to its destination while in transit. Regional shipping speeds are as
-     * follows:</p> <ul> <li> <p>In Australia, you have access to express shipping.
-     * Typically, devices shipped express are delivered in about a day.</p> </li> <li>
-     * <p>In the European Union (EU), you have access to express shipping. Typically,
-     * devices shipped express are delivered in about a day. In addition, most
-     * countries in the EU have access to standard shipping, which typically takes less
-     * than a week, one way.</p> </li> <li> <p>In India, devices are delivered in one
-     * to seven days.</p> </li> <li> <p>In the US, you have access to one-day shipping
-     * and two-day shipping.</p> </li> </ul>
+     * how soon you'll get each Snowball Edge device, rather it represents how quickly
+     * each device moves to its destination while in transit. Regional shipping speeds
+     * are as follows:</p> <ul> <li> <p>In Australia, you have access to express
+     * shipping. Typically, devices shipped express are delivered in about a day.</p>
+     * </li> <li> <p>In the European Union (EU), you have access to express shipping.
+     * Typically, Snowball Edges shipped express are delivered in about a day. In
+     * addition, most countries in the EU have access to standard shipping, which
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snowball
+     * Edges are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
+     * access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline const ShippingOption& GetShippingOption() const{ return m_shippingOption; }
 
     /**
      * <p>The shipping speed for each node in this cluster. This speed doesn't dictate
-     * how soon you'll get each device, rather it represents how quickly each device
-     * moves to its destination while in transit. Regional shipping speeds are as
-     * follows:</p> <ul> <li> <p>In Australia, you have access to express shipping.
-     * Typically, devices shipped express are delivered in about a day.</p> </li> <li>
-     * <p>In the European Union (EU), you have access to express shipping. Typically,
-     * devices shipped express are delivered in about a day. In addition, most
-     * countries in the EU have access to standard shipping, which typically takes less
-     * than a week, one way.</p> </li> <li> <p>In India, devices are delivered in one
-     * to seven days.</p> </li> <li> <p>In the US, you have access to one-day shipping
-     * and two-day shipping.</p> </li> </ul>
+     * how soon you'll get each Snowball Edge device, rather it represents how quickly
+     * each device moves to its destination while in transit. Regional shipping speeds
+     * are as follows:</p> <ul> <li> <p>In Australia, you have access to express
+     * shipping. Typically, devices shipped express are delivered in about a day.</p>
+     * </li> <li> <p>In the European Union (EU), you have access to express shipping.
+     * Typically, Snowball Edges shipped express are delivered in about a day. In
+     * addition, most countries in the EU have access to standard shipping, which
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snowball
+     * Edges are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
+     * access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline bool ShippingOptionHasBeenSet() const { return m_shippingOptionHasBeenSet; }
 
     /**
      * <p>The shipping speed for each node in this cluster. This speed doesn't dictate
-     * how soon you'll get each device, rather it represents how quickly each device
-     * moves to its destination while in transit. Regional shipping speeds are as
-     * follows:</p> <ul> <li> <p>In Australia, you have access to express shipping.
-     * Typically, devices shipped express are delivered in about a day.</p> </li> <li>
-     * <p>In the European Union (EU), you have access to express shipping. Typically,
-     * devices shipped express are delivered in about a day. In addition, most
-     * countries in the EU have access to standard shipping, which typically takes less
-     * than a week, one way.</p> </li> <li> <p>In India, devices are delivered in one
-     * to seven days.</p> </li> <li> <p>In the US, you have access to one-day shipping
-     * and two-day shipping.</p> </li> </ul>
+     * how soon you'll get each Snowball Edge device, rather it represents how quickly
+     * each device moves to its destination while in transit. Regional shipping speeds
+     * are as follows:</p> <ul> <li> <p>In Australia, you have access to express
+     * shipping. Typically, devices shipped express are delivered in about a day.</p>
+     * </li> <li> <p>In the European Union (EU), you have access to express shipping.
+     * Typically, Snowball Edges shipped express are delivered in about a day. In
+     * addition, most countries in the EU have access to standard shipping, which
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snowball
+     * Edges are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
+     * access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline void SetShippingOption(const ShippingOption& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = value; }
 
     /**
      * <p>The shipping speed for each node in this cluster. This speed doesn't dictate
-     * how soon you'll get each device, rather it represents how quickly each device
-     * moves to its destination while in transit. Regional shipping speeds are as
-     * follows:</p> <ul> <li> <p>In Australia, you have access to express shipping.
-     * Typically, devices shipped express are delivered in about a day.</p> </li> <li>
-     * <p>In the European Union (EU), you have access to express shipping. Typically,
-     * devices shipped express are delivered in about a day. In addition, most
-     * countries in the EU have access to standard shipping, which typically takes less
-     * than a week, one way.</p> </li> <li> <p>In India, devices are delivered in one
-     * to seven days.</p> </li> <li> <p>In the US, you have access to one-day shipping
-     * and two-day shipping.</p> </li> </ul>
+     * how soon you'll get each Snowball Edge device, rather it represents how quickly
+     * each device moves to its destination while in transit. Regional shipping speeds
+     * are as follows:</p> <ul> <li> <p>In Australia, you have access to express
+     * shipping. Typically, devices shipped express are delivered in about a day.</p>
+     * </li> <li> <p>In the European Union (EU), you have access to express shipping.
+     * Typically, Snowball Edges shipped express are delivered in about a day. In
+     * addition, most countries in the EU have access to standard shipping, which
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snowball
+     * Edges are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
+     * access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline void SetShippingOption(ShippingOption&& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = std::move(value); }
 
     /**
      * <p>The shipping speed for each node in this cluster. This speed doesn't dictate
-     * how soon you'll get each device, rather it represents how quickly each device
-     * moves to its destination while in transit. Regional shipping speeds are as
-     * follows:</p> <ul> <li> <p>In Australia, you have access to express shipping.
-     * Typically, devices shipped express are delivered in about a day.</p> </li> <li>
-     * <p>In the European Union (EU), you have access to express shipping. Typically,
-     * devices shipped express are delivered in about a day. In addition, most
-     * countries in the EU have access to standard shipping, which typically takes less
-     * than a week, one way.</p> </li> <li> <p>In India, devices are delivered in one
-     * to seven days.</p> </li> <li> <p>In the US, you have access to one-day shipping
-     * and two-day shipping.</p> </li> </ul>
+     * how soon you'll get each Snowball Edge device, rather it represents how quickly
+     * each device moves to its destination while in transit. Regional shipping speeds
+     * are as follows:</p> <ul> <li> <p>In Australia, you have access to express
+     * shipping. Typically, devices shipped express are delivered in about a day.</p>
+     * </li> <li> <p>In the European Union (EU), you have access to express shipping.
+     * Typically, Snowball Edges shipped express are delivered in about a day. In
+     * addition, most countries in the EU have access to standard shipping, which
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snowball
+     * Edges are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
+     * access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline ClusterMetadata& WithShippingOption(const ShippingOption& value) { SetShippingOption(value); return *this;}
 
     /**
      * <p>The shipping speed for each node in this cluster. This speed doesn't dictate
-     * how soon you'll get each device, rather it represents how quickly each device
-     * moves to its destination while in transit. Regional shipping speeds are as
-     * follows:</p> <ul> <li> <p>In Australia, you have access to express shipping.
-     * Typically, devices shipped express are delivered in about a day.</p> </li> <li>
-     * <p>In the European Union (EU), you have access to express shipping. Typically,
-     * devices shipped express are delivered in about a day. In addition, most
-     * countries in the EU have access to standard shipping, which typically takes less
-     * than a week, one way.</p> </li> <li> <p>In India, devices are delivered in one
-     * to seven days.</p> </li> <li> <p>In the US, you have access to one-day shipping
-     * and two-day shipping.</p> </li> </ul>
+     * how soon you'll get each Snowball Edge device, rather it represents how quickly
+     * each device moves to its destination while in transit. Regional shipping speeds
+     * are as follows:</p> <ul> <li> <p>In Australia, you have access to express
+     * shipping. Typically, devices shipped express are delivered in about a day.</p>
+     * </li> <li> <p>In the European Union (EU), you have access to express shipping.
+     * Typically, Snowball Edges shipped express are delivered in about a day. In
+     * addition, most countries in the EU have access to standard shipping, which
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snowball
+     * Edges are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
+     * access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline ClusterMetadata& WithShippingOption(ShippingOption&& value) { SetShippingOption(std::move(value)); return *this;}
 

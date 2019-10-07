@@ -51,6 +51,7 @@ CampaignResponse::CampaignResponse() :
     m_segmentVersionHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_templateConfigurationHasBeenSet(false),
     m_treatmentDescriptionHasBeenSet(false),
     m_treatmentNameHasBeenSet(false),
     m_version(0),
@@ -81,6 +82,7 @@ CampaignResponse::CampaignResponse(JsonView jsonValue) :
     m_segmentVersionHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_templateConfigurationHasBeenSet(false),
     m_treatmentDescriptionHasBeenSet(false),
     m_treatmentNameHasBeenSet(false),
     m_version(0),
@@ -228,6 +230,13 @@ CampaignResponse& CampaignResponse::operator =(JsonView jsonValue)
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TemplateConfiguration"))
+  {
+    m_templateConfiguration = jsonValue.GetObject("TemplateConfiguration");
+
+    m_templateConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("TreatmentDescription"))
@@ -379,6 +388,12 @@ JsonValue CampaignResponse::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_templateConfigurationHasBeenSet)
+  {
+   payload.WithObject("TemplateConfiguration", m_templateConfiguration.Jsonize());
 
   }
 

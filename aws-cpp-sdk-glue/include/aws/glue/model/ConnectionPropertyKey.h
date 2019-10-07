@@ -38,7 +38,10 @@ namespace Model
     CONFIG_FILES,
     INSTANCE_ID,
     JDBC_CONNECTION_URL,
-    JDBC_ENFORCE_SSL
+    JDBC_ENFORCE_SSL,
+    CUSTOM_JDBC_CERT,
+    SKIP_CUSTOM_JDBC_CERT_VALIDATION,
+    CUSTOM_JDBC_CERT_STRING
   };
 
 namespace ConnectionPropertyKeyMapper

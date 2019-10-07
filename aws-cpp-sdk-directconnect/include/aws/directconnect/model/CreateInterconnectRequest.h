@@ -211,44 +211,85 @@ namespace Model
 
 
     /**
-     * <p>The tags to assign to the interconnect,</p>
+     * <p>The tags to associate with the interconnect.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags to assign to the interconnect,</p>
+     * <p>The tags to associate with the interconnect.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags to assign to the interconnect,</p>
+     * <p>The tags to associate with the interconnect.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags to assign to the interconnect,</p>
+     * <p>The tags to associate with the interconnect.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags to assign to the interconnect,</p>
+     * <p>The tags to associate with the interconnect.</p>
      */
     inline CreateInterconnectRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags to assign to the interconnect,</p>
+     * <p>The tags to associate with the interconnect.</p>
      */
     inline CreateInterconnectRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to assign to the interconnect,</p>
+     * <p>The tags to associate with the interconnect.</p>
      */
     inline CreateInterconnectRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tags to assign to the interconnect,</p>
+     * <p>The tags to associate with the interconnect.</p>
      */
     inline CreateInterconnectRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The name of the service provider associated with the interconnect.</p>
+     */
+    inline const Aws::String& GetProviderName() const{ return m_providerName; }
+
+    /**
+     * <p>The name of the service provider associated with the interconnect.</p>
+     */
+    inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the service provider associated with the interconnect.</p>
+     */
+    inline void SetProviderName(const Aws::String& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
+
+    /**
+     * <p>The name of the service provider associated with the interconnect.</p>
+     */
+    inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = std::move(value); }
+
+    /**
+     * <p>The name of the service provider associated with the interconnect.</p>
+     */
+    inline void SetProviderName(const char* value) { m_providerNameHasBeenSet = true; m_providerName.assign(value); }
+
+    /**
+     * <p>The name of the service provider associated with the interconnect.</p>
+     */
+    inline CreateInterconnectRequest& WithProviderName(const Aws::String& value) { SetProviderName(value); return *this;}
+
+    /**
+     * <p>The name of the service provider associated with the interconnect.</p>
+     */
+    inline CreateInterconnectRequest& WithProviderName(Aws::String&& value) { SetProviderName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the service provider associated with the interconnect.</p>
+     */
+    inline CreateInterconnectRequest& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
   private:
 
@@ -266,6 +307,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_providerName;
+    bool m_providerNameHasBeenSet;
   };
 
 } // namespace Model

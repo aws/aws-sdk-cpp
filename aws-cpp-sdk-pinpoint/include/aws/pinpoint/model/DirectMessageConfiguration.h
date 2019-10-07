@@ -217,32 +217,32 @@ namespace Model
 
 
     /**
-     * <p>The default push notification message for all push channels.</p>
+     * <p>The default push notification message for all push notification channels.</p>
      */
     inline const DefaultPushNotificationMessage& GetDefaultPushNotificationMessage() const{ return m_defaultPushNotificationMessage; }
 
     /**
-     * <p>The default push notification message for all push channels.</p>
+     * <p>The default push notification message for all push notification channels.</p>
      */
     inline bool DefaultPushNotificationMessageHasBeenSet() const { return m_defaultPushNotificationMessageHasBeenSet; }
 
     /**
-     * <p>The default push notification message for all push channels.</p>
+     * <p>The default push notification message for all push notification channels.</p>
      */
     inline void SetDefaultPushNotificationMessage(const DefaultPushNotificationMessage& value) { m_defaultPushNotificationMessageHasBeenSet = true; m_defaultPushNotificationMessage = value; }
 
     /**
-     * <p>The default push notification message for all push channels.</p>
+     * <p>The default push notification message for all push notification channels.</p>
      */
     inline void SetDefaultPushNotificationMessage(DefaultPushNotificationMessage&& value) { m_defaultPushNotificationMessageHasBeenSet = true; m_defaultPushNotificationMessage = std::move(value); }
 
     /**
-     * <p>The default push notification message for all push channels.</p>
+     * <p>The default push notification message for all push notification channels.</p>
      */
     inline DirectMessageConfiguration& WithDefaultPushNotificationMessage(const DefaultPushNotificationMessage& value) { SetDefaultPushNotificationMessage(value); return *this;}
 
     /**
-     * <p>The default push notification message for all push channels.</p>
+     * <p>The default push notification message for all push notification channels.</p>
      */
     inline DirectMessageConfiguration& WithDefaultPushNotificationMessage(DefaultPushNotificationMessage&& value) { SetDefaultPushNotificationMessage(std::move(value)); return *this;}
 

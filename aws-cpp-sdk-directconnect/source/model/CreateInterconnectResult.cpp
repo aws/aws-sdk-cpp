@@ -125,6 +125,12 @@ CreateInterconnectResult& CreateInterconnectResult::operator =(const Aws::Amazon
     }
   }
 
+  if(jsonValue.ValueExists("providerName"))
+  {
+    m_providerName = jsonValue.GetString("providerName");
+
+  }
+
 
 
   return *this;

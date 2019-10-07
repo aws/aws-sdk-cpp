@@ -312,58 +312,82 @@ namespace Model
 
 
     /**
-     * <p>The status of the update request for the endpoint. Possible values are:
-     * INACTIVE, the update failed; and, ACTIVE, the endpoint was updated
-     * successfully.</p>
+     * <p>Specifies whether to send messages or push notifications to the endpoint.
+     * Valid values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE,
+     * messages aren’t sent to the endpoint.</p> <p>Amazon Pinpoint automatically sets
+     * this value to ACTIVE when you create an endpoint or update an existing endpoint.
+     * Amazon Pinpoint automatically sets this value to INACTIVE if you update another
+     * endpoint that has the same address specified by the Address property.</p>
      */
     inline const Aws::String& GetEndpointStatus() const{ return m_endpointStatus; }
 
     /**
-     * <p>The status of the update request for the endpoint. Possible values are:
-     * INACTIVE, the update failed; and, ACTIVE, the endpoint was updated
-     * successfully.</p>
+     * <p>Specifies whether to send messages or push notifications to the endpoint.
+     * Valid values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE,
+     * messages aren’t sent to the endpoint.</p> <p>Amazon Pinpoint automatically sets
+     * this value to ACTIVE when you create an endpoint or update an existing endpoint.
+     * Amazon Pinpoint automatically sets this value to INACTIVE if you update another
+     * endpoint that has the same address specified by the Address property.</p>
      */
     inline bool EndpointStatusHasBeenSet() const { return m_endpointStatusHasBeenSet; }
 
     /**
-     * <p>The status of the update request for the endpoint. Possible values are:
-     * INACTIVE, the update failed; and, ACTIVE, the endpoint was updated
-     * successfully.</p>
+     * <p>Specifies whether to send messages or push notifications to the endpoint.
+     * Valid values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE,
+     * messages aren’t sent to the endpoint.</p> <p>Amazon Pinpoint automatically sets
+     * this value to ACTIVE when you create an endpoint or update an existing endpoint.
+     * Amazon Pinpoint automatically sets this value to INACTIVE if you update another
+     * endpoint that has the same address specified by the Address property.</p>
      */
     inline void SetEndpointStatus(const Aws::String& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = value; }
 
     /**
-     * <p>The status of the update request for the endpoint. Possible values are:
-     * INACTIVE, the update failed; and, ACTIVE, the endpoint was updated
-     * successfully.</p>
+     * <p>Specifies whether to send messages or push notifications to the endpoint.
+     * Valid values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE,
+     * messages aren’t sent to the endpoint.</p> <p>Amazon Pinpoint automatically sets
+     * this value to ACTIVE when you create an endpoint or update an existing endpoint.
+     * Amazon Pinpoint automatically sets this value to INACTIVE if you update another
+     * endpoint that has the same address specified by the Address property.</p>
      */
     inline void SetEndpointStatus(Aws::String&& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = std::move(value); }
 
     /**
-     * <p>The status of the update request for the endpoint. Possible values are:
-     * INACTIVE, the update failed; and, ACTIVE, the endpoint was updated
-     * successfully.</p>
+     * <p>Specifies whether to send messages or push notifications to the endpoint.
+     * Valid values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE,
+     * messages aren’t sent to the endpoint.</p> <p>Amazon Pinpoint automatically sets
+     * this value to ACTIVE when you create an endpoint or update an existing endpoint.
+     * Amazon Pinpoint automatically sets this value to INACTIVE if you update another
+     * endpoint that has the same address specified by the Address property.</p>
      */
     inline void SetEndpointStatus(const char* value) { m_endpointStatusHasBeenSet = true; m_endpointStatus.assign(value); }
 
     /**
-     * <p>The status of the update request for the endpoint. Possible values are:
-     * INACTIVE, the update failed; and, ACTIVE, the endpoint was updated
-     * successfully.</p>
+     * <p>Specifies whether to send messages or push notifications to the endpoint.
+     * Valid values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE,
+     * messages aren’t sent to the endpoint.</p> <p>Amazon Pinpoint automatically sets
+     * this value to ACTIVE when you create an endpoint or update an existing endpoint.
+     * Amazon Pinpoint automatically sets this value to INACTIVE if you update another
+     * endpoint that has the same address specified by the Address property.</p>
      */
     inline PublicEndpoint& WithEndpointStatus(const Aws::String& value) { SetEndpointStatus(value); return *this;}
 
     /**
-     * <p>The status of the update request for the endpoint. Possible values are:
-     * INACTIVE, the update failed; and, ACTIVE, the endpoint was updated
-     * successfully.</p>
+     * <p>Specifies whether to send messages or push notifications to the endpoint.
+     * Valid values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE,
+     * messages aren’t sent to the endpoint.</p> <p>Amazon Pinpoint automatically sets
+     * this value to ACTIVE when you create an endpoint or update an existing endpoint.
+     * Amazon Pinpoint automatically sets this value to INACTIVE if you update another
+     * endpoint that has the same address specified by the Address property.</p>
      */
     inline PublicEndpoint& WithEndpointStatus(Aws::String&& value) { SetEndpointStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the update request for the endpoint. Possible values are:
-     * INACTIVE, the update failed; and, ACTIVE, the endpoint was updated
-     * successfully.</p>
+     * <p>Specifies whether to send messages or push notifications to the endpoint.
+     * Valid values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE,
+     * messages aren’t sent to the endpoint.</p> <p>Amazon Pinpoint automatically sets
+     * this value to ACTIVE when you create an endpoint or update an existing endpoint.
+     * Amazon Pinpoint automatically sets this value to INACTIVE if you update another
+     * endpoint that has the same address specified by the Address property.</p>
      */
     inline PublicEndpoint& WithEndpointStatus(const char* value) { SetEndpointStatus(value); return *this;}
 

@@ -30,13 +30,15 @@ namespace Model
 
 EmailContent::EmailContent() : 
     m_simpleHasBeenSet(false),
-    m_rawHasBeenSet(false)
+    m_rawHasBeenSet(false),
+    m_templateHasBeenSet(false)
 {
 }
 
 EmailContent::EmailContent(JsonView jsonValue) : 
     m_simpleHasBeenSet(false),
-    m_rawHasBeenSet(false)
+    m_rawHasBeenSet(false),
+    m_templateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +59,13 @@ EmailContent& EmailContent::operator =(JsonView jsonValue)
     m_rawHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Template"))
+  {
+    m_template = jsonValue.GetObject("Template");
+
+    m_templateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +82,12 @@ JsonValue EmailContent::Jsonize() const
   if(m_rawHasBeenSet)
   {
    payload.WithObject("Raw", m_raw.Jsonize());
+
+  }
+
+  if(m_templateHasBeenSet)
+  {
+   payload.WithObject("Template", m_template.Jsonize());
 
   }
 

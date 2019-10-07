@@ -31,6 +31,7 @@ namespace Model
 ElasticsearchDestinationConfiguration::ElasticsearchDestinationConfiguration() : 
     m_roleARNHasBeenSet(false),
     m_domainARNHasBeenSet(false),
+    m_clusterEndpointHasBeenSet(false),
     m_indexNameHasBeenSet(false),
     m_typeNameHasBeenSet(false),
     m_indexRotationPeriod(ElasticsearchIndexRotationPeriod::NOT_SET),
@@ -48,6 +49,7 @@ ElasticsearchDestinationConfiguration::ElasticsearchDestinationConfiguration() :
 ElasticsearchDestinationConfiguration::ElasticsearchDestinationConfiguration(JsonView jsonValue) : 
     m_roleARNHasBeenSet(false),
     m_domainARNHasBeenSet(false),
+    m_clusterEndpointHasBeenSet(false),
     m_indexNameHasBeenSet(false),
     m_typeNameHasBeenSet(false),
     m_indexRotationPeriod(ElasticsearchIndexRotationPeriod::NOT_SET),
@@ -77,6 +79,13 @@ ElasticsearchDestinationConfiguration& ElasticsearchDestinationConfiguration::op
     m_domainARN = jsonValue.GetString("DomainARN");
 
     m_domainARNHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ClusterEndpoint"))
+  {
+    m_clusterEndpoint = jsonValue.GetString("ClusterEndpoint");
+
+    m_clusterEndpointHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("IndexName"))
@@ -158,6 +167,12 @@ JsonValue ElasticsearchDestinationConfiguration::Jsonize() const
   if(m_domainARNHasBeenSet)
   {
    payload.WithString("DomainARN", m_domainARN);
+
+  }
+
+  if(m_clusterEndpointHasBeenSet)
+  {
+   payload.WithString("ClusterEndpoint", m_clusterEndpoint);
 
   }
 

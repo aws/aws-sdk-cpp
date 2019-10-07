@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the content of an email message, composed of a subject, a text
+   * <p>Specifies the contents of an email message, composed of a subject, a text
    * part, and an HTML part.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SimpleEmail">AWS
    * API Reference</a></p>

@@ -27,7 +27,8 @@ CreateInterconnectRequest::CreateInterconnectRequest() :
     m_bandwidthHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_lagIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_providerNameHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,12 @@ Aws::String CreateInterconnectRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_providerNameHasBeenSet)
+  {
+   payload.WithString("providerName", m_providerName);
 
   }
 

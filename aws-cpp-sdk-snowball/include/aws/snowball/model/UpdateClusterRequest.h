@@ -99,7 +99,7 @@ namespace Model
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * cluster. To create a role ARN, use the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
@@ -107,7 +107,7 @@ namespace Model
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * cluster. To create a role ARN, use the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
@@ -115,7 +115,7 @@ namespace Model
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * cluster. To create a role ARN, use the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
@@ -123,7 +123,7 @@ namespace Model
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * cluster. To create a role ARN, use the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
@@ -131,7 +131,7 @@ namespace Model
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * cluster. To create a role ARN, use the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
@@ -139,7 +139,7 @@ namespace Model
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * cluster. To create a role ARN, use the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
     inline UpdateClusterRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
@@ -147,7 +147,7 @@ namespace Model
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * cluster. To create a role ARN, use the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
     inline UpdateClusterRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
@@ -155,7 +155,7 @@ namespace Model
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
      * cluster. To create a role ARN, use the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
     inline UpdateClusterRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}

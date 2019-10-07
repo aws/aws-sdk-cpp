@@ -176,89 +176,65 @@ namespace Model
 
     /**
      * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered
-     * Amazon S3 files. You can specify an extra prefix to be added in front of the
-     * time format prefix. If the prefix ends with a slash, it appears as a folder in
-     * the S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
-     * Guide</i>.</p>
+     * Amazon S3 files. You can also specify a custom prefix, as described in <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
+     * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
      * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered
-     * Amazon S3 files. You can specify an extra prefix to be added in front of the
-     * time format prefix. If the prefix ends with a slash, it appears as a folder in
-     * the S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
-     * Guide</i>.</p>
+     * Amazon S3 files. You can also specify a custom prefix, as described in <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
+     * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered
-     * Amazon S3 files. You can specify an extra prefix to be added in front of the
-     * time format prefix. If the prefix ends with a slash, it appears as a folder in
-     * the S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
-     * Guide</i>.</p>
+     * Amazon S3 files. You can also specify a custom prefix, as described in <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
+     * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
      * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered
-     * Amazon S3 files. You can specify an extra prefix to be added in front of the
-     * time format prefix. If the prefix ends with a slash, it appears as a folder in
-     * the S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
-     * Guide</i>.</p>
+     * Amazon S3 files. You can also specify a custom prefix, as described in <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
+     * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
      * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered
-     * Amazon S3 files. You can specify an extra prefix to be added in front of the
-     * time format prefix. If the prefix ends with a slash, it appears as a folder in
-     * the S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
-     * Guide</i>.</p>
+     * Amazon S3 files. You can also specify a custom prefix, as described in <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
+     * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
      * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered
-     * Amazon S3 files. You can specify an extra prefix to be added in front of the
-     * time format prefix. If the prefix ends with a slash, it appears as a folder in
-     * the S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
-     * Guide</i>.</p>
+     * Amazon S3 files. You can also specify a custom prefix, as described in <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
+     * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline S3DestinationUpdate& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
      * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered
-     * Amazon S3 files. You can specify an extra prefix to be added in front of the
-     * time format prefix. If the prefix ends with a slash, it appears as a folder in
-     * the S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
-     * Guide</i>.</p>
+     * Amazon S3 files. You can also specify a custom prefix, as described in <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
+     * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline S3DestinationUpdate& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
      * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered
-     * Amazon S3 files. You can specify an extra prefix to be added in front of the
-     * time format prefix. If the prefix ends with a slash, it appears as a folder in
-     * the S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
-     * Guide</i>.</p>
+     * Amazon S3 files. You can also specify a custom prefix, as described in <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
+     * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline S3DestinationUpdate& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
@@ -266,56 +242,72 @@ namespace Model
     /**
      * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
      * before writing them to S3. This prefix appears immediately following the bucket
-     * name.</p>
+     * name. For information about how to specify this prefix, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
+     * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline const Aws::String& GetErrorOutputPrefix() const{ return m_errorOutputPrefix; }
 
     /**
      * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
      * before writing them to S3. This prefix appears immediately following the bucket
-     * name.</p>
+     * name. For information about how to specify this prefix, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
+     * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline bool ErrorOutputPrefixHasBeenSet() const { return m_errorOutputPrefixHasBeenSet; }
 
     /**
      * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
      * before writing them to S3. This prefix appears immediately following the bucket
-     * name.</p>
+     * name. For information about how to specify this prefix, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
+     * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline void SetErrorOutputPrefix(const Aws::String& value) { m_errorOutputPrefixHasBeenSet = true; m_errorOutputPrefix = value; }
 
     /**
      * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
      * before writing them to S3. This prefix appears immediately following the bucket
-     * name.</p>
+     * name. For information about how to specify this prefix, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
+     * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline void SetErrorOutputPrefix(Aws::String&& value) { m_errorOutputPrefixHasBeenSet = true; m_errorOutputPrefix = std::move(value); }
 
     /**
      * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
      * before writing them to S3. This prefix appears immediately following the bucket
-     * name.</p>
+     * name. For information about how to specify this prefix, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
+     * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline void SetErrorOutputPrefix(const char* value) { m_errorOutputPrefixHasBeenSet = true; m_errorOutputPrefix.assign(value); }
 
     /**
      * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
      * before writing them to S3. This prefix appears immediately following the bucket
-     * name.</p>
+     * name. For information about how to specify this prefix, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
+     * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline S3DestinationUpdate& WithErrorOutputPrefix(const Aws::String& value) { SetErrorOutputPrefix(value); return *this;}
 
     /**
      * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
      * before writing them to S3. This prefix appears immediately following the bucket
-     * name.</p>
+     * name. For information about how to specify this prefix, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
+     * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline S3DestinationUpdate& WithErrorOutputPrefix(Aws::String&& value) { SetErrorOutputPrefix(std::move(value)); return *this;}
 
     /**
      * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
      * before writing them to S3. This prefix appears immediately following the bucket
-     * name.</p>
+     * name. For information about how to specify this prefix, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
+     * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline S3DestinationUpdate& WithErrorOutputPrefix(const char* value) { SetErrorOutputPrefix(value); return *this;}
 

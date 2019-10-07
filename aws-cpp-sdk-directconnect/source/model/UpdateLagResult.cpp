@@ -152,6 +152,12 @@ UpdateLagResult& UpdateLagResult::operator =(const Aws::AmazonWebServiceResult<J
     }
   }
 
+  if(jsonValue.ValueExists("providerName"))
+  {
+    m_providerName = jsonValue.GetString("providerName");
+
+  }
+
 
 
   return *this;

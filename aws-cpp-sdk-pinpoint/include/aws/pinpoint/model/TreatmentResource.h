@@ -19,6 +19,7 @@
 #include <aws/pinpoint/model/MessageConfiguration.h>
 #include <aws/pinpoint/model/Schedule.h>
 #include <aws/pinpoint/model/CampaignState.h>
+#include <aws/pinpoint/model/TemplateConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -211,6 +212,25 @@ namespace Model
     inline TreatmentResource& WithState(CampaignState&& value) { SetState(std::move(value)); return *this;}
 
 
+    
+    inline const TemplateConfiguration& GetTemplateConfiguration() const{ return m_templateConfiguration; }
+
+    
+    inline bool TemplateConfigurationHasBeenSet() const { return m_templateConfigurationHasBeenSet; }
+
+    
+    inline void SetTemplateConfiguration(const TemplateConfiguration& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = value; }
+
+    
+    inline void SetTemplateConfiguration(TemplateConfiguration&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::move(value); }
+
+    
+    inline TreatmentResource& WithTemplateConfiguration(const TemplateConfiguration& value) { SetTemplateConfiguration(value); return *this;}
+
+    
+    inline TreatmentResource& WithTemplateConfiguration(TemplateConfiguration&& value) { SetTemplateConfiguration(std::move(value)); return *this;}
+
+
     /**
      * <p>The custom description of the treatment.</p>
      */
@@ -316,6 +336,9 @@ namespace Model
 
     CampaignState m_state;
     bool m_stateHasBeenSet;
+
+    TemplateConfiguration m_templateConfiguration;
+    bool m_templateConfigurationHasBeenSet;
 
     Aws::String m_treatmentDescription;
     bool m_treatmentDescriptionHasBeenSet;

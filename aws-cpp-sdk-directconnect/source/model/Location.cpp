@@ -32,7 +32,8 @@ Location::Location() :
     m_locationCodeHasBeenSet(false),
     m_locationNameHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_availablePortSpeedsHasBeenSet(false)
+    m_availablePortSpeedsHasBeenSet(false),
+    m_availableProvidersHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ Location::Location(JsonView jsonValue) :
     m_locationCodeHasBeenSet(false),
     m_locationNameHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_availablePortSpeedsHasBeenSet(false)
+    m_availablePortSpeedsHasBeenSet(false),
+    m_availableProvidersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -78,6 +80,16 @@ Location& Location::operator =(JsonView jsonValue)
     m_availablePortSpeedsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("availableProviders"))
+  {
+    Array<JsonView> availableProvidersJsonList = jsonValue.GetArray("availableProviders");
+    for(unsigned availableProvidersIndex = 0; availableProvidersIndex < availableProvidersJsonList.GetLength(); ++availableProvidersIndex)
+    {
+      m_availableProviders.push_back(availableProvidersJsonList[availableProvidersIndex].AsString());
+    }
+    m_availableProvidersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -111,6 +123,17 @@ JsonValue Location::Jsonize() const
      availablePortSpeedsJsonList[availablePortSpeedsIndex].AsString(m_availablePortSpeeds[availablePortSpeedsIndex]);
    }
    payload.WithArray("availablePortSpeeds", std::move(availablePortSpeedsJsonList));
+
+  }
+
+  if(m_availableProvidersHasBeenSet)
+  {
+   Array<JsonValue> availableProvidersJsonList(m_availableProviders.size());
+   for(unsigned availableProvidersIndex = 0; availableProvidersIndex < availableProvidersJsonList.GetLength(); ++availableProvidersIndex)
+   {
+     availableProvidersJsonList[availableProvidersIndex].AsString(m_availableProviders[availableProvidersIndex]);
+   }
+   payload.WithArray("availableProviders", std::move(availableProvidersJsonList));
 
   }
 

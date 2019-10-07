@@ -94,80 +94,80 @@ namespace Model
     /**
      * <p>The type of attribute or attributes that were removed from the endpoints.
      * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
-     * that describe endpoints</p></li> <li><p>endpoint-custom-metrics - Custom metrics
-     * that your app reports to Amazon Pinpoint for endpoints</p></li>
+     * that describe endpoints.</p></li> <li><p>endpoint-custom-metrics - Custom
+     * metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
      * <li><p>endpoint-user-attributes - Custom attributes that describe
-     * users</p></li></ul>
+     * users.</p></li></ul>
      */
     inline const Aws::String& GetAttributeType() const{ return m_attributeType; }
 
     /**
      * <p>The type of attribute or attributes that were removed from the endpoints.
      * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
-     * that describe endpoints</p></li> <li><p>endpoint-custom-metrics - Custom metrics
-     * that your app reports to Amazon Pinpoint for endpoints</p></li>
+     * that describe endpoints.</p></li> <li><p>endpoint-custom-metrics - Custom
+     * metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
      * <li><p>endpoint-user-attributes - Custom attributes that describe
-     * users</p></li></ul>
+     * users.</p></li></ul>
      */
     inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }
 
     /**
      * <p>The type of attribute or attributes that were removed from the endpoints.
      * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
-     * that describe endpoints</p></li> <li><p>endpoint-custom-metrics - Custom metrics
-     * that your app reports to Amazon Pinpoint for endpoints</p></li>
+     * that describe endpoints.</p></li> <li><p>endpoint-custom-metrics - Custom
+     * metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
      * <li><p>endpoint-user-attributes - Custom attributes that describe
-     * users</p></li></ul>
+     * users.</p></li></ul>
      */
     inline void SetAttributeType(const Aws::String& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
 
     /**
      * <p>The type of attribute or attributes that were removed from the endpoints.
      * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
-     * that describe endpoints</p></li> <li><p>endpoint-custom-metrics - Custom metrics
-     * that your app reports to Amazon Pinpoint for endpoints</p></li>
+     * that describe endpoints.</p></li> <li><p>endpoint-custom-metrics - Custom
+     * metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
      * <li><p>endpoint-user-attributes - Custom attributes that describe
-     * users</p></li></ul>
+     * users.</p></li></ul>
      */
     inline void SetAttributeType(Aws::String&& value) { m_attributeTypeHasBeenSet = true; m_attributeType = std::move(value); }
 
     /**
      * <p>The type of attribute or attributes that were removed from the endpoints.
      * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
-     * that describe endpoints</p></li> <li><p>endpoint-custom-metrics - Custom metrics
-     * that your app reports to Amazon Pinpoint for endpoints</p></li>
+     * that describe endpoints.</p></li> <li><p>endpoint-custom-metrics - Custom
+     * metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
      * <li><p>endpoint-user-attributes - Custom attributes that describe
-     * users</p></li></ul>
+     * users.</p></li></ul>
      */
     inline void SetAttributeType(const char* value) { m_attributeTypeHasBeenSet = true; m_attributeType.assign(value); }
 
     /**
      * <p>The type of attribute or attributes that were removed from the endpoints.
      * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
-     * that describe endpoints</p></li> <li><p>endpoint-custom-metrics - Custom metrics
-     * that your app reports to Amazon Pinpoint for endpoints</p></li>
+     * that describe endpoints.</p></li> <li><p>endpoint-custom-metrics - Custom
+     * metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
      * <li><p>endpoint-user-attributes - Custom attributes that describe
-     * users</p></li></ul>
+     * users.</p></li></ul>
      */
     inline AttributesResource& WithAttributeType(const Aws::String& value) { SetAttributeType(value); return *this;}
 
     /**
      * <p>The type of attribute or attributes that were removed from the endpoints.
      * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
-     * that describe endpoints</p></li> <li><p>endpoint-custom-metrics - Custom metrics
-     * that your app reports to Amazon Pinpoint for endpoints</p></li>
+     * that describe endpoints.</p></li> <li><p>endpoint-custom-metrics - Custom
+     * metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
      * <li><p>endpoint-user-attributes - Custom attributes that describe
-     * users</p></li></ul>
+     * users.</p></li></ul>
      */
     inline AttributesResource& WithAttributeType(Aws::String&& value) { SetAttributeType(std::move(value)); return *this;}
 
     /**
      * <p>The type of attribute or attributes that were removed from the endpoints.
      * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
-     * that describe endpoints</p></li> <li><p>endpoint-custom-metrics - Custom metrics
-     * that your app reports to Amazon Pinpoint for endpoints</p></li>
+     * that describe endpoints.</p></li> <li><p>endpoint-custom-metrics - Custom
+     * metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
      * <li><p>endpoint-user-attributes - Custom attributes that describe
-     * users</p></li></ul>
+     * users.</p></li></ul>
      */
     inline AttributesResource& WithAttributeType(const char* value) { SetAttributeType(value); return *this;}
 

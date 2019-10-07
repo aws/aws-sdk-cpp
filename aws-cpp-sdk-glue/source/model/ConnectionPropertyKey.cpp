@@ -43,6 +43,9 @@ namespace Aws
         static const int INSTANCE_ID_HASH = HashingUtils::HashString("INSTANCE_ID");
         static const int JDBC_CONNECTION_URL_HASH = HashingUtils::HashString("JDBC_CONNECTION_URL");
         static const int JDBC_ENFORCE_SSL_HASH = HashingUtils::HashString("JDBC_ENFORCE_SSL");
+        static const int CUSTOM_JDBC_CERT_HASH = HashingUtils::HashString("CUSTOM_JDBC_CERT");
+        static const int SKIP_CUSTOM_JDBC_CERT_VALIDATION_HASH = HashingUtils::HashString("SKIP_CUSTOM_JDBC_CERT_VALIDATION");
+        static const int CUSTOM_JDBC_CERT_STRING_HASH = HashingUtils::HashString("CUSTOM_JDBC_CERT_STRING");
 
 
         ConnectionPropertyKey GetConnectionPropertyKeyForName(const Aws::String& name)
@@ -100,6 +103,18 @@ namespace Aws
           {
             return ConnectionPropertyKey::JDBC_ENFORCE_SSL;
           }
+          else if (hashCode == CUSTOM_JDBC_CERT_HASH)
+          {
+            return ConnectionPropertyKey::CUSTOM_JDBC_CERT;
+          }
+          else if (hashCode == SKIP_CUSTOM_JDBC_CERT_VALIDATION_HASH)
+          {
+            return ConnectionPropertyKey::SKIP_CUSTOM_JDBC_CERT_VALIDATION;
+          }
+          else if (hashCode == CUSTOM_JDBC_CERT_STRING_HASH)
+          {
+            return ConnectionPropertyKey::CUSTOM_JDBC_CERT_STRING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -140,6 +155,12 @@ namespace Aws
             return "JDBC_CONNECTION_URL";
           case ConnectionPropertyKey::JDBC_ENFORCE_SSL:
             return "JDBC_ENFORCE_SSL";
+          case ConnectionPropertyKey::CUSTOM_JDBC_CERT:
+            return "CUSTOM_JDBC_CERT";
+          case ConnectionPropertyKey::SKIP_CUSTOM_JDBC_CERT_VALIDATION:
+            return "SKIP_CUSTOM_JDBC_CERT_VALIDATION";
+          case ConnectionPropertyKey::CUSTOM_JDBC_CERT_STRING:
+            return "CUSTOM_JDBC_CERT_STRING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

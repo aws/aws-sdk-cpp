@@ -191,66 +191,66 @@ namespace Model
 
 
     /**
-     * <p>The number that the SMS message originates from. This should be one of the
-     * dedicated long codes or short codes that you requested from AWS Support and is
-     * assigned to your AWS account. If you don't specify a long or short code, Amazon
-     * Pinpoint assigns a random long code to the SMS message.</p>
+     * <p>The number to send the SMS message from. This value should be one of the
+     * dedicated long or short codes that's assigned to your AWS account. If you don't
+     * specify a long or short code, Amazon Pinpoint assigns a random long code to the
+     * SMS message and sends the message from that code.</p>
      */
     inline const Aws::String& GetOriginationNumber() const{ return m_originationNumber; }
 
     /**
-     * <p>The number that the SMS message originates from. This should be one of the
-     * dedicated long codes or short codes that you requested from AWS Support and is
-     * assigned to your AWS account. If you don't specify a long or short code, Amazon
-     * Pinpoint assigns a random long code to the SMS message.</p>
+     * <p>The number to send the SMS message from. This value should be one of the
+     * dedicated long or short codes that's assigned to your AWS account. If you don't
+     * specify a long or short code, Amazon Pinpoint assigns a random long code to the
+     * SMS message and sends the message from that code.</p>
      */
     inline bool OriginationNumberHasBeenSet() const { return m_originationNumberHasBeenSet; }
 
     /**
-     * <p>The number that the SMS message originates from. This should be one of the
-     * dedicated long codes or short codes that you requested from AWS Support and is
-     * assigned to your AWS account. If you don't specify a long or short code, Amazon
-     * Pinpoint assigns a random long code to the SMS message.</p>
+     * <p>The number to send the SMS message from. This value should be one of the
+     * dedicated long or short codes that's assigned to your AWS account. If you don't
+     * specify a long or short code, Amazon Pinpoint assigns a random long code to the
+     * SMS message and sends the message from that code.</p>
      */
     inline void SetOriginationNumber(const Aws::String& value) { m_originationNumberHasBeenSet = true; m_originationNumber = value; }
 
     /**
-     * <p>The number that the SMS message originates from. This should be one of the
-     * dedicated long codes or short codes that you requested from AWS Support and is
-     * assigned to your AWS account. If you don't specify a long or short code, Amazon
-     * Pinpoint assigns a random long code to the SMS message.</p>
+     * <p>The number to send the SMS message from. This value should be one of the
+     * dedicated long or short codes that's assigned to your AWS account. If you don't
+     * specify a long or short code, Amazon Pinpoint assigns a random long code to the
+     * SMS message and sends the message from that code.</p>
      */
     inline void SetOriginationNumber(Aws::String&& value) { m_originationNumberHasBeenSet = true; m_originationNumber = std::move(value); }
 
     /**
-     * <p>The number that the SMS message originates from. This should be one of the
-     * dedicated long codes or short codes that you requested from AWS Support and is
-     * assigned to your AWS account. If you don't specify a long or short code, Amazon
-     * Pinpoint assigns a random long code to the SMS message.</p>
+     * <p>The number to send the SMS message from. This value should be one of the
+     * dedicated long or short codes that's assigned to your AWS account. If you don't
+     * specify a long or short code, Amazon Pinpoint assigns a random long code to the
+     * SMS message and sends the message from that code.</p>
      */
     inline void SetOriginationNumber(const char* value) { m_originationNumberHasBeenSet = true; m_originationNumber.assign(value); }
 
     /**
-     * <p>The number that the SMS message originates from. This should be one of the
-     * dedicated long codes or short codes that you requested from AWS Support and is
-     * assigned to your AWS account. If you don't specify a long or short code, Amazon
-     * Pinpoint assigns a random long code to the SMS message.</p>
+     * <p>The number to send the SMS message from. This value should be one of the
+     * dedicated long or short codes that's assigned to your AWS account. If you don't
+     * specify a long or short code, Amazon Pinpoint assigns a random long code to the
+     * SMS message and sends the message from that code.</p>
      */
     inline SMSMessage& WithOriginationNumber(const Aws::String& value) { SetOriginationNumber(value); return *this;}
 
     /**
-     * <p>The number that the SMS message originates from. This should be one of the
-     * dedicated long codes or short codes that you requested from AWS Support and is
-     * assigned to your AWS account. If you don't specify a long or short code, Amazon
-     * Pinpoint assigns a random long code to the SMS message.</p>
+     * <p>The number to send the SMS message from. This value should be one of the
+     * dedicated long or short codes that's assigned to your AWS account. If you don't
+     * specify a long or short code, Amazon Pinpoint assigns a random long code to the
+     * SMS message and sends the message from that code.</p>
      */
     inline SMSMessage& WithOriginationNumber(Aws::String&& value) { SetOriginationNumber(std::move(value)); return *this;}
 
     /**
-     * <p>The number that the SMS message originates from. This should be one of the
-     * dedicated long codes or short codes that you requested from AWS Support and is
-     * assigned to your AWS account. If you don't specify a long or short code, Amazon
-     * Pinpoint assigns a random long code to the SMS message.</p>
+     * <p>The number to send the SMS message from. This value should be one of the
+     * dedicated long or short codes that's assigned to your AWS account. If you don't
+     * specify a long or short code, Amazon Pinpoint assigns a random long code to the
+     * SMS message and sends the message from that code.</p>
      */
     inline SMSMessage& WithOriginationNumber(const char* value) { SetOriginationNumber(value); return *this;}
 

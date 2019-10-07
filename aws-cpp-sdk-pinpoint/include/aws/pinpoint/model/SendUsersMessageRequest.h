@@ -17,6 +17,7 @@
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/pinpoint/model/DirectMessageConfiguration.h>
+#include <aws/pinpoint/model/TemplateConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint/model/EndpointSendConfiguration.h>
 #include <utility>
@@ -195,6 +196,37 @@ namespace Model
 
 
     /**
+     * <p>The message template to use for the message.</p>
+     */
+    inline const TemplateConfiguration& GetTemplateConfiguration() const{ return m_templateConfiguration; }
+
+    /**
+     * <p>The message template to use for the message.</p>
+     */
+    inline bool TemplateConfigurationHasBeenSet() const { return m_templateConfigurationHasBeenSet; }
+
+    /**
+     * <p>The message template to use for the message.</p>
+     */
+    inline void SetTemplateConfiguration(const TemplateConfiguration& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = value; }
+
+    /**
+     * <p>The message template to use for the message.</p>
+     */
+    inline void SetTemplateConfiguration(TemplateConfiguration&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::move(value); }
+
+    /**
+     * <p>The message template to use for the message.</p>
+     */
+    inline SendUsersMessageRequest& WithTemplateConfiguration(const TemplateConfiguration& value) { SetTemplateConfiguration(value); return *this;}
+
+    /**
+     * <p>The message template to use for the message.</p>
+     */
+    inline SendUsersMessageRequest& WithTemplateConfiguration(TemplateConfiguration&& value) { SetTemplateConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The unique identifier for tracing the message. This identifier is visible to
      * message recipients.</p>
      */
@@ -334,6 +366,9 @@ namespace Model
 
     DirectMessageConfiguration m_messageConfiguration;
     bool m_messageConfigurationHasBeenSet;
+
+    TemplateConfiguration m_templateConfiguration;
+    bool m_templateConfigurationHasBeenSet;
 
     Aws::String m_traceId;
     bool m_traceIdHasBeenSet;
