@@ -24,6 +24,7 @@
 #include <aws/datasync/model/PreserveDeletedFiles.h>
 #include <aws/datasync/model/PreserveDevices.h>
 #include <aws/datasync/model/PosixPermissions.h>
+#include <aws/datasync/model/TaskQueueing.h>
 #include <utility>
 
 namespace Aws
@@ -682,6 +683,61 @@ namespace Model
      */
     inline Options& WithBytesPerSecond(long long value) { SetBytesPerSecond(value); return *this;}
 
+
+    /**
+     * <p>A value that determines whether tasks should be queued before executing the
+     * tasks. If set to <code>Enabled</code>, the tasks will queued. The default is
+     * <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you
+     * can enable the tasks to run in series. For more information see
+     * <a>task-queue</a>.</p>
+     */
+    inline const TaskQueueing& GetTaskQueueing() const{ return m_taskQueueing; }
+
+    /**
+     * <p>A value that determines whether tasks should be queued before executing the
+     * tasks. If set to <code>Enabled</code>, the tasks will queued. The default is
+     * <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you
+     * can enable the tasks to run in series. For more information see
+     * <a>task-queue</a>.</p>
+     */
+    inline bool TaskQueueingHasBeenSet() const { return m_taskQueueingHasBeenSet; }
+
+    /**
+     * <p>A value that determines whether tasks should be queued before executing the
+     * tasks. If set to <code>Enabled</code>, the tasks will queued. The default is
+     * <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you
+     * can enable the tasks to run in series. For more information see
+     * <a>task-queue</a>.</p>
+     */
+    inline void SetTaskQueueing(const TaskQueueing& value) { m_taskQueueingHasBeenSet = true; m_taskQueueing = value; }
+
+    /**
+     * <p>A value that determines whether tasks should be queued before executing the
+     * tasks. If set to <code>Enabled</code>, the tasks will queued. The default is
+     * <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you
+     * can enable the tasks to run in series. For more information see
+     * <a>task-queue</a>.</p>
+     */
+    inline void SetTaskQueueing(TaskQueueing&& value) { m_taskQueueingHasBeenSet = true; m_taskQueueing = std::move(value); }
+
+    /**
+     * <p>A value that determines whether tasks should be queued before executing the
+     * tasks. If set to <code>Enabled</code>, the tasks will queued. The default is
+     * <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you
+     * can enable the tasks to run in series. For more information see
+     * <a>task-queue</a>.</p>
+     */
+    inline Options& WithTaskQueueing(const TaskQueueing& value) { SetTaskQueueing(value); return *this;}
+
+    /**
+     * <p>A value that determines whether tasks should be queued before executing the
+     * tasks. If set to <code>Enabled</code>, the tasks will queued. The default is
+     * <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you
+     * can enable the tasks to run in series. For more information see
+     * <a>task-queue</a>.</p>
+     */
+    inline Options& WithTaskQueueing(TaskQueueing&& value) { SetTaskQueueing(std::move(value)); return *this;}
+
   private:
 
     VerifyMode m_verifyMode;
@@ -713,6 +769,9 @@ namespace Model
 
     long long m_bytesPerSecond;
     bool m_bytesPerSecondHasBeenSet;
+
+    TaskQueueing m_taskQueueing;
+    bool m_taskQueueingHasBeenSet;
   };
 
 } // namespace Model

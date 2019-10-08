@@ -371,12 +371,14 @@ namespace Model
      * have reached the limit on the number of accounts in your organization.</p> </li>
      * <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another
      * AWS account with that email address already exists.</p> </li> <li>
-     * <p>INVALID_ADDRESS: The account could not be created because the address you
-     * provided is not valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be
-     * created because the email address you provided is not valid.</p> </li> <li>
-     * <p>INTERNAL_FAILURE: The account could not be created because of an internal
-     * failure. Try again later. If the problem persists, contact Customer Support.</p>
-     * </li> </ul>
+     * <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region
+     * could not be created because this Region already includes an account with that
+     * email address.</p> </li> <li> <p>INVALID_ADDRESS: The account could not be
+     * created because the address you provided is not valid.</p> </li> <li>
+     * <p>INVALID_EMAIL: The account could not be created because the email address you
+     * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
+     * be created because of an internal failure. Try again later. If the problem
+     * persists, contact Customer Support.</p> </li> </ul>
      */
     inline const CreateAccountFailureReason& GetFailureReason() const{ return m_failureReason; }
 
@@ -386,12 +388,14 @@ namespace Model
      * have reached the limit on the number of accounts in your organization.</p> </li>
      * <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another
      * AWS account with that email address already exists.</p> </li> <li>
-     * <p>INVALID_ADDRESS: The account could not be created because the address you
-     * provided is not valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be
-     * created because the email address you provided is not valid.</p> </li> <li>
-     * <p>INTERNAL_FAILURE: The account could not be created because of an internal
-     * failure. Try again later. If the problem persists, contact Customer Support.</p>
-     * </li> </ul>
+     * <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region
+     * could not be created because this Region already includes an account with that
+     * email address.</p> </li> <li> <p>INVALID_ADDRESS: The account could not be
+     * created because the address you provided is not valid.</p> </li> <li>
+     * <p>INVALID_EMAIL: The account could not be created because the email address you
+     * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
+     * be created because of an internal failure. Try again later. If the problem
+     * persists, contact Customer Support.</p> </li> </ul>
      */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
@@ -401,12 +405,14 @@ namespace Model
      * have reached the limit on the number of accounts in your organization.</p> </li>
      * <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another
      * AWS account with that email address already exists.</p> </li> <li>
-     * <p>INVALID_ADDRESS: The account could not be created because the address you
-     * provided is not valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be
-     * created because the email address you provided is not valid.</p> </li> <li>
-     * <p>INTERNAL_FAILURE: The account could not be created because of an internal
-     * failure. Try again later. If the problem persists, contact Customer Support.</p>
-     * </li> </ul>
+     * <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region
+     * could not be created because this Region already includes an account with that
+     * email address.</p> </li> <li> <p>INVALID_ADDRESS: The account could not be
+     * created because the address you provided is not valid.</p> </li> <li>
+     * <p>INVALID_EMAIL: The account could not be created because the email address you
+     * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
+     * be created because of an internal failure. Try again later. If the problem
+     * persists, contact Customer Support.</p> </li> </ul>
      */
     inline void SetFailureReason(const CreateAccountFailureReason& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
@@ -416,12 +422,14 @@ namespace Model
      * have reached the limit on the number of accounts in your organization.</p> </li>
      * <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another
      * AWS account with that email address already exists.</p> </li> <li>
-     * <p>INVALID_ADDRESS: The account could not be created because the address you
-     * provided is not valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be
-     * created because the email address you provided is not valid.</p> </li> <li>
-     * <p>INTERNAL_FAILURE: The account could not be created because of an internal
-     * failure. Try again later. If the problem persists, contact Customer Support.</p>
-     * </li> </ul>
+     * <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region
+     * could not be created because this Region already includes an account with that
+     * email address.</p> </li> <li> <p>INVALID_ADDRESS: The account could not be
+     * created because the address you provided is not valid.</p> </li> <li>
+     * <p>INVALID_EMAIL: The account could not be created because the email address you
+     * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
+     * be created because of an internal failure. Try again later. If the problem
+     * persists, contact Customer Support.</p> </li> </ul>
      */
     inline void SetFailureReason(CreateAccountFailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
@@ -431,12 +439,14 @@ namespace Model
      * have reached the limit on the number of accounts in your organization.</p> </li>
      * <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another
      * AWS account with that email address already exists.</p> </li> <li>
-     * <p>INVALID_ADDRESS: The account could not be created because the address you
-     * provided is not valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be
-     * created because the email address you provided is not valid.</p> </li> <li>
-     * <p>INTERNAL_FAILURE: The account could not be created because of an internal
-     * failure. Try again later. If the problem persists, contact Customer Support.</p>
-     * </li> </ul>
+     * <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region
+     * could not be created because this Region already includes an account with that
+     * email address.</p> </li> <li> <p>INVALID_ADDRESS: The account could not be
+     * created because the address you provided is not valid.</p> </li> <li>
+     * <p>INVALID_EMAIL: The account could not be created because the email address you
+     * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
+     * be created because of an internal failure. Try again later. If the problem
+     * persists, contact Customer Support.</p> </li> </ul>
      */
     inline CreateAccountStatus& WithFailureReason(const CreateAccountFailureReason& value) { SetFailureReason(value); return *this;}
 
@@ -446,12 +456,14 @@ namespace Model
      * have reached the limit on the number of accounts in your organization.</p> </li>
      * <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another
      * AWS account with that email address already exists.</p> </li> <li>
-     * <p>INVALID_ADDRESS: The account could not be created because the address you
-     * provided is not valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be
-     * created because the email address you provided is not valid.</p> </li> <li>
-     * <p>INTERNAL_FAILURE: The account could not be created because of an internal
-     * failure. Try again later. If the problem persists, contact Customer Support.</p>
-     * </li> </ul>
+     * <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region
+     * could not be created because this Region already includes an account with that
+     * email address.</p> </li> <li> <p>INVALID_ADDRESS: The account could not be
+     * created because the address you provided is not valid.</p> </li> <li>
+     * <p>INVALID_EMAIL: The account could not be created because the email address you
+     * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
+     * be created because of an internal failure. Try again later. If the problem
+     * persists, contact Customer Support.</p> </li> </ul>
      */
     inline CreateAccountStatus& WithFailureReason(CreateAccountFailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
 

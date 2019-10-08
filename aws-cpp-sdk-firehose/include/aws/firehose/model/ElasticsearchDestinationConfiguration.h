@@ -335,7 +335,7 @@ namespace Model
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
      * already has another type, Kinesis Data Firehose returns an error during run
-     * time.</p>
+     * time.</p> <p>For Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
@@ -343,7 +343,7 @@ namespace Model
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
      * already has another type, Kinesis Data Firehose returns an error during run
-     * time.</p>
+     * time.</p> <p>For Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
      */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
@@ -351,7 +351,7 @@ namespace Model
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
      * already has another type, Kinesis Data Firehose returns an error during run
-     * time.</p>
+     * time.</p> <p>For Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
@@ -359,7 +359,7 @@ namespace Model
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
      * already has another type, Kinesis Data Firehose returns an error during run
-     * time.</p>
+     * time.</p> <p>For Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
@@ -367,7 +367,7 @@ namespace Model
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
      * already has another type, Kinesis Data Firehose returns an error during run
-     * time.</p>
+     * time.</p> <p>For Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
@@ -375,7 +375,7 @@ namespace Model
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
      * already has another type, Kinesis Data Firehose returns an error during run
-     * time.</p>
+     * time.</p> <p>For Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
@@ -383,7 +383,7 @@ namespace Model
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
      * already has another type, Kinesis Data Firehose returns an error during run
-     * time.</p>
+     * time.</p> <p>For Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
@@ -391,7 +391,7 @@ namespace Model
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
      * already has another type, Kinesis Data Firehose returns an error during run
-     * time.</p>
+     * time.</p> <p>For Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 

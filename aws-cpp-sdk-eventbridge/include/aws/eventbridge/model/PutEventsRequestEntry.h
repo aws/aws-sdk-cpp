@@ -189,99 +189,99 @@ namespace Model
 
 
     /**
-     * <p>Free-form string used to decide which fields to expect in the event
-     * detail.</p>
+     * <p>Free-form string used to decide which fields to expect in the event detail.
+     * This field is required.</p>
      */
     inline const Aws::String& GetDetailType() const{ return m_detailType; }
 
     /**
-     * <p>Free-form string used to decide which fields to expect in the event
-     * detail.</p>
+     * <p>Free-form string used to decide which fields to expect in the event detail.
+     * This field is required.</p>
      */
     inline bool DetailTypeHasBeenSet() const { return m_detailTypeHasBeenSet; }
 
     /**
-     * <p>Free-form string used to decide which fields to expect in the event
-     * detail.</p>
+     * <p>Free-form string used to decide which fields to expect in the event detail.
+     * This field is required.</p>
      */
     inline void SetDetailType(const Aws::String& value) { m_detailTypeHasBeenSet = true; m_detailType = value; }
 
     /**
-     * <p>Free-form string used to decide which fields to expect in the event
-     * detail.</p>
+     * <p>Free-form string used to decide which fields to expect in the event detail.
+     * This field is required.</p>
      */
     inline void SetDetailType(Aws::String&& value) { m_detailTypeHasBeenSet = true; m_detailType = std::move(value); }
 
     /**
-     * <p>Free-form string used to decide which fields to expect in the event
-     * detail.</p>
+     * <p>Free-form string used to decide which fields to expect in the event detail.
+     * This field is required.</p>
      */
     inline void SetDetailType(const char* value) { m_detailTypeHasBeenSet = true; m_detailType.assign(value); }
 
     /**
-     * <p>Free-form string used to decide which fields to expect in the event
-     * detail.</p>
+     * <p>Free-form string used to decide which fields to expect in the event detail.
+     * This field is required.</p>
      */
     inline PutEventsRequestEntry& WithDetailType(const Aws::String& value) { SetDetailType(value); return *this;}
 
     /**
-     * <p>Free-form string used to decide which fields to expect in the event
-     * detail.</p>
+     * <p>Free-form string used to decide which fields to expect in the event detail.
+     * This field is required.</p>
      */
     inline PutEventsRequestEntry& WithDetailType(Aws::String&& value) { SetDetailType(std::move(value)); return *this;}
 
     /**
-     * <p>Free-form string used to decide which fields to expect in the event
-     * detail.</p>
+     * <p>Free-form string used to decide which fields to expect in the event detail.
+     * This field is required.</p>
      */
     inline PutEventsRequestEntry& WithDetailType(const char* value) { SetDetailType(value); return *this;}
 
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string can
-     * contain fields and nested subobjects.</p>
+     * <p>A valid JSON object. There is no other schema imposed. The JSON object can
+     * contain fields and nested subobjects.</p> <p>This field is required.</p>
      */
     inline const Aws::String& GetDetail() const{ return m_detail; }
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string can
-     * contain fields and nested subobjects.</p>
+     * <p>A valid JSON object. There is no other schema imposed. The JSON object can
+     * contain fields and nested subobjects.</p> <p>This field is required.</p>
      */
     inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string can
-     * contain fields and nested subobjects.</p>
+     * <p>A valid JSON object. There is no other schema imposed. The JSON object can
+     * contain fields and nested subobjects.</p> <p>This field is required.</p>
      */
     inline void SetDetail(const Aws::String& value) { m_detailHasBeenSet = true; m_detail = value; }
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string can
-     * contain fields and nested subobjects.</p>
+     * <p>A valid JSON object. There is no other schema imposed. The JSON object can
+     * contain fields and nested subobjects.</p> <p>This field is required.</p>
      */
     inline void SetDetail(Aws::String&& value) { m_detailHasBeenSet = true; m_detail = std::move(value); }
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string can
-     * contain fields and nested subobjects.</p>
+     * <p>A valid JSON object. There is no other schema imposed. The JSON object can
+     * contain fields and nested subobjects.</p> <p>This field is required.</p>
      */
     inline void SetDetail(const char* value) { m_detailHasBeenSet = true; m_detail.assign(value); }
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string can
-     * contain fields and nested subobjects.</p>
+     * <p>A valid JSON object. There is no other schema imposed. The JSON object can
+     * contain fields and nested subobjects.</p> <p>This field is required.</p>
      */
     inline PutEventsRequestEntry& WithDetail(const Aws::String& value) { SetDetail(value); return *this;}
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string can
-     * contain fields and nested subobjects.</p>
+     * <p>A valid JSON object. There is no other schema imposed. The JSON object can
+     * contain fields and nested subobjects.</p> <p>This field is required.</p>
      */
     inline PutEventsRequestEntry& WithDetail(Aws::String&& value) { SetDetail(std::move(value)); return *this;}
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string can
-     * contain fields and nested subobjects.</p>
+     * <p>A valid JSON object. There is no other schema imposed. The JSON object can
+     * contain fields and nested subobjects.</p> <p>This field is required.</p>
      */
     inline PutEventsRequestEntry& WithDetail(const char* value) { SetDetail(value); return *this;}
 

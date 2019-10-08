@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/datasync/model/TaskStatus.h>
+#include <aws/datasync/model/TaskQueueing.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -27,63 +27,42 @@ namespace Aws
   {
     namespace Model
     {
-      namespace TaskStatusMapper
+      namespace TaskQueueingMapper
       {
 
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int QUEUED_HASH = HashingUtils::HashString("QUEUED");
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int UNAVAILABLE_HASH = HashingUtils::HashString("UNAVAILABLE");
+        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
+        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
 
-        TaskStatus GetTaskStatusForName(const Aws::String& name)
+        TaskQueueing GetTaskQueueingForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == AVAILABLE_HASH)
+          if (hashCode == ENABLED_HASH)
           {
-            return TaskStatus::AVAILABLE;
+            return TaskQueueing::ENABLED;
           }
-          else if (hashCode == CREATING_HASH)
+          else if (hashCode == DISABLED_HASH)
           {
-            return TaskStatus::CREATING;
-          }
-          else if (hashCode == QUEUED_HASH)
-          {
-            return TaskStatus::QUEUED;
-          }
-          else if (hashCode == RUNNING_HASH)
-          {
-            return TaskStatus::RUNNING;
-          }
-          else if (hashCode == UNAVAILABLE_HASH)
-          {
-            return TaskStatus::UNAVAILABLE;
+            return TaskQueueing::DISABLED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<TaskStatus>(hashCode);
+            return static_cast<TaskQueueing>(hashCode);
           }
 
-          return TaskStatus::NOT_SET;
+          return TaskQueueing::NOT_SET;
         }
 
-        Aws::String GetNameForTaskStatus(TaskStatus enumValue)
+        Aws::String GetNameForTaskQueueing(TaskQueueing enumValue)
         {
           switch(enumValue)
           {
-          case TaskStatus::AVAILABLE:
-            return "AVAILABLE";
-          case TaskStatus::CREATING:
-            return "CREATING";
-          case TaskStatus::QUEUED:
-            return "QUEUED";
-          case TaskStatus::RUNNING:
-            return "RUNNING";
-          case TaskStatus::UNAVAILABLE:
-            return "UNAVAILABLE";
+          case TaskQueueing::ENABLED:
+            return "ENABLED";
+          case TaskQueueing::DISABLED:
+            return "DISABLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -95,7 +74,7 @@ namespace Aws
           }
         }
 
-      } // namespace TaskStatusMapper
+      } // namespace TaskQueueingMapper
     } // namespace Model
   } // namespace DataSync
 } // namespace Aws

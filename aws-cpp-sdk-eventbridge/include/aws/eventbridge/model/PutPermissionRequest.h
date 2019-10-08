@@ -150,8 +150,8 @@ namespace Model
      * <code>Condition</code>, avoid creating rules that might match undesirable
      * events. To create more secure rules, make sure that the event pattern for each
      * rule contains an <code>account</code> field with a specific account ID to
-     * receive events from. Rules with an account field don't match any events sent
-     * from other accounts.</p>
+     * receive events from. Rules that have an account field match events sent only
+     * from accounts that are listed in the rule's <code>account</code> field.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
 
@@ -162,8 +162,8 @@ namespace Model
      * <code>Condition</code>, avoid creating rules that might match undesirable
      * events. To create more secure rules, make sure that the event pattern for each
      * rule contains an <code>account</code> field with a specific account ID to
-     * receive events from. Rules with an account field don't match any events sent
-     * from other accounts.</p>
+     * receive events from. Rules that have an account field match events sent only
+     * from accounts that are listed in the rule's <code>account</code> field.</p>
      */
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
 
@@ -174,8 +174,8 @@ namespace Model
      * <code>Condition</code>, avoid creating rules that might match undesirable
      * events. To create more secure rules, make sure that the event pattern for each
      * rule contains an <code>account</code> field with a specific account ID to
-     * receive events from. Rules with an account field don't match any events sent
-     * from other accounts.</p>
+     * receive events from. Rules that have an account field match events sent only
+     * from accounts that are listed in the rule's <code>account</code> field.</p>
      */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
@@ -186,8 +186,8 @@ namespace Model
      * <code>Condition</code>, avoid creating rules that might match undesirable
      * events. To create more secure rules, make sure that the event pattern for each
      * rule contains an <code>account</code> field with a specific account ID to
-     * receive events from. Rules with an account field don't match any events sent
-     * from other accounts.</p>
+     * receive events from. Rules that have an account field match events sent only
+     * from accounts that are listed in the rule's <code>account</code> field.</p>
      */
     inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
 
@@ -198,8 +198,8 @@ namespace Model
      * <code>Condition</code>, avoid creating rules that might match undesirable
      * events. To create more secure rules, make sure that the event pattern for each
      * rule contains an <code>account</code> field with a specific account ID to
-     * receive events from. Rules with an account field don't match any events sent
-     * from other accounts.</p>
+     * receive events from. Rules that have an account field match events sent only
+     * from accounts that are listed in the rule's <code>account</code> field.</p>
      */
     inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
 
@@ -210,8 +210,8 @@ namespace Model
      * <code>Condition</code>, avoid creating rules that might match undesirable
      * events. To create more secure rules, make sure that the event pattern for each
      * rule contains an <code>account</code> field with a specific account ID to
-     * receive events from. Rules with an account field don't match any events sent
-     * from other accounts.</p>
+     * receive events from. Rules that have an account field match events sent only
+     * from accounts that are listed in the rule's <code>account</code> field.</p>
      */
     inline PutPermissionRequest& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
 
@@ -222,8 +222,8 @@ namespace Model
      * <code>Condition</code>, avoid creating rules that might match undesirable
      * events. To create more secure rules, make sure that the event pattern for each
      * rule contains an <code>account</code> field with a specific account ID to
-     * receive events from. Rules with an account field don't match any events sent
-     * from other accounts.</p>
+     * receive events from. Rules that have an account field match events sent only
+     * from accounts that are listed in the rule's <code>account</code> field.</p>
      */
     inline PutPermissionRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
 
@@ -234,8 +234,8 @@ namespace Model
      * <code>Condition</code>, avoid creating rules that might match undesirable
      * events. To create more secure rules, make sure that the event pattern for each
      * rule contains an <code>account</code> field with a specific account ID to
-     * receive events from. Rules with an account field don't match any events sent
-     * from other accounts.</p>
+     * receive events from. Rules that have an account field match events sent only
+     * from accounts that are listed in the rule's <code>account</code> field.</p>
      */
     inline PutPermissionRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 

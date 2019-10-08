@@ -48,7 +48,9 @@ Options::Options() :
     m_posixPermissions(PosixPermissions::NOT_SET),
     m_posixPermissionsHasBeenSet(false),
     m_bytesPerSecond(0),
-    m_bytesPerSecondHasBeenSet(false)
+    m_bytesPerSecondHasBeenSet(false),
+    m_taskQueueing(TaskQueueing::NOT_SET),
+    m_taskQueueingHasBeenSet(false)
 {
 }
 
@@ -72,7 +74,9 @@ Options::Options(JsonView jsonValue) :
     m_posixPermissions(PosixPermissions::NOT_SET),
     m_posixPermissionsHasBeenSet(false),
     m_bytesPerSecond(0),
-    m_bytesPerSecondHasBeenSet(false)
+    m_bytesPerSecondHasBeenSet(false),
+    m_taskQueueing(TaskQueueing::NOT_SET),
+    m_taskQueueingHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -149,6 +153,13 @@ Options& Options::operator =(JsonView jsonValue)
     m_bytesPerSecondHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TaskQueueing"))
+  {
+    m_taskQueueing = TaskQueueingMapper::GetTaskQueueingForName(jsonValue.GetString("TaskQueueing"));
+
+    m_taskQueueingHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -205,6 +216,11 @@ JsonValue Options::Jsonize() const
   {
    payload.WithInt64("BytesPerSecond", m_bytesPerSecond);
 
+  }
+
+  if(m_taskQueueingHasBeenSet)
+  {
+   payload.WithString("TaskQueueing", TaskQueueingMapper::GetNameForTaskQueueing(m_taskQueueing));
   }
 
   return payload;

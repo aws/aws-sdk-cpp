@@ -63,42 +63,58 @@ namespace Model
 
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>A name for the target. Use a string that will help you identify the target.
+     * Each target associated with a rule must have an <code>Id</code> unique for that
+     * rule.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>A name for the target. Use a string that will help you identify the target.
+     * Each target associated with a rule must have an <code>Id</code> unique for that
+     * rule.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>A name for the target. Use a string that will help you identify the target.
+     * Each target associated with a rule must have an <code>Id</code> unique for that
+     * rule.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>A name for the target. Use a string that will help you identify the target.
+     * Each target associated with a rule must have an <code>Id</code> unique for that
+     * rule.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>A name for the target. Use a string that will help you identify the target.
+     * Each target associated with a rule must have an <code>Id</code> unique for that
+     * rule.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>A name for the target. Use a string that will help you identify the target.
+     * Each target associated with a rule must have an <code>Id</code> unique for that
+     * rule.</p>
      */
     inline Target& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>A name for the target. Use a string that will help you identify the target.
+     * Each target associated with a rule must have an <code>Id</code> unique for that
+     * rule.</p>
      */
     inline Target& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the target.</p>
+     * <p>A name for the target. Use a string that will help you identify the target.
+     * Each target associated with a rule must have an <code>Id</code> unique for that
+     * rule.</p>
      */
     inline Target& WithId(const char* value) { SetId(value); return *this;}
 

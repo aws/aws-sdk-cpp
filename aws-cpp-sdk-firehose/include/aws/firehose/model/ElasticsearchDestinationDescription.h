@@ -291,42 +291,50 @@ namespace Model
 
 
     /**
-     * <p>The Elasticsearch type name.</p>
+     * <p>The Elasticsearch type name. This applies to Elasticsearch 6.x and lower
+     * versions. For Elasticsearch 7.x, there's no value for <code>TypeName</code>.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
     /**
-     * <p>The Elasticsearch type name.</p>
+     * <p>The Elasticsearch type name. This applies to Elasticsearch 6.x and lower
+     * versions. For Elasticsearch 7.x, there's no value for <code>TypeName</code>.</p>
      */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
-     * <p>The Elasticsearch type name.</p>
+     * <p>The Elasticsearch type name. This applies to Elasticsearch 6.x and lower
+     * versions. For Elasticsearch 7.x, there's no value for <code>TypeName</code>.</p>
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
-     * <p>The Elasticsearch type name.</p>
+     * <p>The Elasticsearch type name. This applies to Elasticsearch 6.x and lower
+     * versions. For Elasticsearch 7.x, there's no value for <code>TypeName</code>.</p>
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
-     * <p>The Elasticsearch type name.</p>
+     * <p>The Elasticsearch type name. This applies to Elasticsearch 6.x and lower
+     * versions. For Elasticsearch 7.x, there's no value for <code>TypeName</code>.</p>
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
     /**
-     * <p>The Elasticsearch type name.</p>
+     * <p>The Elasticsearch type name. This applies to Elasticsearch 6.x and lower
+     * versions. For Elasticsearch 7.x, there's no value for <code>TypeName</code>.</p>
      */
     inline ElasticsearchDestinationDescription& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
     /**
-     * <p>The Elasticsearch type name.</p>
+     * <p>The Elasticsearch type name. This applies to Elasticsearch 6.x and lower
+     * versions. For Elasticsearch 7.x, there's no value for <code>TypeName</code>.</p>
      */
     inline ElasticsearchDestinationDescription& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
-     * <p>The Elasticsearch type name.</p>
+     * <p>The Elasticsearch type name. This applies to Elasticsearch 6.x and lower
+     * versions. For Elasticsearch 7.x, there's no value for <code>TypeName</code>.</p>
      */
     inline ElasticsearchDestinationDescription& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 

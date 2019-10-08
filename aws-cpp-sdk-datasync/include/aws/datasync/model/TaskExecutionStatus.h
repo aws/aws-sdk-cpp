@@ -26,6 +26,7 @@ namespace Model
   enum class TaskExecutionStatus
   {
     NOT_SET,
+    QUEUED,
     LAUNCHING,
     PREPARING,
     TRANSFERRING,

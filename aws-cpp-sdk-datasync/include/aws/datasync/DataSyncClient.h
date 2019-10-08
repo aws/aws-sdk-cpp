@@ -381,16 +381,16 @@ namespace Model
         virtual void CreateLocationEfsAsync(const Model::CreateLocationEfsRequest& request, const CreateLocationEfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an endpoint for a Network File System (NFS) file
-         * system.</p><p><h3>See Also:</h3>   <a
+         * <p>Defines a file system on a Network File System (NFS) server that can be read
+         * from or written to</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationNfs">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateLocationNfsOutcome CreateLocationNfs(const Model::CreateLocationNfsRequest& request) const;
 
         /**
-         * <p>Creates an endpoint for a Network File System (NFS) file
-         * system.</p><p><h3>See Also:</h3>   <a
+         * <p>Defines a file system on a Network File System (NFS) server that can be read
+         * from or written to</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationNfs">AWS
          * API Reference</a></p>
          *
@@ -399,8 +399,8 @@ namespace Model
         virtual Model::CreateLocationNfsOutcomeCallable CreateLocationNfsCallable(const Model::CreateLocationNfsRequest& request) const;
 
         /**
-         * <p>Creates an endpoint for a Network File System (NFS) file
-         * system.</p><p><h3>See Also:</h3>   <a
+         * <p>Defines a file system on a Network File System (NFS) server that can be read
+         * from or written to</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationNfs">AWS
          * API Reference</a></p>
          *
@@ -455,16 +455,16 @@ namespace Model
         virtual void CreateLocationS3Async(const Model::CreateLocationS3Request& request, const CreateLocationS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an endpoint for a Server Message Block (SMB) file
-         * system.</p><p><h3>See Also:</h3>   <a
+         * <p>Defines a file system on an Server Message Block (SMB) server that can be
+         * read from or written to</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateLocationSmbOutcome CreateLocationSmb(const Model::CreateLocationSmbRequest& request) const;
 
         /**
-         * <p>Creates an endpoint for a Server Message Block (SMB) file
-         * system.</p><p><h3>See Also:</h3>   <a
+         * <p>Defines a file system on an Server Message Block (SMB) server that can be
+         * read from or written to</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb">AWS
          * API Reference</a></p>
          *
@@ -473,8 +473,8 @@ namespace Model
         virtual Model::CreateLocationSmbOutcomeCallable CreateLocationSmbCallable(const Model::CreateLocationSmbRequest& request) const;
 
         /**
-         * <p>Creates an endpoint for a Server Message Block (SMB) file
-         * system.</p><p><h3>See Also:</h3>   <a
+         * <p>Defines a file system on an Server Message Block (SMB) server that can be
+         * read from or written to</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb">AWS
          * API Reference</a></p>
          *

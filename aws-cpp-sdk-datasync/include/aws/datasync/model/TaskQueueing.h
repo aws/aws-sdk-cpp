@@ -23,22 +23,19 @@ namespace DataSync
 {
 namespace Model
 {
-  enum class TaskStatus
+  enum class TaskQueueing
   {
     NOT_SET,
-    AVAILABLE,
-    CREATING,
-    QUEUED,
-    RUNNING,
-    UNAVAILABLE
+    ENABLED,
+    DISABLED
   };
 
-namespace TaskStatusMapper
+namespace TaskQueueingMapper
 {
-AWS_DATASYNC_API TaskStatus GetTaskStatusForName(const Aws::String& name);
+AWS_DATASYNC_API TaskQueueing GetTaskQueueingForName(const Aws::String& name);
 
-AWS_DATASYNC_API Aws::String GetNameForTaskStatus(TaskStatus value);
-} // namespace TaskStatusMapper
+AWS_DATASYNC_API Aws::String GetNameForTaskQueueing(TaskQueueing value);
+} // namespace TaskQueueingMapper
 } // namespace Model
 } // namespace DataSync
 } // namespace Aws
