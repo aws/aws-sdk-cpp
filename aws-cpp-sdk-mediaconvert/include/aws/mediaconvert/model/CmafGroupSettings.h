@@ -22,6 +22,7 @@
 #include <aws/mediaconvert/model/CmafEncryptionSettings.h>
 #include <aws/mediaconvert/model/CmafManifestCompression.h>
 #include <aws/mediaconvert/model/CmafManifestDurationFormat.h>
+#include <aws/mediaconvert/model/CmafMpdProfile.h>
 #include <aws/mediaconvert/model/CmafSegmentControl.h>
 #include <aws/mediaconvert/model/CmafStreamInfResolution.h>
 #include <aws/mediaconvert/model/CmafWriteDASHManifest.h>
@@ -527,6 +528,73 @@ namespace Model
 
 
     /**
+     * Specify whether your DASH profile is on-demand or main. When you choose Main
+     * profile (MAIN_PROFILE), the service signals 
+     * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
+     * choose On-demand (ON_DEMAND_PROFILE), the service signals
+     * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
+     * On-demand, you must also set the output group setting Segment control
+     * (SegmentControl) to Single file (SINGLE_FILE).
+     */
+    inline const CmafMpdProfile& GetMpdProfile() const{ return m_mpdProfile; }
+
+    /**
+     * Specify whether your DASH profile is on-demand or main. When you choose Main
+     * profile (MAIN_PROFILE), the service signals 
+     * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
+     * choose On-demand (ON_DEMAND_PROFILE), the service signals
+     * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
+     * On-demand, you must also set the output group setting Segment control
+     * (SegmentControl) to Single file (SINGLE_FILE).
+     */
+    inline bool MpdProfileHasBeenSet() const { return m_mpdProfileHasBeenSet; }
+
+    /**
+     * Specify whether your DASH profile is on-demand or main. When you choose Main
+     * profile (MAIN_PROFILE), the service signals 
+     * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
+     * choose On-demand (ON_DEMAND_PROFILE), the service signals
+     * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
+     * On-demand, you must also set the output group setting Segment control
+     * (SegmentControl) to Single file (SINGLE_FILE).
+     */
+    inline void SetMpdProfile(const CmafMpdProfile& value) { m_mpdProfileHasBeenSet = true; m_mpdProfile = value; }
+
+    /**
+     * Specify whether your DASH profile is on-demand or main. When you choose Main
+     * profile (MAIN_PROFILE), the service signals 
+     * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
+     * choose On-demand (ON_DEMAND_PROFILE), the service signals
+     * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
+     * On-demand, you must also set the output group setting Segment control
+     * (SegmentControl) to Single file (SINGLE_FILE).
+     */
+    inline void SetMpdProfile(CmafMpdProfile&& value) { m_mpdProfileHasBeenSet = true; m_mpdProfile = std::move(value); }
+
+    /**
+     * Specify whether your DASH profile is on-demand or main. When you choose Main
+     * profile (MAIN_PROFILE), the service signals 
+     * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
+     * choose On-demand (ON_DEMAND_PROFILE), the service signals
+     * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
+     * On-demand, you must also set the output group setting Segment control
+     * (SegmentControl) to Single file (SINGLE_FILE).
+     */
+    inline CmafGroupSettings& WithMpdProfile(const CmafMpdProfile& value) { SetMpdProfile(value); return *this;}
+
+    /**
+     * Specify whether your DASH profile is on-demand or main. When you choose Main
+     * profile (MAIN_PROFILE), the service signals 
+     * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
+     * choose On-demand (ON_DEMAND_PROFILE), the service signals
+     * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
+     * On-demand, you must also set the output group setting Segment control
+     * (SegmentControl) to Single file (SINGLE_FILE).
+     */
+    inline CmafGroupSettings& WithMpdProfile(CmafMpdProfile&& value) { SetMpdProfile(std::move(value)); return *this;}
+
+
+    /**
      * When set to SINGLE_FILE, a single output file is generated, which is internally
      * segmented using the Fragment Length and Segment Length. When set to
      * SEGMENTED_FILES, separate segment files will be created.
@@ -750,6 +818,9 @@ namespace Model
 
     double m_minFinalSegmentLength;
     bool m_minFinalSegmentLengthHasBeenSet;
+
+    CmafMpdProfile m_mpdProfile;
+    bool m_mpdProfileHasBeenSet;
 
     CmafSegmentControl m_segmentControl;
     bool m_segmentControlHasBeenSet;

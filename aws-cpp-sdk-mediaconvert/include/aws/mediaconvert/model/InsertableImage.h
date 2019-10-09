@@ -177,50 +177,50 @@ namespace Model
 
 
     /**
-     * Specify the Amazon S3 location of the image that you want to overlay on the
-     * video. Use a PNG or TGA file.
+     * Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to
+     * overlay on the video. Use a PNG or TGA file.
      */
     inline const Aws::String& GetImageInserterInput() const{ return m_imageInserterInput; }
 
     /**
-     * Specify the Amazon S3 location of the image that you want to overlay on the
-     * video. Use a PNG or TGA file.
+     * Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to
+     * overlay on the video. Use a PNG or TGA file.
      */
     inline bool ImageInserterInputHasBeenSet() const { return m_imageInserterInputHasBeenSet; }
 
     /**
-     * Specify the Amazon S3 location of the image that you want to overlay on the
-     * video. Use a PNG or TGA file.
+     * Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to
+     * overlay on the video. Use a PNG or TGA file.
      */
     inline void SetImageInserterInput(const Aws::String& value) { m_imageInserterInputHasBeenSet = true; m_imageInserterInput = value; }
 
     /**
-     * Specify the Amazon S3 location of the image that you want to overlay on the
-     * video. Use a PNG or TGA file.
+     * Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to
+     * overlay on the video. Use a PNG or TGA file.
      */
     inline void SetImageInserterInput(Aws::String&& value) { m_imageInserterInputHasBeenSet = true; m_imageInserterInput = std::move(value); }
 
     /**
-     * Specify the Amazon S3 location of the image that you want to overlay on the
-     * video. Use a PNG or TGA file.
+     * Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to
+     * overlay on the video. Use a PNG or TGA file.
      */
     inline void SetImageInserterInput(const char* value) { m_imageInserterInputHasBeenSet = true; m_imageInserterInput.assign(value); }
 
     /**
-     * Specify the Amazon S3 location of the image that you want to overlay on the
-     * video. Use a PNG or TGA file.
+     * Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to
+     * overlay on the video. Use a PNG or TGA file.
      */
     inline InsertableImage& WithImageInserterInput(const Aws::String& value) { SetImageInserterInput(value); return *this;}
 
     /**
-     * Specify the Amazon S3 location of the image that you want to overlay on the
-     * video. Use a PNG or TGA file.
+     * Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to
+     * overlay on the video. Use a PNG or TGA file.
      */
     inline InsertableImage& WithImageInserterInput(Aws::String&& value) { SetImageInserterInput(std::move(value)); return *this;}
 
     /**
-     * Specify the Amazon S3 location of the image that you want to overlay on the
-     * video. Use a PNG or TGA file.
+     * Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to
+     * overlay on the video. Use a PNG or TGA file.
      */
     inline InsertableImage& WithImageInserterInput(const char* value) { SetImageInserterInput(value); return *this;}
 

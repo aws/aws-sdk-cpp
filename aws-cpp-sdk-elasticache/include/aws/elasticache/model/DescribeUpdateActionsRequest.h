@@ -138,6 +138,101 @@ namespace Model
 
 
     /**
+     * <p>The cache cluster IDs</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCacheClusterIds() const{ return m_cacheClusterIds; }
+
+    /**
+     * <p>The cache cluster IDs</p>
+     */
+    inline bool CacheClusterIdsHasBeenSet() const { return m_cacheClusterIdsHasBeenSet; }
+
+    /**
+     * <p>The cache cluster IDs</p>
+     */
+    inline void SetCacheClusterIds(const Aws::Vector<Aws::String>& value) { m_cacheClusterIdsHasBeenSet = true; m_cacheClusterIds = value; }
+
+    /**
+     * <p>The cache cluster IDs</p>
+     */
+    inline void SetCacheClusterIds(Aws::Vector<Aws::String>&& value) { m_cacheClusterIdsHasBeenSet = true; m_cacheClusterIds = std::move(value); }
+
+    /**
+     * <p>The cache cluster IDs</p>
+     */
+    inline DescribeUpdateActionsRequest& WithCacheClusterIds(const Aws::Vector<Aws::String>& value) { SetCacheClusterIds(value); return *this;}
+
+    /**
+     * <p>The cache cluster IDs</p>
+     */
+    inline DescribeUpdateActionsRequest& WithCacheClusterIds(Aws::Vector<Aws::String>&& value) { SetCacheClusterIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The cache cluster IDs</p>
+     */
+    inline DescribeUpdateActionsRequest& AddCacheClusterIds(const Aws::String& value) { m_cacheClusterIdsHasBeenSet = true; m_cacheClusterIds.push_back(value); return *this; }
+
+    /**
+     * <p>The cache cluster IDs</p>
+     */
+    inline DescribeUpdateActionsRequest& AddCacheClusterIds(Aws::String&& value) { m_cacheClusterIdsHasBeenSet = true; m_cacheClusterIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The cache cluster IDs</p>
+     */
+    inline DescribeUpdateActionsRequest& AddCacheClusterIds(const char* value) { m_cacheClusterIdsHasBeenSet = true; m_cacheClusterIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>The Elasticache engine to which the update applies. Either Redis or Memcached
+     * </p>
+     */
+    inline const Aws::String& GetEngine() const{ return m_engine; }
+
+    /**
+     * <p>The Elasticache engine to which the update applies. Either Redis or Memcached
+     * </p>
+     */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The Elasticache engine to which the update applies. Either Redis or Memcached
+     * </p>
+     */
+    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+
+    /**
+     * <p>The Elasticache engine to which the update applies. Either Redis or Memcached
+     * </p>
+     */
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
+
+    /**
+     * <p>The Elasticache engine to which the update applies. Either Redis or Memcached
+     * </p>
+     */
+    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
+
+    /**
+     * <p>The Elasticache engine to which the update applies. Either Redis or Memcached
+     * </p>
+     */
+    inline DescribeUpdateActionsRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+
+    /**
+     * <p>The Elasticache engine to which the update applies. Either Redis or Memcached
+     * </p>
+     */
+    inline DescribeUpdateActionsRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
+
+    /**
+     * <p>The Elasticache engine to which the update applies. Either Redis or Memcached
+     * </p>
+     */
+    inline DescribeUpdateActionsRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+
+
+    /**
      * <p>The status of the service update</p>
      */
     inline const Aws::Vector<ServiceUpdateStatus>& GetServiceUpdateStatus() const{ return m_serviceUpdateStatus; }
@@ -369,6 +464,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_replicationGroupIds;
     bool m_replicationGroupIdsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_cacheClusterIds;
+    bool m_cacheClusterIdsHasBeenSet;
+
+    Aws::String m_engine;
+    bool m_engineHasBeenSet;
 
     Aws::Vector<ServiceUpdateStatus> m_serviceUpdateStatus;
     bool m_serviceUpdateStatusHasBeenSet;

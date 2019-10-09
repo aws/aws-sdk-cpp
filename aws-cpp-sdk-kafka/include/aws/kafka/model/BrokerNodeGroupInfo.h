@@ -55,49 +55,79 @@ namespace Model
 
     /**
      * 
-            <p>The distribution of broker nodes across Availability Zones.</p>
-
-     *         
+            <p>The distribution of broker nodes across Availability Zones. This
+     * is an optional parameter. If you don't specify it, Amazon MSK gives it the value
+     * DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No
+     * other values are currently allowed.</p>
+         <p>Amazon MSK distributes the
+     * broker nodes evenly across the Availability Zones that correspond to the subnets
+     * you provide when you create the cluster.</p>
+         
      */
     inline const BrokerAZDistribution& GetBrokerAZDistribution() const{ return m_brokerAZDistribution; }
 
     /**
      * 
-            <p>The distribution of broker nodes across Availability Zones.</p>
-
-     *         
+            <p>The distribution of broker nodes across Availability Zones. This
+     * is an optional parameter. If you don't specify it, Amazon MSK gives it the value
+     * DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No
+     * other values are currently allowed.</p>
+         <p>Amazon MSK distributes the
+     * broker nodes evenly across the Availability Zones that correspond to the subnets
+     * you provide when you create the cluster.</p>
+         
      */
     inline bool BrokerAZDistributionHasBeenSet() const { return m_brokerAZDistributionHasBeenSet; }
 
     /**
      * 
-            <p>The distribution of broker nodes across Availability Zones.</p>
-
-     *         
+            <p>The distribution of broker nodes across Availability Zones. This
+     * is an optional parameter. If you don't specify it, Amazon MSK gives it the value
+     * DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No
+     * other values are currently allowed.</p>
+         <p>Amazon MSK distributes the
+     * broker nodes evenly across the Availability Zones that correspond to the subnets
+     * you provide when you create the cluster.</p>
+         
      */
     inline void SetBrokerAZDistribution(const BrokerAZDistribution& value) { m_brokerAZDistributionHasBeenSet = true; m_brokerAZDistribution = value; }
 
     /**
      * 
-            <p>The distribution of broker nodes across Availability Zones.</p>
-
-     *         
+            <p>The distribution of broker nodes across Availability Zones. This
+     * is an optional parameter. If you don't specify it, Amazon MSK gives it the value
+     * DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No
+     * other values are currently allowed.</p>
+         <p>Amazon MSK distributes the
+     * broker nodes evenly across the Availability Zones that correspond to the subnets
+     * you provide when you create the cluster.</p>
+         
      */
     inline void SetBrokerAZDistribution(BrokerAZDistribution&& value) { m_brokerAZDistributionHasBeenSet = true; m_brokerAZDistribution = std::move(value); }
 
     /**
      * 
-            <p>The distribution of broker nodes across Availability Zones.</p>
-
-     *         
+            <p>The distribution of broker nodes across Availability Zones. This
+     * is an optional parameter. If you don't specify it, Amazon MSK gives it the value
+     * DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No
+     * other values are currently allowed.</p>
+         <p>Amazon MSK distributes the
+     * broker nodes evenly across the Availability Zones that correspond to the subnets
+     * you provide when you create the cluster.</p>
+         
      */
     inline BrokerNodeGroupInfo& WithBrokerAZDistribution(const BrokerAZDistribution& value) { SetBrokerAZDistribution(value); return *this;}
 
     /**
      * 
-            <p>The distribution of broker nodes across Availability Zones.</p>
-
-     *         
+            <p>The distribution of broker nodes across Availability Zones. This
+     * is an optional parameter. If you don't specify it, Amazon MSK gives it the value
+     * DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No
+     * other values are currently allowed.</p>
+         <p>Amazon MSK distributes the
+     * broker nodes evenly across the Availability Zones that correspond to the subnets
+     * you provide when you create the cluster.</p>
+         
      */
     inline BrokerNodeGroupInfo& WithBrokerAZDistribution(BrokerAZDistribution&& value) { SetBrokerAZDistribution(std::move(value)); return *this;}
 

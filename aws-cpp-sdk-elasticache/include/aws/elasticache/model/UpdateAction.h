@@ -25,6 +25,7 @@
 #include <aws/elasticache/model/SlaMet.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/NodeGroupUpdateStatus.h>
+#include <aws/elasticache/model/CacheNodeUpdateStatus.h>
 #include <utility>
 
 namespace Aws
@@ -97,6 +98,47 @@ namespace Model
      * <p>The ID of the replication group</p>
      */
     inline UpdateAction& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
+
+
+    /**
+     * <p>The ID of the cache cluster</p>
+     */
+    inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
+
+    /**
+     * <p>The ID of the cache cluster</p>
+     */
+    inline bool CacheClusterIdHasBeenSet() const { return m_cacheClusterIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the cache cluster</p>
+     */
+    inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
+
+    /**
+     * <p>The ID of the cache cluster</p>
+     */
+    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
+
+    /**
+     * <p>The ID of the cache cluster</p>
+     */
+    inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
+
+    /**
+     * <p>The ID of the cache cluster</p>
+     */
+    inline UpdateAction& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
+
+    /**
+     * <p>The ID of the cache cluster</p>
+     */
+    inline UpdateAction& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the cache cluster</p>
+     */
+    inline UpdateAction& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
 
 
     /**
@@ -538,6 +580,47 @@ namespace Model
 
 
     /**
+     * <p>The status of the service update on the cache node</p>
+     */
+    inline const Aws::Vector<CacheNodeUpdateStatus>& GetCacheNodeUpdateStatus() const{ return m_cacheNodeUpdateStatus; }
+
+    /**
+     * <p>The status of the service update on the cache node</p>
+     */
+    inline bool CacheNodeUpdateStatusHasBeenSet() const { return m_cacheNodeUpdateStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the service update on the cache node</p>
+     */
+    inline void SetCacheNodeUpdateStatus(const Aws::Vector<CacheNodeUpdateStatus>& value) { m_cacheNodeUpdateStatusHasBeenSet = true; m_cacheNodeUpdateStatus = value; }
+
+    /**
+     * <p>The status of the service update on the cache node</p>
+     */
+    inline void SetCacheNodeUpdateStatus(Aws::Vector<CacheNodeUpdateStatus>&& value) { m_cacheNodeUpdateStatusHasBeenSet = true; m_cacheNodeUpdateStatus = std::move(value); }
+
+    /**
+     * <p>The status of the service update on the cache node</p>
+     */
+    inline UpdateAction& WithCacheNodeUpdateStatus(const Aws::Vector<CacheNodeUpdateStatus>& value) { SetCacheNodeUpdateStatus(value); return *this;}
+
+    /**
+     * <p>The status of the service update on the cache node</p>
+     */
+    inline UpdateAction& WithCacheNodeUpdateStatus(Aws::Vector<CacheNodeUpdateStatus>&& value) { SetCacheNodeUpdateStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>The status of the service update on the cache node</p>
+     */
+    inline UpdateAction& AddCacheNodeUpdateStatus(const CacheNodeUpdateStatus& value) { m_cacheNodeUpdateStatusHasBeenSet = true; m_cacheNodeUpdateStatus.push_back(value); return *this; }
+
+    /**
+     * <p>The status of the service update on the cache node</p>
+     */
+    inline UpdateAction& AddCacheNodeUpdateStatus(CacheNodeUpdateStatus&& value) { m_cacheNodeUpdateStatusHasBeenSet = true; m_cacheNodeUpdateStatus.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The estimated length of time for the update to complete</p>
      */
     inline const Aws::String& GetEstimatedUpdateTime() const{ return m_estimatedUpdateTime; }
@@ -577,10 +660,62 @@ namespace Model
      */
     inline UpdateAction& WithEstimatedUpdateTime(const char* value) { SetEstimatedUpdateTime(value); return *this;}
 
+
+    /**
+     * <p>The Elasticache engine to which the update applies. Either Redis or
+     * Memcached</p>
+     */
+    inline const Aws::String& GetEngine() const{ return m_engine; }
+
+    /**
+     * <p>The Elasticache engine to which the update applies. Either Redis or
+     * Memcached</p>
+     */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The Elasticache engine to which the update applies. Either Redis or
+     * Memcached</p>
+     */
+    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+
+    /**
+     * <p>The Elasticache engine to which the update applies. Either Redis or
+     * Memcached</p>
+     */
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
+
+    /**
+     * <p>The Elasticache engine to which the update applies. Either Redis or
+     * Memcached</p>
+     */
+    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
+
+    /**
+     * <p>The Elasticache engine to which the update applies. Either Redis or
+     * Memcached</p>
+     */
+    inline UpdateAction& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+
+    /**
+     * <p>The Elasticache engine to which the update applies. Either Redis or
+     * Memcached</p>
+     */
+    inline UpdateAction& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
+
+    /**
+     * <p>The Elasticache engine to which the update applies. Either Redis or
+     * Memcached</p>
+     */
+    inline UpdateAction& WithEngine(const char* value) { SetEngine(value); return *this;}
+
   private:
 
     Aws::String m_replicationGroupId;
     bool m_replicationGroupIdHasBeenSet;
+
+    Aws::String m_cacheClusterId;
+    bool m_cacheClusterIdHasBeenSet;
 
     Aws::String m_serviceUpdateName;
     bool m_serviceUpdateNameHasBeenSet;
@@ -618,8 +753,14 @@ namespace Model
     Aws::Vector<NodeGroupUpdateStatus> m_nodeGroupUpdateStatus;
     bool m_nodeGroupUpdateStatusHasBeenSet;
 
+    Aws::Vector<CacheNodeUpdateStatus> m_cacheNodeUpdateStatus;
+    bool m_cacheNodeUpdateStatusHasBeenSet;
+
     Aws::String m_estimatedUpdateTime;
     bool m_estimatedUpdateTimeHasBeenSet;
+
+    Aws::String m_engine;
+    bool m_engineHasBeenSet;
   };
 
 } // namespace Model

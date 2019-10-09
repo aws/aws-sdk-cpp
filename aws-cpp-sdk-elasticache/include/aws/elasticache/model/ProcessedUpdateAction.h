@@ -93,6 +93,47 @@ namespace Model
 
 
     /**
+     * <p>The ID of the cache cluster</p>
+     */
+    inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
+
+    /**
+     * <p>The ID of the cache cluster</p>
+     */
+    inline bool CacheClusterIdHasBeenSet() const { return m_cacheClusterIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the cache cluster</p>
+     */
+    inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
+
+    /**
+     * <p>The ID of the cache cluster</p>
+     */
+    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
+
+    /**
+     * <p>The ID of the cache cluster</p>
+     */
+    inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
+
+    /**
+     * <p>The ID of the cache cluster</p>
+     */
+    inline ProcessedUpdateAction& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
+
+    /**
+     * <p>The ID of the cache cluster</p>
+     */
+    inline ProcessedUpdateAction& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the cache cluster</p>
+     */
+    inline ProcessedUpdateAction& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
+
+
+    /**
      * <p>The unique ID of the service update</p>
      */
     inline const Aws::String& GetServiceUpdateName() const{ return m_serviceUpdateName; }
@@ -167,6 +208,9 @@ namespace Model
 
     Aws::String m_replicationGroupId;
     bool m_replicationGroupIdHasBeenSet;
+
+    Aws::String m_cacheClusterId;
+    bool m_cacheClusterIdHasBeenSet;
 
     Aws::String m_serviceUpdateName;
     bool m_serviceUpdateNameHasBeenSet;

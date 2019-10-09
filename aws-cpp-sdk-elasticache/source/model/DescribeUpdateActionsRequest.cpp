@@ -23,6 +23,8 @@ using namespace Aws::Utils;
 DescribeUpdateActionsRequest::DescribeUpdateActionsRequest() : 
     m_serviceUpdateNameHasBeenSet(false),
     m_replicationGroupIdsHasBeenSet(false),
+    m_cacheClusterIdsHasBeenSet(false),
+    m_engineHasBeenSet(false),
     m_serviceUpdateStatusHasBeenSet(false),
     m_serviceUpdateTimeRangeHasBeenSet(false),
     m_updateActionStatusHasBeenSet(false),
@@ -52,6 +54,22 @@ Aws::String DescribeUpdateActionsRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       replicationGroupIdsCount++;
     }
+  }
+
+  if(m_cacheClusterIdsHasBeenSet)
+  {
+    unsigned cacheClusterIdsCount = 1;
+    for(auto& item : m_cacheClusterIds)
+    {
+      ss << "CacheClusterIds.member." << cacheClusterIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      cacheClusterIdsCount++;
+    }
+  }
+
+  if(m_engineHasBeenSet)
+  {
+    ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 
   if(m_serviceUpdateStatusHasBeenSet)

@@ -32,6 +32,7 @@ namespace Model
 
 UnprocessedUpdateAction::UnprocessedUpdateAction() : 
     m_replicationGroupIdHasBeenSet(false),
+    m_cacheClusterIdHasBeenSet(false),
     m_serviceUpdateNameHasBeenSet(false),
     m_errorTypeHasBeenSet(false),
     m_errorMessageHasBeenSet(false)
@@ -40,6 +41,7 @@ UnprocessedUpdateAction::UnprocessedUpdateAction() :
 
 UnprocessedUpdateAction::UnprocessedUpdateAction(const XmlNode& xmlNode) : 
     m_replicationGroupIdHasBeenSet(false),
+    m_cacheClusterIdHasBeenSet(false),
     m_serviceUpdateNameHasBeenSet(false),
     m_errorTypeHasBeenSet(false),
     m_errorMessageHasBeenSet(false)
@@ -58,6 +60,12 @@ UnprocessedUpdateAction& UnprocessedUpdateAction::operator =(const XmlNode& xmlN
     {
       m_replicationGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(replicationGroupIdNode.GetText());
       m_replicationGroupIdHasBeenSet = true;
+    }
+    XmlNode cacheClusterIdNode = resultNode.FirstChild("CacheClusterId");
+    if(!cacheClusterIdNode.IsNull())
+    {
+      m_cacheClusterId = Aws::Utils::Xml::DecodeEscapedXmlText(cacheClusterIdNode.GetText());
+      m_cacheClusterIdHasBeenSet = true;
     }
     XmlNode serviceUpdateNameNode = resultNode.FirstChild("ServiceUpdateName");
     if(!serviceUpdateNameNode.IsNull())
@@ -89,6 +97,11 @@ void UnprocessedUpdateAction::OutputToStream(Aws::OStream& oStream, const char* 
       oStream << location << index << locationValue << ".ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
   }
 
+  if(m_cacheClusterIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
+  }
+
   if(m_serviceUpdateNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".ServiceUpdateName=" << StringUtils::URLEncode(m_serviceUpdateName.c_str()) << "&";
@@ -111,6 +124,10 @@ void UnprocessedUpdateAction::OutputToStream(Aws::OStream& oStream, const char* 
   if(m_replicationGroupIdHasBeenSet)
   {
       oStream << location << ".ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
+  }
+  if(m_cacheClusterIdHasBeenSet)
+  {
+      oStream << location << ".CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
   }
   if(m_serviceUpdateNameHasBeenSet)
   {

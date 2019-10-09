@@ -16,10 +16,12 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/AccelerationSettings.h>
+#include <aws/mediaconvert/model/AccelerationStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/BillingTagsSource.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/mediaconvert/model/JobPhase.h>
+#include <aws/mediaconvert/model/JobMessages.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/JobSettings.h>
 #include <aws/mediaconvert/model/SimulateReservedQueue.h>
@@ -97,6 +99,97 @@ namespace Model
      * complex content.
      */
     inline Job& WithAccelerationSettings(AccelerationSettings&& value) { SetAccelerationSettings(std::move(value)); return *this;}
+
+
+    /**
+     * Describes whether the current job is running with accelerated transcoding. For
+     * jobs that have Acceleration (AccelerationMode) set to DISABLED,
+     * AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration
+     * (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the
+     * other states. AccelerationStatus is IN_PROGRESS initially, while the service
+     * determines whether the input files and job settings are compatible with
+     * accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your
+     * input files and job settings aren't compatible with accelerated transcoding, the
+     * service either fails your job or runs it without accelerated transcoding,
+     * depending on how you set Acceleration (AccelerationMode). When the service runs
+     * your job without accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
+     */
+    inline const AccelerationStatus& GetAccelerationStatus() const{ return m_accelerationStatus; }
+
+    /**
+     * Describes whether the current job is running with accelerated transcoding. For
+     * jobs that have Acceleration (AccelerationMode) set to DISABLED,
+     * AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration
+     * (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the
+     * other states. AccelerationStatus is IN_PROGRESS initially, while the service
+     * determines whether the input files and job settings are compatible with
+     * accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your
+     * input files and job settings aren't compatible with accelerated transcoding, the
+     * service either fails your job or runs it without accelerated transcoding,
+     * depending on how you set Acceleration (AccelerationMode). When the service runs
+     * your job without accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
+     */
+    inline bool AccelerationStatusHasBeenSet() const { return m_accelerationStatusHasBeenSet; }
+
+    /**
+     * Describes whether the current job is running with accelerated transcoding. For
+     * jobs that have Acceleration (AccelerationMode) set to DISABLED,
+     * AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration
+     * (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the
+     * other states. AccelerationStatus is IN_PROGRESS initially, while the service
+     * determines whether the input files and job settings are compatible with
+     * accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your
+     * input files and job settings aren't compatible with accelerated transcoding, the
+     * service either fails your job or runs it without accelerated transcoding,
+     * depending on how you set Acceleration (AccelerationMode). When the service runs
+     * your job without accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
+     */
+    inline void SetAccelerationStatus(const AccelerationStatus& value) { m_accelerationStatusHasBeenSet = true; m_accelerationStatus = value; }
+
+    /**
+     * Describes whether the current job is running with accelerated transcoding. For
+     * jobs that have Acceleration (AccelerationMode) set to DISABLED,
+     * AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration
+     * (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the
+     * other states. AccelerationStatus is IN_PROGRESS initially, while the service
+     * determines whether the input files and job settings are compatible with
+     * accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your
+     * input files and job settings aren't compatible with accelerated transcoding, the
+     * service either fails your job or runs it without accelerated transcoding,
+     * depending on how you set Acceleration (AccelerationMode). When the service runs
+     * your job without accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
+     */
+    inline void SetAccelerationStatus(AccelerationStatus&& value) { m_accelerationStatusHasBeenSet = true; m_accelerationStatus = std::move(value); }
+
+    /**
+     * Describes whether the current job is running with accelerated transcoding. For
+     * jobs that have Acceleration (AccelerationMode) set to DISABLED,
+     * AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration
+     * (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the
+     * other states. AccelerationStatus is IN_PROGRESS initially, while the service
+     * determines whether the input files and job settings are compatible with
+     * accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your
+     * input files and job settings aren't compatible with accelerated transcoding, the
+     * service either fails your job or runs it without accelerated transcoding,
+     * depending on how you set Acceleration (AccelerationMode). When the service runs
+     * your job without accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
+     */
+    inline Job& WithAccelerationStatus(const AccelerationStatus& value) { SetAccelerationStatus(value); return *this;}
+
+    /**
+     * Describes whether the current job is running with accelerated transcoding. For
+     * jobs that have Acceleration (AccelerationMode) set to DISABLED,
+     * AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration
+     * (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the
+     * other states. AccelerationStatus is IN_PROGRESS initially, while the service
+     * determines whether the input files and job settings are compatible with
+     * accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your
+     * input files and job settings aren't compatible with accelerated transcoding, the
+     * service either fails your job or runs it without accelerated transcoding,
+     * depending on how you set Acceleration (AccelerationMode). When the service runs
+     * your job without accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
+     */
+    inline Job& WithAccelerationStatus(AccelerationStatus&& value) { SetAccelerationStatus(std::move(value)); return *this;}
 
 
     /**
@@ -464,6 +557,43 @@ namespace Model
      * template.
      */
     inline Job& WithJobTemplate(const char* value) { SetJobTemplate(value); return *this;}
+
+
+    /**
+     * Provides messages from the service about jobs that you have already successfully
+     * submitted.
+     */
+    inline const JobMessages& GetMessages() const{ return m_messages; }
+
+    /**
+     * Provides messages from the service about jobs that you have already successfully
+     * submitted.
+     */
+    inline bool MessagesHasBeenSet() const { return m_messagesHasBeenSet; }
+
+    /**
+     * Provides messages from the service about jobs that you have already successfully
+     * submitted.
+     */
+    inline void SetMessages(const JobMessages& value) { m_messagesHasBeenSet = true; m_messages = value; }
+
+    /**
+     * Provides messages from the service about jobs that you have already successfully
+     * submitted.
+     */
+    inline void SetMessages(JobMessages&& value) { m_messagesHasBeenSet = true; m_messages = std::move(value); }
+
+    /**
+     * Provides messages from the service about jobs that you have already successfully
+     * submitted.
+     */
+    inline Job& WithMessages(const JobMessages& value) { SetMessages(value); return *this;}
+
+    /**
+     * Provides messages from the service about jobs that you have already successfully
+     * submitted.
+     */
+    inline Job& WithMessages(JobMessages&& value) { SetMessages(std::move(value)); return *this;}
 
 
     /**
@@ -955,6 +1085,9 @@ namespace Model
     AccelerationSettings m_accelerationSettings;
     bool m_accelerationSettingsHasBeenSet;
 
+    AccelerationStatus m_accelerationStatus;
+    bool m_accelerationStatusHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
 
@@ -981,6 +1114,9 @@ namespace Model
 
     Aws::String m_jobTemplate;
     bool m_jobTemplateHasBeenSet;
+
+    JobMessages m_messages;
+    bool m_messagesHasBeenSet;
 
     Aws::Vector<OutputGroupDetail> m_outputGroupDetails;
     bool m_outputGroupDetailsHasBeenSet;

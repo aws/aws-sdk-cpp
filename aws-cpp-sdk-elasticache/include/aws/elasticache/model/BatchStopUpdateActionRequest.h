@@ -94,6 +94,52 @@ namespace Model
 
 
     /**
+     * <p>The cache cluster IDs</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCacheClusterIds() const{ return m_cacheClusterIds; }
+
+    /**
+     * <p>The cache cluster IDs</p>
+     */
+    inline bool CacheClusterIdsHasBeenSet() const { return m_cacheClusterIdsHasBeenSet; }
+
+    /**
+     * <p>The cache cluster IDs</p>
+     */
+    inline void SetCacheClusterIds(const Aws::Vector<Aws::String>& value) { m_cacheClusterIdsHasBeenSet = true; m_cacheClusterIds = value; }
+
+    /**
+     * <p>The cache cluster IDs</p>
+     */
+    inline void SetCacheClusterIds(Aws::Vector<Aws::String>&& value) { m_cacheClusterIdsHasBeenSet = true; m_cacheClusterIds = std::move(value); }
+
+    /**
+     * <p>The cache cluster IDs</p>
+     */
+    inline BatchStopUpdateActionRequest& WithCacheClusterIds(const Aws::Vector<Aws::String>& value) { SetCacheClusterIds(value); return *this;}
+
+    /**
+     * <p>The cache cluster IDs</p>
+     */
+    inline BatchStopUpdateActionRequest& WithCacheClusterIds(Aws::Vector<Aws::String>&& value) { SetCacheClusterIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The cache cluster IDs</p>
+     */
+    inline BatchStopUpdateActionRequest& AddCacheClusterIds(const Aws::String& value) { m_cacheClusterIdsHasBeenSet = true; m_cacheClusterIds.push_back(value); return *this; }
+
+    /**
+     * <p>The cache cluster IDs</p>
+     */
+    inline BatchStopUpdateActionRequest& AddCacheClusterIds(Aws::String&& value) { m_cacheClusterIdsHasBeenSet = true; m_cacheClusterIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The cache cluster IDs</p>
+     */
+    inline BatchStopUpdateActionRequest& AddCacheClusterIds(const char* value) { m_cacheClusterIdsHasBeenSet = true; m_cacheClusterIds.push_back(value); return *this; }
+
+
+    /**
      * <p>The unique ID of the service update</p>
      */
     inline const Aws::String& GetServiceUpdateName() const{ return m_serviceUpdateName; }
@@ -137,6 +183,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_replicationGroupIds;
     bool m_replicationGroupIdsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_cacheClusterIds;
+    bool m_cacheClusterIdsHasBeenSet;
 
     Aws::String m_serviceUpdateName;
     bool m_serviceUpdateNameHasBeenSet;

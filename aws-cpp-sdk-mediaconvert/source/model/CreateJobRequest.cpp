@@ -38,6 +38,7 @@ CreateJobRequest::CreateJobRequest() :
     m_simulateReservedQueueHasBeenSet(false),
     m_statusUpdateInterval(StatusUpdateInterval::NOT_SET),
     m_statusUpdateIntervalHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_userMetadataHasBeenSet(false)
 {
 }
@@ -101,6 +102,17 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_statusUpdateIntervalHasBeenSet)
   {
    payload.WithString("statusUpdateInterval", StatusUpdateIntervalMapper::GetNameForStatusUpdateInterval(m_statusUpdateInterval));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
   }
 
   if(m_userMetadataHasBeenSet)

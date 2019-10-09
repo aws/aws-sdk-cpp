@@ -30,6 +30,8 @@ namespace Model
 
 Job::Job() : 
     m_accelerationSettingsHasBeenSet(false),
+    m_accelerationStatus(AccelerationStatus::NOT_SET),
+    m_accelerationStatusHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_billingTagsSource(BillingTagsSource::NOT_SET),
     m_billingTagsSourceHasBeenSet(false),
@@ -43,6 +45,7 @@ Job::Job() :
     m_jobPercentComplete(0),
     m_jobPercentCompleteHasBeenSet(false),
     m_jobTemplateHasBeenSet(false),
+    m_messagesHasBeenSet(false),
     m_outputGroupDetailsHasBeenSet(false),
     m_priority(0),
     m_priorityHasBeenSet(false),
@@ -64,6 +67,8 @@ Job::Job() :
 
 Job::Job(JsonView jsonValue) : 
     m_accelerationSettingsHasBeenSet(false),
+    m_accelerationStatus(AccelerationStatus::NOT_SET),
+    m_accelerationStatusHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_billingTagsSource(BillingTagsSource::NOT_SET),
     m_billingTagsSourceHasBeenSet(false),
@@ -77,6 +82,7 @@ Job::Job(JsonView jsonValue) :
     m_jobPercentComplete(0),
     m_jobPercentCompleteHasBeenSet(false),
     m_jobTemplateHasBeenSet(false),
+    m_messagesHasBeenSet(false),
     m_outputGroupDetailsHasBeenSet(false),
     m_priority(0),
     m_priorityHasBeenSet(false),
@@ -104,6 +110,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_accelerationSettings = jsonValue.GetObject("accelerationSettings");
 
     m_accelerationSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("accelerationStatus"))
+  {
+    m_accelerationStatus = AccelerationStatusMapper::GetAccelerationStatusForName(jsonValue.GetString("accelerationStatus"));
+
+    m_accelerationStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("arn"))
@@ -167,6 +180,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_jobTemplate = jsonValue.GetString("jobTemplate");
 
     m_jobTemplateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("messages"))
+  {
+    m_messages = jsonValue.GetObject("messages");
+
+    m_messagesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("outputGroupDetails"))
@@ -265,6 +285,11 @@ JsonValue Job::Jsonize() const
 
   }
 
+  if(m_accelerationStatusHasBeenSet)
+  {
+   payload.WithString("accelerationStatus", AccelerationStatusMapper::GetNameForAccelerationStatus(m_accelerationStatus));
+  }
+
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
@@ -313,6 +338,12 @@ JsonValue Job::Jsonize() const
   if(m_jobTemplateHasBeenSet)
   {
    payload.WithString("jobTemplate", m_jobTemplate);
+
+  }
+
+  if(m_messagesHasBeenSet)
+  {
+   payload.WithObject("messages", m_messages.Jsonize());
 
   }
 

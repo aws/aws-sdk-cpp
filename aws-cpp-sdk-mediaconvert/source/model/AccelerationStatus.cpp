@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/mediaconvert/model/BillingTagsSource.h>
+#include <aws/mediaconvert/model/AccelerationStatus.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -27,56 +27,56 @@ namespace Aws
   {
     namespace Model
     {
-      namespace BillingTagsSourceMapper
+      namespace AccelerationStatusMapper
       {
 
-        static const int QUEUE_HASH = HashingUtils::HashString("QUEUE");
-        static const int PRESET_HASH = HashingUtils::HashString("PRESET");
-        static const int JOB_TEMPLATE_HASH = HashingUtils::HashString("JOB_TEMPLATE");
-        static const int JOB_HASH = HashingUtils::HashString("JOB");
+        static const int NOT_APPLICABLE_HASH = HashingUtils::HashString("NOT_APPLICABLE");
+        static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
+        static const int ACCELERATED_HASH = HashingUtils::HashString("ACCELERATED");
+        static const int NOT_ACCELERATED_HASH = HashingUtils::HashString("NOT_ACCELERATED");
 
 
-        BillingTagsSource GetBillingTagsSourceForName(const Aws::String& name)
+        AccelerationStatus GetAccelerationStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == QUEUE_HASH)
+          if (hashCode == NOT_APPLICABLE_HASH)
           {
-            return BillingTagsSource::QUEUE;
+            return AccelerationStatus::NOT_APPLICABLE;
           }
-          else if (hashCode == PRESET_HASH)
+          else if (hashCode == IN_PROGRESS_HASH)
           {
-            return BillingTagsSource::PRESET;
+            return AccelerationStatus::IN_PROGRESS;
           }
-          else if (hashCode == JOB_TEMPLATE_HASH)
+          else if (hashCode == ACCELERATED_HASH)
           {
-            return BillingTagsSource::JOB_TEMPLATE;
+            return AccelerationStatus::ACCELERATED;
           }
-          else if (hashCode == JOB_HASH)
+          else if (hashCode == NOT_ACCELERATED_HASH)
           {
-            return BillingTagsSource::JOB;
+            return AccelerationStatus::NOT_ACCELERATED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<BillingTagsSource>(hashCode);
+            return static_cast<AccelerationStatus>(hashCode);
           }
 
-          return BillingTagsSource::NOT_SET;
+          return AccelerationStatus::NOT_SET;
         }
 
-        Aws::String GetNameForBillingTagsSource(BillingTagsSource enumValue)
+        Aws::String GetNameForAccelerationStatus(AccelerationStatus enumValue)
         {
           switch(enumValue)
           {
-          case BillingTagsSource::QUEUE:
-            return "QUEUE";
-          case BillingTagsSource::PRESET:
-            return "PRESET";
-          case BillingTagsSource::JOB_TEMPLATE:
-            return "JOB_TEMPLATE";
-          case BillingTagsSource::JOB:
-            return "JOB";
+          case AccelerationStatus::NOT_APPLICABLE:
+            return "NOT_APPLICABLE";
+          case AccelerationStatus::IN_PROGRESS:
+            return "IN_PROGRESS";
+          case AccelerationStatus::ACCELERATED:
+            return "ACCELERATED";
+          case AccelerationStatus::NOT_ACCELERATED:
+            return "NOT_ACCELERATED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -88,7 +88,7 @@ namespace Aws
           }
         }
 
-      } // namespace BillingTagsSourceMapper
+      } // namespace AccelerationStatusMapper
     } // namespace Model
   } // namespace MediaConvert
 } // namespace Aws

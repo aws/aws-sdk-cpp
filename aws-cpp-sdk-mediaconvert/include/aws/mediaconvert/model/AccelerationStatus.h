@@ -23,21 +23,21 @@ namespace MediaConvert
 {
 namespace Model
 {
-  enum class BillingTagsSource
+  enum class AccelerationStatus
   {
     NOT_SET,
-    QUEUE,
-    PRESET,
-    JOB_TEMPLATE,
-    JOB
+    NOT_APPLICABLE,
+    IN_PROGRESS,
+    ACCELERATED,
+    NOT_ACCELERATED
   };
 
-namespace BillingTagsSourceMapper
+namespace AccelerationStatusMapper
 {
-AWS_MEDIACONVERT_API BillingTagsSource GetBillingTagsSourceForName(const Aws::String& name);
+AWS_MEDIACONVERT_API AccelerationStatus GetAccelerationStatusForName(const Aws::String& name);
 
-AWS_MEDIACONVERT_API Aws::String GetNameForBillingTagsSource(BillingTagsSource value);
-} // namespace BillingTagsSourceMapper
+AWS_MEDIACONVERT_API Aws::String GetNameForAccelerationStatus(AccelerationStatus value);
+} // namespace AccelerationStatusMapper
 } // namespace Model
 } // namespace MediaConvert
 } // namespace Aws

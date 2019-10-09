@@ -51,32 +51,38 @@ namespace Model
 
 
     /**
-     * Acceleration configuration for the job.
+     * Specify the conditions when the service will run your job with accelerated
+     * transcoding.
      */
     inline const AccelerationMode& GetMode() const{ return m_mode; }
 
     /**
-     * Acceleration configuration for the job.
+     * Specify the conditions when the service will run your job with accelerated
+     * transcoding.
      */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
     /**
-     * Acceleration configuration for the job.
+     * Specify the conditions when the service will run your job with accelerated
+     * transcoding.
      */
     inline void SetMode(const AccelerationMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
-     * Acceleration configuration for the job.
+     * Specify the conditions when the service will run your job with accelerated
+     * transcoding.
      */
     inline void SetMode(AccelerationMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
-     * Acceleration configuration for the job.
+     * Specify the conditions when the service will run your job with accelerated
+     * transcoding.
      */
     inline AccelerationSettings& WithMode(const AccelerationMode& value) { SetMode(value); return *this;}
 
     /**
-     * Acceleration configuration for the job.
+     * Specify the conditions when the service will run your job with accelerated
+     * transcoding.
      */
     inline AccelerationSettings& WithMode(AccelerationMode&& value) { SetMode(std::move(value)); return *this;}
 

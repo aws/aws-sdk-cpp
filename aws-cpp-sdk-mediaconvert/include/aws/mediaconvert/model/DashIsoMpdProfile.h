@@ -23,21 +23,19 @@ namespace MediaConvert
 {
 namespace Model
 {
-  enum class BillingTagsSource
+  enum class DashIsoMpdProfile
   {
     NOT_SET,
-    QUEUE,
-    PRESET,
-    JOB_TEMPLATE,
-    JOB
+    MAIN_PROFILE,
+    ON_DEMAND_PROFILE
   };
 
-namespace BillingTagsSourceMapper
+namespace DashIsoMpdProfileMapper
 {
-AWS_MEDIACONVERT_API BillingTagsSource GetBillingTagsSourceForName(const Aws::String& name);
+AWS_MEDIACONVERT_API DashIsoMpdProfile GetDashIsoMpdProfileForName(const Aws::String& name);
 
-AWS_MEDIACONVERT_API Aws::String GetNameForBillingTagsSource(BillingTagsSource value);
-} // namespace BillingTagsSourceMapper
+AWS_MEDIACONVERT_API Aws::String GetNameForDashIsoMpdProfile(DashIsoMpdProfile value);
+} // namespace DashIsoMpdProfileMapper
 } // namespace Model
 } // namespace MediaConvert
 } // namespace Aws

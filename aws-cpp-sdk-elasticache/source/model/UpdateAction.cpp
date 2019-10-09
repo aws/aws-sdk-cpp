@@ -32,6 +32,7 @@ namespace Model
 
 UpdateAction::UpdateAction() : 
     m_replicationGroupIdHasBeenSet(false),
+    m_cacheClusterIdHasBeenSet(false),
     m_serviceUpdateNameHasBeenSet(false),
     m_serviceUpdateReleaseDateHasBeenSet(false),
     m_serviceUpdateSeverity(ServiceUpdateSeverity::NOT_SET),
@@ -49,12 +50,15 @@ UpdateAction::UpdateAction() :
     m_slaMet(SlaMet::NOT_SET),
     m_slaMetHasBeenSet(false),
     m_nodeGroupUpdateStatusHasBeenSet(false),
-    m_estimatedUpdateTimeHasBeenSet(false)
+    m_cacheNodeUpdateStatusHasBeenSet(false),
+    m_estimatedUpdateTimeHasBeenSet(false),
+    m_engineHasBeenSet(false)
 {
 }
 
 UpdateAction::UpdateAction(const XmlNode& xmlNode) : 
     m_replicationGroupIdHasBeenSet(false),
+    m_cacheClusterIdHasBeenSet(false),
     m_serviceUpdateNameHasBeenSet(false),
     m_serviceUpdateReleaseDateHasBeenSet(false),
     m_serviceUpdateSeverity(ServiceUpdateSeverity::NOT_SET),
@@ -72,7 +76,9 @@ UpdateAction::UpdateAction(const XmlNode& xmlNode) :
     m_slaMet(SlaMet::NOT_SET),
     m_slaMetHasBeenSet(false),
     m_nodeGroupUpdateStatusHasBeenSet(false),
-    m_estimatedUpdateTimeHasBeenSet(false)
+    m_cacheNodeUpdateStatusHasBeenSet(false),
+    m_estimatedUpdateTimeHasBeenSet(false),
+    m_engineHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -88,6 +94,12 @@ UpdateAction& UpdateAction::operator =(const XmlNode& xmlNode)
     {
       m_replicationGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(replicationGroupIdNode.GetText());
       m_replicationGroupIdHasBeenSet = true;
+    }
+    XmlNode cacheClusterIdNode = resultNode.FirstChild("CacheClusterId");
+    if(!cacheClusterIdNode.IsNull())
+    {
+      m_cacheClusterId = Aws::Utils::Xml::DecodeEscapedXmlText(cacheClusterIdNode.GetText());
+      m_cacheClusterIdHasBeenSet = true;
     }
     XmlNode serviceUpdateNameNode = resultNode.FirstChild("ServiceUpdateName");
     if(!serviceUpdateNameNode.IsNull())
@@ -167,11 +179,29 @@ UpdateAction& UpdateAction::operator =(const XmlNode& xmlNode)
 
       m_nodeGroupUpdateStatusHasBeenSet = true;
     }
+    XmlNode cacheNodeUpdateStatusNode = resultNode.FirstChild("CacheNodeUpdateStatus");
+    if(!cacheNodeUpdateStatusNode.IsNull())
+    {
+      XmlNode cacheNodeUpdateStatusMember = cacheNodeUpdateStatusNode.FirstChild("CacheNodeUpdateStatus");
+      while(!cacheNodeUpdateStatusMember.IsNull())
+      {
+        m_cacheNodeUpdateStatus.push_back(cacheNodeUpdateStatusMember);
+        cacheNodeUpdateStatusMember = cacheNodeUpdateStatusMember.NextNode("CacheNodeUpdateStatus");
+      }
+
+      m_cacheNodeUpdateStatusHasBeenSet = true;
+    }
     XmlNode estimatedUpdateTimeNode = resultNode.FirstChild("EstimatedUpdateTime");
     if(!estimatedUpdateTimeNode.IsNull())
     {
       m_estimatedUpdateTime = Aws::Utils::Xml::DecodeEscapedXmlText(estimatedUpdateTimeNode.GetText());
       m_estimatedUpdateTimeHasBeenSet = true;
+    }
+    XmlNode engineNode = resultNode.FirstChild("Engine");
+    if(!engineNode.IsNull())
+    {
+      m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
+      m_engineHasBeenSet = true;
     }
   }
 
@@ -183,6 +213,11 @@ void UpdateAction::OutputToStream(Aws::OStream& oStream, const char* location, u
   if(m_replicationGroupIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
+  }
+
+  if(m_cacheClusterIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
   }
 
   if(m_serviceUpdateNameHasBeenSet)
@@ -251,9 +286,25 @@ void UpdateAction::OutputToStream(Aws::OStream& oStream, const char* location, u
       }
   }
 
+  if(m_cacheNodeUpdateStatusHasBeenSet)
+  {
+      unsigned cacheNodeUpdateStatusIdx = 1;
+      for(auto& item : m_cacheNodeUpdateStatus)
+      {
+        Aws::StringStream cacheNodeUpdateStatusSs;
+        cacheNodeUpdateStatusSs << location << index << locationValue << ".CacheNodeUpdateStatus." << cacheNodeUpdateStatusIdx++;
+        item.OutputToStream(oStream, cacheNodeUpdateStatusSs.str().c_str());
+      }
+  }
+
   if(m_estimatedUpdateTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".EstimatedUpdateTime=" << StringUtils::URLEncode(m_estimatedUpdateTime.c_str()) << "&";
+  }
+
+  if(m_engineHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 
 }
@@ -263,6 +314,10 @@ void UpdateAction::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_replicationGroupIdHasBeenSet)
   {
       oStream << location << ".ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
+  }
+  if(m_cacheClusterIdHasBeenSet)
+  {
+      oStream << location << ".CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
   }
   if(m_serviceUpdateNameHasBeenSet)
   {
@@ -318,9 +373,23 @@ void UpdateAction::OutputToStream(Aws::OStream& oStream, const char* location) c
         item.OutputToStream(oStream, nodeGroupUpdateStatusSs.str().c_str());
       }
   }
+  if(m_cacheNodeUpdateStatusHasBeenSet)
+  {
+      unsigned cacheNodeUpdateStatusIdx = 1;
+      for(auto& item : m_cacheNodeUpdateStatus)
+      {
+        Aws::StringStream cacheNodeUpdateStatusSs;
+        cacheNodeUpdateStatusSs << location <<  ".CacheNodeUpdateStatus." << cacheNodeUpdateStatusIdx++;
+        item.OutputToStream(oStream, cacheNodeUpdateStatusSs.str().c_str());
+      }
+  }
   if(m_estimatedUpdateTimeHasBeenSet)
   {
       oStream << location << ".EstimatedUpdateTime=" << StringUtils::URLEncode(m_estimatedUpdateTime.c_str()) << "&";
+  }
+  if(m_engineHasBeenSet)
+  {
+      oStream << location << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 }
 

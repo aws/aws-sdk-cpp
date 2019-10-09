@@ -341,83 +341,99 @@ namespace Model
 
 
     /**
-     * <p>The Redis engine to which the service update applies</p>
+     * <p>The Elasticache engine to which the update applies. Either Redis or
+     * Memcached</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>The Redis engine to which the service update applies</p>
+     * <p>The Elasticache engine to which the update applies. Either Redis or
+     * Memcached</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>The Redis engine to which the service update applies</p>
+     * <p>The Elasticache engine to which the update applies. Either Redis or
+     * Memcached</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The Redis engine to which the service update applies</p>
+     * <p>The Elasticache engine to which the update applies. Either Redis or
+     * Memcached</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>The Redis engine to which the service update applies</p>
+     * <p>The Elasticache engine to which the update applies. Either Redis or
+     * Memcached</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>The Redis engine to which the service update applies</p>
+     * <p>The Elasticache engine to which the update applies. Either Redis or
+     * Memcached</p>
      */
     inline ServiceUpdate& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The Redis engine to which the service update applies</p>
+     * <p>The Elasticache engine to which the update applies. Either Redis or
+     * Memcached</p>
      */
     inline ServiceUpdate& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>The Redis engine to which the service update applies</p>
+     * <p>The Elasticache engine to which the update applies. Either Redis or
+     * Memcached</p>
      */
     inline ServiceUpdate& WithEngine(const char* value) { SetEngine(value); return *this;}
 
 
     /**
-     * <p>The Redis engine version to which the service update applies</p>
+     * <p>The Elasticache engine version to which the update applies. Either Redis or
+     * Memcached engine version</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The Redis engine version to which the service update applies</p>
+     * <p>The Elasticache engine version to which the update applies. Either Redis or
+     * Memcached engine version</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p>The Redis engine version to which the service update applies</p>
+     * <p>The Elasticache engine version to which the update applies. Either Redis or
+     * Memcached engine version</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The Redis engine version to which the service update applies</p>
+     * <p>The Elasticache engine version to which the update applies. Either Redis or
+     * Memcached engine version</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The Redis engine version to which the service update applies</p>
+     * <p>The Elasticache engine version to which the update applies. Either Redis or
+     * Memcached engine version</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The Redis engine version to which the service update applies</p>
+     * <p>The Elasticache engine version to which the update applies. Either Redis or
+     * Memcached engine version</p>
      */
     inline ServiceUpdate& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The Redis engine version to which the service update applies</p>
+     * <p>The Elasticache engine version to which the update applies. Either Redis or
+     * Memcached engine version</p>
      */
     inline ServiceUpdate& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The Redis engine version to which the service update applies</p>
+     * <p>The Elasticache engine version to which the update applies. Either Redis or
+     * Memcached engine version</p>
      */
     inline ServiceUpdate& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

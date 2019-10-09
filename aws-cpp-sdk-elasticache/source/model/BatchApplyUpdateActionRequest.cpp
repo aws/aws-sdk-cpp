@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 
 BatchApplyUpdateActionRequest::BatchApplyUpdateActionRequest() : 
     m_replicationGroupIdsHasBeenSet(false),
+    m_cacheClusterIdsHasBeenSet(false),
     m_serviceUpdateNameHasBeenSet(false)
 {
 }
@@ -38,6 +39,17 @@ Aws::String BatchApplyUpdateActionRequest::SerializePayload() const
       ss << "ReplicationGroupIds.member." << replicationGroupIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       replicationGroupIdsCount++;
+    }
+  }
+
+  if(m_cacheClusterIdsHasBeenSet)
+  {
+    unsigned cacheClusterIdsCount = 1;
+    for(auto& item : m_cacheClusterIds)
+    {
+      ss << "CacheClusterIds.member." << cacheClusterIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      cacheClusterIdsCount++;
     }
   }
 

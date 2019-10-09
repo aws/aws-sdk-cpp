@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/mediaconvert/model/BillingTagsSource.h>
+#include <aws/mediaconvert/model/CmafMpdProfile.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -27,56 +27,42 @@ namespace Aws
   {
     namespace Model
     {
-      namespace BillingTagsSourceMapper
+      namespace CmafMpdProfileMapper
       {
 
-        static const int QUEUE_HASH = HashingUtils::HashString("QUEUE");
-        static const int PRESET_HASH = HashingUtils::HashString("PRESET");
-        static const int JOB_TEMPLATE_HASH = HashingUtils::HashString("JOB_TEMPLATE");
-        static const int JOB_HASH = HashingUtils::HashString("JOB");
+        static const int MAIN_PROFILE_HASH = HashingUtils::HashString("MAIN_PROFILE");
+        static const int ON_DEMAND_PROFILE_HASH = HashingUtils::HashString("ON_DEMAND_PROFILE");
 
 
-        BillingTagsSource GetBillingTagsSourceForName(const Aws::String& name)
+        CmafMpdProfile GetCmafMpdProfileForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == QUEUE_HASH)
+          if (hashCode == MAIN_PROFILE_HASH)
           {
-            return BillingTagsSource::QUEUE;
+            return CmafMpdProfile::MAIN_PROFILE;
           }
-          else if (hashCode == PRESET_HASH)
+          else if (hashCode == ON_DEMAND_PROFILE_HASH)
           {
-            return BillingTagsSource::PRESET;
-          }
-          else if (hashCode == JOB_TEMPLATE_HASH)
-          {
-            return BillingTagsSource::JOB_TEMPLATE;
-          }
-          else if (hashCode == JOB_HASH)
-          {
-            return BillingTagsSource::JOB;
+            return CmafMpdProfile::ON_DEMAND_PROFILE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<BillingTagsSource>(hashCode);
+            return static_cast<CmafMpdProfile>(hashCode);
           }
 
-          return BillingTagsSource::NOT_SET;
+          return CmafMpdProfile::NOT_SET;
         }
 
-        Aws::String GetNameForBillingTagsSource(BillingTagsSource enumValue)
+        Aws::String GetNameForCmafMpdProfile(CmafMpdProfile enumValue)
         {
           switch(enumValue)
           {
-          case BillingTagsSource::QUEUE:
-            return "QUEUE";
-          case BillingTagsSource::PRESET:
-            return "PRESET";
-          case BillingTagsSource::JOB_TEMPLATE:
-            return "JOB_TEMPLATE";
-          case BillingTagsSource::JOB:
-            return "JOB";
+          case CmafMpdProfile::MAIN_PROFILE:
+            return "MAIN_PROFILE";
+          case CmafMpdProfile::ON_DEMAND_PROFILE:
+            return "ON_DEMAND_PROFILE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -88,7 +74,7 @@ namespace Aws
           }
         }
 
-      } // namespace BillingTagsSourceMapper
+      } // namespace CmafMpdProfileMapper
     } // namespace Model
   } // namespace MediaConvert
 } // namespace Aws

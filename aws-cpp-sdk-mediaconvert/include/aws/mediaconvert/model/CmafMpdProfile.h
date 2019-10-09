@@ -23,21 +23,19 @@ namespace MediaConvert
 {
 namespace Model
 {
-  enum class BillingTagsSource
+  enum class CmafMpdProfile
   {
     NOT_SET,
-    QUEUE,
-    PRESET,
-    JOB_TEMPLATE,
-    JOB
+    MAIN_PROFILE,
+    ON_DEMAND_PROFILE
   };
 
-namespace BillingTagsSourceMapper
+namespace CmafMpdProfileMapper
 {
-AWS_MEDIACONVERT_API BillingTagsSource GetBillingTagsSourceForName(const Aws::String& name);
+AWS_MEDIACONVERT_API CmafMpdProfile GetCmafMpdProfileForName(const Aws::String& name);
 
-AWS_MEDIACONVERT_API Aws::String GetNameForBillingTagsSource(BillingTagsSource value);
-} // namespace BillingTagsSourceMapper
+AWS_MEDIACONVERT_API Aws::String GetNameForCmafMpdProfile(CmafMpdProfile value);
+} // namespace CmafMpdProfileMapper
 } // namespace Model
 } // namespace MediaConvert
 } // namespace Aws

@@ -47,6 +47,8 @@ CmafGroupSettings::CmafGroupSettings() :
     m_minBufferTimeHasBeenSet(false),
     m_minFinalSegmentLength(0.0),
     m_minFinalSegmentLengthHasBeenSet(false),
+    m_mpdProfile(CmafMpdProfile::NOT_SET),
+    m_mpdProfileHasBeenSet(false),
     m_segmentControl(CmafSegmentControl::NOT_SET),
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
@@ -79,6 +81,8 @@ CmafGroupSettings::CmafGroupSettings(JsonView jsonValue) :
     m_minBufferTimeHasBeenSet(false),
     m_minFinalSegmentLength(0.0),
     m_minFinalSegmentLengthHasBeenSet(false),
+    m_mpdProfile(CmafMpdProfile::NOT_SET),
+    m_mpdProfileHasBeenSet(false),
     m_segmentControl(CmafSegmentControl::NOT_SET),
     m_segmentControlHasBeenSet(false),
     m_segmentLength(0),
@@ -170,6 +174,13 @@ CmafGroupSettings& CmafGroupSettings::operator =(JsonView jsonValue)
     m_minFinalSegmentLength = jsonValue.GetDouble("minFinalSegmentLength");
 
     m_minFinalSegmentLengthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mpdProfile"))
+  {
+    m_mpdProfile = CmafMpdProfileMapper::GetCmafMpdProfileForName(jsonValue.GetString("mpdProfile"));
+
+    m_mpdProfileHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("segmentControl"))
@@ -274,6 +285,11 @@ JsonValue CmafGroupSettings::Jsonize() const
   {
    payload.WithDouble("minFinalSegmentLength", m_minFinalSegmentLength);
 
+  }
+
+  if(m_mpdProfileHasBeenSet)
+  {
+   payload.WithString("mpdProfile", CmafMpdProfileMapper::GetNameForCmafMpdProfile(m_mpdProfile));
   }
 
   if(m_segmentControlHasBeenSet)

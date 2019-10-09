@@ -32,6 +32,7 @@ namespace Aws
 
         static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
         static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
+        static const int PREFERRED_HASH = HashingUtils::HashString("PREFERRED");
 
 
         AccelerationMode GetAccelerationModeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == ENABLED_HASH)
           {
             return AccelerationMode::ENABLED;
+          }
+          else if (hashCode == PREFERRED_HASH)
+          {
+            return AccelerationMode::PREFERRED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "DISABLED";
           case AccelerationMode::ENABLED:
             return "ENABLED";
+          case AccelerationMode::PREFERRED:
+            return "PREFERRED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
