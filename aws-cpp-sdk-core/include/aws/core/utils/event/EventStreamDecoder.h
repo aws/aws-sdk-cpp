@@ -109,7 +109,7 @@ namespace Aws
 
                 /**
                  * The underlying decoder defined in aws-c-event-stream.
-                 * The deocder will invoke callback functions when streaming the messages received.
+                 * The decoder will invoke callback functions when the streaming messages received.
                  */
                 aws_event_stream_streaming_decoder m_decoder;
                 EventStreamHandler* m_eventStreamHandler;

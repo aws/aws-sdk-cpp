@@ -81,6 +81,7 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
       }
       else
       {
+        request.Get${streamModelName}()->Close();
         responseHandler(this, request, ${operation.name}Outcome(outcome.GetError()), handlerContext);
       }
       return ${operation.name}Outcome(NoResult());

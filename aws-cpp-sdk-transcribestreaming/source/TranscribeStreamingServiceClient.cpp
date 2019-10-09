@@ -149,6 +149,7 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
       }
       else
       {
+        request.GetAudioStream()->Close();
         responseHandler(this, request, StartStreamTranscriptionOutcome(outcome.GetError()), handlerContext);
       }
       return StartStreamTranscriptionOutcome(NoResult());

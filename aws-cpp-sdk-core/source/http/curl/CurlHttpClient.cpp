@@ -1,12 +1,12 @@
 /*
   * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
+  *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
   * A copy of the License is located at
-  * 
+  *
   *  http://aws.amazon.com/apache2.0
-  * 
+  *
   * or in the "license" file accompanying this file. This file is distributed
   * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
   * express or implied. See the License for the specific language governing
@@ -133,8 +133,8 @@ static char* strdup_callback(const char* str)
 struct CurlWriteCallbackContext
 {
     CurlWriteCallbackContext(const CurlHttpClient* client,
-                             HttpRequest* request, 
-                             HttpResponse* response, 
+                             HttpRequest* request,
+                             HttpResponse* response,
                              Aws::Utils::RateLimits::RateLimiterInterface* rateLimiter) :
         m_client(client),
         m_request(request),
@@ -362,7 +362,7 @@ void CurlHttpClient::InitGlobalState()
     if (!isInit)
     {
         auto curlVersionData = curl_version_info(CURLVERSION_NOW);
-        AWS_LOGSTREAM_INFO(CURL_HTTP_CLIENT_TAG, "Initializing Curl library with version: " << curlVersionData->version 
+        AWS_LOGSTREAM_INFO(CURL_HTTP_CLIENT_TAG, "Initializing Curl library with version: " << curlVersionData->version
             << ", ssl version: " << curlVersionData->ssl_version);
         isInit = true;
 #ifdef AWS_CUSTOM_MEMORY_MANAGEMENT
@@ -429,7 +429,7 @@ int CurlDebugCallback(CURL *handle, curl_infotype type, char *data, size_t size,
 
 
 CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
-    Base(),   
+    Base(),
     m_curlHandleContainer(clientConfig.maxConnections, clientConfig.httpRequestTimeoutMs, clientConfig.connectTimeoutMs, clientConfig.enableTcpKeepAlive,
                           clientConfig.tcpKeepAliveIntervalMs, clientConfig.requestTimeoutMs, clientConfig.lowSpeedLimit),
     m_isUsingProxy(!clientConfig.proxyHost.empty()), m_proxyUserName(clientConfig.proxyUserName),
@@ -438,16 +438,16 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     m_proxySSLKeyPath(clientConfig.proxySSLKeyPath), m_proxySSLKeyType(clientConfig.proxySSLKeyType),
     m_proxyKeyPasswd(clientConfig.proxySSLKeyPassword),
     m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_caPath(clientConfig.caPath),
-    m_caFile(clientConfig.caFile), 
+    m_caFile(clientConfig.caFile),
     m_disableExpectHeader(clientConfig.disableExpectHeader),
     m_allowRedirects(clientConfig.followRedirects)
 {
 }
 
 
-void CurlHttpClient::MakeRequestInternal(HttpRequest& request, 
+void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
         std::shared_ptr<StandardHttpResponse>& response,
-        Aws::Utils::RateLimits::RateLimiterInterface* readLimiter, 
+        Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
         Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
 {
     URI uri = request.GetUri();
@@ -473,7 +473,7 @@ void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
         AWS_LOGSTREAM_TRACE(CURL_HTTP_CLIENT_TAG, headerString);
         headers = curl_slist_append(headers, headerString.c_str());
     }
-    
+
     if (!request.HasHeader(Http::TRANSFER_ENCODING_HEADER))
     {
         headers = curl_slist_append(headers, "transfer-encoding:");
@@ -661,7 +661,7 @@ void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
             request.AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::DnsLatency), static_cast<int64_t>(timep * 1000));// to milliseconds
         }
 
-        ret = curl_easy_getinfo(connectionHandle, CURLINFO_STARTTRANSFER_TIME, &timep); // Connect Latency 
+        ret = curl_easy_getinfo(connectionHandle, CURLINFO_STARTTRANSFER_TIME, &timep); // Connect Latency
         if (ret == CURLE_OK)
         {
             request.AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::ConnectLatency), static_cast<int64_t>(timep * 1000));
@@ -695,7 +695,7 @@ void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
     }
 }
 
-std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
+std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request,
         Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
         Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
 {

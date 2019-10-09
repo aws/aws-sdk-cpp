@@ -36,7 +36,7 @@ namespace Aws
             public:
                 /**
                  * @param decoder decodes the stream from server side, so as to invoke related callback functions.
-                 * @param bufferSize The length of buffer, wiil be 1024 bytes by default.
+                 * @param bufferSize The length of buffer, will be 1024 bytes by default.
                  */
                 EventStreamBuf(EventStreamDecoder& decoder, size_t bufferLength = DEFAULT_BUF_SIZE);
                 virtual ~EventStreamBuf();

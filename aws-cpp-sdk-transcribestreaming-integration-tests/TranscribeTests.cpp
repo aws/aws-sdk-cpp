@@ -54,6 +54,7 @@ public:
         config.httpLibOverride = Aws::Http::TransferLibType::WIN_INET_CLIENT;
 #endif
         m_client = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, config);
+        m_clientWithWrongCreds = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, Aws::Auth::AWSCredentials("a", "b"), config);
     }
 
     ~TranscribeStreamingTests()
@@ -62,6 +63,7 @@ public:
     }
 
     Aws::UniquePtr<TranscribeStreamingServiceClient> m_client;
+    Aws::UniquePtr<TranscribeStreamingServiceClient> m_clientWithWrongCreds;
 };
 
 TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
@@ -115,6 +117,10 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
             file.read(buf, sizeof(buf));
             Aws::Vector<unsigned char> bits{buf, buf + file.gcount()};
             AudioEvent event(std::move(bits));
+            if (!stream)
+            {
+                break;
+            }
             if (!stream.WriteAudioEvent(event))
             {
                 break;
@@ -137,6 +143,85 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
     m_client->StartStreamTranscriptionAsync(request, OnStreamReady, OnResponseCallback, nullptr/*context*/);
     semaphore.WaitOne();
     ASSERT_EQ(0u, transcribedResult.find(EXPECTED_MESSAGE));
+}
+
+TEST_F(TranscribeStreamingTests, TranscribeAudioFileWithErrorServiceResponse)
+{
+    Aws::String transcribedResult;
+    StartStreamTranscriptionHandler handler;
+    handler.SetTranscriptEventCallback([&transcribedResult](const TranscriptEvent& ev)
+    {
+        // TODO: only check the result marked as "final"
+        const auto& results = ev.GetTranscript().GetResults();
+        if (results.empty())
+        {
+            return;
+        }
+        const auto& last = results.back();
+        const auto& alternatives = last.GetAlternatives();
+        if (alternatives.empty())
+        {
+            return;
+        }
+        transcribedResult = alternatives.back().GetTranscript();
+    });
+    bool encounteredError = false;
+    handler.SetOnErrorCallback([&encounteredError](const Aws::Client::AWSError<TranscribeStreamingServiceErrors>& )
+    {
+        encounteredError = true;
+    });
+
+    StartStreamTranscriptionRequest request;
+    request.SetMediaSampleRateHertz(8000);
+    request.SetLanguageCode(LanguageCode::en_US);
+    request.SetMediaEncoding(MediaEncoding::pcm);
+    request.SetEventStreamHandler(handler);
+
+    bool streamClosedUnexpectedly = false;
+    bool streamFinishedSendingBeforeFail = false;
+    auto OnStreamReady = [&](AudioStream& stream)
+    {
+        Aws::FStream file(TEST_FILE_NAME, std::ios_base::in | std::ios_base::binary);
+        ASSERT_TRUE(file);
+        char buf[1024];
+        while(file)
+        {
+            file.read(buf, sizeof(buf));
+            Aws::Vector<unsigned char> bits{buf, buf + file.gcount()};
+            AudioEvent event(std::move(bits));
+            if (!stream)
+            {
+                streamClosedUnexpectedly = true;
+                break;
+            }
+            if (!stream.WriteAudioEvent(event))
+            {
+                streamClosedUnexpectedly = true;
+                break;
+            }
+        }
+        if (!streamClosedUnexpectedly)
+        {
+            streamFinishedSendingBeforeFail = true;
+        }
+        stream.WriteAudioEvent({}); // per the spec, we have to send an empty event (i.e. without a payload) at the end.
+        stream.flush();
+        stream.Close();
+    };
+
+    Aws::Utils::Threading::Semaphore semaphore(0, 1);
+    auto OnResponseCallback = [&semaphore](const TranscribeStreamingServiceClient*,
+            const StartStreamTranscriptionRequest&,
+            const StartStreamTranscriptionOutcome&,
+            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)
+    {
+        semaphore.ReleaseAll();
+    };
+
+    m_clientWithWrongCreds->StartStreamTranscriptionAsync(request, OnStreamReady, OnResponseCallback, nullptr/*context*/);
+    semaphore.WaitOne();
+    ASSERT_TRUE(encounteredError);
+    ASSERT_TRUE(streamClosedUnexpectedly || streamFinishedSendingBeforeFail);
 }
 
 #endif
