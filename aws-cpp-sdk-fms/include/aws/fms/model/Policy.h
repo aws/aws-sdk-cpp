@@ -245,82 +245,130 @@ namespace Model
 
 
     /**
-     * <p>The type of resource to protect with the policy. This is in the format shown
-     * in <a
+     * <p>The type of resource protected by or in scope of the policy. This is in the
+     * format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
+     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
+     * valid values are <code>AWS::EC2::NetworkInterface</code> and
+     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
+     * valid values are <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
+     * For a security group usage audit policy, the value is
+     * <code>AWS::EC2::SecurityGroup</code>. </p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of resource to protect with the policy. This is in the format shown
-     * in <a
+     * <p>The type of resource protected by or in scope of the policy. This is in the
+     * format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
+     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
+     * valid values are <code>AWS::EC2::NetworkInterface</code> and
+     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
+     * valid values are <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
+     * For a security group usage audit policy, the value is
+     * <code>AWS::EC2::SecurityGroup</code>. </p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of resource to protect with the policy. This is in the format shown
-     * in <a
+     * <p>The type of resource protected by or in scope of the policy. This is in the
+     * format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
+     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
+     * valid values are <code>AWS::EC2::NetworkInterface</code> and
+     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
+     * valid values are <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
+     * For a security group usage audit policy, the value is
+     * <code>AWS::EC2::SecurityGroup</code>. </p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of resource to protect with the policy. This is in the format shown
-     * in <a
+     * <p>The type of resource protected by or in scope of the policy. This is in the
+     * format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
+     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
+     * valid values are <code>AWS::EC2::NetworkInterface</code> and
+     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
+     * valid values are <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
+     * For a security group usage audit policy, the value is
+     * <code>AWS::EC2::SecurityGroup</code>. </p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of resource to protect with the policy. This is in the format shown
-     * in <a
+     * <p>The type of resource protected by or in scope of the policy. This is in the
+     * format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
+     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
+     * valid values are <code>AWS::EC2::NetworkInterface</code> and
+     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
+     * valid values are <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
+     * For a security group usage audit policy, the value is
+     * <code>AWS::EC2::SecurityGroup</code>. </p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The type of resource to protect with the policy. This is in the format shown
-     * in <a
+     * <p>The type of resource protected by or in scope of the policy. This is in the
+     * format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
+     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
+     * valid values are <code>AWS::EC2::NetworkInterface</code> and
+     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
+     * valid values are <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
+     * For a security group usage audit policy, the value is
+     * <code>AWS::EC2::SecurityGroup</code>. </p>
      */
     inline Policy& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of resource to protect with the policy. This is in the format shown
-     * in <a
+     * <p>The type of resource protected by or in scope of the policy. This is in the
+     * format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
+     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
+     * valid values are <code>AWS::EC2::NetworkInterface</code> and
+     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
+     * valid values are <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
+     * For a security group usage audit policy, the value is
+     * <code>AWS::EC2::SecurityGroup</code>. </p>
      */
     inline Policy& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of resource to protect with the policy. This is in the format shown
-     * in <a
+     * <p>The type of resource protected by or in scope of the policy. This is in the
+     * format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. For example:
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
-     * <code>AWS::CloudFront::Distribution</code>.</p>
+     * Resource Types Reference</a>. For AWS WAF and Shield Advanced, examples include
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
+     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy,
+     * valid values are <code>AWS::EC2::NetworkInterface</code> and
+     * <code>AWS::EC2::Instance</code>. For a security group content audit policy,
+     * valid values are <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
+     * For a security group usage audit policy, the value is
+     * <code>AWS::EC2::SecurityGroup</code>. </p>
      */
     inline Policy& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
@@ -414,33 +462,33 @@ namespace Model
 
     /**
      * <p>If set to <code>True</code>, resources with the tags that are specified in
-     * the <code>ResourceTag</code> array are not protected by the policy. If set to
+     * the <code>ResourceTag</code> array are not in scope of the policy. If set to
      * <code>False</code>, and the <code>ResourceTag</code> array is not null, only
-     * resources with the specified tags are associated with the policy.</p>
+     * resources with the specified tags are in scope of the policy.</p>
      */
     inline bool GetExcludeResourceTags() const{ return m_excludeResourceTags; }
 
     /**
      * <p>If set to <code>True</code>, resources with the tags that are specified in
-     * the <code>ResourceTag</code> array are not protected by the policy. If set to
+     * the <code>ResourceTag</code> array are not in scope of the policy. If set to
      * <code>False</code>, and the <code>ResourceTag</code> array is not null, only
-     * resources with the specified tags are associated with the policy.</p>
+     * resources with the specified tags are in scope of the policy.</p>
      */
     inline bool ExcludeResourceTagsHasBeenSet() const { return m_excludeResourceTagsHasBeenSet; }
 
     /**
      * <p>If set to <code>True</code>, resources with the tags that are specified in
-     * the <code>ResourceTag</code> array are not protected by the policy. If set to
+     * the <code>ResourceTag</code> array are not in scope of the policy. If set to
      * <code>False</code>, and the <code>ResourceTag</code> array is not null, only
-     * resources with the specified tags are associated with the policy.</p>
+     * resources with the specified tags are in scope of the policy.</p>
      */
     inline void SetExcludeResourceTags(bool value) { m_excludeResourceTagsHasBeenSet = true; m_excludeResourceTags = value; }
 
     /**
      * <p>If set to <code>True</code>, resources with the tags that are specified in
-     * the <code>ResourceTag</code> array are not protected by the policy. If set to
+     * the <code>ResourceTag</code> array are not in scope of the policy. If set to
      * <code>False</code>, and the <code>ResourceTag</code> array is not null, only
-     * resources with the specified tags are associated with the policy.</p>
+     * resources with the specified tags are in scope of the policy.</p>
      */
     inline Policy& WithExcludeResourceTags(bool value) { SetExcludeResourceTags(value); return *this;}
 

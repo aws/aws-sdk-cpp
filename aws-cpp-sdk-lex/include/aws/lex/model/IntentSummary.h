@@ -96,6 +96,79 @@ namespace Model
 
 
     /**
+     * <p>A user-defined label that identifies a particular intent. You can use this
+     * label to return to a previous intent. </p> <p>Use the
+     * <code>checkpointLabelFilter</code> parameter of the
+     * <code>GetSessionRequest</code> operation to filter the intents returned by the
+     * operation to those with only the specified label.</p>
+     */
+    inline const Aws::String& GetCheckpointLabel() const{ return m_checkpointLabel; }
+
+    /**
+     * <p>A user-defined label that identifies a particular intent. You can use this
+     * label to return to a previous intent. </p> <p>Use the
+     * <code>checkpointLabelFilter</code> parameter of the
+     * <code>GetSessionRequest</code> operation to filter the intents returned by the
+     * operation to those with only the specified label.</p>
+     */
+    inline bool CheckpointLabelHasBeenSet() const { return m_checkpointLabelHasBeenSet; }
+
+    /**
+     * <p>A user-defined label that identifies a particular intent. You can use this
+     * label to return to a previous intent. </p> <p>Use the
+     * <code>checkpointLabelFilter</code> parameter of the
+     * <code>GetSessionRequest</code> operation to filter the intents returned by the
+     * operation to those with only the specified label.</p>
+     */
+    inline void SetCheckpointLabel(const Aws::String& value) { m_checkpointLabelHasBeenSet = true; m_checkpointLabel = value; }
+
+    /**
+     * <p>A user-defined label that identifies a particular intent. You can use this
+     * label to return to a previous intent. </p> <p>Use the
+     * <code>checkpointLabelFilter</code> parameter of the
+     * <code>GetSessionRequest</code> operation to filter the intents returned by the
+     * operation to those with only the specified label.</p>
+     */
+    inline void SetCheckpointLabel(Aws::String&& value) { m_checkpointLabelHasBeenSet = true; m_checkpointLabel = std::move(value); }
+
+    /**
+     * <p>A user-defined label that identifies a particular intent. You can use this
+     * label to return to a previous intent. </p> <p>Use the
+     * <code>checkpointLabelFilter</code> parameter of the
+     * <code>GetSessionRequest</code> operation to filter the intents returned by the
+     * operation to those with only the specified label.</p>
+     */
+    inline void SetCheckpointLabel(const char* value) { m_checkpointLabelHasBeenSet = true; m_checkpointLabel.assign(value); }
+
+    /**
+     * <p>A user-defined label that identifies a particular intent. You can use this
+     * label to return to a previous intent. </p> <p>Use the
+     * <code>checkpointLabelFilter</code> parameter of the
+     * <code>GetSessionRequest</code> operation to filter the intents returned by the
+     * operation to those with only the specified label.</p>
+     */
+    inline IntentSummary& WithCheckpointLabel(const Aws::String& value) { SetCheckpointLabel(value); return *this;}
+
+    /**
+     * <p>A user-defined label that identifies a particular intent. You can use this
+     * label to return to a previous intent. </p> <p>Use the
+     * <code>checkpointLabelFilter</code> parameter of the
+     * <code>GetSessionRequest</code> operation to filter the intents returned by the
+     * operation to those with only the specified label.</p>
+     */
+    inline IntentSummary& WithCheckpointLabel(Aws::String&& value) { SetCheckpointLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>A user-defined label that identifies a particular intent. You can use this
+     * label to return to a previous intent. </p> <p>Use the
+     * <code>checkpointLabelFilter</code> parameter of the
+     * <code>GetSessionRequest</code> operation to filter the intents returned by the
+     * operation to those with only the specified label.</p>
+     */
+    inline IntentSummary& WithCheckpointLabel(const char* value) { SetCheckpointLabel(value); return *this;}
+
+
+    /**
      * <p>Map of the slots that have been gathered and their values. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetSlots() const{ return m_slots; }
@@ -450,6 +523,9 @@ namespace Model
 
     Aws::String m_intentName;
     bool m_intentNameHasBeenSet;
+
+    Aws::String m_checkpointLabel;
+    bool m_checkpointLabelHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_slots;
     bool m_slotsHasBeenSet;

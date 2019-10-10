@@ -101,56 +101,88 @@ namespace Model
     /**
      * <p>The key of the data set contents object. Each object in an Amazon S3 bucket
      * has a key that is its unique identifier within the bucket (each object in a
-     * bucket has exactly one key).</p>
+     * bucket has exactly one key). To produce a unique key, you can use
+     * "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query
+     * run, or "!{iotanalytics:versioned} to insert a unique hash identifying the data
+     * set, for example:
+     * "/DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
      * <p>The key of the data set contents object. Each object in an Amazon S3 bucket
      * has a key that is its unique identifier within the bucket (each object in a
-     * bucket has exactly one key).</p>
+     * bucket has exactly one key). To produce a unique key, you can use
+     * "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query
+     * run, or "!{iotanalytics:versioned} to insert a unique hash identifying the data
+     * set, for example:
+     * "/DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>The key of the data set contents object. Each object in an Amazon S3 bucket
      * has a key that is its unique identifier within the bucket (each object in a
-     * bucket has exactly one key).</p>
+     * bucket has exactly one key). To produce a unique key, you can use
+     * "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query
+     * run, or "!{iotanalytics:versioned} to insert a unique hash identifying the data
+     * set, for example:
+     * "/DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p>The key of the data set contents object. Each object in an Amazon S3 bucket
      * has a key that is its unique identifier within the bucket (each object in a
-     * bucket has exactly one key).</p>
+     * bucket has exactly one key). To produce a unique key, you can use
+     * "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query
+     * run, or "!{iotanalytics:versioned} to insert a unique hash identifying the data
+     * set, for example:
+     * "/DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The key of the data set contents object. Each object in an Amazon S3 bucket
      * has a key that is its unique identifier within the bucket (each object in a
-     * bucket has exactly one key).</p>
+     * bucket has exactly one key). To produce a unique key, you can use
+     * "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query
+     * run, or "!{iotanalytics:versioned} to insert a unique hash identifying the data
+     * set, for example:
+     * "/DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
      * <p>The key of the data set contents object. Each object in an Amazon S3 bucket
      * has a key that is its unique identifier within the bucket (each object in a
-     * bucket has exactly one key).</p>
+     * bucket has exactly one key). To produce a unique key, you can use
+     * "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query
+     * run, or "!{iotanalytics:versioned} to insert a unique hash identifying the data
+     * set, for example:
+     * "/DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".</p>
      */
     inline S3DestinationConfiguration& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
      * <p>The key of the data set contents object. Each object in an Amazon S3 bucket
      * has a key that is its unique identifier within the bucket (each object in a
-     * bucket has exactly one key).</p>
+     * bucket has exactly one key). To produce a unique key, you can use
+     * "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query
+     * run, or "!{iotanalytics:versioned} to insert a unique hash identifying the data
+     * set, for example:
+     * "/DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".</p>
      */
     inline S3DestinationConfiguration& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The key of the data set contents object. Each object in an Amazon S3 bucket
      * has a key that is its unique identifier within the bucket (each object in a
-     * bucket has exactly one key).</p>
+     * bucket has exactly one key). To produce a unique key, you can use
+     * "!{iotanalytics:scheduledTime}" to insert the time of the scheduled SQL query
+     * run, or "!{iotanalytics:versioned} to insert a unique hash identifying the data
+     * set, for example:
+     * "/DataSet/!{iotanalytics:scheduledTime}/!{iotanalytics:versioned}.csv".</p>
      */
     inline S3DestinationConfiguration& WithKey(const char* value) { SetKey(value); return *this;}
 

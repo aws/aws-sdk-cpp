@@ -34,6 +34,11 @@ namespace Aws
         static const int RESOURCE_MISSING_WEB_ACL_HASH = HashingUtils::HashString("RESOURCE_MISSING_WEB_ACL");
         static const int RESOURCE_INCORRECT_WEB_ACL_HASH = HashingUtils::HashString("RESOURCE_INCORRECT_WEB_ACL");
         static const int RESOURCE_MISSING_SHIELD_PROTECTION_HASH = HashingUtils::HashString("RESOURCE_MISSING_SHIELD_PROTECTION");
+        static const int RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION_HASH = HashingUtils::HashString("RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION");
+        static const int RESOURCE_MISSING_SECURITY_GROUP_HASH = HashingUtils::HashString("RESOURCE_MISSING_SECURITY_GROUP");
+        static const int RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP_HASH = HashingUtils::HashString("RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP");
+        static const int SECURITY_GROUP_UNUSED_HASH = HashingUtils::HashString("SECURITY_GROUP_UNUSED");
+        static const int SECURITY_GROUP_REDUNDANT_HASH = HashingUtils::HashString("SECURITY_GROUP_REDUNDANT");
 
 
         ViolationReason GetViolationReasonForName(const Aws::String& name)
@@ -54,6 +59,26 @@ namespace Aws
           else if (hashCode == RESOURCE_MISSING_SHIELD_PROTECTION_HASH)
           {
             return ViolationReason::RESOURCE_MISSING_SHIELD_PROTECTION;
+          }
+          else if (hashCode == RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION_HASH)
+          {
+            return ViolationReason::RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION;
+          }
+          else if (hashCode == RESOURCE_MISSING_SECURITY_GROUP_HASH)
+          {
+            return ViolationReason::RESOURCE_MISSING_SECURITY_GROUP;
+          }
+          else if (hashCode == RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP_HASH)
+          {
+            return ViolationReason::RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP;
+          }
+          else if (hashCode == SECURITY_GROUP_UNUSED_HASH)
+          {
+            return ViolationReason::SECURITY_GROUP_UNUSED;
+          }
+          else if (hashCode == SECURITY_GROUP_REDUNDANT_HASH)
+          {
+            return ViolationReason::SECURITY_GROUP_REDUNDANT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +102,16 @@ namespace Aws
             return "RESOURCE_INCORRECT_WEB_ACL";
           case ViolationReason::RESOURCE_MISSING_SHIELD_PROTECTION:
             return "RESOURCE_MISSING_SHIELD_PROTECTION";
+          case ViolationReason::RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION:
+            return "RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION";
+          case ViolationReason::RESOURCE_MISSING_SECURITY_GROUP:
+            return "RESOURCE_MISSING_SECURITY_GROUP";
+          case ViolationReason::RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP:
+            return "RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP";
+          case ViolationReason::SECURITY_GROUP_UNUSED:
+            return "SECURITY_GROUP_UNUSED";
+          case ViolationReason::SECURITY_GROUP_REDUNDANT:
+            return "SECURITY_GROUP_REDUNDANT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

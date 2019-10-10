@@ -95,32 +95,44 @@ namespace Model
 
 
     /**
-     * <p>Where channel data is stored.</p>
+     * <p>Where channel data is stored. You may choose one of "serviceManagedS3" or
+     * "customerManagedS3" storage. If not specified, the default is
+     * "serviceManagedS3". This cannot be changed after creation of the channel.</p>
      */
     inline const ChannelStorage& GetStorage() const{ return m_storage; }
 
     /**
-     * <p>Where channel data is stored.</p>
+     * <p>Where channel data is stored. You may choose one of "serviceManagedS3" or
+     * "customerManagedS3" storage. If not specified, the default is
+     * "serviceManagedS3". This cannot be changed after creation of the channel.</p>
      */
     inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
 
     /**
-     * <p>Where channel data is stored.</p>
+     * <p>Where channel data is stored. You may choose one of "serviceManagedS3" or
+     * "customerManagedS3" storage. If not specified, the default is
+     * "serviceManagedS3". This cannot be changed after creation of the channel.</p>
      */
     inline void SetStorage(const ChannelStorage& value) { m_storageHasBeenSet = true; m_storage = value; }
 
     /**
-     * <p>Where channel data is stored.</p>
+     * <p>Where channel data is stored. You may choose one of "serviceManagedS3" or
+     * "customerManagedS3" storage. If not specified, the default is
+     * "serviceManagedS3". This cannot be changed after creation of the channel.</p>
      */
     inline void SetStorage(ChannelStorage&& value) { m_storageHasBeenSet = true; m_storage = std::move(value); }
 
     /**
-     * <p>Where channel data is stored.</p>
+     * <p>Where channel data is stored. You may choose one of "serviceManagedS3" or
+     * "customerManagedS3" storage. If not specified, the default is
+     * "serviceManagedS3". This cannot be changed after creation of the channel.</p>
      */
     inline Channel& WithStorage(const ChannelStorage& value) { SetStorage(value); return *this;}
 
     /**
-     * <p>Where channel data is stored.</p>
+     * <p>Where channel data is stored. You may choose one of "serviceManagedS3" or
+     * "customerManagedS3" storage. If not specified, the default is
+     * "serviceManagedS3". This cannot be changed after creation of the channel.</p>
      */
     inline Channel& WithStorage(ChannelStorage&& value) { SetStorage(std::move(value)); return *this;}
 

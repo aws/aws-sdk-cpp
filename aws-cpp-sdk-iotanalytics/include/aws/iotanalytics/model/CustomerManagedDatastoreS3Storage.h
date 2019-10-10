@@ -34,8 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Use this to store data store data in an S3 bucket that you
-   * manage.</p><p><h3>See Also:</h3>   <a
+   * <p>Use this to store data store data in an S3 bucket that you manage. When
+   * customer managed storage is selected, the "retentionPeriod" parameter is
+   * ignored. The choice of service-managed or customer-managed S3 storage cannot be
+   * changed after creation of the data store.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CustomerManagedDatastoreS3Storage">AWS
    * API Reference</a></p>
    */
@@ -90,58 +92,66 @@ namespace Model
 
 
     /**
-     * <p>The prefix used to create the keys of the data store data objects. Each
-     * object in an Amazon S3 bucket has a key that is its unique identifier within the
-     * bucket (each object in a bucket has exactly one key).</p>
+     * <p>[Optional] The prefix used to create the keys of the data store data objects.
+     * Each object in an Amazon S3 bucket has a key that is its unique identifier
+     * within the bucket (each object in a bucket has exactly one key). The prefix must
+     * end with a '/'.</p>
      */
     inline const Aws::String& GetKeyPrefix() const{ return m_keyPrefix; }
 
     /**
-     * <p>The prefix used to create the keys of the data store data objects. Each
-     * object in an Amazon S3 bucket has a key that is its unique identifier within the
-     * bucket (each object in a bucket has exactly one key).</p>
+     * <p>[Optional] The prefix used to create the keys of the data store data objects.
+     * Each object in an Amazon S3 bucket has a key that is its unique identifier
+     * within the bucket (each object in a bucket has exactly one key). The prefix must
+     * end with a '/'.</p>
      */
     inline bool KeyPrefixHasBeenSet() const { return m_keyPrefixHasBeenSet; }
 
     /**
-     * <p>The prefix used to create the keys of the data store data objects. Each
-     * object in an Amazon S3 bucket has a key that is its unique identifier within the
-     * bucket (each object in a bucket has exactly one key).</p>
+     * <p>[Optional] The prefix used to create the keys of the data store data objects.
+     * Each object in an Amazon S3 bucket has a key that is its unique identifier
+     * within the bucket (each object in a bucket has exactly one key). The prefix must
+     * end with a '/'.</p>
      */
     inline void SetKeyPrefix(const Aws::String& value) { m_keyPrefixHasBeenSet = true; m_keyPrefix = value; }
 
     /**
-     * <p>The prefix used to create the keys of the data store data objects. Each
-     * object in an Amazon S3 bucket has a key that is its unique identifier within the
-     * bucket (each object in a bucket has exactly one key).</p>
+     * <p>[Optional] The prefix used to create the keys of the data store data objects.
+     * Each object in an Amazon S3 bucket has a key that is its unique identifier
+     * within the bucket (each object in a bucket has exactly one key). The prefix must
+     * end with a '/'.</p>
      */
     inline void SetKeyPrefix(Aws::String&& value) { m_keyPrefixHasBeenSet = true; m_keyPrefix = std::move(value); }
 
     /**
-     * <p>The prefix used to create the keys of the data store data objects. Each
-     * object in an Amazon S3 bucket has a key that is its unique identifier within the
-     * bucket (each object in a bucket has exactly one key).</p>
+     * <p>[Optional] The prefix used to create the keys of the data store data objects.
+     * Each object in an Amazon S3 bucket has a key that is its unique identifier
+     * within the bucket (each object in a bucket has exactly one key). The prefix must
+     * end with a '/'.</p>
      */
     inline void SetKeyPrefix(const char* value) { m_keyPrefixHasBeenSet = true; m_keyPrefix.assign(value); }
 
     /**
-     * <p>The prefix used to create the keys of the data store data objects. Each
-     * object in an Amazon S3 bucket has a key that is its unique identifier within the
-     * bucket (each object in a bucket has exactly one key).</p>
+     * <p>[Optional] The prefix used to create the keys of the data store data objects.
+     * Each object in an Amazon S3 bucket has a key that is its unique identifier
+     * within the bucket (each object in a bucket has exactly one key). The prefix must
+     * end with a '/'.</p>
      */
     inline CustomerManagedDatastoreS3Storage& WithKeyPrefix(const Aws::String& value) { SetKeyPrefix(value); return *this;}
 
     /**
-     * <p>The prefix used to create the keys of the data store data objects. Each
-     * object in an Amazon S3 bucket has a key that is its unique identifier within the
-     * bucket (each object in a bucket has exactly one key).</p>
+     * <p>[Optional] The prefix used to create the keys of the data store data objects.
+     * Each object in an Amazon S3 bucket has a key that is its unique identifier
+     * within the bucket (each object in a bucket has exactly one key). The prefix must
+     * end with a '/'.</p>
      */
     inline CustomerManagedDatastoreS3Storage& WithKeyPrefix(Aws::String&& value) { SetKeyPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The prefix used to create the keys of the data store data objects. Each
-     * object in an Amazon S3 bucket has a key that is its unique identifier within the
-     * bucket (each object in a bucket has exactly one key).</p>
+     * <p>[Optional] The prefix used to create the keys of the data store data objects.
+     * Each object in an Amazon S3 bucket has a key that is its unique identifier
+     * within the bucket (each object in a bucket has exactly one key). The prefix must
+     * end with a '/'.</p>
      */
     inline CustomerManagedDatastoreS3Storage& WithKeyPrefix(const char* value) { SetKeyPrefix(value); return *this;}
 

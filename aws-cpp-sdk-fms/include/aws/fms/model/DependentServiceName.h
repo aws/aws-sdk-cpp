@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     AWSCONFIG,
     AWSWAF,
-    AWSSHIELD_ADVANCED
+    AWSSHIELD_ADVANCED,
+    AWSVPC
   };
 
 namespace DependentServiceNameMapper

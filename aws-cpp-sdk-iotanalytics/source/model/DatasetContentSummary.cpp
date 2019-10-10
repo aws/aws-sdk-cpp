@@ -32,7 +32,8 @@ DatasetContentSummary::DatasetContentSummary() :
     m_versionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_scheduleTimeHasBeenSet(false)
+    m_scheduleTimeHasBeenSet(false),
+    m_completionTimeHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ DatasetContentSummary::DatasetContentSummary(JsonView jsonValue) :
     m_versionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_scheduleTimeHasBeenSet(false)
+    m_scheduleTimeHasBeenSet(false),
+    m_completionTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -75,6 +77,13 @@ DatasetContentSummary& DatasetContentSummary::operator =(JsonView jsonValue)
     m_scheduleTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("completionTime"))
+  {
+    m_completionTime = jsonValue.GetDouble("completionTime");
+
+    m_completionTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -102,6 +111,11 @@ JsonValue DatasetContentSummary::Jsonize() const
   if(m_scheduleTimeHasBeenSet)
   {
    payload.WithDouble("scheduleTime", m_scheduleTime.SecondsWithMSPrecision());
+  }
+
+  if(m_completionTimeHasBeenSet)
+  {
+   payload.WithDouble("completionTime", m_completionTime.SecondsWithMSPrecision());
   }
 
   return payload;

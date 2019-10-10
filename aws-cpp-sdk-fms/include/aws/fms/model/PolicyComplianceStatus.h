@@ -40,8 +40,10 @@ namespace Model
 
   /**
    * <p>Indicates whether the account is compliant with the specified policy. An
-   * account is considered non-compliant if it includes resources that are not
-   * protected by the policy.</p><p><h3>See Also:</h3>   <a
+   * account is considered noncompliant if it includes resources that are not
+   * protected by the policy, for AWS WAF and Shield Advanced policies, or that are
+   * noncompliant with the policy, for security group policies.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PolicyComplianceStatus">AWS
    * API Reference</a></p>
    */
@@ -260,37 +262,37 @@ namespace Model
 
 
     /**
-     * <p>Time stamp of the last update to the <code>EvaluationResult</code>
+     * <p>Timestamp of the last update to the <code>EvaluationResult</code>
      * objects.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
 
     /**
-     * <p>Time stamp of the last update to the <code>EvaluationResult</code>
+     * <p>Timestamp of the last update to the <code>EvaluationResult</code>
      * objects.</p>
      */
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
 
     /**
-     * <p>Time stamp of the last update to the <code>EvaluationResult</code>
+     * <p>Timestamp of the last update to the <code>EvaluationResult</code>
      * objects.</p>
      */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
 
     /**
-     * <p>Time stamp of the last update to the <code>EvaluationResult</code>
+     * <p>Timestamp of the last update to the <code>EvaluationResult</code>
      * objects.</p>
      */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
 
     /**
-     * <p>Time stamp of the last update to the <code>EvaluationResult</code>
+     * <p>Timestamp of the last update to the <code>EvaluationResult</code>
      * objects.</p>
      */
     inline PolicyComplianceStatus& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
 
     /**
-     * <p>Time stamp of the last update to the <code>EvaluationResult</code>
+     * <p>Timestamp of the last update to the <code>EvaluationResult</code>
      * objects.</p>
      */
     inline PolicyComplianceStatus& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
@@ -298,7 +300,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -306,7 +308,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -314,7 +316,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -322,7 +324,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -330,7 +332,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -338,7 +340,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -346,7 +348,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -354,7 +356,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -362,7 +364,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -370,7 +372,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -378,7 +380,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -386,7 +388,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */

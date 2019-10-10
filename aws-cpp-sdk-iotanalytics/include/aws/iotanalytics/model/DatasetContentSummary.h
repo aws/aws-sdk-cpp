@@ -182,6 +182,37 @@ namespace Model
      */
     inline DatasetContentSummary& WithScheduleTime(Aws::Utils::DateTime&& value) { SetScheduleTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
+
+    /**
+     * <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
+     */
+    inline bool CompletionTimeHasBeenSet() const { return m_completionTimeHasBeenSet; }
+
+    /**
+     * <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
+     */
+    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
+
+    /**
+     * <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
+     */
+    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::move(value); }
+
+    /**
+     * <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
+     */
+    inline DatasetContentSummary& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
+
+    /**
+     * <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
+     */
+    inline DatasetContentSummary& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_version;
@@ -195,6 +226,9 @@ namespace Model
 
     Aws::Utils::DateTime m_scheduleTime;
     bool m_scheduleTimeHasBeenSet;
+
+    Aws::Utils::DateTime m_completionTime;
+    bool m_completionTimeHasBeenSet;
   };
 
 } // namespace Model

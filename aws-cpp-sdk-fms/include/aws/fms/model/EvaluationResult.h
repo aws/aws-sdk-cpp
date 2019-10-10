@@ -35,8 +35,8 @@ namespace Model
 
   /**
    * <p>Describes the compliance status for the account. An account is considered
-   * non-compliant if it includes resources that are not protected by the specified
-   * policy.</p><p><h3>See Also:</h3>   <a
+   * noncompliant if it includes resources that are not protected by the specified
+   * policy or that don't comply with the policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/EvaluationResult">AWS
    * API Reference</a></p>
    */
@@ -87,54 +87,62 @@ namespace Model
 
 
     /**
-     * <p>Number of resources that are non-compliant with the specified policy. A
-     * resource is considered non-compliant if it is not associated with the specified
-     * policy.</p>
+     * <p>The number of resources that are noncompliant with the specified policy. For
+     * AWS WAF and Shield Advanced policies, a resource is considered noncompliant if
+     * it is not associated with the policy. For security group policies, a resource is
+     * considered noncompliant if it doesn't comply with the rules of the policy and
+     * remediation is disabled or not possible.</p>
      */
     inline long long GetViolatorCount() const{ return m_violatorCount; }
 
     /**
-     * <p>Number of resources that are non-compliant with the specified policy. A
-     * resource is considered non-compliant if it is not associated with the specified
-     * policy.</p>
+     * <p>The number of resources that are noncompliant with the specified policy. For
+     * AWS WAF and Shield Advanced policies, a resource is considered noncompliant if
+     * it is not associated with the policy. For security group policies, a resource is
+     * considered noncompliant if it doesn't comply with the rules of the policy and
+     * remediation is disabled or not possible.</p>
      */
     inline bool ViolatorCountHasBeenSet() const { return m_violatorCountHasBeenSet; }
 
     /**
-     * <p>Number of resources that are non-compliant with the specified policy. A
-     * resource is considered non-compliant if it is not associated with the specified
-     * policy.</p>
+     * <p>The number of resources that are noncompliant with the specified policy. For
+     * AWS WAF and Shield Advanced policies, a resource is considered noncompliant if
+     * it is not associated with the policy. For security group policies, a resource is
+     * considered noncompliant if it doesn't comply with the rules of the policy and
+     * remediation is disabled or not possible.</p>
      */
     inline void SetViolatorCount(long long value) { m_violatorCountHasBeenSet = true; m_violatorCount = value; }
 
     /**
-     * <p>Number of resources that are non-compliant with the specified policy. A
-     * resource is considered non-compliant if it is not associated with the specified
-     * policy.</p>
+     * <p>The number of resources that are noncompliant with the specified policy. For
+     * AWS WAF and Shield Advanced policies, a resource is considered noncompliant if
+     * it is not associated with the policy. For security group policies, a resource is
+     * considered noncompliant if it doesn't comply with the rules of the policy and
+     * remediation is disabled or not possible.</p>
      */
     inline EvaluationResult& WithViolatorCount(long long value) { SetViolatorCount(value); return *this;}
 
 
     /**
-     * <p>Indicates that over 100 resources are non-compliant with the AWS Firewall
+     * <p>Indicates that over 100 resources are noncompliant with the AWS Firewall
      * Manager policy.</p>
      */
     inline bool GetEvaluationLimitExceeded() const{ return m_evaluationLimitExceeded; }
 
     /**
-     * <p>Indicates that over 100 resources are non-compliant with the AWS Firewall
+     * <p>Indicates that over 100 resources are noncompliant with the AWS Firewall
      * Manager policy.</p>
      */
     inline bool EvaluationLimitExceededHasBeenSet() const { return m_evaluationLimitExceededHasBeenSet; }
 
     /**
-     * <p>Indicates that over 100 resources are non-compliant with the AWS Firewall
+     * <p>Indicates that over 100 resources are noncompliant with the AWS Firewall
      * Manager policy.</p>
      */
     inline void SetEvaluationLimitExceeded(bool value) { m_evaluationLimitExceededHasBeenSet = true; m_evaluationLimitExceeded = value; }
 
     /**
-     * <p>Indicates that over 100 resources are non-compliant with the AWS Firewall
+     * <p>Indicates that over 100 resources are noncompliant with the AWS Firewall
      * Manager policy.</p>
      */
     inline EvaluationResult& WithEvaluationLimitExceeded(bool value) { SetEvaluationLimitExceeded(value); return *this;}

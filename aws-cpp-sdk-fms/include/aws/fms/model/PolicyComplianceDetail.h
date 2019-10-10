@@ -39,9 +39,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the non-compliant resources in a member account for a specific AWS
+   * <p>Describes the noncompliant resources in a member account for a specific AWS
    * Firewall Manager policy. A maximum of 100 entries are displayed. If more than
-   * 100 resources are non-compliant, <code>EvaluationLimitExceeded</code> is set to
+   * 100 resources are noncompliant, <code>EvaluationLimitExceeded</code> is set to
    * <code>True</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PolicyComplianceDetail">AWS
    * API Reference</a></p>
@@ -179,111 +179,119 @@ namespace Model
 
 
     /**
-     * <p>An array of resources that are not protected by the policy.</p>
+     * <p>An array of resources that aren't protected by the AWS WAF or Shield Advanced
+     * policy or that aren't in compliance with the security group policy.</p>
      */
     inline const Aws::Vector<ComplianceViolator>& GetViolators() const{ return m_violators; }
 
     /**
-     * <p>An array of resources that are not protected by the policy.</p>
+     * <p>An array of resources that aren't protected by the AWS WAF or Shield Advanced
+     * policy or that aren't in compliance with the security group policy.</p>
      */
     inline bool ViolatorsHasBeenSet() const { return m_violatorsHasBeenSet; }
 
     /**
-     * <p>An array of resources that are not protected by the policy.</p>
+     * <p>An array of resources that aren't protected by the AWS WAF or Shield Advanced
+     * policy or that aren't in compliance with the security group policy.</p>
      */
     inline void SetViolators(const Aws::Vector<ComplianceViolator>& value) { m_violatorsHasBeenSet = true; m_violators = value; }
 
     /**
-     * <p>An array of resources that are not protected by the policy.</p>
+     * <p>An array of resources that aren't protected by the AWS WAF or Shield Advanced
+     * policy or that aren't in compliance with the security group policy.</p>
      */
     inline void SetViolators(Aws::Vector<ComplianceViolator>&& value) { m_violatorsHasBeenSet = true; m_violators = std::move(value); }
 
     /**
-     * <p>An array of resources that are not protected by the policy.</p>
+     * <p>An array of resources that aren't protected by the AWS WAF or Shield Advanced
+     * policy or that aren't in compliance with the security group policy.</p>
      */
     inline PolicyComplianceDetail& WithViolators(const Aws::Vector<ComplianceViolator>& value) { SetViolators(value); return *this;}
 
     /**
-     * <p>An array of resources that are not protected by the policy.</p>
+     * <p>An array of resources that aren't protected by the AWS WAF or Shield Advanced
+     * policy or that aren't in compliance with the security group policy.</p>
      */
     inline PolicyComplianceDetail& WithViolators(Aws::Vector<ComplianceViolator>&& value) { SetViolators(std::move(value)); return *this;}
 
     /**
-     * <p>An array of resources that are not protected by the policy.</p>
+     * <p>An array of resources that aren't protected by the AWS WAF or Shield Advanced
+     * policy or that aren't in compliance with the security group policy.</p>
      */
     inline PolicyComplianceDetail& AddViolators(const ComplianceViolator& value) { m_violatorsHasBeenSet = true; m_violators.push_back(value); return *this; }
 
     /**
-     * <p>An array of resources that are not protected by the policy.</p>
+     * <p>An array of resources that aren't protected by the AWS WAF or Shield Advanced
+     * policy or that aren't in compliance with the security group policy.</p>
      */
     inline PolicyComplianceDetail& AddViolators(ComplianceViolator&& value) { m_violatorsHasBeenSet = true; m_violators.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Indicates if over 100 resources are non-compliant with the AWS Firewall
+     * <p>Indicates if over 100 resources are noncompliant with the AWS Firewall
      * Manager policy.</p>
      */
     inline bool GetEvaluationLimitExceeded() const{ return m_evaluationLimitExceeded; }
 
     /**
-     * <p>Indicates if over 100 resources are non-compliant with the AWS Firewall
+     * <p>Indicates if over 100 resources are noncompliant with the AWS Firewall
      * Manager policy.</p>
      */
     inline bool EvaluationLimitExceededHasBeenSet() const { return m_evaluationLimitExceededHasBeenSet; }
 
     /**
-     * <p>Indicates if over 100 resources are non-compliant with the AWS Firewall
+     * <p>Indicates if over 100 resources are noncompliant with the AWS Firewall
      * Manager policy.</p>
      */
     inline void SetEvaluationLimitExceeded(bool value) { m_evaluationLimitExceededHasBeenSet = true; m_evaluationLimitExceeded = value; }
 
     /**
-     * <p>Indicates if over 100 resources are non-compliant with the AWS Firewall
+     * <p>Indicates if over 100 resources are noncompliant with the AWS Firewall
      * Manager policy.</p>
      */
     inline PolicyComplianceDetail& WithEvaluationLimitExceeded(bool value) { SetEvaluationLimitExceeded(value); return *this;}
 
 
     /**
-     * <p>A time stamp that indicates when the returned information should be
-     * considered out-of-date.</p>
+     * <p>A timestamp that indicates when the returned information should be considered
+     * out of date.</p>
      */
     inline const Aws::Utils::DateTime& GetExpiredAt() const{ return m_expiredAt; }
 
     /**
-     * <p>A time stamp that indicates when the returned information should be
-     * considered out-of-date.</p>
+     * <p>A timestamp that indicates when the returned information should be considered
+     * out of date.</p>
      */
     inline bool ExpiredAtHasBeenSet() const { return m_expiredAtHasBeenSet; }
 
     /**
-     * <p>A time stamp that indicates when the returned information should be
-     * considered out-of-date.</p>
+     * <p>A timestamp that indicates when the returned information should be considered
+     * out of date.</p>
      */
     inline void SetExpiredAt(const Aws::Utils::DateTime& value) { m_expiredAtHasBeenSet = true; m_expiredAt = value; }
 
     /**
-     * <p>A time stamp that indicates when the returned information should be
-     * considered out-of-date.</p>
+     * <p>A timestamp that indicates when the returned information should be considered
+     * out of date.</p>
      */
     inline void SetExpiredAt(Aws::Utils::DateTime&& value) { m_expiredAtHasBeenSet = true; m_expiredAt = std::move(value); }
 
     /**
-     * <p>A time stamp that indicates when the returned information should be
-     * considered out-of-date.</p>
+     * <p>A timestamp that indicates when the returned information should be considered
+     * out of date.</p>
      */
     inline PolicyComplianceDetail& WithExpiredAt(const Aws::Utils::DateTime& value) { SetExpiredAt(value); return *this;}
 
     /**
-     * <p>A time stamp that indicates when the returned information should be
-     * considered out-of-date.</p>
+     * <p>A timestamp that indicates when the returned information should be considered
+     * out of date.</p>
      */
     inline PolicyComplianceDetail& WithExpiredAt(Aws::Utils::DateTime&& value) { SetExpiredAt(std::move(value)); return *this;}
 
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -291,7 +299,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -299,7 +307,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -307,7 +315,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -315,7 +323,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -323,7 +331,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -331,7 +339,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -339,7 +347,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -347,7 +355,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -355,7 +363,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -363,7 +371,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
@@ -371,7 +379,7 @@ namespace Model
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
-     * Config, that are causing a resource to be non-compliant. The details include the
+     * Config, that are causing a resource to be noncompliant. The details include the
      * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */

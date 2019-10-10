@@ -115,8 +115,7 @@ namespace Model
      * type</p> </li> <li> <p>Account ID</p> </li> <li> <p>ARN of the resource
      * attacked</p> </li> <li> <p>Start time of the attack</p> </li> <li> <p>End time
      * of the attack (ongoing attacks will not have an end time)</p> </li> </ul> <p>The
-     * details are in JSON format. An example is shown in the Examples section
-     * below.</p>
+     * details are in JSON format. </p>
      */
     inline const Aws::String& GetData() const{ return m_data; }
 
@@ -125,8 +124,7 @@ namespace Model
      * type</p> </li> <li> <p>Account ID</p> </li> <li> <p>ARN of the resource
      * attacked</p> </li> <li> <p>Start time of the attack</p> </li> <li> <p>End time
      * of the attack (ongoing attacks will not have an end time)</p> </li> </ul> <p>The
-     * details are in JSON format. An example is shown in the Examples section
-     * below.</p>
+     * details are in JSON format. </p>
      */
     inline void SetData(const Aws::String& value) { m_data = value; }
 
@@ -135,8 +133,7 @@ namespace Model
      * type</p> </li> <li> <p>Account ID</p> </li> <li> <p>ARN of the resource
      * attacked</p> </li> <li> <p>Start time of the attack</p> </li> <li> <p>End time
      * of the attack (ongoing attacks will not have an end time)</p> </li> </ul> <p>The
-     * details are in JSON format. An example is shown in the Examples section
-     * below.</p>
+     * details are in JSON format. </p>
      */
     inline void SetData(Aws::String&& value) { m_data = std::move(value); }
 
@@ -145,8 +142,7 @@ namespace Model
      * type</p> </li> <li> <p>Account ID</p> </li> <li> <p>ARN of the resource
      * attacked</p> </li> <li> <p>Start time of the attack</p> </li> <li> <p>End time
      * of the attack (ongoing attacks will not have an end time)</p> </li> </ul> <p>The
-     * details are in JSON format. An example is shown in the Examples section
-     * below.</p>
+     * details are in JSON format. </p>
      */
     inline void SetData(const char* value) { m_data.assign(value); }
 
@@ -155,8 +151,7 @@ namespace Model
      * type</p> </li> <li> <p>Account ID</p> </li> <li> <p>ARN of the resource
      * attacked</p> </li> <li> <p>Start time of the attack</p> </li> <li> <p>End time
      * of the attack (ongoing attacks will not have an end time)</p> </li> </ul> <p>The
-     * details are in JSON format. An example is shown in the Examples section
-     * below.</p>
+     * details are in JSON format. </p>
      */
     inline GetProtectionStatusResult& WithData(const Aws::String& value) { SetData(value); return *this;}
 
@@ -165,8 +160,7 @@ namespace Model
      * type</p> </li> <li> <p>Account ID</p> </li> <li> <p>ARN of the resource
      * attacked</p> </li> <li> <p>Start time of the attack</p> </li> <li> <p>End time
      * of the attack (ongoing attacks will not have an end time)</p> </li> </ul> <p>The
-     * details are in JSON format. An example is shown in the Examples section
-     * below.</p>
+     * details are in JSON format. </p>
      */
     inline GetProtectionStatusResult& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
 
@@ -175,8 +169,7 @@ namespace Model
      * type</p> </li> <li> <p>Account ID</p> </li> <li> <p>ARN of the resource
      * attacked</p> </li> <li> <p>Start time of the attack</p> </li> <li> <p>End time
      * of the attack (ongoing attacks will not have an end time)</p> </li> </ul> <p>The
-     * details are in JSON format. An example is shown in the Examples section
-     * below.</p>
+     * details are in JSON format. </p>
      */
     inline GetProtectionStatusResult& WithData(const char* value) { SetData(value); return *this;}
 

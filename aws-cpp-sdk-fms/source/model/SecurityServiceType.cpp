@@ -32,6 +32,9 @@ namespace Aws
 
         static const int WAF_HASH = HashingUtils::HashString("WAF");
         static const int SHIELD_ADVANCED_HASH = HashingUtils::HashString("SHIELD_ADVANCED");
+        static const int SECURITY_GROUPS_COMMON_HASH = HashingUtils::HashString("SECURITY_GROUPS_COMMON");
+        static const int SECURITY_GROUPS_CONTENT_AUDIT_HASH = HashingUtils::HashString("SECURITY_GROUPS_CONTENT_AUDIT");
+        static const int SECURITY_GROUPS_USAGE_AUDIT_HASH = HashingUtils::HashString("SECURITY_GROUPS_USAGE_AUDIT");
 
 
         SecurityServiceType GetSecurityServiceTypeForName(const Aws::String& name)
@@ -44,6 +47,18 @@ namespace Aws
           else if (hashCode == SHIELD_ADVANCED_HASH)
           {
             return SecurityServiceType::SHIELD_ADVANCED;
+          }
+          else if (hashCode == SECURITY_GROUPS_COMMON_HASH)
+          {
+            return SecurityServiceType::SECURITY_GROUPS_COMMON;
+          }
+          else if (hashCode == SECURITY_GROUPS_CONTENT_AUDIT_HASH)
+          {
+            return SecurityServiceType::SECURITY_GROUPS_CONTENT_AUDIT;
+          }
+          else if (hashCode == SECURITY_GROUPS_USAGE_AUDIT_HASH)
+          {
+            return SecurityServiceType::SECURITY_GROUPS_USAGE_AUDIT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +78,12 @@ namespace Aws
             return "WAF";
           case SecurityServiceType::SHIELD_ADVANCED:
             return "SHIELD_ADVANCED";
+          case SecurityServiceType::SECURITY_GROUPS_COMMON:
+            return "SECURITY_GROUPS_COMMON";
+          case SecurityServiceType::SECURITY_GROUPS_CONTENT_AUDIT:
+            return "SECURITY_GROUPS_CONTENT_AUDIT";
+          case SecurityServiceType::SECURITY_GROUPS_USAGE_AUDIT:
+            return "SECURITY_GROUPS_USAGE_AUDIT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

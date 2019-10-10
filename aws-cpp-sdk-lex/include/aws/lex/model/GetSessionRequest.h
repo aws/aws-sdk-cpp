@@ -21,6 +21,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace LexRuntimeService
 {
 namespace Model
@@ -40,6 +44,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "GetSession"; }
 
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -172,6 +178,71 @@ namespace Model
      */
     inline GetSessionRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
 
+
+    /**
+     * <p>A string used to filter the intents returned in the
+     * <code>recentIntentSummaryView</code> structure. </p> <p>When you specify a
+     * filter, only intents with their <code>checkpointLabel</code> field set to that
+     * string are returned.</p>
+     */
+    inline const Aws::String& GetCheckpointLabelFilter() const{ return m_checkpointLabelFilter; }
+
+    /**
+     * <p>A string used to filter the intents returned in the
+     * <code>recentIntentSummaryView</code> structure. </p> <p>When you specify a
+     * filter, only intents with their <code>checkpointLabel</code> field set to that
+     * string are returned.</p>
+     */
+    inline bool CheckpointLabelFilterHasBeenSet() const { return m_checkpointLabelFilterHasBeenSet; }
+
+    /**
+     * <p>A string used to filter the intents returned in the
+     * <code>recentIntentSummaryView</code> structure. </p> <p>When you specify a
+     * filter, only intents with their <code>checkpointLabel</code> field set to that
+     * string are returned.</p>
+     */
+    inline void SetCheckpointLabelFilter(const Aws::String& value) { m_checkpointLabelFilterHasBeenSet = true; m_checkpointLabelFilter = value; }
+
+    /**
+     * <p>A string used to filter the intents returned in the
+     * <code>recentIntentSummaryView</code> structure. </p> <p>When you specify a
+     * filter, only intents with their <code>checkpointLabel</code> field set to that
+     * string are returned.</p>
+     */
+    inline void SetCheckpointLabelFilter(Aws::String&& value) { m_checkpointLabelFilterHasBeenSet = true; m_checkpointLabelFilter = std::move(value); }
+
+    /**
+     * <p>A string used to filter the intents returned in the
+     * <code>recentIntentSummaryView</code> structure. </p> <p>When you specify a
+     * filter, only intents with their <code>checkpointLabel</code> field set to that
+     * string are returned.</p>
+     */
+    inline void SetCheckpointLabelFilter(const char* value) { m_checkpointLabelFilterHasBeenSet = true; m_checkpointLabelFilter.assign(value); }
+
+    /**
+     * <p>A string used to filter the intents returned in the
+     * <code>recentIntentSummaryView</code> structure. </p> <p>When you specify a
+     * filter, only intents with their <code>checkpointLabel</code> field set to that
+     * string are returned.</p>
+     */
+    inline GetSessionRequest& WithCheckpointLabelFilter(const Aws::String& value) { SetCheckpointLabelFilter(value); return *this;}
+
+    /**
+     * <p>A string used to filter the intents returned in the
+     * <code>recentIntentSummaryView</code> structure. </p> <p>When you specify a
+     * filter, only intents with their <code>checkpointLabel</code> field set to that
+     * string are returned.</p>
+     */
+    inline GetSessionRequest& WithCheckpointLabelFilter(Aws::String&& value) { SetCheckpointLabelFilter(std::move(value)); return *this;}
+
+    /**
+     * <p>A string used to filter the intents returned in the
+     * <code>recentIntentSummaryView</code> structure. </p> <p>When you specify a
+     * filter, only intents with their <code>checkpointLabel</code> field set to that
+     * string are returned.</p>
+     */
+    inline GetSessionRequest& WithCheckpointLabelFilter(const char* value) { SetCheckpointLabelFilter(value); return *this;}
+
   private:
 
     Aws::String m_botName;
@@ -182,6 +253,9 @@ namespace Model
 
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
+
+    Aws::String m_checkpointLabelFilter;
+    bool m_checkpointLabelFilterHasBeenSet;
   };
 
 } // namespace Model

@@ -189,7 +189,7 @@ GetSessionOutcome LexRuntimeServiceClient::GetSession(const GetSessionRequest& r
   ss << request.GetBotAlias();
   ss << "/user/";
   ss << request.GetUserId();
-  ss << "/session";
+  ss << "/session/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())

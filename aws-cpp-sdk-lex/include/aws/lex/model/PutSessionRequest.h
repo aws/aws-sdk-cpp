@@ -19,6 +19,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/lex/model/DialogAction.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lex/model/IntentSummary.h>
 #include <utility>
 
 namespace Aws
@@ -307,6 +309,143 @@ namespace Model
 
 
     /**
+     * <p>A summary of the recent intents for the bot. You can use the intent summary
+     * view to set a checkpoint label on an intent and modify attributes of intents.
+     * You can also use it to remove or add intent summary objects to the list.</p>
+     * <p>An intent that you modify or add to the list must make sense for the bot. For
+     * example, the intent name must be valid for the bot. You must provide valid
+     * values for:</p> <ul> <li> <p> <code>intentName</code> </p> </li> <li> <p>slot
+     * names</p> </li> <li> <p> <code>slotToElict</code> </p> </li> </ul> <p>If you
+     * send the <code>recentIntentSummaryView</code> parameter in a
+     * <code>PutSession</code> request, the contents of the new summary view replaces
+     * the old summary view. For example, if a <code>GetSession</code> request returns
+     * three intents in the summary view and you call <code>PutSession</code> with one
+     * intent in the summary view, the next call to <code>GetSession</code> will only
+     * return one intent.</p>
+     */
+    inline const Aws::Vector<IntentSummary>& GetRecentIntentSummaryView() const{ return m_recentIntentSummaryView; }
+
+    /**
+     * <p>A summary of the recent intents for the bot. You can use the intent summary
+     * view to set a checkpoint label on an intent and modify attributes of intents.
+     * You can also use it to remove or add intent summary objects to the list.</p>
+     * <p>An intent that you modify or add to the list must make sense for the bot. For
+     * example, the intent name must be valid for the bot. You must provide valid
+     * values for:</p> <ul> <li> <p> <code>intentName</code> </p> </li> <li> <p>slot
+     * names</p> </li> <li> <p> <code>slotToElict</code> </p> </li> </ul> <p>If you
+     * send the <code>recentIntentSummaryView</code> parameter in a
+     * <code>PutSession</code> request, the contents of the new summary view replaces
+     * the old summary view. For example, if a <code>GetSession</code> request returns
+     * three intents in the summary view and you call <code>PutSession</code> with one
+     * intent in the summary view, the next call to <code>GetSession</code> will only
+     * return one intent.</p>
+     */
+    inline bool RecentIntentSummaryViewHasBeenSet() const { return m_recentIntentSummaryViewHasBeenSet; }
+
+    /**
+     * <p>A summary of the recent intents for the bot. You can use the intent summary
+     * view to set a checkpoint label on an intent and modify attributes of intents.
+     * You can also use it to remove or add intent summary objects to the list.</p>
+     * <p>An intent that you modify or add to the list must make sense for the bot. For
+     * example, the intent name must be valid for the bot. You must provide valid
+     * values for:</p> <ul> <li> <p> <code>intentName</code> </p> </li> <li> <p>slot
+     * names</p> </li> <li> <p> <code>slotToElict</code> </p> </li> </ul> <p>If you
+     * send the <code>recentIntentSummaryView</code> parameter in a
+     * <code>PutSession</code> request, the contents of the new summary view replaces
+     * the old summary view. For example, if a <code>GetSession</code> request returns
+     * three intents in the summary view and you call <code>PutSession</code> with one
+     * intent in the summary view, the next call to <code>GetSession</code> will only
+     * return one intent.</p>
+     */
+    inline void SetRecentIntentSummaryView(const Aws::Vector<IntentSummary>& value) { m_recentIntentSummaryViewHasBeenSet = true; m_recentIntentSummaryView = value; }
+
+    /**
+     * <p>A summary of the recent intents for the bot. You can use the intent summary
+     * view to set a checkpoint label on an intent and modify attributes of intents.
+     * You can also use it to remove or add intent summary objects to the list.</p>
+     * <p>An intent that you modify or add to the list must make sense for the bot. For
+     * example, the intent name must be valid for the bot. You must provide valid
+     * values for:</p> <ul> <li> <p> <code>intentName</code> </p> </li> <li> <p>slot
+     * names</p> </li> <li> <p> <code>slotToElict</code> </p> </li> </ul> <p>If you
+     * send the <code>recentIntentSummaryView</code> parameter in a
+     * <code>PutSession</code> request, the contents of the new summary view replaces
+     * the old summary view. For example, if a <code>GetSession</code> request returns
+     * three intents in the summary view and you call <code>PutSession</code> with one
+     * intent in the summary view, the next call to <code>GetSession</code> will only
+     * return one intent.</p>
+     */
+    inline void SetRecentIntentSummaryView(Aws::Vector<IntentSummary>&& value) { m_recentIntentSummaryViewHasBeenSet = true; m_recentIntentSummaryView = std::move(value); }
+
+    /**
+     * <p>A summary of the recent intents for the bot. You can use the intent summary
+     * view to set a checkpoint label on an intent and modify attributes of intents.
+     * You can also use it to remove or add intent summary objects to the list.</p>
+     * <p>An intent that you modify or add to the list must make sense for the bot. For
+     * example, the intent name must be valid for the bot. You must provide valid
+     * values for:</p> <ul> <li> <p> <code>intentName</code> </p> </li> <li> <p>slot
+     * names</p> </li> <li> <p> <code>slotToElict</code> </p> </li> </ul> <p>If you
+     * send the <code>recentIntentSummaryView</code> parameter in a
+     * <code>PutSession</code> request, the contents of the new summary view replaces
+     * the old summary view. For example, if a <code>GetSession</code> request returns
+     * three intents in the summary view and you call <code>PutSession</code> with one
+     * intent in the summary view, the next call to <code>GetSession</code> will only
+     * return one intent.</p>
+     */
+    inline PutSessionRequest& WithRecentIntentSummaryView(const Aws::Vector<IntentSummary>& value) { SetRecentIntentSummaryView(value); return *this;}
+
+    /**
+     * <p>A summary of the recent intents for the bot. You can use the intent summary
+     * view to set a checkpoint label on an intent and modify attributes of intents.
+     * You can also use it to remove or add intent summary objects to the list.</p>
+     * <p>An intent that you modify or add to the list must make sense for the bot. For
+     * example, the intent name must be valid for the bot. You must provide valid
+     * values for:</p> <ul> <li> <p> <code>intentName</code> </p> </li> <li> <p>slot
+     * names</p> </li> <li> <p> <code>slotToElict</code> </p> </li> </ul> <p>If you
+     * send the <code>recentIntentSummaryView</code> parameter in a
+     * <code>PutSession</code> request, the contents of the new summary view replaces
+     * the old summary view. For example, if a <code>GetSession</code> request returns
+     * three intents in the summary view and you call <code>PutSession</code> with one
+     * intent in the summary view, the next call to <code>GetSession</code> will only
+     * return one intent.</p>
+     */
+    inline PutSessionRequest& WithRecentIntentSummaryView(Aws::Vector<IntentSummary>&& value) { SetRecentIntentSummaryView(std::move(value)); return *this;}
+
+    /**
+     * <p>A summary of the recent intents for the bot. You can use the intent summary
+     * view to set a checkpoint label on an intent and modify attributes of intents.
+     * You can also use it to remove or add intent summary objects to the list.</p>
+     * <p>An intent that you modify or add to the list must make sense for the bot. For
+     * example, the intent name must be valid for the bot. You must provide valid
+     * values for:</p> <ul> <li> <p> <code>intentName</code> </p> </li> <li> <p>slot
+     * names</p> </li> <li> <p> <code>slotToElict</code> </p> </li> </ul> <p>If you
+     * send the <code>recentIntentSummaryView</code> parameter in a
+     * <code>PutSession</code> request, the contents of the new summary view replaces
+     * the old summary view. For example, if a <code>GetSession</code> request returns
+     * three intents in the summary view and you call <code>PutSession</code> with one
+     * intent in the summary view, the next call to <code>GetSession</code> will only
+     * return one intent.</p>
+     */
+    inline PutSessionRequest& AddRecentIntentSummaryView(const IntentSummary& value) { m_recentIntentSummaryViewHasBeenSet = true; m_recentIntentSummaryView.push_back(value); return *this; }
+
+    /**
+     * <p>A summary of the recent intents for the bot. You can use the intent summary
+     * view to set a checkpoint label on an intent and modify attributes of intents.
+     * You can also use it to remove or add intent summary objects to the list.</p>
+     * <p>An intent that you modify or add to the list must make sense for the bot. For
+     * example, the intent name must be valid for the bot. You must provide valid
+     * values for:</p> <ul> <li> <p> <code>intentName</code> </p> </li> <li> <p>slot
+     * names</p> </li> <li> <p> <code>slotToElict</code> </p> </li> </ul> <p>If you
+     * send the <code>recentIntentSummaryView</code> parameter in a
+     * <code>PutSession</code> request, the contents of the new summary view replaces
+     * the old summary view. For example, if a <code>GetSession</code> request returns
+     * three intents in the summary view and you call <code>PutSession</code> with one
+     * intent in the summary view, the next call to <code>GetSession</code> will only
+     * return one intent.</p>
+     */
+    inline PutSessionRequest& AddRecentIntentSummaryView(IntentSummary&& value) { m_recentIntentSummaryViewHasBeenSet = true; m_recentIntentSummaryView.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The message that Amazon Lex returns in the response can be either text or
      * speech based depending on the value of this field.</p> <ul> <li> <p>If the value
      * is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the
@@ -466,6 +605,9 @@ namespace Model
 
     DialogAction m_dialogAction;
     bool m_dialogActionHasBeenSet;
+
+    Aws::Vector<IntentSummary> m_recentIntentSummaryView;
+    bool m_recentIntentSummaryViewHasBeenSet;
 
     Aws::String m_accept;
     bool m_acceptHasBeenSet;

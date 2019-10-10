@@ -29,6 +29,7 @@ PutSessionRequest::PutSessionRequest() :
     m_userIdHasBeenSet(false),
     m_sessionAttributesHasBeenSet(false),
     m_dialogActionHasBeenSet(false),
+    m_recentIntentSummaryViewHasBeenSet(false),
     m_acceptHasBeenSet(false)
 {
 }
@@ -51,6 +52,17 @@ Aws::String PutSessionRequest::SerializePayload() const
   if(m_dialogActionHasBeenSet)
   {
    payload.WithObject("dialogAction", m_dialogAction.Jsonize());
+
+  }
+
+  if(m_recentIntentSummaryViewHasBeenSet)
+  {
+   Array<JsonValue> recentIntentSummaryViewJsonList(m_recentIntentSummaryView.size());
+   for(unsigned recentIntentSummaryViewIndex = 0; recentIntentSummaryViewIndex < recentIntentSummaryViewJsonList.GetLength(); ++recentIntentSummaryViewIndex)
+   {
+     recentIntentSummaryViewJsonList[recentIntentSummaryViewIndex].AsObject(m_recentIntentSummaryView[recentIntentSummaryViewIndex].Jsonize());
+   }
+   payload.WithArray("recentIntentSummaryView", std::move(recentIntentSummaryViewJsonList));
 
   }
 

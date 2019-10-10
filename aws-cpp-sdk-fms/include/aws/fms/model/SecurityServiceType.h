@@ -27,7 +27,10 @@ namespace Model
   {
     NOT_SET,
     WAF,
-    SHIELD_ADVANCED
+    SHIELD_ADVANCED,
+    SECURITY_GROUPS_COMMON,
+    SECURITY_GROUPS_CONTENT_AUDIT,
+    SECURITY_GROUPS_USAGE_AUDIT
   };
 
 namespace SecurityServiceTypeMapper

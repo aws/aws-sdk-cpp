@@ -90,26 +90,30 @@ namespace Model
 
 
     /**
-     * <p>If true, additional statistical information about the datastore is included
-     * in the response.</p>
+     * <p>If true, additional statistical information about the data store is included
+     * in the response. This feature cannot be used with a data store whose S3 storage
+     * is customer-managed.</p>
      */
     inline bool GetIncludeStatistics() const{ return m_includeStatistics; }
 
     /**
-     * <p>If true, additional statistical information about the datastore is included
-     * in the response.</p>
+     * <p>If true, additional statistical information about the data store is included
+     * in the response. This feature cannot be used with a data store whose S3 storage
+     * is customer-managed.</p>
      */
     inline bool IncludeStatisticsHasBeenSet() const { return m_includeStatisticsHasBeenSet; }
 
     /**
-     * <p>If true, additional statistical information about the datastore is included
-     * in the response.</p>
+     * <p>If true, additional statistical information about the data store is included
+     * in the response. This feature cannot be used with a data store whose S3 storage
+     * is customer-managed.</p>
      */
     inline void SetIncludeStatistics(bool value) { m_includeStatisticsHasBeenSet = true; m_includeStatistics = value; }
 
     /**
-     * <p>If true, additional statistical information about the datastore is included
-     * in the response.</p>
+     * <p>If true, additional statistical information about the data store is included
+     * in the response. This feature cannot be used with a data store whose S3 storage
+     * is customer-managed.</p>
      */
     inline DescribeDatastoreRequest& WithIncludeStatistics(bool value) { SetIncludeStatistics(value); return *this;}
 

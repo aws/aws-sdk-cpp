@@ -91,25 +91,29 @@ namespace Model
 
     /**
      * <p>If true, additional statistical information about the channel is included in
-     * the response.</p>
+     * the response. This feature cannot be used with a channel whose S3 storage is
+     * customer-managed.</p>
      */
     inline bool GetIncludeStatistics() const{ return m_includeStatistics; }
 
     /**
      * <p>If true, additional statistical information about the channel is included in
-     * the response.</p>
+     * the response. This feature cannot be used with a channel whose S3 storage is
+     * customer-managed.</p>
      */
     inline bool IncludeStatisticsHasBeenSet() const { return m_includeStatisticsHasBeenSet; }
 
     /**
      * <p>If true, additional statistical information about the channel is included in
-     * the response.</p>
+     * the response. This feature cannot be used with a channel whose S3 storage is
+     * customer-managed.</p>
      */
     inline void SetIncludeStatistics(bool value) { m_includeStatisticsHasBeenSet = true; m_includeStatistics = value; }
 
     /**
      * <p>If true, additional statistical information about the channel is included in
-     * the response.</p>
+     * the response. This feature cannot be used with a channel whose S3 storage is
+     * customer-managed.</p>
      */
     inline DescribeChannelRequest& WithIncludeStatistics(bool value) { SetIncludeStatistics(value); return *this;}
 

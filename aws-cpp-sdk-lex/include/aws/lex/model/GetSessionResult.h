@@ -50,7 +50,9 @@ namespace Model
      * <p>An array of information about the intents used in the session. The array can
      * contain a maximum of three summaries. If more than three intents are used in the
      * session, the <code>recentIntentSummaryView</code> operation contains information
-     * about the last three intents used.</p>
+     * about the last three intents used.</p> <p>If you set the
+     * <code>checkpointLabelFilter</code> parameter in the request, the array contains
+     * only the intents with the specified label.</p>
      */
     inline const Aws::Vector<IntentSummary>& GetRecentIntentSummaryView() const{ return m_recentIntentSummaryView; }
 
@@ -58,7 +60,9 @@ namespace Model
      * <p>An array of information about the intents used in the session. The array can
      * contain a maximum of three summaries. If more than three intents are used in the
      * session, the <code>recentIntentSummaryView</code> operation contains information
-     * about the last three intents used.</p>
+     * about the last three intents used.</p> <p>If you set the
+     * <code>checkpointLabelFilter</code> parameter in the request, the array contains
+     * only the intents with the specified label.</p>
      */
     inline void SetRecentIntentSummaryView(const Aws::Vector<IntentSummary>& value) { m_recentIntentSummaryView = value; }
 
@@ -66,7 +70,9 @@ namespace Model
      * <p>An array of information about the intents used in the session. The array can
      * contain a maximum of three summaries. If more than three intents are used in the
      * session, the <code>recentIntentSummaryView</code> operation contains information
-     * about the last three intents used.</p>
+     * about the last three intents used.</p> <p>If you set the
+     * <code>checkpointLabelFilter</code> parameter in the request, the array contains
+     * only the intents with the specified label.</p>
      */
     inline void SetRecentIntentSummaryView(Aws::Vector<IntentSummary>&& value) { m_recentIntentSummaryView = std::move(value); }
 
@@ -74,7 +80,9 @@ namespace Model
      * <p>An array of information about the intents used in the session. The array can
      * contain a maximum of three summaries. If more than three intents are used in the
      * session, the <code>recentIntentSummaryView</code> operation contains information
-     * about the last three intents used.</p>
+     * about the last three intents used.</p> <p>If you set the
+     * <code>checkpointLabelFilter</code> parameter in the request, the array contains
+     * only the intents with the specified label.</p>
      */
     inline GetSessionResult& WithRecentIntentSummaryView(const Aws::Vector<IntentSummary>& value) { SetRecentIntentSummaryView(value); return *this;}
 
@@ -82,7 +90,9 @@ namespace Model
      * <p>An array of information about the intents used in the session. The array can
      * contain a maximum of three summaries. If more than three intents are used in the
      * session, the <code>recentIntentSummaryView</code> operation contains information
-     * about the last three intents used.</p>
+     * about the last three intents used.</p> <p>If you set the
+     * <code>checkpointLabelFilter</code> parameter in the request, the array contains
+     * only the intents with the specified label.</p>
      */
     inline GetSessionResult& WithRecentIntentSummaryView(Aws::Vector<IntentSummary>&& value) { SetRecentIntentSummaryView(std::move(value)); return *this;}
 
@@ -90,7 +100,9 @@ namespace Model
      * <p>An array of information about the intents used in the session. The array can
      * contain a maximum of three summaries. If more than three intents are used in the
      * session, the <code>recentIntentSummaryView</code> operation contains information
-     * about the last three intents used.</p>
+     * about the last three intents used.</p> <p>If you set the
+     * <code>checkpointLabelFilter</code> parameter in the request, the array contains
+     * only the intents with the specified label.</p>
      */
     inline GetSessionResult& AddRecentIntentSummaryView(const IntentSummary& value) { m_recentIntentSummaryView.push_back(value); return *this; }
 
@@ -98,7 +110,9 @@ namespace Model
      * <p>An array of information about the intents used in the session. The array can
      * contain a maximum of three summaries. If more than three intents are used in the
      * session, the <code>recentIntentSummaryView</code> operation contains information
-     * about the last three intents used.</p>
+     * about the last three intents used.</p> <p>If you set the
+     * <code>checkpointLabelFilter</code> parameter in the request, the array contains
+     * only the intents with the specified label.</p>
      */
     inline GetSessionResult& AddRecentIntentSummaryView(IntentSummary&& value) { m_recentIntentSummaryView.push_back(std::move(value)); return *this; }
 

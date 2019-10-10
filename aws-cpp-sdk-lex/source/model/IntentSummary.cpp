@@ -30,6 +30,7 @@ namespace Model
 
 IntentSummary::IntentSummary() : 
     m_intentNameHasBeenSet(false),
+    m_checkpointLabelHasBeenSet(false),
     m_slotsHasBeenSet(false),
     m_confirmationStatus(ConfirmationStatus::NOT_SET),
     m_confirmationStatusHasBeenSet(false),
@@ -43,6 +44,7 @@ IntentSummary::IntentSummary() :
 
 IntentSummary::IntentSummary(JsonView jsonValue) : 
     m_intentNameHasBeenSet(false),
+    m_checkpointLabelHasBeenSet(false),
     m_slotsHasBeenSet(false),
     m_confirmationStatus(ConfirmationStatus::NOT_SET),
     m_confirmationStatusHasBeenSet(false),
@@ -62,6 +64,13 @@ IntentSummary& IntentSummary::operator =(JsonView jsonValue)
     m_intentName = jsonValue.GetString("intentName");
 
     m_intentNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("checkpointLabel"))
+  {
+    m_checkpointLabel = jsonValue.GetString("checkpointLabel");
+
+    m_checkpointLabelHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("slots"))
@@ -112,6 +121,12 @@ JsonValue IntentSummary::Jsonize() const
   if(m_intentNameHasBeenSet)
   {
    payload.WithString("intentName", m_intentName);
+
+  }
+
+  if(m_checkpointLabelHasBeenSet)
+  {
+   payload.WithString("checkpointLabel", m_checkpointLabel);
 
   }
 

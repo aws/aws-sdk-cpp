@@ -330,24 +330,24 @@ namespace Model
         virtual void PostContentAsync(const Model::PostContentRequest& request, const PostContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sends user input (text or SSML) to Amazon Lex. Client applications can use
-         * this API to send requests to Amazon Lex at runtime. Amazon Lex then interprets
-         * the user input using the machine learning model it built for the bot. </p> <p>
-         * In response, Amazon Lex returns the next <code>message</code> to convey to the
-         * user an optional <code>responseCard</code> to display. Consider the following
-         * example messages: </p> <ul> <li> <p> For a user input "I would like a pizza",
-         * Amazon Lex might return a response with a message eliciting slot data (for
-         * example, PizzaSize): "What size pizza would you like?" </p> </li> <li> <p> After
-         * the user provides all of the pizza order information, Amazon Lex might return a
-         * response with a message to obtain user confirmation "Proceed with the pizza
-         * order?". </p> </li> <li> <p> After the user replies to a confirmation prompt
-         * with a "yes", Amazon Lex might return a conclusion statement: "Thank you, your
-         * cheese pizza has been ordered.". </p> </li> </ul> <p> Not all Amazon Lex
-         * messages require a user response. For example, a conclusion statement does not
-         * require a response. Some messages require only a "yes" or "no" user response. In
-         * addition to the <code>message</code>, Amazon Lex provides additional context
-         * about the message in the response that you might use to enhance client behavior,
-         * for example, to display the appropriate client user interface. These are the
+         * <p>Sends user input to Amazon Lex. Client applications can use this API to send
+         * requests to Amazon Lex at runtime. Amazon Lex then interprets the user input
+         * using the machine learning model it built for the bot. </p> <p> In response,
+         * Amazon Lex returns the next <code>message</code> to convey to the user an
+         * optional <code>responseCard</code> to display. Consider the following example
+         * messages: </p> <ul> <li> <p> For a user input "I would like a pizza", Amazon Lex
+         * might return a response with a message eliciting slot data (for example,
+         * PizzaSize): "What size pizza would you like?" </p> </li> <li> <p> After the user
+         * provides all of the pizza order information, Amazon Lex might return a response
+         * with a message to obtain user confirmation "Proceed with the pizza order?". </p>
+         * </li> <li> <p> After the user replies to a confirmation prompt with a "yes",
+         * Amazon Lex might return a conclusion statement: "Thank you, your cheese pizza
+         * has been ordered.". </p> </li> </ul> <p> Not all Amazon Lex messages require a
+         * user response. For example, a conclusion statement does not require a response.
+         * Some messages require only a "yes" or "no" user response. In addition to the
+         * <code>message</code>, Amazon Lex provides additional context about the message
+         * in the response that you might use to enhance client behavior, for example, to
+         * display the appropriate client user interface. These are the
          * <code>slotToElicit</code>, <code>dialogState</code>, <code>intentName</code>,
          * and <code>slots</code> fields in the response. Consider the following examples:
          * </p> <ul> <li> <p>If the message is to elicit slot data, Amazon Lex returns the
@@ -372,24 +372,24 @@ namespace Model
         virtual Model::PostTextOutcome PostText(const Model::PostTextRequest& request) const;
 
         /**
-         * <p>Sends user input (text or SSML) to Amazon Lex. Client applications can use
-         * this API to send requests to Amazon Lex at runtime. Amazon Lex then interprets
-         * the user input using the machine learning model it built for the bot. </p> <p>
-         * In response, Amazon Lex returns the next <code>message</code> to convey to the
-         * user an optional <code>responseCard</code> to display. Consider the following
-         * example messages: </p> <ul> <li> <p> For a user input "I would like a pizza",
-         * Amazon Lex might return a response with a message eliciting slot data (for
-         * example, PizzaSize): "What size pizza would you like?" </p> </li> <li> <p> After
-         * the user provides all of the pizza order information, Amazon Lex might return a
-         * response with a message to obtain user confirmation "Proceed with the pizza
-         * order?". </p> </li> <li> <p> After the user replies to a confirmation prompt
-         * with a "yes", Amazon Lex might return a conclusion statement: "Thank you, your
-         * cheese pizza has been ordered.". </p> </li> </ul> <p> Not all Amazon Lex
-         * messages require a user response. For example, a conclusion statement does not
-         * require a response. Some messages require only a "yes" or "no" user response. In
-         * addition to the <code>message</code>, Amazon Lex provides additional context
-         * about the message in the response that you might use to enhance client behavior,
-         * for example, to display the appropriate client user interface. These are the
+         * <p>Sends user input to Amazon Lex. Client applications can use this API to send
+         * requests to Amazon Lex at runtime. Amazon Lex then interprets the user input
+         * using the machine learning model it built for the bot. </p> <p> In response,
+         * Amazon Lex returns the next <code>message</code> to convey to the user an
+         * optional <code>responseCard</code> to display. Consider the following example
+         * messages: </p> <ul> <li> <p> For a user input "I would like a pizza", Amazon Lex
+         * might return a response with a message eliciting slot data (for example,
+         * PizzaSize): "What size pizza would you like?" </p> </li> <li> <p> After the user
+         * provides all of the pizza order information, Amazon Lex might return a response
+         * with a message to obtain user confirmation "Proceed with the pizza order?". </p>
+         * </li> <li> <p> After the user replies to a confirmation prompt with a "yes",
+         * Amazon Lex might return a conclusion statement: "Thank you, your cheese pizza
+         * has been ordered.". </p> </li> </ul> <p> Not all Amazon Lex messages require a
+         * user response. For example, a conclusion statement does not require a response.
+         * Some messages require only a "yes" or "no" user response. In addition to the
+         * <code>message</code>, Amazon Lex provides additional context about the message
+         * in the response that you might use to enhance client behavior, for example, to
+         * display the appropriate client user interface. These are the
          * <code>slotToElicit</code>, <code>dialogState</code>, <code>intentName</code>,
          * and <code>slots</code> fields in the response. Consider the following examples:
          * </p> <ul> <li> <p>If the message is to elicit slot data, Amazon Lex returns the
@@ -416,24 +416,24 @@ namespace Model
         virtual Model::PostTextOutcomeCallable PostTextCallable(const Model::PostTextRequest& request) const;
 
         /**
-         * <p>Sends user input (text or SSML) to Amazon Lex. Client applications can use
-         * this API to send requests to Amazon Lex at runtime. Amazon Lex then interprets
-         * the user input using the machine learning model it built for the bot. </p> <p>
-         * In response, Amazon Lex returns the next <code>message</code> to convey to the
-         * user an optional <code>responseCard</code> to display. Consider the following
-         * example messages: </p> <ul> <li> <p> For a user input "I would like a pizza",
-         * Amazon Lex might return a response with a message eliciting slot data (for
-         * example, PizzaSize): "What size pizza would you like?" </p> </li> <li> <p> After
-         * the user provides all of the pizza order information, Amazon Lex might return a
-         * response with a message to obtain user confirmation "Proceed with the pizza
-         * order?". </p> </li> <li> <p> After the user replies to a confirmation prompt
-         * with a "yes", Amazon Lex might return a conclusion statement: "Thank you, your
-         * cheese pizza has been ordered.". </p> </li> </ul> <p> Not all Amazon Lex
-         * messages require a user response. For example, a conclusion statement does not
-         * require a response. Some messages require only a "yes" or "no" user response. In
-         * addition to the <code>message</code>, Amazon Lex provides additional context
-         * about the message in the response that you might use to enhance client behavior,
-         * for example, to display the appropriate client user interface. These are the
+         * <p>Sends user input to Amazon Lex. Client applications can use this API to send
+         * requests to Amazon Lex at runtime. Amazon Lex then interprets the user input
+         * using the machine learning model it built for the bot. </p> <p> In response,
+         * Amazon Lex returns the next <code>message</code> to convey to the user an
+         * optional <code>responseCard</code> to display. Consider the following example
+         * messages: </p> <ul> <li> <p> For a user input "I would like a pizza", Amazon Lex
+         * might return a response with a message eliciting slot data (for example,
+         * PizzaSize): "What size pizza would you like?" </p> </li> <li> <p> After the user
+         * provides all of the pizza order information, Amazon Lex might return a response
+         * with a message to obtain user confirmation "Proceed with the pizza order?". </p>
+         * </li> <li> <p> After the user replies to a confirmation prompt with a "yes",
+         * Amazon Lex might return a conclusion statement: "Thank you, your cheese pizza
+         * has been ordered.". </p> </li> </ul> <p> Not all Amazon Lex messages require a
+         * user response. For example, a conclusion statement does not require a response.
+         * Some messages require only a "yes" or "no" user response. In addition to the
+         * <code>message</code>, Amazon Lex provides additional context about the message
+         * in the response that you might use to enhance client behavior, for example, to
+         * display the appropriate client user interface. These are the
          * <code>slotToElicit</code>, <code>dialogState</code>, <code>intentName</code>,
          * and <code>slots</code> fields in the response. Consider the following examples:
          * </p> <ul> <li> <p>If the message is to elicit slot data, Amazon Lex returns the
