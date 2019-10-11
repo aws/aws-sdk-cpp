@@ -30,6 +30,7 @@ namespace Aws
       namespace UpdateTargetsArchitectureMapper
       {
 
+        static const int armv6l_HASH = HashingUtils::HashString("armv6l");
         static const int armv7l_HASH = HashingUtils::HashString("armv7l");
         static const int x86_64_HASH = HashingUtils::HashString("x86_64");
         static const int aarch64_HASH = HashingUtils::HashString("aarch64");
@@ -39,7 +40,11 @@ namespace Aws
         UpdateTargetsArchitecture GetUpdateTargetsArchitectureForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == armv7l_HASH)
+          if (hashCode == armv6l_HASH)
+          {
+            return UpdateTargetsArchitecture::armv6l;
+          }
+          else if (hashCode == armv7l_HASH)
           {
             return UpdateTargetsArchitecture::armv7l;
           }
@@ -69,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpdateTargetsArchitecture::armv6l:
+            return "armv6l";
           case UpdateTargetsArchitecture::armv7l:
             return "armv7l";
           case UpdateTargetsArchitecture::x86_64:

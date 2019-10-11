@@ -26,6 +26,7 @@ namespace Model
   enum class UpdateTargetsArchitecture
   {
     NOT_SET,
+    armv6l,
     armv7l,
     x86_64,
     aarch64,
