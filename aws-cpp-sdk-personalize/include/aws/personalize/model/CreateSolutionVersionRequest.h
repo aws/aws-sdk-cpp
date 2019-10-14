@@ -17,6 +17,7 @@
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/personalize/PersonalizeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/personalize/model/TrainingMode.h>
 #include <utility>
 
 namespace Aws
@@ -92,10 +93,98 @@ namespace Model
      */
     inline CreateSolutionVersionRequest& WithSolutionArn(const char* value) { SetSolutionArn(value); return *this;}
 
+
+    /**
+     * <p>The scope of training to be performed when creating the solution version. The
+     * <code>FULL</code> option trains the solution version based on the entirety of
+     * the input solution's training data, while the <code>UPDATE</code> option
+     * processes only the data that has changed in comparison to the input solution.
+     * Choose <code>UPDATE</code> when you want to incrementally update your solution
+     * version instead of creating an entirely new one.</p> <important> <p>The
+     * <code>UPDATE</code> option can only be used when you already have an active
+     * solution version created from the input solution using the <code>FULL</code>
+     * option and the input solution was trained with the
+     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> </important>
+     */
+    inline const TrainingMode& GetTrainingMode() const{ return m_trainingMode; }
+
+    /**
+     * <p>The scope of training to be performed when creating the solution version. The
+     * <code>FULL</code> option trains the solution version based on the entirety of
+     * the input solution's training data, while the <code>UPDATE</code> option
+     * processes only the data that has changed in comparison to the input solution.
+     * Choose <code>UPDATE</code> when you want to incrementally update your solution
+     * version instead of creating an entirely new one.</p> <important> <p>The
+     * <code>UPDATE</code> option can only be used when you already have an active
+     * solution version created from the input solution using the <code>FULL</code>
+     * option and the input solution was trained with the
+     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> </important>
+     */
+    inline bool TrainingModeHasBeenSet() const { return m_trainingModeHasBeenSet; }
+
+    /**
+     * <p>The scope of training to be performed when creating the solution version. The
+     * <code>FULL</code> option trains the solution version based on the entirety of
+     * the input solution's training data, while the <code>UPDATE</code> option
+     * processes only the data that has changed in comparison to the input solution.
+     * Choose <code>UPDATE</code> when you want to incrementally update your solution
+     * version instead of creating an entirely new one.</p> <important> <p>The
+     * <code>UPDATE</code> option can only be used when you already have an active
+     * solution version created from the input solution using the <code>FULL</code>
+     * option and the input solution was trained with the
+     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> </important>
+     */
+    inline void SetTrainingMode(const TrainingMode& value) { m_trainingModeHasBeenSet = true; m_trainingMode = value; }
+
+    /**
+     * <p>The scope of training to be performed when creating the solution version. The
+     * <code>FULL</code> option trains the solution version based on the entirety of
+     * the input solution's training data, while the <code>UPDATE</code> option
+     * processes only the data that has changed in comparison to the input solution.
+     * Choose <code>UPDATE</code> when you want to incrementally update your solution
+     * version instead of creating an entirely new one.</p> <important> <p>The
+     * <code>UPDATE</code> option can only be used when you already have an active
+     * solution version created from the input solution using the <code>FULL</code>
+     * option and the input solution was trained with the
+     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> </important>
+     */
+    inline void SetTrainingMode(TrainingMode&& value) { m_trainingModeHasBeenSet = true; m_trainingMode = std::move(value); }
+
+    /**
+     * <p>The scope of training to be performed when creating the solution version. The
+     * <code>FULL</code> option trains the solution version based on the entirety of
+     * the input solution's training data, while the <code>UPDATE</code> option
+     * processes only the data that has changed in comparison to the input solution.
+     * Choose <code>UPDATE</code> when you want to incrementally update your solution
+     * version instead of creating an entirely new one.</p> <important> <p>The
+     * <code>UPDATE</code> option can only be used when you already have an active
+     * solution version created from the input solution using the <code>FULL</code>
+     * option and the input solution was trained with the
+     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> </important>
+     */
+    inline CreateSolutionVersionRequest& WithTrainingMode(const TrainingMode& value) { SetTrainingMode(value); return *this;}
+
+    /**
+     * <p>The scope of training to be performed when creating the solution version. The
+     * <code>FULL</code> option trains the solution version based on the entirety of
+     * the input solution's training data, while the <code>UPDATE</code> option
+     * processes only the data that has changed in comparison to the input solution.
+     * Choose <code>UPDATE</code> when you want to incrementally update your solution
+     * version instead of creating an entirely new one.</p> <important> <p>The
+     * <code>UPDATE</code> option can only be used when you already have an active
+     * solution version created from the input solution using the <code>FULL</code>
+     * option and the input solution was trained with the
+     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> </important>
+     */
+    inline CreateSolutionVersionRequest& WithTrainingMode(TrainingMode&& value) { SetTrainingMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_solutionArn;
     bool m_solutionArnHasBeenSet;
+
+    TrainingMode m_trainingMode;
+    bool m_trainingModeHasBeenSet;
   };
 
 } // namespace Model

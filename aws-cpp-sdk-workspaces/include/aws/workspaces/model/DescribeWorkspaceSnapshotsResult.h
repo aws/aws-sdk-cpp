@@ -45,43 +45,43 @@ namespace Model
 
     /**
      * <p>Information about the snapshots that can be used to rebuild a WorkSpace.
-     * These snapshots include the root volume.</p>
+     * These snapshots include the user volume.</p>
      */
     inline const Aws::Vector<Snapshot>& GetRebuildSnapshots() const{ return m_rebuildSnapshots; }
 
     /**
      * <p>Information about the snapshots that can be used to rebuild a WorkSpace.
-     * These snapshots include the root volume.</p>
+     * These snapshots include the user volume.</p>
      */
     inline void SetRebuildSnapshots(const Aws::Vector<Snapshot>& value) { m_rebuildSnapshots = value; }
 
     /**
      * <p>Information about the snapshots that can be used to rebuild a WorkSpace.
-     * These snapshots include the root volume.</p>
+     * These snapshots include the user volume.</p>
      */
     inline void SetRebuildSnapshots(Aws::Vector<Snapshot>&& value) { m_rebuildSnapshots = std::move(value); }
 
     /**
      * <p>Information about the snapshots that can be used to rebuild a WorkSpace.
-     * These snapshots include the root volume.</p>
+     * These snapshots include the user volume.</p>
      */
     inline DescribeWorkspaceSnapshotsResult& WithRebuildSnapshots(const Aws::Vector<Snapshot>& value) { SetRebuildSnapshots(value); return *this;}
 
     /**
      * <p>Information about the snapshots that can be used to rebuild a WorkSpace.
-     * These snapshots include the root volume.</p>
+     * These snapshots include the user volume.</p>
      */
     inline DescribeWorkspaceSnapshotsResult& WithRebuildSnapshots(Aws::Vector<Snapshot>&& value) { SetRebuildSnapshots(std::move(value)); return *this;}
 
     /**
      * <p>Information about the snapshots that can be used to rebuild a WorkSpace.
-     * These snapshots include the root volume.</p>
+     * These snapshots include the user volume.</p>
      */
     inline DescribeWorkspaceSnapshotsResult& AddRebuildSnapshots(const Snapshot& value) { m_rebuildSnapshots.push_back(value); return *this; }
 
     /**
      * <p>Information about the snapshots that can be used to rebuild a WorkSpace.
-     * These snapshots include the root volume.</p>
+     * These snapshots include the user volume.</p>
      */
     inline DescribeWorkspaceSnapshotsResult& AddRebuildSnapshots(Snapshot&& value) { m_rebuildSnapshots.push_back(std::move(value)); return *this; }
 

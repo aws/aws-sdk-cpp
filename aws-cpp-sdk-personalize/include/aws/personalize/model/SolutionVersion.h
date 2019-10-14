@@ -17,6 +17,7 @@
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/personalize/model/SolutionConfig.h>
+#include <aws/personalize/model/TrainingMode.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -158,30 +159,30 @@ namespace Model
 
 
     /**
-     * <p>When true, Amazon Personalize performs a search for the most optimal recipe
-     * according to the solution configuration. When false (the default), Amazon
-     * Personalize uses <code>recipeArn</code>.</p>
+     * <p>When true, Amazon Personalize searches for the most optimal recipe according
+     * to the solution configuration. When false (the default), Amazon Personalize uses
+     * <code>recipeArn</code>.</p>
      */
     inline bool GetPerformAutoML() const{ return m_performAutoML; }
 
     /**
-     * <p>When true, Amazon Personalize performs a search for the most optimal recipe
-     * according to the solution configuration. When false (the default), Amazon
-     * Personalize uses <code>recipeArn</code>.</p>
+     * <p>When true, Amazon Personalize searches for the most optimal recipe according
+     * to the solution configuration. When false (the default), Amazon Personalize uses
+     * <code>recipeArn</code>.</p>
      */
     inline bool PerformAutoMLHasBeenSet() const { return m_performAutoMLHasBeenSet; }
 
     /**
-     * <p>When true, Amazon Personalize performs a search for the most optimal recipe
-     * according to the solution configuration. When false (the default), Amazon
-     * Personalize uses <code>recipeArn</code>.</p>
+     * <p>When true, Amazon Personalize searches for the most optimal recipe according
+     * to the solution configuration. When false (the default), Amazon Personalize uses
+     * <code>recipeArn</code>.</p>
      */
     inline void SetPerformAutoML(bool value) { m_performAutoMLHasBeenSet = true; m_performAutoML = value; }
 
     /**
-     * <p>When true, Amazon Personalize performs a search for the most optimal recipe
-     * according to the solution configuration. When false (the default), Amazon
-     * Personalize uses <code>recipeArn</code>.</p>
+     * <p>When true, Amazon Personalize searches for the most optimal recipe according
+     * to the solution configuration. When false (the default), Amazon Personalize uses
+     * <code>recipeArn</code>.</p>
      */
     inline SolutionVersion& WithPerformAutoML(bool value) { SetPerformAutoML(value); return *this;}
 
@@ -357,120 +358,215 @@ namespace Model
 
 
     /**
-     * <p>The time used to train the model. </p>
+     * <p>The time used to train the model. You are billed for the time it takes to
+     * train a model. This field is visible only after Amazon Personalize successfully
+     * trains a model.</p>
      */
     inline double GetTrainingHours() const{ return m_trainingHours; }
 
     /**
-     * <p>The time used to train the model. </p>
+     * <p>The time used to train the model. You are billed for the time it takes to
+     * train a model. This field is visible only after Amazon Personalize successfully
+     * trains a model.</p>
      */
     inline bool TrainingHoursHasBeenSet() const { return m_trainingHoursHasBeenSet; }
 
     /**
-     * <p>The time used to train the model. </p>
+     * <p>The time used to train the model. You are billed for the time it takes to
+     * train a model. This field is visible only after Amazon Personalize successfully
+     * trains a model.</p>
      */
     inline void SetTrainingHours(double value) { m_trainingHoursHasBeenSet = true; m_trainingHours = value; }
 
     /**
-     * <p>The time used to train the model. </p>
+     * <p>The time used to train the model. You are billed for the time it takes to
+     * train a model. This field is visible only after Amazon Personalize successfully
+     * trains a model.</p>
      */
     inline SolutionVersion& WithTrainingHours(double value) { SetTrainingHours(value); return *this;}
 
 
     /**
+     * <p>The scope of training used to create the solution version. The
+     * <code>FULL</code> option trains the solution version based on the entirety of
+     * the input solution's training data, while the <code>UPDATE</code> option
+     * processes only the training data that has changed since the creation of the last
+     * solution version. Choose <code>UPDATE</code> when you want to start recommending
+     * items added to the dataset without retraining the model.</p> <important> <p>The
+     * <code>UPDATE</code> option can only be used after you've created a solution
+     * version with the <code>FULL</code> option and the training solution uses the
+     * <a>native-recipe-hrnn-coldstart</a>.</p> </important>
+     */
+    inline const TrainingMode& GetTrainingMode() const{ return m_trainingMode; }
+
+    /**
+     * <p>The scope of training used to create the solution version. The
+     * <code>FULL</code> option trains the solution version based on the entirety of
+     * the input solution's training data, while the <code>UPDATE</code> option
+     * processes only the training data that has changed since the creation of the last
+     * solution version. Choose <code>UPDATE</code> when you want to start recommending
+     * items added to the dataset without retraining the model.</p> <important> <p>The
+     * <code>UPDATE</code> option can only be used after you've created a solution
+     * version with the <code>FULL</code> option and the training solution uses the
+     * <a>native-recipe-hrnn-coldstart</a>.</p> </important>
+     */
+    inline bool TrainingModeHasBeenSet() const { return m_trainingModeHasBeenSet; }
+
+    /**
+     * <p>The scope of training used to create the solution version. The
+     * <code>FULL</code> option trains the solution version based on the entirety of
+     * the input solution's training data, while the <code>UPDATE</code> option
+     * processes only the training data that has changed since the creation of the last
+     * solution version. Choose <code>UPDATE</code> when you want to start recommending
+     * items added to the dataset without retraining the model.</p> <important> <p>The
+     * <code>UPDATE</code> option can only be used after you've created a solution
+     * version with the <code>FULL</code> option and the training solution uses the
+     * <a>native-recipe-hrnn-coldstart</a>.</p> </important>
+     */
+    inline void SetTrainingMode(const TrainingMode& value) { m_trainingModeHasBeenSet = true; m_trainingMode = value; }
+
+    /**
+     * <p>The scope of training used to create the solution version. The
+     * <code>FULL</code> option trains the solution version based on the entirety of
+     * the input solution's training data, while the <code>UPDATE</code> option
+     * processes only the training data that has changed since the creation of the last
+     * solution version. Choose <code>UPDATE</code> when you want to start recommending
+     * items added to the dataset without retraining the model.</p> <important> <p>The
+     * <code>UPDATE</code> option can only be used after you've created a solution
+     * version with the <code>FULL</code> option and the training solution uses the
+     * <a>native-recipe-hrnn-coldstart</a>.</p> </important>
+     */
+    inline void SetTrainingMode(TrainingMode&& value) { m_trainingModeHasBeenSet = true; m_trainingMode = std::move(value); }
+
+    /**
+     * <p>The scope of training used to create the solution version. The
+     * <code>FULL</code> option trains the solution version based on the entirety of
+     * the input solution's training data, while the <code>UPDATE</code> option
+     * processes only the training data that has changed since the creation of the last
+     * solution version. Choose <code>UPDATE</code> when you want to start recommending
+     * items added to the dataset without retraining the model.</p> <important> <p>The
+     * <code>UPDATE</code> option can only be used after you've created a solution
+     * version with the <code>FULL</code> option and the training solution uses the
+     * <a>native-recipe-hrnn-coldstart</a>.</p> </important>
+     */
+    inline SolutionVersion& WithTrainingMode(const TrainingMode& value) { SetTrainingMode(value); return *this;}
+
+    /**
+     * <p>The scope of training used to create the solution version. The
+     * <code>FULL</code> option trains the solution version based on the entirety of
+     * the input solution's training data, while the <code>UPDATE</code> option
+     * processes only the training data that has changed since the creation of the last
+     * solution version. Choose <code>UPDATE</code> when you want to start recommending
+     * items added to the dataset without retraining the model.</p> <important> <p>The
+     * <code>UPDATE</code> option can only be used after you've created a solution
+     * version with the <code>FULL</code> option and the training solution uses the
+     * <a>native-recipe-hrnn-coldstart</a>.</p> </important>
+     */
+    inline SolutionVersion& WithTrainingMode(TrainingMode&& value) { SetTrainingMode(std::move(value)); return *this;}
+
+
+    /**
      * <p>The status of the solution version.</p> <p>A solution version can be in one
-     * of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS
-     * &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul>
+     * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
+     * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
+     * FAILED</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the solution version.</p> <p>A solution version can be in one
-     * of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS
-     * &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul>
+     * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
+     * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
+     * FAILED</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the solution version.</p> <p>A solution version can be in one
-     * of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS
-     * &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul>
+     * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
+     * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
+     * FAILED</p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the solution version.</p> <p>A solution version can be in one
-     * of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS
-     * &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul>
+     * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
+     * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
+     * FAILED</p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the solution version.</p> <p>A solution version can be in one
-     * of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS
-     * &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul>
+     * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
+     * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
+     * FAILED</p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
      * <p>The status of the solution version.</p> <p>A solution version can be in one
-     * of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS
-     * &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul>
+     * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
+     * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
+     * FAILED</p> </li> </ul>
      */
     inline SolutionVersion& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the solution version.</p> <p>A solution version can be in one
-     * of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS
-     * &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul>
+     * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
+     * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
+     * FAILED</p> </li> </ul>
      */
     inline SolutionVersion& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the solution version.</p> <p>A solution version can be in one
-     * of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS
-     * &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul>
+     * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
+     * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
+     * FAILED</p> </li> </ul>
      */
     inline SolutionVersion& WithStatus(const char* value) { SetStatus(value); return *this;}
 
 
     /**
-     * <p>If training a solution version fails, the reason behind the failure.</p>
+     * <p>If training a solution version fails, the reason for the failure.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p>If training a solution version fails, the reason behind the failure.</p>
+     * <p>If training a solution version fails, the reason for the failure.</p>
      */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
     /**
-     * <p>If training a solution version fails, the reason behind the failure.</p>
+     * <p>If training a solution version fails, the reason for the failure.</p>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
     /**
-     * <p>If training a solution version fails, the reason behind the failure.</p>
+     * <p>If training a solution version fails, the reason for the failure.</p>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
     /**
-     * <p>If training a solution version fails, the reason behind the failure.</p>
+     * <p>If training a solution version fails, the reason for the failure.</p>
      */
     inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
 
     /**
-     * <p>If training a solution version fails, the reason behind the failure.</p>
+     * <p>If training a solution version fails, the reason for the failure.</p>
      */
     inline SolutionVersion& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p>If training a solution version fails, the reason behind the failure.</p>
+     * <p>If training a solution version fails, the reason for the failure.</p>
      */
     inline SolutionVersion& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
-     * <p>If training a solution version fails, the reason behind the failure.</p>
+     * <p>If training a solution version fails, the reason for the failure.</p>
      */
     inline SolutionVersion& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
@@ -570,6 +666,9 @@ namespace Model
 
     double m_trainingHours;
     bool m_trainingHoursHasBeenSet;
+
+    TrainingMode m_trainingMode;
+    bool m_trainingModeHasBeenSet;
 
     Aws::String m_status;
     bool m_statusHasBeenSet;

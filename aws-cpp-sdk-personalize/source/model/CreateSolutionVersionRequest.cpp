@@ -23,7 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateSolutionVersionRequest::CreateSolutionVersionRequest() : 
-    m_solutionArnHasBeenSet(false)
+    m_solutionArnHasBeenSet(false),
+    m_trainingMode(TrainingMode::NOT_SET),
+    m_trainingModeHasBeenSet(false)
 {
 }
 
@@ -35,6 +37,11 @@ Aws::String CreateSolutionVersionRequest::SerializePayload() const
   {
    payload.WithString("solutionArn", m_solutionArn);
 
+  }
+
+  if(m_trainingModeHasBeenSet)
+  {
+   payload.WithString("trainingMode", TrainingModeMapper::GetNameForTrainingMode(m_trainingMode));
   }
 
   return payload.View().WriteReadable();

@@ -93,25 +93,25 @@ namespace Model
 
     /**
      * <p>The time after a user logs off when WorkSpaces are automatically stopped.
-     * Configured in 60 minute intervals.</p>
+     * Configured in 60-minute intervals.</p>
      */
     inline int GetRunningModeAutoStopTimeoutInMinutes() const{ return m_runningModeAutoStopTimeoutInMinutes; }
 
     /**
      * <p>The time after a user logs off when WorkSpaces are automatically stopped.
-     * Configured in 60 minute intervals.</p>
+     * Configured in 60-minute intervals.</p>
      */
     inline bool RunningModeAutoStopTimeoutInMinutesHasBeenSet() const { return m_runningModeAutoStopTimeoutInMinutesHasBeenSet; }
 
     /**
      * <p>The time after a user logs off when WorkSpaces are automatically stopped.
-     * Configured in 60 minute intervals.</p>
+     * Configured in 60-minute intervals.</p>
      */
     inline void SetRunningModeAutoStopTimeoutInMinutes(int value) { m_runningModeAutoStopTimeoutInMinutesHasBeenSet = true; m_runningModeAutoStopTimeoutInMinutes = value; }
 
     /**
      * <p>The time after a user logs off when WorkSpaces are automatically stopped.
-     * Configured in 60 minute intervals.</p>
+     * Configured in 60-minute intervals.</p>
      */
     inline WorkspaceProperties& WithRunningModeAutoStopTimeoutInMinutes(int value) { SetRunningModeAutoStopTimeoutInMinutes(value); return *this;}
 
