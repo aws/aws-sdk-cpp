@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     ALWAYS,
-    NEVER
+    NEVER,
+    ON_DISCONTINUITY
   };
 
 namespace HLSDiscontinuityModeMapper

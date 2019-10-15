@@ -608,7 +608,7 @@ namespace Model
 
 
     /**
-     * <p>The time range of the requested fragment, and the source of the
+     * <p>The time range of the requested fragment and the source of the
      * timestamps.</p> <p>This parameter is required if <code>PlaybackMode</code> is
      * <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional
      * if PlaybackMode is<code/> <code>LIVE</code>. If <code>PlaybackMode</code> is
@@ -621,7 +621,7 @@ namespace Model
     inline const DASHFragmentSelector& GetDASHFragmentSelector() const{ return m_dASHFragmentSelector; }
 
     /**
-     * <p>The time range of the requested fragment, and the source of the
+     * <p>The time range of the requested fragment and the source of the
      * timestamps.</p> <p>This parameter is required if <code>PlaybackMode</code> is
      * <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional
      * if PlaybackMode is<code/> <code>LIVE</code>. If <code>PlaybackMode</code> is
@@ -634,7 +634,7 @@ namespace Model
     inline bool DASHFragmentSelectorHasBeenSet() const { return m_dASHFragmentSelectorHasBeenSet; }
 
     /**
-     * <p>The time range of the requested fragment, and the source of the
+     * <p>The time range of the requested fragment and the source of the
      * timestamps.</p> <p>This parameter is required if <code>PlaybackMode</code> is
      * <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional
      * if PlaybackMode is<code/> <code>LIVE</code>. If <code>PlaybackMode</code> is
@@ -647,7 +647,7 @@ namespace Model
     inline void SetDASHFragmentSelector(const DASHFragmentSelector& value) { m_dASHFragmentSelectorHasBeenSet = true; m_dASHFragmentSelector = value; }
 
     /**
-     * <p>The time range of the requested fragment, and the source of the
+     * <p>The time range of the requested fragment and the source of the
      * timestamps.</p> <p>This parameter is required if <code>PlaybackMode</code> is
      * <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional
      * if PlaybackMode is<code/> <code>LIVE</code>. If <code>PlaybackMode</code> is
@@ -660,7 +660,7 @@ namespace Model
     inline void SetDASHFragmentSelector(DASHFragmentSelector&& value) { m_dASHFragmentSelectorHasBeenSet = true; m_dASHFragmentSelector = std::move(value); }
 
     /**
-     * <p>The time range of the requested fragment, and the source of the
+     * <p>The time range of the requested fragment and the source of the
      * timestamps.</p> <p>This parameter is required if <code>PlaybackMode</code> is
      * <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional
      * if PlaybackMode is<code/> <code>LIVE</code>. If <code>PlaybackMode</code> is
@@ -673,7 +673,7 @@ namespace Model
     inline GetDASHStreamingSessionURLRequest& WithDASHFragmentSelector(const DASHFragmentSelector& value) { SetDASHFragmentSelector(value); return *this;}
 
     /**
-     * <p>The time range of the requested fragment, and the source of the
+     * <p>The time range of the requested fragment and the source of the
      * timestamps.</p> <p>This parameter is required if <code>PlaybackMode</code> is
      * <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional
      * if PlaybackMode is<code/> <code>LIVE</code>. If <code>PlaybackMode</code> is

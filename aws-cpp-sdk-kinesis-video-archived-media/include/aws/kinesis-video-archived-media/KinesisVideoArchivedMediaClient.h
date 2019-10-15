@@ -127,9 +127,9 @@ namespace Model
          * or the <code>StreamARN</code> when invoking this API operation.</p> <p>An Amazon
          * Kinesis video stream has the following requirements for providing data through
          * MPEG-DASH:</p> <ul> <li> <p>The media must contain h.264 or h.265 encoded video
-         * and, optionally, AAC or G.711 encoded audio. Specifically, the codec id of track
+         * and, optionally, AAC or G.711 encoded audio. Specifically, the codec ID of track
          * 1 should be <code>V_MPEG/ISO/AVC</code> (for h.264) or V_MPEGH/ISO/HEVC (for
-         * H.265). Optionally, the codec id of track 2 should be <code>A_AAC</code> (for
+         * H.265). Optionally, the codec ID of track 2 should be <code>A_AAC</code> (for
          * AAC) or A_MS/ACM (for G.711).</p> </li> <li> <p>Data retention must be greater
          * than 0.</p> </li> <li> <p>The video track of each fragment must contain codec
          * private data in the Advanced Video Coding (AVC) for H.264 format and HEVC for
@@ -161,7 +161,7 @@ namespace Model
          * media data (such as frames outside the requested window or alternate bitrates)
          * is made available.</p> </li> <li> <p>Provide the URL (containing the encrypted
          * session token) for the MPEG-DASH manifest to a media player that supports the
-         * MPEG-DASH protocol. Kinesis Video Streams makes the initialization fragment, and
+         * MPEG-DASH protocol. Kinesis Video Streams makes the initialization fragment and
          * media fragments available through the manifest URL. The initialization fragment
          * contains the codec private data for the stream, and other data needed to set up
          * the video or audio decoder and renderer. The media fragments contain encoded
@@ -241,9 +241,9 @@ namespace Model
          * or the <code>StreamARN</code> when invoking this API operation.</p> <p>An Amazon
          * Kinesis video stream has the following requirements for providing data through
          * MPEG-DASH:</p> <ul> <li> <p>The media must contain h.264 or h.265 encoded video
-         * and, optionally, AAC or G.711 encoded audio. Specifically, the codec id of track
+         * and, optionally, AAC or G.711 encoded audio. Specifically, the codec ID of track
          * 1 should be <code>V_MPEG/ISO/AVC</code> (for h.264) or V_MPEGH/ISO/HEVC (for
-         * H.265). Optionally, the codec id of track 2 should be <code>A_AAC</code> (for
+         * H.265). Optionally, the codec ID of track 2 should be <code>A_AAC</code> (for
          * AAC) or A_MS/ACM (for G.711).</p> </li> <li> <p>Data retention must be greater
          * than 0.</p> </li> <li> <p>The video track of each fragment must contain codec
          * private data in the Advanced Video Coding (AVC) for H.264 format and HEVC for
@@ -275,7 +275,7 @@ namespace Model
          * media data (such as frames outside the requested window or alternate bitrates)
          * is made available.</p> </li> <li> <p>Provide the URL (containing the encrypted
          * session token) for the MPEG-DASH manifest to a media player that supports the
-         * MPEG-DASH protocol. Kinesis Video Streams makes the initialization fragment, and
+         * MPEG-DASH protocol. Kinesis Video Streams makes the initialization fragment and
          * media fragments available through the manifest URL. The initialization fragment
          * contains the codec private data for the stream, and other data needed to set up
          * the video or audio decoder and renderer. The media fragments contain encoded
@@ -357,9 +357,9 @@ namespace Model
          * or the <code>StreamARN</code> when invoking this API operation.</p> <p>An Amazon
          * Kinesis video stream has the following requirements for providing data through
          * MPEG-DASH:</p> <ul> <li> <p>The media must contain h.264 or h.265 encoded video
-         * and, optionally, AAC or G.711 encoded audio. Specifically, the codec id of track
+         * and, optionally, AAC or G.711 encoded audio. Specifically, the codec ID of track
          * 1 should be <code>V_MPEG/ISO/AVC</code> (for h.264) or V_MPEGH/ISO/HEVC (for
-         * H.265). Optionally, the codec id of track 2 should be <code>A_AAC</code> (for
+         * H.265). Optionally, the codec ID of track 2 should be <code>A_AAC</code> (for
          * AAC) or A_MS/ACM (for G.711).</p> </li> <li> <p>Data retention must be greater
          * than 0.</p> </li> <li> <p>The video track of each fragment must contain codec
          * private data in the Advanced Video Coding (AVC) for H.264 format and HEVC for
@@ -391,7 +391,7 @@ namespace Model
          * media data (such as frames outside the requested window or alternate bitrates)
          * is made available.</p> </li> <li> <p>Provide the URL (containing the encrypted
          * session token) for the MPEG-DASH manifest to a media player that supports the
-         * MPEG-DASH protocol. Kinesis Video Streams makes the initialization fragment, and
+         * MPEG-DASH protocol. Kinesis Video Streams makes the initialization fragment and
          * media fragments available through the manifest URL. The initialization fragment
          * contains the codec private data for the stream, and other data needed to set up
          * the video or audio decoder and renderer. The media fragments contain encoded
@@ -473,9 +473,9 @@ namespace Model
          * <code>StreamARN</code> when invoking this API operation.</p> <p>An Amazon
          * Kinesis video stream has the following requirements for providing data through
          * HLS:</p> <ul> <li> <p>The media must contain h.264 or h.265 encoded video and,
-         * optionally, AAC encoded audio. Specifically, the codec id of track 1 should be
+         * optionally, AAC encoded audio. Specifically, the codec ID of track 1 should be
          * <code>V_MPEG/ISO/AVC</code> (for h.264) or <code>V_MPEG/ISO/HEVC</code> (for
-         * h.265). Optionally, the codec id of track 2 should be <code>A_AAC</code>.</p>
+         * h.265). Optionally, the codec ID of track 2 should be <code>A_AAC</code>.</p>
          * </li> <li> <p>Data retention must be greater than 0.</p> </li> <li> <p>The video
          * track of each fragment must contain codec private data in the Advanced Video
          * Coding (AVC) for H.264 format or HEVC for H.265 format (<a
@@ -608,9 +608,9 @@ namespace Model
          * <code>StreamARN</code> when invoking this API operation.</p> <p>An Amazon
          * Kinesis video stream has the following requirements for providing data through
          * HLS:</p> <ul> <li> <p>The media must contain h.264 or h.265 encoded video and,
-         * optionally, AAC encoded audio. Specifically, the codec id of track 1 should be
+         * optionally, AAC encoded audio. Specifically, the codec ID of track 1 should be
          * <code>V_MPEG/ISO/AVC</code> (for h.264) or <code>V_MPEG/ISO/HEVC</code> (for
-         * h.265). Optionally, the codec id of track 2 should be <code>A_AAC</code>.</p>
+         * h.265). Optionally, the codec ID of track 2 should be <code>A_AAC</code>.</p>
          * </li> <li> <p>Data retention must be greater than 0.</p> </li> <li> <p>The video
          * track of each fragment must contain codec private data in the Advanced Video
          * Coding (AVC) for H.264 format or HEVC for H.265 format (<a
@@ -745,9 +745,9 @@ namespace Model
          * <code>StreamARN</code> when invoking this API operation.</p> <p>An Amazon
          * Kinesis video stream has the following requirements for providing data through
          * HLS:</p> <ul> <li> <p>The media must contain h.264 or h.265 encoded video and,
-         * optionally, AAC encoded audio. Specifically, the codec id of track 1 should be
+         * optionally, AAC encoded audio. Specifically, the codec ID of track 1 should be
          * <code>V_MPEG/ISO/AVC</code> (for h.264) or <code>V_MPEG/ISO/HEVC</code> (for
-         * h.265). Optionally, the codec id of track 2 should be <code>A_AAC</code>.</p>
+         * h.265). Optionally, the codec ID of track 2 should be <code>A_AAC</code>.</p>
          * </li> <li> <p>Data retention must be greater than 0.</p> </li> <li> <p>The video
          * track of each fragment must contain codec private data in the Advanced Video
          * Coding (AVC) for H.264 format or HEVC for H.265 format (<a

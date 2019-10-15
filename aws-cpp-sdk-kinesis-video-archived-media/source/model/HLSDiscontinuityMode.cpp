@@ -32,6 +32,7 @@ namespace Aws
 
         static const int ALWAYS_HASH = HashingUtils::HashString("ALWAYS");
         static const int NEVER_HASH = HashingUtils::HashString("NEVER");
+        static const int ON_DISCONTINUITY_HASH = HashingUtils::HashString("ON_DISCONTINUITY");
 
 
         HLSDiscontinuityMode GetHLSDiscontinuityModeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == NEVER_HASH)
           {
             return HLSDiscontinuityMode::NEVER;
+          }
+          else if (hashCode == ON_DISCONTINUITY_HASH)
+          {
+            return HLSDiscontinuityMode::ON_DISCONTINUITY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "ALWAYS";
           case HLSDiscontinuityMode::NEVER:
             return "NEVER";
+          case HLSDiscontinuityMode::ON_DISCONTINUITY:
+            return "ON_DISCONTINUITY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
