@@ -55,6 +55,8 @@ public:
 #endif
         m_client = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, config);
         m_clientWithWrongCreds = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, Aws::Auth::AWSCredentials("a", "b"), config);
+        config.endpointOverride = "https://0xxxabcdefg123456789.com";
+        m_clientWithWrongEndpoint = Aws::MakeUnique<TranscribeStreamingServiceClient>(ALLOC_TAG, config);
     }
 
     ~TranscribeStreamingTests()
@@ -64,6 +66,8 @@ public:
 
     Aws::UniquePtr<TranscribeStreamingServiceClient> m_client;
     Aws::UniquePtr<TranscribeStreamingServiceClient> m_clientWithWrongCreds;
+    Aws::UniquePtr<TranscribeStreamingServiceClient> m_clientWithWrongEndpoint;
+
 };
 
 TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
@@ -222,6 +226,55 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFileWithErrorServiceResponse)
     semaphore.WaitOne();
     ASSERT_TRUE(encounteredError);
     ASSERT_TRUE(streamClosedUnexpectedly || streamFinishedSendingBeforeFail);
+}
+
+TEST_F(TranscribeStreamingTests, TranscribeStreamingWithRequestRetry)
+{
+    Aws::String transcribedResult;
+    StartStreamTranscriptionHandler handler;
+    handler.SetTranscriptEventCallback([&transcribedResult](const TranscriptEvent& ev)
+    {
+        // TODO: only check the result marked as "final"
+        const auto& results = ev.GetTranscript().GetResults();
+        if (results.empty())
+        {
+            return;
+        }
+        const auto& last = results.back();
+        const auto& alternatives = last.GetAlternatives();
+        if (alternatives.empty())
+        {
+            return;
+        }
+        transcribedResult = alternatives.back().GetTranscript();
+    });
+    handler.SetOnErrorCallback([](const Aws::Client::AWSError<TranscribeStreamingServiceErrors>& )
+    {
+    });
+
+    StartStreamTranscriptionRequest request;
+    request.SetMediaSampleRateHertz(8000);
+    request.SetLanguageCode(LanguageCode::en_US);
+    request.SetMediaEncoding(MediaEncoding::pcm);
+    request.SetEventStreamHandler(handler);
+
+    auto OnStreamReady = [&](AudioStream& stream)
+    {
+        stream.Close();
+        return;
+    };
+
+    Aws::Utils::Threading::Semaphore semaphore(0, 1);
+    auto OnResponseCallback = [&semaphore](const TranscribeStreamingServiceClient*,
+            const StartStreamTranscriptionRequest&,
+            const StartStreamTranscriptionOutcome&,
+            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)
+    {
+        semaphore.ReleaseAll();
+    };
+
+    m_clientWithWrongEndpoint->StartStreamTranscriptionAsync(request, OnStreamReady, OnResponseCallback, nullptr/*context*/);
+    semaphore.WaitOne();
 }
 
 #endif
