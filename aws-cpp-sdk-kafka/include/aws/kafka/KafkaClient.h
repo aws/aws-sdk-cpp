@@ -35,6 +35,7 @@
 #include <aws/kafka/model/ListConfigurationsResult.h>
 #include <aws/kafka/model/ListNodesResult.h>
 #include <aws/kafka/model/ListTagsForResourceResult.h>
+#include <aws/kafka/model/UpdateBrokerCountResult.h>
 #include <aws/kafka/model/UpdateBrokerStorageResult.h>
 #include <aws/kafka/model/UpdateClusterConfigurationResult.h>
 #include <aws/core/NoResult.h>
@@ -93,6 +94,7 @@ namespace Model
         class ListTagsForResourceRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdateBrokerCountRequest;
         class UpdateBrokerStorageRequest;
         class UpdateClusterConfigurationRequest;
 
@@ -112,6 +114,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<KafkaErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KafkaErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KafkaErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateBrokerCountResult, Aws::Client::AWSError<KafkaErrors>> UpdateBrokerCountOutcome;
         typedef Aws::Utils::Outcome<UpdateBrokerStorageResult, Aws::Client::AWSError<KafkaErrors>> UpdateBrokerStorageOutcome;
         typedef Aws::Utils::Outcome<UpdateClusterConfigurationResult, Aws::Client::AWSError<KafkaErrors>> UpdateClusterConfigurationOutcome;
 
@@ -131,6 +134,7 @@ namespace Model
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateBrokerCountOutcome> UpdateBrokerCountOutcomeCallable;
         typedef std::future<UpdateBrokerStorageOutcome> UpdateBrokerStorageOutcomeCallable;
         typedef std::future<UpdateClusterConfigurationOutcome> UpdateClusterConfigurationOutcomeCallable;
 } // namespace Model
@@ -153,6 +157,7 @@ namespace Model
     typedef std::function<void(const KafkaClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const KafkaClient*, const Model::UpdateBrokerCountRequest&, const Model::UpdateBrokerCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBrokerCountResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::UpdateBrokerStorageRequest&, const Model::UpdateBrokerStorageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBrokerStorageResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::UpdateClusterConfigurationRequest&, const Model::UpdateClusterConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterConfigurationResponseReceivedHandler;
 
@@ -737,6 +742,40 @@ namespace Model
 
         /**
          * 
+            <p>Updates the number of broker nodes in the cluster.</p>
+        
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateBrokerCount">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateBrokerCountOutcome UpdateBrokerCount(const Model::UpdateBrokerCountRequest& request) const;
+
+        /**
+         * 
+            <p>Updates the number of broker nodes in the cluster.</p>
+        
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateBrokerCount">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateBrokerCountOutcomeCallable UpdateBrokerCountCallable(const Model::UpdateBrokerCountRequest& request) const;
+
+        /**
+         * 
+            <p>Updates the number of broker nodes in the cluster.</p>
+        
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateBrokerCount">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateBrokerCountAsync(const Model::UpdateBrokerCountRequest& request, const UpdateBrokerCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
             <p>Updates the EBS storage associated with MSK brokers.</p>
        
          * <p><h3>See Also:</h3>   <a
@@ -823,6 +862,7 @@ namespace Model
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateBrokerCountAsyncHelper(const Model::UpdateBrokerCountRequest& request, const UpdateBrokerCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBrokerStorageAsyncHelper(const Model::UpdateBrokerStorageRequest& request, const UpdateBrokerStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateClusterConfigurationAsyncHelper(const Model::UpdateClusterConfigurationRequest& request, const UpdateClusterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

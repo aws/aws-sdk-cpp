@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     Kinetic,
-    Melodic
+    Melodic,
+    Dashing
   };
 
 namespace RobotSoftwareSuiteVersionTypeMapper

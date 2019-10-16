@@ -99,6 +99,10 @@ namespace Model
      * to present: Available every 30 days by 24:00 UTC.</p> </li> <li>
      * <strong>disbursed_amount_by_age_of_disbursed_funds</strong> <p>From 2015-01-26
      * to present: Available every 30 days by 24:00 UTC.</p> </li> <li>
+     * <strong>disbursed_amount_by_age_of_past_due_funds</strong> <p>From 2018-04-07 to
+     * present: Available every 30 days by 24:00 UTC.</p> </li> <li>
+     * <strong>disbursed_amount_by_uncollected_funds_breakdown</strong> <p>From
+     * 2019-10-04 to present: Available every 30 days by 24:00 UTC.</p> </li> <li>
      * <strong>customer_profile_by_industry</strong> <p>From 2015-10-01 to 2017-06-29:
      * Available daily by 24:00 UTC.</p> <p>From 2017-06-30 to present: This data set
      * is no longer available.</p> </li> <li>
@@ -169,6 +173,10 @@ namespace Model
      * to present: Available every 30 days by 24:00 UTC.</p> </li> <li>
      * <strong>disbursed_amount_by_age_of_disbursed_funds</strong> <p>From 2015-01-26
      * to present: Available every 30 days by 24:00 UTC.</p> </li> <li>
+     * <strong>disbursed_amount_by_age_of_past_due_funds</strong> <p>From 2018-04-07 to
+     * present: Available every 30 days by 24:00 UTC.</p> </li> <li>
+     * <strong>disbursed_amount_by_uncollected_funds_breakdown</strong> <p>From
+     * 2019-10-04 to present: Available every 30 days by 24:00 UTC.</p> </li> <li>
      * <strong>customer_profile_by_industry</strong> <p>From 2015-10-01 to 2017-06-29:
      * Available daily by 24:00 UTC.</p> <p>From 2017-06-30 to present: This data set
      * is no longer available.</p> </li> <li>
@@ -239,6 +247,10 @@ namespace Model
      * to present: Available every 30 days by 24:00 UTC.</p> </li> <li>
      * <strong>disbursed_amount_by_age_of_disbursed_funds</strong> <p>From 2015-01-26
      * to present: Available every 30 days by 24:00 UTC.</p> </li> <li>
+     * <strong>disbursed_amount_by_age_of_past_due_funds</strong> <p>From 2018-04-07 to
+     * present: Available every 30 days by 24:00 UTC.</p> </li> <li>
+     * <strong>disbursed_amount_by_uncollected_funds_breakdown</strong> <p>From
+     * 2019-10-04 to present: Available every 30 days by 24:00 UTC.</p> </li> <li>
      * <strong>customer_profile_by_industry</strong> <p>From 2015-10-01 to 2017-06-29:
      * Available daily by 24:00 UTC.</p> <p>From 2017-06-30 to present: This data set
      * is no longer available.</p> </li> <li>
@@ -309,6 +321,10 @@ namespace Model
      * to present: Available every 30 days by 24:00 UTC.</p> </li> <li>
      * <strong>disbursed_amount_by_age_of_disbursed_funds</strong> <p>From 2015-01-26
      * to present: Available every 30 days by 24:00 UTC.</p> </li> <li>
+     * <strong>disbursed_amount_by_age_of_past_due_funds</strong> <p>From 2018-04-07 to
+     * present: Available every 30 days by 24:00 UTC.</p> </li> <li>
+     * <strong>disbursed_amount_by_uncollected_funds_breakdown</strong> <p>From
+     * 2019-10-04 to present: Available every 30 days by 24:00 UTC.</p> </li> <li>
      * <strong>customer_profile_by_industry</strong> <p>From 2015-10-01 to 2017-06-29:
      * Available daily by 24:00 UTC.</p> <p>From 2017-06-30 to present: This data set
      * is no longer available.</p> </li> <li>
@@ -379,6 +395,10 @@ namespace Model
      * to present: Available every 30 days by 24:00 UTC.</p> </li> <li>
      * <strong>disbursed_amount_by_age_of_disbursed_funds</strong> <p>From 2015-01-26
      * to present: Available every 30 days by 24:00 UTC.</p> </li> <li>
+     * <strong>disbursed_amount_by_age_of_past_due_funds</strong> <p>From 2018-04-07 to
+     * present: Available every 30 days by 24:00 UTC.</p> </li> <li>
+     * <strong>disbursed_amount_by_uncollected_funds_breakdown</strong> <p>From
+     * 2019-10-04 to present: Available every 30 days by 24:00 UTC.</p> </li> <li>
      * <strong>customer_profile_by_industry</strong> <p>From 2015-10-01 to 2017-06-29:
      * Available daily by 24:00 UTC.</p> <p>From 2017-06-30 to present: This data set
      * is no longer available.</p> </li> <li>
@@ -449,6 +469,10 @@ namespace Model
      * to present: Available every 30 days by 24:00 UTC.</p> </li> <li>
      * <strong>disbursed_amount_by_age_of_disbursed_funds</strong> <p>From 2015-01-26
      * to present: Available every 30 days by 24:00 UTC.</p> </li> <li>
+     * <strong>disbursed_amount_by_age_of_past_due_funds</strong> <p>From 2018-04-07 to
+     * present: Available every 30 days by 24:00 UTC.</p> </li> <li>
+     * <strong>disbursed_amount_by_uncollected_funds_breakdown</strong> <p>From
+     * 2019-10-04 to present: Available every 30 days by 24:00 UTC.</p> </li> <li>
      * <strong>customer_profile_by_industry</strong> <p>From 2015-10-01 to 2017-06-29:
      * Available daily by 24:00 UTC.</p> <p>From 2017-06-30 to present: This data set
      * is no longer available.</p> </li> <li>

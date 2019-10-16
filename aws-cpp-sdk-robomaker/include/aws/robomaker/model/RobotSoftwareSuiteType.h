@@ -26,7 +26,8 @@ namespace Model
   enum class RobotSoftwareSuiteType
   {
     NOT_SET,
-    ROS
+    ROS,
+    ROS2
   };
 
 namespace RobotSoftwareSuiteTypeMapper
