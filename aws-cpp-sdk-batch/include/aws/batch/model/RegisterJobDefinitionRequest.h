@@ -353,7 +353,7 @@ namespace Model
      * <p>The retry strategy to use for failed jobs that are submitted with this job
      * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
      * operation overrides the retry strategy defined here. If a job is terminated due
-     * to a timeout, it is not retried. </p>
+     * to a timeout, it is not retried.</p>
      */
     inline const RetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
 
@@ -361,7 +361,7 @@ namespace Model
      * <p>The retry strategy to use for failed jobs that are submitted with this job
      * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
      * operation overrides the retry strategy defined here. If a job is terminated due
-     * to a timeout, it is not retried. </p>
+     * to a timeout, it is not retried.</p>
      */
     inline bool RetryStrategyHasBeenSet() const { return m_retryStrategyHasBeenSet; }
 
@@ -369,7 +369,7 @@ namespace Model
      * <p>The retry strategy to use for failed jobs that are submitted with this job
      * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
      * operation overrides the retry strategy defined here. If a job is terminated due
-     * to a timeout, it is not retried. </p>
+     * to a timeout, it is not retried.</p>
      */
     inline void SetRetryStrategy(const RetryStrategy& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = value; }
 
@@ -377,7 +377,7 @@ namespace Model
      * <p>The retry strategy to use for failed jobs that are submitted with this job
      * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
      * operation overrides the retry strategy defined here. If a job is terminated due
-     * to a timeout, it is not retried. </p>
+     * to a timeout, it is not retried.</p>
      */
     inline void SetRetryStrategy(RetryStrategy&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = std::move(value); }
 
@@ -385,7 +385,7 @@ namespace Model
      * <p>The retry strategy to use for failed jobs that are submitted with this job
      * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
      * operation overrides the retry strategy defined here. If a job is terminated due
-     * to a timeout, it is not retried. </p>
+     * to a timeout, it is not retried.</p>
      */
     inline RegisterJobDefinitionRequest& WithRetryStrategy(const RetryStrategy& value) { SetRetryStrategy(value); return *this;}
 
@@ -393,7 +393,7 @@ namespace Model
      * <p>The retry strategy to use for failed jobs that are submitted with this job
      * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
      * operation overrides the retry strategy defined here. If a job is terminated due
-     * to a timeout, it is not retried. </p>
+     * to a timeout, it is not retried.</p>
      */
     inline RegisterJobDefinitionRequest& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
 

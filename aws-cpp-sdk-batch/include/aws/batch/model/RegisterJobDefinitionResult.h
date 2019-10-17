@@ -79,37 +79,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job definition. </p>
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
      */
     inline const Aws::String& GetJobDefinitionArn() const{ return m_jobDefinitionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job definition. </p>
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
      */
     inline void SetJobDefinitionArn(const Aws::String& value) { m_jobDefinitionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job definition. </p>
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
      */
     inline void SetJobDefinitionArn(Aws::String&& value) { m_jobDefinitionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job definition. </p>
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
      */
     inline void SetJobDefinitionArn(const char* value) { m_jobDefinitionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job definition. </p>
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
      */
     inline RegisterJobDefinitionResult& WithJobDefinitionArn(const Aws::String& value) { SetJobDefinitionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job definition. </p>
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
      */
     inline RegisterJobDefinitionResult& WithJobDefinitionArn(Aws::String&& value) { SetJobDefinitionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job definition. </p>
+     * <p>The Amazon Resource Name (ARN) of the job definition.</p>
      */
     inline RegisterJobDefinitionResult& WithJobDefinitionArn(const char* value) { SetJobDefinitionArn(value); return *this;}
 

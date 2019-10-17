@@ -31,6 +31,8 @@ namespace Model
 ComputeResource::ComputeResource() : 
     m_type(CRType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_allocationStrategy(CRAllocationStrategy::NOT_SET),
+    m_allocationStrategyHasBeenSet(false),
     m_minvCpus(0),
     m_minvCpusHasBeenSet(false),
     m_maxvCpus(0),
@@ -55,6 +57,8 @@ ComputeResource::ComputeResource() :
 ComputeResource::ComputeResource(JsonView jsonValue) : 
     m_type(CRType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_allocationStrategy(CRAllocationStrategy::NOT_SET),
+    m_allocationStrategyHasBeenSet(false),
     m_minvCpus(0),
     m_minvCpusHasBeenSet(false),
     m_maxvCpus(0),
@@ -84,6 +88,13 @@ ComputeResource& ComputeResource::operator =(JsonView jsonValue)
     m_type = CRTypeMapper::GetCRTypeForName(jsonValue.GetString("type"));
 
     m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("allocationStrategy"))
+  {
+    m_allocationStrategy = CRAllocationStrategyMapper::GetCRAllocationStrategyForName(jsonValue.GetString("allocationStrategy"));
+
+    m_allocationStrategyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("minvCpus"))
@@ -206,6 +217,11 @@ JsonValue ComputeResource::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", CRTypeMapper::GetNameForCRType(m_type));
+  }
+
+  if(m_allocationStrategyHasBeenSet)
+  {
+   payload.WithString("allocationStrategy", CRAllocationStrategyMapper::GetNameForCRAllocationStrategy(m_allocationStrategy));
   }
 
   if(m_minvCpusHasBeenSet)

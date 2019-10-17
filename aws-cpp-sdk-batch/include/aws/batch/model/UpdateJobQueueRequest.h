@@ -161,56 +161,56 @@ namespace Model
     /**
      * <p>Details the set of compute environments mapped to a job queue and their order
      * relative to each other. This is one of the parameters used by the job scheduler
-     * to determine which compute environment should execute a given job. </p>
+     * to determine which compute environment should execute a given job.</p>
      */
     inline const Aws::Vector<ComputeEnvironmentOrder>& GetComputeEnvironmentOrder() const{ return m_computeEnvironmentOrder; }
 
     /**
      * <p>Details the set of compute environments mapped to a job queue and their order
      * relative to each other. This is one of the parameters used by the job scheduler
-     * to determine which compute environment should execute a given job. </p>
+     * to determine which compute environment should execute a given job.</p>
      */
     inline bool ComputeEnvironmentOrderHasBeenSet() const { return m_computeEnvironmentOrderHasBeenSet; }
 
     /**
      * <p>Details the set of compute environments mapped to a job queue and their order
      * relative to each other. This is one of the parameters used by the job scheduler
-     * to determine which compute environment should execute a given job. </p>
+     * to determine which compute environment should execute a given job.</p>
      */
     inline void SetComputeEnvironmentOrder(const Aws::Vector<ComputeEnvironmentOrder>& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = value; }
 
     /**
      * <p>Details the set of compute environments mapped to a job queue and their order
      * relative to each other. This is one of the parameters used by the job scheduler
-     * to determine which compute environment should execute a given job. </p>
+     * to determine which compute environment should execute a given job.</p>
      */
     inline void SetComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = std::move(value); }
 
     /**
      * <p>Details the set of compute environments mapped to a job queue and their order
      * relative to each other. This is one of the parameters used by the job scheduler
-     * to determine which compute environment should execute a given job. </p>
+     * to determine which compute environment should execute a given job.</p>
      */
     inline UpdateJobQueueRequest& WithComputeEnvironmentOrder(const Aws::Vector<ComputeEnvironmentOrder>& value) { SetComputeEnvironmentOrder(value); return *this;}
 
     /**
      * <p>Details the set of compute environments mapped to a job queue and their order
      * relative to each other. This is one of the parameters used by the job scheduler
-     * to determine which compute environment should execute a given job. </p>
+     * to determine which compute environment should execute a given job.</p>
      */
     inline UpdateJobQueueRequest& WithComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { SetComputeEnvironmentOrder(std::move(value)); return *this;}
 
     /**
      * <p>Details the set of compute environments mapped to a job queue and their order
      * relative to each other. This is one of the parameters used by the job scheduler
-     * to determine which compute environment should execute a given job. </p>
+     * to determine which compute environment should execute a given job.</p>
      */
     inline UpdateJobQueueRequest& AddComputeEnvironmentOrder(const ComputeEnvironmentOrder& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(value); return *this; }
 
     /**
      * <p>Details the set of compute environments mapped to a job queue and their order
      * relative to each other. This is one of the parameters used by the job scheduler
-     * to determine which compute environment should execute a given job. </p>
+     * to determine which compute environment should execute a given job.</p>
      */
     inline UpdateJobQueueRequest& AddComputeEnvironmentOrder(ComputeEnvironmentOrder&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(std::move(value)); return *this; }
 

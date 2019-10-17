@@ -54,83 +54,83 @@ namespace Model
 
 
     /**
-     * <p>The name of the job definition. </p>
+     * <p>The name of the job definition.</p>
      */
     inline const Aws::String& GetJobDefinitionName() const{ return m_jobDefinitionName; }
 
     /**
-     * <p>The name of the job definition. </p>
+     * <p>The name of the job definition.</p>
      */
     inline bool JobDefinitionNameHasBeenSet() const { return m_jobDefinitionNameHasBeenSet; }
 
     /**
-     * <p>The name of the job definition. </p>
+     * <p>The name of the job definition.</p>
      */
     inline void SetJobDefinitionName(const Aws::String& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = value; }
 
     /**
-     * <p>The name of the job definition. </p>
+     * <p>The name of the job definition.</p>
      */
     inline void SetJobDefinitionName(Aws::String&& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = std::move(value); }
 
     /**
-     * <p>The name of the job definition. </p>
+     * <p>The name of the job definition.</p>
      */
     inline void SetJobDefinitionName(const char* value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName.assign(value); }
 
     /**
-     * <p>The name of the job definition. </p>
+     * <p>The name of the job definition.</p>
      */
     inline JobDefinition& WithJobDefinitionName(const Aws::String& value) { SetJobDefinitionName(value); return *this;}
 
     /**
-     * <p>The name of the job definition. </p>
+     * <p>The name of the job definition.</p>
      */
     inline JobDefinition& WithJobDefinitionName(Aws::String&& value) { SetJobDefinitionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job definition. </p>
+     * <p>The name of the job definition.</p>
      */
     inline JobDefinition& WithJobDefinitionName(const char* value) { SetJobDefinitionName(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the job definition. </p>
+     * <p>The Amazon Resource Name (ARN) for the job definition.</p>
      */
     inline const Aws::String& GetJobDefinitionArn() const{ return m_jobDefinitionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the job definition. </p>
+     * <p>The Amazon Resource Name (ARN) for the job definition.</p>
      */
     inline bool JobDefinitionArnHasBeenSet() const { return m_jobDefinitionArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the job definition. </p>
+     * <p>The Amazon Resource Name (ARN) for the job definition.</p>
      */
     inline void SetJobDefinitionArn(const Aws::String& value) { m_jobDefinitionArnHasBeenSet = true; m_jobDefinitionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the job definition. </p>
+     * <p>The Amazon Resource Name (ARN) for the job definition.</p>
      */
     inline void SetJobDefinitionArn(Aws::String&& value) { m_jobDefinitionArnHasBeenSet = true; m_jobDefinitionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the job definition. </p>
+     * <p>The Amazon Resource Name (ARN) for the job definition.</p>
      */
     inline void SetJobDefinitionArn(const char* value) { m_jobDefinitionArnHasBeenSet = true; m_jobDefinitionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the job definition. </p>
+     * <p>The Amazon Resource Name (ARN) for the job definition.</p>
      */
     inline JobDefinition& WithJobDefinitionArn(const Aws::String& value) { SetJobDefinitionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the job definition. </p>
+     * <p>The Amazon Resource Name (ARN) for the job definition.</p>
      */
     inline JobDefinition& WithJobDefinitionArn(Aws::String&& value) { SetJobDefinitionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the job definition. </p>
+     * <p>The Amazon Resource Name (ARN) for the job definition.</p>
      */
     inline JobDefinition& WithJobDefinitionArn(const char* value) { SetJobDefinitionArn(value); return *this;}
 
@@ -420,32 +420,32 @@ namespace Model
 
 
     /**
-     * <p>An object with various properties specific to container-based jobs. </p>
+     * <p>An object with various properties specific to container-based jobs.</p>
      */
     inline const ContainerProperties& GetContainerProperties() const{ return m_containerProperties; }
 
     /**
-     * <p>An object with various properties specific to container-based jobs. </p>
+     * <p>An object with various properties specific to container-based jobs.</p>
      */
     inline bool ContainerPropertiesHasBeenSet() const { return m_containerPropertiesHasBeenSet; }
 
     /**
-     * <p>An object with various properties specific to container-based jobs. </p>
+     * <p>An object with various properties specific to container-based jobs.</p>
      */
     inline void SetContainerProperties(const ContainerProperties& value) { m_containerPropertiesHasBeenSet = true; m_containerProperties = value; }
 
     /**
-     * <p>An object with various properties specific to container-based jobs. </p>
+     * <p>An object with various properties specific to container-based jobs.</p>
      */
     inline void SetContainerProperties(ContainerProperties&& value) { m_containerPropertiesHasBeenSet = true; m_containerProperties = std::move(value); }
 
     /**
-     * <p>An object with various properties specific to container-based jobs. </p>
+     * <p>An object with various properties specific to container-based jobs.</p>
      */
     inline JobDefinition& WithContainerProperties(const ContainerProperties& value) { SetContainerProperties(value); return *this;}
 
     /**
-     * <p>An object with various properties specific to container-based jobs. </p>
+     * <p>An object with various properties specific to container-based jobs.</p>
      */
     inline JobDefinition& WithContainerProperties(ContainerProperties&& value) { SetContainerProperties(std::move(value)); return *this;}
 

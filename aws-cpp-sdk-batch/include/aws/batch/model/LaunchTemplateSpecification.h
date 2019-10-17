@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>An object representing a launch template associated with a compute resource.
    * You must specify either the launch template ID or launch template name in the
-   * request, but not both. </p><p><h3>See Also:</h3>   <a
+   * request, but not both.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/LaunchTemplateSpecification">AWS
    * API Reference</a></p>
    */

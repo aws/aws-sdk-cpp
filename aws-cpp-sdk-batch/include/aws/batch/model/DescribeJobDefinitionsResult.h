@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The list of job definitions. </p>
+     * <p>The list of job definitions.</p>
      */
     inline const Aws::Vector<JobDefinition>& GetJobDefinitions() const{ return m_jobDefinitions; }
 
     /**
-     * <p>The list of job definitions. </p>
+     * <p>The list of job definitions.</p>
      */
     inline void SetJobDefinitions(const Aws::Vector<JobDefinition>& value) { m_jobDefinitions = value; }
 
     /**
-     * <p>The list of job definitions. </p>
+     * <p>The list of job definitions.</p>
      */
     inline void SetJobDefinitions(Aws::Vector<JobDefinition>&& value) { m_jobDefinitions = std::move(value); }
 
     /**
-     * <p>The list of job definitions. </p>
+     * <p>The list of job definitions.</p>
      */
     inline DescribeJobDefinitionsResult& WithJobDefinitions(const Aws::Vector<JobDefinition>& value) { SetJobDefinitions(value); return *this;}
 
     /**
-     * <p>The list of job definitions. </p>
+     * <p>The list of job definitions.</p>
      */
     inline DescribeJobDefinitionsResult& WithJobDefinitions(Aws::Vector<JobDefinition>&& value) { SetJobDefinitions(std::move(value)); return *this;}
 
     /**
-     * <p>The list of job definitions. </p>
+     * <p>The list of job definitions.</p>
      */
     inline DescribeJobDefinitionsResult& AddJobDefinitions(const JobDefinition& value) { m_jobDefinitions.push_back(value); return *this; }
 
     /**
-     * <p>The list of job definitions. </p>
+     * <p>The list of job definitions.</p>
      */
     inline DescribeJobDefinitionsResult& AddJobDefinitions(JobDefinition&& value) { m_jobDefinitions.push_back(std::move(value)); return *this; }
 

@@ -45,55 +45,55 @@ namespace Model
 
     /**
      * <p>A list of up to 100 compute environment names or full Amazon Resource Name
-     * (ARN) entries. </p>
+     * (ARN) entries.</p>
      */
     inline const Aws::Vector<Aws::String>& GetComputeEnvironments() const{ return m_computeEnvironments; }
 
     /**
      * <p>A list of up to 100 compute environment names or full Amazon Resource Name
-     * (ARN) entries. </p>
+     * (ARN) entries.</p>
      */
     inline bool ComputeEnvironmentsHasBeenSet() const { return m_computeEnvironmentsHasBeenSet; }
 
     /**
      * <p>A list of up to 100 compute environment names or full Amazon Resource Name
-     * (ARN) entries. </p>
+     * (ARN) entries.</p>
      */
     inline void SetComputeEnvironments(const Aws::Vector<Aws::String>& value) { m_computeEnvironmentsHasBeenSet = true; m_computeEnvironments = value; }
 
     /**
      * <p>A list of up to 100 compute environment names or full Amazon Resource Name
-     * (ARN) entries. </p>
+     * (ARN) entries.</p>
      */
     inline void SetComputeEnvironments(Aws::Vector<Aws::String>&& value) { m_computeEnvironmentsHasBeenSet = true; m_computeEnvironments = std::move(value); }
 
     /**
      * <p>A list of up to 100 compute environment names or full Amazon Resource Name
-     * (ARN) entries. </p>
+     * (ARN) entries.</p>
      */
     inline DescribeComputeEnvironmentsRequest& WithComputeEnvironments(const Aws::Vector<Aws::String>& value) { SetComputeEnvironments(value); return *this;}
 
     /**
      * <p>A list of up to 100 compute environment names or full Amazon Resource Name
-     * (ARN) entries. </p>
+     * (ARN) entries.</p>
      */
     inline DescribeComputeEnvironmentsRequest& WithComputeEnvironments(Aws::Vector<Aws::String>&& value) { SetComputeEnvironments(std::move(value)); return *this;}
 
     /**
      * <p>A list of up to 100 compute environment names or full Amazon Resource Name
-     * (ARN) entries. </p>
+     * (ARN) entries.</p>
      */
     inline DescribeComputeEnvironmentsRequest& AddComputeEnvironments(const Aws::String& value) { m_computeEnvironmentsHasBeenSet = true; m_computeEnvironments.push_back(value); return *this; }
 
     /**
      * <p>A list of up to 100 compute environment names or full Amazon Resource Name
-     * (ARN) entries. </p>
+     * (ARN) entries.</p>
      */
     inline DescribeComputeEnvironmentsRequest& AddComputeEnvironments(Aws::String&& value) { m_computeEnvironmentsHasBeenSet = true; m_computeEnvironments.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of up to 100 compute environment names or full Amazon Resource Name
-     * (ARN) entries. </p>
+     * (ARN) entries.</p>
      */
     inline DescribeComputeEnvironmentsRequest& AddComputeEnvironments(const char* value) { m_computeEnvironmentsHasBeenSet = true; m_computeEnvironments.push_back(value); return *this; }
 

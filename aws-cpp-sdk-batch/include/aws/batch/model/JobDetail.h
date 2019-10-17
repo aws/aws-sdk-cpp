@@ -190,8 +190,8 @@ namespace Model
 
 
     /**
-     * <p>The current status for the job. </p> <note> <p>If your jobs do not progress
-     * to <code>STARTING</code>, see <a
+     * <p>The current status for the job.</p> <note> <p>If your jobs do not progress to
+     * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
      * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
      * User Guide</i>.</p> </note>
@@ -199,8 +199,8 @@ namespace Model
     inline const JobStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current status for the job. </p> <note> <p>If your jobs do not progress
-     * to <code>STARTING</code>, see <a
+     * <p>The current status for the job.</p> <note> <p>If your jobs do not progress to
+     * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
      * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
      * User Guide</i>.</p> </note>
@@ -208,8 +208,8 @@ namespace Model
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The current status for the job. </p> <note> <p>If your jobs do not progress
-     * to <code>STARTING</code>, see <a
+     * <p>The current status for the job.</p> <note> <p>If your jobs do not progress to
+     * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
      * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
      * User Guide</i>.</p> </note>
@@ -217,8 +217,8 @@ namespace Model
     inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current status for the job. </p> <note> <p>If your jobs do not progress
-     * to <code>STARTING</code>, see <a
+     * <p>The current status for the job.</p> <note> <p>If your jobs do not progress to
+     * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
      * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
      * User Guide</i>.</p> </note>
@@ -226,8 +226,8 @@ namespace Model
     inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The current status for the job. </p> <note> <p>If your jobs do not progress
-     * to <code>STARTING</code>, see <a
+     * <p>The current status for the job.</p> <note> <p>If your jobs do not progress to
+     * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
      * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
      * User Guide</i>.</p> </note>
@@ -235,8 +235,8 @@ namespace Model
     inline JobDetail& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current status for the job. </p> <note> <p>If your jobs do not progress
-     * to <code>STARTING</code>, see <a
+     * <p>The current status for the job.</p> <note> <p>If your jobs do not progress to
+     * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
      * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
      * User Guide</i>.</p> </note>
@@ -287,49 +287,49 @@ namespace Model
 
     /**
      * <p>A short, human-readable string to provide additional details about the
-     * current status of the job. </p>
+     * current status of the job.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
 
     /**
      * <p>A short, human-readable string to provide additional details about the
-     * current status of the job. </p>
+     * current status of the job.</p>
      */
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
      * <p>A short, human-readable string to provide additional details about the
-     * current status of the job. </p>
+     * current status of the job.</p>
      */
     inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
 
     /**
      * <p>A short, human-readable string to provide additional details about the
-     * current status of the job. </p>
+     * current status of the job.</p>
      */
     inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
 
     /**
      * <p>A short, human-readable string to provide additional details about the
-     * current status of the job. </p>
+     * current status of the job.</p>
      */
     inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
 
     /**
      * <p>A short, human-readable string to provide additional details about the
-     * current status of the job. </p>
+     * current status of the job.</p>
      */
     inline JobDetail& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
 
     /**
      * <p>A short, human-readable string to provide additional details about the
-     * current status of the job. </p>
+     * current status of the job.</p>
      */
     inline JobDetail& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
     /**
      * <p>A short, human-readable string to provide additional details about the
-     * current status of the job. </p>
+     * current status of the job.</p>
      */
     inline JobDetail& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
@@ -545,91 +545,91 @@ namespace Model
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders or override any corresponding parameter defaults from the job
-     * definition. </p>
+     * definition.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders or override any corresponding parameter defaults from the job
-     * definition. </p>
+     * definition.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders or override any corresponding parameter defaults from the job
-     * definition. </p>
+     * definition.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders or override any corresponding parameter defaults from the job
-     * definition. </p>
+     * definition.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders or override any corresponding parameter defaults from the job
-     * definition. </p>
+     * definition.</p>
      */
     inline JobDetail& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders or override any corresponding parameter defaults from the job
-     * definition. </p>
+     * definition.</p>
      */
     inline JobDetail& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders or override any corresponding parameter defaults from the job
-     * definition. </p>
+     * definition.</p>
      */
     inline JobDetail& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders or override any corresponding parameter defaults from the job
-     * definition. </p>
+     * definition.</p>
      */
     inline JobDetail& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders or override any corresponding parameter defaults from the job
-     * definition. </p>
+     * definition.</p>
      */
     inline JobDetail& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders or override any corresponding parameter defaults from the job
-     * definition. </p>
+     * definition.</p>
      */
     inline JobDetail& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders or override any corresponding parameter defaults from the job
-     * definition. </p>
+     * definition.</p>
      */
     inline JobDetail& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders or override any corresponding parameter defaults from the job
-     * definition. </p>
+     * definition.</p>
      */
     inline JobDetail& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
      * placeholders or override any corresponding parameter defaults from the job
-     * definition. </p>
+     * definition.</p>
      */
     inline JobDetail& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
@@ -771,32 +771,32 @@ namespace Model
 
 
     /**
-     * <p>The timeout configuration for the job. </p>
+     * <p>The timeout configuration for the job.</p>
      */
     inline const JobTimeout& GetTimeout() const{ return m_timeout; }
 
     /**
-     * <p>The timeout configuration for the job. </p>
+     * <p>The timeout configuration for the job.</p>
      */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
     /**
-     * <p>The timeout configuration for the job. </p>
+     * <p>The timeout configuration for the job.</p>
      */
     inline void SetTimeout(const JobTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
-     * <p>The timeout configuration for the job. </p>
+     * <p>The timeout configuration for the job.</p>
      */
     inline void SetTimeout(JobTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
 
     /**
-     * <p>The timeout configuration for the job. </p>
+     * <p>The timeout configuration for the job.</p>
      */
     inline JobDetail& WithTimeout(const JobTimeout& value) { SetTimeout(value); return *this;}
 
     /**
-     * <p>The timeout configuration for the job. </p>
+     * <p>The timeout configuration for the job.</p>
      */
     inline JobDetail& WithTimeout(JobTimeout&& value) { SetTimeout(std::move(value)); return *this;}
 

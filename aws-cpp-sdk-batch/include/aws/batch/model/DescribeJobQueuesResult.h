@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The list of job queues. </p>
+     * <p>The list of job queues.</p>
      */
     inline const Aws::Vector<JobQueueDetail>& GetJobQueues() const{ return m_jobQueues; }
 
     /**
-     * <p>The list of job queues. </p>
+     * <p>The list of job queues.</p>
      */
     inline void SetJobQueues(const Aws::Vector<JobQueueDetail>& value) { m_jobQueues = value; }
 
     /**
-     * <p>The list of job queues. </p>
+     * <p>The list of job queues.</p>
      */
     inline void SetJobQueues(Aws::Vector<JobQueueDetail>&& value) { m_jobQueues = std::move(value); }
 
     /**
-     * <p>The list of job queues. </p>
+     * <p>The list of job queues.</p>
      */
     inline DescribeJobQueuesResult& WithJobQueues(const Aws::Vector<JobQueueDetail>& value) { SetJobQueues(value); return *this;}
 
     /**
-     * <p>The list of job queues. </p>
+     * <p>The list of job queues.</p>
      */
     inline DescribeJobQueuesResult& WithJobQueues(Aws::Vector<JobQueueDetail>&& value) { SetJobQueues(std::move(value)); return *this;}
 
     /**
-     * <p>The list of job queues. </p>
+     * <p>The list of job queues.</p>
      */
     inline DescribeJobQueuesResult& AddJobQueues(const JobQueueDetail& value) { m_jobQueues.push_back(value); return *this; }
 
     /**
-     * <p>The list of job queues. </p>
+     * <p>The list of job queues.</p>
      */
     inline DescribeJobQueuesResult& AddJobQueues(JobQueueDetail&& value) { m_jobQueues.push_back(std::move(value)); return *this; }
 

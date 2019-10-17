@@ -487,7 +487,7 @@ namespace Model
     /**
      * <p> The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
-     * is included in the response so that the following results can be retrieved. </p>
+     * is included in the response so that you can retrieve the remaining results. </p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
@@ -495,7 +495,7 @@ namespace Model
     /**
      * <p> The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
-     * is included in the response so that the following results can be retrieved. </p>
+     * is included in the response so that you can retrieve the remaining results. </p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
@@ -503,7 +503,7 @@ namespace Model
     /**
      * <p> The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
-     * is included in the response so that the following results can be retrieved. </p>
+     * is included in the response so that you can retrieve the remaining results. </p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
@@ -511,7 +511,7 @@ namespace Model
     /**
      * <p> The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
-     * is included in the response so that the following results can be retrieved. </p>
+     * is included in the response so that you can retrieve the remaining results. </p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeReservedDBInstancesRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}

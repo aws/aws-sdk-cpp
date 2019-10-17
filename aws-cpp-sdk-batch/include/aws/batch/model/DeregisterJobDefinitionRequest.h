@@ -44,49 +44,49 @@ namespace Model
 
     /**
      * <p>The name and revision (<code>name:revision</code>) or full Amazon Resource
-     * Name (ARN) of the job definition to deregister. </p>
+     * Name (ARN) of the job definition to deregister.</p>
      */
     inline const Aws::String& GetJobDefinition() const{ return m_jobDefinition; }
 
     /**
      * <p>The name and revision (<code>name:revision</code>) or full Amazon Resource
-     * Name (ARN) of the job definition to deregister. </p>
+     * Name (ARN) of the job definition to deregister.</p>
      */
     inline bool JobDefinitionHasBeenSet() const { return m_jobDefinitionHasBeenSet; }
 
     /**
      * <p>The name and revision (<code>name:revision</code>) or full Amazon Resource
-     * Name (ARN) of the job definition to deregister. </p>
+     * Name (ARN) of the job definition to deregister.</p>
      */
     inline void SetJobDefinition(const Aws::String& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = value; }
 
     /**
      * <p>The name and revision (<code>name:revision</code>) or full Amazon Resource
-     * Name (ARN) of the job definition to deregister. </p>
+     * Name (ARN) of the job definition to deregister.</p>
      */
     inline void SetJobDefinition(Aws::String&& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = std::move(value); }
 
     /**
      * <p>The name and revision (<code>name:revision</code>) or full Amazon Resource
-     * Name (ARN) of the job definition to deregister. </p>
+     * Name (ARN) of the job definition to deregister.</p>
      */
     inline void SetJobDefinition(const char* value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition.assign(value); }
 
     /**
      * <p>The name and revision (<code>name:revision</code>) or full Amazon Resource
-     * Name (ARN) of the job definition to deregister. </p>
+     * Name (ARN) of the job definition to deregister.</p>
      */
     inline DeregisterJobDefinitionRequest& WithJobDefinition(const Aws::String& value) { SetJobDefinition(value); return *this;}
 
     /**
      * <p>The name and revision (<code>name:revision</code>) or full Amazon Resource
-     * Name (ARN) of the job definition to deregister. </p>
+     * Name (ARN) of the job definition to deregister.</p>
      */
     inline DeregisterJobDefinitionRequest& WithJobDefinition(Aws::String&& value) { SetJobDefinition(std::move(value)); return *this;}
 
     /**
      * <p>The name and revision (<code>name:revision</code>) or full Amazon Resource
-     * Name (ARN) of the job definition to deregister. </p>
+     * Name (ARN) of the job definition to deregister.</p>
      */
     inline DeregisterJobDefinitionRequest& WithJobDefinition(const char* value) { SetJobDefinition(value); return *this;}
 

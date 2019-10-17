@@ -53,105 +53,105 @@ namespace Model
     /**
      * <p>The name of the job. The first character must be alphanumeric, and up to 128
      * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed. </p>
+     * allowed.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
 
     /**
      * <p>The name of the job. The first character must be alphanumeric, and up to 128
      * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed. </p>
+     * allowed.</p>
      */
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
 
     /**
      * <p>The name of the job. The first character must be alphanumeric, and up to 128
      * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed. </p>
+     * allowed.</p>
      */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
      * <p>The name of the job. The first character must be alphanumeric, and up to 128
      * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed. </p>
+     * allowed.</p>
      */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
 
     /**
      * <p>The name of the job. The first character must be alphanumeric, and up to 128
      * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed. </p>
+     * allowed.</p>
      */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
 
     /**
      * <p>The name of the job. The first character must be alphanumeric, and up to 128
      * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed. </p>
+     * allowed.</p>
      */
     inline SubmitJobRequest& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
 
     /**
      * <p>The name of the job. The first character must be alphanumeric, and up to 128
      * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed. </p>
+     * allowed.</p>
      */
     inline SubmitJobRequest& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the job. The first character must be alphanumeric, and up to 128
      * letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed. </p>
+     * allowed.</p>
      */
     inline SubmitJobRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
 
 
     /**
      * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue. </p>
+     * name or the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline const Aws::String& GetJobQueue() const{ return m_jobQueue; }
 
     /**
      * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue. </p>
+     * name or the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline bool JobQueueHasBeenSet() const { return m_jobQueueHasBeenSet; }
 
     /**
      * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue. </p>
+     * name or the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline void SetJobQueue(const Aws::String& value) { m_jobQueueHasBeenSet = true; m_jobQueue = value; }
 
     /**
      * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue. </p>
+     * name or the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline void SetJobQueue(Aws::String&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = std::move(value); }
 
     /**
      * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue. </p>
+     * name or the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline void SetJobQueue(const char* value) { m_jobQueueHasBeenSet = true; m_jobQueue.assign(value); }
 
     /**
      * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue. </p>
+     * name or the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline SubmitJobRequest& WithJobQueue(const Aws::String& value) { SetJobQueue(value); return *this;}
 
     /**
      * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue. </p>
+     * name or the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline SubmitJobRequest& WithJobQueue(Aws::String&& value) { SetJobQueue(std::move(value)); return *this;}
 
     /**
      * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue. </p>
+     * name or the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline SubmitJobRequest& WithJobQueue(const char* value) { SetJobQueue(value); return *this;}
 

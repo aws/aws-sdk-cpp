@@ -57,7 +57,7 @@ namespace Model
      * then the highest possible node index is used to end the range. Your accumulative
      * node ranges must account for all nodes (0:n). You may nest node ranges, for
      * example 0:10 and 4:5, in which case the 4:5 range properties override the 0:10
-     * properties. </p>
+     * properties.</p>
      */
     inline const Aws::String& GetTargetNodes() const{ return m_targetNodes; }
 
@@ -69,7 +69,7 @@ namespace Model
      * then the highest possible node index is used to end the range. Your accumulative
      * node ranges must account for all nodes (0:n). You may nest node ranges, for
      * example 0:10 and 4:5, in which case the 4:5 range properties override the 0:10
-     * properties. </p>
+     * properties.</p>
      */
     inline bool TargetNodesHasBeenSet() const { return m_targetNodesHasBeenSet; }
 
@@ -81,7 +81,7 @@ namespace Model
      * then the highest possible node index is used to end the range. Your accumulative
      * node ranges must account for all nodes (0:n). You may nest node ranges, for
      * example 0:10 and 4:5, in which case the 4:5 range properties override the 0:10
-     * properties. </p>
+     * properties.</p>
      */
     inline void SetTargetNodes(const Aws::String& value) { m_targetNodesHasBeenSet = true; m_targetNodes = value; }
 
@@ -93,7 +93,7 @@ namespace Model
      * then the highest possible node index is used to end the range. Your accumulative
      * node ranges must account for all nodes (0:n). You may nest node ranges, for
      * example 0:10 and 4:5, in which case the 4:5 range properties override the 0:10
-     * properties. </p>
+     * properties.</p>
      */
     inline void SetTargetNodes(Aws::String&& value) { m_targetNodesHasBeenSet = true; m_targetNodes = std::move(value); }
 
@@ -105,7 +105,7 @@ namespace Model
      * then the highest possible node index is used to end the range. Your accumulative
      * node ranges must account for all nodes (0:n). You may nest node ranges, for
      * example 0:10 and 4:5, in which case the 4:5 range properties override the 0:10
-     * properties. </p>
+     * properties.</p>
      */
     inline void SetTargetNodes(const char* value) { m_targetNodesHasBeenSet = true; m_targetNodes.assign(value); }
 
@@ -117,7 +117,7 @@ namespace Model
      * then the highest possible node index is used to end the range. Your accumulative
      * node ranges must account for all nodes (0:n). You may nest node ranges, for
      * example 0:10 and 4:5, in which case the 4:5 range properties override the 0:10
-     * properties. </p>
+     * properties.</p>
      */
     inline NodeRangeProperty& WithTargetNodes(const Aws::String& value) { SetTargetNodes(value); return *this;}
 
@@ -129,7 +129,7 @@ namespace Model
      * then the highest possible node index is used to end the range. Your accumulative
      * node ranges must account for all nodes (0:n). You may nest node ranges, for
      * example 0:10 and 4:5, in which case the 4:5 range properties override the 0:10
-     * properties. </p>
+     * properties.</p>
      */
     inline NodeRangeProperty& WithTargetNodes(Aws::String&& value) { SetTargetNodes(std::move(value)); return *this;}
 
@@ -141,7 +141,7 @@ namespace Model
      * then the highest possible node index is used to end the range. Your accumulative
      * node ranges must account for all nodes (0:n). You may nest node ranges, for
      * example 0:10 and 4:5, in which case the 4:5 range properties override the 0:10
-     * properties. </p>
+     * properties.</p>
      */
     inline NodeRangeProperty& WithTargetNodes(const char* value) { SetTargetNodes(value); return *this;}
 

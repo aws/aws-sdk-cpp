@@ -252,22 +252,22 @@ namespace Model
 
 
     /**
-     * <p>The priority of the job queue. </p>
+     * <p>The priority of the job queue.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
-     * <p>The priority of the job queue. </p>
+     * <p>The priority of the job queue.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
-     * <p>The priority of the job queue. </p>
+     * <p>The priority of the job queue.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p>The priority of the job queue. </p>
+     * <p>The priority of the job queue.</p>
      */
     inline JobQueueDetail& WithPriority(int value) { SetPriority(value); return *this;}
 

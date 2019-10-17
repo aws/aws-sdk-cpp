@@ -53,132 +53,132 @@ namespace Model
 
 
     /**
-     * <p>The name of the compute environment. </p>
+     * <p>The name of the compute environment.</p>
      */
     inline const Aws::String& GetComputeEnvironmentName() const{ return m_computeEnvironmentName; }
 
     /**
-     * <p>The name of the compute environment. </p>
+     * <p>The name of the compute environment.</p>
      */
     inline bool ComputeEnvironmentNameHasBeenSet() const { return m_computeEnvironmentNameHasBeenSet; }
 
     /**
-     * <p>The name of the compute environment. </p>
+     * <p>The name of the compute environment.</p>
      */
     inline void SetComputeEnvironmentName(const Aws::String& value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName = value; }
 
     /**
-     * <p>The name of the compute environment. </p>
+     * <p>The name of the compute environment.</p>
      */
     inline void SetComputeEnvironmentName(Aws::String&& value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName = std::move(value); }
 
     /**
-     * <p>The name of the compute environment. </p>
+     * <p>The name of the compute environment.</p>
      */
     inline void SetComputeEnvironmentName(const char* value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName.assign(value); }
 
     /**
-     * <p>The name of the compute environment. </p>
+     * <p>The name of the compute environment.</p>
      */
     inline ComputeEnvironmentDetail& WithComputeEnvironmentName(const Aws::String& value) { SetComputeEnvironmentName(value); return *this;}
 
     /**
-     * <p>The name of the compute environment. </p>
+     * <p>The name of the compute environment.</p>
      */
     inline ComputeEnvironmentDetail& WithComputeEnvironmentName(Aws::String&& value) { SetComputeEnvironmentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the compute environment. </p>
+     * <p>The name of the compute environment.</p>
      */
     inline ComputeEnvironmentDetail& WithComputeEnvironmentName(const char* value) { SetComputeEnvironmentName(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the compute environment. </p>
+     * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
      */
     inline const Aws::String& GetComputeEnvironmentArn() const{ return m_computeEnvironmentArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the compute environment. </p>
+     * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
      */
     inline bool ComputeEnvironmentArnHasBeenSet() const { return m_computeEnvironmentArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the compute environment. </p>
+     * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
      */
     inline void SetComputeEnvironmentArn(const Aws::String& value) { m_computeEnvironmentArnHasBeenSet = true; m_computeEnvironmentArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the compute environment. </p>
+     * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
      */
     inline void SetComputeEnvironmentArn(Aws::String&& value) { m_computeEnvironmentArnHasBeenSet = true; m_computeEnvironmentArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the compute environment. </p>
+     * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
      */
     inline void SetComputeEnvironmentArn(const char* value) { m_computeEnvironmentArnHasBeenSet = true; m_computeEnvironmentArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the compute environment. </p>
+     * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
      */
     inline ComputeEnvironmentDetail& WithComputeEnvironmentArn(const Aws::String& value) { SetComputeEnvironmentArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the compute environment. </p>
+     * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
      */
     inline ComputeEnvironmentDetail& WithComputeEnvironmentArn(Aws::String&& value) { SetComputeEnvironmentArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the compute environment. </p>
+     * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
      */
     inline ComputeEnvironmentDetail& WithComputeEnvironmentArn(const char* value) { SetComputeEnvironmentArn(value); return *this;}
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by
-     * the compute environment. </p>
+     * the compute environment.</p>
      */
     inline const Aws::String& GetEcsClusterArn() const{ return m_ecsClusterArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by
-     * the compute environment. </p>
+     * the compute environment.</p>
      */
     inline bool EcsClusterArnHasBeenSet() const { return m_ecsClusterArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by
-     * the compute environment. </p>
+     * the compute environment.</p>
      */
     inline void SetEcsClusterArn(const Aws::String& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by
-     * the compute environment. </p>
+     * the compute environment.</p>
      */
     inline void SetEcsClusterArn(Aws::String&& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by
-     * the compute environment. </p>
+     * the compute environment.</p>
      */
     inline void SetEcsClusterArn(const char* value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by
-     * the compute environment. </p>
+     * the compute environment.</p>
      */
     inline ComputeEnvironmentDetail& WithEcsClusterArn(const Aws::String& value) { SetEcsClusterArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by
-     * the compute environment. </p>
+     * the compute environment.</p>
      */
     inline ComputeEnvironmentDetail& WithEcsClusterArn(Aws::String&& value) { SetEcsClusterArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by
-     * the compute environment. </p>
+     * the compute environment.</p>
      */
     inline ComputeEnvironmentDetail& WithEcsClusterArn(const char* value) { SetEcsClusterArn(value); return *this;}
 
@@ -216,7 +216,7 @@ namespace Model
 
     /**
      * <p>The state of the compute environment. The valid values are
-     * <code>ENABLED</code> or <code>DISABLED</code>. </p> <p>If the state is
+     * <code>ENABLED</code> or <code>DISABLED</code>.</p> <p>If the state is
      * <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs
      * from an associated job queue on the compute resources within the environment. If
      * the compute environment is managed, then it can scale its instances out or in
@@ -231,7 +231,7 @@ namespace Model
 
     /**
      * <p>The state of the compute environment. The valid values are
-     * <code>ENABLED</code> or <code>DISABLED</code>. </p> <p>If the state is
+     * <code>ENABLED</code> or <code>DISABLED</code>.</p> <p>If the state is
      * <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs
      * from an associated job queue on the compute resources within the environment. If
      * the compute environment is managed, then it can scale its instances out or in
@@ -246,7 +246,7 @@ namespace Model
 
     /**
      * <p>The state of the compute environment. The valid values are
-     * <code>ENABLED</code> or <code>DISABLED</code>. </p> <p>If the state is
+     * <code>ENABLED</code> or <code>DISABLED</code>.</p> <p>If the state is
      * <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs
      * from an associated job queue on the compute resources within the environment. If
      * the compute environment is managed, then it can scale its instances out or in
@@ -261,7 +261,7 @@ namespace Model
 
     /**
      * <p>The state of the compute environment. The valid values are
-     * <code>ENABLED</code> or <code>DISABLED</code>. </p> <p>If the state is
+     * <code>ENABLED</code> or <code>DISABLED</code>.</p> <p>If the state is
      * <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs
      * from an associated job queue on the compute resources within the environment. If
      * the compute environment is managed, then it can scale its instances out or in
@@ -276,7 +276,7 @@ namespace Model
 
     /**
      * <p>The state of the compute environment. The valid values are
-     * <code>ENABLED</code> or <code>DISABLED</code>. </p> <p>If the state is
+     * <code>ENABLED</code> or <code>DISABLED</code>.</p> <p>If the state is
      * <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs
      * from an associated job queue on the compute resources within the environment. If
      * the compute environment is managed, then it can scale its instances out or in
@@ -291,7 +291,7 @@ namespace Model
 
     /**
      * <p>The state of the compute environment. The valid values are
-     * <code>ENABLED</code> or <code>DISABLED</code>. </p> <p>If the state is
+     * <code>ENABLED</code> or <code>DISABLED</code>.</p> <p>If the state is
      * <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs
      * from an associated job queue on the compute resources within the environment. If
      * the compute environment is managed, then it can scale its instances out or in
@@ -392,32 +392,32 @@ namespace Model
 
 
     /**
-     * <p>The compute resources defined for the compute environment. </p>
+     * <p>The compute resources defined for the compute environment.</p>
      */
     inline const ComputeResource& GetComputeResources() const{ return m_computeResources; }
 
     /**
-     * <p>The compute resources defined for the compute environment. </p>
+     * <p>The compute resources defined for the compute environment.</p>
      */
     inline bool ComputeResourcesHasBeenSet() const { return m_computeResourcesHasBeenSet; }
 
     /**
-     * <p>The compute resources defined for the compute environment. </p>
+     * <p>The compute resources defined for the compute environment.</p>
      */
     inline void SetComputeResources(const ComputeResource& value) { m_computeResourcesHasBeenSet = true; m_computeResources = value; }
 
     /**
-     * <p>The compute resources defined for the compute environment. </p>
+     * <p>The compute resources defined for the compute environment.</p>
      */
     inline void SetComputeResources(ComputeResource&& value) { m_computeResourcesHasBeenSet = true; m_computeResources = std::move(value); }
 
     /**
-     * <p>The compute resources defined for the compute environment. </p>
+     * <p>The compute resources defined for the compute environment.</p>
      */
     inline ComputeEnvironmentDetail& WithComputeResources(const ComputeResource& value) { SetComputeResources(value); return *this;}
 
     /**
-     * <p>The compute resources defined for the compute environment. </p>
+     * <p>The compute resources defined for the compute environment.</p>
      */
     inline ComputeEnvironmentDetail& WithComputeResources(ComputeResource&& value) { SetComputeResources(std::move(value)); return *this;}
 
