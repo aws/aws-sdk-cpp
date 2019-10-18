@@ -20,7 +20,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/ResourceManager.h>
 
-#include <wrl.h> 
+#include <wrl.h>
 
 struct IXMLHTTPRequest2;
 
@@ -49,13 +49,6 @@ namespace Aws
             /**
              * Makes http request, returns http response.
              */
-            virtual std::shared_ptr<HttpResponse> MakeRequest(HttpRequest& request,
-                Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
-                Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override;
-
-            /**
-             * Makes http request, returns http response.
-             */
             virtual std::shared_ptr<HttpResponse> MakeRequest(const std::shared_ptr<HttpRequest>& request,
                 Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
                 Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override;
@@ -65,18 +58,13 @@ namespace Aws
              * called CoInit elsewhere in your system.
              */
             static void InitCOM();
-            
+
             /**
              * IXMLHTTPRequest2 doesn't support transfer-encoding:chunked
              */
             virtual bool SupportsChunkedTransferEncoding() const override { return false; }
 
         private:
-            void MakeRequestInternal(HttpRequest& request,
-                    std::shared_ptr<HttpResponse>& response,
-                    Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
-                    Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const;
-
             void FillClientSettings(const HttpRequestComHandle&) const;
 
             //we can't reuse these com objects like we do in other http clients, just put a new one back into the resource manager.

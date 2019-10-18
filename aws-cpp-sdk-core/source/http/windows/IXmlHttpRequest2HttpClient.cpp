@@ -12,7 +12,6 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#define AWS_DISABLE_DEPRECATION
 
 #include <aws/core/http/windows/IXmlHttpRequest2HttpClient.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
@@ -333,41 +332,23 @@ namespace Aws
             m_resourceManager.ShutdownAndWait(m_poolSize);
         }
 
-        std::shared_ptr<HttpResponse> IXmlHttpRequest2HttpClient::MakeRequest(HttpRequest& request,
-                Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
-                Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
-        {
-            std::shared_ptr<HttpResponse> response = Aws::MakeShared<Standard::StandardHttpResponse>(CLASS_TAG, request);
-            MakeRequestInternal(request, response, readLimiter, writeLimiter);
-            return response;
-        }
-
         std::shared_ptr<HttpResponse> IXmlHttpRequest2HttpClient::MakeRequest(const std::shared_ptr<HttpRequest>& request,
                                         Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
                                         Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
         {
-            std::shared_ptr<HttpResponse> response = Aws::MakeShared<Standard::StandardHttpResponse>(CLASS_TAG, request);
-            MakeRequestInternal(*request, response, readLimiter, writeLimiter);
-            return response;
-        }
-
-        void IXmlHttpRequest2HttpClient::MakeRequestInternal(HttpRequest& request,
-                                        std::shared_ptr<HttpResponse>& response,
-                                        Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
-                                        Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
-        {
-            auto uri = request.GetUri();
+            auto uri = request->GetUri();
             auto fullUriString = uri.GetURIString();
-            AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Making " << HttpMethodMapper::GetNameForHttpMethod(request.GetMethod())
+            AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Making " << HttpMethodMapper::GetNameForHttpMethod(request->GetMethod())
                         << " request to url: " << fullUriString);
 
             auto url = Aws::Utils::StringUtils::ToWString(fullUriString.c_str());
-            auto methodStr = Aws::Utils::StringUtils::ToWString(HttpMethodMapper::GetNameForHttpMethod(request.GetMethod()));
+            auto methodStr = Aws::Utils::StringUtils::ToWString(HttpMethodMapper::GetNameForHttpMethod(request->GetMethod()));
             auto proxyUserNameStr = Aws::Utils::StringUtils::ToWString(m_proxyUserName.c_str());
             auto proxyPasswordStr = Aws::Utils::StringUtils::ToWString(m_proxyPassword.c_str());
 
             auto requestHandle = m_resourceManager.Acquire();
 
+            auto response = Aws::MakeShared<Standard::StandardHttpResponse>(CLASS_TAG, request);
             ComPtr<IXmlHttpRequest2HttpClientCallbacks> callbacks = Make<IXmlHttpRequest2HttpClientCallbacks>(*response, m_followRedirects);
 
             HRESULT hrResult = requestHandle->Open(methodStr.c_str(), url.c_str(), callbacks.Get(), nullptr, nullptr, proxyUserNameStr.c_str(), proxyPasswordStr.c_str());
@@ -382,11 +363,11 @@ namespace Aws
                 response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
                 response->SetClientErrorMessage(ss.str());
                 ReturnHandleToResourceManager();
-                return;
+                return response;
             }
 
             AWS_LOGSTREAM_TRACE(CLASS_TAG, "Setting http headers:");
-            for (auto& header : request.GetHeaders())
+            for (auto& header : request->GetHeaders())
             {
                 AWS_LOGSTREAM_TRACE(CLASS_TAG, header.first << ": " << header.second);
                 hrResult = requestHandle->SetRequestHeader(Aws::Utils::StringUtils::ToWString(header.first.c_str()).c_str(),
@@ -401,16 +382,16 @@ namespace Aws
                     response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
                     response->SetClientErrorMessage(ss.str());
                     ReturnHandleToResourceManager();
-                    return;
+                    return response;
                 }
             }
 
             if (writeLimiter)
             {
-                writeLimiter->ApplyAndPayForCost(request.GetSize());
+                writeLimiter->ApplyAndPayForCost(request->GetSize());
             }
 
-            ComPtr<IOStreamSequentialStream> responseStream = Make<IOStreamSequentialStream>(response->GetResponseBody(), *this, request,
+            ComPtr<IOStreamSequentialStream> responseStream = Make<IOStreamSequentialStream>(response->GetResponseBody(), *this, *request,
                             requestHandle, response.get(), writeLimiter);
 
             requestHandle->SetCustomResponseStream(responseStream.Get());
@@ -418,11 +399,11 @@ namespace Aws
             ComPtr<IOStreamSequentialStream> requestStream(nullptr);
             ULONGLONG streamLength(0);
 
-            if (request.GetContentBody() && !request.GetContentLength().empty())
+            if (request->GetContentBody() && !request->GetContentLength().empty())
             {
                 AWS_LOGSTREAM_TRACE(CLASS_TAG, "Content detected, setting request stream.");
-                requestStream = Make<IOStreamSequentialStream>(*request.GetContentBody(), *this, request, requestHandle, nullptr, readLimiter);
-                streamLength = static_cast<ULONGLONG>(Aws::Utils::StringUtils::ConvertToInt64(request.GetContentLength().c_str()));
+                requestStream = Make<IOStreamSequentialStream>(*request->GetContentBody(), *this, *request, requestHandle, nullptr, readLimiter);
+                streamLength = static_cast<ULONGLONG>(Aws::Utils::StringUtils::ConvertToInt64(request->GetContentLength().c_str()));
             }
 
             hrResult = requestHandle->Send(requestStream.Get(), streamLength);
@@ -441,6 +422,7 @@ namespace Aws
                 AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Request finished with response code: " << static_cast<int>(response->GetResponseCode()));
             }
             ReturnHandleToResourceManager();
+            return response;
         }
 
         void IXmlHttpRequest2HttpClient::FillClientSettings(const HttpRequestComHandle& handle) const

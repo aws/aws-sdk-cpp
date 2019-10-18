@@ -30,17 +30,6 @@ static const char MockHttpAllocationTag[] = "MockHttp";
 class MockHttpClient : public Aws::Http::HttpClient
 {
 public:
-    std::shared_ptr<Aws::Http::HttpResponse> MakeRequest(Aws::Http::HttpRequest& request,
-                                                         Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
-                                                         Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override
-    {
-        AWS_UNREFERENCED_PARAM(request);
-        AWS_UNREFERENCED_PARAM(readLimiter);
-        AWS_UNREFERENCED_PARAM(writeLimiter);
-        assert(false); // should not use this overload. It's deprecated
-        return Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(MockHttpAllocationTag, request);
-    }
-
     std::shared_ptr<Aws::Http::HttpResponse> MakeRequest(const std::shared_ptr<Aws::Http::HttpRequest>& request,
                                                          Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
                                                          Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override

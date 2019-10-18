@@ -16,7 +16,6 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
-#include <aws/core/utils/UnreferencedParam.h>
 
 #include <memory>
 #include <atomic>
@@ -48,26 +47,11 @@ namespace Aws
             virtual ~HttpClient() {}
 
             /**
-             * Takes an http request, makes it, and returns the newly allocated HttpResponse
-             */
-            AWS_DEPRECATED("Deprecated: in favor of MakeRequest(const std::shared_ptr<HttpRequest>&, ...).")
-            virtual std::shared_ptr<HttpResponse> MakeRequest(HttpRequest& request,
-                Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
-                Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const = 0;
-
-            /**
              * Takes an http request, makes it, and returns the newly allocated HttpResponse.
-             * Default implementation provided for backwards compatability.
              */
             virtual std::shared_ptr<HttpResponse> MakeRequest(const std::shared_ptr<HttpRequest>& request,
                 Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
-                Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const
-            {
-                AWS_UNREFERENCED_PARAM(request);
-                AWS_UNREFERENCED_PARAM(readLimiter);
-                AWS_UNREFERENCED_PARAM(writeLimiter);
-                return nullptr;
-            }
+                Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const = 0;
 
             /**
              * If yes, the http client supports transfer-encoding:chunked.

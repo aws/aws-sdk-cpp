@@ -41,14 +41,11 @@ public:
 
     //Creates client, initializes curl handle if it hasn't been created already.
     CurlHttpClient(const Aws::Client::ClientConfiguration& clientConfig);
-    //Makes request and receives response synchronously
-    AWS_DEPRECATED("This function in base class has been deprecated")
-    std::shared_ptr<HttpResponse> MakeRequest(HttpRequest& request, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
-            Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override;
 
-    //Makes request with shared_ptr typed request and receives response synchronously
-    std::shared_ptr<HttpResponse> MakeRequest(const std::shared_ptr<HttpRequest>& request, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
-            Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override;
+    //Makes request and receives response synchronously
+    std::shared_ptr<HttpResponse> MakeRequest(const std::shared_ptr<HttpRequest>& request,
+        Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
+        Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override;
 
     static void InitGlobalState();
     static void CleanupGlobalState();
@@ -72,12 +69,6 @@ private:
     bool m_disableExpectHeader;
     bool m_allowRedirects;
     static std::atomic<bool> isInit;
-
-    void MakeRequestInternal(HttpRequest& request, std::shared_ptr<Standard::StandardHttpResponse>& response,
-        Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
-        Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const;
-
-
 };
 
 using PlatformHttpClient = CurlHttpClient;

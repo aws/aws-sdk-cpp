@@ -13,7 +13,6 @@
   * permissions and limitations under the License.
   */
 
-#define AWS_DISABLE_DEPRECATION
 #include <aws/external/gtest.h>
 
 #include <aws/testing/mocks/aws/auth/MockAWSHttpResourceClient.h>
@@ -572,6 +571,7 @@ TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderNonSupporte
     configFileNew << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 2, \"AccessKeyId\": \"AccessKey321\", \"SecretAccessKey\": \"SecretKey123\"}") << std::endl;
     configFileNew.close();
     Aws::Config::ReloadCachedConfigFile();
+
     ProcessCredentialsProvider provider;
     EXPECT_TRUE(provider.GetAWSCredentials().IsEmpty());
 
@@ -782,7 +782,7 @@ TEST_F(STSAssumeRoleWithWebIdentityCredentialsProviderTest, TestParseCredentials
     std::shared_ptr<HttpRequest> requestTmp = CreateHttpRequest(URI(request.GetURIString(true /*include querystring*/)), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     //Made up credentials from https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html
     Aws::String goodXml = "<AssumeRoleWithWebIdentityResult><Credentials><SessionToken>AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp+IEXAMPLE</SessionToken><SecretAccessKey>wJalrXUtnFEMI/K7MDENG/bPxRfiCYzEXAMPLEKEY</SecretAccessKey><Expiration>2226-10-24T23:00:23Z</Expiration><AccessKeyId>ASgeIAIOSFODNN7EXAMPLE</AccessKeyId></Credentials></AssumeRoleWithWebIdentityResult>";
-    std::shared_ptr<StandardHttpResponse> goodResponse = Aws::MakeShared<StandardHttpResponse>(AllocationTag, (*requestTmp));
+    std::shared_ptr<StandardHttpResponse> goodResponse = Aws::MakeShared<StandardHttpResponse>(AllocationTag, requestTmp);
     goodResponse->SetResponseCode(HttpResponseCode::OK);
     goodResponse->GetResponseBody() << goodXml;
     mockHttpClient->AddResponseToReturn(goodResponse);

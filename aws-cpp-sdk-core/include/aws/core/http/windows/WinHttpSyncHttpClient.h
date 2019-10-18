@@ -53,7 +53,7 @@ namespace Aws
 
         private:
             // WinHttp specific implementations
-            void* OpenRequest(const Aws::Http::HttpRequest& request, void* connection, const Aws::StringStream& ss) const override;
+            void* OpenRequest(const std::shared_ptr<HttpRequest>& request, void* connection, const Aws::StringStream& ss) const override;
             void DoAddHeaders(void* httpRequest, Aws::String& headerStr) const override;
             uint64_t DoWriteData(void* httpRequest, char* streamBuffer, uint64_t bytesRead, bool isChunked) const override;
             uint64_t FinalizeWriteData(void* hHttpRequest) const override;

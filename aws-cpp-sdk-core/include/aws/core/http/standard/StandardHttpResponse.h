@@ -37,14 +37,6 @@ namespace Aws
                 /**
                  * Initializes an http response with the originalRequest and the response code.
                  */
-                StandardHttpResponse(const HttpRequest& originatingRequest) :
-                    HttpResponse(originatingRequest),
-                    bodyStream(originatingRequest.GetResponseStreamFactory())
-                {}
-
-                /**
-                 * Initializes an http response with the originalRequest and the response code.
-                 */
                 StandardHttpResponse(const std::shared_ptr<const HttpRequest>& originatingRequest) :
                     HttpResponse(originatingRequest),
                     bodyStream(originatingRequest->GetResponseStreamFactory())
@@ -79,7 +71,7 @@ namespace Aws
                 void AddHeader(const Aws::String&, const Aws::String&);
 
             private:
-                StandardHttpResponse(const StandardHttpResponse&);                
+                StandardHttpResponse(const StandardHttpResponse&);
 
                 Aws::Map<Aws::String, Aws::String> headerMap;
                 Utils::Stream::ResponseStream bodyStream;

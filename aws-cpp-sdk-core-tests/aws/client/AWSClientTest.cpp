@@ -13,7 +13,6 @@
 * permissions and limitations under the License.
 */
 
-#define AWS_DISABLE_DEPRECATION
 #include <aws/external/gtest.h>
 #include <aws/core/http/standard/StandardHttpRequest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
