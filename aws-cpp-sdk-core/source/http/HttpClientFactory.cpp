@@ -2,7 +2,7 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-#define AWS_DISABLE_DEPRECATION
+
 #include <aws/core/http/HttpClientFactory.h>
 
 #if ENABLE_CURL_CLIENT

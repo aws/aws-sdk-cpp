@@ -41,7 +41,7 @@ if(BUILD_ONLY)
         endif()
     endforeach()
     LIST(REMOVE_DUPLICATES SDK_BUILD_LIST)
-    LIST(REMOVE_DUPLICATES SDK_DEPENDENCY_BUILD_LIST)  
+    LIST(REMOVE_DUPLICATES SDK_DEPENDENCY_BUILD_LIST)
 else()
     set(TEMP_SDK_BUILD_LIST ${GENERATED_SERVICE_LIST})
     list(APPEND TEMP_SDK_BUILD_LIST "core")
@@ -55,7 +55,7 @@ else()
         set(REMOVE_SDK 0)
 
         set(SDK_DIR "aws-cpp-sdk-${SDK}")
-        
+
         if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}" AND NOT REGENERATE_CLIENTS)
             set(REMOVE_SDK 1)
         endif()
@@ -77,7 +77,7 @@ if(ADD_CUSTOM_CLIENTS OR REGENERATE_CLIENTS)
     )
 endif()
 
-            
+
 if(ENABLE_VIRTUAL_OPERATIONS) # it could be set to 0/1 or ON/OFF
     set(ENABLE_VIRTUAL_OPERATIONS_ARG "--enableVirtualOperations")
 else()
@@ -89,12 +89,12 @@ if(REGENERATE_CLIENTS)
     set(MERGED_BUILD_LIST ${SDK_BUILD_LIST})
     list(APPEND MERGED_BUILD_LIST ${SDK_DEPENDENCY_BUILD_LIST})
     LIST(REMOVE_DUPLICATES MERGED_BUILD_LIST)
-    
+
     foreach(SDK IN LISTS MERGED_BUILD_LIST)
         get_c2j_date_for_service(${SDK} C2J_DATE)
         get_c2j_name_for_service(${SDK} C2J_NAME)
         set(SDK_C2J_FILE "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/api-descriptions/${C2J_NAME}-${C2J_DATE}.normal.json")
-               
+
         if(EXISTS ${SDK_C2J_FILE})
             message(STATUS "Clearing existing directory for ${SDK} to prepare for generation.")
             file(REMOVE_RECURSE "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-${SDK}")
@@ -119,12 +119,12 @@ foreach(custom_client ${ADD_CUSTOM_CLIENTS})
     if(CMAKE_MATCH_COUNT GREATER 0)
         set(C_SERVICE_NAME ${CMAKE_MATCH_1})
         set(C_VERSION ${CMAKE_MATCH_2})
-        
-        set(SDK_C2J_FILE "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/api-descriptions/${C_SERVICE_NAME}-${C_VERSION}.normal.json")        
+
+        set(SDK_C2J_FILE "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/api-descriptions/${C_SERVICE_NAME}-${C_VERSION}.normal.json")
         if(NOT (EXISTS ${SDK_C2J_FILE}))
             message(FATAL_ERROR "${C_SERVICE_NAME} is required for build, but C2J file '${SDK_C2J_FILE}' is missing!")
         endif()
-        
+
         message(STATUS "Clearing existing directory for ${C_SERVICE_NAME} to prepare for generation.")
         file(REMOVE_RECURSE "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-${C_SERVICE_NAME}")
         message(STATUS "generating client for ${C_SERVICE_NAME} version ${C_VERSION}")
@@ -132,20 +132,20 @@ foreach(custom_client ${ADD_CUSTOM_CLIENTS})
             COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ${C_SERVICE_NAME} --apiVersion ${C_VERSION} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --outputLocation ./
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         )
-        LIST(APPEND SDK_BUILD_LIST ${C_SERVICE_NAME})        
+        LIST(APPEND SDK_BUILD_LIST ${C_SERVICE_NAME})
     endif()
 endforeach(custom_client)
 
 # when building a fixed target set, missing SDKs are an error
 # when building "everything", we forgive missing SDKs; should this become an option instead?
-if(BUILD_ONLY)    
+if(BUILD_ONLY)
     # make sure all the sdks/c2js are present; a missing sdk-directory or c2j file is a build error when building a manually-specified set
     foreach(SDK IN LISTS SDK_BUILD_LIST)
         set(SDK_DIR "aws-cpp-sdk-${SDK}")
 
         if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
             message(FATAL_ERROR "${SDK} is required for build, but ${SDK_DIR} directory is missing!")
-        endif()        
+        endif()
     endforeach()
 
     set(TEMP_SDK_DEPENDENCY_BUILD_LIST ${SDK_DEPENDENCY_BUILD_LIST})
@@ -157,7 +157,7 @@ if(BUILD_ONLY)
             set(SDK_DIR "aws-cpp-sdk-${SDK}")
             if (NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
                 message(FATAL_ERROR "${SDK} is required for build, but ${SDK_DIR} directory is missing!")
-            endif ()               
+            endif ()
         else ()
             list(REMOVE_ITEM SDK_DEPENDENCY_BUILD_LIST ${SDK})
         endif ()
@@ -169,7 +169,7 @@ if(BUILD_ONLY)
 endif()
 
 LIST(REMOVE_DUPLICATES SDK_BUILD_LIST)
-LIST(REMOVE_DUPLICATES SDK_DEPENDENCY_BUILD_LIST) 
+LIST(REMOVE_DUPLICATES SDK_DEPENDENCY_BUILD_LIST)
 
 function(add_sdks)
     LIST(APPEND EXPORTS "")
@@ -178,7 +178,7 @@ function(add_sdks)
 
         add_subdirectory("${SDK_DIR}")
         LIST(APPEND EXPORTS "${SDK_DIR}")
-    endforeach()    
+    endforeach()
 
     #testing
     if(ENABLE_TESTING)
@@ -205,7 +205,7 @@ function(add_sdks)
                     endif()
                     STRING(REPLACE "," ";" LIST_RESULT ${TEST_PROJECTS})
                     foreach(TEST_PROJECT IN LISTS LIST_RESULT)
-                        if(TEST_PROJECT)                         
+                        if(TEST_PROJECT)
                             # before we add the test, make sure all of its dependencies are present
                             set(ADD_TEST 1)
                             get_dependencies_for_test(${SDK} DEPENDENCY_LIST)
@@ -214,7 +214,7 @@ function(add_sdks)
                                 foreach(DEPENDENCY IN LISTS LIST_RESULT)
                                     list(FIND SDK_BUILD_LIST ${DEPENDENCY} DEPENDENCY_INDEX)
                                     if(DEPENDENCY_INDEX LESS 0)
-                                        message(STATUS "Removing test project ${TEST_PROJECT} due to missing dependency {$DEPENDENCY}")
+                                        message(STATUS "Removing test project ${TEST_PROJECT} due to missing dependency ${DEPENDENCY}")
                                         set(ADD_TEST 0)
                                     endif()
                                 endforeach()

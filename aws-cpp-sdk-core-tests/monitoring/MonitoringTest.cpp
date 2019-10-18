@@ -2,7 +2,6 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-#define AWS_DISABLE_DEPRECATION
 
 #include <aws/external/gtest.h>
 #include <aws/testing/mocks/aws/client/MockAWSClient.h>
