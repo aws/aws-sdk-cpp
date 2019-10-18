@@ -49,107 +49,99 @@ namespace Model
   public:
 
     /**
-     * <p>The ARN of the CloudWatch resource that you're adding tags to. For more
-     * information on ARN format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">Example
-     * ARNs</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * <p>The ARN of the CloudWatch alarm that you're adding tags to. The ARN format is
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i>
+     * </code> </p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
 
     /**
-     * <p>The ARN of the CloudWatch resource that you're adding tags to. For more
-     * information on ARN format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">Example
-     * ARNs</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * <p>The ARN of the CloudWatch alarm that you're adding tags to. The ARN format is
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i>
+     * </code> </p>
      */
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
 
     /**
-     * <p>The ARN of the CloudWatch resource that you're adding tags to. For more
-     * information on ARN format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">Example
-     * ARNs</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * <p>The ARN of the CloudWatch alarm that you're adding tags to. The ARN format is
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i>
+     * </code> </p>
      */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
-     * <p>The ARN of the CloudWatch resource that you're adding tags to. For more
-     * information on ARN format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">Example
-     * ARNs</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * <p>The ARN of the CloudWatch alarm that you're adding tags to. The ARN format is
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i>
+     * </code> </p>
      */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
 
     /**
-     * <p>The ARN of the CloudWatch resource that you're adding tags to. For more
-     * information on ARN format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">Example
-     * ARNs</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * <p>The ARN of the CloudWatch alarm that you're adding tags to. The ARN format is
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i>
+     * </code> </p>
      */
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
 
     /**
-     * <p>The ARN of the CloudWatch resource that you're adding tags to. For more
-     * information on ARN format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">Example
-     * ARNs</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * <p>The ARN of the CloudWatch alarm that you're adding tags to. The ARN format is
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i>
+     * </code> </p>
      */
     inline TagResourceRequest& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
 
     /**
-     * <p>The ARN of the CloudWatch resource that you're adding tags to. For more
-     * information on ARN format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">Example
-     * ARNs</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * <p>The ARN of the CloudWatch alarm that you're adding tags to. The ARN format is
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i>
+     * </code> </p>
      */
     inline TagResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the CloudWatch resource that you're adding tags to. For more
-     * information on ARN format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">Example
-     * ARNs</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * <p>The ARN of the CloudWatch alarm that you're adding tags to. The ARN format is
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i>
+     * </code> </p>
      */
     inline TagResourceRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
 
 
     /**
-     * <p>The list of key-value pairs to associate with the resource.</p>
+     * <p>The list of key-value pairs to associate with the alarm.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The list of key-value pairs to associate with the resource.</p>
+     * <p>The list of key-value pairs to associate with the alarm.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The list of key-value pairs to associate with the resource.</p>
+     * <p>The list of key-value pairs to associate with the alarm.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The list of key-value pairs to associate with the resource.</p>
+     * <p>The list of key-value pairs to associate with the alarm.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The list of key-value pairs to associate with the resource.</p>
+     * <p>The list of key-value pairs to associate with the alarm.</p>
      */
     inline TagResourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The list of key-value pairs to associate with the resource.</p>
+     * <p>The list of key-value pairs to associate with the alarm.</p>
      */
     inline TagResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The list of key-value pairs to associate with the resource.</p>
+     * <p>The list of key-value pairs to associate with the alarm.</p>
      */
     inline TagResourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The list of key-value pairs to associate with the resource.</p>
+     * <p>The list of key-value pairs to associate with the alarm.</p>
      */
     inline TagResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

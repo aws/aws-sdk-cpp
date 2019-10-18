@@ -36,7 +36,9 @@ MetricDataQuery::MetricDataQuery() :
     m_expressionHasBeenSet(false),
     m_labelHasBeenSet(false),
     m_returnData(false),
-    m_returnDataHasBeenSet(false)
+    m_returnDataHasBeenSet(false),
+    m_period(0),
+    m_periodHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ MetricDataQuery::MetricDataQuery(const XmlNode& xmlNode) :
     m_expressionHasBeenSet(false),
     m_labelHasBeenSet(false),
     m_returnData(false),
-    m_returnDataHasBeenSet(false)
+    m_returnDataHasBeenSet(false),
+    m_period(0),
+    m_periodHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -87,6 +91,12 @@ MetricDataQuery& MetricDataQuery::operator =(const XmlNode& xmlNode)
       m_returnData = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnDataNode.GetText()).c_str()).c_str());
       m_returnDataHasBeenSet = true;
     }
+    XmlNode periodNode = resultNode.FirstChild("Period");
+    if(!periodNode.IsNull())
+    {
+      m_period = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(periodNode.GetText()).c_str()).c_str());
+      m_periodHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -121,6 +131,11 @@ void MetricDataQuery::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".ReturnData=" << std::boolalpha << m_returnData << "&";
   }
 
+  if(m_periodHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Period=" << m_period << "&";
+  }
+
 }
 
 void MetricDataQuery::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -146,6 +161,10 @@ void MetricDataQuery::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_returnDataHasBeenSet)
   {
       oStream << location << ".ReturnData=" << std::boolalpha << m_returnData << "&";
+  }
+  if(m_periodHasBeenSet)
+  {
+      oStream << location << ".Period=" << m_period << "&";
   }
 }
 

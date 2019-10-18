@@ -428,6 +428,67 @@ namespace Model
      */
     inline MetricDataQuery& WithReturnData(bool value) { SetReturnData(value); return *this;}
 
+
+    /**
+     * <p>The granularity, in seconds, of the returned data points. For metrics with
+     * regular resolution, a period can be as short as one minute (60 seconds) and must
+     * be a multiple of 60. For high-resolution metrics that are collected at intervals
+     * of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of
+     * 60. High-resolution metrics are those metrics stored by a
+     * <code>PutMetricData</code> operation that includes a <code>StorageResolution of
+     * 1 second</code>.</p> <p>Use this field only when you are performing a
+     * <code>GetMetricData</code> operation, and only when you are specifying the
+     * <code>Expression</code> field. Do not use this field with a
+     * <code>PutMetricAlarm</code> operation or when you are specifying a
+     * <code>MetricStat</code> in a <code>GetMetricData</code> operation.</p> <p/>
+     */
+    inline int GetPeriod() const{ return m_period; }
+
+    /**
+     * <p>The granularity, in seconds, of the returned data points. For metrics with
+     * regular resolution, a period can be as short as one minute (60 seconds) and must
+     * be a multiple of 60. For high-resolution metrics that are collected at intervals
+     * of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of
+     * 60. High-resolution metrics are those metrics stored by a
+     * <code>PutMetricData</code> operation that includes a <code>StorageResolution of
+     * 1 second</code>.</p> <p>Use this field only when you are performing a
+     * <code>GetMetricData</code> operation, and only when you are specifying the
+     * <code>Expression</code> field. Do not use this field with a
+     * <code>PutMetricAlarm</code> operation or when you are specifying a
+     * <code>MetricStat</code> in a <code>GetMetricData</code> operation.</p> <p/>
+     */
+    inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
+
+    /**
+     * <p>The granularity, in seconds, of the returned data points. For metrics with
+     * regular resolution, a period can be as short as one minute (60 seconds) and must
+     * be a multiple of 60. For high-resolution metrics that are collected at intervals
+     * of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of
+     * 60. High-resolution metrics are those metrics stored by a
+     * <code>PutMetricData</code> operation that includes a <code>StorageResolution of
+     * 1 second</code>.</p> <p>Use this field only when you are performing a
+     * <code>GetMetricData</code> operation, and only when you are specifying the
+     * <code>Expression</code> field. Do not use this field with a
+     * <code>PutMetricAlarm</code> operation or when you are specifying a
+     * <code>MetricStat</code> in a <code>GetMetricData</code> operation.</p> <p/>
+     */
+    inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
+
+    /**
+     * <p>The granularity, in seconds, of the returned data points. For metrics with
+     * regular resolution, a period can be as short as one minute (60 seconds) and must
+     * be a multiple of 60. For high-resolution metrics that are collected at intervals
+     * of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of
+     * 60. High-resolution metrics are those metrics stored by a
+     * <code>PutMetricData</code> operation that includes a <code>StorageResolution of
+     * 1 second</code>.</p> <p>Use this field only when you are performing a
+     * <code>GetMetricData</code> operation, and only when you are specifying the
+     * <code>Expression</code> field. Do not use this field with a
+     * <code>PutMetricAlarm</code> operation or when you are specifying a
+     * <code>MetricStat</code> in a <code>GetMetricData</code> operation.</p> <p/>
+     */
+    inline MetricDataQuery& WithPeriod(int value) { SetPeriod(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -444,6 +505,9 @@ namespace Model
 
     bool m_returnData;
     bool m_returnDataHasBeenSet;
+
+    int m_period;
+    bool m_periodHasBeenSet;
   };
 
 } // namespace Model
