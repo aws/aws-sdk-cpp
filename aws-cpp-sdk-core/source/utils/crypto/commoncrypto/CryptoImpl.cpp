@@ -24,7 +24,6 @@
 
 // Fix for deprectation errors in OSX 10.15: https://github.com/aws/aws-sdk-cpp/issues/1259
 #if defined(__APPLE__) && defined(__clang__)
-#pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 #endif
 
