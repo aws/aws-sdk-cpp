@@ -1,12 +1,12 @@
 /*
   * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
+  *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
   * A copy of the License is located at
-  * 
+  *
   *  http://aws.amazon.com/apache2.0
-  * 
+  *
   * or in the "license" file accompanying this file. This file is distributed
   * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
   * express or implied. See the License for the specific language governing
@@ -51,17 +51,26 @@
     #elif defined (__GNUC__)
         #define DO_PRAGMA(x) _Pragma(#x)
         #define AWS_DEPRECATED(msg) __attribute__((deprecated(msg)))
-        /** 
-         * WRAP() is a useless macro to get around GCC quirks related to expanding macros which includes _Pragma
-         * see https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=715271
-         * and https://stackoverflow.com/questions/49698645/how-to-use-pragma-operator-in-macro
-         */
-        #define WRAP(W) DO_PRAGMA(GCC diagnostic push) \
-                        DO_PRAGMA(GCC diagnostic ignored W)
-        #define AWS_SUPPRESS_WARNING_(W, ...) \
-            W \
-            __VA_ARGS__; \
-            DO_PRAGMA(GCC diagnostic pop)
+        #ifdef __clang__
+            #define WRAP(W) DO_PRAGMA(clang diagnostic push) \
+                            DO_PRAGMA(clang diagnostic ignored W)
+            #define AWS_SUPPRESS_WARNING_(W, ...) \
+                W \
+                __VA_ARGS__; \
+                DO_PRAGMA(clang diagnostic pop)
+        #else
+            /**
+             * WRAP() is a useless macro to get around GCC quirks related to expanding macros which includes _Pragma
+             * see https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=715271
+             * and https://stackoverflow.com/questions/49698645/how-to-use-pragma-operator-in-macro
+             */
+            #define WRAP(W) DO_PRAGMA(GCC diagnostic push) \
+                            DO_PRAGMA(GCC diagnostic ignored W)
+            #define AWS_SUPPRESS_WARNING_(W, ...) \
+                W \
+                __VA_ARGS__; \
+                DO_PRAGMA(GCC diagnostic pop)
+        #endif
         #define AWS_SUPPRESS_WARNING(W, ...) AWS_SUPPRESS_WARNING_(WRAP(W), __VA_ARGS__)
         /**
          * Clang is the only compiler that does not emit warnings for deprecated functions used within deprecated functions.
