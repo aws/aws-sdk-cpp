@@ -250,37 +250,37 @@ namespace Model
 
 
     /**
-     * <p>Calls a Lambda function, passing in information about the detector model
+     * <p>Calls an AWS Lambda function, passing in information about the detector model
      * instance and the event which triggered the action.</p>
      */
     inline const LambdaAction& GetLambda() const{ return m_lambda; }
 
     /**
-     * <p>Calls a Lambda function, passing in information about the detector model
+     * <p>Calls an AWS Lambda function, passing in information about the detector model
      * instance and the event which triggered the action.</p>
      */
     inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
 
     /**
-     * <p>Calls a Lambda function, passing in information about the detector model
+     * <p>Calls an AWS Lambda function, passing in information about the detector model
      * instance and the event which triggered the action.</p>
      */
     inline void SetLambda(const LambdaAction& value) { m_lambdaHasBeenSet = true; m_lambda = value; }
 
     /**
-     * <p>Calls a Lambda function, passing in information about the detector model
+     * <p>Calls an AWS Lambda function, passing in information about the detector model
      * instance and the event which triggered the action.</p>
      */
     inline void SetLambda(LambdaAction&& value) { m_lambdaHasBeenSet = true; m_lambda = std::move(value); }
 
     /**
-     * <p>Calls a Lambda function, passing in information about the detector model
+     * <p>Calls an AWS Lambda function, passing in information about the detector model
      * instance and the event which triggered the action.</p>
      */
     inline Action& WithLambda(const LambdaAction& value) { SetLambda(value); return *this;}
 
     /**
-     * <p>Calls a Lambda function, passing in information about the detector model
+     * <p>Calls an AWS Lambda function, passing in information about the detector model
      * instance and the event which triggered the action.</p>
      */
     inline Action& WithLambda(LambdaAction&& value) { SetLambda(std::move(value)); return *this;}
@@ -325,74 +325,74 @@ namespace Model
 
     /**
      * <p>Sends information about the detector model instance and the event which
-     * triggered the action to an AWS SQS queue.</p>
+     * triggered the action to an Amazon SQS queue.</p>
      */
     inline const SqsAction& GetSqs() const{ return m_sqs; }
 
     /**
      * <p>Sends information about the detector model instance and the event which
-     * triggered the action to an AWS SQS queue.</p>
+     * triggered the action to an Amazon SQS queue.</p>
      */
     inline bool SqsHasBeenSet() const { return m_sqsHasBeenSet; }
 
     /**
      * <p>Sends information about the detector model instance and the event which
-     * triggered the action to an AWS SQS queue.</p>
+     * triggered the action to an Amazon SQS queue.</p>
      */
     inline void SetSqs(const SqsAction& value) { m_sqsHasBeenSet = true; m_sqs = value; }
 
     /**
      * <p>Sends information about the detector model instance and the event which
-     * triggered the action to an AWS SQS queue.</p>
+     * triggered the action to an Amazon SQS queue.</p>
      */
     inline void SetSqs(SqsAction&& value) { m_sqsHasBeenSet = true; m_sqs = std::move(value); }
 
     /**
      * <p>Sends information about the detector model instance and the event which
-     * triggered the action to an AWS SQS queue.</p>
+     * triggered the action to an Amazon SQS queue.</p>
      */
     inline Action& WithSqs(const SqsAction& value) { SetSqs(value); return *this;}
 
     /**
      * <p>Sends information about the detector model instance and the event which
-     * triggered the action to an AWS SQS queue.</p>
+     * triggered the action to an Amazon SQS queue.</p>
      */
     inline Action& WithSqs(SqsAction&& value) { SetSqs(std::move(value)); return *this;}
 
 
     /**
      * <p>Sends information about the detector model instance and the event which
-     * triggered the action to a Kinesis Data Firehose stream.</p>
+     * triggered the action to a Kinesis Data Firehose delivery stream.</p>
      */
     inline const FirehoseAction& GetFirehose() const{ return m_firehose; }
 
     /**
      * <p>Sends information about the detector model instance and the event which
-     * triggered the action to a Kinesis Data Firehose stream.</p>
+     * triggered the action to a Kinesis Data Firehose delivery stream.</p>
      */
     inline bool FirehoseHasBeenSet() const { return m_firehoseHasBeenSet; }
 
     /**
      * <p>Sends information about the detector model instance and the event which
-     * triggered the action to a Kinesis Data Firehose stream.</p>
+     * triggered the action to a Kinesis Data Firehose delivery stream.</p>
      */
     inline void SetFirehose(const FirehoseAction& value) { m_firehoseHasBeenSet = true; m_firehose = value; }
 
     /**
      * <p>Sends information about the detector model instance and the event which
-     * triggered the action to a Kinesis Data Firehose stream.</p>
+     * triggered the action to a Kinesis Data Firehose delivery stream.</p>
      */
     inline void SetFirehose(FirehoseAction&& value) { m_firehoseHasBeenSet = true; m_firehose = std::move(value); }
 
     /**
      * <p>Sends information about the detector model instance and the event which
-     * triggered the action to a Kinesis Data Firehose stream.</p>
+     * triggered the action to a Kinesis Data Firehose delivery stream.</p>
      */
     inline Action& WithFirehose(const FirehoseAction& value) { SetFirehose(value); return *this;}
 
     /**
      * <p>Sends information about the detector model instance and the event which
-     * triggered the action to a Kinesis Data Firehose stream.</p>
+     * triggered the action to a Kinesis Data Firehose delivery stream.</p>
      */
     inline Action& WithFirehose(FirehoseAction&& value) { SetFirehose(std::move(value)); return *this;}
 

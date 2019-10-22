@@ -214,6 +214,71 @@ namespace Model
 
 
     /**
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. You cannot access the server by using
+     * the <code>Endpoint</code> value if the server has a <code>CustomDomain</code>
+     * specified.</p>
+     */
+    inline const Aws::String& GetCustomDomain() const{ return m_customDomain; }
+
+    /**
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. You cannot access the server by using
+     * the <code>Endpoint</code> value if the server has a <code>CustomDomain</code>
+     * specified.</p>
+     */
+    inline bool CustomDomainHasBeenSet() const { return m_customDomainHasBeenSet; }
+
+    /**
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. You cannot access the server by using
+     * the <code>Endpoint</code> value if the server has a <code>CustomDomain</code>
+     * specified.</p>
+     */
+    inline void SetCustomDomain(const Aws::String& value) { m_customDomainHasBeenSet = true; m_customDomain = value; }
+
+    /**
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. You cannot access the server by using
+     * the <code>Endpoint</code> value if the server has a <code>CustomDomain</code>
+     * specified.</p>
+     */
+    inline void SetCustomDomain(Aws::String&& value) { m_customDomainHasBeenSet = true; m_customDomain = std::move(value); }
+
+    /**
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. You cannot access the server by using
+     * the <code>Endpoint</code> value if the server has a <code>CustomDomain</code>
+     * specified.</p>
+     */
+    inline void SetCustomDomain(const char* value) { m_customDomainHasBeenSet = true; m_customDomain.assign(value); }
+
+    /**
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. You cannot access the server by using
+     * the <code>Endpoint</code> value if the server has a <code>CustomDomain</code>
+     * specified.</p>
+     */
+    inline Server& WithCustomDomain(const Aws::String& value) { SetCustomDomain(value); return *this;}
+
+    /**
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. You cannot access the server by using
+     * the <code>Endpoint</code> value if the server has a <code>CustomDomain</code>
+     * specified.</p>
+     */
+    inline Server& WithCustomDomain(Aws::String&& value) { SetCustomDomain(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. You cannot access the server by using
+     * the <code>Endpoint</code> value if the server has a <code>CustomDomain</code>
+     * specified.</p>
+     */
+    inline Server& WithCustomDomain(const char* value) { SetCustomDomain(value); return *this;}
+
+
+    /**
      * <p>Disables automated backups. The number of stored backups is dependent on the
      * value of PreferredBackupCount. </p>
      */
@@ -240,49 +305,65 @@ namespace Model
 
     /**
      * <p> A DNS name that can be used to access the engine. Example:
-     * <code>myserver-asdfghjkl.us-east-1.opsworks.io</code> </p>
+     * <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>. You cannot access the
+     * server by using the <code>Endpoint</code> value if the server has a
+     * <code>CustomDomain</code> specified. </p>
      */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
 
     /**
      * <p> A DNS name that can be used to access the engine. Example:
-     * <code>myserver-asdfghjkl.us-east-1.opsworks.io</code> </p>
+     * <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>. You cannot access the
+     * server by using the <code>Endpoint</code> value if the server has a
+     * <code>CustomDomain</code> specified. </p>
      */
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
 
     /**
      * <p> A DNS name that can be used to access the engine. Example:
-     * <code>myserver-asdfghjkl.us-east-1.opsworks.io</code> </p>
+     * <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>. You cannot access the
+     * server by using the <code>Endpoint</code> value if the server has a
+     * <code>CustomDomain</code> specified. </p>
      */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
      * <p> A DNS name that can be used to access the engine. Example:
-     * <code>myserver-asdfghjkl.us-east-1.opsworks.io</code> </p>
+     * <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>. You cannot access the
+     * server by using the <code>Endpoint</code> value if the server has a
+     * <code>CustomDomain</code> specified. </p>
      */
     inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
 
     /**
      * <p> A DNS name that can be used to access the engine. Example:
-     * <code>myserver-asdfghjkl.us-east-1.opsworks.io</code> </p>
+     * <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>. You cannot access the
+     * server by using the <code>Endpoint</code> value if the server has a
+     * <code>CustomDomain</code> specified. </p>
      */
     inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
 
     /**
      * <p> A DNS name that can be used to access the engine. Example:
-     * <code>myserver-asdfghjkl.us-east-1.opsworks.io</code> </p>
+     * <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>. You cannot access the
+     * server by using the <code>Endpoint</code> value if the server has a
+     * <code>CustomDomain</code> specified. </p>
      */
     inline Server& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
 
     /**
      * <p> A DNS name that can be used to access the engine. Example:
-     * <code>myserver-asdfghjkl.us-east-1.opsworks.io</code> </p>
+     * <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>. You cannot access the
+     * server by using the <code>Endpoint</code> value if the server has a
+     * <code>CustomDomain</code> specified. </p>
      */
     inline Server& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
 
     /**
      * <p> A DNS name that can be used to access the engine. Example:
-     * <code>myserver-asdfghjkl.us-east-1.opsworks.io</code> </p>
+     * <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>. You cannot access the
+     * server by using the <code>Endpoint</code> value if the server has a
+     * <code>CustomDomain</code> specified. </p>
      */
     inline Server& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 
@@ -1184,6 +1265,9 @@ namespace Model
 
     Aws::String m_cloudFormationStackArn;
     bool m_cloudFormationStackArnHasBeenSet;
+
+    Aws::String m_customDomain;
+    bool m_customDomainHasBeenSet;
 
     bool m_disableAutomatedBackup;
     bool m_disableAutomatedBackupHasBeenSet;

@@ -38,7 +38,9 @@ DetectorModelConfiguration::DetectorModelConfiguration() :
     m_lastUpdateTimeHasBeenSet(false),
     m_status(DetectorModelVersionStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_keyHasBeenSet(false)
+    m_keyHasBeenSet(false),
+    m_evaluationMethod(EvaluationMethod::NOT_SET),
+    m_evaluationMethodHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ DetectorModelConfiguration::DetectorModelConfiguration(JsonView jsonValue) :
     m_lastUpdateTimeHasBeenSet(false),
     m_status(DetectorModelVersionStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_keyHasBeenSet(false)
+    m_keyHasBeenSet(false),
+    m_evaluationMethod(EvaluationMethod::NOT_SET),
+    m_evaluationMethodHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -122,6 +126,13 @@ DetectorModelConfiguration& DetectorModelConfiguration::operator =(JsonView json
     m_keyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("evaluationMethod"))
+  {
+    m_evaluationMethod = EvaluationMethodMapper::GetEvaluationMethodForName(jsonValue.GetString("evaluationMethod"));
+
+    m_evaluationMethodHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -178,6 +189,11 @@ JsonValue DetectorModelConfiguration::Jsonize() const
   {
    payload.WithString("key", m_key);
 
+  }
+
+  if(m_evaluationMethodHasBeenSet)
+  {
+   payload.WithString("evaluationMethod", EvaluationMethodMapper::GetNameForEvaluationMethod(m_evaluationMethod));
   }
 
   return payload;

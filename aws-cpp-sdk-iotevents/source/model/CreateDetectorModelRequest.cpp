@@ -28,7 +28,9 @@ CreateDetectorModelRequest::CreateDetectorModelRequest() :
     m_detectorModelDescriptionHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_evaluationMethod(EvaluationMethod::NOT_SET),
+    m_evaluationMethodHasBeenSet(false)
 {
 }
 
@@ -75,6 +77,11 @@ Aws::String CreateDetectorModelRequest::SerializePayload() const
    }
    payload.WithArray("tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_evaluationMethodHasBeenSet)
+  {
+   payload.WithString("evaluationMethod", EvaluationMethodMapper::GetNameForEvaluationMethod(m_evaluationMethod));
   }
 
   return payload.View().WriteReadable();

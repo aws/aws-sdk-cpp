@@ -76,6 +76,313 @@ namespace Model
 
 
     /**
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
+     * DNS record in your preferred DNS service that points the custom domain to the
+     * endpoint that is generated when the server is created (the value of the
+     * CreateServer Endpoint attribute). You cannot access the server by using the
+     * generated <code>Endpoint</code> value if the server is using a custom domain. If
+     * you specify a custom domain, you must also specify values for
+     * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
+     */
+    inline const Aws::String& GetCustomDomain() const{ return m_customDomain; }
+
+    /**
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
+     * DNS record in your preferred DNS service that points the custom domain to the
+     * endpoint that is generated when the server is created (the value of the
+     * CreateServer Endpoint attribute). You cannot access the server by using the
+     * generated <code>Endpoint</code> value if the server is using a custom domain. If
+     * you specify a custom domain, you must also specify values for
+     * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
+     */
+    inline bool CustomDomainHasBeenSet() const { return m_customDomainHasBeenSet; }
+
+    /**
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
+     * DNS record in your preferred DNS service that points the custom domain to the
+     * endpoint that is generated when the server is created (the value of the
+     * CreateServer Endpoint attribute). You cannot access the server by using the
+     * generated <code>Endpoint</code> value if the server is using a custom domain. If
+     * you specify a custom domain, you must also specify values for
+     * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
+     */
+    inline void SetCustomDomain(const Aws::String& value) { m_customDomainHasBeenSet = true; m_customDomain = value; }
+
+    /**
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
+     * DNS record in your preferred DNS service that points the custom domain to the
+     * endpoint that is generated when the server is created (the value of the
+     * CreateServer Endpoint attribute). You cannot access the server by using the
+     * generated <code>Endpoint</code> value if the server is using a custom domain. If
+     * you specify a custom domain, you must also specify values for
+     * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
+     */
+    inline void SetCustomDomain(Aws::String&& value) { m_customDomainHasBeenSet = true; m_customDomain = std::move(value); }
+
+    /**
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
+     * DNS record in your preferred DNS service that points the custom domain to the
+     * endpoint that is generated when the server is created (the value of the
+     * CreateServer Endpoint attribute). You cannot access the server by using the
+     * generated <code>Endpoint</code> value if the server is using a custom domain. If
+     * you specify a custom domain, you must also specify values for
+     * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
+     */
+    inline void SetCustomDomain(const char* value) { m_customDomainHasBeenSet = true; m_customDomain.assign(value); }
+
+    /**
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
+     * DNS record in your preferred DNS service that points the custom domain to the
+     * endpoint that is generated when the server is created (the value of the
+     * CreateServer Endpoint attribute). You cannot access the server by using the
+     * generated <code>Endpoint</code> value if the server is using a custom domain. If
+     * you specify a custom domain, you must also specify values for
+     * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
+     */
+    inline CreateServerRequest& WithCustomDomain(const Aws::String& value) { SetCustomDomain(value); return *this;}
+
+    /**
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
+     * DNS record in your preferred DNS service that points the custom domain to the
+     * endpoint that is generated when the server is created (the value of the
+     * CreateServer Endpoint attribute). You cannot access the server by using the
+     * generated <code>Endpoint</code> value if the server is using a custom domain. If
+     * you specify a custom domain, you must also specify values for
+     * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
+     */
+    inline CreateServerRequest& WithCustomDomain(Aws::String&& value) { SetCustomDomain(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
+     * DNS record in your preferred DNS service that points the custom domain to the
+     * endpoint that is generated when the server is created (the value of the
+     * CreateServer Endpoint attribute). You cannot access the server by using the
+     * generated <code>Endpoint</code> value if the server is using a custom domain. If
+     * you specify a custom domain, you must also specify values for
+     * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
+     */
+    inline CreateServerRequest& WithCustomDomain(const char* value) { SetCustomDomain(value); return *this;}
+
+
+    /**
+     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
+     * certificate, or a certificate chain. If you specify a custom certificate, you
+     * must also specify values for <code>CustomDomain</code> and
+     * <code>CustomPrivateKey</code>. The following are requirements for the
+     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
+     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
+     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
+     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
+     * upload. A certificate can't be used before its validity period begins (the
+     * certificate's <code>NotBefore</code> date), or after it expires (the
+     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
+     * common name or subject alternative names (SANs), if present, must match the
+     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
+     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
+     */
+    inline const Aws::String& GetCustomCertificate() const{ return m_customCertificate; }
+
+    /**
+     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
+     * certificate, or a certificate chain. If you specify a custom certificate, you
+     * must also specify values for <code>CustomDomain</code> and
+     * <code>CustomPrivateKey</code>. The following are requirements for the
+     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
+     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
+     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
+     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
+     * upload. A certificate can't be used before its validity period begins (the
+     * certificate's <code>NotBefore</code> date), or after it expires (the
+     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
+     * common name or subject alternative names (SANs), if present, must match the
+     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
+     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
+     */
+    inline bool CustomCertificateHasBeenSet() const { return m_customCertificateHasBeenSet; }
+
+    /**
+     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
+     * certificate, or a certificate chain. If you specify a custom certificate, you
+     * must also specify values for <code>CustomDomain</code> and
+     * <code>CustomPrivateKey</code>. The following are requirements for the
+     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
+     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
+     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
+     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
+     * upload. A certificate can't be used before its validity period begins (the
+     * certificate's <code>NotBefore</code> date), or after it expires (the
+     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
+     * common name or subject alternative names (SANs), if present, must match the
+     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
+     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
+     */
+    inline void SetCustomCertificate(const Aws::String& value) { m_customCertificateHasBeenSet = true; m_customCertificate = value; }
+
+    /**
+     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
+     * certificate, or a certificate chain. If you specify a custom certificate, you
+     * must also specify values for <code>CustomDomain</code> and
+     * <code>CustomPrivateKey</code>. The following are requirements for the
+     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
+     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
+     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
+     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
+     * upload. A certificate can't be used before its validity period begins (the
+     * certificate's <code>NotBefore</code> date), or after it expires (the
+     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
+     * common name or subject alternative names (SANs), if present, must match the
+     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
+     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
+     */
+    inline void SetCustomCertificate(Aws::String&& value) { m_customCertificateHasBeenSet = true; m_customCertificate = std::move(value); }
+
+    /**
+     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
+     * certificate, or a certificate chain. If you specify a custom certificate, you
+     * must also specify values for <code>CustomDomain</code> and
+     * <code>CustomPrivateKey</code>. The following are requirements for the
+     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
+     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
+     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
+     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
+     * upload. A certificate can't be used before its validity period begins (the
+     * certificate's <code>NotBefore</code> date), or after it expires (the
+     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
+     * common name or subject alternative names (SANs), if present, must match the
+     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
+     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
+     */
+    inline void SetCustomCertificate(const char* value) { m_customCertificateHasBeenSet = true; m_customCertificate.assign(value); }
+
+    /**
+     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
+     * certificate, or a certificate chain. If you specify a custom certificate, you
+     * must also specify values for <code>CustomDomain</code> and
+     * <code>CustomPrivateKey</code>. The following are requirements for the
+     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
+     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
+     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
+     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
+     * upload. A certificate can't be used before its validity period begins (the
+     * certificate's <code>NotBefore</code> date), or after it expires (the
+     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
+     * common name or subject alternative names (SANs), if present, must match the
+     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
+     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
+     */
+    inline CreateServerRequest& WithCustomCertificate(const Aws::String& value) { SetCustomCertificate(value); return *this;}
+
+    /**
+     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
+     * certificate, or a certificate chain. If you specify a custom certificate, you
+     * must also specify values for <code>CustomDomain</code> and
+     * <code>CustomPrivateKey</code>. The following are requirements for the
+     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
+     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
+     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
+     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
+     * upload. A certificate can't be used before its validity period begins (the
+     * certificate's <code>NotBefore</code> date), or after it expires (the
+     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
+     * common name or subject alternative names (SANs), if present, must match the
+     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
+     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
+     */
+    inline CreateServerRequest& WithCustomCertificate(Aws::String&& value) { SetCustomCertificate(std::move(value)); return *this;}
+
+    /**
+     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
+     * certificate, or a certificate chain. If you specify a custom certificate, you
+     * must also specify values for <code>CustomDomain</code> and
+     * <code>CustomPrivateKey</code>. The following are requirements for the
+     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
+     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
+     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
+     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
+     * upload. A certificate can't be used before its validity period begins (the
+     * certificate's <code>NotBefore</code> date), or after it expires (the
+     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
+     * common name or subject alternative names (SANs), if present, must match the
+     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
+     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
+     */
+    inline CreateServerRequest& WithCustomCertificate(const char* value) { SetCustomCertificate(value); return *this;}
+
+
+    /**
+     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
+     * private key must not be encrypted; it cannot be protected by a password or
+     * passphrase. If you specify a custom private key, you must also specify values
+     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
+     */
+    inline const Aws::String& GetCustomPrivateKey() const{ return m_customPrivateKey; }
+
+    /**
+     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
+     * private key must not be encrypted; it cannot be protected by a password or
+     * passphrase. If you specify a custom private key, you must also specify values
+     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
+     */
+    inline bool CustomPrivateKeyHasBeenSet() const { return m_customPrivateKeyHasBeenSet; }
+
+    /**
+     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
+     * private key must not be encrypted; it cannot be protected by a password or
+     * passphrase. If you specify a custom private key, you must also specify values
+     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
+     */
+    inline void SetCustomPrivateKey(const Aws::String& value) { m_customPrivateKeyHasBeenSet = true; m_customPrivateKey = value; }
+
+    /**
+     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
+     * private key must not be encrypted; it cannot be protected by a password or
+     * passphrase. If you specify a custom private key, you must also specify values
+     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
+     */
+    inline void SetCustomPrivateKey(Aws::String&& value) { m_customPrivateKeyHasBeenSet = true; m_customPrivateKey = std::move(value); }
+
+    /**
+     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
+     * private key must not be encrypted; it cannot be protected by a password or
+     * passphrase. If you specify a custom private key, you must also specify values
+     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
+     */
+    inline void SetCustomPrivateKey(const char* value) { m_customPrivateKeyHasBeenSet = true; m_customPrivateKey.assign(value); }
+
+    /**
+     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
+     * private key must not be encrypted; it cannot be protected by a password or
+     * passphrase. If you specify a custom private key, you must also specify values
+     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
+     */
+    inline CreateServerRequest& WithCustomPrivateKey(const Aws::String& value) { SetCustomPrivateKey(value); return *this;}
+
+    /**
+     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
+     * private key must not be encrypted; it cannot be protected by a password or
+     * passphrase. If you specify a custom private key, you must also specify values
+     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
+     */
+    inline CreateServerRequest& WithCustomPrivateKey(Aws::String&& value) { SetCustomPrivateKey(std::move(value)); return *this;}
+
+    /**
+     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
+     * private key must not be encrypted; it cannot be protected by a password or
+     * passphrase. If you specify a custom private key, you must also specify values
+     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
+     */
+    inline CreateServerRequest& WithCustomPrivateKey(const char* value) { SetCustomPrivateKey(value); return *this;}
+
+
+    /**
      * <p> Enable or disable scheduled backups. Valid values are <code>true</code> or
      * <code>false</code>. The default value is <code>true</code>. </p>
      */
@@ -1289,6 +1596,15 @@ namespace Model
 
     bool m_associatePublicIpAddress;
     bool m_associatePublicIpAddressHasBeenSet;
+
+    Aws::String m_customDomain;
+    bool m_customDomainHasBeenSet;
+
+    Aws::String m_customCertificate;
+    bool m_customCertificateHasBeenSet;
+
+    Aws::String m_customPrivateKey;
+    bool m_customPrivateKeyHasBeenSet;
 
     bool m_disableAutomatedBackup;
     bool m_disableAutomatedBackupHasBeenSet;

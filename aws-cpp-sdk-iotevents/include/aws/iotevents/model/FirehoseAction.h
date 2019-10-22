@@ -35,8 +35,8 @@ namespace Model
 
   /**
    * <p>Sends information about the detector model instance and the event which
-   * triggered the action to a Kinesis Data Firehose stream.</p><p><h3>See Also:</h3>
-   * <a
+   * triggered the action to a Kinesis Data Firehose delivery stream.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/FirehoseAction">AWS
    * API Reference</a></p>
    */
@@ -50,99 +50,107 @@ namespace Model
 
 
     /**
-     * <p>The name of the Kinesis Data Firehose stream where the data is written.</p>
+     * <p>The name of the Kinesis Data Firehose delivery stream where the data is
+     * written.</p>
      */
     inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }
 
     /**
-     * <p>The name of the Kinesis Data Firehose stream where the data is written.</p>
+     * <p>The name of the Kinesis Data Firehose delivery stream where the data is
+     * written.</p>
      */
     inline bool DeliveryStreamNameHasBeenSet() const { return m_deliveryStreamNameHasBeenSet; }
 
     /**
-     * <p>The name of the Kinesis Data Firehose stream where the data is written.</p>
+     * <p>The name of the Kinesis Data Firehose delivery stream where the data is
+     * written.</p>
      */
     inline void SetDeliveryStreamName(const Aws::String& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
 
     /**
-     * <p>The name of the Kinesis Data Firehose stream where the data is written.</p>
+     * <p>The name of the Kinesis Data Firehose delivery stream where the data is
+     * written.</p>
      */
     inline void SetDeliveryStreamName(Aws::String&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = std::move(value); }
 
     /**
-     * <p>The name of the Kinesis Data Firehose stream where the data is written.</p>
+     * <p>The name of the Kinesis Data Firehose delivery stream where the data is
+     * written.</p>
      */
     inline void SetDeliveryStreamName(const char* value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName.assign(value); }
 
     /**
-     * <p>The name of the Kinesis Data Firehose stream where the data is written.</p>
+     * <p>The name of the Kinesis Data Firehose delivery stream where the data is
+     * written.</p>
      */
     inline FirehoseAction& WithDeliveryStreamName(const Aws::String& value) { SetDeliveryStreamName(value); return *this;}
 
     /**
-     * <p>The name of the Kinesis Data Firehose stream where the data is written.</p>
+     * <p>The name of the Kinesis Data Firehose delivery stream where the data is
+     * written.</p>
      */
     inline FirehoseAction& WithDeliveryStreamName(Aws::String&& value) { SetDeliveryStreamName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Kinesis Data Firehose stream where the data is written.</p>
+     * <p>The name of the Kinesis Data Firehose delivery stream where the data is
+     * written.</p>
      */
     inline FirehoseAction& WithDeliveryStreamName(const char* value) { SetDeliveryStreamName(value); return *this;}
 
 
     /**
      * <p>A character separator that is used to separate records written to the Kinesis
-     * Data Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n'
-     * (Windows newline), ',' (comma).</p>
+     * Data Firehose delivery stream. Valid values are: '\n' (newline), '\t' (tab),
+     * '\r\n' (Windows newline), ',' (comma).</p>
      */
     inline const Aws::String& GetSeparator() const{ return m_separator; }
 
     /**
      * <p>A character separator that is used to separate records written to the Kinesis
-     * Data Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n'
-     * (Windows newline), ',' (comma).</p>
+     * Data Firehose delivery stream. Valid values are: '\n' (newline), '\t' (tab),
+     * '\r\n' (Windows newline), ',' (comma).</p>
      */
     inline bool SeparatorHasBeenSet() const { return m_separatorHasBeenSet; }
 
     /**
      * <p>A character separator that is used to separate records written to the Kinesis
-     * Data Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n'
-     * (Windows newline), ',' (comma).</p>
+     * Data Firehose delivery stream. Valid values are: '\n' (newline), '\t' (tab),
+     * '\r\n' (Windows newline), ',' (comma).</p>
      */
     inline void SetSeparator(const Aws::String& value) { m_separatorHasBeenSet = true; m_separator = value; }
 
     /**
      * <p>A character separator that is used to separate records written to the Kinesis
-     * Data Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n'
-     * (Windows newline), ',' (comma).</p>
+     * Data Firehose delivery stream. Valid values are: '\n' (newline), '\t' (tab),
+     * '\r\n' (Windows newline), ',' (comma).</p>
      */
     inline void SetSeparator(Aws::String&& value) { m_separatorHasBeenSet = true; m_separator = std::move(value); }
 
     /**
      * <p>A character separator that is used to separate records written to the Kinesis
-     * Data Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n'
-     * (Windows newline), ',' (comma).</p>
+     * Data Firehose delivery stream. Valid values are: '\n' (newline), '\t' (tab),
+     * '\r\n' (Windows newline), ',' (comma).</p>
      */
     inline void SetSeparator(const char* value) { m_separatorHasBeenSet = true; m_separator.assign(value); }
 
     /**
      * <p>A character separator that is used to separate records written to the Kinesis
-     * Data Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n'
-     * (Windows newline), ',' (comma).</p>
+     * Data Firehose delivery stream. Valid values are: '\n' (newline), '\t' (tab),
+     * '\r\n' (Windows newline), ',' (comma).</p>
      */
     inline FirehoseAction& WithSeparator(const Aws::String& value) { SetSeparator(value); return *this;}
 
     /**
      * <p>A character separator that is used to separate records written to the Kinesis
-     * Data Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n'
-     * (Windows newline), ',' (comma).</p>
+     * Data Firehose delivery stream. Valid values are: '\n' (newline), '\t' (tab),
+     * '\r\n' (Windows newline), ',' (comma).</p>
      */
     inline FirehoseAction& WithSeparator(Aws::String&& value) { SetSeparator(std::move(value)); return *this;}
 
     /**
      * <p>A character separator that is used to separate records written to the Kinesis
-     * Data Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n'
-     * (Windows newline), ',' (comma).</p>
+     * Data Firehose delivery stream. Valid values are: '\n' (newline), '\t' (tab),
+     * '\r\n' (Windows newline), ',' (comma).</p>
      */
     inline FirehoseAction& WithSeparator(const char* value) { SetSeparator(value); return *this;}
 

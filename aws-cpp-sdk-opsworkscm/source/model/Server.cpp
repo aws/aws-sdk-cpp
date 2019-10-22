@@ -36,6 +36,7 @@ Server::Server() :
     m_serverNameHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_cloudFormationStackArnHasBeenSet(false),
+    m_customDomainHasBeenSet(false),
     m_disableAutomatedBackup(false),
     m_disableAutomatedBackupHasBeenSet(false),
     m_endpointHasBeenSet(false),
@@ -68,6 +69,7 @@ Server::Server(JsonView jsonValue) :
     m_serverNameHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_cloudFormationStackArnHasBeenSet(false),
+    m_customDomainHasBeenSet(false),
     m_disableAutomatedBackup(false),
     m_disableAutomatedBackupHasBeenSet(false),
     m_endpointHasBeenSet(false),
@@ -128,6 +130,13 @@ Server& Server::operator =(JsonView jsonValue)
     m_cloudFormationStackArn = jsonValue.GetString("CloudFormationStackArn");
 
     m_cloudFormationStackArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomDomain"))
+  {
+    m_customDomain = jsonValue.GetString("CustomDomain");
+
+    m_customDomainHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DisableAutomatedBackup"))
@@ -298,6 +307,12 @@ JsonValue Server::Jsonize() const
   if(m_cloudFormationStackArnHasBeenSet)
   {
    payload.WithString("CloudFormationStackArn", m_cloudFormationStackArn);
+
+  }
+
+  if(m_customDomainHasBeenSet)
+  {
+   payload.WithString("CustomDomain", m_customDomain);
 
   }
 

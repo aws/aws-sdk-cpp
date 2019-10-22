@@ -25,6 +25,9 @@ using namespace Aws::Utils;
 CreateServerRequest::CreateServerRequest() : 
     m_associatePublicIpAddress(false),
     m_associatePublicIpAddressHasBeenSet(false),
+    m_customDomainHasBeenSet(false),
+    m_customCertificateHasBeenSet(false),
+    m_customPrivateKeyHasBeenSet(false),
     m_disableAutomatedBackup(false),
     m_disableAutomatedBackupHasBeenSet(false),
     m_engineHasBeenSet(false),
@@ -53,6 +56,24 @@ Aws::String CreateServerRequest::SerializePayload() const
   if(m_associatePublicIpAddressHasBeenSet)
   {
    payload.WithBool("AssociatePublicIpAddress", m_associatePublicIpAddress);
+
+  }
+
+  if(m_customDomainHasBeenSet)
+  {
+   payload.WithString("CustomDomain", m_customDomain);
+
+  }
+
+  if(m_customCertificateHasBeenSet)
+  {
+   payload.WithString("CustomCertificate", m_customCertificate);
+
+  }
+
+  if(m_customPrivateKeyHasBeenSet)
+  {
+   payload.WithString("CustomPrivateKey", m_customPrivateKey);
 
   }
 

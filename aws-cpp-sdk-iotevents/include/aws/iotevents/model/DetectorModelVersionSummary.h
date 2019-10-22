@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/iotevents/model/DetectorModelVersionStatus.h>
+#include <aws/iotevents/model/EvaluationMethod.h>
 #include <utility>
 
 namespace Aws
@@ -313,6 +314,55 @@ namespace Model
      */
     inline DetectorModelVersionSummary& WithStatus(DetectorModelVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>When set to <code>SERIAL</code>, variables are updated and event conditions
+     * evaluated in the order that the events are defined. When set to
+     * <code>BATCH</code>, variables are updated and events performed only after all
+     * event conditions are evaluated.</p>
+     */
+    inline const EvaluationMethod& GetEvaluationMethod() const{ return m_evaluationMethod; }
+
+    /**
+     * <p>When set to <code>SERIAL</code>, variables are updated and event conditions
+     * evaluated in the order that the events are defined. When set to
+     * <code>BATCH</code>, variables are updated and events performed only after all
+     * event conditions are evaluated.</p>
+     */
+    inline bool EvaluationMethodHasBeenSet() const { return m_evaluationMethodHasBeenSet; }
+
+    /**
+     * <p>When set to <code>SERIAL</code>, variables are updated and event conditions
+     * evaluated in the order that the events are defined. When set to
+     * <code>BATCH</code>, variables are updated and events performed only after all
+     * event conditions are evaluated.</p>
+     */
+    inline void SetEvaluationMethod(const EvaluationMethod& value) { m_evaluationMethodHasBeenSet = true; m_evaluationMethod = value; }
+
+    /**
+     * <p>When set to <code>SERIAL</code>, variables are updated and event conditions
+     * evaluated in the order that the events are defined. When set to
+     * <code>BATCH</code>, variables are updated and events performed only after all
+     * event conditions are evaluated.</p>
+     */
+    inline void SetEvaluationMethod(EvaluationMethod&& value) { m_evaluationMethodHasBeenSet = true; m_evaluationMethod = std::move(value); }
+
+    /**
+     * <p>When set to <code>SERIAL</code>, variables are updated and event conditions
+     * evaluated in the order that the events are defined. When set to
+     * <code>BATCH</code>, variables are updated and events performed only after all
+     * event conditions are evaluated.</p>
+     */
+    inline DetectorModelVersionSummary& WithEvaluationMethod(const EvaluationMethod& value) { SetEvaluationMethod(value); return *this;}
+
+    /**
+     * <p>When set to <code>SERIAL</code>, variables are updated and event conditions
+     * evaluated in the order that the events are defined. When set to
+     * <code>BATCH</code>, variables are updated and events performed only after all
+     * event conditions are evaluated.</p>
+     */
+    inline DetectorModelVersionSummary& WithEvaluationMethod(EvaluationMethod&& value) { SetEvaluationMethod(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_detectorModelName;
@@ -335,6 +385,9 @@ namespace Model
 
     DetectorModelVersionStatus m_status;
     bool m_statusHasBeenSet;
+
+    EvaluationMethod m_evaluationMethod;
+    bool m_evaluationMethodHasBeenSet;
   };
 
 } // namespace Model

@@ -26,7 +26,9 @@ UpdateDetectorModelRequest::UpdateDetectorModelRequest() :
     m_detectorModelNameHasBeenSet(false),
     m_detectorModelDefinitionHasBeenSet(false),
     m_detectorModelDescriptionHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_evaluationMethod(EvaluationMethod::NOT_SET),
+    m_evaluationMethodHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,11 @@ Aws::String UpdateDetectorModelRequest::SerializePayload() const
   {
    payload.WithString("roleArn", m_roleArn);
 
+  }
+
+  if(m_evaluationMethodHasBeenSet)
+  {
+   payload.WithString("evaluationMethod", EvaluationMethodMapper::GetNameForEvaluationMethod(m_evaluationMethod));
   }
 
   return payload.View().WriteReadable();

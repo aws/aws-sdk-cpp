@@ -375,7 +375,10 @@ namespace Model
          * your server is accessible from any IP address. We recommend that you update your
          * security group rules to allow access from known IP addresses and address ranges
          * only. To edit security group rules, open Security Groups in the navigation pane
-         * of the EC2 management console. </p><p><h3>See Also:</h3>   <a
+         * of the EC2 management console. </p> <p>To specify your own domain for a server,
+         * and provide your own self-signed or CA-signed certificate and private key,
+         * specify values for <code>CustomDomain</code>, <code>CustomCertificate</code>,
+         * and <code>CustomPrivateKey</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateServer">AWS
          * API Reference</a></p>
          */
@@ -402,7 +405,10 @@ namespace Model
          * your server is accessible from any IP address. We recommend that you update your
          * security group rules to allow access from known IP addresses and address ranges
          * only. To edit security group rules, open Security Groups in the navigation pane
-         * of the EC2 management console. </p><p><h3>See Also:</h3>   <a
+         * of the EC2 management console. </p> <p>To specify your own domain for a server,
+         * and provide your own self-signed or CA-signed certificate and private key,
+         * specify values for <code>CustomDomain</code>, <code>CustomCertificate</code>,
+         * and <code>CustomPrivateKey</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateServer">AWS
          * API Reference</a></p>
          *
@@ -431,7 +437,10 @@ namespace Model
          * your server is accessible from any IP address. We recommend that you update your
          * security group rules to allow access from known IP addresses and address ranges
          * only. To edit security group rules, open Security Groups in the navigation pane
-         * of the EC2 management console. </p><p><h3>See Also:</h3>   <a
+         * of the EC2 management console. </p> <p>To specify your own domain for a server,
+         * and provide your own self-signed or CA-signed certificate and private key,
+         * specify values for <code>CustomDomain</code>, <code>CustomCertificate</code>,
+         * and <code>CustomPrivateKey</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateServer">AWS
          * API Reference</a></p>
          *
