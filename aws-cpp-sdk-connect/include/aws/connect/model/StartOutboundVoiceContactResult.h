@@ -43,44 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of this contact within your Amazon Connect
-     * instance.</p>
+     * <p>The identifier of this contact within the Amazon Connect instance.</p>
      */
     inline const Aws::String& GetContactId() const{ return m_contactId; }
 
     /**
-     * <p>The unique identifier of this contact within your Amazon Connect
-     * instance.</p>
+     * <p>The identifier of this contact within the Amazon Connect instance.</p>
      */
     inline void SetContactId(const Aws::String& value) { m_contactId = value; }
 
     /**
-     * <p>The unique identifier of this contact within your Amazon Connect
-     * instance.</p>
+     * <p>The identifier of this contact within the Amazon Connect instance.</p>
      */
     inline void SetContactId(Aws::String&& value) { m_contactId = std::move(value); }
 
     /**
-     * <p>The unique identifier of this contact within your Amazon Connect
-     * instance.</p>
+     * <p>The identifier of this contact within the Amazon Connect instance.</p>
      */
     inline void SetContactId(const char* value) { m_contactId.assign(value); }
 
     /**
-     * <p>The unique identifier of this contact within your Amazon Connect
-     * instance.</p>
+     * <p>The identifier of this contact within the Amazon Connect instance.</p>
      */
     inline StartOutboundVoiceContactResult& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
 
     /**
-     * <p>The unique identifier of this contact within your Amazon Connect
-     * instance.</p>
+     * <p>The identifier of this contact within the Amazon Connect instance.</p>
      */
     inline StartOutboundVoiceContactResult& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of this contact within your Amazon Connect
-     * instance.</p>
+     * <p>The identifier of this contact within the Amazon Connect instance.</p>
      */
     inline StartOutboundVoiceContactResult& WithContactId(const char* value) { SetContactId(value); return *this;}
 

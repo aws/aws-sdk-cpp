@@ -35,6 +35,7 @@ namespace Aws
         static const int Astrid_HASH = HashingUtils::HashString("Astrid");
         static const int Bianca_HASH = HashingUtils::HashString("Bianca");
         static const int Brian_HASH = HashingUtils::HashString("Brian");
+        static const int Camila_HASH = HashingUtils::HashString("Camila");
         static const int Carla_HASH = HashingUtils::HashString("Carla");
         static const int Carmen_HASH = HashingUtils::HashString("Carmen");
         static const int Celine_HASH = HashingUtils::HashString("Celine");
@@ -64,6 +65,7 @@ namespace Aws
         static const int Liv_HASH = HashingUtils::HashString("Liv");
         static const int Lotte_HASH = HashingUtils::HashString("Lotte");
         static const int Lucia_HASH = HashingUtils::HashString("Lucia");
+        static const int Lupe_HASH = HashingUtils::HashString("Lupe");
         static const int Mads_HASH = HashingUtils::HashString("Mads");
         static const int Maja_HASH = HashingUtils::HashString("Maja");
         static const int Marlene_HASH = HashingUtils::HashString("Marlene");
@@ -112,6 +114,10 @@ namespace Aws
           else if (hashCode == Brian_HASH)
           {
             return VoiceId::Brian;
+          }
+          else if (hashCode == Camila_HASH)
+          {
+            return VoiceId::Camila;
           }
           else if (hashCode == Carla_HASH)
           {
@@ -228,6 +234,10 @@ namespace Aws
           else if (hashCode == Lucia_HASH)
           {
             return VoiceId::Lucia;
+          }
+          else if (hashCode == Lupe_HASH)
+          {
+            return VoiceId::Lupe;
           }
           else if (hashCode == Mads_HASH)
           {
@@ -349,6 +359,8 @@ namespace Aws
             return "Bianca";
           case VoiceId::Brian:
             return "Brian";
+          case VoiceId::Camila:
+            return "Camila";
           case VoiceId::Carla:
             return "Carla";
           case VoiceId::Carmen:
@@ -407,6 +419,8 @@ namespace Aws
             return "Lotte";
           case VoiceId::Lucia:
             return "Lucia";
+          case VoiceId::Lupe:
+            return "Lupe";
           case VoiceId::Mads:
             return "Mads";
           case VoiceId::Maja:

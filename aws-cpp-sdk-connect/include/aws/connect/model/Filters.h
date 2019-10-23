@@ -36,8 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>The filter, either channel or queues, to apply to the metric results
-   * retrieved.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the filter to apply when retrieving metrics.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/Filters">AWS API
    * Reference</a></p>
    */
@@ -51,105 +51,97 @@ namespace Model
 
 
     /**
-     * <p>A list of up to 100 queue IDs or queue ARNs to use to filter the metrics
-     * retrieved. You can include both IDs and ARNs in a request.</p>
+     * <p>The queues to use to filter the metrics. You can specify up to 100 queues per
+     * request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetQueues() const{ return m_queues; }
 
     /**
-     * <p>A list of up to 100 queue IDs or queue ARNs to use to filter the metrics
-     * retrieved. You can include both IDs and ARNs in a request.</p>
+     * <p>The queues to use to filter the metrics. You can specify up to 100 queues per
+     * request.</p>
      */
     inline bool QueuesHasBeenSet() const { return m_queuesHasBeenSet; }
 
     /**
-     * <p>A list of up to 100 queue IDs or queue ARNs to use to filter the metrics
-     * retrieved. You can include both IDs and ARNs in a request.</p>
+     * <p>The queues to use to filter the metrics. You can specify up to 100 queues per
+     * request.</p>
      */
     inline void SetQueues(const Aws::Vector<Aws::String>& value) { m_queuesHasBeenSet = true; m_queues = value; }
 
     /**
-     * <p>A list of up to 100 queue IDs or queue ARNs to use to filter the metrics
-     * retrieved. You can include both IDs and ARNs in a request.</p>
+     * <p>The queues to use to filter the metrics. You can specify up to 100 queues per
+     * request.</p>
      */
     inline void SetQueues(Aws::Vector<Aws::String>&& value) { m_queuesHasBeenSet = true; m_queues = std::move(value); }
 
     /**
-     * <p>A list of up to 100 queue IDs or queue ARNs to use to filter the metrics
-     * retrieved. You can include both IDs and ARNs in a request.</p>
+     * <p>The queues to use to filter the metrics. You can specify up to 100 queues per
+     * request.</p>
      */
     inline Filters& WithQueues(const Aws::Vector<Aws::String>& value) { SetQueues(value); return *this;}
 
     /**
-     * <p>A list of up to 100 queue IDs or queue ARNs to use to filter the metrics
-     * retrieved. You can include both IDs and ARNs in a request.</p>
+     * <p>The queues to use to filter the metrics. You can specify up to 100 queues per
+     * request.</p>
      */
     inline Filters& WithQueues(Aws::Vector<Aws::String>&& value) { SetQueues(std::move(value)); return *this;}
 
     /**
-     * <p>A list of up to 100 queue IDs or queue ARNs to use to filter the metrics
-     * retrieved. You can include both IDs and ARNs in a request.</p>
+     * <p>The queues to use to filter the metrics. You can specify up to 100 queues per
+     * request.</p>
      */
     inline Filters& AddQueues(const Aws::String& value) { m_queuesHasBeenSet = true; m_queues.push_back(value); return *this; }
 
     /**
-     * <p>A list of up to 100 queue IDs or queue ARNs to use to filter the metrics
-     * retrieved. You can include both IDs and ARNs in a request.</p>
+     * <p>The queues to use to filter the metrics. You can specify up to 100 queues per
+     * request.</p>
      */
     inline Filters& AddQueues(Aws::String&& value) { m_queuesHasBeenSet = true; m_queues.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of up to 100 queue IDs or queue ARNs to use to filter the metrics
-     * retrieved. You can include both IDs and ARNs in a request.</p>
+     * <p>The queues to use to filter the metrics. You can specify up to 100 queues per
+     * request.</p>
      */
     inline Filters& AddQueues(const char* value) { m_queuesHasBeenSet = true; m_queues.push_back(value); return *this; }
 
 
     /**
-     * <p>The Channel to use as a filter for the metrics returned. Only VOICE is
-     * supported.</p>
+     * <p>The channel to use to filter the metrics.</p>
      */
     inline const Aws::Vector<Channel>& GetChannels() const{ return m_channels; }
 
     /**
-     * <p>The Channel to use as a filter for the metrics returned. Only VOICE is
-     * supported.</p>
+     * <p>The channel to use to filter the metrics.</p>
      */
     inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
 
     /**
-     * <p>The Channel to use as a filter for the metrics returned. Only VOICE is
-     * supported.</p>
+     * <p>The channel to use to filter the metrics.</p>
      */
     inline void SetChannels(const Aws::Vector<Channel>& value) { m_channelsHasBeenSet = true; m_channels = value; }
 
     /**
-     * <p>The Channel to use as a filter for the metrics returned. Only VOICE is
-     * supported.</p>
+     * <p>The channel to use to filter the metrics.</p>
      */
     inline void SetChannels(Aws::Vector<Channel>&& value) { m_channelsHasBeenSet = true; m_channels = std::move(value); }
 
     /**
-     * <p>The Channel to use as a filter for the metrics returned. Only VOICE is
-     * supported.</p>
+     * <p>The channel to use to filter the metrics.</p>
      */
     inline Filters& WithChannels(const Aws::Vector<Channel>& value) { SetChannels(value); return *this;}
 
     /**
-     * <p>The Channel to use as a filter for the metrics returned. Only VOICE is
-     * supported.</p>
+     * <p>The channel to use to filter the metrics.</p>
      */
     inline Filters& WithChannels(Aws::Vector<Channel>&& value) { SetChannels(std::move(value)); return *this;}
 
     /**
-     * <p>The Channel to use as a filter for the metrics returned. Only VOICE is
-     * supported.</p>
+     * <p>The channel to use to filter the metrics.</p>
      */
     inline Filters& AddChannels(const Channel& value) { m_channelsHasBeenSet = true; m_channels.push_back(value); return *this; }
 
     /**
-     * <p>The Channel to use as a filter for the metrics returned. Only VOICE is
-     * supported.</p>
+     * <p>The channel to use to filter the metrics.</p>
      */
     inline Filters& AddChannels(Channel&& value) { m_channelsHasBeenSet = true; m_channels.push_back(std::move(value)); return *this; }
 

@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>A <code>HierarchyStructure</code> object.</p>
+     * <p>Information about the hierarchy structure.</p>
      */
     inline const HierarchyStructure& GetHierarchyStructure() const{ return m_hierarchyStructure; }
 
     /**
-     * <p>A <code>HierarchyStructure</code> object.</p>
+     * <p>Information about the hierarchy structure.</p>
      */
     inline void SetHierarchyStructure(const HierarchyStructure& value) { m_hierarchyStructure = value; }
 
     /**
-     * <p>A <code>HierarchyStructure</code> object.</p>
+     * <p>Information about the hierarchy structure.</p>
      */
     inline void SetHierarchyStructure(HierarchyStructure&& value) { m_hierarchyStructure = std::move(value); }
 
     /**
-     * <p>A <code>HierarchyStructure</code> object.</p>
+     * <p>Information about the hierarchy structure.</p>
      */
     inline DescribeUserHierarchyStructureResult& WithHierarchyStructure(const HierarchyStructure& value) { SetHierarchyStructure(value); return *this;}
 
     /**
-     * <p>A <code>HierarchyStructure</code> object.</p>
+     * <p>Information about the hierarchy structure.</p>
      */
     inline DescribeUserHierarchyStructureResult& WithHierarchyStructure(HierarchyStructure&& value) { SetHierarchyStructure(std::move(value)); return *this;}
 

@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>A <code>RoutingProfileSummary</code> object that contains information about a
-   * routing profile, including ARN, Id, and Name.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains summary information about a routing profile.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/RoutingProfileSummary">AWS
    * API Reference</a></p>
    */
@@ -90,42 +90,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the routing profile.</p>
+     * <p>The Amazon Resource Name (ARN) of the routing profile.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN of the routing profile.</p>
+     * <p>The Amazon Resource Name (ARN) of the routing profile.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The ARN of the routing profile.</p>
+     * <p>The Amazon Resource Name (ARN) of the routing profile.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The ARN of the routing profile.</p>
+     * <p>The Amazon Resource Name (ARN) of the routing profile.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The ARN of the routing profile.</p>
+     * <p>The Amazon Resource Name (ARN) of the routing profile.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The ARN of the routing profile.</p>
+     * <p>The Amazon Resource Name (ARN) of the routing profile.</p>
      */
     inline RoutingProfileSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the routing profile.</p>
+     * <p>The Amazon Resource Name (ARN) of the routing profile.</p>
      */
     inline RoutingProfileSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the routing profile.</p>
+     * <p>The Amazon Resource Name (ARN) of the routing profile.</p>
      */
     inline RoutingProfileSummary& WithArn(const char* value) { SetArn(value); return *this;}
 

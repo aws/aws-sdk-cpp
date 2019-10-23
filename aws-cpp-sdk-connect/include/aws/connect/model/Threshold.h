@@ -34,8 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>A <code>Threshold</code> object that includes a comparison and
-   * <code>ThresholdValue</code> to compare to. Used with service level
+   * <p>Contains information about the threshold for service level
    * metrics.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/Threshold">AWS
    * API Reference</a></p>
@@ -50,63 +49,53 @@ namespace Model
 
 
     /**
-     * <p>The Threshold to use to compare service level metrics to. Only "Less than"
-     * (LT) comparisons are supported.</p>
+     * <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
      */
     inline const Comparison& GetComparison() const{ return m_comparison; }
 
     /**
-     * <p>The Threshold to use to compare service level metrics to. Only "Less than"
-     * (LT) comparisons are supported.</p>
+     * <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
      */
     inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }
 
     /**
-     * <p>The Threshold to use to compare service level metrics to. Only "Less than"
-     * (LT) comparisons are supported.</p>
+     * <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
      */
     inline void SetComparison(const Comparison& value) { m_comparisonHasBeenSet = true; m_comparison = value; }
 
     /**
-     * <p>The Threshold to use to compare service level metrics to. Only "Less than"
-     * (LT) comparisons are supported.</p>
+     * <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
      */
     inline void SetComparison(Comparison&& value) { m_comparisonHasBeenSet = true; m_comparison = std::move(value); }
 
     /**
-     * <p>The Threshold to use to compare service level metrics to. Only "Less than"
-     * (LT) comparisons are supported.</p>
+     * <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
      */
     inline Threshold& WithComparison(const Comparison& value) { SetComparison(value); return *this;}
 
     /**
-     * <p>The Threshold to use to compare service level metrics to. Only "Less than"
-     * (LT) comparisons are supported.</p>
+     * <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
      */
     inline Threshold& WithComparison(Comparison&& value) { SetComparison(std::move(value)); return *this;}
 
 
     /**
-     * <p>The value of the threshold to compare the metric to. Only "Less than" (LT)
-     * comparisons are supported.</p>
+     * <p>The threshold value to compare.</p>
      */
     inline double GetThresholdValue() const{ return m_thresholdValue; }
 
     /**
-     * <p>The value of the threshold to compare the metric to. Only "Less than" (LT)
-     * comparisons are supported.</p>
+     * <p>The threshold value to compare.</p>
      */
     inline bool ThresholdValueHasBeenSet() const { return m_thresholdValueHasBeenSet; }
 
     /**
-     * <p>The value of the threshold to compare the metric to. Only "Less than" (LT)
-     * comparisons are supported.</p>
+     * <p>The threshold value to compare.</p>
      */
     inline void SetThresholdValue(double value) { m_thresholdValueHasBeenSet = true; m_thresholdValue = value; }
 
     /**
-     * <p>The value of the threshold to compare the metric to. Only "Less than" (LT)
-     * comparisons are supported.</p>
+     * <p>The threshold value to compare.</p>
      */
     inline Threshold& WithThresholdValue(double value) { SetThresholdValue(value); return *this;}
 

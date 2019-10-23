@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>The credentials to use for federation.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains credentials to use for federation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/Credentials">AWS
    * API Reference</a></p>
    */
@@ -49,79 +49,79 @@ namespace Model
 
 
     /**
-     * <p>An access token generated for a federated user to access Amazon Connect</p>
+     * <p>An access token generated for a federated user to access Amazon Connect.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
 
     /**
-     * <p>An access token generated for a federated user to access Amazon Connect</p>
+     * <p>An access token generated for a federated user to access Amazon Connect.</p>
      */
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
 
     /**
-     * <p>An access token generated for a federated user to access Amazon Connect</p>
+     * <p>An access token generated for a federated user to access Amazon Connect.</p>
      */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
-     * <p>An access token generated for a federated user to access Amazon Connect</p>
+     * <p>An access token generated for a federated user to access Amazon Connect.</p>
      */
     inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
-     * <p>An access token generated for a federated user to access Amazon Connect</p>
+     * <p>An access token generated for a federated user to access Amazon Connect.</p>
      */
     inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
 
     /**
-     * <p>An access token generated for a federated user to access Amazon Connect</p>
+     * <p>An access token generated for a federated user to access Amazon Connect.</p>
      */
     inline Credentials& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
 
     /**
-     * <p>An access token generated for a federated user to access Amazon Connect</p>
+     * <p>An access token generated for a federated user to access Amazon Connect.</p>
      */
     inline Credentials& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
-     * <p>An access token generated for a federated user to access Amazon Connect</p>
+     * <p>An access token generated for a federated user to access Amazon Connect.</p>
      */
     inline Credentials& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 
 
     /**
      * <p>A token generated with an expiration time for the session a user is logged in
-     * to Amazon Connect</p>
+     * to Amazon Connect.</p>
      */
     inline const Aws::Utils::DateTime& GetAccessTokenExpiration() const{ return m_accessTokenExpiration; }
 
     /**
      * <p>A token generated with an expiration time for the session a user is logged in
-     * to Amazon Connect</p>
+     * to Amazon Connect.</p>
      */
     inline bool AccessTokenExpirationHasBeenSet() const { return m_accessTokenExpirationHasBeenSet; }
 
     /**
      * <p>A token generated with an expiration time for the session a user is logged in
-     * to Amazon Connect</p>
+     * to Amazon Connect.</p>
      */
     inline void SetAccessTokenExpiration(const Aws::Utils::DateTime& value) { m_accessTokenExpirationHasBeenSet = true; m_accessTokenExpiration = value; }
 
     /**
      * <p>A token generated with an expiration time for the session a user is logged in
-     * to Amazon Connect</p>
+     * to Amazon Connect.</p>
      */
     inline void SetAccessTokenExpiration(Aws::Utils::DateTime&& value) { m_accessTokenExpirationHasBeenSet = true; m_accessTokenExpiration = std::move(value); }
 
     /**
      * <p>A token generated with an expiration time for the session a user is logged in
-     * to Amazon Connect</p>
+     * to Amazon Connect.</p>
      */
     inline Credentials& WithAccessTokenExpiration(const Aws::Utils::DateTime& value) { SetAccessTokenExpiration(value); return *this;}
 
     /**
      * <p>A token generated with an expiration time for the session a user is logged in
-     * to Amazon Connect</p>
+     * to Amazon Connect.</p>
      */
     inline Credentials& WithAccessTokenExpiration(Aws::Utils::DateTime&& value) { SetAccessTokenExpiration(std::move(value)); return *this;}
 

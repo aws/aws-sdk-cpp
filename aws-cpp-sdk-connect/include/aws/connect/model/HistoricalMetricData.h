@@ -34,8 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>A <code>HistoricalMetricData</code> object than contains a
-   * <code>Metric</code> and a <code>Value</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the data for a historical metric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/HistoricalMetricData">AWS
    * API Reference</a></p>
    */
@@ -49,53 +48,53 @@ namespace Model
 
 
     /**
-     * <p>A <code>HistoricalMetric</code> object.</p>
+     * <p>Information about the metric.</p>
      */
     inline const HistoricalMetric& GetMetric() const{ return m_metric; }
 
     /**
-     * <p>A <code>HistoricalMetric</code> object.</p>
+     * <p>Information about the metric.</p>
      */
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
 
     /**
-     * <p>A <code>HistoricalMetric</code> object.</p>
+     * <p>Information about the metric.</p>
      */
     inline void SetMetric(const HistoricalMetric& value) { m_metricHasBeenSet = true; m_metric = value; }
 
     /**
-     * <p>A <code>HistoricalMetric</code> object.</p>
+     * <p>Information about the metric.</p>
      */
     inline void SetMetric(HistoricalMetric&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
 
     /**
-     * <p>A <code>HistoricalMetric</code> object.</p>
+     * <p>Information about the metric.</p>
      */
     inline HistoricalMetricData& WithMetric(const HistoricalMetric& value) { SetMetric(value); return *this;}
 
     /**
-     * <p>A <code>HistoricalMetric</code> object.</p>
+     * <p>Information about the metric.</p>
      */
     inline HistoricalMetricData& WithMetric(HistoricalMetric&& value) { SetMetric(std::move(value)); return *this;}
 
 
     /**
-     * <p>The <code>Value</code> of the metric.</p>
+     * <p>The value of the metric.</p>
      */
     inline double GetValue() const{ return m_value; }
 
     /**
-     * <p>The <code>Value</code> of the metric.</p>
+     * <p>The value of the metric.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The <code>Value</code> of the metric.</p>
+     * <p>The value of the metric.</p>
      */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The <code>Value</code> of the metric.</p>
+     * <p>The value of the metric.</p>
      */
     inline HistoricalMetricData& WithValue(double value) { SetValue(value); return *this;}
 

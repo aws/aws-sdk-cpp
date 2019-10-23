@@ -44,154 +44,114 @@ namespace Model
 
 
     /**
-     * <p>A <code>UserIdentityInfo</code> object.</p>
+     * <p>The identity information for the user.</p>
      */
     inline const UserIdentityInfo& GetIdentityInfo() const{ return m_identityInfo; }
 
     /**
-     * <p>A <code>UserIdentityInfo</code> object.</p>
+     * <p>The identity information for the user.</p>
      */
     inline bool IdentityInfoHasBeenSet() const { return m_identityInfoHasBeenSet; }
 
     /**
-     * <p>A <code>UserIdentityInfo</code> object.</p>
+     * <p>The identity information for the user.</p>
      */
     inline void SetIdentityInfo(const UserIdentityInfo& value) { m_identityInfoHasBeenSet = true; m_identityInfo = value; }
 
     /**
-     * <p>A <code>UserIdentityInfo</code> object.</p>
+     * <p>The identity information for the user.</p>
      */
     inline void SetIdentityInfo(UserIdentityInfo&& value) { m_identityInfoHasBeenSet = true; m_identityInfo = std::move(value); }
 
     /**
-     * <p>A <code>UserIdentityInfo</code> object.</p>
+     * <p>The identity information for the user.</p>
      */
     inline UpdateUserIdentityInfoRequest& WithIdentityInfo(const UserIdentityInfo& value) { SetIdentityInfo(value); return *this;}
 
     /**
-     * <p>A <code>UserIdentityInfo</code> object.</p>
+     * <p>The identity information for the user.</p>
      */
     inline UpdateUserIdentityInfoRequest& WithIdentityInfo(UserIdentityInfo&& value) { SetIdentityInfo(std::move(value)); return *this;}
 
 
     /**
-     * <p>The identifier for the user account to update identity information for.</p>
+     * <p>The identifier of the user account.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p>The identifier for the user account to update identity information for.</p>
+     * <p>The identifier of the user account.</p>
      */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
-     * <p>The identifier for the user account to update identity information for.</p>
+     * <p>The identifier of the user account.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
-     * <p>The identifier for the user account to update identity information for.</p>
+     * <p>The identifier of the user account.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
-     * <p>The identifier for the user account to update identity information for.</p>
+     * <p>The identifier of the user account.</p>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
     /**
-     * <p>The identifier for the user account to update identity information for.</p>
+     * <p>The identifier of the user account.</p>
      */
     inline UpdateUserIdentityInfoRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>The identifier for the user account to update identity information for.</p>
+     * <p>The identifier of the user account.</p>
      */
     inline UpdateUserIdentityInfoRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the user account to update identity information for.</p>
+     * <p>The identifier of the user account.</p>
      */
     inline UpdateUserIdentityInfoRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
 
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline UpdateUserIdentityInfoRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline UpdateUserIdentityInfoRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline UpdateUserIdentityInfoRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 

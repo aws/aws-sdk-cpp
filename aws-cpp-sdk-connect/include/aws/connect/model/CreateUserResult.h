@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the user account in Amazon Connect</p>
+     * <p>The identifier of the user account.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p>The unique identifier for the user account in Amazon Connect</p>
+     * <p>The identifier of the user account.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userId = value; }
 
     /**
-     * <p>The unique identifier for the user account in Amazon Connect</p>
+     * <p>The identifier of the user account.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the user account in Amazon Connect</p>
+     * <p>The identifier of the user account.</p>
      */
     inline void SetUserId(const char* value) { m_userId.assign(value); }
 
     /**
-     * <p>The unique identifier for the user account in Amazon Connect</p>
+     * <p>The identifier of the user account.</p>
      */
     inline CreateUserResult& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the user account in Amazon Connect</p>
+     * <p>The identifier of the user account.</p>
      */
     inline CreateUserResult& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the user account in Amazon Connect</p>
+     * <p>The identifier of the user account.</p>
      */
     inline CreateUserResult& WithUserId(const char* value) { SetUserId(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account created.</p>
+     * <p>The Amazon Resource Name (ARN) of the user account.</p>
      */
     inline const Aws::String& GetUserArn() const{ return m_userArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account created.</p>
+     * <p>The Amazon Resource Name (ARN) of the user account.</p>
      */
     inline void SetUserArn(const Aws::String& value) { m_userArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account created.</p>
+     * <p>The Amazon Resource Name (ARN) of the user account.</p>
      */
     inline void SetUserArn(Aws::String&& value) { m_userArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account created.</p>
+     * <p>The Amazon Resource Name (ARN) of the user account.</p>
      */
     inline void SetUserArn(const char* value) { m_userArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account created.</p>
+     * <p>The Amazon Resource Name (ARN) of the user account.</p>
      */
     inline CreateUserResult& WithUserArn(const Aws::String& value) { SetUserArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account created.</p>
+     * <p>The Amazon Resource Name (ARN) of the user account.</p>
      */
     inline CreateUserResult& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the user account created.</p>
+     * <p>The Amazon Resource Name (ARN) of the user account.</p>
      */
     inline CreateUserResult& WithUserArn(const char* value) { SetUserArn(value); return *this;}
 

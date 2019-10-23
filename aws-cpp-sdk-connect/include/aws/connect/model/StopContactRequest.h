@@ -43,123 +43,83 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the contact to end.</p>
+     * <p>The ID of the contact.</p>
      */
     inline const Aws::String& GetContactId() const{ return m_contactId; }
 
     /**
-     * <p>The unique identifier of the contact to end.</p>
+     * <p>The ID of the contact.</p>
      */
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the contact to end.</p>
+     * <p>The ID of the contact.</p>
      */
     inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
 
     /**
-     * <p>The unique identifier of the contact to end.</p>
+     * <p>The ID of the contact.</p>
      */
     inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the contact to end.</p>
+     * <p>The ID of the contact.</p>
      */
     inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
 
     /**
-     * <p>The unique identifier of the contact to end.</p>
+     * <p>The ID of the contact.</p>
      */
     inline StopContactRequest& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the contact to end.</p>
+     * <p>The ID of the contact.</p>
      */
     inline StopContactRequest& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the contact to end.</p>
+     * <p>The ID of the contact.</p>
      */
     inline StopContactRequest& WithContactId(const char* value) { SetContactId(value); return *this;}
 
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline StopContactRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline StopContactRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline StopContactRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 

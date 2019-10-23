@@ -46,566 +46,459 @@ namespace Model
 
 
     /**
-     * <p>The user name in Amazon Connect for the account to create. If you are using
-     * SAML for identity management in your Amazon Connect, the value for
-     * <code>Username</code> can include up to 64 characters from
+     * <p>The user name for the account. For instances not using SAML for identity
+     * management, the user name can include up to 20 characters. If you are using SAML
+     * for identity management, the user name can include up to 64 characters from
      * [a-zA-Z0-9_-.\@]+.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user name in Amazon Connect for the account to create. If you are using
-     * SAML for identity management in your Amazon Connect, the value for
-     * <code>Username</code> can include up to 64 characters from
+     * <p>The user name for the account. For instances not using SAML for identity
+     * management, the user name can include up to 20 characters. If you are using SAML
+     * for identity management, the user name can include up to 64 characters from
      * [a-zA-Z0-9_-.\@]+.</p>
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
-     * <p>The user name in Amazon Connect for the account to create. If you are using
-     * SAML for identity management in your Amazon Connect, the value for
-     * <code>Username</code> can include up to 64 characters from
+     * <p>The user name for the account. For instances not using SAML for identity
+     * management, the user name can include up to 20 characters. If you are using SAML
+     * for identity management, the user name can include up to 64 characters from
      * [a-zA-Z0-9_-.\@]+.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user name in Amazon Connect for the account to create. If you are using
-     * SAML for identity management in your Amazon Connect, the value for
-     * <code>Username</code> can include up to 64 characters from
+     * <p>The user name for the account. For instances not using SAML for identity
+     * management, the user name can include up to 20 characters. If you are using SAML
+     * for identity management, the user name can include up to 64 characters from
      * [a-zA-Z0-9_-.\@]+.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>The user name in Amazon Connect for the account to create. If you are using
-     * SAML for identity management in your Amazon Connect, the value for
-     * <code>Username</code> can include up to 64 characters from
+     * <p>The user name for the account. For instances not using SAML for identity
+     * management, the user name can include up to 20 characters. If you are using SAML
+     * for identity management, the user name can include up to 64 characters from
      * [a-zA-Z0-9_-.\@]+.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The user name in Amazon Connect for the account to create. If you are using
-     * SAML for identity management in your Amazon Connect, the value for
-     * <code>Username</code> can include up to 64 characters from
+     * <p>The user name for the account. For instances not using SAML for identity
+     * management, the user name can include up to 20 characters. If you are using SAML
+     * for identity management, the user name can include up to 64 characters from
      * [a-zA-Z0-9_-.\@]+.</p>
      */
     inline CreateUserRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name in Amazon Connect for the account to create. If you are using
-     * SAML for identity management in your Amazon Connect, the value for
-     * <code>Username</code> can include up to 64 characters from
+     * <p>The user name for the account. For instances not using SAML for identity
+     * management, the user name can include up to 20 characters. If you are using SAML
+     * for identity management, the user name can include up to 64 characters from
      * [a-zA-Z0-9_-.\@]+.</p>
      */
     inline CreateUserRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user name in Amazon Connect for the account to create. If you are using
-     * SAML for identity management in your Amazon Connect, the value for
-     * <code>Username</code> can include up to 64 characters from
+     * <p>The user name for the account. For instances not using SAML for identity
+     * management, the user name can include up to 20 characters. If you are using SAML
+     * for identity management, the user name can include up to 64 characters from
      * [a-zA-Z0-9_-.\@]+.</p>
      */
     inline CreateUserRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
 
     /**
-     * <p>The password for the user account to create. This is required if you are
-     * using Amazon Connect for identity management. If you are using SAML for identity
-     * management and include this parameter, an <code>InvalidRequestException</code>
-     * is returned.</p>
+     * <p>The password for the user account. A password is required if you are using
+     * Amazon Connect for identity management. Otherwise, it is an error to include a
+     * password.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
 
     /**
-     * <p>The password for the user account to create. This is required if you are
-     * using Amazon Connect for identity management. If you are using SAML for identity
-     * management and include this parameter, an <code>InvalidRequestException</code>
-     * is returned.</p>
+     * <p>The password for the user account. A password is required if you are using
+     * Amazon Connect for identity management. Otherwise, it is an error to include a
+     * password.</p>
      */
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
-     * <p>The password for the user account to create. This is required if you are
-     * using Amazon Connect for identity management. If you are using SAML for identity
-     * management and include this parameter, an <code>InvalidRequestException</code>
-     * is returned.</p>
+     * <p>The password for the user account. A password is required if you are using
+     * Amazon Connect for identity management. Otherwise, it is an error to include a
+     * password.</p>
      */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /**
-     * <p>The password for the user account to create. This is required if you are
-     * using Amazon Connect for identity management. If you are using SAML for identity
-     * management and include this parameter, an <code>InvalidRequestException</code>
-     * is returned.</p>
+     * <p>The password for the user account. A password is required if you are using
+     * Amazon Connect for identity management. Otherwise, it is an error to include a
+     * password.</p>
      */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
     /**
-     * <p>The password for the user account to create. This is required if you are
-     * using Amazon Connect for identity management. If you are using SAML for identity
-     * management and include this parameter, an <code>InvalidRequestException</code>
-     * is returned.</p>
+     * <p>The password for the user account. A password is required if you are using
+     * Amazon Connect for identity management. Otherwise, it is an error to include a
+     * password.</p>
      */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
 
     /**
-     * <p>The password for the user account to create. This is required if you are
-     * using Amazon Connect for identity management. If you are using SAML for identity
-     * management and include this parameter, an <code>InvalidRequestException</code>
-     * is returned.</p>
+     * <p>The password for the user account. A password is required if you are using
+     * Amazon Connect for identity management. Otherwise, it is an error to include a
+     * password.</p>
      */
     inline CreateUserRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
 
     /**
-     * <p>The password for the user account to create. This is required if you are
-     * using Amazon Connect for identity management. If you are using SAML for identity
-     * management and include this parameter, an <code>InvalidRequestException</code>
-     * is returned.</p>
+     * <p>The password for the user account. A password is required if you are using
+     * Amazon Connect for identity management. Otherwise, it is an error to include a
+     * password.</p>
      */
     inline CreateUserRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The password for the user account to create. This is required if you are
-     * using Amazon Connect for identity management. If you are using SAML for identity
-     * management and include this parameter, an <code>InvalidRequestException</code>
-     * is returned.</p>
+     * <p>The password for the user account. A password is required if you are using
+     * Amazon Connect for identity management. Otherwise, it is an error to include a
+     * password.</p>
      */
     inline CreateUserRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 
 
     /**
-     * <p>Information about the user, including email address, first name, and last
-     * name.</p>
+     * <p>The information about the identity of the user.</p>
      */
     inline const UserIdentityInfo& GetIdentityInfo() const{ return m_identityInfo; }
 
     /**
-     * <p>Information about the user, including email address, first name, and last
-     * name.</p>
+     * <p>The information about the identity of the user.</p>
      */
     inline bool IdentityInfoHasBeenSet() const { return m_identityInfoHasBeenSet; }
 
     /**
-     * <p>Information about the user, including email address, first name, and last
-     * name.</p>
+     * <p>The information about the identity of the user.</p>
      */
     inline void SetIdentityInfo(const UserIdentityInfo& value) { m_identityInfoHasBeenSet = true; m_identityInfo = value; }
 
     /**
-     * <p>Information about the user, including email address, first name, and last
-     * name.</p>
+     * <p>The information about the identity of the user.</p>
      */
     inline void SetIdentityInfo(UserIdentityInfo&& value) { m_identityInfoHasBeenSet = true; m_identityInfo = std::move(value); }
 
     /**
-     * <p>Information about the user, including email address, first name, and last
-     * name.</p>
+     * <p>The information about the identity of the user.</p>
      */
     inline CreateUserRequest& WithIdentityInfo(const UserIdentityInfo& value) { SetIdentityInfo(value); return *this;}
 
     /**
-     * <p>Information about the user, including email address, first name, and last
-     * name.</p>
+     * <p>The information about the identity of the user.</p>
      */
     inline CreateUserRequest& WithIdentityInfo(UserIdentityInfo&& value) { SetIdentityInfo(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the phone settings for the user, including
-     * <code>AfterContactWorkTimeLimit</code>, <code>AutoAccept</code>,
-     * <code>DeskPhoneNumber</code>, and <code>PhoneType</code>.</p>
+     * <p>The phone settings for the user.</p>
      */
     inline const UserPhoneConfig& GetPhoneConfig() const{ return m_phoneConfig; }
 
     /**
-     * <p>Specifies the phone settings for the user, including
-     * <code>AfterContactWorkTimeLimit</code>, <code>AutoAccept</code>,
-     * <code>DeskPhoneNumber</code>, and <code>PhoneType</code>.</p>
+     * <p>The phone settings for the user.</p>
      */
     inline bool PhoneConfigHasBeenSet() const { return m_phoneConfigHasBeenSet; }
 
     /**
-     * <p>Specifies the phone settings for the user, including
-     * <code>AfterContactWorkTimeLimit</code>, <code>AutoAccept</code>,
-     * <code>DeskPhoneNumber</code>, and <code>PhoneType</code>.</p>
+     * <p>The phone settings for the user.</p>
      */
     inline void SetPhoneConfig(const UserPhoneConfig& value) { m_phoneConfigHasBeenSet = true; m_phoneConfig = value; }
 
     /**
-     * <p>Specifies the phone settings for the user, including
-     * <code>AfterContactWorkTimeLimit</code>, <code>AutoAccept</code>,
-     * <code>DeskPhoneNumber</code>, and <code>PhoneType</code>.</p>
+     * <p>The phone settings for the user.</p>
      */
     inline void SetPhoneConfig(UserPhoneConfig&& value) { m_phoneConfigHasBeenSet = true; m_phoneConfig = std::move(value); }
 
     /**
-     * <p>Specifies the phone settings for the user, including
-     * <code>AfterContactWorkTimeLimit</code>, <code>AutoAccept</code>,
-     * <code>DeskPhoneNumber</code>, and <code>PhoneType</code>.</p>
+     * <p>The phone settings for the user.</p>
      */
     inline CreateUserRequest& WithPhoneConfig(const UserPhoneConfig& value) { SetPhoneConfig(value); return *this;}
 
     /**
-     * <p>Specifies the phone settings for the user, including
-     * <code>AfterContactWorkTimeLimit</code>, <code>AutoAccept</code>,
-     * <code>DeskPhoneNumber</code>, and <code>PhoneType</code>.</p>
+     * <p>The phone settings for the user.</p>
      */
     inline CreateUserRequest& WithPhoneConfig(UserPhoneConfig&& value) { SetPhoneConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The unique identifier for the user account in the directory service directory
-     * used for identity management. If Amazon Connect is unable to access the existing
-     * directory, you can use the <code>DirectoryUserId</code> to authenticate users.
-     * If you include the parameter, it is assumed that Amazon Connect cannot access
-     * the directory. If the parameter is not included, the
-     * <code>UserIdentityInfo</code> is used to authenticate users from your existing
-     * directory.</p> <p>This parameter is required if you are using an existing
-     * directory for identity management in Amazon Connect when Amazon Connect cannot
-     * access your directory to authenticate users. If you are using SAML for identity
-     * management and include this parameter, an <code>InvalidRequestException</code>
-     * is returned.</p>
+     * <p>The identifier of the user account in the directory used for identity
+     * management. If Amazon Connect cannot access the directory, you can specify this
+     * identifier to authenticate users. If you include the identifier, we assume that
+     * Amazon Connect cannot access the directory. Otherwise, the identity information
+     * is used to authenticate users from your directory.</p> <p>This parameter is
+     * required if you are using an existing directory for identity management in
+     * Amazon Connect when Amazon Connect cannot access your directory to authenticate
+     * users. If you are using SAML for identity management and include this parameter,
+     * an error is returned.</p>
      */
     inline const Aws::String& GetDirectoryUserId() const{ return m_directoryUserId; }
 
     /**
-     * <p>The unique identifier for the user account in the directory service directory
-     * used for identity management. If Amazon Connect is unable to access the existing
-     * directory, you can use the <code>DirectoryUserId</code> to authenticate users.
-     * If you include the parameter, it is assumed that Amazon Connect cannot access
-     * the directory. If the parameter is not included, the
-     * <code>UserIdentityInfo</code> is used to authenticate users from your existing
-     * directory.</p> <p>This parameter is required if you are using an existing
-     * directory for identity management in Amazon Connect when Amazon Connect cannot
-     * access your directory to authenticate users. If you are using SAML for identity
-     * management and include this parameter, an <code>InvalidRequestException</code>
-     * is returned.</p>
+     * <p>The identifier of the user account in the directory used for identity
+     * management. If Amazon Connect cannot access the directory, you can specify this
+     * identifier to authenticate users. If you include the identifier, we assume that
+     * Amazon Connect cannot access the directory. Otherwise, the identity information
+     * is used to authenticate users from your directory.</p> <p>This parameter is
+     * required if you are using an existing directory for identity management in
+     * Amazon Connect when Amazon Connect cannot access your directory to authenticate
+     * users. If you are using SAML for identity management and include this parameter,
+     * an error is returned.</p>
      */
     inline bool DirectoryUserIdHasBeenSet() const { return m_directoryUserIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the user account in the directory service directory
-     * used for identity management. If Amazon Connect is unable to access the existing
-     * directory, you can use the <code>DirectoryUserId</code> to authenticate users.
-     * If you include the parameter, it is assumed that Amazon Connect cannot access
-     * the directory. If the parameter is not included, the
-     * <code>UserIdentityInfo</code> is used to authenticate users from your existing
-     * directory.</p> <p>This parameter is required if you are using an existing
-     * directory for identity management in Amazon Connect when Amazon Connect cannot
-     * access your directory to authenticate users. If you are using SAML for identity
-     * management and include this parameter, an <code>InvalidRequestException</code>
-     * is returned.</p>
+     * <p>The identifier of the user account in the directory used for identity
+     * management. If Amazon Connect cannot access the directory, you can specify this
+     * identifier to authenticate users. If you include the identifier, we assume that
+     * Amazon Connect cannot access the directory. Otherwise, the identity information
+     * is used to authenticate users from your directory.</p> <p>This parameter is
+     * required if you are using an existing directory for identity management in
+     * Amazon Connect when Amazon Connect cannot access your directory to authenticate
+     * users. If you are using SAML for identity management and include this parameter,
+     * an error is returned.</p>
      */
     inline void SetDirectoryUserId(const Aws::String& value) { m_directoryUserIdHasBeenSet = true; m_directoryUserId = value; }
 
     /**
-     * <p>The unique identifier for the user account in the directory service directory
-     * used for identity management. If Amazon Connect is unable to access the existing
-     * directory, you can use the <code>DirectoryUserId</code> to authenticate users.
-     * If you include the parameter, it is assumed that Amazon Connect cannot access
-     * the directory. If the parameter is not included, the
-     * <code>UserIdentityInfo</code> is used to authenticate users from your existing
-     * directory.</p> <p>This parameter is required if you are using an existing
-     * directory for identity management in Amazon Connect when Amazon Connect cannot
-     * access your directory to authenticate users. If you are using SAML for identity
-     * management and include this parameter, an <code>InvalidRequestException</code>
-     * is returned.</p>
+     * <p>The identifier of the user account in the directory used for identity
+     * management. If Amazon Connect cannot access the directory, you can specify this
+     * identifier to authenticate users. If you include the identifier, we assume that
+     * Amazon Connect cannot access the directory. Otherwise, the identity information
+     * is used to authenticate users from your directory.</p> <p>This parameter is
+     * required if you are using an existing directory for identity management in
+     * Amazon Connect when Amazon Connect cannot access your directory to authenticate
+     * users. If you are using SAML for identity management and include this parameter,
+     * an error is returned.</p>
      */
     inline void SetDirectoryUserId(Aws::String&& value) { m_directoryUserIdHasBeenSet = true; m_directoryUserId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the user account in the directory service directory
-     * used for identity management. If Amazon Connect is unable to access the existing
-     * directory, you can use the <code>DirectoryUserId</code> to authenticate users.
-     * If you include the parameter, it is assumed that Amazon Connect cannot access
-     * the directory. If the parameter is not included, the
-     * <code>UserIdentityInfo</code> is used to authenticate users from your existing
-     * directory.</p> <p>This parameter is required if you are using an existing
-     * directory for identity management in Amazon Connect when Amazon Connect cannot
-     * access your directory to authenticate users. If you are using SAML for identity
-     * management and include this parameter, an <code>InvalidRequestException</code>
-     * is returned.</p>
+     * <p>The identifier of the user account in the directory used for identity
+     * management. If Amazon Connect cannot access the directory, you can specify this
+     * identifier to authenticate users. If you include the identifier, we assume that
+     * Amazon Connect cannot access the directory. Otherwise, the identity information
+     * is used to authenticate users from your directory.</p> <p>This parameter is
+     * required if you are using an existing directory for identity management in
+     * Amazon Connect when Amazon Connect cannot access your directory to authenticate
+     * users. If you are using SAML for identity management and include this parameter,
+     * an error is returned.</p>
      */
     inline void SetDirectoryUserId(const char* value) { m_directoryUserIdHasBeenSet = true; m_directoryUserId.assign(value); }
 
     /**
-     * <p>The unique identifier for the user account in the directory service directory
-     * used for identity management. If Amazon Connect is unable to access the existing
-     * directory, you can use the <code>DirectoryUserId</code> to authenticate users.
-     * If you include the parameter, it is assumed that Amazon Connect cannot access
-     * the directory. If the parameter is not included, the
-     * <code>UserIdentityInfo</code> is used to authenticate users from your existing
-     * directory.</p> <p>This parameter is required if you are using an existing
-     * directory for identity management in Amazon Connect when Amazon Connect cannot
-     * access your directory to authenticate users. If you are using SAML for identity
-     * management and include this parameter, an <code>InvalidRequestException</code>
-     * is returned.</p>
+     * <p>The identifier of the user account in the directory used for identity
+     * management. If Amazon Connect cannot access the directory, you can specify this
+     * identifier to authenticate users. If you include the identifier, we assume that
+     * Amazon Connect cannot access the directory. Otherwise, the identity information
+     * is used to authenticate users from your directory.</p> <p>This parameter is
+     * required if you are using an existing directory for identity management in
+     * Amazon Connect when Amazon Connect cannot access your directory to authenticate
+     * users. If you are using SAML for identity management and include this parameter,
+     * an error is returned.</p>
      */
     inline CreateUserRequest& WithDirectoryUserId(const Aws::String& value) { SetDirectoryUserId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the user account in the directory service directory
-     * used for identity management. If Amazon Connect is unable to access the existing
-     * directory, you can use the <code>DirectoryUserId</code> to authenticate users.
-     * If you include the parameter, it is assumed that Amazon Connect cannot access
-     * the directory. If the parameter is not included, the
-     * <code>UserIdentityInfo</code> is used to authenticate users from your existing
-     * directory.</p> <p>This parameter is required if you are using an existing
-     * directory for identity management in Amazon Connect when Amazon Connect cannot
-     * access your directory to authenticate users. If you are using SAML for identity
-     * management and include this parameter, an <code>InvalidRequestException</code>
-     * is returned.</p>
+     * <p>The identifier of the user account in the directory used for identity
+     * management. If Amazon Connect cannot access the directory, you can specify this
+     * identifier to authenticate users. If you include the identifier, we assume that
+     * Amazon Connect cannot access the directory. Otherwise, the identity information
+     * is used to authenticate users from your directory.</p> <p>This parameter is
+     * required if you are using an existing directory for identity management in
+     * Amazon Connect when Amazon Connect cannot access your directory to authenticate
+     * users. If you are using SAML for identity management and include this parameter,
+     * an error is returned.</p>
      */
     inline CreateUserRequest& WithDirectoryUserId(Aws::String&& value) { SetDirectoryUserId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the user account in the directory service directory
-     * used for identity management. If Amazon Connect is unable to access the existing
-     * directory, you can use the <code>DirectoryUserId</code> to authenticate users.
-     * If you include the parameter, it is assumed that Amazon Connect cannot access
-     * the directory. If the parameter is not included, the
-     * <code>UserIdentityInfo</code> is used to authenticate users from your existing
-     * directory.</p> <p>This parameter is required if you are using an existing
-     * directory for identity management in Amazon Connect when Amazon Connect cannot
-     * access your directory to authenticate users. If you are using SAML for identity
-     * management and include this parameter, an <code>InvalidRequestException</code>
-     * is returned.</p>
+     * <p>The identifier of the user account in the directory used for identity
+     * management. If Amazon Connect cannot access the directory, you can specify this
+     * identifier to authenticate users. If you include the identifier, we assume that
+     * Amazon Connect cannot access the directory. Otherwise, the identity information
+     * is used to authenticate users from your directory.</p> <p>This parameter is
+     * required if you are using an existing directory for identity management in
+     * Amazon Connect when Amazon Connect cannot access your directory to authenticate
+     * users. If you are using SAML for identity management and include this parameter,
+     * an error is returned.</p>
      */
     inline CreateUserRequest& WithDirectoryUserId(const char* value) { SetDirectoryUserId(value); return *this;}
 
 
     /**
-     * <p>The unique identifier of the security profile to assign to the user
-     * created.</p>
+     * <p>The identifier of the security profile for the user.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityProfileIds() const{ return m_securityProfileIds; }
 
     /**
-     * <p>The unique identifier of the security profile to assign to the user
-     * created.</p>
+     * <p>The identifier of the security profile for the user.</p>
      */
     inline bool SecurityProfileIdsHasBeenSet() const { return m_securityProfileIdsHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the security profile to assign to the user
-     * created.</p>
+     * <p>The identifier of the security profile for the user.</p>
      */
     inline void SetSecurityProfileIds(const Aws::Vector<Aws::String>& value) { m_securityProfileIdsHasBeenSet = true; m_securityProfileIds = value; }
 
     /**
-     * <p>The unique identifier of the security profile to assign to the user
-     * created.</p>
+     * <p>The identifier of the security profile for the user.</p>
      */
     inline void SetSecurityProfileIds(Aws::Vector<Aws::String>&& value) { m_securityProfileIdsHasBeenSet = true; m_securityProfileIds = std::move(value); }
 
     /**
-     * <p>The unique identifier of the security profile to assign to the user
-     * created.</p>
+     * <p>The identifier of the security profile for the user.</p>
      */
     inline CreateUserRequest& WithSecurityProfileIds(const Aws::Vector<Aws::String>& value) { SetSecurityProfileIds(value); return *this;}
 
     /**
-     * <p>The unique identifier of the security profile to assign to the user
-     * created.</p>
+     * <p>The identifier of the security profile for the user.</p>
      */
     inline CreateUserRequest& WithSecurityProfileIds(Aws::Vector<Aws::String>&& value) { SetSecurityProfileIds(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the security profile to assign to the user
-     * created.</p>
+     * <p>The identifier of the security profile for the user.</p>
      */
     inline CreateUserRequest& AddSecurityProfileIds(const Aws::String& value) { m_securityProfileIdsHasBeenSet = true; m_securityProfileIds.push_back(value); return *this; }
 
     /**
-     * <p>The unique identifier of the security profile to assign to the user
-     * created.</p>
+     * <p>The identifier of the security profile for the user.</p>
      */
     inline CreateUserRequest& AddSecurityProfileIds(Aws::String&& value) { m_securityProfileIdsHasBeenSet = true; m_securityProfileIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The unique identifier of the security profile to assign to the user
-     * created.</p>
+     * <p>The identifier of the security profile for the user.</p>
      */
     inline CreateUserRequest& AddSecurityProfileIds(const char* value) { m_securityProfileIdsHasBeenSet = true; m_securityProfileIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The unique identifier for the routing profile to assign to the user
-     * created.</p>
+     * <p>The identifier of the routing profile for the user.</p>
      */
     inline const Aws::String& GetRoutingProfileId() const{ return m_routingProfileId; }
 
     /**
-     * <p>The unique identifier for the routing profile to assign to the user
-     * created.</p>
+     * <p>The identifier of the routing profile for the user.</p>
      */
     inline bool RoutingProfileIdHasBeenSet() const { return m_routingProfileIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the routing profile to assign to the user
-     * created.</p>
+     * <p>The identifier of the routing profile for the user.</p>
      */
     inline void SetRoutingProfileId(const Aws::String& value) { m_routingProfileIdHasBeenSet = true; m_routingProfileId = value; }
 
     /**
-     * <p>The unique identifier for the routing profile to assign to the user
-     * created.</p>
+     * <p>The identifier of the routing profile for the user.</p>
      */
     inline void SetRoutingProfileId(Aws::String&& value) { m_routingProfileIdHasBeenSet = true; m_routingProfileId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the routing profile to assign to the user
-     * created.</p>
+     * <p>The identifier of the routing profile for the user.</p>
      */
     inline void SetRoutingProfileId(const char* value) { m_routingProfileIdHasBeenSet = true; m_routingProfileId.assign(value); }
 
     /**
-     * <p>The unique identifier for the routing profile to assign to the user
-     * created.</p>
+     * <p>The identifier of the routing profile for the user.</p>
      */
     inline CreateUserRequest& WithRoutingProfileId(const Aws::String& value) { SetRoutingProfileId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the routing profile to assign to the user
-     * created.</p>
+     * <p>The identifier of the routing profile for the user.</p>
      */
     inline CreateUserRequest& WithRoutingProfileId(Aws::String&& value) { SetRoutingProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the routing profile to assign to the user
-     * created.</p>
+     * <p>The identifier of the routing profile for the user.</p>
      */
     inline CreateUserRequest& WithRoutingProfileId(const char* value) { SetRoutingProfileId(value); return *this;}
 
 
     /**
-     * <p>The unique identifier for the hierarchy group to assign to the user
-     * created.</p>
+     * <p>The identifier of the hierarchy group for the user.</p>
      */
     inline const Aws::String& GetHierarchyGroupId() const{ return m_hierarchyGroupId; }
 
     /**
-     * <p>The unique identifier for the hierarchy group to assign to the user
-     * created.</p>
+     * <p>The identifier of the hierarchy group for the user.</p>
      */
     inline bool HierarchyGroupIdHasBeenSet() const { return m_hierarchyGroupIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the hierarchy group to assign to the user
-     * created.</p>
+     * <p>The identifier of the hierarchy group for the user.</p>
      */
     inline void SetHierarchyGroupId(const Aws::String& value) { m_hierarchyGroupIdHasBeenSet = true; m_hierarchyGroupId = value; }
 
     /**
-     * <p>The unique identifier for the hierarchy group to assign to the user
-     * created.</p>
+     * <p>The identifier of the hierarchy group for the user.</p>
      */
     inline void SetHierarchyGroupId(Aws::String&& value) { m_hierarchyGroupIdHasBeenSet = true; m_hierarchyGroupId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the hierarchy group to assign to the user
-     * created.</p>
+     * <p>The identifier of the hierarchy group for the user.</p>
      */
     inline void SetHierarchyGroupId(const char* value) { m_hierarchyGroupIdHasBeenSet = true; m_hierarchyGroupId.assign(value); }
 
     /**
-     * <p>The unique identifier for the hierarchy group to assign to the user
-     * created.</p>
+     * <p>The identifier of the hierarchy group for the user.</p>
      */
     inline CreateUserRequest& WithHierarchyGroupId(const Aws::String& value) { SetHierarchyGroupId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the hierarchy group to assign to the user
-     * created.</p>
+     * <p>The identifier of the hierarchy group for the user.</p>
      */
     inline CreateUserRequest& WithHierarchyGroupId(Aws::String&& value) { SetHierarchyGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the hierarchy group to assign to the user
-     * created.</p>
+     * <p>The identifier of the hierarchy group for the user.</p>
      */
     inline CreateUserRequest& WithHierarchyGroupId(const char* value) { SetHierarchyGroupId(value); return *this;}
 
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline CreateUserRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline CreateUserRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for your Amazon Connect instance. To find the ID of your
-     * instance, open the AWS console and select Amazon Connect. Select the alias of
-     * the instance in the Instance alias column. The instance ID is displayed in the
-     * Overview section of your instance settings. For example, the instance ID is the
-     * set of characters at the end of the instance ARN, after instance/, such as
-     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     * <p>The identifier of the Amazon Connect instance.</p>
      */
     inline CreateUserRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 

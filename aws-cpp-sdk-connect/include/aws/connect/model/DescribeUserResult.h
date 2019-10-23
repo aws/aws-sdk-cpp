@@ -43,32 +43,27 @@ namespace Model
 
 
     /**
-     * <p>A <code>User</code> object that contains information about the user account
-     * and configuration settings.</p>
+     * <p>Information about the user account and configuration settings.</p>
      */
     inline const User& GetUser() const{ return m_user; }
 
     /**
-     * <p>A <code>User</code> object that contains information about the user account
-     * and configuration settings.</p>
+     * <p>Information about the user account and configuration settings.</p>
      */
     inline void SetUser(const User& value) { m_user = value; }
 
     /**
-     * <p>A <code>User</code> object that contains information about the user account
-     * and configuration settings.</p>
+     * <p>Information about the user account and configuration settings.</p>
      */
     inline void SetUser(User&& value) { m_user = std::move(value); }
 
     /**
-     * <p>A <code>User</code> object that contains information about the user account
-     * and configuration settings.</p>
+     * <p>Information about the user account and configuration settings.</p>
      */
     inline DescribeUserResult& WithUser(const User& value) { SetUser(value); return *this;}
 
     /**
-     * <p>A <code>User</code> object that contains information about the user account
-     * and configuration settings.</p>
+     * <p>Information about the user account and configuration settings.</p>
      */
     inline DescribeUserResult& WithUser(User&& value) { SetUser(std::move(value)); return *this;}
 

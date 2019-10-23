@@ -45,86 +45,79 @@ namespace Model
 
 
     /**
-     * <p>An array of <code>SecurityProfileSummary</code> objects.</p>
+     * <p>Information about the security profiles.</p>
      */
     inline const Aws::Vector<SecurityProfileSummary>& GetSecurityProfileSummaryList() const{ return m_securityProfileSummaryList; }
 
     /**
-     * <p>An array of <code>SecurityProfileSummary</code> objects.</p>
+     * <p>Information about the security profiles.</p>
      */
     inline void SetSecurityProfileSummaryList(const Aws::Vector<SecurityProfileSummary>& value) { m_securityProfileSummaryList = value; }
 
     /**
-     * <p>An array of <code>SecurityProfileSummary</code> objects.</p>
+     * <p>Information about the security profiles.</p>
      */
     inline void SetSecurityProfileSummaryList(Aws::Vector<SecurityProfileSummary>&& value) { m_securityProfileSummaryList = std::move(value); }
 
     /**
-     * <p>An array of <code>SecurityProfileSummary</code> objects.</p>
+     * <p>Information about the security profiles.</p>
      */
     inline ListSecurityProfilesResult& WithSecurityProfileSummaryList(const Aws::Vector<SecurityProfileSummary>& value) { SetSecurityProfileSummaryList(value); return *this;}
 
     /**
-     * <p>An array of <code>SecurityProfileSummary</code> objects.</p>
+     * <p>Information about the security profiles.</p>
      */
     inline ListSecurityProfilesResult& WithSecurityProfileSummaryList(Aws::Vector<SecurityProfileSummary>&& value) { SetSecurityProfileSummaryList(std::move(value)); return *this;}
 
     /**
-     * <p>An array of <code>SecurityProfileSummary</code> objects.</p>
+     * <p>Information about the security profiles.</p>
      */
     inline ListSecurityProfilesResult& AddSecurityProfileSummaryList(const SecurityProfileSummary& value) { m_securityProfileSummaryList.push_back(value); return *this; }
 
     /**
-     * <p>An array of <code>SecurityProfileSummary</code> objects.</p>
+     * <p>Information about the security profiles.</p>
      */
     inline ListSecurityProfilesResult& AddSecurityProfileSummaryList(SecurityProfileSummary&& value) { m_securityProfileSummaryList.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A string returned in the response. Use the value returned in the response as
-     * the value of the NextToken in a subsequent request to retrieve the next set of
+     * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A string returned in the response. Use the value returned in the response as
-     * the value of the NextToken in a subsequent request to retrieve the next set of
+     * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>A string returned in the response. Use the value returned in the response as
-     * the value of the NextToken in a subsequent request to retrieve the next set of
+     * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>A string returned in the response. Use the value returned in the response as
-     * the value of the NextToken in a subsequent request to retrieve the next set of
+     * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>A string returned in the response. Use the value returned in the response as
-     * the value of the NextToken in a subsequent request to retrieve the next set of
+     * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
     inline ListSecurityProfilesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A string returned in the response. Use the value returned in the response as
-     * the value of the NextToken in a subsequent request to retrieve the next set of
+     * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
     inline ListSecurityProfilesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A string returned in the response. Use the value returned in the response as
-     * the value of the NextToken in a subsequent request to retrieve the next set of
+     * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
     inline ListSecurityProfilesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

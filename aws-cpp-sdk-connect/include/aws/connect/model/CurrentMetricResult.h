@@ -36,7 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>A <code>CurrentMetricResult</code> object.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about a set of real-time metrics.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CurrentMetricResult">AWS
    * API Reference</a></p>
    */
@@ -50,87 +51,73 @@ namespace Model
 
 
     /**
-     * <p>The <code>Dimensions</code> for the <code>CurrentMetricResult</code>
-     * object.</p>
+     * <p>The dimensions for the metrics.</p>
      */
     inline const Dimensions& GetDimensions() const{ return m_dimensions; }
 
     /**
-     * <p>The <code>Dimensions</code> for the <code>CurrentMetricResult</code>
-     * object.</p>
+     * <p>The dimensions for the metrics.</p>
      */
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
 
     /**
-     * <p>The <code>Dimensions</code> for the <code>CurrentMetricResult</code>
-     * object.</p>
+     * <p>The dimensions for the metrics.</p>
      */
     inline void SetDimensions(const Dimensions& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * <p>The <code>Dimensions</code> for the <code>CurrentMetricResult</code>
-     * object.</p>
+     * <p>The dimensions for the metrics.</p>
      */
     inline void SetDimensions(Dimensions&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
 
     /**
-     * <p>The <code>Dimensions</code> for the <code>CurrentMetricResult</code>
-     * object.</p>
+     * <p>The dimensions for the metrics.</p>
      */
     inline CurrentMetricResult& WithDimensions(const Dimensions& value) { SetDimensions(value); return *this;}
 
     /**
-     * <p>The <code>Dimensions</code> for the <code>CurrentMetricResult</code>
-     * object.</p>
+     * <p>The dimensions for the metrics.</p>
      */
     inline CurrentMetricResult& WithDimensions(Dimensions&& value) { SetDimensions(std::move(value)); return *this;}
 
 
     /**
-     * <p>The <code>Collections</code> for the <code>CurrentMetricResult</code>
-     * object.</p>
+     * <p>The set of metrics.</p>
      */
     inline const Aws::Vector<CurrentMetricData>& GetCollections() const{ return m_collections; }
 
     /**
-     * <p>The <code>Collections</code> for the <code>CurrentMetricResult</code>
-     * object.</p>
+     * <p>The set of metrics.</p>
      */
     inline bool CollectionsHasBeenSet() const { return m_collectionsHasBeenSet; }
 
     /**
-     * <p>The <code>Collections</code> for the <code>CurrentMetricResult</code>
-     * object.</p>
+     * <p>The set of metrics.</p>
      */
     inline void SetCollections(const Aws::Vector<CurrentMetricData>& value) { m_collectionsHasBeenSet = true; m_collections = value; }
 
     /**
-     * <p>The <code>Collections</code> for the <code>CurrentMetricResult</code>
-     * object.</p>
+     * <p>The set of metrics.</p>
      */
     inline void SetCollections(Aws::Vector<CurrentMetricData>&& value) { m_collectionsHasBeenSet = true; m_collections = std::move(value); }
 
     /**
-     * <p>The <code>Collections</code> for the <code>CurrentMetricResult</code>
-     * object.</p>
+     * <p>The set of metrics.</p>
      */
     inline CurrentMetricResult& WithCollections(const Aws::Vector<CurrentMetricData>& value) { SetCollections(value); return *this;}
 
     /**
-     * <p>The <code>Collections</code> for the <code>CurrentMetricResult</code>
-     * object.</p>
+     * <p>The set of metrics.</p>
      */
     inline CurrentMetricResult& WithCollections(Aws::Vector<CurrentMetricData>&& value) { SetCollections(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>Collections</code> for the <code>CurrentMetricResult</code>
-     * object.</p>
+     * <p>The set of metrics.</p>
      */
     inline CurrentMetricResult& AddCollections(const CurrentMetricData& value) { m_collectionsHasBeenSet = true; m_collections.push_back(value); return *this; }
 
     /**
-     * <p>The <code>Collections</code> for the <code>CurrentMetricResult</code>
-     * object.</p>
+     * <p>The set of metrics.</p>
      */
     inline CurrentMetricResult& AddCollections(CurrentMetricData&& value) { m_collectionsHasBeenSet = true; m_collections.push_back(std::move(value)); return *this; }
 

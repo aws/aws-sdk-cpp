@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>A <code>Dimensions</code> object that includes the Channel and Queue for the
-   * metric.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about the dimensions for a set of metrics.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/Dimensions">AWS
    * API Reference</a></p>
    */
@@ -50,69 +50,63 @@ namespace Model
 
 
     /**
-     * <p>A <code>QueueReference</code> object used as one part of dimension for the
-     * metrics results.</p>
+     * <p>Information about the queue for which metrics are returned.</p>
      */
     inline const QueueReference& GetQueue() const{ return m_queue; }
 
     /**
-     * <p>A <code>QueueReference</code> object used as one part of dimension for the
-     * metrics results.</p>
+     * <p>Information about the queue for which metrics are returned.</p>
      */
     inline bool QueueHasBeenSet() const { return m_queueHasBeenSet; }
 
     /**
-     * <p>A <code>QueueReference</code> object used as one part of dimension for the
-     * metrics results.</p>
+     * <p>Information about the queue for which metrics are returned.</p>
      */
     inline void SetQueue(const QueueReference& value) { m_queueHasBeenSet = true; m_queue = value; }
 
     /**
-     * <p>A <code>QueueReference</code> object used as one part of dimension for the
-     * metrics results.</p>
+     * <p>Information about the queue for which metrics are returned.</p>
      */
     inline void SetQueue(QueueReference&& value) { m_queueHasBeenSet = true; m_queue = std::move(value); }
 
     /**
-     * <p>A <code>QueueReference</code> object used as one part of dimension for the
-     * metrics results.</p>
+     * <p>Information about the queue for which metrics are returned.</p>
      */
     inline Dimensions& WithQueue(const QueueReference& value) { SetQueue(value); return *this;}
 
     /**
-     * <p>A <code>QueueReference</code> object used as one part of dimension for the
-     * metrics results.</p>
+     * <p>Information about the queue for which metrics are returned.</p>
      */
     inline Dimensions& WithQueue(QueueReference&& value) { SetQueue(std::move(value)); return *this;}
 
 
     /**
-     * <p>The channel used for grouping and filters. Only VOICE is supported.</p>
+     * <p>The channel used for grouping and filters.</p>
      */
     inline const Channel& GetChannel() const{ return m_channel; }
 
     /**
-     * <p>The channel used for grouping and filters. Only VOICE is supported.</p>
+     * <p>The channel used for grouping and filters.</p>
      */
     inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
 
     /**
-     * <p>The channel used for grouping and filters. Only VOICE is supported.</p>
+     * <p>The channel used for grouping and filters.</p>
      */
     inline void SetChannel(const Channel& value) { m_channelHasBeenSet = true; m_channel = value; }
 
     /**
-     * <p>The channel used for grouping and filters. Only VOICE is supported.</p>
+     * <p>The channel used for grouping and filters.</p>
      */
     inline void SetChannel(Channel&& value) { m_channelHasBeenSet = true; m_channel = std::move(value); }
 
     /**
-     * <p>The channel used for grouping and filters. Only VOICE is supported.</p>
+     * <p>The channel used for grouping and filters.</p>
      */
     inline Dimensions& WithChannel(const Channel& value) { SetChannel(value); return *this;}
 
     /**
-     * <p>The channel used for grouping and filters. Only VOICE is supported.</p>
+     * <p>The channel used for grouping and filters.</p>
      */
     inline Dimensions& WithChannel(Channel&& value) { SetChannel(std::move(value)); return *this;}
 

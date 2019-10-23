@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>A <code>UserPhoneConfig</code> object that contains information about the
-   * user phone configuration settings.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about the phone configuration settings for a
+   * user.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UserPhoneConfig">AWS
    * API Reference</a></p>
    */
@@ -50,74 +50,74 @@ namespace Model
 
 
     /**
-     * <p>The phone type selected for the user, either Soft phone or Desk phone.</p>
+     * <p>The phone type.</p>
      */
     inline const PhoneType& GetPhoneType() const{ return m_phoneType; }
 
     /**
-     * <p>The phone type selected for the user, either Soft phone or Desk phone.</p>
+     * <p>The phone type.</p>
      */
     inline bool PhoneTypeHasBeenSet() const { return m_phoneTypeHasBeenSet; }
 
     /**
-     * <p>The phone type selected for the user, either Soft phone or Desk phone.</p>
+     * <p>The phone type.</p>
      */
     inline void SetPhoneType(const PhoneType& value) { m_phoneTypeHasBeenSet = true; m_phoneType = value; }
 
     /**
-     * <p>The phone type selected for the user, either Soft phone or Desk phone.</p>
+     * <p>The phone type.</p>
      */
     inline void SetPhoneType(PhoneType&& value) { m_phoneTypeHasBeenSet = true; m_phoneType = std::move(value); }
 
     /**
-     * <p>The phone type selected for the user, either Soft phone or Desk phone.</p>
+     * <p>The phone type.</p>
      */
     inline UserPhoneConfig& WithPhoneType(const PhoneType& value) { SetPhoneType(value); return *this;}
 
     /**
-     * <p>The phone type selected for the user, either Soft phone or Desk phone.</p>
+     * <p>The phone type.</p>
      */
     inline UserPhoneConfig& WithPhoneType(PhoneType&& value) { SetPhoneType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Auto accept setting for the user, Yes or No.</p>
+     * <p>The Auto accept setting.</p>
      */
     inline bool GetAutoAccept() const{ return m_autoAccept; }
 
     /**
-     * <p>The Auto accept setting for the user, Yes or No.</p>
+     * <p>The Auto accept setting.</p>
      */
     inline bool AutoAcceptHasBeenSet() const { return m_autoAcceptHasBeenSet; }
 
     /**
-     * <p>The Auto accept setting for the user, Yes or No.</p>
+     * <p>The Auto accept setting.</p>
      */
     inline void SetAutoAccept(bool value) { m_autoAcceptHasBeenSet = true; m_autoAccept = value; }
 
     /**
-     * <p>The Auto accept setting for the user, Yes or No.</p>
+     * <p>The Auto accept setting.</p>
      */
     inline UserPhoneConfig& WithAutoAccept(bool value) { SetAutoAccept(value); return *this;}
 
 
     /**
-     * <p>The After Call Work (ACW) timeout setting, in seconds, for the user.</p>
+     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>
      */
     inline int GetAfterContactWorkTimeLimit() const{ return m_afterContactWorkTimeLimit; }
 
     /**
-     * <p>The After Call Work (ACW) timeout setting, in seconds, for the user.</p>
+     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>
      */
     inline bool AfterContactWorkTimeLimitHasBeenSet() const { return m_afterContactWorkTimeLimitHasBeenSet; }
 
     /**
-     * <p>The After Call Work (ACW) timeout setting, in seconds, for the user.</p>
+     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>
      */
     inline void SetAfterContactWorkTimeLimit(int value) { m_afterContactWorkTimeLimitHasBeenSet = true; m_afterContactWorkTimeLimit = value; }
 
     /**
-     * <p>The After Call Work (ACW) timeout setting, in seconds, for the user.</p>
+     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>
      */
     inline UserPhoneConfig& WithAfterContactWorkTimeLimit(int value) { SetAfterContactWorkTimeLimit(value); return *this;}
 

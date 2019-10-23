@@ -46,188 +46,120 @@ namespace Model
 
 
     /**
-     * <p>A string returned in the response. Use the value returned in the response as
-     * the value of the NextToken in a subsequent request to retrieve the next set of
+     * <p>If there are additional results, this is the token for the next set of
      * results.</p> <p>The token expires after 5 minutes from the time it is created.
-     * Subsequent requests that use the NextToken must use the same request parameters
-     * as the request that generated the token. </p>
+     * Subsequent requests that use the token must use the same request parameters as
+     * the request that generated the token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A string returned in the response. Use the value returned in the response as
-     * the value of the NextToken in a subsequent request to retrieve the next set of
+     * <p>If there are additional results, this is the token for the next set of
      * results.</p> <p>The token expires after 5 minutes from the time it is created.
-     * Subsequent requests that use the NextToken must use the same request parameters
-     * as the request that generated the token. </p>
+     * Subsequent requests that use the token must use the same request parameters as
+     * the request that generated the token.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>A string returned in the response. Use the value returned in the response as
-     * the value of the NextToken in a subsequent request to retrieve the next set of
+     * <p>If there are additional results, this is the token for the next set of
      * results.</p> <p>The token expires after 5 minutes from the time it is created.
-     * Subsequent requests that use the NextToken must use the same request parameters
-     * as the request that generated the token. </p>
+     * Subsequent requests that use the token must use the same request parameters as
+     * the request that generated the token.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>A string returned in the response. Use the value returned in the response as
-     * the value of the NextToken in a subsequent request to retrieve the next set of
+     * <p>If there are additional results, this is the token for the next set of
      * results.</p> <p>The token expires after 5 minutes from the time it is created.
-     * Subsequent requests that use the NextToken must use the same request parameters
-     * as the request that generated the token. </p>
+     * Subsequent requests that use the token must use the same request parameters as
+     * the request that generated the token.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>A string returned in the response. Use the value returned in the response as
-     * the value of the NextToken in a subsequent request to retrieve the next set of
+     * <p>If there are additional results, this is the token for the next set of
      * results.</p> <p>The token expires after 5 minutes from the time it is created.
-     * Subsequent requests that use the NextToken must use the same request parameters
-     * as the request that generated the token. </p>
+     * Subsequent requests that use the token must use the same request parameters as
+     * the request that generated the token.</p>
      */
     inline GetCurrentMetricDataResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A string returned in the response. Use the value returned in the response as
-     * the value of the NextToken in a subsequent request to retrieve the next set of
+     * <p>If there are additional results, this is the token for the next set of
      * results.</p> <p>The token expires after 5 minutes from the time it is created.
-     * Subsequent requests that use the NextToken must use the same request parameters
-     * as the request that generated the token. </p>
+     * Subsequent requests that use the token must use the same request parameters as
+     * the request that generated the token.</p>
      */
     inline GetCurrentMetricDataResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A string returned in the response. Use the value returned in the response as
-     * the value of the NextToken in a subsequent request to retrieve the next set of
+     * <p>If there are additional results, this is the token for the next set of
      * results.</p> <p>The token expires after 5 minutes from the time it is created.
-     * Subsequent requests that use the NextToken must use the same request parameters
-     * as the request that generated the token. </p>
+     * Subsequent requests that use the token must use the same request parameters as
+     * the request that generated the token.</p>
      */
     inline GetCurrentMetricDataResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>A list of <code>CurrentMetricResult</code> objects organized by
-     * <code>Dimensions</code> combining with
-     * <code>CurrentMetricDataCollections</code>.</p> <p> <code>Dimensions</code> is
-     * the resourceId specified in the <code>Filters</code> of the request. </p> <p>
-     * <code>Collections</code> is a list of <code>CurrentMetricData</code> objects
-     * with corresponding values to the <code>CurrentMetrics</code> specified in the
-     * request.</p> <p>If no <code>Grouping</code> is specified in the request,
-     * <code>Collections</code> is a summary for the <code>CurrentMetric</code>
-     * returned.</p>
+     * <p>Information about the real-time metrics.</p>
      */
     inline const Aws::Vector<CurrentMetricResult>& GetMetricResults() const{ return m_metricResults; }
 
     /**
-     * <p>A list of <code>CurrentMetricResult</code> objects organized by
-     * <code>Dimensions</code> combining with
-     * <code>CurrentMetricDataCollections</code>.</p> <p> <code>Dimensions</code> is
-     * the resourceId specified in the <code>Filters</code> of the request. </p> <p>
-     * <code>Collections</code> is a list of <code>CurrentMetricData</code> objects
-     * with corresponding values to the <code>CurrentMetrics</code> specified in the
-     * request.</p> <p>If no <code>Grouping</code> is specified in the request,
-     * <code>Collections</code> is a summary for the <code>CurrentMetric</code>
-     * returned.</p>
+     * <p>Information about the real-time metrics.</p>
      */
     inline void SetMetricResults(const Aws::Vector<CurrentMetricResult>& value) { m_metricResults = value; }
 
     /**
-     * <p>A list of <code>CurrentMetricResult</code> objects organized by
-     * <code>Dimensions</code> combining with
-     * <code>CurrentMetricDataCollections</code>.</p> <p> <code>Dimensions</code> is
-     * the resourceId specified in the <code>Filters</code> of the request. </p> <p>
-     * <code>Collections</code> is a list of <code>CurrentMetricData</code> objects
-     * with corresponding values to the <code>CurrentMetrics</code> specified in the
-     * request.</p> <p>If no <code>Grouping</code> is specified in the request,
-     * <code>Collections</code> is a summary for the <code>CurrentMetric</code>
-     * returned.</p>
+     * <p>Information about the real-time metrics.</p>
      */
     inline void SetMetricResults(Aws::Vector<CurrentMetricResult>&& value) { m_metricResults = std::move(value); }
 
     /**
-     * <p>A list of <code>CurrentMetricResult</code> objects organized by
-     * <code>Dimensions</code> combining with
-     * <code>CurrentMetricDataCollections</code>.</p> <p> <code>Dimensions</code> is
-     * the resourceId specified in the <code>Filters</code> of the request. </p> <p>
-     * <code>Collections</code> is a list of <code>CurrentMetricData</code> objects
-     * with corresponding values to the <code>CurrentMetrics</code> specified in the
-     * request.</p> <p>If no <code>Grouping</code> is specified in the request,
-     * <code>Collections</code> is a summary for the <code>CurrentMetric</code>
-     * returned.</p>
+     * <p>Information about the real-time metrics.</p>
      */
     inline GetCurrentMetricDataResult& WithMetricResults(const Aws::Vector<CurrentMetricResult>& value) { SetMetricResults(value); return *this;}
 
     /**
-     * <p>A list of <code>CurrentMetricResult</code> objects organized by
-     * <code>Dimensions</code> combining with
-     * <code>CurrentMetricDataCollections</code>.</p> <p> <code>Dimensions</code> is
-     * the resourceId specified in the <code>Filters</code> of the request. </p> <p>
-     * <code>Collections</code> is a list of <code>CurrentMetricData</code> objects
-     * with corresponding values to the <code>CurrentMetrics</code> specified in the
-     * request.</p> <p>If no <code>Grouping</code> is specified in the request,
-     * <code>Collections</code> is a summary for the <code>CurrentMetric</code>
-     * returned.</p>
+     * <p>Information about the real-time metrics.</p>
      */
     inline GetCurrentMetricDataResult& WithMetricResults(Aws::Vector<CurrentMetricResult>&& value) { SetMetricResults(std::move(value)); return *this;}
 
     /**
-     * <p>A list of <code>CurrentMetricResult</code> objects organized by
-     * <code>Dimensions</code> combining with
-     * <code>CurrentMetricDataCollections</code>.</p> <p> <code>Dimensions</code> is
-     * the resourceId specified in the <code>Filters</code> of the request. </p> <p>
-     * <code>Collections</code> is a list of <code>CurrentMetricData</code> objects
-     * with corresponding values to the <code>CurrentMetrics</code> specified in the
-     * request.</p> <p>If no <code>Grouping</code> is specified in the request,
-     * <code>Collections</code> is a summary for the <code>CurrentMetric</code>
-     * returned.</p>
+     * <p>Information about the real-time metrics.</p>
      */
     inline GetCurrentMetricDataResult& AddMetricResults(const CurrentMetricResult& value) { m_metricResults.push_back(value); return *this; }
 
     /**
-     * <p>A list of <code>CurrentMetricResult</code> objects organized by
-     * <code>Dimensions</code> combining with
-     * <code>CurrentMetricDataCollections</code>.</p> <p> <code>Dimensions</code> is
-     * the resourceId specified in the <code>Filters</code> of the request. </p> <p>
-     * <code>Collections</code> is a list of <code>CurrentMetricData</code> objects
-     * with corresponding values to the <code>CurrentMetrics</code> specified in the
-     * request.</p> <p>If no <code>Grouping</code> is specified in the request,
-     * <code>Collections</code> is a summary for the <code>CurrentMetric</code>
-     * returned.</p>
+     * <p>Information about the real-time metrics.</p>
      */
     inline GetCurrentMetricDataResult& AddMetricResults(CurrentMetricResult&& value) { m_metricResults.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The time at which <code>CurrentMetricData</code> was retrieved and cached for
-     * pagination.</p>
+     * <p>The time at which the metrics were retrieved and cached for pagination.</p>
      */
     inline const Aws::Utils::DateTime& GetDataSnapshotTime() const{ return m_dataSnapshotTime; }
 
     /**
-     * <p>The time at which <code>CurrentMetricData</code> was retrieved and cached for
-     * pagination.</p>
+     * <p>The time at which the metrics were retrieved and cached for pagination.</p>
      */
     inline void SetDataSnapshotTime(const Aws::Utils::DateTime& value) { m_dataSnapshotTime = value; }
 
     /**
-     * <p>The time at which <code>CurrentMetricData</code> was retrieved and cached for
-     * pagination.</p>
+     * <p>The time at which the metrics were retrieved and cached for pagination.</p>
      */
     inline void SetDataSnapshotTime(Aws::Utils::DateTime&& value) { m_dataSnapshotTime = std::move(value); }
 
     /**
-     * <p>The time at which <code>CurrentMetricData</code> was retrieved and cached for
-     * pagination.</p>
+     * <p>The time at which the metrics were retrieved and cached for pagination.</p>
      */
     inline GetCurrentMetricDataResult& WithDataSnapshotTime(const Aws::Utils::DateTime& value) { SetDataSnapshotTime(value); return *this;}
 
     /**
-     * <p>The time at which <code>CurrentMetricData</code> was retrieved and cached for
-     * pagination.</p>
+     * <p>The time at which the metrics were retrieved and cached for pagination.</p>
      */
     inline GetCurrentMetricDataResult& WithDataSnapshotTime(Aws::Utils::DateTime&& value) { SetDataSnapshotTime(std::move(value)); return *this;}
 

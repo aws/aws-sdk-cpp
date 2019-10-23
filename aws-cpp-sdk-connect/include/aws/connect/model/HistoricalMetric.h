@@ -37,8 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>A <code>HistoricalMetric</code> object that contains the Name, Unit,
-   * Statistic, and Threshold for the metric.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about a historical metric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/HistoricalMetric">AWS
    * API Reference</a></p>
    */
@@ -52,32 +51,32 @@ namespace Model
 
 
     /**
-     * <p>The name of the historical metric.</p>
+     * <p>The name of the metric.</p>
      */
     inline const HistoricalMetricName& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the historical metric.</p>
+     * <p>The name of the metric.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the historical metric.</p>
+     * <p>The name of the metric.</p>
      */
     inline void SetName(const HistoricalMetricName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the historical metric.</p>
+     * <p>The name of the metric.</p>
      */
     inline void SetName(HistoricalMetricName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the historical metric.</p>
+     * <p>The name of the metric.</p>
      */
     inline HistoricalMetric& WithName(const HistoricalMetricName& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the historical metric.</p>
+     * <p>The name of the metric.</p>
      */
     inline HistoricalMetric& WithName(HistoricalMetricName&& value) { SetName(std::move(value)); return *this;}
 

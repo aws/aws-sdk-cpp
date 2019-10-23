@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>A <code>CurrentMetricData</code> object.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the data for a real-time metric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CurrentMetricData">AWS
    * API Reference</a></p>
    */
@@ -48,53 +48,53 @@ namespace Model
 
 
     /**
-     * <p>The metric in a <code>CurrentMetricData</code> object.</p>
+     * <p>Information about the metric.</p>
      */
     inline const CurrentMetric& GetMetric() const{ return m_metric; }
 
     /**
-     * <p>The metric in a <code>CurrentMetricData</code> object.</p>
+     * <p>Information about the metric.</p>
      */
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
 
     /**
-     * <p>The metric in a <code>CurrentMetricData</code> object.</p>
+     * <p>Information about the metric.</p>
      */
     inline void SetMetric(const CurrentMetric& value) { m_metricHasBeenSet = true; m_metric = value; }
 
     /**
-     * <p>The metric in a <code>CurrentMetricData</code> object.</p>
+     * <p>Information about the metric.</p>
      */
     inline void SetMetric(CurrentMetric&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
 
     /**
-     * <p>The metric in a <code>CurrentMetricData</code> object.</p>
+     * <p>Information about the metric.</p>
      */
     inline CurrentMetricData& WithMetric(const CurrentMetric& value) { SetMetric(value); return *this;}
 
     /**
-     * <p>The metric in a <code>CurrentMetricData</code> object.</p>
+     * <p>Information about the metric.</p>
      */
     inline CurrentMetricData& WithMetric(CurrentMetric&& value) { SetMetric(std::move(value)); return *this;}
 
 
     /**
-     * <p>The value of the metric in the CurrentMetricData object.</p>
+     * <p>The value of the metric.</p>
      */
     inline double GetValue() const{ return m_value; }
 
     /**
-     * <p>The value of the metric in the CurrentMetricData object.</p>
+     * <p>The value of the metric.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The value of the metric in the CurrentMetricData object.</p>
+     * <p>The value of the metric.</p>
      */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The value of the metric in the CurrentMetricData object.</p>
+     * <p>The value of the metric.</p>
      */
     inline CurrentMetricData& WithValue(double value) { SetValue(value); return *this;}
 

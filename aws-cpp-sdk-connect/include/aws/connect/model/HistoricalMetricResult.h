@@ -36,8 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>The metrics data returned from a <code>GetMetricData</code>
-   * operation.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about the historical metrics retrieved.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/HistoricalMetricResult">AWS
    * API Reference</a></p>
    */
@@ -51,73 +51,73 @@ namespace Model
 
 
     /**
-     * <p>The <code>Dimensions</code> for the metrics.</p>
+     * <p>The dimension for the metrics.</p>
      */
     inline const Dimensions& GetDimensions() const{ return m_dimensions; }
 
     /**
-     * <p>The <code>Dimensions</code> for the metrics.</p>
+     * <p>The dimension for the metrics.</p>
      */
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
 
     /**
-     * <p>The <code>Dimensions</code> for the metrics.</p>
+     * <p>The dimension for the metrics.</p>
      */
     inline void SetDimensions(const Dimensions& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * <p>The <code>Dimensions</code> for the metrics.</p>
+     * <p>The dimension for the metrics.</p>
      */
     inline void SetDimensions(Dimensions&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
 
     /**
-     * <p>The <code>Dimensions</code> for the metrics.</p>
+     * <p>The dimension for the metrics.</p>
      */
     inline HistoricalMetricResult& WithDimensions(const Dimensions& value) { SetDimensions(value); return *this;}
 
     /**
-     * <p>The <code>Dimensions</code> for the metrics.</p>
+     * <p>The dimension for the metrics.</p>
      */
     inline HistoricalMetricResult& WithDimensions(Dimensions&& value) { SetDimensions(std::move(value)); return *this;}
 
 
     /**
-     * <p>A list of <code>HistoricalMetricData</code> objects.</p>
+     * <p>The set of metrics.</p>
      */
     inline const Aws::Vector<HistoricalMetricData>& GetCollections() const{ return m_collections; }
 
     /**
-     * <p>A list of <code>HistoricalMetricData</code> objects.</p>
+     * <p>The set of metrics.</p>
      */
     inline bool CollectionsHasBeenSet() const { return m_collectionsHasBeenSet; }
 
     /**
-     * <p>A list of <code>HistoricalMetricData</code> objects.</p>
+     * <p>The set of metrics.</p>
      */
     inline void SetCollections(const Aws::Vector<HistoricalMetricData>& value) { m_collectionsHasBeenSet = true; m_collections = value; }
 
     /**
-     * <p>A list of <code>HistoricalMetricData</code> objects.</p>
+     * <p>The set of metrics.</p>
      */
     inline void SetCollections(Aws::Vector<HistoricalMetricData>&& value) { m_collectionsHasBeenSet = true; m_collections = std::move(value); }
 
     /**
-     * <p>A list of <code>HistoricalMetricData</code> objects.</p>
+     * <p>The set of metrics.</p>
      */
     inline HistoricalMetricResult& WithCollections(const Aws::Vector<HistoricalMetricData>& value) { SetCollections(value); return *this;}
 
     /**
-     * <p>A list of <code>HistoricalMetricData</code> objects.</p>
+     * <p>The set of metrics.</p>
      */
     inline HistoricalMetricResult& WithCollections(Aws::Vector<HistoricalMetricData>&& value) { SetCollections(std::move(value)); return *this;}
 
     /**
-     * <p>A list of <code>HistoricalMetricData</code> objects.</p>
+     * <p>The set of metrics.</p>
      */
     inline HistoricalMetricResult& AddCollections(const HistoricalMetricData& value) { m_collectionsHasBeenSet = true; m_collections.push_back(value); return *this; }
 
     /**
-     * <p>A list of <code>HistoricalMetricData</code> objects.</p>
+     * <p>The set of metrics.</p>
      */
     inline HistoricalMetricResult& AddCollections(HistoricalMetricData&& value) { m_collectionsHasBeenSet = true; m_collections.push_back(std::move(value)); return *this; }
 

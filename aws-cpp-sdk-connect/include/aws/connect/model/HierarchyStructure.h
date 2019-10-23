@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>A <code>HierarchyStructure</code> object that contains information about the
-   * hierarchy group structure.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about a hierarchy structure.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/HierarchyStructure">AWS
    * API Reference</a></p>
    */
@@ -49,186 +49,156 @@ namespace Model
 
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level one.</p>
      */
     inline const HierarchyLevel& GetLevelOne() const{ return m_levelOne; }
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level one.</p>
      */
     inline bool LevelOneHasBeenSet() const { return m_levelOneHasBeenSet; }
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level one.</p>
      */
     inline void SetLevelOne(const HierarchyLevel& value) { m_levelOneHasBeenSet = true; m_levelOne = value; }
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level one.</p>
      */
     inline void SetLevelOne(HierarchyLevel&& value) { m_levelOneHasBeenSet = true; m_levelOne = std::move(value); }
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level one.</p>
      */
     inline HierarchyStructure& WithLevelOne(const HierarchyLevel& value) { SetLevelOne(value); return *this;}
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level one.</p>
      */
     inline HierarchyStructure& WithLevelOne(HierarchyLevel&& value) { SetLevelOne(std::move(value)); return *this;}
 
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level two.</p>
      */
     inline const HierarchyLevel& GetLevelTwo() const{ return m_levelTwo; }
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level two.</p>
      */
     inline bool LevelTwoHasBeenSet() const { return m_levelTwoHasBeenSet; }
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level two.</p>
      */
     inline void SetLevelTwo(const HierarchyLevel& value) { m_levelTwoHasBeenSet = true; m_levelTwo = value; }
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level two.</p>
      */
     inline void SetLevelTwo(HierarchyLevel&& value) { m_levelTwoHasBeenSet = true; m_levelTwo = std::move(value); }
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level two.</p>
      */
     inline HierarchyStructure& WithLevelTwo(const HierarchyLevel& value) { SetLevelTwo(value); return *this;}
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level two.</p>
      */
     inline HierarchyStructure& WithLevelTwo(HierarchyLevel&& value) { SetLevelTwo(std::move(value)); return *this;}
 
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level three.</p>
      */
     inline const HierarchyLevel& GetLevelThree() const{ return m_levelThree; }
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level three.</p>
      */
     inline bool LevelThreeHasBeenSet() const { return m_levelThreeHasBeenSet; }
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level three.</p>
      */
     inline void SetLevelThree(const HierarchyLevel& value) { m_levelThreeHasBeenSet = true; m_levelThree = value; }
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level three.</p>
      */
     inline void SetLevelThree(HierarchyLevel&& value) { m_levelThreeHasBeenSet = true; m_levelThree = std::move(value); }
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level three.</p>
      */
     inline HierarchyStructure& WithLevelThree(const HierarchyLevel& value) { SetLevelThree(value); return *this;}
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level three.</p>
      */
     inline HierarchyStructure& WithLevelThree(HierarchyLevel&& value) { SetLevelThree(std::move(value)); return *this;}
 
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level four.</p>
      */
     inline const HierarchyLevel& GetLevelFour() const{ return m_levelFour; }
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level four.</p>
      */
     inline bool LevelFourHasBeenSet() const { return m_levelFourHasBeenSet; }
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level four.</p>
      */
     inline void SetLevelFour(const HierarchyLevel& value) { m_levelFourHasBeenSet = true; m_levelFour = value; }
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level four.</p>
      */
     inline void SetLevelFour(HierarchyLevel&& value) { m_levelFourHasBeenSet = true; m_levelFour = std::move(value); }
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level four.</p>
      */
     inline HierarchyStructure& WithLevelFour(const HierarchyLevel& value) { SetLevelFour(value); return *this;}
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level four.</p>
      */
     inline HierarchyStructure& WithLevelFour(HierarchyLevel&& value) { SetLevelFour(std::move(value)); return *this;}
 
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level five.</p>
      */
     inline const HierarchyLevel& GetLevelFive() const{ return m_levelFive; }
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level five.</p>
      */
     inline bool LevelFiveHasBeenSet() const { return m_levelFiveHasBeenSet; }
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level five.</p>
      */
     inline void SetLevelFive(const HierarchyLevel& value) { m_levelFiveHasBeenSet = true; m_levelFive = value; }
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level five.</p>
      */
     inline void SetLevelFive(HierarchyLevel&& value) { m_levelFiveHasBeenSet = true; m_levelFive = std::move(value); }
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level five.</p>
      */
     inline HierarchyStructure& WithLevelFive(const HierarchyLevel& value) { SetLevelFive(value); return *this;}
 
     /**
-     * <p>A <code>HierarchyLevel</code> object that contains information about the
-     * hierarchy group level.</p>
+     * <p>Information about level five.</p>
      */
     inline HierarchyStructure& WithLevelFive(HierarchyLevel&& value) { SetLevelFive(std::move(value)); return *this;}
 

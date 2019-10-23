@@ -44,62 +44,62 @@ namespace Model
 
 
     /**
-     * <p>The attributes to update.</p>
+     * <p>Information about the attributes.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>The attributes to update.</p>
+     * <p>Information about the attributes.</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributes = value; }
 
     /**
-     * <p>The attributes to update.</p>
+     * <p>Information about the attributes.</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributes = std::move(value); }
 
     /**
-     * <p>The attributes to update.</p>
+     * <p>Information about the attributes.</p>
      */
     inline GetContactAttributesResult& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>The attributes to update.</p>
+     * <p>Information about the attributes.</p>
      */
     inline GetContactAttributesResult& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>The attributes to update.</p>
+     * <p>Information about the attributes.</p>
      */
     inline GetContactAttributesResult& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributes.emplace(key, value); return *this; }
 
     /**
-     * <p>The attributes to update.</p>
+     * <p>Information about the attributes.</p>
      */
     inline GetContactAttributesResult& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The attributes to update.</p>
+     * <p>Information about the attributes.</p>
      */
     inline GetContactAttributesResult& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The attributes to update.</p>
+     * <p>Information about the attributes.</p>
      */
     inline GetContactAttributesResult& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The attributes to update.</p>
+     * <p>Information about the attributes.</p>
      */
     inline GetContactAttributesResult& AddAttributes(const char* key, Aws::String&& value) { m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The attributes to update.</p>
+     * <p>Information about the attributes.</p>
      */
     inline GetContactAttributesResult& AddAttributes(Aws::String&& key, const char* value) { m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The attributes to update.</p>
+     * <p>Information about the attributes.</p>
      */
     inline GetContactAttributesResult& AddAttributes(const char* key, const char* value) { m_attributes.emplace(key, value); return *this; }
 

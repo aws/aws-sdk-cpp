@@ -35,8 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>A <code>CurrentMetric</code> object that contains the Name and Unit for the
-   * metric.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about a real-time metric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CurrentMetric">AWS
    * API Reference</a></p>
    */
