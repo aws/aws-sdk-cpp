@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the status of a service mesh.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>An object that represents the status of a service mesh.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/MeshStatus">AWS
    * API Reference</a></p>
    */

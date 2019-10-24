@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the DNS service discovery information for your
+   * <p>An object that represents the DNS service discovery information for your
    * virtual
          node.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DnsServiceDiscovery">AWS

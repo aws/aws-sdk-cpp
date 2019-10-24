@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the service discovery information for a virtual
+   * <p>An object that represents the service discovery information for a virtual
    * node.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ServiceDiscovery">AWS
    * API Reference</a></p>

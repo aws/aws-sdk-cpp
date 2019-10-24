@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the egress filter rules for a service
+   * <p>An object that represents the egress filter rules for a service
    * mesh.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/EgressFilter">AWS
    * API Reference</a></p>

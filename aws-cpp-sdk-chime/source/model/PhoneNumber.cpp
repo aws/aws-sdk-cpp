@@ -39,6 +39,9 @@ PhoneNumber::PhoneNumber() :
     m_statusHasBeenSet(false),
     m_capabilitiesHasBeenSet(false),
     m_associationsHasBeenSet(false),
+    m_callingNameHasBeenSet(false),
+    m_callingNameStatus(CallingNameStatus::NOT_SET),
+    m_callingNameStatusHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
     m_updatedTimestampHasBeenSet(false),
     m_deletionTimestampHasBeenSet(false)
@@ -56,6 +59,9 @@ PhoneNumber::PhoneNumber(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_capabilitiesHasBeenSet(false),
     m_associationsHasBeenSet(false),
+    m_callingNameHasBeenSet(false),
+    m_callingNameStatus(CallingNameStatus::NOT_SET),
+    m_callingNameStatusHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
     m_updatedTimestampHasBeenSet(false),
     m_deletionTimestampHasBeenSet(false)
@@ -115,6 +121,20 @@ PhoneNumber& PhoneNumber::operator =(JsonView jsonValue)
       m_associations.push_back(associationsJsonList[associationsIndex].AsObject());
     }
     m_associationsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CallingName"))
+  {
+    m_callingName = jsonValue.GetString("CallingName");
+
+    m_callingNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CallingNameStatus"))
+  {
+    m_callingNameStatus = CallingNameStatusMapper::GetCallingNameStatusForName(jsonValue.GetString("CallingNameStatus"));
+
+    m_callingNameStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreatedTimestamp"))
@@ -187,6 +207,17 @@ JsonValue PhoneNumber::Jsonize() const
    }
    payload.WithArray("Associations", std::move(associationsJsonList));
 
+  }
+
+  if(m_callingNameHasBeenSet)
+  {
+   payload.WithString("CallingName", m_callingName);
+
+  }
+
+  if(m_callingNameStatusHasBeenSet)
+  {
+   payload.WithString("CallingNameStatus", CallingNameStatusMapper::GetNameForCallingNameStatus(m_callingNameStatus));
   }
 
   if(m_createdTimestampHasBeenSet)

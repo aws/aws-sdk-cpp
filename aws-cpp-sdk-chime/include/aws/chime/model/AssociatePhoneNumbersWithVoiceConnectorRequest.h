@@ -129,6 +129,35 @@ namespace Model
      */
     inline AssociatePhoneNumbersWithVoiceConnectorRequest& AddE164PhoneNumbers(const char* value) { m_e164PhoneNumbersHasBeenSet = true; m_e164PhoneNumbers.push_back(value); return *this; }
 
+
+    /**
+     * <p>If true, associates the provided phone numbers with the provided Amazon Chime
+     * Voice Connector and removes any previously existing associations. If false, does
+     * not associate any phone numbers that have previously existing associations.</p>
+     */
+    inline bool GetForceAssociate() const{ return m_forceAssociate; }
+
+    /**
+     * <p>If true, associates the provided phone numbers with the provided Amazon Chime
+     * Voice Connector and removes any previously existing associations. If false, does
+     * not associate any phone numbers that have previously existing associations.</p>
+     */
+    inline bool ForceAssociateHasBeenSet() const { return m_forceAssociateHasBeenSet; }
+
+    /**
+     * <p>If true, associates the provided phone numbers with the provided Amazon Chime
+     * Voice Connector and removes any previously existing associations. If false, does
+     * not associate any phone numbers that have previously existing associations.</p>
+     */
+    inline void SetForceAssociate(bool value) { m_forceAssociateHasBeenSet = true; m_forceAssociate = value; }
+
+    /**
+     * <p>If true, associates the provided phone numbers with the provided Amazon Chime
+     * Voice Connector and removes any previously existing associations. If false, does
+     * not associate any phone numbers that have previously existing associations.</p>
+     */
+    inline AssociatePhoneNumbersWithVoiceConnectorRequest& WithForceAssociate(bool value) { SetForceAssociate(value); return *this;}
+
   private:
 
     Aws::String m_voiceConnectorId;
@@ -136,6 +165,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_e164PhoneNumbers;
     bool m_e164PhoneNumbersHasBeenSet;
+
+    bool m_forceAssociate;
+    bool m_forceAssociateHasBeenSet;
   };
 
 } // namespace Model

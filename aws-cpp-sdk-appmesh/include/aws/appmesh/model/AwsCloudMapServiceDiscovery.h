@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the AWS Cloud Map service discovery information for
+   * <p>An object that represents the AWS Cloud Map service discovery information for
    * your virtual
          node.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/AwsCloudMapServiceDiscovery">AWS

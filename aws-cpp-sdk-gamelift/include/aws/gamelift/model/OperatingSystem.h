@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     WINDOWS_2012,
-    AMAZON_LINUX
+    AMAZON_LINUX,
+    AMAZON_LINUX_2
   };
 
 namespace OperatingSystemMapper

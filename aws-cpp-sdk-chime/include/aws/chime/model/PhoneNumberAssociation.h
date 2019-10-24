@@ -37,7 +37,8 @@ namespace Model
 
   /**
    * <p>The phone number associations, such as Amazon Chime account ID, Amazon Chime
-   * user ID, or Amazon Chime Voice Connector ID.</p><p><h3>See Also:</h3>   <a
+   * user ID, Amazon Chime Voice Connector ID, or Amazon Chime Voice Connector group
+   * ID.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PhoneNumberAssociation">AWS
    * API Reference</a></p>
    */
@@ -92,38 +93,38 @@ namespace Model
 
 
     /**
-     * <p>Defines the association with an Amazon Chime account ID, user ID, or Amazon
-     * Chime Voice Connector ID.</p>
+     * <p>Defines the association with an Amazon Chime account ID, user ID, Amazon
+     * Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.</p>
      */
     inline const PhoneNumberAssociationName& GetName() const{ return m_name; }
 
     /**
-     * <p>Defines the association with an Amazon Chime account ID, user ID, or Amazon
-     * Chime Voice Connector ID.</p>
+     * <p>Defines the association with an Amazon Chime account ID, user ID, Amazon
+     * Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Defines the association with an Amazon Chime account ID, user ID, or Amazon
-     * Chime Voice Connector ID.</p>
+     * <p>Defines the association with an Amazon Chime account ID, user ID, Amazon
+     * Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.</p>
      */
     inline void SetName(const PhoneNumberAssociationName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Defines the association with an Amazon Chime account ID, user ID, or Amazon
-     * Chime Voice Connector ID.</p>
+     * <p>Defines the association with an Amazon Chime account ID, user ID, Amazon
+     * Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.</p>
      */
     inline void SetName(PhoneNumberAssociationName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Defines the association with an Amazon Chime account ID, user ID, or Amazon
-     * Chime Voice Connector ID.</p>
+     * <p>Defines the association with an Amazon Chime account ID, user ID, Amazon
+     * Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.</p>
      */
     inline PhoneNumberAssociation& WithName(const PhoneNumberAssociationName& value) { SetName(value); return *this;}
 
     /**
-     * <p>Defines the association with an Amazon Chime account ID, user ID, or Amazon
-     * Chime Voice Connector ID.</p>
+     * <p>Defines the association with an Amazon Chime account ID, user ID, Amazon
+     * Chime Voice Connector ID, or Amazon Chime Voice Connector group ID.</p>
      */
     inline PhoneNumberAssociation& WithName(PhoneNumberAssociationName&& value) { SetName(std::move(value)); return *this;}
 

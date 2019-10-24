@@ -30,6 +30,8 @@ namespace Model
 
 VoiceConnector::VoiceConnector() : 
     m_voiceConnectorIdHasBeenSet(false),
+    m_awsRegion(VoiceConnectorAwsRegion::NOT_SET),
+    m_awsRegionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_outboundHostNameHasBeenSet(false),
     m_requireEncryption(false),
@@ -41,6 +43,8 @@ VoiceConnector::VoiceConnector() :
 
 VoiceConnector::VoiceConnector(JsonView jsonValue) : 
     m_voiceConnectorIdHasBeenSet(false),
+    m_awsRegion(VoiceConnectorAwsRegion::NOT_SET),
+    m_awsRegionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_outboundHostNameHasBeenSet(false),
     m_requireEncryption(false),
@@ -58,6 +62,13 @@ VoiceConnector& VoiceConnector::operator =(JsonView jsonValue)
     m_voiceConnectorId = jsonValue.GetString("VoiceConnectorId");
 
     m_voiceConnectorIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsRegion"))
+  {
+    m_awsRegion = VoiceConnectorAwsRegionMapper::GetVoiceConnectorAwsRegionForName(jsonValue.GetString("AwsRegion"));
+
+    m_awsRegionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Name"))
@@ -106,6 +117,11 @@ JsonValue VoiceConnector::Jsonize() const
   {
    payload.WithString("VoiceConnectorId", m_voiceConnectorId);
 
+  }
+
+  if(m_awsRegionHasBeenSet)
+  {
+   payload.WithString("AwsRegion", VoiceConnectorAwsRegionMapper::GetNameForVoiceConnectorAwsRegion(m_awsRegion));
   }
 
   if(m_nameHasBeenSet)

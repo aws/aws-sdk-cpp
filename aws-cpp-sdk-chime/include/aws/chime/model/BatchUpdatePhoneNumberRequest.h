@@ -44,42 +44,50 @@ namespace Model
 
 
     /**
-     * <p>The request containing the phone number IDs and product types to update.</p>
+     * <p>The request containing the phone number IDs and product types or calling
+     * names to update.</p>
      */
     inline const Aws::Vector<UpdatePhoneNumberRequestItem>& GetUpdatePhoneNumberRequestItems() const{ return m_updatePhoneNumberRequestItems; }
 
     /**
-     * <p>The request containing the phone number IDs and product types to update.</p>
+     * <p>The request containing the phone number IDs and product types or calling
+     * names to update.</p>
      */
     inline bool UpdatePhoneNumberRequestItemsHasBeenSet() const { return m_updatePhoneNumberRequestItemsHasBeenSet; }
 
     /**
-     * <p>The request containing the phone number IDs and product types to update.</p>
+     * <p>The request containing the phone number IDs and product types or calling
+     * names to update.</p>
      */
     inline void SetUpdatePhoneNumberRequestItems(const Aws::Vector<UpdatePhoneNumberRequestItem>& value) { m_updatePhoneNumberRequestItemsHasBeenSet = true; m_updatePhoneNumberRequestItems = value; }
 
     /**
-     * <p>The request containing the phone number IDs and product types to update.</p>
+     * <p>The request containing the phone number IDs and product types or calling
+     * names to update.</p>
      */
     inline void SetUpdatePhoneNumberRequestItems(Aws::Vector<UpdatePhoneNumberRequestItem>&& value) { m_updatePhoneNumberRequestItemsHasBeenSet = true; m_updatePhoneNumberRequestItems = std::move(value); }
 
     /**
-     * <p>The request containing the phone number IDs and product types to update.</p>
+     * <p>The request containing the phone number IDs and product types or calling
+     * names to update.</p>
      */
     inline BatchUpdatePhoneNumberRequest& WithUpdatePhoneNumberRequestItems(const Aws::Vector<UpdatePhoneNumberRequestItem>& value) { SetUpdatePhoneNumberRequestItems(value); return *this;}
 
     /**
-     * <p>The request containing the phone number IDs and product types to update.</p>
+     * <p>The request containing the phone number IDs and product types or calling
+     * names to update.</p>
      */
     inline BatchUpdatePhoneNumberRequest& WithUpdatePhoneNumberRequestItems(Aws::Vector<UpdatePhoneNumberRequestItem>&& value) { SetUpdatePhoneNumberRequestItems(std::move(value)); return *this;}
 
     /**
-     * <p>The request containing the phone number IDs and product types to update.</p>
+     * <p>The request containing the phone number IDs and product types or calling
+     * names to update.</p>
      */
     inline BatchUpdatePhoneNumberRequest& AddUpdatePhoneNumberRequestItems(const UpdatePhoneNumberRequestItem& value) { m_updatePhoneNumberRequestItemsHasBeenSet = true; m_updatePhoneNumberRequestItems.push_back(value); return *this; }
 
     /**
-     * <p>The request containing the phone number IDs and product types to update.</p>
+     * <p>The request containing the phone number IDs and product types or calling
+     * names to update.</p>
      */
     inline BatchUpdatePhoneNumberRequest& AddUpdatePhoneNumberRequestItems(UpdatePhoneNumberRequestItem&& value) { m_updatePhoneNumberRequestItemsHasBeenSet = true; m_updatePhoneNumberRequestItems.push_back(std::move(value)); return *this; }
 

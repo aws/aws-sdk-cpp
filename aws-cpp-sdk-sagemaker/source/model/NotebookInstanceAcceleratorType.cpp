@@ -33,6 +33,9 @@ namespace Aws
         static const int ml_eia1_medium_HASH = HashingUtils::HashString("ml.eia1.medium");
         static const int ml_eia1_large_HASH = HashingUtils::HashString("ml.eia1.large");
         static const int ml_eia1_xlarge_HASH = HashingUtils::HashString("ml.eia1.xlarge");
+        static const int ml_eia2_medium_HASH = HashingUtils::HashString("ml.eia2.medium");
+        static const int ml_eia2_large_HASH = HashingUtils::HashString("ml.eia2.large");
+        static const int ml_eia2_xlarge_HASH = HashingUtils::HashString("ml.eia2.xlarge");
 
 
         NotebookInstanceAcceleratorType GetNotebookInstanceAcceleratorTypeForName(const Aws::String& name)
@@ -49,6 +52,18 @@ namespace Aws
           else if (hashCode == ml_eia1_xlarge_HASH)
           {
             return NotebookInstanceAcceleratorType::ml_eia1_xlarge;
+          }
+          else if (hashCode == ml_eia2_medium_HASH)
+          {
+            return NotebookInstanceAcceleratorType::ml_eia2_medium;
+          }
+          else if (hashCode == ml_eia2_large_HASH)
+          {
+            return NotebookInstanceAcceleratorType::ml_eia2_large;
+          }
+          else if (hashCode == ml_eia2_xlarge_HASH)
+          {
+            return NotebookInstanceAcceleratorType::ml_eia2_xlarge;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +85,12 @@ namespace Aws
             return "ml.eia1.large";
           case NotebookInstanceAcceleratorType::ml_eia1_xlarge:
             return "ml.eia1.xlarge";
+          case NotebookInstanceAcceleratorType::ml_eia2_medium:
+            return "ml.eia2.medium";
+          case NotebookInstanceAcceleratorType::ml_eia2_large:
+            return "ml.eia2.large";
+          case NotebookInstanceAcceleratorType::ml_eia2_xlarge:
+            return "ml.eia2.xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

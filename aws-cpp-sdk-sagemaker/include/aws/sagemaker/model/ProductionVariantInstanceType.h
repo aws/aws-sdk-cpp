@@ -41,6 +41,12 @@ namespace Model
     ml_m5_4xlarge,
     ml_m5_12xlarge,
     ml_m5_24xlarge,
+    ml_m5d_large,
+    ml_m5d_xlarge,
+    ml_m5d_2xlarge,
+    ml_m5d_4xlarge,
+    ml_m5d_12xlarge,
+    ml_m5d_24xlarge,
     ml_c4_large,
     ml_c4_xlarge,
     ml_c4_2xlarge,
@@ -58,6 +64,12 @@ namespace Model
     ml_c5_4xlarge,
     ml_c5_9xlarge,
     ml_c5_18xlarge,
+    ml_c5d_large,
+    ml_c5d_xlarge,
+    ml_c5d_2xlarge,
+    ml_c5d_4xlarge,
+    ml_c5d_9xlarge,
+    ml_c5d_18xlarge,
     ml_g4dn_xlarge,
     ml_g4dn_2xlarge,
     ml_g4dn_4xlarge,
@@ -69,7 +81,13 @@ namespace Model
     ml_r5_2xlarge,
     ml_r5_4xlarge,
     ml_r5_12xlarge,
-    ml_r5_24xlarge
+    ml_r5_24xlarge,
+    ml_r5d_large,
+    ml_r5d_xlarge,
+    ml_r5d_2xlarge,
+    ml_r5d_4xlarge,
+    ml_r5d_12xlarge,
+    ml_r5d_24xlarge
   };
 
 namespace ProductionVariantInstanceTypeMapper

@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the HTTP header in the request.</p><p><h3>See
+   * <p>An object that represents the HTTP header in the request.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpRouteHeader">AWS
    * API Reference</a></p>
@@ -50,30 +50,26 @@ namespace Model
 
 
     /**
-     * <p>Specify <code>True</code> to match the opposite of the
-     * <code>HeaderMatchMethod</code> method and value. The default value is
-     * <code>False</code>.</p>
+     * <p>Specify <code>True</code> to match anything except the match criteria. The
+     * default value is <code>False</code>.</p>
      */
     inline bool GetInvert() const{ return m_invert; }
 
     /**
-     * <p>Specify <code>True</code> to match the opposite of the
-     * <code>HeaderMatchMethod</code> method and value. The default value is
-     * <code>False</code>.</p>
+     * <p>Specify <code>True</code> to match anything except the match criteria. The
+     * default value is <code>False</code>.</p>
      */
     inline bool InvertHasBeenSet() const { return m_invertHasBeenSet; }
 
     /**
-     * <p>Specify <code>True</code> to match the opposite of the
-     * <code>HeaderMatchMethod</code> method and value. The default value is
-     * <code>False</code>.</p>
+     * <p>Specify <code>True</code> to match anything except the match criteria. The
+     * default value is <code>False</code>.</p>
      */
     inline void SetInvert(bool value) { m_invertHasBeenSet = true; m_invert = value; }
 
     /**
-     * <p>Specify <code>True</code> to match the opposite of the
-     * <code>HeaderMatchMethod</code> method and value. The default value is
-     * <code>False</code>.</p>
+     * <p>Specify <code>True</code> to match anything except the match criteria. The
+     * default value is <code>False</code>.</p>
      */
     inline HttpRouteHeader& WithInvert(bool value) { SetInvert(value); return *this;}
 

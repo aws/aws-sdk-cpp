@@ -21,6 +21,7 @@
 #include <aws/chime/model/PhoneNumberStatus.h>
 #include <aws/chime/model/PhoneNumberCapabilities.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/chime/model/CallingNameStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/chime/model/PhoneNumberAssociation.h>
 #include <utility>
@@ -303,6 +304,78 @@ namespace Model
 
 
     /**
+     * <p>The outbound calling name associated with the phone number.</p>
+     */
+    inline const Aws::String& GetCallingName() const{ return m_callingName; }
+
+    /**
+     * <p>The outbound calling name associated with the phone number.</p>
+     */
+    inline bool CallingNameHasBeenSet() const { return m_callingNameHasBeenSet; }
+
+    /**
+     * <p>The outbound calling name associated with the phone number.</p>
+     */
+    inline void SetCallingName(const Aws::String& value) { m_callingNameHasBeenSet = true; m_callingName = value; }
+
+    /**
+     * <p>The outbound calling name associated with the phone number.</p>
+     */
+    inline void SetCallingName(Aws::String&& value) { m_callingNameHasBeenSet = true; m_callingName = std::move(value); }
+
+    /**
+     * <p>The outbound calling name associated with the phone number.</p>
+     */
+    inline void SetCallingName(const char* value) { m_callingNameHasBeenSet = true; m_callingName.assign(value); }
+
+    /**
+     * <p>The outbound calling name associated with the phone number.</p>
+     */
+    inline PhoneNumber& WithCallingName(const Aws::String& value) { SetCallingName(value); return *this;}
+
+    /**
+     * <p>The outbound calling name associated with the phone number.</p>
+     */
+    inline PhoneNumber& WithCallingName(Aws::String&& value) { SetCallingName(std::move(value)); return *this;}
+
+    /**
+     * <p>The outbound calling name associated with the phone number.</p>
+     */
+    inline PhoneNumber& WithCallingName(const char* value) { SetCallingName(value); return *this;}
+
+
+    /**
+     * <p>The outbound calling name status.</p>
+     */
+    inline const CallingNameStatus& GetCallingNameStatus() const{ return m_callingNameStatus; }
+
+    /**
+     * <p>The outbound calling name status.</p>
+     */
+    inline bool CallingNameStatusHasBeenSet() const { return m_callingNameStatusHasBeenSet; }
+
+    /**
+     * <p>The outbound calling name status.</p>
+     */
+    inline void SetCallingNameStatus(const CallingNameStatus& value) { m_callingNameStatusHasBeenSet = true; m_callingNameStatus = value; }
+
+    /**
+     * <p>The outbound calling name status.</p>
+     */
+    inline void SetCallingNameStatus(CallingNameStatus&& value) { m_callingNameStatusHasBeenSet = true; m_callingNameStatus = std::move(value); }
+
+    /**
+     * <p>The outbound calling name status.</p>
+     */
+    inline PhoneNumber& WithCallingNameStatus(const CallingNameStatus& value) { SetCallingNameStatus(value); return *this;}
+
+    /**
+     * <p>The outbound calling name status.</p>
+     */
+    inline PhoneNumber& WithCallingNameStatus(CallingNameStatus&& value) { SetCallingNameStatus(std::move(value)); return *this;}
+
+
+    /**
      * <p>The phone number creation timestamp, in ISO 8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
@@ -416,6 +489,12 @@ namespace Model
 
     Aws::Vector<PhoneNumberAssociation> m_associations;
     bool m_associationsHasBeenSet;
+
+    Aws::String m_callingName;
+    bool m_callingNameHasBeenSet;
+
+    CallingNameStatus m_callingNameStatus;
+    bool m_callingNameStatusHasBeenSet;
 
     Aws::Utils::DateTime m_createdTimestamp;
     bool m_createdTimestampHasBeenSet;

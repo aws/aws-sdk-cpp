@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 
 AssociatePhoneNumbersWithVoiceConnectorRequest::AssociatePhoneNumbersWithVoiceConnectorRequest() : 
     m_voiceConnectorIdHasBeenSet(false),
-    m_e164PhoneNumbersHasBeenSet(false)
+    m_e164PhoneNumbersHasBeenSet(false),
+    m_forceAssociate(false),
+    m_forceAssociateHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,12 @@ Aws::String AssociatePhoneNumbersWithVoiceConnectorRequest::SerializePayload() c
      e164PhoneNumbersJsonList[e164PhoneNumbersIndex].AsString(m_e164PhoneNumbers[e164PhoneNumbersIndex]);
    }
    payload.WithArray("E164PhoneNumbers", std::move(e164PhoneNumbersJsonList));
+
+  }
+
+  if(m_forceAssociateHasBeenSet)
+  {
+   payload.WithBool("ForceAssociate", m_forceAssociate);
 
   }
 

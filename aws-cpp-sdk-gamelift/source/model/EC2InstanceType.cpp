@@ -44,6 +44,14 @@ namespace Aws
         static const int c4_2xlarge_HASH = HashingUtils::HashString("c4.2xlarge");
         static const int c4_4xlarge_HASH = HashingUtils::HashString("c4.4xlarge");
         static const int c4_8xlarge_HASH = HashingUtils::HashString("c4.8xlarge");
+        static const int c5_large_HASH = HashingUtils::HashString("c5.large");
+        static const int c5_xlarge_HASH = HashingUtils::HashString("c5.xlarge");
+        static const int c5_2xlarge_HASH = HashingUtils::HashString("c5.2xlarge");
+        static const int c5_4xlarge_HASH = HashingUtils::HashString("c5.4xlarge");
+        static const int c5_9xlarge_HASH = HashingUtils::HashString("c5.9xlarge");
+        static const int c5_12xlarge_HASH = HashingUtils::HashString("c5.12xlarge");
+        static const int c5_18xlarge_HASH = HashingUtils::HashString("c5.18xlarge");
+        static const int c5_24xlarge_HASH = HashingUtils::HashString("c5.24xlarge");
         static const int r3_large_HASH = HashingUtils::HashString("r3.large");
         static const int r3_xlarge_HASH = HashingUtils::HashString("r3.xlarge");
         static const int r3_2xlarge_HASH = HashingUtils::HashString("r3.2xlarge");
@@ -55,6 +63,14 @@ namespace Aws
         static const int r4_4xlarge_HASH = HashingUtils::HashString("r4.4xlarge");
         static const int r4_8xlarge_HASH = HashingUtils::HashString("r4.8xlarge");
         static const int r4_16xlarge_HASH = HashingUtils::HashString("r4.16xlarge");
+        static const int r5_large_HASH = HashingUtils::HashString("r5.large");
+        static const int r5_xlarge_HASH = HashingUtils::HashString("r5.xlarge");
+        static const int r5_2xlarge_HASH = HashingUtils::HashString("r5.2xlarge");
+        static const int r5_4xlarge_HASH = HashingUtils::HashString("r5.4xlarge");
+        static const int r5_8xlarge_HASH = HashingUtils::HashString("r5.8xlarge");
+        static const int r5_12xlarge_HASH = HashingUtils::HashString("r5.12xlarge");
+        static const int r5_16xlarge_HASH = HashingUtils::HashString("r5.16xlarge");
+        static const int r5_24xlarge_HASH = HashingUtils::HashString("r5.24xlarge");
         static const int m3_medium_HASH = HashingUtils::HashString("m3.medium");
         static const int m3_large_HASH = HashingUtils::HashString("m3.large");
         static const int m3_xlarge_HASH = HashingUtils::HashString("m3.xlarge");
@@ -64,6 +80,14 @@ namespace Aws
         static const int m4_2xlarge_HASH = HashingUtils::HashString("m4.2xlarge");
         static const int m4_4xlarge_HASH = HashingUtils::HashString("m4.4xlarge");
         static const int m4_10xlarge_HASH = HashingUtils::HashString("m4.10xlarge");
+        static const int m5_large_HASH = HashingUtils::HashString("m5.large");
+        static const int m5_xlarge_HASH = HashingUtils::HashString("m5.xlarge");
+        static const int m5_2xlarge_HASH = HashingUtils::HashString("m5.2xlarge");
+        static const int m5_4xlarge_HASH = HashingUtils::HashString("m5.4xlarge");
+        static const int m5_8xlarge_HASH = HashingUtils::HashString("m5.8xlarge");
+        static const int m5_12xlarge_HASH = HashingUtils::HashString("m5.12xlarge");
+        static const int m5_16xlarge_HASH = HashingUtils::HashString("m5.16xlarge");
+        static const int m5_24xlarge_HASH = HashingUtils::HashString("m5.24xlarge");
 
 
         EC2InstanceType GetEC2InstanceTypeForName(const Aws::String& name)
@@ -125,6 +149,38 @@ namespace Aws
           {
             return EC2InstanceType::c4_8xlarge;
           }
+          else if (hashCode == c5_large_HASH)
+          {
+            return EC2InstanceType::c5_large;
+          }
+          else if (hashCode == c5_xlarge_HASH)
+          {
+            return EC2InstanceType::c5_xlarge;
+          }
+          else if (hashCode == c5_2xlarge_HASH)
+          {
+            return EC2InstanceType::c5_2xlarge;
+          }
+          else if (hashCode == c5_4xlarge_HASH)
+          {
+            return EC2InstanceType::c5_4xlarge;
+          }
+          else if (hashCode == c5_9xlarge_HASH)
+          {
+            return EC2InstanceType::c5_9xlarge;
+          }
+          else if (hashCode == c5_12xlarge_HASH)
+          {
+            return EC2InstanceType::c5_12xlarge;
+          }
+          else if (hashCode == c5_18xlarge_HASH)
+          {
+            return EC2InstanceType::c5_18xlarge;
+          }
+          else if (hashCode == c5_24xlarge_HASH)
+          {
+            return EC2InstanceType::c5_24xlarge;
+          }
           else if (hashCode == r3_large_HASH)
           {
             return EC2InstanceType::r3_large;
@@ -169,6 +225,38 @@ namespace Aws
           {
             return EC2InstanceType::r4_16xlarge;
           }
+          else if (hashCode == r5_large_HASH)
+          {
+            return EC2InstanceType::r5_large;
+          }
+          else if (hashCode == r5_xlarge_HASH)
+          {
+            return EC2InstanceType::r5_xlarge;
+          }
+          else if (hashCode == r5_2xlarge_HASH)
+          {
+            return EC2InstanceType::r5_2xlarge;
+          }
+          else if (hashCode == r5_4xlarge_HASH)
+          {
+            return EC2InstanceType::r5_4xlarge;
+          }
+          else if (hashCode == r5_8xlarge_HASH)
+          {
+            return EC2InstanceType::r5_8xlarge;
+          }
+          else if (hashCode == r5_12xlarge_HASH)
+          {
+            return EC2InstanceType::r5_12xlarge;
+          }
+          else if (hashCode == r5_16xlarge_HASH)
+          {
+            return EC2InstanceType::r5_16xlarge;
+          }
+          else if (hashCode == r5_24xlarge_HASH)
+          {
+            return EC2InstanceType::r5_24xlarge;
+          }
           else if (hashCode == m3_medium_HASH)
           {
             return EC2InstanceType::m3_medium;
@@ -204,6 +292,38 @@ namespace Aws
           else if (hashCode == m4_10xlarge_HASH)
           {
             return EC2InstanceType::m4_10xlarge;
+          }
+          else if (hashCode == m5_large_HASH)
+          {
+            return EC2InstanceType::m5_large;
+          }
+          else if (hashCode == m5_xlarge_HASH)
+          {
+            return EC2InstanceType::m5_xlarge;
+          }
+          else if (hashCode == m5_2xlarge_HASH)
+          {
+            return EC2InstanceType::m5_2xlarge;
+          }
+          else if (hashCode == m5_4xlarge_HASH)
+          {
+            return EC2InstanceType::m5_4xlarge;
+          }
+          else if (hashCode == m5_8xlarge_HASH)
+          {
+            return EC2InstanceType::m5_8xlarge;
+          }
+          else if (hashCode == m5_12xlarge_HASH)
+          {
+            return EC2InstanceType::m5_12xlarge;
+          }
+          else if (hashCode == m5_16xlarge_HASH)
+          {
+            return EC2InstanceType::m5_16xlarge;
+          }
+          else if (hashCode == m5_24xlarge_HASH)
+          {
+            return EC2InstanceType::m5_24xlarge;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -247,6 +367,22 @@ namespace Aws
             return "c4.4xlarge";
           case EC2InstanceType::c4_8xlarge:
             return "c4.8xlarge";
+          case EC2InstanceType::c5_large:
+            return "c5.large";
+          case EC2InstanceType::c5_xlarge:
+            return "c5.xlarge";
+          case EC2InstanceType::c5_2xlarge:
+            return "c5.2xlarge";
+          case EC2InstanceType::c5_4xlarge:
+            return "c5.4xlarge";
+          case EC2InstanceType::c5_9xlarge:
+            return "c5.9xlarge";
+          case EC2InstanceType::c5_12xlarge:
+            return "c5.12xlarge";
+          case EC2InstanceType::c5_18xlarge:
+            return "c5.18xlarge";
+          case EC2InstanceType::c5_24xlarge:
+            return "c5.24xlarge";
           case EC2InstanceType::r3_large:
             return "r3.large";
           case EC2InstanceType::r3_xlarge:
@@ -269,6 +405,22 @@ namespace Aws
             return "r4.8xlarge";
           case EC2InstanceType::r4_16xlarge:
             return "r4.16xlarge";
+          case EC2InstanceType::r5_large:
+            return "r5.large";
+          case EC2InstanceType::r5_xlarge:
+            return "r5.xlarge";
+          case EC2InstanceType::r5_2xlarge:
+            return "r5.2xlarge";
+          case EC2InstanceType::r5_4xlarge:
+            return "r5.4xlarge";
+          case EC2InstanceType::r5_8xlarge:
+            return "r5.8xlarge";
+          case EC2InstanceType::r5_12xlarge:
+            return "r5.12xlarge";
+          case EC2InstanceType::r5_16xlarge:
+            return "r5.16xlarge";
+          case EC2InstanceType::r5_24xlarge:
+            return "r5.24xlarge";
           case EC2InstanceType::m3_medium:
             return "m3.medium";
           case EC2InstanceType::m3_large:
@@ -287,6 +439,22 @@ namespace Aws
             return "m4.4xlarge";
           case EC2InstanceType::m4_10xlarge:
             return "m4.10xlarge";
+          case EC2InstanceType::m5_large:
+            return "m5.large";
+          case EC2InstanceType::m5_xlarge:
+            return "m5.xlarge";
+          case EC2InstanceType::m5_2xlarge:
+            return "m5.2xlarge";
+          case EC2InstanceType::m5_4xlarge:
+            return "m5.4xlarge";
+          case EC2InstanceType::m5_8xlarge:
+            return "m5.8xlarge";
+          case EC2InstanceType::m5_12xlarge:
+            return "m5.12xlarge";
+          case EC2InstanceType::m5_16xlarge:
+            return "m5.16xlarge";
+          case EC2InstanceType::m5_24xlarge:
+            return "m5.24xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

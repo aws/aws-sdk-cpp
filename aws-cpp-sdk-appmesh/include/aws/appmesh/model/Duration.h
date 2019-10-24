@@ -34,8 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the duration between retry attempts.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>An object that represents a duration of time.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/Duration">AWS
    * API Reference</a></p>
    */
@@ -49,53 +48,53 @@ namespace Model
 
 
     /**
-     * <p>The unit of time between retry attempts.</p>
+     * <p>A unit of time.</p>
      */
     inline const DurationUnit& GetUnit() const{ return m_unit; }
 
     /**
-     * <p>The unit of time between retry attempts.</p>
+     * <p>A unit of time.</p>
      */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
-     * <p>The unit of time between retry attempts.</p>
+     * <p>A unit of time.</p>
      */
     inline void SetUnit(const DurationUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
-     * <p>The unit of time between retry attempts.</p>
+     * <p>A unit of time.</p>
      */
     inline void SetUnit(DurationUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
     /**
-     * <p>The unit of time between retry attempts.</p>
+     * <p>A unit of time.</p>
      */
     inline Duration& WithUnit(const DurationUnit& value) { SetUnit(value); return *this;}
 
     /**
-     * <p>The unit of time between retry attempts.</p>
+     * <p>A unit of time.</p>
      */
     inline Duration& WithUnit(DurationUnit&& value) { SetUnit(std::move(value)); return *this;}
 
 
     /**
-     * <p>The duration of time between retry attempts.</p>
+     * <p>A number of time units.</p>
      */
     inline long long GetValue() const{ return m_value; }
 
     /**
-     * <p>The duration of time between retry attempts.</p>
+     * <p>A number of time units.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The duration of time between retry attempts.</p>
+     * <p>A number of time units.</p>
      */
     inline void SetValue(long long value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The duration of time between retry attempts.</p>
+     * <p>A number of time units.</p>
      */
     inline Duration& WithValue(long long value) { SetValue(value); return *this;}
 

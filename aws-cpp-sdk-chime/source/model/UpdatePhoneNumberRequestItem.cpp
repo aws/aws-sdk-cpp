@@ -31,14 +31,16 @@ namespace Model
 UpdatePhoneNumberRequestItem::UpdatePhoneNumberRequestItem() : 
     m_phoneNumberIdHasBeenSet(false),
     m_productType(PhoneNumberProductType::NOT_SET),
-    m_productTypeHasBeenSet(false)
+    m_productTypeHasBeenSet(false),
+    m_callingNameHasBeenSet(false)
 {
 }
 
 UpdatePhoneNumberRequestItem::UpdatePhoneNumberRequestItem(JsonView jsonValue) : 
     m_phoneNumberIdHasBeenSet(false),
     m_productType(PhoneNumberProductType::NOT_SET),
-    m_productTypeHasBeenSet(false)
+    m_productTypeHasBeenSet(false),
+    m_callingNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,13 @@ UpdatePhoneNumberRequestItem& UpdatePhoneNumberRequestItem::operator =(JsonView 
     m_productTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CallingName"))
+  {
+    m_callingName = jsonValue.GetString("CallingName");
+
+    m_callingNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -75,6 +84,12 @@ JsonValue UpdatePhoneNumberRequestItem::Jsonize() const
   if(m_productTypeHasBeenSet)
   {
    payload.WithString("ProductType", PhoneNumberProductTypeMapper::GetNameForPhoneNumberProductType(m_productType));
+  }
+
+  if(m_callingNameHasBeenSet)
+  {
+   payload.WithString("CallingName", m_callingName);
+
   }
 
   return payload;

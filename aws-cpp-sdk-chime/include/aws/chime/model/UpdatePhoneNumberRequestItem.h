@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>The phone number ID and product type fields to update, used with the
-   * <a>BatchUpdatePhoneNumber</a> and <a>UpdatePhoneNumber</a>
+   * <p>The phone number ID, product type, or calling name fields to update, used
+   * with the <a>BatchUpdatePhoneNumber</a> and <a>UpdatePhoneNumber</a>
    * actions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdatePhoneNumberRequestItem">AWS
    * API Reference</a></p>
@@ -121,6 +121,47 @@ namespace Model
      */
     inline UpdatePhoneNumberRequestItem& WithProductType(PhoneNumberProductType&& value) { SetProductType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The outbound calling name to update.</p>
+     */
+    inline const Aws::String& GetCallingName() const{ return m_callingName; }
+
+    /**
+     * <p>The outbound calling name to update.</p>
+     */
+    inline bool CallingNameHasBeenSet() const { return m_callingNameHasBeenSet; }
+
+    /**
+     * <p>The outbound calling name to update.</p>
+     */
+    inline void SetCallingName(const Aws::String& value) { m_callingNameHasBeenSet = true; m_callingName = value; }
+
+    /**
+     * <p>The outbound calling name to update.</p>
+     */
+    inline void SetCallingName(Aws::String&& value) { m_callingNameHasBeenSet = true; m_callingName = std::move(value); }
+
+    /**
+     * <p>The outbound calling name to update.</p>
+     */
+    inline void SetCallingName(const char* value) { m_callingNameHasBeenSet = true; m_callingName.assign(value); }
+
+    /**
+     * <p>The outbound calling name to update.</p>
+     */
+    inline UpdatePhoneNumberRequestItem& WithCallingName(const Aws::String& value) { SetCallingName(value); return *this;}
+
+    /**
+     * <p>The outbound calling name to update.</p>
+     */
+    inline UpdatePhoneNumberRequestItem& WithCallingName(Aws::String&& value) { SetCallingName(std::move(value)); return *this;}
+
+    /**
+     * <p>The outbound calling name to update.</p>
+     */
+    inline UpdatePhoneNumberRequestItem& WithCallingName(const char* value) { SetCallingName(value); return *this;}
+
   private:
 
     Aws::String m_phoneNumberId;
@@ -128,6 +169,9 @@ namespace Model
 
     PhoneNumberProductType m_productType;
     bool m_productTypeHasBeenSet;
+
+    Aws::String m_callingName;
+    bool m_callingNameHasBeenSet;
   };
 
 } // namespace Model

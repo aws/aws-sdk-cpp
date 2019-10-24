@@ -26,7 +26,9 @@ namespace Model
   enum class PortProtocol
   {
     NOT_SET,
+    grpc,
     http,
+    http2,
     tcp
   };
 

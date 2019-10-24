@@ -24,6 +24,8 @@ using namespace Aws::Utils;
 
 CreateVoiceConnectorRequest::CreateVoiceConnectorRequest() : 
     m_nameHasBeenSet(false),
+    m_awsRegion(VoiceConnectorAwsRegion::NOT_SET),
+    m_awsRegionHasBeenSet(false),
     m_requireEncryption(false),
     m_requireEncryptionHasBeenSet(false)
 {
@@ -37,6 +39,11 @@ Aws::String CreateVoiceConnectorRequest::SerializePayload() const
   {
    payload.WithString("Name", m_name);
 
+  }
+
+  if(m_awsRegionHasBeenSet)
+  {
+   payload.WithString("AwsRegion", VoiceConnectorAwsRegionMapper::GetNameForVoiceConnectorAwsRegion(m_awsRegion));
   }
 
   if(m_requireEncryptionHasBeenSet)

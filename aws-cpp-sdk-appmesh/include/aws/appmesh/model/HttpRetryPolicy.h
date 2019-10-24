@@ -37,7 +37,10 @@ namespace Model
 {
 
   /**
-   * <p>An object that represents a retry policy.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that represents a retry policy. Specify at least one value for at
+   * least one of the types of <code>RetryEvents</code>, a value for
+   * <code>maxRetries</code>, and a value for
+   * <code>perRetryTimeout</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpRetryPolicy">AWS
    * API Reference</a></p>
    */
@@ -58,27 +61,27 @@ namespace Model
                <p>
                   <b>server-error</b> – HTTP status
      * codes 500, 501,
-               502, 503, 504, 505, 506, 507, 508, 510, and
+                  502, 503, 504, 505, 506, 507, 508, 510, and
      * 511</p>
             </li>
             <li>
                <p>
                  
      * <b>gateway-error</b> – HTTP status codes 502,
-               503, and 504</p>
-  
-     * </li>
-            <li>
-               <p>
-                  <b>client-error</b>
-     * – HTTP status code 409</p>
+                  503, and
+     * 504</p>
             </li>
             <li>
-              
-     * <p>
-                  <b>stream-error</b> – Retry on refused
-              
-     * stream</p>
+               <p>
+                 
+     * <b>client-error</b> – HTTP status code 409</p>
+            </li>
+           
+     * <li>
+               <p>
+                  <b>stream-error</b> – Retry on
+     * refused
+                  stream</p>
             </li>
          </ul>
      */
@@ -92,27 +95,27 @@ namespace Model
                <p>
                   <b>server-error</b> – HTTP status
      * codes 500, 501,
-               502, 503, 504, 505, 506, 507, 508, 510, and
+                  502, 503, 504, 505, 506, 507, 508, 510, and
      * 511</p>
             </li>
             <li>
                <p>
                  
      * <b>gateway-error</b> – HTTP status codes 502,
-               503, and 504</p>
-  
-     * </li>
-            <li>
-               <p>
-                  <b>client-error</b>
-     * – HTTP status code 409</p>
+                  503, and
+     * 504</p>
             </li>
             <li>
-              
-     * <p>
-                  <b>stream-error</b> – Retry on refused
-              
-     * stream</p>
+               <p>
+                 
+     * <b>client-error</b> – HTTP status code 409</p>
+            </li>
+           
+     * <li>
+               <p>
+                  <b>stream-error</b> – Retry on
+     * refused
+                  stream</p>
             </li>
          </ul>
      */
@@ -126,27 +129,27 @@ namespace Model
                <p>
                   <b>server-error</b> – HTTP status
      * codes 500, 501,
-               502, 503, 504, 505, 506, 507, 508, 510, and
+                  502, 503, 504, 505, 506, 507, 508, 510, and
      * 511</p>
             </li>
             <li>
                <p>
                  
      * <b>gateway-error</b> – HTTP status codes 502,
-               503, and 504</p>
-  
-     * </li>
-            <li>
-               <p>
-                  <b>client-error</b>
-     * – HTTP status code 409</p>
+                  503, and
+     * 504</p>
             </li>
             <li>
-              
-     * <p>
-                  <b>stream-error</b> – Retry on refused
-              
-     * stream</p>
+               <p>
+                 
+     * <b>client-error</b> – HTTP status code 409</p>
+            </li>
+           
+     * <li>
+               <p>
+                  <b>stream-error</b> – Retry on
+     * refused
+                  stream</p>
             </li>
          </ul>
      */
@@ -160,27 +163,27 @@ namespace Model
                <p>
                   <b>server-error</b> – HTTP status
      * codes 500, 501,
-               502, 503, 504, 505, 506, 507, 508, 510, and
+                  502, 503, 504, 505, 506, 507, 508, 510, and
      * 511</p>
             </li>
             <li>
                <p>
                  
      * <b>gateway-error</b> – HTTP status codes 502,
-               503, and 504</p>
-  
-     * </li>
-            <li>
-               <p>
-                  <b>client-error</b>
-     * – HTTP status code 409</p>
+                  503, and
+     * 504</p>
             </li>
             <li>
-              
-     * <p>
-                  <b>stream-error</b> – Retry on refused
-              
-     * stream</p>
+               <p>
+                 
+     * <b>client-error</b> – HTTP status code 409</p>
+            </li>
+           
+     * <li>
+               <p>
+                  <b>stream-error</b> – Retry on
+     * refused
+                  stream</p>
             </li>
          </ul>
      */
@@ -194,27 +197,27 @@ namespace Model
                <p>
                   <b>server-error</b> – HTTP status
      * codes 500, 501,
-               502, 503, 504, 505, 506, 507, 508, 510, and
+                  502, 503, 504, 505, 506, 507, 508, 510, and
      * 511</p>
             </li>
             <li>
                <p>
                  
      * <b>gateway-error</b> – HTTP status codes 502,
-               503, and 504</p>
-  
-     * </li>
-            <li>
-               <p>
-                  <b>client-error</b>
-     * – HTTP status code 409</p>
+                  503, and
+     * 504</p>
             </li>
             <li>
-              
-     * <p>
-                  <b>stream-error</b> – Retry on refused
-              
-     * stream</p>
+               <p>
+                 
+     * <b>client-error</b> – HTTP status code 409</p>
+            </li>
+           
+     * <li>
+               <p>
+                  <b>stream-error</b> – Retry on
+     * refused
+                  stream</p>
             </li>
          </ul>
      */
@@ -228,27 +231,27 @@ namespace Model
                <p>
                   <b>server-error</b> – HTTP status
      * codes 500, 501,
-               502, 503, 504, 505, 506, 507, 508, 510, and
+                  502, 503, 504, 505, 506, 507, 508, 510, and
      * 511</p>
             </li>
             <li>
                <p>
                  
      * <b>gateway-error</b> – HTTP status codes 502,
-               503, and 504</p>
-  
-     * </li>
-            <li>
-               <p>
-                  <b>client-error</b>
-     * – HTTP status code 409</p>
+                  503, and
+     * 504</p>
             </li>
             <li>
-              
-     * <p>
-                  <b>stream-error</b> – Retry on refused
-              
-     * stream</p>
+               <p>
+                 
+     * <b>client-error</b> – HTTP status code 409</p>
+            </li>
+           
+     * <li>
+               <p>
+                  <b>stream-error</b> – Retry on
+     * refused
+                  stream</p>
             </li>
          </ul>
      */
@@ -262,27 +265,27 @@ namespace Model
                <p>
                   <b>server-error</b> – HTTP status
      * codes 500, 501,
-               502, 503, 504, 505, 506, 507, 508, 510, and
+                  502, 503, 504, 505, 506, 507, 508, 510, and
      * 511</p>
             </li>
             <li>
                <p>
                  
      * <b>gateway-error</b> – HTTP status codes 502,
-               503, and 504</p>
-  
-     * </li>
-            <li>
-               <p>
-                  <b>client-error</b>
-     * – HTTP status code 409</p>
+                  503, and
+     * 504</p>
             </li>
             <li>
-              
-     * <p>
-                  <b>stream-error</b> – Retry on refused
-              
-     * stream</p>
+               <p>
+                 
+     * <b>client-error</b> – HTTP status code 409</p>
+            </li>
+           
+     * <li>
+               <p>
+                  <b>stream-error</b> – Retry on
+     * refused
+                  stream</p>
             </li>
          </ul>
      */
@@ -296,27 +299,27 @@ namespace Model
                <p>
                   <b>server-error</b> – HTTP status
      * codes 500, 501,
-               502, 503, 504, 505, 506, 507, 508, 510, and
+                  502, 503, 504, 505, 506, 507, 508, 510, and
      * 511</p>
             </li>
             <li>
                <p>
                  
      * <b>gateway-error</b> – HTTP status codes 502,
-               503, and 504</p>
-  
-     * </li>
-            <li>
-               <p>
-                  <b>client-error</b>
-     * – HTTP status code 409</p>
+                  503, and
+     * 504</p>
             </li>
             <li>
-              
-     * <p>
-                  <b>stream-error</b> – Retry on refused
-              
-     * stream</p>
+               <p>
+                 
+     * <b>client-error</b> – HTTP status code 409</p>
+            </li>
+           
+     * <li>
+               <p>
+                  <b>stream-error</b> – Retry on
+     * refused
+                  stream</p>
             </li>
          </ul>
      */
@@ -330,27 +333,27 @@ namespace Model
                <p>
                   <b>server-error</b> – HTTP status
      * codes 500, 501,
-               502, 503, 504, 505, 506, 507, 508, 510, and
+                  502, 503, 504, 505, 506, 507, 508, 510, and
      * 511</p>
             </li>
             <li>
                <p>
                  
      * <b>gateway-error</b> – HTTP status codes 502,
-               503, and 504</p>
-  
-     * </li>
-            <li>
-               <p>
-                  <b>client-error</b>
-     * – HTTP status code 409</p>
+                  503, and
+     * 504</p>
             </li>
             <li>
-              
-     * <p>
-                  <b>stream-error</b> – Retry on refused
-              
-     * stream</p>
+               <p>
+                 
+     * <b>client-error</b> – HTTP status code 409</p>
+            </li>
+           
+     * <li>
+               <p>
+                  <b>stream-error</b> – Retry on
+     * refused
+                  stream</p>
             </li>
          </ul>
      */
@@ -358,57 +361,53 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of retry attempts. If no value is specified, the default
-     * is 1.</p>
+     * <p>The maximum number of retry attempts.</p>
      */
     inline long long GetMaxRetries() const{ return m_maxRetries; }
 
     /**
-     * <p>The maximum number of retry attempts. If no value is specified, the default
-     * is 1.</p>
+     * <p>The maximum number of retry attempts.</p>
      */
     inline bool MaxRetriesHasBeenSet() const { return m_maxRetriesHasBeenSet; }
 
     /**
-     * <p>The maximum number of retry attempts. If no value is specified, the default
-     * is 1.</p>
+     * <p>The maximum number of retry attempts.</p>
      */
     inline void SetMaxRetries(long long value) { m_maxRetriesHasBeenSet = true; m_maxRetries = value; }
 
     /**
-     * <p>The maximum number of retry attempts. If no value is specified, the default
-     * is 1.</p>
+     * <p>The maximum number of retry attempts.</p>
      */
     inline HttpRetryPolicy& WithMaxRetries(long long value) { SetMaxRetries(value); return *this;}
 
 
     /**
-     * <p>An object that represents the retry duration.</p>
+     * <p>An object that represents a duration of time.</p>
      */
     inline const Duration& GetPerRetryTimeout() const{ return m_perRetryTimeout; }
 
     /**
-     * <p>An object that represents the retry duration.</p>
+     * <p>An object that represents a duration of time.</p>
      */
     inline bool PerRetryTimeoutHasBeenSet() const { return m_perRetryTimeoutHasBeenSet; }
 
     /**
-     * <p>An object that represents the retry duration.</p>
+     * <p>An object that represents a duration of time.</p>
      */
     inline void SetPerRetryTimeout(const Duration& value) { m_perRetryTimeoutHasBeenSet = true; m_perRetryTimeout = value; }
 
     /**
-     * <p>An object that represents the retry duration.</p>
+     * <p>An object that represents a duration of time.</p>
      */
     inline void SetPerRetryTimeout(Duration&& value) { m_perRetryTimeoutHasBeenSet = true; m_perRetryTimeout = std::move(value); }
 
     /**
-     * <p>An object that represents the retry duration.</p>
+     * <p>An object that represents a duration of time.</p>
      */
     inline HttpRetryPolicy& WithPerRetryTimeout(const Duration& value) { SetPerRetryTimeout(value); return *this;}
 
     /**
-     * <p>An object that represents the retry duration.</p>
+     * <p>An object that represents a duration of time.</p>
      */
     inline HttpRetryPolicy& WithPerRetryTimeout(Duration&& value) { SetPerRetryTimeout(std::move(value)); return *this;}
 

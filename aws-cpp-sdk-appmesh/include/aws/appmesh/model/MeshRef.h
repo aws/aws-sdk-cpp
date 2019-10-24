@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing a service mesh returned by a list
+   * <p>An object that represents a service mesh returned by a list
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/MeshRef">AWS API
    * Reference</a></p>

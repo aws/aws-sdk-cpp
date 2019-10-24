@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/chime/model/VoiceConnectorAwsRegion.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -88,6 +89,43 @@ namespace Model
      * <p>The Amazon Chime Voice Connector ID.</p>
      */
     inline VoiceConnector& WithVoiceConnectorId(const char* value) { SetVoiceConnectorId(value); return *this;}
+
+
+    /**
+     * <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default:
+     * <code>us-east-1</code>.</p>
+     */
+    inline const VoiceConnectorAwsRegion& GetAwsRegion() const{ return m_awsRegion; }
+
+    /**
+     * <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default:
+     * <code>us-east-1</code>.</p>
+     */
+    inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
+
+    /**
+     * <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default:
+     * <code>us-east-1</code>.</p>
+     */
+    inline void SetAwsRegion(const VoiceConnectorAwsRegion& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
+
+    /**
+     * <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default:
+     * <code>us-east-1</code>.</p>
+     */
+    inline void SetAwsRegion(VoiceConnectorAwsRegion&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
+
+    /**
+     * <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default:
+     * <code>us-east-1</code>.</p>
+     */
+    inline VoiceConnector& WithAwsRegion(const VoiceConnectorAwsRegion& value) { SetAwsRegion(value); return *this;}
+
+    /**
+     * <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default:
+     * <code>us-east-1</code>.</p>
+     */
+    inline VoiceConnector& WithAwsRegion(VoiceConnectorAwsRegion&& value) { SetAwsRegion(std::move(value)); return *this;}
 
 
     /**
@@ -262,6 +300,9 @@ namespace Model
 
     Aws::String m_voiceConnectorId;
     bool m_voiceConnectorIdHasBeenSet;
+
+    VoiceConnectorAwsRegion m_awsRegion;
+    bool m_awsRegionHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

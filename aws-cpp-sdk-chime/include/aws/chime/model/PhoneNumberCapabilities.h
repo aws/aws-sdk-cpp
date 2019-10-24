@@ -32,8 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>The phone number capabilities, such as enabled inbound and outbound calling
-   * and text messaging.</p><p><h3>See Also:</h3>   <a
+   * <p>The phone number capabilities for Amazon Chime Business Calling phone
+   * numbers, such as enabled inbound and outbound calling and text
+   * messaging.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PhoneNumberCapabilities">AWS
    * API Reference</a></p>
    */

@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing a virtual service backend for a virtual
+   * <p>An object that represents a virtual service backend for a virtual
    * node.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualServiceBackend">AWS
    * API Reference</a></p>

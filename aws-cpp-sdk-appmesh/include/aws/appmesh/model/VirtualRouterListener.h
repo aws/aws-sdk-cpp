@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing a virtual router listener.</p><p><h3>See Also:</h3>  
+   * <p>An object that represents a virtual router listener.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualRouterListener">AWS
    * API Reference</a></p>

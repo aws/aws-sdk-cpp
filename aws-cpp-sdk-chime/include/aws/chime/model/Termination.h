@@ -116,93 +116,102 @@ namespace Model
 
 
     /**
-     * <p>The countries to which calls are allowed.</p>
+     * <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format.
+     * Required.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCallingRegions() const{ return m_callingRegions; }
 
     /**
-     * <p>The countries to which calls are allowed.</p>
+     * <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format.
+     * Required.</p>
      */
     inline bool CallingRegionsHasBeenSet() const { return m_callingRegionsHasBeenSet; }
 
     /**
-     * <p>The countries to which calls are allowed.</p>
+     * <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format.
+     * Required.</p>
      */
     inline void SetCallingRegions(const Aws::Vector<Aws::String>& value) { m_callingRegionsHasBeenSet = true; m_callingRegions = value; }
 
     /**
-     * <p>The countries to which calls are allowed.</p>
+     * <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format.
+     * Required.</p>
      */
     inline void SetCallingRegions(Aws::Vector<Aws::String>&& value) { m_callingRegionsHasBeenSet = true; m_callingRegions = std::move(value); }
 
     /**
-     * <p>The countries to which calls are allowed.</p>
+     * <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format.
+     * Required.</p>
      */
     inline Termination& WithCallingRegions(const Aws::Vector<Aws::String>& value) { SetCallingRegions(value); return *this;}
 
     /**
-     * <p>The countries to which calls are allowed.</p>
+     * <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format.
+     * Required.</p>
      */
     inline Termination& WithCallingRegions(Aws::Vector<Aws::String>&& value) { SetCallingRegions(std::move(value)); return *this;}
 
     /**
-     * <p>The countries to which calls are allowed.</p>
+     * <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format.
+     * Required.</p>
      */
     inline Termination& AddCallingRegions(const Aws::String& value) { m_callingRegionsHasBeenSet = true; m_callingRegions.push_back(value); return *this; }
 
     /**
-     * <p>The countries to which calls are allowed.</p>
+     * <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format.
+     * Required.</p>
      */
     inline Termination& AddCallingRegions(Aws::String&& value) { m_callingRegionsHasBeenSet = true; m_callingRegions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The countries to which calls are allowed.</p>
+     * <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format.
+     * Required.</p>
      */
     inline Termination& AddCallingRegions(const char* value) { m_callingRegionsHasBeenSet = true; m_callingRegions.push_back(value); return *this; }
 
 
     /**
-     * <p>The IP addresses allowed to make calls, in CIDR format.</p>
+     * <p>The IP addresses allowed to make calls, in CIDR format. Required.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCidrAllowedList() const{ return m_cidrAllowedList; }
 
     /**
-     * <p>The IP addresses allowed to make calls, in CIDR format.</p>
+     * <p>The IP addresses allowed to make calls, in CIDR format. Required.</p>
      */
     inline bool CidrAllowedListHasBeenSet() const { return m_cidrAllowedListHasBeenSet; }
 
     /**
-     * <p>The IP addresses allowed to make calls, in CIDR format.</p>
+     * <p>The IP addresses allowed to make calls, in CIDR format. Required.</p>
      */
     inline void SetCidrAllowedList(const Aws::Vector<Aws::String>& value) { m_cidrAllowedListHasBeenSet = true; m_cidrAllowedList = value; }
 
     /**
-     * <p>The IP addresses allowed to make calls, in CIDR format.</p>
+     * <p>The IP addresses allowed to make calls, in CIDR format. Required.</p>
      */
     inline void SetCidrAllowedList(Aws::Vector<Aws::String>&& value) { m_cidrAllowedListHasBeenSet = true; m_cidrAllowedList = std::move(value); }
 
     /**
-     * <p>The IP addresses allowed to make calls, in CIDR format.</p>
+     * <p>The IP addresses allowed to make calls, in CIDR format. Required.</p>
      */
     inline Termination& WithCidrAllowedList(const Aws::Vector<Aws::String>& value) { SetCidrAllowedList(value); return *this;}
 
     /**
-     * <p>The IP addresses allowed to make calls, in CIDR format.</p>
+     * <p>The IP addresses allowed to make calls, in CIDR format. Required.</p>
      */
     inline Termination& WithCidrAllowedList(Aws::Vector<Aws::String>&& value) { SetCidrAllowedList(std::move(value)); return *this;}
 
     /**
-     * <p>The IP addresses allowed to make calls, in CIDR format.</p>
+     * <p>The IP addresses allowed to make calls, in CIDR format. Required.</p>
      */
     inline Termination& AddCidrAllowedList(const Aws::String& value) { m_cidrAllowedListHasBeenSet = true; m_cidrAllowedList.push_back(value); return *this; }
 
     /**
-     * <p>The IP addresses allowed to make calls, in CIDR format.</p>
+     * <p>The IP addresses allowed to make calls, in CIDR format. Required.</p>
      */
     inline Termination& AddCidrAllowedList(Aws::String&& value) { m_cidrAllowedListHasBeenSet = true; m_cidrAllowedList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IP addresses allowed to make calls, in CIDR format.</p>
+     * <p>The IP addresses allowed to make calls, in CIDR format. Required.</p>
      */
     inline Termination& AddCidrAllowedList(const char* value) { m_cidrAllowedListHasBeenSet = true; m_cidrAllowedList.push_back(value); return *this; }
 

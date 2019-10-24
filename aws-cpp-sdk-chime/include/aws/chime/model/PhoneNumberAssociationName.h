@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     AccountId,
     UserId,
-    VoiceConnectorId
+    VoiceConnectorId,
+    VoiceConnectorGroupId
   };
 
 namespace PhoneNumberAssociationNameMapper

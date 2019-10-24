@@ -29,6 +29,8 @@ namespace Model
 {
 
 RouteSpec::RouteSpec() : 
+    m_grpcRouteHasBeenSet(false),
+    m_http2RouteHasBeenSet(false),
     m_httpRouteHasBeenSet(false),
     m_priority(0),
     m_priorityHasBeenSet(false),
@@ -37,6 +39,8 @@ RouteSpec::RouteSpec() :
 }
 
 RouteSpec::RouteSpec(JsonView jsonValue) : 
+    m_grpcRouteHasBeenSet(false),
+    m_http2RouteHasBeenSet(false),
     m_httpRouteHasBeenSet(false),
     m_priority(0),
     m_priorityHasBeenSet(false),
@@ -47,6 +51,20 @@ RouteSpec::RouteSpec(JsonView jsonValue) :
 
 RouteSpec& RouteSpec::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("grpcRoute"))
+  {
+    m_grpcRoute = jsonValue.GetObject("grpcRoute");
+
+    m_grpcRouteHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("http2Route"))
+  {
+    m_http2Route = jsonValue.GetObject("http2Route");
+
+    m_http2RouteHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("httpRoute"))
   {
     m_httpRoute = jsonValue.GetObject("httpRoute");
@@ -74,6 +92,18 @@ RouteSpec& RouteSpec::operator =(JsonView jsonValue)
 JsonValue RouteSpec::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_grpcRouteHasBeenSet)
+  {
+   payload.WithObject("grpcRoute", m_grpcRoute.Jsonize());
+
+  }
+
+  if(m_http2RouteHasBeenSet)
+  {
+   payload.WithObject("http2Route", m_http2Route.Jsonize());
+
+  }
 
   if(m_httpRouteHasBeenSet)
   {

@@ -34,8 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the AWS Cloud Map attribute information for your
-   * virtual node.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that represents the AWS Cloud Map attribute information for your
+   * virtual
+         node.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/AwsCloudMapInstanceAttribute">AWS
    * API Reference</a></p>
    */
@@ -50,64 +51,64 @@ namespace Model
 
     /**
      * <p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud
-     * Map service instance
-         that contains the specified key and value is
+     * Map service
+         instance that contains the specified key and value is
      * returned.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
      * <p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud
-     * Map service instance
-         that contains the specified key and value is
+     * Map service
+         instance that contains the specified key and value is
      * returned.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud
-     * Map service instance
-         that contains the specified key and value is
+     * Map service
+         instance that contains the specified key and value is
      * returned.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud
-     * Map service instance
-         that contains the specified key and value is
+     * Map service
+         instance that contains the specified key and value is
      * returned.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud
-     * Map service instance
-         that contains the specified key and value is
+     * Map service
+         instance that contains the specified key and value is
      * returned.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
      * <p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud
-     * Map service instance
-         that contains the specified key and value is
+     * Map service
+         instance that contains the specified key and value is
      * returned.</p>
      */
     inline AwsCloudMapInstanceAttribute& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
      * <p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud
-     * Map service instance
-         that contains the specified key and value is
+     * Map service
+         instance that contains the specified key and value is
      * returned.</p>
      */
     inline AwsCloudMapInstanceAttribute& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud
-     * Map service instance
-         that contains the specified key and value is
+     * Map service
+         instance that contains the specified key and value is
      * returned.</p>
      */
     inline AwsCloudMapInstanceAttribute& WithKey(const char* value) { SetKey(value); return *this;}

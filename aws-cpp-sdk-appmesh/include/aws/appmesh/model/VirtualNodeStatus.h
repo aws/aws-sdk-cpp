@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the current status of the virtual node.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>An object that represents the current status of the virtual
+   * node.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualNodeStatus">AWS
    * API Reference</a></p>
    */

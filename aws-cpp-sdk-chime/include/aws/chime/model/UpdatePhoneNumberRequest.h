@@ -114,6 +114,47 @@ namespace Model
      */
     inline UpdatePhoneNumberRequest& WithProductType(PhoneNumberProductType&& value) { SetProductType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The outbound calling name associated with the phone number.</p>
+     */
+    inline const Aws::String& GetCallingName() const{ return m_callingName; }
+
+    /**
+     * <p>The outbound calling name associated with the phone number.</p>
+     */
+    inline bool CallingNameHasBeenSet() const { return m_callingNameHasBeenSet; }
+
+    /**
+     * <p>The outbound calling name associated with the phone number.</p>
+     */
+    inline void SetCallingName(const Aws::String& value) { m_callingNameHasBeenSet = true; m_callingName = value; }
+
+    /**
+     * <p>The outbound calling name associated with the phone number.</p>
+     */
+    inline void SetCallingName(Aws::String&& value) { m_callingNameHasBeenSet = true; m_callingName = std::move(value); }
+
+    /**
+     * <p>The outbound calling name associated with the phone number.</p>
+     */
+    inline void SetCallingName(const char* value) { m_callingNameHasBeenSet = true; m_callingName.assign(value); }
+
+    /**
+     * <p>The outbound calling name associated with the phone number.</p>
+     */
+    inline UpdatePhoneNumberRequest& WithCallingName(const Aws::String& value) { SetCallingName(value); return *this;}
+
+    /**
+     * <p>The outbound calling name associated with the phone number.</p>
+     */
+    inline UpdatePhoneNumberRequest& WithCallingName(Aws::String&& value) { SetCallingName(std::move(value)); return *this;}
+
+    /**
+     * <p>The outbound calling name associated with the phone number.</p>
+     */
+    inline UpdatePhoneNumberRequest& WithCallingName(const char* value) { SetCallingName(value); return *this;}
+
   private:
 
     Aws::String m_phoneNumberId;
@@ -121,6 +162,9 @@ namespace Model
 
     PhoneNumberProductType m_productType;
     bool m_productTypeHasBeenSet;
+
+    Aws::String m_callingName;
+    bool m_callingNameHasBeenSet;
   };
 
 } // namespace Model

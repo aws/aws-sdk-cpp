@@ -28,7 +28,10 @@ namespace Model
     NOT_SET,
     ml_eia1_medium,
     ml_eia1_large,
-    ml_eia1_xlarge
+    ml_eia1_xlarge,
+    ml_eia2_medium,
+    ml_eia2_large,
+    ml_eia2_xlarge
   };
 
 namespace ProductionVariantAcceleratorTypeMapper

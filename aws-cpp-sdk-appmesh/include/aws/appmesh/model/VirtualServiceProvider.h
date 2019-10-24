@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the provider for a virtual service.</p><p><h3>See
+   * <p>An object that represents the provider for a virtual service.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualServiceProvider">AWS
    * API Reference</a></p>

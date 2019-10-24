@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the specification of a service mesh.</p><p><h3>See
+   * <p>An object that represents the specification of a service mesh.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/MeshSpec">AWS
    * API Reference</a></p>

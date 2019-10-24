@@ -26,16 +26,20 @@ namespace Model
   enum class ErrorCode
   {
     NOT_SET,
-    Unauthorized,
-    Forbidden,
-    NotFound,
     BadRequest,
     Conflict,
+    Forbidden,
+    NotFound,
+    PreconditionFailed,
+    ResourceLimitExceeded,
     ServiceFailure,
+    AccessDenied,
     ServiceUnavailable,
-    Unprocessable,
     Throttled,
-    PreconditionFailed
+    Unauthorized,
+    Unprocessable,
+    VoiceConnectorGroupAssociationsExist,
+    PhoneNumberAssociationsExist
   };
 
 namespace ErrorCodeMapper

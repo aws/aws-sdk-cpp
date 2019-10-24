@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing an access log file.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that represents an access log file.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/FileAccessLog">AWS
    * API Reference</a></p>
    */

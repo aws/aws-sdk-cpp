@@ -38,7 +38,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the requirements for a route to match HTTP requests
+   * <p>An object that represents the requirements for a route to match HTTP requests
    * for a virtual
          router.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpRouteMatch">AWS
@@ -54,73 +54,73 @@ namespace Model
 
 
     /**
-     * <p>The client request headers to match on.</p>
+     * <p>An object that represents the client request headers to match on.</p>
      */
     inline const Aws::Vector<HttpRouteHeader>& GetHeaders() const{ return m_headers; }
 
     /**
-     * <p>The client request headers to match on.</p>
+     * <p>An object that represents the client request headers to match on.</p>
      */
     inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
 
     /**
-     * <p>The client request headers to match on.</p>
+     * <p>An object that represents the client request headers to match on.</p>
      */
     inline void SetHeaders(const Aws::Vector<HttpRouteHeader>& value) { m_headersHasBeenSet = true; m_headers = value; }
 
     /**
-     * <p>The client request headers to match on.</p>
+     * <p>An object that represents the client request headers to match on.</p>
      */
     inline void SetHeaders(Aws::Vector<HttpRouteHeader>&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
 
     /**
-     * <p>The client request headers to match on.</p>
+     * <p>An object that represents the client request headers to match on.</p>
      */
     inline HttpRouteMatch& WithHeaders(const Aws::Vector<HttpRouteHeader>& value) { SetHeaders(value); return *this;}
 
     /**
-     * <p>The client request headers to match on.</p>
+     * <p>An object that represents the client request headers to match on.</p>
      */
     inline HttpRouteMatch& WithHeaders(Aws::Vector<HttpRouteHeader>&& value) { SetHeaders(std::move(value)); return *this;}
 
     /**
-     * <p>The client request headers to match on.</p>
+     * <p>An object that represents the client request headers to match on.</p>
      */
     inline HttpRouteMatch& AddHeaders(const HttpRouteHeader& value) { m_headersHasBeenSet = true; m_headers.push_back(value); return *this; }
 
     /**
-     * <p>The client request headers to match on.</p>
+     * <p>An object that represents the client request headers to match on.</p>
      */
     inline HttpRouteMatch& AddHeaders(HttpRouteHeader&& value) { m_headersHasBeenSet = true; m_headers.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The client request header method to match on.</p>
+     * <p>The client request method to match on. Specify only one.</p>
      */
     inline const HttpMethod& GetMethod() const{ return m_method; }
 
     /**
-     * <p>The client request header method to match on.</p>
+     * <p>The client request method to match on. Specify only one.</p>
      */
     inline bool MethodHasBeenSet() const { return m_methodHasBeenSet; }
 
     /**
-     * <p>The client request header method to match on.</p>
+     * <p>The client request method to match on. Specify only one.</p>
      */
     inline void SetMethod(const HttpMethod& value) { m_methodHasBeenSet = true; m_method = value; }
 
     /**
-     * <p>The client request header method to match on.</p>
+     * <p>The client request method to match on. Specify only one.</p>
      */
     inline void SetMethod(HttpMethod&& value) { m_methodHasBeenSet = true; m_method = std::move(value); }
 
     /**
-     * <p>The client request header method to match on.</p>
+     * <p>The client request method to match on. Specify only one.</p>
      */
     inline HttpRouteMatch& WithMethod(const HttpMethod& value) { SetMethod(value); return *this;}
 
     /**
-     * <p>The client request header method to match on.</p>
+     * <p>The client request method to match on. Specify only one.</p>
      */
     inline HttpRouteMatch& WithMethod(HttpMethod&& value) { SetMethod(std::move(value)); return *this;}
 
@@ -255,32 +255,32 @@ namespace Model
 
 
     /**
-     * <p>The client request header scheme to match on.</p>
+     * <p>The client request scheme to match on. Specify only one.</p>
      */
     inline const HttpScheme& GetScheme() const{ return m_scheme; }
 
     /**
-     * <p>The client request header scheme to match on.</p>
+     * <p>The client request scheme to match on. Specify only one.</p>
      */
     inline bool SchemeHasBeenSet() const { return m_schemeHasBeenSet; }
 
     /**
-     * <p>The client request header scheme to match on.</p>
+     * <p>The client request scheme to match on. Specify only one.</p>
      */
     inline void SetScheme(const HttpScheme& value) { m_schemeHasBeenSet = true; m_scheme = value; }
 
     /**
-     * <p>The client request header scheme to match on.</p>
+     * <p>The client request scheme to match on. Specify only one.</p>
      */
     inline void SetScheme(HttpScheme&& value) { m_schemeHasBeenSet = true; m_scheme = std::move(value); }
 
     /**
-     * <p>The client request header scheme to match on.</p>
+     * <p>The client request scheme to match on. Specify only one.</p>
      */
     inline HttpRouteMatch& WithScheme(const HttpScheme& value) { SetScheme(value); return *this;}
 
     /**
-     * <p>The client request header scheme to match on.</p>
+     * <p>The client request scheme to match on. Specify only one.</p>
      */
     inline HttpRouteMatch& WithScheme(HttpScheme&& value) { SetScheme(std::move(value)); return *this;}
 

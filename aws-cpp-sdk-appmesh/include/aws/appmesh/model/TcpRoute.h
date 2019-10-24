@@ -34,8 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the TCP routing specification for a
-   * route.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that represents a TCP route type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TcpRoute">AWS
    * API Reference</a></p>
    */

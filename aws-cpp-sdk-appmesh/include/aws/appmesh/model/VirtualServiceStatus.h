@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the status of a virtual service.</p><p><h3>See
+   * <p>An object that represents the status of a virtual service.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualServiceStatus">AWS
    * API Reference</a></p>

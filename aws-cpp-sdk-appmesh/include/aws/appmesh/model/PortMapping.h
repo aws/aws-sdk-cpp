@@ -34,8 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing a virtual node or virtual router listener port
-   * mapping.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that represents a port mapping.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/PortMapping">AWS
    * API Reference</a></p>
    */
@@ -70,32 +69,32 @@ namespace Model
 
 
     /**
-     * <p>The protocol used for the port mapping.</p>
+     * <p>The protocol used for the port mapping. Specify one protocol.</p>
      */
     inline const PortProtocol& GetProtocol() const{ return m_protocol; }
 
     /**
-     * <p>The protocol used for the port mapping.</p>
+     * <p>The protocol used for the port mapping. Specify one protocol.</p>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
-     * <p>The protocol used for the port mapping.</p>
+     * <p>The protocol used for the port mapping. Specify one protocol.</p>
      */
     inline void SetProtocol(const PortProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
-     * <p>The protocol used for the port mapping.</p>
+     * <p>The protocol used for the port mapping. Specify one protocol.</p>
      */
     inline void SetProtocol(PortProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
-     * <p>The protocol used for the port mapping.</p>
+     * <p>The protocol used for the port mapping. Specify one protocol.</p>
      */
     inline PortMapping& WithProtocol(const PortProtocol& value) { SetProtocol(value); return *this;}
 
     /**
-     * <p>The protocol used for the port mapping.</p>
+     * <p>The protocol used for the port mapping. Specify one protocol.</p>
      */
     inline PortMapping& WithProtocol(PortProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 

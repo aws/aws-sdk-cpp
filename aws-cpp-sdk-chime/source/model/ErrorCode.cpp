@@ -30,24 +30,32 @@ namespace Aws
       namespace ErrorCodeMapper
       {
 
-        static const int Unauthorized_HASH = HashingUtils::HashString("Unauthorized");
-        static const int Forbidden_HASH = HashingUtils::HashString("Forbidden");
-        static const int NotFound_HASH = HashingUtils::HashString("NotFound");
         static const int BadRequest_HASH = HashingUtils::HashString("BadRequest");
         static const int Conflict_HASH = HashingUtils::HashString("Conflict");
-        static const int ServiceFailure_HASH = HashingUtils::HashString("ServiceFailure");
-        static const int ServiceUnavailable_HASH = HashingUtils::HashString("ServiceUnavailable");
-        static const int Unprocessable_HASH = HashingUtils::HashString("Unprocessable");
-        static const int Throttled_HASH = HashingUtils::HashString("Throttled");
+        static const int Forbidden_HASH = HashingUtils::HashString("Forbidden");
+        static const int NotFound_HASH = HashingUtils::HashString("NotFound");
         static const int PreconditionFailed_HASH = HashingUtils::HashString("PreconditionFailed");
+        static const int ResourceLimitExceeded_HASH = HashingUtils::HashString("ResourceLimitExceeded");
+        static const int ServiceFailure_HASH = HashingUtils::HashString("ServiceFailure");
+        static const int AccessDenied_HASH = HashingUtils::HashString("AccessDenied");
+        static const int ServiceUnavailable_HASH = HashingUtils::HashString("ServiceUnavailable");
+        static const int Throttled_HASH = HashingUtils::HashString("Throttled");
+        static const int Unauthorized_HASH = HashingUtils::HashString("Unauthorized");
+        static const int Unprocessable_HASH = HashingUtils::HashString("Unprocessable");
+        static const int VoiceConnectorGroupAssociationsExist_HASH = HashingUtils::HashString("VoiceConnectorGroupAssociationsExist");
+        static const int PhoneNumberAssociationsExist_HASH = HashingUtils::HashString("PhoneNumberAssociationsExist");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Unauthorized_HASH)
+          if (hashCode == BadRequest_HASH)
           {
-            return ErrorCode::Unauthorized;
+            return ErrorCode::BadRequest;
+          }
+          else if (hashCode == Conflict_HASH)
+          {
+            return ErrorCode::Conflict;
           }
           else if (hashCode == Forbidden_HASH)
           {
@@ -57,33 +65,45 @@ namespace Aws
           {
             return ErrorCode::NotFound;
           }
-          else if (hashCode == BadRequest_HASH)
+          else if (hashCode == PreconditionFailed_HASH)
           {
-            return ErrorCode::BadRequest;
+            return ErrorCode::PreconditionFailed;
           }
-          else if (hashCode == Conflict_HASH)
+          else if (hashCode == ResourceLimitExceeded_HASH)
           {
-            return ErrorCode::Conflict;
+            return ErrorCode::ResourceLimitExceeded;
           }
           else if (hashCode == ServiceFailure_HASH)
           {
             return ErrorCode::ServiceFailure;
           }
+          else if (hashCode == AccessDenied_HASH)
+          {
+            return ErrorCode::AccessDenied;
+          }
           else if (hashCode == ServiceUnavailable_HASH)
           {
             return ErrorCode::ServiceUnavailable;
-          }
-          else if (hashCode == Unprocessable_HASH)
-          {
-            return ErrorCode::Unprocessable;
           }
           else if (hashCode == Throttled_HASH)
           {
             return ErrorCode::Throttled;
           }
-          else if (hashCode == PreconditionFailed_HASH)
+          else if (hashCode == Unauthorized_HASH)
           {
-            return ErrorCode::PreconditionFailed;
+            return ErrorCode::Unauthorized;
+          }
+          else if (hashCode == Unprocessable_HASH)
+          {
+            return ErrorCode::Unprocessable;
+          }
+          else if (hashCode == VoiceConnectorGroupAssociationsExist_HASH)
+          {
+            return ErrorCode::VoiceConnectorGroupAssociationsExist;
+          }
+          else if (hashCode == PhoneNumberAssociationsExist_HASH)
+          {
+            return ErrorCode::PhoneNumberAssociationsExist;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -99,26 +119,34 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case ErrorCode::Unauthorized:
-            return "Unauthorized";
-          case ErrorCode::Forbidden:
-            return "Forbidden";
-          case ErrorCode::NotFound:
-            return "NotFound";
           case ErrorCode::BadRequest:
             return "BadRequest";
           case ErrorCode::Conflict:
             return "Conflict";
-          case ErrorCode::ServiceFailure:
-            return "ServiceFailure";
-          case ErrorCode::ServiceUnavailable:
-            return "ServiceUnavailable";
-          case ErrorCode::Unprocessable:
-            return "Unprocessable";
-          case ErrorCode::Throttled:
-            return "Throttled";
+          case ErrorCode::Forbidden:
+            return "Forbidden";
+          case ErrorCode::NotFound:
+            return "NotFound";
           case ErrorCode::PreconditionFailed:
             return "PreconditionFailed";
+          case ErrorCode::ResourceLimitExceeded:
+            return "ResourceLimitExceeded";
+          case ErrorCode::ServiceFailure:
+            return "ServiceFailure";
+          case ErrorCode::AccessDenied:
+            return "AccessDenied";
+          case ErrorCode::ServiceUnavailable:
+            return "ServiceUnavailable";
+          case ErrorCode::Throttled:
+            return "Throttled";
+          case ErrorCode::Unauthorized:
+            return "Unauthorized";
+          case ErrorCode::Unprocessable:
+            return "Unprocessable";
+          case ErrorCode::VoiceConnectorGroupAssociationsExist:
+            return "VoiceConnectorGroupAssociationsExist";
+          case ErrorCode::PhoneNumberAssociationsExist:
+            return "PhoneNumberAssociationsExist";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

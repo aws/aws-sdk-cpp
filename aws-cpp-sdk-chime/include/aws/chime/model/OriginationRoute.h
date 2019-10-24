@@ -36,9 +36,9 @@ namespace Model
 
   /**
    * <p>Origination routes define call distribution properties for your SIP hosts to
-   * receive inbound calls using your Amazon Chime Voice Connector. Limit: 10
-   * origination routes per Amazon Chime Voice Connector.</p><p><h3>See Also:</h3>  
-   * <a
+   * receive inbound calls using your Amazon Chime Voice Connector. Limit: Ten
+   * origination routes for each Amazon Chime Voice Connector.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/OriginationRoute">AWS
    * API Reference</a></p>
    */
@@ -52,42 +52,42 @@ namespace Model
 
 
     /**
-     * <p>The FODN or IP address to contact for origination traffic.</p>
+     * <p>The FQDN or IP address to contact for origination traffic.</p>
      */
     inline const Aws::String& GetHost() const{ return m_host; }
 
     /**
-     * <p>The FODN or IP address to contact for origination traffic.</p>
+     * <p>The FQDN or IP address to contact for origination traffic.</p>
      */
     inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
 
     /**
-     * <p>The FODN or IP address to contact for origination traffic.</p>
+     * <p>The FQDN or IP address to contact for origination traffic.</p>
      */
     inline void SetHost(const Aws::String& value) { m_hostHasBeenSet = true; m_host = value; }
 
     /**
-     * <p>The FODN or IP address to contact for origination traffic.</p>
+     * <p>The FQDN or IP address to contact for origination traffic.</p>
      */
     inline void SetHost(Aws::String&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
 
     /**
-     * <p>The FODN or IP address to contact for origination traffic.</p>
+     * <p>The FQDN or IP address to contact for origination traffic.</p>
      */
     inline void SetHost(const char* value) { m_hostHasBeenSet = true; m_host.assign(value); }
 
     /**
-     * <p>The FODN or IP address to contact for origination traffic.</p>
+     * <p>The FQDN or IP address to contact for origination traffic.</p>
      */
     inline OriginationRoute& WithHost(const Aws::String& value) { SetHost(value); return *this;}
 
     /**
-     * <p>The FODN or IP address to contact for origination traffic.</p>
+     * <p>The FQDN or IP address to contact for origination traffic.</p>
      */
     inline OriginationRoute& WithHost(Aws::String&& value) { SetHost(std::move(value)); return *this;}
 
     /**
-     * <p>The FODN or IP address to contact for origination traffic.</p>
+     * <p>The FQDN or IP address to contact for origination traffic.</p>
      */
     inline OriginationRoute& WithHost(const char* value) { SetHost(value); return *this;}
 

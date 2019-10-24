@@ -17,6 +17,7 @@
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/chime/ChimeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/chime/model/VoiceConnectorAwsRegion.h>
 #include <utility>
 
 namespace Aws
@@ -84,6 +85,43 @@ namespace Model
 
 
     /**
+     * <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default
+     * value: <code>us-east-1</code>.</p>
+     */
+    inline const VoiceConnectorAwsRegion& GetAwsRegion() const{ return m_awsRegion; }
+
+    /**
+     * <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default
+     * value: <code>us-east-1</code>.</p>
+     */
+    inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
+
+    /**
+     * <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default
+     * value: <code>us-east-1</code>.</p>
+     */
+    inline void SetAwsRegion(const VoiceConnectorAwsRegion& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
+
+    /**
+     * <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default
+     * value: <code>us-east-1</code>.</p>
+     */
+    inline void SetAwsRegion(VoiceConnectorAwsRegion&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
+
+    /**
+     * <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default
+     * value: <code>us-east-1</code>.</p>
+     */
+    inline CreateVoiceConnectorRequest& WithAwsRegion(const VoiceConnectorAwsRegion& value) { SetAwsRegion(value); return *this;}
+
+    /**
+     * <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default
+     * value: <code>us-east-1</code>.</p>
+     */
+    inline CreateVoiceConnectorRequest& WithAwsRegion(VoiceConnectorAwsRegion&& value) { SetAwsRegion(std::move(value)); return *this;}
+
+
+    /**
      * <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
      */
     inline bool GetRequireEncryption() const{ return m_requireEncryption; }
@@ -107,6 +145,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    VoiceConnectorAwsRegion m_awsRegion;
+    bool m_awsRegionHasBeenSet;
 
     bool m_requireEncryption;
     bool m_requireEncryptionHasBeenSet;

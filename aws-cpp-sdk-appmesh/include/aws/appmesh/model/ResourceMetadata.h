@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>An object representing metadata for a resource.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that represents metadata for a resource.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ResourceMetadata">AWS
    * API Reference</a></p>
    */

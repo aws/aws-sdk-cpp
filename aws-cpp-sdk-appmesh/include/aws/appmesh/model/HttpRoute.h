@@ -36,8 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the HTTP routing specification for a
-   * route.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that represents an HTTP or HTTP2 route type.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpRoute">AWS
    * API Reference</a></p>
    */
@@ -51,63 +51,63 @@ namespace Model
 
 
     /**
-     * <p>The action to take if a match is determined.</p>
+     * <p>An object that represents the action to take if a match is determined.</p>
      */
     inline const HttpRouteAction& GetAction() const{ return m_action; }
 
     /**
-     * <p>The action to take if a match is determined.</p>
+     * <p>An object that represents the action to take if a match is determined.</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * <p>The action to take if a match is determined.</p>
+     * <p>An object that represents the action to take if a match is determined.</p>
      */
     inline void SetAction(const HttpRouteAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>The action to take if a match is determined.</p>
+     * <p>An object that represents the action to take if a match is determined.</p>
      */
     inline void SetAction(HttpRouteAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>The action to take if a match is determined.</p>
+     * <p>An object that represents the action to take if a match is determined.</p>
      */
     inline HttpRoute& WithAction(const HttpRouteAction& value) { SetAction(value); return *this;}
 
     /**
-     * <p>The action to take if a match is determined.</p>
+     * <p>An object that represents the action to take if a match is determined.</p>
      */
     inline HttpRoute& WithAction(HttpRouteAction&& value) { SetAction(std::move(value)); return *this;}
 
 
     /**
-     * <p>The criteria for determining an HTTP request match.</p>
+     * <p>An object that represents the criteria for determining a request match.</p>
      */
     inline const HttpRouteMatch& GetMatch() const{ return m_match; }
 
     /**
-     * <p>The criteria for determining an HTTP request match.</p>
+     * <p>An object that represents the criteria for determining a request match.</p>
      */
     inline bool MatchHasBeenSet() const { return m_matchHasBeenSet; }
 
     /**
-     * <p>The criteria for determining an HTTP request match.</p>
+     * <p>An object that represents the criteria for determining a request match.</p>
      */
     inline void SetMatch(const HttpRouteMatch& value) { m_matchHasBeenSet = true; m_match = value; }
 
     /**
-     * <p>The criteria for determining an HTTP request match.</p>
+     * <p>An object that represents the criteria for determining a request match.</p>
      */
     inline void SetMatch(HttpRouteMatch&& value) { m_matchHasBeenSet = true; m_match = std::move(value); }
 
     /**
-     * <p>The criteria for determining an HTTP request match.</p>
+     * <p>An object that represents the criteria for determining a request match.</p>
      */
     inline HttpRoute& WithMatch(const HttpRouteMatch& value) { SetMatch(value); return *this;}
 
     /**
-     * <p>The criteria for determining an HTTP request match.</p>
+     * <p>An object that represents the criteria for determining a request match.</p>
      */
     inline HttpRoute& WithMatch(HttpRouteMatch&& value) { SetMatch(std::move(value)); return *this;}
 

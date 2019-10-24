@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the backends that a virtual node is expected to send
-   * outbound
+   * <p>An object that represents the backends that a virtual node is expected to
+   * send outbound
          traffic to. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/Backend">AWS API
    * Reference</a></p>

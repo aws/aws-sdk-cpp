@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the status of a virtual router. </p><p><h3>See
+   * <p>An object that represents the status of a virtual router. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualRouterStatus">AWS
    * API Reference</a></p>

@@ -33,6 +33,7 @@ namespace Aws
         static const int AccountId_HASH = HashingUtils::HashString("AccountId");
         static const int UserId_HASH = HashingUtils::HashString("UserId");
         static const int VoiceConnectorId_HASH = HashingUtils::HashString("VoiceConnectorId");
+        static const int VoiceConnectorGroupId_HASH = HashingUtils::HashString("VoiceConnectorGroupId");
 
 
         PhoneNumberAssociationName GetPhoneNumberAssociationNameForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == VoiceConnectorId_HASH)
           {
             return PhoneNumberAssociationName::VoiceConnectorId;
+          }
+          else if (hashCode == VoiceConnectorGroupId_HASH)
+          {
+            return PhoneNumberAssociationName::VoiceConnectorGroupId;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "UserId";
           case PhoneNumberAssociationName::VoiceConnectorId:
             return "VoiceConnectorId";
+          case PhoneNumberAssociationName::VoiceConnectorGroupId:
+            return "VoiceConnectorGroupId";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
