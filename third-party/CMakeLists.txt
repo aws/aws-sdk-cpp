@@ -19,11 +19,11 @@ set(AWS_C_COMMON_TAG "v0.4.13")
 include(BuildAwsCCommon)
 
 set(AWS_CHECKSUMS_URL "https://github.com/awslabs/aws-checksums.git")
-set(AWS_CHECKSUMS_TAG "41dc36d")
+set(AWS_CHECKSUMS_TAG "v0.1.3")
 include(BuildAwsChecksums)
 
 set(AWS_EVENT_STREAM_URL "https://github.com/awslabs/aws-c-event-stream.git")
-set(AWS_EVENT_STREAM_TAG "ceb9f9b")
+set(AWS_EVENT_STREAM_TAG "v0.1.3")
 include(BuildAwsEventStream)
 
 add_dependencies(AwsCEventStream AwsCCommon AwsChecksums)
