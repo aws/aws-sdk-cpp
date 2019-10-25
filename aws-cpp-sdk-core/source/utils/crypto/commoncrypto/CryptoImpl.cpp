@@ -77,23 +77,18 @@ namespace Aws
             HashResult MD5CommonCryptoImpl::Calculate(const Aws::String& str)
             {
                 ByteBuffer hash(CC_MD5_DIGEST_LENGTH);
-#ifdef __APPLE__
 AWS_SUPPRESS_WARNING("-Wdeprecated-declarations",
                 CC_MD5(str.c_str(), static_cast<CC_LONG>(str.length()), hash.GetUnderlyingData());
                 )
-#endif
-
                 return HashResult(std::move(hash));
             }
 
             HashResult MD5CommonCryptoImpl::Calculate(Aws::IStream& stream)
             {
-#ifdef __APPLE__
-AWS_SUPPRESS_WARNING("-Wdeprecated-declarations",
+AWS_SUPPRESS_WARNING("-Wdeprecated-declarations",/*CC_MD5 is deprecated by MacOS 10.15 due to cryptographically broken, but SDk only use it for digestion calculation*/
                 CC_MD5_CTX md5;
                 CC_MD5_Init(&md5);
                 )
-#endif
 
                 auto currentPos = stream.tellg();
                 stream.seekg(0, stream.beg);
@@ -106,11 +101,9 @@ AWS_SUPPRESS_WARNING("-Wdeprecated-declarations",
 
                     if(bytesRead > 0)
                     {
-#ifdef __APPLE__
 AWS_SUPPRESS_WARNING("-Wdeprecated-declarations",
                         CC_MD5_Update(&md5, streamBuffer, static_cast<CC_LONG>(bytesRead));
                         )
-#endif
                     }
                 }
 
@@ -118,11 +111,9 @@ AWS_SUPPRESS_WARNING("-Wdeprecated-declarations",
                 stream.seekg(currentPos, stream.beg);
 
                 ByteBuffer hash(CC_MD5_DIGEST_LENGTH);
-#ifdef __APPLE__
 AWS_SUPPRESS_WARNING("-Wdeprecated-declarations",
                 CC_MD5_Final(hash.GetUnderlyingData(), &md5);
                 )
-#endif
 
                 return HashResult(std::move(hash));
             }
