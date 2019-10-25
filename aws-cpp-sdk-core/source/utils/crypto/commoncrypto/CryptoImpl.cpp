@@ -77,15 +77,14 @@ namespace Aws
             HashResult MD5CommonCryptoImpl::Calculate(const Aws::String& str)
             {
                 ByteBuffer hash(CC_MD5_DIGEST_LENGTH);
-AWS_SUPPRESS_WARNING("-Wdeprecated-declarations",
-                CC_MD5(str.c_str(), static_cast<CC_LONG>(str.length()), hash.GetUnderlyingData());
-                )
+                /*CC_MD5 is deprecated by MacOS 10.15 due to cryptographically broken, but SDk only use it for digestion calculation*/
+                AWS_SUPPRESS_DEPRECATION(CC_MD5(str.c_str(), static_cast<CC_LONG>(str.length()), hash.GetUnderlyingData());)
                 return HashResult(std::move(hash));
             }
 
             HashResult MD5CommonCryptoImpl::Calculate(Aws::IStream& stream)
             {
-AWS_SUPPRESS_WARNING("-Wdeprecated-declarations",/*CC_MD5 is deprecated by MacOS 10.15 due to cryptographically broken, but SDk only use it for digestion calculation*/
+                AWS_SUPPRESS_DEPRECATION(
                 CC_MD5_CTX md5;
                 CC_MD5_Init(&md5);
                 )
@@ -101,9 +100,7 @@ AWS_SUPPRESS_WARNING("-Wdeprecated-declarations",/*CC_MD5 is deprecated by MacOS
 
                     if(bytesRead > 0)
                     {
-AWS_SUPPRESS_WARNING("-Wdeprecated-declarations",
-                        CC_MD5_Update(&md5, streamBuffer, static_cast<CC_LONG>(bytesRead));
-                        )
+                        AWS_SUPPRESS_DEPRECATION(CC_MD5_Update(&md5, streamBuffer, static_cast<CC_LONG>(bytesRead));)
                     }
                 }
 
@@ -111,10 +108,7 @@ AWS_SUPPRESS_WARNING("-Wdeprecated-declarations",
                 stream.seekg(currentPos, stream.beg);
 
                 ByteBuffer hash(CC_MD5_DIGEST_LENGTH);
-AWS_SUPPRESS_WARNING("-Wdeprecated-declarations",
-                CC_MD5_Final(hash.GetUnderlyingData(), &md5);
-                )
-
+                AWS_SUPPRESS_DEPRECATION(CC_MD5_Final(hash.GetUnderlyingData(), &md5);)
                 return HashResult(std::move(hash));
             }
 
