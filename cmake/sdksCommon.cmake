@@ -1,12 +1,12 @@
 #
 # Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-# 
+#
 # Licensed under the Apache License, Version 2.0 (the "License").
 # You may not use this file except in compliance with the License.
 # A copy of the License is located at
-# 
+#
 #  http://aws.amazon.com/apache2.0
-# 
+#
 # or in the "license" file accompanying this file. This file is distributed
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
@@ -49,7 +49,7 @@ endfunction()
 
 function(get_dependencies_for_sdk PROJECT_NAME DEPENDENCY_LIST_VAR)
     get_map_element(${PROJECT_NAME} TEMP_VAR ${SDK_DEPENDENCY_LIST})
-    # "core" is the default dependency for every sdk. 
+    # "core" is the default dependency for every sdk.
     # Since we removed the hand-written C2J_LIST and instead auto generating it based on models,
     # and location of models may not exist or incorrect when SDK is installed and then source has been deleted by customers.
     # we end up getting an incomplete C2J_LIST when customers call find_package(AWSSDK). But C2J_LIST is only used in customers code for dependencies completing.
@@ -80,7 +80,7 @@ endfunction()
 
 # function that automatically picks up models from <sdkrootdir>/code-generation/api-descriptions/ directory and build
 # C2J_LIST needed for generation, services have multiple models will use the latest model (decided by model files' date)
-# services have the name format abc.def.ghi will be renamed to ghi-def-abc (dot will not be accepted as Windows directory name ) 
+# services have the name format abc.def.ghi will be renamed to ghi-def-abc (dot will not be accepted as Windows directory name )
 # and put into C2J_SPECIAL_NAME_LIST, but rumtime.lex will be renamed to lex based on historical reason.
 function(build_sdk_list)
     file(GLOB ALL_MODEL_FILES "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/api-descriptions/*-[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9].normal.json")
@@ -95,6 +95,9 @@ function(build_sdk_list)
         elseif ("${svc}" STREQUAL "transfer")
             LIST(APPEND C2J_SPECIAL_NAME_LIST "awstransfer:transfer")
             set(svc "awstransfer")
+        elseif ("${svc}" STREQUAL "transcribe-streaming")
+            LIST(APPEND C2J_SPECIAL_NAME_LIST "transcribestreaming:transcribe-streaming")
+            set(svc "transcribestreaming")
         elseif("${svc}" MATCHES "\\.")
             string(REPLACE "." ";" nameParts ${svc})
             LIST(REVERSE nameParts)
@@ -120,12 +123,12 @@ endfunction()
 
 
 set(HIGH_LEVEL_SDK_LIST "")
-list(APPEND HIGH_LEVEL_SDK_LIST "access-management") 
-list(APPEND HIGH_LEVEL_SDK_LIST "identity-management") 
-list(APPEND HIGH_LEVEL_SDK_LIST "queues") 
-list(APPEND HIGH_LEVEL_SDK_LIST "transfer") 
-list(APPEND HIGH_LEVEL_SDK_LIST "s3-encryption") 
-list(APPEND HIGH_LEVEL_SDK_LIST "text-to-speech") 
+list(APPEND HIGH_LEVEL_SDK_LIST "access-management")
+list(APPEND HIGH_LEVEL_SDK_LIST "identity-management")
+list(APPEND HIGH_LEVEL_SDK_LIST "queues")
+list(APPEND HIGH_LEVEL_SDK_LIST "transfer")
+list(APPEND HIGH_LEVEL_SDK_LIST "s3-encryption")
+list(APPEND HIGH_LEVEL_SDK_LIST "text-to-speech")
 
 set(SDK_TEST_PROJECT_LIST "")
 list(APPEND SDK_TEST_PROJECT_LIST "cognito-identity:aws-cpp-sdk-cognitoidentity-integration-tests")

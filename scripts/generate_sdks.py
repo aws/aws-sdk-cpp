@@ -62,7 +62,8 @@ serviceNameRemaps = {
     "runtime.lex" : "lex",
     "entitlement.marketplace" : "marketplace-entitlement",
     "runtime.sagemaker" : "sagemaker-runtime",
-    "transfer" : "awstransfer"
+    "transfer" : "awstransfer",
+    "transcribe-streaming" : "transcribestreaming"
 }
 
 def DiscoverAllAvailableSDKs(discoveryPath):
