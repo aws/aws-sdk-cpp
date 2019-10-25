@@ -74,32 +74,32 @@ namespace Model
 
 
     /**
-     * <p>Indicates the language used in the input audio stream.</p>
+     * <p>Indicates the source language used in the input audio stream.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>Indicates the language used in the input audio stream.</p>
+     * <p>Indicates the source language used in the input audio stream.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
-     * <p>Indicates the language used in the input audio stream.</p>
+     * <p>Indicates the source language used in the input audio stream.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p>Indicates the language used in the input audio stream.</p>
+     * <p>Indicates the source language used in the input audio stream.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p>Indicates the language used in the input audio stream.</p>
+     * <p>Indicates the source language used in the input audio stream.</p>
      */
     inline StartStreamTranscriptionRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>Indicates the language used in the input audio stream.</p>
+     * <p>Indicates the source language used in the input audio stream.</p>
      */
     inline StartStreamTranscriptionRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 

@@ -92,80 +92,88 @@ namespace Model
 
 
     /**
-     * <p>The offset in milliseconds from the beginning of the audio stream to the
-     * beginning of the result.</p>
+     * <p>The offset in seconds from the beginning of the audio stream to the beginning
+     * of the result.</p>
      */
     inline double GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The offset in milliseconds from the beginning of the audio stream to the
-     * beginning of the result.</p>
+     * <p>The offset in seconds from the beginning of the audio stream to the beginning
+     * of the result.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>The offset in milliseconds from the beginning of the audio stream to the
-     * beginning of the result.</p>
+     * <p>The offset in seconds from the beginning of the audio stream to the beginning
+     * of the result.</p>
      */
     inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The offset in milliseconds from the beginning of the audio stream to the
-     * beginning of the result.</p>
+     * <p>The offset in seconds from the beginning of the audio stream to the beginning
+     * of the result.</p>
      */
     inline Result& WithStartTime(double value) { SetStartTime(value); return *this;}
 
 
     /**
-     * <p>The offset in milliseconds from the beginning of the audio stream to the end
-     * of the result.</p>
+     * <p>The offset in seconds from the beginning of the audio stream to the end of
+     * the result.</p>
      */
     inline double GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The offset in milliseconds from the beginning of the audio stream to the end
-     * of the result.</p>
+     * <p>The offset in seconds from the beginning of the audio stream to the end of
+     * the result.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>The offset in milliseconds from the beginning of the audio stream to the end
-     * of the result.</p>
+     * <p>The offset in seconds from the beginning of the audio stream to the end of
+     * the result.</p>
      */
     inline void SetEndTime(double value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The offset in milliseconds from the beginning of the audio stream to the end
-     * of the result.</p>
+     * <p>The offset in seconds from the beginning of the audio stream to the end of
+     * the result.</p>
      */
     inline Result& WithEndTime(double value) { SetEndTime(value); return *this;}
 
 
     /**
-     * <p> <code>true</code> to indicate that Amazon Transcribe has additional
-     * transcription data to send, <code>false</code> to indicate that this is the last
-     * transcription result for the audio stream.</p>
+     * <p>Amazon Transcribe divides the incoming audio stream into segments at natural
+     * points in the audio. Transcription results are returned based on these segments.
+     * </p> <p>The <code>IsPartial</code> field is <code>true</code> to indicate that
+     * Amazon Transcribe has additional transcription data to send, <code>false</code>
+     * to indicate that this is the last transcription result for the segment.</p>
      */
     inline bool GetIsPartial() const{ return m_isPartial; }
 
     /**
-     * <p> <code>true</code> to indicate that Amazon Transcribe has additional
-     * transcription data to send, <code>false</code> to indicate that this is the last
-     * transcription result for the audio stream.</p>
+     * <p>Amazon Transcribe divides the incoming audio stream into segments at natural
+     * points in the audio. Transcription results are returned based on these segments.
+     * </p> <p>The <code>IsPartial</code> field is <code>true</code> to indicate that
+     * Amazon Transcribe has additional transcription data to send, <code>false</code>
+     * to indicate that this is the last transcription result for the segment.</p>
      */
     inline bool IsPartialHasBeenSet() const { return m_isPartialHasBeenSet; }
 
     /**
-     * <p> <code>true</code> to indicate that Amazon Transcribe has additional
-     * transcription data to send, <code>false</code> to indicate that this is the last
-     * transcription result for the audio stream.</p>
+     * <p>Amazon Transcribe divides the incoming audio stream into segments at natural
+     * points in the audio. Transcription results are returned based on these segments.
+     * </p> <p>The <code>IsPartial</code> field is <code>true</code> to indicate that
+     * Amazon Transcribe has additional transcription data to send, <code>false</code>
+     * to indicate that this is the last transcription result for the segment.</p>
      */
     inline void SetIsPartial(bool value) { m_isPartialHasBeenSet = true; m_isPartial = value; }
 
     /**
-     * <p> <code>true</code> to indicate that Amazon Transcribe has additional
-     * transcription data to send, <code>false</code> to indicate that this is the last
-     * transcription result for the audio stream.</p>
+     * <p>Amazon Transcribe divides the incoming audio stream into segments at natural
+     * points in the audio. Transcription results are returned based on these segments.
+     * </p> <p>The <code>IsPartial</code> field is <code>true</code> to indicate that
+     * Amazon Transcribe has additional transcription data to send, <code>false</code>
+     * to indicate that this is the last transcription result for the segment.</p>
      */
     inline Result& WithIsPartial(bool value) { SetIsPartial(value); return *this;}
 
