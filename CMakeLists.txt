@@ -233,6 +233,7 @@ if (BUILD_DEPS)
     message(STATUS "Third-party dependencies are installed at: ${AWS_DEPS_INSTALL_DIR}")
     list(APPEND CMAKE_PREFIX_PATH "${AWS_DEPS_INSTALL_DIR}")
 endif()
+set(THIRD_PARTY_LIBS "aws-c-event-stream;aws-checksums;aws-c-common")
 
 # build the sdk targets
 project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)

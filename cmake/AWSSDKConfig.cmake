@@ -164,7 +164,7 @@ message(STATUS "Found AWS SDK for C++, Version: ${PACKAGE_VERSION}, Install Root
 # copy libs of services in SERVICE_LIST and all there dependent libs to DEST_DIR
 # CONFIG denote copy release or debug version
 macro(AWSSDK_CPY_DYN_LIBS SERVICE_LIST CONFIG DEST_DIR)
-    set(ALL_SERVICES "core;aws-c-event-stream;aws-checksums;aws-c-common")
+    set(ALL_SERVICES "core" ${AWSSDK_THIRD_PARTY_LIBS})
 
     foreach(SVC IN LISTS ${SERVICE_LIST})
         list(APPEND ALL_SERVICES ${SVC})
@@ -262,7 +262,7 @@ macro(AWSSDK_DETERMINE_LIBS_TO_LINK SERVICE_LIST OUTPUT_VAR)
         list(APPEND ${OUTPUT_VAR} "aws-cpp-sdk-${DEP}")
     endforeach()
     if (NOT AWSSDK_INSTALL_AS_SHARED_LIBS)
-        list(APPEND ${OUTPUT_VAR} ${AWSSDK_PLATFORM_DEPS})
+        list(APPEND ${OUTPUT_VAR} ${AWSSDK_THIRD_PARTY_LIBS} ${AWSSDK_PLATFORM_DEPS})
     endif()
 endmacro(AWSSDK_DETERMINE_LIBS_TO_LINK)
 
@@ -283,6 +283,8 @@ if (AWSSDK_FIND_COMPONENTS)
     set(AWSSDK_TARGETS ${AWSSDK_LINK_LIBRARIES})
     # for static sdk, platform dependencies will be included in AWSSDK_LINK_LIBRARIES.
     list(REMOVE_ITEM AWSSDK_TARGETS ${AWSSDK_PLATFORM_DEPS})
+    # for static sdk, third_party dependencies should be included in AWSSDK_LINK_LIBRARIES and should be resolved automatically by find_package(aws-cpp-sdk-core).
+    list(REMOVE_ITEM AWSSDK_TARGETS ${AWSSDK_THIRD_PARTY_LIBS})
     list(REVERSE AWSSDK_TARGETS)
 
     foreach(TARGET IN LISTS AWSSDK_TARGETS)

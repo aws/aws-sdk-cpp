@@ -27,4 +27,3 @@ set(AWS_EVENT_STREAM_TAG "ceb9f9b")
 include(BuildAwsEventStream)
 
 add_dependencies(AwsCEventStream AwsCCommon AwsChecksums)
-

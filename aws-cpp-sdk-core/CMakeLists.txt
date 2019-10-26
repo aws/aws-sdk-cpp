@@ -29,7 +29,7 @@ else()
     message(STATUS "Custom memory management disabled")
 endif()
 
-configure_file("${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/SDKConfig.h.in" 
+configure_file("${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/SDKConfig.h.in"
                "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/SDKConfig.h")
 
 # Pretty sure we can use a regex here...
@@ -161,7 +161,7 @@ elseif(ENABLE_WINDOWS_CLIENT)
             nullptr /*lpszProxyBypass*/,
             0 /*dwFlags*/);
         DWORD http2 = HTTP_PROTOCOL_FLAG_HTTP2;
-        if (InternetSetOptionA(handle, INTERNET_OPTION_ENABLE_HTTP_PROTOCOL, &http2, sizeof(http2))) 
+        if (InternetSetOptionA(handle, INTERNET_OPTION_ENABLE_HTTP_PROTOCOL, &http2, sizeof(http2)))
         {
             return 0;
         }
@@ -190,7 +190,7 @@ elseif(ENABLE_OPENSSL_ENCRYPTION)
 elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
     file(GLOB UTILS_CRYPTO_COMMONCRYPTO_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/utils/crypto/commoncrypto/*.h")
     file(GLOB UTILS_CRYPTO_COMMONCRYPTO_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/commoncrypto/*.cpp")
-endif()   
+endif()
 
 
 file(GLOB AWS_NATIVE_SDK_COMMON_SRC
@@ -249,7 +249,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${UTILS_CRYPTO_BCRYPT_HEADERS}
   ${UTILS_CRYPTO_OPENSSL_HEADERS}
   ${UTILS_CRYPTO_COMMONCRYPTO_HEADERS}
-) 
+)
 
 # misc platform-specific, not related to features (encryption/http clients)
 if(PLATFORM_WINDOWS)
@@ -257,7 +257,7 @@ if(PLATFORM_WINDOWS)
   #add your windows specific impl stuff here.
   file(GLOB PLATFORM_WINDOWS_SOURCE = "${CMAKE_CURRENT_SOURCE_DIR}/source/platform/windows/*.cpp")
 
-  file(GLOB AWS_NATIVE_SDK_WINDOWS_SRC 
+  file(GLOB AWS_NATIVE_SDK_WINDOWS_SRC
     ${PLATFORM_WINDOWS_SOURCE}
   )
 elseif(PLATFORM_LINUX OR PLATFORM_APPLE)
@@ -266,14 +266,14 @@ elseif(PLATFORM_LINUX OR PLATFORM_APPLE)
 
   file(GLOB PLATFORM_LINUX_SHARED_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/platform/linux-shared/*.cpp")
 
-  file(GLOB AWS_NATIVE_SDK_LINUX_SHARED_SRC 
+  file(GLOB AWS_NATIVE_SDK_LINUX_SHARED_SRC
      ${PLATFORM_LINUX_SHARED_SOURCE}
    )
 elseif(PLATFORM_ANDROID)
   file(GLOB UTILS_LOGGING_ANDROID_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/utils/logging/android/*.h")
   file(GLOB PLATFORM_ANDROID_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/platform/android/*.cpp")
 
-  file(GLOB AWS_NATIVE_SDK_ANDROID_SRC 
+  file(GLOB AWS_NATIVE_SDK_ANDROID_SRC
      ${PLATFORM_ANDROID_SOURCE}
   )
   file(GLOB AWS_NATIVE_SDK_ANDROID_HEADERS
@@ -458,11 +458,6 @@ if(BUILD_OPENSSL)
     target_include_directories(${PROJECT_NAME} PRIVATE "${OPENSSL_INCLUDE_DIR}")
 endif()
 
-if(BUILD_ZLIB)
-    target_include_directories(${PROJECT_NAME} PRIVATE "${ZLIB_INCLUDE_DIR}")
-endif()
-
-
 set(PKG_CONFIG_LIB "-l${PROJECT_NAME}")
 
 if (ENABLE_CURL_LOGGING)
@@ -534,6 +529,10 @@ else()
 endif()
 
 if(SIMPLE_INSTALL)
+    # These libs are needed by aws-cpp-sdk-core only.
+    set(ALL_DEP_LIBS ${THIRD_PARTY_LIBS} ${PLATFORM_DEP_LIBS_ABSTRACT_NAME} ${CLIENT_LIBS_ABSTRACT_NAME} ${CRYPTO_LIBS_ABSTRACT_NAME})
+    generate_pkgconfig_link_flags(ALL_DEP_LIBS ALL_DEP_LIBS_LINK_FLAGS)
+    set(ALL_DEP_LIBS_LINK_FLAGS "${ALL_DEP_LIBS_LINK_FLAGS}")
     configure_file("${AWS_NATIVE_SDK_ROOT}/toolchains/pkg-config.pc.in" "${PROJECT_NAME}.pc" @ONLY)
 
     if(BUILD_SHARED_LIBS)

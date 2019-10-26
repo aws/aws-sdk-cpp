@@ -114,11 +114,11 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
         set( CURL_C_FLAGS "${EXTERNAL_C_FLAGS}  ${OPENSSL_INCLUDE_FLAGS} ${ZLIB_INCLUDE_FLAGS} -Wno-unused-value -fPIE ${ZLIB_LINKER_FLAGS} ${OPENSSL_LINKER_FLAGS}" CACHE INTERNAL "")
         set( CURL_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fPIE -pie ${ZLIB_LINKER_FLAGS} ${OPENSSL_LINKER_FLAGS}" CACHE INTERNAL "" )
 
-	if(ZLIB_LIBRARIES)
-	    set(CURL_USE_ZLIB "ON")
-	else()
-	    set(CURL_USE_ZLIB "OFF")
-	endif()
+        if(ZLIB_LIBRARIES)
+            set(CURL_USE_ZLIB "ON")
+        else()
+            set(CURL_USE_ZLIB "OFF")
+        endif()
 
         ExternalProject_Add(CURL
                 DEPENDS ${CURL_OPENSSL_DEPENDENCY} ${CURL_ZLIB_DEPENDENCY}

@@ -3,14 +3,13 @@ if(PLATFORM_ANDROID AND ANDROID_BUILD_ZLIB)
     set(BUILD_ZLIB 1)
     message(STATUS "  Building Zlib as part of AWS SDK")
 elseif(NOT PLATFORM_WINDOWS AND NOT PLATFORM_CUSTOM)
+    #If zlib is required either by openssl and curl in their linking chain, we should find it.
     include(FindZLIB)
     if(NOT ZLIB_FOUND)
         message(FATAL_ERROR "Could not find zlib")
     else()
-        message(STATUS "  Zlib include directory: ${ZLIB_INCLUDE_DIRS}")
         message(STATUS "  Zlib library: ${ZLIB_LIBRARIES}")
     endif()
-    List(APPEND EXTERNAL_DEPS_INCLUDE_DIRS ${ZLIB_INCLUDE_DIRS})
 endif()
 
 # Encryption control
