@@ -70,7 +70,7 @@ namespace Model
 
   class SageMakerRuntimeClient;
 
-    typedef std::function<void(const SageMakerRuntimeClient*, const Model::InvokeEndpointRequest&, const Model::InvokeEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeEndpointResponseReceivedHandler;
+    typedef std::function<void(const SageMakerRuntimeClient*, const Model::InvokeEndpointRequest&, Model::InvokeEndpointOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeEndpointResponseReceivedHandler;
 
   /**
    * <p> The Amazon SageMaker runtime API. </p>

@@ -142,8 +142,8 @@ namespace Model
      * migrate existing users from an existing SFTP server to a new AWS SFTP server,
      * don't update the host key. Accidentally changing a server's host key can be
      * disruptive.</p> </important> <p> For more information, see
-     * "https://docs.aws.amazon.com/transfer/latest/userguide/change-host-key" in the
-     * <i>AWS SFTP User Guide.</i> </p>
+     * "https://alpha-docs-aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key"
+     * in the <i>AWS SFTP User Guide.</i> </p>
      */
     inline const Aws::String& GetHostKey() const{ return m_hostKey; }
 
@@ -153,8 +153,8 @@ namespace Model
      * migrate existing users from an existing SFTP server to a new AWS SFTP server,
      * don't update the host key. Accidentally changing a server's host key can be
      * disruptive.</p> </important> <p> For more information, see
-     * "https://docs.aws.amazon.com/transfer/latest/userguide/change-host-key" in the
-     * <i>AWS SFTP User Guide.</i> </p>
+     * "https://alpha-docs-aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key"
+     * in the <i>AWS SFTP User Guide.</i> </p>
      */
     inline bool HostKeyHasBeenSet() const { return m_hostKeyHasBeenSet; }
 
@@ -164,8 +164,8 @@ namespace Model
      * migrate existing users from an existing SFTP server to a new AWS SFTP server,
      * don't update the host key. Accidentally changing a server's host key can be
      * disruptive.</p> </important> <p> For more information, see
-     * "https://docs.aws.amazon.com/transfer/latest/userguide/change-host-key" in the
-     * <i>AWS SFTP User Guide.</i> </p>
+     * "https://alpha-docs-aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key"
+     * in the <i>AWS SFTP User Guide.</i> </p>
      */
     inline void SetHostKey(const Aws::String& value) { m_hostKeyHasBeenSet = true; m_hostKey = value; }
 
@@ -175,8 +175,8 @@ namespace Model
      * migrate existing users from an existing SFTP server to a new AWS SFTP server,
      * don't update the host key. Accidentally changing a server's host key can be
      * disruptive.</p> </important> <p> For more information, see
-     * "https://docs.aws.amazon.com/transfer/latest/userguide/change-host-key" in the
-     * <i>AWS SFTP User Guide.</i> </p>
+     * "https://alpha-docs-aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key"
+     * in the <i>AWS SFTP User Guide.</i> </p>
      */
     inline void SetHostKey(Aws::String&& value) { m_hostKeyHasBeenSet = true; m_hostKey = std::move(value); }
 
@@ -186,8 +186,8 @@ namespace Model
      * migrate existing users from an existing SFTP server to a new AWS SFTP server,
      * don't update the host key. Accidentally changing a server's host key can be
      * disruptive.</p> </important> <p> For more information, see
-     * "https://docs.aws.amazon.com/transfer/latest/userguide/change-host-key" in the
-     * <i>AWS SFTP User Guide.</i> </p>
+     * "https://alpha-docs-aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key"
+     * in the <i>AWS SFTP User Guide.</i> </p>
      */
     inline void SetHostKey(const char* value) { m_hostKeyHasBeenSet = true; m_hostKey.assign(value); }
 
@@ -197,8 +197,8 @@ namespace Model
      * migrate existing users from an existing SFTP server to a new AWS SFTP server,
      * don't update the host key. Accidentally changing a server's host key can be
      * disruptive.</p> </important> <p> For more information, see
-     * "https://docs.aws.amazon.com/transfer/latest/userguide/change-host-key" in the
-     * <i>AWS SFTP User Guide.</i> </p>
+     * "https://alpha-docs-aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key"
+     * in the <i>AWS SFTP User Guide.</i> </p>
      */
     inline CreateServerRequest& WithHostKey(const Aws::String& value) { SetHostKey(value); return *this;}
 
@@ -208,8 +208,8 @@ namespace Model
      * migrate existing users from an existing SFTP server to a new AWS SFTP server,
      * don't update the host key. Accidentally changing a server's host key can be
      * disruptive.</p> </important> <p> For more information, see
-     * "https://docs.aws.amazon.com/transfer/latest/userguide/change-host-key" in the
-     * <i>AWS SFTP User Guide.</i> </p>
+     * "https://alpha-docs-aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key"
+     * in the <i>AWS SFTP User Guide.</i> </p>
      */
     inline CreateServerRequest& WithHostKey(Aws::String&& value) { SetHostKey(std::move(value)); return *this;}
 
@@ -219,8 +219,8 @@ namespace Model
      * migrate existing users from an existing SFTP server to a new AWS SFTP server,
      * don't update the host key. Accidentally changing a server's host key can be
      * disruptive.</p> </important> <p> For more information, see
-     * "https://docs.aws.amazon.com/transfer/latest/userguide/change-host-key" in the
-     * <i>AWS SFTP User Guide.</i> </p>
+     * "https://alpha-docs-aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key"
+     * in the <i>AWS SFTP User Guide.</i> </p>
      */
     inline CreateServerRequest& WithHostKey(const char* value) { SetHostKey(value); return *this;}
 

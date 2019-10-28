@@ -88,7 +88,7 @@ namespace Model
 
     typedef std::function<void(const MediaStoreDataClient*, const Model::DeleteObjectRequest&, const Model::DeleteObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteObjectResponseReceivedHandler;
     typedef std::function<void(const MediaStoreDataClient*, const Model::DescribeObjectRequest&, const Model::DescribeObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeObjectResponseReceivedHandler;
-    typedef std::function<void(const MediaStoreDataClient*, const Model::GetObjectRequest&, const Model::GetObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetObjectResponseReceivedHandler;
+    typedef std::function<void(const MediaStoreDataClient*, const Model::GetObjectRequest&, Model::GetObjectOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetObjectResponseReceivedHandler;
     typedef std::function<void(const MediaStoreDataClient*, const Model::ListItemsRequest&, const Model::ListItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListItemsResponseReceivedHandler;
     typedef std::function<void(const MediaStoreDataClient*, const Model::PutObjectRequest&, const Model::PutObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutObjectResponseReceivedHandler;
 

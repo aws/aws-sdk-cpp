@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ecr/model/ImageTagMutability.h>
+#include <aws/ecr/model/ImageScanningConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -328,6 +329,25 @@ namespace Model
      */
     inline Repository& WithImageTagMutability(ImageTagMutability&& value) { SetImageTagMutability(std::move(value)); return *this;}
 
+
+    
+    inline const ImageScanningConfiguration& GetImageScanningConfiguration() const{ return m_imageScanningConfiguration; }
+
+    
+    inline bool ImageScanningConfigurationHasBeenSet() const { return m_imageScanningConfigurationHasBeenSet; }
+
+    
+    inline void SetImageScanningConfiguration(const ImageScanningConfiguration& value) { m_imageScanningConfigurationHasBeenSet = true; m_imageScanningConfiguration = value; }
+
+    
+    inline void SetImageScanningConfiguration(ImageScanningConfiguration&& value) { m_imageScanningConfigurationHasBeenSet = true; m_imageScanningConfiguration = std::move(value); }
+
+    
+    inline Repository& WithImageScanningConfiguration(const ImageScanningConfiguration& value) { SetImageScanningConfiguration(value); return *this;}
+
+    
+    inline Repository& WithImageScanningConfiguration(ImageScanningConfiguration&& value) { SetImageScanningConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_repositoryArn;
@@ -347,6 +367,9 @@ namespace Model
 
     ImageTagMutability m_imageTagMutability;
     bool m_imageTagMutabilityHasBeenSet;
+
+    ImageScanningConfiguration m_imageScanningConfiguration;
+    bool m_imageScanningConfigurationHasBeenSet;
   };
 
 } // namespace Model

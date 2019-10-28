@@ -35,7 +35,9 @@ ImageDetail::ImageDetail() :
     m_imageTagsHasBeenSet(false),
     m_imageSizeInBytes(0),
     m_imageSizeInBytesHasBeenSet(false),
-    m_imagePushedAtHasBeenSet(false)
+    m_imagePushedAtHasBeenSet(false),
+    m_imageScanStatusHasBeenSet(false),
+    m_imageScanFindingsSummaryHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ ImageDetail::ImageDetail(JsonView jsonValue) :
     m_imageTagsHasBeenSet(false),
     m_imageSizeInBytes(0),
     m_imageSizeInBytesHasBeenSet(false),
-    m_imagePushedAtHasBeenSet(false)
+    m_imagePushedAtHasBeenSet(false),
+    m_imageScanStatusHasBeenSet(false),
+    m_imageScanFindingsSummaryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +102,20 @@ ImageDetail& ImageDetail::operator =(JsonView jsonValue)
     m_imagePushedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("imageScanStatus"))
+  {
+    m_imageScanStatus = jsonValue.GetObject("imageScanStatus");
+
+    m_imageScanStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("imageScanFindingsSummary"))
+  {
+    m_imageScanFindingsSummary = jsonValue.GetObject("imageScanFindingsSummary");
+
+    m_imageScanFindingsSummaryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -143,6 +161,18 @@ JsonValue ImageDetail::Jsonize() const
   if(m_imagePushedAtHasBeenSet)
   {
    payload.WithDouble("imagePushedAt", m_imagePushedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_imageScanStatusHasBeenSet)
+  {
+   payload.WithObject("imageScanStatus", m_imageScanStatus.Jsonize());
+
+  }
+
+  if(m_imageScanFindingsSummaryHasBeenSet)
+  {
+   payload.WithObject("imageScanFindingsSummary", m_imageScanFindingsSummary.Jsonize());
+
   }
 
   return payload;

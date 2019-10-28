@@ -18,6 +18,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ecr/model/ImageScanStatus.h>
+#include <aws/ecr/model/ImageScanFindingsSummary.h>
 #include <utility>
 
 namespace Aws
@@ -304,6 +306,68 @@ namespace Model
      */
     inline ImageDetail& WithImagePushedAt(Aws::Utils::DateTime&& value) { SetImagePushedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The current state of the scan.</p>
+     */
+    inline const ImageScanStatus& GetImageScanStatus() const{ return m_imageScanStatus; }
+
+    /**
+     * <p>The current state of the scan.</p>
+     */
+    inline bool ImageScanStatusHasBeenSet() const { return m_imageScanStatusHasBeenSet; }
+
+    /**
+     * <p>The current state of the scan.</p>
+     */
+    inline void SetImageScanStatus(const ImageScanStatus& value) { m_imageScanStatusHasBeenSet = true; m_imageScanStatus = value; }
+
+    /**
+     * <p>The current state of the scan.</p>
+     */
+    inline void SetImageScanStatus(ImageScanStatus&& value) { m_imageScanStatusHasBeenSet = true; m_imageScanStatus = std::move(value); }
+
+    /**
+     * <p>The current state of the scan.</p>
+     */
+    inline ImageDetail& WithImageScanStatus(const ImageScanStatus& value) { SetImageScanStatus(value); return *this;}
+
+    /**
+     * <p>The current state of the scan.</p>
+     */
+    inline ImageDetail& WithImageScanStatus(ImageScanStatus&& value) { SetImageScanStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A summary of the last completed image scan.</p>
+     */
+    inline const ImageScanFindingsSummary& GetImageScanFindingsSummary() const{ return m_imageScanFindingsSummary; }
+
+    /**
+     * <p>A summary of the last completed image scan.</p>
+     */
+    inline bool ImageScanFindingsSummaryHasBeenSet() const { return m_imageScanFindingsSummaryHasBeenSet; }
+
+    /**
+     * <p>A summary of the last completed image scan.</p>
+     */
+    inline void SetImageScanFindingsSummary(const ImageScanFindingsSummary& value) { m_imageScanFindingsSummaryHasBeenSet = true; m_imageScanFindingsSummary = value; }
+
+    /**
+     * <p>A summary of the last completed image scan.</p>
+     */
+    inline void SetImageScanFindingsSummary(ImageScanFindingsSummary&& value) { m_imageScanFindingsSummaryHasBeenSet = true; m_imageScanFindingsSummary = std::move(value); }
+
+    /**
+     * <p>A summary of the last completed image scan.</p>
+     */
+    inline ImageDetail& WithImageScanFindingsSummary(const ImageScanFindingsSummary& value) { SetImageScanFindingsSummary(value); return *this;}
+
+    /**
+     * <p>A summary of the last completed image scan.</p>
+     */
+    inline ImageDetail& WithImageScanFindingsSummary(ImageScanFindingsSummary&& value) { SetImageScanFindingsSummary(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_registryId;
@@ -323,6 +387,12 @@ namespace Model
 
     Aws::Utils::DateTime m_imagePushedAt;
     bool m_imagePushedAtHasBeenSet;
+
+    ImageScanStatus m_imageScanStatus;
+    bool m_imageScanStatusHasBeenSet;
+
+    ImageScanFindingsSummary m_imageScanFindingsSummary;
+    bool m_imageScanFindingsSummaryHasBeenSet;
   };
 
 } // namespace Model

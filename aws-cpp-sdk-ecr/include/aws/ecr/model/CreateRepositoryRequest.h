@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecr/model/ImageTagMutability.h>
+#include <aws/ecr/model/ImageScanningConfiguration.h>
 #include <aws/ecr/model/Tag.h>
 #include <utility>
 
@@ -231,6 +232,49 @@ namespace Model
      */
     inline CreateRepositoryRequest& WithImageTagMutability(ImageTagMutability&& value) { SetImageTagMutability(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The image scanning configuration for the repository. This setting determines
+     * whether images are scanned for known vulnerabilities after being pushed to the
+     * repository.</p>
+     */
+    inline const ImageScanningConfiguration& GetImageScanningConfiguration() const{ return m_imageScanningConfiguration; }
+
+    /**
+     * <p>The image scanning configuration for the repository. This setting determines
+     * whether images are scanned for known vulnerabilities after being pushed to the
+     * repository.</p>
+     */
+    inline bool ImageScanningConfigurationHasBeenSet() const { return m_imageScanningConfigurationHasBeenSet; }
+
+    /**
+     * <p>The image scanning configuration for the repository. This setting determines
+     * whether images are scanned for known vulnerabilities after being pushed to the
+     * repository.</p>
+     */
+    inline void SetImageScanningConfiguration(const ImageScanningConfiguration& value) { m_imageScanningConfigurationHasBeenSet = true; m_imageScanningConfiguration = value; }
+
+    /**
+     * <p>The image scanning configuration for the repository. This setting determines
+     * whether images are scanned for known vulnerabilities after being pushed to the
+     * repository.</p>
+     */
+    inline void SetImageScanningConfiguration(ImageScanningConfiguration&& value) { m_imageScanningConfigurationHasBeenSet = true; m_imageScanningConfiguration = std::move(value); }
+
+    /**
+     * <p>The image scanning configuration for the repository. This setting determines
+     * whether images are scanned for known vulnerabilities after being pushed to the
+     * repository.</p>
+     */
+    inline CreateRepositoryRequest& WithImageScanningConfiguration(const ImageScanningConfiguration& value) { SetImageScanningConfiguration(value); return *this;}
+
+    /**
+     * <p>The image scanning configuration for the repository. This setting determines
+     * whether images are scanned for known vulnerabilities after being pushed to the
+     * repository.</p>
+     */
+    inline CreateRepositoryRequest& WithImageScanningConfiguration(ImageScanningConfiguration&& value) { SetImageScanningConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_repositoryName;
@@ -241,6 +285,9 @@ namespace Model
 
     ImageTagMutability m_imageTagMutability;
     bool m_imageTagMutabilityHasBeenSet;
+
+    ImageScanningConfiguration m_imageScanningConfiguration;
+    bool m_imageScanningConfigurationHasBeenSet;
   };
 
 } // namespace Model

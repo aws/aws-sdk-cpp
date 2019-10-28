@@ -34,6 +34,7 @@
 #include <aws/elasticache/model/AuthorizeCacheSecurityGroupIngressRequest.h>
 #include <aws/elasticache/model/BatchApplyUpdateActionRequest.h>
 #include <aws/elasticache/model/BatchStopUpdateActionRequest.h>
+#include <aws/elasticache/model/CompleteMigrationRequest.h>
 #include <aws/elasticache/model/CopySnapshotRequest.h>
 #include <aws/elasticache/model/CreateCacheClusterRequest.h>
 #include <aws/elasticache/model/CreateCacheParameterGroupRequest.h>
@@ -75,6 +76,7 @@
 #include <aws/elasticache/model/RemoveTagsFromResourceRequest.h>
 #include <aws/elasticache/model/ResetCacheParameterGroupRequest.h>
 #include <aws/elasticache/model/RevokeCacheSecurityGroupIngressRequest.h>
+#include <aws/elasticache/model/StartMigrationRequest.h>
 #include <aws/elasticache/model/TestFailoverRequest.h>
 
 using namespace Aws;
@@ -298,6 +300,41 @@ void ElastiCacheClient::BatchStopUpdateActionAsync(const BatchStopUpdateActionRe
 void ElastiCacheClient::BatchStopUpdateActionAsyncHelper(const BatchStopUpdateActionRequest& request, const BatchStopUpdateActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchStopUpdateAction(request), context);
+}
+
+CompleteMigrationOutcome ElastiCacheClient::CompleteMigration(const CompleteMigrationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CompleteMigrationOutcome(CompleteMigrationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CompleteMigrationOutcome(outcome.GetError());
+  }
+}
+
+CompleteMigrationOutcomeCallable ElastiCacheClient::CompleteMigrationCallable(const CompleteMigrationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CompleteMigrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CompleteMigration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::CompleteMigrationAsync(const CompleteMigrationRequest& request, const CompleteMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CompleteMigrationAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::CompleteMigrationAsyncHelper(const CompleteMigrationRequest& request, const CompleteMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CompleteMigration(request), context);
 }
 
 CopySnapshotOutcome ElastiCacheClient::CopySnapshot(const CopySnapshotRequest& request) const
@@ -1733,6 +1770,41 @@ void ElastiCacheClient::RevokeCacheSecurityGroupIngressAsync(const RevokeCacheSe
 void ElastiCacheClient::RevokeCacheSecurityGroupIngressAsyncHelper(const RevokeCacheSecurityGroupIngressRequest& request, const RevokeCacheSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RevokeCacheSecurityGroupIngress(request), context);
+}
+
+StartMigrationOutcome ElastiCacheClient::StartMigration(const StartMigrationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StartMigrationOutcome(StartMigrationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartMigrationOutcome(outcome.GetError());
+  }
+}
+
+StartMigrationOutcomeCallable ElastiCacheClient::StartMigrationCallable(const StartMigrationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartMigrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartMigration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::StartMigrationAsync(const StartMigrationRequest& request, const StartMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartMigrationAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::StartMigrationAsyncHelper(const StartMigrationRequest& request, const StartMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartMigration(request), context);
 }
 
 TestFailoverOutcome ElastiCacheClient::TestFailover(const TestFailoverRequest& request) const

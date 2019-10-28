@@ -70,7 +70,7 @@ namespace Model
 
   class KinesisVideoMediaClient;
 
-    typedef std::function<void(const KinesisVideoMediaClient*, const Model::GetMediaRequest&, const Model::GetMediaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMediaResponseReceivedHandler;
+    typedef std::function<void(const KinesisVideoMediaClient*, const Model::GetMediaRequest&, Model::GetMediaOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMediaResponseReceivedHandler;
 
   /**
    * <p/>

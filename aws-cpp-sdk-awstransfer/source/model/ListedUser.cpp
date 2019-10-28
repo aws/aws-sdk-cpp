@@ -31,6 +31,8 @@ namespace Model
 ListedUser::ListedUser() : 
     m_arnHasBeenSet(false),
     m_homeDirectoryHasBeenSet(false),
+    m_homeDirectoryType(HomeDirectoryType::NOT_SET),
+    m_homeDirectoryTypeHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_sshPublicKeyCount(0),
     m_sshPublicKeyCountHasBeenSet(false),
@@ -41,6 +43,8 @@ ListedUser::ListedUser() :
 ListedUser::ListedUser(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_homeDirectoryHasBeenSet(false),
+    m_homeDirectoryType(HomeDirectoryType::NOT_SET),
+    m_homeDirectoryTypeHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_sshPublicKeyCount(0),
     m_sshPublicKeyCountHasBeenSet(false),
@@ -63,6 +67,13 @@ ListedUser& ListedUser::operator =(JsonView jsonValue)
     m_homeDirectory = jsonValue.GetString("HomeDirectory");
 
     m_homeDirectoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HomeDirectoryType"))
+  {
+    m_homeDirectoryType = HomeDirectoryTypeMapper::GetHomeDirectoryTypeForName(jsonValue.GetString("HomeDirectoryType"));
+
+    m_homeDirectoryTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Role"))
@@ -103,6 +114,11 @@ JsonValue ListedUser::Jsonize() const
   {
    payload.WithString("HomeDirectory", m_homeDirectory);
 
+  }
+
+  if(m_homeDirectoryTypeHasBeenSet)
+  {
+   payload.WithString("HomeDirectoryType", HomeDirectoryTypeMapper::GetNameForHomeDirectoryType(m_homeDirectoryType));
   }
 
   if(m_roleHasBeenSet)

@@ -31,6 +31,9 @@ namespace Model
 DescribedUser::DescribedUser() : 
     m_arnHasBeenSet(false),
     m_homeDirectoryHasBeenSet(false),
+    m_homeDirectoryMappingsHasBeenSet(false),
+    m_homeDirectoryType(HomeDirectoryType::NOT_SET),
+    m_homeDirectoryTypeHasBeenSet(false),
     m_policyHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_sshPublicKeysHasBeenSet(false),
@@ -42,6 +45,9 @@ DescribedUser::DescribedUser() :
 DescribedUser::DescribedUser(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_homeDirectoryHasBeenSet(false),
+    m_homeDirectoryMappingsHasBeenSet(false),
+    m_homeDirectoryType(HomeDirectoryType::NOT_SET),
+    m_homeDirectoryTypeHasBeenSet(false),
     m_policyHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_sshPublicKeysHasBeenSet(false),
@@ -65,6 +71,23 @@ DescribedUser& DescribedUser::operator =(JsonView jsonValue)
     m_homeDirectory = jsonValue.GetString("HomeDirectory");
 
     m_homeDirectoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HomeDirectoryMappings"))
+  {
+    Array<JsonView> homeDirectoryMappingsJsonList = jsonValue.GetArray("HomeDirectoryMappings");
+    for(unsigned homeDirectoryMappingsIndex = 0; homeDirectoryMappingsIndex < homeDirectoryMappingsJsonList.GetLength(); ++homeDirectoryMappingsIndex)
+    {
+      m_homeDirectoryMappings.push_back(homeDirectoryMappingsJsonList[homeDirectoryMappingsIndex].AsObject());
+    }
+    m_homeDirectoryMappingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HomeDirectoryType"))
+  {
+    m_homeDirectoryType = HomeDirectoryTypeMapper::GetHomeDirectoryTypeForName(jsonValue.GetString("HomeDirectoryType"));
+
+    m_homeDirectoryTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Policy"))
@@ -125,6 +148,22 @@ JsonValue DescribedUser::Jsonize() const
   {
    payload.WithString("HomeDirectory", m_homeDirectory);
 
+  }
+
+  if(m_homeDirectoryMappingsHasBeenSet)
+  {
+   Array<JsonValue> homeDirectoryMappingsJsonList(m_homeDirectoryMappings.size());
+   for(unsigned homeDirectoryMappingsIndex = 0; homeDirectoryMappingsIndex < homeDirectoryMappingsJsonList.GetLength(); ++homeDirectoryMappingsIndex)
+   {
+     homeDirectoryMappingsJsonList[homeDirectoryMappingsIndex].AsObject(m_homeDirectoryMappings[homeDirectoryMappingsIndex].Jsonize());
+   }
+   payload.WithArray("HomeDirectoryMappings", std::move(homeDirectoryMappingsJsonList));
+
+  }
+
+  if(m_homeDirectoryTypeHasBeenSet)
+  {
+   payload.WithString("HomeDirectoryType", HomeDirectoryTypeMapper::GetNameForHomeDirectoryType(m_homeDirectoryType));
   }
 
   if(m_policyHasBeenSet)

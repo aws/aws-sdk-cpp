@@ -88,9 +88,9 @@ namespace Model
 
     typedef std::function<void(const LexRuntimeServiceClient*, const Model::DeleteSessionRequest&, const Model::DeleteSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSessionResponseReceivedHandler;
     typedef std::function<void(const LexRuntimeServiceClient*, const Model::GetSessionRequest&, const Model::GetSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSessionResponseReceivedHandler;
-    typedef std::function<void(const LexRuntimeServiceClient*, const Model::PostContentRequest&, const Model::PostContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostContentResponseReceivedHandler;
+    typedef std::function<void(const LexRuntimeServiceClient*, const Model::PostContentRequest&, Model::PostContentOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostContentResponseReceivedHandler;
     typedef std::function<void(const LexRuntimeServiceClient*, const Model::PostTextRequest&, const Model::PostTextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostTextResponseReceivedHandler;
-    typedef std::function<void(const LexRuntimeServiceClient*, const Model::PutSessionRequest&, const Model::PutSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSessionResponseReceivedHandler;
+    typedef std::function<void(const LexRuntimeServiceClient*, const Model::PutSessionRequest&, Model::PutSessionOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSessionResponseReceivedHandler;
 
   /**
    * <p>Amazon Lex provides both build and runtime endpoints. Each endpoint provides

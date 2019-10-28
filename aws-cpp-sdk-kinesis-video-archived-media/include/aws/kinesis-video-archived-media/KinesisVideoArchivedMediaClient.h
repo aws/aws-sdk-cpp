@@ -84,7 +84,7 @@ namespace Model
 
     typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::GetDASHStreamingSessionURLRequest&, const Model::GetDASHStreamingSessionURLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDASHStreamingSessionURLResponseReceivedHandler;
     typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::GetHLSStreamingSessionURLRequest&, const Model::GetHLSStreamingSessionURLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHLSStreamingSessionURLResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::GetMediaForFragmentListRequest&, const Model::GetMediaForFragmentListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMediaForFragmentListResponseReceivedHandler;
+    typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::GetMediaForFragmentListRequest&, Model::GetMediaForFragmentListOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMediaForFragmentListResponseReceivedHandler;
     typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::ListFragmentsRequest&, const Model::ListFragmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFragmentsResponseReceivedHandler;
 
   /**

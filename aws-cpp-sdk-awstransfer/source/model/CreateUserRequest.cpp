@@ -24,6 +24,9 @@ using namespace Aws::Utils;
 
 CreateUserRequest::CreateUserRequest() : 
     m_homeDirectoryHasBeenSet(false),
+    m_homeDirectoryType(HomeDirectoryType::NOT_SET),
+    m_homeDirectoryTypeHasBeenSet(false),
+    m_homeDirectoryMappingsHasBeenSet(false),
     m_policyHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_serverIdHasBeenSet(false),
@@ -40,6 +43,22 @@ Aws::String CreateUserRequest::SerializePayload() const
   if(m_homeDirectoryHasBeenSet)
   {
    payload.WithString("HomeDirectory", m_homeDirectory);
+
+  }
+
+  if(m_homeDirectoryTypeHasBeenSet)
+  {
+   payload.WithString("HomeDirectoryType", HomeDirectoryTypeMapper::GetNameForHomeDirectoryType(m_homeDirectoryType));
+  }
+
+  if(m_homeDirectoryMappingsHasBeenSet)
+  {
+   Array<JsonValue> homeDirectoryMappingsJsonList(m_homeDirectoryMappings.size());
+   for(unsigned homeDirectoryMappingsIndex = 0; homeDirectoryMappingsIndex < homeDirectoryMappingsJsonList.GetLength(); ++homeDirectoryMappingsIndex)
+   {
+     homeDirectoryMappingsJsonList[homeDirectoryMappingsIndex].AsObject(m_homeDirectoryMappings[homeDirectoryMappingsIndex].Jsonize());
+   }
+   payload.WithArray("HomeDirectoryMappings", std::move(homeDirectoryMappingsJsonList));
 
   }
 

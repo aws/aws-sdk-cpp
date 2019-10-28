@@ -70,7 +70,7 @@ namespace Model
 
   class WorkMailMessageFlowClient;
 
-    typedef std::function<void(const WorkMailMessageFlowClient*, const Model::GetRawMessageContentRequest&, const Model::GetRawMessageContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRawMessageContentResponseReceivedHandler;
+    typedef std::function<void(const WorkMailMessageFlowClient*, const Model::GetRawMessageContentRequest&, Model::GetRawMessageContentOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRawMessageContentResponseReceivedHandler;
 
   /**
    * <p>The WorkMail Message Flow API provides access to email messages as they are

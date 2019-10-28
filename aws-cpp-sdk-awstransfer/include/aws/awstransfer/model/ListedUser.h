@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/awstransfer/model/HomeDirectoryType.h>
 #include <utility>
 
 namespace Aws
@@ -144,6 +145,67 @@ namespace Model
      * Amazon S3 bucket for the user you specify by their ARN.</p>
      */
     inline ListedUser& WithHomeDirectory(const char* value) { SetHomeDirectory(value); return *this;}
+
+
+    /**
+     * <p>The type of landing directory (folder) you mapped for your users' home
+     * directory. If you set it to <code>PATH</code>, the user will see the absolute
+     * Amazon S3 bucket paths as is in their SFTP clients. If you set it
+     * <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to
+     * your user.</p>
+     */
+    inline const HomeDirectoryType& GetHomeDirectoryType() const{ return m_homeDirectoryType; }
+
+    /**
+     * <p>The type of landing directory (folder) you mapped for your users' home
+     * directory. If you set it to <code>PATH</code>, the user will see the absolute
+     * Amazon S3 bucket paths as is in their SFTP clients. If you set it
+     * <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to
+     * your user.</p>
+     */
+    inline bool HomeDirectoryTypeHasBeenSet() const { return m_homeDirectoryTypeHasBeenSet; }
+
+    /**
+     * <p>The type of landing directory (folder) you mapped for your users' home
+     * directory. If you set it to <code>PATH</code>, the user will see the absolute
+     * Amazon S3 bucket paths as is in their SFTP clients. If you set it
+     * <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to
+     * your user.</p>
+     */
+    inline void SetHomeDirectoryType(const HomeDirectoryType& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = value; }
+
+    /**
+     * <p>The type of landing directory (folder) you mapped for your users' home
+     * directory. If you set it to <code>PATH</code>, the user will see the absolute
+     * Amazon S3 bucket paths as is in their SFTP clients. If you set it
+     * <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to
+     * your user.</p>
+     */
+    inline void SetHomeDirectoryType(HomeDirectoryType&& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = std::move(value); }
+
+    /**
+     * <p>The type of landing directory (folder) you mapped for your users' home
+     * directory. If you set it to <code>PATH</code>, the user will see the absolute
+     * Amazon S3 bucket paths as is in their SFTP clients. If you set it
+     * <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to
+     * your user.</p>
+     */
+    inline ListedUser& WithHomeDirectoryType(const HomeDirectoryType& value) { SetHomeDirectoryType(value); return *this;}
+
+    /**
+     * <p>The type of landing directory (folder) you mapped for your users' home
+     * directory. If you set it to <code>PATH</code>, the user will see the absolute
+     * Amazon S3 bucket paths as is in their SFTP clients. If you set it
+     * <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to
+     * your user.</p>
+     */
+    inline ListedUser& WithHomeDirectoryType(HomeDirectoryType&& value) { SetHomeDirectoryType(std::move(value)); return *this;}
 
 
     /**
@@ -291,6 +353,9 @@ namespace Model
 
     Aws::String m_homeDirectory;
     bool m_homeDirectoryHasBeenSet;
+
+    HomeDirectoryType m_homeDirectoryType;
+    bool m_homeDirectoryTypeHasBeenSet;
 
     Aws::String m_role;
     bool m_roleHasBeenSet;

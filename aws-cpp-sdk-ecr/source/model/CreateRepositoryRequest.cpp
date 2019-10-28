@@ -26,7 +26,8 @@ CreateRepositoryRequest::CreateRepositoryRequest() :
     m_repositoryNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_imageTagMutability(ImageTagMutability::NOT_SET),
-    m_imageTagMutabilityHasBeenSet(false)
+    m_imageTagMutabilityHasBeenSet(false),
+    m_imageScanningConfigurationHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,12 @@ Aws::String CreateRepositoryRequest::SerializePayload() const
   if(m_imageTagMutabilityHasBeenSet)
   {
    payload.WithString("imageTagMutability", ImageTagMutabilityMapper::GetNameForImageTagMutability(m_imageTagMutability));
+  }
+
+  if(m_imageScanningConfigurationHasBeenSet)
+  {
+   payload.WithObject("imageScanningConfiguration", m_imageScanningConfiguration.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

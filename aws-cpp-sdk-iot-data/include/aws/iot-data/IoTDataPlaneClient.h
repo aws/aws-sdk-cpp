@@ -82,10 +82,10 @@ namespace Model
 
   class IoTDataPlaneClient;
 
-    typedef std::function<void(const IoTDataPlaneClient*, const Model::DeleteThingShadowRequest&, const Model::DeleteThingShadowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteThingShadowResponseReceivedHandler;
-    typedef std::function<void(const IoTDataPlaneClient*, const Model::GetThingShadowRequest&, const Model::GetThingShadowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThingShadowResponseReceivedHandler;
+    typedef std::function<void(const IoTDataPlaneClient*, const Model::DeleteThingShadowRequest&, Model::DeleteThingShadowOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteThingShadowResponseReceivedHandler;
+    typedef std::function<void(const IoTDataPlaneClient*, const Model::GetThingShadowRequest&, Model::GetThingShadowOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThingShadowResponseReceivedHandler;
     typedef std::function<void(const IoTDataPlaneClient*, const Model::PublishRequest&, const Model::PublishOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PublishResponseReceivedHandler;
-    typedef std::function<void(const IoTDataPlaneClient*, const Model::UpdateThingShadowRequest&, const Model::UpdateThingShadowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThingShadowResponseReceivedHandler;
+    typedef std::function<void(const IoTDataPlaneClient*, const Model::UpdateThingShadowRequest&, Model::UpdateThingShadowOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThingShadowResponseReceivedHandler;
 
   /**
    * <fullname>AWS IoT</fullname> <p>AWS IoT-Data enables secure, bi-directional

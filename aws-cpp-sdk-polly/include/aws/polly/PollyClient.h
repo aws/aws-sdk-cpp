@@ -110,7 +110,7 @@ namespace Model
     typedef std::function<void(const PollyClient*, const Model::ListSpeechSynthesisTasksRequest&, const Model::ListSpeechSynthesisTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSpeechSynthesisTasksResponseReceivedHandler;
     typedef std::function<void(const PollyClient*, const Model::PutLexiconRequest&, const Model::PutLexiconOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLexiconResponseReceivedHandler;
     typedef std::function<void(const PollyClient*, const Model::StartSpeechSynthesisTaskRequest&, const Model::StartSpeechSynthesisTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSpeechSynthesisTaskResponseReceivedHandler;
-    typedef std::function<void(const PollyClient*, const Model::SynthesizeSpeechRequest&, const Model::SynthesizeSpeechOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SynthesizeSpeechResponseReceivedHandler;
+    typedef std::function<void(const PollyClient*, const Model::SynthesizeSpeechRequest&, Model::SynthesizeSpeechOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SynthesizeSpeechResponseReceivedHandler;
 
   /**
    * <p>Amazon Polly is a web service that makes it easy to synthesize speech from

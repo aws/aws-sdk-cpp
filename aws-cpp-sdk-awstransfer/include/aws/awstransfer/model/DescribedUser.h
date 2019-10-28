@@ -17,6 +17,8 @@
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/awstransfer/model/HomeDirectoryType.h>
+#include <aws/awstransfer/model/HomeDirectoryMapEntry.h>
 #include <aws/awstransfer/model/SshPublicKey.h>
 #include <aws/awstransfer/model/Tag.h>
 #include <utility>
@@ -103,66 +105,272 @@ namespace Model
     /**
      * <p>This property specifies the landing directory (or folder), which is the
      * location that files are written to or read from in an Amazon S3 bucket for the
-     * described user. An example is <code>/<i>bucket_name</i>/home/<i>username</i>
-     * </code>.</p>
+     * described user. An example is <code>/<i>your s3 bucket
+     * name</i>/home/<i>username</i> </code>.</p>
      */
     inline const Aws::String& GetHomeDirectory() const{ return m_homeDirectory; }
 
     /**
      * <p>This property specifies the landing directory (or folder), which is the
      * location that files are written to or read from in an Amazon S3 bucket for the
-     * described user. An example is <code>/<i>bucket_name</i>/home/<i>username</i>
-     * </code>.</p>
+     * described user. An example is <code>/<i>your s3 bucket
+     * name</i>/home/<i>username</i> </code>.</p>
      */
     inline bool HomeDirectoryHasBeenSet() const { return m_homeDirectoryHasBeenSet; }
 
     /**
      * <p>This property specifies the landing directory (or folder), which is the
      * location that files are written to or read from in an Amazon S3 bucket for the
-     * described user. An example is <code>/<i>bucket_name</i>/home/<i>username</i>
-     * </code>.</p>
+     * described user. An example is <code>/<i>your s3 bucket
+     * name</i>/home/<i>username</i> </code>.</p>
      */
     inline void SetHomeDirectory(const Aws::String& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = value; }
 
     /**
      * <p>This property specifies the landing directory (or folder), which is the
      * location that files are written to or read from in an Amazon S3 bucket for the
-     * described user. An example is <code>/<i>bucket_name</i>/home/<i>username</i>
-     * </code>.</p>
+     * described user. An example is <code>/<i>your s3 bucket
+     * name</i>/home/<i>username</i> </code>.</p>
      */
     inline void SetHomeDirectory(Aws::String&& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = std::move(value); }
 
     /**
      * <p>This property specifies the landing directory (or folder), which is the
      * location that files are written to or read from in an Amazon S3 bucket for the
-     * described user. An example is <code>/<i>bucket_name</i>/home/<i>username</i>
-     * </code>.</p>
+     * described user. An example is <code>/<i>your s3 bucket
+     * name</i>/home/<i>username</i> </code>.</p>
      */
     inline void SetHomeDirectory(const char* value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory.assign(value); }
 
     /**
      * <p>This property specifies the landing directory (or folder), which is the
      * location that files are written to or read from in an Amazon S3 bucket for the
-     * described user. An example is <code>/<i>bucket_name</i>/home/<i>username</i>
-     * </code>.</p>
+     * described user. An example is <code>/<i>your s3 bucket
+     * name</i>/home/<i>username</i> </code>.</p>
      */
     inline DescribedUser& WithHomeDirectory(const Aws::String& value) { SetHomeDirectory(value); return *this;}
 
     /**
      * <p>This property specifies the landing directory (or folder), which is the
      * location that files are written to or read from in an Amazon S3 bucket for the
-     * described user. An example is <code>/<i>bucket_name</i>/home/<i>username</i>
-     * </code>.</p>
+     * described user. An example is <code>/<i>your s3 bucket
+     * name</i>/home/<i>username</i> </code>.</p>
      */
     inline DescribedUser& WithHomeDirectory(Aws::String&& value) { SetHomeDirectory(std::move(value)); return *this;}
 
     /**
      * <p>This property specifies the landing directory (or folder), which is the
      * location that files are written to or read from in an Amazon S3 bucket for the
-     * described user. An example is <code>/<i>bucket_name</i>/home/<i>username</i>
-     * </code>.</p>
+     * described user. An example is <code>/<i>your s3 bucket
+     * name</i>/home/<i>username</i> </code>.</p>
      */
     inline DescribedUser& WithHomeDirectory(const char* value) { SetHomeDirectory(value); return *this;}
+
+
+    /**
+     * <p>Logical directory mappings that you specified for what S3 paths and keys
+     * should be visible to your user and how you want to make them visible. You will
+     * need to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual S3 path. If you only specify a target, it will be displayed as is.
+     * You will need to also make sure that your AWS IAM Role provides access to paths
+     * in <code>Target</code>.</p> <p>In most cases, you can use this value instead of
+     * the scope down policy to lock your user down to the designated home directory
+     * ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
+     * <code>Target</code> to the HomeDirectory parameter value. </p> <p>In most cases,
+     * you can use this value instead of the scope down policy to lock your user down
+     * to the designated home directory ("chroot"). To do this, you can set
+     * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
+     * parameter value.</p>
+     */
+    inline const Aws::Vector<HomeDirectoryMapEntry>& GetHomeDirectoryMappings() const{ return m_homeDirectoryMappings; }
+
+    /**
+     * <p>Logical directory mappings that you specified for what S3 paths and keys
+     * should be visible to your user and how you want to make them visible. You will
+     * need to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual S3 path. If you only specify a target, it will be displayed as is.
+     * You will need to also make sure that your AWS IAM Role provides access to paths
+     * in <code>Target</code>.</p> <p>In most cases, you can use this value instead of
+     * the scope down policy to lock your user down to the designated home directory
+     * ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
+     * <code>Target</code> to the HomeDirectory parameter value. </p> <p>In most cases,
+     * you can use this value instead of the scope down policy to lock your user down
+     * to the designated home directory ("chroot"). To do this, you can set
+     * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
+     * parameter value.</p>
+     */
+    inline bool HomeDirectoryMappingsHasBeenSet() const { return m_homeDirectoryMappingsHasBeenSet; }
+
+    /**
+     * <p>Logical directory mappings that you specified for what S3 paths and keys
+     * should be visible to your user and how you want to make them visible. You will
+     * need to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual S3 path. If you only specify a target, it will be displayed as is.
+     * You will need to also make sure that your AWS IAM Role provides access to paths
+     * in <code>Target</code>.</p> <p>In most cases, you can use this value instead of
+     * the scope down policy to lock your user down to the designated home directory
+     * ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
+     * <code>Target</code> to the HomeDirectory parameter value. </p> <p>In most cases,
+     * you can use this value instead of the scope down policy to lock your user down
+     * to the designated home directory ("chroot"). To do this, you can set
+     * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
+     * parameter value.</p>
+     */
+    inline void SetHomeDirectoryMappings(const Aws::Vector<HomeDirectoryMapEntry>& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = value; }
+
+    /**
+     * <p>Logical directory mappings that you specified for what S3 paths and keys
+     * should be visible to your user and how you want to make them visible. You will
+     * need to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual S3 path. If you only specify a target, it will be displayed as is.
+     * You will need to also make sure that your AWS IAM Role provides access to paths
+     * in <code>Target</code>.</p> <p>In most cases, you can use this value instead of
+     * the scope down policy to lock your user down to the designated home directory
+     * ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
+     * <code>Target</code> to the HomeDirectory parameter value. </p> <p>In most cases,
+     * you can use this value instead of the scope down policy to lock your user down
+     * to the designated home directory ("chroot"). To do this, you can set
+     * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
+     * parameter value.</p>
+     */
+    inline void SetHomeDirectoryMappings(Aws::Vector<HomeDirectoryMapEntry>&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = std::move(value); }
+
+    /**
+     * <p>Logical directory mappings that you specified for what S3 paths and keys
+     * should be visible to your user and how you want to make them visible. You will
+     * need to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual S3 path. If you only specify a target, it will be displayed as is.
+     * You will need to also make sure that your AWS IAM Role provides access to paths
+     * in <code>Target</code>.</p> <p>In most cases, you can use this value instead of
+     * the scope down policy to lock your user down to the designated home directory
+     * ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
+     * <code>Target</code> to the HomeDirectory parameter value. </p> <p>In most cases,
+     * you can use this value instead of the scope down policy to lock your user down
+     * to the designated home directory ("chroot"). To do this, you can set
+     * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
+     * parameter value.</p>
+     */
+    inline DescribedUser& WithHomeDirectoryMappings(const Aws::Vector<HomeDirectoryMapEntry>& value) { SetHomeDirectoryMappings(value); return *this;}
+
+    /**
+     * <p>Logical directory mappings that you specified for what S3 paths and keys
+     * should be visible to your user and how you want to make them visible. You will
+     * need to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual S3 path. If you only specify a target, it will be displayed as is.
+     * You will need to also make sure that your AWS IAM Role provides access to paths
+     * in <code>Target</code>.</p> <p>In most cases, you can use this value instead of
+     * the scope down policy to lock your user down to the designated home directory
+     * ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
+     * <code>Target</code> to the HomeDirectory parameter value. </p> <p>In most cases,
+     * you can use this value instead of the scope down policy to lock your user down
+     * to the designated home directory ("chroot"). To do this, you can set
+     * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
+     * parameter value.</p>
+     */
+    inline DescribedUser& WithHomeDirectoryMappings(Aws::Vector<HomeDirectoryMapEntry>&& value) { SetHomeDirectoryMappings(std::move(value)); return *this;}
+
+    /**
+     * <p>Logical directory mappings that you specified for what S3 paths and keys
+     * should be visible to your user and how you want to make them visible. You will
+     * need to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual S3 path. If you only specify a target, it will be displayed as is.
+     * You will need to also make sure that your AWS IAM Role provides access to paths
+     * in <code>Target</code>.</p> <p>In most cases, you can use this value instead of
+     * the scope down policy to lock your user down to the designated home directory
+     * ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
+     * <code>Target</code> to the HomeDirectory parameter value. </p> <p>In most cases,
+     * you can use this value instead of the scope down policy to lock your user down
+     * to the designated home directory ("chroot"). To do this, you can set
+     * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
+     * parameter value.</p>
+     */
+    inline DescribedUser& AddHomeDirectoryMappings(const HomeDirectoryMapEntry& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings.push_back(value); return *this; }
+
+    /**
+     * <p>Logical directory mappings that you specified for what S3 paths and keys
+     * should be visible to your user and how you want to make them visible. You will
+     * need to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual S3 path. If you only specify a target, it will be displayed as is.
+     * You will need to also make sure that your AWS IAM Role provides access to paths
+     * in <code>Target</code>.</p> <p>In most cases, you can use this value instead of
+     * the scope down policy to lock your user down to the designated home directory
+     * ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
+     * <code>Target</code> to the HomeDirectory parameter value. </p> <p>In most cases,
+     * you can use this value instead of the scope down policy to lock your user down
+     * to the designated home directory ("chroot"). To do this, you can set
+     * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
+     * parameter value.</p>
+     */
+    inline DescribedUser& AddHomeDirectoryMappings(HomeDirectoryMapEntry&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The type of landing directory (folder) you mapped for your users' to see when
+     * they log into the SFTP server. If you set it to <code>PATH</code>, the user will
+     * see the absolute Amazon S3 bucket paths as is in their SFTP clients. If you set
+     * it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to
+     * your user.</p>
+     */
+    inline const HomeDirectoryType& GetHomeDirectoryType() const{ return m_homeDirectoryType; }
+
+    /**
+     * <p>The type of landing directory (folder) you mapped for your users' to see when
+     * they log into the SFTP server. If you set it to <code>PATH</code>, the user will
+     * see the absolute Amazon S3 bucket paths as is in their SFTP clients. If you set
+     * it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to
+     * your user.</p>
+     */
+    inline bool HomeDirectoryTypeHasBeenSet() const { return m_homeDirectoryTypeHasBeenSet; }
+
+    /**
+     * <p>The type of landing directory (folder) you mapped for your users' to see when
+     * they log into the SFTP server. If you set it to <code>PATH</code>, the user will
+     * see the absolute Amazon S3 bucket paths as is in their SFTP clients. If you set
+     * it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to
+     * your user.</p>
+     */
+    inline void SetHomeDirectoryType(const HomeDirectoryType& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = value; }
+
+    /**
+     * <p>The type of landing directory (folder) you mapped for your users' to see when
+     * they log into the SFTP server. If you set it to <code>PATH</code>, the user will
+     * see the absolute Amazon S3 bucket paths as is in their SFTP clients. If you set
+     * it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to
+     * your user.</p>
+     */
+    inline void SetHomeDirectoryType(HomeDirectoryType&& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = std::move(value); }
+
+    /**
+     * <p>The type of landing directory (folder) you mapped for your users' to see when
+     * they log into the SFTP server. If you set it to <code>PATH</code>, the user will
+     * see the absolute Amazon S3 bucket paths as is in their SFTP clients. If you set
+     * it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to
+     * your user.</p>
+     */
+    inline DescribedUser& WithHomeDirectoryType(const HomeDirectoryType& value) { SetHomeDirectoryType(value); return *this;}
+
+    /**
+     * <p>The type of landing directory (folder) you mapped for your users' to see when
+     * they log into the SFTP server. If you set it to <code>PATH</code>, the user will
+     * see the absolute Amazon S3 bucket paths as is in their SFTP clients. If you set
+     * it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to
+     * your user.</p>
+     */
+    inline DescribedUser& WithHomeDirectoryType(HomeDirectoryType&& value) { SetHomeDirectoryType(std::move(value)); return *this;}
 
 
     /**
@@ -448,6 +656,12 @@ namespace Model
 
     Aws::String m_homeDirectory;
     bool m_homeDirectoryHasBeenSet;
+
+    Aws::Vector<HomeDirectoryMapEntry> m_homeDirectoryMappings;
+    bool m_homeDirectoryMappingsHasBeenSet;
+
+    HomeDirectoryType m_homeDirectoryType;
+    bool m_homeDirectoryTypeHasBeenSet;
 
     Aws::String m_policy;
     bool m_policyHasBeenSet;

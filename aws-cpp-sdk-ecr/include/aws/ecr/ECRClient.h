@@ -29,6 +29,7 @@
 #include <aws/ecr/model/DeleteLifecyclePolicyResult.h>
 #include <aws/ecr/model/DeleteRepositoryResult.h>
 #include <aws/ecr/model/DeleteRepositoryPolicyResult.h>
+#include <aws/ecr/model/DescribeImageScanFindingsResult.h>
 #include <aws/ecr/model/DescribeImagesResult.h>
 #include <aws/ecr/model/DescribeRepositoriesResult.h>
 #include <aws/ecr/model/GetAuthorizationTokenResult.h>
@@ -40,9 +41,11 @@
 #include <aws/ecr/model/ListImagesResult.h>
 #include <aws/ecr/model/ListTagsForResourceResult.h>
 #include <aws/ecr/model/PutImageResult.h>
+#include <aws/ecr/model/PutImageScanningConfigurationResult.h>
 #include <aws/ecr/model/PutImageTagMutabilityResult.h>
 #include <aws/ecr/model/PutLifecyclePolicyResult.h>
 #include <aws/ecr/model/SetRepositoryPolicyResult.h>
+#include <aws/ecr/model/StartImageScanResult.h>
 #include <aws/ecr/model/StartLifecyclePolicyPreviewResult.h>
 #include <aws/ecr/model/TagResourceResult.h>
 #include <aws/ecr/model/UntagResourceResult.h>
@@ -94,6 +97,7 @@ namespace Model
         class DeleteLifecyclePolicyRequest;
         class DeleteRepositoryRequest;
         class DeleteRepositoryPolicyRequest;
+        class DescribeImageScanFindingsRequest;
         class DescribeImagesRequest;
         class DescribeRepositoriesRequest;
         class GetAuthorizationTokenRequest;
@@ -105,9 +109,11 @@ namespace Model
         class ListImagesRequest;
         class ListTagsForResourceRequest;
         class PutImageRequest;
+        class PutImageScanningConfigurationRequest;
         class PutImageTagMutabilityRequest;
         class PutLifecyclePolicyRequest;
         class SetRepositoryPolicyRequest;
+        class StartImageScanRequest;
         class StartLifecyclePolicyPreviewRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
@@ -121,6 +127,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteLifecyclePolicyResult, Aws::Client::AWSError<ECRErrors>> DeleteLifecyclePolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteRepositoryResult, Aws::Client::AWSError<ECRErrors>> DeleteRepositoryOutcome;
         typedef Aws::Utils::Outcome<DeleteRepositoryPolicyResult, Aws::Client::AWSError<ECRErrors>> DeleteRepositoryPolicyOutcome;
+        typedef Aws::Utils::Outcome<DescribeImageScanFindingsResult, Aws::Client::AWSError<ECRErrors>> DescribeImageScanFindingsOutcome;
         typedef Aws::Utils::Outcome<DescribeImagesResult, Aws::Client::AWSError<ECRErrors>> DescribeImagesOutcome;
         typedef Aws::Utils::Outcome<DescribeRepositoriesResult, Aws::Client::AWSError<ECRErrors>> DescribeRepositoriesOutcome;
         typedef Aws::Utils::Outcome<GetAuthorizationTokenResult, Aws::Client::AWSError<ECRErrors>> GetAuthorizationTokenOutcome;
@@ -132,9 +139,11 @@ namespace Model
         typedef Aws::Utils::Outcome<ListImagesResult, Aws::Client::AWSError<ECRErrors>> ListImagesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<ECRErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutImageResult, Aws::Client::AWSError<ECRErrors>> PutImageOutcome;
+        typedef Aws::Utils::Outcome<PutImageScanningConfigurationResult, Aws::Client::AWSError<ECRErrors>> PutImageScanningConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutImageTagMutabilityResult, Aws::Client::AWSError<ECRErrors>> PutImageTagMutabilityOutcome;
         typedef Aws::Utils::Outcome<PutLifecyclePolicyResult, Aws::Client::AWSError<ECRErrors>> PutLifecyclePolicyOutcome;
         typedef Aws::Utils::Outcome<SetRepositoryPolicyResult, Aws::Client::AWSError<ECRErrors>> SetRepositoryPolicyOutcome;
+        typedef Aws::Utils::Outcome<StartImageScanResult, Aws::Client::AWSError<ECRErrors>> StartImageScanOutcome;
         typedef Aws::Utils::Outcome<StartLifecyclePolicyPreviewResult, Aws::Client::AWSError<ECRErrors>> StartLifecyclePolicyPreviewOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<ECRErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<ECRErrors>> UntagResourceOutcome;
@@ -148,6 +157,7 @@ namespace Model
         typedef std::future<DeleteLifecyclePolicyOutcome> DeleteLifecyclePolicyOutcomeCallable;
         typedef std::future<DeleteRepositoryOutcome> DeleteRepositoryOutcomeCallable;
         typedef std::future<DeleteRepositoryPolicyOutcome> DeleteRepositoryPolicyOutcomeCallable;
+        typedef std::future<DescribeImageScanFindingsOutcome> DescribeImageScanFindingsOutcomeCallable;
         typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
         typedef std::future<DescribeRepositoriesOutcome> DescribeRepositoriesOutcomeCallable;
         typedef std::future<GetAuthorizationTokenOutcome> GetAuthorizationTokenOutcomeCallable;
@@ -159,9 +169,11 @@ namespace Model
         typedef std::future<ListImagesOutcome> ListImagesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutImageOutcome> PutImageOutcomeCallable;
+        typedef std::future<PutImageScanningConfigurationOutcome> PutImageScanningConfigurationOutcomeCallable;
         typedef std::future<PutImageTagMutabilityOutcome> PutImageTagMutabilityOutcomeCallable;
         typedef std::future<PutLifecyclePolicyOutcome> PutLifecyclePolicyOutcomeCallable;
         typedef std::future<SetRepositoryPolicyOutcome> SetRepositoryPolicyOutcomeCallable;
+        typedef std::future<StartImageScanOutcome> StartImageScanOutcomeCallable;
         typedef std::future<StartLifecyclePolicyPreviewOutcome> StartLifecyclePolicyPreviewOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -178,6 +190,7 @@ namespace Model
     typedef std::function<void(const ECRClient*, const Model::DeleteLifecyclePolicyRequest&, const Model::DeleteLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLifecyclePolicyResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::DeleteRepositoryRequest&, const Model::DeleteRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::DeleteRepositoryPolicyRequest&, const Model::DeleteRepositoryPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryPolicyResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::DescribeImageScanFindingsRequest&, const Model::DescribeImageScanFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImageScanFindingsResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::DescribeImagesRequest&, const Model::DescribeImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImagesResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::DescribeRepositoriesRequest&, const Model::DescribeRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRepositoriesResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::GetAuthorizationTokenRequest&, const Model::GetAuthorizationTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAuthorizationTokenResponseReceivedHandler;
@@ -189,9 +202,11 @@ namespace Model
     typedef std::function<void(const ECRClient*, const Model::ListImagesRequest&, const Model::ListImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagesResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::PutImageRequest&, const Model::PutImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutImageResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::PutImageScanningConfigurationRequest&, const Model::PutImageScanningConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutImageScanningConfigurationResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::PutImageTagMutabilityRequest&, const Model::PutImageTagMutabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutImageTagMutabilityResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::PutLifecyclePolicyRequest&, const Model::PutLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLifecyclePolicyResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::SetRepositoryPolicyRequest&, const Model::SetRepositoryPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetRepositoryPolicyResponseReceivedHandler;
+    typedef std::function<void(const ECRClient*, const Model::StartImageScanRequest&, const Model::StartImageScanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImageScanResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::StartLifecyclePolicyPreviewRequest&, const Model::StartLifecyclePolicyPreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartLifecyclePolicyPreviewResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ECRClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -387,14 +402,22 @@ namespace Model
         virtual void CompleteLayerUploadAsync(const Model::CompleteLayerUploadRequest& request, const CompleteLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an image repository.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Amazon Elastic Container Registry (Amazon ECR) repository, where
+         * users can push and pull Docker images. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon
+         * ECR Repositories</a> in the <i>Amazon Elastic Container Registry User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateRepositoryOutcome CreateRepository(const Model::CreateRepositoryRequest& request) const;
 
         /**
-         * <p>Creates an image repository.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Amazon Elastic Container Registry (Amazon ECR) repository, where
+         * users can push and pull Docker images. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon
+         * ECR Repositories</a> in the <i>Amazon Elastic Container Registry User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository">AWS
          * API Reference</a></p>
          *
@@ -403,7 +426,11 @@ namespace Model
         virtual Model::CreateRepositoryOutcomeCallable CreateRepositoryCallable(const Model::CreateRepositoryRequest& request) const;
 
         /**
-         * <p>Creates an image repository.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Amazon Elastic Container Registry (Amazon ECR) repository, where
+         * users can push and pull Docker images. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon
+         * ECR Repositories</a> in the <i>Amazon Elastic Container Registry User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository">AWS
          * API Reference</a></p>
          *
@@ -494,6 +521,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteRepositoryPolicyAsync(const Model::DeleteRepositoryPolicyRequest& request, const DeleteRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the image scan findings for the specified image.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeImageScanFindingsOutcome DescribeImageScanFindings(const Model::DescribeImageScanFindingsRequest& request) const;
+
+        /**
+         * <p>Describes the image scan findings for the specified image.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeImageScanFindingsOutcomeCallable DescribeImageScanFindingsCallable(const Model::DescribeImageScanFindingsRequest& request) const;
+
+        /**
+         * <p>Describes the image scan findings for the specified image.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeImageScanFindingsAsync(const Model::DescribeImageScanFindingsRequest& request, const DescribeImageScanFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns metadata about the images in a repository, including image size,
@@ -870,6 +925,34 @@ namespace Model
         virtual void PutImageAsync(const Model::PutImageRequest& request, const PutImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the image scanning configuration for a repository.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageScanningConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutImageScanningConfigurationOutcome PutImageScanningConfiguration(const Model::PutImageScanningConfigurationRequest& request) const;
+
+        /**
+         * <p>Updates the image scanning configuration for a repository.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageScanningConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutImageScanningConfigurationOutcomeCallable PutImageScanningConfigurationCallable(const Model::PutImageScanningConfigurationRequest& request) const;
+
+        /**
+         * <p>Updates the image scanning configuration for a repository.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageScanningConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutImageScanningConfigurationAsync(const Model::PutImageScanningConfigurationRequest& request, const PutImageScanningConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the image tag mutability settings for a repository.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageTagMutability">AWS
@@ -967,6 +1050,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SetRepositoryPolicyAsync(const Model::SetRepositoryPolicyRequest& request, const SetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Starts an image vulnerability scan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartImageScan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartImageScanOutcome StartImageScan(const Model::StartImageScanRequest& request) const;
+
+        /**
+         * <p>Starts an image vulnerability scan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartImageScan">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartImageScanOutcomeCallable StartImageScanCallable(const Model::StartImageScanRequest& request) const;
+
+        /**
+         * <p>Starts an image vulnerability scan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartImageScan">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartImageScanAsync(const Model::StartImageScanRequest& request, const StartImageScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a preview of the specified lifecycle policy. This allows you to see
@@ -1101,6 +1209,7 @@ namespace Model
         void DeleteLifecyclePolicyAsyncHelper(const Model::DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRepositoryAsyncHelper(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRepositoryPolicyAsyncHelper(const Model::DeleteRepositoryPolicyRequest& request, const DeleteRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeImageScanFindingsAsyncHelper(const Model::DescribeImageScanFindingsRequest& request, const DescribeImageScanFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeImagesAsyncHelper(const Model::DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRepositoriesAsyncHelper(const Model::DescribeRepositoriesRequest& request, const DescribeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAuthorizationTokenAsyncHelper(const Model::GetAuthorizationTokenRequest& request, const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1112,9 +1221,11 @@ namespace Model
         void ListImagesAsyncHelper(const Model::ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutImageAsyncHelper(const Model::PutImageRequest& request, const PutImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutImageScanningConfigurationAsyncHelper(const Model::PutImageScanningConfigurationRequest& request, const PutImageScanningConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutImageTagMutabilityAsyncHelper(const Model::PutImageTagMutabilityRequest& request, const PutImageTagMutabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLifecyclePolicyAsyncHelper(const Model::PutLifecyclePolicyRequest& request, const PutLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetRepositoryPolicyAsyncHelper(const Model::SetRepositoryPolicyRequest& request, const SetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartImageScanAsyncHelper(const Model::StartImageScanRequest& request, const StartImageScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartLifecyclePolicyPreviewAsyncHelper(const Model::StartLifecyclePolicyPreviewRequest& request, const StartLifecyclePolicyPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

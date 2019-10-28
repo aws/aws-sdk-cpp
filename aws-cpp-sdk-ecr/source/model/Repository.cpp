@@ -35,7 +35,8 @@ Repository::Repository() :
     m_repositoryUriHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_imageTagMutability(ImageTagMutability::NOT_SET),
-    m_imageTagMutabilityHasBeenSet(false)
+    m_imageTagMutabilityHasBeenSet(false),
+    m_imageScanningConfigurationHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ Repository::Repository(JsonView jsonValue) :
     m_repositoryUriHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_imageTagMutability(ImageTagMutability::NOT_SET),
-    m_imageTagMutabilityHasBeenSet(false)
+    m_imageTagMutabilityHasBeenSet(false),
+    m_imageScanningConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -95,6 +97,13 @@ Repository& Repository::operator =(JsonView jsonValue)
     m_imageTagMutabilityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("imageScanningConfiguration"))
+  {
+    m_imageScanningConfiguration = jsonValue.GetObject("imageScanningConfiguration");
+
+    m_imageScanningConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -134,6 +143,12 @@ JsonValue Repository::Jsonize() const
   if(m_imageTagMutabilityHasBeenSet)
   {
    payload.WithString("imageTagMutability", ImageTagMutabilityMapper::GetNameForImageTagMutability(m_imageTagMutability));
+  }
+
+  if(m_imageScanningConfigurationHasBeenSet)
+  {
+   payload.WithObject("imageScanningConfiguration", m_imageScanningConfiguration.Jsonize());
+
   }
 
   return payload;
