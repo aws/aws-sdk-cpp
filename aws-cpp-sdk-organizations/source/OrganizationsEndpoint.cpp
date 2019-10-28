@@ -26,15 +26,15 @@ namespace Organizations
 {
 namespace OrganizationsEndpoint
 {
-  
+
   static const int US_GOV_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("us-gov-west-1");
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {
     auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
-    
+
     if(!useDualStack)
-    {      
+    {
       if(hash == US_GOV_WEST_1_HASH)
       {
         return "organizations.us-gov-west-1.amazonaws.com";

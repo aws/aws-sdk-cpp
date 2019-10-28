@@ -28,12 +28,14 @@ namespace DynamoDBEndpoint
 {
   static const int CN_NORTH_1_HASH = Aws::Utils::HashingUtils::HashString("cn-north-1");
   static const int CN_NORTHWEST_1_HASH = Aws::Utils::HashingUtils::HashString("cn-northwest-1");
-  
+  static const int US_ISO_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-iso-east-1");
+  static const int US_ISOB_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-isob-east-1");
+
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {
     auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
-    
+
     Aws::StringStream ss;
     ss << "dynamodb" << ".";
 
@@ -42,13 +44,25 @@ namespace DynamoDBEndpoint
       ss << "dualstack.";
     }
 
-    ss << regionName << ".amazonaws.com";
-    
+    ss << regionName;
+
     if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
     {
-      ss << ".cn"; 
+      ss << ".amazonaws.com.cn";
     }
-    
+    else if (hash == US_ISO_EAST_1_HASH)
+    {
+      ss << ".c2s.ic.gov";
+    }
+    else if (hash == US_ISOB_EAST_1_HASH)
+    {
+      ss << ".sc2s.sgov.gov";
+    }
+    else
+    {
+      ss << ".amazonaws.com";
+    }
+
     return ss.str();
   }
 

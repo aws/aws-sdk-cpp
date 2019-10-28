@@ -17,13 +17,18 @@ namespace ${serviceNamespace}
 {
 namespace ${metadata.classNamePrefix}Endpoint
 {
-#if(!$metadata.globalEndpoint)  
+#if(!$metadata.globalEndpoint)
   static const int CN_NORTH_1_HASH = Aws::Utils::HashingUtils::HashString("cn-north-1");
   static const int CN_NORTHWEST_1_HASH = Aws::Utils::HashingUtils::HashString("cn-northwest-1");
+  static const int US_ISO_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-iso-east-1");
+  static const int US_ISOB_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-isob-east-1");
 #end
-  
+
 #foreach($regionEndpointPair in $endpointMapping.entrySet())
+#set($customizedRegion = $regionEndpointPair.key)
+#if ($metadata.globalEndpoint || !($customizedRegion.equals("cn-north-1") || $customizedRegion.equals("cn-northwest-1") || $customizedRegion.equals("us-iso-east-1") || $customizedRegion.equals("us-isob-east-1")))
   static const int ${regionEndpointPair.key.toUpperCase().replace("-", "_")}_HASH = Aws::Utils::HashingUtils::HashString("${regionEndpointPair.key}");
+#end
 #end
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
@@ -35,9 +40,9 @@ namespace ${metadata.classNamePrefix}Endpoint
     return "${metadata.globalEndpoint}";
 #else
     auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
-    
+
     if(!useDualStack)
-    {      
+    {
 #foreach($regionEndpointPair in $endpointMapping.entrySet())
       if(hash == ${regionEndpointPair.key.toUpperCase().replace("-", "_")}_HASH)
       {
@@ -49,10 +54,10 @@ namespace ${metadata.classNamePrefix}Endpoint
 #end##end if endpoint mapping
 #else##no global endpoint means standard endpoints calculation except for special regions
     auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
-    
+
 #if(!$endpointMapping.isEmpty())
     if(!useDualStack)
-    {      
+    {
 #foreach($regionEndpointPair in $endpointMapping.entrySet())
       if(hash == ${regionEndpointPair.key.toUpperCase().replace("-", "_")}_HASH)
       {
@@ -69,13 +74,25 @@ namespace ${metadata.classNamePrefix}Endpoint
       ss << "dualstack.";
     }
 
-    ss << regionName << ".amazonaws.com";
-    
+    ss << regionName;
+
     if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
     {
-      ss << ".cn"; 
+      ss << ".amazonaws.com.cn";
     }
-    
+    else if (hash == US_ISO_EAST_1_HASH)
+    {
+      ss << ".c2s.ic.gov";
+    }
+    else if (hash == US_ISOB_EAST_1_HASH)
+    {
+      ss << ".sc2s.sgov.gov";
+    }
+    else
+    {
+      ss << ".amazonaws.com";
+    }
+
     return ss.str();
 #end
   }

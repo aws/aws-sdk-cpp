@@ -26,7 +26,7 @@ namespace CloudFront
 {
 namespace CloudFrontEndpoint
 {
-  
+
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {

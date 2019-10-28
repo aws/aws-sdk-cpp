@@ -26,12 +26,25 @@ namespace Route53
 {
 namespace Route53Endpoint
 {
-  
+
+  static const int US_GOV_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("us-gov-west-1");
+  static const int US_ISO_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-iso-east-1");
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {
-    AWS_UNREFERENCED_PARAM(regionName);
-    AWS_UNREFERENCED_PARAM(useDualStack);
+    auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
+
+    if(!useDualStack)
+    {
+      if(hash == US_GOV_WEST_1_HASH)
+      {
+        return "route53.us-gov.amazonaws.com";
+      }
+      if(hash == US_ISO_EAST_1_HASH)
+      {
+        return "route53.c2s.ic.gov";
+      }
+    }
     return "route53.amazonaws.com";
   }
 

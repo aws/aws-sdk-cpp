@@ -164,12 +164,12 @@ public abstract class CppClientGenerator implements ClientGenerator {
                     if (op.getResult().getShape().hasEventStreamMembers()) {
                         for (Map.Entry<String, ShapeMember> shapeMemberEntry : op.getResult().getShape().getMembers().entrySet()) {
                             if (shapeMemberEntry.getValue().getShape().isEventStream()) {
-                                context.put("eventStreamShape", shapeMemberEntry.getValue().getShape());                                             
+                                context.put("eventStreamShape", shapeMemberEntry.getValue().getShape());
                                 context.put("operation", op);
                                 context.put("shape", shape);
                                 context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
                                 context.put("CppViewHelper", CppViewHelper.class);
-    
+
                                 String fileName = String.format("include/aws/%s/model/%sHandler.h", serviceModel.getMetadata().getProjectName(), key);
                                 return makeFile(template, context, fileName, true);
                             }
@@ -245,12 +245,12 @@ public abstract class CppClientGenerator implements ClientGenerator {
                     if (op.getResult().getShape().hasEventStreamMembers()) {
                         for (Map.Entry<String, ShapeMember> shapeMemberEntry : op.getResult().getShape().getMembers().entrySet()) {
                             if (shapeMemberEntry.getValue().getShape().isEventStream()) {
-                                context.put("eventStreamShape", shapeMemberEntry.getValue().getShape());                                             
+                                context.put("eventStreamShape", shapeMemberEntry.getValue().getShape());
                                 context.put("operation", op);
                                 context.put("shape", shape);
                                 context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
                                 context.put("CppViewHelper", CppViewHelper.class);
-    
+
                                 String fileName = String.format("source/model/%sHandler.cpp", key);
                                 return makeFile(template, context, fileName, true);
                             }
@@ -353,10 +353,9 @@ public abstract class CppClientGenerator implements ClientGenerator {
     private Map<String, String> computeEndpointMappingForService(final ServiceModel serviceModel) {
         Map<String, String> endpoints = new HashMap<>();
 
-        if (serviceModel.getServiceName().equals("budgets") || 
-            serviceModel.getServiceName().equals("cloudfront") || 
+        if (serviceModel.getServiceName().equals("budgets") ||
+            serviceModel.getServiceName().equals("cloudfront") ||
             serviceModel.getServiceName().equals("importexport") ||
-            serviceModel.getServiceName().equals("route53") || 
             serviceModel.getServiceName().equals("waf"))
         {
             serviceModel.getMetadata().setGlobalEndpoint(serviceModel.getServiceName() + ".amazonaws.com");
@@ -366,11 +365,22 @@ public abstract class CppClientGenerator implements ClientGenerator {
             endpoints.put("cn-northwest-1", "iam.cn-north-1.amazonaws.com.cn");
             endpoints.put("us-gov-east-1", "iam.us-gov.amazonaws.com");
             endpoints.put("us-gov-west-1", "iam.us-gov.amazonaws.com");
+            endpoints.put("us-iso-east-1", "iam.us-iso-east-1.c2s.ic.gov");
+            endpoints.put("us-isob-east-1", "iam.us-isob-east-1.sc2s.sgov.gov");
             serviceModel.getMetadata().setGlobalEndpoint("iam.amazonaws.com");
+
+        } else if (serviceModel.getServiceName().equals("kms")) {
+            endpoints.put("us-iso-east-1", "kms-fips.us-iso-east-1.c2s.ic.gov");
+            endpoints.put("us-isob-east-1", "kms-fips.us-isob-east-1.sc2s.sgov.gov");
 
         } else if (serviceModel.getServiceName().equals("organizations")) {
             endpoints.put("us-gov-west-1", "organizations.us-gov-west-1.amazonaws.com");
             serviceModel.getMetadata().setGlobalEndpoint("organizations.us-east-1.amazonaws.com");
+
+        } else if (serviceModel.getServiceName().equals("route53")) {
+            endpoints.put("us-gov-west-1", "route53.us-gov.amazonaws.com");
+            endpoints.put("us-iso-east-1", "route53.c2s.ic.gov");
+            serviceModel.getMetadata().setGlobalEndpoint("route53.amazonaws.com");
 
         } else if (serviceModel.getServiceName().equals("s3")) {
             serviceModel.getMetadata().setGlobalEndpoint(null);
@@ -379,7 +389,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
             endpoints.put("fips-us-gov-west-1", "s3-fips-us-gov-west-1.amazonaws.com");
 
         } else if (serviceModel.getServiceName().equals("sts")) {
-             serviceModel.getMetadata().setGlobalEndpoint(null);           
+             serviceModel.getMetadata().setGlobalEndpoint(null);
         }
 
         return endpoints;
