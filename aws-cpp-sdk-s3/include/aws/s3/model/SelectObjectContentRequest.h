@@ -23,6 +23,7 @@
 #include <aws/s3/model/RequestProgress.h>
 #include <aws/s3/model/InputSerialization.h>
 #include <aws/s3/model/OutputSerialization.h>
+#include <aws/s3/model/ScanRange.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -511,6 +512,55 @@ namespace Model
     inline SelectObjectContentRequest& WithOutputSerialization(OutputSerialization&& value) { SetOutputSerialization(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Specifies the byte range of the object to get the records from. A record is
+     * processed when its first byte is contained by the range. This parameter is
+     * optional, but when specified, it must not be empty. See RFC 2616, Section
+     * 14.35.1 about how to specify the start and end of the range.</p>
+     */
+    inline const ScanRange& GetScanRange() const{ return m_scanRange; }
+
+    /**
+     * <p>Specifies the byte range of the object to get the records from. A record is
+     * processed when its first byte is contained by the range. This parameter is
+     * optional, but when specified, it must not be empty. See RFC 2616, Section
+     * 14.35.1 about how to specify the start and end of the range.</p>
+     */
+    inline bool ScanRangeHasBeenSet() const { return m_scanRangeHasBeenSet; }
+
+    /**
+     * <p>Specifies the byte range of the object to get the records from. A record is
+     * processed when its first byte is contained by the range. This parameter is
+     * optional, but when specified, it must not be empty. See RFC 2616, Section
+     * 14.35.1 about how to specify the start and end of the range.</p>
+     */
+    inline void SetScanRange(const ScanRange& value) { m_scanRangeHasBeenSet = true; m_scanRange = value; }
+
+    /**
+     * <p>Specifies the byte range of the object to get the records from. A record is
+     * processed when its first byte is contained by the range. This parameter is
+     * optional, but when specified, it must not be empty. See RFC 2616, Section
+     * 14.35.1 about how to specify the start and end of the range.</p>
+     */
+    inline void SetScanRange(ScanRange&& value) { m_scanRangeHasBeenSet = true; m_scanRange = std::move(value); }
+
+    /**
+     * <p>Specifies the byte range of the object to get the records from. A record is
+     * processed when its first byte is contained by the range. This parameter is
+     * optional, but when specified, it must not be empty. See RFC 2616, Section
+     * 14.35.1 about how to specify the start and end of the range.</p>
+     */
+    inline SelectObjectContentRequest& WithScanRange(const ScanRange& value) { SetScanRange(value); return *this;}
+
+    /**
+     * <p>Specifies the byte range of the object to get the records from. A record is
+     * processed when its first byte is contained by the range. This parameter is
+     * optional, but when specified, it must not be empty. See RFC 2616, Section
+     * 14.35.1 about how to specify the start and end of the range.</p>
+     */
+    inline SelectObjectContentRequest& WithScanRange(ScanRange&& value) { SetScanRange(std::move(value)); return *this;}
+
+
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
 
@@ -581,6 +631,9 @@ namespace Model
 
     OutputSerialization m_outputSerialization;
     bool m_outputSerializationHasBeenSet;
+
+    ScanRange m_scanRange;
+    bool m_scanRangeHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet;

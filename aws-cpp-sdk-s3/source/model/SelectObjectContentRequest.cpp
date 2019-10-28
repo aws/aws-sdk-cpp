@@ -38,6 +38,7 @@ SelectObjectContentRequest::SelectObjectContentRequest() :
     m_requestProgressHasBeenSet(false),
     m_inputSerializationHasBeenSet(false),
     m_outputSerializationHasBeenSet(false),
+    m_scanRangeHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false),
     m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
@@ -79,6 +80,12 @@ Aws::String SelectObjectContentRequest::SerializePayload() const
   {
    XmlNode outputSerializationNode = parentNode.CreateChildElement("OutputSerialization");
    m_outputSerialization.AddToNode(outputSerializationNode);
+  }
+
+  if(m_scanRangeHasBeenSet)
+  {
+   XmlNode scanRangeNode = parentNode.CreateChildElement("ScanRange");
+   m_scanRange.AddToNode(scanRangeNode);
   }
 
   return payloadDoc.ConvertToString();
