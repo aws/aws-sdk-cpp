@@ -295,42 +295,146 @@ namespace Model
 
 
     /**
-     * <p>The instance type for the image builder.</p>
+     * <p>The instance type for the image builder. The following instance types are
+     * available:</p> <ul> <li> <p>stream.standard.medium</p> </li> <li>
+     * <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li> <li>
+     * <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
+     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
+     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
+     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
+     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
+     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <p>stream.graphics-design.2xlarge</p> </li> <li>
+     * <p>stream.graphics-design.4xlarge</p> </li> <li>
+     * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
+     * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type for the image builder.</p>
+     * <p>The instance type for the image builder. The following instance types are
+     * available:</p> <ul> <li> <p>stream.standard.medium</p> </li> <li>
+     * <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li> <li>
+     * <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
+     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
+     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
+     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
+     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
+     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <p>stream.graphics-design.2xlarge</p> </li> <li>
+     * <p>stream.graphics-design.4xlarge</p> </li> <li>
+     * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
+     * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type for the image builder.</p>
+     * <p>The instance type for the image builder. The following instance types are
+     * available:</p> <ul> <li> <p>stream.standard.medium</p> </li> <li>
+     * <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li> <li>
+     * <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
+     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
+     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
+     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
+     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
+     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <p>stream.graphics-design.2xlarge</p> </li> <li>
+     * <p>stream.graphics-design.4xlarge</p> </li> <li>
+     * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
+     * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type for the image builder.</p>
+     * <p>The instance type for the image builder. The following instance types are
+     * available:</p> <ul> <li> <p>stream.standard.medium</p> </li> <li>
+     * <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li> <li>
+     * <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
+     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
+     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
+     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
+     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
+     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <p>stream.graphics-design.2xlarge</p> </li> <li>
+     * <p>stream.graphics-design.4xlarge</p> </li> <li>
+     * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
+     * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type for the image builder.</p>
+     * <p>The instance type for the image builder. The following instance types are
+     * available:</p> <ul> <li> <p>stream.standard.medium</p> </li> <li>
+     * <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li> <li>
+     * <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
+     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
+     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
+     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
+     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
+     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <p>stream.graphics-design.2xlarge</p> </li> <li>
+     * <p>stream.graphics-design.4xlarge</p> </li> <li>
+     * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
+     * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The instance type for the image builder.</p>
+     * <p>The instance type for the image builder. The following instance types are
+     * available:</p> <ul> <li> <p>stream.standard.medium</p> </li> <li>
+     * <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li> <li>
+     * <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
+     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
+     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
+     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
+     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
+     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <p>stream.graphics-design.2xlarge</p> </li> <li>
+     * <p>stream.graphics-design.4xlarge</p> </li> <li>
+     * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
+     * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
     inline ImageBuilder& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type for the image builder.</p>
+     * <p>The instance type for the image builder. The following instance types are
+     * available:</p> <ul> <li> <p>stream.standard.medium</p> </li> <li>
+     * <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li> <li>
+     * <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
+     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
+     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
+     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
+     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
+     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <p>stream.graphics-design.2xlarge</p> </li> <li>
+     * <p>stream.graphics-design.4xlarge</p> </li> <li>
+     * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
+     * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
     inline ImageBuilder& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The instance type for the image builder.</p>
+     * <p>The instance type for the image builder. The following instance types are
+     * available:</p> <ul> <li> <p>stream.standard.medium</p> </li> <li>
+     * <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li> <li>
+     * <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li> <li>
+     * <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p> </li>
+     * <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p> </li>
+     * <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p> </li>
+     * <li> <p>stream.memory.8xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
+     * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <p>stream.graphics-design.2xlarge</p> </li> <li>
+     * <p>stream.graphics-design.4xlarge</p> </li> <li>
+     * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
+     * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
     inline ImageBuilder& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
@@ -370,7 +474,14 @@ namespace Model
      * <p>The ARN of the IAM role that is applied to the image builder. To assume a
      * role, the image builder calls the AWS Security Token Service (STS)
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-     * operation creates a new session with temporary credentials. </p>
+     * operation creates a new session with temporary credentials. AppStream 2.0
+     * retrieves the temporary credentials and creates the
+     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
+     * an IAM Role to Grant Permissions to Applications and Scripts Running on
+     * AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0
+     * Administration Guide</i>.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
 
@@ -378,7 +489,14 @@ namespace Model
      * <p>The ARN of the IAM role that is applied to the image builder. To assume a
      * role, the image builder calls the AWS Security Token Service (STS)
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-     * operation creates a new session with temporary credentials. </p>
+     * operation creates a new session with temporary credentials. AppStream 2.0
+     * retrieves the temporary credentials and creates the
+     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
+     * an IAM Role to Grant Permissions to Applications and Scripts Running on
+     * AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0
+     * Administration Guide</i>.</p>
      */
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
@@ -386,7 +504,14 @@ namespace Model
      * <p>The ARN of the IAM role that is applied to the image builder. To assume a
      * role, the image builder calls the AWS Security Token Service (STS)
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-     * operation creates a new session with temporary credentials. </p>
+     * operation creates a new session with temporary credentials. AppStream 2.0
+     * retrieves the temporary credentials and creates the
+     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
+     * an IAM Role to Grant Permissions to Applications and Scripts Running on
+     * AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0
+     * Administration Guide</i>.</p>
      */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
@@ -394,7 +519,14 @@ namespace Model
      * <p>The ARN of the IAM role that is applied to the image builder. To assume a
      * role, the image builder calls the AWS Security Token Service (STS)
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-     * operation creates a new session with temporary credentials. </p>
+     * operation creates a new session with temporary credentials. AppStream 2.0
+     * retrieves the temporary credentials and creates the
+     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
+     * an IAM Role to Grant Permissions to Applications and Scripts Running on
+     * AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0
+     * Administration Guide</i>.</p>
      */
     inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
 
@@ -402,7 +534,14 @@ namespace Model
      * <p>The ARN of the IAM role that is applied to the image builder. To assume a
      * role, the image builder calls the AWS Security Token Service (STS)
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-     * operation creates a new session with temporary credentials. </p>
+     * operation creates a new session with temporary credentials. AppStream 2.0
+     * retrieves the temporary credentials and creates the
+     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
+     * an IAM Role to Grant Permissions to Applications and Scripts Running on
+     * AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0
+     * Administration Guide</i>.</p>
      */
     inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
 
@@ -410,7 +549,14 @@ namespace Model
      * <p>The ARN of the IAM role that is applied to the image builder. To assume a
      * role, the image builder calls the AWS Security Token Service (STS)
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-     * operation creates a new session with temporary credentials. </p>
+     * operation creates a new session with temporary credentials. AppStream 2.0
+     * retrieves the temporary credentials and creates the
+     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
+     * an IAM Role to Grant Permissions to Applications and Scripts Running on
+     * AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0
+     * Administration Guide</i>.</p>
      */
     inline ImageBuilder& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
 
@@ -418,7 +564,14 @@ namespace Model
      * <p>The ARN of the IAM role that is applied to the image builder. To assume a
      * role, the image builder calls the AWS Security Token Service (STS)
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-     * operation creates a new session with temporary credentials. </p>
+     * operation creates a new session with temporary credentials. AppStream 2.0
+     * retrieves the temporary credentials and creates the
+     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
+     * an IAM Role to Grant Permissions to Applications and Scripts Running on
+     * AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0
+     * Administration Guide</i>.</p>
      */
     inline ImageBuilder& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
 
@@ -426,7 +579,14 @@ namespace Model
      * <p>The ARN of the IAM role that is applied to the image builder. To assume a
      * role, the image builder calls the AWS Security Token Service (STS)
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-     * operation creates a new session with temporary credentials. </p>
+     * operation creates a new session with temporary credentials. AppStream 2.0
+     * retrieves the temporary credentials and creates the
+     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
+     * an IAM Role to Grant Permissions to Applications and Scripts Running on
+     * AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0
+     * Administration Guide</i>.</p>
      */
     inline ImageBuilder& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
 

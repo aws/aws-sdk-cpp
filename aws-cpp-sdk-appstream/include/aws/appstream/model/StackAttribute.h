@@ -34,6 +34,7 @@ namespace Model
     FEEDBACK_URL,
     THEME_NAME,
     USER_SETTINGS,
+    EMBED_HOST_DOMAINS,
     IAM_ROLE_ARN,
     ACCESS_ENDPOINTS
   };

@@ -26,7 +26,9 @@ namespace Model
   enum class EnvironmentLifecycleStatus
   {
     NOT_SET,
+    CREATING,
     CREATED,
+    CREATE_FAILED,
     DELETING,
     DELETE_FAILED
   };

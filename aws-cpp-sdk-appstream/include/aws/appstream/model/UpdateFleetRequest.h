@@ -751,7 +751,14 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To
      * assume a role, a fleet instance calls the AWS Security Token Service (STS)
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-     * operation creates a new session with temporary credentials.</p>
+     * operation creates a new session with temporary credentials. AppStream 2.0
+     * retrieves the temporary credentials and creates the
+     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
+     * an IAM Role to Grant Permissions to Applications and Scripts Running on
+     * AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0
+     * Administration Guide</i>.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
 
@@ -759,7 +766,14 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To
      * assume a role, a fleet instance calls the AWS Security Token Service (STS)
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-     * operation creates a new session with temporary credentials.</p>
+     * operation creates a new session with temporary credentials. AppStream 2.0
+     * retrieves the temporary credentials and creates the
+     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
+     * an IAM Role to Grant Permissions to Applications and Scripts Running on
+     * AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0
+     * Administration Guide</i>.</p>
      */
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
@@ -767,7 +781,14 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To
      * assume a role, a fleet instance calls the AWS Security Token Service (STS)
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-     * operation creates a new session with temporary credentials.</p>
+     * operation creates a new session with temporary credentials. AppStream 2.0
+     * retrieves the temporary credentials and creates the
+     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
+     * an IAM Role to Grant Permissions to Applications and Scripts Running on
+     * AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0
+     * Administration Guide</i>.</p>
      */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
@@ -775,7 +796,14 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To
      * assume a role, a fleet instance calls the AWS Security Token Service (STS)
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-     * operation creates a new session with temporary credentials.</p>
+     * operation creates a new session with temporary credentials. AppStream 2.0
+     * retrieves the temporary credentials and creates the
+     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
+     * an IAM Role to Grant Permissions to Applications and Scripts Running on
+     * AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0
+     * Administration Guide</i>.</p>
      */
     inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
 
@@ -783,7 +811,14 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To
      * assume a role, a fleet instance calls the AWS Security Token Service (STS)
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-     * operation creates a new session with temporary credentials.</p>
+     * operation creates a new session with temporary credentials. AppStream 2.0
+     * retrieves the temporary credentials and creates the
+     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
+     * an IAM Role to Grant Permissions to Applications and Scripts Running on
+     * AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0
+     * Administration Guide</i>.</p>
      */
     inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
 
@@ -791,7 +826,14 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To
      * assume a role, a fleet instance calls the AWS Security Token Service (STS)
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-     * operation creates a new session with temporary credentials.</p>
+     * operation creates a new session with temporary credentials. AppStream 2.0
+     * retrieves the temporary credentials and creates the
+     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
+     * an IAM Role to Grant Permissions to Applications and Scripts Running on
+     * AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0
+     * Administration Guide</i>.</p>
      */
     inline UpdateFleetRequest& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
 
@@ -799,7 +841,14 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To
      * assume a role, a fleet instance calls the AWS Security Token Service (STS)
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-     * operation creates a new session with temporary credentials.</p>
+     * operation creates a new session with temporary credentials. AppStream 2.0
+     * retrieves the temporary credentials and creates the
+     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
+     * an IAM Role to Grant Permissions to Applications and Scripts Running on
+     * AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0
+     * Administration Guide</i>.</p>
      */
     inline UpdateFleetRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
 
@@ -807,7 +856,14 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To
      * assume a role, a fleet instance calls the AWS Security Token Service (STS)
      * <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
-     * operation creates a new session with temporary credentials.</p>
+     * operation creates a new session with temporary credentials. AppStream 2.0
+     * retrieves the temporary credentials and creates the
+     * <b>AppStream_Machine_Role</b> credential profile on the instance.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
+     * an IAM Role to Grant Permissions to Applications and Scripts Running on
+     * AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0
+     * Administration Guide</i>.</p>
      */
     inline UpdateFleetRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
 

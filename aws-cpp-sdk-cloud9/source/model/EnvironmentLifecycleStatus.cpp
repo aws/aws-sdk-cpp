@@ -30,7 +30,9 @@ namespace Aws
       namespace EnvironmentLifecycleStatusMapper
       {
 
+        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
         static const int CREATED_HASH = HashingUtils::HashString("CREATED");
+        static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
 
@@ -38,9 +40,17 @@ namespace Aws
         EnvironmentLifecycleStatus GetEnvironmentLifecycleStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CREATED_HASH)
+          if (hashCode == CREATING_HASH)
+          {
+            return EnvironmentLifecycleStatus::CREATING;
+          }
+          else if (hashCode == CREATED_HASH)
           {
             return EnvironmentLifecycleStatus::CREATED;
+          }
+          else if (hashCode == CREATE_FAILED_HASH)
+          {
+            return EnvironmentLifecycleStatus::CREATE_FAILED;
           }
           else if (hashCode == DELETING_HASH)
           {
@@ -64,8 +74,12 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnvironmentLifecycleStatus::CREATING:
+            return "CREATING";
           case EnvironmentLifecycleStatus::CREATED:
             return "CREATED";
+          case EnvironmentLifecycleStatus::CREATE_FAILED:
+            return "CREATE_FAILED";
           case EnvironmentLifecycleStatus::DELETING:
             return "DELETING";
           case EnvironmentLifecycleStatus::DELETE_FAILED:

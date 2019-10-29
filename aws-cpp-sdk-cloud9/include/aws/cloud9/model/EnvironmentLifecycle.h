@@ -51,55 +51,67 @@ namespace Model
 
     /**
      * <p>The current creation or deletion lifecycle state of the environment.</p> <ul>
-     * <li> <p> <code>CREATED</code>: The environment was successfully created.</p>
-     * </li> <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p>
-     * </li> <li> <p> <code>DELETING</code>: The environment is in the process of being
-     * deleted.</p> </li> </ul>
+     * <li> <p> <code>CREATING</code>: The environment is in the process of being
+     * created.</p> </li> <li> <p> <code>CREATED</code>: The environment was
+     * successfully created.</p> </li> <li> <p> <code>CREATE_FAILED</code>: The
+     * environment failed to be created.</p> </li> <li> <p> <code>DELETING</code>: The
+     * environment is in the process of being deleted.</p> </li> <li> <p>
+     * <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li> </ul>
      */
     inline const EnvironmentLifecycleStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The current creation or deletion lifecycle state of the environment.</p> <ul>
-     * <li> <p> <code>CREATED</code>: The environment was successfully created.</p>
-     * </li> <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p>
-     * </li> <li> <p> <code>DELETING</code>: The environment is in the process of being
-     * deleted.</p> </li> </ul>
+     * <li> <p> <code>CREATING</code>: The environment is in the process of being
+     * created.</p> </li> <li> <p> <code>CREATED</code>: The environment was
+     * successfully created.</p> </li> <li> <p> <code>CREATE_FAILED</code>: The
+     * environment failed to be created.</p> </li> <li> <p> <code>DELETING</code>: The
+     * environment is in the process of being deleted.</p> </li> <li> <p>
+     * <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The current creation or deletion lifecycle state of the environment.</p> <ul>
-     * <li> <p> <code>CREATED</code>: The environment was successfully created.</p>
-     * </li> <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p>
-     * </li> <li> <p> <code>DELETING</code>: The environment is in the process of being
-     * deleted.</p> </li> </ul>
+     * <li> <p> <code>CREATING</code>: The environment is in the process of being
+     * created.</p> </li> <li> <p> <code>CREATED</code>: The environment was
+     * successfully created.</p> </li> <li> <p> <code>CREATE_FAILED</code>: The
+     * environment failed to be created.</p> </li> <li> <p> <code>DELETING</code>: The
+     * environment is in the process of being deleted.</p> </li> <li> <p>
+     * <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li> </ul>
      */
     inline void SetStatus(const EnvironmentLifecycleStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The current creation or deletion lifecycle state of the environment.</p> <ul>
-     * <li> <p> <code>CREATED</code>: The environment was successfully created.</p>
-     * </li> <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p>
-     * </li> <li> <p> <code>DELETING</code>: The environment is in the process of being
-     * deleted.</p> </li> </ul>
+     * <li> <p> <code>CREATING</code>: The environment is in the process of being
+     * created.</p> </li> <li> <p> <code>CREATED</code>: The environment was
+     * successfully created.</p> </li> <li> <p> <code>CREATE_FAILED</code>: The
+     * environment failed to be created.</p> </li> <li> <p> <code>DELETING</code>: The
+     * environment is in the process of being deleted.</p> </li> <li> <p>
+     * <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li> </ul>
      */
     inline void SetStatus(EnvironmentLifecycleStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The current creation or deletion lifecycle state of the environment.</p> <ul>
-     * <li> <p> <code>CREATED</code>: The environment was successfully created.</p>
-     * </li> <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p>
-     * </li> <li> <p> <code>DELETING</code>: The environment is in the process of being
-     * deleted.</p> </li> </ul>
+     * <li> <p> <code>CREATING</code>: The environment is in the process of being
+     * created.</p> </li> <li> <p> <code>CREATED</code>: The environment was
+     * successfully created.</p> </li> <li> <p> <code>CREATE_FAILED</code>: The
+     * environment failed to be created.</p> </li> <li> <p> <code>DELETING</code>: The
+     * environment is in the process of being deleted.</p> </li> <li> <p>
+     * <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li> </ul>
      */
     inline EnvironmentLifecycle& WithStatus(const EnvironmentLifecycleStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The current creation or deletion lifecycle state of the environment.</p> <ul>
-     * <li> <p> <code>CREATED</code>: The environment was successfully created.</p>
-     * </li> <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p>
-     * </li> <li> <p> <code>DELETING</code>: The environment is in the process of being
-     * deleted.</p> </li> </ul>
+     * <li> <p> <code>CREATING</code>: The environment is in the process of being
+     * created.</p> </li> <li> <p> <code>CREATED</code>: The environment was
+     * successfully created.</p> </li> <li> <p> <code>CREATE_FAILED</code>: The
+     * environment failed to be created.</p> </li> <li> <p> <code>DELETING</code>: The
+     * environment is in the process of being deleted.</p> </li> <li> <p>
+     * <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li> </ul>
      */
     inline EnvironmentLifecycle& WithStatus(EnvironmentLifecycleStatus&& value) { SetStatus(std::move(value)); return *this;}
 

@@ -32,7 +32,8 @@ CreateStackRequest::CreateStackRequest() :
     m_userSettingsHasBeenSet(false),
     m_applicationSettingsHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_accessEndpointsHasBeenSet(false)
+    m_accessEndpointsHasBeenSet(false),
+    m_embedHostDomainsHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,17 @@ Aws::String CreateStackRequest::SerializePayload() const
      accessEndpointsJsonList[accessEndpointsIndex].AsObject(m_accessEndpoints[accessEndpointsIndex].Jsonize());
    }
    payload.WithArray("AccessEndpoints", std::move(accessEndpointsJsonList));
+
+  }
+
+  if(m_embedHostDomainsHasBeenSet)
+  {
+   Array<JsonValue> embedHostDomainsJsonList(m_embedHostDomains.size());
+   for(unsigned embedHostDomainsIndex = 0; embedHostDomainsIndex < embedHostDomainsJsonList.GetLength(); ++embedHostDomainsIndex)
+   {
+     embedHostDomainsJsonList[embedHostDomainsIndex].AsString(m_embedHostDomains[embedHostDomainsIndex]);
+   }
+   payload.WithArray("EmbedHostDomains", std::move(embedHostDomainsJsonList));
 
   }
 

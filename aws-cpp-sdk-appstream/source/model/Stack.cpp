@@ -40,7 +40,8 @@ Stack::Stack() :
     m_stackErrorsHasBeenSet(false),
     m_userSettingsHasBeenSet(false),
     m_applicationSettingsHasBeenSet(false),
-    m_accessEndpointsHasBeenSet(false)
+    m_accessEndpointsHasBeenSet(false),
+    m_embedHostDomainsHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ Stack::Stack(JsonView jsonValue) :
     m_stackErrorsHasBeenSet(false),
     m_userSettingsHasBeenSet(false),
     m_applicationSettingsHasBeenSet(false),
-    m_accessEndpointsHasBeenSet(false)
+    m_accessEndpointsHasBeenSet(false),
+    m_embedHostDomainsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -159,6 +161,16 @@ Stack& Stack::operator =(JsonView jsonValue)
     m_accessEndpointsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EmbedHostDomains"))
+  {
+    Array<JsonView> embedHostDomainsJsonList = jsonValue.GetArray("EmbedHostDomains");
+    for(unsigned embedHostDomainsIndex = 0; embedHostDomainsIndex < embedHostDomainsJsonList.GetLength(); ++embedHostDomainsIndex)
+    {
+      m_embedHostDomains.push_back(embedHostDomainsJsonList[embedHostDomainsIndex].AsString());
+    }
+    m_embedHostDomainsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -254,6 +266,17 @@ JsonValue Stack::Jsonize() const
      accessEndpointsJsonList[accessEndpointsIndex].AsObject(m_accessEndpoints[accessEndpointsIndex].Jsonize());
    }
    payload.WithArray("AccessEndpoints", std::move(accessEndpointsJsonList));
+
+  }
+
+  if(m_embedHostDomainsHasBeenSet)
+  {
+   Array<JsonValue> embedHostDomainsJsonList(m_embedHostDomains.size());
+   for(unsigned embedHostDomainsIndex = 0; embedHostDomainsIndex < embedHostDomainsJsonList.GetLength(); ++embedHostDomainsIndex)
+   {
+     embedHostDomainsJsonList[embedHostDomainsIndex].AsString(m_embedHostDomains[embedHostDomainsIndex]);
+   }
+   payload.WithArray("EmbedHostDomains", std::move(embedHostDomainsJsonList));
 
   }
 
