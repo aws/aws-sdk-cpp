@@ -2066,9 +2066,10 @@ namespace Model
      * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
      * <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
      * characters.</p> </li> <li> <p>Must be at least 16 characters and no more than
-     * 128 characters in length.</p> </li> <li> <p>Cannot contain any of the following
-     * characters: '/', '"', or '@'. </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * 128 characters in length.</p> </li> <li> <p>The only permitted printable special
+     * characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable special
+     * characters cannot be used in the AUTH token.</p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
     inline const Aws::String& GetAuthToken() const{ return m_authToken; }
@@ -2082,9 +2083,10 @@ namespace Model
      * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
      * <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
      * characters.</p> </li> <li> <p>Must be at least 16 characters and no more than
-     * 128 characters in length.</p> </li> <li> <p>Cannot contain any of the following
-     * characters: '/', '"', or '@'. </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * 128 characters in length.</p> </li> <li> <p>The only permitted printable special
+     * characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable special
+     * characters cannot be used in the AUTH token.</p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
     inline bool AuthTokenHasBeenSet() const { return m_authTokenHasBeenSet; }
@@ -2098,9 +2100,10 @@ namespace Model
      * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
      * <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
      * characters.</p> </li> <li> <p>Must be at least 16 characters and no more than
-     * 128 characters in length.</p> </li> <li> <p>Cannot contain any of the following
-     * characters: '/', '"', or '@'. </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * 128 characters in length.</p> </li> <li> <p>The only permitted printable special
+     * characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable special
+     * characters cannot be used in the AUTH token.</p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
     inline void SetAuthToken(const Aws::String& value) { m_authTokenHasBeenSet = true; m_authToken = value; }
@@ -2114,9 +2117,10 @@ namespace Model
      * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
      * <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
      * characters.</p> </li> <li> <p>Must be at least 16 characters and no more than
-     * 128 characters in length.</p> </li> <li> <p>Cannot contain any of the following
-     * characters: '/', '"', or '@'. </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * 128 characters in length.</p> </li> <li> <p>The only permitted printable special
+     * characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable special
+     * characters cannot be used in the AUTH token.</p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
     inline void SetAuthToken(Aws::String&& value) { m_authTokenHasBeenSet = true; m_authToken = std::move(value); }
@@ -2130,9 +2134,10 @@ namespace Model
      * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
      * <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
      * characters.</p> </li> <li> <p>Must be at least 16 characters and no more than
-     * 128 characters in length.</p> </li> <li> <p>Cannot contain any of the following
-     * characters: '/', '"', or '@'. </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * 128 characters in length.</p> </li> <li> <p>The only permitted printable special
+     * characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable special
+     * characters cannot be used in the AUTH token.</p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
     inline void SetAuthToken(const char* value) { m_authTokenHasBeenSet = true; m_authToken.assign(value); }
@@ -2146,9 +2151,10 @@ namespace Model
      * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
      * <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
      * characters.</p> </li> <li> <p>Must be at least 16 characters and no more than
-     * 128 characters in length.</p> </li> <li> <p>Cannot contain any of the following
-     * characters: '/', '"', or '@'. </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * 128 characters in length.</p> </li> <li> <p>The only permitted printable special
+     * characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable special
+     * characters cannot be used in the AUTH token.</p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
     inline CreateReplicationGroupRequest& WithAuthToken(const Aws::String& value) { SetAuthToken(value); return *this;}
@@ -2162,9 +2168,10 @@ namespace Model
      * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
      * <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
      * characters.</p> </li> <li> <p>Must be at least 16 characters and no more than
-     * 128 characters in length.</p> </li> <li> <p>Cannot contain any of the following
-     * characters: '/', '"', or '@'. </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * 128 characters in length.</p> </li> <li> <p>The only permitted printable special
+     * characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable special
+     * characters cannot be used in the AUTH token.</p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
     inline CreateReplicationGroupRequest& WithAuthToken(Aws::String&& value) { SetAuthToken(std::move(value)); return *this;}
@@ -2178,9 +2185,10 @@ namespace Model
      * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
      * <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
      * characters.</p> </li> <li> <p>Must be at least 16 characters and no more than
-     * 128 characters in length.</p> </li> <li> <p>Cannot contain any of the following
-     * characters: '/', '"', or '@'. </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * 128 characters in length.</p> </li> <li> <p>The only permitted printable special
+     * characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable special
+     * characters cannot be used in the AUTH token.</p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
     inline CreateReplicationGroupRequest& WithAuthToken(const char* value) { SetAuthToken(value); return *this;}

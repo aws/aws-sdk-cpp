@@ -58,6 +58,7 @@ CacheCluster::CacheCluster() :
     m_snapshotWindowHasBeenSet(false),
     m_authTokenEnabled(false),
     m_authTokenEnabledHasBeenSet(false),
+    m_authTokenLastModifiedDateHasBeenSet(false),
     m_transitEncryptionEnabled(false),
     m_transitEncryptionEnabledHasBeenSet(false),
     m_atRestEncryptionEnabled(false),
@@ -93,6 +94,7 @@ CacheCluster::CacheCluster(const XmlNode& xmlNode) :
     m_snapshotWindowHasBeenSet(false),
     m_authTokenEnabled(false),
     m_authTokenEnabledHasBeenSet(false),
+    m_authTokenLastModifiedDateHasBeenSet(false),
     m_transitEncryptionEnabled(false),
     m_transitEncryptionEnabledHasBeenSet(false),
     m_atRestEncryptionEnabled(false),
@@ -263,6 +265,12 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
       m_authTokenEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authTokenEnabledNode.GetText()).c_str()).c_str());
       m_authTokenEnabledHasBeenSet = true;
     }
+    XmlNode authTokenLastModifiedDateNode = resultNode.FirstChild("AuthTokenLastModifiedDate");
+    if(!authTokenLastModifiedDateNode.IsNull())
+    {
+      m_authTokenLastModifiedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authTokenLastModifiedDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_authTokenLastModifiedDateHasBeenSet = true;
+    }
     XmlNode transitEncryptionEnabledNode = resultNode.FirstChild("TransitEncryptionEnabled");
     if(!transitEncryptionEnabledNode.IsNull())
     {
@@ -423,6 +431,11 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".AuthTokenEnabled=" << std::boolalpha << m_authTokenEnabled << "&";
   }
 
+  if(m_authTokenLastModifiedDateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AuthTokenLastModifiedDate=" << StringUtils::URLEncode(m_authTokenLastModifiedDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
   if(m_transitEncryptionEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".TransitEncryptionEnabled=" << std::boolalpha << m_transitEncryptionEnabled << "&";
@@ -554,6 +567,10 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_authTokenEnabledHasBeenSet)
   {
       oStream << location << ".AuthTokenEnabled=" << std::boolalpha << m_authTokenEnabled << "&";
+  }
+  if(m_authTokenLastModifiedDateHasBeenSet)
+  {
+      oStream << location << ".AuthTokenLastModifiedDate=" << StringUtils::URLEncode(m_authTokenLastModifiedDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_transitEncryptionEnabledHasBeenSet)
   {

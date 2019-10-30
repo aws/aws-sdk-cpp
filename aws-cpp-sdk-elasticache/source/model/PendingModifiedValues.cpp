@@ -35,7 +35,9 @@ PendingModifiedValues::PendingModifiedValues() :
     m_numCacheNodesHasBeenSet(false),
     m_cacheNodeIdsToRemoveHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
-    m_cacheNodeTypeHasBeenSet(false)
+    m_cacheNodeTypeHasBeenSet(false),
+    m_authTokenStatus(AuthTokenUpdateStatus::NOT_SET),
+    m_authTokenStatusHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode) :
     m_numCacheNodesHasBeenSet(false),
     m_cacheNodeIdsToRemoveHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
-    m_cacheNodeTypeHasBeenSet(false)
+    m_cacheNodeTypeHasBeenSet(false),
+    m_authTokenStatus(AuthTokenUpdateStatus::NOT_SET),
+    m_authTokenStatusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -85,6 +89,12 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
       m_cacheNodeType = Aws::Utils::Xml::DecodeEscapedXmlText(cacheNodeTypeNode.GetText());
       m_cacheNodeTypeHasBeenSet = true;
     }
+    XmlNode authTokenStatusNode = resultNode.FirstChild("AuthTokenStatus");
+    if(!authTokenStatusNode.IsNull())
+    {
+      m_authTokenStatus = AuthTokenUpdateStatusMapper::GetAuthTokenUpdateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authTokenStatusNode.GetText()).c_str()).c_str());
+      m_authTokenStatusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -116,6 +126,11 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".CacheNodeType=" << StringUtils::URLEncode(m_cacheNodeType.c_str()) << "&";
   }
 
+  if(m_authTokenStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AuthTokenStatus=" << AuthTokenUpdateStatusMapper::GetNameForAuthTokenUpdateStatus(m_authTokenStatus) << "&";
+  }
+
 }
 
 void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -139,6 +154,10 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_cacheNodeTypeHasBeenSet)
   {
       oStream << location << ".CacheNodeType=" << StringUtils::URLEncode(m_cacheNodeType.c_str()) << "&";
+  }
+  if(m_authTokenStatusHasBeenSet)
+  {
+      oStream << location << ".AuthTokenStatus=" << AuthTokenUpdateStatusMapper::GetNameForAuthTokenUpdateStatus(m_authTokenStatus) << "&";
   }
 }
 

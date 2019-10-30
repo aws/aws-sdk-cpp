@@ -1867,8 +1867,9 @@ namespace Model
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
      * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
      * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
-     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
-     * following characters: '/', '"', or '@'. </p> </li> </ul> <p>For more
+     * than 128 characters in length.</p> </li> <li> <p>The only permitted printable
+     * special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable
+     * special characters cannot be used in the AUTH token.</p> </li> </ul> <p>For more
      * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
@@ -1878,8 +1879,9 @@ namespace Model
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
      * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
      * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
-     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
-     * following characters: '/', '"', or '@'. </p> </li> </ul> <p>For more
+     * than 128 characters in length.</p> </li> <li> <p>The only permitted printable
+     * special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable
+     * special characters cannot be used in the AUTH token.</p> </li> </ul> <p>For more
      * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
@@ -1889,8 +1891,9 @@ namespace Model
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
      * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
      * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
-     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
-     * following characters: '/', '"', or '@'. </p> </li> </ul> <p>For more
+     * than 128 characters in length.</p> </li> <li> <p>The only permitted printable
+     * special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable
+     * special characters cannot be used in the AUTH token.</p> </li> </ul> <p>For more
      * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
@@ -1900,8 +1903,9 @@ namespace Model
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
      * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
      * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
-     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
-     * following characters: '/', '"', or '@'. </p> </li> </ul> <p>For more
+     * than 128 characters in length.</p> </li> <li> <p>The only permitted printable
+     * special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable
+     * special characters cannot be used in the AUTH token.</p> </li> </ul> <p>For more
      * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
@@ -1911,8 +1915,9 @@ namespace Model
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
      * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
      * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
-     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
-     * following characters: '/', '"', or '@'. </p> </li> </ul> <p>For more
+     * than 128 characters in length.</p> </li> <li> <p>The only permitted printable
+     * special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable
+     * special characters cannot be used in the AUTH token.</p> </li> </ul> <p>For more
      * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
@@ -1922,8 +1927,9 @@ namespace Model
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
      * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
      * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
-     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
-     * following characters: '/', '"', or '@'. </p> </li> </ul> <p>For more
+     * than 128 characters in length.</p> </li> <li> <p>The only permitted printable
+     * special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable
+     * special characters cannot be used in the AUTH token.</p> </li> </ul> <p>For more
      * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
@@ -1933,8 +1939,9 @@ namespace Model
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
      * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
      * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
-     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
-     * following characters: '/', '"', or '@'. </p> </li> </ul> <p>For more
+     * than 128 characters in length.</p> </li> <li> <p>The only permitted printable
+     * special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable
+     * special characters cannot be used in the AUTH token.</p> </li> </ul> <p>For more
      * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
@@ -1944,8 +1951,9 @@ namespace Model
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
      * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
      * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
-     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
-     * following characters: '/', '"', or '@'. </p> </li> </ul> <p>For more
+     * than 128 characters in length.</p> </li> <li> <p>The only permitted printable
+     * special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable
+     * special characters cannot be used in the AUTH token.</p> </li> </ul> <p>For more
      * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */

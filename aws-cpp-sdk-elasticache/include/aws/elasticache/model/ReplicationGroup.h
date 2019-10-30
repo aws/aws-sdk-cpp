@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/AutomaticFailoverStatus.h>
 #include <aws/elasticache/model/Endpoint.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/elasticache/model/NodeGroup.h>
 #include <utility>
 
@@ -710,6 +711,37 @@ namespace Model
 
 
     /**
+     * <p>The date the auth token was last modified</p>
+     */
+    inline const Aws::Utils::DateTime& GetAuthTokenLastModifiedDate() const{ return m_authTokenLastModifiedDate; }
+
+    /**
+     * <p>The date the auth token was last modified</p>
+     */
+    inline bool AuthTokenLastModifiedDateHasBeenSet() const { return m_authTokenLastModifiedDateHasBeenSet; }
+
+    /**
+     * <p>The date the auth token was last modified</p>
+     */
+    inline void SetAuthTokenLastModifiedDate(const Aws::Utils::DateTime& value) { m_authTokenLastModifiedDateHasBeenSet = true; m_authTokenLastModifiedDate = value; }
+
+    /**
+     * <p>The date the auth token was last modified</p>
+     */
+    inline void SetAuthTokenLastModifiedDate(Aws::Utils::DateTime&& value) { m_authTokenLastModifiedDateHasBeenSet = true; m_authTokenLastModifiedDate = std::move(value); }
+
+    /**
+     * <p>The date the auth token was last modified</p>
+     */
+    inline ReplicationGroup& WithAuthTokenLastModifiedDate(const Aws::Utils::DateTime& value) { SetAuthTokenLastModifiedDate(value); return *this;}
+
+    /**
+     * <p>The date the auth token was last modified</p>
+     */
+    inline ReplicationGroup& WithAuthTokenLastModifiedDate(Aws::Utils::DateTime&& value) { SetAuthTokenLastModifiedDate(std::move(value)); return *this;}
+
+
+    /**
      * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
      * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
      * the cluster is created. To enable in-transit encryption on a cluster you must
@@ -882,6 +914,9 @@ namespace Model
 
     bool m_authTokenEnabled;
     bool m_authTokenEnabledHasBeenSet;
+
+    Aws::Utils::DateTime m_authTokenLastModifiedDate;
+    bool m_authTokenLastModifiedDateHasBeenSet;
 
     bool m_transitEncryptionEnabled;
     bool m_transitEncryptionEnabledHasBeenSet;

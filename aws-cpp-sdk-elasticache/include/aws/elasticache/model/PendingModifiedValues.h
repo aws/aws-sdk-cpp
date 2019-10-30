@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticache/model/AuthTokenUpdateStatus.h>
 #include <utility>
 
 namespace Aws
@@ -216,6 +217,37 @@ namespace Model
      */
     inline PendingModifiedValues& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
 
+
+    /**
+     * <p>The auth token status</p>
+     */
+    inline const AuthTokenUpdateStatus& GetAuthTokenStatus() const{ return m_authTokenStatus; }
+
+    /**
+     * <p>The auth token status</p>
+     */
+    inline bool AuthTokenStatusHasBeenSet() const { return m_authTokenStatusHasBeenSet; }
+
+    /**
+     * <p>The auth token status</p>
+     */
+    inline void SetAuthTokenStatus(const AuthTokenUpdateStatus& value) { m_authTokenStatusHasBeenSet = true; m_authTokenStatus = value; }
+
+    /**
+     * <p>The auth token status</p>
+     */
+    inline void SetAuthTokenStatus(AuthTokenUpdateStatus&& value) { m_authTokenStatusHasBeenSet = true; m_authTokenStatus = std::move(value); }
+
+    /**
+     * <p>The auth token status</p>
+     */
+    inline PendingModifiedValues& WithAuthTokenStatus(const AuthTokenUpdateStatus& value) { SetAuthTokenStatus(value); return *this;}
+
+    /**
+     * <p>The auth token status</p>
+     */
+    inline PendingModifiedValues& WithAuthTokenStatus(AuthTokenUpdateStatus&& value) { SetAuthTokenStatus(std::move(value)); return *this;}
+
   private:
 
     int m_numCacheNodes;
@@ -229,6 +261,9 @@ namespace Model
 
     Aws::String m_cacheNodeType;
     bool m_cacheNodeTypeHasBeenSet;
+
+    AuthTokenUpdateStatus m_authTokenStatus;
+    bool m_authTokenStatusHasBeenSet;
   };
 
 } // namespace Model

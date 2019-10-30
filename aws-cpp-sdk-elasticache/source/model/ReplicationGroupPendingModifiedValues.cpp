@@ -34,7 +34,9 @@ ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues() :
     m_primaryClusterIdHasBeenSet(false),
     m_automaticFailoverStatus(PendingAutomaticFailoverStatus::NOT_SET),
     m_automaticFailoverStatusHasBeenSet(false),
-    m_reshardingHasBeenSet(false)
+    m_reshardingHasBeenSet(false),
+    m_authTokenStatus(AuthTokenUpdateStatus::NOT_SET),
+    m_authTokenStatusHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues(con
     m_primaryClusterIdHasBeenSet(false),
     m_automaticFailoverStatus(PendingAutomaticFailoverStatus::NOT_SET),
     m_automaticFailoverStatusHasBeenSet(false),
-    m_reshardingHasBeenSet(false)
+    m_reshardingHasBeenSet(false),
+    m_authTokenStatus(AuthTokenUpdateStatus::NOT_SET),
+    m_authTokenStatusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -71,6 +75,12 @@ ReplicationGroupPendingModifiedValues& ReplicationGroupPendingModifiedValues::op
       m_resharding = reshardingNode;
       m_reshardingHasBeenSet = true;
     }
+    XmlNode authTokenStatusNode = resultNode.FirstChild("AuthTokenStatus");
+    if(!authTokenStatusNode.IsNull())
+    {
+      m_authTokenStatus = AuthTokenUpdateStatusMapper::GetAuthTokenUpdateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authTokenStatusNode.GetText()).c_str()).c_str());
+      m_authTokenStatusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -95,6 +105,11 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
       m_resharding.OutputToStream(oStream, reshardingLocationAndMemberSs.str().c_str());
   }
 
+  if(m_authTokenStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AuthTokenStatus=" << AuthTokenUpdateStatusMapper::GetNameForAuthTokenUpdateStatus(m_authTokenStatus) << "&";
+  }
+
 }
 
 void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -112,6 +127,10 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
       Aws::String reshardingLocationAndMember(location);
       reshardingLocationAndMember += ".Resharding";
       m_resharding.OutputToStream(oStream, reshardingLocationAndMember.c_str());
+  }
+  if(m_authTokenStatusHasBeenSet)
+  {
+      oStream << location << ".AuthTokenStatus=" << AuthTokenUpdateStatusMapper::GetNameForAuthTokenUpdateStatus(m_authTokenStatus) << "&";
   }
 }
 

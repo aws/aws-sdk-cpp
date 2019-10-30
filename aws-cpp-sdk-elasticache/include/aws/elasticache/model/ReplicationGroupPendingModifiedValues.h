@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticache/model/PendingAutomaticFailoverStatus.h>
 #include <aws/elasticache/model/ReshardingStatus.h>
+#include <aws/elasticache/model/AuthTokenUpdateStatus.h>
 #include <utility>
 
 namespace Aws
@@ -194,6 +195,37 @@ namespace Model
      */
     inline ReplicationGroupPendingModifiedValues& WithResharding(ReshardingStatus&& value) { SetResharding(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The auth token status</p>
+     */
+    inline const AuthTokenUpdateStatus& GetAuthTokenStatus() const{ return m_authTokenStatus; }
+
+    /**
+     * <p>The auth token status</p>
+     */
+    inline bool AuthTokenStatusHasBeenSet() const { return m_authTokenStatusHasBeenSet; }
+
+    /**
+     * <p>The auth token status</p>
+     */
+    inline void SetAuthTokenStatus(const AuthTokenUpdateStatus& value) { m_authTokenStatusHasBeenSet = true; m_authTokenStatus = value; }
+
+    /**
+     * <p>The auth token status</p>
+     */
+    inline void SetAuthTokenStatus(AuthTokenUpdateStatus&& value) { m_authTokenStatusHasBeenSet = true; m_authTokenStatus = std::move(value); }
+
+    /**
+     * <p>The auth token status</p>
+     */
+    inline ReplicationGroupPendingModifiedValues& WithAuthTokenStatus(const AuthTokenUpdateStatus& value) { SetAuthTokenStatus(value); return *this;}
+
+    /**
+     * <p>The auth token status</p>
+     */
+    inline ReplicationGroupPendingModifiedValues& WithAuthTokenStatus(AuthTokenUpdateStatus&& value) { SetAuthTokenStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_primaryClusterId;
@@ -204,6 +236,9 @@ namespace Model
 
     ReshardingStatus m_resharding;
     bool m_reshardingHasBeenSet;
+
+    AuthTokenUpdateStatus m_authTokenStatus;
+    bool m_authTokenStatusHasBeenSet;
   };
 
 } // namespace Model

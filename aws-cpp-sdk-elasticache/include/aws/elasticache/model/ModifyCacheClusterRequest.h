@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/AZMode.h>
+#include <aws/elasticache/model/AuthTokenUpdateStrategyType.h>
 #include <utility>
 
 namespace Aws
@@ -344,11 +345,7 @@ namespace Model
      * specify <code>single-az</code> if the Memcached cluster already has cache nodes
      * in different Availability Zones. If <code>cross-az</code> is specified, existing
      * Memcached nodes remain in their current Availability Zone.</p> <p>Only newly
-     * created nodes are located in different Availability Zones. For instructions on
-     * how to move existing Memcached nodes to different Availability Zones, see the
-     * <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
-     * Node Considerations for Memcached</a>.</p> </note>
+     * created nodes are located in different Availability Zones. </p> </note>
      */
     inline const AZMode& GetAZMode() const{ return m_aZMode; }
 
@@ -360,11 +357,7 @@ namespace Model
      * specify <code>single-az</code> if the Memcached cluster already has cache nodes
      * in different Availability Zones. If <code>cross-az</code> is specified, existing
      * Memcached nodes remain in their current Availability Zone.</p> <p>Only newly
-     * created nodes are located in different Availability Zones. For instructions on
-     * how to move existing Memcached nodes to different Availability Zones, see the
-     * <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
-     * Node Considerations for Memcached</a>.</p> </note>
+     * created nodes are located in different Availability Zones. </p> </note>
      */
     inline bool AZModeHasBeenSet() const { return m_aZModeHasBeenSet; }
 
@@ -376,11 +369,7 @@ namespace Model
      * specify <code>single-az</code> if the Memcached cluster already has cache nodes
      * in different Availability Zones. If <code>cross-az</code> is specified, existing
      * Memcached nodes remain in their current Availability Zone.</p> <p>Only newly
-     * created nodes are located in different Availability Zones. For instructions on
-     * how to move existing Memcached nodes to different Availability Zones, see the
-     * <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
-     * Node Considerations for Memcached</a>.</p> </note>
+     * created nodes are located in different Availability Zones. </p> </note>
      */
     inline void SetAZMode(const AZMode& value) { m_aZModeHasBeenSet = true; m_aZMode = value; }
 
@@ -392,11 +381,7 @@ namespace Model
      * specify <code>single-az</code> if the Memcached cluster already has cache nodes
      * in different Availability Zones. If <code>cross-az</code> is specified, existing
      * Memcached nodes remain in their current Availability Zone.</p> <p>Only newly
-     * created nodes are located in different Availability Zones. For instructions on
-     * how to move existing Memcached nodes to different Availability Zones, see the
-     * <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
-     * Node Considerations for Memcached</a>.</p> </note>
+     * created nodes are located in different Availability Zones. </p> </note>
      */
     inline void SetAZMode(AZMode&& value) { m_aZModeHasBeenSet = true; m_aZMode = std::move(value); }
 
@@ -408,11 +393,7 @@ namespace Model
      * specify <code>single-az</code> if the Memcached cluster already has cache nodes
      * in different Availability Zones. If <code>cross-az</code> is specified, existing
      * Memcached nodes remain in their current Availability Zone.</p> <p>Only newly
-     * created nodes are located in different Availability Zones. For instructions on
-     * how to move existing Memcached nodes to different Availability Zones, see the
-     * <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
-     * Node Considerations for Memcached</a>.</p> </note>
+     * created nodes are located in different Availability Zones. </p> </note>
      */
     inline ModifyCacheClusterRequest& WithAZMode(const AZMode& value) { SetAZMode(value); return *this;}
 
@@ -424,11 +405,7 @@ namespace Model
      * specify <code>single-az</code> if the Memcached cluster already has cache nodes
      * in different Availability Zones. If <code>cross-az</code> is specified, existing
      * Memcached nodes remain in their current Availability Zone.</p> <p>Only newly
-     * created nodes are located in different Availability Zones. For instructions on
-     * how to move existing Memcached nodes to different Availability Zones, see the
-     * <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
-     * Node Considerations for Memcached</a>.</p> </note>
+     * created nodes are located in different Availability Zones. </p> </note>
      */
     inline ModifyCacheClusterRequest& WithAZMode(AZMode&& value) { SetAZMode(std::move(value)); return *this;}
 
@@ -1528,6 +1505,156 @@ namespace Model
      */
     inline ModifyCacheClusterRequest& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
 
+
+    /**
+     * <p>Reserved parameter. The password used to access a password protected server.
+     * This parameter must be specified with the <code>auth-token-update</code>
+     * parameter. Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
+     * characters</p> </li> <li> <p>Must be at least 16 characters and no more than 128
+     * characters in length</p> </li> <li> <p>Cannot contain any of the following
+     * characters: '/', '"', or '@', '%'</p> </li> </ul> <p> For more information, see
+     * AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+     */
+    inline const Aws::String& GetAuthToken() const{ return m_authToken; }
+
+    /**
+     * <p>Reserved parameter. The password used to access a password protected server.
+     * This parameter must be specified with the <code>auth-token-update</code>
+     * parameter. Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
+     * characters</p> </li> <li> <p>Must be at least 16 characters and no more than 128
+     * characters in length</p> </li> <li> <p>Cannot contain any of the following
+     * characters: '/', '"', or '@', '%'</p> </li> </ul> <p> For more information, see
+     * AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+     */
+    inline bool AuthTokenHasBeenSet() const { return m_authTokenHasBeenSet; }
+
+    /**
+     * <p>Reserved parameter. The password used to access a password protected server.
+     * This parameter must be specified with the <code>auth-token-update</code>
+     * parameter. Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
+     * characters</p> </li> <li> <p>Must be at least 16 characters and no more than 128
+     * characters in length</p> </li> <li> <p>Cannot contain any of the following
+     * characters: '/', '"', or '@', '%'</p> </li> </ul> <p> For more information, see
+     * AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+     */
+    inline void SetAuthToken(const Aws::String& value) { m_authTokenHasBeenSet = true; m_authToken = value; }
+
+    /**
+     * <p>Reserved parameter. The password used to access a password protected server.
+     * This parameter must be specified with the <code>auth-token-update</code>
+     * parameter. Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
+     * characters</p> </li> <li> <p>Must be at least 16 characters and no more than 128
+     * characters in length</p> </li> <li> <p>Cannot contain any of the following
+     * characters: '/', '"', or '@', '%'</p> </li> </ul> <p> For more information, see
+     * AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+     */
+    inline void SetAuthToken(Aws::String&& value) { m_authTokenHasBeenSet = true; m_authToken = std::move(value); }
+
+    /**
+     * <p>Reserved parameter. The password used to access a password protected server.
+     * This parameter must be specified with the <code>auth-token-update</code>
+     * parameter. Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
+     * characters</p> </li> <li> <p>Must be at least 16 characters and no more than 128
+     * characters in length</p> </li> <li> <p>Cannot contain any of the following
+     * characters: '/', '"', or '@', '%'</p> </li> </ul> <p> For more information, see
+     * AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+     */
+    inline void SetAuthToken(const char* value) { m_authTokenHasBeenSet = true; m_authToken.assign(value); }
+
+    /**
+     * <p>Reserved parameter. The password used to access a password protected server.
+     * This parameter must be specified with the <code>auth-token-update</code>
+     * parameter. Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
+     * characters</p> </li> <li> <p>Must be at least 16 characters and no more than 128
+     * characters in length</p> </li> <li> <p>Cannot contain any of the following
+     * characters: '/', '"', or '@', '%'</p> </li> </ul> <p> For more information, see
+     * AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+     */
+    inline ModifyCacheClusterRequest& WithAuthToken(const Aws::String& value) { SetAuthToken(value); return *this;}
+
+    /**
+     * <p>Reserved parameter. The password used to access a password protected server.
+     * This parameter must be specified with the <code>auth-token-update</code>
+     * parameter. Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
+     * characters</p> </li> <li> <p>Must be at least 16 characters and no more than 128
+     * characters in length</p> </li> <li> <p>Cannot contain any of the following
+     * characters: '/', '"', or '@', '%'</p> </li> </ul> <p> For more information, see
+     * AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+     */
+    inline ModifyCacheClusterRequest& WithAuthToken(Aws::String&& value) { SetAuthToken(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved parameter. The password used to access a password protected server.
+     * This parameter must be specified with the <code>auth-token-update</code>
+     * parameter. Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
+     * characters</p> </li> <li> <p>Must be at least 16 characters and no more than 128
+     * characters in length</p> </li> <li> <p>Cannot contain any of the following
+     * characters: '/', '"', or '@', '%'</p> </li> </ul> <p> For more information, see
+     * AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+     */
+    inline ModifyCacheClusterRequest& WithAuthToken(const char* value) { SetAuthToken(value); return *this;}
+
+
+    /**
+     * <p>Specifies the strategy to use to update the AUTH token. This parameter must
+     * be specified with the <code>auth-token</code> parameter. Possible values:</p>
+     * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * Users with Redis AUTH</a> </p>
+     */
+    inline const AuthTokenUpdateStrategyType& GetAuthTokenUpdateStrategy() const{ return m_authTokenUpdateStrategy; }
+
+    /**
+     * <p>Specifies the strategy to use to update the AUTH token. This parameter must
+     * be specified with the <code>auth-token</code> parameter. Possible values:</p>
+     * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * Users with Redis AUTH</a> </p>
+     */
+    inline bool AuthTokenUpdateStrategyHasBeenSet() const { return m_authTokenUpdateStrategyHasBeenSet; }
+
+    /**
+     * <p>Specifies the strategy to use to update the AUTH token. This parameter must
+     * be specified with the <code>auth-token</code> parameter. Possible values:</p>
+     * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * Users with Redis AUTH</a> </p>
+     */
+    inline void SetAuthTokenUpdateStrategy(const AuthTokenUpdateStrategyType& value) { m_authTokenUpdateStrategyHasBeenSet = true; m_authTokenUpdateStrategy = value; }
+
+    /**
+     * <p>Specifies the strategy to use to update the AUTH token. This parameter must
+     * be specified with the <code>auth-token</code> parameter. Possible values:</p>
+     * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * Users with Redis AUTH</a> </p>
+     */
+    inline void SetAuthTokenUpdateStrategy(AuthTokenUpdateStrategyType&& value) { m_authTokenUpdateStrategyHasBeenSet = true; m_authTokenUpdateStrategy = std::move(value); }
+
+    /**
+     * <p>Specifies the strategy to use to update the AUTH token. This parameter must
+     * be specified with the <code>auth-token</code> parameter. Possible values:</p>
+     * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * Users with Redis AUTH</a> </p>
+     */
+    inline ModifyCacheClusterRequest& WithAuthTokenUpdateStrategy(const AuthTokenUpdateStrategyType& value) { SetAuthTokenUpdateStrategy(value); return *this;}
+
+    /**
+     * <p>Specifies the strategy to use to update the AUTH token. This parameter must
+     * be specified with the <code>auth-token</code> parameter. Possible values:</p>
+     * <ul> <li> <p>Rotate</p> </li> <li> <p>Set</p> </li> </ul> <p> For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * Users with Redis AUTH</a> </p>
+     */
+    inline ModifyCacheClusterRequest& WithAuthTokenUpdateStrategy(AuthTokenUpdateStrategyType&& value) { SetAuthTokenUpdateStrategy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_cacheClusterId;
@@ -1580,6 +1707,12 @@ namespace Model
 
     Aws::String m_cacheNodeType;
     bool m_cacheNodeTypeHasBeenSet;
+
+    Aws::String m_authToken;
+    bool m_authTokenHasBeenSet;
+
+    AuthTokenUpdateStrategyType m_authTokenUpdateStrategy;
+    bool m_authTokenUpdateStrategyHasBeenSet;
   };
 
 } // namespace Model
