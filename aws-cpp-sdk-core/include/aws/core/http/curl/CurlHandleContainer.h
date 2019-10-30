@@ -1,12 +1,12 @@
 /*
   * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
+  *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
   * A copy of the License is located at
-  * 
+  *
   *  http://aws.amazon.com/apache2.0
-  * 
+  *
   * or in the "license" file accompanying this file. This file is distributed
   * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
   * express or implied. See the License for the specific language governing
@@ -38,7 +38,7 @@ public:
       * Initializes an empty stack of CURL handles. If you are only making synchronous calls via your http client
       * then a small size is best. For async support, a good value would be 6 * number of Processors.   *
       */
-    CurlHandleContainer(unsigned maxSize = 50, long httpRequestTimeout = 0, long connectTimeout = 1000, bool tcpKeepAlive = true, 
+    CurlHandleContainer(unsigned maxSize = 50, long httpRequestTimeout = 0, long connectTimeout = 1000, bool tcpKeepAlive = true,
                         unsigned long tcpKeepAliveIntervalMs = 30000, long lowSpeedTime = 3000, unsigned long lowSpeedLimit = 1);
     ~CurlHandleContainer();
 
@@ -51,6 +51,11 @@ public:
       * after you are finished with the handle.
       */
     void ReleaseCurlHandle(CURL* handle);
+
+    /**
+     * When the handle has bad DNS entries, problematic live connections, we need to destory the handle from pool.
+     */
+    void DestroyCurlHandle(CURL* handle);
 
 private:
     CurlHandleContainer(const CurlHandleContainer&) = delete;

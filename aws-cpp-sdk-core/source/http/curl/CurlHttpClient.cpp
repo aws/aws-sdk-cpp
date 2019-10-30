@@ -679,8 +679,14 @@ void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
         {
             request.SetResolvedRemoteHost(ip);
         }
-
-        m_curlHandleContainer.ReleaseCurlHandle(connectionHandle);
+        if (curlResponseCode != CURLE_OK)
+        {
+            m_curlHandleContainer.DestroyCurlHandle(connectionHandle);
+        }
+        else
+        {
+            m_curlHandleContainer.ReleaseCurlHandle(connectionHandle);
+        }
         //go ahead and flush the response body stream
         if(response)
         {
