@@ -40,6 +40,7 @@ namespace Aws
         static const int ObjectLockRetainUntilDate_HASH = HashingUtils::HashString("ObjectLockRetainUntilDate");
         static const int ObjectLockMode_HASH = HashingUtils::HashString("ObjectLockMode");
         static const int ObjectLockLegalHoldStatus_HASH = HashingUtils::HashString("ObjectLockLegalHoldStatus");
+        static const int IntelligentTieringAccessTier_HASH = HashingUtils::HashString("IntelligentTieringAccessTier");
 
 
         InventoryOptionalField GetInventoryOptionalFieldForName(const Aws::String& name)
@@ -85,6 +86,10 @@ namespace Aws
           {
             return InventoryOptionalField::ObjectLockLegalHoldStatus;
           }
+          else if (hashCode == IntelligentTieringAccessTier_HASH)
+          {
+            return InventoryOptionalField::IntelligentTieringAccessTier;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -119,6 +124,8 @@ namespace Aws
             return "ObjectLockMode";
           case InventoryOptionalField::ObjectLockLegalHoldStatus:
             return "ObjectLockLegalHoldStatus";
+          case InventoryOptionalField::IntelligentTieringAccessTier:
+            return "IntelligentTieringAccessTier";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

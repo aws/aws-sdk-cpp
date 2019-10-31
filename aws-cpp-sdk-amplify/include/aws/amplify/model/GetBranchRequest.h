@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p> Result structure for get branch request. </p><p><h3>See Also:</h3>   <a
+   * <p> Request structure for get branch request. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBranchRequest">AWS
    * API Reference</a></p>
    */

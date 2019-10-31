@@ -145,19 +145,19 @@ namespace Model
    * <p>The AWS Support service also exposes a set of <a
    * href="http://aws.amazon.com/premiumsupport/trustedadvisor/">Trusted Advisor</a>
    * features. You can retrieve a list of checks and their descriptions, get check
-   * results, specify checks to refresh, and get the refresh status of checks. </p>
+   * results, specify checks to refresh, and get the refresh status of checks.</p>
    * <p>The following list describes the AWS Support case management operations:</p>
    * <ul> <li> <p> <b>Service names, issue categories, and available severity levels.
    * </b>The <a>DescribeServices</a> and <a>DescribeSeverityLevels</a> operations
    * return AWS service names, service codes, service categories, and problem
    * severity levels. You use these values when you call the <a>CreateCase</a>
-   * operation. </p> </li> <li> <p> <b>Case creation, case details, and case
+   * operation.</p> </li> <li> <p> <b>Case creation, case details, and case
    * resolution.</b> The <a>CreateCase</a>, <a>DescribeCases</a>,
    * <a>DescribeAttachment</a>, and <a>ResolveCase</a> operations create AWS Support
    * cases, retrieve information about cases, and resolve cases.</p> </li> <li> <p>
    * <b>Case communication.</b> The <a>DescribeCommunications</a>,
    * <a>AddCommunicationToCase</a>, and <a>AddAttachmentsToSet</a> operations
-   * retrieve and add communications and attachments to AWS Support cases. </p> </li>
+   * retrieve and add communications and attachments to AWS Support cases.</p> </li>
    * </ul> <p>The following list describes the operations available from the AWS
    * Support service for Trusted Advisor:</p> <ul> <li> <p>
    * <a>DescribeTrustedAdvisorChecks</a> returns the list of checks that run against
@@ -167,16 +167,16 @@ namespace Model
    * specified.</p> </li> <li> <p> <a>DescribeTrustedAdvisorCheckSummaries</a>
    * returns summarized results for one or more Trusted Advisor checks.</p> </li>
    * <li> <p> <a>RefreshTrustedAdvisorCheck</a> requests that Trusted Advisor rerun a
-   * specified check. </p> </li> <li> <p>
+   * specified check.</p> </li> <li> <p>
    * <a>DescribeTrustedAdvisorCheckRefreshStatuses</a> reports the refresh status of
-   * one or more checks. </p> </li> </ul> <p>For authentication of requests, AWS
+   * one or more checks.</p> </li> </ul> <p>For authentication of requests, AWS
    * Support uses <a
-   * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+   * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
    * Version 4 Signing Process</a>.</p> <p>See <a
-   * href="http://docs.aws.amazon.com/awssupport/latest/user/Welcome.html">About the
+   * href="https://docs.aws.amazon.com/awssupport/latest/user/Welcome.html">About the
    * AWS Support API</a> in the <i>AWS Support User Guide</i> for information about
    * how to use this service to create and manage your support cases, and how to call
-   * Trusted Advisor for results of checks on your resources. </p>
+   * Trusted Advisor for results of checks on your resources.</p>
    */
   class AWS_SUPPORT_API SupportClient : public Aws::Client::AWSJsonClient
   {
@@ -204,7 +204,7 @@ namespace Model
 
         virtual ~SupportClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "support"; }
+        inline virtual const char* GetServiceClientName() const override { return "Support"; }
 
 
         /**
@@ -306,20 +306,28 @@ namespace Model
          * <p>Creates a new case in the AWS Support Center. This operation is modeled on
          * the behavior of the AWS Support Center <a
          * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a>
-         * page. Its parameters require you to specify the following information: </p> <ul>
+         * page. Its parameters require you to specify the following information:</p> <ul>
          * <li> <p> <b>issueType.</b> The type of issue for the case. You can specify
          * either "customer-service" or "technical." If you do not indicate a value, the
-         * default is "technical." </p> </li> <li> <p> <b>serviceCode.</b> The code for an
-         * AWS service. You obtain the <code>serviceCode</code> by calling
-         * <a>DescribeServices</a>. </p> </li> <li> <p> <b>categoryCode.</b> The category
-         * for the service defined for the <code>serviceCode</code> value. You also obtain
-         * the category code for a service by calling <a>DescribeServices</a>. Each AWS
-         * service defines its own set of category codes. </p> </li> <li> <p>
-         * <b>severityCode.</b> A value that indicates the urgency of the case, which in
-         * turn determines the response time according to your service level agreement with
-         * AWS Support. You obtain the SeverityCode by calling
-         * <a>DescribeSeverityLevels</a>.</p> </li> <li> <p> <b>subject.</b> The
-         * <b>Subject</b> field on the AWS Support Center <a
+         * default is "technical."</p> <note> <p>Service limit increases are not supported
+         * by the Support API; you must submit service limit increase requests in <a
+         * href="https://console.aws.amazon.com/support">Support Center</a>.</p> <p>The
+         * <code>caseId</code> is not the <code>displayId</code> that appears in <a
+         * href="https://console.aws.amazon.com/support">Support Center</a>. You can use
+         * the <a>DescribeCases</a> API to get the <code>displayId</code>.</p> </note>
+         * </li> <li> <p> <b>serviceCode.</b> The code for an AWS service. You can get the
+         * possible <code>serviceCode</code> values by calling <a>DescribeServices</a>.</p>
+         * </li> <li> <p> <b>categoryCode.</b> The category for the service defined for the
+         * <code>serviceCode</code> value. You also get the category code for a service by
+         * calling <a>DescribeServices</a>. Each AWS service defines its own set of
+         * category codes.</p> </li> <li> <p> <b>severityCode.</b> A value that indicates
+         * the urgency of the case, which in turn determines the response time according to
+         * your service level agreement with AWS Support. You can get the possible
+         * <code>severityCode</code> values by calling <a>DescribeSeverityLevels</a>. For
+         * more information about the meaning of the codes, see <a>SeverityLevel</a> and <a
+         * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
+         * a Severity</a>.</p> </li> <li> <p> <b>subject.</b> The <b>Subject</b> field on
+         * the AWS Support Center <a
          * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a>
          * page.</p> </li> <li> <p> <b>communicationBody.</b> The <b>Description</b> field
          * on the AWS Support Center <a
@@ -338,8 +346,8 @@ namespace Model
          * add additional communication or attachments to an existing case, use
          * <a>AddCommunicationToCase</a>.</p> </note> <p>A successful <a>CreateCase</a>
          * request returns an AWS Support case number. Case numbers are used by the
-         * <a>DescribeCases</a> operation to retrieve existing AWS Support cases.
-         * </p><p><h3>See Also:</h3>   <a
+         * <a>DescribeCases</a> operation to retrieve existing AWS Support
+         * cases.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCase">AWS
          * API Reference</a></p>
          */
@@ -349,20 +357,28 @@ namespace Model
          * <p>Creates a new case in the AWS Support Center. This operation is modeled on
          * the behavior of the AWS Support Center <a
          * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a>
-         * page. Its parameters require you to specify the following information: </p> <ul>
+         * page. Its parameters require you to specify the following information:</p> <ul>
          * <li> <p> <b>issueType.</b> The type of issue for the case. You can specify
          * either "customer-service" or "technical." If you do not indicate a value, the
-         * default is "technical." </p> </li> <li> <p> <b>serviceCode.</b> The code for an
-         * AWS service. You obtain the <code>serviceCode</code> by calling
-         * <a>DescribeServices</a>. </p> </li> <li> <p> <b>categoryCode.</b> The category
-         * for the service defined for the <code>serviceCode</code> value. You also obtain
-         * the category code for a service by calling <a>DescribeServices</a>. Each AWS
-         * service defines its own set of category codes. </p> </li> <li> <p>
-         * <b>severityCode.</b> A value that indicates the urgency of the case, which in
-         * turn determines the response time according to your service level agreement with
-         * AWS Support. You obtain the SeverityCode by calling
-         * <a>DescribeSeverityLevels</a>.</p> </li> <li> <p> <b>subject.</b> The
-         * <b>Subject</b> field on the AWS Support Center <a
+         * default is "technical."</p> <note> <p>Service limit increases are not supported
+         * by the Support API; you must submit service limit increase requests in <a
+         * href="https://console.aws.amazon.com/support">Support Center</a>.</p> <p>The
+         * <code>caseId</code> is not the <code>displayId</code> that appears in <a
+         * href="https://console.aws.amazon.com/support">Support Center</a>. You can use
+         * the <a>DescribeCases</a> API to get the <code>displayId</code>.</p> </note>
+         * </li> <li> <p> <b>serviceCode.</b> The code for an AWS service. You can get the
+         * possible <code>serviceCode</code> values by calling <a>DescribeServices</a>.</p>
+         * </li> <li> <p> <b>categoryCode.</b> The category for the service defined for the
+         * <code>serviceCode</code> value. You also get the category code for a service by
+         * calling <a>DescribeServices</a>. Each AWS service defines its own set of
+         * category codes.</p> </li> <li> <p> <b>severityCode.</b> A value that indicates
+         * the urgency of the case, which in turn determines the response time according to
+         * your service level agreement with AWS Support. You can get the possible
+         * <code>severityCode</code> values by calling <a>DescribeSeverityLevels</a>. For
+         * more information about the meaning of the codes, see <a>SeverityLevel</a> and <a
+         * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
+         * a Severity</a>.</p> </li> <li> <p> <b>subject.</b> The <b>Subject</b> field on
+         * the AWS Support Center <a
          * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a>
          * page.</p> </li> <li> <p> <b>communicationBody.</b> The <b>Description</b> field
          * on the AWS Support Center <a
@@ -381,8 +397,8 @@ namespace Model
          * add additional communication or attachments to an existing case, use
          * <a>AddCommunicationToCase</a>.</p> </note> <p>A successful <a>CreateCase</a>
          * request returns an AWS Support case number. Case numbers are used by the
-         * <a>DescribeCases</a> operation to retrieve existing AWS Support cases.
-         * </p><p><h3>See Also:</h3>   <a
+         * <a>DescribeCases</a> operation to retrieve existing AWS Support
+         * cases.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCase">AWS
          * API Reference</a></p>
          *
@@ -394,20 +410,28 @@ namespace Model
          * <p>Creates a new case in the AWS Support Center. This operation is modeled on
          * the behavior of the AWS Support Center <a
          * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a>
-         * page. Its parameters require you to specify the following information: </p> <ul>
+         * page. Its parameters require you to specify the following information:</p> <ul>
          * <li> <p> <b>issueType.</b> The type of issue for the case. You can specify
          * either "customer-service" or "technical." If you do not indicate a value, the
-         * default is "technical." </p> </li> <li> <p> <b>serviceCode.</b> The code for an
-         * AWS service. You obtain the <code>serviceCode</code> by calling
-         * <a>DescribeServices</a>. </p> </li> <li> <p> <b>categoryCode.</b> The category
-         * for the service defined for the <code>serviceCode</code> value. You also obtain
-         * the category code for a service by calling <a>DescribeServices</a>. Each AWS
-         * service defines its own set of category codes. </p> </li> <li> <p>
-         * <b>severityCode.</b> A value that indicates the urgency of the case, which in
-         * turn determines the response time according to your service level agreement with
-         * AWS Support. You obtain the SeverityCode by calling
-         * <a>DescribeSeverityLevels</a>.</p> </li> <li> <p> <b>subject.</b> The
-         * <b>Subject</b> field on the AWS Support Center <a
+         * default is "technical."</p> <note> <p>Service limit increases are not supported
+         * by the Support API; you must submit service limit increase requests in <a
+         * href="https://console.aws.amazon.com/support">Support Center</a>.</p> <p>The
+         * <code>caseId</code> is not the <code>displayId</code> that appears in <a
+         * href="https://console.aws.amazon.com/support">Support Center</a>. You can use
+         * the <a>DescribeCases</a> API to get the <code>displayId</code>.</p> </note>
+         * </li> <li> <p> <b>serviceCode.</b> The code for an AWS service. You can get the
+         * possible <code>serviceCode</code> values by calling <a>DescribeServices</a>.</p>
+         * </li> <li> <p> <b>categoryCode.</b> The category for the service defined for the
+         * <code>serviceCode</code> value. You also get the category code for a service by
+         * calling <a>DescribeServices</a>. Each AWS service defines its own set of
+         * category codes.</p> </li> <li> <p> <b>severityCode.</b> A value that indicates
+         * the urgency of the case, which in turn determines the response time according to
+         * your service level agreement with AWS Support. You can get the possible
+         * <code>severityCode</code> values by calling <a>DescribeSeverityLevels</a>. For
+         * more information about the meaning of the codes, see <a>SeverityLevel</a> and <a
+         * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
+         * a Severity</a>.</p> </li> <li> <p> <b>subject.</b> The <b>Subject</b> field on
+         * the AWS Support Center <a
          * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a>
          * page.</p> </li> <li> <p> <b>communicationBody.</b> The <b>Description</b> field
          * on the AWS Support Center <a
@@ -426,8 +450,8 @@ namespace Model
          * add additional communication or attachments to an existing case, use
          * <a>AddCommunicationToCase</a>.</p> </note> <p>A successful <a>CreateCase</a>
          * request returns an AWS Support case number. Case numbers are used by the
-         * <a>DescribeCases</a> operation to retrieve existing AWS Support cases.
-         * </p><p><h3>See Also:</h3>   <a
+         * <a>DescribeCases</a> operation to retrieve existing AWS Support
+         * cases.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCase">AWS
          * API Reference</a></p>
          *
@@ -478,10 +502,10 @@ namespace Model
          * <code>afterTime</code> and <code>beforeTime</code> request parameters. You can
          * set values for the <code>includeResolvedCases</code> and
          * <code>includeCommunications</code> request parameters to control how much
-         * information is returned. </p> <p>Case data is available for 12 months after
+         * information is returned.</p> <p>Case data is available for 12 months after
          * creation. If a case was created more than 12 months ago, a request for data
          * might cause an error.</p> <p>The response returns the following in JSON
-         * format:</p> <ul> <li> <p>One or more <a>CaseDetails</a> data types. </p> </li>
+         * format:</p> <ul> <li> <p>One or more <a>CaseDetails</a> data types.</p> </li>
          * <li> <p>One or more <code>nextToken</code> values, which specify where to
          * paginate the returned records represented by the <code>CaseDetails</code>
          * objects.</p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -496,10 +520,10 @@ namespace Model
          * <code>afterTime</code> and <code>beforeTime</code> request parameters. You can
          * set values for the <code>includeResolvedCases</code> and
          * <code>includeCommunications</code> request parameters to control how much
-         * information is returned. </p> <p>Case data is available for 12 months after
+         * information is returned.</p> <p>Case data is available for 12 months after
          * creation. If a case was created more than 12 months ago, a request for data
          * might cause an error.</p> <p>The response returns the following in JSON
-         * format:</p> <ul> <li> <p>One or more <a>CaseDetails</a> data types. </p> </li>
+         * format:</p> <ul> <li> <p>One or more <a>CaseDetails</a> data types.</p> </li>
          * <li> <p>One or more <code>nextToken</code> values, which specify where to
          * paginate the returned records represented by the <code>CaseDetails</code>
          * objects.</p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -516,10 +540,10 @@ namespace Model
          * <code>afterTime</code> and <code>beforeTime</code> request parameters. You can
          * set values for the <code>includeResolvedCases</code> and
          * <code>includeCommunications</code> request parameters to control how much
-         * information is returned. </p> <p>Case data is available for 12 months after
+         * information is returned.</p> <p>Case data is available for 12 months after
          * creation. If a case was created more than 12 months ago, a request for data
          * might cause an error.</p> <p>The response returns the following in JSON
-         * format:</p> <ul> <li> <p>One or more <a>CaseDetails</a> data types. </p> </li>
+         * format:</p> <ul> <li> <p>One or more <a>CaseDetails</a> data types.</p> </li>
          * <li> <p>One or more <code>nextToken</code> values, which specify where to
          * paginate the returned records represented by the <code>CaseDetails</code>
          * objects.</p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -643,7 +667,7 @@ namespace Model
         /**
          * <p>Returns the list of severity levels that you can assign to an AWS Support
          * case. The severity level for a case is also a field in the <a>CaseDetails</a>
-         * data type included in any <a>CreateCase</a> request. </p><p><h3>See Also:</h3>  
+         * data type included in any <a>CreateCase</a> request.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSeverityLevels">AWS
          * API Reference</a></p>
@@ -653,7 +677,7 @@ namespace Model
         /**
          * <p>Returns the list of severity levels that you can assign to an AWS Support
          * case. The severity level for a case is also a field in the <a>CaseDetails</a>
-         * data type included in any <a>CreateCase</a> request. </p><p><h3>See Also:</h3>  
+         * data type included in any <a>CreateCase</a> request.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSeverityLevels">AWS
          * API Reference</a></p>
@@ -665,7 +689,7 @@ namespace Model
         /**
          * <p>Returns the list of severity levels that you can assign to an AWS Support
          * case. The severity level for a case is also a field in the <a>CaseDetails</a>
-         * data type included in any <a>CreateCase</a> request. </p><p><h3>See Also:</h3>  
+         * data type included in any <a>CreateCase</a> request.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSeverityLevels">AWS
          * API Reference</a></p>
@@ -813,8 +837,8 @@ namespace Model
          * <p>Returns information about all available Trusted Advisor checks, including
          * name, ID, category, description, and metadata. You must specify a language code;
          * English ("en") and Japanese ("ja") are currently supported. The response
-         * contains a <a>TrustedAdvisorCheckDescription</a> for each check.</p><p><h3>See
-         * Also:</h3>   <a
+         * contains a <a>TrustedAdvisorCheckDescription</a> for each check. The region must
+         * be set to us-east-1.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks">AWS
          * API Reference</a></p>
          */
@@ -824,8 +848,8 @@ namespace Model
          * <p>Returns information about all available Trusted Advisor checks, including
          * name, ID, category, description, and metadata. You must specify a language code;
          * English ("en") and Japanese ("ja") are currently supported. The response
-         * contains a <a>TrustedAdvisorCheckDescription</a> for each check.</p><p><h3>See
-         * Also:</h3>   <a
+         * contains a <a>TrustedAdvisorCheckDescription</a> for each check. The region must
+         * be set to us-east-1.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks">AWS
          * API Reference</a></p>
          *
@@ -837,8 +861,8 @@ namespace Model
          * <p>Returns information about all available Trusted Advisor checks, including
          * name, ID, category, description, and metadata. You must specify a language code;
          * English ("en") and Japanese ("ja") are currently supported. The response
-         * contains a <a>TrustedAdvisorCheckDescription</a> for each check.</p><p><h3>See
-         * Also:</h3>   <a
+         * contains a <a>TrustedAdvisorCheckDescription</a> for each check. The region must
+         * be set to us-east-1.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks">AWS
          * API Reference</a></p>
          *
@@ -854,11 +878,16 @@ namespace Model
          * <code>RefreshTrustedAdvisorCheck</code> operation for these checks causes an
          * <code>InvalidParameterValue</code> error.</p> </note> <p>The response contains a
          * <a>TrustedAdvisorCheckRefreshStatus</a> object, which contains these fields:</p>
-         * <ul> <li> <p> <b>status.</b> The refresh status of the check: "none",
-         * "enqueued", "processing", "success", or "abandoned".</p> </li> <li> <p>
-         * <b>millisUntilNextRefreshable.</b> The amount of time, in milliseconds, until
-         * the check is eligible for refresh.</p> </li> <li> <p> <b>checkId.</b> The unique
-         * identifier for the check.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p> <b>status.</b> The refresh status of the check: </p> <ul> <li> <p>
+         * <code>none:</code> The check is not refreshed or the non-success status exceeds
+         * the timeout</p> </li> <li> <p> <code>enqueued:</code> The check refresh requests
+         * has entered the refresh queue</p> </li> <li> <p> <code>processing:</code> The
+         * check refresh request is picked up by the rule processing engine</p> </li> <li>
+         * <p> <code>success:</code> The check is successfully refreshed</p> </li> <li> <p>
+         * <code>abandoned:</code> The check refresh has failed</p> </li> </ul> </li> <li>
+         * <p> <b>millisUntilNextRefreshable.</b> The amount of time, in milliseconds,
+         * until the check is eligible for refresh.</p> </li> <li> <p> <b>checkId.</b> The
+         * unique identifier for the check.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RefreshTrustedAdvisorCheck">AWS
          * API Reference</a></p>
          */
@@ -872,11 +901,16 @@ namespace Model
          * <code>RefreshTrustedAdvisorCheck</code> operation for these checks causes an
          * <code>InvalidParameterValue</code> error.</p> </note> <p>The response contains a
          * <a>TrustedAdvisorCheckRefreshStatus</a> object, which contains these fields:</p>
-         * <ul> <li> <p> <b>status.</b> The refresh status of the check: "none",
-         * "enqueued", "processing", "success", or "abandoned".</p> </li> <li> <p>
-         * <b>millisUntilNextRefreshable.</b> The amount of time, in milliseconds, until
-         * the check is eligible for refresh.</p> </li> <li> <p> <b>checkId.</b> The unique
-         * identifier for the check.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p> <b>status.</b> The refresh status of the check: </p> <ul> <li> <p>
+         * <code>none:</code> The check is not refreshed or the non-success status exceeds
+         * the timeout</p> </li> <li> <p> <code>enqueued:</code> The check refresh requests
+         * has entered the refresh queue</p> </li> <li> <p> <code>processing:</code> The
+         * check refresh request is picked up by the rule processing engine</p> </li> <li>
+         * <p> <code>success:</code> The check is successfully refreshed</p> </li> <li> <p>
+         * <code>abandoned:</code> The check refresh has failed</p> </li> </ul> </li> <li>
+         * <p> <b>millisUntilNextRefreshable.</b> The amount of time, in milliseconds,
+         * until the check is eligible for refresh.</p> </li> <li> <p> <b>checkId.</b> The
+         * unique identifier for the check.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RefreshTrustedAdvisorCheck">AWS
          * API Reference</a></p>
          *
@@ -892,11 +926,16 @@ namespace Model
          * <code>RefreshTrustedAdvisorCheck</code> operation for these checks causes an
          * <code>InvalidParameterValue</code> error.</p> </note> <p>The response contains a
          * <a>TrustedAdvisorCheckRefreshStatus</a> object, which contains these fields:</p>
-         * <ul> <li> <p> <b>status.</b> The refresh status of the check: "none",
-         * "enqueued", "processing", "success", or "abandoned".</p> </li> <li> <p>
-         * <b>millisUntilNextRefreshable.</b> The amount of time, in milliseconds, until
-         * the check is eligible for refresh.</p> </li> <li> <p> <b>checkId.</b> The unique
-         * identifier for the check.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p> <b>status.</b> The refresh status of the check: </p> <ul> <li> <p>
+         * <code>none:</code> The check is not refreshed or the non-success status exceeds
+         * the timeout</p> </li> <li> <p> <code>enqueued:</code> The check refresh requests
+         * has entered the refresh queue</p> </li> <li> <p> <code>processing:</code> The
+         * check refresh request is picked up by the rule processing engine</p> </li> <li>
+         * <p> <code>success:</code> The check is successfully refreshed</p> </li> <li> <p>
+         * <code>abandoned:</code> The check refresh has failed</p> </li> </ul> </li> <li>
+         * <p> <b>millisUntilNextRefreshable.</b> The amount of time, in milliseconds,
+         * until the check is eligible for refresh.</p> </li> <li> <p> <b>checkId.</b> The
+         * unique identifier for the check.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RefreshTrustedAdvisorCheck">AWS
          * API Reference</a></p>
          *

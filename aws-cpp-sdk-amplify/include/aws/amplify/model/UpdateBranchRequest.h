@@ -555,6 +555,88 @@ namespace Model
      */
     inline UpdateBranchRequest& WithEnablePullRequestPreview(bool value) { SetEnablePullRequestPreview(value); return *this;}
 
+
+    /**
+     * <p> The Amplify Environment name for the pull request. </p>
+     */
+    inline const Aws::String& GetPullRequestEnvironmentName() const{ return m_pullRequestEnvironmentName; }
+
+    /**
+     * <p> The Amplify Environment name for the pull request. </p>
+     */
+    inline bool PullRequestEnvironmentNameHasBeenSet() const { return m_pullRequestEnvironmentNameHasBeenSet; }
+
+    /**
+     * <p> The Amplify Environment name for the pull request. </p>
+     */
+    inline void SetPullRequestEnvironmentName(const Aws::String& value) { m_pullRequestEnvironmentNameHasBeenSet = true; m_pullRequestEnvironmentName = value; }
+
+    /**
+     * <p> The Amplify Environment name for the pull request. </p>
+     */
+    inline void SetPullRequestEnvironmentName(Aws::String&& value) { m_pullRequestEnvironmentNameHasBeenSet = true; m_pullRequestEnvironmentName = std::move(value); }
+
+    /**
+     * <p> The Amplify Environment name for the pull request. </p>
+     */
+    inline void SetPullRequestEnvironmentName(const char* value) { m_pullRequestEnvironmentNameHasBeenSet = true; m_pullRequestEnvironmentName.assign(value); }
+
+    /**
+     * <p> The Amplify Environment name for the pull request. </p>
+     */
+    inline UpdateBranchRequest& WithPullRequestEnvironmentName(const Aws::String& value) { SetPullRequestEnvironmentName(value); return *this;}
+
+    /**
+     * <p> The Amplify Environment name for the pull request. </p>
+     */
+    inline UpdateBranchRequest& WithPullRequestEnvironmentName(Aws::String&& value) { SetPullRequestEnvironmentName(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amplify Environment name for the pull request. </p>
+     */
+    inline UpdateBranchRequest& WithPullRequestEnvironmentName(const char* value) { SetPullRequestEnvironmentName(value); return *this;}
+
+
+    /**
+     * <p> ARN for a Backend Environment, part of an Amplify App. </p>
+     */
+    inline const Aws::String& GetBackendEnvironmentArn() const{ return m_backendEnvironmentArn; }
+
+    /**
+     * <p> ARN for a Backend Environment, part of an Amplify App. </p>
+     */
+    inline bool BackendEnvironmentArnHasBeenSet() const { return m_backendEnvironmentArnHasBeenSet; }
+
+    /**
+     * <p> ARN for a Backend Environment, part of an Amplify App. </p>
+     */
+    inline void SetBackendEnvironmentArn(const Aws::String& value) { m_backendEnvironmentArnHasBeenSet = true; m_backendEnvironmentArn = value; }
+
+    /**
+     * <p> ARN for a Backend Environment, part of an Amplify App. </p>
+     */
+    inline void SetBackendEnvironmentArn(Aws::String&& value) { m_backendEnvironmentArnHasBeenSet = true; m_backendEnvironmentArn = std::move(value); }
+
+    /**
+     * <p> ARN for a Backend Environment, part of an Amplify App. </p>
+     */
+    inline void SetBackendEnvironmentArn(const char* value) { m_backendEnvironmentArnHasBeenSet = true; m_backendEnvironmentArn.assign(value); }
+
+    /**
+     * <p> ARN for a Backend Environment, part of an Amplify App. </p>
+     */
+    inline UpdateBranchRequest& WithBackendEnvironmentArn(const Aws::String& value) { SetBackendEnvironmentArn(value); return *this;}
+
+    /**
+     * <p> ARN for a Backend Environment, part of an Amplify App. </p>
+     */
+    inline UpdateBranchRequest& WithBackendEnvironmentArn(Aws::String&& value) { SetBackendEnvironmentArn(std::move(value)); return *this;}
+
+    /**
+     * <p> ARN for a Backend Environment, part of an Amplify App. </p>
+     */
+    inline UpdateBranchRequest& WithBackendEnvironmentArn(const char* value) { SetBackendEnvironmentArn(value); return *this;}
+
   private:
 
     Aws::String m_appId;
@@ -598,6 +680,12 @@ namespace Model
 
     bool m_enablePullRequestPreview;
     bool m_enablePullRequestPreviewHasBeenSet;
+
+    Aws::String m_pullRequestEnvironmentName;
+    bool m_pullRequestEnvironmentNameHasBeenSet;
+
+    Aws::String m_backendEnvironmentArn;
+    bool m_backendEnvironmentArnHasBeenSet;
   };
 
 } // namespace Model

@@ -28,9 +28,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCaseRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_SUPPORT_API CreateCaseRequest : public SupportRequest
   {
@@ -141,72 +138,56 @@ namespace Model
     /**
      * <p>The code for the severity level returned by the call to
      * <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels
-     * depends on each customer's support subscription. In other words, your
-     * subscription may not necessarily require the urgent level of response time.</p>
-     * </note>
+     * depends on the support plan for the account.</p> </note>
      */
     inline const Aws::String& GetSeverityCode() const{ return m_severityCode; }
 
     /**
      * <p>The code for the severity level returned by the call to
      * <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels
-     * depends on each customer's support subscription. In other words, your
-     * subscription may not necessarily require the urgent level of response time.</p>
-     * </note>
+     * depends on the support plan for the account.</p> </note>
      */
     inline bool SeverityCodeHasBeenSet() const { return m_severityCodeHasBeenSet; }
 
     /**
      * <p>The code for the severity level returned by the call to
      * <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels
-     * depends on each customer's support subscription. In other words, your
-     * subscription may not necessarily require the urgent level of response time.</p>
-     * </note>
+     * depends on the support plan for the account.</p> </note>
      */
     inline void SetSeverityCode(const Aws::String& value) { m_severityCodeHasBeenSet = true; m_severityCode = value; }
 
     /**
      * <p>The code for the severity level returned by the call to
      * <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels
-     * depends on each customer's support subscription. In other words, your
-     * subscription may not necessarily require the urgent level of response time.</p>
-     * </note>
+     * depends on the support plan for the account.</p> </note>
      */
     inline void SetSeverityCode(Aws::String&& value) { m_severityCodeHasBeenSet = true; m_severityCode = std::move(value); }
 
     /**
      * <p>The code for the severity level returned by the call to
      * <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels
-     * depends on each customer's support subscription. In other words, your
-     * subscription may not necessarily require the urgent level of response time.</p>
-     * </note>
+     * depends on the support plan for the account.</p> </note>
      */
     inline void SetSeverityCode(const char* value) { m_severityCodeHasBeenSet = true; m_severityCode.assign(value); }
 
     /**
      * <p>The code for the severity level returned by the call to
      * <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels
-     * depends on each customer's support subscription. In other words, your
-     * subscription may not necessarily require the urgent level of response time.</p>
-     * </note>
+     * depends on the support plan for the account.</p> </note>
      */
     inline CreateCaseRequest& WithSeverityCode(const Aws::String& value) { SetSeverityCode(value); return *this;}
 
     /**
      * <p>The code for the severity level returned by the call to
      * <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels
-     * depends on each customer's support subscription. In other words, your
-     * subscription may not necessarily require the urgent level of response time.</p>
-     * </note>
+     * depends on the support plan for the account.</p> </note>
      */
     inline CreateCaseRequest& WithSeverityCode(Aws::String&& value) { SetSeverityCode(std::move(value)); return *this;}
 
     /**
      * <p>The code for the severity level returned by the call to
      * <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels
-     * depends on each customer's support subscription. In other words, your
-     * subscription may not necessarily require the urgent level of response time.</p>
-     * </note>
+     * depends on the support plan for the account.</p> </note>
      */
     inline CreateCaseRequest& WithSeverityCode(const char* value) { SetSeverityCode(value); return *this;}
 
@@ -407,48 +388,72 @@ namespace Model
     /**
      * <p>The type of issue for the case. You can specify either "customer-service" or
      * "technical." If you do not indicate a value, the default is "technical."</p>
+     * <note> <p>Service limit increases are not supported by the Support API; you must
+     * submit service limit increase requests in <a
+     * href="https://console.aws.amazon.com/support">Support Center</a>.</p> </note>
      */
     inline const Aws::String& GetIssueType() const{ return m_issueType; }
 
     /**
      * <p>The type of issue for the case. You can specify either "customer-service" or
      * "technical." If you do not indicate a value, the default is "technical."</p>
+     * <note> <p>Service limit increases are not supported by the Support API; you must
+     * submit service limit increase requests in <a
+     * href="https://console.aws.amazon.com/support">Support Center</a>.</p> </note>
      */
     inline bool IssueTypeHasBeenSet() const { return m_issueTypeHasBeenSet; }
 
     /**
      * <p>The type of issue for the case. You can specify either "customer-service" or
      * "technical." If you do not indicate a value, the default is "technical."</p>
+     * <note> <p>Service limit increases are not supported by the Support API; you must
+     * submit service limit increase requests in <a
+     * href="https://console.aws.amazon.com/support">Support Center</a>.</p> </note>
      */
     inline void SetIssueType(const Aws::String& value) { m_issueTypeHasBeenSet = true; m_issueType = value; }
 
     /**
      * <p>The type of issue for the case. You can specify either "customer-service" or
      * "technical." If you do not indicate a value, the default is "technical."</p>
+     * <note> <p>Service limit increases are not supported by the Support API; you must
+     * submit service limit increase requests in <a
+     * href="https://console.aws.amazon.com/support">Support Center</a>.</p> </note>
      */
     inline void SetIssueType(Aws::String&& value) { m_issueTypeHasBeenSet = true; m_issueType = std::move(value); }
 
     /**
      * <p>The type of issue for the case. You can specify either "customer-service" or
      * "technical." If you do not indicate a value, the default is "technical."</p>
+     * <note> <p>Service limit increases are not supported by the Support API; you must
+     * submit service limit increase requests in <a
+     * href="https://console.aws.amazon.com/support">Support Center</a>.</p> </note>
      */
     inline void SetIssueType(const char* value) { m_issueTypeHasBeenSet = true; m_issueType.assign(value); }
 
     /**
      * <p>The type of issue for the case. You can specify either "customer-service" or
      * "technical." If you do not indicate a value, the default is "technical."</p>
+     * <note> <p>Service limit increases are not supported by the Support API; you must
+     * submit service limit increase requests in <a
+     * href="https://console.aws.amazon.com/support">Support Center</a>.</p> </note>
      */
     inline CreateCaseRequest& WithIssueType(const Aws::String& value) { SetIssueType(value); return *this;}
 
     /**
      * <p>The type of issue for the case. You can specify either "customer-service" or
      * "technical." If you do not indicate a value, the default is "technical."</p>
+     * <note> <p>Service limit increases are not supported by the Support API; you must
+     * submit service limit increase requests in <a
+     * href="https://console.aws.amazon.com/support">Support Center</a>.</p> </note>
      */
     inline CreateCaseRequest& WithIssueType(Aws::String&& value) { SetIssueType(std::move(value)); return *this;}
 
     /**
      * <p>The type of issue for the case. You can specify either "customer-service" or
      * "technical." If you do not indicate a value, the default is "technical."</p>
+     * <note> <p>Service limit increases are not supported by the Support API; you must
+     * submit service limit increase requests in <a
+     * href="https://console.aws.amazon.com/support">Support Center</a>.</p> </note>
      */
     inline CreateCaseRequest& WithIssueType(const char* value) { SetIssueType(value); return *this;}
 

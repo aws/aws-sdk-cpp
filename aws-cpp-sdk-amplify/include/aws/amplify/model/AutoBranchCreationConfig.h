@@ -331,6 +331,47 @@ namespace Model
      */
     inline AutoBranchCreationConfig& WithEnablePullRequestPreview(bool value) { SetEnablePullRequestPreview(value); return *this;}
 
+
+    /**
+     * <p> The Amplify Environment name for the pull request. </p>
+     */
+    inline const Aws::String& GetPullRequestEnvironmentName() const{ return m_pullRequestEnvironmentName; }
+
+    /**
+     * <p> The Amplify Environment name for the pull request. </p>
+     */
+    inline bool PullRequestEnvironmentNameHasBeenSet() const { return m_pullRequestEnvironmentNameHasBeenSet; }
+
+    /**
+     * <p> The Amplify Environment name for the pull request. </p>
+     */
+    inline void SetPullRequestEnvironmentName(const Aws::String& value) { m_pullRequestEnvironmentNameHasBeenSet = true; m_pullRequestEnvironmentName = value; }
+
+    /**
+     * <p> The Amplify Environment name for the pull request. </p>
+     */
+    inline void SetPullRequestEnvironmentName(Aws::String&& value) { m_pullRequestEnvironmentNameHasBeenSet = true; m_pullRequestEnvironmentName = std::move(value); }
+
+    /**
+     * <p> The Amplify Environment name for the pull request. </p>
+     */
+    inline void SetPullRequestEnvironmentName(const char* value) { m_pullRequestEnvironmentNameHasBeenSet = true; m_pullRequestEnvironmentName.assign(value); }
+
+    /**
+     * <p> The Amplify Environment name for the pull request. </p>
+     */
+    inline AutoBranchCreationConfig& WithPullRequestEnvironmentName(const Aws::String& value) { SetPullRequestEnvironmentName(value); return *this;}
+
+    /**
+     * <p> The Amplify Environment name for the pull request. </p>
+     */
+    inline AutoBranchCreationConfig& WithPullRequestEnvironmentName(Aws::String&& value) { SetPullRequestEnvironmentName(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amplify Environment name for the pull request. </p>
+     */
+    inline AutoBranchCreationConfig& WithPullRequestEnvironmentName(const char* value) { SetPullRequestEnvironmentName(value); return *this;}
+
   private:
 
     Stage m_stage;
@@ -356,6 +397,9 @@ namespace Model
 
     bool m_enablePullRequestPreview;
     bool m_enablePullRequestPreviewHasBeenSet;
+
+    Aws::String m_pullRequestEnvironmentName;
+    bool m_pullRequestEnvironmentNameHasBeenSet;
   };
 
 } // namespace Model

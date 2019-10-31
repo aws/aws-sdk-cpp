@@ -40,7 +40,8 @@ AutoBranchCreationConfig::AutoBranchCreationConfig() :
     m_enableBasicAuthHasBeenSet(false),
     m_buildSpecHasBeenSet(false),
     m_enablePullRequestPreview(false),
-    m_enablePullRequestPreviewHasBeenSet(false)
+    m_enablePullRequestPreviewHasBeenSet(false),
+    m_pullRequestEnvironmentNameHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ AutoBranchCreationConfig::AutoBranchCreationConfig(JsonView jsonValue) :
     m_enableBasicAuthHasBeenSet(false),
     m_buildSpecHasBeenSet(false),
     m_enablePullRequestPreview(false),
-    m_enablePullRequestPreviewHasBeenSet(false)
+    m_enablePullRequestPreviewHasBeenSet(false),
+    m_pullRequestEnvironmentNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -122,6 +124,13 @@ AutoBranchCreationConfig& AutoBranchCreationConfig::operator =(JsonView jsonValu
     m_enablePullRequestPreviewHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("pullRequestEnvironmentName"))
+  {
+    m_pullRequestEnvironmentName = jsonValue.GetString("pullRequestEnvironmentName");
+
+    m_pullRequestEnvironmentNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -178,6 +187,12 @@ JsonValue AutoBranchCreationConfig::Jsonize() const
   if(m_enablePullRequestPreviewHasBeenSet)
   {
    payload.WithBool("enablePullRequestPreview", m_enablePullRequestPreview);
+
+  }
+
+  if(m_pullRequestEnvironmentNameHasBeenSet)
+  {
+   payload.WithString("pullRequestEnvironmentName", m_pullRequestEnvironmentName);
 
   }
 

@@ -42,7 +42,9 @@ CreateBranchRequest::CreateBranchRequest() :
     m_ttlHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_enablePullRequestPreview(false),
-    m_enablePullRequestPreviewHasBeenSet(false)
+    m_enablePullRequestPreviewHasBeenSet(false),
+    m_pullRequestEnvironmentNameHasBeenSet(false),
+    m_backendEnvironmentArnHasBeenSet(false)
 {
 }
 
@@ -140,6 +142,18 @@ Aws::String CreateBranchRequest::SerializePayload() const
   if(m_enablePullRequestPreviewHasBeenSet)
   {
    payload.WithBool("enablePullRequestPreview", m_enablePullRequestPreview);
+
+  }
+
+  if(m_pullRequestEnvironmentNameHasBeenSet)
+  {
+   payload.WithString("pullRequestEnvironmentName", m_pullRequestEnvironmentName);
+
+  }
+
+  if(m_backendEnvironmentArnHasBeenSet)
+  {
+   payload.WithString("backendEnvironmentArn", m_backendEnvironmentArn);
 
   }
 

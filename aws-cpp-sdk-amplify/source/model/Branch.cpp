@@ -56,8 +56,10 @@ Branch::Branch() :
     m_associatedResourcesHasBeenSet(false),
     m_enablePullRequestPreview(false),
     m_enablePullRequestPreviewHasBeenSet(false),
+    m_pullRequestEnvironmentNameHasBeenSet(false),
     m_destinationBranchHasBeenSet(false),
-    m_sourceBranchHasBeenSet(false)
+    m_sourceBranchHasBeenSet(false),
+    m_backendEnvironmentArnHasBeenSet(false)
 {
 }
 
@@ -89,8 +91,10 @@ Branch::Branch(JsonView jsonValue) :
     m_associatedResourcesHasBeenSet(false),
     m_enablePullRequestPreview(false),
     m_enablePullRequestPreviewHasBeenSet(false),
+    m_pullRequestEnvironmentNameHasBeenSet(false),
     m_destinationBranchHasBeenSet(false),
-    m_sourceBranchHasBeenSet(false)
+    m_sourceBranchHasBeenSet(false),
+    m_backendEnvironmentArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -263,6 +267,13 @@ Branch& Branch::operator =(JsonView jsonValue)
     m_enablePullRequestPreviewHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("pullRequestEnvironmentName"))
+  {
+    m_pullRequestEnvironmentName = jsonValue.GetString("pullRequestEnvironmentName");
+
+    m_pullRequestEnvironmentNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("destinationBranch"))
   {
     m_destinationBranch = jsonValue.GetString("destinationBranch");
@@ -275,6 +286,13 @@ Branch& Branch::operator =(JsonView jsonValue)
     m_sourceBranch = jsonValue.GetString("sourceBranch");
 
     m_sourceBranchHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("backendEnvironmentArn"))
+  {
+    m_backendEnvironmentArn = jsonValue.GetString("backendEnvironmentArn");
+
+    m_backendEnvironmentArnHasBeenSet = true;
   }
 
   return *this;
@@ -433,6 +451,12 @@ JsonValue Branch::Jsonize() const
 
   }
 
+  if(m_pullRequestEnvironmentNameHasBeenSet)
+  {
+   payload.WithString("pullRequestEnvironmentName", m_pullRequestEnvironmentName);
+
+  }
+
   if(m_destinationBranchHasBeenSet)
   {
    payload.WithString("destinationBranch", m_destinationBranch);
@@ -442,6 +466,12 @@ JsonValue Branch::Jsonize() const
   if(m_sourceBranchHasBeenSet)
   {
    payload.WithString("sourceBranch", m_sourceBranch);
+
+  }
+
+  if(m_backendEnvironmentArnHasBeenSet)
+  {
+   payload.WithString("backendEnvironmentArn", m_backendEnvironmentArn);
 
   }
 

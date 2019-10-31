@@ -55,13 +55,18 @@ namespace Model
    * </li> <li> <p> <b>nextToken.</b> A resumption point for pagination.</p> </li>
    * <li> <p> <b>serviceCode.</b> The identifier for the AWS service that corresponds
    * to the service code defined in the call to <a>DescribeServices</a>.</p> </li>
-   * <li> <p> <b>severityCode. </b>The severity code assigned to the case. Contains
-   * one of the values returned by the call to <a>DescribeSeverityLevels</a>.</p>
-   * </li> <li> <p> <b>status.</b> The status of the case in the AWS Support
-   * Center.</p> </li> <li> <p> <b>subject.</b> The subject line of the case.</p>
-   * </li> <li> <p> <b>submittedBy.</b> The email address of the account that
-   * submitted the case.</p> </li> <li> <p> <b>timeCreated.</b> The time the case was
-   * created, in ISO-8601 format.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <li> <p> <b>severityCode.</b> The severity code assigned to the case. Contains
+   * one of the values returned by the call to <a>DescribeSeverityLevels</a>. The
+   * possible values are: <code>low</code>, <code>normal</code>, <code>high</code>,
+   * <code>urgent</code>, and <code>critical</code>.</p> </li> <li> <p>
+   * <b>status.</b> The status of the case in the AWS Support Center. The possible
+   * values are: <code>resolved</code>, <code>pending-customer-action</code>,
+   * <code>opened</code>, <code>unassigned</code>, and
+   * <code>work-in-progress</code>.</p> </li> <li> <p> <b>subject.</b> The subject
+   * line of the case.</p> </li> <li> <p> <b>submittedBy.</b> The email address of
+   * the account that submitted the case.</p> </li> <li> <p> <b>timeCreated.</b> The
+   * time the case was created, in ISO-8601 format.</p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CaseDetails">AWS
    * API Reference</a></p>
    */
@@ -222,91 +227,107 @@ namespace Model
 
 
     /**
-     * <p>The status of the case.</p>
+     * <p>The status of the case. Valid values: <code>resolved</code> |
+     * <code>pending-customer-action</code> | <code>opened</code> |
+     * <code>unassigned</code> | <code>work-in-progress</code>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the case.</p>
+     * <p>The status of the case. Valid values: <code>resolved</code> |
+     * <code>pending-customer-action</code> | <code>opened</code> |
+     * <code>unassigned</code> | <code>work-in-progress</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the case.</p>
+     * <p>The status of the case. Valid values: <code>resolved</code> |
+     * <code>pending-customer-action</code> | <code>opened</code> |
+     * <code>unassigned</code> | <code>work-in-progress</code>.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the case.</p>
+     * <p>The status of the case. Valid values: <code>resolved</code> |
+     * <code>pending-customer-action</code> | <code>opened</code> |
+     * <code>unassigned</code> | <code>work-in-progress</code>.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the case.</p>
+     * <p>The status of the case. Valid values: <code>resolved</code> |
+     * <code>pending-customer-action</code> | <code>opened</code> |
+     * <code>unassigned</code> | <code>work-in-progress</code>.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the case.</p>
+     * <p>The status of the case. Valid values: <code>resolved</code> |
+     * <code>pending-customer-action</code> | <code>opened</code> |
+     * <code>unassigned</code> | <code>work-in-progress</code>.</p>
      */
     inline CaseDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the case.</p>
+     * <p>The status of the case. Valid values: <code>resolved</code> |
+     * <code>pending-customer-action</code> | <code>opened</code> |
+     * <code>unassigned</code> | <code>work-in-progress</code>.</p>
      */
     inline CaseDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the case.</p>
+     * <p>The status of the case. Valid values: <code>resolved</code> |
+     * <code>pending-customer-action</code> | <code>opened</code> |
+     * <code>unassigned</code> | <code>work-in-progress</code>.</p>
      */
     inline CaseDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
 
 
     /**
-     * <p>The code for the AWS service returned by the call to
-     * <a>DescribeServices</a>.</p>
+     * <p>The code for the AWS service. You can get a list of codes and the
+     * corresponding service names by calling <a>DescribeServices</a>.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
 
     /**
-     * <p>The code for the AWS service returned by the call to
-     * <a>DescribeServices</a>.</p>
+     * <p>The code for the AWS service. You can get a list of codes and the
+     * corresponding service names by calling <a>DescribeServices</a>.</p>
      */
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
 
     /**
-     * <p>The code for the AWS service returned by the call to
-     * <a>DescribeServices</a>.</p>
+     * <p>The code for the AWS service. You can get a list of codes and the
+     * corresponding service names by calling <a>DescribeServices</a>.</p>
      */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
 
     /**
-     * <p>The code for the AWS service returned by the call to
-     * <a>DescribeServices</a>.</p>
+     * <p>The code for the AWS service. You can get a list of codes and the
+     * corresponding service names by calling <a>DescribeServices</a>.</p>
      */
     inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
 
     /**
-     * <p>The code for the AWS service returned by the call to
-     * <a>DescribeServices</a>.</p>
+     * <p>The code for the AWS service. You can get a list of codes and the
+     * corresponding service names by calling <a>DescribeServices</a>.</p>
      */
     inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
 
     /**
-     * <p>The code for the AWS service returned by the call to
-     * <a>DescribeServices</a>.</p>
+     * <p>The code for the AWS service. You can get a list of codes and the
+     * corresponding service names by calling <a>DescribeServices</a>.</p>
      */
     inline CaseDetails& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
 
     /**
-     * <p>The code for the AWS service returned by the call to
-     * <a>DescribeServices</a>.</p>
+     * <p>The code for the AWS service. You can get a list of codes and the
+     * corresponding service names by calling <a>DescribeServices</a>.</p>
      */
     inline CaseDetails& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
 
     /**
-     * <p>The code for the AWS service returned by the call to
-     * <a>DescribeServices</a>.</p>
+     * <p>The code for the AWS service. You can get a list of codes and the
+     * corresponding service names by calling <a>DescribeServices</a>.</p>
      */
     inline CaseDetails& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
 

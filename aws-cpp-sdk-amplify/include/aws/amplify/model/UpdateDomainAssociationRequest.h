@@ -131,22 +131,26 @@ namespace Model
 
 
     /**
-     * <p> Enables automated creation of Subdomains for branches. </p>
+     * <p> Enables automated creation of Subdomains for branches. (Currently not
+     * supported) </p>
      */
     inline bool GetEnableAutoSubDomain() const{ return m_enableAutoSubDomain; }
 
     /**
-     * <p> Enables automated creation of Subdomains for branches. </p>
+     * <p> Enables automated creation of Subdomains for branches. (Currently not
+     * supported) </p>
      */
     inline bool EnableAutoSubDomainHasBeenSet() const { return m_enableAutoSubDomainHasBeenSet; }
 
     /**
-     * <p> Enables automated creation of Subdomains for branches. </p>
+     * <p> Enables automated creation of Subdomains for branches. (Currently not
+     * supported) </p>
      */
     inline void SetEnableAutoSubDomain(bool value) { m_enableAutoSubDomainHasBeenSet = true; m_enableAutoSubDomain = value; }
 
     /**
-     * <p> Enables automated creation of Subdomains for branches. </p>
+     * <p> Enables automated creation of Subdomains for branches. (Currently not
+     * supported) </p>
      */
     inline UpdateDomainAssociationRequest& WithEnableAutoSubDomain(bool value) { SetEnableAutoSubDomain(value); return *this;}
 

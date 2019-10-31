@@ -523,8 +523,7 @@ namespace Model
 
         /**
          * <p> Retrieve website access logs for a specific time range via a pre-signed URL.
-         * Optionally, deliver the logs to a given S3 bucket. </p><p><h3>See Also:</h3>  
-         * <a
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GenerateAccessLogs">AWS
          * API Reference</a></p>
          */
@@ -532,8 +531,7 @@ namespace Model
 
         /**
          * <p> Retrieve website access logs for a specific time range via a pre-signed URL.
-         * Optionally, deliver the logs to a given S3 bucket. </p><p><h3>See Also:</h3>  
-         * <a
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GenerateAccessLogs">AWS
          * API Reference</a></p>
          *
@@ -543,8 +541,7 @@ namespace Model
 
         /**
          * <p> Retrieve website access logs for a specific time range via a pre-signed URL.
-         * Optionally, deliver the logs to a given S3 bucket. </p><p><h3>See Also:</h3>  
-         * <a
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GenerateAccessLogs">AWS
          * API Reference</a></p>
          *

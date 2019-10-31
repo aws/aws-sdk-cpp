@@ -17,7 +17,6 @@
 #include <aws/amplify/Amplify_EXPORTS.h>
 #include <aws/amplify/AmplifyRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/amplify/model/ArtifactType.h>
 #include <utility>
 
 namespace Aws
@@ -177,37 +176,6 @@ namespace Model
 
 
     /**
-     * <p> Type for an artifact. </p>
-     */
-    inline const ArtifactType& GetArtifactType() const{ return m_artifactType; }
-
-    /**
-     * <p> Type for an artifact. </p>
-     */
-    inline bool ArtifactTypeHasBeenSet() const { return m_artifactTypeHasBeenSet; }
-
-    /**
-     * <p> Type for an artifact. </p>
-     */
-    inline void SetArtifactType(const ArtifactType& value) { m_artifactTypeHasBeenSet = true; m_artifactType = value; }
-
-    /**
-     * <p> Type for an artifact. </p>
-     */
-    inline void SetArtifactType(ArtifactType&& value) { m_artifactTypeHasBeenSet = true; m_artifactType = std::move(value); }
-
-    /**
-     * <p> Type for an artifact. </p>
-     */
-    inline ListArtifactsRequest& WithArtifactType(const ArtifactType& value) { SetArtifactType(value); return *this;}
-
-    /**
-     * <p> Type for an artifact. </p>
-     */
-    inline ListArtifactsRequest& WithArtifactType(ArtifactType&& value) { SetArtifactType(std::move(value)); return *this;}
-
-
-    /**
      * <p> Pagination token. Set to null to start listing artifacts from start. If
      * non-null pagination token is returned in a result, then pass its value in here
      * to list more artifacts. </p>
@@ -294,9 +262,6 @@ namespace Model
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
-
-    ArtifactType m_artifactType;
-    bool m_artifactTypeHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

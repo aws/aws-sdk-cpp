@@ -203,7 +203,7 @@ namespace Model
      * <a>TrustedAdvisorCheckDescription</a> object returned by the call to
      * <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that
      * is shown in the Excel download, even in those cases where the UI shows just
-     * summary data. </p>
+     * summary data.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMetadata() const{ return m_metadata; }
 
@@ -213,7 +213,7 @@ namespace Model
      * <a>TrustedAdvisorCheckDescription</a> object returned by the call to
      * <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that
      * is shown in the Excel download, even in those cases where the UI shows just
-     * summary data. </p>
+     * summary data.</p>
      */
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
 
@@ -223,7 +223,7 @@ namespace Model
      * <a>TrustedAdvisorCheckDescription</a> object returned by the call to
      * <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that
      * is shown in the Excel download, even in those cases where the UI shows just
-     * summary data. </p>
+     * summary data.</p>
      */
     inline void SetMetadata(const Aws::Vector<Aws::String>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
@@ -233,7 +233,7 @@ namespace Model
      * <a>TrustedAdvisorCheckDescription</a> object returned by the call to
      * <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that
      * is shown in the Excel download, even in those cases where the UI shows just
-     * summary data. </p>
+     * summary data.</p>
      */
     inline void SetMetadata(Aws::Vector<Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
 
@@ -243,7 +243,7 @@ namespace Model
      * <a>TrustedAdvisorCheckDescription</a> object returned by the call to
      * <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that
      * is shown in the Excel download, even in those cases where the UI shows just
-     * summary data. </p>
+     * summary data.</p>
      */
     inline TrustedAdvisorResourceDetail& WithMetadata(const Aws::Vector<Aws::String>& value) { SetMetadata(value); return *this;}
 
@@ -253,7 +253,7 @@ namespace Model
      * <a>TrustedAdvisorCheckDescription</a> object returned by the call to
      * <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that
      * is shown in the Excel download, even in those cases where the UI shows just
-     * summary data. </p>
+     * summary data.</p>
      */
     inline TrustedAdvisorResourceDetail& WithMetadata(Aws::Vector<Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
 
@@ -263,7 +263,7 @@ namespace Model
      * <a>TrustedAdvisorCheckDescription</a> object returned by the call to
      * <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that
      * is shown in the Excel download, even in those cases where the UI shows just
-     * summary data. </p>
+     * summary data.</p>
      */
     inline TrustedAdvisorResourceDetail& AddMetadata(const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.push_back(value); return *this; }
 
@@ -273,7 +273,7 @@ namespace Model
      * <a>TrustedAdvisorCheckDescription</a> object returned by the call to
      * <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that
      * is shown in the Excel download, even in those cases where the UI shows just
-     * summary data. </p>
+     * summary data.</p>
      */
     inline TrustedAdvisorResourceDetail& AddMetadata(Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.push_back(std::move(value)); return *this; }
 
@@ -283,7 +283,7 @@ namespace Model
      * <a>TrustedAdvisorCheckDescription</a> object returned by the call to
      * <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that
      * is shown in the Excel download, even in those cases where the UI shows just
-     * summary data. </p>
+     * summary data.</p>
      */
     inline TrustedAdvisorResourceDetail& AddMetadata(const char* value) { m_metadataHasBeenSet = true; m_metadata.push_back(value); return *this; }
 

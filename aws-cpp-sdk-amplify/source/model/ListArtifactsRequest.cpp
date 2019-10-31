@@ -29,8 +29,6 @@ ListArtifactsRequest::ListArtifactsRequest() :
     m_appIdHasBeenSet(false),
     m_branchNameHasBeenSet(false),
     m_jobIdHasBeenSet(false),
-    m_artifactType(ArtifactType::NOT_SET),
-    m_artifactTypeHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -39,14 +37,7 @@ ListArtifactsRequest::ListArtifactsRequest() :
 
 Aws::String ListArtifactsRequest::SerializePayload() const
 {
-  JsonValue payload;
-
-  if(m_artifactTypeHasBeenSet)
-  {
-   payload.WithString("artifactType", ArtifactTypeMapper::GetNameForArtifactType(m_artifactType));
-  }
-
-  return payload.View().WriteReadable();
+  return {};
 }
 
 void ListArtifactsRequest::AddQueryStringParameters(URI& uri) const
