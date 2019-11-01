@@ -153,7 +153,8 @@ namespace Model
      * consists of two or more terms, which are comprised of lowercase alphanumeric
      * characters, separated by a hyphen. Examples are email-open-rate and
      * successful-delivery-rate. For a list of valid values, see the <a
-     * href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * Pinpoint Developer Guide</a>.</p>
      */
     inline const Aws::String& GetKpiName() const{ return m_kpiName; }
 
@@ -163,7 +164,8 @@ namespace Model
      * consists of two or more terms, which are comprised of lowercase alphanumeric
      * characters, separated by a hyphen. Examples are email-open-rate and
      * successful-delivery-rate. For a list of valid values, see the <a
-     * href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * Pinpoint Developer Guide</a>.</p>
      */
     inline bool KpiNameHasBeenSet() const { return m_kpiNameHasBeenSet; }
 
@@ -173,7 +175,8 @@ namespace Model
      * consists of two or more terms, which are comprised of lowercase alphanumeric
      * characters, separated by a hyphen. Examples are email-open-rate and
      * successful-delivery-rate. For a list of valid values, see the <a
-     * href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * Pinpoint Developer Guide</a>.</p>
      */
     inline void SetKpiName(const Aws::String& value) { m_kpiNameHasBeenSet = true; m_kpiName = value; }
 
@@ -183,7 +186,8 @@ namespace Model
      * consists of two or more terms, which are comprised of lowercase alphanumeric
      * characters, separated by a hyphen. Examples are email-open-rate and
      * successful-delivery-rate. For a list of valid values, see the <a
-     * href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * Pinpoint Developer Guide</a>.</p>
      */
     inline void SetKpiName(Aws::String&& value) { m_kpiNameHasBeenSet = true; m_kpiName = std::move(value); }
 
@@ -193,7 +197,8 @@ namespace Model
      * consists of two or more terms, which are comprised of lowercase alphanumeric
      * characters, separated by a hyphen. Examples are email-open-rate and
      * successful-delivery-rate. For a list of valid values, see the <a
-     * href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * Pinpoint Developer Guide</a>.</p>
      */
     inline void SetKpiName(const char* value) { m_kpiNameHasBeenSet = true; m_kpiName.assign(value); }
 
@@ -203,7 +208,8 @@ namespace Model
      * consists of two or more terms, which are comprised of lowercase alphanumeric
      * characters, separated by a hyphen. Examples are email-open-rate and
      * successful-delivery-rate. For a list of valid values, see the <a
-     * href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * Pinpoint Developer Guide</a>.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithKpiName(const Aws::String& value) { SetKpiName(value); return *this;}
 
@@ -213,7 +219,8 @@ namespace Model
      * consists of two or more terms, which are comprised of lowercase alphanumeric
      * characters, separated by a hyphen. Examples are email-open-rate and
      * successful-delivery-rate. For a list of valid values, see the <a
-     * href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * Pinpoint Developer Guide</a>.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithKpiName(Aws::String&& value) { SetKpiName(std::move(value)); return *this;}
 
@@ -223,121 +230,122 @@ namespace Model
      * consists of two or more terms, which are comprised of lowercase alphanumeric
      * characters, separated by a hyphen. Examples are email-open-rate and
      * successful-delivery-rate. For a list of valid values, see the <a
-     * href="developerguide.html">Amazon Pinpoint Developer Guide</a>.</p>
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
+     * Pinpoint Developer Guide</a>.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithKpiName(const char* value) { SetKpiName(value); return *this;}
 
 
     /**
-     * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response. This parameter is currently not supported by the Application
-     * Metrics and Campaign Metrics resources.</p>
+     * <p>The  string that specifies which page of results to return in a paginated
+     * response. This parameter is currently not supported for application, campaign,
+     * and journey metrics.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response. This parameter is currently not supported by the Application
-     * Metrics and Campaign Metrics resources.</p>
+     * <p>The  string that specifies which page of results to return in a paginated
+     * response. This parameter is currently not supported for application, campaign,
+     * and journey metrics.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response. This parameter is currently not supported by the Application
-     * Metrics and Campaign Metrics resources.</p>
+     * <p>The  string that specifies which page of results to return in a paginated
+     * response. This parameter is currently not supported for application, campaign,
+     * and journey metrics.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response. This parameter is currently not supported by the Application
-     * Metrics and Campaign Metrics resources.</p>
+     * <p>The  string that specifies which page of results to return in a paginated
+     * response. This parameter is currently not supported for application, campaign,
+     * and journey metrics.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response. This parameter is currently not supported by the Application
-     * Metrics and Campaign Metrics resources.</p>
+     * <p>The  string that specifies which page of results to return in a paginated
+     * response. This parameter is currently not supported for application, campaign,
+     * and journey metrics.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response. This parameter is currently not supported by the Application
-     * Metrics and Campaign Metrics resources.</p>
+     * <p>The  string that specifies which page of results to return in a paginated
+     * response. This parameter is currently not supported for application, campaign,
+     * and journey metrics.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response. This parameter is currently not supported by the Application
-     * Metrics and Campaign Metrics resources.</p>
+     * <p>The  string that specifies which page of results to return in a paginated
+     * response. This parameter is currently not supported for application, campaign,
+     * and journey metrics.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response. This parameter is currently not supported by the Application
-     * Metrics and Campaign Metrics resources.</p>
+     * <p>The  string that specifies which page of results to return in a paginated
+     * response. This parameter is currently not supported for application, campaign,
+     * and journey metrics.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported by the Application Metrics and
-     * Campaign Metrics resources.</p>
+     * This parameter is currently not supported for application, campaign, and journey
+     * metrics.</p>
      */
     inline const Aws::String& GetPageSize() const{ return m_pageSize; }
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported by the Application Metrics and
-     * Campaign Metrics resources.</p>
+     * This parameter is currently not supported for application, campaign, and journey
+     * metrics.</p>
      */
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported by the Application Metrics and
-     * Campaign Metrics resources.</p>
+     * This parameter is currently not supported for application, campaign, and journey
+     * metrics.</p>
      */
     inline void SetPageSize(const Aws::String& value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported by the Application Metrics and
-     * Campaign Metrics resources.</p>
+     * This parameter is currently not supported for application, campaign, and journey
+     * metrics.</p>
      */
     inline void SetPageSize(Aws::String&& value) { m_pageSizeHasBeenSet = true; m_pageSize = std::move(value); }
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported by the Application Metrics and
-     * Campaign Metrics resources.</p>
+     * This parameter is currently not supported for application, campaign, and journey
+     * metrics.</p>
      */
     inline void SetPageSize(const char* value) { m_pageSizeHasBeenSet = true; m_pageSize.assign(value); }
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported by the Application Metrics and
-     * Campaign Metrics resources.</p>
+     * This parameter is currently not supported for application, campaign, and journey
+     * metrics.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithPageSize(const Aws::String& value) { SetPageSize(value); return *this;}
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported by the Application Metrics and
-     * Campaign Metrics resources.</p>
+     * This parameter is currently not supported for application, campaign, and journey
+     * metrics.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithPageSize(Aws::String&& value) { SetPageSize(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported by the Application Metrics and
-     * Campaign Metrics resources.</p>
+     * This parameter is currently not supported for application, campaign, and journey
+     * metrics.</p>
      */
     inline GetApplicationDateRangeKpiRequest& WithPageSize(const char* value) { SetPageSize(value); return *this;}
 

@@ -69,7 +69,7 @@ namespace Model
      * <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to
      * deliver log files to the designated bucket. For more information see the topic
      * <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
@@ -82,7 +82,7 @@ namespace Model
      * <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to
      * deliver log files to the designated bucket. For more information see the topic
      * <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
@@ -95,7 +95,7 @@ namespace Model
      * <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to
      * deliver log files to the designated bucket. For more information see the topic
      * <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
@@ -108,7 +108,7 @@ namespace Model
      * <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to
      * deliver log files to the designated bucket. For more information see the topic
      * <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
@@ -121,7 +121,7 @@ namespace Model
      * <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to
      * deliver log files to the designated bucket. For more information see the topic
      * <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
@@ -134,7 +134,7 @@ namespace Model
      * <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to
      * deliver log files to the designated bucket. For more information see the topic
      * <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
@@ -147,7 +147,7 @@ namespace Model
      * <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to
      * deliver log files to the designated bucket. For more information see the topic
      * <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
@@ -160,7 +160,7 @@ namespace Model
     /**
      * <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to
      * send a notification. For more information about Amazon SNS errors, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS
      * Developer Guide</a>. </p>
      */
     inline const Aws::String& GetLatestNotificationError() const{ return m_latestNotificationError; }
@@ -168,7 +168,7 @@ namespace Model
     /**
      * <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to
      * send a notification. For more information about Amazon SNS errors, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS
      * Developer Guide</a>. </p>
      */
     inline void SetLatestNotificationError(const Aws::String& value) { m_latestNotificationError = value; }
@@ -176,7 +176,7 @@ namespace Model
     /**
      * <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to
      * send a notification. For more information about Amazon SNS errors, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS
      * Developer Guide</a>. </p>
      */
     inline void SetLatestNotificationError(Aws::String&& value) { m_latestNotificationError = std::move(value); }
@@ -184,7 +184,7 @@ namespace Model
     /**
      * <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to
      * send a notification. For more information about Amazon SNS errors, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS
      * Developer Guide</a>. </p>
      */
     inline void SetLatestNotificationError(const char* value) { m_latestNotificationError.assign(value); }
@@ -192,7 +192,7 @@ namespace Model
     /**
      * <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to
      * send a notification. For more information about Amazon SNS errors, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS
      * Developer Guide</a>. </p>
      */
     inline GetTrailStatusResult& WithLatestNotificationError(const Aws::String& value) { SetLatestNotificationError(value); return *this;}
@@ -200,7 +200,7 @@ namespace Model
     /**
      * <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to
      * send a notification. For more information about Amazon SNS errors, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS
      * Developer Guide</a>. </p>
      */
     inline GetTrailStatusResult& WithLatestNotificationError(Aws::String&& value) { SetLatestNotificationError(std::move(value)); return *this;}
@@ -208,7 +208,7 @@ namespace Model
     /**
      * <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to
      * send a notification. For more information about Amazon SNS errors, see the <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS
+     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS
      * Developer Guide</a>. </p>
      */
     inline GetTrailStatusResult& WithLatestNotificationError(const char* value) { SetLatestNotificationError(value); return *this;}
@@ -447,7 +447,7 @@ namespace Model
      * <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to
      * deliver a digest file to the designated bucket. For more information see the
      * topic <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
@@ -460,7 +460,7 @@ namespace Model
      * <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to
      * deliver a digest file to the designated bucket. For more information see the
      * topic <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
@@ -473,7 +473,7 @@ namespace Model
      * <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to
      * deliver a digest file to the designated bucket. For more information see the
      * topic <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
@@ -486,7 +486,7 @@ namespace Model
      * <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to
      * deliver a digest file to the designated bucket. For more information see the
      * topic <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
@@ -499,7 +499,7 @@ namespace Model
      * <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to
      * deliver a digest file to the designated bucket. For more information see the
      * topic <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
@@ -512,7 +512,7 @@ namespace Model
      * <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to
      * deliver a digest file to the designated bucket. For more information see the
      * topic <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
@@ -525,7 +525,7 @@ namespace Model
      * <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to
      * deliver a digest file to the designated bucket. For more information see the
      * topic <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
      * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
@@ -536,217 +536,217 @@ namespace Model
 
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline const Aws::String& GetLatestDeliveryAttemptTime() const{ return m_latestDeliveryAttemptTime; }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline void SetLatestDeliveryAttemptTime(const Aws::String& value) { m_latestDeliveryAttemptTime = value; }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline void SetLatestDeliveryAttemptTime(Aws::String&& value) { m_latestDeliveryAttemptTime = std::move(value); }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline void SetLatestDeliveryAttemptTime(const char* value) { m_latestDeliveryAttemptTime.assign(value); }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline GetTrailStatusResult& WithLatestDeliveryAttemptTime(const Aws::String& value) { SetLatestDeliveryAttemptTime(value); return *this;}
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline GetTrailStatusResult& WithLatestDeliveryAttemptTime(Aws::String&& value) { SetLatestDeliveryAttemptTime(std::move(value)); return *this;}
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline GetTrailStatusResult& WithLatestDeliveryAttemptTime(const char* value) { SetLatestDeliveryAttemptTime(value); return *this;}
 
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline const Aws::String& GetLatestNotificationAttemptTime() const{ return m_latestNotificationAttemptTime; }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline void SetLatestNotificationAttemptTime(const Aws::String& value) { m_latestNotificationAttemptTime = value; }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline void SetLatestNotificationAttemptTime(Aws::String&& value) { m_latestNotificationAttemptTime = std::move(value); }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline void SetLatestNotificationAttemptTime(const char* value) { m_latestNotificationAttemptTime.assign(value); }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline GetTrailStatusResult& WithLatestNotificationAttemptTime(const Aws::String& value) { SetLatestNotificationAttemptTime(value); return *this;}
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline GetTrailStatusResult& WithLatestNotificationAttemptTime(Aws::String&& value) { SetLatestNotificationAttemptTime(std::move(value)); return *this;}
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline GetTrailStatusResult& WithLatestNotificationAttemptTime(const char* value) { SetLatestNotificationAttemptTime(value); return *this;}
 
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline const Aws::String& GetLatestNotificationAttemptSucceeded() const{ return m_latestNotificationAttemptSucceeded; }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline void SetLatestNotificationAttemptSucceeded(const Aws::String& value) { m_latestNotificationAttemptSucceeded = value; }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline void SetLatestNotificationAttemptSucceeded(Aws::String&& value) { m_latestNotificationAttemptSucceeded = std::move(value); }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline void SetLatestNotificationAttemptSucceeded(const char* value) { m_latestNotificationAttemptSucceeded.assign(value); }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline GetTrailStatusResult& WithLatestNotificationAttemptSucceeded(const Aws::String& value) { SetLatestNotificationAttemptSucceeded(value); return *this;}
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline GetTrailStatusResult& WithLatestNotificationAttemptSucceeded(Aws::String&& value) { SetLatestNotificationAttemptSucceeded(std::move(value)); return *this;}
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline GetTrailStatusResult& WithLatestNotificationAttemptSucceeded(const char* value) { SetLatestNotificationAttemptSucceeded(value); return *this;}
 
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline const Aws::String& GetLatestDeliveryAttemptSucceeded() const{ return m_latestDeliveryAttemptSucceeded; }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline void SetLatestDeliveryAttemptSucceeded(const Aws::String& value) { m_latestDeliveryAttemptSucceeded = value; }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline void SetLatestDeliveryAttemptSucceeded(Aws::String&& value) { m_latestDeliveryAttemptSucceeded = std::move(value); }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline void SetLatestDeliveryAttemptSucceeded(const char* value) { m_latestDeliveryAttemptSucceeded.assign(value); }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline GetTrailStatusResult& WithLatestDeliveryAttemptSucceeded(const Aws::String& value) { SetLatestDeliveryAttemptSucceeded(value); return *this;}
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline GetTrailStatusResult& WithLatestDeliveryAttemptSucceeded(Aws::String&& value) { SetLatestDeliveryAttemptSucceeded(std::move(value)); return *this;}
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline GetTrailStatusResult& WithLatestDeliveryAttemptSucceeded(const char* value) { SetLatestDeliveryAttemptSucceeded(value); return *this;}
 
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline const Aws::String& GetTimeLoggingStarted() const{ return m_timeLoggingStarted; }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline void SetTimeLoggingStarted(const Aws::String& value) { m_timeLoggingStarted = value; }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline void SetTimeLoggingStarted(Aws::String&& value) { m_timeLoggingStarted = std::move(value); }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline void SetTimeLoggingStarted(const char* value) { m_timeLoggingStarted.assign(value); }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline GetTrailStatusResult& WithTimeLoggingStarted(const Aws::String& value) { SetTimeLoggingStarted(value); return *this;}
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline GetTrailStatusResult& WithTimeLoggingStarted(Aws::String&& value) { SetTimeLoggingStarted(std::move(value)); return *this;}
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline GetTrailStatusResult& WithTimeLoggingStarted(const char* value) { SetTimeLoggingStarted(value); return *this;}
 
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline const Aws::String& GetTimeLoggingStopped() const{ return m_timeLoggingStopped; }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline void SetTimeLoggingStopped(const Aws::String& value) { m_timeLoggingStopped = value; }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline void SetTimeLoggingStopped(Aws::String&& value) { m_timeLoggingStopped = std::move(value); }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline void SetTimeLoggingStopped(const char* value) { m_timeLoggingStopped.assign(value); }
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline GetTrailStatusResult& WithTimeLoggingStopped(const Aws::String& value) { SetTimeLoggingStopped(value); return *this;}
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline GetTrailStatusResult& WithTimeLoggingStopped(Aws::String&& value) { SetTimeLoggingStopped(std::move(value)); return *this;}
 
     /**
-     * <p>This field is deprecated.</p>
+     * <p>This field is no longer in use.</p>
      */
     inline GetTrailStatusResult& WithTimeLoggingStopped(const char* value) { SetTimeLoggingStopped(value); return *this;}
 

@@ -133,8 +133,8 @@ namespace Model
      * <p>The name of the metric, also referred to as a <i>key performance indicator
      * (KPI)</i>, that the data was retrieved for. This value describes the associated
      * metric and consists of two or more terms, which are comprised of lowercase
-     * alphanumeric characters, separated by a hyphen. For a list of valid values, see
-     * the <a
+     * alphanumeric characters, separated by a hyphen. For a list of possible values,
+     * see the <a
      * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
@@ -144,8 +144,8 @@ namespace Model
      * <p>The name of the metric, also referred to as a <i>key performance indicator
      * (KPI)</i>, that the data was retrieved for. This value describes the associated
      * metric and consists of two or more terms, which are comprised of lowercase
-     * alphanumeric characters, separated by a hyphen. For a list of valid values, see
-     * the <a
+     * alphanumeric characters, separated by a hyphen. For a list of possible values,
+     * see the <a
      * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
@@ -155,8 +155,8 @@ namespace Model
      * <p>The name of the metric, also referred to as a <i>key performance indicator
      * (KPI)</i>, that the data was retrieved for. This value describes the associated
      * metric and consists of two or more terms, which are comprised of lowercase
-     * alphanumeric characters, separated by a hyphen. For a list of valid values, see
-     * the <a
+     * alphanumeric characters, separated by a hyphen. For a list of possible values,
+     * see the <a
      * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
@@ -166,8 +166,8 @@ namespace Model
      * <p>The name of the metric, also referred to as a <i>key performance indicator
      * (KPI)</i>, that the data was retrieved for. This value describes the associated
      * metric and consists of two or more terms, which are comprised of lowercase
-     * alphanumeric characters, separated by a hyphen. For a list of valid values, see
-     * the <a
+     * alphanumeric characters, separated by a hyphen. For a list of possible values,
+     * see the <a
      * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
@@ -177,8 +177,8 @@ namespace Model
      * <p>The name of the metric, also referred to as a <i>key performance indicator
      * (KPI)</i>, that the data was retrieved for. This value describes the associated
      * metric and consists of two or more terms, which are comprised of lowercase
-     * alphanumeric characters, separated by a hyphen. For a list of valid values, see
-     * the <a
+     * alphanumeric characters, separated by a hyphen. For a list of possible values,
+     * see the <a
      * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
@@ -188,8 +188,8 @@ namespace Model
      * <p>The name of the metric, also referred to as a <i>key performance indicator
      * (KPI)</i>, that the data was retrieved for. This value describes the associated
      * metric and consists of two or more terms, which are comprised of lowercase
-     * alphanumeric characters, separated by a hyphen. For a list of valid values, see
-     * the <a
+     * alphanumeric characters, separated by a hyphen. For a list of possible values,
+     * see the <a
      * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
@@ -199,8 +199,8 @@ namespace Model
      * <p>The name of the metric, also referred to as a <i>key performance indicator
      * (KPI)</i>, that the data was retrieved for. This value describes the associated
      * metric and consists of two or more terms, which are comprised of lowercase
-     * alphanumeric characters, separated by a hyphen. For a list of valid values, see
-     * the <a
+     * alphanumeric characters, separated by a hyphen. For a list of possible values,
+     * see the <a
      * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
@@ -210,8 +210,8 @@ namespace Model
      * <p>The name of the metric, also referred to as a <i>key performance indicator
      * (KPI)</i>, that the data was retrieved for. This value describes the associated
      * metric and consists of two or more terms, which are comprised of lowercase
-     * alphanumeric characters, separated by a hyphen. For a list of valid values, see
-     * the <a
+     * alphanumeric characters, separated by a hyphen. For a list of possible values,
+     * see the <a
      * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
      * Pinpoint Developer Guide</a>.</p>
      */
@@ -257,57 +257,57 @@ namespace Model
 
     /**
      * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null for the Application Metrics resource.
-     * The Application Metrics resource returns all results in a single page.</p>
+     * a paginated response. This value is null for the Application Metrics resource
+     * because the resource returns all results in a single page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null for the Application Metrics resource.
-     * The Application Metrics resource returns all results in a single page.</p>
+     * a paginated response. This value is null for the Application Metrics resource
+     * because the resource returns all results in a single page.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null for the Application Metrics resource.
-     * The Application Metrics resource returns all results in a single page.</p>
+     * a paginated response. This value is null for the Application Metrics resource
+     * because the resource returns all results in a single page.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null for the Application Metrics resource.
-     * The Application Metrics resource returns all results in a single page.</p>
+     * a paginated response. This value is null for the Application Metrics resource
+     * because the resource returns all results in a single page.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null for the Application Metrics resource.
-     * The Application Metrics resource returns all results in a single page.</p>
+     * a paginated response. This value is null for the Application Metrics resource
+     * because the resource returns all results in a single page.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null for the Application Metrics resource.
-     * The Application Metrics resource returns all results in a single page.</p>
+     * a paginated response. This value is null for the Application Metrics resource
+     * because the resource returns all results in a single page.</p>
      */
     inline ApplicationDateRangeKpiResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null for the Application Metrics resource.
-     * The Application Metrics resource returns all results in a single page.</p>
+     * a paginated response. This value is null for the Application Metrics resource
+     * because the resource returns all results in a single page.</p>
      */
     inline ApplicationDateRangeKpiResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null for the Application Metrics resource.
-     * The Application Metrics resource returns all results in a single page.</p>
+     * a paginated response. This value is null for the Application Metrics resource
+     * because the resource returns all results in a single page.</p>
      */
     inline ApplicationDateRangeKpiResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

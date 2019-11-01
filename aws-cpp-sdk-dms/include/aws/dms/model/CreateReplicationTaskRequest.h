@@ -463,7 +463,15 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>When you use this task setting with a source PostgreSQL database, a logical
+     * replication slot should already be created and associated with the source
+     * endpoint. You can verify this by setting the <code>slotName</code> extra
+     * connection attribute to the name of this logical replication slot. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
+     * </note>
      */
     inline const Aws::String& GetCdcStartPosition() const{ return m_cdcStartPosition; }
 
@@ -475,7 +483,15 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>When you use this task setting with a source PostgreSQL database, a logical
+     * replication slot should already be created and associated with the source
+     * endpoint. You can verify this by setting the <code>slotName</code> extra
+     * connection attribute to the name of this logical replication slot. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
+     * </note>
      */
     inline bool CdcStartPositionHasBeenSet() const { return m_cdcStartPositionHasBeenSet; }
 
@@ -487,7 +503,15 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>When you use this task setting with a source PostgreSQL database, a logical
+     * replication slot should already be created and associated with the source
+     * endpoint. You can verify this by setting the <code>slotName</code> extra
+     * connection attribute to the name of this logical replication slot. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
+     * </note>
      */
     inline void SetCdcStartPosition(const Aws::String& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = value; }
 
@@ -499,7 +523,15 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>When you use this task setting with a source PostgreSQL database, a logical
+     * replication slot should already be created and associated with the source
+     * endpoint. You can verify this by setting the <code>slotName</code> extra
+     * connection attribute to the name of this logical replication slot. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
+     * </note>
      */
     inline void SetCdcStartPosition(Aws::String&& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = std::move(value); }
 
@@ -511,7 +543,15 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>When you use this task setting with a source PostgreSQL database, a logical
+     * replication slot should already be created and associated with the source
+     * endpoint. You can verify this by setting the <code>slotName</code> extra
+     * connection attribute to the name of this logical replication slot. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
+     * </note>
      */
     inline void SetCdcStartPosition(const char* value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition.assign(value); }
 
@@ -523,7 +563,15 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>When you use this task setting with a source PostgreSQL database, a logical
+     * replication slot should already be created and associated with the source
+     * endpoint. You can verify this by setting the <code>slotName</code> extra
+     * connection attribute to the name of this logical replication slot. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
+     * </note>
      */
     inline CreateReplicationTaskRequest& WithCdcStartPosition(const Aws::String& value) { SetCdcStartPosition(value); return *this;}
 
@@ -535,7 +583,15 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>When you use this task setting with a source PostgreSQL database, a logical
+     * replication slot should already be created and associated with the source
+     * endpoint. You can verify this by setting the <code>slotName</code> extra
+     * connection attribute to the name of this logical replication slot. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
+     * </note>
      */
     inline CreateReplicationTaskRequest& WithCdcStartPosition(Aws::String&& value) { SetCdcStartPosition(std::move(value)); return *this;}
 
@@ -547,7 +603,15 @@ namespace Model
      * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
      * --cdc-start-position
      * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+     * <p>When you use this task setting with a source PostgreSQL database, a logical
+     * replication slot should already be created and associated with the source
+     * endpoint. You can verify this by setting the <code>slotName</code> extra
+     * connection attribute to the name of this logical replication slot. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
+     * </note>
      */
     inline CreateReplicationTaskRequest& WithCdcStartPosition(const char* value) { SetCdcStartPosition(value); return *this;}
 

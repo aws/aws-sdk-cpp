@@ -1,0 +1,110 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/pinpoint/Pinpoint_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/pinpoint/model/RandomSplitEntry.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace Pinpoint
+{
+namespace Model
+{
+
+  /**
+   * <p>Specifies the settings for a random split activity in a journey. This type of
+   * activity randomly sends specified percentages of participants down one of as
+   * many as five paths in a journey, based on conditions that you
+   * specify.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RandomSplitActivity">AWS
+   * API Reference</a></p>
+   */
+  class AWS_PINPOINT_API RandomSplitActivity
+  {
+  public:
+    RandomSplitActivity();
+    RandomSplitActivity(Aws::Utils::Json::JsonView jsonValue);
+    RandomSplitActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The paths for the activity, including the percentage of participants to enter
+     * each path and the activity to perform for each path.</p>
+     */
+    inline const Aws::Vector<RandomSplitEntry>& GetBranches() const{ return m_branches; }
+
+    /**
+     * <p>The paths for the activity, including the percentage of participants to enter
+     * each path and the activity to perform for each path.</p>
+     */
+    inline bool BranchesHasBeenSet() const { return m_branchesHasBeenSet; }
+
+    /**
+     * <p>The paths for the activity, including the percentage of participants to enter
+     * each path and the activity to perform for each path.</p>
+     */
+    inline void SetBranches(const Aws::Vector<RandomSplitEntry>& value) { m_branchesHasBeenSet = true; m_branches = value; }
+
+    /**
+     * <p>The paths for the activity, including the percentage of participants to enter
+     * each path and the activity to perform for each path.</p>
+     */
+    inline void SetBranches(Aws::Vector<RandomSplitEntry>&& value) { m_branchesHasBeenSet = true; m_branches = std::move(value); }
+
+    /**
+     * <p>The paths for the activity, including the percentage of participants to enter
+     * each path and the activity to perform for each path.</p>
+     */
+    inline RandomSplitActivity& WithBranches(const Aws::Vector<RandomSplitEntry>& value) { SetBranches(value); return *this;}
+
+    /**
+     * <p>The paths for the activity, including the percentage of participants to enter
+     * each path and the activity to perform for each path.</p>
+     */
+    inline RandomSplitActivity& WithBranches(Aws::Vector<RandomSplitEntry>&& value) { SetBranches(std::move(value)); return *this;}
+
+    /**
+     * <p>The paths for the activity, including the percentage of participants to enter
+     * each path and the activity to perform for each path.</p>
+     */
+    inline RandomSplitActivity& AddBranches(const RandomSplitEntry& value) { m_branchesHasBeenSet = true; m_branches.push_back(value); return *this; }
+
+    /**
+     * <p>The paths for the activity, including the percentage of participants to enter
+     * each path and the activity to perform for each path.</p>
+     */
+    inline RandomSplitActivity& AddBranches(RandomSplitEntry&& value) { m_branchesHasBeenSet = true; m_branches.push_back(std::move(value)); return *this; }
+
+  private:
+
+    Aws::Vector<RandomSplitEntry> m_branches;
+    bool m_branchesHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace Pinpoint
+} // namespace Aws

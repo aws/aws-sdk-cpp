@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the message template to use for the message, for each type of
-   * channel.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the message template for each type of channel.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/TemplateConfiguration">AWS
    * API Reference</a></p>
    */

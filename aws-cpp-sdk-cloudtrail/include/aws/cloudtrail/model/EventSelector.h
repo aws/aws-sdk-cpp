@@ -108,7 +108,7 @@ namespace Model
     /**
      * <p>Specify if you want your event selector to include management events for your
      * trail.</p> <p> For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p> <p>By default, the value
      * is <code>true</code>.</p>
      */
@@ -117,7 +117,7 @@ namespace Model
     /**
      * <p>Specify if you want your event selector to include management events for your
      * trail.</p> <p> For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p> <p>By default, the value
      * is <code>true</code>.</p>
      */
@@ -126,7 +126,7 @@ namespace Model
     /**
      * <p>Specify if you want your event selector to include management events for your
      * trail.</p> <p> For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p> <p>By default, the value
      * is <code>true</code>.</p>
      */
@@ -135,7 +135,7 @@ namespace Model
     /**
      * <p>Specify if you want your event selector to include management events for your
      * trail.</p> <p> For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
      * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p> <p>By default, the value
      * is <code>true</code>.</p>
      */
@@ -148,7 +148,7 @@ namespace Model
      * but the total number of data resources cannot exceed 250 across all event
      * selectors in a trail. This limit does not apply if you configure resource
      * logging for all data events. </p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
      * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
      * in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.</p>
@@ -161,7 +161,7 @@ namespace Model
      * but the total number of data resources cannot exceed 250 across all event
      * selectors in a trail. This limit does not apply if you configure resource
      * logging for all data events. </p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
      * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
      * in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.</p>
@@ -174,7 +174,7 @@ namespace Model
      * but the total number of data resources cannot exceed 250 across all event
      * selectors in a trail. This limit does not apply if you configure resource
      * logging for all data events. </p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
      * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
      * in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.</p>
@@ -187,7 +187,7 @@ namespace Model
      * but the total number of data resources cannot exceed 250 across all event
      * selectors in a trail. This limit does not apply if you configure resource
      * logging for all data events. </p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
      * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
      * in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.</p>
@@ -200,7 +200,7 @@ namespace Model
      * but the total number of data resources cannot exceed 250 across all event
      * selectors in a trail. This limit does not apply if you configure resource
      * logging for all data events. </p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
      * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
      * in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.</p>
@@ -213,7 +213,7 @@ namespace Model
      * but the total number of data resources cannot exceed 250 across all event
      * selectors in a trail. This limit does not apply if you configure resource
      * logging for all data events. </p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
      * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
      * in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.</p>
@@ -226,7 +226,7 @@ namespace Model
      * but the total number of data resources cannot exceed 250 across all event
      * selectors in a trail. This limit does not apply if you configure resource
      * logging for all data events. </p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
      * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
      * in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.</p>
@@ -239,7 +239,7 @@ namespace Model
      * but the total number of data resources cannot exceed 250 across all event
      * selectors in a trail. This limit does not apply if you configure resource
      * logging for all data events. </p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
      * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
      * in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.</p>

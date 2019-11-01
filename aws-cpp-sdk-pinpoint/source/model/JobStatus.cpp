@@ -31,8 +31,10 @@ namespace Aws
       {
 
         static const int CREATED_HASH = HashingUtils::HashString("CREATED");
+        static const int PREPARING_FOR_INITIALIZATION_HASH = HashingUtils::HashString("PREPARING_FOR_INITIALIZATION");
         static const int INITIALIZING_HASH = HashingUtils::HashString("INITIALIZING");
         static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
+        static const int PENDING_JOB_HASH = HashingUtils::HashString("PENDING_JOB");
         static const int COMPLETING_HASH = HashingUtils::HashString("COMPLETING");
         static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
         static const int FAILING_HASH = HashingUtils::HashString("FAILING");
@@ -46,6 +48,10 @@ namespace Aws
           {
             return JobStatus::CREATED;
           }
+          else if (hashCode == PREPARING_FOR_INITIALIZATION_HASH)
+          {
+            return JobStatus::PREPARING_FOR_INITIALIZATION;
+          }
           else if (hashCode == INITIALIZING_HASH)
           {
             return JobStatus::INITIALIZING;
@@ -53,6 +59,10 @@ namespace Aws
           else if (hashCode == PROCESSING_HASH)
           {
             return JobStatus::PROCESSING;
+          }
+          else if (hashCode == PENDING_JOB_HASH)
+          {
+            return JobStatus::PENDING_JOB;
           }
           else if (hashCode == COMPLETING_HASH)
           {
@@ -86,10 +96,14 @@ namespace Aws
           {
           case JobStatus::CREATED:
             return "CREATED";
+          case JobStatus::PREPARING_FOR_INITIALIZATION:
+            return "PREPARING_FOR_INITIALIZATION";
           case JobStatus::INITIALIZING:
             return "INITIALIZING";
           case JobStatus::PROCESSING:
             return "PROCESSING";
+          case JobStatus::PENDING_JOB:
+            return "PENDING_JOB";
           case JobStatus::COMPLETING:
             return "COMPLETING";
           case JobStatus::COMPLETED:

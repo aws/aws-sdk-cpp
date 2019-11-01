@@ -182,52 +182,64 @@ namespace Model
 
 
     /**
-     * <p>The status of the treatment.</p>
+     * <p>The current status of the treatment.</p>
      */
     inline const CampaignState& GetState() const{ return m_state; }
 
     /**
-     * <p>The status of the treatment.</p>
+     * <p>The current status of the treatment.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The status of the treatment.</p>
+     * <p>The current status of the treatment.</p>
      */
     inline void SetState(const CampaignState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The status of the treatment.</p>
+     * <p>The current status of the treatment.</p>
      */
     inline void SetState(CampaignState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The status of the treatment.</p>
+     * <p>The current status of the treatment.</p>
      */
     inline TreatmentResource& WithState(const CampaignState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The status of the treatment.</p>
+     * <p>The current status of the treatment.</p>
      */
     inline TreatmentResource& WithState(CampaignState&& value) { SetState(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The message template to use for the treatment.</p>
+     */
     inline const TemplateConfiguration& GetTemplateConfiguration() const{ return m_templateConfiguration; }
 
-    
+    /**
+     * <p>The message template to use for the treatment.</p>
+     */
     inline bool TemplateConfigurationHasBeenSet() const { return m_templateConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>The message template to use for the treatment.</p>
+     */
     inline void SetTemplateConfiguration(const TemplateConfiguration& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = value; }
 
-    
+    /**
+     * <p>The message template to use for the treatment.</p>
+     */
     inline void SetTemplateConfiguration(TemplateConfiguration&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>The message template to use for the treatment.</p>
+     */
     inline TreatmentResource& WithTemplateConfiguration(const TemplateConfiguration& value) { SetTemplateConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>The message template to use for the treatment.</p>
+     */
     inline TreatmentResource& WithTemplateConfiguration(TemplateConfiguration&& value) { SetTemplateConfiguration(std::move(value)); return *this;}
 
 

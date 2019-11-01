@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
-#include <aws/pinpoint/model/Action.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint/model/Action.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
@@ -50,6 +50,183 @@ namespace Model
     APNSMessage(Aws::Utils::Json::JsonView jsonValue);
     APNSMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The type of push notification to send. Valid values are:</p> <ul><li><p>alert
+     * - For a standard notification that's displayed on recipients' devices and
+     * prompts a recipient to interact with the notification.</p></li>
+     * <li><p>background - For a silent notification that delivers content in the
+     * background and isn't displayed on recipients' devices.</p></li>
+     * <li><p>complication - For a notification that contains update information for an
+     * app’s complication timeline.</p></li> <li><p>fileprovider - For a notification
+     * that signals changes to a File Provider extension.</p></li> <li><p>mdm - For a
+     * notification that tells managed devices to contact the MDM server.</p></li>
+     * <li><p>voip - For a notification that provides information about an incoming
+     * VoIP call.</p></li></ul> <p>Amazon Pinpoint specifies this value in the
+     * apns-push-type request header when it sends the notification message to APNs. If
+     * you don't specify a value for this property, Amazon Pinpoint sets the value to
+     * alert or background automatically, based on the value that you specify for the
+     * SilentPush or RawContent property of the message.</p> <p>For more information
+     * about the apns-push-type request header, see <a
+     * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns">Sending
+     * Notification Requests to APNs</a> on the Apple Developer website.</p>
+     */
+    inline const Aws::String& GetAPNSPushType() const{ return m_aPNSPushType; }
+
+    /**
+     * <p>The type of push notification to send. Valid values are:</p> <ul><li><p>alert
+     * - For a standard notification that's displayed on recipients' devices and
+     * prompts a recipient to interact with the notification.</p></li>
+     * <li><p>background - For a silent notification that delivers content in the
+     * background and isn't displayed on recipients' devices.</p></li>
+     * <li><p>complication - For a notification that contains update information for an
+     * app’s complication timeline.</p></li> <li><p>fileprovider - For a notification
+     * that signals changes to a File Provider extension.</p></li> <li><p>mdm - For a
+     * notification that tells managed devices to contact the MDM server.</p></li>
+     * <li><p>voip - For a notification that provides information about an incoming
+     * VoIP call.</p></li></ul> <p>Amazon Pinpoint specifies this value in the
+     * apns-push-type request header when it sends the notification message to APNs. If
+     * you don't specify a value for this property, Amazon Pinpoint sets the value to
+     * alert or background automatically, based on the value that you specify for the
+     * SilentPush or RawContent property of the message.</p> <p>For more information
+     * about the apns-push-type request header, see <a
+     * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns">Sending
+     * Notification Requests to APNs</a> on the Apple Developer website.</p>
+     */
+    inline bool APNSPushTypeHasBeenSet() const { return m_aPNSPushTypeHasBeenSet; }
+
+    /**
+     * <p>The type of push notification to send. Valid values are:</p> <ul><li><p>alert
+     * - For a standard notification that's displayed on recipients' devices and
+     * prompts a recipient to interact with the notification.</p></li>
+     * <li><p>background - For a silent notification that delivers content in the
+     * background and isn't displayed on recipients' devices.</p></li>
+     * <li><p>complication - For a notification that contains update information for an
+     * app’s complication timeline.</p></li> <li><p>fileprovider - For a notification
+     * that signals changes to a File Provider extension.</p></li> <li><p>mdm - For a
+     * notification that tells managed devices to contact the MDM server.</p></li>
+     * <li><p>voip - For a notification that provides information about an incoming
+     * VoIP call.</p></li></ul> <p>Amazon Pinpoint specifies this value in the
+     * apns-push-type request header when it sends the notification message to APNs. If
+     * you don't specify a value for this property, Amazon Pinpoint sets the value to
+     * alert or background automatically, based on the value that you specify for the
+     * SilentPush or RawContent property of the message.</p> <p>For more information
+     * about the apns-push-type request header, see <a
+     * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns">Sending
+     * Notification Requests to APNs</a> on the Apple Developer website.</p>
+     */
+    inline void SetAPNSPushType(const Aws::String& value) { m_aPNSPushTypeHasBeenSet = true; m_aPNSPushType = value; }
+
+    /**
+     * <p>The type of push notification to send. Valid values are:</p> <ul><li><p>alert
+     * - For a standard notification that's displayed on recipients' devices and
+     * prompts a recipient to interact with the notification.</p></li>
+     * <li><p>background - For a silent notification that delivers content in the
+     * background and isn't displayed on recipients' devices.</p></li>
+     * <li><p>complication - For a notification that contains update information for an
+     * app’s complication timeline.</p></li> <li><p>fileprovider - For a notification
+     * that signals changes to a File Provider extension.</p></li> <li><p>mdm - For a
+     * notification that tells managed devices to contact the MDM server.</p></li>
+     * <li><p>voip - For a notification that provides information about an incoming
+     * VoIP call.</p></li></ul> <p>Amazon Pinpoint specifies this value in the
+     * apns-push-type request header when it sends the notification message to APNs. If
+     * you don't specify a value for this property, Amazon Pinpoint sets the value to
+     * alert or background automatically, based on the value that you specify for the
+     * SilentPush or RawContent property of the message.</p> <p>For more information
+     * about the apns-push-type request header, see <a
+     * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns">Sending
+     * Notification Requests to APNs</a> on the Apple Developer website.</p>
+     */
+    inline void SetAPNSPushType(Aws::String&& value) { m_aPNSPushTypeHasBeenSet = true; m_aPNSPushType = std::move(value); }
+
+    /**
+     * <p>The type of push notification to send. Valid values are:</p> <ul><li><p>alert
+     * - For a standard notification that's displayed on recipients' devices and
+     * prompts a recipient to interact with the notification.</p></li>
+     * <li><p>background - For a silent notification that delivers content in the
+     * background and isn't displayed on recipients' devices.</p></li>
+     * <li><p>complication - For a notification that contains update information for an
+     * app’s complication timeline.</p></li> <li><p>fileprovider - For a notification
+     * that signals changes to a File Provider extension.</p></li> <li><p>mdm - For a
+     * notification that tells managed devices to contact the MDM server.</p></li>
+     * <li><p>voip - For a notification that provides information about an incoming
+     * VoIP call.</p></li></ul> <p>Amazon Pinpoint specifies this value in the
+     * apns-push-type request header when it sends the notification message to APNs. If
+     * you don't specify a value for this property, Amazon Pinpoint sets the value to
+     * alert or background automatically, based on the value that you specify for the
+     * SilentPush or RawContent property of the message.</p> <p>For more information
+     * about the apns-push-type request header, see <a
+     * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns">Sending
+     * Notification Requests to APNs</a> on the Apple Developer website.</p>
+     */
+    inline void SetAPNSPushType(const char* value) { m_aPNSPushTypeHasBeenSet = true; m_aPNSPushType.assign(value); }
+
+    /**
+     * <p>The type of push notification to send. Valid values are:</p> <ul><li><p>alert
+     * - For a standard notification that's displayed on recipients' devices and
+     * prompts a recipient to interact with the notification.</p></li>
+     * <li><p>background - For a silent notification that delivers content in the
+     * background and isn't displayed on recipients' devices.</p></li>
+     * <li><p>complication - For a notification that contains update information for an
+     * app’s complication timeline.</p></li> <li><p>fileprovider - For a notification
+     * that signals changes to a File Provider extension.</p></li> <li><p>mdm - For a
+     * notification that tells managed devices to contact the MDM server.</p></li>
+     * <li><p>voip - For a notification that provides information about an incoming
+     * VoIP call.</p></li></ul> <p>Amazon Pinpoint specifies this value in the
+     * apns-push-type request header when it sends the notification message to APNs. If
+     * you don't specify a value for this property, Amazon Pinpoint sets the value to
+     * alert or background automatically, based on the value that you specify for the
+     * SilentPush or RawContent property of the message.</p> <p>For more information
+     * about the apns-push-type request header, see <a
+     * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns">Sending
+     * Notification Requests to APNs</a> on the Apple Developer website.</p>
+     */
+    inline APNSMessage& WithAPNSPushType(const Aws::String& value) { SetAPNSPushType(value); return *this;}
+
+    /**
+     * <p>The type of push notification to send. Valid values are:</p> <ul><li><p>alert
+     * - For a standard notification that's displayed on recipients' devices and
+     * prompts a recipient to interact with the notification.</p></li>
+     * <li><p>background - For a silent notification that delivers content in the
+     * background and isn't displayed on recipients' devices.</p></li>
+     * <li><p>complication - For a notification that contains update information for an
+     * app’s complication timeline.</p></li> <li><p>fileprovider - For a notification
+     * that signals changes to a File Provider extension.</p></li> <li><p>mdm - For a
+     * notification that tells managed devices to contact the MDM server.</p></li>
+     * <li><p>voip - For a notification that provides information about an incoming
+     * VoIP call.</p></li></ul> <p>Amazon Pinpoint specifies this value in the
+     * apns-push-type request header when it sends the notification message to APNs. If
+     * you don't specify a value for this property, Amazon Pinpoint sets the value to
+     * alert or background automatically, based on the value that you specify for the
+     * SilentPush or RawContent property of the message.</p> <p>For more information
+     * about the apns-push-type request header, see <a
+     * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns">Sending
+     * Notification Requests to APNs</a> on the Apple Developer website.</p>
+     */
+    inline APNSMessage& WithAPNSPushType(Aws::String&& value) { SetAPNSPushType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of push notification to send. Valid values are:</p> <ul><li><p>alert
+     * - For a standard notification that's displayed on recipients' devices and
+     * prompts a recipient to interact with the notification.</p></li>
+     * <li><p>background - For a silent notification that delivers content in the
+     * background and isn't displayed on recipients' devices.</p></li>
+     * <li><p>complication - For a notification that contains update information for an
+     * app’s complication timeline.</p></li> <li><p>fileprovider - For a notification
+     * that signals changes to a File Provider extension.</p></li> <li><p>mdm - For a
+     * notification that tells managed devices to contact the MDM server.</p></li>
+     * <li><p>voip - For a notification that provides information about an incoming
+     * VoIP call.</p></li></ul> <p>Amazon Pinpoint specifies this value in the
+     * apns-push-type request header when it sends the notification message to APNs. If
+     * you don't specify a value for this property, Amazon Pinpoint sets the value to
+     * alert or background automatically, based on the value that you specify for the
+     * SilentPush or RawContent property of the message.</p> <p>For more information
+     * about the apns-push-type request header, see <a
+     * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns">Sending
+     * Notification Requests to APNs</a> on the Apple Developer website.</p>
+     */
+    inline APNSMessage& WithAPNSPushType(const char* value) { SetAPNSPushType(value); return *this;}
 
 
     /**
@@ -445,57 +622,49 @@ namespace Model
 
     /**
      * <p>The authentication method that you want Amazon Pinpoint to use when
-     * authenticating with Apple Push Notification service (APNs), CERTIFICATE or
-     * TOKEN.</p>
+     * authenticating with APNs, CERTIFICATE or TOKEN.</p>
      */
     inline const Aws::String& GetPreferredAuthenticationMethod() const{ return m_preferredAuthenticationMethod; }
 
     /**
      * <p>The authentication method that you want Amazon Pinpoint to use when
-     * authenticating with Apple Push Notification service (APNs), CERTIFICATE or
-     * TOKEN.</p>
+     * authenticating with APNs, CERTIFICATE or TOKEN.</p>
      */
     inline bool PreferredAuthenticationMethodHasBeenSet() const { return m_preferredAuthenticationMethodHasBeenSet; }
 
     /**
      * <p>The authentication method that you want Amazon Pinpoint to use when
-     * authenticating with Apple Push Notification service (APNs), CERTIFICATE or
-     * TOKEN.</p>
+     * authenticating with APNs, CERTIFICATE or TOKEN.</p>
      */
     inline void SetPreferredAuthenticationMethod(const Aws::String& value) { m_preferredAuthenticationMethodHasBeenSet = true; m_preferredAuthenticationMethod = value; }
 
     /**
      * <p>The authentication method that you want Amazon Pinpoint to use when
-     * authenticating with Apple Push Notification service (APNs), CERTIFICATE or
-     * TOKEN.</p>
+     * authenticating with APNs, CERTIFICATE or TOKEN.</p>
      */
     inline void SetPreferredAuthenticationMethod(Aws::String&& value) { m_preferredAuthenticationMethodHasBeenSet = true; m_preferredAuthenticationMethod = std::move(value); }
 
     /**
      * <p>The authentication method that you want Amazon Pinpoint to use when
-     * authenticating with Apple Push Notification service (APNs), CERTIFICATE or
-     * TOKEN.</p>
+     * authenticating with APNs, CERTIFICATE or TOKEN.</p>
      */
     inline void SetPreferredAuthenticationMethod(const char* value) { m_preferredAuthenticationMethodHasBeenSet = true; m_preferredAuthenticationMethod.assign(value); }
 
     /**
      * <p>The authentication method that you want Amazon Pinpoint to use when
-     * authenticating with Apple Push Notification service (APNs), CERTIFICATE or
-     * TOKEN.</p>
+     * authenticating with APNs, CERTIFICATE or TOKEN.</p>
      */
     inline APNSMessage& WithPreferredAuthenticationMethod(const Aws::String& value) { SetPreferredAuthenticationMethod(value); return *this;}
 
     /**
      * <p>The authentication method that you want Amazon Pinpoint to use when
-     * authenticating with Apple Push Notification service (APNs), CERTIFICATE or
-     * TOKEN.</p>
+     * authenticating with APNs, CERTIFICATE or TOKEN.</p>
      */
     inline APNSMessage& WithPreferredAuthenticationMethod(Aws::String&& value) { SetPreferredAuthenticationMethod(std::move(value)); return *this;}
 
     /**
      * <p>The authentication method that you want Amazon Pinpoint to use when
-     * authenticating with Apple Push Notification service (APNs), CERTIFICATE or
-     * TOKEN.</p>
+     * authenticating with APNs, CERTIFICATE or TOKEN.</p>
      */
     inline APNSMessage& WithPreferredAuthenticationMethod(const char* value) { SetPreferredAuthenticationMethod(value); return *this;}
 
@@ -615,14 +784,14 @@ namespace Model
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p> <note><p>If you specify the raw
-     * content of an APNs push notification, the message payload has to include the
-     * content-available key. The value of the content-available key has to be an
-     * integer, and can only be 0 or 1. If you're sending a standard notification, set
-     * the value of content-available to 0. If you're sending a silent (background)
-     * notification, set the value of content-available to 1. Additionally, silent
-     * notification payloads can't include the alert, badge, or sound keys. For more
-     * information, see <a
+     * message. This value overrides all other content for the message.</p> <note><p>If
+     * you specify the raw content of an APNs push notification, the message payload
+     * has to include the content-available key. The value of the content-available key
+     * has to be an integer, and can only be 0 or 1. If you're sending a standard
+     * notification, set the value of content-available to 0. If you're sending a
+     * silent (background) notification, set the value of content-available to 1.
+     * Additionally, silent notification payloads can't include the alert, badge, or
+     * sound keys. For more information, see <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
@@ -632,14 +801,14 @@ namespace Model
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p> <note><p>If you specify the raw
-     * content of an APNs push notification, the message payload has to include the
-     * content-available key. The value of the content-available key has to be an
-     * integer, and can only be 0 or 1. If you're sending a standard notification, set
-     * the value of content-available to 0. If you're sending a silent (background)
-     * notification, set the value of content-available to 1. Additionally, silent
-     * notification payloads can't include the alert, badge, or sound keys. For more
-     * information, see <a
+     * message. This value overrides all other content for the message.</p> <note><p>If
+     * you specify the raw content of an APNs push notification, the message payload
+     * has to include the content-available key. The value of the content-available key
+     * has to be an integer, and can only be 0 or 1. If you're sending a standard
+     * notification, set the value of content-available to 0. If you're sending a
+     * silent (background) notification, set the value of content-available to 1.
+     * Additionally, silent notification payloads can't include the alert, badge, or
+     * sound keys. For more information, see <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
@@ -649,14 +818,14 @@ namespace Model
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p> <note><p>If you specify the raw
-     * content of an APNs push notification, the message payload has to include the
-     * content-available key. The value of the content-available key has to be an
-     * integer, and can only be 0 or 1. If you're sending a standard notification, set
-     * the value of content-available to 0. If you're sending a silent (background)
-     * notification, set the value of content-available to 1. Additionally, silent
-     * notification payloads can't include the alert, badge, or sound keys. For more
-     * information, see <a
+     * message. This value overrides all other content for the message.</p> <note><p>If
+     * you specify the raw content of an APNs push notification, the message payload
+     * has to include the content-available key. The value of the content-available key
+     * has to be an integer, and can only be 0 or 1. If you're sending a standard
+     * notification, set the value of content-available to 0. If you're sending a
+     * silent (background) notification, set the value of content-available to 1.
+     * Additionally, silent notification payloads can't include the alert, badge, or
+     * sound keys. For more information, see <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
@@ -666,14 +835,14 @@ namespace Model
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p> <note><p>If you specify the raw
-     * content of an APNs push notification, the message payload has to include the
-     * content-available key. The value of the content-available key has to be an
-     * integer, and can only be 0 or 1. If you're sending a standard notification, set
-     * the value of content-available to 0. If you're sending a silent (background)
-     * notification, set the value of content-available to 1. Additionally, silent
-     * notification payloads can't include the alert, badge, or sound keys. For more
-     * information, see <a
+     * message. This value overrides all other content for the message.</p> <note><p>If
+     * you specify the raw content of an APNs push notification, the message payload
+     * has to include the content-available key. The value of the content-available key
+     * has to be an integer, and can only be 0 or 1. If you're sending a standard
+     * notification, set the value of content-available to 0. If you're sending a
+     * silent (background) notification, set the value of content-available to 1.
+     * Additionally, silent notification payloads can't include the alert, badge, or
+     * sound keys. For more information, see <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
@@ -683,14 +852,14 @@ namespace Model
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p> <note><p>If you specify the raw
-     * content of an APNs push notification, the message payload has to include the
-     * content-available key. The value of the content-available key has to be an
-     * integer, and can only be 0 or 1. If you're sending a standard notification, set
-     * the value of content-available to 0. If you're sending a silent (background)
-     * notification, set the value of content-available to 1. Additionally, silent
-     * notification payloads can't include the alert, badge, or sound keys. For more
-     * information, see <a
+     * message. This value overrides all other content for the message.</p> <note><p>If
+     * you specify the raw content of an APNs push notification, the message payload
+     * has to include the content-available key. The value of the content-available key
+     * has to be an integer, and can only be 0 or 1. If you're sending a standard
+     * notification, set the value of content-available to 0. If you're sending a
+     * silent (background) notification, set the value of content-available to 1.
+     * Additionally, silent notification payloads can't include the alert, badge, or
+     * sound keys. For more information, see <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
@@ -700,14 +869,14 @@ namespace Model
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p> <note><p>If you specify the raw
-     * content of an APNs push notification, the message payload has to include the
-     * content-available key. The value of the content-available key has to be an
-     * integer, and can only be 0 or 1. If you're sending a standard notification, set
-     * the value of content-available to 0. If you're sending a silent (background)
-     * notification, set the value of content-available to 1. Additionally, silent
-     * notification payloads can't include the alert, badge, or sound keys. For more
-     * information, see <a
+     * message. This value overrides all other content for the message.</p> <note><p>If
+     * you specify the raw content of an APNs push notification, the message payload
+     * has to include the content-available key. The value of the content-available key
+     * has to be an integer, and can only be 0 or 1. If you're sending a standard
+     * notification, set the value of content-available to 0. If you're sending a
+     * silent (background) notification, set the value of content-available to 1.
+     * Additionally, silent notification payloads can't include the alert, badge, or
+     * sound keys. For more information, see <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
@@ -717,14 +886,14 @@ namespace Model
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p> <note><p>If you specify the raw
-     * content of an APNs push notification, the message payload has to include the
-     * content-available key. The value of the content-available key has to be an
-     * integer, and can only be 0 or 1. If you're sending a standard notification, set
-     * the value of content-available to 0. If you're sending a silent (background)
-     * notification, set the value of content-available to 1. Additionally, silent
-     * notification payloads can't include the alert, badge, or sound keys. For more
-     * information, see <a
+     * message. This value overrides all other content for the message.</p> <note><p>If
+     * you specify the raw content of an APNs push notification, the message payload
+     * has to include the content-available key. The value of the content-available key
+     * has to be an integer, and can only be 0 or 1. If you're sending a standard
+     * notification, set the value of content-available to 0. If you're sending a
+     * silent (background) notification, set the value of content-available to 1.
+     * Additionally, silent notification payloads can't include the alert, badge, or
+     * sound keys. For more information, see <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
@@ -734,14 +903,14 @@ namespace Model
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p> <note><p>If you specify the raw
-     * content of an APNs push notification, the message payload has to include the
-     * content-available key. The value of the content-available key has to be an
-     * integer, and can only be 0 or 1. If you're sending a standard notification, set
-     * the value of content-available to 0. If you're sending a silent (background)
-     * notification, set the value of content-available to 1. Additionally, silent
-     * notification payloads can't include the alert, badge, or sound keys. For more
-     * information, see <a
+     * message. This value overrides all other content for the message.</p> <note><p>If
+     * you specify the raw content of an APNs push notification, the message payload
+     * has to include the content-available key. The value of the content-available key
+     * has to be an integer, and can only be 0 or 1. If you're sending a standard
+     * notification, set the value of content-available to 0. If you're sending a
+     * silent (background) notification, set the value of content-available to 1.
+     * Additionally, silent notification payloads can't include the alert, badge, or
+     * sound keys. For more information, see <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
@@ -1189,6 +1358,9 @@ namespace Model
     inline APNSMessage& WithUrl(const char* value) { SetUrl(value); return *this;}
 
   private:
+
+    Aws::String m_aPNSPushType;
+    bool m_aPNSPushTypeHasBeenSet;
 
     Action m_action;
     bool m_actionHasBeenSet;

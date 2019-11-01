@@ -352,50 +352,50 @@ namespace Model
 
 
     /**
-     * <p>The state of the activity. Possible values are: PENDING, INITIALIZING,
-     * RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
+     * <p>The current status of the activity. Possible values are: PENDING,
+     * INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the activity. Possible values are: PENDING, INITIALIZING,
-     * RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
+     * <p>The current status of the activity. Possible values are: PENDING,
+     * INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The state of the activity. Possible values are: PENDING, INITIALIZING,
-     * RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
+     * <p>The current status of the activity. Possible values are: PENDING,
+     * INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
      */
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the activity. Possible values are: PENDING, INITIALIZING,
-     * RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
+     * <p>The current status of the activity. Possible values are: PENDING,
+     * INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
      */
     inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The state of the activity. Possible values are: PENDING, INITIALIZING,
-     * RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
+     * <p>The current status of the activity. Possible values are: PENDING,
+     * INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
      */
     inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
 
     /**
-     * <p>The state of the activity. Possible values are: PENDING, INITIALIZING,
-     * RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
+     * <p>The current status of the activity. Possible values are: PENDING,
+     * INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
      */
     inline ActivityResponse& WithState(const Aws::String& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the activity. Possible values are: PENDING, INITIALIZING,
-     * RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
+     * <p>The current status of the activity. Possible values are: PENDING,
+     * INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
      */
     inline ActivityResponse& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
 
     /**
-     * <p>The state of the activity. Possible values are: PENDING, INITIALIZING,
-     * RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
+     * <p>The current status of the activity. Possible values are: PENDING,
+     * INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
      */
     inline ActivityResponse& WithState(const char* value) { SetState(value); return *this;}
 

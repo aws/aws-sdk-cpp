@@ -218,98 +218,98 @@ namespace Model
 
 
     /**
-     * <p>The default quiet time for campaigns in the application. Quiet time is a
-     * specific time range when campaigns don't send messages to endpoints, if all the
+     * <p>The default quiet time for campaigns and journeys in the application. Quiet
+     * time is a specific time range when messages aren't sent to endpoints, if all the
      * following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone
      * property of the endpoint is set to a valid value.</p></li> <li><p>The current
      * time in the endpoint's time zone is later than or equal to the time specified by
-     * the QuietTime.Start property for the application (or a campaign that has custom
-     * quiet time settings).</p></li> <li><p>The current time in the endpoint's time
-     * zone is earlier than or equal to the time specified by the QuietTime.End
-     * property for the application (or a campaign that has custom quiet time
-     * settings).</p></li></ul> <p>If any of the preceding conditions isn't met, the
-     * endpoint will receive messages from a campaign, even if quiet time is
-     * enabled.</p>
+     * the QuietTime.Start property for the application (or a campaign or journey that
+     * has custom quiet time settings).</p></li> <li><p>The current time in the
+     * endpoint's time zone is earlier than or equal to the time specified by the
+     * QuietTime.End property for the application (or a campaign or journey that has
+     * custom quiet time settings).</p></li></ul> <p>If any of the preceding conditions
+     * isn't met, the endpoint will receive messages from a campaign or journey, even
+     * if quiet time is enabled.</p>
      */
     inline const QuietTime& GetQuietTime() const{ return m_quietTime; }
 
     /**
-     * <p>The default quiet time for campaigns in the application. Quiet time is a
-     * specific time range when campaigns don't send messages to endpoints, if all the
+     * <p>The default quiet time for campaigns and journeys in the application. Quiet
+     * time is a specific time range when messages aren't sent to endpoints, if all the
      * following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone
      * property of the endpoint is set to a valid value.</p></li> <li><p>The current
      * time in the endpoint's time zone is later than or equal to the time specified by
-     * the QuietTime.Start property for the application (or a campaign that has custom
-     * quiet time settings).</p></li> <li><p>The current time in the endpoint's time
-     * zone is earlier than or equal to the time specified by the QuietTime.End
-     * property for the application (or a campaign that has custom quiet time
-     * settings).</p></li></ul> <p>If any of the preceding conditions isn't met, the
-     * endpoint will receive messages from a campaign, even if quiet time is
-     * enabled.</p>
+     * the QuietTime.Start property for the application (or a campaign or journey that
+     * has custom quiet time settings).</p></li> <li><p>The current time in the
+     * endpoint's time zone is earlier than or equal to the time specified by the
+     * QuietTime.End property for the application (or a campaign or journey that has
+     * custom quiet time settings).</p></li></ul> <p>If any of the preceding conditions
+     * isn't met, the endpoint will receive messages from a campaign or journey, even
+     * if quiet time is enabled.</p>
      */
     inline bool QuietTimeHasBeenSet() const { return m_quietTimeHasBeenSet; }
 
     /**
-     * <p>The default quiet time for campaigns in the application. Quiet time is a
-     * specific time range when campaigns don't send messages to endpoints, if all the
+     * <p>The default quiet time for campaigns and journeys in the application. Quiet
+     * time is a specific time range when messages aren't sent to endpoints, if all the
      * following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone
      * property of the endpoint is set to a valid value.</p></li> <li><p>The current
      * time in the endpoint's time zone is later than or equal to the time specified by
-     * the QuietTime.Start property for the application (or a campaign that has custom
-     * quiet time settings).</p></li> <li><p>The current time in the endpoint's time
-     * zone is earlier than or equal to the time specified by the QuietTime.End
-     * property for the application (or a campaign that has custom quiet time
-     * settings).</p></li></ul> <p>If any of the preceding conditions isn't met, the
-     * endpoint will receive messages from a campaign, even if quiet time is
-     * enabled.</p>
+     * the QuietTime.Start property for the application (or a campaign or journey that
+     * has custom quiet time settings).</p></li> <li><p>The current time in the
+     * endpoint's time zone is earlier than or equal to the time specified by the
+     * QuietTime.End property for the application (or a campaign or journey that has
+     * custom quiet time settings).</p></li></ul> <p>If any of the preceding conditions
+     * isn't met, the endpoint will receive messages from a campaign or journey, even
+     * if quiet time is enabled.</p>
      */
     inline void SetQuietTime(const QuietTime& value) { m_quietTimeHasBeenSet = true; m_quietTime = value; }
 
     /**
-     * <p>The default quiet time for campaigns in the application. Quiet time is a
-     * specific time range when campaigns don't send messages to endpoints, if all the
+     * <p>The default quiet time for campaigns and journeys in the application. Quiet
+     * time is a specific time range when messages aren't sent to endpoints, if all the
      * following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone
      * property of the endpoint is set to a valid value.</p></li> <li><p>The current
      * time in the endpoint's time zone is later than or equal to the time specified by
-     * the QuietTime.Start property for the application (or a campaign that has custom
-     * quiet time settings).</p></li> <li><p>The current time in the endpoint's time
-     * zone is earlier than or equal to the time specified by the QuietTime.End
-     * property for the application (or a campaign that has custom quiet time
-     * settings).</p></li></ul> <p>If any of the preceding conditions isn't met, the
-     * endpoint will receive messages from a campaign, even if quiet time is
-     * enabled.</p>
+     * the QuietTime.Start property for the application (or a campaign or journey that
+     * has custom quiet time settings).</p></li> <li><p>The current time in the
+     * endpoint's time zone is earlier than or equal to the time specified by the
+     * QuietTime.End property for the application (or a campaign or journey that has
+     * custom quiet time settings).</p></li></ul> <p>If any of the preceding conditions
+     * isn't met, the endpoint will receive messages from a campaign or journey, even
+     * if quiet time is enabled.</p>
      */
     inline void SetQuietTime(QuietTime&& value) { m_quietTimeHasBeenSet = true; m_quietTime = std::move(value); }
 
     /**
-     * <p>The default quiet time for campaigns in the application. Quiet time is a
-     * specific time range when campaigns don't send messages to endpoints, if all the
+     * <p>The default quiet time for campaigns and journeys in the application. Quiet
+     * time is a specific time range when messages aren't sent to endpoints, if all the
      * following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone
      * property of the endpoint is set to a valid value.</p></li> <li><p>The current
      * time in the endpoint's time zone is later than or equal to the time specified by
-     * the QuietTime.Start property for the application (or a campaign that has custom
-     * quiet time settings).</p></li> <li><p>The current time in the endpoint's time
-     * zone is earlier than or equal to the time specified by the QuietTime.End
-     * property for the application (or a campaign that has custom quiet time
-     * settings).</p></li></ul> <p>If any of the preceding conditions isn't met, the
-     * endpoint will receive messages from a campaign, even if quiet time is
-     * enabled.</p>
+     * the QuietTime.Start property for the application (or a campaign or journey that
+     * has custom quiet time settings).</p></li> <li><p>The current time in the
+     * endpoint's time zone is earlier than or equal to the time specified by the
+     * QuietTime.End property for the application (or a campaign or journey that has
+     * custom quiet time settings).</p></li></ul> <p>If any of the preceding conditions
+     * isn't met, the endpoint will receive messages from a campaign or journey, even
+     * if quiet time is enabled.</p>
      */
     inline ApplicationSettingsResource& WithQuietTime(const QuietTime& value) { SetQuietTime(value); return *this;}
 
     /**
-     * <p>The default quiet time for campaigns in the application. Quiet time is a
-     * specific time range when campaigns don't send messages to endpoints, if all the
+     * <p>The default quiet time for campaigns and journeys in the application. Quiet
+     * time is a specific time range when messages aren't sent to endpoints, if all the
      * following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone
      * property of the endpoint is set to a valid value.</p></li> <li><p>The current
      * time in the endpoint's time zone is later than or equal to the time specified by
-     * the QuietTime.Start property for the application (or a campaign that has custom
-     * quiet time settings).</p></li> <li><p>The current time in the endpoint's time
-     * zone is earlier than or equal to the time specified by the QuietTime.End
-     * property for the application (or a campaign that has custom quiet time
-     * settings).</p></li></ul> <p>If any of the preceding conditions isn't met, the
-     * endpoint will receive messages from a campaign, even if quiet time is
-     * enabled.</p>
+     * the QuietTime.Start property for the application (or a campaign or journey that
+     * has custom quiet time settings).</p></li> <li><p>The current time in the
+     * endpoint's time zone is earlier than or equal to the time specified by the
+     * QuietTime.End property for the application (or a campaign or journey that has
+     * custom quiet time settings).</p></li></ul> <p>If any of the preceding conditions
+     * isn't met, the endpoint will receive messages from a campaign or journey, even
+     * if quiet time is enabled.</p>
      */
     inline ApplicationSettingsResource& WithQuietTime(QuietTime&& value) { SetQuietTime(std::move(value)); return *this;}
 

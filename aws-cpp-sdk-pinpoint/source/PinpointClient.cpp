@@ -35,6 +35,7 @@
 #include <aws/pinpoint/model/CreateEmailTemplateRequest.h>
 #include <aws/pinpoint/model/CreateExportJobRequest.h>
 #include <aws/pinpoint/model/CreateImportJobRequest.h>
+#include <aws/pinpoint/model/CreateJourneyRequest.h>
 #include <aws/pinpoint/model/CreatePushTemplateRequest.h>
 #include <aws/pinpoint/model/CreateSegmentRequest.h>
 #include <aws/pinpoint/model/CreateSmsTemplateRequest.h>
@@ -51,6 +52,7 @@
 #include <aws/pinpoint/model/DeleteEndpointRequest.h>
 #include <aws/pinpoint/model/DeleteEventStreamRequest.h>
 #include <aws/pinpoint/model/DeleteGcmChannelRequest.h>
+#include <aws/pinpoint/model/DeleteJourneyRequest.h>
 #include <aws/pinpoint/model/DeletePushTemplateRequest.h>
 #include <aws/pinpoint/model/DeleteSegmentRequest.h>
 #include <aws/pinpoint/model/DeleteSmsChannelRequest.h>
@@ -83,6 +85,10 @@
 #include <aws/pinpoint/model/GetGcmChannelRequest.h>
 #include <aws/pinpoint/model/GetImportJobRequest.h>
 #include <aws/pinpoint/model/GetImportJobsRequest.h>
+#include <aws/pinpoint/model/GetJourneyRequest.h>
+#include <aws/pinpoint/model/GetJourneyDateRangeKpiRequest.h>
+#include <aws/pinpoint/model/GetJourneyExecutionActivityMetricsRequest.h>
+#include <aws/pinpoint/model/GetJourneyExecutionMetricsRequest.h>
 #include <aws/pinpoint/model/GetPushTemplateRequest.h>
 #include <aws/pinpoint/model/GetSegmentRequest.h>
 #include <aws/pinpoint/model/GetSegmentExportJobsRequest.h>
@@ -94,6 +100,7 @@
 #include <aws/pinpoint/model/GetSmsTemplateRequest.h>
 #include <aws/pinpoint/model/GetUserEndpointsRequest.h>
 #include <aws/pinpoint/model/GetVoiceChannelRequest.h>
+#include <aws/pinpoint/model/ListJourneysRequest.h>
 #include <aws/pinpoint/model/ListTagsForResourceRequest.h>
 #include <aws/pinpoint/model/ListTemplatesRequest.h>
 #include <aws/pinpoint/model/PhoneNumberValidateRequest.h>
@@ -117,6 +124,8 @@
 #include <aws/pinpoint/model/UpdateEndpointRequest.h>
 #include <aws/pinpoint/model/UpdateEndpointsBatchRequest.h>
 #include <aws/pinpoint/model/UpdateGcmChannelRequest.h>
+#include <aws/pinpoint/model/UpdateJourneyRequest.h>
+#include <aws/pinpoint/model/UpdateJourneyStateRequest.h>
 #include <aws/pinpoint/model/UpdatePushTemplateRequest.h>
 #include <aws/pinpoint/model/UpdateSegmentRequest.h>
 #include <aws/pinpoint/model/UpdateSmsChannelRequest.h>
@@ -396,6 +405,48 @@ void PinpointClient::CreateImportJobAsync(const CreateImportJobRequest& request,
 void PinpointClient::CreateImportJobAsyncHelper(const CreateImportJobRequest& request, const CreateImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateImportJob(request), context);
+}
+
+CreateJourneyOutcome PinpointClient::CreateJourney(const CreateJourneyRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateJourney", "Required field: ApplicationId, is not set");
+    return CreateJourneyOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/journeys";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateJourneyOutcome(CreateJourneyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateJourneyOutcome(outcome.GetError());
+  }
+}
+
+CreateJourneyOutcomeCallable PinpointClient::CreateJourneyCallable(const CreateJourneyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateJourneyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateJourney(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::CreateJourneyAsync(const CreateJourneyRequest& request, const CreateJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateJourneyAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::CreateJourneyAsyncHelper(const CreateJourneyRequest& request, const CreateJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateJourney(request), context);
 }
 
 CreatePushTemplateOutcome PinpointClient::CreatePushTemplate(const CreatePushTemplateRequest& request) const
@@ -1079,6 +1130,54 @@ void PinpointClient::DeleteGcmChannelAsync(const DeleteGcmChannelRequest& reques
 void PinpointClient::DeleteGcmChannelAsyncHelper(const DeleteGcmChannelRequest& request, const DeleteGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteGcmChannel(request), context);
+}
+
+DeleteJourneyOutcome PinpointClient::DeleteJourney(const DeleteJourneyRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteJourney", "Required field: ApplicationId, is not set");
+    return DeleteJourneyOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.JourneyIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteJourney", "Required field: JourneyId, is not set");
+    return DeleteJourneyOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JourneyId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/journeys/";
+  ss << request.GetJourneyId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteJourneyOutcome(DeleteJourneyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteJourneyOutcome(outcome.GetError());
+  }
+}
+
+DeleteJourneyOutcomeCallable PinpointClient::DeleteJourneyCallable(const DeleteJourneyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteJourneyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteJourney(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::DeleteJourneyAsync(const DeleteJourneyRequest& request, const DeleteJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteJourneyAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::DeleteJourneyAsyncHelper(const DeleteJourneyRequest& request, const DeleteJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteJourney(request), context);
 }
 
 DeletePushTemplateOutcome PinpointClient::DeletePushTemplate(const DeletePushTemplateRequest& request) const
@@ -2499,6 +2598,214 @@ void PinpointClient::GetImportJobsAsyncHelper(const GetImportJobsRequest& reques
   handler(this, request, GetImportJobs(request), context);
 }
 
+GetJourneyOutcome PinpointClient::GetJourney(const GetJourneyRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJourney", "Required field: ApplicationId, is not set");
+    return GetJourneyOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.JourneyIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJourney", "Required field: JourneyId, is not set");
+    return GetJourneyOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JourneyId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/journeys/";
+  ss << request.GetJourneyId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetJourneyOutcome(GetJourneyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetJourneyOutcome(outcome.GetError());
+  }
+}
+
+GetJourneyOutcomeCallable PinpointClient::GetJourneyCallable(const GetJourneyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetJourneyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetJourney(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetJourneyAsync(const GetJourneyRequest& request, const GetJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetJourneyAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetJourneyAsyncHelper(const GetJourneyRequest& request, const GetJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetJourney(request), context);
+}
+
+GetJourneyDateRangeKpiOutcome PinpointClient::GetJourneyDateRangeKpi(const GetJourneyDateRangeKpiRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJourneyDateRangeKpi", "Required field: ApplicationId, is not set");
+    return GetJourneyDateRangeKpiOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.JourneyIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJourneyDateRangeKpi", "Required field: JourneyId, is not set");
+    return GetJourneyDateRangeKpiOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JourneyId]", false));
+  }
+  if (!request.KpiNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJourneyDateRangeKpi", "Required field: KpiName, is not set");
+    return GetJourneyDateRangeKpiOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KpiName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/journeys/";
+  ss << request.GetJourneyId();
+  ss << "/kpis/daterange/";
+  ss << request.GetKpiName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetJourneyDateRangeKpiOutcome(GetJourneyDateRangeKpiResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetJourneyDateRangeKpiOutcome(outcome.GetError());
+  }
+}
+
+GetJourneyDateRangeKpiOutcomeCallable PinpointClient::GetJourneyDateRangeKpiCallable(const GetJourneyDateRangeKpiRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetJourneyDateRangeKpiOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetJourneyDateRangeKpi(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetJourneyDateRangeKpiAsync(const GetJourneyDateRangeKpiRequest& request, const GetJourneyDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetJourneyDateRangeKpiAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetJourneyDateRangeKpiAsyncHelper(const GetJourneyDateRangeKpiRequest& request, const GetJourneyDateRangeKpiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetJourneyDateRangeKpi(request), context);
+}
+
+GetJourneyExecutionActivityMetricsOutcome PinpointClient::GetJourneyExecutionActivityMetrics(const GetJourneyExecutionActivityMetricsRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJourneyExecutionActivityMetrics", "Required field: ApplicationId, is not set");
+    return GetJourneyExecutionActivityMetricsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.JourneyActivityIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJourneyExecutionActivityMetrics", "Required field: JourneyActivityId, is not set");
+    return GetJourneyExecutionActivityMetricsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JourneyActivityId]", false));
+  }
+  if (!request.JourneyIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJourneyExecutionActivityMetrics", "Required field: JourneyId, is not set");
+    return GetJourneyExecutionActivityMetricsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JourneyId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/journeys/";
+  ss << request.GetJourneyId();
+  ss << "/activities/";
+  ss << request.GetJourneyActivityId();
+  ss << "/execution-metrics";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetJourneyExecutionActivityMetricsOutcome(GetJourneyExecutionActivityMetricsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetJourneyExecutionActivityMetricsOutcome(outcome.GetError());
+  }
+}
+
+GetJourneyExecutionActivityMetricsOutcomeCallable PinpointClient::GetJourneyExecutionActivityMetricsCallable(const GetJourneyExecutionActivityMetricsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetJourneyExecutionActivityMetricsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetJourneyExecutionActivityMetrics(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetJourneyExecutionActivityMetricsAsync(const GetJourneyExecutionActivityMetricsRequest& request, const GetJourneyExecutionActivityMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetJourneyExecutionActivityMetricsAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetJourneyExecutionActivityMetricsAsyncHelper(const GetJourneyExecutionActivityMetricsRequest& request, const GetJourneyExecutionActivityMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetJourneyExecutionActivityMetrics(request), context);
+}
+
+GetJourneyExecutionMetricsOutcome PinpointClient::GetJourneyExecutionMetrics(const GetJourneyExecutionMetricsRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJourneyExecutionMetrics", "Required field: ApplicationId, is not set");
+    return GetJourneyExecutionMetricsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.JourneyIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJourneyExecutionMetrics", "Required field: JourneyId, is not set");
+    return GetJourneyExecutionMetricsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JourneyId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/journeys/";
+  ss << request.GetJourneyId();
+  ss << "/execution-metrics";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetJourneyExecutionMetricsOutcome(GetJourneyExecutionMetricsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetJourneyExecutionMetricsOutcome(outcome.GetError());
+  }
+}
+
+GetJourneyExecutionMetricsOutcomeCallable PinpointClient::GetJourneyExecutionMetricsCallable(const GetJourneyExecutionMetricsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetJourneyExecutionMetricsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetJourneyExecutionMetrics(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetJourneyExecutionMetricsAsync(const GetJourneyExecutionMetricsRequest& request, const GetJourneyExecutionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetJourneyExecutionMetricsAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetJourneyExecutionMetricsAsyncHelper(const GetJourneyExecutionMetricsRequest& request, const GetJourneyExecutionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetJourneyExecutionMetrics(request), context);
+}
+
 GetPushTemplateOutcome PinpointClient::GetPushTemplate(const GetPushTemplateRequest& request) const
 {
   if (!request.TemplateNameHasBeenSet())
@@ -3005,6 +3312,48 @@ void PinpointClient::GetVoiceChannelAsync(const GetVoiceChannelRequest& request,
 void PinpointClient::GetVoiceChannelAsyncHelper(const GetVoiceChannelRequest& request, const GetVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetVoiceChannel(request), context);
+}
+
+ListJourneysOutcome PinpointClient::ListJourneys(const ListJourneysRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListJourneys", "Required field: ApplicationId, is not set");
+    return ListJourneysOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/journeys";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListJourneysOutcome(ListJourneysResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListJourneysOutcome(outcome.GetError());
+  }
+}
+
+ListJourneysOutcomeCallable PinpointClient::ListJourneysCallable(const ListJourneysRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListJourneysOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListJourneys(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::ListJourneysAsync(const ListJourneysRequest& request, const ListJourneysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListJourneysAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::ListJourneysAsyncHelper(const ListJourneysRequest& request, const ListJourneysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListJourneys(request), context);
 }
 
 ListTagsForResourceOutcome PinpointClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -3977,6 +4326,103 @@ void PinpointClient::UpdateGcmChannelAsync(const UpdateGcmChannelRequest& reques
 void PinpointClient::UpdateGcmChannelAsyncHelper(const UpdateGcmChannelRequest& request, const UpdateGcmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateGcmChannel(request), context);
+}
+
+UpdateJourneyOutcome PinpointClient::UpdateJourney(const UpdateJourneyRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateJourney", "Required field: ApplicationId, is not set");
+    return UpdateJourneyOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.JourneyIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateJourney", "Required field: JourneyId, is not set");
+    return UpdateJourneyOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JourneyId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/journeys/";
+  ss << request.GetJourneyId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateJourneyOutcome(UpdateJourneyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateJourneyOutcome(outcome.GetError());
+  }
+}
+
+UpdateJourneyOutcomeCallable PinpointClient::UpdateJourneyCallable(const UpdateJourneyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateJourneyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateJourney(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::UpdateJourneyAsync(const UpdateJourneyRequest& request, const UpdateJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateJourneyAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::UpdateJourneyAsyncHelper(const UpdateJourneyRequest& request, const UpdateJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateJourney(request), context);
+}
+
+UpdateJourneyStateOutcome PinpointClient::UpdateJourneyState(const UpdateJourneyStateRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateJourneyState", "Required field: ApplicationId, is not set");
+    return UpdateJourneyStateOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.JourneyIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateJourneyState", "Required field: JourneyId, is not set");
+    return UpdateJourneyStateOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JourneyId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/journeys/";
+  ss << request.GetJourneyId();
+  ss << "/state";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateJourneyStateOutcome(UpdateJourneyStateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateJourneyStateOutcome(outcome.GetError());
+  }
+}
+
+UpdateJourneyStateOutcomeCallable PinpointClient::UpdateJourneyStateCallable(const UpdateJourneyStateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateJourneyStateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateJourneyState(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::UpdateJourneyStateAsync(const UpdateJourneyStateRequest& request, const UpdateJourneyStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateJourneyStateAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::UpdateJourneyStateAsyncHelper(const UpdateJourneyStateRequest& request, const UpdateJourneyStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateJourneyState(request), context);
 }
 
 UpdatePushTemplateOutcome PinpointClient::UpdatePushTemplate(const UpdatePushTemplateRequest& request) const

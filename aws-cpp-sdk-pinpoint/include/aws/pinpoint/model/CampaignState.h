@@ -49,44 +49,50 @@ namespace Model
 
 
     /**
-     * <p>The status of the campaign, or the status of a treatment that belongs to an
-     * A/B test campaign. If a campaign uses A/B testing, the campaign has a status of
-     * COMPLETED only when all campaign treatments have a status of COMPLETED.</p>
+     * <p>The current status of the campaign, or the current status of a treatment that
+     * belongs to an A/B test campaign. If a campaign uses A/B testing, the campaign
+     * has a status of COMPLETED only if all campaign treatments have a status of
+     * COMPLETED.</p>
      */
     inline const CampaignStatus& GetCampaignStatus() const{ return m_campaignStatus; }
 
     /**
-     * <p>The status of the campaign, or the status of a treatment that belongs to an
-     * A/B test campaign. If a campaign uses A/B testing, the campaign has a status of
-     * COMPLETED only when all campaign treatments have a status of COMPLETED.</p>
+     * <p>The current status of the campaign, or the current status of a treatment that
+     * belongs to an A/B test campaign. If a campaign uses A/B testing, the campaign
+     * has a status of COMPLETED only if all campaign treatments have a status of
+     * COMPLETED.</p>
      */
     inline bool CampaignStatusHasBeenSet() const { return m_campaignStatusHasBeenSet; }
 
     /**
-     * <p>The status of the campaign, or the status of a treatment that belongs to an
-     * A/B test campaign. If a campaign uses A/B testing, the campaign has a status of
-     * COMPLETED only when all campaign treatments have a status of COMPLETED.</p>
+     * <p>The current status of the campaign, or the current status of a treatment that
+     * belongs to an A/B test campaign. If a campaign uses A/B testing, the campaign
+     * has a status of COMPLETED only if all campaign treatments have a status of
+     * COMPLETED.</p>
      */
     inline void SetCampaignStatus(const CampaignStatus& value) { m_campaignStatusHasBeenSet = true; m_campaignStatus = value; }
 
     /**
-     * <p>The status of the campaign, or the status of a treatment that belongs to an
-     * A/B test campaign. If a campaign uses A/B testing, the campaign has a status of
-     * COMPLETED only when all campaign treatments have a status of COMPLETED.</p>
+     * <p>The current status of the campaign, or the current status of a treatment that
+     * belongs to an A/B test campaign. If a campaign uses A/B testing, the campaign
+     * has a status of COMPLETED only if all campaign treatments have a status of
+     * COMPLETED.</p>
      */
     inline void SetCampaignStatus(CampaignStatus&& value) { m_campaignStatusHasBeenSet = true; m_campaignStatus = std::move(value); }
 
     /**
-     * <p>The status of the campaign, or the status of a treatment that belongs to an
-     * A/B test campaign. If a campaign uses A/B testing, the campaign has a status of
-     * COMPLETED only when all campaign treatments have a status of COMPLETED.</p>
+     * <p>The current status of the campaign, or the current status of a treatment that
+     * belongs to an A/B test campaign. If a campaign uses A/B testing, the campaign
+     * has a status of COMPLETED only if all campaign treatments have a status of
+     * COMPLETED.</p>
      */
     inline CampaignState& WithCampaignStatus(const CampaignStatus& value) { SetCampaignStatus(value); return *this;}
 
     /**
-     * <p>The status of the campaign, or the status of a treatment that belongs to an
-     * A/B test campaign. If a campaign uses A/B testing, the campaign has a status of
-     * COMPLETED only when all campaign treatments have a status of COMPLETED.</p>
+     * <p>The current status of the campaign, or the current status of a treatment that
+     * belongs to an A/B test campaign. If a campaign uses A/B testing, the campaign
+     * has a status of COMPLETED only if all campaign treatments have a status of
+     * COMPLETED.</p>
      */
     inline CampaignState& WithCampaignStatus(CampaignStatus&& value) { SetCampaignStatus(std::move(value)); return *this;}
 

@@ -508,16 +508,30 @@ namespace Model
         virtual void CreateEventSubscriptionAsync(const Model::CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates the replication instance using the specified
-         * parameters.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates the replication instance using the specified parameters.</p> <p>AWS
+         * DMS requires that your account have certain roles with appropriate permissions
+         * before you can create a replication instance. For information on the required
+         * roles, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.APIRole.html">Creating
+         * the IAM Roles to Use With the AWS CLI and AWS DMS API</a>. For information on
+         * the required permissions, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.IAMPermissions.html">IAM
+         * Permissions Needed to Use AWS DMS</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationInstance">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateReplicationInstanceOutcome CreateReplicationInstance(const Model::CreateReplicationInstanceRequest& request) const;
 
         /**
-         * <p>Creates the replication instance using the specified
-         * parameters.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates the replication instance using the specified parameters.</p> <p>AWS
+         * DMS requires that your account have certain roles with appropriate permissions
+         * before you can create a replication instance. For information on the required
+         * roles, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.APIRole.html">Creating
+         * the IAM Roles to Use With the AWS CLI and AWS DMS API</a>. For information on
+         * the required permissions, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.IAMPermissions.html">IAM
+         * Permissions Needed to Use AWS DMS</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationInstance">AWS
          * API Reference</a></p>
          *
@@ -526,8 +540,15 @@ namespace Model
         virtual Model::CreateReplicationInstanceOutcomeCallable CreateReplicationInstanceCallable(const Model::CreateReplicationInstanceRequest& request) const;
 
         /**
-         * <p>Creates the replication instance using the specified
-         * parameters.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates the replication instance using the specified parameters.</p> <p>AWS
+         * DMS requires that your account have certain roles with appropriate permissions
+         * before you can create a replication instance. For information on the required
+         * roles, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.APIRole.html">Creating
+         * the IAM Roles to Use With the AWS CLI and AWS DMS API</a>. For information on
+         * the required permissions, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.IAMPermissions.html">IAM
+         * Permissions Needed to Use AWS DMS</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationInstance">AWS
          * API Reference</a></p>
          *

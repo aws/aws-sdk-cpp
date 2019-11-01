@@ -1,0 +1,99 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/pinpoint/Pinpoint_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace Pinpoint
+{
+namespace Model
+{
+
+  /**
+   * <p>Specifies a segment to associate with an activity in a journey.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentCondition">AWS
+   * API Reference</a></p>
+   */
+  class AWS_PINPOINT_API SegmentCondition
+  {
+  public:
+    SegmentCondition();
+    SegmentCondition(Aws::Utils::Json::JsonView jsonValue);
+    SegmentCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The unique identifier for the segment to associate with the activity.</p>
+     */
+    inline const Aws::String& GetSegmentId() const{ return m_segmentId; }
+
+    /**
+     * <p>The unique identifier for the segment to associate with the activity.</p>
+     */
+    inline bool SegmentIdHasBeenSet() const { return m_segmentIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the segment to associate with the activity.</p>
+     */
+    inline void SetSegmentId(const Aws::String& value) { m_segmentIdHasBeenSet = true; m_segmentId = value; }
+
+    /**
+     * <p>The unique identifier for the segment to associate with the activity.</p>
+     */
+    inline void SetSegmentId(Aws::String&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::move(value); }
+
+    /**
+     * <p>The unique identifier for the segment to associate with the activity.</p>
+     */
+    inline void SetSegmentId(const char* value) { m_segmentIdHasBeenSet = true; m_segmentId.assign(value); }
+
+    /**
+     * <p>The unique identifier for the segment to associate with the activity.</p>
+     */
+    inline SegmentCondition& WithSegmentId(const Aws::String& value) { SetSegmentId(value); return *this;}
+
+    /**
+     * <p>The unique identifier for the segment to associate with the activity.</p>
+     */
+    inline SegmentCondition& WithSegmentId(Aws::String&& value) { SetSegmentId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier for the segment to associate with the activity.</p>
+     */
+    inline SegmentCondition& WithSegmentId(const char* value) { SetSegmentId(value); return *this;}
+
+  private:
+
+    Aws::String m_segmentId;
+    bool m_segmentIdHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace Pinpoint
+} // namespace Aws

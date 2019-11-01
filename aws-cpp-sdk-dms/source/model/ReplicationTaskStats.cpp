@@ -40,7 +40,12 @@ ReplicationTaskStats::ReplicationTaskStats() :
     m_tablesQueued(0),
     m_tablesQueuedHasBeenSet(false),
     m_tablesErrored(0),
-    m_tablesErroredHasBeenSet(false)
+    m_tablesErroredHasBeenSet(false),
+    m_freshStartDateHasBeenSet(false),
+    m_startDateHasBeenSet(false),
+    m_stopDateHasBeenSet(false),
+    m_fullLoadStartDateHasBeenSet(false),
+    m_fullLoadFinishDateHasBeenSet(false)
 {
 }
 
@@ -56,7 +61,12 @@ ReplicationTaskStats::ReplicationTaskStats(JsonView jsonValue) :
     m_tablesQueued(0),
     m_tablesQueuedHasBeenSet(false),
     m_tablesErrored(0),
-    m_tablesErroredHasBeenSet(false)
+    m_tablesErroredHasBeenSet(false),
+    m_freshStartDateHasBeenSet(false),
+    m_startDateHasBeenSet(false),
+    m_stopDateHasBeenSet(false),
+    m_fullLoadStartDateHasBeenSet(false),
+    m_fullLoadFinishDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -105,6 +115,41 @@ ReplicationTaskStats& ReplicationTaskStats::operator =(JsonView jsonValue)
     m_tablesErroredHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FreshStartDate"))
+  {
+    m_freshStartDate = jsonValue.GetDouble("FreshStartDate");
+
+    m_freshStartDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StartDate"))
+  {
+    m_startDate = jsonValue.GetDouble("StartDate");
+
+    m_startDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StopDate"))
+  {
+    m_stopDate = jsonValue.GetDouble("StopDate");
+
+    m_stopDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FullLoadStartDate"))
+  {
+    m_fullLoadStartDate = jsonValue.GetDouble("FullLoadStartDate");
+
+    m_fullLoadStartDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FullLoadFinishDate"))
+  {
+    m_fullLoadFinishDate = jsonValue.GetDouble("FullLoadFinishDate");
+
+    m_fullLoadFinishDateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -146,6 +191,31 @@ JsonValue ReplicationTaskStats::Jsonize() const
   {
    payload.WithInteger("TablesErrored", m_tablesErrored);
 
+  }
+
+  if(m_freshStartDateHasBeenSet)
+  {
+   payload.WithDouble("FreshStartDate", m_freshStartDate.SecondsWithMSPrecision());
+  }
+
+  if(m_startDateHasBeenSet)
+  {
+   payload.WithDouble("StartDate", m_startDate.SecondsWithMSPrecision());
+  }
+
+  if(m_stopDateHasBeenSet)
+  {
+   payload.WithDouble("StopDate", m_stopDate.SecondsWithMSPrecision());
+  }
+
+  if(m_fullLoadStartDateHasBeenSet)
+  {
+   payload.WithDouble("FullLoadStartDate", m_fullLoadStartDate.SecondsWithMSPrecision());
+  }
+
+  if(m_fullLoadFinishDateHasBeenSet)
+  {
+   payload.WithDouble("FullLoadFinishDate", m_fullLoadFinishDate.SecondsWithMSPrecision());
   }
 
   return payload;

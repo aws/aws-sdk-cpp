@@ -35,9 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the content and settings for a message template that can be used in
-   * push notifications that are sent through the APNs (Apple Push Notification
-   * service) channel.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies channel-specific content and settings for a message template that
+   * can be used in push notifications that are sent through the APNs (Apple Push
+   * Notification service) channel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/APNSPushNotificationTemplate">AWS
    * API Reference</a></p>
    */

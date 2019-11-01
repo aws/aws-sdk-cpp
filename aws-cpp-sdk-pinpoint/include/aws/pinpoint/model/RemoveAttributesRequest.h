@@ -97,9 +97,9 @@ namespace Model
      * <ul><li><p>endpoint-custom-attributes - Custom attributes that describe
      * endpoints, such as the date when an associated user opted in or out of receiving
      * communications from you through a specific type of channel.</p></li>
-     * <li><p>endpoint-custom-metrics - Custom metrics that your app reports to Amazon
-     * Pinpoint for endpoints, such as the number of app sessions or the number of
-     * items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
+     * <li><p>endpoint-metric-attributes - Custom metrics that your app reports to
+     * Amazon Pinpoint for endpoints, such as the number of app sessions or the number
+     * of items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
      * attributes that describe users, such as first name, last name, and
      * age.</p></li></ul>
      */
@@ -110,9 +110,9 @@ namespace Model
      * <ul><li><p>endpoint-custom-attributes - Custom attributes that describe
      * endpoints, such as the date when an associated user opted in or out of receiving
      * communications from you through a specific type of channel.</p></li>
-     * <li><p>endpoint-custom-metrics - Custom metrics that your app reports to Amazon
-     * Pinpoint for endpoints, such as the number of app sessions or the number of
-     * items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
+     * <li><p>endpoint-metric-attributes - Custom metrics that your app reports to
+     * Amazon Pinpoint for endpoints, such as the number of app sessions or the number
+     * of items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
      * attributes that describe users, such as first name, last name, and
      * age.</p></li></ul>
      */
@@ -123,9 +123,9 @@ namespace Model
      * <ul><li><p>endpoint-custom-attributes - Custom attributes that describe
      * endpoints, such as the date when an associated user opted in or out of receiving
      * communications from you through a specific type of channel.</p></li>
-     * <li><p>endpoint-custom-metrics - Custom metrics that your app reports to Amazon
-     * Pinpoint for endpoints, such as the number of app sessions or the number of
-     * items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
+     * <li><p>endpoint-metric-attributes - Custom metrics that your app reports to
+     * Amazon Pinpoint for endpoints, such as the number of app sessions or the number
+     * of items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
      * attributes that describe users, such as first name, last name, and
      * age.</p></li></ul>
      */
@@ -136,9 +136,9 @@ namespace Model
      * <ul><li><p>endpoint-custom-attributes - Custom attributes that describe
      * endpoints, such as the date when an associated user opted in or out of receiving
      * communications from you through a specific type of channel.</p></li>
-     * <li><p>endpoint-custom-metrics - Custom metrics that your app reports to Amazon
-     * Pinpoint for endpoints, such as the number of app sessions or the number of
-     * items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
+     * <li><p>endpoint-metric-attributes - Custom metrics that your app reports to
+     * Amazon Pinpoint for endpoints, such as the number of app sessions or the number
+     * of items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
      * attributes that describe users, such as first name, last name, and
      * age.</p></li></ul>
      */
@@ -149,9 +149,9 @@ namespace Model
      * <ul><li><p>endpoint-custom-attributes - Custom attributes that describe
      * endpoints, such as the date when an associated user opted in or out of receiving
      * communications from you through a specific type of channel.</p></li>
-     * <li><p>endpoint-custom-metrics - Custom metrics that your app reports to Amazon
-     * Pinpoint for endpoints, such as the number of app sessions or the number of
-     * items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
+     * <li><p>endpoint-metric-attributes - Custom metrics that your app reports to
+     * Amazon Pinpoint for endpoints, such as the number of app sessions or the number
+     * of items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
      * attributes that describe users, such as first name, last name, and
      * age.</p></li></ul>
      */
@@ -162,9 +162,9 @@ namespace Model
      * <ul><li><p>endpoint-custom-attributes - Custom attributes that describe
      * endpoints, such as the date when an associated user opted in or out of receiving
      * communications from you through a specific type of channel.</p></li>
-     * <li><p>endpoint-custom-metrics - Custom metrics that your app reports to Amazon
-     * Pinpoint for endpoints, such as the number of app sessions or the number of
-     * items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
+     * <li><p>endpoint-metric-attributes - Custom metrics that your app reports to
+     * Amazon Pinpoint for endpoints, such as the number of app sessions or the number
+     * of items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
      * attributes that describe users, such as first name, last name, and
      * age.</p></li></ul>
      */
@@ -175,9 +175,9 @@ namespace Model
      * <ul><li><p>endpoint-custom-attributes - Custom attributes that describe
      * endpoints, such as the date when an associated user opted in or out of receiving
      * communications from you through a specific type of channel.</p></li>
-     * <li><p>endpoint-custom-metrics - Custom metrics that your app reports to Amazon
-     * Pinpoint for endpoints, such as the number of app sessions or the number of
-     * items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
+     * <li><p>endpoint-metric-attributes - Custom metrics that your app reports to
+     * Amazon Pinpoint for endpoints, such as the number of app sessions or the number
+     * of items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
      * attributes that describe users, such as first name, last name, and
      * age.</p></li></ul>
      */
@@ -188,9 +188,9 @@ namespace Model
      * <ul><li><p>endpoint-custom-attributes - Custom attributes that describe
      * endpoints, such as the date when an associated user opted in or out of receiving
      * communications from you through a specific type of channel.</p></li>
-     * <li><p>endpoint-custom-metrics - Custom metrics that your app reports to Amazon
-     * Pinpoint for endpoints, such as the number of app sessions or the number of
-     * items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
+     * <li><p>endpoint-metric-attributes - Custom metrics that your app reports to
+     * Amazon Pinpoint for endpoints, such as the number of app sessions or the number
+     * of items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom
      * attributes that describe users, such as first name, last name, and
      * age.</p></li></ul>
      */

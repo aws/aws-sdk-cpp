@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the settings and content for the default message template that's
+   * <p>Specifies the default settings and content for a message template that can be
    * used in messages that are sent through a push notification
    * channel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DefaultPushNotificationTemplate">AWS

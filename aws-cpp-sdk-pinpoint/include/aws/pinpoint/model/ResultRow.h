@@ -36,7 +36,8 @@ namespace Model
 
   /**
    * <p>Provides the results of a query that retrieved the data for a standard metric
-   * that applies to an application or campaign.</p><p><h3>See Also:</h3>   <a
+   * that applies to an application, campaign, or journey.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ResultRow">AWS
    * API Reference</a></p>
    */
@@ -108,49 +109,49 @@ namespace Model
 
     /**
      * <p>An array of objects that provides pre-aggregated values for a standard metric
-     * that applies to an application or campaign.</p>
+     * that applies to an application, campaign, or journey.</p>
      */
     inline const Aws::Vector<ResultRowValue>& GetValues() const{ return m_values; }
 
     /**
      * <p>An array of objects that provides pre-aggregated values for a standard metric
-     * that applies to an application or campaign.</p>
+     * that applies to an application, campaign, or journey.</p>
      */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>An array of objects that provides pre-aggregated values for a standard metric
-     * that applies to an application or campaign.</p>
+     * that applies to an application, campaign, or journey.</p>
      */
     inline void SetValues(const Aws::Vector<ResultRowValue>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
      * <p>An array of objects that provides pre-aggregated values for a standard metric
-     * that applies to an application or campaign.</p>
+     * that applies to an application, campaign, or journey.</p>
      */
     inline void SetValues(Aws::Vector<ResultRowValue>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
      * <p>An array of objects that provides pre-aggregated values for a standard metric
-     * that applies to an application or campaign.</p>
+     * that applies to an application, campaign, or journey.</p>
      */
     inline ResultRow& WithValues(const Aws::Vector<ResultRowValue>& value) { SetValues(value); return *this;}
 
     /**
      * <p>An array of objects that provides pre-aggregated values for a standard metric
-     * that applies to an application or campaign.</p>
+     * that applies to an application, campaign, or journey.</p>
      */
     inline ResultRow& WithValues(Aws::Vector<ResultRowValue>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
      * <p>An array of objects that provides pre-aggregated values for a standard metric
-     * that applies to an application or campaign.</p>
+     * that applies to an application, campaign, or journey.</p>
      */
     inline ResultRow& AddValues(const ResultRowValue& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
      * <p>An array of objects that provides pre-aggregated values for a standard metric
-     * that applies to an application or campaign.</p>
+     * that applies to an application, campaign, or journey.</p>
      */
     inline ResultRow& AddValues(ResultRowValue&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 

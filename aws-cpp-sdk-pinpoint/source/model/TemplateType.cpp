@@ -32,6 +32,7 @@ namespace Aws
 
         static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
         static const int SMS_HASH = HashingUtils::HashString("SMS");
+        static const int VOICE_HASH = HashingUtils::HashString("VOICE");
         static const int PUSH_HASH = HashingUtils::HashString("PUSH");
 
 
@@ -45,6 +46,10 @@ namespace Aws
           else if (hashCode == SMS_HASH)
           {
             return TemplateType::SMS;
+          }
+          else if (hashCode == VOICE_HASH)
+          {
+            return TemplateType::VOICE;
           }
           else if (hashCode == PUSH_HASH)
           {
@@ -68,6 +73,8 @@ namespace Aws
             return "EMAIL";
           case TemplateType::SMS:
             return "SMS";
+          case TemplateType::VOICE:
+            return "VOICE";
           case TemplateType::PUSH:
             return "PUSH";
           default:

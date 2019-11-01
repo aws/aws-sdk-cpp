@@ -94,7 +94,7 @@ namespace Model
     /**
      * <p>The type of attribute or attributes that were removed from the endpoints.
      * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
-     * that describe endpoints.</p></li> <li><p>endpoint-custom-metrics - Custom
+     * that describe endpoints.</p></li> <li><p>endpoint-metric-attributes - Custom
      * metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
      * <li><p>endpoint-user-attributes - Custom attributes that describe
      * users.</p></li></ul>
@@ -104,7 +104,7 @@ namespace Model
     /**
      * <p>The type of attribute or attributes that were removed from the endpoints.
      * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
-     * that describe endpoints.</p></li> <li><p>endpoint-custom-metrics - Custom
+     * that describe endpoints.</p></li> <li><p>endpoint-metric-attributes - Custom
      * metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
      * <li><p>endpoint-user-attributes - Custom attributes that describe
      * users.</p></li></ul>
@@ -114,7 +114,7 @@ namespace Model
     /**
      * <p>The type of attribute or attributes that were removed from the endpoints.
      * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
-     * that describe endpoints.</p></li> <li><p>endpoint-custom-metrics - Custom
+     * that describe endpoints.</p></li> <li><p>endpoint-metric-attributes - Custom
      * metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
      * <li><p>endpoint-user-attributes - Custom attributes that describe
      * users.</p></li></ul>
@@ -124,7 +124,7 @@ namespace Model
     /**
      * <p>The type of attribute or attributes that were removed from the endpoints.
      * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
-     * that describe endpoints.</p></li> <li><p>endpoint-custom-metrics - Custom
+     * that describe endpoints.</p></li> <li><p>endpoint-metric-attributes - Custom
      * metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
      * <li><p>endpoint-user-attributes - Custom attributes that describe
      * users.</p></li></ul>
@@ -134,7 +134,7 @@ namespace Model
     /**
      * <p>The type of attribute or attributes that were removed from the endpoints.
      * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
-     * that describe endpoints.</p></li> <li><p>endpoint-custom-metrics - Custom
+     * that describe endpoints.</p></li> <li><p>endpoint-metric-attributes - Custom
      * metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
      * <li><p>endpoint-user-attributes - Custom attributes that describe
      * users.</p></li></ul>
@@ -144,7 +144,7 @@ namespace Model
     /**
      * <p>The type of attribute or attributes that were removed from the endpoints.
      * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
-     * that describe endpoints.</p></li> <li><p>endpoint-custom-metrics - Custom
+     * that describe endpoints.</p></li> <li><p>endpoint-metric-attributes - Custom
      * metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
      * <li><p>endpoint-user-attributes - Custom attributes that describe
      * users.</p></li></ul>
@@ -154,7 +154,7 @@ namespace Model
     /**
      * <p>The type of attribute or attributes that were removed from the endpoints.
      * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
-     * that describe endpoints.</p></li> <li><p>endpoint-custom-metrics - Custom
+     * that describe endpoints.</p></li> <li><p>endpoint-metric-attributes - Custom
      * metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
      * <li><p>endpoint-user-attributes - Custom attributes that describe
      * users.</p></li></ul>
@@ -164,7 +164,7 @@ namespace Model
     /**
      * <p>The type of attribute or attributes that were removed from the endpoints.
      * Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes
-     * that describe endpoints.</p></li> <li><p>endpoint-custom-metrics - Custom
+     * that describe endpoints.</p></li> <li><p>endpoint-metric-attributes - Custom
      * metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
      * <li><p>endpoint-user-attributes - Custom attributes that describe
      * users.</p></li></ul>

@@ -29,6 +29,7 @@ namespace Model
 {
 
 APNSMessage::APNSMessage() : 
+    m_aPNSPushTypeHasBeenSet(false),
     m_action(Action::NOT_SET),
     m_actionHasBeenSet(false),
     m_badge(0),
@@ -54,6 +55,7 @@ APNSMessage::APNSMessage() :
 }
 
 APNSMessage::APNSMessage(JsonView jsonValue) : 
+    m_aPNSPushTypeHasBeenSet(false),
     m_action(Action::NOT_SET),
     m_actionHasBeenSet(false),
     m_badge(0),
@@ -81,6 +83,13 @@ APNSMessage::APNSMessage(JsonView jsonValue) :
 
 APNSMessage& APNSMessage::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("APNSPushType"))
+  {
+    m_aPNSPushType = jsonValue.GetString("APNSPushType");
+
+    m_aPNSPushTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Action"))
   {
     m_action = ActionMapper::GetActionForName(jsonValue.GetString("Action"));
@@ -219,6 +228,12 @@ APNSMessage& APNSMessage::operator =(JsonView jsonValue)
 JsonValue APNSMessage::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_aPNSPushTypeHasBeenSet)
+  {
+   payload.WithString("APNSPushType", m_aPNSPushType);
+
+  }
 
   if(m_actionHasBeenSet)
   {

@@ -35,8 +35,8 @@ namespace Model
 
   /**
    * <p>Provides a single value and metadata about that value as part of an array of
-   * query results for a standard metric that applies to an application or
-   * campaign.</p><p><h3>See Also:</h3>   <a
+   * query results for a standard metric that applies to an application, campaign, or
+   * journey.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ResultRowValue">AWS
    * API Reference</a></p>
    */
@@ -50,91 +50,91 @@ namespace Model
 
 
     /**
-     * <p>The name of the field that Amazon Pinpoint uses to store the value specified
-     * by the Value property.</p>
+     * <p>The friendly name of the metric whose value is specified by the Value
+     * property.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>The name of the field that Amazon Pinpoint uses to store the value specified
-     * by the Value property.</p>
+     * <p>The friendly name of the metric whose value is specified by the Value
+     * property.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>The name of the field that Amazon Pinpoint uses to store the value specified
-     * by the Value property.</p>
+     * <p>The friendly name of the metric whose value is specified by the Value
+     * property.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The name of the field that Amazon Pinpoint uses to store the value specified
-     * by the Value property.</p>
+     * <p>The friendly name of the metric whose value is specified by the Value
+     * property.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>The name of the field that Amazon Pinpoint uses to store the value specified
-     * by the Value property.</p>
+     * <p>The friendly name of the metric whose value is specified by the Value
+     * property.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>The name of the field that Amazon Pinpoint uses to store the value specified
-     * by the Value property.</p>
+     * <p>The friendly name of the metric whose value is specified by the Value
+     * property.</p>
      */
     inline ResultRowValue& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The name of the field that Amazon Pinpoint uses to store the value specified
-     * by the Value property.</p>
+     * <p>The friendly name of the metric whose value is specified by the Value
+     * property.</p>
      */
     inline ResultRowValue& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the field that Amazon Pinpoint uses to store the value specified
-     * by the Value property.</p>
+     * <p>The friendly name of the metric whose value is specified by the Value
+     * property.</p>
      */
     inline ResultRowValue& WithKey(const char* value) { SetKey(value); return *this;}
 
 
     /**
-     *  <p>The data type of the value specified by the Value property.</p>
+     * <p>The data type of the value specified by the Value property.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     *  <p>The data type of the value specified by the Value property.</p>
+     * <p>The data type of the value specified by the Value property.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     *  <p>The data type of the value specified by the Value property.</p>
+     * <p>The data type of the value specified by the Value property.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     *  <p>The data type of the value specified by the Value property.</p>
+     * <p>The data type of the value specified by the Value property.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     *  <p>The data type of the value specified by the Value property.</p>
+     * <p>The data type of the value specified by the Value property.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     *  <p>The data type of the value specified by the Value property.</p>
+     * <p>The data type of the value specified by the Value property.</p>
      */
     inline ResultRowValue& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     *  <p>The data type of the value specified by the Value property.</p>
+     * <p>The data type of the value specified by the Value property.</p>
      */
     inline ResultRowValue& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     *  <p>The data type of the value specified by the Value property.</p>
+     * <p>The data type of the value specified by the Value property.</p>
      */
     inline ResultRowValue& WithType(const char* value) { SetType(value); return *this;}
 

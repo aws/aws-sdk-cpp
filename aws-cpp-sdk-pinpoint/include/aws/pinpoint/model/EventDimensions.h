@@ -39,7 +39,7 @@ namespace Model
 
   /**
    * <p>Specifies the dimensions for an event filter that determines when a campaign
-   * is sent.</p><p><h3>See Also:</h3>   <a
+   * is sent or a journey activity is performed.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EventDimensions">AWS
    * API Reference</a></p>
    */
@@ -53,202 +53,220 @@ namespace Model
 
 
     /**
-     * <p>One or more custom attributes that your app reports to Amazon Pinpoint. You
-     * can use these attributes as selection criteria when you create an event
-     * filter.</p>
+     * <p>One or more custom attributes that your application reports to Amazon
+     * Pinpoint. You can use these attributes as selection criteria when you create an
+     * event filter.</p>
      */
     inline const Aws::Map<Aws::String, AttributeDimension>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>One or more custom attributes that your app reports to Amazon Pinpoint. You
-     * can use these attributes as selection criteria when you create an event
-     * filter.</p>
+     * <p>One or more custom attributes that your application reports to Amazon
+     * Pinpoint. You can use these attributes as selection criteria when you create an
+     * event filter.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
-     * <p>One or more custom attributes that your app reports to Amazon Pinpoint. You
-     * can use these attributes as selection criteria when you create an event
-     * filter.</p>
+     * <p>One or more custom attributes that your application reports to Amazon
+     * Pinpoint. You can use these attributes as selection criteria when you create an
+     * event filter.</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, AttributeDimension>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>One or more custom attributes that your app reports to Amazon Pinpoint. You
-     * can use these attributes as selection criteria when you create an event
-     * filter.</p>
+     * <p>One or more custom attributes that your application reports to Amazon
+     * Pinpoint. You can use these attributes as selection criteria when you create an
+     * event filter.</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, AttributeDimension>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
-     * <p>One or more custom attributes that your app reports to Amazon Pinpoint. You
-     * can use these attributes as selection criteria when you create an event
-     * filter.</p>
+     * <p>One or more custom attributes that your application reports to Amazon
+     * Pinpoint. You can use these attributes as selection criteria when you create an
+     * event filter.</p>
      */
     inline EventDimensions& WithAttributes(const Aws::Map<Aws::String, AttributeDimension>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>One or more custom attributes that your app reports to Amazon Pinpoint. You
-     * can use these attributes as selection criteria when you create an event
-     * filter.</p>
+     * <p>One or more custom attributes that your application reports to Amazon
+     * Pinpoint. You can use these attributes as selection criteria when you create an
+     * event filter.</p>
      */
     inline EventDimensions& WithAttributes(Aws::Map<Aws::String, AttributeDimension>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>One or more custom attributes that your app reports to Amazon Pinpoint. You
-     * can use these attributes as selection criteria when you create an event
-     * filter.</p>
+     * <p>One or more custom attributes that your application reports to Amazon
+     * Pinpoint. You can use these attributes as selection criteria when you create an
+     * event filter.</p>
      */
     inline EventDimensions& AddAttributes(const Aws::String& key, const AttributeDimension& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
-     * <p>One or more custom attributes that your app reports to Amazon Pinpoint. You
-     * can use these attributes as selection criteria when you create an event
-     * filter.</p>
+     * <p>One or more custom attributes that your application reports to Amazon
+     * Pinpoint. You can use these attributes as selection criteria when you create an
+     * event filter.</p>
      */
     inline EventDimensions& AddAttributes(Aws::String&& key, const AttributeDimension& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>One or more custom attributes that your app reports to Amazon Pinpoint. You
-     * can use these attributes as selection criteria when you create an event
-     * filter.</p>
+     * <p>One or more custom attributes that your application reports to Amazon
+     * Pinpoint. You can use these attributes as selection criteria when you create an
+     * event filter.</p>
      */
     inline EventDimensions& AddAttributes(const Aws::String& key, AttributeDimension&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>One or more custom attributes that your app reports to Amazon Pinpoint. You
-     * can use these attributes as selection criteria when you create an event
-     * filter.</p>
+     * <p>One or more custom attributes that your application reports to Amazon
+     * Pinpoint. You can use these attributes as selection criteria when you create an
+     * event filter.</p>
      */
     inline EventDimensions& AddAttributes(Aws::String&& key, AttributeDimension&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>One or more custom attributes that your app reports to Amazon Pinpoint. You
-     * can use these attributes as selection criteria when you create an event
-     * filter.</p>
+     * <p>One or more custom attributes that your application reports to Amazon
+     * Pinpoint. You can use these attributes as selection criteria when you create an
+     * event filter.</p>
      */
     inline EventDimensions& AddAttributes(const char* key, AttributeDimension&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>One or more custom attributes that your app reports to Amazon Pinpoint. You
-     * can use these attributes as selection criteria when you create an event
-     * filter.</p>
+     * <p>One or more custom attributes that your application reports to Amazon
+     * Pinpoint. You can use these attributes as selection criteria when you create an
+     * event filter.</p>
      */
     inline EventDimensions& AddAttributes(const char* key, const AttributeDimension& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The name of the event that causes the campaign to be sent. This can be a
-     * standard type of event that Amazon Pinpoint generates, such as _session.start,
-     * or a custom event that's specific to your app.</p>
+     * <p>The name of the event that causes the campaign to be sent or the journey
+     * activity to be performed. This can be a standard type of event that Amazon
+     * Pinpoint generates, such as _email.delivered, or a custom event that's specific
+     * to your application.</p>
      */
     inline const SetDimension& GetEventType() const{ return m_eventType; }
 
     /**
-     * <p>The name of the event that causes the campaign to be sent. This can be a
-     * standard type of event that Amazon Pinpoint generates, such as _session.start,
-     * or a custom event that's specific to your app.</p>
+     * <p>The name of the event that causes the campaign to be sent or the journey
+     * activity to be performed. This can be a standard type of event that Amazon
+     * Pinpoint generates, such as _email.delivered, or a custom event that's specific
+     * to your application.</p>
      */
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
 
     /**
-     * <p>The name of the event that causes the campaign to be sent. This can be a
-     * standard type of event that Amazon Pinpoint generates, such as _session.start,
-     * or a custom event that's specific to your app.</p>
+     * <p>The name of the event that causes the campaign to be sent or the journey
+     * activity to be performed. This can be a standard type of event that Amazon
+     * Pinpoint generates, such as _email.delivered, or a custom event that's specific
+     * to your application.</p>
      */
     inline void SetEventType(const SetDimension& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
     /**
-     * <p>The name of the event that causes the campaign to be sent. This can be a
-     * standard type of event that Amazon Pinpoint generates, such as _session.start,
-     * or a custom event that's specific to your app.</p>
+     * <p>The name of the event that causes the campaign to be sent or the journey
+     * activity to be performed. This can be a standard type of event that Amazon
+     * Pinpoint generates, such as _email.delivered, or a custom event that's specific
+     * to your application.</p>
      */
     inline void SetEventType(SetDimension&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
 
     /**
-     * <p>The name of the event that causes the campaign to be sent. This can be a
-     * standard type of event that Amazon Pinpoint generates, such as _session.start,
-     * or a custom event that's specific to your app.</p>
+     * <p>The name of the event that causes the campaign to be sent or the journey
+     * activity to be performed. This can be a standard type of event that Amazon
+     * Pinpoint generates, such as _email.delivered, or a custom event that's specific
+     * to your application.</p>
      */
     inline EventDimensions& WithEventType(const SetDimension& value) { SetEventType(value); return *this;}
 
     /**
-     * <p>The name of the event that causes the campaign to be sent. This can be a
-     * standard type of event that Amazon Pinpoint generates, such as _session.start,
-     * or a custom event that's specific to your app.</p>
+     * <p>The name of the event that causes the campaign to be sent or the journey
+     * activity to be performed. This can be a standard type of event that Amazon
+     * Pinpoint generates, such as _email.delivered, or a custom event that's specific
+     * to your application.</p>
      */
     inline EventDimensions& WithEventType(SetDimension&& value) { SetEventType(std::move(value)); return *this;}
 
 
     /**
-     * <p>One or more custom metrics that your app reports to Amazon Pinpoint. You can
-     * use these metrics as selection criteria when you create an event filter.</p>
+     * <p>One or more custom metrics that your application reports to Amazon Pinpoint.
+     * You can use these metrics as selection criteria when you create an event
+     * filter.</p>
      */
     inline const Aws::Map<Aws::String, MetricDimension>& GetMetrics() const{ return m_metrics; }
 
     /**
-     * <p>One or more custom metrics that your app reports to Amazon Pinpoint. You can
-     * use these metrics as selection criteria when you create an event filter.</p>
+     * <p>One or more custom metrics that your application reports to Amazon Pinpoint.
+     * You can use these metrics as selection criteria when you create an event
+     * filter.</p>
      */
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
     /**
-     * <p>One or more custom metrics that your app reports to Amazon Pinpoint. You can
-     * use these metrics as selection criteria when you create an event filter.</p>
+     * <p>One or more custom metrics that your application reports to Amazon Pinpoint.
+     * You can use these metrics as selection criteria when you create an event
+     * filter.</p>
      */
     inline void SetMetrics(const Aws::Map<Aws::String, MetricDimension>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
     /**
-     * <p>One or more custom metrics that your app reports to Amazon Pinpoint. You can
-     * use these metrics as selection criteria when you create an event filter.</p>
+     * <p>One or more custom metrics that your application reports to Amazon Pinpoint.
+     * You can use these metrics as selection criteria when you create an event
+     * filter.</p>
      */
     inline void SetMetrics(Aws::Map<Aws::String, MetricDimension>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
 
     /**
-     * <p>One or more custom metrics that your app reports to Amazon Pinpoint. You can
-     * use these metrics as selection criteria when you create an event filter.</p>
+     * <p>One or more custom metrics that your application reports to Amazon Pinpoint.
+     * You can use these metrics as selection criteria when you create an event
+     * filter.</p>
      */
     inline EventDimensions& WithMetrics(const Aws::Map<Aws::String, MetricDimension>& value) { SetMetrics(value); return *this;}
 
     /**
-     * <p>One or more custom metrics that your app reports to Amazon Pinpoint. You can
-     * use these metrics as selection criteria when you create an event filter.</p>
+     * <p>One or more custom metrics that your application reports to Amazon Pinpoint.
+     * You can use these metrics as selection criteria when you create an event
+     * filter.</p>
      */
     inline EventDimensions& WithMetrics(Aws::Map<Aws::String, MetricDimension>&& value) { SetMetrics(std::move(value)); return *this;}
 
     /**
-     * <p>One or more custom metrics that your app reports to Amazon Pinpoint. You can
-     * use these metrics as selection criteria when you create an event filter.</p>
+     * <p>One or more custom metrics that your application reports to Amazon Pinpoint.
+     * You can use these metrics as selection criteria when you create an event
+     * filter.</p>
      */
     inline EventDimensions& AddMetrics(const Aws::String& key, const MetricDimension& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, value); return *this; }
 
     /**
-     * <p>One or more custom metrics that your app reports to Amazon Pinpoint. You can
-     * use these metrics as selection criteria when you create an event filter.</p>
+     * <p>One or more custom metrics that your application reports to Amazon Pinpoint.
+     * You can use these metrics as selection criteria when you create an event
+     * filter.</p>
      */
     inline EventDimensions& AddMetrics(Aws::String&& key, const MetricDimension& value) { m_metricsHasBeenSet = true; m_metrics.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>One or more custom metrics that your app reports to Amazon Pinpoint. You can
-     * use these metrics as selection criteria when you create an event filter.</p>
+     * <p>One or more custom metrics that your application reports to Amazon Pinpoint.
+     * You can use these metrics as selection criteria when you create an event
+     * filter.</p>
      */
     inline EventDimensions& AddMetrics(const Aws::String& key, MetricDimension&& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>One or more custom metrics that your app reports to Amazon Pinpoint. You can
-     * use these metrics as selection criteria when you create an event filter.</p>
+     * <p>One or more custom metrics that your application reports to Amazon Pinpoint.
+     * You can use these metrics as selection criteria when you create an event
+     * filter.</p>
      */
     inline EventDimensions& AddMetrics(Aws::String&& key, MetricDimension&& value) { m_metricsHasBeenSet = true; m_metrics.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>One or more custom metrics that your app reports to Amazon Pinpoint. You can
-     * use these metrics as selection criteria when you create an event filter.</p>
+     * <p>One or more custom metrics that your application reports to Amazon Pinpoint.
+     * You can use these metrics as selection criteria when you create an event
+     * filter.</p>
      */
     inline EventDimensions& AddMetrics(const char* key, MetricDimension&& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>One or more custom metrics that your app reports to Amazon Pinpoint. You can
-     * use these metrics as selection criteria when you create an event filter.</p>
+     * <p>One or more custom metrics that your application reports to Amazon Pinpoint.
+     * You can use these metrics as selection criteria when you create an event
+     * filter.</p>
      */
     inline EventDimensions& AddMetrics(const char* key, const MetricDimension& value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, value); return *this; }
 

@@ -139,22 +139,34 @@ namespace Model
     inline WriteTreatmentResource& WithSizePercent(int value) { SetSizePercent(value); return *this;}
 
 
-    
+    /**
+     * <p>The message template to use for the treatment.</p>
+     */
     inline const TemplateConfiguration& GetTemplateConfiguration() const{ return m_templateConfiguration; }
 
-    
+    /**
+     * <p>The message template to use for the treatment.</p>
+     */
     inline bool TemplateConfigurationHasBeenSet() const { return m_templateConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>The message template to use for the treatment.</p>
+     */
     inline void SetTemplateConfiguration(const TemplateConfiguration& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = value; }
 
-    
+    /**
+     * <p>The message template to use for the treatment.</p>
+     */
     inline void SetTemplateConfiguration(TemplateConfiguration&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>The message template to use for the treatment.</p>
+     */
     inline WriteTreatmentResource& WithTemplateConfiguration(const TemplateConfiguration& value) { SetTemplateConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>The message template to use for the treatment.</p>
+     */
     inline WriteTreatmentResource& WithTemplateConfiguration(TemplateConfiguration&& value) { SetTemplateConfiguration(std::move(value)); return *this;}
 
 

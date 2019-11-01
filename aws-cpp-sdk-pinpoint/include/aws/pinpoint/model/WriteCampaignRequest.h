@@ -521,22 +521,34 @@ namespace Model
     inline WriteCampaignRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
 
-    
+    /**
+     * <p>The message template to use for the campaign.</p>
+     */
     inline const TemplateConfiguration& GetTemplateConfiguration() const{ return m_templateConfiguration; }
 
-    
+    /**
+     * <p>The message template to use for the campaign.</p>
+     */
     inline bool TemplateConfigurationHasBeenSet() const { return m_templateConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>The message template to use for the campaign.</p>
+     */
     inline void SetTemplateConfiguration(const TemplateConfiguration& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = value; }
 
-    
+    /**
+     * <p>The message template to use for the campaign.</p>
+     */
     inline void SetTemplateConfiguration(TemplateConfiguration&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>The message template to use for the campaign.</p>
+     */
     inline WriteCampaignRequest& WithTemplateConfiguration(const TemplateConfiguration& value) { SetTemplateConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>The message template to use for the campaign.</p>
+     */
     inline WriteCampaignRequest& WithTemplateConfiguration(TemplateConfiguration&& value) { SetTemplateConfiguration(std::move(value)); return *this;}
 
 

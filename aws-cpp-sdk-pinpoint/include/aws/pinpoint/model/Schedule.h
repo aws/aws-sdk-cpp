@@ -51,42 +51,50 @@ namespace Model
 
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, for the campaign to end.</p>
+     * <p>The scheduled time, in ISO 8601 format, when the campaign ended or will
+     * end.</p>
      */
     inline const Aws::String& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, for the campaign to end.</p>
+     * <p>The scheduled time, in ISO 8601 format, when the campaign ended or will
+     * end.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, for the campaign to end.</p>
+     * <p>The scheduled time, in ISO 8601 format, when the campaign ended or will
+     * end.</p>
      */
     inline void SetEndTime(const Aws::String& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, for the campaign to end.</p>
+     * <p>The scheduled time, in ISO 8601 format, when the campaign ended or will
+     * end.</p>
      */
     inline void SetEndTime(Aws::String&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, for the campaign to end.</p>
+     * <p>The scheduled time, in ISO 8601 format, when the campaign ended or will
+     * end.</p>
      */
     inline void SetEndTime(const char* value) { m_endTimeHasBeenSet = true; m_endTime.assign(value); }
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, for the campaign to end.</p>
+     * <p>The scheduled time, in ISO 8601 format, when the campaign ended or will
+     * end.</p>
      */
     inline Schedule& WithEndTime(const Aws::String& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, for the campaign to end.</p>
+     * <p>The scheduled time, in ISO 8601 format, when the campaign ended or will
+     * end.</p>
      */
     inline Schedule& WithEndTime(Aws::String&& value) { SetEndTime(std::move(value)); return *this;}
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, for the campaign to end.</p>
+     * <p>The scheduled time, in ISO 8601 format, when the campaign ended or will
+     * end.</p>
      */
     inline Schedule& WithEndTime(const char* value) { SetEndTime(value); return *this;}
 
@@ -280,42 +288,50 @@ namespace Model
 
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, for the campaign to begin.</p>
+     * <p>The scheduled time, in ISO 8601 format, when the campaign began or will
+     * begin.</p>
      */
     inline const Aws::String& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, for the campaign to begin.</p>
+     * <p>The scheduled time, in ISO 8601 format, when the campaign began or will
+     * begin.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, for the campaign to begin.</p>
+     * <p>The scheduled time, in ISO 8601 format, when the campaign began or will
+     * begin.</p>
      */
     inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, for the campaign to begin.</p>
+     * <p>The scheduled time, in ISO 8601 format, when the campaign began or will
+     * begin.</p>
      */
     inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, for the campaign to begin.</p>
+     * <p>The scheduled time, in ISO 8601 format, when the campaign began or will
+     * begin.</p>
      */
     inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, for the campaign to begin.</p>
+     * <p>The scheduled time, in ISO 8601 format, when the campaign began or will
+     * begin.</p>
      */
     inline Schedule& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, for the campaign to begin.</p>
+     * <p>The scheduled time, in ISO 8601 format, when the campaign began or will
+     * begin.</p>
      */
     inline Schedule& WithStartTime(Aws::String&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, for the campaign to begin.</p>
+     * <p>The scheduled time, in ISO 8601 format, when the campaign began or will
+     * begin.</p>
      */
     inline Schedule& WithStartTime(const char* value) { SetStartTime(value); return *this;}
 

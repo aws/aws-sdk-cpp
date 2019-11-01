@@ -44,7 +44,7 @@ namespace Model
    * exceed 250 across all selectors.</p> </note> <p>The following example
    * demonstrates how logging works when you configure logging of all data events for
    * an S3 bucket named <code>bucket-1</code>. In this example, the CloudTrail user
-   * spcified an empty prefix, and the option to log both <code>Read</code> and
+   * specified an empty prefix, and the option to log both <code>Read</code> and
    * <code>Write</code> data events.</p> <ol> <li> <p>A user uploads an image file to
    * <code>bucket-1</code>.</p> </li> <li> <p>The <code>PutObject</code> API
    * operation is an Amazon S3 object-level API. It is recorded as a data event in
@@ -145,25 +145,21 @@ namespace Model
      * </p> <note> <p>This will also enable logging of data event activity performed by
      * any user or role in your AWS account, even if that activity is performed on a
      * bucket that belongs to another AWS account. </p> </note> </li> <li> <p>To log
-     * data events for all objects in all S3 buckets that include <i>my-bucket</i> in
-     * their names, specify the prefix as <code>aws:s3:::my-bucket</code>. The trail
-     * logs data events for all objects in all buckets whose name contains a match for
-     * <i>my-bucket</i>. </p> </li> <li> <p>To log data events for all objects in an S3
-     * bucket, specify the bucket and an empty object prefix such as
-     * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects
-     * in this S3 bucket.</p> </li> <li> <p>To log data events for specific objects,
-     * specify the S3 bucket and object prefix such as
+     * data events for all objects in an S3 bucket, specify the bucket and an empty
+     * object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data
+     * events for all objects in this S3 bucket.</p> </li> <li> <p>To log data events
+     * for specific objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
      * data events for all functions in your AWS account, specify the prefix as
      * <code>arn:aws:lambda</code>.</p> <note> <p>This will also enable logging of
      * <code>Invoke</code> activity performed by any user or role in your AWS account,
      * even if that activity is performed on a function that belongs to another AWS
-     * account. </p> </note> </li> <li> <p>To log data eents for a specific Lambda
+     * account. </p> </note> </li> <li> <p>To log data events for a specific Lambda
      * function, specify the function ARN.</p> <note> <p>Lambda function ARNs are
-     * exact. Unlike S3, you cannot use matching. For example, if you specify a
-     * function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
-     * data events will only be logged for
+     * exact. For example, if you specify a function ARN
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events
+     * will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not
      * be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p> </note>
@@ -178,25 +174,21 @@ namespace Model
      * </p> <note> <p>This will also enable logging of data event activity performed by
      * any user or role in your AWS account, even if that activity is performed on a
      * bucket that belongs to another AWS account. </p> </note> </li> <li> <p>To log
-     * data events for all objects in all S3 buckets that include <i>my-bucket</i> in
-     * their names, specify the prefix as <code>aws:s3:::my-bucket</code>. The trail
-     * logs data events for all objects in all buckets whose name contains a match for
-     * <i>my-bucket</i>. </p> </li> <li> <p>To log data events for all objects in an S3
-     * bucket, specify the bucket and an empty object prefix such as
-     * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects
-     * in this S3 bucket.</p> </li> <li> <p>To log data events for specific objects,
-     * specify the S3 bucket and object prefix such as
+     * data events for all objects in an S3 bucket, specify the bucket and an empty
+     * object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data
+     * events for all objects in this S3 bucket.</p> </li> <li> <p>To log data events
+     * for specific objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
      * data events for all functions in your AWS account, specify the prefix as
      * <code>arn:aws:lambda</code>.</p> <note> <p>This will also enable logging of
      * <code>Invoke</code> activity performed by any user or role in your AWS account,
      * even if that activity is performed on a function that belongs to another AWS
-     * account. </p> </note> </li> <li> <p>To log data eents for a specific Lambda
+     * account. </p> </note> </li> <li> <p>To log data events for a specific Lambda
      * function, specify the function ARN.</p> <note> <p>Lambda function ARNs are
-     * exact. Unlike S3, you cannot use matching. For example, if you specify a
-     * function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
-     * data events will only be logged for
+     * exact. For example, if you specify a function ARN
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events
+     * will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not
      * be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p> </note>
@@ -211,25 +203,21 @@ namespace Model
      * </p> <note> <p>This will also enable logging of data event activity performed by
      * any user or role in your AWS account, even if that activity is performed on a
      * bucket that belongs to another AWS account. </p> </note> </li> <li> <p>To log
-     * data events for all objects in all S3 buckets that include <i>my-bucket</i> in
-     * their names, specify the prefix as <code>aws:s3:::my-bucket</code>. The trail
-     * logs data events for all objects in all buckets whose name contains a match for
-     * <i>my-bucket</i>. </p> </li> <li> <p>To log data events for all objects in an S3
-     * bucket, specify the bucket and an empty object prefix such as
-     * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects
-     * in this S3 bucket.</p> </li> <li> <p>To log data events for specific objects,
-     * specify the S3 bucket and object prefix such as
+     * data events for all objects in an S3 bucket, specify the bucket and an empty
+     * object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data
+     * events for all objects in this S3 bucket.</p> </li> <li> <p>To log data events
+     * for specific objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
      * data events for all functions in your AWS account, specify the prefix as
      * <code>arn:aws:lambda</code>.</p> <note> <p>This will also enable logging of
      * <code>Invoke</code> activity performed by any user or role in your AWS account,
      * even if that activity is performed on a function that belongs to another AWS
-     * account. </p> </note> </li> <li> <p>To log data eents for a specific Lambda
+     * account. </p> </note> </li> <li> <p>To log data events for a specific Lambda
      * function, specify the function ARN.</p> <note> <p>Lambda function ARNs are
-     * exact. Unlike S3, you cannot use matching. For example, if you specify a
-     * function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
-     * data events will only be logged for
+     * exact. For example, if you specify a function ARN
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events
+     * will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not
      * be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p> </note>
@@ -244,25 +232,21 @@ namespace Model
      * </p> <note> <p>This will also enable logging of data event activity performed by
      * any user or role in your AWS account, even if that activity is performed on a
      * bucket that belongs to another AWS account. </p> </note> </li> <li> <p>To log
-     * data events for all objects in all S3 buckets that include <i>my-bucket</i> in
-     * their names, specify the prefix as <code>aws:s3:::my-bucket</code>. The trail
-     * logs data events for all objects in all buckets whose name contains a match for
-     * <i>my-bucket</i>. </p> </li> <li> <p>To log data events for all objects in an S3
-     * bucket, specify the bucket and an empty object prefix such as
-     * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects
-     * in this S3 bucket.</p> </li> <li> <p>To log data events for specific objects,
-     * specify the S3 bucket and object prefix such as
+     * data events for all objects in an S3 bucket, specify the bucket and an empty
+     * object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data
+     * events for all objects in this S3 bucket.</p> </li> <li> <p>To log data events
+     * for specific objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
      * data events for all functions in your AWS account, specify the prefix as
      * <code>arn:aws:lambda</code>.</p> <note> <p>This will also enable logging of
      * <code>Invoke</code> activity performed by any user or role in your AWS account,
      * even if that activity is performed on a function that belongs to another AWS
-     * account. </p> </note> </li> <li> <p>To log data eents for a specific Lambda
+     * account. </p> </note> </li> <li> <p>To log data events for a specific Lambda
      * function, specify the function ARN.</p> <note> <p>Lambda function ARNs are
-     * exact. Unlike S3, you cannot use matching. For example, if you specify a
-     * function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
-     * data events will only be logged for
+     * exact. For example, if you specify a function ARN
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events
+     * will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not
      * be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p> </note>
@@ -277,25 +261,21 @@ namespace Model
      * </p> <note> <p>This will also enable logging of data event activity performed by
      * any user or role in your AWS account, even if that activity is performed on a
      * bucket that belongs to another AWS account. </p> </note> </li> <li> <p>To log
-     * data events for all objects in all S3 buckets that include <i>my-bucket</i> in
-     * their names, specify the prefix as <code>aws:s3:::my-bucket</code>. The trail
-     * logs data events for all objects in all buckets whose name contains a match for
-     * <i>my-bucket</i>. </p> </li> <li> <p>To log data events for all objects in an S3
-     * bucket, specify the bucket and an empty object prefix such as
-     * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects
-     * in this S3 bucket.</p> </li> <li> <p>To log data events for specific objects,
-     * specify the S3 bucket and object prefix such as
+     * data events for all objects in an S3 bucket, specify the bucket and an empty
+     * object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data
+     * events for all objects in this S3 bucket.</p> </li> <li> <p>To log data events
+     * for specific objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
      * data events for all functions in your AWS account, specify the prefix as
      * <code>arn:aws:lambda</code>.</p> <note> <p>This will also enable logging of
      * <code>Invoke</code> activity performed by any user or role in your AWS account,
      * even if that activity is performed on a function that belongs to another AWS
-     * account. </p> </note> </li> <li> <p>To log data eents for a specific Lambda
+     * account. </p> </note> </li> <li> <p>To log data events for a specific Lambda
      * function, specify the function ARN.</p> <note> <p>Lambda function ARNs are
-     * exact. Unlike S3, you cannot use matching. For example, if you specify a
-     * function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
-     * data events will only be logged for
+     * exact. For example, if you specify a function ARN
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events
+     * will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not
      * be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p> </note>
@@ -310,25 +290,21 @@ namespace Model
      * </p> <note> <p>This will also enable logging of data event activity performed by
      * any user or role in your AWS account, even if that activity is performed on a
      * bucket that belongs to another AWS account. </p> </note> </li> <li> <p>To log
-     * data events for all objects in all S3 buckets that include <i>my-bucket</i> in
-     * their names, specify the prefix as <code>aws:s3:::my-bucket</code>. The trail
-     * logs data events for all objects in all buckets whose name contains a match for
-     * <i>my-bucket</i>. </p> </li> <li> <p>To log data events for all objects in an S3
-     * bucket, specify the bucket and an empty object prefix such as
-     * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects
-     * in this S3 bucket.</p> </li> <li> <p>To log data events for specific objects,
-     * specify the S3 bucket and object prefix such as
+     * data events for all objects in an S3 bucket, specify the bucket and an empty
+     * object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data
+     * events for all objects in this S3 bucket.</p> </li> <li> <p>To log data events
+     * for specific objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
      * data events for all functions in your AWS account, specify the prefix as
      * <code>arn:aws:lambda</code>.</p> <note> <p>This will also enable logging of
      * <code>Invoke</code> activity performed by any user or role in your AWS account,
      * even if that activity is performed on a function that belongs to another AWS
-     * account. </p> </note> </li> <li> <p>To log data eents for a specific Lambda
+     * account. </p> </note> </li> <li> <p>To log data events for a specific Lambda
      * function, specify the function ARN.</p> <note> <p>Lambda function ARNs are
-     * exact. Unlike S3, you cannot use matching. For example, if you specify a
-     * function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
-     * data events will only be logged for
+     * exact. For example, if you specify a function ARN
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events
+     * will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not
      * be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p> </note>
@@ -343,25 +319,21 @@ namespace Model
      * </p> <note> <p>This will also enable logging of data event activity performed by
      * any user or role in your AWS account, even if that activity is performed on a
      * bucket that belongs to another AWS account. </p> </note> </li> <li> <p>To log
-     * data events for all objects in all S3 buckets that include <i>my-bucket</i> in
-     * their names, specify the prefix as <code>aws:s3:::my-bucket</code>. The trail
-     * logs data events for all objects in all buckets whose name contains a match for
-     * <i>my-bucket</i>. </p> </li> <li> <p>To log data events for all objects in an S3
-     * bucket, specify the bucket and an empty object prefix such as
-     * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects
-     * in this S3 bucket.</p> </li> <li> <p>To log data events for specific objects,
-     * specify the S3 bucket and object prefix such as
+     * data events for all objects in an S3 bucket, specify the bucket and an empty
+     * object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data
+     * events for all objects in this S3 bucket.</p> </li> <li> <p>To log data events
+     * for specific objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
      * data events for all functions in your AWS account, specify the prefix as
      * <code>arn:aws:lambda</code>.</p> <note> <p>This will also enable logging of
      * <code>Invoke</code> activity performed by any user or role in your AWS account,
      * even if that activity is performed on a function that belongs to another AWS
-     * account. </p> </note> </li> <li> <p>To log data eents for a specific Lambda
+     * account. </p> </note> </li> <li> <p>To log data events for a specific Lambda
      * function, specify the function ARN.</p> <note> <p>Lambda function ARNs are
-     * exact. Unlike S3, you cannot use matching. For example, if you specify a
-     * function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
-     * data events will only be logged for
+     * exact. For example, if you specify a function ARN
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events
+     * will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not
      * be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p> </note>
@@ -376,25 +348,21 @@ namespace Model
      * </p> <note> <p>This will also enable logging of data event activity performed by
      * any user or role in your AWS account, even if that activity is performed on a
      * bucket that belongs to another AWS account. </p> </note> </li> <li> <p>To log
-     * data events for all objects in all S3 buckets that include <i>my-bucket</i> in
-     * their names, specify the prefix as <code>aws:s3:::my-bucket</code>. The trail
-     * logs data events for all objects in all buckets whose name contains a match for
-     * <i>my-bucket</i>. </p> </li> <li> <p>To log data events for all objects in an S3
-     * bucket, specify the bucket and an empty object prefix such as
-     * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects
-     * in this S3 bucket.</p> </li> <li> <p>To log data events for specific objects,
-     * specify the S3 bucket and object prefix such as
+     * data events for all objects in an S3 bucket, specify the bucket and an empty
+     * object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data
+     * events for all objects in this S3 bucket.</p> </li> <li> <p>To log data events
+     * for specific objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
      * data events for all functions in your AWS account, specify the prefix as
      * <code>arn:aws:lambda</code>.</p> <note> <p>This will also enable logging of
      * <code>Invoke</code> activity performed by any user or role in your AWS account,
      * even if that activity is performed on a function that belongs to another AWS
-     * account. </p> </note> </li> <li> <p>To log data eents for a specific Lambda
+     * account. </p> </note> </li> <li> <p>To log data events for a specific Lambda
      * function, specify the function ARN.</p> <note> <p>Lambda function ARNs are
-     * exact. Unlike S3, you cannot use matching. For example, if you specify a
-     * function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
-     * data events will only be logged for
+     * exact. For example, if you specify a function ARN
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events
+     * will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not
      * be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p> </note>
@@ -409,25 +377,21 @@ namespace Model
      * </p> <note> <p>This will also enable logging of data event activity performed by
      * any user or role in your AWS account, even if that activity is performed on a
      * bucket that belongs to another AWS account. </p> </note> </li> <li> <p>To log
-     * data events for all objects in all S3 buckets that include <i>my-bucket</i> in
-     * their names, specify the prefix as <code>aws:s3:::my-bucket</code>. The trail
-     * logs data events for all objects in all buckets whose name contains a match for
-     * <i>my-bucket</i>. </p> </li> <li> <p>To log data events for all objects in an S3
-     * bucket, specify the bucket and an empty object prefix such as
-     * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects
-     * in this S3 bucket.</p> </li> <li> <p>To log data events for specific objects,
-     * specify the S3 bucket and object prefix such as
+     * data events for all objects in an S3 bucket, specify the bucket and an empty
+     * object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data
+     * events for all objects in this S3 bucket.</p> </li> <li> <p>To log data events
+     * for specific objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
      * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
      * data events for all functions in your AWS account, specify the prefix as
      * <code>arn:aws:lambda</code>.</p> <note> <p>This will also enable logging of
      * <code>Invoke</code> activity performed by any user or role in your AWS account,
      * even if that activity is performed on a function that belongs to another AWS
-     * account. </p> </note> </li> <li> <p>To log data eents for a specific Lambda
+     * account. </p> </note> </li> <li> <p>To log data events for a specific Lambda
      * function, specify the function ARN.</p> <note> <p>Lambda function ARNs are
-     * exact. Unlike S3, you cannot use matching. For example, if you specify a
-     * function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
-     * data events will only be logged for
+     * exact. For example, if you specify a function ARN
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events
+     * will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not
      * be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p> </note>

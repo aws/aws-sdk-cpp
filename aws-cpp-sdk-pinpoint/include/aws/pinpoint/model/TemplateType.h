@@ -28,6 +28,7 @@ namespace Model
     NOT_SET,
     EMAIL,
     SMS,
+    VOICE,
     PUSH
   };
 
