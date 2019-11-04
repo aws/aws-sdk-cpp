@@ -802,32 +802,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Information about a network interface.</p>
      */
     inline const NetworkInterface& GetNetworkInterface() const{ return m_networkInterface; }
 
     /**
-     * <p/>
+     * <p>Information about a network interface.</p>
      */
     inline bool NetworkInterfaceHasBeenSet() const { return m_networkInterfaceHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Information about a network interface.</p>
      */
     inline void SetNetworkInterface(const NetworkInterface& value) { m_networkInterfaceHasBeenSet = true; m_networkInterface = value; }
 
     /**
-     * <p/>
+     * <p>Information about a network interface.</p>
      */
     inline void SetNetworkInterface(NetworkInterface&& value) { m_networkInterfaceHasBeenSet = true; m_networkInterface = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Information about a network interface.</p>
      */
     inline SimulationJob& WithNetworkInterface(const NetworkInterface& value) { SetNetworkInterface(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Information about a network interface.</p>
      */
     inline SimulationJob& WithNetworkInterface(NetworkInterface&& value) { SetNetworkInterface(std::move(value)); return *this;}
 

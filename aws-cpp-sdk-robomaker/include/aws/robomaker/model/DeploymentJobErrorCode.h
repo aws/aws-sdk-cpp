@@ -42,6 +42,7 @@ namespace Model
     PreLaunchFileFailure,
     PostLaunchFileFailure,
     BadPermissionError,
+    DownloadConditionFailed,
     InternalServerError
   };
 

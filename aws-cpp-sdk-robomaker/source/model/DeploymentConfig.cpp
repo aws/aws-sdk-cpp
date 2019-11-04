@@ -34,7 +34,8 @@ DeploymentConfig::DeploymentConfig() :
     m_failureThresholdPercentage(0),
     m_failureThresholdPercentageHasBeenSet(false),
     m_robotDeploymentTimeoutInSeconds(0),
-    m_robotDeploymentTimeoutInSecondsHasBeenSet(false)
+    m_robotDeploymentTimeoutInSecondsHasBeenSet(false),
+    m_downloadConditionFileHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ DeploymentConfig::DeploymentConfig(JsonView jsonValue) :
     m_failureThresholdPercentage(0),
     m_failureThresholdPercentageHasBeenSet(false),
     m_robotDeploymentTimeoutInSeconds(0),
-    m_robotDeploymentTimeoutInSecondsHasBeenSet(false)
+    m_robotDeploymentTimeoutInSecondsHasBeenSet(false),
+    m_downloadConditionFileHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -72,6 +74,13 @@ DeploymentConfig& DeploymentConfig::operator =(JsonView jsonValue)
     m_robotDeploymentTimeoutInSecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("downloadConditionFile"))
+  {
+    m_downloadConditionFile = jsonValue.GetObject("downloadConditionFile");
+
+    m_downloadConditionFileHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +103,12 @@ JsonValue DeploymentConfig::Jsonize() const
   if(m_robotDeploymentTimeoutInSecondsHasBeenSet)
   {
    payload.WithInt64("robotDeploymentTimeoutInSeconds", m_robotDeploymentTimeoutInSeconds);
+
+  }
+
+  if(m_downloadConditionFileHasBeenSet)
+  {
+   payload.WithObject("downloadConditionFile", m_downloadConditionFile.Jsonize());
 
   }
 

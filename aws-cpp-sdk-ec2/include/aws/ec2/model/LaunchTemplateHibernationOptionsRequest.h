@@ -35,8 +35,7 @@ namespace Model
    * <p>Indicates whether the instance is configured for hibernation. This parameter
    * is valid only if the instance meets the <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
-   * prerequisites</a>. Hibernation is currently supported only for Amazon
-   * Linux.</p><p><h3>See Also:</h3>   <a
+   * prerequisites</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateHibernationOptionsRequest">AWS
    * API Reference</a></p>
    */

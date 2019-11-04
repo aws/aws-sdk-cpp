@@ -28,6 +28,7 @@ namespace Model
     NOT_SET,
     Validating,
     DownloadingExtracting,
+    ExecutingDownloadCondition,
     ExecutingPreLaunch,
     Launching,
     ExecutingPostLaunch,

@@ -5164,7 +5164,7 @@ namespace Model
          * <p>Creates crash-consistent snapshots of multiple EBS volumes and stores the
          * data in S3. Volumes are chosen by specifying an instance. Any attached volumes
          * will produce one snapshot each that is crash-consistent across the instance.
-         * Boot volumes can be excluded by changing the paramaters. </p><p><h3>See
+         * Boot volumes can be excluded by changing the parameters. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots">AWS
          * API Reference</a></p>
@@ -5175,7 +5175,7 @@ namespace Model
          * <p>Creates crash-consistent snapshots of multiple EBS volumes and stores the
          * data in S3. Volumes are chosen by specifying an instance. Any attached volumes
          * will produce one snapshot each that is crash-consistent across the instance.
-         * Boot volumes can be excluded by changing the paramaters. </p><p><h3>See
+         * Boot volumes can be excluded by changing the parameters. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots">AWS
          * API Reference</a></p>
@@ -5188,7 +5188,7 @@ namespace Model
          * <p>Creates crash-consistent snapshots of multiple EBS volumes and stores the
          * data in S3. Volumes are chosen by specifying an instance. Any attached volumes
          * will produce one snapshot each that is crash-consistent across the instance.
-         * Boot volumes can be excluded by changing the paramaters. </p><p><h3>See
+         * Boot volumes can be excluded by changing the parameters. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots">AWS
          * API Reference</a></p>
@@ -5380,10 +5380,12 @@ namespace Model
         /**
          * <p>Creates a Traffic Mirror filter.</p> <p>A Traffic Mirror filter is a set of
          * rules that defines the traffic to mirror.</p> <p>By default, no traffic is
-         * mirrored. To mirror traffic, use <a>CreateTrafficMirrorFilterRule</a> to add
-         * Traffic Mirror rules to the filter. The rules you add define what traffic gets
-         * mirrored. You can also use <a>ModifyTrafficMirrorFilterNetworkServices</a> to
-         * mirror supported network services.</p><p><h3>See Also:</h3>   <a
+         * mirrored. To mirror traffic, use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilterRule.htm">CreateTrafficMirrorFilterRule</a>
+         * to add Traffic Mirror rules to the filter. The rules you add define what traffic
+         * gets mirrored. You can also use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTrafficMirrorFilterNetworkServices.html">ModifyTrafficMirrorFilterNetworkServices</a>
+         * to mirror supported network services.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilter">AWS
          * API Reference</a></p>
          */
@@ -5392,10 +5394,12 @@ namespace Model
         /**
          * <p>Creates a Traffic Mirror filter.</p> <p>A Traffic Mirror filter is a set of
          * rules that defines the traffic to mirror.</p> <p>By default, no traffic is
-         * mirrored. To mirror traffic, use <a>CreateTrafficMirrorFilterRule</a> to add
-         * Traffic Mirror rules to the filter. The rules you add define what traffic gets
-         * mirrored. You can also use <a>ModifyTrafficMirrorFilterNetworkServices</a> to
-         * mirror supported network services.</p><p><h3>See Also:</h3>   <a
+         * mirrored. To mirror traffic, use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilterRule.htm">CreateTrafficMirrorFilterRule</a>
+         * to add Traffic Mirror rules to the filter. The rules you add define what traffic
+         * gets mirrored. You can also use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTrafficMirrorFilterNetworkServices.html">ModifyTrafficMirrorFilterNetworkServices</a>
+         * to mirror supported network services.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilter">AWS
          * API Reference</a></p>
          *
@@ -5406,10 +5410,12 @@ namespace Model
         /**
          * <p>Creates a Traffic Mirror filter.</p> <p>A Traffic Mirror filter is a set of
          * rules that defines the traffic to mirror.</p> <p>By default, no traffic is
-         * mirrored. To mirror traffic, use <a>CreateTrafficMirrorFilterRule</a> to add
-         * Traffic Mirror rules to the filter. The rules you add define what traffic gets
-         * mirrored. You can also use <a>ModifyTrafficMirrorFilterNetworkServices</a> to
-         * mirror supported network services.</p><p><h3>See Also:</h3>   <a
+         * mirrored. To mirror traffic, use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilterRule.htm">CreateTrafficMirrorFilterRule</a>
+         * to add Traffic Mirror rules to the filter. The rules you add define what traffic
+         * gets mirrored. You can also use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTrafficMirrorFilterNetworkServices.html">ModifyTrafficMirrorFilterNetworkServices</a>
+         * to mirror supported network services.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilter">AWS
          * API Reference</a></p>
          *
@@ -5418,8 +5424,8 @@ namespace Model
         virtual void CreateTrafficMirrorFilterAsync(const Model::CreateTrafficMirrorFilterRequest& request, const CreateTrafficMirrorFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a Traffic Mirror rule. </p> <p>A Traffic Mirror rule defines the
-         * Traffic Mirror source traffic to mirror.</p> <p>You need the Traffic Mirror
+         * <p>Creates a Traffic Mirror filter rule. </p> <p>A Traffic Mirror rule defines
+         * the Traffic Mirror source traffic to mirror.</p> <p>You need the Traffic Mirror
          * filter ID when you create the rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilterRule">AWS
          * API Reference</a></p>
@@ -5427,8 +5433,8 @@ namespace Model
         virtual Model::CreateTrafficMirrorFilterRuleOutcome CreateTrafficMirrorFilterRule(const Model::CreateTrafficMirrorFilterRuleRequest& request) const;
 
         /**
-         * <p>Creates a Traffic Mirror rule. </p> <p>A Traffic Mirror rule defines the
-         * Traffic Mirror source traffic to mirror.</p> <p>You need the Traffic Mirror
+         * <p>Creates a Traffic Mirror filter rule. </p> <p>A Traffic Mirror rule defines
+         * the Traffic Mirror source traffic to mirror.</p> <p>You need the Traffic Mirror
          * filter ID when you create the rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilterRule">AWS
          * API Reference</a></p>
@@ -5438,8 +5444,8 @@ namespace Model
         virtual Model::CreateTrafficMirrorFilterRuleOutcomeCallable CreateTrafficMirrorFilterRuleCallable(const Model::CreateTrafficMirrorFilterRuleRequest& request) const;
 
         /**
-         * <p>Creates a Traffic Mirror rule. </p> <p>A Traffic Mirror rule defines the
-         * Traffic Mirror source traffic to mirror.</p> <p>You need the Traffic Mirror
+         * <p>Creates a Traffic Mirror filter rule. </p> <p>A Traffic Mirror rule defines
+         * the Traffic Mirror source traffic to mirror.</p> <p>You need the Traffic Mirror
          * filter ID when you create the rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilterRule">AWS
          * API Reference</a></p>
@@ -5455,8 +5461,10 @@ namespace Model
          * mirror, for example all TCP traffic.</p> <p>The Traffic Mirror source and the
          * Traffic Mirror target (monitoring appliances) can be in the same VPC, or in a
          * different VPC connected via VPC peering or a transit gateway. </p> <p>By
-         * default, no traffic is mirrored. Use <a>CreateTrafficMirrorFilter</a> to create
-         * filter rules that specify the traffic to mirror.</p><p><h3>See Also:</h3>   <a
+         * default, no traffic is mirrored. Use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilter.htm">CreateTrafficMirrorFilter</a>
+         * to create filter rules that specify the traffic to mirror.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorSession">AWS
          * API Reference</a></p>
          */
@@ -5469,8 +5477,10 @@ namespace Model
          * mirror, for example all TCP traffic.</p> <p>The Traffic Mirror source and the
          * Traffic Mirror target (monitoring appliances) can be in the same VPC, or in a
          * different VPC connected via VPC peering or a transit gateway. </p> <p>By
-         * default, no traffic is mirrored. Use <a>CreateTrafficMirrorFilter</a> to create
-         * filter rules that specify the traffic to mirror.</p><p><h3>See Also:</h3>   <a
+         * default, no traffic is mirrored. Use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilter.htm">CreateTrafficMirrorFilter</a>
+         * to create filter rules that specify the traffic to mirror.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorSession">AWS
          * API Reference</a></p>
          *
@@ -5485,8 +5495,10 @@ namespace Model
          * mirror, for example all TCP traffic.</p> <p>The Traffic Mirror source and the
          * Traffic Mirror target (monitoring appliances) can be in the same VPC, or in a
          * different VPC connected via VPC peering or a transit gateway. </p> <p>By
-         * default, no traffic is mirrored. Use <a>CreateTrafficMirrorFilter</a> to create
-         * filter rules that specify the traffic to mirror.</p><p><h3>See Also:</h3>   <a
+         * default, no traffic is mirrored. Use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilter.htm">CreateTrafficMirrorFilter</a>
+         * to create filter rules that specify the traffic to mirror.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorSession">AWS
          * API Reference</a></p>
          *
@@ -5500,8 +5512,9 @@ namespace Model
          * the Traffic Mirror target (monitoring appliances) can be in the same VPC, or in
          * different VPCs connected via VPC peering or a transit gateway.</p> <p>A Traffic
          * Mirror target can be a network interface, or a Network Load Balancer.</p> <p>To
-         * use the target in a Traffic Mirror session, use
-         * <a>CreateTrafficMirrorSession</a>.</p><p><h3>See Also:</h3>   <a
+         * use the target in a Traffic Mirror session, use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorSession.htm">CreateTrafficMirrorSession</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorTarget">AWS
          * API Reference</a></p>
          */
@@ -5513,8 +5526,9 @@ namespace Model
          * the Traffic Mirror target (monitoring appliances) can be in the same VPC, or in
          * different VPCs connected via VPC peering or a transit gateway.</p> <p>A Traffic
          * Mirror target can be a network interface, or a Network Load Balancer.</p> <p>To
-         * use the target in a Traffic Mirror session, use
-         * <a>CreateTrafficMirrorSession</a>.</p><p><h3>See Also:</h3>   <a
+         * use the target in a Traffic Mirror session, use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorSession.htm">CreateTrafficMirrorSession</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorTarget">AWS
          * API Reference</a></p>
          *
@@ -5528,8 +5542,9 @@ namespace Model
          * the Traffic Mirror target (monitoring appliances) can be in the same VPC, or in
          * different VPCs connected via VPC peering or a transit gateway.</p> <p>A Traffic
          * Mirror target can be a network interface, or a Network Load Balancer.</p> <p>To
-         * use the target in a Traffic Mirror session, use
-         * <a>CreateTrafficMirrorSession</a>.</p><p><h3>See Also:</h3>   <a
+         * use the target in a Traffic Mirror session, use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorSession.htm">CreateTrafficMirrorSession</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorTarget">AWS
          * API Reference</a></p>
          *
@@ -13572,19 +13587,19 @@ namespace Model
          * modified, it is in the <code>modifying</code> state.</p> <p>To scale up your EC2
          * Fleet, increase its target capacity. The EC2 Fleet launches the additional Spot
          * Instances according to the allocation strategy for the EC2 Fleet request. If the
-         * allocation strategy is <code>lowestPrice</code>, the EC2 Fleet launches
+         * allocation strategy is <code>lowest-price</code>, the EC2 Fleet launches
          * instances using the Spot Instance pool with the lowest price. If the allocation
          * strategy is <code>diversified</code>, the EC2 Fleet distributes the instances
          * across the Spot Instance pools. If the allocation strategy is
-         * <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance
+         * <code>capacity-optimized</code>, EC2 Fleet launches instances from Spot Instance
          * pools with optimal capacity for the number of instances that are launching.</p>
          * <p>To scale down your EC2 Fleet, decrease its target capacity. First, the EC2
          * Fleet cancels any open requests that exceed the new target capacity. You can
          * request that the EC2 Fleet terminate Spot Instances until the size of the fleet
          * no longer exceeds the new target capacity. If the allocation strategy is
-         * <code>lowestPrice</code>, the EC2 Fleet terminates the instances with the
+         * <code>lowest-price</code>, the EC2 Fleet terminates the instances with the
          * highest price per unit. If the allocation strategy is
-         * <code>capacityOptimized</code>, the EC2 Fleet terminates the instances in the
+         * <code>capacity-optimized</code>, the EC2 Fleet terminates the instances in the
          * Spot Instance pools that have the least available Spot Instance capacity. If the
          * allocation strategy is <code>diversified</code>, the EC2 Fleet terminates
          * instances across the Spot Instance pools. Alternatively, you can request that
@@ -13603,19 +13618,19 @@ namespace Model
          * modified, it is in the <code>modifying</code> state.</p> <p>To scale up your EC2
          * Fleet, increase its target capacity. The EC2 Fleet launches the additional Spot
          * Instances according to the allocation strategy for the EC2 Fleet request. If the
-         * allocation strategy is <code>lowestPrice</code>, the EC2 Fleet launches
+         * allocation strategy is <code>lowest-price</code>, the EC2 Fleet launches
          * instances using the Spot Instance pool with the lowest price. If the allocation
          * strategy is <code>diversified</code>, the EC2 Fleet distributes the instances
          * across the Spot Instance pools. If the allocation strategy is
-         * <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance
+         * <code>capacity-optimized</code>, EC2 Fleet launches instances from Spot Instance
          * pools with optimal capacity for the number of instances that are launching.</p>
          * <p>To scale down your EC2 Fleet, decrease its target capacity. First, the EC2
          * Fleet cancels any open requests that exceed the new target capacity. You can
          * request that the EC2 Fleet terminate Spot Instances until the size of the fleet
          * no longer exceeds the new target capacity. If the allocation strategy is
-         * <code>lowestPrice</code>, the EC2 Fleet terminates the instances with the
+         * <code>lowest-price</code>, the EC2 Fleet terminates the instances with the
          * highest price per unit. If the allocation strategy is
-         * <code>capacityOptimized</code>, the EC2 Fleet terminates the instances in the
+         * <code>capacity-optimized</code>, the EC2 Fleet terminates the instances in the
          * Spot Instance pools that have the least available Spot Instance capacity. If the
          * allocation strategy is <code>diversified</code>, the EC2 Fleet terminates
          * instances across the Spot Instance pools. Alternatively, you can request that
@@ -13636,19 +13651,19 @@ namespace Model
          * modified, it is in the <code>modifying</code> state.</p> <p>To scale up your EC2
          * Fleet, increase its target capacity. The EC2 Fleet launches the additional Spot
          * Instances according to the allocation strategy for the EC2 Fleet request. If the
-         * allocation strategy is <code>lowestPrice</code>, the EC2 Fleet launches
+         * allocation strategy is <code>lowest-price</code>, the EC2 Fleet launches
          * instances using the Spot Instance pool with the lowest price. If the allocation
          * strategy is <code>diversified</code>, the EC2 Fleet distributes the instances
          * across the Spot Instance pools. If the allocation strategy is
-         * <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance
+         * <code>capacity-optimized</code>, EC2 Fleet launches instances from Spot Instance
          * pools with optimal capacity for the number of instances that are launching.</p>
          * <p>To scale down your EC2 Fleet, decrease its target capacity. First, the EC2
          * Fleet cancels any open requests that exceed the new target capacity. You can
          * request that the EC2 Fleet terminate Spot Instances until the size of the fleet
          * no longer exceeds the new target capacity. If the allocation strategy is
-         * <code>lowestPrice</code>, the EC2 Fleet terminates the instances with the
+         * <code>lowest-price</code>, the EC2 Fleet terminates the instances with the
          * highest price per unit. If the allocation strategy is
-         * <code>capacityOptimized</code>, the EC2 Fleet terminates the instances in the
+         * <code>capacity-optimized</code>, the EC2 Fleet terminates the instances in the
          * Spot Instance pools that have the least available Spot Instance capacity. If the
          * allocation strategy is <code>diversified</code>, the EC2 Fleet terminates
          * instances across the Spot Instance pools. Alternatively, you can request that
@@ -14520,9 +14535,9 @@ namespace Model
          * filter. When a network service is added to the Traffic Mirror filter, all
          * traffic related to that network service will be mirrored. When you no longer
          * want to mirror network services, use <code>RemoveNetworkServices</code> to
-         * remove the network services from the Traffic Mirror filter. </p> <p>FFor
+         * remove the network services from the Traffic Mirror filter. </p> <p>For
          * information about filter rule properties, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html#traffic-mirroring-network-services">Network
+         * href="https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html">Network
          * Services</a> in the <i>Traffic Mirroring User Guide </i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterNetworkServices">AWS
@@ -14537,9 +14552,9 @@ namespace Model
          * filter. When a network service is added to the Traffic Mirror filter, all
          * traffic related to that network service will be mirrored. When you no longer
          * want to mirror network services, use <code>RemoveNetworkServices</code> to
-         * remove the network services from the Traffic Mirror filter. </p> <p>FFor
+         * remove the network services from the Traffic Mirror filter. </p> <p>For
          * information about filter rule properties, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html#traffic-mirroring-network-services">Network
+         * href="https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html">Network
          * Services</a> in the <i>Traffic Mirroring User Guide </i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterNetworkServices">AWS
@@ -14556,9 +14571,9 @@ namespace Model
          * filter. When a network service is added to the Traffic Mirror filter, all
          * traffic related to that network service will be mirrored. When you no longer
          * want to mirror network services, use <code>RemoveNetworkServices</code> to
-         * remove the network services from the Traffic Mirror filter. </p> <p>FFor
+         * remove the network services from the Traffic Mirror filter. </p> <p>For
          * information about filter rule properties, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html#traffic-mirroring-network-services">Network
+         * href="https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html">Network
          * Services</a> in the <i>Traffic Mirroring User Guide </i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterNetworkServices">AWS

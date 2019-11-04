@@ -91,42 +91,42 @@ namespace Model
 
 
     /**
-     * <p>The Availability Zone (AZ) for subnet subnet.</p>
+     * <p>The Availability Zone (AZ) for the subnet.</p>
      */
     inline const Aws::String& GetSubnetAvailabilityZone() const{ return m_subnetAvailabilityZone; }
 
     /**
-     * <p>The Availability Zone (AZ) for subnet subnet.</p>
+     * <p>The Availability Zone (AZ) for the subnet.</p>
      */
     inline bool SubnetAvailabilityZoneHasBeenSet() const { return m_subnetAvailabilityZoneHasBeenSet; }
 
     /**
-     * <p>The Availability Zone (AZ) for subnet subnet.</p>
+     * <p>The Availability Zone (AZ) for the subnet.</p>
      */
     inline void SetSubnetAvailabilityZone(const Aws::String& value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone = value; }
 
     /**
-     * <p>The Availability Zone (AZ) for subnet subnet.</p>
+     * <p>The Availability Zone (AZ) for the subnet.</p>
      */
     inline void SetSubnetAvailabilityZone(Aws::String&& value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone = std::move(value); }
 
     /**
-     * <p>The Availability Zone (AZ) for subnet subnet.</p>
+     * <p>The Availability Zone (AZ) for the subnet.</p>
      */
     inline void SetSubnetAvailabilityZone(const char* value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone.assign(value); }
 
     /**
-     * <p>The Availability Zone (AZ) for subnet subnet.</p>
+     * <p>The Availability Zone (AZ) for the subnet.</p>
      */
     inline Subnet& WithSubnetAvailabilityZone(const Aws::String& value) { SetSubnetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The Availability Zone (AZ) for subnet subnet.</p>
+     * <p>The Availability Zone (AZ) for the subnet.</p>
      */
     inline Subnet& WithSubnetAvailabilityZone(Aws::String&& value) { SetSubnetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The Availability Zone (AZ) for subnet subnet.</p>
+     * <p>The Availability Zone (AZ) for the subnet.</p>
      */
     inline Subnet& WithSubnetAvailabilityZone(const char* value) { SetSubnetAvailabilityZone(value); return *this;}
 

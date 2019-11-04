@@ -32,6 +32,7 @@ namespace Aws
 
         static const int Validating_HASH = HashingUtils::HashString("Validating");
         static const int DownloadingExtracting_HASH = HashingUtils::HashString("DownloadingExtracting");
+        static const int ExecutingDownloadCondition_HASH = HashingUtils::HashString("ExecutingDownloadCondition");
         static const int ExecutingPreLaunch_HASH = HashingUtils::HashString("ExecutingPreLaunch");
         static const int Launching_HASH = HashingUtils::HashString("Launching");
         static const int ExecutingPostLaunch_HASH = HashingUtils::HashString("ExecutingPostLaunch");
@@ -48,6 +49,10 @@ namespace Aws
           else if (hashCode == DownloadingExtracting_HASH)
           {
             return RobotDeploymentStep::DownloadingExtracting;
+          }
+          else if (hashCode == ExecutingDownloadCondition_HASH)
+          {
+            return RobotDeploymentStep::ExecutingDownloadCondition;
           }
           else if (hashCode == ExecutingPreLaunch_HASH)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "Validating";
           case RobotDeploymentStep::DownloadingExtracting:
             return "DownloadingExtracting";
+          case RobotDeploymentStep::ExecutingDownloadCondition:
+            return "ExecutingDownloadCondition";
           case RobotDeploymentStep::ExecutingPreLaunch:
             return "ExecutingPreLaunch";
           case RobotDeploymentStep::Launching:

@@ -206,9 +206,11 @@ namespace Model
      * <p>The number of nodes in the DAX cluster. A replication factor of 1 will create
      * a single-node cluster, without any read replicas. For additional fault
      * tolerance, you can create a multiple node cluster with one or more read
-     * replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note>
-     * <p>AWS recommends that you have at least two read replicas per cluster.</p>
-     * </note>
+     * replicas. To do this, set <code>ReplicationFactor</code> to a number between 3
+     * (one primary and two read replicas) and 10 (one primary and nine read replicas).
+     * <code>If the AvailabilityZones</code> parameter is provided, its length must
+     * equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you
+     * have at least two read replicas per cluster.</p> </note>
      */
     inline int GetReplicationFactor() const{ return m_replicationFactor; }
 
@@ -216,9 +218,11 @@ namespace Model
      * <p>The number of nodes in the DAX cluster. A replication factor of 1 will create
      * a single-node cluster, without any read replicas. For additional fault
      * tolerance, you can create a multiple node cluster with one or more read
-     * replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note>
-     * <p>AWS recommends that you have at least two read replicas per cluster.</p>
-     * </note>
+     * replicas. To do this, set <code>ReplicationFactor</code> to a number between 3
+     * (one primary and two read replicas) and 10 (one primary and nine read replicas).
+     * <code>If the AvailabilityZones</code> parameter is provided, its length must
+     * equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you
+     * have at least two read replicas per cluster.</p> </note>
      */
     inline bool ReplicationFactorHasBeenSet() const { return m_replicationFactorHasBeenSet; }
 
@@ -226,9 +230,11 @@ namespace Model
      * <p>The number of nodes in the DAX cluster. A replication factor of 1 will create
      * a single-node cluster, without any read replicas. For additional fault
      * tolerance, you can create a multiple node cluster with one or more read
-     * replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note>
-     * <p>AWS recommends that you have at least two read replicas per cluster.</p>
-     * </note>
+     * replicas. To do this, set <code>ReplicationFactor</code> to a number between 3
+     * (one primary and two read replicas) and 10 (one primary and nine read replicas).
+     * <code>If the AvailabilityZones</code> parameter is provided, its length must
+     * equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you
+     * have at least two read replicas per cluster.</p> </note>
      */
     inline void SetReplicationFactor(int value) { m_replicationFactorHasBeenSet = true; m_replicationFactor = value; }
 
@@ -236,73 +242,93 @@ namespace Model
      * <p>The number of nodes in the DAX cluster. A replication factor of 1 will create
      * a single-node cluster, without any read replicas. For additional fault
      * tolerance, you can create a multiple node cluster with one or more read
-     * replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note>
-     * <p>AWS recommends that you have at least two read replicas per cluster.</p>
-     * </note>
+     * replicas. To do this, set <code>ReplicationFactor</code> to a number between 3
+     * (one primary and two read replicas) and 10 (one primary and nine read replicas).
+     * <code>If the AvailabilityZones</code> parameter is provided, its length must
+     * equal the <code>ReplicationFactor</code>.</p> <note> <p>AWS recommends that you
+     * have at least two read replicas per cluster.</p> </note>
      */
     inline CreateClusterRequest& WithReplicationFactor(int value) { SetReplicationFactor(value); return *this;}
 
 
     /**
-     * <p>The Availability Zones (AZs) in which the cluster nodes will be created. All
-     * nodes belonging to the cluster are placed in these Availability Zones. Use this
-     * parameter if you want to distribute the nodes across multiple AZs.</p>
+     * <p>The Availability Zones (AZs) in which the cluster nodes will reside after the
+     * cluster has been created or updated. If provided, the length of this list must
+     * equal the <code>ReplicationFactor</code> parameter. If you omit this parameter,
+     * DAX will spread the nodes across Availability Zones for the highest
+     * availability.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
     /**
-     * <p>The Availability Zones (AZs) in which the cluster nodes will be created. All
-     * nodes belonging to the cluster are placed in these Availability Zones. Use this
-     * parameter if you want to distribute the nodes across multiple AZs.</p>
+     * <p>The Availability Zones (AZs) in which the cluster nodes will reside after the
+     * cluster has been created or updated. If provided, the length of this list must
+     * equal the <code>ReplicationFactor</code> parameter. If you omit this parameter,
+     * DAX will spread the nodes across Availability Zones for the highest
+     * availability.</p>
      */
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
-     * <p>The Availability Zones (AZs) in which the cluster nodes will be created. All
-     * nodes belonging to the cluster are placed in these Availability Zones. Use this
-     * parameter if you want to distribute the nodes across multiple AZs.</p>
+     * <p>The Availability Zones (AZs) in which the cluster nodes will reside after the
+     * cluster has been created or updated. If provided, the length of this list must
+     * equal the <code>ReplicationFactor</code> parameter. If you omit this parameter,
+     * DAX will spread the nodes across Availability Zones for the highest
+     * availability.</p>
      */
     inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
-     * <p>The Availability Zones (AZs) in which the cluster nodes will be created. All
-     * nodes belonging to the cluster are placed in these Availability Zones. Use this
-     * parameter if you want to distribute the nodes across multiple AZs.</p>
+     * <p>The Availability Zones (AZs) in which the cluster nodes will reside after the
+     * cluster has been created or updated. If provided, the length of this list must
+     * equal the <code>ReplicationFactor</code> parameter. If you omit this parameter,
+     * DAX will spread the nodes across Availability Zones for the highest
+     * availability.</p>
      */
     inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
-     * <p>The Availability Zones (AZs) in which the cluster nodes will be created. All
-     * nodes belonging to the cluster are placed in these Availability Zones. Use this
-     * parameter if you want to distribute the nodes across multiple AZs.</p>
+     * <p>The Availability Zones (AZs) in which the cluster nodes will reside after the
+     * cluster has been created or updated. If provided, the length of this list must
+     * equal the <code>ReplicationFactor</code> parameter. If you omit this parameter,
+     * DAX will spread the nodes across Availability Zones for the highest
+     * availability.</p>
      */
     inline CreateClusterRequest& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
 
     /**
-     * <p>The Availability Zones (AZs) in which the cluster nodes will be created. All
-     * nodes belonging to the cluster are placed in these Availability Zones. Use this
-     * parameter if you want to distribute the nodes across multiple AZs.</p>
+     * <p>The Availability Zones (AZs) in which the cluster nodes will reside after the
+     * cluster has been created or updated. If provided, the length of this list must
+     * equal the <code>ReplicationFactor</code> parameter. If you omit this parameter,
+     * DAX will spread the nodes across Availability Zones for the highest
+     * availability.</p>
      */
     inline CreateClusterRequest& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
-     * <p>The Availability Zones (AZs) in which the cluster nodes will be created. All
-     * nodes belonging to the cluster are placed in these Availability Zones. Use this
-     * parameter if you want to distribute the nodes across multiple AZs.</p>
+     * <p>The Availability Zones (AZs) in which the cluster nodes will reside after the
+     * cluster has been created or updated. If provided, the length of this list must
+     * equal the <code>ReplicationFactor</code> parameter. If you omit this parameter,
+     * DAX will spread the nodes across Availability Zones for the highest
+     * availability.</p>
      */
     inline CreateClusterRequest& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>The Availability Zones (AZs) in which the cluster nodes will be created. All
-     * nodes belonging to the cluster are placed in these Availability Zones. Use this
-     * parameter if you want to distribute the nodes across multiple AZs.</p>
+     * <p>The Availability Zones (AZs) in which the cluster nodes will reside after the
+     * cluster has been created or updated. If provided, the length of this list must
+     * equal the <code>ReplicationFactor</code> parameter. If you omit this parameter,
+     * DAX will spread the nodes across Availability Zones for the highest
+     * availability.</p>
      */
     inline CreateClusterRequest& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Availability Zones (AZs) in which the cluster nodes will be created. All
-     * nodes belonging to the cluster are placed in these Availability Zones. Use this
-     * parameter if you want to distribute the nodes across multiple AZs.</p>
+     * <p>The Availability Zones (AZs) in which the cluster nodes will reside after the
+     * cluster has been created or updated. If provided, the length of this list must
+     * equal the <code>ReplicationFactor</code> parameter. If you omit this parameter,
+     * DAX will spread the nodes across Availability Zones for the highest
+     * availability.</p>
      */
     inline CreateClusterRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 

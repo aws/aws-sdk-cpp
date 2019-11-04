@@ -191,32 +191,38 @@ namespace Model
 
 
     /**
-     * <p>The time at which to purchase the Reserved Instance.</p>
+     * <p>The time at which to purchase the Reserved Instance, in UTC format (for
+     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
     inline const Aws::Utils::DateTime& GetPurchaseTime() const{ return m_purchaseTime; }
 
     /**
-     * <p>The time at which to purchase the Reserved Instance.</p>
+     * <p>The time at which to purchase the Reserved Instance, in UTC format (for
+     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
     inline bool PurchaseTimeHasBeenSet() const { return m_purchaseTimeHasBeenSet; }
 
     /**
-     * <p>The time at which to purchase the Reserved Instance.</p>
+     * <p>The time at which to purchase the Reserved Instance, in UTC format (for
+     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
     inline void SetPurchaseTime(const Aws::Utils::DateTime& value) { m_purchaseTimeHasBeenSet = true; m_purchaseTime = value; }
 
     /**
-     * <p>The time at which to purchase the Reserved Instance.</p>
+     * <p>The time at which to purchase the Reserved Instance, in UTC format (for
+     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
     inline void SetPurchaseTime(Aws::Utils::DateTime&& value) { m_purchaseTimeHasBeenSet = true; m_purchaseTime = std::move(value); }
 
     /**
-     * <p>The time at which to purchase the Reserved Instance.</p>
+     * <p>The time at which to purchase the Reserved Instance, in UTC format (for
+     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
     inline PurchaseReservedInstancesOfferingRequest& WithPurchaseTime(const Aws::Utils::DateTime& value) { SetPurchaseTime(value); return *this;}
 
     /**
-     * <p>The time at which to purchase the Reserved Instance.</p>
+     * <p>The time at which to purchase the Reserved Instance, in UTC format (for
+     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
     inline PurchaseReservedInstancesOfferingRequest& WithPurchaseTime(Aws::Utils::DateTime&& value) { SetPurchaseTime(std::move(value)); return *this;}
 

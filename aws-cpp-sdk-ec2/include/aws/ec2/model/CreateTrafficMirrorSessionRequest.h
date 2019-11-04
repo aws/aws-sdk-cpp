@@ -176,9 +176,9 @@ namespace Model
      * <p>The number of bytes in each packet to mirror. These are bytes after the VXLAN
      * header. Do not specify this parameter when you want to mirror the entire packet.
      * To mirror a subset of the packet, set this to the length (in bytes) that you
-     * want to mirror. For example, if you set this value to 1network0, then the first
-     * 100 bytes that meet the filter criteria are copied to the target.</p> <p>If you
-     * do not want to mirror the entire packet, use the <code>PacketLength</code>
+     * want to mirror. For example, if you set this value to 100, then the first 100
+     * bytes that meet the filter criteria are copied to the target.</p> <p>If you do
+     * not want to mirror the entire packet, use the <code>PacketLength</code>
      * parameter to specify the number of bytes in each packet to mirror.</p>
      */
     inline int GetPacketLength() const{ return m_packetLength; }
@@ -187,9 +187,9 @@ namespace Model
      * <p>The number of bytes in each packet to mirror. These are bytes after the VXLAN
      * header. Do not specify this parameter when you want to mirror the entire packet.
      * To mirror a subset of the packet, set this to the length (in bytes) that you
-     * want to mirror. For example, if you set this value to 1network0, then the first
-     * 100 bytes that meet the filter criteria are copied to the target.</p> <p>If you
-     * do not want to mirror the entire packet, use the <code>PacketLength</code>
+     * want to mirror. For example, if you set this value to 100, then the first 100
+     * bytes that meet the filter criteria are copied to the target.</p> <p>If you do
+     * not want to mirror the entire packet, use the <code>PacketLength</code>
      * parameter to specify the number of bytes in each packet to mirror.</p>
      */
     inline bool PacketLengthHasBeenSet() const { return m_packetLengthHasBeenSet; }
@@ -198,9 +198,9 @@ namespace Model
      * <p>The number of bytes in each packet to mirror. These are bytes after the VXLAN
      * header. Do not specify this parameter when you want to mirror the entire packet.
      * To mirror a subset of the packet, set this to the length (in bytes) that you
-     * want to mirror. For example, if you set this value to 1network0, then the first
-     * 100 bytes that meet the filter criteria are copied to the target.</p> <p>If you
-     * do not want to mirror the entire packet, use the <code>PacketLength</code>
+     * want to mirror. For example, if you set this value to 100, then the first 100
+     * bytes that meet the filter criteria are copied to the target.</p> <p>If you do
+     * not want to mirror the entire packet, use the <code>PacketLength</code>
      * parameter to specify the number of bytes in each packet to mirror.</p>
      */
     inline void SetPacketLength(int value) { m_packetLengthHasBeenSet = true; m_packetLength = value; }
@@ -209,9 +209,9 @@ namespace Model
      * <p>The number of bytes in each packet to mirror. These are bytes after the VXLAN
      * header. Do not specify this parameter when you want to mirror the entire packet.
      * To mirror a subset of the packet, set this to the length (in bytes) that you
-     * want to mirror. For example, if you set this value to 1network0, then the first
-     * 100 bytes that meet the filter criteria are copied to the target.</p> <p>If you
-     * do not want to mirror the entire packet, use the <code>PacketLength</code>
+     * want to mirror. For example, if you set this value to 100, then the first 100
+     * bytes that meet the filter criteria are copied to the target.</p> <p>If you do
+     * not want to mirror the entire packet, use the <code>PacketLength</code>
      * parameter to specify the number of bytes in each packet to mirror.</p>
      */
     inline CreateTrafficMirrorSessionRequest& WithPacketLength(int value) { SetPacketLength(value); return *this;}

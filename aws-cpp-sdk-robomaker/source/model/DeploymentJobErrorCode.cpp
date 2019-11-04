@@ -46,6 +46,7 @@ namespace Aws
         static const int PreLaunchFileFailure_HASH = HashingUtils::HashString("PreLaunchFileFailure");
         static const int PostLaunchFileFailure_HASH = HashingUtils::HashString("PostLaunchFileFailure");
         static const int BadPermissionError_HASH = HashingUtils::HashString("BadPermissionError");
+        static const int DownloadConditionFailed_HASH = HashingUtils::HashString("DownloadConditionFailed");
         static const int InternalServerError_HASH = HashingUtils::HashString("InternalServerError");
 
 
@@ -116,6 +117,10 @@ namespace Aws
           {
             return DeploymentJobErrorCode::BadPermissionError;
           }
+          else if (hashCode == DownloadConditionFailed_HASH)
+          {
+            return DeploymentJobErrorCode::DownloadConditionFailed;
+          }
           else if (hashCode == InternalServerError_HASH)
           {
             return DeploymentJobErrorCode::InternalServerError;
@@ -166,6 +171,8 @@ namespace Aws
             return "PostLaunchFileFailure";
           case DeploymentJobErrorCode::BadPermissionError:
             return "BadPermissionError";
+          case DeploymentJobErrorCode::DownloadConditionFailed:
+            return "DownloadConditionFailed";
           case DeploymentJobErrorCode::InternalServerError:
             return "InternalServerError";
           default:

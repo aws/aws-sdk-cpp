@@ -250,6 +250,8 @@ namespace Model
     u_6tb1_metal,
     u_9tb1_metal,
     u_12tb1_metal,
+    u_18tb1_metal,
+    u_24tb1_metal,
     a1_medium,
     a1_large,
     a1_xlarge,

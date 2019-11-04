@@ -15,6 +15,8 @@
 
 #pragma once
 #include <aws/robomaker/RoboMaker_EXPORTS.h>
+#include <aws/robomaker/model/S3Object.h>
+#include <utility>
 
 namespace Aws
 {
@@ -115,6 +117,37 @@ namespace Model
      */
     inline DeploymentConfig& WithRobotDeploymentTimeoutInSeconds(long long value) { SetRobotDeploymentTimeoutInSeconds(value); return *this;}
 
+
+    /**
+     * <p>The download condition file.</p>
+     */
+    inline const S3Object& GetDownloadConditionFile() const{ return m_downloadConditionFile; }
+
+    /**
+     * <p>The download condition file.</p>
+     */
+    inline bool DownloadConditionFileHasBeenSet() const { return m_downloadConditionFileHasBeenSet; }
+
+    /**
+     * <p>The download condition file.</p>
+     */
+    inline void SetDownloadConditionFile(const S3Object& value) { m_downloadConditionFileHasBeenSet = true; m_downloadConditionFile = value; }
+
+    /**
+     * <p>The download condition file.</p>
+     */
+    inline void SetDownloadConditionFile(S3Object&& value) { m_downloadConditionFileHasBeenSet = true; m_downloadConditionFile = std::move(value); }
+
+    /**
+     * <p>The download condition file.</p>
+     */
+    inline DeploymentConfig& WithDownloadConditionFile(const S3Object& value) { SetDownloadConditionFile(value); return *this;}
+
+    /**
+     * <p>The download condition file.</p>
+     */
+    inline DeploymentConfig& WithDownloadConditionFile(S3Object&& value) { SetDownloadConditionFile(std::move(value)); return *this;}
+
   private:
 
     int m_concurrentDeploymentPercentage;
@@ -125,6 +158,9 @@ namespace Model
 
     long long m_robotDeploymentTimeoutInSeconds;
     bool m_robotDeploymentTimeoutInSecondsHasBeenSet;
+
+    S3Object m_downloadConditionFile;
+    bool m_downloadConditionFileHasBeenSet;
   };
 
 } // namespace Model
