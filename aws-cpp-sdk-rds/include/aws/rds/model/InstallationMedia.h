@@ -36,8 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the installation media for on-premises, bring your own media (BYOM)
-   * DB engines, such as Microsoft SQL Server.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the installation media for a DB engine that requires an on-premises
+   * customer provided license, such as Microsoft SQL Server.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/InstallationMedia">AWS
    * API Reference</a></p>
    */
@@ -53,42 +54,42 @@ namespace Model
 
 
     /**
-     * <p>The installation media ID.</p>
+     * <p>The installation medium ID.</p>
      */
     inline const Aws::String& GetInstallationMediaId() const{ return m_installationMediaId; }
 
     /**
-     * <p>The installation media ID.</p>
+     * <p>The installation medium ID.</p>
      */
     inline bool InstallationMediaIdHasBeenSet() const { return m_installationMediaIdHasBeenSet; }
 
     /**
-     * <p>The installation media ID.</p>
+     * <p>The installation medium ID.</p>
      */
     inline void SetInstallationMediaId(const Aws::String& value) { m_installationMediaIdHasBeenSet = true; m_installationMediaId = value; }
 
     /**
-     * <p>The installation media ID.</p>
+     * <p>The installation medium ID.</p>
      */
     inline void SetInstallationMediaId(Aws::String&& value) { m_installationMediaIdHasBeenSet = true; m_installationMediaId = std::move(value); }
 
     /**
-     * <p>The installation media ID.</p>
+     * <p>The installation medium ID.</p>
      */
     inline void SetInstallationMediaId(const char* value) { m_installationMediaIdHasBeenSet = true; m_installationMediaId.assign(value); }
 
     /**
-     * <p>The installation media ID.</p>
+     * <p>The installation medium ID.</p>
      */
     inline InstallationMedia& WithInstallationMediaId(const Aws::String& value) { SetInstallationMediaId(value); return *this;}
 
     /**
-     * <p>The installation media ID.</p>
+     * <p>The installation medium ID.</p>
      */
     inline InstallationMedia& WithInstallationMediaId(Aws::String&& value) { SetInstallationMediaId(std::move(value)); return *this;}
 
     /**
-     * <p>The installation media ID.</p>
+     * <p>The installation medium ID.</p>
      */
     inline InstallationMedia& WithInstallationMediaId(const char* value) { SetInstallationMediaId(value); return *this;}
 
@@ -217,132 +218,132 @@ namespace Model
 
 
     /**
-     * <p>The path to the installation media for the DB engine.</p>
+     * <p>The path to the installation medium for the DB engine.</p>
      */
     inline const Aws::String& GetEngineInstallationMediaPath() const{ return m_engineInstallationMediaPath; }
 
     /**
-     * <p>The path to the installation media for the DB engine.</p>
+     * <p>The path to the installation medium for the DB engine.</p>
      */
     inline bool EngineInstallationMediaPathHasBeenSet() const { return m_engineInstallationMediaPathHasBeenSet; }
 
     /**
-     * <p>The path to the installation media for the DB engine.</p>
+     * <p>The path to the installation medium for the DB engine.</p>
      */
     inline void SetEngineInstallationMediaPath(const Aws::String& value) { m_engineInstallationMediaPathHasBeenSet = true; m_engineInstallationMediaPath = value; }
 
     /**
-     * <p>The path to the installation media for the DB engine.</p>
+     * <p>The path to the installation medium for the DB engine.</p>
      */
     inline void SetEngineInstallationMediaPath(Aws::String&& value) { m_engineInstallationMediaPathHasBeenSet = true; m_engineInstallationMediaPath = std::move(value); }
 
     /**
-     * <p>The path to the installation media for the DB engine.</p>
+     * <p>The path to the installation medium for the DB engine.</p>
      */
     inline void SetEngineInstallationMediaPath(const char* value) { m_engineInstallationMediaPathHasBeenSet = true; m_engineInstallationMediaPath.assign(value); }
 
     /**
-     * <p>The path to the installation media for the DB engine.</p>
+     * <p>The path to the installation medium for the DB engine.</p>
      */
     inline InstallationMedia& WithEngineInstallationMediaPath(const Aws::String& value) { SetEngineInstallationMediaPath(value); return *this;}
 
     /**
-     * <p>The path to the installation media for the DB engine.</p>
+     * <p>The path to the installation medium for the DB engine.</p>
      */
     inline InstallationMedia& WithEngineInstallationMediaPath(Aws::String&& value) { SetEngineInstallationMediaPath(std::move(value)); return *this;}
 
     /**
-     * <p>The path to the installation media for the DB engine.</p>
+     * <p>The path to the installation medium for the DB engine.</p>
      */
     inline InstallationMedia& WithEngineInstallationMediaPath(const char* value) { SetEngineInstallationMediaPath(value); return *this;}
 
 
     /**
-     * <p>The path to the installation media for the operating system associated with
+     * <p>The path to the installation medium for the operating system associated with
      * the DB engine.</p>
      */
     inline const Aws::String& GetOSInstallationMediaPath() const{ return m_oSInstallationMediaPath; }
 
     /**
-     * <p>The path to the installation media for the operating system associated with
+     * <p>The path to the installation medium for the operating system associated with
      * the DB engine.</p>
      */
     inline bool OSInstallationMediaPathHasBeenSet() const { return m_oSInstallationMediaPathHasBeenSet; }
 
     /**
-     * <p>The path to the installation media for the operating system associated with
+     * <p>The path to the installation medium for the operating system associated with
      * the DB engine.</p>
      */
     inline void SetOSInstallationMediaPath(const Aws::String& value) { m_oSInstallationMediaPathHasBeenSet = true; m_oSInstallationMediaPath = value; }
 
     /**
-     * <p>The path to the installation media for the operating system associated with
+     * <p>The path to the installation medium for the operating system associated with
      * the DB engine.</p>
      */
     inline void SetOSInstallationMediaPath(Aws::String&& value) { m_oSInstallationMediaPathHasBeenSet = true; m_oSInstallationMediaPath = std::move(value); }
 
     /**
-     * <p>The path to the installation media for the operating system associated with
+     * <p>The path to the installation medium for the operating system associated with
      * the DB engine.</p>
      */
     inline void SetOSInstallationMediaPath(const char* value) { m_oSInstallationMediaPathHasBeenSet = true; m_oSInstallationMediaPath.assign(value); }
 
     /**
-     * <p>The path to the installation media for the operating system associated with
+     * <p>The path to the installation medium for the operating system associated with
      * the DB engine.</p>
      */
     inline InstallationMedia& WithOSInstallationMediaPath(const Aws::String& value) { SetOSInstallationMediaPath(value); return *this;}
 
     /**
-     * <p>The path to the installation media for the operating system associated with
+     * <p>The path to the installation medium for the operating system associated with
      * the DB engine.</p>
      */
     inline InstallationMedia& WithOSInstallationMediaPath(Aws::String&& value) { SetOSInstallationMediaPath(std::move(value)); return *this;}
 
     /**
-     * <p>The path to the installation media for the operating system associated with
+     * <p>The path to the installation medium for the operating system associated with
      * the DB engine.</p>
      */
     inline InstallationMedia& WithOSInstallationMediaPath(const char* value) { SetOSInstallationMediaPath(value); return *this;}
 
 
     /**
-     * <p>The status of the installation media.</p>
+     * <p>The status of the installation medium.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the installation media.</p>
+     * <p>The status of the installation medium.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the installation media.</p>
+     * <p>The status of the installation medium.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the installation media.</p>
+     * <p>The status of the installation medium.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the installation media.</p>
+     * <p>The status of the installation medium.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the installation media.</p>
+     * <p>The status of the installation medium.</p>
      */
     inline InstallationMedia& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the installation media.</p>
+     * <p>The status of the installation medium.</p>
      */
     inline InstallationMedia& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the installation media.</p>
+     * <p>The status of the installation medium.</p>
      */
     inline InstallationMedia& WithStatus(const char* value) { SetStatus(value); return *this;}
 

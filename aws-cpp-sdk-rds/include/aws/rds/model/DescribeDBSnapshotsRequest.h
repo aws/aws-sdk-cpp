@@ -54,7 +54,7 @@ namespace Model
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
      * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     * This parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
@@ -62,7 +62,7 @@ namespace Model
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
      * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     * This parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
     inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
@@ -70,7 +70,7 @@ namespace Model
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
      * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     * This parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
@@ -78,7 +78,7 @@ namespace Model
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
      * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     * This parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
@@ -86,7 +86,7 @@ namespace Model
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
      * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     * This parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
@@ -94,7 +94,7 @@ namespace Model
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
      * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     * This parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
     inline DescribeDBSnapshotsRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
@@ -102,7 +102,7 @@ namespace Model
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
      * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     * This parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
     inline DescribeDBSnapshotsRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
@@ -110,7 +110,7 @@ namespace Model
     /**
      * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
      * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
-     * This parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * This parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
     inline DescribeDBSnapshotsRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}

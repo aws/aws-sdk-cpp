@@ -330,10 +330,12 @@ namespace Model
      * <p>To list all of the available engine versions for
      * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
-     * <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora
-     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
+     * "DBEngineVersions[].EngineVersion"</code> </p> <note> <p>If you aren't using the
+     * default engine version, then you must specify the engine version.</p> </note>
+     * <p> <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
+     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora PostgreSQL</b> </p>
+     * <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -349,10 +351,12 @@ namespace Model
      * <p>To list all of the available engine versions for
      * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
-     * <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora
-     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
+     * "DBEngineVersions[].EngineVersion"</code> </p> <note> <p>If you aren't using the
+     * default engine version, then you must specify the engine version.</p> </note>
+     * <p> <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
+     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora PostgreSQL</b> </p>
+     * <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
@@ -368,10 +372,12 @@ namespace Model
      * <p>To list all of the available engine versions for
      * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
-     * <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora
-     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
+     * "DBEngineVersions[].EngineVersion"</code> </p> <note> <p>If you aren't using the
+     * default engine version, then you must specify the engine version.</p> </note>
+     * <p> <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
+     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora PostgreSQL</b> </p>
+     * <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -387,10 +393,12 @@ namespace Model
      * <p>To list all of the available engine versions for
      * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
-     * <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora
-     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
+     * "DBEngineVersions[].EngineVersion"</code> </p> <note> <p>If you aren't using the
+     * default engine version, then you must specify the engine version.</p> </note>
+     * <p> <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
+     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora PostgreSQL</b> </p>
+     * <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -406,10 +414,12 @@ namespace Model
      * <p>To list all of the available engine versions for
      * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
-     * <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora
-     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
+     * "DBEngineVersions[].EngineVersion"</code> </p> <note> <p>If you aren't using the
+     * default engine version, then you must specify the engine version.</p> </note>
+     * <p> <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
+     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora PostgreSQL</b> </p>
+     * <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -425,10 +435,12 @@ namespace Model
      * <p>To list all of the available engine versions for
      * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
-     * <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora
-     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
+     * "DBEngineVersions[].EngineVersion"</code> </p> <note> <p>If you aren't using the
+     * default engine version, then you must specify the engine version.</p> </note>
+     * <p> <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
+     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora PostgreSQL</b> </p>
+     * <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -444,10 +456,12 @@ namespace Model
      * <p>To list all of the available engine versions for
      * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
-     * <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora
-     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
+     * "DBEngineVersions[].EngineVersion"</code> </p> <note> <p>If you aren't using the
+     * default engine version, then you must specify the engine version.</p> </note>
+     * <p> <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
+     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora PostgreSQL</b> </p>
+     * <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -463,10 +477,12 @@ namespace Model
      * <p>To list all of the available engine versions for
      * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>,
-     * <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora
-     * PostgreSQL</b> </p> <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
+     * "DBEngineVersions[].EngineVersion"</code> </p> <note> <p>If you aren't using the
+     * default engine version, then you must specify the engine version.</p> </note>
+     * <p> <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
+     * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora PostgreSQL</b> </p>
+     * <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -737,8 +753,8 @@ namespace Model
      * the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is
      * encrypted, then the restored DB cluster is encrypted using the KMS key that was
      * used to encrypt the DB snapshot or DB cluster snapshot.</p> </li> <li> <p>If the
-     * DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not
-     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
+     * DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't
+     * encrypted, then the restored DB cluster isn't encrypted.</p> </li> </ul>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -753,8 +769,8 @@ namespace Model
      * the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is
      * encrypted, then the restored DB cluster is encrypted using the KMS key that was
      * used to encrypt the DB snapshot or DB cluster snapshot.</p> </li> <li> <p>If the
-     * DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not
-     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
+     * DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't
+     * encrypted, then the restored DB cluster isn't encrypted.</p> </li> </ul>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
@@ -769,8 +785,8 @@ namespace Model
      * the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is
      * encrypted, then the restored DB cluster is encrypted using the KMS key that was
      * used to encrypt the DB snapshot or DB cluster snapshot.</p> </li> <li> <p>If the
-     * DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not
-     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
+     * DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't
+     * encrypted, then the restored DB cluster isn't encrypted.</p> </li> </ul>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -785,8 +801,8 @@ namespace Model
      * the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is
      * encrypted, then the restored DB cluster is encrypted using the KMS key that was
      * used to encrypt the DB snapshot or DB cluster snapshot.</p> </li> <li> <p>If the
-     * DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not
-     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
+     * DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't
+     * encrypted, then the restored DB cluster isn't encrypted.</p> </li> </ul>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
@@ -801,8 +817,8 @@ namespace Model
      * the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is
      * encrypted, then the restored DB cluster is encrypted using the KMS key that was
      * used to encrypt the DB snapshot or DB cluster snapshot.</p> </li> <li> <p>If the
-     * DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not
-     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
+     * DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't
+     * encrypted, then the restored DB cluster isn't encrypted.</p> </li> </ul>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
@@ -817,8 +833,8 @@ namespace Model
      * the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is
      * encrypted, then the restored DB cluster is encrypted using the KMS key that was
      * used to encrypt the DB snapshot or DB cluster snapshot.</p> </li> <li> <p>If the
-     * DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not
-     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
+     * DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't
+     * encrypted, then the restored DB cluster isn't encrypted.</p> </li> </ul>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -833,8 +849,8 @@ namespace Model
      * the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is
      * encrypted, then the restored DB cluster is encrypted using the KMS key that was
      * used to encrypt the DB snapshot or DB cluster snapshot.</p> </li> <li> <p>If the
-     * DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not
-     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
+     * DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't
+     * encrypted, then the restored DB cluster isn't encrypted.</p> </li> </ul>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
@@ -849,8 +865,8 @@ namespace Model
      * the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is
      * encrypted, then the restored DB cluster is encrypted using the KMS key that was
      * used to encrypt the DB snapshot or DB cluster snapshot.</p> </li> <li> <p>If the
-     * DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not
-     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
+     * DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't
+     * encrypted, then the restored DB cluster isn't encrypted.</p> </li> </ul>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

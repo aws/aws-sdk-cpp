@@ -1,0 +1,199 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/codestar-notifications/CodeStarNotifications_EXPORTS.h>
+#include <aws/codestar-notifications/CodeStarNotificationsRequest.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codestar-notifications/model/ListNotificationRulesFilter.h>
+#include <utility>
+
+namespace Aws
+{
+namespace CodeStarNotifications
+{
+namespace Model
+{
+
+  /**
+   */
+  class AWS_CODESTARNOTIFICATIONS_API ListNotificationRulesRequest : public CodeStarNotificationsRequest
+  {
+  public:
+    ListNotificationRulesRequest();
+
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "ListNotificationRules"; }
+
+    Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>The filters to use to return information by service or resource type. For
+     * valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter
+     * with the same name can appear more than once when used with OR statements.
+     * Filters with different names should be applied with AND statements.</p> </note>
+     */
+    inline const Aws::Vector<ListNotificationRulesFilter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>The filters to use to return information by service or resource type. For
+     * valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter
+     * with the same name can appear more than once when used with OR statements.
+     * Filters with different names should be applied with AND statements.</p> </note>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>The filters to use to return information by service or resource type. For
+     * valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter
+     * with the same name can appear more than once when used with OR statements.
+     * Filters with different names should be applied with AND statements.</p> </note>
+     */
+    inline void SetFilters(const Aws::Vector<ListNotificationRulesFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>The filters to use to return information by service or resource type. For
+     * valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter
+     * with the same name can appear more than once when used with OR statements.
+     * Filters with different names should be applied with AND statements.</p> </note>
+     */
+    inline void SetFilters(Aws::Vector<ListNotificationRulesFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p>The filters to use to return information by service or resource type. For
+     * valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter
+     * with the same name can appear more than once when used with OR statements.
+     * Filters with different names should be applied with AND statements.</p> </note>
+     */
+    inline ListNotificationRulesRequest& WithFilters(const Aws::Vector<ListNotificationRulesFilter>& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>The filters to use to return information by service or resource type. For
+     * valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter
+     * with the same name can appear more than once when used with OR statements.
+     * Filters with different names should be applied with AND statements.</p> </note>
+     */
+    inline ListNotificationRulesRequest& WithFilters(Aws::Vector<ListNotificationRulesFilter>&& value) { SetFilters(std::move(value)); return *this;}
+
+    /**
+     * <p>The filters to use to return information by service or resource type. For
+     * valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter
+     * with the same name can appear more than once when used with OR statements.
+     * Filters with different names should be applied with AND statements.</p> </note>
+     */
+    inline ListNotificationRulesRequest& AddFilters(const ListNotificationRulesFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
+     * <p>The filters to use to return information by service or resource type. For
+     * valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter
+     * with the same name can appear more than once when used with OR statements.
+     * Filters with different names should be applied with AND statements.</p> </note>
+     */
+    inline ListNotificationRulesRequest& AddFilters(ListNotificationRulesFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>An enumeration token that, when provided in a request, returns the next batch
+     * of the results.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An enumeration token that, when provided in a request, returns the next batch
+     * of the results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>An enumeration token that, when provided in a request, returns the next batch
+     * of the results.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * <p>An enumeration token that, when provided in a request, returns the next batch
+     * of the results.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+
+    /**
+     * <p>An enumeration token that, when provided in a request, returns the next batch
+     * of the results.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+
+    /**
+     * <p>An enumeration token that, when provided in a request, returns the next batch
+     * of the results.</p>
+     */
+    inline ListNotificationRulesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>An enumeration token that, when provided in a request, returns the next batch
+     * of the results.</p>
+     */
+    inline ListNotificationRulesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>An enumeration token that, when provided in a request, returns the next batch
+     * of the results.</p>
+     */
+    inline ListNotificationRulesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
+    /**
+     * <p>A non-negative integer used to limit the number of returned results. The
+     * maximum number of results that can be returned is 100.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>A non-negative integer used to limit the number of returned results. The
+     * maximum number of results that can be returned is 100.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>A non-negative integer used to limit the number of returned results. The
+     * maximum number of results that can be returned is 100.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>A non-negative integer used to limit the number of returned results. The
+     * maximum number of results that can be returned is 100.</p>
+     */
+    inline ListNotificationRulesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+  private:
+
+    Aws::Vector<ListNotificationRulesFilter> m_filters;
+    bool m_filtersHasBeenSet;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace CodeStarNotifications
+} // namespace Aws

@@ -257,7 +257,7 @@ namespace Model
 
     /**
      * <p>The new DB subnet group for the DB instance. You can use this parameter to
-     * move your DB instance to a different VPC. If your DB instance is not in a VPC,
+     * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
@@ -272,7 +272,7 @@ namespace Model
 
     /**
      * <p>The new DB subnet group for the DB instance. You can use this parameter to
-     * move your DB instance to a different VPC. If your DB instance is not in a VPC,
+     * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
@@ -287,7 +287,7 @@ namespace Model
 
     /**
      * <p>The new DB subnet group for the DB instance. You can use this parameter to
-     * move your DB instance to a different VPC. If your DB instance is not in a VPC,
+     * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
@@ -302,7 +302,7 @@ namespace Model
 
     /**
      * <p>The new DB subnet group for the DB instance. You can use this parameter to
-     * move your DB instance to a different VPC. If your DB instance is not in a VPC,
+     * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
@@ -317,7 +317,7 @@ namespace Model
 
     /**
      * <p>The new DB subnet group for the DB instance. You can use this parameter to
-     * move your DB instance to a different VPC. If your DB instance is not in a VPC,
+     * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
@@ -332,7 +332,7 @@ namespace Model
 
     /**
      * <p>The new DB subnet group for the DB instance. You can use this parameter to
-     * move your DB instance to a different VPC. If your DB instance is not in a VPC,
+     * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
@@ -347,7 +347,7 @@ namespace Model
 
     /**
      * <p>The new DB subnet group for the DB instance. You can use this parameter to
-     * move your DB instance to a different VPC. If your DB instance is not in a VPC,
+     * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
@@ -362,7 +362,7 @@ namespace Model
 
     /**
      * <p>The new DB subnet group for the DB instance. You can use this parameter to
-     * move your DB instance to a different VPC. If your DB instance is not in a VPC,
+     * move your DB instance to a different VPC. If your DB instance isn't in a VPC,
      * you can also use this parameter to move your DB instance into a VPC. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
@@ -2410,7 +2410,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address. </p> <p> <code>PubliclyAccessible</code>
      * only applies to DB instances in a VPC. The DB instance must be part of a public
      * subnet and <code>PubliclyAccessible</code> must be enabled for it to be publicly
@@ -2424,7 +2424,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address. </p> <p> <code>PubliclyAccessible</code>
      * only applies to DB instances in a VPC. The DB instance must be part of a public
      * subnet and <code>PubliclyAccessible</code> must be enabled for it to be publicly
@@ -2438,7 +2438,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address. </p> <p> <code>PubliclyAccessible</code>
      * only applies to DB instances in a VPC. The DB instance must be part of a public
      * subnet and <code>PubliclyAccessible</code> must be enabled for it to be publicly
@@ -2452,7 +2452,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address. </p> <p> <code>PubliclyAccessible</code>
      * only applies to DB instances in a VPC. The DB instance must be part of a public
      * subnet and <code>PubliclyAccessible</code> must be enabled for it to be publicly

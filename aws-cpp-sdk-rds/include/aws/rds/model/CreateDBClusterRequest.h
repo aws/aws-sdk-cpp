@@ -344,65 +344,73 @@ namespace Model
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DB cluster parameter group.</p> </li> </ul>
+     * cluster. If you do not specify a value, then the default DB cluster parameter
+     * group for the specified DB engine and version is used. </p> <p>Constraints:</p>
+     * <ul> <li> <p>If supplied, must match the name of an existing DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DB cluster parameter group.</p> </li> </ul>
+     * cluster. If you do not specify a value, then the default DB cluster parameter
+     * group for the specified DB engine and version is used. </p> <p>Constraints:</p>
+     * <ul> <li> <p>If supplied, must match the name of an existing DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DB cluster parameter group.</p> </li> </ul>
+     * cluster. If you do not specify a value, then the default DB cluster parameter
+     * group for the specified DB engine and version is used. </p> <p>Constraints:</p>
+     * <ul> <li> <p>If supplied, must match the name of an existing DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DB cluster parameter group.</p> </li> </ul>
+     * cluster. If you do not specify a value, then the default DB cluster parameter
+     * group for the specified DB engine and version is used. </p> <p>Constraints:</p>
+     * <ul> <li> <p>If supplied, must match the name of an existing DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DB cluster parameter group.</p> </li> </ul>
+     * cluster. If you do not specify a value, then the default DB cluster parameter
+     * group for the specified DB engine and version is used. </p> <p>Constraints:</p>
+     * <ul> <li> <p>If supplied, must match the name of an existing DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DB cluster parameter group.</p> </li> </ul>
+     * cluster. If you do not specify a value, then the default DB cluster parameter
+     * group for the specified DB engine and version is used. </p> <p>Constraints:</p>
+     * <ul> <li> <p>If supplied, must match the name of an existing DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DB cluster parameter group.</p> </li> </ul>
+     * cluster. If you do not specify a value, then the default DB cluster parameter
+     * group for the specified DB engine and version is used. </p> <p>Constraints:</p>
+     * <ul> <li> <p>If supplied, must match the name of an existing DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
-     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DB cluster parameter group.</p> </li> </ul>
+     * cluster. If you do not specify a value, then the default DB cluster parameter
+     * group for the specified DB engine and version is used. </p> <p>Constraints:</p>
+     * <ul> <li> <p>If supplied, must match the name of an existing DB cluster
+     * parameter group.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 
@@ -1286,13 +1294,13 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key is
-     * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key isn't
+     * specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
      * <code>StorageEncrypted</code> parameter is enabled and
-     * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
+     * <code>ReplicationSourceIdentifier</code> isn't specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.</p> <p>If you create a Read Replica of an
@@ -1307,13 +1315,13 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key is
-     * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key isn't
+     * specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
      * <code>StorageEncrypted</code> parameter is enabled and
-     * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
+     * <code>ReplicationSourceIdentifier</code> isn't specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.</p> <p>If you create a Read Replica of an
@@ -1328,13 +1336,13 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key is
-     * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key isn't
+     * specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
      * <code>StorageEncrypted</code> parameter is enabled and
-     * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
+     * <code>ReplicationSourceIdentifier</code> isn't specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.</p> <p>If you create a Read Replica of an
@@ -1349,13 +1357,13 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key is
-     * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key isn't
+     * specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
      * <code>StorageEncrypted</code> parameter is enabled and
-     * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
+     * <code>ReplicationSourceIdentifier</code> isn't specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.</p> <p>If you create a Read Replica of an
@@ -1370,13 +1378,13 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key is
-     * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key isn't
+     * specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
      * <code>StorageEncrypted</code> parameter is enabled and
-     * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
+     * <code>ReplicationSourceIdentifier</code> isn't specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.</p> <p>If you create a Read Replica of an
@@ -1391,13 +1399,13 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key is
-     * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key isn't
+     * specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
      * <code>StorageEncrypted</code> parameter is enabled and
-     * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
+     * <code>ReplicationSourceIdentifier</code> isn't specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.</p> <p>If you create a Read Replica of an
@@ -1412,13 +1420,13 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key is
-     * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key isn't
+     * specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
      * <code>StorageEncrypted</code> parameter is enabled and
-     * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
+     * <code>ReplicationSourceIdentifier</code> isn't specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.</p> <p>If you create a Read Replica of an
@@ -1433,13 +1441,13 @@ namespace Model
      * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
      * are creating a DB cluster with the same AWS account that owns the KMS encryption
      * key used to encrypt the new DB cluster, then you can use the KMS key alias
-     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key is
-     * not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * instead of the ARN for the KMS encryption key.</p> <p>If an encryption key isn't
+     * specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon RDS will use the encryption key used to encrypt the source. Otherwise,
      * Amazon RDS will use your default encryption key. </p> </li> <li> <p>If the
      * <code>StorageEncrypted</code> parameter is enabled and
-     * <code>ReplicationSourceIdentifier</code> is not specified, then Amazon RDS will
+     * <code>ReplicationSourceIdentifier</code> isn't specified, then Amazon RDS will
      * use your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.</p> <p>If you create a Read Replica of an
@@ -1477,7 +1485,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying
+     * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
+     * autogenerates a pre-signed URL that is a valid request for the operation that
+     * can be executed in the source AWS Region.</p> </note>
      */
     inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
 
@@ -1508,7 +1521,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying
+     * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
+     * autogenerates a pre-signed URL that is a valid request for the operation that
+     * can be executed in the source AWS Region.</p> </note>
      */
     inline bool PreSignedUrlHasBeenSet() const { return m_preSignedUrlHasBeenSet; }
 
@@ -1539,7 +1557,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying
+     * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
+     * autogenerates a pre-signed URL that is a valid request for the operation that
+     * can be executed in the source AWS Region.</p> </note>
      */
     inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
 
@@ -1570,7 +1593,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying
+     * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
+     * autogenerates a pre-signed URL that is a valid request for the operation that
+     * can be executed in the source AWS Region.</p> </note>
      */
     inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = std::move(value); }
 
@@ -1601,7 +1629,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying
+     * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
+     * autogenerates a pre-signed URL that is a valid request for the operation that
+     * can be executed in the source AWS Region.</p> </note>
      */
     inline void SetPreSignedUrl(const char* value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl.assign(value); }
 
@@ -1632,7 +1665,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying
+     * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
+     * autogenerates a pre-signed URL that is a valid request for the operation that
+     * can be executed in the source AWS Region.</p> </note>
      */
     inline CreateDBClusterRequest& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
 
@@ -1663,7 +1701,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying
+     * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
+     * autogenerates a pre-signed URL that is a valid request for the operation that
+     * can be executed in the source AWS Region.</p> </note>
      */
     inline CreateDBClusterRequest& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(std::move(value)); return *this;}
 
@@ -1694,7 +1737,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p>
+     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying
+     * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
+     * autogenerates a pre-signed URL that is a valid request for the operation that
+     * can be executed in the source AWS Region.</p> </note>
      */
     inline CreateDBClusterRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 

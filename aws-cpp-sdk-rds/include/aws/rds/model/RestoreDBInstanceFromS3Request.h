@@ -215,7 +215,7 @@ namespace Model
      * and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
-     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Amazon S3 isn't supported on the db.t2.micro DB instance class. </p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
@@ -226,7 +226,7 @@ namespace Model
      * and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
-     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Amazon S3 isn't supported on the db.t2.micro DB instance class. </p>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
@@ -237,7 +237,7 @@ namespace Model
      * and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
-     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Amazon S3 isn't supported on the db.t2.micro DB instance class. </p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
@@ -248,7 +248,7 @@ namespace Model
      * and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
-     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Amazon S3 isn't supported on the db.t2.micro DB instance class. </p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
@@ -259,7 +259,7 @@ namespace Model
      * and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
-     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Amazon S3 isn't supported on the db.t2.micro DB instance class. </p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
@@ -270,7 +270,7 @@ namespace Model
      * and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
-     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Amazon S3 isn't supported on the db.t2.micro DB instance class. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
@@ -281,7 +281,7 @@ namespace Model
      * and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
-     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Amazon S3 isn't supported on the db.t2.micro DB instance class. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
@@ -292,7 +292,7 @@ namespace Model
      * and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
-     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Amazon S3 isn't supported on the db.t2.micro DB instance class. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -1306,7 +1306,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
@@ -1316,7 +1316,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
@@ -1326,7 +1326,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
@@ -1336,7 +1336,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */

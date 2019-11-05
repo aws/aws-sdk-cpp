@@ -276,7 +276,7 @@ namespace Model
      * must be a time in Universal Coordinated Time (UTC) format</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
      * the DB instance</p> </li> <li> <p>Must be specified if
-     * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
+     * <code>UseLatestRestorableTime</code> parameter isn't provided</p> </li> <li>
      * <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is
      * enabled</p> </li> <li> <p>Can't be specified if the <code>RestoreType</code>
      * parameter is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
@@ -289,7 +289,7 @@ namespace Model
      * must be a time in Universal Coordinated Time (UTC) format</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
      * the DB instance</p> </li> <li> <p>Must be specified if
-     * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
+     * <code>UseLatestRestorableTime</code> parameter isn't provided</p> </li> <li>
      * <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is
      * enabled</p> </li> <li> <p>Can't be specified if the <code>RestoreType</code>
      * parameter is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
@@ -302,7 +302,7 @@ namespace Model
      * must be a time in Universal Coordinated Time (UTC) format</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
      * the DB instance</p> </li> <li> <p>Must be specified if
-     * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
+     * <code>UseLatestRestorableTime</code> parameter isn't provided</p> </li> <li>
      * <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is
      * enabled</p> </li> <li> <p>Can't be specified if the <code>RestoreType</code>
      * parameter is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
@@ -315,7 +315,7 @@ namespace Model
      * must be a time in Universal Coordinated Time (UTC) format</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
      * the DB instance</p> </li> <li> <p>Must be specified if
-     * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
+     * <code>UseLatestRestorableTime</code> parameter isn't provided</p> </li> <li>
      * <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is
      * enabled</p> </li> <li> <p>Can't be specified if the <code>RestoreType</code>
      * parameter is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
@@ -328,7 +328,7 @@ namespace Model
      * must be a time in Universal Coordinated Time (UTC) format</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
      * the DB instance</p> </li> <li> <p>Must be specified if
-     * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
+     * <code>UseLatestRestorableTime</code> parameter isn't provided</p> </li> <li>
      * <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is
      * enabled</p> </li> <li> <p>Can't be specified if the <code>RestoreType</code>
      * parameter is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
@@ -341,7 +341,7 @@ namespace Model
      * must be a time in Universal Coordinated Time (UTC) format</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
      * the DB instance</p> </li> <li> <p>Must be specified if
-     * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
+     * <code>UseLatestRestorableTime</code> parameter isn't provided</p> </li> <li>
      * <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is
      * enabled</p> </li> <li> <p>Can't be specified if the <code>RestoreType</code>
      * parameter is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
@@ -352,7 +352,7 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to restore the DB cluster to the latest
-     * restorable backup time. By default, the DB cluster is not restored to the latest
+     * restorable backup time. By default, the DB cluster isn't restored to the latest
      * restorable backup time. </p> <p>Constraints: Can't be specified if
      * <code>RestoreToTime</code> parameter is provided.</p>
      */
@@ -360,7 +360,7 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to restore the DB cluster to the latest
-     * restorable backup time. By default, the DB cluster is not restored to the latest
+     * restorable backup time. By default, the DB cluster isn't restored to the latest
      * restorable backup time. </p> <p>Constraints: Can't be specified if
      * <code>RestoreToTime</code> parameter is provided.</p>
      */
@@ -368,7 +368,7 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to restore the DB cluster to the latest
-     * restorable backup time. By default, the DB cluster is not restored to the latest
+     * restorable backup time. By default, the DB cluster isn't restored to the latest
      * restorable backup time. </p> <p>Constraints: Can't be specified if
      * <code>RestoreToTime</code> parameter is provided.</p>
      */
@@ -376,7 +376,7 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to restore the DB cluster to the latest
-     * restorable backup time. By default, the DB cluster is not restored to the latest
+     * restorable backup time. By default, the DB cluster isn't restored to the latest
      * restorable backup time. </p> <p>Constraints: Can't be specified if
      * <code>RestoreToTime</code> parameter is provided.</p>
      */
@@ -594,9 +594,9 @@ namespace Model
      * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
      * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
      * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
-     * <p>If the DB cluster is not encrypted, then the restored DB cluster is not
+     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
      * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
-     * cluster that is not encrypted, then the restore request is rejected.</p>
+     * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -613,9 +613,9 @@ namespace Model
      * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
      * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
      * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
-     * <p>If the DB cluster is not encrypted, then the restored DB cluster is not
+     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
      * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
-     * cluster that is not encrypted, then the restore request is rejected.</p>
+     * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
@@ -632,9 +632,9 @@ namespace Model
      * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
      * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
      * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
-     * <p>If the DB cluster is not encrypted, then the restored DB cluster is not
+     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
      * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
-     * cluster that is not encrypted, then the restore request is rejected.</p>
+     * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -651,9 +651,9 @@ namespace Model
      * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
      * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
      * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
-     * <p>If the DB cluster is not encrypted, then the restored DB cluster is not
+     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
      * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
-     * cluster that is not encrypted, then the restore request is rejected.</p>
+     * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
@@ -670,9 +670,9 @@ namespace Model
      * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
      * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
      * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
-     * <p>If the DB cluster is not encrypted, then the restored DB cluster is not
+     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
      * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
-     * cluster that is not encrypted, then the restore request is rejected.</p>
+     * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
@@ -689,9 +689,9 @@ namespace Model
      * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
      * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
      * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
-     * <p>If the DB cluster is not encrypted, then the restored DB cluster is not
+     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
      * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
-     * cluster that is not encrypted, then the restore request is rejected.</p>
+     * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -708,9 +708,9 @@ namespace Model
      * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
      * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
      * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
-     * <p>If the DB cluster is not encrypted, then the restored DB cluster is not
+     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
      * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
-     * cluster that is not encrypted, then the restore request is rejected.</p>
+     * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
@@ -727,9 +727,9 @@ namespace Model
      * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
      * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
      * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
-     * <p>If the DB cluster is not encrypted, then the restored DB cluster is not
+     * <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't
      * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
-     * cluster that is not encrypted, then the restore request is rejected.</p>
+     * cluster that isn't encrypted, then the restore request is rejected.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

@@ -55,16 +55,16 @@ namespace Model
     /**
      * <p>The meaning of this parameter differs according to the database engine you
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter is not specified, no database is created
+     * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
      * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter is not
+     * database to create when the DB instance is created. If this parameter isn't
      * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
      * a word reserved by the specified database engine</p> </li> </ul> <p>
      * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter is not specified, the default "postgres"
+     * instance is created. If this parameter isn't specified, the default "postgres"
      * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
      * begin with a letter or an underscore. Subsequent characters can be letters,
@@ -76,7 +76,7 @@ namespace Model
      * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
      * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
      * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter is not
+     * when the primary instance of the DB cluster is created. If this parameter isn't
      * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
      * a word reserved by the specified database engine</p> </li> </ul>
@@ -86,16 +86,16 @@ namespace Model
     /**
      * <p>The meaning of this parameter differs according to the database engine you
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter is not specified, no database is created
+     * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
      * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter is not
+     * database to create when the DB instance is created. If this parameter isn't
      * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
      * a word reserved by the specified database engine</p> </li> </ul> <p>
      * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter is not specified, the default "postgres"
+     * instance is created. If this parameter isn't specified, the default "postgres"
      * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
      * begin with a letter or an underscore. Subsequent characters can be letters,
@@ -107,7 +107,7 @@ namespace Model
      * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
      * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
      * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter is not
+     * when the primary instance of the DB cluster is created. If this parameter isn't
      * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
      * a word reserved by the specified database engine</p> </li> </ul>
@@ -117,16 +117,16 @@ namespace Model
     /**
      * <p>The meaning of this parameter differs according to the database engine you
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter is not specified, no database is created
+     * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
      * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter is not
+     * database to create when the DB instance is created. If this parameter isn't
      * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
      * a word reserved by the specified database engine</p> </li> </ul> <p>
      * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter is not specified, the default "postgres"
+     * instance is created. If this parameter isn't specified, the default "postgres"
      * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
      * begin with a letter or an underscore. Subsequent characters can be letters,
@@ -138,7 +138,7 @@ namespace Model
      * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
      * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
      * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter is not
+     * when the primary instance of the DB cluster is created. If this parameter isn't
      * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
      * a word reserved by the specified database engine</p> </li> </ul>
@@ -148,16 +148,16 @@ namespace Model
     /**
      * <p>The meaning of this parameter differs according to the database engine you
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter is not specified, no database is created
+     * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
      * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter is not
+     * database to create when the DB instance is created. If this parameter isn't
      * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
      * a word reserved by the specified database engine</p> </li> </ul> <p>
      * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter is not specified, the default "postgres"
+     * instance is created. If this parameter isn't specified, the default "postgres"
      * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
      * begin with a letter or an underscore. Subsequent characters can be letters,
@@ -169,7 +169,7 @@ namespace Model
      * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
      * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
      * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter is not
+     * when the primary instance of the DB cluster is created. If this parameter isn't
      * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
      * a word reserved by the specified database engine</p> </li> </ul>
@@ -179,16 +179,16 @@ namespace Model
     /**
      * <p>The meaning of this parameter differs according to the database engine you
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter is not specified, no database is created
+     * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
      * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter is not
+     * database to create when the DB instance is created. If this parameter isn't
      * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
      * a word reserved by the specified database engine</p> </li> </ul> <p>
      * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter is not specified, the default "postgres"
+     * instance is created. If this parameter isn't specified, the default "postgres"
      * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
      * begin with a letter or an underscore. Subsequent characters can be letters,
@@ -200,7 +200,7 @@ namespace Model
      * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
      * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
      * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter is not
+     * when the primary instance of the DB cluster is created. If this parameter isn't
      * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
      * a word reserved by the specified database engine</p> </li> </ul>
@@ -210,16 +210,16 @@ namespace Model
     /**
      * <p>The meaning of this parameter differs according to the database engine you
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter is not specified, no database is created
+     * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
      * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter is not
+     * database to create when the DB instance is created. If this parameter isn't
      * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
      * a word reserved by the specified database engine</p> </li> </ul> <p>
      * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter is not specified, the default "postgres"
+     * instance is created. If this parameter isn't specified, the default "postgres"
      * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
      * begin with a letter or an underscore. Subsequent characters can be letters,
@@ -231,7 +231,7 @@ namespace Model
      * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
      * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
      * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter is not
+     * when the primary instance of the DB cluster is created. If this parameter isn't
      * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
      * a word reserved by the specified database engine</p> </li> </ul>
@@ -241,16 +241,16 @@ namespace Model
     /**
      * <p>The meaning of this parameter differs according to the database engine you
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter is not specified, no database is created
+     * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
      * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter is not
+     * database to create when the DB instance is created. If this parameter isn't
      * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
      * a word reserved by the specified database engine</p> </li> </ul> <p>
      * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter is not specified, the default "postgres"
+     * instance is created. If this parameter isn't specified, the default "postgres"
      * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
      * begin with a letter or an underscore. Subsequent characters can be letters,
@@ -262,7 +262,7 @@ namespace Model
      * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
      * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
      * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter is not
+     * when the primary instance of the DB cluster is created. If this parameter isn't
      * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
      * a word reserved by the specified database engine</p> </li> </ul>
@@ -272,16 +272,16 @@ namespace Model
     /**
      * <p>The meaning of this parameter differs according to the database engine you
      * use.</p> <p> <b>MySQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter is not specified, no database is created
+     * instance is created. If this parameter isn't specified, no database is created
      * in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * letters or numbers.</p> </li> <li> <p>Can't be a word reserved by the specified
      * database engine</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>The name of the
-     * database to create when the DB instance is created. If this parameter is not
+     * database to create when the DB instance is created. If this parameter isn't
      * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
      * a word reserved by the specified database engine</p> </li> </ul> <p>
      * <b>PostgreSQL</b> </p> <p>The name of the database to create when the DB
-     * instance is created. If this parameter is not specified, the default "postgres"
+     * instance is created. If this parameter isn't specified, the default "postgres"
      * database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must
      * begin with a letter or an underscore. Subsequent characters can be letters,
@@ -293,7 +293,7 @@ namespace Model
      * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
      * characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be
      * null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the database to create
-     * when the primary instance of the DB cluster is created. If this parameter is not
+     * when the primary instance of the DB cluster is created. If this parameter isn't
      * specified, no database is created in the DB instance.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be
      * a word reserved by the specified database engine</p> </li> </ul>
@@ -1452,81 +1452,81 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If you
-     * do not specify a value for <code>DBParameterGroupName</code>, then the default
-     * <code>DBParameterGroup</code> for the specified DB engine is used.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
-     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * do not specify a value, then the default DB parameter group for the specified DB
+     * engine and version is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to
+     * 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If you
-     * do not specify a value for <code>DBParameterGroupName</code>, then the default
-     * <code>DBParameterGroup</code> for the specified DB engine is used.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
-     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * do not specify a value, then the default DB parameter group for the specified DB
+     * engine and version is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to
+     * 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If you
-     * do not specify a value for <code>DBParameterGroupName</code>, then the default
-     * <code>DBParameterGroup</code> for the specified DB engine is used.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
-     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * do not specify a value, then the default DB parameter group for the specified DB
+     * engine and version is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to
+     * 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If you
-     * do not specify a value for <code>DBParameterGroupName</code>, then the default
-     * <code>DBParameterGroup</code> for the specified DB engine is used.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
-     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * do not specify a value, then the default DB parameter group for the specified DB
+     * engine and version is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to
+     * 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If you
-     * do not specify a value for <code>DBParameterGroupName</code>, then the default
-     * <code>DBParameterGroup</code> for the specified DB engine is used.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
-     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * do not specify a value, then the default DB parameter group for the specified DB
+     * engine and version is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to
+     * 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If you
-     * do not specify a value for <code>DBParameterGroupName</code>, then the default
-     * <code>DBParameterGroup</code> for the specified DB engine is used.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
-     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * do not specify a value, then the default DB parameter group for the specified DB
+     * engine and version is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to
+     * 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If you
-     * do not specify a value for <code>DBParameterGroupName</code>, then the default
-     * <code>DBParameterGroup</code> for the specified DB engine is used.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
-     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * do not specify a value, then the default DB parameter group for the specified DB
+     * engine and version is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to
+     * 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If you
-     * do not specify a value for <code>DBParameterGroupName</code>, then the default
-     * <code>DBParameterGroup</code> for the specified DB engine is used.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
-     * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * do not specify a value, then the default DB parameter group for the specified DB
+     * engine and version is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to
+     * 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 
@@ -2293,20 +2293,20 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address.</p> <p>Default: The default behavior
      * varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
-     * <p>If <code>DBSubnetGroupName</code> is not specified, and
-     * <code>PubliclyAccessible</code> is not specified, the following applies:</p>
-     * <ul> <li> <p>If the default VPC in the target region doesn’t have an Internet
-     * gateway attached to it, the DB instance is private.</p> </li> <li> <p>If the
-     * default VPC in the target region has an Internet gateway attached to it, the DB
-     * instance is public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is
-     * specified, and <code>PubliclyAccessible</code> is not specified, the following
-     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn’t have an
-     * Internet gateway attached to it, the DB instance is private.</p> </li> <li>
-     * <p>If the subnets are part of a VPC that has an Internet gateway attached to it,
-     * the DB instance is public.</p> </li> </ul>
+     * <p>If <code>DBSubnetGroupName</code> isn't specified, and
+     * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
+     * <li> <p>If the default VPC in the target region doesn’t have an Internet gateway
+     * attached to it, the DB instance is private.</p> </li> <li> <p>If the default VPC
+     * in the target region has an Internet gateway attached to it, the DB instance is
+     * public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is specified, and
+     * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
+     * <li> <p>If the subnets are part of a VPC that doesn’t have an Internet gateway
+     * attached to it, the DB instance is private.</p> </li> <li> <p>If the subnets are
+     * part of a VPC that has an Internet gateway attached to it, the DB instance is
+     * public.</p> </li> </ul>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
@@ -2314,20 +2314,20 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address.</p> <p>Default: The default behavior
      * varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
-     * <p>If <code>DBSubnetGroupName</code> is not specified, and
-     * <code>PubliclyAccessible</code> is not specified, the following applies:</p>
-     * <ul> <li> <p>If the default VPC in the target region doesn’t have an Internet
-     * gateway attached to it, the DB instance is private.</p> </li> <li> <p>If the
-     * default VPC in the target region has an Internet gateway attached to it, the DB
-     * instance is public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is
-     * specified, and <code>PubliclyAccessible</code> is not specified, the following
-     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn’t have an
-     * Internet gateway attached to it, the DB instance is private.</p> </li> <li>
-     * <p>If the subnets are part of a VPC that has an Internet gateway attached to it,
-     * the DB instance is public.</p> </li> </ul>
+     * <p>If <code>DBSubnetGroupName</code> isn't specified, and
+     * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
+     * <li> <p>If the default VPC in the target region doesn’t have an Internet gateway
+     * attached to it, the DB instance is private.</p> </li> <li> <p>If the default VPC
+     * in the target region has an Internet gateway attached to it, the DB instance is
+     * public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is specified, and
+     * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
+     * <li> <p>If the subnets are part of a VPC that doesn’t have an Internet gateway
+     * attached to it, the DB instance is private.</p> </li> <li> <p>If the subnets are
+     * part of a VPC that has an Internet gateway attached to it, the DB instance is
+     * public.</p> </li> </ul>
      */
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
@@ -2335,20 +2335,20 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address.</p> <p>Default: The default behavior
      * varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
-     * <p>If <code>DBSubnetGroupName</code> is not specified, and
-     * <code>PubliclyAccessible</code> is not specified, the following applies:</p>
-     * <ul> <li> <p>If the default VPC in the target region doesn’t have an Internet
-     * gateway attached to it, the DB instance is private.</p> </li> <li> <p>If the
-     * default VPC in the target region has an Internet gateway attached to it, the DB
-     * instance is public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is
-     * specified, and <code>PubliclyAccessible</code> is not specified, the following
-     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn’t have an
-     * Internet gateway attached to it, the DB instance is private.</p> </li> <li>
-     * <p>If the subnets are part of a VPC that has an Internet gateway attached to it,
-     * the DB instance is public.</p> </li> </ul>
+     * <p>If <code>DBSubnetGroupName</code> isn't specified, and
+     * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
+     * <li> <p>If the default VPC in the target region doesn’t have an Internet gateway
+     * attached to it, the DB instance is private.</p> </li> <li> <p>If the default VPC
+     * in the target region has an Internet gateway attached to it, the DB instance is
+     * public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is specified, and
+     * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
+     * <li> <p>If the subnets are part of a VPC that doesn’t have an Internet gateway
+     * attached to it, the DB instance is private.</p> </li> <li> <p>If the subnets are
+     * part of a VPC that has an Internet gateway attached to it, the DB instance is
+     * public.</p> </li> </ul>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
@@ -2356,20 +2356,20 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address.</p> <p>Default: The default behavior
      * varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
-     * <p>If <code>DBSubnetGroupName</code> is not specified, and
-     * <code>PubliclyAccessible</code> is not specified, the following applies:</p>
-     * <ul> <li> <p>If the default VPC in the target region doesn’t have an Internet
-     * gateway attached to it, the DB instance is private.</p> </li> <li> <p>If the
-     * default VPC in the target region has an Internet gateway attached to it, the DB
-     * instance is public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is
-     * specified, and <code>PubliclyAccessible</code> is not specified, the following
-     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn’t have an
-     * Internet gateway attached to it, the DB instance is private.</p> </li> <li>
-     * <p>If the subnets are part of a VPC that has an Internet gateway attached to it,
-     * the DB instance is public.</p> </li> </ul>
+     * <p>If <code>DBSubnetGroupName</code> isn't specified, and
+     * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
+     * <li> <p>If the default VPC in the target region doesn’t have an Internet gateway
+     * attached to it, the DB instance is private.</p> </li> <li> <p>If the default VPC
+     * in the target region has an Internet gateway attached to it, the DB instance is
+     * public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is specified, and
+     * <code>PubliclyAccessible</code> isn't specified, the following applies:</p> <ul>
+     * <li> <p>If the subnets are part of a VPC that doesn’t have an Internet gateway
+     * attached to it, the DB instance is private.</p> </li> <li> <p>If the subnets are
+     * part of a VPC that has an Internet gateway attached to it, the DB instance is
+     * public.</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
@@ -2629,28 +2629,28 @@ namespace Model
 
     /**
      * <p>A value that indicates whether the DB instance is encrypted. By default, it
-     * is not encrypted.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * isn't encrypted.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
      * encryption for DB instances is managed by the DB cluster.</p>
      */
     inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
 
     /**
      * <p>A value that indicates whether the DB instance is encrypted. By default, it
-     * is not encrypted.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * isn't encrypted.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
      * encryption for DB instances is managed by the DB cluster.</p>
      */
     inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
 
     /**
      * <p>A value that indicates whether the DB instance is encrypted. By default, it
-     * is not encrypted.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * isn't encrypted.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
      * encryption for DB instances is managed by the DB cluster.</p>
      */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
      * <p>A value that indicates whether the DB instance is encrypted. By default, it
-     * is not encrypted.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * isn't encrypted.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
      * encryption for DB instances is managed by the DB cluster.</p>
      */
     inline CreateDBInstanceRequest& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}

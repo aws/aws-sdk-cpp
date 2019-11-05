@@ -212,7 +212,7 @@ namespace Model
      * Marker parameter.</p> <ul> <li> <p>If neither Marker or NumberOfLines are
      * specified, the entire log file is returned up to a maximum of 10000 lines,
      * starting with the most recent log entries first.</p> </li> <li> <p>If
-     * NumberOfLines is specified and Marker is not specified, then the most recent
+     * NumberOfLines is specified and Marker isn't specified, then the most recent
      * lines from the end of the log file are returned.</p> </li> <li> <p>If Marker is
      * specified as "0", then the specified number of lines from the beginning of the
      * log file are returned.</p> </li> <li> <p>You can download the log file in blocks
@@ -232,7 +232,7 @@ namespace Model
      * Marker parameter.</p> <ul> <li> <p>If neither Marker or NumberOfLines are
      * specified, the entire log file is returned up to a maximum of 10000 lines,
      * starting with the most recent log entries first.</p> </li> <li> <p>If
-     * NumberOfLines is specified and Marker is not specified, then the most recent
+     * NumberOfLines is specified and Marker isn't specified, then the most recent
      * lines from the end of the log file are returned.</p> </li> <li> <p>If Marker is
      * specified as "0", then the specified number of lines from the beginning of the
      * log file are returned.</p> </li> <li> <p>You can download the log file in blocks
@@ -252,7 +252,7 @@ namespace Model
      * Marker parameter.</p> <ul> <li> <p>If neither Marker or NumberOfLines are
      * specified, the entire log file is returned up to a maximum of 10000 lines,
      * starting with the most recent log entries first.</p> </li> <li> <p>If
-     * NumberOfLines is specified and Marker is not specified, then the most recent
+     * NumberOfLines is specified and Marker isn't specified, then the most recent
      * lines from the end of the log file are returned.</p> </li> <li> <p>If Marker is
      * specified as "0", then the specified number of lines from the beginning of the
      * log file are returned.</p> </li> <li> <p>You can download the log file in blocks
@@ -272,7 +272,7 @@ namespace Model
      * Marker parameter.</p> <ul> <li> <p>If neither Marker or NumberOfLines are
      * specified, the entire log file is returned up to a maximum of 10000 lines,
      * starting with the most recent log entries first.</p> </li> <li> <p>If
-     * NumberOfLines is specified and Marker is not specified, then the most recent
+     * NumberOfLines is specified and Marker isn't specified, then the most recent
      * lines from the end of the log file are returned.</p> </li> <li> <p>If Marker is
      * specified as "0", then the specified number of lines from the beginning of the
      * log file are returned.</p> </li> <li> <p>You can download the log file in blocks

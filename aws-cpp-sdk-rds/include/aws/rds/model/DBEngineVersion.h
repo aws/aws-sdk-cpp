@@ -261,42 +261,42 @@ namespace Model
 
     /**
      * <p> The default character set for new instances of this engine version, if the
-     * <code>CharacterSetName</code> parameter of the CreateDBInstance API is not
+     * <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't
      * specified. </p>
      */
     inline const CharacterSet& GetDefaultCharacterSet() const{ return m_defaultCharacterSet; }
 
     /**
      * <p> The default character set for new instances of this engine version, if the
-     * <code>CharacterSetName</code> parameter of the CreateDBInstance API is not
+     * <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't
      * specified. </p>
      */
     inline bool DefaultCharacterSetHasBeenSet() const { return m_defaultCharacterSetHasBeenSet; }
 
     /**
      * <p> The default character set for new instances of this engine version, if the
-     * <code>CharacterSetName</code> parameter of the CreateDBInstance API is not
+     * <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't
      * specified. </p>
      */
     inline void SetDefaultCharacterSet(const CharacterSet& value) { m_defaultCharacterSetHasBeenSet = true; m_defaultCharacterSet = value; }
 
     /**
      * <p> The default character set for new instances of this engine version, if the
-     * <code>CharacterSetName</code> parameter of the CreateDBInstance API is not
+     * <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't
      * specified. </p>
      */
     inline void SetDefaultCharacterSet(CharacterSet&& value) { m_defaultCharacterSetHasBeenSet = true; m_defaultCharacterSet = std::move(value); }
 
     /**
      * <p> The default character set for new instances of this engine version, if the
-     * <code>CharacterSetName</code> parameter of the CreateDBInstance API is not
+     * <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't
      * specified. </p>
      */
     inline DBEngineVersion& WithDefaultCharacterSet(const CharacterSet& value) { SetDefaultCharacterSet(value); return *this;}
 
     /**
      * <p> The default character set for new instances of this engine version, if the
-     * <code>CharacterSetName</code> parameter of the CreateDBInstance API is not
+     * <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't
      * specified. </p>
      */
     inline DBEngineVersion& WithDefaultCharacterSet(CharacterSet&& value) { SetDefaultCharacterSet(std::move(value)); return *this;}

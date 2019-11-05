@@ -354,42 +354,42 @@ namespace Model
 
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>This parameter isn't currently supported.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>This parameter isn't currently supported.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>This parameter isn't currently supported.</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>This parameter isn't currently supported.</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>This parameter isn't currently supported.</p>
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>This parameter isn't currently supported.</p>
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>This parameter isn't currently supported.</p>
      */
     inline DescribeReservedDBInstancesOfferingsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>This parameter isn't currently supported.</p>
      */
     inline DescribeReservedDBInstancesOfferingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
@@ -397,32 +397,32 @@ namespace Model
     /**
      * <p> The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
-     * is included in the response so that you can retrieve the reamaining results.
-     * </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * is included in the response so you can retrieve the remaining results. </p>
+     * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
      * <p> The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
-     * is included in the response so that you can retrieve the reamaining results.
-     * </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * is included in the response so you can retrieve the remaining results. </p>
+     * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
     /**
      * <p> The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
-     * is included in the response so that you can retrieve the reamaining results.
-     * </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * is included in the response so you can retrieve the remaining results. </p>
+     * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
      * <p> The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
-     * is included in the response so that you can retrieve the reamaining results.
-     * </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * is included in the response so you can retrieve the remaining results. </p>
+     * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 

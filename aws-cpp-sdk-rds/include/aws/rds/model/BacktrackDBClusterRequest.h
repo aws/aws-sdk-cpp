@@ -135,7 +135,7 @@ namespace Model
      * <p>The timestamp of the time to backtrack the DB cluster to, specified in ISO
      * 8601 format. For more information about ISO 8601, see the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
-     * <note> <p>If the specified time is not a consistent time for the DB cluster,
+     * <note> <p>If the specified time isn't a consistent time for the DB cluster,
      * Aurora automatically chooses the nearest possible consistent time for the DB
      * cluster.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
      * 8601 timestamp.</p> </li> <li> <p>Can't contain a timestamp set in the
@@ -147,7 +147,7 @@ namespace Model
      * <p>The timestamp of the time to backtrack the DB cluster to, specified in ISO
      * 8601 format. For more information about ISO 8601, see the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
-     * <note> <p>If the specified time is not a consistent time for the DB cluster,
+     * <note> <p>If the specified time isn't a consistent time for the DB cluster,
      * Aurora automatically chooses the nearest possible consistent time for the DB
      * cluster.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
      * 8601 timestamp.</p> </li> <li> <p>Can't contain a timestamp set in the
@@ -159,7 +159,7 @@ namespace Model
      * <p>The timestamp of the time to backtrack the DB cluster to, specified in ISO
      * 8601 format. For more information about ISO 8601, see the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
-     * <note> <p>If the specified time is not a consistent time for the DB cluster,
+     * <note> <p>If the specified time isn't a consistent time for the DB cluster,
      * Aurora automatically chooses the nearest possible consistent time for the DB
      * cluster.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
      * 8601 timestamp.</p> </li> <li> <p>Can't contain a timestamp set in the
@@ -171,7 +171,7 @@ namespace Model
      * <p>The timestamp of the time to backtrack the DB cluster to, specified in ISO
      * 8601 format. For more information about ISO 8601, see the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
-     * <note> <p>If the specified time is not a consistent time for the DB cluster,
+     * <note> <p>If the specified time isn't a consistent time for the DB cluster,
      * Aurora automatically chooses the nearest possible consistent time for the DB
      * cluster.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
      * 8601 timestamp.</p> </li> <li> <p>Can't contain a timestamp set in the
@@ -183,7 +183,7 @@ namespace Model
      * <p>The timestamp of the time to backtrack the DB cluster to, specified in ISO
      * 8601 format. For more information about ISO 8601, see the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
-     * <note> <p>If the specified time is not a consistent time for the DB cluster,
+     * <note> <p>If the specified time isn't a consistent time for the DB cluster,
      * Aurora automatically chooses the nearest possible consistent time for the DB
      * cluster.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
      * 8601 timestamp.</p> </li> <li> <p>Can't contain a timestamp set in the
@@ -195,7 +195,7 @@ namespace Model
      * <p>The timestamp of the time to backtrack the DB cluster to, specified in ISO
      * 8601 format. For more information about ISO 8601, see the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
-     * <note> <p>If the specified time is not a consistent time for the DB cluster,
+     * <note> <p>If the specified time isn't a consistent time for the DB cluster,
      * Aurora automatically chooses the nearest possible consistent time for the DB
      * cluster.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
      * 8601 timestamp.</p> </li> <li> <p>Can't contain a timestamp set in the

@@ -471,7 +471,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
@@ -481,7 +481,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
@@ -491,7 +491,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
@@ -501,7 +501,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
@@ -762,7 +762,7 @@ namespace Model
 
     /**
      * <p>Specifies the amount of provisioned IOPS for the DB instance, expressed in
-     * I/O operations per second. If this parameter is not specified, the IOPS value is
+     * I/O operations per second. If this parameter isn't specified, the IOPS value is
      * taken from the backup. If this parameter is set to 0, the new instance is
      * converted to a non-PIOPS instance. The conversion takes additional time, though
      * your DB instance is available for connections before the conversion starts. </p>
@@ -776,7 +776,7 @@ namespace Model
 
     /**
      * <p>Specifies the amount of provisioned IOPS for the DB instance, expressed in
-     * I/O operations per second. If this parameter is not specified, the IOPS value is
+     * I/O operations per second. If this parameter isn't specified, the IOPS value is
      * taken from the backup. If this parameter is set to 0, the new instance is
      * converted to a non-PIOPS instance. The conversion takes additional time, though
      * your DB instance is available for connections before the conversion starts. </p>
@@ -790,7 +790,7 @@ namespace Model
 
     /**
      * <p>Specifies the amount of provisioned IOPS for the DB instance, expressed in
-     * I/O operations per second. If this parameter is not specified, the IOPS value is
+     * I/O operations per second. If this parameter isn't specified, the IOPS value is
      * taken from the backup. If this parameter is set to 0, the new instance is
      * converted to a non-PIOPS instance. The conversion takes additional time, though
      * your DB instance is available for connections before the conversion starts. </p>
@@ -804,7 +804,7 @@ namespace Model
 
     /**
      * <p>Specifies the amount of provisioned IOPS for the DB instance, expressed in
-     * I/O operations per second. If this parameter is not specified, the IOPS value is
+     * I/O operations per second. If this parameter isn't specified, the IOPS value is
      * taken from the backup. If this parameter is set to 0, the new instance is
      * converted to a non-PIOPS instance. The conversion takes additional time, though
      * your DB instance is available for connections before the conversion starts. </p>

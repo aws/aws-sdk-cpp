@@ -611,10 +611,12 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region Read Replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region Read Replica.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
-     * contain two consecutive hyphens</p> </li> </ul>
+     * specified DB engine for a cross region Read Replica.</p> <note> <p>Currently,
+     * specifying a parameter group for this operation is only supported for Oracle DB
+     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
 
@@ -623,10 +625,12 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region Read Replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region Read Replica.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
-     * contain two consecutive hyphens</p> </li> </ul>
+     * specified DB engine for a cross region Read Replica.</p> <note> <p>Currently,
+     * specifying a parameter group for this operation is only supported for Oracle DB
+     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }
 
@@ -635,10 +639,12 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region Read Replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region Read Replica.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
-     * contain two consecutive hyphens</p> </li> </ul>
+     * specified DB engine for a cross region Read Replica.</p> <note> <p>Currently,
+     * specifying a parameter group for this operation is only supported for Oracle DB
+     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
@@ -647,10 +653,12 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region Read Replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region Read Replica.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
-     * contain two consecutive hyphens</p> </li> </ul>
+     * specified DB engine for a cross region Read Replica.</p> <note> <p>Currently,
+     * specifying a parameter group for this operation is only supported for Oracle DB
+     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::move(value); }
 
@@ -659,10 +667,12 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region Read Replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region Read Replica.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
-     * contain two consecutive hyphens</p> </li> </ul>
+     * specified DB engine for a cross region Read Replica.</p> <note> <p>Currently,
+     * specifying a parameter group for this operation is only supported for Oracle DB
+     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
 
@@ -671,10 +681,12 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region Read Replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region Read Replica.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
-     * contain two consecutive hyphens</p> </li> </ul>
+     * specified DB engine for a cross region Read Replica.</p> <note> <p>Currently,
+     * specifying a parameter group for this operation is only supported for Oracle DB
+     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
 
@@ -683,10 +695,12 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region Read Replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region Read Replica.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
-     * contain two consecutive hyphens</p> </li> </ul>
+     * specified DB engine for a cross region Read Replica.</p> <note> <p>Currently,
+     * specifying a parameter group for this operation is only supported for Oracle DB
+     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(std::move(value)); return *this;}
 
@@ -695,10 +709,12 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region Read Replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region Read Replica.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
-     * contain two consecutive hyphens</p> </li> </ul>
+     * specified DB engine for a cross region Read Replica.</p> <note> <p>Currently,
+     * specifying a parameter group for this operation is only supported for Oracle DB
+     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 
@@ -707,7 +723,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
@@ -717,7 +733,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
@@ -727,7 +743,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
@@ -737,7 +753,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
@@ -772,7 +788,7 @@ namespace Model
     /**
      * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
-     * specified, then the new DB instance is not created in a VPC.</p>
+     * specified, then the new DB instance isn't created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
      * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>If
      * supplied, must match the name of an existing DBSubnetGroup.</p> </li> <li>
@@ -789,7 +805,7 @@ namespace Model
     /**
      * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
-     * specified, then the new DB instance is not created in a VPC.</p>
+     * specified, then the new DB instance isn't created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
      * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>If
      * supplied, must match the name of an existing DBSubnetGroup.</p> </li> <li>
@@ -806,7 +822,7 @@ namespace Model
     /**
      * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
-     * specified, then the new DB instance is not created in a VPC.</p>
+     * specified, then the new DB instance isn't created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
      * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>If
      * supplied, must match the name of an existing DBSubnetGroup.</p> </li> <li>
@@ -823,7 +839,7 @@ namespace Model
     /**
      * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
-     * specified, then the new DB instance is not created in a VPC.</p>
+     * specified, then the new DB instance isn't created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
      * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>If
      * supplied, must match the name of an existing DBSubnetGroup.</p> </li> <li>
@@ -840,7 +856,7 @@ namespace Model
     /**
      * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
-     * specified, then the new DB instance is not created in a VPC.</p>
+     * specified, then the new DB instance isn't created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
      * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>If
      * supplied, must match the name of an existing DBSubnetGroup.</p> </li> <li>
@@ -857,7 +873,7 @@ namespace Model
     /**
      * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
-     * specified, then the new DB instance is not created in a VPC.</p>
+     * specified, then the new DB instance isn't created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
      * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>If
      * supplied, must match the name of an existing DBSubnetGroup.</p> </li> <li>
@@ -874,7 +890,7 @@ namespace Model
     /**
      * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
-     * specified, then the new DB instance is not created in a VPC.</p>
+     * specified, then the new DB instance isn't created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
      * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>If
      * supplied, must match the name of an existing DBSubnetGroup.</p> </li> <li>
@@ -891,7 +907,7 @@ namespace Model
     /**
      * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
      * created in the VPC associated with the DB subnet group. If no DB subnet group is
-     * specified, then the new DB instance is not created in a VPC.</p>
+     * specified, then the new DB instance isn't created in a VPC.</p>
      * <p>Constraints:</p> <ul> <li> <p>Can only be specified if the source DB instance
      * identifier specifies a DB instance in another AWS Region.</p> </li> <li> <p>If
      * supplied, must match the name of an existing DBSubnetGroup.</p> </li> <li>
@@ -1328,14 +1344,13 @@ namespace Model
      * <code>CreateDBInstanceReadReplica</code> API action in the source AWS Region
      * that contains the source DB instance. </p> <p>You must specify this parameter
      * when you create an encrypted Read Replica from another AWS Region by using the
-     * Amazon RDS API. You can specify the <code>--source-region</code> option instead
-     * of this parameter when you create an encrypted Read Replica from another AWS
-     * Region by using the AWS CLI. </p> <p>The presigned URL must be a valid request
-     * for the <code>CreateDBInstanceReadReplica</code> API action that can be executed
-     * in the source AWS Region that contains the encrypted source DB instance. The
-     * presigned URL request must contain the following parameter values: </p> <ul>
-     * <li> <p> <code>DestinationRegion</code> - The AWS Region that the encrypted Read
-     * Replica is created in. This AWS Region is the same one where the
+     * Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an
+     * encrypted Read Replica in the same AWS Region. </p> <p>The presigned URL must be
+     * a valid request for the <code>CreateDBInstanceReadReplica</code> API action that
+     * can be executed in the source AWS Region that contains the encrypted source DB
+     * instance. The presigned URL request must contain the following parameter values:
+     * </p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS Region that the
+     * encrypted Read Replica is created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
      * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
      * the us-west-1 AWS Region, from a source DB instance in the us-east-2 AWS Region,
@@ -1360,7 +1375,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p>
+     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying
+     * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
+     * autogenerates a pre-signed URL that is a valid request for the operation that
+     * can be executed in the source AWS Region.</p> </note>
      */
     inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
 
@@ -1369,14 +1389,13 @@ namespace Model
      * <code>CreateDBInstanceReadReplica</code> API action in the source AWS Region
      * that contains the source DB instance. </p> <p>You must specify this parameter
      * when you create an encrypted Read Replica from another AWS Region by using the
-     * Amazon RDS API. You can specify the <code>--source-region</code> option instead
-     * of this parameter when you create an encrypted Read Replica from another AWS
-     * Region by using the AWS CLI. </p> <p>The presigned URL must be a valid request
-     * for the <code>CreateDBInstanceReadReplica</code> API action that can be executed
-     * in the source AWS Region that contains the encrypted source DB instance. The
-     * presigned URL request must contain the following parameter values: </p> <ul>
-     * <li> <p> <code>DestinationRegion</code> - The AWS Region that the encrypted Read
-     * Replica is created in. This AWS Region is the same one where the
+     * Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an
+     * encrypted Read Replica in the same AWS Region. </p> <p>The presigned URL must be
+     * a valid request for the <code>CreateDBInstanceReadReplica</code> API action that
+     * can be executed in the source AWS Region that contains the encrypted source DB
+     * instance. The presigned URL request must contain the following parameter values:
+     * </p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS Region that the
+     * encrypted Read Replica is created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
      * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
      * the us-west-1 AWS Region, from a source DB instance in the us-east-2 AWS Region,
@@ -1401,7 +1420,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p>
+     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying
+     * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
+     * autogenerates a pre-signed URL that is a valid request for the operation that
+     * can be executed in the source AWS Region.</p> </note>
      */
     inline bool PreSignedUrlHasBeenSet() const { return m_preSignedUrlHasBeenSet; }
 
@@ -1410,14 +1434,13 @@ namespace Model
      * <code>CreateDBInstanceReadReplica</code> API action in the source AWS Region
      * that contains the source DB instance. </p> <p>You must specify this parameter
      * when you create an encrypted Read Replica from another AWS Region by using the
-     * Amazon RDS API. You can specify the <code>--source-region</code> option instead
-     * of this parameter when you create an encrypted Read Replica from another AWS
-     * Region by using the AWS CLI. </p> <p>The presigned URL must be a valid request
-     * for the <code>CreateDBInstanceReadReplica</code> API action that can be executed
-     * in the source AWS Region that contains the encrypted source DB instance. The
-     * presigned URL request must contain the following parameter values: </p> <ul>
-     * <li> <p> <code>DestinationRegion</code> - The AWS Region that the encrypted Read
-     * Replica is created in. This AWS Region is the same one where the
+     * Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an
+     * encrypted Read Replica in the same AWS Region. </p> <p>The presigned URL must be
+     * a valid request for the <code>CreateDBInstanceReadReplica</code> API action that
+     * can be executed in the source AWS Region that contains the encrypted source DB
+     * instance. The presigned URL request must contain the following parameter values:
+     * </p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS Region that the
+     * encrypted Read Replica is created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
      * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
      * the us-west-1 AWS Region, from a source DB instance in the us-east-2 AWS Region,
@@ -1442,7 +1465,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p>
+     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying
+     * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
+     * autogenerates a pre-signed URL that is a valid request for the operation that
+     * can be executed in the source AWS Region.</p> </note>
      */
     inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
 
@@ -1451,14 +1479,13 @@ namespace Model
      * <code>CreateDBInstanceReadReplica</code> API action in the source AWS Region
      * that contains the source DB instance. </p> <p>You must specify this parameter
      * when you create an encrypted Read Replica from another AWS Region by using the
-     * Amazon RDS API. You can specify the <code>--source-region</code> option instead
-     * of this parameter when you create an encrypted Read Replica from another AWS
-     * Region by using the AWS CLI. </p> <p>The presigned URL must be a valid request
-     * for the <code>CreateDBInstanceReadReplica</code> API action that can be executed
-     * in the source AWS Region that contains the encrypted source DB instance. The
-     * presigned URL request must contain the following parameter values: </p> <ul>
-     * <li> <p> <code>DestinationRegion</code> - The AWS Region that the encrypted Read
-     * Replica is created in. This AWS Region is the same one where the
+     * Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an
+     * encrypted Read Replica in the same AWS Region. </p> <p>The presigned URL must be
+     * a valid request for the <code>CreateDBInstanceReadReplica</code> API action that
+     * can be executed in the source AWS Region that contains the encrypted source DB
+     * instance. The presigned URL request must contain the following parameter values:
+     * </p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS Region that the
+     * encrypted Read Replica is created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
      * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
      * the us-west-1 AWS Region, from a source DB instance in the us-east-2 AWS Region,
@@ -1483,7 +1510,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p>
+     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying
+     * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
+     * autogenerates a pre-signed URL that is a valid request for the operation that
+     * can be executed in the source AWS Region.</p> </note>
      */
     inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = std::move(value); }
 
@@ -1492,14 +1524,13 @@ namespace Model
      * <code>CreateDBInstanceReadReplica</code> API action in the source AWS Region
      * that contains the source DB instance. </p> <p>You must specify this parameter
      * when you create an encrypted Read Replica from another AWS Region by using the
-     * Amazon RDS API. You can specify the <code>--source-region</code> option instead
-     * of this parameter when you create an encrypted Read Replica from another AWS
-     * Region by using the AWS CLI. </p> <p>The presigned URL must be a valid request
-     * for the <code>CreateDBInstanceReadReplica</code> API action that can be executed
-     * in the source AWS Region that contains the encrypted source DB instance. The
-     * presigned URL request must contain the following parameter values: </p> <ul>
-     * <li> <p> <code>DestinationRegion</code> - The AWS Region that the encrypted Read
-     * Replica is created in. This AWS Region is the same one where the
+     * Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an
+     * encrypted Read Replica in the same AWS Region. </p> <p>The presigned URL must be
+     * a valid request for the <code>CreateDBInstanceReadReplica</code> API action that
+     * can be executed in the source AWS Region that contains the encrypted source DB
+     * instance. The presigned URL request must contain the following parameter values:
+     * </p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS Region that the
+     * encrypted Read Replica is created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
      * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
      * the us-west-1 AWS Region, from a source DB instance in the us-east-2 AWS Region,
@@ -1524,7 +1555,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p>
+     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying
+     * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
+     * autogenerates a pre-signed URL that is a valid request for the operation that
+     * can be executed in the source AWS Region.</p> </note>
      */
     inline void SetPreSignedUrl(const char* value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl.assign(value); }
 
@@ -1533,14 +1569,13 @@ namespace Model
      * <code>CreateDBInstanceReadReplica</code> API action in the source AWS Region
      * that contains the source DB instance. </p> <p>You must specify this parameter
      * when you create an encrypted Read Replica from another AWS Region by using the
-     * Amazon RDS API. You can specify the <code>--source-region</code> option instead
-     * of this parameter when you create an encrypted Read Replica from another AWS
-     * Region by using the AWS CLI. </p> <p>The presigned URL must be a valid request
-     * for the <code>CreateDBInstanceReadReplica</code> API action that can be executed
-     * in the source AWS Region that contains the encrypted source DB instance. The
-     * presigned URL request must contain the following parameter values: </p> <ul>
-     * <li> <p> <code>DestinationRegion</code> - The AWS Region that the encrypted Read
-     * Replica is created in. This AWS Region is the same one where the
+     * Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an
+     * encrypted Read Replica in the same AWS Region. </p> <p>The presigned URL must be
+     * a valid request for the <code>CreateDBInstanceReadReplica</code> API action that
+     * can be executed in the source AWS Region that contains the encrypted source DB
+     * instance. The presigned URL request must contain the following parameter values:
+     * </p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS Region that the
+     * encrypted Read Replica is created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
      * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
      * the us-west-1 AWS Region, from a source DB instance in the us-east-2 AWS Region,
@@ -1565,7 +1600,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p>
+     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying
+     * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
+     * autogenerates a pre-signed URL that is a valid request for the operation that
+     * can be executed in the source AWS Region.</p> </note>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
 
@@ -1574,14 +1614,13 @@ namespace Model
      * <code>CreateDBInstanceReadReplica</code> API action in the source AWS Region
      * that contains the source DB instance. </p> <p>You must specify this parameter
      * when you create an encrypted Read Replica from another AWS Region by using the
-     * Amazon RDS API. You can specify the <code>--source-region</code> option instead
-     * of this parameter when you create an encrypted Read Replica from another AWS
-     * Region by using the AWS CLI. </p> <p>The presigned URL must be a valid request
-     * for the <code>CreateDBInstanceReadReplica</code> API action that can be executed
-     * in the source AWS Region that contains the encrypted source DB instance. The
-     * presigned URL request must contain the following parameter values: </p> <ul>
-     * <li> <p> <code>DestinationRegion</code> - The AWS Region that the encrypted Read
-     * Replica is created in. This AWS Region is the same one where the
+     * Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an
+     * encrypted Read Replica in the same AWS Region. </p> <p>The presigned URL must be
+     * a valid request for the <code>CreateDBInstanceReadReplica</code> API action that
+     * can be executed in the source AWS Region that contains the encrypted source DB
+     * instance. The presigned URL request must contain the following parameter values:
+     * </p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS Region that the
+     * encrypted Read Replica is created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
      * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
      * the us-west-1 AWS Region, from a source DB instance in the us-east-2 AWS Region,
@@ -1606,7 +1645,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p>
+     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying
+     * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
+     * autogenerates a pre-signed URL that is a valid request for the operation that
+     * can be executed in the source AWS Region.</p> </note>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(std::move(value)); return *this;}
 
@@ -1615,14 +1659,13 @@ namespace Model
      * <code>CreateDBInstanceReadReplica</code> API action in the source AWS Region
      * that contains the source DB instance. </p> <p>You must specify this parameter
      * when you create an encrypted Read Replica from another AWS Region by using the
-     * Amazon RDS API. You can specify the <code>--source-region</code> option instead
-     * of this parameter when you create an encrypted Read Replica from another AWS
-     * Region by using the AWS CLI. </p> <p>The presigned URL must be a valid request
-     * for the <code>CreateDBInstanceReadReplica</code> API action that can be executed
-     * in the source AWS Region that contains the encrypted source DB instance. The
-     * presigned URL request must contain the following parameter values: </p> <ul>
-     * <li> <p> <code>DestinationRegion</code> - The AWS Region that the encrypted Read
-     * Replica is created in. This AWS Region is the same one where the
+     * Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an
+     * encrypted Read Replica in the same AWS Region. </p> <p>The presigned URL must be
+     * a valid request for the <code>CreateDBInstanceReadReplica</code> API action that
+     * can be executed in the source AWS Region that contains the encrypted source DB
+     * instance. The presigned URL request must contain the following parameter values:
+     * </p> <ul> <li> <p> <code>DestinationRegion</code> - The AWS Region that the
+     * encrypted Read Replica is created in. This AWS Region is the same one where the
      * <code>CreateDBInstanceReadReplica</code> action is called that contains this
      * presigned URL. </p> <p>For example, if you create an encrypted DB instance in
      * the us-west-1 AWS Region, from a source DB instance in the us-east-2 AWS Region,
@@ -1647,7 +1690,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p>
+     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * or the AWS CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the AWS CLI) instead of specifying
+     * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
+     * autogenerates a pre-signed URL that is a valid request for the operation that
+     * can be executed in the source AWS Region.</p> </note>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 

@@ -1422,49 +1422,49 @@ namespace Model
 
 
     /**
-     * <p>The status of a Read Replica. If the instance is not a Read Replica, this is
+     * <p>The status of a Read Replica. If the instance isn't a Read Replica, this is
      * blank.</p>
      */
     inline const Aws::Vector<DBInstanceStatusInfo>& GetStatusInfos() const{ return m_statusInfos; }
 
     /**
-     * <p>The status of a Read Replica. If the instance is not a Read Replica, this is
+     * <p>The status of a Read Replica. If the instance isn't a Read Replica, this is
      * blank.</p>
      */
     inline bool StatusInfosHasBeenSet() const { return m_statusInfosHasBeenSet; }
 
     /**
-     * <p>The status of a Read Replica. If the instance is not a Read Replica, this is
+     * <p>The status of a Read Replica. If the instance isn't a Read Replica, this is
      * blank.</p>
      */
     inline void SetStatusInfos(const Aws::Vector<DBInstanceStatusInfo>& value) { m_statusInfosHasBeenSet = true; m_statusInfos = value; }
 
     /**
-     * <p>The status of a Read Replica. If the instance is not a Read Replica, this is
+     * <p>The status of a Read Replica. If the instance isn't a Read Replica, this is
      * blank.</p>
      */
     inline void SetStatusInfos(Aws::Vector<DBInstanceStatusInfo>&& value) { m_statusInfosHasBeenSet = true; m_statusInfos = std::move(value); }
 
     /**
-     * <p>The status of a Read Replica. If the instance is not a Read Replica, this is
+     * <p>The status of a Read Replica. If the instance isn't a Read Replica, this is
      * blank.</p>
      */
     inline DBInstance& WithStatusInfos(const Aws::Vector<DBInstanceStatusInfo>& value) { SetStatusInfos(value); return *this;}
 
     /**
-     * <p>The status of a Read Replica. If the instance is not a Read Replica, this is
+     * <p>The status of a Read Replica. If the instance isn't a Read Replica, this is
      * blank.</p>
      */
     inline DBInstance& WithStatusInfos(Aws::Vector<DBInstanceStatusInfo>&& value) { SetStatusInfos(std::move(value)); return *this;}
 
     /**
-     * <p>The status of a Read Replica. If the instance is not a Read Replica, this is
+     * <p>The status of a Read Replica. If the instance isn't a Read Replica, this is
      * blank.</p>
      */
     inline DBInstance& AddStatusInfos(const DBInstanceStatusInfo& value) { m_statusInfosHasBeenSet = true; m_statusInfos.push_back(value); return *this; }
 
     /**
-     * <p>The status of a Read Replica. If the instance is not a Read Replica, this is
+     * <p>The status of a Read Replica. If the instance isn't a Read Replica, this is
      * blank.</p>
      */
     inline DBInstance& AddStatusInfos(DBInstanceStatusInfo&& value) { m_statusInfosHasBeenSet = true; m_statusInfos.push_back(std::move(value)); return *this; }

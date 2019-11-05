@@ -97,81 +97,81 @@ namespace Model
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>The
-     * list only includes supported on-premises, bring your own media (BYOM) DB
-     * engines. </p> <p>Valid Values: </p> <ul> <li> <p> <code>sqlserver-ee</code> </p>
-     * </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * list only includes supported DB engines that require an on-premises customer
+     * provided license. </p> <p>Valid Values: </p> <ul> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>The
-     * list only includes supported on-premises, bring your own media (BYOM) DB
-     * engines. </p> <p>Valid Values: </p> <ul> <li> <p> <code>sqlserver-ee</code> </p>
-     * </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * list only includes supported DB engines that require an on-premises customer
+     * provided license. </p> <p>Valid Values: </p> <ul> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>The
-     * list only includes supported on-premises, bring your own media (BYOM) DB
-     * engines. </p> <p>Valid Values: </p> <ul> <li> <p> <code>sqlserver-ee</code> </p>
-     * </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * list only includes supported DB engines that require an on-premises customer
+     * provided license. </p> <p>Valid Values: </p> <ul> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>The
-     * list only includes supported on-premises, bring your own media (BYOM) DB
-     * engines. </p> <p>Valid Values: </p> <ul> <li> <p> <code>sqlserver-ee</code> </p>
-     * </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * list only includes supported DB engines that require an on-premises customer
+     * provided license. </p> <p>Valid Values: </p> <ul> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>The
-     * list only includes supported on-premises, bring your own media (BYOM) DB
-     * engines. </p> <p>Valid Values: </p> <ul> <li> <p> <code>sqlserver-ee</code> </p>
-     * </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * list only includes supported DB engines that require an on-premises customer
+     * provided license. </p> <p>Valid Values: </p> <ul> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>The
-     * list only includes supported on-premises, bring your own media (BYOM) DB
-     * engines. </p> <p>Valid Values: </p> <ul> <li> <p> <code>sqlserver-ee</code> </p>
-     * </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * list only includes supported DB engines that require an on-premises customer
+     * provided license. </p> <p>Valid Values: </p> <ul> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline ImportInstallationMediaRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>The
-     * list only includes supported on-premises, bring your own media (BYOM) DB
-     * engines. </p> <p>Valid Values: </p> <ul> <li> <p> <code>sqlserver-ee</code> </p>
-     * </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * list only includes supported DB engines that require an on-premises customer
+     * provided license. </p> <p>Valid Values: </p> <ul> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline ImportInstallationMediaRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>The
-     * list only includes supported on-premises, bring your own media (BYOM) DB
-     * engines. </p> <p>Valid Values: </p> <ul> <li> <p> <code>sqlserver-ee</code> </p>
-     * </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * list only includes supported DB engines that require an on-premises customer
+     * provided license. </p> <p>Valid Values: </p> <ul> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline ImportInstallationMediaRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -180,8 +180,8 @@ namespace Model
      * <p>The version number of the database engine to use.</p> <p>For a list of valid
      * engine versions, call <a>DescribeDBEngineVersions</a>.</p> <p>The following are
      * the database engines and links to information about the major and minor
-     * versions. The list only includes supported on-premises, bring your own media
-     * (BYOM) DB engines.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
+     * versions. The list only includes DB engines that require an on-premises customer
+     * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
      * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
@@ -191,8 +191,8 @@ namespace Model
      * <p>The version number of the database engine to use.</p> <p>For a list of valid
      * engine versions, call <a>DescribeDBEngineVersions</a>.</p> <p>The following are
      * the database engines and links to information about the major and minor
-     * versions. The list only includes supported on-premises, bring your own media
-     * (BYOM) DB engines.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
+     * versions. The list only includes DB engines that require an on-premises customer
+     * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
      * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
@@ -202,8 +202,8 @@ namespace Model
      * <p>The version number of the database engine to use.</p> <p>For a list of valid
      * engine versions, call <a>DescribeDBEngineVersions</a>.</p> <p>The following are
      * the database engines and links to information about the major and minor
-     * versions. The list only includes supported on-premises, bring your own media
-     * (BYOM) DB engines.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
+     * versions. The list only includes DB engines that require an on-premises customer
+     * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
      * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
@@ -213,8 +213,8 @@ namespace Model
      * <p>The version number of the database engine to use.</p> <p>For a list of valid
      * engine versions, call <a>DescribeDBEngineVersions</a>.</p> <p>The following are
      * the database engines and links to information about the major and minor
-     * versions. The list only includes supported on-premises, bring your own media
-     * (BYOM) DB engines.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
+     * versions. The list only includes DB engines that require an on-premises customer
+     * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
      * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
@@ -224,8 +224,8 @@ namespace Model
      * <p>The version number of the database engine to use.</p> <p>For a list of valid
      * engine versions, call <a>DescribeDBEngineVersions</a>.</p> <p>The following are
      * the database engines and links to information about the major and minor
-     * versions. The list only includes supported on-premises, bring your own media
-     * (BYOM) DB engines.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
+     * versions. The list only includes DB engines that require an on-premises customer
+     * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
      * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
@@ -235,8 +235,8 @@ namespace Model
      * <p>The version number of the database engine to use.</p> <p>For a list of valid
      * engine versions, call <a>DescribeDBEngineVersions</a>.</p> <p>The following are
      * the database engines and links to information about the major and minor
-     * versions. The list only includes supported on-premises, bring your own media
-     * (BYOM) DB engines.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
+     * versions. The list only includes DB engines that require an on-premises customer
+     * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
      * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
@@ -246,8 +246,8 @@ namespace Model
      * <p>The version number of the database engine to use.</p> <p>For a list of valid
      * engine versions, call <a>DescribeDBEngineVersions</a>.</p> <p>The following are
      * the database engines and links to information about the major and minor
-     * versions. The list only includes supported on-premises, bring your own media
-     * (BYOM) DB engines.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
+     * versions. The list only includes DB engines that require an on-premises customer
+     * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
      * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
@@ -257,8 +257,8 @@ namespace Model
      * <p>The version number of the database engine to use.</p> <p>For a list of valid
      * engine versions, call <a>DescribeDBEngineVersions</a>.</p> <p>The following are
      * the database engines and links to information about the major and minor
-     * versions. The list only includes supported on-premises, bring your own media
-     * (BYOM) DB engines.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
+     * versions. The list only includes DB engines that require an on-premises customer
+     * provided license.</p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
      * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
@@ -266,56 +266,56 @@ namespace Model
 
 
     /**
-     * <p>The path to the installation media for the specified DB engine.</p>
+     * <p>The path to the installation medium for the specified DB engine.</p>
      * <p>Example:
      * <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code> </p>
      */
     inline const Aws::String& GetEngineInstallationMediaPath() const{ return m_engineInstallationMediaPath; }
 
     /**
-     * <p>The path to the installation media for the specified DB engine.</p>
+     * <p>The path to the installation medium for the specified DB engine.</p>
      * <p>Example:
      * <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code> </p>
      */
     inline bool EngineInstallationMediaPathHasBeenSet() const { return m_engineInstallationMediaPathHasBeenSet; }
 
     /**
-     * <p>The path to the installation media for the specified DB engine.</p>
+     * <p>The path to the installation medium for the specified DB engine.</p>
      * <p>Example:
      * <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code> </p>
      */
     inline void SetEngineInstallationMediaPath(const Aws::String& value) { m_engineInstallationMediaPathHasBeenSet = true; m_engineInstallationMediaPath = value; }
 
     /**
-     * <p>The path to the installation media for the specified DB engine.</p>
+     * <p>The path to the installation medium for the specified DB engine.</p>
      * <p>Example:
      * <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code> </p>
      */
     inline void SetEngineInstallationMediaPath(Aws::String&& value) { m_engineInstallationMediaPathHasBeenSet = true; m_engineInstallationMediaPath = std::move(value); }
 
     /**
-     * <p>The path to the installation media for the specified DB engine.</p>
+     * <p>The path to the installation medium for the specified DB engine.</p>
      * <p>Example:
      * <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code> </p>
      */
     inline void SetEngineInstallationMediaPath(const char* value) { m_engineInstallationMediaPathHasBeenSet = true; m_engineInstallationMediaPath.assign(value); }
 
     /**
-     * <p>The path to the installation media for the specified DB engine.</p>
+     * <p>The path to the installation medium for the specified DB engine.</p>
      * <p>Example:
      * <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code> </p>
      */
     inline ImportInstallationMediaRequest& WithEngineInstallationMediaPath(const Aws::String& value) { SetEngineInstallationMediaPath(value); return *this;}
 
     /**
-     * <p>The path to the installation media for the specified DB engine.</p>
+     * <p>The path to the installation medium for the specified DB engine.</p>
      * <p>Example:
      * <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code> </p>
      */
     inline ImportInstallationMediaRequest& WithEngineInstallationMediaPath(Aws::String&& value) { SetEngineInstallationMediaPath(std::move(value)); return *this;}
 
     /**
-     * <p>The path to the installation media for the specified DB engine.</p>
+     * <p>The path to the installation medium for the specified DB engine.</p>
      * <p>Example:
      * <code>SQLServerISO/en_sql_server_2016_enterprise_x64_dvd_8701793.iso</code> </p>
      */
@@ -323,56 +323,56 @@ namespace Model
 
 
     /**
-     * <p>The path to the installation media for the operating system associated with
+     * <p>The path to the installation medium for the operating system associated with
      * the specified DB engine.</p> <p>Example:
      * <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code> </p>
      */
     inline const Aws::String& GetOSInstallationMediaPath() const{ return m_oSInstallationMediaPath; }
 
     /**
-     * <p>The path to the installation media for the operating system associated with
+     * <p>The path to the installation medium for the operating system associated with
      * the specified DB engine.</p> <p>Example:
      * <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code> </p>
      */
     inline bool OSInstallationMediaPathHasBeenSet() const { return m_oSInstallationMediaPathHasBeenSet; }
 
     /**
-     * <p>The path to the installation media for the operating system associated with
+     * <p>The path to the installation medium for the operating system associated with
      * the specified DB engine.</p> <p>Example:
      * <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code> </p>
      */
     inline void SetOSInstallationMediaPath(const Aws::String& value) { m_oSInstallationMediaPathHasBeenSet = true; m_oSInstallationMediaPath = value; }
 
     /**
-     * <p>The path to the installation media for the operating system associated with
+     * <p>The path to the installation medium for the operating system associated with
      * the specified DB engine.</p> <p>Example:
      * <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code> </p>
      */
     inline void SetOSInstallationMediaPath(Aws::String&& value) { m_oSInstallationMediaPathHasBeenSet = true; m_oSInstallationMediaPath = std::move(value); }
 
     /**
-     * <p>The path to the installation media for the operating system associated with
+     * <p>The path to the installation medium for the operating system associated with
      * the specified DB engine.</p> <p>Example:
      * <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code> </p>
      */
     inline void SetOSInstallationMediaPath(const char* value) { m_oSInstallationMediaPathHasBeenSet = true; m_oSInstallationMediaPath.assign(value); }
 
     /**
-     * <p>The path to the installation media for the operating system associated with
+     * <p>The path to the installation medium for the operating system associated with
      * the specified DB engine.</p> <p>Example:
      * <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code> </p>
      */
     inline ImportInstallationMediaRequest& WithOSInstallationMediaPath(const Aws::String& value) { SetOSInstallationMediaPath(value); return *this;}
 
     /**
-     * <p>The path to the installation media for the operating system associated with
+     * <p>The path to the installation medium for the operating system associated with
      * the specified DB engine.</p> <p>Example:
      * <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code> </p>
      */
     inline ImportInstallationMediaRequest& WithOSInstallationMediaPath(Aws::String&& value) { SetOSInstallationMediaPath(std::move(value)); return *this;}
 
     /**
-     * <p>The path to the installation media for the operating system associated with
+     * <p>The path to the installation medium for the operating system associated with
      * the specified DB engine.</p> <p>Example:
      * <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code> </p>
      */

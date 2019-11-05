@@ -48,57 +48,57 @@ namespace Model
 
     /**
      * <p> The DB cluster identifier for the global cluster being modified. This
-     * parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * match the identifier of an existing global database cluster.</p> </li> </ul>
+     * parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match
+     * the identifier of an existing global database cluster.</p> </li> </ul>
      */
     inline const Aws::String& GetGlobalClusterIdentifier() const{ return m_globalClusterIdentifier; }
 
     /**
      * <p> The DB cluster identifier for the global cluster being modified. This
-     * parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * match the identifier of an existing global database cluster.</p> </li> </ul>
+     * parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match
+     * the identifier of an existing global database cluster.</p> </li> </ul>
      */
     inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
 
     /**
      * <p> The DB cluster identifier for the global cluster being modified. This
-     * parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * match the identifier of an existing global database cluster.</p> </li> </ul>
+     * parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match
+     * the identifier of an existing global database cluster.</p> </li> </ul>
      */
     inline void SetGlobalClusterIdentifier(const Aws::String& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = value; }
 
     /**
      * <p> The DB cluster identifier for the global cluster being modified. This
-     * parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * match the identifier of an existing global database cluster.</p> </li> </ul>
+     * parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match
+     * the identifier of an existing global database cluster.</p> </li> </ul>
      */
     inline void SetGlobalClusterIdentifier(Aws::String&& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = std::move(value); }
 
     /**
      * <p> The DB cluster identifier for the global cluster being modified. This
-     * parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * match the identifier of an existing global database cluster.</p> </li> </ul>
+     * parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match
+     * the identifier of an existing global database cluster.</p> </li> </ul>
      */
     inline void SetGlobalClusterIdentifier(const char* value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier.assign(value); }
 
     /**
      * <p> The DB cluster identifier for the global cluster being modified. This
-     * parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * match the identifier of an existing global database cluster.</p> </li> </ul>
+     * parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match
+     * the identifier of an existing global database cluster.</p> </li> </ul>
      */
     inline ModifyGlobalClusterRequest& WithGlobalClusterIdentifier(const Aws::String& value) { SetGlobalClusterIdentifier(value); return *this;}
 
     /**
      * <p> The DB cluster identifier for the global cluster being modified. This
-     * parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * match the identifier of an existing global database cluster.</p> </li> </ul>
+     * parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match
+     * the identifier of an existing global database cluster.</p> </li> </ul>
      */
     inline ModifyGlobalClusterRequest& WithGlobalClusterIdentifier(Aws::String&& value) { SetGlobalClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p> The DB cluster identifier for the global cluster being modified. This
-     * parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * match the identifier of an existing global database cluster.</p> </li> </ul>
+     * parameter isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match
+     * the identifier of an existing global database cluster.</p> </li> </ul>
      */
     inline ModifyGlobalClusterRequest& WithGlobalClusterIdentifier(const char* value) { SetGlobalClusterIdentifier(value); return *this;}
 

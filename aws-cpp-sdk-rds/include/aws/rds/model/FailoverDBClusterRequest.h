@@ -50,56 +50,56 @@ namespace Model
   public:
 
     /**
-     * <p>A DB cluster identifier to force a failover for. This parameter is not
+     * <p>A DB cluster identifier to force a failover for. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier
      * of an existing DBCluster.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
-     * <p>A DB cluster identifier to force a failover for. This parameter is not
+     * <p>A DB cluster identifier to force a failover for. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier
      * of an existing DBCluster.</p> </li> </ul>
      */
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
-     * <p>A DB cluster identifier to force a failover for. This parameter is not
+     * <p>A DB cluster identifier to force a failover for. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier
      * of an existing DBCluster.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
-     * <p>A DB cluster identifier to force a failover for. This parameter is not
+     * <p>A DB cluster identifier to force a failover for. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier
      * of an existing DBCluster.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
-     * <p>A DB cluster identifier to force a failover for. This parameter is not
+     * <p>A DB cluster identifier to force a failover for. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier
      * of an existing DBCluster.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
-     * <p>A DB cluster identifier to force a failover for. This parameter is not
+     * <p>A DB cluster identifier to force a failover for. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier
      * of an existing DBCluster.</p> </li> </ul>
      */
     inline FailoverDBClusterRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
-     * <p>A DB cluster identifier to force a failover for. This parameter is not
+     * <p>A DB cluster identifier to force a failover for. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier
      * of an existing DBCluster.</p> </li> </ul>
      */
     inline FailoverDBClusterRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>A DB cluster identifier to force a failover for. This parameter is not
+     * <p>A DB cluster identifier to force a failover for. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier
      * of an existing DBCluster.</p> </li> </ul>
      */

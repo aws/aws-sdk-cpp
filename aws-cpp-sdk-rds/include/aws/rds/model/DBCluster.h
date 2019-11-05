@@ -65,7 +65,7 @@ namespace Model
      * <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code>
      * specifies the allocated storage size in gibibytes (GiB). For Aurora,
      * <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster
-     * storage size is not fixed, but instead automatically adjusts as needed.</p>
+     * storage size isn't fixed, but instead automatically adjusts as needed.</p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
@@ -73,7 +73,7 @@ namespace Model
      * <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code>
      * specifies the allocated storage size in gibibytes (GiB). For Aurora,
      * <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster
-     * storage size is not fixed, but instead automatically adjusts as needed.</p>
+     * storage size isn't fixed, but instead automatically adjusts as needed.</p>
      */
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
 
@@ -81,7 +81,7 @@ namespace Model
      * <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code>
      * specifies the allocated storage size in gibibytes (GiB). For Aurora,
      * <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster
-     * storage size is not fixed, but instead automatically adjusts as needed.</p>
+     * storage size isn't fixed, but instead automatically adjusts as needed.</p>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
@@ -89,7 +89,7 @@ namespace Model
      * <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code>
      * specifies the allocated storage size in gibibytes (GiB). For Aurora,
      * <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster
-     * storage size is not fixed, but instead automatically adjusts as needed.</p>
+     * storage size isn't fixed, but instead automatically adjusts as needed.</p>
      */
     inline DBCluster& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 

@@ -1061,7 +1061,12 @@ namespace Aws
          * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
          * and <a
          * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-         * Signature Version 4 Signing Process</a>.</p> </li> <li> <p>
+         * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+         * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+         * <code>--source-region</code> for the AWS CLI) instead of specifying
+         * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
+         * autogenerates a pre-signed URL that is a valid request for the operation that
+         * can be executed in the source AWS Region.</p> </note> </li> <li> <p>
          * <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new copy
          * of the DB cluster snapshot in the destination AWS Region.</p> </li> <li> <p>
          * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
@@ -1123,7 +1128,12 @@ namespace Aws
          * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
          * and <a
          * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-         * Signature Version 4 Signing Process</a>.</p> </li> <li> <p>
+         * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+         * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+         * <code>--source-region</code> for the AWS CLI) instead of specifying
+         * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
+         * autogenerates a pre-signed URL that is a valid request for the operation that
+         * can be executed in the source AWS Region.</p> </note> </li> <li> <p>
          * <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new copy
          * of the DB cluster snapshot in the destination AWS Region.</p> </li> <li> <p>
          * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
@@ -1187,7 +1197,12 @@ namespace Aws
          * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
          * and <a
          * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-         * Signature Version 4 Signing Process</a>.</p> </li> <li> <p>
+         * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+         * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
+         * <code>--source-region</code> for the AWS CLI) instead of specifying
+         * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
+         * autogenerates a pre-signed URL that is a valid request for the operation that
+         * can be executed in the source AWS Region.</p> </note> </li> <li> <p>
          * <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new copy
          * of the DB cluster snapshot in the destination AWS Region.</p> </li> <li> <p>
          * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
@@ -2465,16 +2480,18 @@ namespace Aws
         virtual void DeleteGlobalClusterAsync(const Model::DeleteGlobalClusterRequest& request, const DeleteGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the installation media for an on-premises, bring your own media
-         * (BYOM) DB engine, such as Microsoft SQL Server.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the installation medium for a DB engine that requires an on-premises
+         * customer provided license, such as Microsoft SQL Server.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteInstallationMedia">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteInstallationMediaOutcome DeleteInstallationMedia(const Model::DeleteInstallationMediaRequest& request) const;
 
         /**
-         * <p>Deletes the installation media for an on-premises, bring your own media
-         * (BYOM) DB engine, such as Microsoft SQL Server.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the installation medium for a DB engine that requires an on-premises
+         * customer provided license, such as Microsoft SQL Server.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteInstallationMedia">AWS
          * API Reference</a></p>
          *
@@ -2483,8 +2500,9 @@ namespace Aws
         virtual Model::DeleteInstallationMediaOutcomeCallable DeleteInstallationMediaCallable(const Model::DeleteInstallationMediaRequest& request) const;
 
         /**
-         * <p>Deletes the installation media for an on-premises, bring your own media
-         * (BYOM) DB engine, such as Microsoft SQL Server.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the installation medium for a DB engine that requires an on-premises
+         * customer provided license, such as Microsoft SQL Server.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteInstallationMedia">AWS
          * API Reference</a></p>
          *
@@ -3462,18 +3480,18 @@ namespace Aws
         virtual void DescribeGlobalClustersAsync(const Model::DescribeGlobalClustersRequest& request, const DescribeGlobalClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the available installation media for on-premises, bring your own
-         * media (BYOM) DB engines, such as Microsoft SQL Server.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Describes the available installation media for a DB engine that requires an
+         * on-premises customer provided license, such as Microsoft SQL
+         * Server.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeInstallationMedia">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeInstallationMediaOutcome DescribeInstallationMedia(const Model::DescribeInstallationMediaRequest& request) const;
 
         /**
-         * <p>Describes the available installation media for on-premises, bring your own
-         * media (BYOM) DB engines, such as Microsoft SQL Server.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Describes the available installation media for a DB engine that requires an
+         * on-premises customer provided license, such as Microsoft SQL
+         * Server.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeInstallationMedia">AWS
          * API Reference</a></p>
          *
@@ -3482,9 +3500,9 @@ namespace Aws
         virtual Model::DescribeInstallationMediaOutcomeCallable DescribeInstallationMediaCallable(const Model::DescribeInstallationMediaRequest& request) const;
 
         /**
-         * <p>Describes the available installation media for on-premises, bring your own
-         * media (BYOM) DB engines, such as Microsoft SQL Server.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Describes the available installation media for a DB engine that requires an
+         * on-premises customer provided license, such as Microsoft SQL
+         * Server.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeInstallationMedia">AWS
          * API Reference</a></p>
          *
@@ -3803,16 +3821,16 @@ namespace Aws
         virtual void FailoverDBClusterAsync(const Model::FailoverDBClusterRequest& request, const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Imports the installation media for an on-premises, bring your own media
-         * (BYOM) DB engine, such as SQL Server.</p><p><h3>See Also:</h3>   <a
+         * <p>Imports the installation media for a DB engine that requires an on-premises
+         * customer provided license, such as SQL Server.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ImportInstallationMedia">AWS
          * API Reference</a></p>
          */
         virtual Model::ImportInstallationMediaOutcome ImportInstallationMedia(const Model::ImportInstallationMediaRequest& request) const;
 
         /**
-         * <p>Imports the installation media for an on-premises, bring your own media
-         * (BYOM) DB engine, such as SQL Server.</p><p><h3>See Also:</h3>   <a
+         * <p>Imports the installation media for a DB engine that requires an on-premises
+         * customer provided license, such as SQL Server.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ImportInstallationMedia">AWS
          * API Reference</a></p>
          *
@@ -3821,8 +3839,8 @@ namespace Aws
         virtual Model::ImportInstallationMediaOutcomeCallable ImportInstallationMediaCallable(const Model::ImportInstallationMediaRequest& request) const;
 
         /**
-         * <p>Imports the installation media for an on-premises, bring your own media
-         * (BYOM) DB engine, such as SQL Server.</p><p><h3>See Also:</h3>   <a
+         * <p>Imports the installation media for a DB engine that requires an on-premises
+         * customer provided license, such as SQL Server.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ImportInstallationMedia">AWS
          * API Reference</a></p>
          *
@@ -5026,8 +5044,9 @@ namespace Aws
          * snapshot with a default configuration and default security group.</p> <p>If a DB
          * cluster snapshot is specified, the target DB cluster is created from the source
          * DB cluster restore point with the same configuration as the original source DB
-         * cluster, except that the new DB cluster is created with the default security
-         * group.</p> <p>For more information on Amazon Aurora, see <a
+         * cluster. If you don't specify a security group, the new DB cluster is associated
+         * with the default security group.</p> <p>For more information on Amazon Aurora,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
          * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> <note>
          * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See
@@ -5043,8 +5062,9 @@ namespace Aws
          * snapshot with a default configuration and default security group.</p> <p>If a DB
          * cluster snapshot is specified, the target DB cluster is created from the source
          * DB cluster restore point with the same configuration as the original source DB
-         * cluster, except that the new DB cluster is created with the default security
-         * group.</p> <p>For more information on Amazon Aurora, see <a
+         * cluster. If you don't specify a security group, the new DB cluster is associated
+         * with the default security group.</p> <p>For more information on Amazon Aurora,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
          * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> <note>
          * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See
@@ -5062,8 +5082,9 @@ namespace Aws
          * snapshot with a default configuration and default security group.</p> <p>If a DB
          * cluster snapshot is specified, the target DB cluster is created from the source
          * DB cluster restore point with the same configuration as the original source DB
-         * cluster, except that the new DB cluster is created with the default security
-         * group.</p> <p>For more information on Amazon Aurora, see <a
+         * cluster. If you don't specify a security group, the new DB cluster is associated
+         * with the default security group.</p> <p>For more information on Amazon Aurora,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
          * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> <note>
          * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See

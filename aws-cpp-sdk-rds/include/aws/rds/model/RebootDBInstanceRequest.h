@@ -108,29 +108,29 @@ namespace Model
 
     /**
      * <p> A value that indicates whether the reboot is conducted through a Multi-AZ
-     * failover. </p> <p>Constraint: You can't enable force failover if the instance is
-     * not configured for Multi-AZ.</p>
+     * failover. </p> <p>Constraint: You can't enable force failover if the instance
+     * isn't configured for Multi-AZ.</p>
      */
     inline bool GetForceFailover() const{ return m_forceFailover; }
 
     /**
      * <p> A value that indicates whether the reboot is conducted through a Multi-AZ
-     * failover. </p> <p>Constraint: You can't enable force failover if the instance is
-     * not configured for Multi-AZ.</p>
+     * failover. </p> <p>Constraint: You can't enable force failover if the instance
+     * isn't configured for Multi-AZ.</p>
      */
     inline bool ForceFailoverHasBeenSet() const { return m_forceFailoverHasBeenSet; }
 
     /**
      * <p> A value that indicates whether the reboot is conducted through a Multi-AZ
-     * failover. </p> <p>Constraint: You can't enable force failover if the instance is
-     * not configured for Multi-AZ.</p>
+     * failover. </p> <p>Constraint: You can't enable force failover if the instance
+     * isn't configured for Multi-AZ.</p>
      */
     inline void SetForceFailover(bool value) { m_forceFailoverHasBeenSet = true; m_forceFailover = value; }
 
     /**
      * <p> A value that indicates whether the reboot is conducted through a Multi-AZ
-     * failover. </p> <p>Constraint: You can't enable force failover if the instance is
-     * not configured for Multi-AZ.</p>
+     * failover. </p> <p>Constraint: You can't enable force failover if the instance
+     * isn't configured for Multi-AZ.</p>
      */
     inline RebootDBInstanceRequest& WithForceFailover(bool value) { SetForceFailover(value); return *this;}
 

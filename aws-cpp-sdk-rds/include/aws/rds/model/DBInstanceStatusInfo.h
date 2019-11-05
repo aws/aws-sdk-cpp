@@ -175,49 +175,49 @@ namespace Model
 
     /**
      * <p>Details of the error if there is an error for the instance. If the instance
-     * is not in an error state, this value is blank.</p>
+     * isn't in an error state, this value is blank.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
      * <p>Details of the error if there is an error for the instance. If the instance
-     * is not in an error state, this value is blank.</p>
+     * isn't in an error state, this value is blank.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>Details of the error if there is an error for the instance. If the instance
-     * is not in an error state, this value is blank.</p>
+     * isn't in an error state, this value is blank.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
      * <p>Details of the error if there is an error for the instance. If the instance
-     * is not in an error state, this value is blank.</p>
+     * isn't in an error state, this value is blank.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>Details of the error if there is an error for the instance. If the instance
-     * is not in an error state, this value is blank.</p>
+     * isn't in an error state, this value is blank.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
      * <p>Details of the error if there is an error for the instance. If the instance
-     * is not in an error state, this value is blank.</p>
+     * isn't in an error state, this value is blank.</p>
      */
     inline DBInstanceStatusInfo& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
      * <p>Details of the error if there is an error for the instance. If the instance
-     * is not in an error state, this value is blank.</p>
+     * isn't in an error state, this value is blank.</p>
      */
     inline DBInstanceStatusInfo& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>Details of the error if there is an error for the instance. If the instance
-     * is not in an error state, this value is blank.</p>
+     * isn't in an error state, this value is blank.</p>
      */
     inline DBInstanceStatusInfo& WithMessage(const char* value) { SetMessage(value); return *this;}
 

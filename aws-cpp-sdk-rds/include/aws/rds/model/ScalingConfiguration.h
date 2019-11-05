@@ -199,7 +199,7 @@ namespace Model
      * <code>RollbackCapacityChange</code>.</p> <p>
      * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
      * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
-     * ignores the capacity change if a scaling point is not found in the timeout
+     * ignores the capacity change if a scaling point isn't found in the timeout
      * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
      * connections that prevent Aurora Serverless from finding a scaling point might be
      * dropped.</p> </important> <p>For more information, see <a
@@ -215,7 +215,7 @@ namespace Model
      * <code>RollbackCapacityChange</code>.</p> <p>
      * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
      * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
-     * ignores the capacity change if a scaling point is not found in the timeout
+     * ignores the capacity change if a scaling point isn't found in the timeout
      * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
      * connections that prevent Aurora Serverless from finding a scaling point might be
      * dropped.</p> </important> <p>For more information, see <a
@@ -231,7 +231,7 @@ namespace Model
      * <code>RollbackCapacityChange</code>.</p> <p>
      * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
      * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
-     * ignores the capacity change if a scaling point is not found in the timeout
+     * ignores the capacity change if a scaling point isn't found in the timeout
      * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
      * connections that prevent Aurora Serverless from finding a scaling point might be
      * dropped.</p> </important> <p>For more information, see <a
@@ -247,7 +247,7 @@ namespace Model
      * <code>RollbackCapacityChange</code>.</p> <p>
      * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
      * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
-     * ignores the capacity change if a scaling point is not found in the timeout
+     * ignores the capacity change if a scaling point isn't found in the timeout
      * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
      * connections that prevent Aurora Serverless from finding a scaling point might be
      * dropped.</p> </important> <p>For more information, see <a
@@ -263,7 +263,7 @@ namespace Model
      * <code>RollbackCapacityChange</code>.</p> <p>
      * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
      * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
-     * ignores the capacity change if a scaling point is not found in the timeout
+     * ignores the capacity change if a scaling point isn't found in the timeout
      * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
      * connections that prevent Aurora Serverless from finding a scaling point might be
      * dropped.</p> </important> <p>For more information, see <a
@@ -279,7 +279,7 @@ namespace Model
      * <code>RollbackCapacityChange</code>.</p> <p>
      * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
      * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
-     * ignores the capacity change if a scaling point is not found in the timeout
+     * ignores the capacity change if a scaling point isn't found in the timeout
      * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
      * connections that prevent Aurora Serverless from finding a scaling point might be
      * dropped.</p> </important> <p>For more information, see <a
@@ -295,7 +295,7 @@ namespace Model
      * <code>RollbackCapacityChange</code>.</p> <p>
      * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
      * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
-     * ignores the capacity change if a scaling point is not found in the timeout
+     * ignores the capacity change if a scaling point isn't found in the timeout
      * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
      * connections that prevent Aurora Serverless from finding a scaling point might be
      * dropped.</p> </important> <p>For more information, see <a
@@ -311,7 +311,7 @@ namespace Model
      * <code>RollbackCapacityChange</code>.</p> <p>
      * <code>ForceApplyCapacityChange</code> sets the capacity to the specified value
      * as soon as possible.</p> <p> <code>RollbackCapacityChange</code>, the default,
-     * ignores the capacity change if a scaling point is not found in the timeout
+     * ignores the capacity change if a scaling point isn't found in the timeout
      * period.</p> <important> <p>If you specify <code>ForceApplyCapacityChange</code>,
      * connections that prevent Aurora Serverless from finding a scaling point might be
      * dropped.</p> </important> <p>For more information, see <a

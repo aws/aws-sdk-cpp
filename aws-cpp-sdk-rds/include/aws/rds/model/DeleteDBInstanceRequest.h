@@ -109,52 +109,52 @@ namespace Model
     /**
      * <p>A value that indicates whether to skip the creation of a final DB snapshot
      * before the DB instance is deleted. If skip is specified, no DB snapshot is
-     * created. If skip is not specified, a DB snapshot is created before the DB
-     * instance is deleted. By default, skip is not specified, and the DB snapshot is
+     * created. If skip isn't specified, a DB snapshot is created before the DB
+     * instance is deleted. By default, skip isn't specified, and the DB snapshot is
      * created.</p> <p>Note that when a DB instance is in a failure state and has a
      * status of 'failed', 'incompatible-restore', or 'incompatible-network', it can
      * only be deleted when skip is specified.</p> <p>Specify skip when deleting a Read
      * Replica.</p> <note> <p>The FinalDBSnapshotIdentifier parameter must be specified
-     * if skip is not specified.</p> </note>
+     * if skip isn't specified.</p> </note>
      */
     inline bool GetSkipFinalSnapshot() const{ return m_skipFinalSnapshot; }
 
     /**
      * <p>A value that indicates whether to skip the creation of a final DB snapshot
      * before the DB instance is deleted. If skip is specified, no DB snapshot is
-     * created. If skip is not specified, a DB snapshot is created before the DB
-     * instance is deleted. By default, skip is not specified, and the DB snapshot is
+     * created. If skip isn't specified, a DB snapshot is created before the DB
+     * instance is deleted. By default, skip isn't specified, and the DB snapshot is
      * created.</p> <p>Note that when a DB instance is in a failure state and has a
      * status of 'failed', 'incompatible-restore', or 'incompatible-network', it can
      * only be deleted when skip is specified.</p> <p>Specify skip when deleting a Read
      * Replica.</p> <note> <p>The FinalDBSnapshotIdentifier parameter must be specified
-     * if skip is not specified.</p> </note>
+     * if skip isn't specified.</p> </note>
      */
     inline bool SkipFinalSnapshotHasBeenSet() const { return m_skipFinalSnapshotHasBeenSet; }
 
     /**
      * <p>A value that indicates whether to skip the creation of a final DB snapshot
      * before the DB instance is deleted. If skip is specified, no DB snapshot is
-     * created. If skip is not specified, a DB snapshot is created before the DB
-     * instance is deleted. By default, skip is not specified, and the DB snapshot is
+     * created. If skip isn't specified, a DB snapshot is created before the DB
+     * instance is deleted. By default, skip isn't specified, and the DB snapshot is
      * created.</p> <p>Note that when a DB instance is in a failure state and has a
      * status of 'failed', 'incompatible-restore', or 'incompatible-network', it can
      * only be deleted when skip is specified.</p> <p>Specify skip when deleting a Read
      * Replica.</p> <note> <p>The FinalDBSnapshotIdentifier parameter must be specified
-     * if skip is not specified.</p> </note>
+     * if skip isn't specified.</p> </note>
      */
     inline void SetSkipFinalSnapshot(bool value) { m_skipFinalSnapshotHasBeenSet = true; m_skipFinalSnapshot = value; }
 
     /**
      * <p>A value that indicates whether to skip the creation of a final DB snapshot
      * before the DB instance is deleted. If skip is specified, no DB snapshot is
-     * created. If skip is not specified, a DB snapshot is created before the DB
-     * instance is deleted. By default, skip is not specified, and the DB snapshot is
+     * created. If skip isn't specified, a DB snapshot is created before the DB
+     * instance is deleted. By default, skip isn't specified, and the DB snapshot is
      * created.</p> <p>Note that when a DB instance is in a failure state and has a
      * status of 'failed', 'incompatible-restore', or 'incompatible-network', it can
      * only be deleted when skip is specified.</p> <p>Specify skip when deleting a Read
      * Replica.</p> <note> <p>The FinalDBSnapshotIdentifier parameter must be specified
-     * if skip is not specified.</p> </note>
+     * if skip isn't specified.</p> </note>
      */
     inline DeleteDBInstanceRequest& WithSkipFinalSnapshot(bool value) { SetSkipFinalSnapshot(value); return *this;}
 

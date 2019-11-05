@@ -53,57 +53,57 @@ namespace Model
   public:
 
     /**
-     * <p>The DB cluster identifier for the cluster being modified. This parameter is
-     * not case-sensitive.</p> <p>Constraints: This identifier must match the
+     * <p>The DB cluster identifier for the cluster being modified. This parameter
+     * isn't case-sensitive.</p> <p>Constraints: This identifier must match the
      * identifier of an existing DB cluster.</p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
-     * <p>The DB cluster identifier for the cluster being modified. This parameter is
-     * not case-sensitive.</p> <p>Constraints: This identifier must match the
+     * <p>The DB cluster identifier for the cluster being modified. This parameter
+     * isn't case-sensitive.</p> <p>Constraints: This identifier must match the
      * identifier of an existing DB cluster.</p>
      */
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
-     * <p>The DB cluster identifier for the cluster being modified. This parameter is
-     * not case-sensitive.</p> <p>Constraints: This identifier must match the
+     * <p>The DB cluster identifier for the cluster being modified. This parameter
+     * isn't case-sensitive.</p> <p>Constraints: This identifier must match the
      * identifier of an existing DB cluster.</p>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
-     * <p>The DB cluster identifier for the cluster being modified. This parameter is
-     * not case-sensitive.</p> <p>Constraints: This identifier must match the
+     * <p>The DB cluster identifier for the cluster being modified. This parameter
+     * isn't case-sensitive.</p> <p>Constraints: This identifier must match the
      * identifier of an existing DB cluster.</p>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
-     * <p>The DB cluster identifier for the cluster being modified. This parameter is
-     * not case-sensitive.</p> <p>Constraints: This identifier must match the
+     * <p>The DB cluster identifier for the cluster being modified. This parameter
+     * isn't case-sensitive.</p> <p>Constraints: This identifier must match the
      * identifier of an existing DB cluster.</p>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
-     * <p>The DB cluster identifier for the cluster being modified. This parameter is
-     * not case-sensitive.</p> <p>Constraints: This identifier must match the
+     * <p>The DB cluster identifier for the cluster being modified. This parameter
+     * isn't case-sensitive.</p> <p>Constraints: This identifier must match the
      * identifier of an existing DB cluster.</p>
      */
     inline ModifyDBClusterRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
-     * <p>The DB cluster identifier for the cluster being modified. This parameter is
-     * not case-sensitive.</p> <p>Constraints: This identifier must match the
+     * <p>The DB cluster identifier for the cluster being modified. This parameter
+     * isn't case-sensitive.</p> <p>Constraints: This identifier must match the
      * identifier of an existing DB cluster.</p>
      */
     inline ModifyDBClusterRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The DB cluster identifier for the cluster being modified. This parameter is
-     * not case-sensitive.</p> <p>Constraints: This identifier must match the
+     * <p>The DB cluster identifier for the cluster being modified. This parameter
+     * isn't case-sensitive.</p> <p>Constraints: This identifier must match the
      * identifier of an existing DB cluster.</p>
      */
     inline ModifyDBClusterRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}

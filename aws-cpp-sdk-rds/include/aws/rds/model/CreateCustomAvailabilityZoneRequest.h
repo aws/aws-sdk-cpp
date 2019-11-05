@@ -142,56 +142,56 @@ namespace Model
     /**
      * <p>The name of a new VPN tunnel between the Amazon RDS website and the VMware
      * vSphere cluster.</p> <p>Specify this parameter only if
-     * <code>ExistingVpnId</code> is not specified.</p>
+     * <code>ExistingVpnId</code> isn't specified.</p>
      */
     inline const Aws::String& GetNewVpnTunnelName() const{ return m_newVpnTunnelName; }
 
     /**
      * <p>The name of a new VPN tunnel between the Amazon RDS website and the VMware
      * vSphere cluster.</p> <p>Specify this parameter only if
-     * <code>ExistingVpnId</code> is not specified.</p>
+     * <code>ExistingVpnId</code> isn't specified.</p>
      */
     inline bool NewVpnTunnelNameHasBeenSet() const { return m_newVpnTunnelNameHasBeenSet; }
 
     /**
      * <p>The name of a new VPN tunnel between the Amazon RDS website and the VMware
      * vSphere cluster.</p> <p>Specify this parameter only if
-     * <code>ExistingVpnId</code> is not specified.</p>
+     * <code>ExistingVpnId</code> isn't specified.</p>
      */
     inline void SetNewVpnTunnelName(const Aws::String& value) { m_newVpnTunnelNameHasBeenSet = true; m_newVpnTunnelName = value; }
 
     /**
      * <p>The name of a new VPN tunnel between the Amazon RDS website and the VMware
      * vSphere cluster.</p> <p>Specify this parameter only if
-     * <code>ExistingVpnId</code> is not specified.</p>
+     * <code>ExistingVpnId</code> isn't specified.</p>
      */
     inline void SetNewVpnTunnelName(Aws::String&& value) { m_newVpnTunnelNameHasBeenSet = true; m_newVpnTunnelName = std::move(value); }
 
     /**
      * <p>The name of a new VPN tunnel between the Amazon RDS website and the VMware
      * vSphere cluster.</p> <p>Specify this parameter only if
-     * <code>ExistingVpnId</code> is not specified.</p>
+     * <code>ExistingVpnId</code> isn't specified.</p>
      */
     inline void SetNewVpnTunnelName(const char* value) { m_newVpnTunnelNameHasBeenSet = true; m_newVpnTunnelName.assign(value); }
 
     /**
      * <p>The name of a new VPN tunnel between the Amazon RDS website and the VMware
      * vSphere cluster.</p> <p>Specify this parameter only if
-     * <code>ExistingVpnId</code> is not specified.</p>
+     * <code>ExistingVpnId</code> isn't specified.</p>
      */
     inline CreateCustomAvailabilityZoneRequest& WithNewVpnTunnelName(const Aws::String& value) { SetNewVpnTunnelName(value); return *this;}
 
     /**
      * <p>The name of a new VPN tunnel between the Amazon RDS website and the VMware
      * vSphere cluster.</p> <p>Specify this parameter only if
-     * <code>ExistingVpnId</code> is not specified.</p>
+     * <code>ExistingVpnId</code> isn't specified.</p>
      */
     inline CreateCustomAvailabilityZoneRequest& WithNewVpnTunnelName(Aws::String&& value) { SetNewVpnTunnelName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a new VPN tunnel between the Amazon RDS website and the VMware
      * vSphere cluster.</p> <p>Specify this parameter only if
-     * <code>ExistingVpnId</code> is not specified.</p>
+     * <code>ExistingVpnId</code> isn't specified.</p>
      */
     inline CreateCustomAvailabilityZoneRequest& WithNewVpnTunnelName(const char* value) { SetNewVpnTunnelName(value); return *this;}
 
@@ -199,56 +199,56 @@ namespace Model
     /**
      * <p>The IP address of network traffic from your on-premises data center. A custom
      * AZ receives the network traffic.</p> <p>Specify this parameter only if
-     * <code>ExistingVpnId</code> is not specified.</p>
+     * <code>ExistingVpnId</code> isn't specified.</p>
      */
     inline const Aws::String& GetVpnTunnelOriginatorIP() const{ return m_vpnTunnelOriginatorIP; }
 
     /**
      * <p>The IP address of network traffic from your on-premises data center. A custom
      * AZ receives the network traffic.</p> <p>Specify this parameter only if
-     * <code>ExistingVpnId</code> is not specified.</p>
+     * <code>ExistingVpnId</code> isn't specified.</p>
      */
     inline bool VpnTunnelOriginatorIPHasBeenSet() const { return m_vpnTunnelOriginatorIPHasBeenSet; }
 
     /**
      * <p>The IP address of network traffic from your on-premises data center. A custom
      * AZ receives the network traffic.</p> <p>Specify this parameter only if
-     * <code>ExistingVpnId</code> is not specified.</p>
+     * <code>ExistingVpnId</code> isn't specified.</p>
      */
     inline void SetVpnTunnelOriginatorIP(const Aws::String& value) { m_vpnTunnelOriginatorIPHasBeenSet = true; m_vpnTunnelOriginatorIP = value; }
 
     /**
      * <p>The IP address of network traffic from your on-premises data center. A custom
      * AZ receives the network traffic.</p> <p>Specify this parameter only if
-     * <code>ExistingVpnId</code> is not specified.</p>
+     * <code>ExistingVpnId</code> isn't specified.</p>
      */
     inline void SetVpnTunnelOriginatorIP(Aws::String&& value) { m_vpnTunnelOriginatorIPHasBeenSet = true; m_vpnTunnelOriginatorIP = std::move(value); }
 
     /**
      * <p>The IP address of network traffic from your on-premises data center. A custom
      * AZ receives the network traffic.</p> <p>Specify this parameter only if
-     * <code>ExistingVpnId</code> is not specified.</p>
+     * <code>ExistingVpnId</code> isn't specified.</p>
      */
     inline void SetVpnTunnelOriginatorIP(const char* value) { m_vpnTunnelOriginatorIPHasBeenSet = true; m_vpnTunnelOriginatorIP.assign(value); }
 
     /**
      * <p>The IP address of network traffic from your on-premises data center. A custom
      * AZ receives the network traffic.</p> <p>Specify this parameter only if
-     * <code>ExistingVpnId</code> is not specified.</p>
+     * <code>ExistingVpnId</code> isn't specified.</p>
      */
     inline CreateCustomAvailabilityZoneRequest& WithVpnTunnelOriginatorIP(const Aws::String& value) { SetVpnTunnelOriginatorIP(value); return *this;}
 
     /**
      * <p>The IP address of network traffic from your on-premises data center. A custom
      * AZ receives the network traffic.</p> <p>Specify this parameter only if
-     * <code>ExistingVpnId</code> is not specified.</p>
+     * <code>ExistingVpnId</code> isn't specified.</p>
      */
     inline CreateCustomAvailabilityZoneRequest& WithVpnTunnelOriginatorIP(Aws::String&& value) { SetVpnTunnelOriginatorIP(std::move(value)); return *this;}
 
     /**
      * <p>The IP address of network traffic from your on-premises data center. A custom
      * AZ receives the network traffic.</p> <p>Specify this parameter only if
-     * <code>ExistingVpnId</code> is not specified.</p>
+     * <code>ExistingVpnId</code> isn't specified.</p>
      */
     inline CreateCustomAvailabilityZoneRequest& WithVpnTunnelOriginatorIP(const char* value) { SetVpnTunnelOriginatorIP(value); return *this;}
 

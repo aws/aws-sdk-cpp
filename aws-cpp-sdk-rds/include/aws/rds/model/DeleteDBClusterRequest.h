@@ -109,8 +109,8 @@ namespace Model
     /**
      * <p>A value that indicates whether to skip the creation of a final DB cluster
      * snapshot before the DB cluster is deleted. If skip is specified, no DB cluster
-     * snapshot is created. If skip is not specified, a DB cluster snapshot is created
-     * before the DB cluster is deleted. By default, skip is not specified, and the DB
+     * snapshot is created. If skip isn't specified, a DB cluster snapshot is created
+     * before the DB cluster is deleted. By default, skip isn't specified, and the DB
      * cluster snapshot is created. By default, this parameter is disabled.</p> <note>
      * <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
      * <code>SkipFinalSnapshot</code> is disabled.</p> </note>
@@ -120,8 +120,8 @@ namespace Model
     /**
      * <p>A value that indicates whether to skip the creation of a final DB cluster
      * snapshot before the DB cluster is deleted. If skip is specified, no DB cluster
-     * snapshot is created. If skip is not specified, a DB cluster snapshot is created
-     * before the DB cluster is deleted. By default, skip is not specified, and the DB
+     * snapshot is created. If skip isn't specified, a DB cluster snapshot is created
+     * before the DB cluster is deleted. By default, skip isn't specified, and the DB
      * cluster snapshot is created. By default, this parameter is disabled.</p> <note>
      * <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
      * <code>SkipFinalSnapshot</code> is disabled.</p> </note>
@@ -131,8 +131,8 @@ namespace Model
     /**
      * <p>A value that indicates whether to skip the creation of a final DB cluster
      * snapshot before the DB cluster is deleted. If skip is specified, no DB cluster
-     * snapshot is created. If skip is not specified, a DB cluster snapshot is created
-     * before the DB cluster is deleted. By default, skip is not specified, and the DB
+     * snapshot is created. If skip isn't specified, a DB cluster snapshot is created
+     * before the DB cluster is deleted. By default, skip isn't specified, and the DB
      * cluster snapshot is created. By default, this parameter is disabled.</p> <note>
      * <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
      * <code>SkipFinalSnapshot</code> is disabled.</p> </note>
@@ -142,8 +142,8 @@ namespace Model
     /**
      * <p>A value that indicates whether to skip the creation of a final DB cluster
      * snapshot before the DB cluster is deleted. If skip is specified, no DB cluster
-     * snapshot is created. If skip is not specified, a DB cluster snapshot is created
-     * before the DB cluster is deleted. By default, skip is not specified, and the DB
+     * snapshot is created. If skip isn't specified, a DB cluster snapshot is created
+     * before the DB cluster is deleted. By default, skip isn't specified, and the DB
      * cluster snapshot is created. By default, this parameter is disabled.</p> <note>
      * <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
      * <code>SkipFinalSnapshot</code> is disabled.</p> </note>

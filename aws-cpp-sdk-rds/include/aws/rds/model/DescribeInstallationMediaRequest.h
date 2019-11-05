@@ -49,42 +49,42 @@ namespace Model
   public:
 
     /**
-     * <p>The installation media ID.</p>
+     * <p>The installation medium ID.</p>
      */
     inline const Aws::String& GetInstallationMediaId() const{ return m_installationMediaId; }
 
     /**
-     * <p>The installation media ID.</p>
+     * <p>The installation medium ID.</p>
      */
     inline bool InstallationMediaIdHasBeenSet() const { return m_installationMediaIdHasBeenSet; }
 
     /**
-     * <p>The installation media ID.</p>
+     * <p>The installation medium ID.</p>
      */
     inline void SetInstallationMediaId(const Aws::String& value) { m_installationMediaIdHasBeenSet = true; m_installationMediaId = value; }
 
     /**
-     * <p>The installation media ID.</p>
+     * <p>The installation medium ID.</p>
      */
     inline void SetInstallationMediaId(Aws::String&& value) { m_installationMediaIdHasBeenSet = true; m_installationMediaId = std::move(value); }
 
     /**
-     * <p>The installation media ID.</p>
+     * <p>The installation medium ID.</p>
      */
     inline void SetInstallationMediaId(const char* value) { m_installationMediaIdHasBeenSet = true; m_installationMediaId.assign(value); }
 
     /**
-     * <p>The installation media ID.</p>
+     * <p>The installation medium ID.</p>
      */
     inline DescribeInstallationMediaRequest& WithInstallationMediaId(const Aws::String& value) { SetInstallationMediaId(value); return *this;}
 
     /**
-     * <p>The installation media ID.</p>
+     * <p>The installation medium ID.</p>
      */
     inline DescribeInstallationMediaRequest& WithInstallationMediaId(Aws::String&& value) { SetInstallationMediaId(std::move(value)); return *this;}
 
     /**
-     * <p>The installation media ID.</p>
+     * <p>The installation medium ID.</p>
      */
     inline DescribeInstallationMediaRequest& WithInstallationMediaId(const char* value) { SetInstallationMediaId(value); return *this;}
 

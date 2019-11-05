@@ -232,7 +232,7 @@ namespace Model
 
     /**
      * <p> A value that indicates whether the DB instance is restored from the latest
-     * backup time. By default, the DB instance is not restored from the latest backup
+     * backup time. By default, the DB instance isn't restored from the latest backup
      * time. </p> <p>Constraints: Can't be specified if the <code>RestoreTime</code>
      * parameter is provided.</p>
      */
@@ -240,7 +240,7 @@ namespace Model
 
     /**
      * <p> A value that indicates whether the DB instance is restored from the latest
-     * backup time. By default, the DB instance is not restored from the latest backup
+     * backup time. By default, the DB instance isn't restored from the latest backup
      * time. </p> <p>Constraints: Can't be specified if the <code>RestoreTime</code>
      * parameter is provided.</p>
      */
@@ -248,7 +248,7 @@ namespace Model
 
     /**
      * <p> A value that indicates whether the DB instance is restored from the latest
-     * backup time. By default, the DB instance is not restored from the latest backup
+     * backup time. By default, the DB instance isn't restored from the latest backup
      * time. </p> <p>Constraints: Can't be specified if the <code>RestoreTime</code>
      * parameter is provided.</p>
      */
@@ -256,7 +256,7 @@ namespace Model
 
     /**
      * <p> A value that indicates whether the DB instance is restored from the latest
-     * backup time. By default, the DB instance is not restored from the latest backup
+     * backup time. By default, the DB instance isn't restored from the latest backup
      * time. </p> <p>Constraints: Can't be specified if the <code>RestoreTime</code>
      * parameter is provided.</p>
      */
@@ -536,7 +536,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
@@ -546,7 +546,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
@@ -556,7 +556,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
@@ -566,7 +566,7 @@ namespace Model
      * <p>A value that indicates whether the DB instance is publicly accessible. When
      * the DB instance is publicly accessible, it is an Internet-facing instance with a
      * publicly resolvable DNS name, which resolves to a public IP address. When the DB
-     * instance is not publicly accessible, it is an internal instance with a DNS name
+     * instance isn't publicly accessible, it is an internal instance with a DNS name
      * that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
@@ -657,49 +657,49 @@ namespace Model
 
     /**
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * is not used for the MySQL or MariaDB engines.</p> </note>
+     * isn't used for the MySQL or MariaDB engines.</p> </note>
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
 
     /**
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * is not used for the MySQL or MariaDB engines.</p> </note>
+     * isn't used for the MySQL or MariaDB engines.</p> </note>
      */
     inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
 
     /**
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * is not used for the MySQL or MariaDB engines.</p> </note>
+     * isn't used for the MySQL or MariaDB engines.</p> </note>
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
     /**
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * is not used for the MySQL or MariaDB engines.</p> </note>
+     * isn't used for the MySQL or MariaDB engines.</p> </note>
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
     /**
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * is not used for the MySQL or MariaDB engines.</p> </note>
+     * isn't used for the MySQL or MariaDB engines.</p> </note>
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
 
     /**
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * is not used for the MySQL or MariaDB engines.</p> </note>
+     * isn't used for the MySQL or MariaDB engines.</p> </note>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
 
     /**
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * is not used for the MySQL or MariaDB engines.</p> </note>
+     * isn't used for the MySQL or MariaDB engines.</p> </note>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
     /**
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * is not used for the MySQL or MariaDB engines.</p> </note>
+     * isn't used for the MySQL or MariaDB engines.</p> </note>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
 
@@ -813,7 +813,7 @@ namespace Model
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
      * initially allocated for the DB instance.</p> <p>Constraints: Must be an integer
      * greater than 1000.</p> <p> <b>SQL Server</b> </p> <p>Setting the IOPS value for
-     * the SQL Server database engine is not supported.</p>
+     * the SQL Server database engine isn't supported.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
@@ -821,7 +821,7 @@ namespace Model
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
      * initially allocated for the DB instance.</p> <p>Constraints: Must be an integer
      * greater than 1000.</p> <p> <b>SQL Server</b> </p> <p>Setting the IOPS value for
-     * the SQL Server database engine is not supported.</p>
+     * the SQL Server database engine isn't supported.</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
@@ -829,7 +829,7 @@ namespace Model
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
      * initially allocated for the DB instance.</p> <p>Constraints: Must be an integer
      * greater than 1000.</p> <p> <b>SQL Server</b> </p> <p>Setting the IOPS value for
-     * the SQL Server database engine is not supported.</p>
+     * the SQL Server database engine isn't supported.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
@@ -837,7 +837,7 @@ namespace Model
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
      * initially allocated for the DB instance.</p> <p>Constraints: Must be an integer
      * greater than 1000.</p> <p> <b>SQL Server</b> </p> <p>Setting the IOPS value for
-     * the SQL Server database engine is not supported.</p>
+     * the SQL Server database engine isn't supported.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithIops(int value) { SetIops(value); return *this;}
 
