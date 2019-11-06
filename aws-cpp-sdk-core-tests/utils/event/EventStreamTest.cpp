@@ -183,8 +183,8 @@ namespace
 
         ASSERT_EQ(0u, handler.m_onPayloadSegmentCount);
         ASSERT_EQ(0u, handler.m_onCompletePayloadCount);
-        // Underlying Event Stream Decoder will parse xml error unsuccessfully, and take it as a prelude with CRC mismatch error.
-        ASSERT_EQ(1u, handler.m_onPreludeReceivedCount);
+        // Underlying Event Stream Decoder will parse xml error unsuccessfully, an invalid prelude with CRC mismatch error will not trigger onPreludeReceived().
+        ASSERT_EQ(0u, handler.m_onPreludeReceivedCount);
         ASSERT_EQ(0u, handler.m_onHeaderReceivedCount);
         ASSERT_EQ(0u, handler.m_requestLevelErrorsCount);
         ASSERT_EQ(1u, handler.m_internalErrorsCount);
@@ -217,8 +217,8 @@ namespace
 
         ASSERT_EQ(0u, handler.m_onPayloadSegmentCount);
         ASSERT_EQ(0u, handler.m_onCompletePayloadCount);
-        // Underlying Event Stream Decoder will parse xml error unsuccessfully, and take it as a prelude with CRC mismatch error.
-        ASSERT_EQ(1u, handler.m_onPreludeReceivedCount);
+        // Underlying Event Stream Decoder will parse xml error unsuccessfully, an invalid prelude with CRC mismatch error will not trigger onPreludeReceived().
+        ASSERT_EQ(0u, handler.m_onPreludeReceivedCount);
         ASSERT_EQ(0u, handler.m_onHeaderReceivedCount);
         ASSERT_EQ(0u, handler.m_requestLevelErrorsCount);
         ASSERT_EQ(1u, handler.m_internalErrorsCount);
