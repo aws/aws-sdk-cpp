@@ -34,6 +34,7 @@ CurrentInstance::CurrentInstance() :
     m_resourceDetailsHasBeenSet(false),
     m_resourceUtilizationHasBeenSet(false),
     m_reservationCoveredHoursInLookbackPeriodHasBeenSet(false),
+    m_savingsPlansCoveredHoursInLookbackPeriodHasBeenSet(false),
     m_onDemandHoursInLookbackPeriodHasBeenSet(false),
     m_totalRunningHoursInLookbackPeriodHasBeenSet(false),
     m_monthlyCostHasBeenSet(false),
@@ -47,6 +48,7 @@ CurrentInstance::CurrentInstance(JsonView jsonValue) :
     m_resourceDetailsHasBeenSet(false),
     m_resourceUtilizationHasBeenSet(false),
     m_reservationCoveredHoursInLookbackPeriodHasBeenSet(false),
+    m_savingsPlansCoveredHoursInLookbackPeriodHasBeenSet(false),
     m_onDemandHoursInLookbackPeriodHasBeenSet(false),
     m_totalRunningHoursInLookbackPeriodHasBeenSet(false),
     m_monthlyCostHasBeenSet(false),
@@ -93,6 +95,13 @@ CurrentInstance& CurrentInstance::operator =(JsonView jsonValue)
     m_reservationCoveredHoursInLookbackPeriod = jsonValue.GetString("ReservationCoveredHoursInLookbackPeriod");
 
     m_reservationCoveredHoursInLookbackPeriodHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SavingsPlansCoveredHoursInLookbackPeriod"))
+  {
+    m_savingsPlansCoveredHoursInLookbackPeriod = jsonValue.GetString("SavingsPlansCoveredHoursInLookbackPeriod");
+
+    m_savingsPlansCoveredHoursInLookbackPeriodHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("OnDemandHoursInLookbackPeriod"))
@@ -162,6 +171,12 @@ JsonValue CurrentInstance::Jsonize() const
   if(m_reservationCoveredHoursInLookbackPeriodHasBeenSet)
   {
    payload.WithString("ReservationCoveredHoursInLookbackPeriod", m_reservationCoveredHoursInLookbackPeriod);
+
+  }
+
+  if(m_savingsPlansCoveredHoursInLookbackPeriodHasBeenSet)
+  {
+   payload.WithString("SavingsPlansCoveredHoursInLookbackPeriod", m_savingsPlansCoveredHoursInLookbackPeriod);
 
   }
 

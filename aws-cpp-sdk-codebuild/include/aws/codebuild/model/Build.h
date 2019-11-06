@@ -28,6 +28,7 @@
 #include <aws/codebuild/model/NetworkInterface.h>
 #include <aws/codebuild/model/BuildPhase.h>
 #include <aws/codebuild/model/ProjectSourceVersion.h>
+#include <aws/codebuild/model/ExportedEnvironmentVariable.h>
 #include <utility>
 
 namespace Aws
@@ -139,6 +140,39 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the build.</p>
      */
     inline Build& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>The number of the build. For each project, the <code>buildNumber</code> of
+     * its first build is <code>1</code>. The <code>buildNumber</code> of each
+     * subsequent build is incremented by <code>1</code>. If a build is deleted, the
+     * <code>buildNumber</code> of other builds does not change.</p>
+     */
+    inline long long GetBuildNumber() const{ return m_buildNumber; }
+
+    /**
+     * <p>The number of the build. For each project, the <code>buildNumber</code> of
+     * its first build is <code>1</code>. The <code>buildNumber</code> of each
+     * subsequent build is incremented by <code>1</code>. If a build is deleted, the
+     * <code>buildNumber</code> of other builds does not change.</p>
+     */
+    inline bool BuildNumberHasBeenSet() const { return m_buildNumberHasBeenSet; }
+
+    /**
+     * <p>The number of the build. For each project, the <code>buildNumber</code> of
+     * its first build is <code>1</code>. The <code>buildNumber</code> of each
+     * subsequent build is incremented by <code>1</code>. If a build is deleted, the
+     * <code>buildNumber</code> of other builds does not change.</p>
+     */
+    inline void SetBuildNumber(long long value) { m_buildNumberHasBeenSet = true; m_buildNumber = value; }
+
+    /**
+     * <p>The number of the build. For each project, the <code>buildNumber</code> of
+     * its first build is <code>1</code>. The <code>buildNumber</code> of each
+     * subsequent build is incremented by <code>1</code>. If a build is deleted, the
+     * <code>buildNumber</code> of other builds does not change.</p>
+     */
+    inline Build& WithBuildNumber(long long value) { SetBuildNumber(value); return *this;}
 
 
     /**
@@ -1292,6 +1326,47 @@ namespace Model
      */
     inline Build& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
 
+
+    /**
+     * <p> A list of exported environment variables for this build. </p>
+     */
+    inline const Aws::Vector<ExportedEnvironmentVariable>& GetExportedEnvironmentVariables() const{ return m_exportedEnvironmentVariables; }
+
+    /**
+     * <p> A list of exported environment variables for this build. </p>
+     */
+    inline bool ExportedEnvironmentVariablesHasBeenSet() const { return m_exportedEnvironmentVariablesHasBeenSet; }
+
+    /**
+     * <p> A list of exported environment variables for this build. </p>
+     */
+    inline void SetExportedEnvironmentVariables(const Aws::Vector<ExportedEnvironmentVariable>& value) { m_exportedEnvironmentVariablesHasBeenSet = true; m_exportedEnvironmentVariables = value; }
+
+    /**
+     * <p> A list of exported environment variables for this build. </p>
+     */
+    inline void SetExportedEnvironmentVariables(Aws::Vector<ExportedEnvironmentVariable>&& value) { m_exportedEnvironmentVariablesHasBeenSet = true; m_exportedEnvironmentVariables = std::move(value); }
+
+    /**
+     * <p> A list of exported environment variables for this build. </p>
+     */
+    inline Build& WithExportedEnvironmentVariables(const Aws::Vector<ExportedEnvironmentVariable>& value) { SetExportedEnvironmentVariables(value); return *this;}
+
+    /**
+     * <p> A list of exported environment variables for this build. </p>
+     */
+    inline Build& WithExportedEnvironmentVariables(Aws::Vector<ExportedEnvironmentVariable>&& value) { SetExportedEnvironmentVariables(std::move(value)); return *this;}
+
+    /**
+     * <p> A list of exported environment variables for this build. </p>
+     */
+    inline Build& AddExportedEnvironmentVariables(const ExportedEnvironmentVariable& value) { m_exportedEnvironmentVariablesHasBeenSet = true; m_exportedEnvironmentVariables.push_back(value); return *this; }
+
+    /**
+     * <p> A list of exported environment variables for this build. </p>
+     */
+    inline Build& AddExportedEnvironmentVariables(ExportedEnvironmentVariable&& value) { m_exportedEnvironmentVariablesHasBeenSet = true; m_exportedEnvironmentVariables.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_id;
@@ -1299,6 +1374,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
+    long long m_buildNumber;
+    bool m_buildNumberHasBeenSet;
 
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
@@ -1371,6 +1449,9 @@ namespace Model
 
     Aws::String m_encryptionKey;
     bool m_encryptionKeyHasBeenSet;
+
+    Aws::Vector<ExportedEnvironmentVariable> m_exportedEnvironmentVariables;
+    bool m_exportedEnvironmentVariablesHasBeenSet;
   };
 
 } // namespace Model

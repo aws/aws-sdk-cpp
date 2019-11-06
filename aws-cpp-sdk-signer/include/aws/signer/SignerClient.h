@@ -27,8 +27,11 @@
 #include <aws/signer/model/ListSigningJobsResult.h>
 #include <aws/signer/model/ListSigningPlatformsResult.h>
 #include <aws/signer/model/ListSigningProfilesResult.h>
+#include <aws/signer/model/ListTagsForResourceResult.h>
 #include <aws/signer/model/PutSigningProfileResult.h>
 #include <aws/signer/model/StartSigningJobResult.h>
+#include <aws/signer/model/TagResourceResult.h>
+#include <aws/signer/model/UntagResourceResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -76,8 +79,11 @@ namespace Model
         class ListSigningJobsRequest;
         class ListSigningPlatformsRequest;
         class ListSigningProfilesRequest;
+        class ListTagsForResourceRequest;
         class PutSigningProfileRequest;
         class StartSigningJobRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SignerErrors>> CancelSigningProfileOutcome;
         typedef Aws::Utils::Outcome<DescribeSigningJobResult, Aws::Client::AWSError<SignerErrors>> DescribeSigningJobOutcome;
@@ -86,8 +92,11 @@ namespace Model
         typedef Aws::Utils::Outcome<ListSigningJobsResult, Aws::Client::AWSError<SignerErrors>> ListSigningJobsOutcome;
         typedef Aws::Utils::Outcome<ListSigningPlatformsResult, Aws::Client::AWSError<SignerErrors>> ListSigningPlatformsOutcome;
         typedef Aws::Utils::Outcome<ListSigningProfilesResult, Aws::Client::AWSError<SignerErrors>> ListSigningProfilesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<SignerErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutSigningProfileResult, Aws::Client::AWSError<SignerErrors>> PutSigningProfileOutcome;
         typedef Aws::Utils::Outcome<StartSigningJobResult, Aws::Client::AWSError<SignerErrors>> StartSigningJobOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<SignerErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<SignerErrors>> UntagResourceOutcome;
 
         typedef std::future<CancelSigningProfileOutcome> CancelSigningProfileOutcomeCallable;
         typedef std::future<DescribeSigningJobOutcome> DescribeSigningJobOutcomeCallable;
@@ -96,8 +105,11 @@ namespace Model
         typedef std::future<ListSigningJobsOutcome> ListSigningJobsOutcomeCallable;
         typedef std::future<ListSigningPlatformsOutcome> ListSigningPlatformsOutcomeCallable;
         typedef std::future<ListSigningProfilesOutcome> ListSigningProfilesOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutSigningProfileOutcome> PutSigningProfileOutcomeCallable;
         typedef std::future<StartSigningJobOutcome> StartSigningJobOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 } // namespace Model
 
   class SignerClient;
@@ -109,19 +121,25 @@ namespace Model
     typedef std::function<void(const SignerClient*, const Model::ListSigningJobsRequest&, const Model::ListSigningJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSigningJobsResponseReceivedHandler;
     typedef std::function<void(const SignerClient*, const Model::ListSigningPlatformsRequest&, const Model::ListSigningPlatformsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSigningPlatformsResponseReceivedHandler;
     typedef std::function<void(const SignerClient*, const Model::ListSigningProfilesRequest&, const Model::ListSigningProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSigningProfilesResponseReceivedHandler;
+    typedef std::function<void(const SignerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const SignerClient*, const Model::PutSigningProfileRequest&, const Model::PutSigningProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSigningProfileResponseReceivedHandler;
     typedef std::function<void(const SignerClient*, const Model::StartSigningJobRequest&, const Model::StartSigningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSigningJobResponseReceivedHandler;
+    typedef std::function<void(const SignerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const SignerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
   /**
-   * <p>You can use Code Signing for Amazon FreeRTOS (AWS Signer) to sign code that
-   * you created for any of the IoT devices that Amazon Web Services supports. AWS
-   * Signer is integrated with Amazon FreeRTOS, AWS Certificate Manager, and AWS
-   * CloudTrail. Amazon FreeRTOS customers can use AWS Signer to sign code images
-   * before making them available for microcontrollers. You can use ACM to import
-   * third-party certificates to be used by AWS Signer. For general information about
-   * using AWS Signer, see the <a
+   * <p>With code signing for IoT, you can sign code that you create for any IoT
+   * device that is supported by Amazon Web Services (AWS). Code signing is available
+   * through <a href="http://docs.aws.amazon.com/freertos/latest/userguide/">Amazon
+   * FreeRTOS</a> and <a
+   * href="http://docs.aws.amazon.com/iot/latest/developerguide/">AWS IoT Device
+   * Management</a>, and integrated with <a
+   * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+   * (ACM)</a>. In order to sign code, you import a third-party code signing
+   * certificate with ACM that is used to sign updates in Amazon FreeRTOS and AWS IoT
+   * Device Management. For general information about using code signing, see the <a
    * href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">Code
-   * Signing for Amazon FreeRTOS Developer Guide</a>.</p>
+   * Signing for IoT Developer Guide</a>.</p>
    */
   class AWS_SIGNER_API SignerClient : public Aws::Client::AWSJsonClient
   {
@@ -276,11 +294,11 @@ namespace Model
         /**
          * <p>Lists all your signing jobs. You can use the <code>maxResults</code>
          * parameter to limit the number of signing jobs that are returned in the response.
-         * If additional jobs remain to be listed, AWS Signer returns a
+         * If additional jobs remain to be listed, code signing returns a
          * <code>nextToken</code> value. Use this value in subsequent calls to
          * <code>ListSigningJobs</code> to fetch the remaining values. You can continue
          * calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter
-         * and with new values that AWS Signer returns in the <code>nextToken</code>
+         * and with new values that code signing returns in the <code>nextToken</code>
          * parameter until all of your signing jobs have been returned. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningJobs">AWS
@@ -291,11 +309,11 @@ namespace Model
         /**
          * <p>Lists all your signing jobs. You can use the <code>maxResults</code>
          * parameter to limit the number of signing jobs that are returned in the response.
-         * If additional jobs remain to be listed, AWS Signer returns a
+         * If additional jobs remain to be listed, code signing returns a
          * <code>nextToken</code> value. Use this value in subsequent calls to
          * <code>ListSigningJobs</code> to fetch the remaining values. You can continue
          * calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter
-         * and with new values that AWS Signer returns in the <code>nextToken</code>
+         * and with new values that code signing returns in the <code>nextToken</code>
          * parameter until all of your signing jobs have been returned. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningJobs">AWS
@@ -308,11 +326,11 @@ namespace Model
         /**
          * <p>Lists all your signing jobs. You can use the <code>maxResults</code>
          * parameter to limit the number of signing jobs that are returned in the response.
-         * If additional jobs remain to be listed, AWS Signer returns a
+         * If additional jobs remain to be listed, code signing returns a
          * <code>nextToken</code> value. Use this value in subsequent calls to
          * <code>ListSigningJobs</code> to fetch the remaining values. You can continue
          * calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter
-         * and with new values that AWS Signer returns in the <code>nextToken</code>
+         * and with new values that code signing returns in the <code>nextToken</code>
          * parameter until all of your signing jobs have been returned. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningJobs">AWS
@@ -323,12 +341,12 @@ namespace Model
         virtual void ListSigningJobsAsync(const Model::ListSigningJobsRequest& request, const ListSigningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all signing platforms available in AWS Signer that match the request
-         * parameters. If additional jobs remain to be listed, AWS Signer returns a
+         * <p>Lists all signing platforms available in code signing that match the request
+         * parameters. If additional jobs remain to be listed, code signing returns a
          * <code>nextToken</code> value. Use this value in subsequent calls to
          * <code>ListSigningJobs</code> to fetch the remaining values. You can continue
          * calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter
-         * and with new values that AWS Signer returns in the <code>nextToken</code>
+         * and with new values that code signing returns in the <code>nextToken</code>
          * parameter until all of your signing jobs have been returned.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningPlatforms">AWS
@@ -337,12 +355,12 @@ namespace Model
         virtual Model::ListSigningPlatformsOutcome ListSigningPlatforms(const Model::ListSigningPlatformsRequest& request) const;
 
         /**
-         * <p>Lists all signing platforms available in AWS Signer that match the request
-         * parameters. If additional jobs remain to be listed, AWS Signer returns a
+         * <p>Lists all signing platforms available in code signing that match the request
+         * parameters. If additional jobs remain to be listed, code signing returns a
          * <code>nextToken</code> value. Use this value in subsequent calls to
          * <code>ListSigningJobs</code> to fetch the remaining values. You can continue
          * calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter
-         * and with new values that AWS Signer returns in the <code>nextToken</code>
+         * and with new values that code signing returns in the <code>nextToken</code>
          * parameter until all of your signing jobs have been returned.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningPlatforms">AWS
@@ -353,12 +371,12 @@ namespace Model
         virtual Model::ListSigningPlatformsOutcomeCallable ListSigningPlatformsCallable(const Model::ListSigningPlatformsRequest& request) const;
 
         /**
-         * <p>Lists all signing platforms available in AWS Signer that match the request
-         * parameters. If additional jobs remain to be listed, AWS Signer returns a
+         * <p>Lists all signing platforms available in code signing that match the request
+         * parameters. If additional jobs remain to be listed, code signing returns a
          * <code>nextToken</code> value. Use this value in subsequent calls to
          * <code>ListSigningJobs</code> to fetch the remaining values. You can continue
          * calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter
-         * and with new values that AWS Signer returns in the <code>nextToken</code>
+         * and with new values that code signing returns in the <code>nextToken</code>
          * parameter until all of your signing jobs have been returned.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningPlatforms">AWS
@@ -372,12 +390,13 @@ namespace Model
          * <p>Lists all available signing profiles in your AWS account. Returns only
          * profiles with an <code>ACTIVE</code> status unless the
          * <code>includeCanceled</code> request field is set to <code>true</code>. If
-         * additional jobs remain to be listed, AWS Signer returns a <code>nextToken</code>
-         * value. Use this value in subsequent calls to <code>ListSigningJobs</code> to
-         * fetch the remaining values. You can continue calling
-         * <code>ListSigningJobs</code> with your <code>maxResults</code> parameter and
-         * with new values that AWS Signer returns in the <code>nextToken</code> parameter
-         * until all of your signing jobs have been returned.</p><p><h3>See Also:</h3>   <a
+         * additional jobs remain to be listed, code signing returns a
+         * <code>nextToken</code> value. Use this value in subsequent calls to
+         * <code>ListSigningJobs</code> to fetch the remaining values. You can continue
+         * calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter
+         * and with new values that code signing returns in the <code>nextToken</code>
+         * parameter until all of your signing jobs have been returned.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningProfiles">AWS
          * API Reference</a></p>
          */
@@ -387,12 +406,13 @@ namespace Model
          * <p>Lists all available signing profiles in your AWS account. Returns only
          * profiles with an <code>ACTIVE</code> status unless the
          * <code>includeCanceled</code> request field is set to <code>true</code>. If
-         * additional jobs remain to be listed, AWS Signer returns a <code>nextToken</code>
-         * value. Use this value in subsequent calls to <code>ListSigningJobs</code> to
-         * fetch the remaining values. You can continue calling
-         * <code>ListSigningJobs</code> with your <code>maxResults</code> parameter and
-         * with new values that AWS Signer returns in the <code>nextToken</code> parameter
-         * until all of your signing jobs have been returned.</p><p><h3>See Also:</h3>   <a
+         * additional jobs remain to be listed, code signing returns a
+         * <code>nextToken</code> value. Use this value in subsequent calls to
+         * <code>ListSigningJobs</code> to fetch the remaining values. You can continue
+         * calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter
+         * and with new values that code signing returns in the <code>nextToken</code>
+         * parameter until all of your signing jobs have been returned.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningProfiles">AWS
          * API Reference</a></p>
          *
@@ -404,12 +424,13 @@ namespace Model
          * <p>Lists all available signing profiles in your AWS account. Returns only
          * profiles with an <code>ACTIVE</code> status unless the
          * <code>includeCanceled</code> request field is set to <code>true</code>. If
-         * additional jobs remain to be listed, AWS Signer returns a <code>nextToken</code>
-         * value. Use this value in subsequent calls to <code>ListSigningJobs</code> to
-         * fetch the remaining values. You can continue calling
-         * <code>ListSigningJobs</code> with your <code>maxResults</code> parameter and
-         * with new values that AWS Signer returns in the <code>nextToken</code> parameter
-         * until all of your signing jobs have been returned.</p><p><h3>See Also:</h3>   <a
+         * additional jobs remain to be listed, code signing returns a
+         * <code>nextToken</code> value. Use this value in subsequent calls to
+         * <code>ListSigningJobs</code> to fetch the remaining values. You can continue
+         * calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter
+         * and with new values that code signing returns in the <code>nextToken</code>
+         * parameter until all of your signing jobs have been returned.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningProfiles">AWS
          * API Reference</a></p>
          *
@@ -418,7 +439,35 @@ namespace Model
         virtual void ListSigningProfilesAsync(const Model::ListSigningProfilesRequest& request, const ListSigningProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a signing profile. A signing profile is an AWS Signer template that
+         * <p>Returns a list of the tags associated with a signing profile
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Returns a list of the tags associated with a signing profile
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Returns a list of the tags associated with a signing profile
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a signing profile. A signing profile is a code signing template that
          * can be used to carry out a pre-defined signing job. For more information, see <a
          * href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html">http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a>
          * </p><p><h3>See Also:</h3>   <a
@@ -428,7 +477,7 @@ namespace Model
         virtual Model::PutSigningProfileOutcome PutSigningProfile(const Model::PutSigningProfileRequest& request) const;
 
         /**
-         * <p>Creates a signing profile. A signing profile is an AWS Signer template that
+         * <p>Creates a signing profile. A signing profile is a code signing template that
          * can be used to carry out a pre-defined signing job. For more information, see <a
          * href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html">http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a>
          * </p><p><h3>See Also:</h3>   <a
@@ -440,7 +489,7 @@ namespace Model
         virtual Model::PutSigningProfileOutcomeCallable PutSigningProfileCallable(const Model::PutSigningProfileRequest& request) const;
 
         /**
-         * <p>Creates a signing profile. A signing profile is an AWS Signer template that
+         * <p>Creates a signing profile. A signing profile is a code signing template that
          * can be used to carry out a pre-defined signing job. For more information, see <a
          * href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html">http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a>
          * </p><p><h3>See Also:</h3>   <a
@@ -459,11 +508,11 @@ namespace Model
          * href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Create
          * a Bucket</a> in the <i>Amazon S3 Getting Started Guide</i>. </p> </li> <li>
          * <p>Your S3 source bucket must be version enabled.</p> </li> <li> <p>You must
-         * create an S3 destination bucket. AWS Signer uses your S3 destination bucket to
+         * create an S3 destination bucket. Code signing uses your S3 destination bucket to
          * write your signed code.</p> </li> <li> <p>You specify the name of the source and
          * destination buckets when calling the <code>StartSigningJob</code> operation.</p>
          * </li> <li> <p>You must also specify a request token that identifies your request
-         * to AWS Signer. </p> </li> </ul> <p>You can call the <a>DescribeSigningJob</a>
+         * to code signing.</p> </li> </ul> <p>You can call the <a>DescribeSigningJob</a>
          * and the <a>ListSigningJobs</a> actions after you call
          * <code>StartSigningJob</code>.</p> <p>For a Java example that shows how to use
          * this action, see <a
@@ -482,11 +531,11 @@ namespace Model
          * href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Create
          * a Bucket</a> in the <i>Amazon S3 Getting Started Guide</i>. </p> </li> <li>
          * <p>Your S3 source bucket must be version enabled.</p> </li> <li> <p>You must
-         * create an S3 destination bucket. AWS Signer uses your S3 destination bucket to
+         * create an S3 destination bucket. Code signing uses your S3 destination bucket to
          * write your signed code.</p> </li> <li> <p>You specify the name of the source and
          * destination buckets when calling the <code>StartSigningJob</code> operation.</p>
          * </li> <li> <p>You must also specify a request token that identifies your request
-         * to AWS Signer. </p> </li> </ul> <p>You can call the <a>DescribeSigningJob</a>
+         * to code signing.</p> </li> </ul> <p>You can call the <a>DescribeSigningJob</a>
          * and the <a>ListSigningJobs</a> actions after you call
          * <code>StartSigningJob</code>.</p> <p>For a Java example that shows how to use
          * this action, see <a
@@ -507,11 +556,11 @@ namespace Model
          * href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Create
          * a Bucket</a> in the <i>Amazon S3 Getting Started Guide</i>. </p> </li> <li>
          * <p>Your S3 source bucket must be version enabled.</p> </li> <li> <p>You must
-         * create an S3 destination bucket. AWS Signer uses your S3 destination bucket to
+         * create an S3 destination bucket. Code signing uses your S3 destination bucket to
          * write your signed code.</p> </li> <li> <p>You specify the name of the source and
          * destination buckets when calling the <code>StartSigningJob</code> operation.</p>
          * </li> <li> <p>You must also specify a request token that identifies your request
-         * to AWS Signer. </p> </li> </ul> <p>You can call the <a>DescribeSigningJob</a>
+         * to code signing.</p> </li> </ul> <p>You can call the <a>DescribeSigningJob</a>
          * and the <a>ListSigningJobs</a> actions after you call
          * <code>StartSigningJob</code>.</p> <p>For a Java example that shows how to use
          * this action, see <a
@@ -524,6 +573,71 @@ namespace Model
          */
         virtual void StartSigningJobAsync(const Model::StartSigningJobRequest& request, const StartSigningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Adds one or more tags to a signing profile. Tags are labels that you can use
+         * to identify and organize your AWS resources. Each tag consists of a key and an
+         * optional value. You specify the signing profile using its Amazon Resource Name
+         * (ARN). You specify the tag by using a key-value pair.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds one or more tags to a signing profile. Tags are labels that you can use
+         * to identify and organize your AWS resources. Each tag consists of a key and an
+         * optional value. You specify the signing profile using its Amazon Resource Name
+         * (ARN). You specify the tag by using a key-value pair.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds one or more tags to a signing profile. Tags are labels that you can use
+         * to identify and organize your AWS resources. Each tag consists of a key and an
+         * optional value. You specify the signing profile using its Amazon Resource Name
+         * (ARN). You specify the tag by using a key-value pair.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Remove one or more tags from a signing profile. Specify a list of tag keys to
+         * remove the tags.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Remove one or more tags from a signing profile. Specify a list of tag keys to
+         * remove the tags.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Remove one or more tags from a signing profile. Specify a list of tag keys to
+         * remove the tags.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -535,8 +649,11 @@ namespace Model
         void ListSigningJobsAsyncHelper(const Model::ListSigningJobsRequest& request, const ListSigningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSigningPlatformsAsyncHelper(const Model::ListSigningPlatformsRequest& request, const ListSigningPlatformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSigningProfilesAsyncHelper(const Model::ListSigningProfilesRequest& request, const ListSigningProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutSigningProfileAsyncHelper(const Model::PutSigningProfileRequest& request, const PutSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartSigningJobAsyncHelper(const Model::StartSigningJobRequest& request, const StartSigningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

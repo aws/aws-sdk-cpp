@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     COST_AND_USAGE,
-    RESERVATIONS
+    RESERVATIONS,
+    SAVINGS_PLANS
   };
 
 namespace ContextMapper

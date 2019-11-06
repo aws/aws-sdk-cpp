@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     PLAINTEXT,
-    PARAMETER_STORE
+    PARAMETER_STORE,
+    SECRETS_MANAGER
   };
 
 namespace EnvironmentVariableTypeMapper

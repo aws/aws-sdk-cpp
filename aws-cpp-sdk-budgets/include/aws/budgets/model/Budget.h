@@ -118,67 +118,73 @@ namespace Model
 
 
     /**
-     * <p>The total amount of cost, usage, RI utilization, or RI coverage that you want
-     * to track with your budget.</p> <p> <code>BudgetLimit</code> is required for cost
-     * or usage budgets, but optional for RI utilization or coverage budgets. RI
-     * utilization or coverage budgets default to <code>100</code>, which is the only
-     * valid value for RI utilization or coverage budgets. You can't use
-     * <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
+     * <p>The total amount of cost, usage, RI utilization, RI coverage, Savings Plans
+     * utilization, or Savings Plans coverage that you want to track with your
+     * budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage budgets,
+     * but optional for RI or Savings Plans utilization or coverage budgets. RI and
+     * Savings Plans utilization or coverage budgets default to <code>100</code>, which
+     * is the only valid value for RI or Savings Plans utilization or coverage budgets.
+     * You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
      * <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
      */
     inline const Spend& GetBudgetLimit() const{ return m_budgetLimit; }
 
     /**
-     * <p>The total amount of cost, usage, RI utilization, or RI coverage that you want
-     * to track with your budget.</p> <p> <code>BudgetLimit</code> is required for cost
-     * or usage budgets, but optional for RI utilization or coverage budgets. RI
-     * utilization or coverage budgets default to <code>100</code>, which is the only
-     * valid value for RI utilization or coverage budgets. You can't use
-     * <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
+     * <p>The total amount of cost, usage, RI utilization, RI coverage, Savings Plans
+     * utilization, or Savings Plans coverage that you want to track with your
+     * budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage budgets,
+     * but optional for RI or Savings Plans utilization or coverage budgets. RI and
+     * Savings Plans utilization or coverage budgets default to <code>100</code>, which
+     * is the only valid value for RI or Savings Plans utilization or coverage budgets.
+     * You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
      * <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
      */
     inline bool BudgetLimitHasBeenSet() const { return m_budgetLimitHasBeenSet; }
 
     /**
-     * <p>The total amount of cost, usage, RI utilization, or RI coverage that you want
-     * to track with your budget.</p> <p> <code>BudgetLimit</code> is required for cost
-     * or usage budgets, but optional for RI utilization or coverage budgets. RI
-     * utilization or coverage budgets default to <code>100</code>, which is the only
-     * valid value for RI utilization or coverage budgets. You can't use
-     * <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
+     * <p>The total amount of cost, usage, RI utilization, RI coverage, Savings Plans
+     * utilization, or Savings Plans coverage that you want to track with your
+     * budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage budgets,
+     * but optional for RI or Savings Plans utilization or coverage budgets. RI and
+     * Savings Plans utilization or coverage budgets default to <code>100</code>, which
+     * is the only valid value for RI or Savings Plans utilization or coverage budgets.
+     * You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
      * <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
      */
     inline void SetBudgetLimit(const Spend& value) { m_budgetLimitHasBeenSet = true; m_budgetLimit = value; }
 
     /**
-     * <p>The total amount of cost, usage, RI utilization, or RI coverage that you want
-     * to track with your budget.</p> <p> <code>BudgetLimit</code> is required for cost
-     * or usage budgets, but optional for RI utilization or coverage budgets. RI
-     * utilization or coverage budgets default to <code>100</code>, which is the only
-     * valid value for RI utilization or coverage budgets. You can't use
-     * <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
+     * <p>The total amount of cost, usage, RI utilization, RI coverage, Savings Plans
+     * utilization, or Savings Plans coverage that you want to track with your
+     * budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage budgets,
+     * but optional for RI or Savings Plans utilization or coverage budgets. RI and
+     * Savings Plans utilization or coverage budgets default to <code>100</code>, which
+     * is the only valid value for RI or Savings Plans utilization or coverage budgets.
+     * You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
      * <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
      */
     inline void SetBudgetLimit(Spend&& value) { m_budgetLimitHasBeenSet = true; m_budgetLimit = std::move(value); }
 
     /**
-     * <p>The total amount of cost, usage, RI utilization, or RI coverage that you want
-     * to track with your budget.</p> <p> <code>BudgetLimit</code> is required for cost
-     * or usage budgets, but optional for RI utilization or coverage budgets. RI
-     * utilization or coverage budgets default to <code>100</code>, which is the only
-     * valid value for RI utilization or coverage budgets. You can't use
-     * <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
+     * <p>The total amount of cost, usage, RI utilization, RI coverage, Savings Plans
+     * utilization, or Savings Plans coverage that you want to track with your
+     * budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage budgets,
+     * but optional for RI or Savings Plans utilization or coverage budgets. RI and
+     * Savings Plans utilization or coverage budgets default to <code>100</code>, which
+     * is the only valid value for RI or Savings Plans utilization or coverage budgets.
+     * You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
      * <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
      */
     inline Budget& WithBudgetLimit(const Spend& value) { SetBudgetLimit(value); return *this;}
 
     /**
-     * <p>The total amount of cost, usage, RI utilization, or RI coverage that you want
-     * to track with your budget.</p> <p> <code>BudgetLimit</code> is required for cost
-     * or usage budgets, but optional for RI utilization or coverage budgets. RI
-     * utilization or coverage budgets default to <code>100</code>, which is the only
-     * valid value for RI utilization or coverage budgets. You can't use
-     * <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
+     * <p>The total amount of cost, usage, RI utilization, RI coverage, Savings Plans
+     * utilization, or Savings Plans coverage that you want to track with your
+     * budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage budgets,
+     * but optional for RI or Savings Plans utilization or coverage budgets. RI and
+     * Savings Plans utilization or coverage budgets default to <code>100</code>, which
+     * is the only valid value for RI or Savings Plans utilization or coverage budgets.
+     * You can't use <code>BudgetLimit</code> with <code>PlannedBudgetLimits</code> for
      * <code>CreateBudget</code> and <code>UpdateBudget</code> actions. </p>
      */
     inline Budget& WithBudgetLimit(Spend&& value) { SetBudgetLimit(std::move(value)); return *this;}
@@ -668,86 +674,98 @@ namespace Model
 
     /**
      * <p>The types of costs that are included in this <code>COST</code> budget.</p>
-     * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, and
-     * <code>RI_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
+     * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>,
+     * <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code>
+     * budgets do not have <code>CostTypes</code>.</p>
      */
     inline const CostTypes& GetCostTypes() const{ return m_costTypes; }
 
     /**
      * <p>The types of costs that are included in this <code>COST</code> budget.</p>
-     * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, and
-     * <code>RI_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
+     * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>,
+     * <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code>
+     * budgets do not have <code>CostTypes</code>.</p>
      */
     inline bool CostTypesHasBeenSet() const { return m_costTypesHasBeenSet; }
 
     /**
      * <p>The types of costs that are included in this <code>COST</code> budget.</p>
-     * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, and
-     * <code>RI_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
+     * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>,
+     * <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code>
+     * budgets do not have <code>CostTypes</code>.</p>
      */
     inline void SetCostTypes(const CostTypes& value) { m_costTypesHasBeenSet = true; m_costTypes = value; }
 
     /**
      * <p>The types of costs that are included in this <code>COST</code> budget.</p>
-     * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, and
-     * <code>RI_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
+     * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>,
+     * <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code>
+     * budgets do not have <code>CostTypes</code>.</p>
      */
     inline void SetCostTypes(CostTypes&& value) { m_costTypesHasBeenSet = true; m_costTypes = std::move(value); }
 
     /**
      * <p>The types of costs that are included in this <code>COST</code> budget.</p>
-     * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, and
-     * <code>RI_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
+     * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>,
+     * <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code>
+     * budgets do not have <code>CostTypes</code>.</p>
      */
     inline Budget& WithCostTypes(const CostTypes& value) { SetCostTypes(value); return *this;}
 
     /**
      * <p>The types of costs that are included in this <code>COST</code> budget.</p>
-     * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, and
-     * <code>RI_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
+     * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>,
+     * <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code>
+     * budgets do not have <code>CostTypes</code>.</p>
      */
     inline Budget& WithCostTypes(CostTypes&& value) { SetCostTypes(std::move(value)); return *this;}
 
 
     /**
      * <p>The length of time until a budget resets the actual and forecasted spend.
-     * <code>DAILY</code> is available only for <code>RI_UTILIZATION</code> and
-     * <code>RI_COVERAGE</code> budgets.</p>
+     * <code>DAILY</code> is available only for <code>RI_UTILIZATION</code>,
+     * <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and
+     * <code>Savings_Plans_Coverage</code> budgets.</p>
      */
     inline const TimeUnit& GetTimeUnit() const{ return m_timeUnit; }
 
     /**
      * <p>The length of time until a budget resets the actual and forecasted spend.
-     * <code>DAILY</code> is available only for <code>RI_UTILIZATION</code> and
-     * <code>RI_COVERAGE</code> budgets.</p>
+     * <code>DAILY</code> is available only for <code>RI_UTILIZATION</code>,
+     * <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and
+     * <code>Savings_Plans_Coverage</code> budgets.</p>
      */
     inline bool TimeUnitHasBeenSet() const { return m_timeUnitHasBeenSet; }
 
     /**
      * <p>The length of time until a budget resets the actual and forecasted spend.
-     * <code>DAILY</code> is available only for <code>RI_UTILIZATION</code> and
-     * <code>RI_COVERAGE</code> budgets.</p>
+     * <code>DAILY</code> is available only for <code>RI_UTILIZATION</code>,
+     * <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and
+     * <code>Savings_Plans_Coverage</code> budgets.</p>
      */
     inline void SetTimeUnit(const TimeUnit& value) { m_timeUnitHasBeenSet = true; m_timeUnit = value; }
 
     /**
      * <p>The length of time until a budget resets the actual and forecasted spend.
-     * <code>DAILY</code> is available only for <code>RI_UTILIZATION</code> and
-     * <code>RI_COVERAGE</code> budgets.</p>
+     * <code>DAILY</code> is available only for <code>RI_UTILIZATION</code>,
+     * <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and
+     * <code>Savings_Plans_Coverage</code> budgets.</p>
      */
     inline void SetTimeUnit(TimeUnit&& value) { m_timeUnitHasBeenSet = true; m_timeUnit = std::move(value); }
 
     /**
      * <p>The length of time until a budget resets the actual and forecasted spend.
-     * <code>DAILY</code> is available only for <code>RI_UTILIZATION</code> and
-     * <code>RI_COVERAGE</code> budgets.</p>
+     * <code>DAILY</code> is available only for <code>RI_UTILIZATION</code>,
+     * <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and
+     * <code>Savings_Plans_Coverage</code> budgets.</p>
      */
     inline Budget& WithTimeUnit(const TimeUnit& value) { SetTimeUnit(value); return *this;}
 
     /**
      * <p>The length of time until a budget resets the actual and forecasted spend.
-     * <code>DAILY</code> is available only for <code>RI_UTILIZATION</code> and
-     * <code>RI_COVERAGE</code> budgets.</p>
+     * <code>DAILY</code> is available only for <code>RI_UTILIZATION</code>,
+     * <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and
+     * <code>Savings_Plans_Coverage</code> budgets.</p>
      */
     inline Budget& WithTimeUnit(TimeUnit&& value) { SetTimeUnit(std::move(value)); return *this;}
 
@@ -887,32 +905,38 @@ namespace Model
 
 
     /**
-     * <p>Whether this budget tracks costs, usage, RI utilization, or RI coverage.</p>
+     * <p>Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings
+     * Plans utilization, or Savings Plans coverage.</p>
      */
     inline const BudgetType& GetBudgetType() const{ return m_budgetType; }
 
     /**
-     * <p>Whether this budget tracks costs, usage, RI utilization, or RI coverage.</p>
+     * <p>Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings
+     * Plans utilization, or Savings Plans coverage.</p>
      */
     inline bool BudgetTypeHasBeenSet() const { return m_budgetTypeHasBeenSet; }
 
     /**
-     * <p>Whether this budget tracks costs, usage, RI utilization, or RI coverage.</p>
+     * <p>Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings
+     * Plans utilization, or Savings Plans coverage.</p>
      */
     inline void SetBudgetType(const BudgetType& value) { m_budgetTypeHasBeenSet = true; m_budgetType = value; }
 
     /**
-     * <p>Whether this budget tracks costs, usage, RI utilization, or RI coverage.</p>
+     * <p>Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings
+     * Plans utilization, or Savings Plans coverage.</p>
      */
     inline void SetBudgetType(BudgetType&& value) { m_budgetTypeHasBeenSet = true; m_budgetType = std::move(value); }
 
     /**
-     * <p>Whether this budget tracks costs, usage, RI utilization, or RI coverage.</p>
+     * <p>Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings
+     * Plans utilization, or Savings Plans coverage.</p>
      */
     inline Budget& WithBudgetType(const BudgetType& value) { SetBudgetType(value); return *this;}
 
     /**
-     * <p>Whether this budget tracks costs, usage, RI utilization, or RI coverage.</p>
+     * <p>Whether this budget tracks costs, usage, RI utilization, RI coverage, Savings
+     * Plans utilization, or Savings Plans coverage.</p>
      */
     inline Budget& WithBudgetType(BudgetType&& value) { SetBudgetType(std::move(value)); return *this;}
 

@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>The S3 bucket name and key where AWS Signer saved your signed code
+   * <p>The S3 bucket name and key where code signing saved your signed code
    * image.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/S3SignedObject">AWS
    * API Reference</a></p>

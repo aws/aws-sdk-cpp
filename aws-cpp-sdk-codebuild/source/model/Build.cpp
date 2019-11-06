@@ -31,6 +31,8 @@ namespace Model
 Build::Build() : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
+    m_buildNumber(0),
+    m_buildNumberHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_currentPhaseHasBeenSet(false),
@@ -58,13 +60,16 @@ Build::Build() :
     m_initiatorHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
     m_networkInterfaceHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false)
+    m_encryptionKeyHasBeenSet(false),
+    m_exportedEnvironmentVariablesHasBeenSet(false)
 {
 }
 
 Build::Build(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
+    m_buildNumber(0),
+    m_buildNumberHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_currentPhaseHasBeenSet(false),
@@ -92,7 +97,8 @@ Build::Build(JsonView jsonValue) :
     m_initiatorHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
     m_networkInterfaceHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false)
+    m_encryptionKeyHasBeenSet(false),
+    m_exportedEnvironmentVariablesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -111,6 +117,13 @@ Build& Build::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("buildNumber"))
+  {
+    m_buildNumber = jsonValue.GetInt64("buildNumber");
+
+    m_buildNumberHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("startTime"))
@@ -293,6 +306,16 @@ Build& Build::operator =(JsonView jsonValue)
     m_encryptionKeyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("exportedEnvironmentVariables"))
+  {
+    Array<JsonView> exportedEnvironmentVariablesJsonList = jsonValue.GetArray("exportedEnvironmentVariables");
+    for(unsigned exportedEnvironmentVariablesIndex = 0; exportedEnvironmentVariablesIndex < exportedEnvironmentVariablesJsonList.GetLength(); ++exportedEnvironmentVariablesIndex)
+    {
+      m_exportedEnvironmentVariables.push_back(exportedEnvironmentVariablesJsonList[exportedEnvironmentVariablesIndex].AsObject());
+    }
+    m_exportedEnvironmentVariablesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -309,6 +332,12 @@ JsonValue Build::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_buildNumberHasBeenSet)
+  {
+   payload.WithInt64("buildNumber", m_buildNumber);
 
   }
 
@@ -470,6 +499,17 @@ JsonValue Build::Jsonize() const
   if(m_encryptionKeyHasBeenSet)
   {
    payload.WithString("encryptionKey", m_encryptionKey);
+
+  }
+
+  if(m_exportedEnvironmentVariablesHasBeenSet)
+  {
+   Array<JsonValue> exportedEnvironmentVariablesJsonList(m_exportedEnvironmentVariables.size());
+   for(unsigned exportedEnvironmentVariablesIndex = 0; exportedEnvironmentVariablesIndex < exportedEnvironmentVariablesJsonList.GetLength(); ++exportedEnvironmentVariablesIndex)
+   {
+     exportedEnvironmentVariablesJsonList[exportedEnvironmentVariablesIndex].AsObject(m_exportedEnvironmentVariables[exportedEnvironmentVariablesIndex].Jsonize());
+   }
+   payload.WithArray("exportedEnvironmentVariables", std::move(exportedEnvironmentVariablesJsonList));
 
   }
 

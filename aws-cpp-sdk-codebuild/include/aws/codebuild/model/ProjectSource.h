@@ -59,9 +59,10 @@ namespace Model
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
      * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>NO_SOURCE</code>: The project does not have input source code.</p>
-     * </li> <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage
-     * Service (Amazon S3) input bucket.</p> </li> </ul>
+     * <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise
+     * repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The project does not have
+     * input source code.</p> </li> <li> <p> <code>S3</code>: The source code is in an
+     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline const SourceType& GetType() const{ return m_type; }
 
@@ -73,9 +74,10 @@ namespace Model
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
      * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>NO_SOURCE</code>: The project does not have input source code.</p>
-     * </li> <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage
-     * Service (Amazon S3) input bucket.</p> </li> </ul>
+     * <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise
+     * repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The project does not have
+     * input source code.</p> </li> <li> <p> <code>S3</code>: The source code is in an
+     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -87,9 +89,10 @@ namespace Model
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
      * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>NO_SOURCE</code>: The project does not have input source code.</p>
-     * </li> <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage
-     * Service (Amazon S3) input bucket.</p> </li> </ul>
+     * <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise
+     * repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The project does not have
+     * input source code.</p> </li> <li> <p> <code>S3</code>: The source code is in an
+     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline void SetType(const SourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -101,9 +104,10 @@ namespace Model
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
      * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>NO_SOURCE</code>: The project does not have input source code.</p>
-     * </li> <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage
-     * Service (Amazon S3) input bucket.</p> </li> </ul>
+     * <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise
+     * repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The project does not have
+     * input source code.</p> </li> <li> <p> <code>S3</code>: The source code is in an
+     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline void SetType(SourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -115,9 +119,10 @@ namespace Model
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
      * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>NO_SOURCE</code>: The project does not have input source code.</p>
-     * </li> <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage
-     * Service (Amazon S3) input bucket.</p> </li> </ul>
+     * <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise
+     * repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The project does not have
+     * input source code.</p> </li> <li> <p> <code>S3</code>: The source code is in an
+     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline ProjectSource& WithType(const SourceType& value) { SetType(value); return *this;}
 
@@ -129,9 +134,10 @@ namespace Model
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
      * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>NO_SOURCE</code>: The project does not have input source code.</p>
-     * </li> <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage
-     * Service (Amazon S3) input bucket.</p> </li> </ul>
+     * <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise
+     * repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The project does not have
+     * input source code.</p> </li> <li> <p> <code>S3</code>: The source code is in an
+     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline ProjectSource& WithType(SourceType&& value) { SetType(std::move(value)); return *this;}
 
@@ -641,7 +647,9 @@ namespace Model
      * <p> Set to true to report the status of a build's start and finish to your
      * source provider. This option is valid only when your source provider is GitHub,
      * GitHub Enterprise, or Bitbucket. If this is set and you use a different source
-     * provider, an invalidInputException is thrown. </p>
+     * provider, an invalidInputException is thrown. </p> <note> <p> The status of a
+     * build triggered by a webhook is always reported to your source provider. </p>
+     * </note>
      */
     inline bool GetReportBuildStatus() const{ return m_reportBuildStatus; }
 
@@ -649,7 +657,9 @@ namespace Model
      * <p> Set to true to report the status of a build's start and finish to your
      * source provider. This option is valid only when your source provider is GitHub,
      * GitHub Enterprise, or Bitbucket. If this is set and you use a different source
-     * provider, an invalidInputException is thrown. </p>
+     * provider, an invalidInputException is thrown. </p> <note> <p> The status of a
+     * build triggered by a webhook is always reported to your source provider. </p>
+     * </note>
      */
     inline bool ReportBuildStatusHasBeenSet() const { return m_reportBuildStatusHasBeenSet; }
 
@@ -657,7 +667,9 @@ namespace Model
      * <p> Set to true to report the status of a build's start and finish to your
      * source provider. This option is valid only when your source provider is GitHub,
      * GitHub Enterprise, or Bitbucket. If this is set and you use a different source
-     * provider, an invalidInputException is thrown. </p>
+     * provider, an invalidInputException is thrown. </p> <note> <p> The status of a
+     * build triggered by a webhook is always reported to your source provider. </p>
+     * </note>
      */
     inline void SetReportBuildStatus(bool value) { m_reportBuildStatusHasBeenSet = true; m_reportBuildStatus = value; }
 
@@ -665,7 +677,9 @@ namespace Model
      * <p> Set to true to report the status of a build's start and finish to your
      * source provider. This option is valid only when your source provider is GitHub,
      * GitHub Enterprise, or Bitbucket. If this is set and you use a different source
-     * provider, an invalidInputException is thrown. </p>
+     * provider, an invalidInputException is thrown. </p> <note> <p> The status of a
+     * build triggered by a webhook is always reported to your source provider. </p>
+     * </note>
      */
     inline ProjectSource& WithReportBuildStatus(bool value) { SetReportBuildStatus(value); return *this;}
 

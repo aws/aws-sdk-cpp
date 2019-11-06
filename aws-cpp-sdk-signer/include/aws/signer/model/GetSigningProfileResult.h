@@ -278,6 +278,103 @@ namespace Model
      */
     inline GetSigningProfileResult& WithStatus(SigningProfileStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+     */
+    inline void SetArn(const char* value) { m_arn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+     */
+    inline GetSigningProfileResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+     */
+    inline GetSigningProfileResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+     */
+    inline GetSigningProfileResult& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline GetSigningProfileResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline GetSigningProfileResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline GetSigningProfileResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline GetSigningProfileResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline GetSigningProfileResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline GetSigningProfileResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline GetSigningProfileResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline GetSigningProfileResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline GetSigningProfileResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_profileName;
@@ -291,6 +388,10 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_signingParameters;
 
     SigningProfileStatus m_status;
+
+    Aws::String m_arn;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
   };
 
 } // namespace Model

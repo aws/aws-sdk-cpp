@@ -145,43 +145,43 @@ namespace Model
 
     /**
      * <p>The name of the dimension. Each <code>Dimension</code> is available for a
-     * different <code>Context</code>. For more information, see
-     * <code>Context</code>.</p>
+     * different <code>Context</code>. For more information, see <code>Context</code>.
+     * </p>
      */
     inline const Dimension& GetDimension() const{ return m_dimension; }
 
     /**
      * <p>The name of the dimension. Each <code>Dimension</code> is available for a
-     * different <code>Context</code>. For more information, see
-     * <code>Context</code>.</p>
+     * different <code>Context</code>. For more information, see <code>Context</code>.
+     * </p>
      */
     inline bool DimensionHasBeenSet() const { return m_dimensionHasBeenSet; }
 
     /**
      * <p>The name of the dimension. Each <code>Dimension</code> is available for a
-     * different <code>Context</code>. For more information, see
-     * <code>Context</code>.</p>
+     * different <code>Context</code>. For more information, see <code>Context</code>.
+     * </p>
      */
     inline void SetDimension(const Dimension& value) { m_dimensionHasBeenSet = true; m_dimension = value; }
 
     /**
      * <p>The name of the dimension. Each <code>Dimension</code> is available for a
-     * different <code>Context</code>. For more information, see
-     * <code>Context</code>.</p>
+     * different <code>Context</code>. For more information, see <code>Context</code>.
+     * </p>
      */
     inline void SetDimension(Dimension&& value) { m_dimensionHasBeenSet = true; m_dimension = std::move(value); }
 
     /**
      * <p>The name of the dimension. Each <code>Dimension</code> is available for a
-     * different <code>Context</code>. For more information, see
-     * <code>Context</code>.</p>
+     * different <code>Context</code>. For more information, see <code>Context</code>.
+     * </p>
      */
     inline GetDimensionValuesRequest& WithDimension(const Dimension& value) { SetDimension(value); return *this;}
 
     /**
      * <p>The name of the dimension. Each <code>Dimension</code> is available for a
-     * different <code>Context</code>. For more information, see
-     * <code>Context</code>.</p>
+     * different <code>Context</code>. For more information, see <code>Context</code>.
+     * </p>
      */
     inline GetDimensionValuesRequest& WithDimension(Dimension&& value) { SetDimension(std::move(value)); return *this;}
 
@@ -234,6 +234,16 @@ namespace Model
      * or a single Availability Zone.</p> </li> <li> <p>TAG (Coverage only) - The tags
      * that are associated with a Reserved Instance (RI).</p> </li> <li> <p>TENANCY -
      * The tenancy of a resource. Examples are shared or dedicated.</p> </li> </ul>
+     * <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the
+     * following dimensions for searching:</p> <ul> <li> <p>SAVINGS_PLANS_TYPE - Type
+     * of Savings Plans (EC2 Instance or Compute)</p> </li> <li> <p>PAYMENT_OPTION -
+     * Payment option for the given Savings Plans (for example, All Upfront)</p> </li>
+     * <li> <p>REGION - The AWS Region.</p> </li> <li> <p>INSTANCE_TYPE_FAMILY - The
+     * family of instances (For example, <code>m5</code>)</p> </li> <li>
+     * <p>LINKED_ACCOUNT - The description in the attribute map that includes the full
+     * name of the member account. The value field contains the AWS ID of the member
+     * account.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your
+     * Savings Plan</p> </li> </ul>
      */
     inline const Context& GetContext() const{ return m_context; }
 
@@ -285,6 +295,16 @@ namespace Model
      * or a single Availability Zone.</p> </li> <li> <p>TAG (Coverage only) - The tags
      * that are associated with a Reserved Instance (RI).</p> </li> <li> <p>TENANCY -
      * The tenancy of a resource. Examples are shared or dedicated.</p> </li> </ul>
+     * <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the
+     * following dimensions for searching:</p> <ul> <li> <p>SAVINGS_PLANS_TYPE - Type
+     * of Savings Plans (EC2 Instance or Compute)</p> </li> <li> <p>PAYMENT_OPTION -
+     * Payment option for the given Savings Plans (for example, All Upfront)</p> </li>
+     * <li> <p>REGION - The AWS Region.</p> </li> <li> <p>INSTANCE_TYPE_FAMILY - The
+     * family of instances (For example, <code>m5</code>)</p> </li> <li>
+     * <p>LINKED_ACCOUNT - The description in the attribute map that includes the full
+     * name of the member account. The value field contains the AWS ID of the member
+     * account.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your
+     * Savings Plan</p> </li> </ul>
      */
     inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
 
@@ -336,6 +356,16 @@ namespace Model
      * or a single Availability Zone.</p> </li> <li> <p>TAG (Coverage only) - The tags
      * that are associated with a Reserved Instance (RI).</p> </li> <li> <p>TENANCY -
      * The tenancy of a resource. Examples are shared or dedicated.</p> </li> </ul>
+     * <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the
+     * following dimensions for searching:</p> <ul> <li> <p>SAVINGS_PLANS_TYPE - Type
+     * of Savings Plans (EC2 Instance or Compute)</p> </li> <li> <p>PAYMENT_OPTION -
+     * Payment option for the given Savings Plans (for example, All Upfront)</p> </li>
+     * <li> <p>REGION - The AWS Region.</p> </li> <li> <p>INSTANCE_TYPE_FAMILY - The
+     * family of instances (For example, <code>m5</code>)</p> </li> <li>
+     * <p>LINKED_ACCOUNT - The description in the attribute map that includes the full
+     * name of the member account. The value field contains the AWS ID of the member
+     * account.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your
+     * Savings Plan</p> </li> </ul>
      */
     inline void SetContext(const Context& value) { m_contextHasBeenSet = true; m_context = value; }
 
@@ -387,6 +417,16 @@ namespace Model
      * or a single Availability Zone.</p> </li> <li> <p>TAG (Coverage only) - The tags
      * that are associated with a Reserved Instance (RI).</p> </li> <li> <p>TENANCY -
      * The tenancy of a resource. Examples are shared or dedicated.</p> </li> </ul>
+     * <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the
+     * following dimensions for searching:</p> <ul> <li> <p>SAVINGS_PLANS_TYPE - Type
+     * of Savings Plans (EC2 Instance or Compute)</p> </li> <li> <p>PAYMENT_OPTION -
+     * Payment option for the given Savings Plans (for example, All Upfront)</p> </li>
+     * <li> <p>REGION - The AWS Region.</p> </li> <li> <p>INSTANCE_TYPE_FAMILY - The
+     * family of instances (For example, <code>m5</code>)</p> </li> <li>
+     * <p>LINKED_ACCOUNT - The description in the attribute map that includes the full
+     * name of the member account. The value field contains the AWS ID of the member
+     * account.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your
+     * Savings Plan</p> </li> </ul>
      */
     inline void SetContext(Context&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
 
@@ -438,6 +478,16 @@ namespace Model
      * or a single Availability Zone.</p> </li> <li> <p>TAG (Coverage only) - The tags
      * that are associated with a Reserved Instance (RI).</p> </li> <li> <p>TENANCY -
      * The tenancy of a resource. Examples are shared or dedicated.</p> </li> </ul>
+     * <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the
+     * following dimensions for searching:</p> <ul> <li> <p>SAVINGS_PLANS_TYPE - Type
+     * of Savings Plans (EC2 Instance or Compute)</p> </li> <li> <p>PAYMENT_OPTION -
+     * Payment option for the given Savings Plans (for example, All Upfront)</p> </li>
+     * <li> <p>REGION - The AWS Region.</p> </li> <li> <p>INSTANCE_TYPE_FAMILY - The
+     * family of instances (For example, <code>m5</code>)</p> </li> <li>
+     * <p>LINKED_ACCOUNT - The description in the attribute map that includes the full
+     * name of the member account. The value field contains the AWS ID of the member
+     * account.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your
+     * Savings Plan</p> </li> </ul>
      */
     inline GetDimensionValuesRequest& WithContext(const Context& value) { SetContext(value); return *this;}
 
@@ -489,6 +539,16 @@ namespace Model
      * or a single Availability Zone.</p> </li> <li> <p>TAG (Coverage only) - The tags
      * that are associated with a Reserved Instance (RI).</p> </li> <li> <p>TENANCY -
      * The tenancy of a resource. Examples are shared or dedicated.</p> </li> </ul>
+     * <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the
+     * following dimensions for searching:</p> <ul> <li> <p>SAVINGS_PLANS_TYPE - Type
+     * of Savings Plans (EC2 Instance or Compute)</p> </li> <li> <p>PAYMENT_OPTION -
+     * Payment option for the given Savings Plans (for example, All Upfront)</p> </li>
+     * <li> <p>REGION - The AWS Region.</p> </li> <li> <p>INSTANCE_TYPE_FAMILY - The
+     * family of instances (For example, <code>m5</code>)</p> </li> <li>
+     * <p>LINKED_ACCOUNT - The description in the attribute map that includes the full
+     * name of the member account. The value field contains the AWS ID of the member
+     * account.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your
+     * Savings Plan</p> </li> </ul>
      */
     inline GetDimensionValuesRequest& WithContext(Context&& value) { SetContext(std::move(value)); return *this;}
 

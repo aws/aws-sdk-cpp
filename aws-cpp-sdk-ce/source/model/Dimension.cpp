@@ -53,6 +53,9 @@ namespace Aws
         static const int BILLING_ENTITY_HASH = HashingUtils::HashString("BILLING_ENTITY");
         static const int RESERVATION_ID_HASH = HashingUtils::HashString("RESERVATION_ID");
         static const int RIGHTSIZING_TYPE_HASH = HashingUtils::HashString("RIGHTSIZING_TYPE");
+        static const int SAVINGS_PLANS_TYPE_HASH = HashingUtils::HashString("SAVINGS_PLANS_TYPE");
+        static const int SAVINGS_PLAN_ARN_HASH = HashingUtils::HashString("SAVINGS_PLAN_ARN");
+        static const int PAYMENT_OPTION_HASH = HashingUtils::HashString("PAYMENT_OPTION");
 
 
         Dimension GetDimensionForName(const Aws::String& name)
@@ -150,6 +153,18 @@ namespace Aws
           {
             return Dimension::RIGHTSIZING_TYPE;
           }
+          else if (hashCode == SAVINGS_PLANS_TYPE_HASH)
+          {
+            return Dimension::SAVINGS_PLANS_TYPE;
+          }
+          else if (hashCode == SAVINGS_PLAN_ARN_HASH)
+          {
+            return Dimension::SAVINGS_PLAN_ARN;
+          }
+          else if (hashCode == PAYMENT_OPTION_HASH)
+          {
+            return Dimension::PAYMENT_OPTION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -210,6 +225,12 @@ namespace Aws
             return "RESERVATION_ID";
           case Dimension::RIGHTSIZING_TYPE:
             return "RIGHTSIZING_TYPE";
+          case Dimension::SAVINGS_PLANS_TYPE:
+            return "SAVINGS_PLANS_TYPE";
+          case Dimension::SAVINGS_PLAN_ARN:
+            return "SAVINGS_PLAN_ARN";
+          case Dimension::PAYMENT_OPTION:
+            return "PAYMENT_OPTION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -28,6 +28,10 @@
 #include <aws/ce/model/GetReservationPurchaseRecommendationResult.h>
 #include <aws/ce/model/GetReservationUtilizationResult.h>
 #include <aws/ce/model/GetRightsizingRecommendationResult.h>
+#include <aws/ce/model/GetSavingsPlansCoverageResult.h>
+#include <aws/ce/model/GetSavingsPlansPurchaseRecommendationResult.h>
+#include <aws/ce/model/GetSavingsPlansUtilizationResult.h>
+#include <aws/ce/model/GetSavingsPlansUtilizationDetailsResult.h>
 #include <aws/ce/model/GetTagsResult.h>
 #include <aws/ce/model/GetUsageForecastResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -76,6 +80,10 @@ namespace Model
         class GetReservationPurchaseRecommendationRequest;
         class GetReservationUtilizationRequest;
         class GetRightsizingRecommendationRequest;
+        class GetSavingsPlansCoverageRequest;
+        class GetSavingsPlansPurchaseRecommendationRequest;
+        class GetSavingsPlansUtilizationRequest;
+        class GetSavingsPlansUtilizationDetailsRequest;
         class GetTagsRequest;
         class GetUsageForecastRequest;
 
@@ -86,6 +94,10 @@ namespace Model
         typedef Aws::Utils::Outcome<GetReservationPurchaseRecommendationResult, Aws::Client::AWSError<CostExplorerErrors>> GetReservationPurchaseRecommendationOutcome;
         typedef Aws::Utils::Outcome<GetReservationUtilizationResult, Aws::Client::AWSError<CostExplorerErrors>> GetReservationUtilizationOutcome;
         typedef Aws::Utils::Outcome<GetRightsizingRecommendationResult, Aws::Client::AWSError<CostExplorerErrors>> GetRightsizingRecommendationOutcome;
+        typedef Aws::Utils::Outcome<GetSavingsPlansCoverageResult, Aws::Client::AWSError<CostExplorerErrors>> GetSavingsPlansCoverageOutcome;
+        typedef Aws::Utils::Outcome<GetSavingsPlansPurchaseRecommendationResult, Aws::Client::AWSError<CostExplorerErrors>> GetSavingsPlansPurchaseRecommendationOutcome;
+        typedef Aws::Utils::Outcome<GetSavingsPlansUtilizationResult, Aws::Client::AWSError<CostExplorerErrors>> GetSavingsPlansUtilizationOutcome;
+        typedef Aws::Utils::Outcome<GetSavingsPlansUtilizationDetailsResult, Aws::Client::AWSError<CostExplorerErrors>> GetSavingsPlansUtilizationDetailsOutcome;
         typedef Aws::Utils::Outcome<GetTagsResult, Aws::Client::AWSError<CostExplorerErrors>> GetTagsOutcome;
         typedef Aws::Utils::Outcome<GetUsageForecastResult, Aws::Client::AWSError<CostExplorerErrors>> GetUsageForecastOutcome;
 
@@ -96,6 +108,10 @@ namespace Model
         typedef std::future<GetReservationPurchaseRecommendationOutcome> GetReservationPurchaseRecommendationOutcomeCallable;
         typedef std::future<GetReservationUtilizationOutcome> GetReservationUtilizationOutcomeCallable;
         typedef std::future<GetRightsizingRecommendationOutcome> GetRightsizingRecommendationOutcomeCallable;
+        typedef std::future<GetSavingsPlansCoverageOutcome> GetSavingsPlansCoverageOutcomeCallable;
+        typedef std::future<GetSavingsPlansPurchaseRecommendationOutcome> GetSavingsPlansPurchaseRecommendationOutcomeCallable;
+        typedef std::future<GetSavingsPlansUtilizationOutcome> GetSavingsPlansUtilizationOutcomeCallable;
+        typedef std::future<GetSavingsPlansUtilizationDetailsOutcome> GetSavingsPlansUtilizationDetailsOutcomeCallable;
         typedef std::future<GetTagsOutcome> GetTagsOutcomeCallable;
         typedef std::future<GetUsageForecastOutcome> GetUsageForecastOutcomeCallable;
 } // namespace Model
@@ -109,6 +125,10 @@ namespace Model
     typedef std::function<void(const CostExplorerClient*, const Model::GetReservationPurchaseRecommendationRequest&, const Model::GetReservationPurchaseRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservationPurchaseRecommendationResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetReservationUtilizationRequest&, const Model::GetReservationUtilizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservationUtilizationResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetRightsizingRecommendationRequest&, const Model::GetRightsizingRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRightsizingRecommendationResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::GetSavingsPlansCoverageRequest&, const Model::GetSavingsPlansCoverageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSavingsPlansCoverageResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::GetSavingsPlansPurchaseRecommendationRequest&, const Model::GetSavingsPlansPurchaseRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSavingsPlansPurchaseRecommendationResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::GetSavingsPlansUtilizationRequest&, const Model::GetSavingsPlansUtilizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSavingsPlansUtilizationResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::GetSavingsPlansUtilizationDetailsRequest&, const Model::GetSavingsPlansUtilizationDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSavingsPlansUtilizationDetailsResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetTagsRequest&, const Model::GetTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTagsResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetUsageForecastRequest&, const Model::GetUsageForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageForecastResponseReceivedHandler;
 
@@ -476,6 +496,163 @@ namespace Model
         virtual void GetRightsizingRecommendationAsync(const Model::GetRightsizingRecommendationRequest& request, const GetRightsizingRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the Savings Plans covered for your account. This enables you to see
+         * how much of your cost is covered by a Savings Plan. An organization’s master
+         * account can see the coverage of the associated member accounts. For any time
+         * period, you can filter data for Savings Plans usage with the following
+         * dimensions:</p> <ul> <li> <p> <code>LINKED_ACCOUNT</code> </p> </li> <li> <p>
+         * <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li> <li> <p>
+         * <code>INSTANCE_FAMILY</code> </p> </li> </ul> <p>To determine valid values for a
+         * dimension, use the <code>GetDimensionValues</code> operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansCoverage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSavingsPlansCoverageOutcome GetSavingsPlansCoverage(const Model::GetSavingsPlansCoverageRequest& request) const;
+
+        /**
+         * <p>Retrieves the Savings Plans covered for your account. This enables you to see
+         * how much of your cost is covered by a Savings Plan. An organization’s master
+         * account can see the coverage of the associated member accounts. For any time
+         * period, you can filter data for Savings Plans usage with the following
+         * dimensions:</p> <ul> <li> <p> <code>LINKED_ACCOUNT</code> </p> </li> <li> <p>
+         * <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li> <li> <p>
+         * <code>INSTANCE_FAMILY</code> </p> </li> </ul> <p>To determine valid values for a
+         * dimension, use the <code>GetDimensionValues</code> operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansCoverage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSavingsPlansCoverageOutcomeCallable GetSavingsPlansCoverageCallable(const Model::GetSavingsPlansCoverageRequest& request) const;
+
+        /**
+         * <p>Retrieves the Savings Plans covered for your account. This enables you to see
+         * how much of your cost is covered by a Savings Plan. An organization’s master
+         * account can see the coverage of the associated member accounts. For any time
+         * period, you can filter data for Savings Plans usage with the following
+         * dimensions:</p> <ul> <li> <p> <code>LINKED_ACCOUNT</code> </p> </li> <li> <p>
+         * <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li> <li> <p>
+         * <code>INSTANCE_FAMILY</code> </p> </li> </ul> <p>To determine valid values for a
+         * dimension, use the <code>GetDimensionValues</code> operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansCoverage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSavingsPlansCoverageAsync(const Model::GetSavingsPlansCoverageRequest& request, const GetSavingsPlansCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves your request parameters, Savings Plan Recommendations Summary and
+         * Details.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansPurchaseRecommendation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSavingsPlansPurchaseRecommendationOutcome GetSavingsPlansPurchaseRecommendation(const Model::GetSavingsPlansPurchaseRecommendationRequest& request) const;
+
+        /**
+         * <p>Retrieves your request parameters, Savings Plan Recommendations Summary and
+         * Details.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansPurchaseRecommendation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSavingsPlansPurchaseRecommendationOutcomeCallable GetSavingsPlansPurchaseRecommendationCallable(const Model::GetSavingsPlansPurchaseRecommendationRequest& request) const;
+
+        /**
+         * <p>Retrieves your request parameters, Savings Plan Recommendations Summary and
+         * Details.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansPurchaseRecommendation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSavingsPlansPurchaseRecommendationAsync(const Model::GetSavingsPlansPurchaseRecommendationRequest& request, const GetSavingsPlansPurchaseRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the Savings Plans utilization for your account across date ranges
+         * with daily or monthly granularity. Master accounts in an organization have
+         * access to member accounts. You can use <code>GetDimensionValues</code> to
+         * determine the possible dimension values.</p> <note> <p>You cannot group by any
+         * dimension values for <code>GetSavingsPlansUtilization</code>.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSavingsPlansUtilizationOutcome GetSavingsPlansUtilization(const Model::GetSavingsPlansUtilizationRequest& request) const;
+
+        /**
+         * <p>Retrieves the Savings Plans utilization for your account across date ranges
+         * with daily or monthly granularity. Master accounts in an organization have
+         * access to member accounts. You can use <code>GetDimensionValues</code> to
+         * determine the possible dimension values.</p> <note> <p>You cannot group by any
+         * dimension values for <code>GetSavingsPlansUtilization</code>.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSavingsPlansUtilizationOutcomeCallable GetSavingsPlansUtilizationCallable(const Model::GetSavingsPlansUtilizationRequest& request) const;
+
+        /**
+         * <p>Retrieves the Savings Plans utilization for your account across date ranges
+         * with daily or monthly granularity. Master accounts in an organization have
+         * access to member accounts. You can use <code>GetDimensionValues</code> to
+         * determine the possible dimension values.</p> <note> <p>You cannot group by any
+         * dimension values for <code>GetSavingsPlansUtilization</code>.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSavingsPlansUtilizationAsync(const Model::GetSavingsPlansUtilizationRequest& request, const GetSavingsPlansUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a single daily or monthly Savings Plans utilization rate and
+         * details for your account. Master accounts in an organization have access to
+         * member accounts. You can use <code>GetDimensionValues</code> to determine the
+         * possible dimension values.</p> <note> <p>You can't group by any dimension values
+         * for <code>GetSavingsPlansUtilizationDetails</code>.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSavingsPlansUtilizationDetailsOutcome GetSavingsPlansUtilizationDetails(const Model::GetSavingsPlansUtilizationDetailsRequest& request) const;
+
+        /**
+         * <p>Retrieves a single daily or monthly Savings Plans utilization rate and
+         * details for your account. Master accounts in an organization have access to
+         * member accounts. You can use <code>GetDimensionValues</code> to determine the
+         * possible dimension values.</p> <note> <p>You can't group by any dimension values
+         * for <code>GetSavingsPlansUtilizationDetails</code>.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSavingsPlansUtilizationDetailsOutcomeCallable GetSavingsPlansUtilizationDetailsCallable(const Model::GetSavingsPlansUtilizationDetailsRequest& request) const;
+
+        /**
+         * <p>Retrieves a single daily or monthly Savings Plans utilization rate and
+         * details for your account. Master accounts in an organization have access to
+         * member accounts. You can use <code>GetDimensionValues</code> to determine the
+         * possible dimension values.</p> <note> <p>You can't group by any dimension values
+         * for <code>GetSavingsPlansUtilizationDetails</code>.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSavingsPlansUtilizationDetailsAsync(const Model::GetSavingsPlansUtilizationDetailsRequest& request, const GetSavingsPlansUtilizationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Queries for available tag keys and tag values for a specified period. You can
          * search the tag values for an arbitrary string. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetTags">AWS API
@@ -545,6 +722,10 @@ namespace Model
         void GetReservationPurchaseRecommendationAsyncHelper(const Model::GetReservationPurchaseRecommendationRequest& request, const GetReservationPurchaseRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReservationUtilizationAsyncHelper(const Model::GetReservationUtilizationRequest& request, const GetReservationUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRightsizingRecommendationAsyncHelper(const Model::GetRightsizingRecommendationRequest& request, const GetRightsizingRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSavingsPlansCoverageAsyncHelper(const Model::GetSavingsPlansCoverageRequest& request, const GetSavingsPlansCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSavingsPlansPurchaseRecommendationAsyncHelper(const Model::GetSavingsPlansPurchaseRecommendationRequest& request, const GetSavingsPlansPurchaseRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSavingsPlansUtilizationAsyncHelper(const Model::GetSavingsPlansUtilizationRequest& request, const GetSavingsPlansUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSavingsPlansUtilizationDetailsAsyncHelper(const Model::GetSavingsPlansUtilizationDetailsRequest& request, const GetSavingsPlansUtilizationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTagsAsyncHelper(const Model::GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUsageForecastAsyncHelper(const Model::GetUsageForecastRequest& request, const GetUsageForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

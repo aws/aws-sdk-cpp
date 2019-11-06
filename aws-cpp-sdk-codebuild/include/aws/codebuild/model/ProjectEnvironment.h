@@ -196,7 +196,9 @@ namespace Model
      * GB memory and 2 vCPUs for builds.</p> </li> <li> <p>
      * <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for
      * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB
-     * memory and 8 vCPUs for builds.</p> </li> </ul>
+     * memory and 8 vCPUs for builds.</p> </li> </ul> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
+     * Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i> </p>
      */
     inline const ComputeType& GetComputeType() const{ return m_computeType; }
 
@@ -206,7 +208,9 @@ namespace Model
      * GB memory and 2 vCPUs for builds.</p> </li> <li> <p>
      * <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for
      * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB
-     * memory and 8 vCPUs for builds.</p> </li> </ul>
+     * memory and 8 vCPUs for builds.</p> </li> </ul> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
+     * Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i> </p>
      */
     inline bool ComputeTypeHasBeenSet() const { return m_computeTypeHasBeenSet; }
 
@@ -216,7 +220,9 @@ namespace Model
      * GB memory and 2 vCPUs for builds.</p> </li> <li> <p>
      * <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for
      * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB
-     * memory and 8 vCPUs for builds.</p> </li> </ul>
+     * memory and 8 vCPUs for builds.</p> </li> </ul> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
+     * Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i> </p>
      */
     inline void SetComputeType(const ComputeType& value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
 
@@ -226,7 +232,9 @@ namespace Model
      * GB memory and 2 vCPUs for builds.</p> </li> <li> <p>
      * <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for
      * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB
-     * memory and 8 vCPUs for builds.</p> </li> </ul>
+     * memory and 8 vCPUs for builds.</p> </li> </ul> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
+     * Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i> </p>
      */
     inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = std::move(value); }
 
@@ -236,7 +244,9 @@ namespace Model
      * GB memory and 2 vCPUs for builds.</p> </li> <li> <p>
      * <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for
      * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB
-     * memory and 8 vCPUs for builds.</p> </li> </ul>
+     * memory and 8 vCPUs for builds.</p> </li> </ul> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
+     * Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i> </p>
      */
     inline ProjectEnvironment& WithComputeType(const ComputeType& value) { SetComputeType(value); return *this;}
 
@@ -246,7 +256,9 @@ namespace Model
      * GB memory and 2 vCPUs for builds.</p> </li> <li> <p>
      * <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for
      * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB
-     * memory and 8 vCPUs for builds.</p> </li> </ul>
+     * memory and 8 vCPUs for builds.</p> </li> </ul> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
+     * Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i> </p>
      */
     inline ProjectEnvironment& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
 
@@ -303,16 +315,17 @@ namespace Model
     /**
      * <p>Enables running the Docker daemon inside a Docker container. Set to true only
      * if the build project is used to build Docker images. Otherwise, a build that
-     * attempts to interact with the Docker daemon fails.</p> <p>You can initialize the
-     * Docker daemon during the install phase of your build by adding one of the
-     * following sets of commands to the install phase of your buildspec file:</p>
-     * <p>If the operating system's base image is Ubuntu Linux:</p> <p> <code>- nohup
+     * attempts to interact with the Docker daemon fails. The default setting is
+     * <code>false</code>.</p> <p>You can initialize the Docker daemon during the
+     * install phase of your build by adding one of the following sets of commands to
+     * the install phase of your buildspec file:</p> <p>If the operating system's base
+     * image is Ubuntu Linux:</p> <p> <code>- nohup /usr/local/bin/dockerd
+     * --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
+     * --storage-driver=overlay&amp;</code> </p> <p> <code>- timeout 15 sh -c "until
+     * docker info; do echo .; sleep 1; done"</code> </p> <p>If the operating system's
+     * base image is Alpine Linux and the previous command does not work, add the
+     * <code>-t</code> argument to <code>timeout</code>:</p> <p> <code>- nohup
      * /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
-     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p> <p> <code>-
-     * timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p> <p>If
-     * the operating system's base image is Alpine Linux and the previous command does
-     * not work, add the <code>-t</code> argument to <code>timeout</code>:</p> <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
      * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p> <p> <code>-
      * timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
      */
@@ -321,16 +334,17 @@ namespace Model
     /**
      * <p>Enables running the Docker daemon inside a Docker container. Set to true only
      * if the build project is used to build Docker images. Otherwise, a build that
-     * attempts to interact with the Docker daemon fails.</p> <p>You can initialize the
-     * Docker daemon during the install phase of your build by adding one of the
-     * following sets of commands to the install phase of your buildspec file:</p>
-     * <p>If the operating system's base image is Ubuntu Linux:</p> <p> <code>- nohup
+     * attempts to interact with the Docker daemon fails. The default setting is
+     * <code>false</code>.</p> <p>You can initialize the Docker daemon during the
+     * install phase of your build by adding one of the following sets of commands to
+     * the install phase of your buildspec file:</p> <p>If the operating system's base
+     * image is Ubuntu Linux:</p> <p> <code>- nohup /usr/local/bin/dockerd
+     * --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
+     * --storage-driver=overlay&amp;</code> </p> <p> <code>- timeout 15 sh -c "until
+     * docker info; do echo .; sleep 1; done"</code> </p> <p>If the operating system's
+     * base image is Alpine Linux and the previous command does not work, add the
+     * <code>-t</code> argument to <code>timeout</code>:</p> <p> <code>- nohup
      * /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
-     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p> <p> <code>-
-     * timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p> <p>If
-     * the operating system's base image is Alpine Linux and the previous command does
-     * not work, add the <code>-t</code> argument to <code>timeout</code>:</p> <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
      * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p> <p> <code>-
      * timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
      */
@@ -339,16 +353,17 @@ namespace Model
     /**
      * <p>Enables running the Docker daemon inside a Docker container. Set to true only
      * if the build project is used to build Docker images. Otherwise, a build that
-     * attempts to interact with the Docker daemon fails.</p> <p>You can initialize the
-     * Docker daemon during the install phase of your build by adding one of the
-     * following sets of commands to the install phase of your buildspec file:</p>
-     * <p>If the operating system's base image is Ubuntu Linux:</p> <p> <code>- nohup
+     * attempts to interact with the Docker daemon fails. The default setting is
+     * <code>false</code>.</p> <p>You can initialize the Docker daemon during the
+     * install phase of your build by adding one of the following sets of commands to
+     * the install phase of your buildspec file:</p> <p>If the operating system's base
+     * image is Ubuntu Linux:</p> <p> <code>- nohup /usr/local/bin/dockerd
+     * --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
+     * --storage-driver=overlay&amp;</code> </p> <p> <code>- timeout 15 sh -c "until
+     * docker info; do echo .; sleep 1; done"</code> </p> <p>If the operating system's
+     * base image is Alpine Linux and the previous command does not work, add the
+     * <code>-t</code> argument to <code>timeout</code>:</p> <p> <code>- nohup
      * /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
-     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p> <p> <code>-
-     * timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p> <p>If
-     * the operating system's base image is Alpine Linux and the previous command does
-     * not work, add the <code>-t</code> argument to <code>timeout</code>:</p> <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
      * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p> <p> <code>-
      * timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
      */
@@ -357,16 +372,17 @@ namespace Model
     /**
      * <p>Enables running the Docker daemon inside a Docker container. Set to true only
      * if the build project is used to build Docker images. Otherwise, a build that
-     * attempts to interact with the Docker daemon fails.</p> <p>You can initialize the
-     * Docker daemon during the install phase of your build by adding one of the
-     * following sets of commands to the install phase of your buildspec file:</p>
-     * <p>If the operating system's base image is Ubuntu Linux:</p> <p> <code>- nohup
+     * attempts to interact with the Docker daemon fails. The default setting is
+     * <code>false</code>.</p> <p>You can initialize the Docker daemon during the
+     * install phase of your build by adding one of the following sets of commands to
+     * the install phase of your buildspec file:</p> <p>If the operating system's base
+     * image is Ubuntu Linux:</p> <p> <code>- nohup /usr/local/bin/dockerd
+     * --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
+     * --storage-driver=overlay&amp;</code> </p> <p> <code>- timeout 15 sh -c "until
+     * docker info; do echo .; sleep 1; done"</code> </p> <p>If the operating system's
+     * base image is Alpine Linux and the previous command does not work, add the
+     * <code>-t</code> argument to <code>timeout</code>:</p> <p> <code>- nohup
      * /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
-     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p> <p> <code>-
-     * timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p> <p>If
-     * the operating system's base image is Alpine Linux and the previous command does
-     * not work, add the <code>-t</code> argument to <code>timeout</code>:</p> <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
      * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p> <p> <code>-
      * timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
      */

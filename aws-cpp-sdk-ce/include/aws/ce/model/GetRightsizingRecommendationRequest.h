@@ -65,42 +65,50 @@ namespace Model
 
 
     /**
-     * <p>The specific service that you want recommendations for.</p>
+     * <p>The specific service that you want recommendations for. The only valid value
+     * for <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".</p>
      */
     inline const Aws::String& GetService() const{ return m_service; }
 
     /**
-     * <p>The specific service that you want recommendations for.</p>
+     * <p>The specific service that you want recommendations for. The only valid value
+     * for <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".</p>
      */
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
 
     /**
-     * <p>The specific service that you want recommendations for.</p>
+     * <p>The specific service that you want recommendations for. The only valid value
+     * for <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".</p>
      */
     inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
 
     /**
-     * <p>The specific service that you want recommendations for.</p>
+     * <p>The specific service that you want recommendations for. The only valid value
+     * for <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".</p>
      */
     inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
 
     /**
-     * <p>The specific service that you want recommendations for.</p>
+     * <p>The specific service that you want recommendations for. The only valid value
+     * for <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".</p>
      */
     inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
 
     /**
-     * <p>The specific service that you want recommendations for.</p>
+     * <p>The specific service that you want recommendations for. The only valid value
+     * for <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".</p>
      */
     inline GetRightsizingRecommendationRequest& WithService(const Aws::String& value) { SetService(value); return *this;}
 
     /**
-     * <p>The specific service that you want recommendations for.</p>
+     * <p>The specific service that you want recommendations for. The only valid value
+     * for <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".</p>
      */
     inline GetRightsizingRecommendationRequest& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
 
     /**
-     * <p>The specific service that you want recommendations for.</p>
+     * <p>The specific service that you want recommendations for. The only valid value
+     * for <code>GetRightsizingRecommendation</code> is "<code>AmazonEC2</code>".</p>
      */
     inline GetRightsizingRecommendationRequest& WithService(const char* value) { SetService(value); return *this;}
 

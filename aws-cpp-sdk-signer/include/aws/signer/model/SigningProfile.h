@@ -37,9 +37,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the ACM certificates and AWS Signer configuration
-   * parameters that can be used by a given AWS Signer user.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Contains information about the ACM certificates and code signing
+   * configuration parameters that can be used by a given code signing
+   * user.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SigningProfile">AWS
    * API Reference</a></p>
    */
@@ -53,42 +53,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS Signer profile.</p>
+     * <p>The name of the signing profile.</p>
      */
     inline const Aws::String& GetProfileName() const{ return m_profileName; }
 
     /**
-     * <p>The name of the AWS Signer profile.</p>
+     * <p>The name of the signing profile.</p>
      */
     inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS Signer profile.</p>
+     * <p>The name of the signing profile.</p>
      */
     inline void SetProfileName(const Aws::String& value) { m_profileNameHasBeenSet = true; m_profileName = value; }
 
     /**
-     * <p>The name of the AWS Signer profile.</p>
+     * <p>The name of the signing profile.</p>
      */
     inline void SetProfileName(Aws::String&& value) { m_profileNameHasBeenSet = true; m_profileName = std::move(value); }
 
     /**
-     * <p>The name of the AWS Signer profile.</p>
+     * <p>The name of the signing profile.</p>
      */
     inline void SetProfileName(const char* value) { m_profileNameHasBeenSet = true; m_profileName.assign(value); }
 
     /**
-     * <p>The name of the AWS Signer profile.</p>
+     * <p>The name of the signing profile.</p>
      */
     inline SigningProfile& WithProfileName(const Aws::String& value) { SetProfileName(value); return *this;}
 
     /**
-     * <p>The name of the AWS Signer profile.</p>
+     * <p>The name of the signing profile.</p>
      */
     inline SigningProfile& WithProfileName(Aws::String&& value) { SetProfileName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS Signer profile.</p>
+     * <p>The name of the signing profile.</p>
      */
     inline SigningProfile& WithProfileName(const char* value) { SetProfileName(value); return *this;}
 
@@ -166,100 +166,207 @@ namespace Model
 
 
     /**
-     * <p>The parameters that are available for use by an AWS Signer user.</p>
+     * <p>The parameters that are available for use by a code signing user.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetSigningParameters() const{ return m_signingParameters; }
 
     /**
-     * <p>The parameters that are available for use by an AWS Signer user.</p>
+     * <p>The parameters that are available for use by a code signing user.</p>
      */
     inline bool SigningParametersHasBeenSet() const { return m_signingParametersHasBeenSet; }
 
     /**
-     * <p>The parameters that are available for use by an AWS Signer user.</p>
+     * <p>The parameters that are available for use by a code signing user.</p>
      */
     inline void SetSigningParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_signingParametersHasBeenSet = true; m_signingParameters = value; }
 
     /**
-     * <p>The parameters that are available for use by an AWS Signer user.</p>
+     * <p>The parameters that are available for use by a code signing user.</p>
      */
     inline void SetSigningParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_signingParametersHasBeenSet = true; m_signingParameters = std::move(value); }
 
     /**
-     * <p>The parameters that are available for use by an AWS Signer user.</p>
+     * <p>The parameters that are available for use by a code signing user.</p>
      */
     inline SigningProfile& WithSigningParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetSigningParameters(value); return *this;}
 
     /**
-     * <p>The parameters that are available for use by an AWS Signer user.</p>
+     * <p>The parameters that are available for use by a code signing user.</p>
      */
     inline SigningProfile& WithSigningParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetSigningParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The parameters that are available for use by an AWS Signer user.</p>
+     * <p>The parameters that are available for use by a code signing user.</p>
      */
     inline SigningProfile& AddSigningParameters(const Aws::String& key, const Aws::String& value) { m_signingParametersHasBeenSet = true; m_signingParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>The parameters that are available for use by an AWS Signer user.</p>
+     * <p>The parameters that are available for use by a code signing user.</p>
      */
     inline SigningProfile& AddSigningParameters(Aws::String&& key, const Aws::String& value) { m_signingParametersHasBeenSet = true; m_signingParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The parameters that are available for use by an AWS Signer user.</p>
+     * <p>The parameters that are available for use by a code signing user.</p>
      */
     inline SigningProfile& AddSigningParameters(const Aws::String& key, Aws::String&& value) { m_signingParametersHasBeenSet = true; m_signingParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The parameters that are available for use by an AWS Signer user.</p>
+     * <p>The parameters that are available for use by a code signing user.</p>
      */
     inline SigningProfile& AddSigningParameters(Aws::String&& key, Aws::String&& value) { m_signingParametersHasBeenSet = true; m_signingParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The parameters that are available for use by an AWS Signer user.</p>
+     * <p>The parameters that are available for use by a code signing user.</p>
      */
     inline SigningProfile& AddSigningParameters(const char* key, Aws::String&& value) { m_signingParametersHasBeenSet = true; m_signingParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The parameters that are available for use by an AWS Signer user.</p>
+     * <p>The parameters that are available for use by a code signing user.</p>
      */
     inline SigningProfile& AddSigningParameters(Aws::String&& key, const char* value) { m_signingParametersHasBeenSet = true; m_signingParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The parameters that are available for use by an AWS Signer user.</p>
+     * <p>The parameters that are available for use by a code signing user.</p>
      */
     inline SigningProfile& AddSigningParameters(const char* key, const char* value) { m_signingParametersHasBeenSet = true; m_signingParameters.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The status of an AWS Signer profile.</p>
+     * <p>The status of a code signing profile.</p>
      */
     inline const SigningProfileStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of an AWS Signer profile.</p>
+     * <p>The status of a code signing profile.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of an AWS Signer profile.</p>
+     * <p>The status of a code signing profile.</p>
      */
     inline void SetStatus(const SigningProfileStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of an AWS Signer profile.</p>
+     * <p>The status of a code signing profile.</p>
      */
     inline void SetStatus(SigningProfileStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of an AWS Signer profile.</p>
+     * <p>The status of a code signing profile.</p>
      */
     inline SigningProfile& WithStatus(const SigningProfileStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of an AWS Signer profile.</p>
+     * <p>The status of a code signing profile.</p>
      */
     inline SigningProfile& WithStatus(SigningProfileStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Amazon Resource Name (ARN) for the signing profile.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) for the signing profile.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) for the signing profile.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) for the signing profile.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>Amazon Resource Name (ARN) for the signing profile.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>Amazon Resource Name (ARN) for the signing profile.</p>
+     */
+    inline SigningProfile& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>Amazon Resource Name (ARN) for the signing profile.</p>
+     */
+    inline SigningProfile& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Amazon Resource Name (ARN) for the signing profile.</p>
+     */
+    inline SigningProfile& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline SigningProfile& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline SigningProfile& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline SigningProfile& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline SigningProfile& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline SigningProfile& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline SigningProfile& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline SigningProfile& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline SigningProfile& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A list of tags associated with the signing profile.</p>
+     */
+    inline SigningProfile& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
 
@@ -277,6 +384,12 @@ namespace Model
 
     SigningProfileStatus m_status;
     bool m_statusHasBeenSet;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

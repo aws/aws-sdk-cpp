@@ -32,6 +32,7 @@ namespace Aws
 
         static const int PLAINTEXT_HASH = HashingUtils::HashString("PLAINTEXT");
         static const int PARAMETER_STORE_HASH = HashingUtils::HashString("PARAMETER_STORE");
+        static const int SECRETS_MANAGER_HASH = HashingUtils::HashString("SECRETS_MANAGER");
 
 
         EnvironmentVariableType GetEnvironmentVariableTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == PARAMETER_STORE_HASH)
           {
             return EnvironmentVariableType::PARAMETER_STORE;
+          }
+          else if (hashCode == SECRETS_MANAGER_HASH)
+          {
+            return EnvironmentVariableType::SECRETS_MANAGER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "PLAINTEXT";
           case EnvironmentVariableType::PARAMETER_STORE:
             return "PARAMETER_STORE";
+          case EnvironmentVariableType::SECRETS_MANAGER:
+            return "SECRETS_MANAGER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

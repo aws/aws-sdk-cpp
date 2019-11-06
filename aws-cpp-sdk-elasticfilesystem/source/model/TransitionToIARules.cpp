@@ -30,6 +30,7 @@ namespace Aws
       namespace TransitionToIARulesMapper
       {
 
+        static const int AFTER_7_DAYS_HASH = HashingUtils::HashString("AFTER_7_DAYS");
         static const int AFTER_14_DAYS_HASH = HashingUtils::HashString("AFTER_14_DAYS");
         static const int AFTER_30_DAYS_HASH = HashingUtils::HashString("AFTER_30_DAYS");
         static const int AFTER_60_DAYS_HASH = HashingUtils::HashString("AFTER_60_DAYS");
@@ -39,7 +40,11 @@ namespace Aws
         TransitionToIARules GetTransitionToIARulesForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == AFTER_14_DAYS_HASH)
+          if (hashCode == AFTER_7_DAYS_HASH)
+          {
+            return TransitionToIARules::AFTER_7_DAYS;
+          }
+          else if (hashCode == AFTER_14_DAYS_HASH)
           {
             return TransitionToIARules::AFTER_14_DAYS;
           }
@@ -69,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransitionToIARules::AFTER_7_DAYS:
+            return "AFTER_7_DAYS";
           case TransitionToIARules::AFTER_14_DAYS:
             return "AFTER_14_DAYS";
           case TransitionToIARules::AFTER_30_DAYS:

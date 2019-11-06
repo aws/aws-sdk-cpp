@@ -243,6 +243,47 @@ namespace Model
 
 
     /**
+     * <p>Number of hours during the lookback period covered by Savings Plans.</p>
+     */
+    inline const Aws::String& GetSavingsPlansCoveredHoursInLookbackPeriod() const{ return m_savingsPlansCoveredHoursInLookbackPeriod; }
+
+    /**
+     * <p>Number of hours during the lookback period covered by Savings Plans.</p>
+     */
+    inline bool SavingsPlansCoveredHoursInLookbackPeriodHasBeenSet() const { return m_savingsPlansCoveredHoursInLookbackPeriodHasBeenSet; }
+
+    /**
+     * <p>Number of hours during the lookback period covered by Savings Plans.</p>
+     */
+    inline void SetSavingsPlansCoveredHoursInLookbackPeriod(const Aws::String& value) { m_savingsPlansCoveredHoursInLookbackPeriodHasBeenSet = true; m_savingsPlansCoveredHoursInLookbackPeriod = value; }
+
+    /**
+     * <p>Number of hours during the lookback period covered by Savings Plans.</p>
+     */
+    inline void SetSavingsPlansCoveredHoursInLookbackPeriod(Aws::String&& value) { m_savingsPlansCoveredHoursInLookbackPeriodHasBeenSet = true; m_savingsPlansCoveredHoursInLookbackPeriod = std::move(value); }
+
+    /**
+     * <p>Number of hours during the lookback period covered by Savings Plans.</p>
+     */
+    inline void SetSavingsPlansCoveredHoursInLookbackPeriod(const char* value) { m_savingsPlansCoveredHoursInLookbackPeriodHasBeenSet = true; m_savingsPlansCoveredHoursInLookbackPeriod.assign(value); }
+
+    /**
+     * <p>Number of hours during the lookback period covered by Savings Plans.</p>
+     */
+    inline CurrentInstance& WithSavingsPlansCoveredHoursInLookbackPeriod(const Aws::String& value) { SetSavingsPlansCoveredHoursInLookbackPeriod(value); return *this;}
+
+    /**
+     * <p>Number of hours during the lookback period covered by Savings Plans.</p>
+     */
+    inline CurrentInstance& WithSavingsPlansCoveredHoursInLookbackPeriod(Aws::String&& value) { SetSavingsPlansCoveredHoursInLookbackPeriod(std::move(value)); return *this;}
+
+    /**
+     * <p>Number of hours during the lookback period covered by Savings Plans.</p>
+     */
+    inline CurrentInstance& WithSavingsPlansCoveredHoursInLookbackPeriod(const char* value) { SetSavingsPlansCoveredHoursInLookbackPeriod(value); return *this;}
+
+
+    /**
      * <p> Number of hours during the lookback period billed at On Demand rates.</p>
      */
     inline const Aws::String& GetOnDemandHoursInLookbackPeriod() const{ return m_onDemandHoursInLookbackPeriod; }
@@ -429,6 +470,9 @@ namespace Model
 
     Aws::String m_reservationCoveredHoursInLookbackPeriod;
     bool m_reservationCoveredHoursInLookbackPeriodHasBeenSet;
+
+    Aws::String m_savingsPlansCoveredHoursInLookbackPeriod;
+    bool m_savingsPlansCoveredHoursInLookbackPeriodHasBeenSet;
 
     Aws::String m_onDemandHoursInLookbackPeriod;
     bool m_onDemandHoursInLookbackPeriodHasBeenSet;

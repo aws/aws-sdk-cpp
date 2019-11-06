@@ -86,57 +86,57 @@ namespace Model
 
     /**
      * <p>The address that AWS sends budget notifications to, either an SNS topic or an
-     * email.</p> <p>AWS validates the address for a <code>CreateSubscriber</code>
-     * request with the <code>.*</code> regex.</p>
+     * email.</p> <p>When you create a subscriber, the value of <code>Address</code>
+     * can't contain line breaks.</p>
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
 
     /**
      * <p>The address that AWS sends budget notifications to, either an SNS topic or an
-     * email.</p> <p>AWS validates the address for a <code>CreateSubscriber</code>
-     * request with the <code>.*</code> regex.</p>
+     * email.</p> <p>When you create a subscriber, the value of <code>Address</code>
+     * can't contain line breaks.</p>
      */
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
 
     /**
      * <p>The address that AWS sends budget notifications to, either an SNS topic or an
-     * email.</p> <p>AWS validates the address for a <code>CreateSubscriber</code>
-     * request with the <code>.*</code> regex.</p>
+     * email.</p> <p>When you create a subscriber, the value of <code>Address</code>
+     * can't contain line breaks.</p>
      */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**
      * <p>The address that AWS sends budget notifications to, either an SNS topic or an
-     * email.</p> <p>AWS validates the address for a <code>CreateSubscriber</code>
-     * request with the <code>.*</code> regex.</p>
+     * email.</p> <p>When you create a subscriber, the value of <code>Address</code>
+     * can't contain line breaks.</p>
      */
     inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
 
     /**
      * <p>The address that AWS sends budget notifications to, either an SNS topic or an
-     * email.</p> <p>AWS validates the address for a <code>CreateSubscriber</code>
-     * request with the <code>.*</code> regex.</p>
+     * email.</p> <p>When you create a subscriber, the value of <code>Address</code>
+     * can't contain line breaks.</p>
      */
     inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
 
     /**
      * <p>The address that AWS sends budget notifications to, either an SNS topic or an
-     * email.</p> <p>AWS validates the address for a <code>CreateSubscriber</code>
-     * request with the <code>.*</code> regex.</p>
+     * email.</p> <p>When you create a subscriber, the value of <code>Address</code>
+     * can't contain line breaks.</p>
      */
     inline Subscriber& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
 
     /**
      * <p>The address that AWS sends budget notifications to, either an SNS topic or an
-     * email.</p> <p>AWS validates the address for a <code>CreateSubscriber</code>
-     * request with the <code>.*</code> regex.</p>
+     * email.</p> <p>When you create a subscriber, the value of <code>Address</code>
+     * can't contain line breaks.</p>
      */
     inline Subscriber& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
 
     /**
      * <p>The address that AWS sends budget notifications to, either an SNS topic or an
-     * email.</p> <p>AWS validates the address for a <code>CreateSubscriber</code>
-     * request with the <code>.*</code> regex.</p>
+     * email.</p> <p>When you create a subscriber, the value of <code>Address</code>
+     * can't contain line breaks.</p>
      */
     inline Subscriber& WithAddress(const char* value) { SetAddress(value); return *this;}
 

@@ -27,7 +27,8 @@ PutSigningProfileRequest::PutSigningProfileRequest() :
     m_signingMaterialHasBeenSet(false),
     m_platformIdHasBeenSet(false),
     m_overridesHasBeenSet(false),
-    m_signingParametersHasBeenSet(false)
+    m_signingParametersHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,17 @@ Aws::String PutSigningProfileRequest::SerializePayload() const
      signingParametersJsonMap.WithString(signingParametersItem.first, signingParametersItem.second);
    }
    payload.WithObject("signingParameters", std::move(signingParametersJsonMap));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

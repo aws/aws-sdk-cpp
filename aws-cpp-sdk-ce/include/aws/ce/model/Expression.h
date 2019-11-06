@@ -63,7 +63,7 @@ namespace Model
    * "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For
    * <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is
    * not supported. OR is not supported between different dimensions, or dimensions
-   * and tags. NOT operators aren't supported. Dimentions are also limited to
+   * and tags. NOT operators aren't supported. Dimensions are also limited to
    * <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
    * <code>RIGHTSIZING_TYPE</code>.</p> </note><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/Expression">AWS API

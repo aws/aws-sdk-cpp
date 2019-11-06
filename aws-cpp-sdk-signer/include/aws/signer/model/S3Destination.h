@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>The name and prefix of the S3 bucket where AWS Signer saves your signed
+   * <p>The name and prefix of the S3 bucket where code signing saves your signed
    * objects.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/S3Destination">AWS
    * API Reference</a></p>

@@ -34,7 +34,9 @@ SigningProfile::SigningProfile() :
     m_platformIdHasBeenSet(false),
     m_signingParametersHasBeenSet(false),
     m_status(SigningProfileStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ SigningProfile::SigningProfile(JsonView jsonValue) :
     m_platformIdHasBeenSet(false),
     m_signingParametersHasBeenSet(false),
     m_status(SigningProfileStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -89,6 +93,23 @@ SigningProfile& SigningProfile::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -128,6 +149,23 @@ JsonValue SigningProfile::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", SigningProfileStatusMapper::GetNameForSigningProfileStatus(m_status));
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
   }
 
   return payload;

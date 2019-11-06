@@ -32,6 +32,7 @@ namespace Aws
 
         static const int COST_AND_USAGE_HASH = HashingUtils::HashString("COST_AND_USAGE");
         static const int RESERVATIONS_HASH = HashingUtils::HashString("RESERVATIONS");
+        static const int SAVINGS_PLANS_HASH = HashingUtils::HashString("SAVINGS_PLANS");
 
 
         Context GetContextForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == RESERVATIONS_HASH)
           {
             return Context::RESERVATIONS;
+          }
+          else if (hashCode == SAVINGS_PLANS_HASH)
+          {
+            return Context::SAVINGS_PLANS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "COST_AND_USAGE";
           case Context::RESERVATIONS:
             return "RESERVATIONS";
+          case Context::SAVINGS_PLANS:
+            return "SAVINGS_PLANS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

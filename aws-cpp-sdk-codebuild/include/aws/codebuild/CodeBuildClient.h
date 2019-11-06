@@ -171,21 +171,22 @@ namespace Model
    * build tools, such as Apache Maven, Gradle, and more. You can also fully
    * customize build environments in AWS CodeBuild to use your own build tools. AWS
    * CodeBuild scales automatically to meet peak build requests. You pay only for the
-   * build time you consume. For more information about AWS CodeBuild, see the <i>AWS
-   * CodeBuild User Guide</i>.</p> <p>AWS CodeBuild supports these operations:</p>
-   * <ul> <li> <p> <code>BatchDeleteBuilds</code>: Deletes one or more builds.</p>
-   * </li> <li> <p> <code>BatchGetProjects</code>: Gets information about one or more
-   * build projects. A <i>build project</i> defines how AWS CodeBuild runs a build.
-   * This includes information such as where to get the source code to build, the
-   * build environment to use, the build commands to run, and where to store the
-   * build output. A <i>build environment</i> is a representation of operating
-   * system, programming language runtime, and tools that AWS CodeBuild uses to run a
-   * build. You can add tags to build projects to help manage your resources and
-   * costs.</p> </li> <li> <p> <code>CreateProject</code>: Creates a build
-   * project.</p> </li> <li> <p> <code>CreateWebhook</code>: For an existing AWS
-   * CodeBuild build project that has its source code stored in a GitHub or Bitbucket
-   * repository, enables AWS CodeBuild to start rebuilding the source code every time
-   * a code change is pushed to the repository.</p> </li> <li> <p>
+   * build time you consume. For more information about AWS CodeBuild, see the <i> <a
+   * href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">AWS
+   * CodeBuild User Guide</a>.</i> </p> <p>AWS CodeBuild supports these
+   * operations:</p> <ul> <li> <p> <code>BatchDeleteBuilds</code>: Deletes one or
+   * more builds.</p> </li> <li> <p> <code>BatchGetProjects</code>: Gets information
+   * about one or more build projects. A <i>build project</i> defines how AWS
+   * CodeBuild runs a build. This includes information such as where to get the
+   * source code to build, the build environment to use, the build commands to run,
+   * and where to store the build output. A <i>build environment</i> is a
+   * representation of operating system, programming language runtime, and tools that
+   * AWS CodeBuild uses to run a build. You can add tags to build projects to help
+   * manage your resources and costs.</p> </li> <li> <p> <code>CreateProject</code>:
+   * Creates a build project.</p> </li> <li> <p> <code>CreateWebhook</code>: For an
+   * existing AWS CodeBuild build project that has its source code stored in a GitHub
+   * or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source
+   * code every time a code change is pushed to the repository.</p> </li> <li> <p>
    * <code>UpdateWebhook</code>: Changes the settings of an existing webhook.</p>
    * </li> <li> <p> <code>DeleteProject</code>: Deletes a build project.</p> </li>
    * <li> <p> <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project

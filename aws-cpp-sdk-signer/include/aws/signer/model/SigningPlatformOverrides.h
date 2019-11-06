@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Any overrides that are applied to the signing configuration of an AWS Signer
+   * <p>Any overrides that are applied to the signing configuration of a code signing
    * platform.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SigningPlatformOverrides">AWS
    * API Reference</a></p>
@@ -48,22 +48,40 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>A signing configuration that overrides the default encryption or hash
+     * algorithm of a signing job.</p>
+     */
     inline const SigningConfigurationOverrides& GetSigningConfiguration() const{ return m_signingConfiguration; }
 
-    
+    /**
+     * <p>A signing configuration that overrides the default encryption or hash
+     * algorithm of a signing job.</p>
+     */
     inline bool SigningConfigurationHasBeenSet() const { return m_signingConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>A signing configuration that overrides the default encryption or hash
+     * algorithm of a signing job.</p>
+     */
     inline void SetSigningConfiguration(const SigningConfigurationOverrides& value) { m_signingConfigurationHasBeenSet = true; m_signingConfiguration = value; }
 
-    
+    /**
+     * <p>A signing configuration that overrides the default encryption or hash
+     * algorithm of a signing job.</p>
+     */
     inline void SetSigningConfiguration(SigningConfigurationOverrides&& value) { m_signingConfigurationHasBeenSet = true; m_signingConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>A signing configuration that overrides the default encryption or hash
+     * algorithm of a signing job.</p>
+     */
     inline SigningPlatformOverrides& WithSigningConfiguration(const SigningConfigurationOverrides& value) { SetSigningConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>A signing configuration that overrides the default encryption or hash
+     * algorithm of a signing job.</p>
+     */
     inline SigningPlatformOverrides& WithSigningConfiguration(SigningConfigurationOverrides&& value) { SetSigningConfiguration(std::move(value)); return *this;}
 
   private:

@@ -825,49 +825,49 @@ namespace Model
 
     /**
      * <p>How much AWS estimates that you would have spent for all usage during the
-     * specified historical period if you had had a reservation.</p>
+     * specified historical period if you had a reservation.</p>
      */
     inline const Aws::String& GetEstimatedReservationCostForLookbackPeriod() const{ return m_estimatedReservationCostForLookbackPeriod; }
 
     /**
      * <p>How much AWS estimates that you would have spent for all usage during the
-     * specified historical period if you had had a reservation.</p>
+     * specified historical period if you had a reservation.</p>
      */
     inline bool EstimatedReservationCostForLookbackPeriodHasBeenSet() const { return m_estimatedReservationCostForLookbackPeriodHasBeenSet; }
 
     /**
      * <p>How much AWS estimates that you would have spent for all usage during the
-     * specified historical period if you had had a reservation.</p>
+     * specified historical period if you had a reservation.</p>
      */
     inline void SetEstimatedReservationCostForLookbackPeriod(const Aws::String& value) { m_estimatedReservationCostForLookbackPeriodHasBeenSet = true; m_estimatedReservationCostForLookbackPeriod = value; }
 
     /**
      * <p>How much AWS estimates that you would have spent for all usage during the
-     * specified historical period if you had had a reservation.</p>
+     * specified historical period if you had a reservation.</p>
      */
     inline void SetEstimatedReservationCostForLookbackPeriod(Aws::String&& value) { m_estimatedReservationCostForLookbackPeriodHasBeenSet = true; m_estimatedReservationCostForLookbackPeriod = std::move(value); }
 
     /**
      * <p>How much AWS estimates that you would have spent for all usage during the
-     * specified historical period if you had had a reservation.</p>
+     * specified historical period if you had a reservation.</p>
      */
     inline void SetEstimatedReservationCostForLookbackPeriod(const char* value) { m_estimatedReservationCostForLookbackPeriodHasBeenSet = true; m_estimatedReservationCostForLookbackPeriod.assign(value); }
 
     /**
      * <p>How much AWS estimates that you would have spent for all usage during the
-     * specified historical period if you had had a reservation.</p>
+     * specified historical period if you had a reservation.</p>
      */
     inline ReservationPurchaseRecommendationDetail& WithEstimatedReservationCostForLookbackPeriod(const Aws::String& value) { SetEstimatedReservationCostForLookbackPeriod(value); return *this;}
 
     /**
      * <p>How much AWS estimates that you would have spent for all usage during the
-     * specified historical period if you had had a reservation.</p>
+     * specified historical period if you had a reservation.</p>
      */
     inline ReservationPurchaseRecommendationDetail& WithEstimatedReservationCostForLookbackPeriod(Aws::String&& value) { SetEstimatedReservationCostForLookbackPeriod(std::move(value)); return *this;}
 
     /**
      * <p>How much AWS estimates that you would have spent for all usage during the
-     * specified historical period if you had had a reservation.</p>
+     * specified historical period if you had a reservation.</p>
      */
     inline ReservationPurchaseRecommendationDetail& WithEstimatedReservationCostForLookbackPeriod(const char* value) { SetEstimatedReservationCostForLookbackPeriod(value); return *this;}
 
