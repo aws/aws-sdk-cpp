@@ -74,6 +74,12 @@ cmake <path-to-root-of-this-source-code> -G "Visual Studio 15 Win64" -DCMAKE_BUI
 msbuild INSTALL.vcxproj /p:Configuration=Release
 ```
 
+* For macOS (Xcode):
+```sh
+cmake -G Xcode -DTARGET_ARCH="APPLE" -DCMAKE_BUILD_TYPE=Debug  <path-to-root-of-this-source-code>
+xcodebuild -target ALL_BUILD 
+```
+
 #### To build and install third party dependencies:
 Starting from version 1.7.0, we added several third party dependencies, including [`aws-c-common`](https://github.com/awslabs/aws-c-common), [`aws-checksums`](https://github.com/awslabs/aws-checksums) and [`aws-c-event-stream`](https://github.com/awslabs/aws-c-event-stream). By default, they will be built and installed in `<BUILD_DIR>/.deps/install`, and copied to default system directory during SDK installation. You can change the location by specifying `CMAKE_INSTALL_PREFIX`.
 
