@@ -136,25 +136,25 @@ namespace Model
 
 
     /**
-     * <p>indicates the number of times the given entity name was seen in the training
+     * <p>Indicates the number of times the given entity type was seen in the training
      * data. </p>
      */
     inline int GetNumberOfTrainMentions() const{ return m_numberOfTrainMentions; }
 
     /**
-     * <p>indicates the number of times the given entity name was seen in the training
+     * <p>Indicates the number of times the given entity type was seen in the training
      * data. </p>
      */
     inline bool NumberOfTrainMentionsHasBeenSet() const { return m_numberOfTrainMentionsHasBeenSet; }
 
     /**
-     * <p>indicates the number of times the given entity name was seen in the training
+     * <p>Indicates the number of times the given entity type was seen in the training
      * data. </p>
      */
     inline void SetNumberOfTrainMentions(int value) { m_numberOfTrainMentionsHasBeenSet = true; m_numberOfTrainMentions = value; }
 
     /**
-     * <p>indicates the number of times the given entity name was seen in the training
+     * <p>Indicates the number of times the given entity type was seen in the training
      * data. </p>
      */
     inline EntityRecognizerMetadataEntityTypesListItem& WithNumberOfTrainMentions(int value) { SetNumberOfTrainMentions(value); return *this;}

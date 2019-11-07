@@ -14,38 +14,18 @@
 */
 
 #pragma once
-#include <aws/comprehend/Comprehend_EXPORTS.h>
+#include <aws/sso/SSO_EXPORTS.h>
+#include <aws/core/Region.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace Comprehend
-{
-namespace Model
-{
-  enum class LanguageCode
-  {
-    NOT_SET,
-    en,
-    es,
-    fr,
-    de,
-    it,
-    pt,
-    ar,
-    hi,
-    ja,
-    ko,
-    zh,
-    zh_TW
-  };
 
-namespace LanguageCodeMapper
+namespace SSO
 {
-AWS_COMPREHEND_API LanguageCode GetLanguageCodeForName(const Aws::String& name);
-
-AWS_COMPREHEND_API Aws::String GetNameForLanguageCode(LanguageCode value);
-} // namespace LanguageCodeMapper
-} // namespace Model
-} // namespace Comprehend
+namespace SSOEndpoint
+{
+AWS_SSO_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
+} // namespace SSOEndpoint
+} // namespace SSO
 } // namespace Aws

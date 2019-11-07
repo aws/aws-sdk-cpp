@@ -14,38 +14,20 @@
 */
 
 #pragma once
-#include <aws/comprehend/Comprehend_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <aws/sso-oidc/SSOOIDC_EXPORTS.h>
+#include <aws/core/client/AWSErrorMarshaller.h>
 
 namespace Aws
 {
-namespace Comprehend
+namespace Client
 {
-namespace Model
-{
-  enum class LanguageCode
-  {
-    NOT_SET,
-    en,
-    es,
-    fr,
-    de,
-    it,
-    pt,
-    ar,
-    hi,
-    ja,
-    ko,
-    zh,
-    zh_TW
-  };
 
-namespace LanguageCodeMapper
+class AWS_SSOOIDC_API SSOOIDCErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
-AWS_COMPREHEND_API LanguageCode GetLanguageCodeForName(const Aws::String& name);
+public:
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+};
 
-AWS_COMPREHEND_API Aws::String GetNameForLanguageCode(LanguageCode value);
-} // namespace LanguageCodeMapper
-} // namespace Model
-} // namespace Comprehend
+} // namespace Client
 } // namespace Aws
