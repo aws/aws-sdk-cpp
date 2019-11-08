@@ -1,12 +1,12 @@
 /*
   * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
+  *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
   * A copy of the License is located at
-  * 
+  *
   *  http://aws.amazon.com/apache2.0
-  * 
+  *
   * or in the "license" file accompanying this file. This file is distributed
   * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
   * express or implied. See the License for the specific language governing
@@ -77,15 +77,19 @@ namespace Aws
             HashResult MD5CommonCryptoImpl::Calculate(const Aws::String& str)
             {
                 ByteBuffer hash(CC_MD5_DIGEST_LENGTH);
+                //CC_MD5 is deprecated by MacOS 10.15 due to cryptographically broken, but SDk only use it for digestion calculation
+AWS_SUPPRESS_DEPRECATION(
                 CC_MD5(str.c_str(), static_cast<CC_LONG>(str.length()), hash.GetUnderlyingData());
-
+                )
                 return HashResult(std::move(hash));
             }
 
             HashResult MD5CommonCryptoImpl::Calculate(Aws::IStream& stream)
             {
+AWS_SUPPRESS_DEPRECATION(
                 CC_MD5_CTX md5;
                 CC_MD5_Init(&md5);
+                )
 
                 auto currentPos = stream.tellg();
                 stream.seekg(0, stream.beg);
@@ -98,7 +102,9 @@ namespace Aws
 
                     if(bytesRead > 0)
                     {
+AWS_SUPPRESS_DEPRECATION(
                         CC_MD5_Update(&md5, streamBuffer, static_cast<CC_LONG>(bytesRead));
+                        )
                     }
                 }
 
@@ -106,8 +112,9 @@ namespace Aws
                 stream.seekg(currentPos, stream.beg);
 
                 ByteBuffer hash(CC_MD5_DIGEST_LENGTH);
+AWS_SUPPRESS_DEPRECATION(
                 CC_MD5_Final(hash.GetUnderlyingData(), &md5);
-
+                )
                 return HashResult(std::move(hash));
             }
 
