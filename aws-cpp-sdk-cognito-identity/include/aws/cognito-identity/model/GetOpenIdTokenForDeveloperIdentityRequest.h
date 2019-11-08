@@ -309,7 +309,9 @@ namespace Model
      * one hour. The maximum token duration you can set is 24 hours. You should take
      * care in setting the expiration time for a token, as there are significant
      * security implications: an attacker could use a leaked token to access your AWS
-     * resources for the token's duration.</p>
+     * resources for the token's duration.</p> <note> <p>Please provide for a small
+     * grace period, usually no more than 5 minutes, to account for clock skew.</p>
+     * </note>
      */
     inline long long GetTokenDuration() const{ return m_tokenDuration; }
 
@@ -321,7 +323,9 @@ namespace Model
      * one hour. The maximum token duration you can set is 24 hours. You should take
      * care in setting the expiration time for a token, as there are significant
      * security implications: an attacker could use a leaked token to access your AWS
-     * resources for the token's duration.</p>
+     * resources for the token's duration.</p> <note> <p>Please provide for a small
+     * grace period, usually no more than 5 minutes, to account for clock skew.</p>
+     * </note>
      */
     inline bool TokenDurationHasBeenSet() const { return m_tokenDurationHasBeenSet; }
 
@@ -333,7 +337,9 @@ namespace Model
      * one hour. The maximum token duration you can set is 24 hours. You should take
      * care in setting the expiration time for a token, as there are significant
      * security implications: an attacker could use a leaked token to access your AWS
-     * resources for the token's duration.</p>
+     * resources for the token's duration.</p> <note> <p>Please provide for a small
+     * grace period, usually no more than 5 minutes, to account for clock skew.</p>
+     * </note>
      */
     inline void SetTokenDuration(long long value) { m_tokenDurationHasBeenSet = true; m_tokenDuration = value; }
 
@@ -345,7 +351,9 @@ namespace Model
      * one hour. The maximum token duration you can set is 24 hours. You should take
      * care in setting the expiration time for a token, as there are significant
      * security implications: an attacker could use a leaked token to access your AWS
-     * resources for the token's duration.</p>
+     * resources for the token's duration.</p> <note> <p>Please provide for a small
+     * grace period, usually no more than 5 minutes, to account for clock skew.</p>
+     * </note>
      */
     inline GetOpenIdTokenForDeveloperIdentityRequest& WithTokenDuration(long long value) { SetTokenDuration(value); return *this;}
 

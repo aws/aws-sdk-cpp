@@ -953,16 +953,24 @@ namespace Model
         virtual void PutImageScanningConfigurationAsync(const Model::PutImageScanningConfigurationRequest& request, const PutImageScanningConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the image tag mutability settings for a repository.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the image tag mutability settings for a repository. When a repository
+         * is configured with tag immutability, all image tags within the repository will
+         * be prevented them from being overwritten. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image
+         * Tag Mutability</a> in the <i>Amazon Elastic Container Registry User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageTagMutability">AWS
          * API Reference</a></p>
          */
         virtual Model::PutImageTagMutabilityOutcome PutImageTagMutability(const Model::PutImageTagMutabilityRequest& request) const;
 
         /**
-         * <p>Updates the image tag mutability settings for a repository.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the image tag mutability settings for a repository. When a repository
+         * is configured with tag immutability, all image tags within the repository will
+         * be prevented them from being overwritten. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image
+         * Tag Mutability</a> in the <i>Amazon Elastic Container Registry User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageTagMutability">AWS
          * API Reference</a></p>
          *
@@ -971,8 +979,12 @@ namespace Model
         virtual Model::PutImageTagMutabilityOutcomeCallable PutImageTagMutabilityCallable(const Model::PutImageTagMutabilityRequest& request) const;
 
         /**
-         * <p>Updates the image tag mutability settings for a repository.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the image tag mutability settings for a repository. When a repository
+         * is configured with tag immutability, all image tags within the repository will
+         * be prevented them from being overwritten. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image
+         * Tag Mutability</a> in the <i>Amazon Elastic Container Registry User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageTagMutability">AWS
          * API Reference</a></p>
          *
@@ -1052,14 +1064,24 @@ namespace Model
         virtual void SetRepositoryPolicyAsync(const Model::SetRepositoryPolicyRequest& request, const SetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts an image vulnerability scan.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts an image vulnerability scan. An image scan can only be started once
+         * per day on an individual image. This limit includes if an image was scanned on
+         * initial push. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image
+         * Scanning</a> in the <i>Amazon Elastic Container Registry User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartImageScan">AWS
          * API Reference</a></p>
          */
         virtual Model::StartImageScanOutcome StartImageScan(const Model::StartImageScanRequest& request) const;
 
         /**
-         * <p>Starts an image vulnerability scan.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts an image vulnerability scan. An image scan can only be started once
+         * per day on an individual image. This limit includes if an image was scanned on
+         * initial push. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image
+         * Scanning</a> in the <i>Amazon Elastic Container Registry User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartImageScan">AWS
          * API Reference</a></p>
          *
@@ -1068,7 +1090,12 @@ namespace Model
         virtual Model::StartImageScanOutcomeCallable StartImageScanCallable(const Model::StartImageScanRequest& request) const;
 
         /**
-         * <p>Starts an image vulnerability scan.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts an image vulnerability scan. An image scan can only be started once
+         * per day on an individual image. This limit includes if an image was scanned on
+         * initial push. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image
+         * Scanning</a> in the <i>Amazon Elastic Container Registry User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartImageScan">AWS
          * API Reference</a></p>
          *

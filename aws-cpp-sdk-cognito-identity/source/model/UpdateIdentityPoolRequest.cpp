@@ -27,6 +27,8 @@ UpdateIdentityPoolRequest::UpdateIdentityPoolRequest() :
     m_identityPoolNameHasBeenSet(false),
     m_allowUnauthenticatedIdentities(false),
     m_allowUnauthenticatedIdentitiesHasBeenSet(false),
+    m_allowClassicFlow(false),
+    m_allowClassicFlowHasBeenSet(false),
     m_supportedLoginProvidersHasBeenSet(false),
     m_developerProviderNameHasBeenSet(false),
     m_openIdConnectProviderARNsHasBeenSet(false),
@@ -55,6 +57,12 @@ Aws::String UpdateIdentityPoolRequest::SerializePayload() const
   if(m_allowUnauthenticatedIdentitiesHasBeenSet)
   {
    payload.WithBool("AllowUnauthenticatedIdentities", m_allowUnauthenticatedIdentities);
+
+  }
+
+  if(m_allowClassicFlowHasBeenSet)
+  {
+   payload.WithBool("AllowClassicFlow", m_allowClassicFlow);
 
   }
 

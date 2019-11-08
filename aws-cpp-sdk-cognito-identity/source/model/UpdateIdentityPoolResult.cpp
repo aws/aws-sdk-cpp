@@ -27,12 +27,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 UpdateIdentityPoolResult::UpdateIdentityPoolResult() : 
-    m_allowUnauthenticatedIdentities(false)
+    m_allowUnauthenticatedIdentities(false),
+    m_allowClassicFlow(false)
 {
 }
 
 UpdateIdentityPoolResult::UpdateIdentityPoolResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_allowUnauthenticatedIdentities(false)
+    m_allowUnauthenticatedIdentities(false),
+    m_allowClassicFlow(false)
 {
   *this = result;
 }
@@ -55,6 +57,12 @@ UpdateIdentityPoolResult& UpdateIdentityPoolResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("AllowUnauthenticatedIdentities"))
   {
     m_allowUnauthenticatedIdentities = jsonValue.GetBool("AllowUnauthenticatedIdentities");
+
+  }
+
+  if(jsonValue.ValueExists("AllowClassicFlow"))
+  {
+    m_allowClassicFlow = jsonValue.GetBool("AllowClassicFlow");
 
   }
 

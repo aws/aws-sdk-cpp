@@ -140,6 +140,34 @@ namespace Model
 
 
     /**
+     * <p>Enables or disables the Basic (Classic) authentication flow. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity
+     * Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito
+     * Developer Guide</i>.</p>
+     */
+    inline bool GetAllowClassicFlow() const{ return m_allowClassicFlow; }
+
+    /**
+     * <p>Enables or disables the Basic (Classic) authentication flow. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity
+     * Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito
+     * Developer Guide</i>.</p>
+     */
+    inline void SetAllowClassicFlow(bool value) { m_allowClassicFlow = value; }
+
+    /**
+     * <p>Enables or disables the Basic (Classic) authentication flow. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity
+     * Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito
+     * Developer Guide</i>.</p>
+     */
+    inline CreateIdentityPoolResult& WithAllowClassicFlow(bool value) { SetAllowClassicFlow(value); return *this;}
+
+
+    /**
      * <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetSupportedLoginProviders() const{ return m_supportedLoginProviders; }
@@ -453,6 +481,8 @@ namespace Model
     Aws::String m_identityPoolName;
 
     bool m_allowUnauthenticatedIdentities;
+
+    bool m_allowClassicFlow;
 
     Aws::Map<Aws::String, Aws::String> m_supportedLoginProviders;
 
