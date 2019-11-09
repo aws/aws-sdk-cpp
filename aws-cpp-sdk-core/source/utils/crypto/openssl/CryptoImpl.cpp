@@ -1,12 +1,12 @@
 /*
   * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
+  *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
   * A copy of the License is located at
-  * 
+  *
   *  http://aws.amazon.com/apache2.0
-  * 
+  *
   * or in the "license" file accompanying this file. This file is distributed
   * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
   * express or implied. See the License for the specific language governing
@@ -19,7 +19,21 @@
 #include <aws/core/utils/crypto/openssl/CryptoImpl.h>
 #include <aws/core/utils/Outcome.h>
 #include <openssl/md5.h>
+
+#ifdef OPENSSL_IS_BORINGSSL
+#ifdef _MSC_VER
+AWS_SUPPRESS_WARNING_PUSH(4201)
+#else
+AWS_SUPPRESS_WARNING_PUSH("-Wpedantic")
+#endif
+#endif
+
 #include <openssl/sha.h>
+
+#ifdef OPENSSL_IS_BORINGSSL
+AWS_SUPPRESS_WARNING_POP
+#endif
+
 #include <openssl/err.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <thread>
@@ -37,7 +51,7 @@ namespace Aws
             {
 /**
  * openssl with OPENSSL_VERSION_NUMBER < 0x10100003L made data type details unavailable
- * libressl use openssl with data type details available, but mandatorily set 
+ * libressl use openssl with data type details available, but mandatorily set
  * OPENSSL_VERSION_NUMBER = 0x20000000L, insane!
  * https://github.com/aws/aws-sdk-cpp/pull/507/commits/2c99f1fe0c4b4683280caeb161538d4724d6a179
  */
@@ -56,13 +70,14 @@ namespace Aws
 
                 void init_static_state()
                 {
-#if OPENSSL_VERSION_LESS_1_1
-                    ERR_load_CRYPTO_strings();
+#if OPENSSL_VERSION_LESS_1_1 || defined(OPENSSL_IS_BORINGSSL)
+                    ERR_load_crypto_strings();
 #else
                     OPENSSL_init_crypto(OPENSSL_INIT_LOAD_CRYPTO_STRINGS /*options*/ ,NULL /* OpenSSL init settings*/ );
 #endif
+#if !defined(OPENSSL_IS_BORINGSSL)
                     OPENSSL_add_all_algorithms_noconf();
-
+#endif
 #if OPENSSL_VERSION_LESS_1_1
                     if (!CRYPTO_get_locking_callback())
                     {
@@ -128,22 +143,22 @@ namespace Aws
                 }
             }
 
-            class OpensslCtxRAIIGuard 
+            class OpensslCtxRAIIGuard
             {
                 public:
-                OpensslCtxRAIIGuard() 
+                OpensslCtxRAIIGuard()
                 {
                     m_ctx = EVP_MD_CTX_create();
                     assert(m_ctx != nullptr);
                 }
 
-                ~OpensslCtxRAIIGuard() 
+                ~OpensslCtxRAIIGuard()
                 {
                     EVP_MD_CTX_destroy(m_ctx);
                     m_ctx = nullptr;
                 }
 
-                EVP_MD_CTX* getResource() 
+                EVP_MD_CTX* getResource()
                 {
                     return m_ctx;
                 }
@@ -155,7 +170,9 @@ namespace Aws
             {
                 OpensslCtxRAIIGuard guard;
                 auto ctx = guard.getResource();
+#if !defined(OPENSSL_IS_BORINGSSL)
                 EVP_MD_CTX_set_flags(ctx, EVP_MD_CTX_FLAG_NON_FIPS_ALLOW);
+#endif
                 EVP_DigestInit_ex(ctx, EVP_md5(), nullptr);
                 EVP_DigestUpdate(ctx, str.c_str(), str.size());
 
@@ -169,7 +186,9 @@ namespace Aws
             {
                 OpensslCtxRAIIGuard guard;
                 auto ctx = guard.getResource();
+#if !defined(OPENSSL_IS_BORINGSSL)
                 EVP_MD_CTX_set_flags(ctx, EVP_MD_CTX_FLAG_NON_FIPS_ALLOW);
+#endif
                 EVP_DigestInit_ex(ctx, EVP_md5(), nullptr);
 
                 auto currentPos = stream.tellg();
@@ -283,7 +302,7 @@ namespace Aws
                 unsigned int length = SHA256_DIGEST_LENGTH;
                 ByteBuffer digest(length);
                 memset(digest.GetUnderlyingData(), 0, length);
-                
+
                 HMACRAIIGuard guard;
                 HMAC_CTX* m_ctx = guard.getResource();
 
@@ -733,7 +752,7 @@ namespace Aws
                 }
 
                 //the following is an in place implementation of
-                //RFC 3394 using the alternate in-place implementation.	
+                //RFC 3394 using the alternate in-place implementation.
                 //we use one in-place buffer instead of the copy at the end.
                 //the one letter variable names are meant to directly reflect the variables in the RFC
                 CryptoBuffer cipherText(m_workingKeyBuffer.GetLength() + BlockSizeBytes);
