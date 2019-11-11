@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     CREATE,
-    UPDATE
+    UPDATE,
+    IMPORT
   };
 
 namespace ChangeSetTypeMapper

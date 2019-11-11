@@ -40,6 +40,12 @@ namespace Aws
         static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
         static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
         static const int UPDATE_COMPLETE_HASH = HashingUtils::HashString("UPDATE_COMPLETE");
+        static const int IMPORT_FAILED_HASH = HashingUtils::HashString("IMPORT_FAILED");
+        static const int IMPORT_COMPLETE_HASH = HashingUtils::HashString("IMPORT_COMPLETE");
+        static const int IMPORT_IN_PROGRESS_HASH = HashingUtils::HashString("IMPORT_IN_PROGRESS");
+        static const int IMPORT_ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("IMPORT_ROLLBACK_IN_PROGRESS");
+        static const int IMPORT_ROLLBACK_FAILED_HASH = HashingUtils::HashString("IMPORT_ROLLBACK_FAILED");
+        static const int IMPORT_ROLLBACK_COMPLETE_HASH = HashingUtils::HashString("IMPORT_ROLLBACK_COMPLETE");
 
 
         ResourceStatus GetResourceStatusForName(const Aws::String& name)
@@ -85,6 +91,30 @@ namespace Aws
           {
             return ResourceStatus::UPDATE_COMPLETE;
           }
+          else if (hashCode == IMPORT_FAILED_HASH)
+          {
+            return ResourceStatus::IMPORT_FAILED;
+          }
+          else if (hashCode == IMPORT_COMPLETE_HASH)
+          {
+            return ResourceStatus::IMPORT_COMPLETE;
+          }
+          else if (hashCode == IMPORT_IN_PROGRESS_HASH)
+          {
+            return ResourceStatus::IMPORT_IN_PROGRESS;
+          }
+          else if (hashCode == IMPORT_ROLLBACK_IN_PROGRESS_HASH)
+          {
+            return ResourceStatus::IMPORT_ROLLBACK_IN_PROGRESS;
+          }
+          else if (hashCode == IMPORT_ROLLBACK_FAILED_HASH)
+          {
+            return ResourceStatus::IMPORT_ROLLBACK_FAILED;
+          }
+          else if (hashCode == IMPORT_ROLLBACK_COMPLETE_HASH)
+          {
+            return ResourceStatus::IMPORT_ROLLBACK_COMPLETE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -119,6 +149,18 @@ namespace Aws
             return "UPDATE_FAILED";
           case ResourceStatus::UPDATE_COMPLETE:
             return "UPDATE_COMPLETE";
+          case ResourceStatus::IMPORT_FAILED:
+            return "IMPORT_FAILED";
+          case ResourceStatus::IMPORT_COMPLETE:
+            return "IMPORT_COMPLETE";
+          case ResourceStatus::IMPORT_IN_PROGRESS:
+            return "IMPORT_IN_PROGRESS";
+          case ResourceStatus::IMPORT_ROLLBACK_IN_PROGRESS:
+            return "IMPORT_ROLLBACK_IN_PROGRESS";
+          case ResourceStatus::IMPORT_ROLLBACK_FAILED:
+            return "IMPORT_ROLLBACK_FAILED";
+          case ResourceStatus::IMPORT_ROLLBACK_COMPLETE:
+            return "IMPORT_ROLLBACK_COMPLETE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

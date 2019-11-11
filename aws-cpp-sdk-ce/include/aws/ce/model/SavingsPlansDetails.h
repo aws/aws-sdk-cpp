@@ -48,42 +48,50 @@ namespace Model
 
 
     /**
-     * <p>A geographic location where the Savings Plans is hosted.</p>
+     * <p>A collection of AWS resources in a geographic area. Each AWS Region is
+     * isolated and independent of the other Regions.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>A geographic location where the Savings Plans is hosted.</p>
+     * <p>A collection of AWS resources in a geographic area. Each AWS Region is
+     * isolated and independent of the other Regions.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>A geographic location where the Savings Plans is hosted.</p>
+     * <p>A collection of AWS resources in a geographic area. Each AWS Region is
+     * isolated and independent of the other Regions.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>A geographic location where the Savings Plans is hosted.</p>
+     * <p>A collection of AWS resources in a geographic area. Each AWS Region is
+     * isolated and independent of the other Regions.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>A geographic location where the Savings Plans is hosted.</p>
+     * <p>A collection of AWS resources in a geographic area. Each AWS Region is
+     * isolated and independent of the other Regions.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>A geographic location where the Savings Plans is hosted.</p>
+     * <p>A collection of AWS resources in a geographic area. Each AWS Region is
+     * isolated and independent of the other Regions.</p>
      */
     inline SavingsPlansDetails& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>A geographic location where the Savings Plans is hosted.</p>
+     * <p>A collection of AWS resources in a geographic area. Each AWS Region is
+     * isolated and independent of the other Regions.</p>
      */
     inline SavingsPlansDetails& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>A geographic location where the Savings Plans is hosted.</p>
+     * <p>A collection of AWS resources in a geographic area. Each AWS Region is
+     * isolated and independent of the other Regions.</p>
      */
     inline SavingsPlansDetails& WithRegion(const char* value) { SetRegion(value); return *this;}
 

@@ -45,75 +45,75 @@ namespace Model
 
 
     /**
-     * <p>The amount of time (in hours) ou used your Savings Plans. This allows you to
+     * <p>The amount of cost/commitment you used your Savings Plans. This allows you to
      * specify date ranges.</p>
      */
     inline const Aws::Vector<SavingsPlansUtilizationByTime>& GetSavingsPlansUtilizationsByTime() const{ return m_savingsPlansUtilizationsByTime; }
 
     /**
-     * <p>The amount of time (in hours) ou used your Savings Plans. This allows you to
+     * <p>The amount of cost/commitment you used your Savings Plans. This allows you to
      * specify date ranges.</p>
      */
     inline void SetSavingsPlansUtilizationsByTime(const Aws::Vector<SavingsPlansUtilizationByTime>& value) { m_savingsPlansUtilizationsByTime = value; }
 
     /**
-     * <p>The amount of time (in hours) ou used your Savings Plans. This allows you to
+     * <p>The amount of cost/commitment you used your Savings Plans. This allows you to
      * specify date ranges.</p>
      */
     inline void SetSavingsPlansUtilizationsByTime(Aws::Vector<SavingsPlansUtilizationByTime>&& value) { m_savingsPlansUtilizationsByTime = std::move(value); }
 
     /**
-     * <p>The amount of time (in hours) ou used your Savings Plans. This allows you to
+     * <p>The amount of cost/commitment you used your Savings Plans. This allows you to
      * specify date ranges.</p>
      */
     inline GetSavingsPlansUtilizationResult& WithSavingsPlansUtilizationsByTime(const Aws::Vector<SavingsPlansUtilizationByTime>& value) { SetSavingsPlansUtilizationsByTime(value); return *this;}
 
     /**
-     * <p>The amount of time (in hours) ou used your Savings Plans. This allows you to
+     * <p>The amount of cost/commitment you used your Savings Plans. This allows you to
      * specify date ranges.</p>
      */
     inline GetSavingsPlansUtilizationResult& WithSavingsPlansUtilizationsByTime(Aws::Vector<SavingsPlansUtilizationByTime>&& value) { SetSavingsPlansUtilizationsByTime(std::move(value)); return *this;}
 
     /**
-     * <p>The amount of time (in hours) ou used your Savings Plans. This allows you to
+     * <p>The amount of cost/commitment you used your Savings Plans. This allows you to
      * specify date ranges.</p>
      */
     inline GetSavingsPlansUtilizationResult& AddSavingsPlansUtilizationsByTime(const SavingsPlansUtilizationByTime& value) { m_savingsPlansUtilizationsByTime.push_back(value); return *this; }
 
     /**
-     * <p>The amount of time (in hours) ou used your Savings Plans. This allows you to
+     * <p>The amount of cost/commitment you used your Savings Plans. This allows you to
      * specify date ranges.</p>
      */
     inline GetSavingsPlansUtilizationResult& AddSavingsPlansUtilizationsByTime(SavingsPlansUtilizationByTime&& value) { m_savingsPlansUtilizationsByTime.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The total amount of time that you used your Savings Plans, regardless of date
-     * ranges.</p>
+     * <p>The total amount of cost/commitment that you used your Savings Plans,
+     * regardless of date ranges.</p>
      */
     inline const SavingsPlansUtilizationAggregates& GetTotal() const{ return m_total; }
 
     /**
-     * <p>The total amount of time that you used your Savings Plans, regardless of date
-     * ranges.</p>
+     * <p>The total amount of cost/commitment that you used your Savings Plans,
+     * regardless of date ranges.</p>
      */
     inline void SetTotal(const SavingsPlansUtilizationAggregates& value) { m_total = value; }
 
     /**
-     * <p>The total amount of time that you used your Savings Plans, regardless of date
-     * ranges.</p>
+     * <p>The total amount of cost/commitment that you used your Savings Plans,
+     * regardless of date ranges.</p>
      */
     inline void SetTotal(SavingsPlansUtilizationAggregates&& value) { m_total = std::move(value); }
 
     /**
-     * <p>The total amount of time that you used your Savings Plans, regardless of date
-     * ranges.</p>
+     * <p>The total amount of cost/commitment that you used your Savings Plans,
+     * regardless of date ranges.</p>
      */
     inline GetSavingsPlansUtilizationResult& WithTotal(const SavingsPlansUtilizationAggregates& value) { SetTotal(value); return *this;}
 
     /**
-     * <p>The total amount of time that you used your Savings Plans, regardless of date
-     * ranges.</p>
+     * <p>The total amount of cost/commitment that you used your Savings Plans,
+     * regardless of date ranges.</p>
      */
     inline GetSavingsPlansUtilizationResult& WithTotal(SavingsPlansUtilizationAggregates&& value) { SetTotal(std::move(value)); return *this;}
 

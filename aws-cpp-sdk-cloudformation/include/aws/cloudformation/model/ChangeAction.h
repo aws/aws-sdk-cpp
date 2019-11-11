@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     Add,
     Modify,
-    Remove
+    Remove,
+    Import
   };
 
 namespace ChangeActionMapper

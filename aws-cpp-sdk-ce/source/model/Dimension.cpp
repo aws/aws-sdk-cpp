@@ -52,6 +52,7 @@ namespace Aws
         static const int INSTANCE_TYPE_FAMILY_HASH = HashingUtils::HashString("INSTANCE_TYPE_FAMILY");
         static const int BILLING_ENTITY_HASH = HashingUtils::HashString("BILLING_ENTITY");
         static const int RESERVATION_ID_HASH = HashingUtils::HashString("RESERVATION_ID");
+        static const int RESOURCE_ID_HASH = HashingUtils::HashString("RESOURCE_ID");
         static const int RIGHTSIZING_TYPE_HASH = HashingUtils::HashString("RIGHTSIZING_TYPE");
         static const int SAVINGS_PLANS_TYPE_HASH = HashingUtils::HashString("SAVINGS_PLANS_TYPE");
         static const int SAVINGS_PLAN_ARN_HASH = HashingUtils::HashString("SAVINGS_PLAN_ARN");
@@ -149,6 +150,10 @@ namespace Aws
           {
             return Dimension::RESERVATION_ID;
           }
+          else if (hashCode == RESOURCE_ID_HASH)
+          {
+            return Dimension::RESOURCE_ID;
+          }
           else if (hashCode == RIGHTSIZING_TYPE_HASH)
           {
             return Dimension::RIGHTSIZING_TYPE;
@@ -223,6 +228,8 @@ namespace Aws
             return "BILLING_ENTITY";
           case Dimension::RESERVATION_ID:
             return "RESERVATION_ID";
+          case Dimension::RESOURCE_ID:
+            return "RESOURCE_ID";
           case Dimension::RIGHTSIZING_TYPE:
             return "RIGHTSIZING_TYPE";
           case Dimension::SAVINGS_PLANS_TYPE:

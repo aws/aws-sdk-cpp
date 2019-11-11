@@ -45,27 +45,27 @@ namespace Model
 
 
     /**
-     * <p>The accountIDs these recommendations are generated for.</p>
+     * <p>Information regarding this specific recommendation set.</p>
      */
     inline const SavingsPlansPurchaseRecommendationMetadata& GetMetadata() const{ return m_metadata; }
 
     /**
-     * <p>The accountIDs these recommendations are generated for.</p>
+     * <p>Information regarding this specific recommendation set.</p>
      */
     inline void SetMetadata(const SavingsPlansPurchaseRecommendationMetadata& value) { m_metadata = value; }
 
     /**
-     * <p>The accountIDs these recommendations are generated for.</p>
+     * <p>Information regarding this specific recommendation set.</p>
      */
     inline void SetMetadata(SavingsPlansPurchaseRecommendationMetadata&& value) { m_metadata = std::move(value); }
 
     /**
-     * <p>The accountIDs these recommendations are generated for.</p>
+     * <p>Information regarding this specific recommendation set.</p>
      */
     inline GetSavingsPlansPurchaseRecommendationResult& WithMetadata(const SavingsPlansPurchaseRecommendationMetadata& value) { SetMetadata(value); return *this;}
 
     /**
-     * <p>The accountIDs these recommendations are generated for.</p>
+     * <p>Information regarding this specific recommendation set.</p>
      */
     inline GetSavingsPlansPurchaseRecommendationResult& WithMetadata(SavingsPlansPurchaseRecommendationMetadata&& value) { SetMetadata(std::move(value)); return *this;}
 

@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ce/model/GetCostAndUsageResult.h>
+#include <aws/ce/model/GetCostAndUsageWithResourcesResult.h>
 #include <aws/ce/model/GetCostForecastResult.h>
 #include <aws/ce/model/GetDimensionValuesResult.h>
 #include <aws/ce/model/GetReservationCoverageResult.h>
@@ -74,6 +75,7 @@ namespace CostExplorer
 namespace Model
 {
         class GetCostAndUsageRequest;
+        class GetCostAndUsageWithResourcesRequest;
         class GetCostForecastRequest;
         class GetDimensionValuesRequest;
         class GetReservationCoverageRequest;
@@ -88,6 +90,7 @@ namespace Model
         class GetUsageForecastRequest;
 
         typedef Aws::Utils::Outcome<GetCostAndUsageResult, Aws::Client::AWSError<CostExplorerErrors>> GetCostAndUsageOutcome;
+        typedef Aws::Utils::Outcome<GetCostAndUsageWithResourcesResult, Aws::Client::AWSError<CostExplorerErrors>> GetCostAndUsageWithResourcesOutcome;
         typedef Aws::Utils::Outcome<GetCostForecastResult, Aws::Client::AWSError<CostExplorerErrors>> GetCostForecastOutcome;
         typedef Aws::Utils::Outcome<GetDimensionValuesResult, Aws::Client::AWSError<CostExplorerErrors>> GetDimensionValuesOutcome;
         typedef Aws::Utils::Outcome<GetReservationCoverageResult, Aws::Client::AWSError<CostExplorerErrors>> GetReservationCoverageOutcome;
@@ -102,6 +105,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetUsageForecastResult, Aws::Client::AWSError<CostExplorerErrors>> GetUsageForecastOutcome;
 
         typedef std::future<GetCostAndUsageOutcome> GetCostAndUsageOutcomeCallable;
+        typedef std::future<GetCostAndUsageWithResourcesOutcome> GetCostAndUsageWithResourcesOutcomeCallable;
         typedef std::future<GetCostForecastOutcome> GetCostForecastOutcomeCallable;
         typedef std::future<GetDimensionValuesOutcome> GetDimensionValuesOutcomeCallable;
         typedef std::future<GetReservationCoverageOutcome> GetReservationCoverageOutcomeCallable;
@@ -119,6 +123,7 @@ namespace Model
   class CostExplorerClient;
 
     typedef std::function<void(const CostExplorerClient*, const Model::GetCostAndUsageRequest&, const Model::GetCostAndUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostAndUsageResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::GetCostAndUsageWithResourcesRequest&, const Model::GetCostAndUsageWithResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostAndUsageWithResourcesResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetCostForecastRequest&, const Model::GetCostForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostForecastResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetDimensionValuesRequest&, const Model::GetDimensionValuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDimensionValuesResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetReservationCoverageRequest&, const Model::GetReservationCoverageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservationCoverageResponseReceivedHandler;
@@ -221,6 +226,73 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCostAndUsageAsync(const Model::GetCostAndUsageRequest& request, const GetCostAndUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves cost and usage metrics with resources for your account. You can
+         * specify which cost and usage-related metric, such as <code>BlendedCosts</code>
+         * or <code>UsageQuantity</code>, that you want the request to return. You can also
+         * filter and group your data by various dimensions, such as <code>SERVICE</code>
+         * or <code>AZ</code>, in a specific time range. For a complete list of valid
+         * dimensions, see the <a
+         * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+         * operation. Master accounts in an organization in AWS Organizations have access
+         * to all member accounts. This API is currently available for the Amazon Elastic
+         * Compute Cloud – Compute service only.</p> <note> <p>This is an opt-in only
+         * feature. You can enable this feature from the Cost Explorer Settings page. For
+         * information on how to access the Settings page, see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
+         * Access for Cost Explorer</a> in the <i>AWS Billing and Cost Management User
+         * Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageWithResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCostAndUsageWithResourcesOutcome GetCostAndUsageWithResources(const Model::GetCostAndUsageWithResourcesRequest& request) const;
+
+        /**
+         * <p>Retrieves cost and usage metrics with resources for your account. You can
+         * specify which cost and usage-related metric, such as <code>BlendedCosts</code>
+         * or <code>UsageQuantity</code>, that you want the request to return. You can also
+         * filter and group your data by various dimensions, such as <code>SERVICE</code>
+         * or <code>AZ</code>, in a specific time range. For a complete list of valid
+         * dimensions, see the <a
+         * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+         * operation. Master accounts in an organization in AWS Organizations have access
+         * to all member accounts. This API is currently available for the Amazon Elastic
+         * Compute Cloud – Compute service only.</p> <note> <p>This is an opt-in only
+         * feature. You can enable this feature from the Cost Explorer Settings page. For
+         * information on how to access the Settings page, see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
+         * Access for Cost Explorer</a> in the <i>AWS Billing and Cost Management User
+         * Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageWithResources">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetCostAndUsageWithResourcesOutcomeCallable GetCostAndUsageWithResourcesCallable(const Model::GetCostAndUsageWithResourcesRequest& request) const;
+
+        /**
+         * <p>Retrieves cost and usage metrics with resources for your account. You can
+         * specify which cost and usage-related metric, such as <code>BlendedCosts</code>
+         * or <code>UsageQuantity</code>, that you want the request to return. You can also
+         * filter and group your data by various dimensions, such as <code>SERVICE</code>
+         * or <code>AZ</code>, in a specific time range. For a complete list of valid
+         * dimensions, see the <a
+         * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+         * operation. Master accounts in an organization in AWS Organizations have access
+         * to all member accounts. This API is currently available for the Amazon Elastic
+         * Compute Cloud – Compute service only.</p> <note> <p>This is an opt-in only
+         * feature. You can enable this feature from the Cost Explorer Settings page. For
+         * information on how to access the Settings page, see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
+         * Access for Cost Explorer</a> in the <i>AWS Billing and Cost Management User
+         * Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageWithResources">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetCostAndUsageWithResourcesAsync(const Model::GetCostAndUsageWithResourcesRequest& request, const GetCostAndUsageWithResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a forecast for how much Amazon Web Services predicts that you will
@@ -575,10 +647,10 @@ namespace Model
         /**
          * <p>Retrieves the Savings Plans utilization for your account across date ranges
          * with daily or monthly granularity. Master accounts in an organization have
-         * access to member accounts. You can use <code>GetDimensionValues</code> to
-         * determine the possible dimension values.</p> <note> <p>You cannot group by any
-         * dimension values for <code>GetSavingsPlansUtilization</code>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * access to member accounts. You can use <code>GetDimensionValues</code> in
+         * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
+         * <note> <p>You cannot group by any dimension values for
+         * <code>GetSavingsPlansUtilization</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization">AWS
          * API Reference</a></p>
          */
@@ -587,10 +659,10 @@ namespace Model
         /**
          * <p>Retrieves the Savings Plans utilization for your account across date ranges
          * with daily or monthly granularity. Master accounts in an organization have
-         * access to member accounts. You can use <code>GetDimensionValues</code> to
-         * determine the possible dimension values.</p> <note> <p>You cannot group by any
-         * dimension values for <code>GetSavingsPlansUtilization</code>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * access to member accounts. You can use <code>GetDimensionValues</code> in
+         * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
+         * <note> <p>You cannot group by any dimension values for
+         * <code>GetSavingsPlansUtilization</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization">AWS
          * API Reference</a></p>
          *
@@ -601,10 +673,10 @@ namespace Model
         /**
          * <p>Retrieves the Savings Plans utilization for your account across date ranges
          * with daily or monthly granularity. Master accounts in an organization have
-         * access to member accounts. You can use <code>GetDimensionValues</code> to
-         * determine the possible dimension values.</p> <note> <p>You cannot group by any
-         * dimension values for <code>GetSavingsPlansUtilization</code>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * access to member accounts. You can use <code>GetDimensionValues</code> in
+         * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
+         * <note> <p>You cannot group by any dimension values for
+         * <code>GetSavingsPlansUtilization</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization">AWS
          * API Reference</a></p>
          *
@@ -613,24 +685,30 @@ namespace Model
         virtual void GetSavingsPlansUtilizationAsync(const Model::GetSavingsPlansUtilizationRequest& request, const GetSavingsPlansUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a single daily or monthly Savings Plans utilization rate and
-         * details for your account. Master accounts in an organization have access to
-         * member accounts. You can use <code>GetDimensionValues</code> to determine the
-         * possible dimension values.</p> <note> <p>You can't group by any dimension values
-         * for <code>GetSavingsPlansUtilizationDetails</code>.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves attribute data along with aggregate utilization and savings data
+         * for a given time period. This doesn't support granular or grouped data
+         * (daily/monthly) in response. You can't retrieve data by dates in a single
+         * response similar to <code>GetSavingsPlanUtilization</code>, but you have the
+         * option to make multiple calls to <code>GetSavingsPlanUtilizationDetails</code>
+         * by providing individual dates. You can use <code>GetDimensionValues</code> in
+         * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
+         * <note> <p> <code>GetSavingsPlanUtilizationDetails</code> internally groups data
+         * by <code>SavingsPlansArn</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails">AWS
          * API Reference</a></p>
          */
         virtual Model::GetSavingsPlansUtilizationDetailsOutcome GetSavingsPlansUtilizationDetails(const Model::GetSavingsPlansUtilizationDetailsRequest& request) const;
 
         /**
-         * <p>Retrieves a single daily or monthly Savings Plans utilization rate and
-         * details for your account. Master accounts in an organization have access to
-         * member accounts. You can use <code>GetDimensionValues</code> to determine the
-         * possible dimension values.</p> <note> <p>You can't group by any dimension values
-         * for <code>GetSavingsPlansUtilizationDetails</code>.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves attribute data along with aggregate utilization and savings data
+         * for a given time period. This doesn't support granular or grouped data
+         * (daily/monthly) in response. You can't retrieve data by dates in a single
+         * response similar to <code>GetSavingsPlanUtilization</code>, but you have the
+         * option to make multiple calls to <code>GetSavingsPlanUtilizationDetails</code>
+         * by providing individual dates. You can use <code>GetDimensionValues</code> in
+         * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
+         * <note> <p> <code>GetSavingsPlanUtilizationDetails</code> internally groups data
+         * by <code>SavingsPlansArn</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails">AWS
          * API Reference</a></p>
          *
@@ -639,12 +717,15 @@ namespace Model
         virtual Model::GetSavingsPlansUtilizationDetailsOutcomeCallable GetSavingsPlansUtilizationDetailsCallable(const Model::GetSavingsPlansUtilizationDetailsRequest& request) const;
 
         /**
-         * <p>Retrieves a single daily or monthly Savings Plans utilization rate and
-         * details for your account. Master accounts in an organization have access to
-         * member accounts. You can use <code>GetDimensionValues</code> to determine the
-         * possible dimension values.</p> <note> <p>You can't group by any dimension values
-         * for <code>GetSavingsPlansUtilizationDetails</code>.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves attribute data along with aggregate utilization and savings data
+         * for a given time period. This doesn't support granular or grouped data
+         * (daily/monthly) in response. You can't retrieve data by dates in a single
+         * response similar to <code>GetSavingsPlanUtilization</code>, but you have the
+         * option to make multiple calls to <code>GetSavingsPlanUtilizationDetails</code>
+         * by providing individual dates. You can use <code>GetDimensionValues</code> in
+         * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
+         * <note> <p> <code>GetSavingsPlanUtilizationDetails</code> internally groups data
+         * by <code>SavingsPlansArn</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails">AWS
          * API Reference</a></p>
          *
@@ -716,6 +797,7 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void GetCostAndUsageAsyncHelper(const Model::GetCostAndUsageRequest& request, const GetCostAndUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetCostAndUsageWithResourcesAsyncHelper(const Model::GetCostAndUsageWithResourcesRequest& request, const GetCostAndUsageWithResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCostForecastAsyncHelper(const Model::GetCostForecastRequest& request, const GetCostForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDimensionValuesAsyncHelper(const Model::GetDimensionValuesRequest& request, const GetDimensionValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReservationCoverageAsyncHelper(const Model::GetReservationCoverageRequest& request, const GetReservationCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

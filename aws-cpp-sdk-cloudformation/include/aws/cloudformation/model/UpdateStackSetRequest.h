@@ -379,7 +379,7 @@ namespace Model
 
 
     /**
-     * <p>In some cases, you must explicity acknowledge that your stack template
+     * <p>In some cases, you must explicitly acknowledge that your stack template
      * contains certain capabilities in order for AWS CloudFormation to update the
      * stack set and its associated stack instances.</p> <ul> <li> <p>
      * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
@@ -433,7 +433,7 @@ namespace Model
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
 
     /**
-     * <p>In some cases, you must explicity acknowledge that your stack template
+     * <p>In some cases, you must explicitly acknowledge that your stack template
      * contains certain capabilities in order for AWS CloudFormation to update the
      * stack set and its associated stack instances.</p> <ul> <li> <p>
      * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
@@ -487,7 +487,7 @@ namespace Model
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
 
     /**
-     * <p>In some cases, you must explicity acknowledge that your stack template
+     * <p>In some cases, you must explicitly acknowledge that your stack template
      * contains certain capabilities in order for AWS CloudFormation to update the
      * stack set and its associated stack instances.</p> <ul> <li> <p>
      * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
@@ -541,7 +541,7 @@ namespace Model
     inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
 
     /**
-     * <p>In some cases, you must explicity acknowledge that your stack template
+     * <p>In some cases, you must explicitly acknowledge that your stack template
      * contains certain capabilities in order for AWS CloudFormation to update the
      * stack set and its associated stack instances.</p> <ul> <li> <p>
      * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
@@ -595,7 +595,7 @@ namespace Model
     inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
 
     /**
-     * <p>In some cases, you must explicity acknowledge that your stack template
+     * <p>In some cases, you must explicitly acknowledge that your stack template
      * contains certain capabilities in order for AWS CloudFormation to update the
      * stack set and its associated stack instances.</p> <ul> <li> <p>
      * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
@@ -649,7 +649,7 @@ namespace Model
     inline UpdateStackSetRequest& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
 
     /**
-     * <p>In some cases, you must explicity acknowledge that your stack template
+     * <p>In some cases, you must explicitly acknowledge that your stack template
      * contains certain capabilities in order for AWS CloudFormation to update the
      * stack set and its associated stack instances.</p> <ul> <li> <p>
      * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
@@ -703,7 +703,7 @@ namespace Model
     inline UpdateStackSetRequest& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
 
     /**
-     * <p>In some cases, you must explicity acknowledge that your stack template
+     * <p>In some cases, you must explicitly acknowledge that your stack template
      * contains certain capabilities in order for AWS CloudFormation to update the
      * stack set and its associated stack instances.</p> <ul> <li> <p>
      * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
@@ -757,7 +757,7 @@ namespace Model
     inline UpdateStackSetRequest& AddCapabilities(const Capability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
 
     /**
-     * <p>In some cases, you must explicity acknowledge that your stack template
+     * <p>In some cases, you must explicitly acknowledge that your stack template
      * contains certain capabilities in order for AWS CloudFormation to update the
      * stack set and its associated stack instances.</p> <ul> <li> <p>
      * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some

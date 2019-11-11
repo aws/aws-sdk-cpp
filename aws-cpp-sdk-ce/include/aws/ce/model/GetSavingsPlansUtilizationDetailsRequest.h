@@ -100,13 +100,12 @@ namespace Model
      * dimensions. You can filter data with the following dimensions:</p> <ul> <li> <p>
      * <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>SAVINGS_PLAN_ARN</code>
      * </p> </li> <li> <p> <code>REGION</code> </p> </li> <li> <p>
-     * <code>PAYMENT_OPTIONS</code> </p> </li> <li> <p>
+     * <code>PAYMENT_OPTION</code> </p> </li> <li> <p>
      * <code>INSTANCE_TYPE_FAMILY</code> </p> </li> </ul> <p>
      * <code>GetSavingsPlansUtilizationDetails</code> uses the same <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. If there are multiple values for a dimension, they are OR'd
-     * together.</p>
+     * each dimension.</p>
      */
     inline const Expression& GetFilter() const{ return m_filter; }
 
@@ -115,13 +114,12 @@ namespace Model
      * dimensions. You can filter data with the following dimensions:</p> <ul> <li> <p>
      * <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>SAVINGS_PLAN_ARN</code>
      * </p> </li> <li> <p> <code>REGION</code> </p> </li> <li> <p>
-     * <code>PAYMENT_OPTIONS</code> </p> </li> <li> <p>
+     * <code>PAYMENT_OPTION</code> </p> </li> <li> <p>
      * <code>INSTANCE_TYPE_FAMILY</code> </p> </li> </ul> <p>
      * <code>GetSavingsPlansUtilizationDetails</code> uses the same <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. If there are multiple values for a dimension, they are OR'd
-     * together.</p>
+     * each dimension.</p>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
@@ -130,13 +128,12 @@ namespace Model
      * dimensions. You can filter data with the following dimensions:</p> <ul> <li> <p>
      * <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>SAVINGS_PLAN_ARN</code>
      * </p> </li> <li> <p> <code>REGION</code> </p> </li> <li> <p>
-     * <code>PAYMENT_OPTIONS</code> </p> </li> <li> <p>
+     * <code>PAYMENT_OPTION</code> </p> </li> <li> <p>
      * <code>INSTANCE_TYPE_FAMILY</code> </p> </li> </ul> <p>
      * <code>GetSavingsPlansUtilizationDetails</code> uses the same <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. If there are multiple values for a dimension, they are OR'd
-     * together.</p>
+     * each dimension.</p>
      */
     inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
 
@@ -145,13 +142,12 @@ namespace Model
      * dimensions. You can filter data with the following dimensions:</p> <ul> <li> <p>
      * <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>SAVINGS_PLAN_ARN</code>
      * </p> </li> <li> <p> <code>REGION</code> </p> </li> <li> <p>
-     * <code>PAYMENT_OPTIONS</code> </p> </li> <li> <p>
+     * <code>PAYMENT_OPTION</code> </p> </li> <li> <p>
      * <code>INSTANCE_TYPE_FAMILY</code> </p> </li> </ul> <p>
      * <code>GetSavingsPlansUtilizationDetails</code> uses the same <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. If there are multiple values for a dimension, they are OR'd
-     * together.</p>
+     * each dimension.</p>
      */
     inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
@@ -160,13 +156,12 @@ namespace Model
      * dimensions. You can filter data with the following dimensions:</p> <ul> <li> <p>
      * <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>SAVINGS_PLAN_ARN</code>
      * </p> </li> <li> <p> <code>REGION</code> </p> </li> <li> <p>
-     * <code>PAYMENT_OPTIONS</code> </p> </li> <li> <p>
+     * <code>PAYMENT_OPTION</code> </p> </li> <li> <p>
      * <code>INSTANCE_TYPE_FAMILY</code> </p> </li> </ul> <p>
      * <code>GetSavingsPlansUtilizationDetails</code> uses the same <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. If there are multiple values for a dimension, they are OR'd
-     * together.</p>
+     * each dimension.</p>
      */
     inline GetSavingsPlansUtilizationDetailsRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
 
@@ -175,13 +170,12 @@ namespace Model
      * dimensions. You can filter data with the following dimensions:</p> <ul> <li> <p>
      * <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>SAVINGS_PLAN_ARN</code>
      * </p> </li> <li> <p> <code>REGION</code> </p> </li> <li> <p>
-     * <code>PAYMENT_OPTIONS</code> </p> </li> <li> <p>
+     * <code>PAYMENT_OPTION</code> </p> </li> <li> <p>
      * <code>INSTANCE_TYPE_FAMILY</code> </p> </li> </ul> <p>
      * <code>GetSavingsPlansUtilizationDetails</code> uses the same <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. If there are multiple values for a dimension, they are OR'd
-     * together.</p>
+     * each dimension.</p>
      */
     inline GetSavingsPlansUtilizationDetailsRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 

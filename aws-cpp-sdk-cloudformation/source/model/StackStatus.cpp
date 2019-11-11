@@ -47,6 +47,11 @@ namespace Aws
         static const int UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS");
         static const int UPDATE_ROLLBACK_COMPLETE_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_COMPLETE");
         static const int REVIEW_IN_PROGRESS_HASH = HashingUtils::HashString("REVIEW_IN_PROGRESS");
+        static const int IMPORT_IN_PROGRESS_HASH = HashingUtils::HashString("IMPORT_IN_PROGRESS");
+        static const int IMPORT_COMPLETE_HASH = HashingUtils::HashString("IMPORT_COMPLETE");
+        static const int IMPORT_ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("IMPORT_ROLLBACK_IN_PROGRESS");
+        static const int IMPORT_ROLLBACK_FAILED_HASH = HashingUtils::HashString("IMPORT_ROLLBACK_FAILED");
+        static const int IMPORT_ROLLBACK_COMPLETE_HASH = HashingUtils::HashString("IMPORT_ROLLBACK_COMPLETE");
 
 
         StackStatus GetStackStatusForName(const Aws::String& name)
@@ -120,6 +125,26 @@ namespace Aws
           {
             return StackStatus::REVIEW_IN_PROGRESS;
           }
+          else if (hashCode == IMPORT_IN_PROGRESS_HASH)
+          {
+            return StackStatus::IMPORT_IN_PROGRESS;
+          }
+          else if (hashCode == IMPORT_COMPLETE_HASH)
+          {
+            return StackStatus::IMPORT_COMPLETE;
+          }
+          else if (hashCode == IMPORT_ROLLBACK_IN_PROGRESS_HASH)
+          {
+            return StackStatus::IMPORT_ROLLBACK_IN_PROGRESS;
+          }
+          else if (hashCode == IMPORT_ROLLBACK_FAILED_HASH)
+          {
+            return StackStatus::IMPORT_ROLLBACK_FAILED;
+          }
+          else if (hashCode == IMPORT_ROLLBACK_COMPLETE_HASH)
+          {
+            return StackStatus::IMPORT_ROLLBACK_COMPLETE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -168,6 +193,16 @@ namespace Aws
             return "UPDATE_ROLLBACK_COMPLETE";
           case StackStatus::REVIEW_IN_PROGRESS:
             return "REVIEW_IN_PROGRESS";
+          case StackStatus::IMPORT_IN_PROGRESS:
+            return "IMPORT_IN_PROGRESS";
+          case StackStatus::IMPORT_COMPLETE:
+            return "IMPORT_COMPLETE";
+          case StackStatus::IMPORT_ROLLBACK_IN_PROGRESS:
+            return "IMPORT_ROLLBACK_IN_PROGRESS";
+          case StackStatus::IMPORT_ROLLBACK_FAILED:
+            return "IMPORT_ROLLBACK_FAILED";
+          case StackStatus::IMPORT_ROLLBACK_COMPLETE:
+            return "IMPORT_ROLLBACK_COMPLETE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

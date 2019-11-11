@@ -112,6 +112,17 @@ GetTemplateSummaryResult& GetTemplateSummaryResult::operator =(const Aws::Amazon
       }
 
     }
+    XmlNode resourceIdentifierSummariesNode = resultNode.FirstChild("ResourceIdentifierSummaries");
+    if(!resourceIdentifierSummariesNode.IsNull())
+    {
+      XmlNode resourceIdentifierSummariesMember = resourceIdentifierSummariesNode.FirstChild("member");
+      while(!resourceIdentifierSummariesMember.IsNull())
+      {
+        m_resourceIdentifierSummaries.push_back(resourceIdentifierSummariesMember);
+        resourceIdentifierSummariesMember = resourceIdentifierSummariesMember.NextNode("member");
+      }
+
+    }
   }
 
   if (!rootNode.IsNull()) {

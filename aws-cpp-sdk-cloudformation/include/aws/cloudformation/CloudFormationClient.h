@@ -457,13 +457,14 @@ namespace Model
          * stack.</p> <p>To create a change set for a stack that doesn't exist, for the
          * <code>ChangeSetType</code> parameter, specify <code>CREATE</code>. To create a
          * change set for an existing stack, specify <code>UPDATE</code> for the
-         * <code>ChangeSetType</code> parameter. After the <code>CreateChangeSet</code>
-         * call successfully completes, AWS CloudFormation starts creating the change set.
-         * To check the status of the change set or to review it, use the
-         * <a>DescribeChangeSet</a> action.</p> <p>When you are satisfied with the changes
-         * the change set will make, execute the change set by using the
-         * <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make changes until
-         * you execute the change set.</p><p><h3>See Also:</h3>   <a
+         * <code>ChangeSetType</code> parameter. To create a change set for an import
+         * operation, specify <code>IMPORT</code> for the <code>ChangeSetType</code>
+         * parameter. After the <code>CreateChangeSet</code> call successfully completes,
+         * AWS CloudFormation starts creating the change set. To check the status of the
+         * change set or to review it, use the <a>DescribeChangeSet</a> action.</p> <p>When
+         * you are satisfied with the changes the change set will make, execute the change
+         * set by using the <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make
+         * changes until you execute the change set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">AWS
          * API Reference</a></p>
          */
@@ -482,13 +483,14 @@ namespace Model
          * stack.</p> <p>To create a change set for a stack that doesn't exist, for the
          * <code>ChangeSetType</code> parameter, specify <code>CREATE</code>. To create a
          * change set for an existing stack, specify <code>UPDATE</code> for the
-         * <code>ChangeSetType</code> parameter. After the <code>CreateChangeSet</code>
-         * call successfully completes, AWS CloudFormation starts creating the change set.
-         * To check the status of the change set or to review it, use the
-         * <a>DescribeChangeSet</a> action.</p> <p>When you are satisfied with the changes
-         * the change set will make, execute the change set by using the
-         * <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make changes until
-         * you execute the change set.</p><p><h3>See Also:</h3>   <a
+         * <code>ChangeSetType</code> parameter. To create a change set for an import
+         * operation, specify <code>IMPORT</code> for the <code>ChangeSetType</code>
+         * parameter. After the <code>CreateChangeSet</code> call successfully completes,
+         * AWS CloudFormation starts creating the change set. To check the status of the
+         * change set or to review it, use the <a>DescribeChangeSet</a> action.</p> <p>When
+         * you are satisfied with the changes the change set will make, execute the change
+         * set by using the <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make
+         * changes until you execute the change set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">AWS
          * API Reference</a></p>
          *
@@ -509,13 +511,14 @@ namespace Model
          * stack.</p> <p>To create a change set for a stack that doesn't exist, for the
          * <code>ChangeSetType</code> parameter, specify <code>CREATE</code>. To create a
          * change set for an existing stack, specify <code>UPDATE</code> for the
-         * <code>ChangeSetType</code> parameter. After the <code>CreateChangeSet</code>
-         * call successfully completes, AWS CloudFormation starts creating the change set.
-         * To check the status of the change set or to review it, use the
-         * <a>DescribeChangeSet</a> action.</p> <p>When you are satisfied with the changes
-         * the change set will make, execute the change set by using the
-         * <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make changes until
-         * you execute the change set.</p><p><h3>See Also:</h3>   <a
+         * <code>ChangeSetType</code> parameter. To create a change set for an import
+         * operation, specify <code>IMPORT</code> for the <code>ChangeSetType</code>
+         * parameter. After the <code>CreateChangeSet</code> call successfully completes,
+         * AWS CloudFormation starts creating the change set. To check the status of the
+         * change set or to review it, use the <a>DescribeChangeSet</a> action.</p> <p>When
+         * you are satisfied with the changes the change set will make, execute the change
+         * set by using the <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make
+         * changes until you execute the change set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">AWS
          * API Reference</a></p>
          *
@@ -2142,10 +2145,10 @@ namespace Model
          * <p>Updates termination protection for the specified stack. If a user attempts to
          * delete a stack with termination protection enabled, the operation fails and the
          * stack remains unchanged. For more information, see <a
-         * href="AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
          * a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.</p>
          * <p> For <a
-         * href="AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
          * stacks</a>, termination protection is set on the root stack and cannot be
          * changed directly on the nested stack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection">AWS
@@ -2157,10 +2160,10 @@ namespace Model
          * <p>Updates termination protection for the specified stack. If a user attempts to
          * delete a stack with termination protection enabled, the operation fails and the
          * stack remains unchanged. For more information, see <a
-         * href="AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
          * a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.</p>
          * <p> For <a
-         * href="AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
          * stacks</a>, termination protection is set on the root stack and cannot be
          * changed directly on the nested stack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection">AWS
@@ -2174,10 +2177,10 @@ namespace Model
          * <p>Updates termination protection for the specified stack. If a user attempts to
          * delete a stack with termination protection enabled, the operation fails and the
          * stack remains unchanged. For more information, see <a
-         * href="AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
          * a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.</p>
          * <p> For <a
-         * href="AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
          * stacks</a>, termination protection is set on the root stack and cannot be
          * changed directly on the nested stack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection">AWS

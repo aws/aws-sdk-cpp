@@ -32,6 +32,7 @@ namespace Aws
 
         static const int CREATE_HASH = HashingUtils::HashString("CREATE");
         static const int UPDATE_HASH = HashingUtils::HashString("UPDATE");
+        static const int IMPORT_HASH = HashingUtils::HashString("IMPORT");
 
 
         ChangeSetType GetChangeSetTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == UPDATE_HASH)
           {
             return ChangeSetType::UPDATE;
+          }
+          else if (hashCode == IMPORT_HASH)
+          {
+            return ChangeSetType::IMPORT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "CREATE";
           case ChangeSetType::UPDATE:
             return "UPDATE";
+          case ChangeSetType::IMPORT:
+            return "IMPORT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

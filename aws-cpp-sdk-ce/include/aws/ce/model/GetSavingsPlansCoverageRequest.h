@@ -149,37 +149,49 @@ namespace Model
 
     /**
      * <p>The granularity of the Amazon Web Services cost data for your Savings Plans.
-     * <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
+     * <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p> <p>The
+     * <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code>
+     * and <code>MONTHLY</code> granularities.</p>
      */
     inline const Granularity& GetGranularity() const{ return m_granularity; }
 
     /**
      * <p>The granularity of the Amazon Web Services cost data for your Savings Plans.
-     * <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
+     * <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p> <p>The
+     * <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code>
+     * and <code>MONTHLY</code> granularities.</p>
      */
     inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
 
     /**
      * <p>The granularity of the Amazon Web Services cost data for your Savings Plans.
-     * <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
+     * <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p> <p>The
+     * <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code>
+     * and <code>MONTHLY</code> granularities.</p>
      */
     inline void SetGranularity(const Granularity& value) { m_granularityHasBeenSet = true; m_granularity = value; }
 
     /**
      * <p>The granularity of the Amazon Web Services cost data for your Savings Plans.
-     * <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
+     * <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p> <p>The
+     * <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code>
+     * and <code>MONTHLY</code> granularities.</p>
      */
     inline void SetGranularity(Granularity&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
 
     /**
      * <p>The granularity of the Amazon Web Services cost data for your Savings Plans.
-     * <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
+     * <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p> <p>The
+     * <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code>
+     * and <code>MONTHLY</code> granularities.</p>
      */
     inline GetSavingsPlansCoverageRequest& WithGranularity(const Granularity& value) { SetGranularity(value); return *this;}
 
     /**
      * <p>The granularity of the Amazon Web Services cost data for your Savings Plans.
-     * <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
+     * <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p> <p>The
+     * <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code>
+     * and <code>MONTHLY</code> granularities.</p>
      */
     inline GetSavingsPlansCoverageRequest& WithGranularity(Granularity&& value) { SetGranularity(std::move(value)); return *this;}
 
@@ -265,55 +277,55 @@ namespace Model
 
     /**
      * <p>The measurement that you want your Savings Plans coverage reported in. The
-     * only valid value is <code>spendCoveredBySavingsPlans</code>.</p>
+     * only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMetrics() const{ return m_metrics; }
 
     /**
      * <p>The measurement that you want your Savings Plans coverage reported in. The
-     * only valid value is <code>spendCoveredBySavingsPlans</code>.</p>
+     * only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
      */
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
     /**
      * <p>The measurement that you want your Savings Plans coverage reported in. The
-     * only valid value is <code>spendCoveredBySavingsPlans</code>.</p>
+     * only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
      */
     inline void SetMetrics(const Aws::Vector<Aws::String>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
     /**
      * <p>The measurement that you want your Savings Plans coverage reported in. The
-     * only valid value is <code>spendCoveredBySavingsPlans</code>.</p>
+     * only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
      */
     inline void SetMetrics(Aws::Vector<Aws::String>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
 
     /**
      * <p>The measurement that you want your Savings Plans coverage reported in. The
-     * only valid value is <code>spendCoveredBySavingsPlans</code>.</p>
+     * only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
      */
     inline GetSavingsPlansCoverageRequest& WithMetrics(const Aws::Vector<Aws::String>& value) { SetMetrics(value); return *this;}
 
     /**
      * <p>The measurement that you want your Savings Plans coverage reported in. The
-     * only valid value is <code>spendCoveredBySavingsPlans</code>.</p>
+     * only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
      */
     inline GetSavingsPlansCoverageRequest& WithMetrics(Aws::Vector<Aws::String>&& value) { SetMetrics(std::move(value)); return *this;}
 
     /**
      * <p>The measurement that you want your Savings Plans coverage reported in. The
-     * only valid value is <code>spendCoveredBySavingsPlans</code>.</p>
+     * only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
      */
     inline GetSavingsPlansCoverageRequest& AddMetrics(const Aws::String& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
     /**
      * <p>The measurement that you want your Savings Plans coverage reported in. The
-     * only valid value is <code>spendCoveredBySavingsPlans</code>.</p>
+     * only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
      */
     inline GetSavingsPlansCoverageRequest& AddMetrics(Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The measurement that you want your Savings Plans coverage reported in. The
-     * only valid value is <code>spendCoveredBySavingsPlans</code>.</p>
+     * only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
      */
     inline GetSavingsPlansCoverageRequest& AddMetrics(const char* value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 

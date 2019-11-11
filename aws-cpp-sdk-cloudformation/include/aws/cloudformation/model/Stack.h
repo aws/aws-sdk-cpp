@@ -863,7 +863,7 @@ namespace Model
 
     /**
      * <p>For nested stacks--stacks created as resources for another stack--the stack
-     * ID of the the top-level stack to which the nested stack ultimately belongs.</p>
+     * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
@@ -872,7 +872,7 @@ namespace Model
 
     /**
      * <p>For nested stacks--stacks created as resources for another stack--the stack
-     * ID of the the top-level stack to which the nested stack ultimately belongs.</p>
+     * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
@@ -881,7 +881,7 @@ namespace Model
 
     /**
      * <p>For nested stacks--stacks created as resources for another stack--the stack
-     * ID of the the top-level stack to which the nested stack ultimately belongs.</p>
+     * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
@@ -890,7 +890,7 @@ namespace Model
 
     /**
      * <p>For nested stacks--stacks created as resources for another stack--the stack
-     * ID of the the top-level stack to which the nested stack ultimately belongs.</p>
+     * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
@@ -899,7 +899,7 @@ namespace Model
 
     /**
      * <p>For nested stacks--stacks created as resources for another stack--the stack
-     * ID of the the top-level stack to which the nested stack ultimately belongs.</p>
+     * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
@@ -908,7 +908,7 @@ namespace Model
 
     /**
      * <p>For nested stacks--stacks created as resources for another stack--the stack
-     * ID of the the top-level stack to which the nested stack ultimately belongs.</p>
+     * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
@@ -917,7 +917,7 @@ namespace Model
 
     /**
      * <p>For nested stacks--stacks created as resources for another stack--the stack
-     * ID of the the top-level stack to which the nested stack ultimately belongs.</p>
+     * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
@@ -926,7 +926,7 @@ namespace Model
 
     /**
      * <p>For nested stacks--stacks created as resources for another stack--the stack
-     * ID of the the top-level stack to which the nested stack ultimately belongs.</p>
+     * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>

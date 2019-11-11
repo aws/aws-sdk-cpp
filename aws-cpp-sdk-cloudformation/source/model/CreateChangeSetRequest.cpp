@@ -37,7 +37,8 @@ CreateChangeSetRequest::CreateChangeSetRequest() :
     m_clientTokenHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_changeSetType(ChangeSetType::NOT_SET),
-    m_changeSetTypeHasBeenSet(false)
+    m_changeSetTypeHasBeenSet(false),
+    m_resourcesToImportHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,16 @@ Aws::String CreateChangeSetRequest::SerializePayload() const
   if(m_changeSetTypeHasBeenSet)
   {
     ss << "ChangeSetType=" << ChangeSetTypeMapper::GetNameForChangeSetType(m_changeSetType) << "&";
+  }
+
+  if(m_resourcesToImportHasBeenSet)
+  {
+    unsigned resourcesToImportCount = 1;
+    for(auto& item : m_resourcesToImport)
+    {
+      item.OutputToStream(ss, "ResourcesToImport.member.", resourcesToImportCount, "");
+      resourcesToImportCount++;
+    }
   }
 
   ss << "Version=2010-05-15";

@@ -23,6 +23,7 @@
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/Tag.h>
+#include <aws/cloudformation/model/ResourceToImport.h>
 #include <utility>
 
 namespace Aws
@@ -342,7 +343,7 @@ namespace Model
 
 
     /**
-     * <p>In some cases, you must explicity acknowledge that your stack template
+     * <p>In some cases, you must explicitly acknowledge that your stack template
      * contains certain capabilities in order for AWS CloudFormation to create the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
@@ -403,7 +404,7 @@ namespace Model
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
 
     /**
-     * <p>In some cases, you must explicity acknowledge that your stack template
+     * <p>In some cases, you must explicitly acknowledge that your stack template
      * contains certain capabilities in order for AWS CloudFormation to create the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
@@ -464,7 +465,7 @@ namespace Model
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
 
     /**
-     * <p>In some cases, you must explicity acknowledge that your stack template
+     * <p>In some cases, you must explicitly acknowledge that your stack template
      * contains certain capabilities in order for AWS CloudFormation to create the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
@@ -525,7 +526,7 @@ namespace Model
     inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
 
     /**
-     * <p>In some cases, you must explicity acknowledge that your stack template
+     * <p>In some cases, you must explicitly acknowledge that your stack template
      * contains certain capabilities in order for AWS CloudFormation to create the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
@@ -586,7 +587,7 @@ namespace Model
     inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
 
     /**
-     * <p>In some cases, you must explicity acknowledge that your stack template
+     * <p>In some cases, you must explicitly acknowledge that your stack template
      * contains certain capabilities in order for AWS CloudFormation to create the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
@@ -647,7 +648,7 @@ namespace Model
     inline CreateChangeSetRequest& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
 
     /**
-     * <p>In some cases, you must explicity acknowledge that your stack template
+     * <p>In some cases, you must explicitly acknowledge that your stack template
      * contains certain capabilities in order for AWS CloudFormation to create the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
@@ -708,7 +709,7 @@ namespace Model
     inline CreateChangeSetRequest& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
 
     /**
-     * <p>In some cases, you must explicity acknowledge that your stack template
+     * <p>In some cases, you must explicitly acknowledge that your stack template
      * contains certain capabilities in order for AWS CloudFormation to create the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
@@ -769,7 +770,7 @@ namespace Model
     inline CreateChangeSetRequest& AddCapabilities(const Capability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
 
     /**
-     * <p>In some cases, you must explicity acknowledge that your stack template
+     * <p>In some cases, you must explicitly acknowledge that your stack template
      * contains certain capabilities in order for AWS CloudFormation to create the
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
@@ -1419,7 +1420,8 @@ namespace Model
     /**
      * <p>The type of change set operation. To create a change set for a new stack,
      * specify <code>CREATE</code>. To create a change set for an existing stack,
-     * specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack,
+     * specify <code>UPDATE</code>. To create a change set for an import operation,
+     * specify <code>IMPORT</code>.</p> <p>If you create a change set for a new stack,
      * AWS Cloudformation creates a stack with a unique stack ID, but no template or
      * resources. The stack will be in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
@@ -1433,7 +1435,8 @@ namespace Model
     /**
      * <p>The type of change set operation. To create a change set for a new stack,
      * specify <code>CREATE</code>. To create a change set for an existing stack,
-     * specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack,
+     * specify <code>UPDATE</code>. To create a change set for an import operation,
+     * specify <code>IMPORT</code>.</p> <p>If you create a change set for a new stack,
      * AWS Cloudformation creates a stack with a unique stack ID, but no template or
      * resources. The stack will be in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
@@ -1447,7 +1450,8 @@ namespace Model
     /**
      * <p>The type of change set operation. To create a change set for a new stack,
      * specify <code>CREATE</code>. To create a change set for an existing stack,
-     * specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack,
+     * specify <code>UPDATE</code>. To create a change set for an import operation,
+     * specify <code>IMPORT</code>.</p> <p>If you create a change set for a new stack,
      * AWS Cloudformation creates a stack with a unique stack ID, but no template or
      * resources. The stack will be in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
@@ -1461,7 +1465,8 @@ namespace Model
     /**
      * <p>The type of change set operation. To create a change set for a new stack,
      * specify <code>CREATE</code>. To create a change set for an existing stack,
-     * specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack,
+     * specify <code>UPDATE</code>. To create a change set for an import operation,
+     * specify <code>IMPORT</code>.</p> <p>If you create a change set for a new stack,
      * AWS Cloudformation creates a stack with a unique stack ID, but no template or
      * resources. The stack will be in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
@@ -1475,7 +1480,8 @@ namespace Model
     /**
      * <p>The type of change set operation. To create a change set for a new stack,
      * specify <code>CREATE</code>. To create a change set for an existing stack,
-     * specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack,
+     * specify <code>UPDATE</code>. To create a change set for an import operation,
+     * specify <code>IMPORT</code>.</p> <p>If you create a change set for a new stack,
      * AWS Cloudformation creates a stack with a unique stack ID, but no template or
      * resources. The stack will be in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
@@ -1489,7 +1495,8 @@ namespace Model
     /**
      * <p>The type of change set operation. To create a change set for a new stack,
      * specify <code>CREATE</code>. To create a change set for an existing stack,
-     * specify <code>UPDATE</code>.</p> <p>If you create a change set for a new stack,
+     * specify <code>UPDATE</code>. To create a change set for an import operation,
+     * specify <code>IMPORT</code>.</p> <p>If you create a change set for a new stack,
      * AWS Cloudformation creates a stack with a unique stack ID, but no template or
      * resources. The stack will be in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
@@ -1499,6 +1506,47 @@ namespace Model
      * <code>CREATE</code> type to create a change set for an existing stack.</p>
      */
     inline CreateChangeSetRequest& WithChangeSetType(ChangeSetType&& value) { SetChangeSetType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The resources to import into your stack.</p>
+     */
+    inline const Aws::Vector<ResourceToImport>& GetResourcesToImport() const{ return m_resourcesToImport; }
+
+    /**
+     * <p>The resources to import into your stack.</p>
+     */
+    inline bool ResourcesToImportHasBeenSet() const { return m_resourcesToImportHasBeenSet; }
+
+    /**
+     * <p>The resources to import into your stack.</p>
+     */
+    inline void SetResourcesToImport(const Aws::Vector<ResourceToImport>& value) { m_resourcesToImportHasBeenSet = true; m_resourcesToImport = value; }
+
+    /**
+     * <p>The resources to import into your stack.</p>
+     */
+    inline void SetResourcesToImport(Aws::Vector<ResourceToImport>&& value) { m_resourcesToImportHasBeenSet = true; m_resourcesToImport = std::move(value); }
+
+    /**
+     * <p>The resources to import into your stack.</p>
+     */
+    inline CreateChangeSetRequest& WithResourcesToImport(const Aws::Vector<ResourceToImport>& value) { SetResourcesToImport(value); return *this;}
+
+    /**
+     * <p>The resources to import into your stack.</p>
+     */
+    inline CreateChangeSetRequest& WithResourcesToImport(Aws::Vector<ResourceToImport>&& value) { SetResourcesToImport(std::move(value)); return *this;}
+
+    /**
+     * <p>The resources to import into your stack.</p>
+     */
+    inline CreateChangeSetRequest& AddResourcesToImport(const ResourceToImport& value) { m_resourcesToImportHasBeenSet = true; m_resourcesToImport.push_back(value); return *this; }
+
+    /**
+     * <p>The resources to import into your stack.</p>
+     */
+    inline CreateChangeSetRequest& AddResourcesToImport(ResourceToImport&& value) { m_resourcesToImportHasBeenSet = true; m_resourcesToImport.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -1546,6 +1594,9 @@ namespace Model
 
     ChangeSetType m_changeSetType;
     bool m_changeSetTypeHasBeenSet;
+
+    Aws::Vector<ResourceToImport> m_resourcesToImport;
+    bool m_resourcesToImportHasBeenSet;
   };
 
 } // namespace Model

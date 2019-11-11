@@ -20,6 +20,7 @@
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/ParameterDeclaration.h>
 #include <aws/cloudformation/model/Capability.h>
+#include <aws/cloudformation/model/ResourceIdentifierSummary.h>
 #include <utility>
 
 namespace Aws
@@ -443,6 +444,63 @@ namespace Model
     inline GetTemplateSummaryResult& AddDeclaredTransforms(const char* value) { m_declaredTransforms.push_back(value); return *this; }
 
 
+    /**
+     * <p>A list of resource identifier summaries that describe the target resources of
+     * an import operation and the properties you can provide during the import to
+     * identify the target resources. For example, <code>BucketName</code> is a
+     * possible identifier property for an <code>AWS::S3::Bucket</code> resource. </p>
+     */
+    inline const Aws::Vector<ResourceIdentifierSummary>& GetResourceIdentifierSummaries() const{ return m_resourceIdentifierSummaries; }
+
+    /**
+     * <p>A list of resource identifier summaries that describe the target resources of
+     * an import operation and the properties you can provide during the import to
+     * identify the target resources. For example, <code>BucketName</code> is a
+     * possible identifier property for an <code>AWS::S3::Bucket</code> resource. </p>
+     */
+    inline void SetResourceIdentifierSummaries(const Aws::Vector<ResourceIdentifierSummary>& value) { m_resourceIdentifierSummaries = value; }
+
+    /**
+     * <p>A list of resource identifier summaries that describe the target resources of
+     * an import operation and the properties you can provide during the import to
+     * identify the target resources. For example, <code>BucketName</code> is a
+     * possible identifier property for an <code>AWS::S3::Bucket</code> resource. </p>
+     */
+    inline void SetResourceIdentifierSummaries(Aws::Vector<ResourceIdentifierSummary>&& value) { m_resourceIdentifierSummaries = std::move(value); }
+
+    /**
+     * <p>A list of resource identifier summaries that describe the target resources of
+     * an import operation and the properties you can provide during the import to
+     * identify the target resources. For example, <code>BucketName</code> is a
+     * possible identifier property for an <code>AWS::S3::Bucket</code> resource. </p>
+     */
+    inline GetTemplateSummaryResult& WithResourceIdentifierSummaries(const Aws::Vector<ResourceIdentifierSummary>& value) { SetResourceIdentifierSummaries(value); return *this;}
+
+    /**
+     * <p>A list of resource identifier summaries that describe the target resources of
+     * an import operation and the properties you can provide during the import to
+     * identify the target resources. For example, <code>BucketName</code> is a
+     * possible identifier property for an <code>AWS::S3::Bucket</code> resource. </p>
+     */
+    inline GetTemplateSummaryResult& WithResourceIdentifierSummaries(Aws::Vector<ResourceIdentifierSummary>&& value) { SetResourceIdentifierSummaries(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of resource identifier summaries that describe the target resources of
+     * an import operation and the properties you can provide during the import to
+     * identify the target resources. For example, <code>BucketName</code> is a
+     * possible identifier property for an <code>AWS::S3::Bucket</code> resource. </p>
+     */
+    inline GetTemplateSummaryResult& AddResourceIdentifierSummaries(const ResourceIdentifierSummary& value) { m_resourceIdentifierSummaries.push_back(value); return *this; }
+
+    /**
+     * <p>A list of resource identifier summaries that describe the target resources of
+     * an import operation and the properties you can provide during the import to
+     * identify the target resources. For example, <code>BucketName</code> is a
+     * possible identifier property for an <code>AWS::S3::Bucket</code> resource. </p>
+     */
+    inline GetTemplateSummaryResult& AddResourceIdentifierSummaries(ResourceIdentifierSummary&& value) { m_resourceIdentifierSummaries.push_back(std::move(value)); return *this; }
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -475,6 +533,8 @@ namespace Model
     Aws::String m_metadata;
 
     Aws::Vector<Aws::String> m_declaredTransforms;
+
+    Aws::Vector<ResourceIdentifierSummary> m_resourceIdentifierSummaries;
 
     ResponseMetadata m_responseMetadata;
   };

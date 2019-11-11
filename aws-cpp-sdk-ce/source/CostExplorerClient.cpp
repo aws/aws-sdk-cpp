@@ -31,6 +31,7 @@
 #include <aws/ce/CostExplorerEndpoint.h>
 #include <aws/ce/CostExplorerErrorMarshaller.h>
 #include <aws/ce/model/GetCostAndUsageRequest.h>
+#include <aws/ce/model/GetCostAndUsageWithResourcesRequest.h>
 #include <aws/ce/model/GetCostForecastRequest.h>
 #include <aws/ce/model/GetDimensionValuesRequest.h>
 #include <aws/ce/model/GetReservationCoverageRequest.h>
@@ -149,6 +150,41 @@ void CostExplorerClient::GetCostAndUsageAsync(const GetCostAndUsageRequest& requ
 void CostExplorerClient::GetCostAndUsageAsyncHelper(const GetCostAndUsageRequest& request, const GetCostAndUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetCostAndUsage(request), context);
+}
+
+GetCostAndUsageWithResourcesOutcome CostExplorerClient::GetCostAndUsageWithResources(const GetCostAndUsageWithResourcesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetCostAndUsageWithResourcesOutcome(GetCostAndUsageWithResourcesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetCostAndUsageWithResourcesOutcome(outcome.GetError());
+  }
+}
+
+GetCostAndUsageWithResourcesOutcomeCallable CostExplorerClient::GetCostAndUsageWithResourcesCallable(const GetCostAndUsageWithResourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCostAndUsageWithResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCostAndUsageWithResources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CostExplorerClient::GetCostAndUsageWithResourcesAsync(const GetCostAndUsageWithResourcesRequest& request, const GetCostAndUsageWithResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCostAndUsageWithResourcesAsyncHelper( request, handler, context ); } );
+}
+
+void CostExplorerClient::GetCostAndUsageWithResourcesAsyncHelper(const GetCostAndUsageWithResourcesRequest& request, const GetCostAndUsageWithResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCostAndUsageWithResources(request), context);
 }
 
 GetCostForecastOutcome CostExplorerClient::GetCostForecast(const GetCostForecastRequest& request) const

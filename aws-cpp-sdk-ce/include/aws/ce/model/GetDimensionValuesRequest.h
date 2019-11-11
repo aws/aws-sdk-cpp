@@ -217,7 +217,9 @@ namespace Model
      * grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms.
      * The response for this operation includes a unit attribute.</p> </li> <li>
      * <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs,
-     * tax refunds, and credits.</p> </li> </ul> <p>If you set the context to
+     * tax refunds, and credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier
+     * of the resource. ResourceId is an opt-in feature only available for last 14 days
+     * for EC2-Compute Service.</p> </li> </ul> <p>If you set the context to
      * <code>RESERVATIONS</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
      * <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache
@@ -278,7 +280,9 @@ namespace Model
      * grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms.
      * The response for this operation includes a unit attribute.</p> </li> <li>
      * <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs,
-     * tax refunds, and credits.</p> </li> </ul> <p>If you set the context to
+     * tax refunds, and credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier
+     * of the resource. ResourceId is an opt-in feature only available for last 14 days
+     * for EC2-Compute Service.</p> </li> </ul> <p>If you set the context to
      * <code>RESERVATIONS</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
      * <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache
@@ -339,7 +343,9 @@ namespace Model
      * grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms.
      * The response for this operation includes a unit attribute.</p> </li> <li>
      * <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs,
-     * tax refunds, and credits.</p> </li> </ul> <p>If you set the context to
+     * tax refunds, and credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier
+     * of the resource. ResourceId is an opt-in feature only available for last 14 days
+     * for EC2-Compute Service.</p> </li> </ul> <p>If you set the context to
      * <code>RESERVATIONS</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
      * <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache
@@ -400,7 +406,9 @@ namespace Model
      * grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms.
      * The response for this operation includes a unit attribute.</p> </li> <li>
      * <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs,
-     * tax refunds, and credits.</p> </li> </ul> <p>If you set the context to
+     * tax refunds, and credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier
+     * of the resource. ResourceId is an opt-in feature only available for last 14 days
+     * for EC2-Compute Service.</p> </li> </ul> <p>If you set the context to
      * <code>RESERVATIONS</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
      * <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache
@@ -461,7 +469,9 @@ namespace Model
      * grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms.
      * The response for this operation includes a unit attribute.</p> </li> <li>
      * <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs,
-     * tax refunds, and credits.</p> </li> </ul> <p>If you set the context to
+     * tax refunds, and credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier
+     * of the resource. ResourceId is an opt-in feature only available for last 14 days
+     * for EC2-Compute Service.</p> </li> </ul> <p>If you set the context to
      * <code>RESERVATIONS</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
      * <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache
@@ -522,7 +532,9 @@ namespace Model
      * grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms.
      * The response for this operation includes a unit attribute.</p> </li> <li>
      * <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs,
-     * tax refunds, and credits.</p> </li> </ul> <p>If you set the context to
+     * tax refunds, and credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier
+     * of the resource. ResourceId is an opt-in feature only available for last 14 days
+     * for EC2-Compute Service.</p> </li> </ul> <p>If you set the context to
      * <code>RESERVATIONS</code>, you can use the following dimensions for
      * searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is
      * <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache

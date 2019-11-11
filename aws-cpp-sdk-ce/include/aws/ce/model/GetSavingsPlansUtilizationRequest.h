@@ -97,37 +97,43 @@ namespace Model
 
     /**
      * <p>The granularity of the Amazon Web Services utillization data for your Savings
-     * Plans.</p>
+     * Plans.</p> <p>The <code>GetSavingsPlansUtilization</code> operation supports
+     * only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
      */
     inline const Granularity& GetGranularity() const{ return m_granularity; }
 
     /**
      * <p>The granularity of the Amazon Web Services utillization data for your Savings
-     * Plans.</p>
+     * Plans.</p> <p>The <code>GetSavingsPlansUtilization</code> operation supports
+     * only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
      */
     inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
 
     /**
      * <p>The granularity of the Amazon Web Services utillization data for your Savings
-     * Plans.</p>
+     * Plans.</p> <p>The <code>GetSavingsPlansUtilization</code> operation supports
+     * only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
      */
     inline void SetGranularity(const Granularity& value) { m_granularityHasBeenSet = true; m_granularity = value; }
 
     /**
      * <p>The granularity of the Amazon Web Services utillization data for your Savings
-     * Plans.</p>
+     * Plans.</p> <p>The <code>GetSavingsPlansUtilization</code> operation supports
+     * only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
      */
     inline void SetGranularity(Granularity&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
 
     /**
      * <p>The granularity of the Amazon Web Services utillization data for your Savings
-     * Plans.</p>
+     * Plans.</p> <p>The <code>GetSavingsPlansUtilization</code> operation supports
+     * only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
      */
     inline GetSavingsPlansUtilizationRequest& WithGranularity(const Granularity& value) { SetGranularity(value); return *this;}
 
     /**
      * <p>The granularity of the Amazon Web Services utillization data for your Savings
-     * Plans.</p>
+     * Plans.</p> <p>The <code>GetSavingsPlansUtilization</code> operation supports
+     * only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
      */
     inline GetSavingsPlansUtilizationRequest& WithGranularity(Granularity&& value) { SetGranularity(std::move(value)); return *this;}
 
@@ -137,13 +143,12 @@ namespace Model
      * dimensions. You can filter data with the following dimensions:</p> <ul> <li> <p>
      * <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>SAVINGS_PLAN_ARN</code>
      * </p> </li> <li> <p> <code>SAVINGS_PLANS_TYPE</code> </p> </li> <li> <p>
-     * <code>REGION</code> </p> </li> <li> <p> <code>PAYMENT_OPTIONS</code> </p> </li>
+     * <code>REGION</code> </p> </li> <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
      * <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> </ul> <p>
      * <code>GetSavingsPlansUtilization</code> uses the same <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. If there are multiple values for a dimension, they are OR'd
-     * together.</p>
+     * each dimension.</p>
      */
     inline const Expression& GetFilter() const{ return m_filter; }
 
@@ -152,13 +157,12 @@ namespace Model
      * dimensions. You can filter data with the following dimensions:</p> <ul> <li> <p>
      * <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>SAVINGS_PLAN_ARN</code>
      * </p> </li> <li> <p> <code>SAVINGS_PLANS_TYPE</code> </p> </li> <li> <p>
-     * <code>REGION</code> </p> </li> <li> <p> <code>PAYMENT_OPTIONS</code> </p> </li>
+     * <code>REGION</code> </p> </li> <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
      * <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> </ul> <p>
      * <code>GetSavingsPlansUtilization</code> uses the same <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. If there are multiple values for a dimension, they are OR'd
-     * together.</p>
+     * each dimension.</p>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
@@ -167,13 +171,12 @@ namespace Model
      * dimensions. You can filter data with the following dimensions:</p> <ul> <li> <p>
      * <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>SAVINGS_PLAN_ARN</code>
      * </p> </li> <li> <p> <code>SAVINGS_PLANS_TYPE</code> </p> </li> <li> <p>
-     * <code>REGION</code> </p> </li> <li> <p> <code>PAYMENT_OPTIONS</code> </p> </li>
+     * <code>REGION</code> </p> </li> <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
      * <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> </ul> <p>
      * <code>GetSavingsPlansUtilization</code> uses the same <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. If there are multiple values for a dimension, they are OR'd
-     * together.</p>
+     * each dimension.</p>
      */
     inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
 
@@ -182,13 +185,12 @@ namespace Model
      * dimensions. You can filter data with the following dimensions:</p> <ul> <li> <p>
      * <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>SAVINGS_PLAN_ARN</code>
      * </p> </li> <li> <p> <code>SAVINGS_PLANS_TYPE</code> </p> </li> <li> <p>
-     * <code>REGION</code> </p> </li> <li> <p> <code>PAYMENT_OPTIONS</code> </p> </li>
+     * <code>REGION</code> </p> </li> <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
      * <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> </ul> <p>
      * <code>GetSavingsPlansUtilization</code> uses the same <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. If there are multiple values for a dimension, they are OR'd
-     * together.</p>
+     * each dimension.</p>
      */
     inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
@@ -197,13 +199,12 @@ namespace Model
      * dimensions. You can filter data with the following dimensions:</p> <ul> <li> <p>
      * <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>SAVINGS_PLAN_ARN</code>
      * </p> </li> <li> <p> <code>SAVINGS_PLANS_TYPE</code> </p> </li> <li> <p>
-     * <code>REGION</code> </p> </li> <li> <p> <code>PAYMENT_OPTIONS</code> </p> </li>
+     * <code>REGION</code> </p> </li> <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
      * <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> </ul> <p>
      * <code>GetSavingsPlansUtilization</code> uses the same <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. If there are multiple values for a dimension, they are OR'd
-     * together.</p>
+     * each dimension.</p>
      */
     inline GetSavingsPlansUtilizationRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
 
@@ -212,13 +213,12 @@ namespace Model
      * dimensions. You can filter data with the following dimensions:</p> <ul> <li> <p>
      * <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>SAVINGS_PLAN_ARN</code>
      * </p> </li> <li> <p> <code>SAVINGS_PLANS_TYPE</code> </p> </li> <li> <p>
-     * <code>REGION</code> </p> </li> <li> <p> <code>PAYMENT_OPTIONS</code> </p> </li>
+     * <code>REGION</code> </p> </li> <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
      * <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> </ul> <p>
      * <code>GetSavingsPlansUtilization</code> uses the same <a
      * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
-     * each dimension. If there are multiple values for a dimension, they are OR'd
-     * together.</p>
+     * each dimension.</p>
      */
     inline GetSavingsPlansUtilizationRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 
