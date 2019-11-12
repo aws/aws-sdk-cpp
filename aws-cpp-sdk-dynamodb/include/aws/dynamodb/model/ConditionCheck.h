@@ -38,7 +38,7 @@ namespace Model
 
   /**
    * <p>Represents a request to perform a check that an item exists or to check the
-   * condition of specific attributes of the item..</p><p><h3>See Also:</h3>   <a
+   * condition of specific attributes of the item.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ConditionCheck">AWS
    * API Reference</a></p>
    */

@@ -48,42 +48,42 @@ namespace Model
 
 
     /**
-     * <p>The region of the replica to be added.</p>
+     * <p>The Region of the replica to be added.</p>
      */
     inline const Aws::String& GetRegionName() const{ return m_regionName; }
 
     /**
-     * <p>The region of the replica to be added.</p>
+     * <p>The Region of the replica to be added.</p>
      */
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
 
     /**
-     * <p>The region of the replica to be added.</p>
+     * <p>The Region of the replica to be added.</p>
      */
     inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
 
     /**
-     * <p>The region of the replica to be added.</p>
+     * <p>The Region of the replica to be added.</p>
      */
     inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
 
     /**
-     * <p>The region of the replica to be added.</p>
+     * <p>The Region of the replica to be added.</p>
      */
     inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
 
     /**
-     * <p>The region of the replica to be added.</p>
+     * <p>The Region of the replica to be added.</p>
      */
     inline CreateReplicaAction& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
 
     /**
-     * <p>The region of the replica to be added.</p>
+     * <p>The Region of the replica to be added.</p>
      */
     inline CreateReplicaAction& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
 
     /**
-     * <p>The region of the replica to be added.</p>
+     * <p>The Region of the replica to be added.</p>
      */
     inline CreateReplicaAction& WithRegionName(const char* value) { SetRegionName(value); return *this;}
 

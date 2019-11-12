@@ -112,56 +112,56 @@ namespace Model
 
     /**
      * <p>Represents the GSI properties for the table when the backup was created. It
-     * includes the IndexName, KeySchema, Projection and ProvisionedThroughput for the
+     * includes the IndexName, KeySchema, Projection, and ProvisionedThroughput for the
      * GSIs on the table at the time of backup. </p>
      */
     inline const Aws::Vector<GlobalSecondaryIndexInfo>& GetGlobalSecondaryIndexes() const{ return m_globalSecondaryIndexes; }
 
     /**
      * <p>Represents the GSI properties for the table when the backup was created. It
-     * includes the IndexName, KeySchema, Projection and ProvisionedThroughput for the
+     * includes the IndexName, KeySchema, Projection, and ProvisionedThroughput for the
      * GSIs on the table at the time of backup. </p>
      */
     inline bool GlobalSecondaryIndexesHasBeenSet() const { return m_globalSecondaryIndexesHasBeenSet; }
 
     /**
      * <p>Represents the GSI properties for the table when the backup was created. It
-     * includes the IndexName, KeySchema, Projection and ProvisionedThroughput for the
+     * includes the IndexName, KeySchema, Projection, and ProvisionedThroughput for the
      * GSIs on the table at the time of backup. </p>
      */
     inline void SetGlobalSecondaryIndexes(const Aws::Vector<GlobalSecondaryIndexInfo>& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes = value; }
 
     /**
      * <p>Represents the GSI properties for the table when the backup was created. It
-     * includes the IndexName, KeySchema, Projection and ProvisionedThroughput for the
+     * includes the IndexName, KeySchema, Projection, and ProvisionedThroughput for the
      * GSIs on the table at the time of backup. </p>
      */
     inline void SetGlobalSecondaryIndexes(Aws::Vector<GlobalSecondaryIndexInfo>&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes = std::move(value); }
 
     /**
      * <p>Represents the GSI properties for the table when the backup was created. It
-     * includes the IndexName, KeySchema, Projection and ProvisionedThroughput for the
+     * includes the IndexName, KeySchema, Projection, and ProvisionedThroughput for the
      * GSIs on the table at the time of backup. </p>
      */
     inline SourceTableFeatureDetails& WithGlobalSecondaryIndexes(const Aws::Vector<GlobalSecondaryIndexInfo>& value) { SetGlobalSecondaryIndexes(value); return *this;}
 
     /**
      * <p>Represents the GSI properties for the table when the backup was created. It
-     * includes the IndexName, KeySchema, Projection and ProvisionedThroughput for the
+     * includes the IndexName, KeySchema, Projection, and ProvisionedThroughput for the
      * GSIs on the table at the time of backup. </p>
      */
     inline SourceTableFeatureDetails& WithGlobalSecondaryIndexes(Aws::Vector<GlobalSecondaryIndexInfo>&& value) { SetGlobalSecondaryIndexes(std::move(value)); return *this;}
 
     /**
      * <p>Represents the GSI properties for the table when the backup was created. It
-     * includes the IndexName, KeySchema, Projection and ProvisionedThroughput for the
+     * includes the IndexName, KeySchema, Projection, and ProvisionedThroughput for the
      * GSIs on the table at the time of backup. </p>
      */
     inline SourceTableFeatureDetails& AddGlobalSecondaryIndexes(const GlobalSecondaryIndexInfo& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.push_back(value); return *this; }
 
     /**
      * <p>Represents the GSI properties for the table when the backup was created. It
-     * includes the IndexName, KeySchema, Projection and ProvisionedThroughput for the
+     * includes the IndexName, KeySchema, Projection, and ProvisionedThroughput for the
      * GSIs on the table at the time of backup. </p>
      */
     inline SourceTableFeatureDetails& AddGlobalSecondaryIndexes(GlobalSecondaryIndexInfo&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.push_back(std::move(value)); return *this; }

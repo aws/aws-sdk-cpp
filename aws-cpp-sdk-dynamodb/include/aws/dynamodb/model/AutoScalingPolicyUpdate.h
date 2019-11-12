@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the autoscaling policy to be modified.</p><p><h3>See Also:</h3>  
+   * <p>Represents the auto scaling policy to be modified.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/AutoScalingPolicyUpdate">AWS
    * API Reference</a></p>

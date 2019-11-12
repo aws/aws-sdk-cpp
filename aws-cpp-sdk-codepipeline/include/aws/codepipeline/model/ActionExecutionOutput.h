@@ -17,7 +17,9 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codepipeline/model/ActionExecutionResult.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/codepipeline/model/ArtifactDetail.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -135,6 +137,85 @@ namespace Model
      */
     inline ActionExecutionOutput& WithExecutionResult(ActionExecutionResult&& value) { SetExecutionResult(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The outputVariables field shows the key-value pairs that were output as part
+     * of that execution.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetOutputVariables() const{ return m_outputVariables; }
+
+    /**
+     * <p>The outputVariables field shows the key-value pairs that were output as part
+     * of that execution.</p>
+     */
+    inline bool OutputVariablesHasBeenSet() const { return m_outputVariablesHasBeenSet; }
+
+    /**
+     * <p>The outputVariables field shows the key-value pairs that were output as part
+     * of that execution.</p>
+     */
+    inline void SetOutputVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_outputVariablesHasBeenSet = true; m_outputVariables = value; }
+
+    /**
+     * <p>The outputVariables field shows the key-value pairs that were output as part
+     * of that execution.</p>
+     */
+    inline void SetOutputVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables = std::move(value); }
+
+    /**
+     * <p>The outputVariables field shows the key-value pairs that were output as part
+     * of that execution.</p>
+     */
+    inline ActionExecutionOutput& WithOutputVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetOutputVariables(value); return *this;}
+
+    /**
+     * <p>The outputVariables field shows the key-value pairs that were output as part
+     * of that execution.</p>
+     */
+    inline ActionExecutionOutput& WithOutputVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetOutputVariables(std::move(value)); return *this;}
+
+    /**
+     * <p>The outputVariables field shows the key-value pairs that were output as part
+     * of that execution.</p>
+     */
+    inline ActionExecutionOutput& AddOutputVariables(const Aws::String& key, const Aws::String& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(key, value); return *this; }
+
+    /**
+     * <p>The outputVariables field shows the key-value pairs that were output as part
+     * of that execution.</p>
+     */
+    inline ActionExecutionOutput& AddOutputVariables(Aws::String&& key, const Aws::String& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The outputVariables field shows the key-value pairs that were output as part
+     * of that execution.</p>
+     */
+    inline ActionExecutionOutput& AddOutputVariables(const Aws::String& key, Aws::String&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The outputVariables field shows the key-value pairs that were output as part
+     * of that execution.</p>
+     */
+    inline ActionExecutionOutput& AddOutputVariables(Aws::String&& key, Aws::String&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The outputVariables field shows the key-value pairs that were output as part
+     * of that execution.</p>
+     */
+    inline ActionExecutionOutput& AddOutputVariables(const char* key, Aws::String&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The outputVariables field shows the key-value pairs that were output as part
+     * of that execution.</p>
+     */
+    inline ActionExecutionOutput& AddOutputVariables(Aws::String&& key, const char* value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The outputVariables field shows the key-value pairs that were output as part
+     * of that execution.</p>
+     */
+    inline ActionExecutionOutput& AddOutputVariables(const char* key, const char* value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(key, value); return *this; }
+
   private:
 
     Aws::Vector<ArtifactDetail> m_outputArtifacts;
@@ -142,6 +223,9 @@ namespace Model
 
     ActionExecutionResult m_executionResult;
     bool m_executionResultHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_outputVariables;
+    bool m_outputVariablesHasBeenSet;
   };
 
 } // namespace Model

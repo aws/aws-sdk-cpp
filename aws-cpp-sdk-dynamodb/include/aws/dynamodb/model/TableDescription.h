@@ -642,7 +642,7 @@ namespace Model
      * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * attributes are projected into the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -676,7 +676,7 @@ namespace Model
      * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * attributes are projected into the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -710,7 +710,7 @@ namespace Model
      * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * attributes are projected into the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -744,7 +744,7 @@ namespace Model
      * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * attributes are projected into the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -778,7 +778,7 @@ namespace Model
      * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * attributes are projected into the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -812,7 +812,7 @@ namespace Model
      * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * attributes are projected into the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -846,7 +846,7 @@ namespace Model
      * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * attributes are projected into the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -880,7 +880,7 @@ namespace Model
      * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
      * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * attributes are projected into the index. The list of projected attributes is in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
@@ -904,13 +904,19 @@ namespace Model
      * given partition key value. Each element is composed of:</p> <ul> <li> <p>
      * <code>Backfilling</code> - If true, then the index is currently in the
      * backfilling phase. Backfilling occurs only when a new global secondary index is
-     * added to the table; it is the process by which DynamoDB populates the new index
+     * added to the table. It is the process by which DynamoDB populates the new index
      * with data from the table. (This attribute does not appear for indexes that were
-     * created during a <code>CreateTable</code> operation.)</p> </li> <li> <p>
-     * <code>IndexName</code> - The name of the global secondary index.</p> </li> <li>
-     * <p> <code>IndexSizeBytes</code> - The total size of the global secondary index,
-     * in bytes. DynamoDB updates this value approximately every six hours. Recent
-     * changes might not be reflected in this value. </p> </li> <li> <p>
+     * created during a <code>CreateTable</code> operation.) </p> <p> You can delete an
+     * index that is being created during the <code>Backfilling</code> phase when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * true. You can't delete the index that is being created when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * false. (This attribute does not appear for indexes that were created during a
+     * <code>CreateTable</code> operation.)</p> </li> <li> <p> <code>IndexName</code> -
+     * The name of the global secondary index.</p> </li> <li> <p>
+     * <code>IndexSizeBytes</code> - The total size of the global secondary index, in
+     * bytes. DynamoDB updates this value approximately every six hours. Recent changes
+     * might not be reflected in this value. </p> </li> <li> <p>
      * <code>IndexStatus</code> - The current status of the global secondary index:</p>
      * <ul> <li> <p> <code>CREATING</code> - The index is being created.</p> </li> <li>
      * <p> <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
@@ -929,7 +935,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
      * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
      * Only the specified table attributes are projected into the index. The list of
-     * projected attributes are in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -949,13 +955,19 @@ namespace Model
      * given partition key value. Each element is composed of:</p> <ul> <li> <p>
      * <code>Backfilling</code> - If true, then the index is currently in the
      * backfilling phase. Backfilling occurs only when a new global secondary index is
-     * added to the table; it is the process by which DynamoDB populates the new index
+     * added to the table. It is the process by which DynamoDB populates the new index
      * with data from the table. (This attribute does not appear for indexes that were
-     * created during a <code>CreateTable</code> operation.)</p> </li> <li> <p>
-     * <code>IndexName</code> - The name of the global secondary index.</p> </li> <li>
-     * <p> <code>IndexSizeBytes</code> - The total size of the global secondary index,
-     * in bytes. DynamoDB updates this value approximately every six hours. Recent
-     * changes might not be reflected in this value. </p> </li> <li> <p>
+     * created during a <code>CreateTable</code> operation.) </p> <p> You can delete an
+     * index that is being created during the <code>Backfilling</code> phase when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * true. You can't delete the index that is being created when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * false. (This attribute does not appear for indexes that were created during a
+     * <code>CreateTable</code> operation.)</p> </li> <li> <p> <code>IndexName</code> -
+     * The name of the global secondary index.</p> </li> <li> <p>
+     * <code>IndexSizeBytes</code> - The total size of the global secondary index, in
+     * bytes. DynamoDB updates this value approximately every six hours. Recent changes
+     * might not be reflected in this value. </p> </li> <li> <p>
      * <code>IndexStatus</code> - The current status of the global secondary index:</p>
      * <ul> <li> <p> <code>CREATING</code> - The index is being created.</p> </li> <li>
      * <p> <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
@@ -974,7 +986,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
      * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
      * Only the specified table attributes are projected into the index. The list of
-     * projected attributes are in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -994,13 +1006,19 @@ namespace Model
      * given partition key value. Each element is composed of:</p> <ul> <li> <p>
      * <code>Backfilling</code> - If true, then the index is currently in the
      * backfilling phase. Backfilling occurs only when a new global secondary index is
-     * added to the table; it is the process by which DynamoDB populates the new index
+     * added to the table. It is the process by which DynamoDB populates the new index
      * with data from the table. (This attribute does not appear for indexes that were
-     * created during a <code>CreateTable</code> operation.)</p> </li> <li> <p>
-     * <code>IndexName</code> - The name of the global secondary index.</p> </li> <li>
-     * <p> <code>IndexSizeBytes</code> - The total size of the global secondary index,
-     * in bytes. DynamoDB updates this value approximately every six hours. Recent
-     * changes might not be reflected in this value. </p> </li> <li> <p>
+     * created during a <code>CreateTable</code> operation.) </p> <p> You can delete an
+     * index that is being created during the <code>Backfilling</code> phase when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * true. You can't delete the index that is being created when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * false. (This attribute does not appear for indexes that were created during a
+     * <code>CreateTable</code> operation.)</p> </li> <li> <p> <code>IndexName</code> -
+     * The name of the global secondary index.</p> </li> <li> <p>
+     * <code>IndexSizeBytes</code> - The total size of the global secondary index, in
+     * bytes. DynamoDB updates this value approximately every six hours. Recent changes
+     * might not be reflected in this value. </p> </li> <li> <p>
      * <code>IndexStatus</code> - The current status of the global secondary index:</p>
      * <ul> <li> <p> <code>CREATING</code> - The index is being created.</p> </li> <li>
      * <p> <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
@@ -1019,7 +1037,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
      * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
      * Only the specified table attributes are projected into the index. The list of
-     * projected attributes are in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1039,13 +1057,19 @@ namespace Model
      * given partition key value. Each element is composed of:</p> <ul> <li> <p>
      * <code>Backfilling</code> - If true, then the index is currently in the
      * backfilling phase. Backfilling occurs only when a new global secondary index is
-     * added to the table; it is the process by which DynamoDB populates the new index
+     * added to the table. It is the process by which DynamoDB populates the new index
      * with data from the table. (This attribute does not appear for indexes that were
-     * created during a <code>CreateTable</code> operation.)</p> </li> <li> <p>
-     * <code>IndexName</code> - The name of the global secondary index.</p> </li> <li>
-     * <p> <code>IndexSizeBytes</code> - The total size of the global secondary index,
-     * in bytes. DynamoDB updates this value approximately every six hours. Recent
-     * changes might not be reflected in this value. </p> </li> <li> <p>
+     * created during a <code>CreateTable</code> operation.) </p> <p> You can delete an
+     * index that is being created during the <code>Backfilling</code> phase when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * true. You can't delete the index that is being created when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * false. (This attribute does not appear for indexes that were created during a
+     * <code>CreateTable</code> operation.)</p> </li> <li> <p> <code>IndexName</code> -
+     * The name of the global secondary index.</p> </li> <li> <p>
+     * <code>IndexSizeBytes</code> - The total size of the global secondary index, in
+     * bytes. DynamoDB updates this value approximately every six hours. Recent changes
+     * might not be reflected in this value. </p> </li> <li> <p>
      * <code>IndexStatus</code> - The current status of the global secondary index:</p>
      * <ul> <li> <p> <code>CREATING</code> - The index is being created.</p> </li> <li>
      * <p> <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
@@ -1064,7 +1088,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
      * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
      * Only the specified table attributes are projected into the index. The list of
-     * projected attributes are in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1084,13 +1108,19 @@ namespace Model
      * given partition key value. Each element is composed of:</p> <ul> <li> <p>
      * <code>Backfilling</code> - If true, then the index is currently in the
      * backfilling phase. Backfilling occurs only when a new global secondary index is
-     * added to the table; it is the process by which DynamoDB populates the new index
+     * added to the table. It is the process by which DynamoDB populates the new index
      * with data from the table. (This attribute does not appear for indexes that were
-     * created during a <code>CreateTable</code> operation.)</p> </li> <li> <p>
-     * <code>IndexName</code> - The name of the global secondary index.</p> </li> <li>
-     * <p> <code>IndexSizeBytes</code> - The total size of the global secondary index,
-     * in bytes. DynamoDB updates this value approximately every six hours. Recent
-     * changes might not be reflected in this value. </p> </li> <li> <p>
+     * created during a <code>CreateTable</code> operation.) </p> <p> You can delete an
+     * index that is being created during the <code>Backfilling</code> phase when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * true. You can't delete the index that is being created when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * false. (This attribute does not appear for indexes that were created during a
+     * <code>CreateTable</code> operation.)</p> </li> <li> <p> <code>IndexName</code> -
+     * The name of the global secondary index.</p> </li> <li> <p>
+     * <code>IndexSizeBytes</code> - The total size of the global secondary index, in
+     * bytes. DynamoDB updates this value approximately every six hours. Recent changes
+     * might not be reflected in this value. </p> </li> <li> <p>
      * <code>IndexStatus</code> - The current status of the global secondary index:</p>
      * <ul> <li> <p> <code>CREATING</code> - The index is being created.</p> </li> <li>
      * <p> <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
@@ -1109,7 +1139,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
      * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
      * Only the specified table attributes are projected into the index. The list of
-     * projected attributes are in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1129,13 +1159,19 @@ namespace Model
      * given partition key value. Each element is composed of:</p> <ul> <li> <p>
      * <code>Backfilling</code> - If true, then the index is currently in the
      * backfilling phase. Backfilling occurs only when a new global secondary index is
-     * added to the table; it is the process by which DynamoDB populates the new index
+     * added to the table. It is the process by which DynamoDB populates the new index
      * with data from the table. (This attribute does not appear for indexes that were
-     * created during a <code>CreateTable</code> operation.)</p> </li> <li> <p>
-     * <code>IndexName</code> - The name of the global secondary index.</p> </li> <li>
-     * <p> <code>IndexSizeBytes</code> - The total size of the global secondary index,
-     * in bytes. DynamoDB updates this value approximately every six hours. Recent
-     * changes might not be reflected in this value. </p> </li> <li> <p>
+     * created during a <code>CreateTable</code> operation.) </p> <p> You can delete an
+     * index that is being created during the <code>Backfilling</code> phase when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * true. You can't delete the index that is being created when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * false. (This attribute does not appear for indexes that were created during a
+     * <code>CreateTable</code> operation.)</p> </li> <li> <p> <code>IndexName</code> -
+     * The name of the global secondary index.</p> </li> <li> <p>
+     * <code>IndexSizeBytes</code> - The total size of the global secondary index, in
+     * bytes. DynamoDB updates this value approximately every six hours. Recent changes
+     * might not be reflected in this value. </p> </li> <li> <p>
      * <code>IndexStatus</code> - The current status of the global secondary index:</p>
      * <ul> <li> <p> <code>CREATING</code> - The index is being created.</p> </li> <li>
      * <p> <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
@@ -1154,7 +1190,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
      * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
      * Only the specified table attributes are projected into the index. The list of
-     * projected attributes are in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1174,13 +1210,19 @@ namespace Model
      * given partition key value. Each element is composed of:</p> <ul> <li> <p>
      * <code>Backfilling</code> - If true, then the index is currently in the
      * backfilling phase. Backfilling occurs only when a new global secondary index is
-     * added to the table; it is the process by which DynamoDB populates the new index
+     * added to the table. It is the process by which DynamoDB populates the new index
      * with data from the table. (This attribute does not appear for indexes that were
-     * created during a <code>CreateTable</code> operation.)</p> </li> <li> <p>
-     * <code>IndexName</code> - The name of the global secondary index.</p> </li> <li>
-     * <p> <code>IndexSizeBytes</code> - The total size of the global secondary index,
-     * in bytes. DynamoDB updates this value approximately every six hours. Recent
-     * changes might not be reflected in this value. </p> </li> <li> <p>
+     * created during a <code>CreateTable</code> operation.) </p> <p> You can delete an
+     * index that is being created during the <code>Backfilling</code> phase when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * true. You can't delete the index that is being created when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * false. (This attribute does not appear for indexes that were created during a
+     * <code>CreateTable</code> operation.)</p> </li> <li> <p> <code>IndexName</code> -
+     * The name of the global secondary index.</p> </li> <li> <p>
+     * <code>IndexSizeBytes</code> - The total size of the global secondary index, in
+     * bytes. DynamoDB updates this value approximately every six hours. Recent changes
+     * might not be reflected in this value. </p> </li> <li> <p>
      * <code>IndexStatus</code> - The current status of the global secondary index:</p>
      * <ul> <li> <p> <code>CREATING</code> - The index is being created.</p> </li> <li>
      * <p> <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
@@ -1199,7 +1241,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
      * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
      * Only the specified table attributes are projected into the index. The list of
-     * projected attributes are in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1219,13 +1261,19 @@ namespace Model
      * given partition key value. Each element is composed of:</p> <ul> <li> <p>
      * <code>Backfilling</code> - If true, then the index is currently in the
      * backfilling phase. Backfilling occurs only when a new global secondary index is
-     * added to the table; it is the process by which DynamoDB populates the new index
+     * added to the table. It is the process by which DynamoDB populates the new index
      * with data from the table. (This attribute does not appear for indexes that were
-     * created during a <code>CreateTable</code> operation.)</p> </li> <li> <p>
-     * <code>IndexName</code> - The name of the global secondary index.</p> </li> <li>
-     * <p> <code>IndexSizeBytes</code> - The total size of the global secondary index,
-     * in bytes. DynamoDB updates this value approximately every six hours. Recent
-     * changes might not be reflected in this value. </p> </li> <li> <p>
+     * created during a <code>CreateTable</code> operation.) </p> <p> You can delete an
+     * index that is being created during the <code>Backfilling</code> phase when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * true. You can't delete the index that is being created when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * false. (This attribute does not appear for indexes that were created during a
+     * <code>CreateTable</code> operation.)</p> </li> <li> <p> <code>IndexName</code> -
+     * The name of the global secondary index.</p> </li> <li> <p>
+     * <code>IndexSizeBytes</code> - The total size of the global secondary index, in
+     * bytes. DynamoDB updates this value approximately every six hours. Recent changes
+     * might not be reflected in this value. </p> </li> <li> <p>
      * <code>IndexStatus</code> - The current status of the global secondary index:</p>
      * <ul> <li> <p> <code>CREATING</code> - The index is being created.</p> </li> <li>
      * <p> <code>UPDATING</code> - The index is being updated.</p> </li> <li> <p>
@@ -1244,7 +1292,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary
      * keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> -
      * Only the specified table attributes are projected into the index. The list of
-     * projected attributes are in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
+     * projected attributes is in <code>NonKeyAttributes</code>.</p> </li> <li> <p>
      * <code>ALL</code> - All of the table attributes are projected into the index.</p>
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
@@ -1296,9 +1344,8 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li>
-     * <p>the table name.</p> </li> <li> <p>the <code>StreamLabel</code>.</p> </li>
-     * </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>AWS customer ID</p> </li> <li>
+     * <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li> </ul>
      */
     inline const Aws::String& GetLatestStreamLabel() const{ return m_latestStreamLabel; }
 
@@ -1307,9 +1354,8 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li>
-     * <p>the table name.</p> </li> <li> <p>the <code>StreamLabel</code>.</p> </li>
-     * </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>AWS customer ID</p> </li> <li>
+     * <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li> </ul>
      */
     inline bool LatestStreamLabelHasBeenSet() const { return m_latestStreamLabelHasBeenSet; }
 
@@ -1318,9 +1364,8 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li>
-     * <p>the table name.</p> </li> <li> <p>the <code>StreamLabel</code>.</p> </li>
-     * </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>AWS customer ID</p> </li> <li>
+     * <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li> </ul>
      */
     inline void SetLatestStreamLabel(const Aws::String& value) { m_latestStreamLabelHasBeenSet = true; m_latestStreamLabel = value; }
 
@@ -1329,9 +1374,8 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li>
-     * <p>the table name.</p> </li> <li> <p>the <code>StreamLabel</code>.</p> </li>
-     * </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>AWS customer ID</p> </li> <li>
+     * <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li> </ul>
      */
     inline void SetLatestStreamLabel(Aws::String&& value) { m_latestStreamLabelHasBeenSet = true; m_latestStreamLabel = std::move(value); }
 
@@ -1340,9 +1384,8 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li>
-     * <p>the table name.</p> </li> <li> <p>the <code>StreamLabel</code>.</p> </li>
-     * </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>AWS customer ID</p> </li> <li>
+     * <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li> </ul>
      */
     inline void SetLatestStreamLabel(const char* value) { m_latestStreamLabelHasBeenSet = true; m_latestStreamLabel.assign(value); }
 
@@ -1351,9 +1394,8 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li>
-     * <p>the table name.</p> </li> <li> <p>the <code>StreamLabel</code>.</p> </li>
-     * </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>AWS customer ID</p> </li> <li>
+     * <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li> </ul>
      */
     inline TableDescription& WithLatestStreamLabel(const Aws::String& value) { SetLatestStreamLabel(value); return *this;}
 
@@ -1362,9 +1404,8 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li>
-     * <p>the table name.</p> </li> <li> <p>the <code>StreamLabel</code>.</p> </li>
-     * </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>AWS customer ID</p> </li> <li>
+     * <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li> </ul>
      */
     inline TableDescription& WithLatestStreamLabel(Aws::String&& value) { SetLatestStreamLabel(std::move(value)); return *this;}
 
@@ -1373,9 +1414,8 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li>
-     * <p>the table name.</p> </li> <li> <p>the <code>StreamLabel</code>.</p> </li>
-     * </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>AWS customer ID</p> </li> <li>
+     * <p>Table name</p> </li> <li> <p> <code>StreamLabel</code> </p> </li> </ul>
      */
     inline TableDescription& WithLatestStreamLabel(const char* value) { SetLatestStreamLabel(value); return *this;}
 

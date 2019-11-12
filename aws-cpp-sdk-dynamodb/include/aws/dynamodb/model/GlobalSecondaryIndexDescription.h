@@ -99,8 +99,8 @@ namespace Model
      * or more pairs of attribute names and key types:</p> <ul> <li> <p>
      * <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code> - sort
      * key</p> </li> </ul> <note> <p>The partition key of an item is also known as its
-     * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB' usage of
-     * an internal hash function to evenly distribute data items across partitions,
+     * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage
+     * of an internal hash function to evenly distribute data items across partitions,
      * based on their partition key values.</p> <p>The sort key of an item is also
      * known as its <i>range attribute</i>. The term "range attribute" derives from the
      * way DynamoDB stores items with the same partition key physically close together,
@@ -113,8 +113,8 @@ namespace Model
      * or more pairs of attribute names and key types:</p> <ul> <li> <p>
      * <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code> - sort
      * key</p> </li> </ul> <note> <p>The partition key of an item is also known as its
-     * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB' usage of
-     * an internal hash function to evenly distribute data items across partitions,
+     * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage
+     * of an internal hash function to evenly distribute data items across partitions,
      * based on their partition key values.</p> <p>The sort key of an item is also
      * known as its <i>range attribute</i>. The term "range attribute" derives from the
      * way DynamoDB stores items with the same partition key physically close together,
@@ -127,8 +127,8 @@ namespace Model
      * or more pairs of attribute names and key types:</p> <ul> <li> <p>
      * <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code> - sort
      * key</p> </li> </ul> <note> <p>The partition key of an item is also known as its
-     * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB' usage of
-     * an internal hash function to evenly distribute data items across partitions,
+     * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage
+     * of an internal hash function to evenly distribute data items across partitions,
      * based on their partition key values.</p> <p>The sort key of an item is also
      * known as its <i>range attribute</i>. The term "range attribute" derives from the
      * way DynamoDB stores items with the same partition key physically close together,
@@ -141,8 +141,8 @@ namespace Model
      * or more pairs of attribute names and key types:</p> <ul> <li> <p>
      * <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code> - sort
      * key</p> </li> </ul> <note> <p>The partition key of an item is also known as its
-     * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB' usage of
-     * an internal hash function to evenly distribute data items across partitions,
+     * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage
+     * of an internal hash function to evenly distribute data items across partitions,
      * based on their partition key values.</p> <p>The sort key of an item is also
      * known as its <i>range attribute</i>. The term "range attribute" derives from the
      * way DynamoDB stores items with the same partition key physically close together,
@@ -155,8 +155,8 @@ namespace Model
      * or more pairs of attribute names and key types:</p> <ul> <li> <p>
      * <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code> - sort
      * key</p> </li> </ul> <note> <p>The partition key of an item is also known as its
-     * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB' usage of
-     * an internal hash function to evenly distribute data items across partitions,
+     * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage
+     * of an internal hash function to evenly distribute data items across partitions,
      * based on their partition key values.</p> <p>The sort key of an item is also
      * known as its <i>range attribute</i>. The term "range attribute" derives from the
      * way DynamoDB stores items with the same partition key physically close together,
@@ -169,8 +169,8 @@ namespace Model
      * or more pairs of attribute names and key types:</p> <ul> <li> <p>
      * <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code> - sort
      * key</p> </li> </ul> <note> <p>The partition key of an item is also known as its
-     * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB' usage of
-     * an internal hash function to evenly distribute data items across partitions,
+     * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage
+     * of an internal hash function to evenly distribute data items across partitions,
      * based on their partition key values.</p> <p>The sort key of an item is also
      * known as its <i>range attribute</i>. The term "range attribute" derives from the
      * way DynamoDB stores items with the same partition key physically close together,
@@ -183,8 +183,8 @@ namespace Model
      * or more pairs of attribute names and key types:</p> <ul> <li> <p>
      * <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code> - sort
      * key</p> </li> </ul> <note> <p>The partition key of an item is also known as its
-     * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB' usage of
-     * an internal hash function to evenly distribute data items across partitions,
+     * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage
+     * of an internal hash function to evenly distribute data items across partitions,
      * based on their partition key values.</p> <p>The sort key of an item is also
      * known as its <i>range attribute</i>. The term "range attribute" derives from the
      * way DynamoDB stores items with the same partition key physically close together,
@@ -197,8 +197,8 @@ namespace Model
      * or more pairs of attribute names and key types:</p> <ul> <li> <p>
      * <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code> - sort
      * key</p> </li> </ul> <note> <p>The partition key of an item is also known as its
-     * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB' usage of
-     * an internal hash function to evenly distribute data items across partitions,
+     * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage
+     * of an internal hash function to evenly distribute data items across partitions,
      * based on their partition key values.</p> <p>The sort key of an item is also
      * known as its <i>range attribute</i>. The term "range attribute" derives from the
      * way DynamoDB stores items with the same partition key physically close together,
@@ -311,10 +311,14 @@ namespace Model
      * added to the index. (Not all items will qualify: For example, a partition key
      * cannot have any duplicate values.) If an item can be added to the index,
      * DynamoDB will do so. After all items have been processed, the backfilling
-     * operation is complete and <code>Backfilling</code> is false.</p> <note> <p>For
-     * indexes that were created during a <code>CreateTable</code> operation, the
-     * <code>Backfilling</code> attribute does not appear in the
-     * <code>DescribeTable</code> output.</p> </note>
+     * operation is complete and <code>Backfilling</code> is false.</p> <p>You can
+     * delete an index that is being created during the <code>Backfilling</code> phase
+     * when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * true. You can't delete the index that is being created when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * false. </p> <note> <p>For indexes that were created during a
+     * <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does
+     * not appear in the <code>DescribeTable</code> output.</p> </note>
      */
     inline bool GetBackfilling() const{ return m_backfilling; }
 
@@ -324,10 +328,14 @@ namespace Model
      * added to the index. (Not all items will qualify: For example, a partition key
      * cannot have any duplicate values.) If an item can be added to the index,
      * DynamoDB will do so. After all items have been processed, the backfilling
-     * operation is complete and <code>Backfilling</code> is false.</p> <note> <p>For
-     * indexes that were created during a <code>CreateTable</code> operation, the
-     * <code>Backfilling</code> attribute does not appear in the
-     * <code>DescribeTable</code> output.</p> </note>
+     * operation is complete and <code>Backfilling</code> is false.</p> <p>You can
+     * delete an index that is being created during the <code>Backfilling</code> phase
+     * when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * true. You can't delete the index that is being created when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * false. </p> <note> <p>For indexes that were created during a
+     * <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does
+     * not appear in the <code>DescribeTable</code> output.</p> </note>
      */
     inline bool BackfillingHasBeenSet() const { return m_backfillingHasBeenSet; }
 
@@ -337,10 +345,14 @@ namespace Model
      * added to the index. (Not all items will qualify: For example, a partition key
      * cannot have any duplicate values.) If an item can be added to the index,
      * DynamoDB will do so. After all items have been processed, the backfilling
-     * operation is complete and <code>Backfilling</code> is false.</p> <note> <p>For
-     * indexes that were created during a <code>CreateTable</code> operation, the
-     * <code>Backfilling</code> attribute does not appear in the
-     * <code>DescribeTable</code> output.</p> </note>
+     * operation is complete and <code>Backfilling</code> is false.</p> <p>You can
+     * delete an index that is being created during the <code>Backfilling</code> phase
+     * when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * true. You can't delete the index that is being created when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * false. </p> <note> <p>For indexes that were created during a
+     * <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does
+     * not appear in the <code>DescribeTable</code> output.</p> </note>
      */
     inline void SetBackfilling(bool value) { m_backfillingHasBeenSet = true; m_backfilling = value; }
 
@@ -350,10 +362,14 @@ namespace Model
      * added to the index. (Not all items will qualify: For example, a partition key
      * cannot have any duplicate values.) If an item can be added to the index,
      * DynamoDB will do so. After all items have been processed, the backfilling
-     * operation is complete and <code>Backfilling</code> is false.</p> <note> <p>For
-     * indexes that were created during a <code>CreateTable</code> operation, the
-     * <code>Backfilling</code> attribute does not appear in the
-     * <code>DescribeTable</code> output.</p> </note>
+     * operation is complete and <code>Backfilling</code> is false.</p> <p>You can
+     * delete an index that is being created during the <code>Backfilling</code> phase
+     * when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * true. You can't delete the index that is being created when
+     * <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code> is
+     * false. </p> <note> <p>For indexes that were created during a
+     * <code>CreateTable</code> operation, the <code>Backfilling</code> attribute does
+     * not appear in the <code>DescribeTable</code> output.</p> </note>
      */
     inline GlobalSecondaryIndexDescription& WithBackfilling(bool value) { SetBackfilling(value); return *this;}
 

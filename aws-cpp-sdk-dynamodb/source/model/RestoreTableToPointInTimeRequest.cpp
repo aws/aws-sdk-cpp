@@ -27,7 +27,12 @@ RestoreTableToPointInTimeRequest::RestoreTableToPointInTimeRequest() :
     m_targetTableNameHasBeenSet(false),
     m_useLatestRestorableTime(false),
     m_useLatestRestorableTimeHasBeenSet(false),
-    m_restoreDateTimeHasBeenSet(false)
+    m_restoreDateTimeHasBeenSet(false),
+    m_billingModeOverride(BillingMode::NOT_SET),
+    m_billingModeOverrideHasBeenSet(false),
+    m_globalSecondaryIndexOverrideHasBeenSet(false),
+    m_localSecondaryIndexOverrideHasBeenSet(false),
+    m_provisionedThroughputOverrideHasBeenSet(false)
 {
 }
 
@@ -56,6 +61,39 @@ Aws::String RestoreTableToPointInTimeRequest::SerializePayload() const
   if(m_restoreDateTimeHasBeenSet)
   {
    payload.WithDouble("RestoreDateTime", m_restoreDateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_billingModeOverrideHasBeenSet)
+  {
+   payload.WithString("BillingModeOverride", BillingModeMapper::GetNameForBillingMode(m_billingModeOverride));
+  }
+
+  if(m_globalSecondaryIndexOverrideHasBeenSet)
+  {
+   Array<JsonValue> globalSecondaryIndexOverrideJsonList(m_globalSecondaryIndexOverride.size());
+   for(unsigned globalSecondaryIndexOverrideIndex = 0; globalSecondaryIndexOverrideIndex < globalSecondaryIndexOverrideJsonList.GetLength(); ++globalSecondaryIndexOverrideIndex)
+   {
+     globalSecondaryIndexOverrideJsonList[globalSecondaryIndexOverrideIndex].AsObject(m_globalSecondaryIndexOverride[globalSecondaryIndexOverrideIndex].Jsonize());
+   }
+   payload.WithArray("GlobalSecondaryIndexOverride", std::move(globalSecondaryIndexOverrideJsonList));
+
+  }
+
+  if(m_localSecondaryIndexOverrideHasBeenSet)
+  {
+   Array<JsonValue> localSecondaryIndexOverrideJsonList(m_localSecondaryIndexOverride.size());
+   for(unsigned localSecondaryIndexOverrideIndex = 0; localSecondaryIndexOverrideIndex < localSecondaryIndexOverrideJsonList.GetLength(); ++localSecondaryIndexOverrideIndex)
+   {
+     localSecondaryIndexOverrideJsonList[localSecondaryIndexOverrideIndex].AsObject(m_localSecondaryIndexOverride[localSecondaryIndexOverrideIndex].Jsonize());
+   }
+   payload.WithArray("LocalSecondaryIndexOverride", std::move(localSecondaryIndexOverrideJsonList));
+
+  }
+
+  if(m_provisionedThroughputOverrideHasBeenSet)
+  {
+   payload.WithObject("ProvisionedThroughputOverride", m_provisionedThroughputOverride.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

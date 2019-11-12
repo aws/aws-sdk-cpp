@@ -41,7 +41,15 @@ namespace Model
     hi_IN,
     ar_SA,
     ru_RU,
-    zh_CN
+    zh_CN,
+    nl_NL,
+    id_ID,
+    ta_IN,
+    fa_IR,
+    en_IE,
+    en_AB,
+    en_WL,
+    pt_PT
   };
 
 namespace LanguageCodeMapper

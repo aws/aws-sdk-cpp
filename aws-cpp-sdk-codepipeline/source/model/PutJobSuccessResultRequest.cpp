@@ -26,7 +26,8 @@ PutJobSuccessResultRequest::PutJobSuccessResultRequest() :
     m_jobIdHasBeenSet(false),
     m_currentRevisionHasBeenSet(false),
     m_continuationTokenHasBeenSet(false),
-    m_executionDetailsHasBeenSet(false)
+    m_executionDetailsHasBeenSet(false),
+    m_outputVariablesHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,17 @@ Aws::String PutJobSuccessResultRequest::SerializePayload() const
   if(m_executionDetailsHasBeenSet)
   {
    payload.WithObject("executionDetails", m_executionDetails.Jsonize());
+
+  }
+
+  if(m_outputVariablesHasBeenSet)
+  {
+   JsonValue outputVariablesJsonMap;
+   for(auto& outputVariablesItem : m_outputVariables)
+   {
+     outputVariablesJsonMap.WithString(outputVariablesItem.first, outputVariablesItem.second);
+   }
+   payload.WithObject("outputVariables", std::move(outputVariablesJsonMap));
 
   }
 

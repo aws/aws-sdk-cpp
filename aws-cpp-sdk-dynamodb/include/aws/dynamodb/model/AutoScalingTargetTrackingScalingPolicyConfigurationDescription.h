@@ -89,7 +89,7 @@ namespace Model
      * subsequent scale in requests until it has expired. You should scale in
      * conservatively to protect your application's availability. However, if another
      * alarm triggers a scale out policy during the cooldown period after a scale-in,
-     * application autoscaling scales out your scalable target immediately. </p>
+     * application auto scaling scales out your scalable target immediately. </p>
      */
     inline int GetScaleInCooldown() const{ return m_scaleInCooldown; }
 
@@ -99,7 +99,7 @@ namespace Model
      * subsequent scale in requests until it has expired. You should scale in
      * conservatively to protect your application's availability. However, if another
      * alarm triggers a scale out policy during the cooldown period after a scale-in,
-     * application autoscaling scales out your scalable target immediately. </p>
+     * application auto scaling scales out your scalable target immediately. </p>
      */
     inline bool ScaleInCooldownHasBeenSet() const { return m_scaleInCooldownHasBeenSet; }
 
@@ -109,7 +109,7 @@ namespace Model
      * subsequent scale in requests until it has expired. You should scale in
      * conservatively to protect your application's availability. However, if another
      * alarm triggers a scale out policy during the cooldown period after a scale-in,
-     * application autoscaling scales out your scalable target immediately. </p>
+     * application auto scaling scales out your scalable target immediately. </p>
      */
     inline void SetScaleInCooldown(int value) { m_scaleInCooldownHasBeenSet = true; m_scaleInCooldown = value; }
 
@@ -119,7 +119,7 @@ namespace Model
      * subsequent scale in requests until it has expired. You should scale in
      * conservatively to protect your application's availability. However, if another
      * alarm triggers a scale out policy during the cooldown period after a scale-in,
-     * application autoscaling scales out your scalable target immediately. </p>
+     * application auto scaling scales out your scalable target immediately. </p>
      */
     inline AutoScalingTargetTrackingScalingPolicyConfigurationDescription& WithScaleInCooldown(int value) { SetScaleInCooldown(value); return *this;}
 

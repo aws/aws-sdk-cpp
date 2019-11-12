@@ -55,44 +55,32 @@ namespace Model
 
 
     /**
-     * <p>The type of action. Each rule must include exactly one of the following types
-     * of actions: <code>forward</code>, <code>fixed-response</code>, or
-     * <code>redirect</code>.</p>
+     * <p>The type of action.</p>
      */
     inline const ActionTypeEnum& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of action. Each rule must include exactly one of the following types
-     * of actions: <code>forward</code>, <code>fixed-response</code>, or
-     * <code>redirect</code>.</p>
+     * <p>The type of action.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of action. Each rule must include exactly one of the following types
-     * of actions: <code>forward</code>, <code>fixed-response</code>, or
-     * <code>redirect</code>.</p>
+     * <p>The type of action.</p>
      */
     inline void SetType(const ActionTypeEnum& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of action. Each rule must include exactly one of the following types
-     * of actions: <code>forward</code>, <code>fixed-response</code>, or
-     * <code>redirect</code>.</p>
+     * <p>The type of action.</p>
      */
     inline void SetType(ActionTypeEnum&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of action. Each rule must include exactly one of the following types
-     * of actions: <code>forward</code>, <code>fixed-response</code>, or
-     * <code>redirect</code>.</p>
+     * <p>The type of action.</p>
      */
     inline Action& WithType(const ActionTypeEnum& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of action. Each rule must include exactly one of the following types
-     * of actions: <code>forward</code>, <code>fixed-response</code>, or
-     * <code>redirect</code>.</p>
+     * <p>The type of action.</p>
      */
     inline Action& WithType(ActionTypeEnum&& value) { SetType(std::move(value)); return *this;}
 
@@ -228,33 +216,33 @@ namespace Model
 
     /**
      * <p>The order for the action. This value is required for rules with multiple
-     * actions. The action with the lowest value for order is performed first. The
-     * final action to be performed must be a <code>forward</code> or a
-     * <code>fixed-response</code> action.</p>
+     * actions. The action with the lowest value for order is performed first. The last
+     * action to be performed must be one of the following types of actions: a
+     * <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.</p>
      */
     inline int GetOrder() const{ return m_order; }
 
     /**
      * <p>The order for the action. This value is required for rules with multiple
-     * actions. The action with the lowest value for order is performed first. The
-     * final action to be performed must be a <code>forward</code> or a
-     * <code>fixed-response</code> action.</p>
+     * actions. The action with the lowest value for order is performed first. The last
+     * action to be performed must be one of the following types of actions: a
+     * <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.</p>
      */
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
 
     /**
      * <p>The order for the action. This value is required for rules with multiple
-     * actions. The action with the lowest value for order is performed first. The
-     * final action to be performed must be a <code>forward</code> or a
-     * <code>fixed-response</code> action.</p>
+     * actions. The action with the lowest value for order is performed first. The last
+     * action to be performed must be one of the following types of actions: a
+     * <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.</p>
      */
     inline void SetOrder(int value) { m_orderHasBeenSet = true; m_order = value; }
 
     /**
      * <p>The order for the action. This value is required for rules with multiple
-     * actions. The action with the lowest value for order is performed first. The
-     * final action to be performed must be a <code>forward</code> or a
-     * <code>fixed-response</code> action.</p>
+     * actions. The action with the lowest value for order is performed first. The last
+     * action to be performed must be one of the following types of actions: a
+     * <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.</p>
      */
     inline Action& WithOrder(int value) { SetOrder(value); return *this;}
 

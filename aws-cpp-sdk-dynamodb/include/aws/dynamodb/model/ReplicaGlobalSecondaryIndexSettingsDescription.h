@@ -186,37 +186,37 @@ namespace Model
 
 
     /**
-     * <p>Autoscaling settings for a global secondary index replica's read capacity
+     * <p>Auto scaling settings for a global secondary index replica's read capacity
      * units.</p>
      */
     inline const AutoScalingSettingsDescription& GetProvisionedReadCapacityAutoScalingSettings() const{ return m_provisionedReadCapacityAutoScalingSettings; }
 
     /**
-     * <p>Autoscaling settings for a global secondary index replica's read capacity
+     * <p>Auto scaling settings for a global secondary index replica's read capacity
      * units.</p>
      */
     inline bool ProvisionedReadCapacityAutoScalingSettingsHasBeenSet() const { return m_provisionedReadCapacityAutoScalingSettingsHasBeenSet; }
 
     /**
-     * <p>Autoscaling settings for a global secondary index replica's read capacity
+     * <p>Auto scaling settings for a global secondary index replica's read capacity
      * units.</p>
      */
     inline void SetProvisionedReadCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { m_provisionedReadCapacityAutoScalingSettingsHasBeenSet = true; m_provisionedReadCapacityAutoScalingSettings = value; }
 
     /**
-     * <p>Autoscaling settings for a global secondary index replica's read capacity
+     * <p>Auto scaling settings for a global secondary index replica's read capacity
      * units.</p>
      */
     inline void SetProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { m_provisionedReadCapacityAutoScalingSettingsHasBeenSet = true; m_provisionedReadCapacityAutoScalingSettings = std::move(value); }
 
     /**
-     * <p>Autoscaling settings for a global secondary index replica's read capacity
+     * <p>Auto scaling settings for a global secondary index replica's read capacity
      * units.</p>
      */
     inline ReplicaGlobalSecondaryIndexSettingsDescription& WithProvisionedReadCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { SetProvisionedReadCapacityAutoScalingSettings(value); return *this;}
 
     /**
-     * <p>Autoscaling settings for a global secondary index replica's read capacity
+     * <p>Auto scaling settings for a global secondary index replica's read capacity
      * units.</p>
      */
     inline ReplicaGlobalSecondaryIndexSettingsDescription& WithProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { SetProvisionedReadCapacityAutoScalingSettings(std::move(value)); return *this;}
@@ -248,37 +248,37 @@ namespace Model
 
 
     /**
-     * <p>AutoScaling settings for a global secondary index replica's write capacity
+     * <p>Auto scaling settings for a global secondary index replica's write capacity
      * units.</p>
      */
     inline const AutoScalingSettingsDescription& GetProvisionedWriteCapacityAutoScalingSettings() const{ return m_provisionedWriteCapacityAutoScalingSettings; }
 
     /**
-     * <p>AutoScaling settings for a global secondary index replica's write capacity
+     * <p>Auto scaling settings for a global secondary index replica's write capacity
      * units.</p>
      */
     inline bool ProvisionedWriteCapacityAutoScalingSettingsHasBeenSet() const { return m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet; }
 
     /**
-     * <p>AutoScaling settings for a global secondary index replica's write capacity
+     * <p>Auto scaling settings for a global secondary index replica's write capacity
      * units.</p>
      */
     inline void SetProvisionedWriteCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet = true; m_provisionedWriteCapacityAutoScalingSettings = value; }
 
     /**
-     * <p>AutoScaling settings for a global secondary index replica's write capacity
+     * <p>Auto scaling settings for a global secondary index replica's write capacity
      * units.</p>
      */
     inline void SetProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet = true; m_provisionedWriteCapacityAutoScalingSettings = std::move(value); }
 
     /**
-     * <p>AutoScaling settings for a global secondary index replica's write capacity
+     * <p>Auto scaling settings for a global secondary index replica's write capacity
      * units.</p>
      */
     inline ReplicaGlobalSecondaryIndexSettingsDescription& WithProvisionedWriteCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { SetProvisionedWriteCapacityAutoScalingSettings(value); return *this;}
 
     /**
-     * <p>AutoScaling settings for a global secondary index replica's write capacity
+     * <p>Auto scaling settings for a global secondary index replica's write capacity
      * units.</p>
      */
     inline ReplicaGlobalSecondaryIndexSettingsDescription& WithProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { SetProvisionedWriteCapacityAutoScalingSettings(std::move(value)); return *this;}

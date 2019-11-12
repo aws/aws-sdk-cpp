@@ -37,7 +37,8 @@ ActionDeclaration::ActionDeclaration() :
     m_outputArtifactsHasBeenSet(false),
     m_inputArtifactsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_namespaceHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ ActionDeclaration::ActionDeclaration(JsonView jsonValue) :
     m_outputArtifactsHasBeenSet(false),
     m_inputArtifactsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_namespaceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -122,6 +124,13 @@ ActionDeclaration& ActionDeclaration::operator =(JsonView jsonValue)
     m_regionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("namespace"))
+  {
+    m_namespace = jsonValue.GetString("namespace");
+
+    m_namespaceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -189,6 +198,12 @@ JsonValue ActionDeclaration::Jsonize() const
   if(m_regionHasBeenSet)
   {
    payload.WithString("region", m_region);
+
+  }
+
+  if(m_namespaceHasBeenSet)
+  {
+   payload.WithString("namespace", m_namespace);
 
   }
 

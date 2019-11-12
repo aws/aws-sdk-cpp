@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the settings for a global table in a region that will be
+   * <p>Represents the settings for a global table in a Region that will be
    * modified.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ReplicaSettingsUpdate">AWS
    * API Reference</a></p>
@@ -52,42 +52,42 @@ namespace Model
 
 
     /**
-     * <p>The region of the replica to be added.</p>
+     * <p>The Region of the replica to be added.</p>
      */
     inline const Aws::String& GetRegionName() const{ return m_regionName; }
 
     /**
-     * <p>The region of the replica to be added.</p>
+     * <p>The Region of the replica to be added.</p>
      */
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
 
     /**
-     * <p>The region of the replica to be added.</p>
+     * <p>The Region of the replica to be added.</p>
      */
     inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
 
     /**
-     * <p>The region of the replica to be added.</p>
+     * <p>The Region of the replica to be added.</p>
      */
     inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
 
     /**
-     * <p>The region of the replica to be added.</p>
+     * <p>The Region of the replica to be added.</p>
      */
     inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
 
     /**
-     * <p>The region of the replica to be added.</p>
+     * <p>The Region of the replica to be added.</p>
      */
     inline ReplicaSettingsUpdate& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
 
     /**
-     * <p>The region of the replica to be added.</p>
+     * <p>The Region of the replica to be added.</p>
      */
     inline ReplicaSettingsUpdate& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
 
     /**
-     * <p>The region of the replica to be added.</p>
+     * <p>The Region of the replica to be added.</p>
      */
     inline ReplicaSettingsUpdate& WithRegionName(const char* value) { SetRegionName(value); return *this;}
 
@@ -134,37 +134,37 @@ namespace Model
 
 
     /**
-     * <p>Autoscaling settings for managing a global table replica's read capacity
+     * <p>Auto scaling settings for managing a global table replica's read capacity
      * units.</p>
      */
     inline const AutoScalingSettingsUpdate& GetReplicaProvisionedReadCapacityAutoScalingSettingsUpdate() const{ return m_replicaProvisionedReadCapacityAutoScalingSettingsUpdate; }
 
     /**
-     * <p>Autoscaling settings for managing a global table replica's read capacity
+     * <p>Auto scaling settings for managing a global table replica's read capacity
      * units.</p>
      */
     inline bool ReplicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet() const { return m_replicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet; }
 
     /**
-     * <p>Autoscaling settings for managing a global table replica's read capacity
+     * <p>Auto scaling settings for managing a global table replica's read capacity
      * units.</p>
      */
     inline void SetReplicaProvisionedReadCapacityAutoScalingSettingsUpdate(const AutoScalingSettingsUpdate& value) { m_replicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_replicaProvisionedReadCapacityAutoScalingSettingsUpdate = value; }
 
     /**
-     * <p>Autoscaling settings for managing a global table replica's read capacity
+     * <p>Auto scaling settings for managing a global table replica's read capacity
      * units.</p>
      */
     inline void SetReplicaProvisionedReadCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate&& value) { m_replicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_replicaProvisionedReadCapacityAutoScalingSettingsUpdate = std::move(value); }
 
     /**
-     * <p>Autoscaling settings for managing a global table replica's read capacity
+     * <p>Auto scaling settings for managing a global table replica's read capacity
      * units.</p>
      */
     inline ReplicaSettingsUpdate& WithReplicaProvisionedReadCapacityAutoScalingSettingsUpdate(const AutoScalingSettingsUpdate& value) { SetReplicaProvisionedReadCapacityAutoScalingSettingsUpdate(value); return *this;}
 
     /**
-     * <p>Autoscaling settings for managing a global table replica's read capacity
+     * <p>Auto scaling settings for managing a global table replica's read capacity
      * units.</p>
      */
     inline ReplicaSettingsUpdate& WithReplicaProvisionedReadCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate&& value) { SetReplicaProvisionedReadCapacityAutoScalingSettingsUpdate(std::move(value)); return *this;}

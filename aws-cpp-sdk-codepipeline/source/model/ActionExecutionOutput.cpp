@@ -30,13 +30,15 @@ namespace Model
 
 ActionExecutionOutput::ActionExecutionOutput() : 
     m_outputArtifactsHasBeenSet(false),
-    m_executionResultHasBeenSet(false)
+    m_executionResultHasBeenSet(false),
+    m_outputVariablesHasBeenSet(false)
 {
 }
 
 ActionExecutionOutput::ActionExecutionOutput(JsonView jsonValue) : 
     m_outputArtifactsHasBeenSet(false),
-    m_executionResultHasBeenSet(false)
+    m_executionResultHasBeenSet(false),
+    m_outputVariablesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +62,16 @@ ActionExecutionOutput& ActionExecutionOutput::operator =(JsonView jsonValue)
     m_executionResultHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("outputVariables"))
+  {
+    Aws::Map<Aws::String, JsonView> outputVariablesJsonMap = jsonValue.GetObject("outputVariables").GetAllObjects();
+    for(auto& outputVariablesItem : outputVariablesJsonMap)
+    {
+      m_outputVariables[outputVariablesItem.first] = outputVariablesItem.second.AsString();
+    }
+    m_outputVariablesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -81,6 +93,17 @@ JsonValue ActionExecutionOutput::Jsonize() const
   if(m_executionResultHasBeenSet)
   {
    payload.WithObject("executionResult", m_executionResult.Jsonize());
+
+  }
+
+  if(m_outputVariablesHasBeenSet)
+  {
+   JsonValue outputVariablesJsonMap;
+   for(auto& outputVariablesItem : m_outputVariables)
+   {
+     outputVariablesJsonMap.WithString(outputVariablesItem.first, outputVariablesItem.second);
+   }
+   payload.WithObject("outputVariables", std::move(outputVariablesJsonMap));
 
   }
 

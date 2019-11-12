@@ -177,22 +177,22 @@ namespace Model
 
 
     /**
-     * <p>Size of the table in bytes. Please note this is an approximate value.</p>
+     * <p>Size of the table in bytes. Note that this is an approximate value.</p>
      */
     inline long long GetTableSizeBytes() const{ return m_tableSizeBytes; }
 
     /**
-     * <p>Size of the table in bytes. Please note this is an approximate value.</p>
+     * <p>Size of the table in bytes. Note that this is an approximate value.</p>
      */
     inline bool TableSizeBytesHasBeenSet() const { return m_tableSizeBytesHasBeenSet; }
 
     /**
-     * <p>Size of the table in bytes. Please note this is an approximate value.</p>
+     * <p>Size of the table in bytes. Note that this is an approximate value.</p>
      */
     inline void SetTableSizeBytes(long long value) { m_tableSizeBytesHasBeenSet = true; m_tableSizeBytes = value; }
 
     /**
-     * <p>Size of the table in bytes. Please note this is an approximate value.</p>
+     * <p>Size of the table in bytes. Note that this is an approximate value.</p>
      */
     inline SourceTableDetails& WithTableSizeBytes(long long value) { SetTableSizeBytes(value); return *this;}
 
@@ -301,22 +301,22 @@ namespace Model
 
 
     /**
-     * <p>Number of items in the table. Please note this is an approximate value. </p>
+     * <p>Number of items in the table. Note that this is an approximate value. </p>
      */
     inline long long GetItemCount() const{ return m_itemCount; }
 
     /**
-     * <p>Number of items in the table. Please note this is an approximate value. </p>
+     * <p>Number of items in the table. Note that this is an approximate value. </p>
      */
     inline bool ItemCountHasBeenSet() const { return m_itemCountHasBeenSet; }
 
     /**
-     * <p>Number of items in the table. Please note this is an approximate value. </p>
+     * <p>Number of items in the table. Note that this is an approximate value. </p>
      */
     inline void SetItemCount(long long value) { m_itemCountHasBeenSet = true; m_itemCount = value; }
 
     /**
-     * <p>Number of items in the table. Please note this is an approximate value. </p>
+     * <p>Number of items in the table. Note that this is an approximate value. </p>
      */
     inline SourceTableDetails& WithItemCount(long long value) { SetItemCount(value); return *this;}
 

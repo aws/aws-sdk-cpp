@@ -350,7 +350,7 @@ namespace Model
      * route requests from clients over the internet.</p> <p>The nodes of an internal
      * load balancer have only private IP addresses. The DNS name of an internal load
      * balancer is publicly resolvable to the private IP addresses of the nodes.
-     * Therefore, internal load balancers can only route requests from clients with
+     * Therefore, internal load balancers can route requests only from clients with
      * access to the VPC for the load balancer.</p> <p>The default is an
      * Internet-facing load balancer.</p>
      */
@@ -363,7 +363,7 @@ namespace Model
      * route requests from clients over the internet.</p> <p>The nodes of an internal
      * load balancer have only private IP addresses. The DNS name of an internal load
      * balancer is publicly resolvable to the private IP addresses of the nodes.
-     * Therefore, internal load balancers can only route requests from clients with
+     * Therefore, internal load balancers can route requests only from clients with
      * access to the VPC for the load balancer.</p> <p>The default is an
      * Internet-facing load balancer.</p>
      */
@@ -376,7 +376,7 @@ namespace Model
      * route requests from clients over the internet.</p> <p>The nodes of an internal
      * load balancer have only private IP addresses. The DNS name of an internal load
      * balancer is publicly resolvable to the private IP addresses of the nodes.
-     * Therefore, internal load balancers can only route requests from clients with
+     * Therefore, internal load balancers can route requests only from clients with
      * access to the VPC for the load balancer.</p> <p>The default is an
      * Internet-facing load balancer.</p>
      */
@@ -389,7 +389,7 @@ namespace Model
      * route requests from clients over the internet.</p> <p>The nodes of an internal
      * load balancer have only private IP addresses. The DNS name of an internal load
      * balancer is publicly resolvable to the private IP addresses of the nodes.
-     * Therefore, internal load balancers can only route requests from clients with
+     * Therefore, internal load balancers can route requests only from clients with
      * access to the VPC for the load balancer.</p> <p>The default is an
      * Internet-facing load balancer.</p>
      */
@@ -402,7 +402,7 @@ namespace Model
      * route requests from clients over the internet.</p> <p>The nodes of an internal
      * load balancer have only private IP addresses. The DNS name of an internal load
      * balancer is publicly resolvable to the private IP addresses of the nodes.
-     * Therefore, internal load balancers can only route requests from clients with
+     * Therefore, internal load balancers can route requests only from clients with
      * access to the VPC for the load balancer.</p> <p>The default is an
      * Internet-facing load balancer.</p>
      */
@@ -415,7 +415,7 @@ namespace Model
      * route requests from clients over the internet.</p> <p>The nodes of an internal
      * load balancer have only private IP addresses. The DNS name of an internal load
      * balancer is publicly resolvable to the private IP addresses of the nodes.
-     * Therefore, internal load balancers can only route requests from clients with
+     * Therefore, internal load balancers can route requests only from clients with
      * access to the VPC for the load balancer.</p> <p>The default is an
      * Internet-facing load balancer.</p>
      */

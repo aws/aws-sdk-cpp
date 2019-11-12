@@ -124,37 +124,37 @@ namespace Model
 
 
     /**
-     * <p>Autoscaling settings for managing a global secondary index replica's read
+     * <p>Auto scaling settings for managing a global secondary index replica's read
      * capacity units.</p>
      */
     inline const AutoScalingSettingsUpdate& GetProvisionedReadCapacityAutoScalingSettingsUpdate() const{ return m_provisionedReadCapacityAutoScalingSettingsUpdate; }
 
     /**
-     * <p>Autoscaling settings for managing a global secondary index replica's read
+     * <p>Auto scaling settings for managing a global secondary index replica's read
      * capacity units.</p>
      */
     inline bool ProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet() const { return m_provisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet; }
 
     /**
-     * <p>Autoscaling settings for managing a global secondary index replica's read
+     * <p>Auto scaling settings for managing a global secondary index replica's read
      * capacity units.</p>
      */
     inline void SetProvisionedReadCapacityAutoScalingSettingsUpdate(const AutoScalingSettingsUpdate& value) { m_provisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_provisionedReadCapacityAutoScalingSettingsUpdate = value; }
 
     /**
-     * <p>Autoscaling settings for managing a global secondary index replica's read
+     * <p>Auto scaling settings for managing a global secondary index replica's read
      * capacity units.</p>
      */
     inline void SetProvisionedReadCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate&& value) { m_provisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_provisionedReadCapacityAutoScalingSettingsUpdate = std::move(value); }
 
     /**
-     * <p>Autoscaling settings for managing a global secondary index replica's read
+     * <p>Auto scaling settings for managing a global secondary index replica's read
      * capacity units.</p>
      */
     inline ReplicaGlobalSecondaryIndexSettingsUpdate& WithProvisionedReadCapacityAutoScalingSettingsUpdate(const AutoScalingSettingsUpdate& value) { SetProvisionedReadCapacityAutoScalingSettingsUpdate(value); return *this;}
 
     /**
-     * <p>Autoscaling settings for managing a global secondary index replica's read
+     * <p>Auto scaling settings for managing a global secondary index replica's read
      * capacity units.</p>
      */
     inline ReplicaGlobalSecondaryIndexSettingsUpdate& WithProvisionedReadCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate&& value) { SetProvisionedReadCapacityAutoScalingSettingsUpdate(std::move(value)); return *this;}

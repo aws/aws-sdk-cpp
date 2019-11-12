@@ -53,96 +53,96 @@ namespace Model
 
 
     /**
-     * <p>The region name of the replica.</p>
+     * <p>The Region name of the replica.</p>
      */
     inline const Aws::String& GetRegionName() const{ return m_regionName; }
 
     /**
-     * <p>The region name of the replica.</p>
+     * <p>The Region name of the replica.</p>
      */
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
 
     /**
-     * <p>The region name of the replica.</p>
+     * <p>The Region name of the replica.</p>
      */
     inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
 
     /**
-     * <p>The region name of the replica.</p>
+     * <p>The Region name of the replica.</p>
      */
     inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
 
     /**
-     * <p>The region name of the replica.</p>
+     * <p>The Region name of the replica.</p>
      */
     inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
 
     /**
-     * <p>The region name of the replica.</p>
+     * <p>The Region name of the replica.</p>
      */
     inline ReplicaSettingsDescription& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
 
     /**
-     * <p>The region name of the replica.</p>
+     * <p>The Region name of the replica.</p>
      */
     inline ReplicaSettingsDescription& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
 
     /**
-     * <p>The region name of the replica.</p>
+     * <p>The Region name of the replica.</p>
      */
     inline ReplicaSettingsDescription& WithRegionName(const char* value) { SetRegionName(value); return *this;}
 
 
     /**
-     * <p>The current state of the region:</p> <ul> <li> <p> <code>CREATING</code> -
-     * The region is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
-     * region is being updated.</p> </li> <li> <p> <code>DELETING</code> - The region
-     * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The region is ready
+     * <p>The current state of the Region:</p> <ul> <li> <p> <code>CREATING</code> -
+     * The Region is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
+     * Region is being updated.</p> </li> <li> <p> <code>DELETING</code> - The Region
+     * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The Region is ready
      * for use.</p> </li> </ul>
      */
     inline const ReplicaStatus& GetReplicaStatus() const{ return m_replicaStatus; }
 
     /**
-     * <p>The current state of the region:</p> <ul> <li> <p> <code>CREATING</code> -
-     * The region is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
-     * region is being updated.</p> </li> <li> <p> <code>DELETING</code> - The region
-     * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The region is ready
+     * <p>The current state of the Region:</p> <ul> <li> <p> <code>CREATING</code> -
+     * The Region is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
+     * Region is being updated.</p> </li> <li> <p> <code>DELETING</code> - The Region
+     * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The Region is ready
      * for use.</p> </li> </ul>
      */
     inline bool ReplicaStatusHasBeenSet() const { return m_replicaStatusHasBeenSet; }
 
     /**
-     * <p>The current state of the region:</p> <ul> <li> <p> <code>CREATING</code> -
-     * The region is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
-     * region is being updated.</p> </li> <li> <p> <code>DELETING</code> - The region
-     * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The region is ready
+     * <p>The current state of the Region:</p> <ul> <li> <p> <code>CREATING</code> -
+     * The Region is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
+     * Region is being updated.</p> </li> <li> <p> <code>DELETING</code> - The Region
+     * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The Region is ready
      * for use.</p> </li> </ul>
      */
     inline void SetReplicaStatus(const ReplicaStatus& value) { m_replicaStatusHasBeenSet = true; m_replicaStatus = value; }
 
     /**
-     * <p>The current state of the region:</p> <ul> <li> <p> <code>CREATING</code> -
-     * The region is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
-     * region is being updated.</p> </li> <li> <p> <code>DELETING</code> - The region
-     * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The region is ready
+     * <p>The current state of the Region:</p> <ul> <li> <p> <code>CREATING</code> -
+     * The Region is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
+     * Region is being updated.</p> </li> <li> <p> <code>DELETING</code> - The Region
+     * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The Region is ready
      * for use.</p> </li> </ul>
      */
     inline void SetReplicaStatus(ReplicaStatus&& value) { m_replicaStatusHasBeenSet = true; m_replicaStatus = std::move(value); }
 
     /**
-     * <p>The current state of the region:</p> <ul> <li> <p> <code>CREATING</code> -
-     * The region is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
-     * region is being updated.</p> </li> <li> <p> <code>DELETING</code> - The region
-     * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The region is ready
+     * <p>The current state of the Region:</p> <ul> <li> <p> <code>CREATING</code> -
+     * The Region is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
+     * Region is being updated.</p> </li> <li> <p> <code>DELETING</code> - The Region
+     * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The Region is ready
      * for use.</p> </li> </ul>
      */
     inline ReplicaSettingsDescription& WithReplicaStatus(const ReplicaStatus& value) { SetReplicaStatus(value); return *this;}
 
     /**
-     * <p>The current state of the region:</p> <ul> <li> <p> <code>CREATING</code> -
-     * The region is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
-     * region is being updated.</p> </li> <li> <p> <code>DELETING</code> - The region
-     * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The region is ready
+     * <p>The current state of the Region:</p> <ul> <li> <p> <code>CREATING</code> -
+     * The Region is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
+     * Region is being updated.</p> </li> <li> <p> <code>DELETING</code> - The Region
+     * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The Region is ready
      * for use.</p> </li> </ul>
      */
     inline ReplicaSettingsDescription& WithReplicaStatus(ReplicaStatus&& value) { SetReplicaStatus(std::move(value)); return *this;}
@@ -221,32 +221,32 @@ namespace Model
 
 
     /**
-     * <p>Autoscaling settings for a global table replica's read capacity units.</p>
+     * <p>Auto scaling settings for a global table replica's read capacity units.</p>
      */
     inline const AutoScalingSettingsDescription& GetReplicaProvisionedReadCapacityAutoScalingSettings() const{ return m_replicaProvisionedReadCapacityAutoScalingSettings; }
 
     /**
-     * <p>Autoscaling settings for a global table replica's read capacity units.</p>
+     * <p>Auto scaling settings for a global table replica's read capacity units.</p>
      */
     inline bool ReplicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet() const { return m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet; }
 
     /**
-     * <p>Autoscaling settings for a global table replica's read capacity units.</p>
+     * <p>Auto scaling settings for a global table replica's read capacity units.</p>
      */
     inline void SetReplicaProvisionedReadCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet = true; m_replicaProvisionedReadCapacityAutoScalingSettings = value; }
 
     /**
-     * <p>Autoscaling settings for a global table replica's read capacity units.</p>
+     * <p>Auto scaling settings for a global table replica's read capacity units.</p>
      */
     inline void SetReplicaProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet = true; m_replicaProvisionedReadCapacityAutoScalingSettings = std::move(value); }
 
     /**
-     * <p>Autoscaling settings for a global table replica's read capacity units.</p>
+     * <p>Auto scaling settings for a global table replica's read capacity units.</p>
      */
     inline ReplicaSettingsDescription& WithReplicaProvisionedReadCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { SetReplicaProvisionedReadCapacityAutoScalingSettings(value); return *this;}
 
     /**
-     * <p>Autoscaling settings for a global table replica's read capacity units.</p>
+     * <p>Auto scaling settings for a global table replica's read capacity units.</p>
      */
     inline ReplicaSettingsDescription& WithReplicaProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { SetReplicaProvisionedReadCapacityAutoScalingSettings(std::move(value)); return *this;}
 
@@ -289,32 +289,32 @@ namespace Model
 
 
     /**
-     * <p>AutoScaling settings for a global table replica's write capacity units.</p>
+     * <p>Auto scaling settings for a global table replica's write capacity units.</p>
      */
     inline const AutoScalingSettingsDescription& GetReplicaProvisionedWriteCapacityAutoScalingSettings() const{ return m_replicaProvisionedWriteCapacityAutoScalingSettings; }
 
     /**
-     * <p>AutoScaling settings for a global table replica's write capacity units.</p>
+     * <p>Auto scaling settings for a global table replica's write capacity units.</p>
      */
     inline bool ReplicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet() const { return m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet; }
 
     /**
-     * <p>AutoScaling settings for a global table replica's write capacity units.</p>
+     * <p>Auto scaling settings for a global table replica's write capacity units.</p>
      */
     inline void SetReplicaProvisionedWriteCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet = true; m_replicaProvisionedWriteCapacityAutoScalingSettings = value; }
 
     /**
-     * <p>AutoScaling settings for a global table replica's write capacity units.</p>
+     * <p>Auto scaling settings for a global table replica's write capacity units.</p>
      */
     inline void SetReplicaProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet = true; m_replicaProvisionedWriteCapacityAutoScalingSettings = std::move(value); }
 
     /**
-     * <p>AutoScaling settings for a global table replica's write capacity units.</p>
+     * <p>Auto scaling settings for a global table replica's write capacity units.</p>
      */
     inline ReplicaSettingsDescription& WithReplicaProvisionedWriteCapacityAutoScalingSettings(const AutoScalingSettingsDescription& value) { SetReplicaProvisionedWriteCapacityAutoScalingSettings(value); return *this;}
 
     /**
-     * <p>AutoScaling settings for a global table replica's write capacity units.</p>
+     * <p>Auto scaling settings for a global table replica's write capacity units.</p>
      */
     inline ReplicaSettingsDescription& WithReplicaProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescription&& value) { SetReplicaProvisionedWriteCapacityAutoScalingSettings(std::move(value)); return *this;}
 

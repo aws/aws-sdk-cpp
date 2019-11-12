@@ -167,22 +167,26 @@ namespace Model
 
 
     /**
-     * <p>The port on which the targets are listening.</p>
+     * <p>The port on which the targets are listening. Not used if the target is a
+     * Lambda function.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>The port on which the targets are listening.</p>
+     * <p>The port on which the targets are listening. Not used if the target is a
+     * Lambda function.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p>The port on which the targets are listening.</p>
+     * <p>The port on which the targets are listening. Not used if the target is a
+     * Lambda function.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>The port on which the targets are listening.</p>
+     * <p>The port on which the targets are listening. Not used if the target is a
+     * Lambda function.</p>
      */
     inline TargetGroup& WithPort(int value) { SetPort(value); return *this;}
 

@@ -17,6 +17,11 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/DynamoDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/model/BillingMode.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/dynamodb/model/ProvisionedThroughput.h>
+#include <aws/dynamodb/model/GlobalSecondaryIndex.h>
+#include <aws/dynamodb/model/LocalSecondaryIndex.h>
 #include <utility>
 
 namespace Aws
@@ -125,6 +130,182 @@ namespace Model
      */
     inline RestoreTableFromBackupRequest& WithBackupArn(const char* value) { SetBackupArn(value); return *this;}
 
+
+    /**
+     * <p>The billing mode of the restored table.</p>
+     */
+    inline const BillingMode& GetBillingModeOverride() const{ return m_billingModeOverride; }
+
+    /**
+     * <p>The billing mode of the restored table.</p>
+     */
+    inline bool BillingModeOverrideHasBeenSet() const { return m_billingModeOverrideHasBeenSet; }
+
+    /**
+     * <p>The billing mode of the restored table.</p>
+     */
+    inline void SetBillingModeOverride(const BillingMode& value) { m_billingModeOverrideHasBeenSet = true; m_billingModeOverride = value; }
+
+    /**
+     * <p>The billing mode of the restored table.</p>
+     */
+    inline void SetBillingModeOverride(BillingMode&& value) { m_billingModeOverrideHasBeenSet = true; m_billingModeOverride = std::move(value); }
+
+    /**
+     * <p>The billing mode of the restored table.</p>
+     */
+    inline RestoreTableFromBackupRequest& WithBillingModeOverride(const BillingMode& value) { SetBillingModeOverride(value); return *this;}
+
+    /**
+     * <p>The billing mode of the restored table.</p>
+     */
+    inline RestoreTableFromBackupRequest& WithBillingModeOverride(BillingMode&& value) { SetBillingModeOverride(std::move(value)); return *this;}
+
+
+    /**
+     * <p>List of global secondary indexes for the restored table. The indexes provided
+     * should match existing secondary indexes. You can choose to exclude some or all
+     * of the indexes at the time of restore.</p>
+     */
+    inline const Aws::Vector<GlobalSecondaryIndex>& GetGlobalSecondaryIndexOverride() const{ return m_globalSecondaryIndexOverride; }
+
+    /**
+     * <p>List of global secondary indexes for the restored table. The indexes provided
+     * should match existing secondary indexes. You can choose to exclude some or all
+     * of the indexes at the time of restore.</p>
+     */
+    inline bool GlobalSecondaryIndexOverrideHasBeenSet() const { return m_globalSecondaryIndexOverrideHasBeenSet; }
+
+    /**
+     * <p>List of global secondary indexes for the restored table. The indexes provided
+     * should match existing secondary indexes. You can choose to exclude some or all
+     * of the indexes at the time of restore.</p>
+     */
+    inline void SetGlobalSecondaryIndexOverride(const Aws::Vector<GlobalSecondaryIndex>& value) { m_globalSecondaryIndexOverrideHasBeenSet = true; m_globalSecondaryIndexOverride = value; }
+
+    /**
+     * <p>List of global secondary indexes for the restored table. The indexes provided
+     * should match existing secondary indexes. You can choose to exclude some or all
+     * of the indexes at the time of restore.</p>
+     */
+    inline void SetGlobalSecondaryIndexOverride(Aws::Vector<GlobalSecondaryIndex>&& value) { m_globalSecondaryIndexOverrideHasBeenSet = true; m_globalSecondaryIndexOverride = std::move(value); }
+
+    /**
+     * <p>List of global secondary indexes for the restored table. The indexes provided
+     * should match existing secondary indexes. You can choose to exclude some or all
+     * of the indexes at the time of restore.</p>
+     */
+    inline RestoreTableFromBackupRequest& WithGlobalSecondaryIndexOverride(const Aws::Vector<GlobalSecondaryIndex>& value) { SetGlobalSecondaryIndexOverride(value); return *this;}
+
+    /**
+     * <p>List of global secondary indexes for the restored table. The indexes provided
+     * should match existing secondary indexes. You can choose to exclude some or all
+     * of the indexes at the time of restore.</p>
+     */
+    inline RestoreTableFromBackupRequest& WithGlobalSecondaryIndexOverride(Aws::Vector<GlobalSecondaryIndex>&& value) { SetGlobalSecondaryIndexOverride(std::move(value)); return *this;}
+
+    /**
+     * <p>List of global secondary indexes for the restored table. The indexes provided
+     * should match existing secondary indexes. You can choose to exclude some or all
+     * of the indexes at the time of restore.</p>
+     */
+    inline RestoreTableFromBackupRequest& AddGlobalSecondaryIndexOverride(const GlobalSecondaryIndex& value) { m_globalSecondaryIndexOverrideHasBeenSet = true; m_globalSecondaryIndexOverride.push_back(value); return *this; }
+
+    /**
+     * <p>List of global secondary indexes for the restored table. The indexes provided
+     * should match existing secondary indexes. You can choose to exclude some or all
+     * of the indexes at the time of restore.</p>
+     */
+    inline RestoreTableFromBackupRequest& AddGlobalSecondaryIndexOverride(GlobalSecondaryIndex&& value) { m_globalSecondaryIndexOverrideHasBeenSet = true; m_globalSecondaryIndexOverride.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>List of local secondary indexes for the restored table. The indexes provided
+     * should match existing secondary indexes. You can choose to exclude some or all
+     * of the indexes at the time of restore.</p>
+     */
+    inline const Aws::Vector<LocalSecondaryIndex>& GetLocalSecondaryIndexOverride() const{ return m_localSecondaryIndexOverride; }
+
+    /**
+     * <p>List of local secondary indexes for the restored table. The indexes provided
+     * should match existing secondary indexes. You can choose to exclude some or all
+     * of the indexes at the time of restore.</p>
+     */
+    inline bool LocalSecondaryIndexOverrideHasBeenSet() const { return m_localSecondaryIndexOverrideHasBeenSet; }
+
+    /**
+     * <p>List of local secondary indexes for the restored table. The indexes provided
+     * should match existing secondary indexes. You can choose to exclude some or all
+     * of the indexes at the time of restore.</p>
+     */
+    inline void SetLocalSecondaryIndexOverride(const Aws::Vector<LocalSecondaryIndex>& value) { m_localSecondaryIndexOverrideHasBeenSet = true; m_localSecondaryIndexOverride = value; }
+
+    /**
+     * <p>List of local secondary indexes for the restored table. The indexes provided
+     * should match existing secondary indexes. You can choose to exclude some or all
+     * of the indexes at the time of restore.</p>
+     */
+    inline void SetLocalSecondaryIndexOverride(Aws::Vector<LocalSecondaryIndex>&& value) { m_localSecondaryIndexOverrideHasBeenSet = true; m_localSecondaryIndexOverride = std::move(value); }
+
+    /**
+     * <p>List of local secondary indexes for the restored table. The indexes provided
+     * should match existing secondary indexes. You can choose to exclude some or all
+     * of the indexes at the time of restore.</p>
+     */
+    inline RestoreTableFromBackupRequest& WithLocalSecondaryIndexOverride(const Aws::Vector<LocalSecondaryIndex>& value) { SetLocalSecondaryIndexOverride(value); return *this;}
+
+    /**
+     * <p>List of local secondary indexes for the restored table. The indexes provided
+     * should match existing secondary indexes. You can choose to exclude some or all
+     * of the indexes at the time of restore.</p>
+     */
+    inline RestoreTableFromBackupRequest& WithLocalSecondaryIndexOverride(Aws::Vector<LocalSecondaryIndex>&& value) { SetLocalSecondaryIndexOverride(std::move(value)); return *this;}
+
+    /**
+     * <p>List of local secondary indexes for the restored table. The indexes provided
+     * should match existing secondary indexes. You can choose to exclude some or all
+     * of the indexes at the time of restore.</p>
+     */
+    inline RestoreTableFromBackupRequest& AddLocalSecondaryIndexOverride(const LocalSecondaryIndex& value) { m_localSecondaryIndexOverrideHasBeenSet = true; m_localSecondaryIndexOverride.push_back(value); return *this; }
+
+    /**
+     * <p>List of local secondary indexes for the restored table. The indexes provided
+     * should match existing secondary indexes. You can choose to exclude some or all
+     * of the indexes at the time of restore.</p>
+     */
+    inline RestoreTableFromBackupRequest& AddLocalSecondaryIndexOverride(LocalSecondaryIndex&& value) { m_localSecondaryIndexOverrideHasBeenSet = true; m_localSecondaryIndexOverride.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Provisioned throughput settings for the restored table.</p>
+     */
+    inline const ProvisionedThroughput& GetProvisionedThroughputOverride() const{ return m_provisionedThroughputOverride; }
+
+    /**
+     * <p>Provisioned throughput settings for the restored table.</p>
+     */
+    inline bool ProvisionedThroughputOverrideHasBeenSet() const { return m_provisionedThroughputOverrideHasBeenSet; }
+
+    /**
+     * <p>Provisioned throughput settings for the restored table.</p>
+     */
+    inline void SetProvisionedThroughputOverride(const ProvisionedThroughput& value) { m_provisionedThroughputOverrideHasBeenSet = true; m_provisionedThroughputOverride = value; }
+
+    /**
+     * <p>Provisioned throughput settings for the restored table.</p>
+     */
+    inline void SetProvisionedThroughputOverride(ProvisionedThroughput&& value) { m_provisionedThroughputOverrideHasBeenSet = true; m_provisionedThroughputOverride = std::move(value); }
+
+    /**
+     * <p>Provisioned throughput settings for the restored table.</p>
+     */
+    inline RestoreTableFromBackupRequest& WithProvisionedThroughputOverride(const ProvisionedThroughput& value) { SetProvisionedThroughputOverride(value); return *this;}
+
+    /**
+     * <p>Provisioned throughput settings for the restored table.</p>
+     */
+    inline RestoreTableFromBackupRequest& WithProvisionedThroughputOverride(ProvisionedThroughput&& value) { SetProvisionedThroughputOverride(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_targetTableName;
@@ -132,6 +313,18 @@ namespace Model
 
     Aws::String m_backupArn;
     bool m_backupArnHasBeenSet;
+
+    BillingMode m_billingModeOverride;
+    bool m_billingModeOverrideHasBeenSet;
+
+    Aws::Vector<GlobalSecondaryIndex> m_globalSecondaryIndexOverride;
+    bool m_globalSecondaryIndexOverrideHasBeenSet;
+
+    Aws::Vector<LocalSecondaryIndex> m_localSecondaryIndexOverride;
+    bool m_localSecondaryIndexOverrideHasBeenSet;
+
+    ProvisionedThroughput m_provisionedThroughputOverride;
+    bool m_provisionedThroughputOverrideHasBeenSet;
   };
 
 } // namespace Model

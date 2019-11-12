@@ -24,7 +24,12 @@ using namespace Aws::Utils;
 
 RestoreTableFromBackupRequest::RestoreTableFromBackupRequest() : 
     m_targetTableNameHasBeenSet(false),
-    m_backupArnHasBeenSet(false)
+    m_backupArnHasBeenSet(false),
+    m_billingModeOverride(BillingMode::NOT_SET),
+    m_billingModeOverrideHasBeenSet(false),
+    m_globalSecondaryIndexOverrideHasBeenSet(false),
+    m_localSecondaryIndexOverrideHasBeenSet(false),
+    m_provisionedThroughputOverrideHasBeenSet(false)
 {
 }
 
@@ -41,6 +46,39 @@ Aws::String RestoreTableFromBackupRequest::SerializePayload() const
   if(m_backupArnHasBeenSet)
   {
    payload.WithString("BackupArn", m_backupArn);
+
+  }
+
+  if(m_billingModeOverrideHasBeenSet)
+  {
+   payload.WithString("BillingModeOverride", BillingModeMapper::GetNameForBillingMode(m_billingModeOverride));
+  }
+
+  if(m_globalSecondaryIndexOverrideHasBeenSet)
+  {
+   Array<JsonValue> globalSecondaryIndexOverrideJsonList(m_globalSecondaryIndexOverride.size());
+   for(unsigned globalSecondaryIndexOverrideIndex = 0; globalSecondaryIndexOverrideIndex < globalSecondaryIndexOverrideJsonList.GetLength(); ++globalSecondaryIndexOverrideIndex)
+   {
+     globalSecondaryIndexOverrideJsonList[globalSecondaryIndexOverrideIndex].AsObject(m_globalSecondaryIndexOverride[globalSecondaryIndexOverrideIndex].Jsonize());
+   }
+   payload.WithArray("GlobalSecondaryIndexOverride", std::move(globalSecondaryIndexOverrideJsonList));
+
+  }
+
+  if(m_localSecondaryIndexOverrideHasBeenSet)
+  {
+   Array<JsonValue> localSecondaryIndexOverrideJsonList(m_localSecondaryIndexOverride.size());
+   for(unsigned localSecondaryIndexOverrideIndex = 0; localSecondaryIndexOverrideIndex < localSecondaryIndexOverrideJsonList.GetLength(); ++localSecondaryIndexOverrideIndex)
+   {
+     localSecondaryIndexOverrideJsonList[localSecondaryIndexOverrideIndex].AsObject(m_localSecondaryIndexOverride[localSecondaryIndexOverrideIndex].Jsonize());
+   }
+   payload.WithArray("LocalSecondaryIndexOverride", std::move(localSecondaryIndexOverrideJsonList));
+
+  }
+
+  if(m_provisionedThroughputOverrideHasBeenSet)
+  {
+   payload.WithObject("ProvisionedThroughputOverride", m_provisionedThroughputOverride.Jsonize());
 
   }
 

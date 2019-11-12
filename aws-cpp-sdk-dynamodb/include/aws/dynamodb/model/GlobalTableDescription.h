@@ -52,42 +52,42 @@ namespace Model
 
 
     /**
-     * <p>The regions where the global table has replicas.</p>
+     * <p>The Regions where the global table has replicas.</p>
      */
     inline const Aws::Vector<ReplicaDescription>& GetReplicationGroup() const{ return m_replicationGroup; }
 
     /**
-     * <p>The regions where the global table has replicas.</p>
+     * <p>The Regions where the global table has replicas.</p>
      */
     inline bool ReplicationGroupHasBeenSet() const { return m_replicationGroupHasBeenSet; }
 
     /**
-     * <p>The regions where the global table has replicas.</p>
+     * <p>The Regions where the global table has replicas.</p>
      */
     inline void SetReplicationGroup(const Aws::Vector<ReplicaDescription>& value) { m_replicationGroupHasBeenSet = true; m_replicationGroup = value; }
 
     /**
-     * <p>The regions where the global table has replicas.</p>
+     * <p>The Regions where the global table has replicas.</p>
      */
     inline void SetReplicationGroup(Aws::Vector<ReplicaDescription>&& value) { m_replicationGroupHasBeenSet = true; m_replicationGroup = std::move(value); }
 
     /**
-     * <p>The regions where the global table has replicas.</p>
+     * <p>The Regions where the global table has replicas.</p>
      */
     inline GlobalTableDescription& WithReplicationGroup(const Aws::Vector<ReplicaDescription>& value) { SetReplicationGroup(value); return *this;}
 
     /**
-     * <p>The regions where the global table has replicas.</p>
+     * <p>The Regions where the global table has replicas.</p>
      */
     inline GlobalTableDescription& WithReplicationGroup(Aws::Vector<ReplicaDescription>&& value) { SetReplicationGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The regions where the global table has replicas.</p>
+     * <p>The Regions where the global table has replicas.</p>
      */
     inline GlobalTableDescription& AddReplicationGroup(const ReplicaDescription& value) { m_replicationGroupHasBeenSet = true; m_replicationGroup.push_back(value); return *this; }
 
     /**
-     * <p>The regions where the global table has replicas.</p>
+     * <p>The Regions where the global table has replicas.</p>
      */
     inline GlobalTableDescription& AddReplicationGroup(ReplicaDescription&& value) { m_replicationGroupHasBeenSet = true; m_replicationGroup.push_back(std::move(value)); return *this; }
 

@@ -42,6 +42,7 @@ static const int INVALID_STRUCTURE_HASH = HashingUtils::HashString("InvalidStruc
 static const int PIPELINE_VERSION_NOT_FOUND_HASH = HashingUtils::HashString("PipelineVersionNotFoundException");
 static const int INVALID_WEBHOOK_FILTER_PATTERN_HASH = HashingUtils::HashString("InvalidWebhookFilterPatternException");
 static const int PIPELINE_NOT_FOUND_HASH = HashingUtils::HashString("PipelineNotFoundException");
+static const int OUTPUT_VARIABLES_SIZE_EXCEEDED_HASH = HashingUtils::HashString("OutputVariablesSizeExceededException");
 static const int ACTION_TYPE_NOT_FOUND_HASH = HashingUtils::HashString("ActionTypeNotFoundException");
 static const int INVALID_TAGS_HASH = HashingUtils::HashString("InvalidTagsException");
 static const int INVALID_APPROVAL_TOKEN_HASH = HashingUtils::HashString("InvalidApprovalTokenException");
@@ -118,6 +119,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == PIPELINE_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::PIPELINE_NOT_FOUND), false);
+  }
+  else if (hashCode == OUTPUT_VARIABLES_SIZE_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::OUTPUT_VARIABLES_SIZE_EXCEEDED), false);
   }
   else if (hashCode == ACTION_TYPE_NOT_FOUND_HASH)
   {

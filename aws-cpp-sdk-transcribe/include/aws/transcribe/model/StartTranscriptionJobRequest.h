@@ -247,12 +247,14 @@ namespace Model
      * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>Amazon Transcribe uses the default
-     * Amazon S3 key for server-side encryption of transcripts that are placed in your
-     * S3 bucket. You can't specify your own encryption key.</p> <p>If you don't set
-     * the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL,
-     * a shareable URL that provides secure access to your transcription, and returns
-     * it in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
+     * Service (KMS) key to encrypt the output of your transcription using the
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
+     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption of
+     * transcripts that are placed in your S3 bucket.</p> <p>If you don't set the
+     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
+     * shareable URL that provides secure access to your transcription, and returns it
+     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
      * transcription.</p>
      */
     inline const Aws::String& GetOutputBucketName() const{ return m_outputBucketName; }
@@ -265,12 +267,14 @@ namespace Model
      * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>Amazon Transcribe uses the default
-     * Amazon S3 key for server-side encryption of transcripts that are placed in your
-     * S3 bucket. You can't specify your own encryption key.</p> <p>If you don't set
-     * the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL,
-     * a shareable URL that provides secure access to your transcription, and returns
-     * it in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
+     * Service (KMS) key to encrypt the output of your transcription using the
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
+     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption of
+     * transcripts that are placed in your S3 bucket.</p> <p>If you don't set the
+     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
+     * shareable URL that provides secure access to your transcription, and returns it
+     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
      * transcription.</p>
      */
     inline bool OutputBucketNameHasBeenSet() const { return m_outputBucketNameHasBeenSet; }
@@ -283,12 +287,14 @@ namespace Model
      * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>Amazon Transcribe uses the default
-     * Amazon S3 key for server-side encryption of transcripts that are placed in your
-     * S3 bucket. You can't specify your own encryption key.</p> <p>If you don't set
-     * the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL,
-     * a shareable URL that provides secure access to your transcription, and returns
-     * it in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
+     * Service (KMS) key to encrypt the output of your transcription using the
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
+     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption of
+     * transcripts that are placed in your S3 bucket.</p> <p>If you don't set the
+     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
+     * shareable URL that provides secure access to your transcription, and returns it
+     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
      * transcription.</p>
      */
     inline void SetOutputBucketName(const Aws::String& value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName = value; }
@@ -301,12 +307,14 @@ namespace Model
      * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>Amazon Transcribe uses the default
-     * Amazon S3 key for server-side encryption of transcripts that are placed in your
-     * S3 bucket. You can't specify your own encryption key.</p> <p>If you don't set
-     * the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL,
-     * a shareable URL that provides secure access to your transcription, and returns
-     * it in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
+     * Service (KMS) key to encrypt the output of your transcription using the
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
+     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption of
+     * transcripts that are placed in your S3 bucket.</p> <p>If you don't set the
+     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
+     * shareable URL that provides secure access to your transcription, and returns it
+     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
      * transcription.</p>
      */
     inline void SetOutputBucketName(Aws::String&& value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName = std::move(value); }
@@ -319,12 +327,14 @@ namespace Model
      * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>Amazon Transcribe uses the default
-     * Amazon S3 key for server-side encryption of transcripts that are placed in your
-     * S3 bucket. You can't specify your own encryption key.</p> <p>If you don't set
-     * the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL,
-     * a shareable URL that provides secure access to your transcription, and returns
-     * it in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
+     * Service (KMS) key to encrypt the output of your transcription using the
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
+     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption of
+     * transcripts that are placed in your S3 bucket.</p> <p>If you don't set the
+     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
+     * shareable URL that provides secure access to your transcription, and returns it
+     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
      * transcription.</p>
      */
     inline void SetOutputBucketName(const char* value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName.assign(value); }
@@ -337,12 +347,14 @@ namespace Model
      * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>Amazon Transcribe uses the default
-     * Amazon S3 key for server-side encryption of transcripts that are placed in your
-     * S3 bucket. You can't specify your own encryption key.</p> <p>If you don't set
-     * the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL,
-     * a shareable URL that provides secure access to your transcription, and returns
-     * it in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
+     * Service (KMS) key to encrypt the output of your transcription using the
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
+     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption of
+     * transcripts that are placed in your S3 bucket.</p> <p>If you don't set the
+     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
+     * shareable URL that provides secure access to your transcription, and returns it
+     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
      * transcription.</p>
      */
     inline StartTranscriptionJobRequest& WithOutputBucketName(const Aws::String& value) { SetOutputBucketName(value); return *this;}
@@ -355,12 +367,14 @@ namespace Model
      * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>Amazon Transcribe uses the default
-     * Amazon S3 key for server-side encryption of transcripts that are placed in your
-     * S3 bucket. You can't specify your own encryption key.</p> <p>If you don't set
-     * the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL,
-     * a shareable URL that provides secure access to your transcription, and returns
-     * it in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
+     * Service (KMS) key to encrypt the output of your transcription using the
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
+     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption of
+     * transcripts that are placed in your S3 bucket.</p> <p>If you don't set the
+     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
+     * shareable URL that provides secure access to your transcription, and returns it
+     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
      * transcription.</p>
      */
     inline StartTranscriptionJobRequest& WithOutputBucketName(Aws::String&& value) { SetOutputBucketName(std::move(value)); return *this;}
@@ -373,39 +387,169 @@ namespace Model
      * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>Amazon Transcribe uses the default
-     * Amazon S3 key for server-side encryption of transcripts that are placed in your
-     * S3 bucket. You can't specify your own encryption key.</p> <p>If you don't set
-     * the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL,
-     * a shareable URL that provides secure access to your transcription, and returns
-     * it in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
+     * Service (KMS) key to encrypt the output of your transcription using the
+     * <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
+     * Amazon Transcribe uses the default Amazon S3 key for server-side encryption of
+     * transcripts that are placed in your S3 bucket.</p> <p>If you don't set the
+     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
+     * shareable URL that provides secure access to your transcription, and returns it
+     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
      * transcription.</p>
      */
     inline StartTranscriptionJobRequest& WithOutputBucketName(const char* value) { SetOutputBucketName(value); return *this;}
 
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key
+     * used to encrypt the output of the transcription job. The user calling the
+     * <code>StartTranscriptionJob</code> operation must have permission to use the
+     * specified KMS key.</p> <p>You can use either of the following to identify a KMS
+     * key in the current account:</p> <ul> <li> <p>KMS Key ID:
+     * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
+     * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
+     * identify a KMS key in the current account or another account:</p> <ul> <li>
+     * <p>Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:region:account
+     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
+     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * you don't specify an encryption key, the output of the transcription job is
+     * encrypted with the default Amazon S3 key (SSE-S3). </p> <p>If you specify a KMS
+     * key to encrypt your output, you must also specify an output location in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
     inline const Aws::String& GetOutputEncryptionKMSKeyId() const{ return m_outputEncryptionKMSKeyId; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key
+     * used to encrypt the output of the transcription job. The user calling the
+     * <code>StartTranscriptionJob</code> operation must have permission to use the
+     * specified KMS key.</p> <p>You can use either of the following to identify a KMS
+     * key in the current account:</p> <ul> <li> <p>KMS Key ID:
+     * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
+     * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
+     * identify a KMS key in the current account or another account:</p> <ul> <li>
+     * <p>Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:region:account
+     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
+     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * you don't specify an encryption key, the output of the transcription job is
+     * encrypted with the default Amazon S3 key (SSE-S3). </p> <p>If you specify a KMS
+     * key to encrypt your output, you must also specify an output location in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
     inline bool OutputEncryptionKMSKeyIdHasBeenSet() const { return m_outputEncryptionKMSKeyIdHasBeenSet; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key
+     * used to encrypt the output of the transcription job. The user calling the
+     * <code>StartTranscriptionJob</code> operation must have permission to use the
+     * specified KMS key.</p> <p>You can use either of the following to identify a KMS
+     * key in the current account:</p> <ul> <li> <p>KMS Key ID:
+     * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
+     * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
+     * identify a KMS key in the current account or another account:</p> <ul> <li>
+     * <p>Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:region:account
+     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
+     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * you don't specify an encryption key, the output of the transcription job is
+     * encrypted with the default Amazon S3 key (SSE-S3). </p> <p>If you specify a KMS
+     * key to encrypt your output, you must also specify an output location in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
     inline void SetOutputEncryptionKMSKeyId(const Aws::String& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key
+     * used to encrypt the output of the transcription job. The user calling the
+     * <code>StartTranscriptionJob</code> operation must have permission to use the
+     * specified KMS key.</p> <p>You can use either of the following to identify a KMS
+     * key in the current account:</p> <ul> <li> <p>KMS Key ID:
+     * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
+     * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
+     * identify a KMS key in the current account or another account:</p> <ul> <li>
+     * <p>Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:region:account
+     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
+     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * you don't specify an encryption key, the output of the transcription job is
+     * encrypted with the default Amazon S3 key (SSE-S3). </p> <p>If you specify a KMS
+     * key to encrypt your output, you must also specify an output location in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
     inline void SetOutputEncryptionKMSKeyId(Aws::String&& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = std::move(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key
+     * used to encrypt the output of the transcription job. The user calling the
+     * <code>StartTranscriptionJob</code> operation must have permission to use the
+     * specified KMS key.</p> <p>You can use either of the following to identify a KMS
+     * key in the current account:</p> <ul> <li> <p>KMS Key ID:
+     * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
+     * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
+     * identify a KMS key in the current account or another account:</p> <ul> <li>
+     * <p>Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:region:account
+     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
+     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * you don't specify an encryption key, the output of the transcription job is
+     * encrypted with the default Amazon S3 key (SSE-S3). </p> <p>If you specify a KMS
+     * key to encrypt your output, you must also specify an output location in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
     inline void SetOutputEncryptionKMSKeyId(const char* value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId.assign(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key
+     * used to encrypt the output of the transcription job. The user calling the
+     * <code>StartTranscriptionJob</code> operation must have permission to use the
+     * specified KMS key.</p> <p>You can use either of the following to identify a KMS
+     * key in the current account:</p> <ul> <li> <p>KMS Key ID:
+     * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
+     * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
+     * identify a KMS key in the current account or another account:</p> <ul> <li>
+     * <p>Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:region:account
+     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
+     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * you don't specify an encryption key, the output of the transcription job is
+     * encrypted with the default Amazon S3 key (SSE-S3). </p> <p>If you specify a KMS
+     * key to encrypt your output, you must also specify an output location in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
     inline StartTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(const Aws::String& value) { SetOutputEncryptionKMSKeyId(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key
+     * used to encrypt the output of the transcription job. The user calling the
+     * <code>StartTranscriptionJob</code> operation must have permission to use the
+     * specified KMS key.</p> <p>You can use either of the following to identify a KMS
+     * key in the current account:</p> <ul> <li> <p>KMS Key ID:
+     * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
+     * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
+     * identify a KMS key in the current account or another account:</p> <ul> <li>
+     * <p>Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:region:account
+     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
+     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * you don't specify an encryption key, the output of the transcription job is
+     * encrypted with the default Amazon S3 key (SSE-S3). </p> <p>If you specify a KMS
+     * key to encrypt your output, you must also specify an output location in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
     inline StartTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(Aws::String&& value) { SetOutputEncryptionKMSKeyId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key
+     * used to encrypt the output of the transcription job. The user calling the
+     * <code>StartTranscriptionJob</code> operation must have permission to use the
+     * specified KMS key.</p> <p>You can use either of the following to identify a KMS
+     * key in the current account:</p> <ul> <li> <p>KMS Key ID:
+     * "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>KMS Key Alias:
+     * "alias/ExampleAlias"</p> </li> </ul> <p>You can use either of the following to
+     * identify a KMS key in the current account or another account:</p> <ul> <li>
+     * <p>Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:region:account
+     * ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li> <li> <p>ARN of a KMS Key
+     * Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li> </ul> <p>If
+     * you don't specify an encryption key, the output of the transcription job is
+     * encrypted with the default Amazon S3 key (SSE-S3). </p> <p>If you specify a KMS
+     * key to encrypt your output, you must also specify an output location in the
+     * <code>OutputBucketName</code> parameter.</p>
+     */
     inline StartTranscriptionJobRequest& WithOutputEncryptionKMSKeyId(const char* value) { SetOutputEncryptionKMSKeyId(value); return *this;}
 
 

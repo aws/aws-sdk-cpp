@@ -568,6 +568,55 @@ namespace Model
      */
     inline ActionDeclaration& WithRegion(const char* value) { SetRegion(value); return *this;}
 
+
+    /**
+     * <p>The variable namespace associated with the action. All variables produced as
+     * output by this action fall under this namespace.</p>
+     */
+    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+
+    /**
+     * <p>The variable namespace associated with the action. All variables produced as
+     * output by this action fall under this namespace.</p>
+     */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
+
+    /**
+     * <p>The variable namespace associated with the action. All variables produced as
+     * output by this action fall under this namespace.</p>
+     */
+    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+
+    /**
+     * <p>The variable namespace associated with the action. All variables produced as
+     * output by this action fall under this namespace.</p>
+     */
+    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
+
+    /**
+     * <p>The variable namespace associated with the action. All variables produced as
+     * output by this action fall under this namespace.</p>
+     */
+    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
+
+    /**
+     * <p>The variable namespace associated with the action. All variables produced as
+     * output by this action fall under this namespace.</p>
+     */
+    inline ActionDeclaration& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
+
+    /**
+     * <p>The variable namespace associated with the action. All variables produced as
+     * output by this action fall under this namespace.</p>
+     */
+    inline ActionDeclaration& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
+
+    /**
+     * <p>The variable namespace associated with the action. All variables produced as
+     * output by this action fall under this namespace.</p>
+     */
+    inline ActionDeclaration& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -593,6 +642,9 @@ namespace Model
 
     Aws::String m_region;
     bool m_regionHasBeenSet;
+
+    Aws::String m_namespace;
+    bool m_namespaceHasBeenSet;
   };
 
 } // namespace Model

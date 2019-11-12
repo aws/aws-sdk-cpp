@@ -101,90 +101,90 @@ namespace Model
 
     /**
      * <p>Server-side encryption type. The only supported value is:</p> <ul> <li> <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
-     * Key is stored in your account and is managed by AWS KMS (KMS charges apply).</p>
-     * </li> </ul>
+     * <code>KMS</code> - Server-side encryption that uses AWS Key Management Service.
+     * The key is stored in your account and is managed by AWS KMS (AWS KMS charges
+     * apply).</p> </li> </ul>
      */
     inline const SSEType& GetSSEType() const{ return m_sSEType; }
 
     /**
      * <p>Server-side encryption type. The only supported value is:</p> <ul> <li> <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
-     * Key is stored in your account and is managed by AWS KMS (KMS charges apply).</p>
-     * </li> </ul>
+     * <code>KMS</code> - Server-side encryption that uses AWS Key Management Service.
+     * The key is stored in your account and is managed by AWS KMS (AWS KMS charges
+     * apply).</p> </li> </ul>
      */
     inline bool SSETypeHasBeenSet() const { return m_sSETypeHasBeenSet; }
 
     /**
      * <p>Server-side encryption type. The only supported value is:</p> <ul> <li> <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
-     * Key is stored in your account and is managed by AWS KMS (KMS charges apply).</p>
-     * </li> </ul>
+     * <code>KMS</code> - Server-side encryption that uses AWS Key Management Service.
+     * The key is stored in your account and is managed by AWS KMS (AWS KMS charges
+     * apply).</p> </li> </ul>
      */
     inline void SetSSEType(const SSEType& value) { m_sSETypeHasBeenSet = true; m_sSEType = value; }
 
     /**
      * <p>Server-side encryption type. The only supported value is:</p> <ul> <li> <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
-     * Key is stored in your account and is managed by AWS KMS (KMS charges apply).</p>
-     * </li> </ul>
+     * <code>KMS</code> - Server-side encryption that uses AWS Key Management Service.
+     * The key is stored in your account and is managed by AWS KMS (AWS KMS charges
+     * apply).</p> </li> </ul>
      */
     inline void SetSSEType(SSEType&& value) { m_sSETypeHasBeenSet = true; m_sSEType = std::move(value); }
 
     /**
      * <p>Server-side encryption type. The only supported value is:</p> <ul> <li> <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
-     * Key is stored in your account and is managed by AWS KMS (KMS charges apply).</p>
-     * </li> </ul>
+     * <code>KMS</code> - Server-side encryption that uses AWS Key Management Service.
+     * The key is stored in your account and is managed by AWS KMS (AWS KMS charges
+     * apply).</p> </li> </ul>
      */
     inline SSEDescription& WithSSEType(const SSEType& value) { SetSSEType(value); return *this;}
 
     /**
      * <p>Server-side encryption type. The only supported value is:</p> <ul> <li> <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
-     * Key is stored in your account and is managed by AWS KMS (KMS charges apply).</p>
-     * </li> </ul>
+     * <code>KMS</code> - Server-side encryption that uses AWS Key Management Service.
+     * The key is stored in your account and is managed by AWS KMS (AWS KMS charges
+     * apply).</p> </li> </ul>
      */
     inline SSEDescription& WithSSEType(SSEType&& value) { SetSSEType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The KMS customer master key (CMK) ARN used for the KMS encryption.</p>
+     * <p>The KMS customer master key (CMK) ARN used for the AWS KMS encryption.</p>
      */
     inline const Aws::String& GetKMSMasterKeyArn() const{ return m_kMSMasterKeyArn; }
 
     /**
-     * <p>The KMS customer master key (CMK) ARN used for the KMS encryption.</p>
+     * <p>The KMS customer master key (CMK) ARN used for the AWS KMS encryption.</p>
      */
     inline bool KMSMasterKeyArnHasBeenSet() const { return m_kMSMasterKeyArnHasBeenSet; }
 
     /**
-     * <p>The KMS customer master key (CMK) ARN used for the KMS encryption.</p>
+     * <p>The KMS customer master key (CMK) ARN used for the AWS KMS encryption.</p>
      */
     inline void SetKMSMasterKeyArn(const Aws::String& value) { m_kMSMasterKeyArnHasBeenSet = true; m_kMSMasterKeyArn = value; }
 
     /**
-     * <p>The KMS customer master key (CMK) ARN used for the KMS encryption.</p>
+     * <p>The KMS customer master key (CMK) ARN used for the AWS KMS encryption.</p>
      */
     inline void SetKMSMasterKeyArn(Aws::String&& value) { m_kMSMasterKeyArnHasBeenSet = true; m_kMSMasterKeyArn = std::move(value); }
 
     /**
-     * <p>The KMS customer master key (CMK) ARN used for the KMS encryption.</p>
+     * <p>The KMS customer master key (CMK) ARN used for the AWS KMS encryption.</p>
      */
     inline void SetKMSMasterKeyArn(const char* value) { m_kMSMasterKeyArnHasBeenSet = true; m_kMSMasterKeyArn.assign(value); }
 
     /**
-     * <p>The KMS customer master key (CMK) ARN used for the KMS encryption.</p>
+     * <p>The KMS customer master key (CMK) ARN used for the AWS KMS encryption.</p>
      */
     inline SSEDescription& WithKMSMasterKeyArn(const Aws::String& value) { SetKMSMasterKeyArn(value); return *this;}
 
     /**
-     * <p>The KMS customer master key (CMK) ARN used for the KMS encryption.</p>
+     * <p>The KMS customer master key (CMK) ARN used for the AWS KMS encryption.</p>
      */
     inline SSEDescription& WithKMSMasterKeyArn(Aws::String&& value) { SetKMSMasterKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The KMS customer master key (CMK) ARN used for the KMS encryption.</p>
+     * <p>The KMS customer master key (CMK) ARN used for the AWS KMS encryption.</p>
      */
     inline SSEDescription& WithKMSMasterKeyArn(const char* value) { SetKMSMasterKeyArn(value); return *this;}
 

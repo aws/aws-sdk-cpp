@@ -38,7 +38,7 @@ namespace Model
    * <p>Represents an operation to perform - either <code>DeleteItem</code> or
    * <code>PutItem</code>. You can only request one of these operations, not both, in
    * a single <code>WriteRequest</code>. If you do need to perform both of these
-   * operations, you will need to provide two separate <code>WriteRequest</code>
+   * operations, you need to provide two separate <code>WriteRequest</code>
    * objects.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/WriteRequest">AWS
    * API Reference</a></p>

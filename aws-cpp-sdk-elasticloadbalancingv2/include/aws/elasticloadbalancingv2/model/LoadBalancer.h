@@ -266,7 +266,7 @@ namespace Model
      * route requests from clients over the internet.</p> <p>The nodes of an internal
      * load balancer have only private IP addresses. The DNS name of an internal load
      * balancer is publicly resolvable to the private IP addresses of the nodes.
-     * Therefore, internal load balancers can only route requests from clients with
+     * Therefore, internal load balancers can route requests only from clients with
      * access to the VPC for the load balancer.</p>
      */
     inline const LoadBalancerSchemeEnum& GetScheme() const{ return m_scheme; }
@@ -278,7 +278,7 @@ namespace Model
      * route requests from clients over the internet.</p> <p>The nodes of an internal
      * load balancer have only private IP addresses. The DNS name of an internal load
      * balancer is publicly resolvable to the private IP addresses of the nodes.
-     * Therefore, internal load balancers can only route requests from clients with
+     * Therefore, internal load balancers can route requests only from clients with
      * access to the VPC for the load balancer.</p>
      */
     inline bool SchemeHasBeenSet() const { return m_schemeHasBeenSet; }
@@ -290,7 +290,7 @@ namespace Model
      * route requests from clients over the internet.</p> <p>The nodes of an internal
      * load balancer have only private IP addresses. The DNS name of an internal load
      * balancer is publicly resolvable to the private IP addresses of the nodes.
-     * Therefore, internal load balancers can only route requests from clients with
+     * Therefore, internal load balancers can route requests only from clients with
      * access to the VPC for the load balancer.</p>
      */
     inline void SetScheme(const LoadBalancerSchemeEnum& value) { m_schemeHasBeenSet = true; m_scheme = value; }
@@ -302,7 +302,7 @@ namespace Model
      * route requests from clients over the internet.</p> <p>The nodes of an internal
      * load balancer have only private IP addresses. The DNS name of an internal load
      * balancer is publicly resolvable to the private IP addresses of the nodes.
-     * Therefore, internal load balancers can only route requests from clients with
+     * Therefore, internal load balancers can route requests only from clients with
      * access to the VPC for the load balancer.</p>
      */
     inline void SetScheme(LoadBalancerSchemeEnum&& value) { m_schemeHasBeenSet = true; m_scheme = std::move(value); }
@@ -314,7 +314,7 @@ namespace Model
      * route requests from clients over the internet.</p> <p>The nodes of an internal
      * load balancer have only private IP addresses. The DNS name of an internal load
      * balancer is publicly resolvable to the private IP addresses of the nodes.
-     * Therefore, internal load balancers can only route requests from clients with
+     * Therefore, internal load balancers can route requests only from clients with
      * access to the VPC for the load balancer.</p>
      */
     inline LoadBalancer& WithScheme(const LoadBalancerSchemeEnum& value) { SetScheme(value); return *this;}
@@ -326,7 +326,7 @@ namespace Model
      * route requests from clients over the internet.</p> <p>The nodes of an internal
      * load balancer have only private IP addresses. The DNS name of an internal load
      * balancer is publicly resolvable to the private IP addresses of the nodes.
-     * Therefore, internal load balancers can only route requests from clients with
+     * Therefore, internal load balancers can route requests only from clients with
      * access to the VPC for the load balancer.</p>
      */
     inline LoadBalancer& WithScheme(LoadBalancerSchemeEnum&& value) { SetScheme(std::move(value)); return *this;}

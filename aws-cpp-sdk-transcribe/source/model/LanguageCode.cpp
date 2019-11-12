@@ -46,6 +46,14 @@ namespace Aws
         static const int ar_SA_HASH = HashingUtils::HashString("ar-SA");
         static const int ru_RU_HASH = HashingUtils::HashString("ru-RU");
         static const int zh_CN_HASH = HashingUtils::HashString("zh-CN");
+        static const int nl_NL_HASH = HashingUtils::HashString("nl-NL");
+        static const int id_ID_HASH = HashingUtils::HashString("id-ID");
+        static const int ta_IN_HASH = HashingUtils::HashString("ta-IN");
+        static const int fa_IR_HASH = HashingUtils::HashString("fa-IR");
+        static const int en_IE_HASH = HashingUtils::HashString("en-IE");
+        static const int en_AB_HASH = HashingUtils::HashString("en-AB");
+        static const int en_WL_HASH = HashingUtils::HashString("en-WL");
+        static const int pt_PT_HASH = HashingUtils::HashString("pt-PT");
 
 
         LanguageCode GetLanguageCodeForName(const Aws::String& name)
@@ -115,6 +123,38 @@ namespace Aws
           {
             return LanguageCode::zh_CN;
           }
+          else if (hashCode == nl_NL_HASH)
+          {
+            return LanguageCode::nl_NL;
+          }
+          else if (hashCode == id_ID_HASH)
+          {
+            return LanguageCode::id_ID;
+          }
+          else if (hashCode == ta_IN_HASH)
+          {
+            return LanguageCode::ta_IN;
+          }
+          else if (hashCode == fa_IR_HASH)
+          {
+            return LanguageCode::fa_IR;
+          }
+          else if (hashCode == en_IE_HASH)
+          {
+            return LanguageCode::en_IE;
+          }
+          else if (hashCode == en_AB_HASH)
+          {
+            return LanguageCode::en_AB;
+          }
+          else if (hashCode == en_WL_HASH)
+          {
+            return LanguageCode::en_WL;
+          }
+          else if (hashCode == pt_PT_HASH)
+          {
+            return LanguageCode::pt_PT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -161,6 +201,22 @@ namespace Aws
             return "ru-RU";
           case LanguageCode::zh_CN:
             return "zh-CN";
+          case LanguageCode::nl_NL:
+            return "nl-NL";
+          case LanguageCode::id_ID:
+            return "id-ID";
+          case LanguageCode::ta_IN:
+            return "ta-IN";
+          case LanguageCode::fa_IR:
+            return "fa-IR";
+          case LanguageCode::en_IE:
+            return "en-IE";
+          case LanguageCode::en_AB:
+            return "en-AB";
+          case LanguageCode::en_WL:
+            return "en-WL";
+          case LanguageCode::pt_PT:
+            return "pt-PT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

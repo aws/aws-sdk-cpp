@@ -124,37 +124,37 @@ namespace Model
 
 
     /**
-     * <p>AutoScaling settings for managing a global secondary index's write capacity
+     * <p>Auto scaling settings for managing a global secondary index's write capacity
      * units.</p>
      */
     inline const AutoScalingSettingsUpdate& GetProvisionedWriteCapacityAutoScalingSettingsUpdate() const{ return m_provisionedWriteCapacityAutoScalingSettingsUpdate; }
 
     /**
-     * <p>AutoScaling settings for managing a global secondary index's write capacity
+     * <p>Auto scaling settings for managing a global secondary index's write capacity
      * units.</p>
      */
     inline bool ProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet() const { return m_provisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet; }
 
     /**
-     * <p>AutoScaling settings for managing a global secondary index's write capacity
+     * <p>Auto scaling settings for managing a global secondary index's write capacity
      * units.</p>
      */
     inline void SetProvisionedWriteCapacityAutoScalingSettingsUpdate(const AutoScalingSettingsUpdate& value) { m_provisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_provisionedWriteCapacityAutoScalingSettingsUpdate = value; }
 
     /**
-     * <p>AutoScaling settings for managing a global secondary index's write capacity
+     * <p>Auto scaling settings for managing a global secondary index's write capacity
      * units.</p>
      */
     inline void SetProvisionedWriteCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate&& value) { m_provisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_provisionedWriteCapacityAutoScalingSettingsUpdate = std::move(value); }
 
     /**
-     * <p>AutoScaling settings for managing a global secondary index's write capacity
+     * <p>Auto scaling settings for managing a global secondary index's write capacity
      * units.</p>
      */
     inline GlobalTableGlobalSecondaryIndexSettingsUpdate& WithProvisionedWriteCapacityAutoScalingSettingsUpdate(const AutoScalingSettingsUpdate& value) { SetProvisionedWriteCapacityAutoScalingSettingsUpdate(value); return *this;}
 
     /**
-     * <p>AutoScaling settings for managing a global secondary index's write capacity
+     * <p>Auto scaling settings for managing a global secondary index's write capacity
      * units.</p>
      */
     inline GlobalTableGlobalSecondaryIndexSettingsUpdate& WithProvisionedWriteCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate&& value) { SetProvisionedWriteCapacityAutoScalingSettingsUpdate(std::move(value)); return *this;}

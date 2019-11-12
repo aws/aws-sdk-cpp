@@ -31,18 +31,22 @@ namespace Model
 ActionExecutionInput::ActionExecutionInput() : 
     m_actionTypeIdHasBeenSet(false),
     m_configurationHasBeenSet(false),
+    m_resolvedConfigurationHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_inputArtifactsHasBeenSet(false)
+    m_inputArtifactsHasBeenSet(false),
+    m_namespaceHasBeenSet(false)
 {
 }
 
 ActionExecutionInput::ActionExecutionInput(JsonView jsonValue) : 
     m_actionTypeIdHasBeenSet(false),
     m_configurationHasBeenSet(false),
+    m_resolvedConfigurationHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_inputArtifactsHasBeenSet(false)
+    m_inputArtifactsHasBeenSet(false),
+    m_namespaceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -64,6 +68,16 @@ ActionExecutionInput& ActionExecutionInput::operator =(JsonView jsonValue)
       m_configuration[configurationItem.first] = configurationItem.second.AsString();
     }
     m_configurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resolvedConfiguration"))
+  {
+    Aws::Map<Aws::String, JsonView> resolvedConfigurationJsonMap = jsonValue.GetObject("resolvedConfiguration").GetAllObjects();
+    for(auto& resolvedConfigurationItem : resolvedConfigurationJsonMap)
+    {
+      m_resolvedConfiguration[resolvedConfigurationItem.first] = resolvedConfigurationItem.second.AsString();
+    }
+    m_resolvedConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("roleArn"))
@@ -90,6 +104,13 @@ ActionExecutionInput& ActionExecutionInput::operator =(JsonView jsonValue)
     m_inputArtifactsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("namespace"))
+  {
+    m_namespace = jsonValue.GetString("namespace");
+
+    m_namespaceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -114,6 +135,17 @@ JsonValue ActionExecutionInput::Jsonize() const
 
   }
 
+  if(m_resolvedConfigurationHasBeenSet)
+  {
+   JsonValue resolvedConfigurationJsonMap;
+   for(auto& resolvedConfigurationItem : m_resolvedConfiguration)
+   {
+     resolvedConfigurationJsonMap.WithString(resolvedConfigurationItem.first, resolvedConfigurationItem.second);
+   }
+   payload.WithObject("resolvedConfiguration", std::move(resolvedConfigurationJsonMap));
+
+  }
+
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
@@ -134,6 +166,12 @@ JsonValue ActionExecutionInput::Jsonize() const
      inputArtifactsJsonList[inputArtifactsIndex].AsObject(m_inputArtifacts[inputArtifactsIndex].Jsonize());
    }
    payload.WithArray("inputArtifacts", std::move(inputArtifactsJsonList));
+
+  }
+
+  if(m_namespaceHasBeenSet)
+  {
+   payload.WithString("namespace", m_namespace);
 
   }
 
