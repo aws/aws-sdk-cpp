@@ -27,7 +27,8 @@ CreateLifecyclePolicyRequest::CreateLifecyclePolicyRequest() :
     m_descriptionHasBeenSet(false),
     m_state(SettablePolicyStateValues::NOT_SET),
     m_stateHasBeenSet(false),
-    m_policyDetailsHasBeenSet(false)
+    m_policyDetailsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,17 @@ Aws::String CreateLifecyclePolicyRequest::SerializePayload() const
   if(m_policyDetailsHasBeenSet)
   {
    payload.WithObject("PolicyDetails", m_policyDetails.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

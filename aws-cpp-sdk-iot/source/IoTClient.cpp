@@ -112,11 +112,13 @@
 #include <aws/iot/model/DetachThingPrincipalRequest.h>
 #include <aws/iot/model/DisableTopicRuleRequest.h>
 #include <aws/iot/model/EnableTopicRuleRequest.h>
+#include <aws/iot/model/GetCardinalityRequest.h>
 #include <aws/iot/model/GetEffectivePoliciesRequest.h>
 #include <aws/iot/model/GetIndexingConfigurationRequest.h>
 #include <aws/iot/model/GetJobDocumentRequest.h>
 #include <aws/iot/model/GetLoggingOptionsRequest.h>
 #include <aws/iot/model/GetOTAUpdateRequest.h>
+#include <aws/iot/model/GetPercentilesRequest.h>
 #include <aws/iot/model/GetPolicyRequest.h>
 #include <aws/iot/model/GetPolicyVersionRequest.h>
 #include <aws/iot/model/GetRegistrationCodeRequest.h>
@@ -3645,6 +3647,41 @@ void IoTClient::EnableTopicRuleAsyncHelper(const EnableTopicRuleRequest& request
   handler(this, request, EnableTopicRule(request), context);
 }
 
+GetCardinalityOutcome IoTClient::GetCardinality(const GetCardinalityRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/indices/cardinality";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetCardinalityOutcome(GetCardinalityResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetCardinalityOutcome(outcome.GetError());
+  }
+}
+
+GetCardinalityOutcomeCallable IoTClient::GetCardinalityCallable(const GetCardinalityRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCardinalityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCardinality(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::GetCardinalityAsync(const GetCardinalityRequest& request, const GetCardinalityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCardinalityAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::GetCardinalityAsyncHelper(const GetCardinalityRequest& request, const GetCardinalityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCardinality(request), context);
+}
+
 GetEffectivePoliciesOutcome IoTClient::GetEffectivePolicies(const GetEffectivePoliciesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -3831,6 +3868,41 @@ void IoTClient::GetOTAUpdateAsync(const GetOTAUpdateRequest& request, const GetO
 void IoTClient::GetOTAUpdateAsyncHelper(const GetOTAUpdateRequest& request, const GetOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetOTAUpdate(request), context);
+}
+
+GetPercentilesOutcome IoTClient::GetPercentiles(const GetPercentilesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/indices/percentiles";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetPercentilesOutcome(GetPercentilesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetPercentilesOutcome(outcome.GetError());
+  }
+}
+
+GetPercentilesOutcomeCallable IoTClient::GetPercentilesCallable(const GetPercentilesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPercentilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPercentiles(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::GetPercentilesAsync(const GetPercentilesRequest& request, const GetPercentilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPercentilesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::GetPercentilesAsyncHelper(const GetPercentilesRequest& request, const GetPercentilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPercentiles(request), context);
 }
 
 GetPolicyOutcome IoTClient::GetPolicy(const GetPolicyRequest& request) const

@@ -88,11 +88,13 @@
 #include <aws/iot/model/DescribeThingTypeResult.h>
 #include <aws/iot/model/DetachSecurityProfileResult.h>
 #include <aws/iot/model/DetachThingPrincipalResult.h>
+#include <aws/iot/model/GetCardinalityResult.h>
 #include <aws/iot/model/GetEffectivePoliciesResult.h>
 #include <aws/iot/model/GetIndexingConfigurationResult.h>
 #include <aws/iot/model/GetJobDocumentResult.h>
 #include <aws/iot/model/GetLoggingOptionsResult.h>
 #include <aws/iot/model/GetOTAUpdateResult.h>
+#include <aws/iot/model/GetPercentilesResult.h>
 #include <aws/iot/model/GetPolicyResult.h>
 #include <aws/iot/model/GetPolicyVersionResult.h>
 #include <aws/iot/model/GetRegistrationCodeResult.h>
@@ -293,11 +295,13 @@ namespace Model
         class DetachThingPrincipalRequest;
         class DisableTopicRuleRequest;
         class EnableTopicRuleRequest;
+        class GetCardinalityRequest;
         class GetEffectivePoliciesRequest;
         class GetIndexingConfigurationRequest;
         class GetJobDocumentRequest;
         class GetLoggingOptionsRequest;
         class GetOTAUpdateRequest;
+        class GetPercentilesRequest;
         class GetPolicyRequest;
         class GetPolicyVersionRequest;
         class GetRegistrationCodeRequest;
@@ -468,11 +472,13 @@ namespace Model
         typedef Aws::Utils::Outcome<DetachThingPrincipalResult, Aws::Client::AWSError<IoTErrors>> DetachThingPrincipalOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> DisableTopicRuleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> EnableTopicRuleOutcome;
+        typedef Aws::Utils::Outcome<GetCardinalityResult, Aws::Client::AWSError<IoTErrors>> GetCardinalityOutcome;
         typedef Aws::Utils::Outcome<GetEffectivePoliciesResult, Aws::Client::AWSError<IoTErrors>> GetEffectivePoliciesOutcome;
         typedef Aws::Utils::Outcome<GetIndexingConfigurationResult, Aws::Client::AWSError<IoTErrors>> GetIndexingConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetJobDocumentResult, Aws::Client::AWSError<IoTErrors>> GetJobDocumentOutcome;
         typedef Aws::Utils::Outcome<GetLoggingOptionsResult, Aws::Client::AWSError<IoTErrors>> GetLoggingOptionsOutcome;
         typedef Aws::Utils::Outcome<GetOTAUpdateResult, Aws::Client::AWSError<IoTErrors>> GetOTAUpdateOutcome;
+        typedef Aws::Utils::Outcome<GetPercentilesResult, Aws::Client::AWSError<IoTErrors>> GetPercentilesOutcome;
         typedef Aws::Utils::Outcome<GetPolicyResult, Aws::Client::AWSError<IoTErrors>> GetPolicyOutcome;
         typedef Aws::Utils::Outcome<GetPolicyVersionResult, Aws::Client::AWSError<IoTErrors>> GetPolicyVersionOutcome;
         typedef Aws::Utils::Outcome<GetRegistrationCodeResult, Aws::Client::AWSError<IoTErrors>> GetRegistrationCodeOutcome;
@@ -643,11 +649,13 @@ namespace Model
         typedef std::future<DetachThingPrincipalOutcome> DetachThingPrincipalOutcomeCallable;
         typedef std::future<DisableTopicRuleOutcome> DisableTopicRuleOutcomeCallable;
         typedef std::future<EnableTopicRuleOutcome> EnableTopicRuleOutcomeCallable;
+        typedef std::future<GetCardinalityOutcome> GetCardinalityOutcomeCallable;
         typedef std::future<GetEffectivePoliciesOutcome> GetEffectivePoliciesOutcomeCallable;
         typedef std::future<GetIndexingConfigurationOutcome> GetIndexingConfigurationOutcomeCallable;
         typedef std::future<GetJobDocumentOutcome> GetJobDocumentOutcomeCallable;
         typedef std::future<GetLoggingOptionsOutcome> GetLoggingOptionsOutcomeCallable;
         typedef std::future<GetOTAUpdateOutcome> GetOTAUpdateOutcomeCallable;
+        typedef std::future<GetPercentilesOutcome> GetPercentilesOutcomeCallable;
         typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
         typedef std::future<GetPolicyVersionOutcome> GetPolicyVersionOutcomeCallable;
         typedef std::future<GetRegistrationCodeOutcome> GetRegistrationCodeOutcomeCallable;
@@ -821,11 +829,13 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::DetachThingPrincipalRequest&, const Model::DetachThingPrincipalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachThingPrincipalResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DisableTopicRuleRequest&, const Model::DisableTopicRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableTopicRuleResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::EnableTopicRuleRequest&, const Model::EnableTopicRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableTopicRuleResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::GetCardinalityRequest&, const Model::GetCardinalityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCardinalityResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetEffectivePoliciesRequest&, const Model::GetEffectivePoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEffectivePoliciesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetIndexingConfigurationRequest&, const Model::GetIndexingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIndexingConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetJobDocumentRequest&, const Model::GetJobDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobDocumentResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetLoggingOptionsRequest&, const Model::GetLoggingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLoggingOptionsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetOTAUpdateRequest&, const Model::GetOTAUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOTAUpdateResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::GetPercentilesRequest&, const Model::GetPercentilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPercentilesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetPolicyRequest&, const Model::GetPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPolicyResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetPolicyVersionRequest&, const Model::GetPolicyVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPolicyVersionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetRegistrationCodeRequest&, const Model::GetRegistrationCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRegistrationCodeResponseReceivedHandler;
@@ -1803,12 +1813,8 @@ namespace Model
         /**
          * <p>Creates a stream for delivering one or more large files in chunks over MQTT.
          * A stream transports data bytes in chunks or blocks packaged as MQTT messages
-         * from a source like S3. You can have one or more files associated with a stream.
-         * The total size of a file associated with the stream cannot exceed more than 2
-         * MB. The stream will be created with version 0. If a stream is created with the
-         * same streamID as a stream that existed and was deleted within last 90 days, we
-         * will resurrect that old stream by incrementing the version by 1.</p><p><h3>See
-         * Also:</h3>   <a
+         * from a source like S3. You can have one or more files associated with a
+         * stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateStream">AWS
          * API Reference</a></p>
          */
@@ -1817,12 +1823,8 @@ namespace Model
         /**
          * <p>Creates a stream for delivering one or more large files in chunks over MQTT.
          * A stream transports data bytes in chunks or blocks packaged as MQTT messages
-         * from a source like S3. You can have one or more files associated with a stream.
-         * The total size of a file associated with the stream cannot exceed more than 2
-         * MB. The stream will be created with version 0. If a stream is created with the
-         * same streamID as a stream that existed and was deleted within last 90 days, we
-         * will resurrect that old stream by incrementing the version by 1.</p><p><h3>See
-         * Also:</h3>   <a
+         * from a source like S3. You can have one or more files associated with a
+         * stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateStream">AWS
          * API Reference</a></p>
          *
@@ -1833,12 +1835,8 @@ namespace Model
         /**
          * <p>Creates a stream for delivering one or more large files in chunks over MQTT.
          * A stream transports data bytes in chunks or blocks packaged as MQTT messages
-         * from a source like S3. You can have one or more files associated with a stream.
-         * The total size of a file associated with the stream cannot exceed more than 2
-         * MB. The stream will be created with version 0. If a stream is created with the
-         * same streamID as a stream that existed and was deleted within last 90 days, we
-         * will resurrect that old stream by incrementing the version by 1.</p><p><h3>See
-         * Also:</h3>   <a
+         * from a source like S3. You can have one or more files associated with a
+         * stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateStream">AWS
          * API Reference</a></p>
          *
@@ -3396,6 +3394,34 @@ namespace Model
         virtual void EnableTopicRuleAsync(const Model::EnableTopicRuleRequest& request, const EnableTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the number of things with distinct values for the aggregation field.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetCardinality">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCardinalityOutcome GetCardinality(const Model::GetCardinalityRequest& request) const;
+
+        /**
+         * <p>Returns the number of things with distinct values for the aggregation field.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetCardinality">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetCardinalityOutcomeCallable GetCardinalityCallable(const Model::GetCardinalityRequest& request) const;
+
+        /**
+         * <p>Returns the number of things with distinct values for the aggregation field.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetCardinality">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetCardinalityAsync(const Model::GetCardinalityRequest& request, const GetCardinalityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets a list of the policies that have an effect on the authorization behavior
          * of the specified device when it connects to the AWS IoT device
          * gateway.</p><p><h3>See Also:</h3>   <a
@@ -3533,6 +3559,40 @@ namespace Model
         virtual void GetOTAUpdateAsync(const Model::GetOTAUpdateRequest& request, const GetOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the percentile values for the aggregation field. The results from
+         * GetPercentiles is an approximation. The default percentile groupings are:
+         * 1,5,25,50,75,95,99. You can specify custom percentile grouping using the
+         * percents argument to the GetPercentiles API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPercentiles">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPercentilesOutcome GetPercentiles(const Model::GetPercentilesRequest& request) const;
+
+        /**
+         * <p>Returns the percentile values for the aggregation field. The results from
+         * GetPercentiles is an approximation. The default percentile groupings are:
+         * 1,5,25,50,75,95,99. You can specify custom percentile grouping using the
+         * percents argument to the GetPercentiles API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPercentiles">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPercentilesOutcomeCallable GetPercentilesCallable(const Model::GetPercentilesRequest& request) const;
+
+        /**
+         * <p>Returns the percentile values for the aggregation field. The results from
+         * GetPercentiles is an approximation. The default percentile groupings are:
+         * 1,5,25,50,75,95,99. You can specify custom percentile grouping using the
+         * percents argument to the GetPercentiles API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPercentiles">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPercentilesAsync(const Model::GetPercentilesRequest& request, const GetPercentilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about the specified policy with the policy document of the
          * default version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPolicy">AWS API
@@ -3617,16 +3677,20 @@ namespace Model
         virtual void GetRegistrationCodeAsync(const Model::GetRegistrationCodeRequest& request, const GetRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets statistics about things that match the specified query.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets statistics returns the count, average, sum, minimum, maximum,
+         * sumOfSquares, variance, and standard deviation for the specified aggregated
+         * field. If the aggregation field is of type String, only the count statistic is
+         * returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetStatistics">AWS
          * API Reference</a></p>
          */
         virtual Model::GetStatisticsOutcome GetStatistics(const Model::GetStatisticsRequest& request) const;
 
         /**
-         * <p>Gets statistics about things that match the specified query.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets statistics returns the count, average, sum, minimum, maximum,
+         * sumOfSquares, variance, and standard deviation for the specified aggregated
+         * field. If the aggregation field is of type String, only the count statistic is
+         * returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetStatistics">AWS
          * API Reference</a></p>
          *
@@ -3635,8 +3699,10 @@ namespace Model
         virtual Model::GetStatisticsOutcomeCallable GetStatisticsCallable(const Model::GetStatisticsRequest& request) const;
 
         /**
-         * <p>Gets statistics about things that match the specified query.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets statistics returns the count, average, sum, minimum, maximum,
+         * sumOfSquares, variance, and standard deviation for the specified aggregated
+         * field. If the aggregation field is of type String, only the count statistic is
+         * returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetStatistics">AWS
          * API Reference</a></p>
          *
@@ -4905,14 +4971,24 @@ namespace Model
         virtual void RegisterCertificateAsync(const Model::RegisterCertificateRequest& request, const RegisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provisions a thing.</p><p><h3>See Also:</h3>   <a
+         * <p>Provisions a thing in the device registry. RegisterThing calls other AWS IoT
+         * control plane APIs. These calls might exceed your account level <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot">
+         * AWS IoT Throttling Limits</a> and cause throttle errors. Please contact <a
+         * href="https://console.aws.amazon.com/support/home">AWS Customer Support</a> to
+         * raise your throttling limits if necessary.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterThing">AWS
          * API Reference</a></p>
          */
         virtual Model::RegisterThingOutcome RegisterThing(const Model::RegisterThingRequest& request) const;
 
         /**
-         * <p>Provisions a thing.</p><p><h3>See Also:</h3>   <a
+         * <p>Provisions a thing in the device registry. RegisterThing calls other AWS IoT
+         * control plane APIs. These calls might exceed your account level <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot">
+         * AWS IoT Throttling Limits</a> and cause throttle errors. Please contact <a
+         * href="https://console.aws.amazon.com/support/home">AWS Customer Support</a> to
+         * raise your throttling limits if necessary.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterThing">AWS
          * API Reference</a></p>
          *
@@ -4921,7 +4997,12 @@ namespace Model
         virtual Model::RegisterThingOutcomeCallable RegisterThingCallable(const Model::RegisterThingRequest& request) const;
 
         /**
-         * <p>Provisions a thing.</p><p><h3>See Also:</h3>   <a
+         * <p>Provisions a thing in the device registry. RegisterThing calls other AWS IoT
+         * control plane APIs. These calls might exceed your account level <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot">
+         * AWS IoT Throttling Limits</a> and cause throttle errors. Please contact <a
+         * href="https://console.aws.amazon.com/support/home">AWS Customer Support</a> to
+         * raise your throttling limits if necessary.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterThing">AWS
          * API Reference</a></p>
          *
@@ -6069,11 +6150,13 @@ namespace Model
         void DetachThingPrincipalAsyncHelper(const Model::DetachThingPrincipalRequest& request, const DetachThingPrincipalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableTopicRuleAsyncHelper(const Model::DisableTopicRuleRequest& request, const DisableTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableTopicRuleAsyncHelper(const Model::EnableTopicRuleRequest& request, const EnableTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetCardinalityAsyncHelper(const Model::GetCardinalityRequest& request, const GetCardinalityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEffectivePoliciesAsyncHelper(const Model::GetEffectivePoliciesRequest& request, const GetEffectivePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIndexingConfigurationAsyncHelper(const Model::GetIndexingConfigurationRequest& request, const GetIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobDocumentAsyncHelper(const Model::GetJobDocumentRequest& request, const GetJobDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLoggingOptionsAsyncHelper(const Model::GetLoggingOptionsRequest& request, const GetLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetOTAUpdateAsyncHelper(const Model::GetOTAUpdateRequest& request, const GetOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetPercentilesAsyncHelper(const Model::GetPercentilesRequest& request, const GetPercentilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPolicyAsyncHelper(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPolicyVersionAsyncHelper(const Model::GetPolicyVersionRequest& request, const GetPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRegistrationCodeAsyncHelper(const Model::GetRegistrationCodeRequest& request, const GetRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

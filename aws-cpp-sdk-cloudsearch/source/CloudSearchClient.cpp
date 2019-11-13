@@ -43,6 +43,7 @@
 #include <aws/cloudsearch/model/DeleteSuggesterRequest.h>
 #include <aws/cloudsearch/model/DescribeAnalysisSchemesRequest.h>
 #include <aws/cloudsearch/model/DescribeAvailabilityOptionsRequest.h>
+#include <aws/cloudsearch/model/DescribeDomainEndpointOptionsRequest.h>
 #include <aws/cloudsearch/model/DescribeDomainsRequest.h>
 #include <aws/cloudsearch/model/DescribeExpressionsRequest.h>
 #include <aws/cloudsearch/model/DescribeIndexFieldsRequest.h>
@@ -52,6 +53,7 @@
 #include <aws/cloudsearch/model/IndexDocumentsRequest.h>
 #include <aws/cloudsearch/model/ListDomainNamesRequest.h>
 #include <aws/cloudsearch/model/UpdateAvailabilityOptionsRequest.h>
+#include <aws/cloudsearch/model/UpdateDomainEndpointOptionsRequest.h>
 #include <aws/cloudsearch/model/UpdateScalingParametersRequest.h>
 #include <aws/cloudsearch/model/UpdateServiceAccessPoliciesRequest.h>
 
@@ -593,6 +595,41 @@ void CloudSearchClient::DescribeAvailabilityOptionsAsyncHelper(const DescribeAva
   handler(this, request, DescribeAvailabilityOptions(request), context);
 }
 
+DescribeDomainEndpointOptionsOutcome CloudSearchClient::DescribeDomainEndpointOptions(const DescribeDomainEndpointOptionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeDomainEndpointOptionsOutcome(DescribeDomainEndpointOptionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeDomainEndpointOptionsOutcome(outcome.GetError());
+  }
+}
+
+DescribeDomainEndpointOptionsOutcomeCallable CloudSearchClient::DescribeDomainEndpointOptionsCallable(const DescribeDomainEndpointOptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainEndpointOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDomainEndpointOptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudSearchClient::DescribeDomainEndpointOptionsAsync(const DescribeDomainEndpointOptionsRequest& request, const DescribeDomainEndpointOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainEndpointOptionsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudSearchClient::DescribeDomainEndpointOptionsAsyncHelper(const DescribeDomainEndpointOptionsRequest& request, const DescribeDomainEndpointOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDomainEndpointOptions(request), context);
+}
+
 DescribeDomainsOutcome CloudSearchClient::DescribeDomains(const DescribeDomainsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -906,6 +943,41 @@ void CloudSearchClient::UpdateAvailabilityOptionsAsync(const UpdateAvailabilityO
 void CloudSearchClient::UpdateAvailabilityOptionsAsyncHelper(const UpdateAvailabilityOptionsRequest& request, const UpdateAvailabilityOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateAvailabilityOptions(request), context);
+}
+
+UpdateDomainEndpointOptionsOutcome CloudSearchClient::UpdateDomainEndpointOptions(const UpdateDomainEndpointOptionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateDomainEndpointOptionsOutcome(UpdateDomainEndpointOptionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateDomainEndpointOptionsOutcome(outcome.GetError());
+  }
+}
+
+UpdateDomainEndpointOptionsOutcomeCallable CloudSearchClient::UpdateDomainEndpointOptionsCallable(const UpdateDomainEndpointOptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDomainEndpointOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDomainEndpointOptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudSearchClient::UpdateDomainEndpointOptionsAsync(const UpdateDomainEndpointOptionsRequest& request, const UpdateDomainEndpointOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateDomainEndpointOptionsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudSearchClient::UpdateDomainEndpointOptionsAsyncHelper(const UpdateDomainEndpointOptionsRequest& request, const UpdateDomainEndpointOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateDomainEndpointOptions(request), context);
 }
 
 UpdateScalingParametersOutcome CloudSearchClient::UpdateScalingParameters(const UpdateScalingParametersRequest& request) const

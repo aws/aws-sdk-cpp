@@ -19,6 +19,7 @@
 #include <aws/dlm/model/GettablePolicyStateValues.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/dlm/model/PolicyDetails.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -164,6 +165,47 @@ namespace Model
 
 
     /**
+     * <p>The description of the status.</p>
+     */
+    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>The description of the status.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
+
+    /**
+     * <p>The description of the status.</p>
+     */
+    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
+
+    /**
+     * <p>The description of the status.</p>
+     */
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
+
+    /**
+     * <p>The description of the status.</p>
+     */
+    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
+
+    /**
+     * <p>The description of the status.</p>
+     */
+    inline LifecyclePolicy& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
+
+    /**
+     * <p>The description of the status.</p>
+     */
+    inline LifecyclePolicy& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>The description of the status.</p>
+     */
+    inline LifecyclePolicy& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations
      * specified by the lifecycle policy.</p>
      */
@@ -304,6 +346,113 @@ namespace Model
      */
     inline LifecyclePolicy& WithPolicyDetails(PolicyDetails&& value) { SetPolicyDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline LifecyclePolicy& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline LifecyclePolicy& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline LifecyclePolicy& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline LifecyclePolicy& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline LifecyclePolicy& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline LifecyclePolicy& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline LifecyclePolicy& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline LifecyclePolicy& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline LifecyclePolicy& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the policy.</p>
+     */
+    inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the policy.</p>
+     */
+    inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the policy.</p>
+     */
+    inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the policy.</p>
+     */
+    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the policy.</p>
+     */
+    inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the policy.</p>
+     */
+    inline LifecyclePolicy& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the policy.</p>
+     */
+    inline LifecyclePolicy& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the policy.</p>
+     */
+    inline LifecyclePolicy& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
+
   private:
 
     Aws::String m_policyId;
@@ -314,6 +463,9 @@ namespace Model
 
     GettablePolicyStateValues m_state;
     bool m_stateHasBeenSet;
+
+    Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet;
 
     Aws::String m_executionRoleArn;
     bool m_executionRoleArnHasBeenSet;
@@ -326,6 +478,12 @@ namespace Model
 
     PolicyDetails m_policyDetails;
     bool m_policyDetailsHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
+
+    Aws::String m_policyArn;
+    bool m_policyArnHasBeenSet;
   };
 
 } // namespace Model

@@ -131,22 +131,26 @@ namespace Model
 
 
     /**
-     * <p>The Quality of Service (QoS) level to use when republishing messages.</p>
+     * <p>The Quality of Service (QoS) level to use when republishing messages. The
+     * default value is 0.</p>
      */
     inline int GetQos() const{ return m_qos; }
 
     /**
-     * <p>The Quality of Service (QoS) level to use when republishing messages.</p>
+     * <p>The Quality of Service (QoS) level to use when republishing messages. The
+     * default value is 0.</p>
      */
     inline bool QosHasBeenSet() const { return m_qosHasBeenSet; }
 
     /**
-     * <p>The Quality of Service (QoS) level to use when republishing messages.</p>
+     * <p>The Quality of Service (QoS) level to use when republishing messages. The
+     * default value is 0.</p>
      */
     inline void SetQos(int value) { m_qosHasBeenSet = true; m_qos = value; }
 
     /**
-     * <p>The Quality of Service (QoS) level to use when republishing messages.</p>
+     * <p>The Quality of Service (QoS) level to use when republishing messages. The
+     * default value is 0.</p>
      */
     inline RepublishAction& WithQos(int value) { SetQos(value); return *this;}
 

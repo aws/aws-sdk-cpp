@@ -134,79 +134,79 @@ namespace Model
 
 
     /**
-     * <p>The state of processing a change to an option. Possible values:</p> <ul> <li>
-     * <code>RequiresIndexDocuments</code>: the option's latest value will not be
+     * <p>The state of processing a change to an option. Possible values:</p><ul>
+     * <li><code>RequiresIndexDocuments</code>: the option's latest value will not be
      * deployed until <a>IndexDocuments</a> has been called and indexing is
-     * complete.</li> <li> <code>Processing</code>: the option's latest value is in the
-     * process of being activated. </li> <li> <code>Active</code>: the option's latest
-     * value is completely deployed.</li> <li> <code>FailedToValidate</code>: the
-     * option value is not compatible with the domain's data and cannot be used to
-     * index the data. You must either modify the option value or update or remove the
+     * complete.</li> <li><code>Processing</code>: the option's latest value is in the
+     * process of being activated. </li> <li><code>Active</code>: the option's latest
+     * value is completely deployed.</li> <li><code>FailedToValidate</code>: the option
+     * value is not compatible with the domain's data and cannot be used to index the
+     * data. You must either modify the option value or update or remove the
      * incompatible documents.</li> </ul>
      */
     inline const OptionState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of processing a change to an option. Possible values:</p> <ul> <li>
-     * <code>RequiresIndexDocuments</code>: the option's latest value will not be
+     * <p>The state of processing a change to an option. Possible values:</p><ul>
+     * <li><code>RequiresIndexDocuments</code>: the option's latest value will not be
      * deployed until <a>IndexDocuments</a> has been called and indexing is
-     * complete.</li> <li> <code>Processing</code>: the option's latest value is in the
-     * process of being activated. </li> <li> <code>Active</code>: the option's latest
-     * value is completely deployed.</li> <li> <code>FailedToValidate</code>: the
-     * option value is not compatible with the domain's data and cannot be used to
-     * index the data. You must either modify the option value or update or remove the
+     * complete.</li> <li><code>Processing</code>: the option's latest value is in the
+     * process of being activated. </li> <li><code>Active</code>: the option's latest
+     * value is completely deployed.</li> <li><code>FailedToValidate</code>: the option
+     * value is not compatible with the domain's data and cannot be used to index the
+     * data. You must either modify the option value or update or remove the
      * incompatible documents.</li> </ul>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The state of processing a change to an option. Possible values:</p> <ul> <li>
-     * <code>RequiresIndexDocuments</code>: the option's latest value will not be
+     * <p>The state of processing a change to an option. Possible values:</p><ul>
+     * <li><code>RequiresIndexDocuments</code>: the option's latest value will not be
      * deployed until <a>IndexDocuments</a> has been called and indexing is
-     * complete.</li> <li> <code>Processing</code>: the option's latest value is in the
-     * process of being activated. </li> <li> <code>Active</code>: the option's latest
-     * value is completely deployed.</li> <li> <code>FailedToValidate</code>: the
-     * option value is not compatible with the domain's data and cannot be used to
-     * index the data. You must either modify the option value or update or remove the
+     * complete.</li> <li><code>Processing</code>: the option's latest value is in the
+     * process of being activated. </li> <li><code>Active</code>: the option's latest
+     * value is completely deployed.</li> <li><code>FailedToValidate</code>: the option
+     * value is not compatible with the domain's data and cannot be used to index the
+     * data. You must either modify the option value or update or remove the
      * incompatible documents.</li> </ul>
      */
     inline void SetState(const OptionState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of processing a change to an option. Possible values:</p> <ul> <li>
-     * <code>RequiresIndexDocuments</code>: the option's latest value will not be
+     * <p>The state of processing a change to an option. Possible values:</p><ul>
+     * <li><code>RequiresIndexDocuments</code>: the option's latest value will not be
      * deployed until <a>IndexDocuments</a> has been called and indexing is
-     * complete.</li> <li> <code>Processing</code>: the option's latest value is in the
-     * process of being activated. </li> <li> <code>Active</code>: the option's latest
-     * value is completely deployed.</li> <li> <code>FailedToValidate</code>: the
-     * option value is not compatible with the domain's data and cannot be used to
-     * index the data. You must either modify the option value or update or remove the
+     * complete.</li> <li><code>Processing</code>: the option's latest value is in the
+     * process of being activated. </li> <li><code>Active</code>: the option's latest
+     * value is completely deployed.</li> <li><code>FailedToValidate</code>: the option
+     * value is not compatible with the domain's data and cannot be used to index the
+     * data. You must either modify the option value or update or remove the
      * incompatible documents.</li> </ul>
      */
     inline void SetState(OptionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The state of processing a change to an option. Possible values:</p> <ul> <li>
-     * <code>RequiresIndexDocuments</code>: the option's latest value will not be
+     * <p>The state of processing a change to an option. Possible values:</p><ul>
+     * <li><code>RequiresIndexDocuments</code>: the option's latest value will not be
      * deployed until <a>IndexDocuments</a> has been called and indexing is
-     * complete.</li> <li> <code>Processing</code>: the option's latest value is in the
-     * process of being activated. </li> <li> <code>Active</code>: the option's latest
-     * value is completely deployed.</li> <li> <code>FailedToValidate</code>: the
-     * option value is not compatible with the domain's data and cannot be used to
-     * index the data. You must either modify the option value or update or remove the
+     * complete.</li> <li><code>Processing</code>: the option's latest value is in the
+     * process of being activated. </li> <li><code>Active</code>: the option's latest
+     * value is completely deployed.</li> <li><code>FailedToValidate</code>: the option
+     * value is not compatible with the domain's data and cannot be used to index the
+     * data. You must either modify the option value or update or remove the
      * incompatible documents.</li> </ul>
      */
     inline OptionStatus& WithState(const OptionState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of processing a change to an option. Possible values:</p> <ul> <li>
-     * <code>RequiresIndexDocuments</code>: the option's latest value will not be
+     * <p>The state of processing a change to an option. Possible values:</p><ul>
+     * <li><code>RequiresIndexDocuments</code>: the option's latest value will not be
      * deployed until <a>IndexDocuments</a> has been called and indexing is
-     * complete.</li> <li> <code>Processing</code>: the option's latest value is in the
-     * process of being activated. </li> <li> <code>Active</code>: the option's latest
-     * value is completely deployed.</li> <li> <code>FailedToValidate</code>: the
-     * option value is not compatible with the domain's data and cannot be used to
-     * index the data. You must either modify the option value or update or remove the
+     * complete.</li> <li><code>Processing</code>: the option's latest value is in the
+     * process of being activated. </li> <li><code>Active</code>: the option's latest
+     * value is completely deployed.</li> <li><code>FailedToValidate</code>: the option
+     * value is not compatible with the domain's data and cannot be used to index the
+     * data. You must either modify the option value or update or remove the
      * incompatible documents.</li> </ul>
      */
     inline OptionStatus& WithState(OptionState&& value) { SetState(std::move(value)); return *this;}

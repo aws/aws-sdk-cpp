@@ -35,6 +35,7 @@
 #include <aws/cloudsearch/model/DeleteSuggesterResult.h>
 #include <aws/cloudsearch/model/DescribeAnalysisSchemesResult.h>
 #include <aws/cloudsearch/model/DescribeAvailabilityOptionsResult.h>
+#include <aws/cloudsearch/model/DescribeDomainEndpointOptionsResult.h>
 #include <aws/cloudsearch/model/DescribeDomainsResult.h>
 #include <aws/cloudsearch/model/DescribeExpressionsResult.h>
 #include <aws/cloudsearch/model/DescribeIndexFieldsResult.h>
@@ -44,6 +45,7 @@
 #include <aws/cloudsearch/model/IndexDocumentsResult.h>
 #include <aws/cloudsearch/model/ListDomainNamesResult.h>
 #include <aws/cloudsearch/model/UpdateAvailabilityOptionsResult.h>
+#include <aws/cloudsearch/model/UpdateDomainEndpointOptionsResult.h>
 #include <aws/cloudsearch/model/UpdateScalingParametersResult.h>
 #include <aws/cloudsearch/model/UpdateServiceAccessPoliciesResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -104,6 +106,7 @@ namespace Model
         class DeleteSuggesterRequest;
         class DescribeAnalysisSchemesRequest;
         class DescribeAvailabilityOptionsRequest;
+        class DescribeDomainEndpointOptionsRequest;
         class DescribeDomainsRequest;
         class DescribeExpressionsRequest;
         class DescribeIndexFieldsRequest;
@@ -113,6 +116,7 @@ namespace Model
         class IndexDocumentsRequest;
         class ListDomainNamesRequest;
         class UpdateAvailabilityOptionsRequest;
+        class UpdateDomainEndpointOptionsRequest;
         class UpdateScalingParametersRequest;
         class UpdateServiceAccessPoliciesRequest;
 
@@ -129,6 +133,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteSuggesterResult, Aws::Client::AWSError<CloudSearchErrors>> DeleteSuggesterOutcome;
         typedef Aws::Utils::Outcome<DescribeAnalysisSchemesResult, Aws::Client::AWSError<CloudSearchErrors>> DescribeAnalysisSchemesOutcome;
         typedef Aws::Utils::Outcome<DescribeAvailabilityOptionsResult, Aws::Client::AWSError<CloudSearchErrors>> DescribeAvailabilityOptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDomainEndpointOptionsResult, Aws::Client::AWSError<CloudSearchErrors>> DescribeDomainEndpointOptionsOutcome;
         typedef Aws::Utils::Outcome<DescribeDomainsResult, Aws::Client::AWSError<CloudSearchErrors>> DescribeDomainsOutcome;
         typedef Aws::Utils::Outcome<DescribeExpressionsResult, Aws::Client::AWSError<CloudSearchErrors>> DescribeExpressionsOutcome;
         typedef Aws::Utils::Outcome<DescribeIndexFieldsResult, Aws::Client::AWSError<CloudSearchErrors>> DescribeIndexFieldsOutcome;
@@ -138,6 +143,7 @@ namespace Model
         typedef Aws::Utils::Outcome<IndexDocumentsResult, Aws::Client::AWSError<CloudSearchErrors>> IndexDocumentsOutcome;
         typedef Aws::Utils::Outcome<ListDomainNamesResult, Aws::Client::AWSError<CloudSearchErrors>> ListDomainNamesOutcome;
         typedef Aws::Utils::Outcome<UpdateAvailabilityOptionsResult, Aws::Client::AWSError<CloudSearchErrors>> UpdateAvailabilityOptionsOutcome;
+        typedef Aws::Utils::Outcome<UpdateDomainEndpointOptionsResult, Aws::Client::AWSError<CloudSearchErrors>> UpdateDomainEndpointOptionsOutcome;
         typedef Aws::Utils::Outcome<UpdateScalingParametersResult, Aws::Client::AWSError<CloudSearchErrors>> UpdateScalingParametersOutcome;
         typedef Aws::Utils::Outcome<UpdateServiceAccessPoliciesResult, Aws::Client::AWSError<CloudSearchErrors>> UpdateServiceAccessPoliciesOutcome;
 
@@ -154,6 +160,7 @@ namespace Model
         typedef std::future<DeleteSuggesterOutcome> DeleteSuggesterOutcomeCallable;
         typedef std::future<DescribeAnalysisSchemesOutcome> DescribeAnalysisSchemesOutcomeCallable;
         typedef std::future<DescribeAvailabilityOptionsOutcome> DescribeAvailabilityOptionsOutcomeCallable;
+        typedef std::future<DescribeDomainEndpointOptionsOutcome> DescribeDomainEndpointOptionsOutcomeCallable;
         typedef std::future<DescribeDomainsOutcome> DescribeDomainsOutcomeCallable;
         typedef std::future<DescribeExpressionsOutcome> DescribeExpressionsOutcomeCallable;
         typedef std::future<DescribeIndexFieldsOutcome> DescribeIndexFieldsOutcomeCallable;
@@ -163,6 +170,7 @@ namespace Model
         typedef std::future<IndexDocumentsOutcome> IndexDocumentsOutcomeCallable;
         typedef std::future<ListDomainNamesOutcome> ListDomainNamesOutcomeCallable;
         typedef std::future<UpdateAvailabilityOptionsOutcome> UpdateAvailabilityOptionsOutcomeCallable;
+        typedef std::future<UpdateDomainEndpointOptionsOutcome> UpdateDomainEndpointOptionsOutcomeCallable;
         typedef std::future<UpdateScalingParametersOutcome> UpdateScalingParametersOutcomeCallable;
         typedef std::future<UpdateServiceAccessPoliciesOutcome> UpdateServiceAccessPoliciesOutcomeCallable;
 } // namespace Model
@@ -182,6 +190,7 @@ namespace Model
     typedef std::function<void(const CloudSearchClient*, const Model::DeleteSuggesterRequest&, const Model::DeleteSuggesterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSuggesterResponseReceivedHandler;
     typedef std::function<void(const CloudSearchClient*, const Model::DescribeAnalysisSchemesRequest&, const Model::DescribeAnalysisSchemesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAnalysisSchemesResponseReceivedHandler;
     typedef std::function<void(const CloudSearchClient*, const Model::DescribeAvailabilityOptionsRequest&, const Model::DescribeAvailabilityOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAvailabilityOptionsResponseReceivedHandler;
+    typedef std::function<void(const CloudSearchClient*, const Model::DescribeDomainEndpointOptionsRequest&, const Model::DescribeDomainEndpointOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainEndpointOptionsResponseReceivedHandler;
     typedef std::function<void(const CloudSearchClient*, const Model::DescribeDomainsRequest&, const Model::DescribeDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainsResponseReceivedHandler;
     typedef std::function<void(const CloudSearchClient*, const Model::DescribeExpressionsRequest&, const Model::DescribeExpressionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExpressionsResponseReceivedHandler;
     typedef std::function<void(const CloudSearchClient*, const Model::DescribeIndexFieldsRequest&, const Model::DescribeIndexFieldsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIndexFieldsResponseReceivedHandler;
@@ -191,6 +200,7 @@ namespace Model
     typedef std::function<void(const CloudSearchClient*, const Model::IndexDocumentsRequest&, const Model::IndexDocumentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > IndexDocumentsResponseReceivedHandler;
     typedef std::function<void(const CloudSearchClient*, const Model::ListDomainNamesRequest&, const Model::ListDomainNamesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainNamesResponseReceivedHandler;
     typedef std::function<void(const CloudSearchClient*, const Model::UpdateAvailabilityOptionsRequest&, const Model::UpdateAvailabilityOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAvailabilityOptionsResponseReceivedHandler;
+    typedef std::function<void(const CloudSearchClient*, const Model::UpdateDomainEndpointOptionsRequest&, const Model::UpdateDomainEndpointOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainEndpointOptionsResponseReceivedHandler;
     typedef std::function<void(const CloudSearchClient*, const Model::UpdateScalingParametersRequest&, const Model::UpdateScalingParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateScalingParametersResponseReceivedHandler;
     typedef std::function<void(const CloudSearchClient*, const Model::UpdateServiceAccessPoliciesRequest&, const Model::UpdateServiceAccessPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceAccessPoliciesResponseReceivedHandler;
 
@@ -233,7 +243,7 @@ namespace Model
 
         virtual ~CloudSearchClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "cloudsearch"; }
+        inline virtual const char* GetServiceClientName() const override { return "CloudSearch"; }
 
 
        /**
@@ -760,6 +770,43 @@ namespace Model
         virtual void DescribeAvailabilityOptionsAsync(const Model::DescribeAvailabilityOptionsRequest& request, const DescribeAvailabilityOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the domain's endpoint options, specifically whether all requests to
+         * the domain must arrive over HTTPS. For more information, see <a
+         * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html"
+         * target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon
+         * CloudSearch Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomainEndpointOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDomainEndpointOptionsOutcome DescribeDomainEndpointOptions(const Model::DescribeDomainEndpointOptionsRequest& request) const;
+
+        /**
+         * <p>Returns the domain's endpoint options, specifically whether all requests to
+         * the domain must arrive over HTTPS. For more information, see <a
+         * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html"
+         * target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon
+         * CloudSearch Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomainEndpointOptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeDomainEndpointOptionsOutcomeCallable DescribeDomainEndpointOptionsCallable(const Model::DescribeDomainEndpointOptionsRequest& request) const;
+
+        /**
+         * <p>Returns the domain's endpoint options, specifically whether all requests to
+         * the domain must arrive over HTTPS. For more information, see <a
+         * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html"
+         * target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon
+         * CloudSearch Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomainEndpointOptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeDomainEndpointOptionsAsync(const Model::DescribeDomainEndpointOptionsRequest& request, const DescribeDomainEndpointOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about the search domains owned by this account. Can be
          * limited to specific domains. Shows all domains by default. To get the number of
          * searchable documents in a domain, use the console or submit a
@@ -1141,6 +1188,43 @@ namespace Model
         virtual void UpdateAvailabilityOptionsAsync(const Model::UpdateAvailabilityOptionsRequest& request, const UpdateAvailabilityOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the domain's endpoint options, specifically whether all requests to
+         * the domain must arrive over HTTPS. For more information, see <a
+         * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html"
+         * target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon
+         * CloudSearch Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateDomainEndpointOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDomainEndpointOptionsOutcome UpdateDomainEndpointOptions(const Model::UpdateDomainEndpointOptionsRequest& request) const;
+
+        /**
+         * <p>Updates the domain's endpoint options, specifically whether all requests to
+         * the domain must arrive over HTTPS. For more information, see <a
+         * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html"
+         * target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon
+         * CloudSearch Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateDomainEndpointOptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateDomainEndpointOptionsOutcomeCallable UpdateDomainEndpointOptionsCallable(const Model::UpdateDomainEndpointOptionsRequest& request) const;
+
+        /**
+         * <p>Updates the domain's endpoint options, specifically whether all requests to
+         * the domain must arrive over HTTPS. For more information, see <a
+         * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html"
+         * target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon
+         * CloudSearch Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateDomainEndpointOptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateDomainEndpointOptionsAsync(const Model::UpdateDomainEndpointOptionsRequest& request, const UpdateDomainEndpointOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Configures scaling parameters for a domain. A domain's scaling parameters
          * specify the desired search instance type and replication count. Amazon
          * CloudSearch will still automatically scale your domain based on the volume of
@@ -1243,6 +1327,7 @@ namespace Model
         void DeleteSuggesterAsyncHelper(const Model::DeleteSuggesterRequest& request, const DeleteSuggesterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAnalysisSchemesAsyncHelper(const Model::DescribeAnalysisSchemesRequest& request, const DescribeAnalysisSchemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAvailabilityOptionsAsyncHelper(const Model::DescribeAvailabilityOptionsRequest& request, const DescribeAvailabilityOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeDomainEndpointOptionsAsyncHelper(const Model::DescribeDomainEndpointOptionsRequest& request, const DescribeDomainEndpointOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDomainsAsyncHelper(const Model::DescribeDomainsRequest& request, const DescribeDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeExpressionsAsyncHelper(const Model::DescribeExpressionsRequest& request, const DescribeExpressionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeIndexFieldsAsyncHelper(const Model::DescribeIndexFieldsRequest& request, const DescribeIndexFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1252,6 +1337,7 @@ namespace Model
         void IndexDocumentsAsyncHelper(const Model::IndexDocumentsRequest& request, const IndexDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDomainNamesAsyncHelper(const Model::ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAvailabilityOptionsAsyncHelper(const Model::UpdateAvailabilityOptionsRequest& request, const UpdateAvailabilityOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateDomainEndpointOptionsAsyncHelper(const Model::UpdateDomainEndpointOptionsRequest& request, const UpdateDomainEndpointOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateScalingParametersAsyncHelper(const Model::UpdateScalingParametersRequest& request, const UpdateScalingParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateServiceAccessPoliciesAsyncHelper(const Model::UpdateServiceAccessPoliciesRequest& request, const UpdateServiceAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
