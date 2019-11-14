@@ -31,7 +31,8 @@ CreateUserRequest::CreateUserRequest() :
     m_securityProfileIdsHasBeenSet(false),
     m_routingProfileIdHasBeenSet(false),
     m_hierarchyGroupIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -89,6 +90,17 @@ Aws::String CreateUserRequest::SerializePayload() const
   if(m_hierarchyGroupIdHasBeenSet)
   {
    payload.WithString("HierarchyGroupId", m_hierarchyGroupId);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

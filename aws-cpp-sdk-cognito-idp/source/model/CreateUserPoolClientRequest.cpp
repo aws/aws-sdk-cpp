@@ -40,7 +40,9 @@ CreateUserPoolClientRequest::CreateUserPoolClientRequest() :
     m_allowedOAuthScopesHasBeenSet(false),
     m_allowedOAuthFlowsUserPoolClient(false),
     m_allowedOAuthFlowsUserPoolClientHasBeenSet(false),
-    m_analyticsConfigurationHasBeenSet(false)
+    m_analyticsConfigurationHasBeenSet(false),
+    m_preventUserExistenceErrors(PreventUserExistenceErrorTypes::NOT_SET),
+    m_preventUserExistenceErrorsHasBeenSet(false)
 {
 }
 
@@ -176,6 +178,11 @@ Aws::String CreateUserPoolClientRequest::SerializePayload() const
   {
    payload.WithObject("AnalyticsConfiguration", m_analyticsConfiguration.Jsonize());
 
+  }
+
+  if(m_preventUserExistenceErrorsHasBeenSet)
+  {
+   payload.WithString("PreventUserExistenceErrors", PreventUserExistenceErrorTypesMapper::GetNameForPreventUserExistenceErrorTypes(m_preventUserExistenceErrors));
   }
 
   return payload.View().WriteReadable();

@@ -31,7 +31,8 @@ namespace Model
     REFRESH_TOKEN,
     CUSTOM_AUTH,
     ADMIN_NO_SRP_AUTH,
-    USER_PASSWORD_AUTH
+    USER_PASSWORD_AUTH,
+    ADMIN_USER_PASSWORD_AUTH
   };
 
 namespace AuthFlowTypeMapper

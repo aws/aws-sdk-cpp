@@ -21,6 +21,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/personalize/model/CreateBatchInferenceJobResult.h>
 #include <aws/personalize/model/CreateCampaignResult.h>
 #include <aws/personalize/model/CreateDatasetResult.h>
 #include <aws/personalize/model/CreateDatasetGroupResult.h>
@@ -30,6 +31,7 @@
 #include <aws/personalize/model/CreateSolutionResult.h>
 #include <aws/personalize/model/CreateSolutionVersionResult.h>
 #include <aws/personalize/model/DescribeAlgorithmResult.h>
+#include <aws/personalize/model/DescribeBatchInferenceJobResult.h>
 #include <aws/personalize/model/DescribeCampaignResult.h>
 #include <aws/personalize/model/DescribeDatasetResult.h>
 #include <aws/personalize/model/DescribeDatasetGroupResult.h>
@@ -41,6 +43,7 @@
 #include <aws/personalize/model/DescribeSolutionResult.h>
 #include <aws/personalize/model/DescribeSolutionVersionResult.h>
 #include <aws/personalize/model/GetSolutionMetricsResult.h>
+#include <aws/personalize/model/ListBatchInferenceJobsResult.h>
 #include <aws/personalize/model/ListCampaignsResult.h>
 #include <aws/personalize/model/ListDatasetGroupsResult.h>
 #include <aws/personalize/model/ListDatasetImportJobsResult.h>
@@ -91,6 +94,7 @@ namespace Personalize
 
 namespace Model
 {
+        class CreateBatchInferenceJobRequest;
         class CreateCampaignRequest;
         class CreateDatasetRequest;
         class CreateDatasetGroupRequest;
@@ -106,6 +110,7 @@ namespace Model
         class DeleteSchemaRequest;
         class DeleteSolutionRequest;
         class DescribeAlgorithmRequest;
+        class DescribeBatchInferenceJobRequest;
         class DescribeCampaignRequest;
         class DescribeDatasetRequest;
         class DescribeDatasetGroupRequest;
@@ -117,6 +122,7 @@ namespace Model
         class DescribeSolutionRequest;
         class DescribeSolutionVersionRequest;
         class GetSolutionMetricsRequest;
+        class ListBatchInferenceJobsRequest;
         class ListCampaignsRequest;
         class ListDatasetGroupsRequest;
         class ListDatasetImportJobsRequest;
@@ -128,6 +134,7 @@ namespace Model
         class ListSolutionsRequest;
         class UpdateCampaignRequest;
 
+        typedef Aws::Utils::Outcome<CreateBatchInferenceJobResult, Aws::Client::AWSError<PersonalizeErrors>> CreateBatchInferenceJobOutcome;
         typedef Aws::Utils::Outcome<CreateCampaignResult, Aws::Client::AWSError<PersonalizeErrors>> CreateCampaignOutcome;
         typedef Aws::Utils::Outcome<CreateDatasetResult, Aws::Client::AWSError<PersonalizeErrors>> CreateDatasetOutcome;
         typedef Aws::Utils::Outcome<CreateDatasetGroupResult, Aws::Client::AWSError<PersonalizeErrors>> CreateDatasetGroupOutcome;
@@ -143,6 +150,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<PersonalizeErrors>> DeleteSchemaOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<PersonalizeErrors>> DeleteSolutionOutcome;
         typedef Aws::Utils::Outcome<DescribeAlgorithmResult, Aws::Client::AWSError<PersonalizeErrors>> DescribeAlgorithmOutcome;
+        typedef Aws::Utils::Outcome<DescribeBatchInferenceJobResult, Aws::Client::AWSError<PersonalizeErrors>> DescribeBatchInferenceJobOutcome;
         typedef Aws::Utils::Outcome<DescribeCampaignResult, Aws::Client::AWSError<PersonalizeErrors>> DescribeCampaignOutcome;
         typedef Aws::Utils::Outcome<DescribeDatasetResult, Aws::Client::AWSError<PersonalizeErrors>> DescribeDatasetOutcome;
         typedef Aws::Utils::Outcome<DescribeDatasetGroupResult, Aws::Client::AWSError<PersonalizeErrors>> DescribeDatasetGroupOutcome;
@@ -154,6 +162,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeSolutionResult, Aws::Client::AWSError<PersonalizeErrors>> DescribeSolutionOutcome;
         typedef Aws::Utils::Outcome<DescribeSolutionVersionResult, Aws::Client::AWSError<PersonalizeErrors>> DescribeSolutionVersionOutcome;
         typedef Aws::Utils::Outcome<GetSolutionMetricsResult, Aws::Client::AWSError<PersonalizeErrors>> GetSolutionMetricsOutcome;
+        typedef Aws::Utils::Outcome<ListBatchInferenceJobsResult, Aws::Client::AWSError<PersonalizeErrors>> ListBatchInferenceJobsOutcome;
         typedef Aws::Utils::Outcome<ListCampaignsResult, Aws::Client::AWSError<PersonalizeErrors>> ListCampaignsOutcome;
         typedef Aws::Utils::Outcome<ListDatasetGroupsResult, Aws::Client::AWSError<PersonalizeErrors>> ListDatasetGroupsOutcome;
         typedef Aws::Utils::Outcome<ListDatasetImportJobsResult, Aws::Client::AWSError<PersonalizeErrors>> ListDatasetImportJobsOutcome;
@@ -165,6 +174,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListSolutionsResult, Aws::Client::AWSError<PersonalizeErrors>> ListSolutionsOutcome;
         typedef Aws::Utils::Outcome<UpdateCampaignResult, Aws::Client::AWSError<PersonalizeErrors>> UpdateCampaignOutcome;
 
+        typedef std::future<CreateBatchInferenceJobOutcome> CreateBatchInferenceJobOutcomeCallable;
         typedef std::future<CreateCampaignOutcome> CreateCampaignOutcomeCallable;
         typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
         typedef std::future<CreateDatasetGroupOutcome> CreateDatasetGroupOutcomeCallable;
@@ -180,6 +190,7 @@ namespace Model
         typedef std::future<DeleteSchemaOutcome> DeleteSchemaOutcomeCallable;
         typedef std::future<DeleteSolutionOutcome> DeleteSolutionOutcomeCallable;
         typedef std::future<DescribeAlgorithmOutcome> DescribeAlgorithmOutcomeCallable;
+        typedef std::future<DescribeBatchInferenceJobOutcome> DescribeBatchInferenceJobOutcomeCallable;
         typedef std::future<DescribeCampaignOutcome> DescribeCampaignOutcomeCallable;
         typedef std::future<DescribeDatasetOutcome> DescribeDatasetOutcomeCallable;
         typedef std::future<DescribeDatasetGroupOutcome> DescribeDatasetGroupOutcomeCallable;
@@ -191,6 +202,7 @@ namespace Model
         typedef std::future<DescribeSolutionOutcome> DescribeSolutionOutcomeCallable;
         typedef std::future<DescribeSolutionVersionOutcome> DescribeSolutionVersionOutcomeCallable;
         typedef std::future<GetSolutionMetricsOutcome> GetSolutionMetricsOutcomeCallable;
+        typedef std::future<ListBatchInferenceJobsOutcome> ListBatchInferenceJobsOutcomeCallable;
         typedef std::future<ListCampaignsOutcome> ListCampaignsOutcomeCallable;
         typedef std::future<ListDatasetGroupsOutcome> ListDatasetGroupsOutcomeCallable;
         typedef std::future<ListDatasetImportJobsOutcome> ListDatasetImportJobsOutcomeCallable;
@@ -205,6 +217,7 @@ namespace Model
 
   class PersonalizeClient;
 
+    typedef std::function<void(const PersonalizeClient*, const Model::CreateBatchInferenceJobRequest&, const Model::CreateBatchInferenceJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBatchInferenceJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateCampaignRequest&, const Model::CreateCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCampaignResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateDatasetRequest&, const Model::CreateDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateDatasetGroupRequest&, const Model::CreateDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetGroupResponseReceivedHandler;
@@ -220,6 +233,7 @@ namespace Model
     typedef std::function<void(const PersonalizeClient*, const Model::DeleteSchemaRequest&, const Model::DeleteSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSchemaResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DeleteSolutionRequest&, const Model::DeleteSolutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSolutionResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeAlgorithmRequest&, const Model::DescribeAlgorithmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAlgorithmResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::DescribeBatchInferenceJobRequest&, const Model::DescribeBatchInferenceJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBatchInferenceJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeCampaignRequest&, const Model::DescribeCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCampaignResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeDatasetRequest&, const Model::DescribeDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeDatasetGroupRequest&, const Model::DescribeDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetGroupResponseReceivedHandler;
@@ -231,6 +245,7 @@ namespace Model
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeSolutionRequest&, const Model::DescribeSolutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSolutionResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeSolutionVersionRequest&, const Model::DescribeSolutionVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSolutionVersionResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::GetSolutionMetricsRequest&, const Model::GetSolutionMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSolutionMetricsResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::ListBatchInferenceJobsRequest&, const Model::ListBatchInferenceJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBatchInferenceJobsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListCampaignsRequest&, const Model::ListCampaignsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCampaignsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListDatasetGroupsRequest&, const Model::ListDatasetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetGroupsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListDatasetImportJobsRequest&, const Model::ListDatasetImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetImportJobsResponseReceivedHandler;
@@ -274,6 +289,37 @@ namespace Model
 
         inline virtual const char* GetServiceClientName() const override { return "Personalize"; }
 
+
+        /**
+         * <p>Creates a batch inference job. The operation can handle up to 50 million
+         * records and the input file must be in JSON format. For more information, see
+         * <a>recommendations-batch</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchInferenceJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateBatchInferenceJobOutcome CreateBatchInferenceJob(const Model::CreateBatchInferenceJobRequest& request) const;
+
+        /**
+         * <p>Creates a batch inference job. The operation can handle up to 50 million
+         * records and the input file must be in JSON format. For more information, see
+         * <a>recommendations-batch</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchInferenceJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateBatchInferenceJobOutcomeCallable CreateBatchInferenceJobCallable(const Model::CreateBatchInferenceJobRequest& request) const;
+
+        /**
+         * <p>Creates a batch inference job. The operation can handle up to 50 million
+         * records and the input file must be in JSON format. For more information, see
+         * <a>recommendations-batch</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchInferenceJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateBatchInferenceJobAsync(const Model::CreateBatchInferenceJobRequest& request, const CreateBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a campaign by deploying a solution version. When a client calls the
@@ -1134,6 +1180,37 @@ namespace Model
         virtual void DescribeAlgorithmAsync(const Model::DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the properties of a batch inference job including name, Amazon Resource
+         * Name (ARN), status, input and output configurations, and the ARN of the solution
+         * version used to generate the recommendations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchInferenceJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeBatchInferenceJobOutcome DescribeBatchInferenceJob(const Model::DescribeBatchInferenceJobRequest& request) const;
+
+        /**
+         * <p>Gets the properties of a batch inference job including name, Amazon Resource
+         * Name (ARN), status, input and output configurations, and the ARN of the solution
+         * version used to generate the recommendations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchInferenceJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeBatchInferenceJobOutcomeCallable DescribeBatchInferenceJobCallable(const Model::DescribeBatchInferenceJobRequest& request) const;
+
+        /**
+         * <p>Gets the properties of a batch inference job including name, Amazon Resource
+         * Name (ARN), status, input and output configurations, and the ARN of the solution
+         * version used to generate the recommendations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchInferenceJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeBatchInferenceJobAsync(const Model::DescribeBatchInferenceJobRequest& request, const DescribeBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the given campaign, including its status.</p> <p>A campaign can be
          * in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE
          * IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt;
@@ -1479,6 +1556,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSolutionMetricsAsync(const Model::GetSolutionMetricsRequest& request, const GetSolutionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a list of the batch inference jobs that have been performed off of a
+         * solution version.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchInferenceJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBatchInferenceJobsOutcome ListBatchInferenceJobs(const Model::ListBatchInferenceJobsRequest& request) const;
+
+        /**
+         * <p>Gets a list of the batch inference jobs that have been performed off of a
+         * solution version.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchInferenceJobs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListBatchInferenceJobsOutcomeCallable ListBatchInferenceJobsCallable(const Model::ListBatchInferenceJobsRequest& request) const;
+
+        /**
+         * <p>Gets a list of the batch inference jobs that have been performed off of a
+         * solution version.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchInferenceJobs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListBatchInferenceJobsAsync(const Model::ListBatchInferenceJobsRequest& request, const ListBatchInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of campaigns that use the given solution. When a solution is
@@ -1848,6 +1953,7 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void CreateBatchInferenceJobAsyncHelper(const Model::CreateBatchInferenceJobRequest& request, const CreateBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCampaignAsyncHelper(const Model::CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDatasetAsyncHelper(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDatasetGroupAsyncHelper(const Model::CreateDatasetGroupRequest& request, const CreateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1863,6 +1969,7 @@ namespace Model
         void DeleteSchemaAsyncHelper(const Model::DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSolutionAsyncHelper(const Model::DeleteSolutionRequest& request, const DeleteSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAlgorithmAsyncHelper(const Model::DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeBatchInferenceJobAsyncHelper(const Model::DescribeBatchInferenceJobRequest& request, const DescribeBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCampaignAsyncHelper(const Model::DescribeCampaignRequest& request, const DescribeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDatasetAsyncHelper(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDatasetGroupAsyncHelper(const Model::DescribeDatasetGroupRequest& request, const DescribeDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1874,6 +1981,7 @@ namespace Model
         void DescribeSolutionAsyncHelper(const Model::DescribeSolutionRequest& request, const DescribeSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSolutionVersionAsyncHelper(const Model::DescribeSolutionVersionRequest& request, const DescribeSolutionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSolutionMetricsAsyncHelper(const Model::GetSolutionMetricsRequest& request, const GetSolutionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListBatchInferenceJobsAsyncHelper(const Model::ListBatchInferenceJobsRequest& request, const ListBatchInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCampaignsAsyncHelper(const Model::ListCampaignsRequest& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDatasetGroupsAsyncHelper(const Model::ListDatasetGroupsRequest& request, const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDatasetImportJobsAsyncHelper(const Model::ListDatasetImportJobsRequest& request, const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

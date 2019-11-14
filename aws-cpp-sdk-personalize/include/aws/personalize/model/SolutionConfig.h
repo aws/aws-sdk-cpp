@@ -101,44 +101,32 @@ namespace Model
 
 
     /**
-     * <p>Describes the properties for hyperparameter optimization (HPO). For use with
-     * the bring-your-own-recipe feature. Not used with Amazon Personalize predefined
-     * recipes.</p>
+     * <p>Describes the properties for hyperparameter optimization (HPO).</p>
      */
     inline const HPOConfig& GetHpoConfig() const{ return m_hpoConfig; }
 
     /**
-     * <p>Describes the properties for hyperparameter optimization (HPO). For use with
-     * the bring-your-own-recipe feature. Not used with Amazon Personalize predefined
-     * recipes.</p>
+     * <p>Describes the properties for hyperparameter optimization (HPO).</p>
      */
     inline bool HpoConfigHasBeenSet() const { return m_hpoConfigHasBeenSet; }
 
     /**
-     * <p>Describes the properties for hyperparameter optimization (HPO). For use with
-     * the bring-your-own-recipe feature. Not used with Amazon Personalize predefined
-     * recipes.</p>
+     * <p>Describes the properties for hyperparameter optimization (HPO).</p>
      */
     inline void SetHpoConfig(const HPOConfig& value) { m_hpoConfigHasBeenSet = true; m_hpoConfig = value; }
 
     /**
-     * <p>Describes the properties for hyperparameter optimization (HPO). For use with
-     * the bring-your-own-recipe feature. Not used with Amazon Personalize predefined
-     * recipes.</p>
+     * <p>Describes the properties for hyperparameter optimization (HPO).</p>
      */
     inline void SetHpoConfig(HPOConfig&& value) { m_hpoConfigHasBeenSet = true; m_hpoConfig = std::move(value); }
 
     /**
-     * <p>Describes the properties for hyperparameter optimization (HPO). For use with
-     * the bring-your-own-recipe feature. Not used with Amazon Personalize predefined
-     * recipes.</p>
+     * <p>Describes the properties for hyperparameter optimization (HPO).</p>
      */
     inline SolutionConfig& WithHpoConfig(const HPOConfig& value) { SetHpoConfig(value); return *this;}
 
     /**
-     * <p>Describes the properties for hyperparameter optimization (HPO). For use with
-     * the bring-your-own-recipe feature. Not used with Amazon Personalize predefined
-     * recipes.</p>
+     * <p>Describes the properties for hyperparameter optimization (HPO).</p>
      */
     inline SolutionConfig& WithHpoConfig(HPOConfig&& value) { SetHpoConfig(std::move(value)); return *this;}
 

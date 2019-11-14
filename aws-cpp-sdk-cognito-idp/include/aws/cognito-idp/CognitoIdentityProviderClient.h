@@ -3440,7 +3440,9 @@ namespace Model
 
         /**
          * <p>Updates the specified group with the specified attributes.</p> <p>Calling
-         * this action requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * this action requires developer credentials.</p> <important> <p>If you don't
+         * provide a value for an attribute, it will be set to the default value.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">AWS
          * API Reference</a></p>
          */
@@ -3448,7 +3450,9 @@ namespace Model
 
         /**
          * <p>Updates the specified group with the specified attributes.</p> <p>Calling
-         * this action requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * this action requires developer credentials.</p> <important> <p>If you don't
+         * provide a value for an attribute, it will be set to the default value.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">AWS
          * API Reference</a></p>
          *
@@ -3458,7 +3462,9 @@ namespace Model
 
         /**
          * <p>Updates the specified group with the specified attributes.</p> <p>Calling
-         * this action requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * this action requires developer credentials.</p> <important> <p>If you don't
+         * provide a value for an attribute, it will be set to the default value.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">AWS
          * API Reference</a></p>
          *
@@ -3496,7 +3502,8 @@ namespace Model
 
         /**
          * <p>Updates the name and scopes of resource server. All other fields are
-         * read-only.</p><p><h3>See Also:</h3>   <a
+         * read-only.</p> <important> <p>If you don't provide a value for an attribute, it
+         * will be set to the default value.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateResourceServer">AWS
          * API Reference</a></p>
          */
@@ -3504,7 +3511,8 @@ namespace Model
 
         /**
          * <p>Updates the name and scopes of resource server. All other fields are
-         * read-only.</p><p><h3>See Also:</h3>   <a
+         * read-only.</p> <important> <p>If you don't provide a value for an attribute, it
+         * will be set to the default value.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateResourceServer">AWS
          * API Reference</a></p>
          *
@@ -3514,7 +3522,8 @@ namespace Model
 
         /**
          * <p>Updates the name and scopes of resource server. All other fields are
-         * read-only.</p><p><h3>See Also:</h3>   <a
+         * read-only.</p> <important> <p>If you don't provide a value for an attribute, it
+         * will be set to the default value.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateResourceServer">AWS
          * API Reference</a></p>
          *
@@ -3551,20 +3560,20 @@ namespace Model
         virtual void UpdateUserAttributesAsync(const Model::UpdateUserAttributesRequest& request, const UpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified user pool with the specified attributes. If you don't
-         * provide a value for an attribute, it will be set to the default value. You can
-         * get a list of the current user pool settings with .</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Updates the specified user pool with the specified attributes. You can get a
+         * list of the current user pool settings with .</p> <important> <p>If you don't
+         * provide a value for an attribute, it will be set to the default value.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateUserPoolOutcome UpdateUserPool(const Model::UpdateUserPoolRequest& request) const;
 
         /**
-         * <p>Updates the specified user pool with the specified attributes. If you don't
-         * provide a value for an attribute, it will be set to the default value. You can
-         * get a list of the current user pool settings with .</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Updates the specified user pool with the specified attributes. You can get a
+         * list of the current user pool settings with .</p> <important> <p>If you don't
+         * provide a value for an attribute, it will be set to the default value.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">AWS
          * API Reference</a></p>
          *
@@ -3573,10 +3582,10 @@ namespace Model
         virtual Model::UpdateUserPoolOutcomeCallable UpdateUserPoolCallable(const Model::UpdateUserPoolRequest& request) const;
 
         /**
-         * <p>Updates the specified user pool with the specified attributes. If you don't
-         * provide a value for an attribute, it will be set to the default value. You can
-         * get a list of the current user pool settings with .</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Updates the specified user pool with the specified attributes. You can get a
+         * list of the current user pool settings with .</p> <important> <p>If you don't
+         * provide a value for an attribute, it will be set to the default value.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">AWS
          * API Reference</a></p>
          *
@@ -3585,20 +3594,20 @@ namespace Model
         virtual void UpdateUserPoolAsync(const Model::UpdateUserPoolRequest& request, const UpdateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified user pool app client with the specified attributes. If
-         * you don't provide a value for an attribute, it will be set to the default value.
-         * You can get a list of the current user pool app client settings with
-         * .</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified user pool app client with the specified attributes. You
+         * can get a list of the current user pool app client settings with .</p>
+         * <important> <p>If you don't provide a value for an attribute, it will be set to
+         * the default value.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateUserPoolClientOutcome UpdateUserPoolClient(const Model::UpdateUserPoolClientRequest& request) const;
 
         /**
-         * <p>Updates the specified user pool app client with the specified attributes. If
-         * you don't provide a value for an attribute, it will be set to the default value.
-         * You can get a list of the current user pool app client settings with
-         * .</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified user pool app client with the specified attributes. You
+         * can get a list of the current user pool app client settings with .</p>
+         * <important> <p>If you don't provide a value for an attribute, it will be set to
+         * the default value.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">AWS
          * API Reference</a></p>
          *
@@ -3607,10 +3616,10 @@ namespace Model
         virtual Model::UpdateUserPoolClientOutcomeCallable UpdateUserPoolClientCallable(const Model::UpdateUserPoolClientRequest& request) const;
 
         /**
-         * <p>Updates the specified user pool app client with the specified attributes. If
-         * you don't provide a value for an attribute, it will be set to the default value.
-         * You can get a list of the current user pool app client settings with
-         * .</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified user pool app client with the specified attributes. You
+         * can get a list of the current user pool app client settings with .</p>
+         * <important> <p>If you don't provide a value for an attribute, it will be set to
+         * the default value.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">AWS
          * API Reference</a></p>
          *

@@ -31,14 +31,16 @@ namespace Model
 AttachmentsSource::AttachmentsSource() : 
     m_key(AttachmentsSourceKey::NOT_SET),
     m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
 AttachmentsSource::AttachmentsSource(JsonView jsonValue) : 
     m_key(AttachmentsSourceKey::NOT_SET),
     m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +64,13 @@ AttachmentsSource& AttachmentsSource::operator =(JsonView jsonValue)
     m_valuesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+
+    m_nameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -82,6 +91,12 @@ JsonValue AttachmentsSource::Jsonize() const
      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
    }
    payload.WithArray("Values", std::move(valuesJsonList));
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
 
   }
 

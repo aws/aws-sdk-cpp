@@ -153,7 +153,11 @@ namespace Model
      * for calling the app client.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>:
      * Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
      * user migration Lambda trigger is set, this flow will invoke the user migration
-     * Lambda if the USERNAME is not found in the user pool. </p> </li> </ul>
+     * Lambda if the USERNAME is not found in the user pool. </p> </li> <li> <p>
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication.
+     * This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this
+     * flow, Cognito receives the password in the request instead of using the SRP
+     * process to verify passwords.</p> </li> </ul>
      */
     inline const AuthFlowType& GetAuthFlow() const{ return m_authFlow; }
 
@@ -176,7 +180,11 @@ namespace Model
      * for calling the app client.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>:
      * Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
      * user migration Lambda trigger is set, this flow will invoke the user migration
-     * Lambda if the USERNAME is not found in the user pool. </p> </li> </ul>
+     * Lambda if the USERNAME is not found in the user pool. </p> </li> <li> <p>
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication.
+     * This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this
+     * flow, Cognito receives the password in the request instead of using the SRP
+     * process to verify passwords.</p> </li> </ul>
      */
     inline bool AuthFlowHasBeenSet() const { return m_authFlowHasBeenSet; }
 
@@ -199,7 +207,11 @@ namespace Model
      * for calling the app client.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>:
      * Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
      * user migration Lambda trigger is set, this flow will invoke the user migration
-     * Lambda if the USERNAME is not found in the user pool. </p> </li> </ul>
+     * Lambda if the USERNAME is not found in the user pool. </p> </li> <li> <p>
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication.
+     * This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this
+     * flow, Cognito receives the password in the request instead of using the SRP
+     * process to verify passwords.</p> </li> </ul>
      */
     inline void SetAuthFlow(const AuthFlowType& value) { m_authFlowHasBeenSet = true; m_authFlow = value; }
 
@@ -222,7 +234,11 @@ namespace Model
      * for calling the app client.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>:
      * Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
      * user migration Lambda trigger is set, this flow will invoke the user migration
-     * Lambda if the USERNAME is not found in the user pool. </p> </li> </ul>
+     * Lambda if the USERNAME is not found in the user pool. </p> </li> <li> <p>
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication.
+     * This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this
+     * flow, Cognito receives the password in the request instead of using the SRP
+     * process to verify passwords.</p> </li> </ul>
      */
     inline void SetAuthFlow(AuthFlowType&& value) { m_authFlowHasBeenSet = true; m_authFlow = std::move(value); }
 
@@ -245,7 +261,11 @@ namespace Model
      * for calling the app client.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>:
      * Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
      * user migration Lambda trigger is set, this flow will invoke the user migration
-     * Lambda if the USERNAME is not found in the user pool. </p> </li> </ul>
+     * Lambda if the USERNAME is not found in the user pool. </p> </li> <li> <p>
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication.
+     * This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this
+     * flow, Cognito receives the password in the request instead of using the SRP
+     * process to verify passwords.</p> </li> </ul>
      */
     inline AdminInitiateAuthRequest& WithAuthFlow(const AuthFlowType& value) { SetAuthFlow(value); return *this;}
 
@@ -268,7 +288,11 @@ namespace Model
      * for calling the app client.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>:
      * Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
      * user migration Lambda trigger is set, this flow will invoke the user migration
-     * Lambda if the USERNAME is not found in the user pool. </p> </li> </ul>
+     * Lambda if the USERNAME is not found in the user pool. </p> </li> <li> <p>
+     * <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication.
+     * This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this
+     * flow, Cognito receives the password in the request instead of using the SRP
+     * process to verify passwords.</p> </li> </ul>
      */
     inline AdminInitiateAuthRequest& WithAuthFlow(AuthFlowType&& value) { SetAuthFlow(std::move(value)); return *this;}
 

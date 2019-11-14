@@ -48,7 +48,9 @@ UserPoolClientType::UserPoolClientType() :
     m_allowedOAuthScopesHasBeenSet(false),
     m_allowedOAuthFlowsUserPoolClient(false),
     m_allowedOAuthFlowsUserPoolClientHasBeenSet(false),
-    m_analyticsConfigurationHasBeenSet(false)
+    m_analyticsConfigurationHasBeenSet(false),
+    m_preventUserExistenceErrors(PreventUserExistenceErrorTypes::NOT_SET),
+    m_preventUserExistenceErrorsHasBeenSet(false)
 {
 }
 
@@ -72,7 +74,9 @@ UserPoolClientType::UserPoolClientType(JsonView jsonValue) :
     m_allowedOAuthScopesHasBeenSet(false),
     m_allowedOAuthFlowsUserPoolClient(false),
     m_allowedOAuthFlowsUserPoolClientHasBeenSet(false),
-    m_analyticsConfigurationHasBeenSet(false)
+    m_analyticsConfigurationHasBeenSet(false),
+    m_preventUserExistenceErrors(PreventUserExistenceErrorTypes::NOT_SET),
+    m_preventUserExistenceErrorsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -229,6 +233,13 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
     m_analyticsConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PreventUserExistenceErrors"))
+  {
+    m_preventUserExistenceErrors = PreventUserExistenceErrorTypesMapper::GetPreventUserExistenceErrorTypesForName(jsonValue.GetString("PreventUserExistenceErrors"));
+
+    m_preventUserExistenceErrorsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -380,6 +391,11 @@ JsonValue UserPoolClientType::Jsonize() const
   {
    payload.WithObject("AnalyticsConfiguration", m_analyticsConfiguration.Jsonize());
 
+  }
+
+  if(m_preventUserExistenceErrorsHasBeenSet)
+  {
+   payload.WithString("PreventUserExistenceErrors", PreventUserExistenceErrorTypesMapper::GetNameForPreventUserExistenceErrorTypes(m_preventUserExistenceErrors));
   }
 
   return payload;

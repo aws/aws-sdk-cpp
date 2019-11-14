@@ -47,42 +47,42 @@ namespace Model
 
 
     /**
-     * <p>One or more instance IDs where you want to add or update inventory items.</p>
+     * <p>An instance ID where you want to add or update inventory items.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>One or more instance IDs where you want to add or update inventory items.</p>
+     * <p>An instance ID where you want to add or update inventory items.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>One or more instance IDs where you want to add or update inventory items.</p>
+     * <p>An instance ID where you want to add or update inventory items.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>One or more instance IDs where you want to add or update inventory items.</p>
+     * <p>An instance ID where you want to add or update inventory items.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>One or more instance IDs where you want to add or update inventory items.</p>
+     * <p>An instance ID where you want to add or update inventory items.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>One or more instance IDs where you want to add or update inventory items.</p>
+     * <p>An instance ID where you want to add or update inventory items.</p>
      */
     inline PutInventoryRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>One or more instance IDs where you want to add or update inventory items.</p>
+     * <p>An instance ID where you want to add or update inventory items.</p>
      */
     inline PutInventoryRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>One or more instance IDs where you want to add or update inventory items.</p>
+     * <p>An instance ID where you want to add or update inventory items.</p>
      */
     inline PutInventoryRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 

@@ -30,6 +30,7 @@
 #include <aws/personalize/PersonalizeClient.h>
 #include <aws/personalize/PersonalizeEndpoint.h>
 #include <aws/personalize/PersonalizeErrorMarshaller.h>
+#include <aws/personalize/model/CreateBatchInferenceJobRequest.h>
 #include <aws/personalize/model/CreateCampaignRequest.h>
 #include <aws/personalize/model/CreateDatasetRequest.h>
 #include <aws/personalize/model/CreateDatasetGroupRequest.h>
@@ -45,6 +46,7 @@
 #include <aws/personalize/model/DeleteSchemaRequest.h>
 #include <aws/personalize/model/DeleteSolutionRequest.h>
 #include <aws/personalize/model/DescribeAlgorithmRequest.h>
+#include <aws/personalize/model/DescribeBatchInferenceJobRequest.h>
 #include <aws/personalize/model/DescribeCampaignRequest.h>
 #include <aws/personalize/model/DescribeDatasetRequest.h>
 #include <aws/personalize/model/DescribeDatasetGroupRequest.h>
@@ -56,6 +58,7 @@
 #include <aws/personalize/model/DescribeSolutionRequest.h>
 #include <aws/personalize/model/DescribeSolutionVersionRequest.h>
 #include <aws/personalize/model/GetSolutionMetricsRequest.h>
+#include <aws/personalize/model/ListBatchInferenceJobsRequest.h>
 #include <aws/personalize/model/ListCampaignsRequest.h>
 #include <aws/personalize/model/ListDatasetGroupsRequest.h>
 #include <aws/personalize/model/ListDatasetImportJobsRequest.h>
@@ -137,6 +140,41 @@ void PersonalizeClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+CreateBatchInferenceJobOutcome PersonalizeClient::CreateBatchInferenceJob(const CreateBatchInferenceJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateBatchInferenceJobOutcome(CreateBatchInferenceJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateBatchInferenceJobOutcome(outcome.GetError());
+  }
+}
+
+CreateBatchInferenceJobOutcomeCallable PersonalizeClient::CreateBatchInferenceJobCallable(const CreateBatchInferenceJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateBatchInferenceJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBatchInferenceJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::CreateBatchInferenceJobAsync(const CreateBatchInferenceJobRequest& request, const CreateBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateBatchInferenceJobAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::CreateBatchInferenceJobAsyncHelper(const CreateBatchInferenceJobRequest& request, const CreateBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateBatchInferenceJob(request), context);
 }
 
 CreateCampaignOutcome PersonalizeClient::CreateCampaign(const CreateCampaignRequest& request) const
@@ -664,6 +702,41 @@ void PersonalizeClient::DescribeAlgorithmAsyncHelper(const DescribeAlgorithmRequ
   handler(this, request, DescribeAlgorithm(request), context);
 }
 
+DescribeBatchInferenceJobOutcome PersonalizeClient::DescribeBatchInferenceJob(const DescribeBatchInferenceJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeBatchInferenceJobOutcome(DescribeBatchInferenceJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeBatchInferenceJobOutcome(outcome.GetError());
+  }
+}
+
+DescribeBatchInferenceJobOutcomeCallable PersonalizeClient::DescribeBatchInferenceJobCallable(const DescribeBatchInferenceJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBatchInferenceJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBatchInferenceJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::DescribeBatchInferenceJobAsync(const DescribeBatchInferenceJobRequest& request, const DescribeBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeBatchInferenceJobAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::DescribeBatchInferenceJobAsyncHelper(const DescribeBatchInferenceJobRequest& request, const DescribeBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeBatchInferenceJob(request), context);
+}
+
 DescribeCampaignOutcome PersonalizeClient::DescribeCampaign(const DescribeCampaignRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1047,6 +1120,41 @@ void PersonalizeClient::GetSolutionMetricsAsync(const GetSolutionMetricsRequest&
 void PersonalizeClient::GetSolutionMetricsAsyncHelper(const GetSolutionMetricsRequest& request, const GetSolutionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetSolutionMetrics(request), context);
+}
+
+ListBatchInferenceJobsOutcome PersonalizeClient::ListBatchInferenceJobs(const ListBatchInferenceJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListBatchInferenceJobsOutcome(ListBatchInferenceJobsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListBatchInferenceJobsOutcome(outcome.GetError());
+  }
+}
+
+ListBatchInferenceJobsOutcomeCallable PersonalizeClient::ListBatchInferenceJobsCallable(const ListBatchInferenceJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListBatchInferenceJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBatchInferenceJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::ListBatchInferenceJobsAsync(const ListBatchInferenceJobsRequest& request, const ListBatchInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListBatchInferenceJobsAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::ListBatchInferenceJobsAsyncHelper(const ListBatchInferenceJobsRequest& request, const ListBatchInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListBatchInferenceJobs(request), context);
 }
 
 ListCampaignsOutcome PersonalizeClient::ListCampaigns(const ListCampaignsRequest& request) const

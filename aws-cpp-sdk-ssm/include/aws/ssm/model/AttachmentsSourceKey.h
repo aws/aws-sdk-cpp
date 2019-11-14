@@ -26,7 +26,8 @@ namespace Model
   enum class AttachmentsSourceKey
   {
     NOT_SET,
-    SourceUrl
+    SourceUrl,
+    S3FileUrl
   };
 
 namespace AttachmentsSourceKeyMapper

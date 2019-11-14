@@ -208,49 +208,57 @@ namespace Model
 
     /**
      * <p>(Optional) One or more filters. Use a filter to return a more specific list
-     * of results.</p>
+     * of results. Note that the <code>DocumentName</code> filter is not supported for
+     * ListCommandInvocations.</p>
      */
     inline const Aws::Vector<CommandFilter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>(Optional) One or more filters. Use a filter to return a more specific list
-     * of results.</p>
+     * of results. Note that the <code>DocumentName</code> filter is not supported for
+     * ListCommandInvocations.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>(Optional) One or more filters. Use a filter to return a more specific list
-     * of results.</p>
+     * of results. Note that the <code>DocumentName</code> filter is not supported for
+     * ListCommandInvocations.</p>
      */
     inline void SetFilters(const Aws::Vector<CommandFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>(Optional) One or more filters. Use a filter to return a more specific list
-     * of results.</p>
+     * of results. Note that the <code>DocumentName</code> filter is not supported for
+     * ListCommandInvocations.</p>
      */
     inline void SetFilters(Aws::Vector<CommandFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>(Optional) One or more filters. Use a filter to return a more specific list
-     * of results.</p>
+     * of results. Note that the <code>DocumentName</code> filter is not supported for
+     * ListCommandInvocations.</p>
      */
     inline ListCommandInvocationsRequest& WithFilters(const Aws::Vector<CommandFilter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>(Optional) One or more filters. Use a filter to return a more specific list
-     * of results.</p>
+     * of results. Note that the <code>DocumentName</code> filter is not supported for
+     * ListCommandInvocations.</p>
      */
     inline ListCommandInvocationsRequest& WithFilters(Aws::Vector<CommandFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) One or more filters. Use a filter to return a more specific list
-     * of results.</p>
+     * of results. Note that the <code>DocumentName</code> filter is not supported for
+     * ListCommandInvocations.</p>
      */
     inline ListCommandInvocationsRequest& AddFilters(const CommandFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>(Optional) One or more filters. Use a filter to return a more specific list
-     * of results.</p>
+     * of results. Note that the <code>DocumentName</code> filter is not supported for
+     * ListCommandInvocations.</p>
      */
     inline ListCommandInvocationsRequest& AddFilters(CommandFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

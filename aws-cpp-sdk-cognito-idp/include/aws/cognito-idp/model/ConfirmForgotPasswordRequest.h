@@ -364,15 +364,14 @@ namespace Model
      * <p>A map of custom key-value pairs that you can provide as input for any custom
      * workflows that this action triggers. </p> <p>You create custom workflows by
      * assigning AWS Lambda functions to user pool triggers. When you use the
-     * ConfirmForgotPassword API action, Amazon Cognito invokes the functions that are
-     * assigned to the <i>post confirmation</i> and <i>pre mutation</i> triggers. When
-     * Amazon Cognito invokes either of these functions, it passes a JSON payload,
-     * which the function receives as input. This payload contains a
-     * <code>clientMetadata</code> attribute, which provides the data that you assigned
-     * to the ClientMetadata parameter in your ConfirmForgotPassword request. In your
-     * function code in AWS Lambda, you can process the <code>clientMetadata</code>
-     * value to enhance your workflow for your specific needs.</p> <p>For more
-     * information, see <a
+     * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
+     * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
+     * this function, it passes a JSON payload, which the function receives as input.
+     * This payload contains a <code>clientMetadata</code> attribute, which provides
+     * the data that you assigned to the ClientMetadata parameter in your
+     * ConfirmForgotPassword request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
@@ -391,15 +390,14 @@ namespace Model
      * <p>A map of custom key-value pairs that you can provide as input for any custom
      * workflows that this action triggers. </p> <p>You create custom workflows by
      * assigning AWS Lambda functions to user pool triggers. When you use the
-     * ConfirmForgotPassword API action, Amazon Cognito invokes the functions that are
-     * assigned to the <i>post confirmation</i> and <i>pre mutation</i> triggers. When
-     * Amazon Cognito invokes either of these functions, it passes a JSON payload,
-     * which the function receives as input. This payload contains a
-     * <code>clientMetadata</code> attribute, which provides the data that you assigned
-     * to the ClientMetadata parameter in your ConfirmForgotPassword request. In your
-     * function code in AWS Lambda, you can process the <code>clientMetadata</code>
-     * value to enhance your workflow for your specific needs.</p> <p>For more
-     * information, see <a
+     * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
+     * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
+     * this function, it passes a JSON payload, which the function receives as input.
+     * This payload contains a <code>clientMetadata</code> attribute, which provides
+     * the data that you assigned to the ClientMetadata parameter in your
+     * ConfirmForgotPassword request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
@@ -418,15 +416,14 @@ namespace Model
      * <p>A map of custom key-value pairs that you can provide as input for any custom
      * workflows that this action triggers. </p> <p>You create custom workflows by
      * assigning AWS Lambda functions to user pool triggers. When you use the
-     * ConfirmForgotPassword API action, Amazon Cognito invokes the functions that are
-     * assigned to the <i>post confirmation</i> and <i>pre mutation</i> triggers. When
-     * Amazon Cognito invokes either of these functions, it passes a JSON payload,
-     * which the function receives as input. This payload contains a
-     * <code>clientMetadata</code> attribute, which provides the data that you assigned
-     * to the ClientMetadata parameter in your ConfirmForgotPassword request. In your
-     * function code in AWS Lambda, you can process the <code>clientMetadata</code>
-     * value to enhance your workflow for your specific needs.</p> <p>For more
-     * information, see <a
+     * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
+     * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
+     * this function, it passes a JSON payload, which the function receives as input.
+     * This payload contains a <code>clientMetadata</code> attribute, which provides
+     * the data that you assigned to the ClientMetadata parameter in your
+     * ConfirmForgotPassword request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
@@ -445,15 +442,14 @@ namespace Model
      * <p>A map of custom key-value pairs that you can provide as input for any custom
      * workflows that this action triggers. </p> <p>You create custom workflows by
      * assigning AWS Lambda functions to user pool triggers. When you use the
-     * ConfirmForgotPassword API action, Amazon Cognito invokes the functions that are
-     * assigned to the <i>post confirmation</i> and <i>pre mutation</i> triggers. When
-     * Amazon Cognito invokes either of these functions, it passes a JSON payload,
-     * which the function receives as input. This payload contains a
-     * <code>clientMetadata</code> attribute, which provides the data that you assigned
-     * to the ClientMetadata parameter in your ConfirmForgotPassword request. In your
-     * function code in AWS Lambda, you can process the <code>clientMetadata</code>
-     * value to enhance your workflow for your specific needs.</p> <p>For more
-     * information, see <a
+     * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
+     * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
+     * this function, it passes a JSON payload, which the function receives as input.
+     * This payload contains a <code>clientMetadata</code> attribute, which provides
+     * the data that you assigned to the ClientMetadata parameter in your
+     * ConfirmForgotPassword request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
@@ -472,15 +468,14 @@ namespace Model
      * <p>A map of custom key-value pairs that you can provide as input for any custom
      * workflows that this action triggers. </p> <p>You create custom workflows by
      * assigning AWS Lambda functions to user pool triggers. When you use the
-     * ConfirmForgotPassword API action, Amazon Cognito invokes the functions that are
-     * assigned to the <i>post confirmation</i> and <i>pre mutation</i> triggers. When
-     * Amazon Cognito invokes either of these functions, it passes a JSON payload,
-     * which the function receives as input. This payload contains a
-     * <code>clientMetadata</code> attribute, which provides the data that you assigned
-     * to the ClientMetadata parameter in your ConfirmForgotPassword request. In your
-     * function code in AWS Lambda, you can process the <code>clientMetadata</code>
-     * value to enhance your workflow for your specific needs.</p> <p>For more
-     * information, see <a
+     * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
+     * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
+     * this function, it passes a JSON payload, which the function receives as input.
+     * This payload contains a <code>clientMetadata</code> attribute, which provides
+     * the data that you assigned to the ClientMetadata parameter in your
+     * ConfirmForgotPassword request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
@@ -499,15 +494,14 @@ namespace Model
      * <p>A map of custom key-value pairs that you can provide as input for any custom
      * workflows that this action triggers. </p> <p>You create custom workflows by
      * assigning AWS Lambda functions to user pool triggers. When you use the
-     * ConfirmForgotPassword API action, Amazon Cognito invokes the functions that are
-     * assigned to the <i>post confirmation</i> and <i>pre mutation</i> triggers. When
-     * Amazon Cognito invokes either of these functions, it passes a JSON payload,
-     * which the function receives as input. This payload contains a
-     * <code>clientMetadata</code> attribute, which provides the data that you assigned
-     * to the ClientMetadata parameter in your ConfirmForgotPassword request. In your
-     * function code in AWS Lambda, you can process the <code>clientMetadata</code>
-     * value to enhance your workflow for your specific needs.</p> <p>For more
-     * information, see <a
+     * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
+     * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
+     * this function, it passes a JSON payload, which the function receives as input.
+     * This payload contains a <code>clientMetadata</code> attribute, which provides
+     * the data that you assigned to the ClientMetadata parameter in your
+     * ConfirmForgotPassword request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
@@ -526,15 +520,14 @@ namespace Model
      * <p>A map of custom key-value pairs that you can provide as input for any custom
      * workflows that this action triggers. </p> <p>You create custom workflows by
      * assigning AWS Lambda functions to user pool triggers. When you use the
-     * ConfirmForgotPassword API action, Amazon Cognito invokes the functions that are
-     * assigned to the <i>post confirmation</i> and <i>pre mutation</i> triggers. When
-     * Amazon Cognito invokes either of these functions, it passes a JSON payload,
-     * which the function receives as input. This payload contains a
-     * <code>clientMetadata</code> attribute, which provides the data that you assigned
-     * to the ClientMetadata parameter in your ConfirmForgotPassword request. In your
-     * function code in AWS Lambda, you can process the <code>clientMetadata</code>
-     * value to enhance your workflow for your specific needs.</p> <p>For more
-     * information, see <a
+     * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
+     * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
+     * this function, it passes a JSON payload, which the function receives as input.
+     * This payload contains a <code>clientMetadata</code> attribute, which provides
+     * the data that you assigned to the ClientMetadata parameter in your
+     * ConfirmForgotPassword request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
@@ -553,15 +546,14 @@ namespace Model
      * <p>A map of custom key-value pairs that you can provide as input for any custom
      * workflows that this action triggers. </p> <p>You create custom workflows by
      * assigning AWS Lambda functions to user pool triggers. When you use the
-     * ConfirmForgotPassword API action, Amazon Cognito invokes the functions that are
-     * assigned to the <i>post confirmation</i> and <i>pre mutation</i> triggers. When
-     * Amazon Cognito invokes either of these functions, it passes a JSON payload,
-     * which the function receives as input. This payload contains a
-     * <code>clientMetadata</code> attribute, which provides the data that you assigned
-     * to the ClientMetadata parameter in your ConfirmForgotPassword request. In your
-     * function code in AWS Lambda, you can process the <code>clientMetadata</code>
-     * value to enhance your workflow for your specific needs.</p> <p>For more
-     * information, see <a
+     * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
+     * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
+     * this function, it passes a JSON payload, which the function receives as input.
+     * This payload contains a <code>clientMetadata</code> attribute, which provides
+     * the data that you assigned to the ClientMetadata parameter in your
+     * ConfirmForgotPassword request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
@@ -580,15 +572,14 @@ namespace Model
      * <p>A map of custom key-value pairs that you can provide as input for any custom
      * workflows that this action triggers. </p> <p>You create custom workflows by
      * assigning AWS Lambda functions to user pool triggers. When you use the
-     * ConfirmForgotPassword API action, Amazon Cognito invokes the functions that are
-     * assigned to the <i>post confirmation</i> and <i>pre mutation</i> triggers. When
-     * Amazon Cognito invokes either of these functions, it passes a JSON payload,
-     * which the function receives as input. This payload contains a
-     * <code>clientMetadata</code> attribute, which provides the data that you assigned
-     * to the ClientMetadata parameter in your ConfirmForgotPassword request. In your
-     * function code in AWS Lambda, you can process the <code>clientMetadata</code>
-     * value to enhance your workflow for your specific needs.</p> <p>For more
-     * information, see <a
+     * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
+     * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
+     * this function, it passes a JSON payload, which the function receives as input.
+     * This payload contains a <code>clientMetadata</code> attribute, which provides
+     * the data that you assigned to the ClientMetadata parameter in your
+     * ConfirmForgotPassword request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
@@ -607,15 +598,14 @@ namespace Model
      * <p>A map of custom key-value pairs that you can provide as input for any custom
      * workflows that this action triggers. </p> <p>You create custom workflows by
      * assigning AWS Lambda functions to user pool triggers. When you use the
-     * ConfirmForgotPassword API action, Amazon Cognito invokes the functions that are
-     * assigned to the <i>post confirmation</i> and <i>pre mutation</i> triggers. When
-     * Amazon Cognito invokes either of these functions, it passes a JSON payload,
-     * which the function receives as input. This payload contains a
-     * <code>clientMetadata</code> attribute, which provides the data that you assigned
-     * to the ClientMetadata parameter in your ConfirmForgotPassword request. In your
-     * function code in AWS Lambda, you can process the <code>clientMetadata</code>
-     * value to enhance your workflow for your specific needs.</p> <p>For more
-     * information, see <a
+     * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
+     * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
+     * this function, it passes a JSON payload, which the function receives as input.
+     * This payload contains a <code>clientMetadata</code> attribute, which provides
+     * the data that you assigned to the ClientMetadata parameter in your
+     * ConfirmForgotPassword request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
@@ -634,15 +624,14 @@ namespace Model
      * <p>A map of custom key-value pairs that you can provide as input for any custom
      * workflows that this action triggers. </p> <p>You create custom workflows by
      * assigning AWS Lambda functions to user pool triggers. When you use the
-     * ConfirmForgotPassword API action, Amazon Cognito invokes the functions that are
-     * assigned to the <i>post confirmation</i> and <i>pre mutation</i> triggers. When
-     * Amazon Cognito invokes either of these functions, it passes a JSON payload,
-     * which the function receives as input. This payload contains a
-     * <code>clientMetadata</code> attribute, which provides the data that you assigned
-     * to the ClientMetadata parameter in your ConfirmForgotPassword request. In your
-     * function code in AWS Lambda, you can process the <code>clientMetadata</code>
-     * value to enhance your workflow for your specific needs.</p> <p>For more
-     * information, see <a
+     * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
+     * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
+     * this function, it passes a JSON payload, which the function receives as input.
+     * This payload contains a <code>clientMetadata</code> attribute, which provides
+     * the data that you assigned to the ClientMetadata parameter in your
+     * ConfirmForgotPassword request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
@@ -661,15 +650,14 @@ namespace Model
      * <p>A map of custom key-value pairs that you can provide as input for any custom
      * workflows that this action triggers. </p> <p>You create custom workflows by
      * assigning AWS Lambda functions to user pool triggers. When you use the
-     * ConfirmForgotPassword API action, Amazon Cognito invokes the functions that are
-     * assigned to the <i>post confirmation</i> and <i>pre mutation</i> triggers. When
-     * Amazon Cognito invokes either of these functions, it passes a JSON payload,
-     * which the function receives as input. This payload contains a
-     * <code>clientMetadata</code> attribute, which provides the data that you assigned
-     * to the ClientMetadata parameter in your ConfirmForgotPassword request. In your
-     * function code in AWS Lambda, you can process the <code>clientMetadata</code>
-     * value to enhance your workflow for your specific needs.</p> <p>For more
-     * information, see <a
+     * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
+     * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
+     * this function, it passes a JSON payload, which the function receives as input.
+     * This payload contains a <code>clientMetadata</code> attribute, which provides
+     * the data that you assigned to the ClientMetadata parameter in your
+     * ConfirmForgotPassword request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
@@ -688,15 +676,14 @@ namespace Model
      * <p>A map of custom key-value pairs that you can provide as input for any custom
      * workflows that this action triggers. </p> <p>You create custom workflows by
      * assigning AWS Lambda functions to user pool triggers. When you use the
-     * ConfirmForgotPassword API action, Amazon Cognito invokes the functions that are
-     * assigned to the <i>post confirmation</i> and <i>pre mutation</i> triggers. When
-     * Amazon Cognito invokes either of these functions, it passes a JSON payload,
-     * which the function receives as input. This payload contains a
-     * <code>clientMetadata</code> attribute, which provides the data that you assigned
-     * to the ClientMetadata parameter in your ConfirmForgotPassword request. In your
-     * function code in AWS Lambda, you can process the <code>clientMetadata</code>
-     * value to enhance your workflow for your specific needs.</p> <p>For more
-     * information, see <a
+     * ConfirmForgotPassword API action, Amazon Cognito invokes the function that is
+     * assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
+     * this function, it passes a JSON payload, which the function receives as input.
+     * This payload contains a <code>clientMetadata</code> attribute, which provides
+     * the data that you assigned to the ClientMetadata parameter in your
+     * ConfirmForgotPassword request. In your function code in AWS Lambda, you can
+     * process the <code>clientMetadata</code> value to enhance your workflow for your
+     * specific needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
      * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
