@@ -39,7 +39,6 @@ STSProfileCredentialsProvider::STSProfileCredentialsProvider(const Aws::String& 
 
 STSProfileCredentialsProvider::STSProfileCredentialsProvider(const Aws::String& profileName, std::chrono::minutes duration, const std::function<Aws::STS::STSClient*(const AWSCredentials&)> &stsClientFactory)
       : m_profileName(profileName),
-        m_configFileLoader(GetConfigProfileFilename()),
         m_duration(duration),
         m_reloadFrequency(std::chrono::minutes(std::max(int64_t(5), static_cast<int64_t>(duration.count()))) - std::chrono::minutes(5)),
         m_stsClientFactory(stsClientFactory)
@@ -175,9 +174,8 @@ static ProfileState CheckProfile(const Aws::Config::Profile& profile, bool topLe
 
 void STSProfileCredentialsProvider::Reload()
 {
-    m_configFileLoader.Load();
     // make a copy of the profiles map to be able to set credentials on the individual profiles when assuming role
-    auto loadedProfiles = m_configFileLoader.GetProfiles();
+    auto loadedProfiles = Aws::Config::GetCachedConfigProfiles();
     auto profileIt = loadedProfiles.find(m_profileName);
 
     if(profileIt == loadedProfiles.end())

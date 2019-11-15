@@ -35,7 +35,7 @@ namespace Aws
         static const int ERROR_MESSAGE_LENGTH_LIMIT = 512;
 
         const char DEFAULT_MONITORING_CLIENT_ID[] = ""; // default to empty;
-        const char DEFAULT_MONITORING_HOST[] = "127.0.0.1"; // default to loopback ip address instead of "localhost" based on design specification. 
+        const char DEFAULT_MONITORING_HOST[] = "127.0.0.1"; // default to loopback ip address instead of "localhost" based on design specification.
         unsigned short DEFAULT_MONITORING_PORT = 31000; //default to 31000;
         bool DEFAULT_MONITORING_ENABLE = false; //default to false;
 
@@ -60,8 +60,8 @@ namespace Aws
             const Aws::Client::HttpResponseOutcome* outcome = nullptr;
         };
 
-        static inline void FillRequiredFieldsToJson(Json::JsonValue& json, 
-            const Aws::String& type, 
+        static inline void FillRequiredFieldsToJson(Json::JsonValue& json,
+            const Aws::String& type,
             const Aws::String& service,
             const Aws::String& api,
             const Aws::String& clientId,
@@ -96,7 +96,7 @@ namespace Aws
                 .WithInt64("AttemptLatency", attemptLatency);
         }
 
-        static inline void ExportResponseHeaderToJson(Json::JsonValue& json, const Aws::Http::HeaderValueCollection& headers, 
+        static inline void ExportResponseHeaderToJson(Json::JsonValue& json, const Aws::Http::HeaderValueCollection& headers,
             const Aws::String& headerName, const Aws::String& targetName)
         {
             auto iter = headers.find(headerName);
@@ -136,7 +136,7 @@ namespace Aws
                 }
                 json.WithInteger("FinalHttpStatusCode", static_cast<int>(outcome.GetError().GetResponseCode()));
             }
-            else 
+            else
             {
                 json.WithInteger("FinalHttpStatusCode", static_cast<int>(outcome.GetResult()->GetResponseCode()));
             }
@@ -169,7 +169,7 @@ namespace Aws
             ExportResponseHeaderToJson(json, headers, StringUtils::ToLower("x-amzn-RequestId"), "XAmznRequestId");
             ExportResponseHeaderToJson(json, headers, StringUtils::ToLower("x-amz-request-id"), "XAmzRequestId");
             ExportResponseHeaderToJson(json, headers, StringUtils::ToLower("x-amz-id-2"), "XAmzId2");
-            
+
             if (!outcome.IsSuccess())
             {
                 if (outcome.GetError().GetExceptionName().empty()) // Not Aws Excecption
@@ -183,7 +183,7 @@ namespace Aws
                 }
                 json.WithInteger("HttpStatusCode", static_cast<int>(outcome.GetError().GetResponseCode()));
             }
-            else 
+            else
             {
                 json.WithInteger("HttpStatusCode", static_cast<int>(outcome.GetResult()->GetResponseCode()));
             }
@@ -231,7 +231,7 @@ namespace Aws
             CollectAndSendAttemptData(serviceName, requestName, request, outcome, metricsFromCore, context);
         }
 
-        void DefaultMonitoring::OnRequestRetry(const Aws::String& serviceName, const Aws::String& requestName, 
+        void DefaultMonitoring::OnRequestRetry(const Aws::String& serviceName, const Aws::String& requestName,
             const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const
         {
             AWS_UNREFERENCED_PARAM(request);
@@ -242,7 +242,7 @@ namespace Aws
             AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "OnRequestRetry Service: " << serviceName << "Request: " << requestName << " RetryCnt:" << defaultContext->retryCount);
         }
 
-        void DefaultMonitoring::OnFinish(const Aws::String& serviceName, const Aws::String& requestName, 
+        void DefaultMonitoring::OnFinish(const Aws::String& serviceName, const Aws::String& requestName,
             const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const
         {
             AWS_UNREFERENCED_PARAM(request);
@@ -260,7 +260,7 @@ namespace Aws
         }
 
         void DefaultMonitoring::CollectAndSendAttemptData(const Aws::String& serviceName, const Aws::String& requestName,
-            const std::shared_ptr<const Aws::Http::HttpRequest>& request, const Aws::Client::HttpResponseOutcome& outcome, 
+            const std::shared_ptr<const Aws::Http::HttpRequest>& request, const Aws::Client::HttpResponseOutcome& outcome,
             const CoreMetricsCollection& metricsFromCore, void* context) const
         {
             DefaultContext* defaultContext = static_cast<DefaultContext*>(context);
@@ -277,57 +277,46 @@ namespace Aws
         }
 
         Aws::UniquePtr<MonitoringInterface> DefaultMonitoringFactory::CreateMonitoringInstance() const
-        {   
+        {
             Aws::String clientId(DEFAULT_MONITORING_CLIENT_ID); // default to empty
             Aws::String host(DEFAULT_MONITORING_HOST); // default to 127.0.0.1
             unsigned short port = DEFAULT_MONITORING_PORT; // default to 31000
             bool enable = DEFAULT_MONITORING_ENABLE; //default to false;
 
             //check profile_config
-            Aws::String defaultConfigFile = Aws::Auth::GetConfigProfileFilename();
-            Aws::Config::AWSConfigFileProfileConfigLoader configLoader(defaultConfigFile, true/*use profile prefix for config file*/);
+            Aws::String tmpEnable = Aws::Config::GetCachedConfigValue(DefaultMonitoring::DEFAULT_CSM_CONFIG_ENABLED);
+            Aws::String tmpClientId = Aws::Config::GetCachedConfigValue(DefaultMonitoring::DEFAULT_CSM_CONFIG_CLIENT_ID);
+            Aws::String tmpHost = Aws::Config::GetCachedConfigValue(DefaultMonitoring::DEFAULT_CSM_CONFIG_HOST);
+            Aws::String tmpPort = Aws::Config::GetCachedConfigValue(DefaultMonitoring::DEFAULT_CSM_CONFIG_PORT);
 
-            if (configLoader.Load())
+            if (!tmpEnable.empty())
             {
-                auto profilesMap = configLoader.GetProfiles();
-                // If these variables set in multiple sections, the one set later will override the former one.
-                for (const auto& iter : profilesMap)
-                {
-                    Aws::String tmpEnable = iter.second.GetValue(DefaultMonitoring::DEFAULT_CSM_CONFIG_ENABLED);
-                    Aws::String tmpClientId = iter.second.GetValue(DefaultMonitoring::DEFAULT_CSM_CONFIG_CLIENT_ID);
-                    Aws::String tmpHost = iter.second.GetValue(DefaultMonitoring::DEFAULT_CSM_CONFIG_HOST);
-                    Aws::String tmpPort = iter.second.GetValue(DefaultMonitoring::DEFAULT_CSM_CONFIG_PORT);
+                enable = StringUtils::CaselessCompare(tmpEnable.c_str(), "true") ? true : false;
+                AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Resolved csm_enabled from profile_config to be " << enable);
+            }
+            if (!tmpClientId.empty())
+            {
+                clientId = tmpClientId;
+                AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Resolved csm_client_id from profile_config to be " << clientId);
+            }
 
-                    if (!tmpEnable.empty())
-                    {
-                        enable = StringUtils::CaselessCompare(tmpEnable.c_str(), "true") ? true : false;
-                        AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Resolved csm_enabled from profile_config to be " << enable);
-                    }
-                    if (!tmpClientId.empty())
-                    {
-                        clientId = tmpClientId;
-                        AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Resolved csm_client_id from profile_config to be " << clientId);
-                    }
+            if (!tmpHost.empty())
+            {
+                host = tmpHost;
+                AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Resolved csm_host from profile_config to be " << host);
+            }
 
-                    if (!tmpHost.empty())
-                    {
-                        host = tmpHost;
-                        AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Resolved csm_host from profile_config to be " << host);
-                    }
-
-                    if (!tmpPort.empty())
-                    {
-                        port = static_cast<short>(StringUtils::ConvertToInt32(tmpPort.c_str()));
-                        AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Resolved csm_port from profile_config to be " << port);
-                    }             
-                }
+            if (!tmpPort.empty())
+            {
+                port = static_cast<short>(StringUtils::ConvertToInt32(tmpPort.c_str()));
+                AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Resolved csm_port from profile_config to be " << port);
             }
 
             // check environment variables
-            Aws::String tmpEnable = Aws::Environment::GetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_ENABLED);
-            Aws::String tmpClientId = Aws::Environment::GetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_CLIENT_ID);
-            Aws::String tmpHost = Aws::Environment::GetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_HOST);
-            Aws::String tmpPort = Aws::Environment::GetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_PORT);
+            tmpEnable = Aws::Environment::GetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_ENABLED);
+            tmpClientId = Aws::Environment::GetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_CLIENT_ID);
+            tmpHost = Aws::Environment::GetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_HOST);
+            tmpPort = Aws::Environment::GetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_PORT);
             if (!tmpEnable.empty())
             {
                 enable = StringUtils::CaselessCompare(tmpEnable.c_str(), "true") ? true : false;

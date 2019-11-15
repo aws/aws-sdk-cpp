@@ -22,6 +22,7 @@
 #include <aws/core/external/cjson/cJSON.h>
 #include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/net/Net.h>
+#include <aws/core/config/AWSProfileConfigLoader.h>
 
 namespace Aws
 {
@@ -51,7 +52,9 @@ namespace Aws
             AWS_LOGSTREAM_INFO(ALLOCATION_TAG, "Initiate AWS SDK for C++ with Version:" << Aws::String(Aws::Version::GetVersionString()));
         }
 
-        if(options.cryptoOptions.aes_CBCFactory_create_fn)
+        Aws::Config::InitConfigAndCredentialsCacheManager();
+
+        if (options.cryptoOptions.aes_CBCFactory_create_fn)
         {
             Aws::Utils::Crypto::SetAES_CBCFactory(options.cryptoOptions.aes_CBCFactory_create_fn());
         }
@@ -119,11 +122,13 @@ namespace Aws
         Aws::Http::CleanupHttp();
         Aws::Utils::Crypto::CleanupCrypto();
 
+        Aws::Config::CleanupConfigAndCredentialsCacheManager();
+
         if(options.loggingOptions.logLevel != Aws::Utils::Logging::LogLevel::Off)
         {
             Aws::Utils::Logging::ShutdownAWSLogging();
         }
-        
+
         Aws::Client::CoreErrorsMapper::CleanupCoreErrorsMapper();
 
 #ifdef USE_AWS_MEMORY_MANAGEMENT

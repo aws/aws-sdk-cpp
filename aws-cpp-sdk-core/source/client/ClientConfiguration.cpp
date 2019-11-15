@@ -1,12 +1,12 @@
 /*
   * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
+  *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
   * A copy of the License is located at
-  * 
+  *
   *  http://aws.amazon.com/apache2.0
-  * 
+  *
   * or in the "license" file accompanying this file. This file is distributed
   * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
   * express or implied. See the License for the specific language governing
@@ -14,7 +14,7 @@
   */
 
 #include <aws/core/client/ClientConfiguration.h>
-
+#include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/client/DefaultRetryStrategy.h>
 #include <aws/core/platform/OSVersionInfo.h>
 #include <aws/core/utils/memory/AWSMemory.h>
@@ -67,31 +67,26 @@ ClientConfiguration::ClientConfiguration() :
     disableExpectHeader(false),
     enableClockSkewAdjustment(true),
     enableHostPrefixInjection(true),
-    enableEndpointDiscovery(false)
+    enableEndpointDiscovery(false),
+    profileName(Aws::Auth::GetConfigProfileName())
 {
+    AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "ClientConfiguration will use SDK Auto Resolved profile: [" << profileName << "] if not specified by users.");
 }
 
 ClientConfiguration::ClientConfiguration(const char* profileName) : ClientConfiguration()
 {
-    Aws::String configFilename = Aws::Auth::GetConfigProfileFilename();
-    Config::AWSConfigFileProfileConfigLoader configLoader(configFilename);
-    if (!configLoader.Load())
+    if (profileName && Aws::Config::HasCachedConfigProfile(profileName))
     {
-        AWS_LOGSTREAM_ERROR(CLIENT_CONFIG_TAG, "Failed to load/parse configuration file [" << configFilename <<
-                "]. Falling back to region [" << region << "]");
+        this->profileName = Aws::String(profileName);
+        AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "Use user specified profile: [" << this->profileName << "] for ClientConfiguration.");
+        auto tmpRegion = Aws::Config::GetCachedConfigProfile(this->profileName).GetRegion();
+        if (!tmpRegion.empty())
+        {
+            region = tmpRegion;
+        }
         return;
     }
-
-    const auto& profiles = configLoader.GetProfiles();
-    auto it = profiles.find(profileName);
-    if (it == profiles.end())
-    {
-        AWS_LOGSTREAM_ERROR(CLIENT_CONFIG_TAG, "Failed to load profile: [" << profileName <<
-                "] from configuration file [" << configFilename << "]. Falling back to region [" << region << "]");
-        return;
-    }
-    const Aws::Config::Profile& profile = it->second;
-    region = profile.GetRegion();
+    AWS_LOGSTREAM_WARN(CLIENT_CONFIG_TAG, "User specified profile: [" << profileName << "] is not found, will use the SDK resolved one.");
 }
 
 } // namespace Client

@@ -36,7 +36,6 @@ namespace Aws
             class RateLimiterInterface;
         } // namespace RateLimits
     } // namespace Utils
-
     namespace Client
     {
         class RetryStrategy; // forward declare
@@ -78,7 +77,7 @@ namespace Aws
             /**
              * This is currently only applicable for Curl to set the http request level timeout, including possible dns lookup time, connection establish time, ssl handshake time and actual data transmission time.
              * the corresponding Curl option is CURLOPT_TIMEOUT_MS
-             * defaults to 0, no http request level timeout. 
+             * defaults to 0, no http request level timeout.
              */
             long httpRequestTimeoutMs;
             /**
@@ -159,7 +158,7 @@ namespace Aws
             Aws::String proxySSLKeyType;
             /**
             * Passphrase to the private key file used to connect to an HTTPS proxy.
-            * Used to set CURLOPT_PROXY_KEYPASSWD in libcurl. Example: password1 
+            * Used to set CURLOPT_PROXY_KEYPASSWD in libcurl. Example: password1
             */
             Aws::String proxySSLKeyPassword;
             /**
@@ -217,20 +216,25 @@ namespace Aws
             bool enableClockSkewAdjustment;
 
             /**
-             * Enable host prefix injection. 
+             * Enable host prefix injection.
              * For services whose endpoint is injectable. e.g. servicediscovery, you can modify the http host's prefix so as to add "data-" prefix for DiscoverInstances request.
-             * Default to true, enabled. You can disable it for testing purpose. 
+             * Default to true, enabled. You can disable it for testing purpose.
              */
             bool enableHostPrefixInjection;
 
             /**
-             * Enable endpoint discovery 
-             * For some services to dynamically set up their endpoints for different requests. 
+             * Enable endpoint discovery
+             * For some services to dynamically set up their endpoints for different requests.
              * Defaults to false, it's an opt-in feature.
              * If disabled, regional or overriden endpoint will be used instead.
              * If a request requires endpoint discovery but you disabled it. The request will never succeed.
              */
             bool enableEndpointDiscovery;
+
+            /**
+             * profileName in config file that will be used by this object to reslove more configurations.
+             */
+            Aws::String profileName;
         };
 
     } // namespace Client

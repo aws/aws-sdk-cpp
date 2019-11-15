@@ -82,7 +82,6 @@ namespace Aws
 
             Aws::String m_profileName;
             AWSCredentials m_credentials;
-            Aws::Config::AWSConfigFileProfileConfigLoader m_configFileLoader;
             const std::chrono::minutes m_duration;
             const std::chrono::milliseconds m_reloadFrequency;
             std::function<Aws::STS::STSClient*(const AWSCredentials&)> m_stsClientFactory;

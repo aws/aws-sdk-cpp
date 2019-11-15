@@ -53,27 +53,17 @@ STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentials
     // region source is not enforced, but we need it to construct sts endpoint, if we can't find from environment, we should check if it's set in config file.
     if (m_roleArn.empty() || m_tokenFile.empty() || tmpRegion.empty())
     {
-        Aws::String configFile = Aws::Auth::GetConfigProfileFilename();
-        Aws::Config::AWSConfigFileProfileConfigLoader configLoader(configFile, true/*use profile prefix for config file*/);
-
-        if (configLoader.Load())
+        auto profile = Aws::Config::GetCachedConfigProfile(Aws::Auth::GetConfigProfileName());
+        if (tmpRegion.empty())
         {
-            auto profilesMap = configLoader.GetProfiles();
-            auto iter = profilesMap.find(Aws::Auth::GetConfigProfileName());
-            if (iter != profilesMap.end())
-            {
-                if (tmpRegion.empty())
-                {
-                    tmpRegion = iter->second.GetRegion();
-                }
-                // If either of these two were not found from environment, use whatever found for all three in config file
-                if (m_roleArn.empty() || m_tokenFile.empty())
-                {
-                    m_roleArn = iter->second.GetRoleArn();
-                    m_tokenFile = iter->second.GetValue("web_identity_token_file");
-                    m_sessionName = iter->second.GetValue("role_session_name");
-                }
-            }
+            tmpRegion = profile.GetRegion();
+        }
+        // If either of these two were not found from environment, use whatever found for all three in config file
+        if (m_roleArn.empty() || m_tokenFile.empty())
+        {
+            m_roleArn = profile.GetRoleArn();
+            m_tokenFile = profile.GetValue("web_identity_token_file");
+            m_sessionName = profile.GetValue("role_session_name");
         }
     }
 

@@ -190,8 +190,8 @@ namespace Aws
         private:
 
             /**
-            * Checks to see if the refresh interval has expired and reparses the file if it has.
-            */
+             * Checks to see if the refresh interval has expired and reparses the file if it has.
+             */
             void RefreshIfExpired();
 
             Aws::String m_profileToUse;
@@ -289,7 +289,7 @@ namespace Aws
          * The default profile name to look up this configuration is "default", same as normal aws credentials configuration and other configurations.
          * The expected valid output of the command is a Json doc output to stdout:
          * {"Version": 1, "AccessKeyId": "AccessKey123", "SecretAccessKey": "SecretKey321", "SessionToken": "Token123", "Expiration": "1970-01-01T00:00:01Z"}
-         * The Version key specifies the version of the JSON payload and must be set to 1 for now (as an integer type). 
+         * The Version key specifies the version of the JSON payload and must be set to 1 for now (as an integer type).
          * If the Version key is bumped to 2, SDKs would support both versions of the returned payload.
          * Value of Expiration field should be an valid ISO8601 formatted date string as above example.
          * The expected error message of the command is a string to output to stderr.
@@ -320,7 +320,6 @@ namespace Aws
 
         private:
             Aws::String m_profileToUse;
-            Aws::Config::AWSConfigFileProfileConfigLoader m_configFileLoader;
             Aws::Auth::AWSCredentials m_credentials;
         };
     } // namespace Auth

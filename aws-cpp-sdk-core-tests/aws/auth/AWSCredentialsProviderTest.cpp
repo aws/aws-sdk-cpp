@@ -1,12 +1,12 @@
 /*
   * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
+  *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
   * A copy of the License is located at
-  * 
+  *
   *  http://aws.amazon.com/apache2.0
-  * 
+  *
   * or in the "license" file accompanying this file. This file is distributed
   * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
   * express or implied. See the License for the specific language governing
@@ -49,7 +49,7 @@ class ProfileConfigFileAWSCredentialsProviderTest : public ::testing::Test
 public:
     void SetUp()
     {
-        SaveEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE");  
+        SaveEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE");
         SaveEnvironmentVariable("AWS_DEFAULT_PROFILE");
         SaveEnvironmentVariable("AWS_PROFILE");
 
@@ -96,7 +96,7 @@ TEST_F(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
 {
     struct ReloadableProfileConfigProvider : ProfileConfigFileAWSCredentialsProvider
     {
-        void ReloadNow() 
+        void ReloadNow()
         {
             Reload();
         }
@@ -136,7 +136,7 @@ public:
 
     void SetUp()
     {
-        SaveEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE");  
+        SaveEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE");
         SaveEnvironmentVariable("AWS_CONFIG_FILE");
         SaveEnvironmentVariable("AWS_DEFAULT_PROFILE");
         SaveEnvironmentVariable("AWS_PROFILE");
@@ -291,7 +291,7 @@ TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesExist)
     EnvironmentAWSCredentialsProvider provider;
     ASSERT_EQ("Access Key", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("Secret Key", provider.GetAWSCredentials().GetAWSSecretKey());
-    ASSERT_EQ("Session Token", provider.GetAWSCredentials().GetSessionToken());    
+    ASSERT_EQ("Session Token", provider.GetAWSCredentials().GetSessionToken());
 }
 
 TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesDoNotExist)
@@ -332,7 +332,7 @@ TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsGoodDat
 
     InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 1000 * 60 * 15);
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());    
+    ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
 }
 
 
@@ -352,7 +352,7 @@ TEST(InstanceProfileCredentialsProviderTest, TestThatProviderRefreshes)
 
     std::this_thread::sleep_for(std::chrono::milliseconds(100));
     ASSERT_EQ("betterAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("betterSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());    
+    ASSERT_EQ("betterSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
 }
 
 TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientCouldntFindCredentials)
@@ -368,7 +368,7 @@ TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientCouldntFindCre
     const char* missingInfo = "{ }";
     mockClient->SetMockedCredentialsValue(missingInfo);
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());    
+    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
 }
 
 TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsBadData)
@@ -419,7 +419,7 @@ TEST(TaskRoleCredentialsProviderTest, TestThatProviderRefreshes)
     TaskRoleCredentialsProvider provider(mockClient, 10);
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
-    
+
     Aws::StringStream nextSetOfCredentials;
     nextSetOfCredentials << betterCredentialsPrefix << "\"" << dateStringAfter << "\" }";
     mockClient->SetMockedCredentialsValue(nextSetOfCredentials.str());
@@ -447,7 +447,7 @@ TEST(TaskRoleCredentialsProviderTest, TestThatProviderDontRefresh)
     TaskRoleCredentialsProvider provider(mockClient, 0);
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
-    
+
     // After sleeping for 3 seconds, the credentials will not be refreshed.
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
@@ -466,7 +466,7 @@ TEST(TaskRoleCredentialsProviderTest, TestECSCrendentialsClientCouldntFindCreden
     const char* missingInfo = "{ }";
     mockClient->SetMockedCredentialsValue(missingInfo);
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());    
+    ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
 }
 
 TEST(TaskRoleCredentialsProviderTest, TestECSCredentialsClientReturnsBadData)
@@ -541,11 +541,11 @@ public:
 TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderExpiredThenRefreshed)
 {
     Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
-
     configFile << "[default]" << std::endl;
     configFile << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AccessKey123\", \"SecretAccessKey\": \"SecretKey321\", \"Expiration\": \"1970-01-01T00:00:01Z\"}") << std::endl;
     configFile.close();
 
+    Aws::Config::ReloadCachedConfigFile();
     ProcessCredentialsProvider provider;
     Aws::Auth::AWSCredentials credsOne = provider.GetAWSCredentials();
     EXPECT_TRUE(credsOne.IsExpired());
@@ -555,6 +555,7 @@ TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderExpiredThen
     configFileNew << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AccessKey321\", \"SecretAccessKey\": \"SecretKey123\"}") << std::endl;
     configFileNew.close();
 
+    Aws::Config::ReloadCachedConfigFile();
     Aws::Auth::AWSCredentials credsTwo = provider.GetAWSCredentials();
     EXPECT_NE(credsOne, credsTwo);
     EXPECT_FALSE(credsTwo.IsEmpty());
@@ -570,7 +571,7 @@ TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderNonSupporte
     configFileNew << "[default]" << std::endl;
     configFileNew << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 2, \"AccessKeyId\": \"AccessKey321\", \"SecretAccessKey\": \"SecretKey123\"}") << std::endl;
     configFileNew.close();
-    
+    Aws::Config::ReloadCachedConfigFile();
     ProcessCredentialsProvider provider;
     EXPECT_TRUE(provider.GetAWSCredentials().IsEmpty());
 
@@ -584,6 +585,7 @@ TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderDoNotRefres
     configFile << "[default]" << std::endl;
     configFile << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AccessKey456\", \"SecretAccessKey\": \"SecretKey654\"}") << std::endl;
     configFile.close();
+    Aws::Config::ReloadCachedConfigFile();
 
     ProcessCredentialsProvider provider;
     Aws::Auth::AWSCredentials credsOne = provider.GetAWSCredentials();
@@ -595,6 +597,7 @@ TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderDoNotRefres
     configFileNew << "[default]" << std::endl;
     configFileNew << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AccessKey789\", \"SecretAccessKey\": \"SecretKey987\"}") << std::endl;
     configFileNew.close();
+    Aws::Config::ReloadCachedConfigFile();
 
     Aws::Auth::AWSCredentials credsTwo = provider.GetAWSCredentials();
     EXPECT_EQ(credsOne, credsTwo);
@@ -613,6 +616,7 @@ TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderCaptureInva
     configFile << "credential_process = echo 'Error: Failed to retrieve credentials'" << std::endl;
     configFile << std::endl;
     configFile.close();
+    Aws::Config::ReloadCachedConfigFile();
 
     ProcessCredentialsProvider provider;
     EXPECT_TRUE(provider.GetAWSCredentials().IsEmpty());
@@ -639,7 +643,7 @@ public:
         Aws::Environment::UnSetEnv("AWS_DEFAULT_PROFILE");
         Aws::Environment::UnSetEnv("AWS_PROFILE");
         // avoid reading region environment var when testing get correct region from config file
-        Aws::Environment::UnSetEnv("AWS_DEFAULT_REGION"); 
+        Aws::Environment::UnSetEnv("AWS_DEFAULT_REGION");
 
         auto profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
         Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
@@ -764,7 +768,7 @@ TEST_F(STSAssumeRoleWithWebIdentityCredentialsProviderTest, TestParseCredentials
     configFile << "role_session_name = sessionId_1234_abcd_xxxx" << std::endl;
     configFile << std::endl;
     configFile.close();
-
+    Aws::Config::ReloadCachedConfigFile();
     STSAssumeRoleWebIdentityCredentialsProvider provider;
 
     // No response is set to mockHttpClient, there will be no response
@@ -788,7 +792,7 @@ TEST_F(STSAssumeRoleWithWebIdentityCredentialsProviderTest, TestParseCredentials
     ASSERT_EQ("AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp+IEXAMPLE", creds.GetSessionToken());
     ASSERT_EQ("wJalrXUtnFEMI/K7MDENG/bPxRfiCYzEXAMPLEKEY", creds.GetAWSSecretKey());
     ASSERT_EQ("ASgeIAIOSFODNN7EXAMPLE", creds.GetAWSAccessKeyId());
-    
+
     Aws::FileSystem::RemoveFileIfExists(tokenFileName.c_str());
     Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
 }
@@ -801,11 +805,11 @@ TEST_F(STSAssumeRoleWithWebIdentityCredentialsProviderTest, TestInitializeFromEn
     tokenFile << token;
     tokenFile.close();
 
-    // Load from environment only when both AWS_ROLE_ARN and AWS_WEB_IDENTITY_TOKEN_FILE are available 
+    // Load from environment only when both AWS_ROLE_ARN and AWS_WEB_IDENTITY_TOKEN_FILE are available
     Aws::Environment::SetEnv("AWS_ROLE_ARN", "arn:aws:iam::123456789012:role/env", 1/*override*/);
     Aws::Environment::SetEnv("AWS_WEB_IDENTITY_TOKEN_FILE", tokenFileName.c_str(), 1/*override*/);
     // Note this one is not required
-    Aws::Environment::SetEnv("AWS_ROLE_SESSION_NAME", "sessionId_abcd_1234_xxxx", 1/*override*/); 
+    Aws::Environment::SetEnv("AWS_ROLE_SESSION_NAME", "sessionId_abcd_1234_xxxx", 1/*override*/);
 
     // Construct config file to prove that we will not load from config file when those required two are available
     Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
@@ -817,6 +821,7 @@ TEST_F(STSAssumeRoleWithWebIdentityCredentialsProviderTest, TestInitializeFromEn
     configFile << std::endl;
     configFile.close();
 
+    Aws::Config::ReloadCachedConfigFile();
     STSAssumeRoleWebIdentityCredentialsProvider provider;
     // No response is set to mockHttpClient, there will be no response
     auto creds = provider.GetAWSCredentials();
@@ -837,7 +842,6 @@ TEST_F(STSAssumeRoleWithWebIdentityCredentialsProviderTest, TestInitializeFromEn
     ASSERT_NE("https://sts.us-west-2.amazonaws.com?Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_abcd_1234_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fenv&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", request1.GetURIString(true /*include query string*/));
     // If loaded from config, query uri should be the following string
     ASSERT_NE("https://sts.us-west-2.amazonaws.com?Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_1234_abcd_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fdemo&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", request1.GetURIString(true /*include query string*/));
-
 
     // Set session name back
     Aws::Environment::SetEnv("AWS_ROLE_SESSION_NAME", "sessionId_abcd_1234_xxxx", 1/*override*/);
